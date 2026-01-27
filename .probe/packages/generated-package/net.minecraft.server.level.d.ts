@@ -1,0 +1,2163 @@
+declare module "net.minecraft.server.level.ServerLevel" {
+import {$PortalForcer} from "net.minecraft.world.level.portal.PortalForcer"
+import {$ReputationEventType$$Type} from "net.minecraft.world.entity.ai.village.ReputationEventType"
+import {$LevelStorageSource$LevelStorageAccess$$Type} from "net.minecraft.world.level.storage.LevelStorageSource$LevelStorageAccess"
+import {$PathTypeCache} from "net.minecraft.world.level.pathfinder.PathTypeCache"
+import {$CallbackInfo$$Type} from "org.spongepowered.asm.mixin.injection.callback.CallbackInfo"
+import {$Mob$$Type} from "net.minecraft.world.entity.Mob"
+import {$StructureManager} from "net.minecraft.world.level.StructureManager"
+import {$ExplosionDamageCalculator$$Type} from "net.minecraft.world.level.ExplosionDamageCalculator"
+import {$WeakReference} from "java.lang.ref.WeakReference"
+import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
+import {$IServerLevel$$Interface} from "org.embeddedt.modernfix.duck.IServerLevel"
+import {$LevelTicks} from "net.minecraft.world.ticks.LevelTicks"
+import {$Stream$$Type} from "java.util.stream.Stream"
+import {$TickRateManager} from "net.minecraft.world.TickRateManager"
+import {$ArrayList} from "java.util.ArrayList"
+import {$ServerLevelAccessor$$Interface as $ServerLevelAccessor$2$$Interface} from "net.caffeinemc.mods.lithium.mixin.minimal_nonvanilla.spawning.ServerLevelAccessor"
+import {$CrashReport$$Type} from "net.minecraft.CrashReport"
+import {$Entity$RemovalReason$$Type} from "net.minecraft.world.entity.Entity$RemovalReason"
+import {$LevelStem$$Type} from "net.minecraft.world.level.dimension.LevelStem"
+import {$RandomSource} from "net.minecraft.util.RandomSource"
+import {$ServerPlayer, $ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
+import {$CustomSpawner$$Type} from "net.minecraft.world.level.CustomSpawner"
+import {$ChunkProgressListener$$Type} from "net.minecraft.server.level.progress.ChunkProgressListener"
+import {$CrashReportCategory} from "net.minecraft.CrashReportCategory"
+import {$PotionBrewing} from "net.minecraft.world.item.alchemy.PotionBrewing"
+import {$ServerLevelAccessor$$Interface as $ServerLevelAccessor$1$$Interface} from "com.simibubi.create.foundation.mixin.accessor.ServerLevelAccessor"
+import {$ServerLevelAccessor$$Interface} from "net.caffeinemc.mods.lithium.mixin.util.entity_movement_tracking.ServerLevelAccessor"
+import {$DimensionDataStorage} from "net.minecraft.world.level.storage.DimensionDataStorage"
+import {$FeatureFlagSet} from "net.minecraft.world.flag.FeatureFlagSet"
+import {$ServerWorldExtended$$Interface} from "net.caffeinemc.mods.lithium.common.world.ServerWorldExtended"
+import {$BlockSnapshot} from "net.neoforged.neoforge.common.util.BlockSnapshot"
+import {$IntProvider} from "net.minecraft.util.valueproviders.IntProvider"
+import {$StructureTemplateManager} from "net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplateManager"
+import {$RandomSequences, $RandomSequences$$Type} from "net.minecraft.world.RandomSequences"
+import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
+import {$Explosion} from "net.minecraft.world.level.Explosion"
+import {$Level$ExplosionInteraction$$Type} from "net.minecraft.world.level.Level$ExplosionInteraction"
+import {$ServerLevelData, $ServerLevelData$$Type} from "net.minecraft.world.level.storage.ServerLevelData"
+import {$Function$$Type} from "java.util.function.Function"
+import {$Class} from "java.lang.Class"
+import {$ObjectOpenCustomHashSet} from "it.unimi.dsi.fastutil.objects.ObjectOpenCustomHashSet"
+import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$WorldGenLevel$$Interface} from "net.minecraft.world.level.WorldGenLevel"
+import {$CompoundTag} from "net.minecraft.nbt.CompoundTag"
+import {$GameEvent$Context$$Type} from "net.minecraft.world.level.gameevent.GameEvent$Context"
+import {$Map} from "java.util.Map"
+import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
+import {$EntityTickList} from "net.minecraft.world.level.entity.EntityTickList"
+import {$ChunkPos$$Type} from "net.minecraft.world.level.ChunkPos"
+import {$ICapabilityInvalidationListener$$Type} from "net.neoforged.neoforge.capabilities.ICapabilityInvalidationListener"
+import {$ReputationEventHandler$$Type} from "net.minecraft.world.entity.ReputationEventHandler"
+import {$SectionPos$$Type} from "net.minecraft.core.SectionPos"
+import {$TagKey$$Type} from "net.minecraft.tags.TagKey"
+import {$EntityGetter} from "net.minecraft.world.level.EntityGetter"
+import {$Iterable} from "java.lang.Iterable"
+import {$MapId, $MapId$$Type} from "net.minecraft.world.level.saveddata.maps.MapId"
+import {$LevelHeightAccessor} from "net.minecraft.world.level.LevelHeightAccessor"
+import {$ChunkAccess, $ChunkAccess$$Type} from "net.minecraft.world.level.chunk.ChunkAccess"
+import {$SoundEvent$$Type} from "net.minecraft.sounds.SoundEvent"
+import {$StrongholdLocationCache} from "org.embeddedt.modernfix.world.StrongholdLocationCache"
+import {$PartEntity} from "net.neoforged.neoforge.entity.PartEntity"
+import {$GameEvent$$Type} from "net.minecraft.world.level.gameevent.GameEvent"
+import {$SoundSource$$Type} from "net.minecraft.sounds.SoundSource"
+import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Raid} from "net.minecraft.world.entity.raid.Raid"
+import {$EntityTypeTest$$Type} from "net.minecraft.world.level.entity.EntityTypeTest"
+import {$Biome, $Biome$$Type} from "net.minecraft.world.level.biome.Biome"
+import {$MapItemSavedData, $MapItemSavedData$$Type} from "net.minecraft.world.level.saveddata.maps.MapItemSavedData"
+import {$ServerChunkCache} from "net.minecraft.server.level.ServerChunkCache"
+import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$Pair} from "com.mojang.datafixers.util.Pair"
+import {$RecipeManager} from "net.minecraft.world.item.crafting.RecipeManager"
+import {$ILevelEventRedirect$$Interface} from "net.mehvahdjukaar.supplementaries.common.entities.dispenser_minecart.ILevelEventRedirect"
+import {$BooleanSupplier$$Type} from "java.util.function.BooleanSupplier"
+import {$PersistentEntitySectionManager} from "net.minecraft.world.level.entity.PersistentEntitySectionManager"
+import {$ServerLevelAccessor$$Interface as $ServerLevelAccessor$0$$Interface} from "net.caffeinemc.mods.lithium.mixin.util.accessors.ServerLevelAccessor"
+import {$ServerLevelKJS$$Interface} from "dev.latvian.mods.kubejs.core.ServerLevelKJS"
+import {$BiFunction$$Type} from "java.util.function.BiFunction"
+import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
+import {$LevelChunk, $LevelChunk$$Type} from "net.minecraft.world.level.chunk.LevelChunk"
+import {$EndDragonFight, $EndDragonFight$$Type} from "net.minecraft.world.level.dimension.end.EndDragonFight"
+import {$Path$$Type} from "java.nio.file.Path"
+import {$Raids} from "net.minecraft.world.entity.raid.Raids"
+import {$LongSet} from "it.unimi.dsi.fastutil.longs.LongSet"
+import {$List, $List$$Type} from "java.util.List"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
+import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
+import {$Trackable} from "dev.uncandango.alltheleaks.mixin.Trackable"
+import {$ProgressListener$$Type} from "net.minecraft.util.ProgressListener"
+import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
+import {$Codec} from "com.mojang.serialization.Codec"
+import {$Structure$$Type} from "net.minecraft.world.level.levelgen.structure.Structure"
+import {$Executor$$Type} from "java.util.concurrent.Executor"
+import {$EnderDragon} from "net.minecraft.world.entity.boss.enderdragon.EnderDragon"
+import {$ResourceKey, $ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
+import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
+import {$AttachmentType$$Type} from "net.neoforged.neoforge.attachment.AttachmentType"
+import {$Collection} from "java.util.Collection"
+import {$BoundingBox$$Type} from "net.minecraft.world.level.levelgen.structure.BoundingBox"
+import {$TickingBlockEntity} from "net.minecraft.world.level.block.entity.TickingBlockEntity"
+import {$Predicate$$Type} from "java.util.function.Predicate"
+import {$ExtendedWorld$$Interface} from "ca.spottedleaf.starlight.common.world.ExtendedWorld"
+import {$LevelTickAccess} from "net.minecraft.world.ticks.LevelTickAccess"
+import {$Scoreboard} from "net.minecraft.world.scores.Scoreboard"
+import {$ParticleOptions, $ParticleOptions$$Type} from "net.minecraft.core.particles.ParticleOptions"
+import {$MinecraftServer, $MinecraftServer$$Type} from "net.minecraft.server.MinecraftServer"
+import {$PoiManager} from "net.minecraft.world.entity.ai.village.poi.PoiManager"
+
+export class $ServerLevel extends $Level implements $WorldGenLevel$$Interface, $IServerLevel$$Interface, $ExtendedWorld$$Interface, $ILevelEventRedirect$$Interface, $ServerLevelKJS$$Interface, $ServerWorldExtended$$Interface, $ServerLevelAccessor$2$$Interface, $ServerLevelAccessor$0$$Interface, $ServerLevelAccessor$$Interface, $ServerLevelAccessor$1$$Interface {
+ "restoringBlockSnapshots": boolean
+static readonly "LONG_PARTICLE_CLIP_RANGE": integer
+static readonly "RAIN_DELAY": $IntProvider
+ "thunderLevel": float
+readonly "random": $RandomSource
+ "capturedBlockSnapshots": $ArrayList<($BlockSnapshot)>
+static readonly "MAX_ENTITY_SPAWN_Y": integer
+static readonly "NETHER": $ResourceKey<($Level)>
+static readonly "MAX_BRIGHTNESS": integer
+static readonly "SHORT_PARTICLE_CLIP_RANGE": integer
+ "rainLevel": float
+ "oThunderLevel": float
+static readonly "THUNDER_DURATION": $IntProvider
+readonly "serverLevelData": $ServerLevelData
+static readonly "RAIN_DURATION": $IntProvider
+static readonly "ATTACHMENTS_NBT_KEY": StringJS
+readonly "entityManager": $PersistentEntitySectionManager<($Entity)>
+static readonly "OVERWORLD": $ResourceKey<($Level)>
+static readonly "TICKS_PER_DAY": integer
+ "oRainLevel": float
+static readonly "END_SPAWN_POINT": $BlockPos
+static readonly "RESOURCE_KEY_CODEC": $Codec<($ResourceKey<($Level)>)>
+static readonly "END": $ResourceKey<($Level)>
+static readonly "MAX_LEVEL_SIZE": integer
+static readonly "MIN_ENTITY_SPAWN_Y": integer
+readonly "blockEntityTickers": $List<($TickingBlockEntity)>
+ "captureBlockSnapshots": boolean
+
+constructor(arg0: $MinecraftServer$$Type, arg1: $Executor$$Type, arg2: $LevelStorageSource$LevelStorageAccess$$Type, arg3: $ServerLevelData$$Type, arg4: $ResourceKey$$Type<($Level)>, arg5: $LevelStem$$Type, arg6: $ChunkProgressListener$$Type, arg7: boolean, arg8: long, arg9: $List$$Type<($CustomSpawner$$Type)>, arg10: boolean, arg11: $RandomSequences$$Type)
+
+public "isFlat"(): boolean
+public "removePlayerImmediately"(arg0: $ServerPlayer$$Type, arg1: $Entity$RemovalReason$$Type): void
+public "canSleepThroughNights"(): boolean
+public "structureManager"(): $StructureManager
+public "getStructureManager"(): $StructureTemplateManager
+public "getDataStorage"(): $DimensionDataStorage
+/**
+ * 
+ * @deprecated
+ */
+public "setDragonFight"(arg0: $EndDragonFight$$Type): void
+public "setWeatherParameters"(arg0: integer, arg1: integer, arg2: boolean, arg3: boolean): void
+public "resetWeatherCycle"(): void
+public "tickCustomSpawners"(arg0: boolean, arg1: boolean): void
+public "tickChunk"(arg0: $LevelChunk$$Type, arg1: integer): void
+public "tickPrecipitation"(arg0: $BlockPos$$Type): void
+public "getPoiManager"(): $PoiManager
+public "isHandlingTick"(): boolean
+public "getDragons"(): $List<($EnderDragon)>
+public "getPlayers"(arg0: $Predicate$$Type<($ServerPlayer)>, arg1: integer): $List<($ServerPlayer)>
+public "getPlayers"(arg0: $Predicate$$Type<($ServerPlayer)>): $List<($ServerPlayer)>
+public "getRandomPlayer"(): $ServerPlayer
+public "addNewPlayer"(arg0: $ServerPlayer$$Type): void
+public "addRespawnedPlayer"(arg0: $ServerPlayer$$Type): void
+public "tryAddFreshEntityWithPassengers"(arg0: $Entity$$Type): boolean
+public "getLogicalHeight"(): integer
+public "handler$edm000$immersiveengineering$wireBlockCallback"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type, arg2: $BlockState$$Type, arg3: integer, arg4: $CallbackInfo$$Type): void
+public "getPortalForcer"(): $PortalForcer
+/**
+ * 
+ * @deprecated
+ */
+public "getEntityOrPart"(arg0: integer): $Entity
+public "findNearestMapStructure"(arg0: $TagKey$$Type<($Structure)>, arg1: $BlockPos$$Type, arg2: integer, arg3: boolean): $BlockPos
+public "findClosestBiome3d"(arg0: $Predicate$$Type<($Holder<($Biome)>)>, arg1: $BlockPos$$Type, arg2: integer, arg3: integer, arg4: integer): $Pair<($BlockPos), ($Holder<($Biome)>)>
+public "getForcedChunks"(): $LongSet
+public "setChunkForced"(arg0: integer, arg1: integer, arg2: boolean): boolean
+public "isVillage"(arg0: $SectionPos$$Type): boolean
+public "isVillage"(arg0: $BlockPos$$Type): boolean
+public "isCloseToVillage"(arg0: $BlockPos$$Type, arg1: integer): boolean
+public "sectionsToVillage"(arg0: $SectionPos$$Type): integer
+public "getRaids"(): $Raids
+public "getRaidAt"(arg0: $BlockPos$$Type): $Raid
+public "isRaided"(arg0: $BlockPos$$Type): boolean
+public "onReputationEvent"(arg0: $ReputationEventType$$Type, arg1: $Entity$$Type, arg2: $ReputationEventHandler$$Type): void
+public "saveDebugReport"(arg0: $Path$$Type): void
+public "clearBlockEvents"(arg0: $BoundingBox$$Type): void
+public "getAllEntities"(): $Iterable<($Entity)>
+public "getDragonFight"(): $EndDragonFight
+public "getWatchdogStats"(): StringJS
+public "addLegacyChunkEntities"(arg0: $Stream$$Type<($Entity$$Type)>): void
+public "addWorldGenChunkEntities"(arg0: $Stream$$Type<($Entity$$Type)>): void
+public "startTickingChunk"(arg0: $LevelChunk$$Type): void
+public "onStructureStartsAvailable"(arg0: $ChunkAccess$$Type): void
+public "getPathTypeCache"(): $PathTypeCache
+public "areEntitiesLoaded"(arg0: long): boolean
+public "isPositionEntityTicking"(arg0: $BlockPos$$Type): boolean
+public "isNaturalSpawningAllowed"(arg0: $BlockPos$$Type): boolean
+public "isNaturalSpawningAllowed"(arg0: $ChunkPos$$Type): boolean
+public "getRandomSequence"(arg0: $ResourceLocation$$Type): $RandomSource
+public "getRandomSequences"(): $RandomSequences
+public "registerCapabilityListener"(arg0: $BlockPos$$Type, arg1: $ICapabilityInvalidationListener$$Type): void
+public "cleanCapabilityListenerReferences"(): void
+public "mfix$getStrongholdCache"(): $StrongholdLocationCache
+public "supp$setRedirected"(redirected: boolean, id: $Vec3$$Type): void
+public "lithium$setNavigationActive"(arg0: $Mob$$Type): void
+public "lithium$setNavigationInactive"(arg0: $Mob$$Type): void
+public "areEntityNavigationsConsistent"(): boolean
+public "getEntityManager"(): $PersistentEntitySectionManager
+public "create$getEntityTickList"(): $EntityTickList
+public "getEntities"<T extends $Entity>(arg0: $EntityTypeTest$$Type<($Entity$$Type), (T)>, arg1: $Predicate$$Type<(T)>, arg2: $List$$Type<(T)>): void
+public "getEntities"<T extends $Entity>(arg0: $EntityTypeTest$$Type<($Entity$$Type), (T)>, arg1: $Predicate$$Type<(T)>, arg2: $List$$Type<(T)>, arg3: integer): void
+public "getEntities"<T extends $Entity>(arg0: $EntityTypeTest$$Type<($Entity$$Type), (T)>, arg1: $Predicate$$Type<(T)>): $List<(T)>
+public "tick"(arg0: $BooleanSupplier$$Type): void
+public "getSeed"(): long
+public "getLevel"(): $ServerLevel
+public "getEntity"(arg0: integer): $Entity
+public "toString"(): StringJS
+public "close"(): void
+public "save"(arg0: $ProgressListener$$Type, arg1: boolean, arg2: boolean): void
+public "unload"(arg0: $LevelChunk$$Type): void
+public "enabledFeatures"(): $FeatureFlagSet
+public "tickRateManager"(): $TickRateManager
+public "fillReportDetails"(arg0: $CrashReport$$Type): $CrashReportCategory
+public "getChunkSource"(): $ServerChunkCache
+public "sendParticles"<T extends $ParticleOptions>(arg0: T, arg1: double, arg2: double, arg3: double, arg4: integer, arg5: double, arg6: double, arg7: double, arg8: double): integer
+public "sendParticles"<T extends $ParticleOptions>(arg0: $ServerPlayer$$Type, arg1: T, arg2: boolean, arg3: double, arg4: double, arg5: double, arg6: integer, arg7: double, arg8: double, arg9: double, arg10: double): boolean
+public "broadcastEntityEvent"(arg0: $Entity$$Type, arg1: byte): void
+public "playSeededSound"(arg0: $Player$$Type, arg1: $Entity$$Type, arg2: $Holder$$Type<($SoundEvent)>, arg3: $SoundSource$$Type, arg4: float, arg5: float, arg6: long): void
+public "playSeededSound"(arg0: $Player$$Type, arg1: double, arg2: double, arg3: double, arg4: $Holder$$Type<($SoundEvent)>, arg5: $SoundSource$$Type, arg6: float, arg7: float, arg8: long): void
+public "gameEvent"(arg0: $Holder$$Type<($GameEvent)>, arg1: $Vec3$$Type, arg2: $GameEvent$Context$$Type): void
+public "getScoreboard"(): $Scoreboard
+public "broadcastDamageEvent"(arg0: $Entity$$Type, arg1: $DamageSource$$Type): void
+public "addFreshEntity"(arg0: $Entity$$Type): boolean
+public "getServer"(): $MinecraftServer
+public "getDayTimeFraction"(): float
+public "getPersistentData"(): $CompoundTag
+public "updateSleepingPlayerList"(): void
+public "addWithUUID"(arg0: $Entity$$Type): boolean
+public "levelEvent"(arg0: $Player$$Type, arg1: integer, arg2: $BlockPos$$Type, arg3: integer): void
+public "addDuringTeleport"(arg0: $Entity$$Type): void
+public "resetEmptyTime"(): void
+public "getChunk"(arg0: integer, arg1: integer): $ChunkAccess
+public "mayInteract"(arg0: $Player$$Type, arg1: $BlockPos$$Type): boolean
+public "syncData"(arg0: $AttachmentType$$Type<(never)>): void
+public "updateNeighborsAt"(arg0: $BlockPos$$Type, arg1: $Block$$Type): void
+public "updateNeighborsAtExceptFromFacing"(arg0: $BlockPos$$Type, arg1: $Block$$Type, arg2: $Direction$$Type): void
+public "neighborChanged"(arg0: $BlockState$$Type, arg1: $BlockPos$$Type, arg2: $Block$$Type, arg3: $BlockPos$$Type, arg4: boolean): void
+public "neighborChanged"(arg0: $BlockPos$$Type, arg1: $Block$$Type, arg2: $BlockPos$$Type): void
+public "shouldTickBlocksAt"(arg0: long): boolean
+public "explode"(arg0: $Entity$$Type, arg1: $DamageSource$$Type, arg2: $ExplosionDamageCalculator$$Type, arg3: double, arg4: double, arg5: double, arg6: float, arg7: boolean, arg8: $Level$ExplosionInteraction$$Type, arg9: $ParticleOptions$$Type, arg10: $ParticleOptions$$Type, arg11: $Holder$$Type<($SoundEvent)>): $Explosion
+public "gatherChunkSourceStats"(): StringJS
+public "getPartEntities"(): $Collection<($PartEntity<(never)>)>
+public "blockEvent"(arg0: $BlockPos$$Type, arg1: $Block$$Type, arg2: integer, arg3: integer): void
+public "getMapData"(arg0: $MapId$$Type): $MapItemSavedData
+public "setMapData"(arg0: $MapId$$Type, arg1: $MapItemSavedData$$Type): void
+public "getFreeMapId"(): $MapId
+public "globalLevelEvent"(arg0: integer, arg1: $BlockPos$$Type, arg2: integer): void
+public "destroyBlockProgress"(arg0: integer, arg1: $BlockPos$$Type, arg2: integer): void
+public "getRecipeManager"(): $RecipeManager
+public "noSave"(): boolean
+public "sendBlockUpdated"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type, arg2: $BlockState$$Type, arg3: integer): void
+public "blockUpdated"(arg0: $BlockPos$$Type, arg1: $Block$$Type): void
+public "onBlockStateChange"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type, arg2: $BlockState$$Type): void
+public "potionBrewing"(): $PotionBrewing
+public "setDayTimeFraction"(arg0: float): void
+public "getDayTimePerTick"(): float
+public "setDayTimePerTick"(arg0: float): void
+public "getChunkAtImmediately"(chunkX: integer, chunkZ: integer): $LevelChunk
+public "getAnyChunkImmediately"(chunkX: integer, chunkZ: integer): $ChunkAccess
+public "invalidateCapabilities"(arg0: $ChunkPos$$Type): void
+public "invalidateCapabilities"(arg0: $BlockPos$$Type): void
+public "getBlockTicks"(): $LevelTicks<($Block)>
+public "getFluidTicks"(): $LevelTickAccess
+public "getShade"(arg0: $Direction$$Type, arg1: boolean): float
+public "getUncachedNoiseBiome"(arg0: integer, arg1: integer, arg2: integer): $Holder<($Biome)>
+public "setDefaultSpawnPos"(arg0: $BlockPos$$Type, arg1: float): void
+public "setDayTime"(arg0: long): void
+public "tickNonPassenger"(arg0: $Entity$$Type): void
+public "ensureCanWrite"(arg0: $BlockPos$$Type): boolean
+public "setCurrentlyGenerating"(arg0: $Supplier$$Type<(StringJS)>): void
+public static "supp$tryRedirect"(serverLevel: $ServerLevel$$Type, pPlayer: $Player$$Type, vec3: $Vec3$$Type, pType: integer, pPos: $BlockPos$$Type, pData: integer): boolean
+public "self"(): $EntityGetter
+public "spawnParticles"(options: $ParticleOptions$$Type, overrideLimiter: boolean, x: double, y: double, z: double, vx: double, vy: double, vz: double, count: integer, speed: double): void
+public "addFreshEntityWithPassengers"(arg0: $Entity$$Type): void
+public "getHeight"(): integer
+public static "create"(arg0: integer, arg1: integer): $LevelHeightAccessor
+public "getMinBuildHeight"(): integer
+public static "startTracking"(arg0: any): void
+public static "createWeakRefBasedSet"(): $ObjectOpenCustomHashSet<($WeakReference<($Trackable)>)>
+public static "clearNullReferences"(): void
+public static "getSummary"(): $Map<($Class<(never)>), ($Map<($Class<(never)>), (long)>)>
+public static "getAllLoadedEntities"(level: $Level$$Type): $Iterable<($Entity)>
+public static "traverseBlocks"<T, C>(arg0: $Vec3$$Type, arg1: $Vec3$$Type, arg2: C, arg3: $BiFunction$$Type<(C), ($BlockPos), (T)>, arg4: $Function$$Type<(C), (T)>): T
+get "flat"(): boolean
+get "dataStorage"(): $DimensionDataStorage
+set "dragonFight"(value: $EndDragonFight$$Type)
+get "poiManager"(): $PoiManager
+get "handlingTick"(): boolean
+get "dragons"(): $List<($EnderDragon)>
+get "randomPlayer"(): $ServerPlayer
+get "logicalHeight"(): integer
+get "portalForcer"(): $PortalForcer
+get "forcedChunks"(): $LongSet
+get "raids"(): $Raids
+get "allEntities"(): $Iterable<($Entity)>
+get "dragonFight"(): $EndDragonFight
+get "watchdogStats"(): StringJS
+get "pathTypeCache"(): $PathTypeCache
+get "randomSequences"(): $RandomSequences
+get "seed"(): long
+get "level"(): $ServerLevel
+get "chunkSource"(): $ServerChunkCache
+get "scoreboard"(): $Scoreboard
+get "server"(): $MinecraftServer
+get "dayTimeFraction"(): float
+get "persistentData"(): $CompoundTag
+get "partEntities"(): $Collection<($PartEntity<(never)>)>
+get "freeMapId"(): $MapId
+get "recipeManager"(): $RecipeManager
+set "dayTimeFraction"(value: float)
+get "dayTimePerTick"(): float
+set "dayTimePerTick"(value: float)
+get "blockTicks"(): $LevelTicks<($Block)>
+get "fluidTicks"(): $LevelTickAccess
+set "dayTime"(value: long)
+set "currentlyGenerating"(value: $Supplier$$Type<(StringJS)>)
+get "height"(): integer
+get "minBuildHeight"(): integer
+public static get "summary"(): $Map<($Class<(never)>), ($Map<($Class<(never)>), (long)>)>
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $ServerLevel$$Type = ($ServerLevel);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $ServerLevel$$Original = $ServerLevel;}
+declare module "net.minecraft.server.level.FullChunkStatus" {
+import {$Enum} from "java.lang.Enum"
+
+export class $FullChunkStatus extends $Enum<($FullChunkStatus)> {
+static readonly "ENTITY_TICKING": $FullChunkStatus
+static readonly "INACCESSIBLE": $FullChunkStatus
+static readonly "FULL": $FullChunkStatus
+static readonly "BLOCK_TICKING": $FullChunkStatus
+
+public static "values"(): ($FullChunkStatus)[]
+public static "valueOf"(arg0: StringJS): $FullChunkStatus
+public "isOrAfter"(arg0: $FullChunkStatus$$Type): boolean
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $FullChunkStatus$$Type = (("inaccessible") | ("full") | ("block_ticking") | ("entity_ticking"));
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $FullChunkStatus$$Original = $FullChunkStatus;}
+declare module "net.minecraft.server.level.ChunkResult" {
+import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function$$Type} from "java.util.function.Function"
+import {$Throwable} from "java.lang.Throwable"
+import {$Consumer$$Type} from "java.util.function.Consumer"
+
+export interface $ChunkResult$$Interface<T> {
+get "success"(): boolean
+}
+
+export class $ChunkResult<T> implements $ChunkResult$$Interface {
+ "map"<R>(arg0: $Function$$Type<(T), (R)>): $ChunkResult<(R)>
+static "of"<T>(arg0: T): $ChunkResult<(T)>
+static "orElse"<R>(arg0: $ChunkResult$$Type<(R)>, arg1: R): R
+ "orElse"(arg0: T): T
+ "orElseThrow"<E extends $Throwable>(arg0: $Supplier$$Type<(E)>): T
+static "error"<T>(arg0: StringJS): $ChunkResult<(T)>
+static "error"<T>(arg0: $Supplier$$Type<(StringJS)>): $ChunkResult<(T)>
+ "getError"(): StringJS
+ "isSuccess"(): boolean
+ "ifSuccess"(arg0: $Consumer$$Type<(T)>): $ChunkResult<(T)>
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $ChunkResult$$Type<T> = ($ChunkResult<(T)>);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $ChunkResult$$Original<T> = $ChunkResult<(T)>;}
+declare module "net.minecraft.server.level.progress.StoringChunkProgressListener" {
+import {$ChunkStatus, $ChunkStatus$$Type} from "net.minecraft.world.level.chunk.status.ChunkStatus"
+import {$ChunkPos$$Type} from "net.minecraft.world.level.ChunkPos"
+import {$ChunkProgressListener$$Interface} from "net.minecraft.server.level.progress.ChunkProgressListener"
+
+export class $StoringChunkProgressListener implements $ChunkProgressListener$$Interface {
+public static "createCompleted"(): $StoringChunkProgressListener
+public "start"(): void
+public "stop"(): void
+public static "create"(arg0: integer): $StoringChunkProgressListener
+public "getStatus"(arg0: integer, arg1: integer): $ChunkStatus
+public static "createFromGameruleRadius"(arg0: integer): $StoringChunkProgressListener
+public "getProgress"(): integer
+public "getDiameter"(): integer
+public "getFullDiameter"(): integer
+public "updateSpawnPos"(arg0: $ChunkPos$$Type): void
+public "onStatusChange"(arg0: $ChunkPos$$Type, arg1: $ChunkStatus$$Type): void
+public static "calculateDiameter"(arg0: integer): integer
+get "progress"(): integer
+get "diameter"(): integer
+get "fullDiameter"(): integer
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $StoringChunkProgressListener$$Type = ($StoringChunkProgressListener);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $StoringChunkProgressListener$$Original = $StoringChunkProgressListener;}
+declare module "net.minecraft.server.level.ChunkTrackingView" {
+import {$ChunkPos$$Type} from "net.minecraft.world.level.ChunkPos"
+import {$Consumer$$Type} from "java.util.function.Consumer"
+
+export interface $ChunkTrackingView$$Interface {
+}
+
+export class $ChunkTrackingView implements $ChunkTrackingView$$Interface {
+static readonly "EMPTY": $ChunkTrackingView
+
+ "isInViewDistance"(arg0: integer, arg1: integer): boolean
+static "isInViewDistance"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: integer): boolean
+static "isWithinDistance"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: integer, arg5: boolean): boolean
+static "difference"(arg0: $ChunkTrackingView$$Type, arg1: $ChunkTrackingView$$Type, arg2: $Consumer$$Type<($ChunkPos)>, arg3: $Consumer$$Type<($ChunkPos)>): void
+static "of"(arg0: $ChunkPos$$Type, arg1: integer): $ChunkTrackingView
+ "contains"(arg0: $ChunkPos$$Type): boolean
+ "contains"(arg0: integer, arg1: integer): boolean
+ "contains"(arg0: integer, arg1: integer, arg2: boolean): boolean
+ "forEach"(arg0: $Consumer$$Type<($ChunkPos)>): void
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $ChunkTrackingView$$Type = ($ChunkTrackingView);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $ChunkTrackingView$$Original = $ChunkTrackingView;}
+declare module "net.minecraft.server.level.ChunkHolder" {
+import {$LevelLightEngine$$Type} from "net.minecraft.world.level.lighting.LevelLightEngine"
+import {$LevelHeightAccessor$$Type} from "net.minecraft.world.level.LevelHeightAccessor"
+import {$LightLayer$$Type} from "net.minecraft.world.level.LightLayer"
+import {$ChunkResult} from "net.minecraft.server.level.ChunkResult"
+import {$ChunkAccess} from "net.minecraft.world.level.chunk.ChunkAccess"
+import {$ChunkPos$$Type} from "net.minecraft.world.level.ChunkPos"
+import {$ChunkHolder$LevelChangeListener$$Type} from "net.minecraft.server.level.ChunkHolder$LevelChangeListener"
+import {$CompletableFuture, $CompletableFuture$$Type} from "java.util.concurrent.CompletableFuture"
+import {$ChunkHolderExtended$$Interface} from "net.caffeinemc.mods.lithium.common.world.chunk.ChunkHolderExtended"
+import {$LevelChunk, $LevelChunk$$Type} from "net.minecraft.world.level.chunk.LevelChunk"
+import {$ChunkHolder$PlayerProvider$$Type} from "net.minecraft.server.level.ChunkHolder$PlayerProvider"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$GenerationChunkHolder} from "net.minecraft.server.level.GenerationChunkHolder"
+
+export class $ChunkHolder extends $GenerationChunkHolder implements $ChunkHolderExtended$$Interface {
+ "currentlyLoading": $LevelChunk
+static readonly "UNLOADED_CHUNK": $ChunkResult<($ChunkAccess)>
+static readonly "UNLOADED_LEVEL_CHUNK": $ChunkResult<($LevelChunk)>
+static readonly "UNLOADED_CHUNK_FUTURE": $CompletableFuture<($ChunkResult<($ChunkAccess)>)>
+
+constructor(arg0: $ChunkPos$$Type, arg1: integer, arg2: $LevelHeightAccessor$$Type, arg3: $LevelLightEngine$$Type, arg4: $ChunkHolder$LevelChangeListener$$Type, arg5: $ChunkHolder$PlayerProvider$$Type)
+
+public "setTicketLevel"(arg0: integer): void
+public "wasAccessibleSinceLastSave"(): boolean
+public "refreshAccessibility"(): void
+public "getSaveSyncFuture"(): $CompletableFuture<(never)>
+public "isReadyForSaving"(): boolean
+public "getChunkToSend"(): $LevelChunk
+public "getEntityTickingChunkFuture"(): $CompletableFuture<($ChunkResult<($LevelChunk)>)>
+public "addSendDependency"(arg0: $CompletableFuture$$Type<(never)>): void
+public "getSendSyncFuture"(): $CompletableFuture<(never)>
+public "getQueueLevel"(): integer
+public "getFullChunkFuture"(): $CompletableFuture<($ChunkResult<($LevelChunk)>)>
+public "getTicketLevel"(): integer
+public "getTickingChunkFuture"(): $CompletableFuture<($ChunkResult<($LevelChunk)>)>
+public "getTickingChunk"(): $LevelChunk
+public "sectionLightChanged"(arg0: $LightLayer$$Type, arg1: integer): void
+public "lithium$updateLastAccessTime"(arg0: long): boolean
+public "broadcastChanges"(arg0: $LevelChunk$$Type): void
+public "blockChanged"(arg0: $BlockPos$$Type): void
+set "ticketLevel"(value: integer)
+get "saveSyncFuture"(): $CompletableFuture<(never)>
+get "readyForSaving"(): boolean
+get "chunkToSend"(): $LevelChunk
+get "entityTickingChunkFuture"(): $CompletableFuture<($ChunkResult<($LevelChunk)>)>
+get "sendSyncFuture"(): $CompletableFuture<(never)>
+get "queueLevel"(): integer
+get "fullChunkFuture"(): $CompletableFuture<($ChunkResult<($LevelChunk)>)>
+get "ticketLevel"(): integer
+get "tickingChunkFuture"(): $CompletableFuture<($ChunkResult<($LevelChunk)>)>
+get "tickingChunk"(): $LevelChunk
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $ChunkHolder$$Type = ($ChunkHolder);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $ChunkHolder$$Original = $ChunkHolder;}
+declare module "net.minecraft.server.level.ServerPlayerGameMode" {
+import {$ServerPlayerGameModeAccess$$Interface} from "me.desht.pneumaticcraft.mixin.accessors.ServerPlayerGameModeAccess"
+import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
+import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
+import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$CallbackInfoReturnable$$Type} from "org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable"
+import {$InteractionResult} from "net.minecraft.world.InteractionResult"
+import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
+import {$GameType, $GameType$$Type} from "net.minecraft.world.level.GameType"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
+import {$ServerboundPlayerActionPacket$Action$$Type} from "net.minecraft.network.protocol.game.ServerboundPlayerActionPacket$Action"
+
+export class $ServerPlayerGameMode implements $ServerPlayerGameModeAccess$$Interface {
+constructor(arg0: $ServerPlayer$$Type)
+
+public "destroyAndAck"(arg0: $BlockPos$$Type, arg1: integer, arg2: StringJS): void
+public "handler$bkm000$justhammers$beforeRemoveBlock"(arg0: $BlockPos$$Type, arg1: $CallbackInfoReturnable$$Type): void
+public "handler$bkm000$justhammers$beforeMineBlock"(arg0: $BlockPos$$Type, arg1: $CallbackInfoReturnable$$Type): void
+public "hasDelayedDestroy"(): boolean
+public "getGameModeForPlayer"(): $GameType
+public "getPreviousGameModeForPlayer"(): $GameType
+public "changeGameModeForPlayer"(arg0: $GameType$$Type): boolean
+public "isDestroyingBlock"(): boolean
+public "isSurvival"(): boolean
+public "handleBlockBreakAction"(arg0: $BlockPos$$Type, arg1: $ServerboundPlayerActionPacket$Action$$Type, arg2: $Direction$$Type, arg3: integer, arg4: integer): void
+public "tick"(): void
+public "setLevel"(arg0: $ServerLevel$$Type): void
+public "useItemOn"(arg0: $ServerPlayer$$Type, arg1: $Level$$Type, arg2: $ItemStack$$Type, arg3: $InteractionHand$$Type, arg4: $BlockHitResult$$Type): $InteractionResult
+public "useItem"(arg0: $ServerPlayer$$Type, arg1: $Level$$Type, arg2: $ItemStack$$Type, arg3: $InteractionHand$$Type): $InteractionResult
+public "isCreative"(): boolean
+public "destroyBlock"(arg0: $BlockPos$$Type): boolean
+get "gameModeForPlayer"(): $GameType
+get "previousGameModeForPlayer"(): $GameType
+get "destroyingBlock"(): boolean
+get "survival"(): boolean
+set "level"(value: $ServerLevel$$Type)
+get "creative"(): boolean
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $ServerPlayerGameMode$$Type = ($ServerPlayerGameMode);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $ServerPlayerGameMode$$Original = $ServerPlayerGameMode;}
+declare module "net.minecraft.server.level.ClientInformation" {
+import {$HumanoidArm, $HumanoidArm$$Type} from "net.minecraft.world.entity.HumanoidArm"
+import {$FriendlyByteBuf$$Type} from "net.minecraft.network.FriendlyByteBuf"
+import {$ChatVisiblity, $ChatVisiblity$$Type} from "net.minecraft.world.entity.player.ChatVisiblity"
+import {$Record} from "java.lang.Record"
+
+export class $ClientInformation extends $Record {
+static readonly "MAX_LANGUAGE_LENGTH": integer
+
+constructor(arg0: $FriendlyByteBuf$$Type)
+constructor(arg0: StringJS, arg1: integer, arg2: $ChatVisiblity$$Type, arg3: boolean, arg4: integer, arg5: $HumanoidArm$$Type, arg6: boolean, arg7: boolean)
+
+public "textFilteringEnabled"(): boolean
+public "allowsListing"(): boolean
+public "viewDistance"(): integer
+public "chatColors"(): boolean
+public "modelCustomisation"(): integer
+public "mainHand"(): $HumanoidArm
+public "language"(): StringJS
+public "equals"(arg0: any): boolean
+public "toString"(): StringJS
+public "hashCode"(): integer
+public "write"(arg0: $FriendlyByteBuf$$Type): void
+public static "createDefault"(): $ClientInformation
+public "chatVisibility"(): $ChatVisiblity
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $ClientInformation$$Type = ({"language"?: StringJS, "viewDistance"?: integer, "modelCustomisation"?: integer, "textFilteringEnabled"?: boolean, "mainHand"?: $HumanoidArm$$Type, "chatColors"?: boolean, "chatVisibility"?: $ChatVisiblity$$Type, "allowsListing"?: boolean}) | ([language?: StringJS, viewDistance?: integer, modelCustomisation?: integer, textFilteringEnabled?: boolean, mainHand?: $HumanoidArm$$Type, chatColors?: boolean, chatVisibility?: $ChatVisiblity$$Type, allowsListing?: boolean]);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $ClientInformation$$Original = $ClientInformation;}
+declare module "net.minecraft.server.level.WorldGenRegion" {
+import {$Iterable} from "java.lang.Iterable"
+import {$BlockHitResult} from "net.minecraft.world.phys.BlockHitResult"
+import {$LevelLightEngine} from "net.minecraft.world.level.lighting.LevelLightEngine"
+import {$LevelHeightAccessor} from "net.minecraft.world.level.LevelHeightAccessor"
+import {$Optional} from "java.util.Optional"
+import {$ChunkAccess, $ChunkAccess$$Type} from "net.minecraft.world.level.chunk.ChunkAccess"
+import {$SoundEvent$$Type} from "net.minecraft.sounds.SoundEvent"
+import {$ColorResolver$$Type} from "net.minecraft.world.level.ColorResolver"
+import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
+import {$GameEvent$$Type} from "net.minecraft.world.level.gameevent.GameEvent"
+import {$SoundSource$$Type} from "net.minecraft.sounds.SoundSource"
+import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$EntityTypeTest$$Type} from "net.minecraft.world.level.entity.EntityTypeTest"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
+import {$Biome} from "net.minecraft.world.level.biome.Biome"
+import {$Stream} from "java.util.stream.Stream"
+import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$BiomeManager} from "net.minecraft.world.level.biome.BiomeManager"
+import {$AuxiliaryLightManager} from "net.neoforged.neoforge.common.world.AuxiliaryLightManager"
+import {$Difficulty} from "net.minecraft.world.Difficulty"
+import {$StaticCache2D$$Type} from "net.minecraft.util.StaticCache2D"
+import {$ChunkStatus$$Type} from "net.minecraft.world.level.chunk.status.ChunkStatus"
+import {$LevelData} from "net.minecraft.world.level.storage.LevelData"
+import {$BiFunction$$Type} from "java.util.function.BiFunction"
+import {$RandomSource} from "net.minecraft.util.RandomSource"
+import {$Fluid, $Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
+import {$VoxelShape, $VoxelShape$$Type} from "net.minecraft.world.phys.shapes.VoxelShape"
+import {$Holder$Reference} from "net.minecraft.core.Holder$Reference"
+import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$ClipContext$$Type} from "net.minecraft.world.level.ClipContext"
+import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
+import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
+import {$AABB$$Type} from "net.minecraft.world.phys.AABB"
+import {$EntityArrayList} from "dev.latvian.mods.kubejs.player.EntityArrayList"
+import {$GenerationChunkHolder$$Type} from "net.minecraft.server.level.GenerationChunkHolder"
+import {$RegistryAccess} from "net.minecraft.core.RegistryAccess"
+import {$FeatureFlagSet} from "net.minecraft.world.flag.FeatureFlagSet"
+import {$ChunkStep$$Type} from "net.minecraft.world.level.chunk.status.ChunkStep"
+import {$UUID$$Type} from "java.util.UUID"
+import {$List, $List$$Type} from "java.util.List"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
+import {$ChunkSource} from "net.minecraft.world.level.chunk.ChunkSource"
+import {$WorldBorder} from "net.minecraft.world.level.border.WorldBorder"
+import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
+import {$TickPriority$$Type} from "net.minecraft.world.ticks.TickPriority"
+import {$Vec3, $Vec3$$Type} from "net.minecraft.world.phys.Vec3"
+import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
+import {$Function$$Type} from "java.util.function.Function"
+import {$TargetingConditions$$Type} from "net.minecraft.world.entity.ai.targeting.TargetingConditions"
+import {$Class$$Type} from "java.lang.Class"
+import {$ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
+import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$ModelData} from "net.neoforged.neoforge.client.model.data.ModelData"
+import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
+import {$ClipBlockStateContext$$Type} from "net.minecraft.world.level.ClipBlockStateContext"
+import {$WorldGenLevel$$Interface} from "net.minecraft.world.level.WorldGenLevel"
+import {$HolderLookup} from "net.minecraft.core.HolderLookup"
+import {$LightLayer$$Type} from "net.minecraft.world.level.LightLayer"
+import {$GameEvent$Context$$Type} from "net.minecraft.world.level.gameevent.GameEvent$Context"
+import {$Predicate$$Type} from "java.util.function.Predicate"
+import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
+import {$ChunkPos, $ChunkPos$$Type} from "net.minecraft.world.level.ChunkPos"
+import {$BlockGetter} from "net.minecraft.world.level.BlockGetter"
+import {$LevelTickAccess} from "net.minecraft.world.ticks.LevelTickAccess"
+import {$Heightmap$Types$$Type} from "net.minecraft.world.level.levelgen.Heightmap$Types"
+import {$Registry$$Type} from "net.minecraft.core.Registry"
+import {$DifficultyInstance} from "net.minecraft.world.DifficultyInstance"
+import {$EntityGetter} from "net.minecraft.world.level.EntityGetter"
+import {$ServerLevel, $ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
+import {$MinecraftServer} from "net.minecraft.server.MinecraftServer"
+import {$ParticleOptions$$Type} from "net.minecraft.core.particles.ParticleOptions"
+import {$DimensionType} from "net.minecraft.world.level.dimension.DimensionType"
+
+export class $WorldGenRegion implements $WorldGenLevel$$Interface {
+constructor(arg0: $ServerLevel$$Type, arg1: $StaticCache2D$$Type<($GenerationChunkHolder$$Type)>, arg2: $ChunkStep$$Type, arg3: $ChunkAccess$$Type)
+
+public "isOldChunkAround"(arg0: $ChunkPos$$Type, arg1: integer): boolean
+public "ensureCanWrite"(arg0: $BlockPos$$Type): boolean
+public "setCurrentlyGenerating"(arg0: $Supplier$$Type<(StringJS)>): void
+public "getEntities"(arg0: $Entity$$Type, arg1: $AABB$$Type, arg2: $Predicate$$Type<($Entity)>): $List<($Entity)>
+public "getEntities"<T extends $Entity>(arg0: $EntityTypeTest$$Type<($Entity$$Type), (T)>, arg1: $AABB$$Type, arg2: $Predicate$$Type<(T)>): $List<(T)>
+public "getHeight"(arg0: $Heightmap$Types$$Type, arg1: integer, arg2: integer): integer
+public "getHeight"(): integer
+public "getSeed"(): long
+/**
+ * 
+ * @deprecated
+ */
+public "getLevel"(): $ServerLevel
+public "setBlock"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type, arg2: integer, arg3: integer): boolean
+public "getFluidState"(arg0: $BlockPos$$Type): $FluidState
+public "getLevelData"(): $LevelData
+public "getBlockState"(arg0: $BlockPos$$Type): $BlockState
+public "enabledFeatures"(): $FeatureFlagSet
+public "getWorldBorder"(): $WorldBorder
+public "getBlockEntity"(arg0: $BlockPos$$Type): $BlockEntity
+public "registryAccess"(): $RegistryAccess
+public "getChunkSource"(): $ChunkSource
+public "isClientSide"(): boolean
+public "gameEvent"(arg0: $Holder$$Type<($GameEvent)>, arg1: $Vec3$$Type, arg2: $GameEvent$Context$$Type): void
+public "getRandom"(): $RandomSource
+public "addParticle"(arg0: $ParticleOptions$$Type, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double): void
+public "playSound"(arg0: $Player$$Type, arg1: $BlockPos$$Type, arg2: $SoundEvent$$Type, arg3: $SoundSource$$Type, arg4: float, arg5: float): void
+public "addFreshEntity"(arg0: $Entity$$Type): boolean
+public "getServer"(): $MinecraftServer
+public "getMinBuildHeight"(): integer
+public "levelEvent"(arg0: $Player$$Type, arg1: integer, arg2: $BlockPos$$Type, arg3: integer): void
+public "getCenter"(): $ChunkPos
+public "getChunk"(arg0: integer, arg1: integer, arg2: $ChunkStatus$$Type, arg3: boolean): $ChunkAccess
+public "getChunk"(arg0: integer, arg1: integer): $ChunkAccess
+public "getBiomeManager"(): $BiomeManager
+public "removeBlock"(arg0: $BlockPos$$Type, arg1: boolean): boolean
+public "destroyBlock"(arg0: $BlockPos$$Type, arg1: boolean, arg2: $Entity$$Type, arg3: integer): boolean
+public "hasChunk"(arg0: integer, arg1: integer): boolean
+public "getSeaLevel"(): integer
+public "getLightEngine"(): $LevelLightEngine
+public "dimensionType"(): $DimensionType
+public "getCurrentDifficultyAt"(arg0: $BlockPos$$Type): $DifficultyInstance
+public "getSkyDarken"(): integer
+public "isStateAtPosition"(arg0: $BlockPos$$Type, arg1: $Predicate$$Type<($BlockState)>): boolean
+public "isFluidAtPosition"(arg0: $BlockPos$$Type, arg1: $Predicate$$Type<($FluidState)>): boolean
+public "nextSubTickCount"(): long
+public "getBlockTicks"(): $LevelTickAccess<($Block)>
+public "getFluidTicks"(): $LevelTickAccess<($Fluid)>
+public "getBrightness"(lightLayer: $LightLayer$$Type, blockPos: $BlockPos$$Type): integer
+public "getShade"(arg0: $Direction$$Type, arg1: boolean): float
+public "getNearestPlayer"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Predicate$$Type<($Entity)>): $Player
+public "getUncachedNoiseBiome"(arg0: integer, arg1: integer, arg2: integer): $Holder<($Biome)>
+public "getRawBrightness"(blockPos: $BlockPos$$Type, subtract: integer): integer
+public "addFreshEntityWithPassengers"(arg0: $Entity$$Type): void
+public "gameEvent"(arg0: $ResourceKey$$Type<($GameEvent)>, arg1: $BlockPos$$Type, arg2: $GameEvent$Context$$Type): void
+public "gameEvent"(arg0: $Entity$$Type, arg1: $Holder$$Type<($GameEvent)>, arg2: $BlockPos$$Type): void
+public "gameEvent"(arg0: $Entity$$Type, arg1: $Holder$$Type<($GameEvent)>, arg2: $Vec3$$Type): void
+public "gameEvent"(arg0: $Holder$$Type<($GameEvent)>, arg1: $BlockPos$$Type, arg2: $GameEvent$Context$$Type): void
+public "getDifficulty"(): $Difficulty
+public "playSound"(arg0: $Player$$Type, arg1: $BlockPos$$Type, arg2: $SoundEvent$$Type, arg3: $SoundSource$$Type): void
+public "levelEvent"(arg0: integer, arg1: $BlockPos$$Type, arg2: integer): void
+public "neighborShapeChanged"(arg0: $Direction$$Type, arg1: $BlockState$$Type, arg2: $BlockPos$$Type, arg3: $BlockPos$$Type, arg4: integer, arg5: integer): void
+public "blockUpdated"(arg0: $BlockPos$$Type, arg1: $Block$$Type): void
+public "dayTime"(): long
+public "scheduleTick"(arg0: $BlockPos$$Type, arg1: $Fluid$$Type, arg2: integer): void
+public "scheduleTick"(arg0: $BlockPos$$Type, arg1: $Fluid$$Type, arg2: integer, arg3: $TickPriority$$Type): void
+public "scheduleTick"(arg0: $BlockPos$$Type, arg1: $Block$$Type, arg2: integer, arg3: $TickPriority$$Type): void
+public "scheduleTick"(arg0: $BlockPos$$Type, arg1: $Block$$Type, arg2: integer): void
+public "getBlockEntity"<T extends $BlockEntity>(arg0: $BlockPos$$Type, arg1: $BlockEntityType$$Type<(T)>): $Optional<(T)>
+public "getHeightmapPos"(arg0: $Heightmap$Types$$Type, arg1: $BlockPos$$Type): $BlockPos
+public "getEntityCollisions"(arg0: $Entity$$Type, arg1: $AABB$$Type): $List<($VoxelShape)>
+public "isUnobstructed"(arg0: $Entity$$Type, arg1: $VoxelShape$$Type): boolean
+public "getTimeOfDay"(arg0: float): float
+public "getMoonBrightness"(): float
+public "getMoonPhase"(): integer
+public "getEntities"(arg0: $Entity$$Type, arg1: $AABB$$Type): $List<($Entity)>
+public "getEntitiesOfClass"<T extends $Entity>(arg0: $Class$$Type<(T)>, arg1: $AABB$$Type): $List<(T)>
+public "getEntitiesOfClass"<T extends $Entity>(arg0: $Class$$Type<(T)>, arg1: $AABB$$Type, arg2: $Predicate$$Type<(T)>): $List<(T)>
+public "getNearestPlayer"(arg0: $TargetingConditions$$Type, arg1: double, arg2: double, arg3: double): $Player
+public "getNearestPlayer"(arg0: $TargetingConditions$$Type, arg1: $LivingEntity$$Type, arg2: double, arg3: double, arg4: double): $Player
+public "getNearestPlayer"(arg0: $TargetingConditions$$Type, arg1: $LivingEntity$$Type): $Player
+public "getNearestPlayer"(arg0: $Entity$$Type, arg1: double): $Player
+public "getNearestPlayer"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: boolean): $Player
+public "hasNearbyAlivePlayer"(arg0: double, arg1: double, arg2: double, arg3: double): boolean
+public "getNearestEntity"<T extends $LivingEntity>(arg0: $List$$Type<(T)>, arg1: $TargetingConditions$$Type, arg2: $LivingEntity$$Type, arg3: double, arg4: double, arg5: double): T
+public "getNearestEntity"<T extends $LivingEntity>(arg0: $Class$$Type<(T)>, arg1: $TargetingConditions$$Type, arg2: $LivingEntity$$Type, arg3: double, arg4: double, arg5: double, arg6: $AABB$$Type): T
+public "getNearbyPlayers"(arg0: $TargetingConditions$$Type, arg1: $LivingEntity$$Type, arg2: $AABB$$Type): $List<($Player)>
+public "getNearbyEntities"<T extends $LivingEntity>(arg0: $Class$$Type<(T)>, arg1: $TargetingConditions$$Type, arg2: $LivingEntity$$Type, arg3: $AABB$$Type): $List<(T)>
+public "getPlayerByUUID"(arg0: $UUID$$Type): $Player
+public "getBiome"(arg0: $BlockPos$$Type): $Holder<($Biome)>
+/**
+ * 
+ * @deprecated
+ */
+public "hasChunkAt"(arg0: integer, arg1: integer): boolean
+/**
+ * 
+ * @deprecated
+ */
+public "hasChunkAt"(arg0: $BlockPos$$Type): boolean
+public "containsAnyLiquid"(arg0: $AABB$$Type): boolean
+public "getBlockStatesIfLoaded"(arg0: $AABB$$Type): $Stream<($BlockState)>
+/**
+ * 
+ * @deprecated
+ */
+public "hasChunksAt"(arg0: integer, arg1: integer, arg2: integer, arg3: integer): boolean
+/**
+ * 
+ * @deprecated
+ */
+public "hasChunksAt"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: integer, arg5: integer): boolean
+/**
+ * 
+ * @deprecated
+ */
+public "hasChunksAt"(arg0: $BlockPos$$Type, arg1: $BlockPos$$Type): boolean
+/**
+ * 
+ * @deprecated
+ */
+public "getLightLevelDependentMagicValue"(arg0: $BlockPos$$Type): float
+public "getChunk"(arg0: $BlockPos$$Type): $ChunkAccess
+public "getChunk"(arg0: integer, arg1: integer, arg2: $ChunkStatus$$Type): $ChunkAccess
+public "getChunkForCollisions"(arg0: integer, arg1: integer): $BlockGetter
+public "holderLookup"<T>(arg0: $ResourceKey$$Type<($Registry<(T)>)>): $HolderLookup<(T)>
+public "lithium$getLoadedChunk"(arg0: integer, arg1: integer): $ChunkAccess
+public "getBlockTint"(arg0: $BlockPos$$Type, arg1: $ColorResolver$$Type): integer
+public "getNoiseBiome"(arg0: integer, arg1: integer, arg2: integer): $Holder<($Biome)>
+public "isEmptyBlock"(arg0: $BlockPos$$Type): boolean
+public "canSeeSkyFromBelowWater"(arg0: $BlockPos$$Type): boolean
+public "getMaxLocalRawBrightness"(arg0: $BlockPos$$Type): integer
+public "getMaxLocalRawBrightness"(arg0: $BlockPos$$Type, arg1: integer): integer
+public "isWaterAt"(arg0: $BlockPos$$Type): boolean
+public "getPathfindingCostFromLightLevels"(arg0: $BlockPos$$Type): float
+public "self"(): $EntityGetter
+public "getMcEntities"(): $Iterable<($Entity)>
+public "getMcPlayers"(): $List<($Player)>
+public "getPlayers"(): $EntityArrayList
+public "getEntitiesWithin"(aabb: $AABB$$Type): $EntityArrayList
+public "canSeeSky"(arg0: $BlockPos$$Type): boolean
+public "noCollision"(arg0: $Entity$$Type): boolean
+public "noCollision"(arg0: $Entity$$Type, arg1: $AABB$$Type): boolean
+public "noCollision"(arg0: $AABB$$Type): boolean
+public "noBlockCollision"(arg0: $Entity$$Type, arg1: $AABB$$Type): boolean
+public "findSupportingBlock"(arg0: $Entity$$Type, arg1: $AABB$$Type): $Optional<($BlockPos)>
+public "getBlockCollisions"(arg0: $Entity$$Type, arg1: $AABB$$Type): $Iterable<($VoxelShape)>
+public "findFreePosition"(arg0: $Entity$$Type, arg1: $VoxelShape$$Type, arg2: $Vec3$$Type, arg3: double, arg4: double, arg5: double): $Optional<($Vec3)>
+public "collidesWithSuffocatingBlock"(arg0: $Entity$$Type, arg1: $AABB$$Type): boolean
+public "getCollisions"(arg0: $Entity$$Type, arg1: $AABB$$Type): $Iterable<($VoxelShape)>
+public "isUnobstructed"(arg0: $Entity$$Type): boolean
+public "isUnobstructed"(arg0: $BlockState$$Type, arg1: $BlockPos$$Type, arg2: $CollisionContext$$Type): boolean
+public "getDirectSignal"(arg0: $BlockPos$$Type, arg1: $Direction$$Type): integer
+public "getSignal"(arg0: $BlockPos$$Type, arg1: $Direction$$Type): integer
+public "getDirectSignalTo"(arg0: $BlockPos$$Type): integer
+public "getControlInputSignal"(arg0: $BlockPos$$Type, arg1: $Direction$$Type, arg2: boolean): integer
+public "hasSignal"(arg0: $BlockPos$$Type, arg1: $Direction$$Type): boolean
+public "hasNeighborSignal"(arg0: $BlockPos$$Type): boolean
+public "getBestNeighborSignal"(arg0: $BlockPos$$Type): integer
+public "holder"<T>(arg0: $ResourceKey$$Type<(T)>): $Optional<($Holder$Reference<(T)>)>
+public "holderOrThrow"<T>(arg0: $ResourceKey$$Type<(T)>): $Holder<(T)>
+public "isAreaLoaded"(arg0: $BlockPos$$Type, arg1: integer): boolean
+public "setBlock"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type, arg2: integer): boolean
+public "destroyBlock"(arg0: $BlockPos$$Type, arg1: boolean): boolean
+public "destroyBlock"(arg0: $BlockPos$$Type, arg1: boolean, arg2: $Entity$$Type): boolean
+public "getEntityByUUID"(id: $UUID$$Type): $Entity
+public "getEntityByNetworkID"(id: integer): $Entity
+public "getEntities"(): $EntityArrayList
+public "clip"(arg0: $ClipContext$$Type): $BlockHitResult
+public "getLightEmission"(arg0: $BlockPos$$Type): integer
+public "getMaxLightLevel"(): integer
+public "getBlockStates"(arg0: $AABB$$Type): $Stream<($BlockState)>
+public "isBlockInLine"(arg0: $ClipBlockStateContext$$Type): $BlockHitResult
+public static "traverseBlocks"<T, C>(arg0: $Vec3$$Type, arg1: $Vec3$$Type, arg2: C, arg3: $BiFunction$$Type<(C), ($BlockPos), (T)>, arg4: $Function$$Type<(C), (T)>): T
+public "clipWithInteractionOverride"(arg0: $Vec3$$Type, arg1: $Vec3$$Type, arg2: $BlockPos$$Type, arg3: $VoxelShape$$Type, arg4: $BlockState$$Type): $BlockHitResult
+public "getBlockFloorHeight"(arg0: $BlockPos$$Type): double
+public "getBlockFloorHeight"(arg0: $VoxelShape$$Type, arg1: $Supplier$$Type<($VoxelShape$$Type)>): double
+public "getShade"(arg0: float, arg1: float, arg2: float, arg3: boolean): float
+public static "create"(arg0: integer, arg1: integer): $LevelHeightAccessor
+public "getMaxBuildHeight"(): integer
+public "isOutsideBuildHeight"(arg0: $BlockPos$$Type): boolean
+public "isOutsideBuildHeight"(arg0: integer): boolean
+public "getSectionIndex"(arg0: integer): integer
+public "getSectionsCount"(): integer
+public "getMaxSection"(): integer
+public "getMinSection"(): integer
+public "getSectionIndexFromSectionY"(arg0: integer): integer
+public "getSectionYFromSectionIndex"(arg0: integer): integer
+public "getAuxLightManager"(arg0: $BlockPos$$Type): $AuxiliaryLightManager
+public "getAuxLightManager"(arg0: $ChunkPos$$Type): $AuxiliaryLightManager
+public "getModelData"(arg0: $BlockPos$$Type): $ModelData
+set "currentlyGenerating"(value: $Supplier$$Type<(StringJS)>)
+get "height"(): integer
+get "seed"(): long
+get "level"(): $ServerLevel
+get "levelData"(): $LevelData
+get "worldBorder"(): $WorldBorder
+get "chunkSource"(): $ChunkSource
+get "clientSide"(): boolean
+get "random"(): $RandomSource
+get "server"(): $MinecraftServer
+get "minBuildHeight"(): integer
+get "center"(): $ChunkPos
+get "biomeManager"(): $BiomeManager
+get "seaLevel"(): integer
+get "lightEngine"(): $LevelLightEngine
+get "skyDarken"(): integer
+get "blockTicks"(): $LevelTickAccess<($Block)>
+get "fluidTicks"(): $LevelTickAccess<($Fluid)>
+get "difficulty"(): $Difficulty
+get "moonBrightness"(): float
+get "moonPhase"(): integer
+get "mcEntities"(): $Iterable<($Entity)>
+get "mcPlayers"(): $List<($Player)>
+get "players"(): $EntityArrayList
+get "entities"(): $EntityArrayList
+get "maxLightLevel"(): integer
+get "maxBuildHeight"(): integer
+get "sectionsCount"(): integer
+get "maxSection"(): integer
+get "minSection"(): integer
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $WorldGenRegion$$Type = ($WorldGenRegion);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $WorldGenRegion$$Original = $WorldGenRegion;}
+declare module "net.minecraft.server.level.ServerPlayer" {
+import {$HumanoidArm} from "net.minecraft.world.entity.HumanoidArm"
+import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$RemoteChatSession, $RemoteChatSession$$Type} from "net.minecraft.network.chat.RemoteChatSession"
+import {$CallbackInfo$$Type} from "org.spongepowered.asm.mixin.injection.callback.CallbackInfo"
+import {$ServerGamePacketListenerImpl} from "net.minecraft.server.network.ServerGamePacketListenerImpl"
+import {$WeakReference} from "java.lang.ref.WeakReference"
+import {$Either} from "com.mojang.datafixers.util.Either"
+import {$ServerPlayerKJS$$Interface} from "dev.latvian.mods.kubejs.core.ServerPlayerKJS"
+import {$KubeJSGUI$$Type} from "dev.latvian.mods.kubejs.gui.KubeJSGUI"
+import {$TextFilter} from "net.minecraft.server.network.TextFilter"
+import {$ServerPlayerEntityMixin$$Interface} from "immersive_aircraft.mixin.ServerPlayerEntityMixin"
+import {$ServerStatsCounter} from "net.minecraft.stats.ServerStatsCounter"
+import {$InteractionHand, $InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
+import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
+import {$ClientInformation, $ClientInformation$$Type} from "net.minecraft.server.level.ClientInformation"
+import {$ServerPlayerAccess$$Interface} from "me.desht.pneumaticcraft.mixin.accessors.ServerPlayerAccess"
+import {$AbstractHorse$$Type} from "net.minecraft.world.entity.animal.horse.AbstractHorse"
+import {$ServerRecipeBook} from "net.minecraft.stats.ServerRecipeBook"
+import {$Unit} from "net.minecraft.util.Unit"
+import {$MobEffectInstance$$Type} from "net.minecraft.world.effect.MobEffectInstance"
+import {$SlotReference, $SlotReference$$Type} from "net.mehvahdjukaar.supplementaries.common.utils.SlotReference"
+import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
+import {$MenuProvider$$Type} from "net.minecraft.world.MenuProvider"
+import {$DimensionTransition, $DimensionTransition$$Type} from "net.minecraft.world.level.portal.DimensionTransition"
+import {$FishingHook} from "net.minecraft.world.entity.projectile.FishingHook"
+import {$Class} from "java.lang.Class"
+import {$ObjectOpenCustomHashSet} from "it.unimi.dsi.fastutil.objects.ObjectOpenCustomHashSet"
+import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
+import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$PlayerData} from "com.minecraftserverzone.weaponmaster.setup.playerdata.PlayerData"
+import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
+import {$Map} from "java.util.Map"
+import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
+import {$CallbackInfoReturnable$$Type} from "org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable"
+import {$PlayerStatsJS} from "dev.latvian.mods.kubejs.player.PlayerStatsJS"
+import {$ChunkTrackingView, $ChunkTrackingView$$Type} from "net.minecraft.server.level.ChunkTrackingView"
+import {$ServerPlayerAccessor$$Interface} from "com.railwayteam.railways.mixin.conductor_possession.ServerPlayerAccessor"
+import {$ServerStatus$$Type} from "net.minecraft.network.protocol.status.ServerStatus"
+import {$RegistryFriendlyByteBuf$$Type} from "net.minecraft.network.RegistryFriendlyByteBuf"
+import {$SectionPos, $SectionPos$$Type} from "net.minecraft.core.SectionPos"
+import {$ChatVisiblity} from "net.minecraft.world.entity.player.ChatVisiblity"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
+import {$IQuiverPlayer$$Interface} from "net.mehvahdjukaar.supplementaries.common.utils.IQuiverPlayer"
+import {$ChatType$Bound$$Type} from "net.minecraft.network.chat.ChatType$Bound"
+import {$CommonPlayerSpawnInfo} from "net.minecraft.network.protocol.game.CommonPlayerSpawnInfo"
+import {$DimensionTransition$PostDimensionTransition$$Type} from "net.minecraft.world.level.portal.DimensionTransition$PostDimensionTransition"
+import {$Optional} from "java.util.Optional"
+import {$SignBlockEntity$$Type} from "net.minecraft.world.level.block.entity.SignBlockEntity"
+import {$SoundEvent$$Type} from "net.minecraft.sounds.SoundEvent"
+import {$Player$BedSleepingProblem} from "net.minecraft.world.entity.player.Player$BedSleepingProblem"
+import {$CommandBlockEntity$$Type} from "net.minecraft.world.level.block.entity.CommandBlockEntity"
+import {$ChestMenuData$$Type} from "dev.latvian.mods.kubejs.gui.chest.ChestMenuData"
+import {$RelativeMovement$$Type} from "net.minecraft.world.entity.RelativeMovement"
+import {$SoundSource$$Type} from "net.minecraft.sounds.SoundSource"
+import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
+import {$Set$$Type} from "java.util.Set"
+import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$ContainerSynchronizer} from "net.minecraft.world.inventory.ContainerSynchronizer"
+import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$Consumer$$Type} from "java.util.function.Consumer"
+import {$LevelBlock, $LevelBlock$$Type} from "dev.latvian.mods.kubejs.level.LevelBlock"
+import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
+import {$AbstractContainerMenu} from "net.minecraft.world.inventory.AbstractContainerMenu"
+import {$Stat$$Type} from "net.minecraft.stats.Stat"
+import {$OptionalInt} from "java.util.OptionalInt"
+import {$RecipeHolder$$Type} from "net.minecraft.world.item.crafting.RecipeHolder"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$InventoryMenu} from "net.minecraft.world.inventory.InventoryMenu"
+import {$PlayerAdvancements} from "net.minecraft.server.PlayerAdvancements"
+import {$MerchantOffers$$Type} from "net.minecraft.world.item.trading.MerchantOffers"
+import {$List$$Type} from "java.util.List"
+import {$ServerPlayerGameMode} from "net.minecraft.server.level.ServerPlayerGameMode"
+import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
+import {$Trackable} from "dev.uncandango.alltheleaks.mixin.Trackable"
+import {$WardenSpawnTracker} from "net.minecraft.world.entity.monster.warden.WardenSpawnTracker"
+import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
+import {$Vec3, $Vec3$$Type} from "net.minecraft.world.phys.Vec3"
+import {$Abilities} from "net.minecraft.world.entity.player.Abilities"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
+import {$OutgoingChatMessage$$Type} from "net.minecraft.network.chat.OutgoingChatMessage"
+import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState"
+import {$Item$$Type} from "net.minecraft.world.item.Item"
+import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
+import {$InventoryKJS$$Type} from "dev.latvian.mods.kubejs.core.InventoryKJS"
+import {$ResourceKey, $ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
+import {$GameType$$Type} from "net.minecraft.world.level.GameType"
+import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
+import {$NotificationToastData$$Type} from "dev.latvian.mods.kubejs.util.NotificationToastData"
+import {$Collection$$Type} from "java.util.Collection"
+import {$EntityDimensions} from "net.minecraft.world.entity.EntityDimensions"
+import {$ItemEntity, $ItemEntity$$Type} from "net.minecraft.world.entity.item.ItemEntity"
+import {$Container, $Container$$Type} from "net.minecraft.world.Container"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
+import {$Tag} from "net.minecraft.nbt.Tag"
+import {$ServerLevel, $ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
+import {$EntityAnchorArgument$Anchor$$Type} from "net.minecraft.commands.arguments.EntityAnchorArgument$Anchor"
+import {$MinecraftServer, $MinecraftServer$$Type} from "net.minecraft.server.MinecraftServer"
+
+export class $ServerPlayer extends $Player implements $ServerPlayerEntityMixin$$Interface, $ServerPlayerAccessor$$Interface, $IQuiverPlayer$$Interface, $ServerPlayerKJS$$Interface, $ServerPlayerAccess$$Interface {
+ "lastHurtByPlayerTime": integer
+static readonly "DEFAULT_BASE_GRAVITY": double
+ "hasImpulse": boolean
+static readonly "USE_ITEM_INTERVAL": integer
+ "yHeadRot": float
+ "yCloakO": double
+ "noPhysics": boolean
+ "yo": double
+ "connection": $ServerGamePacketListenerImpl
+ "yBodyRotO": float
+ "removalReason": $Entity$RemovalReason
+ "zza": float
+ "swingingArm": $InteractionHand
+static readonly "CRAFTING_SLOT_OFFSET": integer
+static readonly "INTERACTION_DISTANCE_VERIFICATION_BUFFER": double
+static readonly "ID_TAG": StringJS
+static readonly "WAKE_UP_DURATION": integer
+static readonly "DELTA_AFFECTED_BY_BLOCKS_BELOW_1_0": double
+ "xRotO": float
+ "zo": double
+ "wonGame": boolean
+ "walkDist": float
+ "lastHurt": float
+ "noCulling": boolean
+ "walkAnimation": $WalkAnimationState
+readonly "gameMode": $ServerPlayerGameMode
+readonly "object": any
+static readonly "STANDING_DIMENSIONS": $EntityDimensions
+ "yya": float
+readonly "server": $MinecraftServer
+ "oAttackAnim": float
+ "yHeadRotO": float
+static readonly "UUID_TAG": StringJS
+static readonly "DEFAULT_MODEL_CUSTOMIZATION": integer
+ "hurtDuration": integer
+static readonly "DEATH_DURATION": integer
+ "portalProcess": $PortalProcessor
+static readonly "SWIMMING_BB_HEIGHT": float
+static readonly "DEFAULT_ENTITY_INTERACTION_RANGE": float
+ "dead": boolean
+ "verticalCollision": boolean
+ "verticalCollisionBelow": boolean
+ "experienceLevel": integer
+static readonly "DEFAULT_BABY_SCALE": float
+static readonly "ATTRIBUTES_FIELD": StringJS
+static readonly "PERSISTED_NBT_TAG": StringJS
+static readonly "DEFAULT_BB_HEIGHT": float
+ "seenCredits": boolean
+ "xxa": float
+ "zCloak": double
+ "flyDist": float
+ "currentImpulseImpactPos": $Vec3
+static readonly "PASSENGERS_TAG": StringJS
+ "xCloakO": double
+ "wasOnFire": boolean
+ "attackAnim": float
+ "zOld": double
+readonly "timeOffs": float
+ "wasTouchingWater": boolean
+readonly "rotA": float
+ "horizontalCollision": boolean
+static readonly "ENDER_SLOT_OFFSET": integer
+static readonly "ARMOR_SLOT_OFFSET": integer
+static readonly "SLEEP_DURATION": integer
+static readonly "HELD_ITEM_SLOT": integer
+ "yCloak": double
+ "swingTime": integer
+static readonly "BODY_ARMOR_OFFSET": integer
+ "xCloak": double
+readonly "abilities": $Abilities
+ "tickCount": integer
+ "lastHurtByPlayer": $Player
+static readonly "BOARDING_COOLDOWN": integer
+static readonly "MAX_HEALTH": integer
+static readonly "SWING_DURATION": integer
+ "yRotO": float
+static readonly "MIN_MOVEMENT_DISTANCE": double
+static readonly "CONTENTS_SLOT_INDEX": integer
+static readonly "BASE_JUMP_POWER": float
+static readonly "DEFAULT_EYE_HEIGHT": float
+ "level": $Level
+static readonly "CROUCH_BB_HEIGHT": float
+ "moveDist": float
+ "zCloakO": double
+ "mainSupportingBlockPos": $Optional<($BlockPos)>
+ "bob": float
+ "experienceProgress": float
+ "totalExperience": integer
+ "xOld": double
+ "wasInPowderSnow": boolean
+ "containerMenu": $AbstractContainerMenu
+ "hurtTime": integer
+ "swinging": boolean
+ "hurtMarked": boolean
+ "attackStrengthTicker": integer
+static readonly "DEFAULT_MAIN_HAND": $HumanoidArm
+ "deathTime": integer
+static readonly "EQUIPMENT_SLOT_OFFSET": integer
+ "invulnerableTime": integer
+ "jumping": boolean
+static readonly "BASE_TICKS_REQUIRED_TO_FREEZE": integer
+ "fallDistance": float
+static readonly "DEFAULT_VEHICLE_ATTACHMENT": $Vec3
+readonly "inventoryMenu": $InventoryMenu
+static readonly "DELTA_AFFECTED_BY_BLOCKS_BELOW_0_5": double
+static readonly "MAX_ENTITY_TAG_COUNT": integer
+ "playerData": $PlayerData
+static readonly "ARMOR_SLOTS": integer
+static readonly "DELTA_AFFECTED_BY_BLOCKS_BELOW_0_2": float
+static readonly "PLAYER_HURT_EXPERIENCE_TIME": integer
+ "yOld": double
+static readonly "HAND_SLOTS": integer
+static readonly "DEFAULT_BB_WIDTH": float
+ "minorHorizontalCollision": boolean
+ "levelCallback": $EntityInLevelCallback
+ "enteredNetherPosition": $Vec3
+static readonly "EXTRA_RENDER_CULLING_SIZE_WITH_BIG_HAT": float
+ "fishing": $FishingHook
+ "removeArrowTime": integer
+ "walkDistO": float
+static readonly "SWIMMING_BB_WIDTH": float
+static readonly "FREEZE_HURT_FREQUENCY": integer
+ "isInPowderSnow": boolean
+static readonly "ATTACHMENTS_NBT_KEY": StringJS
+ "yBodyRot": float
+ "blocksBuilding": boolean
+ "takeXpDelay": integer
+static readonly "DEFAULT_BLOCK_INTERACTION_RANGE": float
+ "oBob": float
+static readonly "TOTAL_AIR_SUPPLY": integer
+ "xo": double
+readonly "invulnerableDuration": integer
+ "removeStingerTime": integer
+static readonly "BASE_SAFE_FALL_DISTANCE": integer
+ "currentExplosionCause": $Entity
+
+constructor(arg0: $MinecraftServer$$Type, arg1: $ServerLevel$$Type, arg2: $GameProfile$$Type, arg3: $ClientInformation$$Type)
+
+public "getRespawnPosition"(): $BlockPos
+public "isChangingDimension"(): boolean
+public "requestedViewDistance"(): integer
+public "allowsListing"(): boolean
+public "setExperiencePoints"(arg0: integer): void
+public "setExperienceLevels"(arg0: integer): void
+public "initInventoryMenu"(): void
+public "handler$dpa003$simplyswords$tick"(ci: $CallbackInfo$$Type): void
+public "getCamera"(): $Entity
+public "setCamera"(arg0: $Entity$$Type): void
+public "trackStartFallingPosition"(): void
+public "trackEnteredOrExitedLavaOnVehicle"(): void
+public "doTick"(): void
+public "handler$dpa000$simplyswords$damage"(source: $DamageSource$$Type, amount: float, cir: $CallbackInfoReturnable$$Type): void
+public "findRespawnPositionAndUseSpawnBlock"(arg0: boolean, arg1: $DimensionTransition$PostDimensionTransition$$Type): $DimensionTransition
+public "getRespawnAngle"(): float
+public "isRespawnForced"(): boolean
+public "getRespawnDimension"(): $ResourceKey<($Level)>
+public "showEndCredits"(): void
+public "createCommonSpawnInfo"(arg0: $ServerLevel$$Type): $CommonPlayerSpawnInfo
+public "setServerLevel"(arg0: $ServerLevel$$Type): void
+public "triggerDimensionChangeTriggers"(arg0: $ServerLevel$$Type): void
+public "doCheckFallDamage"(arg0: double, arg1: double, arg2: double, arg3: boolean): void
+public "setPlayerInput"(arg0: float, arg1: float, arg2: boolean, arg3: boolean): void
+public "checkMovementStatistics"(arg0: double, arg1: double, arg2: double): void
+public "checkRidingStatistics"(arg0: double, arg1: double, arg2: double): void
+public "hasDisconnected"(): boolean
+public "resetSentInfo"(): void
+public "setGameMode"(arg0: $GameType$$Type): boolean
+public "sendChatMessage"(arg0: $OutgoingChatMessage$$Type, arg1: boolean, arg2: $ChatType$Bound$$Type): void
+public "getIpAddress"(): StringJS
+public "clientInformation"(): $ClientInformation
+public "canChatInColor"(): boolean
+public "getChatVisibility"(): $ChatVisiblity
+public "sendServerStatus"(arg0: $ServerStatus$$Type): void
+public "resetLastActionTime"(): void
+public "handler$dpa000$simplyswords$attack"(target: $Entity$$Type, ci: $CallbackInfo$$Type): void
+public "getLastActionTime"(): long
+public "getTabListDisplayName"(): $Component
+public "hasChangedDimension"(): void
+public "copyRespawnPosition"(arg0: $ServerPlayer$$Type): void
+public "setRespawnPosition"(arg0: $ResourceKey$$Type<($Level)>, arg1: $BlockPos$$Type, arg2: float, arg3: boolean, arg4: boolean): void
+public "getLastSectionPos"(): $SectionPos
+public "setLastSectionPos"(arg0: $SectionPos$$Type): void
+public "getChunkTrackingView"(): $ChunkTrackingView
+public "setChunkTrackingView"(arg0: $ChunkTrackingView$$Type): void
+public "getTabListHeader"(): $Component
+public "setTabListHeader"(arg0: $Component$$Type): void
+public "setTabListHeaderFooter"(arg0: $Component$$Type, arg1: $Component$$Type): void
+public "getTabListFooter"(): $Component
+public "setTabListFooter"(arg0: $Component$$Type): void
+public "refreshTabListName"(): void
+public "getTextFilter"(): $TextFilter
+public "loadGameTypes"(arg0: $CompoundTag$$Type): void
+public "shouldFilterMessageTo"(arg0: $ServerPlayer$$Type): boolean
+public "setSpawnExtraParticlesOnFall"(arg0: boolean): void
+public "setChatSession"(arg0: $RemoteChatSession$$Type): void
+public "getChatSession"(): $RemoteChatSession
+public "setKnownMovement"(arg0: $Vec3$$Type): void
+public "setRaidOmenPosition"(arg0: $BlockPos$$Type): void
+public "clearRaidOmenPosition"(): void
+public "getRaidOmenPosition"(): $BlockPos
+public "getContainerSynchronizer"(): $ContainerSynchronizer
+public "ic$nextContainerCounter"(): void
+public "getContainerCounter"(): integer
+public "setIsChangingDimension"(arg0: boolean): void
+public "take"(arg0: $Entity$$Type, arg1: integer): void
+public "tick"(): void
+public "getLanguage"(): StringJS
+public "drop"(arg0: boolean): boolean
+public "drop"(arg0: $ItemStack$$Type, arg1: boolean, arg2: boolean): $ItemEntity
+public "disconnect"(): void
+public "updateOptions"(arg0: $ClientInformation$$Type): void
+public "swing"(arg0: $InteractionHand$$Type): void
+public "attack"(arg0: $Entity$$Type): void
+public "isSpectator"(): boolean
+public "isCreative"(): boolean
+public "displayClientMessage"(arg0: $Component$$Type, arg1: boolean): void
+public "getAdvancements"(): $PlayerAdvancements
+public "isTextFilteringEnabled"(): boolean
+public "lookAt"(arg0: $EntityAnchorArgument$Anchor$$Type, arg1: $Vec3$$Type): void
+public "lookAt"(arg0: $EntityAnchorArgument$Anchor$$Type, arg1: $Entity$$Type, arg2: $EntityAnchorArgument$Anchor$$Type): void
+public "attack"(arg0: $DamageSource$$Type, arg1: float): boolean
+public "addAdditionalSaveData"(arg0: $CompoundTag$$Type): void
+public "readAdditionalSaveData"(arg0: $CompoundTag$$Type): void
+public "onEffectRemoved"(arg0: $MobEffectInstance$$Type): void
+public "isInvulnerableTo"(arg0: $DamageSource$$Type): boolean
+public "indicateDamage"(arg0: double, arg1: double): void
+public "die"(arg0: $DamageSource$$Type): void
+public "awardStat"(arg0: $Stat$$Type<(never)>, arg1: integer): void
+public "awardKillScore"(arg0: $Entity$$Type, arg1: integer, arg2: $DamageSource$$Type): void
+public "dismountTo"(arg0: double, arg1: double, arg2: double): void
+public "travel"(arg0: $Vec3$$Type): void
+public "resetFallDistance"(): void
+public "stopRiding"(): void
+public "rideTick"(): void
+public "onItemPickup"(arg0: $ItemEntity$$Type): void
+public "onEnterCombat"(): void
+public "onLeaveCombat"(): void
+public "teleportTo"(arg0: $ServerLevel$$Type, arg1: double, arg2: double, arg3: double, arg4: float, arg5: float): void
+public "teleportTo"(arg0: $ServerLevel$$Type, arg1: double, arg2: double, arg3: double, arg4: $Set$$Type<($RelativeMovement$$Type)>, arg5: float, arg6: float): boolean
+public "teleportTo"(arg0: double, arg1: double, arg2: double): void
+public "startSleeping"(arg0: $BlockPos$$Type): void
+public "onEquippedItemBroken"(arg0: $Item$$Type, arg1: $EquipmentSlot$$Type): void
+public "serverLevel"(): $ServerLevel
+public "stopSleepInBed"(arg0: boolean, arg1: boolean): void
+public "closeMenu"(): void
+public "playNotifySound"(arg0: $SoundEvent$$Type, arg1: $SoundSource$$Type, arg2: float, arg3: float): void
+public "doCloseContainer"(): void
+public "sendSystemMessage"(arg0: $Component$$Type): void
+public "sendSystemMessage"(arg0: $Component$$Type, arg1: boolean): void
+public "moveTo"(arg0: double, arg1: double, arg2: double): void
+public "resetStat"(arg0: $Stat$$Type<(never)>): void
+public "canHarmPlayer"(arg0: $Player$$Type): boolean
+public "openTextEdit"(arg0: $SignBlockEntity$$Type, arg1: boolean): void
+public "openCommandBlock"(arg0: $CommandBlockEntity$$Type): void
+public "openHorseInventory"(arg0: $AbstractHorse$$Type, arg1: $Container$$Type): void
+public "openMenu"(arg0: $MenuProvider$$Type, arg1: $Consumer$$Type<($RegistryFriendlyByteBuf)>): $OptionalInt
+public "openMenu"(arg0: $MenuProvider$$Type): $OptionalInt
+public "sendMerchantOffers"(arg0: integer, arg1: $MerchantOffers$$Type, arg2: integer, arg3: integer, arg4: boolean, arg5: boolean): void
+public "openItemGui"(arg0: $ItemStack$$Type, arg1: $InteractionHand$$Type): void
+public "crit"(arg0: $Entity$$Type): void
+public "magicCrit"(arg0: $Entity$$Type): void
+public "startSleepInBed"(arg0: $BlockPos$$Type): $Either<($Player$BedSleepingProblem), ($Unit)>
+public "awardRecipes"(arg0: $Collection$$Type<($RecipeHolder$$Type<(never)>)>): integer
+public "triggerRecipeCrafted"(arg0: $RecipeHolder$$Type<(never)>, arg1: $List$$Type<($ItemStack$$Type)>): void
+public "awardRecipesByKey"(arg0: $List$$Type<($ResourceLocation$$Type)>): void
+public "resetRecipes"(arg0: $Collection$$Type<($RecipeHolder$$Type<(never)>)>): integer
+public "giveExperiencePoints"(arg0: integer): void
+public "giveExperienceLevels"(arg0: integer): void
+public "onEnchantmentPerformed"(arg0: $ItemStack$$Type, arg1: integer): void
+public "getWardenSpawnTracker"(): $Optional<($WardenSpawnTracker)>
+public "onUpdateAbilities"(): void
+public "supplementaries$getQuiver"(): $ItemStack
+public "supplementaries$setQuiver"(quiver: $ItemStack$$Type): void
+public "onInsideBlock"(arg0: $BlockState$$Type): void
+public "adjustSpawnLocation"(arg0: $ServerLevel$$Type, arg1: $BlockPos$$Type): $BlockPos
+public "startRiding"(arg0: $Entity$$Type, arg1: boolean): boolean
+public "changeDimension"(arg0: $DimensionTransition$$Type): $Entity
+public "restoreFrom"(arg0: $ServerPlayer$$Type, arg1: boolean): void
+public "teleportRelative"(arg0: double, arg1: double, arg2: double): void
+public "broadcastToPlayer"(arg0: $ServerPlayer$$Type): boolean
+public "onExplosionHit"(arg0: $Entity$$Type): void
+public "mayInteract"(arg0: $Level$$Type, arg1: $BlockPos$$Type): boolean
+public "getKnownMovement"(): $Vec3
+public "getStatsCounter"(): $ServerStatsCounter
+public "getRecipeBook"(): $ServerRecipeBook
+public "supplementaries$getQuiverSlot"(): $SlotReference
+public "supplementaries$setQuiverSlot"(slot: $SlotReference$$Type): void
+public "kick"(reason: $Component$$Type): void
+public "kick"(): void
+public "openInventoryGUI"(inventory: $InventoryKJS$$Type, title: $Component$$Type, columns: integer, rows: integer): void
+public "openInventoryGUI"(inventory: $InventoryKJS$$Type, title: $Component$$Type, columns: integer): void
+public "openInventoryGUI"(inventory: $InventoryKJS$$Type, title: $Component$$Type): void
+public "openChestGUI"(title: $Component$$Type, rows: integer, gui: $Consumer$$Type<($ChestMenuData)>): void
+public "openChestGUI"(gui: $Consumer$$Type<($KubeJSGUI)>): void
+public "captureInventory"(autoRestore: boolean): $Container
+public "setCreativeMode"(mode: boolean): void
+public "isOp"(): boolean
+public "ban"(banner: StringJS, reason: StringJS, expiresInMillis: long): void
+public "isAdvancementDone"(id: $ResourceLocation$$Type): boolean
+public "unlockAdvancement"(id: $ResourceLocation$$Type): void
+public "revokeAdvancement"(id: $ResourceLocation$$Type): void
+public "getSpawnLocation"(): $LevelBlock
+public "setSpawnLocation"(c: $LevelBlock$$Type): void
+public "heal"(): void
+public "self"(): $Player
+public "setActivePostShader"(id: $ResourceLocation$$Type): void
+public "notify"(builder: $NotificationToastData$$Type): void
+public "getStats"(): $PlayerStatsJS
+public "isMiningBlock"(): boolean
+public "setSelectedSlot"(index: integer): void
+public "setMouseItem"(item: $ItemStack$$Type): void
+public "sendData"(channel: StringJS, data: $CompoundTag$$Type): void
+public "setPositionAndRotation"(x: double, y: double, z: double, yaw: float, pitch: float): void
+public static "startTracking"(arg0: any): void
+public static "createWeakRefBasedSet"(): $ObjectOpenCustomHashSet<($WeakReference<($Trackable)>)>
+public static "clearNullReferences"(): void
+public static "getSummary"(): $Map<($Class<(never)>), ($Map<($Class<(never)>), (long)>)>
+public static "getAlternativeStack"(livingEntity: $LivingEntity$$Type, equipmentSlot: $EquipmentSlot$$Type, consumer: $Consumer$$Type<($ItemStack)>): void
+public "lithium$getCachedFeetBlockState"(): $BlockState
+/**
+ * 
+ * @deprecated
+ */
+public "serializeNBT"(arg0: $HolderLookup$Provider$$Type): $Tag
+public static "without"<T>(arg0: $ChangeSubscriber$$Type<(T)>, arg1: $ChangeSubscriber$$Type<(T)>, arg2: integer, arg3: boolean): $ChangeSubscriber<(T)>
+public static "without"<T>(arg0: $ChangeSubscriber$$Type<(T)>, arg1: $ChangeSubscriber$$Type<(T)>): $ChangeSubscriber<(T)>
+public static "combine"<T>(arg0: $ChangeSubscriber$$Type<(T)>, arg1: integer, arg2: $ChangeSubscriber$$Type<(T)>, arg3: integer): $ChangeSubscriber<(T)>
+public static "dataWithout"<T>(arg0: $ChangeSubscriber$$Type<(T)>, arg1: $ChangeSubscriber$$Type<(T)>, arg2: integer, arg3: integer, arg4: boolean): integer
+public static "dataWithout"<T>(arg0: $ChangeSubscriber$$Type<(T)>, arg1: $ChangeSubscriber$$Type<(T)>, arg2: integer): integer
+public static "dataOf"(arg0: $ChangeSubscriber$$Type<(never)>, arg1: $ChangeSubscriber$$Type<(never)>, arg2: integer): integer
+public static "containsSubscriber"(arg0: $ChangeSubscriber$$Type<($ItemStack$$Type)>, arg1: integer, arg2: $ChangeSubscriber$$Type<($ItemStack$$Type)>, arg3: integer): boolean
+public static "forNameOnly"(arg0: StringJS): $ScoreHolder
+public static "fromGameProfile"(arg0: $GameProfile$$Type): $ScoreHolder
+get "respawnPosition"(): $BlockPos
+get "changingDimension"(): boolean
+set "experiencePoints"(value: integer)
+set "experienceLevels"(value: integer)
+get "camera"(): $Entity
+set "camera"(value: $Entity$$Type)
+get "respawnAngle"(): float
+get "respawnForced"(): boolean
+get "respawnDimension"(): $ResourceKey<($Level)>
+get "ipAddress"(): StringJS
+get "chatVisibility"(): $ChatVisiblity
+get "lastActionTime"(): long
+get "tabListDisplayName"(): $Component
+get "lastSectionPos"(): $SectionPos
+set "lastSectionPos"(value: $SectionPos$$Type)
+get "chunkTrackingView"(): $ChunkTrackingView
+set "chunkTrackingView"(value: $ChunkTrackingView$$Type)
+get "tabListHeader"(): $Component
+set "tabListHeader"(value: $Component$$Type)
+get "tabListFooter"(): $Component
+set "tabListFooter"(value: $Component$$Type)
+get "textFilter"(): $TextFilter
+set "spawnExtraParticlesOnFall"(value: boolean)
+set "chatSession"(value: $RemoteChatSession$$Type)
+get "chatSession"(): $RemoteChatSession
+set "knownMovement"(value: $Vec3$$Type)
+set "raidOmenPosition"(value: $BlockPos$$Type)
+get "raidOmenPosition"(): $BlockPos
+get "containerSynchronizer"(): $ContainerSynchronizer
+get "containerCounter"(): integer
+get "language"(): StringJS
+get "spectator"(): boolean
+get "creative"(): boolean
+get "advancements"(): $PlayerAdvancements
+get "textFilteringEnabled"(): boolean
+get "wardenSpawnTracker"(): $Optional<($WardenSpawnTracker)>
+get "knownMovement"(): $Vec3
+get "statsCounter"(): $ServerStatsCounter
+get "recipeBook"(): $ServerRecipeBook
+set "creativeMode"(value: boolean)
+get "op"(): boolean
+get "spawnLocation"(): $LevelBlock
+set "spawnLocation"(value: $LevelBlock$$Type)
+set "activePostShader"(value: $ResourceLocation$$Type)
+get "stats"(): $PlayerStatsJS
+get "miningBlock"(): boolean
+set "selectedSlot"(value: integer)
+set "mouseItem"(value: $ItemStack$$Type)
+public static get "summary"(): $Map<($Class<(never)>), ($Map<($Class<(never)>), (long)>)>
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $ServerPlayer$$Type = ($ServerPlayer);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $ServerPlayer$$Original = $ServerPlayer;}
+declare module "net.minecraft.server.level.BlockDestructionProgress" {
+import {$Comparable$$Interface} from "java.lang.Comparable"
+import {$BlockDestructionProgressExtension$$Interface} from "com.simibubi.create.foundation.block.render.BlockDestructionProgressExtension"
+import {$Set, $Set$$Type} from "java.util.Set"
+import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
+
+export class $BlockDestructionProgress implements $Comparable$$Interface<($BlockDestructionProgress)>, $BlockDestructionProgressExtension$$Interface {
+constructor(arg0: integer, arg1: $BlockPos$$Type)
+
+public "updateTick"(arg0: integer): void
+public "equals"(arg0: any): boolean
+public "hashCode"(): integer
+public "compareTo"(arg0: $BlockDestructionProgress$$Type): integer
+public "compareTo"(arg0: any): integer
+public "getId"(): integer
+public "create$setExtraPositions"(arg0: $Set$$Type): void
+public "create$getExtraPositions"(): $Set
+public "getUpdatedRenderTick"(): integer
+public "getPos"(): $BlockPos
+public "getProgress"(): integer
+public "setProgress"(arg0: integer): void
+get "id"(): integer
+get "updatedRenderTick"(): integer
+get "pos"(): $BlockPos
+get "progress"(): integer
+set "progress"(value: integer)
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $BlockDestructionProgress$$Type = ($BlockDestructionProgress);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $BlockDestructionProgress$$Original = $BlockDestructionProgress;}
+declare module "net.minecraft.server.level.progress.ChunkProgressListenerFactory" {
+import {$ChunkProgressListener, $ChunkProgressListener$$Type} from "net.minecraft.server.level.progress.ChunkProgressListener"
+
+export interface $ChunkProgressListenerFactory$$Interface {
+
+(arg0: integer): $ChunkProgressListener$$Type
+}
+
+export class $ChunkProgressListenerFactory implements $ChunkProgressListenerFactory$$Interface {
+ "create"(arg0: integer): $ChunkProgressListener
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $ChunkProgressListenerFactory$$Type = ((arg0: integer) => $ChunkProgressListener$$Type);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $ChunkProgressListenerFactory$$Original = $ChunkProgressListenerFactory;}
+declare module "net.minecraft.server.level.ChunkMap$TrackedEntity" {
+import {$List$$Type} from "java.util.List"
+import {$EntityTrackerAccessor$$Interface} from "io.wispforest.accessories.mixin.EntityTrackerAccessor"
+import {$Packet$$Type} from "net.minecraft.network.protocol.Packet"
+import {$Set} from "java.util.Set"
+import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
+import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
+import {$ChunkMapAccessor$TrackedEntityAccessor$$Interface} from "com.railwayteam.railways.neoforge.mixin.ChunkMapAccessor$TrackedEntityAccessor"
+import {$ChunkMap$$Type} from "net.minecraft.server.level.ChunkMap"
+
+export class $ChunkMap$TrackedEntity implements $ChunkMapAccessor$TrackedEntityAccessor$$Interface, $EntityTrackerAccessor$$Interface {
+constructor(arg0: $ChunkMap$$Type, arg1: $Entity$$Type, arg2: integer, arg3: integer, arg4: boolean)
+
+public "broadcastRemoved"(): void
+public "updatePlayers"(arg0: $List$$Type<($ServerPlayer$$Type)>): void
+public "accessories$getSeenBy"(): $Set
+public "localvar$zla000$railways$securitycraft$modifyFlag"(arg0: boolean): boolean
+public "getSeenBy"(): $Set
+public "equals"(arg0: any): boolean
+public "hashCode"(): integer
+public "broadcastAndSend"(arg0: $Packet$$Type<(never)>): void
+public "broadcast"(arg0: $Packet$$Type<(never)>): void
+public "removePlayer"(arg0: $ServerPlayer$$Type): void
+public "updatePlayer"(arg0: $ServerPlayer$$Type): void
+get "seenBy"(): $Set
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $ChunkMap$TrackedEntity$$Type = ($ChunkMap$TrackedEntity);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $ChunkMap$TrackedEntity$$Original = $ChunkMap$TrackedEntity;}
+declare module "net.minecraft.server.level.progress.ChunkProgressListener" {
+import {$ChunkStatus$$Type} from "net.minecraft.world.level.chunk.status.ChunkStatus"
+import {$ChunkPos$$Type} from "net.minecraft.world.level.ChunkPos"
+
+export interface $ChunkProgressListener$$Interface {
+}
+
+export class $ChunkProgressListener implements $ChunkProgressListener$$Interface {
+ "start"(): void
+ "stop"(): void
+ "updateSpawnPos"(arg0: $ChunkPos$$Type): void
+ "onStatusChange"(arg0: $ChunkPos$$Type, arg1: $ChunkStatus$$Type): void
+static "calculateDiameter"(arg0: integer): integer
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $ChunkProgressListener$$Type = ($ChunkProgressListener);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $ChunkProgressListener$$Original = $ChunkProgressListener;}
+declare module "net.minecraft.server.level.ServerBossEvent" {
+import {$BossEvent$BossBarColor$$Type} from "net.minecraft.world.BossEvent$BossBarColor"
+import {$Collection} from "java.util.Collection"
+import {$BossEvent} from "net.minecraft.world.BossEvent"
+import {$Component$$Type} from "net.minecraft.network.chat.Component"
+import {$ServerPlayer, $ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
+import {$BossEvent$BossBarOverlay$$Type} from "net.minecraft.world.BossEvent$BossBarOverlay"
+
+export class $ServerBossEvent extends $BossEvent {
+constructor(arg0: $Component$$Type, arg1: $BossEvent$BossBarColor$$Type, arg2: $BossEvent$BossBarOverlay$$Type)
+
+public "removeAllPlayers"(): void
+public "getPlayers"(): $Collection<($ServerPlayer)>
+public "setDarkenScreen"(arg0: boolean): $BossEvent
+public "setCreateWorldFog"(arg0: boolean): $BossEvent
+public "setColor"(arg0: $BossEvent$BossBarColor$$Type): void
+public "setName"(arg0: $Component$$Type): void
+public "setVisible"(arg0: boolean): void
+public "setOverlay"(arg0: $BossEvent$BossBarOverlay$$Type): void
+public "isVisible"(): boolean
+public "addPlayer"(arg0: $ServerPlayer$$Type): void
+public "removePlayer"(arg0: $ServerPlayer$$Type): void
+public "setProgress"(arg0: float): void
+public "setPlayBossMusic"(arg0: boolean): $BossEvent
+get "players"(): $Collection<($ServerPlayer)>
+set "darkenScreen"(value: boolean)
+set "createWorldFog"(value: boolean)
+set "color"(value: $BossEvent$BossBarColor$$Type)
+set "name"(value: $Component$$Type)
+set "visible"(value: boolean)
+set "overlay"(value: $BossEvent$BossBarOverlay$$Type)
+get "visible"(): boolean
+set "progress"(value: float)
+set "playBossMusic"(value: boolean)
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $ServerBossEvent$$Type = ($ServerBossEvent);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $ServerBossEvent$$Original = $ServerBossEvent;}
+declare module "net.minecraft.server.level.ChunkTaskPriorityQueueSorter$Message" {
+export {} // Mark the file as a module, do not remove unless there are other import/exports!
+export class $ChunkTaskPriorityQueueSorter$Message<T> {
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $ChunkTaskPriorityQueueSorter$Message$$Type<T> = ($ChunkTaskPriorityQueueSorter$Message<(T)>);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $ChunkTaskPriorityQueueSorter$Message$$Original<T> = $ChunkTaskPriorityQueueSorter$Message<(T)>;}
+declare module "net.minecraft.server.level.ChunkGenerationTask" {
+import {$CompletableFuture} from "java.util.concurrent.CompletableFuture"
+import {$GeneratingChunkMap$$Type} from "net.minecraft.server.level.GeneratingChunkMap"
+import {$ChunkStatus, $ChunkStatus$$Type} from "net.minecraft.world.level.chunk.status.ChunkStatus"
+import {$ChunkPos$$Type} from "net.minecraft.world.level.ChunkPos"
+import {$GenerationChunkHolder} from "net.minecraft.server.level.GenerationChunkHolder"
+
+export class $ChunkGenerationTask {
+readonly "targetStatus": $ChunkStatus
+
+public "markForCancellation"(): void
+public "runUntilWait"(): $CompletableFuture<(never)>
+public static "create"(arg0: $GeneratingChunkMap$$Type, arg1: $ChunkStatus$$Type, arg2: $ChunkPos$$Type): $ChunkGenerationTask
+public "getCenter"(): $GenerationChunkHolder
+get "center"(): $GenerationChunkHolder
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $ChunkGenerationTask$$Type = ($ChunkGenerationTask);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $ChunkGenerationTask$$Original = $ChunkGenerationTask;}
+declare module "net.minecraft.server.level.TicketType" {
+import {$Comparator, $Comparator$$Type} from "java.util.Comparator"
+import {$BlockPos} from "net.minecraft.core.BlockPos"
+import {$ChunkPos} from "net.minecraft.world.level.ChunkPos"
+import {$Unit} from "net.minecraft.util.Unit"
+
+export class $TicketType<T> {
+static readonly "PLAYER": $TicketType<($ChunkPos)>
+static readonly "POST_TELEPORT": $TicketType<(integer)>
+static readonly "DRAGON": $TicketType<($Unit)>
+static readonly "START": $TicketType<($Unit)>
+static readonly "FORCED": $TicketType<($ChunkPos)>
+static readonly "UNKNOWN": $TicketType<($ChunkPos)>
+static readonly "PORTAL": $TicketType<($BlockPos)>
+
+public "getComparator"(): $Comparator<(T)>
+public "toString"(): StringJS
+public static "create"<T>(arg0: StringJS, arg1: $Comparator$$Type<(T)>, arg2: integer): $TicketType<(T)>
+public static "create"<T>(arg0: StringJS, arg1: $Comparator$$Type<(T)>): $TicketType<(T)>
+public "timeout"(): long
+get "comparator"(): $Comparator<(T)>
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $TicketType$$Type<T> = ($TicketType<(T)>);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $TicketType$$Original<T> = $TicketType<(T)>;}
+declare module "net.minecraft.server.level.DistanceManager" {
+import {$SectionPos$$Type} from "net.minecraft.core.SectionPos"
+import {$TicketType$$Type} from "net.minecraft.server.level.TicketType"
+import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
+import {$ChunkPos$$Type} from "net.minecraft.world.level.ChunkPos"
+import {$ChunkMap$$Type} from "net.minecraft.server.level.ChunkMap"
+
+export class $DistanceManager {
+public "hasPlayersNearby"(arg0: long): boolean
+public "inBlockTickingRange"(arg0: long): boolean
+public "removeRegionTicket"<T>(arg0: $TicketType$$Type<(T)>, arg1: $ChunkPos$$Type, arg2: integer, arg3: T): void
+public "removeRegionTicket"<T>(arg0: $TicketType$$Type<(T)>, arg1: $ChunkPos$$Type, arg2: integer, arg3: T, arg4: boolean): void
+public "getNaturalSpawnChunkCount"(): integer
+public "getDebugStatus"(): StringJS
+public "inEntityTickingRange"(arg0: long): boolean
+public "updateSimulationDistance"(arg0: integer): void
+public "shouldForceTicks"(arg0: long): boolean
+public "removeTicket"<T>(arg0: $TicketType$$Type<(T)>, arg1: $ChunkPos$$Type, arg2: integer, arg3: T): void
+public "removeTicketsOnClosing"(): void
+public "addTicket"<T>(arg0: $TicketType$$Type<(T)>, arg1: $ChunkPos$$Type, arg2: integer, arg3: T): void
+public "hasTickets"(): boolean
+public "runAllUpdates"(arg0: $ChunkMap$$Type): boolean
+public "addRegionTicket"<T>(arg0: $TicketType$$Type<(T)>, arg1: $ChunkPos$$Type, arg2: integer, arg3: T): void
+public "addRegionTicket"<T>(arg0: $TicketType$$Type<(T)>, arg1: $ChunkPos$$Type, arg2: integer, arg3: T, arg4: boolean): void
+public "addPlayer"(arg0: $SectionPos$$Type, arg1: $ServerPlayer$$Type): void
+public "removePlayer"(arg0: $SectionPos$$Type, arg1: $ServerPlayer$$Type): void
+get "naturalSpawnChunkCount"(): integer
+get "debugStatus"(): StringJS
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $DistanceManager$$Type = ($DistanceManager);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $DistanceManager$$Original = $DistanceManager;}
+declare module "net.minecraft.server.level.ServerPlayer$RespawnPosAngle" {
+import {$Vec3, $Vec3$$Type} from "net.minecraft.world.phys.Vec3"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$Record} from "java.lang.Record"
+
+export class $ServerPlayer$RespawnPosAngle extends $Record {
+constructor(position: $Vec3$$Type, yaw: float)
+
+public "equals"(arg0: any): boolean
+public "toString"(): StringJS
+public "hashCode"(): integer
+public "position"(): $Vec3
+public static "of"(arg0: $Vec3$$Type, arg1: $BlockPos$$Type): $ServerPlayer$RespawnPosAngle
+public "yaw"(): float
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $ServerPlayer$RespawnPosAngle$$Type = ({"yaw"?: float, "position"?: $Vec3$$Type}) | ([yaw?: float, position?: $Vec3$$Type]);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $ServerPlayer$RespawnPosAngle$$Original = $ServerPlayer$RespawnPosAngle;}
+declare module "net.minecraft.server.level.GenerationChunkHolder" {
+import {$ChunkResult} from "net.minecraft.server.level.ChunkResult"
+import {$Pair} from "com.mojang.datafixers.util.Pair"
+import {$List} from "java.util.List"
+import {$ImposterProtoChunk$$Type} from "net.minecraft.world.level.chunk.ImposterProtoChunk"
+import {$ChunkAccess} from "net.minecraft.world.level.chunk.ChunkAccess"
+import {$AtomicReferenceArray} from "java.util.concurrent.atomic.AtomicReferenceArray"
+import {$ChunkStatus, $ChunkStatus$$Type} from "net.minecraft.world.level.chunk.status.ChunkStatus"
+import {$ChunkPos, $ChunkPos$$Type} from "net.minecraft.world.level.ChunkPos"
+import {$FullChunkStatus} from "net.minecraft.server.level.FullChunkStatus"
+import {$ChunkMap$$Type} from "net.minecraft.server.level.ChunkMap"
+import {$CompletableFuture} from "java.util.concurrent.CompletableFuture"
+import {$GenerationChunkHolderAccessor$$Interface} from "net.caffeinemc.mods.lithium.mixin.world.chunk_access.GenerationChunkHolderAccessor"
+import {$LevelChunk} from "net.minecraft.world.level.chunk.LevelChunk"
+
+export class $GenerationChunkHolder implements $GenerationChunkHolderAccessor$$Interface {
+ "currentlyLoading": $LevelChunk
+static readonly "UNLOADED_CHUNK": $ChunkResult<($ChunkAccess)>
+static readonly "UNLOADED_CHUNK_FUTURE": $CompletableFuture<($ChunkResult<($ChunkAccess)>)>
+
+constructor(arg0: $ChunkPos$$Type)
+
+public "getLatestStatus"(): $ChunkStatus
+public "replaceProtoChunk"(arg0: $ImposterProtoChunk$$Type): void
+public "getGenerationRefCount"(): integer
+public "increaseGenerationRefCount"(): void
+public "decreaseGenerationRefCount"(): void
+public "getAllFutures"(): $List<($Pair<($ChunkStatus), ($CompletableFuture<($ChunkResult<($ChunkAccess)>)>)>)>
+public "getQueueLevel"(): integer
+public "getLatestChunk"(): $ChunkAccess
+public "getPersistedStatus"(): $ChunkStatus
+public "getChunkIfPresent"(arg0: $ChunkStatus$$Type): $ChunkAccess
+public "getTicketLevel"(): integer
+public "getChunkIfPresentUnchecked"(arg0: $ChunkStatus$$Type): $ChunkAccess
+public "scheduleChunkGenerationTask"(arg0: $ChunkStatus$$Type, arg1: $ChunkMap$$Type): $CompletableFuture<($ChunkResult<($ChunkAccess)>)>
+public "invokeCannotBeLoaded"(arg0: $ChunkStatus$$Type): boolean
+public "lithium$getChunkFuturesByStatus"(): $AtomicReferenceArray
+public "getPos"(): $ChunkPos
+public "getFullStatus"(): $FullChunkStatus
+get "latestStatus"(): $ChunkStatus
+get "generationRefCount"(): integer
+get "allFutures"(): $List<($Pair<($ChunkStatus), ($CompletableFuture<($ChunkResult<($ChunkAccess)>)>)>)>
+get "queueLevel"(): integer
+get "latestChunk"(): $ChunkAccess
+get "persistedStatus"(): $ChunkStatus
+get "ticketLevel"(): integer
+get "pos"(): $ChunkPos
+get "fullStatus"(): $FullChunkStatus
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $GenerationChunkHolder$$Type = ($GenerationChunkHolder);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $GenerationChunkHolder$$Original = $GenerationChunkHolder;}
+declare module "net.minecraft.server.level.GeneratingChunkMap" {
+import {$ChunkStep$$Type} from "net.minecraft.world.level.chunk.status.ChunkStep"
+import {$CompletableFuture} from "java.util.concurrent.CompletableFuture"
+import {$ChunkAccess} from "net.minecraft.world.level.chunk.ChunkAccess"
+import {$ChunkGenerationTask} from "net.minecraft.server.level.ChunkGenerationTask"
+import {$StaticCache2D$$Type} from "net.minecraft.util.StaticCache2D"
+import {$ChunkStatus$$Type} from "net.minecraft.world.level.chunk.status.ChunkStatus"
+import {$ChunkPos$$Type} from "net.minecraft.world.level.ChunkPos"
+import {$GenerationChunkHolder, $GenerationChunkHolder$$Type} from "net.minecraft.server.level.GenerationChunkHolder"
+
+export interface $GeneratingChunkMap$$Interface {
+}
+
+export class $GeneratingChunkMap implements $GeneratingChunkMap$$Interface {
+ "acquireGeneration"(arg0: long): $GenerationChunkHolder
+ "releaseGeneration"(arg0: $GenerationChunkHolder$$Type): void
+ "applyStep"(arg0: $GenerationChunkHolder$$Type, arg1: $ChunkStep$$Type, arg2: $StaticCache2D$$Type<($GenerationChunkHolder$$Type)>): $CompletableFuture<($ChunkAccess)>
+ "scheduleGenerationTask"(arg0: $ChunkStatus$$Type, arg1: $ChunkPos$$Type): $ChunkGenerationTask
+ "runGenerationTasks"(): void
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $GeneratingChunkMap$$Type = ($GeneratingChunkMap);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $GeneratingChunkMap$$Original = $GeneratingChunkMap;}
+declare module "net.minecraft.server.level.ServerEntity" {
+import {$Vec3} from "net.minecraft.world.phys.Vec3"
+import {$Packet$$Type} from "net.minecraft.network.protocol.Packet"
+import {$PacketAndPayloadAcceptor$$Type} from "net.neoforged.neoforge.network.bundle.PacketAndPayloadAcceptor"
+import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
+import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
+import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
+import {$ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$Consumer$$Type} from "java.util.function.Consumer"
+
+export class $ServerEntity {
+static readonly "FORCED_POS_UPDATE_PERIOD": integer
+
+constructor(arg0: $ServerLevel$$Type, arg1: $Entity$$Type, arg2: integer, arg3: boolean, arg4: $Consumer$$Type<($Packet<(never)>)>)
+
+public "getPositionBase"(): $Vec3
+public "getLastSentXRot"(): float
+public "getLastSentYRot"(): float
+public "getLastSentMovement"(): $Vec3
+public "sendChanges"(): void
+public "removePairing"(arg0: $ServerPlayer$$Type): void
+public "addPairing"(arg0: $ServerPlayer$$Type): void
+public "getLastSentYHeadRot"(): float
+public "sendPairingData"(arg0: $ServerPlayer$$Type, arg1: $PacketAndPayloadAcceptor$$Type<($ClientGamePacketListener$$Type)>): void
+get "positionBase"(): $Vec3
+get "lastSentXRot"(): float
+get "lastSentYRot"(): float
+get "lastSentMovement"(): $Vec3
+get "lastSentYHeadRot"(): float
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $ServerEntity$$Type = ($ServerEntity);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $ServerEntity$$Original = $ServerEntity;}
+declare module "net.minecraft.server.level.ColumnPos" {
+import {$ChunkPos} from "net.minecraft.world.level.ChunkPos"
+import {$Record} from "java.lang.Record"
+
+export class $ColumnPos extends $Record {
+constructor(arg0: integer, arg1: integer)
+
+public "toChunkPos"(): $ChunkPos
+public "toLong"(): long
+public "equals"(arg0: any): boolean
+public "toString"(): StringJS
+public "hashCode"(): integer
+public "x"(): integer
+public "z"(): integer
+public static "getX"(arg0: long): integer
+public static "getZ"(arg0: long): integer
+public static "asLong"(arg0: integer, arg1: integer): long
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $ColumnPos$$Type = ({"x"?: integer, "z"?: integer}) | ([x?: integer, z?: integer]);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $ColumnPos$$Original = $ColumnPos;}
+declare module "net.minecraft.server.level.ChunkMap" {
+import {$Iterable} from "java.lang.Iterable"
+import {$DimensionDataStorage$$Type} from "net.minecraft.world.level.storage.DimensionDataStorage"
+import {$IllegalStateException$$Type} from "java.lang.IllegalStateException"
+import {$LevelStorageSource$LevelStorageAccess$$Type} from "net.minecraft.world.level.storage.LevelStorageSource$LevelStorageAccess"
+import {$ChunkStep$$Type} from "net.minecraft.world.level.chunk.status.ChunkStep"
+import {$ChunkResult} from "net.minecraft.server.level.ChunkResult"
+import {$List, $List$$Type} from "java.util.List"
+import {$Long2ObjectLinkedOpenHashMap} from "it.unimi.dsi.fastutil.longs.Long2ObjectLinkedOpenHashMap"
+import {$ServerChunkLoadingManagerAccessor$$Interface} from "io.wispforest.accessories.mixin.ServerChunkLoadingManagerAccessor"
+import {$ChunkMapAccessor$$Interface as $ChunkMapAccessor$0$$Interface} from "com.railwayteam.railways.neoforge.mixin.ChunkMapAccessor"
+import {$ChunkAccess, $ChunkAccess$$Type} from "net.minecraft.world.level.chunk.ChunkAccess"
+import {$LightChunkGetter$$Type} from "net.minecraft.world.level.chunk.LightChunkGetter"
+import {$Runnable, $Runnable$$Type} from "java.lang.Runnable"
+import {$StructureTemplateManager$$Type} from "net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplateManager"
+import {$DataFixer$$Type} from "com.mojang.datafixers.DataFixer"
+import {$ChunkMap$TrackedEntity} from "net.minecraft.server.level.ChunkMap$TrackedEntity"
+import {$ChunkTaskPriorityQueueSorter$Message$$Type} from "net.minecraft.server.level.ChunkTaskPriorityQueueSorter$Message"
+import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Executor$$Type} from "java.util.concurrent.Executor"
+import {$ChunkStorage} from "net.minecraft.world.level.chunk.storage.ChunkStorage"
+import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
+import {$AccessorMixinChunkMap$$Interface} from "noobanidus.mods.lootr.common.mixin.accessor.AccessorMixinChunkMap"
+import {$StaticCache2D$$Type} from "net.minecraft.util.StaticCache2D"
+import {$ChunkGenerationTask} from "net.minecraft.server.level.ChunkGenerationTask"
+import {$ChunkStatus$$Type} from "net.minecraft.world.level.chunk.status.ChunkStatus"
+import {$ChunkPos$$Type} from "net.minecraft.world.level.ChunkPos"
+import {$IntSupplier} from "java.util.function.IntSupplier"
+import {$DistanceManager} from "net.minecraft.server.level.DistanceManager"
+import {$ChunkHolder, $ChunkHolder$$Type} from "net.minecraft.server.level.ChunkHolder"
+import {$CompletableFuture} from "java.util.concurrent.CompletableFuture"
+import {$ChunkGenerator$$Type} from "net.minecraft.world.level.chunk.ChunkGenerator"
+import {$BlockableEventLoop, $BlockableEventLoop$$Type} from "net.minecraft.util.thread.BlockableEventLoop"
+import {$GeneratingChunkMap$$Interface} from "net.minecraft.server.level.GeneratingChunkMap"
+import {$ChunkStatusUpdateListener$$Type} from "net.minecraft.world.level.entity.ChunkStatusUpdateListener"
+import {$LevelChunk} from "net.minecraft.world.level.chunk.LevelChunk"
+import {$ChunkHolder$PlayerProvider$$Interface} from "net.minecraft.server.level.ChunkHolder$PlayerProvider"
+import {$ChunkMapAccessor$$Interface} from "journeymap.common.mixin.server.ChunkMapAccessor"
+import {$Packet$$Type} from "net.minecraft.network.protocol.Packet"
+import {$ReportedException} from "net.minecraft.ReportedException"
+import {$ServerLevel, $ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
+import {$ServerPlayer, $ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
+import {$ChunkProgressListener$$Type} from "net.minecraft.server.level.progress.ChunkProgressListener"
+import {$Int2ObjectMap} from "it.unimi.dsi.fastutil.ints.Int2ObjectMap"
+import {$GenerationChunkHolder, $GenerationChunkHolder$$Type} from "net.minecraft.server.level.GenerationChunkHolder"
+
+export class $ChunkMap extends $ChunkStorage implements $ChunkHolder$PlayerProvider$$Interface, $GeneratingChunkMap$$Interface, $ChunkMapAccessor$0$$Interface, $ServerChunkLoadingManagerAccessor$$Interface, $ChunkMapAccessor$$Interface, $AccessorMixinChunkMap$$Interface {
+readonly "entityMap": $Int2ObjectMap<($ChunkMap$TrackedEntity)>
+readonly "level": $ServerLevel
+readonly "updatingChunkMap": $Long2ObjectLinkedOpenHashMap<($ChunkHolder)>
+static readonly "MIN_VIEW_DISTANCE": integer
+ "visibleChunkMap": $Long2ObjectLinkedOpenHashMap<($ChunkHolder)>
+static readonly "MAX_VIEW_DISTANCE": integer
+static readonly "FORCED_TICKET_LEVEL": integer
+readonly "mainThreadExecutor": $BlockableEventLoop<($Runnable)>
+static readonly "LAST_MONOLYTH_STRUCTURE_DATA_VERSION": integer
+readonly "pendingUnloads": $Long2ObjectLinkedOpenHashMap<($ChunkHolder)>
+
+constructor(arg0: $ServerLevel$$Type, arg1: $LevelStorageSource$LevelStorageAccess$$Type, arg2: $DataFixer$$Type, arg3: $StructureTemplateManager$$Type, arg4: $Executor$$Type, arg5: $BlockableEventLoop$$Type<($Runnable$$Type)>, arg6: $LightChunkGetter$$Type, arg7: $ChunkGenerator$$Type, arg8: $ChunkProgressListener$$Type, arg9: $ChunkStatusUpdateListener$$Type, arg10: $Supplier$$Type<($DimensionDataStorage$$Type)>, arg11: integer, arg12: boolean)
+
+public "getUpdatingChunkIfPresent"(arg0: long): $ChunkHolder
+public "getChunkQueueLevel"(arg0: long): $IntSupplier
+public "debugFuturesAndCreateReportedException"(arg0: $IllegalStateException$$Type, arg1: StringJS): $ReportedException
+public "prepareEntityTickingChunk"(arg0: $ChunkHolder$$Type): $CompletableFuture<($ChunkResult<($LevelChunk)>)>
+public "acquireGeneration"(arg0: long): $GenerationChunkHolder
+public "releaseGeneration"(arg0: $GenerationChunkHolder$$Type): void
+public "applyStep"(arg0: $GenerationChunkHolder$$Type, arg1: $ChunkStep$$Type, arg2: $StaticCache2D$$Type<($GenerationChunkHolder$$Type)>): $CompletableFuture<($ChunkAccess)>
+public "scheduleGenerationTask"(arg0: $ChunkStatus$$Type, arg1: $ChunkPos$$Type): $ChunkGenerationTask
+public "prepareTickingChunk"(arg0: $ChunkHolder$$Type): $CompletableFuture<($ChunkResult<($LevelChunk)>)>
+public "prepareAccessibleChunk"(arg0: $ChunkHolder$$Type): $CompletableFuture<($ChunkResult<($LevelChunk)>)>
+public "getChunkToSend"(arg0: long): $LevelChunk
+public "getPlayersCloseForSpawning"(arg0: $ChunkPos$$Type): $List<($ServerPlayer)>
+public "resendBiomesForChunks"(arg0: $List$$Type<($ChunkAccess$$Type)>): void
+public "waitForLightBeforeSending"(arg0: $ChunkPos$$Type, arg1: integer): void
+public "scheduleOnMainThreadMailbox"(arg0: $ChunkTaskPriorityQueueSorter$Message$$Type<($Runnable$$Type)>): void
+public "getEntityMap"(): $Int2ObjectMap
+public "lootr$getChunks"(): $Iterable
+public "getDistanceManager"(): $DistanceManager
+public "getPlayers"(arg0: $ChunkPos$$Type, arg1: boolean): $List<($ServerPlayer)>
+public "getVisibleChunkIfPresent"(arg0: long): $ChunkHolder
+public "runGenerationTasks"(): void
+public "getChunkDebugData"(arg0: $ChunkPos$$Type): StringJS
+public "getPlayersWatching"(arg0: $Entity$$Type): $List<($ServerPlayer)>
+public "getTickingGenerated"(): integer
+public "getStorageName"(): StringJS
+public "move"(arg0: $ServerPlayer$$Type): void
+public "getChunks"(): $Iterable<($ChunkHolder)>
+public "accessories$getEntityMap"(): $Int2ObjectMap
+public "invokeGetChunks"(): $Iterable
+public "size"(): integer
+public "close"(): void
+public "hasWork"(): boolean
+public "broadcast"(arg0: $Entity$$Type, arg1: $Packet$$Type<(never)>): void
+get "distanceManager"(): $DistanceManager
+get "tickingGenerated"(): integer
+get "storageName"(): StringJS
+get "chunks"(): $Iterable<($ChunkHolder)>
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $ChunkMap$$Type = ($ChunkMap);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $ChunkMap$$Original = $ChunkMap;}
+declare module "net.minecraft.server.level.ChunkHolder$LevelChangeListener" {
+import {$IntConsumer, $IntConsumer$$Type} from "java.util.function.IntConsumer"
+import {$ChunkPos, $ChunkPos$$Type} from "net.minecraft.world.level.ChunkPos"
+import {$IntSupplier, $IntSupplier$$Type} from "java.util.function.IntSupplier"
+
+export interface $ChunkHolder$LevelChangeListener$$Interface {
+
+(arg0: $ChunkPos, arg1: $IntSupplier, arg2: integer, arg3: $IntConsumer): void
+}
+
+export class $ChunkHolder$LevelChangeListener implements $ChunkHolder$LevelChangeListener$$Interface {
+ "onLevelChange"(arg0: $ChunkPos$$Type, arg1: $IntSupplier$$Type, arg2: integer, arg3: $IntConsumer$$Type): void
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $ChunkHolder$LevelChangeListener$$Type = ((arg0: $ChunkPos, arg1: $IntSupplier, arg2: integer, arg3: $IntConsumer) => void);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $ChunkHolder$LevelChangeListener$$Original = $ChunkHolder$LevelChangeListener;}
+declare module "net.minecraft.server.level.ChunkHolder$PlayerProvider" {
+import {$List, $List$$Type} from "java.util.List"
+import {$ServerPlayer, $ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
+import {$ChunkPos, $ChunkPos$$Type} from "net.minecraft.world.level.ChunkPos"
+
+export interface $ChunkHolder$PlayerProvider$$Interface {
+
+(arg0: $ChunkPos, arg1: boolean): $List$$Type<($ServerPlayer$$Type)>
+}
+
+export class $ChunkHolder$PlayerProvider implements $ChunkHolder$PlayerProvider$$Interface {
+ "getPlayers"(arg0: $ChunkPos$$Type, arg1: boolean): $List<($ServerPlayer)>
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $ChunkHolder$PlayerProvider$$Type = ((arg0: $ChunkPos, arg1: boolean) => $List$$Type<($ServerPlayer$$Type)>);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $ChunkHolder$PlayerProvider$$Original = $ChunkHolder$PlayerProvider;}
+declare module "net.minecraft.server.level.ServerChunkCache" {
+import {$ChunkGeneratorStructureState} from "net.minecraft.world.level.chunk.ChunkGeneratorStructureState"
+import {$DimensionDataStorage, $DimensionDataStorage$$Type} from "net.minecraft.world.level.storage.DimensionDataStorage"
+import {$LevelLightEngine} from "net.minecraft.world.level.lighting.LevelLightEngine"
+import {$LevelStorageSource$LevelStorageAccess$$Type} from "net.minecraft.world.level.storage.LevelStorageSource$LevelStorageAccess"
+import {$ChunkResult} from "net.minecraft.server.level.ChunkResult"
+import {$TicketType$$Type} from "net.minecraft.server.level.TicketType"
+import {$ServerChunkCacheAccessor$$Interface} from "journeymap.common.mixin.server.ServerChunkCacheAccessor"
+import {$ChunkSource} from "net.minecraft.world.level.chunk.ChunkSource"
+import {$ChunkAccess} from "net.minecraft.world.level.chunk.ChunkAccess"
+import {$StructureTemplateManager$$Type} from "net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplateManager"
+import {$ChunkMap} from "net.minecraft.server.level.ChunkMap"
+import {$DataFixer$$Type} from "com.mojang.datafixers.DataFixer"
+import {$ChunkScanAccess} from "net.minecraft.world.level.chunk.storage.ChunkScanAccess"
+import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Executor$$Type} from "java.util.concurrent.Executor"
+import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$LightLayer$$Type} from "net.minecraft.world.level.LightLayer"
+import {$NaturalSpawner$SpawnState} from "net.minecraft.world.level.NaturalSpawner$SpawnState"
+import {$RandomState} from "net.minecraft.world.level.levelgen.RandomState"
+import {$Thread} from "java.lang.Thread"
+import {$BooleanSupplier$$Type} from "java.util.function.BooleanSupplier"
+import {$CustomPacketPayload$$Type} from "net.minecraft.network.protocol.common.custom.CustomPacketPayload"
+import {$ChunkStatus$$Type} from "net.minecraft.world.level.chunk.status.ChunkStatus"
+import {$ChunkPos$$Type} from "net.minecraft.world.level.ChunkPos"
+import {$LightChunk} from "net.minecraft.world.level.chunk.LightChunk"
+import {$BlockGetter} from "net.minecraft.world.level.BlockGetter"
+import {$CompletableFuture} from "java.util.concurrent.CompletableFuture"
+import {$ChunkGenerator, $ChunkGenerator$$Type} from "net.minecraft.world.level.chunk.ChunkGenerator"
+import {$SectionPos$$Type} from "net.minecraft.core.SectionPos"
+import {$ChunkStatusUpdateListener$$Type} from "net.minecraft.world.level.entity.ChunkStatusUpdateListener"
+import {$LevelChunk} from "net.minecraft.world.level.chunk.LevelChunk"
+import {$Packet$$Type} from "net.minecraft.network.protocol.Packet"
+import {$ServerLevel, $ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
+import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
+import {$ChunkProgressListener$$Type} from "net.minecraft.server.level.progress.ChunkProgressListener"
+import {$IServerChunkCacheExtension$$Interface} from "net.neoforged.neoforge.common.extensions.IServerChunkCacheExtension"
+import {$PoiManager} from "net.minecraft.world.entity.ai.village.poi.PoiManager"
+
+export class $ServerChunkCache extends $ChunkSource implements $IServerChunkCacheExtension$$Interface, $ServerChunkCacheAccessor$$Interface {
+readonly "mainThread": $Thread
+readonly "level": $ServerLevel
+readonly "chunkMap": $ChunkMap
+
+constructor(arg0: $ServerLevel$$Type, arg1: $LevelStorageSource$LevelStorageAccess$$Type, arg2: $DataFixer$$Type, arg3: $StructureTemplateManager$$Type, arg4: $Executor$$Type, arg5: $ChunkGenerator$$Type, arg6: integer, arg7: integer, arg8: boolean, arg9: $ChunkProgressListener$$Type, arg10: $ChunkStatusUpdateListener$$Type, arg11: $Supplier$$Type<($DimensionDataStorage$$Type)>)
+
+public "setViewDistance"(arg0: integer): void
+public "setSimulationDistance"(arg0: integer): void
+public "getChunkFuture"(arg0: integer, arg1: integer, arg2: $ChunkStatus$$Type, arg3: boolean): $CompletableFuture<($ChunkResult<($ChunkAccess)>)>
+public "getGeneratorState"(): $ChunkGeneratorStructureState
+public "getDataStorage"(): $DimensionDataStorage
+public "chunkScanner"(): $ChunkScanAccess
+public "randomState"(): $RandomState
+public "getPoiManager"(): $PoiManager
+public "removeRegionTicket"<T>(arg0: $TicketType$$Type<(T)>, arg1: $ChunkPos$$Type, arg2: integer, arg3: T, arg4: boolean): void
+public "removeRegionTicket"<T>(arg0: $TicketType$$Type<(T)>, arg1: $ChunkPos$$Type, arg2: integer, arg3: T): void
+public "updateChunkForced"(arg0: $ChunkPos$$Type, arg1: boolean): void
+public "getLastSpawnState"(): $NaturalSpawner$SpawnState
+public "isPositionTicking"(arg0: long): boolean
+public "getLoadedChunksCount"(): integer
+public "getChunkDebugData"(arg0: $ChunkPos$$Type): StringJS
+public "getChunkMap"(): $ChunkMap
+public "getTickingGenerated"(): integer
+public "removeTicketsOnClosing"(): void
+public "getGenerator"(): $ChunkGenerator
+public "move"(arg0: $ServerPlayer$$Type): void
+public "pollTask"(): boolean
+public "tick"(arg0: $BooleanSupplier$$Type, arg1: boolean): void
+public "getLevel"(): $BlockGetter
+public "close"(): void
+public "save"(arg0: boolean): void
+public "getPendingTasksCount"(): integer
+public "broadcastAndSend"(arg0: $Entity$$Type, arg1: $Packet$$Type<(never)>): void
+public "broadcast"(arg0: $Entity$$Type, arg1: $Packet$$Type<(never)>): void
+public "addRegionTicket"<T>(arg0: $TicketType$$Type<(T)>, arg1: $ChunkPos$$Type, arg2: integer, arg3: T, arg4: boolean): void
+public "addRegionTicket"<T>(arg0: $TicketType$$Type<(T)>, arg1: $ChunkPos$$Type, arg2: integer, arg3: T): void
+public "getChunk"(arg0: integer, arg1: integer, arg2: $ChunkStatus$$Type, arg3: boolean): $ChunkAccess
+public "getChunkNow"(arg0: integer, arg1: integer): $LevelChunk
+public "hasChunk"(arg0: integer, arg1: integer): boolean
+public "getLightEngine"(): $LevelLightEngine
+public "setSpawnSettings"(arg0: boolean, arg1: boolean): void
+public "gatherStats"(): StringJS
+public "onLightUpdate"(arg0: $LightLayer$$Type, arg1: $SectionPos$$Type): void
+public "getChunkForLighting"(arg0: integer, arg1: integer): $LightChunk
+public "addEntity"(arg0: $Entity$$Type): void
+public "removeEntity"(arg0: $Entity$$Type): void
+public "blockChanged"(arg0: $BlockPos$$Type): void
+public "self"(): $ServerChunkCache
+public "broadcastAndSend"(arg0: $Entity$$Type, arg1: $CustomPacketPayload$$Type): void
+public "broadcast"(arg0: $Entity$$Type, arg1: $CustomPacketPayload$$Type): void
+set "viewDistance"(value: integer)
+set "simulationDistance"(value: integer)
+get "generatorState"(): $ChunkGeneratorStructureState
+get "dataStorage"(): $DimensionDataStorage
+get "poiManager"(): $PoiManager
+get "lastSpawnState"(): $NaturalSpawner$SpawnState
+get "loadedChunksCount"(): integer
+get "tickingGenerated"(): integer
+get "generator"(): $ChunkGenerator
+get "pendingTasksCount"(): integer
+get "lightEngine"(): $LevelLightEngine
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $ServerChunkCache$$Type = ($ServerChunkCache);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $ServerChunkCache$$Original = $ServerChunkCache;}
+declare module "net.minecraft.server.level.ThreadedLevelLightEngine" {
+import {$LevelLightEngine} from "net.minecraft.world.level.lighting.LevelLightEngine"
+import {$LightLayer$$Type} from "net.minecraft.world.level.LightLayer"
+import {$LightEngine} from "net.minecraft.world.level.lighting.LightEngine"
+import {$AutoCloseable$$Interface} from "java.lang.AutoCloseable"
+import {$ProcessorMailbox$$Type} from "net.minecraft.util.thread.ProcessorMailbox"
+import {$ChunkAccess$$Type} from "net.minecraft.world.level.chunk.ChunkAccess"
+import {$Runnable$$Type} from "java.lang.Runnable"
+import {$LightChunkGetter$$Type} from "net.minecraft.world.level.chunk.LightChunkGetter"
+import {$ProcessorHandle$$Type} from "net.minecraft.util.thread.ProcessorHandle"
+import {$ChunkPos$$Type} from "net.minecraft.world.level.ChunkPos"
+import {$ChunkMap$$Type} from "net.minecraft.server.level.ChunkMap"
+import {$StarLightInterface} from "ca.spottedleaf.starlight.common.light.StarLightInterface"
+import {$ChunkTaskPriorityQueueSorter$Message$$Type} from "net.minecraft.server.level.ChunkTaskPriorityQueueSorter$Message"
+import {$CompletableFuture} from "java.util.concurrent.CompletableFuture"
+import {$SectionPos$$Type} from "net.minecraft.core.SectionPos"
+import {$LevelChunk$$Type} from "net.minecraft.world.level.chunk.LevelChunk"
+import {$StarLightLightingProvider$$Interface} from "ca.spottedleaf.starlight.common.light.StarLightLightingProvider"
+import {$DataLayer$$Type} from "net.minecraft.world.level.chunk.DataLayer"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+
+export class $ThreadedLevelLightEngine extends $LevelLightEngine implements $AutoCloseable$$Interface, $StarLightLightingProvider$$Interface {
+static readonly "DEFAULT_BATCH_SIZE": integer
+static readonly "LIGHT_SECTION_PADDING": integer
+ "skyEngine": $LightEngine<(never), (never)>
+ "blockEngine": $LightEngine<(never), (never)>
+
+constructor(arg0: $LightChunkGetter$$Type, arg1: $ChunkMap$$Type, arg2: boolean, arg3: $ProcessorMailbox$$Type<($Runnable$$Type)>, arg4: $ProcessorHandle$$Type<($ChunkTaskPriorityQueueSorter$Message$$Type<($Runnable$$Type)>)>)
+
+public "initializeLight"(chunk: $ChunkAccess$$Type, lit: boolean): $CompletableFuture
+public "lightChunk"(chunk: $ChunkAccess$$Type, lit: boolean): $CompletableFuture
+public "waitForPendingTasks"(arg0: integer, arg1: integer): $CompletableFuture<(never)>
+public "tryScheduleUpdate"(): void
+public "updateChunkStatus"(pos: $ChunkPos$$Type): void
+public "updateSectionStatus"(pos: $SectionPos$$Type, notReady: boolean): void
+public "checkBlock"(pos: $BlockPos$$Type): void
+public "retainData"(pos: $ChunkPos$$Type, retainData: boolean): void
+public "queueSectionData"(lightType: $LightLayer$$Type, pos: $SectionPos$$Type, nibbles: $DataLayer$$Type): void
+public "propagateLightSources"(pos: $ChunkPos$$Type): void
+public "close"(): void
+public "runLightUpdates"(): integer
+public "setLightEnabled"(pos: $ChunkPos$$Type, lightEnabled: boolean): void
+public "clientUpdateLight"(arg0: $LightLayer$$Type, arg1: $SectionPos$$Type, arg2: $DataLayer$$Type, arg3: boolean): void
+public "clientRemoveLightData"(arg0: $ChunkPos$$Type): void
+public "clientChunkLoad"(arg0: $ChunkPos$$Type, arg1: $LevelChunk$$Type): void
+public "getLightEngine"(): $StarLightInterface
+get "lightEngine"(): $StarLightInterface
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $ThreadedLevelLightEngine$$Type = ($ThreadedLevelLightEngine);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $ThreadedLevelLightEngine$$Original = $ThreadedLevelLightEngine;}

@@ -1,0 +1,357 @@
+declare module "appeng.recipes.game.StorageCellDisassemblyRecipeSerializer" {
+import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
+import {$StorageCellDisassemblyRecipe} from "appeng.recipes.game.StorageCellDisassemblyRecipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
+import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$MapCodec} from "com.mojang.serialization.MapCodec"
+import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
+
+export class $StorageCellDisassemblyRecipeSerializer implements $RecipeSerializer$$Interface<($StorageCellDisassemblyRecipe)> {
+static readonly "INSTANCE": $StorageCellDisassemblyRecipeSerializer
+
+public "streamCodec"(): $StreamCodec<($RegistryFriendlyByteBuf), ($StorageCellDisassemblyRecipe)>
+public "codec"(): $MapCodec<($StorageCellDisassemblyRecipe)>
+public static "register"<S extends $RecipeSerializer<(object)>, T extends $Recipe<(object)>>(arg0: StringJS, arg1: S): S
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $StorageCellDisassemblyRecipeSerializer$$Type = ($StorageCellDisassemblyRecipeSerializer);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $StorageCellDisassemblyRecipeSerializer$$Original = $StorageCellDisassemblyRecipeSerializer;}
+declare module "appeng.recipes.game.StorageCellUpgradeRecipe" {
+import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
+import {$CraftingInput$$Type} from "net.minecraft.world.item.crafting.CraftingInput"
+import {$ItemStack} from "net.minecraft.world.item.ItemStack"
+import {$Ingredient} from "net.minecraft.world.item.crafting.Ingredient"
+import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$NonNullList} from "net.minecraft.core.NonNullList"
+import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
+import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
+import {$CustomRecipe} from "net.minecraft.world.item.crafting.CustomRecipe"
+import {$Item, $Item$$Type} from "net.minecraft.world.item.Item"
+import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
+import {$MapCodec} from "com.mojang.serialization.MapCodec"
+
+export class $StorageCellUpgradeRecipe extends $CustomRecipe {
+static readonly "CODEC": $MapCodec<($StorageCellUpgradeRecipe)>
+static readonly "SERIALIZER_ID": $ResourceLocation
+static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($StorageCellUpgradeRecipe)>
+
+constructor(arg0: $Item$$Type, arg1: $Item$$Type, arg2: $Item$$Type, arg3: $Item$$Type)
+
+public "getInputCell"(): $Item
+public "getInputComponent"(): $Item
+public "getResultCell"(): $Item
+public "getResultComponent"(): $Item
+public "assemble"(arg0: $RecipeInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
+public "assemble"(arg0: $CraftingInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
+public "getRemainingItems"(arg0: $CraftingInput$$Type): $NonNullList<($ItemStack)>
+public "getRemainingItems"(arg0: $RecipeInput$$Type): $NonNullList
+public "getSerializer"(): $RecipeSerializer<(never)>
+public "getIngredients"(): $NonNullList<($Ingredient)>
+public "canCraftInDimensions"(arg0: integer, arg1: integer): boolean
+public "getResultItem"(arg0: $HolderLookup$Provider$$Type): $ItemStack
+public "matches"(arg0: $RecipeInput$$Type, arg1: $Level$$Type): boolean
+public "matches"(arg0: $CraftingInput$$Type, arg1: $Level$$Type): boolean
+get "inputCell"(): $Item
+get "inputComponent"(): $Item
+get "resultCell"(): $Item
+get "resultComponent"(): $Item
+get "serializer"(): $RecipeSerializer<(never)>
+get "ingredients"(): $NonNullList<($Ingredient)>
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $StorageCellUpgradeRecipe$$Type = ($StorageCellUpgradeRecipe);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $StorageCellUpgradeRecipe$$Original = $StorageCellUpgradeRecipe;}
+declare module "appeng.recipes.game.CraftingUnitTransformRecipe" {
+import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
+import {$CraftingInput$$Type} from "net.minecraft.world.item.crafting.CraftingInput"
+import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$RecipeType} from "net.minecraft.world.item.crafting.RecipeType"
+import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
+import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
+import {$CustomRecipe} from "net.minecraft.world.item.crafting.CustomRecipe"
+import {$Item, $Item$$Type} from "net.minecraft.world.item.Item"
+import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
+import {$MapCodec} from "com.mojang.serialization.MapCodec"
+
+export class $CraftingUnitTransformRecipe extends $CustomRecipe {
+static readonly "CODEC": $MapCodec<($CraftingUnitTransformRecipe)>
+static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($CraftingUnitTransformRecipe)>
+
+constructor(arg0: $Block$$Type, arg1: $Item$$Type)
+
+public "assemble"(arg0: $CraftingInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
+public "assemble"(arg0: $RecipeInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
+public "getSerializer"(): $RecipeSerializer<(never)>
+public "canCraftInDimensions"(arg0: integer, arg1: integer): boolean
+public "getResultItem"(arg0: $HolderLookup$Provider$$Type): $ItemStack
+public "getUpgradeItem"(): $Item
+public "getUpgradedBlock"(): $Block
+public static "getUpgradedBlock"(arg0: $Level$$Type, arg1: $ItemStack$$Type): $Block
+public static "getRemovedUpgrade"(arg0: $Level$$Type, arg1: $Block$$Type): $ItemStack
+public "matches"(arg0: $CraftingInput$$Type, arg1: $Level$$Type): boolean
+public "matches"(arg0: $RecipeInput$$Type, arg1: $Level$$Type): boolean
+public "getType"(): $RecipeType<(never)>
+get "serializer"(): $RecipeSerializer<(never)>
+get "upgradeItem"(): $Item
+get "upgradedBlock"(): $Block
+get "type"(): $RecipeType<(never)>
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $CraftingUnitTransformRecipe$$Type = ($CraftingUnitTransformRecipe);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $CraftingUnitTransformRecipe$$Original = $CraftingUnitTransformRecipe;}
+declare module "appeng.recipes.game.RemoveItemUpgradeRecipeSerializer" {
+import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
+import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RemoveItemUpgradeRecipe} from "appeng.recipes.game.RemoveItemUpgradeRecipe"
+import {$MapCodec} from "com.mojang.serialization.MapCodec"
+import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
+
+export class $RemoveItemUpgradeRecipeSerializer implements $RecipeSerializer$$Interface<($RemoveItemUpgradeRecipe)> {
+static readonly "INSTANCE": $RemoveItemUpgradeRecipeSerializer
+
+constructor()
+
+public "streamCodec"(): $StreamCodec<($RegistryFriendlyByteBuf), ($RemoveItemUpgradeRecipe)>
+public "codec"(): $MapCodec<($RemoveItemUpgradeRecipe)>
+public static "register"<S extends $RecipeSerializer<(object)>, T extends $Recipe<(object)>>(arg0: StringJS, arg1: S): S
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $RemoveItemUpgradeRecipeSerializer$$Type = ($RemoveItemUpgradeRecipeSerializer);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $RemoveItemUpgradeRecipeSerializer$$Original = $RemoveItemUpgradeRecipeSerializer;}
+declare module "appeng.recipes.game.StorageCellUpgradeRecipeSerializer" {
+import {$StorageCellUpgradeRecipe} from "appeng.recipes.game.StorageCellUpgradeRecipe"
+import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
+import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$MapCodec} from "com.mojang.serialization.MapCodec"
+import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
+
+export class $StorageCellUpgradeRecipeSerializer implements $RecipeSerializer$$Interface<($StorageCellUpgradeRecipe)> {
+static readonly "INSTANCE": $StorageCellUpgradeRecipeSerializer
+
+constructor()
+
+public "streamCodec"(): $StreamCodec<($RegistryFriendlyByteBuf), ($StorageCellUpgradeRecipe)>
+public "codec"(): $MapCodec<($StorageCellUpgradeRecipe)>
+public static "register"<S extends $RecipeSerializer<(object)>, T extends $Recipe<(object)>>(arg0: StringJS, arg1: S): S
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $StorageCellUpgradeRecipeSerializer$$Type = ($StorageCellUpgradeRecipeSerializer);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $StorageCellUpgradeRecipeSerializer$$Original = $StorageCellUpgradeRecipeSerializer;}
+declare module "appeng.recipes.game.AddItemUpgradeRecipe" {
+import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
+import {$CraftingInput$$Type} from "net.minecraft.world.item.crafting.CraftingInput"
+import {$ItemStack} from "net.minecraft.world.item.ItemStack"
+import {$Ingredient} from "net.minecraft.world.item.crafting.Ingredient"
+import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$NonNullList} from "net.minecraft.core.NonNullList"
+import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
+import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
+import {$CustomRecipe} from "net.minecraft.world.item.crafting.CustomRecipe"
+import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
+import {$MapCodec} from "com.mojang.serialization.MapCodec"
+
+export class $AddItemUpgradeRecipe extends $CustomRecipe {
+static readonly "CODEC": $MapCodec<($AddItemUpgradeRecipe)>
+static readonly "INSTANCE": $AddItemUpgradeRecipe
+static readonly "SERIALIZER_ID": $ResourceLocation
+static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($AddItemUpgradeRecipe)>
+
+public "assemble"(arg0: $RecipeInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
+public "assemble"(arg0: $CraftingInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
+public "getSerializer"(): $RecipeSerializer<(never)>
+public "getIngredients"(): $NonNullList<($Ingredient)>
+public "canCraftInDimensions"(arg0: integer, arg1: integer): boolean
+public "getResultItem"(arg0: $HolderLookup$Provider$$Type): $ItemStack
+public "matches"(arg0: $CraftingInput$$Type, arg1: $Level$$Type): boolean
+public "matches"(arg0: $RecipeInput$$Type, arg1: $Level$$Type): boolean
+get "serializer"(): $RecipeSerializer<(never)>
+get "ingredients"(): $NonNullList<($Ingredient)>
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $AddItemUpgradeRecipe$$Type = ($AddItemUpgradeRecipe);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $AddItemUpgradeRecipe$$Original = $AddItemUpgradeRecipe;}
+declare module "appeng.recipes.game.AddItemUpgradeRecipeSerializer" {
+import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
+import {$AddItemUpgradeRecipe} from "appeng.recipes.game.AddItemUpgradeRecipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
+import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$MapCodec} from "com.mojang.serialization.MapCodec"
+import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
+
+export class $AddItemUpgradeRecipeSerializer implements $RecipeSerializer$$Interface<($AddItemUpgradeRecipe)> {
+static readonly "INSTANCE": $AddItemUpgradeRecipeSerializer
+
+constructor()
+
+public "streamCodec"(): $StreamCodec<($RegistryFriendlyByteBuf), ($AddItemUpgradeRecipe)>
+public "codec"(): $MapCodec<($AddItemUpgradeRecipe)>
+public static "register"<S extends $RecipeSerializer<(object)>, T extends $Recipe<(object)>>(arg0: StringJS, arg1: S): S
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $AddItemUpgradeRecipeSerializer$$Type = ($AddItemUpgradeRecipeSerializer);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $AddItemUpgradeRecipeSerializer$$Original = $AddItemUpgradeRecipeSerializer;}
+declare module "appeng.recipes.game.CraftingUnitTransformRecipeSerializer" {
+import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
+import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$MapCodec} from "com.mojang.serialization.MapCodec"
+import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
+import {$CraftingUnitTransformRecipe} from "appeng.recipes.game.CraftingUnitTransformRecipe"
+
+export class $CraftingUnitTransformRecipeSerializer implements $RecipeSerializer$$Interface<($CraftingUnitTransformRecipe)> {
+static readonly "INSTANCE": $CraftingUnitTransformRecipeSerializer
+
+public "streamCodec"(): $StreamCodec<($RegistryFriendlyByteBuf), ($CraftingUnitTransformRecipe)>
+public "codec"(): $MapCodec<($CraftingUnitTransformRecipe)>
+public static "register"<S extends $RecipeSerializer<(object)>, T extends $Recipe<(object)>>(arg0: StringJS, arg1: S): S
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $CraftingUnitTransformRecipeSerializer$$Type = ($CraftingUnitTransformRecipeSerializer);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $CraftingUnitTransformRecipeSerializer$$Original = $CraftingUnitTransformRecipeSerializer;}
+declare module "appeng.recipes.game.RemoveItemUpgradeRecipe" {
+import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
+import {$CraftingInput$$Type} from "net.minecraft.world.item.crafting.CraftingInput"
+import {$ItemStack} from "net.minecraft.world.item.ItemStack"
+import {$Ingredient} from "net.minecraft.world.item.crafting.Ingredient"
+import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$NonNullList} from "net.minecraft.core.NonNullList"
+import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
+import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
+import {$CustomRecipe} from "net.minecraft.world.item.crafting.CustomRecipe"
+import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
+import {$MapCodec} from "com.mojang.serialization.MapCodec"
+
+export class $RemoveItemUpgradeRecipe extends $CustomRecipe {
+static readonly "CODEC": $MapCodec<($RemoveItemUpgradeRecipe)>
+static readonly "INSTANCE": $RemoveItemUpgradeRecipe
+static readonly "SERIALIZER_ID": $ResourceLocation
+static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($RemoveItemUpgradeRecipe)>
+
+public "assemble"(arg0: $RecipeInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
+public "assemble"(arg0: $CraftingInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
+public "getRemainingItems"(arg0: $RecipeInput$$Type): $NonNullList
+public "getRemainingItems"(arg0: $CraftingInput$$Type): $NonNullList<($ItemStack)>
+public "getSerializer"(): $RecipeSerializer<(never)>
+public "getIngredients"(): $NonNullList<($Ingredient)>
+public "canCraftInDimensions"(arg0: integer, arg1: integer): boolean
+public "getResultItem"(arg0: $HolderLookup$Provider$$Type): $ItemStack
+public "matches"(arg0: $CraftingInput$$Type, arg1: $Level$$Type): boolean
+public "matches"(arg0: $RecipeInput$$Type, arg1: $Level$$Type): boolean
+get "serializer"(): $RecipeSerializer<(never)>
+get "ingredients"(): $NonNullList<($Ingredient)>
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $RemoveItemUpgradeRecipe$$Type = ($RemoveItemUpgradeRecipe);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $RemoveItemUpgradeRecipe$$Original = $RemoveItemUpgradeRecipe;}
+declare module "appeng.recipes.game.StorageCellDisassemblyRecipe" {
+import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
+import {$CraftingInput$$Type} from "net.minecraft.world.item.crafting.CraftingInput"
+import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$List, $List$$Type} from "java.util.List"
+import {$RecipeType} from "net.minecraft.world.item.crafting.RecipeType"
+import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
+import {$CustomRecipe} from "net.minecraft.world.item.crafting.CustomRecipe"
+import {$Item, $Item$$Type} from "net.minecraft.world.item.Item"
+import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
+import {$MapCodec} from "com.mojang.serialization.MapCodec"
+
+export class $StorageCellDisassemblyRecipe extends $CustomRecipe {
+static readonly "CODEC": $MapCodec<($StorageCellDisassemblyRecipe)>
+static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($StorageCellDisassemblyRecipe)>
+
+constructor(arg0: $Item$$Type, arg1: $List$$Type<($ItemStack$$Type)>)
+
+public "getStorageCell"(): $Item
+public "getCellDisassemblyItems"(): $List<($ItemStack)>
+public "assemble"(arg0: $CraftingInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
+public "assemble"(arg0: $RecipeInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
+public "getSerializer"(): $RecipeSerializer<(never)>
+public "canCraftInDimensions"(arg0: integer, arg1: integer): boolean
+public "getResultItem"(arg0: $HolderLookup$Provider$$Type): $ItemStack
+public "canDisassemble"(): boolean
+public static "getDisassemblyResult"(arg0: $Level$$Type, arg1: $Item$$Type): $List<($ItemStack)>
+public "matches"(arg0: $CraftingInput$$Type, arg1: $Level$$Type): boolean
+public "matches"(arg0: $RecipeInput$$Type, arg1: $Level$$Type): boolean
+public "getType"(): $RecipeType<(never)>
+get "storageCell"(): $Item
+get "cellDisassemblyItems"(): $List<($ItemStack)>
+get "serializer"(): $RecipeSerializer<(never)>
+get "type"(): $RecipeType<(never)>
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $StorageCellDisassemblyRecipe$$Type = ($StorageCellDisassemblyRecipe);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $StorageCellDisassemblyRecipe$$Original = $StorageCellDisassemblyRecipe;}

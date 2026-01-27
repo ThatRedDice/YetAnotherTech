@@ -1,0 +1,79 @@
+declare module "owmii.powah.block.furnator.FurnatorBlock" {
+import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
+import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$ItemStack} from "net.minecraft.world.item.ItemStack"
+import {$Tier$$Type} from "owmii.powah.block.Tier"
+import {$Optional} from "java.util.Optional"
+import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
+import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
+import {$SimpleWaterloggedBlock$$Interface} from "net.minecraft.world.level.block.SimpleWaterloggedBlock"
+import {$Inventory$$Type} from "net.minecraft.world.entity.player.Inventory"
+import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
+import {$AbstractContainer} from "owmii.powah.lib.logistics.inventory.AbstractContainer"
+import {$IdMapper} from "net.minecraft.core.IdMapper"
+import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Item} from "net.minecraft.world.item.Item"
+import {$ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$ItemBlock} from "owmii.powah.lib.item.ItemBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
+import {$Block} from "net.minecraft.world.level.block.Block"
+import {$AbstractTileEntity$$Type} from "owmii.powah.lib.block.AbstractTileEntity"
+import {$ThreadLocal} from "java.lang.ThreadLocal"
+import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
+import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
+import {$Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
+import {$AbstractGeneratorBlock} from "owmii.powah.lib.block.AbstractGeneratorBlock"
+import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
+import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
+import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
+import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
+import {$MapCodec} from "com.mojang.serialization.MapCodec"
+
+export class $FurnatorBlock extends $AbstractGeneratorBlock<($FurnatorBlock)> implements $SimpleWaterloggedBlock$$Interface {
+static readonly "UPDATE_IMMEDIATE": integer
+ "item": $Item
+static readonly "CODEC": $MapCodec<($Block)>
+static readonly "UPDATE_NEIGHBORS": integer
+static readonly "INDESTRUCTIBLE": float
+static readonly "SEMI_FULL_SHAPE": $VoxelShape
+static readonly "OCCLUSION_CACHE": $ThreadLocal<($Object2ByteLinkedOpenHashMap<($Block$BlockStatePairKey)>)>
+static readonly "UPDATE_NONE": integer
+static readonly "UPDATE_INVISIBLE": integer
+static readonly "UPDATE_MOVE_BY_PISTON": integer
+static readonly "UPDATE_LIMIT": integer
+static readonly "BLOCK_STATE_REGISTRY": $IdMapper<($BlockState)>
+static readonly "UPDATE_ALL": integer
+static readonly "UPDATE_ALL_IMMEDIATE": integer
+static readonly "UPDATE_KNOWN_SHAPE": integer
+static readonly "UPDATE_SUPPRESS_DROPS": integer
+static readonly "INSTANT": float
+static readonly "UPDATE_CLIENTS": integer
+
+constructor(arg0: $BlockBehaviour$Properties$$Type, arg1: $Tier$$Type)
+
+public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
+public "getContainer"(arg0: integer, arg1: $Inventory$$Type, arg2: $AbstractTileEntity$$Type, arg3: $BlockHitResult$$Type): $AbstractContainer
+public "getConfig"(): any
+public "animateTick"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $RandomSource$$Type): void
+public "getBlockItem"(arg0: $Item$Properties$$Type, arg1: $ResourceKey$$Type): $ItemBlock
+public "getPickupSound"(): $Optional<($SoundEvent)>
+public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
+public "canPlaceLiquid"(arg0: $Player$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $Fluid$$Type): boolean
+public "pickupBlock"(arg0: $Player$$Type, arg1: $LevelAccessor$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): $ItemStack
+public "getPickupSound"(arg0: $BlockState$$Type): $Optional<($SoundEvent)>
+public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
+get "config"(): any
+get "pickupSound"(): $Optional<($SoundEvent)>
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $FurnatorBlock$$Type = ($FurnatorBlock);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $FurnatorBlock$$Original = $FurnatorBlock;}

@@ -1,0 +1,293 @@
+declare module "java.math.RoundingMode" {
+import {$Enum} from "java.lang.Enum"
+
+export class $RoundingMode extends $Enum<($RoundingMode)> {
+static readonly "DOWN": $RoundingMode
+static readonly "FLOOR": $RoundingMode
+static readonly "UNNECESSARY": $RoundingMode
+static readonly "CEILING": $RoundingMode
+static readonly "HALF_EVEN": $RoundingMode
+static readonly "UP": $RoundingMode
+static readonly "HALF_UP": $RoundingMode
+static readonly "HALF_DOWN": $RoundingMode
+
+public static "values"(): ($RoundingMode)[]
+public static "valueOf"(arg0: StringJS): $RoundingMode
+public static "valueOf"(arg0: integer): $RoundingMode
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $RoundingMode$$Type = (("up") | ("down") | ("ceiling") | ("floor") | ("half_up") | ("half_down") | ("half_even") | ("unnecessary"));
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $RoundingMode$$Original = $RoundingMode;}
+declare module "java.math.BigDecimal" {
+import {$BigInteger, $BigInteger$$Type} from "java.math.BigInteger"
+import {$Comparable$$Interface} from "java.lang.Comparable"
+import {$MathContext$$Type} from "java.math.MathContext"
+import {$RoundingMode$$Type} from "java.math.RoundingMode"
+
+export class $BigDecimal extends number implements $Comparable$$Interface<($BigDecimal)> {
+static readonly "ZERO": $BigDecimal
+/**
+ * 
+ * @deprecated
+ */
+static readonly "ROUND_DOWN": integer
+/**
+ * 
+ * @deprecated
+ */
+static readonly "ROUND_UNNECESSARY": integer
+/**
+ * 
+ * @deprecated
+ */
+static readonly "ROUND_CEILING": integer
+/**
+ * 
+ * @deprecated
+ */
+static readonly "ROUND_HALF_DOWN": integer
+/**
+ * 
+ * @deprecated
+ */
+static readonly "ROUND_HALF_UP": integer
+static readonly "ONE": $BigDecimal
+/**
+ * 
+ * @deprecated
+ */
+static readonly "ROUND_UP": integer
+/**
+ * 
+ * @deprecated
+ */
+static readonly "ROUND_FLOOR": integer
+/**
+ * 
+ * @deprecated
+ */
+static readonly "ROUND_HALF_EVEN": integer
+static readonly "TEN": $BigDecimal
+static readonly "TWO": $BigDecimal
+
+constructor(arg0: integer)
+constructor(arg0: $BigInteger$$Type, arg1: integer, arg2: $MathContext$$Type)
+constructor(arg0: $BigInteger$$Type, arg1: integer)
+constructor(arg0: $BigInteger$$Type, arg1: $MathContext$$Type)
+constructor(arg0: long, arg1: $MathContext$$Type)
+constructor(arg0: long)
+constructor(arg0: integer, arg1: $MathContext$$Type)
+constructor(arg0: StringJS)
+constructor(arg0: (character)[], arg1: $MathContext$$Type)
+constructor(arg0: (character)[])
+constructor(arg0: (character)[], arg1: integer, arg2: integer, arg3: $MathContext$$Type)
+constructor(arg0: (character)[], arg1: integer, arg2: integer)
+constructor(arg0: double, arg1: $MathContext$$Type)
+constructor(arg0: $BigInteger$$Type)
+constructor(arg0: double)
+constructor(arg0: StringJS, arg1: $MathContext$$Type)
+
+public "negate"(arg0: $MathContext$$Type): $BigDecimal
+public "negate"(): $BigDecimal
+public "remainder"(arg0: $BigDecimal$$Type): $BigDecimal
+public "remainder"(arg0: $BigDecimal$$Type, arg1: $MathContext$$Type): $BigDecimal
+public "equals"(arg0: any): boolean
+public "toString"(): StringJS
+public "hashCode"(): integer
+public "abs"(arg0: $MathContext$$Type): $BigDecimal
+public "abs"(): $BigDecimal
+public "sqrt"(arg0: $MathContext$$Type): $BigDecimal
+public "pow"(arg0: integer, arg1: $MathContext$$Type): $BigDecimal
+public "pow"(arg0: integer): $BigDecimal
+public "min"(arg0: $BigDecimal$$Type): $BigDecimal
+public "max"(arg0: $BigDecimal$$Type): $BigDecimal
+public "round"(arg0: $MathContext$$Type): $BigDecimal
+public "signum"(): integer
+public "compareTo"(arg0: $BigDecimal$$Type): integer
+public "compareTo"(arg0: any): integer
+public "intValue"(): integer
+public "longValue"(): long
+public "floatValue"(): float
+public "doubleValue"(): double
+public static "valueOf"(arg0: long, arg1: integer): $BigDecimal
+public static "valueOf"(arg0: long): $BigDecimal
+public static "valueOf"(arg0: double): $BigDecimal
+public "scale"(): integer
+public "add"(arg0: $BigDecimal$$Type, arg1: $MathContext$$Type): $BigDecimal
+public "add"(arg0: $BigDecimal$$Type): $BigDecimal
+public "multiply"(arg0: $BigDecimal$$Type, arg1: $MathContext$$Type): $BigDecimal
+public "multiply"(arg0: $BigDecimal$$Type): $BigDecimal
+public "ulp"(): $BigDecimal
+public "precision"(): integer
+public "setScale"(arg0: integer): $BigDecimal
+/**
+ * 
+ * @deprecated
+ */
+public "setScale"(arg0: integer, arg1: integer): $BigDecimal
+public "setScale"(arg0: integer, arg1: $RoundingMode$$Type): $BigDecimal
+public "subtract"(arg0: $BigDecimal$$Type, arg1: $MathContext$$Type): $BigDecimal
+public "subtract"(arg0: $BigDecimal$$Type): $BigDecimal
+public "divide"(arg0: $BigDecimal$$Type, arg1: $RoundingMode$$Type): $BigDecimal
+public "divide"(arg0: $BigDecimal$$Type): $BigDecimal
+public "divide"(arg0: $BigDecimal$$Type, arg1: $MathContext$$Type): $BigDecimal
+/**
+ * 
+ * @deprecated
+ */
+public "divide"(arg0: $BigDecimal$$Type, arg1: integer): $BigDecimal
+public "divide"(arg0: $BigDecimal$$Type, arg1: integer, arg2: $RoundingMode$$Type): $BigDecimal
+/**
+ * 
+ * @deprecated
+ */
+public "divide"(arg0: $BigDecimal$$Type, arg1: integer, arg2: integer): $BigDecimal
+public "divideToIntegralValue"(arg0: $BigDecimal$$Type, arg1: $MathContext$$Type): $BigDecimal
+public "divideToIntegralValue"(arg0: $BigDecimal$$Type): $BigDecimal
+public "divideAndRemainder"(arg0: $BigDecimal$$Type, arg1: $MathContext$$Type): ($BigDecimal)[]
+public "divideAndRemainder"(arg0: $BigDecimal$$Type): ($BigDecimal)[]
+public "stripTrailingZeros"(): $BigDecimal
+public "scaleByPowerOfTen"(arg0: integer): $BigDecimal
+public "unscaledValue"(): $BigInteger
+public "plus"(): $BigDecimal
+public "plus"(arg0: $MathContext$$Type): $BigDecimal
+public "toBigInteger"(): $BigInteger
+public "longValueExact"(): long
+public "movePointLeft"(arg0: integer): $BigDecimal
+public "movePointRight"(arg0: integer): $BigDecimal
+public "toEngineeringString"(): StringJS
+public "toPlainString"(): StringJS
+public "toBigIntegerExact"(): $BigInteger
+public "intValueExact"(): integer
+public "shortValueExact"(): short
+public "byteValueExact"(): byte
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $BigDecimal$$Type = ($BigDecimal);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $BigDecimal$$Original = $BigDecimal;}
+declare module "java.math.MathContext" {
+import {$Serializable$$Interface} from "java.io.Serializable"
+import {$RoundingMode, $RoundingMode$$Type} from "java.math.RoundingMode"
+
+export class $MathContext implements $Serializable$$Interface {
+static readonly "DECIMAL128": $MathContext
+static readonly "DECIMAL64": $MathContext
+static readonly "DECIMAL32": $MathContext
+static readonly "UNLIMITED": $MathContext
+
+constructor(arg0: StringJS)
+constructor(arg0: integer, arg1: $RoundingMode$$Type)
+constructor(arg0: integer)
+
+public "equals"(arg0: any): boolean
+public "toString"(): StringJS
+public "hashCode"(): integer
+public "getPrecision"(): integer
+public "getRoundingMode"(): $RoundingMode
+get "precision"(): integer
+get "roundingMode"(): $RoundingMode
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $MathContext$$Type = ($MathContext);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $MathContext$$Original = $MathContext;}
+declare module "java.math.BigInteger" {
+import {$Comparable$$Interface} from "java.lang.Comparable"
+import {$Random$$Type} from "java.util.Random"
+
+export class $BigInteger extends number implements $Comparable$$Interface<($BigInteger)> {
+static readonly "ZERO": $BigInteger
+static readonly "ONE": $BigInteger
+static readonly "TEN": $BigInteger
+static readonly "TWO": $BigInteger
+
+constructor(arg0: integer, arg1: (byte)[])
+constructor(arg0: integer, arg1: (byte)[], arg2: integer, arg3: integer)
+constructor(arg0: integer, arg1: $Random$$Type)
+constructor(arg0: integer, arg1: integer, arg2: $Random$$Type)
+constructor(arg0: StringJS, arg1: integer)
+constructor(arg0: (byte)[], arg1: integer, arg2: integer)
+constructor(arg0: StringJS)
+constructor(arg0: (byte)[])
+
+public "or"(arg0: $BigInteger$$Type): $BigInteger
+public "toByteArray"(): (byte)[]
+public "negate"(): $BigInteger
+public "and"(arg0: $BigInteger$$Type): $BigInteger
+public "remainder"(arg0: $BigInteger$$Type): $BigInteger
+public "xor"(arg0: $BigInteger$$Type): $BigInteger
+public "andNot"(arg0: $BigInteger$$Type): $BigInteger
+public "shiftRight"(arg0: integer): $BigInteger
+public "getLowestSetBit"(): integer
+public "modPow"(arg0: $BigInteger$$Type, arg1: $BigInteger$$Type): $BigInteger
+public "modInverse"(arg0: $BigInteger$$Type): $BigInteger
+public static "probablePrime"(arg0: integer, arg1: $Random$$Type): $BigInteger
+public "nextProbablePrime"(): $BigInteger
+public "parallelMultiply"(arg0: $BigInteger$$Type): $BigInteger
+public "sqrtAndRemainder"(): ($BigInteger)[]
+public "gcd"(arg0: $BigInteger$$Type): $BigInteger
+public "not"(): $BigInteger
+public "clearBit"(arg0: integer): $BigInteger
+public "flipBit"(arg0: integer): $BigInteger
+public "isProbablePrime"(arg0: integer): boolean
+public "bitCount"(): integer
+public "equals"(arg0: any): boolean
+public "toString"(arg0: integer): StringJS
+public "toString"(): StringJS
+public "hashCode"(): integer
+public "abs"(): $BigInteger
+public "sqrt"(): $BigInteger
+public "pow"(arg0: integer): $BigInteger
+public "min"(arg0: $BigInteger$$Type): $BigInteger
+public "max"(arg0: $BigInteger$$Type): $BigInteger
+public "signum"(): integer
+public "compareTo"(arg0: any): integer
+public "compareTo"(arg0: $BigInteger$$Type): integer
+public "intValue"(): integer
+public "longValue"(): long
+public "floatValue"(): float
+public "doubleValue"(): double
+public static "valueOf"(arg0: long): $BigInteger
+public "add"(arg0: $BigInteger$$Type): $BigInteger
+public "mod"(arg0: $BigInteger$$Type): $BigInteger
+public "shiftLeft"(arg0: integer): $BigInteger
+public "setBit"(arg0: integer): $BigInteger
+public "multiply"(arg0: $BigInteger$$Type): $BigInteger
+public "subtract"(arg0: $BigInteger$$Type): $BigInteger
+public "divide"(arg0: $BigInteger$$Type): $BigInteger
+public "divideAndRemainder"(arg0: $BigInteger$$Type): ($BigInteger)[]
+public "longValueExact"(): long
+public "bitLength"(): integer
+public "testBit"(arg0: integer): boolean
+public "intValueExact"(): integer
+public "shortValueExact"(): short
+public "byteValueExact"(): byte
+get "lowestSetBit"(): integer
+set "bit"(value: integer)
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $BigInteger$$Type = ($BigInteger);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $BigInteger$$Original = $BigInteger;}

@@ -1,0 +1,128 @@
+declare module "java.time.zone.ZoneOffsetTransition" {
+import {$LocalDateTime, $LocalDateTime$$Type} from "java.time.LocalDateTime"
+import {$Serializable$$Interface} from "java.io.Serializable"
+import {$Comparable$$Interface} from "java.lang.Comparable"
+import {$ZoneOffset, $ZoneOffset$$Type} from "java.time.ZoneOffset"
+import {$Duration} from "java.time.Duration"
+import {$Instant} from "java.time.Instant"
+
+export class $ZoneOffsetTransition implements $Comparable$$Interface<($ZoneOffsetTransition)>, $Serializable$$Interface {
+public "toEpochSecond"(): long
+public "getInstant"(): $Instant
+public "isOverlap"(): boolean
+public "getOffsetAfter"(): $ZoneOffset
+public "getDateTimeBefore"(): $LocalDateTime
+public "getOffsetBefore"(): $ZoneOffset
+public "isValidOffset"(arg0: $ZoneOffset$$Type): boolean
+public "isGap"(): boolean
+public "getDateTimeAfter"(): $LocalDateTime
+public "getDuration"(): $Duration
+public "equals"(arg0: any): boolean
+public "toString"(): StringJS
+public "hashCode"(): integer
+public "compareTo"(arg0: $ZoneOffsetTransition$$Type): integer
+public "compareTo"(arg0: any): integer
+public static "of"(arg0: $LocalDateTime$$Type, arg1: $ZoneOffset$$Type, arg2: $ZoneOffset$$Type): $ZoneOffsetTransition
+get "instant"(): $Instant
+get "overlap"(): boolean
+get "offsetAfter"(): $ZoneOffset
+get "dateTimeBefore"(): $LocalDateTime
+get "offsetBefore"(): $ZoneOffset
+get "gap"(): boolean
+get "dateTimeAfter"(): $LocalDateTime
+get "duration"(): $Duration
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $ZoneOffsetTransition$$Type = ($ZoneOffsetTransition);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $ZoneOffsetTransition$$Original = $ZoneOffsetTransition;}
+declare module "java.time.zone.ZoneOffsetTransitionRule" {
+import {$DayOfWeek, $DayOfWeek$$Type} from "java.time.DayOfWeek"
+import {$Month, $Month$$Type} from "java.time.Month"
+import {$Serializable$$Interface} from "java.io.Serializable"
+import {$ZoneOffset, $ZoneOffset$$Type} from "java.time.ZoneOffset"
+import {$ZoneOffsetTransition} from "java.time.zone.ZoneOffsetTransition"
+import {$ZoneOffsetTransitionRule$TimeDefinition, $ZoneOffsetTransitionRule$TimeDefinition$$Type} from "java.time.zone.ZoneOffsetTransitionRule$TimeDefinition"
+import {$LocalTime, $LocalTime$$Type} from "java.time.LocalTime"
+
+export class $ZoneOffsetTransitionRule implements $Serializable$$Interface {
+public "getDayOfWeek"(): $DayOfWeek
+public "getStandardOffset"(): $ZoneOffset
+public "getOffsetAfter"(): $ZoneOffset
+public "getOffsetBefore"(): $ZoneOffset
+public "createTransition"(arg0: integer): $ZoneOffsetTransition
+public "getDayOfMonthIndicator"(): integer
+public "getLocalTime"(): $LocalTime
+public "isMidnightEndOfDay"(): boolean
+public "getTimeDefinition"(): $ZoneOffsetTransitionRule$TimeDefinition
+public "equals"(arg0: any): boolean
+public "toString"(): StringJS
+public "hashCode"(): integer
+public static "of"(arg0: $Month$$Type, arg1: integer, arg2: $DayOfWeek$$Type, arg3: $LocalTime$$Type, arg4: boolean, arg5: $ZoneOffsetTransitionRule$TimeDefinition$$Type, arg6: $ZoneOffset$$Type, arg7: $ZoneOffset$$Type, arg8: $ZoneOffset$$Type): $ZoneOffsetTransitionRule
+public "getMonth"(): $Month
+get "dayOfWeek"(): $DayOfWeek
+get "standardOffset"(): $ZoneOffset
+get "offsetAfter"(): $ZoneOffset
+get "offsetBefore"(): $ZoneOffset
+get "dayOfMonthIndicator"(): integer
+get "localTime"(): $LocalTime
+get "midnightEndOfDay"(): boolean
+get "timeDefinition"(): $ZoneOffsetTransitionRule$TimeDefinition
+get "month"(): $Month
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $ZoneOffsetTransitionRule$$Type = ($ZoneOffsetTransitionRule);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $ZoneOffsetTransitionRule$$Original = $ZoneOffsetTransitionRule;}
+declare module "java.time.zone.ZoneRules" {
+import {$LocalDateTime$$Type} from "java.time.LocalDateTime"
+import {$Serializable$$Interface} from "java.io.Serializable"
+import {$ZoneOffset, $ZoneOffset$$Type} from "java.time.ZoneOffset"
+import {$List, $List$$Type} from "java.util.List"
+import {$ZoneOffsetTransition, $ZoneOffsetTransition$$Type} from "java.time.zone.ZoneOffsetTransition"
+import {$Duration} from "java.time.Duration"
+import {$ZoneOffsetTransitionRule, $ZoneOffsetTransitionRule$$Type} from "java.time.zone.ZoneOffsetTransitionRule"
+import {$Instant$$Type} from "java.time.Instant"
+
+export class $ZoneRules implements $Serializable$$Interface {
+public "isDaylightSavings"(arg0: $Instant$$Type): boolean
+public "getStandardOffset"(arg0: $Instant$$Type): $ZoneOffset
+public "isFixedOffset"(): boolean
+public "getValidOffsets"(arg0: $LocalDateTime$$Type): $List<($ZoneOffset)>
+public "getDaylightSavings"(arg0: $Instant$$Type): $Duration
+public "isValidOffset"(arg0: $LocalDateTime$$Type, arg1: $ZoneOffset$$Type): boolean
+public "nextTransition"(arg0: $Instant$$Type): $ZoneOffsetTransition
+public "previousTransition"(arg0: $Instant$$Type): $ZoneOffsetTransition
+public "getTransitions"(): $List<($ZoneOffsetTransition)>
+public "getTransitionRules"(): $List<($ZoneOffsetTransitionRule)>
+public "getTransition"(arg0: $LocalDateTime$$Type): $ZoneOffsetTransition
+public "equals"(arg0: any): boolean
+public "toString"(): StringJS
+public "hashCode"(): integer
+public static "of"(arg0: $ZoneOffset$$Type, arg1: $ZoneOffset$$Type, arg2: $List$$Type<($ZoneOffsetTransition$$Type)>, arg3: $List$$Type<($ZoneOffsetTransition$$Type)>, arg4: $List$$Type<($ZoneOffsetTransitionRule$$Type)>): $ZoneRules
+public static "of"(arg0: $ZoneOffset$$Type): $ZoneRules
+public "getOffset"(arg0: $LocalDateTime$$Type): $ZoneOffset
+public "getOffset"(arg0: $Instant$$Type): $ZoneOffset
+get "fixedOffset"(): boolean
+get "transitions"(): $List<($ZoneOffsetTransition)>
+get "transitionRules"(): $List<($ZoneOffsetTransitionRule)>
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $ZoneRules$$Type = ($ZoneRules);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $ZoneRules$$Original = $ZoneRules;}

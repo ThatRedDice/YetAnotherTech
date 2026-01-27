@@ -1,0 +1,636 @@
+declare module "net.minecraft.advancements.AdvancementNode" {
+import {$Iterable} from "java.lang.Iterable"
+import {$DisplayInfo} from "net.minecraft.advancements.DisplayInfo"
+import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
+import {$Advancement} from "net.minecraft.advancements.Advancement"
+import {$Set} from "java.util.Set"
+import {$AdvancementNodeKJS$$Interface} from "dev.latvian.mods.kubejs.core.AdvancementNodeKJS"
+import {$AdvancementHolder, $AdvancementHolder$$Type} from "net.minecraft.advancements.AdvancementHolder"
+import {$Component} from "net.minecraft.network.chat.Component"
+
+export class $AdvancementNode implements $AdvancementNodeKJS$$Interface {
+constructor(arg0: $AdvancementHolder$$Type, arg1: $AdvancementNode$$Type)
+
+public "advancement"(): $Advancement
+public "addChild"(arg0: $AdvancementNode$$Type): void
+public "children"(): $Iterable<($AdvancementNode)>
+public "parent"(): $AdvancementNode
+public "equals"(arg0: any): boolean
+public "toString"(): StringJS
+public "hashCode"(): integer
+public "root"(): $AdvancementNode
+public "holder"(): $AdvancementHolder
+public static "getRoot"(arg0: $AdvancementNode$$Type): $AdvancementNode
+public "getParent"(): $AdvancementNode
+public "getChildren"(): $Set<($AdvancementNode)>
+public "addChild"(a: $AdvancementNode$$Type): void
+public "getDisplayText"(): $Component
+public "hasDisplay"(): boolean
+public "getDescription"(): $Component
+public "getDisplay"(): $DisplayInfo
+public "self"(): $AdvancementNode
+public "getTitle"(): $Component
+public "getId"(): $ResourceLocation
+get "displayText"(): $Component
+get "description"(): $Component
+get "display"(): $DisplayInfo
+get "title"(): $Component
+get "id"(): $ResourceLocation
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $AdvancementNode$$Type = ($AdvancementNode);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $AdvancementNode$$Original = $AdvancementNode;}
+declare module "net.minecraft.advancements.AdvancementRewards$Builder" {
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
+import {$AdvancementRewards} from "net.minecraft.advancements.AdvancementRewards"
+import {$ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
+import {$LootTable$$Type} from "net.minecraft.world.level.storage.loot.LootTable"
+
+export class $AdvancementRewards$Builder {
+constructor()
+
+public "addRecipe"(arg0: $ResourceLocation$$Type): $AdvancementRewards$Builder
+public static "loot"(arg0: $ResourceKey$$Type<($LootTable)>): $AdvancementRewards$Builder
+public static "experience"(arg0: integer): $AdvancementRewards$Builder
+public "addLootTable"(arg0: $ResourceKey$$Type<($LootTable)>): $AdvancementRewards$Builder
+public "addExperience"(arg0: integer): $AdvancementRewards$Builder
+public "runs"(arg0: $ResourceLocation$$Type): $AdvancementRewards$Builder
+public static "function"(arg0: $ResourceLocation$$Type): $AdvancementRewards$Builder
+public "build"(): $AdvancementRewards
+public static "recipe"(arg0: $ResourceLocation$$Type): $AdvancementRewards$Builder
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $AdvancementRewards$Builder$$Type = ($AdvancementRewards$Builder);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $AdvancementRewards$Builder$$Original = $AdvancementRewards$Builder;}
+declare module "net.minecraft.advancements.Advancement$Builder" {
+import {$DisplayInfo$$Type} from "net.minecraft.advancements.DisplayInfo"
+import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$AdvancementRewards$Builder$$Type} from "net.minecraft.advancements.AdvancementRewards$Builder"
+import {$AdvancementRequirements$Strategy$$Type} from "net.minecraft.advancements.AdvancementRequirements$Strategy"
+import {$AdvancementRewards$$Type} from "net.minecraft.advancements.AdvancementRewards"
+import {$AdvancementHolder, $AdvancementHolder$$Type} from "net.minecraft.advancements.AdvancementHolder"
+import {$Component$$Type} from "net.minecraft.network.chat.Component"
+import {$Consumer$$Type} from "java.util.function.Consumer"
+import {$AdvancementType$$Type} from "net.minecraft.advancements.AdvancementType"
+import {$Criterion$$Type} from "net.minecraft.advancements.Criterion"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
+import {$AdvancementRequirements$$Type} from "net.minecraft.advancements.AdvancementRequirements"
+import {$ItemLike$$Type} from "net.minecraft.world.level.ItemLike"
+import {$ExistingFileHelper$$Type} from "net.neoforged.neoforge.common.data.ExistingFileHelper"
+import {$IAdvancementBuilderExtension$$Interface} from "net.neoforged.neoforge.common.extensions.IAdvancementBuilderExtension"
+
+export class $Advancement$Builder implements $IAdvancementBuilderExtension$$Interface {
+constructor()
+
+public "rewards"(arg0: $AdvancementRewards$$Type): $Advancement$Builder
+public "rewards"(arg0: $AdvancementRewards$Builder$$Type): $Advancement$Builder
+public "addCriterion"(arg0: StringJS, arg1: $Criterion$$Type<(never)>): $Advancement$Builder
+public "sendsTelemetryEvent"(): $Advancement$Builder
+public static "advancement"(): $Advancement$Builder
+public "requirements"(arg0: $AdvancementRequirements$Strategy$$Type): $Advancement$Builder
+public "requirements"(arg0: $AdvancementRequirements$$Type): $Advancement$Builder
+public static "recipeAdvancement"(): $Advancement$Builder
+public "parent"(arg0: $AdvancementHolder$$Type): $Advancement$Builder
+/**
+ * 
+ * @deprecated
+ */
+public "parent"(arg0: $ResourceLocation$$Type): $Advancement$Builder
+public "save"(arg0: $Consumer$$Type<($AdvancementHolder)>, arg1: StringJS): $AdvancementHolder
+public "build"(arg0: $ResourceLocation$$Type): $AdvancementHolder
+public "display"(arg0: $DisplayInfo$$Type): $Advancement$Builder
+public "display"(arg0: $ItemStack$$Type, arg1: $Component$$Type, arg2: $Component$$Type, arg3: $ResourceLocation$$Type, arg4: $AdvancementType$$Type, arg5: boolean, arg6: boolean, arg7: boolean): $Advancement$Builder
+public "display"(arg0: $ItemLike$$Type, arg1: $Component$$Type, arg2: $Component$$Type, arg3: $ResourceLocation$$Type, arg4: $AdvancementType$$Type, arg5: boolean, arg6: boolean, arg7: boolean): $Advancement$Builder
+public "save"(arg0: $Consumer$$Type<($AdvancementHolder)>, arg1: $ResourceLocation$$Type, arg2: $ExistingFileHelper$$Type): $AdvancementHolder
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $Advancement$Builder$$Type = ($Advancement$Builder);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $Advancement$Builder$$Original = $Advancement$Builder;}
+declare module "net.minecraft.advancements.AdvancementRewards" {
+import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
+import {$Optional, $Optional$$Type} from "java.util.Optional"
+import {$CacheableFunction, $CacheableFunction$$Type} from "net.minecraft.commands.CacheableFunction"
+import {$Codec} from "com.mojang.serialization.Codec"
+import {$List, $List$$Type} from "java.util.List"
+import {$ResourceKey, $ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
+import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
+import {$LootTable, $LootTable$$Type} from "net.minecraft.world.level.storage.loot.LootTable"
+import {$Record} from "java.lang.Record"
+
+export class $AdvancementRewards extends $Record {
+static readonly "CODEC": $Codec<($AdvancementRewards)>
+static readonly "EMPTY": $AdvancementRewards
+
+constructor(experience: integer, loot: $List$$Type<($ResourceKey$$Type<($LootTable$$Type)>)>, recipes: $List$$Type<($ResourceLocation$$Type)>, arg3: ($CacheableFunction$$Type)?)
+
+public "loot"(): $List<($ResourceKey<($LootTable)>)>
+public "experience"(): integer
+public "grant"(arg0: $ServerPlayer$$Type): void
+public "equals"(arg0: any): boolean
+public "toString"(): StringJS
+public "hashCode"(): integer
+public "function"(): $Optional<($CacheableFunction)>
+public "recipes"(): $List<($ResourceLocation)>
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $AdvancementRewards$$Type = ({"function"?: ($CacheableFunction$$Type)?, "loot"?: $List$$Type<($ResourceKey$$Type<($LootTable$$Type)>)>, "experience"?: integer, "recipes"?: $List$$Type<($ResourceLocation$$Type)>}) | ([arg?: ($CacheableFunction$$Type)?, loot?: $List$$Type<($ResourceKey$$Type<($LootTable$$Type)>)>, experience?: integer, recipes?: $List$$Type<($ResourceLocation$$Type)>]);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $AdvancementRewards$$Original = $AdvancementRewards;}
+declare module "net.minecraft.advancements.CriterionProgress" {
+import {$FriendlyByteBuf$$Type} from "net.minecraft.network.FriendlyByteBuf"
+import {$Instant, $Instant$$Type} from "java.time.Instant"
+
+export class $CriterionProgress {
+constructor(arg0: $Instant$$Type)
+constructor()
+
+public "serializeToNetwork"(arg0: $FriendlyByteBuf$$Type): void
+public "revoke"(): void
+public static "fromNetwork"(arg0: $FriendlyByteBuf$$Type): $CriterionProgress
+public "grant"(): void
+public "getObtained"(): $Instant
+public "toString"(): StringJS
+public "isDone"(): boolean
+get "obtained"(): $Instant
+get "done"(): boolean
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $CriterionProgress$$Type = ($CriterionProgress);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $CriterionProgress$$Original = $CriterionProgress;}
+declare module "net.minecraft.advancements.AdvancementProgress" {
+import {$Iterable} from "java.lang.Iterable"
+import {$AdvancementRequirements, $AdvancementRequirements$$Type} from "net.minecraft.advancements.AdvancementRequirements"
+import {$Map} from "java.util.Map"
+import {$FriendlyByteBuf$$Type} from "net.minecraft.network.FriendlyByteBuf"
+import {$Codec} from "com.mojang.serialization.Codec"
+import {$Comparable$$Interface} from "java.lang.Comparable"
+import {$CriterionProgress} from "net.minecraft.advancements.CriterionProgress"
+import {$AdvancementProgressAccessor$$Interface} from "io.wispforest.owo.mixin.offline.AdvancementProgressAccessor"
+import {$Component} from "net.minecraft.network.chat.Component"
+import {$Instant} from "java.time.Instant"
+
+export class $AdvancementProgress implements $Comparable$$Interface<($AdvancementProgress)>, $AdvancementProgressAccessor$$Interface {
+static readonly "CODEC": $Codec<($AdvancementProgress)>
+readonly "criteria": $Map<(StringJS), ($CriterionProgress)>
+
+constructor()
+
+public "getRequirements"(): $AdvancementRequirements
+public "serializeToNetwork"(arg0: $FriendlyByteBuf$$Type): void
+public "getCriterion"(arg0: StringJS): $CriterionProgress
+public "getRemainingCriteria"(): $Iterable<(StringJS)>
+public "hasProgress"(): boolean
+public "getCompletedCriteria"(): $Iterable<(StringJS)>
+public static "fromNetwork"(arg0: $FriendlyByteBuf$$Type): $AdvancementProgress
+public "grantProgress"(arg0: StringJS): boolean
+public "revokeProgress"(arg0: StringJS): boolean
+public "getPercent"(): float
+public "getProgressText"(): $Component
+public "getFirstProgressDate"(): $Instant
+public "setRequirements"(arg0: $AdvancementRequirements$$Type): void
+public "toString"(): StringJS
+public "compareTo"(arg0: $AdvancementProgress$$Type): integer
+public "compareTo"(arg0: any): integer
+public "update"(arg0: $AdvancementRequirements$$Type): void
+public "isDone"(): boolean
+get "requirements"(): $AdvancementRequirements
+get "remainingCriteria"(): $Iterable<(StringJS)>
+get "completedCriteria"(): $Iterable<(StringJS)>
+get "percent"(): float
+get "progressText"(): $Component
+get "firstProgressDate"(): $Instant
+set "requirements"(value: $AdvancementRequirements$$Type)
+get "done"(): boolean
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $AdvancementProgress$$Type = ($AdvancementProgress);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $AdvancementProgress$$Original = $AdvancementProgress;}
+declare module "net.minecraft.advancements.AdvancementHolder" {
+import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
+import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
+import {$List} from "java.util.List"
+import {$Advancement, $Advancement$$Type} from "net.minecraft.advancements.Advancement"
+import {$Record} from "java.lang.Record"
+
+export class $AdvancementHolder extends $Record {
+static readonly "LIST_STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($List<($AdvancementHolder)>)>
+static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($AdvancementHolder)>
+
+constructor(arg0: $ResourceLocation$$Type, arg1: $Advancement$$Type)
+
+public "value"(): $Advancement
+public "equals"(arg0: any): boolean
+public "toString"(): StringJS
+public "hashCode"(): integer
+public "id"(): $ResourceLocation
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $AdvancementHolder$$Type = ({"id"?: $ResourceLocation$$Type, "value"?: $Advancement$$Type}) | ([id?: $ResourceLocation$$Type, value?: $Advancement$$Type]);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $AdvancementHolder$$Original = $AdvancementHolder;}
+declare module "net.minecraft.advancements.CriterionTriggerInstance" {
+import {$CriterionValidator, $CriterionValidator$$Type} from "net.minecraft.advancements.critereon.CriterionValidator"
+
+export interface $CriterionTriggerInstance$$Interface {
+
+(arg0: $CriterionValidator): void
+}
+
+export class $CriterionTriggerInstance implements $CriterionTriggerInstance$$Interface {
+ "validate"(arg0: $CriterionValidator$$Type): void
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $CriterionTriggerInstance$$Type = ((arg0: $CriterionValidator) => void);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $CriterionTriggerInstance$$Original = $CriterionTriggerInstance;}
+declare module "net.minecraft.advancements.CriterionTrigger" {
+import {$Criterion} from "net.minecraft.advancements.Criterion"
+import {$PlayerAdvancements$$Type} from "net.minecraft.server.PlayerAdvancements"
+import {$CriterionTrigger$Listener$$Type} from "net.minecraft.advancements.CriterionTrigger$Listener"
+import {$Codec} from "com.mojang.serialization.Codec"
+import {$CriterionTriggerInstance, $CriterionTriggerInstance$$Type} from "net.minecraft.advancements.CriterionTriggerInstance"
+
+export interface $CriterionTrigger$$Interface<T extends $CriterionTriggerInstance> {
+/**
+ * This field is a type stub generated by ProbeJS and shall not be used in any sense.
+ */
+ "probejsInternal$$Literal": Special.TriggerType
+/**
+ * This field is a type stub generated by ProbeJS and shall not be used in any sense.
+ */
+ "probejsInternal$$Tag": Special.TriggerTypeTag
+}
+
+export class $CriterionTrigger<T extends $CriterionTriggerInstance> implements $CriterionTrigger$$Interface {
+ "createCriterion"(arg0: T): $Criterion<(T)>
+ "addPlayerListener"(arg0: $PlayerAdvancements$$Type, arg1: $CriterionTrigger$Listener$$Type<(T)>): void
+ "removePlayerListener"(arg0: $PlayerAdvancements$$Type, arg1: $CriterionTrigger$Listener$$Type<(T)>): void
+ "removePlayerListeners"(arg0: $PlayerAdvancements$$Type): void
+ "codec"(): $Codec<(T)>
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $CriterionTrigger$$Type<T> = (Special.TriggerType);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $CriterionTrigger$$Original<T> = $CriterionTrigger<(T)>;}
+declare module "net.minecraft.advancements.AdvancementTree" {
+import {$Iterable} from "java.lang.Iterable"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
+import {$Collection, $Collection$$Type} from "java.util.Collection"
+import {$AdvancementNode} from "net.minecraft.advancements.AdvancementNode"
+import {$AdvancementTree$Listener$$Type} from "net.minecraft.advancements.AdvancementTree$Listener"
+import {$Set$$Type} from "java.util.Set"
+import {$AdvancementHolder$$Type} from "net.minecraft.advancements.AdvancementHolder"
+
+export class $AdvancementTree {
+constructor()
+
+public "nodes"(): $Collection<($AdvancementNode)>
+public "remove"(arg0: $Set$$Type<($ResourceLocation$$Type)>): void
+public "get"(arg0: $AdvancementHolder$$Type): $AdvancementNode
+public "get"(arg0: $ResourceLocation$$Type): $AdvancementNode
+public "clear"(): void
+public "addAll"(arg0: $Collection$$Type<($AdvancementHolder$$Type)>): void
+public "roots"(): $Iterable<($AdvancementNode)>
+public "setListener"(arg0: $AdvancementTree$Listener$$Type): void
+set "listener"(value: $AdvancementTree$Listener$$Type)
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $AdvancementTree$$Type = ($AdvancementTree);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $AdvancementTree$$Original = $AdvancementTree;}
+declare module "net.minecraft.advancements.Criterion" {
+import {$Codec} from "com.mojang.serialization.Codec"
+import {$CriterionTriggerInstance, $CriterionTriggerInstance$$Type} from "net.minecraft.advancements.CriterionTriggerInstance"
+import {$Record} from "java.lang.Record"
+import {$CriterionTrigger, $CriterionTrigger$$Type} from "net.minecraft.advancements.CriterionTrigger"
+
+export class $Criterion<T extends $CriterionTriggerInstance> extends $Record {
+static readonly "CODEC": $Codec<($Criterion<(never)>)>
+
+constructor(arg0: $CriterionTrigger$$Type<(T)>, arg1: T)
+
+public "triggerInstance"(): T
+public "equals"(arg0: any): boolean
+public "toString"(): StringJS
+public "hashCode"(): integer
+public "trigger"(): $CriterionTrigger<(T)>
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $Criterion$$Type<T> = ({"trigger"?: $CriterionTrigger$$Type<(T)>, "triggerInstance"?: T}) | ([trigger?: $CriterionTrigger$$Type<(T)>, triggerInstance?: T]);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $Criterion$$Original<T> = $Criterion<(T)>;}
+declare module "net.minecraft.advancements.AdvancementType" {
+import {$Enum, $Enum$$Type} from "java.lang.Enum"
+import {$AdvancementHolder$$Type} from "net.minecraft.advancements.AdvancementHolder"
+import {$Component} from "net.minecraft.network.chat.Component"
+import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
+import {$Keyable} from "com.mojang.serialization.Keyable"
+import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
+import {$Codec} from "com.mojang.serialization.Codec"
+import {$Function, $Function$$Type} from "java.util.function.Function"
+import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$MutableComponent} from "net.minecraft.network.chat.MutableComponent"
+import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
+import {$ChatFormatting} from "net.minecraft.ChatFormatting"
+
+export class $AdvancementType extends $Enum<($AdvancementType)> implements $StringRepresentable$$Interface {
+static readonly "CHALLENGE": $AdvancementType
+static readonly "TASK": $AdvancementType
+static readonly "GOAL": $AdvancementType
+static readonly "CODEC": $Codec<($AdvancementType)>
+
+public "getChatColor"(): $ChatFormatting
+public "createAnnouncement"(arg0: $AdvancementHolder$$Type, arg1: $ServerPlayer$$Type): $MutableComponent
+public static "values"(): ($AdvancementType)[]
+public static "valueOf"(arg0: StringJS): $AdvancementType
+public "getDisplayName"(): $Component
+public "getSerializedName"(): StringJS
+public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public "getRemappedEnumConstantName"(): StringJS
+public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
+public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+get "chatColor"(): $ChatFormatting
+get "displayName"(): $Component
+get "serializedName"(): StringJS
+get "remappedEnumConstantName"(): StringJS
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $AdvancementType$$Type = (("task") | ("challenge") | ("goal"));
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $AdvancementType$$Original = $AdvancementType;}
+declare module "net.minecraft.advancements.AdvancementRequirements" {
+import {$Collection$$Type} from "java.util.Collection"
+import {$FriendlyByteBuf$$Type} from "net.minecraft.network.FriendlyByteBuf"
+import {$Codec} from "com.mojang.serialization.Codec"
+import {$Predicate$$Type} from "java.util.function.Predicate"
+import {$DataResult} from "com.mojang.serialization.DataResult"
+import {$List, $List$$Type} from "java.util.List"
+import {$Set, $Set$$Type} from "java.util.Set"
+import {$Record} from "java.lang.Record"
+
+export class $AdvancementRequirements extends $Record {
+static readonly "CODEC": $Codec<($AdvancementRequirements)>
+static readonly "EMPTY": $AdvancementRequirements
+
+constructor(arg0: $FriendlyByteBuf$$Type)
+constructor(arg0: $List$$Type<($List$$Type<(StringJS)>)>)
+
+public "requirements"(): $List<($List<(StringJS)>)>
+public static "anyOf"(arg0: $Collection$$Type<(StringJS)>): $AdvancementRequirements
+public static "allOf"(arg0: $Collection$$Type<(StringJS)>): $AdvancementRequirements
+public "size"(): integer
+public "equals"(arg0: any): boolean
+public "toString"(): StringJS
+public "hashCode"(): integer
+public "test"(arg0: $Predicate$$Type<(StringJS)>): boolean
+public "isEmpty"(): boolean
+public "count"(arg0: $Predicate$$Type<(StringJS)>): integer
+public "validate"(arg0: $Set$$Type<(StringJS)>): $DataResult<($AdvancementRequirements)>
+public "write"(arg0: $FriendlyByteBuf$$Type): void
+public "names"(): $Set<(StringJS)>
+get "empty"(): boolean
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $AdvancementRequirements$$Type = ({"requirements"?: $List$$Type<($List$$Type<(StringJS)>)>}) | ([requirements?: $List$$Type<($List$$Type<(StringJS)>)>]);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $AdvancementRequirements$$Original = $AdvancementRequirements;}
+declare module "net.minecraft.advancements.AdvancementRequirements$Strategy" {
+import {$AdvancementRequirements, $AdvancementRequirements$$Type} from "net.minecraft.advancements.AdvancementRequirements"
+import {$Collection, $Collection$$Type} from "java.util.Collection"
+
+export interface $AdvancementRequirements$Strategy$$Interface {
+
+(arg0: $Collection<(StringJS)>): $AdvancementRequirements$$Type
+}
+
+export class $AdvancementRequirements$Strategy implements $AdvancementRequirements$Strategy$$Interface {
+static readonly "OR": $AdvancementRequirements$Strategy
+static readonly "AND": $AdvancementRequirements$Strategy
+
+ "create"(arg0: $Collection$$Type<(StringJS)>): $AdvancementRequirements
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $AdvancementRequirements$Strategy$$Type = ((arg0: $Collection<(StringJS)>) => $AdvancementRequirements$$Type);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $AdvancementRequirements$Strategy$$Original = $AdvancementRequirements$Strategy;}
+declare module "net.minecraft.advancements.Advancement" {
+import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
+import {$HolderGetter$Provider$$Type} from "net.minecraft.core.HolderGetter$Provider"
+import {$Map, $Map$$Type} from "java.util.Map"
+import {$DisplayInfo, $DisplayInfo$$Type} from "net.minecraft.advancements.DisplayInfo"
+import {$Optional, $Optional$$Type} from "java.util.Optional"
+import {$WithConditions} from "net.neoforged.neoforge.common.conditions.WithConditions"
+import {$ProblemReporter$$Type} from "net.minecraft.util.ProblemReporter"
+import {$AdvancementRewards, $AdvancementRewards$$Type} from "net.minecraft.advancements.AdvancementRewards"
+import {$AdvancementHolder$$Type} from "net.minecraft.advancements.AdvancementHolder"
+import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
+import {$Criterion, $Criterion$$Type} from "net.minecraft.advancements.Criterion"
+import {$AdvancementRequirements, $AdvancementRequirements$$Type} from "net.minecraft.advancements.AdvancementRequirements"
+import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
+import {$Codec} from "com.mojang.serialization.Codec"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
+import {$Record} from "java.lang.Record"
+
+export class $Advancement extends $Record {
+static readonly "CODEC": $Codec<($Advancement)>
+static readonly "CONDITIONAL_CODEC": $Codec<($Optional<($WithConditions<($Advancement)>)>)>
+static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($Advancement)>
+
+constructor(arg0: ($ResourceLocation$$Type)?, arg1: ($DisplayInfo$$Type)?, arg2: $AdvancementRewards$$Type, arg3: $Map$$Type<(StringJS), ($Criterion$$Type<(never)>)>, arg4: $AdvancementRequirements$$Type, arg5: boolean)
+constructor(parent: ($ResourceLocation$$Type)?, display: ($DisplayInfo$$Type)?, rewards: $AdvancementRewards$$Type, criteria: $Map$$Type<(StringJS), ($Criterion$$Type<(never)>)>, requirements: $AdvancementRequirements$$Type, sendsTelemetryEvent: boolean, name: ($Component$$Type)?)
+
+public "rewards"(): $AdvancementRewards
+public "sendsTelemetryEvent"(): boolean
+public "requirements"(): $AdvancementRequirements
+public "isRoot"(): boolean
+public static "name"(arg0: $AdvancementHolder$$Type): $Component
+public "name"(): $Optional<($Component)>
+public "parent"(): $Optional<($ResourceLocation)>
+public "equals"(arg0: any): boolean
+public "toString"(): StringJS
+public "hashCode"(): integer
+public "validate"(arg0: $ProblemReporter$$Type, arg1: $HolderGetter$Provider$$Type): void
+public "display"(): $Optional<($DisplayInfo)>
+public "criteria"(): $Map<(StringJS), ($Criterion<(never)>)>
+get "root"(): boolean
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $Advancement$$Type = ({"display"?: ($DisplayInfo$$Type)?, "rewards"?: $AdvancementRewards$$Type, "name"?: ($Component$$Type)?, "requirements"?: $AdvancementRequirements$$Type, "sendsTelemetryEvent"?: boolean, "criteria"?: $Map$$Type<(StringJS), ($Criterion$$Type<(never)>)>, "parent"?: ($ResourceLocation$$Type)?}) | ([display?: ($DisplayInfo$$Type)?, rewards?: $AdvancementRewards$$Type, name?: ($Component$$Type)?, requirements?: $AdvancementRequirements$$Type, sendsTelemetryEvent?: boolean, criteria?: $Map$$Type<(StringJS), ($Criterion$$Type<(never)>)>, parent?: ($ResourceLocation$$Type)?]);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $Advancement$$Original = $Advancement;}
+declare module "net.minecraft.advancements.AdvancementTree$Listener" {
+import {$AdvancementNode$$Type} from "net.minecraft.advancements.AdvancementNode"
+
+export interface $AdvancementTree$Listener$$Interface {
+}
+
+export class $AdvancementTree$Listener implements $AdvancementTree$Listener$$Interface {
+ "onAddAdvancementRoot"(arg0: $AdvancementNode$$Type): void
+ "onRemoveAdvancementRoot"(arg0: $AdvancementNode$$Type): void
+ "onAddAdvancementTask"(arg0: $AdvancementNode$$Type): void
+ "onRemoveAdvancementTask"(arg0: $AdvancementNode$$Type): void
+ "onAdvancementsCleared"(): void
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $AdvancementTree$Listener$$Type = ($AdvancementTree$Listener);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $AdvancementTree$Listener$$Original = $AdvancementTree$Listener;}
+declare module "net.minecraft.advancements.DisplayInfo" {
+import {$AdvancementType, $AdvancementType$$Type} from "net.minecraft.advancements.AdvancementType"
+import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
+import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
+import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$Optional, $Optional$$Type} from "java.util.Optional"
+import {$Codec} from "com.mojang.serialization.Codec"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
+import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
+
+export class $DisplayInfo {
+static readonly "CODEC": $Codec<($DisplayInfo)>
+static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($DisplayInfo)>
+
+constructor(arg0: $ItemStack$$Type, arg1: $Component$$Type, arg2: $Component$$Type, arg3: ($ResourceLocation$$Type)?, arg4: $AdvancementType$$Type, arg5: boolean, arg6: boolean, arg7: boolean)
+
+public "getBackground"(): $Optional<($ResourceLocation)>
+public "shouldShowToast"(): boolean
+public "shouldAnnounceChat"(): boolean
+public "getDescription"(): $Component
+public "getY"(): float
+public "isHidden"(): boolean
+public "getType"(): $AdvancementType
+public "getIcon"(): $ItemStack
+public "getTitle"(): $Component
+public "setLocation"(arg0: float, arg1: float): void
+public "getX"(): float
+get "background"(): $Optional<($ResourceLocation)>
+get "description"(): $Component
+get "y"(): float
+get "hidden"(): boolean
+get "type"(): $AdvancementType
+get "icon"(): $ItemStack
+get "title"(): $Component
+get "x"(): float
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $DisplayInfo$$Type = ($DisplayInfo);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $DisplayInfo$$Original = $DisplayInfo;}
+declare module "net.minecraft.advancements.CriterionTrigger$Listener" {
+import {$PlayerAdvancements$$Type} from "net.minecraft.server.PlayerAdvancements"
+import {$AdvancementHolder, $AdvancementHolder$$Type} from "net.minecraft.advancements.AdvancementHolder"
+import {$CriterionTriggerInstance, $CriterionTriggerInstance$$Type} from "net.minecraft.advancements.CriterionTriggerInstance"
+import {$Record} from "java.lang.Record"
+
+export class $CriterionTrigger$Listener<T extends $CriterionTriggerInstance> extends $Record {
+constructor(arg0: T, arg1: $AdvancementHolder$$Type, arg2: StringJS)
+
+public "advancement"(): $AdvancementHolder
+public "criterion"(): StringJS
+public "run"(arg0: $PlayerAdvancements$$Type): void
+public "equals"(arg0: any): boolean
+public "toString"(): StringJS
+public "hashCode"(): integer
+public "trigger"(): T
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $CriterionTrigger$Listener$$Type<T> = ({"advancement"?: $AdvancementHolder$$Type, "criterion"?: StringJS, "trigger"?: T}) | ([advancement?: $AdvancementHolder$$Type, criterion?: StringJS, trigger?: T]);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $CriterionTrigger$Listener$$Original<T> = $CriterionTrigger$Listener<(T)>;}

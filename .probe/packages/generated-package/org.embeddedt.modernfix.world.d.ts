@@ -1,0 +1,32 @@
+declare module "org.embeddedt.modernfix.world.StrongholdLocationCache" {
+import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
+import {$List, $List$$Type} from "java.util.List"
+import {$SavedData} from "net.minecraft.world.level.saveddata.SavedData"
+import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
+import {$SavedData$Factory} from "net.minecraft.world.level.saveddata.SavedData$Factory"
+import {$ChunkPos, $ChunkPos$$Type} from "net.minecraft.world.level.ChunkPos"
+import {$Holder$$Type} from "net.minecraft.core.Holder"
+import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$DimensionType$$Type} from "net.minecraft.world.level.dimension.DimensionType"
+
+export class $StrongholdLocationCache extends $SavedData {
+constructor()
+
+public static "getFileId"(arg0: $Holder$$Type<($DimensionType)>): StringJS
+public "getChunkPosList"(): $List<($ChunkPos)>
+public "setChunkPosList"(arg0: $List$$Type<($ChunkPos$$Type)>): void
+public static "load"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): $StrongholdLocationCache
+public static "factory"(arg0: $ServerLevel$$Type): $SavedData$Factory<($StrongholdLocationCache)>
+public "save"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): $CompoundTag
+get "chunkPosList"(): $List<($ChunkPos)>
+set "chunkPosList"(value: $List$$Type<($ChunkPos$$Type)>)
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $StrongholdLocationCache$$Type = ($StrongholdLocationCache);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $StrongholdLocationCache$$Original = $StrongholdLocationCache;}

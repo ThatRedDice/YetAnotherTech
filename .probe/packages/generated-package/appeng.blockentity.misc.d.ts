@@ -1,0 +1,567 @@
+declare module "appeng.blockentity.misc.PaintSplotchesBlockEntity" {
+import {$AEColor$$Type} from "appeng.api.util.AEColor"
+import {$PaintSplotches} from "appeng.block.paint.PaintSplotches"
+import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
+import {$AEBaseBlockEntity} from "appeng.blockentity.AEBaseBlockEntity"
+import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$Collection} from "java.util.Collection"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
+import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$ModelProperty} from "net.neoforged.neoforge.client.model.data.ModelProperty"
+import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
+import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
+import {$ModelData} from "net.neoforged.neoforge.client.model.data.ModelData"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$Splotch} from "appeng.helpers.Splotch"
+import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+
+export class $PaintSplotchesBlockEntity extends $AEBaseBlockEntity {
+static readonly "SPLOTCHES": $ModelProperty<($PaintSplotches)>
+static readonly "ATTACHMENTS_NBT_KEY": StringJS
+
+constructor(arg0: $BlockEntityType$$Type<(never)>, arg1: $BlockPos$$Type, arg2: $BlockState$$Type)
+
+public "saveAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
+public "isSideValid"(arg0: $Direction$$Type): boolean
+public "getDots"(): $Collection<($Splotch)>
+public "cleanSide"(arg0: $Direction$$Type): void
+public "addBlot"(arg0: $AEColor$$Type, arg1: boolean, arg2: $Direction$$Type, arg3: $Vec3$$Type): void
+public "addBlot"(arg0: $ItemStack$$Type, arg1: $Direction$$Type, arg2: $Vec3$$Type): void
+public "loadTag"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
+public "neighborChanged"(): void
+public "getModelData"(): $ModelData
+public static "tryClear"(arg0: any): void
+get "dots"(): $Collection<($Splotch)>
+get "modelData"(): $ModelData
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $PaintSplotchesBlockEntity$$Type = ($PaintSplotchesBlockEntity);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $PaintSplotchesBlockEntity$$Original = $PaintSplotchesBlockEntity;}
+declare module "appeng.blockentity.misc.MysteriousCubeBlockEntity" {
+import {$AEBaseBlockEntity} from "appeng.blockentity.AEBaseBlockEntity"
+import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+
+export class $MysteriousCubeBlockEntity extends $AEBaseBlockEntity {
+static readonly "ATTACHMENTS_NBT_KEY": StringJS
+
+constructor(arg0: $BlockEntityType$$Type<(never)>, arg1: $BlockPos$$Type, arg2: $BlockState$$Type)
+
+public static "tryClear"(arg0: any): void
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $MysteriousCubeBlockEntity$$Type = ($MysteriousCubeBlockEntity);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $MysteriousCubeBlockEntity$$Original = $MysteriousCubeBlockEntity;}
+declare module "appeng.blockentity.misc.CrankBlockEntity" {
+import {$ClientTickingBlockEntity$$Interface} from "appeng.blockentity.ClientTickingBlockEntity"
+import {$AEBaseBlockEntity} from "appeng.blockentity.AEBaseBlockEntity"
+import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$ServerTickingBlockEntity$$Interface} from "appeng.blockentity.ServerTickingBlockEntity"
+import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+
+export class $CrankBlockEntity extends $AEBaseBlockEntity implements $ServerTickingBlockEntity$$Interface, $ClientTickingBlockEntity$$Interface {
+static readonly "ATTACHMENTS_NBT_KEY": StringJS
+static readonly "POWER_PER_CRANK_TURN": integer
+
+constructor(arg0: $BlockEntityType$$Type<(never)>, arg1: $BlockPos$$Type, arg2: $BlockState$$Type)
+
+public "serverTick"(): void
+public "getVisibleRotation"(): float
+public "power"(): boolean
+public "clientTick"(): void
+public static "tryClear"(arg0: any): void
+get "visibleRotation"(): float
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $CrankBlockEntity$$Type = ($CrankBlockEntity);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $CrankBlockEntity$$Original = $CrankBlockEntity;}
+declare module "appeng.blockentity.misc.VibrationChamberBlockEntity" {
+import {$TickRateModulation} from "appeng.api.networking.ticking.TickRateModulation"
+import {$IGridTickable$$Interface} from "appeng.api.networking.ticking.IGridTickable"
+import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
+import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$IUpgradeableObject$$Interface} from "appeng.api.upgrades.IUpgradeableObject"
+import {$List$$Type} from "java.util.List"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
+import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$InternalInventory} from "appeng.api.inventories.InternalInventory"
+import {$AENetworkedInvBlockEntity} from "appeng.blockentity.grid.AENetworkedInvBlockEntity"
+import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$AECableType} from "appeng.api.util.AECableType"
+import {$AppEngInternalInventory$$Type} from "appeng.util.inv.AppEngInternalInventory"
+import {$IGridNode$$Type} from "appeng.api.networking.IGridNode"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
+import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
+import {$ItemLike$$Type} from "net.minecraft.world.level.ItemLike"
+import {$IUpgradeInventory} from "appeng.api.upgrades.IUpgradeInventory"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$TickingRequest} from "appeng.api.networking.ticking.TickingRequest"
+
+export class $VibrationChamberBlockEntity extends $AENetworkedInvBlockEntity implements $IGridTickable$$Interface, $IUpgradeableObject$$Interface {
+ "isOn": boolean
+static readonly "ATTACHMENTS_NBT_KEY": StringJS
+
+constructor(arg0: $BlockEntityType$$Type<(never)>, arg1: $BlockPos$$Type, arg2: $BlockState$$Type)
+
+public "getUpgrades"(): $IUpgradeInventory
+public static "getBurnTime"(arg0: $ItemStack$$Type): integer
+public "clearContent"(): void
+public "saveAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
+public "addAdditionalDrops"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $List$$Type<($ItemStack$$Type)>): void
+public "getEnergyPerFuelTick"(): double
+public "getRemainingFuelTicks"(): double
+public "getFuelItemFuelTicks"(): double
+public "getMaxFuelTicksPerTick"(): double
+public "getCurrentFuelTicksPerTick"(): double
+public "getMaxEnergyRate"(): double
+public static "hasBurnTime"(arg0: $ItemStack$$Type): boolean
+public "getMinFuelTicksPerTick"(): double
+public "getTickingRequest"(arg0: $IGridNode$$Type): $TickingRequest
+public "tickingRequest"(arg0: $IGridNode$$Type, arg1: integer): $TickRateModulation
+public "getSubInventory"(arg0: $ResourceLocation$$Type): $InternalInventory
+public "getCableConnectionType"(arg0: $Direction$$Type): $AECableType
+public "onChangeInventory"(arg0: $AppEngInternalInventory$$Type, arg1: integer): void
+public "loadTag"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
+public "getInternalInventory"(): $InternalInventory
+public "getInstalledUpgrades"(arg0: $ItemLike$$Type): integer
+public "isUpgradedWith"(arg0: $ItemLike$$Type): boolean
+public "saveChanges"(): void
+public "isClientSide"(): boolean
+public static "tryClear"(arg0: any): void
+get "upgrades"(): $IUpgradeInventory
+get "energyPerFuelTick"(): double
+get "remainingFuelTicks"(): double
+get "fuelItemFuelTicks"(): double
+get "maxFuelTicksPerTick"(): double
+get "currentFuelTicksPerTick"(): double
+get "maxEnergyRate"(): double
+get "minFuelTicksPerTick"(): double
+get "internalInventory"(): $InternalInventory
+get "clientSide"(): boolean
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $VibrationChamberBlockEntity$$Type = ($VibrationChamberBlockEntity);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $VibrationChamberBlockEntity$$Original = $VibrationChamberBlockEntity;}
+declare module "appeng.blockentity.misc.InterfaceBlockEntity" {
+import {$IGridNodeListener$State$$Type} from "appeng.api.networking.IGridNodeListener$State"
+import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$IUpgradeableObject$$Interface} from "appeng.api.upgrades.IUpgradeableObject"
+import {$List$$Type} from "java.util.List"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
+import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$InterfaceLogicHost$$Interface} from "appeng.helpers.InterfaceLogicHost"
+import {$InternalInventory} from "appeng.api.inventories.InternalInventory"
+import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
+import {$AECableType} from "appeng.api.util.AECableType"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
+import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
+import {$IConfigManager} from "appeng.api.util.IConfigManager"
+import {$IUpgradeInventory} from "appeng.api.upgrades.IUpgradeInventory"
+import {$ISubMenu$$Type} from "appeng.menu.ISubMenu"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$IConfigurableObject$$Interface} from "appeng.api.util.IConfigurableObject"
+import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
+import {$MenuHostLocator$$Type} from "appeng.menu.locator.MenuHostLocator"
+import {$AENetworkedBlockEntity} from "appeng.blockentity.grid.AENetworkedBlockEntity"
+import {$InterfaceLogic} from "appeng.helpers.InterfaceLogic"
+import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$IPriorityHost$$Interface} from "appeng.helpers.IPriorityHost"
+import {$ItemLike$$Type} from "net.minecraft.world.level.ItemLike"
+import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
+import {$GenericStackInv} from "appeng.helpers.externalstorage.GenericStackInv"
+
+export class $InterfaceBlockEntity extends $AENetworkedBlockEntity implements $IPriorityHost$$Interface, $IUpgradeableObject$$Interface, $IConfigurableObject$$Interface, $InterfaceLogicHost$$Interface {
+static readonly "ATTACHMENTS_NBT_KEY": StringJS
+
+constructor(arg0: $BlockEntityType$$Type<(never)>, arg1: $BlockPos$$Type, arg2: $BlockState$$Type)
+
+public "clearContent"(): void
+public "saveAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
+public "addAdditionalDrops"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $List$$Type<($ItemStack$$Type)>): void
+public "onMainNodeStateChanged"(arg0: $IGridNodeListener$State$$Type): void
+public "getSubInventory"(arg0: $ResourceLocation$$Type): $InternalInventory
+public "getCableConnectionType"(arg0: $Direction$$Type): $AECableType
+public "getMainMenuIcon"(): $ItemStack
+public "getInterfaceLogic"(): $InterfaceLogic
+public "loadTag"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
+public "setPriority"(arg0: integer): void
+public "getPriority"(): integer
+public "getUpgrades"(): $IUpgradeInventory
+public "getInstalledUpgrades"(arg0: $ItemLike$$Type): integer
+public "isUpgradedWith"(arg0: $ItemLike$$Type): boolean
+public "getConfigManager"(): $IConfigManager
+public "getStorage"(): $GenericStackInv
+public "returnToMainMenu"(arg0: $Player$$Type, arg1: $ISubMenu$$Type): void
+public "saveChanges"(): void
+public "getConfig"(): $GenericStackInv
+public "getBlockEntity"(): $BlockEntity
+public "openMenu"(arg0: $Player$$Type, arg1: $MenuHostLocator$$Type): void
+public static "tryClear"(arg0: any): void
+get "mainMenuIcon"(): $ItemStack
+get "interfaceLogic"(): $InterfaceLogic
+set "priority"(value: integer)
+get "priority"(): integer
+get "upgrades"(): $IUpgradeInventory
+get "configManager"(): $IConfigManager
+get "storage"(): $GenericStackInv
+get "config"(): $GenericStackInv
+get "blockEntity"(): $BlockEntity
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $InterfaceBlockEntity$$Type = ($InterfaceBlockEntity);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $InterfaceBlockEntity$$Original = $InterfaceBlockEntity;}
+declare module "appeng.blockentity.misc.ChargerBlockEntity" {
+import {$AENetworkedPoweredBlockEntity} from "appeng.blockentity.grid.AENetworkedPoweredBlockEntity"
+import {$TickRateModulation} from "appeng.api.networking.ticking.TickRateModulation"
+import {$IGridTickable$$Interface} from "appeng.api.networking.ticking.IGridTickable"
+import {$IEnergySource} from "appeng.api.networking.energy.IEnergySource"
+import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
+import {$InternalInventory} from "appeng.api.inventories.InternalInventory"
+import {$ICrankable} from "appeng.api.implementations.blockentities.ICrankable"
+import {$AECableType} from "appeng.api.util.AECableType"
+import {$AppEngInternalInventory$$Type} from "appeng.util.inv.AppEngInternalInventory"
+import {$IGridNode$$Type} from "appeng.api.networking.IGridNode"
+import {$BlockOrientation$$Type} from "appeng.api.orientation.BlockOrientation"
+import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
+import {$Set} from "java.util.Set"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$TickingRequest} from "appeng.api.networking.ticking.TickingRequest"
+
+export class $ChargerBlockEntity extends $AENetworkedPoweredBlockEntity implements $IGridTickable$$Interface {
+static readonly "POWER_MAXIMUM_AMOUNT": integer
+static readonly "ATTACHMENTS_NBT_KEY": StringJS
+
+constructor(arg0: $BlockEntityType$$Type<(never)>, arg1: $BlockPos$$Type, arg2: $BlockState$$Type)
+
+public "isWorking"(): boolean
+public "getCrankable"(arg0: $Direction$$Type): $ICrankable
+public "getTickingRequest"(arg0: $IGridNode$$Type): $TickingRequest
+public "tickingRequest"(arg0: $IGridNode$$Type, arg1: integer): $TickRateModulation
+public "getCableConnectionType"(arg0: $Direction$$Type): $AECableType
+public "onChangeInventory"(arg0: $AppEngInternalInventory$$Type, arg1: integer): void
+public "getGridConnectableSides"(arg0: $BlockOrientation$$Type): $Set<($Direction)>
+public "getInternalInventory"(): $InternalInventory
+public "saveChanges"(): void
+public static "empty"(): $IEnergySource
+public "isClientSide"(): boolean
+public static "tryClear"(arg0: any): void
+get "working"(): boolean
+get "internalInventory"(): $InternalInventory
+get "clientSide"(): boolean
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $ChargerBlockEntity$$Type = ($ChargerBlockEntity);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $ChargerBlockEntity$$Original = $ChargerBlockEntity;}
+declare module "appeng.blockentity.misc.CondenserBlockEntity" {
+import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
+import {$IConfigurableObject$$Interface} from "appeng.api.util.IConfigurableObject"
+import {$MEStorage} from "appeng.api.storage.MEStorage"
+import {$AEBaseInvBlockEntity} from "appeng.blockentity.AEBaseInvBlockEntity"
+import {$InternalInventory} from "appeng.api.inventories.InternalInventory"
+import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$AppEngInternalInventory$$Type} from "appeng.util.inv.AppEngInternalInventory"
+import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
+import {$IConfigManager} from "appeng.api.util.IConfigManager"
+import {$IFluidHandler} from "net.neoforged.neoforge.fluids.capability.IFluidHandler"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+
+export class $CondenserBlockEntity extends $AEBaseInvBlockEntity implements $IConfigurableObject$$Interface {
+static readonly "BYTE_MULTIPLIER": integer
+static readonly "ATTACHMENTS_NBT_KEY": StringJS
+
+constructor(arg0: $BlockEntityType$$Type<(never)>, arg1: $BlockPos$$Type, arg2: $BlockState$$Type)
+
+public "getConfigManager"(): $IConfigManager
+public "getStorage"(): double
+public "saveAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
+public "getStoredPower"(): double
+public "getRequiredPower"(): double
+public "addPower"(arg0: double): void
+public "getExternalInv"(): $InternalInventory
+public "getMEStorage"(): $MEStorage
+public "onChangeInventory"(arg0: $AppEngInternalInventory$$Type, arg1: integer): void
+public "loadTag"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
+public "getInternalInventory"(): $InternalInventory
+public "getFluidHandler"(): $IFluidHandler
+public "isClientSide"(): boolean
+public static "tryClear"(arg0: any): void
+get "configManager"(): $IConfigManager
+get "storage"(): double
+get "storedPower"(): double
+get "requiredPower"(): double
+get "externalInv"(): $InternalInventory
+get "MEStorage"(): $MEStorage
+get "internalInventory"(): $InternalInventory
+get "fluidHandler"(): $IFluidHandler
+get "clientSide"(): boolean
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $CondenserBlockEntity$$Type = ($CondenserBlockEntity);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $CondenserBlockEntity$$Original = $CondenserBlockEntity;}
+declare module "appeng.blockentity.misc.InscriberBlockEntity" {
+import {$AENetworkedPoweredBlockEntity} from "appeng.blockentity.grid.AENetworkedPoweredBlockEntity"
+import {$IGridTickable$$Interface} from "appeng.api.networking.ticking.IGridTickable"
+import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$IUpgradeableObject$$Interface} from "appeng.api.upgrades.IUpgradeableObject"
+import {$List$$Type} from "java.util.List"
+import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
+import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$InternalInventory} from "appeng.api.inventories.InternalInventory"
+import {$ICrankable} from "appeng.api.implementations.blockentities.ICrankable"
+import {$AECableType} from "appeng.api.util.AECableType"
+import {$AppEngInternalInventory$$Type} from "appeng.util.inv.AppEngInternalInventory"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
+import {$BlockOrientation$$Type} from "appeng.api.orientation.BlockOrientation"
+import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
+import {$IConfigManager} from "appeng.api.util.IConfigManager"
+import {$Set} from "java.util.Set"
+import {$IUpgradeInventory} from "appeng.api.upgrades.IUpgradeInventory"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$TickRateModulation} from "appeng.api.networking.ticking.TickRateModulation"
+import {$IConfigurableObject$$Interface} from "appeng.api.util.IConfigurableObject"
+import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
+import {$IEnergySource} from "appeng.api.networking.energy.IEnergySource"
+import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$InscriberRecipe} from "appeng.recipes.handlers.InscriberRecipe"
+import {$IGridNode$$Type} from "appeng.api.networking.IGridNode"
+import {$ItemLike$$Type} from "net.minecraft.world.level.ItemLike"
+import {$TickingRequest} from "appeng.api.networking.ticking.TickingRequest"
+
+export class $InscriberBlockEntity extends $AENetworkedPoweredBlockEntity implements $IGridTickable$$Interface, $IUpgradeableObject$$Interface, $IConfigurableObject$$Interface {
+static readonly "ATTACHMENTS_NBT_KEY": StringJS
+
+constructor(arg0: $BlockEntityType$$Type<(never)>, arg1: $BlockPos$$Type, arg2: $BlockState$$Type)
+
+public "getUpgrades"(): $IUpgradeInventory
+public "getProcessingTime"(): integer
+public "getConfigManager"(): $IConfigManager
+public "clearContent"(): void
+public "saveAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
+public "addAdditionalDrops"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $List$$Type<($ItemStack$$Type)>): void
+public "getCrankable"(arg0: $Direction$$Type): $ICrankable
+public "getTickingRequest"(arg0: $IGridNode$$Type): $TickingRequest
+public "tickingRequest"(arg0: $IGridNode$$Type, arg1: integer): $TickRateModulation
+public "getSubInventory"(arg0: $ResourceLocation$$Type): $InternalInventory
+public "getCableConnectionType"(arg0: $Direction$$Type): $AECableType
+public "onChangeInventory"(arg0: $AppEngInternalInventory$$Type, arg1: integer): void
+public "getGridConnectableSides"(arg0: $BlockOrientation$$Type): $Set<($Direction)>
+public "loadTag"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
+public "getInternalInventory"(): $InternalInventory
+public "isSmash"(): boolean
+public "setSmash"(arg0: boolean): void
+public "getMaxProcessingTime"(): integer
+public "getClientStart"(): long
+public "isRepeatSmash"(): boolean
+public "setRepeatSmash"(arg0: boolean): void
+public "getTask"(): $InscriberRecipe
+public "getInstalledUpgrades"(arg0: $ItemLike$$Type): integer
+public "isUpgradedWith"(arg0: $ItemLike$$Type): boolean
+public "saveChanges"(): void
+public static "empty"(): $IEnergySource
+public "isClientSide"(): boolean
+public static "tryClear"(arg0: any): void
+get "upgrades"(): $IUpgradeInventory
+get "processingTime"(): integer
+get "configManager"(): $IConfigManager
+get "internalInventory"(): $InternalInventory
+get "smash"(): boolean
+set "smash"(value: boolean)
+get "maxProcessingTime"(): integer
+get "clientStart"(): long
+get "repeatSmash"(): boolean
+set "repeatSmash"(value: boolean)
+get "task"(): $InscriberRecipe
+get "clientSide"(): boolean
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $InscriberBlockEntity$$Type = ($InscriberBlockEntity);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $InscriberBlockEntity$$Original = $InscriberBlockEntity;}
+declare module "appeng.blockentity.misc.LightDetectorBlockEntity" {
+import {$AEBaseBlockEntity} from "appeng.blockentity.AEBaseBlockEntity"
+import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
+import {$CommonTickingBlockEntity$$Interface} from "appeng.blockentity.CommonTickingBlockEntity"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+
+export class $LightDetectorBlockEntity extends $AEBaseBlockEntity implements $CommonTickingBlockEntity$$Interface {
+static readonly "ATTACHMENTS_NBT_KEY": StringJS
+
+constructor(arg0: $BlockEntityType$$Type<(never)>, arg1: $BlockPos$$Type, arg2: $BlockState$$Type)
+
+public "updateLight"(): void
+public "isExposedToLight"(): boolean
+public "commonTick"(): void
+public "serverTick"(): void
+public "clientTick"(): void
+public static "tryClear"(arg0: any): void
+get "exposedToLight"(): boolean
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $LightDetectorBlockEntity$$Type = ($LightDetectorBlockEntity);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $LightDetectorBlockEntity$$Original = $LightDetectorBlockEntity;}
+declare module "appeng.blockentity.misc.CellWorkbenchBlockEntity" {
+import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
+import {$IConfigurableObject$$Interface} from "appeng.api.util.IConfigurableObject"
+import {$AEBaseBlockEntity} from "appeng.blockentity.AEBaseBlockEntity"
+import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$IUpgradeableObject$$Interface} from "appeng.api.upgrades.IUpgradeableObject"
+import {$List$$Type} from "java.util.List"
+import {$IConfigInvHost$$Interface} from "appeng.helpers.IConfigInvHost"
+import {$InternalInventoryHost$$Interface} from "appeng.util.inv.InternalInventoryHost"
+import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$InternalInventory} from "appeng.api.inventories.InternalInventory"
+import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$AppEngInternalInventory$$Type} from "appeng.util.inv.AppEngInternalInventory"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
+import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
+import {$ItemLike$$Type} from "net.minecraft.world.level.ItemLike"
+import {$ICellWorkbenchItem} from "appeng.api.storage.cells.ICellWorkbenchItem"
+import {$IConfigManager} from "appeng.api.util.IConfigManager"
+import {$IUpgradeInventory} from "appeng.api.upgrades.IUpgradeInventory"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$GenericStackInv, $GenericStackInv$$Type} from "appeng.helpers.externalstorage.GenericStackInv"
+
+export class $CellWorkbenchBlockEntity extends $AEBaseBlockEntity implements $IConfigurableObject$$Interface, $IUpgradeableObject$$Interface, $InternalInventoryHost$$Interface, $IConfigInvHost$$Interface {
+static readonly "ATTACHMENTS_NBT_KEY": StringJS
+
+constructor(arg0: $BlockEntityType$$Type<(never)>, arg1: $BlockPos$$Type, arg2: $BlockState$$Type)
+
+public "getUpgrades"(): $IUpgradeInventory
+public "getConfigManager"(): $IConfigManager
+public "clearContent"(): void
+public "getCell"(): $ICellWorkbenchItem
+public "saveAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
+public "addAdditionalDrops"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $List$$Type<($ItemStack$$Type)>): void
+public "getSubInventory"(arg0: $ResourceLocation$$Type): $InternalInventory
+public "saveChangedInventory"(arg0: $AppEngInternalInventory$$Type): void
+public "onChangeInventory"(arg0: $AppEngInternalInventory$$Type, arg1: integer): void
+public "loadTag"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
+public static "copy"(arg0: $GenericStackInv$$Type, arg1: $GenericStackInv$$Type): void
+public "getConfig"(): $GenericStackInv
+public "getInstalledUpgrades"(arg0: $ItemLike$$Type): integer
+public "isUpgradedWith"(arg0: $ItemLike$$Type): boolean
+public "isClientSide"(): boolean
+public static "tryClear"(arg0: any): void
+get "upgrades"(): $IUpgradeInventory
+get "configManager"(): $IConfigManager
+get "cell"(): $ICellWorkbenchItem
+get "config"(): $GenericStackInv
+get "clientSide"(): boolean
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $CellWorkbenchBlockEntity$$Type = ($CellWorkbenchBlockEntity);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $CellWorkbenchBlockEntity$$Original = $CellWorkbenchBlockEntity;}
+declare module "appeng.blockentity.misc.GrowthAcceleratorBlockEntity" {
+import {$AENetworkedPoweredBlockEntity} from "appeng.blockentity.grid.AENetworkedPoweredBlockEntity"
+import {$IPowerChannelState$$Interface} from "appeng.api.implementations.IPowerChannelState"
+import {$IEnergySource} from "appeng.api.networking.energy.IEnergySource"
+import {$IGridNodeListener$State$$Type} from "appeng.api.networking.IGridNodeListener$State"
+import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
+import {$InternalInventory} from "appeng.api.inventories.InternalInventory"
+import {$ICrankable} from "appeng.api.implementations.blockentities.ICrankable"
+import {$AECableType} from "appeng.api.util.AECableType"
+import {$BlockOrientation$$Type} from "appeng.api.orientation.BlockOrientation"
+import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
+import {$Set} from "java.util.Set"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+
+export class $GrowthAcceleratorBlockEntity extends $AENetworkedPoweredBlockEntity implements $IPowerChannelState$$Interface {
+static readonly "MAX_STORED_POWER": integer
+static readonly "ATTACHMENTS_NBT_KEY": StringJS
+
+constructor(arg0: $BlockEntityType$$Type<(never)>, arg1: $BlockPos$$Type, arg2: $BlockState$$Type)
+
+public "isPowered"(): boolean
+public "getCrankable"(arg0: $Direction$$Type): $ICrankable
+public "onMainNodeStateChanged"(arg0: $IGridNodeListener$State$$Type): void
+public "getCableConnectionType"(arg0: $Direction$$Type): $AECableType
+public "getGridConnectableSides"(arg0: $BlockOrientation$$Type): $Set<($Direction)>
+public "getInternalInventory"(): $InternalInventory
+public "isActive"(): boolean
+public "saveChanges"(): void
+public static "empty"(): $IEnergySource
+public "isClientSide"(): boolean
+public static "tryClear"(arg0: any): void
+get "powered"(): boolean
+get "internalInventory"(): $InternalInventory
+get "active"(): boolean
+get "clientSide"(): boolean
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $GrowthAcceleratorBlockEntity$$Type = ($GrowthAcceleratorBlockEntity);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $GrowthAcceleratorBlockEntity$$Original = $GrowthAcceleratorBlockEntity;}
