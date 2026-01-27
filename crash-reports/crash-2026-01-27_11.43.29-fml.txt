@@ -1,0 +1,71 @@
+---- Minecraft Crash Report ----
+// I feel sad now :(
+
+Time: 2026-01-27 11:43:29
+Description: Mod loading failures have occurred; consult the issue messages for more details
+
+net.neoforged.neoforge.logging.CrashReportExtender$ModLoadingCrashException: Mod loading has failed
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Mod loading issue for: kubejs_oritech --
+Details:
+	Mod file: /home/deck/.var/app/org.prismlauncher.PrismLauncher/data/PrismLauncher/instances/1.21.1/minecraft/mods/kubejs_oritech-1.0.0.jar
+	Failure message: Mod kubejs_oritech requires oritech any
+		Currently, oritech is not installed
+		
+	Mod version: 3.3.4
+	Mod issues URL: https://github.com/zulu/kubejs-oritech/issues
+	Exception message: <No associated exception found>
+
+-- System Details --
+Details:
+	Minecraft Version: 1.21.1
+	Minecraft Version ID: 1.21.1
+	Operating System: Linux (amd64) version 6.11.11-valve26-1-neptune-611-gb3afa9aa9ae7
+	Java Version: 21.0.7, Microsoft
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), Microsoft
+	Memory: 105371936 bytes (100 MiB) / 692060160 bytes (660 MiB) up to 4294967296 bytes (4096 MiB)
+	CPUs: 8
+	Processor Vendor: AuthenticAMD
+	Processor Name: AMD Custom APU 0405
+	Identifier: AuthenticAMD Family 23 Model 144 Stepping 2
+	Microarchitecture: unknown
+	Frequency (GHz): -0.00
+	Number of physical packages: 1
+	Number of physical CPUs: 4
+	Number of logical CPUs: 8
+	Graphics card #0 name: VanGogh [AMD Custom GPU 0405]
+	Graphics card #0 vendor: Advanced Micro Devices, Inc. [AMD/ATI] (0x1002)
+	Graphics card #0 VRAM (MiB): 258.00
+	Graphics card #0 deviceId: 0x163f
+	Graphics card #0 versionInfo: unknown
+	Virtual memory max (MiB): 15833.26
+	Virtual memory used (MiB): 5047.91
+	Swap memory total (MiB): 8428.49
+	Swap memory used (MiB): 1.75
+	Space in storage for jna.tmpdir (MiB): <path not set>
+	Space in storage for org.lwjgl.system.SharedLibraryExtractPath (MiB): <path not set>
+	Space in storage for io.netty.native.workdir (MiB): <path not set>
+	Space in storage for java.io.tmpdir (MiB): available: 1461.26, total: 1480.95
+	Space in storage for workdir (MiB): available: 24573.43, total: 228571.31
+	JVM Flags: 2 total; -Xms512m -Xmx4096m
+	ModLauncher: 11.0.5+main.901c6ea8
+	ModLauncher launch target: forgeclient
+	ModLauncher services: 
+		sponge-mixin-0.15.2+mixin.0.8.7.jar mixin PLUGINSERVICE 
+		loader-4.0.42.jar slf4jfixer PLUGINSERVICE 
+		loader-4.0.42.jar runtime_enum_extender PLUGINSERVICE 
+		at-modlauncher-10.0.1.jar accesstransformer PLUGINSERVICE 
+		loader-4.0.42.jar runtimedistcleaner PLUGINSERVICE 
+		modlauncher-11.0.5.jar mixin TRANSFORMATIONSERVICE 
+		modlauncher-11.0.5.jar fml TRANSFORMATIONSERVICE 
+	FML Language Providers: 
+		javafml@4.0
+		lowcodefml@4.0
+		minecraft@4.0
+	Mod List: 
+		client-1.21.1-20240808.144430-srg.jar             |Minecraft                     |minecraft                     |1.21.1              |Manifest: a1:d4:5e:04:4f:d3:d6:e0:7b:37:97:cf:77:b0:de:ad:4a:47:ce:8c:96:49:5f:0a:cf:8c:ae:b2:6d:4b:8a:3f
+		neoforge-21.1.218-universal.jar                   |NeoForge                      |neoforge                      |21.1.218            |Manifest: NOSIGNATURE

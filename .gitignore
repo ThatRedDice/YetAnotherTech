@@ -1,0 +1,9 @@
+/mods/
+/saves/
+/world/
+/logs/
+/screenshots/
+/bin/
+/cache/
+*.jar
+.mixin.out
