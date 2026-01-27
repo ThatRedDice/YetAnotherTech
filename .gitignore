@@ -1,9 +1,23 @@
+# On ne garde que l'intelligence du pack
+*
+!kubejs/
+!config/
+!ftbquests/
+!fancymenu/
+!defaultconfigs/
+!patchouli_books/
+!scripts/
+!.gitignore
+
+# On ignore tout le reste (le lourd)
 /mods/
 /saves/
 /world/
 /logs/
+/debug/
+/crash-reports/
 /screenshots/
+/resourcepacks/
+/shaderpacks/
 /bin/
-/cache/
-*.jar
-.mixin.out
+/natives/
