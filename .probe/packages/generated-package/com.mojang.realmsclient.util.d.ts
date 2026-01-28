@@ -57,7 +57,7 @@ public "experiments"(): $Set<(StringJS)>
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $WorldGenerationInfo$$Type = ({"levelType"?: $LevelType$$Type, "experiments"?: $Set$$Type<(StringJS)>, "seed"?: StringJS, "generateStructures"?: boolean}) | ([levelType?: $LevelType$$Type, experiments?: $Set$$Type<(StringJS)>, seed?: StringJS, generateStructures?: boolean]);
+export type $WorldGenerationInfo$$Type = ({"experiments"?: $Set$$Type<(StringJS)>, "seed"?: StringJS, "generateStructures"?: boolean, "levelType"?: $LevelType$$Type}) | ([experiments?: $Set$$Type<(StringJS)>, seed?: StringJS, generateStructures?: boolean, levelType?: $LevelType$$Type]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */

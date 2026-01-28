@@ -1,6 +1,6 @@
 declare module "appeng.api.storage.ITerminalHost" {
-import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ILinkStatus} from "appeng.api.storage.ILinkStatus"
+import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$IConfigurableObject$$Interface} from "appeng.api.util.IConfigurableObject"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$MEStorage} from "appeng.api.storage.MEStorage"
@@ -24,9 +24,9 @@ export class $ITerminalHost implements $ITerminalHost$$Interface {
  "getLinkStatus"(): $ILinkStatus
  "getCloseHotkey"(): StringJS
  "getInventory"(): $MEStorage
- "getUpgrades"(): $IUpgradeInventory
  "getInstalledUpgrades"(arg0: $ItemLike$$Type): integer
  "isUpgradedWith"(arg0: $ItemLike$$Type): boolean
+ "getUpgrades"(): $IUpgradeInventory
  "getConfigManager"(): $IConfigManager
  "returnToMainMenu"(arg0: $Player$$Type, arg1: $ISubMenu$$Type): void
  "getMainMenuIcon"(): $ItemStack

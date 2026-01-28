@@ -57,8 +57,8 @@ import {$List$$Type} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$KnowledgeKey} from "mcjty.rftoolsdim.modules.knowledge.data.KnowledgeKey"
 import {$DimletRarity, $DimletRarity$$Type} from "mcjty.rftoolsdim.modules.dimlets.data.DimletRarity"
 import {$DimletKey$$Type} from "mcjty.rftoolsdim.modules.dimlets.data.DimletKey"
@@ -79,9 +79,9 @@ constructor(arg0: $DimletRarity$$Type)
 public "getRarity"(): $DimletRarity
 public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
 public static "getKnowledgeKey"(arg0: $ItemStack$$Type): $KnowledgeKey
-public static "createUnresearchedLostKnowledge"(arg0: $DimletRarity$$Type): $ItemStack
 public static "createLostKnowledge"(arg0: $Level$$Type, arg1: $DimletKey$$Type): $ItemStack
 public static "createRandomLostKnowledge"(arg0: $Level$$Type, arg1: $DimletRarity$$Type, arg2: $RandomSource$$Type): $ItemStack
+public static "createUnresearchedLostKnowledge"(arg0: $DimletRarity$$Type): $ItemStack
 public "getMaxWidth"(): integer
 public "getManualEntry"(): $ManualEntry
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean

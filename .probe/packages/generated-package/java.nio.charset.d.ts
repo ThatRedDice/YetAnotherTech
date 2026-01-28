@@ -9,6 +9,7 @@ export class $CoderResult {
 static readonly "OVERFLOW": $CoderResult
 static readonly "UNDERFLOW": $CoderResult
 
+public static "unmappableForLength"(arg0: integer): $CoderResult
 public "length"(): integer
 public "toString"(): StringJS
 public "isUnderflow"(): boolean
@@ -18,7 +19,6 @@ public "isError"(): boolean
 public static "malformedForLength"(arg0: integer): $CoderResult
 public "isMalformed"(): boolean
 public "isUnmappable"(): boolean
-public static "unmappableForLength"(arg0: integer): $CoderResult
 get "underflow"(): boolean
 get "overflow"(): boolean
 get "error"(): boolean

@@ -3,8 +3,8 @@ import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$SoundEventData} from "io.wispforest.accessories.api.SoundEventData"
 import {$List$$Type} from "java.util.List"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$SlotReference$$Type} from "io.wispforest.accessories.api.slot.SlotReference"
 import {$AccessoryAttributeBuilder$$Type} from "io.wispforest.accessories.api.attributes.AccessoryAttributeBuilder"
 import {$AccessoryItemAttributeModifiers$Builder$$Type} from "io.wispforest.accessories.api.components.AccessoryItemAttributeModifiers$Builder"
@@ -65,9 +65,9 @@ export type $Accessory$$Original = $Accessory;}
 declare module "io.wispforest.accessories.api.attributes.AccessoryAttributeBuilder" {
 import {$AttributeModifier, $AttributeModifier$$Type} from "net.minecraft.world.entity.ai.attributes.AttributeModifier"
 import {$AttributeModificationData} from "io.wispforest.accessories.api.attributes.AttributeModificationData"
-import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Collection} from "java.util.Collection"
 import {$Map} from "java.util.Map"
+import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$AttributeModifier$Operation$$Type} from "net.minecraft.world.entity.ai.attributes.AttributeModifier$Operation"
 import {$Multimap} from "com.google.common.collect.Multimap"
 import {$Attribute, $Attribute$$Type} from "net.minecraft.world.entity.ai.attributes.Attribute"
@@ -92,11 +92,11 @@ public static "createSlotPath"(slotname: StringJS, slot: integer): StringJS
  * @deprecated
  */
 public static "createSlotPath"(ref: $SlotReference$$Type): StringJS
-public "addStackable"(attribute: $Holder$$Type<($Attribute)>, location: $ResourceLocation$$Type, amount: double, operation: $AttributeModifier$Operation$$Type): $AccessoryAttributeBuilder
+public "getExclusive"(attribute: $Holder$$Type<($Attribute)>, location: $ResourceLocation$$Type): $AttributeModificationData
 public "addStackable"(attribute: $Holder$$Type<($Attribute)>, modifier: $AttributeModifier$$Type): $AccessoryAttributeBuilder
+public "addStackable"(attribute: $Holder$$Type<($Attribute)>, location: $ResourceLocation$$Type, amount: double, operation: $AttributeModifier$Operation$$Type): $AccessoryAttributeBuilder
 public "addExclusive"(attribute: $Holder$$Type<($Attribute)>, location: $ResourceLocation$$Type, amount: double, operation: $AttributeModifier$Operation$$Type): $AccessoryAttributeBuilder
 public "addExclusive"(attribute: $Holder$$Type<($Attribute)>, modifier: $AttributeModifier$$Type): $AccessoryAttributeBuilder
-public "getExclusive"(attribute: $Holder$$Type<($Attribute)>, location: $ResourceLocation$$Type): $AttributeModificationData
 public "exclusiveAttributes"(): $Map<($Holder<($Attribute)>), ($Map<($ResourceLocation), ($AttributeModificationData)>)>
 public "stackedAttributes"(): $Multimap<($Holder<($Attribute)>), ($AttributeModificationData)>
 public "removeExclusive"(attribute: $Holder$$Type<($Attribute)>, location: $ResourceLocation$$Type): $AttributeModificationData
@@ -118,10 +118,10 @@ export type $AccessoryAttributeBuilder$$Type = ($AccessoryAttributeBuilder);
  */
 export type $AccessoryAttributeBuilder$$Original = $AccessoryAttributeBuilder;}
 declare module "io.wispforest.accessories.api.client.AccessoryRenderer" {
-import {$HumanoidArm$$Type} from "net.minecraft.world.entity.HumanoidArm"
 import {$HumanoidModel$$Type} from "net.minecraft.client.model.HumanoidModel"
-import {$MultiBufferSource, $MultiBufferSource$$Type} from "net.minecraft.client.renderer.MultiBufferSource"
+import {$HumanoidArm$$Type} from "net.minecraft.world.entity.HumanoidArm"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$MultiBufferSource, $MultiBufferSource$$Type} from "net.minecraft.client.renderer.MultiBufferSource"
 import {$PoseStack, $PoseStack$$Type} from "com.mojang.blaze3d.vertex.PoseStack"
 import {$EntityModel, $EntityModel$$Type} from "net.minecraft.client.model.EntityModel"
 import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
@@ -193,26 +193,26 @@ declare module "io.wispforest.accessories.api.slot.SlotReference" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$List$$Type} from "java.util.List"
 import {$SlotType} from "io.wispforest.accessories.api.slot.SlotType"
-import {$AccessoriesCapability} from "io.wispforest.accessories.api.AccessoriesCapability"
 import {$AccessoriesContainer} from "io.wispforest.accessories.api.AccessoriesContainer"
+import {$AccessoriesCapability} from "io.wispforest.accessories.api.AccessoriesCapability"
 import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 
 export interface $SlotReference$$Interface {
-get "valid"(): boolean
 get "stack"(): $ItemStack
+get "valid"(): boolean
 set "stack"(value: $ItemStack$$Type)
 }
 
 export class $SlotReference implements $SlotReference$$Interface {
  "slotName"(): StringJS
- "createSlotPath"(): StringJS
  "slotContainer"(): $AccessoriesContainer
+ "createSlotPath"(): StringJS
  "entity"(): $LivingEntity
- "isValid"(): boolean
  "slot"(): integer
  "type"(): $SlotType
 static "of"(livingEntity: $LivingEntity$$Type, slotName: StringJS, slot: integer): $SlotReference
  "getStack"(): $ItemStack
+ "isValid"(): boolean
  "setStack"(stack: $ItemStack$$Type): boolean
 static "ofNest"(livingEntity: $LivingEntity$$Type, slotName: StringJS, initialHolderSlot: integer, innerSlotIndices: $List$$Type<(integer)>): $SlotReference
  "capability"(): $AccessoriesCapability
@@ -262,10 +262,10 @@ static readonly "EMPTY_SLOT_ICON": $ResourceLocation
  "name"(): StringJS
  "compareTo"(o: $SlotType$$Type): integer
  "compareTo"(arg0: any): integer
- "validators"(): $Set<($ResourceLocation)>
  "order"(): integer
  "icon"(): $ResourceLocation
  "translation"(): StringJS
+ "validators"(): $Set<($ResourceLocation)>
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -338,15 +338,15 @@ public "reference"(): $SlotReference
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $SlotEntryReference$$Type = ({"reference"?: $SlotReference$$Type, "stack"?: $ItemStack$$Type}) | ([reference?: $SlotReference$$Type, stack?: $ItemStack$$Type]);
+export type $SlotEntryReference$$Type = ({"stack"?: $ItemStack$$Type, "reference"?: $SlotReference$$Type}) | ([stack?: $ItemStack$$Type, reference?: $SlotReference$$Type]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
 export type $SlotEntryReference$$Original = $SlotEntryReference;}
 declare module "io.wispforest.accessories.api.AccessoriesCapability" {
 import {$AttributeModifier, $AttributeModifier$$Type} from "net.minecraft.world.entity.ai.attributes.AttributeModifier"
-import {$Map} from "java.util.Map"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$Map} from "java.util.Map"
 import {$Pair} from "it.unimi.dsi.fastutil.Pair"
 import {$Optional} from "java.util.Optional"
 import {$List} from "java.util.List"
@@ -431,9 +431,9 @@ static "getOptionally"(livingEntity: $LivingEntity$$Type): $Optional<($Accessori
  * @deprecated
  */
  "equipAccessory"(stack: $ItemStack$$Type, allowSwapping: boolean): $Pair<($SlotReference), ($List<($ItemStack)>)>
- "entity"(): $LivingEntity
- "getContainer"(slotType: $SlotType$$Type): $AccessoriesContainer
  "getContainer"(reference: $SlotTypeReference$$Type): $AccessoriesContainer
+ "getContainer"(slotType: $SlotType$$Type): $AccessoriesContainer
+ "entity"(): $LivingEntity
  "reset"(arg0: boolean): void
 static "get"(livingEntity: $LivingEntity$$Type): $AccessoriesCapability
  "getHolder"(): $AccessoriesHolder
@@ -467,11 +467,11 @@ public "test"(arg0: any): boolean
 public "test"(arg0: $ItemStack$$Type): boolean
 public static "ofComponents"(...dataComponentTypes: ($DataComponentType$$Type<(never)>)[]): $ItemStackBasedPredicate
 public static "ofComponents"(name: StringJS, ...dataComponentTypes: ($DataComponentType$$Type<(never)>)[]): $ItemStackBasedPredicate
-public "or"(arg0: $Predicate$$Type<($ItemStack)>): $Predicate<($ItemStack)>
+public static "not"<T>(arg0: $Predicate$$Type<($ItemStack)>): $Predicate<($ItemStack)>
 public static "isEqual"<T>(arg0: any): $Predicate<($ItemStack)>
 public "negate"(): $Predicate<($ItemStack)>
 public "and"(arg0: $Predicate$$Type<($ItemStack)>): $Predicate<($ItemStack)>
-public static "not"<T>(arg0: $Predicate$$Type<($ItemStack)>): $Predicate<($ItemStack)>
+public "or"(arg0: $Predicate$$Type<($ItemStack)>): $Predicate<($ItemStack)>
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -508,8 +508,8 @@ export type $SlotTypeReference$$Type = ({"slotName"?: StringJS}) | ([slotName?: 
 export type $SlotTypeReference$$Original = $SlotTypeReference;}
 declare module "io.wispforest.accessories.api.client.ArmorRenderingExtension" {
 import {$AccessoryRenderer} from "io.wispforest.accessories.api.client.AccessoryRenderer"
-import {$MultiBufferSource$$Type} from "net.minecraft.client.renderer.MultiBufferSource"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$MultiBufferSource$$Type} from "net.minecraft.client.renderer.MultiBufferSource"
 import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$PoseStack$$Type} from "com.mojang.blaze3d.vertex.PoseStack"
 import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
@@ -592,10 +592,10 @@ constructor(attribute: $Holder$$Type<($Attribute)>, modifier: $AttributeModifier
 public "isStackable"(): boolean
 public "slotName"(): StringJS
 public "attribute"(): $Holder<($Attribute)>
+public "modifier"(): $AttributeModifier
 public "equals"(o: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
-public "modifier"(): $AttributeModifier
 get "stackable"(): boolean
 }
 /**
@@ -619,10 +619,10 @@ constructor(slotPath: StringJS, attribute: $Holder$$Type<($Attribute)>, modifier
 
 public "slotPath"(): StringJS
 public "attribute"(): $Holder<($Attribute)>
+public "modifier"(): $AttributeModifier
 public "equals"(o: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
-public "modifier"(): $AttributeModifier
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -669,16 +669,16 @@ import {$SoundEventData} from "io.wispforest.accessories.api.SoundEventData"
 import {$List$$Type} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$SlotReference$$Type} from "io.wispforest.accessories.api.slot.SlotReference"
 import {$AccessoryAttributeBuilder$$Type} from "io.wispforest.accessories.api.attributes.AccessoryAttributeBuilder"
 import {$AccessoryItemAttributeModifiers$Builder$$Type} from "io.wispforest.accessories.api.components.AccessoryItemAttributeModifiers$Builder"
 import {$DropRule} from "io.wispforest.accessories.api.DropRule"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
-import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$SlotType$$Type} from "io.wispforest.accessories.api.slot.SlotType"
+import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item, $Item$$Type} from "net.minecraft.world.item.Item"
 import {$Accessory$$Interface} from "io.wispforest.accessories.api.Accessory"
 
@@ -767,14 +767,14 @@ export type $AccessoryItemAttributeModifiers$Builder$$Type = ($AccessoryItemAttr
  */
 export type $AccessoryItemAttributeModifiers$Builder$$Original = $AccessoryItemAttributeModifiers$Builder;}
 declare module "io.wispforest.accessories.api.components.AccessoryItemAttributeModifiers" {
-import {$AccessoryAttributeBuilder, $AccessoryAttributeBuilder$$Type} from "io.wispforest.accessories.api.attributes.AccessoryAttributeBuilder"
 import {$Endec} from "io.wispforest.endec.Endec"
+import {$AccessoryAttributeBuilder, $AccessoryAttributeBuilder$$Type} from "io.wispforest.accessories.api.attributes.AccessoryAttributeBuilder"
 import {$AccessoryItemAttributeModifiers$Builder} from "io.wispforest.accessories.api.components.AccessoryItemAttributeModifiers$Builder"
 import {$AttributeModifier, $AttributeModifier$$Type} from "net.minecraft.world.entity.ai.attributes.AttributeModifier"
 import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$List, $List$$Type} from "java.util.List"
-import {$AccessoryItemAttributeModifiers$Entry, $AccessoryItemAttributeModifiers$Entry$$Type} from "io.wispforest.accessories.api.components.AccessoryItemAttributeModifiers$Entry"
 import {$Attribute$$Type} from "net.minecraft.world.entity.ai.attributes.Attribute"
+import {$AccessoryItemAttributeModifiers$Entry, $AccessoryItemAttributeModifiers$Entry$$Type} from "io.wispforest.accessories.api.components.AccessoryItemAttributeModifiers$Entry"
 import {$Holder$$Type} from "net.minecraft.core.Holder"
 import {$Record} from "java.lang.Record"
 import {$SlotReference$$Type} from "io.wispforest.accessories.api.slot.SlotReference"
@@ -810,12 +810,12 @@ export type $AccessoryItemAttributeModifiers$$Type = ({"modifiers"?: $List$$Type
 export type $AccessoryItemAttributeModifiers$$Original = $AccessoryItemAttributeModifiers;}
 declare module "io.wispforest.accessories.api.AccessoriesContainer" {
 import {$AttributeModifier, $AttributeModifier$$Type} from "net.minecraft.world.entity.ai.attributes.AttributeModifier"
-import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
-import {$Map} from "java.util.Map"
 import {$Collection} from "java.util.Collection"
+import {$Map} from "java.util.Map"
+import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$AttributeModifier$Operation$$Type} from "net.minecraft.world.entity.ai.attributes.AttributeModifier$Operation"
-import {$List} from "java.util.List"
 import {$ExpandedSimpleContainer} from "io.wispforest.accessories.impl.ExpandedSimpleContainer"
+import {$List} from "java.util.List"
 import {$AccessoriesCapability} from "io.wispforest.accessories.api.AccessoriesCapability"
 import {$SlotType} from "io.wispforest.accessories.api.slot.SlotType"
 import {$Set} from "java.util.Set"
@@ -867,8 +867,8 @@ export type $AccessoriesContainer$$Original = $AccessoriesContainer;}
 declare module "io.wispforest.accessories.api.AccessoriesHolder" {
 import {$PlayerEquipControl, $PlayerEquipControl$$Type} from "io.wispforest.accessories.impl.PlayerEquipControl"
 import {$Optional} from "java.util.Optional"
-import {$Set, $Set$$Type} from "java.util.Set"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$Set, $Set$$Type} from "java.util.Set"
 import {$AccessoriesHolderLookupCache} from "io.wispforest.accessories.impl.caching.AccessoriesHolderLookupCache"
 
 export interface $AccessoriesHolder$$Interface {
@@ -877,26 +877,28 @@ get "groupFiltersOpen"(): boolean
 }
 
 export class $AccessoriesHolder implements $AccessoriesHolder$$Interface {
+ "widgetType"(): integer
+ "widgetType"(arg0: integer): $AccessoriesHolder
 static "getOptionally"(livingEntity: $LivingEntity$$Type): $Optional<($AccessoriesHolder)>
  "getLookupCache"(): $AccessoriesHolderLookupCache
- "equipControl"(arg0: $PlayerEquipControl$$Type): $AccessoriesHolder
  "equipControl"(): $PlayerEquipControl
+ "equipControl"(arg0: $PlayerEquipControl$$Type): $AccessoriesHolder
  "showAdvancedOptions"(arg0: boolean): $AccessoriesHolder
  "showAdvancedOptions"(): boolean
- "showUnusedSlots"(arg0: boolean): $AccessoriesHolder
  "showUnusedSlots"(): boolean
+ "showUnusedSlots"(arg0: boolean): $AccessoriesHolder
  "columnAmount"(): integer
  "columnAmount"(arg0: integer): $AccessoriesHolder
- "showGroupFilter"(): boolean
  "showGroupFilter"(arg0: boolean): $AccessoriesHolder
- "mainWidgetPosition"(arg0: boolean): $AccessoriesHolder
+ "showGroupFilter"(): boolean
  "mainWidgetPosition"(): boolean
- "sideWidgetPosition"(arg0: boolean): $AccessoriesHolder
+ "mainWidgetPosition"(arg0: boolean): $AccessoriesHolder
  "sideWidgetPosition"(): boolean
+ "sideWidgetPosition"(arg0: boolean): $AccessoriesHolder
  "showCraftingGrid"(): boolean
  "showCraftingGrid"(arg0: boolean): $AccessoriesHolder
- "isGroupFiltersOpen"(): boolean
  "isGroupFiltersOpen"(arg0: boolean): $AccessoriesHolder
+ "isGroupFiltersOpen"(): boolean
  "filteredGroups"(arg0: $Set$$Type<(StringJS)>): $AccessoriesHolder
  "filteredGroups"(): $Set<(StringJS)>
  "cosmeticsShown"(arg0: boolean): $AccessoriesHolder
@@ -905,12 +907,12 @@ static "getOptionally"(livingEntity: $LivingEntity$$Type): $Optional<($Accessori
  * 
  * @deprecated
  */
- "showUniqueSlots"(value: boolean): $AccessoriesHolder
+ "showUniqueSlots"(): boolean
 /**
  * 
  * @deprecated
  */
- "showUniqueSlots"(): boolean
+ "showUniqueSlots"(value: boolean): $AccessoriesHolder
 /**
  * 
  * @deprecated
@@ -921,8 +923,6 @@ static "getOptionally"(livingEntity: $LivingEntity$$Type): $Optional<($Accessori
  * @deprecated
  */
  "linesShown"(value: boolean): $AccessoriesHolder
- "widgetType"(): integer
- "widgetType"(arg0: integer): $AccessoriesHolder
 static "get"(livingEntity: $LivingEntity$$Type): $AccessoriesHolder
 }
 /**

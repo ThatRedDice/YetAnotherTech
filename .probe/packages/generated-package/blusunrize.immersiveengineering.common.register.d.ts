@@ -10,8 +10,8 @@ import {$Fluid, $Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 import {$IEFluidBlock, $IEFluidBlock$$Type} from "blusunrize.immersiveengineering.common.fluids.IEFluidBlock"
 import {$Item, $Item$$Type} from "net.minecraft.world.item.Item"
 import {$FluidType, $FluidType$$Type} from "net.neoforged.neoforge.fluids.FluidType"
-import {$Record} from "java.lang.Record"
 import {$Property, $Property$$Type} from "net.minecraft.world.level.block.state.properties.Property"
+import {$Record} from "java.lang.Record"
 
 export class $IEFluids$FluidEntry extends $Record {
 constructor(flowing: $DeferredHolder$$Type<($Fluid$$Type), ($IEFluid$$Type)>, flowingTexture: $ResourceLocation$$Type, still: $DeferredHolder$$Type<($Fluid$$Type), ($IEFluid$$Type)>, stillTexture: $ResourceLocation$$Type, block: $IEBlocks$BlockEntry$$Type<($IEFluidBlock$$Type)>, bucket: $DeferredHolder$$Type<($Item$$Type), ($BucketItem$$Type)>, type: $Holder$$Type<($FluidType)>, properties: $List$$Type<($Property$$Type<(never)>)>)
@@ -23,8 +23,8 @@ public "flowingTexture"(): $ResourceLocation
 public "getFlowing"(): $IEFluid
 public "getStill"(): $IEFluid
 public "getStillGetter"(): $DeferredHolder<($Fluid), ($IEFluid)>
-public "getBlock"(): $IEFluidBlock
 public "bucket"(): $DeferredHolder<($Item), ($BucketItem)>
+public "getBlock"(): $IEFluidBlock
 public "type"(): $Holder<($FluidType)>
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
@@ -51,8 +51,8 @@ import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyBy
 import {$Attribute} from "net.minecraft.world.entity.ai.attributes.Attribute"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$MobEffectCategory$$Type} from "net.minecraft.world.effect.MobEffectCategory"
-import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Holder} from "net.minecraft.core.Holder"
+import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$MobEffect$AttributeTemplate} from "net.minecraft.world.effect.MobEffect$AttributeTemplate"
 
 export class $IEPotions$IEPotion extends $MobEffect {
@@ -103,13 +103,13 @@ import {$Collection} from "java.util.Collection"
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$PostBlock} from "blusunrize.immersiveengineering.common.blocks.generic.PostBlock"
 import {$BlockBehaviour$Properties, $BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
-import {$WallmountBlock} from "blusunrize.immersiveengineering.common.blocks.generic.WallmountBlock"
 import {$FenceBlock} from "net.minecraft.world.level.block.FenceBlock"
+import {$WallmountBlock} from "blusunrize.immersiveengineering.common.blocks.generic.WallmountBlock"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$IEEntityBlock} from "blusunrize.immersiveengineering.common.blocks.IEEntityBlock"
-import {$ItemLike$$Interface} from "net.minecraft.world.level.ItemLike"
 import {$Function$$Type} from "java.util.function.Function"
+import {$ItemLike$$Interface} from "net.minecraft.world.level.ItemLike"
 import {$Supplier$$Type, $Supplier$$Interface} from "java.util.function.Supplier"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$ScaffoldingBlock} from "blusunrize.immersiveengineering.common.blocks.generic.ScaffoldingBlock"
@@ -123,9 +123,9 @@ constructor(arg0: T)
 constructor(arg0: StringJS, arg1: $Supplier$$Type<($BlockBehaviour$Properties$$Type)>, arg2: $Function$$Type<($BlockBehaviour$Properties), (T)>)
 constructor(arg0: $IEBlocks$BlockEntry$$Type<(T)>)
 
-public "asItem"(): $Item
 public static "barrel"(arg0: StringJS, arg1: boolean): $IEBlocks$BlockEntry<($IEEntityBlock<(never)>)>
 public static "scaffolding"(arg0: StringJS, arg1: $Supplier$$Type<($BlockBehaviour$Properties$$Type)>): $IEBlocks$BlockEntry<($ScaffoldingBlock)>
+public "asItem"(): $Item
 public static "wallmount"(arg0: StringJS, arg1: $Supplier$$Type<($BlockBehaviour$Properties$$Type)>): $IEBlocks$BlockEntry<($WallmountBlock)>
 public static "post"(arg0: StringJS, arg1: $Supplier$$Type<($BlockBehaviour$Properties$$Type)>): $IEBlocks$BlockEntry<($PostBlock)>
 public "get"(): any

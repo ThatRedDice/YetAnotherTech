@@ -19,22 +19,21 @@ export type $IGridNodeListener$State$$Type = (("power") | ("channel") | ("grid_b
  */
 export type $IGridNodeListener$State$$Original = $IGridNodeListener$State;}
 declare module "appeng.api.networking.IGrid" {
-import {$ITickManager} from "appeng.api.networking.ticking.ITickManager"
-import {$Iterable} from "java.lang.Iterable"
 import {$IPathingService} from "appeng.api.networking.pathing.IPathingService"
+import {$Iterable} from "java.lang.Iterable"
+import {$ITickManager} from "appeng.api.networking.ticking.ITickManager"
 import {$IStorageService} from "appeng.api.networking.storage.IStorageService"
 import {$GridEvent, $GridEvent$$Type} from "appeng.api.networking.events.GridEvent"
 import {$IGridNode} from "appeng.api.networking.IGridNode"
 import {$JsonWriter$$Type} from "com.google.gson.stream.JsonWriter"
 import {$IGridService} from "appeng.api.networking.IGridService"
 import {$ISpatialService} from "appeng.api.networking.spatial.ISpatialService"
-import {$Set} from "java.util.Set"
 import {$Class, $Class$$Type} from "java.lang.Class"
+import {$Set} from "java.util.Set"
 import {$IEnergyService} from "appeng.api.networking.energy.IEnergyService"
 import {$ICraftingService} from "appeng.api.networking.crafting.ICraftingService"
 
 export interface $IGrid$$Interface {
-get "nodes"(): $Iterable<($IGridNode)>
 get "pivot"(): $IGridNode
 get "machineClasses"(): $Iterable<($Class<(never)>)>
 get "tickManager"(): $ITickManager
@@ -43,11 +42,11 @@ get "energyService"(): $IEnergyService
 get "craftingService"(): $ICraftingService
 get "pathingService"(): $IPathingService
 get "spatialService"(): $ISpatialService
+get "nodes"(): $Iterable<($IGridNode)>
 get "empty"(): boolean
 }
 
 export class $IGrid implements $IGrid$$Interface {
- "getNodes"(): $Iterable<($IGridNode)>
  "getPivot"(): $IGridNode
  "getMachineClasses"(): $Iterable<($Class<(never)>)>
  "getMachineNodes"(arg0: $Class$$Type<(never)>): $Iterable<($IGridNode)>
@@ -59,10 +58,11 @@ export class $IGrid implements $IGrid$$Interface {
  "getCraftingService"(): $ICraftingService
  "getPathingService"(): $IPathingService
  "getSpatialService"(): $ISpatialService
- "export"(arg0: $JsonWriter$$Type): void
+ "getNodes"(): $Iterable<($IGridNode)>
  "getService"<C extends $IGridService>(arg0: $Class$$Type<(C)>): C
  "size"(): integer
  "isEmpty"(): boolean
+ "export"(arg0: $JsonWriter$$Type): void
  "postEvent"<T extends $GridEvent>(arg0: T): T
 }
 /**
@@ -79,14 +79,14 @@ import {$IGridNode, $IGridNode$$Type} from "appeng.api.networking.IGridNode"
 import {$Direction} from "net.minecraft.core.Direction"
 
 export interface $IGridConnection$$Interface {
-get "inWorld"(): boolean
 get "usedChannels"(): integer
+get "inWorld"(): boolean
 }
 
 export class $IGridConnection implements $IGridConnection$$Interface {
- "getOtherSide"(arg0: $IGridNode$$Type): $IGridNode
- "isInWorld"(): boolean
  "getUsedChannels"(): integer
+ "isInWorld"(): boolean
+ "getOtherSide"(arg0: $IGridNode$$Type): $IGridNode
  "b"(): $IGridNode
  "a"(): $IGridNode
  "destroy"(): void
@@ -155,20 +155,20 @@ import {$ItemLike$$Type} from "net.minecraft.world.level.ItemLike"
 import {$BiConsumer$$Type} from "java.util.function.BiConsumer"
 import {$AEItemKey$$Type} from "appeng.api.stacks.AEItemKey"
 import {$Set$$Type} from "java.util.Set"
-import {$IGrid, $IGrid$$Type} from "appeng.api.networking.IGrid"
 import {$Class$$Type} from "java.lang.Class"
+import {$IGrid, $IGrid$$Type} from "appeng.api.networking.IGrid"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 
 export interface $IManagedGridNode$$Interface {
 get "powered"(): boolean
 set "owningPlayer"(value: $Player$$Type)
-get "grid"(): $IGrid
 get "online"(): boolean
-set "idlePowerUsage"(value: double)
-set "visualRepresentation"(value: $ItemStack$$Type)
-set "visualRepresentation"(value: $AEItemKey$$Type)
+get "grid"(): $IGrid
 set "visualRepresentation"(value: $ItemLike$$Type)
+set "visualRepresentation"(value: $AEItemKey$$Type)
+set "visualRepresentation"(value: $ItemStack$$Type)
 set "exposedOnSides"(value: $Set$$Type<($Direction$$Type)>)
+set "idlePowerUsage"(value: double)
 set "inWorldNode"(value: boolean)
 set "gridColor"(value: $AEColor$$Type)
 set "tagName"(value: StringJS)
@@ -181,23 +181,23 @@ get "ready"(): boolean
 
 export class $IManagedGridNode implements $IManagedGridNode$$Interface {
  "isPowered"(): boolean
- "saveToNBT"(arg0: $CompoundTag$$Type): void
  "loadFromNBT"(arg0: $CompoundTag$$Type): void
+ "saveToNBT"(arg0: $CompoundTag$$Type): void
  "setOwningPlayer"(arg0: $Player$$Type): void
- "getGrid"(): $IGrid
  "isOnline"(): boolean
  "hasGridBooted"(): boolean
- "setIdlePowerUsage"(arg0: double): $IManagedGridNode
- "setVisualRepresentation"(arg0: $ItemStack$$Type): $IManagedGridNode
- "setVisualRepresentation"(arg0: $AEItemKey$$Type): $IManagedGridNode
+ "getGrid"(): $IGrid
  "setVisualRepresentation"(arg0: $ItemLike$$Type): $IManagedGridNode
+ "setVisualRepresentation"(arg0: $AEItemKey$$Type): $IManagedGridNode
+ "setVisualRepresentation"(arg0: $ItemStack$$Type): $IManagedGridNode
  "setExposedOnSides"(arg0: $Set$$Type<($Direction$$Type)>): $IManagedGridNode
+ "setIdlePowerUsage"(arg0: double): $IManagedGridNode
  "setInWorldNode"(arg0: boolean): $IManagedGridNode
  "setGridColor"(arg0: $AEColor$$Type): $IManagedGridNode
  "setTagName"(arg0: StringJS): $IManagedGridNode
  "setOwningPlayerId"(arg0: integer): void
- "ifPresent"(arg0: $Consumer$$Type<($IGrid)>): boolean
  "ifPresent"(arg0: $BiConsumer$$Type<($IGrid), ($IGridNode)>): boolean
+ "ifPresent"(arg0: $Consumer$$Type<($IGrid)>): boolean
  "addService"<T extends $IGridNodeService>(arg0: $Class$$Type<(T)>, arg1: T): $IManagedGridNode
  "destroy"(): void
  "create"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
@@ -261,8 +261,8 @@ export type $GridFlags$$Type = (("require_channel") | ("compressed_channel") | (
 export type $GridFlags$$Original = $GridFlags;}
 declare module "appeng.api.networking.IGridServiceProvider" {
 import {$IGridNode$$Type} from "appeng.api.networking.IGridNode"
-import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$JsonWriter$$Type} from "com.google.gson.stream.JsonWriter"
+import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 
@@ -298,9 +298,9 @@ import {$IGridNodeService} from "appeng.api.networking.IGridNodeService"
 import {$GridFlags$$Type} from "appeng.api.networking.GridFlags"
 import {$AEItemKey} from "appeng.api.stacks.AEItemKey"
 import {$IGridConnection} from "appeng.api.networking.IGridConnection"
-import {$Set} from "java.util.Set"
-import {$IGrid} from "appeng.api.networking.IGrid"
 import {$Class$$Type} from "java.lang.Class"
+import {$IGrid} from "appeng.api.networking.IGrid"
+import {$Set} from "java.util.Set"
 import {$ServerLevel} from "net.minecraft.server.level.ServerLevel"
 import {$IGridVisitor$$Type} from "appeng.api.networking.IGridVisitor"
 import {$CrashReportCategory$$Type} from "net.minecraft.CrashReportCategory"
@@ -308,8 +308,7 @@ import {$CrashReportCategory$$Type} from "net.minecraft.CrashReportCategory"
 export interface $IGridNode$$Interface {
 get "powered"(): boolean
 get "connectedSides"(): $Set<($Direction)>
-get "maxChannels"(): integer
-get "grid"(): $IGrid
+get "inWorldConnections"(): $Map<($Direction), ($IGridConnection)>
 get "online"(): boolean
 get "owningPlayerId"(): integer
 get "owningPlayerProfileId"(): $UUID
@@ -317,7 +316,8 @@ get "idlePowerUsage"(): double
 get "visualRepresentation"(): $AEItemKey
 get "gridColor"(): $AEColor
 get "usedChannels"(): integer
-get "inWorldConnections"(): $Map<($Direction), ($IGridConnection)>
+get "grid"(): $IGrid
+get "maxChannels"(): integer
 get "level"(): $ServerLevel
 get "active"(): boolean
 get "owner"(): any
@@ -327,9 +327,7 @@ get "connections"(): $List<($IGridConnection)>
 export class $IGridNode implements $IGridNode$$Interface {
  "isPowered"(): boolean
  "getConnectedSides"(): $Set<($Direction)>
- "getMaxChannels"(): integer
- "beginVisit"(arg0: $IGridVisitor$$Type): void
- "getGrid"(): $IGrid
+ "getInWorldConnections"(): $Map<($Direction), ($IGridConnection)>
  "isOnline"(): boolean
  "getOwningPlayerId"(): integer
  "getOwningPlayerProfileId"(): $UUID
@@ -339,7 +337,9 @@ export class $IGridNode implements $IGridNode$$Interface {
  "getUsedChannels"(): integer
  "hasGridBooted"(): boolean
  "meetsChannelRequirements"(): boolean
- "getInWorldConnections"(): $Map<($Direction), ($IGridConnection)>
+ "beginVisit"(arg0: $IGridVisitor$$Type): void
+ "getGrid"(): $IGrid
+ "getMaxChannels"(): integer
  "getService"<T extends $IGridNodeService>(arg0: $Class$$Type<(T)>): T
  "getLevel"(): $ServerLevel
  "isActive"(): boolean

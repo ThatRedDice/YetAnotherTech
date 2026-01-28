@@ -6,14 +6,14 @@ import {$HopperBlockEntity} from "net.minecraft.world.level.block.entity.HopperB
 import {$SignBlockEntity} from "net.minecraft.world.level.block.entity.SignBlockEntity"
 import {$SmokerBlockEntity} from "net.minecraft.world.level.block.entity.SmokerBlockEntity"
 import {$BarrelBlockEntity} from "net.minecraft.world.level.block.entity.BarrelBlockEntity"
-import {$SculkSensorBlockEntity} from "net.minecraft.world.level.block.entity.SculkSensorBlockEntity"
 import {$JigsawBlockEntity} from "net.minecraft.world.level.block.entity.JigsawBlockEntity"
+import {$SculkSensorBlockEntity} from "net.minecraft.world.level.block.entity.SculkSensorBlockEntity"
 import {$BrushableBlockEntity} from "net.minecraft.world.level.block.entity.BrushableBlockEntity"
 import {$JukeboxBlockEntity} from "net.minecraft.world.level.block.entity.JukeboxBlockEntity"
 import {$CommandBlockEntity} from "net.minecraft.world.level.block.entity.CommandBlockEntity"
 import {$BrewingStandBlockEntity} from "net.minecraft.world.level.block.entity.BrewingStandBlockEntity"
-import {$BannerBlockEntity} from "net.minecraft.world.level.block.entity.BannerBlockEntity"
 import {$DaylightDetectorBlockEntity} from "net.minecraft.world.level.block.entity.DaylightDetectorBlockEntity"
+import {$BannerBlockEntity} from "net.minecraft.world.level.block.entity.BannerBlockEntity"
 import {$TrappedChestBlockEntity} from "net.minecraft.world.level.block.entity.TrappedChestBlockEntity"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$BeaconBlockEntity} from "net.minecraft.world.level.block.entity.BeaconBlockEntity"
@@ -37,12 +37,12 @@ import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BaseBlockEntity} from "com.supermartijn642.core.block.BaseBlockEntity"
 import {$CampfireBlockEntity} from "net.minecraft.world.level.block.entity.CampfireBlockEntity"
 import {$BellBlockEntity} from "net.minecraft.world.level.block.entity.BellBlockEntity"
-import {$LecternBlockEntity} from "net.minecraft.world.level.block.entity.LecternBlockEntity"
 import {$EnderChestBlockEntity} from "net.minecraft.world.level.block.entity.EnderChestBlockEntity"
+import {$LecternBlockEntity} from "net.minecraft.world.level.block.entity.LecternBlockEntity"
 import {$FurnaceBlockEntity} from "net.minecraft.world.level.block.entity.FurnaceBlockEntity"
 import {$Block$$Type} from "net.minecraft.world.level.block.Block"
-import {$SpawnerBlockEntity} from "net.minecraft.world.level.block.entity.SpawnerBlockEntity"
 import {$ShulkerBoxBlockEntity} from "net.minecraft.world.level.block.entity.ShulkerBoxBlockEntity"
+import {$SpawnerBlockEntity} from "net.minecraft.world.level.block.entity.SpawnerBlockEntity"
 import {$BeehiveBlockEntity} from "net.minecraft.world.level.block.entity.BeehiveBlockEntity"
 import {$HangingSignBlockEntity} from "net.minecraft.world.level.block.entity.HangingSignBlockEntity"
 import {$StructureBlockEntity} from "net.minecraft.world.level.block.entity.StructureBlockEntity"
@@ -168,8 +168,8 @@ export type $BaseBlockEntity$$Type = ($BaseBlockEntity);
  */
 export type $BaseBlockEntity$$Original = $BaseBlockEntity;}
 declare module "com.supermartijn642.core.block.BaseBlock" {
-import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$LootParams$Builder$$Type} from "net.minecraft.world.level.storage.loot.LootParams$Builder"
+import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$List, $List$$Type} from "java.util.List"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
@@ -187,8 +187,8 @@ import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Objec
 import {$CompoundTag} from "net.minecraft.nbt.CompoundTag"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$HitResult$$Type} from "net.minecraft.world.phys.HitResult"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -267,8 +267,8 @@ public "speedFactor"(factor: float): $BlockProperties
 public "jumpFactor"(factor: float): $BlockProperties
 public "dynamicShape"(): $BlockProperties
 public "canOcclude"(canOcclude: boolean): $BlockProperties
-public "ignitedByLava"(getsIgnitedByLava: boolean): $BlockProperties
 public "ignitedByLava"(): $BlockProperties
+public "ignitedByLava"(getsIgnitedByLava: boolean): $BlockProperties
 public "mapColor"(color: $MapColor$$Type): $BlockProperties
 public "mapColor"(colorFunction: $Function$$Type<($BlockState), ($MapColor$$Type)>): $BlockProperties
 public "destroyTime"(destroyTime: float): $BlockProperties
@@ -277,8 +277,8 @@ public "spawnTerrainParticles"(spawnTerrainParticles: boolean): $BlockProperties
 public "replaceable"(): $BlockProperties
 public "replaceable"(isReplaceable: boolean): $BlockProperties
 public "noOcclusion"(): $BlockProperties
-public "randomTicks"(receiveRandomTicks: boolean): $BlockProperties
 public "randomTicks"(): $BlockProperties
+public "randomTicks"(receiveRandomTicks: boolean): $BlockProperties
 public "noTerrainParticles"(): $BlockProperties
 public static "fromVanilla"(vanilla: $BlockBehaviour$Properties$$Type): $BlockProperties
 /**
@@ -292,13 +292,13 @@ public "lootTableFrom"(block: $Supplier$$Type<($Block$$Type)>): $BlockProperties
 public static "copy"(block: $Block$$Type): $BlockProperties
 public static "create"(): $BlockProperties
 public "sound"(soundTypeIn: $SoundType$$Type): $BlockProperties
-public "air"(isAir: boolean): $BlockProperties
 public "air"(): $BlockProperties
+public "air"(isAir: boolean): $BlockProperties
 public "instrument"(instrument: $NoteBlockInstrument$$Type): $BlockProperties
 public "strength"(strength: float): $BlockProperties
 public "noCollision"(): $BlockProperties
-public "isSuffocating"(isSuffocating: boolean): $BlockProperties
 public "isSuffocating"(isSuffocating: $TriPredicate$$Type<($BlockState), ($BlockGetter), ($BlockPos)>): $BlockProperties
+public "isSuffocating"(isSuffocating: boolean): $BlockProperties
 public "isRedstoneConductor"(isRedstoneConductor: $TriPredicate$$Type<($BlockState), ($BlockGetter), ($BlockPos)>): $BlockProperties
 public "isRedstoneConductor"(isRedstoneConductor: boolean): $BlockProperties
 }

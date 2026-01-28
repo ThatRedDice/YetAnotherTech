@@ -84,8 +84,8 @@ export type $IMixinReceivingLevelScreen$$Type = ((arg0: long) => void);
 export type $IMixinReceivingLevelScreen$$Original = $IMixinReceivingLevelScreen;}
 declare module "de.keksuccino.fancymenu.mixin.mixins.common.client.IMixinScreen" {
 import {$GuiEventListener, $GuiEventListener$$Type} from "net.minecraft.client.gui.components.events.GuiEventListener"
-import {$NarratableEntry} from "net.minecraft.client.gui.narration.NarratableEntry"
 import {$List} from "java.util.List"
+import {$NarratableEntry} from "net.minecraft.client.gui.narration.NarratableEntry"
 import {$Renderable} from "net.minecraft.client.gui.components.Renderable"
 
 export interface $IMixinScreen$$Interface {
@@ -245,8 +245,8 @@ export type $IMixinPlayerModel$$Type = (() => $ModelPart$$Type);
 export type $IMixinPlayerModel$$Original = $IMixinPlayerModel;}
 declare module "de.keksuccino.fancymenu.mixin.mixins.common.client.IMixinOptions" {
 import {$Options$FieldAccess$$Type} from "net.minecraft.client.Options$FieldAccess"
-import {$PlayerModelPart} from "net.minecraft.world.entity.player.PlayerModelPart"
 import {$Set} from "java.util.Set"
+import {$PlayerModelPart} from "net.minecraft.world.entity.player.PlayerModelPart"
 
 export interface $IMixinOptions$$Interface {
 get "modelPartsFancyMenu"(): $Set<($PlayerModelPart)>

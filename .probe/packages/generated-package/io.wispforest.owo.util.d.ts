@@ -124,8 +124,8 @@ export type $Observable$$Type<T> = ($Observable<(T)>);
 export type $Observable$$Original<T> = $Observable<(T)>;}
 declare module "io.wispforest.owo.util.pond.OwoScreenExtension" {
 import {$ParentComponent} from "io.wispforest.owo.ui.core.ParentComponent"
-import {$Layer$$Type} from "io.wispforest.owo.ui.layers.Layer"
 import {$Layer$Instance} from "io.wispforest.owo.ui.layers.Layer$Instance"
+import {$Layer$$Type} from "io.wispforest.owo.ui.layers.Layer"
 import {$Screen} from "net.minecraft.client.gui.screens.Screen"
 import {$List} from "java.util.List"
 

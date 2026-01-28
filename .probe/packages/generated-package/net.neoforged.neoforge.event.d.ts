@@ -32,8 +32,8 @@ export class $LevelEvent extends $Event implements $EventHandlerImplCommon$Level
 constructor(arg0: $LevelAccessor$$Type)
 
 public "getLevel"(): $LevelAccessor
-public "architectury$getAttachedLevel"(): $LevelAccessor
 public "architectury$attachLevel"(level: $LevelAccessor$$Type): void
+public "architectury$getAttachedLevel"(): $LevelAccessor
 get "level"(): $LevelAccessor
 }
 /**
@@ -176,14 +176,14 @@ import {$Entity} from "net.minecraft.world.entity.Entity"
 export class $PlayerSpawnPhantomsEvent extends $PlayerEvent {
 constructor(arg0: $Player$$Type, arg1: integer)
 
-public "getPhantomsToSpawn"(): integer
 public "setPhantomsToSpawn"(arg0: integer): void
 public "shouldSpawnPhantoms"(arg0: $ServerLevel$$Type, arg1: $BlockPos$$Type): boolean
+public "getPhantomsToSpawn"(): integer
 public "setResult"(arg0: $PlayerSpawnPhantomsEvent$Result$$Type): void
 public "getResult"(): $PlayerSpawnPhantomsEvent$Result
 public "getEntity"(): $Entity
-get "phantomsToSpawn"(): integer
 set "phantomsToSpawn"(value: integer)
+get "phantomsToSpawn"(): integer
 set "result"(value: $PlayerSpawnPhantomsEvent$Result$$Type)
 get "result"(): $PlayerSpawnPhantomsEvent$Result
 get "entity"(): $Entity
@@ -247,9 +247,9 @@ import {$Record} from "java.lang.Record"
 export class $ModMismatchEvent$MismatchedVersionInfo extends $Record {
 constructor(oldVersion: $ArtifactVersion$$Type, newVersion: $ArtifactVersion$$Type)
 
-public "wasUpgrade"(): boolean
 public "isMissing"(): boolean
 public "oldVersion"(): $ArtifactVersion
+public "wasUpgrade"(): boolean
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
@@ -413,17 +413,17 @@ import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 export class $EntityMountEvent extends $EntityEvent implements $ICancellableEvent$$Interface {
 constructor(arg0: $Entity$$Type, arg1: $Entity$$Type, arg2: $Level$$Type, arg3: boolean)
 
-public "isDismounting"(): boolean
 public "isMounting"(): boolean
 public "getEntityMounting"(): $Entity
 public "getEntityBeingMounted"(): $Entity
+public "isDismounting"(): boolean
 public "getLevel"(): $Level
 public "setCanceled"(arg0: boolean): void
 public "isCanceled"(): boolean
-get "dismounting"(): boolean
 get "mounting"(): boolean
 get "entityMounting"(): $Entity
 get "entityBeingMounted"(): $Entity
+get "dismounting"(): boolean
 get "level"(): $Level
 set "canceled"(value: boolean)
 get "canceled"(): boolean
@@ -440,9 +440,9 @@ export type $EntityMountEvent$$Original = $EntityMountEvent;}
 declare module "net.neoforged.neoforge.event.entity.player.PlayerEvent$HarvestCheck" {
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$BlockGetter, $BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
-import {$LivingEntity} from "net.minecraft.world.entity.LivingEntity"
 import {$PlayerEvent} from "net.neoforged.neoforge.event.entity.player.PlayerEvent"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$Entity} from "net.minecraft.world.entity.Entity"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $PlayerEvent$HarvestCheck extends $PlayerEvent {
@@ -451,12 +451,12 @@ constructor(arg0: $Player$$Type, arg1: $BlockState$$Type, arg2: $BlockGetter$$Ty
 public "canHarvest"(): boolean
 public "getTargetBlock"(): $BlockState
 public "setCanHarvest"(arg0: boolean): void
+public "getEntity"(): $Entity
 public "getLevel"(): $BlockGetter
-public "getEntity"(): $LivingEntity
 public "getPos"(): $BlockPos
 get "targetBlock"(): $BlockState
+get "entity"(): $Entity
 get "level"(): $BlockGetter
-get "entity"(): $LivingEntity
 get "pos"(): $BlockPos
 }
 /**
@@ -603,16 +603,16 @@ export type $ChunkDataEvent$Save$$Original = $ChunkDataEvent$Save;}
 declare module "net.neoforged.neoforge.event.entity.living.SpawnClusterSizeEvent" {
 import {$LivingEvent} from "net.neoforged.neoforge.event.entity.living.LivingEvent"
 import {$Mob$$Type} from "net.minecraft.world.entity.Mob"
-import {$Entity} from "net.minecraft.world.entity.Entity"
+import {$LivingEntity} from "net.minecraft.world.entity.LivingEntity"
 
 export class $SpawnClusterSizeEvent extends $LivingEvent {
 constructor(arg0: $Mob$$Type)
 
+public "getEntity"(): $LivingEntity
 public "setSize"(arg0: integer): void
-public "getEntity"(): $Entity
 public "getSize"(): integer
+get "entity"(): $LivingEntity
 set "size"(value: integer)
-get "entity"(): $Entity
 get "size"(): integer
 }
 /**
@@ -626,20 +626,20 @@ export type $SpawnClusterSizeEvent$$Type = ($SpawnClusterSizeEvent);
 export type $SpawnClusterSizeEvent$$Original = $SpawnClusterSizeEvent;}
 declare module "net.neoforged.neoforge.event.entity.player.PlayerEvent$NameFormat" {
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$LivingEntity} from "net.minecraft.world.entity.LivingEntity"
 import {$PlayerEvent} from "net.neoforged.neoforge.event.entity.player.PlayerEvent"
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
+import {$Entity} from "net.minecraft.world.entity.Entity"
 
 export class $PlayerEvent$NameFormat extends $PlayerEvent {
 constructor(arg0: $Player$$Type, arg1: $Component$$Type)
 
-public "setDisplayname"(arg0: $Component$$Type): void
+public "getEntity"(): $Entity
 public "getDisplayname"(): $Component
-public "getEntity"(): $LivingEntity
+public "setDisplayname"(arg0: $Component$$Type): void
 public "getUsername"(): $Component
-set "displayname"(value: $Component$$Type)
+get "entity"(): $Entity
 get "displayname"(): $Component
-get "entity"(): $LivingEntity
+set "displayname"(value: $Component$$Type)
 get "username"(): $Component
 }
 /**
@@ -661,15 +661,15 @@ import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.st
 export class $BlockEvent$EntityPlaceEvent extends $BlockEvent implements $ICancellableEvent$$Interface {
 constructor(arg0: $BlockSnapshot$$Type, arg1: $BlockState$$Type, arg2: $Entity$$Type)
 
-public "getPlacedAgainst"(): $BlockState
 public "getPlacedBlock"(): $BlockState
 public "getBlockSnapshot"(): $BlockSnapshot
+public "getPlacedAgainst"(): $BlockState
 public "getEntity"(): $Entity
 public "setCanceled"(arg0: boolean): void
 public "isCanceled"(): boolean
-get "placedAgainst"(): $BlockState
 get "placedBlock"(): $BlockState
 get "blockSnapshot"(): $BlockSnapshot
+get "placedAgainst"(): $BlockState
 get "entity"(): $Entity
 set "canceled"(value: boolean)
 get "canceled"(): boolean
@@ -740,20 +740,20 @@ import {$MobEffectEvent} from "net.neoforged.neoforge.event.entity.living.MobEff
 import {$EffectCure, $EffectCure$$Type} from "net.neoforged.neoforge.common.EffectCure"
 import {$ICancellableEvent$$Interface} from "net.neoforged.bus.api.ICancellableEvent"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$MobEffect, $MobEffect$$Type} from "net.minecraft.world.effect.MobEffect"
 import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
+import {$MobEffect, $MobEffect$$Type} from "net.minecraft.world.effect.MobEffect"
 
 export class $MobEffectEvent$Remove extends $MobEffectEvent implements $ICancellableEvent$$Interface {
 constructor(arg0: $LivingEntity$$Type, arg1: $Holder$$Type<($MobEffect)>, arg2: $EffectCure$$Type)
 constructor(arg0: $LivingEntity$$Type, arg1: $MobEffectInstance$$Type, arg2: $EffectCure$$Type)
 
-public "getCure"(): $EffectCure
 public "getEffectInstance"(): $MobEffectInstance
+public "getCure"(): $EffectCure
 public "getEffect"(): $Holder<($MobEffect)>
 public "setCanceled"(arg0: boolean): void
 public "isCanceled"(): boolean
-get "cure"(): $EffectCure
 get "effectInstance"(): $MobEffectInstance
+get "cure"(): $EffectCure
 get "effect"(): $Holder<($MobEffect)>
 set "canceled"(value: boolean)
 get "canceled"(): boolean
@@ -978,19 +978,19 @@ import {$Entity} from "net.minecraft.world.entity.Entity"
 export class $PlayerRespawnPositionEvent extends $PlayerEvent {
 constructor(arg0: $ServerPlayer$$Type, arg1: $DimensionTransition$$Type, arg2: boolean)
 
-public "getOriginalDimensionTransition"(): $DimensionTransition
+public "getDimensionTransition"(): $DimensionTransition
 public "setCopyOriginalSpawnPosition"(arg0: boolean): void
 public "isFromEndFight"(): boolean
-public "getDimensionTransition"(): $DimensionTransition
 public "copyOriginalSpawnPosition"(): boolean
 public "setDimensionTransition"(arg0: $DimensionTransition$$Type): void
 public "setRespawnLevel"(arg0: $ResourceKey$$Type<($Level)>): void
+public "getOriginalDimensionTransition"(): $DimensionTransition
 public "getEntity"(): $Entity
-get "originalDimensionTransition"(): $DimensionTransition
-get "fromEndFight"(): boolean
 get "dimensionTransition"(): $DimensionTransition
+get "fromEndFight"(): boolean
 set "dimensionTransition"(value: $DimensionTransition$$Type)
 set "respawnLevel"(value: $ResourceKey$$Type<($Level)>)
+get "originalDimensionTransition"(): $DimensionTransition
 get "entity"(): $Entity
 }
 /**
@@ -1116,17 +1116,17 @@ import {$Entity} from "net.minecraft.world.entity.Entity"
 export class $ArrowLooseEvent extends $PlayerEvent implements $ICancellableEvent$$Interface {
 constructor(arg0: $Player$$Type, arg1: $ItemStack$$Type, arg2: $Level$$Type, arg3: integer, arg4: boolean)
 
+public "getCharge"(): integer
 public "getBow"(): $ItemStack
 public "setCharge"(arg0: integer): void
-public "getCharge"(): integer
 public "getLevel"(): $Level
 public "hasAmmo"(): boolean
 public "setCanceled"(arg0: boolean): void
 public "isCanceled"(): boolean
 public "getEntity"(): $Entity
+get "charge"(): integer
 get "bow"(): $ItemStack
 set "charge"(value: integer)
-get "charge"(): integer
 get "level"(): $Level
 set "canceled"(value: boolean)
 get "canceled"(): boolean
@@ -1248,11 +1248,11 @@ export type $ProjectileImpactEvent$$Type = ($ProjectileImpactEvent);
  */
 export type $ProjectileImpactEvent$$Original = $ProjectileImpactEvent;}
 declare module "net.neoforged.neoforge.event.entity.player.PlayerInteractEvent$LeftClickBlock" {
-import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$PlayerInteractEvent} from "net.neoforged.neoforge.event.entity.player.PlayerInteractEvent"
+import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ICancellableEvent$$Interface} from "net.neoforged.bus.api.ICancellableEvent"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$PlayerInteractEvent$LeftClickBlock$Action, $PlayerInteractEvent$LeftClickBlock$Action$$Type} from "net.neoforged.neoforge.event.entity.player.PlayerInteractEvent$LeftClickBlock$Action"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$Entity} from "net.minecraft.world.entity.Entity"
 import {$TriState, $TriState$$Type} from "net.neoforged.neoforge.common.util.TriState"
@@ -1310,8 +1310,8 @@ declare module "net.neoforged.neoforge.event.entity.living.LivingUseTotemEvent" 
 import {$LivingEvent} from "net.neoforged.neoforge.event.entity.living.LivingEvent"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$DamageSource, $DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
-import {$InteractionHand, $InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$ICancellableEvent$$Interface} from "net.neoforged.bus.api.ICancellableEvent"
+import {$InteractionHand, $InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 
 export class $LivingUseTotemEvent extends $LivingEvent implements $ICancellableEvent$$Interface {
@@ -1406,12 +1406,12 @@ export type $PlayerDestroyItemEvent$$Type = ($PlayerDestroyItemEvent);
  */
 export type $PlayerDestroyItemEvent$$Original = $PlayerDestroyItemEvent;}
 declare module "net.neoforged.neoforge.event.entity.player.PlayerInteractEvent$EntityInteractSpecific" {
-import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$PlayerInteractEvent} from "net.neoforged.neoforge.event.entity.player.PlayerInteractEvent"
+import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$InteractionResult, $InteractionResult$$Type} from "net.minecraft.world.InteractionResult"
 import {$Vec3, $Vec3$$Type} from "net.minecraft.world.phys.Vec3"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$ICancellableEvent$$Interface} from "net.neoforged.bus.api.ICancellableEvent"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 
 export class $PlayerInteractEvent$EntityInteractSpecific extends $PlayerInteractEvent implements $ICancellableEvent$$Interface {
@@ -1467,12 +1467,12 @@ export type $MobEffectEvent$Added$$Type = ($MobEffectEvent$Added);
  */
 export type $MobEffectEvent$Added$$Original = $MobEffectEvent$Added;}
 declare module "net.neoforged.neoforge.event.entity.player.PlayerInteractEvent$RightClickBlock" {
-import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$PlayerInteractEvent} from "net.neoforged.neoforge.event.entity.player.PlayerInteractEvent"
-import {$InteractionResult, $InteractionResult$$Type} from "net.minecraft.world.InteractionResult"
+import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$BlockHitResult, $BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
+import {$InteractionResult, $InteractionResult$$Type} from "net.minecraft.world.InteractionResult"
 import {$ICancellableEvent$$Interface} from "net.neoforged.bus.api.ICancellableEvent"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$Entity} from "net.minecraft.world.entity.Entity"
 import {$TriState, $TriState$$Type} from "net.neoforged.neoforge.common.util.TriState"
@@ -1531,8 +1531,8 @@ export type $UseItemOnBlockEvent$UsePhase$$Type = (("item_before_block") | ("blo
  */
 export type $UseItemOnBlockEvent$UsePhase$$Original = $UseItemOnBlockEvent$UsePhase;}
 declare module "net.neoforged.neoforge.event.entity.living.MobEffectEvent" {
-import {$MobEffectInstance} from "net.minecraft.world.effect.MobEffectInstance"
 import {$LivingEvent} from "net.neoforged.neoforge.event.entity.living.LivingEvent"
+import {$MobEffectInstance} from "net.minecraft.world.effect.MobEffectInstance"
 
 export class $MobEffectEvent extends $LivingEvent {
 public "getEffectInstance"(): $MobEffectInstance
@@ -1648,8 +1648,8 @@ export type $ServerTickEvent$Pre$$Type = ($ServerTickEvent$Pre);
  */
 export type $ServerTickEvent$Pre$$Original = $ServerTickEvent$Pre;}
 declare module "net.neoforged.neoforge.event.level.BlockEvent$EntityMultiPlaceEvent" {
-import {$BlockSnapshot, $BlockSnapshot$$Type} from "net.neoforged.neoforge.common.util.BlockSnapshot"
 import {$BlockEvent$EntityPlaceEvent} from "net.neoforged.neoforge.event.level.BlockEvent$EntityPlaceEvent"
+import {$BlockSnapshot, $BlockSnapshot$$Type} from "net.neoforged.neoforge.common.util.BlockSnapshot"
 import {$ICancellableEvent$$Interface} from "net.neoforged.bus.api.ICancellableEvent"
 import {$List, $List$$Type} from "java.util.List"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
@@ -1836,12 +1836,12 @@ import {$EntityType, $EntityType$$Type} from "net.minecraft.world.entity.EntityT
 export class $LivingConversionEvent$Pre extends $LivingConversionEvent implements $ICancellableEvent$$Interface {
 constructor(arg0: $LivingEntity$$Type, arg1: $EntityType$$Type<($LivingEntity$$Type)>, arg2: $Consumer$$Type<(integer)>)
 
-public "setConversionTimer"(arg0: integer): void
 public "getOutcome"(): $EntityType<($LivingEntity)>
+public "setConversionTimer"(arg0: integer): void
 public "setCanceled"(arg0: boolean): void
 public "isCanceled"(): boolean
-set "conversionTimer"(value: integer)
 get "outcome"(): $EntityType<($LivingEntity)>
+set "conversionTimer"(value: integer)
 set "canceled"(value: boolean)
 get "canceled"(): boolean
 }
@@ -1884,11 +1884,11 @@ export type $BlockEvent$FarmlandTrampleEvent$$Type = ($BlockEvent$FarmlandTrampl
  */
 export type $BlockEvent$FarmlandTrampleEvent$$Original = $BlockEvent$FarmlandTrampleEvent;}
 declare module "net.neoforged.neoforge.event.entity.player.AdvancementEvent$AdvancementProgressEvent" {
-import {$AdvancementEvent$AdvancementProgressEvent$ProgressType, $AdvancementEvent$AdvancementProgressEvent$ProgressType$$Type} from "net.neoforged.neoforge.event.entity.player.AdvancementEvent$AdvancementProgressEvent$ProgressType"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
+import {$AdvancementEvent$AdvancementProgressEvent$ProgressType, $AdvancementEvent$AdvancementProgressEvent$ProgressType$$Type} from "net.neoforged.neoforge.event.entity.player.AdvancementEvent$AdvancementProgressEvent$ProgressType"
 import {$AdvancementEvent} from "net.neoforged.neoforge.event.entity.player.AdvancementEvent"
-import {$AdvancementHolder$$Type} from "net.minecraft.advancements.AdvancementHolder"
 import {$Entity} from "net.minecraft.world.entity.Entity"
+import {$AdvancementHolder$$Type} from "net.minecraft.advancements.AdvancementHolder"
 import {$AdvancementProgress, $AdvancementProgress$$Type} from "net.minecraft.advancements.AdvancementProgress"
 
 export class $AdvancementEvent$AdvancementProgressEvent extends $AdvancementEvent {
@@ -1937,9 +1937,9 @@ export type $PlayerContainerEvent$$Type = ($PlayerContainerEvent);
 export type $PlayerContainerEvent$$Original = $PlayerContainerEvent;}
 declare module "net.neoforged.neoforge.event.entity.player.ItemFishedEvent" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$FishingHook, $FishingHook$$Type} from "net.minecraft.world.entity.projectile.FishingHook"
 import {$ICancellableEvent$$Interface} from "net.neoforged.bus.api.ICancellableEvent"
 import {$List$$Type} from "java.util.List"
+import {$FishingHook, $FishingHook$$Type} from "net.minecraft.world.entity.projectile.FishingHook"
 import {$PlayerEvent} from "net.neoforged.neoforge.event.entity.player.PlayerEvent"
 import {$Entity} from "net.minecraft.world.entity.Entity"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
@@ -1978,12 +1978,12 @@ import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 export class $LivingGetProjectileEvent extends $LivingEvent {
 constructor(arg0: $LivingEntity$$Type, arg1: $ItemStack$$Type, arg2: $ItemStack$$Type)
 
-public "getProjectileItemStack"(): $ItemStack
 public "getProjectileWeaponItemStack"(): $ItemStack
 public "setProjectileItemStack"(arg0: $ItemStack$$Type): void
-get "projectileItemStack"(): $ItemStack
+public "getProjectileItemStack"(): $ItemStack
 get "projectileWeaponItemStack"(): $ItemStack
 set "projectileItemStack"(value: $ItemStack$$Type)
+get "projectileItemStack"(): $ItemStack
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -2327,8 +2327,8 @@ public "getOriginalVolume"(): float
 public "getOriginalPitch"(): float
 public "setNewVolume"(arg0: float): void
 public "setNewPitch"(arg0: float): void
-public "getSource"(): $SoundSource
 public "getLevel"(): $Level
+public "getSource"(): $SoundSource
 public "setSource"(arg0: $SoundSource$$Type): void
 public "getSound"(): $Holder<($SoundEvent)>
 public "getNewVolume"(): float
@@ -2340,8 +2340,8 @@ get "originalVolume"(): float
 get "originalPitch"(): float
 set "newVolume"(value: float)
 set "newPitch"(value: float)
-get "source"(): $SoundSource
 get "level"(): $Level
+get "source"(): $SoundSource
 set "source"(value: $SoundSource$$Type)
 get "sound"(): $Holder<($SoundEvent)>
 get "newVolume"(): float
@@ -2373,14 +2373,14 @@ constructor(arg0: $Mob$$Type, arg1: $ServerLevelAccessor$$Type, arg2: $MobSpawnT
 
 public "getSpawner"(): $BaseSpawner
 public "getSpawnType"(): $MobSpawnType
+public "getEntity"(): $Entity
 public "setResult"(arg0: $MobSpawnEvent$PositionCheck$Result$$Type): void
 public "getResult"(): $MobSpawnEvent$PositionCheck$Result
-public "getEntity"(): $Entity
 get "spawner"(): $BaseSpawner
 get "spawnType"(): $MobSpawnType
+get "entity"(): $Entity
 set "result"(value: $MobSpawnEvent$PositionCheck$Result$$Type)
 get "result"(): $MobSpawnEvent$PositionCheck$Result
-get "entity"(): $Entity
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -2449,8 +2449,8 @@ export type $EntityTeleportEvent$EnderPearl$$Original = $EntityTeleportEvent$End
 declare module "net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent" {
 import {$Map$$Type} from "java.util.Map"
 import {$Event} from "net.neoforged.bus.api.Event"
-import {$AttributeSupplier$$Type} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$AttributeSupplier$$Type} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier"
 import {$IModBusEvent$$Interface} from "net.neoforged.fml.event.IModBusEvent"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
 
@@ -2525,9 +2525,9 @@ export type $LivingExperienceDropEvent$$Original = $LivingExperienceDropEvent;}
 declare module "net.neoforged.neoforge.event.entity.player.ArrowNockEvent" {
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$InteractionHand, $InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$ICancellableEvent$$Interface} from "net.neoforged.bus.api.ICancellableEvent"
 import {$InteractionResultHolder, $InteractionResultHolder$$Type} from "net.minecraft.world.InteractionResultHolder"
+import {$InteractionHand, $InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$PlayerEvent} from "net.neoforged.neoforge.event.entity.player.PlayerEvent"
 import {$Entity} from "net.minecraft.world.entity.Entity"
@@ -2535,18 +2535,18 @@ import {$Entity} from "net.minecraft.world.entity.Entity"
 export class $ArrowNockEvent extends $PlayerEvent implements $ICancellableEvent$$Interface {
 constructor(arg0: $Player$$Type, arg1: $ItemStack$$Type, arg2: $InteractionHand$$Type, arg3: $Level$$Type, arg4: boolean)
 
-public "getBow"(): $ItemStack
-public "setAction"(arg0: $InteractionResultHolder$$Type<($ItemStack$$Type)>): void
 public "getHand"(): $InteractionHand
+public "setAction"(arg0: $InteractionResultHolder$$Type<($ItemStack$$Type)>): void
+public "getBow"(): $ItemStack
 public "getLevel"(): $Level
 public "getAction"(): $InteractionResultHolder<($ItemStack)>
 public "hasAmmo"(): boolean
 public "setCanceled"(arg0: boolean): void
 public "isCanceled"(): boolean
 public "getEntity"(): $Entity
-get "bow"(): $ItemStack
-set "action"(value: $InteractionResultHolder$$Type<($ItemStack$$Type)>)
 get "hand"(): $InteractionHand
+set "action"(value: $InteractionResultHolder$$Type<($ItemStack$$Type)>)
+get "bow"(): $ItemStack
 get "level"(): $Level
 get "action"(): $InteractionResultHolder<($ItemStack)>
 set "canceled"(value: boolean)
@@ -2569,13 +2569,13 @@ import {$InteractionHand} from "net.minecraft.world.InteractionHand"
 
 export class $LivingEntityUseItemEvent extends $LivingEvent {
 public "getHand"(): $InteractionHand
-public "getItem"(): $ItemStack
 public "setDuration"(arg0: integer): void
 public "getDuration"(): integer
+public "getItem"(): $ItemStack
 get "hand"(): $InteractionHand
-get "item"(): $ItemStack
 set "duration"(value: integer)
 get "duration"(): integer
+get "item"(): $ItemStack
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -2594,8 +2594,8 @@ import {$Entity} from "net.minecraft.world.entity.Entity"
 export class $PlayerWakeUpEvent extends $PlayerEvent {
 constructor(arg0: $Player$$Type, arg1: boolean, arg2: boolean)
 
-public "wakeImmediately"(): boolean
 public "updateLevel"(): boolean
+public "wakeImmediately"(): boolean
 public "getEntity"(): $Entity
 get "entity"(): $Entity
 }
@@ -2613,8 +2613,8 @@ import {$LivingEvent} from "net.neoforged.neoforge.event.entity.living.LivingEve
 import {$Collection, $Collection$$Type} from "java.util.Collection"
 import {$DamageSource, $DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
 import {$ICancellableEvent$$Interface} from "net.neoforged.bus.api.ICancellableEvent"
-import {$ItemEntity, $ItemEntity$$Type} from "net.minecraft.world.entity.item.ItemEntity"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$ItemEntity, $ItemEntity$$Type} from "net.minecraft.world.entity.item.ItemEntity"
 
 export class $LivingDropsEvent extends $LivingEvent implements $ICancellableEvent$$Interface {
 constructor(arg0: $LivingEntity$$Type, arg1: $DamageSource$$Type, arg2: $Collection$$Type<($ItemEntity$$Type)>, arg3: boolean)
@@ -2684,10 +2684,10 @@ export type $LivingShieldBlockEvent$$Original = $LivingShieldBlockEvent;}
 declare module "net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent" {
 import {$RegisterSpawnPlacementsEvent$Operation$$Type} from "net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent$Operation"
 import {$RegisterSpawnPlacementsEvent$MergedSpawnPredicate$$Type} from "net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent$MergedSpawnPredicate"
-import {$Heightmap$Types$$Type} from "net.minecraft.world.level.levelgen.Heightmap$Types"
 import {$Map$$Type} from "java.util.Map"
-import {$Event} from "net.neoforged.bus.api.Event"
+import {$Heightmap$Types$$Type} from "net.minecraft.world.level.levelgen.Heightmap$Types"
 import {$SpawnPlacements$SpawnPredicate$$Type} from "net.minecraft.world.entity.SpawnPlacements$SpawnPredicate"
+import {$Event} from "net.neoforged.bus.api.Event"
 import {$Entity} from "net.minecraft.world.entity.Entity"
 import {$IModBusEvent$$Interface} from "net.neoforged.fml.event.IModBusEvent"
 import {$SpawnPlacementType$$Type} from "net.minecraft.world.entity.SpawnPlacementType"
@@ -2892,14 +2892,14 @@ export class $VillageSiegeEvent extends $Event implements $ICancellableEvent$$In
 constructor(arg0: $VillageSiege$$Type, arg1: $Level$$Type, arg2: $Player$$Type, arg3: $Vec3$$Type)
 
 public "getAttemptedSpawnPos"(): $Vec3
-public "getLevel"(): $Level
 public "getSiege"(): $VillageSiege
+public "getLevel"(): $Level
 public "getPlayer"(): $Player
 public "setCanceled"(arg0: boolean): void
 public "isCanceled"(): boolean
 get "attemptedSpawnPos"(): $Vec3
-get "level"(): $Level
 get "siege"(): $VillageSiege
+get "level"(): $Level
 get "player"(): $Player
 set "canceled"(value: boolean)
 get "canceled"(): boolean
@@ -3355,9 +3355,9 @@ declare module "net.neoforged.neoforge.event.entity.living.FinalizeSpawnEvent" {
 import {$MobSpawnType, $MobSpawnType$$Type} from "net.minecraft.world.entity.MobSpawnType"
 import {$ServerLevelAccessor$$Type} from "net.minecraft.world.level.ServerLevelAccessor"
 import {$ICancellableEvent$$Interface} from "net.neoforged.bus.api.ICancellableEvent"
-import {$Either, $Either$$Type} from "com.mojang.datafixers.util.Either"
 import {$Mob$$Type} from "net.minecraft.world.entity.Mob"
 import {$MobSpawnEvent} from "net.neoforged.neoforge.event.entity.living.MobSpawnEvent"
+import {$Either, $Either$$Type} from "com.mojang.datafixers.util.Either"
 import {$DifficultyInstance, $DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
 import {$SpawnGroupData, $SpawnGroupData$$Type} from "net.minecraft.world.entity.SpawnGroupData"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
@@ -3366,23 +3366,23 @@ import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.
 export class $FinalizeSpawnEvent extends $MobSpawnEvent implements $ICancellableEvent$$Interface {
 constructor(arg0: $Mob$$Type, arg1: $ServerLevelAccessor$$Type, arg2: double, arg3: double, arg4: double, arg5: $DifficultyInstance$$Type, arg6: $MobSpawnType$$Type, arg7: $SpawnGroupData$$Type, arg8: $Either$$Type<($BlockEntity$$Type), ($Entity$$Type)>)
 
-public "getSpawnData"(): $SpawnGroupData
-public "setSpawnData"(arg0: $SpawnGroupData$$Type): void
 public "isSpawnCancelled"(): boolean
 public "getSpawner"(): $Either<($BlockEntity), ($Entity)>
 public "getSpawnType"(): $MobSpawnType
 public "setSpawnCancelled"(arg0: boolean): void
+public "getSpawnData"(): $SpawnGroupData
+public "setSpawnData"(arg0: $SpawnGroupData$$Type): void
 public "setDifficulty"(arg0: $DifficultyInstance$$Type): void
 public "getDifficulty"(): $DifficultyInstance
 public "setCanceled"(arg0: boolean): void
 public "isCanceled"(): boolean
 public "getEntity"(): $Entity
-get "spawnData"(): $SpawnGroupData
-set "spawnData"(value: $SpawnGroupData$$Type)
 get "spawnCancelled"(): boolean
 get "spawner"(): $Either<($BlockEntity), ($Entity)>
 get "spawnType"(): $MobSpawnType
 set "spawnCancelled"(value: boolean)
+get "spawnData"(): $SpawnGroupData
+set "spawnData"(value: $SpawnGroupData$$Type)
 set "difficulty"(value: $DifficultyInstance$$Type)
 get "difficulty"(): $DifficultyInstance
 set "canceled"(value: boolean)
@@ -3443,21 +3443,21 @@ export type $GrindstoneEvent$OnTakeItem$$Type = ($GrindstoneEvent$OnTakeItem);
 export type $GrindstoneEvent$OnTakeItem$$Original = $GrindstoneEvent$OnTakeItem;}
 declare module "net.neoforged.neoforge.event.level.AlterGroundEvent" {
 import {$AlterGroundEvent$StateProvider, $AlterGroundEvent$StateProvider$$Type} from "net.neoforged.neoforge.event.level.AlterGroundEvent$StateProvider"
-import {$TreeDecorator$Context, $TreeDecorator$Context$$Type} from "net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecorator$Context"
 import {$List, $List$$Type} from "java.util.List"
+import {$TreeDecorator$Context, $TreeDecorator$Context$$Type} from "net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecorator$Context"
 import {$Event} from "net.neoforged.bus.api.Event"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
 
 export class $AlterGroundEvent extends $Event {
 constructor(arg0: $TreeDecorator$Context$$Type, arg1: $List$$Type<($BlockPos$$Type)>, arg2: $AlterGroundEvent$StateProvider$$Type)
 
-public "setStateProvider"(arg0: $AlterGroundEvent$StateProvider$$Type): void
-public "getStateProvider"(): $AlterGroundEvent$StateProvider
 public "getPositions"(): $List<($BlockPos)>
+public "getStateProvider"(): $AlterGroundEvent$StateProvider
+public "setStateProvider"(arg0: $AlterGroundEvent$StateProvider$$Type): void
 public "getContext"(): $TreeDecorator$Context
-set "stateProvider"(value: $AlterGroundEvent$StateProvider$$Type)
-get "stateProvider"(): $AlterGroundEvent$StateProvider
 get "positions"(): $List<($BlockPos)>
+get "stateProvider"(): $AlterGroundEvent$StateProvider
+set "stateProvider"(value: $AlterGroundEvent$StateProvider$$Type)
 get "context"(): $TreeDecorator$Context
 }
 /**
@@ -3498,10 +3498,10 @@ import {$LivingEntityUseItemEvent} from "net.neoforged.neoforge.event.entity.liv
 export class $LivingEntityUseItemEvent$Finish extends $LivingEntityUseItemEvent {
 constructor(arg0: $LivingEntity$$Type, arg1: $ItemStack$$Type, arg2: integer, arg3: $ItemStack$$Type)
 
-public "setResultStack"(arg0: $ItemStack$$Type): void
 public "getResultStack"(): $ItemStack
-set "resultStack"(value: $ItemStack$$Type)
+public "setResultStack"(arg0: $ItemStack$$Type): void
 get "resultStack"(): $ItemStack
+set "resultStack"(value: $ItemStack$$Type)
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -3616,15 +3616,15 @@ import {$RecipeType, $RecipeType$$Type} from "net.minecraft.world.item.crafting.
 export class $FurnaceFuelBurnTimeEvent extends $Event implements $ICancellableEvent$$Interface {
 constructor(arg0: $ItemStack$$Type, arg1: integer, arg2: $RecipeType$$Type<(never)>)
 
-public "getRecipeType"(): $RecipeType<(never)>
 public "getBurnTime"(): integer
 public "setBurnTime"(arg0: integer): void
+public "getRecipeType"(): $RecipeType<(never)>
 public "getItemStack"(): $ItemStack
 public "setCanceled"(arg0: boolean): void
 public "isCanceled"(): boolean
-get "recipeType"(): $RecipeType<(never)>
 get "burnTime"(): integer
 set "burnTime"(value: integer)
+get "recipeType"(): $RecipeType<(never)>
 get "itemStack"(): $ItemStack
 set "canceled"(value: boolean)
 get "canceled"(): boolean
@@ -3721,8 +3721,8 @@ constructor(arg0: $ItemStack$$Type, arg1: $ItemStack$$Type, arg2: StringJS, arg3
 public "getCost"(): long
 public "getMaterialCost"(): integer
 public "setCost"(arg0: long): void
-public "setMaterialCost"(arg0: integer): void
 public "setOutput"(arg0: $ItemStack$$Type): void
+public "setMaterialCost"(arg0: integer): void
 public "getOutput"(): $ItemStack
 public "getName"(): StringJS
 public "getLeft"(): $ItemStack
@@ -3733,8 +3733,8 @@ public "isCanceled"(): boolean
 get "cost"(): long
 get "materialCost"(): integer
 set "cost"(value: long)
-set "materialCost"(value: integer)
 set "output"(value: $ItemStack$$Type)
+set "materialCost"(value: integer)
 get "output"(): $ItemStack
 get "name"(): StringJS
 get "left"(): $ItemStack
@@ -3777,8 +3777,8 @@ import {$TriState, $TriState$$Type} from "net.neoforged.neoforge.common.util.Tri
 export class $ItemEntityPickupEvent$Pre extends $ItemEntityPickupEvent {
 constructor(arg0: $Player$$Type, arg1: $ItemEntity$$Type)
 
-public "setCanPickup"(arg0: $TriState$$Type): void
 public "canPickup"(): $TriState
+public "setCanPickup"(arg0: $TriState$$Type): void
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -3881,15 +3881,15 @@ import {$Entity} from "net.minecraft.world.entity.Entity"
 export class $StatAwardEvent extends $PlayerEvent implements $ICancellableEvent$$Interface {
 constructor(arg0: $Player$$Type, arg1: $Stat$$Type<(never)>, arg2: integer)
 
-public "setStat"(arg0: $Stat$$Type<(never)>): void
 public "getStat"(): $Stat<(never)>
+public "setStat"(arg0: $Stat$$Type<(never)>): void
 public "getValue"(): integer
 public "setValue"(arg0: integer): void
 public "setCanceled"(arg0: boolean): void
 public "isCanceled"(): boolean
 public "getEntity"(): $Entity
-set "stat"(value: $Stat$$Type<(never)>)
 get "stat"(): $Stat<(never)>
+set "stat"(value: $Stat$$Type<(never)>)
 get "value"(): integer
 set "value"(value: integer)
 set "canceled"(value: boolean)
@@ -3908,8 +3908,8 @@ export type $StatAwardEvent$$Original = $StatAwardEvent;}
 declare module "net.neoforged.neoforge.event.entity.EntityStruckByLightningEvent" {
 import {$EntityEvent} from "net.neoforged.neoforge.event.entity.EntityEvent"
 import {$ICancellableEvent$$Interface} from "net.neoforged.bus.api.ICancellableEvent"
-import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$LightningBolt, $LightningBolt$$Type} from "net.minecraft.world.entity.LightningBolt"
+import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 
 export class $EntityStruckByLightningEvent extends $EntityEvent implements $ICancellableEvent$$Interface {
 constructor(arg0: $Entity$$Type, arg1: $LightningBolt$$Type)
@@ -3934,9 +3934,9 @@ declare module "net.neoforged.neoforge.event.entity.player.ItemTooltipEvent" {
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$List, $List$$Type} from "java.util.List"
-import {$LivingEntity} from "net.minecraft.world.entity.LivingEntity"
 import {$PlayerEvent} from "net.neoforged.neoforge.event.entity.player.PlayerEvent"
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
+import {$Entity} from "net.minecraft.world.entity.Entity"
 import {$TooltipFlag, $TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
 import {$Item$TooltipContext, $Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 
@@ -3944,13 +3944,13 @@ export class $ItemTooltipEvent extends $PlayerEvent {
 constructor(arg0: $ItemStack$$Type, arg1: $Player$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type, arg4: $Item$TooltipContext$$Type)
 
 public "getToolTip"(): $List<($Component)>
+public "getEntity"(): $Entity
 public "getFlags"(): $TooltipFlag
-public "getEntity"(): $LivingEntity
 public "getContext"(): $Item$TooltipContext
 public "getItemStack"(): $ItemStack
 get "toolTip"(): $List<($Component)>
+get "entity"(): $Entity
 get "flags"(): $TooltipFlag
-get "entity"(): $LivingEntity
 get "context"(): $Item$TooltipContext
 get "itemStack"(): $ItemStack
 }
@@ -4088,8 +4088,8 @@ export type $RegisterSpawnPlacementsEvent$Operation$$Type = (("and") | ("or") | 
 export type $RegisterSpawnPlacementsEvent$Operation$$Original = $RegisterSpawnPlacementsEvent$Operation;}
 declare module "net.neoforged.neoforge.event.ModMismatchEvent$MismatchResolutionResult" {
 import {$ModMismatchEvent$MismatchedVersionInfo, $ModMismatchEvent$MismatchedVersionInfo$$Type} from "net.neoforged.neoforge.event.ModMismatchEvent$MismatchedVersionInfo"
-import {$ModContainer, $ModContainer$$Type} from "net.neoforged.fml.ModContainer"
 import {$Record} from "java.lang.Record"
+import {$ModContainer, $ModContainer$$Type} from "net.neoforged.fml.ModContainer"
 
 export class $ModMismatchEvent$MismatchResolutionResult extends $Record {
 constructor(modid: StringJS, versionDifference: $ModMismatchEvent$MismatchedVersionInfo$$Type, resolver: $ModContainer$$Type)
@@ -4259,11 +4259,11 @@ export type $LivingEntityUseItemEvent$Stop$$Original = $LivingEntityUseItemEvent
 declare module "net.neoforged.neoforge.event.level.LevelEvent$PotentialSpawns" {
 import {$LevelEvent} from "net.neoforged.neoforge.event.level.LevelEvent"
 import {$MobCategory, $MobCategory$$Type} from "net.minecraft.world.entity.MobCategory"
-import {$List} from "java.util.List"
 import {$ICancellableEvent$$Interface} from "net.neoforged.bus.api.ICancellableEvent"
+import {$List} from "java.util.List"
 import {$WeightedRandomList$$Type} from "net.minecraft.util.random.WeightedRandomList"
-import {$MobSpawnSettings$SpawnerData, $MobSpawnSettings$SpawnerData$$Type} from "net.minecraft.world.level.biome.MobSpawnSettings$SpawnerData"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$MobSpawnSettings$SpawnerData, $MobSpawnSettings$SpawnerData$$Type} from "net.minecraft.world.level.biome.MobSpawnSettings$SpawnerData"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 
 export class $LevelEvent$PotentialSpawns extends $LevelEvent implements $ICancellableEvent$$Interface {
@@ -4297,29 +4297,29 @@ import {$ServerLevelAccessor, $ServerLevelAccessor$$Type} from "net.minecraft.wo
 import {$RandomSource, $RandomSource$$Type} from "net.minecraft.util.RandomSource"
 import {$Event} from "net.neoforged.bus.api.Event"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$MobSpawnEvent$SpawnPlacementCheck$Result, $MobSpawnEvent$SpawnPlacementCheck$Result$$Type} from "net.neoforged.neoforge.event.entity.living.MobSpawnEvent$SpawnPlacementCheck$Result"
 import {$EntityType, $EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$MobSpawnEvent$SpawnPlacementCheck$Result, $MobSpawnEvent$SpawnPlacementCheck$Result$$Type} from "net.neoforged.neoforge.event.entity.living.MobSpawnEvent$SpawnPlacementCheck$Result"
 
 export class $MobSpawnEvent$SpawnPlacementCheck extends $Event {
 constructor(arg0: $EntityType$$Type<(never)>, arg1: $ServerLevelAccessor$$Type, arg2: $MobSpawnType$$Type, arg3: $BlockPos$$Type, arg4: $RandomSource$$Type, arg5: boolean)
 
-public "getDefaultResult"(): boolean
-public "getPlacementCheckResult"(): boolean
 public "getSpawnType"(): $MobSpawnType
+public "getPlacementCheckResult"(): boolean
+public "getDefaultResult"(): boolean
 public "setResult"(arg0: $MobSpawnEvent$SpawnPlacementCheck$Result$$Type): void
 public "getResult"(): $MobSpawnEvent$SpawnPlacementCheck$Result
 public "getLevel"(): $ServerLevelAccessor
-public "getEntityType"(): $EntityType<(never)>
 public "getRandom"(): $RandomSource
+public "getEntityType"(): $EntityType<(never)>
 public "getPos"(): $BlockPos
-get "defaultResult"(): boolean
-get "placementCheckResult"(): boolean
 get "spawnType"(): $MobSpawnType
+get "placementCheckResult"(): boolean
+get "defaultResult"(): boolean
 set "result"(value: $MobSpawnEvent$SpawnPlacementCheck$Result$$Type)
 get "result"(): $MobSpawnEvent$SpawnPlacementCheck$Result
 get "level"(): $ServerLevelAccessor
-get "entityType"(): $EntityType<(never)>
 get "random"(): $RandomSource
+get "entityType"(): $EntityType<(never)>
 get "pos"(): $BlockPos
 }
 /**
@@ -4383,9 +4383,9 @@ public "getTabKey"(): $ResourceKey<($CreativeModeTab)>
 public "getParentEntries"(): $ObjectSortedSet<($ItemStack)>
 public "insertAfter"(arg0: $ItemStack$$Type, arg1: $ItemStack$$Type, arg2: $CreativeModeTab$TabVisibility$$Type): void
 public "insertFirst"(arg0: $ItemStack$$Type, arg1: $CreativeModeTab$TabVisibility$$Type): void
-public "insertBefore"(arg0: $ItemStack$$Type, arg1: $ItemStack$$Type, arg2: $CreativeModeTab$TabVisibility$$Type): void
-public "getFlags"(): $FeatureFlagSet
 public "hasPermissions"(): boolean
+public "getFlags"(): $FeatureFlagSet
+public "insertBefore"(arg0: $ItemStack$$Type, arg1: $ItemStack$$Type, arg2: $CreativeModeTab$TabVisibility$$Type): void
 public "remove"(arg0: $ItemStack$$Type, arg1: $CreativeModeTab$TabVisibility$$Type): void
 public "accept"(arg0: $ItemStack$$Type, arg1: $CreativeModeTab$TabVisibility$$Type): void
 public "getParameters"(): $CreativeModeTab$ItemDisplayParameters
@@ -4467,9 +4467,9 @@ import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.st
 export class $BonemealEvent extends $Event implements $ICancellableEvent$$Interface {
 constructor(arg0: $Player$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $ItemStack$$Type)
 
-public "setSuccessful"(arg0: boolean): void
 public "isValidBonemealTarget"(): boolean
 public "isSuccessful"(): boolean
+public "setSuccessful"(arg0: boolean): void
 public "getLevel"(): $Level
 public "getState"(): $BlockState
 public "getStack"(): $ItemStack
@@ -4477,9 +4477,9 @@ public "setCanceled"(arg0: boolean): void
 public "getPlayer"(): $Player
 public "getPos"(): $BlockPos
 public "isCanceled"(): boolean
-set "successful"(value: boolean)
 get "validBonemealTarget"(): boolean
 get "successful"(): boolean
+set "successful"(value: boolean)
 get "level"(): $Level
 get "state"(): $BlockState
 get "stack"(): $ItemStack
@@ -4500,8 +4500,8 @@ export type $BonemealEvent$$Original = $BonemealEvent;}
 declare module "net.neoforged.neoforge.event.entity.player.AdvancementEvent$AdvancementEarnEvent" {
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$AdvancementEvent} from "net.neoforged.neoforge.event.entity.player.AdvancementEvent"
-import {$AdvancementHolder$$Type} from "net.minecraft.advancements.AdvancementHolder"
 import {$Entity} from "net.minecraft.world.entity.Entity"
+import {$AdvancementHolder$$Type} from "net.minecraft.advancements.AdvancementHolder"
 
 export class $AdvancementEvent$AdvancementEarnEvent extends $AdvancementEvent {
 constructor(arg0: $Player$$Type, arg1: $AdvancementHolder$$Type)
@@ -4519,11 +4519,11 @@ export type $AdvancementEvent$AdvancementEarnEvent$$Type = ($AdvancementEvent$Ad
  */
 export type $AdvancementEvent$AdvancementEarnEvent$$Original = $AdvancementEvent$AdvancementEarnEvent;}
 declare module "net.neoforged.neoforge.event.entity.player.PlayerInteractEvent$EntityInteract" {
-import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$PlayerInteractEvent} from "net.neoforged.neoforge.event.entity.player.PlayerInteractEvent"
+import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$InteractionResult, $InteractionResult$$Type} from "net.minecraft.world.InteractionResult"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$ICancellableEvent$$Interface} from "net.neoforged.bus.api.ICancellableEvent"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 
 export class $PlayerInteractEvent$EntityInteract extends $PlayerInteractEvent implements $ICancellableEvent$$Interface {
@@ -4583,16 +4583,16 @@ import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
 export class $GetEnchantmentLevelEvent extends $Event {
 constructor(arg0: $ItemStack$$Type, arg1: $ItemEnchantments$Mutable$$Type, arg2: $Holder$$Type<($Enchantment)>, arg3: $HolderLookup$RegistryLookup$$Type<($Enchantment$$Type)>)
 
+public "getEnchantments"(): $ItemEnchantments$Mutable
+public "getLookup"(): $HolderLookup$RegistryLookup<($Enchantment)>
 public "getTargetEnchant"(): $Holder<($Enchantment)>
 public "isTargetting"(arg0: $ResourceKey$$Type<($Enchantment)>): boolean
 public "isTargetting"(arg0: $Holder$$Type<($Enchantment)>): boolean
-public "getEnchantments"(): $ItemEnchantments$Mutable
-public "getLookup"(): $HolderLookup$RegistryLookup<($Enchantment)>
 public "getStack"(): $ItemStack
 public "getHolder"(arg0: $ResourceKey$$Type<($Enchantment)>): $Optional<($Holder$Reference<($Enchantment)>)>
-get "targetEnchant"(): $Holder<($Enchantment)>
 get "enchantments"(): $ItemEnchantments$Mutable
 get "lookup"(): $HolderLookup$RegistryLookup<($Enchantment)>
+get "targetEnchant"(): $Holder<($Enchantment)>
 get "stack"(): $ItemStack
 }
 /**
@@ -4615,10 +4615,10 @@ import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 export class $ExplosionEvent$Detonate extends $ExplosionEvent {
 constructor(arg0: $Level$$Type, arg1: $Explosion$$Type, arg2: $List$$Type<($Entity$$Type)>)
 
-public "getAffectedBlocks"(): $List<($BlockPos)>
 public "getAffectedEntities"(): $List<($Entity)>
-get "affectedBlocks"(): $List<($BlockPos)>
+public "getAffectedBlocks"(): $List<($BlockPos)>
 get "affectedEntities"(): $List<($Entity)>
+get "affectedBlocks"(): $List<($BlockPos)>
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -4709,8 +4709,8 @@ export type $LevelEvent$Load$$Original = $LevelEvent$Load;}
 declare module "net.neoforged.neoforge.event.entity.player.AdvancementEvent" {
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$PlayerEvent} from "net.neoforged.neoforge.event.entity.player.PlayerEvent"
-import {$AdvancementHolder, $AdvancementHolder$$Type} from "net.minecraft.advancements.AdvancementHolder"
 import {$Entity} from "net.minecraft.world.entity.Entity"
+import {$AdvancementHolder, $AdvancementHolder$$Type} from "net.minecraft.advancements.AdvancementHolder"
 
 export class $AdvancementEvent extends $PlayerEvent {
 constructor(arg0: $Player$$Type, arg1: $AdvancementHolder$$Type)
@@ -4813,8 +4813,8 @@ import {$DamageSource} from "net.minecraft.world.damagesource.DamageSource"
 import {$ICancellableEvent$$Interface} from "net.neoforged.bus.api.ICancellableEvent"
 import {$DamageContainer, $DamageContainer$$Type} from "net.neoforged.neoforge.common.damagesource.DamageContainer"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$IReductionFunction$$Type} from "net.neoforged.neoforge.common.damagesource.IReductionFunction"
 import {$DamageContainer$Reduction$$Type} from "net.neoforged.neoforge.common.damagesource.DamageContainer$Reduction"
+import {$IReductionFunction$$Type} from "net.neoforged.neoforge.common.damagesource.IReductionFunction"
 
 export class $LivingIncomingDamageEvent extends $LivingEvent implements $ICancellableEvent$$Interface {
 constructor(arg0: $LivingEntity$$Type, arg1: $DamageContainer$$Type)
@@ -4847,8 +4847,8 @@ export type $LivingIncomingDamageEvent$$Type = ($LivingIncomingDamageEvent);
  */
 export type $LivingIncomingDamageEvent$$Original = $LivingIncomingDamageEvent;}
 declare module "net.neoforged.neoforge.event.entity.living.EffectParticleModificationEvent" {
-import {$MobEffectInstance, $MobEffectInstance$$Type} from "net.minecraft.world.effect.MobEffectInstance"
 import {$LivingEvent} from "net.neoforged.neoforge.event.entity.living.LivingEvent"
+import {$MobEffectInstance, $MobEffectInstance$$Type} from "net.minecraft.world.effect.MobEffectInstance"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$ParticleOptions, $ParticleOptions$$Type} from "net.minecraft.core.particles.ParticleOptions"
 
@@ -4878,8 +4878,8 @@ export type $EffectParticleModificationEvent$$Type = ($EffectParticleModificatio
  */
 export type $EffectParticleModificationEvent$$Original = $EffectParticleModificationEvent;}
 declare module "net.neoforged.neoforge.event.entity.player.PlayerInteractEvent$LeftClickEmpty" {
-import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$PlayerInteractEvent} from "net.neoforged.neoforge.event.entity.player.PlayerInteractEvent"
+import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Entity} from "net.minecraft.world.entity.Entity"
 
 export class $PlayerInteractEvent$LeftClickEmpty extends $PlayerInteractEvent {
@@ -4915,8 +4915,8 @@ export type $LevelEvent$Save$$Type = ($LevelEvent$Save);
  */
 export type $LevelEvent$Save$$Original = $LevelEvent$Save;}
 declare module "net.neoforged.neoforge.event.entity.living.MobSplitEvent" {
-import {$Mob, $Mob$$Type} from "net.minecraft.world.entity.Mob"
 import {$ICancellableEvent$$Interface} from "net.neoforged.bus.api.ICancellableEvent"
+import {$Mob, $Mob$$Type} from "net.minecraft.world.entity.Mob"
 import {$List, $List$$Type} from "java.util.List"
 import {$Event} from "net.neoforged.bus.api.Event"
 
@@ -5102,8 +5102,8 @@ export type $ItemExpireEvent$$Original = $ItemExpireEvent;}
 declare module "net.neoforged.neoforge.event.PlayLevelSoundEvent$AtEntity" {
 import {$PlayLevelSoundEvent} from "net.neoforged.neoforge.event.PlayLevelSoundEvent"
 import {$SoundSource$$Type} from "net.minecraft.sounds.SoundSource"
-import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$SoundEvent$$Type} from "net.minecraft.sounds.SoundEvent"
+import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$Holder$$Type} from "net.minecraft.core.Holder"
 
 export class $PlayLevelSoundEvent$AtEntity extends $PlayLevelSoundEvent {
@@ -5153,8 +5153,8 @@ export type $WandererTradesEvent$$Type = ($WandererTradesEvent);
 export type $WandererTradesEvent$$Original = $WandererTradesEvent;}
 declare module "net.neoforged.neoforge.event.entity.living.LivingEntityUseItemEvent$Start" {
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$ICancellableEvent$$Interface} from "net.neoforged.bus.api.ICancellableEvent"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$LivingEntityUseItemEvent} from "net.neoforged.neoforge.event.entity.living.LivingEntityUseItemEvent"
 
@@ -5228,29 +5228,29 @@ export type $EntityTravelToDimensionEvent$$Type = ($EntityTravelToDimensionEvent
  */
 export type $EntityTravelToDimensionEvent$$Original = $EntityTravelToDimensionEvent;}
 declare module "net.neoforged.neoforge.event.entity.player.CanPlayerSleepEvent" {
+import {$Player} from "net.minecraft.world.entity.player.Player"
 import {$Level} from "net.minecraft.world.level.Level"
-import {$LivingEntity} from "net.minecraft.world.entity.LivingEntity"
 import {$PlayerEvent} from "net.neoforged.neoforge.event.entity.player.PlayerEvent"
-import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
+import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$Player$BedSleepingProblem, $Player$BedSleepingProblem$$Type} from "net.minecraft.world.entity.player.Player$BedSleepingProblem"
 import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $CanPlayerSleepEvent extends $PlayerEvent {
 constructor(arg0: $ServerPlayer$$Type, arg1: $BlockPos$$Type, arg2: $Player$BedSleepingProblem$$Type)
 
+public "getEntity"(): $Player
 public "getProblem"(): $Player$BedSleepingProblem
 public "setProblem"(arg0: $Player$BedSleepingProblem$$Type): void
 public "getVanillaProblem"(): $Player$BedSleepingProblem
 public "getLevel"(): $Level
-public "getEntity"(): $LivingEntity
 public "getState"(): $BlockState
 public "getPos"(): $BlockPos
+get "entity"(): $Player
 get "problem"(): $Player$BedSleepingProblem
 set "problem"(value: $Player$BedSleepingProblem$$Type)
 get "vanillaProblem"(): $Player$BedSleepingProblem
 get "level"(): $Level
-get "entity"(): $LivingEntity
 get "state"(): $BlockState
 get "pos"(): $BlockPos
 }
@@ -5265,15 +5265,15 @@ export type $CanPlayerSleepEvent$$Type = ($CanPlayerSleepEvent);
 export type $CanPlayerSleepEvent$$Original = $CanPlayerSleepEvent;}
 declare module "net.neoforged.neoforge.event.ItemAttributeModifierEvent" {
 import {$AttributeModifier$$Type} from "net.minecraft.world.entity.ai.attributes.AttributeModifier"
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$EquipmentSlotGroup$$Type} from "net.minecraft.world.entity.EquipmentSlotGroup"
 import {$ItemAttributeModifiers$Entry, $ItemAttributeModifiers$Entry$$Type} from "net.minecraft.world.item.component.ItemAttributeModifiers$Entry"
 import {$List} from "java.util.List"
-import {$ItemAttributeModifiers, $ItemAttributeModifiers$$Type} from "net.minecraft.world.item.component.ItemAttributeModifiers"
 import {$Predicate$$Type} from "java.util.function.Predicate"
-import {$Event} from "net.neoforged.bus.api.Event"
+import {$ItemAttributeModifiers, $ItemAttributeModifiers$$Type} from "net.minecraft.world.item.component.ItemAttributeModifiers"
 import {$Attribute$$Type} from "net.minecraft.world.entity.ai.attributes.Attribute"
+import {$Event} from "net.neoforged.bus.api.Event"
 import {$Holder$$Type} from "net.minecraft.core.Holder"
 
 export class $ItemAttributeModifierEvent extends $Event {
@@ -5312,11 +5312,11 @@ import {$Entity} from "net.minecraft.world.entity.Entity"
 export class $PlayerEvent$PlayerChangedDimensionEvent extends $PlayerEvent {
 constructor(arg0: $Player$$Type, arg1: $ResourceKey$$Type<($Level)>, arg2: $ResourceKey$$Type<($Level)>)
 
-public "getFrom"(): $ResourceKey<($Level)>
 public "getEntity"(): $Entity
+public "getFrom"(): $ResourceKey<($Level)>
 public "getTo"(): $ResourceKey<($Level)>
-get "from"(): $ResourceKey<($Level)>
 get "entity"(): $Entity
+get "from"(): $ResourceKey<($Level)>
 get "to"(): $ResourceKey<($Level)>
 }
 /**
@@ -5330,8 +5330,8 @@ export type $PlayerEvent$PlayerChangedDimensionEvent$$Type = ($PlayerEvent$Playe
 export type $PlayerEvent$PlayerChangedDimensionEvent$$Original = $PlayerEvent$PlayerChangedDimensionEvent;}
 declare module "net.neoforged.neoforge.event.entity.living.ArmorHurtEvent" {
 import {$LivingEvent} from "net.neoforged.neoforge.event.entity.living.LivingEvent"
-import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
+import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$DamageSource, $DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
 import {$ICancellableEvent$$Interface} from "net.neoforged.bus.api.ICancellableEvent"
 import {$EquipmentSlot, $EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
@@ -5367,8 +5367,8 @@ export type $ArmorHurtEvent$$Original = $ArmorHurtEvent;}
 declare module "net.neoforged.neoforge.event.BlockEntityTypeAddBlocksEvent" {
 import {$BiPredicate$$Type} from "java.util.function.BiPredicate"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Event} from "net.neoforged.bus.api.Event"
+import {$Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
 import {$IModBusEvent$$Interface} from "net.neoforged.fml.event.IModBusEvent"
 
@@ -5419,9 +5419,9 @@ import {$Player$BedSleepingProblem, $Player$BedSleepingProblem$$Type} from "net.
 export class $CanContinueSleepingEvent extends $LivingEvent {
 constructor(arg0: $LivingEntity$$Type, arg1: $Player$BedSleepingProblem$$Type)
 
+public "mayContinueSleeping"(): boolean
 public "getProblem"(): $Player$BedSleepingProblem
 public "setContinueSleeping"(arg0: boolean): void
-public "mayContinueSleeping"(): boolean
 get "problem"(): $Player$BedSleepingProblem
 set "continueSleeping"(value: boolean)
 }
@@ -5435,8 +5435,8 @@ export type $CanContinueSleepingEvent$$Type = ($CanContinueSleepingEvent);
  */
 export type $CanContinueSleepingEvent$$Original = $CanContinueSleepingEvent;}
 declare module "net.neoforged.neoforge.event.entity.player.PlayerInteractEvent$RightClickEmpty" {
-import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$PlayerInteractEvent} from "net.neoforged.neoforge.event.entity.player.PlayerInteractEvent"
+import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Entity} from "net.minecraft.world.entity.Entity"
 
@@ -5618,13 +5618,13 @@ import {$PlayerEvent} from "net.neoforged.neoforge.event.entity.player.PlayerEve
 export class $PlayerEvent$LoadFromFile extends $PlayerEvent {
 constructor(arg0: $Player$$Type, arg1: $File$$Type, arg2: StringJS)
 
-public "getPlayerDirectory"(): $File
-public "getPlayerFile"(arg0: StringJS): $File
 public "getPlayerUUID"(): StringJS
 public "getEntity"(): $LivingEntity
-get "playerDirectory"(): $File
+public "getPlayerDirectory"(): $File
+public "getPlayerFile"(arg0: StringJS): $File
 get "playerUUID"(): StringJS
 get "entity"(): $LivingEntity
+get "playerDirectory"(): $File
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -5662,15 +5662,15 @@ import {$GameType, $GameType$$Type} from "net.minecraft.world.level.GameType"
 export class $PlayerEvent$PlayerChangeGameModeEvent extends $PlayerEvent implements $ICancellableEvent$$Interface {
 constructor(arg0: $Player$$Type, arg1: $GameType$$Type, arg2: $GameType$$Type)
 
-public "getNewGameMode"(): $GameType
 public "getCurrentGameMode"(): $GameType
 public "setNewGameMode"(arg0: $GameType$$Type): void
+public "getNewGameMode"(): $GameType
 public "getEntity"(): $LivingEntity
 public "setCanceled"(arg0: boolean): void
 public "isCanceled"(): boolean
-get "newGameMode"(): $GameType
 get "currentGameMode"(): $GameType
 set "newGameMode"(value: $GameType$$Type)
+get "newGameMode"(): $GameType
 get "entity"(): $LivingEntity
 set "canceled"(value: boolean)
 get "canceled"(): boolean
@@ -5716,9 +5716,9 @@ declare module "net.neoforged.neoforge.event.entity.player.PlayerEvent$BreakSpee
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Optional} from "java.util.Optional"
 import {$ICancellableEvent$$Interface} from "net.neoforged.bus.api.ICancellableEvent"
-import {$LivingEntity} from "net.minecraft.world.entity.LivingEntity"
 import {$PlayerEvent} from "net.neoforged.neoforge.event.entity.player.PlayerEvent"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$Entity} from "net.minecraft.world.entity.Entity"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $PlayerEvent$BreakSpeed extends $PlayerEvent implements $ICancellableEvent$$Interface {
@@ -5727,17 +5727,17 @@ constructor(arg0: $Player$$Type, arg1: $BlockState$$Type, arg2: float, arg3: $Bl
 public "getOriginalSpeed"(): float
 public "setNewSpeed"(arg0: float): void
 public "getNewSpeed"(): float
-public "getPosition"(): $Optional<($BlockPos)>
-public "getEntity"(): $LivingEntity
+public "getEntity"(): $Entity
 public "getState"(): $BlockState
+public "getPosition"(): $Optional<($BlockPos)>
 public "setCanceled"(arg0: boolean): void
 public "isCanceled"(): boolean
 get "originalSpeed"(): float
 set "newSpeed"(value: float)
 get "newSpeed"(): float
-get "position"(): $Optional<($BlockPos)>
-get "entity"(): $LivingEntity
+get "entity"(): $Entity
 get "state"(): $BlockState
+get "position"(): $Optional<($BlockPos)>
 set "canceled"(value: boolean)
 get "canceled"(): boolean
 }
@@ -5763,16 +5763,16 @@ public "getEnchantLevel"(): integer
 public "getEnchantRow"(): integer
 public "getOriginalLevel"(): integer
 public "setEnchantLevel"(arg0: integer): void
-public "getItem"(): $ItemStack
 public "getLevel"(): $Level
+public "getItem"(): $ItemStack
 public "getPos"(): $BlockPos
 public "getPower"(): integer
 get "enchantLevel"(): integer
 get "enchantRow"(): integer
 get "originalLevel"(): integer
 set "enchantLevel"(value: integer)
-get "item"(): $ItemStack
 get "level"(): $Level
+get "item"(): $ItemStack
 get "pos"(): $BlockPos
 get "power"(): integer
 }
@@ -5786,11 +5786,11 @@ export type $EnchantmentLevelSetEvent$$Type = ($EnchantmentLevelSetEvent);
  */
 export type $EnchantmentLevelSetEvent$$Original = $EnchantmentLevelSetEvent;}
 declare module "net.neoforged.neoforge.event.entity.player.PlayerInteractEvent$RightClickItem" {
-import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$PlayerInteractEvent} from "net.neoforged.neoforge.event.entity.player.PlayerInteractEvent"
+import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$InteractionResult, $InteractionResult$$Type} from "net.minecraft.world.InteractionResult"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$ICancellableEvent$$Interface} from "net.neoforged.bus.api.ICancellableEvent"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Entity} from "net.minecraft.world.entity.Entity"
 
 export class $PlayerInteractEvent$RightClickItem extends $PlayerInteractEvent implements $ICancellableEvent$$Interface {
@@ -5819,10 +5819,10 @@ export type $PlayerInteractEvent$RightClickItem$$Original = $PlayerInteractEvent
 declare module "net.neoforged.neoforge.event.entity.player.UseItemOnBlockEvent" {
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$ICancellableEvent$$Interface} from "net.neoforged.bus.api.ICancellableEvent"
-import {$InteractionHand} from "net.minecraft.world.InteractionHand"
 import {$UseItemOnBlockEvent$UsePhase, $UseItemOnBlockEvent$UsePhase$$Type} from "net.neoforged.neoforge.event.entity.player.UseItemOnBlockEvent$UsePhase"
-import {$Direction} from "net.minecraft.core.Direction"
+import {$InteractionHand} from "net.minecraft.world.InteractionHand"
 import {$Event} from "net.neoforged.bus.api.Event"
+import {$Direction} from "net.minecraft.core.Direction"
 import {$Level} from "net.minecraft.world.level.Level"
 import {$LogicalSide} from "net.neoforged.fml.LogicalSide"
 import {$Player} from "net.minecraft.world.entity.player.Player"
@@ -5837,9 +5837,9 @@ public "getCancellationResult"(): $ItemInteractionResult
 public "getHand"(): $InteractionHand
 public "setCancellationResult"(arg0: $ItemInteractionResult$$Type): void
 public "getFace"(): $Direction
-public "getUseOnContext"(): $UseOnContext
 public "getUsePhase"(): $UseItemOnBlockEvent$UsePhase
 public "cancelWithResult"(arg0: $ItemInteractionResult$$Type): void
+public "getUseOnContext"(): $UseOnContext
 public "getLevel"(): $Level
 public "getSide"(): $LogicalSide
 public "getItemStack"(): $ItemStack
@@ -5851,8 +5851,8 @@ get "cancellationResult"(): $ItemInteractionResult
 get "hand"(): $InteractionHand
 set "cancellationResult"(value: $ItemInteractionResult$$Type)
 get "face"(): $Direction
-get "useOnContext"(): $UseOnContext
 get "usePhase"(): $UseItemOnBlockEvent$UsePhase
+get "useOnContext"(): $UseOnContext
 get "level"(): $Level
 get "side"(): $LogicalSide
 get "itemStack"(): $ItemStack
@@ -5899,16 +5899,16 @@ import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.st
 export class $BlockEvent$FluidPlaceBlockEvent extends $BlockEvent implements $ICancellableEvent$$Interface {
 constructor(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type)
 
-public "getLiquidPos"(): $BlockPos
-public "setNewState"(arg0: $BlockState$$Type): void
 public "getNewState"(): $BlockState
 public "getOriginalState"(): $BlockState
+public "getLiquidPos"(): $BlockPos
+public "setNewState"(arg0: $BlockState$$Type): void
 public "setCanceled"(arg0: boolean): void
 public "isCanceled"(): boolean
-get "liquidPos"(): $BlockPos
-set "newState"(value: $BlockState$$Type)
 get "newState"(): $BlockState
 get "originalState"(): $BlockState
+get "liquidPos"(): $BlockPos
+set "newState"(value: $BlockState$$Type)
 set "canceled"(value: boolean)
 get "canceled"(): boolean
 }
@@ -5924,8 +5924,8 @@ export type $BlockEvent$FluidPlaceBlockEvent$$Original = $BlockEvent$FluidPlaceB
 declare module "net.neoforged.neoforge.event.entity.living.LivingChangeTargetEvent" {
 import {$LivingEvent} from "net.neoforged.neoforge.event.entity.living.LivingEvent"
 import {$ICancellableEvent$$Interface} from "net.neoforged.bus.api.ICancellableEvent"
-import {$LivingChangeTargetEvent$ILivingTargetType, $LivingChangeTargetEvent$ILivingTargetType$$Type} from "net.neoforged.neoforge.event.entity.living.LivingChangeTargetEvent$ILivingTargetType"
 import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$LivingChangeTargetEvent$ILivingTargetType, $LivingChangeTargetEvent$ILivingTargetType$$Type} from "net.neoforged.neoforge.event.entity.living.LivingChangeTargetEvent$ILivingTargetType"
 
 export class $LivingChangeTargetEvent extends $LivingEvent implements $ICancellableEvent$$Interface {
 constructor(arg0: $LivingEntity$$Type, arg1: $LivingEntity$$Type, arg2: $LivingChangeTargetEvent$ILivingTargetType$$Type)
@@ -5955,8 +5955,8 @@ export type $LivingChangeTargetEvent$$Original = $LivingChangeTargetEvent;}
 declare module "net.neoforged.neoforge.event.entity.EntityAttributeModificationEvent" {
 import {$Map$$Type} from "java.util.Map"
 import {$List} from "java.util.List"
-import {$Event} from "net.neoforged.bus.api.Event"
 import {$Attribute$$Type} from "net.minecraft.world.entity.ai.attributes.Attribute"
+import {$Event} from "net.neoforged.bus.api.Event"
 import {$AttributeSupplier$Builder$$Type} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
 import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$IModBusEvent$$Interface} from "net.neoforged.fml.event.IModBusEvent"
@@ -6066,14 +6066,14 @@ import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 export class $ExplosionKnockbackEvent extends $ExplosionEvent {
 constructor(arg0: $Level$$Type, arg1: $Explosion$$Type, arg2: $Entity$$Type, arg3: $Vec3$$Type)
 
+public "getAffectedBlocks"(): $List<($BlockPos)>
 public "getKnockbackVelocity"(): $Vec3
 public "getAffectedEntity"(): $Entity
 public "setKnockbackVelocity"(arg0: $Vec3$$Type): void
-public "getAffectedBlocks"(): $List<($BlockPos)>
+get "affectedBlocks"(): $List<($BlockPos)>
 get "knockbackVelocity"(): $Vec3
 get "affectedEntity"(): $Entity
 set "knockbackVelocity"(value: $Vec3$$Type)
-get "affectedBlocks"(): $List<($BlockPos)>
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -6127,8 +6127,8 @@ export type $EntityTickEvent$Pre$$Type = ($EntityTickEvent$Pre);
 export type $EntityTickEvent$Pre$$Original = $EntityTickEvent$Pre;}
 declare module "net.neoforged.neoforge.event.level.BlockEvent$PortalSpawnEvent" {
 import {$BlockEvent} from "net.neoforged.neoforge.event.level.BlockEvent"
-import {$ICancellableEvent$$Interface} from "net.neoforged.bus.api.ICancellableEvent"
 import {$PortalShape, $PortalShape$$Type} from "net.minecraft.world.level.portal.PortalShape"
+import {$ICancellableEvent$$Interface} from "net.neoforged.bus.api.ICancellableEvent"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -6349,18 +6349,18 @@ constructor(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type, arg2: $ItemAbili
 
 public "getFinalState"(): $BlockState
 public "setFinalState"(arg0: $BlockState$$Type): void
-public "isSimulated"(): boolean
-public "getHeldItemStack"(): $ItemStack
 public "getItemAbility"(): $ItemAbility
+public "getHeldItemStack"(): $ItemStack
+public "isSimulated"(): boolean
 public "getContext"(): $UseOnContext
 public "getPlayer"(): $Player
 public "setCanceled"(arg0: boolean): void
 public "isCanceled"(): boolean
 get "finalState"(): $BlockState
 set "finalState"(value: $BlockState$$Type)
-get "simulated"(): boolean
-get "heldItemStack"(): $ItemStack
 get "itemAbility"(): $ItemAbility
+get "heldItemStack"(): $ItemStack
+get "simulated"(): boolean
 get "context"(): $UseOnContext
 get "player"(): $Player
 set "canceled"(value: boolean)
@@ -6448,13 +6448,13 @@ import {$PlayerEvent} from "net.neoforged.neoforge.event.entity.player.PlayerEve
 export class $PlayerEvent$SaveToFile extends $PlayerEvent {
 constructor(arg0: $Player$$Type, arg1: $File$$Type, arg2: StringJS)
 
-public "getPlayerDirectory"(): $File
-public "getPlayerFile"(arg0: StringJS): $File
 public "getPlayerUUID"(): StringJS
 public "getEntity"(): $LivingEntity
-get "playerDirectory"(): $File
+public "getPlayerDirectory"(): $File
+public "getPlayerFile"(arg0: StringJS): $File
 get "playerUUID"(): StringJS
 get "entity"(): $LivingEntity
+get "playerDirectory"(): $File
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -6521,8 +6521,8 @@ export type $LevelTickEvent$Post$$Type = ($LevelTickEvent$Post);
  */
 export type $LevelTickEvent$Post$$Original = $LevelTickEvent$Post;}
 declare module "net.neoforged.neoforge.event.AddReloadListenerEvent" {
-import {$List} from "java.util.List"
 import {$ICondition$IContext} from "net.neoforged.neoforge.common.conditions.ICondition$IContext"
+import {$List} from "java.util.List"
 import {$Event} from "net.neoforged.bus.api.Event"
 import {$PreparableReloadListener, $PreparableReloadListener$$Type} from "net.minecraft.server.packs.resources.PreparableReloadListener"
 import {$ReloadableServerResources, $ReloadableServerResources$$Type} from "net.minecraft.server.ReloadableServerResources"
@@ -6617,13 +6617,13 @@ import {$EntityEvent} from "net.neoforged.neoforge.event.entity.EntityEvent"
 import {$Entity} from "net.minecraft.world.entity.Entity"
 
 export class $MobSpawnEvent extends $EntityEvent {
-public "getLevel"(): $ServerLevelAccessor
 public "getEntity"(): $Entity
+public "getLevel"(): $ServerLevelAccessor
 public "getY"(): double
 public "getX"(): double
 public "getZ"(): double
-get "level"(): $ServerLevelAccessor
 get "entity"(): $Entity
+get "level"(): $ServerLevelAccessor
 get "y"(): double
 get "x"(): double
 get "z"(): double
@@ -6678,10 +6678,10 @@ export type $PlayerTickEvent$Pre$$Type = ($PlayerTickEvent$Pre);
  */
 export type $PlayerTickEvent$Pre$$Original = $PlayerTickEvent$Pre;}
 declare module "net.neoforged.neoforge.event.entity.living.BabyEntitySpawnEvent" {
-import {$AgeableMob, $AgeableMob$$Type} from "net.minecraft.world.entity.AgeableMob"
 import {$Player} from "net.minecraft.world.entity.player.Player"
-import {$Mob, $Mob$$Type} from "net.minecraft.world.entity.Mob"
+import {$AgeableMob, $AgeableMob$$Type} from "net.minecraft.world.entity.AgeableMob"
 import {$ICancellableEvent$$Interface} from "net.neoforged.bus.api.ICancellableEvent"
+import {$Mob, $Mob$$Type} from "net.minecraft.world.entity.Mob"
 import {$Event} from "net.neoforged.bus.api.Event"
 
 export class $BabyEntitySpawnEvent extends $Event implements $ICancellableEvent$$Interface {

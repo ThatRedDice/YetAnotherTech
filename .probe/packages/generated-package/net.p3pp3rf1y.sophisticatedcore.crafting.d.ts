@@ -1,7 +1,7 @@
 declare module "net.p3pp3rf1y.sophisticatedcore.crafting.RecipeWrapperSerializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Function$$Type} from "java.util.function.Function"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"

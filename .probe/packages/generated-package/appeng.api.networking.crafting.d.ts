@@ -8,19 +8,19 @@ import {$Set} from "java.util.Set"
 import {$AEKey} from "appeng.api.stacks.AEKey"
 
 export interface $ICraftingProvider$$Interface extends $IGridNodeService$$Interface {
-get "busy"(): boolean
+get "patternPriority"(): integer
 get "emitableItems"(): $Set<($AEKey)>
 get "availablePatterns"(): $List<($IPatternDetails)>
-get "patternPriority"(): integer
+get "busy"(): boolean
 }
 
 export class $ICraftingProvider implements $ICraftingProvider$$Interface {
-static "requestUpdate"(arg0: $IManagedGridNode$$Type): void
- "isBusy"(): boolean
- "getEmitableItems"(): $Set<($AEKey)>
- "getAvailablePatterns"(): $List<($IPatternDetails)>
  "getPatternPriority"(): integer
  "pushPattern"(arg0: $IPatternDetails$$Type, arg1: ($KeyCounter$$Type)[]): boolean
+ "getEmitableItems"(): $Set<($AEKey)>
+ "getAvailablePatterns"(): $List<($IPatternDetails)>
+ "isBusy"(): boolean
+static "requestUpdate"(arg0: $IManagedGridNode$$Type): void
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -38,13 +38,13 @@ import {$IActionSource, $IActionSource$$Type} from "appeng.api.networking.securi
 export interface $ICraftingSimulationRequester$$Interface {
 
 (): $IActionSource$$Type
-get "gridNode"(): $IGridNode
 get "actionSource"(): $IActionSource
+get "gridNode"(): $IGridNode
 }
 
 export class $ICraftingSimulationRequester implements $ICraftingSimulationRequester$$Interface {
- "getGridNode"(): $IGridNode
  "getActionSource"(): $IActionSource
+ "getGridNode"(): $IGridNode
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -66,12 +66,12 @@ export interface $ICraftingPlan$$Interface {
 
 export class $ICraftingPlan implements $ICraftingPlan$$Interface {
  "simulation"(): boolean
+ "finalOutput"(): $GenericStack
  "multiplePaths"(): boolean
  "usedItems"(): $KeyCounter
  "emittedItems"(): $KeyCounter
  "missingItems"(): $KeyCounter
  "patternTimes"(): $Map<($IPatternDetails), (long)>
- "finalOutput"(): $GenericStack
  "bytes"(): long
 }
 /**
@@ -117,9 +117,9 @@ get "actionableNode"(): $IGridNode
 }
 
 export class $ICraftingRequester implements $ICraftingRequester$$Interface {
- "getRequestedJobs"(): $ImmutableSet<($ICraftingLink)>
- "jobStateChange"(arg0: $ICraftingLink$$Type): void
  "insertCraftedItems"(arg0: $ICraftingLink$$Type, arg1: $AEKey$$Type, arg2: long, arg3: $Actionable$$Type): long
+ "jobStateChange"(arg0: $ICraftingLink$$Type): void
+ "getRequestedJobs"(): $ImmutableSet<($ICraftingLink)>
  "getActionableNode"(): $IGridNode
 }
 /**
@@ -159,8 +159,8 @@ declare module "appeng.api.networking.crafting.ICraftingService" {
 import {$Collection} from "java.util.Collection"
 import {$CalculationStrategy$$Type} from "appeng.api.networking.crafting.CalculationStrategy"
 import {$AEKeyFilter$$Type} from "appeng.api.storage.AEKeyFilter"
-import {$IActionSource$$Type} from "appeng.api.networking.security.IActionSource"
 import {$ImmutableSet} from "com.google.common.collect.ImmutableSet"
+import {$IActionSource$$Type} from "appeng.api.networking.security.IActionSource"
 import {$Future} from "java.util.concurrent.Future"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$ICraftingSubmitResult} from "appeng.api.networking.crafting.ICraftingSubmitResult"
@@ -176,26 +176,26 @@ import {$ICraftingCPU, $ICraftingCPU$$Type} from "appeng.api.networking.crafting
 import {$ICraftingPlan, $ICraftingPlan$$Type} from "appeng.api.networking.crafting.ICraftingPlan"
 
 export interface $ICraftingService$$Interface extends $IGridService$$Interface {
-get "requestingAny"(): boolean
 get "cpus"(): $ImmutableSet<($ICraftingCPU)>
+get "requestingAny"(): boolean
 }
 
 export class $ICraftingService implements $ICraftingService$$Interface {
- "isCraftable"(arg0: $AEKey$$Type): boolean
- "canEmitFor"(arg0: $AEKey$$Type): boolean
- "getCraftables"(arg0: $AEKeyFilter$$Type): $Set<($AEKey)>
- "isRequesting"(arg0: $AEKey$$Type): boolean
- "getRequestedAmount"(arg0: $AEKey$$Type): long
- "isRequestingAny"(): boolean
- "refreshNodeCraftingProvider"(arg0: $IGridNode$$Type): void
  "getCraftingFor"(arg0: $AEKey$$Type): $Collection<($IPatternDetails)>
  "addGlobalCraftingProvider"(arg0: $ICraftingProvider$$Type): void
  "getFuzzyCraftable"(arg0: $AEKey$$Type, arg1: $AEKeyFilter$$Type): $AEKey
  "beginCraftingCalculation"(arg0: $Level$$Type, arg1: $ICraftingSimulationRequester$$Type, arg2: $AEKey$$Type, arg3: long, arg4: $CalculationStrategy$$Type): $Future<($ICraftingPlan)>
  "submitJob"(arg0: $ICraftingPlan$$Type, arg1: $ICraftingRequester$$Type, arg2: $ICraftingCPU$$Type, arg3: boolean, arg4: $IActionSource$$Type): $ICraftingSubmitResult
  "getCpus"(): $ImmutableSet<($ICraftingCPU)>
+ "canEmitFor"(arg0: $AEKey$$Type): boolean
+ "getCraftables"(arg0: $AEKeyFilter$$Type): $Set<($AEKey)>
+ "isRequesting"(arg0: $AEKey$$Type): boolean
+ "getRequestedAmount"(arg0: $AEKey$$Type): long
+ "isRequestingAny"(): boolean
+ "refreshNodeCraftingProvider"(arg0: $IGridNode$$Type): void
  "removeGlobalCraftingProvider"(arg0: $ICraftingProvider$$Type): void
  "refreshGlobalCraftingProvider"(arg0: $ICraftingProvider$$Type): void
+ "isCraftable"(arg0: $AEKey$$Type): boolean
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -240,18 +240,18 @@ import {$CraftingJobStatus} from "appeng.api.networking.crafting.CraftingJobStat
 import {$Component} from "net.minecraft.network.chat.Component"
 
 export interface $ICraftingCPU$$Interface {
+get "coProcessors"(): integer
 get "busy"(): boolean
 get "availableStorage"(): long
-get "coProcessors"(): integer
 get "jobStatus"(): $CraftingJobStatus
 get "selectionMode"(): $CpuSelectionMode
 get "name"(): $Component
 }
 
 export class $ICraftingCPU implements $ICraftingCPU$$Interface {
+ "getCoProcessors"(): integer
  "isBusy"(): boolean
  "getAvailableStorage"(): long
- "getCoProcessors"(): integer
  "getJobStatus"(): $CraftingJobStatus
  "cancelJob"(): void
  "getSelectionMode"(): $CpuSelectionMode
@@ -307,7 +307,7 @@ public "crafting"(): $GenericStack
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $CraftingJobStatus$$Type = ({"elapsedTimeNanos"?: long, "crafting"?: $GenericStack$$Type, "totalItems"?: long, "progress"?: long}) | ([elapsedTimeNanos?: long, crafting?: $GenericStack$$Type, totalItems?: long, progress?: long]);
+export type $CraftingJobStatus$$Type = ({"crafting"?: $GenericStack$$Type, "totalItems"?: long, "progress"?: long, "elapsedTimeNanos"?: long}) | ([crafting?: $GenericStack$$Type, totalItems?: long, progress?: long, elapsedTimeNanos?: long]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */

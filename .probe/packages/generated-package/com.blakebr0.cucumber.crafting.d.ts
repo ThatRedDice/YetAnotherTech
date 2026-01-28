@@ -23,8 +23,8 @@ export type $OutputResolver$$Type = (() => $ItemStack$$Type);
 export type $OutputResolver$$Original = $OutputResolver;}
 declare module "com.blakebr0.cucumber.crafting.recipe.ShapelessTagRecipe$Serializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$ShapelessTagRecipe} from "com.blakebr0.cucumber.crafting.recipe.ShapelessTagRecipe"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
@@ -80,8 +80,8 @@ export type $ShapedTransferComponentsRecipe$$Type = ($ShapedTransferComponentsRe
 export type $ShapedTransferComponentsRecipe$$Original = $ShapedTransferComponentsRecipe;}
 declare module "com.blakebr0.cucumber.crafting.recipe.ShapedTransferDamageRecipe$Serializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$ShapedTransferDamageRecipe} from "com.blakebr0.cucumber.crafting.recipe.ShapedTransferDamageRecipe"
@@ -138,8 +138,8 @@ export type $ShapedTagRecipe$$Original = $ShapedTagRecipe;}
 declare module "com.blakebr0.cucumber.crafting.recipe.ShapedTagRecipe$Serializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$ShapedTagRecipe} from "com.blakebr0.cucumber.crafting.recipe.ShapedTagRecipe"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
 
@@ -168,8 +168,8 @@ import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$ShapedRecipePattern, $ShapedRecipePattern$$Type} from "net.minecraft.world.item.crafting.ShapedRecipePattern"
 import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$ShapedRecipe} from "net.minecraft.world.item.crafting.ShapedRecipe"
-import {$CraftingBookCategory$$Type} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$CraftingBookCategory$$Type} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 
 export class $ShapedNoMirrorRecipe extends $ShapedRecipe {
@@ -214,12 +214,12 @@ export type $OutputResolver$Item$$Type = ($OutputResolver$Item);
 export type $OutputResolver$Item$$Original = $OutputResolver$Item;}
 declare module "com.blakebr0.cucumber.crafting.recipe.ShapelessTagRecipe" {
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
-import {$OutputResolver$$Type} from "com.blakebr0.cucumber.crafting.OutputResolver"
 import {$Ingredient, $Ingredient$$Type} from "net.minecraft.world.item.crafting.Ingredient"
+import {$OutputResolver$$Type} from "com.blakebr0.cucumber.crafting.OutputResolver"
 import {$ShapelessRecipe} from "net.minecraft.world.item.crafting.ShapelessRecipe"
 import {$CraftingBookCategory$$Type} from "net.minecraft.world.item.crafting.CraftingBookCategory"
-import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$NonNullList, $NonNullList$$Type} from "net.minecraft.core.NonNullList"
+import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 
 export class $ShapelessTagRecipe extends $ShapelessRecipe {
@@ -246,8 +246,8 @@ export type $ShapelessTagRecipe$$Type = ($ShapelessTagRecipe);
 export type $ShapelessTagRecipe$$Original = $ShapelessTagRecipe;}
 declare module "com.blakebr0.cucumber.crafting.recipe.ShapedTransferComponentsRecipe$Serializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$ShapedTransferComponentsRecipe} from "com.blakebr0.cucumber.crafting.recipe.ShapedTransferComponentsRecipe"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
@@ -273,8 +273,8 @@ export type $ShapedTransferComponentsRecipe$Serializer$$Type = ($ShapedTransferC
 export type $ShapedTransferComponentsRecipe$Serializer$$Original = $ShapedTransferComponentsRecipe$Serializer;}
 declare module "com.blakebr0.cucumber.crafting.recipe.ShapedNoMirrorRecipe$Serializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$ShapedNoMirrorRecipe} from "com.blakebr0.cucumber.crafting.recipe.ShapedNoMirrorRecipe"
@@ -301,8 +301,8 @@ export type $ShapedNoMirrorRecipe$Serializer$$Original = $ShapedNoMirrorRecipe$S
 declare module "com.blakebr0.cucumber.crafting.ingredient.IngredientWithCount" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$IngredientType} from "net.neoforged.neoforge.common.crafting.IngredientType"
-import {$ItemStackSet} from "dev.latvian.mods.kubejs.item.ItemStackSet"
 import {$Ingredient$Value$$Type} from "net.minecraft.world.item.crafting.Ingredient$Value"
+import {$ItemStackSet} from "dev.latvian.mods.kubejs.item.ItemStackSet"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Ingredient} from "net.minecraft.world.item.crafting.Ingredient"
 import {$Predicate, $Predicate$$Type, $Predicate$$Interface} from "java.util.function.Predicate"
@@ -332,11 +332,11 @@ public "getCount"(): integer
 public "getType"(): $IngredientType<(never)>
 public "isSimple"(): boolean
 public "toVanilla"(): $Ingredient
-public "or"(arg0: $Predicate$$Type<($ItemStack)>): $Predicate<($ItemStack)>
+public static "not"<T>(arg0: $Predicate$$Type<($ItemStack)>): $Predicate<($ItemStack)>
 public static "isEqual"<T>(arg0: any): $Predicate<($ItemStack)>
 public "negate"(): $Predicate<($ItemStack)>
 public "and"(arg0: $Predicate$$Type<($ItemStack)>): $Predicate<($ItemStack)>
-public static "not"<T>(arg0: $Predicate$$Type<($ItemStack)>): $Predicate<($ItemStack)>
+public "or"(arg0: $Predicate$$Type<($ItemStack)>): $Predicate<($ItemStack)>
 public "asIngredient"(): $Ingredient
 public "canBeUsedForMatching"(): boolean
 public "getStackArray"(): ($ItemStack)[]

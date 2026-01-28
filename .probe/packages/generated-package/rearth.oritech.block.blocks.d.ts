@@ -56,8 +56,8 @@ declare module "rearth.oritech.block.blocks.pipes.item.ItemPipeBlock" {
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$List$$Type} from "java.util.List"
-import {$GenericPipeInterfaceEntity$PipeNetworkData} from "rearth.oritech.block.entity.pipes.GenericPipeInterfaceEntity$PipeNetworkData"
 import {$Direction} from "net.minecraft.core.Direction"
+import {$GenericPipeInterfaceEntity$PipeNetworkData} from "rearth.oritech.block.entity.pipes.GenericPipeInterfaceEntity$PipeNetworkData"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
@@ -67,11 +67,11 @@ import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
-import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
 import {$GenericPipeBlock} from "rearth.oritech.block.blocks.pipes.GenericPipeBlock"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
+import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
+import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TriFunction} from "org.apache.commons.lang3.function.TriFunction"
 import {$HashMap} from "java.util.HashMap"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -143,8 +143,8 @@ import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
@@ -205,14 +205,14 @@ import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$RenderShape} from "net.minecraft.world.level.block.RenderShape"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$HorizontalDirectionalBlock} from "net.minecraft.world.level.block.HorizontalDirectionalBlock"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
@@ -244,9 +244,9 @@ static readonly "FACING": $DirectionProperty
 constructor(arg0: $BlockBehaviour$Properties$$Type)
 
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
+public "useWithoutItem"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $BlockHitResult$$Type): $InteractionResult
 public "playerWillDestroy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $Player$$Type): $BlockState
 public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
-public "useWithoutItem"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $BlockHitResult$$Type): $InteractionResult
 public "getTicker"<T extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
 public "getRenderShape"(arg0: $BlockState$$Type): $RenderShape
@@ -265,9 +265,9 @@ export type $EnchantmentCatalystBlock$$Original = $EnchantmentCatalystBlock;}
 declare module "rearth.oritech.block.blocks.pipes.item.ItemPipeBlock$TransparentItemPipe" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$GenericPipeInterfaceEntity$PipeNetworkData} from "rearth.oritech.block.entity.pipes.GenericPipeInterfaceEntity$PipeNetworkData"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
+import {$GenericPipeInterfaceEntity$PipeNetworkData} from "rearth.oritech.block.entity.pipes.GenericPipeInterfaceEntity$PipeNetworkData"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$HashMap} from "java.util.HashMap"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -275,8 +275,8 @@ import {$ItemPipeBlock} from "rearth.oritech.block.blocks.pipes.item.ItemPipeBlo
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 
@@ -342,14 +342,14 @@ import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$RenderShape} from "net.minecraft.world.level.block.RenderShape"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$HorizontalDirectionalBlock} from "net.minecraft.world.level.block.HorizontalDirectionalBlock"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
@@ -451,9 +451,9 @@ export type $EnergyPipeDuctBlock$$Type = ($EnergyPipeDuctBlock);
  */
 export type $EnergyPipeDuctBlock$$Original = $EnergyPipeDuctBlock;}
 declare module "rearth.oritech.block.blocks.reactor.ReactorControllerBlock" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$Block} from "net.minecraft.world.level.block.Block"
@@ -516,18 +516,18 @@ declare module "rearth.oritech.block.blocks.pipes.energy.EnergyPipeConnectionBlo
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$GenericPipeConnectionBlock} from "rearth.oritech.block.blocks.pipes.GenericPipeConnectionBlock"
-import {$GenericPipeInterfaceEntity$PipeNetworkData} from "rearth.oritech.block.entity.pipes.GenericPipeInterfaceEntity$PipeNetworkData"
-import {$Direction} from "net.minecraft.core.Direction"
-import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
+import {$Direction} from "net.minecraft.core.Direction"
+import {$GenericPipeInterfaceEntity$PipeNetworkData} from "rearth.oritech.block.entity.pipes.GenericPipeInterfaceEntity$PipeNetworkData"
+import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$TriFunction} from "org.apache.commons.lang3.function.TriFunction"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -609,8 +609,8 @@ import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties
 import {$AbstractPipeBlock} from "rearth.oritech.block.blocks.pipes.AbstractPipeBlock"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
-import {$Wrench$Wrenchable$$Interface} from "rearth.oritech.item.tools.Wrench$Wrenchable"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
+import {$Wrench$Wrenchable$$Interface} from "rearth.oritech.item.tools.Wrench$Wrenchable"
 import {$Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 import {$VoxelShape, $VoxelShape$$Type} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
@@ -651,30 +651,30 @@ static readonly "UPDATE_CLIENTS": integer
 
 constructor(arg0: $BlockBehaviour$Properties$$Type)
 
+public static "createShapes"(arg0: $VoxelShape$$Type, arg1: $VoxelShape$$Type, arg2: $VoxelShape$$Type, arg3: $VoxelShape$$Type, arg4: $VoxelShape$$Type, arg5: $VoxelShape$$Type, arg6: $VoxelShape$$Type): ($VoxelShape)[]
 public "updateShape"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $BlockState$$Type, arg3: $LevelAccessor$$Type, arg4: $BlockPos$$Type, arg5: $BlockPos$$Type): $BlockState
 public "playerWillDestroy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $Player$$Type): $BlockState
 public "onPlace"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: boolean): void
-public "isConnectingInDirection"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $BlockPos$$Type, arg3: $Level$$Type, arg4: boolean): boolean
-public static "createShapes"(arg0: $VoxelShape$$Type, arg1: $VoxelShape$$Type, arg2: $VoxelShape$$Type, arg3: $VoxelShape$$Type, arg4: $VoxelShape$$Type, arg5: $VoxelShape$$Type, arg6: $VoxelShape$$Type): ($VoxelShape)[]
-public "shouldConnect"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $BlockPos$$Type, arg3: $Level$$Type, arg4: boolean): boolean
 public "directionToProperty"(arg0: $Direction$$Type): $IntegerProperty
 public "updateNeighbors"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: boolean): void
-public "addStraightState"(arg0: $BlockState$$Type): $BlockState
-public "onWrenchUseNeighbor"(arg0: $BlockState$$Type, arg1: $BlockState$$Type, arg2: $Level$$Type, arg3: $BlockPos$$Type, arg4: $BlockPos$$Type, arg5: $Direction$$Type, arg6: $Player$$Type, arg7: $InteractionHand$$Type): $InteractionResult
-public "directionToPropertyValue"(arg0: $BlockState$$Type, arg1: $Direction$$Type): integer
+public "shouldConnect"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $BlockPos$$Type, arg3: $Level$$Type, arg4: boolean): boolean
+public "isConnectingInDirection"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $BlockPos$$Type, arg3: $Level$$Type, arg4: boolean): boolean
 public "getNorthProperty"(): $IntegerProperty
 public "getEastProperty"(): $IntegerProperty
 public "getSouthProperty"(): $IntegerProperty
 public "getWestProperty"(): $IntegerProperty
 public "getUpProperty"(): $IntegerProperty
 public "getDownProperty"(): $IntegerProperty
-public "addConnectionStates"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: boolean): $BlockState
 public "addConnectionStates"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Direction$$Type): $BlockState
+public "addConnectionStates"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: boolean): $BlockState
 public "onWrenchUse"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $InteractionHand$$Type): $InteractionResult
+public "addStraightState"(arg0: $BlockState$$Type): $BlockState
+public "onWrenchUseNeighbor"(arg0: $BlockState$$Type, arg1: $BlockState$$Type, arg2: $Level$$Type, arg3: $BlockPos$$Type, arg4: $BlockPos$$Type, arg5: $Direction$$Type, arg6: $Player$$Type, arg7: $InteractionHand$$Type): $InteractionResult
+public "directionToPropertyValue"(arg0: $BlockState$$Type, arg1: $Direction$$Type): integer
 public "onRemove"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: boolean): void
 public "getPickupSound"(): $Optional<($SoundEvent)>
-public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "canPlaceLiquid"(arg0: $Player$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $Fluid$$Type): boolean
+public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "pickupBlock"(arg0: $Player$$Type, arg1: $LevelAccessor$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): $ItemStack
 public "getPickupSound"(arg0: $BlockState$$Type): $Optional<($SoundEvent)>
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
@@ -704,12 +704,12 @@ import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$HorizontalDirectionalBlock} from "net.minecraft.world.level.block.HorizontalDirectionalBlock"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
-import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
+import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$DirectionProperty} from "net.minecraft.world.level.block.state.properties.DirectionProperty"
@@ -755,9 +755,9 @@ export type $TechDoorBlockHinge$$Type = ($TechDoorBlockHinge);
  */
 export type $TechDoorBlockHinge$$Original = $TechDoorBlockHinge;}
 declare module "rearth.oritech.block.blocks.reactor.ReactorAbsorberPortBlock" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$Block} from "net.minecraft.world.level.block.Block"
@@ -830,8 +830,8 @@ import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block} from "net.minecraft.world.level.block.Block"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$MultiblockMachine} from "rearth.oritech.block.base.block.MultiblockMachine"
@@ -865,8 +865,8 @@ static readonly "FACING": $DirectionProperty
 constructor(arg0: $BlockBehaviour$Properties$$Type)
 
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
-public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
 public "useWithoutItem"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $BlockHitResult$$Type): $InteractionResult
+public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
 public "getBlockEntityType"(): $Class<($BlockEntity)>
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "blockEntityType"(): $Class<($BlockEntity)>
@@ -951,8 +951,8 @@ static "MACHINE_ULTIMATE_ADDON_SHAPE": (($VoxelShape)[])[]
 
 constructor(arg0: $BlockBehaviour$Properties$$Type, arg1: $MachineAddonBlock$AddonSettings$$Type)
 
-public "updateShape"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $BlockState$$Type, arg3: $LevelAccessor$$Type, arg4: $BlockPos$$Type, arg5: $BlockPos$$Type): $BlockState
 public "useWithoutItem"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $BlockHitResult$$Type): $InteractionResult
+public "updateShape"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $BlockState$$Type, arg3: $LevelAccessor$$Type, arg4: $BlockPos$$Type, arg5: $BlockPos$$Type): $BlockState
 public "getTicker"<T extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
 public "getBlockEntityType"(): $Class<($BlockEntity)>
 public "neighborChanged"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Block$$Type, arg4: $BlockPos$$Type, arg5: boolean): void
@@ -973,10 +973,10 @@ declare module "rearth.oritech.block.blocks.pipes.item.ItemPipeConnectionBlock" 
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ExtractablePipeConnectionBlock} from "rearth.oritech.block.blocks.pipes.ExtractablePipeConnectionBlock"
-import {$GenericPipeInterfaceEntity$PipeNetworkData} from "rearth.oritech.block.entity.pipes.GenericPipeInterfaceEntity$PipeNetworkData"
-import {$Direction} from "net.minecraft.core.Direction"
-import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
+import {$Direction} from "net.minecraft.core.Direction"
+import {$GenericPipeInterfaceEntity$PipeNetworkData} from "rearth.oritech.block.entity.pipes.GenericPipeInterfaceEntity$PipeNetworkData"
+import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$TriFunction} from "org.apache.commons.lang3.function.TriFunction"
@@ -984,8 +984,8 @@ import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -1109,9 +1109,9 @@ import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
+import {$Item} from "net.minecraft.world.item.Item"
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
-import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -1182,17 +1182,17 @@ import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.Blo
 import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
+import {$LaserArmBlockBehavior, $LaserArmBlockBehavior$$Type} from "rearth.oritech.block.behavior.LaserArmBlockBehavior"
 import {$EntityType, $EntityType$$Type} from "net.minecraft.world.entity.EntityType"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$LaserArmBlockBehavior, $LaserArmBlockBehavior$$Type} from "rearth.oritech.block.behavior.LaserArmBlockBehavior"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$Map} from "java.util.Map"
 import {$RenderShape} from "net.minecraft.world.level.block.RenderShape"
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
@@ -1224,15 +1224,15 @@ static readonly "ENTITY_BEHAVIORS": $Map<($EntityType<(never)>), ($LaserArmEntit
 constructor(arg0: $BlockBehaviour$Properties$$Type)
 
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
+public "useWithoutItem"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $BlockHitResult$$Type): $InteractionResult
 public "playerWillDestroy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $Player$$Type): $BlockState
 public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
-public "useWithoutItem"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $BlockHitResult$$Type): $InteractionResult
 public "getTicker"<T extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
 public static "getBehaviorForBlock"(arg0: $Block$$Type): $LaserArmBlockBehavior
 public static "getBehaviorForEntity"(arg0: $EntityType$$Type<(never)>): $LaserArmEntityBehavior
-public static "registerBlockBehavior"(arg0: $Block$$Type, arg1: $LaserArmBlockBehavior$$Type): void
 public static "registerEntityBehavior"(arg0: $EntityType$$Type<(never)>, arg1: $LaserArmEntityBehavior$$Type): void
+public static "registerBlockBehavior"(arg0: $Block$$Type, arg1: $LaserArmBlockBehavior$$Type): void
 public "getRenderShape"(arg0: $BlockState$$Type): $RenderShape
 public "neighborChanged"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Block$$Type, arg4: $BlockPos$$Type, arg5: boolean): void
 public "isSignalSource"(arg0: $BlockState$$Type): boolean
@@ -1264,13 +1264,13 @@ import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$HorizontalDirectionalBlock} from "net.minecraft.world.level.block.HorizontalDirectionalBlock"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
@@ -1303,9 +1303,9 @@ static readonly "FACING": $DirectionProperty
 constructor(arg0: $BlockBehaviour$Properties$$Type)
 
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
+public "useWithoutItem"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $BlockHitResult$$Type): $InteractionResult
 public "playerWillDestroy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $Player$$Type): $BlockState
 public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
-public "useWithoutItem"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $BlockHitResult$$Type): $InteractionResult
 public "getTicker"<T extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
 public "getListener"<T extends $BlockEntity>(arg0: $ServerLevel$$Type, arg1: T): $GameEventListener
@@ -1327,8 +1327,8 @@ import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$Bl
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$BaseReactorBlock} from "rearth.oritech.block.blocks.reactor.BaseReactorBlock"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
+import {$BaseReactorBlock} from "rearth.oritech.block.blocks.reactor.BaseReactorBlock"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 
@@ -1373,8 +1373,8 @@ import {$Block} from "net.minecraft.world.level.block.Block"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -1427,18 +1427,18 @@ import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$RenderShape} from "net.minecraft.world.level.block.RenderShape"
 import {$Block} from "net.minecraft.world.level.block.Block"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
@@ -1472,9 +1472,9 @@ static readonly "UPDATE_CLIENTS": integer
 constructor(arg0: $BlockBehaviour$Properties$$Type)
 
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
+public "useWithoutItem"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $BlockHitResult$$Type): $InteractionResult
 public "playerWillDestroy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $Player$$Type): $BlockState
 public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
-public "useWithoutItem"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $BlockHitResult$$Type): $InteractionResult
 public "getTicker"<T extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
 public "getShape"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $CollisionContext$$Type): $VoxelShape
@@ -1493,8 +1493,8 @@ export type $ItemFilterBlock$$Type = ($ItemFilterBlock);
  */
 export type $ItemFilterBlock$$Original = $ItemFilterBlock;}
 declare module "rearth.oritech.block.blocks.addons.InventoryProxyAddonBlock" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$MachineAddonBlock} from "rearth.oritech.block.blocks.addons.MachineAddonBlock"
 import {$Block} from "net.minecraft.world.level.block.Block"
@@ -1506,8 +1506,8 @@ import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$AttachFace} from "net.minecraft.world.level.block.state.properties.AttachFace"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Class} from "java.lang.Class"
 import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
@@ -1581,8 +1581,8 @@ import {$Block} from "net.minecraft.world.level.block.Block"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -1625,9 +1625,9 @@ export type $FertilizerBlock$$Type = ($FertilizerBlock);
  */
 export type $FertilizerBlock$$Original = $FertilizerBlock;}
 declare module "rearth.oritech.block.blocks.reactor.ReactorFuelPortBlock" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$Block} from "net.minecraft.world.level.block.Block"
@@ -1691,8 +1691,8 @@ import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$Bl
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$BaseReactorBlock} from "rearth.oritech.block.blocks.reactor.BaseReactorBlock"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
+import {$BaseReactorBlock} from "rearth.oritech.block.blocks.reactor.BaseReactorBlock"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 
@@ -1742,8 +1742,8 @@ import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$RenderShape} from "net.minecraft.world.level.block.RenderShape"
 import {$Block} from "net.minecraft.world.level.block.Block"
@@ -1777,8 +1777,8 @@ static readonly "UPDATE_CLIENTS": integer
 
 constructor(arg0: $BlockBehaviour$Properties$$Type)
 
-public "setPlacedBy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $LivingEntity$$Type, arg4: $ItemStack$$Type): void
 public "useWithoutItem"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $BlockHitResult$$Type): $InteractionResult
+public "setPlacedBy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $LivingEntity$$Type, arg4: $ItemStack$$Type): void
 public "getTicker"<T extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
 public static "getBasePickStack"(arg0: boolean): $ItemStack
@@ -1806,13 +1806,13 @@ import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$RenderShape} from "net.minecraft.world.level.block.RenderShape"
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
@@ -1887,8 +1887,8 @@ import {$List$$Type} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$Item} from "net.minecraft.world.item.Item"
@@ -1937,11 +1937,11 @@ import {$Block} from "net.minecraft.world.level.block.Block"
 import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
-import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$ItemPipeConnectionBlock} from "rearth.oritech.block.blocks.pipes.item.ItemPipeConnectionBlock"
+import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 
@@ -2003,12 +2003,15 @@ export class $MachineAddonBlock$AddonSettings extends $Record {
 constructor(extender: boolean, speedMultiplier: float, efficiencyMultiplier: float, addedCapacity: long, addedInsert: long, acceptEnergy: boolean, needsSupport: boolean, chamberCount: integer, burstTicks: integer, boundingShape: (($VoxelShape$$Type)[])[])
 
 public "extender"(): boolean
+public "speedMultiplier"(): float
+public "burstTicks"(): integer
 public "efficiencyMultiplier"(): float
 public "addedCapacity"(): long
 public "addedInsert"(): long
 public "chamberCount"(): integer
-public "burstTicks"(): integer
-public "speedMultiplier"(): float
+public "needsSupport"(): boolean
+public "boundingShape"(): (($VoxelShape)[])[]
+public "acceptEnergy"(): boolean
 public static "getDefaultSettings"(): $MachineAddonBlock$AddonSettings
 public "withSpeedMultiplier"(arg0: float): $MachineAddonBlock$AddonSettings
 public "withEfficiencyMultiplier"(arg0: float): $MachineAddonBlock$AddonSettings
@@ -2020,9 +2023,6 @@ public "withAcceptEnergy"(arg0: boolean): $MachineAddonBlock$AddonSettings
 public "withExtender"(arg0: boolean): $MachineAddonBlock$AddonSettings
 public "withNeedsSupport"(arg0: boolean): $MachineAddonBlock$AddonSettings
 public "withBurstTicks"(arg0: integer): $MachineAddonBlock$AddonSettings
-public "needsSupport"(): boolean
-public "boundingShape"(): (($VoxelShape)[])[]
-public "acceptEnergy"(): boolean
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
@@ -2032,7 +2032,7 @@ public static get "defaultSettings"(): $MachineAddonBlock$AddonSettings
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $MachineAddonBlock$AddonSettings$$Type = ({"extender"?: boolean, "burstTicks"?: integer, "speedMultiplier"?: float, "addedInsert"?: long, "needsSupport"?: boolean, "efficiencyMultiplier"?: float, "acceptEnergy"?: boolean, "addedCapacity"?: long, "boundingShape"?: (($VoxelShape$$Type)[])[], "chamberCount"?: integer}) | ([extender?: boolean, burstTicks?: integer, speedMultiplier?: float, addedInsert?: long, needsSupport?: boolean, efficiencyMultiplier?: float, acceptEnergy?: boolean, addedCapacity?: long, boundingShape?: (($VoxelShape$$Type)[])[], chamberCount?: integer]);
+export type $MachineAddonBlock$AddonSettings$$Type = ({"burstTicks"?: integer, "speedMultiplier"?: float, "addedInsert"?: long, "needsSupport"?: boolean, "efficiencyMultiplier"?: float, "acceptEnergy"?: boolean, "addedCapacity"?: long, "boundingShape"?: (($VoxelShape$$Type)[])[], "chamberCount"?: integer, "extender"?: boolean}) | ([burstTicks?: integer, speedMultiplier?: float, addedInsert?: long, needsSupport?: boolean, efficiencyMultiplier?: float, acceptEnergy?: boolean, addedCapacity?: long, boundingShape?: (($VoxelShape$$Type)[])[], chamberCount?: integer, extender?: boolean]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -2040,9 +2040,9 @@ export type $MachineAddonBlock$AddonSettings$$Original = $MachineAddonBlock$Addo
 declare module "rearth.oritech.block.blocks.pipes.energy.EnergyPipeBlock$FramedEnergyPipeBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$GenericPipeInterfaceEntity$PipeNetworkData} from "rearth.oritech.block.entity.pipes.GenericPipeInterfaceEntity$PipeNetworkData"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
+import {$GenericPipeInterfaceEntity$PipeNetworkData} from "rearth.oritech.block.entity.pipes.GenericPipeInterfaceEntity$PipeNetworkData"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$HashMap} from "java.util.HashMap"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -2051,9 +2051,9 @@ import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$EnergyPipeBlock} from "rearth.oritech.block.blocks.pipes.energy.EnergyPipeBlock"
+import {$Item} from "net.minecraft.world.item.Item"
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
-import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -2110,8 +2110,8 @@ export type $EnergyPipeBlock$FramedEnergyPipeBlock$$Type = ($EnergyPipeBlock$Fra
  */
 export type $EnergyPipeBlock$FramedEnergyPipeBlock$$Original = $EnergyPipeBlock$FramedEnergyPipeBlock;}
 declare module "rearth.oritech.block.blocks.reactor.ReactorRedstonePortBlock" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
@@ -2178,12 +2178,12 @@ import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$Block} from "net.minecraft.world.level.block.Block"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
@@ -2229,12 +2229,12 @@ export type $ReactorEnergyPortBlock$$Type = ($ReactorEnergyPortBlock);
  */
 export type $ReactorEnergyPortBlock$$Original = $ReactorEnergyPortBlock;}
 declare module "rearth.oritech.block.blocks.pipes.ExtractablePipeConnectionBlock" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$GenericPipeConnectionBlock} from "rearth.oritech.block.blocks.pipes.GenericPipeConnectionBlock"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
@@ -2243,8 +2243,8 @@ import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -2286,15 +2286,15 @@ constructor(arg0: $BlockBehaviour$Properties$$Type)
 public "useWithoutItem"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $BlockHitResult$$Type): $InteractionResult
 public "isExtractable"(arg0: $BlockState$$Type): boolean
 public "isSideExtractable"(arg0: $BlockState$$Type, arg1: $Direction$$Type): boolean
-public "hasExtractingSide"(arg0: $BlockState$$Type): boolean
 public "getNorthProperty"(): $IntegerProperty
 public "getEastProperty"(): $IntegerProperty
 public "getSouthProperty"(): $IntegerProperty
 public "getWestProperty"(): $IntegerProperty
 public "getUpProperty"(): $IntegerProperty
 public "getDownProperty"(): $IntegerProperty
-public "addConnectionStates"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: boolean): $BlockState
 public "addConnectionStates"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Direction$$Type): $BlockState
+public "addConnectionStates"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: boolean): $BlockState
+public "hasExtractingSide"(arg0: $BlockState$$Type): boolean
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "northProperty"(): $IntegerProperty
 get "eastProperty"(): $IntegerProperty
@@ -2315,9 +2315,9 @@ export type $ExtractablePipeConnectionBlock$$Original = $ExtractablePipeConnecti
 declare module "rearth.oritech.block.blocks.pipes.fluid.FluidPipeBlock$FramedFluidPipeBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$GenericPipeInterfaceEntity$PipeNetworkData} from "rearth.oritech.block.entity.pipes.GenericPipeInterfaceEntity$PipeNetworkData"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
+import {$GenericPipeInterfaceEntity$PipeNetworkData} from "rearth.oritech.block.entity.pipes.GenericPipeInterfaceEntity$PipeNetworkData"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$HashMap} from "java.util.HashMap"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -2325,10 +2325,10 @@ import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
+import {$FluidPipeBlock} from "rearth.oritech.block.blocks.pipes.fluid.FluidPipeBlock"
+import {$Item} from "net.minecraft.world.item.Item"
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
-import {$Item} from "net.minecraft.world.item.Item"
-import {$FluidPipeBlock} from "rearth.oritech.block.blocks.pipes.fluid.FluidPipeBlock"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -2385,8 +2385,8 @@ export type $FluidPipeBlock$FramedFluidPipeBlock$$Type = ($FluidPipeBlock$Framed
  */
 export type $FluidPipeBlock$FramedFluidPipeBlock$$Original = $FluidPipeBlock$FramedFluidPipeBlock;}
 declare module "rearth.oritech.block.blocks.processing.AtomicForgeBlock" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$Block} from "net.minecraft.world.level.block.Block"
@@ -2396,8 +2396,8 @@ import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$MultiblockMachine} from "rearth.oritech.block.base.block.MultiblockMachine"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Class} from "java.lang.Class"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
@@ -2454,9 +2454,9 @@ import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
+import {$Item} from "net.minecraft.world.item.Item"
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
-import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -2527,13 +2527,13 @@ import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$RenderShape} from "net.minecraft.world.level.block.RenderShape"
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
@@ -2566,10 +2566,10 @@ static readonly "UPDATE_CLIENTS": integer
 constructor(arg0: $BlockBehaviour$Properties$$Type)
 
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
+public "useWithoutItem"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $BlockHitResult$$Type): $InteractionResult
 public "setPlacedBy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $LivingEntity$$Type, arg4: $ItemStack$$Type): void
 public "playerWillDestroy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $Player$$Type): $BlockState
 public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
-public "useWithoutItem"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $BlockHitResult$$Type): $InteractionResult
 public "getTicker"<T extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
 public "getRenderShape"(arg0: $BlockState$$Type): $RenderShape
@@ -2601,12 +2601,12 @@ import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
+import {$GenericPipeBlock} from "rearth.oritech.block.blocks.pipes.GenericPipeBlock"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
-import {$GenericPipeBlock} from "rearth.oritech.block.blocks.pipes.GenericPipeBlock"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
@@ -2666,8 +2666,8 @@ export type $GenericPipeConnectionBlock$$Type = ($GenericPipeConnectionBlock);
  */
 export type $GenericPipeConnectionBlock$$Original = $GenericPipeConnectionBlock;}
 declare module "rearth.oritech.block.blocks.processing.PoweredFurnaceBlock" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$Block} from "net.minecraft.world.level.block.Block"
@@ -2677,8 +2677,8 @@ import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$MultiblockMachine} from "rearth.oritech.block.base.block.MultiblockMachine"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Class} from "java.lang.Class"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
@@ -2739,14 +2739,14 @@ import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$RenderShape} from "net.minecraft.world.level.block.RenderShape"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$HorizontalDirectionalBlock} from "net.minecraft.world.level.block.HorizontalDirectionalBlock"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
@@ -2778,9 +2778,9 @@ static readonly "FACING": $DirectionProperty
 constructor(arg0: $BlockBehaviour$Properties$$Type)
 
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
+public "useWithoutItem"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $BlockHitResult$$Type): $InteractionResult
 public "playerWillDestroy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $Player$$Type): $BlockState
 public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
-public "useWithoutItem"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $BlockHitResult$$Type): $InteractionResult
 public "getTicker"<T extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
 public "getRenderShape"(arg0: $BlockState$$Type): $RenderShape
@@ -2809,11 +2809,11 @@ import {$Item} from "net.minecraft.world.item.Item"
 import {$Class} from "java.lang.Class"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$ArrayList} from "java.util.ArrayList"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block} from "net.minecraft.world.level.block.Block"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$AttachFace} from "net.minecraft.world.level.block.state.properties.AttachFace"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
@@ -2891,8 +2891,8 @@ import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$Bl
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$BaseReactorBlock} from "rearth.oritech.block.blocks.reactor.BaseReactorBlock"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
+import {$BaseReactorBlock} from "rearth.oritech.block.blocks.reactor.BaseReactorBlock"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 
@@ -2944,13 +2944,13 @@ import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$RenderShape} from "net.minecraft.world.level.block.RenderShape"
 import {$Block} from "net.minecraft.world.level.block.Block"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
@@ -2980,8 +2980,8 @@ static readonly "UPDATE_CLIENTS": integer
 constructor(arg0: $BlockBehaviour$Properties$$Type)
 
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
-public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
 public "useWithoutItem"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $BlockHitResult$$Type): $InteractionResult
+public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
 public "getTicker"<T extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
 public "getRenderShape"(arg0: $BlockState$$Type): $RenderShape
@@ -2998,8 +2998,8 @@ export type $CreativeStorageBlock$$Type = ($CreativeStorageBlock);
  */
 export type $CreativeStorageBlock$$Original = $CreativeStorageBlock;}
 declare module "rearth.oritech.block.blocks.storage.CreativeFluidTank" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$List$$Type} from "java.util.List"
@@ -3007,15 +3007,15 @@ import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$SmallFluidTank} from "rearth.oritech.block.blocks.storage.SmallFluidTank"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -3043,8 +3043,8 @@ static readonly "UPDATE_CLIENTS": integer
 
 constructor(arg0: $BlockBehaviour$Properties$$Type)
 
-public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
 public "useWithoutItem"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $BlockHitResult$$Type): $InteractionResult
+public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 }
@@ -3067,9 +3067,9 @@ import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$AttachFace} from "net.minecraft.world.level.block.state.properties.AttachFace"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
+import {$Item} from "net.minecraft.world.item.Item"
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
-import {$Item} from "net.minecraft.world.item.Item"
 import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -3128,14 +3128,14 @@ import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$RenderShape} from "net.minecraft.world.level.block.RenderShape"
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$HorizontalDirectionalBlock} from "net.minecraft.world.level.block.HorizontalDirectionalBlock"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
@@ -3165,8 +3165,8 @@ static readonly "FACING": $DirectionProperty
 
 constructor(arg0: $BlockBehaviour$Properties$$Type)
 
-public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
 public "useWithoutItem"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $BlockHitResult$$Type): $InteractionResult
+public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
 public "getTicker"<T extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
 public "getRenderShape"(arg0: $BlockState$$Type): $RenderShape
@@ -3198,12 +3198,12 @@ import {$Item} from "net.minecraft.world.item.Item"
 import {$Class} from "java.lang.Class"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$Block} from "net.minecraft.world.level.block.Block"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$MultiblockMachine} from "rearth.oritech.block.base.block.MultiblockMachine"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
@@ -3253,11 +3253,11 @@ export type $CoolerBlock$$Original = $CoolerBlock;}
 declare module "rearth.oritech.block.blocks.pipes.fluid.FluidPipeBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$GenericPipeInterfaceEntity$PipeNetworkData} from "rearth.oritech.block.entity.pipes.GenericPipeInterfaceEntity$PipeNetworkData"
-import {$Direction} from "net.minecraft.core.Direction"
-import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
-import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
 import {$GenericPipeBlock} from "rearth.oritech.block.blocks.pipes.GenericPipeBlock"
+import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
+import {$Direction} from "net.minecraft.core.Direction"
+import {$GenericPipeInterfaceEntity$PipeNetworkData} from "rearth.oritech.block.entity.pipes.GenericPipeInterfaceEntity$PipeNetworkData"
+import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$TriFunction} from "org.apache.commons.lang3.function.TriFunction"
@@ -3266,8 +3266,8 @@ import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
@@ -3341,13 +3341,13 @@ import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$RenderShape} from "net.minecraft.world.level.block.RenderShape"
 import {$Block} from "net.minecraft.world.level.block.Block"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
@@ -3377,9 +3377,9 @@ static readonly "UPDATE_CLIENTS": integer
 constructor(arg0: $BlockBehaviour$Properties$$Type)
 
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
+public "useWithoutItem"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $BlockHitResult$$Type): $InteractionResult
 public "playerWillDestroy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $Player$$Type): $BlockState
 public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
-public "useWithoutItem"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $BlockHitResult$$Type): $InteractionResult
 public "getTicker"<T extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
 public "getRenderShape"(arg0: $BlockState$$Type): $RenderShape
@@ -3409,12 +3409,12 @@ import {$Item} from "net.minecraft.world.item.Item"
 import {$Class} from "java.lang.Class"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$Block} from "net.minecraft.world.level.block.Block"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$MultiblockMachine} from "rearth.oritech.block.base.block.MultiblockMachine"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
@@ -3469,12 +3469,12 @@ import {$List$$Type} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
@@ -3520,18 +3520,18 @@ export type $SpawnerCageBlock$$Type = ($SpawnerCageBlock);
  */
 export type $SpawnerCageBlock$$Original = $SpawnerCageBlock;}
 declare module "rearth.oritech.block.blocks.accelerator.BlackHoleBlock" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$List$$Type} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
@@ -3596,14 +3596,14 @@ import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$RenderShape} from "net.minecraft.world.level.block.RenderShape"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$HorizontalDirectionalBlock} from "net.minecraft.world.level.block.HorizontalDirectionalBlock"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
@@ -3635,9 +3635,9 @@ static readonly "FACING": $DirectionProperty
 constructor(arg0: $BlockBehaviour$Properties$$Type)
 
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
+public "useWithoutItem"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $BlockHitResult$$Type): $InteractionResult
 public "playerWillDestroy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $Player$$Type): $BlockState
 public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
-public "useWithoutItem"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $BlockHitResult$$Type): $InteractionResult
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
 public "getRenderShape"(arg0: $BlockState$$Type): $RenderShape
 public "getTicker"<T extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
@@ -3657,8 +3657,8 @@ declare module "rearth.oritech.block.blocks.pipes.energy.SuperConductorBlock" {
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$List$$Type} from "java.util.List"
-import {$GenericPipeInterfaceEntity$PipeNetworkData} from "rearth.oritech.block.entity.pipes.GenericPipeInterfaceEntity$PipeNetworkData"
 import {$Direction} from "net.minecraft.core.Direction"
+import {$GenericPipeInterfaceEntity$PipeNetworkData} from "rearth.oritech.block.entity.pipes.GenericPipeInterfaceEntity$PipeNetworkData"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
@@ -3668,11 +3668,11 @@ import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
-import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
 import {$GenericPipeBlock} from "rearth.oritech.block.blocks.pipes.GenericPipeBlock"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
+import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
+import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TriFunction} from "org.apache.commons.lang3.function.TriFunction"
 import {$HashMap} from "java.util.HashMap"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -3745,8 +3745,8 @@ import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$Explosion$$Type} from "net.minecraft.world.level.Explosion"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
@@ -3844,8 +3844,8 @@ export type $ItemPipeDuctBlock$$Type = ($ItemPipeDuctBlock);
  */
 export type $ItemPipeDuctBlock$$Original = $ItemPipeDuctBlock;}
 declare module "rearth.oritech.block.blocks.processing.FragmentForge" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$Block} from "net.minecraft.world.level.block.Block"
@@ -3855,8 +3855,8 @@ import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$MultiblockMachine} from "rearth.oritech.block.base.block.MultiblockMachine"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Class} from "java.lang.Class"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
@@ -3917,13 +3917,13 @@ import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$HorizontalDirectionalBlock} from "net.minecraft.world.level.block.HorizontalDirectionalBlock"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
@@ -3955,9 +3955,9 @@ static readonly "FACING": $DirectionProperty
 constructor(arg0: $BlockBehaviour$Properties$$Type)
 
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
+public "useWithoutItem"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $BlockHitResult$$Type): $InteractionResult
 public "playerWillDestroy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $Player$$Type): $BlockState
 public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
-public "useWithoutItem"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $BlockHitResult$$Type): $InteractionResult
 public "getTicker"<T extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
 public "getListener"<T extends $BlockEntity>(arg0: $ServerLevel$$Type, arg1: T): $GameEventListener
@@ -3987,13 +3987,13 @@ import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$RenderShape} from "net.minecraft.world.level.block.RenderShape"
 import {$Block} from "net.minecraft.world.level.block.Block"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
@@ -4023,9 +4023,9 @@ static readonly "UPDATE_CLIENTS": integer
 constructor(arg0: $BlockBehaviour$Properties$$Type)
 
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
+public "useWithoutItem"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $BlockHitResult$$Type): $InteractionResult
 public "playerWillDestroy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $Player$$Type): $BlockState
 public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
-public "useWithoutItem"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $BlockHitResult$$Type): $InteractionResult
 public "getTicker"<T extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
 public "getRenderShape"(arg0: $BlockState$$Type): $RenderShape
@@ -4045,8 +4045,8 @@ declare module "rearth.oritech.block.blocks.augmenter.AugmentResearchStationBloc
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$DirectionalBlock} from "net.minecraft.world.level.block.DirectionalBlock"
 import {$List$$Type} from "java.util.List"
+import {$DirectionalBlock} from "net.minecraft.world.level.block.DirectionalBlock"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
@@ -4057,13 +4057,13 @@ import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$RenderShape} from "net.minecraft.world.level.block.RenderShape"
 import {$Block} from "net.minecraft.world.level.block.Block"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
@@ -4095,9 +4095,9 @@ static readonly "FACING": $DirectionProperty
 constructor(arg0: $BlockBehaviour$Properties$$Type)
 
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
+public "useWithoutItem"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $BlockHitResult$$Type): $InteractionResult
 public "playerWillDestroy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $Player$$Type): $BlockState
 public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
-public "useWithoutItem"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $BlockHitResult$$Type): $InteractionResult
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
 public "getRenderShape"(arg0: $BlockState$$Type): $RenderShape
 public "getTicker"<T extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
@@ -4126,32 +4126,32 @@ import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Class} from "java.lang.Class"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$RenderShape} from "net.minecraft.world.level.block.RenderShape"
 import {$Block} from "net.minecraft.world.level.block.Block"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$AttachFace} from "net.minecraft.world.level.block.state.properties.AttachFace"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
+import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
-import {$MachineAddonBlock$AddonSettings, $MachineAddonBlock$AddonSettings$$Type} from "rearth.oritech.block.blocks.addons.MachineAddonBlock$AddonSettings"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
+import {$MachineAddonBlock$AddonSettings, $MachineAddonBlock$AddonSettings$$Type} from "rearth.oritech.block.blocks.addons.MachineAddonBlock$AddonSettings"
 import {$DirectionProperty} from "net.minecraft.world.level.block.state.properties.DirectionProperty"
 
 export class $MachineAddonBlock extends $FaceAttachedHorizontalDirectionalBlock implements $EntityBlock$$Interface {
@@ -4231,12 +4231,12 @@ import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
-import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$ItemPipeConnectionBlock} from "rearth.oritech.block.blocks.pipes.item.ItemPipeConnectionBlock"
+import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
+import {$Item} from "net.minecraft.world.item.Item"
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
-import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -4294,19 +4294,19 @@ export type $ItemPipeConnectionBlock$FramedItemPipeConnectionBlock$$Type = ($Ite
  */
 export type $ItemPipeConnectionBlock$FramedItemPipeConnectionBlock$$Original = $ItemPipeConnectionBlock$FramedItemPipeConnectionBlock;}
 declare module "rearth.oritech.block.blocks.accelerator.AcceleratorRingBlock" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$List$$Type} from "java.util.List"
-import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
+import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$AcceleratorPassthroughBlock} from "rearth.oritech.block.blocks.accelerator.AcceleratorPassthroughBlock"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
@@ -4343,8 +4343,8 @@ static readonly "FACING": $DirectionProperty
 constructor(arg0: $BlockBehaviour$Properties$$Type)
 
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
-public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
 public "useWithoutItem"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $BlockHitResult$$Type): $InteractionResult
+public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
 public "neighborChanged"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Block$$Type, arg4: $BlockPos$$Type, arg5: boolean): void
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 }
@@ -4364,8 +4364,8 @@ import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$Bl
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$BaseReactorBlock} from "rearth.oritech.block.blocks.reactor.BaseReactorBlock"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
+import {$BaseReactorBlock} from "rearth.oritech.block.blocks.reactor.BaseReactorBlock"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 
@@ -4416,12 +4416,12 @@ import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$Block} from "net.minecraft.world.level.block.Block"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
@@ -4468,19 +4468,19 @@ export type $AcceleratorMotorBlock$$Original = $AcceleratorMotorBlock;}
 declare module "rearth.oritech.block.blocks.pipes.AbstractPipeBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
 import {$GenericPipeInterfaceEntity$PipeNetworkData} from "rearth.oritech.block.entity.pipes.GenericPipeInterfaceEntity$PipeNetworkData"
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
-import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$TriFunction, $TriFunction$$Type} from "org.apache.commons.lang3.function.TriFunction"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
-import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
+import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
@@ -4512,23 +4512,23 @@ public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
 public "updateShape"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $BlockState$$Type, arg3: $LevelAccessor$$Type, arg4: $BlockPos$$Type, arg5: $BlockPos$$Type): $BlockState
 public "playerWillDestroy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $Player$$Type): $BlockState
 public "onPlace"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: boolean): void
+public "updateNeighbors"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: boolean): void
+public "shouldConnect"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $BlockPos$$Type, arg3: $Level$$Type, arg4: boolean): boolean
 public "isConnectingInDirection"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $BlockPos$$Type, arg3: $Level$$Type, arg4: boolean): boolean
 public "apiValidationFunction"(): $TriFunction<($Level), ($BlockPos), ($Direction), (boolean)>
 public "hasMachineInDirection"(arg0: $Direction$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $TriFunction$$Type<($Level), ($BlockPos), ($Direction), (boolean)>): boolean
-public "shouldConnect"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $BlockPos$$Type, arg3: $Level$$Type, arg4: boolean): boolean
-public "updateNeighbors"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: boolean): void
 public "getConnectionBlock"(): $BlockState
 public "getNormalBlock"(): $BlockState
 public "getPipeTypeName"(): StringJS
 public "connectToOwnBlockType"(arg0: $Block$$Type): boolean
 public "getNetworkData"(arg0: $Level$$Type): $GenericPipeInterfaceEntity$PipeNetworkData
-public "addStraightState"(arg0: $BlockState$$Type): $BlockState
-public "addFluidState"(arg0: $BlockState$$Type, arg1: $BlockPos$$Type, arg2: $Level$$Type): $BlockState
-public "isValidInterfaceTarget"(arg0: $Block$$Type, arg1: $Level$$Type, arg2: $Direction$$Type, arg3: $BlockPos$$Type): boolean
 public "hasNeighboringMachine"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: boolean): boolean
 public "addConnectionStates"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Direction$$Type): $BlockState
 public "addConnectionStates"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: boolean): $BlockState
 public "isValidConnectionTarget"(arg0: $Block$$Type, arg1: $Level$$Type, arg2: $Direction$$Type, arg3: $BlockPos$$Type): boolean
+public "addStraightState"(arg0: $BlockState$$Type): $BlockState
+public "addFluidState"(arg0: $BlockState$$Type, arg1: $BlockPos$$Type, arg2: $Level$$Type): $BlockState
+public "isValidInterfaceTarget"(arg0: $Block$$Type, arg1: $Level$$Type, arg2: $Direction$$Type, arg3: $BlockPos$$Type): boolean
 public "isCompatibleTarget"(arg0: $Block$$Type): boolean
 public "getShape"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $CollisionContext$$Type): $VoxelShape
 public "getCollisionShape"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $CollisionContext$$Type): $VoxelShape
@@ -4562,13 +4562,13 @@ import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$RenderShape} from "net.minecraft.world.level.block.RenderShape"
 import {$Block} from "net.minecraft.world.level.block.Block"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
@@ -4599,12 +4599,12 @@ static readonly "UPDATE_CLIENTS": integer
 
 constructor(arg0: $BlockBehaviour$Properties$$Type, arg1: float)
 
-public static "getControllerPos"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type): $BlockPos
+public "useWithoutItem"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $BlockHitResult$$Type): $InteractionResult
 public "playerDestroy"(arg0: $Level$$Type, arg1: $Player$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $BlockEntity$$Type, arg5: $ItemStack$$Type): void
 public "playerWillDestroy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $Player$$Type): $BlockState
 public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
-public "useWithoutItem"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $BlockHitResult$$Type): $InteractionResult
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
+public static "getControllerPos"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type): $BlockPos
 public "getCoreQuality"(): float
 public static "getControllerEntity"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type): $BlockEntity
 public "destroy"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type): void
@@ -4631,8 +4631,8 @@ import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$MultiblockMachine} from "rearth.oritech.block.base.block.MultiblockMachine"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Class} from "java.lang.Class"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -4681,19 +4681,19 @@ import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$Bl
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$RenderShape} from "net.minecraft.world.level.block.RenderShape"
 import {$List$$Type} from "java.util.List"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
+import {$Item} from "net.minecraft.world.item.Item"
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
-import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
@@ -4747,9 +4747,9 @@ export type $MachineFrameBlock$$Original = $MachineFrameBlock;}
 declare module "rearth.oritech.block.blocks.pipes.item.ItemPipeBlock$FramedItemPipeBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$GenericPipeInterfaceEntity$PipeNetworkData} from "rearth.oritech.block.entity.pipes.GenericPipeInterfaceEntity$PipeNetworkData"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
+import {$GenericPipeInterfaceEntity$PipeNetworkData} from "rearth.oritech.block.entity.pipes.GenericPipeInterfaceEntity$PipeNetworkData"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$HashMap} from "java.util.HashMap"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -4758,9 +4758,9 @@ import {$ItemPipeBlock} from "rearth.oritech.block.blocks.pipes.item.ItemPipeBlo
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
+import {$Item} from "net.minecraft.world.item.Item"
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
-import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -4820,18 +4820,18 @@ declare module "rearth.oritech.block.blocks.pipes.fluid.FluidPipeConnectionBlock
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ExtractablePipeConnectionBlock} from "rearth.oritech.block.blocks.pipes.ExtractablePipeConnectionBlock"
-import {$GenericPipeInterfaceEntity$PipeNetworkData} from "rearth.oritech.block.entity.pipes.GenericPipeInterfaceEntity$PipeNetworkData"
-import {$Direction} from "net.minecraft.core.Direction"
-import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
+import {$Direction} from "net.minecraft.core.Direction"
+import {$GenericPipeInterfaceEntity$PipeNetworkData} from "rearth.oritech.block.entity.pipes.GenericPipeInterfaceEntity$PipeNetworkData"
+import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$TriFunction} from "org.apache.commons.lang3.function.TriFunction"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -4903,8 +4903,8 @@ import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$AttachFace} from "net.minecraft.world.level.block.state.properties.AttachFace"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -4947,8 +4947,8 @@ export type $WallMountedLight$$Type = ($WallMountedLight);
  */
 export type $WallMountedLight$$Original = $WallMountedLight;}
 declare module "rearth.oritech.block.blocks.processing.PulverizerBlock" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$Block} from "net.minecraft.world.level.block.Block"
@@ -5020,13 +5020,13 @@ import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$RenderShape} from "net.minecraft.world.level.block.RenderShape"
 import {$Block} from "net.minecraft.world.level.block.Block"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
@@ -5056,9 +5056,9 @@ static readonly "UPDATE_CLIENTS": integer
 constructor(arg0: $BlockBehaviour$Properties$$Type)
 
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
+public "useWithoutItem"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $BlockHitResult$$Type): $InteractionResult
 public "playerWillDestroy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $Player$$Type): $BlockState
 public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
-public "useWithoutItem"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $BlockHitResult$$Type): $InteractionResult
 public "getTicker"<T extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
 public "getRenderShape"(arg0: $BlockState$$Type): $RenderShape
@@ -5131,8 +5131,8 @@ import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$Bl
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$BaseReactorBlock} from "rearth.oritech.block.blocks.reactor.BaseReactorBlock"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
+import {$BaseReactorBlock} from "rearth.oritech.block.blocks.reactor.BaseReactorBlock"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 
@@ -5188,13 +5188,13 @@ import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$RenderShape} from "net.minecraft.world.level.block.RenderShape"
 import {$Block} from "net.minecraft.world.level.block.Block"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
@@ -5224,9 +5224,9 @@ static readonly "UPDATE_CLIENTS": integer
 constructor(arg0: $BlockBehaviour$Properties$$Type)
 
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
+public "useWithoutItem"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $BlockHitResult$$Type): $InteractionResult
 public "playerWillDestroy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $Player$$Type): $BlockState
 public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
-public "useWithoutItem"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $BlockHitResult$$Type): $InteractionResult
 public "getTicker"<T extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
 public "getRenderShape"(arg0: $BlockState$$Type): $RenderShape
@@ -5257,13 +5257,13 @@ import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$HorizontalDirectionalBlock} from "net.minecraft.world.level.block.HorizontalDirectionalBlock"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
@@ -5295,8 +5295,8 @@ static readonly "FACING": $DirectionProperty
 constructor(arg0: $BlockBehaviour$Properties$$Type)
 
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
-public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
 public "useWithoutItem"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $BlockHitResult$$Type): $InteractionResult
+public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
 public "getTicker"<T extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
 public "getListener"<T extends $BlockEntity>(arg0: $ServerLevel$$Type, arg1: T): $GameEventListener
@@ -5366,8 +5366,8 @@ export type $SuperConductorDuctBlock$$Type = ($SuperConductorDuctBlock);
  */
 export type $SuperConductorDuctBlock$$Original = $SuperConductorDuctBlock;}
 declare module "rearth.oritech.block.blocks.processing.FoundryBlock" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$Block} from "net.minecraft.world.level.block.Block"
@@ -5377,8 +5377,8 @@ import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$MultiblockMachine} from "rearth.oritech.block.base.block.MultiblockMachine"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Class} from "java.lang.Class"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
@@ -5439,14 +5439,14 @@ import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$RenderShape} from "net.minecraft.world.level.block.RenderShape"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$HorizontalDirectionalBlock} from "net.minecraft.world.level.block.HorizontalDirectionalBlock"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
@@ -5478,9 +5478,9 @@ static readonly "FACING": $DirectionProperty
 constructor(arg0: $BlockBehaviour$Properties$$Type)
 
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
+public "useWithoutItem"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $BlockHitResult$$Type): $InteractionResult
 public "playerWillDestroy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $Player$$Type): $BlockState
 public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
-public "useWithoutItem"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $BlockHitResult$$Type): $InteractionResult
 public "getTicker"<T extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
 public "getRenderShape"(arg0: $BlockState$$Type): $RenderShape
@@ -5497,8 +5497,8 @@ export type $TreefellerBlock$$Type = ($TreefellerBlock);
  */
 export type $TreefellerBlock$$Original = $TreefellerBlock;}
 declare module "rearth.oritech.block.blocks.storage.LargeStorageBlock" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Block} from "net.minecraft.world.level.block.Block"
@@ -5541,8 +5541,8 @@ static readonly "UPDATE_CLIENTS": integer
 constructor(arg0: $BlockBehaviour$Properties$$Type)
 
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
-public "playerWillDestroy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $Player$$Type): $BlockState
 public "useWithoutItem"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $BlockHitResult$$Type): $InteractionResult
+public "playerWillDestroy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $Player$$Type): $BlockState
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
 public "getCloneItemStack"(arg0: $LevelReader$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type): $ItemStack
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
@@ -5563,8 +5563,8 @@ import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$Bl
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$BaseReactorBlock} from "rearth.oritech.block.blocks.reactor.BaseReactorBlock"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
+import {$BaseReactorBlock} from "rearth.oritech.block.blocks.reactor.BaseReactorBlock"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 
@@ -5608,8 +5608,8 @@ import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$MultiblockMachine} from "rearth.oritech.block.base.block.MultiblockMachine"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Class} from "java.lang.Class"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
@@ -5658,9 +5658,9 @@ declare module "rearth.oritech.block.blocks.pipes.energy.SuperConductorBlock$Fra
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$SuperConductorBlock} from "rearth.oritech.block.blocks.pipes.energy.SuperConductorBlock"
-import {$GenericPipeInterfaceEntity$PipeNetworkData} from "rearth.oritech.block.entity.pipes.GenericPipeInterfaceEntity$PipeNetworkData"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
+import {$GenericPipeInterfaceEntity$PipeNetworkData} from "rearth.oritech.block.entity.pipes.GenericPipeInterfaceEntity$PipeNetworkData"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$HashMap} from "java.util.HashMap"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -5668,9 +5668,9 @@ import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
+import {$Item} from "net.minecraft.world.item.Item"
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
-import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -5738,13 +5738,13 @@ import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$AbstractPipeBlock} from "rearth.oritech.block.blocks.pipes.AbstractPipeBlock"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TriFunction} from "org.apache.commons.lang3.function.TriFunction"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$Wrench$Wrenchable$$Interface} from "rearth.oritech.item.tools.Wrench$Wrenchable"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
+import {$Wrench$Wrenchable$$Interface} from "rearth.oritech.item.tools.Wrench$Wrenchable"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
@@ -5774,15 +5774,15 @@ constructor(arg0: $BlockBehaviour$Properties$$Type)
 
 public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
 public "onPlace"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: boolean): void
+public "updateNeighbors"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: boolean): void
+public "shouldConnect"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $BlockPos$$Type, arg3: $Level$$Type, arg4: boolean): boolean
 public "isConnectingInDirection"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $BlockPos$$Type, arg3: $Level$$Type, arg4: boolean): boolean
 public "apiValidationFunction"(): $TriFunction<($Level), ($BlockPos), ($Direction), (boolean)>
-public "shouldConnect"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $BlockPos$$Type, arg3: $Level$$Type, arg4: boolean): boolean
-public "updateNeighbors"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: boolean): void
+public "addConnectionStates"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: boolean): $BlockState
+public "addConnectionStates"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Direction$$Type): $BlockState
+public "onWrenchUse"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $InteractionHand$$Type): $InteractionResult
 public "addStraightState"(arg0: $BlockState$$Type): $BlockState
 public "onWrenchUseNeighbor"(arg0: $BlockState$$Type, arg1: $BlockState$$Type, arg2: $Level$$Type, arg3: $BlockPos$$Type, arg4: $BlockPos$$Type, arg5: $Direction$$Type, arg6: $Player$$Type, arg7: $InteractionHand$$Type): $InteractionResult
-public "addConnectionStates"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Direction$$Type): $BlockState
-public "addConnectionStates"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: boolean): $BlockState
-public "onWrenchUse"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $InteractionHand$$Type): $InteractionResult
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 }
 /**
@@ -5804,8 +5804,8 @@ import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$AttachFace} from "net.minecraft.world.level.block.state.properties.AttachFace"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Class} from "java.lang.Class"
 import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
@@ -5879,9 +5879,9 @@ import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
+import {$Item} from "net.minecraft.world.item.Item"
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
-import {$Item} from "net.minecraft.world.item.Item"
 import {$EnergyPipeConnectionBlock} from "rearth.oritech.block.blocks.pipes.energy.EnergyPipeConnectionBlock"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -5938,8 +5938,8 @@ export type $EnergyPipeConnectionBlock$FramedEnergyPipeConnectionBlock$$Type = (
  */
 export type $EnergyPipeConnectionBlock$FramedEnergyPipeConnectionBlock$$Original = $EnergyPipeConnectionBlock$FramedEnergyPipeConnectionBlock;}
 declare module "rearth.oritech.block.blocks.processing.CentrifugeBlock" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$Block} from "net.minecraft.world.level.block.Block"
@@ -5949,8 +5949,8 @@ import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$MultiblockMachine} from "rearth.oritech.block.base.block.MultiblockMachine"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Class} from "java.lang.Class"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
@@ -6004,8 +6004,8 @@ import {$HorizontalDirectionalBlock} from "net.minecraft.world.level.block.Horiz
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$DirectionProperty} from "net.minecraft.world.level.block.state.properties.DirectionProperty"
@@ -6050,18 +6050,18 @@ declare module "rearth.oritech.block.blocks.pipes.energy.SuperConductorConnectio
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$GenericPipeConnectionBlock} from "rearth.oritech.block.blocks.pipes.GenericPipeConnectionBlock"
-import {$GenericPipeInterfaceEntity$PipeNetworkData} from "rearth.oritech.block.entity.pipes.GenericPipeInterfaceEntity$PipeNetworkData"
-import {$Direction} from "net.minecraft.core.Direction"
-import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
+import {$Direction} from "net.minecraft.core.Direction"
+import {$GenericPipeInterfaceEntity$PipeNetworkData} from "rearth.oritech.block.entity.pipes.GenericPipeInterfaceEntity$PipeNetworkData"
+import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$TriFunction} from "org.apache.commons.lang3.function.TriFunction"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -6123,8 +6123,8 @@ export type $SuperConductorConnectionBlock$$Type = ($SuperConductorConnectionBlo
  */
 export type $SuperConductorConnectionBlock$$Original = $SuperConductorConnectionBlock;}
 declare module "rearth.oritech.block.blocks.reactor.NuclearExplosionBlock" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$Block} from "net.minecraft.world.level.block.Block"
@@ -6187,9 +6187,9 @@ import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$AttachFace} from "net.minecraft.world.level.block.state.properties.AttachFace"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
+import {$Item} from "net.minecraft.world.item.Item"
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
-import {$Item} from "net.minecraft.world.item.Item"
 import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -6302,12 +6302,12 @@ import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$Block} from "net.minecraft.world.level.block.Block"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
@@ -6352,8 +6352,8 @@ export type $AcceleratorSensorBlock$$Type = ($AcceleratorSensorBlock);
  */
 export type $AcceleratorSensorBlock$$Original = $AcceleratorSensorBlock;}
 declare module "rearth.oritech.block.blocks.processing.AssemblerBlock" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$Block} from "net.minecraft.world.level.block.Block"
@@ -6363,8 +6363,8 @@ import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$MultiblockMachine} from "rearth.oritech.block.base.block.MultiblockMachine"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Class} from "java.lang.Class"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
@@ -6411,8 +6411,8 @@ export type $AssemblerBlock$$Type = ($AssemblerBlock);
  */
 export type $AssemblerBlock$$Original = $AssemblerBlock;}
 declare module "rearth.oritech.block.blocks.generators.BigSolarPanelBlock" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$RenderShape} from "net.minecraft.world.level.block.RenderShape"
@@ -6421,8 +6421,8 @@ import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
@@ -6456,9 +6456,9 @@ static readonly "UPDATE_CLIENTS": integer
 
 constructor(arg0: $BlockBehaviour$Properties$$Type, arg1: integer)
 
+public "useWithoutItem"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $BlockHitResult$$Type): $InteractionResult
 public "playerWillDestroy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $Player$$Type): $BlockState
 public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
-public "useWithoutItem"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $BlockHitResult$$Type): $InteractionResult
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
 public "getRenderShape"(arg0: $BlockState$$Type): $RenderShape
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
@@ -6485,8 +6485,8 @@ import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$RenderShape} from "net.minecraft.world.level.block.RenderShape"
 import {$Block} from "net.minecraft.world.level.block.Block"
@@ -6520,8 +6520,8 @@ static readonly "UPDATE_CLIENTS": integer
 
 constructor(arg0: $BlockBehaviour$Properties$$Type)
 
-public "setPlacedBy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $LivingEntity$$Type, arg4: $ItemStack$$Type): void
 public "useWithoutItem"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $BlockHitResult$$Type): $InteractionResult
+public "setPlacedBy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $LivingEntity$$Type, arg4: $ItemStack$$Type): void
 public "getTicker"<T extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
 public "getRenderShape"(arg0: $BlockState$$Type): $RenderShape
@@ -6541,8 +6541,8 @@ declare module "rearth.oritech.block.blocks.pipes.energy.EnergyPipeBlock" {
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$List$$Type} from "java.util.List"
-import {$GenericPipeInterfaceEntity$PipeNetworkData} from "rearth.oritech.block.entity.pipes.GenericPipeInterfaceEntity$PipeNetworkData"
 import {$Direction} from "net.minecraft.core.Direction"
+import {$GenericPipeInterfaceEntity$PipeNetworkData} from "rearth.oritech.block.entity.pipes.GenericPipeInterfaceEntity$PipeNetworkData"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
@@ -6552,11 +6552,11 @@ import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
-import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
 import {$GenericPipeBlock} from "rearth.oritech.block.blocks.pipes.GenericPipeBlock"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
+import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
+import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TriFunction} from "org.apache.commons.lang3.function.TriFunction"
 import {$HashMap} from "java.util.HashMap"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -6627,14 +6627,14 @@ import {$Block} from "net.minecraft.world.level.block.Block"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$DirectionProperty} from "net.minecraft.world.level.block.state.properties.DirectionProperty"
-import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$MultiblockFrameInteractionBlock} from "rearth.oritech.block.base.block.MultiblockFrameInteractionBlock"
+import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $DestroyerBlock extends $MultiblockFrameInteractionBlock {
 static readonly "UPDATE_IMMEDIATE": integer
@@ -6674,8 +6674,8 @@ export type $DestroyerBlock$$Original = $DestroyerBlock;}
 declare module "rearth.oritech.block.blocks.accelerator.ParticleCollectorBlock" {
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$DirectionalBlock} from "net.minecraft.world.level.block.DirectionalBlock"
 import {$List$$Type} from "java.util.List"
+import {$DirectionalBlock} from "net.minecraft.world.level.block.DirectionalBlock"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
@@ -6685,12 +6685,12 @@ import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$Block} from "net.minecraft.world.level.block.Block"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
@@ -6744,8 +6744,8 @@ import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$MultiblockMachine} from "rearth.oritech.block.base.block.MultiblockMachine"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Class} from "java.lang.Class"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -6796,8 +6796,8 @@ import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$MultiblockMachine} from "rearth.oritech.block.base.block.MultiblockMachine"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Class} from "java.lang.Class"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"

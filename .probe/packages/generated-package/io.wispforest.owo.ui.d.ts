@@ -52,18 +52,18 @@ public "hashCode"(): integer
 public static "parse"(node: $Node$$Type): $Color
 public static "random"(): $Color
 public "red"(): float
-public "argb"(): integer
 public "blue"(): float
 public "green"(): float
 public "interpolate"(next: $Color$$Type, delta: float): $Color
 public "interpolate"(arg0: $Animatable$$Type, arg1: float): $Animatable
 public "alpha"(): float
+public "argb"(): integer
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $Color$$Type = ({"alpha"?: float, "red"?: float, "blue"?: float, "green"?: float}) | ([alpha?: float, red?: float, blue?: float, green?: float]);
+export type $Color$$Type = ({"red"?: float, "blue"?: float, "green"?: float, "alpha"?: float}) | ([red?: float, blue?: float, green?: float, alpha?: float]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -98,9 +98,9 @@ import {$ComponentExtension$$Interface} from "io.wispforest.accessories.pond.owo
 import {$Component$$Type as $Component$0$$Type} from "net.minecraft.network.chat.Component"
 import {$CharTyped} from "io.wispforest.owo.ui.event.CharTyped"
 import {$OwoUIDrawContext$$Type} from "io.wispforest.owo.ui.core.OwoUIDrawContext"
-import {$ParentComponent, $ParentComponent$$Type} from "io.wispforest.owo.ui.core.ParentComponent"
 import {$Component, $Component$$Type, $Component$$Interface} from "io.wispforest.owo.ui.core.Component"
 import {$FocusGained} from "io.wispforest.owo.ui.event.FocusGained"
+import {$ParentComponent, $ParentComponent$$Type} from "io.wispforest.owo.ui.core.ParentComponent"
 import {$Positioning, $Positioning$$Type} from "io.wispforest.owo.ui.core.Positioning"
 import {$KeyPress} from "io.wispforest.owo.ui.event.KeyPress"
 import {$AnimatableProperty} from "io.wispforest.owo.ui.core.AnimatableProperty"
@@ -108,14 +108,14 @@ import {$Insets, $Insets$$Type} from "io.wispforest.owo.ui.core.Insets"
 import {$MouseScroll} from "io.wispforest.owo.ui.event.MouseScroll"
 import {$MouseDown} from "io.wispforest.owo.ui.event.MouseDown"
 import {$CursorStyle, $CursorStyle$$Type} from "io.wispforest.owo.ui.core.CursorStyle"
-import {$Collection$$Type} from "java.util.Collection"
 import {$Map$$Type} from "java.util.Map"
 import {$Element$$Type} from "org.w3c.dom.Element"
+import {$Collection$$Type} from "java.util.Collection"
 import {$UIModel$$Type} from "io.wispforest.owo.ui.parsing.UIModel"
 import {$Component$FocusSource$$Type} from "io.wispforest.owo.ui.core.Component$FocusSource"
 import {$MouseUp} from "io.wispforest.owo.ui.event.MouseUp"
-import {$ClientTooltipComponent, $ClientTooltipComponent$$Type} from "net.minecraft.client.gui.screens.inventory.tooltip.ClientTooltipComponent"
 import {$Consumer$$Type} from "java.util.function.Consumer"
+import {$ClientTooltipComponent, $ClientTooltipComponent$$Type} from "net.minecraft.client.gui.screens.inventory.tooltip.ClientTooltipComponent"
 import {$Component$DismountReason$$Type} from "io.wispforest.owo.ui.core.Component$DismountReason"
 import {$FocusLost} from "io.wispforest.owo.ui.event.FocusLost"
 import {$MouseDrag} from "io.wispforest.owo.ui.event.MouseDrag"
@@ -123,8 +123,8 @@ import {$FocusHandler} from "io.wispforest.owo.ui.util.FocusHandler"
 import {$Sizing, $Sizing$$Type} from "io.wispforest.owo.ui.core.Sizing"
 import {$MouseEnter} from "io.wispforest.owo.ui.event.MouseEnter"
 import {$Animatable, $Animatable$$Type} from "io.wispforest.owo.ui.core.Animatable"
-import {$MouseLeave} from "io.wispforest.owo.ui.event.MouseLeave"
 import {$Size, $Size$$Type} from "io.wispforest.owo.ui.core.Size"
+import {$MouseLeave} from "io.wispforest.owo.ui.event.MouseLeave"
 
 export class $BaseComponent implements $Component$$Interface, $ComponentExtension$$Interface {
 public "configure"<C extends $Component>(closure: $Consumer$$Type<(C)>): C
@@ -135,12 +135,11 @@ public "x"(): integer
 public "id"(id: StringJS): $Component
 public "id"(): StringJS
 public "mount"(parent: $ParentComponent$$Type, x: integer, y: integer): void
+public "tooltip"(tooltip: $List$$Type<($ClientTooltipComponent$$Type)>): $Component
+public "tooltip"(): $List<($ClientTooltipComponent)>
 public "y"(): integer
 public "width"(): integer
 public "height"(): integer
-public "tooltip"(tooltip: $List$$Type<($ClientTooltipComponent$$Type)>): $Component
-public "tooltip"(): $List<($ClientTooltipComponent)>
-public "charTyped"(): $EventSource<($CharTyped)>
 public "allowIndividualOverdraw"(arg0: boolean): $Component
 public "allowIndividualOverdraw"(): boolean
 public "dismount"(reason: $Component$DismountReason$$Type): void
@@ -148,9 +147,9 @@ public "focusHandler"(): $FocusHandler
 public "positioning"(): $AnimatableProperty<($Positioning)>
 public "positioning"(arg0: $Positioning$$Type): $Component
 public "margins"(): $AnimatableProperty<($Insets)>
-public "margins"(arg0: $Insets$$Type): $Component
-public "horizontalSizing"(horizontalSizing: $Sizing$$Type): $Component
+public "margins"(margins: $Insets$$Type): $BaseComponent
 public "horizontalSizing"(): $AnimatableProperty<($Sizing)>
+public "horizontalSizing"(horizontalSizing: $Sizing$$Type): $Component
 public "verticalSizing"(verticalSizing: $Sizing$$Type): $Component
 public "verticalSizing"(): $AnimatableProperty<($Sizing)>
 public "mouseDown"(): $EventSource<($MouseDown)>
@@ -176,12 +175,12 @@ public "zIndex"(zIndex: integer): $Component
 public "zIndex"(): integer
 public "updateX"(x: integer): void
 public "updateY"(y: integer): void
+public "charTyped"(): $EventSource<($CharTyped)>
 public "remove"(): void
 public "root"(): $ParentComponent
-public "draw"(arg0: $OwoUIDrawContext$$Type, arg1: integer, arg2: integer, arg3: float, arg4: float): void
-public "moveTo"(x: integer, y: integer): void
 public "tooltip"(tooltip: $Component$0$$Type): $Component
 public "tooltip"(tooltip: $Collection$$Type<($Component$0$$Type)>): $Component
+public "draw"(arg0: $OwoUIDrawContext$$Type, arg1: integer, arg2: integer, arg3: float, arg4: float): void
 public "shouldDrawTooltip"(mouseX: double, mouseY: double): boolean
 public "canFocus"(source: $Component$FocusSource$$Type): boolean
 public "parseProperties"(model: $UIModel$$Type, element: $Element$$Type, children: $Map$$Type<(StringJS), ($Element$$Type)>): void
@@ -194,9 +193,10 @@ public "hasParent"(): boolean
 public "fullSize"(): $Size
 public "baseX"(): integer
 public "baseY"(): integer
+public "moveTo"(x: integer, y: integer): void
 public static "bypassCheck"(component: $Component$$Type, runnable: $Runnable$$Type): void
-public "intersection"(other: $PositionedRectangle$$Type): $PositionedRectangle
 public "intersects"(other: $PositionedRectangle$$Type): boolean
+public "intersection"(other: $PositionedRectangle$$Type): $PositionedRectangle
 public static "of"(x: integer, y: integer, size: $Size$$Type): $PositionedRectangle
 public static "of"(x: integer, y: integer, width: integer, height: integer): $PositionedRectangle
 public "interpolate"(arg0: $Animatable$$Type, arg1: float): $Animatable
@@ -216,9 +216,9 @@ import {$CursorStyle$$Type} from "io.wispforest.owo.ui.core.CursorStyle"
 import {$Window$$Type} from "com.mojang.blaze3d.platform.Window"
 
 export class $CursorAdapter {
-public static "ofWindow"(window: $Window$$Type): $CursorAdapter
-public static "ofWindow"(windowHandle: long): $CursorAdapter
 public "applyStyle"(style: $CursorStyle$$Type): void
+public static "ofWindow"(windowHandle: long): $CursorAdapter
+public static "ofWindow"(window: $Window$$Type): $CursorAdapter
 public "dispose"(): void
 public static "ofClientWindow"(): $CursorAdapter
 }
@@ -285,9 +285,9 @@ import {$List, $List$$Type} from "java.util.List"
 import {$Component$$Type as $Component$0$$Type} from "net.minecraft.network.chat.Component"
 import {$CharTyped} from "io.wispforest.owo.ui.event.CharTyped"
 import {$OwoUIDrawContext$$Type} from "io.wispforest.owo.ui.core.OwoUIDrawContext"
-import {$ParentComponent, $ParentComponent$$Type} from "io.wispforest.owo.ui.core.ParentComponent"
 import {$Component, $Component$$Interface} from "io.wispforest.owo.ui.core.Component"
 import {$FocusGained} from "io.wispforest.owo.ui.event.FocusGained"
+import {$ParentComponent, $ParentComponent$$Type} from "io.wispforest.owo.ui.core.ParentComponent"
 import {$Positioning, $Positioning$$Type} from "io.wispforest.owo.ui.core.Positioning"
 import {$KeyPress} from "io.wispforest.owo.ui.event.KeyPress"
 import {$AnimatableProperty} from "io.wispforest.owo.ui.core.AnimatableProperty"
@@ -295,14 +295,14 @@ import {$Insets, $Insets$$Type} from "io.wispforest.owo.ui.core.Insets"
 import {$MouseScroll} from "io.wispforest.owo.ui.event.MouseScroll"
 import {$MouseDown} from "io.wispforest.owo.ui.event.MouseDown"
 import {$CursorStyle, $CursorStyle$$Type} from "io.wispforest.owo.ui.core.CursorStyle"
-import {$Collection$$Type} from "java.util.Collection"
 import {$Map$$Type} from "java.util.Map"
 import {$Element$$Type} from "org.w3c.dom.Element"
+import {$Collection$$Type} from "java.util.Collection"
 import {$UIModel$$Type} from "io.wispforest.owo.ui.parsing.UIModel"
 import {$Component$FocusSource$$Type} from "io.wispforest.owo.ui.core.Component$FocusSource"
 import {$MouseUp} from "io.wispforest.owo.ui.event.MouseUp"
-import {$ClientTooltipComponent, $ClientTooltipComponent$$Type} from "net.minecraft.client.gui.screens.inventory.tooltip.ClientTooltipComponent"
 import {$Consumer$$Type} from "java.util.function.Consumer"
+import {$ClientTooltipComponent, $ClientTooltipComponent$$Type} from "net.minecraft.client.gui.screens.inventory.tooltip.ClientTooltipComponent"
 import {$Component$DismountReason$$Type} from "io.wispforest.owo.ui.core.Component$DismountReason"
 import {$FocusLost} from "io.wispforest.owo.ui.event.FocusLost"
 import {$MouseDrag} from "io.wispforest.owo.ui.event.MouseDrag"
@@ -311,8 +311,8 @@ import {$Sizing, $Sizing$$Type} from "io.wispforest.owo.ui.core.Sizing"
 import {$MouseEnter} from "io.wispforest.owo.ui.event.MouseEnter"
 import {$Animatable, $Animatable$$Type} from "io.wispforest.owo.ui.core.Animatable"
 import {$VanillaWidgetComponent} from "io.wispforest.owo.ui.component.VanillaWidgetComponent"
-import {$MouseLeave} from "io.wispforest.owo.ui.event.MouseLeave"
 import {$Size, $Size$$Type} from "io.wispforest.owo.ui.core.Size"
+import {$MouseLeave} from "io.wispforest.owo.ui.event.MouseLeave"
 
 export interface $ComponentStub$$Interface extends $Component$$Interface {
 }
@@ -324,24 +324,23 @@ export class $ComponentStub implements $ComponentStub$$Interface {
  "parent"(): $ParentComponent
  "inflate"(space: $Size$$Type): void
  "x"(): integer
- "id"(): StringJS
  "id"(id: StringJS): $Component
+ "id"(): StringJS
  "mount"(parent: $ParentComponent$$Type, x: integer, y: integer): void
+ "tooltip"(tooltip: $List$$Type<($ClientTooltipComponent$$Type)>): $Component
+ "tooltip"(): $List<($ClientTooltipComponent)>
  "y"(): integer
  "width"(): integer
  "height"(): integer
  "draw"(context: $OwoUIDrawContext$$Type, mouseX: integer, mouseY: integer, partialTicks: float, delta: float): void
- "tooltip"(tooltip: $List$$Type<($ClientTooltipComponent$$Type)>): $Component
- "tooltip"(): $List<($ClientTooltipComponent)>
- "charTyped"(): $EventSource<($CharTyped)>
  "dismount"(reason: $Component$DismountReason$$Type): void
  "focusHandler"(): $FocusHandler
  "positioning"(): $AnimatableProperty<($Positioning)>
  "positioning"(positioning: $Positioning$$Type): $Component
- "margins"(): $AnimatableProperty<($Insets)>
  "margins"(margins: $Insets$$Type): $Component
- "horizontalSizing"(horizontalSizing: $Sizing$$Type): $Component
+ "margins"(): $AnimatableProperty<($Insets)>
  "horizontalSizing"(): $AnimatableProperty<($Sizing)>
+ "horizontalSizing"(horizontalSizing: $Sizing$$Type): $Component
  "verticalSizing"(): $AnimatableProperty<($Sizing)>
  "verticalSizing"(verticalSizing: $Sizing$$Type): $Component
  "mouseDown"(): $EventSource<($MouseDown)>
@@ -370,10 +369,10 @@ export class $ComponentStub implements $ComponentStub$$Interface {
  "heightOffset"(): integer
  "updateX"(x: integer): void
  "updateY"(y: integer): void
+ "charTyped"(): $EventSource<($CharTyped)>
  "remove"(): void
  "update"(delta: float, mouseX: integer, mouseY: integer): void
  "root"(): $ParentComponent
- "moveTo"(x: integer, y: integer): void
  "tooltip"(tooltip: $Component$0$$Type): $Component
  "tooltip"(tooltip: $Collection$$Type<($Component$0$$Type)>): $Component
  "shouldDrawTooltip"(mouseX: double, mouseY: double): boolean
@@ -388,8 +387,9 @@ export class $ComponentStub implements $ComponentStub$$Interface {
  "fullSize"(): $Size
  "baseX"(): integer
  "baseY"(): integer
- "intersection"(other: $PositionedRectangle$$Type): $PositionedRectangle
+ "moveTo"(x: integer, y: integer): void
  "intersects"(other: $PositionedRectangle$$Type): boolean
+ "intersection"(other: $PositionedRectangle$$Type): $PositionedRectangle
 static "of"(x: integer, y: integer, size: $Size$$Type): $PositionedRectangle
 static "of"(x: integer, y: integer, width: integer, height: integer): $PositionedRectangle
  "interpolate"(arg0: $Animatable$$Type, arg1: float): $Animatable
@@ -448,7 +448,7 @@ public static "square"(sideLength: integer): $Size
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $Size$$Type = ({"height"?: integer, "width"?: integer}) | ([height?: integer, width?: integer]);
+export type $Size$$Type = ({"width"?: integer, "height"?: integer}) | ([width?: integer, height?: integer]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -476,9 +476,9 @@ declare module "io.wispforest.owo.ui.core.OwoUIDrawContext$UtilityScreen" {
 import {$Screen$DeferredTooltipRendering} from "net.minecraft.client.gui.screens.Screen$DeferredTooltipRendering"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Screen, $Screen$$Type} from "net.minecraft.client.gui.screens.Screen"
-import {$NarratableEntry} from "net.minecraft.client.gui.narration.NarratableEntry"
 import {$List} from "java.util.List"
 import {$Style$$Type} from "net.minecraft.network.chat.Style"
+import {$NarratableEntry} from "net.minecraft.client.gui.narration.NarratableEntry"
 import {$CubeMap} from "net.minecraft.client.renderer.CubeMap"
 import {$Font} from "net.minecraft.client.gui.Font"
 import {$Component} from "net.minecraft.network.chat.Component"
@@ -499,8 +499,8 @@ static readonly "HEADER_SEPARATOR": $ResourceLocation
  "height": integer
  "font": $Font
 
-public "captureLinkSource"(): void
 public "setLinkSource"(screen: $Screen$$Type): void
+public "captureLinkSource"(): void
 public static "get"(): $OwoUIDrawContext$UtilityScreen
 public "handleComponentClicked"(style: $Style$$Type): boolean
 public "getAndClearLinkSource"(): $Screen
@@ -568,8 +568,8 @@ export interface $PositionedRectangle$$Interface extends $Animatable$$Interface<
 }
 
 export class $PositionedRectangle implements $PositionedRectangle$$Interface {
- "intersection"(other: $PositionedRectangle$$Type): $PositionedRectangle
  "intersects"(other: $PositionedRectangle$$Type): boolean
+ "intersection"(other: $PositionedRectangle$$Type): $PositionedRectangle
 static "of"(x: integer, y: integer, size: $Size$$Type): $PositionedRectangle
 static "of"(x: integer, y: integer, width: integer, height: integer): $PositionedRectangle
  "x"(): integer
@@ -602,8 +602,8 @@ import {$FocusGained} from "io.wispforest.owo.ui.event.FocusGained"
 import {$Component, $Component$$Type, $Component$$Interface} from "io.wispforest.owo.ui.core.Component"
 import {$Positioning, $Positioning$$Type} from "io.wispforest.owo.ui.core.Positioning"
 import {$HorizontalAlignment, $HorizontalAlignment$$Type} from "io.wispforest.owo.ui.core.HorizontalAlignment"
-import {$KeyPress} from "io.wispforest.owo.ui.event.KeyPress"
 import {$Class$$Type} from "java.lang.Class"
+import {$KeyPress} from "io.wispforest.owo.ui.event.KeyPress"
 import {$AnimatableProperty} from "io.wispforest.owo.ui.core.AnimatableProperty"
 import {$VerticalAlignment, $VerticalAlignment$$Type} from "io.wispforest.owo.ui.core.VerticalAlignment"
 import {$Insets, $Insets$$Type} from "io.wispforest.owo.ui.core.Insets"
@@ -611,15 +611,15 @@ import {$MouseScroll} from "io.wispforest.owo.ui.event.MouseScroll"
 import {$MouseDown} from "io.wispforest.owo.ui.event.MouseDown"
 import {$ArrayList$$Type} from "java.util.ArrayList"
 import {$CursorStyle, $CursorStyle$$Type} from "io.wispforest.owo.ui.core.CursorStyle"
-import {$Collection$$Type} from "java.util.Collection"
-import {$Map$$Type} from "java.util.Map"
 import {$Element$$Type} from "org.w3c.dom.Element"
+import {$Map$$Type} from "java.util.Map"
+import {$Collection$$Type} from "java.util.Collection"
 import {$UIModel$$Type} from "io.wispforest.owo.ui.parsing.UIModel"
 import {$Component$FocusSource$$Type} from "io.wispforest.owo.ui.core.Component$FocusSource"
 import {$Predicate$$Type} from "java.util.function.Predicate"
 import {$MouseUp} from "io.wispforest.owo.ui.event.MouseUp"
-import {$ClientTooltipComponent, $ClientTooltipComponent$$Type} from "net.minecraft.client.gui.screens.inventory.tooltip.ClientTooltipComponent"
 import {$Consumer$$Type} from "java.util.function.Consumer"
+import {$ClientTooltipComponent, $ClientTooltipComponent$$Type} from "net.minecraft.client.gui.screens.inventory.tooltip.ClientTooltipComponent"
 import {$Component$DismountReason$$Type} from "io.wispforest.owo.ui.core.Component$DismountReason"
 import {$FocusLost} from "io.wispforest.owo.ui.event.FocusLost"
 import {$MouseDrag} from "io.wispforest.owo.ui.event.MouseDrag"
@@ -634,8 +634,11 @@ export interface $ParentComponent$$Interface extends $Component$$Interface {
 }
 
 export class $ParentComponent implements $ParentComponent$$Interface {
- "allowOverflow"(): boolean
+ "childById"<T extends $Component>(expectedClass: $Class$$Type<(T)>, id: StringJS): T
+ "horizontalAlignment"(arg0: $HorizontalAlignment$$Type): $ParentComponent
+ "horizontalAlignment"(): $HorizontalAlignment
  "allowOverflow"(arg0: boolean): $ParentComponent
+ "allowOverflow"(): boolean
  "verticalAlignment"(): $VerticalAlignment
  "verticalAlignment"(arg0: $VerticalAlignment$$Type): $ParentComponent
  "forEachDescendantWhere"(action: $Consumer$$Type<($Component)>, condition: $Predicate$$Type<($Component)>): void
@@ -643,50 +646,45 @@ export class $ParentComponent implements $ParentComponent$$Interface {
  "collectDescendants"(into: $ArrayList$$Type<($Component$$Type)>): void
  "forEachDescendant"(action: $Consumer$$Type<($Component)>): void
  "onChildMutated"(arg0: $Component$$Type): void
- "horizontalAlignment"(): $HorizontalAlignment
- "horizontalAlignment"(arg0: $HorizontalAlignment$$Type): $ParentComponent
- "childById"<T extends $Component>(expectedClass: $Class$$Type<(T)>, id: StringJS): T
- "removeChild"(arg0: $Component$$Type): $ParentComponent
- "alignment"(horizontalAlignment: $HorizontalAlignment$$Type, verticalAlignment: $VerticalAlignment$$Type): $ParentComponent
  "children"(): $List<($Component)>
+ "removeChild"(arg0: $Component$$Type): $ParentComponent
  "update"(delta: float, mouseX: integer, mouseY: integer): void
  "queue"(arg0: $Runnable$$Type): void
  "layout"(arg0: $Size$$Type): void
  "padding"(): $AnimatableProperty<($Insets)>
  "padding"(arg0: $Insets$$Type): $ParentComponent
- "surface"(arg0: $Surface$$Type): $ParentComponent
- "surface"(): $Surface
+ "alignment"(horizontalAlignment: $HorizontalAlignment$$Type, verticalAlignment: $VerticalAlignment$$Type): $ParentComponent
  "onMouseDown"(mouseX: double, mouseY: double, button: integer): boolean
  "onMouseScroll"(mouseX: double, mouseY: double, amount: double): boolean
  "parseProperties"(model: $UIModel$$Type, element: $Element$$Type, children: $Map$$Type<(StringJS), ($Element$$Type)>): void
  "drawTooltip"(context: $OwoUIDrawContext$$Type, mouseX: integer, mouseY: integer, partialTicks: float, delta: float): void
+ "surface"(): $Surface
+ "surface"(arg0: $Surface$$Type): $ParentComponent
  "configure"<C extends $Component>(arg0: $Consumer$$Type<(C)>): C
  "remove"(): void
  "parent"(): $ParentComponent
  "inflate"(arg0: $Size$$Type): void
  "x"(): integer
- "id"(): StringJS
  "id"(arg0: StringJS): $Component
+ "id"(): StringJS
  "root"(): $ParentComponent
  "mount"(arg0: $ParentComponent$$Type, arg1: integer, arg2: integer): void
+ "tooltip"(): $List<($ClientTooltipComponent)>
+ "tooltip"(tooltip: $Component$0$$Type): $Component
+ "tooltip"(tooltip: $Collection$$Type<($Component$0$$Type)>): $Component
+ "tooltip"(arg0: $List$$Type<($ClientTooltipComponent$$Type)>): $Component
  "y"(): integer
  "width"(): integer
  "height"(): integer
  "draw"(arg0: $OwoUIDrawContext$$Type, arg1: integer, arg2: integer, arg3: float, arg4: float): void
- "moveTo"(x: integer, y: integer): void
- "tooltip"(tooltip: $Component$0$$Type): $Component
- "tooltip"(tooltip: $Collection$$Type<($Component$0$$Type)>): $Component
- "tooltip"(): $List<($ClientTooltipComponent)>
- "tooltip"(arg0: $List$$Type<($ClientTooltipComponent$$Type)>): $Component
- "charTyped"(): $EventSource<($CharTyped)>
  "dismount"(arg0: $Component$DismountReason$$Type): void
  "focusHandler"(): $FocusHandler
  "positioning"(): $AnimatableProperty<($Positioning)>
  "positioning"(arg0: $Positioning$$Type): $Component
- "margins"(arg0: $Insets$$Type): $Component
  "margins"(): $AnimatableProperty<($Insets)>
- "horizontalSizing"(): $AnimatableProperty<($Sizing)>
+ "margins"(arg0: $Insets$$Type): $Component
  "horizontalSizing"(arg0: $Sizing$$Type): $Component
+ "horizontalSizing"(): $AnimatableProperty<($Sizing)>
  "verticalSizing"(arg0: $Sizing$$Type): $Component
  "verticalSizing"(): $AnimatableProperty<($Sizing)>
  "mouseDown"(): $EventSource<($MouseDown)>
@@ -720,8 +718,10 @@ export class $ParentComponent implements $ParentComponent$$Interface {
  "fullSize"(): $Size
  "baseX"(): integer
  "baseY"(): integer
- "intersection"(other: $PositionedRectangle$$Type): $PositionedRectangle
+ "moveTo"(x: integer, y: integer): void
+ "charTyped"(): $EventSource<($CharTyped)>
  "intersects"(other: $PositionedRectangle$$Type): boolean
+ "intersection"(other: $PositionedRectangle$$Type): $PositionedRectangle
 static "of"(x: integer, y: integer, size: $Size$$Type): $PositionedRectangle
 static "of"(x: integer, y: integer, width: integer, height: integer): $PositionedRectangle
  "interpolate"(arg0: $Animatable$$Type, arg1: float): $Animatable
@@ -764,9 +764,9 @@ import {$List, $List$$Type} from "java.util.List"
 import {$Component$$Type as $Component$0$$Type} from "net.minecraft.network.chat.Component"
 import {$CharTyped} from "io.wispforest.owo.ui.event.CharTyped"
 import {$OwoUIDrawContext$$Type} from "io.wispforest.owo.ui.core.OwoUIDrawContext"
-import {$ParentComponent, $ParentComponent$$Type} from "io.wispforest.owo.ui.core.ParentComponent"
 import {$Component, $Component$$Interface} from "io.wispforest.owo.ui.core.Component"
 import {$FocusGained} from "io.wispforest.owo.ui.event.FocusGained"
+import {$ParentComponent, $ParentComponent$$Type} from "io.wispforest.owo.ui.core.ParentComponent"
 import {$Positioning, $Positioning$$Type} from "io.wispforest.owo.ui.core.Positioning"
 import {$KeyPress} from "io.wispforest.owo.ui.event.KeyPress"
 import {$AnimatableProperty} from "io.wispforest.owo.ui.core.AnimatableProperty"
@@ -774,14 +774,14 @@ import {$Insets, $Insets$$Type} from "io.wispforest.owo.ui.core.Insets"
 import {$MouseScroll} from "io.wispforest.owo.ui.event.MouseScroll"
 import {$MouseDown} from "io.wispforest.owo.ui.event.MouseDown"
 import {$CursorStyle, $CursorStyle$$Type} from "io.wispforest.owo.ui.core.CursorStyle"
-import {$Collection$$Type} from "java.util.Collection"
 import {$Map$$Type} from "java.util.Map"
 import {$Element$$Type} from "org.w3c.dom.Element"
+import {$Collection$$Type} from "java.util.Collection"
 import {$UIModel$$Type} from "io.wispforest.owo.ui.parsing.UIModel"
 import {$Component$FocusSource$$Type} from "io.wispforest.owo.ui.core.Component$FocusSource"
 import {$MouseUp} from "io.wispforest.owo.ui.event.MouseUp"
-import {$ClientTooltipComponent, $ClientTooltipComponent$$Type} from "net.minecraft.client.gui.screens.inventory.tooltip.ClientTooltipComponent"
 import {$Consumer$$Type} from "java.util.function.Consumer"
+import {$ClientTooltipComponent, $ClientTooltipComponent$$Type} from "net.minecraft.client.gui.screens.inventory.tooltip.ClientTooltipComponent"
 import {$Component$DismountReason$$Type} from "io.wispforest.owo.ui.core.Component$DismountReason"
 import {$FocusLost} from "io.wispforest.owo.ui.event.FocusLost"
 import {$MouseDrag} from "io.wispforest.owo.ui.event.MouseDrag"
@@ -789,8 +789,8 @@ import {$FocusHandler} from "io.wispforest.owo.ui.util.FocusHandler"
 import {$Sizing, $Sizing$$Type} from "io.wispforest.owo.ui.core.Sizing"
 import {$MouseEnter} from "io.wispforest.owo.ui.event.MouseEnter"
 import {$Animatable, $Animatable$$Type} from "io.wispforest.owo.ui.core.Animatable"
-import {$MouseLeave} from "io.wispforest.owo.ui.event.MouseLeave"
 import {$Size, $Size$$Type} from "io.wispforest.owo.ui.core.Size"
+import {$MouseLeave} from "io.wispforest.owo.ui.event.MouseLeave"
 
 export interface $GreedyInputComponent$$Interface extends $Component$$Interface {
 }
@@ -802,28 +802,26 @@ export class $GreedyInputComponent implements $GreedyInputComponent$$Interface {
  "inflate"(arg0: $Size$$Type): void
  "update"(delta: float, mouseX: integer, mouseY: integer): void
  "x"(): integer
- "id"(): StringJS
  "id"(arg0: StringJS): $Component
+ "id"(): StringJS
  "root"(): $ParentComponent
  "mount"(arg0: $ParentComponent$$Type, arg1: integer, arg2: integer): void
+ "tooltip"(): $List<($ClientTooltipComponent)>
+ "tooltip"(tooltip: $Component$0$$Type): $Component
+ "tooltip"(tooltip: $Collection$$Type<($Component$0$$Type)>): $Component
+ "tooltip"(arg0: $List$$Type<($ClientTooltipComponent$$Type)>): $Component
  "y"(): integer
  "width"(): integer
  "height"(): integer
  "draw"(arg0: $OwoUIDrawContext$$Type, arg1: integer, arg2: integer, arg3: float, arg4: float): void
- "moveTo"(x: integer, y: integer): void
- "tooltip"(tooltip: $Component$0$$Type): $Component
- "tooltip"(tooltip: $Collection$$Type<($Component$0$$Type)>): $Component
- "tooltip"(): $List<($ClientTooltipComponent)>
- "tooltip"(arg0: $List$$Type<($ClientTooltipComponent$$Type)>): $Component
- "charTyped"(): $EventSource<($CharTyped)>
  "dismount"(arg0: $Component$DismountReason$$Type): void
  "focusHandler"(): $FocusHandler
  "positioning"(): $AnimatableProperty<($Positioning)>
  "positioning"(arg0: $Positioning$$Type): $Component
- "margins"(arg0: $Insets$$Type): $Component
  "margins"(): $AnimatableProperty<($Insets)>
- "horizontalSizing"(): $AnimatableProperty<($Sizing)>
+ "margins"(arg0: $Insets$$Type): $Component
  "horizontalSizing"(arg0: $Sizing$$Type): $Component
+ "horizontalSizing"(): $AnimatableProperty<($Sizing)>
  "verticalSizing"(arg0: $Sizing$$Type): $Component
  "verticalSizing"(): $AnimatableProperty<($Sizing)>
  "mouseDown"(): $EventSource<($MouseDown)>
@@ -861,8 +859,10 @@ export class $GreedyInputComponent implements $GreedyInputComponent$$Interface {
  "fullSize"(): $Size
  "baseX"(): integer
  "baseY"(): integer
- "intersection"(other: $PositionedRectangle$$Type): $PositionedRectangle
+ "moveTo"(x: integer, y: integer): void
+ "charTyped"(): $EventSource<($CharTyped)>
  "intersects"(other: $PositionedRectangle$$Type): boolean
+ "intersection"(other: $PositionedRectangle$$Type): $PositionedRectangle
 static "of"(x: integer, y: integer, size: $Size$$Type): $PositionedRectangle
 static "of"(x: integer, y: integer, width: integer, height: integer): $PositionedRectangle
  "interpolate"(arg0: $Animatable$$Type, arg1: float): $Animatable
@@ -912,10 +912,10 @@ export class $Insets extends $Record implements $Animatable$$Interface<($Insets)
  */
 constructor(top: integer, bottom: integer, left: integer, right: integer)
 
-public "withLeft"(left: integer): $Insets
-public "withBottom"(bottom: integer): $Insets
 public "withTop"(top: integer): $Insets
 public "withRight"(right: integer): $Insets
+public "withBottom"(bottom: integer): $Insets
+public "withLeft"(left: integer): $Insets
 public static "bottom"(bottom: integer): $Insets
 public "bottom"(): integer
 public "equals"(o: any): boolean
@@ -951,17 +951,17 @@ export type $Insets$$Type = ({"left"?: integer, "bottom"?: integer, "right"?: in
  */
 export type $Insets$$Original = $Insets;}
 declare module "io.wispforest.owo.ui.util.FocusHandler" {
-import {$Component, $Component$$Type} from "io.wispforest.owo.ui.core.Component"
 import {$ParentComponent$$Type} from "io.wispforest.owo.ui.core.ParentComponent"
+import {$Component, $Component$$Type} from "io.wispforest.owo.ui.core.Component"
 import {$Component$FocusSource, $Component$FocusSource$$Type} from "io.wispforest.owo.ui.core.Component$FocusSource"
 
 export class $FocusHandler {
 constructor(root: $ParentComponent$$Type)
 
+public "focus"(component: $Component$$Type, source: $Component$FocusSource$$Type): void
 public "updateClickFocus"(mouseX: double, mouseY: double): void
 public "moveFocus"(keyCode: integer): void
 public "lastFocusSource"(): $Component$FocusSource
-public "focus"(component: $Component$$Type, source: $Component$FocusSource$$Type): void
 public "cycle"(forwards: boolean): void
 public "focused"(): $Component
 }
@@ -1005,11 +1005,11 @@ get "matrixStack"(): $PoseStack
 }
 
 export class $MatrixStackTransformer implements $MatrixStackTransformer$$Interface {
- "push"(): $MatrixStackTransformer
- "pop"(): $MatrixStackTransformer
  "scale"(x: float, y: float, z: float): $MatrixStackTransformer
  "multiply"(quaternion: $Quaternionf$$Type): $MatrixStackTransformer
  "multiply"(quaternion: $Quaternionf$$Type, originX: float, originY: float, originZ: float): $MatrixStackTransformer
+ "push"(): $MatrixStackTransformer
+ "pop"(): $MatrixStackTransformer
  "translate"(x: double, y: double, z: double): $MatrixStackTransformer
  "translate"(x: float, y: float, z: float): $MatrixStackTransformer
  "getMatrixStack"(): $PoseStack
@@ -1093,17 +1093,17 @@ import {$ParentComponent} from "io.wispforest.owo.ui.core.ParentComponent"
 import {$Map$$Type} from "java.util.Map"
 import {$Element$$Type} from "org.w3c.dom.Element"
 import {$Screen$$Type} from "net.minecraft.client.gui.screens.Screen"
-import {$Function$$Type} from "java.util.function.Function"
 import {$OwoUIAdapter} from "io.wispforest.owo.ui.core.OwoUIAdapter"
+import {$Function$$Type} from "java.util.function.Function"
 import {$Class$$Type} from "java.lang.Class"
-import {$InputStream$$Type} from "java.io.InputStream"
 import {$Path$$Type} from "java.nio.file.Path"
+import {$InputStream$$Type} from "java.io.InputStream"
 
 export class $UIModel {
+public "expandTemplate"<T extends $Component>(expectedClass: $Class$$Type<(T)>, name: StringJS, parameters: $Map$$Type<(StringJS), (StringJS)>): T
+public "expandTemplate"<T extends $Component>(expectedClass: $Class$$Type<(T)>, name: StringJS, parameterSupplier: $Function$$Type<(StringJS), (StringJS)>, childSupplier: $Function$$Type<(StringJS), ($Element$$Type)>): T
 public "createAdapterWithoutScreen"<T extends $ParentComponent>(x: integer, y: integer, width: integer, height: integer, expectedRootComponentClass: $Class$$Type<(T)>): $OwoUIAdapter<(T)>
 public "parseComponent"<T extends $Component>(expectedClass: $Class$$Type<(T)>, componentElement: $Element$$Type): T
-public "expandTemplate"<T extends $Component>(expectedClass: $Class$$Type<(T)>, name: StringJS, parameterSupplier: $Function$$Type<(StringJS), (StringJS)>, childSupplier: $Function$$Type<(StringJS), ($Element$$Type)>): T
-public "expandTemplate"<T extends $Component>(expectedClass: $Class$$Type<(T)>, name: StringJS, parameters: $Map$$Type<(StringJS), (StringJS)>): T
 public static "load"(stream: $InputStream$$Type): $UIModel
 public static "load"(path: $Path$$Type): $UIModel
 public "createAdapter"<T extends $ParentComponent>(expectedRootComponentClass: $Class$$Type<(T)>, screen: $Screen$$Type): $OwoUIAdapter<(T)>
@@ -1119,15 +1119,15 @@ export type $UIModel$$Type = ($UIModel);
 export type $UIModel$$Original = $UIModel;}
 declare module "io.wispforest.owo.ui.component.VanillaWidgetComponent" {
 import {$OwoUIDrawContext$$Type} from "io.wispforest.owo.ui.core.OwoUIDrawContext"
-import {$Component, $Component$$Type} from "io.wispforest.owo.ui.core.Component"
 import {$ParentComponent$$Type} from "io.wispforest.owo.ui.core.ParentComponent"
-import {$BaseComponent} from "io.wispforest.owo.ui.base.BaseComponent"
+import {$Component, $Component$$Type} from "io.wispforest.owo.ui.core.Component"
 import {$PositionedRectangle} from "io.wispforest.owo.ui.core.PositionedRectangle"
+import {$BaseComponent} from "io.wispforest.owo.ui.base.BaseComponent"
 import {$Positioning$$Type} from "io.wispforest.owo.ui.core.Positioning"
 import {$Runnable$$Type} from "java.lang.Runnable"
 import {$Insets$$Type} from "io.wispforest.owo.ui.core.Insets"
-import {$Size$$Type} from "io.wispforest.owo.ui.core.Size"
 import {$Consumer$$Type} from "java.util.function.Consumer"
+import {$Size$$Type} from "io.wispforest.owo.ui.core.Size"
 
 export class $VanillaWidgetComponent extends $BaseComponent {
 public "notifyParentIfMounted"(): void
@@ -1199,11 +1199,11 @@ static readonly "PANEL_INSET_TEXTURE": $ResourceLocation
 static readonly "DARK_PANEL_NINE_PATCH_TEXTURE": $ResourceLocation
 static readonly "MAX_GUI_Z": float
 
-public "drawGradientRect"(x: integer, y: integer, width: integer, height: integer, topLeftColor: integer, topRightColor: integer, bottomRightColor: integer, bottomLeftColor: integer): void
 public "drawPanel"(x: integer, y: integer, width: integer, height: integer, dark: boolean): void
-public "drawText"(text: $Component$$Type, x: float, y: float, scale: float, color: integer, anchorPoint: $OwoUIDrawContext$TextAnchor$$Type): void
-public "drawText"(text: $Component$$Type, x: float, y: float, scale: float, color: integer): void
+public "drawGradientRect"(x: integer, y: integer, width: integer, height: integer, topLeftColor: integer, topRightColor: integer, bottomRightColor: integer, bottomLeftColor: integer): void
 public "drawLine"(x1: integer, y1: integer, x2: integer, y2: integer, thiccness: double, color: $Color$$Type): void
+public "drawText"(text: $Component$$Type, x: float, y: float, scale: float, color: integer): void
+public "drawText"(text: $Component$$Type, x: float, y: float, scale: float, color: integer, anchorPoint: $OwoUIDrawContext$TextAnchor$$Type): void
 public "recordQuads"(): void
 public "submitQuads"(): void
 public "drawSpectrum"(x: integer, y: integer, width: integer, height: integer, vertical: boolean): void
@@ -1215,9 +1215,9 @@ public "drawInsets"(x: integer, y: integer, width: integer, height: integer, ins
 public "drawInspector"(root: $ParentComponent$$Type, mouseX: double, mouseY: double, onlyHovered: boolean): void
 public "recording"(): boolean
 public static "of"(context: $GuiGraphics$$Type): $OwoUIDrawContext
-public static "utilityScreen"(): $OwoUIDrawContext$UtilityScreen
 public "drawTooltip"(textRenderer: $Font$$Type, x: integer, y: integer, components: $List$$Type<($ClientTooltipComponent$$Type)>): void
 public "drawRectOutline"(x: integer, y: integer, width: integer, height: integer, color: integer): void
+public static "utilityScreen"(): $OwoUIDrawContext$UtilityScreen
 public static "bufferSource"(arg0: $GuiGraphics$$Type): $MultiBufferSource
 }
 /**
@@ -1282,9 +1282,9 @@ readonly "adapter": $OwoUIAdapter<(R)>
  "aggressivePositioning": boolean
 readonly "screen": S
 
-public "alignComponentToHandledScreenCoordinates"(component: $Component$$Type, x: integer, y: integer): void
-public "alignComponentToWidget"(locator: $Predicate$$Type<($AbstractWidget)>, anchor: $Layer$Instance$AnchorSide$$Type, justification: float, component: $Component$$Type): void
 public "queryWidget"(locator: $Predicate$$Type<($AbstractWidget)>): $AbstractWidget
+public "alignComponentToWidget"(locator: $Predicate$$Type<($AbstractWidget)>, anchor: $Layer$Instance$AnchorSide$$Type, justification: float, component: $Component$$Type): void
+public "alignComponentToHandledScreenCoordinates"(component: $Component$$Type, x: integer, y: integer): void
 public "resize"(width: integer, height: integer): void
 public "dispatchLayoutUpdates"(): void
 }
@@ -1328,11 +1328,11 @@ export class $Sizing implements $Animatable$$Interface<($Sizing)> {
 readonly "method": $Sizing$Method
 readonly "value": integer
 
-public "isExpand"(): boolean
 public "contentFactor"(): float
 public static "content"(padding: integer): $Sizing
 public static "content"(): $Sizing
 public "isContent"(): boolean
+public "isExpand"(): boolean
 public "equals"(o: any): boolean
 public "hashCode"(): integer
 public static "expand"(percent: integer): $Sizing
@@ -1362,8 +1362,8 @@ import {$Screen$$Type} from "net.minecraft.client.gui.screens.Screen"
 import {$BiFunction$$Type} from "java.util.function.BiFunction"
 import {$ParentComponent} from "io.wispforest.owo.ui.core.ParentComponent"
 import {$GuiEventListener$$Interface} from "net.minecraft.client.gui.components.events.GuiEventListener"
-import {$GuiGraphics$$Type} from "net.minecraft.client.gui.GuiGraphics"
 import {$ScreenRectangle} from "net.minecraft.client.gui.navigation.ScreenRectangle"
+import {$GuiGraphics$$Type} from "net.minecraft.client.gui.GuiGraphics"
 import {$Sizing$$Type} from "io.wispforest.owo.ui.core.Sizing"
 import {$NarratableEntry$$Interface} from "net.minecraft.client.gui.narration.NarratableEntry"
 import {$ComponentPath} from "net.minecraft.client.gui.ComponentPath"
@@ -1379,8 +1379,8 @@ readonly "rootComponent": R
 
 public "toggleInspector"(): boolean
 public "toggleGlobalInspector"(): boolean
-public static "createWithoutScreen"<R extends $ParentComponent>(x: integer, y: integer, width: integer, height: integer, rootComponentMaker: $BiFunction$$Type<($Sizing), ($Sizing), (R)>): $OwoUIAdapter<(R)>
 public "moveAndResize"(x: integer, y: integer, width: integer, height: integer): void
+public static "createWithoutScreen"<R extends $ParentComponent>(x: integer, y: integer, width: integer, height: integer, rootComponentMaker: $BiFunction$$Type<($Sizing), ($Sizing), (R)>): $OwoUIAdapter<(R)>
 public "dispose"(): void
 public "x"(): integer
 public static "create"<R extends $ParentComponent>(screen: $Screen$$Type, rootComponentMaker: $BiFunction$$Type<($Sizing), ($Sizing), (R)>): $OwoUIAdapter<(R)>
@@ -1391,20 +1391,20 @@ public "render"(context: $GuiGraphics$$Type, mouseX: integer, mouseY: integer, p
 public "keyPressed"(keyCode: integer, scanCode: integer, modifiers: integer): boolean
 public "mouseClicked"(mouseX: double, mouseY: double, button: integer): boolean
 public static "isRendering"(): boolean
-public "isMouseOver"(mouseX: double, mouseY: double): boolean
-public "updateNarration"(builder: $NarrationElementOutput$$Type): void
-public "narrationPriority"(): $NarratableEntry$NarrationPriority
-public "inflateAndMount"(): void
 public "setFocused"(focused: boolean): void
 public "mouseReleased"(mouseX: double, mouseY: double, button: integer): boolean
 public "mouseDragged"(mouseX: double, mouseY: double, button: integer, deltaX: double, deltaY: double): boolean
 public "mouseScrolled"(mouseX: double, mouseY: double, horizontalAmount: double, verticalAmount: double): boolean
 public "charTyped"(chr: character, modifiers: integer): boolean
 public "isFocused"(): boolean
+public "isMouseOver"(mouseX: double, mouseY: double): boolean
+public "updateNarration"(builder: $NarrationElementOutput$$Type): void
+public "narrationPriority"(): $NarratableEntry$NarrationPriority
+public "inflateAndMount"(): void
+public "keyReleased"(arg0: integer, arg1: integer, arg2: integer): boolean
 public "nextFocusPath"(arg0: $FocusNavigationEvent$$Type): $ComponentPath
 public "getCurrentFocusPath"(): $ComponentPath
 public "getRectangle"(): $ScreenRectangle
-public "keyReleased"(arg0: integer, arg1: integer, arg2: integer): boolean
 public "mouseMoved"(arg0: double, arg1: double): void
 public "isActive"(): boolean
 public "getTabOrderGroup"(): integer
@@ -1476,11 +1476,11 @@ readonly "x": integer
 readonly "y": integer
 readonly "type": $Positioning$Type
 
-public static "across"(xPercent: integer, yPercent: integer): $Positioning
 public "withX"(x: integer): $Positioning
 public "withY"(y: integer): $Positioning
-public static "relative"(xPercent: integer, yPercent: integer): $Positioning
+public static "across"(xPercent: integer, yPercent: integer): $Positioning
 public static "absolute"(xPixels: integer, yPixels: integer): $Positioning
+public static "relative"(xPercent: integer, yPercent: integer): $Positioning
 public "equals"(o: any): boolean
 public "hashCode"(): integer
 public static "parse"(positioningElement: $Element$$Type): $Positioning
@@ -1528,8 +1528,8 @@ import {$List, $List$$Type} from "java.util.List"
 import {$Component$$Type as $Component$0$$Type} from "net.minecraft.network.chat.Component"
 import {$CharTyped} from "io.wispforest.owo.ui.event.CharTyped"
 import {$OwoUIDrawContext$$Type} from "io.wispforest.owo.ui.core.OwoUIDrawContext"
-import {$ParentComponent, $ParentComponent$$Type} from "io.wispforest.owo.ui.core.ParentComponent"
 import {$FocusGained} from "io.wispforest.owo.ui.event.FocusGained"
+import {$ParentComponent, $ParentComponent$$Type} from "io.wispforest.owo.ui.core.ParentComponent"
 import {$Positioning, $Positioning$$Type} from "io.wispforest.owo.ui.core.Positioning"
 import {$KeyPress} from "io.wispforest.owo.ui.event.KeyPress"
 import {$AnimatableProperty} from "io.wispforest.owo.ui.core.AnimatableProperty"
@@ -1537,14 +1537,14 @@ import {$Insets, $Insets$$Type} from "io.wispforest.owo.ui.core.Insets"
 import {$MouseScroll} from "io.wispforest.owo.ui.event.MouseScroll"
 import {$MouseDown} from "io.wispforest.owo.ui.event.MouseDown"
 import {$CursorStyle, $CursorStyle$$Type} from "io.wispforest.owo.ui.core.CursorStyle"
-import {$Collection$$Type} from "java.util.Collection"
 import {$Map$$Type} from "java.util.Map"
 import {$Element$$Type} from "org.w3c.dom.Element"
+import {$Collection$$Type} from "java.util.Collection"
 import {$UIModel$$Type} from "io.wispforest.owo.ui.parsing.UIModel"
 import {$Component$FocusSource$$Type} from "io.wispforest.owo.ui.core.Component$FocusSource"
 import {$MouseUp} from "io.wispforest.owo.ui.event.MouseUp"
-import {$ClientTooltipComponent, $ClientTooltipComponent$$Type} from "net.minecraft.client.gui.screens.inventory.tooltip.ClientTooltipComponent"
 import {$Consumer$$Type} from "java.util.function.Consumer"
+import {$ClientTooltipComponent, $ClientTooltipComponent$$Type} from "net.minecraft.client.gui.screens.inventory.tooltip.ClientTooltipComponent"
 import {$Component$DismountReason$$Type} from "io.wispforest.owo.ui.core.Component$DismountReason"
 import {$FocusLost} from "io.wispforest.owo.ui.event.FocusLost"
 import {$MouseDrag} from "io.wispforest.owo.ui.event.MouseDrag"
@@ -1552,8 +1552,8 @@ import {$FocusHandler} from "io.wispforest.owo.ui.util.FocusHandler"
 import {$Sizing, $Sizing$$Type} from "io.wispforest.owo.ui.core.Sizing"
 import {$MouseEnter} from "io.wispforest.owo.ui.event.MouseEnter"
 import {$Animatable, $Animatable$$Type} from "io.wispforest.owo.ui.core.Animatable"
-import {$MouseLeave} from "io.wispforest.owo.ui.event.MouseLeave"
 import {$Size, $Size$$Type} from "io.wispforest.owo.ui.core.Size"
+import {$MouseLeave} from "io.wispforest.owo.ui.event.MouseLeave"
 
 export interface $Component$$Interface extends $PositionedRectangle$$Interface {
 }
@@ -1565,28 +1565,26 @@ export class $Component implements $Component$$Interface {
  "inflate"(arg0: $Size$$Type): void
  "update"(delta: float, mouseX: integer, mouseY: integer): void
  "x"(): integer
- "id"(): StringJS
  "id"(arg0: StringJS): $Component
+ "id"(): StringJS
  "root"(): $ParentComponent
  "mount"(arg0: $ParentComponent$$Type, arg1: integer, arg2: integer): void
+ "tooltip"(): $List<($ClientTooltipComponent)>
+ "tooltip"(tooltip: $Component$0$$Type): $Component
+ "tooltip"(tooltip: $Collection$$Type<($Component$0$$Type)>): $Component
+ "tooltip"(arg0: $List$$Type<($ClientTooltipComponent$$Type)>): $Component
  "y"(): integer
  "width"(): integer
  "height"(): integer
  "draw"(arg0: $OwoUIDrawContext$$Type, arg1: integer, arg2: integer, arg3: float, arg4: float): void
- "moveTo"(x: integer, y: integer): void
- "tooltip"(tooltip: $Component$0$$Type): $Component
- "tooltip"(tooltip: $Collection$$Type<($Component$0$$Type)>): $Component
- "tooltip"(): $List<($ClientTooltipComponent)>
- "tooltip"(arg0: $List$$Type<($ClientTooltipComponent$$Type)>): $Component
- "charTyped"(): $EventSource<($CharTyped)>
  "dismount"(arg0: $Component$DismountReason$$Type): void
  "focusHandler"(): $FocusHandler
  "positioning"(): $AnimatableProperty<($Positioning)>
  "positioning"(arg0: $Positioning$$Type): $Component
- "margins"(arg0: $Insets$$Type): $Component
  "margins"(): $AnimatableProperty<($Insets)>
- "horizontalSizing"(): $AnimatableProperty<($Sizing)>
+ "margins"(arg0: $Insets$$Type): $Component
  "horizontalSizing"(arg0: $Sizing$$Type): $Component
+ "horizontalSizing"(): $AnimatableProperty<($Sizing)>
  "verticalSizing"(arg0: $Sizing$$Type): $Component
  "verticalSizing"(): $AnimatableProperty<($Sizing)>
  "mouseDown"(): $EventSource<($MouseDown)>
@@ -1624,8 +1622,10 @@ export class $Component implements $Component$$Interface {
  "fullSize"(): $Size
  "baseX"(): integer
  "baseY"(): integer
- "intersection"(other: $PositionedRectangle$$Type): $PositionedRectangle
+ "moveTo"(x: integer, y: integer): void
+ "charTyped"(): $EventSource<($CharTyped)>
  "intersects"(other: $PositionedRectangle$$Type): boolean
+ "intersection"(other: $PositionedRectangle$$Type): $PositionedRectangle
 static "of"(x: integer, y: integer, size: $Size$$Type): $PositionedRectangle
 static "of"(x: integer, y: integer, width: integer, height: integer): $PositionedRectangle
  "interpolate"(arg0: $Animatable$$Type, arg1: float): $Animatable
@@ -1643,8 +1643,8 @@ export type $Component$$Original = $Component;}
 declare module "io.wispforest.owo.ui.core.Surface" {
 import {$OwoUIDrawContext, $OwoUIDrawContext$$Type} from "io.wispforest.owo.ui.core.OwoUIDrawContext"
 import {$ParentComponent, $ParentComponent$$Type} from "io.wispforest.owo.ui.core.ParentComponent"
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Element$$Type} from "org.w3c.dom.Element"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$PanoramaRenderer$$Type} from "net.minecraft.client.renderer.PanoramaRenderer"
 
 export interface $Surface$$Interface {
@@ -1666,8 +1666,8 @@ static "vanillaPanorama"(alwaysVisible: boolean): $Surface
 static "tiled"(texture: $ResourceLocation$$Type, textureWidth: integer, textureHeight: integer): $Surface
  "and"(surface: $Surface$$Type): $Surface
 static "parse"(surfaceElement: $Element$$Type): $Surface
- "draw"(arg0: $OwoUIDrawContext$$Type, arg1: $ParentComponent$$Type): void
 static "outline"(color: integer): $Surface
+ "draw"(arg0: $OwoUIDrawContext$$Type, arg1: $ParentComponent$$Type): void
 static "blur"(quality: float, size: float): $Surface
 static "flat"(color: integer): $Surface
 static "panorama"(renderer: $PanoramaRenderer$$Type, alwaysVisible: boolean): $Surface
@@ -1722,8 +1722,8 @@ import {$Animation$Composed} from "io.wispforest.owo.ui.core.Animation$Composed"
 export class $Animation<A extends $Animatable<(object)>> {
 constructor(duration: integer, setter: $Consumer$$Type<(A)>, easing: $Easing$$Type, from: A, to: A)
 
-public "backwards"(): $Animation<(A)>
 public "forwards"(): $Animation<(A)>
+public "backwards"(): $Animation<(A)>
 public "finished"(): $EventSource<($Animation$Finished)>
 public "reverse"(): $Animation<(A)>
 public "update"(delta: float): void

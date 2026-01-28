@@ -149,10 +149,10 @@ export interface $DoublePredicate$$Interface {
 }
 
 export class $DoublePredicate implements $DoublePredicate$$Interface {
- "or"(arg0: $DoublePredicate$$Type): $DoublePredicate
  "negate"(): $DoublePredicate
  "and"(arg0: $DoublePredicate$$Type): $DoublePredicate
  "test"(arg0: double): boolean
+ "or"(arg0: $DoublePredicate$$Type): $DoublePredicate
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -331,10 +331,10 @@ export interface $LongPredicate$$Interface {
 }
 
 export class $LongPredicate implements $LongPredicate$$Interface {
- "or"(arg0: $LongPredicate$$Type): $LongPredicate
  "negate"(): $LongPredicate
  "and"(arg0: $LongPredicate$$Type): $LongPredicate
  "test"(arg0: long): boolean
+ "or"(arg0: $LongPredicate$$Type): $LongPredicate
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -668,12 +668,12 @@ export interface $Predicate$$Interface<T> {
 }
 
 export class $Predicate<T> implements $Predicate$$Interface {
- "or"(arg0: $Predicate$$Type<(T)>): $Predicate<(T)>
+static "not"<T>(arg0: $Predicate$$Type<(T)>): $Predicate<(T)>
 static "isEqual"<T>(arg0: any): $Predicate<(T)>
  "negate"(): $Predicate<(T)>
  "and"(arg0: $Predicate$$Type<(T)>): $Predicate<(T)>
-static "not"<T>(arg0: $Predicate$$Type<(T)>): $Predicate<(T)>
  "test"(arg0: T): boolean
+ "or"(arg0: $Predicate$$Type<(T)>): $Predicate<(T)>
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -692,10 +692,10 @@ export interface $BiPredicate$$Interface<T, U> {
 }
 
 export class $BiPredicate<T, U> implements $BiPredicate$$Interface {
- "or"(arg0: $BiPredicate$$Type<(T), (U)>): $BiPredicate<(T), (U)>
  "negate"(): $BiPredicate<(T), (U)>
  "and"(arg0: $BiPredicate$$Type<(T), (U)>): $BiPredicate<(T), (U)>
  "test"(arg0: T, arg1: U): boolean
+ "or"(arg0: $BiPredicate$$Type<(T), (U)>): $BiPredicate<(T), (U)>
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -794,10 +794,10 @@ export interface $IntPredicate$$Interface {
 }
 
 export class $IntPredicate implements $IntPredicate$$Interface {
- "or"(arg0: $IntPredicate$$Type): $IntPredicate
  "negate"(): $IntPredicate
  "and"(arg0: $IntPredicate$$Type): $IntPredicate
  "test"(arg0: integer): boolean
+ "or"(arg0: $IntPredicate$$Type): $IntPredicate
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_

@@ -10,11 +10,11 @@ get "boneResetTime"(): double
 }
 
 export class $GeoBlockEntity implements $GeoBlockEntity$$Interface {
+ "getTick"(arg0: any): double
  "getAnimData"<D>(arg0: $SerializableDataTicket$$Type<(D)>): D
  "setAnimData"<D>(arg0: $SerializableDataTicket$$Type<(D)>, arg1: D): void
  "triggerAnim"(arg0: StringJS, arg1: StringJS): void
  "stopTriggeredAnim"(arg0: StringJS, arg1: StringJS): void
- "getTick"(arg0: any): double
  "registerControllers"(arg0: $AnimatableManager$ControllerRegistrar$$Type): void
  "getAnimatableInstanceCache"(): $AnimatableInstanceCache
  "animatableCacheOverride"(): $AnimatableInstanceCache
@@ -40,8 +40,8 @@ constructor(arg0: $GeoAnimatable$$Type)
 
 public "getManagerForId"<T extends $GeoAnimatable>(arg0: long): $AnimatableManager<(T)>
 public "getRenderProvider"(): any
-public "addDataPoint"<D>(arg0: long, arg1: $DataTicket$$Type<(D)>, arg2: D): void
 public "getDataPoint"<D>(arg0: long, arg1: $DataTicket$$Type<(D)>): D
+public "addDataPoint"<D>(arg0: long, arg1: $DataTicket$$Type<(D)>, arg2: D): void
 get "renderProvider"(): any
 }
 /**
@@ -69,8 +69,8 @@ get "boneResetTime"(): double
 }
 
 export class $SingletonGeoAnimatable implements $SingletonGeoAnimatable$$Interface {
-static "registerSyncedAnimatable"(arg0: $GeoAnimatable$$Type): void
  "createGeoRenderer"(arg0: $Consumer$$Type<($GeoRenderProvider)>): void
+static "registerSyncedAnimatable"(arg0: $GeoAnimatable$$Type): void
  "animatableCacheOverride"(): $AnimatableInstanceCache
  "getAnimData"<D>(arg0: long, arg1: $SerializableDataTicket$$Type<(D)>): D
  "setAnimData"<D>(arg0: $Entity$$Type, arg1: long, arg2: $SerializableDataTicket$$Type<(D)>, arg3: D): void
@@ -80,11 +80,11 @@ static "registerSyncedAnimatable"(arg0: $GeoAnimatable$$Type): void
  "triggerArmorAnim"(arg0: $Entity$$Type, arg1: long, arg2: StringJS, arg3: StringJS): void
  "stopTriggeredArmorAnim"(arg0: $Entity$$Type, arg1: long, arg2: StringJS, arg3: StringJS): void
  "getRenderProvider"(): any
+ "getTick"(arg0: any): double
  "registerControllers"(arg0: $AnimatableManager$ControllerRegistrar$$Type): void
  "getAnimatableInstanceCache"(): $AnimatableInstanceCache
  "getBoneResetTime"(): double
  "shouldPlayAnimsWhileGamePaused"(): boolean
- "getTick"(arg0: any): double
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -144,11 +144,11 @@ get "boneResetTime"(): double
 }
 
 export class $GeoItem implements $GeoItem$$Interface {
+ "getTick"(arg0: any): double
 static "registerSyncedAnimatable"(arg0: $GeoAnimatable$$Type): void
  "isPerspectiveAware"(): boolean
  "animatableCacheOverride"(): $AnimatableInstanceCache
 static "getOrAssignId"(arg0: $ItemStack$$Type, arg1: $ServerLevel$$Type): long
- "getTick"(arg0: any): double
 static "getId"(arg0: $ItemStack$$Type): long
  "createGeoRenderer"(arg0: $Consumer$$Type<($GeoRenderProvider)>): void
  "getAnimData"<D>(arg0: long, arg1: $SerializableDataTicket$$Type<(D)>): D
@@ -183,12 +183,12 @@ get "boneResetTime"(): double
 }
 
 export class $GeoAnimatable implements $GeoAnimatable$$Interface {
+ "getTick"(arg0: any): double
  "registerControllers"(arg0: $AnimatableManager$ControllerRegistrar$$Type): void
  "getAnimatableInstanceCache"(): $AnimatableInstanceCache
  "animatableCacheOverride"(): $AnimatableInstanceCache
  "getBoneResetTime"(): double
  "shouldPlayAnimsWhileGamePaused"(): boolean
- "getTick"(arg0: any): double
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_

@@ -27,17 +27,16 @@ import {$IGridService$$Interface} from "appeng.api.networking.IGridService"
 import {$Actionable$$Type} from "appeng.api.config.Actionable"
 
 export interface $IEnergyService$$Interface extends $IGridService$$Interface, $IEnergySource$$Interface {
-get "storedPower"(): double
 get "idlePowerUsage"(): double
 get "avgPowerUsage"(): double
 get "avgPowerInjection"(): double
 get "networkPowered"(): boolean
 get "maxStoredPower"(): double
 get "channelPowerUsage"(): double
+get "storedPower"(): double
 }
 
 export class $IEnergyService implements $IEnergyService$$Interface {
- "getStoredPower"(): double
  "getIdlePowerUsage"(): double
  "getAvgPowerUsage"(): double
  "getAvgPowerInjection"(): double
@@ -46,6 +45,7 @@ export class $IEnergyService implements $IEnergyService$$Interface {
  "getMaxStoredPower"(): double
  "getEnergyDemand"(arg0: double): double
  "getChannelPowerUsage"(): double
+ "getStoredPower"(): double
  "extractAEPower"(arg0: double, arg1: $Actionable$$Type, arg2: $PowerMultiplier$$Type): double
 static "empty"(): $IEnergySource
 }
@@ -66,19 +66,19 @@ import {$Actionable$$Type} from "appeng.api.config.Actionable"
 import {$AccessRestriction} from "appeng.api.config.AccessRestriction"
 
 export interface $IAEPowerStorage$$Interface extends $IEnergySource$$Interface, $IGridNodeService$$Interface {
-get "AEMaxPower"(): double
-get "powerFlow"(): $AccessRestriction
 get "AEPublicPowerStorage"(): boolean
 get "AECurrentPower"(): double
+get "AEMaxPower"(): double
+get "powerFlow"(): $AccessRestriction
 get "priority"(): integer
 }
 
 export class $IAEPowerStorage implements $IAEPowerStorage$$Interface {
- "getAEMaxPower"(): double
- "getPowerFlow"(): $AccessRestriction
  "isAEPublicPowerStorage"(): boolean
  "getAECurrentPower"(): double
  "injectAEPower"(arg0: double, arg1: $Actionable$$Type): double
+ "getAEMaxPower"(): double
+ "getPowerFlow"(): $AccessRestriction
  "getPriority"(): integer
  "extractAEPower"(arg0: double, arg1: $Actionable$$Type, arg2: $PowerMultiplier$$Type): double
 static "empty"(): $IEnergySource

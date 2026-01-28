@@ -27,8 +27,8 @@ export type $TypedOptic$Element$$Type<S, T, A, B> = ({"sType"?: $Type$$Type<(S)>
 export type $TypedOptic$Element$$Original<S, T, A, B> = $TypedOptic$Element<(S), (T), (A), (B)>;}
 declare module "com.mojang.datafixers.TypeRewriteRule" {
 import {$RewriteResult, $RewriteResult$$Type} from "com.mojang.datafixers.RewriteResult"
-import {$Type, $Type$$Type} from "com.mojang.datafixers.types.Type"
 import {$Optional, $Optional$$Type} from "java.util.Optional"
+import {$Type, $Type$$Type} from "com.mojang.datafixers.types.Type"
 import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$List$$Type} from "java.util.List"
 import {$PointFreeRule$$Type} from "com.mojang.datafixers.functions.PointFreeRule"
@@ -89,9 +89,9 @@ import {$DynamicOps, $DynamicOps$$Type} from "com.mojang.serialization.DynamicOp
 import {$Optional} from "java.util.Optional"
 import {$Type, $Type$$Type} from "com.mojang.datafixers.types.Type"
 import {$Pair} from "com.mojang.datafixers.util.Pair"
-import {$List} from "java.util.List"
 import {$Either} from "com.mojang.datafixers.util.Either"
 import {$Function$$Type} from "java.util.function.Function"
+import {$List} from "java.util.List"
 import {$DataResult} from "com.mojang.serialization.DataResult"
 import {$Dynamic} from "com.mojang.serialization.Dynamic"
 import {$OpticFinder$$Type} from "com.mojang.datafixers.OpticFinder"
@@ -103,9 +103,9 @@ public "updateRecursiveTyped"<FT, FR>(arg0: $OpticFinder$$Type<(FT)>, arg1: $Typ
 public "updateRecursiveTyped"<FT>(arg0: $OpticFinder$$Type<(FT)>, arg1: $Function$$Type<($Typed<(never)>), ($Typed$$Type<(never)>)>): $Typed<(never)>
 public "updateRecursive"<FT, FR>(arg0: $OpticFinder$$Type<(FT)>, arg1: $Type$$Type<(FR)>, arg2: $Function$$Type<(FT), (FR)>): $Typed<(never)>
 public "updateRecursive"<FT>(arg0: $OpticFinder$$Type<(FT)>, arg1: $Function$$Type<(FT), (FT)>): $Typed<(never)>
-public "getAll"<FT>(arg0: $TypedOptic$$Type<(A), (never), (FT), (never)>): $List<(FT)>
 public "getOrCreate"<FT>(arg0: $OpticFinder$$Type<(FT)>): FT
 public static "pair"<A, B>(arg0: $Typed$$Type<(A)>, arg1: $Typed$$Type<(B)>): $Typed<($Pair<(A), (B)>)>
+public "getAll"<FT>(arg0: $TypedOptic$$Type<(A), (never), (FT), (never)>): $List<(FT)>
 public "get"<FT>(arg0: $OpticFinder$$Type<(FT)>): FT
 public "toString"(): StringJS
 public "update"<FT, FR>(arg0: $OpticFinder$$Type<(FT)>, arg1: $Type$$Type<(FR)>, arg2: $Function$$Type<(FT), (FR)>): $Typed<(never)>
@@ -126,8 +126,8 @@ public "getOptionalTyped"<FT>(arg0: $OpticFinder$$Type<(FT)>): $Optional<($Typed
 public "getOrCreateTyped"<FT>(arg0: $OpticFinder$$Type<(FT)>): $Typed<(FT)>
 public "getTyped"<FT>(arg0: $OpticFinder$$Type<(FT)>): $Typed<(FT)>
 public "getAllTyped"<FT>(arg0: $OpticFinder$$Type<(FT)>): $List<($Typed<(FT)>)>
-public "inj1"<B>(arg0: $Type$$Type<(B)>): $Typed<($Either<(A), (B)>)>
 public "inj2"<B>(arg0: $Type$$Type<(B)>): $Typed<($Either<(B), (A)>)>
+public "inj1"<B>(arg0: $Type$$Type<(B)>): $Typed<($Either<(A), (B)>)>
 get "value"(): A
 get "type"(): $Type<(A)>
 get "ops"(): $DynamicOps<(never)>
@@ -202,8 +202,8 @@ import {$TaggedChoice$TaggedChoiceType$$Type} from "com.mojang.datafixers.types.
 import {$App2, $App2$$Type} from "com.mojang.datafixers.kinds.App2"
 import {$Either} from "com.mojang.datafixers.util.Either"
 import {$K1, $K1$$Type} from "com.mojang.datafixers.kinds.K1"
-import {$Set, $Set$$Type} from "java.util.Set"
 import {$K2} from "com.mojang.datafixers.kinds.K2"
+import {$Set, $Set$$Type} from "java.util.Set"
 import {$Optic, $Optic$$Type} from "com.mojang.datafixers.optics.Optic"
 import {$TypedOptic$Element, $TypedOptic$Element$$Type} from "com.mojang.datafixers.TypedOptic$Element"
 import {$Record} from "java.lang.Record"
@@ -213,7 +213,6 @@ constructor(arg0: $TypeToken$$Type<($K1$$Type)>, arg1: $Type$$Type<(S)>, arg2: $
 constructor(bounds: $Set$$Type<($TypeToken$$Type<($K1$$Type)>)>, elements: $List$$Type<($TypedOptic$Element$$Type<(never), (never), (never), (never)>)>)
 constructor(arg0: $Set$$Type<($TypeToken$$Type<($K1$$Type)>)>, arg1: $Type$$Type<(S)>, arg2: $Type$$Type<(T)>, arg3: $Type$$Type<(A)>, arg4: $Type$$Type<(B)>, arg5: $Optic$$Type<(never), (S), (T), (A), (B)>)
 
-public static "adapter"<S, T>(arg0: $Type$$Type<(S)>, arg1: $Type$$Type<(T)>): $TypedOptic<(S), (T), (S), (T)>
 public "tType"(): $Type<(T)>
 public "aType"(): $Type<(A)>
 public static "tagged"<K, A, B>(arg0: $TaggedChoice$TaggedChoiceType$$Type<(K)>, arg1: K, arg2: $Type$$Type<(A)>, arg3: $Type$$Type<(B)>): $TypedOptic<($Pair<(K), (never)>), ($Pair<(K), (never)>), (A), (B)>
@@ -226,16 +225,17 @@ public "elements"(): $List<($TypedOptic$Element<(never), (never), (never), (neve
 public "bounds"(): $Set<($TypeToken<($K1)>)>
 public "innermost"(): $Optic<(never), (never), (never), (A), (B)>
 public "compose"<A1, B1>(arg0: $TypedOptic$$Type<(A), (B), (A1), (B1)>): $TypedOptic<(S), (T), (A1), (B1)>
+public static "adapter"<S, T>(arg0: $Type$$Type<(S)>, arg1: $Type$$Type<(T)>): $TypedOptic<(S), (T), (S), (T)>
+public static "instanceOf"<Proof2 extends $K1>(arg0: $Collection$$Type<($TypeToken$$Type<($K1$$Type)>)>, arg1: $TypeToken$$Type<(Proof2)>): boolean
 public "sType"(): $Type<(S)>
 public "outermost"(): $Optic<(never), (S), (T), (never), (never)>
-public static "instanceOf"<Proof2 extends $K1>(arg0: $Collection$$Type<($TypeToken$$Type<($K1$$Type)>)>, arg1: $TypeToken$$Type<(Proof2)>): boolean
 public "upCast"<Proof2 extends $K1>(arg0: $TypeToken$$Type<(Proof2)>): $Optional<($Optic<(Proof2), (S), (T), (A), (B)>)>
 public "castOuter"(arg0: $Type$$Type<(S)>, arg1: $Type$$Type<(T)>): $TypedOptic<(S), (T), (A), (B)>
-public static "proj1"<F, G, F2>(arg0: $Type$$Type<(F)>, arg1: $Type$$Type<(G)>, arg2: $Type$$Type<(F2)>): $TypedOptic<($Pair<(F), (G)>), ($Pair<(F2), (G)>), (F), (F2)>
-public static "proj2"<F, G, G2>(arg0: $Type$$Type<(F)>, arg1: $Type$$Type<(G)>, arg2: $Type$$Type<(G2)>): $TypedOptic<($Pair<(F), (G)>), ($Pair<(F), (G2)>), (G), (G2)>
-public static "inj1"<F, G, F2>(arg0: $Type$$Type<(F)>, arg1: $Type$$Type<(G)>, arg2: $Type$$Type<(F2)>): $TypedOptic<($Either<(F), (G)>), ($Either<(F2), (G)>), (F), (F2)>
 public static "inj2"<F, G, G2>(arg0: $Type$$Type<(F)>, arg1: $Type$$Type<(G)>, arg2: $Type$$Type<(G2)>): $TypedOptic<($Either<(F), (G)>), ($Either<(F), (G2)>), (G), (G2)>
 public "bType"(): $Type<(B)>
+public static "inj1"<F, G, F2>(arg0: $Type$$Type<(F)>, arg1: $Type$$Type<(G)>, arg2: $Type$$Type<(F2)>): $TypedOptic<($Either<(F), (G)>), ($Either<(F2), (G)>), (F), (F2)>
+public static "proj1"<F, G, F2>(arg0: $Type$$Type<(F)>, arg1: $Type$$Type<(G)>, arg2: $Type$$Type<(F2)>): $TypedOptic<($Pair<(F), (G)>), ($Pair<(F2), (G)>), (F), (F2)>
+public static "proj2"<F, G, G2>(arg0: $Type$$Type<(F)>, arg1: $Type$$Type<(G)>, arg2: $Type$$Type<(G2)>): $TypedOptic<($Pair<(F), (G)>), ($Pair<(F), (G2)>), (G), (G2)>
 public "castOuterUnchecked"<S2, T2>(arg0: $Type$$Type<(S2)>, arg1: $Type$$Type<(T2)>): $TypedOptic<(S2), (T2), (A), (B)>
 public static "compoundListKeys"<K, V, K2>(arg0: $Type$$Type<(K)>, arg1: $Type$$Type<(K2)>, arg2: $Type$$Type<(V)>): $TypedOptic<($List<($Pair<(K), (V)>)>), ($List<($Pair<(K2), (V)>)>), (K), (K2)>
 public static "compoundListElements"<K, V, V2>(arg0: $Type$$Type<(K)>, arg1: $Type$$Type<(V)>, arg2: $Type$$Type<(V2)>): $TypedOptic<($List<($Pair<(K), (V)>)>), ($List<($Pair<(K), (V2)>)>), (V), (V2)>
@@ -244,7 +244,7 @@ public static "compoundListElements"<K, V, V2>(arg0: $Type$$Type<(K)>, arg1: $Ty
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $TypedOptic$$Type<S, T, A, B> = ({"elements"?: $List$$Type<($TypedOptic$Element$$Type<(never), (never), (never), (never)>)>, "bounds"?: $Set$$Type<($TypeToken$$Type<($K1$$Type)>)>}) | ([elements?: $List$$Type<($TypedOptic$Element$$Type<(never), (never), (never), (never)>)>, bounds?: $Set$$Type<($TypeToken$$Type<($K1$$Type)>)>]);
+export type $TypedOptic$$Type<S, T, A, B> = ({"bounds"?: $Set$$Type<($TypeToken$$Type<($K1$$Type)>)>, "elements"?: $List$$Type<($TypedOptic$Element$$Type<(never), (never), (never), (never)>)>}) | ([bounds?: $Set$$Type<($TypeToken$$Type<($K1$$Type)>)>, elements?: $List$$Type<($TypedOptic$Element$$Type<(never), (never), (never), (never)>)>]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -318,15 +318,15 @@ import {$Function3$$Type} from "com.mojang.datafixers.util.Function3"
 export class $Products$P3<F extends $K1, T1, T2, T3> {
 constructor(arg0: $App$$Type<(F), (T1)>, arg1: $App$$Type<(F), (T2)>, arg2: $App$$Type<(F), (T3)>)
 
-public "t2"(): $App<(F), (T2)>
-public "and"<T4, T5, T6, T7>(arg0: $Products$P4$$Type<(F), (T4), (T5), (T6), (T7)>): $Products$P7<(F), (T1), (T2), (T3), (T4), (T5), (T6), (T7)>
-public "and"<T4, T5, T6>(arg0: $Products$P3$$Type<(F), (T4), (T5), (T6)>): $Products$P6<(F), (T1), (T2), (T3), (T4), (T5), (T6)>
 public "and"<T4>(arg0: $App$$Type<(F), (T4)>): $Products$P4<(F), (T1), (T2), (T3), (T4)>
+public "and"<T4, T5, T6>(arg0: $Products$P3$$Type<(F), (T4), (T5), (T6)>): $Products$P6<(F), (T1), (T2), (T3), (T4), (T5), (T6)>
+public "and"<T4, T5, T6, T7>(arg0: $Products$P4$$Type<(F), (T4), (T5), (T6), (T7)>): $Products$P7<(F), (T1), (T2), (T3), (T4), (T5), (T6), (T7)>
 public "and"<T4, T5, T6, T7, T8>(arg0: $Products$P5$$Type<(F), (T4), (T5), (T6), (T7), (T8)>): $Products$P8<(F), (T1), (T2), (T3), (T4), (T5), (T6), (T7), (T8)>
 public "and"<T4, T5>(arg0: $Products$P2$$Type<(F), (T4), (T5)>): $Products$P5<(F), (T1), (T2), (T3), (T4), (T5)>
-public "apply"<R>(arg0: $Applicative$$Type<(F), (never)>, arg1: $Function3$$Type<(T1), (T2), (T3), (R)>): $App<(F), (R)>
 public "apply"<R>(arg0: $Applicative$$Type<(F), (never)>, arg1: $App$$Type<(F), ($Function3$$Type<(T1), (T2), (T3), (R)>)>): $App<(F), (R)>
+public "apply"<R>(arg0: $Applicative$$Type<(F), (never)>, arg1: $Function3$$Type<(T1), (T2), (T3), (R)>): $App<(F), (R)>
 public "t1"(): $App<(F), (T1)>
+public "t2"(): $App<(F), (T2)>
 public "t3"(): $App<(F), (T3)>
 }
 /**
@@ -347,20 +347,20 @@ import {$Products$P8} from "com.mojang.datafixers.Products$P8"
 import {$Products$P5} from "com.mojang.datafixers.Products$P5"
 import {$Products$P6} from "com.mojang.datafixers.Products$P6"
 import {$K1} from "com.mojang.datafixers.kinds.K1"
-import {$Applicative$$Type} from "com.mojang.datafixers.kinds.Applicative"
 import {$Function4$$Type} from "com.mojang.datafixers.util.Function4"
+import {$Applicative$$Type} from "com.mojang.datafixers.kinds.Applicative"
 
 export class $Products$P4<F extends $K1, T1, T2, T3, T4> {
 constructor(arg0: $App$$Type<(F), (T1)>, arg1: $App$$Type<(F), (T2)>, arg2: $App$$Type<(F), (T3)>, arg3: $App$$Type<(F), (T4)>)
 
-public "t2"(): $App<(F), (T2)>
-public "and"<T5, T6, T7>(arg0: $Products$P3$$Type<(F), (T5), (T6), (T7)>): $Products$P7<(F), (T1), (T2), (T3), (T4), (T5), (T6), (T7)>
 public "and"<T5, T6>(arg0: $Products$P2$$Type<(F), (T5), (T6)>): $Products$P6<(F), (T1), (T2), (T3), (T4), (T5), (T6)>
+public "and"<T5, T6, T7>(arg0: $Products$P3$$Type<(F), (T5), (T6), (T7)>): $Products$P7<(F), (T1), (T2), (T3), (T4), (T5), (T6), (T7)>
 public "and"<T5, T6, T7, T8>(arg0: $Products$P4$$Type<(F), (T5), (T6), (T7), (T8)>): $Products$P8<(F), (T1), (T2), (T3), (T4), (T5), (T6), (T7), (T8)>
 public "and"<T5>(arg0: $App$$Type<(F), (T5)>): $Products$P5<(F), (T1), (T2), (T3), (T4), (T5)>
 public "apply"<R>(arg0: $Applicative$$Type<(F), (never)>, arg1: $App$$Type<(F), ($Function4$$Type<(T1), (T2), (T3), (T4), (R)>)>): $App<(F), (R)>
 public "apply"<R>(arg0: $Applicative$$Type<(F), (never)>, arg1: $Function4$$Type<(T1), (T2), (T3), (T4), (R)>): $App<(F), (R)>
 public "t1"(): $App<(F), (T1)>
+public "t2"(): $App<(F), (T2)>
 public "t3"(): $App<(F), (T3)>
 public "t4"(): $App<(F), (T4)>
 }
@@ -424,16 +424,16 @@ import {$Applicative$$Type} from "com.mojang.datafixers.kinds.Applicative"
 export class $Products$P2<F extends $K1, T1, T2> {
 constructor(arg0: $App$$Type<(F), (T1)>, arg1: $App$$Type<(F), (T2)>)
 
-public "t2"(): $App<(F), (T2)>
-public "and"<T3, T4>(arg0: $Products$P2$$Type<(F), (T3), (T4)>): $Products$P4<(F), (T1), (T2), (T3), (T4)>
 public "and"<T3, T4, T5, T6>(arg0: $Products$P4$$Type<(F), (T3), (T4), (T5), (T6)>): $Products$P6<(F), (T1), (T2), (T3), (T4), (T5), (T6)>
-public "and"<T3, T4, T5, T6, T7>(arg0: $Products$P5$$Type<(F), (T3), (T4), (T5), (T6), (T7)>): $Products$P7<(F), (T1), (T2), (T3), (T4), (T5), (T6), (T7)>
+public "and"<T3, T4>(arg0: $Products$P2$$Type<(F), (T3), (T4)>): $Products$P4<(F), (T1), (T2), (T3), (T4)>
 public "and"<T3>(arg0: $App$$Type<(F), (T3)>): $Products$P3<(F), (T1), (T2), (T3)>
+public "and"<T3, T4, T5, T6, T7>(arg0: $Products$P5$$Type<(F), (T3), (T4), (T5), (T6), (T7)>): $Products$P7<(F), (T1), (T2), (T3), (T4), (T5), (T6), (T7)>
 public "and"<T3, T4, T5, T6, T7, T8>(arg0: $Products$P6$$Type<(F), (T3), (T4), (T5), (T6), (T7), (T8)>): $Products$P8<(F), (T1), (T2), (T3), (T4), (T5), (T6), (T7), (T8)>
 public "and"<T3, T4, T5>(arg0: $Products$P3$$Type<(F), (T3), (T4), (T5)>): $Products$P5<(F), (T1), (T2), (T3), (T4), (T5)>
-public "apply"<R>(arg0: $Applicative$$Type<(F), (never)>, arg1: $App$$Type<(F), ($BiFunction$$Type<(T1), (T2), (R)>)>): $App<(F), (R)>
 public "apply"<R>(arg0: $Applicative$$Type<(F), (never)>, arg1: $BiFunction$$Type<(T1), (T2), (R)>): $App<(F), (R)>
+public "apply"<R>(arg0: $Applicative$$Type<(F), (never)>, arg1: $App$$Type<(F), ($BiFunction$$Type<(T1), (T2), (R)>)>): $App<(F), (R)>
 public "t1"(): $App<(F), (T1)>
+public "t2"(): $App<(F), (T2)>
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -454,11 +454,11 @@ import {$Applicative$$Type} from "com.mojang.datafixers.kinds.Applicative"
 export class $Products$P7<F extends $K1, T1, T2, T3, T4, T5, T6, T7> {
 constructor(arg0: $App$$Type<(F), (T1)>, arg1: $App$$Type<(F), (T2)>, arg2: $App$$Type<(F), (T3)>, arg3: $App$$Type<(F), (T4)>, arg4: $App$$Type<(F), (T5)>, arg5: $App$$Type<(F), (T6)>, arg6: $App$$Type<(F), (T7)>)
 
-public "t2"(): $App<(F), (T2)>
 public "and"<T8>(arg0: $App$$Type<(F), (T8)>): $Products$P8<(F), (T1), (T2), (T3), (T4), (T5), (T6), (T7), (T8)>
 public "apply"<R>(arg0: $Applicative$$Type<(F), (never)>, arg1: $Function7$$Type<(T1), (T2), (T3), (T4), (T5), (T6), (T7), (R)>): $App<(F), (R)>
 public "apply"<R>(arg0: $Applicative$$Type<(F), (never)>, arg1: $App$$Type<(F), ($Function7$$Type<(T1), (T2), (T3), (T4), (T5), (T6), (T7), (R)>)>): $App<(F), (R)>
 public "t1"(): $App<(F), (T1)>
+public "t2"(): $App<(F), (T2)>
 public "t3"(): $App<(F), (T3)>
 public "t4"(): $App<(F), (T4)>
 public "t5"(): $App<(F), (T5)>
@@ -476,17 +476,17 @@ export type $Products$P7$$Type<F, T1, T2, T3, T4, T5, T6, T7> = ($Products$P7<(F
 export type $Products$P7$$Original<F, T1, T2, T3, T4, T5, T6, T7> = $Products$P7<(F), (T1), (T2), (T3), (T4), (T5), (T6), (T7)>;}
 declare module "com.mojang.datafixers.Products$P8" {
 import {$App, $App$$Type} from "com.mojang.datafixers.kinds.App"
-import {$K1} from "com.mojang.datafixers.kinds.K1"
 import {$Function8$$Type} from "com.mojang.datafixers.util.Function8"
+import {$K1} from "com.mojang.datafixers.kinds.K1"
 import {$Applicative$$Type} from "com.mojang.datafixers.kinds.Applicative"
 
 export class $Products$P8<F extends $K1, T1, T2, T3, T4, T5, T6, T7, T8> {
 constructor(arg0: $App$$Type<(F), (T1)>, arg1: $App$$Type<(F), (T2)>, arg2: $App$$Type<(F), (T3)>, arg3: $App$$Type<(F), (T4)>, arg4: $App$$Type<(F), (T5)>, arg5: $App$$Type<(F), (T6)>, arg6: $App$$Type<(F), (T7)>, arg7: $App$$Type<(F), (T8)>)
 
-public "t2"(): $App<(F), (T2)>
 public "apply"<R>(arg0: $Applicative$$Type<(F), (never)>, arg1: $Function8$$Type<(T1), (T2), (T3), (T4), (T5), (T6), (T7), (T8), (R)>): $App<(F), (R)>
 public "apply"<R>(arg0: $Applicative$$Type<(F), (never)>, arg1: $App$$Type<(F), ($Function8$$Type<(T1), (T2), (T3), (T4), (T5), (T6), (T7), (T8), (R)>)>): $App<(F), (R)>
 public "t1"(): $App<(F), (T1)>
+public "t2"(): $App<(F), (T2)>
 public "t3"(): $App<(F), (T3)>
 public "t4"(): $App<(F), (T4)>
 public "t5"(): $App<(F), (T5)>
@@ -517,13 +517,13 @@ import {$Applicative$$Type} from "com.mojang.datafixers.kinds.Applicative"
 export class $Products$P5<F extends $K1, T1, T2, T3, T4, T5> {
 constructor(arg0: $App$$Type<(F), (T1)>, arg1: $App$$Type<(F), (T2)>, arg2: $App$$Type<(F), (T3)>, arg3: $App$$Type<(F), (T4)>, arg4: $App$$Type<(F), (T5)>)
 
-public "t2"(): $App<(F), (T2)>
+public "and"<T6, T7, T8>(arg0: $Products$P3$$Type<(F), (T6), (T7), (T8)>): $Products$P8<(F), (T1), (T2), (T3), (T4), (T5), (T6), (T7), (T8)>
 public "and"<T6>(arg0: $App$$Type<(F), (T6)>): $Products$P6<(F), (T1), (T2), (T3), (T4), (T5), (T6)>
 public "and"<T6, T7>(arg0: $Products$P2$$Type<(F), (T6), (T7)>): $Products$P7<(F), (T1), (T2), (T3), (T4), (T5), (T6), (T7)>
-public "and"<T6, T7, T8>(arg0: $Products$P3$$Type<(F), (T6), (T7), (T8)>): $Products$P8<(F), (T1), (T2), (T3), (T4), (T5), (T6), (T7), (T8)>
 public "apply"<R>(arg0: $Applicative$$Type<(F), (never)>, arg1: $Function5$$Type<(T1), (T2), (T3), (T4), (T5), (R)>): $App<(F), (R)>
 public "apply"<R>(arg0: $Applicative$$Type<(F), (never)>, arg1: $App$$Type<(F), ($Function5$$Type<(T1), (T2), (T3), (T4), (T5), (R)>)>): $App<(F), (R)>
 public "t1"(): $App<(F), (T1)>
+public "t2"(): $App<(F), (T2)>
 public "t3"(): $App<(F), (T3)>
 public "t4"(): $App<(F), (T4)>
 public "t5"(): $App<(F), (T5)>
@@ -549,12 +549,12 @@ import {$Applicative$$Type} from "com.mojang.datafixers.kinds.Applicative"
 export class $Products$P6<F extends $K1, T1, T2, T3, T4, T5, T6> {
 constructor(arg0: $App$$Type<(F), (T1)>, arg1: $App$$Type<(F), (T2)>, arg2: $App$$Type<(F), (T3)>, arg3: $App$$Type<(F), (T4)>, arg4: $App$$Type<(F), (T5)>, arg5: $App$$Type<(F), (T6)>)
 
-public "t2"(): $App<(F), (T2)>
 public "and"<T7, T8>(arg0: $Products$P2$$Type<(F), (T7), (T8)>): $Products$P8<(F), (T1), (T2), (T3), (T4), (T5), (T6), (T7), (T8)>
 public "and"<T7>(arg0: $App$$Type<(F), (T7)>): $Products$P7<(F), (T1), (T2), (T3), (T4), (T5), (T6), (T7)>
 public "apply"<R>(arg0: $Applicative$$Type<(F), (never)>, arg1: $Function6$$Type<(T1), (T2), (T3), (T4), (T5), (T6), (R)>): $App<(F), (R)>
 public "apply"<R>(arg0: $Applicative$$Type<(F), (never)>, arg1: $App$$Type<(F), ($Function6$$Type<(T1), (T2), (T3), (T4), (T5), (T6), (R)>)>): $App<(F), (R)>
 public "t1"(): $App<(F), (T1)>
+public "t2"(): $App<(F), (T2)>
 public "t3"(): $App<(F), (T3)>
 public "t4"(): $App<(F), (T4)>
 public "t5"(): $App<(F), (T5)>

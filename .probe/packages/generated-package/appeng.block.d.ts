@@ -29,8 +29,8 @@ import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.
 import {$CreativeModeTab$ItemDisplayParameters$$Type} from "net.minecraft.world.item.CreativeModeTab$ItemDisplayParameters"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockOrientation} from "appeng.api.orientation.BlockOrientation"
+import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$CreativeModeTab$Output$$Type} from "net.minecraft.world.item.CreativeModeTab$Output"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$IOrientableBlock$$Interface} from "appeng.api.orientation.IOrientableBlock"
@@ -58,15 +58,15 @@ static readonly "UPDATE_SUPPRESS_DROPS": integer
 static readonly "INSTANT": float
 static readonly "UPDATE_CLIENTS": integer
 
-public static "defaultProps"(arg0: $MapColor$$Type, arg1: $SoundType$$Type): $BlockBehaviour$Properties
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
 public "getRegistryName"(): $ResourceLocation
 public "addToMainCreativeTab"(arg0: $CreativeModeTab$ItemDisplayParameters$$Type, arg1: $CreativeModeTab$Output$$Type): void
-public static "metalProps"(): $BlockBehaviour$Properties
 public "getOrientationStrategy"(): $IOrientationStrategy
 public static "fixtureProps"(): $BlockBehaviour$Properties
+public static "metalProps"(): $BlockBehaviour$Properties
 public static "stoneProps"(): $BlockBehaviour$Properties
 public static "glassProps"(): $BlockBehaviour$Properties
+public static "defaultProps"(arg0: $MapColor$$Type, arg1: $SoundType$$Type): $BlockBehaviour$Properties
 public "toString"(): StringJS
 public "getOrientation"(arg0: $BlockState$$Type): $BlockOrientation
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
@@ -83,8 +83,8 @@ export type $AEBaseBlock$$Type = ($AEBaseBlock);
  */
 export type $AEBaseBlock$$Original = $AEBaseBlock;}
 declare module "appeng.block.AEBaseEntityBlock" {
-import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$LootParams$Builder$$Type} from "net.minecraft.world.level.storage.loot.LootParams$Builder"
+import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$List} from "java.util.List"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
@@ -96,16 +96,16 @@ import {$Class$$Type} from "java.lang.Class"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$AEBaseBlockEntity} from "appeng.blockentity.AEBaseBlockEntity"
 import {$BlockEntityTicker, $BlockEntityTicker$$Type} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$AEBaseBlock} from "appeng.block.AEBaseBlock"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
+import {$AEBaseBlock} from "appeng.block.AEBaseBlock"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 
@@ -130,9 +130,9 @@ static readonly "UPDATE_CLIENTS": integer
 
 constructor(arg0: $BlockBehaviour$Properties$$Type)
 
+public "getAnalogOutputSignal"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type): integer
 public "getDrops"(arg0: $BlockState$$Type, arg1: $LootParams$Builder$$Type): $List<($ItemStack)>
 public "setPlacedBy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $LivingEntity$$Type, arg4: $ItemStack$$Type): void
-public "getAnalogOutputSignal"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type): integer
 public "getTicker"<T extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
 public "getBlockEntityType"(): $BlockEntityType<(T)>
@@ -140,9 +140,9 @@ public "getBlockEntityBlockState"(arg0: $BlockState$$Type, arg1: $BlockEntity$$T
 public "getBlockEntity"(arg0: $BlockGetter$$Type, arg1: integer, arg2: integer, arg3: integer): T
 public "getBlockEntity"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type): T
 public "onRemove"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: boolean): void
+public "hasAnalogOutputSignal"(arg0: $BlockState$$Type): boolean
 public "setBlockEntity"(arg0: $Class$$Type<(T)>, arg1: $BlockEntityType$$Type<(T)>, arg2: $BlockEntityTicker$$Type<(T)>, arg3: $BlockEntityTicker$$Type<(T)>): void
 public "triggerEvent"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: integer, arg4: integer): boolean
-public "hasAnalogOutputSignal"(arg0: $BlockState$$Type): boolean
 public "getListener"<T extends $BlockEntity>(arg0: $ServerLevel$$Type, arg1: T): $GameEventListener
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "blockEntityType"(): $BlockEntityType<(T)>
@@ -163,8 +163,8 @@ import {$List$$Type} from "java.util.List"
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"

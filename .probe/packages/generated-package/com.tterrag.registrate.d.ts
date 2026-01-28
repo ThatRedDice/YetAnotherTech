@@ -1,7 +1,7 @@
 declare module "com.tterrag.registrate.AbstractRegistrate" {
 import {$RegistryEntry} from "com.tterrag.registrate.util.entry.RegistryEntry"
-import {$Optional} from "java.util.Optional"
 import {$EntityType$EntityFactory$$Type} from "net.minecraft.world.entity.EntityType$EntityFactory"
+import {$Optional} from "java.util.Optional"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$EntityBuilder} from "com.tterrag.registrate.builders.EntityBuilder"
 import {$BlockEntityBuilder} from "com.tterrag.registrate.builders.BlockEntityBuilder"
@@ -22,8 +22,8 @@ import {$CreativeModeTab$Builder$$Type} from "net.minecraft.world.item.CreativeM
 import {$MenuBuilder$ForgeMenuFactory$$Type} from "com.tterrag.registrate.builders.MenuBuilder$ForgeMenuFactory"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$BaseFlowingFluid} from "net.neoforged.neoforge.fluids.BaseFlowingFluid"
-import {$ProviderType$$Type} from "com.tterrag.registrate.providers.ProviderType"
 import {$BaseFlowingFluid$Flowing} from "net.neoforged.neoforge.fluids.BaseFlowingFluid$Flowing"
+import {$ProviderType$$Type} from "com.tterrag.registrate.providers.ProviderType"
 import {$MenuBuilder$MenuFactory$$Type} from "com.tterrag.registrate.builders.MenuBuilder$MenuFactory"
 import {$Screen} from "net.minecraft.client.gui.screens.Screen"
 import {$NoConfigBuilder} from "com.tterrag.registrate.builders.NoConfigBuilder"
@@ -32,11 +32,11 @@ import {$NonNullSupplier$$Type} from "com.tterrag.registrate.util.nullness.NonNu
 import {$IEventBus, $IEventBus$$Type} from "net.neoforged.bus.api.IEventBus"
 import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Codec$$Type} from "com.mojang.serialization.Codec"
-import {$NonNullConsumer$$Type} from "com.tterrag.registrate.util.nullness.NonNullConsumer"
 import {$Function$$Type} from "java.util.function.Function"
+import {$NonNullConsumer$$Type} from "com.tterrag.registrate.util.nullness.NonNullConsumer"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
-import {$MenuBuilder} from "com.tterrag.registrate.builders.MenuBuilder"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$MenuBuilder} from "com.tterrag.registrate.builders.MenuBuilder"
 import {$BaseFlowingFluid$Properties$$Type} from "net.neoforged.neoforge.fluids.BaseFlowingFluid$Properties"
 import {$ResourceKey, $ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
 import {$Entity} from "net.minecraft.world.entity.Entity"
@@ -47,8 +47,8 @@ import {$CreativeModeTabModifier$$Type} from "com.tterrag.registrate.util.Creati
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$BlockEntityBuilder$BlockEntityFactory$$Type} from "com.tterrag.registrate.builders.BlockEntityBuilder$BlockEntityFactory"
 import {$Builder, $Builder$$Type} from "com.tterrag.registrate.builders.Builder"
-import {$FluidBuilder$FluidTypeFactory$$Type} from "com.tterrag.registrate.builders.FluidBuilder$FluidTypeFactory"
 import {$MobCategory$$Type} from "net.minecraft.world.entity.MobCategory"
+import {$FluidBuilder$FluidTypeFactory$$Type} from "com.tterrag.registrate.builders.FluidBuilder$FluidTypeFactory"
 import {$Registry, $Registry$$Type} from "net.minecraft.core.Registry"
 import {$MutableComponent} from "net.minecraft.network.chat.MutableComponent"
 
@@ -89,16 +89,16 @@ public "fluid"<P>(arg0: P, arg1: $ResourceLocation$$Type, arg2: $ResourceLocatio
 public "fluid"<P>(arg0: P, arg1: $NonNullSupplier$$Type<($FluidType$$Type)>): $FluidBuilder<($BaseFlowingFluid$Flowing), (P)>
 public "fluid"<P>(arg0: P, arg1: $FluidBuilder$FluidTypeFactory$$Type): $FluidBuilder<($BaseFlowingFluid$Flowing), (P)>
 public "fluid"(arg0: StringJS, arg1: $FluidBuilder$FluidTypeFactory$$Type): $FluidBuilder<($BaseFlowingFluid$Flowing), (S)>
-public "addRegisterCallback"<R, T>(arg0: StringJS, arg1: $ResourceKey$$Type<($Registry<(R)>)>, arg2: $NonNullConsumer$$Type<(T)>): S
 public "addRegisterCallback"<R>(arg0: $ResourceKey$$Type<($Registry<(R)>)>, arg1: $Runnable$$Type): S
+public "addRegisterCallback"<R, T>(arg0: StringJS, arg1: $ResourceKey$$Type<($Registry<(R)>)>, arg2: $NonNullConsumer$$Type<(T)>): S
 public "getModid"(): StringJS
 public "skipErrors"(arg0: boolean): S
-public "setDataGenerator"<P extends $RegistrateProvider, R>(arg0: $Builder$$Type<(R), (never), (never), (never)>, arg1: $ProviderType$$Type<(P)>, arg2: $NonNullConsumer$$Type<(P)>): S
 public "setDataGenerator"<P extends $RegistrateProvider, R>(arg0: StringJS, arg1: $ResourceKey$$Type<($Registry<(R)>)>, arg2: $ProviderType$$Type<(P)>, arg3: $NonNullConsumer$$Type<(P)>): S
+public "setDataGenerator"<P extends $RegistrateProvider, R>(arg0: $Builder$$Type<(R), (never), (never), (never)>, arg1: $ProviderType$$Type<(P)>, arg2: $NonNullConsumer$$Type<(P)>): S
 public "addDataGenerator"<T extends $RegistrateProvider>(arg0: $ProviderType$$Type<(T)>, arg1: $NonNullConsumer$$Type<(T)>): S
 public "addRawLang"(arg0: StringJS, arg1: StringJS): $MutableComponent
-public "makeDatapackRegistry"<R>(arg0: StringJS, arg1: $Codec$$Type<(R)>): $ResourceKey<($Registry<(R)>)>
 public "makeDatapackRegistry"<R>(arg0: StringJS, arg1: $Codec$$Type<(R)>, arg2: $Codec$$Type<(R)>): $ResourceKey<($Registry<(R)>)>
+public "makeDatapackRegistry"<R>(arg0: StringJS, arg1: $Codec$$Type<(R)>): $ResourceKey<($Registry<(R)>)>
 public "addLang"(arg0: StringJS, arg1: $ResourceLocation$$Type, arg2: StringJS, arg3: StringJS): $MutableComponent
 public "addLang"(arg0: StringJS, arg1: $ResourceLocation$$Type, arg2: StringJS): $MutableComponent
 public "getDataGenInitializer"(): $DataProviderInitializer
@@ -107,16 +107,16 @@ public "modifyCreativeModeTab"(arg0: $ResourceKey$$Type<($CreativeModeTab)>, arg
 public "makeRegistry"<R>(arg0: StringJS, arg1: $Function$$Type<($ResourceKey<($Registry<(R)>)>), ($RegistryBuilder$$Type<(R)>)>): $ResourceKey<($Registry<(R)>)>
 public "getModEventBus"(): $IEventBus
 public "setModEventBus"(arg0: $IEventBus$$Type): void
-public "getAll"<R, T>(arg0: $ResourceKey$$Type<($Registry<(R)>)>): $Collection<($RegistryEntry<(R), (T)>)>
-public "entity"<T extends $Entity, P>(arg0: P, arg1: $EntityType$EntityFactory$$Type<(T)>, arg2: $MobCategory$$Type): $EntityBuilder<(T), (P)>
-public "entity"<T extends $Entity, P>(arg0: P, arg1: StringJS, arg2: $EntityType$EntityFactory$$Type<(T)>, arg3: $MobCategory$$Type): $EntityBuilder<(T), (P)>
-public "entity"<T extends $Entity>(arg0: $EntityType$EntityFactory$$Type<(T)>, arg1: $MobCategory$$Type): $EntityBuilder<(T), (S)>
-public "entity"<T extends $Entity>(arg0: StringJS, arg1: $EntityType$EntityFactory$$Type<(T)>, arg2: $MobCategory$$Type): $EntityBuilder<(T), (S)>
-public "object"(arg0: StringJS): S
+public "item"<T extends $Item, P>(arg0: P, arg1: StringJS, arg2: $NonNullFunction$$Type<($Item$Properties), (T)>): $ItemBuilder<(T), (P)>
 public "item"<T extends $Item>(arg0: StringJS, arg1: $NonNullFunction$$Type<($Item$Properties), (T)>): $ItemBuilder<(T), (S)>
 public "item"<T extends $Item>(arg0: $NonNullFunction$$Type<($Item$Properties), (T)>): $ItemBuilder<(T), (S)>
 public "item"<T extends $Item, P>(arg0: P, arg1: $NonNullFunction$$Type<($Item$Properties), (T)>): $ItemBuilder<(T), (P)>
-public "item"<T extends $Item, P>(arg0: P, arg1: StringJS, arg2: $NonNullFunction$$Type<($Item$Properties), (T)>): $ItemBuilder<(T), (P)>
+public "object"(arg0: StringJS): S
+public "getAll"<R, T>(arg0: $ResourceKey$$Type<($Registry<(R)>)>): $Collection<($RegistryEntry<(R), (T)>)>
+public "entity"<T extends $Entity, P>(arg0: P, arg1: StringJS, arg2: $EntityType$EntityFactory$$Type<(T)>, arg3: $MobCategory$$Type): $EntityBuilder<(T), (P)>
+public "entity"<T extends $Entity>(arg0: $EntityType$EntityFactory$$Type<(T)>, arg1: $MobCategory$$Type): $EntityBuilder<(T), (S)>
+public "entity"<T extends $Entity, P>(arg0: P, arg1: $EntityType$EntityFactory$$Type<(T)>, arg2: $MobCategory$$Type): $EntityBuilder<(T), (P)>
+public "entity"<T extends $Entity>(arg0: StringJS, arg1: $EntityType$EntityFactory$$Type<(T)>, arg2: $MobCategory$$Type): $EntityBuilder<(T), (S)>
 public "get"<R, T>(arg0: StringJS, arg1: $ResourceKey$$Type<($Registry<(R)>)>): $RegistryEntry<(R), (T)>
 public "get"<R, T>(arg0: $ResourceKey$$Type<($Registry<(R)>)>): $RegistryEntry<(R), (T)>
 public "transform"<R, T, P, S2 extends $Builder<(object), (object), (object), (object)>>(arg0: $NonNullFunction$$Type<(S), (S2)>): S2
@@ -128,39 +128,39 @@ public "generic"<R, T, P>(arg0: P, arg1: $ResourceKey$$Type<($Registry<(R)>)>, a
 public "generic"<R, T, P>(arg0: P, arg1: StringJS, arg2: $ResourceKey$$Type<($Registry<(R)>)>, arg3: $NonNullSupplier$$Type<(T)>): $NoConfigBuilder<(R), (T), (P)>
 public "generic"<R, T>(arg0: StringJS, arg1: $ResourceKey$$Type<($Registry<(R)>)>, arg2: $NonNullSupplier$$Type<(T)>): $NoConfigBuilder<(R), (T), (S)>
 public "generic"<R, T>(arg0: $ResourceKey$$Type<($Registry<(R)>)>, arg1: $NonNullSupplier$$Type<(T)>): $NoConfigBuilder<(R), (T), (S)>
-public "block"<T extends $Block>(arg0: $NonNullFunction$$Type<($BlockBehaviour$Properties), (T)>): $BlockBuilder<(T), (S)>
 public "block"<T extends $Block>(arg0: StringJS, arg1: $NonNullFunction$$Type<($BlockBehaviour$Properties), (T)>): $BlockBuilder<(T), (S)>
 public "block"<T extends $Block, P>(arg0: P, arg1: StringJS, arg2: $NonNullFunction$$Type<($BlockBehaviour$Properties), (T)>): $BlockBuilder<(T), (P)>
 public "block"<T extends $Block, P>(arg0: P, arg1: $NonNullFunction$$Type<($BlockBehaviour$Properties), (T)>): $BlockBuilder<(T), (P)>
+public "block"<T extends $Block>(arg0: $NonNullFunction$$Type<($BlockBehaviour$Properties), (T)>): $BlockBuilder<(T), (S)>
 public "getOptional"<R, T>(arg0: StringJS, arg1: $ResourceKey$$Type<($Registry<(R)>)>): $Optional<($RegistryEntry<(R), (T)>)>
-public static "isDevEnvironment"(): boolean
-public "simple"<R, T, P>(arg0: P, arg1: StringJS, arg2: $ResourceKey$$Type<($Registry<(R)>)>, arg3: $NonNullSupplier$$Type<(T)>): $RegistryEntry<(R), (T)>
-public "simple"<R, T, P>(arg0: P, arg1: $ResourceKey$$Type<($Registry<(R)>)>, arg2: $NonNullSupplier$$Type<(T)>): $RegistryEntry<(R), (T)>
-public "simple"<R, T>(arg0: StringJS, arg1: $ResourceKey$$Type<($Registry<(R)>)>, arg2: $NonNullSupplier$$Type<(T)>): $RegistryEntry<(R), (T)>
-public "simple"<R, T>(arg0: $ResourceKey$$Type<($Registry<(R)>)>, arg1: $NonNullSupplier$$Type<(T)>): $RegistryEntry<(R), (T)>
-public "registerEventListeners"(arg0: $IEventBus$$Type): S
-public "defaultCreativeTab"(arg0: $Consumer$$Type<($CreativeModeTab$Builder)>): $NoConfigBuilder<($CreativeModeTab), ($CreativeModeTab), (S)>
-public "defaultCreativeTab"<P>(arg0: P, arg1: StringJS, arg2: $Consumer$$Type<($CreativeModeTab$Builder)>): $NoConfigBuilder<($CreativeModeTab), ($CreativeModeTab), (P)>
-public "defaultCreativeTab"(arg0: $ResourceKey$$Type<($CreativeModeTab)>): S
-public "defaultCreativeTab"(arg0: StringJS, arg1: $Consumer$$Type<($CreativeModeTab$Builder)>): $NoConfigBuilder<($CreativeModeTab), ($CreativeModeTab), (S)>
-public "defaultCreativeTab"<P>(arg0: P, arg1: $Consumer$$Type<($CreativeModeTab$Builder)>): $NoConfigBuilder<($CreativeModeTab), ($CreativeModeTab), (P)>
-public "defaultCreativeTab"<P>(arg0: P): $NoConfigBuilder<($CreativeModeTab), ($CreativeModeTab), (P)>
 public "defaultCreativeTab"(): $NoConfigBuilder<($CreativeModeTab), ($CreativeModeTab), (S)>
+public "defaultCreativeTab"(arg0: $ResourceKey$$Type<($CreativeModeTab)>): S
 public "defaultCreativeTab"(arg0: StringJS): $NoConfigBuilder<($CreativeModeTab), ($CreativeModeTab), (S)>
 public "defaultCreativeTab"<P>(arg0: P, arg1: StringJS): $NoConfigBuilder<($CreativeModeTab), ($CreativeModeTab), (P)>
+public "defaultCreativeTab"(arg0: $Consumer$$Type<($CreativeModeTab$Builder)>): $NoConfigBuilder<($CreativeModeTab), ($CreativeModeTab), (S)>
+public "defaultCreativeTab"(arg0: StringJS, arg1: $Consumer$$Type<($CreativeModeTab$Builder)>): $NoConfigBuilder<($CreativeModeTab), ($CreativeModeTab), (S)>
+public "defaultCreativeTab"<P>(arg0: P): $NoConfigBuilder<($CreativeModeTab), ($CreativeModeTab), (P)>
+public "defaultCreativeTab"<P>(arg0: P, arg1: StringJS, arg2: $Consumer$$Type<($CreativeModeTab$Builder)>): $NoConfigBuilder<($CreativeModeTab), ($CreativeModeTab), (P)>
+public "defaultCreativeTab"<P>(arg0: P, arg1: $Consumer$$Type<($CreativeModeTab$Builder)>): $NoConfigBuilder<($CreativeModeTab), ($CreativeModeTab), (P)>
+public static "isDevEnvironment"(): boolean
+public "registerEventListeners"(arg0: $IEventBus$$Type): S
+public "simple"<R, T, P>(arg0: P, arg1: StringJS, arg2: $ResourceKey$$Type<($Registry<(R)>)>, arg3: $NonNullSupplier$$Type<(T)>): $RegistryEntry<(R), (T)>
+public "simple"<R, T>(arg0: StringJS, arg1: $ResourceKey$$Type<($Registry<(R)>)>, arg2: $NonNullSupplier$$Type<(T)>): $RegistryEntry<(R), (T)>
+public "simple"<R, T, P>(arg0: P, arg1: $ResourceKey$$Type<($Registry<(R)>)>, arg2: $NonNullSupplier$$Type<(T)>): $RegistryEntry<(R), (T)>
+public "simple"<R, T>(arg0: $ResourceKey$$Type<($Registry<(R)>)>, arg1: $NonNullSupplier$$Type<(T)>): $RegistryEntry<(R), (T)>
 public "getDataProvider"<P extends $RegistrateProvider>(arg0: $ProviderType$$Type<(P)>): $Optional<(P)>
-public "menu"<T extends $AbstractContainerMenu, SC extends $Screen, P>(arg0: P, arg1: $MenuBuilder$ForgeMenuFactory$$Type<(T)>, arg2: $NonNullSupplier$$Type<($MenuBuilder$ScreenFactory$$Type<(T), (SC)>)>): $MenuBuilder<(T), (SC), (P)>
-public "menu"<T extends $AbstractContainerMenu, SC extends $Screen>(arg0: StringJS, arg1: $MenuBuilder$MenuFactory$$Type<(T)>, arg2: $NonNullSupplier$$Type<($MenuBuilder$ScreenFactory$$Type<(T), (SC)>)>): $MenuBuilder<(T), (SC), (S)>
+public "menu"<T extends $AbstractContainerMenu, SC extends $Screen>(arg0: StringJS, arg1: $MenuBuilder$ForgeMenuFactory$$Type<(T)>, arg2: $NonNullSupplier$$Type<($MenuBuilder$ScreenFactory$$Type<(T), (SC)>)>): $MenuBuilder<(T), (SC), (S)>
 public "menu"<T extends $AbstractContainerMenu, SC extends $Screen, P>(arg0: P, arg1: StringJS, arg2: $MenuBuilder$ForgeMenuFactory$$Type<(T)>, arg3: $NonNullSupplier$$Type<($MenuBuilder$ScreenFactory$$Type<(T), (SC)>)>): $MenuBuilder<(T), (SC), (P)>
+public "menu"<T extends $AbstractContainerMenu, SC extends $Screen, P>(arg0: P, arg1: $MenuBuilder$ForgeMenuFactory$$Type<(T)>, arg2: $NonNullSupplier$$Type<($MenuBuilder$ScreenFactory$$Type<(T), (SC)>)>): $MenuBuilder<(T), (SC), (P)>
 public "menu"<T extends $AbstractContainerMenu, SC extends $Screen, P>(arg0: P, arg1: StringJS, arg2: $MenuBuilder$MenuFactory$$Type<(T)>, arg3: $NonNullSupplier$$Type<($MenuBuilder$ScreenFactory$$Type<(T), (SC)>)>): $MenuBuilder<(T), (SC), (P)>
 public "menu"<T extends $AbstractContainerMenu, SC extends $Screen>(arg0: $MenuBuilder$ForgeMenuFactory$$Type<(T)>, arg1: $NonNullSupplier$$Type<($MenuBuilder$ScreenFactory$$Type<(T), (SC)>)>): $MenuBuilder<(T), (SC), (S)>
-public "menu"<T extends $AbstractContainerMenu, SC extends $Screen>(arg0: StringJS, arg1: $MenuBuilder$ForgeMenuFactory$$Type<(T)>, arg2: $NonNullSupplier$$Type<($MenuBuilder$ScreenFactory$$Type<(T), (SC)>)>): $MenuBuilder<(T), (SC), (S)>
+public "menu"<T extends $AbstractContainerMenu, SC extends $Screen>(arg0: StringJS, arg1: $MenuBuilder$MenuFactory$$Type<(T)>, arg2: $NonNullSupplier$$Type<($MenuBuilder$ScreenFactory$$Type<(T), (SC)>)>): $MenuBuilder<(T), (SC), (S)>
 public "menu"<T extends $AbstractContainerMenu, SC extends $Screen, P>(arg0: P, arg1: $MenuBuilder$MenuFactory$$Type<(T)>, arg2: $NonNullSupplier$$Type<($MenuBuilder$ScreenFactory$$Type<(T), (SC)>)>): $MenuBuilder<(T), (SC), (P)>
 public "menu"<T extends $AbstractContainerMenu, SC extends $Screen>(arg0: $MenuBuilder$MenuFactory$$Type<(T)>, arg1: $NonNullSupplier$$Type<($MenuBuilder$ScreenFactory$$Type<(T), (SC)>)>): $MenuBuilder<(T), (SC), (S)>
 public "blockEntity"<T extends $BlockEntity>(arg0: StringJS, arg1: $BlockEntityBuilder$BlockEntityFactory$$Type<(T)>): $BlockEntityBuilder<(T), (S)>
+public "blockEntity"<T extends $BlockEntity, P>(arg0: P, arg1: $BlockEntityBuilder$BlockEntityFactory$$Type<(T)>): $BlockEntityBuilder<(T), (P)>
 public "blockEntity"<T extends $BlockEntity>(arg0: $BlockEntityBuilder$BlockEntityFactory$$Type<(T)>): $BlockEntityBuilder<(T), (S)>
 public "blockEntity"<T extends $BlockEntity, P>(arg0: P, arg1: StringJS, arg2: $BlockEntityBuilder$BlockEntityFactory$$Type<(T)>): $BlockEntityBuilder<(T), (P)>
-public "blockEntity"<T extends $BlockEntity, P>(arg0: P, arg1: $BlockEntityBuilder$BlockEntityFactory$$Type<(T)>): $BlockEntityBuilder<(T), (P)>
 get "modid"(): StringJS
 get "dataGenInitializer"(): $DataProviderInitializer
 get "modEventBus"(): $IEventBus

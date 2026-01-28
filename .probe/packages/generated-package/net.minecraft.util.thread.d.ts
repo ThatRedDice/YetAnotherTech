@@ -5,10 +5,10 @@ get "empty"(): boolean
 }
 
 export class $StrictQueue<T, F> implements $StrictQueue$$Interface {
- "push"(arg0: T): boolean
- "pop"(): F
  "size"(): integer
  "isEmpty"(): boolean
+ "push"(arg0: T): boolean
+ "pop"(): F
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -45,8 +45,8 @@ declare module "net.minecraft.util.thread.ProcessorHandle" {
 import {$Exception$$Type} from "java.lang.Exception"
 import {$CompletableFuture} from "java.util.concurrent.CompletableFuture"
 import {$AutoCloseable$$Interface} from "java.lang.AutoCloseable"
-import {$Either$$Type} from "com.mojang.datafixers.util.Either"
 import {$Function$$Type} from "java.util.function.Function"
+import {$Either$$Type} from "com.mojang.datafixers.util.Either"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 
 export interface $ProcessorHandle$$Interface<Msg> extends $AutoCloseable$$Interface {
@@ -78,16 +78,16 @@ import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$ProfilerMeasured$$Interface} from "net.minecraft.util.profiling.metrics.ProfilerMeasured"
 import {$Exception$$Type} from "java.lang.Exception"
 import {$CompletableFuture} from "java.util.concurrent.CompletableFuture"
-import {$Either$$Type} from "com.mojang.datafixers.util.Either"
 import {$Function$$Type} from "java.util.function.Function"
-import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$Executor$$Interface} from "java.util.concurrent.Executor"
+import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Either$$Type} from "com.mojang.datafixers.util.Either"
 import {$MetricSampler} from "net.minecraft.util.profiling.metrics.MetricSampler"
 
 export class $BlockableEventLoop<R extends $Runnable> implements $ProfilerMeasured$$Interface, $ProcessorHandle$$Interface<(R)>, $Executor$$Interface {
+public "pollTask"(): boolean
 public "submit"<V>(arg0: $Supplier$$Type<(V)>): $CompletableFuture<(V)>
 public "submit"(arg0: $Runnable$$Type): $CompletableFuture<(void)>
-public "pollTask"(): boolean
 public "name"(): StringJS
 public "execute"(arg0: $Runnable$$Type): void
 public "managedBlock"(arg0: $BooleanSupplier$$Type): void
@@ -125,9 +125,9 @@ import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$ProfilerMeasured$$Interface} from "net.minecraft.util.profiling.metrics.ProfilerMeasured"
 import {$Exception$$Type} from "java.lang.Exception"
 import {$CompletableFuture} from "java.util.concurrent.CompletableFuture"
-import {$Either$$Type} from "com.mojang.datafixers.util.Either"
 import {$Function$$Type} from "java.util.function.Function"
 import {$Executor$$Type} from "java.util.concurrent.Executor"
+import {$Either$$Type} from "com.mojang.datafixers.util.Either"
 import {$StrictQueue$$Type} from "net.minecraft.util.thread.StrictQueue"
 import {$MetricSampler} from "net.minecraft.util.profiling.metrics.MetricSampler"
 
@@ -141,9 +141,9 @@ public "size"(): integer
 public "toString"(): StringJS
 public "close"(): void
 public static "create"(arg0: $Executor$$Type, arg1: StringJS): $ProcessorMailbox<($Runnable)>
+public "hasWork"(): boolean
 public "tell"(arg0: T): void
 public "profiledMetrics"(): $List<($MetricSampler)>
-public "hasWork"(): boolean
 public static "of"<Msg>(arg0: StringJS, arg1: $Consumer$$Type<(T)>): $ProcessorHandle<(T)>
 public "ask"<Source>(arg0: $Function$$Type<($ProcessorHandle<(Source)>), (T)>): $CompletableFuture<(Source)>
 public "askEither"<Source>(arg0: $Function$$Type<($ProcessorHandle<($Either<(Source), ($Exception)>)>), (T)>): $CompletableFuture<(Source)>

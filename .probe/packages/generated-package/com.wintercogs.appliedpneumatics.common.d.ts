@@ -1,29 +1,25 @@
 declare module "com.wintercogs.appliedpneumatics.common.items.PortableAirStorageCell" {
-import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
-import {$RegisterCapabilitiesEvent$$Type} from "net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent"
+import {$IAirStorageCell$$Interface} from "com.wintercogs.appliedpneumatics.common.items.IAirStorageCell"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$Map} from "java.util.Map"
+import {$RegisterCapabilitiesEvent$$Type} from "net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent"
 import {$Optional} from "java.util.Optional"
 import {$List$$Type} from "java.util.List"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$FuzzyMode, $FuzzyMode$$Type} from "appeng.api.config.FuzzyMode"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$ItemMenuHostLocator$$Type} from "appeng.menu.locator.ItemMenuHostLocator"
-import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
+import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipComponent} from "net.minecraft.world.inventory.tooltip.TooltipComponent"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
+import {$MenuType$$Type} from "net.minecraft.world.inventory.MenuType"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$IUpgradeInventory} from "appeng.api.upgrades.IUpgradeInventory"
-import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$IAirStorageCell$$Interface} from "com.wintercogs.appliedpneumatics.common.items.IAirStorageCell"
-import {$Map} from "java.util.Map"
-import {$Block} from "net.minecraft.world.level.block.Block"
-import {$FuzzyMode, $FuzzyMode$$Type} from "appeng.api.config.FuzzyMode"
-import {$ItemMenuHost} from "appeng.api.implementations.menuobjects.ItemMenuHost"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
-import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
-import {$MenuType$$Type} from "net.minecraft.world.inventory.MenuType"
 import {$CellState} from "appeng.api.storage.cells.CellState"
+import {$IUpgradeInventory} from "appeng.api.upgrades.IUpgradeInventory"
 import {$AbstractPortableCell} from "appeng.items.tools.powered.AbstractPortableCell"
+import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 
 export class $PortableAirStorageCell extends $AbstractPortableCell implements $IAirStorageCell$$Interface {
 static readonly "BASE_ATTACK_DAMAGE_ID": $ResourceLocation
@@ -35,31 +31,30 @@ static readonly "BY_BLOCK": $Map<($Block), ($Item)>
 
 constructor(arg0: $MenuType$$Type<(never)>, arg1: $Item$Properties$$Type, arg2: integer, arg3: double, arg4: integer)
 
-public "getRecipeId"(): $ResourceLocation
-public "getUpgrades"(arg0: $ItemStack$$Type): $IUpgradeInventory
-public "getTotalBytes"(): integer
-public static "onRegisterCaps"(arg0: $RegisterCapabilitiesEvent$$Type): void
 public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
 public "inventoryTick"(arg0: $ItemStack$$Type, arg1: $Level$$Type, arg2: $Entity$$Type, arg3: integer, arg4: boolean): void
 public "getChargeRate"(arg0: $ItemStack$$Type): double
 public "getIdleDrain"(): double
 public "getFuzzyMode"(arg0: $ItemStack$$Type): $FuzzyMode
 public "setFuzzyMode"(arg0: $ItemStack$$Type, arg1: $FuzzyMode$$Type): void
+public "getRecipeId"(): $ResourceLocation
+public "getUpgrades"(arg0: $ItemStack$$Type): $IUpgradeInventory
+public "getTotalBytes"(): integer
+public static "onRegisterCaps"(arg0: $RegisterCapabilitiesEvent$$Type): void
 public "getTooltipImage"(arg0: $ItemStack$$Type): $Optional<($TooltipComponent)>
 public static "getColor"(arg0: $ItemStack$$Type, arg1: integer): integer
+public static "remainingAmount"(arg0: integer, arg1: long): long
+public static "freeBytes"(arg0: integer, arg1: long): long
 public static "getStoredAir"(arg0: $ItemStack$$Type): long
 public static "calcState"(arg0: integer, arg1: long): $CellState
 public static "usedBytes"(arg0: long): long
 public static "amountPerByte"(): long
 public static "unusedInCurrentByte"(arg0: long): long
-public static "freeBytes"(arg0: integer, arg1: long): long
-public static "remainingAmount"(arg0: integer, arg1: long): long
-public "getMenuHost"(arg0: $Player$$Type, arg1: $ItemMenuHostLocator$$Type, arg2: $BlockHitResult$$Type): $ItemMenuHost
 public "asItem"(): $Item
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
+get "idleDrain"(): double
 get "recipeId"(): $ResourceLocation
 get "totalBytes"(): integer
-get "idleDrain"(): double
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -84,11 +79,11 @@ import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$IPositionProvider$$Interface} from "me.desht.pneumaticcraft.api.item.IPositionProvider"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$GlobalPos} from "net.minecraft.core.GlobalPos"
-import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
-import {$IConfigManager} from "appeng.api.util.IConfigManager"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$IConfigManager} from "appeng.api.util.IConfigManager"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$WirelessTerminalItem} from "appeng.items.tools.powered.WirelessTerminalItem"
@@ -97,8 +92,8 @@ import {$IGridLinkableHandler} from "appeng.api.features.IGridLinkableHandler"
 import {$Map} from "java.util.Map"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$DoubleSupplier$$Type} from "java.util.function.DoubleSupplier"
 import {$MenuType} from "net.minecraft.world.inventory.MenuType"
@@ -115,16 +110,16 @@ static readonly "BY_BLOCK": $Map<($Block), ($Item)>
 
 constructor(arg0: $DoubleSupplier$$Type, arg1: $Item$Properties$$Type)
 
-public "getStoredPositions"(arg0: $UUID$$Type, arg1: $ItemStack$$Type): $List<($BlockPos)>
-public "getRenderColor"(arg0: integer): integer
-public static "onRegisterCaps"(arg0: $RegisterCapabilitiesEvent$$Type): void
-public static "getLinkedAmadronPos"(arg0: $ItemStack$$Type): $GlobalPos
-public static "getLinkWithAmadronProcess"(arg0: $ItemStack$$Type, arg1: $Level$$Type): $MEAmadronProcessStationBlockEntity
 public "getMenuType"(): $MenuType<(never)>
 public "getConfigManager"(arg0: $Supplier$$Type<($ItemStack$$Type)>): $IConfigManager
 public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
 public "useOn"(arg0: $UseOnContext$$Type): $InteractionResult
 public "getMenuHost"(arg0: $Player$$Type, arg1: $ItemMenuHostLocator$$Type, arg2: $BlockHitResult$$Type): $WirelessTerminalMenuHost
+public "getStoredPositions"(arg0: $UUID$$Type, arg1: $ItemStack$$Type): $List<($BlockPos)>
+public "getRenderColor"(arg0: integer): integer
+public static "onRegisterCaps"(arg0: $RegisterCapabilitiesEvent$$Type): void
+public static "getLinkedAmadronPos"(arg0: $ItemStack$$Type): $GlobalPos
+public static "getLinkWithAmadronProcess"(arg0: $ItemStack$$Type, arg1: $Level$$Type): $MEAmadronProcessStationBlockEntity
 public "use"(arg0: $Level$$Type, arg1: $Player$$Type, arg2: $InteractionHand$$Type): $InteractionResultHolder<($ItemStack)>
 public "syncVariables"(arg0: $ServerPlayer$$Type, arg1: $ItemStack$$Type): void
 public "getRawStoredPositions"(arg0: $Player$$Type, arg1: $ItemStack$$Type): $List<($BlockPos)>
@@ -163,8 +158,8 @@ import {$Map} from "java.util.Map"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$FuzzyMode, $FuzzyMode$$Type} from "appeng.api.config.FuzzyMode"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$CellState} from "appeng.api.storage.cells.CellState"
 
@@ -178,28 +173,28 @@ static readonly "BY_BLOCK": $Map<($Block), ($Item)>
 
 constructor(arg0: $Item$Properties$$Type, arg1: double, arg2: integer)
 
-public "getUpgrades"(arg0: $ItemStack$$Type): $IUpgradeInventory
-public "getTotalBytes"(): integer
 public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
 public "onItemUseFirst"(arg0: $ItemStack$$Type, arg1: $UseOnContext$$Type): $InteractionResult
 public "getIdleDrain"(): double
 public "getFuzzyMode"(arg0: $ItemStack$$Type): $FuzzyMode
 public "setFuzzyMode"(arg0: $ItemStack$$Type, arg1: $FuzzyMode$$Type): void
+public "getUpgrades"(arg0: $ItemStack$$Type): $IUpgradeInventory
+public "getTotalBytes"(): integer
 public "use"(arg0: $Level$$Type, arg1: $Player$$Type, arg2: $InteractionHand$$Type): $InteractionResultHolder<($ItemStack)>
 public "getTooltipImage"(arg0: $ItemStack$$Type): $Optional<($TooltipComponent)>
 public static "getColor"(arg0: $ItemStack$$Type, arg1: integer): integer
 public "getConfigInventory"(arg0: $ItemStack$$Type): $ConfigInventory
 public "isEditable"(arg0: $ItemStack$$Type): boolean
+public static "remainingAmount"(arg0: integer, arg1: long): long
+public static "freeBytes"(arg0: integer, arg1: long): long
 public static "getStoredAir"(arg0: $ItemStack$$Type): long
 public static "calcState"(arg0: integer, arg1: long): $CellState
 public static "usedBytes"(arg0: long): long
 public static "amountPerByte"(): long
 public static "unusedInCurrentByte"(arg0: long): long
-public static "freeBytes"(arg0: integer, arg1: long): long
-public static "remainingAmount"(arg0: integer, arg1: long): long
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
-get "totalBytes"(): integer
 get "idleDrain"(): double
+get "totalBytes"(): integer
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -214,10 +209,10 @@ declare module "com.wintercogs.appliedpneumatics.common.blocks.METemperatureInte
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$AEBaseEntityBlock} from "appeng.block.AEBaseEntityBlock"
-import {$Block} from "net.minecraft.world.level.block.Block"
+import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$METemperatureInterfaceBlockEntity} from "com.wintercogs.appliedpneumatics.common.blocks.entitis.METemperatureInterfaceBlockEntity"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -273,16 +268,16 @@ static readonly "INSTANCE": $AirKeyType
 static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($AEKeyType)>
 static readonly "NAME": $Component
 
-public "readFromPacket"(arg0: $RegistryFriendlyByteBuf$$Type): $AEKey
-public "getAmountPerOperation"(): integer
 public "getAmountPerUnit"(): integer
 public "getUnitSymbol"(): StringJS
 public "getAmountPerByte"(): integer
+public "getAmountPerOperation"(): integer
+public "readFromPacket"(arg0: $RegistryFriendlyByteBuf$$Type): $AEKey
 public "codec"(): $MapCodec<($AEKey)>
-get "amountPerOperation"(): integer
 get "amountPerUnit"(): integer
 get "unitSymbol"(): StringJS
 get "amountPerByte"(): integer
+get "amountPerOperation"(): integer
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -295,11 +290,11 @@ export type $AirKeyType$$Type = ($AirKeyType);
 export type $AirKeyType$$Original = $AirKeyType;}
 declare module "com.wintercogs.appliedpneumatics.common.blocks.MEPressureInterfaceBlock" {
 import {$ThreadLocal} from "java.lang.ThreadLocal"
-import {$MEPressureInterfaceBlockEntity} from "com.wintercogs.appliedpneumatics.common.blocks.entitis.MEPressureInterfaceBlockEntity"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
+import {$MEPressureInterfaceBlockEntity} from "com.wintercogs.appliedpneumatics.common.blocks.entitis.MEPressureInterfaceBlockEntity"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$AEBaseEntityBlock} from "appeng.block.AEBaseEntityBlock"
+import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
@@ -342,8 +337,8 @@ declare module "com.wintercogs.appliedpneumatics.common.items.AmadronProcessUpgr
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 
@@ -372,25 +367,25 @@ export type $AmadronProcessUpgradeItem$$Original = $AmadronProcessUpgradeItem;}
 declare module "com.wintercogs.appliedpneumatics.common.items.IAirStorageCell" {
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$IUpgradeInventory} from "appeng.api.upgrades.IUpgradeInventory"
 import {$CellState} from "appeng.api.storage.cells.CellState"
+import {$IUpgradeInventory} from "appeng.api.upgrades.IUpgradeInventory"
 import {$IUpgradeableItem$$Interface} from "appeng.api.upgrades.IUpgradeableItem"
 
 export interface $IAirStorageCell$$Interface extends $IUpgradeableItem$$Interface {
-get "totalBytes"(): integer
 get "idleDrain"(): double
+get "totalBytes"(): integer
 }
 
 export class $IAirStorageCell implements $IAirStorageCell$$Interface {
+ "getIdleDrain"(): double
+static "remainingAmount"(arg0: integer, arg1: long): long
+static "freeBytes"(arg0: integer, arg1: long): long
  "getTotalBytes"(): integer
 static "getStoredAir"(arg0: $ItemStack$$Type): long
 static "calcState"(arg0: integer, arg1: long): $CellState
 static "usedBytes"(arg0: long): long
 static "amountPerByte"(): long
 static "unusedInCurrentByte"(arg0: long): long
-static "freeBytes"(arg0: integer, arg1: long): long
- "getIdleDrain"(): double
-static "remainingAmount"(arg0: integer, arg1: long): long
  "getUpgrades"(arg0: $ItemStack$$Type): $IUpgradeInventory
  "asItem"(): $Item
 }
@@ -416,14 +411,14 @@ import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$KeyCounter$$Type} from "appeng.api.stacks.KeyCounter"
 import {$ICraftingProvider$$Interface} from "appeng.api.networking.crafting.ICraftingProvider"
 import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
-import {$GlobalPos$$Type} from "net.minecraft.core.GlobalPos"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
+import {$GlobalPos$$Type} from "net.minecraft.core.GlobalPos"
 import {$PatternContainerGroup} from "appeng.api.implementations.blockentities.PatternContainerGroup"
-import {$Set} from "java.util.Set"
 import {$IUpgradeInventory} from "appeng.api.upgrades.IUpgradeInventory"
-import {$ISubMenu$$Type} from "appeng.menu.ISubMenu"
-import {$AEKey} from "appeng.api.stacks.AEKey"
+import {$Set} from "java.util.Set"
 import {$AmadronOffer$$Type} from "me.desht.pneumaticcraft.common.recipes.amadron.AmadronOffer"
+import {$AEKey} from "appeng.api.stacks.AEKey"
+import {$ISubMenu$$Type} from "appeng.menu.ISubMenu"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$ServerTickingBlockEntity$$Interface} from "appeng.blockentity.ServerTickingBlockEntity"
 import {$GenericStack$$Type} from "appeng.api.stacks.GenericStack"
@@ -434,8 +429,8 @@ import {$AmadroneEntity} from "me.desht.pneumaticcraft.common.entity.drone.Amadr
 import {$AENetworkedBlockEntity} from "appeng.blockentity.grid.AENetworkedBlockEntity"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$PatternContainer$$Interface} from "appeng.helpers.patternprovider.PatternContainer"
-import {$IPriorityHost$$Interface} from "appeng.helpers.IPriorityHost"
 import {$IManagedGridNode$$Type} from "appeng.api.networking.IManagedGridNode"
+import {$IPriorityHost$$Interface} from "appeng.helpers.IPriorityHost"
 import {$IPatternDetails, $IPatternDetails$$Type} from "appeng.api.crafting.IPatternDetails"
 import {$ItemLike$$Type} from "net.minecraft.world.level.ItemLike"
 import {$IGrid} from "appeng.api.networking.IGrid"
@@ -446,6 +441,20 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 
 constructor(arg0: $BlockEntityType$$Type<($MEAmadronProcessStationBlockEntity$$Type)>, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: integer)
 
+public "serverTick"(): void
+public "clearContent"(): void
+public "saveAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
+public "addAdditionalDrops"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $List$$Type<($ItemStack$$Type)>): void
+public "getPatternPriority"(): integer
+public "pushPattern"(arg0: $IPatternDetails$$Type, arg1: ($KeyCounter$$Type)[]): boolean
+public "getAvailablePatterns"(): $List<($IPatternDetails)>
+public "isBusy"(): boolean
+public "getGrid"(): $IGrid
+public "returnToMainMenu"(arg0: $Player$$Type, arg1: $ISubMenu$$Type): void
+public "getMainMenuIcon"(): $ItemStack
+public "getTerminalPatternInventory"(): $InternalInventory
+public "getTerminalGroup"(): $PatternContainerGroup
+public "loadTag"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "getUpgrades"(): $IUpgradeInventory
 public static "retrieveOrder"(arg0: StringJS, arg1: $AmadronOffer$$Type, arg2: integer, arg3: $GlobalPos$$Type, arg4: $GlobalPos$$Type): $AmadroneEntity
 public static "validateStockLevel"(arg0: StringJS, arg1: $AmadronOffer$$Type, arg2: integer, arg3: boolean): boolean
@@ -454,45 +463,31 @@ public "getInputInv"(): $GenericStackInv
 public "getOutputInv"(): $GenericStackInv
 public "cancelAllJobs"(arg0: $Component$$Type): void
 public static "onRegisterCaps"(arg0: $RegisterCapabilitiesEvent$$Type): void
-public "getNetworkInventory"(): $MEStorage
 public "addJob"(arg0: $ResourceLocation$$Type, arg1: $GenericStack$$Type): void
 public "addJob"(arg0: $ResourceLocation$$Type, arg1: $GenericStack$$Type, arg2: $UUID$$Type): void
-public "serverTick"(): void
-public "clearContent"(): void
-public "saveAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
-public "addAdditionalDrops"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $List$$Type<($ItemStack$$Type)>): void
-public "getGrid"(): $IGrid
-public "isBusy"(): boolean
-public "getAvailablePatterns"(): $List<($IPatternDetails)>
-public "getPatternPriority"(): integer
-public "pushPattern"(arg0: $IPatternDetails$$Type, arg1: ($KeyCounter$$Type)[]): boolean
-public "returnToMainMenu"(arg0: $Player$$Type, arg1: $ISubMenu$$Type): void
-public "getMainMenuIcon"(): $ItemStack
-public "getTerminalPatternInventory"(): $InternalInventory
-public "getTerminalGroup"(): $PatternContainerGroup
-public "loadTag"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
+public "getNetworkInventory"(): $MEStorage
 public "setPriority"(arg0: integer): void
 public "getPriority"(): integer
 public "getInstalledUpgrades"(arg0: $ItemLike$$Type): integer
 public "isUpgradedWith"(arg0: $ItemLike$$Type): boolean
-public static "requestUpdate"(arg0: $IManagedGridNode$$Type): void
 public "getEmitableItems"(): $Set<($AEKey)>
+public static "requestUpdate"(arg0: $IManagedGridNode$$Type): void
 public "isVisibleInTerminal"(): boolean
 public "getTerminalSortOrder"(): long
 public "saveChanges"(): void
 public static "tryClear"(arg0: any): void
+get "patternPriority"(): integer
+get "availablePatterns"(): $List<($IPatternDetails)>
+get "busy"(): boolean
+get "grid"(): $IGrid
+get "mainMenuIcon"(): $ItemStack
+get "terminalPatternInventory"(): $InternalInventory
+get "terminalGroup"(): $PatternContainerGroup
 get "upgrades"(): $IUpgradeInventory
 get "jobAmount"(): integer
 get "inputInv"(): $GenericStackInv
 get "outputInv"(): $GenericStackInv
 get "networkInventory"(): $MEStorage
-get "grid"(): $IGrid
-get "busy"(): boolean
-get "availablePatterns"(): $List<($IPatternDetails)>
-get "patternPriority"(): integer
-get "mainMenuIcon"(): $ItemStack
-get "terminalPatternInventory"(): $InternalInventory
-get "terminalGroup"(): $PatternContainerGroup
 set "priority"(value: integer)
 get "priority"(): integer
 get "emitableItems"(): $Set<($AEKey)>
@@ -510,8 +505,8 @@ export type $MEAmadronProcessStationBlockEntity$$Type = ($MEAmadronProcessStatio
 export type $MEAmadronProcessStationBlockEntity$$Original = $MEAmadronProcessStationBlockEntity;}
 declare module "com.wintercogs.appliedpneumatics.common.blocks.entitis.METemperatureInterfaceBlockEntity" {
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
-import {$RegisterCapabilitiesEvent$$Type} from "net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$RegisterCapabilitiesEvent$$Type} from "net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent"
 import {$MEStorage} from "appeng.api.storage.MEStorage"
 import {$IUpgradeableObject$$Interface} from "appeng.api.upgrades.IUpgradeableObject"
 import {$List$$Type} from "java.util.List"
@@ -530,17 +525,17 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 
 constructor(arg0: $BlockPos$$Type, arg1: $BlockState$$Type)
 
+public "serverTick"(): void
+public "clearContent"(): void
+public "saveAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
+public "addAdditionalDrops"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $List$$Type<($ItemStack$$Type)>): void
+public "loadTag"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "getUpgrades"(): $IUpgradeInventory
 public static "onRegisterCaps"(arg0: $RegisterCapabilitiesEvent$$Type): void
 public "getNetworkInventory"(): $MEStorage
 public "getHeatHandler"(): $IHeatExchangerLogic
 public "getExpectedTemperature"(): double
 public "setExpectedTemperature"(arg0: double): void
-public "serverTick"(): void
-public "clearContent"(): void
-public "saveAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
-public "addAdditionalDrops"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $List$$Type<($ItemStack$$Type)>): void
-public "loadTag"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "onLoad"(): void
 public "getInstalledUpgrades"(arg0: $ItemLike$$Type): integer
 public "isUpgradedWith"(arg0: $ItemLike$$Type): boolean
@@ -563,14 +558,14 @@ export type $METemperatureInterfaceBlockEntity$$Type = ($METemperatureInterfaceB
 export type $METemperatureInterfaceBlockEntity$$Original = $METemperatureInterfaceBlockEntity;}
 declare module "com.wintercogs.appliedpneumatics.common.blocks.entitis.MEPressureInterfaceBlockEntity" {
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
-import {$RegisterCapabilitiesEvent$$Type} from "net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$RegisterCapabilitiesEvent$$Type} from "net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent"
 import {$MEStorage} from "appeng.api.storage.MEStorage"
 import {$IUpgradeableObject$$Interface} from "appeng.api.upgrades.IUpgradeableObject"
 import {$List, $List$$Type} from "java.util.List"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
-import {$IAirListener$$Interface} from "me.desht.pneumaticcraft.api.tileentity.IAirListener"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$IAirListener$$Interface} from "me.desht.pneumaticcraft.api.tileentity.IAirListener"
 import {$AENetworkedBlockEntity} from "appeng.blockentity.grid.AENetworkedBlockEntity"
 import {$IAirHandlerMachine, $IAirHandlerMachine$$Type} from "me.desht.pneumaticcraft.api.tileentity.IAirHandlerMachine"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
@@ -586,6 +581,11 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 
 constructor(arg0: $BlockPos$$Type, arg1: $BlockState$$Type)
 
+public "serverTick"(): void
+public "clearContent"(): void
+public "saveAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
+public "addAdditionalDrops"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $List$$Type<($ItemStack$$Type)>): void
+public "loadTag"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "getAirHandler"(): $IAirHandlerMachine
 public "getUpgrades"(): $IUpgradeInventory
 public static "onRegisterCaps"(arg0: $RegisterCapabilitiesEvent$$Type): void
@@ -593,11 +593,6 @@ public "setExpectedPressure"(arg0: float): void
 public "getNetworkInventory"(): $MEStorage
 public "getMaxVolume"(): integer
 public "getExpectedPressure"(): float
-public "serverTick"(): void
-public "clearContent"(): void
-public "saveAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
-public "addAdditionalDrops"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $List$$Type<($ItemStack$$Type)>): void
-public "loadTag"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "onLoad"(): void
 public "getInventory"(): $AppEngInternalInventory
 public "getVolume"(): integer
@@ -627,12 +622,12 @@ export type $MEPressureInterfaceBlockEntity$$Type = ($MEPressureInterfaceBlockEn
  */
 export type $MEPressureInterfaceBlockEntity$$Original = $MEPressureInterfaceBlockEntity;}
 declare module "com.wintercogs.appliedpneumatics.common.blocks.MEAmadronProcessStation" {
-import {$MEAmadronProcessStationBlockEntity} from "com.wintercogs.appliedpneumatics.common.blocks.entitis.MEAmadronProcessStationBlockEntity"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
+import {$MEAmadronProcessStationBlockEntity} from "com.wintercogs.appliedpneumatics.common.blocks.entitis.MEAmadronProcessStationBlockEntity"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$AEBaseEntityBlock} from "appeng.block.AEBaseEntityBlock"
+import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"

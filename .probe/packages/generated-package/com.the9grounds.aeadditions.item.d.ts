@@ -1,8 +1,8 @@
 declare module "com.the9grounds.aeadditions.item.storage.DiskCellWithoutMod" {
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$AEToolItem$$Interface} from "appeng.hooks.AEToolItem"
 
@@ -49,8 +49,8 @@ import {$AEKeyType, $AEKeyType$$Type} from "appeng.api.stacks.AEKeyType"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$FuzzyMode, $FuzzyMode$$Type} from "appeng.api.config.FuzzyMode"
 import {$IAEAdditionsStorageCell$$Interface} from "com.the9grounds.aeadditions.api.IAEAdditionsStorageCell"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$ItemLike, $ItemLike$$Type} from "net.minecraft.world.level.ItemLike"
 import {$IBasicCellItem$$Interface} from "appeng.api.storage.cells.IBasicCellItem"
@@ -65,7 +65,6 @@ static readonly "BY_BLOCK": $Map<($Block), ($Item)>
 
 constructor(arg0: $Item$Properties$$Type, arg1: $ItemLike$$Type, arg2: $ItemLike$$Type, arg3: double, arg4: integer, arg5: integer, arg6: integer, arg7: $AEKeyType$$Type)
 
-public "getUpgrades"(arg0: $ItemStack$$Type): $IUpgradeInventory
 public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
 public "onItemUseFirst"(arg0: $ItemStack$$Type, arg1: $UseOnContext$$Type): $InteractionResult
 public "getBytesPerType"(arg0: $ItemStack$$Type): integer
@@ -81,6 +80,7 @@ public "get_bytesPerType"(): integer
 public "getKiloBytes"(): integer
 public "getNumberOfTypes"(): integer
 public "get_keyType"(): $AEKeyType
+public "getUpgrades"(arg0: $ItemStack$$Type): $IUpgradeInventory
 public "getBytes"(arg0: $ItemStack$$Type): integer
 public "use"(arg0: $Level$$Type, arg1: $Player$$Type, arg2: $InteractionHand$$Type): $InteractionResultHolder<($ItemStack)>
 public "getComponent"(): $ItemLike
@@ -113,13 +113,13 @@ export type $StorageCell$$Original = $StorageCell;}
 declare module "com.the9grounds.aeadditions.item.storage.SuperStorageCell" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$List$$Type} from "java.util.List"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"

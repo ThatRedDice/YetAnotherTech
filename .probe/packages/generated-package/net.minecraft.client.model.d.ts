@@ -19,8 +19,8 @@ export type $MeshDefinition$$Original = $MeshDefinition;}
 declare module "net.minecraft.client.model.Model" {
 import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Optional} from "java.util.Optional"
-import {$PoseStack$$Type} from "com.mojang.blaze3d.vertex.PoseStack"
 import {$Function$$Type} from "java.util.function.Function"
+import {$PoseStack$$Type} from "com.mojang.blaze3d.vertex.PoseStack"
 import {$VertexConsumer$$Type} from "com.mojang.blaze3d.vertex.VertexConsumer"
 import {$ModelRootAccess$$Interface} from "io.wispforest.accessories.pond.ModelRootAccess"
 import {$ModelPart} from "net.minecraft.client.model.geom.ModelPart"
@@ -45,8 +45,8 @@ export type $Model$$Type = ($Model);
  */
 export type $Model$$Original = $Model;}
 declare module "net.minecraft.client.model.geom.ModelPart$Polygon" {
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$ModelPart$Vertex, $ModelPart$Vertex$$Type} from "net.minecraft.client.model.geom.ModelPart$Vertex"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Vector3f} from "org.joml.Vector3f"
 
 export class $ModelPart$Polygon {
@@ -73,8 +73,8 @@ import {$ModelPartLoadingHelper$$Interface} from "io.wispforest.accessories.pond
 import {$ModelLayerLocation$$Type} from "net.minecraft.client.model.geom.ModelLayerLocation"
 import {$ModelPart, $ModelPart$$Type} from "net.minecraft.client.model.geom.ModelPart"
 import {$PreparableReloadListener$PreparationBarrier$$Type} from "net.minecraft.server.packs.resources.PreparableReloadListener$PreparationBarrier"
-import {$ProfilerFiller$$Type} from "net.minecraft.util.profiling.ProfilerFiller"
 import {$ResourceManager$$Type} from "net.minecraft.server.packs.resources.ResourceManager"
+import {$ProfilerFiller$$Type} from "net.minecraft.util.profiling.ProfilerFiller"
 
 export class $EntityModelSet implements $ResourceManagerReloadListener$$Interface, $ModelPartLoadingHelper$$Interface {
 constructor()
@@ -176,14 +176,14 @@ declare module "net.minecraft.client.model.geom.ModelPart" {
 import {$ModelCuboid} from "org.embeddedt.embeddium.impl.render.immediate.model.ModelCuboid"
 import {$Map, $Map$$Type} from "java.util.Map"
 import {$Optional} from "java.util.Optional"
+import {$List, $List$$Type} from "java.util.List"
 import {$ModelPartMixin$$Interface} from "journeymap.common.mixin.client.ModelPartMixin"
 import {$PoseStack$$Type} from "com.mojang.blaze3d.vertex.PoseStack"
-import {$List, $List$$Type} from "java.util.List"
 import {$VertexConsumer$$Type} from "com.mojang.blaze3d.vertex.VertexConsumer"
 import {$Vector3f$$Type} from "org.joml.Vector3f"
 import {$ModelPartAccessor$$Interface} from "io.wispforest.accessories.mixin.client.ModelPartAccessor"
-import {$PartPose, $PartPose$$Type} from "net.minecraft.client.model.geom.PartPose"
 import {$ModelPartExtended, $ModelPartExtended$$Interface} from "org.embeddedt.embeddium.render.entity.ModelPartExtended"
+import {$PartPose, $PartPose$$Type} from "net.minecraft.client.model.geom.PartPose"
 import {$PoseStack$Pose$$Type} from "com.mojang.blaze3d.vertex.PoseStack$Pose"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
 import {$ModelPart$Cube, $ModelPart$Cube$$Type} from "net.minecraft.client.model.geom.ModelPart$Cube"
@@ -218,15 +218,15 @@ public "setRotation"(arg0: float, arg1: float, arg2: float): void
 public "isUpperPart"(): boolean
 public "translateAndRotate"(arg0: $PoseStack$$Type): void
 public "setUpperPart"(bl: boolean): void
-public "offsetScale"(arg0: $Vector3f$$Type): void
-public "getCubes"(): $List
 public "hasChild"(arg0: StringJS): boolean
 public "supp$getTextHeight"(): integer
 public "supp$getTextWidth"(): integer
-public "copyFrom"(arg0: $ModelPart$$Type): void
-public "visit"(arg0: $PoseStack$$Type, arg1: $ModelPart$Visitor$$Type): void
-public "getChildren"(): $Map
+public "offsetScale"(arg0: $Vector3f$$Type): void
+public "getCubes"(): $List
 public "getChild"(arg0: StringJS): $ModelPart
+public "visit"(arg0: $PoseStack$$Type, arg1: $ModelPart$Visitor$$Type): void
+public "getChildren"(): ($ModelPart)[]
+public "copyFrom"(arg0: $ModelPart$$Type): void
 public "isHidden"(): boolean
 public "isEmpty"(): boolean
 public "render"(arg0: $PoseStack$$Type, arg1: $VertexConsumer$$Type, arg2: integer, arg3: integer): void
@@ -235,18 +235,18 @@ public "setPos"(arg0: float, arg1: float, arg2: float): void
 public "isVisible"(): boolean
 public "getInitialPose"(): $PartPose
 public "resetPose"(): void
+public "getAllParts"(): $Stream
 public "embeddium$asOptional"(): $Optional
 public "embeddium$getDescendantsByName"(): $Map
-public "getAllParts"(): $Stream
 public "setInitialPose"(arg0: $PartPose$$Type): void
 public "loadPose"(arg0: $PartPose$$Type): void
 public "supp$setDimensions"(texWidth: integer, texHeight: integer): void
-public "offsetRotation"(arg0: $Vector3f$$Type): void
 public "storePose"(): $PartPose
 public "embeddium$getPartsList"(): $List
 public "getCuboids"(): ($ModelCuboid)[]
 public "flywheel$children"(): $Map
 public "flywheel$compile"(arg0: $PoseStack$Pose$$Type, arg1: $VertexConsumer$$Type, arg2: integer, arg3: integer, arg4: integer): void
+public "offsetRotation"(arg0: $Vector3f$$Type): void
 public static "of"(arg0: $ModelPart$$Type): $ModelPartExtended
 public static "from"(arg0: $ModelPart$$Type): $ModelPartData
 get "upperPart"(): boolean
@@ -268,8 +268,8 @@ export type $ModelPart$$Type = ($ModelPart);
  */
 export type $ModelPart$$Original = $ModelPart;}
 declare module "net.minecraft.client.model.HumanoidModel$ArmPose" {
-import {$HumanoidArm$$Type} from "net.minecraft.world.entity.HumanoidArm"
 import {$HumanoidModel$$Type} from "net.minecraft.client.model.HumanoidModel"
+import {$HumanoidArm$$Type} from "net.minecraft.world.entity.HumanoidArm"
 import {$Enum} from "java.lang.Enum"
 import {$ExtensionInfo} from "net.neoforged.fml.common.asm.enumextension.ExtensionInfo"
 import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
@@ -309,8 +309,8 @@ declare module "net.minecraft.client.model.geom.ModelPart$Cube" {
 import {$PoseStack$Pose$$Type} from "com.mojang.blaze3d.vertex.PoseStack$Pose"
 import {$ModelCuboid} from "org.embeddedt.embeddium.impl.render.immediate.model.ModelCuboid"
 import {$ModelPart$Polygon} from "net.minecraft.client.model.geom.ModelPart$Polygon"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$ModelCuboidAccessor$$Interface} from "org.embeddedt.embeddium.impl.model.ModelCuboidAccessor"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$VertexConsumer$$Type} from "com.mojang.blaze3d.vertex.VertexConsumer"
 import {$Set$$Type} from "java.util.Set"
 
@@ -381,15 +381,15 @@ export type $HeadedModel$$Type = (() => $ModelPart$$Type);
  */
 export type $HeadedModel$$Original = $HeadedModel;}
 declare module "net.minecraft.client.model.HumanoidModel" {
-import {$HumanoidArm$$Type} from "net.minecraft.world.entity.HumanoidArm"
 import {$HeadedModel$$Interface} from "net.minecraft.client.model.HeadedModel"
+import {$HumanoidArm$$Type} from "net.minecraft.world.entity.HumanoidArm"
 import {$CallbackInfo$$Type} from "org.spongepowered.asm.mixin.injection.callback.CallbackInfo"
 import {$PoseStack$$Type} from "com.mojang.blaze3d.vertex.PoseStack"
 import {$VertexConsumer$$Type} from "com.mojang.blaze3d.vertex.VertexConsumer"
 import {$AgeableListModel} from "net.minecraft.client.model.AgeableListModel"
 import {$CubeDeformation$$Type} from "net.minecraft.client.model.geom.builders.CubeDeformation"
-import {$SetableSupplier, $SetableSupplier$$Type} from "dev.kosmx.playerAnim.core.util.SetableSupplier"
 import {$MeshDefinition} from "net.minecraft.client.model.geom.builders.MeshDefinition"
+import {$SetableSupplier, $SetableSupplier$$Type} from "dev.kosmx.playerAnim.core.util.SetableSupplier"
 import {$IMutableModel$$Interface} from "dev.kosmx.playerAnim.impl.IMutableModel"
 import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$ArmedModel$$Interface} from "net.minecraft.client.model.ArmedModel"
@@ -427,17 +427,12 @@ readonly "rightLeg": $ModelPart
 readonly "babyBodyScale": float
  "rightArmPose": $HumanoidModel$ArmPose
 
-constructor(arg0: $ModelPart$$Type, arg1: $Function$$Type<($ResourceLocation), ($RenderType$$Type)>)
 constructor(arg0: $ModelPart$$Type)
+constructor(arg0: $ModelPart$$Type, arg1: $Function$$Type<($ResourceLocation), ($RenderType$$Type)>)
 
 public "setAllVisible"(arg0: boolean): void
-public "setupAnim"(arg0: $Entity$$Type, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): void
 public "setupAnim"(arg0: T, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): void
-public "translateToHand"(arg0: $HumanoidArm$$Type, arg1: $PoseStack$$Type): void
-public "copyPropertiesTo"(arg0: $HumanoidModel$$Type<(T)>): void
-public "prepareMobModel"(arg0: $Entity$$Type, arg1: float, arg2: float, arg3: float): void
-public "prepareMobModel"(arg0: T, arg1: float, arg2: float, arg3: float): void
-public "renderToBuffer"(matrices: $PoseStack$$Type, vertices: $VertexConsumer$$Type, light: integer, overlay: integer, color: integer): void
+public "setupAnim"(arg0: $Entity$$Type, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): void
 public "handler$cmi000$oritech$ziplineAnim"(arg0: $LivingEntity$$Type, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $CallbackInfo$$Type): void
 public "handler$ecd000$moonlight$setupAnim"(entity: $LivingEntity$$Type, limbSwing: float, limbSwingAmount: float, ageInTicks: float, netHeadYaw: float, headPitch: float, ci: $CallbackInfo$$Type): void
 public "handler$eea000$immersiveengineering$rotationAngleCallback"(arg0: $LivingEntity$$Type, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $CallbackInfo$$Type): void
@@ -447,6 +442,11 @@ public "handler$zzc000$weaponmaster_ydm$poseLeftArm"(arg0: $LivingEntity$$Type, 
 public "handler$ecd001$moonlight$poseLeftArm"(entity: $LivingEntity$$Type, ci: $CallbackInfo$$Type): void
 public "setEmoteSupplier"(emoteSupplier: $SetableSupplier$$Type): void
 public "getEmoteSupplier"(): $SetableSupplier
+public "translateToHand"(arg0: $HumanoidArm$$Type, arg1: $PoseStack$$Type): void
+public "copyPropertiesTo"(arg0: $HumanoidModel$$Type<(T)>): void
+public "prepareMobModel"(arg0: T, arg1: float, arg2: float, arg3: float): void
+public "prepareMobModel"(arg0: $Entity$$Type, arg1: float, arg2: float, arg3: float): void
+public "renderToBuffer"(matrices: $PoseStack$$Type, vertices: $VertexConsumer$$Type, light: integer, overlay: integer, color: integer): void
 public "getHead"(): $ModelPart
 public static "createMesh"(arg0: $CubeDeformation$$Type, arg1: float): $MeshDefinition
 set "allVisible"(value: boolean)
@@ -559,8 +559,8 @@ readonly "babyBodyScale": float
 constructor(arg0: $ModelPart$$Type, arg1: boolean)
 
 public "setAllVisible"(arg0: boolean): void
-public "playerAnimator_prepForFirstPersonRender"(): void
 public "getRandomModelPart"(arg0: $RandomSource$$Type): $ModelPart
+public "playerAnimator_prepForFirstPersonRender"(): void
 public "setupAnim"(arg0: T, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): void
 public "setupAnim"(arg0: $Entity$$Type, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): void
 public "translateToHand"(arg0: $HumanoidArm$$Type, arg1: $PoseStack$$Type): void
@@ -592,10 +592,9 @@ import {$CubeDeformation$$Type} from "net.minecraft.client.model.geom.builders.C
 export class $CubeListBuilder {
 constructor()
 
-public "getCubes"(): $List<($CubeDefinition)>
 public "texOffs"(arg0: integer, arg1: integer): $CubeListBuilder
-public "addBox"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Set$$Type<($Direction$$Type)>): $CubeListBuilder
 public "addBox"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $CubeDeformation$$Type, arg7: float, arg8: float): $CubeListBuilder
+public "addBox"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Set$$Type<($Direction$$Type)>): $CubeListBuilder
 public "addBox"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $CubeListBuilder
 public "addBox"(arg0: StringJS, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: $CubeDeformation$$Type): $CubeListBuilder
 public "addBox"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean): $CubeListBuilder
@@ -603,6 +602,7 @@ public "addBox"(arg0: StringJS, arg1: float, arg2: float, arg3: float, arg4: flo
 public "addBox"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $CubeDeformation$$Type): $CubeListBuilder
 public "addBox"(arg0: StringJS, arg1: float, arg2: float, arg3: float, arg4: integer, arg5: integer, arg6: integer, arg7: $CubeDeformation$$Type, arg8: integer, arg9: integer): $CubeListBuilder
 public "addBox"(arg0: StringJS, arg1: float, arg2: float, arg3: float, arg4: integer, arg5: integer, arg6: integer, arg7: integer, arg8: integer): $CubeListBuilder
+public "getCubes"(): $List<($CubeDefinition)>
 public static "create"(): $CubeListBuilder
 public "mirror"(arg0: boolean): $CubeListBuilder
 public "mirror"(): $CubeListBuilder
@@ -678,8 +678,8 @@ import {$Iterable} from "java.lang.Iterable"
 import {$AgeableListModelInvoker$$Interface} from "journeymap.common.mixin.client.AgeableListModelInvoker"
 import {$AgeableListModelAccessor$$Interface} from "com.simibubi.create.foundation.mixin.accessor.AgeableListModelAccessor"
 import {$PoseStack$$Type} from "com.mojang.blaze3d.vertex.PoseStack"
-import {$VertexConsumer$$Type} from "com.mojang.blaze3d.vertex.VertexConsumer"
 import {$EntityModel} from "net.minecraft.client.model.EntityModel"
+import {$VertexConsumer$$Type} from "com.mojang.blaze3d.vertex.VertexConsumer"
 import {$AgeableListAccessor$$Interface} from "net.mehvahdjukaar.supplementaries.mixins.AgeableListAccessor"
 import {$Entity} from "net.minecraft.world.entity.Entity"
 
@@ -694,12 +694,12 @@ readonly "babyBodyScale": float
  "riding": boolean
 readonly "bodyYOffset": float
 
-public "renderToBuffer"(arg0: $PoseStack$$Type, arg1: $VertexConsumer$$Type, arg2: integer, arg3: integer, arg4: integer): void
-public "invokeBodyParts"(): $Iterable
 public "getHeadParts"(): $Iterable
 public "getBodyParts"(): $Iterable
 public "create$callHeadParts"(): $Iterable
 public "create$callBodyParts"(): $Iterable
+public "renderToBuffer"(arg0: $PoseStack$$Type, arg1: $VertexConsumer$$Type, arg2: integer, arg3: integer, arg4: integer): void
+public "invokeBodyParts"(): $Iterable
 get "headParts"(): $Iterable
 get "bodyParts"(): $Iterable
 }

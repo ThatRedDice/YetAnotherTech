@@ -3,8 +3,8 @@ import {$CraftingInput$$Type} from "net.minecraft.world.item.crafting.CraftingIn
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Ingredient} from "net.minecraft.world.item.crafting.Ingredient"
 import {$RecipeType} from "net.minecraft.world.item.crafting.RecipeType"
-import {$CraftingBookCategory} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$CraftingBookCategory} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
@@ -18,8 +18,8 @@ constructor(arg0: $ShapedRecipe$$Type)
 public "getRemainingItems"(arg0: $RecipeInput$$Type): $NonNullList
 public "getRemainingItems"(arg0: $CraftingInput$$Type): $NonNullList<($ItemStack)>
 public "getRecipe"(): $ShapedRecipe
-public "getIngredients"(): $NonNullList<($Ingredient)>
 public "canCraftInDimensions"(arg0: integer, arg1: integer): boolean
+public "getIngredients"(): $NonNullList<($Ingredient)>
 public "getToastSymbol"(): $ItemStack
 public "matches"(arg0: $RecipeInput$$Type, arg1: $Level$$Type): boolean
 public "matches"(arg0: $CraftingInput$$Type, arg1: $Level$$Type): boolean
@@ -84,8 +84,8 @@ import {$Recipe$$Type, $Recipe$$Interface} from "net.minecraft.world.item.crafti
 import {$RecipeInput, $RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$RecipeType} from "net.minecraft.world.item.crafting.RecipeType"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
+import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 
 export interface $BaseRecipe$$Interface<C extends $RecipeInput> extends $Recipe$$Interface<(C)> {
@@ -105,8 +105,8 @@ static "getResultItem"(arg0: $Recipe$$Type, arg1: $Level$$Type): $ItemStack
  "getResultItem"(arg0: $HolderLookup$Provider$$Type): $ItemStack
  "getRemainingItems"(arg0: C): $NonNullList<($ItemStack)>
  "getSerializer"(): $RecipeSerializer<(never)>
- "getIngredients"(): $NonNullList<($Ingredient)>
  "canCraftInDimensions"(arg0: integer, arg1: integer): boolean
+ "getIngredients"(): $NonNullList<($Ingredient)>
  "showNotification"(): boolean
  "getToastSymbol"(): $ItemStack
  "isIncomplete"(): boolean
@@ -148,8 +148,8 @@ export type $IComponentsToPreserve$$Type = (() => $Collection$$Type<($DataCompon
 export type $IComponentsToPreserve$$Original = $IComponentsToPreserve;}
 declare module "mcjty.lib.crafting.CopyComponentsRecipeSerializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$CopyComponentsRecipe} from "mcjty.lib.crafting.CopyComponentsRecipe"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"

@@ -3,12 +3,12 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
-import {$Component} from "net.minecraft.network.chat.Component"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
-import {$ByteBuf} from "io.netty.buffer.ByteBuf"
+import {$Component} from "net.minecraft.network.chat.Component"
 import {$DualCodec} from "malte0811.dualcodecs.DualCodec"
+import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 
 export class $IEEnums$IOSideConfig extends $Enum<($IEEnums$IOSideConfig)> implements $StringRepresentable$$Interface {
 static readonly "CODECS": $DualCodec<($ByteBuf), ($IEEnums$IOSideConfig)>
@@ -24,11 +24,11 @@ public static "valueOf"(arg0: StringJS): $IEEnums$IOSideConfig
 public static "next"(arg0: $IEEnums$IOSideConfig$$Type): $IEEnums$IOSideConfig
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "textComponent"(): $Component
 get "textureName"(): StringJS
 get "serializedName"(): StringJS

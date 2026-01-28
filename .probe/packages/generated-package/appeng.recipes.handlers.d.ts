@@ -1,7 +1,7 @@
 declare module "appeng.recipes.handlers.ChargerRecipeSerializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$ChargerRecipe} from "appeng.recipes.handlers.ChargerRecipe"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
@@ -27,8 +27,8 @@ export type $ChargerRecipeSerializer$$Original = $ChargerRecipeSerializer;}
 declare module "appeng.recipes.handlers.InscriberRecipeSerializer" {
 import {$InscriberRecipe} from "appeng.recipes.handlers.InscriberRecipe"
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
 
@@ -57,9 +57,9 @@ import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$RecipeInput, $RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe$$Interface} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
+import {$RecipeInput, $RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 
@@ -84,11 +84,11 @@ constructor(arg0: $Ingredient$$Type, arg1: $ItemStack$$Type)
 
 public "assemble"(arg0: $RecipeInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
 public "getSerializer"(): $RecipeSerializer<(never)>
-public "getIngredients"(): $NonNullList<($Ingredient)>
 public "canCraftInDimensions"(arg0: integer, arg1: integer): boolean
 public "getResultItem"(): $ItemStack
 public "getResultItem"(arg0: $HolderLookup$Provider$$Type): $ItemStack
 public "getIngredient"(): $Ingredient
+public "getIngredients"(): $NonNullList<($Ingredient)>
 public "matches"(arg0: $RecipeInput$$Type, arg1: $Level$$Type): boolean
 public "getType"(): $RecipeType<(never)>
 public "isSpecial"(): boolean
@@ -142,12 +142,12 @@ import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$RecipeInput, $RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe$$Interface} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
+import {$RecipeInput, $RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
-import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$InscriberProcessType, $InscriberProcessType$$Type} from "appeng.recipes.handlers.InscriberProcessType"
+import {$MapCodec} from "com.mojang.serialization.MapCodec"
 
 export class $InscriberRecipe implements $Recipe$$Interface<($RecipeInput)> {
 /**
@@ -170,10 +170,10 @@ public "getTopOptional"(): $Ingredient
 public "getBottomOptional"(): $Ingredient
 public "assemble"(arg0: $RecipeInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
 public "getSerializer"(): $RecipeSerializer<(never)>
-public "getIngredients"(): $NonNullList<($Ingredient)>
 public "canCraftInDimensions"(arg0: integer, arg1: integer): boolean
-public "getResultItem"(arg0: $HolderLookup$Provider$$Type): $ItemStack
 public "getResultItem"(): $ItemStack
+public "getResultItem"(arg0: $HolderLookup$Provider$$Type): $ItemStack
+public "getIngredients"(): $NonNullList<($Ingredient)>
 public "getProcessType"(): $InscriberProcessType
 public "matches"(arg0: $RecipeInput$$Type, arg1: $Level$$Type): boolean
 public "getType"(): $RecipeType<(never)>
@@ -187,8 +187,8 @@ get "middleInput"(): $Ingredient
 get "topOptional"(): $Ingredient
 get "bottomOptional"(): $Ingredient
 get "serializer"(): $RecipeSerializer<(never)>
-get "ingredients"(): $NonNullList<($Ingredient)>
 get "resultItem"(): $ItemStack
+get "ingredients"(): $NonNullList<($Ingredient)>
 get "processType"(): $InscriberProcessType
 get "type"(): $RecipeType<(never)>
 get "special"(): boolean

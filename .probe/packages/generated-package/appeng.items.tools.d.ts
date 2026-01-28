@@ -17,8 +17,8 @@ import {$Item} from "net.minecraft.world.item.Item"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$Map} from "java.util.Map"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$SlotAccess$$Type} from "net.minecraft.world.entity.SlotAccess"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$ItemMenuHost} from "appeng.api.implementations.menuobjects.ItemMenuHost"
 import {$NetworkToolMenuHost} from "appeng.items.contents.NetworkToolMenuHost"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
@@ -55,13 +55,13 @@ export type $NetworkToolItem$$Type = ($NetworkToolItem);
 export type $NetworkToolItem$$Original = $NetworkToolItem;}
 declare module "appeng.items.tools.MemoryCardItem" {
 import {$DataComponentMap$$Type} from "net.minecraft.core.component.DataComponentMap"
-import {$IMemoryCard$$Interface} from "appeng.api.implementations.items.IMemoryCard"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$MemoryCardMessages$$Type} from "appeng.api.implementations.items.MemoryCardMessages"
+import {$IMemoryCard$$Interface} from "appeng.api.implementations.items.IMemoryCard"
 import {$List$$Type} from "java.util.List"
+import {$MemoryCardMessages$$Type} from "appeng.api.implementations.items.MemoryCardMessages"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$DataComponentMap$Builder$$Type} from "net.minecraft.core.component.DataComponentMap$Builder"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
+import {$DataComponentMap$Builder$$Type} from "net.minecraft.core.component.DataComponentMap$Builder"
 import {$DataComponentType, $DataComponentType$$Type} from "net.minecraft.core.component.DataComponentType"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
@@ -69,14 +69,14 @@ import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$Set} from "java.util.Set"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
+import {$Set} from "java.util.Set"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$Map} from "java.util.Map"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$AEBaseItem} from "appeng.items.AEBaseItem"
 
@@ -93,13 +93,13 @@ constructor(arg0: $Item$Properties$$Type)
 public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
 public "useOn"(arg0: $UseOnContext$$Type): $InteractionResult
 public "doesSneakBypassUse"(arg0: $ItemStack$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type): boolean
-public static "getTintColor"(arg0: $ItemStack$$Type, arg1: integer): integer
-public static "clearCard"(arg0: $ItemStack$$Type): void
-public "notifyUser"(arg0: $Player$$Type, arg1: $MemoryCardMessages$$Type): void
 public static "importGenericSettings"(arg0: any, arg1: $DataComponentMap$$Type, arg2: $Player$$Type): $Set<($DataComponentType<(never)>)>
 public static "exportGenericSettings"(arg0: any, arg1: $DataComponentMap$Builder$$Type): void
 public static "importGenericSettingsAndNotify"(arg0: any, arg1: $DataComponentMap$$Type, arg2: $Player$$Type): void
+public static "clearCard"(arg0: $ItemStack$$Type): void
+public "notifyUser"(arg0: $Player$$Type, arg1: $MemoryCardMessages$$Type): void
 public static "getSettingTranslationKey"(arg0: $DataComponentType$$Type<(never)>): StringJS
+public static "getTintColor"(arg0: $ItemStack$$Type, arg1: integer): integer
 public "use"(arg0: $Level$$Type, arg1: $Player$$Type, arg2: $InteractionHand$$Type): $InteractionResultHolder<($ItemStack)>
 public "getColor"(arg0: $ItemStack$$Type): integer
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
@@ -115,13 +115,13 @@ export type $MemoryCardItem$$Type = ($MemoryCardItem);
 export type $MemoryCardItem$$Original = $MemoryCardItem;}
 declare module "appeng.items.tools.GuideItem" {
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
+import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
-import {$Block} from "net.minecraft.world.level.block.Block"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$AEBaseItem} from "appeng.items.AEBaseItem"

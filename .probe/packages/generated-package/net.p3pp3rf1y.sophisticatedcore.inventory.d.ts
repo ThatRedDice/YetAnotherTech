@@ -1,6 +1,6 @@
 declare module "net.p3pp3rf1y.sophisticatedcore.inventory.StatefulComponentItemHandler" {
-import {$ISlotChangeListener$$Interface} from "net.p3pp3rf1y.sophisticatedcore.inventory.ISlotChangeListener"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$ISlotChangeListener$$Interface} from "net.p3pp3rf1y.sophisticatedcore.inventory.ISlotChangeListener"
 import {$MutableDataComponentHolder$$Type} from "net.neoforged.neoforge.common.MutableDataComponentHolder"
 import {$List} from "java.util.List"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
@@ -90,8 +90,8 @@ declare module "net.p3pp3rf1y.sophisticatedcore.inventory.ITrackedContentsItemHa
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$List} from "java.util.List"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$IItemHandlerSimpleInserter$$Interface} from "net.p3pp3rf1y.sophisticatedcore.inventory.IItemHandlerSimpleInserter"
 import {$Runnable$$Type} from "java.lang.Runnable"
+import {$IItemHandlerSimpleInserter$$Interface} from "net.p3pp3rf1y.sophisticatedcore.inventory.IItemHandlerSimpleInserter"
 import {$ItemStackKey, $ItemStackKey$$Type} from "net.p3pp3rf1y.sophisticatedcore.inventory.ItemStackKey"
 import {$IItemHandler} from "net.neoforged.neoforge.items.IItemHandler"
 import {$Consumer$$Type} from "java.util.function.Consumer"
@@ -204,12 +204,12 @@ static readonly "BASE_INDEXES_TAG": StringJS
 
 constructor(arg0: $CompoundTag$$Type, arg1: $InventoryHandler$$Type, arg2: $Supplier$$Type<($MemorySettingsCategory$$Type)>)
 
-public "getNoSortSlots"(): $Set<(integer)>
 public "isFilterItem"(arg0: $Item$$Type): boolean
-public "getFirstSpace"(arg0: integer): $Optional<($SlotRange)>
+public "getNoSortSlots"(): $Set<(integer)>
 public "getFilterItems"(): $Map<($Item), ($Set<(integer)>)>
-public "getPartBySlot"(arg0: integer): $IInventoryPartHandler
+public "getFirstSpace"(arg0: integer): $Optional<($SlotRange)>
 public "addInventoryPart"(arg0: integer, arg1: integer, arg2: $IInventoryPartHandler$$Type): void
+public "getPartBySlot"(arg0: integer): $IInventoryPartHandler
 public "removeInventoryPart"(arg0: integer): void
 public "onSlotLimitChange"(): void
 public "isInfinite"(arg0: integer): boolean
@@ -229,7 +229,7 @@ export type $InventoryPartitioner$$Type = ($InventoryPartitioner);
  */
 export type $InventoryPartitioner$$Original = $InventoryPartitioner;}
 declare module "net.p3pp3rf1y.sophisticatedcore.inventory.InventoryHandler" {
-import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
+import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$ISlotTracker} from "net.p3pp3rf1y.sophisticatedcore.inventory.ISlotTracker"
 import {$ITrackedContentsItemHandler$$Interface} from "net.p3pp3rf1y.sophisticatedcore.inventory.ITrackedContentsItemHandler"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
@@ -244,7 +244,7 @@ import {$IInsertBlockOverride$$Interface} from "net.p3pp3rf1y.sophisticatedcore.
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$IntConsumer$$Type} from "java.util.function.IntConsumer"
 import {$Item, $Item$$Type} from "net.minecraft.world.item.Item"
-import {$Tag, $Tag$$Type} from "net.minecraft.nbt.Tag"
+import {$Tag$$Type} from "net.minecraft.nbt.Tag"
 import {$Set, $Set$$Type} from "java.util.Set"
 import {$InventoryPartitioner} from "net.p3pp3rf1y.sophisticatedcore.inventory.InventoryPartitioner"
 import {$ItemStackHandler} from "net.neoforged.neoforge.items.ItemStackHandler"
@@ -252,6 +252,11 @@ import {$ItemStackHandler} from "net.neoforged.neoforge.items.ItemStackHandler"
 export class $InventoryHandler extends $ItemStackHandler implements $ITrackedContentsItemHandler$$Interface, $IInsertBlockOverride$$Interface {
 static readonly "INVENTORY_TAG": StringJS
 
+public "validateSlotIndex"(arg0: integer): void
+public "onContentsChanged"(arg0: integer): void
+public "getStackLimit"(arg0: integer, arg1: $ItemStack$$Type): integer
+public "isFilterItem"(arg0: $Item$$Type): boolean
+public "getSlotTracker"(): $ISlotTracker
 public "getStackSizeMultiplier"(): double
 public "getSlotStack"(arg0: integer): $ItemStack
 public "setPersistent"(arg0: boolean): void
@@ -266,20 +271,15 @@ public "getNoSortSlots"(): $Set<(integer)>
 public "isSlotAccessible"(arg0: integer): boolean
 public "getBaseStackLimit"(arg0: $ItemStack$$Type): integer
 public "getFilterItem"(arg0: integer): $Item
-public "isFilterItem"(arg0: $Item$$Type): boolean
-public "validateSlotIndex"(arg0: integer): void
-public "onContentsChanged"(arg0: integer): void
-public "getStackLimit"(arg0: integer, arg1: $ItemStack$$Type): integer
 public "extractItemInternal"(arg0: integer, arg1: integer, arg2: boolean): $ItemStack
-public "getSlotTracker"(): $ISlotTracker
 public "getFilterItems"(): $Set<($Item)>
 public "getTrackedStacks"(): $Set<($ItemStackKey)>
 public "isInsertBlocked"(): boolean
-public "getInventoryPartitioner"(): $InventoryPartitioner
 public "setBaseSlotLimit"(arg0: integer): void
 public "triggerOnChangeListeners"(arg0: integer): void
 public "getBaseSlotLimit"(): integer
 public "setSlotStack"(arg0: integer, arg1: $ItemStack$$Type): void
+public "getInventoryPartitioner"(): $InventoryPartitioner
 public "onSlotFilterChanged"(arg0: integer): void
 public "setShouldInsertIntoEmpty"(arg0: $BooleanSupplier$$Type): void
 public "insertItemOnlyToSlot"(arg0: integer, arg1: $ItemStack$$Type, arg2: boolean): $ItemStack
@@ -290,30 +290,30 @@ public "setSize"(arg0: integer): void
 public "isInfinite"(arg0: integer): boolean
 public "addListener"(arg0: $IntConsumer$$Type): void
 public "onInit"(): void
-public "clearListeners"(): void
 public "getStackInSlot"(arg0: integer): $ItemStack
 public "insertItem"(arg0: integer, arg1: $ItemStack$$Type, arg2: boolean): $ItemStack
 public "insertItem"(arg0: $ItemStack$$Type, arg1: boolean): $ItemStack
 public "extractItem"(arg0: integer, arg1: integer, arg2: boolean): $ItemStack
 public "extractItem"(arg0: $ItemStack$$Type, arg1: boolean): $ItemStack
 public "getSlotLimit"(arg0: integer): integer
-public "isItemValid"(arg0: integer, arg1: $ItemStack$$Type, arg2: $Player$$Type): boolean
 public "isItemValid"(arg0: integer, arg1: $ItemStack$$Type): boolean
+public "isItemValid"(arg0: integer, arg1: $ItemStack$$Type, arg2: $Player$$Type): boolean
 public "setStackInSlot"(arg0: integer, arg1: $ItemStack$$Type): void
-public "deserializeNBT"(arg0: $HolderLookup$Provider$$Type, arg1: $Tag$$Type): void
 public "deserializeNBT"(arg0: $HolderLookup$Provider$$Type, arg1: $CompoundTag$$Type): void
-public "serializeNBT"(arg0: $HolderLookup$Provider$$Type): $Tag
+public "deserializeNBT"(arg0: $HolderLookup$Provider$$Type, arg1: $Tag$$Type): void
+public "serializeNBT"(arg0: $HolderLookup$Provider$$Type): $CompoundTag
 public "getNoItemIcon"(arg0: integer): $Pair<($ResourceLocation), ($ResourceLocation)>
+public "clearListeners"(): void
+get "slotTracker"(): $ISlotTracker
 get "stackSizeMultiplier"(): double
 set "persistent"(value: boolean)
 get "noSortSlots"(): $Set<(integer)>
-get "slotTracker"(): $ISlotTracker
 get "filterItems"(): $Set<($Item)>
 get "trackedStacks"(): $Set<($ItemStackKey)>
 get "insertBlocked"(): boolean
-get "inventoryPartitioner"(): $InventoryPartitioner
 set "baseSlotLimit"(value: integer)
 get "baseSlotLimit"(): integer
+get "inventoryPartitioner"(): $InventoryPartitioner
 set "shouldInsertIntoEmpty"(value: $BooleanSupplier$$Type)
 set "size"(value: integer)
 }
@@ -329,12 +329,12 @@ export type $InventoryHandler$$Original = $InventoryHandler;}
 declare module "net.p3pp3rf1y.sophisticatedcore.inventory.ISlotTracker" {
 import {$UnaryOperator$$Type} from "java.util.function.UnaryOperator"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$ISlotTracker$IItemHandlerInserter$$Type} from "net.p3pp3rf1y.sophisticatedcore.inventory.ISlotTracker$IItemHandlerInserter"
 import {$Runnable$$Type} from "java.lang.Runnable"
 import {$BooleanSupplier$$Type} from "java.util.function.BooleanSupplier"
+import {$ISlotTracker$IItemHandlerInserter$$Type} from "net.p3pp3rf1y.sophisticatedcore.inventory.ISlotTracker$IItemHandlerInserter"
 import {$ItemStackKey, $ItemStackKey$$Type} from "net.p3pp3rf1y.sophisticatedcore.inventory.ItemStackKey"
-import {$ISlotTracker$IItemHandlerExtractor$$Type} from "net.p3pp3rf1y.sophisticatedcore.inventory.ISlotTracker$IItemHandlerExtractor"
 import {$Consumer$$Type} from "java.util.function.Consumer"
+import {$ISlotTracker$IItemHandlerExtractor$$Type} from "net.p3pp3rf1y.sophisticatedcore.inventory.ISlotTracker$IItemHandlerExtractor"
 import {$BiFunction$$Type} from "java.util.function.BiFunction"
 import {$InventoryHandler$$Type} from "net.p3pp3rf1y.sophisticatedcore.inventory.InventoryHandler"
 import {$Item, $Item$$Type} from "net.minecraft.world.item.Item"
@@ -348,14 +348,14 @@ set "shouldInsertIntoEmpty"(value: $BooleanSupplier$$Type)
 }
 
 export class $ISlotTracker implements $ISlotTracker$$Interface {
- "unregisterStackKeyListeners"(): void
- "hasEmptySlots"(): boolean
  "getItems"(): $Set<($Item)>
- "getFirstMatchingSlot"(arg0: $ItemStackKey$$Type): integer
- "hasExactStackMemorized"(arg0: $ItemStackKey$$Type): boolean
- "hasItemMemorizedOrFiltered"(arg0: $Item$$Type): boolean
  "getFullStacks"(): $Set<($ItemStackKey)>
  "getPartialStacks"(): $Set<($ItemStackKey)>
+ "unregisterStackKeyListeners"(): void
+ "hasEmptySlots"(): boolean
+ "hasExactStackMemorized"(arg0: $ItemStackKey$$Type): boolean
+ "hasItemMemorizedOrFiltered"(arg0: $Item$$Type): boolean
+ "getFirstMatchingSlot"(arg0: $ItemStackKey$$Type): integer
  "refreshSlotIndexesFrom"(arg0: $InventoryHandler$$Type): void
  "removeAndSetSlotIndexes"(arg0: $InventoryHandler$$Type, arg1: integer, arg2: $ItemStack$$Type): void
  "insertItemIntoHandler"(arg0: $InventoryHandler$$Type, arg1: $BiFunction$$Type<($ItemStack), (boolean), ($ItemStack$$Type)>, arg2: $ISlotTracker$IItemHandlerInserter$$Type, arg3: $UnaryOperator$$Type<($ItemStack)>, arg4: $UnaryOperator$$Type<($ItemStack)>, arg5: integer, arg6: $ItemStack$$Type, arg7: boolean): $ItemStack
@@ -378,8 +378,8 @@ declare module "net.p3pp3rf1y.sophisticatedcore.inventory.IItemHandlerSimpleInse
 import {$LevelBlock} from "dev.latvian.mods.kubejs.level.LevelBlock"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Container} from "net.minecraft.world.Container"
-import {$List} from "java.util.List"
 import {$ItemPredicate$$Type} from "dev.latvian.mods.kubejs.item.ItemPredicate"
+import {$List} from "java.util.List"
 import {$IItemHandlerModifiable$$Interface} from "net.neoforged.neoforge.items.IItemHandlerModifiable"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$IItemHandler} from "net.neoforged.neoforge.items.IItemHandler"
@@ -528,13 +528,13 @@ get "slots"(): integer
 export class $IInventoryPartHandler implements $IInventoryPartHandler$$Interface {
 static readonly "EMPTY": $IInventoryPartHandler
 
- "getNoSortSlots"(): $Set<(integer)>
- "isSlotAccessible"(arg0: integer): boolean
- "getFilterItem"(arg0: integer): $Item
- "isFilterItem"(arg0: $Item$$Type): boolean
  "canBeReplaced"(): boolean
  "onContentsChanged"(arg0: integer, arg1: $BiConsumer$$Type<(integer), ($ItemStack)>): void
  "getStackLimit"(arg0: integer, arg1: $ItemStack$$Type): integer
+ "isFilterItem"(arg0: $Item$$Type): boolean
+ "getNoSortSlots"(): $Set<(integer)>
+ "isSlotAccessible"(arg0: integer): boolean
+ "getFilterItem"(arg0: integer): $Item
  "getFilterItems"(): $Map<($Item), ($Set<(integer)>)>
  "onSlotLimitChange"(): void
  "onSlotFilterChanged"(arg0: integer): void

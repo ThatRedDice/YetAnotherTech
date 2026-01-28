@@ -93,7 +93,7 @@ public "serializer"(): $EntityDataSerializer<(T)>
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $EntityDataAccessor$$Type<T> = ({"id"?: integer, "serializer"?: $EntityDataSerializer$$Type<(T)>}) | ([id?: integer, serializer?: $EntityDataSerializer$$Type<(T)>]);
+export type $EntityDataAccessor$$Type<T> = ({"serializer"?: $EntityDataSerializer$$Type<(T)>, "id"?: integer}) | ([serializer?: $EntityDataSerializer$$Type<(T)>, id?: integer]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -115,8 +115,8 @@ export interface $EntityDataSerializer$$Interface<T> {
 }
 
 export class $EntityDataSerializer<T> implements $EntityDataSerializer$$Interface {
-static "forValueType"<T>(arg0: $StreamCodec$$Type<($RegistryFriendlyByteBuf$$Type), (T)>): $EntityDataSerializer<(T)>
  "createAccessor"(arg0: integer): $EntityDataAccessor<(T)>
+static "forValueType"<T>(arg0: $StreamCodec$$Type<($RegistryFriendlyByteBuf$$Type), (T)>): $EntityDataSerializer<(T)>
  "copy"(arg0: T): T
  "codec"(): $StreamCodec<($RegistryFriendlyByteBuf), (T)>
 }

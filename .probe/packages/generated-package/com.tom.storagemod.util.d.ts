@@ -26,19 +26,19 @@ import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
-import {$Record} from "java.lang.Record"
 import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
+import {$Record} from "java.lang.Record"
 
 export class $BlockFaceReference extends $Record {
 constructor(level: $Level$$Type, pos: $BlockPos$$Type, from: $Direction$$Type)
 
-public "level"(): $Level
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
 public "from"(): $Direction
 public "getState"(): $BlockState
 public "pos"(): $BlockPos
+public "level"(): $Level
 public "getBlockEntity"(): $BlockEntity
 public static "touching"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $Direction$$Type): $BlockFaceReference
 get "state"(): $BlockState

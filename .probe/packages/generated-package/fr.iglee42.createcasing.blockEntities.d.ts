@@ -5,8 +5,8 @@ import {$List, $List$$Type} from "java.util.List"
 import {$BlockEntityBehaviour$$Type} from "com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$IRotate$$Type} from "com.simibubi.create.content.kinetics.base.IRotate"
-import {$SequencedGearshiftBlockEntity$SequenceContext} from "com.simibubi.create.content.kinetics.transmission.sequencer.SequencedGearshiftBlockEntity$SequenceContext"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$SequencedGearshiftBlockEntity$SequenceContext} from "com.simibubi.create.content.kinetics.transmission.sequencer.SequencedGearshiftBlockEntity$SequenceContext"
 
 export class $CreativeCogwheelBlockEntity extends $GeneratingKineticBlockEntity {
  "sequenceContext": $SequencedGearshiftBlockEntity$SequenceContext
@@ -22,9 +22,9 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 
 constructor(arg0: $BlockEntityType$$Type<(never)>, arg1: $BlockPos$$Type, arg2: $BlockState$$Type)
 
-public "addBehaviours"(arg0: $List$$Type<($BlockEntityBehaviour$$Type)>): void
 public "getGeneratedSpeed"(): float
 public "addPropagationLocations"(arg0: $IRotate$$Type, arg1: $BlockState$$Type, arg2: $List$$Type<($BlockPos$$Type)>): $List<($BlockPos)>
+public "addBehaviours"(arg0: $List$$Type<($BlockEntityBehaviour$$Type)>): void
 public "initialize"(): void
 get "generatedSpeed"(): float
 }

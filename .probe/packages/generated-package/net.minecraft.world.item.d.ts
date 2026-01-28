@@ -51,8 +51,8 @@ export type $HoeItem$$Original = $HoeItem;}
 declare module "net.minecraft.world.item.BowItem" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Predicate, $Predicate$$Type} from "java.util.function.Predicate"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$ProjectileWeaponItem} from "net.minecraft.world.item.ProjectileWeaponItem"
@@ -78,9 +78,9 @@ static readonly "BY_BLOCK": $Map<($Block), ($Item)>
 
 constructor(arg0: $Item$Properties$$Type)
 
-public static "getPowerForTime"(arg0: integer): float
 public "modifyReturnValue$baf000$supplementaries$supp$getAllSupportedProjectiles"(original: $Predicate$$Type): $Predicate
 public "getDefaultProjectileRange"(): integer
+public static "getPowerForTime"(arg0: integer): float
 public "use"(arg0: $Level$$Type, arg1: $Player$$Type, arg2: $InteractionHand$$Type): $InteractionResultHolder<($ItemStack)>
 public "getUseDuration"(arg0: $ItemStack$$Type, arg1: $LivingEntity$$Type): integer
 public "getUseAnimation"(arg0: $ItemStack$$Type): $UseAnim
@@ -108,9 +108,9 @@ import {$OwoItemSettingsExtension$$Interface} from "io.wispforest.owo.itemgroup.
 import {$Rarity$$Type} from "net.minecraft.world.item.Rarity"
 import {$JukeboxSong$$Type} from "net.minecraft.world.item.JukeboxSong"
 import {$DataComponentType$$Type} from "net.minecraft.core.component.DataComponentType"
-import {$DeferredSupplier, $DeferredSupplier$$Type} from "dev.architectury.registry.registries.DeferredSupplier"
 import {$IItemPropertiesExtensions$$Interface} from "net.neoforged.neoforge.common.extensions.IItemPropertiesExtensions"
 import {$FoodProperties$$Type} from "net.minecraft.world.food.FoodProperties"
+import {$DeferredSupplier, $DeferredSupplier$$Type} from "dev.architectury.registry.registries.DeferredSupplier"
 import {$ItemGroupReference$$Type} from "io.wispforest.owo.itemgroup.ItemGroupReference"
 import {$ItemPropertiesExtensionImpl$$Interface} from "dev.architectury.impl.ItemPropertiesExtensionImpl"
 import {$Interner} from "com.google.common.collect.Interner"
@@ -134,25 +134,25 @@ public "buildAndValidateComponents"(): $DataComponentMap
 public static "validateComponents"(arg0: $DataComponentMap$$Type): $DataComponentMap
 public "arch$getTab"(): $CreativeModeTab
 public "arch$getTabSupplier"(): $DeferredSupplier
-public "stackGenerator"(): $BiConsumer
 public "stackGenerator"(generator: $BiConsumer$$Type): $Item$Properties
+public "stackGenerator"(): $BiConsumer
 public "groupSupplier"(): $Supplier
 public "shouldTrackUsageStat"(): boolean
 public "fireResistant"(): $Item$Properties
-public "jukeboxPlayable"(arg0: $ResourceKey$$Type<($JukeboxSong)>): $Item$Properties
-public "setNoRepair"(): $Item$Properties
-public "arch$tab"(tab: $ResourceKey$$Type): $Item$Properties
 public "arch$tab"(tab: $DeferredSupplier$$Type): $Item$Properties
+public "arch$tab"(tab: $ResourceKey$$Type): $Item$Properties
 public "arch$tab"(tab: $CreativeModeTab$$Type): $Item$Properties
 public "trackUsageStat"(): $Item$Properties
+public "jukeboxPlayable"(arg0: $ResourceKey$$Type<($JukeboxSong)>): $Item$Properties
+public "setNoRepair"(): $Item$Properties
 public "attributes"(arg0: $ItemAttributeModifiers$$Type): $Item$Properties
-public "group"(group: $OwoItemGroup$$Type): $Item$Properties
 public "group"(ref: $ItemGroupReference$$Type): $Item$Properties
-public "group"(): $OwoItemGroup
+public "group"(group: $OwoItemGroup$$Type): $Item$Properties
 public "group"(groupSupplier: $Supplier$$Type): $Item$Properties
+public "group"(): $OwoItemGroup
 public "component"<T>(arg0: $DataComponentType$$Type<(T)>, arg1: T): $Item$Properties
-public "tab"(tab: integer): $Item$Properties
 public "tab"(): integer
+public "tab"(tab: integer): $Item$Properties
 public "requiredFeatures"(...arg0: ($FeatureFlag$$Type)[]): $Item$Properties
 public "food"(arg0: $FoodProperties$$Type): $Item$Properties
 public "component"<T>(arg0: $Supplier$$Type<($DataComponentType$$Type<(T)>)>, arg1: T): $Item$Properties
@@ -172,8 +172,8 @@ import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Packet} from "net.minecraft.network.protocol.Packet"
@@ -188,8 +188,8 @@ static readonly "BY_BLOCK": $Map<($Block), ($Item)>
 
 constructor(arg0: $Item$Properties$$Type)
 
-public "isComplex"(): boolean
 public "getUpdatePacket"(arg0: $ItemStack$$Type, arg1: $Level$$Type, arg2: $Player$$Type): $Packet<(never)>
+public "isComplex"(): boolean
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "complex"(): boolean
 }
@@ -214,8 +214,8 @@ import {$Registry$$Type} from "net.minecraft.core.Registry"
 import {$AttributeModifier$Operation, $AttributeModifier$Operation$$Type} from "net.minecraft.world.entity.ai.attributes.AttributeModifier$Operation"
 import {$Attribute, $Attribute$$Type} from "net.minecraft.world.entity.ai.attributes.Attribute"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
-import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$EnchantedItemInUse$$Type} from "net.minecraft.world.item.enchantment.EnchantedItemInUse"
+import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$MapCodec, $MapCodec$$Type} from "com.mojang.serialization.MapCodec"
 import {$Record} from "java.lang.Record"
 
@@ -252,8 +252,8 @@ import {$Map} from "java.util.Map"
 import {$List$$Type} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$HangingEntity$$Type} from "net.minecraft.world.entity.decoration.HangingEntity"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
@@ -290,8 +290,8 @@ import {$CraftingInput$$Type} from "net.minecraft.world.item.crafting.CraftingIn
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$CustomRecipe} from "net.minecraft.world.item.crafting.CustomRecipe"
-import {$CraftingBookCategory$$Type} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$CraftingBookCategory$$Type} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 
@@ -317,13 +317,13 @@ export type $FireworkStarFadeRecipe$$Type = ($FireworkStarFadeRecipe);
 export type $FireworkStarFadeRecipe$$Original = $FireworkStarFadeRecipe;}
 declare module "net.minecraft.world.item.KnowledgeBookItem" {
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
+import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
-import {$Block} from "net.minecraft.world.level.block.Block"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Item} from "net.minecraft.world.item.Item"
 
@@ -352,11 +352,11 @@ export type $KnowledgeBookItem$$Original = $KnowledgeBookItem;}
 declare module "net.minecraft.world.item.crafting.FireworkStarRecipe" {
 import {$CraftingInput$$Type} from "net.minecraft.world.item.crafting.CraftingInput"
 import {$FireworkExplosion$Shape} from "net.minecraft.world.item.component.FireworkExplosion$Shape"
-import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
+import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Ingredient} from "net.minecraft.world.item.crafting.Ingredient"
-import {$CraftingBookCategory$$Type} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$CraftingBookCategory$$Type} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$CustomRecipe} from "net.minecraft.world.item.crafting.CustomRecipe"
@@ -421,8 +421,8 @@ import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$IntFunction} from "java.util.function.IntFunction"
@@ -440,11 +440,11 @@ public static "values"(): ($CraftingBookCategory)[]
 public static "valueOf"(arg0: StringJS): $CraftingBookCategory
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
 }
@@ -485,8 +485,8 @@ export type $MapItemColor$$Type = ({"rgb"?: integer}) | ([rgb?: integer]);
  */
 export type $MapItemColor$$Original = $MapItemColor;}
 declare module "net.minecraft.world.item.Rarity" {
-import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$UnaryOperator} from "java.util.function.UnaryOperator"
+import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Style} from "net.minecraft.network.chat.Style"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
@@ -496,8 +496,8 @@ import {$IntFunction} from "java.util.function.IntFunction"
 import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$ExtensionInfo} from "net.neoforged.fml.common.asm.enumextension.ExtensionInfo"
 import {$ChatFormatting} from "net.minecraft.ChatFormatting"
 
@@ -527,11 +527,11 @@ public "color"(): $ChatFormatting
 public static "getExtensionInfo"(): $ExtensionInfo
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "styleModifier"(): $UnaryOperator<($Style)>
 public static get "extensionInfo"(): $ExtensionInfo
 get "serializedName"(): StringJS
@@ -551,12 +551,12 @@ import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$List$$Type} from "java.util.List"
-import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 
 export class $AirItem extends $Item {
 static readonly "BASE_ATTACK_DAMAGE_ID": $ResourceLocation
@@ -618,15 +618,15 @@ declare module "net.minecraft.world.item.BundleItem" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$Optional} from "java.util.Optional"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$List$$Type} from "java.util.List"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$SlotAccess$$Type} from "net.minecraft.world.entity.SlotAccess"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$ItemEntity$$Type} from "net.minecraft.world.entity.item.ItemEntity"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Slot$$Type} from "net.minecraft.world.inventory.Slot"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$TooltipComponent} from "net.minecraft.world.inventory.tooltip.TooltipComponent"
@@ -692,8 +692,8 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$ExtensionInfo} from "net.neoforged.fml.common.asm.enumextension.ExtensionInfo"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 import {$IExtensibleEnum$$Interface} from "net.neoforged.fml.common.asm.enumextension.IExtensibleEnum"
@@ -718,14 +718,14 @@ public static "valueOf"(arg0: StringJS): $ItemDisplayContext
 public "getId"(): byte
 public "fallback"(): $ItemDisplayContext
 public static "getExtensionInfo"(): $ExtensionInfo
-public "getSerializedName"(): StringJS
 public "firstPerson"(): boolean
+public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "modded"(): boolean
 get "id"(): byte
 public static get "extensionInfo"(): $ExtensionInfo
@@ -748,8 +748,8 @@ import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 
@@ -777,8 +777,8 @@ export type $NameTagItem$$Type = ($NameTagItem);
 export type $NameTagItem$$Original = $NameTagItem;}
 declare module "net.minecraft.world.item.crafting.SmithingTransformRecipe$Serializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$SmithingTransformRecipe} from "net.minecraft.world.item.crafting.SmithingTransformRecipe"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
@@ -803,8 +803,8 @@ export type $SmithingTransformRecipe$Serializer$$Type = ($SmithingTransformRecip
 export type $SmithingTransformRecipe$Serializer$$Original = $SmithingTransformRecipe$Serializer;}
 declare module "net.minecraft.world.item.crafting.SmithingTrimRecipe" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$Ingredient, $Ingredient$$Type} from "net.minecraft.world.item.crafting.Ingredient"
+import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$RecipeType} from "net.minecraft.world.item.crafting.RecipeType"
 import {$SmithingRecipeInput$$Type} from "net.minecraft.world.item.crafting.SmithingRecipeInput"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
@@ -862,8 +862,8 @@ export type $SmithingTrimRecipe$$Original = $SmithingTrimRecipe;}
 declare module "net.minecraft.world.item.trading.Merchant" {
 import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$MerchantOffer$$Type} from "net.minecraft.world.item.trading.MerchantOffer"
 import {$MerchantOffers, $MerchantOffers$$Type} from "net.minecraft.world.item.trading.MerchantOffers"
+import {$MerchantOffer$$Type} from "net.minecraft.world.item.trading.MerchantOffer"
 import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 
@@ -927,8 +927,8 @@ import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$GlobalPos} from "net.minecraft.core.GlobalPos"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
@@ -992,8 +992,8 @@ declare module "net.minecraft.world.item.ArrowItem" {
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$ProjectileItem$DispenseConfig} from "net.minecraft.world.item.ProjectileItem$DispenseConfig"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Projectile, $Projectile$$Type} from "net.minecraft.world.entity.projectile.Projectile"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Position$$Type} from "net.minecraft.core.Position"
@@ -1035,13 +1035,13 @@ import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$List$$Type} from "java.util.List"
-import {$Block} from "net.minecraft.world.level.block.Block"
-import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$MutableComponent} from "net.minecraft.network.chat.MutableComponent"
+import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 
 export class $DiscFragmentItem extends $Item {
 static readonly "BASE_ATTACK_DAMAGE_ID": $ResourceLocation
@@ -1072,8 +1072,8 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
 export class $CookingBookCategory extends $Enum<($CookingBookCategory)> implements $StringRepresentable$$Interface {
@@ -1086,11 +1086,11 @@ public static "values"(): ($CookingBookCategory)[]
 public static "valueOf"(arg0: StringJS): $CookingBookCategory
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
 }
@@ -1108,9 +1108,9 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$EquipmentSlot} from "net.minecraft.world.entity.EquipmentSlot"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
 export class $ArmorItem$Type extends $Enum<($ArmorItem$Type)> implements $StringRepresentable$$Interface {
@@ -1129,11 +1129,11 @@ public static "valueOf"(arg0: StringJS): $ArmorItem$Type
 public "getSlot"(): $EquipmentSlot
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "name"(): StringJS
 get "slot"(): $EquipmentSlot
 get "serializedName"(): StringJS
@@ -1149,23 +1149,23 @@ export type $ArmorItem$Type$$Type = (("helmet") | ("chestplate") | ("leggings") 
  */
 export type $ArmorItem$Type$$Original = $ArmorItem$Type;}
 declare module "net.minecraft.world.item.InstrumentItem" {
-import {$Instrument$$Type} from "net.minecraft.world.item.Instrument"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
+import {$Instrument$$Type} from "net.minecraft.world.item.Instrument"
 import {$List$$Type} from "java.util.List"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Holder$$Type} from "net.minecraft.core.Holder"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
 import {$UseAnim} from "net.minecraft.world.item.UseAnim"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$TagKey$$Type} from "net.minecraft.tags.TagKey"
 import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
+import {$TagKey$$Type} from "net.minecraft.tags.TagKey"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item, $Item$$Type} from "net.minecraft.world.item.Item"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
@@ -1216,17 +1216,17 @@ constructor(arg0: $Holder$$Type<($Enchantment)>, arg1: $IntProvider$$Type)
 
 public "enchantment"(): $Holder<($Enchantment)>
 public "enchant"(arg0: $ItemStack$$Type, arg1: $ItemEnchantments$Mutable$$Type, arg2: $RandomSource$$Type, arg3: $DifficultyInstance$$Type): void
-public "level"(): $IntProvider
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
+public "level"(): $IntProvider
 public "codec"(): $MapCodec<($SingleEnchantment)>
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $SingleEnchantment$$Type = ({"enchantment"?: $Holder$$Type<($Enchantment)>, "level"?: $IntProvider$$Type}) | ([enchantment?: $Holder$$Type<($Enchantment)>, level?: $IntProvider$$Type]);
+export type $SingleEnchantment$$Type = ({"level"?: $IntProvider$$Type, "enchantment"?: $Holder$$Type<($Enchantment)>}) | ([level?: $IntProvider$$Type, enchantment?: $Holder$$Type<($Enchantment)>]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -1237,11 +1237,11 @@ import {$Map} from "java.util.Map"
 import {$List$$Type} from "java.util.List"
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$DyeColor} from "net.minecraft.world.item.DyeColor"
+import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$AdditionalItemPlacement, $AdditionalItemPlacement$$Type} from "net.mehvahdjukaar.moonlight.api.item.additional_placements.AdditionalItemPlacement"
 import {$StandingAndWallBlockItem} from "net.minecraft.world.item.StandingAndWallBlockItem"
@@ -1306,18 +1306,18 @@ public "shouldRewardExp"(): boolean
 public "getItemCostA"(): $ItemCost
 public "getItemCostB"(): $Optional<($ItemCost)>
 public "increaseUses"(): void
-public "getCostA"(): $ItemStack
-public "getCostB"(): $ItemStack
-public "isOutOfStock"(): boolean
-public "getMaxUses"(): integer
-public "getDemand"(): integer
 public "getSpecialPriceDiff"(): integer
 public "setSpecialPriceDiff"(arg0: integer): void
 public "setToOutOfStock"(): void
 public "satisfiedBy"(arg0: $ItemStack$$Type, arg1: $ItemStack$$Type): boolean
 public static "createFromStream"(arg0: $RegistryFriendlyByteBuf$$Type): $MerchantOffer
-public "take"(arg0: $ItemStack$$Type, arg1: $ItemStack$$Type): boolean
+public "getCostA"(): $ItemStack
+public "getCostB"(): $ItemStack
+public "isOutOfStock"(): boolean
+public "getMaxUses"(): integer
+public "getDemand"(): integer
 public "getResult"(): $ItemStack
+public "take"(arg0: $ItemStack$$Type, arg1: $ItemStack$$Type): boolean
 public "copy"(): $MerchantOffer
 get "uses"(): integer
 get "xp"(): integer
@@ -1325,14 +1325,14 @@ get "priceMultiplier"(): float
 get "baseCostA"(): $ItemStack
 get "itemCostA"(): $ItemCost
 get "itemCostB"(): $Optional<($ItemCost)>
+get "specialPriceDiff"(): integer
+set "specialPriceDiff"(value: integer)
+get "toOutOfStock"(): void
 get "costA"(): $ItemStack
 get "costB"(): $ItemStack
 get "outOfStock"(): boolean
 get "maxUses"(): integer
 get "demand"(): integer
-get "specialPriceDiff"(): integer
-set "specialPriceDiff"(value: integer)
-get "toOutOfStock"(): void
 get "result"(): $ItemStack
 }
 /**
@@ -1349,12 +1349,12 @@ import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$List$$Type} from "java.util.List"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 
 export class $FireworkStarItem extends $Item {
 static readonly "BASE_ATTACK_DAMAGE_ID": $ResourceLocation
@@ -1380,13 +1380,13 @@ export type $FireworkStarItem$$Type = ($FireworkStarItem);
 export type $FireworkStarItem$$Original = $FireworkStarItem;}
 declare module "net.minecraft.world.item.EnderpearlItem" {
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
+import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
-import {$Block} from "net.minecraft.world.level.block.Block"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Item} from "net.minecraft.world.item.Item"
 
@@ -1424,8 +1424,8 @@ import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 
 export class $EnderEyeItem extends $Item {
 static readonly "BASE_ATTACK_DAMAGE_ID": $ResourceLocation
@@ -1531,17 +1531,17 @@ import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item, $Item$$Type} from "net.minecraft.world.item.Item"
-import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$InvokerBlockItem$$Interface} from "xfacthd.framedblocks.mixin.InvokerBlockItem"
-import {$AdditionalItemPlacement, $AdditionalItemPlacement$$Type} from "net.mehvahdjukaar.moonlight.api.item.additional_placements.AdditionalItemPlacement"
+import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$AdditionalItemPlacement, $AdditionalItemPlacement$$Type} from "net.mehvahdjukaar.moonlight.api.item.additional_placements.AdditionalItemPlacement"
 import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$Map, $Map$$Type} from "java.util.Map"
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$ItemEntity$$Type} from "net.minecraft.world.entity.item.ItemEntity"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$IExtendedItem$$Interface} from "net.mehvahdjukaar.moonlight.core.misc.IExtendedItem"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$BlockPlaceContext, $BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
@@ -1595,8 +1595,8 @@ declare module "net.minecraft.world.item.ArmorStandItem" {
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$CallbackInfoReturnable$$Type} from "org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable"
@@ -1627,16 +1627,16 @@ export type $ArmorStandItem$$Type = ($ArmorStandItem);
 export type $ArmorStandItem$$Original = $ArmorStandItem;}
 declare module "net.minecraft.world.item.EmptyMapItem" {
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
+import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
-import {$Block} from "net.minecraft.world.level.block.Block"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
-import {$ComplexItem} from "net.minecraft.world.item.ComplexItem"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$ComplexItem} from "net.minecraft.world.item.ComplexItem"
 
 export class $EmptyMapItem extends $ComplexItem {
 static readonly "BASE_ATTACK_DAMAGE_ID": $ResourceLocation
@@ -1669,11 +1669,11 @@ import {$ItemAttributeModifiers} from "net.minecraft.world.item.component.ItemAt
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
 import {$Holder$$Type} from "net.minecraft.core.Holder"
-import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Equipable} from "net.minecraft.world.item.Equipable"
+import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Supplier} from "java.util.function.Supplier"
-import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$ArmorItem} from "net.minecraft.world.item.ArmorItem"
+import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$DispenseItemBehavior} from "net.minecraft.core.dispenser.DispenseItemBehavior"
 
@@ -1755,11 +1755,11 @@ import {$CraftingInput$$Type} from "net.minecraft.world.item.crafting.CraftingIn
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Ingredient} from "net.minecraft.world.item.crafting.Ingredient"
 import {$RecipeType} from "net.minecraft.world.item.crafting.RecipeType"
-import {$CraftingBookCategory, $CraftingBookCategory$$Type} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$CraftingBookCategory, $CraftingBookCategory$$Type} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$CraftingRecipe$$Interface} from "net.minecraft.world.item.crafting.CraftingRecipe"
-import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
+import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 
 export class $CustomRecipe implements $CraftingRecipe$$Interface {
@@ -1772,8 +1772,8 @@ public "getType"(): $RecipeType<(never)>
 public "assemble"(arg0: $CraftingInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
 public "getRemainingItems"(arg0: $CraftingInput$$Type): $NonNullList<($ItemStack)>
 public "getSerializer"(): $RecipeSerializer<(never)>
-public "getIngredients"(): $NonNullList<($Ingredient)>
 public "canCraftInDimensions"(arg0: integer, arg1: integer): boolean
+public "getIngredients"(): $NonNullList<($Ingredient)>
 public "showNotification"(): boolean
 public "getToastSymbol"(): $ItemStack
 public "isIncomplete"(): boolean
@@ -1834,8 +1834,8 @@ import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$Registry$$Type} from "net.minecraft.core.Registry"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
-import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$EnchantedItemInUse$$Type} from "net.minecraft.world.item.enchantment.EnchantedItemInUse"
+import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$MapCodec, $MapCodec$$Type} from "com.mojang.serialization.MapCodec"
 
 export interface $EnchantmentLocationBasedEffect$$Interface {
@@ -1863,8 +1863,8 @@ import {$CraftingInput$$Type} from "net.minecraft.world.item.crafting.CraftingIn
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$CustomRecipe} from "net.minecraft.world.item.crafting.CustomRecipe"
-import {$CraftingBookCategory$$Type} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$CraftingBookCategory$$Type} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 
@@ -1919,8 +1919,8 @@ declare module "net.minecraft.world.item.enchantment.LevelBasedValue" {
 import {$Registry$$Type} from "net.minecraft.core.Registry"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$List$$Type} from "java.util.List"
-import {$LevelBasedValue$Lookup} from "net.minecraft.world.item.enchantment.LevelBasedValue$Lookup"
 import {$LevelBasedValue$Linear} from "net.minecraft.world.item.enchantment.LevelBasedValue$Linear"
+import {$LevelBasedValue$Lookup} from "net.minecraft.world.item.enchantment.LevelBasedValue$Lookup"
 import {$MapCodec, $MapCodec$$Type} from "com.mojang.serialization.MapCodec"
 import {$LevelBasedValue$Constant} from "net.minecraft.world.item.enchantment.LevelBasedValue$Constant"
 
@@ -1952,8 +1952,8 @@ declare module "net.minecraft.world.item.TieredItem" {
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Tier, $Tier$$Type} from "net.minecraft.world.item.Tier"
 
@@ -1988,8 +1988,8 @@ import {$CraftingInput$$Type} from "net.minecraft.world.item.crafting.CraftingIn
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$CustomRecipe} from "net.minecraft.world.item.crafting.CustomRecipe"
-import {$CraftingBookCategory$$Type} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$CraftingBookCategory$$Type} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 
@@ -2053,7 +2053,7 @@ public "description"(): $Component
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $TrimPattern$$Type = (Special.TrimPattern) | ({"decal"?: boolean, "assetId"?: $ResourceLocation$$Type, "description"?: $Component$$Type, "templateItem"?: $Holder$$Type<($Item)>}) | ([decal?: boolean, assetId?: $ResourceLocation$$Type, description?: $Component$$Type, templateItem?: $Holder$$Type<($Item)>]);
+export type $TrimPattern$$Type = (Special.TrimPattern) | ({"assetId"?: $ResourceLocation$$Type, "description"?: $Component$$Type, "templateItem"?: $Holder$$Type<($Item)>, "decal"?: boolean}) | ([assetId?: $ResourceLocation$$Type, description?: $Component$$Type, templateItem?: $Holder$$Type<($Item)>, decal?: boolean]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -2061,10 +2061,10 @@ export type $TrimPattern$$Original = $TrimPattern;}
 declare module "net.minecraft.world.item.ExperienceBottleItem" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$ProjectileItem$DispenseConfig} from "net.minecraft.world.item.ProjectileItem$DispenseConfig"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Projectile, $Projectile$$Type} from "net.minecraft.world.entity.projectile.Projectile"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Position$$Type} from "net.minecraft.core.Position"
@@ -2103,8 +2103,8 @@ export type $ExperienceBottleItem$$Original = $ExperienceBottleItem;}
 declare module "net.minecraft.world.item.enchantment.ItemEnchantments" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$Enchantment, $Enchantment$$Type} from "net.minecraft.world.item.enchantment.Enchantment"
@@ -2182,8 +2182,8 @@ import {$CraftingInput$$Type} from "net.minecraft.world.item.crafting.CraftingIn
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$CustomRecipe} from "net.minecraft.world.item.crafting.CustomRecipe"
-import {$CraftingBookCategory$$Type} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$CraftingBookCategory$$Type} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 
@@ -2214,13 +2214,13 @@ import {$Optional} from "java.util.Optional"
 import {$List$$Type} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$TagKey, $TagKey$$Type} from "net.minecraft.tags.TagKey"
 import {$BannerPattern, $BannerPattern$$Type} from "net.minecraft.world.level.block.entity.BannerPattern"
-import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$TagKey, $TagKey$$Type} from "net.minecraft.tags.TagKey"
 import {$MutableComponent} from "net.minecraft.network.chat.MutableComponent"
+import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"
 
 export class $BannerPatternItem extends $Item {
@@ -2251,11 +2251,11 @@ export type $BannerPatternItem$$Type = ($BannerPatternItem);
  */
 export type $BannerPatternItem$$Original = $BannerPatternItem;}
 declare module "net.minecraft.world.item.crafting.RecipeType" {
-import {$SmokingRecipe} from "net.minecraft.world.item.crafting.SmokingRecipe"
 import {$BlastingRecipe} from "net.minecraft.world.item.crafting.BlastingRecipe"
+import {$SmokingRecipe} from "net.minecraft.world.item.crafting.SmokingRecipe"
 import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
-import {$StonecutterRecipe} from "net.minecraft.world.item.crafting.StonecutterRecipe"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$StonecutterRecipe} from "net.minecraft.world.item.crafting.StonecutterRecipe"
 import {$SmeltingRecipe} from "net.minecraft.world.item.crafting.SmeltingRecipe"
 import {$CraftingRecipe} from "net.minecraft.world.item.crafting.CraftingRecipe"
 import {$SmithingRecipe} from "net.minecraft.world.item.crafting.SmithingRecipe"
@@ -2331,10 +2331,10 @@ export type $EnchantmentsByCostWithDifficulty$$Original = $EnchantmentsByCostWit
 declare module "net.minecraft.world.item.EggItem" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$ProjectileItem$DispenseConfig} from "net.minecraft.world.item.ProjectileItem$DispenseConfig"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Projectile, $Projectile$$Type} from "net.minecraft.world.entity.projectile.Projectile"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Position$$Type} from "net.minecraft.core.Position"
@@ -2372,13 +2372,13 @@ export type $EggItem$$Type = ($EggItem);
 export type $EggItem$$Original = $EggItem;}
 declare module "net.minecraft.world.item.WritableBookItem" {
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
+import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
-import {$Block} from "net.minecraft.world.level.block.Block"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Item} from "net.minecraft.world.item.Item"
 
@@ -2409,8 +2409,8 @@ import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$ItemAbility$$Type} from "net.neoforged.neoforge.common.ItemAbility"
@@ -2521,8 +2521,8 @@ import {$ArmorDyeRecipe} from "net.minecraft.world.item.crafting.ArmorDyeRecipe"
 import {$SmokingRecipe} from "net.minecraft.world.item.crafting.SmokingRecipe"
 import {$FireworkStarRecipe} from "net.minecraft.world.item.crafting.FireworkStarRecipe"
 import {$FireworkStarFadeRecipe} from "net.minecraft.world.item.crafting.FireworkStarFadeRecipe"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$MapExtendingRecipe} from "net.minecraft.world.item.crafting.MapExtendingRecipe"
 import {$DecoratedPotRecipe} from "net.minecraft.world.item.crafting.DecoratedPotRecipe"
 import {$MapCloningRecipe} from "net.minecraft.world.item.crafting.MapCloningRecipe"
@@ -2578,14 +2578,14 @@ export type $RecipeSerializer$$Type<T> = (Special.RecipeSerializer);
  */
 export type $RecipeSerializer$$Original<T> = $RecipeSerializer<(T)>;}
 declare module "net.minecraft.world.item.SmithingTemplateItem" {
-import {$FeatureFlag$$Type} from "net.minecraft.world.flag.FeatureFlag"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
+import {$FeatureFlag$$Type} from "net.minecraft.world.flag.FeatureFlag"
 import {$List, $List$$Type} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$TrimPattern$$Type} from "net.minecraft.world.item.armortrim.TrimPattern"
 import {$Item} from "net.minecraft.world.item.Item"
@@ -2660,10 +2660,10 @@ export type $SmithingTemplateItem$$Type = ($SmithingTemplateItem);
 export type $SmithingTemplateItem$$Original = $SmithingTemplateItem;}
 declare module "net.minecraft.world.item.ArmorItem" {
 import {$ArmorMaterial, $ArmorMaterial$$Type} from "net.minecraft.world.item.ArmorMaterial"
-import {$Map} from "java.util.Map"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$ItemAttributeModifiers} from "net.minecraft.world.item.component.ItemAttributeModifiers"
+import {$Map} from "java.util.Map"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
+import {$ItemAttributeModifiers} from "net.minecraft.world.item.component.ItemAttributeModifiers"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
@@ -2672,9 +2672,9 @@ import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Equipable, $Equipable$$Interface} from "net.minecraft.world.item.Equipable"
 import {$BlockSource$$Type} from "net.minecraft.core.dispenser.BlockSource"
-import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
-import {$EquipmentSlot} from "net.minecraft.world.entity.EquipmentSlot"
 import {$Supplier} from "java.util.function.Supplier"
+import {$EquipmentSlot} from "net.minecraft.world.entity.EquipmentSlot"
+import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item, $Item$$Type} from "net.minecraft.world.item.Item"
 import {$DispenseItemBehavior} from "net.minecraft.core.dispenser.DispenseItemBehavior"
@@ -2769,14 +2769,14 @@ import {$AttributeModifier$$Type} from "net.minecraft.world.entity.ai.attributes
 import {$EquipmentSlotGroup$$Type} from "net.minecraft.world.entity.EquipmentSlotGroup"
 import {$ItemAttributeModifiers$Entry, $ItemAttributeModifiers$Entry$$Type} from "net.minecraft.world.item.component.ItemAttributeModifiers$Entry"
 import {$List, $List$$Type} from "java.util.List"
-import {$Holder$$Type} from "net.minecraft.core.Holder"
 import {$DecimalFormat} from "java.text.DecimalFormat"
+import {$Holder$$Type} from "net.minecraft.core.Holder"
 import {$ItemAttributeModifiers$Builder} from "net.minecraft.world.item.component.ItemAttributeModifiers$Builder"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
-import {$BiConsumer$$Type} from "java.util.function.BiConsumer"
 import {$Attribute$$Type} from "net.minecraft.world.entity.ai.attributes.Attribute"
+import {$BiConsumer$$Type} from "java.util.function.BiConsumer"
 import {$Record} from "java.lang.Record"
 
 export class $ItemAttributeModifiers extends $Record {
@@ -2879,8 +2879,8 @@ import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$Predicate, $Predicate$$Type} from "java.util.function.Predicate"
-import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$AbstractArrow, $AbstractArrow$$Type} from "net.minecraft.world.entity.projectile.AbstractArrow"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
@@ -2907,12 +2907,12 @@ public "getDefaultProjectileRange"(): integer
 public "getSupportedHeldProjectiles"(): $Predicate<($ItemStack)>
 public "getSupportedHeldProjectiles"(arg0: $ItemStack$$Type): $Predicate<($ItemStack)>
 public static "getHeldProjectile"(arg0: $LivingEntity$$Type, arg1: $Predicate$$Type<($ItemStack)>): $ItemStack
+public "getAllSupportedProjectiles"(arg0: $ItemStack$$Type): $Predicate<($ItemStack)>
 /**
  * 
  * @deprecated
  */
 public "getAllSupportedProjectiles"(): $Predicate<($ItemStack)>
-public "getAllSupportedProjectiles"(arg0: $ItemStack$$Type): $Predicate<($ItemStack)>
 public "getDefaultCreativeAmmo"(arg0: $Player$$Type, arg1: $ItemStack$$Type): $ItemStack
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "enchantmentValue"(): integer
@@ -2931,8 +2931,8 @@ export type $ProjectileWeaponItem$$Type = ($ProjectileWeaponItem);
 export type $ProjectileWeaponItem$$Original = $ProjectileWeaponItem;}
 declare module "net.minecraft.world.item.crafting.ShapelessRecipe$Serializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$ShapelessRecipe} from "net.minecraft.world.item.crafting.ShapelessRecipe"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
@@ -2957,14 +2957,14 @@ export type $ShapelessRecipe$Serializer$$Type = ($ShapelessRecipe$Serializer);
  */
 export type $ShapelessRecipe$Serializer$$Original = $ShapelessRecipe$Serializer;}
 declare module "net.minecraft.world.item.crafting.ShapedRecipePattern" {
-import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$CraftingInput$$Type} from "net.minecraft.world.item.crafting.CraftingInput"
+import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$ShapedPatternAccess$$Interface} from "blusunrize.immersiveengineering.mixin.accessors.ShapedPatternAccess"
 import {$Map$$Type} from "java.util.Map"
 import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$Ingredient, $Ingredient$$Type} from "net.minecraft.world.item.crafting.Ingredient"
-import {$DataResult} from "com.mojang.serialization.DataResult"
 import {$List$$Type} from "java.util.List"
+import {$DataResult} from "com.mojang.serialization.DataResult"
 import {$NonNullList, $NonNullList$$Type} from "net.minecraft.core.NonNullList"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$ShapedRecipePattern$Data, $ShapedRecipePattern$Data$$Type} from "net.minecraft.world.item.crafting.ShapedRecipePattern$Data"
@@ -3003,8 +3003,8 @@ export type $ShapedRecipePattern$$Type = ($ShapedRecipePattern);
 export type $ShapedRecipePattern$$Original = $ShapedRecipePattern;}
 declare module "net.minecraft.world.item.crafting.ShapedRecipe$Serializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$ShapedRecipe} from "net.minecraft.world.item.crafting.ShapedRecipe"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
@@ -3032,8 +3032,8 @@ declare module "net.minecraft.world.item.HangingSignItem" {
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$SignItem} from "net.minecraft.world.item.SignItem"
-import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$AdditionalItemPlacement, $AdditionalItemPlacement$$Type} from "net.mehvahdjukaar.moonlight.api.item.additional_placements.AdditionalItemPlacement"
 
@@ -3079,10 +3079,10 @@ get "attackDamageBonus"(): float
 
 export class $Tier implements $Tier$$Interface {
  "getEnchantmentValue"(): integer
+ "createToolProperties"(arg0: $TagKey$$Type<($Block)>): $Tool
  "getUses"(): integer
  "getIncorrectBlocksForDrops"(): $TagKey<($Block)>
  "getRepairIngredient"(): $Ingredient
- "createToolProperties"(arg0: $TagKey$$Type<($Block)>): $Tool
  "getSpeed"(): float
  "getAttackDamageBonus"(): float
 }
@@ -3098,11 +3098,11 @@ export type $Tier$$Original = $Tier;}
 declare module "net.minecraft.world.item.crafting.ShapelessRecipe" {
 import {$CraftingInput$$Type} from "net.minecraft.world.item.crafting.CraftingInput"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$Ingredient, $Ingredient$$Type} from "net.minecraft.world.item.crafting.Ingredient"
+import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$RecipeType} from "net.minecraft.world.item.crafting.RecipeType"
-import {$CraftingBookCategory, $CraftingBookCategory$$Type} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$CraftingBookCategory, $CraftingBookCategory$$Type} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$CraftingRecipe$$Interface} from "net.minecraft.world.item.crafting.CraftingRecipe"
 import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$NonNullList, $NonNullList$$Type} from "net.minecraft.core.NonNullList"
@@ -3118,9 +3118,9 @@ constructor(arg0: StringJS, arg1: $CraftingBookCategory$$Type, arg2: $ItemStack$
 public "assemble"(arg0: $RecipeInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
 public "assemble"(arg0: $CraftingInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
 public "getSerializer"(): $RecipeSerializer<(never)>
-public "getIngredients"(): $NonNullList<($Ingredient)>
 public "canCraftInDimensions"(arg0: integer, arg1: integer): boolean
 public "getResultItem"(arg0: $HolderLookup$Provider$$Type): $ItemStack
+public "getIngredients"(): $NonNullList<($Ingredient)>
 public "category"(): $CraftingBookCategory
 public "matches"(arg0: $RecipeInput$$Type, arg1: $Level$$Type): boolean
 public "matches"(arg0: $CraftingInput$$Type, arg1: $Level$$Type): boolean
@@ -3189,10 +3189,10 @@ declare module "net.minecraft.world.item.GlowInkSacItem" {
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$SignText$$Type} from "net.minecraft.world.level.block.entity.SignText"
 import {$SignApplicator$$Interface} from "net.minecraft.world.item.SignApplicator"
-import {$Block} from "net.minecraft.world.level.block.Block"
+import {$SignText$$Type} from "net.minecraft.world.level.block.entity.SignText"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$SignBlockEntity$$Type} from "net.minecraft.world.level.block.entity.SignBlockEntity"
@@ -3224,11 +3224,11 @@ declare module "net.minecraft.world.item.PlayerHeadItem" {
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$AdditionalItemPlacement, $AdditionalItemPlacement$$Type} from "net.mehvahdjukaar.moonlight.api.item.additional_placements.AdditionalItemPlacement"
 import {$Component} from "net.minecraft.network.chat.Component"
+import {$AdditionalItemPlacement, $AdditionalItemPlacement$$Type} from "net.mehvahdjukaar.moonlight.api.item.additional_placements.AdditionalItemPlacement"
 import {$StandingAndWallBlockItem} from "net.minecraft.world.item.StandingAndWallBlockItem"
 
 export class $PlayerHeadItem extends $StandingAndWallBlockItem {
@@ -3276,8 +3276,8 @@ constructor(arg0: $Player$$Type, arg1: $InteractionHand$$Type, arg2: $BlockHitRe
 public "getClickedPos"(): $BlockPos
 public "getClickedFace"(): $Direction
 public "isInside"(): boolean
-public "getClickLocation"(): $Vec3
 public "getHorizontalDirection"(): $Direction
+public "getClickLocation"(): $Vec3
 public "getHand"(): $InteractionHand
 public "create$getHitResult"(): $BlockHitResult
 public "getHitResult"(): $BlockHitResult
@@ -3289,8 +3289,8 @@ public "getPlayer"(): $Player
 get "clickedPos"(): $BlockPos
 get "clickedFace"(): $Direction
 get "inside"(): boolean
-get "clickLocation"(): $Vec3
 get "horizontalDirection"(): $Direction
+get "clickLocation"(): $Vec3
 get "hand"(): $InteractionHand
 get "hitResult"(): $BlockHitResult
 get "level"(): $Level
@@ -3313,8 +3313,8 @@ import {$CraftingInput$$Type} from "net.minecraft.world.item.crafting.CraftingIn
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$CustomRecipe} from "net.minecraft.world.item.crafting.CustomRecipe"
-import {$CraftingBookCategory$$Type} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$CraftingBookCategory$$Type} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 
@@ -3366,7 +3366,7 @@ constructor(arg0: $Filterable$$Type<(StringJS)>, arg1: StringJS, arg2: integer, 
 
 public "getPages"(arg0: boolean): $List<($Component)>
 public "markResolved"(): $WrittenBookContent
-public "withReplacedPages"(arg0: $List$$Type<($Filterable$$Type<($Component$$Type)>)>): $WrittenBookContent
+public "withReplacedPages"(arg0: $List$$Type): any
 public static "pagesCodec"(arg0: $Codec$$Type<($Component$$Type)>): $Codec<($List<($Filterable<($Component)>)>)>
 public "tryCraftCopy"(): $WrittenBookContent
 public "resolved"(): boolean
@@ -3390,10 +3390,10 @@ export type $WrittenBookContent$$Type = ({"pages"?: $List$$Type<($Filterable$$Ty
 export type $WrittenBookContent$$Original = $WrittenBookContent;}
 declare module "net.minecraft.world.item.crafting.SingleItemRecipe" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
-import {$Ingredient, $Ingredient$$Type} from "net.minecraft.world.item.crafting.Ingredient"
-import {$SingleRecipeInput, $SingleRecipeInput$$Type} from "net.minecraft.world.item.crafting.SingleRecipeInput"
 import {$Recipe$$Interface} from "net.minecraft.world.item.crafting.Recipe"
+import {$SingleRecipeInput, $SingleRecipeInput$$Type} from "net.minecraft.world.item.crafting.SingleRecipeInput"
+import {$Ingredient, $Ingredient$$Type} from "net.minecraft.world.item.crafting.Ingredient"
+import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$RecipeType, $RecipeType$$Type} from "net.minecraft.world.item.crafting.RecipeType"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$RecipeSerializer, $RecipeSerializer$$Type} from "net.minecraft.world.item.crafting.RecipeSerializer"
@@ -3406,9 +3406,9 @@ constructor(arg0: $RecipeType$$Type<(never)>, arg1: $RecipeSerializer$$Type<(nev
 public "assemble"(arg0: $RecipeInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
 public "assemble"(arg0: $SingleRecipeInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
 public "getSerializer"(): $RecipeSerializer<(never)>
-public "getIngredients"(): $NonNullList<($Ingredient)>
 public "canCraftInDimensions"(arg0: integer, arg1: integer): boolean
 public "getResultItem"(arg0: $HolderLookup$Provider$$Type): $ItemStack
+public "getIngredients"(): $NonNullList<($Ingredient)>
 public "getType"(): $RecipeType<(never)>
 public "getGroup"(): StringJS
 public "getRemainingItems"(arg0: $SingleRecipeInput$$Type): $NonNullList<($ItemStack)>
@@ -3440,8 +3440,8 @@ import {$Codec} from "com.mojang.serialization.Codec"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$List, $List$$Type} from "java.util.List"
 import {$Tool$Rule, $Tool$Rule$$Type} from "net.minecraft.world.item.component.Tool$Rule"
-import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Record} from "java.lang.Record"
+import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $Tool extends $Record {
 static readonly "CODEC": $Codec<($Tool)>
@@ -3472,8 +3472,8 @@ import {$CraftingInput$$Type} from "net.minecraft.world.item.crafting.CraftingIn
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$CustomRecipe} from "net.minecraft.world.item.crafting.CustomRecipe"
-import {$CraftingBookCategory$$Type} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$CraftingBookCategory$$Type} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 
@@ -3503,9 +3503,9 @@ import {$FireworkExplosion$Shape, $FireworkExplosion$Shape$$Type} from "net.mine
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$TooltipProvider$$Interface} from "net.minecraft.world.item.component.TooltipProvider"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
+import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
 import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$IntList, $IntList$$Type} from "it.unimi.dsi.fastutil.ints.IntList"
-import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$Record} from "java.lang.Record"
 import {$Consumer$$Type} from "java.util.function.Consumer"
@@ -3545,10 +3545,10 @@ import {$CraftingInput$$Type} from "net.minecraft.world.item.crafting.CraftingIn
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$CustomRecipe} from "net.minecraft.world.item.crafting.CustomRecipe"
-import {$CraftingBookCategory$$Type} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
+import {$CraftingBookCategory$$Type} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
+import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 
 export class $BannerDuplicateRecipe extends $CustomRecipe {
@@ -3589,9 +3589,9 @@ constructor(arg0: integer, arg1: integer, arg2: $List$$Type<($ItemStack$$Type)>)
 public static "ofPositioned"(arg0: integer, arg1: integer, arg2: $List$$Type<($ItemStack$$Type)>): $CraftingInput$Positioned
 public "ingredientCount"(): integer
 public "stackedContents"(): $StackedContents
+public "items"(): $List<($ItemStack)>
 public "getItem"(arg0: integer, arg1: integer): $ItemStack
 public "getItem"(arg0: integer): $ItemStack
-public "items"(): $List<($ItemStack)>
 public "size"(): integer
 public "equals"(arg0: any): boolean
 public "hashCode"(): integer
@@ -3639,10 +3639,10 @@ export type $CreativeModeTab$Type$$Original = $CreativeModeTab$Type;}
 declare module "net.minecraft.world.item.SnowballItem" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$ProjectileItem$DispenseConfig} from "net.minecraft.world.item.ProjectileItem$DispenseConfig"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Projectile, $Projectile$$Type} from "net.minecraft.world.entity.projectile.Projectile"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Position$$Type} from "net.minecraft.core.Position"
@@ -3682,8 +3682,8 @@ declare module "net.minecraft.world.item.EndCrystalItem" {
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 
@@ -3720,14 +3720,14 @@ import {$ItemAbility$$Type} from "net.neoforged.neoforge.common.ItemAbility"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Operation$$Type} from "com.llamalad7.mixinextras.injector.wrapoperation.Operation"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
-import {$UseAnim} from "net.minecraft.world.item.UseAnim"
 import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
+import {$UseAnim} from "net.minecraft.world.item.UseAnim"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$LocalRef$$Type} from "com.llamalad7.mixinextras.sugar.ref.LocalRef"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
@@ -3761,8 +3761,8 @@ export type $BrushItem$$Type = ($BrushItem);
  */
 export type $BrushItem$$Original = $BrushItem;}
 declare module "net.minecraft.world.item.crafting.Ingredient$Value" {
-import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Collection, $Collection$$Type} from "java.util.Collection"
+import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 
@@ -3793,8 +3793,8 @@ import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$JukeboxSong, $JukeboxSong$$Type} from "net.minecraft.world.item.JukeboxSong"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ItemInteractionResult} from "net.minecraft.world.ItemInteractionResult"
@@ -3831,9 +3831,9 @@ export type $JukeboxPlayable$$Type = ({"song"?: $EitherHolder$$Type<($JukeboxSon
 export type $JukeboxPlayable$$Original = $JukeboxPlayable;}
 declare module "net.minecraft.world.item.crafting.StonecutterRecipe" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$Ingredient$$Type} from "net.minecraft.world.item.crafting.Ingredient"
 import {$SingleRecipeInput$$Type} from "net.minecraft.world.item.crafting.SingleRecipeInput"
+import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$SingleItemRecipe} from "net.minecraft.world.item.crafting.SingleItemRecipe"
 
@@ -3857,17 +3857,17 @@ export type $StonecutterRecipe$$Original = $StonecutterRecipe;}
 declare module "net.minecraft.world.item.FireworkRocketItem" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
-import {$ProjectileItem$DispenseConfig} from "net.minecraft.world.item.ProjectileItem$DispenseConfig"
 import {$List$$Type} from "java.util.List"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
+import {$ProjectileItem$DispenseConfig} from "net.minecraft.world.item.ProjectileItem$DispenseConfig"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Projectile, $Projectile$$Type} from "net.minecraft.world.entity.projectile.Projectile"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Position$$Type} from "net.minecraft.core.Position"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
@@ -3909,13 +3909,13 @@ export type $FireworkRocketItem$$Original = $FireworkRocketItem;}
 declare module "net.minecraft.world.item.crafting.CraftingRecipe" {
 import {$CraftingInput, $CraftingInput$$Type} from "net.minecraft.world.item.crafting.CraftingInput"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
-import {$Ingredient} from "net.minecraft.world.item.crafting.Ingredient"
 import {$Recipe$$Interface} from "net.minecraft.world.item.crafting.Recipe"
+import {$Ingredient} from "net.minecraft.world.item.crafting.Ingredient"
 import {$RecipeType} from "net.minecraft.world.item.crafting.RecipeType"
-import {$CraftingBookCategory} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
+import {$CraftingBookCategory} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
+import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 
 export interface $CraftingRecipe$$Interface extends $Recipe$$Interface<($CraftingInput)> {
@@ -3934,9 +3934,9 @@ export class $CraftingRecipe implements $CraftingRecipe$$Interface {
  "assemble"(arg0: $CraftingInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
  "getRemainingItems"(arg0: $CraftingInput$$Type): $NonNullList<($ItemStack)>
  "getSerializer"(): $RecipeSerializer<(never)>
- "getIngredients"(): $NonNullList<($Ingredient)>
  "canCraftInDimensions"(arg0: integer, arg1: integer): boolean
  "getResultItem"(arg0: $HolderLookup$Provider$$Type): $ItemStack
+ "getIngredients"(): $NonNullList<($Ingredient)>
  "showNotification"(): boolean
  "getToastSymbol"(): $ItemStack
  "isIncomplete"(): boolean
@@ -3958,8 +3958,8 @@ import {$CraftingInput$$Type} from "net.minecraft.world.item.crafting.CraftingIn
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$CustomRecipe} from "net.minecraft.world.item.crafting.CustomRecipe"
-import {$CraftingBookCategory$$Type} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$CraftingBookCategory$$Type} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 
@@ -4065,9 +4065,9 @@ export type $PotionBrewing$$Type = ($PotionBrewing);
  */
 export type $PotionBrewing$$Original = $PotionBrewing;}
 declare module "net.minecraft.world.item.ItemStack" {
-import {$ItemStackAccessor$$Interface as $ItemStackAccessor$1$$Interface} from "io.wispforest.accessories.mixin.ItemStackAccessor"
-import {$CallbackInfo$$Type} from "org.spongepowered.asm.mixin.injection.callback.CallbackInfo"
 import {$EquipmentSlotGroup$$Type} from "net.minecraft.world.entity.EquipmentSlotGroup"
+import {$CallbackInfo$$Type} from "org.spongepowered.asm.mixin.injection.callback.CallbackInfo"
+import {$ItemStackAccessor$$Interface} from "io.wispforest.accessories.mixin.ItemStackAccessor"
 import {$Mob$$Type} from "net.minecraft.world.entity.Mob"
 import {$Unbreakable$$Type} from "net.minecraft.world.item.component.Unbreakable"
 import {$RelativeURL} from "dev.latvian.mods.kubejs.web.RelativeURL"
@@ -4083,9 +4083,9 @@ import {$SeededContainerLoot$$Type} from "net.minecraft.world.item.component.See
 import {$ItemLore$$Type} from "net.minecraft.world.item.component.ItemLore"
 import {$Ingredient, $Ingredient$$Type} from "net.minecraft.world.item.crafting.Ingredient"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
-import {$RecipeMatchContext$$Type} from "dev.latvian.mods.kubejs.recipe.filter.RecipeMatchContext"
 import {$SlotAccess$$Type} from "net.minecraft.world.entity.SlotAccess"
-import {$ItemStackAccessor$$Interface} from "net.mehvahdjukaar.supplementaries.mixins.neoforge.ItemStackAccessor"
+import {$RecipeMatchContext$$Type} from "dev.latvian.mods.kubejs.recipe.filter.RecipeMatchContext"
+import {$ItemStackAccessor$$Interface as $ItemStackAccessor$1$$Interface} from "net.mehvahdjukaar.supplementaries.mixins.neoforge.ItemStackAccessor"
 import {$BeehiveBlockEntity$Occupant$$Type} from "net.minecraft.world.level.block.entity.BeehiveBlockEntity$Occupant"
 import {$ItemLike$$Type} from "net.minecraft.world.level.ItemLike"
 import {$BiConsumer$$Type} from "java.util.function.BiConsumer"
@@ -4120,9 +4120,9 @@ import {$BlockInWorld$$Type} from "net.minecraft.world.level.block.state.pattern
 import {$ChargedProjectiles$$Type} from "net.minecraft.world.item.component.ChargedProjectiles"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type, $ChangeSubscriber$$Interface} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
 import {$CallbackInfoReturnable$$Type} from "org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable"
-import {$ToIntFunction$$Type} from "java.util.function.ToIntFunction"
 import {$Operation$$Type} from "com.llamalad7.mixinextras.injector.wrapoperation.Operation"
 import {$DataComponentPatch, $DataComponentPatch$$Type} from "net.minecraft.core.component.DataComponentPatch"
+import {$ToIntFunction$$Type} from "java.util.function.ToIntFunction"
 import {$Enchantment$$Type} from "net.minecraft.world.item.enchantment.Enchantment"
 import {$Registry} from "net.minecraft.core.Registry"
 import {$RegistryFriendlyByteBuf, $RegistryFriendlyByteBuf$$Type} from "net.minecraft.network.RegistryFriendlyByteBuf"
@@ -4137,10 +4137,10 @@ import {$DataComponentMap, $DataComponentMap$$Type} from "net.minecraft.core.com
 import {$MapDecorations$$Type} from "net.minecraft.world.item.component.MapDecorations"
 import {$DynamicOps$$Type} from "com.mojang.serialization.DynamicOps"
 import {$Optional} from "java.util.Optional"
-import {$DataComponentType$$Type} from "net.minecraft.core.component.DataComponentType"
 import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
-import {$CustomData$$Type} from "net.minecraft.world.item.component.CustomData"
+import {$DataComponentType$$Type} from "net.minecraft.core.component.DataComponentType"
 import {$JukeboxPlayable$$Type} from "net.minecraft.world.item.JukeboxPlayable"
+import {$CustomData$$Type} from "net.minecraft.world.item.component.CustomData"
 import {$AdventureModePredicate$$Type} from "net.minecraft.world.item.AdventureModePredicate"
 import {$Slot$$Type} from "net.minecraft.world.inventory.Slot"
 import {$WrittenBookContent$$Type} from "net.minecraft.world.item.component.WrittenBookContent"
@@ -4151,8 +4151,8 @@ import {$EquipmentSlot, $EquipmentSlot$$Type} from "net.minecraft.world.entity.E
 import {$ItemFrame} from "net.minecraft.world.entity.decoration.ItemFrame"
 import {$MapPostProcessing$$Type} from "net.minecraft.world.item.component.MapPostProcessing"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
-import {$IFestiveMarker$$Interface} from "dev.shadowsoffire.apotheosis.util.IFestiveMarker"
 import {$TooltipProvider} from "net.minecraft.world.item.component.TooltipProvider"
+import {$IFestiveMarker$$Interface} from "dev.shadowsoffire.apotheosis.util.IFestiveMarker"
 import {$DyedItemColor$$Type} from "net.minecraft.world.item.component.DyedItemColor"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$AttributeModifier, $AttributeModifier$$Type} from "net.minecraft.world.entity.ai.attributes.AttributeModifier"
@@ -4164,8 +4164,8 @@ import {$LootTable$$Type} from "net.minecraft.world.level.storage.loot.LootTable
 import {$Fireworks$$Type} from "net.minecraft.world.item.component.Fireworks"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
-import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$EnderMan$$Type} from "net.minecraft.world.entity.monster.EnderMan"
+import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$BiFunction$$Type} from "java.util.function.BiFunction"
 import {$LevelBlock$$Type} from "dev.latvian.mods.kubejs.level.LevelBlock"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
@@ -4177,8 +4177,8 @@ import {$StreamCodec, $StreamCodec$$Type} from "net.minecraft.network.codec.Stre
 import {$ItemAttributeModifiers$Entry$$Type} from "net.minecraft.world.item.component.ItemAttributeModifiers$Entry"
 import {$UUID$$Type} from "java.util.UUID"
 import {$List, $List$$Type} from "java.util.List"
-import {$FireworkExplosion$$Type} from "net.minecraft.world.item.component.FireworkExplosion"
 import {$IItemStackExtension$$Interface} from "net.neoforged.neoforge.common.extensions.IItemStackExtension"
+import {$FireworkExplosion$$Type} from "net.minecraft.world.item.component.FireworkExplosion"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$FoodProperties, $FoodProperties$$Type} from "net.minecraft.world.food.FoodProperties"
@@ -4212,7 +4212,7 @@ import {$BlockItemStateProperties$$Type} from "net.minecraft.world.item.componen
  * 
  * @deprecated
  */
-export class $ItemStack implements $DataComponentHolder$$Interface, $MutableDataComponentHolder$$Interface, $IItemStackExtension$$Interface, $IFestiveMarker$$Interface, $CachedObject$CachedObjectSource$$Interface, $ItemStackAccessor$$Interface, $ItemStackAccessor$1$$Interface, $ItemStackKJS$$Interface, $ItemStackAccessor$0$$Interface, $ChangeSubscriber$$Interface, $ChangePublisher$$Interface {
+export class $ItemStack implements $DataComponentHolder$$Interface, $MutableDataComponentHolder$$Interface, $IItemStackExtension$$Interface, $IFestiveMarker$$Interface, $CachedObject$CachedObjectSource$$Interface, $ItemStackAccessor$1$$Interface, $ItemStackAccessor$$Interface, $ItemStackKJS$$Interface, $ItemStackAccessor$0$$Interface, $ChangeSubscriber$$Interface, $ChangePublisher$$Interface {
 readonly "components": $PatchedDataComponentMap
 static readonly "CODEC": $Codec<($ItemStack)>
 static readonly "ITEM_NON_AIR_CODEC": $Codec<($Holder<($Item)>)>
@@ -4228,11 +4228,11 @@ static readonly "EMPTY": $ItemStack
 static readonly "OPTIONAL_LIST_STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($List<($ItemStack)>)>
 
 constructor(arg0: $Holder$$Type<($Item)>, arg1: integer, arg2: $DataComponentPatch$$Type)
-constructor(arg0: $ItemLike$$Type)
-constructor(arg0: $Holder$$Type<($Item)>)
-constructor(arg0: $ItemLike$$Type, arg1: integer)
 constructor(arg0: $Holder$$Type<($Item)>, arg1: integer)
+constructor(arg0: $Holder$$Type<($Item)>)
+constructor(arg0: $ItemLike$$Type)
 constructor(arg0: $ItemLike$$Type, arg1: integer, arg2: $PatchedDataComponentMap$$Type)
+constructor(arg0: $ItemLike$$Type, arg1: integer)
 
 public "getRarity"(): $Rarity
 public static "validateComponents"(arg0: $DataComponentMap$$Type): $DataResult<($Unit)>
@@ -4305,33 +4305,34 @@ public "invokeOnItemUse"(arg0: $UseOnContext$$Type, arg1: $Function$$Type): $Int
 public "accessories$addModifierTooltip"(arg0: $Consumer$$Type, arg1: $Player$$Type, arg2: $Holder$$Type, arg3: $AttributeModifier$$Type): void
 public "accessories$components"(): $PatchedDataComponentMap
 public "lithium$getItem"(): $Item
-public "consume"(arg0: integer, arg1: $LivingEntity$$Type): void
 public "getOrCreate"(arg0: $ResourceLocation$$Type, arg1: $Function$$Type, arg2: $ToIntFunction$$Type): any
 public "getItem"(): $Item
+public "getDisplayName"(): $Component
+public "consume"(arg0: integer, arg1: $LivingEntity$$Type): void
 public "toString"(): StringJS
-public "update"<T, U>(arg0: $DataComponentType$$Type<(T)>, arg1: T, arg2: U, arg3: $BiFunction$$Type<(T), (U), (T)>): T
 public "update"<T>(arg0: $DataComponentType$$Type<(T)>, arg1: T, arg2: $UnaryOperator$$Type<(T)>): T
+public "update"<T, U>(arg0: $DataComponentType$$Type<(T)>, arg1: T, arg2: U, arg3: $BiFunction$$Type<(T), (U), (T)>): T
 public "isEmpty"(): boolean
 public static "matches"(arg0: $ItemStack$$Type, arg1: $ItemStack$$Type): boolean
 public "split"(arg0: integer): $ItemStack
 public "getCount"(): integer
-public "save"(arg0: $HolderLookup$Provider$$Type): $Tag
 public "save"(arg0: $HolderLookup$Provider$$Type, arg1: $Tag$$Type): $Tag
+public "save"(arg0: $HolderLookup$Provider$$Type): $Tag
 public static "parse"(arg0: $HolderLookup$Provider$$Type, arg1: $Tag$$Type): $Optional<($ItemStack)>
 public "copy"(): $ItemStack
 public "use"(arg0: $Level$$Type, arg1: $Player$$Type, arg2: $InteractionHand$$Type): $InteractionResultHolder<($ItemStack)>
-public "is"(arg0: $Holder$$Type<($Item)>): boolean
+public "is"(arg0: $Item$$Type): boolean
 public "is"(arg0: $Predicate$$Type<($Holder<($Item)>)>): boolean
+public "is"(arg0: $Holder$$Type<($Item)>): boolean
 public "is"(arg0: $HolderSet$$Type<($Item)>): boolean
 public "is"(arg0: $TagKey$$Type<($Item)>): boolean
-public "is"(arg0: $Item$$Type): boolean
 public "grow"(arg0: integer): void
-public "getDisplayName"(): $Component
 public "limitSize"(arg0: integer): void
 public "setCount"(arg0: integer): void
 public "getComponents"(): $DataComponentMap
 public "shrink"(arg0: integer): void
 public "getPrototype"(): $DataComponentMap
+public static "lenientOptionalFieldOf"(arg0: StringJS): $MapCodec<($ItemStack)>
 public "getHoverName"(): $Component
 public "getMaxStackSize"(): integer
 public "isBarVisible"(): boolean
@@ -4342,13 +4343,12 @@ public "getTooltipLines"(arg0: $Item$TooltipContext$$Type, arg1: $Player$$Type, 
 public "hasFoil"(): boolean
 public "getDescriptionId"(): StringJS
 public "isItemEnabled"(arg0: $FeatureFlagSet$$Type): boolean
-public static "lenientOptionalFieldOf"(arg0: StringJS): $MapCodec<($ItemStack)>
 public static "isSameItemSameComponents"(arg0: $ItemStack$$Type, arg1: $ItemStack$$Type): boolean
 public "getBreakingSound"(): $SoundEvent
 public "getDrinkingSound"(): $SoundEvent
 public "getEatingSound"(): $SoundEvent
-public "forEachModifier"(arg0: $EquipmentSlotGroup$$Type, arg1: $BiConsumer$$Type<($Holder<($Attribute)>), ($AttributeModifier)>): void
 public "forEachModifier"(arg0: $EquipmentSlot$$Type, arg1: $BiConsumer$$Type<($Holder<($Attribute)>), ($AttributeModifier)>): void
+public "forEachModifier"(arg0: $EquipmentSlotGroup$$Type, arg1: $BiConsumer$$Type<($Holder<($Attribute)>), ($AttributeModifier)>): void
 public "onUseTick"(arg0: $Level$$Type, arg1: $LivingEntity$$Type, arg2: integer): void
 public "useOnRelease"(): boolean
 public "getUseDuration"(arg0: $LivingEntity$$Type): integer
@@ -4362,9 +4362,9 @@ public "lithium$forceUnsubscribe"(arg0: $PatchedDataComponentMap$$Type, arg1: in
 public "lithium$subscribe"(arg0: $ChangeSubscriber$$Type, arg1: integer): void
 public "isDamageableItem"(): boolean
 public "finishUsingItem"(arg0: $Level$$Type, arg1: $LivingEntity$$Type): $ItemStack
-public "hurtAndBreak"(arg0: integer, arg1: $ServerLevel$$Type, arg2: $ServerPlayer$$Type, arg3: $Consumer$$Type<($Item)>): void
-public "hurtAndBreak"(arg0: integer, arg1: $ServerLevel$$Type, arg2: $LivingEntity$$Type, arg3: $Consumer$$Type<($Item)>): void
 public "hurtAndBreak"(arg0: integer, arg1: $LivingEntity$$Type, arg2: $EquipmentSlot$$Type): void
+public "hurtAndBreak"(arg0: integer, arg1: $ServerLevel$$Type, arg2: $LivingEntity$$Type, arg3: $Consumer$$Type<($Item)>): void
+public "hurtAndBreak"(arg0: integer, arg1: $ServerLevel$$Type, arg2: $ServerPlayer$$Type, arg3: $Consumer$$Type<($Item)>): void
 public "canBreakBlockInAdventureMode"(arg0: $BlockInWorld$$Type): boolean
 public static "isSameItem"(arg0: $ItemStack$$Type, arg1: $ItemStack$$Type): boolean
 public "getDestroySpeed"(arg0: $BlockState$$Type): float
@@ -4462,9 +4462,9 @@ public "getComponentString"(): StringJS
 public "matches"(cx: $RecipeMatchContext$$Type, arg1: $Ingredient$$Type, exact: boolean): boolean
 public "matches"(cx: $RecipeMatchContext$$Type, s: $ItemStack$$Type, exact: boolean): boolean
 public "matches"(cx: $RecipeMatchContext$$Type, itemLike: $ItemLike$$Type, exact: boolean): boolean
+public "getCodec"(): $Codec<($ItemStack)>
 public "self"(): $ItemStack
 public "getKey"(): $ResourceKey<($Item)>
-public "getCodec"(): $Codec<($ItemStack)>
 public "specialEquals"(o: any, shallow: boolean): boolean
 public "getId"(): Special.Item
 public "getBlock"(): $Block
@@ -4591,9 +4591,9 @@ get "entityRepresentation"(): $Entity
 get "marked"(): boolean
 set "marked"(value: boolean)
 get "item"(): $Item
+get "displayName"(): $Component
 get "empty"(): boolean
 get "count"(): integer
-get "displayName"(): $Component
 set "count"(value: integer)
 get "prototype"(): $DataComponentMap
 get "hoverName"(): $Component
@@ -4623,8 +4623,8 @@ get "mod"(): StringJS
 get "enchantments"(): $ItemEnchantments
 get "harvestSpeed"(): float
 get "componentString"(): StringJS
-get "key"(): $ResourceKey<($Item)>
 get "codec"(): $Codec<($ItemStack)>
+get "key"(): $ResourceKey<($Item)>
 get "id"(): Special.Item
 get "block"(): $Block
 get "componentHolder"(): $MutableDataComponentHolder
@@ -4683,63 +4683,63 @@ get "attackSpeed"(): double
 set "baseAttackSpeed"(value: double)
 set "baseAttackDamage"(value: double)
 }
-export type ComponentTypeMap = {"minecraft:custom_model_data": $CustomModelData$$Type;
-"minecraft:debug_stick_state": $DebugStickState$$Type;
-"minecraft:entity_data": $CustomData$$Type;
-"minecraft:recipes": $List$$Type<($ResourceLocation$$Type)>;
-"minecraft:can_place_on": $AdventureModePredicate$$Type;
-"minecraft:intangible_projectile": $Unit$$Type;
-"minecraft:hide_additional_tooltip": $Unit$$Type;
-"minecraft:dyed_color": $DyedItemColor$$Type;
-"minecraft:custom_name": $Component$$Type;
+export type ComponentTypeMap = {"minecraft:intangible_projectile": $Unit$$Type;
+"minecraft:custom_data": $CustomData$$Type;
+"minecraft:enchantment_glint_override": boolean;
+"minecraft:creative_slot_lock": $Unit$$Type;
+"minecraft:item_name": $Component$$Type;
+"minecraft:map_id": $MapId$$Type;
+"minecraft:lock": $LockCode$$Type;
+"minecraft:rarity": $Rarity$$Type;
+"minecraft:charged_projectiles": $ChargedProjectiles$$Type;
 "minecraft:suspicious_stew_effects": $SuspiciousStewEffects$$Type;
-"minecraft:bucket_entity_data": $CustomData$$Type;
-"minecraft:map_color": $MapItemColor$$Type;
-"minecraft:trim": $ArmorTrim$$Type;
-"minecraft:tool": $Tool$$Type;
-"minecraft:enchantments": $ItemEnchantments$$Type;
-"minecraft:written_book_content": $WrittenBookContent$$Type;
-"minecraft:lodestone_tracker": $LodestoneTracker$$Type;
-"minecraft:instrument": $Holder$$Type<($Instrument$$Type)>;
-"minecraft:can_break": $AdventureModePredicate$$Type;
 "minecraft:block_entity_data": $CustomData$$Type;
-"minecraft:bees": $List$$Type<($BeehiveBlockEntity$Occupant$$Type)>;
+"minecraft:fireworks": $Fireworks$$Type;
+"minecraft:map_decorations": $MapDecorations$$Type;
+"minecraft:potion_contents": $PotionContents$$Type;
 "minecraft:firework_explosion": $FireworkExplosion$$Type;
-"minecraft:banner_patterns": $BannerPatternLayers$$Type;
-"minecraft:max_damage": integer;
+"minecraft:profile": $ResolvableProfile$$Type;
+"minecraft:pot_decorations": $PotDecorations$$Type;
 "minecraft:block_state": $BlockItemStateProperties$$Type;
 "minecraft:base_color": $DyeColor$$Type;
-"minecraft:note_block_sound": $ResourceLocation$$Type;
-"minecraft:custom_data": $CustomData$$Type;
-"minecraft:rarity": $Rarity$$Type;
-"minecraft:map_post_processing": $MapPostProcessing$$Type;
-"minecraft:lore": $ItemLore$$Type;
-"minecraft:jukebox_playable": $JukeboxPlayable$$Type;
-"minecraft:container": $ItemContainerContents$$Type;
-"minecraft:max_stack_size": integer;
-"minecraft:map_decorations": $MapDecorations$$Type;
-"minecraft:lock": $LockCode$$Type;
-"minecraft:stored_enchantments": $ItemEnchantments$$Type;
-"minecraft:damage": integer;
-"minecraft:potion_contents": $PotionContents$$Type;
-"minecraft:container_loot": $SeededContainerLoot$$Type;
-"minecraft:hide_tooltip": $Unit$$Type;
-"minecraft:enchantment_glint_override": boolean;
-"minecraft:item_name": $Component$$Type;
-"minecraft:unbreakable": $Unbreakable$$Type;
-"minecraft:bundle_contents": $BundleContents$$Type;
 "minecraft:ominous_bottle_amplifier": integer;
-"minecraft:repair_cost": integer;
-"minecraft:profile": $ResolvableProfile$$Type;
-"minecraft:charged_projectiles": $ChargedProjectiles$$Type;
+"minecraft:max_damage": integer;
 "minecraft:fire_resistant": $Unit$$Type;
-"minecraft:map_id": $MapId$$Type;
-"minecraft:pot_decorations": $PotDecorations$$Type;
+"minecraft:entity_data": $CustomData$$Type;
+"minecraft:banner_patterns": $BannerPatternLayers$$Type;
+"minecraft:hide_additional_tooltip": $Unit$$Type;
+"minecraft:container_loot": $SeededContainerLoot$$Type;
+"minecraft:stored_enchantments": $ItemEnchantments$$Type;
+"minecraft:bees": $List$$Type<($BeehiveBlockEntity$Occupant$$Type)>;
+"minecraft:can_break": $AdventureModePredicate$$Type;
+"minecraft:debug_stick_state": $DebugStickState$$Type;
+"minecraft:note_block_sound": $ResourceLocation$$Type;
+"minecraft:dyed_color": $DyedItemColor$$Type;
 "minecraft:food": $FoodProperties$$Type;
-"minecraft:attribute_modifiers": $ItemAttributeModifiers$$Type;
+"minecraft:written_book_content": $WrittenBookContent$$Type;
 "minecraft:writable_book_content": $WritableBookContent$$Type;
-"minecraft:creative_slot_lock": $Unit$$Type;
-"minecraft:fireworks": $Fireworks$$Type};
+"minecraft:custom_model_data": $CustomModelData$$Type;
+"minecraft:lodestone_tracker": $LodestoneTracker$$Type;
+"minecraft:damage": integer;
+"minecraft:map_color": $MapItemColor$$Type;
+"minecraft:repair_cost": integer;
+"minecraft:container": $ItemContainerContents$$Type;
+"minecraft:can_place_on": $AdventureModePredicate$$Type;
+"minecraft:custom_name": $Component$$Type;
+"minecraft:jukebox_playable": $JukeboxPlayable$$Type;
+"minecraft:trim": $ArmorTrim$$Type;
+"minecraft:instrument": $Holder$$Type<($Instrument$$Type)>;
+"minecraft:hide_tooltip": $Unit$$Type;
+"minecraft:lore": $ItemLore$$Type;
+"minecraft:bundle_contents": $BundleContents$$Type;
+"minecraft:max_stack_size": integer;
+"minecraft:enchantments": $ItemEnchantments$$Type;
+"minecraft:recipes": $List$$Type<($ResourceLocation$$Type)>;
+"minecraft:attribute_modifiers": $ItemAttributeModifiers$$Type;
+"minecraft:unbreakable": $Unbreakable$$Type;
+"minecraft:bucket_entity_data": $CustomData$$Type;
+"minecraft:tool": $Tool$$Type;
+"minecraft:map_post_processing": $MapPostProcessing$$Type};
 export type ComponentTypes = keyof ComponentTypeMap;
 export type ItemWithCount = {"item": Special.Item, "count"?: integer};
 /**
@@ -4752,13 +4752,13 @@ export type $ItemStack$$Type = ("probejs$$itemStack") | (ItemWithCount);
  */
 export type $ItemStack$$Original = $ItemStack;}
 declare module "net.minecraft.world.item.crafting.Ingredient" {
-import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$Iterable$$Type} from "java.lang.Iterable"
+import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$IngredientAccessor$$Interface} from "com.almostreliable.kubeio.mixin.IngredientAccessor"
 import {$ItemStackSet} from "dev.latvian.mods.kubejs.item.ItemStackSet"
-import {$IngredientKJS$$Interface} from "dev.latvian.mods.kubejs.core.IngredientKJS"
-import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$DynamicOps$$Type} from "com.mojang.serialization.DynamicOps"
+import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$IngredientKJS$$Interface} from "dev.latvian.mods.kubejs.core.IngredientKJS"
 import {$List} from "java.util.List"
 import {$JsonElement} from "com.google.gson.JsonElement"
 import {$Codec} from "com.mojang.serialization.Codec"
@@ -4766,7 +4766,7 @@ import {$ItemPredicate} from "dev.latvian.mods.kubejs.item.ItemPredicate"
 import {$Item, $Item$$Type} from "net.minecraft.world.item.Item"
 import {$Set} from "java.util.Set"
 import {$Stream, $Stream$$Type} from "java.util.stream.Stream"
-import {$AccessorIngredient$$Interface} from "com.railwayteam.railways.mixin.AccessorIngredient"
+import {$AccessorIngredient$$Interface as $AccessorIngredient$0$$Interface} from "com.railwayteam.railways.mixin.AccessorIngredient"
 import {$Ingredient$Value, $Ingredient$Value$$Type} from "net.minecraft.world.item.crafting.Ingredient$Value"
 import {$RecipeScriptContext$$Type} from "dev.latvian.mods.kubejs.recipe.RecipeScriptContext"
 import {$Predicate, $Predicate$$Type, $Predicate$$Interface} from "java.util.function.Predicate"
@@ -4775,15 +4775,15 @@ import {$ExtendedIngredient$$Interface} from "org.embeddedt.modernfix.neoforge.r
 import {$CallbackInfoReturnable$$Type} from "org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable"
 import {$ICustomIngredient, $ICustomIngredient$$Type} from "net.neoforged.neoforge.common.crafting.ICustomIngredient"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
-import {$TagKey, $TagKey$$Type} from "net.minecraft.tags.TagKey"
 import {$ItemLike$$Type} from "net.minecraft.world.level.ItemLike"
+import {$TagKey, $TagKey$$Type} from "net.minecraft.tags.TagKey"
 import {$Tag, $Tag$$Type} from "net.minecraft.nbt.Tag"
-import {$AccessorIngredient$$Interface as $AccessorIngredient$0$$Interface} from "xfacthd.framedblocks.mixin.AccessorIngredient"
-import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$IntList} from "it.unimi.dsi.fastutil.ints.IntList"
+import {$MapCodec} from "com.mojang.serialization.MapCodec"
+import {$AccessorIngredient$$Interface} from "xfacthd.framedblocks.mixin.AccessorIngredient"
 import {$SizedIngredient} from "net.neoforged.neoforge.common.crafting.SizedIngredient"
 
-export class $Ingredient implements $Predicate$$Interface<($ItemStack)>, $ExtendedIngredient$$Interface, $AccessorIngredient$$Interface, $IngredientKJS$$Interface, $IngredientAccessor$$Interface, $AccessorIngredient$0$$Interface {
+export class $Ingredient implements $Predicate$$Interface<($ItemStack)>, $ExtendedIngredient$$Interface, $AccessorIngredient$0$$Interface, $IngredientKJS$$Interface, $IngredientAccessor$$Interface, $AccessorIngredient$$Interface {
 static readonly "CODEC": $Codec<($Ingredient)>
 static readonly "LIST_CODEC_NONEMPTY": $Codec<($List<($Ingredient)>)>
  "stackingIds": $IntList
@@ -4821,11 +4821,11 @@ public static "of"(arg0: $TagKey$$Type<($Item)>): $Ingredient
 public "isSimple"(): boolean
 public "self"(): $Ingredient
 public static "fromValues"(arg0: $Stream$$Type<($Ingredient$Value$$Type)>): $Ingredient
-public "or"(arg0: $Predicate$$Type<($ItemStack)>): $Predicate<($ItemStack)>
+public static "not"<T>(arg0: $Predicate$$Type<($ItemStack)>): $Predicate<($ItemStack)>
 public static "isEqual"<T>(arg0: any): $Predicate<($ItemStack)>
 public "negate"(): $Predicate<($ItemStack)>
 public "and"(arg0: $Predicate$$Type<($ItemStack)>): $Predicate<($ItemStack)>
-public static "not"<T>(arg0: $Predicate$$Type<($ItemStack)>): $Predicate<($ItemStack)>
+public "or"(arg0: $Predicate$$Type<($ItemStack)>): $Predicate<($ItemStack)>
 public "replaceThisWith"(cx: $RecipeScriptContext$$Type, arg1: any): any
 public "asIngredient"(): $Ingredient
 public "withCount"(count: integer): $SizedIngredient
@@ -4906,10 +4906,10 @@ import {$CraftingInput$$Type} from "net.minecraft.world.item.crafting.CraftingIn
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$CustomRecipe} from "net.minecraft.world.item.crafting.CustomRecipe"
-import {$CraftingBookCategory$$Type} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
+import {$CraftingBookCategory$$Type} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
+import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 
 export class $BookCloningRecipe extends $CustomRecipe {
@@ -4947,8 +4947,8 @@ import {$DataComponentType$$Type} from "net.minecraft.core.component.DataCompone
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$Enchantment$Builder} from "net.minecraft.world.item.enchantment.Enchantment$Builder"
 import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
-import {$EnchantmentValueEffect$$Type} from "net.minecraft.world.item.enchantment.effects.EnchantmentValueEffect"
 import {$TargetedConditionalEffect$$Type} from "net.minecraft.world.item.enchantment.TargetedConditionalEffect"
+import {$EnchantmentValueEffect$$Type} from "net.minecraft.world.item.enchantment.effects.EnchantmentValueEffect"
 import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$EquipmentSlot, $EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
@@ -4958,12 +4958,12 @@ import {$EnchantmentEntityEffect$$Type} from "net.minecraft.world.item.enchantme
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$MutableFloat$$Type} from "org.apache.commons.lang3.mutable.MutableFloat"
-import {$Map} from "java.util.Map"
 import {$LootContext, $LootContext$$Type} from "net.minecraft.world.level.storage.loot.LootContext"
+import {$Map} from "java.util.Map"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
-import {$EnchantmentTarget$$Type} from "net.minecraft.world.item.enchantment.EnchantmentTarget"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
+import {$EnchantmentTarget$$Type} from "net.minecraft.world.item.enchantment.EnchantmentTarget"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
@@ -4979,9 +4979,9 @@ static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($Holde
 constructor(description: $Component$$Type, definition: $Enchantment$EnchantmentDefinition$$Type, exclusiveSet: $HolderSet$$Type<($Enchantment)>, effects: $DataComponentMap$$Type)
 
 public static "enchantment"(arg0: $Enchantment$EnchantmentDefinition$$Type): $Enchantment$Builder
-public static "definition"(arg0: $HolderSet$$Type<($Item)>, arg1: $HolderSet$$Type<($Item)>, arg2: integer, arg3: integer, arg4: $Enchantment$Cost$$Type, arg5: $Enchantment$Cost$$Type, arg6: integer, ...arg7: ($EquipmentSlotGroup$$Type)[]): $Enchantment$EnchantmentDefinition
 public static "definition"(arg0: $HolderSet$$Type<($Item)>, arg1: integer, arg2: integer, arg3: $Enchantment$Cost$$Type, arg4: $Enchantment$Cost$$Type, arg5: integer, ...arg6: ($EquipmentSlotGroup$$Type)[]): $Enchantment$EnchantmentDefinition
 public "definition"(): $Enchantment$EnchantmentDefinition
+public static "definition"(arg0: $HolderSet$$Type<($Item)>, arg1: $HolderSet$$Type<($Item)>, arg2: integer, arg3: integer, arg4: $Enchantment$Cost$$Type, arg5: $Enchantment$Cost$$Type, arg6: integer, ...arg7: ($EquipmentSlotGroup$$Type)[]): $Enchantment$EnchantmentDefinition
 /**
  * 
  * @deprecated
@@ -4992,6 +4992,27 @@ public "onProjectileSpawned"(arg0: $ServerLevel$$Type, arg1: integer, arg2: $Enc
 public "onHitBlock"(arg0: $ServerLevel$$Type, arg1: integer, arg2: $EnchantedItemInUse$$Type, arg3: $Entity$$Type, arg4: $Vec3$$Type, arg5: $BlockState$$Type): void
 public static "areCompatible"(arg0: $Holder$$Type<($Enchantment)>, arg1: $Holder$$Type<($Enchantment)>): boolean
 public "getAnvilCost"(): integer
+public "modifyDamageProtection"(arg0: $ServerLevel$$Type, arg1: integer, arg2: $ItemStack$$Type, arg3: $Entity$$Type, arg4: $DamageSource$$Type, arg5: $MutableFloat$$Type): void
+public "modifyDurabilityChange"(arg0: $ServerLevel$$Type, arg1: integer, arg2: $ItemStack$$Type, arg3: $MutableFloat$$Type): void
+public "modifyItemFilteredCount"(arg0: $DataComponentType$$Type<($List$$Type<($ConditionalEffect$$Type<($EnchantmentValueEffect$$Type)>)>)>, arg1: $ServerLevel$$Type, arg2: integer, arg3: $ItemStack$$Type, arg4: $MutableFloat$$Type): void
+public "modifyAmmoCount"(arg0: $ServerLevel$$Type, arg1: integer, arg2: $ItemStack$$Type, arg3: $MutableFloat$$Type): void
+public "modifyPiercingCount"(arg0: $ServerLevel$$Type, arg1: integer, arg2: $ItemStack$$Type, arg3: $MutableFloat$$Type): void
+public "modifyBlockExperience"(arg0: $ServerLevel$$Type, arg1: integer, arg2: $ItemStack$$Type, arg3: $MutableFloat$$Type): void
+public "modifyMobExperience"(arg0: $ServerLevel$$Type, arg1: integer, arg2: $ItemStack$$Type, arg3: $Entity$$Type, arg4: $MutableFloat$$Type): void
+public "modifyEntityFilteredValue"(arg0: $DataComponentType$$Type<($List$$Type<($ConditionalEffect$$Type<($EnchantmentValueEffect$$Type)>)>)>, arg1: $ServerLevel$$Type, arg2: integer, arg3: $ItemStack$$Type, arg4: $Entity$$Type, arg5: $MutableFloat$$Type): void
+public "modifyDurabilityToRepairFromXp"(arg0: $ServerLevel$$Type, arg1: integer, arg2: $ItemStack$$Type, arg3: $MutableFloat$$Type): void
+public "modifyTridentReturnToOwnerAcceleration"(arg0: $ServerLevel$$Type, arg1: integer, arg2: $ItemStack$$Type, arg3: $Entity$$Type, arg4: $MutableFloat$$Type): void
+public "modifyTridentSpinAttackStrength"(arg0: $RandomSource$$Type, arg1: integer, arg2: $MutableFloat$$Type): void
+public "modifyUnfilteredValue"(arg0: $DataComponentType$$Type<($EnchantmentValueEffect$$Type)>, arg1: $RandomSource$$Type, arg2: integer, arg3: $MutableFloat$$Type): void
+public "modifyFishingTimeReduction"(arg0: $ServerLevel$$Type, arg1: integer, arg2: $ItemStack$$Type, arg3: $Entity$$Type, arg4: $MutableFloat$$Type): void
+public "modifyFishingLuckBonus"(arg0: $ServerLevel$$Type, arg1: integer, arg2: $ItemStack$$Type, arg3: $Entity$$Type, arg4: $MutableFloat$$Type): void
+public "modifyDamageFilteredValue"(arg0: $DataComponentType$$Type<($List$$Type<($ConditionalEffect$$Type<($EnchantmentValueEffect$$Type)>)>)>, arg1: $ServerLevel$$Type, arg2: integer, arg3: $ItemStack$$Type, arg4: $Entity$$Type, arg5: $DamageSource$$Type, arg6: $MutableFloat$$Type): void
+public "modifyArmorEffectivness"(arg0: $ServerLevel$$Type, arg1: integer, arg2: $ItemStack$$Type, arg3: $Entity$$Type, arg4: $DamageSource$$Type, arg5: $MutableFloat$$Type): void
+public "doPostAttack"(arg0: $ServerLevel$$Type, arg1: integer, arg2: $EnchantedItemInUse$$Type, arg3: $EnchantmentTarget$$Type, arg4: $Entity$$Type, arg5: $DamageSource$$Type): void
+public static "doPostAttack"(arg0: $TargetedConditionalEffect$$Type<($EnchantmentEntityEffect$$Type)>, arg1: $ServerLevel$$Type, arg2: integer, arg3: $EnchantedItemInUse$$Type, arg4: $Entity$$Type, arg5: $DamageSource$$Type): void
+public "modifyProjectileCount"(arg0: $ServerLevel$$Type, arg1: integer, arg2: $ItemStack$$Type, arg3: $Entity$$Type, arg4: $MutableFloat$$Type): void
+public "modifyProjectileSpread"(arg0: $ServerLevel$$Type, arg1: integer, arg2: $ItemStack$$Type, arg3: $Entity$$Type, arg4: $MutableFloat$$Type): void
+public "modifyCrossbowChargeTime"(arg0: $RandomSource$$Type, arg1: integer, arg2: $MutableFloat$$Type): void
 public "modifyFallBasedDamage"(arg0: $ServerLevel$$Type, arg1: integer, arg2: $ItemStack$$Type, arg3: $Entity$$Type, arg4: $DamageSource$$Type, arg5: $MutableFloat$$Type): void
 public "exclusiveSet"(): $HolderSet<($Enchantment)>
 public static "constantCost"(arg0: integer): $Enchantment$Cost
@@ -5016,28 +5037,7 @@ public "getMaxCost"(arg0: integer): integer
  */
 public "canEnchant"(arg0: $ItemStack$$Type): boolean
 public static "damageContext"(arg0: $ServerLevel$$Type, arg1: integer, arg2: $Entity$$Type, arg3: $DamageSource$$Type): $LootContext
-public "modifyDamageProtection"(arg0: $ServerLevel$$Type, arg1: integer, arg2: $ItemStack$$Type, arg3: $Entity$$Type, arg4: $DamageSource$$Type, arg5: $MutableFloat$$Type): void
-public "modifyDurabilityChange"(arg0: $ServerLevel$$Type, arg1: integer, arg2: $ItemStack$$Type, arg3: $MutableFloat$$Type): void
-public "modifyItemFilteredCount"(arg0: $DataComponentType$$Type<($List$$Type<($ConditionalEffect$$Type<($EnchantmentValueEffect$$Type)>)>)>, arg1: $ServerLevel$$Type, arg2: integer, arg3: $ItemStack$$Type, arg4: $MutableFloat$$Type): void
-public "modifyAmmoCount"(arg0: $ServerLevel$$Type, arg1: integer, arg2: $ItemStack$$Type, arg3: $MutableFloat$$Type): void
-public "modifyPiercingCount"(arg0: $ServerLevel$$Type, arg1: integer, arg2: $ItemStack$$Type, arg3: $MutableFloat$$Type): void
-public "modifyBlockExperience"(arg0: $ServerLevel$$Type, arg1: integer, arg2: $ItemStack$$Type, arg3: $MutableFloat$$Type): void
-public "modifyMobExperience"(arg0: $ServerLevel$$Type, arg1: integer, arg2: $ItemStack$$Type, arg3: $Entity$$Type, arg4: $MutableFloat$$Type): void
-public "modifyEntityFilteredValue"(arg0: $DataComponentType$$Type<($List$$Type<($ConditionalEffect$$Type<($EnchantmentValueEffect$$Type)>)>)>, arg1: $ServerLevel$$Type, arg2: integer, arg3: $ItemStack$$Type, arg4: $Entity$$Type, arg5: $MutableFloat$$Type): void
-public "modifyDurabilityToRepairFromXp"(arg0: $ServerLevel$$Type, arg1: integer, arg2: $ItemStack$$Type, arg3: $MutableFloat$$Type): void
-public "modifyTridentReturnToOwnerAcceleration"(arg0: $ServerLevel$$Type, arg1: integer, arg2: $ItemStack$$Type, arg3: $Entity$$Type, arg4: $MutableFloat$$Type): void
-public "modifyTridentSpinAttackStrength"(arg0: $RandomSource$$Type, arg1: integer, arg2: $MutableFloat$$Type): void
-public "modifyUnfilteredValue"(arg0: $DataComponentType$$Type<($EnchantmentValueEffect$$Type)>, arg1: $RandomSource$$Type, arg2: integer, arg3: $MutableFloat$$Type): void
-public "modifyFishingTimeReduction"(arg0: $ServerLevel$$Type, arg1: integer, arg2: $ItemStack$$Type, arg3: $Entity$$Type, arg4: $MutableFloat$$Type): void
-public "modifyFishingLuckBonus"(arg0: $ServerLevel$$Type, arg1: integer, arg2: $ItemStack$$Type, arg3: $Entity$$Type, arg4: $MutableFloat$$Type): void
-public "modifyDamageFilteredValue"(arg0: $DataComponentType$$Type<($List$$Type<($ConditionalEffect$$Type<($EnchantmentValueEffect$$Type)>)>)>, arg1: $ServerLevel$$Type, arg2: integer, arg3: $ItemStack$$Type, arg4: $Entity$$Type, arg5: $DamageSource$$Type, arg6: $MutableFloat$$Type): void
-public "modifyArmorEffectivness"(arg0: $ServerLevel$$Type, arg1: integer, arg2: $ItemStack$$Type, arg3: $Entity$$Type, arg4: $DamageSource$$Type, arg5: $MutableFloat$$Type): void
-public "doPostAttack"(arg0: $ServerLevel$$Type, arg1: integer, arg2: $EnchantedItemInUse$$Type, arg3: $EnchantmentTarget$$Type, arg4: $Entity$$Type, arg5: $DamageSource$$Type): void
-public static "doPostAttack"(arg0: $TargetedConditionalEffect$$Type<($EnchantmentEntityEffect$$Type)>, arg1: $ServerLevel$$Type, arg2: integer, arg3: $EnchantedItemInUse$$Type, arg4: $Entity$$Type, arg5: $DamageSource$$Type): void
-public "modifyProjectileCount"(arg0: $ServerLevel$$Type, arg1: integer, arg2: $ItemStack$$Type, arg3: $Entity$$Type, arg4: $MutableFloat$$Type): void
 public static "getFullname"(arg0: $Holder$$Type<($Enchantment)>, arg1: integer): $Component
-public "modifyProjectileSpread"(arg0: $ServerLevel$$Type, arg1: integer, arg2: $ItemStack$$Type, arg3: $Entity$$Type, arg4: $MutableFloat$$Type): void
-public "modifyCrossbowChargeTime"(arg0: $RandomSource$$Type, arg1: integer, arg2: $MutableFloat$$Type): void
 public static "entityContext"(arg0: $ServerLevel$$Type, arg1: integer, arg2: $Entity$$Type, arg3: $Vec3$$Type): $LootContext
 public static "blockHitContext"(arg0: $ServerLevel$$Type, arg1: integer, arg2: $Entity$$Type, arg3: $Vec3$$Type, arg4: $BlockState$$Type): $LootContext
 public static "itemContext"(arg0: $ServerLevel$$Type, arg1: integer, arg2: $ItemStack$$Type): $LootContext
@@ -5051,8 +5051,8 @@ public "getMinLevel"(): integer
 public "getMaxLevel"(): integer
 public "getWeight"(): integer
 public "effects"(): $DataComponentMap
-public static "applyEffects"<T>(arg0: $List$$Type<($ConditionalEffect$$Type<(T)>)>, arg1: $LootContext$$Type, arg2: $Consumer$$Type<(T)>): void
 public "runLocationChangedEffects"(arg0: $ServerLevel$$Type, arg1: integer, arg2: $EnchantedItemInUse$$Type, arg3: $LivingEntity$$Type): void
+public static "applyEffects"<T>(arg0: $List$$Type<($ConditionalEffect$$Type<(T)>)>, arg1: $LootContext$$Type, arg2: $Consumer$$Type<(T)>): void
 public "modifyKnockback"(arg0: $ServerLevel$$Type, arg1: integer, arg2: $ItemStack$$Type, arg3: $Entity$$Type, arg4: $DamageSource$$Type, arg5: $MutableFloat$$Type): void
 public "isImmuneToDamage"(arg0: $ServerLevel$$Type, arg1: integer, arg2: $Entity$$Type, arg3: $DamageSource$$Type): boolean
 public "stopLocationBasedEffects"(arg0: integer, arg1: $EnchantedItemInUse$$Type, arg2: $LivingEntity$$Type): void
@@ -5129,8 +5129,8 @@ import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$ShapedRecipePattern} from "net.minecraft.world.item.crafting.ShapedRecipePattern"
 import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$ShapedRecipe} from "net.minecraft.world.item.crafting.ShapedRecipe"
-import {$CraftingBookCategory$$Type} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$CraftingBookCategory$$Type} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 
@@ -5162,14 +5162,14 @@ declare module "net.minecraft.world.item.enchantment.Enchantment$Builder" {
 import {$UnaryOperator, $UnaryOperator$$Type} from "java.util.function.UnaryOperator"
 import {$Map} from "java.util.Map"
 import {$List, $List$$Type} from "java.util.List"
-import {$ConditionalEffect$$Type} from "net.minecraft.world.item.enchantment.ConditionalEffect"
 import {$EnchantmentAttributeEffect$$Type} from "net.minecraft.world.item.enchantment.effects.EnchantmentAttributeEffect"
+import {$ConditionalEffect$$Type} from "net.minecraft.world.item.enchantment.ConditionalEffect"
 import {$Enchantment$EnchantmentDefinition, $Enchantment$EnchantmentDefinition$$Type} from "net.minecraft.world.item.enchantment.Enchantment$EnchantmentDefinition"
 import {$DataComponentType, $DataComponentType$$Type} from "net.minecraft.core.component.DataComponentType"
 import {$DataComponentMap$Builder} from "net.minecraft.core.component.DataComponentMap$Builder"
 import {$TargetedConditionalEffect$$Type} from "net.minecraft.world.item.enchantment.TargetedConditionalEffect"
-import {$Enchantment, $Enchantment$$Type} from "net.minecraft.world.item.enchantment.Enchantment"
 import {$LootItemCondition$Builder$$Type} from "net.minecraft.world.level.storage.loot.predicates.LootItemCondition$Builder"
+import {$Enchantment, $Enchantment$$Type} from "net.minecraft.world.item.enchantment.Enchantment"
 import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$EnchantmentTarget$$Type} from "net.minecraft.world.item.enchantment.EnchantmentTarget"
 import {$MutableComponent, $MutableComponent$$Type} from "net.minecraft.network.chat.MutableComponent"
@@ -5185,15 +5185,15 @@ readonly "definition": $Enchantment$EnchantmentDefinition
 
 constructor(arg0: $Enchantment$EnchantmentDefinition$$Type)
 
-public "withCustomName"(arg0: $UnaryOperator$$Type<($MutableComponent)>): $Enchantment$Builder
 public "exclusiveWith"(arg0: $HolderSet$$Type<($Enchantment)>): $Enchantment$Builder
+public "withEffect"<E>(arg0: $DataComponentType$$Type<($List$$Type<($TargetedConditionalEffect$$Type<(E)>)>)>, arg1: $EnchantmentTarget$$Type, arg2: $EnchantmentTarget$$Type, arg3: E, arg4: $LootItemCondition$Builder$$Type): $Enchantment$Builder
+public "withEffect"<E>(arg0: $DataComponentType$$Type<($List$$Type<($TargetedConditionalEffect$$Type<(E)>)>)>, arg1: $EnchantmentTarget$$Type, arg2: $EnchantmentTarget$$Type, arg3: E): $Enchantment$Builder
 public "withEffect"(arg0: $DataComponentType$$Type<($Unit$$Type)>): $Enchantment$Builder
 public "withEffect"(arg0: $DataComponentType$$Type<($List$$Type<($EnchantmentAttributeEffect$$Type)>)>, arg1: $EnchantmentAttributeEffect$$Type): $Enchantment$Builder
 public "withEffect"<E>(arg0: $DataComponentType$$Type<($List$$Type<($ConditionalEffect$$Type<(E)>)>)>, arg1: E, arg2: $LootItemCondition$Builder$$Type): $Enchantment$Builder
 public "withEffect"<E>(arg0: $DataComponentType$$Type<($List$$Type<($ConditionalEffect$$Type<(E)>)>)>, arg1: E): $Enchantment$Builder
-public "withEffect"<E>(arg0: $DataComponentType$$Type<($List$$Type<($TargetedConditionalEffect$$Type<(E)>)>)>, arg1: $EnchantmentTarget$$Type, arg2: $EnchantmentTarget$$Type, arg3: E, arg4: $LootItemCondition$Builder$$Type): $Enchantment$Builder
-public "withEffect"<E>(arg0: $DataComponentType$$Type<($List$$Type<($TargetedConditionalEffect$$Type<(E)>)>)>, arg1: $EnchantmentTarget$$Type, arg2: $EnchantmentTarget$$Type, arg3: E): $Enchantment$Builder
 public "withSpecialEffect"<E>(arg0: $DataComponentType$$Type<(E)>, arg1: E): $Enchantment$Builder
+public "withCustomName"(arg0: $UnaryOperator$$Type<($MutableComponent)>): $Enchantment$Builder
 public "build"(arg0: $ResourceLocation$$Type): $Enchantment
 }
 /**
@@ -5227,7 +5227,7 @@ public "key"(): $Map<(character), ($Ingredient)>
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $ShapedRecipePattern$Data$$Type = ({"key"?: $Map$$Type<(character), ($Ingredient$$Type)>, "pattern"?: $List$$Type<(StringJS)>}) | ([key?: $Map$$Type<(character), ($Ingredient$$Type)>, pattern?: $List$$Type<(StringJS)>]);
+export type $ShapedRecipePattern$Data$$Type = ({"pattern"?: $List$$Type<(StringJS)>, "key"?: $Map$$Type<(character), ($Ingredient$$Type)>}) | ([pattern?: $List$$Type<(StringJS)>, key?: $Map$$Type<(character), ($Ingredient$$Type)>]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -5285,9 +5285,9 @@ export type $MaceItem$$Original = $MaceItem;}
 declare module "net.minecraft.world.item.StandingAndWallBlockItem" {
 import {$Map, $Map$$Type} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
+import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Item, $Item$$Type} from "net.minecraft.world.item.Item"
 import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$AdditionalItemPlacement, $AdditionalItemPlacement$$Type} from "net.mehvahdjukaar.moonlight.api.item.additional_placements.AdditionalItemPlacement"
@@ -5399,18 +5399,18 @@ public "rotation"(): float
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $MapDecorations$Entry$$Type = ({"rotation"?: float, "x"?: double, "z"?: double, "type"?: $Holder$$Type<($MapDecorationType)>}) | ([rotation?: float, x?: double, z?: double, type?: $Holder$$Type<($MapDecorationType)>]);
+export type $MapDecorations$Entry$$Type = ({"x"?: double, "z"?: double, "type"?: $Holder$$Type<($MapDecorationType)>, "rotation"?: float}) | ([x?: double, z?: double, type?: $Holder$$Type<($MapDecorationType)>, rotation?: float]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
 export type $MapDecorations$Entry$$Original = $MapDecorations$Entry;}
 declare module "net.minecraft.world.item.alchemy.PotionBrewing$Builder" {
-import {$FeatureFlagSet$$Type} from "net.minecraft.world.flag.FeatureFlagSet"
 import {$Potion$$Type} from "net.minecraft.world.item.alchemy.Potion"
+import {$FeatureFlagSet$$Type} from "net.minecraft.world.flag.FeatureFlagSet"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Ingredient$$Type} from "net.minecraft.world.item.crafting.Ingredient"
-import {$Item$$Type} from "net.minecraft.world.item.Item"
 import {$IBrewingRecipe$$Type} from "net.neoforged.neoforge.common.brewing.IBrewingRecipe"
+import {$Item$$Type} from "net.minecraft.world.item.Item"
 import {$Holder$$Type} from "net.minecraft.core.Holder"
 import {$PotionBrewing} from "net.minecraft.world.item.alchemy.PotionBrewing"
 
@@ -5436,13 +5436,13 @@ export type $PotionBrewing$Builder$$Type = ($PotionBrewing$Builder);
 export type $PotionBrewing$Builder$$Original = $PotionBrewing$Builder;}
 declare module "net.minecraft.world.item.crafting.SmithingRecipe" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$Ingredient} from "net.minecraft.world.item.crafting.Ingredient"
 import {$Recipe$$Interface} from "net.minecraft.world.item.crafting.Recipe"
-import {$RecipeType} from "net.minecraft.world.item.crafting.RecipeType"
+import {$Ingredient} from "net.minecraft.world.item.crafting.Ingredient"
 import {$SmithingRecipeInput, $SmithingRecipeInput$$Type} from "net.minecraft.world.item.crafting.SmithingRecipeInput"
+import {$RecipeType} from "net.minecraft.world.item.crafting.RecipeType"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
+import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 
 export interface $SmithingRecipe$$Interface extends $Recipe$$Interface<($SmithingRecipeInput)> {
@@ -5465,8 +5465,8 @@ export class $SmithingRecipe implements $SmithingRecipe$$Interface {
  "assemble"(arg0: $SmithingRecipeInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
  "getRemainingItems"(arg0: $SmithingRecipeInput$$Type): $NonNullList<($ItemStack)>
  "getSerializer"(): $RecipeSerializer<(never)>
- "getIngredients"(): $NonNullList<($Ingredient)>
  "getResultItem"(arg0: $HolderLookup$Provider$$Type): $ItemStack
+ "getIngredients"(): $NonNullList<($Ingredient)>
  "showNotification"(): boolean
  "isIncomplete"(): boolean
  "matches"(arg0: $SmithingRecipeInput$$Type, arg1: $Level$$Type): boolean
@@ -5514,8 +5514,8 @@ import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 
@@ -5563,10 +5563,10 @@ export type $ArmorMaterial$Layer$$Original = $ArmorMaterial$Layer;}
 declare module "net.minecraft.world.item.WindChargeItem" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$ProjectileItem$DispenseConfig} from "net.minecraft.world.item.ProjectileItem$DispenseConfig"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Projectile, $Projectile$$Type} from "net.minecraft.world.entity.projectile.Projectile"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Position$$Type} from "net.minecraft.core.Position"
@@ -5604,9 +5604,9 @@ export type $WindChargeItem$$Type = ($WindChargeItem);
 export type $WindChargeItem$$Original = $WindChargeItem;}
 declare module "net.minecraft.world.item.crafting.RecipeManager$CachedCheck" {
 import {$Optional, $Optional$$Type} from "java.util.Optional"
+import {$RecipeInput, $RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$RecipeHolder, $RecipeHolder$$Type} from "net.minecraft.world.item.crafting.RecipeHolder"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
-import {$RecipeInput, $RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 
 export interface $RecipeManager$CachedCheck$$Interface<I extends $RecipeInput, T extends $Recipe<(object)>> {
@@ -5631,8 +5631,8 @@ import {$CraftingInput$$Type} from "net.minecraft.world.item.crafting.CraftingIn
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$CustomRecipe} from "net.minecraft.world.item.crafting.CustomRecipe"
-import {$CraftingBookCategory$$Type} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$CraftingBookCategory$$Type} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 
@@ -5682,9 +5682,9 @@ import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$CookingBookCategory$$Type} from "net.minecraft.world.item.crafting.CookingBookCategory"
 import {$AbstractCookingRecipe$Factory$$Type} from "net.minecraft.world.item.crafting.AbstractCookingRecipe$Factory"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
-import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
 import {$Ingredient$$Type} from "net.minecraft.world.item.crafting.Ingredient"
+import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$AbstractCookingRecipe} from "net.minecraft.world.item.crafting.AbstractCookingRecipe"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
@@ -5709,8 +5709,8 @@ export type $SimpleCookingSerializer$$Original<T> = $SimpleCookingSerializer<(T)
 declare module "net.minecraft.world.item.ProjectileItem" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$ProjectileItem$DispenseConfig} from "net.minecraft.world.item.ProjectileItem$DispenseConfig"
-import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
 import {$Projectile, $Projectile$$Type} from "net.minecraft.world.entity.projectile.Projectile"
+import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$Position, $Position$$Type} from "net.minecraft.core.Position"
 
@@ -5736,11 +5736,11 @@ export type $ProjectileItem$$Original = $ProjectileItem;}
 declare module "net.minecraft.world.item.enchantment.LevelBasedValue$Lookup" {
 import {$Registry$$Type} from "net.minecraft.core.Registry"
 import {$List, $List$$Type} from "java.util.List"
-import {$LevelBasedValue$Linear} from "net.minecraft.world.item.enchantment.LevelBasedValue$Linear"
 import {$LevelBasedValue, $LevelBasedValue$$Type, $LevelBasedValue$$Interface} from "net.minecraft.world.item.enchantment.LevelBasedValue"
+import {$LevelBasedValue$Linear} from "net.minecraft.world.item.enchantment.LevelBasedValue$Linear"
 import {$MapCodec, $MapCodec$$Type} from "com.mojang.serialization.MapCodec"
-import {$Record} from "java.lang.Record"
 import {$LevelBasedValue$Constant} from "net.minecraft.world.item.enchantment.LevelBasedValue$Constant"
+import {$Record} from "java.lang.Record"
 
 export class $LevelBasedValue$Lookup extends $Record implements $LevelBasedValue$$Interface {
 static readonly "CODEC": $MapCodec<($LevelBasedValue$Lookup)>
@@ -5764,18 +5764,18 @@ public static "bootstrap"(arg0: $Registry$$Type<($MapCodec$$Type<($LevelBasedVal
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $LevelBasedValue$Lookup$$Type = ({"fallback"?: $LevelBasedValue$$Type, "values"?: $List$$Type<(float)>}) | ([fallback?: $LevelBasedValue$$Type, values?: $List$$Type<(float)>]);
+export type $LevelBasedValue$Lookup$$Type = ({"values"?: $List$$Type<(float)>, "fallback"?: $LevelBasedValue$$Type}) | ([values?: $List$$Type<(float)>, fallback?: $LevelBasedValue$$Type]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
 export type $LevelBasedValue$Lookup$$Original = $LevelBasedValue$Lookup;}
 declare module "net.minecraft.world.item.armortrim.ArmorTrim" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$TrimMaterial, $TrimMaterial$$Type} from "net.minecraft.world.item.armortrim.TrimMaterial"
 import {$ArmorMaterial$$Type} from "net.minecraft.world.item.ArmorMaterial"
+import {$TrimMaterial, $TrimMaterial$$Type} from "net.minecraft.world.item.armortrim.TrimMaterial"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
@@ -5814,16 +5814,16 @@ declare module "net.minecraft.world.item.CrossbowItem" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$CrossbowItem$ChargingSounds} from "net.minecraft.world.item.CrossbowItem$ChargingSounds"
+import {$List$$Type} from "java.util.List"
 import {$Predicate} from "java.util.function.Predicate"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
-import {$List$$Type} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$ProjectileWeaponItem} from "net.minecraft.world.item.ProjectileWeaponItem"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
+import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
 import {$CallbackInfoReturnable$$Type} from "org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable"
 import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
-import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$UseAnim} from "net.minecraft.world.item.UseAnim"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
@@ -5849,8 +5849,8 @@ static readonly "BY_BLOCK": $Map<($Block), ($Item)>
 constructor(arg0: $Item$Properties$$Type)
 
 public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
-public static "getPowerForTime"(arg0: integer, arg1: $ItemStack$$Type, arg2: $LivingEntity$$Type): float
 public "getDefaultProjectileRange"(): integer
+public static "getPowerForTime"(arg0: integer, arg1: $ItemStack$$Type, arg2: $LivingEntity$$Type): float
 public "performShooting"(arg0: $Level$$Type, arg1: $LivingEntity$$Type, arg2: $InteractionHand$$Type, arg3: $ItemStack$$Type, arg4: float, arg5: float, arg6: $LivingEntity$$Type): void
 public "handler$cii000$apothic_enchanting$apoth_addCharges"(arg0: $Level$$Type, arg1: $Player$$Type, arg2: $InteractionHand$$Type, arg3: $CallbackInfoReturnable$$Type): void
 public static "isCharged"(arg0: $ItemStack$$Type): boolean
@@ -5888,8 +5888,8 @@ import {$IExtensibleEnum$$Interface} from "net.neoforged.fml.common.asm.enumexte
 import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$MutableComponent} from "net.minecraft.network.chat.MutableComponent"
 import {$ExtensionInfo} from "net.neoforged.fml.common.asm.enumextension.ExtensionInfo"
 
@@ -5910,11 +5910,11 @@ public static "getExtensionInfo"(): $ExtensionInfo
 public "getSerializedName"(): StringJS
 public static "byId"(arg0: integer): $FireworkExplosion$Shape
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "name"(): $MutableComponent
 get "id"(): integer
 public static get "extensionInfo"(): $ExtensionInfo
@@ -5973,10 +5973,10 @@ declare module "net.minecraft.world.item.InkSacItem" {
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$SignText$$Type} from "net.minecraft.world.level.block.entity.SignText"
 import {$SignApplicator$$Interface} from "net.minecraft.world.item.SignApplicator"
-import {$Block} from "net.minecraft.world.level.block.Block"
+import {$SignText$$Type} from "net.minecraft.world.level.block.entity.SignText"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$SignBlockEntity$$Type} from "net.minecraft.world.level.block.entity.SignBlockEntity"
@@ -6011,8 +6011,8 @@ import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
@@ -6155,8 +6155,8 @@ import {$CraftingInput$$Type} from "net.minecraft.world.item.crafting.CraftingIn
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$CustomRecipe} from "net.minecraft.world.item.crafting.CustomRecipe"
-import {$CraftingBookCategory$$Type} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$CraftingBookCategory$$Type} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 
@@ -6181,11 +6181,11 @@ export type $ShulkerBoxColoring$$Type = ($ShulkerBoxColoring);
  */
 export type $ShulkerBoxColoring$$Original = $ShulkerBoxColoring;}
 declare module "net.minecraft.world.item.ChorusFruitItem" {
-import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
+import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
@@ -6215,8 +6215,8 @@ export type $ChorusFruitItem$$Original = $ChorusFruitItem;}
 declare module "net.minecraft.world.item.GameMasterBlockItem" {
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$AdditionalItemPlacement, $AdditionalItemPlacement$$Type} from "net.mehvahdjukaar.moonlight.api.item.additional_placements.AdditionalItemPlacement"
@@ -6270,7 +6270,7 @@ public static "builder"(): $ProjectileItem$DispenseConfig$Builder
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $ProjectileItem$DispenseConfig$$Type = ({"uncertainty"?: float, "positionFunction"?: $ProjectileItem$PositionFunction$$Type, "overrideDispenseEvent"?: $OptionalInt$$Type, "power"?: float}) | ([uncertainty?: float, positionFunction?: $ProjectileItem$PositionFunction$$Type, overrideDispenseEvent?: $OptionalInt$$Type, power?: float]);
+export type $ProjectileItem$DispenseConfig$$Type = ({"positionFunction"?: $ProjectileItem$PositionFunction$$Type, "overrideDispenseEvent"?: $OptionalInt$$Type, "power"?: float, "uncertainty"?: float}) | ([positionFunction?: $ProjectileItem$PositionFunction$$Type, overrideDispenseEvent?: $OptionalInt$$Type, power?: float, uncertainty?: float]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -6301,20 +6301,20 @@ export type $AbstractCookingRecipe$Factory$$Original<T> = $AbstractCookingRecipe
 declare module "net.minecraft.world.item.ShieldItem" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$List$$Type} from "java.util.List"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
+import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
 import {$ItemAbility$$Type} from "net.neoforged.neoforge.common.ItemAbility"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Holder} from "net.minecraft.core.Holder"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$UseAnim} from "net.minecraft.world.item.UseAnim"
-import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Equipable, $Equipable$$Interface} from "net.minecraft.world.item.Equipable"
+import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$EquipmentSlot} from "net.minecraft.world.entity.EquipmentSlot"
 import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
@@ -6359,16 +6359,16 @@ export type $ShieldItem$$Type = ($ShieldItem);
 export type $ShieldItem$$Original = $ShieldItem;}
 declare module "net.minecraft.world.item.crafting.AbstractCookingRecipe" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$Ingredient, $Ingredient$$Type} from "net.minecraft.world.item.crafting.Ingredient"
 import {$SingleRecipeInput, $SingleRecipeInput$$Type} from "net.minecraft.world.item.crafting.SingleRecipeInput"
+import {$Ingredient, $Ingredient$$Type} from "net.minecraft.world.item.crafting.Ingredient"
 import {$RecipeType, $RecipeType$$Type} from "net.minecraft.world.item.crafting.RecipeType"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$AbstractCookingRecipeAccessor$$Interface} from "com.enderio.enderio.mixin.AbstractCookingRecipeAccessor"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$CookingBookCategory, $CookingBookCategory$$Type} from "net.minecraft.world.item.crafting.CookingBookCategory"
-import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$Recipe$$Interface} from "net.minecraft.world.item.crafting.Recipe"
+import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 
 export class $AbstractCookingRecipe implements $Recipe$$Interface<($SingleRecipeInput)>, $AbstractCookingRecipeAccessor$$Interface {
@@ -6378,12 +6378,12 @@ public "getCookingTime"(): integer
 public "assemble"(arg0: $SingleRecipeInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
 public "assemble"(arg0: $RecipeInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
 public "getExperience"(): float
-public "getIngredients"(): $NonNullList<($Ingredient)>
 public "canCraftInDimensions"(arg0: integer, arg1: integer): boolean
 public "getResultItem"(arg0: $HolderLookup$Provider$$Type): $ItemStack
 public "getIngredient"(): $Ingredient
-public "category"(): $CookingBookCategory
+public "getIngredients"(): $NonNullList<($Ingredient)>
 public "getResult"(): $ItemStack
+public "category"(): $CookingBookCategory
 public "matches"(arg0: $SingleRecipeInput$$Type, arg1: $Level$$Type): boolean
 public "matches"(arg0: $RecipeInput$$Type, arg1: $Level$$Type): boolean
 public "getType"(): $RecipeType<(never)>
@@ -6396,8 +6396,8 @@ public "isIncomplete"(): boolean
 public "isSpecial"(): boolean
 get "cookingTime"(): integer
 get "experience"(): float
-get "ingredients"(): $NonNullList<($Ingredient)>
 get "ingredient"(): $Ingredient
+get "ingredients"(): $NonNullList<($Ingredient)>
 get "result"(): $ItemStack
 get "type"(): $RecipeType<(never)>
 get "group"(): StringJS
@@ -6506,8 +6506,8 @@ import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
 import {$Holder} from "net.minecraft.core.Holder"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Equipable, $Equipable$$Interface} from "net.minecraft.world.item.Equipable"
+import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$EquipmentSlot} from "net.minecraft.world.entity.EquipmentSlot"
 import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
@@ -6548,8 +6548,8 @@ export type $ElytraItem$$Type = ($ElytraItem);
 export type $ElytraItem$$Original = $ElytraItem;}
 declare module "net.minecraft.world.item.crafting.SimpleCraftingRecipeSerializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$SimpleCraftingRecipeSerializer$Factory$$Type} from "net.minecraft.world.item.crafting.SimpleCraftingRecipeSerializer$Factory"
 import {$CraftingRecipe} from "net.minecraft.world.item.crafting.CraftingRecipe"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -6578,8 +6578,8 @@ import {$RecipeScriptContext$$Type} from "dev.latvian.mods.kubejs.recipe.RecipeS
 import {$RecipeMatchContext$$Type} from "dev.latvian.mods.kubejs.recipe.filter.RecipeMatchContext"
 import {$ReplacementMatchInfo$$Type} from "dev.latvian.mods.kubejs.recipe.match.ReplacementMatchInfo"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
-import {$Recipe, $Recipe$$Type} from "net.minecraft.world.item.crafting.Recipe"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
+import {$Recipe, $Recipe$$Type} from "net.minecraft.world.item.crafting.Recipe"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
 import {$RecipeHolderKJS$$Interface} from "dev.latvian.mods.kubejs.core.RecipeHolderKJS"
 import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
@@ -6623,20 +6623,20 @@ get "type"(): $ResourceLocation
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $RecipeHolder$$Type<T> = ({"id"?: $ResourceLocation$$Type, "value"?: T}) | ([id?: $ResourceLocation$$Type, value?: T]);
+export type $RecipeHolder$$Type<T> = ({"value"?: T, "id"?: $ResourceLocation$$Type}) | ([value?: T, id?: $ResourceLocation$$Type]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
 export type $RecipeHolder$$Original<T> = $RecipeHolder<(T)>;}
 declare module "net.minecraft.world.item.FishingRodItem" {
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
+import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
-import {$Block} from "net.minecraft.world.level.block.Block"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$ItemAbility$$Type} from "net.neoforged.neoforge.common.ItemAbility"
@@ -6685,8 +6685,8 @@ import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$EnchantableItem$$Interface} from "dev.shadowsoffire.apothic_enchanting.api.EnchantableItem"
 import {$ClickAction$$Type} from "net.minecraft.world.inventory.ClickAction"
 import {$CreativeModeTab, $CreativeModeTab$$Type} from "net.minecraft.world.item.CreativeModeTab"
-import {$IItemExtension$$Interface} from "net.neoforged.neoforge.common.extensions.IItemExtension"
 import {$ItemEnchantments} from "net.minecraft.world.item.enchantment.ItemEnchantments"
+import {$IItemExtension$$Interface} from "net.neoforged.neoforge.common.extensions.IItemExtension"
 import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$EquipmentSlot, $EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$FeatureElement$$Interface} from "net.minecraft.world.flag.FeatureElement"
@@ -6699,16 +6699,16 @@ import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$HolderLookup$RegistryLookup$$Type} from "net.minecraft.core.HolderLookup$RegistryLookup"
 import {$SlotAccess$$Type} from "net.minecraft.world.entity.SlotAccess"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
-import {$IExtendedItem$$Interface} from "net.mehvahdjukaar.moonlight.core.misc.IExtendedItem"
 import {$EnderMan$$Type} from "net.minecraft.world.entity.monster.EnderMan"
 import {$Consumer$$Type} from "java.util.function.Consumer"
+import {$IExtendedItem$$Interface} from "net.mehvahdjukaar.moonlight.core.misc.IExtendedItem"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
 import {$EnchantmentInstance, $EnchantmentInstance$$Type} from "net.minecraft.world.item.enchantment.EnchantmentInstance"
 import {$ItemLike$$Interface} from "net.minecraft.world.level.ItemLike"
 import {$BiConsumer} from "java.util.function.BiConsumer"
-import {$Holder$Reference} from "net.minecraft.core.Holder$Reference"
 import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$Holder$Reference} from "net.minecraft.core.Holder$Reference"
 import {$OwoItemExtensions$$Interface} from "io.wispforest.owo.util.pond.OwoItemExtensions"
 import {$AABB} from "net.minecraft.world.phys.AABB"
 import {$FeatureFlagSet, $FeatureFlagSet$$Type} from "net.minecraft.world.flag.FeatureFlagSet"
@@ -6730,16 +6730,16 @@ import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$EnchantmentTableStats$$Type} from "dev.shadowsoffire.apothic_enchanting.table.EnchantmentTableStats"
 import {$Map} from "java.util.Map"
-import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$RecipeType$$Type} from "net.minecraft.world.item.crafting.RecipeType"
+import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$ItemEntity$$Type} from "net.minecraft.world.entity.item.ItemEntity"
 import {$ItemFTBL$$Interface} from "dev.ftb.mods.ftblibrary.core.ItemFTBL"
 import {$ClipContext$Fluid$$Type} from "net.minecraft.world.level.ClipContext$Fluid"
 import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$CallbackInfoReturnable$$Type} from "org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable"
+import {$IClientItemExtensions$$Type} from "net.neoforged.neoforge.client.extensions.common.IClientItemExtensions"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$DataComponentPatch$$Type} from "net.minecraft.core.component.DataComponentPatch"
-import {$IClientItemExtensions$$Type} from "net.neoforged.neoforge.client.extensions.common.IClientItemExtensions"
 import {$UseAnim} from "net.minecraft.world.item.UseAnim"
 import {$Enchantment$$Type} from "net.minecraft.world.item.enchantment.Enchantment"
 import {$Registry} from "net.minecraft.core.Registry"
@@ -6756,12 +6756,12 @@ static readonly "BY_BLOCK": $Map<($Block), ($Item)>
 
 constructor(arg0: $Item$Properties$$Type)
 
-public "asItem"(): $Item
 /**
  * 
  * @deprecated
  */
 public "initializeClient"(arg0: $Consumer$$Type<($IClientItemExtensions)>): void
+public "asItem"(): $Item
 /**
  * 
  * @deprecated
@@ -6840,6 +6840,11 @@ public "toString"(): StringJS
 public static "getId"(arg0: $Item$$Type): Special.Item
 public "use"(arg0: $Level$$Type, arg1: $Player$$Type, arg2: $InteractionHand$$Type): $InteractionResultHolder<($ItemStack)>
 public "components"(): $DataComponentMap
+/**
+ * 
+ * @deprecated
+ */
+public "getCraftingRemainingItem"(): $Item
 public "requiredFeatures"(): $FeatureFlagSet
 public "isBarVisible"(arg0: $ItemStack$$Type): boolean
 public "getBarWidth"(arg0: $ItemStack$$Type): integer
@@ -6849,11 +6854,6 @@ public "getDefaultInstance"(): $ItemStack
 public "getDescriptionId"(): StringJS
 public "getDescriptionId"(arg0: $ItemStack$$Type): StringJS
 public "getKey"(): $ResourceKey
-/**
- * 
- * @deprecated
- */
-public "getCraftingRemainingItem"(): $Item
 public static "byId"(arg0: integer): $Item
 public "getBreakingSound"(): $SoundEvent
 public "getDrinkingSound"(): $SoundEvent
@@ -6912,8 +6912,8 @@ public "canBeHurtBy"(arg0: $ItemStack$$Type, arg1: $DamageSource$$Type): boolean
 public "applyEnchantments"(arg0: $ItemStack$$Type, arg1: $List$$Type<($EnchantmentInstance$$Type)>): $ItemStack
 public "doesSneakBypassUse"(arg0: $ItemStack$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type): boolean
 public "createEntity"(arg0: $Level$$Type, arg1: $Entity$$Type, arg2: $ItemStack$$Type): $Entity
-public "getMaxStackSize"(arg0: $ItemStack$$Type): integer
 public "getCraftingRemainingItem"(arg0: $ItemStack$$Type): $ItemStack
+public "getMaxStackSize"(arg0: $ItemStack$$Type): integer
 public "canWalkOnPowderedSnow"(arg0: $ItemStack$$Type, arg1: $LivingEntity$$Type): boolean
 public "makesPiglinsNeutral"(arg0: $ItemStack$$Type, arg1: $LivingEntity$$Type): boolean
 public "getEquipmentSlot"(arg0: $ItemStack$$Type): $EquipmentSlot
@@ -6961,10 +6961,10 @@ set "craftingRemainingItemFTBL"(value: $Item$$Type)
 set "craftingRemainder"(value: $Item$$Type)
 set "canRepair"(value: boolean)
 get "description"(): $Component
+get "craftingRemainingItem"(): $Item
 get "defaultInstance"(): $ItemStack
 get "descriptionId"(): StringJS
 get "key"(): $ResourceKey
-get "craftingRemainingItem"(): $Item
 get "breakingSound"(): $SoundEvent
 get "drinkingSound"(): $SoundEvent
 get "eatingSound"(): $SoundEvent
@@ -7000,8 +7000,8 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
 export class $EnchantmentTarget extends $Enum<($EnchantmentTarget)> implements $StringRepresentable$$Interface {
@@ -7014,11 +7014,11 @@ public static "values"(): ($EnchantmentTarget)[]
 public static "valueOf"(arg0: StringJS): $EnchantmentTarget
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
 }
@@ -7036,8 +7036,8 @@ import {$CraftingInput$$Type} from "net.minecraft.world.item.crafting.CraftingIn
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$CustomRecipe} from "net.minecraft.world.item.crafting.CustomRecipe"
-import {$CraftingBookCategory$$Type} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$CraftingBookCategory$$Type} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 
@@ -7062,8 +7062,8 @@ export type $ShieldDecorationRecipe$$Type = ($ShieldDecorationRecipe);
  */
 export type $ShieldDecorationRecipe$$Original = $ShieldDecorationRecipe;}
 declare module "net.minecraft.world.item.CreativeModeTab$Output" {
-import {$Collection$$Type} from "java.util.Collection"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$Collection$$Type} from "java.util.Collection"
 import {$ItemLike$$Type} from "net.minecraft.world.level.ItemLike"
 import {$CreativeModeTab$TabVisibility, $CreativeModeTab$TabVisibility$$Type} from "net.minecraft.world.item.CreativeModeTab$TabVisibility"
 
@@ -7145,8 +7145,8 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$TagKey} from "net.minecraft.tags.TagKey"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$KubeColor$$Interface} from "dev.latvian.mods.kubejs.color.KubeColor"
 
@@ -7186,15 +7186,15 @@ public static "values"(): ($DyeColor)[]
 public static "valueOf"(arg0: StringJS): $DyeColor
 public "getId"(): integer
 public static "byName"(arg0: StringJS, arg1: $DyeColor$$Type): $DyeColor
-public static "getColor"(arg0: $ItemStack$$Type): $DyeColor
 public "getSerializedName"(): StringJS
+public static "getColor"(arg0: $ItemStack$$Type): $DyeColor
 public static "byId"(arg0: integer): $DyeColor
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 public "toHexString"(): StringJS
 public "serialize"(): StringJS
 public "specialEquals"(o: any, shallow: boolean): boolean
@@ -7225,14 +7225,14 @@ export type $DyeColor$$Type = (("white") | ("orange") | ("magenta") | ("light_bl
 export type $DyeColor$$Original = $DyeColor;}
 declare module "net.minecraft.world.item.EitherHolder" {
 import {$StreamCodec, $StreamCodec$$Type} from "net.minecraft.network.codec.StreamCodec"
-import {$Registry$$Type} from "net.minecraft.core.Registry"
 import {$Optional, $Optional$$Type} from "java.util.Optional"
+import {$Registry$$Type} from "net.minecraft.core.Registry"
 import {$Codec, $Codec$$Type} from "com.mojang.serialization.Codec"
 import {$RegistryFriendlyByteBuf, $RegistryFriendlyByteBuf$$Type} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Either, $Either$$Type} from "com.mojang.datafixers.util.Either"
 import {$ResourceKey, $ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
-import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
 import {$Record} from "java.lang.Record"
 
 export class $EitherHolder<T> extends $Record {
@@ -7256,7 +7256,7 @@ public static "codec"<T>(arg0: $ResourceKey$$Type<($Registry<(T)>)>, arg1: $Code
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $EitherHolder$$Type<T> = ({"key"?: $ResourceKey$$Type<(T)>, "holder"?: ($Holder$$Type<(T)>)?}) | ([key?: $ResourceKey$$Type<(T)>, holder?: ($Holder$$Type<(T)>)?]);
+export type $EitherHolder$$Type<T> = ({"holder"?: ($Holder$$Type<(T)>)?, "key"?: $ResourceKey$$Type<(T)>}) | ([holder?: ($Holder$$Type<(T)>)?, key?: $ResourceKey$$Type<(T)>]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -7303,8 +7303,8 @@ public "is"(arg0: $Holder$$Type<($Potion)>): boolean
 public static "getColor"(arg0: $Iterable$$Type<($MobEffectInstance$$Type)>): integer
 public "getColor"(): integer
 public static "getColor"(arg0: $Holder$$Type<($Potion)>): integer
-public static "createItemStack"(arg0: $Item$$Type, arg1: $Holder$$Type<($Potion)>): $ItemStack
 public "potion"(): $Optional<($Holder<($Potion)>)>
+public static "createItemStack"(arg0: $Item$$Type, arg1: $Holder$$Type<($Potion)>): $ItemStack
 get "allEffects"(): $Iterable<($MobEffectInstance)>
 get "color"(): integer
 }
@@ -7318,12 +7318,12 @@ export type $PotionContents$$Type = ({"potion"?: ($Holder$$Type<($Potion$$Type)>
  */
 export type $PotionContents$$Original = $PotionContents;}
 declare module "net.minecraft.world.item.ItemFrameItem" {
-import {$HangingEntityItem} from "net.minecraft.world.item.HangingEntityItem"
 import {$HangingEntity$$Type} from "net.minecraft.world.entity.decoration.HangingEntity"
+import {$HangingEntityItem} from "net.minecraft.world.item.HangingEntityItem"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
 
@@ -7368,7 +7368,7 @@ public "hashCode"(): integer
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $ItemContainerContents$Slot$$Type = ({"item"?: $ItemStack$$Type, "index"?: integer}) | ([item?: $ItemStack$$Type, index?: integer]);
+export type $ItemContainerContents$Slot$$Type = ({"index"?: integer, "item"?: $ItemStack$$Type}) | ([index?: integer, item?: $ItemStack$$Type]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -7376,16 +7376,16 @@ export type $ItemContainerContents$Slot$$Original = $ItemContainerContents$Slot;
 declare module "net.minecraft.world.item.crafting.Recipe" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
-import {$Optional} from "java.util.Optional"
 import {$WithConditions} from "net.neoforged.neoforge.common.conditions.WithConditions"
+import {$Optional} from "java.util.Optional"
 import {$Ingredient} from "net.minecraft.world.item.crafting.Ingredient"
 import {$RecipeType} from "net.minecraft.world.item.crafting.RecipeType"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$RecipeInput, $RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
+import {$RecipeInput, $RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 
 export interface $Recipe$$Interface<T extends $RecipeInput> {
@@ -7406,9 +7406,9 @@ static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($Recip
  "assemble"(arg0: T, arg1: $HolderLookup$Provider$$Type): $ItemStack
  "getRemainingItems"(arg0: T): $NonNullList<($ItemStack)>
  "getSerializer"(): $RecipeSerializer<(never)>
- "getIngredients"(): $NonNullList<($Ingredient)>
  "canCraftInDimensions"(arg0: integer, arg1: integer): boolean
  "getResultItem"(arg0: $HolderLookup$Provider$$Type): $ItemStack
+ "getIngredients"(): $NonNullList<($Ingredient)>
  "showNotification"(): boolean
  "getToastSymbol"(): $ItemStack
  "isIncomplete"(): boolean
@@ -7430,8 +7430,8 @@ declare module "net.minecraft.world.item.BookItem" {
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 
 export class $BookItem extends $Item {
@@ -7472,12 +7472,12 @@ export interface $DispensibleContainerItem$$Interface extends $IDispensibleConta
 }
 
 export class $DispensibleContainerItem implements $DispensibleContainerItem$$Interface {
+ "checkExtraContent"(arg0: $Player$$Type, arg1: $Level$$Type, arg2: $ItemStack$$Type, arg3: $BlockPos$$Type): void
 /**
  * 
  * @deprecated
  */
  "emptyContents"(arg0: $Player$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockHitResult$$Type): boolean
- "checkExtraContent"(arg0: $Player$$Type, arg1: $Level$$Type, arg2: $ItemStack$$Type, arg3: $BlockPos$$Type): void
  "emptyContents"(arg0: $Player$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockHitResult$$Type, arg4: $ItemStack$$Type): boolean
 }
 /**
@@ -7495,8 +7495,8 @@ import {$FeatureFlagSet} from "net.minecraft.world.flag.FeatureFlagSet"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$Optional} from "java.util.Optional"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Mob, $Mob$$Type} from "net.minecraft.world.entity.Mob"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
@@ -7713,15 +7713,15 @@ static readonly "BY_BLOCK": $Map<($Block), ($Item)>
 
 constructor(arg0: $Fluid$$Type, arg1: $Item$Properties$$Type)
 
+public "checkExtraContent"(arg0: $Player$$Type, arg1: $Level$$Type, arg2: $ItemStack$$Type, arg3: $BlockPos$$Type): void
+public static "getEmptySuccessItem"(arg0: $ItemStack$$Type, arg1: $Player$$Type): $ItemStack
 public "handler$chi000$architectury$fillBucket"(level: $Level$$Type, player: $Player$$Type, hand: $InteractionHand$$Type, cir: $CallbackInfoReturnable$$Type, stack: $ItemStack$$Type, target: $BlockHitResult$$Type): void
+public "emptyContents"(arg0: $Player$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockHitResult$$Type, arg4: $ItemStack$$Type): boolean
 /**
  * 
  * @deprecated
  */
 public "emptyContents"(arg0: $Player$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockHitResult$$Type): boolean
-public "emptyContents"(arg0: $Player$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockHitResult$$Type, arg4: $ItemStack$$Type): boolean
-public "checkExtraContent"(arg0: $Player$$Type, arg1: $Level$$Type, arg2: $ItemStack$$Type, arg3: $BlockPos$$Type): void
-public static "getEmptySuccessItem"(arg0: $ItemStack$$Type, arg1: $Player$$Type): $ItemStack
 public "getContent"(): $Fluid
 public "use"(arg0: $Level$$Type, arg1: $Player$$Type, arg2: $InteractionHand$$Type): $InteractionResultHolder<($ItemStack)>
 public "arch$getFluid"(): $Fluid
@@ -7754,8 +7754,8 @@ import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Map} from "java.util.Map"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$ProjectileItem$DispenseConfig} from "net.minecraft.world.item.ProjectileItem$DispenseConfig"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Tool} from "net.minecraft.world.item.component.Tool"
 import {$UseAnim} from "net.minecraft.world.item.UseAnim"
@@ -7815,8 +7815,8 @@ import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$SignText$$Type} from "net.minecraft.world.level.block.entity.SignText"
-import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$DyeColor, $DyeColor$$Type} from "net.minecraft.world.item.DyeColor"
+import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 
@@ -7854,8 +7854,8 @@ import {$List$$Type} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"
@@ -7917,10 +7917,10 @@ import {$Map} from "java.util.Map"
 import {$List$$Type} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$SoundEvent$$Type} from "net.minecraft.sounds.SoundEvent"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
+import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$BucketItem} from "net.minecraft.world.item.BucketItem"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
@@ -8041,10 +8041,10 @@ import {$NonNullList} from "net.minecraft.core.NonNullList"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$SimpleJsonResourceReloadListener} from "net.minecraft.server.packs.resources.SimpleJsonResourceReloadListener"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
+import {$RecipeHolder, $RecipeHolder$$Type} from "net.minecraft.world.item.crafting.RecipeHolder"
 import {$ImmutableMultimap$Builder$$Type} from "com.google.common.collect.ImmutableMultimap$Builder"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
 import {$RecipeInput, $RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
-import {$RecipeHolder, $RecipeHolder$$Type} from "net.minecraft.world.item.crafting.RecipeHolder"
 import {$ResourceManager$$Type} from "net.minecraft.server.packs.resources.ResourceManager"
 
 export class $RecipeManager extends $SimpleJsonResourceReloadListener implements $RecipeManagerKJS$$Interface {
@@ -8058,8 +8058,8 @@ public "replaceRecipes"(arg0: $Iterable$$Type<($RecipeHolder$$Type<(never)>)>): 
 public "getOrderedRecipes"(): $Collection<($RecipeHolder<(never)>)>
 public "byKey"(arg0: $ResourceLocation$$Type): $Optional<($RecipeHolder<(never)>)>
 public static "createCheck"<I extends $RecipeInput, T extends $Recipe<(object)>>(arg0: $RecipeType$$Type<(T)>): $RecipeManager$CachedCheck<(I), (T)>
-public "getRecipeFor"<I extends $RecipeInput, T extends $Recipe<(object)>>(arg0: $RecipeType$$Type<(T)>, arg1: I, arg2: $Level$$Type): $Optional<($RecipeHolder<(T)>)>
 public "getRecipeFor"<I extends $RecipeInput, T extends $Recipe<(object)>>(arg0: $RecipeType$$Type<(T)>, arg1: I, arg2: $Level$$Type, arg3: $ResourceLocation$$Type): $Optional<($RecipeHolder<(T)>)>
+public "getRecipeFor"<I extends $RecipeInput, T extends $Recipe<(object)>>(arg0: $RecipeType$$Type<(T)>, arg1: I, arg2: $Level$$Type): $Optional<($RecipeHolder<(T)>)>
 public "getRecipeFor"<I extends $RecipeInput, T extends $Recipe<(object)>>(arg0: $RecipeType$$Type<(T)>, arg1: I, arg2: $Level$$Type, arg3: $RecipeHolder$$Type<(T)>): $Optional<($RecipeHolder<(T)>)>
 public "getRecipes"(): $Collection<($RecipeHolder<(never)>)>
 public "getAllRecipesFor"<I extends $RecipeInput, T extends $Recipe<(object)>>(arg0: $RecipeType$$Type<(T)>): $List<($RecipeHolder<(T)>)>
@@ -8092,8 +8092,8 @@ import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$AttributeModifier, $AttributeModifier$$Type} from "net.minecraft.world.entity.ai.attributes.AttributeModifier"
 import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$EquipmentSlotGroup, $EquipmentSlotGroup$$Type} from "net.minecraft.world.entity.EquipmentSlotGroup"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Attribute, $Attribute$$Type} from "net.minecraft.world.entity.ai.attributes.Attribute"
 import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
 import {$Record} from "java.lang.Record"
@@ -8105,12 +8105,12 @@ static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($ItemA
 constructor(arg0: $Holder$$Type<($Attribute)>, arg1: $AttributeModifier$$Type, arg2: $EquipmentSlotGroup$$Type)
 
 public "attribute"(): $Holder<($Attribute)>
+public "modifier"(): $AttributeModifier
 public "slot"(): $EquipmentSlotGroup
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
 public "matches"(arg0: $Holder$$Type<($Attribute)>, arg1: $ResourceLocation$$Type): boolean
-public "modifier"(): $AttributeModifier
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -8125,8 +8125,8 @@ declare module "net.minecraft.world.item.FireChargeItem" {
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$ProjectileItem$DispenseConfig} from "net.minecraft.world.item.ProjectileItem$DispenseConfig"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Projectile, $Projectile$$Type} from "net.minecraft.world.entity.projectile.Projectile"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Position$$Type} from "net.minecraft.core.Position"
@@ -8165,8 +8165,8 @@ export type $FireChargeItem$$Type = ($FireChargeItem);
  */
 export type $FireChargeItem$$Original = $FireChargeItem;}
 declare module "net.minecraft.world.item.trading.ItemCost" {
-import {$UnaryOperator$$Type} from "java.util.function.UnaryOperator"
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
+import {$UnaryOperator$$Type} from "java.util.function.UnaryOperator"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$DataComponentPredicate$Builder$$Type} from "net.minecraft.core.component.DataComponentPredicate$Builder"
@@ -8202,7 +8202,7 @@ public "itemStack"(): $ItemStack
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $ItemCost$$Type = ({"components"?: $DataComponentPredicate$$Type, "count"?: integer, "item"?: $Holder$$Type<($Item)>, "itemStack"?: $ItemStack$$Type}) | ([components?: $DataComponentPredicate$$Type, count?: integer, item?: $Holder$$Type<($Item)>, itemStack?: $ItemStack$$Type]);
+export type $ItemCost$$Type = ({"count"?: integer, "item"?: $Holder$$Type<($Item)>, "itemStack"?: $ItemStack$$Type, "components"?: $DataComponentPredicate$$Type}) | ([count?: integer, item?: $Holder$$Type<($Item)>, itemStack?: $ItemStack$$Type, components?: $DataComponentPredicate$$Type]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -8214,8 +8214,8 @@ import {$List, $List$$Type} from "java.util.List"
 import {$IMixinItemGroup$$Interface} from "org.anti_ad.mc.ipnext.mixinhelpers.IMixinItemGroup"
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$CreativeModeTab$Row, $CreativeModeTab$Row$$Type} from "net.minecraft.world.item.CreativeModeTab$Row"
-import {$CreativeModeTab$ItemDisplayParameters$$Type} from "net.minecraft.world.item.CreativeModeTab$ItemDisplayParameters"
 import {$CreativeModeTab$Type, $CreativeModeTab$Type$$Type} from "net.minecraft.world.item.CreativeModeTab$Type"
+import {$CreativeModeTab$ItemDisplayParameters$$Type} from "net.minecraft.world.item.CreativeModeTab$ItemDisplayParameters"
 import {$CreativeModeTabKJS$$Interface} from "dev.latvian.mods.kubejs.core.CreativeModeTabKJS"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Supplier$$Type} from "java.util.function.Supplier"
@@ -8258,16 +8258,16 @@ public "shouldDisplay"(): boolean
 public "buildContents"(arg0: $CreativeModeTab$ItemDisplayParameters$$Type): void
 public "getSearchTabDisplayItems"(): $Collection<($ItemStack)>
 public static "createTextureLocation"(arg0: StringJS): $ResourceLocation
+public "getDisplayName"(): $Component
 public "row"(): $CreativeModeTab$Row
-public static "builder"(): $CreativeModeTab$Builder
 /**
  * 
  * @deprecated
  */
 public static "builder"(arg0: $CreativeModeTab$Row$$Type, arg1: integer): $CreativeModeTab$Builder
+public static "builder"(): $CreativeModeTab$Builder
 public "contains"(arg0: $ItemStack$$Type): boolean
 public "getType"(): $CreativeModeTab$Type
-public "getDisplayName"(): $Component
 public "column"(): integer
 public "getSlotColor"(): integer
 get "iconItem"(): $ItemStack
@@ -8280,8 +8280,8 @@ get "scrollerSprite"(): $ResourceLocation
 get "IPNPriorityIndex"(): integer
 set "IPNPriorityIndex"(value: integer)
 get "searchTabDisplayItems"(): $Collection<($ItemStack)>
-get "type"(): $CreativeModeTab$Type
 get "displayName"(): $Component
+get "type"(): $CreativeModeTab$Type
 get "slotColor"(): integer
 /**
  * This field is a type stub generated by ProbeJS and shall not be used in any sense.
@@ -8304,8 +8304,8 @@ export type $CreativeModeTab$$Original = $CreativeModeTab;}
 declare module "net.minecraft.world.item.component.ResolvableProfile" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$Optional, $Optional$$Type} from "java.util.Optional"
-import {$CompletableFuture} from "java.util.concurrent.CompletableFuture"
 import {$Codec} from "com.mojang.serialization.Codec"
+import {$CompletableFuture} from "java.util.concurrent.CompletableFuture"
 import {$UUID, $UUID$$Type} from "java.util.UUID"
 import {$GameProfile, $GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$PropertyMap, $PropertyMap$$Type} from "com.mojang.authlib.properties.PropertyMap"
@@ -8344,9 +8344,9 @@ declare module "net.minecraft.world.item.enchantment.Enchantment$EnchantmentDefi
 import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$EquipmentSlotGroup, $EquipmentSlotGroup$$Type} from "net.minecraft.world.entity.EquipmentSlotGroup"
 import {$List, $List$$Type} from "java.util.List"
-import {$HolderSet, $HolderSet$$Type} from "net.minecraft.core.HolderSet"
-import {$Item, $Item$$Type} from "net.minecraft.world.item.Item"
 import {$Enchantment$Cost, $Enchantment$Cost$$Type} from "net.minecraft.world.item.enchantment.Enchantment$Cost"
+import {$Item, $Item$$Type} from "net.minecraft.world.item.Item"
+import {$HolderSet, $HolderSet$$Type} from "net.minecraft.core.HolderSet"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$Record} from "java.lang.Record"
 
@@ -8398,13 +8398,13 @@ export type $AnimalArmorItem$BodyType$$Original = $AnimalArmorItem$BodyType;}
 declare module "net.minecraft.world.item.WrittenBookItem" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$List$$Type} from "java.util.List"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
@@ -8487,13 +8487,13 @@ export type $ProjectileItem$DispenseConfig$Builder$$Original = $ProjectileItem$D
 declare module "net.minecraft.world.item.PotionItem" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$List$$Type} from "java.util.List"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$UseAnim} from "net.minecraft.world.item.UseAnim"
@@ -8501,8 +8501,8 @@ import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 
 export class $PotionItem extends $Item {
 static readonly "BASE_ATTACK_DAMAGE_ID": $ResourceLocation
@@ -8539,9 +8539,9 @@ import {$CraftingInput$$Type} from "net.minecraft.world.item.crafting.CraftingIn
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Ingredient} from "net.minecraft.world.item.crafting.Ingredient"
 import {$RecipeType} from "net.minecraft.world.item.crafting.RecipeType"
-import {$CraftingBookCategory, $CraftingBookCategory$$Type} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$ShapedRecipeAccessor$$Interface} from "com.simibubi.create.foundation.mixin.accessor.ShapedRecipeAccessor"
+import {$CraftingBookCategory, $CraftingBookCategory$$Type} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$ShapedRecipeAccess$$Interface} from "me.desht.pneumaticcraft.mixin.accessors.ShapedRecipeAccess"
@@ -8561,17 +8561,17 @@ constructor(arg0: StringJS, arg1: $CraftingBookCategory$$Type, arg2: $ShapedReci
 public "assemble"(arg0: $CraftingInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
 public "assemble"(arg0: $RecipeInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
 public "getSerializer"(): $RecipeSerializer<(never)>
-public "getIngredients"(): $NonNullList<($Ingredient)>
 public "canCraftInDimensions"(arg0: integer, arg1: integer): boolean
 public "getResultItem"(arg0: $HolderLookup$Provider$$Type): $ItemStack
+public "getIngredients"(): $NonNullList<($Ingredient)>
 public "showNotification"(): boolean
 public "isIncomplete"(): boolean
 public "create$getPattern"(): $ShapedRecipePattern
-public "category"(): $CraftingBookCategory
 public "getWidth"(): integer
 public "getHeight"(): integer
 public "getResult"(): $ItemStack
 public "getPattern"(): $ShapedRecipePattern
+public "category"(): $CraftingBookCategory
 public "matches"(arg0: $CraftingInput$$Type, arg1: $Level$$Type): boolean
 public "matches"(arg0: $RecipeInput$$Type, arg1: $Level$$Type): boolean
 public "getGroup"(): StringJS
@@ -8601,11 +8601,11 @@ export type $ShapedRecipe$$Original = $ShapedRecipe;}
 declare module "net.minecraft.world.item.Items" {
 import {$UnaryOperator$$Type} from "java.util.function.UnaryOperator"
 import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
-import {$Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Item, $Item$$Type} from "net.minecraft.world.item.Item"
-import {$BlockItem$$Type} from "net.minecraft.world.item.BlockItem"
 import {$ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
+import {$BlockItem$$Type} from "net.minecraft.world.item.BlockItem"
 
 export class $Items {
 static readonly "GREEN_CONCRETE_POWDER": $Item
@@ -9944,14 +9944,14 @@ static readonly "YELLOW_GLAZED_TERRACOTTA": $Item
 
 constructor()
 
+public static "registerBlock"(arg0: $Block$$Type, arg1: $Item$$Type): $Item
+public static "registerBlock"(arg0: $Block$$Type, ...arg1: ($Block$$Type)[]): $Item
+public static "registerBlock"(arg0: $Block$$Type, arg1: $UnaryOperator$$Type<($Item$Properties)>): $Item
+public static "registerBlock"(arg0: $BlockItem$$Type): $Item
+public static "registerBlock"(arg0: $Block$$Type): $Item
 public static "registerItem"(arg0: $ResourceLocation$$Type, arg1: $Item$$Type): $Item
 public static "registerItem"(arg0: $ResourceKey$$Type<($Item)>, arg1: $Item$$Type): $Item
 public static "registerItem"(arg0: StringJS, arg1: $Item$$Type): $Item
-public static "registerBlock"(arg0: $BlockItem$$Type): $Item
-public static "registerBlock"(arg0: $Block$$Type, arg1: $Item$$Type): $Item
-public static "registerBlock"(arg0: $Block$$Type, arg1: $UnaryOperator$$Type<($Item$Properties)>): $Item
-public static "registerBlock"(arg0: $Block$$Type, ...arg1: ($Block$$Type)[]): $Item
-public static "registerBlock"(arg0: $Block$$Type): $Item
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -9965,11 +9965,11 @@ export type $Items$$Original = $Items;}
 declare module "net.minecraft.world.item.Equipable" {
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
-import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
 import {$EquipmentSlot, $EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
-import {$Item$$Type} from "net.minecraft.world.item.Item"
+import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$Item$$Type} from "net.minecraft.world.item.Item"
 import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
 import {$Holder} from "net.minecraft.core.Holder"
 
@@ -9998,8 +9998,8 @@ export type $Equipable$$Original = $Equipable;}
 declare module "net.minecraft.world.item.DoubleHighBlockItem" {
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$AdditionalItemPlacement, $AdditionalItemPlacement$$Type} from "net.mehvahdjukaar.moonlight.api.item.additional_placements.AdditionalItemPlacement"
@@ -10033,8 +10033,8 @@ declare module "net.minecraft.world.item.PickaxeItem" {
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$DiggerItem} from "net.minecraft.world.item.DiggerItem"
 import {$ItemAbility$$Type} from "net.neoforged.neoforge.common.ItemAbility"
@@ -10097,8 +10097,8 @@ export type $SingleRecipeInput$$Type = ({"item"?: $ItemStack$$Type}) | ([item?: 
  */
 export type $SingleRecipeInput$$Original = $SingleRecipeInput;}
 declare module "net.minecraft.world.item.FoodOnAStickItem" {
-import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
+import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
@@ -10144,8 +10144,8 @@ import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$LocalRef$$Type} from "com.llamalad7.mixinextras.sugar.ref.LocalRef"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
-import {$ComplexItem} from "net.minecraft.world.item.ComplexItem"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$ComplexItem} from "net.minecraft.world.item.ComplexItem"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
@@ -10154,11 +10154,11 @@ import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockStat
 import {$LocalIntRef$$Type} from "com.llamalad7.mixinextras.sugar.ref.LocalIntRef"
 import {$Map} from "java.util.Map"
 import {$Block} from "net.minecraft.world.level.block.Block"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
-import {$Operation$$Type} from "com.llamalad7.mixinextras.injector.wrapoperation.Operation"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
+import {$Operation$$Type} from "com.llamalad7.mixinextras.injector.wrapoperation.Operation"
 import {$LevelChunk$$Type} from "net.minecraft.world.level.chunk.LevelChunk"
 import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
@@ -10177,19 +10177,19 @@ constructor(arg0: $Item$Properties$$Type)
 
 public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
 public "useOn"(arg0: $UseOnContext$$Type): $InteractionResult
+public "getUpdatePacket"(arg0: $ItemStack$$Type, arg1: $Level$$Type, arg2: $Player$$Type): $Packet<(never)>
 public "inventoryTick"(arg0: $ItemStack$$Type, arg1: $Level$$Type, arg2: $Entity$$Type, arg3: integer, arg4: boolean): void
 public "onCraftedPostProcess"(arg0: $ItemStack$$Type, arg1: $Level$$Type): void
-public "getUpdatePacket"(arg0: $ItemStack$$Type, arg1: $Level$$Type, arg2: $Player$$Type): $Packet<(never)>
 public static "getTooltipForId"(arg0: $MapId$$Type): $Component
-public static "getSavedData"(arg0: $ItemStack$$Type, arg1: $Level$$Type): $MapItemSavedData
 public static "getSavedData"(arg0: $MapId$$Type, arg1: $Level$$Type): $MapItemSavedData
-public "handler$bbo000$supplementaries$supp$checkHeightLock"(level: $Level$$Type, viewer: $Entity$$Type, data: $MapItemSavedData$$Type, ci: $CallbackInfo$$Type, range: $LocalIntRef$$Type, colorMap: $LocalRef$$Type, lightMap: $LocalRef$$Type, height: $LocalIntRef$$Type): void
+public static "getSavedData"(arg0: $ItemStack$$Type, arg1: $Level$$Type): $MapItemSavedData
 public "modifyExpressionValue$bbo000$supplementaries$supp$removeCeiling"(original: boolean, height: $LocalIntRef$$Type): boolean
+public "wrapOperation$bbo000$supplementaries$supp$removeXrayAndAddAccurateColor"(instance: $BlockState$$Type, level: $BlockGetter$$Type, pos: $BlockPos$$Type, operation: $Operation$$Type, l: $Level$$Type, chunk: $LevelChunk$$Type, w: integer, state: $BlockState$$Type, k1: integer, l1: integer, colorMap: $LocalRef$$Type, lightMap: $LocalRef$$Type, height: $LocalIntRef$$Type): $MapColor
+public "handler$bbo000$supplementaries$supp$checkHeightLock"(level: $Level$$Type, viewer: $Entity$$Type, data: $MapItemSavedData$$Type, ci: $CallbackInfo$$Type, range: $LocalIntRef$$Type, colorMap: $LocalRef$$Type, lightMap: $LocalRef$$Type, height: $LocalIntRef$$Type): void
 public "modifyExpressionValue$bbo000$supplementaries$supp$modifySampleHeight"(original: integer, height: $LocalIntRef$$Type): integer
 public "wrapOperation$bbo000$supplementaries$supp$removeXrayAndAddAccurateColor$mixinextras$bridge$31"(instance: $BlockState$$Type, level: $BlockGetter$$Type, pos: $BlockPos$$Type, operation: $Operation$$Type, l: $LocalRef$$Type, chunk: $LocalRef$$Type, w: $LocalIntRef$$Type, state: $LocalRef$$Type, k1: $LocalIntRef$$Type, l1: $LocalIntRef$$Type, colorMap: $LocalRef$$Type, lightMap: $LocalRef$$Type, height: $LocalIntRef$$Type): $MapColor
 public "modifyExpressionValue$bbo000$supplementaries$supp$updateCustomColor"(original: boolean, level: $Level$$Type, viewer: $Entity$$Type, data: $MapItemSavedData$$Type, x: integer, z: integer, colorMap: $LocalRef$$Type, lightMap: $LocalRef$$Type): boolean
 public static "renderBiomePreviewMap"(arg0: $ServerLevel$$Type, arg1: $ItemStack$$Type): void
-public "wrapOperation$bbo000$supplementaries$supp$removeXrayAndAddAccurateColor"(instance: $BlockState$$Type, level: $BlockGetter$$Type, pos: $BlockPos$$Type, operation: $Operation$$Type, l: $Level$$Type, chunk: $LevelChunk$$Type, w: integer, state: $BlockState$$Type, k1: integer, l1: integer, colorMap: $LocalRef$$Type, lightMap: $LocalRef$$Type, height: $LocalIntRef$$Type): $MapColor
 public static "lockMap"(arg0: $Level$$Type, arg1: $ItemStack$$Type): void
 public "update"(arg0: $Level$$Type, arg1: $Entity$$Type, arg2: $MapItemSavedData$$Type): void
 public static "create"(arg0: $Level$$Type, arg1: integer, arg2: integer, arg3: byte, arg4: boolean, arg5: boolean): $ItemStack
@@ -10273,9 +10273,9 @@ public "getNearestLookingDirection"(): $Direction
 public "replacingClickedOnBlock"(): boolean
 public "canPlace"(): boolean
 public "getNearestLookingVerticalDirection"(): $Direction
+public "handler$eab000$moonlight$fixNotAccountingForNullPlayer1"(cir: $CallbackInfoReturnable$$Type): void
 public "handler$eab000$moonlight$fixNotAccountingForNullPlayer2"(cir: $CallbackInfoReturnable$$Type): void
 public "handler$eab000$moonlight$fixNotAccountingForNullPlayer3"(cir: $CallbackInfoReturnable$$Type): void
-public "handler$eab000$moonlight$fixNotAccountingForNullPlayer1"(cir: $CallbackInfoReturnable$$Type): void
 public static "at"(arg0: $BlockPlaceContext$$Type, arg1: $BlockPos$$Type, arg2: $Direction$$Type): $BlockPlaceContext
 get "clickedPos"(): $BlockPos
 get "nearestLookingDirections"(): ($Direction)[]
@@ -10294,8 +10294,8 @@ export type $BlockPlaceContext$$Original = $BlockPlaceContext;}
 declare module "net.minecraft.world.item.trading.MerchantOffers" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$ArrayList} from "java.util.ArrayList"
-import {$Collection$$Type} from "java.util.Collection"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$Collection$$Type} from "java.util.Collection"
 import {$MerchantOffer} from "net.minecraft.world.item.trading.MerchantOffer"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$SequencedCollection} from "java.util.SequencedCollection"
@@ -10363,12 +10363,12 @@ static readonly "BASE_ATTACK_SPEED_ID": $ResourceLocation
 static readonly "ABSOLUTE_MAX_STACK_SIZE": integer
 static readonly "BY_BLOCK": $Map<($Block), ($Item)>
 
-constructor(arg0: $Tier$$Type, arg1: $Item$Properties$$Type)
 constructor(arg0: $Tier$$Type, arg1: $Item$Properties$$Type, arg2: $Tool$$Type)
+constructor(arg0: $Tier$$Type, arg1: $Item$Properties$$Type)
 
 public "canAttackBlock"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type): boolean
-public "handler$zpf000$dummmmmmy$mm$damageEquipment"(stack: $ItemStack$$Type, entity: $LivingEntity$$Type, player: $LivingEntity$$Type, cir: $CallbackInfoReturnable$$Type): void
 public static "createToolProperties"(): $Tool
+public "handler$zpf000$dummmmmmy$mm$damageEquipment"(stack: $ItemStack$$Type, entity: $LivingEntity$$Type, player: $LivingEntity$$Type, cir: $CallbackInfoReturnable$$Type): void
 public "canPerformAction"(arg0: $ItemStack$$Type, arg1: $ItemAbility$$Type): boolean
 public static "createAttributes"(arg0: $Tier$$Type, arg1: integer, arg2: float): $ItemAttributeModifiers
 public static "createAttributes"(arg0: $Tier$$Type, arg1: float, arg2: float): $ItemAttributeModifiers
@@ -10418,8 +10418,8 @@ export type $SuspiciousStewEffects$$Original = $SuspiciousStewEffects;}
 declare module "net.minecraft.world.item.BedItem" {
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$AdditionalItemPlacement, $AdditionalItemPlacement$$Type} from "net.mehvahdjukaar.moonlight.api.item.additional_placements.AdditionalItemPlacement"
@@ -10499,8 +10499,8 @@ export type $CreativeModeTab$Builder$$Original = $CreativeModeTab$Builder;}
 declare module "net.minecraft.world.item.ScaffoldingBlockItem" {
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$AdditionalItemPlacement, $AdditionalItemPlacement$$Type} from "net.mehvahdjukaar.moonlight.api.item.additional_placements.AdditionalItemPlacement"
@@ -10533,12 +10533,12 @@ export type $ScaffoldingBlockItem$$Type = ($ScaffoldingBlockItem);
  */
 export type $ScaffoldingBlockItem$$Original = $ScaffoldingBlockItem;}
 declare module "net.minecraft.world.item.EnchantedBookItem" {
-import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
+import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$EnchantmentInstance$$Type} from "net.minecraft.world.item.enchantment.EnchantmentInstance"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 
 export class $EnchantedBookItem extends $Item {
@@ -10569,13 +10569,13 @@ import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$List$$Type} from "java.util.List"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$TooltipProvider$$Interface} from "net.minecraft.world.item.component.TooltipProvider"
 import {$DyeItem$$Type} from "net.minecraft.world.item.DyeItem"
+import {$TooltipProvider$$Interface} from "net.minecraft.world.item.component.TooltipProvider"
 import {$Record} from "java.lang.Record"
 
 export class $DyedItemColor extends $Record implements $TooltipProvider$$Interface {
@@ -10607,16 +10607,16 @@ export type $DyedItemColor$$Original = $DyedItemColor;}
 declare module "net.minecraft.world.item.ThrowablePotionItem" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$ProjectileItem$DispenseConfig} from "net.minecraft.world.item.ProjectileItem$DispenseConfig"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Projectile, $Projectile$$Type} from "net.minecraft.world.entity.projectile.Projectile"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Position$$Type} from "net.minecraft.core.Position"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$PotionItem} from "net.minecraft.world.item.PotionItem"
+import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$ProjectileItem$$Interface} from "net.minecraft.world.item.ProjectileItem"
 import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
@@ -10652,11 +10652,11 @@ import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$TooltipProvider$$Interface} from "net.minecraft.world.item.component.TooltipProvider"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
-import {$Record} from "java.lang.Record"
 import {$Consumer$$Type} from "java.util.function.Consumer"
+import {$Record} from "java.lang.Record"
 
 export class $Unbreakable extends $Record implements $TooltipProvider$$Interface {
 static readonly "CODEC": $Codec<($Unbreakable)>
@@ -10685,8 +10685,8 @@ import {$ArmorMaterial$Layer, $ArmorMaterial$Layer$$Type} from "net.minecraft.wo
 import {$Map, $Map$$Type} from "java.util.Map"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$Ingredient, $Ingredient$$Type} from "net.minecraft.world.item.crafting.Ingredient"
-import {$Supplier, $Supplier$$Type} from "java.util.function.Supplier"
 import {$List, $List$$Type} from "java.util.List"
+import {$Supplier, $Supplier$$Type} from "java.util.function.Supplier"
 import {$SoundEvent, $SoundEvent$$Type} from "net.minecraft.sounds.SoundEvent"
 import {$ArmorItem$Type, $ArmorItem$Type$$Type} from "net.minecraft.world.item.ArmorItem$Type"
 import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
@@ -10698,11 +10698,11 @@ static readonly "CODEC": $Codec<($Holder<($ArmorMaterial)>)>
 constructor(arg0: $Map$$Type<($ArmorItem$Type$$Type), (integer)>, arg1: integer, arg2: $Holder$$Type<($SoundEvent)>, arg3: $Supplier$$Type<($Ingredient$$Type)>, arg4: $List$$Type<($ArmorMaterial$Layer$$Type)>, arg5: float, arg6: float)
 
 public "getDefense"(arg0: $ArmorItem$Type$$Type): integer
-public "knockbackResistance"(): float
-public "enchantmentValue"(): integer
-public "repairIngredient"(): $Supplier<($Ingredient)>
 public "toughness"(): float
 public "equipSound"(): $Holder<($SoundEvent)>
+public "enchantmentValue"(): integer
+public "repairIngredient"(): $Supplier<($Ingredient)>
+public "knockbackResistance"(): float
 public "defense"(): $Map<($ArmorItem$Type), (integer)>
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
@@ -10734,8 +10734,8 @@ import {$DynamicOps$$Type} from "com.mojang.serialization.DynamicOps"
 import {$Predicate} from "java.util.function.Predicate"
 import {$DataResult} from "com.mojang.serialization.DataResult"
 import {$DataComponentType$$Type} from "net.minecraft.core.component.DataComponentType"
-import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$MapDecoder$$Type} from "com.mojang.serialization.MapDecoder"
 import {$Codec} from "com.mojang.serialization.Codec"
@@ -10805,13 +10805,13 @@ export type $ItemCooldowns$CooldownInstance$$Original = $ItemCooldowns$CooldownI
 declare module "net.minecraft.world.item.OminousBottleItem" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$List$$Type} from "java.util.List"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$UseAnim} from "net.minecraft.world.item.UseAnim"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
@@ -10924,8 +10924,8 @@ import {$List, $List$$Type} from "java.util.List"
 import {$FireworkExplosion, $FireworkExplosion$$Type} from "net.minecraft.world.item.component.FireworkExplosion"
 import {$TooltipProvider$$Interface} from "net.minecraft.world.item.component.TooltipProvider"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$Record} from "java.lang.Record"
 import {$Consumer$$Type} from "java.util.function.Consumer"
@@ -11027,17 +11027,17 @@ export type $EnchantedItemInUse$$Type = ({"onBreak"?: $Consumer$$Type<($Item$$Ty
  */
 export type $EnchantedItemInUse$$Original = $EnchantedItemInUse;}
 declare module "net.minecraft.world.item.TippedArrowItem" {
-import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
+import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$List$$Type} from "java.util.List"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$ArrowItem} from "net.minecraft.world.item.ArrowItem"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 
 export class $TippedArrowItem extends $ArrowItem {
 static readonly "BASE_ATTACK_DAMAGE_ID": $ResourceLocation
@@ -11069,8 +11069,8 @@ import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$MobEffectInstance} from "net.minecraft.world.effect.MobEffectInstance"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
-import {$MobEffect, $MobEffect$$Type} from "net.minecraft.world.effect.MobEffect"
 import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
+import {$MobEffect, $MobEffect$$Type} from "net.minecraft.world.effect.MobEffect"
 import {$Record} from "java.lang.Record"
 
 export class $SuspiciousStewEffects$Entry extends $Record {
@@ -11139,9 +11139,9 @@ declare module "net.minecraft.world.item.enchantment.LevelBasedValue$Constant" {
 import {$Registry$$Type} from "net.minecraft.core.Registry"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$List$$Type} from "java.util.List"
-import {$LevelBasedValue$Lookup} from "net.minecraft.world.item.enchantment.LevelBasedValue$Lookup"
-import {$LevelBasedValue$Linear} from "net.minecraft.world.item.enchantment.LevelBasedValue$Linear"
 import {$LevelBasedValue, $LevelBasedValue$$Type, $LevelBasedValue$$Interface} from "net.minecraft.world.item.enchantment.LevelBasedValue"
+import {$LevelBasedValue$Linear} from "net.minecraft.world.item.enchantment.LevelBasedValue$Linear"
+import {$LevelBasedValue$Lookup} from "net.minecraft.world.item.enchantment.LevelBasedValue$Lookup"
 import {$MapCodec, $MapCodec$$Type} from "com.mojang.serialization.MapCodec"
 import {$Record} from "java.lang.Record"
 
@@ -11176,13 +11176,13 @@ declare module "net.minecraft.world.item.LingeringPotionItem" {
 import {$ThrowablePotionItem} from "net.minecraft.world.item.ThrowablePotionItem"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$List$$Type} from "java.util.List"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
@@ -11253,8 +11253,8 @@ import {$Codec} from "com.mojang.serialization.Codec"
 import {$Comparable, $Comparable$$Type} from "java.lang.Comparable"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$Record} from "java.lang.Record"
-import {$Property$$Type} from "net.minecraft.world.level.block.state.properties.Property"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$Property$$Type} from "net.minecraft.world.level.block.state.properties.Property"
 
 export class $BlockItemStateProperties extends $Record {
 static readonly "CODEC": $Codec<($BlockItemStateProperties)>
@@ -11284,15 +11284,15 @@ export type $BlockItemStateProperties$$Type = ({"properties"?: $Map$$Type<(Strin
  */
 export type $BlockItemStateProperties$$Original = $BlockItemStateProperties;}
 declare module "net.minecraft.world.item.SplashPotionItem" {
-import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ThrowablePotionItem} from "net.minecraft.world.item.ThrowablePotionItem"
-import {$ItemStack} from "net.minecraft.world.item.ItemStack"
+import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Map} from "java.util.Map"
+import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
-import {$Block} from "net.minecraft.world.level.block.Block"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Item} from "net.minecraft.world.item.Item"
 
@@ -11356,9 +11356,9 @@ export type $AdventureModePredicate$$Original = $AdventureModePredicate;}
 declare module "net.minecraft.world.item.SpectralArrowItem" {
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Projectile} from "net.minecraft.world.entity.projectile.Projectile"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Position$$Type} from "net.minecraft.core.Position"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
@@ -11446,10 +11446,10 @@ import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
-import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$SoundEvent, $SoundEvent$$Type} from "net.minecraft.sounds.SoundEvent"
-import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
+import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
 import {$Record} from "java.lang.Record"
 
 export class $JukeboxSong extends $Record {
@@ -11492,8 +11492,8 @@ declare module "net.minecraft.world.item.MinecartItem" {
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$MinecartItemAccess$$Interface} from "me.desht.pneumaticcraft.mixin.accessors.MinecartItemAccess"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
@@ -11525,8 +11525,8 @@ export type $MinecartItem$$Type = ($MinecartItem);
 export type $MinecartItem$$Original = $MinecartItem;}
 declare module "net.minecraft.world.item.crafting.SmithingTrimRecipe$Serializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$SmithingTrimRecipe} from "net.minecraft.world.item.crafting.SmithingTrimRecipe"
@@ -11653,8 +11653,8 @@ import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyBy
 import {$List, $List$$Type} from "java.util.List"
 import {$TooltipProvider$$Interface} from "net.minecraft.world.item.component.TooltipProvider"
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Record} from "java.lang.Record"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 
@@ -11679,7 +11679,7 @@ public "lines"(): $List<($Component)>
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $ItemLore$$Type = ({"lines"?: $List$$Type<($Component$$Type)>, "styledLines"?: $List$$Type<($Component$$Type)>}) | ([lines?: $List$$Type<($Component$$Type)>, styledLines?: $List$$Type<($Component$$Type)>]);
+export type $ItemLore$$Type = ({"styledLines"?: $List$$Type<($Component$$Type)>, "lines"?: $List$$Type<($Component$$Type)>}) | ([styledLines?: $List$$Type<($Component$$Type)>, lines?: $List$$Type<($Component$$Type)>]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -11738,8 +11738,8 @@ export type $EnchantmentInstance$$Original = $EnchantmentInstance;}
 declare module "net.minecraft.world.item.Item$TooltipContext" {
 import {$MapId$$Type} from "net.minecraft.world.level.saveddata.maps.MapId"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
-import {$MapItemSavedData} from "net.minecraft.world.level.saveddata.maps.MapItemSavedData"
 import {$HolderLookup$Provider, $HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$MapItemSavedData} from "net.minecraft.world.level.saveddata.maps.MapItemSavedData"
 
 export interface $Item$TooltipContext$$Interface {
 }
@@ -11748,9 +11748,9 @@ export class $Item$TooltipContext implements $Item$TooltipContext$$Interface {
 static readonly "EMPTY": $Item$TooltipContext
 
  "tickRate"(): float
- "level"(): $Level
-static "of"(arg0: $HolderLookup$Provider$$Type): $Item$TooltipContext
 static "of"(arg0: $Level$$Type): $Item$TooltipContext
+static "of"(arg0: $HolderLookup$Provider$$Type): $Item$TooltipContext
+ "level"(): $Level
  "registries"(): $HolderLookup$Provider
  "mapData"(arg0: $MapId$$Type): $MapItemSavedData
 }
@@ -11768,8 +11768,8 @@ import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$Registry$$Type} from "net.minecraft.core.Registry"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
-import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$EnchantedItemInUse$$Type} from "net.minecraft.world.item.enchantment.EnchantedItemInUse"
+import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$MapCodec, $MapCodec$$Type} from "com.mojang.serialization.MapCodec"
 import {$EnchantmentLocationBasedEffect$$Interface} from "net.minecraft.world.item.enchantment.effects.EnchantmentLocationBasedEffect"
 
@@ -11797,8 +11797,8 @@ export type $EnchantmentEntityEffect$$Original = $EnchantmentEntityEffect;}
 declare module "net.minecraft.world.item.BoneMealItem" {
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
@@ -11866,11 +11866,11 @@ export type $CreativeModeTab$DisplayItemsGenerator$$Original = $CreativeModeTab$
 declare module "net.minecraft.world.item.enchantment.LevelBasedValue$Linear" {
 import {$Registry$$Type} from "net.minecraft.core.Registry"
 import {$List$$Type} from "java.util.List"
-import {$LevelBasedValue$Lookup} from "net.minecraft.world.item.enchantment.LevelBasedValue$Lookup"
 import {$LevelBasedValue, $LevelBasedValue$$Type, $LevelBasedValue$$Interface} from "net.minecraft.world.item.enchantment.LevelBasedValue"
+import {$LevelBasedValue$Lookup} from "net.minecraft.world.item.enchantment.LevelBasedValue$Lookup"
 import {$MapCodec, $MapCodec$$Type} from "com.mojang.serialization.MapCodec"
-import {$Record} from "java.lang.Record"
 import {$LevelBasedValue$Constant} from "net.minecraft.world.item.enchantment.LevelBasedValue$Constant"
+import {$Record} from "java.lang.Record"
 
 export class $LevelBasedValue$Linear extends $Record implements $LevelBasedValue$$Interface {
 static readonly "CODEC": $MapCodec<($LevelBasedValue$Linear)>
@@ -11913,8 +11913,8 @@ import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
@@ -11932,8 +11932,8 @@ public "useOn"(arg0: $UseOnContext$$Type): $InteractionResult
 public "mineBlock"(arg0: $ItemStack$$Type, arg1: $Level$$Type, arg2: $BlockState$$Type, arg3: $BlockPos$$Type, arg4: $LivingEntity$$Type): boolean
 public "getEnchantmentValue"(): integer
 public "supportsEnchantment"(arg0: $ItemStack$$Type, arg1: $Holder$$Type): boolean
-public "modifyReturnValue$ebe000$moonlight$m$mineBlock"(original: boolean, state: $BlockState$$Type): boolean
 public static "createToolProperties"(): $Tool
+public "modifyReturnValue$ebe000$moonlight$m$mineBlock"(original: boolean, state: $BlockState$$Type): boolean
 public "canPerformAction"(arg0: $ItemStack$$Type, arg1: $ItemAbility$$Type): boolean
 public "interactLivingEntity"(arg0: $ItemStack$$Type, arg1: $Player$$Type, arg2: $LivingEntity$$Type, arg3: $InteractionHand$$Type): $InteractionResult
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
@@ -11995,7 +11995,7 @@ public "hasAltDown"(): boolean
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $TooltipFlag$Default$$Type = ({"creative"?: boolean, "advanced"?: boolean}) | ([creative?: boolean, advanced?: boolean]);
+export type $TooltipFlag$Default$$Type = ({"advanced"?: boolean, "creative"?: boolean}) | ([advanced?: boolean, creative?: boolean]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -12003,9 +12003,9 @@ export type $TooltipFlag$Default$$Original = $TooltipFlag$Default;}
 declare module "net.minecraft.world.item.SignItem" {
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
+import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$AdditionalItemPlacement, $AdditionalItemPlacement$$Type} from "net.mehvahdjukaar.moonlight.api.item.additional_placements.AdditionalItemPlacement"
 import {$StandingAndWallBlockItem} from "net.minecraft.world.item.StandingAndWallBlockItem"
@@ -12039,8 +12039,8 @@ export type $SignItem$$Original = $SignItem;}
 declare module "net.minecraft.world.item.ItemNameBlockItem" {
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$AdditionalItemPlacement, $AdditionalItemPlacement$$Type} from "net.mehvahdjukaar.moonlight.api.item.additional_placements.AdditionalItemPlacement"
@@ -12074,13 +12074,13 @@ export type $ItemNameBlockItem$$Type = ($ItemNameBlockItem);
 export type $ItemNameBlockItem$$Original = $ItemNameBlockItem;}
 declare module "net.minecraft.world.item.BottleItem" {
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
+import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
-import {$Block} from "net.minecraft.world.level.block.Block"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Item} from "net.minecraft.world.item.Item"
 
@@ -12143,8 +12143,8 @@ export type $SmithingRecipeInput$$Type = ({"addition"?: $ItemStack$$Type, "templ
 export type $SmithingRecipeInput$$Original = $SmithingRecipeInput;}
 declare module "net.minecraft.world.item.crafting.SingleItemRecipe$Serializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$SingleItemRecipe} from "net.minecraft.world.item.crafting.SingleItemRecipe"
@@ -12168,8 +12168,8 @@ import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
-import {$TagKey$$Type} from "net.minecraft.tags.TagKey"
 import {$List$$Type} from "java.util.List"
+import {$TagKey$$Type} from "net.minecraft.tags.TagKey"
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$HolderSet, $HolderSet$$Type} from "net.minecraft.core.HolderSet"
 import {$Record} from "java.lang.Record"
@@ -12180,11 +12180,11 @@ static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($Tool$
 
 constructor(arg0: $HolderSet$$Type<($Block)>, arg1: (float)?, arg2: (boolean)?)
 
-public static "deniesDrops"(arg0: $TagKey$$Type<($Block)>): $Tool$Rule
-public static "minesAndDrops"(arg0: $TagKey$$Type<($Block)>, arg1: float): $Tool$Rule
-public static "minesAndDrops"(arg0: $List$$Type<($Block$$Type)>, arg1: float): $Tool$Rule
 public static "overrideSpeed"(arg0: $TagKey$$Type<($Block)>, arg1: float): $Tool$Rule
 public static "overrideSpeed"(arg0: $List$$Type<($Block$$Type)>, arg1: float): $Tool$Rule
+public static "deniesDrops"(arg0: $TagKey$$Type<($Block)>): $Tool$Rule
+public static "minesAndDrops"(arg0: $List$$Type<($Block$$Type)>, arg1: float): $Tool$Rule
+public static "minesAndDrops"(arg0: $TagKey$$Type<($Block)>, arg1: float): $Tool$Rule
 public "correctForDrops"(): $Optional<(boolean)>
 public "blocks"(): $HolderSet<($Block)>
 public "equals"(arg0: any): boolean

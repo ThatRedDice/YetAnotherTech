@@ -64,10 +64,10 @@ constructor(arg0: $BlockEntityType$$Type<(never)>, arg1: $BlockPos$$Type, arg2: 
 public "clearContent"(): void
 public "saveAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "addAdditionalDrops"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $List$$Type<($ItemStack$$Type)>): void
-public "getExposedItemHandler"(arg0: $Direction$$Type): $IItemHandler
 public "saveChangedInventory"(arg0: $AppEngInternalInventory$$Type): void
 public "loadTag"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "getInternalInventory"(): $InternalInventory
+public "getExposedItemHandler"(arg0: $Direction$$Type): $IItemHandler
 public "onChangeInventory"(arg0: $AppEngInternalInventory$$Type, arg1: integer): void
 public "isClientSide"(): boolean
 public static "tryClear"(arg0: any): void
@@ -110,23 +110,23 @@ import {$List$$Type} from "java.util.List"
 import {$Direction} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$InternalInventory} from "appeng.api.inventories.InternalInventory"
-import {$Component} from "net.minecraft.network.chat.Component"
 import {$DataComponentMap$Builder$$Type} from "net.minecraft.core.component.DataComponentMap$Builder"
+import {$Component} from "net.minecraft.network.chat.Component"
 import {$IDebugExportable$$Interface} from "appeng.util.IDebugExportable"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Clearable$$Interface} from "net.minecraft.world.Clearable"
 import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
-import {$Reference2IntMap$$Type} from "it.unimi.dsi.fastutil.objects.Reference2IntMap"
 import {$BlockOrientation} from "appeng.api.orientation.BlockOrientation"
-import {$GlobalPos} from "net.minecraft.core.GlobalPos"
+import {$Reference2IntMap$$Type} from "it.unimi.dsi.fastutil.objects.Reference2IntMap"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
+import {$GlobalPos} from "net.minecraft.core.GlobalPos"
 import {$Item$$Type} from "net.minecraft.world.item.Item"
 import {$ModelData} from "net.neoforged.neoforge.client.model.data.ModelData"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
-import {$ClientGamePacketListener} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$ClientGamePacketListener} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
 import {$Nameable$$Interface} from "net.minecraft.world.Nameable"
 import {$IGridNode$$Type} from "appeng.api.networking.IGridNode"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
@@ -142,30 +142,30 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 constructor(arg0: $BlockEntityType$$Type<(never)>, arg1: $BlockPos$$Type, arg2: $BlockState$$Type)
 
 public "getTop"(): $Direction
-public "loadAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "getUpdatePacket"(): $Packet<($ClientGamePacketListener)>
+public "loadAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "clearContent"(): void
 public "saveAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "getUpdateTag"(arg0: $HolderLookup$Provider$$Type): $CompoundTag
 public "addAdditionalDrops"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $List$$Type<($ItemStack$$Type)>): void
 public "getOrientation"(): $BlockOrientation
+public "getFront"(): $Direction
+public "getSubInventory"(arg0: $ResourceLocation$$Type): $InternalInventory
+public "debugExport"(arg0: $JsonWriter$$Type, arg1: $HolderLookup$Provider$$Type, arg2: $Reference2IntMap$$Type<(any)>, arg3: $Reference2IntMap$$Type<($IGridNode$$Type)>): void
+public "markForUpdate"(): void
+public "exportSettings"(arg0: $SettingsFrom$$Type, arg1: $DataComponentMap$Builder$$Type, arg2: $Player$$Type): void
+public "exportSettings"(arg0: $SettingsFrom$$Type, arg1: $Player$$Type): $DataComponentMap
+public "importSettings"(arg0: $SettingsFrom$$Type, arg1: $DataComponentMap$$Type, arg2: $Player$$Type): void
+public "getQueuedForReady"(): byte
+public "getReadyInvoked"(): byte
+public "saveChanges"(): void
+public "loadTag"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "notLoaded"(): boolean
 public static "registerBlockEntityItem"(arg0: $BlockEntityType$$Type<(never)>, arg1: $Item$$Type): void
 public "getGlobalPos"(): $GlobalPos
 public "markForClientUpdate"(): void
 public "disassembleWithWrench"(arg0: $Player$$Type, arg1: $Level$$Type, arg2: $BlockHitResult$$Type, arg3: $ItemStack$$Type): $InteractionResult
-public "getFront"(): $Direction
-public "exportSettings"(arg0: $SettingsFrom$$Type, arg1: $DataComponentMap$Builder$$Type, arg2: $Player$$Type): void
-public "exportSettings"(arg0: $SettingsFrom$$Type, arg1: $Player$$Type): $DataComponentMap
-public "importSettings"(arg0: $SettingsFrom$$Type, arg1: $DataComponentMap$$Type, arg2: $Player$$Type): void
-public "markForUpdate"(): void
-public "getSubInventory"(arg0: $ResourceLocation$$Type): $InternalInventory
-public "debugExport"(arg0: $JsonWriter$$Type, arg1: $HolderLookup$Provider$$Type, arg2: $Reference2IntMap$$Type<(any)>, arg3: $Reference2IntMap$$Type<($IGridNode$$Type)>): void
-public "getQueuedForReady"(): byte
-public "getReadyInvoked"(): byte
-public "saveChanges"(): void
 public "onReady"(): void
-public "loadTag"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "getName"(): $Component
 public "setName"(arg0: StringJS): void
 public "getBlockEntity"(): $BlockEntity
@@ -179,10 +179,10 @@ public static "tryClear"(arg0: any): void
 get "top"(): $Direction
 get "updatePacket"(): $Packet<($ClientGamePacketListener)>
 get "orientation"(): $BlockOrientation
-get "globalPos"(): $GlobalPos
 get "front"(): $Direction
 get "queuedForReady"(): byte
 get "readyInvoked"(): byte
+get "globalPos"(): $GlobalPos
 get "name"(): $Component
 set "name"(value: StringJS)
 get "blockEntity"(): $BlockEntity

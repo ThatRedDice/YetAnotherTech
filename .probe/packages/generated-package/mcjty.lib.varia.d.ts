@@ -3,8 +3,8 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Direction} from "net.minecraft.core.Direction"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
@@ -45,11 +45,11 @@ public static "rotate"(arg0: $LogicFacing$$Type): $LogicFacing
 public "getSide"(): $Direction
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "inputSide"(): $Direction
 get "rotationStep"(): integer
 get "side"(): $Direction
@@ -91,8 +91,8 @@ export type $IEnergyItem$$Type = ($IEnergyItem);
  */
 export type $IEnergyItem$$Original = $IEnergyItem;}
 declare module "mcjty.lib.varia.ItemStackList" {
-import {$Collection$$Type} from "java.util.Collection"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$Collection$$Type} from "java.util.Collection"
 import {$SequencedCollection} from "java.util.SequencedCollection"
 import {$List, $List$$Type} from "java.util.List"
 import {$NonNullList} from "net.minecraft.core.NonNullList"

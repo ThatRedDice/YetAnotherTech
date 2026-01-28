@@ -4,8 +4,8 @@ import {$Int2DoubleMap$$Type} from "it.unimi.dsi.fastutil.ints.Int2DoubleMap"
 export class $MetricSampler$SamplerResult {
 constructor(arg0: integer, arg1: integer, arg2: $Int2DoubleMap$$Type)
 
-public "valueAtTick"(arg0: integer): double
 public "getLastTick"(): integer
+public "valueAtTick"(arg0: integer): double
 public "getFirstTick"(): integer
 get "lastTick"(): integer
 get "firstTick"(): integer
@@ -25,28 +25,28 @@ import {$Path$$Type} from "java.nio.file.Path"
 import {$ResultField} from "net.minecraft.util.profiling.ResultField"
 
 export interface $ProfileResults$$Interface {
-get "tickDuration"(): integer
-get "nanoDuration"(): long
 get "startTimeNano"(): long
 get "startTimeTicks"(): integer
 get "endTimeNano"(): long
 get "endTimeTicks"(): integer
 get "profilerResults"(): StringJS
+get "tickDuration"(): integer
+get "nanoDuration"(): long
 }
 
 export class $ProfileResults implements $ProfileResults$$Interface {
 static readonly "PATH_SEPARATOR": character
 
- "getTimes"(arg0: StringJS): $List<($ResultField)>
-static "demanglePath"(arg0: StringJS): StringJS
- "getTickDuration"(): integer
- "getNanoDuration"(): long
  "saveResults"(arg0: $Path$$Type): boolean
  "getStartTimeNano"(): long
  "getStartTimeTicks"(): integer
  "getEndTimeNano"(): long
  "getEndTimeTicks"(): integer
  "getProfilerResults"(): StringJS
+ "getTimes"(arg0: StringJS): $List<($ResultField)>
+static "demanglePath"(arg0: StringJS): StringJS
+ "getTickDuration"(): integer
+ "getNanoDuration"(): long
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -111,8 +111,8 @@ export type $MetricSampler$ThresholdTest$$Type = ((arg0: double) => boolean);
 export type $MetricSampler$ThresholdTest$$Original = $MetricSampler$ThresholdTest;}
 declare module "net.minecraft.util.profiling.metrics.MetricSampler" {
 import {$DoubleSupplier$$Type} from "java.util.function.DoubleSupplier"
-import {$MetricSampler$SamplerResult} from "net.minecraft.util.profiling.metrics.MetricSampler$SamplerResult"
 import {$ToDoubleFunction$$Type} from "java.util.function.ToDoubleFunction"
+import {$MetricSampler$SamplerResult} from "net.minecraft.util.profiling.metrics.MetricSampler$SamplerResult"
 import {$MetricSampler$MetricSamplerBuilder} from "net.minecraft.util.profiling.metrics.MetricSampler$MetricSamplerBuilder"
 import {$MetricCategory, $MetricCategory$$Type} from "net.minecraft.util.profiling.metrics.MetricCategory"
 
@@ -125,10 +125,10 @@ public static "builder"<T>(arg0: StringJS, arg1: $MetricCategory$$Type, arg2: $T
 public "result"(): $MetricSampler$SamplerResult
 public static "create"<T>(arg0: StringJS, arg1: $MetricCategory$$Type, arg2: T, arg3: $ToDoubleFunction$$Type<(T)>): $MetricSampler
 public static "create"(arg0: StringJS, arg1: $MetricCategory$$Type, arg2: $DoubleSupplier$$Type): $MetricSampler
+public "getCategory"(): $MetricCategory
 public "onStartTick"(): void
 public "onEndTick"(arg0: integer): void
 public "triggersThreshold"(): boolean
-public "getCategory"(): $MetricCategory
 get "name"(): StringJS
 get "category"(): $MetricCategory
 }

@@ -1,11 +1,11 @@
 declare module "owmii.powah.block.discharger.EnergyDischargerBlock" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$Tier$$Type} from "owmii.powah.block.Tier"
 import {$Block} from "net.minecraft.world.level.block.Block"
-import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$Inventory$$Type} from "net.minecraft.world.entity.player.Inventory"
+import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$AbstractTileEntity, $AbstractTileEntity$$Type} from "owmii.powah.lib.block.AbstractTileEntity"
 import {$Transfer} from "owmii.powah.lib.logistics.Transfer"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -18,10 +18,10 @@ import {$Item} from "net.minecraft.world.item.Item"
 import {$ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
-import {$EnergyConfig} from "owmii.powah.config.v2.types.EnergyConfig"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
-import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$EnergyConfig} from "owmii.powah.config.v2.types.EnergyConfig"
 import {$ItemBlock} from "owmii.powah.lib.item.ItemBlock"
+import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $EnergyDischargerBlock extends $AbstractEnergyBlock<($EnergyConfig), ($EnergyDischargerBlock)> {
 static readonly "UPDATE_IMMEDIATE": integer

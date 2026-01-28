@@ -1,7 +1,7 @@
 declare module "net.sweenus.simplyswords.recipe.RunicRerollRecipe" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$Ingredient, $Ingredient$$Type} from "net.minecraft.world.item.crafting.Ingredient"
+import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$SmithingRecipeInput$$Type} from "net.minecraft.world.item.crafting.SmithingRecipeInput"
 import {$SmithingTransformRecipe} from "net.minecraft.world.item.crafting.SmithingTransformRecipe"
 import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
@@ -31,8 +31,8 @@ export type $RunicRerollRecipe$$Type = ($RunicRerollRecipe);
 export type $RunicRerollRecipe$$Original = $RunicRerollRecipe;}
 declare module "net.sweenus.simplyswords.recipe.UpgradeUniqueRecipe$Serializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$UpgradeUniqueRecipe} from "net.sweenus.simplyswords.recipe.UpgradeUniqueRecipe"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
@@ -58,8 +58,8 @@ export type $UpgradeUniqueRecipe$Serializer$$Type = ($UpgradeUniqueRecipe$Serial
 export type $UpgradeUniqueRecipe$Serializer$$Original = $UpgradeUniqueRecipe$Serializer;}
 declare module "net.sweenus.simplyswords.recipe.RawUpgradableRecipe$Data" {
 import {$Map, $Map$$Type} from "java.util.Map"
-import {$Ingredient, $Ingredient$$Type} from "net.minecraft.world.item.crafting.Ingredient"
 import {$Pair, $Pair$$Type} from "com.mojang.datafixers.util.Pair"
+import {$Ingredient, $Ingredient$$Type} from "net.minecraft.world.item.crafting.Ingredient"
 import {$List, $List$$Type} from "java.util.List"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$Record} from "java.lang.Record"
@@ -79,15 +79,15 @@ public "key"(): $Map<(character), ($Pair<($Ingredient), (boolean)>)>
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $RawUpgradableRecipe$Data$$Type = ({"key"?: $Map$$Type<(character), ($Pair$$Type<($Ingredient$$Type), (boolean)>)>, "pattern"?: $List$$Type<(StringJS)>}) | ([key?: $Map$$Type<(character), ($Pair$$Type<($Ingredient$$Type), (boolean)>)>, pattern?: $List$$Type<(StringJS)>]);
+export type $RawUpgradableRecipe$Data$$Type = ({"pattern"?: $List$$Type<(StringJS)>, "key"?: $Map$$Type<(character), ($Pair$$Type<($Ingredient$$Type), (boolean)>)>}) | ([pattern?: $List$$Type<(StringJS)>, key?: $Map$$Type<(character), ($Pair$$Type<($Ingredient$$Type), (boolean)>)>]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
 export type $RawUpgradableRecipe$Data$$Original = $RawUpgradableRecipe$Data;}
 declare module "net.sweenus.simplyswords.recipe.RunicRerollRecipe$Serializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$RunicRerollRecipe} from "net.sweenus.simplyswords.recipe.RunicRerollRecipe"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
@@ -117,8 +117,8 @@ import {$Optional$$Type} from "java.util.Optional"
 import {$RawUpgradableRecipe$Data$$Type} from "net.sweenus.simplyswords.recipe.RawUpgradableRecipe$Data"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Ingredient, $Ingredient$$Type} from "net.minecraft.world.item.crafting.Ingredient"
-import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$NonNullList, $NonNullList$$Type} from "net.minecraft.core.NonNullList"
+import {$MapCodec} from "com.mojang.serialization.MapCodec"
 
 export class $RawUpgradableRecipe {
 static readonly "CODEC": $MapCodec<($RawUpgradableRecipe)>
@@ -170,8 +170,8 @@ constructor(group: StringJS, category: $CraftingBookCategory$$Type, raw: $RawUpg
 public "assemble"(craftingRecipeInput: $CraftingInput$$Type, wrapperLookup: $HolderLookup$Provider$$Type): $ItemStack
 public "assemble"(arg0: $RecipeInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
 public "getSerializer"(): $RecipeSerializer<(never)>
-public "getIngredients"(): $NonNullList<($Ingredient)>
 public "canCraftInDimensions"(width: integer, height: integer): boolean
+public "getIngredients"(): $NonNullList<($Ingredient)>
 public "getWidth"(): integer
 public "getHeight"(): integer
 public "matches"(arg0: $RecipeInput$$Type, arg1: $Level$$Type): boolean

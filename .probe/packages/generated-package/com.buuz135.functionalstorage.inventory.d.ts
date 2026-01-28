@@ -50,12 +50,12 @@ import {$CompactingUtil$$Type} from "com.buuz135.functionalstorage.util.Compacti
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$INBTSerializable$$Interface} from "net.neoforged.neoforge.common.util.INBTSerializable"
 import {$IItemHandler, $IItemHandler$$Interface} from "net.neoforged.neoforge.items.IItemHandler"
-import {$ILockable$$Interface} from "com.buuz135.functionalstorage.inventory.ILockable"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$ILockable$$Interface} from "com.buuz135.functionalstorage.inventory.ILockable"
 import {$LevelBlock} from "dev.latvian.mods.kubejs.level.LevelBlock"
 import {$Container} from "net.minecraft.world.Container"
 import {$ItemPredicate$$Type} from "dev.latvian.mods.kubejs.item.ItemPredicate"
-import {$Tag$$Type} from "net.minecraft.nbt.Tag"
+import {$Tag, $Tag$$Type} from "net.minecraft.nbt.Tag"
 import {$CompactingUtil$Result, $CompactingUtil$Result$$Type} from "com.buuz135.functionalstorage.util.CompactingUtil$Result"
 
 export class $CompactingInventoryHandler implements $IItemHandler$$Interface, $INBTSerializable$$Interface<($CompoundTag)>, $ILockable$$Interface {
@@ -66,8 +66,8 @@ static readonly "BIG_ITEMS": StringJS
 
 constructor(arg0: integer)
 
-public "setupWithRearrangedResults"(arg0: $List$$Type<($CompactingUtil$Result$$Type)>): void
 public "isSetup"(): boolean
+public "setupWithRearrangedResults"(arg0: $List$$Type<($CompactingUtil$Result$$Type)>): void
 public "getSlotLimitBase"(arg0: integer): integer
 public "getResultList"(): $List<($CompactingUtil$Result)>
 public "getTotalAmount"(): double
@@ -84,9 +84,9 @@ public "insertItem"(arg0: integer, arg1: $ItemStack$$Type, arg2: boolean): $Item
 public "extractItem"(arg0: integer, arg1: integer, arg2: boolean): $ItemStack
 public "getSlotLimit"(arg0: integer): integer
 public "isItemValid"(arg0: integer, arg1: $ItemStack$$Type): boolean
-public "deserializeNBT"(arg0: $HolderLookup$Provider$$Type, arg1: $Tag$$Type): void
 public "deserializeNBT"(arg0: $HolderLookup$Provider$$Type, arg1: $CompoundTag$$Type): void
-public "serializeNBT"(arg0: $HolderLookup$Provider$$Type): $CompoundTag
+public "deserializeNBT"(arg0: $HolderLookup$Provider$$Type, arg1: $Tag$$Type): void
+public "serializeNBT"(arg0: $HolderLookup$Provider$$Type): $Tag
 public "getAmount"(): integer
 public "kjs$self"(): $IItemHandler
 public "isMutable"(): boolean
@@ -149,13 +149,13 @@ import {$List} from "java.util.List"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$INBTSerializable$$Interface} from "net.neoforged.neoforge.common.util.INBTSerializable"
 import {$IItemHandler, $IItemHandler$$Interface} from "net.neoforged.neoforge.items.IItemHandler"
-import {$ILockable$$Interface} from "com.buuz135.functionalstorage.inventory.ILockable"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$ILockable$$Interface} from "com.buuz135.functionalstorage.inventory.ILockable"
 import {$BigInventoryHandler$BigStack} from "com.buuz135.functionalstorage.inventory.BigInventoryHandler$BigStack"
 import {$LevelBlock} from "dev.latvian.mods.kubejs.level.LevelBlock"
 import {$Container} from "net.minecraft.world.Container"
 import {$ItemPredicate$$Type} from "dev.latvian.mods.kubejs.item.ItemPredicate"
-import {$Tag, $Tag$$Type} from "net.minecraft.nbt.Tag"
+import {$Tag$$Type} from "net.minecraft.nbt.Tag"
 import {$FunctionalStorage$DrawerType$$Type} from "com.buuz135.functionalstorage.FunctionalStorage$DrawerType"
 
 export class $BigInventoryHandler implements $IItemHandler$$Interface, $INBTSerializable$$Interface<($CompoundTag)>, $ILockable$$Interface {
@@ -177,9 +177,9 @@ public "insertItem"(arg0: integer, arg1: $ItemStack$$Type, arg2: boolean): $Item
 public "extractItem"(arg0: integer, arg1: integer, arg2: boolean): $ItemStack
 public "getSlotLimit"(arg0: integer): integer
 public "isItemValid"(arg0: integer, arg1: $ItemStack$$Type): boolean
-public "deserializeNBT"(arg0: $HolderLookup$Provider$$Type, arg1: $CompoundTag$$Type): void
 public "deserializeNBT"(arg0: $HolderLookup$Provider$$Type, arg1: $Tag$$Type): void
-public "serializeNBT"(arg0: $HolderLookup$Provider$$Type): $Tag
+public "deserializeNBT"(arg0: $HolderLookup$Provider$$Type, arg1: $CompoundTag$$Type): void
+public "serializeNBT"(arg0: $HolderLookup$Provider$$Type): $CompoundTag
 public "getStoredStacks"(): $List<($BigInventoryHandler$BigStack)>
 public "kjs$self"(): $IItemHandler
 public "isMutable"(): boolean
@@ -235,8 +235,8 @@ import {$LevelBlock} from "dev.latvian.mods.kubejs.level.LevelBlock"
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Container} from "net.minecraft.world.Container"
-import {$List} from "java.util.List"
 import {$ItemPredicate$$Type} from "dev.latvian.mods.kubejs.item.ItemPredicate"
+import {$List} from "java.util.List"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Tag, $Tag$$Type} from "net.minecraft.nbt.Tag"
 import {$INBTSerializable$$Interface} from "net.neoforged.neoforge.common.util.INBTSerializable"
@@ -306,16 +306,16 @@ import {$LevelBlock} from "dev.latvian.mods.kubejs.level.LevelBlock"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Container} from "net.minecraft.world.Container"
 import {$ConnectedDrawers} from "com.buuz135.functionalstorage.util.ConnectedDrawers"
-import {$List} from "java.util.List"
 import {$ItemPredicate$$Type} from "dev.latvian.mods.kubejs.item.ItemPredicate"
+import {$List} from "java.util.List"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$IItemHandler, $IItemHandler$$Interface} from "net.neoforged.neoforge.items.IItemHandler"
 
 export class $ControllerInventoryHandler implements $IItemHandler$$Interface {
 constructor()
 
-public "getDrawers"(): $ConnectedDrawers
 public "invalidateSlots"(): void
+public "getDrawers"(): $ConnectedDrawers
 public "getSlots"(): integer
 public "getStackInSlot"(arg0: integer): $ItemStack
 public "insertItem"(arg0: integer, arg1: $ItemStack$$Type, arg2: boolean): $ItemStack

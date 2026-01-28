@@ -12,16 +12,16 @@ export class $GenericInternalInventory implements $GenericInternalInventory$$Int
  "getMaxAmount"(arg0: $AEKey$$Type): long
  "canInsert"(): boolean
  "beginBatch"(): void
- "endBatchSuppressed"(): void
  "isAllowedIn"(arg0: integer, arg1: $AEKey$$Type): boolean
- "isSupportedType"(arg0: $AEKeyType$$Type): boolean
  "isSupportedType"(arg0: $AEKey$$Type): boolean
- "getCapacity"(arg0: $AEKeyType$$Type): long
+ "isSupportedType"(arg0: $AEKeyType$$Type): boolean
+ "endBatchSuppressed"(): void
  "size"(): integer
  "extract"(arg0: integer, arg1: $AEKey$$Type, arg2: long, arg3: $Actionable$$Type): long
  "insert"(arg0: integer, arg1: $AEKey$$Type, arg2: long, arg3: $Actionable$$Type): long
  "getKey"(arg0: integer): $AEKey
  "getStack"(arg0: integer): $GenericStack
+ "getCapacity"(arg0: $AEKeyType$$Type): long
  "onChange"(): void
  "setStack"(arg0: integer, arg1: $GenericStack$$Type): void
  "endBatch"(): void

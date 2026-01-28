@@ -9,8 +9,8 @@ import {$NonNullList} from "net.minecraft.core.NonNullList"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$RecipeOutput$$Type} from "net.minecraft.data.recipes.RecipeOutput"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$Recipe$$Interface} from "net.minecraft.world.item.crafting.Recipe"
+import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -33,8 +33,8 @@ public "assemble"(arg0: $RecipeInput$$Type, arg1: $HolderLookup$Provider$$Type):
 public "getSerializer"(): $RecipeSerializer<(never)>
 public "canCraftInDimensions"(arg0: integer, arg1: integer): boolean
 public "getResultItem"(arg0: $HolderLookup$Provider$$Type): $ItemStack
-public static "generateRL"(arg0: StringJS): $ResourceLocation
 public "outputsLatex"(): boolean
+public static "generateRL"(arg0: StringJS): $ResourceLocation
 public "matches"(arg0: $RecipeInput$$Type, arg1: $Level$$Type): boolean
 public "matches"(arg0: $CraftingInput$$Type, arg1: $Level$$Type): boolean
 public "matches"(arg0: $Level$$Type, arg1: $BlockPos$$Type): boolean
@@ -76,8 +76,8 @@ import {$FluidTankComponent$$Type} from "com.hrznstudio.titanium.component.fluid
 import {$RecipeOutput$$Type} from "net.minecraft.data.recipes.RecipeOutput"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$FluidTank$$Type} from "net.neoforged.neoforge.fluids.capability.templates.FluidTank"
-import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$Recipe$$Interface} from "net.minecraft.world.item.crafting.Recipe"
+import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 
@@ -93,8 +93,8 @@ constructor(arg0: $ItemStack$$Type, arg1: integer, arg2: integer, arg3: integer,
 constructor()
 
 public static "createRecipe"(arg0: $RecipeOutput$$Type, arg1: StringJS, arg2: $StoneWorkGenerateRecipe$$Type): void
-public "assemble"(arg0: $CraftingInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
 public "assemble"(arg0: $RecipeInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
+public "assemble"(arg0: $CraftingInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
 public "getSerializer"(): $RecipeSerializer<(never)>
 public "canCraftInDimensions"(arg0: integer, arg1: integer): boolean
 public "getResultItem"(arg0: $HolderLookup$Provider$$Type): $ItemStack

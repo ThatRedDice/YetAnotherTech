@@ -41,12 +41,12 @@ static readonly "REGISTRY_KEY": $ResourceKey<($Registry<($AEKeyType)>)>
 static readonly "TYPE": $FluxKeyType
 static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($AEKeyType)>
 
-public "readFromPacket"(arg0: $RegistryFriendlyByteBuf$$Type): $AEKey
-public "getAmountPerOperation"(): integer
 public "getAmountPerByte"(): integer
+public "getAmountPerOperation"(): integer
+public "readFromPacket"(arg0: $RegistryFriendlyByteBuf$$Type): $AEKey
 public "codec"(): $MapCodec<($AEKey)>
-get "amountPerOperation"(): integer
 get "amountPerByte"(): integer
+get "amountPerOperation"(): integer
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -108,8 +108,8 @@ import {$List$$Type} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 
 export class $ItemInductionCard extends $UpgradeCardItem {
 static readonly "BASE_ATTACK_DAMAGE_ID": $ResourceLocation
@@ -205,11 +205,11 @@ export type $NormalItem$$Type = ($NormalItem);
  */
 export type $NormalItem$$Original = $NormalItem;}
 declare module "com.glodblock.github.appflux.common.tileentities.TileFluxAccessor" {
-import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$DataComponentMap$$Type} from "net.minecraft.core.component.DataComponentMap"
+import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$IGridNodeListener$State$$Type} from "appeng.api.networking.IGridNodeListener$State"
-import {$IEnergyDistributor$$Interface} from "com.glodblock.github.appflux.common.me.service.IEnergyDistributor"
 import {$IActionSource} from "appeng.api.networking.security.IActionSource"
+import {$IEnergyDistributor$$Interface} from "com.glodblock.github.appflux.common.me.service.IEnergyDistributor"
 import {$AENetworkedBlockEntity} from "appeng.blockentity.grid.AENetworkedBlockEntity"
 import {$DataComponentMap$Builder$$Type} from "net.minecraft.core.component.DataComponentMap$Builder"
 import {$IStorageService} from "appeng.api.networking.storage.IStorageService"
@@ -226,26 +226,26 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 
 constructor(arg0: $BlockPos$$Type, arg1: $BlockState$$Type)
 
-public "getEnergyStorage"(): $IEnergyStorage
+public "distribute"(arg0: long): void
 public "getStorage"(): $IStorageService
 public "saveAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
-public "distribute"(arg0: long): void
+public "onMainNodeStateChanged"(arg0: $IGridNodeListener$State$$Type): void
 public "exportSettings"(arg0: $SettingsFrom$$Type, arg1: $DataComponentMap$Builder$$Type, arg2: $Player$$Type): void
 public "importSettings"(arg0: $SettingsFrom$$Type, arg1: $DataComponentMap$$Type, arg2: $Player$$Type): void
-public "onMainNodeStateChanged"(arg0: $IGridNodeListener$State$$Type): void
 public "loadTag"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "setServiceHost"(arg0: $EnergyDistributeService$$Type): void
 public "setFastMode"(arg0: boolean): void
 public "isFastMode"(): boolean
+public "getEnergyStorage"(): $IEnergyStorage
 public "getSource"(): $IActionSource
 public "isActive"(): boolean
 public "saveChanges"(): void
 public static "tryClear"(arg0: any): void
-get "energyStorage"(): $IEnergyStorage
 get "storage"(): $IStorageService
 set "serviceHost"(value: $EnergyDistributeService$$Type)
 set "fastMode"(value: boolean)
 get "fastMode"(): boolean
+get "energyStorage"(): $IEnergyStorage
 get "source"(): $IActionSource
 get "active"(): boolean
 }
@@ -259,19 +259,19 @@ export type $TileFluxAccessor$$Type = ($TileFluxAccessor);
  */
 export type $TileFluxAccessor$$Original = $TileFluxAccessor;}
 declare module "com.glodblock.github.appflux.common.blocks.BlockFluxAccessor" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$AEBaseEntityBlock} from "appeng.block.AEBaseEntityBlock"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$List$$Type} from "java.util.List"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
+import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
 import {$TileFluxAccessor} from "com.glodblock.github.appflux.common.tileentities.TileFluxAccessor"
 import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
-import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ItemInteractionResult} from "net.minecraft.world.ItemInteractionResult"
@@ -317,8 +317,8 @@ export type $BlockFluxAccessor$$Type = ($BlockFluxAccessor);
 export type $BlockFluxAccessor$$Original = $BlockFluxAccessor;}
 declare module "com.glodblock.github.appflux.common.me.service.EnergyDistributeService" {
 import {$IGridNode$$Type} from "appeng.api.networking.IGridNode"
-import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$JsonWriter$$Type} from "com.google.gson.stream.JsonWriter"
+import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$IGridService$$Interface} from "appeng.api.networking.IGridService"
 import {$IEnergyDistributor$$Type} from "com.glodblock.github.appflux.common.me.service.IEnergyDistributor"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
@@ -368,8 +368,8 @@ import {$Map} from "java.util.Map"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$FuzzyMode, $FuzzyMode$$Type} from "appeng.api.config.FuzzyMode"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$ItemLike$$Type} from "net.minecraft.world.level.ItemLike"
 import {$IEnergyStorage} from "net.neoforged.neoforge.energy.IEnergyStorage"
@@ -385,13 +385,13 @@ static readonly "BY_BLOCK": $Map<($Block), ($Item)>
 
 constructor(arg0: $ItemLike$$Type, arg1: integer, arg2: double)
 
-public "getUpgrades"(arg0: $ItemStack$$Type): $IUpgradeInventory
 public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
 public "onItemUseFirst"(arg0: $ItemStack$$Type, arg1: $UseOnContext$$Type): $InteractionResult
 public "getCellTooltipImage"(arg0: $ItemStack$$Type): $Optional<($TooltipComponent)>
 public "addCellInformationToTooltip"(arg0: $ItemStack$$Type, arg1: $List$$Type<($Component$$Type)>): void
 public "getIdleDrain"(): double
 public "getEnergyType"(): $EnergyType
+public "getUpgrades"(arg0: $ItemStack$$Type): $IUpgradeInventory
 public "getBytes"(arg0: $ItemStack$$Type): long
 public "use"(arg0: $Level$$Type, arg1: $Player$$Type, arg2: $InteractionHand$$Type): $InteractionResultHolder<($ItemStack)>
 public "getTooltipImage"(arg0: $ItemStack$$Type): $Optional<($TooltipComponent)>
@@ -416,30 +416,26 @@ export type $ItemFECell$$Type = ($ItemFECell);
 export type $ItemFECell$$Original = $ItemFECell;}
 declare module "com.glodblock.github.appflux.common.items.ItemPortableFECell" {
 import {$MEStorageMenu} from "appeng.menu.me.common.MEStorageMenu"
-import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$Map} from "java.util.Map"
 import {$Optional} from "java.util.Optional"
 import {$List$$Type} from "java.util.List"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$FuzzyMode, $FuzzyMode$$Type} from "appeng.api.config.FuzzyMode"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$ItemMenuHostLocator$$Type} from "appeng.menu.locator.ItemMenuHostLocator"
-import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
+import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipComponent} from "net.minecraft.world.inventory.tooltip.TooltipComponent"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$IFluxCell$$Interface} from "com.glodblock.github.appflux.api.IFluxCell"
 import {$EnergyType} from "com.glodblock.github.appflux.common.me.key.type.EnergyType"
+import {$MenuType} from "net.minecraft.world.inventory.MenuType"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$IUpgradeInventory} from "appeng.api.upgrades.IUpgradeInventory"
-import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$Map} from "java.util.Map"
-import {$Block} from "net.minecraft.world.level.block.Block"
-import {$FuzzyMode, $FuzzyMode$$Type} from "appeng.api.config.FuzzyMode"
-import {$ItemMenuHost} from "appeng.api.implementations.menuobjects.ItemMenuHost"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
-import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
-import {$MenuType} from "net.minecraft.world.inventory.MenuType"
-import {$AbstractPortableCell} from "appeng.items.tools.powered.AbstractPortableCell"
 import {$IEnergyStorage} from "net.neoforged.neoforge.energy.IEnergyStorage"
+import {$AbstractPortableCell} from "appeng.items.tools.powered.AbstractPortableCell"
+import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 
 export class $ItemPortableFECell extends $AbstractPortableCell implements $IFluxCell$$Interface {
 static readonly "BASE_ATTACK_DAMAGE_ID": $ResourceLocation
@@ -452,8 +448,6 @@ static readonly "BY_BLOCK": $Map<($Block), ($Item)>
 
 constructor(arg0: integer, arg1: double, arg2: integer)
 
-public "getRecipeId"(): $ResourceLocation
-public "getUpgrades"(arg0: $ItemStack$$Type): $IUpgradeInventory
 public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
 public "inventoryTick"(arg0: $ItemStack$$Type, arg1: $Level$$Type, arg2: $Entity$$Type, arg3: integer, arg4: boolean): void
 public "getAEMaxPower"(arg0: $ItemStack$$Type): double
@@ -462,6 +456,8 @@ public "getCellTooltipImage"(arg0: $ItemStack$$Type): $Optional<($TooltipCompone
 public "addCellInformationToTooltip"(arg0: $ItemStack$$Type, arg1: $List$$Type<($Component$$Type)>): void
 public "getIdleDrain"(): double
 public "getEnergyType"(): $EnergyType
+public "getRecipeId"(): $ResourceLocation
+public "getUpgrades"(arg0: $ItemStack$$Type): $IUpgradeInventory
 public "getBytes"(arg0: $ItemStack$$Type): long
 public "getTooltipImage"(arg0: $ItemStack$$Type): $Optional<($TooltipComponent)>
 public "getCapability"(arg0: any, arg1: any): any
@@ -469,12 +465,11 @@ public "getCapability"(arg0: $ItemStack$$Type, arg1: void): $IEnergyStorage
 public "getFuzzyMode"(arg0: $ItemStack$$Type): $FuzzyMode
 public "setFuzzyMode"(arg0: $ItemStack$$Type, arg1: $FuzzyMode$$Type): void
 public "isEditable"(arg0: $ItemStack$$Type): boolean
-public "getMenuHost"(arg0: $Player$$Type, arg1: $ItemMenuHostLocator$$Type, arg2: $BlockHitResult$$Type): $ItemMenuHost
 public "asItem"(): $Item
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
-get "recipeId"(): $ResourceLocation
 get "idleDrain"(): double
 get "energyType"(): $EnergyType
+get "recipeId"(): $ResourceLocation
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -491,10 +486,10 @@ import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
-import {$Component} from "net.minecraft.network.chat.Component"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
+import {$Component} from "net.minecraft.network.chat.Component"
 
 export class $EnergyType extends $Enum<($EnergyType)> implements $StringRepresentable$$Interface {
 static readonly "CODEC": $Codec<($EnergyType)>
@@ -506,14 +501,14 @@ public static "valueOf"(arg0: StringJS): $EnergyType
 public "from"(): StringJS
 public "id"(): $ResourceLocation
 public "getIcon"(): $ResourceLocation
-public "translate"(): $Component
 public "getSerializedName"(): StringJS
+public "translate"(): $Component
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "icon"(): $ResourceLocation
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS

@@ -3,8 +3,8 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$IScalingFunction} from "net.neoforged.neoforge.common.damagesource.IScalingFunction"
 import {$ExtensionInfo} from "net.neoforged.fml.common.asm.enumextension.ExtensionInfo"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
@@ -22,11 +22,11 @@ public static "getExtensionInfo"(): $ExtensionInfo
 public "getSerializedName"(): StringJS
 public "getScalingFunction"(): $IScalingFunction
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 public static get "extensionInfo"(): $ExtensionInfo
 get "serializedName"(): StringJS
 get "scalingFunction"(): $IScalingFunction
@@ -43,12 +43,12 @@ export type $DamageScaling$$Type = (("never") | ("when_caused_by_living_non_play
 export type $DamageScaling$$Original = $DamageScaling;}
 declare module "net.minecraft.world.damagesource.CombatTracker" {
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
-import {$List} from "java.util.List"
 import {$Style} from "net.minecraft.network.chat.Style"
+import {$List} from "java.util.List"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$CombatEntry, $CombatEntry$$Type} from "net.minecraft.world.damagesource.CombatEntry"
-import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$Component} from "net.minecraft.network.chat.Component"
+import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 
 export class $CombatTracker {
 static readonly "INTENTIONAL_GAME_DESIGN_STYLE": $Style
@@ -60,8 +60,8 @@ static readonly "RESET_DAMAGE_STATUS_TIME": integer
 
 constructor(arg0: $LivingEntity$$Type)
 
-public "getCombatDuration"(): integer
 public "getFallMessage"(arg0: $CombatEntry$$Type, arg1: $Entity$$Type): $Component
+public "getCombatDuration"(): integer
 public "getMostSignificantFall"(): $CombatEntry
 public "getDeathMessage"(): $Component
 public "recheckStatus"(): void
@@ -84,8 +84,8 @@ import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$DamageSourceExtension$$Interface} from "dev.shadowsoffire.apotheosis.util.DamageSourceExtension"
 import {$Component} from "net.minecraft.network.chat.Component"
 import {$CallbackInfoReturnable$$Type} from "org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable"
-import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
 import {$DamageType, $DamageType$$Type} from "net.minecraft.world.damagesource.DamageType"
+import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
 import {$Player} from "net.minecraft.world.entity.player.Player"
 import {$Vec3, $Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$TagKey$$Type} from "net.minecraft.tags.TagKey"
@@ -117,12 +117,12 @@ public "isDirect"(): boolean
 public "is"(arg0: $ResourceKey$$Type<($DamageType)>): boolean
 public "is"(arg0: $TagKey$$Type<($DamageType)>): boolean
 public "removeTag"(arg0: $TagKey$$Type): void
-public "addTag"(arg0: $TagKey$$Type): void
 public "getImmediate"(): $Entity
 public "getSourcePosition"(): $Vec3
 public "getWeaponItem"(): $ItemStack
 public "typeHolder"(): $Holder<($DamageType)>
 public "getFoodExhaustion"(): float
+public "addTag"(arg0: $TagKey$$Type): void
 public "isCreativePlayer"(): boolean
 get "player"(): $Player
 get "actual"(): $Entity
@@ -147,8 +147,8 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$IDeathMessageProvider} from "net.neoforged.neoforge.common.damagesource.IDeathMessageProvider"
 import {$ExtensionInfo} from "net.neoforged.fml.common.asm.enumextension.ExtensionInfo"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
@@ -166,11 +166,11 @@ public static "valueOf"(arg0: StringJS): $DeathMessageType
 public static "getExtensionInfo"(): $ExtensionInfo
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "messageFunction"(): $IDeathMessageProvider
 public static get "extensionInfo"(): $ExtensionInfo
 get "serializedName"(): StringJS
@@ -212,8 +212,8 @@ export type $CombatEntry$$Type = ({"damage"?: float, "fallLocation"?: $FallLocat
 export type $CombatEntry$$Original = $CombatEntry;}
 declare module "net.minecraft.world.damagesource.FallLocation" {
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Record} from "java.lang.Record"
+import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $FallLocation extends $Record {
 static readonly "GENERIC": $FallLocation
@@ -228,12 +228,12 @@ static readonly "WATER": $FallLocation
 constructor(arg0: StringJS)
 
 public static "getCurrentFallLocation"(arg0: $LivingEntity$$Type): $FallLocation
-public "languageKey"(): StringJS
 public static "blockToFallLocation"(arg0: $BlockState$$Type): $FallLocation
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
 public "id"(): StringJS
+public "languageKey"(): StringJS
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -249,11 +249,11 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$ExtensionInfo} from "net.neoforged.fml.common.asm.enumextension.ExtensionInfo"
-import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
+import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
 import {$IExtensibleEnum$$Interface} from "net.neoforged.fml.common.asm.enumextension.IExtensibleEnum"
 
 export class $DamageEffects extends $Enum<($DamageEffects)> implements $StringRepresentable$$Interface, $IExtensibleEnum$$Interface {
@@ -268,14 +268,14 @@ static readonly "THORNS": $DamageEffects
 public static "values"(): ($DamageEffects)[]
 public static "valueOf"(arg0: StringJS): $DamageEffects
 public static "getExtensionInfo"(): $ExtensionInfo
-public "sound"(): $SoundEvent
 public "getSerializedName"(): StringJS
+public "sound"(): $SoundEvent
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 public static get "extensionInfo"(): $ExtensionInfo
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
@@ -311,6 +311,8 @@ readonly "damageTypes": $Registry<($DamageType)>
 
 constructor(arg0: $RegistryAccess$$Type)
 
+public "noAggroMobAttack"(arg0: $LivingEntity$$Type): $DamageSource
+public "sonicBoom"(arg0: $Entity$$Type): $DamageSource
 public "wither"(): $DamageSource
 public "indirectMagic"(arg0: $Entity$$Type, arg1: $Entity$$Type): $DamageSource
 public "anvil"(arg0: $Entity$$Type): $DamageSource
@@ -328,17 +330,15 @@ public "stalagmite"(): $DamageSource
 public "fallingStalactite"(arg0: $Entity$$Type): $DamageSource
 public "spit"(arg0: $Entity$$Type, arg1: $LivingEntity$$Type): $DamageSource
 public "mobAttack"(arg0: $LivingEntity$$Type): $DamageSource
-public "sting"(arg0: $LivingEntity$$Type): $DamageSource
 public "dryOut"(): $DamageSource
+public "sting"(arg0: $LivingEntity$$Type): $DamageSource
 public "windCharge"(arg0: $Entity$$Type, arg1: $LivingEntity$$Type): $DamageSource
 public "thorns"(arg0: $Entity$$Type): $DamageSource
 public "mobProjectile"(arg0: $Entity$$Type, arg1: $LivingEntity$$Type): $DamageSource
 public "starve"(): $DamageSource
 public "witherSkull"(arg0: $WitherSkull$$Type, arg1: $Entity$$Type): $DamageSource
-public "noAggroMobAttack"(arg0: $LivingEntity$$Type): $DamageSource
-public "sonicBoom"(arg0: $Entity$$Type): $DamageSource
-public "dragonBreath"(): $DamageSource
 public "invokeSource"(arg0: $ResourceKey$$Type, arg1: $Entity$$Type, arg2: $Entity$$Type): $DamageSource
+public "dragonBreath"(): $DamageSource
 public "thrown"(arg0: $Entity$$Type, arg1: $Entity$$Type): $DamageSource
 public "magic"(): $DamageSource
 public "source"(arg0: $ResourceKey$$Type<($DamageType)>): $DamageSource
@@ -358,8 +358,8 @@ public "arrow"(arg0: $AbstractArrow$$Type, arg1: $Entity$$Type): $DamageSource
 public "onFire"(): $DamageSource
 public "lava"(): $DamageSource
 public "lightningBolt"(): $DamageSource
-public "explosion"(arg0: $Explosion$$Type): $DamageSource
 public "explosion"(arg0: $Entity$$Type, arg1: $Entity$$Type): $DamageSource
+public "explosion"(arg0: $Explosion$$Type): $DamageSource
 public "fireworks"(arg0: $FireworkRocketEntity$$Type, arg1: $Entity$$Type): $DamageSource
 }
 /**

@@ -54,12 +54,12 @@ import {$Event} from "net.neoforged.bus.api.Event"
 export class $ItemSocketingEvent extends $Event {
 constructor(arg0: $ItemStack$$Type, arg1: $ItemStack$$Type, arg2: $ItemStack$$Type)
 
-public "getInputStack"(): $ItemStack
 public "setOutput"(arg0: $ItemStack$$Type): void
+public "getInputStack"(): $ItemStack
 public "getOutput"(): $ItemStack
 public "getInputGem"(): $ItemStack
-get "inputStack"(): $ItemStack
 set "output"(value: $ItemStack$$Type)
+get "inputStack"(): $ItemStack
 get "output"(): $ItemStack
 get "inputGem"(): $ItemStack
 }

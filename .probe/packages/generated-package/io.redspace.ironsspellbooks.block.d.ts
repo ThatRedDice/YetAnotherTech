@@ -11,8 +11,8 @@ import {$Object2ObjectOpenHashMap$$Type} from "it.unimi.dsi.fastutil.objects.Obj
 export class $AlchemistCauldronBuildInteractionsEvent extends $Event {
 constructor(arg0: $Object2ObjectOpenHashMap$$Type<($Item$$Type), ($AlchemistCauldronInteraction$$Type)>)
 
-public "addSimpleBottleEmptyInteraction"(arg0: $Item$$Type): void
 public "addInteraction"(arg0: $Item$$Type, arg1: $AlchemistCauldronInteraction$$Type): void
+public "addSimpleBottleEmptyInteraction"(arg0: $Item$$Type): void
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -30,8 +30,8 @@ import {$List} from "java.util.List"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$ChiseledBookShelfBlock} from "net.minecraft.world.level.block.ChiseledBookShelfBlock"
@@ -82,8 +82,8 @@ import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
 import {$SimpleWaterloggedBlock$$Interface} from "net.minecraft.world.level.block.SimpleWaterloggedBlock"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
@@ -131,8 +131,8 @@ public "rotate"(arg0: $BlockState$$Type, arg1: $Rotation$$Type): $BlockState
 public "mirror"(arg0: $BlockState$$Type, arg1: $Mirror$$Type): $BlockState
 public "getRenderShape"(arg0: $BlockState$$Type): $RenderShape
 public "getPickupSound"(): $Optional<($SoundEvent)>
-public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "canPlaceLiquid"(arg0: $Player$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $Fluid$$Type): boolean
+public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "pickupBlock"(arg0: $Player$$Type, arg1: $LevelAccessor$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): $ItemStack
 public "getPickupSound"(arg0: $BlockState$$Type): $Optional<($SoundEvent)>
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
@@ -149,37 +149,37 @@ export type $ArmorPileBlock$$Type = ($ArmorPileBlock);
 export type $ArmorPileBlock$$Original = $ArmorPileBlock;}
 declare module "io.redspace.ironsspellbooks.block.alchemist_cauldron.AlchemistCauldronTile$AlchemistCauldronFluidHandler" {
 import {$AlchemistCauldronTile$$Type} from "io.redspace.ironsspellbooks.block.alchemist_cauldron.AlchemistCauldronTile"
-import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$IFluidHandler$FluidAction$$Type} from "net.neoforged.neoforge.fluids.capability.IFluidHandler$FluidAction"
+import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
+import {$IFluidTank$$Type} from "net.neoforged.neoforge.fluids.IFluidTank"
 import {$List} from "java.util.List"
 import {$TagKey$$Type} from "net.minecraft.tags.TagKey"
-import {$IFluidTank$$Type} from "net.neoforged.neoforge.fluids.IFluidTank"
 import {$IFluidHandler$$Interface} from "net.neoforged.neoforge.fluids.capability.IFluidHandler"
 import {$FluidStack, $FluidStack$$Type} from "net.neoforged.neoforge.fluids.FluidStack"
-import {$Holder$$Type} from "net.minecraft.core.Holder"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$Holder$$Type} from "net.minecraft.core.Holder"
 
 export class $AlchemistCauldronTile$AlchemistCauldronFluidHandler implements $IFluidHandler$$Interface {
 constructor(arg0: $AlchemistCauldronTile$$Type)
 
 public "fluidAmount"(): integer
 public "onContentsChanged"(): void
-public "isTankCompatible"(arg0: $IFluidTank$$Type, arg1: $FluidStack$$Type): boolean
+public "canFit"(arg0: integer): boolean
 public "getTanks"(): integer
 public "getFluidInTank"(arg0: integer): $FluidStack
 public "getTankCapacity"(arg0: integer): integer
 public "isFluidValid"(arg0: integer, arg1: $FluidStack$$Type): boolean
-public "canFit"(arg0: integer): boolean
-public "drain"(arg0: integer, arg1: $IFluidHandler$FluidAction$$Type): $FluidStack
-public "drain"(arg0: $FluidStack$$Type, arg1: $IFluidHandler$FluidAction$$Type): $FluidStack
+public "isTankCompatible"(arg0: $IFluidTank$$Type, arg1: $FluidStack$$Type): boolean
 public "load"(arg0: StringJS, arg1: $CompoundTag$$Type, arg2: $HolderLookup$Provider$$Type): void
 public "clear"(): void
 public "fill"(arg0: $FluidStack$$Type, arg1: $IFluidHandler$FluidAction$$Type): integer
-public "contains"(arg0: $TagKey$$Type<($Fluid)>, arg1: integer): boolean
 public "contains"(arg0: $Holder$$Type<($Fluid)>, arg1: integer): boolean
+public "contains"(arg0: $TagKey$$Type<($Fluid)>, arg1: integer): boolean
 public "contains"(arg0: $FluidStack$$Type, arg1: integer): boolean
 public "save"(arg0: StringJS, arg1: $CompoundTag$$Type, arg2: $HolderLookup$Provider$$Type): void
+public "drain"(arg0: $FluidStack$$Type, arg1: $IFluidHandler$FluidAction$$Type): $FluidStack
+public "drain"(arg0: integer, arg1: $IFluidHandler$FluidAction$$Type): $FluidStack
 public "fluids"(): $List<($FluidStack)>
 get "tanks"(): integer
 }
@@ -204,8 +204,8 @@ import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
@@ -259,8 +259,8 @@ import {$SimpleWaterloggedBlock$$Interface} from "net.minecraft.world.level.bloc
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$MenuProvider} from "net.minecraft.world.MenuProvider"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
@@ -312,8 +312,8 @@ public "mirror"(arg0: $BlockState$$Type, arg1: $Mirror$$Type): $BlockState
 public "getRenderShape"(arg0: $BlockState$$Type): $RenderShape
 public "onRemove"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: boolean): void
 public "getPickupSound"(): $Optional<($SoundEvent)>
-public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "canPlaceLiquid"(arg0: $Player$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $Fluid$$Type): boolean
+public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "pickupBlock"(arg0: $Player$$Type, arg1: $LevelAccessor$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): $ItemStack
 public "getPickupSound"(arg0: $BlockState$$Type): $Optional<($SoundEvent)>
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
@@ -340,8 +340,8 @@ import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
@@ -387,13 +387,13 @@ export type $AlchemistCauldronBlock$$Type = ($AlchemistCauldronBlock);
  */
 export type $AlchemistCauldronBlock$$Original = $AlchemistCauldronBlock;}
 declare module "io.redspace.ironsspellbooks.block.portal_frame.PocketDimensionPortalFrameBlock" {
+import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
 import {$PortalFrameBlock} from "io.redspace.ironsspellbooks.block.portal_frame.PortalFrameBlock"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$DoubleBlockHalf} from "net.minecraft.world.level.block.state.properties.DoubleBlockHalf"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
+import {$DoubleBlockHalf} from "net.minecraft.world.level.block.state.properties.DoubleBlockHalf"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
@@ -483,8 +483,8 @@ static readonly "MIN_FILL_LEVEL": integer
 
 constructor()
 
-public static "getInteractionMap"(): $CauldronInteraction$InteractionMap
 public static "attemptCookEntity"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type, arg4: $BloodCauldronBlock$CookExecution$$Type): void
+public static "getInteractionMap"(): $CauldronInteraction$InteractionMap
 public "entityInside"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): void
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 public static get "interactionMap"(): $CauldronInteraction$InteractionMap
@@ -499,8 +499,8 @@ export type $BloodCauldronBlock$$Type = ($BloodCauldronBlock);
  */
 export type $BloodCauldronBlock$$Original = $BloodCauldronBlock;}
 declare module "io.redspace.ironsspellbooks.block.pedestal.PedestalBlock" {
-import {$BaseEntityBlock} from "net.minecraft.world.level.block.BaseEntityBlock"
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
+import {$BaseEntityBlock} from "net.minecraft.world.level.block.BaseEntityBlock"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
@@ -509,8 +509,8 @@ import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
 import {$SimpleWaterloggedBlock$$Interface} from "net.minecraft.world.level.block.SimpleWaterloggedBlock"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
@@ -559,8 +559,8 @@ public "getRenderShape"(arg0: $BlockState$$Type): $RenderShape
 public "useItemOn"(arg0: $ItemStack$$Type, arg1: $BlockState$$Type, arg2: $Level$$Type, arg3: $BlockPos$$Type, arg4: $Player$$Type, arg5: $InteractionHand$$Type, arg6: $BlockHitResult$$Type): $ItemInteractionResult
 public "onRemove"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: boolean): void
 public "getPickupSound"(): $Optional<($SoundEvent)>
-public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "canPlaceLiquid"(arg0: $Player$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $Fluid$$Type): boolean
+public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "pickupBlock"(arg0: $Player$$Type, arg1: $LevelAccessor$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): $ItemStack
 public "getPickupSound"(arg0: $BlockState$$Type): $Optional<($SoundEvent)>
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
@@ -635,22 +635,21 @@ import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ItemPredicate$$Type} from "dev.latvian.mods.kubejs.item.ItemPredicate"
 import {$Item$$Type} from "net.minecraft.world.item.Item"
-import {$IFluidHandler} from "net.neoforged.neoforge.fluids.capability.IFluidHandler"
 import {$Set$$Type} from "java.util.Set"
+import {$IFluidHandler} from "net.neoforged.neoforge.fluids.capability.IFluidHandler"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Predicate$$Type} from "java.util.function.Predicate"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$WorldlyContainer$$Interface} from "net.minecraft.world.WorldlyContainer"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
-import {$InkItem} from "io.redspace.ironsspellbooks.item.InkItem"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$InkItem} from "io.redspace.ironsspellbooks.item.InkItem"
 import {$LevelBlock} from "dev.latvian.mods.kubejs.level.LevelBlock"
-import {$ItemInteractionResult} from "net.minecraft.world.ItemInteractionResult"
 import {$Container, $Container$$Type} from "net.minecraft.world.Container"
-import {$ClientboundBlockEntityDataPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket"
-import {$Packet} from "net.minecraft.network.protocol.Packet"
+import {$ItemInteractionResult} from "net.minecraft.world.ItemInteractionResult"
+import {$ClientboundBlockEntityDataPacket, $ClientboundBlockEntityDataPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket"
 import {$Connection$$Type} from "net.minecraft.network.Connection"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 
@@ -663,9 +662,9 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 
 constructor(arg0: $BlockPos$$Type, arg1: $BlockState$$Type)
 
+public "getUpdatePacket"(): $ClientboundBlockEntityDataPacket
 public static "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $AlchemistCauldronTile$$Type): void
 public "loadAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
-public "getUpdatePacket"(): $Packet
 public "setItem"(arg0: integer, arg1: $ItemStack$$Type): void
 public "tryExecuteRecipeInteractions"(arg0: $Level$$Type, arg1: $ItemStack$$Type): $ItemStack
 public "clearContent"(): void
@@ -677,8 +676,8 @@ public "getSlotsForFace"(arg0: $Direction$$Type): (integer)[]
 public "canPlaceItemThroughFace"(arg0: integer, arg1: $ItemStack$$Type, arg2: $Direction$$Type): boolean
 public "canTakeItemThroughFace"(arg0: integer, arg1: $ItemStack$$Type, arg2: $Direction$$Type): boolean
 public "isBrewable"(arg0: $ItemStack$$Type): boolean
-public "getFluidAmount"(): integer
 public "isValidInput"(arg0: $ItemStack$$Type): boolean
+public "getFluidAmount"(): integer
 public "refreshCapabilities"(): void
 public "isBoiling"(arg0: $BlockState$$Type): boolean
 public "tryMeltInput"(arg0: $ItemStack$$Type): void
@@ -731,7 +730,7 @@ public "count"(): integer
 public "countNonEmpty"(): integer
 public "countNonEmpty"(match: $ItemPredicate$$Type): integer
 public "getAllItems"(): $List<($ItemStack)>
-get "updatePacket"(): $Packet
+get "updatePacket"(): $ClientboundBlockEntityDataPacket
 get "fluidAmount"(): integer
 get "empty"(): boolean
 get "changed"(): void
@@ -761,12 +760,12 @@ import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
-import {$SimpleWaterloggedBlock$$Interface} from "net.minecraft.world.level.block.SimpleWaterloggedBlock"
 import {$ItemAbility$$Type} from "net.neoforged.neoforge.common.ItemAbility"
+import {$SimpleWaterloggedBlock$$Interface} from "net.minecraft.world.level.block.SimpleWaterloggedBlock"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -841,8 +840,8 @@ import {$MenuProvider} from "net.minecraft.world.MenuProvider"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$FallingBlock} from "net.minecraft.world.level.block.FallingBlock"
 import {$FallingBlockEntity$$Type} from "net.minecraft.world.entity.item.FallingBlockEntity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
@@ -900,8 +899,8 @@ import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -958,8 +957,8 @@ import {$SimpleWaterloggedBlock$$Interface} from "net.minecraft.world.level.bloc
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$MenuProvider} from "net.minecraft.world.MenuProvider"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
@@ -975,8 +974,8 @@ import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
-import {$DirectionProperty} from "net.minecraft.world.level.block.state.properties.DirectionProperty"
 import {$PushReaction} from "net.minecraft.world.level.material.PushReaction"
+import {$DirectionProperty} from "net.minecraft.world.level.block.state.properties.DirectionProperty"
 
 export class $InscriptionTableBlock extends $HorizontalDirectionalBlock implements $SimpleWaterloggedBlock$$Interface {
 static readonly "SHAPE_TABLETOP": $VoxelShape
@@ -1012,15 +1011,15 @@ static readonly "SHAPE_LEGS_SOUTH": $VoxelShape
 constructor()
 
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
+public "getMenuProvider"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type): $MenuProvider
 public "updateShape"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $BlockState$$Type, arg3: $LevelAccessor$$Type, arg4: $BlockPos$$Type, arg5: $BlockPos$$Type): $BlockState
 public "setPlacedBy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $LivingEntity$$Type, arg4: $ItemStack$$Type): void
-public "getMenuProvider"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type): $MenuProvider
 public "getShape"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $CollisionContext$$Type): $VoxelShape
 public "getRenderShape"(arg0: $BlockState$$Type): $RenderShape
 public "getPistonPushReaction"(arg0: $BlockState$$Type): $PushReaction
 public "getPickupSound"(): $Optional<($SoundEvent)>
-public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "canPlaceLiquid"(arg0: $Player$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $Fluid$$Type): boolean
+public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "pickupBlock"(arg0: $Player$$Type, arg1: $LevelAccessor$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): $ItemStack
 public "getPickupSound"(arg0: $BlockState$$Type): $Optional<($SoundEvent)>
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
@@ -1045,14 +1044,14 @@ import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
 import {$SimpleWaterloggedBlock$$Interface} from "net.minecraft.world.level.block.SimpleWaterloggedBlock"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
-import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
+import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
 import {$Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
@@ -1086,8 +1085,8 @@ public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
 public "getShape"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $CollisionContext$$Type): $VoxelShape
 public "animateTick"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $RandomSource$$Type): void
 public "getPickupSound"(): $Optional<($SoundEvent)>
-public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "canPlaceLiquid"(arg0: $Player$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $Fluid$$Type): boolean
+public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "pickupBlock"(arg0: $Player$$Type, arg1: $LevelAccessor$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): $ItemStack
 public "getPickupSound"(arg0: $BlockState$$Type): $Optional<($SoundEvent)>
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
@@ -1103,8 +1102,8 @@ export type $FireflyJar$$Type = ($FireflyJar);
  */
 export type $FireflyJar$$Original = $FireflyJar;}
 declare module "io.redspace.ironsspellbooks.block.portal_frame.PortalFrameBlock" {
-import {$BaseEntityBlock} from "net.minecraft.world.level.block.BaseEntityBlock"
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
+import {$BaseEntityBlock} from "net.minecraft.world.level.block.BaseEntityBlock"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Mirror$$Type} from "net.minecraft.world.level.block.Mirror"
@@ -1115,8 +1114,8 @@ import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -1135,8 +1134,8 @@ import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
-import {$DirectionProperty} from "net.minecraft.world.level.block.state.properties.DirectionProperty"
 import {$PushReaction} from "net.minecraft.world.level.material.PushReaction"
+import {$DirectionProperty} from "net.minecraft.world.level.block.state.properties.DirectionProperty"
 
 export class $PortalFrameBlock extends $BaseEntityBlock {
 static readonly "UPDATE_IMMEDIATE": integer
@@ -1188,13 +1187,13 @@ export type $PortalFrameBlock$$Original = $PortalFrameBlock;}
 declare module "io.redspace.ironsspellbooks.block.VoidstoneBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$FenceBlock} from "net.minecraft.world.level.block.FenceBlock"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"

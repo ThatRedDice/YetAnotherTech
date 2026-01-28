@@ -1,12 +1,12 @@
 declare module "dan200.computercraft.shared.media.items.PrintoutItem" {
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
+import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
-import {$Block} from "net.minecraft.world.level.block.Block"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Item} from "net.minecraft.world.item.Item"
 
@@ -36,8 +36,8 @@ declare module "dan200.computercraft.shared.media.items.DiskItem" {
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 

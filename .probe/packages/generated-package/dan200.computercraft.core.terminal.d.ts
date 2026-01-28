@@ -8,8 +8,8 @@ static readonly "DEFAULT": $Palette
 constructor(arg0: boolean)
 
 public "getRenderColours"(arg0: integer): integer
-public "setColour"(arg0: integer, arg1: double, arg2: double, arg3: double): void
 public "setColour"(arg0: integer, arg1: $Colour$$Type): void
+public "setColour"(arg0: integer, arg1: double, arg2: double, arg3: double): void
 public "getColour"(arg0: integer): (double)[]
 public "resetColours"(): void
 public static "encodeRGB8"(arg0: (double)[]): integer
@@ -63,8 +63,8 @@ constructor(arg0: integer, arg1: integer, arg2: boolean, arg3: $Runnable$$Type)
 constructor(arg0: integer, arg1: integer, arg2: boolean)
 
 public "isColour"(): boolean
-public "getTextColour"(): integer
 public "clearLine"(): void
+public "getTextColour"(): integer
 public static "getColour"(arg0: character, arg1: $Colour$$Type): integer
 public "setTextColour"(arg0: integer): void
 public "setCursorPos"(arg0: integer, arg1: integer): void

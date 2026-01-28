@@ -26,8 +26,8 @@ import {$List$$Type} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$IoAttachmentType, $IoAttachmentType$$Type} from "dev.technici4n.moderndynamics.attachment.IoAttachmentType"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$NodeHost$$Type} from "dev.technici4n.moderndynamics.network.NodeHost"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
@@ -67,13 +67,13 @@ export type $IoAttachmentItem$$Type = ($IoAttachmentItem);
  */
 export type $IoAttachmentItem$$Original = $IoAttachmentItem;}
 declare module "dev.technici4n.moderndynamics.attachment.InhibitorAttachmentItem" {
-import {$NodeHost$$Type} from "dev.technici4n.moderndynamics.network.NodeHost"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
+import {$NodeHost$$Type} from "dev.technici4n.moderndynamics.network.NodeHost"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block} from "net.minecraft.world.level.block.Block"
-import {$AttachmentItem} from "dev.technici4n.moderndynamics.attachment.AttachmentItem"
 import {$AttachedInhibitor} from "dev.technici4n.moderndynamics.attachment.attached.AttachedInhibitor"
+import {$AttachmentItem} from "dev.technici4n.moderndynamics.attachment.AttachmentItem"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$RenderedAttachment, $RenderedAttachment$$Type} from "dev.technici4n.moderndynamics.attachment.RenderedAttachment"
@@ -102,8 +102,8 @@ export type $InhibitorAttachmentItem$$Type = ($InhibitorAttachmentItem);
  */
 export type $InhibitorAttachmentItem$$Original = $InhibitorAttachmentItem;}
 declare module "dev.technici4n.moderndynamics.attachment.AttachmentItem" {
-import {$NodeHost$$Type} from "dev.technici4n.moderndynamics.network.NodeHost"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
+import {$NodeHost$$Type} from "dev.technici4n.moderndynamics.network.NodeHost"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Block} from "net.minecraft.world.level.block.Block"
@@ -150,12 +150,12 @@ static readonly "OVERSENDING_MODE": $Setting
 static readonly "FILTER_DAMAGE": $Setting
 static readonly "ROUTING_MODE": $Setting
 
-public "getTooltipName"(): $Component
 public "isFilter"(): boolean
+public "getTooltipName"(): $Component
 public static "values"(): ($Setting)[]
 public static "valueOf"(arg0: StringJS): $Setting
-get "tooltipName"(): $Component
 get "filter"(): boolean
+get "tooltipName"(): $Component
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -182,16 +182,16 @@ import {$ExtendedMenuProvider} from "dev.technici4n.moderndynamics.util.Extended
 export class $AttachedAttachment {
 constructor(arg0: $AttachmentItem$$Type, arg1: $CompoundTag$$Type)
 
+public "tryClearContents"(arg0: $PipeBlockEntity$$Type): boolean
+public "hasMenu"(): boolean
 public "getDrops"(): $List<($ItemStack)>
 public "createMenu"(arg0: $PipeBlockEntity$$Type, arg1: $Direction$$Type): $ExtendedMenuProvider
 public "onPlaced"(arg0: $Player$$Type): void
-public "tryClearContents"(arg0: $PipeBlockEntity$$Type): boolean
-public "hasMenu"(): boolean
 public "allowsItemConnection"(): boolean
 public "writeConfigTag"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): $CompoundTag
 public "getItem"(): $AttachmentItem
-public "update"(arg0: $CompoundTag$$Type): boolean
 public "getDisplayName"(): $Component
+public "update"(arg0: $CompoundTag$$Type): boolean
 public "getModelData"(): $AttachmentModelData
 get "drops"(): $List<($ItemStack)>
 get "item"(): $AttachmentItem

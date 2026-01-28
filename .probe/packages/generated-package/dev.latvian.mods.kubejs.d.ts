@@ -130,8 +130,8 @@ import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$Collection} from "java.util.Collection"
 import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$List} from "java.util.List"
-import {$Supplier$$Interface} from "java.util.function.Supplier"
 import {$JsonElement, $JsonElement$$Type} from "com.google.gson.JsonElement"
+import {$Supplier$$Interface} from "java.util.function.Supplier"
 import {$JsonObject} from "com.google.gson.JsonObject"
 import {$ConsoleJS, $ConsoleJS$$Type} from "dev.latvian.mods.kubejs.script.ConsoleJS"
 import {$Path, $Path$$Type} from "java.nio.file.Path"
@@ -180,16 +180,16 @@ declare module "dev.latvian.mods.kubejs.item.ArmorMaterialBuilder" {
 import {$ArmorMaterial} from "net.minecraft.world.item.ArmorMaterial"
 import {$Map$$Type} from "java.util.Map"
 import {$Ingredient$$Type} from "net.minecraft.world.item.crafting.Ingredient"
-import {$BuilderBase} from "dev.latvian.mods.kubejs.registry.BuilderBase"
 import {$SoundEvent$$Type} from "net.minecraft.sounds.SoundEvent"
+import {$BuilderBase} from "dev.latvian.mods.kubejs.registry.BuilderBase"
 import {$Holder$$Type} from "net.minecraft.core.Holder"
 import {$ArmorMaterial$Layer$$Type} from "net.minecraft.world.item.ArmorMaterial$Layer"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Registry} from "net.minecraft.core.Registry"
 import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
-import {$SourceLine} from "dev.latvian.mods.kubejs.script.SourceLine"
 import {$ArmorItem$Type$$Type} from "net.minecraft.world.item.ArmorItem$Type"
+import {$SourceLine} from "dev.latvian.mods.kubejs.script.SourceLine"
 
 export class $ArmorMaterialBuilder extends $BuilderBase<($ArmorMaterial)> {
  "registryKey": $ResourceKey<($Registry<(T)>)>
@@ -198,11 +198,11 @@ readonly "id": $ResourceLocation
 
 constructor(i: $ResourceLocation$$Type)
 
-public "knockbackResistance"(v: float): this
-public "enchantmentValue"(v: integer): this
-public "repairIngredient"(v: $Supplier$$Type<($Ingredient$$Type)>): this
 public "toughness"(v: float): this
 public "equipSound"(sound: $Holder$$Type<($SoundEvent)>): this
+public "enchantmentValue"(v: integer): this
+public "repairIngredient"(v: $Supplier$$Type<($Ingredient$$Type)>): this
+public "knockbackResistance"(v: float): this
 public "defense"(v: $Map$$Type<($ArmorItem$Type$$Type), (integer)>): this
 public "layers"(v: ($ArmorMaterial$Layer$$Type)[]): this
 }
@@ -233,12 +233,12 @@ export interface $JavaWrapper$$Interface {
 }
 
 export class $JavaWrapper implements $JavaWrapper$$Interface {
-static "mergeRecord"<R extends $Record>(original: R, merge: $Map$$Type<(StringJS), (never)>): R
 /**
  * Creates a custom ConsoleJS instance for you to use to, well, log stuff
  */
 static "createConsole"(name: StringJS): $ConsoleJS
 static "makeFunctionProxy"<T>(targetClass: $TypeInfo$$Type, arg1: $BaseFunction$$Type): T
+static "mergeRecord"<R extends $Record>(original: R, merge: $Map$$Type<(StringJS), (never)>): R
 /**
  * Loads the specified class, and returns null if class is not found or allowed.
  * The returned object can have public static methods and fields accessed directly from it.
@@ -297,7 +297,7 @@ import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$KubePlayerEvent$$Interface} from "dev.latvian.mods.kubejs.player.KubePlayerEvent"
 import {$Level} from "net.minecraft.world.level.Level"
-import {$LivingEntity} from "net.minecraft.world.entity.LivingEntity"
+import {$Entity} from "net.minecraft.world.entity.Entity"
 import {$MinecraftServer} from "net.minecraft.server.MinecraftServer"
 import {$RegistryAccess} from "net.minecraft.core.RegistryAccess"
 
@@ -308,13 +308,13 @@ export class $ItemSmeltedKubeEvent implements $KubePlayerEvent$$Interface {
 constructor(player: $Player$$Type, smelted: $ItemStack$$Type)
 
 /**
+ * The player that smelted the item.
+ */
+public "getEntity"(): $Entity
+/**
  * The item that was smelted.
  */
 public "getItem"(): $ItemStack
-/**
- * The player that smelted the item.
- */
-public "getEntity"(): $LivingEntity
 public "getPlayer"(): $Player
 public "getLevel"(): $Level
 public "getRegistries"(): $RegistryAccess
@@ -355,8 +355,8 @@ public "cancel"(value: any): any
  * `cancel` denotes a `false` outcome.
  */
 public "cancel"(): any
+get "entity"(): $Entity
 get "item"(): $ItemStack
-get "entity"(): $LivingEntity
 get "player"(): $Player
 get "level"(): $Level
 get "registries"(): $RegistryAccess
@@ -412,13 +412,13 @@ public "setXp"(xp: integer): void
  */
 public "getItemEntities"(): $List<($ItemEntity)>
 public "containsItem"(item: $ItemPredicate$$Type): boolean
+public "getEntity"(): $Entity
 public "addItem"(item: $ItemStack$$Type): $ItemEntity
 /**
  * The block that was broken.
  */
 public "getBlock"(): $LevelBlock
 public "getLevel"(): $Level
-public "getEntity"(): $Entity
 public "removeItem"(item: $ItemPredicate$$Type): void
 public "getPlayer"(): $Player
 public "getRegistries"(): $RegistryAccess
@@ -464,9 +464,9 @@ get "xp"(): integer
 get "tool"(): $ItemStack
 set "xp"(value: integer)
 get "itemEntities"(): $List<($ItemEntity)>
+get "entity"(): $Entity
 get "block"(): $LevelBlock
 get "level"(): $Level
-get "entity"(): $Entity
 get "player"(): $Player
 get "registries"(): $RegistryAccess
 get "server"(): $MinecraftServer
@@ -490,8 +490,8 @@ import {$ScriptType$$Type} from "dev.latvian.mods.kubejs.script.ScriptType"
 import {$DefaultValueTypeHint$$Type} from "dev.latvian.mods.rhino.util.DefaultValueTypeHint"
 import {$ScriptTypeHolder$$Type} from "dev.latvian.mods.kubejs.script.ScriptTypeHolder"
 import {$Class} from "java.lang.Class"
-import {$Set} from "java.util.Set"
 import {$ScriptTypePredicate} from "dev.latvian.mods.kubejs.script.ScriptTypePredicate"
+import {$Set} from "java.util.Set"
 import {$Scriptable, $Scriptable$$Type} from "dev.latvian.mods.rhino.Scriptable"
 import {$EventHandlerContainer$$Type} from "dev.latvian.mods.kubejs.event.EventHandlerContainer"
 import {$EventResult} from "dev.latvian.mods.kubejs.event.EventResult"
@@ -508,13 +508,13 @@ static readonly "READONLY": integer
 static readonly "PERMANENT": integer
 readonly "group": $EventGroup
 
-public "hasResult"(): $EventHandler
 public "forEachListener"(type: $ScriptType$$Type, callback: $Consumer$$Type<($EventHandlerContainer)>): void
 public "findUniqueExtraIds"(type: $ScriptType$$Type): $Set<(E)>
-public "hasListeners"(): boolean
-public "hasListeners"(extraId: E): boolean
+public "hasResult"(): $EventHandler
 public "post"(event: $KubeEvent$$Type, extraId: E): $EventResult
 public "post"(type: $ScriptTypeHolder$$Type, extraId: E, event: $KubeEvent$$Type): $EventResult
+public "hasListeners"(extraId: E): boolean
+public "hasListeners"(): boolean
 public "has"(arg1: integer, arg2: $Scriptable$$Type): boolean
 public "get"(arg1: integer, arg2: $Scriptable$$Type): any
 public "put"(arg1: integer, arg2: $Scriptable$$Type, arg3: any): void
@@ -522,16 +522,16 @@ public "delete"(arg1: integer): void
 public "getDefaultValue"(arg1: $DefaultValueTypeHint$$Type): any
 public "getPrototype"(): $Scriptable
 public "setPrototype"(arg0: $Scriptable$$Type): void
-public "getParentScope"(): $Scriptable
-public "setParentScope"(arg0: $Scriptable$$Type): void
 public "getAllIds"(): (any)[]
 public "getIds"(): (any)[]
+public "getParentScope"(): $Scriptable
+public "setParentScope"(arg0: $Scriptable$$Type): void
 get "prototype"(): $Scriptable
 set "prototype"(value: $Scriptable$$Type)
-get "parentScope"(): $Scriptable
-set "parentScope"(value: $Scriptable$$Type)
 get "allIds"(): (any)[]
 get "ids"(): (any)[]
+get "parentScope"(): $Scriptable
+set "parentScope"(value: $Scriptable$$Type)
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -546,9 +546,9 @@ declare module "dev.latvian.mods.kubejs.block.BlockBrokenKubeEvent" {
 import {$Player} from "net.minecraft.world.entity.player.Player"
 import {$LevelBlock} from "dev.latvian.mods.kubejs.level.LevelBlock"
 import {$KubePlayerEvent$$Interface} from "dev.latvian.mods.kubejs.player.KubePlayerEvent"
-import {$Level} from "net.minecraft.world.level.Level"
 import {$BlockEvent$BreakEvent$$Type} from "net.neoforged.neoforge.event.level.BlockEvent$BreakEvent"
-import {$LivingEntity} from "net.minecraft.world.entity.LivingEntity"
+import {$Level} from "net.minecraft.world.level.Level"
+import {$Entity} from "net.minecraft.world.entity.Entity"
 import {$MinecraftServer} from "net.minecraft.server.MinecraftServer"
 import {$RegistryAccess} from "net.minecraft.core.RegistryAccess"
 
@@ -559,13 +559,13 @@ export class $BlockBrokenKubeEvent implements $KubePlayerEvent$$Interface {
 constructor(event: $BlockEvent$BreakEvent$$Type)
 
 /**
+ * The player that broke the block.
+ */
+public "getEntity"(): $Entity
+/**
  * The block that was broken.
  */
 public "getBlock"(): $LevelBlock
-/**
- * The player that broke the block.
- */
-public "getEntity"(): $LivingEntity
 public "getPlayer"(): $Player
 public "getLevel"(): $Level
 public "getRegistries"(): $RegistryAccess
@@ -606,8 +606,8 @@ public "cancel"(value: any): any
  * `cancel` denotes a `false` outcome.
  */
 public "cancel"(): any
+get "entity"(): $Entity
 get "block"(): $LevelBlock
-get "entity"(): $LivingEntity
 get "player"(): $Player
 get "level"(): $Level
 get "registries"(): $RegistryAccess
@@ -627,8 +627,8 @@ import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$KubePlayerEvent$$Interface} from "dev.latvian.mods.kubejs.player.KubePlayerEvent"
 import {$Level} from "net.minecraft.world.level.Level"
-import {$LivingEntity} from "net.minecraft.world.entity.LivingEntity"
 import {$ItemEntity, $ItemEntity$$Type} from "net.minecraft.world.entity.item.ItemEntity"
+import {$LivingEntity} from "net.minecraft.world.entity.LivingEntity"
 import {$MinecraftServer} from "net.minecraft.server.MinecraftServer"
 import {$RegistryAccess} from "net.minecraft.core.RegistryAccess"
 
@@ -643,13 +643,13 @@ constructor(player: $Player$$Type, entity: $ItemEntity$$Type)
  */
 public "getItemEntity"(): $ItemEntity
 /**
- * The item that was dropped.
- */
-public "getItem"(): $ItemStack
-/**
  * The player that dropped the item.
  */
 public "getEntity"(): $LivingEntity
+/**
+ * The item that was dropped.
+ */
+public "getItem"(): $ItemStack
 public "getPlayer"(): $Player
 public "getLevel"(): $Level
 public "getRegistries"(): $RegistryAccess
@@ -691,8 +691,8 @@ public "cancel"(value: any): any
  */
 public "cancel"(): any
 get "itemEntity"(): $ItemEntity
-get "item"(): $ItemStack
 get "entity"(): $LivingEntity
+get "item"(): $ItemStack
 get "player"(): $Player
 get "level"(): $Level
 get "registries"(): $RegistryAccess
@@ -762,9 +762,9 @@ constructor()
 
 public "atString"(): StringJS
 public "stringAt"(): StringJS
+public "toString"(): StringJS
 public "push"(parent: any): void
 public "pop"(): void
-public "toString"(): StringJS
 public "setKey"(index: integer): void
 public "setKey"(key: any): void
 set "key"(value: integer)
@@ -869,15 +869,15 @@ export type $SpecialRecipeSerializerManager$$Type = ($SpecialRecipeSerializerMan
 export type $SpecialRecipeSerializerManager$$Original = $SpecialRecipeSerializerManager;}
 declare module "dev.latvian.mods.kubejs.level.ExplosionProperties" {
 import {$Explosion} from "net.minecraft.world.level.Explosion"
-import {$Level$ExplosionInteraction, $Level$ExplosionInteraction$$Type} from "net.minecraft.world.level.Level$ExplosionInteraction"
 import {$Optional, $Optional$$Type} from "java.util.Optional"
+import {$Level$ExplosionInteraction, $Level$ExplosionInteraction$$Type} from "net.minecraft.world.level.Level$ExplosionInteraction"
 import {$DamageSource, $DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$SoundEvent, $SoundEvent$$Type} from "net.minecraft.sounds.SoundEvent"
+import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$ExplosionDamageCalculator, $ExplosionDamageCalculator$$Type} from "net.minecraft.world.level.ExplosionDamageCalculator"
-import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
 import {$ParticleOptions, $ParticleOptions$$Type} from "net.minecraft.core.particles.ParticleOptions"
+import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
 import {$Record} from "java.lang.Record"
 
 export class $ExplosionProperties extends $Record {
@@ -885,9 +885,9 @@ constructor(source: $Entity$$Type, damageSource: $DamageSource$$Type, damageCalc
 
 public "damageCalculator"(): $ExplosionDamageCalculator
 public "explosionSound"(): $Holder<($SoundEvent)>
+public "causesFire"(): $Optional<(boolean)>
 public "smallParticles"(): $ParticleOptions
 public "largeParticles"(): $ParticleOptions
-public "causesFire"(): $Optional<(boolean)>
 public "mode"(): $Level$ExplosionInteraction
 public "equals"(o: any): boolean
 public "toString"(): StringJS
@@ -902,7 +902,7 @@ public "explode"(level: $Level$$Type, x: double, y: double, z: double): $Explosi
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $ExplosionProperties$$Type = ({"damageCalculator"?: $ExplosionDamageCalculator$$Type, "largeParticles"?: $ParticleOptions$$Type, "explosionSound"?: $Holder$$Type<($SoundEvent)>, "damageSource"?: $DamageSource$$Type, "particles"?: (boolean)?, "causesFire"?: (boolean)?, "mode"?: $Level$ExplosionInteraction$$Type, "source"?: $Entity$$Type, "strength"?: (float)?, "smallParticles"?: $ParticleOptions$$Type}) | ([damageCalculator?: $ExplosionDamageCalculator$$Type, largeParticles?: $ParticleOptions$$Type, explosionSound?: $Holder$$Type<($SoundEvent)>, damageSource?: $DamageSource$$Type, particles?: (boolean)?, causesFire?: (boolean)?, mode?: $Level$ExplosionInteraction$$Type, source?: $Entity$$Type, strength?: (float)?, smallParticles?: $ParticleOptions$$Type]);
+export type $ExplosionProperties$$Type = ({"largeParticles"?: $ParticleOptions$$Type, "explosionSound"?: $Holder$$Type<($SoundEvent)>, "damageSource"?: $DamageSource$$Type, "particles"?: (boolean)?, "causesFire"?: (boolean)?, "mode"?: $Level$ExplosionInteraction$$Type, "source"?: $Entity$$Type, "strength"?: (float)?, "smallParticles"?: $ParticleOptions$$Type, "damageCalculator"?: $ExplosionDamageCalculator$$Type}) | ([largeParticles?: $ParticleOptions$$Type, explosionSound?: $Holder$$Type<($SoundEvent)>, damageSource?: $DamageSource$$Type, particles?: (boolean)?, causesFire?: (boolean)?, mode?: $Level$ExplosionInteraction$$Type, source?: $Entity$$Type, strength?: (float)?, smallParticles?: $ParticleOptions$$Type, damageCalculator?: $ExplosionDamageCalculator$$Type]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -957,8 +957,8 @@ export type $VirtualDataMapFile$$Type<RT, DT> = ($VirtualDataMapFile<(RT), (DT)>
  */
 export type $VirtualDataMapFile$$Original<RT, DT> = $VirtualDataMapFile<(RT), (DT)>;}
 declare module "dev.latvian.mods.kubejs.item.FoodBuilder" {
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$FoodEatenKubeEvent$$Type} from "dev.latvian.mods.kubejs.item.FoodEatenKubeEvent"
 import {$MobEffect$$Type} from "net.minecraft.world.effect.MobEffect"
 import {$Consumer$$Type} from "java.util.function.Consumer"
@@ -977,21 +977,21 @@ public "nutrition"(h: integer): $FoodBuilder
  */
 public "eatSeconds"(seconds: float): $FoodBuilder
 /**
- * Sets whether the food is always edible.
- */
-public "alwaysEdible"(flag: boolean): $FoodBuilder
-/**
  * Sets the food is always edible.
  */
 public "alwaysEdible"(): $FoodBuilder
 /**
- * Sets the food is fast to eat (having half of the eating time).
+ * Sets whether the food is always edible.
  */
-public "fastToEat"(): $FoodBuilder
+public "alwaysEdible"(flag: boolean): $FoodBuilder
 /**
  * Sets the saturation modifier. Note that the saturation restored is hunger * saturation.
  */
 public "saturation"(s: float): $FoodBuilder
+/**
+ * Sets the food is fast to eat (having half of the eating time).
+ */
+public "fastToEat"(): $FoodBuilder
 public "build"(): $FoodProperties
 /**
  * Adds an effect to the food. Note that the effect duration is in ticks (20 ticks = 1 second).
@@ -1027,8 +1027,8 @@ export type $FoodBuilder$$Original = $FoodBuilder;}
 declare module "dev.latvian.mods.kubejs.client.icon.KubeIconType" {
 import {$StreamCodec, $StreamCodec$$Type} from "net.minecraft.network.codec.StreamCodec"
 import {$Lazy} from "dev.latvian.mods.kubejs.util.Lazy"
-import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Map} from "java.util.Map"
+import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$KubeIcon} from "dev.latvian.mods.kubejs.client.icon.KubeIcon"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$RegistryFriendlyByteBuf, $RegistryFriendlyByteBuf$$Type} from "net.minecraft.network.RegistryFriendlyByteBuf"
@@ -1088,25 +1088,25 @@ export type $FluidData$Info$$Type = ({"filter"?: $FluidIngredient$$Type, "info"?
  */
 export type $FluidData$Info$$Original = $FluidData$Info;}
 declare module "dev.latvian.mods.kubejs.component.MutableDataComponentHolderFunctions" {
-import {$ComponentFunctions, $ComponentFunctions$$Interface} from "dev.latvian.mods.kubejs.component.ComponentFunctions"
 import {$Potion$$Type} from "net.minecraft.world.item.alchemy.Potion"
-import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$DataComponentMap, $DataComponentMap$$Type} from "net.minecraft.core.component.DataComponentMap"
+import {$ComponentFunctions, $ComponentFunctions$$Interface} from "dev.latvian.mods.kubejs.component.ComponentFunctions"
+import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$Map$$Type} from "java.util.Map"
-import {$UUID$$Type} from "java.util.UUID"
 import {$MutableDataComponentHolder} from "net.neoforged.neoforge.common.MutableDataComponentHolder"
+import {$UUID$$Type} from "java.util.UUID"
 import {$List$$Type} from "java.util.List"
 import {$Rarity$$Type} from "net.minecraft.world.item.Rarity"
-import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$DataComponentType$$Type} from "net.minecraft.core.component.DataComponentType"
+import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$LootTable$$Type} from "net.minecraft.world.level.storage.loot.LootTable"
 import {$Holder$$Type} from "net.minecraft.core.Holder"
 import {$DataComponentPatch$$Type} from "net.minecraft.core.component.DataComponentPatch"
 import {$DyeColor$$Type} from "net.minecraft.world.item.DyeColor"
 import {$KubeColor$$Type} from "dev.latvian.mods.kubejs.color.KubeColor"
 import {$ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$PotionContents$$Type} from "net.minecraft.world.item.alchemy.PotionContents"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$Unit$$Type} from "net.minecraft.util.Unit"
 
 export interface $MutableDataComponentHolderFunctions$$Interface extends $ComponentFunctions$$Interface {
@@ -1183,10 +1183,10 @@ export type $MutableDataComponentHolderFunctions$$Original = $MutableDataCompone
 declare module "dev.latvian.mods.kubejs.client.LangKubeEvent" {
 import {$KubeEvent$$Interface} from "dev.latvian.mods.kubejs.event.KubeEvent"
 import {$Pattern} from "java.util.regex.Pattern"
-import {$LangKubeEvent$Key, $LangKubeEvent$Key$$Type} from "dev.latvian.mods.kubejs.client.LangKubeEvent$Key"
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map, $Map$$Type} from "java.util.Map"
+import {$LangKubeEvent$Key, $LangKubeEvent$Key$$Type} from "dev.latvian.mods.kubejs.client.LangKubeEvent$Key"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Record} from "java.lang.Record"
 
@@ -1272,8 +1272,8 @@ import {$HolderSet$$Type} from "net.minecraft.core.HolderSet"
 import {$Tag$$Type} from "net.minecraft.nbt.Tag"
 
 export interface $FluidWrapper$$Interface {
-public static get "types"(): $List<(StringJS)>
 public static get "empty"(): $FluidStack
+public static get "types"(): $List<(StringJS)>
 }
 
 export class $FluidWrapper implements $FluidWrapper$$Interface {
@@ -1298,16 +1298,12 @@ static "ingredientOf"(of: $FluidIngredient$$Type): $FluidIngredient
 static "ingredientOfString"(registryOps: $DynamicOps$$Type<($Tag$$Type)>, s: StringJS): $DataResult<($FluidIngredient)>
 static "sizedIngredientOfString"(registryOps: $DynamicOps$$Type<($Tag$$Type)>, s: StringJS): $DataResult<($SizedFluidIngredient)>
 static "readWithContext"<T>(registryOps: $DynamicOps$$Type<($Tag$$Type)>, s: StringJS, fn: $FluidWrapper$ReadFn$$Type<(T)>, name: StringJS): $DataResult<(T)>
-static "sizedIngredientOf"(arg0: $FluidIngredient$$Type, amount: integer): $SizedFluidIngredient
 static "sizedIngredientOf"(of: $SizedFluidIngredient$$Type): $SizedFluidIngredient
+static "sizedIngredientOf"(arg0: $FluidIngredient$$Type, amount: integer): $SizedFluidIngredient
 static "readSizedIngredient"(registryOps: $DynamicOps$$Type<($Tag$$Type)>, reader: $StringReader$$Type): $DataResult<($SizedFluidIngredient)>
-static "water"(amount: integer): $FluidStack
 static "water"(): $FluidStack
+static "water"(amount: integer): $FluidStack
 static "parseString"(registryOps: $DynamicOps$$Type<($Tag$$Type)>, s: StringJS): $DataResult<($FluidStack)>
-/**
- * Returns a FluidStack of the input, with the specified amount
- */
-static "of"(o: $FluidStack$$Type, amount: integer): $FluidStack
 /**
  * Returns a FluidStack of the input
  */
@@ -1317,6 +1313,10 @@ static "of"(o: $FluidStack$$Type): $FluidStack
  */
 static "of"(o: $FluidStack$$Type, components: $DataComponentMap$$Type): $FluidStack
 /**
+ * Returns a FluidStack of the input, with the specified amount
+ */
+static "of"(o: $FluidStack$$Type, amount: integer): $FluidStack
+/**
  * Returns a FluidStack of the input, with the specified amount and data components
  */
 static "of"(o: $FluidStack$$Type, amount: integer, components: $DataComponentMap$$Type): $FluidStack
@@ -1324,8 +1324,8 @@ static "read"(registryOps: $DynamicOps$$Type<($Tag$$Type)>, reader: $StringReade
 static "getId"(fluid: $Fluid$$Type): $ResourceLocation
 static "getType"(id: $ResourceLocation$$Type): $Fluid
 static "exists"(id: $ResourceLocation$$Type): boolean
-static "getTypes"(): $List<(StringJS)>
 static "getEmpty"(): $FluidStack
+static "getTypes"(): $List<(StringJS)>
 static "lava"(amount: integer): $FluidStack
 static "lava"(): $FluidStack
 }
@@ -1340,8 +1340,8 @@ export type $FluidWrapper$$Type = ($FluidWrapper);
 export type $FluidWrapper$$Original = $FluidWrapper;}
 declare module "dev.latvian.mods.kubejs.script.ConsoleJS" {
 import {$ContextFactory} from "dev.latvian.mods.rhino.ContextFactory"
-import {$KJSWSSession} from "dev.latvian.mods.kubejs.web.KJSWSSession"
 import {$Pattern, $Pattern$$Type} from "java.util.regex.Pattern"
+import {$KJSWSSession} from "dev.latvian.mods.kubejs.web.KJSWSSession"
 import {$Component} from "net.minecraft.network.chat.Component"
 import {$WeakReference} from "java.lang.ref.WeakReference"
 import {$LogType$$Type} from "dev.latvian.mods.kubejs.util.LogType"
@@ -1371,7 +1371,6 @@ static "CLIENT": $ConsoleJS
 constructor(m: $ScriptType$$Type, log: $Logger$$Type)
 
 public "startCapturingErrors"(): void
-public "groupEnd"(): void
 public "group"(): void
 public "log"(...message: (any)[]): void
 public "flush"(sync: boolean): void
@@ -1387,17 +1386,18 @@ public "warn"(message: any): $ConsoleLine
 public "warn"(message: StringJS, error: $Throwable$$Type, exitPattern: $Pattern$$Type): $ConsoleLine
 public "warn"(message: StringJS, error: $Throwable$$Type): $ConsoleLine
 public "warn"(message: StringJS, sourceLine: $SourceLine$$Type, error: $Throwable$$Type, exitPattern: $Pattern$$Type): $ConsoleLine
+public "groupEnd"(): void
 public "writeToFile"(type: $LogType$$Type, timestamp: long, line: StringJS): void
 public "writeToFile"(type: $LogType$$Type, line: StringJS): void
+public "handleError"(line: $ConsoleLine$$Type, error: $Throwable$$Type, exitPattern: $Pattern$$Type, print: boolean): void
 public "printObject"(o: any, tree: boolean): void
 public "printObject"(o: any): void
-public "handleError"(line: $ConsoleLine$$Type, error: $Throwable$$Type, exitPattern: $Pattern$$Type, print: boolean): void
 public "stopCapturingErrors"(): void
 public "setDebugEnabled"(m: boolean): void
 public "resetFile"(): void
 public "shouldPrintDebug"(): boolean
-public "printClass"(className: StringJS): void
 public "printClass"(className: StringJS, tree: boolean): void
+public "printClass"(className: StringJS): void
 public static "getCurrent"(): $ConsoleJS
 public static "methodPattern"(c: $Class$$Type<(never)>, method: StringJS): $Pattern
 public "setMuted"(m: boolean): void
@@ -1454,8 +1454,8 @@ export type $ResolvedRecipeSchemaFunction$$Type = ((cx: $RecipeScriptContext, ar
  */
 export type $ResolvedRecipeSchemaFunction$$Original = $ResolvedRecipeSchemaFunction;}
 declare module "dev.latvian.mods.kubejs.core.EntityCollectionKJS" {
-import {$Iterable, $Iterable$$Type} from "java.lang.Iterable"
 import {$Player} from "net.minecraft.world.entity.player.Player"
+import {$Iterable, $Iterable$$Type} from "java.lang.Iterable"
 import {$UUID$$Type} from "java.util.UUID"
 import {$List} from "java.util.List"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
@@ -1548,11 +1548,11 @@ import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resource
 import {$JsonElement$$Type} from "com.google.gson.JsonElement"
 import {$Supplier, $Supplier$$Type} from "java.util.function.Supplier"
 import {$IoSupplier, $IoSupplier$$Interface} from "net.minecraft.server.packs.resources.IoSupplier"
-import {$InputStream} from "java.io.InputStream"
 import {$Path$$Type} from "java.nio.file.Path"
+import {$InputStream} from "java.io.InputStream"
 import {$ZipFile$$Type} from "java.util.zip.ZipFile"
-import {$ZipEntry$$Type} from "java.util.zip.ZipEntry"
 import {$Record} from "java.lang.Record"
+import {$ZipEntry$$Type} from "java.util.zip.ZipEntry"
 
 /**
  * This class is not allowed By KubeJS!
@@ -1580,7 +1580,7 @@ public static "create"(arg0: $Path$$Type): $IoSupplier<($InputStream)>
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $GeneratedData$$Type = ({"id"?: $ResourceLocation$$Type, "data"?: $Supplier$$Type<((byte)[])>}) | ([id?: $ResourceLocation$$Type, data?: $Supplier$$Type<((byte)[])>]);
+export type $GeneratedData$$Type = ({"data"?: $Supplier$$Type<((byte)[])>, "id"?: $ResourceLocation$$Type}) | ([data?: $Supplier$$Type<((byte)[])>, id?: $ResourceLocation$$Type]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -1635,7 +1635,7 @@ public "registries"(): $RegistryAccessContainer
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $RecipeTypeRegistryContext$$Type = ({"registries"?: $RegistryAccessContainer$$Type, "storage"?: $RecipeSchemaStorage$$Type}) | ([registries?: $RegistryAccessContainer$$Type, storage?: $RecipeSchemaStorage$$Type]);
+export type $RecipeTypeRegistryContext$$Type = ({"storage"?: $RecipeSchemaStorage$$Type, "registries"?: $RegistryAccessContainer$$Type}) | ([storage?: $RecipeSchemaStorage$$Type, registries?: $RegistryAccessContainer$$Type]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -1682,8 +1682,8 @@ readonly "block": $LevelBlock
 
 constructor(level: $Level$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type, entity: $FallingBlockEntity$$Type, fallSpeed: double, replacedState: $BlockState$$Type)
 
-public "getLevel"(): $Level
 public "getEntity"(): $Entity
+public "getLevel"(): $Level
 public "getPlayer"(): $Player
 public "getRegistries"(): $RegistryAccess
 public "getServer"(): $MinecraftServer
@@ -1723,8 +1723,8 @@ public "cancel"(value: any): any
  * `cancel` denotes a `false` outcome.
  */
 public "cancel"(): any
-get "level"(): $Level
 get "entity"(): $Entity
+get "level"(): $Level
 get "player"(): $Player
 get "registries"(): $RegistryAccess
 get "server"(): $MinecraftServer
@@ -1818,12 +1818,12 @@ static readonly "ALL_ICONS": StringJS
 
 static "fire"(): $MutableComponent
 static "camera"(): $MutableComponent
-static "itemTag"(): $MutableComponent
-static "yes"(): $MutableComponent
-static "yes"(yes: boolean): $MutableComponent
 static "minus"(): $MutableComponent
-static "no"(): $MutableComponent
 static "tag"(): $MutableComponent
+static "no"(): $MutableComponent
+static "itemTag"(): $MutableComponent
+static "yes"(yes: boolean): $MutableComponent
+static "yes"(): $MutableComponent
 static "info"(): $MutableComponent
 static "id"(): $MutableComponent
 static "copy"(): $MutableComponent
@@ -1833,6 +1833,7 @@ static "plus"(): $MutableComponent
 static "icon"(character: $MutableComponent$$Type): $MutableComponent
 static "logo"(): $MutableComponent
 static "crafting"(): $MutableComponent
+static "vscode"(): $MutableComponent
 static "icons"(characters: StringJS): $MutableComponent
 static "smallSpace"(): $MutableComponent
 static "tilde"(): $MutableComponent
@@ -1841,7 +1842,6 @@ static "entityTypeTag"(): $MutableComponent
 static "fluidTag"(): $MutableComponent
 static "prototypeComponent"(): $MutableComponent
 static "patchedComponent"(): $MutableComponent
-static "vscode"(): $MutableComponent
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -1853,8 +1853,8 @@ export type $TextIcons$$Type = ($TextIcons);
  */
 export type $TextIcons$$Original = $TextIcons;}
 declare module "dev.latvian.mods.kubejs.recipe.schema.RecipeNamespace" {
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Map, $Map$$Type} from "java.util.Map"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$RecipeSchema$$Type} from "dev.latvian.mods.kubejs.recipe.schema.RecipeSchema"
 import {$RecipeSchemaType} from "dev.latvian.mods.kubejs.recipe.schema.RecipeSchemaType"
 import {$LinkedHashMap} from "java.util.LinkedHashMap"
@@ -1905,18 +1905,17 @@ export type $RecipeNamespace$$Type = ($RecipeNamespace);
  */
 export type $RecipeNamespace$$Original = $RecipeNamespace;}
 declare module "dev.latvian.mods.kubejs.block.custom.ButtonBlockBuilder" {
-import {$BlockBuilder} from "dev.latvian.mods.kubejs.block.BlockBuilder"
-import {$BlockSetType$$Type} from "net.minecraft.world.level.block.state.properties.BlockSetType"
-import {$BuilderBase} from "dev.latvian.mods.kubejs.registry.BuilderBase"
-import {$Consumer} from "java.util.function.Consumer"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Registry} from "net.minecraft.core.Registry"
 import {$ShapedBlockBuilder} from "dev.latvian.mods.kubejs.block.custom.ShapedBlockBuilder"
 import {$ButtonOrPressurePlateBuilder$$Interface} from "dev.latvian.mods.kubejs.block.custom.ButtonOrPressurePlateBuilder"
+import {$BlockBuilder} from "dev.latvian.mods.kubejs.block.BlockBuilder"
+import {$BlockSetType$$Type} from "net.minecraft.world.level.block.state.properties.BlockSetType"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
-import {$SourceLine} from "dev.latvian.mods.kubejs.script.SourceLine"
 import {$TickDuration$$Type} from "dev.latvian.mods.kubejs.util.TickDuration"
+import {$SourceLine} from "dev.latvian.mods.kubejs.script.SourceLine"
 import {$RandomTickCallback} from "dev.latvian.mods.kubejs.block.callback.RandomTickCallback"
+import {$Consumer} from "java.util.function.Consumer"
 
 export class $ButtonBlockBuilder extends $ShapedBlockBuilder implements $ButtonOrPressurePlateBuilder$$Interface {
  "sourceLine": $SourceLine
@@ -1927,12 +1926,8 @@ static readonly "BUTTON_TAGS": ($ResourceLocation)[]
 
 constructor(i: $ResourceLocation$$Type)
 
-public "ticksToStayPressed"(ticks: $TickDuration$$Type): $BlockBuilder
+public "ticksToStayPressed"(ticks: $TickDuration$$Type): this
 public "behaviour"(behaviour: $BlockSetType$$Type): $BlockBuilder
-/**
- * Tags both the block and the item with the given tag.
- */
-public "tag"(tag: ($ResourceLocation$$Type)[]): $BuilderBase
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -1976,23 +1971,23 @@ export type $RecipeInputKJS$$Original = $RecipeInputKJS;}
 declare module "dev.latvian.mods.kubejs.core.IngredientKJS" {
 import {$Iterable$$Type} from "java.lang.Iterable"
 import {$ItemStackSet} from "dev.latvian.mods.kubejs.item.ItemStackSet"
-import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$DynamicOps$$Type} from "com.mojang.serialization.DynamicOps"
+import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$RecipeScriptContext$$Type} from "dev.latvian.mods.kubejs.recipe.RecipeScriptContext"
 import {$Ingredient, $Ingredient$$Type} from "net.minecraft.world.item.crafting.Ingredient"
 import {$JsonElement} from "com.google.gson.JsonElement"
-import {$WithCodec$$Interface} from "dev.latvian.mods.kubejs.util.WithCodec"
 import {$Predicate, $Predicate$$Type} from "java.util.function.Predicate"
+import {$WithCodec$$Interface} from "dev.latvian.mods.kubejs.util.WithCodec"
 import {$RecipeMatchContext$$Type} from "dev.latvian.mods.kubejs.recipe.filter.RecipeMatchContext"
 import {$ItemMatch$$Interface} from "dev.latvian.mods.kubejs.recipe.match.ItemMatch"
 import {$Replaceable$$Interface} from "dev.latvian.mods.kubejs.recipe.match.Replaceable"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$TagKey} from "net.minecraft.tags.TagKey"
-import {$ItemPredicate, $ItemPredicate$$Interface} from "dev.latvian.mods.kubejs.item.ItemPredicate"
 import {$ItemLike$$Type} from "net.minecraft.world.level.ItemLike"
+import {$ItemPredicate, $ItemPredicate$$Interface} from "dev.latvian.mods.kubejs.item.ItemPredicate"
 import {$Item, $Item$$Type} from "net.minecraft.world.item.Item"
-import {$Set} from "java.util.Set"
 import {$Tag, $Tag$$Type} from "net.minecraft.nbt.Tag"
+import {$Set} from "java.util.Set"
 import {$Stream} from "java.util.stream.Stream"
 import {$SizedIngredient} from "net.neoforged.neoforge.common.crafting.SizedIngredient"
 
@@ -2030,8 +2025,8 @@ export class $IngredientKJS implements $IngredientKJS$$Interface {
  "toIngredientString"(ops: $DynamicOps$$Type<($Tag$$Type)>): StringJS
  "matches"(cx: $RecipeMatchContext$$Type, arg1: $Ingredient$$Type, exact: boolean): boolean
  "matches"(cx: $RecipeMatchContext$$Type, item: $ItemStack$$Type, exact: boolean): boolean
- "self"(): $Ingredient
  "getCodec"(): $Codec<(never)>
+ "self"(): $Ingredient
  "isWildcard"(): boolean
  "canBeUsedForMatching"(): boolean
  "getStacks"(): $ItemStackSet
@@ -2048,11 +2043,11 @@ static "wrap"(from: any): $ItemPredicate
  "toNBT"(): $Tag
  "matchesAny"(cx: $RecipeMatchContext$$Type, itemLikes: $Iterable$$Type<($ItemLike$$Type)>, exact: boolean): boolean
  "matches"(cx: $RecipeMatchContext$$Type, itemLike: $ItemLike$$Type, exact: boolean): boolean
- "or"(arg0: $Predicate$$Type<($ItemStack)>): $Predicate<($ItemStack)>
+static "not"<T>(arg0: $Predicate$$Type<($ItemStack)>): $Predicate<($ItemStack)>
 static "isEqual"<T>(arg0: any): $Predicate<($ItemStack)>
  "negate"(): $Predicate<($ItemStack)>
  "and"(arg0: $Predicate$$Type<($ItemStack)>): $Predicate<($ItemStack)>
-static "not"<T>(arg0: $Predicate$$Type<($ItemStack)>): $Predicate<($ItemStack)>
+ "or"(arg0: $Predicate$$Type<($ItemStack)>): $Predicate<($ItemStack)>
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -2088,7 +2083,7 @@ public static "collect"(): $KubeServerData
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $KubeServerData$$Type = ({"recipeViewerData"?: ($RecipeViewerData$$Type)?, "itemTooltipData"?: $List$$Type<($ItemTooltipData$$Type)>}) | ([recipeViewerData?: ($RecipeViewerData$$Type)?, itemTooltipData?: $List$$Type<($ItemTooltipData$$Type)>]);
+export type $KubeServerData$$Type = ({"itemTooltipData"?: $List$$Type<($ItemTooltipData$$Type)>, "recipeViewerData"?: ($RecipeViewerData$$Type)?}) | ([itemTooltipData?: $List$$Type<($ItemTooltipData$$Type)>, recipeViewerData?: ($RecipeViewerData$$Type)?]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -2258,9 +2253,9 @@ import {$RegistryAccess} from "net.minecraft.core.RegistryAccess"
 export class $BlockStartedFallingKubeEvent implements $KubeEntityEvent$$Interface {
 constructor(level: $Level$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type, entity: $FallingBlockEntity$$Type)
 
+public "getEntity"(): $Entity
 public "getBlock"(): $LevelBlock
 public "getLevel"(): $Level
-public "getEntity"(): $Entity
 public "getPlayer"(): $Player
 public "getRegistries"(): $RegistryAccess
 public "getServer"(): $MinecraftServer
@@ -2300,9 +2295,9 @@ public "cancel"(value: any): any
  * `cancel` denotes a `false` outcome.
  */
 public "cancel"(): any
+get "entity"(): $Entity
 get "block"(): $LevelBlock
 get "level"(): $Level
-get "entity"(): $Entity
 get "player"(): $Player
 get "registries"(): $RegistryAccess
 get "server"(): $MinecraftServer
@@ -2392,7 +2387,6 @@ import {$Registry} from "net.minecraft.core.Registry"
 import {$BlockBuilder} from "dev.latvian.mods.kubejs.block.BlockBuilder"
 import {$KubeColor$$Type} from "dev.latvian.mods.kubejs.color.KubeColor"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
-import {$BuilderBase} from "dev.latvian.mods.kubejs.registry.BuilderBase"
 import {$SourceLine} from "dev.latvian.mods.kubejs.script.SourceLine"
 import {$RandomTickCallback} from "dev.latvian.mods.kubejs.block.callback.RandomTickCallback"
 import {$Consumer} from "java.util.function.Consumer"
@@ -2406,10 +2400,6 @@ readonly "id": $ResourceLocation
 constructor(i: $ResourceLocation$$Type)
 
 public "dustColor"(color: $KubeColor$$Type): this
-/**
- * Tags both the block and the item with the given tag.
- */
-public "tag"(tag: ($ResourceLocation$$Type)[]): $BuilderBase
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -2423,11 +2413,11 @@ export type $FallingBlockBuilder$$Original = $FallingBlockBuilder;}
 declare module "dev.latvian.mods.kubejs.item.JukeboxSongBuilder" {
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Registry} from "net.minecraft.core.Registry"
-import {$JukeboxSong} from "net.minecraft.world.item.JukeboxSong"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
+import {$JukeboxSong} from "net.minecraft.world.item.JukeboxSong"
+import {$SoundEvent$$Type} from "net.minecraft.sounds.SoundEvent"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$BuilderBase} from "dev.latvian.mods.kubejs.registry.BuilderBase"
-import {$SoundEvent$$Type} from "net.minecraft.sounds.SoundEvent"
 import {$SourceLine} from "dev.latvian.mods.kubejs.script.SourceLine"
 import {$Holder$$Type} from "net.minecraft.core.Holder"
 
@@ -2455,8 +2445,8 @@ declare module "dev.latvian.mods.kubejs.core.ContainerKJS" {
 import {$LevelBlock} from "dev.latvian.mods.kubejs.level.LevelBlock"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Container} from "net.minecraft.world.Container"
-import {$List} from "java.util.List"
 import {$ItemPredicate$$Type} from "dev.latvian.mods.kubejs.item.ItemPredicate"
+import {$List} from "java.util.List"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$InventoryKJS$$Interface} from "dev.latvian.mods.kubejs.core.InventoryKJS"
 
@@ -2620,8 +2610,8 @@ export type $ItemModificationKubeEvent$$Type = ($ItemModificationKubeEvent);
 export type $ItemModificationKubeEvent$$Original = $ItemModificationKubeEvent;}
 declare module "dev.latvian.mods.kubejs.recipe.component.CustomObjectRecipeComponent$Value" {
 import {$CustomObjectRecipeComponent$Key, $CustomObjectRecipeComponent$Key$$Type} from "dev.latvian.mods.kubejs.recipe.component.CustomObjectRecipeComponent$Key"
-import {$Comparator, $Comparator$$Type} from "java.util.Comparator"
 import {$Comparable, $Comparable$$Interface} from "java.lang.Comparable"
+import {$Comparator, $Comparator$$Type} from "java.util.Comparator"
 import {$Map$Entry, $Map$Entry$$Type, $Map$Entry$$Interface} from "java.util.Map$Entry"
 import {$Record} from "java.lang.Record"
 
@@ -2663,8 +2653,8 @@ import {$Level} from "net.minecraft.world.level.Level"
 import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$LevelBlock} from "dev.latvian.mods.kubejs.level.LevelBlock"
 import {$KubePlayerEvent$$Interface} from "dev.latvian.mods.kubejs.player.KubePlayerEvent"
-import {$LivingEntity} from "net.minecraft.world.entity.LivingEntity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$Entity} from "net.minecraft.world.entity.Entity"
 import {$MinecraftServer} from "net.minecraft.server.MinecraftServer"
 import {$RegistryAccess} from "net.minecraft.core.RegistryAccess"
 
@@ -2684,17 +2674,17 @@ public "getHitResult"(): $BlockHitResult
  */
 public "getFacing"(): $Direction
 /**
- * The position of the block that was right clicked.
+ * The player that right clicked the block.
  */
-public "getItem"(): $ItemStack
+public "getEntity"(): $Entity
 /**
  * The block that was right clicked.
  */
 public "getBlock"(): $LevelBlock
 /**
- * The player that right clicked the block.
+ * The position of the block that was right clicked.
  */
-public "getEntity"(): $LivingEntity
+public "getItem"(): $ItemStack
 public "getPlayer"(): $Player
 public "getLevel"(): $Level
 public "getRegistries"(): $RegistryAccess
@@ -2738,9 +2728,9 @@ public "cancel"(): any
 get "hand"(): $InteractionHand
 get "hitResult"(): $BlockHitResult
 get "facing"(): $Direction
-get "item"(): $ItemStack
+get "entity"(): $Entity
 get "block"(): $LevelBlock
-get "entity"(): $LivingEntity
+get "item"(): $ItemStack
 get "player"(): $Player
 get "level"(): $Level
 get "registries"(): $RegistryAccess
@@ -2957,15 +2947,15 @@ export {} // Mark the file as a module, do not remove unless there are other imp
 export class $PlatformWrapper$ModInfo {
 constructor(i: StringJS)
 
+public "getVersion"(): StringJS
 public "getName"(): StringJS
 public "setName"(n: StringJS): void
 public "getId"(): StringJS
-public "getVersion"(): StringJS
 public "getCustomName"(): StringJS
+get "version"(): StringJS
 get "name"(): StringJS
 set "name"(value: StringJS)
 get "id"(): StringJS
-get "version"(): StringJS
 get "customName"(): StringJS
 }
 /**
@@ -2978,14 +2968,14 @@ export type $PlatformWrapper$ModInfo$$Type = ($PlatformWrapper$ModInfo);
  */
 export type $PlatformWrapper$ModInfo$$Original = $PlatformWrapper$ModInfo;}
 declare module "dev.latvian.mods.kubejs.fluid.ThickFluidBuilder" {
-import {$FluidBucketItemBuilder} from "dev.latvian.mods.kubejs.fluid.FluidBucketItemBuilder"
 import {$FlowingFluidBuilder} from "dev.latvian.mods.kubejs.fluid.FlowingFluidBuilder"
+import {$FluidBucketItemBuilder} from "dev.latvian.mods.kubejs.fluid.FluidBucketItemBuilder"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Registry} from "net.minecraft.core.Registry"
 import {$FluidBuilder} from "dev.latvian.mods.kubejs.fluid.FluidBuilder"
-import {$KubeColor} from "dev.latvian.mods.kubejs.color.KubeColor"
 import {$FluidBlockBuilder} from "dev.latvian.mods.kubejs.fluid.FluidBlockBuilder"
 import {$FluidTypeBuilder} from "dev.latvian.mods.kubejs.fluid.FluidTypeBuilder"
+import {$KubeColor} from "dev.latvian.mods.kubejs.color.KubeColor"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
 import {$SourceLine} from "dev.latvian.mods.kubejs.script.SourceLine"
 
@@ -3013,8 +3003,8 @@ export type $ThickFluidBuilder$$Type = ($ThickFluidBuilder);
 export type $ThickFluidBuilder$$Original = $ThickFluidBuilder;}
 declare module "dev.latvian.mods.kubejs.client.LoadedTexture" {
 import {$BufferedImage$$Type} from "java.awt.image.BufferedImage"
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Map$$Type} from "java.util.Map"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$KubeColor$$Type} from "dev.latvian.mods.kubejs.color.KubeColor"
 
 export class $LoadedTexture {
@@ -3046,8 +3036,8 @@ export type $LoadedTexture$$Original = $LoadedTexture;}
 declare module "dev.latvian.mods.kubejs.recipe.ingredientaction.IngredientActionType" {
 import {$StreamCodec, $StreamCodec$$Type} from "net.minecraft.network.codec.StreamCodec"
 import {$Lazy} from "dev.latvian.mods.kubejs.util.Lazy"
-import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Map} from "java.util.Map"
+import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$RegistryFriendlyByteBuf, $RegistryFriendlyByteBuf$$Type} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$IngredientAction} from "dev.latvian.mods.kubejs.recipe.ingredientaction.IngredientAction"
@@ -3081,8 +3071,8 @@ export type $IngredientActionType$$Original<T> = $IngredientActionType<(T)>;}
 declare module "dev.latvian.mods.kubejs.core.RegistryObjectKJS" {
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Registry} from "net.minecraft.core.Registry"
-import {$List} from "java.util.List"
 import {$TagKey} from "net.minecraft.tags.TagKey"
+import {$List} from "java.util.List"
 import {$SpecialEquality$$Interface} from "dev.latvian.mods.rhino.util.SpecialEquality"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
 import {$Holder} from "net.minecraft.core.Holder"
@@ -3161,13 +3151,13 @@ public "getClickedFace"(): $Direction
  */
 public "isInside"(): boolean
 /**
- * Gets the position in the block-space of where it was clicked
- */
-public "getClickLocation"(): $Vec3
-/**
  * Gets the nearest horizontal direction to where the player is looking. NORTH if there is no player
  */
 public "getHorizontalDirection"(): $Direction
+/**
+ * Gets the position in the block-space of where it was clicked
+ */
+public "getClickLocation"(): $Vec3
 /**
  * Gets an array of all directions, ordered by which the player is looking closest to
  */
@@ -3193,6 +3183,10 @@ public "canPlace"(): boolean
  */
 public "getNearestLookingVerticalDirection"(): $Direction
 /**
+ * Gets the clicked block
+ */
+public "getClickedBlock"(): $LevelBlock
+/**
  * Gets the FluidSate at the clicked position
  */
 public "getFluidStateAtClickedPos"(): $FluidState
@@ -3206,17 +3200,13 @@ public "isClickedPosIn"(fluid: $Fluid$$Type): boolean
  */
 public "isReplacingSelf"(): boolean
 /**
- * Gets the clicked block
+ * Gets the level
  */
-public "getClickedBlock"(): $LevelBlock
+public "getLevel"(): $Level
 /**
  * Gets the item being placed
  */
 public "getItem"(): $ItemStack
-/**
- * Gets the level
- */
-public "getLevel"(): $Level
 /**
  * Get the horizontal rotation of the player
  */
@@ -3244,17 +3234,17 @@ public "getPlayer"(): $Player
 get "clickedPos"(): $BlockPos
 get "clickedFace"(): $Direction
 get "inside"(): boolean
-get "clickLocation"(): $Vec3
 get "horizontalDirection"(): $Direction
+get "clickLocation"(): $Vec3
 get "nearestLookingDirections"(): ($Direction)[]
 get "nearestLookingDirection"(): $Direction
 get "hand"(): $InteractionHand
 get "nearestLookingVerticalDirection"(): $Direction
+get "clickedBlock"(): $LevelBlock
 get "fluidStateAtClickedPos"(): $FluidState
 get "replacingSelf"(): boolean
-get "clickedBlock"(): $LevelBlock
-get "item"(): $ItemStack
 get "level"(): $Level
+get "item"(): $ItemStack
 get "rotation"(): float
 get "inWater"(): boolean
 get "secondaryUseActive"(): boolean
@@ -3272,9 +3262,9 @@ export type $BlockStateModifyPlacementCallback$$Original = $BlockStateModifyPlac
 declare module "dev.latvian.mods.kubejs.block.callback.BlockStateModifyCallback" {
 import {$Collection} from "java.util.Collection"
 import {$Map, $Map$$Type} from "java.util.Map"
-import {$Enum} from "java.lang.Enum"
 import {$Mirror$$Type} from "net.minecraft.world.level.block.Mirror"
 import {$Optional} from "java.util.Optional"
+import {$Enum} from "java.lang.Enum"
 import {$Comparable, $Comparable$$Type} from "java.lang.Comparable"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$IntegerProperty$$Type} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
@@ -3399,8 +3389,8 @@ export type $BuildingMaterialProperties$Blocks$$Type = ({"slab"?: (boolean)?, "p
  */
 export type $BuildingMaterialProperties$Blocks$$Original = $BuildingMaterialProperties$Blocks;}
 declare module "dev.latvian.mods.kubejs.plugin.builtin.wrapper.TextWrapper" {
-import {$TypeInfo} from "dev.latvian.mods.rhino.type.TypeInfo"
 import {$Iterable$$Type} from "java.lang.Iterable"
+import {$TypeInfo} from "dev.latvian.mods.rhino.type.TypeInfo"
 import {$ItemLore} from "net.minecraft.world.item.component.ItemLore"
 import {$List$$Type} from "java.util.List"
 import {$MutableComponent, $MutableComponent$$Type} from "net.minecraft.network.chat.MutableComponent"
@@ -3421,6 +3411,10 @@ export class $TextWrapper implements $TextWrapper$$Interface {
 static readonly "TYPE_INFO": $TypeInfo
 
 static "ofTag"(tag: $Tag$$Type): $Component
+/**
+ * Returns a plain component of the string, or empty if it is an empty string
+ */
+static "ofString"(s: StringJS): $MutableComponent
 /**
  * Returns a ClickEvent of the input
  */
@@ -3475,14 +3469,6 @@ static "aqua"(text: $MutableComponent$$Type): $MutableComponent
  */
 static "lightPurple"(text: $MutableComponent$$Type): $MutableComponent
 /**
- * Returns a plain component of the string, or empty if it is an empty string
- */
-static "ofString"(s: StringJS): $MutableComponent
-/**
- * Returns a component of the input, colored gray
- */
-static "gray"(text: $MutableComponent$$Type): $MutableComponent
-/**
  * Returns a component displaying all entities matching the input selector
  */
 static "selector"(selector: StringJS): $MutableComponent
@@ -3491,17 +3477,21 @@ static "selector"(selector: StringJS): $MutableComponent
  */
 static "selector"(selector: StringJS, separator: $Component$$Type): $MutableComponent
 /**
+ * Returns a component of the input, colored gray
+ */
+static "gray"(text: $MutableComponent$$Type): $MutableComponent
+/**
  * Checks if the passed in component, and all its children are empty
  */
 static "isEmpty"(component: $Component$$Type): boolean
 /**
- * Joins all components
- */
-static "join"(...texts: ($Component$$Type)[]): $MutableComponent
-/**
  * Joins all components in the list with the separator component
  */
 static "join"(separator: $MutableComponent$$Type, texts: $Iterable$$Type<($Component$$Type)>): $MutableComponent
+/**
+ * Joins all components
+ */
+static "join"(...texts: ($Component$$Type)[]): $MutableComponent
 /**
  * Returns a Component of the input
  */
@@ -3666,10 +3656,10 @@ readonly "preTagEvents": $Map<($ResourceKey<(never)>), ($PreTagKubeEvent)>
  "serverData": $SyncServerDataPayload
  "contextFactory": $KubeJSContextFactory
 
-public static "createForDataGen"(): $ServerScriptManager
 public "reloadAndCapture"(): void
-public "loadFromDirectory"(): void
+public static "createForDataGen"(): $ServerScriptManager
 public "loadAdditional"(): void
+public "loadFromDirectory"(): void
 public static "createPackResources"(original: $List$$Type<($PackResources$$Type)>): $List<($PackResources)>
 public "reload"(): void
 public static "release"(): $ServerScriptManager
@@ -3684,14 +3674,14 @@ export type $ServerScriptManager$$Type = ($ServerScriptManager);
  */
 export type $ServerScriptManager$$Original = $ServerScriptManager;}
 declare module "dev.latvian.mods.kubejs.fluid.ThinFluidBuilder" {
-import {$FluidBucketItemBuilder} from "dev.latvian.mods.kubejs.fluid.FluidBucketItemBuilder"
 import {$FlowingFluidBuilder} from "dev.latvian.mods.kubejs.fluid.FlowingFluidBuilder"
+import {$FluidBucketItemBuilder} from "dev.latvian.mods.kubejs.fluid.FluidBucketItemBuilder"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Registry} from "net.minecraft.core.Registry"
 import {$FluidBuilder} from "dev.latvian.mods.kubejs.fluid.FluidBuilder"
-import {$KubeColor} from "dev.latvian.mods.kubejs.color.KubeColor"
 import {$FluidBlockBuilder} from "dev.latvian.mods.kubejs.fluid.FluidBlockBuilder"
 import {$FluidTypeBuilder} from "dev.latvian.mods.kubejs.fluid.FluidTypeBuilder"
+import {$KubeColor} from "dev.latvian.mods.kubejs.color.KubeColor"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
 import {$SourceLine} from "dev.latvian.mods.kubejs.script.SourceLine"
 
@@ -3767,8 +3757,8 @@ export type $HighlightRenderer$Mode$$Type = (("none") | ("screen") | ("world"));
  */
 export type $HighlightRenderer$Mode$$Original = $HighlightRenderer$Mode;}
 declare module "dev.latvian.mods.kubejs.recipe.filter.RecipeFilterParseEvent" {
-import {$Context} from "dev.latvian.mods.rhino.Context"
 import {$Map, $Map$$Type} from "java.util.Map"
+import {$Context} from "dev.latvian.mods.rhino.Context"
 import {$List, $List$$Type} from "java.util.List"
 import {$RecipeFilter, $RecipeFilter$$Type} from "dev.latvian.mods.kubejs.recipe.filter.RecipeFilter"
 import {$Event} from "net.neoforged.bus.api.Event"
@@ -3813,12 +3803,12 @@ export type $VariantBlockStateGenerator$$Type = ($VariantBlockStateGenerator);
  */
 export type $VariantBlockStateGenerator$$Original = $VariantBlockStateGenerator;}
 declare module "dev.latvian.mods.kubejs.recipe.CachedTagLookup" {
-import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Collection} from "java.util.Collection"
 import {$Map, $Map$$Type} from "java.util.Map"
+import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Registry, $Registry$$Type} from "net.minecraft.core.Registry"
-import {$TagKey, $TagKey$$Type} from "net.minecraft.tags.TagKey"
 import {$List, $List$$Type} from "java.util.List"
+import {$TagKey, $TagKey$$Type} from "net.minecraft.tags.TagKey"
 import {$Set} from "java.util.Set"
 import {$TagLoader$EntryWithSource, $TagLoader$EntryWithSource$$Type} from "net.minecraft.tags.TagLoader$EntryWithSource"
 import {$Holder} from "net.minecraft.core.Holder"
@@ -3867,7 +3857,7 @@ public static "fromJson"(info: $SessionInfo$$Type, json: $JsonObject$$Type): $Se
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $SessionInfo$$Type = ({"source"?: StringJS, "tags"?: $Set$$Type<(StringJS)>}) | ([source?: StringJS, tags?: $Set$$Type<(StringJS)>]);
+export type $SessionInfo$$Type = ({"tags"?: $Set$$Type<(StringJS)>, "source"?: StringJS}) | ([tags?: $Set$$Type<(StringJS)>, source?: StringJS]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -3877,7 +3867,6 @@ import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resource
 import {$Registry} from "net.minecraft.core.Registry"
 import {$BlockBuilder} from "dev.latvian.mods.kubejs.block.BlockBuilder"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
-import {$BuilderBase} from "dev.latvian.mods.kubejs.registry.BuilderBase"
 import {$SourceLine} from "dev.latvian.mods.kubejs.script.SourceLine"
 import {$RandomTickCallback} from "dev.latvian.mods.kubejs.block.callback.RandomTickCallback"
 import {$Consumer} from "java.util.function.Consumer"
@@ -3890,10 +3879,6 @@ readonly "id": $ResourceLocation
 
 constructor(i: $ResourceLocation$$Type)
 
-/**
- * Tags both the block and the item with the given tag.
- */
-public "tag"(tag: ($ResourceLocation$$Type)[]): $BuilderBase
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -3909,16 +3894,16 @@ import {$Pattern} from "java.util.regex.Pattern"
 import {$Collection$$Type} from "java.util.Collection"
 import {$Map} from "java.util.Map"
 import {$List} from "java.util.List"
-import {$Duration$$Type} from "java.time.Duration"
 import {$Runnable$$Type} from "java.lang.Runnable"
+import {$Duration$$Type} from "java.time.Duration"
 import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
 import {$Random$$Type} from "java.util.Random"
 import {$RandomSource} from "net.minecraft.util.RandomSource"
 import {$Lazy} from "dev.latvian.mods.kubejs.util.Lazy"
 import {$CountingMap} from "dev.latvian.mods.kubejs.util.CountingMap"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
-import {$Stat} from "net.minecraft.stats.Stat"
 import {$CreativeModeTab} from "net.minecraft.world.item.CreativeModeTab"
+import {$Stat} from "net.minecraft.stats.Stat"
 import {$CompletableFuture} from "java.util.concurrent.CompletableFuture"
 import {$Supplier$$Type} from "java.util.function.Supplier"
 
@@ -3939,13 +3924,13 @@ export class $UtilsWrapper implements $UtilsWrapper$$Interface {
  */
 static "newRandom"(seed: long): $RandomSource
 /**
- * Gets a random object from the list using the passed in random
- */
-static "randomOf"(random: $Random$$Type, objects: $Collection$$Type<(any)>): any
-/**
  * Returns a new counting map
  */
 static "newCountingMap"(): $CountingMap
+/**
+ * Gets a random object from the list using the passed in random
+ */
+static "randomOf"(random: $Random$$Type, objects: $Collection$$Type<(any)>): any
 /**
  * Gets the current system time, in milliseconds
  */
@@ -3960,21 +3945,21 @@ static "expiringLazy"<T>(supplier: $Supplier$$Type<(T)>, expires: $Duration$$Typ
  */
 static "getStat"(id: $ResourceLocation$$Type): $Stat<($ResourceLocation)>
 /**
- * Runs the provided runnable function in KubeJS' background thread and returns its CompletableFuture
+ * Returns a lazy value with the supplier function as its value factory
  */
-static "runAsync"(task: $Runnable$$Type): $CompletableFuture<(void)>
+static "lazy"<T>(supplier: $Supplier$$Type<(T)>): $Lazy<(T)>
 /**
  * Returns a new mutable list
  */
 static "newList"(): $List<(never)>
 /**
- * Returns a lazy value with the supplier function as its value factory
- */
-static "lazy"<T>(supplier: $Supplier$$Type<(T)>): $Lazy<(T)>
-/**
  * Runs the provided supplier function in KubeJS' background thread and returns its CompletableFuture
  */
 static "supplyAsync"(task: $Supplier$$Type<(any)>): $CompletableFuture<(any)>
+/**
+ * Runs the provided runnable function in KubeJS' background thread and returns its CompletableFuture
+ */
+static "runAsync"(task: $Runnable$$Type): $CompletableFuture<(void)>
 /**
  * Returns a regex pattern of the input
  */
@@ -4024,10 +4009,9 @@ export type $UtilsWrapper$$Original = $UtilsWrapper;}
 declare module "dev.latvian.mods.kubejs.block.custom.CropBlockBuilder" {
 import {$ToDoubleFunction$$Type} from "java.util.function.ToDoubleFunction"
 import {$BlockBuilder} from "dev.latvian.mods.kubejs.block.BlockBuilder"
-import {$BuilderBase} from "dev.latvian.mods.kubejs.registry.BuilderBase"
 import {$LootTable} from "net.minecraft.world.level.storage.loot.LootTable"
-import {$Holder$$Type} from "net.minecraft.core.Holder"
 import {$NumberProvider$$Type} from "net.minecraft.world.level.storage.loot.providers.number.NumberProvider"
+import {$Holder$$Type} from "net.minecraft.core.Holder"
 import {$Consumer, $Consumer$$Type} from "java.util.function.Consumer"
 import {$ToIntFunction$$Type} from "java.util.function.ToIntFunction"
 import {$CropBlockBuilder$ShapeBuilder$$Type} from "dev.latvian.mods.kubejs.block.custom.CropBlockBuilder$ShapeBuilder"
@@ -4036,8 +4020,8 @@ import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resource
 import {$Registry} from "net.minecraft.core.Registry"
 import {$Item$$Type} from "net.minecraft.world.item.Item"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
-import {$SourceLine} from "dev.latvian.mods.kubejs.script.SourceLine"
 import {$CropBlockBuilder$SurviveCallback$$Type} from "dev.latvian.mods.kubejs.block.custom.CropBlockBuilder$SurviveCallback"
+import {$SourceLine} from "dev.latvian.mods.kubejs.script.SourceLine"
 import {$RandomTickCallback, $RandomTickCallback$$Type} from "dev.latvian.mods.kubejs.block.callback.RandomTickCallback"
 
 export class $CropBlockBuilder extends $BlockBuilder {
@@ -4062,13 +4046,13 @@ public "randomTick"(randomTickCallback: $Consumer$$Type<($RandomTickCallback)>):
 public "generateLootTable"(generator: $KubeDataGenerator$$Type): $LootTable
 public "bonemeal"(bonemealCallback: $ToIntFunction$$Type<($RandomTickCallback)>): this
 public "noItem"(): $BlockBuilder
-public "farmersCanPlant"(): this
-public "survive"(surviveCallback: $CropBlockBuilder$SurviveCallback$$Type): this
-public "growTick"(growSpeedCallback: $ToDoubleFunction$$Type<($RandomTickCallback)>): this
 /**
  * Remove seed drops from the loot table, does not prevent seed item from creating.
  */
 public "noSeeds"(): this
+public "farmersCanPlant"(): this
+public "survive"(surviveCallback: $CropBlockBuilder$SurviveCallback$$Type): this
+public "growTick"(growSpeedCallback: $ToDoubleFunction$$Type<($RandomTickCallback)>): this
 /**
  * Set the age of the crop and the shape of the crop at that age.
  */
@@ -4077,10 +4061,6 @@ public "age"(age: integer, builder: $Consumer$$Type<($CropBlockBuilder$ShapeBuil
  * Set the age of the crop. Note that the box will be the same for all ages (A full block size).
  */
 public "age"(age: integer): this
-/**
- * Tags both the block and the item with the given tag.
- */
-public "tag"(tag: ($ResourceLocation$$Type)[]): $BuilderBase
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -4191,8 +4171,8 @@ declare module "dev.latvian.mods.kubejs.text.tooltip.ItemTooltipData" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$TextAction, $TextAction$$Type} from "dev.latvian.mods.kubejs.text.action.TextAction"
 import {$Optional, $Optional$$Type} from "java.util.Optional"
-import {$Ingredient, $Ingredient$$Type} from "net.minecraft.world.item.crafting.Ingredient"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
+import {$Ingredient, $Ingredient$$Type} from "net.minecraft.world.item.crafting.Ingredient"
 import {$TooltipRequirements, $TooltipRequirements$$Type} from "dev.latvian.mods.kubejs.text.tooltip.TooltipRequirements"
 import {$List, $List$$Type} from "java.util.List"
 import {$Record} from "java.lang.Record"
@@ -4289,16 +4269,16 @@ import {$RegistryAccess} from "net.minecraft.core.RegistryAccess"
 export interface $KubeEntityEvent$$Interface extends $KubeLevelEvent$$Interface {
 
 (): $Entity$$Type
-get "level"(): $Level
 get "entity"(): $Entity
+get "level"(): $Level
 get "player"(): $Player
 get "registries"(): $RegistryAccess
 get "server"(): $MinecraftServer
 }
 
 export class $KubeEntityEvent implements $KubeEntityEvent$$Interface {
- "getLevel"(): $Level
  "getEntity"(): $Entity
+ "getLevel"(): $Level
  "getPlayer"(): $Player
  "getRegistries"(): $RegistryAccess
  "getServer"(): $MinecraftServer
@@ -4370,13 +4350,13 @@ constructor(player: $Player$$Type, entity: $Entity$$Type, hand: $InteractionHand
  */
 public "getHand"(): $InteractionHand
 /**
- * The item that was used to interact with the entity.
- */
-public "getItem"(): $ItemStack
-/**
  * The player that interacted with the entity.
  */
 public "getEntity"(): $LivingEntity
+/**
+ * The item that was used to interact with the entity.
+ */
+public "getItem"(): $ItemStack
 /**
  * The entity that was interacted with.
  */
@@ -4422,8 +4402,8 @@ public "cancel"(value: any): any
  */
 public "cancel"(): any
 get "hand"(): $InteractionHand
-get "item"(): $ItemStack
 get "entity"(): $LivingEntity
+get "item"(): $ItemStack
 get "target"(): $Entity
 get "player"(): $Player
 get "level"(): $Level
@@ -4441,8 +4421,8 @@ export type $ItemEntityInteractedKubeEvent$$Type = ($ItemEntityInteractedKubeEve
 export type $ItemEntityInteractedKubeEvent$$Original = $ItemEntityInteractedKubeEvent;}
 declare module "dev.latvian.mods.kubejs.recipe.component.CustomObjectRecipeComponent" {
 import {$TinyMap} from "dev.latvian.mods.kubejs.util.TinyMap"
-import {$ComponentRole$$Type} from "dev.latvian.mods.kubejs.recipe.component.ComponentRole"
 import {$List, $List$$Type} from "java.util.List"
+import {$ComponentRole$$Type} from "dev.latvian.mods.kubejs.recipe.component.ComponentRole"
 import {$RecipeComponent, $RecipeComponent$$Type, $RecipeComponent$$Interface} from "dev.latvian.mods.kubejs.recipe.component.RecipeComponent"
 import {$RecipeKey} from "dev.latvian.mods.kubejs.recipe.RecipeKey"
 import {$ReplacementMatchInfo$$Type} from "dev.latvian.mods.kubejs.recipe.match.ReplacementMatchInfo"
@@ -4458,8 +4438,8 @@ import {$RecipeMatchContext$$Type} from "dev.latvian.mods.kubejs.recipe.filter.R
 import {$EitherRecipeComponent} from "dev.latvian.mods.kubejs.recipe.component.EitherRecipeComponent"
 import {$TypeInfo} from "dev.latvian.mods.rhino.type.TypeInfo"
 import {$CustomObjectRecipeComponent$Key, $CustomObjectRecipeComponent$Key$$Type} from "dev.latvian.mods.kubejs.recipe.component.CustomObjectRecipeComponent$Key"
-import {$CustomObjectRecipeComponent$Value, $CustomObjectRecipeComponent$Value$$Type} from "dev.latvian.mods.kubejs.recipe.component.CustomObjectRecipeComponent$Value"
 import {$UniqueIdBuilder$$Type} from "dev.latvian.mods.kubejs.recipe.component.UniqueIdBuilder"
+import {$CustomObjectRecipeComponent$Value, $CustomObjectRecipeComponent$Value$$Type} from "dev.latvian.mods.kubejs.recipe.component.CustomObjectRecipeComponent$Value"
 import {$RecipeComponentBuilder} from "dev.latvian.mods.kubejs.recipe.component.RecipeComponentBuilder"
 import {$KubeRecipe$$Type} from "dev.latvian.mods.kubejs.recipe.KubeRecipe"
 import {$RecipeValidationContext$$Type} from "dev.latvian.mods.kubejs.recipe.component.RecipeValidationContext"
@@ -4491,8 +4471,6 @@ public "typeInfo"(): $TypeInfo
 public "keys"(): $List<($CustomObjectRecipeComponent$Key)>
 public "codec"(): $Codec<($List<($CustomObjectRecipeComponent$Value)>)>
 public "mapCodec"(): $MapCodec<($List<($CustomObjectRecipeComponent$Value)>)>
-public "writeToJson"(recipe: $KubeRecipe$$Type, cv: $RecipeComponentValue$$Type<($List$$Type<($CustomObjectRecipeComponent$Value$$Type)>)>, json: $JsonObject$$Type): void
-public "readFromJson"(recipe: $KubeRecipe$$Type, cv: $RecipeComponentValue$$Type<($List$$Type<($CustomObjectRecipeComponent$Value$$Type)>)>, json: $JsonObject$$Type): void
 public "orSelf"(): $RecipeComponent<($List<($CustomObjectRecipeComponent$Value)>)>
 public "outputKey"(name: StringJS): $RecipeKey<($List<($CustomObjectRecipeComponent$Value)>)>
 public "asListOrSelf"(): $ListRecipeComponent<($List<($CustomObjectRecipeComponent$Value)>)>
@@ -4501,17 +4479,19 @@ public "asConditionalListOrSelf"(): $ListRecipeComponent<($List<($CustomObjectRe
 public "asPatternKey"(): $RecipeComponent<($TinyMap<(character), ($List<($CustomObjectRecipeComponent$Value)>)>)>
 public "withCodec"(codec: $Codec$$Type<($List$$Type<($CustomObjectRecipeComponent$Value$$Type)>)>): $RecipeComponent<($List<($CustomObjectRecipeComponent$Value)>)>
 public "allowEmpty"(): boolean
-public "inputKey"(name: StringJS): $RecipeKey<($List<($CustomObjectRecipeComponent$Value)>)>
-public "or"<O>(other: $RecipeComponent$$Type<(O)>): $EitherRecipeComponent<($List<($CustomObjectRecipeComponent$Value)>), (O)>
+public "writeToJson"(recipe: $KubeRecipe$$Type, cv: $RecipeComponentValue$$Type<($List$$Type<($CustomObjectRecipeComponent$Value$$Type)>)>, json: $JsonObject$$Type): void
+public "readFromJson"(recipe: $KubeRecipe$$Type, cv: $RecipeComponentValue$$Type<($List$$Type<($CustomObjectRecipeComponent$Value$$Type)>)>, json: $JsonObject$$Type): void
 public "isIgnored"(): boolean
+public "inputKey"(name: StringJS): $RecipeKey<($List<($CustomObjectRecipeComponent$Value)>)>
 public "toString"(ops: $OpsContainer$$Type, value: $List$$Type<($CustomObjectRecipeComponent$Value$$Type)>): StringJS
-public static "builder"(...keys: ($CustomObjectRecipeComponent$Key$$Type)[]): $CustomObjectRecipeComponent
 public static "builder"(keys: $List$$Type<($CustomObjectRecipeComponent$Key$$Type)>): $CustomObjectRecipeComponent
+public static "builder"(...keys: ($CustomObjectRecipeComponent$Key$$Type)[]): $CustomObjectRecipeComponent
 public "key"(name: StringJS, role: $ComponentRole$$Type): $RecipeKey<($List<($CustomObjectRecipeComponent$Value)>)>
 public "asList"(): $ListRecipeComponent<($List<($CustomObjectRecipeComponent$Value)>)>
-public "createBuilder"(): $RecipeComponentBuilder
 public "spread"(value: $List$$Type<($CustomObjectRecipeComponent$Value$$Type)>): $List<(never)>
+public "or"<O>(other: $RecipeComponent$$Type<(O)>): $EitherRecipeComponent<($List<($CustomObjectRecipeComponent$Value)>), (O)>
 public "asMap"<K>(key: $RecipeComponent$$Type<(K)>): $RecipeComponent<($TinyMap<(K), ($List<($CustomObjectRecipeComponent$Value)>)>)>
+public "createBuilder"(): $RecipeComponentBuilder
 public "otherKey"(name: StringJS): $RecipeKey<($List<($CustomObjectRecipeComponent$Value)>)>
 get "ignored"(): boolean
 }
@@ -4546,8 +4526,8 @@ export type $RemoteRecipeViewerDataUpdatedEvent$$Original = $RemoteRecipeViewerD
 declare module "dev.latvian.mods.kubejs.core.MenuTypeKJS" {
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Registry} from "net.minecraft.core.Registry"
-import {$List} from "java.util.List"
 import {$TagKey} from "net.minecraft.tags.TagKey"
+import {$List} from "java.util.List"
 import {$MenuType} from "net.minecraft.world.inventory.MenuType"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
 import {$RegistryObjectKJS$$Interface} from "dev.latvian.mods.kubejs.core.RegistryObjectKJS"
@@ -4706,8 +4686,8 @@ import {$RegistryKubeEvent$$Type} from "dev.latvian.mods.kubejs.registry.Registr
 import {$Collection} from "java.util.Collection"
 import {$Map, $Map$$Type} from "java.util.Map"
 import {$List} from "java.util.List"
-import {$Direction} from "net.minecraft.core.Direction"
 import {$BlockEntityPredicate} from "dev.latvian.mods.kubejs.block.predicate.BlockEntityPredicate"
+import {$Direction} from "net.minecraft.core.Direction"
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$BlockIDPredicate} from "dev.latvian.mods.kubejs.block.predicate.BlockIDPredicate"
 import {$BlockSetType} from "net.minecraft.world.level.block.state.properties.BlockSetType"
@@ -4747,11 +4727,11 @@ public static "getAllBlockStates"(): $Collection<($BlockState)>
  * Get a map of direction name to Direction. Functionally identical to Direction.ALL
  */
 public static "getFacing"(): $Map<(StringJS), ($Direction)>
-public static "entity"(id: $ResourceLocation$$Type): $BlockEntityPredicate
 /**
  * Gets a Block from a block id
  */
 public static "getBlock"(id: $ResourceLocation$$Type): $Block
+public static "entity"(id: $ResourceLocation$$Type): $BlockEntityPredicate
 public static "id"(id: $ResourceLocation$$Type, properties: $Map$$Type<(StringJS), (any)>): $BlockIDPredicate
 public static "id"(id: $ResourceLocation$$Type): $BlockIDPredicate
 /**
@@ -4962,6 +4942,14 @@ export class $ExplosionKubeEvent$After extends $ExplosionKubeEvent {
 constructor(level: $Level$$Type, explosion: $Explosion$$Type, affectedEntities: $List$$Type<($Entity$$Type)>)
 
 /**
+ * Gets a list of all entities affected by the explosion.
+ */
+public "getAffectedEntities"(): $EntityArrayList
+/**
+ * Gets a list of all blocks affected by the explosion.
+ */
+public "getAffectedBlocks"(): $List<($LevelBlock)>
+/**
  * Remove an entity from the list of affected entities.
  */
 public "removeAffectedEntity"(entity: $Entity$$Type): void
@@ -4981,16 +4969,8 @@ public "removeAllAffectedBlocks"(): void
  * Remove all knockback from all affected *players*.
  */
 public "removeKnockback"(): void
-/**
- * Gets a list of all blocks affected by the explosion.
- */
-public "getAffectedBlocks"(): $List<($LevelBlock)>
-/**
- * Gets a list of all entities affected by the explosion.
- */
-public "getAffectedEntities"(): $EntityArrayList
-get "affectedBlocks"(): $List<($LevelBlock)>
 get "affectedEntities"(): $EntityArrayList
+get "affectedBlocks"(): $List<($LevelBlock)>
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -5019,13 +4999,13 @@ export class $PlayerClonedKubeEvent implements $KubePlayerEvent$$Interface {
 constructor(player: $ServerPlayer$$Type, oldPlayer: $ServerPlayer$$Type, keepData: boolean)
 
 /**
- * Gets whether the player's data was kept, e.g. when returning from the end.
- */
-public "getKeepData"(): boolean
-/**
  * Gets the player that was before respawn. Note that this entity is already removed from the world.
  */
 public "getOldPlayer"(): $ServerPlayer
+/**
+ * Gets whether the player's data was kept, e.g. when returning from the end.
+ */
+public "getKeepData"(): boolean
 /**
  * Gets the player that respawned.
  */
@@ -5070,8 +5050,8 @@ public "cancel"(value: any): any
  * `cancel` denotes a `false` outcome.
  */
 public "cancel"(): any
-get "keepData"(): boolean
 get "oldPlayer"(): $ServerPlayer
+get "keepData"(): boolean
 get "entity"(): $LivingEntity
 get "player"(): $Player
 get "level"(): $Level
@@ -5091,11 +5071,11 @@ declare module "dev.latvian.mods.kubejs.recipe.viewer.server.ItemData" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$ItemData$DataComponentSubtypes, $ItemData$DataComponentSubtypes$$Type} from "dev.latvian.mods.kubejs.recipe.viewer.server.ItemData$DataComponentSubtypes"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$Ingredient, $Ingredient$$Type} from "net.minecraft.world.item.crafting.Ingredient"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
+import {$Ingredient, $Ingredient$$Type} from "net.minecraft.world.item.crafting.Ingredient"
 import {$List, $List$$Type} from "java.util.List"
-import {$ItemData$Info, $ItemData$Info$$Type} from "dev.latvian.mods.kubejs.recipe.viewer.server.ItemData$Info"
 import {$ItemData$Group, $ItemData$Group$$Type} from "dev.latvian.mods.kubejs.recipe.viewer.server.ItemData$Group"
+import {$ItemData$Info, $ItemData$Info$$Type} from "dev.latvian.mods.kubejs.recipe.viewer.server.ItemData$Info"
 import {$Record} from "java.lang.Record"
 
 export class $ItemData extends $Record {
@@ -5120,7 +5100,7 @@ get "empty"(): boolean
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $ItemData$$Type = ({"dataComponentSubtypes"?: $List$$Type<($ItemData$DataComponentSubtypes$$Type)>, "removedEntries"?: $List$$Type<($Ingredient$$Type)>, "groupedEntries"?: $List$$Type<($ItemData$Group$$Type)>, "completelyRemovedEntries"?: $List$$Type<($Ingredient$$Type)>, "info"?: $List$$Type<($ItemData$Info$$Type)>, "addedEntries"?: $List$$Type<($ItemStack$$Type)>}) | ([dataComponentSubtypes?: $List$$Type<($ItemData$DataComponentSubtypes$$Type)>, removedEntries?: $List$$Type<($Ingredient$$Type)>, groupedEntries?: $List$$Type<($ItemData$Group$$Type)>, completelyRemovedEntries?: $List$$Type<($Ingredient$$Type)>, info?: $List$$Type<($ItemData$Info$$Type)>, addedEntries?: $List$$Type<($ItemStack$$Type)>]);
+export type $ItemData$$Type = ({"removedEntries"?: $List$$Type<($Ingredient$$Type)>, "groupedEntries"?: $List$$Type<($ItemData$Group$$Type)>, "completelyRemovedEntries"?: $List$$Type<($Ingredient$$Type)>, "info"?: $List$$Type<($ItemData$Info$$Type)>, "addedEntries"?: $List$$Type<($ItemStack$$Type)>, "dataComponentSubtypes"?: $List$$Type<($ItemData$DataComponentSubtypes$$Type)>}) | ([removedEntries?: $List$$Type<($Ingredient$$Type)>, groupedEntries?: $List$$Type<($ItemData$Group$$Type)>, completelyRemovedEntries?: $List$$Type<($Ingredient$$Type)>, info?: $List$$Type<($ItemData$Info$$Type)>, addedEntries?: $List$$Type<($ItemStack$$Type)>, dataComponentSubtypes?: $List$$Type<($ItemData$DataComponentSubtypes$$Type)>]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -5202,8 +5182,8 @@ export type $BlockStateMirrorCallback$$Type = ($BlockStateMirrorCallback);
  */
 export type $BlockStateMirrorCallback$$Original = $BlockStateMirrorCallback;}
 declare module "dev.latvian.mods.kubejs.core.EntityGetterKJS" {
-import {$Iterable} from "java.lang.Iterable"
 import {$Player} from "net.minecraft.world.entity.player.Player"
+import {$Iterable} from "java.lang.Iterable"
 import {$EntityCollectionKJS$$Interface} from "dev.latvian.mods.kubejs.core.EntityCollectionKJS"
 import {$UUID$$Type} from "java.util.UUID"
 import {$List} from "java.util.List"
@@ -5244,32 +5224,32 @@ export type $EntityGetterKJS$$Type = ($EntityGetterKJS);
  */
 export type $EntityGetterKJS$$Original = $EntityGetterKJS;}
 declare module "dev.latvian.mods.kubejs.core.FluidStackKJS" {
+import {$ComponentFunctions} from "dev.latvian.mods.kubejs.component.ComponentFunctions"
 import {$ReplacementMatch} from "dev.latvian.mods.kubejs.recipe.match.ReplacementMatch"
 import {$DataComponentMap, $DataComponentMap$$Type} from "net.minecraft.core.component.DataComponentMap"
-import {$ComponentFunctions} from "dev.latvian.mods.kubejs.component.ComponentFunctions"
 import {$Potion$$Type} from "net.minecraft.world.item.alchemy.Potion"
 import {$DynamicOps$$Type} from "com.mojang.serialization.DynamicOps"
 import {$UUID$$Type} from "java.util.UUID"
 import {$MutableDataComponentHolder} from "net.neoforged.neoforge.common.MutableDataComponentHolder"
-import {$List, $List$$Type} from "java.util.List"
 import {$FluidMatch$$Interface} from "dev.latvian.mods.kubejs.recipe.match.FluidMatch"
+import {$List, $List$$Type} from "java.util.List"
 import {$JsonElement} from "com.google.gson.JsonElement"
 import {$RelativeURL} from "dev.latvian.mods.kubejs.web.RelativeURL"
 import {$FluidStack, $FluidStack$$Type} from "net.neoforged.neoforge.fluids.FluidStack"
-import {$DataComponentType$$Type} from "net.minecraft.core.component.DataComponentType"
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
+import {$DataComponentType$$Type} from "net.minecraft.core.component.DataComponentType"
 import {$FluidIngredient$$Type} from "net.neoforged.neoforge.fluids.crafting.FluidIngredient"
 import {$Replaceable$$Interface} from "dev.latvian.mods.kubejs.recipe.match.Replaceable"
 import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$DyeColor$$Type} from "net.minecraft.world.item.DyeColor"
-import {$ResourceKey, $ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
 import {$SpecialEquality$$Interface} from "dev.latvian.mods.rhino.util.SpecialEquality"
+import {$ResourceKey, $ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
 import {$MutableDataComponentHolderFunctions, $MutableDataComponentHolderFunctions$$Interface} from "dev.latvian.mods.kubejs.component.MutableDataComponentHolderFunctions"
-import {$FluidLike, $FluidLike$$Interface} from "dev.latvian.mods.kubejs.fluid.FluidLike"
 import {$PotionContents$$Type} from "net.minecraft.world.item.alchemy.PotionContents"
 import {$RegistryObjectKJS$$Interface} from "dev.latvian.mods.kubejs.core.RegistryObjectKJS"
+import {$FluidLike, $FluidLike$$Interface} from "dev.latvian.mods.kubejs.fluid.FluidLike"
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$Map$$Type} from "java.util.Map"
 import {$RecipeScriptContext$$Type} from "dev.latvian.mods.kubejs.recipe.RecipeScriptContext"
@@ -5298,8 +5278,8 @@ get "registryId"(): $ResourceKey<($Registry<($Fluid)>)>
 get "registry"(): $Registry<($Fluid)>
 get "idLocation"(): $ResourceLocation
 get "mod"(): StringJS
-get "key"(): $ResourceKey<($Fluid)>
 get "codec"(): $Codec<(never)>
+get "key"(): $ResourceKey<($Fluid)>
 get "empty"(): boolean
 get "id"(): StringJS
 get "componentHolder"(): $MutableDataComponentHolder
@@ -5344,9 +5324,9 @@ export class $FluidStackKJS implements $FluidStackKJS$$Interface {
  "kjs$equalsIgnoringCount"(stack: $FluidStack$$Type): boolean
  "matches"(cx: $RecipeMatchContext$$Type, ingredient: $FluidIngredient$$Type, exact: boolean): boolean
  "matches"(cx: $RecipeMatchContext$$Type, s: $FluidStack$$Type, exact: boolean): boolean
+ "getCodec"(): $Codec<(never)>
  "kjs$self"(): $FluidStack
  "getKey"(): $ResourceKey<($Fluid)>
- "getCodec"(): $Codec<(never)>
  "specialEquals"(o: any, shallow: boolean): boolean
  "isEmpty"(): boolean
  "getId"(): StringJS
@@ -5500,12 +5480,12 @@ export type $SimplePlayerKubeEvent$$Type = ($SimplePlayerKubeEvent);
 export type $SimplePlayerKubeEvent$$Original = $SimplePlayerKubeEvent;}
 declare module "dev.latvian.mods.kubejs.registry.ServerRegistryKubeEvent" {
 import {$KubeEvent$$Interface} from "dev.latvian.mods.kubejs.event.KubeEvent"
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$DynamicOps, $DynamicOps$$Type} from "com.mojang.serialization.DynamicOps"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Registry, $Registry$$Type} from "net.minecraft.core.Registry"
 import {$Codec, $Codec$$Type} from "com.mojang.serialization.Codec"
-import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$List$$Type} from "java.util.List"
+import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$JsonElement, $JsonElement$$Type} from "com.google.gson.JsonElement"
 import {$CustomBuilderObject} from "dev.latvian.mods.kubejs.registry.CustomBuilderObject"
 import {$ResourceKey, $ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
@@ -5518,8 +5498,8 @@ readonly "jsonOps": $DynamicOps<($JsonElement)>
 
 constructor(registryKey: $ResourceKey$$Type<($Registry<(T)>)>, jsonOps: $DynamicOps$$Type<($JsonElement$$Type)>, codec: $Codec$$Type<(T)>, builders: $List$$Type<($BuilderBase$$Type<(never)>)>)
 
-public "createFromJson"(id: $ResourceLocation$$Type, json: $JsonElement$$Type): $CustomBuilderObject
 public "createCustom"(id: $ResourceLocation$$Type, object: $Supplier$$Type<(any)>): $CustomBuilderObject
+public "createFromJson"(id: $ResourceLocation$$Type, json: $JsonElement$$Type): $CustomBuilderObject
 public "create"(id: $ResourceLocation$$Type, type: $ResourceLocation$$Type): $BuilderBase<(T)>
 public "create"(id: $ResourceLocation$$Type): $BuilderBase<(T)>
 /**
@@ -5601,7 +5581,7 @@ get "unknown"(): boolean
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $SourceLine$$Type = ({"source"?: StringJS, "line"?: integer}) | ([source?: StringJS, line?: integer]);
+export type $SourceLine$$Type = ({"line"?: integer, "source"?: StringJS}) | ([line?: integer, source?: StringJS]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -5611,26 +5591,26 @@ import {$Iterable} from "java.lang.Iterable"
 import {$FormattedText, $FormattedText$$Type} from "net.minecraft.network.chat.FormattedText"
 import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$UUID$$Type} from "java.util.UUID"
-import {$JsonElement} from "com.google.gson.JsonElement"
 import {$List, $List$$Type} from "java.util.List"
+import {$JsonElement} from "com.google.gson.JsonElement"
 import {$Component, $Component$$Type, $Component$$Interface} from "net.minecraft.network.chat.Component"
 import {$FormattedText$StyledContentConsumer$$Type} from "net.minecraft.network.chat.FormattedText$StyledContentConsumer"
 import {$Message$$Type} from "com.mojang.brigadier.Message"
 import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
-import {$WrappedJS$$Interface} from "dev.latvian.mods.kubejs.util.WrappedJS"
 import {$Codec} from "com.mojang.serialization.Codec"
+import {$WrappedJS$$Interface} from "dev.latvian.mods.kubejs.util.WrappedJS"
 import {$ComponentContents} from "net.minecraft.network.chat.ComponentContents"
 import {$FormattedText$ContentConsumer$$Type} from "net.minecraft.network.chat.FormattedText$ContentConsumer"
-import {$WithCodec$$Interface} from "dev.latvian.mods.kubejs.util.WithCodec"
 import {$Style, $Style$$Type} from "net.minecraft.network.chat.Style"
+import {$WithCodec$$Interface} from "dev.latvian.mods.kubejs.util.WithCodec"
 import {$ClickEvent$$Type} from "net.minecraft.network.chat.ClickEvent"
 import {$ChunkPos$$Type} from "net.minecraft.world.level.ChunkPos"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$FormattedCharSequence} from "net.minecraft.util.FormattedCharSequence"
 import {$URI$$Type} from "java.net.URI"
 import {$MutableComponent} from "net.minecraft.network.chat.MutableComponent"
-import {$KubeColor$$Type} from "dev.latvian.mods.kubejs.color.KubeColor"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$KubeColor$$Type} from "dev.latvian.mods.kubejs.color.KubeColor"
 import {$Date$$Type} from "java.util.Date"
 import {$DataSource$$Type} from "net.minecraft.network.chat.contents.DataSource"
 
@@ -5650,8 +5630,8 @@ get "siblings"(): $List<($Component)>
 
 export class $ComponentKJS implements $ComponentKJS$$Interface {
  "forEach"(action: $Consumer$$Type<($Component)>): void
- "self"(): $MutableComponent
  "getCodec"(): $Codec<(never)>
+ "self"(): $MutableComponent
  "asIterable"(): $Iterable<($Component)>
  "color"(c: $KubeColor$$Type): $MutableComponent
  "bold"(value: boolean): $MutableComponent
@@ -5709,16 +5689,16 @@ export class $ComponentKJS implements $ComponentKJS$$Interface {
  * @deprecated
  */
  "component"(): $Component
+static "selector"(arg0: StringJS, arg1: ($Component$$Type)?): $MutableComponent
  "visit"<T>(arg0: $FormattedText$ContentConsumer$$Type<(T)>): $Optional<(T)>
  "visit"<T>(arg0: $FormattedText$StyledContentConsumer$$Type<(T)>, arg1: $Style$$Type): $Optional<(T)>
-static "selector"(arg0: StringJS, arg1: ($Component$$Type)?): $MutableComponent
  "getContents"(): $ComponentContents
+ "getString"(arg0: integer): StringJS
+ "getString"(): StringJS
  "contains"(arg0: $Component$$Type): boolean
 static "empty"(): $MutableComponent
  "copy"(): $MutableComponent
 static "literal"(arg0: StringJS): $MutableComponent
- "getString"(): StringJS
- "getString"(arg0: integer): StringJS
 static "score"(arg0: StringJS, arg1: StringJS): $MutableComponent
 static "nullToEmpty"(arg0: StringJS): $Component
 static "translatable"(arg0: StringJS): $MutableComponent
@@ -5743,10 +5723,10 @@ static "translationArg"(arg0: $UUID$$Type): $Component
 static "translationArg"(arg0: $Message$$Type): $Component
  "toJson"(): $JsonElement
  "toNBT"(): $Tag
-static "of"(arg0: StringJS, arg1: $Style$$Type): $FormattedText
 static "of"(arg0: StringJS): $FormattedText
-static "composite"(arg0: $List$$Type<($FormattedText$$Type)>): $FormattedText
+static "of"(arg0: StringJS, arg1: $Style$$Type): $FormattedText
 static "composite"(...arg0: ($FormattedText$$Type)[]): $FormattedText
+static "composite"(arg0: $List$$Type<($FormattedText$$Type)>): $FormattedText
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -5764,8 +5744,8 @@ import {$Vector3f} from "org.joml.Vector3f"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$Quaternionf} from "org.joml.Quaternionf"
 import {$Matrix4f} from "org.joml.Matrix4f"
-import {$Vector3d} from "org.joml.Vector3d"
 import {$Matrix3f} from "org.joml.Matrix3f"
+import {$Vector3d} from "org.joml.Vector3d"
 
 /**
  * This class is not allowed By KubeJS!
@@ -5797,12 +5777,12 @@ static "isPowerOfTwo"(value: integer): boolean
 static "rad"(value: double): double
 static "quaternion"(x: float, y: float, z: float, w: float): $Quaternionf
 static "lerp"(value: double, min: double, max: double): double
+static "approachDegrees"(current: double, target: double, speed: double): double
+static "wrapDegrees"(d: double): double
 static "clampedLerp"(value: double, min: double, max: double): double
 static "degreesDifference"(current: double, target: double): double
 static "rotateIfNecessary"(current: double, target: double, max: double): double
 static "approach"(current: double, target: double, speed: double): double
-static "approachDegrees"(current: double, target: double, speed: double): double
-static "wrapDegrees"(d: double): double
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -5847,13 +5827,12 @@ export type $KubeRecipeFactory$$Type = ({"factory"?: $Supplier$$Type<($KubeRecip
  */
 export type $KubeRecipeFactory$$Original = $KubeRecipeFactory;}
 declare module "dev.latvian.mods.kubejs.fluid.FluidBlockBuilder" {
-import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
+import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Registry} from "net.minecraft.core.Registry"
 import {$BlockBuilder} from "dev.latvian.mods.kubejs.block.BlockBuilder"
-import {$FluidBuilder, $FluidBuilder$$Type} from "dev.latvian.mods.kubejs.fluid.FluidBuilder"
 import {$ItemBuilder$$Type} from "dev.latvian.mods.kubejs.item.ItemBuilder"
+import {$FluidBuilder, $FluidBuilder$$Type} from "dev.latvian.mods.kubejs.fluid.FluidBuilder"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
-import {$BuilderBase} from "dev.latvian.mods.kubejs.registry.BuilderBase"
 import {$SourceLine} from "dev.latvian.mods.kubejs.script.SourceLine"
 import {$RandomTickCallback} from "dev.latvian.mods.kubejs.block.callback.RandomTickCallback"
 import {$Consumer, $Consumer$$Type} from "java.util.function.Consumer"
@@ -5868,10 +5847,6 @@ readonly "fluidBuilder": $FluidBuilder
 constructor(b: $FluidBuilder$$Type)
 
 public "item"(i: $Consumer$$Type<($ItemBuilder)>): $BlockBuilder
-/**
- * Tags both the block and the item with the given tag.
- */
-public "tag"(tag: ($ResourceLocation$$Type)[]): $BuilderBase
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -5956,7 +5931,7 @@ public "id"(): $ResourceLocation
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $BlockEntityAttachmentType$$Type = ({"id"?: $ResourceLocation$$Type, "typeInfo"?: $TypeInfo$$Type}) | ([id?: $ResourceLocation$$Type, typeInfo?: $TypeInfo$$Type]);
+export type $BlockEntityAttachmentType$$Type = ({"typeInfo"?: $TypeInfo$$Type, "id"?: $ResourceLocation$$Type}) | ([typeInfo?: $TypeInfo$$Type, id?: $ResourceLocation$$Type]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -5993,8 +5968,8 @@ declare module "dev.latvian.mods.kubejs.block.callback.EntityFallenOnBlockCallba
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
 import {$EntitySteppedOnBlockCallback} from "dev.latvian.mods.kubejs.block.callback.EntitySteppedOnBlockCallback"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $EntityFallenOnBlockCallback extends $EntitySteppedOnBlockCallback {
@@ -6058,8 +6033,8 @@ export type $MobEffectBuilder$EffectEntityCallback$$Original = $MobEffectBuilder
 declare module "dev.latvian.mods.kubejs.entity.LivingEntityDeathKubeEvent" {
 import {$Player} from "net.minecraft.world.entity.player.Player"
 import {$DamageSource, $DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
-import {$Level} from "net.minecraft.world.level.Level"
 import {$KubeLivingEntityEvent$$Interface} from "dev.latvian.mods.kubejs.entity.KubeLivingEntityEvent"
+import {$Level} from "net.minecraft.world.level.Level"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$Entity} from "net.minecraft.world.entity.Entity"
 import {$MinecraftServer} from "net.minecraft.server.MinecraftServer"
@@ -6074,13 +6049,13 @@ export class $LivingEntityDeathKubeEvent implements $KubeLivingEntityEvent$$Inte
 constructor(entity: $LivingEntity$$Type, source: $DamageSource$$Type)
 
 /**
- * The damage source that triggers the death.
- */
-public "getSource"(): $DamageSource
-/**
  * The entity that dies.
  */
 public "getEntity"(): $Entity
+/**
+ * The damage source that triggers the death.
+ */
+public "getSource"(): $DamageSource
 public "getLevel"(): $Level
 public "getPlayer"(): $Player
 public "getRegistries"(): $RegistryAccess
@@ -6121,8 +6096,8 @@ public "cancel"(value: any): any
  * `cancel` denotes a `false` outcome.
  */
 public "cancel"(): any
-get "source"(): $DamageSource
 get "entity"(): $Entity
+get "source"(): $DamageSource
 get "level"(): $Level
 get "player"(): $Player
 get "registries"(): $RegistryAccess
@@ -6139,8 +6114,8 @@ export type $LivingEntityDeathKubeEvent$$Type = ($LivingEntityDeathKubeEvent);
 export type $LivingEntityDeathKubeEvent$$Original = $LivingEntityDeathKubeEvent;}
 declare module "dev.latvian.mods.kubejs.core.RecipeLikeKJS" {
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$RecipeScriptContext$$Type} from "dev.latvian.mods.kubejs.recipe.RecipeScriptContext"
 import {$RecipeSchema} from "dev.latvian.mods.kubejs.recipe.schema.RecipeSchema"
+import {$RecipeScriptContext$$Type} from "dev.latvian.mods.kubejs.recipe.RecipeScriptContext"
 import {$RecipeMatchContext$$Type} from "dev.latvian.mods.kubejs.recipe.filter.RecipeMatchContext"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
 import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
@@ -6195,9 +6170,9 @@ get "player"(): $Player
 }
 
 export class $Stages implements $Stages$$Interface {
- "toggle"(stage: StringJS): boolean
  "addNoUpdate"(stage: StringJS): boolean
  "removeNoUpdate"(stage: StringJS): boolean
+ "toggle"(stage: StringJS): boolean
  "getAll"(): $Collection<(StringJS)>
  "has"(stage: StringJS): boolean
  "remove"(stage: StringJS): boolean
@@ -6283,8 +6258,8 @@ import {$Minecraft, $Minecraft$$Type} from "net.minecraft.client.Minecraft"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$EntitySelector$$Type} from "net.minecraft.commands.arguments.selector.EntitySelector"
-import {$ClientPlayerKubeEvent} from "dev.latvian.mods.kubejs.client.ClientPlayerKubeEvent"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$ClientPlayerKubeEvent} from "dev.latvian.mods.kubejs.client.ClientPlayerKubeEvent"
 
 /**
  * Invoked when block and entity highlight is rendered.
@@ -6292,20 +6267,20 @@ import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
 export class $HighlightKubeEvent extends $ClientPlayerKubeEvent {
 constructor(mc: $Minecraft$$Type, renderer: $HighlightRenderer$$Type)
 
-public "addEntities"(selector: $EntitySelector$$Type, color: $KubeColor$$Type): void
-public "addBlock"(pos: $BlockPos$$Type, color: $KubeColor$$Type): void
-public "addBlocks"(from: $BlockPos$$Type, to: $BlockPos$$Type, color: $KubeColor$$Type): void
 public "addTargetBlock"(color: $KubeColor$$Type): void
 public "addEntitiesByType"(type: $EntityType$$Type<(never)>, color: $KubeColor$$Type): void
 public "addTargetEntity"(color: $KubeColor$$Type): void
-public "getTargetEntity"(): $Entity
+public "addEntities"(selector: $EntitySelector$$Type, color: $KubeColor$$Type): void
+public "addBlock"(pos: $BlockPos$$Type, color: $KubeColor$$Type): void
+public "addBlocks"(from: $BlockPos$$Type, to: $BlockPos$$Type, color: $KubeColor$$Type): void
 public "getTargetBlock"(): $LevelBlock
+public "getTargetEntity"(): $Entity
 public "addEntity"(entity: $Entity$$Type, color: $KubeColor$$Type): void
 public "getClient"(): $Minecraft
 public "addTarget"(color: $KubeColor$$Type): void
 public "getEntity"(): $Player
-get "targetEntity"(): $Entity
 get "targetBlock"(): $LevelBlock
+get "targetEntity"(): $Entity
 get "client"(): $Minecraft
 get "entity"(): $Player
 }
@@ -6371,12 +6346,12 @@ export type $BlockPredicate$$Type = ((block: $LevelBlock) => boolean);
  */
 export type $BlockPredicate$$Original = $BlockPredicate;}
 declare module "dev.latvian.mods.kubejs.script.data.VirtualResourcePack" {
-import {$GeneratedData, $GeneratedData$$Type} from "dev.latvian.mods.kubejs.script.data.GeneratedData"
 import {$ExportablePackResources$$Interface} from "dev.latvian.mods.kubejs.script.data.ExportablePackResources"
+import {$GeneratedData, $GeneratedData$$Type} from "dev.latvian.mods.kubejs.script.data.GeneratedData"
 import {$MetadataSectionSerializer$$Type} from "net.minecraft.server.packs.metadata.MetadataSectionSerializer"
 import {$JsonElement$$Type} from "com.google.gson.JsonElement"
-import {$KubeResourceGenerator$$Interface} from "dev.latvian.mods.kubejs.generator.KubeResourceGenerator"
 import {$GeneratedDataStage, $GeneratedDataStage$$Type} from "dev.latvian.mods.kubejs.script.data.GeneratedDataStage"
+import {$KubeResourceGenerator$$Interface} from "dev.latvian.mods.kubejs.generator.KubeResourceGenerator"
 import {$IoSupplier} from "net.minecraft.server.packs.resources.IoSupplier"
 import {$Component} from "net.minecraft.network.chat.Component"
 import {$RegistryAccessContainer, $RegistryAccessContainer$$Type} from "dev.latvian.mods.kubejs.util.RegistryAccessContainer"
@@ -6386,8 +6361,8 @@ import {$Supplier, $Supplier$$Type} from "java.util.function.Supplier"
 import {$ScriptType, $ScriptType$$Type} from "dev.latvian.mods.kubejs.script.ScriptType"
 import {$PackResources$ResourceOutput$$Type} from "net.minecraft.server.packs.PackResources$ResourceOutput"
 import {$Set} from "java.util.Set"
-import {$InputStream} from "java.io.InputStream"
 import {$Path$$Type} from "java.nio.file.Path"
+import {$InputStream} from "java.io.InputStream"
 import {$AbstractPackResources} from "net.minecraft.server.packs.AbstractPackResources"
 
 /**
@@ -6405,22 +6380,22 @@ readonly "info": StringJS
 
 constructor(scriptType: $ScriptType$$Type, packType: $PackType$$Type, stage: $GeneratedDataStage$$Type, registries: $Supplier$$Type<($RegistryAccessContainer$$Type)>)
 
-public "export"(root: $Path$$Type): void
 public "reset"(): void
 public "toString"(): StringJS
 public "add"(data: $GeneratedData$$Type): void
 public "getResource"(type: $PackType$$Type, location: $ResourceLocation$$Type): $IoSupplier<($InputStream)>
 public "close"(): void
+public "export"(root: $Path$$Type): void
 public "listResources"(packType: $PackType$$Type, namespace: StringJS, path: StringJS, visitor: $PackResources$ResourceOutput$$Type): void
 public "getNamespaces"(type: $PackType$$Type): $Set<(StringJS)>
 public "getRegistries"(): $RegistryAccessContainer
-public "getRootResource"(...path: (StringJS)[]): $IoSupplier<($InputStream)>
 public "getMetadataSection"<T>(serializer: $MetadataSectionSerializer$$Type<(T)>): T
+public "getRootResource"(...path: (StringJS)[]): $IoSupplier<($InputStream)>
 public "packId"(): StringJS
 public "exportPath"(): StringJS
 public "getGenerated"(id: $ResourceLocation$$Type): $GeneratedData
-public "flush"(): void
 public "text"(id: $ResourceLocation$$Type, content: StringJS): void
+public "flush"(): void
 public "json"(id: $ResourceLocation$$Type, json: $JsonElement$$Type): void
 /**
  * Stops the event with default exit value. Execution will be stopped **immediately**.
@@ -6473,7 +6448,6 @@ import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resource
 import {$Registry} from "net.minecraft.core.Registry"
 import {$ShapedBlockBuilder} from "dev.latvian.mods.kubejs.block.custom.ShapedBlockBuilder"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
-import {$BuilderBase} from "dev.latvian.mods.kubejs.registry.BuilderBase"
 import {$SourceLine} from "dev.latvian.mods.kubejs.script.SourceLine"
 import {$RandomTickCallback} from "dev.latvian.mods.kubejs.block.callback.RandomTickCallback"
 import {$Consumer} from "java.util.function.Consumer"
@@ -6487,10 +6461,6 @@ readonly "id": $ResourceLocation
 
 constructor(i: $ResourceLocation$$Type)
 
-/**
- * Tags both the block and the item with the given tag.
- */
-public "tag"(tag: ($ResourceLocation$$Type)[]): $BuilderBase
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -6536,7 +6506,6 @@ import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resource
 import {$Registry} from "net.minecraft.core.Registry"
 import {$ShapedBlockBuilder} from "dev.latvian.mods.kubejs.block.custom.ShapedBlockBuilder"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
-import {$BuilderBase} from "dev.latvian.mods.kubejs.registry.BuilderBase"
 import {$SourceLine} from "dev.latvian.mods.kubejs.script.SourceLine"
 import {$RandomTickCallback} from "dev.latvian.mods.kubejs.block.callback.RandomTickCallback"
 import {$Consumer} from "java.util.function.Consumer"
@@ -6550,10 +6519,6 @@ static readonly "CARPET_TAGS": ($ResourceLocation)[]
 
 constructor(i: $ResourceLocation$$Type)
 
-/**
- * Tags both the block and the item with the given tag.
- */
-public "tag"(tag: ($ResourceLocation$$Type)[]): $BuilderBase
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -6792,9 +6757,9 @@ import {$Player} from "net.minecraft.world.entity.player.Player"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$DamageSource} from "net.minecraft.world.damagesource.DamageSource"
 import {$List} from "java.util.List"
-import {$Level} from "net.minecraft.world.level.Level"
 import {$LivingDropsEvent$$Type} from "net.neoforged.neoforge.event.entity.living.LivingDropsEvent"
 import {$KubeLivingEntityEvent$$Interface} from "dev.latvian.mods.kubejs.entity.KubeLivingEntityEvent"
+import {$Level} from "net.minecraft.world.level.Level"
 import {$ItemEntity} from "net.minecraft.world.entity.item.ItemEntity"
 import {$Entity} from "net.minecraft.world.entity.Entity"
 import {$MinecraftServer} from "net.minecraft.server.MinecraftServer"
@@ -6809,8 +6774,8 @@ public "getDrops"(): $List<($ItemEntity)>
 public "isRecentlyHit"(): boolean
 public "addDrop"(stack: $ItemStack$$Type): $ItemEntity
 public "addDrop"(stack: $ItemStack$$Type, chance: float): $ItemEntity
-public "getSource"(): $DamageSource
 public "getEntity"(): $Entity
+public "getSource"(): $DamageSource
 public "getLevel"(): $Level
 public "getPlayer"(): $Player
 public "getRegistries"(): $RegistryAccess
@@ -6853,8 +6818,8 @@ public "cancel"(value: any): any
 public "cancel"(): any
 get "drops"(): $List<($ItemEntity)>
 get "recentlyHit"(): boolean
-get "source"(): $DamageSource
 get "entity"(): $Entity
+get "source"(): $DamageSource
 get "level"(): $Level
 get "player"(): $Player
 get "registries"(): $RegistryAccess
@@ -6902,16 +6867,16 @@ public static "getInfo"(modID: StringJS): $PlatformWrapper$ModInfo
 public static "getName"(): StringJS
 public static "isLoaded"(modId: StringJS): boolean
 public static "getList"(): $Set<(StringJS)>
-public static "getMods"(): $Map<(StringJS), ($PlatformWrapper$ModInfo)>
 /**
  * 
  * @deprecated
  */
 public static "isFabric"(): boolean
+public static "getMods"(): $Map<(StringJS), ($PlatformWrapper$ModInfo)>
 public static "isDevelopmentEnvironment"(): boolean
 public static "getModVersion"(): StringJS
-public static "isClientEnvironment"(): boolean
 public static "getMinecraftVersion"(): integer
+public static "isClientEnvironment"(): boolean
 public static get "mcVersion"(): StringJS
 public static get "minecraftVersionString"(): StringJS
 public static get "currentThreadName"(): StringJS
@@ -6920,12 +6885,12 @@ public static get "generatingData"(): boolean
 public static get "forge"(): boolean
 public static get "name"(): StringJS
 public static get "list"(): $Set<(StringJS)>
-public static get "mods"(): $Map<(StringJS), ($PlatformWrapper$ModInfo)>
 public static get "fabric"(): boolean
+public static get "mods"(): $Map<(StringJS), ($PlatformWrapper$ModInfo)>
 public static get "developmentEnvironment"(): boolean
 public static get "modVersion"(): StringJS
-public static get "clientEnvironment"(): boolean
 public static get "minecraftVersion"(): integer
+public static get "clientEnvironment"(): boolean
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -6969,10 +6934,10 @@ constructor(tab: $CreativeModeTab$$Type, showRestrictedItems: boolean, callback:
 
 public "addAfter"(order: $ItemStack$$Type, items: ($ItemStack$$Type)[]): void
 public "addAfter"(order: $ItemStack$$Type, items: ($ItemStack$$Type)[], visibility: $CreativeModeTab$TabVisibility$$Type): void
-public "removeFromParent"(filter: $ItemPredicate$$Type): void
-public "removeFromSearch"(filter: $ItemPredicate$$Type): void
 public "addBefore"(order: $ItemStack$$Type, items: ($ItemStack$$Type)[]): void
 public "addBefore"(order: $ItemStack$$Type, items: ($ItemStack$$Type)[], visibility: $CreativeModeTab$TabVisibility$$Type): void
+public "removeFromParent"(filter: $ItemPredicate$$Type): void
+public "removeFromSearch"(filter: $ItemPredicate$$Type): void
 public "remove"(filter: $ItemPredicate$$Type): void
 public "add"(items: ($ItemStack$$Type)[]): void
 public "add"(items: ($ItemStack$$Type)[], visibility: $CreativeModeTab$TabVisibility$$Type): void
@@ -7028,12 +6993,12 @@ export type $CreativeTabKubeEvent$$Type = ($CreativeTabKubeEvent);
 export type $CreativeTabKubeEvent$$Original = $CreativeTabKubeEvent;}
 declare module "dev.latvian.mods.kubejs.item.ItemCraftedKubeEvent" {
 import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$Container$$Type} from "net.minecraft.world.Container"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$Container$$Type} from "net.minecraft.world.Container"
 import {$KubePlayerEvent$$Interface} from "dev.latvian.mods.kubejs.player.KubePlayerEvent"
 import {$Level} from "net.minecraft.world.level.Level"
-import {$LivingEntity} from "net.minecraft.world.entity.LivingEntity"
 import {$InventoryKJS} from "dev.latvian.mods.kubejs.core.InventoryKJS"
+import {$LivingEntity} from "net.minecraft.world.entity.LivingEntity"
 import {$MinecraftServer} from "net.minecraft.server.MinecraftServer"
 import {$RegistryAccess} from "net.minecraft.core.RegistryAccess"
 
@@ -7044,13 +7009,13 @@ export class $ItemCraftedKubeEvent implements $KubePlayerEvent$$Interface {
 constructor(player: $Player$$Type, crafted: $ItemStack$$Type, container: $Container$$Type)
 
 /**
- * The item that was crafted.
- */
-public "getItem"(): $ItemStack
-/**
  * The player that crafted the item.
  */
 public "getEntity"(): $LivingEntity
+/**
+ * The item that was crafted.
+ */
+public "getItem"(): $ItemStack
 /**
  * The inventory that the item was crafted in.
  */
@@ -7095,8 +7060,8 @@ public "cancel"(value: any): any
  * `cancel` denotes a `false` outcome.
  */
 public "cancel"(): any
-get "item"(): $ItemStack
 get "entity"(): $LivingEntity
+get "item"(): $ItemStack
 get "inventory"(): $InventoryKJS
 get "player"(): $Player
 get "level"(): $Level
@@ -7117,8 +7082,8 @@ import {$ParseResults, $ParseResults$$Type} from "com.mojang.brigadier.ParseResu
 import {$CommandEvent$$Type} from "net.neoforged.neoforge.event.CommandEvent"
 import {$Throwable, $Throwable$$Type} from "java.lang.Throwable"
 import {$ServerKubeEvent} from "dev.latvian.mods.kubejs.server.ServerKubeEvent"
-import {$MinecraftServer} from "net.minecraft.server.MinecraftServer"
 import {$CommandSourceStack, $CommandSourceStack$$Type} from "net.minecraft.commands.CommandSourceStack"
+import {$MinecraftServer} from "net.minecraft.server.MinecraftServer"
 
 export class $CommandKubeEvent extends $ServerKubeEvent {
 readonly "server": $MinecraftServer
@@ -7128,14 +7093,14 @@ constructor(event: $CommandEvent$$Type)
 public "setParseResults"(parse: $ParseResults$$Type<($CommandSourceStack$$Type)>): void
 public "getParseResults"(): $ParseResults<($CommandSourceStack)>
 public "getCommandName"(): StringJS
-public "getInput"(): StringJS
 public "setException"(exception: $Throwable$$Type): void
+public "getInput"(): StringJS
 public "getException"(): $Throwable
 set "parseResults"(value: $ParseResults$$Type<($CommandSourceStack$$Type)>)
 get "parseResults"(): $ParseResults<($CommandSourceStack)>
 get "commandName"(): StringJS
-get "input"(): StringJS
 set "exception"(value: $Throwable$$Type)
+get "input"(): StringJS
 get "exception"(): $Throwable
 }
 /**
@@ -7151,8 +7116,8 @@ declare module "dev.latvian.mods.kubejs.block.entity.EnergyStorageAttachment$Fac
 import {$KubeBlockEntity$$Type} from "dev.latvian.mods.kubejs.block.entity.KubeBlockEntity"
 import {$BlockCapability} from "net.neoforged.neoforge.capabilities.BlockCapability"
 import {$BlockEntityAttachmentFactory$$Interface} from "dev.latvian.mods.kubejs.block.entity.BlockEntityAttachmentFactory"
-import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$BlockEntityAttachmentInfo$$Type} from "dev.latvian.mods.kubejs.block.entity.BlockEntityAttachmentInfo"
+import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$List} from "java.util.List"
 import {$BlockEntityAttachment} from "dev.latvian.mods.kubejs.block.entity.BlockEntityAttachment"
 import {$Record} from "java.lang.Record"
@@ -7188,11 +7153,11 @@ import {$ArrayList} from "java.util.ArrayList"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$Collection$$Type} from "java.util.Collection"
 import {$SequencedCollection} from "java.util.SequencedCollection"
-import {$Predicate, $Predicate$$Type} from "java.util.function.Predicate"
 import {$List, $List$$Type} from "java.util.List"
+import {$Predicate, $Predicate$$Type} from "java.util.function.Predicate"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$SoundEvent$$Type} from "net.minecraft.sounds.SoundEvent"
+import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$MessageSenderKJS$$Interface} from "dev.latvian.mods.kubejs.core.MessageSenderKJS"
 import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
@@ -7204,25 +7169,25 @@ import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
 export class $EntityArrayList extends $ArrayList<($Entity)> implements $MessageSenderKJS$$Interface, $DataSenderKJS$$Interface {
 static readonly "ALWAYS_TRUE_PREDICATE": $Predicate<($Entity)>
 
+constructor(size: integer)
 constructor(entities: $Iterable$$Type<($Entity$$Type)>)
 /**
  * 
  * @deprecated
  */
 constructor(level: $Level$$Type, entities: $Iterable$$Type<($Entity$$Type)>)
-constructor(size: integer)
 
 public "addAllIterable"(entities: $Iterable$$Type<($Entity$$Type)>): void
-public "filterDistance"(x: double, y: double, z: double, distance: double): $EntityArrayList
 public "filterDistance"(pos: $BlockPos$$Type, distance: double): $EntityArrayList
+public "filterDistance"(x: double, y: double, z: double, distance: double): $EntityArrayList
 public "oneFilter"(filter: $Predicate$$Type<($Entity)>): $EntityArrayList
 public "filterSelector"(selector: $EntitySelector$$Type): $EntityArrayList
 public "filterPlayers"(): $EntityArrayList
 public "filterItems"(): $EntityArrayList
-public "filterType"(type: $EntityType$$Type<(never)>): $EntityArrayList
 public "kill"(): void
 public "filter"(filterList: $List$$Type<($Predicate$$Type<($Entity$$Type)>)>): $EntityArrayList
-public "getFirst"(): any
+public "getFirst"(): $Entity
+public "filterType"(type: $EntityType$$Type<(never)>): $EntityArrayList
 public "tell"(message: $Component$$Type): void
 public "setStatusMessage"(message: $Component$$Type): void
 public "runCommand"(command: StringJS): void
@@ -7249,7 +7214,7 @@ public static "of"<E>(arg0: E, arg1: E, arg2: E, arg3: E, arg4: E, arg5: E, arg6
 public static "of"<E>(arg0: E, arg1: E): $List<(E)>
 public "reversed"(): $SequencedCollection
 public "containsAll"(arg0: $Collection$$Type<(never)>): boolean
-get "first"(): any
+get "first"(): $Entity
 set "statusMessage"(value: $Component$$Type)
 set "activePostShader"(value: $ResourceLocation$$Type)
 get "name"(): $Component
@@ -7323,8 +7288,8 @@ declare module "dev.latvian.mods.kubejs.recipe.component.EitherRecipeComponent" 
 import {$TinyMap} from "dev.latvian.mods.kubejs.util.TinyMap"
 import {$OpsContainer$$Type} from "dev.latvian.mods.kubejs.util.OpsContainer"
 import {$RecipeScriptContext$$Type} from "dev.latvian.mods.kubejs.recipe.RecipeScriptContext"
-import {$ComponentRole$$Type} from "dev.latvian.mods.kubejs.recipe.component.ComponentRole"
 import {$List, $List$$Type} from "java.util.List"
+import {$ComponentRole$$Type} from "dev.latvian.mods.kubejs.recipe.component.ComponentRole"
 import {$CustomObjectRecipeComponent} from "dev.latvian.mods.kubejs.recipe.component.CustomObjectRecipeComponent"
 import {$RecipeMatchContext$$Type} from "dev.latvian.mods.kubejs.recipe.filter.RecipeMatchContext"
 import {$RecipeComponent, $RecipeComponent$$Type, $RecipeComponent$$Interface} from "dev.latvian.mods.kubejs.recipe.component.RecipeComponent"
@@ -7371,8 +7336,6 @@ public "spread"(value: any): $List
 public "left"(): $RecipeComponent<(H)>
 public "right"(): $RecipeComponent<(L)>
 public "codec"(): $Codec<($Either<(H), (L)>)>
-public "writeToJson"(recipe: $KubeRecipe$$Type, cv: $RecipeComponentValue$$Type<($Either$$Type<(H), (L)>)>, json: $JsonObject$$Type): void
-public "readFromJson"(recipe: $KubeRecipe$$Type, cv: $RecipeComponentValue$$Type<($Either$$Type<(H), (L)>)>, json: $JsonObject$$Type): void
 public "orSelf"(): $RecipeComponent<($Either<(H), (L)>)>
 public "outputKey"(name: StringJS): $RecipeKey<($Either<(H), (L)>)>
 public "hasPriority"(cx: $RecipeMatchContext$$Type, from: any): boolean
@@ -7382,16 +7345,18 @@ public "asConditionalListOrSelf"(): $ListRecipeComponent<($Either<(H), (L)>)>
 public "asPatternKey"(): $RecipeComponent<($TinyMap<(character), ($Either<(H), (L)>)>)>
 public "withCodec"(codec: $Codec$$Type<($Either$$Type<(H), (L)>)>): $RecipeComponent<($Either<(H), (L)>)>
 public "allowEmpty"(): boolean
-public "inputKey"(name: StringJS): $RecipeKey<($Either<(H), (L)>)>
-public "or"<O>(other: $RecipeComponent$$Type<(O)>): $EitherRecipeComponent<($Either<(H), (L)>), (O)>
+public "writeToJson"(recipe: $KubeRecipe$$Type, cv: $RecipeComponentValue$$Type<($Either$$Type<(H), (L)>)>, json: $JsonObject$$Type): void
+public "readFromJson"(recipe: $KubeRecipe$$Type, cv: $RecipeComponentValue$$Type<($Either$$Type<(H), (L)>)>, json: $JsonObject$$Type): void
 public "isIgnored"(): boolean
+public "inputKey"(name: StringJS): $RecipeKey<($Either<(H), (L)>)>
 public "isEmpty"(value: $Either$$Type<(H), (L)>): boolean
-public static "builder"(...keys: ($CustomObjectRecipeComponent$Key$$Type)[]): $CustomObjectRecipeComponent
 public static "builder"(keys: $List$$Type<($CustomObjectRecipeComponent$Key$$Type)>): $CustomObjectRecipeComponent
+public static "builder"(...keys: ($CustomObjectRecipeComponent$Key$$Type)[]): $CustomObjectRecipeComponent
 public "key"(name: StringJS, role: $ComponentRole$$Type): $RecipeKey<($Either<(H), (L)>)>
 public "asList"(): $ListRecipeComponent<($Either<(H), (L)>)>
-public "createBuilder"(): $RecipeComponentBuilder
+public "or"<O>(other: $RecipeComponent$$Type<(O)>): $EitherRecipeComponent<($Either<(H), (L)>), (O)>
 public "asMap"<K>(key: $RecipeComponent$$Type<(K)>): $RecipeComponent<($TinyMap<(K), ($Either<(H), (L)>)>)>
+public "createBuilder"(): $RecipeComponentBuilder
 public "otherKey"(name: StringJS): $RecipeKey<($Either<(H), (L)>)>
 get "ignored"(): boolean
 }
@@ -7399,7 +7364,7 @@ get "ignored"(): boolean
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $EitherRecipeComponent$$Type<H, L> = ({"codec"?: $Codec$$Type<($Either$$Type<(H), (L)>)>, "left"?: $RecipeComponent$$Type<(H)>, "typeInfo"?: $TypeInfo$$Type, "right"?: $RecipeComponent$$Type<(L)>}) | ([codec?: $Codec$$Type<($Either$$Type<(H), (L)>)>, left?: $RecipeComponent$$Type<(H)>, typeInfo?: $TypeInfo$$Type, right?: $RecipeComponent$$Type<(L)>]);
+export type $EitherRecipeComponent$$Type<H, L> = ({"left"?: $RecipeComponent$$Type<(H)>, "typeInfo"?: $TypeInfo$$Type, "right"?: $RecipeComponent$$Type<(L)>, "codec"?: $Codec$$Type<($Either$$Type<(H), (L)>)>}) | ([left?: $RecipeComponent$$Type<(H)>, typeInfo?: $TypeInfo$$Type, right?: $RecipeComponent$$Type<(L)>, codec?: $Codec$$Type<($Either$$Type<(H), (L)>)>]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -7415,8 +7380,8 @@ import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Registry} from "net.minecraft.core.Registry"
 import {$TagKey} from "net.minecraft.tags.TagKey"
-import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
+import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$RegistryObjectKJS$$Interface} from "dev.latvian.mods.kubejs.core.RegistryObjectKJS"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -7476,7 +7441,6 @@ import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resource
 import {$Registry} from "net.minecraft.core.Registry"
 import {$ShapedBlockBuilder} from "dev.latvian.mods.kubejs.block.custom.ShapedBlockBuilder"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
-import {$BuilderBase} from "dev.latvian.mods.kubejs.registry.BuilderBase"
 import {$SourceLine} from "dev.latvian.mods.kubejs.script.SourceLine"
 import {$RandomTickCallback} from "dev.latvian.mods.kubejs.block.callback.RandomTickCallback"
 import {$Consumer} from "java.util.function.Consumer"
@@ -7492,10 +7456,6 @@ constructor(i: $ResourceLocation$$Type)
 
 public "behaviour"(wt: StringJS): this
 public "behaviour"(wt: $WoodType$$Type): this
-/**
- * Tags both the block and the item with the given tag.
- */
-public "tag"(tag: ($ResourceLocation$$Type)[]): $BuilderBase
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -7613,6 +7573,10 @@ export class $EntitySteppedOnBlockCallback {
 constructor(level: $Level$$Type, entity: $Entity$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type)
 
 /**
+ * Returns the entity
+ */
+public "getEntity"(): $Entity
+/**
  * Returns the block
  */
 public "getBlock"(): $LevelBlock
@@ -7620,10 +7584,6 @@ public "getBlock"(): $LevelBlock
  * Returns the level
  */
 public "getLevel"(): $Level
-/**
- * Returns the entity
- */
-public "getEntity"(): $Entity
 /**
  * Returns the BlockState
  */
@@ -7636,9 +7596,9 @@ public "isSuppressingBounce"(): boolean
  * Returns the block's position
  */
 public "getPos"(): $BlockPos
+get "entity"(): $Entity
 get "block"(): $LevelBlock
 get "level"(): $Level
-get "entity"(): $Entity
 get "state"(): $BlockState
 get "suppressingBounce"(): boolean
 get "pos"(): $BlockPos
@@ -7795,22 +7755,22 @@ export type $EventTargetType$Transformer$$Type = ((source: any) => any);
 export type $EventTargetType$Transformer$$Original = $EventTargetType$Transformer;}
 declare module "dev.latvian.mods.kubejs.recipe.schema.RecipeSchema" {
 import {$Map, $Map$$Type} from "java.util.Map"
+import {$RegistryOps$$Type} from "net.minecraft.resources.RegistryOps"
 import {$RecipeSchemaType$$Type} from "dev.latvian.mods.kubejs.recipe.schema.RecipeSchemaType"
 import {$SequencedCollection$$Type} from "java.util.SequencedCollection"
-import {$RegistryOps$$Type} from "net.minecraft.resources.RegistryOps"
-import {$JsonElement$$Type} from "com.google.gson.JsonElement"
 import {$List, $List$$Type} from "java.util.List"
+import {$JsonElement$$Type} from "com.google.gson.JsonElement"
 import {$RecipeKey, $RecipeKey$$Type} from "dev.latvian.mods.kubejs.recipe.RecipeKey"
 import {$KubeRecipeFactory, $KubeRecipeFactory$$Type} from "dev.latvian.mods.kubejs.recipe.schema.KubeRecipeFactory"
 import {$RecipeSchemaStorage$$Type} from "dev.latvian.mods.kubejs.recipe.schema.RecipeSchemaStorage"
 import {$RecipePostProcessor, $RecipePostProcessor$$Type} from "dev.latvian.mods.kubejs.recipe.schema.postprocessing.RecipePostProcessor"
 import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
-import {$KubeRecipe, $KubeRecipe$$Type} from "dev.latvian.mods.kubejs.recipe.KubeRecipe"
-import {$RecipeTypeFunction$$Type} from "dev.latvian.mods.kubejs.recipe.RecipeTypeFunction"
 import {$RecipeConstructor, $RecipeConstructor$$Type} from "dev.latvian.mods.kubejs.recipe.schema.RecipeConstructor"
+import {$RecipeTypeFunction$$Type} from "dev.latvian.mods.kubejs.recipe.RecipeTypeFunction"
+import {$KubeRecipe, $KubeRecipe$$Type} from "dev.latvian.mods.kubejs.recipe.KubeRecipe"
 import {$RecipeFunctionInstance, $RecipeFunctionInstance$$Type} from "dev.latvian.mods.kubejs.recipe.schema.function.RecipeFunctionInstance"
-import {$RecipeOptional, $RecipeOptional$$Type} from "dev.latvian.mods.kubejs.recipe.schema.RecipeOptional"
 import {$JsonObject, $JsonObject$$Type} from "com.google.gson.JsonObject"
+import {$RecipeOptional, $RecipeOptional$$Type} from "dev.latvian.mods.kubejs.recipe.schema.RecipeOptional"
 import {$SourceLine$$Type} from "dev.latvian.mods.kubejs.script.SourceLine"
 import {$Int2ObjectMap} from "it.unimi.dsi.fastutil.ints.Int2ObjectMap"
 
@@ -7821,32 +7781,32 @@ readonly "keys": $List<($RecipeKey<(never)>)>
 readonly "keyOverrides": $Map<($RecipeKey<(never)>), ($RecipeOptional<(never)>)>
 readonly "includedKeys": $List<($RecipeKey<(never)>)>
 
-constructor(...keys: ($RecipeKey$$Type<(never)>)[])
 constructor(keyOverrides: $Map$$Type<($RecipeKey$$Type<(never)>), ($RecipeOptional$$Type<(never)>)>, keys: $List$$Type<($RecipeKey$$Type<(never)>)>)
+constructor(...keys: ($RecipeKey$$Type<(never)>)[])
 
+public "typeOverride"(id: $ResourceLocation$$Type): $RecipeSchema
 public "minRequiredArguments"(): integer
-public "uniqueIds"(): $List<($RecipeKey<(never)>)>
-public "uniqueIds"(keys: $SequencedCollection$$Type<($RecipeKey$$Type<(never)>)>): $RecipeSchema
 public "constructorsGenerated"(): boolean
 public "getOptionalKey"<T>(id: StringJS): $RecipeKey<(T)>
 public "setOpFunction"<T>(name: StringJS, key: $RecipeKey$$Type<(T)>, value: T): $RecipeSchema
 public "addToListOpFunction"<T>(name: StringJS, key: $RecipeKey$$Type<($List$$Type<(T)>)>): $RecipeSchema
-public "typeOverride"(id: $ResourceLocation$$Type): $RecipeSchema
+public "outputCount"(): integer
 public "buildUniqueId"(r: $KubeRecipe$$Type): StringJS
 public "inputCount"(): integer
 public "postProcessors"(): $List<($RecipePostProcessor)>
-public "outputCount"(): integer
 public "isHidden"(): boolean
 public "getKey"<T>(id: StringJS): $RecipeKey<(T)>
 public "factory"(factory: $KubeRecipeFactory$$Type): $RecipeSchema
-public "constructor"(arg0: $RecipeConstructor$$Type): $RecipeSchema
 public "addConstructor"(...keys: ($RecipeKey$$Type<(never)>)[]): $RecipeSchema
+public "constructor"(arg0: $RecipeConstructor$$Type): $RecipeSchema
 public "constructors"(): $Int2ObjectMap<($RecipeConstructor)>
 public "function"(arg0: $RecipeFunctionInstance$$Type): $RecipeSchema
 public "deserialize"(sourceLine: $SourceLine$$Type, type: $RecipeTypeFunction$$Type, id: $ResourceLocation$$Type, json: $JsonObject$$Type): $KubeRecipe
 public "toJson"(storage: $RecipeSchemaStorage$$Type, schemaType: $RecipeSchemaType$$Type, ops: $RegistryOps$$Type<($JsonElement$$Type)>): $JsonObject
 public "uniqueId"(key: $RecipeKey$$Type<(never)>): $RecipeSchema
 public "postProcessor"(processor: $RecipePostProcessor$$Type): $RecipeSchema
+public "uniqueIds"(): $List<($RecipeKey<(never)>)>
+public "uniqueIds"(keys: $SequencedCollection$$Type<($RecipeKey$$Type<(never)>)>): $RecipeSchema
 get "hidden"(): boolean
 }
 /**
@@ -7869,7 +7829,6 @@ import {$Record} from "java.lang.Record"
 export class $HighlightRenderer$ShaderChain extends $Record {
 constructor(postChain: $PostChain$$Type, renderInput: $RenderTarget$$Type, mcDepthInput: $RenderTarget$$Type, renderOutput: $RenderTarget$$Type, renderAnything: $MutableBoolean$$Type)
 
-public "mcDepthInput"(): $RenderTarget
 public "clearInput"(mc: $Minecraft$$Type): void
 public "renderInput"(): $RenderTarget
 public "renderOutput"(): $RenderTarget
@@ -7878,10 +7837,11 @@ public "toString"(): StringJS
 public "hashCode"(): integer
 public static "load"(mc: $Minecraft$$Type, id: $ResourceLocation$$Type): $HighlightRenderer$ShaderChain
 public "close"(): void
-public "draw"(mc: $Minecraft$$Type, delta: float): void
 public "clearDepth"(mc: $Minecraft$$Type, copy: boolean): void
+public "draw"(mc: $Minecraft$$Type, delta: float): void
 public "postChain"(): $PostChain
 public "renderAnything"(): $MutableBoolean
+public "mcDepthInput"(): $RenderTarget
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -7899,8 +7859,8 @@ import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
 import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
 import {$BuilderBase} from "dev.latvian.mods.kubejs.registry.BuilderBase"
 import {$SourceLine} from "dev.latvian.mods.kubejs.script.SourceLine"
-import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$SoundsGenerator$SoundGen$$Type} from "dev.latvian.mods.kubejs.client.SoundsGenerator$SoundGen"
+import {$Consumer$$Type} from "java.util.function.Consumer"
 
 export class $SoundEventBuilder extends $BuilderBase<($SoundEvent)> {
  "registryKey": $ResourceKey<($Registry<(T)>)>
@@ -7941,16 +7901,16 @@ static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($Notif
 
 constructor(duration: $Duration$$Type, text: $Component$$Type, icon: ($KubeIcon$$Type)?, iconSize: integer, outlineColor: ($KubeColor$$Type)?, borderColor: ($KubeColor$$Type)?, backgroundColor: ($KubeColor$$Type)?, textShadow: boolean)
 
-public "borderColor"(): $Optional<($KubeColor)>
 public static "ofText"(text: $Component$$Type): $NotificationToastData
 public "backgroundColor"(): $Optional<($KubeColor)>
+public "borderColor"(): $Optional<($KubeColor)>
 public "textShadow"(): boolean
+public "text"(): $Component
 public "iconSize"(): integer
 public "equals"(o: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
 public "duration"(): $Duration
-public "text"(): $Component
 public "icon"(): $Optional<($KubeIcon)>
 public static "ofTitle"(title: $Component$$Type, text: $Component$$Type): $NotificationToastData
 public "outlineColor"(): $Optional<($KubeColor)>
@@ -8070,15 +8030,15 @@ get "random"(): T
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $HolderSetWrapper$$Type<T> = ({"holders"?: $HolderSet$$Type<(T)>, "registry"?: $Registry$$Type<(T)>}) | ([holders?: $HolderSet$$Type<(T)>, registry?: $Registry$$Type<(T)>]);
+export type $HolderSetWrapper$$Type<T> = ({"registry"?: $Registry$$Type<(T)>, "holders"?: $HolderSet$$Type<(T)>}) | ([registry?: $Registry$$Type<(T)>, holders?: $HolderSet$$Type<(T)>]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
 export type $HolderSetWrapper$$Original<T> = $HolderSetWrapper<(T)>;}
 declare module "dev.latvian.mods.kubejs.core.RecipeHolderKJS" {
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$RecipeScriptContext$$Type} from "dev.latvian.mods.kubejs.recipe.RecipeScriptContext"
 import {$RecipeSchema} from "dev.latvian.mods.kubejs.recipe.schema.RecipeSchema"
+import {$RecipeScriptContext$$Type} from "dev.latvian.mods.kubejs.recipe.RecipeScriptContext"
 import {$RecipeHolder} from "net.minecraft.world.item.crafting.RecipeHolder"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
 import {$RecipeMatchContext$$Type} from "dev.latvian.mods.kubejs.recipe.filter.RecipeMatchContext"
@@ -8146,6 +8106,10 @@ export class $BlockPlacedKubeEvent implements $KubeEntityEvent$$Interface {
 constructor(event: $BlockEvent$EntityPlaceEvent$$Type)
 
 /**
+ * The entity that placed the block. Can be `null`, e.g. when a block is placed by a dispenser.
+ */
+public "getEntity"(): $Entity
+/**
  * The block that is placed.
  */
 public "getBlock"(): $LevelBlock
@@ -8153,10 +8117,6 @@ public "getBlock"(): $LevelBlock
  * The level of the block that was placed.
  */
 public "getLevel"(): $Level
-/**
- * The entity that placed the block. Can be `null`, e.g. when a block is placed by a dispenser.
- */
-public "getEntity"(): $Entity
 public "getPlayer"(): $Player
 public "getRegistries"(): $RegistryAccess
 public "getServer"(): $MinecraftServer
@@ -8196,9 +8156,9 @@ public "cancel"(value: any): any
  * `cancel` denotes a `false` outcome.
  */
 public "cancel"(): any
+get "entity"(): $Entity
 get "block"(): $LevelBlock
 get "level"(): $Level
-get "entity"(): $Entity
 get "player"(): $Player
 get "registries"(): $RegistryAccess
 get "server"(): $MinecraftServer
@@ -8281,7 +8241,6 @@ import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resource
 import {$Registry} from "net.minecraft.core.Registry"
 import {$ShapedBlockBuilder} from "dev.latvian.mods.kubejs.block.custom.ShapedBlockBuilder"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
-import {$BuilderBase} from "dev.latvian.mods.kubejs.registry.BuilderBase"
 import {$SourceLine} from "dev.latvian.mods.kubejs.script.SourceLine"
 import {$RandomTickCallback} from "dev.latvian.mods.kubejs.block.callback.RandomTickCallback"
 import {$Consumer} from "java.util.function.Consumer"
@@ -8295,10 +8254,6 @@ readonly "id": $ResourceLocation
 
 constructor(i: $ResourceLocation$$Type)
 
-/**
- * Tags both the block and the item with the given tag.
- */
-public "tag"(tag: ($ResourceLocation$$Type)[]): $BuilderBase
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -8311,8 +8266,8 @@ export type $FenceBlockBuilder$$Type = ($FenceBlockBuilder);
 export type $FenceBlockBuilder$$Original = $FenceBlockBuilder;}
 declare module "dev.latvian.mods.kubejs.recipe.component.UniqueIdBuilder" {
 import {$Pattern} from "java.util.regex.Pattern"
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$StringBuilder, $StringBuilder$$Type} from "java.lang.StringBuilder"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
 import {$Record} from "java.lang.Record"
 
@@ -8343,8 +8298,8 @@ export type $UniqueIdBuilder$$Type = ({"builder"?: $StringBuilder$$Type}) | ([bu
 export type $UniqueIdBuilder$$Original = $UniqueIdBuilder;}
 declare module "dev.latvian.mods.kubejs.player.KubePlayerEvent" {
 import {$Player} from "net.minecraft.world.entity.player.Player"
-import {$Level} from "net.minecraft.world.level.Level"
 import {$KubeLivingEntityEvent$$Interface} from "dev.latvian.mods.kubejs.entity.KubeLivingEntityEvent"
+import {$Level} from "net.minecraft.world.level.Level"
 import {$Entity} from "net.minecraft.world.entity.Entity"
 import {$MinecraftServer} from "net.minecraft.server.MinecraftServer"
 import {$RegistryAccess} from "net.minecraft.core.RegistryAccess"
@@ -8467,9 +8422,9 @@ declare module "dev.latvian.mods.kubejs.core.MinecraftServerKJS" {
 import {$Iterable} from "java.lang.Iterable"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$EntityCollectionKJS$$Interface} from "dev.latvian.mods.kubejs.core.EntityCollectionKJS"
-import {$WithAttachedData$$Interface} from "dev.latvian.mods.kubejs.core.WithAttachedData"
 import {$AdvancementNode} from "net.minecraft.advancements.AdvancementNode"
 import {$UUID, $UUID$$Type} from "java.util.UUID"
+import {$WithAttachedData$$Interface} from "dev.latvian.mods.kubejs.core.WithAttachedData"
 import {$List} from "java.util.List"
 import {$ScheduledEvents} from "dev.latvian.mods.kubejs.util.ScheduledEvents"
 import {$WithPersistentData$$Interface} from "dev.latvian.mods.kubejs.core.WithPersistentData"
@@ -8488,10 +8443,10 @@ import {$PlayerSelector$$Type} from "dev.latvian.mods.kubejs.core.PlayerSelector
 import {$ScheduledEvents$Callback$$Type} from "dev.latvian.mods.kubejs.util.ScheduledEvents$Callback"
 import {$ServerLevel} from "net.minecraft.server.level.ServerLevel"
 import {$ServerPlayer} from "net.minecraft.server.level.ServerPlayer"
-import {$AABB$$Type} from "net.minecraft.world.phys.AABB"
 import {$DataSenderKJS$$Interface} from "dev.latvian.mods.kubejs.core.DataSenderKJS"
-import {$MinecraftServer} from "net.minecraft.server.MinecraftServer"
+import {$AABB$$Type} from "net.minecraft.world.phys.AABB"
 import {$EntityArrayList} from "dev.latvian.mods.kubejs.player.EntityArrayList"
+import {$MinecraftServer} from "net.minecraft.server.MinecraftServer"
 
 /**
  * This class is not allowed By KubeJS!
@@ -8580,33 +8535,33 @@ constructor(level: $ClientLevel$$Type, x: double, y: double, z: double, sprites:
 
 public "onTick"(tick: $Consumer$$Type<($KubeAnimatedParticle)>): void
 public "getLightColor"(partialTick: float): integer
+public "setGravity"(g: float): void
+public "getXSpeed"(): double
+public "setFasterWhenYMotionBlocked"(b: boolean): void
 /**
  * Sets teh friction of the particle, the particle's motion is multiplied by this value every tick
  */
 public "setFriction"(f: float): void
-public "getYSpeed"(): double
-public "setFasterWhenYMotionBlocked"(b: boolean): void
-public "getXSpeed"(): double
 public "setPhysicality"(hasPhysics: boolean): void
 public "setLightColor"(arg0: $Float2IntFunction$$Type): void
+public "getYSpeed"(): double
 public "getZSpeed"(): double
 public "getSpriteSet"(): $SpriteSet
-public "setGravity"(g: float): void
 public "tick"(): void
-public "setColor"(color: $KubeColor$$Type, alpha: boolean): void
 public "setColor"(color: $KubeColor$$Type): void
+public "setColor"(color: $KubeColor$$Type, alpha: boolean): void
 public "getLevel"(): $ClientLevel
 public "getY"(): double
 public "getX"(): double
 public "getZ"(): double
 public "getRandom"(): $RandomSource
 public "setSpeed"(speed: $Vec3$$Type): void
-set "friction"(value: float)
-get "YSpeed"(): double
-set "fasterWhenYMotionBlocked"(value: boolean)
 get "XSpeed"(): double
+set "fasterWhenYMotionBlocked"(value: boolean)
+set "friction"(value: float)
 set "physicality"(value: boolean)
 set "lightColor"(value: $Float2IntFunction$$Type)
+get "YSpeed"(): double
 get "ZSpeed"(): double
 get "spriteSet"(): $SpriteSet
 set "color"(value: $KubeColor$$Type)
@@ -8635,9 +8590,9 @@ get "registries"(): $RegistryAccessContainer
 }
 
 export class $KubeResourceGenerator implements $KubeResourceGenerator$$Interface {
+ "text"(id: $ResourceLocation$$Type, content: StringJS): void
  "flush"(): void
  "add"(data: $GeneratedData$$Type): void
- "text"(id: $ResourceLocation$$Type, content: StringJS): void
  "json"(id: $ResourceLocation$$Type, json: $JsonElement$$Type): void
  "getRegistries"(): $RegistryAccessContainer
  "getGenerated"(id: $ResourceLocation$$Type): $GeneratedData
@@ -8721,9 +8676,9 @@ import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Predicate$$Type} from "java.util.function.Predicate"
 import {$Direction} from "net.minecraft.core.Direction"
 import {$Level} from "net.minecraft.world.level.Level"
-import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
-import {$WithPersistentData$$Interface} from "dev.latvian.mods.kubejs.core.WithPersistentData"
 import {$SoundEvent$$Type} from "net.minecraft.sounds.SoundEvent"
+import {$WithPersistentData$$Interface} from "dev.latvian.mods.kubejs.core.WithPersistentData"
+import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$MessageSenderKJS$$Interface} from "dev.latvian.mods.kubejs.core.MessageSenderKJS"
 import {$KubeRayTraceResult} from "dev.latvian.mods.kubejs.entity.KubeRayTraceResult"
 import {$LevelBlock, $LevelBlock$$Type} from "dev.latvian.mods.kubejs.level.LevelBlock"
@@ -8733,8 +8688,8 @@ import {$ScriptTypeHolder$$Interface} from "dev.latvian.mods.kubejs.script.Scrip
 import {$GameProfile} from "com.mojang.authlib.GameProfile"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$MinecraftServer} from "net.minecraft.server.MinecraftServer"
 import {$EntityArrayList} from "dev.latvian.mods.kubejs.player.EntityArrayList"
+import {$MinecraftServer} from "net.minecraft.server.MinecraftServer"
 
 /**
  * This class is not allowed By KubeJS!
@@ -8896,11 +8851,11 @@ export type $BlockRenderType$$Type = (("solid") | ("cutout") | ("cutout_mipped")
  */
 export type $BlockRenderType$$Original = $BlockRenderType;}
 declare module "dev.latvian.mods.kubejs.recipe.CachedItemTagLookup" {
-import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Map, $Map$$Type} from "java.util.Map"
+import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Registry, $Registry$$Type} from "net.minecraft.core.Registry"
-import {$TagKey$$Type} from "net.minecraft.tags.TagKey"
 import {$List, $List$$Type} from "java.util.List"
+import {$TagKey$$Type} from "net.minecraft.tags.TagKey"
 import {$Item, $Item$$Type} from "net.minecraft.world.item.Item"
 import {$TagLoader$EntryWithSource, $TagLoader$EntryWithSource$$Type} from "net.minecraft.tags.TagLoader$EntryWithSource"
 import {$CachedTagLookup} from "dev.latvian.mods.kubejs.recipe.CachedTagLookup"
@@ -8954,8 +8909,8 @@ export type $IngredientAction$$Type = ($IngredientAction);
  */
 export type $IngredientAction$$Original = $IngredientAction;}
 declare module "dev.latvian.mods.kubejs.block.entity.BlockEntityAttachment" {
-import {$KubeBlockEntity$$Type} from "dev.latvian.mods.kubejs.block.entity.KubeBlockEntity"
 import {$BlockCapability$$Type} from "net.neoforged.neoforge.capabilities.BlockCapability"
+import {$KubeBlockEntity$$Type} from "dev.latvian.mods.kubejs.block.entity.KubeBlockEntity"
 import {$Tag, $Tag$$Type} from "net.minecraft.nbt.Tag"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
@@ -9016,12 +8971,12 @@ export class $EventGroup {
 readonly "name": StringJS
 
 public "getHandlers"(): $Map<(StringJS), ($EventHandler)>
+public "common"(name: StringJS, eventType: $Supplier$$Type<($Class$$Type<($KubeEvent$$Type)>)>): $EventHandler
 public "equals"(obj: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
 public "add"(name: StringJS, scriptType: $ScriptTypePredicate$$Type, eventType: $Supplier$$Type<($Class$$Type<($KubeEvent$$Type)>)>): $EventHandler
 public static "of"(name: StringJS): $EventGroup
-public "common"(name: StringJS, eventType: $Supplier$$Type<($Class$$Type<($KubeEvent$$Type)>)>): $EventHandler
 public "client"(name: StringJS, eventType: $Supplier$$Type<($Class$$Type<($KubeEvent$$Type)>)>): $EventHandler
 public "server"(name: StringJS, eventType: $Supplier$$Type<($Class$$Type<($KubeEvent$$Type)>)>): $EventHandler
 public "startup"(name: StringJS, eventType: $Supplier$$Type<($Class$$Type<($KubeEvent$$Type)>)>): $EventHandler
@@ -9037,10 +8992,10 @@ export type $EventGroup$$Type = ($EventGroup);
  */
 export type $EventGroup$$Original = $EventGroup;}
 declare module "dev.latvian.mods.kubejs.script.data.VirtualDataPack" {
-import {$Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$GeneratedDataStage, $GeneratedDataStage$$Type} from "dev.latvian.mods.kubejs.script.data.GeneratedDataStage"
-import {$Component} from "net.minecraft.network.chat.Component"
+import {$Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$SoundEvent$$Type} from "net.minecraft.sounds.SoundEvent"
+import {$Component} from "net.minecraft.network.chat.Component"
 import {$LootTable$$Type} from "net.minecraft.world.level.storage.loot.LootTable"
 import {$RegistryAccessContainer, $RegistryAccessContainer$$Type} from "dev.latvian.mods.kubejs.util.RegistryAccessContainer"
 import {$VirtualResourcePack} from "dev.latvian.mods.kubejs.script.data.VirtualResourcePack"
@@ -9049,9 +9004,9 @@ import {$VillagerProfession$$Type} from "net.minecraft.world.entity.npc.Villager
 import {$KubeDataGenerator$$Interface} from "dev.latvian.mods.kubejs.generator.KubeDataGenerator"
 import {$GameEvent$$Type} from "net.minecraft.world.level.gameevent.GameEvent"
 import {$PackType} from "net.minecraft.server.packs.PackType"
-import {$ItemPredicate$$Type} from "dev.latvian.mods.kubejs.item.ItemPredicate"
 import {$VirtualDataMapFile$$Type} from "dev.latvian.mods.kubejs.script.data.VirtualDataMapFile"
 import {$Supplier, $Supplier$$Type} from "java.util.function.Supplier"
+import {$ItemPredicate$$Type} from "dev.latvian.mods.kubejs.item.ItemPredicate"
 import {$ScriptType} from "dev.latvian.mods.kubejs.script.ScriptType"
 import {$DataMapType$$Type} from "net.neoforged.neoforge.registries.datamaps.DataMapType"
 import {$ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
@@ -9082,13 +9037,13 @@ public "setCompostable"(items: $ItemPredicate$$Type, chance: float, canVillagerC
 public "removeCompostable"(items: $ItemPredicate$$Type): void
 public "setFurnaceFuel"(items: $ItemPredicate$$Type, ticks: $TickDuration$$Type): void
 public "removeFurnaceFuel"(items: $ItemPredicate$$Type): void
+public "setWaxable"(from: $Block$$Type, to: $Block$$Type): void
 public "setMonsterRoomMobs"(entityType: $EntityType$$Type<(never)>, weight: integer): void
 public "setOxidizable"(from: $Block$$Type, to: $Block$$Type): void
 public "setParrotImitation"(type: $EntityType$$Type<(never)>, sound: $SoundEvent$$Type): void
 public "setRaidHeroGifts"(profession: $VillagerProfession$$Type, lootTable: $ResourceKey$$Type<($LootTable)>): void
 public "setVibrationFrequency"(gameEvent: $GameEvent$$Type, frequency: integer): void
 public "setVillagerType"(biome: $ResourceKey$$Type<($Biome)>, villagerType: $VillagerType$$Type): void
-public "setWaxable"(from: $Block$$Type, to: $Block$$Type): void
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -9103,8 +9058,8 @@ declare module "dev.latvian.mods.kubejs.block.entity.InventoryAttachment$Factory
 import {$KubeBlockEntity$$Type} from "dev.latvian.mods.kubejs.block.entity.KubeBlockEntity"
 import {$BlockCapability} from "net.neoforged.neoforge.capabilities.BlockCapability"
 import {$BlockEntityAttachmentFactory$$Interface} from "dev.latvian.mods.kubejs.block.entity.BlockEntityAttachmentFactory"
-import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$BlockEntityAttachmentInfo$$Type} from "dev.latvian.mods.kubejs.block.entity.BlockEntityAttachmentInfo"
+import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$List} from "java.util.List"
 import {$ItemPredicate, $ItemPredicate$$Type} from "dev.latvian.mods.kubejs.item.ItemPredicate"
 import {$BlockEntityAttachment} from "dev.latvian.mods.kubejs.block.entity.BlockEntityAttachment"
@@ -9162,7 +9117,6 @@ import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resource
 import {$Registry} from "net.minecraft.core.Registry"
 import {$BlockBuilder} from "dev.latvian.mods.kubejs.block.BlockBuilder"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
-import {$BuilderBase} from "dev.latvian.mods.kubejs.registry.BuilderBase"
 import {$SourceLine} from "dev.latvian.mods.kubejs.script.SourceLine"
 import {$RandomTickCallback} from "dev.latvian.mods.kubejs.block.callback.RandomTickCallback"
 import {$Consumer} from "java.util.function.Consumer"
@@ -9176,10 +9130,6 @@ readonly "id": $ResourceLocation
 constructor(i: $ResourceLocation$$Type)
 
 public "detectorId"(id: StringJS): this
-/**
- * Tags both the block and the item with the given tag.
- */
-public "tag"(tag: ($ResourceLocation$$Type)[]): $BuilderBase
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -9217,8 +9167,8 @@ declare module "dev.latvian.mods.kubejs.recipe.component.RecipeComponent" {
 import {$TinyMap} from "dev.latvian.mods.kubejs.util.TinyMap"
 import {$OpsContainer$$Type} from "dev.latvian.mods.kubejs.util.OpsContainer"
 import {$RecipeScriptContext$$Type} from "dev.latvian.mods.kubejs.recipe.RecipeScriptContext"
-import {$ComponentRole$$Type} from "dev.latvian.mods.kubejs.recipe.component.ComponentRole"
 import {$List, $List$$Type} from "java.util.List"
+import {$ComponentRole$$Type} from "dev.latvian.mods.kubejs.recipe.component.ComponentRole"
 import {$CustomObjectRecipeComponent} from "dev.latvian.mods.kubejs.recipe.component.CustomObjectRecipeComponent"
 import {$RecipeMatchContext$$Type} from "dev.latvian.mods.kubejs.recipe.filter.RecipeMatchContext"
 import {$RecipeKey} from "dev.latvian.mods.kubejs.recipe.RecipeKey"
@@ -9241,8 +9191,6 @@ get "ignored"(): boolean
 }
 
 export class $RecipeComponent<T> implements $RecipeComponent$$Interface {
- "writeToJson"(recipe: $KubeRecipe$$Type, cv: $RecipeComponentValue$$Type<(T)>, json: $JsonObject$$Type): void
- "readFromJson"(recipe: $KubeRecipe$$Type, cv: $RecipeComponentValue$$Type<(T)>, json: $JsonObject$$Type): void
  "orSelf"(): $RecipeComponent<(T)>
  "outputKey"(name: StringJS): $RecipeKey<(T)>
  "hasPriority"(cx: $RecipeMatchContext$$Type, from: any): boolean
@@ -9253,26 +9201,28 @@ export class $RecipeComponent<T> implements $RecipeComponent$$Interface {
  "asPatternKey"(): $RecipeComponent<($TinyMap<(character), (T)>)>
  "withCodec"(codec: $Codec$$Type<(T)>): $RecipeComponent<(T)>
  "allowEmpty"(): boolean
- "inputKey"(name: StringJS): $RecipeKey<(T)>
- "or"<O>(other: $RecipeComponent$$Type<(O)>): $EitherRecipeComponent<(T), (O)>
+ "writeToJson"(recipe: $KubeRecipe$$Type, cv: $RecipeComponentValue$$Type<(T)>, json: $JsonObject$$Type): void
+ "readFromJson"(recipe: $KubeRecipe$$Type, cv: $RecipeComponentValue$$Type<(T)>, json: $JsonObject$$Type): void
  "isIgnored"(): boolean
+ "inputKey"(name: StringJS): $RecipeKey<(T)>
  "type"(): $RecipeComponentType<(never)>
  "toString"(ops: $OpsContainer$$Type, value: T): StringJS
  "wrap"(cx: $RecipeScriptContext$$Type, from: any): T
  "isEmpty"(value: T): boolean
  "replace"(cx: $RecipeScriptContext$$Type, original: T, match: $ReplacementMatchInfo$$Type, arg3: any): T
  "matches"(cx: $RecipeMatchContext$$Type, value: T, match: $ReplacementMatchInfo$$Type): boolean
-static "builder"(...keys: ($CustomObjectRecipeComponent$Key$$Type)[]): $CustomObjectRecipeComponent
 static "builder"(keys: $List$$Type<($CustomObjectRecipeComponent$Key$$Type)>): $CustomObjectRecipeComponent
+static "builder"(...keys: ($CustomObjectRecipeComponent$Key$$Type)[]): $CustomObjectRecipeComponent
  "validate"(ctx: $RecipeValidationContext$$Type, value: T): void
  "typeInfo"(): $TypeInfo
  "key"(name: StringJS, role: $ComponentRole$$Type): $RecipeKey<(T)>
  "asList"(): $ListRecipeComponent<(T)>
- "createBuilder"(): $RecipeComponentBuilder
  "spread"(value: T): $List<(never)>
+ "or"<O>(other: $RecipeComponent$$Type<(O)>): $EitherRecipeComponent<(T), (O)>
  "asMap"<K>(key: $RecipeComponent$$Type<(K)>): $RecipeComponent<($TinyMap<(K), (T)>)>
- "otherKey"(name: StringJS): $RecipeKey<(T)>
+ "createBuilder"(): $RecipeComponentBuilder
  "codec"(): $Codec<(T)>
+ "otherKey"(name: StringJS): $RecipeKey<(T)>
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -9437,8 +9387,8 @@ export type $OpsContainer$$Type = ($OpsContainer);
 export type $OpsContainer$$Original = $OpsContainer;}
 declare module "dev.latvian.mods.kubejs.item.ModifyItemTooltipsKubeEvent" {
 import {$KubeEvent$$Interface} from "dev.latvian.mods.kubejs.event.KubeEvent"
-import {$TooltipRequirements$$Type} from "dev.latvian.mods.kubejs.text.tooltip.TooltipRequirements"
 import {$Ingredient$$Type} from "net.minecraft.world.item.crafting.Ingredient"
+import {$TooltipRequirements$$Type} from "dev.latvian.mods.kubejs.text.tooltip.TooltipRequirements"
 import {$List$$Type} from "java.util.List"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$ItemTooltipData$$Type} from "dev.latvian.mods.kubejs.text.tooltip.ItemTooltipData"
@@ -9502,25 +9452,25 @@ export type $ModifyItemTooltipsKubeEvent$$Type = ($ModifyItemTooltipsKubeEvent);
 export type $ModifyItemTooltipsKubeEvent$$Original = $ModifyItemTooltipsKubeEvent;}
 declare module "dev.latvian.mods.kubejs.entity.EntityPotionEffectsJS" {
 import {$MobEffectInstance, $MobEffectInstance$$Type} from "net.minecraft.world.effect.MobEffectInstance"
-import {$Map} from "java.util.Map"
 import {$Collection} from "java.util.Collection"
+import {$Map} from "java.util.Map"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$MobEffect, $MobEffect$$Type} from "net.minecraft.world.effect.MobEffect"
 import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
+import {$MobEffect, $MobEffect$$Type} from "net.minecraft.world.effect.MobEffect"
 
 export class $EntityPotionEffectsJS {
 constructor(e: $LivingEntity$$Type)
 
 public "getActive"(): $Collection<($MobEffectInstance)>
 public "getActive"(mobEffect: $Holder$$Type<($MobEffect)>): $MobEffectInstance
-public "getMap"(): $Map<($Holder<($MobEffect)>), ($MobEffectInstance)>
 public "getDuration"(mobEffect: $Holder$$Type<($MobEffect)>): integer
 public "clear"(): void
 public "add"(mobEffect: $Holder$$Type<($MobEffect)>, duration: integer, amplifier: integer): void
-public "add"(mobEffect: $Holder$$Type<($MobEffect)>, duration: integer, amplifier: integer, ambient: boolean, showParticles: boolean): void
 public "add"(mobEffect: $Holder$$Type<($MobEffect)>): void
 public "add"(mobEffect: $Holder$$Type<($MobEffect)>, duration: integer): void
+public "add"(mobEffect: $Holder$$Type<($MobEffect)>, duration: integer, amplifier: integer, ambient: boolean, showParticles: boolean): void
 public "isActive"(mobEffect: $Holder$$Type<($MobEffect)>): boolean
+public "getMap"(): $Map<($Holder<($MobEffect)>), ($MobEffectInstance)>
 public "isApplicable"(effect: $MobEffectInstance$$Type): boolean
 get "active"(): $Collection<($MobEffectInstance)>
 get "map"(): $Map<($Holder<($MobEffect)>), ($MobEffectInstance)>
@@ -9561,8 +9511,8 @@ export type $RelativeURL$$Original = $RelativeURL;}
 declare module "dev.latvian.mods.kubejs.block.entity.BlockEntityAttachmentHandler" {
 import {$BlockCapability$$Type} from "net.neoforged.neoforge.capabilities.BlockCapability"
 import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
-import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$ItemPredicate$$Type} from "dev.latvian.mods.kubejs.item.ItemPredicate"
+import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Set$$Type} from "java.util.Set"
 import {$FluidIngredient$$Type} from "net.neoforged.neoforge.fluids.crafting.FluidIngredient"
@@ -9696,10 +9646,10 @@ import {$ItemLike$$Type} from "net.minecraft.world.level.ItemLike"
 import {$Attribute$$Type} from "net.minecraft.world.entity.ai.attributes.Attribute"
 import {$KubeColor$$Type} from "dev.latvian.mods.kubejs.color.KubeColor"
 import {$Unit$$Type} from "net.minecraft.util.Unit"
-import {$ReplacementMatch} from "dev.latvian.mods.kubejs.recipe.match.ReplacementMatch"
 import {$ComponentFunctions} from "dev.latvian.mods.kubejs.component.ComponentFunctions"
-import {$UUID$$Type} from "java.util.UUID"
+import {$ReplacementMatch} from "dev.latvian.mods.kubejs.recipe.match.ReplacementMatch"
 import {$ItemAttributeModifiers$Entry$$Type} from "net.minecraft.world.item.component.ItemAttributeModifiers$Entry"
+import {$UUID$$Type} from "java.util.UUID"
 import {$MutableDataComponentHolder} from "net.neoforged.neoforge.common.MutableDataComponentHolder"
 import {$ItemAttributeModifiers} from "net.minecraft.world.item.component.ItemAttributeModifiers"
 import {$List, $List$$Type} from "java.util.List"
@@ -9743,8 +9693,8 @@ get "mod"(): StringJS
 get "enchantments"(): $ItemEnchantments
 get "harvestSpeed"(): float
 get "componentString"(): StringJS
-get "key"(): $ResourceKey<($Item)>
 get "codec"(): $Codec<($ItemStack)>
+get "key"(): $ResourceKey<($Item)>
 get "id"(): StringJS
 get "block"(): $Block
 set "food"(value: $FoodProperties$$Type)
@@ -9839,9 +9789,9 @@ export class $ItemStackKJS implements $ItemStackKJS$$Interface {
  "matches"(cx: $RecipeMatchContext$$Type, arg1: $Ingredient$$Type, exact: boolean): boolean
  "matches"(cx: $RecipeMatchContext$$Type, s: $ItemStack$$Type, exact: boolean): boolean
  "matches"(cx: $RecipeMatchContext$$Type, itemLike: $ItemLike$$Type, exact: boolean): boolean
+ "getCodec"(): $Codec<($ItemStack)>
  "self"(): $ItemStack
  "getKey"(): $ResourceKey<($Item)>
- "getCodec"(): $Codec<($ItemStack)>
  "specialEquals"(o: any, shallow: boolean): boolean
  "getId"(): StringJS
  "getBlock"(): $Block
@@ -9980,25 +9930,25 @@ import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$WithPersistentData$$Interface} from "dev.latvian.mods.kubejs.core.WithPersistentData"
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$Player} from "net.minecraft.world.entity.player.Player"
-import {$Explosion} from "net.minecraft.world.level.Explosion"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
+import {$Explosion} from "net.minecraft.world.level.Explosion"
 import {$ScriptType} from "dev.latvian.mods.kubejs.script.ScriptType"
-import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
 import {$CompoundTag} from "net.minecraft.nbt.CompoundTag"
 import {$AttachedData, $AttachedData$$Type} from "dev.latvian.mods.kubejs.util.AttachedData"
 import {$Fireworks$$Type} from "net.minecraft.world.item.component.Fireworks"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$LevelBlock} from "dev.latvian.mods.kubejs.level.LevelBlock"
-import {$ExplosionProperties$$Type} from "dev.latvian.mods.kubejs.level.ExplosionProperties"
-import {$LevelKJS$$Interface} from "dev.latvian.mods.kubejs.core.LevelKJS"
 import {$EntityGetter} from "net.minecraft.world.level.EntityGetter"
+import {$LevelKJS$$Interface} from "dev.latvian.mods.kubejs.core.LevelKJS"
+import {$ExplosionProperties$$Type} from "dev.latvian.mods.kubejs.level.ExplosionProperties"
 import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$AABB$$Type} from "net.minecraft.world.phys.AABB"
-import {$ParticleOptions$$Type} from "net.minecraft.core.particles.ParticleOptions"
 import {$EntityArrayList} from "dev.latvian.mods.kubejs.player.EntityArrayList"
+import {$ParticleOptions$$Type} from "net.minecraft.core.particles.ParticleOptions"
 
 /**
  * This class is not allowed By KubeJS!
@@ -10072,8 +10022,8 @@ import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$BooleanSupplier$$Type} from "java.util.function.BooleanSupplier"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
@@ -10093,11 +10043,11 @@ public static "valueOf"(name: StringJS): $Tristate
 public static "wrap"(from: any): $Tristate
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
 }
@@ -10190,8 +10140,8 @@ readonly "info": $BlockEntityInfo
 
 constructor(blockPos: $BlockPos$$Type, blockState: $BlockState$$Type, entityInfo: $BlockEntityInfo$$Type)
 
-public "loadAdditional"(tag: $CompoundTag$$Type, registries: $HolderLookup$Provider$$Type): void
 public "getUpdatePacket"(): $Packet<($ClientGamePacketListener)>
+public "loadAdditional"(tag: $CompoundTag$$Type, registries: $HolderLookup$Provider$$Type): void
 public "getUpdateTag"(provider: $HolderLookup$Provider$$Type): $CompoundTag
 public "getPlacer"(): $Entity
 public "sendEvent"(eventId: integer, data: integer): void
@@ -10265,8 +10215,8 @@ export type $BlockEntityAttachmentFactory$$Type = ((info: $BlockEntityAttachment
  */
 export type $BlockEntityAttachmentFactory$$Original = $BlockEntityAttachmentFactory;}
 declare module "dev.latvian.mods.kubejs.util.TinyMap" {
-import {$Collection$$Type} from "java.util.Collection"
 import {$Map, $Map$$Type} from "java.util.Map"
+import {$Collection$$Type} from "java.util.Collection"
 import {$TinyMap$Entry, $TinyMap$Entry$$Type} from "dev.latvian.mods.kubejs.util.TinyMap$Entry"
 import {$Record} from "java.lang.Record"
 
@@ -10311,16 +10261,16 @@ public "equals"(o: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
 public "shift"(): $Tristate
+public "stages"(): $Map<(StringJS), ($Tristate)>
 public "alt"(): $Tristate
 public "advanced"(): $Tristate
 public "creative"(): $Tristate
-public "stages"(): $Map<(StringJS), ($Tristate)>
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $TooltipRequirements$$Type = ({"alt"?: $Tristate$$Type, "ctrl"?: $Tristate$$Type, "stages"?: $Map$$Type<(StringJS), ($Tristate$$Type)>, "advanced"?: $Tristate$$Type, "shift"?: $Tristate$$Type, "creative"?: $Tristate$$Type}) | ([alt?: $Tristate$$Type, ctrl?: $Tristate$$Type, stages?: $Map$$Type<(StringJS), ($Tristate$$Type)>, advanced?: $Tristate$$Type, shift?: $Tristate$$Type, creative?: $Tristate$$Type]);
+export type $TooltipRequirements$$Type = ({"ctrl"?: $Tristate$$Type, "stages"?: $Map$$Type<(StringJS), ($Tristate$$Type)>, "advanced"?: $Tristate$$Type, "shift"?: $Tristate$$Type, "creative"?: $Tristate$$Type, "alt"?: $Tristate$$Type}) | ([ctrl?: $Tristate$$Type, stages?: $Map$$Type<(StringJS), ($Tristate$$Type)>, advanced?: $Tristate$$Type, shift?: $Tristate$$Type, creative?: $Tristate$$Type, alt?: $Tristate$$Type]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -10394,8 +10344,8 @@ export type $ArgumentTypeWrapper$$Type = ($ArgumentTypeWrapper);
 export type $ArgumentTypeWrapper$$Original = $ArgumentTypeWrapper;}
 declare module "dev.latvian.mods.kubejs.item.creativetab.CreativeTabBuilder" {
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
-import {$Registry} from "net.minecraft.core.Registry"
 import {$CreativeModeTab} from "net.minecraft.world.item.CreativeModeTab"
+import {$Registry} from "net.minecraft.core.Registry"
 import {$CreativeTabContentSupplier$$Type} from "dev.latvian.mods.kubejs.item.creativetab.CreativeTabContentSupplier"
 import {$CreativeTabIconSupplier$$Type} from "dev.latvian.mods.kubejs.item.creativetab.CreativeTabIconSupplier"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
@@ -10425,9 +10375,9 @@ declare module "dev.latvian.mods.kubejs.block.state.BlockStatePredicate" {
 import {$ReplacementMatch$$Interface} from "dev.latvian.mods.kubejs.recipe.match.ReplacementMatch"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Collection} from "java.util.Collection"
+import {$List$$Type} from "java.util.List"
 import {$OreConfiguration$TargetBlockState$$Type} from "net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration$TargetBlockState"
 import {$Predicate, $Predicate$$Type, $Predicate$$Interface} from "java.util.function.Predicate"
-import {$List$$Type} from "java.util.List"
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Set} from "java.util.Set"
 import {$RuleTest} from "net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest"
@@ -10453,11 +10403,11 @@ static "wrap"(o: any): $BlockStatePredicate
 static "fromString"(s: StringJS): $BlockStatePredicate
  "getBlocks"(): $Collection<($Block)>
  "getBlockStates"(): $Collection<($BlockState)>
- "or"(arg0: $Predicate$$Type<($BlockState)>): $Predicate<($BlockState)>
+static "not"<T>(arg0: $Predicate$$Type<($BlockState)>): $Predicate<($BlockState)>
 static "isEqual"<T>(arg0: any): $Predicate<($BlockState)>
  "negate"(): $Predicate<($BlockState)>
  "and"(arg0: $Predicate$$Type<($BlockState)>): $Predicate<($BlockState)>
-static "not"<T>(arg0: $Predicate$$Type<($BlockState)>): $Predicate<($BlockState)>
+ "or"(arg0: $Predicate$$Type<($BlockState)>): $Predicate<($BlockState)>
 }
 export type BlockStatePredicateObject = {"or"?: $BlockStatePredicate$$Type, "not"?: $BlockStatePredicate$$Type};
 /**
@@ -10521,11 +10471,11 @@ readonly "packs": $Map<(StringJS), ($ScriptPack)>
 
 constructor(t: $ScriptType$$Type)
 
+public "loadAdditional"(): void
+public "isClassAllowed"(name: StringJS): boolean
 public "loadFromDirectory"(): void
 public "collectScripts"(pack: $ScriptPack$$Type, dir: $Path$$Type, path: StringJS): void
 public "loadPackFromDirectory"(path: $Path$$Type, name: StringJS, exampleFile: boolean): void
-public "loadAdditional"(): void
-public "isClassAllowed"(name: StringJS): boolean
 public "reload"(): void
 public "unload"(): void
 public "getRegistries"(): $RegistryAccessContainer
@@ -10651,7 +10601,7 @@ public "hashCode"(): integer
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $TooltipActionType$$Type<T> = ({"type"?: integer, "streamCodec"?: $StreamCodec$$Type<($RegistryFriendlyByteBuf$$Type), (T)>}) | ([type?: integer, streamCodec?: $StreamCodec$$Type<($RegistryFriendlyByteBuf$$Type), (T)>]);
+export type $TooltipActionType$$Type<T> = ({"streamCodec"?: $StreamCodec$$Type<($RegistryFriendlyByteBuf$$Type), (T)>, "type"?: integer}) | ([streamCodec?: $StreamCodec$$Type<($RegistryFriendlyByteBuf$$Type), (T)>, type?: integer]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -10663,8 +10613,8 @@ import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level} from "net.minecraft.world.level.Level"
 import {$Holder} from "net.minecraft.core.Holder"
 import {$BlockProviderKJS$$Interface} from "dev.latvian.mods.kubejs.core.BlockProviderKJS"
-import {$Explosion} from "net.minecraft.world.level.Explosion"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
+import {$Explosion} from "net.minecraft.world.level.Explosion"
 import {$InventoryKJS} from "dev.latvian.mods.kubejs.core.InventoryKJS"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
@@ -10699,11 +10649,11 @@ get "skyLight"(): integer
 get "blockLight"(): integer
 get "canSeeSky"(): boolean
 get "biomeId"(): $ResourceLocation
-get "item"(): $ItemStack
+get "entity"(): $BlockEntity
 get "dimension"(): $ResourceLocation
 get "level"(): $Level
-get "entity"(): $BlockEntity
 get "y"(): integer
+get "item"(): $ItemStack
 get "properties"(): $Map<(StringJS), (StringJS)>
 get "x"(): integer
 get "z"(): integer
@@ -10714,8 +10664,8 @@ get "entityData"(): $CompoundTag
 get "pos"(): $BlockPos
 get "centerX"(): double
 get "centerZ"(): double
-get "dimensionKey"(): $ResourceKey<($Level)>
 set "blockState"(value: $BlockState$$Type)
+get "dimensionKey"(): $ResourceKey<($Level)>
 get "typeData"(): $Map<(StringJS), (any)>
 get "registryId"(): $ResourceKey<($Registry<($Block)>)>
 get "registry"(): $Registry<($Block)>
@@ -10733,8 +10683,8 @@ export class $LevelBlock implements $LevelBlock$$Interface {
  "setEntityData"(tag: $CompoundTag$$Type): void
  "getCenterY"(): double
  "spawnLightning"(effectOnly: boolean, player: $ServerPlayer$$Type): void
- "spawnLightning"(): void
  "spawnLightning"(effectOnly: boolean): void
+ "spawnLightning"(): void
  "getPlayersInRadius"(radius: double): $EntityArrayList
  "getPlayersInRadius"(): $EntityArrayList
  "getDown"(): $LevelBlock
@@ -10754,33 +10704,33 @@ export class $LevelBlock implements $LevelBlock$$Interface {
  "popItemFromFace"(item: $ItemStack$$Type, dir: $Direction$$Type): void
  "getBiomeId"(): $ResourceLocation
  "toBlockStateString"(): StringJS
- "createEntity"(type: $EntityType$$Type<(never)>): $Entity
- "getItem"(): $ItemStack
+ "getEntity"(): $BlockEntity
  "getDimension"(): $ResourceLocation
  "getLevel"(): $Level
- "getEntity"(): $BlockEntity
  "getY"(): integer
+ "getItem"(): $ItemStack
+ "createEntity"(type: $EntityType$$Type<(never)>): $Entity
  "offset"(f: $Direction$$Type): $LevelBlock
- "offset"(x: integer, y: integer, z: integer): $LevelBlock
  "offset"(f: $Direction$$Type, d: integer): $LevelBlock
- "set"(block: $Block$$Type, properties: $Map$$Type<(never), (never)>, flags: integer): void
+ "offset"(x: integer, y: integer, z: integer): $LevelBlock
  "set"(block: $Block$$Type): void
+ "set"(block: $Block$$Type, properties: $Map$$Type<(never), (never)>, flags: integer): void
  "set"(block: $Block$$Type, properties: $Map$$Type<(never), (never)>): void
  "getProperties"(): $Map<(StringJS), (StringJS)>
  "getX"(): integer
  "getZ"(): integer
  "getBlockState"(): $BlockState
- "getInventory"(facing: $Direction$$Type): $InventoryKJS
  "getInventory"(): $InventoryKJS
+ "getInventory"(facing: $Direction$$Type): $InventoryKJS
  "getBlock"(): $Block
  "getEntityData"(): $CompoundTag
  "getPos"(): $BlockPos
  "explode"(properties: $ExplosionProperties$$Type): $Explosion
  "getCenterX"(): double
  "getCenterZ"(): double
- "getDimensionKey"(): $ResourceKey<($Level)>
- "setBlockState"(state: $BlockState$$Type): void
  "setBlockState"(state: $BlockState$$Type, flags: integer): void
+ "setBlockState"(state: $BlockState$$Type): void
+ "getDimensionKey"(): $ResourceKey<($Level)>
  "canSeeSkyFromBelowWater"(): boolean
  "getTypeData"(): $Map<(StringJS), (any)>
  "getRegistryId"(): $ResourceKey<($Registry<($Block)>)>
@@ -10882,28 +10832,28 @@ export type $RecipeMappingRegistry$$Type = ($RecipeMappingRegistry);
 export type $RecipeMappingRegistry$$Original = $RecipeMappingRegistry;}
 declare module "dev.latvian.mods.kubejs.core.ClientPlayerKJS" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$Direction} from "net.minecraft.core.Direction"
 import {$KubeJSInventoryListener} from "dev.latvian.mods.kubejs.player.KubeJSInventoryListener"
+import {$Direction} from "net.minecraft.core.Direction"
 import {$Level} from "net.minecraft.world.level.Level"
-import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$SoundEvent$$Type} from "net.minecraft.sounds.SoundEvent"
+import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$Stages} from "dev.latvian.mods.kubejs.stages.Stages"
 import {$PlayerKJS$$Interface} from "dev.latvian.mods.kubejs.core.PlayerKJS"
 import {$Holder$$Type} from "net.minecraft.core.Holder"
 import {$FoodProperties$$Type} from "net.minecraft.world.food.FoodProperties"
 import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
-import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$ItemPredicate$$Type} from "dev.latvian.mods.kubejs.item.ItemPredicate"
+import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$ScriptType} from "dev.latvian.mods.kubejs.script.ScriptType"
 import {$Item$$Type} from "net.minecraft.world.item.Item"
 import {$InventoryKJS} from "dev.latvian.mods.kubejs.core.InventoryKJS"
-import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$NotificationToastData$$Type} from "dev.latvian.mods.kubejs.util.NotificationToastData"
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Predicate$$Type} from "java.util.function.Predicate"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$AttachedData, $AttachedData$$Type} from "dev.latvian.mods.kubejs.util.AttachedData"
 import {$KubeRayTraceResult} from "dev.latvian.mods.kubejs.entity.KubeRayTraceResult"
 import {$Consumer$$Type} from "java.util.function.Consumer"
@@ -10915,8 +10865,8 @@ import {$EntityPotionEffectsJS} from "dev.latvian.mods.kubejs.entity.EntityPotio
 import {$Attribute$$Type} from "net.minecraft.world.entity.ai.attributes.Attribute"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$GameProfile} from "com.mojang.authlib.GameProfile"
-import {$MinecraftServer} from "net.minecraft.server.MinecraftServer"
 import {$EntityArrayList} from "dev.latvian.mods.kubejs.player.EntityArrayList"
+import {$MinecraftServer} from "net.minecraft.server.MinecraftServer"
 
 /**
  * This class is not allowed By KubeJS!
@@ -11191,9 +11141,9 @@ export type $ScriptFile$$Original = $ScriptFile;}
 declare module "dev.latvian.mods.kubejs.event.EventTargetType" {
 import {$TypeInfo$$Type} from "dev.latvian.mods.rhino.type.TypeInfo"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$EventTargetType$Transformer$$Type} from "dev.latvian.mods.kubejs.event.EventTargetType$Transformer"
 import {$Enum} from "java.lang.Enum"
 import {$Registry, $Registry$$Type} from "net.minecraft.core.Registry"
+import {$EventTargetType$Transformer$$Type} from "dev.latvian.mods.kubejs.event.EventTargetType$Transformer"
 import {$Predicate$$Type} from "java.util.function.Predicate"
 import {$Class, $Class$$Type} from "java.lang.Class"
 import {$ResourceKey, $ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
@@ -11209,9 +11159,9 @@ public "identity"(): $EventTargetType<(T)>
 public static "create"<T>(type: $Class$$Type<(T)>): $EventTargetType<(T)>
 public "transformer"(factory: $EventTargetType$Transformer$$Type): $EventTargetType<(T)>
 public "validator"(validator: $Predicate$$Type<(any)>): $EventTargetType<(T)>
+public "describeType"(describeType: $TypeInfo$$Type): $EventTargetType<(T)>
 public static "fromEnum"<T extends $Enum<(object)>>(type: $Class$$Type<(T)>): $EventTargetType<(T)>
 public static "registryKey"<T>(registry: $ResourceKey$$Type<($Registry<(T)>)>, type: $Class$$Type<(never)>): $EventTargetType<($ResourceKey<(T)>)>
-public "describeType"(describeType: $TypeInfo$$Type): $EventTargetType<(T)>
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -11244,13 +11194,13 @@ export class $NetworkKubeEvent implements $KubePlayerEvent$$Interface {
 constructor(p: $Player$$Type, c: StringJS, d: $CompoundTag$$Type)
 
 /**
- * The data of the packet.
- */
-public "getData"(): $CompoundTag
-/**
  * The player that sent the packet. Always `Minecraft.player` in `client_scripts`.
  */
 public "getEntity"(): $LivingEntity
+/**
+ * The data of the packet.
+ */
+public "getData"(): $CompoundTag
 /**
  * The channel of the packet.
  */
@@ -11295,8 +11245,8 @@ public "cancel"(value: any): any
  * `cancel` denotes a `false` outcome.
  */
 public "cancel"(): any
-get "data"(): $CompoundTag
 get "entity"(): $LivingEntity
+get "data"(): $CompoundTag
 get "channel"(): StringJS
 get "player"(): $Player
 get "level"(): $Level
@@ -11317,8 +11267,8 @@ import {$KubeEvent$$Interface} from "dev.latvian.mods.kubejs.event.KubeEvent"
 import {$Pattern} from "java.util.regex.Pattern"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$DocumentedRecipes} from "moe.wolfgirl.probejs.generated.DocumentedRecipes"
-import {$Shaped} from "moe.wolfgirl.probejs.generated.schema.kubejs.Shaped"
 import {$List$$Type} from "java.util.List"
+import {$Shaped} from "moe.wolfgirl.probejs.generated.schema.kubejs.Shaped"
 import {$ServerScriptManager$$Type} from "dev.latvian.mods.kubejs.server.ServerScriptManager"
 import {$Stonecutting} from "moe.wolfgirl.probejs.generated.schema.minecraft.Stonecutting"
 import {$RecipeSchemaStorage} from "dev.latvian.mods.kubejs.recipe.schema.RecipeSchemaStorage"
@@ -11331,8 +11281,8 @@ import {$JsonObject$$Type} from "com.google.gson.JsonObject"
 import {$TickDuration$$Type} from "dev.latvian.mods.kubejs.util.TickDuration"
 import {$Stream} from "java.util.stream.Stream"
 import {$SmithingTransform} from "moe.wolfgirl.probejs.generated.schema.minecraft.SmithingTransform"
-import {$Map, $Map$$Type} from "java.util.Map"
 import {$Collection} from "java.util.Collection"
+import {$Map, $Map$$Type} from "java.util.Map"
 import {$Ingredient$$Type} from "net.minecraft.world.item.crafting.Ingredient"
 import {$Smelting} from "moe.wolfgirl.probejs.generated.schema.minecraft.Smelting"
 import {$Blasting} from "moe.wolfgirl.probejs.generated.schema.minecraft.Blasting"
@@ -11367,24 +11317,24 @@ readonly "smelting": (result: $ItemStack$$Type, ingredient: $Ingredient$$Type, x
 
 constructor(manager: $ServerScriptManager$$Type, resourceManager: $ResourceManager$$Type)
 
-public "takeId"(recipe: $KubeRecipe$$Type, prefix: StringJS, ids: StringJS): $ResourceLocation
-public "getRecipeFunction"(id: StringJS): $RecipeTypeFunction
-public "replaceInput"(filter: $RecipeFilter$$Type, match: $ReplacementMatchInfo$$Type, arg2: any): void
-public "replaceOutput"(filter: $RecipeFilter$$Type, match: $ReplacementMatchInfo$$Type, arg2: any): void
-public "addRecipe"(r: $KubeRecipe$$Type, json: boolean): $KubeRecipe
-public "getRecipes"(): $DocumentedRecipes
 public "recipeStream"(filter: $RecipeFilter$$Type): $Stream<($KubeRecipe)>
 public "forEachRecipe"(filter: $RecipeFilter$$Type, consumer: $Consumer$$Type<($KubeRecipe)>): void
 public "containsRecipe"(filter: $RecipeFilter$$Type): boolean
 public "findRecipeIds"(filter: $RecipeFilter$$Type): $Collection<($ResourceLocation)>
 public "printAllTypes"(): void
 public "printExamples"(type: StringJS): void
-public "countRecipes"(filter: $RecipeFilter$$Type): integer
+public "addRecipe"(r: $KubeRecipe$$Type, json: boolean): $KubeRecipe
+public "replaceInput"(filter: $RecipeFilter$$Type, match: $ReplacementMatchInfo$$Type, arg2: any): void
+public "replaceOutput"(filter: $RecipeFilter$$Type, match: $ReplacementMatchInfo$$Type, arg2: any): void
+public "getRecipes"(): $DocumentedRecipes
 public "findRecipes"(filter: $RecipeFilter$$Type): $Collection<($KubeRecipe)>
+public "countRecipes"(filter: $RecipeFilter$$Type): integer
 public "stage"(filter: $RecipeFilter$$Type, stage: StringJS): void
+public "getRecipeFunction"(id: StringJS): $RecipeTypeFunction
 public "remove"(filter: $RecipeFilter$$Type): void
 public "custom"(json: $JsonObject$$Type): $KubeRecipe
 public "printTypes"(): void
+public "takeId"(recipe: $KubeRecipe$$Type, prefix: StringJS, ids: StringJS): $ResourceLocation
 /**
  * Stops the event with default exit value. Execution will be stopped **immediately**.
  * 
@@ -11435,8 +11385,8 @@ export type $RecipesKubeEvent$$Original = $RecipesKubeEvent;}
 declare module "dev.latvian.mods.kubejs.recipe.special.ShapelessKubeJSRecipe$SerializerKJS" {
 import {$ShapelessKubeJSRecipe} from "dev.latvian.mods.kubejs.recipe.special.ShapelessKubeJSRecipe"
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
 
@@ -11603,13 +11553,13 @@ export class $FoodEatenKubeEvent implements $KubeEntityEvent$$Interface {
 constructor(e: $LivingEntity$$Type, is: $ItemStack$$Type)
 
 /**
- * The food that was eaten.
- */
-public "getItem"(): $ItemStack
-/**
  * The entity that ate the food.
  */
 public "getEntity"(): $Entity
+/**
+ * The food that was eaten.
+ */
+public "getItem"(): $ItemStack
 public "getLevel"(): $Level
 public "getPlayer"(): $Player
 public "getRegistries"(): $RegistryAccess
@@ -11650,8 +11600,8 @@ public "cancel"(value: any): any
  * `cancel` denotes a `false` outcome.
  */
 public "cancel"(): any
-get "item"(): $ItemStack
 get "entity"(): $Entity
+get "item"(): $ItemStack
 get "level"(): $Level
 get "player"(): $Player
 get "registries"(): $RegistryAccess
@@ -11670,8 +11620,8 @@ declare module "dev.latvian.mods.kubejs.core.FluidIngredientKJS" {
 import {$ReplacementMatch} from "dev.latvian.mods.kubejs.recipe.match.ReplacementMatch"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$FluidMatch$$Interface} from "dev.latvian.mods.kubejs.recipe.match.FluidMatch"
-import {$JsonElement} from "com.google.gson.JsonElement"
 import {$WithCodec$$Interface} from "dev.latvian.mods.kubejs.util.WithCodec"
+import {$JsonElement} from "com.google.gson.JsonElement"
 import {$RecipeMatchContext$$Type} from "dev.latvian.mods.kubejs.recipe.filter.RecipeMatchContext"
 import {$Tag} from "net.minecraft.nbt.Tag"
 import {$SizedFluidIngredient} from "net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient"
@@ -11691,8 +11641,8 @@ export class $FluidIngredientKJS implements $FluidIngredientKJS$$Interface {
  "withAmount"(amount: integer): $SizedFluidIngredient
  "matches"(cx: $RecipeMatchContext$$Type, s: $FluidStack$$Type, exact: boolean): boolean
  "matches"(cx: $RecipeMatchContext$$Type, arg1: $FluidIngredient$$Type, exact: boolean): boolean
- "self"(): $FluidIngredient
  "getCodec"(): $Codec<(never)>
+ "self"(): $FluidIngredient
  "toJson"(): $JsonElement
  "toNBT"(): $Tag
 static "wrap"(o: any): $ReplacementMatch
@@ -11753,7 +11703,6 @@ import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resource
 import {$Registry} from "net.minecraft.core.Registry"
 import {$ShapedBlockBuilder} from "dev.latvian.mods.kubejs.block.custom.ShapedBlockBuilder"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
-import {$BuilderBase} from "dev.latvian.mods.kubejs.registry.BuilderBase"
 import {$SourceLine} from "dev.latvian.mods.kubejs.script.SourceLine"
 import {$RandomTickCallback} from "dev.latvian.mods.kubejs.block.callback.RandomTickCallback"
 import {$Consumer} from "java.util.function.Consumer"
@@ -11767,10 +11716,6 @@ static readonly "SLAB_TAGS": ($ResourceLocation)[]
 
 constructor(i: $ResourceLocation$$Type)
 
-/**
- * Tags both the block and the item with the given tag.
- */
-public "tag"(tag: ($ResourceLocation$$Type)[]): $BuilderBase
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -11807,8 +11752,8 @@ import {$MutableToolTier$$Type} from "dev.latvian.mods.kubejs.item.MutableToolTi
 import {$Map, $Map$$Type} from "java.util.Map"
 import {$KubeStartupEvent$$Interface} from "dev.latvian.mods.kubejs.event.KubeStartupEvent"
 import {$Tier, $Tier$$Type} from "net.minecraft.world.item.Tier"
-import {$Record} from "java.lang.Record"
 import {$Consumer$$Type} from "java.util.function.Consumer"
+import {$Record} from "java.lang.Record"
 
 /**
  * Invoked when the game is starting up and the item tool tiers are being registered.
@@ -11816,9 +11761,9 @@ import {$Consumer$$Type} from "java.util.function.Consumer"
 export class $ItemToolTierRegistryKubeEvent extends $Record implements $KubeStartupEvent$$Interface {
 constructor(tiers: $Map$$Type<(StringJS), ($Tier$$Type)>)
 
+public "tiers"(): $Map<(StringJS), ($Tier)>
 public "addBasedOnExisting"(id: StringJS, existing: StringJS, tier: $Consumer$$Type<($MutableToolTier)>): void
 public "addExisting"(id: StringJS, tier: $Tier$$Type): void
-public "tiers"(): $Map<(StringJS), ($Tier)>
 public "equals"(o: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
@@ -11895,8 +11840,8 @@ export type $AdditionalObjectRegistry$$Type = ((registry: $ResourceKey<($Registr
  */
 export type $AdditionalObjectRegistry$$Original = $AdditionalObjectRegistry;}
 declare module "dev.latvian.mods.kubejs.util.ClassWrapper" {
-import {$CustomJavaToJsWrapper$$Interface} from "dev.latvian.mods.rhino.util.CustomJavaToJsWrapper"
 import {$TypeInfo$$Type} from "dev.latvian.mods.rhino.type.TypeInfo"
+import {$CustomJavaToJsWrapper$$Interface} from "dev.latvian.mods.rhino.util.CustomJavaToJsWrapper"
 import {$Class, $Class$$Type} from "java.lang.Class"
 import {$Scriptable, $Scriptable$$Type} from "dev.latvian.mods.rhino.Scriptable"
 import {$Record} from "java.lang.Record"
@@ -11929,8 +11874,8 @@ import {$Record} from "java.lang.Record"
 export class $WrappedSpawner extends $Record {
 constructor(entity: $Entity$$Type, block: $LevelBlock$$Type)
 
-public "entity"(): $Entity
 public "isWorldgen"(): boolean
+public "entity"(): $Entity
 public "equals"(o: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
@@ -11942,7 +11887,7 @@ get "worldgen"(): boolean
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $WrappedSpawner$$Type = ({"entity"?: $Entity$$Type, "block"?: $LevelBlock$$Type}) | ([entity?: $Entity$$Type, block?: $LevelBlock$$Type]);
+export type $WrappedSpawner$$Type = ({"block"?: $LevelBlock$$Type, "entity"?: $Entity$$Type}) | ([block?: $LevelBlock$$Type, entity?: $Entity$$Type]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -11951,9 +11896,9 @@ declare module "dev.latvian.mods.kubejs.entity.BeforeLivingEntityHurtKubeEvent" 
 import {$Player} from "net.minecraft.world.entity.player.Player"
 import {$DamageSource} from "net.minecraft.world.damagesource.DamageSource"
 import {$LivingDamageEvent$Pre$$Type} from "net.neoforged.neoforge.event.entity.living.LivingDamageEvent$Pre"
-import {$Level} from "net.minecraft.world.level.Level"
 import {$KubeLivingEntityEvent$$Interface} from "dev.latvian.mods.kubejs.entity.KubeLivingEntityEvent"
-import {$LivingEntity} from "net.minecraft.world.entity.LivingEntity"
+import {$Level} from "net.minecraft.world.level.Level"
+import {$Entity} from "net.minecraft.world.entity.Entity"
 import {$MinecraftServer} from "net.minecraft.server.MinecraftServer"
 import {$RegistryAccess} from "net.minecraft.core.RegistryAccess"
 
@@ -11965,13 +11910,13 @@ constructor(event: $LivingDamageEvent$Pre$$Type)
 
 public "setDamage"(damage: float): void
 /**
+ * The entity that was hurt.
+ */
+public "getEntity"(): $Entity
+/**
  * The damage source.
  */
 public "getSource"(): $DamageSource
-/**
- * The entity that was hurt.
- */
-public "getEntity"(): $LivingEntity
 /**
  * The amount of damage.
  */
@@ -12017,8 +11962,8 @@ public "cancel"(value: any): any
  */
 public "cancel"(): any
 set "damage"(value: float)
+get "entity"(): $Entity
 get "source"(): $DamageSource
-get "entity"(): $LivingEntity
 get "damage"(): float
 get "level"(): $Level
 get "player"(): $Player
@@ -12039,7 +11984,6 @@ import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resource
 import {$Registry} from "net.minecraft.core.Registry"
 import {$ShapedBlockBuilder} from "dev.latvian.mods.kubejs.block.custom.ShapedBlockBuilder"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
-import {$BuilderBase} from "dev.latvian.mods.kubejs.registry.BuilderBase"
 import {$SourceLine} from "dev.latvian.mods.kubejs.script.SourceLine"
 import {$RandomTickCallback} from "dev.latvian.mods.kubejs.block.callback.RandomTickCallback"
 import {$Consumer} from "java.util.function.Consumer"
@@ -12053,10 +11997,6 @@ static readonly "WALL_TAGS": ($ResourceLocation)[]
 
 constructor(i: $ResourceLocation$$Type)
 
-/**
- * Tags both the block and the item with the given tag.
- */
-public "tag"(tag: ($ResourceLocation$$Type)[]): $BuilderBase
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -12135,10 +12075,10 @@ import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$NoteBlockInstrument$$Type} from "net.minecraft.world.level.block.state.properties.NoteBlockInstrument"
 import {$BlockDropSupplier$$Type} from "dev.latvian.mods.kubejs.block.drop.BlockDropSupplier"
-import {$KubeDataGenerator$$Type} from "dev.latvian.mods.kubejs.generator.KubeDataGenerator"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
-import {$Function$$Type} from "java.util.function.Function"
+import {$KubeDataGenerator$$Type} from "dev.latvian.mods.kubejs.generator.KubeDataGenerator"
 import {$EntitySteppedOnBlockCallback$$Type} from "dev.latvian.mods.kubejs.block.callback.EntitySteppedOnBlockCallback"
+import {$Function$$Type} from "java.util.function.Function"
 import {$ItemBuilder$$Type} from "dev.latvian.mods.kubejs.item.ItemBuilder"
 import {$CanBeReplacedCallback$$Type} from "dev.latvian.mods.kubejs.block.callback.CanBeReplacedCallback"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
@@ -12147,15 +12087,15 @@ import {$SourceLine} from "dev.latvian.mods.kubejs.script.SourceLine"
 import {$RandomTickCallback, $RandomTickCallback$$Type} from "dev.latvian.mods.kubejs.block.callback.RandomTickCallback"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$BlockEntityInfo$$Type} from "dev.latvian.mods.kubejs.block.entity.BlockEntityInfo"
-import {$SoundType$$Type} from "net.minecraft.world.level.block.SoundType"
 import {$Predicate$$Type} from "java.util.function.Predicate"
-import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
+import {$SoundType$$Type} from "net.minecraft.world.level.block.SoundType"
 import {$BlockStateRotateCallback$$Type} from "dev.latvian.mods.kubejs.block.callback.BlockStateRotateCallback"
-import {$BlockStateModifyPlacementCallback$$Type} from "dev.latvian.mods.kubejs.block.callback.BlockStateModifyPlacementCallback"
+import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$BlockExplodedCallback$$Type} from "dev.latvian.mods.kubejs.block.callback.BlockExplodedCallback"
+import {$BlockStateModifyPlacementCallback$$Type} from "dev.latvian.mods.kubejs.block.callback.BlockStateModifyPlacementCallback"
 import {$ModelledBuilderBase} from "dev.latvian.mods.kubejs.registry.ModelledBuilderBase"
-import {$BlockStateMirrorCallback$$Type} from "dev.latvian.mods.kubejs.block.callback.BlockStateMirrorCallback"
 import {$BuilderBase} from "dev.latvian.mods.kubejs.registry.BuilderBase"
+import {$BlockStateMirrorCallback$$Type} from "dev.latvian.mods.kubejs.block.callback.BlockStateMirrorCallback"
 import {$LootTable} from "net.minecraft.world.level.storage.loot.LootTable"
 import {$Consumer, $Consumer$$Type} from "java.util.function.Consumer"
 import {$EntityFallenOnBlockCallback$$Type} from "dev.latvian.mods.kubejs.block.callback.EntityFallenOnBlockCallback"
@@ -12173,21 +12113,13 @@ readonly "id": $ResourceLocation
 
 constructor(id: $ResourceLocation$$Type)
 
-public static "createShape"(boxes: $List$$Type<($AABB$$Type)>): $VoxelShape
-/**
- * Makes the block require a tool to have drops when broken.
- */
-public "requiresTool"(): this
-/**
- * Makes the block require a tool to have drops when broken.
- */
-public "requiresTool"(f: boolean): this
 /**
  * Sets the hardness of the block. Defaults to 1.5.
  * 
  * Setting this to -1 will make the block unbreakable like bedrock.
  */
 public "hardness"(h: float): this
+public static "createShape"(boxes: $List$$Type<($AABB$$Type)>): $VoxelShape
 public "transformObject"(obj: $Block$$Type): $Block
 /**
  * Sets the blast resistance of the block. Defaults to 3.
@@ -12245,12 +12177,28 @@ public "defaultState"(callbackJS: $Consumer$$Type<($BlockStateModifyCallback)>):
  * Set the callback used for determining how the block rotates
  */
 public "rotateState"(callbackJS: $Consumer$$Type<($BlockStateRotateCallback)>): this
-public "generateLootTable"(generator: $KubeDataGenerator$$Type): $LootTable
+/**
+ * Makes the block a redstone conductor.
+ */
+public "redstoneConductor"(b: boolean): this
+/**
+ * Set how this block reacts after an explosion. Note the block has already been destroyed at this point
+ */
+public "exploded"(callbackJS: $Consumer$$Type<($BlockExplodedCallback)>): this
+/**
+ * Makes the block require a tool to have drops when broken.
+ */
+public "requiresTool"(): this
+/**
+ * Makes the block require a tool to have drops when broken.
+ */
+public "requiresTool"(f: boolean): this
 /**
  * 
  * @deprecated
  */
 public "generateLootTable"(): $LootTable
+public "generateLootTable"(generator: $KubeDataGenerator$$Type): $LootTable
 /**
  * Set how slippery the block is.
  */
@@ -12342,29 +12290,21 @@ public "bounciness"(bounciness: float): this
  */
 public "mirrorState"(callbackJS: $Consumer$$Type<($BlockStateMirrorCallback)>): this
 /**
+ * Sets the block should be a full block or not, like cactus or doors.
+ */
+public "fullBlock"(f: boolean): this
+/**
  * Tags the item with the given tag.
  */
 public "tagItem"(tag: ($ResourceLocation$$Type)[]): this
 /**
- * Set how this block reacts after an explosion. Note the block has already been destroyed at this point
+ * Tags both the block and the item with the given tag.
  */
-public "exploded"(callbackJS: $Consumer$$Type<($BlockExplodedCallback)>): this
-/**
- * Makes the block a redstone conductor.
- */
-public "redstoneConductor"(b: boolean): this
+public "tag"(tag: ($ResourceLocation$$Type)[]): this
 /**
  * Modifies the block's item representation.
  */
 public "item"(i: $Consumer$$Type<($ItemBuilder)>): this
-/**
- * Tags both the block and the item with the given tag.
- */
-public "tag"(tag: ($ResourceLocation$$Type)[]): $BuilderBase
-/**
- * Sets the block should be a full block or not, like cactus or doors.
- */
-public "fullBlock"(f: boolean): this
 public "createProperties"(): $BlockBehaviour$Properties
 /**
  * Add a blockstate property to the block.
@@ -12395,21 +12335,21 @@ public "box"(x0: double, y0: double, z0: double, x1: double, y1: double, z1: dou
  */
 public "displayName"(name: $Component$$Type): $BuilderBase<($Block)>
 /**
+ * Set the callback for determining the blocks state when placed.
+ */
+public "placementState"(callbackJS: $Consumer$$Type<($BlockStateModifyPlacementCallback)>): this
+/**
  * Sets the opacity of the block. Opaque blocks do not let light through.
  */
 public "opaque"(o: boolean): this
-/**
- * Note block instrument.
- */
-public "instrument"(i: $NoteBlockInstrument$$Type): this
 /**
  * Makes the block can be waterlogged.
  */
 public "waterlogged"(): this
 /**
- * Set the callback for determining the blocks state when placed.
+ * Note block instrument.
  */
-public "placementState"(callbackJS: $Consumer$$Type<($BlockStateModifyPlacementCallback)>): this
+public "instrument"(i: $NoteBlockInstrument$$Type): this
 /**
  * Change drops of this block
  */
@@ -12419,13 +12359,13 @@ public "drops"(drops: $BlockDropSupplier$$Type): this
  */
 public "noCollision"(): this
 /**
- * Sets the render type of the block. Can be `cutout`, `cutout_mipped`, `translucent`, or `basic`.
- */
-public "renderType"(l: $BlockRenderType$$Type): this
-/**
  * Creates a Block Entity for this block
  */
 public "blockEntity"(callback: $Consumer$$Type<($BlockEntityInfo)>): this
+/**
+ * Sets the render type of the block. Can be `cutout`, `cutout_mipped`, `translucent`, or `basic`.
+ */
+public "renderType"(l: $BlockRenderType$$Type): this
 /**
  * Set the callback used for right-clicking on the block
  */
@@ -12511,8 +12451,8 @@ export type $AttributeModifierFunctions$$Type = (() => $ItemAttributeModifiers$$
 export type $AttributeModifierFunctions$$Original = $AttributeModifierFunctions;}
 declare module "dev.latvian.mods.kubejs.recipe.RecipeScriptContext" {
 import {$Context} from "dev.latvian.mods.rhino.Context"
-import {$ErrorStack} from "dev.latvian.mods.kubejs.util.ErrorStack"
 import {$RegistryOpsContainer} from "dev.latvian.mods.kubejs.util.RegistryOpsContainer"
+import {$ErrorStack} from "dev.latvian.mods.kubejs.util.ErrorStack"
 import {$RecipeValidationContext$$Interface} from "dev.latvian.mods.kubejs.recipe.component.RecipeValidationContext"
 import {$RecipeMatchContext$$Interface} from "dev.latvian.mods.kubejs.recipe.filter.RecipeMatchContext"
 import {$WithScriptContext$$Interface} from "dev.latvian.mods.kubejs.script.WithScriptContext"
@@ -12544,8 +12484,8 @@ import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$Optional} from "java.util.Optional"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$SpecialEquality$$Interface} from "dev.latvian.mods.rhino.util.SpecialEquality"
-import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$TextColor} from "net.minecraft.network.chat.TextColor"
+import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 
 export interface $KubeColor$$Interface extends $SpecialEquality$$Interface {
 
@@ -12613,10 +12553,10 @@ export type $AABBWrapper$$Type = ($AABBWrapper);
 export type $AABBWrapper$$Original = $AABBWrapper;}
 declare module "dev.latvian.mods.kubejs.util.RegistryAccessContainer" {
 import {$OpsContainer} from "dev.latvian.mods.kubejs.util.OpsContainer"
-import {$Collection} from "java.util.Collection"
-import {$Map, $Map$$Type} from "java.util.Map"
 import {$DynamicOps} from "com.mojang.serialization.DynamicOps"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
+import {$Collection} from "java.util.Collection"
+import {$Map, $Map$$Type} from "java.util.Map"
 import {$List$$Type} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$TagLoader$EntryWithSource$$Type} from "net.minecraft.tags.TagLoader$EntryWithSource"
@@ -12624,13 +12564,13 @@ import {$DamageSources} from "net.minecraft.world.damagesource.DamageSources"
 import {$Holder} from "net.minecraft.core.Holder"
 import {$RegistryWrapper} from "dev.latvian.mods.kubejs.plugin.builtin.wrapper.RegistryWrapper"
 import {$RegistryAccess$Frozen, $RegistryAccess$Frozen$$Type} from "net.minecraft.core.RegistryAccess$Frozen"
-import {$CachedItemTagLookup} from "dev.latvian.mods.kubejs.recipe.CachedItemTagLookup"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Fluid} from "net.minecraft.world.level.material.Fluid"
+import {$CachedItemTagLookup} from "dev.latvian.mods.kubejs.recipe.CachedItemTagLookup"
 import {$Registry$$Type} from "net.minecraft.core.Registry"
 import {$RegistryOpsContainer} from "dev.latvian.mods.kubejs.util.RegistryOpsContainer"
-import {$TagKey$$Type} from "net.minecraft.tags.TagKey"
 import {$ICondition$IContext$$Interface} from "net.neoforged.neoforge.common.conditions.ICondition$IContext"
+import {$TagKey$$Type} from "net.minecraft.tags.TagKey"
 import {$CachedTagLookup$Entry} from "dev.latvian.mods.kubejs.recipe.CachedTagLookup$Entry"
 import {$ResourceKey, $ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
 import {$CachedTagLookup} from "dev.latvian.mods.kubejs.recipe.CachedTagLookup"
@@ -12733,6 +12673,10 @@ export class $FarmlandTrampledKubeEvent implements $KubeEntityEvent$$Interface {
 constructor(event: $BlockEvent$FarmlandTrampleEvent$$Type)
 
 /**
+ * The entity that is attempting to trample the farmland.
+ */
+public "getEntity"(): $Entity
+/**
  * The farmland block.
  */
 public "getBlock"(): $LevelBlock
@@ -12740,10 +12684,6 @@ public "getBlock"(): $LevelBlock
  * The level that the farmland and the entity are in.
  */
 public "getLevel"(): $Level
-/**
- * The entity that is attempting to trample the farmland.
- */
-public "getEntity"(): $Entity
 /**
  * The distance of the entity from the block.
  */
@@ -12787,9 +12727,9 @@ public "cancel"(value: any): any
  * `cancel` denotes a `false` outcome.
  */
 public "cancel"(): any
+get "entity"(): $Entity
 get "block"(): $LevelBlock
 get "level"(): $Level
-get "entity"(): $Entity
 get "distance"(): float
 get "player"(): $Player
 get "registries"(): $RegistryAccess
@@ -12815,8 +12755,8 @@ import {$RegistryAccess} from "net.minecraft.core.RegistryAccess"
 export class $BlockEntityTickKubeEvent implements $KubeLevelEvent$$Interface {
 constructor(entity: $KubeBlockEntity$$Type)
 
-public "getCycle"(): integer
 public "getTick"(): integer
+public "getCycle"(): integer
 public "getBlock"(): $LevelBlock
 public "getLevel"(): $Level
 public "getRegistries"(): $RegistryAccess
@@ -12857,8 +12797,8 @@ public "cancel"(value: any): any
  * `cancel` denotes a `false` outcome.
  */
 public "cancel"(): any
-get "cycle"(): integer
 get "tick"(): integer
+get "cycle"(): integer
 get "block"(): $LevelBlock
 get "level"(): $Level
 get "registries"(): $RegistryAccess
@@ -12876,16 +12816,16 @@ export type $BlockEntityTickKubeEvent$$Original = $BlockEntityTickKubeEvent;}
 declare module "dev.latvian.mods.kubejs.recipe.RecipeKey" {
 import {$DynamicOps$$Type} from "com.mojang.serialization.DynamicOps"
 import {$RecipeSchemaType$$Type} from "dev.latvian.mods.kubejs.recipe.schema.RecipeSchemaType"
-import {$JsonElement$$Type} from "com.google.gson.JsonElement"
 import {$List, $List$$Type} from "java.util.List"
+import {$JsonElement$$Type} from "com.google.gson.JsonElement"
 import {$ComponentRole, $ComponentRole$$Type} from "dev.latvian.mods.kubejs.recipe.component.ComponentRole"
 import {$RecipeComponent, $RecipeComponent$$Type} from "dev.latvian.mods.kubejs.recipe.component.RecipeComponent"
 import {$RecipeSchemaStorage$$Type} from "dev.latvian.mods.kubejs.recipe.schema.RecipeSchemaStorage"
 import {$TypeInfo} from "dev.latvian.mods.rhino.type.TypeInfo"
 import {$SequencedSet} from "java.util.SequencedSet"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$JsonObject} from "com.google.gson.JsonObject"
 import {$RecipeOptional$$Type} from "dev.latvian.mods.kubejs.recipe.schema.RecipeOptional"
+import {$JsonObject} from "com.google.gson.JsonObject"
 
 export class $RecipeKey<T> {
  "excluded": boolean
@@ -12898,24 +12838,24 @@ readonly "name": StringJS
 
 constructor(component: $RecipeComponent$$Type<(T)>, name: StringJS, role: $ComponentRole$$Type)
 
+public "defaultOptional"(): $RecipeKey<(T)>
 public "alwaysWrite"(): $RecipeKey<(T)>
-public "getPrimaryFunctionName"(): StringJS
 public "getValidFunctionNames"(): $List<(StringJS)>
 public "noFunctions"(): $RecipeKey<(T)>
-public "defaultOptional"(): $RecipeKey<(T)>
-public "exclude"(): $RecipeKey<(T)>
+public "getPrimaryFunctionName"(): StringJS
 public "functionNames"(names: $List$$Type<(StringJS)>): $RecipeKey<(T)>
 public "functionNames"(...names: (StringJS)[]): $RecipeKey<(T)>
+public "exclude"(): $RecipeKey<(T)>
 public "toString"(): StringJS
 public "hashCode"(): integer
 public "optional"(): boolean
-public "optional"(value: T): $RecipeKey<(T)>
 public "optional"(value: $RecipeOptional$$Type<(T)>): $RecipeKey<(T)>
+public "optional"(value: T): $RecipeKey<(T)>
 public "toJson"(storage: $RecipeSchemaStorage$$Type, type: $RecipeSchemaType$$Type, ops: $DynamicOps$$Type<($JsonElement$$Type)>): $JsonObject
 public "alt"(name: StringJS): $RecipeKey<(T)>
 public "alt"(...names: (StringJS)[]): $RecipeKey<(T)>
-get "primaryFunctionName"(): StringJS
 get "validFunctionNames"(): $List<(StringJS)>
+get "primaryFunctionName"(): StringJS
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -13031,8 +12971,8 @@ import {$ScheduledEvents, $ScheduledEvents$$Type} from "dev.latvian.mods.kubejs.
 import {$TemporalAmount$$Type} from "java.time.temporal.TemporalAmount"
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$TickDuration$$Type} from "dev.latvian.mods.kubejs.util.TickDuration"
-import {$ScheduledEvents$ScheduledEvent} from "dev.latvian.mods.kubejs.util.ScheduledEvents$ScheduledEvent"
 import {$MessageSenderKJS$$Interface} from "dev.latvian.mods.kubejs.core.MessageSenderKJS"
+import {$ScheduledEvents$ScheduledEvent} from "dev.latvian.mods.kubejs.util.ScheduledEvents$ScheduledEvent"
 
 /**
  * This class is not allowed By KubeJS!
@@ -13155,8 +13095,8 @@ export type $KubeJSContextFactory$$Original = $KubeJSContextFactory;}
 declare module "dev.latvian.mods.kubejs.recipe.special.ShapedKubeJSRecipe$SerializerKJS" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$ShapedKubeJSRecipe} from "dev.latvian.mods.kubejs.recipe.special.ShapedKubeJSRecipe"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
 
@@ -13180,8 +13120,8 @@ export type $ShapedKubeJSRecipe$SerializerKJS$$Type = ($ShapedKubeJSRecipe$Seria
  */
 export type $ShapedKubeJSRecipe$SerializerKJS$$Original = $ShapedKubeJSRecipe$SerializerKJS;}
 declare module "dev.latvian.mods.kubejs.player.PlayerChatReceivedKubeEvent" {
-import {$ServerChatEvent$$Type} from "net.neoforged.neoforge.event.ServerChatEvent"
 import {$Player} from "net.minecraft.world.entity.player.Player"
+import {$ServerChatEvent$$Type} from "net.neoforged.neoforge.event.ServerChatEvent"
 import {$KubePlayerEvent$$Interface} from "dev.latvian.mods.kubejs.player.KubePlayerEvent"
 import {$Level} from "net.minecraft.world.level.Level"
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
@@ -13285,7 +13225,7 @@ public static "of"(ingredient: $Ingredient$$Type, index: integer): $SlotFilter
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $SlotFilter$$Type = ({"item"?: $Ingredient$$Type, "index"?: integer}) | ([item?: $Ingredient$$Type, index?: integer]) | ((integer) | ($Ingredient$$Type) | ({"item"?: $Ingredient$$Type, "index"?: integer}) | ([item?: $Ingredient$$Type, index?: integer]));
+export type $SlotFilter$$Type = ({"index"?: integer, "item"?: $Ingredient$$Type}) | ([index?: integer, item?: $Ingredient$$Type]) | ((integer) | ($Ingredient$$Type) | ({"item"?: $Ingredient$$Type, "index"?: integer}) | ([item?: $Ingredient$$Type, index?: integer]));
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -13321,10 +13261,10 @@ import {$LevelBlock} from "dev.latvian.mods.kubejs.level.LevelBlock"
 import {$KubePlayerEvent$$Interface} from "dev.latvian.mods.kubejs.player.KubePlayerEvent"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$LivingEntity} from "net.minecraft.world.entity.LivingEntity"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$HitResult$$Type} from "net.minecraft.world.phys.HitResult"
-import {$KubeRayTraceResult} from "dev.latvian.mods.kubejs.entity.KubeRayTraceResult"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$MinecraftServer} from "net.minecraft.server.MinecraftServer"
+import {$KubeRayTraceResult} from "dev.latvian.mods.kubejs.entity.KubeRayTraceResult"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$RegistryAccess} from "net.minecraft.core.RegistryAccess"
 
@@ -13338,8 +13278,8 @@ readonly "player": $Player
 
 constructor(level: $Level$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type, player: $Player$$Type, hitResult: $HitResult$$Type)
 
-public "getLevel"(): $Level
 public "getEntity"(): $LivingEntity
+public "getLevel"(): $Level
 public "getTarget"(): $KubeRayTraceResult
 public "getPlayer"(): $Player
 public "getRegistries"(): $RegistryAccess
@@ -13463,13 +13403,13 @@ export class $InventoryChangedKubeEvent implements $KubePlayerEvent$$Interface {
 constructor(p: $Player$$Type, is: $ItemStack$$Type, s: integer)
 
 /**
- * Gets the item that was changed.
- */
-public "getItem"(): $ItemStack
-/**
  * Gets the player that changed their inventory.
  */
 public "getEntity"(): $LivingEntity
+/**
+ * Gets the item that was changed.
+ */
+public "getItem"(): $ItemStack
 /**
  * Gets the slot that was changed.
  */
@@ -13514,8 +13454,8 @@ public "cancel"(value: any): any
  * `cancel` denotes a `false` outcome.
  */
 public "cancel"(): any
-get "item"(): $ItemStack
 get "entity"(): $LivingEntity
+get "item"(): $ItemStack
 get "slot"(): integer
 get "player"(): $Player
 get "level"(): $Level
@@ -13559,8 +13499,8 @@ import {$Registry} from "net.minecraft.core.Registry"
 import {$Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Item$$Type} from "net.minecraft.world.item.Item"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
-import {$BuilderBase} from "dev.latvian.mods.kubejs.registry.BuilderBase"
 import {$SoundEvent$$Type} from "net.minecraft.sounds.SoundEvent"
+import {$BuilderBase} from "dev.latvian.mods.kubejs.registry.BuilderBase"
 import {$SourceLine} from "dev.latvian.mods.kubejs.script.SourceLine"
 
 export class $VillagerProfessionBuilder extends $BuilderBase<($VillagerProfession)> {
@@ -13702,8 +13642,8 @@ import {$Player} from "net.minecraft.world.entity.player.Player"
 import {$LevelBlock} from "dev.latvian.mods.kubejs.level.LevelBlock"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$KubePlayerEvent$$Interface} from "dev.latvian.mods.kubejs.player.KubePlayerEvent"
-import {$Direction} from "net.minecraft.core.Direction"
 import {$PlayerInteractEvent$LeftClickBlock$$Type} from "net.neoforged.neoforge.event.entity.player.PlayerInteractEvent$LeftClickBlock"
+import {$Direction} from "net.minecraft.core.Direction"
 import {$Level} from "net.minecraft.world.level.Level"
 import {$LivingEntity} from "net.minecraft.world.entity.LivingEntity"
 import {$MinecraftServer} from "net.minecraft.server.MinecraftServer"
@@ -13720,17 +13660,17 @@ constructor(event: $PlayerInteractEvent$LeftClickBlock$$Type)
  */
 public "getFacing"(): $Direction
 /**
- * The item that was used to left click the block.
+ * The player that left clicked the block.
  */
-public "getItem"(): $ItemStack
+public "getEntity"(): $LivingEntity
 /**
  * The block that was left clicked.
  */
 public "getBlock"(): $LevelBlock
 /**
- * The player that left clicked the block.
+ * The item that was used to left click the block.
  */
-public "getEntity"(): $LivingEntity
+public "getItem"(): $ItemStack
 public "getPlayer"(): $Player
 public "getLevel"(): $Level
 public "getRegistries"(): $RegistryAccess
@@ -13772,9 +13712,9 @@ public "cancel"(value: any): any
  */
 public "cancel"(): any
 get "facing"(): $Direction
-get "item"(): $ItemStack
-get "block"(): $LevelBlock
 get "entity"(): $LivingEntity
+get "block"(): $LevelBlock
+get "item"(): $ItemStack
 get "player"(): $Player
 get "level"(): $Level
 get "registries"(): $RegistryAccess
@@ -13846,13 +13786,13 @@ static readonly "READONLY": integer
 static readonly "PERMANENT": integer
 readonly "group": $EventGroup
 
-public "hasResult"(): $EventHandler
 public "requiredTarget"<E>(type: $EventTargetType$$Type<(E)>): $TargetedEventHandler<(E)>
 public "supportsTarget"<E>(type: $EventTargetType$$Type<(E)>): $TargetedEventHandler<(E)>
 public "forEachListener"(type: $ScriptType$$Type, callback: $Consumer$$Type<($EventHandlerContainer)>): void
-public "hasListeners"(): boolean
+public "hasResult"(): $EventHandler
 public "post"(event: $KubeEvent$$Type): $EventResult
 public "post"(scriptType: $ScriptTypeHolder$$Type, event: $KubeEvent$$Type): $EventResult
+public "hasListeners"(): boolean
 public "toString"(): StringJS
 public "listen"(type: $ScriptType$$Type, extraId: any, handler: $IEventHandler$$Type): void
 public "call"(scope: $Scriptable$$Type, thisObj: $Scriptable$$Type, args: (any)[]): any
@@ -13863,16 +13803,16 @@ public "delete"(arg1: integer): void
 public "getDefaultValue"(arg1: $DefaultValueTypeHint$$Type): any
 public "getPrototype"(): $Scriptable
 public "setPrototype"(arg0: $Scriptable$$Type): void
-public "getParentScope"(): $Scriptable
-public "setParentScope"(arg0: $Scriptable$$Type): void
 public "getAllIds"(): (any)[]
 public "getIds"(): (any)[]
+public "getParentScope"(): $Scriptable
+public "setParentScope"(arg0: $Scriptable$$Type): void
 get "prototype"(): $Scriptable
 set "prototype"(value: $Scriptable$$Type)
-get "parentScope"(): $Scriptable
-set "parentScope"(value: $Scriptable$$Type)
 get "allIds"(): (any)[]
 get "ids"(): (any)[]
+get "parentScope"(): $Scriptable
+set "parentScope"(value: $Scriptable$$Type)
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -13916,8 +13856,8 @@ export type $IngredientActionHolder$$Type = ({"filter"?: $SlotFilter$$Type, "act
  */
 export type $IngredientActionHolder$$Original = $IngredientActionHolder;}
 declare module "dev.latvian.mods.kubejs.recipe.component.RecipeValidationContext" {
-import {$ErrorStack, $ErrorStack$$Type} from "dev.latvian.mods.kubejs.util.ErrorStack"
 import {$RegistryOpsContainer} from "dev.latvian.mods.kubejs.util.RegistryOpsContainer"
+import {$ErrorStack, $ErrorStack$$Type} from "dev.latvian.mods.kubejs.util.ErrorStack"
 import {$RecipeMatchContext$$Interface} from "dev.latvian.mods.kubejs.recipe.filter.RecipeMatchContext"
 import {$RecipeLikeKJS} from "dev.latvian.mods.kubejs.core.RecipeLikeKJS"
 import {$KubeRecipeContext$$Interface} from "dev.latvian.mods.kubejs.recipe.KubeRecipeContext"
@@ -13968,8 +13908,8 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
 export class $ComponentRole extends $Enum<($ComponentRole)> implements $StringRepresentable$$Interface {
@@ -13978,20 +13918,20 @@ static readonly "INPUT": $ComponentRole
 static readonly "CODEC": $Codec<($ComponentRole)>
 static readonly "OUTPUT": $ComponentRole
 
-public "isOutput"(): boolean
 public "isInput"(): boolean
+public "isOutput"(): boolean
 public "isOther"(): boolean
 public static "values"(): ($ComponentRole)[]
 public static "valueOf"(name: StringJS): $ComponentRole
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
-get "output"(): boolean
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "input"(): boolean
+get "output"(): boolean
 get "other"(): boolean
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
@@ -14071,10 +14011,10 @@ export interface $PlayerSelector$$Interface {
 
 export class $PlayerSelector implements $PlayerSelector$$Interface {
 static "fuzzyName"(name: StringJS): $PlayerSelector
- "or"(fallback: $PlayerSelector$$Type): $PlayerSelector
 static "name"(name: StringJS): $PlayerSelector
 static "wrap"(o: any): $PlayerSelector
 static "identity"(player: $ServerPlayer$$Type): $PlayerSelector
+ "or"(fallback: $PlayerSelector$$Type): $PlayerSelector
 static "uuid"(uuid: $UUID$$Type): $PlayerSelector
  "getPlayer"(server: $MinecraftServer$$Type): $ServerPlayer
 }
@@ -14091,15 +14031,15 @@ declare module "dev.latvian.mods.kubejs.fluid.FluidTypeBuilder" {
 import {$BlockRenderType$$Type} from "dev.latvian.mods.kubejs.block.BlockRenderType"
 import {$Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Rarity$$Type} from "net.minecraft.world.item.Rarity"
-import {$BuilderBase} from "dev.latvian.mods.kubejs.registry.BuilderBase"
 import {$SoundEvent$$Type} from "net.minecraft.sounds.SoundEvent"
+import {$BuilderBase} from "dev.latvian.mods.kubejs.registry.BuilderBase"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Registry} from "net.minecraft.core.Registry"
 import {$PathType$$Type} from "net.minecraft.world.level.pathfinder.PathType"
 import {$KubeColor$$Type} from "dev.latvian.mods.kubejs.color.KubeColor"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
-import {$SourceLine} from "dev.latvian.mods.kubejs.script.SourceLine"
 import {$FluidType} from "net.neoforged.neoforge.fluids.FluidType"
+import {$SourceLine} from "dev.latvian.mods.kubejs.script.SourceLine"
 import {$ParticleOptions$$Type} from "net.minecraft.core.particles.ParticleOptions"
 import {$SoundAction$$Type} from "net.neoforged.neoforge.common.SoundAction"
 
@@ -14110,30 +14050,30 @@ readonly "id": $ResourceLocation
 
 constructor(id: $ResourceLocation$$Type)
 
+public "canDrown"(canDrown: boolean): this
+public "fallDistanceModifier"(fallDistanceModifier: float): this
 public "descriptionId"(descriptionId: StringJS): this
 public "temperature"(temperature: integer): this
 public "rarity"(rarity: $Rarity$$Type): this
-public "canDrown"(canDrown: boolean): this
-public "fallDistanceModifier"(fallDistanceModifier: float): this
 public "canConvertToSource"(canConvertToSource: boolean): this
 public "supportsBoating"(supportsBoating: boolean): this
-public "pathType"(pathType: $PathType$$Type): this
 public "adjacentPathType"(adjacentPathType: $PathType$$Type): this
 public "lightLevel"(lightLevel: integer): this
 public "viscosity"(viscosity: integer): this
+public "pathType"(pathType: $PathType$$Type): this
 public "stillTexture"(stillTexture: $ResourceLocation$$Type): this
 public "flowingTexture"(flowingTexture: $ResourceLocation$$Type): this
 public "screenOverlayTexture"(screenOverlayTexture: $ResourceLocation$$Type): this
 public "blockOverlayTexture"(blockOverlayTexture: $ResourceLocation$$Type): this
 public "density"(density: integer): this
 public "sound"(action: $SoundAction$$Type, sound: $SoundEvent$$Type): this
-public "addDripstoneDripping"(chance: float, dripParticle: $ParticleOptions$$Type, cauldron: $Block$$Type, fillSound: $SoundEvent$$Type): this
 public "motionScale"(motionScale: double): this
 public "canPushEntity"(canPushEntity: boolean): this
 public "canSwim"(canSwim: boolean): this
 public "canExtinguish"(canExtinguish: boolean): this
 public "canHydrate"(canHydrate: boolean): this
 public "renderType"(renderType: $BlockRenderType$$Type): this
+public "addDripstoneDripping"(chance: float, dripParticle: $ParticleOptions$$Type, cauldron: $Block$$Type, fillSound: $SoundEvent$$Type): this
 public "tint"(tint: $KubeColor$$Type): this
 }
 /**
@@ -14237,8 +14177,8 @@ import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Predicate$$Type} from "java.util.function.Predicate"
 import {$Direction} from "net.minecraft.core.Direction"
 import {$Level} from "net.minecraft.world.level.Level"
-import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$SoundEvent$$Type} from "net.minecraft.sounds.SoundEvent"
+import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$KubeRayTraceResult} from "dev.latvian.mods.kubejs.entity.KubeRayTraceResult"
 import {$LevelBlock, $LevelBlock$$Type} from "dev.latvian.mods.kubejs.level.LevelBlock"
 import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
@@ -14247,8 +14187,8 @@ import {$EntityKJS$$Interface} from "dev.latvian.mods.kubejs.core.EntityKJS"
 import {$GameProfile} from "com.mojang.authlib.GameProfile"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$MinecraftServer} from "net.minecraft.server.MinecraftServer"
 import {$EntityArrayList} from "dev.latvian.mods.kubejs.player.EntityArrayList"
+import {$MinecraftServer} from "net.minecraft.server.MinecraftServer"
 
 /**
  * This class is not allowed By KubeJS!
@@ -14389,8 +14329,8 @@ constructor(player: $Player$$Type, stages: $Stages$$Type, stage: StringJS)
 
 public "getEntity"(): $LivingEntity
 public "getPlayerStages"(): $Stages
-public "getStage"(): StringJS
 public "getPlayer"(): $Player
+public "getStage"(): StringJS
 public "getLevel"(): $Level
 public "getRegistries"(): $RegistryAccess
 public "getServer"(): $MinecraftServer
@@ -14432,8 +14372,8 @@ public "cancel"(value: any): any
 public "cancel"(): any
 get "entity"(): $LivingEntity
 get "playerStages"(): $Stages
-get "stage"(): StringJS
 get "player"(): $Player
+get "stage"(): StringJS
 get "level"(): $Level
 get "registries"(): $RegistryAccess
 get "server"(): $MinecraftServer
@@ -14477,9 +14417,9 @@ import {$MobSpawnType, $MobSpawnType$$Type} from "net.minecraft.world.entity.Mob
 import {$LevelBlock} from "dev.latvian.mods.kubejs.level.LevelBlock"
 import {$Either$$Type} from "com.mojang.datafixers.util.Either"
 import {$KubeLivingEntityEvent$$Interface} from "dev.latvian.mods.kubejs.entity.KubeLivingEntityEvent"
+import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$WrappedSpawner} from "dev.latvian.mods.kubejs.level.WrappedSpawner"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
+import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$MinecraftServer} from "net.minecraft.server.MinecraftServer"
 import {$RegistryAccess} from "net.minecraft.core.RegistryAccess"
@@ -14501,6 +14441,10 @@ constructor(entity: $LivingEntity$$Type, level: $Level$$Type, x: double, y: doub
  */
 public "getSpawner"(): $WrappedSpawner
 /**
+ * The entity being spawned.
+ */
+public "getEntity"(): $LivingEntity
+/**
  * The block the entity is being spawned on.
  */
 public "getBlock"(): $LevelBlock
@@ -14508,10 +14452,6 @@ public "getBlock"(): $LevelBlock
  * The level the entity is being spawned into.
  */
 public "getLevel"(): $Level
-/**
- * The entity being spawned.
- */
-public "getEntity"(): $Entity
 /**
  * The type of spawn.
  */
@@ -14556,9 +14496,9 @@ public "cancel"(value: any): any
  */
 public "cancel"(): any
 get "spawner"(): $WrappedSpawner
+get "entity"(): $LivingEntity
 get "block"(): $LevelBlock
 get "level"(): $Level
-get "entity"(): $Entity
 get "type"(): $MobSpawnType
 get "player"(): $Player
 get "registries"(): $RegistryAccess
@@ -14694,6 +14634,40 @@ public "ingredients"(text: StringJS): this
  */
 public "appliesTo"(text: StringJS): this
 /**
+ * Adds the specified texture location to the list of ingredient slot icons that the smithing table cycles through when this smithing template is put in
+ */
+public "addIngredientsSlotIcon"(location: $ResourceLocation$$Type): this
+/**
+ * Adds the specified texture location to the list of base slot icons that the smithing table cycles through when this smithing template is put in.
+ */
+public "addAppliesToSlotIcon"(location: $ResourceLocation$$Type): this
+/**
+ * Sets the description text that shows when you hover over the base item slot when this item is put in smithing table as a template.
+ * Using 'Add a piece of armor' or 'Add diamond armor, weapon, or tool' will use the vanilla language keys so it is translated into other languages automatically.
+ * 
+ * If you wish to apply non standard formatting (like change the colour) set the `appliesToSlotDescriptionText` field.
+ */
+public "appliesToSlotDescription"(text: StringJS): this
+/**
+ * Sets the description text that shows when you hover over the ingredient slot when this item is put in smithing table as a template.
+ * Using 'Add ingot or crystal' or 'Add Netherite Ingot' will use the vanilla language keys so it is translated into other languages automatically.
+ * 
+ * If you wish to apply non standard formatting (like change the colour) set the `ingredientSlotDescriptionText` field.
+ */
+public "ingredientsSlotDescription"(text: StringJS): this
+/**
+ * Adds all armor icons to the list of base slot icons that the smithing table cycles through when this smithing template is put in
+ */
+public "armorIcons"(): this
+/**
+ * Adds all armor and basic tool icons to the list of base slot icons that the smithing table cycles through when this smithing template is put in
+ */
+public "equipmentIcons"(): this
+/**
+ * Adds all basic tool icons to the list of base slot icons that the smithing table cycles through when this smithing template is put in
+ */
+public "toolIcons"(): this
+/**
  * Adds an ingot, dust, diamond, emerald, quartz, lapis lazuli and amethyst shard icons to the list of ingredient slot icons that the smithing table cycles through when this smithing template is put in
  */
 public "ingotAndCrystalIcons"(): this
@@ -14766,40 +14740,6 @@ public "leggingsIcon"(): this
  */
 public "bootsIcon"(): this
 /**
- * Adds the specified texture location to the list of ingredient slot icons that the smithing table cycles through when this smithing template is put in
- */
-public "addIngredientsSlotIcon"(location: $ResourceLocation$$Type): this
-/**
- * Adds the specified texture location to the list of base slot icons that the smithing table cycles through when this smithing template is put in.
- */
-public "addAppliesToSlotIcon"(location: $ResourceLocation$$Type): this
-/**
- * Sets the description text that shows when you hover over the base item slot when this item is put in smithing table as a template.
- * Using 'Add a piece of armor' or 'Add diamond armor, weapon, or tool' will use the vanilla language keys so it is translated into other languages automatically.
- * 
- * If you wish to apply non standard formatting (like change the colour) set the `appliesToSlotDescriptionText` field.
- */
-public "appliesToSlotDescription"(text: StringJS): this
-/**
- * Sets the description text that shows when you hover over the ingredient slot when this item is put in smithing table as a template.
- * Using 'Add ingot or crystal' or 'Add Netherite Ingot' will use the vanilla language keys so it is translated into other languages automatically.
- * 
- * If you wish to apply non standard formatting (like change the colour) set the `ingredientSlotDescriptionText` field.
- */
-public "ingredientsSlotDescription"(text: StringJS): this
-/**
- * Adds all armor icons to the list of base slot icons that the smithing table cycles through when this smithing template is put in
- */
-public "armorIcons"(): this
-/**
- * Adds all armor and basic tool icons to the list of base slot icons that the smithing table cycles through when this smithing template is put in
- */
-public "equipmentIcons"(): this
-/**
- * Adds all basic tool icons to the list of base slot icons that the smithing table cycles through when this smithing template is put in
- */
-public "toolIcons"(): this
-/**
  * Sets the name for this smithing template.
  * Note that the normal display name for all smithing templates is the same and cannot be changed, this instead sets the name in the tooltip (see vanilla smithing templates for what this looks like).
  * 
@@ -14821,8 +14761,8 @@ import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$KubePlayerEvent$$Interface} from "dev.latvian.mods.kubejs.player.KubePlayerEvent"
 import {$Level} from "net.minecraft.world.level.Level"
-import {$LivingEntity} from "net.minecraft.world.entity.LivingEntity"
 import {$ItemEntity, $ItemEntity$$Type} from "net.minecraft.world.entity.item.ItemEntity"
+import {$LivingEntity} from "net.minecraft.world.entity.LivingEntity"
 import {$MinecraftServer} from "net.minecraft.server.MinecraftServer"
 import {$RegistryAccess} from "net.minecraft.core.RegistryAccess"
 
@@ -14837,13 +14777,13 @@ constructor(player: $Player$$Type, entity: $ItemEntity$$Type, stack: $ItemStack$
  */
 public "getItemEntity"(): $ItemEntity
 /**
- * The item that was picked up.
- */
-public "getItem"(): $ItemStack
-/**
  * The player that picked up the item.
  */
 public "getEntity"(): $LivingEntity
+/**
+ * The item that was picked up.
+ */
+public "getItem"(): $ItemStack
 public "getPlayer"(): $Player
 public "getLevel"(): $Level
 public "getRegistries"(): $RegistryAccess
@@ -14885,8 +14825,8 @@ public "cancel"(value: any): any
  */
 public "cancel"(): any
 get "itemEntity"(): $ItemEntity
-get "item"(): $ItemStack
 get "entity"(): $LivingEntity
+get "item"(): $ItemStack
 get "player"(): $Player
 get "level"(): $Level
 get "registries"(): $RegistryAccess
@@ -14903,8 +14843,8 @@ export type $ItemPickedUpKubeEvent$$Type = ($ItemPickedUpKubeEvent);
 export type $ItemPickedUpKubeEvent$$Original = $ItemPickedUpKubeEvent;}
 declare module "dev.latvian.mods.kubejs.text.action.TextAction" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$TooltipActionType} from "dev.latvian.mods.kubejs.text.action.TooltipActionType"
 import {$Map} from "java.util.Map"
+import {$TooltipActionType} from "dev.latvian.mods.kubejs.text.action.TooltipActionType"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$List$$Type} from "java.util.List"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
@@ -14932,16 +14872,16 @@ declare module "dev.latvian.mods.kubejs.fluid.FluidBuilder" {
 import {$BlockRenderType$$Type} from "dev.latvian.mods.kubejs.block.BlockRenderType"
 import {$FluidBucketItemBuilder} from "dev.latvian.mods.kubejs.fluid.FluidBucketItemBuilder"
 import {$FlowingFluid} from "net.minecraft.world.level.material.FlowingFluid"
-import {$FluidBlockBuilder} from "dev.latvian.mods.kubejs.fluid.FluidBlockBuilder"
 import {$FluidTypeBuilder, $FluidTypeBuilder$$Type} from "dev.latvian.mods.kubejs.fluid.FluidTypeBuilder"
+import {$FluidBlockBuilder} from "dev.latvian.mods.kubejs.fluid.FluidBlockBuilder"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$BuilderBase} from "dev.latvian.mods.kubejs.registry.BuilderBase"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$FlowingFluidBuilder} from "dev.latvian.mods.kubejs.fluid.FlowingFluidBuilder"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Registry} from "net.minecraft.core.Registry"
-import {$KubeColor, $KubeColor$$Type} from "dev.latvian.mods.kubejs.color.KubeColor"
 import {$BaseFlowingFluid$Properties} from "net.neoforged.neoforge.fluids.BaseFlowingFluid$Properties"
+import {$KubeColor, $KubeColor$$Type} from "dev.latvian.mods.kubejs.color.KubeColor"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
 import {$SourceLine} from "dev.latvian.mods.kubejs.script.SourceLine"
 
@@ -15124,8 +15064,8 @@ import {$RecipeLikeKJS$$Interface} from "dev.latvian.mods.kubejs.core.RecipeLike
 import {$ReplacementMatchInfo$$Type} from "dev.latvian.mods.kubejs.recipe.match.ReplacementMatchInfo"
 import {$RecipeComponentValue} from "dev.latvian.mods.kubejs.recipe.component.RecipeComponentValue"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
-import {$RecipeTypeFunction} from "dev.latvian.mods.kubejs.recipe.RecipeTypeFunction"
 import {$ErrorStack$$Type} from "dev.latvian.mods.kubejs.util.ErrorStack"
+import {$RecipeTypeFunction} from "dev.latvian.mods.kubejs.recipe.RecipeTypeFunction"
 import {$IngredientAction$$Type} from "dev.latvian.mods.kubejs.recipe.ingredientaction.IngredientAction"
 import {$JsonObject, $JsonObject$$Type} from "com.google.gson.JsonObject"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
@@ -15154,6 +15094,7 @@ static readonly "CHANGED_MARKER": StringJS
 
 constructor()
 
+public "getOriginalRecipe"(): $Recipe<(never)>
 public "afterLoaded"(cx: $RecipeValidationContext$$Type): void
 public "afterLoaded"(stack: $ErrorStack$$Type): void
 public "inputValues"(): ($RecipeComponentValue<(never)>)[]
@@ -15161,8 +15102,8 @@ public "outputValues"(): ($RecipeComponentValue<(never)>)[]
 public "getSerializationTypeFunction"(): $RecipeTypeFunction
 public "getFromToString"(): StringJS
 public "ingredientAction"(filter: $SlotFilter$$Type, action: $IngredientAction$$Type): $KubeRecipe
-public "damageIngredient"(filter: $SlotFilter$$Type, damage: integer): $KubeRecipe
 public "damageIngredient"(filter: $SlotFilter$$Type): $KubeRecipe
+public "damageIngredient"(filter: $SlotFilter$$Type, damage: integer): $KubeRecipe
 public "serializeChanges"(): $KubeRecipe
 public "getOriginalRecipeResult"(): $ItemStack
 public "getOriginalRecipeIngredients"(): $List<($Ingredient)>
@@ -15170,8 +15111,6 @@ public "replaceIngredient"(filter: $SlotFilter$$Type, item: $ItemStack$$Type): $
 public "customIngredientAction"(filter: $SlotFilter$$Type, id: StringJS): $KubeRecipe
 public "keepIngredient"(filter: $SlotFilter$$Type): $KubeRecipe
 public "consumeIngredient"(filter: $SlotFilter$$Type): $KubeRecipe
-public "initValues"(save: boolean): void
-public "getOriginalRecipe"(): $Recipe<(never)>
 public "getTypeKey"(): $ResourceKey<($RecipeSerializer<(never)>)>
 public "getSerializer"(): $RecipeSerializer<(never)>
 /**
@@ -15210,15 +15149,16 @@ public "setValue"<T>(key: $RecipeKey$$Type<(T)>, value: T): $KubeRecipe
 public "getPath"(): StringJS
 public "deserialize"(merge: boolean): void
 public "serialize"(): void
+public "initValues"(save: boolean): void
 public "convertJavaToJs"(scope: $Scriptable$$Type, staticType: $TypeInfo$$Type): $Scriptable
 public "hasChanged"(): boolean
 public "getMod"(): StringJS
 public "getType"(): $ResourceLocation
+get "originalRecipe"(): $Recipe<(never)>
 get "serializationTypeFunction"(): $RecipeTypeFunction
 get "fromToString"(): StringJS
 get "originalRecipeResult"(): $ItemStack
 get "originalRecipeIngredients"(): $List<($Ingredient)>
-get "originalRecipe"(): $Recipe<(never)>
 get "typeKey"(): $ResourceKey<($RecipeSerializer<(never)>)>
 get "serializer"(): $RecipeSerializer<(never)>
 get "orCreateId"(): $ResourceLocation
@@ -15263,10 +15203,10 @@ import {$List$$Type} from "java.util.List"
 import {$KubeServerData, $KubeServerData$$Type} from "dev.latvian.mods.kubejs.net.KubeServerData"
 import {$CustomPacketPayload$Type} from "net.minecraft.network.protocol.common.custom.CustomPacketPayload$Type"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$CustomPacketPayload, $CustomPacketPayload$$Interface} from "net.minecraft.network.protocol.common.custom.CustomPacketPayload"
 import {$IPayloadContext$$Type} from "net.neoforged.neoforge.network.handling.IPayloadContext"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
+import {$CustomPacketPayload, $CustomPacketPayload$$Interface} from "net.minecraft.network.protocol.common.custom.CustomPacketPayload"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ServerboundCustomPayloadPacket} from "net.minecraft.network.protocol.common.ServerboundCustomPayloadPacket"
 import {$ClientboundCustomPayloadPacket} from "net.minecraft.network.protocol.common.ClientboundCustomPayloadPacket"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
@@ -15331,17 +15271,17 @@ export class $KubeDataGenerator implements $KubeDataGenerator$$Interface {
  "removeCompostable"(items: $ItemPredicate$$Type): void
  "setFurnaceFuel"(items: $ItemPredicate$$Type, ticks: $TickDuration$$Type): void
  "removeFurnaceFuel"(items: $ItemPredicate$$Type): void
+ "setWaxable"(from: $Block$$Type, to: $Block$$Type): void
  "setMonsterRoomMobs"(entityType: $EntityType$$Type<(never)>, weight: integer): void
  "setOxidizable"(from: $Block$$Type, to: $Block$$Type): void
  "setParrotImitation"(type: $EntityType$$Type<(never)>, sound: $SoundEvent$$Type): void
  "setRaidHeroGifts"(profession: $VillagerProfession$$Type, lootTable: $ResourceKey$$Type<($LootTable)>): void
  "setVibrationFrequency"(gameEvent: $GameEvent$$Type, frequency: integer): void
  "setVillagerType"(biome: $ResourceKey$$Type<($Biome)>, villagerType: $VillagerType$$Type): void
- "setWaxable"(from: $Block$$Type, to: $Block$$Type): void
  "dataMap"<R, T>(type: $DataMapType$$Type<(R), (T)>, consumer: $Consumer$$Type<($VirtualDataMapFile<(R), (T)>)>): void
+ "text"(id: $ResourceLocation$$Type, content: StringJS): void
  "flush"(): void
  "add"(data: $GeneratedData$$Type): void
- "text"(id: $ResourceLocation$$Type, content: StringJS): void
  "json"(id: $ResourceLocation$$Type, json: $JsonElement$$Type): void
  "getRegistries"(): $RegistryAccessContainer
  "getGenerated"(id: $ResourceLocation$$Type): $GeneratedData
@@ -15495,12 +15435,12 @@ export type $ItemBuilder$HurtEnemyContext$$Type = ({"getItem"?: $ItemStack$$Type
 export type $ItemBuilder$HurtEnemyContext$$Original = $ItemBuilder$HurtEnemyContext;}
 declare module "dev.latvian.mods.kubejs.recipe.RecipeTypeFunction" {
 import {$Pattern} from "java.util.regex.Pattern"
-import {$BaseFunction} from "dev.latvian.mods.rhino.BaseFunction"
 import {$RecipeSchemaType, $RecipeSchemaType$$Type} from "dev.latvian.mods.kubejs.recipe.schema.RecipeSchemaType"
+import {$BaseFunction} from "dev.latvian.mods.rhino.BaseFunction"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$WrappedJS$$Interface} from "dev.latvian.mods.kubejs.util.WrappedJS"
-import {$ErrorStack$$Type} from "dev.latvian.mods.kubejs.util.ErrorStack"
 import {$KubeRecipe} from "dev.latvian.mods.kubejs.recipe.KubeRecipe"
+import {$ErrorStack$$Type} from "dev.latvian.mods.kubejs.util.ErrorStack"
 import {$RecipesKubeEvent, $RecipesKubeEvent$$Type} from "dev.latvian.mods.kubejs.recipe.RecipesKubeEvent"
 import {$DefaultValueTypeHint$$Type} from "dev.latvian.mods.rhino.util.DefaultValueTypeHint"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
@@ -15536,16 +15476,16 @@ public "delete"(arg1: integer): void
 public "getDefaultValue"(arg1: $DefaultValueTypeHint$$Type): any
 public "getPrototype"(): $Scriptable
 public "setPrototype"(arg0: $Scriptable$$Type): void
-public "getParentScope"(): $Scriptable
-public "setParentScope"(arg0: $Scriptable$$Type): void
 public "getAllIds"(): (any)[]
 public "getIds"(): (any)[]
+public "getParentScope"(): $Scriptable
+public "setParentScope"(arg0: $Scriptable$$Type): void
 get "prototype"(): $Scriptable
 set "prototype"(value: $Scriptable$$Type)
-get "parentScope"(): $Scriptable
-set "parentScope"(value: $Scriptable$$Type)
 get "allIds"(): (any)[]
 get "ids"(): (any)[]
+get "parentScope"(): $Scriptable
+set "parentScope"(value: $Scriptable$$Type)
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -15766,8 +15706,8 @@ declare module "dev.latvian.mods.kubejs.command.ArgumentTypeWrappers" {
 import {$CommandContext$$Type} from "com.mojang.brigadier.context.CommandContext"
 import {$ArgumentType} from "com.mojang.brigadier.arguments.ArgumentType"
 import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
-import {$Enum} from "java.lang.Enum"
 import {$CommandRegistryKubeEvent$$Type} from "dev.latvian.mods.kubejs.command.CommandRegistryKubeEvent"
+import {$Enum} from "java.lang.Enum"
 import {$ArgumentTypeWrapper, $ArgumentTypeWrapper$$Interface} from "dev.latvian.mods.kubejs.command.ArgumentTypeWrapper"
 import {$CommandSourceStack$$Type} from "net.minecraft.commands.CommandSourceStack"
 
@@ -15851,13 +15791,13 @@ export class $EntitySpawnedKubeEvent implements $KubeEntityEvent$$Interface {
 constructor(entity: $Entity$$Type, level: $Level$$Type)
 
 /**
- * The level the entity is being added to.
- */
-public "getLevel"(): $Level
-/**
  * The entity being added to the world.
  */
 public "getEntity"(): $Entity
+/**
+ * The level the entity is being added to.
+ */
+public "getLevel"(): $Level
 public "getPlayer"(): $Player
 public "getRegistries"(): $RegistryAccess
 public "getServer"(): $MinecraftServer
@@ -15897,8 +15837,8 @@ public "cancel"(value: any): any
  * `cancel` denotes a `false` outcome.
  */
 public "cancel"(): any
-get "level"(): $Level
 get "entity"(): $Entity
+get "level"(): $Level
 get "player"(): $Player
 get "registries"(): $RegistryAccess
 get "server"(): $MinecraftServer
@@ -15949,11 +15889,11 @@ export class $RecipeFilter implements $RecipeFilter$$Interface {
  "test"(cx: $RecipeMatchContext$$Type): boolean
  "test"(cx: any): boolean
 static "wrap"(o: any): $RecipeFilter
- "or"(arg0: $Predicate$$Type<($RecipeMatchContext)>): $Predicate<($RecipeMatchContext)>
+static "not"<T>(arg0: $Predicate$$Type<($RecipeMatchContext)>): $Predicate<($RecipeMatchContext)>
 static "isEqual"<T>(arg0: any): $Predicate<($RecipeMatchContext)>
  "negate"(): $Predicate<($RecipeMatchContext)>
  "and"(arg0: $Predicate$$Type<($RecipeMatchContext)>): $Predicate<($RecipeMatchContext)>
-static "not"<T>(arg0: $Predicate$$Type<($RecipeMatchContext)>): $Predicate<($RecipeMatchContext)>
+ "or"(arg0: $Predicate$$Type<($RecipeMatchContext)>): $Predicate<($RecipeMatchContext)>
 }
 export type RecipeFilterObject = {"or"?: $RecipeFilter$$Type, "not"?: $RecipeFilter$$Type, "id"?: Special.RecipeId, "type"?: Special.RecipeSerializer, "group"?: StringJS, "mod"?: Special.Mod, "input"?: $Ingredient$$Type, "output"?: $ItemStack$$Type};
 /**
@@ -16020,6 +15960,11 @@ constructor(blockGetter: $BlockGetter$$Type, entity: $Entity$$Type)
  */
 public "getVelocity"(): $Vec3
 /**
+ * Bounce the entity upwards by bounciness * their fall velocity.
+ * Do not make bounciness negative, as that is a recipe for a long and laggy trip to the void
+ */
+public "bounce"(bounciness: float): void
+/**
  * Sets the entity's velocity
  */
 public "setVelocity"(x: float, y: float, z: float): void
@@ -16027,11 +15972,6 @@ public "setVelocity"(x: float, y: float, z: float): void
  * Sets the entity's velocity
  */
 public "setVelocity"(vec: $Vec3$$Type): void
-/**
- * Bounce the entity upwards by bounciness * their fall velocity.
- * Do not make bounciness negative, as that is a recipe for a long and laggy trip to the void
- */
-public "bounce"(bounciness: float): void
 get "velocity"(): $Vec3
 set "velocity"(value: $Vec3$$Type)
 }
@@ -16080,10 +16020,10 @@ import {$RegisterParticleProvidersEvent$$Type} from "net.neoforged.neoforge.clie
 import {$ClientKubeEvent$$Interface} from "dev.latvian.mods.kubejs.client.ClientKubeEvent"
 import {$ParticleType$$Type} from "net.minecraft.core.particles.ParticleType"
 import {$Minecraft} from "net.minecraft.client.Minecraft"
-import {$KubeAnimatedParticle$$Type} from "dev.latvian.mods.kubejs.client.KubeAnimatedParticle"
 import {$ParticleOptions} from "net.minecraft.core.particles.ParticleOptions"
-import {$ParticleProviderRegistryKubeEvent$SpriteSetParticleProvider$$Type} from "dev.latvian.mods.kubejs.client.ParticleProviderRegistryKubeEvent$SpriteSetParticleProvider"
+import {$KubeAnimatedParticle$$Type} from "dev.latvian.mods.kubejs.client.KubeAnimatedParticle"
 import {$Consumer$$Type} from "java.util.function.Consumer"
+import {$ParticleProviderRegistryKubeEvent$SpriteSetParticleProvider$$Type} from "dev.latvian.mods.kubejs.client.ParticleProviderRegistryKubeEvent$SpriteSetParticleProvider"
 
 export class $ParticleProviderRegistryKubeEvent implements $ClientKubeEvent$$Interface {
 constructor(event: $RegisterParticleProvidersEvent$$Type)
@@ -16152,8 +16092,8 @@ import {$GuiGraphics$$Type} from "net.minecraft.client.gui.GuiGraphics"
 import {$Reference2IntMap} from "it.unimi.dsi.fastutil.objects.Reference2IntMap"
 import {$RenderLevelStageEvent$$Type} from "net.neoforged.neoforge.client.event.RenderLevelStageEvent"
 import {$ShaderInstance} from "net.minecraft.client.renderer.ShaderInstance"
-import {$KubeColor} from "dev.latvian.mods.kubejs.color.KubeColor"
 import {$Set} from "java.util.Set"
+import {$KubeColor} from "dev.latvian.mods.kubejs.color.KubeColor"
 import {$Minecraft$$Type} from "net.minecraft.client.Minecraft"
 import {$Entity} from "net.minecraft.world.entity.Entity"
 
@@ -16218,11 +16158,11 @@ static readonly "STARTUP_OR_SERVER": $ScriptTypePredicate
  "test"(type: $ScriptType$$Type): boolean
  "test"(type: any): boolean
  "getValidTypes"(): $List<($ScriptType)>
- "or"(arg0: $Predicate$$Type<($ScriptType)>): $Predicate<($ScriptType)>
+static "not"<T>(arg0: $Predicate$$Type<($ScriptType)>): $Predicate<($ScriptType)>
 static "isEqual"<T>(arg0: any): $Predicate<($ScriptType)>
  "negate"(): $Predicate<($ScriptType)>
  "and"(arg0: $Predicate$$Type<($ScriptType)>): $Predicate<($ScriptType)>
-static "not"<T>(arg0: $Predicate$$Type<($ScriptType)>): $Predicate<($ScriptType)>
+ "or"(arg0: $Predicate$$Type<($ScriptType)>): $Predicate<($ScriptType)>
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -16276,11 +16216,11 @@ static readonly "NONE": $ItemPredicate
  "test"(itemStack: any): boolean
 static "wrap"(from: any): $ItemPredicate
  "isWildcard"(): boolean
- "or"(arg0: $Predicate$$Type<($ItemStack)>): $Predicate<($ItemStack)>
+static "not"<T>(arg0: $Predicate$$Type<($ItemStack)>): $Predicate<($ItemStack)>
 static "isEqual"<T>(arg0: any): $Predicate<($ItemStack)>
  "negate"(): $Predicate<($ItemStack)>
  "and"(arg0: $Predicate$$Type<($ItemStack)>): $Predicate<($ItemStack)>
-static "not"<T>(arg0: $Predicate$$Type<($ItemStack)>): $Predicate<($ItemStack)>
+ "or"(arg0: $Predicate$$Type<($ItemStack)>): $Predicate<($ItemStack)>
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -16296,11 +16236,11 @@ import {$CollectionTag} from "net.minecraft.nbt.CollectionTag"
 import {$CompoundTag} from "net.minecraft.nbt.CompoundTag"
 import {$Map$$Type} from "java.util.Map"
 import {$FriendlyByteBuf$$Type} from "net.minecraft.network.FriendlyByteBuf"
-import {$JsonElement} from "com.google.gson.JsonElement"
 import {$List$$Type} from "java.util.List"
+import {$JsonElement} from "com.google.gson.JsonElement"
 import {$Tag, $Tag$$Type} from "net.minecraft.nbt.Tag"
-import {$ListTag} from "net.minecraft.nbt.ListTag"
 import {$OrderedCompoundTag} from "dev.latvian.mods.kubejs.util.OrderedCompoundTag"
+import {$ListTag} from "net.minecraft.nbt.ListTag"
 
 /**
  * This class is not allowed By KubeJS!
@@ -16311,6 +16251,7 @@ export interface $NBTWrapper$$Interface {
 }
 
 export class $NBTWrapper implements $NBTWrapper$$Interface {
+static "toTag"(tag: $Tag$$Type): $Tag
 static "isTagCollection"(o: any): boolean
 static "isTagCompound"(o: any): boolean
 static "wrapCompound"(v: any): $CompoundTag
@@ -16324,8 +16265,8 @@ static "doubleTag"(v: double): $Tag
 static "intArrayTag"(v: (integer)[]): $Tag
 static "longArrayTag"(v: (long)[]): $Tag
 static "byteArrayTag"(v: (byte)[]): $Tag
-static "toTag"(tag: $Tag$$Type): $Tag
 static "stringTag"(v: StringJS): $Tag
+static "ia"(v: (integer)[]): $Tag
 static "wrap"(v: any): $Tag
 static "i"(v: integer): $Tag
 static "b"(v: byte): $Tag
@@ -16335,12 +16276,11 @@ static "f"(v: float): $Tag
 static "l"(v: long): $Tag
 static "d"(v: double): $Tag
 static "read"(buf: $FriendlyByteBuf$$Type): $OrderedCompoundTag
-static "ia"(v: (integer)[]): $Tag
 static "toJson"(t: $Tag$$Type): $JsonElement
-static "la"(v: (long)[]): $Tag
 static "wrapCollection"(v: any): $CollectionTag<(never)>
-static "listTag"(): $Tag
+static "la"(v: (long)[]): $Tag
 static "listTag"(list: $List$$Type<(never)>): $Tag
+static "listTag"(): $Tag
 static "compoundTag"(): $Tag
 static "compoundTag"(map: $Map$$Type<(never), (never)>): $Tag
 static "fromTag"(t: $Tag$$Type): any
@@ -16356,30 +16296,30 @@ export type $NBTWrapper$$Type = ($NBTWrapper);
 export type $NBTWrapper$$Original = $NBTWrapper;}
 declare module "dev.latvian.mods.kubejs.core.ServerPlayerKJS" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$Direction} from "net.minecraft.core.Direction"
 import {$KubeJSInventoryListener} from "dev.latvian.mods.kubejs.player.KubeJSInventoryListener"
+import {$Direction} from "net.minecraft.core.Direction"
 import {$Level} from "net.minecraft.world.level.Level"
-import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$SoundEvent$$Type} from "net.minecraft.sounds.SoundEvent"
+import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$Stages} from "dev.latvian.mods.kubejs.stages.Stages"
 import {$PlayerKJS$$Interface} from "dev.latvian.mods.kubejs.core.PlayerKJS"
 import {$Holder$$Type} from "net.minecraft.core.Holder"
 import {$FoodProperties$$Type} from "net.minecraft.world.food.FoodProperties"
-import {$ChestMenuData$$Type} from "dev.latvian.mods.kubejs.gui.chest.ChestMenuData"
 import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
+import {$ChestMenuData$$Type} from "dev.latvian.mods.kubejs.gui.chest.ChestMenuData"
 import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
-import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$ItemPredicate$$Type} from "dev.latvian.mods.kubejs.item.ItemPredicate"
+import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$ScriptType} from "dev.latvian.mods.kubejs.script.ScriptType"
 import {$Item$$Type} from "net.minecraft.world.item.Item"
 import {$InventoryKJS, $InventoryKJS$$Type} from "dev.latvian.mods.kubejs.core.InventoryKJS"
 import {$KubeJSGUI$$Type} from "dev.latvian.mods.kubejs.gui.KubeJSGUI"
-import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$NotificationToastData$$Type} from "dev.latvian.mods.kubejs.util.NotificationToastData"
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Predicate$$Type} from "java.util.function.Predicate"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$AttachedData, $AttachedData$$Type} from "dev.latvian.mods.kubejs.util.AttachedData"
 import {$KubeRayTraceResult} from "dev.latvian.mods.kubejs.entity.KubeRayTraceResult"
 import {$Consumer$$Type} from "java.util.function.Consumer"
@@ -16392,8 +16332,8 @@ import {$EntityPotionEffectsJS} from "dev.latvian.mods.kubejs.entity.EntityPotio
 import {$Attribute$$Type} from "net.minecraft.world.entity.ai.attributes.Attribute"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$GameProfile} from "com.mojang.authlib.GameProfile"
-import {$MinecraftServer} from "net.minecraft.server.MinecraftServer"
 import {$EntityArrayList} from "dev.latvian.mods.kubejs.player.EntityArrayList"
+import {$MinecraftServer} from "net.minecraft.server.MinecraftServer"
 
 /**
  * This class is not allowed By KubeJS!
@@ -16669,33 +16609,33 @@ public "canBeReplaced"(): boolean
 public "getClickedPos"(): $BlockPos
 public "getClickedFace"(): $Direction
 public "isInside"(): boolean
-public "getClickLocation"(): $Vec3
 public "getHorizontalDirection"(): $Direction
+public "getClickLocation"(): $Vec3
 public "getNearestLookingDirections"(): ($Direction)[]
 public "getNearestLookingDirection"(): $Direction
 public "getHand"(): $InteractionHand
 public "getNearestLookingVerticalDirection"(): $Direction
+public "getClickedBlock"(): $LevelBlock
 public "getFluidStateAtClickedPos"(): $FluidState
 public "isClickedPosIn"(fluid: $Fluid$$Type): boolean
-public "getClickedBlock"(): $LevelBlock
-public "getItem"(): $ItemStack
 public "getLevel"(): $Level
+public "getItem"(): $ItemStack
 public "getRotation"(): float
 public "isSecondaryUseActive"(): boolean
 public "getPlayer"(): $Player
 get "clickedPos"(): $BlockPos
 get "clickedFace"(): $Direction
 get "inside"(): boolean
-get "clickLocation"(): $Vec3
 get "horizontalDirection"(): $Direction
+get "clickLocation"(): $Vec3
 get "nearestLookingDirections"(): ($Direction)[]
 get "nearestLookingDirection"(): $Direction
 get "hand"(): $InteractionHand
 get "nearestLookingVerticalDirection"(): $Direction
-get "fluidStateAtClickedPos"(): $FluidState
 get "clickedBlock"(): $LevelBlock
-get "item"(): $ItemStack
+get "fluidStateAtClickedPos"(): $FluidState
 get "level"(): $Level
+get "item"(): $ItemStack
 get "rotation"(): float
 get "secondaryUseActive"(): boolean
 get "player"(): $Player
@@ -16712,8 +16652,8 @@ export type $CanBeReplacedCallback$$Original = $CanBeReplacedCallback;}
 declare module "dev.latvian.mods.kubejs.entity.AfterLivingEntityHurtKubeEvent" {
 import {$Player} from "net.minecraft.world.entity.player.Player"
 import {$DamageSource} from "net.minecraft.world.damagesource.DamageSource"
-import {$Level} from "net.minecraft.world.level.Level"
 import {$KubeLivingEntityEvent$$Interface} from "dev.latvian.mods.kubejs.entity.KubeLivingEntityEvent"
+import {$Level} from "net.minecraft.world.level.Level"
 import {$LivingDamageEvent$Post$$Type} from "net.neoforged.neoforge.event.entity.living.LivingDamageEvent$Post"
 import {$Entity} from "net.minecraft.world.entity.Entity"
 import {$MinecraftServer} from "net.minecraft.server.MinecraftServer"
@@ -16726,13 +16666,13 @@ export class $AfterLivingEntityHurtKubeEvent implements $KubeLivingEntityEvent$$
 constructor(event: $LivingDamageEvent$Post$$Type)
 
 /**
- * The damage source.
- */
-public "getSource"(): $DamageSource
-/**
  * The entity that was hurt.
  */
 public "getEntity"(): $Entity
+/**
+ * The damage source.
+ */
+public "getSource"(): $DamageSource
 /**
  * The amount of damage.
  */
@@ -16777,8 +16717,8 @@ public "cancel"(value: any): any
  * `cancel` denotes a `false` outcome.
  */
 public "cancel"(): any
-get "source"(): $DamageSource
 get "entity"(): $Entity
+get "source"(): $DamageSource
 get "damage"(): float
 get "level"(): $Level
 get "player"(): $Player
@@ -16869,25 +16809,25 @@ import {$List} from "java.util.List"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$Player} from "net.minecraft.world.entity.player.Player"
-import {$Explosion} from "net.minecraft.world.level.Explosion"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
+import {$Explosion} from "net.minecraft.world.level.Explosion"
 import {$ScriptType} from "dev.latvian.mods.kubejs.script.ScriptType"
-import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
 import {$AttachedData, $AttachedData$$Type} from "dev.latvian.mods.kubejs.util.AttachedData"
 import {$Fireworks$$Type} from "net.minecraft.world.item.component.Fireworks"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$LevelBlock} from "dev.latvian.mods.kubejs.level.LevelBlock"
-import {$ExplosionProperties$$Type} from "dev.latvian.mods.kubejs.level.ExplosionProperties"
 import {$ScriptTypeHolder$$Interface} from "dev.latvian.mods.kubejs.script.ScriptTypeHolder"
 import {$EntityGetter} from "net.minecraft.world.level.EntityGetter"
+import {$ExplosionProperties$$Type} from "dev.latvian.mods.kubejs.level.ExplosionProperties"
 import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$AABB$$Type} from "net.minecraft.world.phys.AABB"
 import {$EntityGetterKJS$$Interface} from "dev.latvian.mods.kubejs.core.EntityGetterKJS"
-import {$ParticleOptions$$Type} from "net.minecraft.core.particles.ParticleOptions"
 import {$EntityArrayList} from "dev.latvian.mods.kubejs.player.EntityArrayList"
+import {$ParticleOptions$$Type} from "net.minecraft.core.particles.ParticleOptions"
 
 /**
  * This class is not allowed By KubeJS!
@@ -16987,11 +16927,11 @@ export type $IntBounds$$Type = ({"max"?: integer, "min"?: integer}) | ([max?: in
 export type $IntBounds$$Original = $IntBounds;}
 declare module "dev.latvian.mods.kubejs.core.FluidKJS" {
 import {$ReplacementMatch} from "dev.latvian.mods.kubejs.recipe.match.ReplacementMatch"
-import {$Fluid} from "net.minecraft.world.level.material.Fluid"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
+import {$Fluid} from "net.minecraft.world.level.material.Fluid"
 import {$Registry} from "net.minecraft.core.Registry"
-import {$List} from "java.util.List"
 import {$TagKey} from "net.minecraft.tags.TagKey"
+import {$List} from "java.util.List"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
 import {$RegistryObjectKJS$$Interface} from "dev.latvian.mods.kubejs.core.RegistryObjectKJS"
 import {$FluidLike, $FluidLike$$Interface} from "dev.latvian.mods.kubejs.fluid.FluidLike"
@@ -17048,19 +16988,19 @@ declare module "dev.latvian.mods.kubejs.core.LivingEntityKJS" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Direction} from "net.minecraft.core.Direction"
 import {$Level} from "net.minecraft.world.level.Level"
-import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$SoundEvent$$Type} from "net.minecraft.sounds.SoundEvent"
+import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$Holder$$Type} from "net.minecraft.core.Holder"
 import {$FoodProperties$$Type} from "net.minecraft.world.food.FoodProperties"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
-import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$ItemPredicate$$Type} from "dev.latvian.mods.kubejs.item.ItemPredicate"
+import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$ScriptType} from "dev.latvian.mods.kubejs.script.ScriptType"
-import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Predicate$$Type} from "java.util.function.Predicate"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$KubeRayTraceResult} from "dev.latvian.mods.kubejs.entity.KubeRayTraceResult"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$LevelBlock, $LevelBlock$$Type} from "dev.latvian.mods.kubejs.level.LevelBlock"
@@ -17070,8 +17010,8 @@ import {$Attribute$$Type} from "net.minecraft.world.entity.ai.attributes.Attribu
 import {$EntityKJS$$Interface} from "dev.latvian.mods.kubejs.core.EntityKJS"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$GameProfile} from "com.mojang.authlib.GameProfile"
-import {$MinecraftServer} from "net.minecraft.server.MinecraftServer"
 import {$EntityArrayList} from "dev.latvian.mods.kubejs.player.EntityArrayList"
+import {$MinecraftServer} from "net.minecraft.server.MinecraftServer"
 
 /**
  * This class is not allowed By KubeJS!
@@ -17344,8 +17284,8 @@ import {$Map} from "java.util.Map"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 import {$EventTargetType} from "dev.latvian.mods.kubejs.event.EventTargetType"
 
@@ -17369,11 +17309,11 @@ public static "valueOf"(name: StringJS): $GeneratedDataStage
 public "getSerializedName"(): StringJS
 public static "forScripts"<T>(factory: $Function$$Type<($GeneratedDataStage), (T)>): $Map<($GeneratedDataStage), (T)>
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
 }
@@ -17419,22 +17359,22 @@ export type $DiggerItemBuilder$Axe$$Type = ($DiggerItemBuilder$Axe);
 export type $DiggerItemBuilder$Axe$$Original = $DiggerItemBuilder$Axe;}
 declare module "dev.latvian.mods.kubejs.component.ComponentFunctions" {
 import {$Potion$$Type} from "net.minecraft.world.item.alchemy.Potion"
-import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$DataComponentMap, $DataComponentMap$$Type} from "net.minecraft.core.component.DataComponentMap"
+import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$Map$$Type} from "java.util.Map"
 import {$UUID$$Type} from "java.util.UUID"
 import {$List$$Type} from "java.util.List"
 import {$Rarity$$Type} from "net.minecraft.world.item.Rarity"
-import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$DataComponentType$$Type} from "net.minecraft.core.component.DataComponentType"
+import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$LootTable$$Type} from "net.minecraft.world.level.storage.loot.LootTable"
 import {$Holder$$Type} from "net.minecraft.core.Holder"
 import {$DataComponentPatch$$Type} from "net.minecraft.core.component.DataComponentPatch"
 import {$DyeColor$$Type} from "net.minecraft.world.item.DyeColor"
 import {$KubeColor$$Type} from "dev.latvian.mods.kubejs.color.KubeColor"
 import {$ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$PotionContents$$Type} from "net.minecraft.world.item.alchemy.PotionContents"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$Unit$$Type} from "net.minecraft.util.Unit"
 
 export interface $ComponentFunctions$$Interface {
@@ -17515,8 +17455,8 @@ import {$RecipeValidationContext$$Type} from "dev.latvian.mods.kubejs.recipe.com
 import {$RecipeMatchContext$$Type} from "dev.latvian.mods.kubejs.recipe.filter.RecipeMatchContext"
 import {$RecipeKey, $RecipeKey$$Type} from "dev.latvian.mods.kubejs.recipe.RecipeKey"
 import {$SourceLine$$Type} from "dev.latvian.mods.kubejs.script.SourceLine"
-import {$ReplacementMatchInfo$$Type} from "dev.latvian.mods.kubejs.recipe.match.ReplacementMatchInfo"
 import {$Map$Entry, $Map$Entry$$Type, $Map$Entry$$Interface} from "java.util.Map$Entry"
+import {$ReplacementMatchInfo$$Type} from "dev.latvian.mods.kubejs.recipe.match.ReplacementMatchInfo"
 
 export class $RecipeComponentValue<T> implements $WrappedJS$$Interface, $Map$Entry$$Interface<($RecipeKey<(T)>), (T)> {
 static readonly "EMPTY_ARRAY": ($RecipeComponentValue<(never)>)[]
@@ -17559,7 +17499,6 @@ import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resource
 import {$Registry} from "net.minecraft.core.Registry"
 import {$BlockBuilder} from "dev.latvian.mods.kubejs.block.BlockBuilder"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
-import {$BuilderBase} from "dev.latvian.mods.kubejs.registry.BuilderBase"
 import {$SourceLine} from "dev.latvian.mods.kubejs.script.SourceLine"
 import {$RandomTickCallback} from "dev.latvian.mods.kubejs.block.callback.RandomTickCallback"
 import {$Consumer} from "java.util.function.Consumer"
@@ -17572,10 +17511,6 @@ readonly "id": $ResourceLocation
 
 constructor(i: $ResourceLocation$$Type, ...suffixes: (StringJS)[])
 
-/**
- * Tags both the block and the item with the given tag.
- */
-public "tag"(tag: ($ResourceLocation$$Type)[]): $BuilderBase
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -17708,29 +17643,29 @@ export type $ItemStackKey$$Type = ($ItemStackKey);
 export type $ItemStackKey$$Original = $ItemStackKey;}
 declare module "dev.latvian.mods.kubejs.core.LocalClientPlayerKJS" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$Direction} from "net.minecraft.core.Direction"
 import {$KubeJSInventoryListener} from "dev.latvian.mods.kubejs.player.KubeJSInventoryListener"
+import {$Direction} from "net.minecraft.core.Direction"
 import {$Level} from "net.minecraft.world.level.Level"
-import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$SoundEvent$$Type} from "net.minecraft.sounds.SoundEvent"
+import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$Stages} from "dev.latvian.mods.kubejs.stages.Stages"
 import {$Holder$$Type} from "net.minecraft.core.Holder"
 import {$FoodProperties$$Type} from "net.minecraft.world.food.FoodProperties"
 import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
-import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$ItemPredicate$$Type} from "dev.latvian.mods.kubejs.item.ItemPredicate"
+import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$ScriptType} from "dev.latvian.mods.kubejs.script.ScriptType"
 import {$Item$$Type} from "net.minecraft.world.item.Item"
 import {$InventoryKJS} from "dev.latvian.mods.kubejs.core.InventoryKJS"
 import {$Minecraft} from "net.minecraft.client.Minecraft"
-import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$NotificationToastData$$Type} from "dev.latvian.mods.kubejs.util.NotificationToastData"
+import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$ClientPlayerKJS$$Interface} from "dev.latvian.mods.kubejs.core.ClientPlayerKJS"
+import {$NotificationToastData$$Type} from "dev.latvian.mods.kubejs.util.NotificationToastData"
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Predicate$$Type} from "java.util.function.Predicate"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$AttachedData, $AttachedData$$Type} from "dev.latvian.mods.kubejs.util.AttachedData"
 import {$KubeRayTraceResult} from "dev.latvian.mods.kubejs.entity.KubeRayTraceResult"
 import {$Consumer$$Type} from "java.util.function.Consumer"
@@ -17742,8 +17677,8 @@ import {$EntityPotionEffectsJS} from "dev.latvian.mods.kubejs.entity.EntityPotio
 import {$Attribute$$Type} from "net.minecraft.world.entity.ai.attributes.Attribute"
 import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$GameProfile} from "com.mojang.authlib.GameProfile"
-import {$MinecraftServer} from "net.minecraft.server.MinecraftServer"
 import {$EntityArrayList} from "dev.latvian.mods.kubejs.player.EntityArrayList"
+import {$MinecraftServer} from "net.minecraft.server.MinecraftServer"
 
 /**
  * This class is not allowed By KubeJS!
@@ -17982,8 +17917,8 @@ export type $LocalClientPlayerKJS$$Type = (() => $AttachedData$$Type<($Player$$T
 export type $LocalClientPlayerKJS$$Original = $LocalClientPlayerKJS;}
 declare module "dev.latvian.mods.kubejs.client.SoundsGenerator" {
 import {$JsonObject} from "com.google.gson.JsonObject"
-import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$SoundsGenerator$SoundGen$$Type} from "dev.latvian.mods.kubejs.client.SoundsGenerator$SoundGen"
+import {$Consumer$$Type} from "java.util.function.Consumer"
 
 export class $SoundsGenerator {
 constructor()
@@ -18186,40 +18121,40 @@ declare module "dev.latvian.mods.kubejs.block.BlockModificationKubeEvent$BlockMo
 import {$SoundType$$Type} from "net.minecraft.world.level.block.SoundType"
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$RandomTickCallback$$Type} from "dev.latvian.mods.kubejs.block.callback.RandomTickCallback"
-import {$Record} from "java.lang.Record"
 import {$Consumer$$Type} from "java.util.function.Consumer"
+import {$Record} from "java.lang.Record"
 
 export class $BlockModificationKubeEvent$BlockModifications extends $Record {
 constructor(block: $Block$$Type)
 
+public "setNameKey"(key: StringJS): void
 public "setRequiresTool"(v: boolean): void
-public "setHasCollision"(v: boolean): void
-public "setExplosionResistance"(v: float): void
-public "setIsRandomlyTicking"(v: boolean): void
-public "setRandomTickCallback"(callback: $Consumer$$Type<($RandomTickCallback)>): void
-public "setSoundType"(v: $SoundType$$Type): void
 public "setFriction"(v: float): void
 public "setSpeedFactor"(v: float): void
 public "setJumpFactor"(v: float): void
+public "setExplosionResistance"(v: float): void
+public "setIsRandomlyTicking"(v: boolean): void
+public "setRandomTickCallback"(callback: $Consumer$$Type<($RandomTickCallback)>): void
 public "setDestroySpeed"(v: float): void
 public "setLightEmission"(v: integer): void
-public "setNameKey"(key: StringJS): void
+public "setHasCollision"(v: boolean): void
+public "setSoundType"(v: $SoundType$$Type): void
 public "equals"(o: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
 public "block"(): $Block
+set "nameKey"(value: StringJS)
 set "requiresTool"(value: boolean)
-set "hasCollision"(value: boolean)
-set "explosionResistance"(value: float)
-set "isRandomlyTicking"(value: boolean)
-set "randomTickCallback"(value: $Consumer$$Type<($RandomTickCallback)>)
-set "soundType"(value: $SoundType$$Type)
 set "friction"(value: float)
 set "speedFactor"(value: float)
 set "jumpFactor"(value: float)
+set "explosionResistance"(value: float)
+set "isRandomlyTicking"(value: boolean)
+set "randomTickCallback"(value: $Consumer$$Type<($RandomTickCallback)>)
 set "destroySpeed"(value: float)
 set "lightEmission"(value: integer)
-set "nameKey"(value: StringJS)
+set "hasCollision"(value: boolean)
+set "soundType"(value: $SoundType$$Type)
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -18260,8 +18195,8 @@ import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Predicate$$Type} from "java.util.function.Predicate"
 import {$Direction} from "net.minecraft.core.Direction"
 import {$Level} from "net.minecraft.world.level.Level"
-import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$SoundEvent$$Type} from "net.minecraft.sounds.SoundEvent"
+import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$KubeRayTraceResult} from "dev.latvian.mods.kubejs.entity.KubeRayTraceResult"
 import {$LevelBlock, $LevelBlock$$Type} from "dev.latvian.mods.kubejs.level.LevelBlock"
 import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
@@ -18270,8 +18205,8 @@ import {$EntityKJS$$Interface} from "dev.latvian.mods.kubejs.core.EntityKJS"
 import {$GameProfile} from "com.mojang.authlib.GameProfile"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$MinecraftServer} from "net.minecraft.server.MinecraftServer"
 import {$EntityArrayList} from "dev.latvian.mods.kubejs.player.EntityArrayList"
+import {$MinecraftServer} from "net.minecraft.server.MinecraftServer"
 
 /**
  * This class is not allowed By KubeJS!
@@ -18415,7 +18350,7 @@ get "empty"(): boolean
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $FluidData$$Type = ({"dataComponentSubtypes"?: $List$$Type<($FluidData$DataComponentSubtypes$$Type)>, "removedEntries"?: $List$$Type<($FluidIngredient$$Type)>, "groupedEntries"?: $List$$Type<($FluidData$Group$$Type)>, "completelyRemovedEntries"?: $List$$Type<($FluidIngredient$$Type)>, "info"?: $List$$Type<($FluidData$Info$$Type)>, "addedEntries"?: $List$$Type<($FluidStack$$Type)>}) | ([dataComponentSubtypes?: $List$$Type<($FluidData$DataComponentSubtypes$$Type)>, removedEntries?: $List$$Type<($FluidIngredient$$Type)>, groupedEntries?: $List$$Type<($FluidData$Group$$Type)>, completelyRemovedEntries?: $List$$Type<($FluidIngredient$$Type)>, info?: $List$$Type<($FluidData$Info$$Type)>, addedEntries?: $List$$Type<($FluidStack$$Type)>]);
+export type $FluidData$$Type = ({"removedEntries"?: $List$$Type<($FluidIngredient$$Type)>, "groupedEntries"?: $List$$Type<($FluidData$Group$$Type)>, "completelyRemovedEntries"?: $List$$Type<($FluidIngredient$$Type)>, "info"?: $List$$Type<($FluidData$Info$$Type)>, "addedEntries"?: $List$$Type<($FluidStack$$Type)>, "dataComponentSubtypes"?: $List$$Type<($FluidData$DataComponentSubtypes$$Type)>}) | ([removedEntries?: $List$$Type<($FluidIngredient$$Type)>, groupedEntries?: $List$$Type<($FluidData$Group$$Type)>, completelyRemovedEntries?: $List$$Type<($FluidIngredient$$Type)>, info?: $List$$Type<($FluidData$Info$$Type)>, addedEntries?: $List$$Type<($FluidStack$$Type)>, dataComponentSubtypes?: $List$$Type<($FluidData$DataComponentSubtypes$$Type)>]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -18507,8 +18442,8 @@ import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Collection} from "java.util.Collection"
 import {$Map} from "java.util.Map"
 import {$DynamicOps$$Type} from "com.mojang.serialization.DynamicOps"
-import {$UUID$$Type} from "java.util.UUID"
 import {$StringReader$$Type} from "com.mojang.brigadier.StringReader"
+import {$UUID$$Type} from "java.util.UUID"
 import {$List} from "java.util.List"
 import {$DataResult} from "com.mojang.serialization.DataResult"
 import {$JsonElement$$Type} from "com.google.gson.JsonElement"
@@ -18541,7 +18476,6 @@ static "findItem"(s: StringJS): $DataResult<($Item)>
 static "getTypeToStackMap"(): $Map<($ResourceLocation), ($Collection<($ItemStack)>)>
 static "playerHeadFromBase64"(uuid: $UUID$$Type, textureBase64: StringJS): $ItemStack
 static "playerHeadFromUrl"(url: StringJS): $ItemStack
-static "wrapItemAbility"(object: any): $ItemAbility
 /**
  * Checks if the passed in object is an ItemStack.
  * Note that this does not mean it will not function as an ItemStack if passed to something that requests one.
@@ -18550,6 +18484,7 @@ static "isItem"(o: any): boolean
 static "playerHead"(name: StringJS): $ItemStack
 static "playerHeadFromSkinHash"(hash: StringJS): $ItemStack
 static "isItemStackLike"(from: any): boolean
+static "wrapItemAbility"(object: any): $ItemAbility
 static "parseJson"(registryOps: $DynamicOps$$Type<($Tag$$Type)>, json: $JsonElement$$Type): $DataResult<($ItemStack)>
 static "getVariants"(item: $ItemStack$$Type): $Collection<($ItemStack)>
 /**
@@ -18733,18 +18668,18 @@ export type $ItemModelPropertiesKubeEvent$$Type = ($ItemModelPropertiesKubeEvent
  */
 export type $ItemModelPropertiesKubeEvent$$Original = $ItemModelPropertiesKubeEvent;}
 declare module "dev.latvian.mods.kubejs.script.ScriptType" {
-import {$KubeJSFileWatcherThread} from "dev.latvian.mods.kubejs.script.KubeJSFileWatcherThread"
 import {$Map} from "java.util.Map"
+import {$KubeJSFileWatcherThread} from "dev.latvian.mods.kubejs.script.KubeJSFileWatcherThread"
 import {$Enum} from "java.lang.Enum"
 import {$List} from "java.util.List"
 import {$Predicate, $Predicate$$Type} from "java.util.function.Predicate"
 import {$NativeEventWrapper$Listeners} from "dev.latvian.mods.kubejs.plugin.builtin.wrapper.NativeEventWrapper$Listeners"
 import {$Lazy} from "dev.latvian.mods.kubejs.util.Lazy"
-import {$NativeEventWrapper$Listeners$Key} from "dev.latvian.mods.kubejs.plugin.builtin.wrapper.NativeEventWrapper$Listeners$Key"
 import {$ScriptTypeHolder$$Interface} from "dev.latvian.mods.kubejs.script.ScriptTypeHolder"
+import {$NativeEventWrapper$Listeners$Key} from "dev.latvian.mods.kubejs.plugin.builtin.wrapper.NativeEventWrapper$Listeners$Key"
 import {$ScriptTypePredicate, $ScriptTypePredicate$$Interface} from "dev.latvian.mods.kubejs.script.ScriptTypePredicate"
-import {$Path} from "java.nio.file.Path"
 import {$ConsoleJS} from "dev.latvian.mods.kubejs.script.ConsoleJS"
+import {$Path} from "java.nio.file.Path"
 import {$ClassFilter} from "dev.latvian.mods.kubejs.plugin.ClassFilter"
 
 /**
@@ -18771,14 +18706,14 @@ public "test"(type: any): boolean
 public "test"(type: $ScriptType$$Type): boolean
 public static "valueOf"(name: StringJS): $ScriptType
 public "isClient"(): boolean
-public "kjs$getScriptType"(): $ScriptType
 public "getLogFile"(): $Path
+public "kjs$getScriptType"(): $ScriptType
 public "isStartup"(): boolean
 public "getValidTypes"(): $List<($ScriptType)>
-public "or"(arg0: $Predicate$$Type<($ScriptType)>): $Predicate<($ScriptType)>
+public static "not"<T>(arg0: $Predicate$$Type<($ScriptType)>): $Predicate<($ScriptType)>
 public static "isEqual"<T>(arg0: any): $Predicate<($ScriptType)>
 public "and"(arg0: $Predicate$$Type<($ScriptType)>): $Predicate<($ScriptType)>
-public static "not"<T>(arg0: $Predicate$$Type<($ScriptType)>): $Predicate<($ScriptType)>
+public "or"(arg0: $Predicate$$Type<($ScriptType)>): $Predicate<($ScriptType)>
 get "server"(): boolean
 get "client"(): boolean
 get "logFile"(): $Path
@@ -18859,8 +18794,8 @@ import {$MinecraftEnvironmentKJS$$Interface} from "dev.latvian.mods.kubejs.core.
 import {$ScheduledEvents$Callback$$Type} from "dev.latvian.mods.kubejs.util.ScheduledEvents$Callback"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Function} from "java.util.function.Function"
-import {$TemporalAmount$$Type} from "java.time.temporal.TemporalAmount"
 import {$Minecraft} from "net.minecraft.client.Minecraft"
+import {$TemporalAmount$$Type} from "java.time.temporal.TemporalAmount"
 import {$TickDuration$$Type} from "dev.latvian.mods.kubejs.util.TickDuration"
 import {$ScheduledEvents$ScheduledEvent} from "dev.latvian.mods.kubejs.util.ScheduledEvents$ScheduledEvent"
 
@@ -18930,8 +18865,8 @@ export type $MinecraftClientKJS$$Type = (() => $ScheduledEvents$$Type);
 export type $MinecraftClientKJS$$Original = $MinecraftClientKJS;}
 declare module "dev.latvian.mods.kubejs.misc.PaintingVariantBuilder" {
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
-import {$Registry} from "net.minecraft.core.Registry"
 import {$PaintingVariant} from "net.minecraft.world.entity.decoration.PaintingVariant"
+import {$Registry} from "net.minecraft.core.Registry"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
 import {$BuilderBase} from "dev.latvian.mods.kubejs.registry.BuilderBase"
 import {$SourceLine} from "dev.latvian.mods.kubejs.script.SourceLine"
@@ -19008,14 +18943,14 @@ export type $OrderedCompoundTag$$Type = ($OrderedCompoundTag);
  */
 export type $OrderedCompoundTag$$Original = $OrderedCompoundTag;}
 declare module "dev.latvian.mods.kubejs.gui.chest.ChestMenuData" {
-import {$ChestMenuSlot, $ChestMenuSlot$$Type} from "dev.latvian.mods.kubejs.gui.chest.ChestMenuSlot"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Container} from "net.minecraft.world.Container"
+import {$ChestMenuSlot, $ChestMenuSlot$$Type} from "dev.latvian.mods.kubejs.gui.chest.ChestMenuSlot"
 import {$ChestMenuClickEvent$Callback, $ChestMenuClickEvent$Callback$$Type} from "dev.latvian.mods.kubejs.gui.chest.ChestMenuClickEvent$Callback"
 import {$ClickType$$Type} from "net.minecraft.world.inventory.ClickType"
 import {$Runnable} from "java.lang.Runnable"
-import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$ServerPlayer, $ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
+import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$ChestMenuInventoryClickEvent$Callback} from "dev.latvian.mods.kubejs.gui.chest.ChestMenuInventoryClickEvent$Callback"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 
@@ -19100,8 +19035,8 @@ declare module "dev.latvian.mods.kubejs.block.entity.FluidTankAttachment$Factory
 import {$KubeBlockEntity$$Type} from "dev.latvian.mods.kubejs.block.entity.KubeBlockEntity"
 import {$BlockCapability} from "net.neoforged.neoforge.capabilities.BlockCapability"
 import {$BlockEntityAttachmentFactory$$Interface} from "dev.latvian.mods.kubejs.block.entity.BlockEntityAttachmentFactory"
-import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$BlockEntityAttachmentInfo$$Type} from "dev.latvian.mods.kubejs.block.entity.BlockEntityAttachmentInfo"
+import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$List} from "java.util.List"
 import {$FluidIngredient, $FluidIngredient$$Type} from "net.neoforged.neoforge.fluids.crafting.FluidIngredient"
 import {$BlockEntityAttachment} from "dev.latvian.mods.kubejs.block.entity.BlockEntityAttachment"
@@ -19125,7 +19060,7 @@ get "ticking"(): boolean
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $FluidTankAttachment$Factory$$Type = ({"capacity"?: integer, "inputFilter"?: ($FluidIngredient$$Type)?}) | ([capacity?: integer, inputFilter?: ($FluidIngredient$$Type)?]);
+export type $FluidTankAttachment$Factory$$Type = ({"inputFilter"?: ($FluidIngredient$$Type)?, "capacity"?: integer}) | ([inputFilter?: ($FluidIngredient$$Type)?, capacity?: integer]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -19156,8 +19091,8 @@ import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintG
 import {$KubeColor, $KubeColor$$Type} from "dev.latvian.mods.kubejs.color.KubeColor"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockTintFunction, $BlockTintFunction$$Interface} from "dev.latvian.mods.kubejs.block.BlockTintFunction"
-import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Record} from "java.lang.Record"
+import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $BlockTintFunction$Fixed extends $Record implements $BlockTintFunction$$Interface {
 constructor(color: $KubeColor$$Type)
@@ -19227,9 +19162,9 @@ import {$Record} from "java.lang.Record"
 export class $DataMapWrapper<T, A> extends $Record implements $Iterable$$Interface<($DataMapWrapper$Data<(T), (A)>)> {
 constructor(registry: $Registry$$Type<(T)>, type: $DataMapType$$Type<(T), (A)>)
 
-public "byKey"(): $Map<($ResourceKey<(T)>), (A)>
 public static "typeOf"<T>(registry: $RegistryWrapper$$Type<(T)>, id: $ResourceLocation$$Type): $DataMapType<(T), (never)>
 public static "typeOf"(registry: $ResourceLocation$$Type, id: $ResourceLocation$$Type): $DataMapType<(never), (never)>
+public "byKey"(): $Map<($ResourceKey<(T)>), (A)>
 public "get"(item: T): A
 public "type"(): $DataMapType<(T), (A)>
 public "equals"(o: any): boolean
@@ -19260,8 +19195,8 @@ import {$LiteralArgumentBuilder$$Type} from "com.mojang.brigadier.builder.Litera
 import {$ArgumentTypeWrappers} from "dev.latvian.mods.kubejs.command.ArgumentTypeWrappers"
 import {$Commands} from "net.minecraft.commands.Commands"
 import {$CommandDispatcher, $CommandDispatcher$$Type} from "com.mojang.brigadier.CommandDispatcher"
-import {$SharedSuggestionProvider} from "net.minecraft.commands.SharedSuggestionProvider"
 import {$LiteralCommandNode} from "com.mojang.brigadier.tree.LiteralCommandNode"
+import {$SharedSuggestionProvider} from "net.minecraft.commands.SharedSuggestionProvider"
 import {$CommandSourceStack, $CommandSourceStack$$Type} from "net.minecraft.commands.CommandSourceStack"
 import {$Commands$CommandSelection, $Commands$CommandSelection$$Type} from "net.minecraft.commands.Commands$CommandSelection"
 
@@ -19347,7 +19282,7 @@ public "key"(): K
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $TinyMap$Entry$$Type<K, V> = ({"key"?: K, "value"?: V}) | ([key?: K, value?: V]);
+export type $TinyMap$Entry$$Type<K, V> = ({"value"?: V, "key"?: K}) | ([value?: V, key?: K]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -19363,8 +19298,8 @@ import {$FluidIngredient$$Type} from "net.neoforged.neoforge.fluids.crafting.Flu
 import {$BlockEntityAttachmentHandler$$Interface} from "dev.latvian.mods.kubejs.block.entity.BlockEntityAttachmentHandler"
 import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$InventoryAttachment$Factory$$Type} from "dev.latvian.mods.kubejs.block.entity.InventoryAttachment$Factory"
-import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$ItemPredicate$$Type} from "dev.latvian.mods.kubejs.item.ItemPredicate"
+import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$Set$$Type} from "java.util.Set"
 import {$EnergyStorageAttachment$Factory$$Type} from "dev.latvian.mods.kubejs.block.entity.EnergyStorageAttachment$Factory"
 import {$BlockEntityEventCallback$$Type} from "dev.latvian.mods.kubejs.block.entity.BlockEntityEventCallback"
@@ -19378,9 +19313,9 @@ public "tickFrequency"(frequency: integer): void
 public "enableSync"(): void
 public "rightClickOpensInventory"(id: StringJS): void
 public "rightClickFillsTank"(id: StringJS): void
-public "ticking"(): void
-public "tickOffset"(offset: integer): void
 public "initialData"(data: $CompoundTag$$Type): void
+public "tickOffset"(offset: integer): void
+public "ticking"(): void
 public "toString"(): StringJS
 public "eventHandler"(eventId: integer, callback: $BlockEntityEventCallback$$Type): void
 public "attachCustomCapability"(id: StringJS, directions: $Set$$Type<($Direction$$Type)>, capability: $BlockCapability$$Type<(never), (never)>, dataFactory: $Supplier$$Type<(never)>): void
@@ -19391,9 +19326,9 @@ public "inventory"(id: StringJS, directions: $Set$$Type<($Direction$$Type)>, wid
 public "inventory"(id: StringJS, directions: $Set$$Type<($Direction$$Type)>, width: integer, height: integer, inputFilter: $ItemPredicate$$Type): void
 public "energyStorage"(id: StringJS, directions: $Set$$Type<($Direction$$Type)>, capacity: integer, maxReceive: integer, maxExtract: integer, autoOutput: integer): void
 }
-export type AttachmentMap = {"kubejs:energy_storage": $EnergyStorageAttachment$Factory$$Type;
+export type AttachmentMap = {"kubejs:custom_capability": $CustomCapabilityAttachment$Factory$$Type;
 "kubejs:inventory": $InventoryAttachment$Factory$$Type;
-"kubejs:custom_capability": $CustomCapabilityAttachment$Factory$$Type;
+"kubejs:energy_storage": $EnergyStorageAttachment$Factory$$Type;
 "kubejs:fluid_tank": $FluidTankAttachment$Factory$$Type};
 export type Attachments = keyof AttachmentMap;
 /**
@@ -19467,8 +19402,8 @@ export type $AfterRecipesLoadedKubeEvent$$Original = $AfterRecipesLoadedKubeEven
 declare module "dev.latvian.mods.kubejs.misc.ParticleTypeBuilder" {
 import {$StreamCodec$$Type} from "net.minecraft.network.codec.StreamCodec"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
-import {$ParticleType} from "net.minecraft.core.particles.ParticleType"
 import {$Registry} from "net.minecraft.core.Registry"
+import {$ParticleType} from "net.minecraft.core.particles.ParticleType"
 import {$RegistryFriendlyByteBuf$$Type} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$List$$Type} from "java.util.List"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
@@ -19610,7 +19545,7 @@ public "properties"(): $Consumer<($BlockBuilder)>
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $BuildingMaterialProperties$$Type = ({"baseBlockSuffix"?: (boolean)?, "blocks"?: $BuildingMaterialProperties$Blocks$$Type, "properties"?: $Consumer$$Type<($BlockBuilder$$Type)>, "baseBlock"?: (boolean)?, "behaviour"?: ($BlockSetType$$Type)?, "ticksToStayPressed"?: ($TickDuration$$Type)?}) | ([baseBlockSuffix?: (boolean)?, blocks?: $BuildingMaterialProperties$Blocks$$Type, properties?: $Consumer$$Type<($BlockBuilder$$Type)>, baseBlock?: (boolean)?, behaviour?: ($BlockSetType$$Type)?, ticksToStayPressed?: ($TickDuration$$Type)?]);
+export type $BuildingMaterialProperties$$Type = ({"blocks"?: $BuildingMaterialProperties$Blocks$$Type, "properties"?: $Consumer$$Type<($BlockBuilder$$Type)>, "baseBlock"?: (boolean)?, "behaviour"?: ($BlockSetType$$Type)?, "ticksToStayPressed"?: ($TickDuration$$Type)?, "baseBlockSuffix"?: (boolean)?}) | ([blocks?: $BuildingMaterialProperties$Blocks$$Type, properties?: $Consumer$$Type<($BlockBuilder$$Type)>, baseBlock?: (boolean)?, behaviour?: ($BlockSetType$$Type)?, ticksToStayPressed?: ($TickDuration$$Type)?, baseBlockSuffix?: (boolean)?]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -19630,17 +19565,17 @@ export class $BlockExplodedCallback {
 constructor(level: $Level$$Type, pos: $BlockPos$$Type, explosion: $Explosion$$Type)
 
 public "getRadius"(): float
+public "getExplosion"(): $Explosion
 public "getIgniter"(): $LivingEntity
 public "getAffectedPlayers"(): $List<($Player)>
-public "getExplosion"(): $Explosion
 public "getBlock"(): $LevelBlock
 public "getLevel"(): $Level
 public "getCause"(): $Entity
 public "getBlockState"(): $BlockState
 get "radius"(): float
+get "explosion"(): $Explosion
 get "igniter"(): $LivingEntity
 get "affectedPlayers"(): $List<($Player)>
-get "explosion"(): $Explosion
 get "block"(): $LevelBlock
 get "level"(): $Level
 get "cause"(): $Entity
@@ -19759,8 +19694,8 @@ declare module "dev.latvian.mods.kubejs.item.ItemBuilder" {
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$ItemTintFunction$$Type} from "dev.latvian.mods.kubejs.item.ItemTintFunction"
 import {$JukeboxSong$$Type} from "net.minecraft.world.item.JukeboxSong"
-import {$DataComponentType$$Type} from "net.minecraft.core.component.DataComponentType"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
+import {$DataComponentType$$Type} from "net.minecraft.core.component.DataComponentType"
 import {$ItemBuilder$ReleaseUsingCallback$$Type} from "dev.latvian.mods.kubejs.item.ItemBuilder$ReleaseUsingCallback"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Function$$Type} from "java.util.function.Function"
@@ -19783,8 +19718,8 @@ import {$ToIntFunction$$Type} from "java.util.function.ToIntFunction"
 import {$UseAnim$$Type} from "net.minecraft.world.item.UseAnim"
 import {$ItemBuilder$UseCallback$$Type} from "dev.latvian.mods.kubejs.item.ItemBuilder$UseCallback"
 import {$Registry} from "net.minecraft.core.Registry"
-import {$KubeColor$$Type} from "dev.latvian.mods.kubejs.color.KubeColor"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$KubeColor$$Type} from "dev.latvian.mods.kubejs.color.KubeColor"
 
 export class $ItemBuilder extends $ModelledBuilderBase<($Item)> {
  "sourceLine": $SourceLine
@@ -19843,14 +19778,18 @@ public "fireResistant"(): this
  * Makes the item fire resistant like netherite tools (or not).
  */
 public "fireResistant"(isFireResistant: boolean): this
-public "jukeboxPlayable"(song: $ResourceKey$$Type<($JukeboxSong)>, showInTooltip: boolean): this
 public "jukeboxPlayable"(song: $ResourceKey$$Type<($JukeboxSong)>): this
+public "jukeboxPlayable"(song: $ResourceKey$$Type<($JukeboxSong)>, showInTooltip: boolean): this
 /**
  * Adds subtypes to the item. The function should return a collection of item stacks, each with a different subtype.
  * 
  * Each subtype will appear as a separate item in JEI and the creative inventory.
  */
 public "subtypes"(fn: $Function$$Type<($ItemStack), ($Collection$$Type<($ItemStack$$Type)>)>): this
+/**
+ * Sets the item's container item, e.g. a bucket for a milk bucket.
+ */
+public "containerItem"(id: $ResourceLocation$$Type): this
 public "createItemProperties"(): $Item$Properties
 /**
  * Makes the item not stackable, equivalent to setting the item's max stack size to 1.
@@ -19861,10 +19800,6 @@ public "unstackable"(): this
  */
 public "useAnimation"(animation: $UseAnim$$Type): this
 public "disableRepair"(): this
-/**
- * Sets the item's container item, e.g. a bucket for a milk bucket.
- */
-public "containerItem"(id: $ResourceLocation$$Type): this
 /**
  * Sets the item's max stack size. Default is 64.
  */
@@ -19880,13 +19815,17 @@ public "name"(name: $ItemBuilder$NameCallback$$Type): this
 public "group"(g: StringJS): this
 public "component"<T>(type: $DataComponentType$$Type<(T)>, value: T): this
 /**
- * Colorizes item's texture of the given index. Index is used when you have multiple layers, e.g. a crushed ore (of rock + ore).
+ * Adds a tooltip to the item.
  */
-public "color"(index: integer, color: $ItemTintFunction$$Type): this
+public "tooltip"(text: $Component$$Type): this
 /**
  * Colorizes item's texture of the given index. Useful for coloring items, like GT ores ore dusts.
  */
 public "color"(callback: $ItemTintFunction$$Type): this
+/**
+ * Colorizes item's texture of the given index. Index is used when you have multiple layers, e.g. a crushed ore (of rock + ore).
+ */
+public "color"(index: integer, color: $ItemTintFunction$$Type): this
 /**
  * Determines if player will start using the item.
  * 
@@ -19894,13 +19833,13 @@ public "color"(callback: $ItemTintFunction$$Type): this
  */
 public "use"(use: $ItemBuilder$UseCallback$$Type): this
 /**
- * Set the food nutrition and saturation of the item.
- */
-public "food"(nutrition: integer, saturation: float): this
-/**
  * Set the food properties of the item.
  */
 public "food"(b: $Consumer$$Type<($FoodBuilder)>): this
+/**
+ * Set the food nutrition and saturation of the item.
+ */
+public "food"(nutrition: integer, saturation: float): this
 /**
  * When players did not finish using the item but released the right mouse button halfway through.
  * 
@@ -19915,10 +19854,6 @@ public "releaseUsing"(releaseUsing: $ItemBuilder$ReleaseUsingCallback$$Type): th
  * For example, when using a sword to hit a mob, this is called.
  */
 public "hurtEnemy"(context: $Predicate$$Type<($ItemBuilder$HurtEnemyContext)>): this
-/**
- * Adds a tooltip to the item.
- */
-public "tooltip"(text: $Component$$Type): this
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -20051,18 +19986,17 @@ export type $PlayerRespawnedKubeEvent$$Type = ($PlayerRespawnedKubeEvent);
  */
 export type $PlayerRespawnedKubeEvent$$Original = $PlayerRespawnedKubeEvent;}
 declare module "dev.latvian.mods.kubejs.block.custom.PressurePlateBlockBuilder" {
-import {$BlockBuilder} from "dev.latvian.mods.kubejs.block.BlockBuilder"
-import {$BlockSetType$$Type} from "net.minecraft.world.level.block.state.properties.BlockSetType"
-import {$BuilderBase} from "dev.latvian.mods.kubejs.registry.BuilderBase"
-import {$Consumer} from "java.util.function.Consumer"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Registry} from "net.minecraft.core.Registry"
 import {$ShapedBlockBuilder} from "dev.latvian.mods.kubejs.block.custom.ShapedBlockBuilder"
 import {$ButtonOrPressurePlateBuilder$$Interface} from "dev.latvian.mods.kubejs.block.custom.ButtonOrPressurePlateBuilder"
+import {$BlockBuilder} from "dev.latvian.mods.kubejs.block.BlockBuilder"
+import {$BlockSetType$$Type} from "net.minecraft.world.level.block.state.properties.BlockSetType"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
-import {$SourceLine} from "dev.latvian.mods.kubejs.script.SourceLine"
 import {$TickDuration$$Type} from "dev.latvian.mods.kubejs.util.TickDuration"
+import {$SourceLine} from "dev.latvian.mods.kubejs.script.SourceLine"
 import {$RandomTickCallback} from "dev.latvian.mods.kubejs.block.callback.RandomTickCallback"
+import {$Consumer} from "java.util.function.Consumer"
 
 export class $PressurePlateBlockBuilder extends $ShapedBlockBuilder implements $ButtonOrPressurePlateBuilder$$Interface {
  "sourceLine": $SourceLine
@@ -20075,10 +20009,6 @@ constructor(i: $ResourceLocation$$Type)
 
 public "ticksToStayPressed"(ticks: $TickDuration$$Type): $BlockBuilder
 public "behaviour"(behaviour: $BlockSetType$$Type): $BlockBuilder
-/**
- * Tags both the block and the item with the given tag.
- */
-public "tag"(tag: ($ResourceLocation$$Type)[]): $BuilderBase
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -20118,8 +20048,8 @@ import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resource
 import {$List} from "java.util.List"
 import {$PreTagKubeEvent, $PreTagKubeEvent$$Type} from "dev.latvian.mods.kubejs.server.tag.PreTagKubeEvent"
 import {$TagLoader$EntryWithSource} from "net.minecraft.tags.TagLoader$EntryWithSource"
-import {$TagWrapper} from "dev.latvian.mods.kubejs.server.tag.TagWrapper"
 import {$TagKubeEvent} from "dev.latvian.mods.kubejs.server.tag.TagKubeEvent"
+import {$TagWrapper} from "dev.latvian.mods.kubejs.server.tag.TagWrapper"
 
 export class $PreTagWrapper extends $TagWrapper {
 readonly "preEvent": $PreTagKubeEvent
@@ -20145,15 +20075,15 @@ export type $PreTagWrapper$$Type = ($PreTagWrapper);
  */
 export type $PreTagWrapper$$Original = $PreTagWrapper;}
 declare module "dev.latvian.mods.kubejs.item.ItemModificationKubeEvent$ItemModifications" {
+import {$Potion$$Type} from "net.minecraft.world.item.alchemy.Potion"
 import {$DataComponentMap, $DataComponentMap$$Type} from "net.minecraft.core.component.DataComponentMap"
 import {$ComponentFunctions} from "dev.latvian.mods.kubejs.component.ComponentFunctions"
-import {$Potion$$Type} from "net.minecraft.world.item.alchemy.Potion"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$UUID$$Type} from "java.util.UUID"
 import {$EquipmentSlotGroup$$Type} from "net.minecraft.world.entity.EquipmentSlotGroup"
 import {$ItemAttributeModifiers$Entry$$Type} from "net.minecraft.world.item.component.ItemAttributeModifiers$Entry"
-import {$ItemAttributeModifiers} from "net.minecraft.world.item.component.ItemAttributeModifiers"
+import {$UUID$$Type} from "java.util.UUID"
 import {$List$$Type} from "java.util.List"
+import {$ItemAttributeModifiers} from "net.minecraft.world.item.component.ItemAttributeModifiers"
 import {$FireworkExplosion$$Type} from "net.minecraft.world.item.component.FireworkExplosion"
 import {$DataComponentType$$Type} from "net.minecraft.core.component.DataComponentType"
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
@@ -20168,11 +20098,11 @@ import {$PotionContents$$Type} from "net.minecraft.world.item.alchemy.PotionCont
 import {$TickDuration$$Type} from "dev.latvian.mods.kubejs.util.TickDuration"
 import {$AttributeModifier, $AttributeModifier$$Type} from "net.minecraft.world.entity.ai.attributes.AttributeModifier"
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
-import {$Instrument$$Type} from "net.minecraft.world.item.Instrument"
 import {$Map$$Type} from "java.util.Map"
+import {$Instrument$$Type} from "net.minecraft.world.item.Instrument"
 import {$Rarity$$Type} from "net.minecraft.world.item.Rarity"
-import {$LootTable$$Type} from "net.minecraft.world.level.storage.loot.LootTable"
 import {$Tool$$Type} from "net.minecraft.world.item.component.Tool"
+import {$LootTable$$Type} from "net.minecraft.world.level.storage.loot.LootTable"
 import {$Fireworks$$Type} from "net.minecraft.world.item.component.Fireworks"
 import {$ItemComponentFunctions$$Interface} from "dev.latvian.mods.kubejs.component.ItemComponentFunctions"
 import {$Consumer$$Type} from "java.util.function.Consumer"
@@ -20180,18 +20110,18 @@ import {$DataComponentPatch$$Type} from "net.minecraft.core.component.DataCompon
 import {$Attribute$$Type} from "net.minecraft.world.entity.ai.attributes.Attribute"
 import {$KubeColor$$Type} from "dev.latvian.mods.kubejs.color.KubeColor"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
-import {$Record} from "java.lang.Record"
 import {$Unit$$Type} from "net.minecraft.util.Unit"
+import {$Record} from "java.lang.Record"
 
 export class $ItemModificationKubeEvent$ItemModifications extends $Record implements $ItemComponentFunctions$$Interface {
 constructor(item: $Item$$Type)
 
 public "setCraftingRemainder"(item: $Item$$Type): void
 public "getComponentMap"(): $DataComponentMap
-public "setTier"(builder: $Consumer$$Type<($MutableToolTier)>): void
-public "disableRepair"(): void
 public "setBurnTime"(i: $TickDuration$$Type): void
 public "setNameKey"(key: StringJS): void
+public "setTier"(builder: $Consumer$$Type<($MutableToolTier)>): void
+public "disableRepair"(): void
 public "item"(): $Item
 public "equals"(o: any): boolean
 public "toString"(): StringJS
@@ -20281,9 +20211,9 @@ public "setBaseAttackSpeed"(speed: double): void
 public "setBaseAttackDamage"(dmg: double): void
 set "craftingRemainder"(value: $Item$$Type)
 get "componentMap"(): $DataComponentMap
-set "tier"(value: $Consumer$$Type<($MutableToolTier)>)
 set "burnTime"(value: $TickDuration$$Type)
 set "nameKey"(value: StringJS)
+set "tier"(value: $Consumer$$Type<($MutableToolTier)>)
 set "food"(value: $FoodProperties$$Type)
 set "maxStackSize"(value: integer)
 set "maxDamage"(value: integer)
@@ -20347,18 +20277,18 @@ export type $ItemModificationKubeEvent$ItemModifications$$Type = ({"item"?: $Ite
  */
 export type $ItemModificationKubeEvent$ItemModifications$$Original = $ItemModificationKubeEvent$ItemModifications;}
 declare module "dev.latvian.mods.kubejs.script.data.ExportablePackResources" {
-import {$PackLocationInfo} from "net.minecraft.server.packs.PackLocationInfo"
 import {$KnownPack} from "net.minecraft.server.packs.repository.KnownPack"
-import {$Optional} from "java.util.Optional"
+import {$PackLocationInfo} from "net.minecraft.server.packs.PackLocationInfo"
 import {$MetadataSectionSerializer$$Type} from "net.minecraft.server.packs.metadata.MetadataSectionSerializer"
+import {$Optional} from "java.util.Optional"
 import {$PackResources$$Interface} from "net.minecraft.server.packs.PackResources"
 import {$IoSupplier} from "net.minecraft.server.packs.resources.IoSupplier"
 import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$PackType$$Type} from "net.minecraft.server.packs.PackType"
 import {$PackResources$ResourceOutput$$Type} from "net.minecraft.server.packs.PackResources$ResourceOutput"
 import {$Set} from "java.util.Set"
-import {$InputStream} from "java.io.InputStream"
 import {$Path$$Type} from "java.nio.file.Path"
+import {$InputStream} from "java.io.InputStream"
 
 /**
  * This class is not allowed By KubeJS!
@@ -20377,9 +20307,9 @@ export class $ExportablePackResources implements $ExportablePackResources$$Inter
  "close"(): void
  "listResources"(arg0: $PackType$$Type, arg1: StringJS, arg2: StringJS, arg3: $PackResources$ResourceOutput$$Type): void
  "getNamespaces"(arg0: $PackType$$Type): $Set<(StringJS)>
+ "getMetadataSection"<T>(arg0: $MetadataSectionSerializer$$Type<(T)>): T
  "knownPackInfo"(): $Optional<($KnownPack)>
  "getRootResource"(...arg0: (StringJS)[]): $IoSupplier<($InputStream)>
- "getMetadataSection"<T>(arg0: $MetadataSectionSerializer$$Type<(T)>): T
  "packId"(): StringJS
  "isHidden"(): boolean
 }
@@ -20396,8 +20326,8 @@ declare module "dev.latvian.mods.kubejs.core.InventoryKJS" {
 import {$LevelBlock} from "dev.latvian.mods.kubejs.level.LevelBlock"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Container} from "net.minecraft.world.Container"
-import {$List} from "java.util.List"
 import {$ItemPredicate$$Type} from "dev.latvian.mods.kubejs.item.ItemPredicate"
+import {$List} from "java.util.List"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 
 /**
@@ -20453,8 +20383,8 @@ export type $InventoryKJS$$Original = $InventoryKJS;}
 declare module "dev.latvian.mods.kubejs.util.WithCodec" {
 import {$Codec, $Codec$$Type} from "com.mojang.serialization.Codec"
 import {$JsonElement} from "com.google.gson.JsonElement"
-import {$JsonSerializable$$Interface} from "dev.latvian.mods.kubejs.util.JsonSerializable"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$JsonSerializable$$Interface} from "dev.latvian.mods.kubejs.util.JsonSerializable"
 import {$NBTSerializable$$Interface} from "dev.latvian.mods.kubejs.util.NBTSerializable"
 
 export interface $WithCodec$$Interface extends $NBTSerializable$$Interface, $JsonSerializable$$Interface {
@@ -20619,13 +20549,13 @@ constructor(player: $Player$$Type, hand: $InteractionHand$$Type, item: $ItemStac
  */
 public "getHand"(): $InteractionHand
 /**
- * The item that was clicked with.
- */
-public "getItem"(): $ItemStack
-/**
  * The player that clicked with the item.
  */
 public "getEntity"(): $LivingEntity
+/**
+ * The item that was clicked with.
+ */
+public "getItem"(): $ItemStack
 /**
  * The ray trace result of the click.
  */
@@ -20671,8 +20601,8 @@ public "cancel"(value: any): any
  */
 public "cancel"(): any
 get "hand"(): $InteractionHand
-get "item"(): $ItemStack
 get "entity"(): $LivingEntity
+get "item"(): $ItemStack
 get "target"(): $KubeRayTraceResult
 get "player"(): $Player
 get "level"(): $Level
@@ -20712,6 +20642,7 @@ readonly "id": $ResourceLocation
 
 constructor(id: $ResourceLocation$$Type)
 
+public "attachTo"(entityType: $Predicate$$Type<($EntityType<(never)>)>): this
 public "transformObject"(attribute: $Attribute$$Type): $Attribute
 public "negativeSentiment"(): this
 public "neutralSentiment"(): this
@@ -20720,7 +20651,6 @@ public "attachToMonsters"(): this
 public "attachToCategory"(category: $MobCategory$$Type): this
 public "sentiment"(sentiment: $Attribute$Sentiment$$Type): this
 public "syncable"(watch: boolean): this
-public "attachTo"(entityType: $Predicate$$Type<($EntityType<(never)>)>): this
 public "range"(defaultValue: double, min: double, max: double): this
 public "bool"(defaultValue: boolean): this
 }
@@ -20737,13 +20667,13 @@ declare module "dev.latvian.mods.kubejs.plugin.builtin.wrapper.IngredientWrapper
 import {$TypeInfo} from "dev.latvian.mods.rhino.type.TypeInfo"
 import {$DataComponentMap$$Type} from "net.minecraft.core.component.DataComponentMap"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
-import {$Ingredient, $Ingredient$$Type} from "net.minecraft.world.item.crafting.Ingredient"
 import {$StringReader$$Type} from "com.mojang.brigadier.StringReader"
+import {$Ingredient, $Ingredient$$Type} from "net.minecraft.world.item.crafting.Ingredient"
 import {$TagKey} from "net.minecraft.tags.TagKey"
 import {$DataResult} from "com.mojang.serialization.DataResult"
 import {$JsonElement$$Type} from "com.google.gson.JsonElement"
-import {$HolderSet$$Type} from "net.minecraft.core.HolderSet"
 import {$Item, $Item$$Type} from "net.minecraft.world.item.Item"
+import {$HolderSet$$Type} from "net.minecraft.core.HolderSet"
 import {$SizedIngredient} from "net.neoforged.neoforge.common.crafting.SizedIngredient"
 
 /**
@@ -20837,8 +20767,8 @@ import {$Map, $Map$$Type} from "java.util.Map"
 import {$ObjectSet} from "it.unimi.dsi.fastutil.objects.ObjectSet"
 import {$RecipeScriptContext$$Type} from "dev.latvian.mods.kubejs.recipe.RecipeScriptContext"
 import {$Function} from "java.util.function.Function"
-import {$RecipeKey, $RecipeKey$$Type} from "dev.latvian.mods.kubejs.recipe.RecipeKey"
 import {$Set} from "java.util.Set"
+import {$RecipeKey, $RecipeKey$$Type} from "dev.latvian.mods.kubejs.recipe.RecipeKey"
 import {$Map$Entry, $Map$Entry$$Type} from "java.util.Map$Entry"
 
 export class $ComponentValueMap extends $Reference2ObjectOpenHashMap<($RecipeKey<(never)>), (any)> {
@@ -20878,8 +20808,8 @@ declare module "dev.latvian.mods.kubejs.core.BlockProviderKJS" {
 import {$Map} from "java.util.Map"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Registry} from "net.minecraft.core.Registry"
-import {$List} from "java.util.List"
 import {$TagKey} from "net.minecraft.tags.TagKey"
+import {$List} from "java.util.List"
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
 import {$RegistryObjectKJS$$Interface} from "dev.latvian.mods.kubejs.core.RegistryObjectKJS"
@@ -21147,10 +21077,10 @@ export type $AttributeBuilder$Range$$Type = ({"min"?: double, "max"?: double, "d
 export type $AttributeBuilder$Range$$Original = $AttributeBuilder$Range;}
 declare module "dev.latvian.mods.kubejs.recipe.component.ListRecipeComponent" {
 import {$TinyMap} from "dev.latvian.mods.kubejs.util.TinyMap"
-import {$IntBounds, $IntBounds$$Type} from "dev.latvian.mods.kubejs.util.IntBounds"
 import {$Optional, $Optional$$Type} from "java.util.Optional"
-import {$ComponentRole$$Type} from "dev.latvian.mods.kubejs.recipe.component.ComponentRole"
+import {$IntBounds, $IntBounds$$Type} from "dev.latvian.mods.kubejs.util.IntBounds"
 import {$List, $List$$Type} from "java.util.List"
+import {$ComponentRole$$Type} from "dev.latvian.mods.kubejs.recipe.component.ComponentRole"
 import {$RecipeComponent, $RecipeComponent$$Type, $RecipeComponent$$Interface} from "dev.latvian.mods.kubejs.recipe.component.RecipeComponent"
 import {$RecipeKey} from "dev.latvian.mods.kubejs.recipe.RecipeKey"
 import {$ReplacementMatchInfo$$Type} from "dev.latvian.mods.kubejs.recipe.match.ReplacementMatchInfo"
@@ -21176,19 +21106,19 @@ static readonly "TYPE": $RecipeComponentType<(never)>
 
 constructor(component: $RecipeComponent$$Type<(T)>, canWriteSelf: boolean, listTypeInfo: $TypeInfo$$Type, listCodec: $Codec$$Type<($List$$Type<(T)>)>, conditional: boolean, bounds: $IntBounds$$Type, spread: ($RecipeComponent$$Type<(never)>)?, spreadWrap: ($RecipeComponent$$Type<(never)>)?)
 
-public "spreadWrap"(): $Optional<($RecipeComponent<(never)>)>
-public "listTypeInfo"(): $TypeInfo
-public static "wrap0"<T>(cx: $RecipeScriptContext$$Type, component: $RecipeComponent$$Type<(T)>, from: any): $List<(T)>
-public "asConditional"(): $ListRecipeComponent<(T)>
-public "withSpread"(spread: ($RecipeComponent$$Type<(never)>)?): $ListRecipeComponent<(T)>
 public "canWriteSelf"(): boolean
+public "listTypeInfo"(): $TypeInfo
+public "asConditional"(): $ListRecipeComponent<(T)>
+public static "wrap0"<T>(cx: $RecipeScriptContext$$Type, component: $RecipeComponent$$Type<(T)>, from: any): $List<(T)>
+public "withSpread"(spread: ($RecipeComponent$$Type<(never)>)?): $ListRecipeComponent<(T)>
+public "spreadWrap"(): $Optional<($RecipeComponent<(never)>)>
 public "orSelf"(): $ListRecipeComponent<(T)>
 public "hasPriority"(cx: $RecipeMatchContext$$Type, from: any): boolean
-public "buildUniqueId"(builder: $UniqueIdBuilder$$Type, value: $List$$Type<(T)>): void
 public "buildUniqueId"(builder: $UniqueIdBuilder$$Type, value: any): void
+public "buildUniqueId"(builder: $UniqueIdBuilder$$Type, value: $List$$Type<(T)>): void
 public "listCodec"(): $Codec<($List<(T)>)>
-public "allowEmpty"(): boolean
 public "withBounds"(bounds: $IntBounds$$Type): $ListRecipeComponent<(T)>
+public "allowEmpty"(): boolean
 public "type"(): $RecipeComponentType<(never)>
 public "equals"(o: any): boolean
 public "toString"(): StringJS
@@ -21212,24 +21142,24 @@ public "spread"(value: any): $List
 public "spread"(): $Optional<($RecipeComponent<(never)>)>
 public "codec"(): $Codec<($List<(T)>)>
 public "conditional"(): boolean
-public "writeToJson"(recipe: $KubeRecipe$$Type, cv: $RecipeComponentValue$$Type<($List$$Type<(T)>)>, json: $JsonObject$$Type): void
-public "readFromJson"(recipe: $KubeRecipe$$Type, cv: $RecipeComponentValue$$Type<($List$$Type<(T)>)>, json: $JsonObject$$Type): void
 public "outputKey"(name: StringJS): $RecipeKey<($List<(T)>)>
 public "asListOrSelf"(): $ListRecipeComponent<($List<(T)>)>
 public "asConditionalList"(): $ListRecipeComponent<($List<(T)>)>
 public "asConditionalListOrSelf"(): $ListRecipeComponent<($List<(T)>)>
 public "asPatternKey"(): $RecipeComponent<($TinyMap<(character), ($List<(T)>)>)>
 public "withCodec"(codec: $Codec$$Type<($List$$Type<(T)>)>): $RecipeComponent<($List<(T)>)>
-public "inputKey"(name: StringJS): $RecipeKey<($List<(T)>)>
-public "or"<O>(other: $RecipeComponent$$Type<(O)>): $EitherRecipeComponent<($List<(T)>), (O)>
+public "writeToJson"(recipe: $KubeRecipe$$Type, cv: $RecipeComponentValue$$Type<($List$$Type<(T)>)>, json: $JsonObject$$Type): void
+public "readFromJson"(recipe: $KubeRecipe$$Type, cv: $RecipeComponentValue$$Type<($List$$Type<(T)>)>, json: $JsonObject$$Type): void
 public "isIgnored"(): boolean
+public "inputKey"(name: StringJS): $RecipeKey<($List<(T)>)>
 public "toString"(ops: $OpsContainer$$Type, value: $List$$Type<(T)>): StringJS
-public static "builder"(...keys: ($CustomObjectRecipeComponent$Key$$Type)[]): $CustomObjectRecipeComponent
 public static "builder"(keys: $List$$Type<($CustomObjectRecipeComponent$Key$$Type)>): $CustomObjectRecipeComponent
+public static "builder"(...keys: ($CustomObjectRecipeComponent$Key$$Type)[]): $CustomObjectRecipeComponent
 public "key"(name: StringJS, role: $ComponentRole$$Type): $RecipeKey<($List<(T)>)>
 public "asList"(): $ListRecipeComponent<($List<(T)>)>
-public "createBuilder"(): $RecipeComponentBuilder
+public "or"<O>(other: $RecipeComponent$$Type<(O)>): $EitherRecipeComponent<($List<(T)>), (O)>
 public "asMap"<K>(key: $RecipeComponent$$Type<(K)>): $RecipeComponent<($TinyMap<(K), ($List<(T)>)>)>
+public "createBuilder"(): $RecipeComponentBuilder
 public "otherKey"(name: StringJS): $RecipeKey<($List<(T)>)>
 get "ignored"(): boolean
 }
@@ -21298,9 +21228,9 @@ constructor(registry: $Registry$$Type<(T)>, unknownKey: $ResourceKey$$Type<(T)>)
 public "getEntrySet"(): $Set<($Map$Entry<($ResourceLocation), (T)>)>
 public "unknownKey"(): $ResourceKey<(T)>
 public "getDataMap"(id: $ResourceLocation$$Type): $DataMapWrapper<(T), (never)>
-public "getValueMap"(): $Map<($ResourceLocation), (T)>
 public "getValues"(): $List<(T)>
 public "getValues"(filter: any): $HolderSetWrapper<(T)>
+public "getValueMap"(): $Map<($ResourceLocation), (T)>
 public "getKeys"(): $Set<($ResourceLocation)>
 public "get"(id: $ResourceLocation$$Type): T
 public "equals"(o: any): boolean
@@ -21320,8 +21250,8 @@ public "spliterator"(): $Spliterator<(T)>
 public "forEach"(arg0: $Consumer$$Type<(T)>): void
 [Symbol.iterator](): IterableIterator<T>;
 get "entrySet"(): $Set<($Map$Entry<($ResourceLocation), (T)>)>
-get "valueMap"(): $Map<($ResourceLocation), (T)>
 get "values"(): $List<(T)>
+get "valueMap"(): $Map<($ResourceLocation), (T)>
 get "keys"(): $Set<($ResourceLocation)>
 get "random"(): T
 }
@@ -21337,33 +21267,33 @@ export type $RegistryWrapper$$Original<T> = $RegistryWrapper<(T)>;}
 declare module "dev.latvian.mods.kubejs.core.PlayerKJS" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$WithAttachedData$$Interface} from "dev.latvian.mods.kubejs.core.WithAttachedData"
-import {$Direction} from "net.minecraft.core.Direction"
 import {$KubeJSInventoryListener} from "dev.latvian.mods.kubejs.player.KubeJSInventoryListener"
+import {$Direction} from "net.minecraft.core.Direction"
 import {$Level} from "net.minecraft.world.level.Level"
-import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$SoundEvent$$Type} from "net.minecraft.sounds.SoundEvent"
+import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$Stages} from "dev.latvian.mods.kubejs.stages.Stages"
 import {$Holder$$Type} from "net.minecraft.core.Holder"
 import {$FoodProperties$$Type} from "net.minecraft.world.food.FoodProperties"
 import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
-import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$ItemPredicate$$Type} from "dev.latvian.mods.kubejs.item.ItemPredicate"
+import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$ScriptType} from "dev.latvian.mods.kubejs.script.ScriptType"
 import {$Item$$Type} from "net.minecraft.world.item.Item"
 import {$InventoryKJS} from "dev.latvian.mods.kubejs.core.InventoryKJS"
-import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$NotificationToastData$$Type} from "dev.latvian.mods.kubejs.util.NotificationToastData"
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Predicate$$Type} from "java.util.function.Predicate"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$AttachedData, $AttachedData$$Type} from "dev.latvian.mods.kubejs.util.AttachedData"
 import {$KubeRayTraceResult} from "dev.latvian.mods.kubejs.entity.KubeRayTraceResult"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$PlayerStatsJS} from "dev.latvian.mods.kubejs.player.PlayerStatsJS"
-import {$LivingEntityKJS$$Interface} from "dev.latvian.mods.kubejs.core.LivingEntityKJS"
 import {$LevelBlock, $LevelBlock$$Type} from "dev.latvian.mods.kubejs.level.LevelBlock"
+import {$LivingEntityKJS$$Interface} from "dev.latvian.mods.kubejs.core.LivingEntityKJS"
 import {$AbstractContainerMenu} from "net.minecraft.world.inventory.AbstractContainerMenu"
 import {$AttributeModifier$Operation$$Type} from "net.minecraft.world.entity.ai.attributes.AttributeModifier$Operation"
 import {$EntityPotionEffectsJS} from "dev.latvian.mods.kubejs.entity.EntityPotionEffectsJS"
@@ -21371,8 +21301,8 @@ import {$Attribute$$Type} from "net.minecraft.world.entity.ai.attributes.Attribu
 import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$GameProfile} from "com.mojang.authlib.GameProfile"
 import {$DataSenderKJS$$Interface} from "dev.latvian.mods.kubejs.core.DataSenderKJS"
-import {$MinecraftServer} from "net.minecraft.server.MinecraftServer"
 import {$EntityArrayList} from "dev.latvian.mods.kubejs.player.EntityArrayList"
+import {$MinecraftServer} from "net.minecraft.server.MinecraftServer"
 
 /**
  * This class is not allowed By KubeJS!
@@ -21610,8 +21540,8 @@ declare module "dev.latvian.mods.kubejs.core.CustomIngredientKJS" {
 import {$ItemStackSet} from "dev.latvian.mods.kubejs.item.ItemStackSet"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Ingredient} from "net.minecraft.world.item.crafting.Ingredient"
-import {$Predicate, $Predicate$$Type} from "java.util.function.Predicate"
 import {$ItemPredicate, $ItemPredicate$$Interface} from "dev.latvian.mods.kubejs.item.ItemPredicate"
+import {$Predicate, $Predicate$$Type} from "java.util.function.Predicate"
 import {$Item, $Item$$Type} from "net.minecraft.world.item.Item"
 import {$Set} from "java.util.Set"
 import {$Stream} from "java.util.stream.Stream"
@@ -21651,11 +21581,11 @@ export class $CustomIngredientKJS implements $CustomIngredientKJS$$Interface {
  "test"(itemStack: any): boolean
 static "wrap"(from: any): $ItemPredicate
  "isWildcard"(): boolean
- "or"(arg0: $Predicate$$Type<($ItemStack)>): $Predicate<($ItemStack)>
+static "not"<T>(arg0: $Predicate$$Type<($ItemStack)>): $Predicate<($ItemStack)>
 static "isEqual"<T>(arg0: any): $Predicate<($ItemStack)>
  "negate"(): $Predicate<($ItemStack)>
  "and"(arg0: $Predicate$$Type<($ItemStack)>): $Predicate<($ItemStack)>
-static "not"<T>(arg0: $Predicate$$Type<($ItemStack)>): $Predicate<($ItemStack)>
+ "or"(arg0: $Predicate$$Type<($ItemStack)>): $Predicate<($ItemStack)>
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -21675,10 +21605,10 @@ export class $KeybindRegistryKubeEvent$Builder {
 public "defaultKey"(keyName: StringJS): $KeybindRegistryKubeEvent$Builder
 public "category"(category: StringJS): $KeybindRegistryKubeEvent$Builder
 public "modifier"(modifier: $KeyModifier$$Type): $KeybindRegistryKubeEvent$Builder
-public "gui"(): $KeybindRegistryKubeEvent$Builder
-public "inputType"(inputType: $InputConstants$Type$$Type): $KeybindRegistryKubeEvent$Builder
 public "inGame"(): $KeybindRegistryKubeEvent$Builder
+public "inputType"(inputType: $InputConstants$Type$$Type): $KeybindRegistryKubeEvent$Builder
 public "conflictContext"(keyConflictContext: $KeyConflictContext$$Type): $KeybindRegistryKubeEvent$Builder
+public "gui"(): $KeybindRegistryKubeEvent$Builder
 public "scanCodeInputType"(): $KeybindRegistryKubeEvent$Builder
 public "mouseInputType"(): $KeybindRegistryKubeEvent$Builder
 }
@@ -21762,8 +21692,8 @@ export type $ChestMenuInventoryClickEvent$$Original = $ChestMenuInventoryClickEv
 declare module "dev.latvian.mods.kubejs.core.EntityTypeKJS" {
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Registry} from "net.minecraft.core.Registry"
-import {$List} from "java.util.List"
 import {$TagKey} from "net.minecraft.tags.TagKey"
+import {$List} from "java.util.List"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
 import {$RegistryObjectKJS$$Interface} from "dev.latvian.mods.kubejs.core.RegistryObjectKJS"
 import {$Holder} from "net.minecraft.core.Holder"
@@ -21837,9 +21767,8 @@ import {$Registry} from "net.minecraft.core.Registry"
 import {$ShapedBlockBuilder} from "dev.latvian.mods.kubejs.block.custom.ShapedBlockBuilder"
 import {$BlockSetType$$Type} from "net.minecraft.world.level.block.state.properties.BlockSetType"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
-import {$BuilderBase} from "dev.latvian.mods.kubejs.registry.BuilderBase"
-import {$SourceLine} from "dev.latvian.mods.kubejs.script.SourceLine"
 import {$LootTable} from "net.minecraft.world.level.storage.loot.LootTable"
+import {$SourceLine} from "dev.latvian.mods.kubejs.script.SourceLine"
 import {$RandomTickCallback} from "dev.latvian.mods.kubejs.block.callback.RandomTickCallback"
 import {$Consumer} from "java.util.function.Consumer"
 
@@ -21856,10 +21785,6 @@ constructor(i: $ResourceLocation$$Type)
 public "behaviour"(wt: $BlockSetType$$Type): this
 public "wooden"(): this
 public "generateLootTable"(generator: $KubeDataGenerator$$Type): $LootTable
-/**
- * Tags both the block and the item with the given tag.
- */
-public "tag"(tag: ($ResourceLocation$$Type)[]): $BuilderBase
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -21877,26 +21802,26 @@ import {$List} from "java.util.List"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$Player} from "net.minecraft.world.entity.player.Player"
-import {$Explosion} from "net.minecraft.world.level.Explosion"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
+import {$Explosion} from "net.minecraft.world.level.Explosion"
 import {$ScriptType} from "dev.latvian.mods.kubejs.script.ScriptType"
-import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
 import {$AttachedData, $AttachedData$$Type} from "dev.latvian.mods.kubejs.util.AttachedData"
 import {$Fireworks$$Type} from "net.minecraft.world.item.component.Fireworks"
 import {$SpriteSet$$Type} from "net.minecraft.client.particle.SpriteSet"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$LevelBlock} from "dev.latvian.mods.kubejs.level.LevelBlock"
-import {$ExplosionProperties$$Type} from "dev.latvian.mods.kubejs.level.ExplosionProperties"
-import {$LevelKJS$$Interface} from "dev.latvian.mods.kubejs.core.LevelKJS"
 import {$EntityGetter} from "net.minecraft.world.level.EntityGetter"
+import {$LevelKJS$$Interface} from "dev.latvian.mods.kubejs.core.LevelKJS"
+import {$ExplosionProperties$$Type} from "dev.latvian.mods.kubejs.level.ExplosionProperties"
 import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$AABB$$Type} from "net.minecraft.world.phys.AABB"
+import {$EntityArrayList} from "dev.latvian.mods.kubejs.player.EntityArrayList"
 import {$KubeAnimatedParticle} from "dev.latvian.mods.kubejs.client.KubeAnimatedParticle"
 import {$ParticleOptions$$Type} from "net.minecraft.core.particles.ParticleOptions"
-import {$EntityArrayList} from "dev.latvian.mods.kubejs.player.EntityArrayList"
 
 /**
  * This class is not allowed By KubeJS!
@@ -21966,8 +21891,8 @@ export type $ClientLevelKJS$$Original = $ClientLevelKJS;}
 declare module "dev.latvian.mods.kubejs.recipe.component.RecipeComponentType" {
 import {$RecipeTypeRegistryContext$$Type} from "dev.latvian.mods.kubejs.recipe.RecipeTypeRegistryContext"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
-import {$ComponentRole$$Type} from "dev.latvian.mods.kubejs.recipe.component.ComponentRole"
 import {$Function$$Type} from "java.util.function.Function"
+import {$ComponentRole$$Type} from "dev.latvian.mods.kubejs.recipe.component.ComponentRole"
 import {$RecipeComponent, $RecipeComponent$$Type} from "dev.latvian.mods.kubejs.recipe.component.RecipeComponent"
 import {$RecipeKey} from "dev.latvian.mods.kubejs.recipe.RecipeKey"
 import {$RecipeComponentCodecFactory$$Type} from "dev.latvian.mods.kubejs.recipe.component.RecipeComponentCodecFactory"
@@ -21977,8 +21902,8 @@ import {$MapCodec, $MapCodec$$Type} from "com.mojang.serialization.MapCodec"
 export class $RecipeComponentType<T> {
 constructor(id: $ResourceLocation$$Type)
 
-public "outputKey"(name: StringJS): $RecipeKey<(T)>
 public "isUnit"(): boolean
+public "outputKey"(name: StringJS): $RecipeKey<(T)>
 public "inputKey"(name: StringJS): $RecipeKey<(T)>
 public "equals"(obj: any): boolean
 public "toString"(): StringJS
@@ -21986,10 +21911,10 @@ public "hashCode"(): integer
 public "id"(): $ResourceLocation
 public "key"(name: StringJS, role: $ComponentRole$$Type): $RecipeKey<(T)>
 public "instance"(): $RecipeComponent<(T)>
-public static "unit"<T>(id: $ResourceLocation$$Type, instanceGetter: $Function$$Type<($RecipeComponentType<(T)>), ($RecipeComponent$$Type<(T)>)>): $RecipeComponentType$Unit<(T)>
-public static "unit"<T>(id: $ResourceLocation$$Type, instance: $RecipeComponent$$Type<(T)>): $RecipeComponentType$Unit<(T)>
-public static "dynamic"<CT extends $RecipeComponent<(object)>>(id: $ResourceLocation$$Type, codecFactory: $RecipeComponentCodecFactory$$Type<(CT)>): $RecipeComponentType<(never)>
 public static "dynamic"<CT extends $RecipeComponent<(object)>>(id: $ResourceLocation$$Type, mapCodec: $MapCodec$$Type<(CT)>): $RecipeComponentType<(never)>
+public static "dynamic"<CT extends $RecipeComponent<(object)>>(id: $ResourceLocation$$Type, codecFactory: $RecipeComponentCodecFactory$$Type<(CT)>): $RecipeComponentType<(never)>
+public static "unit"<T>(id: $ResourceLocation$$Type, instance: $RecipeComponent$$Type<(T)>): $RecipeComponentType$Unit<(T)>
+public static "unit"<T>(id: $ResourceLocation$$Type, instanceGetter: $Function$$Type<($RecipeComponentType<(T)>), ($RecipeComponent$$Type<(T)>)>): $RecipeComponentType$Unit<(T)>
 public "otherKey"(name: StringJS): $RecipeKey<(T)>
 public "mapCodec"(ctx: $RecipeTypeRegistryContext$$Type): $MapCodec<($RecipeComponent<(never)>)>
 }
@@ -22185,7 +22110,6 @@ import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resource
 import {$Registry} from "net.minecraft.core.Registry"
 import {$BlockBuilder} from "dev.latvian.mods.kubejs.block.BlockBuilder"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
-import {$BuilderBase} from "dev.latvian.mods.kubejs.registry.BuilderBase"
 import {$SourceLine} from "dev.latvian.mods.kubejs.script.SourceLine"
 import {$RandomTickCallback} from "dev.latvian.mods.kubejs.block.callback.RandomTickCallback"
 import {$Consumer} from "java.util.function.Consumer"
@@ -22198,10 +22122,6 @@ readonly "id": $ResourceLocation
 
 constructor(i: $ResourceLocation$$Type)
 
-/**
- * Tags both the block and the item with the given tag.
- */
-public "tag"(tag: ($ResourceLocation$$Type)[]): $BuilderBase
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -22282,9 +22202,9 @@ import {$Record} from "java.lang.Record"
 export class $CompostableRecipesKubeEvent extends $Record implements $KubeEvent$$Interface {
 constructor(compostables: $VirtualDataMapFile$$Type<($Item$$Type), ($Compostable$$Type)>)
 
+public "compostables"(): $VirtualDataMapFile<($Item), ($Compostable)>
 public "addReplace"(match: $ItemPredicate$$Type, f: float, villager: boolean): void
 public "addReplace"(match: $ItemPredicate$$Type, f: float): void
-public "compostables"(): $VirtualDataMapFile<($Item), ($Compostable)>
 public "remove"(match: $ItemPredicate$$Type): void
 public "equals"(o: any): boolean
 public "toString"(): StringJS
@@ -22352,7 +22272,6 @@ readonly "player": $Player
 
 constructor(p: $Player$$Type, s: $StatsCounter$$Type)
 
-public "getDamageTaken"(): integer
 public static "wrapStat"(o: any): $Stat<(never)>
 public "getPlayTime"(): integer
 public "getTimeSinceDeath"(): integer
@@ -22382,10 +22301,10 @@ public "getItemsPickedUp"(item: $Item$$Type): integer
 public "getItemsDropped"(item: $Item$$Type): integer
 public "getKilled"(entity: $EntityType$$Type<(never)>): integer
 public "getKilledBy"(entity: $EntityType$$Type<(never)>): integer
+public "getDamageTaken"(): integer
 public "get"(stat: $Stat$$Type<(never)>): integer
 public "add"(stat: $Stat$$Type<(never)>, value: integer): void
 public "set"(stat: $Stat$$Type<(never)>, value: integer): void
-get "damageTaken"(): integer
 get "playTime"(): integer
 get "timeSinceDeath"(): integer
 get "timeSinceRest"(): integer
@@ -22406,6 +22325,7 @@ get "mobKills"(): integer
 get "animalsBred"(): integer
 get "playerKills"(): integer
 get "fishCaught"(): integer
+get "damageTaken"(): integer
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -22473,15 +22393,15 @@ export type $AddEntriesKubeEvent$$Type<E, F> = ((items: (any)[]) => void);
  */
 export type $AddEntriesKubeEvent$$Original<E, F> = $AddEntriesKubeEvent<(E), (F)>;}
 declare module "dev.latvian.mods.kubejs.component.ItemComponentFunctions" {
+import {$Potion$$Type} from "net.minecraft.world.item.alchemy.Potion"
 import {$DataComponentMap, $DataComponentMap$$Type} from "net.minecraft.core.component.DataComponentMap"
 import {$ComponentFunctions, $ComponentFunctions$$Interface} from "dev.latvian.mods.kubejs.component.ComponentFunctions"
-import {$Potion$$Type} from "net.minecraft.world.item.alchemy.Potion"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$UUID$$Type} from "java.util.UUID"
 import {$EquipmentSlotGroup$$Type} from "net.minecraft.world.entity.EquipmentSlotGroup"
 import {$ItemAttributeModifiers$Entry$$Type} from "net.minecraft.world.item.component.ItemAttributeModifiers$Entry"
-import {$ItemAttributeModifiers} from "net.minecraft.world.item.component.ItemAttributeModifiers"
+import {$UUID$$Type} from "java.util.UUID"
 import {$List$$Type} from "java.util.List"
+import {$ItemAttributeModifiers} from "net.minecraft.world.item.component.ItemAttributeModifiers"
 import {$FireworkExplosion$$Type} from "net.minecraft.world.item.component.FireworkExplosion"
 import {$DataComponentType$$Type} from "net.minecraft.core.component.DataComponentType"
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
@@ -22493,15 +22413,15 @@ import {$ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
 import {$PotionContents$$Type} from "net.minecraft.world.item.alchemy.PotionContents"
 import {$AttributeModifier, $AttributeModifier$$Type} from "net.minecraft.world.entity.ai.attributes.AttributeModifier"
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
-import {$Instrument$$Type} from "net.minecraft.world.item.Instrument"
 import {$Map$$Type} from "java.util.Map"
+import {$Instrument$$Type} from "net.minecraft.world.item.Instrument"
 import {$Rarity$$Type} from "net.minecraft.world.item.Rarity"
-import {$LootTable$$Type} from "net.minecraft.world.level.storage.loot.LootTable"
 import {$Tool$$Type} from "net.minecraft.world.item.component.Tool"
+import {$LootTable$$Type} from "net.minecraft.world.level.storage.loot.LootTable"
 import {$Fireworks$$Type} from "net.minecraft.world.item.component.Fireworks"
 import {$DataComponentPatch$$Type} from "net.minecraft.core.component.DataComponentPatch"
-import {$Attribute$$Type} from "net.minecraft.world.entity.ai.attributes.Attribute"
 import {$AttributeModifierFunctions$$Interface} from "dev.latvian.mods.kubejs.component.AttributeModifierFunctions"
+import {$Attribute$$Type} from "net.minecraft.world.entity.ai.attributes.Attribute"
 import {$KubeColor$$Type} from "dev.latvian.mods.kubejs.color.KubeColor"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$Unit$$Type} from "net.minecraft.util.Unit"
@@ -22663,8 +22583,8 @@ import {$JsonElement} from "com.google.gson.JsonElement"
 export class $SoundsGenerator$SoundInstance {
 constructor(fileLocation: StringJS)
 
-public "asReferenceToEvent"(): $SoundsGenerator$SoundInstance
 public "attenuationDistance"(i: integer): $SoundsGenerator$SoundInstance
+public "asReferenceToEvent"(): $SoundsGenerator$SoundInstance
 public "stream"(): $SoundsGenerator$SoundInstance
 public "stream"(b: boolean): $SoundsGenerator$SoundInstance
 public "toJson"(): $JsonElement
@@ -22746,7 +22666,6 @@ import {$Registry} from "net.minecraft.core.Registry"
 import {$ShapedBlockBuilder} from "dev.latvian.mods.kubejs.block.custom.ShapedBlockBuilder"
 import {$BlockSetType$$Type} from "net.minecraft.world.level.block.state.properties.BlockSetType"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
-import {$BuilderBase} from "dev.latvian.mods.kubejs.registry.BuilderBase"
 import {$SourceLine} from "dev.latvian.mods.kubejs.script.SourceLine"
 import {$RandomTickCallback} from "dev.latvian.mods.kubejs.block.callback.RandomTickCallback"
 import {$Consumer} from "java.util.function.Consumer"
@@ -22761,10 +22680,6 @@ readonly "id": $ResourceLocation
 constructor(i: $ResourceLocation$$Type)
 
 public "behaviour"(wt: $BlockSetType$$Type): this
-/**
- * Tags both the block and the item with the given tag.
- */
-public "tag"(tag: ($ResourceLocation$$Type)[]): $BuilderBase
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -22862,8 +22777,8 @@ import {$Map} from "java.util.Map"
 import {$DynamicOps$$Type} from "com.mojang.serialization.DynamicOps"
 import {$RecipeScriptContext$$Type} from "dev.latvian.mods.kubejs.recipe.RecipeScriptContext"
 import {$RecipeSchemaType$$Type} from "dev.latvian.mods.kubejs.recipe.schema.RecipeSchemaType"
-import {$JsonElement$$Type} from "com.google.gson.JsonElement"
 import {$List, $List$$Type} from "java.util.List"
+import {$JsonElement$$Type} from "com.google.gson.JsonElement"
 import {$RecipeKey, $RecipeKey$$Type} from "dev.latvian.mods.kubejs.recipe.RecipeKey"
 import {$ComponentValueMap$$Type} from "dev.latvian.mods.kubejs.recipe.component.ComponentValueMap"
 import {$KubeRecipe} from "dev.latvian.mods.kubejs.recipe.KubeRecipe"
@@ -22913,8 +22828,8 @@ export class $ItemDestroyedKubeEvent implements $KubePlayerEvent$$Interface {
 constructor(e: $PlayerDestroyItemEvent$$Type)
 
 public "getHand"(): $InteractionHand
-public "getItem"(): $ItemStack
 public "getEntity"(): $LivingEntity
+public "getItem"(): $ItemStack
 public "getPlayer"(): $Player
 public "getLevel"(): $Level
 public "getRegistries"(): $RegistryAccess
@@ -22956,8 +22871,8 @@ public "cancel"(value: any): any
  */
 public "cancel"(): any
 get "hand"(): $InteractionHand
-get "item"(): $ItemStack
 get "entity"(): $LivingEntity
+get "item"(): $ItemStack
 get "player"(): $Player
 get "level"(): $Level
 get "registries"(): $RegistryAccess
@@ -22980,8 +22895,8 @@ import {$Level} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$Entity} from "net.minecraft.world.entity.Entity"
 import {$KubeEntityEvent$$Interface} from "dev.latvian.mods.kubejs.entity.KubeEntityEvent"
-import {$MinecraftServer} from "net.minecraft.server.MinecraftServer"
 import {$CommandSourceStack$$Type} from "net.minecraft.commands.CommandSourceStack"
+import {$MinecraftServer} from "net.minecraft.server.MinecraftServer"
 import {$RegistryAccess} from "net.minecraft.core.RegistryAccess"
 
 export class $BasicCommandKubeEvent implements $KubeEntityEvent$$Interface {
@@ -22990,11 +22905,11 @@ readonly "id": StringJS
 
 constructor(source: $CommandSourceStack$$Type, id: StringJS, input: StringJS)
 
-public "respond"(text: $Component$$Type): void
 public "respondLazily"(text: $Supplier$$Type<($Component$$Type)>, informAdmins: boolean): void
+public "respond"(text: $Component$$Type): void
+public "getEntity"(): $Entity
 public "getBlock"(): $LevelBlock
 public "getLevel"(): $Level
-public "getEntity"(): $Entity
 public "getId"(): StringJS
 public "getPlayer"(): $Player
 public "getRegistries"(): $RegistryAccess
@@ -23035,9 +22950,9 @@ public "cancel"(value: any): any
  * `cancel` denotes a `false` outcome.
  */
 public "cancel"(): any
+get "entity"(): $Entity
 get "block"(): $LevelBlock
 get "level"(): $Level
-get "entity"(): $Entity
 get "player"(): $Player
 get "registries"(): $RegistryAccess
 get "server"(): $MinecraftServer
@@ -23084,8 +22999,8 @@ import {$IngredientActionHolder} from "dev.latvian.mods.kubejs.recipe.ingredient
 import {$Ingredient} from "net.minecraft.world.item.crafting.Ingredient"
 import {$List} from "java.util.List"
 import {$RecipeType} from "net.minecraft.world.item.crafting.RecipeType"
-import {$CraftingBookCategory} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$CraftingBookCategory} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$CraftingRecipe$$Interface} from "net.minecraft.world.item.crafting.CraftingRecipe"
@@ -23117,9 +23032,9 @@ static readonly "MODIFY_RESULT_KEY": StringJS
  "assemble"(arg0: $CraftingInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
  "getRemainingItems"(arg0: $CraftingInput$$Type): $NonNullList<($ItemStack)>
  "getSerializer"(): $RecipeSerializer<(never)>
- "getIngredients"(): $NonNullList<($Ingredient)>
  "canCraftInDimensions"(arg0: integer, arg1: integer): boolean
  "getResultItem"(arg0: $HolderLookup$Provider$$Type): $ItemStack
+ "getIngredients"(): $NonNullList<($Ingredient)>
  "showNotification"(): boolean
  "getToastSymbol"(): $ItemStack
  "isIncomplete"(): boolean
@@ -23165,10 +23080,10 @@ export type $ArmorItemBuilder$Helmet$$Type = ($ArmorItemBuilder$Helmet);
 export type $ArmorItemBuilder$Helmet$$Original = $ArmorItemBuilder$Helmet;}
 declare module "dev.latvian.mods.kubejs.recipe.schema.postprocessing.RecipePostProcessorType" {
 import {$RecipePostProcessor} from "dev.latvian.mods.kubejs.recipe.schema.postprocessing.RecipePostProcessor"
-import {$Lazy} from "dev.latvian.mods.kubejs.util.Lazy"
 import {$RecipeTypeRegistryContext, $RecipeTypeRegistryContext$$Type} from "dev.latvian.mods.kubejs.recipe.RecipeTypeRegistryContext"
-import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
+import {$Lazy} from "dev.latvian.mods.kubejs.util.Lazy"
 import {$Map} from "java.util.Map"
+import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$MapCodec, $MapCodec$$Type} from "com.mojang.serialization.MapCodec"
@@ -23190,7 +23105,7 @@ public "mapCodec"(): $Function<($RecipeTypeRegistryContext), ($MapCodec<(T)>)>
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $RecipePostProcessorType$$Type<T> = ({"id"?: $ResourceLocation$$Type, "mapCodec"?: $Function$$Type<($RecipeTypeRegistryContext$$Type), ($MapCodec$$Type<(T)>)>}) | ([id?: $ResourceLocation$$Type, mapCodec?: $Function$$Type<($RecipeTypeRegistryContext$$Type), ($MapCodec$$Type<(T)>)>]);
+export type $RecipePostProcessorType$$Type<T> = ({"mapCodec"?: $Function$$Type<($RecipeTypeRegistryContext$$Type), ($MapCodec$$Type<(T)>)>, "id"?: $ResourceLocation$$Type}) | ([mapCodec?: $Function$$Type<($RecipeTypeRegistryContext$$Type), ($MapCodec$$Type<(T)>)>, id?: $ResourceLocation$$Type]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -23357,13 +23272,13 @@ export type $JsonUtils$$Original = $JsonUtils;}
 declare module "dev.latvian.mods.kubejs.misc.MobEffectBuilder" {
 import {$MobEffectBuilder$EffectEntityCallback$$Type} from "dev.latvian.mods.kubejs.misc.MobEffectBuilder$EffectEntityCallback"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
-import {$Registry} from "net.minecraft.core.Registry"
 import {$AttributeModifier$Operation$$Type} from "net.minecraft.world.entity.ai.attributes.AttributeModifier$Operation"
+import {$Registry} from "net.minecraft.core.Registry"
 import {$KubeColor$$Type} from "dev.latvian.mods.kubejs.color.KubeColor"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
 import {$BuilderBase} from "dev.latvian.mods.kubejs.registry.BuilderBase"
-import {$SourceLine} from "dev.latvian.mods.kubejs.script.SourceLine"
 import {$MobEffectCategory$$Type} from "net.minecraft.world.effect.MobEffectCategory"
+import {$SourceLine} from "dev.latvian.mods.kubejs.script.SourceLine"
 import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 
 export class $MobEffectBuilder extends $BuilderBase<($MobEffect)> {
@@ -23374,13 +23289,13 @@ readonly "id": $ResourceLocation
 constructor(i: $ResourceLocation$$Type)
 
 public "getTranslationKeyGroup"(): StringJS
-public "effectTick"(effectTick: $MobEffectBuilder$EffectEntityCallback$$Type): this
 public "modifyAttribute"(attribute: $ResourceLocation$$Type, id: $ResourceLocation$$Type, amount: double, operation: $AttributeModifier$Operation$$Type): this
-public "harmful"(): this
 public "beneficial"(): this
-public "category"(c: $MobEffectCategory$$Type): this
+public "effectTick"(effectTick: $MobEffectBuilder$EffectEntityCallback$$Type): this
+public "harmful"(): this
 public "instant"(): this
 public "instant"(instant: boolean): this
+public "category"(c: $MobEffectCategory$$Type): this
 public "color"(col: $KubeColor$$Type): this
 get "translationKeyGroup"(): StringJS
 }
@@ -23397,8 +23312,8 @@ declare module "dev.latvian.mods.kubejs.event.EventResult" {
 import {$Context} from "dev.latvian.mods.rhino.Context"
 import {$ICancellableEvent$$Type} from "net.neoforged.bus.api.ICancellableEvent"
 import {$EventResult$Type} from "dev.latvian.mods.kubejs.event.EventResult$Type"
-import {$TriState$$Type} from "net.neoforged.neoforge.common.util.TriState"
 import {$Consumer$$Type} from "java.util.function.Consumer"
+import {$TriState$$Type} from "net.neoforged.neoforge.common.util.TriState"
 
 export class $EventResult {
 static readonly "PASS": $EventResult
@@ -23408,8 +23323,8 @@ public "applyTristate"(consumer: $Consumer$$Type<($TriState)>): void
 public "interruptFalse"(): boolean
 public "interruptTrue"(): boolean
 public "interruptDefault"(): boolean
-public "pass"(): boolean
 public "cx"(): $Context
+public "pass"(): boolean
 public "type"(): $EventResult$Type
 public "value"(): any
 public "override"(): boolean
@@ -23506,9 +23421,9 @@ static readonly "GENERATED_ITEM_MODEL": $ResourceLocation
  "defaultItemModel"(id: $ResourceLocation$$Type): void
  "defaultHandheldItemModel"(id: $ResourceLocation$$Type): void
  "stencil"(target: $ResourceLocation$$Type, stencil: $ResourceLocation$$Type, colors: $Map$$Type<($KubeColor$$Type), ($KubeColor$$Type)>): void
+ "text"(id: $ResourceLocation$$Type, content: StringJS): void
  "flush"(): void
  "add"(data: $GeneratedData$$Type): void
- "text"(id: $ResourceLocation$$Type, content: StringJS): void
  "json"(id: $ResourceLocation$$Type, json: $JsonElement$$Type): void
  "getRegistries"(): $RegistryAccessContainer
  "getGenerated"(id: $ResourceLocation$$Type): $GeneratedData
@@ -23578,6 +23493,7 @@ static readonly "ALWAYS_LOWER_CASE": $Set<(StringJS)>
 static readonly "SNAKE_CASE_SPLIT": $Pattern
 static readonly "EMPTY_STRING_ARRAY": (StringJS)[]
 
+static "stripIdForEvent"(id: $ResourceLocation$$Type): StringJS
 static "stripEventName"(s: StringJS): StringJS
 /**
  * Returns the provided snake_case_string in camelCase
@@ -23587,9 +23503,8 @@ static "snakeCaseToCamelCase"(string: StringJS): StringJS
  * Returns the provided snake_case_string in Title Case
  */
 static "snakeCaseToTitleCase"(string: StringJS): StringJS
-static "stripIdForEvent"(id: $ResourceLocation$$Type): StringJS
-static "getUniqueId"<T>(input: T, toJson: $Function$$Type<(T), ($JsonElement$$Type)>): StringJS
 static "getUniqueId"(json: $JsonElement$$Type): StringJS
+static "getUniqueId"<T>(input: T, toJson: $Function$$Type<(T), ($JsonElement$$Type)>): StringJS
 /**
  * Tries to parse the first parameter as an integer, and returns that. The second parameter is returned if parsing fails
  */
@@ -23708,8 +23623,8 @@ declare module "dev.latvian.mods.kubejs.registry.RegistryKubeEvent" {
 import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Registry$$Type} from "net.minecraft.core.Registry"
 import {$KubeStartupEvent$$Interface} from "dev.latvian.mods.kubejs.event.KubeStartupEvent"
-import {$List} from "java.util.List"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$List} from "java.util.List"
 import {$CustomBuilderObject} from "dev.latvian.mods.kubejs.registry.CustomBuilderObject"
 import {$ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
 import {$BuilderBase, $BuilderBase$$Type} from "dev.latvian.mods.kubejs.registry.BuilderBase"
@@ -23773,8 +23688,8 @@ export type $RegistryKubeEvent$$Original<T> = $RegistryKubeEvent<(T)>;}
 declare module "dev.latvian.mods.kubejs.recipe.schema.UnknownKubeRecipe" {
 import {$TypeInfo} from "dev.latvian.mods.rhino.type.TypeInfo"
 import {$RecipeScriptContext$$Type} from "dev.latvian.mods.kubejs.recipe.RecipeScriptContext"
-import {$KubeRecipe} from "dev.latvian.mods.kubejs.recipe.KubeRecipe"
 import {$RecipeTypeFunction} from "dev.latvian.mods.kubejs.recipe.RecipeTypeFunction"
+import {$KubeRecipe} from "dev.latvian.mods.kubejs.recipe.KubeRecipe"
 import {$RecipeMatchContext$$Type} from "dev.latvian.mods.kubejs.recipe.filter.RecipeMatchContext"
 import {$JsonObject} from "com.google.gson.JsonObject"
 import {$KubeRecipeFactory} from "dev.latvian.mods.kubejs.recipe.schema.KubeRecipeFactory"
@@ -24041,8 +23956,8 @@ export type $SoundsGenerator$SoundGen$$Type = ($SoundsGenerator$SoundGen);
 export type $SoundsGenerator$SoundGen$$Original = $SoundsGenerator$SoundGen;}
 declare module "dev.latvian.mods.kubejs.server.tag.PreTagKubeEvent" {
 import {$EventExceptionHandler} from "dev.latvian.mods.kubejs.event.EventExceptionHandler"
-import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$PreTagWrapper} from "dev.latvian.mods.kubejs.server.tag.PreTagWrapper"
+import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Map, $Map$$Type} from "java.util.Map"
 import {$Registry} from "net.minecraft.core.Registry"
 import {$List} from "java.util.List"
@@ -24144,8 +24059,8 @@ export type $BlockIDPredicate$PropertyObject$$Type = ({"property"?: $Property$$T
  */
 export type $BlockIDPredicate$PropertyObject$$Original = $BlockIDPredicate$PropertyObject;}
 declare module "dev.latvian.mods.kubejs.client.ModelGenerator" {
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Map$$Type} from "java.util.Map"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$ModelGenerator$Override$$Type} from "dev.latvian.mods.kubejs.client.ModelGenerator$Override"
 import {$JsonObject, $JsonObject$$Type} from "com.google.gson.JsonObject"
 import {$ModelGenerator$Element$$Type} from "dev.latvian.mods.kubejs.client.ModelGenerator$Element"
@@ -24173,9 +24088,9 @@ export type $ModelGenerator$$Type = ($ModelGenerator);
 export type $ModelGenerator$$Original = $ModelGenerator;}
 declare module "dev.latvian.mods.kubejs.gui.chest.ChestMenuSlot" {
 import {$ChestMenuData, $ChestMenuData$$Type} from "dev.latvian.mods.kubejs.gui.chest.ChestMenuData"
-import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$ChestMenuClickHandler} from "dev.latvian.mods.kubejs.gui.chest.ChestMenuClickHandler"
 import {$Map} from "java.util.Map"
+import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$List} from "java.util.List"
 import {$ChestMenuClickEvent$Callback$$Type} from "dev.latvian.mods.kubejs.gui.chest.ChestMenuClickEvent$Callback"
 import {$InventoryKJS} from "dev.latvian.mods.kubejs.core.InventoryKJS"
@@ -24195,27 +24110,27 @@ constructor(gui: $ChestMenuData$$Type, index: integer)
 
 public "setItem"(stack: $ItemStack$$Type): void
 public "clicked"(type: $ClickType$$Type, button: integer, callback: $ChestMenuClickEvent$Callback$$Type, autoHandle: boolean): void
-public "resetClickHandlers"(): void
 public "setLeftClicked"(callback: $ChestMenuClickEvent$Callback$$Type): void
+public "resetClickHandlers"(): void
 public "setRightClicked"(callback: $ChestMenuClickEvent$Callback$$Type): void
-public "setSwapped"(callback: $ChestMenuClickEvent$Callback$$Type): void
 public "setMiddleClicked"(callback: $ChestMenuClickEvent$Callback$$Type): void
+public "setSwapped"(callback: $ChestMenuClickEvent$Callback$$Type): void
 public "setShiftLeftClicked"(callback: $ChestMenuClickEvent$Callback$$Type): void
-public "setShiftRightClicked"(callback: $ChestMenuClickEvent$Callback$$Type): void
 public "setDoubleClicked"(callback: $ChestMenuClickEvent$Callback$$Type): void
-public "getItem"(): $ItemStack
+public "setShiftRightClicked"(callback: $ChestMenuClickEvent$Callback$$Type): void
 public "setThrown"(callback: $ChestMenuClickEvent$Callback$$Type): void
+public "getItem"(): $ItemStack
 public "toString"(): StringJS
 set "item"(value: $ItemStack$$Type)
 set "leftClicked"(value: $ChestMenuClickEvent$Callback$$Type)
 set "rightClicked"(value: $ChestMenuClickEvent$Callback$$Type)
-set "swapped"(value: $ChestMenuClickEvent$Callback$$Type)
 set "middleClicked"(value: $ChestMenuClickEvent$Callback$$Type)
+set "swapped"(value: $ChestMenuClickEvent$Callback$$Type)
 set "shiftLeftClicked"(value: $ChestMenuClickEvent$Callback$$Type)
-set "shiftRightClicked"(value: $ChestMenuClickEvent$Callback$$Type)
 set "doubleClicked"(value: $ChestMenuClickEvent$Callback$$Type)
-get "item"(): $ItemStack
+set "shiftRightClicked"(value: $ChestMenuClickEvent$Callback$$Type)
 set "thrown"(value: $ChestMenuClickEvent$Callback$$Type)
+get "item"(): $ItemStack
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -24280,10 +24195,10 @@ export class $ExplosionKubeEvent implements $KubeLevelEvent$$Interface {
 constructor(level: $Level$$Type, explosion: $Explosion$$Type)
 
 public "getExploder"(): $LivingEntity
-public "getPosition"(): $Vec3
 public "getBlock"(): $LevelBlock
 public "getLevel"(): $Level
 public "getY"(): double
+public "getPosition"(): $Vec3
 public "getX"(): double
 public "getZ"(): double
 public "getRegistries"(): $RegistryAccess
@@ -24325,10 +24240,10 @@ public "cancel"(value: any): any
  */
 public "cancel"(): any
 get "exploder"(): $LivingEntity
-get "position"(): $Vec3
 get "block"(): $LevelBlock
 get "level"(): $Level
 get "y"(): double
+get "position"(): $Vec3
 get "x"(): double
 get "z"(): double
 get "registries"(): $RegistryAccess

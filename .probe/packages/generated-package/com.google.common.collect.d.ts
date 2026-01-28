@@ -27,10 +27,10 @@ export type $ImmutableMap$Builder$$Type<K, V> = ($ImmutableMap$Builder<(K), (V)>
  */
 export type $ImmutableMap$Builder$$Original<K, V> = $ImmutableMap$Builder<(K), (V)>;}
 declare module "com.google.common.collect.HashMultimapGwtSerializationDependencies" {
-import {$AbstractSetMultimap} from "com.google.common.collect.AbstractSetMultimap"
 import {$Iterable$$Type} from "java.lang.Iterable"
-import {$Map} from "java.util.Map"
+import {$AbstractSetMultimap} from "com.google.common.collect.AbstractSetMultimap"
 import {$Collection} from "java.util.Collection"
+import {$Map} from "java.util.Map"
 import {$Multimap$$Type} from "com.google.common.collect.Multimap"
 import {$BiConsumer$$Type} from "java.util.function.BiConsumer"
 import {$Set} from "java.util.Set"
@@ -41,8 +41,8 @@ public "get"(key: K): $Set<(V)>
 public "equals"(obj: any): boolean
 public "entries"(): $Collection
 public "removeAll"(key: any): $Set<(V)>
+public "replaceValues"(key: any, values: $Iterable$$Type): $Collection
 public "asMap"(): $Map<(K), ($Collection<(V)>)>
-public "replaceValues"(key: K, values: $Iterable$$Type<(V)>): $Set<(V)>
 public "remove"(key: any, value: any): boolean
 public "size"(): integer
 public "put"(key: K, value: V): boolean
@@ -119,6 +119,7 @@ export type $ForwardingSet$$Type<E> = ($ForwardingSet<(E)>);
 export type $ForwardingSet$$Original<E> = $ForwardingSet<(E)>;}
 declare module "com.google.common.collect.ImmutableMap" {
 import {$Iterable$$Type} from "java.lang.Iterable"
+import {$Collection} from "java.util.Collection"
 import {$Map$$Type, $Map$$Interface} from "java.util.Map"
 import {$ImmutableSet} from "com.google.common.collect.ImmutableSet"
 import {$BinaryOperator$$Type} from "java.util.function.BinaryOperator"
@@ -126,11 +127,11 @@ import {$ImmutableSetMultimap} from "com.google.common.collect.ImmutableSetMulti
 import {$Map$Entry, $Map$Entry$$Type} from "java.util.Map$Entry"
 import {$BiFunction$$Type} from "java.util.function.BiFunction"
 import {$Serializable$$Interface} from "java.io.Serializable"
-import {$ImmutableCollection} from "com.google.common.collect.ImmutableCollection"
 import {$Function$$Type} from "java.util.function.Function"
 import {$BiConsumer$$Type} from "java.util.function.BiConsumer"
 import {$Collector} from "java.util.stream.Collector"
 import {$ImmutableMap$Builder} from "com.google.common.collect.ImmutableMap$Builder"
+import {$Set} from "java.util.Set"
 
 export class $ImmutableMap<K, V> implements $Map$$Interface<(K), (V)>, $Serializable$$Interface {
 /**
@@ -151,7 +152,7 @@ public "get"(key: any): V
 public "put"(k: K, v: V): V
 public "equals"(object: any): boolean
 public "toString"(): StringJS
-public "values"(): $ImmutableCollection<(V)>
+public "values"(): $Collection
 public "hashCode"(): integer
 public static "copyOf"<K, V>(map: $Map$$Type<(K), (V)>): $ImmutableMap<(K), (V)>
 public static "copyOf"<K, V>(entries: $Iterable$$Type<($Map$Entry$$Type<(K), (V)>)>): $ImmutableMap<(K), (V)>
@@ -176,24 +177,24 @@ public "replace"(key: K, value: V): V
  * @deprecated
  */
 public "replaceAll"(arg0: $BiFunction$$Type<(K), (V), (V)>): void
-public static "of"<K, V>(k1: K, v1: V, k2: K, v2: V, k3: K, v3: V, k4: K, v4: V, k5: K, v5: V, k6: K, v6: V): $ImmutableMap<(K), (V)>
-public static "of"<K, V>(k1: K, v1: V, k2: K, v2: V, k3: K, v3: V, k4: K, v4: V, k5: K, v5: V, k6: K, v6: V, k7: K, v7: V): $ImmutableMap<(K), (V)>
-public static "of"<K, V>(k1: K, v1: V, k2: K, v2: V, k3: K, v3: V, k4: K, v4: V, k5: K, v5: V, k6: K, v6: V, k7: K, v7: V, k8: K, v8: V, k9: K, v9: V, k10: K, v10: V): $ImmutableMap<(K), (V)>
-public static "of"<K, V>(k1: K, v1: V, k2: K, v2: V, k3: K, v3: V, k4: K, v4: V, k5: K, v5: V, k6: K, v6: V, k7: K, v7: V, k8: K, v8: V, k9: K, v9: V): $ImmutableMap<(K), (V)>
-public static "of"<K, V>(): $ImmutableMap<(K), (V)>
-public static "of"<K, V>(k1: K, v1: V, k2: K, v2: V, k3: K, v3: V, k4: K, v4: V, k5: K, v5: V, k6: K, v6: V, k7: K, v7: V, k8: K, v8: V): $ImmutableMap<(K), (V)>
-public static "of"<K, V>(k1: K, v1: V, k2: K, v2: V, k3: K, v3: V, k4: K, v4: V, k5: K, v5: V): $ImmutableMap<(K), (V)>
-public static "of"<K, V>(k1: K, v1: V, k2: K, v2: V, k3: K, v3: V, k4: K, v4: V): $ImmutableMap<(K), (V)>
 public static "of"<K, V>(k1: K, v1: V, k2: K, v2: V, k3: K, v3: V): $ImmutableMap<(K), (V)>
+public static "of"<K, V>(k1: K, v1: V, k2: K, v2: V, k3: K, v3: V, k4: K, v4: V): $ImmutableMap<(K), (V)>
+public static "of"<K, V>(k1: K, v1: V, k2: K, v2: V, k3: K, v3: V, k4: K, v4: V, k5: K, v5: V): $ImmutableMap<(K), (V)>
 public static "of"<K, V>(k1: K, v1: V, k2: K, v2: V): $ImmutableMap<(K), (V)>
 public static "of"<K, V>(k1: K, v1: V): $ImmutableMap<(K), (V)>
+public static "of"<K, V>(): $ImmutableMap<(K), (V)>
+public static "of"<K, V>(k1: K, v1: V, k2: K, v2: V, k3: K, v3: V, k4: K, v4: V, k5: K, v5: V, k6: K, v6: V, k7: K, v7: V, k8: K, v8: V, k9: K, v9: V, k10: K, v10: V): $ImmutableMap<(K), (V)>
+public static "of"<K, V>(k1: K, v1: V, k2: K, v2: V, k3: K, v3: V, k4: K, v4: V, k5: K, v5: V, k6: K, v6: V, k7: K, v7: V, k8: K, v8: V, k9: K, v9: V): $ImmutableMap<(K), (V)>
+public static "of"<K, V>(k1: K, v1: V, k2: K, v2: V, k3: K, v3: V, k4: K, v4: V, k5: K, v5: V, k6: K, v6: V, k7: K, v7: V, k8: K, v8: V): $ImmutableMap<(K), (V)>
+public static "of"<K, V>(k1: K, v1: V, k2: K, v2: V, k3: K, v3: V, k4: K, v4: V, k5: K, v5: V, k6: K, v6: V, k7: K, v7: V): $ImmutableMap<(K), (V)>
+public static "of"<K, V>(k1: K, v1: V, k2: K, v2: V, k3: K, v3: V, k4: K, v4: V, k5: K, v5: V, k6: K, v6: V): $ImmutableMap<(K), (V)>
 public static "builder"<K, V>(): $ImmutableMap$Builder<(K), (V)>
 /**
  * 
  * @deprecated
  */
 public "merge"(key: K, value: V, arg2: $BiFunction$$Type<(V), (V), (V)>): V
-public "entrySet"(): $ImmutableSet<($Map$Entry<(K), (V)>)>
+public "entrySet"(): $Set
 /**
  * 
  * @deprecated
@@ -245,8 +246,8 @@ export type $ImmutableMap$$Type<K, V> = ($ImmutableMap<(K), (V)>);
 export type $ImmutableMap$$Original<K, V> = $ImmutableMap<(K), (V)>;}
 declare module "com.google.common.collect.BaseImmutableMultimap" {
 import {$Iterable$$Type} from "java.lang.Iterable"
-import {$Map} from "java.util.Map"
 import {$Collection} from "java.util.Collection"
+import {$Map} from "java.util.Map"
 import {$Multimap$$Type} from "com.google.common.collect.Multimap"
 import {$Set} from "java.util.Set"
 import {$Multiset} from "com.google.common.collect.Multiset"
@@ -266,9 +267,9 @@ public "keys"(): $Multiset<(K)>
 public "keySet"(): $Set<(K)>
 public "containsValue"(value: any): boolean
 public "entries"(): $Collection<($Map$Entry<(K), (V)>)>
-public "asMap"(): $Map<(K), ($Collection<(V)>)>
 public "containsEntry"(key: any, value: any): boolean
 public "replaceValues"(key: K, values: $Iterable$$Type<(V)>): $Collection<(V)>
+public "asMap"(): $Map<(K), ($Collection<(V)>)>
 get "empty"(): boolean
 }
 /**
@@ -282,8 +283,8 @@ export type $BaseImmutableMultimap$$Type<K, V> = ($BaseImmutableMultimap<(K), (V
 export type $BaseImmutableMultimap$$Original<K, V> = $BaseImmutableMultimap<(K), (V)>;}
 declare module "com.google.common.collect.AbstractMapBasedMultimap" {
 import {$Iterable$$Type} from "java.lang.Iterable"
-import {$Map} from "java.util.Map"
 import {$Collection} from "java.util.Collection"
+import {$Map} from "java.util.Map"
 import {$Serializable$$Interface} from "java.io.Serializable"
 import {$Multimap$$Type} from "com.google.common.collect.Multimap"
 import {$Set} from "java.util.Set"
@@ -304,9 +305,9 @@ public "keys"(): $Multiset<(K)>
 public "keySet"(): $Set<(K)>
 public "containsValue"(value: any): boolean
 public "entries"(): $Collection<($Map$Entry<(K), (V)>)>
-public "asMap"(): $Map<(K), ($Collection<(V)>)>
 public "containsEntry"(key: any, value: any): boolean
 public "replaceValues"(key: K, values: $Iterable$$Type<(V)>): $Collection<(V)>
+public "asMap"(): $Map<(K), ($Collection<(V)>)>
 get "empty"(): boolean
 }
 /**
@@ -334,8 +335,8 @@ export type $ForwardingObject$$Type = ($ForwardingObject);
 export type $ForwardingObject$$Original = $ForwardingObject;}
 declare module "com.google.common.collect.AbstractMultimap" {
 import {$Iterable$$Type} from "java.lang.Iterable"
-import {$Map} from "java.util.Map"
 import {$Collection} from "java.util.Collection"
+import {$Map} from "java.util.Map"
 import {$Multimap$$Type, $Multimap$$Interface} from "com.google.common.collect.Multimap"
 import {$BiConsumer$$Type} from "java.util.function.BiConsumer"
 import {$Set} from "java.util.Set"
@@ -361,9 +362,9 @@ public "keySet"(): $Set<(K)>
 public "containsValue"(value: any): boolean
 public "entries"(): $Collection<($Map$Entry<(K), (V)>)>
 public "removeAll"(key: any): $Collection<(V)>
-public "asMap"(): $Map<(K), ($Collection<(V)>)>
 public "containsEntry"(key: any, value: any): boolean
 public "replaceValues"(key: K, values: $Iterable$$Type<(V)>): $Collection<(V)>
+public "asMap"(): $Map<(K), ($Collection<(V)>)>
 get "empty"(): boolean
 }
 /**
@@ -376,8 +377,8 @@ export type $AbstractMultimap$$Type<K, V> = ($AbstractMultimap<(K), (V)>);
  */
 export type $AbstractMultimap$$Original<K, V> = $AbstractMultimap<(K), (V)>;}
 declare module "com.google.common.collect.ImmutableList$Builder" {
-import {$Iterator$$Type} from "java.util.Iterator"
 import {$Iterable$$Type} from "java.lang.Iterable"
+import {$Iterator$$Type} from "java.util.Iterator"
 import {$ImmutableCollection} from "com.google.common.collect.ImmutableCollection"
 import {$ImmutableCollection$Builder} from "com.google.common.collect.ImmutableCollection$Builder"
 
@@ -402,10 +403,9 @@ export type $ImmutableList$Builder$$Original<E> = $ImmutableList$Builder<(E)>;}
 declare module "com.google.common.collect.ImmutableSetMultimap" {
 import {$Iterable$$Type} from "java.lang.Iterable"
 import {$SetMultimap$$Interface} from "com.google.common.collect.SetMultimap"
-import {$Map} from "java.util.Map"
 import {$Collection} from "java.util.Collection"
+import {$Map} from "java.util.Map"
 import {$Multimap$$Type} from "com.google.common.collect.Multimap"
-import {$ImmutableSet} from "com.google.common.collect.ImmutableSet"
 import {$ImmutableSetMultimap$Builder} from "com.google.common.collect.ImmutableSetMultimap$Builder"
 import {$Map$Entry$$Type} from "java.util.Map$Entry"
 import {$ImmutableMultimap} from "com.google.common.collect.ImmutableMultimap"
@@ -432,17 +432,16 @@ public "entries"(): $ImmutableCollection
  * @deprecated
  */
 public "removeAll"(key: any): $Collection
-public "inverse"(): $ImmutableSetMultimap<(V), (K)>
 /**
  * 
  * @deprecated
  */
-public "replaceValues"(key: K, values: $Iterable$$Type<(V)>): $ImmutableSet<(V)>
+public "replaceValues"(key: any, values: $Iterable$$Type): $Collection
+public "inverse"(): $ImmutableMultimap
 public static "toImmutableSetMultimap"<T, K, V>(keyFunction: $Function$$Type<(T), (K)>, valueFunction: $Function$$Type<(T), (V)>): $Collector<(T), (never), ($ImmutableSetMultimap<(K), (V)>)>
 public static "flatteningToImmutableSetMultimap"<T, K, V>(keyFunction: $Function$$Type<(T), (K)>, valuesFunction: $Function$$Type<(T), ($Stream$$Type<(V)>)>): $Collector<(T), (never), ($ImmutableSetMultimap<(K), (V)>)>
 public "equals"(obj: any): boolean
 public "asMap"(): $Map<(K), ($Collection<(V)>)>
-public "values"(): $Collection
 public "keySet"(): $Set
 }
 /**
@@ -484,13 +483,13 @@ get "empty"(): boolean
 }
 
 export class $Table<R, C, V> implements $Table$$Interface {
- "containsRow"(rowKey: any): boolean
- "containsColumn"(columnKey: any): boolean
  "cellSet"(): $Set<($Table$Cell<(R), (C), (V)>)>
  "rowKeySet"(): $Set<(R)>
  "columnKeySet"(): $Set<(C)>
  "rowMap"(): $Map<(R), ($Map<(C), (V)>)>
  "columnMap"(): $Map<(C), ($Map<(R), (V)>)>
+ "containsRow"(rowKey: any): boolean
+ "containsColumn"(columnKey: any): boolean
  "row"(rowKey: R): $Map<(C), (V)>
  "remove"(rowKey: any, columnKey: any): V
  "size"(): integer
@@ -518,16 +517,16 @@ export type $Table$$Original<R, C, V> = $Table<(R), (C), (V)>;}
 declare module "com.google.common.collect.Multiset$Entry" {
 export {} // Mark the file as a module, do not remove unless there are other import/exports!
 export interface $Multiset$Entry$$Interface<E> {
-get "element"(): E
 get "count"(): integer
+get "element"(): E
 }
 
 export class $Multiset$Entry<E> implements $Multiset$Entry$$Interface {
- "getElement"(): E
  "equals"(o: any): boolean
  "toString"(): StringJS
  "hashCode"(): integer
  "getCount"(): integer
+ "getElement"(): E
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -540,8 +539,8 @@ export type $Multiset$Entry$$Type<E> = ($Multiset$Entry<(E)>);
 export type $Multiset$Entry$$Original<E> = $Multiset$Entry<(E)>;}
 declare module "com.google.common.collect.SetMultimap" {
 import {$Iterable$$Type} from "java.lang.Iterable"
-import {$Map} from "java.util.Map"
 import {$Collection} from "java.util.Collection"
+import {$Map} from "java.util.Map"
 import {$Multimap$$Type, $Multimap$$Interface} from "com.google.common.collect.Multimap"
 import {$BiConsumer$$Type} from "java.util.function.BiConsumer"
 import {$Set} from "java.util.Set"
@@ -556,8 +555,8 @@ export class $SetMultimap<K, V> implements $SetMultimap$$Interface {
  "equals"(obj: any): boolean
  "entries"(): $Collection
  "removeAll"(key: any): $Set<(V)>
+ "replaceValues"(key: any, values: $Iterable$$Type): $Collection
  "asMap"(): $Map<(K), ($Collection<(V)>)>
- "replaceValues"(key: K, values: $Iterable$$Type<(V)>): $Set<(V)>
  "remove"(key: any, value: any): boolean
  "size"(): integer
  "put"(key: K, value: V): boolean
@@ -601,12 +600,12 @@ export type $ImmutableMultisetGwtSerializationDependencies$$Type<E> = ($Immutabl
 export type $ImmutableMultisetGwtSerializationDependencies$$Original<E> = $ImmutableMultisetGwtSerializationDependencies<(E)>;}
 declare module "com.google.common.collect.ForwardingMultimap" {
 import {$Iterable$$Type} from "java.lang.Iterable"
-import {$Map} from "java.util.Map"
 import {$Collection} from "java.util.Collection"
+import {$Map} from "java.util.Map"
 import {$Multimap$$Type, $Multimap$$Interface} from "com.google.common.collect.Multimap"
 import {$BiConsumer$$Type} from "java.util.function.BiConsumer"
-import {$Set} from "java.util.Set"
 import {$ForwardingObject} from "com.google.common.collect.ForwardingObject"
+import {$Set} from "java.util.Set"
 import {$Multiset} from "com.google.common.collect.Multiset"
 import {$Map$Entry} from "java.util.Map$Entry"
 
@@ -628,9 +627,9 @@ public "keySet"(): $Set<(K)>
 public "containsValue"(value: any): boolean
 public "entries"(): $Collection<($Map$Entry<(K), (V)>)>
 public "removeAll"(key: any): $Collection<(V)>
-public "asMap"(): $Map<(K), ($Collection<(V)>)>
 public "containsEntry"(key: any, value: any): boolean
 public "replaceValues"(key: K, values: $Iterable$$Type<(V)>): $Collection<(V)>
+public "asMap"(): $Map<(K), ($Collection<(V)>)>
 public "forEach"(action: $BiConsumer$$Type<(K), (V)>): void
 get "empty"(): boolean
 }
@@ -645,8 +644,8 @@ export type $ForwardingMultimap$$Type<K, V> = ($ForwardingMultimap<(K), (V)>);
 export type $ForwardingMultimap$$Original<K, V> = $ForwardingMultimap<(K), (V)>;}
 declare module "com.google.common.collect.ImmutableCollection" {
 import {$Collection$$Type} from "java.util.Collection"
-import {$Serializable$$Interface} from "java.io.Serializable"
 import {$Spliterator} from "java.util.Spliterator"
+import {$Serializable$$Interface} from "java.io.Serializable"
 import {$Predicate$$Type} from "java.util.function.Predicate"
 import {$UnmodifiableIterator} from "com.google.common.collect.UnmodifiableIterator"
 import {$ImmutableList} from "com.google.common.collect.ImmutableList"
@@ -707,8 +706,8 @@ export type $ImmutableCollection$$Type<E> = ($ImmutableCollection<(E)>);
  */
 export type $ImmutableCollection$$Original<E> = $ImmutableCollection<(E)>;}
 declare module "com.google.common.collect.ImmutableMultiset$Builder" {
-import {$Iterator$$Type} from "java.util.Iterator"
 import {$Iterable$$Type} from "java.lang.Iterable"
+import {$Iterator$$Type} from "java.util.Iterator"
 import {$ImmutableCollection$Builder} from "com.google.common.collect.ImmutableCollection$Builder"
 import {$ImmutableMultiset} from "com.google.common.collect.ImmutableMultiset"
 
@@ -734,8 +733,8 @@ export type $ImmutableMultiset$Builder$$Type<E> = ($ImmutableMultiset$Builder<(E
 export type $ImmutableMultiset$Builder$$Original<E> = $ImmutableMultiset$Builder<(E)>;}
 declare module "com.google.common.collect.HashMultimap" {
 import {$Iterable$$Type} from "java.lang.Iterable"
-import {$Map} from "java.util.Map"
 import {$Collection} from "java.util.Collection"
+import {$Map} from "java.util.Map"
 import {$HashMultimapGwtSerializationDependencies} from "com.google.common.collect.HashMultimapGwtSerializationDependencies"
 import {$Multimap$$Type} from "com.google.common.collect.Multimap"
 import {$BiConsumer$$Type} from "java.util.function.BiConsumer"
@@ -765,9 +764,9 @@ public static "create"<K, V>(multimap: $Multimap$$Type<(K), (V)>): $HashMultimap
 public static "create"<K, V>(expectedKeys: integer, expectedValuesPerKey: integer): $HashMultimap<(K), (V)>
 public static "create"<K, V>(): $HashMultimap<(K), (V)>
 public "removeAll"(key: any): $Set
-public "asMap"(): $Map
 public "containsEntry"(key: any, value: any): boolean
 public "replaceValues"(key: any, values: $Iterable$$Type): $Set
+public "asMap"(): $Map
 get "empty"(): boolean
 }
 /**
@@ -782,8 +781,8 @@ export type $HashMultimap$$Original<K, V> = $HashMultimap<(K), (V)>;}
 declare module "com.google.common.collect.Multiset" {
 import {$Iterator} from "java.util.Iterator"
 import {$Collection$$Type, $Collection$$Interface} from "java.util.Collection"
-import {$Multiset$Entry} from "com.google.common.collect.Multiset$Entry"
 import {$Spliterator} from "java.util.Spliterator"
+import {$Multiset$Entry} from "com.google.common.collect.Multiset$Entry"
 import {$Predicate$$Type} from "java.util.function.Predicate"
 import {$ObjIntConsumer$$Type} from "java.util.function.ObjIntConsumer"
 import {$Set} from "java.util.Set"
@@ -840,8 +839,8 @@ export type $Multiset$$Original<E> = $Multiset<(E)>;}
 declare module "com.google.common.collect.AbstractSetMultimap" {
 import {$Iterable$$Type} from "java.lang.Iterable"
 import {$SetMultimap$$Interface} from "com.google.common.collect.SetMultimap"
-import {$Map} from "java.util.Map"
 import {$Collection} from "java.util.Collection"
+import {$Map} from "java.util.Map"
 import {$Multimap$$Type} from "com.google.common.collect.Multimap"
 import {$BiConsumer$$Type} from "java.util.function.BiConsumer"
 import {$Set} from "java.util.Set"
@@ -853,8 +852,8 @@ public "get"(key: K): $Set<(V)>
 public "equals"(obj: any): boolean
 public "entries"(): $Collection
 public "removeAll"(key: any): $Set<(V)>
+public "replaceValues"(key: any, values: $Iterable$$Type): $Collection
 public "asMap"(): $Map<(K), ($Collection<(V)>)>
-public "replaceValues"(key: K, values: $Iterable$$Type<(V)>): $Set<(V)>
 public "remove"(key: any, value: any): boolean
 public "size"(): integer
 public "put"(key: K, value: V): boolean
@@ -935,16 +934,17 @@ export type $UnmodifiableIterator$$Type<E> = ($UnmodifiableIterator<(E)>);
 export type $UnmodifiableIterator$$Original<E> = $UnmodifiableIterator<(E)>;}
 declare module "com.google.common.collect.ImmutableMultimap" {
 import {$Iterable$$Type} from "java.lang.Iterable"
-import {$Map} from "java.util.Map"
 import {$Collection} from "java.util.Collection"
-import {$Serializable$$Interface} from "java.io.Serializable"
-import {$ImmutableMultimap$Builder} from "com.google.common.collect.ImmutableMultimap$Builder"
 import {$Multimap$$Type} from "com.google.common.collect.Multimap"
-import {$BiConsumer$$Type} from "java.util.function.BiConsumer"
-import {$Set} from "java.util.Set"
 import {$ImmutableMultiset} from "com.google.common.collect.ImmutableMultiset"
+import {$ImmutableMap} from "com.google.common.collect.ImmutableMap"
 import {$BaseImmutableMultimap} from "com.google.common.collect.BaseImmutableMultimap"
 import {$Map$Entry$$Type} from "java.util.Map$Entry"
+import {$ImmutableCollection} from "com.google.common.collect.ImmutableCollection"
+import {$Serializable$$Interface} from "java.io.Serializable"
+import {$ImmutableMultimap$Builder} from "com.google.common.collect.ImmutableMultimap$Builder"
+import {$BiConsumer$$Type} from "java.util.function.BiConsumer"
+import {$Set} from "java.util.Set"
 
 export class $ImmutableMultimap<K, V> extends $BaseImmutableMultimap<(K), (V)> implements $Serializable$$Interface {
 /**
@@ -961,7 +961,7 @@ public "get"(key: any): $Collection
 public "put"(key: K, value: V): boolean
 public "equals"(object: any): boolean
 public "toString"(): StringJS
-public "values"(): $Collection
+public "values"(): $ImmutableCollection<(V)>
 public "hashCode"(): integer
 public static "copyOf"<K, V>(multimap: $Multimap$$Type<(K), (V)>): $ImmutableMultimap<(K), (V)>
 public static "copyOf"<K, V>(entries: $Iterable$$Type<($Map$Entry$$Type<(K), (V)>)>): $ImmutableMultimap<(K), (V)>
@@ -971,23 +971,23 @@ public static "copyOf"<K, V>(entries: $Iterable$$Type<($Map$Entry$$Type<(K), (V)
  */
 public "clear"(): void
 public "isEmpty"(): boolean
-public static "of"<K, V>(k1: K, v1: V, k2: K, v2: V): $ImmutableMultimap<(K), (V)>
-public static "of"<K, V>(k1: K, v1: V, k2: K, v2: V, k3: K, v3: V): $ImmutableMultimap<(K), (V)>
-public static "of"<K, V>(k1: K, v1: V, k2: K, v2: V, k3: K, v3: V, k4: K, v4: V): $ImmutableMultimap<(K), (V)>
-public static "of"<K, V>(k1: K, v1: V): $ImmutableMultimap<(K), (V)>
-public static "of"<K, V>(): $ImmutableMultimap<(K), (V)>
 public static "of"<K, V>(k1: K, v1: V, k2: K, v2: V, k3: K, v3: V, k4: K, v4: V, k5: K, v5: V): $ImmutableMultimap<(K), (V)>
+public static "of"<K, V>(): $ImmutableMultimap<(K), (V)>
+public static "of"<K, V>(k1: K, v1: V, k2: K, v2: V, k3: K, v3: V): $ImmutableMultimap<(K), (V)>
+public static "of"<K, V>(k1: K, v1: V, k2: K, v2: V): $ImmutableMultimap<(K), (V)>
+public static "of"<K, V>(k1: K, v1: V): $ImmutableMultimap<(K), (V)>
+public static "of"<K, V>(k1: K, v1: V, k2: K, v2: V, k3: K, v3: V, k4: K, v4: V): $ImmutableMultimap<(K), (V)>
 public static "builder"<K, V>(): $ImmutableMultimap$Builder<(K), (V)>
 /**
  * 
  * @deprecated
  */
-public "putAll"(multimap: $Multimap$$Type<(K), (V)>): boolean
+public "putAll"(key: K, values: $Iterable$$Type<(V)>): boolean
 /**
  * 
  * @deprecated
  */
-public "putAll"(key: K, values: $Iterable$$Type<(V)>): boolean
+public "putAll"(multimap: $Multimap$$Type<(K), (V)>): boolean
 public "forEach"(action: $BiConsumer$$Type<(K), (V)>): void
 public "containsKey"(key: any): boolean
 public "keys"(): $ImmutableMultiset<(K)>
@@ -998,15 +998,15 @@ public "entries"(): $Collection
  * 
  * @deprecated
  */
-public "removeAll"(key: any): $Collection
-public "asMap"(): $Map
-public "inverse"(): $ImmutableMultimap<(V), (K)>
+public "removeAll"(key: any): $ImmutableCollection<(V)>
 public "containsEntry"(key: any, value: any): boolean
 /**
  * 
  * @deprecated
  */
 public "replaceValues"(key: any, values: $Iterable$$Type): $Collection
+public "asMap"(): $ImmutableMap<(K), ($Collection<(V)>)>
+public "inverse"(): $ImmutableMultimap<(V), (K)>
 get "empty"(): boolean
 }
 /**
@@ -1109,15 +1109,15 @@ export type $BiMap$$Type<K, V> = ($BiMap<(K), (V)>);
  */
 export type $BiMap$$Original<K, V> = $BiMap<(K), (V)>;}
 declare module "com.google.common.collect.ImmutableList" {
-import {$UnaryOperator$$Type} from "java.util.function.UnaryOperator"
+import {$RandomAccess$$Interface} from "java.util.RandomAccess"
 import {$Iterable$$Type} from "java.lang.Iterable"
 import {$Iterator$$Type} from "java.util.Iterator"
-import {$RandomAccess$$Interface} from "java.util.RandomAccess"
+import {$UnaryOperator$$Type} from "java.util.function.UnaryOperator"
 import {$Collection$$Type} from "java.util.Collection"
+import {$Comparator$$Type} from "java.util.Comparator"
+import {$Spliterator} from "java.util.Spliterator"
 import {$SequencedCollection} from "java.util.SequencedCollection"
 import {$Comparable} from "java.lang.Comparable"
-import {$Spliterator} from "java.util.Spliterator"
-import {$Comparator$$Type} from "java.util.Comparator"
 import {$List, $List$$Interface} from "java.util.List"
 import {$UnmodifiableIterator} from "com.google.common.collect.UnmodifiableIterator"
 import {$Consumer$$Type} from "java.util.function.Consumer"
@@ -1290,8 +1290,8 @@ export type $ImmutableSet$$Type<E> = ($ImmutableSet<(E)>);
 export type $ImmutableSet$$Original<E> = $ImmutableSet<(E)>;}
 declare module "com.google.common.collect.Multimap" {
 import {$Iterable$$Type} from "java.lang.Iterable"
-import {$Map} from "java.util.Map"
 import {$Collection} from "java.util.Collection"
+import {$Map} from "java.util.Map"
 import {$BiConsumer$$Type} from "java.util.function.BiConsumer"
 import {$Set} from "java.util.Set"
 import {$Multiset} from "com.google.common.collect.Multiset"
@@ -1320,9 +1320,9 @@ export class $Multimap<K, V> implements $Multimap$$Interface {
  "containsValue"(value: any): boolean
  "entries"(): $Collection<($Map$Entry<(K), (V)>)>
  "removeAll"(key: any): $Collection<(V)>
- "asMap"(): $Map<(K), ($Collection<(V)>)>
  "containsEntry"(key: any, value: any): boolean
  "replaceValues"(key: K, values: $Iterable$$Type<(V)>): $Collection<(V)>
+ "asMap"(): $Map<(K), ($Collection<(V)>)>
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -1337,8 +1337,8 @@ declare module "com.google.common.collect.ImmutableMultiset" {
 import {$Iterable$$Type} from "java.lang.Iterable"
 import {$Iterator, $Iterator$$Type} from "java.util.Iterator"
 import {$Collection$$Type} from "java.util.Collection"
-import {$Multiset$Entry} from "com.google.common.collect.Multiset$Entry"
 import {$Spliterator} from "java.util.Spliterator"
+import {$Multiset$Entry} from "com.google.common.collect.Multiset$Entry"
 import {$Predicate$$Type} from "java.util.function.Predicate"
 import {$ImmutableSet} from "com.google.common.collect.ImmutableSet"
 import {$ImmutableList} from "com.google.common.collect.ImmutableList"
@@ -1361,9 +1361,9 @@ public "remove"(element: any, occurrences: integer): integer
 public "equals"(object: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
-public static "copyOf"<E>(elements: $Iterator$$Type<(E)>): $ImmutableMultiset<(E)>
 public static "copyOf"<E>(elements: $Iterable$$Type<(E)>): $ImmutableMultiset<(E)>
 public static "copyOf"<E>(elements: (E)[]): $ImmutableMultiset<(E)>
+public static "copyOf"<E>(elements: $Iterator$$Type<(E)>): $ImmutableMultiset<(E)>
 /**
  * 
  * @deprecated
@@ -1374,26 +1374,26 @@ public static "of"<E>(e1: E, e2: E): $ImmutableMultiset<(E)>
 public static "of"<E>(e1: E, e2: E, e3: E, e4: E, e5: E, e6: E, ...others: (E)[]): $ImmutableMultiset<(E)>
 public static "of"<E>(): $ImmutableMultiset<(E)>
 public static "of"<E>(element: E): $ImmutableMultiset<(E)>
+public static "of"<E>(e1: E, e2: E, e3: E, e4: E): $ImmutableMultiset<(E)>
 public static "of"<E>(e1: E, e2: E, e3: E, e4: E, e5: E): $ImmutableMultiset<(E)>
 public static "of"<E>(e1: E, e2: E, e3: E): $ImmutableMultiset<(E)>
-public static "of"<E>(e1: E, e2: E, e3: E, e4: E): $ImmutableMultiset<(E)>
 public static "builder"<E>(): $ImmutableMultiset$Builder<(E)>
 public "contains"(object: any): boolean
 public "entrySet"(): $ImmutableSet<($Multiset$Entry<(E)>)>
 public "asList"(): $ImmutableList<(E)>
 public "elementSet"(): $Set
-public static "toImmutableMultiset"<T, E>(elementFunction: $Function$$Type<(T), (E)>, countFunction: $ToIntFunction$$Type<(T)>): $Collector<(T), (never), ($ImmutableMultiset<(E)>)>
-public static "toImmutableMultiset"<E>(): $Collector<(E), (never), ($ImmutableMultiset<(E)>)>
-/**
- * 
- * @deprecated
- */
-public "setCount"(element: E, count: integer): integer
 /**
  * 
  * @deprecated
  */
 public "setCount"(element: E, oldCount: integer, newCount: integer): boolean
+/**
+ * 
+ * @deprecated
+ */
+public "setCount"(element: E, count: integer): integer
+public static "toImmutableMultiset"<E>(): $Collector<(E), (never), ($ImmutableMultiset<(E)>)>
+public static "toImmutableMultiset"<T, E>(elementFunction: $Function$$Type<(T), (E)>, countFunction: $ToIntFunction$$Type<(T)>): $Collector<(T), (never), ($ImmutableMultiset<(E)>)>
 public "remove"(element: any): boolean
 public "size"(): integer
 public "add"(element: E): boolean
@@ -1422,8 +1422,8 @@ export type $ImmutableMultiset$$Type<E> = ($ImmutableMultiset<(E)>);
  */
 export type $ImmutableMultiset$$Original<E> = $ImmutableMultiset<(E)>;}
 declare module "com.google.common.collect.ImmutableSet$Builder" {
-import {$Iterator$$Type} from "java.util.Iterator"
 import {$Iterable$$Type} from "java.lang.Iterable"
+import {$Iterator$$Type} from "java.util.Iterator"
 import {$ImmutableCollection} from "com.google.common.collect.ImmutableCollection"
 import {$ImmutableCollection$Builder} from "com.google.common.collect.ImmutableCollection$Builder"
 
@@ -1448,8 +1448,8 @@ export type $ImmutableSet$Builder$$Original<E> = $ImmutableSet$Builder<(E)>;}
 declare module "com.google.common.collect.ImmutableSetMultimap$Builder" {
 import {$Iterable$$Type} from "java.lang.Iterable"
 import {$ImmutableMultimap} from "com.google.common.collect.ImmutableMultimap"
-import {$ImmutableMultimap$Builder} from "com.google.common.collect.ImmutableMultimap$Builder"
 import {$Comparator$$Type} from "java.util.Comparator"
+import {$ImmutableMultimap$Builder} from "com.google.common.collect.ImmutableMultimap$Builder"
 import {$Multimap$$Type} from "com.google.common.collect.Multimap"
 import {$Map$Entry$$Type} from "java.util.Map$Entry"
 
@@ -1476,8 +1476,8 @@ export type $ImmutableSetMultimap$Builder$$Type<K, V> = ($ImmutableSetMultimap$B
  */
 export type $ImmutableSetMultimap$Builder$$Original<K, V> = $ImmutableSetMultimap$Builder<(K), (V)>;}
 declare module "com.google.common.collect.ImmutableCollection$Builder" {
-import {$Iterator$$Type} from "java.util.Iterator"
 import {$Iterable$$Type} from "java.lang.Iterable"
+import {$Iterator$$Type} from "java.util.Iterator"
 import {$ImmutableCollection} from "com.google.common.collect.ImmutableCollection"
 
 export class $ImmutableCollection$Builder<E> {

@@ -38,24 +38,24 @@ export type $Parameter$$Original = $Parameter;}
 declare module "com.google.common.reflect.Invokable" {
 import {$ImmutableList} from "com.google.common.collect.ImmutableList"
 import {$Method$$Type} from "java.lang.reflect.Method"
-import {$AccessFlag} from "java.lang.reflect.AccessFlag"
 import {$TypeToken, $TypeToken$$Type} from "com.google.common.reflect.TypeToken"
+import {$AccessFlag} from "java.lang.reflect.AccessFlag"
 import {$TypeVariable} from "java.lang.reflect.TypeVariable"
 import {$Member$$Interface} from "java.lang.reflect.Member"
 import {$AnnotatedElement$$Interface} from "java.lang.reflect.AnnotatedElement"
 import {$Annotation, $Annotation$$Type} from "java.lang.annotation.Annotation"
 import {$AnnotatedType} from "java.lang.reflect.AnnotatedType"
-import {$Set} from "java.util.Set"
 import {$Class, $Class$$Type} from "java.lang.Class"
-import {$Constructor$$Type} from "java.lang.reflect.Constructor"
+import {$Set} from "java.util.Set"
 import {$Throwable} from "java.lang.Throwable"
+import {$Constructor$$Type} from "java.lang.reflect.Constructor"
 import {$Parameter} from "com.google.common.reflect.Parameter"
 
 export class $Invokable<T, R> implements $AnnotatedElement$$Interface, $Member$$Interface {
-public "isOverridable"(): boolean
-public "returning"<R1>(returnType: $Class$$Type<(R1)>): $Invokable<(T), (R1)>
-public "returning"<R1>(returnType: $TypeToken$$Type<(R1)>): $Invokable<(T), (R1)>
 public "isPackagePrivate"(): boolean
+public "isOverridable"(): boolean
+public "returning"<R1>(returnType: $TypeToken$$Type<(R1)>): $Invokable<(T), (R1)>
+public "returning"<R1>(returnType: $Class$$Type<(R1)>): $Invokable<(T), (R1)>
 public "isSynchronized"(): boolean
 public "invoke"(receiver: T, ...args: (any)[]): R
 public "getName"(): StringJS
@@ -92,8 +92,8 @@ public "getAnnotationsByType"<T extends $Annotation>(arg0: $Class$$Type<(T)>): (
 public "getDeclaredAnnotation"<T extends $Annotation>(arg0: $Class$$Type<(T)>): T
 public "getDeclaredAnnotationsByType"<T extends $Annotation>(arg0: $Class$$Type<(T)>): (T)[]
 public "accessFlags"(): $Set<($AccessFlag)>
-get "overridable"(): boolean
 get "packagePrivate"(): boolean
+get "overridable"(): boolean
 get "synchronized"(): boolean
 get "name"(): StringJS
 get "modifiers"(): integer
@@ -162,8 +162,8 @@ import {$Iterator} from "java.util.Iterator"
 import {$ForwardingSet} from "com.google.common.collect.ForwardingSet"
 import {$Collection$$Type} from "java.util.Collection"
 import {$Serializable$$Interface} from "java.io.Serializable"
-import {$Class} from "java.lang.Class"
 import {$Set} from "java.util.Set"
+import {$Class} from "java.lang.Class"
 import {$TypeToken} from "com.google.common.reflect.TypeToken"
 
 export class $TypeToken$TypeSet extends $ForwardingSet<($TypeToken<(T)>)> implements $Serializable$$Interface {
@@ -221,10 +221,10 @@ import {$Method$$Type} from "java.lang.reflect.Method"
 export class $TypeToken<T> extends $TypeCapture<(T)> implements $Serializable$$Interface {
 public "resolveType"(type: $Type$$Type): $TypeToken<(never)>
 public "getSubtype"(subclass: $Class$$Type<(never)>): $TypeToken<(T)>
-public "isSubtypeOf"(supertype: $Type$$Type): boolean
 public "isSubtypeOf"(type: $TypeToken$$Type<(never)>): boolean
-public "where"<X>(typeParam: $TypeParameter$$Type<(X)>, typeArg: $TypeToken$$Type<(X)>): $TypeToken<(T)>
+public "isSubtypeOf"(supertype: $Type$$Type): boolean
 public "where"<X>(typeParam: $TypeParameter$$Type<(X)>, typeArg: $Class$$Type<(X)>): $TypeToken<(T)>
+public "where"<X>(typeParam: $TypeParameter$$Type<(X)>, typeArg: $TypeToken$$Type<(X)>): $TypeToken<(T)>
 public "equals"(o: any): boolean
 public "toString"(): StringJS
 public "method"(method: $Method$$Type): $Invokable<(T), (any)>

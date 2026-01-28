@@ -32,9 +32,9 @@ get "changed"(): void
 
 export class $PocketHolder implements $PocketHolder$$Interface {
  "isTerminalAlwaysVisible"(): boolean
- "isValid"(arg0: $ServerComputer$$Type): boolean
- "level"(): $ServerLevel
  "pos"(): $Vec3
+ "level"(): $ServerLevel
+ "isValid"(arg0: $ServerComputer$$Type): boolean
  "setChanged"(): void
  "blockPos"(): $BlockPos
 }
@@ -49,12 +49,12 @@ export type $PocketHolder$$Type = ($PocketHolder);
 export type $PocketHolder$$Original = $PocketHolder;}
 declare module "dan200.computercraft.shared.pocket.peripherals.PocketSpeaker" {
 import {$IPocketAccess$$Type} from "dan200.computercraft.api.pocket.IPocketAccess"
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Registry} from "net.minecraft.core.Registry"
 import {$AbstractPocketUpgrade} from "dan200.computercraft.api.pocket.AbstractPocketUpgrade"
-import {$IPocketUpgrade} from "dan200.computercraft.api.pocket.IPocketUpgrade"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
+import {$IPocketUpgrade} from "dan200.computercraft.api.pocket.IPocketUpgrade"
 import {$IPeripheral, $IPeripheral$$Type} from "dan200.computercraft.api.peripheral.IPeripheral"
 import {$UpgradeType} from "dan200.computercraft.api.upgrades.UpgradeType"
 
@@ -79,12 +79,12 @@ export type $PocketSpeaker$$Type = ($PocketSpeaker);
 export type $PocketSpeaker$$Original = $PocketSpeaker;}
 declare module "dan200.computercraft.shared.pocket.peripherals.PocketModem" {
 import {$IPocketAccess$$Type} from "dan200.computercraft.api.pocket.IPocketAccess"
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Registry} from "net.minecraft.core.Registry"
 import {$AbstractPocketUpgrade} from "dan200.computercraft.api.pocket.AbstractPocketUpgrade"
-import {$IPocketUpgrade} from "dan200.computercraft.api.pocket.IPocketUpgrade"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
+import {$IPocketUpgrade} from "dan200.computercraft.api.pocket.IPocketUpgrade"
 import {$IPeripheral, $IPeripheral$$Type} from "dan200.computercraft.api.peripheral.IPeripheral"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$UpgradeType} from "dan200.computercraft.api.upgrades.UpgradeType"
@@ -118,8 +118,8 @@ import {$Vec3} from "net.minecraft.world.phys.Vec3"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$ServerComputer$Properties$$Type} from "dan200.computercraft.shared.computer.core.ServerComputer$Properties"
 import {$PocketServerComputer} from "dan200.computercraft.shared.pocket.core.PocketServerComputer"
-import {$IPocketUpgrade, $IPocketUpgrade$$Type} from "dan200.computercraft.api.pocket.IPocketUpgrade"
 import {$PocketHolder$$Type} from "dan200.computercraft.shared.pocket.core.PocketHolder"
+import {$IPocketUpgrade, $IPocketUpgrade$$Type} from "dan200.computercraft.api.pocket.IPocketUpgrade"
 import {$ServerLevel} from "net.minecraft.server.level.ServerLevel"
 import {$Entity} from "net.minecraft.world.entity.Entity"
 
@@ -134,11 +134,11 @@ public "getUpgradeData"(): $DataComponentPatch
 public "setColour"(arg0: integer): void
 public "getColour"(): integer
 public "updateHolder"(arg0: $PocketHolder$$Type): void
+public "getEntity"(): $Entity
 public "setUpgradeData"(arg0: $DataComponentPatch$$Type): void
 public "invalidatePeripheral"(): void
-public "getPosition"(): $Vec3
 public "getLevel"(): $ServerLevel
-public "getEntity"(): $Entity
+public "getPosition"(): $Vec3
 public "setLight"(arg0: integer): void
 public "updateItem"(arg0: $ItemStack$$Type): boolean
 get "upgrade"(): $UpgradeData<($IPocketUpgrade)>
@@ -147,10 +147,10 @@ get "light"(): integer
 get "upgradeData"(): $DataComponentPatch
 set "colour"(value: integer)
 get "colour"(): integer
-set "upgradeData"(value: $DataComponentPatch$$Type)
-get "position"(): $Vec3
-get "level"(): $ServerLevel
 get "entity"(): $Entity
+set "upgradeData"(value: $DataComponentPatch$$Type)
+get "level"(): $ServerLevel
+get "position"(): $Vec3
 set "light"(value: integer)
 }
 /**
@@ -170,16 +170,16 @@ import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$ItemEntity$$Type} from "net.minecraft.world.entity.item.ItemEntity"
 import {$Component} from "net.minecraft.network.chat.Component"
-import {$UpgradeData, $UpgradeData$$Type} from "dan200.computercraft.api.upgrades.UpgradeData"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
+import {$UpgradeData, $UpgradeData$$Type} from "dan200.computercraft.api.upgrades.UpgradeData"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$PocketBrain, $PocketBrain$$Type} from "dan200.computercraft.shared.pocket.core.PocketBrain"
 import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
-import {$Item} from "net.minecraft.world.item.Item"
 import {$ServerComputer$$Type} from "dan200.computercraft.shared.computer.core.ServerComputer"
-import {$IPocketUpgrade, $IPocketUpgrade$$Type} from "dan200.computercraft.api.pocket.IPocketUpgrade"
+import {$Item} from "net.minecraft.world.item.Item"
 import {$PocketHolder$$Type} from "dan200.computercraft.shared.pocket.core.PocketHolder"
+import {$IPocketUpgrade, $IPocketUpgrade$$Type} from "dan200.computercraft.api.pocket.IPocketUpgrade"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$ComputerFamily, $ComputerFamily$$Type} from "dan200.computercraft.shared.computer.core.ComputerFamily"
 

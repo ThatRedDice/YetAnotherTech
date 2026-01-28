@@ -7,9 +7,9 @@ get "upgrades"(): $IUpgradeInventory
 }
 
 export class $IUpgradeableObject implements $IUpgradeableObject$$Interface {
- "getUpgrades"(): $IUpgradeInventory
  "getInstalledUpgrades"(arg0: $ItemLike$$Type): integer
  "isUpgradedWith"(arg0: $ItemLike$$Type): boolean
+ "getUpgrades"(): $IUpgradeInventory
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -47,19 +47,19 @@ get "redstoneSignal"(): integer
 export class $IUpgradeInventory implements $IUpgradeInventory$$Interface {
  "readFromNBT"(arg0: $CompoundTag$$Type, arg1: StringJS, arg2: $HolderLookup$Provider$$Type): void
  "writeToNBT"(arg0: $CompoundTag$$Type, arg1: StringJS, arg2: $HolderLookup$Provider$$Type): void
- "isInstalled"(arg0: $ItemLike$$Type): boolean
  "getInstalledUpgrades"(arg0: $ItemLike$$Type): integer
  "getMaxInstalled"(arg0: $ItemLike$$Type): integer
  "getUpgradableItem"(): $ItemLike
+ "isInstalled"(arg0: $ItemLike$$Type): boolean
+ "getRedstoneSignal"(): integer
  "addItems"(arg0: $ItemStack$$Type): $ItemStack
  "addItems"(arg0: $ItemStack$$Type, arg1: boolean): $ItemStack
- "getRedstoneSignal"(): integer
  "getSubInventory"(arg0: integer, arg1: integer): $InternalInventory
- "getSlotInv"(arg0: integer): $InternalInventory
  "setItemDirect"(arg0: integer, arg1: $ItemStack$$Type): void
 static "wrapExternal"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $Direction$$Type): $ItemTransfer
  "toItemHandler"(): $IItemHandler
  "toContainer"(): $Container
+ "getSlotInv"(arg0: integer): $InternalInventory
  "simulateAdd"(arg0: $ItemStack$$Type): $ItemStack
  "removeItems"(arg0: integer, arg1: $ItemStack$$Type, arg2: $Predicate$$Type<($ItemStack)>): $ItemStack
  "simulateRemove"(arg0: integer, arg1: $ItemStack$$Type, arg2: $Predicate$$Type<($ItemStack)>): $ItemStack

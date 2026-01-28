@@ -44,8 +44,8 @@ export class $EditBoxAccessor implements $EditBoxAccessor$$Interface {
  "getFocusTime"(): long
  "getHighlightPos"(): integer
  "invokeRenderHighlight"(arg0: $GuiGraphics$$Type, arg1: integer, arg2: integer, arg3: integer, arg4: integer): void
- "maxLength"(): integer
  "getFormatter"(): $BiFunction<(StringJS), (integer), ($FormattedCharSequence)>
+ "maxLength"(): integer
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_

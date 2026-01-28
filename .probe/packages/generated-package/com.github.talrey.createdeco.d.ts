@@ -3,8 +3,8 @@ import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$CatwalkStairBlock$$Type} from "com.github.talrey.createdeco.blocks.CatwalkStairBlock"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$BlockItem} from "net.minecraft.world.item.BlockItem"
@@ -46,8 +46,8 @@ import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$IWrenchable$$Interface} from "com.simibubi.create.content.equipment.wrench.IWrenchable"
@@ -62,8 +62,8 @@ import {$Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
-import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
+import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 
@@ -99,8 +99,8 @@ public static "isCatwalkStair"(arg0: $ItemStack$$Type): boolean
 public "getShape"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $CollisionContext$$Type): $VoxelShape
 public "rotate"(arg0: $BlockState$$Type, arg1: $Rotation$$Type): $BlockState
 public "getFluidState"(arg0: $BlockState$$Type): $FluidState
-public static "playRotateSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public "onWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $InteractionResult
+public static "playRotateSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public "getRotatedBlockState"(arg0: $BlockState$$Type, arg1: $Direction$$Type): $BlockState
 public "updateAfterWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $BlockState
 public static "playRemoveSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
@@ -136,8 +136,8 @@ import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.
 import {$SimpleWaterloggedBlock$$Interface} from "net.minecraft.world.level.block.SimpleWaterloggedBlock"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$IWrenchable$$Interface} from "com.simibubi.create.content.equipment.wrench.IWrenchable"
@@ -152,8 +152,8 @@ import {$Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
-import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
+import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$DirectionProperty} from "net.minecraft.world.level.block.state.properties.DirectionProperty"
@@ -188,15 +188,15 @@ public "getShape"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $Bloc
 public "rotate"(arg0: $BlockState$$Type, arg1: $Rotation$$Type): $BlockState
 public "mirror"(arg0: $BlockState$$Type, arg1: $Mirror$$Type): $BlockState
 public "getFluidState"(arg0: $BlockState$$Type): $FluidState
-public static "playRotateSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public "onWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $InteractionResult
+public static "playRotateSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public "getRotatedBlockState"(arg0: $BlockState$$Type, arg1: $Direction$$Type): $BlockState
 public "updateAfterWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $BlockState
 public static "playRemoveSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public "onSneakWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $InteractionResult
 public "getPickupSound"(): $Optional<($SoundEvent)>
-public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "canPlaceLiquid"(arg0: $Player$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $Fluid$$Type): boolean
+public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "pickupBlock"(arg0: $Player$$Type, arg1: $LevelAccessor$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): $ItemStack
 public "getPickupSound"(arg0: $BlockState$$Type): $Optional<($SoundEvent)>
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
@@ -221,8 +221,8 @@ import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$IWrenchable$$Interface} from "com.simibubi.create.content.equipment.wrench.IWrenchable"
@@ -238,8 +238,8 @@ import {$Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
-import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
+import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 
@@ -276,8 +276,8 @@ public "tick"(arg0: $BlockState$$Type, arg1: $ServerLevel$$Type, arg2: $BlockPos
 public "getShape"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $CollisionContext$$Type): $VoxelShape
 public "getFluidState"(arg0: $BlockState$$Type): $FluidState
 public "getInteractionShape"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): $VoxelShape
-public static "playRotateSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public "onWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $InteractionResult
+public static "playRotateSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public "getRotatedBlockState"(arg0: $BlockState$$Type, arg1: $Direction$$Type): $BlockState
 public "updateAfterWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $BlockState
 public static "playRemoveSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
@@ -313,8 +313,8 @@ import {$FenceBlock} from "net.minecraft.world.level.block.FenceBlock"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$IWrenchable$$Interface} from "com.simibubi.create.content.equipment.wrench.IWrenchable"
@@ -377,8 +377,8 @@ import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -431,8 +431,8 @@ import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$IWrenchable$$Interface} from "com.simibubi.create.content.equipment.wrench.IWrenchable"
@@ -447,8 +447,8 @@ import {$Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
-import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
+import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 
@@ -490,8 +490,8 @@ public "rotate"(arg0: $BlockState$$Type, arg1: $Rotation$$Type): $BlockState
 public "getFluidState"(arg0: $BlockState$$Type): $FluidState
 public "neighborChanged"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Block$$Type, arg4: $BlockPos$$Type, arg5: boolean): void
 public "getInteractionShape"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): $VoxelShape
-public static "playRotateSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public "onWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $InteractionResult
+public static "playRotateSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public "updateAfterWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $BlockState
 public static "playRemoveSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public "withWater"(arg0: $BlockState$$Type, arg1: $BlockPlaceContext$$Type): $BlockState
@@ -518,8 +518,8 @@ declare module "com.github.talrey.createdeco.items.CoinStackItem" {
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 
@@ -561,8 +561,8 @@ import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$ItemVaultBlock} from "com.simibubi.create.content.logistics.vault.ItemVaultBlock"
 import {$BlockEntityType} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$DyeColor, $DyeColor$$Type} from "net.minecraft.world.item.DyeColor"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -618,15 +618,15 @@ declare module "com.github.talrey.createdeco.blocks.DyedPlacardBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$PlacardBlockEntity} from "com.simibubi.create.content.decoration.placard.PlacardBlockEntity"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
+import {$PlacardBlockEntity} from "com.simibubi.create.content.decoration.placard.PlacardBlockEntity"
 import {$PlacardBlock} from "com.simibubi.create.content.decoration.placard.PlacardBlock"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$AttachFace} from "net.minecraft.world.level.block.state.properties.AttachFace"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
@@ -684,8 +684,8 @@ import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
@@ -695,8 +695,8 @@ import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
-import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
+import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$DirectionProperty} from "net.minecraft.world.level.block.state.properties.DirectionProperty"
@@ -754,10 +754,10 @@ declare module "com.github.talrey.createdeco.items.RailingBlockItem" {
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
-import {$CatwalkRailingBlock$$Type} from "com.github.talrey.createdeco.blocks.CatwalkRailingBlock"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CatwalkRailingBlock$$Type} from "com.github.talrey.createdeco.blocks.CatwalkRailingBlock"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$AdditionalItemPlacement, $AdditionalItemPlacement$$Type} from "net.mehvahdjukaar.moonlight.api.item.additional_placements.AdditionalItemPlacement"
@@ -792,8 +792,8 @@ declare module "com.github.talrey.createdeco.blocks.DecalBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$FaceAttachedHorizontalDirectionalBlock} from "net.minecraft.world.level.block.FaceAttachedHorizontalDirectionalBlock"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -802,8 +802,8 @@ import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$AttachFace} from "net.minecraft.world.level.block.state.properties.AttachFace"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
@@ -836,8 +836,8 @@ static readonly "FACE": $EnumProperty<($AttachFace)>
 constructor(arg0: $BlockBehaviour$Properties$$Type)
 
 public "getShape"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $CollisionContext$$Type): $VoxelShape
-public static "playRotateSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public "onWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $InteractionResult
+public static "playRotateSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public "getRotatedBlockState"(arg0: $BlockState$$Type, arg1: $Direction$$Type): $BlockState
 public "updateAfterWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $BlockState
 public static "playRemoveSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
@@ -858,8 +858,8 @@ import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$ItemVaultItem} from "com.simibubi.create.content.logistics.vault.ItemVaultItem"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$AdditionalItemPlacement, $AdditionalItemPlacement$$Type} from "net.mehvahdjukaar.moonlight.api.item.additional_placements.AdditionalItemPlacement"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
@@ -901,8 +901,8 @@ import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
@@ -912,8 +912,8 @@ import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
-import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
+import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 
@@ -951,8 +951,8 @@ public static "withWater"(arg0: $LevelAccessor$$Type, arg1: $BlockState$$Type, a
 public "updateWater"(arg0: $LevelAccessor$$Type, arg1: $BlockState$$Type, arg2: $BlockPos$$Type): void
 public "fluidState"(arg0: $BlockState$$Type): $FluidState
 public "getPickupSound"(): $Optional<($SoundEvent)>
-public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "canPlaceLiquid"(arg0: $Player$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $Fluid$$Type): boolean
+public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "pickupBlock"(arg0: $Player$$Type, arg1: $LevelAccessor$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): $ItemStack
 public "getPickupSound"(arg0: $BlockState$$Type): $Optional<($SoundEvent)>
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
@@ -980,8 +980,8 @@ import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$IWrenchable$$Interface} from "com.simibubi.create.content.equipment.wrench.IWrenchable"
@@ -996,8 +996,8 @@ import {$Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
 import {$DustParticleOptions} from "net.minecraft.core.particles.DustParticleOptions"
-import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
+import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$DirectionProperty} from "net.minecraft.world.level.block.state.properties.DirectionProperty"
@@ -1037,15 +1037,15 @@ public "withWater"(arg0: $BlockState$$Type, arg1: $BlockPlaceContext$$Type): $Bl
 public static "withWater"(arg0: $LevelAccessor$$Type, arg1: $BlockState$$Type, arg2: $BlockPos$$Type): $BlockState
 public "updateWater"(arg0: $LevelAccessor$$Type, arg1: $BlockState$$Type, arg2: $BlockPos$$Type): void
 public "fluidState"(arg0: $BlockState$$Type): $FluidState
-public static "playRotateSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public "onWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $InteractionResult
+public static "playRotateSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public "getRotatedBlockState"(arg0: $BlockState$$Type, arg1: $Direction$$Type): $BlockState
 public "updateAfterWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $BlockState
 public static "playRemoveSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public "onSneakWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $InteractionResult
 public "getPickupSound"(): $Optional<($SoundEvent)>
-public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "canPlaceLiquid"(arg0: $Player$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $Fluid$$Type): boolean
+public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "pickupBlock"(arg0: $Player$$Type, arg1: $LevelAccessor$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): $ItemStack
 public "getPickupSound"(arg0: $BlockState$$Type): $Optional<($SoundEvent)>
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
@@ -1064,8 +1064,8 @@ declare module "com.github.talrey.createdeco.items.CatwalkBlockItem" {
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$BlockItem} from "net.minecraft.world.item.BlockItem"

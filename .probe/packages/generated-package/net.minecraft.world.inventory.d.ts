@@ -4,11 +4,11 @@ import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Optional$$Type} from "java.util.Optional"
 import {$List} from "java.util.List"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
-import {$MobEffect, $MobEffect$$Type} from "net.minecraft.world.effect.MobEffect"
 import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
+import {$MobEffect, $MobEffect$$Type} from "net.minecraft.world.effect.MobEffect"
+import {$ContainerData$$Type} from "net.minecraft.world.inventory.ContainerData"
 import {$Slot} from "net.minecraft.world.inventory.Slot"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$ContainerData$$Type} from "net.minecraft.world.inventory.ContainerData"
 import {$Container$$Type} from "net.minecraft.world.Container"
 import {$AbstractContainerMenu} from "net.minecraft.world.inventory.AbstractContainerMenu"
 import {$ContainerLevelAccess$$Type} from "net.minecraft.world.inventory.ContainerLevelAccess"
@@ -88,8 +88,8 @@ import {$List} from "java.util.List"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
 import {$Slot} from "net.minecraft.world.inventory.Slot"
 import {$AbstractContainerMenu} from "net.minecraft.world.inventory.AbstractContainerMenu"
-import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
 import {$RecipeInput} from "net.minecraft.world.item.crafting.RecipeInput"
+import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
 import {$RecipeHolder$$Type} from "net.minecraft.world.item.crafting.RecipeHolder"
 import {$RecipeBookType} from "net.minecraft.world.inventory.RecipeBookType"
 import {$MenuType$$Type} from "net.minecraft.world.inventory.MenuType"
@@ -200,8 +200,8 @@ import {$Slot, $Slot$$Type} from "net.minecraft.world.inventory.Slot"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Container, $Container$$Type} from "net.minecraft.world.Container"
 import {$AbstractContainerMenu} from "net.minecraft.world.inventory.AbstractContainerMenu"
-import {$RecipeHolder} from "net.minecraft.world.item.crafting.RecipeHolder"
 import {$StonecutterRecipe} from "net.minecraft.world.item.crafting.StonecutterRecipe"
+import {$RecipeHolder} from "net.minecraft.world.item.crafting.RecipeHolder"
 import {$ContainerLevelAccess$$Type} from "net.minecraft.world.inventory.ContainerLevelAccess"
 import {$MenuType} from "net.minecraft.world.inventory.MenuType"
 
@@ -278,10 +278,10 @@ export type $DataSlot$$Original = $DataSlot;}
 declare module "net.minecraft.world.inventory.Slot" {
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$OwoSlotExtension$$Interface} from "io.wispforest.owo.util.pond.OwoSlotExtension"
-import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
-import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$PositionedRectangle, $PositionedRectangle$$Type} from "io.wispforest.owo.ui.core.PositionedRectangle"
+import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Container, $Container$$Type} from "net.minecraft.world.Container"
+import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Optional} from "java.util.Optional"
 import {$Pair} from "com.mojang.datafixers.util.Pair"
 import {$SlotAccessor$$Interface as $SlotAccessor$0$$Interface} from "io.wispforest.accessories.mixin.SlotAccessor"
@@ -314,8 +314,8 @@ public "owo$setScissorArea"(scissor: $PositionedRectangle$$Type): void
 public "accessories$setY"(arg0: integer): void
 public "owo$setX"(arg0: integer): void
 public "owo$setY"(arg0: integer): void
-public "getItem"(): $ItemStack
 public "hasItem"(): boolean
+public "getItem"(): $ItemStack
 public "remove"(arg0: integer): $ItemStack
 public "set"(arg0: $ItemStack$$Type): void
 public "isActive"(): boolean
@@ -446,9 +446,9 @@ export type $RecipeCraftingHolder$$Type = ($RecipeCraftingHolder);
  */
 export type $RecipeCraftingHolder$$Original = $RecipeCraftingHolder;}
 declare module "net.minecraft.world.inventory.CrafterMenu" {
+import {$ContainerData$$Type} from "net.minecraft.world.inventory.ContainerData"
 import {$Slot} from "net.minecraft.world.inventory.Slot"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$ContainerData$$Type} from "net.minecraft.world.inventory.ContainerData"
 import {$ContainerListener, $ContainerListener$$Interface} from "net.minecraft.world.inventory.ContainerListener"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Container} from "net.minecraft.world.Container"
@@ -560,14 +560,14 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 import {$IntList, $IntList$$Type} from "it.unimi.dsi.fastutil.ints.IntList"
 
 export interface $SlotRange$$Interface extends $StringRepresentable$$Interface {
-get "remappedEnumConstantName"(): StringJS
 get "serializedName"(): StringJS
+get "remappedEnumConstantName"(): StringJS
 }
 
 export class $SlotRange implements $SlotRange$$Interface {
@@ -575,12 +575,12 @@ export class $SlotRange implements $SlotRange$$Interface {
 static "of"(arg0: StringJS, arg1: $IntList$$Type): $SlotRange
  "slots"(): $IntList
 static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+ "getSerializedName"(): StringJS
+static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
  "getRemappedEnumConstantName"(): StringJS
 static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
- "getSerializedName"(): StringJS
-static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -781,11 +781,11 @@ export type $ContainerData$$Type = ($ContainerData);
  */
 export type $ContainerData$$Original = $ContainerData;}
 declare module "net.minecraft.world.inventory.SmokerMenu" {
-import {$Slot} from "net.minecraft.world.inventory.Slot"
 import {$ContainerData$$Type} from "net.minecraft.world.inventory.ContainerData"
+import {$Slot} from "net.minecraft.world.inventory.Slot"
 import {$ContainerListener} from "net.minecraft.world.inventory.ContainerListener"
-import {$Container$$Type} from "net.minecraft.world.Container"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
+import {$Container$$Type} from "net.minecraft.world.Container"
 import {$List} from "java.util.List"
 import {$AbstractFurnaceMenu} from "net.minecraft.world.inventory.AbstractFurnaceMenu"
 import {$Inventory$$Type} from "net.minecraft.world.entity.player.Inventory"
@@ -856,12 +856,12 @@ export type $ContainerLevelAccess$$Type = ((arg0: $BiFunction<($Level), ($BlockP
  */
 export type $ContainerLevelAccess$$Original = $ContainerLevelAccess;}
 declare module "net.minecraft.world.inventory.BrewingStandMenu" {
+import {$ContainerData$$Type} from "net.minecraft.world.inventory.ContainerData"
 import {$Slot} from "net.minecraft.world.inventory.Slot"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$ContainerData$$Type} from "net.minecraft.world.inventory.ContainerData"
 import {$ContainerListener} from "net.minecraft.world.inventory.ContainerListener"
-import {$Container$$Type} from "net.minecraft.world.Container"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
+import {$Container$$Type} from "net.minecraft.world.Container"
 import {$AbstractContainerMenu} from "net.minecraft.world.inventory.AbstractContainerMenu"
 import {$List} from "java.util.List"
 import {$Inventory$$Type} from "net.minecraft.world.entity.player.Inventory"
@@ -906,11 +906,11 @@ declare module "net.minecraft.world.inventory.GrindstoneMenu" {
 import {$Slot} from "net.minecraft.world.inventory.Slot"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ContainerListener} from "net.minecraft.world.inventory.ContainerListener"
-import {$Container$$Type} from "net.minecraft.world.Container"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$Container$$Type} from "net.minecraft.world.Container"
 import {$AbstractContainerMenu} from "net.minecraft.world.inventory.AbstractContainerMenu"
-import {$List} from "java.util.List"
 import {$ContainerLevelAccess$$Type} from "net.minecraft.world.inventory.ContainerLevelAccess"
+import {$List} from "java.util.List"
 import {$Inventory$$Type} from "net.minecraft.world.entity.player.Inventory"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
 
@@ -1020,11 +1020,11 @@ export type $AbstractFurnaceMenu$$Type = ($AbstractFurnaceMenu);
  */
 export type $AbstractFurnaceMenu$$Original = $AbstractFurnaceMenu;}
 declare module "net.minecraft.world.inventory.BlastFurnaceMenu" {
-import {$Slot} from "net.minecraft.world.inventory.Slot"
 import {$ContainerData$$Type} from "net.minecraft.world.inventory.ContainerData"
+import {$Slot} from "net.minecraft.world.inventory.Slot"
 import {$ContainerListener} from "net.minecraft.world.inventory.ContainerListener"
-import {$Container$$Type} from "net.minecraft.world.Container"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
+import {$Container$$Type} from "net.minecraft.world.Container"
 import {$List} from "java.util.List"
 import {$AbstractFurnaceMenu} from "net.minecraft.world.inventory.AbstractFurnaceMenu"
 import {$Inventory$$Type} from "net.minecraft.world.entity.player.Inventory"
@@ -1068,8 +1068,8 @@ declare module "net.minecraft.world.inventory.HopperMenu" {
 import {$Slot} from "net.minecraft.world.inventory.Slot"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ContainerListener} from "net.minecraft.world.inventory.ContainerListener"
-import {$Container$$Type} from "net.minecraft.world.Container"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
+import {$Container$$Type} from "net.minecraft.world.Container"
 import {$AbstractContainerMenu} from "net.minecraft.world.inventory.AbstractContainerMenu"
 import {$List} from "java.util.List"
 import {$Inventory$$Type} from "net.minecraft.world.entity.player.Inventory"
@@ -1112,8 +1112,8 @@ declare module "net.minecraft.world.inventory.DispenserMenu" {
 import {$Slot} from "net.minecraft.world.inventory.Slot"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ContainerListener} from "net.minecraft.world.inventory.ContainerListener"
-import {$Container$$Type} from "net.minecraft.world.Container"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
+import {$Container$$Type} from "net.minecraft.world.Container"
 import {$AbstractContainerMenu} from "net.minecraft.world.inventory.AbstractContainerMenu"
 import {$List} from "java.util.List"
 import {$Inventory$$Type} from "net.minecraft.world.entity.player.Inventory"
@@ -1194,15 +1194,15 @@ constructor(arg0: integer, arg1: $Inventory$$Type, arg2: $ContainerLevelAccess$$
 constructor(arg0: integer, arg1: $Inventory$$Type)
 
 public "handler$cgo000$inventoryprofilesnext$onTakeOutputPost"(arg0: $Player$$Type, arg1: $ItemStack$$Type, arg2: $CallbackInfo$$Type): void
-public "createResult"(): void
-public "modifyExpressionValue$eei000$ae2$setAnnihilationPlaneThreadLocal"(arg0: boolean): boolean
-public "constant$cig000$apothic_enchanting$apoth_removeLevelCap"(arg0: integer): integer
-public "setItemName"(arg0: StringJS): boolean
 public "getCost"(): integer
 public "setMaximumCost"(arg0: long): void
 public static "calculateIncreasedRepairCost"(arg0: integer): integer
 public "handler$cgo000$inventoryprofilesnext$onTakeOutputPre"(arg0: $Player$$Type, arg1: $ItemStack$$Type, arg2: $CallbackInfo$$Type): void
 public "redirect$cig000$apothic_enchanting$apoth_chargeOptimalLevels"(arg0: $Player$$Type, arg1: integer): void
+public "createResult"(): void
+public "modifyExpressionValue$eei000$ae2$setAnnihilationPlaneThreadLocal"(arg0: boolean): boolean
+public "constant$cig000$apothic_enchanting$apoth_removeLevelCap"(arg0: integer): integer
+public "setItemName"(arg0: StringJS): boolean
 get "cost"(): integer
 set "maximumCost"(value: long)
 }
@@ -1224,14 +1224,14 @@ import {$RecipeBookMenu} from "net.minecraft.world.inventory.RecipeBookMenu"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Inventory$$Type} from "net.minecraft.world.entity.player.Inventory"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
+import {$CraftingMenuAccessor$$Interface} from "io.wispforest.accessories.mixin.CraftingMenuAccessor"
 import {$Slot, $Slot$$Type} from "net.minecraft.world.inventory.Slot"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$CraftingMenuAccessor$$Interface} from "io.wispforest.accessories.mixin.CraftingMenuAccessor"
 import {$Container$$Type} from "net.minecraft.world.Container"
 import {$AbstractContainerMenu$$Type} from "net.minecraft.world.inventory.AbstractContainerMenu"
 import {$RecipeHolder$$Type} from "net.minecraft.world.item.crafting.RecipeHolder"
-import {$RecipeBookType} from "net.minecraft.world.inventory.RecipeBookType"
 import {$ContainerLevelAccess, $ContainerLevelAccess$$Type} from "net.minecraft.world.inventory.ContainerLevelAccess"
+import {$RecipeBookType} from "net.minecraft.world.inventory.RecipeBookType"
 import {$CraftingRecipe, $CraftingRecipe$$Type} from "net.minecraft.world.item.crafting.CraftingRecipe"
 import {$CraftingContainer$$Type} from "net.minecraft.world.inventory.CraftingContainer"
 import {$StackedContents$$Type} from "net.minecraft.world.entity.player.StackedContents"
@@ -1269,7 +1269,7 @@ public "getGridWidth"(): integer
 public "getGridHeight"(): integer
 public "getRecipeBookType"(): $RecipeBookType
 public "shouldMoveToInventory"(arg0: integer): boolean
-public static "slotChangedCraftingGrid$accessories_$md$a93e73$0"(arg0: $AbstractContainerMenu$$Type, arg1: $Level$$Type, arg2: $Player$$Type, arg3: $CraftingContainer$$Type, arg4: $ResultContainer$$Type, arg5: $RecipeHolder$$Type): void
+public static "slotChangedCraftingGrid$accessories_$md$b00d76$0"(arg0: $AbstractContainerMenu$$Type, arg1: $Level$$Type, arg2: $Player$$Type, arg3: $CraftingContainer$$Type, arg4: $ResultContainer$$Type, arg5: $RecipeHolder$$Type): void
 public "fillCraftSlotsStackedContents"(arg0: $StackedContents$$Type): void
 public "getSize"(): integer
 public "removed"(arg0: $Player$$Type): void
@@ -1344,15 +1344,15 @@ public "setItem"(arg0: integer, arg1: integer, arg2: $ItemStack$$Type): void
 public static "getRedstoneSignalFromBlockEntity"(arg0: $BlockEntity$$Type): integer
 public static "getRedstoneSignalFromContainer"(arg0: $Container$$Type): integer
 public "getItems"(): $NonNullList<($ItemStack)>
-public "suppressRemoteUpdates"(): void
 public "isValidSlotIndex"(arg0: integer): boolean
 public "sendAllDataToRemote"(): void
 public "removeSlotListener"(arg0: $ContainerListener$$Type): void
 public "updateDataSlotListeners"(arg0: integer, arg1: integer): void
 public "broadcastFullState"(): void
-public "setRemoteSlotNoCopy"(arg0: integer, arg1: $ItemStack$$Type): void
+public "suppressRemoteUpdates"(): void
 public "wrapOperation$zzd000$geckolib$forceGeckolibSlotChange"(arg0: $ItemStack$$Type, arg1: $ItemStack$$Type, arg2: $Operation$$Type): boolean
 public "wrapOperation$zzd000$geckolib$forceGeckolibIdSync"(arg0: $ItemStack$$Type, arg1: $ItemStack$$Type, arg2: $Operation$$Type): boolean
+public "setRemoteSlotNoCopy"(arg0: integer, arg1: $ItemStack$$Type): void
 public "setRemoteCarried"(arg0: $ItemStack$$Type): void
 public "clickMenuButton"(arg0: $Player$$Type, arg1: integer): boolean
 public "quickMoveStack"(arg0: $Player$$Type, arg1: integer): $ItemStack
@@ -1416,8 +1416,8 @@ import {$Slot, $Slot$$Type} from "net.minecraft.world.inventory.Slot"
 import {$ContainerListener} from "net.minecraft.world.inventory.ContainerListener"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Container} from "net.minecraft.world.Container"
-import {$List} from "java.util.List"
 import {$ContainerLevelAccess, $ContainerLevelAccess$$Type} from "net.minecraft.world.inventory.ContainerLevelAccess"
+import {$List} from "java.util.List"
 import {$Inventory$$Type} from "net.minecraft.world.entity.player.Inventory"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
 import {$ItemCombinerMenu} from "net.minecraft.world.inventory.ItemCombinerMenu"
@@ -1520,8 +1520,8 @@ export type $PlayerEnderChestContainer$$Type = ($PlayerEnderChestContainer);
 export type $PlayerEnderChestContainer$$Original = $PlayerEnderChestContainer;}
 declare module "net.minecraft.world.inventory.ResultContainer" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$Predicate$$Type} from "java.util.function.Predicate"
 import {$List, $List$$Type} from "java.util.List"
+import {$Predicate$$Type} from "java.util.function.Predicate"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$RecipeCraftingHolder$$Interface} from "net.minecraft.world.inventory.RecipeCraftingHolder"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
@@ -1748,8 +1748,8 @@ import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Operation$$Type} from "com.llamalad7.mixinextras.injector.wrapoperation.Operation"
 import {$Container$$Type} from "net.minecraft.world.Container"
 import {$AbstractContainerMenu} from "net.minecraft.world.inventory.AbstractContainerMenu"
-import {$BannerPattern} from "net.minecraft.world.level.block.entity.BannerPattern"
 import {$ContainerLevelAccess$$Type} from "net.minecraft.world.inventory.ContainerLevelAccess"
+import {$BannerPattern} from "net.minecraft.world.level.block.entity.BannerPattern"
 import {$Item} from "net.minecraft.world.item.Item"
 
 export class $LoomMenu extends $AbstractContainerMenu {
@@ -1775,20 +1775,20 @@ public "clickMenuButton"(arg0: $Player$$Type, arg1: integer): boolean
 public "quickMoveStack"(arg0: $Player$$Type, arg1: integer): $ItemStack
 public "slotsChanged"(arg0: $Container$$Type): void
 public "getResultSlot"(): $Slot
-public "getSelectablePatterns"(): $List<($Holder<($BannerPattern)>)>
-public "registerUpdateListener"(arg0: $Runnable$$Type): void
-public "wrapOperation$bbn000$supplementaries$supp$flagStuff"(instance: $ItemStack$$Type, original: $Operation$$Type): $Item
 public "getBannerSlot"(): $Slot
 public "getDyeSlot"(): $Slot
 public "getPatternSlot"(): $Slot
+public "getSelectablePatterns"(): $List<($Holder<($BannerPattern)>)>
+public "registerUpdateListener"(arg0: $Runnable$$Type): void
+public "wrapOperation$bbn000$supplementaries$supp$flagStuff"(instance: $ItemStack$$Type, original: $Operation$$Type): $Item
 public "getSelectedBannerPatternIndex"(): integer
 public "removed"(arg0: $Player$$Type): void
 public "stillValid"(arg0: $Player$$Type): boolean
 get "resultSlot"(): $Slot
-get "selectablePatterns"(): $List<($Holder<($BannerPattern)>)>
 get "bannerSlot"(): $Slot
 get "dyeSlot"(): $Slot
 get "patternSlot"(): $Slot
+get "selectablePatterns"(): $List<($Holder<($BannerPattern)>)>
 get "selectedBannerPatternIndex"(): integer
 }
 /**
@@ -1801,11 +1801,11 @@ export type $LoomMenu$$Type = ($LoomMenu);
  */
 export type $LoomMenu$$Original = $LoomMenu;}
 declare module "net.minecraft.world.inventory.FurnaceMenu" {
-import {$Slot} from "net.minecraft.world.inventory.Slot"
 import {$ContainerData$$Type} from "net.minecraft.world.inventory.ContainerData"
+import {$Slot} from "net.minecraft.world.inventory.Slot"
 import {$ContainerListener} from "net.minecraft.world.inventory.ContainerListener"
-import {$Container$$Type} from "net.minecraft.world.Container"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
+import {$Container$$Type} from "net.minecraft.world.Container"
 import {$List} from "java.util.List"
 import {$AbstractFurnaceMenu} from "net.minecraft.world.inventory.AbstractFurnaceMenu"
 import {$Inventory$$Type} from "net.minecraft.world.entity.player.Inventory"
@@ -1935,21 +1935,21 @@ export type $InventoryMenu$$Type = ($InventoryMenu);
  */
 export type $InventoryMenu$$Original = $InventoryMenu;}
 declare module "net.minecraft.world.inventory.MenuType" {
-import {$LoomMenu} from "net.minecraft.world.inventory.LoomMenu"
 import {$MenuType$MenuSupplier$$Type} from "net.minecraft.world.inventory.MenuType$MenuSupplier"
+import {$LoomMenu} from "net.minecraft.world.inventory.LoomMenu"
 import {$FeatureFlagSet, $FeatureFlagSet$$Type} from "net.minecraft.world.flag.FeatureFlagSet"
 import {$List} from "java.util.List"
-import {$IMenuTypeExtension$$Interface} from "net.neoforged.neoforge.common.extensions.IMenuTypeExtension"
 import {$GrindstoneMenu} from "net.minecraft.world.inventory.GrindstoneMenu"
-import {$MenuTypeKJS$$Interface} from "dev.latvian.mods.kubejs.core.MenuTypeKJS"
+import {$IMenuTypeExtension$$Interface} from "net.neoforged.neoforge.common.extensions.IMenuTypeExtension"
 import {$Inventory$$Type} from "net.minecraft.world.entity.player.Inventory"
+import {$MenuTypeKJS$$Interface} from "dev.latvian.mods.kubejs.core.MenuTypeKJS"
 import {$CartographyTableMenu} from "net.minecraft.world.inventory.CartographyTableMenu"
 import {$Holder} from "net.minecraft.core.Holder"
 import {$CraftingMenu} from "net.minecraft.world.inventory.CraftingMenu"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$FeatureElement$$Interface} from "net.minecraft.world.flag.FeatureElement"
-import {$BeaconMenu} from "net.minecraft.world.inventory.BeaconMenu"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
+import {$BeaconMenu} from "net.minecraft.world.inventory.BeaconMenu"
 import {$DispenserMenu} from "net.minecraft.world.inventory.DispenserMenu"
 import {$AnvilMenu} from "net.minecraft.world.inventory.AnvilMenu"
 import {$LecternMenu} from "net.minecraft.world.inventory.LecternMenu"
@@ -1959,10 +1959,10 @@ import {$CrafterMenu} from "net.minecraft.world.inventory.CrafterMenu"
 import {$ChestMenu} from "net.minecraft.world.inventory.ChestMenu"
 import {$IContainerFactory$$Type} from "net.neoforged.neoforge.network.IContainerFactory"
 import {$StonecutterMenu} from "net.minecraft.world.inventory.StonecutterMenu"
-import {$Registry} from "net.minecraft.core.Registry"
 import {$AbstractContainerMenu} from "net.minecraft.world.inventory.AbstractContainerMenu"
 import {$BlastFurnaceMenu} from "net.minecraft.world.inventory.BlastFurnaceMenu"
 import {$ShulkerBoxMenu} from "net.minecraft.world.inventory.ShulkerBoxMenu"
+import {$Registry} from "net.minecraft.core.Registry"
 import {$RegistryFriendlyByteBuf$$Type} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$TagKey} from "net.minecraft.tags.TagKey"
 import {$SmithingMenu} from "net.minecraft.world.inventory.SmithingMenu"
@@ -2080,8 +2080,8 @@ constructor(arg0: $MenuType$$Type<(never)>, arg1: integer, arg2: $Inventory$$Typ
 
 public "quickMoveStack"(arg0: $Player$$Type, arg1: integer): $ItemStack
 public "slotsChanged"(arg0: $Container$$Type): void
-public "createResult"(): void
 public "getResultSlot"(): integer
+public "createResult"(): void
 public "getSlotToQuickMoveTo"(arg0: $ItemStack$$Type): integer
 public "removed"(arg0: $Player$$Type): void
 public "stillValid"(arg0: $Player$$Type): boolean
@@ -2141,12 +2141,12 @@ export type $ShulkerBoxMenu$$Type = ($ShulkerBoxMenu);
  */
 export type $ShulkerBoxMenu$$Original = $ShulkerBoxMenu;}
 declare module "net.minecraft.world.inventory.LecternMenu" {
+import {$ContainerData$$Type} from "net.minecraft.world.inventory.ContainerData"
 import {$Slot} from "net.minecraft.world.inventory.Slot"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$ContainerData$$Type} from "net.minecraft.world.inventory.ContainerData"
 import {$ContainerListener} from "net.minecraft.world.inventory.ContainerListener"
-import {$Container$$Type} from "net.minecraft.world.Container"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
+import {$Container$$Type} from "net.minecraft.world.Container"
 import {$AbstractContainerMenu} from "net.minecraft.world.inventory.AbstractContainerMenu"
 import {$List} from "java.util.List"
 import {$NonNullList} from "net.minecraft.core.NonNullList"

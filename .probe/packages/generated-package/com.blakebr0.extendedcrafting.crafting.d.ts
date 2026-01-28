@@ -1,7 +1,7 @@
 declare module "com.blakebr0.extendedcrafting.crafting.recipe.UltimateSingularityRecipe$Serializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$RegistryFriendlyByteBuf, $RegistryFriendlyByteBuf$$Type} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf, $RegistryFriendlyByteBuf$$Type} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$UltimateSingularityRecipe} from "com.blakebr0.extendedcrafting.crafting.recipe.UltimateSingularityRecipe"
@@ -32,11 +32,11 @@ import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$ShapedRecipePattern$$Type} from "net.minecraft.world.item.crafting.ShapedRecipePattern"
 import {$Ingredient} from "net.minecraft.world.item.crafting.Ingredient"
 import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
-import {$RecipeType} from "net.minecraft.world.item.crafting.RecipeType"
 import {$IEnderCrafterRecipe$$Interface} from "com.blakebr0.extendedcrafting.api.crafting.IEnderCrafterRecipe"
+import {$RecipeType} from "net.minecraft.world.item.crafting.RecipeType"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
+import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 
 export class $ShapedEnderCrafterRecipe implements $IEnderCrafterRecipe$$Interface {
@@ -46,9 +46,9 @@ public "getCraftingTime"(): integer
 public "assemble"(arg0: $CraftingInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
 public "assemble"(arg0: $RecipeInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
 public "getSerializer"(): $RecipeSerializer<(never)>
-public "getIngredients"(): $NonNullList<($Ingredient)>
 public "canCraftInDimensions"(arg0: integer, arg1: integer): boolean
 public "getResultItem"(arg0: $HolderLookup$Provider$$Type): $ItemStack
+public "getIngredients"(): $NonNullList<($Ingredient)>
 public "getWidth"(): integer
 public "getHeight"(): integer
 public "matches"(arg0: $CraftingInput$$Type, arg1: $Level$$Type): boolean
@@ -83,12 +83,12 @@ export type $ShapedEnderCrafterRecipe$$Original = $ShapedEnderCrafterRecipe;}
 declare module "com.blakebr0.extendedcrafting.crafting.recipe.ShapelessTableRecipe" {
 import {$BiFunction$$Type} from "java.util.function.BiFunction"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$Ingredient, $Ingredient$$Type} from "net.minecraft.world.item.crafting.Ingredient"
+import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$RecipeType} from "net.minecraft.world.item.crafting.RecipeType"
 import {$TableCraftingInput$$Type} from "com.blakebr0.extendedcrafting.api.TableCraftingInput"
-import {$ITableRecipe$$Interface} from "com.blakebr0.extendedcrafting.api.crafting.ITableRecipe"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$ITableRecipe$$Interface} from "com.blakebr0.extendedcrafting.api.crafting.ITableRecipe"
 import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$NonNullList, $NonNullList$$Type} from "net.minecraft.core.NonNullList"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
@@ -103,9 +103,9 @@ public "getRemainingItems"(arg0: $RecipeInput$$Type): $NonNullList
 public "getRemainingItems"(arg0: $TableCraftingInput$$Type): $NonNullList<($ItemStack)>
 public "getTier"(): integer
 public "getSerializer"(): $RecipeSerializer<(never)>
-public "getIngredients"(): $NonNullList<($Ingredient)>
 public "canCraftInDimensions"(arg0: integer, arg1: integer): boolean
 public "getResultItem"(arg0: $HolderLookup$Provider$$Type): $ItemStack
+public "getIngredients"(): $NonNullList<($Ingredient)>
 public "setTransformer"(arg0: $BiFunction$$Type<(integer), ($ItemStack), ($ItemStack$$Type)>): void
 public "matches"(arg0: $TableCraftingInput$$Type, arg1: $Level$$Type): boolean
 public "matches"(arg0: $RecipeInput$$Type, arg1: $Level$$Type): boolean
@@ -137,8 +137,8 @@ export type $ShapelessTableRecipe$$Original = $ShapelessTableRecipe;}
 declare module "com.blakebr0.extendedcrafting.crafting.recipe.ShapelessFluxCrafterRecipe$Serializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$ShapelessFluxCrafterRecipe} from "com.blakebr0.extendedcrafting.crafting.recipe.ShapelessFluxCrafterRecipe"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
 
@@ -164,8 +164,8 @@ export type $ShapelessFluxCrafterRecipe$Serializer$$Original = $ShapelessFluxCra
 declare module "com.blakebr0.extendedcrafting.crafting.recipe.ShapelessFluxCrafterRecipe" {
 import {$CraftingInput$$Type} from "net.minecraft.world.item.crafting.CraftingInput"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$Ingredient, $Ingredient$$Type} from "net.minecraft.world.item.crafting.Ingredient"
+import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$RecipeType} from "net.minecraft.world.item.crafting.RecipeType"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$IFluxCrafterRecipe$$Interface} from "com.blakebr0.extendedcrafting.api.crafting.IFluxCrafterRecipe"
@@ -181,9 +181,9 @@ public "getPowerRequired"(): integer
 public "assemble"(arg0: $CraftingInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
 public "assemble"(arg0: $RecipeInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
 public "getSerializer"(): $RecipeSerializer<(never)>
-public "getIngredients"(): $NonNullList<($Ingredient)>
 public "canCraftInDimensions"(arg0: integer, arg1: integer): boolean
 public "getResultItem"(arg0: $HolderLookup$Provider$$Type): $ItemStack
+public "getIngredients"(): $NonNullList<($Ingredient)>
 public "matches"(arg0: $CraftingInput$$Type, arg1: $Level$$Type): boolean
 public "matches"(arg0: $RecipeInput$$Type, arg1: $Level$$Type): boolean
 public "getType"(): $RecipeType<(never)>
@@ -214,8 +214,8 @@ export type $ShapelessFluxCrafterRecipe$$Type = ($ShapelessFluxCrafterRecipe);
 export type $ShapelessFluxCrafterRecipe$$Original = $ShapelessFluxCrafterRecipe;}
 declare module "com.blakebr0.extendedcrafting.crafting.recipe.CombinationRecipe$Serializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$CombinationRecipe} from "com.blakebr0.extendedcrafting.crafting.recipe.CombinationRecipe"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
@@ -243,8 +243,8 @@ declare module "com.blakebr0.extendedcrafting.crafting.recipe.CompressorRecipe" 
 import {$CraftingInput$$Type} from "net.minecraft.world.item.crafting.CraftingInput"
 import {$IngredientWithCount$$Type} from "com.blakebr0.cucumber.crafting.ingredient.IngredientWithCount"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$Ingredient, $Ingredient$$Type} from "net.minecraft.world.item.crafting.Ingredient"
+import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$RecipeType} from "net.minecraft.world.item.crafting.RecipeType"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
@@ -257,12 +257,12 @@ constructor(arg0: $NonNullList$$Type<($IngredientWithCount$$Type)>, arg1: $ItemS
 
 public "getPowerCost"(): integer
 public "getPowerRate"(): integer
-public "assemble"(arg0: $RecipeInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
 public "assemble"(arg0: $CraftingInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
+public "assemble"(arg0: $RecipeInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
 public "getSerializer"(): $RecipeSerializer<(never)>
-public "getIngredients"(): $NonNullList<($Ingredient)>
 public "canCraftInDimensions"(arg0: integer, arg1: integer): boolean
 public "getResultItem"(arg0: $HolderLookup$Provider$$Type): $ItemStack
+public "getIngredients"(): $NonNullList<($Ingredient)>
 public "getCatalyst"(): $Ingredient
 public "matches"(arg0: $RecipeInput$$Type, arg1: $Level$$Type): boolean
 public "matches"(arg0: $CraftingInput$$Type, arg1: $Level$$Type): boolean
@@ -297,10 +297,10 @@ export type $CompressorRecipe$$Original = $CompressorRecipe;}
 declare module "com.blakebr0.extendedcrafting.crafting.recipe.ShapelessEnderCrafterRecipe" {
 import {$CraftingInput$$Type} from "net.minecraft.world.item.crafting.CraftingInput"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$Ingredient, $Ingredient$$Type} from "net.minecraft.world.item.crafting.Ingredient"
-import {$RecipeType} from "net.minecraft.world.item.crafting.RecipeType"
+import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$IEnderCrafterRecipe$$Interface} from "com.blakebr0.extendedcrafting.api.crafting.IEnderCrafterRecipe"
+import {$RecipeType} from "net.minecraft.world.item.crafting.RecipeType"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$NonNullList, $NonNullList$$Type} from "net.minecraft.core.NonNullList"
@@ -313,9 +313,9 @@ public "getCraftingTime"(): integer
 public "assemble"(arg0: $CraftingInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
 public "assemble"(arg0: $RecipeInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
 public "getSerializer"(): $RecipeSerializer<(never)>
-public "getIngredients"(): $NonNullList<($Ingredient)>
 public "canCraftInDimensions"(arg0: integer, arg1: integer): boolean
 public "getResultItem"(arg0: $HolderLookup$Provider$$Type): $ItemStack
+public "getIngredients"(): $NonNullList<($Ingredient)>
 public "matches"(arg0: $CraftingInput$$Type, arg1: $Level$$Type): boolean
 public "matches"(arg0: $RecipeInput$$Type, arg1: $Level$$Type): boolean
 public "getType"(): $RecipeType<(never)>
@@ -345,8 +345,8 @@ export type $ShapelessEnderCrafterRecipe$$Type = ($ShapelessEnderCrafterRecipe);
 export type $ShapelessEnderCrafterRecipe$$Original = $ShapelessEnderCrafterRecipe;}
 declare module "com.blakebr0.extendedcrafting.crafting.recipe.ShapedTableRecipe$Serializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$ShapedTableRecipe} from "com.blakebr0.extendedcrafting.crafting.recipe.ShapedTableRecipe"
@@ -373,8 +373,8 @@ export type $ShapedTableRecipe$Serializer$$Original = $ShapedTableRecipe$Seriali
 declare module "com.blakebr0.extendedcrafting.crafting.recipe.CompressorRecipe$Serializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$CompressorRecipe} from "com.blakebr0.extendedcrafting.crafting.recipe.CompressorRecipe"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
 
@@ -421,9 +421,9 @@ public "getRemainingItems"(arg0: $RecipeInput$$Type): $NonNullList
 public "getRemainingItems"(arg0: $TableCraftingInput$$Type): $NonNullList<($ItemStack)>
 public "getTier"(): integer
 public "getSerializer"(): $RecipeSerializer<(never)>
-public "getIngredients"(): $NonNullList<($Ingredient)>
 public "canCraftInDimensions"(arg0: integer, arg1: integer): boolean
 public "getResultItem"(arg0: $HolderLookup$Provider$$Type): $ItemStack
+public "getIngredients"(): $NonNullList<($Ingredient)>
 public "setTransformer"(arg0: $TriFunction$$Type<(integer), (integer), ($ItemStack), ($ItemStack$$Type)>): void
 public "getWidth"(): integer
 public "getHeight"(): integer
@@ -458,8 +458,8 @@ export type $ShapedTableRecipe$$Type = ($ShapedTableRecipe);
 export type $ShapedTableRecipe$$Original = $ShapedTableRecipe;}
 declare module "com.blakebr0.extendedcrafting.crafting.recipe.ShapedEnderCrafterRecipe$Serializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$ShapedEnderCrafterRecipe} from "com.blakebr0.extendedcrafting.crafting.recipe.ShapedEnderCrafterRecipe"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
@@ -485,8 +485,8 @@ export type $ShapedEnderCrafterRecipe$Serializer$$Type = ($ShapedEnderCrafterRec
 export type $ShapedEnderCrafterRecipe$Serializer$$Original = $ShapedEnderCrafterRecipe$Serializer;}
 declare module "com.blakebr0.extendedcrafting.crafting.recipe.ShapedFluxCrafterRecipe$Serializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$ShapedFluxCrafterRecipe} from "com.blakebr0.extendedcrafting.crafting.recipe.ShapedFluxCrafterRecipe"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
@@ -512,8 +512,8 @@ export type $ShapedFluxCrafterRecipe$Serializer$$Type = ($ShapedFluxCrafterRecip
 export type $ShapedFluxCrafterRecipe$Serializer$$Original = $ShapedFluxCrafterRecipe$Serializer;}
 declare module "com.blakebr0.extendedcrafting.crafting.recipe.ShapelessEnderCrafterRecipe$Serializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$ShapelessEnderCrafterRecipe} from "com.blakebr0.extendedcrafting.crafting.recipe.ShapelessEnderCrafterRecipe"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
@@ -546,8 +546,8 @@ import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$RecipeType} from "net.minecraft.world.item.crafting.RecipeType"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$IFluxCrafterRecipe$$Interface} from "com.blakebr0.extendedcrafting.api.crafting.IFluxCrafterRecipe"
-import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
+import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 
 export class $ShapedFluxCrafterRecipe implements $IFluxCrafterRecipe$$Interface {
@@ -555,12 +555,12 @@ constructor(arg0: $ShapedRecipePattern$$Type, arg1: $ItemStack$$Type, arg2: inte
 
 public "getPowerRate"(): integer
 public "getPowerRequired"(): integer
-public "assemble"(arg0: $CraftingInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
 public "assemble"(arg0: $RecipeInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
+public "assemble"(arg0: $CraftingInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
 public "getSerializer"(): $RecipeSerializer<(never)>
-public "getIngredients"(): $NonNullList<($Ingredient)>
 public "canCraftInDimensions"(arg0: integer, arg1: integer): boolean
 public "getResultItem"(arg0: $HolderLookup$Provider$$Type): $ItemStack
+public "getIngredients"(): $NonNullList<($Ingredient)>
 public "getWidth"(): integer
 public "getHeight"(): integer
 public "matches"(arg0: $CraftingInput$$Type, arg1: $Level$$Type): boolean
@@ -618,9 +618,9 @@ public "assemble"(arg0: $RecipeInput$$Type, arg1: $HolderLookup$Provider$$Type):
 public "getRemainingItems"(arg0: $CraftingInput$$Type): $NonNullList<($ItemStack)>
 public "getRemainingItems"(arg0: $RecipeInput$$Type): $NonNullList
 public "getSerializer"(): $RecipeSerializer<(never)>
-public "getIngredients"(): $NonNullList<($Ingredient)>
 public "canCraftInDimensions"(arg0: integer, arg1: integer): boolean
 public "getResultItem"(arg0: $HolderLookup$Provider$$Type): $ItemStack
+public "getIngredients"(): $NonNullList<($Ingredient)>
 public "getInputsList"(): $List<($Component)>
 public "setTransformer"(arg0: $BiFunction$$Type<(integer), ($ItemStack), ($ItemStack$$Type)>): void
 public "getInput"(): $Ingredient
@@ -660,18 +660,18 @@ import {$Ingredient} from "net.minecraft.world.item.crafting.Ingredient"
 import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$TableCraftingInput$$Type} from "com.blakebr0.extendedcrafting.api.TableCraftingInput"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$ShapelessTableRecipe} from "com.blakebr0.extendedcrafting.crafting.recipe.ShapelessTableRecipe"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
+import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 
 export class $UltimateSingularityRecipe extends $ShapelessTableRecipe {
 constructor(arg0: $ItemStack$$Type)
 
 public "getSerializer"(): $RecipeSerializer<(never)>
 public "getIngredients"(): $NonNullList<($Ingredient)>
-public static "invalidate"(): void
-public "matches"(arg0: $RecipeInput$$Type, arg1: $Level$$Type): boolean
 public "matches"(arg0: $TableCraftingInput$$Type, arg1: $Level$$Type): boolean
+public "matches"(arg0: $RecipeInput$$Type, arg1: $Level$$Type): boolean
+public static "invalidate"(): void
 get "serializer"(): $RecipeSerializer<(never)>
 get "ingredients"(): $NonNullList<($Ingredient)>
 }
@@ -686,10 +686,10 @@ export type $UltimateSingularityRecipe$$Type = ($UltimateSingularityRecipe);
 export type $UltimateSingularityRecipe$$Original = $UltimateSingularityRecipe;}
 declare module "com.blakebr0.extendedcrafting.crafting.recipe.ShapelessTableRecipe$Serializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
-import {$MapCodec} from "com.mojang.serialization.MapCodec"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$ShapelessTableRecipe} from "com.blakebr0.extendedcrafting.crafting.recipe.ShapelessTableRecipe"
+import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
 
 export class $ShapelessTableRecipe$Serializer implements $RecipeSerializer$$Interface<($ShapelessTableRecipe)> {

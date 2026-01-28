@@ -4,8 +4,8 @@ import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
-import {$Property$$Type} from "net.minecraft.world.level.block.state.properties.Property"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$Property$$Type} from "net.minecraft.world.level.block.state.properties.Property"
 
 export interface $HammerableBlock$$Interface {
 get "useSound"(): $SoundEvent
@@ -27,8 +27,8 @@ export type $HammerableBlock$$Type = ($HammerableBlock);
 export type $HammerableBlock$$Original = $HammerableBlock;}
 declare module "com.starfish_studios.another_furniture.util.block.TuckableBlock" {
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 

@@ -47,8 +47,8 @@ export type $DataPackRegistryEvent$$Type = ($DataPackRegistryEvent);
 export type $DataPackRegistryEvent$$Original = $DataPackRegistryEvent;}
 declare module "net.neoforged.neoforge.registries.datamaps.DataMapType" {
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
-import {$Registry, $Registry$$Type} from "net.minecraft.core.Registry"
 import {$DataMapType$Builder} from "net.neoforged.neoforge.registries.datamaps.DataMapType$Builder"
+import {$Registry, $Registry$$Type} from "net.minecraft.core.Registry"
 import {$Codec, $Codec$$Type} from "com.mojang.serialization.Codec"
 import {$ResourceKey, $ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
 
@@ -117,7 +117,7 @@ public "chance"(): float
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $Compostable$$Type = ({"canVillagerCompost"?: boolean, "chance"?: float}) | ([canVillagerCompost?: boolean, chance?: float]);
+export type $Compostable$$Type = ({"chance"?: float, "canVillagerCompost"?: boolean}) | ([chance?: float, canVillagerCompost?: boolean]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -172,8 +172,8 @@ import {$Codec$$Type} from "com.mojang.serialization.Codec"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$ICustomHolderSet} from "net.neoforged.neoforge.registries.holdersets.ICustomHolderSet"
 import {$ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
-import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$HolderSetType$$Interface} from "net.neoforged.neoforge.registries.holdersets.HolderSetType"
+import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$Holder$$Type} from "net.minecraft.core.Holder"
 
 export class $AndHolderSet$Type implements $HolderSetType$$Interface {
@@ -195,8 +195,8 @@ declare module "net.neoforged.neoforge.registries.IdMappingEvent" {
 import {$IdMappingEvent$IdRemapping$$Type} from "net.neoforged.neoforge.registries.IdMappingEvent$IdRemapping"
 import {$Map$$Type} from "java.util.Map"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
-import {$Event} from "net.neoforged.bus.api.Event"
 import {$ImmutableSet} from "com.google.common.collect.ImmutableSet"
+import {$Event} from "net.neoforged.bus.api.Event"
 import {$ImmutableList} from "com.google.common.collect.ImmutableList"
 import {$IdMappingEvent$ModRemapping} from "net.neoforged.neoforge.registries.IdMappingEvent$ModRemapping"
 
@@ -330,13 +330,13 @@ export type $IdMappingEvent$ModRemapping$$Original = $IdMappingEvent$ModRemappin
 declare module "net.neoforged.neoforge.registries.DeferredRegister$Items" {
 import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$Function$$Type} from "java.util.function.Function"
-import {$Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$DeferredRegister} from "net.neoforged.neoforge.registries.DeferredRegister"
+import {$Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockItem} from "net.minecraft.world.item.BlockItem"
-import {$Holder$$Type} from "net.minecraft.core.Holder"
 import {$DeferredHolder} from "net.neoforged.neoforge.registries.DeferredHolder"
+import {$Holder$$Type} from "net.minecraft.core.Holder"
 import {$DeferredItem} from "net.neoforged.neoforge.registries.DeferredItem"
 
 export class $DeferredRegister$Items extends $DeferredRegister<($Item)> {
@@ -373,9 +373,9 @@ import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
 import {$HolderSet$Direct} from "net.minecraft.core.HolderSet$Direct"
-import {$TagKey, $TagKey$$Type} from "net.minecraft.tags.TagKey"
 import {$Either} from "com.mojang.datafixers.util.Either"
 import {$Function$$Type} from "java.util.function.Function"
+import {$TagKey, $TagKey$$Type} from "net.minecraft.tags.TagKey"
 import {$HolderSet, $HolderSet$$Interface} from "net.minecraft.core.HolderSet"
 import {$Stream} from "java.util.stream.Stream"
 import {$HolderSetType} from "net.neoforged.neoforge.registries.holdersets.HolderSetType"
@@ -427,8 +427,8 @@ import {$Codec$$Type} from "com.mojang.serialization.Codec"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$ICustomHolderSet} from "net.neoforged.neoforge.registries.holdersets.ICustomHolderSet"
 import {$ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
-import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$HolderSetType$$Interface} from "net.neoforged.neoforge.registries.holdersets.HolderSetType"
+import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$Holder$$Type} from "net.minecraft.core.Holder"
 
 export class $AnyHolderSet$Type implements $HolderSetType$$Interface {
@@ -552,11 +552,11 @@ export type $ClearCallback$$Type<T> = ((arg0: $Registry<(T)>, arg1: boolean) => 
  */
 export type $ClearCallback$$Original<T> = $ClearCallback<(T)>;}
 declare module "net.neoforged.neoforge.registries.datamaps.RegisterDataMapTypesEvent" {
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Map$$Type} from "java.util.Map"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Registry$$Type} from "net.minecraft.core.Registry"
-import {$Event} from "net.neoforged.bus.api.Event"
 import {$DataMapType$$Type} from "net.neoforged.neoforge.registries.datamaps.DataMapType"
+import {$Event} from "net.neoforged.bus.api.Event"
 import {$ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
 import {$IModBusEvent$$Interface} from "net.neoforged.fml.event.IModBusEvent"
 
@@ -620,8 +620,8 @@ declare module "net.neoforged.neoforge.registries.RegisterEvent" {
 import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Registry, $Registry$$Type} from "net.minecraft.core.Registry"
 import {$Supplier$$Type} from "java.util.function.Supplier"
-import {$RegisterEvent$RegisterHelper$$Type} from "net.neoforged.neoforge.registries.RegisterEvent$RegisterHelper"
 import {$Event} from "net.neoforged.bus.api.Event"
+import {$RegisterEvent$RegisterHelper$$Type} from "net.neoforged.neoforge.registries.RegisterEvent$RegisterHelper"
 import {$ResourceKey, $ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
 import {$IModBusEvent$$Interface} from "net.neoforged.fml.event.IModBusEvent"
 import {$Consumer$$Type} from "java.util.function.Consumer"
@@ -681,7 +681,7 @@ public "newId"(): integer
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $IdMappingEvent$IdRemapping$$Type = ({"newId"?: integer, "currId"?: integer}) | ([newId?: integer, currId?: integer]);
+export type $IdMappingEvent$IdRemapping$$Type = ({"currId"?: integer, "newId"?: integer}) | ([currId?: integer, newId?: integer]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -693,8 +693,8 @@ import {$Codec$$Type} from "com.mojang.serialization.Codec"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$ICustomHolderSet} from "net.neoforged.neoforge.registries.holdersets.ICustomHolderSet"
 import {$ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
-import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$HolderSetType$$Interface} from "net.neoforged.neoforge.registries.holdersets.HolderSetType"
+import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$Holder$$Type} from "net.minecraft.core.Holder"
 
 export class $OrHolderSet$Type implements $HolderSetType$$Interface {
@@ -720,9 +720,9 @@ import {$HolderOwner$$Type} from "net.minecraft.core.HolderOwner"
 import {$Holder, $Holder$$Interface} from "net.minecraft.core.Holder"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Registry$$Type} from "net.minecraft.core.Registry"
+import {$Either} from "com.mojang.datafixers.util.Either"
 import {$TagKey} from "net.minecraft.tags.TagKey"
 import {$Supplier$$Interface} from "java.util.function.Supplier"
-import {$Either} from "com.mojang.datafixers.util.Either"
 import {$DataMapType$$Type} from "net.neoforged.neoforge.registries.datamaps.DataMapType"
 import {$ResourceKey, $ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
 import {$Stream} from "java.util.stream.Stream"
@@ -741,8 +741,8 @@ public "getKey"(): $ResourceKey<(R)>
 public "kind"(): $Holder$Kind
 public "getId"(): $ResourceLocation
 public static "create"<R, T>(arg0: $ResourceKey$$Type<($Registry<(R)>)>, arg1: $ResourceLocation$$Type): $DeferredHolder<(R), (T)>
-public static "create"<R, T>(arg0: $ResourceKey$$Type<(R)>): $DeferredHolder<(R), (T)>
 public static "create"<R, T>(arg0: $ResourceLocation$$Type, arg1: $ResourceLocation$$Type): $DeferredHolder<(R), (T)>
+public static "create"<R, T>(arg0: $ResourceKey$$Type<(R)>): $DeferredHolder<(R), (T)>
 public "unwrap"(): $Either<($ResourceKey<(R)>), (R)>
 public "is"(arg0: $ResourceLocation$$Type): boolean
 public "test"(arg0: $Predicate$$Type<($ResourceKey<(R)>)>): boolean
@@ -773,8 +773,8 @@ export type $DeferredHolder$$Type<R, T> = ($DeferredHolder<(R), (T)>);
  */
 export type $DeferredHolder$$Original<R, T> = $DeferredHolder<(R), (T)>;}
 declare module "net.neoforged.neoforge.registries.DeferredRegister$DataComponents" {
-import {$DataComponentType$Builder$$Type} from "net.minecraft.core.component.DataComponentType$Builder"
 import {$UnaryOperator$$Type} from "java.util.function.UnaryOperator"
+import {$DataComponentType$Builder$$Type} from "net.minecraft.core.component.DataComponentType$Builder"
 import {$DeferredRegister} from "net.neoforged.neoforge.registries.DeferredRegister"
 import {$DataComponentType} from "net.minecraft.core.component.DataComponentType"
 import {$DeferredHolder} from "net.neoforged.neoforge.registries.DeferredHolder"
@@ -817,8 +817,8 @@ import {$Codec$$Type} from "com.mojang.serialization.Codec"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$ICustomHolderSet} from "net.neoforged.neoforge.registries.holdersets.ICustomHolderSet"
 import {$ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
-import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$HolderSetType$$Interface} from "net.neoforged.neoforge.registries.holdersets.HolderSetType"
+import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$Holder$$Type} from "net.minecraft.core.Holder"
 
 export class $NotHolderSet$Type implements $HolderSetType$$Interface {
@@ -837,11 +837,11 @@ export type $NotHolderSet$Type$$Type = ($NotHolderSet$Type);
  */
 export type $NotHolderSet$Type$$Original = $NotHolderSet$Type;}
 declare module "net.neoforged.neoforge.registries.DeferredRegister" {
-import {$DeferredRegister$DataComponents} from "net.neoforged.neoforge.registries.DeferredRegister$DataComponents"
 import {$Collection} from "java.util.Collection"
+import {$DeferredRegister$DataComponents} from "net.neoforged.neoforge.registries.DeferredRegister$DataComponents"
 import {$RegistryBuilder$$Type} from "net.neoforged.neoforge.registries.RegistryBuilder"
-import {$DataComponentType$$Type} from "net.minecraft.core.component.DataComponentType"
 import {$DeferredRegister$Blocks} from "net.neoforged.neoforge.registries.DeferredRegister$Blocks"
+import {$DataComponentType$$Type} from "net.minecraft.core.component.DataComponentType"
 import {$DeferredHolder} from "net.neoforged.neoforge.registries.DeferredHolder"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$IEventBus$$Type} from "net.neoforged.bus.api.IEventBus"
@@ -867,8 +867,8 @@ public static "createBlocks"(arg0: StringJS): $DeferredRegister$Blocks
 public static "createDataComponents"(arg0: StringJS): $DeferredRegister$DataComponents
 public static "createDataComponents"(arg0: $ResourceKey$$Type<($Registry<($DataComponentType<(never)>)>)>, arg1: StringJS): $DeferredRegister$DataComponents
 public "getRegistryName"(): $ResourceLocation
-public "addAlias"(arg0: $ResourceLocation$$Type, arg1: $ResourceLocation$$Type): void
 public "getNamespace"(): StringJS
+public "addAlias"(arg0: $ResourceLocation$$Type, arg1: $ResourceLocation$$Type): void
 public "register"<I>(arg0: StringJS, arg1: $Function$$Type<($ResourceLocation), (I)>): $DeferredHolder<(T), (I)>
 public "register"<I>(arg0: StringJS, arg1: $Supplier$$Type<(I)>): $DeferredHolder<(T), (I)>
 public "register"(arg0: $IEventBus$$Type): void

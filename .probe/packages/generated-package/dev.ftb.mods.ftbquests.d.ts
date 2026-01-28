@@ -2,13 +2,13 @@ declare module "dev.ftb.mods.ftbquests.item.CustomIconItem" {
 import {$Icon} from "dev.ftb.mods.ftblibrary.icon.Icon"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$List$$Type} from "java.util.List"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
@@ -46,13 +46,13 @@ export type $CustomIconItem$$Original = $CustomIconItem;}
 declare module "dev.ftb.mods.ftbquests.item.QuestBookItem" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$List$$Type} from "java.util.List"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
@@ -83,16 +83,16 @@ export type $QuestBookItem$$Type = ($QuestBookItem);
 export type $QuestBookItem$$Original = $QuestBookItem;}
 declare module "dev.ftb.mods.ftbquests.block.StageBarrierBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
-import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$QuestBarrierBlockEntity} from "dev.ftb.mods.ftbquests.block.entity.QuestBarrierBlockEntity"
+import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$BlockBehaviour$Properties, $BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$QuestBarrierBlock} from "dev.ftb.mods.ftbquests.block.QuestBarrierBlock"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -136,8 +136,8 @@ export type $StageBarrierBlock$$Type = ($StageBarrierBlock);
 export type $StageBarrierBlock$$Original = $StageBarrierBlock;}
 declare module "dev.ftb.mods.ftbquests.quest.reward.RewardType" {
 import {$Reward} from "dev.ftb.mods.ftbquests.quest.reward.Reward"
-import {$Icon, $Icon$$Type} from "dev.ftb.mods.ftblibrary.icon.Icon"
 import {$RewardType$Provider$$Type} from "dev.ftb.mods.ftbquests.quest.reward.RewardType$Provider"
+import {$Icon, $Icon$$Type} from "dev.ftb.mods.ftblibrary.icon.Icon"
 import {$CompoundTag} from "net.minecraft.nbt.CompoundTag"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Quest$$Type} from "dev.ftb.mods.ftbquests.quest.Quest"
@@ -148,19 +148,19 @@ import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component
 export class $RewardType {
  "intId": integer
 
-constructor(typeId: $ResourceLocation$$Type, provider: $RewardType$Provider$$Type, iconSupplier: $Supplier$$Type<($Icon$$Type)>)
 constructor(typeId: $ResourceLocation$$Type, provider: $RewardType$Provider$$Type, iconSupplier: $Supplier$$Type<($Icon$$Type)>, availableByDefault: boolean)
+constructor(typeId: $ResourceLocation$$Type, provider: $RewardType$Provider$$Type, iconSupplier: $Supplier$$Type<($Icon$$Type)>)
 
 public "getTypeId"(): $ResourceLocation
 public "getIconSupplier"(): $Icon
 public "createReward"(id: long, quest: $Quest$$Type): $Reward
 public static "createReward"(id: long, quest: $Quest$$Type, typeId: StringJS): $Reward
+public "makeExtraNBT"(): $CompoundTag
 public "setGuiProvider"(p: $RewardType$GuiProvider$$Type): $RewardType
 public "getGuiProvider"(): $RewardType$GuiProvider
-public "makeExtraNBT"(): $CompoundTag
 public "getTypeForNBT"(): StringJS
-public "getExcludeFromListRewards"(): boolean
 public "setExcludeFromListRewards"(v: boolean): $RewardType
+public "getExcludeFromListRewards"(): boolean
 public "getDisplayName"(): $Component
 public "setDisplayName"(name: $Component$$Type): $RewardType
 get "typeId"(): $ResourceLocation
@@ -168,8 +168,8 @@ get "iconSupplier"(): $Icon
 set "guiProvider"(value: $RewardType$GuiProvider$$Type)
 get "guiProvider"(): $RewardType$GuiProvider
 get "typeForNBT"(): StringJS
-get "excludeFromListRewards"(): boolean
 set "excludeFromListRewards"(value: boolean)
+get "excludeFromListRewards"(): boolean
 get "displayName"(): $Component
 set "displayName"(value: $Component$$Type)
 }
@@ -185,10 +185,10 @@ export type $RewardType$$Original = $RewardType;}
 declare module "dev.ftb.mods.ftbquests.quest.loot.LootCrate" {
 import {$ConfigGroup$$Type} from "dev.ftb.mods.ftblibrary.config.ConfigGroup"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
-import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Collection} from "java.util.Collection"
-import {$Map} from "java.util.Map"
 import {$Color4I} from "dev.ftb.mods.ftblibrary.icon.Color4I"
+import {$Map} from "java.util.Map"
+import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$EntityWeight} from "dev.ftb.mods.ftbquests.quest.loot.EntityWeight"
 import {$FriendlyByteBuf$$Type} from "net.minecraft.network.FriendlyByteBuf"
 import {$RewardTable, $RewardTable$$Type} from "dev.ftb.mods.ftbquests.quest.loot.RewardTable"
@@ -198,23 +198,23 @@ constructor(table: $RewardTable$$Type, initFromTable: boolean)
 
 public "getItemName"(): StringJS
 public "getDrops"(): $EntityWeight
-public "isGlow"(): boolean
-public "readData"(nbt: $CompoundTag$$Type): void
-public "writeData"(nbt: $CompoundTag$$Type): void
 public "getStringID"(): StringJS
 public static "getLootCrates"(isClient: boolean): $Map<(StringJS), ($LootCrate)>
 public static "allCrateStacks"(isClientSide: boolean): $Collection<($ItemStack)>
 public "writeNetData"(data: $FriendlyByteBuf$$Type): void
 public "readNetData"(data: $FriendlyByteBuf$$Type): void
 public "fillConfigGroup"(config: $ConfigGroup$$Type): void
-public "getTable"(): $RewardTable
+public "readData"(nbt: $CompoundTag$$Type): void
+public "writeData"(nbt: $CompoundTag$$Type): void
+public "isGlow"(): boolean
 public "initFromTable"(): void
+public "getTable"(): $RewardTable
 public "getColor"(): $Color4I
 public "createStack"(): $ItemStack
 get "itemName"(): StringJS
 get "drops"(): $EntityWeight
-get "glow"(): boolean
 get "stringID"(): StringJS
+get "glow"(): boolean
 get "table"(): $RewardTable
 get "color"(): $Color4I
 }
@@ -238,18 +238,18 @@ import {$TeamData, $TeamData$$Type} from "dev.ftb.mods.ftbquests.quest.TeamData"
 export class $QuestProgressEventData<T extends $QuestObject> {
 constructor(date: $Date$$Type, teamData: $TeamData$$Type, object: T, online: $Collection$$Type<($ServerPlayer$$Type)>, notified: $Collection$$Type<($ServerPlayer$$Type)>)
 
-public "getNotifiedPlayers"(): $List<($ServerPlayer)>
 public "getOnlineMembers"(): $List<($ServerPlayer)>
 public "getTeamData"(): $TeamData
 public "withObject"<N extends $QuestObject>(o: N): $QuestProgressEventData<(N)>
 public "notifyPlayers"(id: long): void
+public "getNotifiedPlayers"(): $List<($ServerPlayer)>
 public "setCompleted"(id: long): void
 public "getObject"(): T
 public "getTime"(): $Date
 public "setStarted"(id: long): void
-get "notifiedPlayers"(): $List<($ServerPlayer)>
 get "onlineMembers"(): $List<($ServerPlayer)>
 get "teamData"(): $TeamData
+get "notifiedPlayers"(): $List<($ServerPlayer)>
 set "completed"(value: long)
 get "object"(): T
 get "time"(): $Date
@@ -266,9 +266,9 @@ export type $QuestProgressEventData$$Type<T> = ($QuestProgressEventData<(T)>);
 export type $QuestProgressEventData$$Original<T> = $QuestProgressEventData<(T)>;}
 declare module "dev.ftb.mods.ftbquests.block.QuestBarrierBlock" {
 import {$BaseEntityBlock} from "net.minecraft.world.level.block.BaseEntityBlock"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
-import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$QuestBarrierBlockEntity} from "dev.ftb.mods.ftbquests.block.entity.QuestBarrierBlockEntity"
+import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
@@ -276,8 +276,8 @@ import {$BlockBehaviour$Properties, $BlockBehaviour$Properties$$Type} from "net.
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
@@ -315,10 +315,10 @@ static readonly "PROPS": $BlockBehaviour$Properties
 
 constructor(props: $BlockBehaviour$Properties$$Type)
 
-public "skipRendering"(state: $BlockState$$Type, state2: $BlockState$$Type, dir: $Direction$$Type): boolean
-public "setPlacedBy"(level: $Level$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type, entity: $LivingEntity$$Type, stack: $ItemStack$$Type): void
 public "propagatesSkylightDown"(state: $BlockState$$Type, bg: $BlockGetter$$Type, pos: $BlockPos$$Type): boolean
 public "getShadeBrightness"(blockState: $BlockState$$Type, blockGetter: $BlockGetter$$Type, blockPos: $BlockPos$$Type): float
+public "skipRendering"(state: $BlockState$$Type, state2: $BlockState$$Type, dir: $Direction$$Type): boolean
+public "setPlacedBy"(level: $Level$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type, entity: $LivingEntity$$Type, stack: $ItemStack$$Type): void
 public "getVisualShape"(state: $BlockState$$Type, blockGetter: $BlockGetter$$Type, pos: $BlockPos$$Type, ctx: $CollisionContext$$Type): $VoxelShape
 public "getTicker"<T extends $BlockEntity>(level: $Level$$Type, blockState: $BlockState$$Type, blockEntityType: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
 public "newBlockEntity"(blockPos: $BlockPos$$Type, blockState: $BlockState$$Type): $BlockEntity
@@ -340,8 +340,8 @@ export type $QuestBarrierBlock$$Original = $QuestBarrierBlock;}
 declare module "dev.ftb.mods.ftbquests.quest.translation.TranslationTable" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
-import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$Optional} from "java.util.Optional"
+import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$List, $List$$Type} from "java.util.List"
 
 export class $TranslationTable {
@@ -397,8 +397,8 @@ import {$TeamData$$Type} from "dev.ftb.mods.ftbquests.quest.TeamData"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$ProgressChange$$Type} from "dev.ftb.mods.ftbquests.util.ProgressChange"
 import {$Color4I} from "dev.ftb.mods.ftblibrary.icon.Color4I"
-import {$RegistryFriendlyByteBuf$$Type} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Quest} from "dev.ftb.mods.ftbquests.quest.Quest"
+import {$RegistryFriendlyByteBuf$$Type} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$QuestProgressEventData$$Type} from "dev.ftb.mods.ftbquests.events.QuestProgressEventData"
 import {$QuestObjectBase} from "dev.ftb.mods.ftbquests.quest.QuestObjectBase"
 
@@ -407,10 +407,8 @@ readonly "id": long
 
 constructor(id: long)
 
-public "readData"(nbt: $CompoundTag$$Type, provider: $HolderLookup$Provider$$Type): void
-public "writeData"(nbt: $CompoundTag$$Type, provider: $HolderLookup$Provider$$Type): void
-public "getRelativeProgressFromChildren"(arg0: $TeamData$$Type): integer
 public static "getRelativeProgressFromChildren"(progressSum: integer, count: integer): integer
+public "getRelativeProgressFromChildren"(arg0: $TeamData$$Type): integer
 public "onStarted"(data: $QuestProgressEventData$$Type<(never)>): void
 public "onCompleted"(data: $QuestProgressEventData$$Type<(never)>): void
 public "writeNetData"(buffer: $RegistryFriendlyByteBuf$$Type): void
@@ -420,11 +418,13 @@ public "hasUnclaimedRewardsRaw"(teamData: $TeamData$$Type, player: $UUID$$Type):
 public "forceProgress"(teamData: $TeamData$$Type, progressChange: $ProgressChange$$Type): void
 public "cacheProgress"(): boolean
 public "isSearchable"(data: $TeamData$$Type): boolean
-public "getProgressColor"(data: $TeamData$$Type, dim: boolean): $Color4I
 public "getProgressColor"(data: $TeamData$$Type): $Color4I
+public "getProgressColor"(data: $TeamData$$Type, dim: boolean): $Color4I
 public "isCompletedRaw"(data: $TeamData$$Type): boolean
 public "isOptionalForProgression"(teamData: $TeamData$$Type): boolean
 public "getRelatedQuest"(): $Quest
+public "readData"(nbt: $CompoundTag$$Type, provider: $HolderLookup$Provider$$Type): void
+public "writeData"(nbt: $CompoundTag$$Type, provider: $HolderLookup$Provider$$Type): void
 public "getChildren"(): $Collection<($QuestObject)>
 public "isVisible"(data: $TeamData$$Type): boolean
 get "relatedQuest"(): $Quest
@@ -448,14 +448,14 @@ import {$PositionedIngredient} from "dev.ftb.mods.ftblibrary.util.client.Positio
 import {$Component} from "net.minecraft.network.chat.Component"
 import {$RewardType} from "dev.ftb.mods.ftbquests.quest.reward.RewardType"
 import {$TooltipList$$Type} from "dev.ftb.mods.ftblibrary.util.TooltipList"
-import {$Quest, $Quest$$Type} from "dev.ftb.mods.ftbquests.quest.Quest"
 import {$BaseQuestFile} from "dev.ftb.mods.ftbquests.quest.BaseQuestFile"
+import {$Quest, $Quest$$Type} from "dev.ftb.mods.ftbquests.quest.Quest"
 import {$Set} from "java.util.Set"
 import {$ConfigGroup, $ConfigGroup$$Type} from "dev.ftb.mods.ftblibrary.config.ConfigGroup"
 import {$Icon} from "dev.ftb.mods.ftblibrary.icon.Icon"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
-import {$Chapter} from "dev.ftb.mods.ftbquests.quest.Chapter"
 import {$QuestObjectType} from "dev.ftb.mods.ftbquests.quest.QuestObjectType"
+import {$Chapter} from "dev.ftb.mods.ftbquests.quest.Chapter"
 import {$Widget$$Type} from "dev.ftb.mods.ftblibrary.ui.Widget"
 import {$TeamData$$Type} from "dev.ftb.mods.ftbquests.quest.TeamData"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
@@ -465,8 +465,8 @@ import {$Button$$Type} from "dev.ftb.mods.ftblibrary.ui.Button"
 import {$RegistryFriendlyByteBuf$$Type} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$RewardAutoClaim} from "dev.ftb.mods.ftbquests.quest.reward.RewardAutoClaim"
 import {$RecipeModHelper$Components} from "dev.ftb.mods.ftbquests.integration.RecipeModHelper$Components"
-import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
 import {$QuestObjectBase} from "dev.ftb.mods.ftbquests.quest.QuestObjectBase"
+import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 
 export class $Reward extends $QuestObjectBase {
@@ -476,8 +476,6 @@ constructor(id: long, q: $Quest$$Type)
 
 public "addMouseOverText"(list: $TooltipList$$Type): void
 public "getIngredient"(widget: $Widget$$Type): $Optional<($PositionedIngredient)>
-public "readData"(nbt: $CompoundTag$$Type, provider: $HolderLookup$Provider$$Type): void
-public "writeData"(nbt: $CompoundTag$$Type, provider: $HolderLookup$Provider$$Type): void
 public "addTitleInMouseOverText"(): boolean
 public "onButtonClicked"(button: $Button$$Type, canClick: boolean): void
 public "getButtonText"(): StringJS
@@ -485,12 +483,12 @@ public "getQuestFile"(): $BaseQuestFile
 public "deleteSelf"(): void
 public "deleteChildren"(): void
 public "getQuest"(): $Quest
-public "ignoreRewardBlocking"(): boolean
 public "writeNetData"(buffer: $RegistryFriendlyByteBuf$$Type): void
 public "readNetData"(buffer: $RegistryFriendlyByteBuf$$Type): void
 public "getParentID"(): long
 public "getAltTitle"(): $Component
 public "getAltIcon"(): $Icon
+public "ignoreRewardBlocking"(): boolean
 public "fillConfigGroup"(config: $ConfigGroup$$Type): void
 public "componentsToRefresh"(): $Set<($RecipeModHelper$Components)>
 public "getQuestChapter"(): $Chapter
@@ -504,6 +502,8 @@ public "automatedClaimPost"(blockEntity: $BlockEntity$$Type, playerId: $UUID$$Ty
 public "isTeamReward"(): boolean
 public "getAutoClaimType"(): $RewardAutoClaim
 public "addAnyProtoTranslations"(tag: $CompoundTag$$Type): void
+public "readData"(nbt: $CompoundTag$$Type, provider: $HolderLookup$Provider$$Type): void
+public "writeData"(nbt: $CompoundTag$$Type, provider: $HolderLookup$Provider$$Type): void
 public "onCreated"(): void
 public "getObjectType"(): $QuestObjectType
 public "claim"(arg0: $ServerPlayer$$Type, arg1: boolean): void
@@ -538,15 +538,15 @@ import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$Optional} from "java.util.Optional"
 import {$QuestObjectType} from "dev.ftb.mods.ftbquests.quest.QuestObjectType"
 import {$Chapter, $Chapter$$Type} from "dev.ftb.mods.ftbquests.quest.Chapter"
-import {$Component} from "net.minecraft.network.chat.Component"
 import {$Movable$$Interface} from "dev.ftb.mods.ftbquests.quest.Movable"
+import {$Component} from "net.minecraft.network.chat.Component"
 import {$TeamData$$Type} from "dev.ftb.mods.ftbquests.quest.TeamData"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$QuestObject} from "dev.ftb.mods.ftbquests.quest.QuestObject"
 import {$GuiGraphics$$Type} from "net.minecraft.client.gui.GuiGraphics"
-import {$BaseQuestFile} from "dev.ftb.mods.ftbquests.quest.BaseQuestFile"
-import {$RegistryFriendlyByteBuf$$Type} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Quest, $Quest$$Type} from "dev.ftb.mods.ftbquests.quest.Quest"
+import {$RegistryFriendlyByteBuf$$Type} from "net.minecraft.network.RegistryFriendlyByteBuf"
+import {$BaseQuestFile} from "dev.ftb.mods.ftbquests.quest.BaseQuestFile"
 import {$Excludable$$Interface} from "dev.ftb.mods.ftbquests.quest.Excludable"
 
 export class $QuestLink extends $QuestObject implements $Movable$$Interface, $Excludable$$Interface {
@@ -555,9 +555,7 @@ readonly "id": long
 constructor(id: long, chapter: $Chapter$$Type, linkId: long)
 
 public "onMoved"(newX: double, newY: double, newChapterId: long): void
-public "linksTo"(quest: $Quest$$Type): boolean
-public "readData"(nbt: $CompoundTag$$Type, provider: $HolderLookup$Provider$$Type): void
-public "writeData"(nbt: $CompoundTag$$Type, provider: $HolderLookup$Provider$$Type): void
+public "isQuestObjectExcluded"(teamData: $TeamData$$Type): boolean
 public "getQuestFile"(): $BaseQuestFile
 public "getRelativeProgressFromChildren"(data: $TeamData$$Type): integer
 public "deleteSelf"(): void
@@ -572,14 +570,16 @@ public "fillConfigGroup"(config: $ConfigGroup$$Type): void
 public "getRelatedQuest"(): $Quest
 public "getMovableID"(): long
 public "initiateMoveClientSide"(to: $Chapter$$Type, x: double, y: double): void
-public "isQuestObjectExcluded"(teamData: $TeamData$$Type): boolean
 public "editedFromGUI"(): void
+public "linksTo"(quest: $Quest$$Type): boolean
+public "readData"(nbt: $CompoundTag$$Type, provider: $HolderLookup$Provider$$Type): void
+public "writeData"(nbt: $CompoundTag$$Type, provider: $HolderLookup$Provider$$Type): void
 public "onCreated"(): void
+public "getShape"(): StringJS
 public "getWidth"(): double
 public "getHeight"(): double
-public "getObjectType"(): $QuestObjectType
-public "getShape"(): StringJS
 public "getY"(): double
+public "getObjectType"(): $QuestObjectType
 public "getX"(): double
 public "isVisible"(data: $TeamData$$Type): boolean
 public "setPosition"(qx: double, qy: double): void
@@ -597,11 +597,11 @@ get "altTitle"(): $Component
 get "altIcon"(): $Icon
 get "relatedQuest"(): $Quest
 get "movableID"(): long
+get "shape"(): StringJS
 get "width"(): double
 get "height"(): double
-get "objectType"(): $QuestObjectType
-get "shape"(): StringJS
 get "y"(): double
+get "objectType"(): $QuestObjectType
 get "x"(): double
 get "alignToCorner"(): boolean
 get "title"(): $Component
@@ -619,8 +619,8 @@ export type $QuestLink$$Original = $QuestLink;}
 declare module "dev.ftb.mods.ftbquests.block.LootCrateOpenerBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BaseEntityBlock} from "net.minecraft.world.level.block.BaseEntityBlock"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$LootCrateOpenerBlockEntity} from "dev.ftb.mods.ftbquests.block.entity.LootCrateOpenerBlockEntity"
 import {$RenderShape} from "net.minecraft.world.level.block.RenderShape"
@@ -728,13 +728,13 @@ declare module "dev.ftb.mods.ftbquests.item.TaskScreenConfiguratorItem" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$Optional} from "java.util.Optional"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$List$$Type} from "java.util.List"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
@@ -777,18 +777,18 @@ import {$ChapterGroup, $ChapterGroup$$Type} from "dev.ftb.mods.ftbquests.quest.C
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$Collection} from "java.util.Collection"
 import {$Optional} from "java.util.Optional"
-import {$UUID$$Type} from "java.util.UUID"
 import {$ProgressionMode} from "dev.ftb.mods.ftbquests.quest.ProgressionMode"
+import {$UUID$$Type} from "java.util.UUID"
 import {$QuestObjectType} from "dev.ftb.mods.ftbquests.quest.QuestObjectType"
 import {$List, $List$$Type} from "java.util.List"
-import {$Component} from "net.minecraft.network.chat.Component"
 import {$Movable} from "dev.ftb.mods.ftbquests.quest.Movable"
+import {$Component} from "net.minecraft.network.chat.Component"
 import {$TeamData$$Type} from "dev.ftb.mods.ftbquests.quest.TeamData"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$QuestObject} from "dev.ftb.mods.ftbquests.quest.QuestObject"
 import {$QuestLink, $QuestLink$$Type} from "dev.ftb.mods.ftbquests.quest.QuestLink"
-import {$RegistryFriendlyByteBuf$$Type} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Quest, $Quest$$Type} from "dev.ftb.mods.ftbquests.quest.Quest"
+import {$RegistryFriendlyByteBuf$$Type} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$BaseQuestFile, $BaseQuestFile$$Type} from "dev.ftb.mods.ftbquests.quest.BaseQuestFile"
 import {$QuestProgressEventData$$Type} from "dev.ftb.mods.ftbquests.events.QuestProgressEventData"
 import {$ChapterImage, $ChapterImage$$Type} from "dev.ftb.mods.ftbquests.quest.ChapterImage"
@@ -800,9 +800,6 @@ readonly "id": long
 constructor(id: long, file: $BaseQuestFile$$Type, group: $ChapterGroup$$Type)
 constructor(id: long, file: $BaseQuestFile$$Type, group: $ChapterGroup$$Type, filename: StringJS)
 
-public "hasGroup"(): boolean
-public "readData"(nbt: $CompoundTag$$Type, provider: $HolderLookup$Provider$$Type): void
-public "writeData"(nbt: $CompoundTag$$Type, provider: $HolderLookup$Provider$$Type): void
 public "consumeItems"(): boolean
 public "getQuestFile"(): $BaseQuestFile
 public "getRelativeProgressFromChildren"(data: $TeamData$$Type): integer
@@ -813,18 +810,18 @@ public "deleteChildren"(): void
 public "clearCachedData"(): void
 public "getQuests"(): $List<($Quest)>
 public "getQuestLinks"(): $List<($QuestLink)>
-public "addImage"(image: $ChapterImage$$Type): void
-public "getRawSubtitle"(): $List<(StringJS)>
-public "setRawSubtitle"(rawSubtitle: $List$$Type<(StringJS)>): void
-public "getDefaultQuestSize"(): double
-public "isDefaultRepeatable"(): boolean
-public "isRequireSequentialTasks"(): boolean
 public "writeNetData"(buffer: $RegistryFriendlyByteBuf$$Type): void
 public "readNetData"(buffer: $RegistryFriendlyByteBuf$$Type): void
 public "addQuest"(quest: $Quest$$Type): void
 public "addQuestLink"(link: $QuestLink$$Type): void
 public "getAltTitle"(): $Component
 public "getAltIcon"(): $Icon
+public "addImage"(image: $ChapterImage$$Type): void
+public "getRawSubtitle"(): $List<(StringJS)>
+public "setRawSubtitle"(rawSubtitle: $List$$Type<(StringJS)>): void
+public "getDefaultQuestSize"(): double
+public "isDefaultRepeatable"(): boolean
+public "isRequireSequentialTasks"(): boolean
 public "fillConfigGroup"(config: $ConfigGroup$$Type): void
 public "getDefaultQuestShape"(): StringJS
 public "hasUnclaimedRewardsRaw"(teamData: $TeamData$$Type, player: $UUID$$Type): boolean
@@ -845,24 +842,27 @@ public "hasAnyVisibleChildren"(): boolean
 public "getAutofocus"(): $Optional<($Movable)>
 public "setAutofocus"(id: long): void
 public "isAutofocus"(id: long): boolean
+public "readData"(nbt: $CompoundTag$$Type, provider: $HolderLookup$Provider$$Type): void
+public "writeData"(nbt: $CompoundTag$$Type, provider: $HolderLookup$Provider$$Type): void
+public "hasGroup"(): boolean
 public "onCreated"(): void
-public "getObjectType"(): $QuestObjectType
 public "getChildren"(): $Collection<($QuestObject)>
+public "getObjectType"(): $QuestObjectType
 public "getPath"(): $Optional<(StringJS)>
 public "getIndex"(): integer
 public "getGroup"(): $ChapterGroup
-public "isVisible"(data: $TeamData$$Type): boolean
 public "getFilename"(): StringJS
+public "isVisible"(data: $TeamData$$Type): boolean
 get "questFile"(): $BaseQuestFile
 get "quests"(): $List<($Quest)>
 get "questLinks"(): $List<($QuestLink)>
+get "altTitle"(): $Component
+get "altIcon"(): $Icon
 get "rawSubtitle"(): $List<(StringJS)>
 set "rawSubtitle"(value: $List$$Type<(StringJS)>)
 get "defaultQuestSize"(): double
 get "defaultRepeatable"(): boolean
 get "requireSequentialTasks"(): boolean
-get "altTitle"(): $Component
-get "altIcon"(): $Icon
 get "defaultQuestShape"(): StringJS
 get "progressionMode"(): $ProgressionMode
 get "questChapter"(): $Chapter
@@ -874,8 +874,8 @@ get "hideTextUntilComplete"(): boolean
 get "images"(): $List<($ChapterImage)>
 get "autofocus"(): $Optional<($Movable)>
 set "autofocus"(value: long)
-get "objectType"(): $QuestObjectType
 get "children"(): $Collection<($QuestObject)>
+get "objectType"(): $QuestObjectType
 get "path"(): $Optional<(StringJS)>
 get "index"(): integer
 get "group"(): $ChapterGroup
@@ -911,12 +911,12 @@ export type $RecipeModHelper$Components$$Type = (("quests") | ("loot_crates"));
 export type $RecipeModHelper$Components$$Original = $RecipeModHelper$Components;}
 declare module "dev.ftb.mods.ftbquests.quest.Quest" {
 import {$Reward, $Reward$$Type} from "dev.ftb.mods.ftbquests.quest.reward.Reward"
-import {$UUID$$Type} from "java.util.UUID"
 import {$ProgressionMode} from "dev.ftb.mods.ftbquests.quest.ProgressionMode"
+import {$UUID$$Type} from "java.util.UUID"
 import {$List, $List$$Type} from "java.util.List"
 import {$Tristate} from "dev.ftb.mods.ftblibrary.config.Tristate"
-import {$Component} from "net.minecraft.network.chat.Component"
 import {$Movable$$Interface} from "dev.ftb.mods.ftbquests.quest.Movable"
+import {$Component} from "net.minecraft.network.chat.Component"
 import {$QuestObject, $QuestObject$$Type} from "dev.ftb.mods.ftbquests.quest.QuestObject"
 import {$BaseQuestFile} from "dev.ftb.mods.ftbquests.quest.BaseQuestFile"
 import {$Set} from "java.util.Set"
@@ -925,16 +925,16 @@ import {$ConfigGroup$$Type} from "dev.ftb.mods.ftblibrary.config.ConfigGroup"
 import {$Icon} from "dev.ftb.mods.ftblibrary.icon.Icon"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$Collection} from "java.util.Collection"
-import {$QuestObjectType} from "dev.ftb.mods.ftbquests.quest.QuestObjectType"
 import {$Pair} from "com.mojang.datafixers.util.Pair"
+import {$QuestObjectType} from "dev.ftb.mods.ftbquests.quest.QuestObjectType"
 import {$Chapter, $Chapter$$Type} from "dev.ftb.mods.ftbquests.quest.Chapter"
 import {$TeamData$$Type} from "dev.ftb.mods.ftbquests.quest.TeamData"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$ProgressChange$$Type} from "dev.ftb.mods.ftbquests.util.ProgressChange"
 import {$GuiGraphics$$Type} from "net.minecraft.client.gui.GuiGraphics"
 import {$RegistryFriendlyByteBuf$$Type} from "net.minecraft.network.RegistryFriendlyByteBuf"
-import {$Task, $Task$$Type} from "dev.ftb.mods.ftbquests.quest.task.Task"
 import {$RecipeModHelper$Components} from "dev.ftb.mods.ftbquests.integration.RecipeModHelper$Components"
+import {$Task, $Task$$Type} from "dev.ftb.mods.ftbquests.quest.task.Task"
 import {$Excludable$$Interface} from "dev.ftb.mods.ftbquests.quest.Excludable"
 import {$QuestProgressEventData$$Type} from "dev.ftb.mods.ftbquests.events.QuestProgressEventData"
 
@@ -946,10 +946,7 @@ constructor(id: long, chapter: $Chapter$$Type)
 
 public "setX"(x: double): void
 public "onMoved"(newX: double, newY: double, newChapterId: long): void
-public "getSubtitle"(): $Component
-public "getTasks"(): $Collection<($Task)>
-public "readData"(nbt: $CompoundTag$$Type, provider: $HolderLookup$Provider$$Type): void
-public "writeData"(nbt: $CompoundTag$$Type, provider: $HolderLookup$Provider$$Type): void
+public "isQuestObjectExcluded"(teamData: $TeamData$$Type): boolean
 public "isExclusiveQuest"(): boolean
 public "moveTaskLeft"(task: $Task$$Type): void
 public "moveTaskRight"(task: $Task$$Type): void
@@ -967,6 +964,11 @@ public "clearCachedData"(): void
 public "writeTasks"(tag: $CompoundTag$$Type, provider: $HolderLookup$Provider$$Type): void
 public "writeRewards"(tag: $CompoundTag$$Type, provider: $HolderLookup$Provider$$Type): void
 public "removeInvalidDependencies"(): void
+public "writeNetData"(buffer: $RegistryFriendlyByteBuf$$Type): void
+public "readNetData"(buffer: $RegistryFriendlyByteBuf$$Type): void
+public "getParentID"(): long
+public "getAltTitle"(): $Component
+public "getAltIcon"(): $Icon
 public "hideDetailsUntilStartable"(): boolean
 public "ignoreRewardBlocking"(): boolean
 public "getTasksAsList"(): $List<($Task)>
@@ -982,11 +984,6 @@ public "canBeRepeated"(): boolean
 public "getRawDescription"(): $List<(StringJS)>
 public "setRawDescription"(rawDescription: $List$$Type<(StringJS)>): void
 public "getRequireSequentialTasks"(): boolean
-public "writeNetData"(buffer: $RegistryFriendlyByteBuf$$Type): void
-public "readNetData"(buffer: $RegistryFriendlyByteBuf$$Type): void
-public "getParentID"(): long
-public "getAltTitle"(): $Component
-public "getAltIcon"(): $Icon
 public "fillConfigGroup"(config: $ConfigGroup$$Type): void
 public "componentsToRefresh"(): $Set<($RecipeModHelper$Components)>
 public "hasUnclaimedRewardsRaw"(teamData: $TeamData$$Type, player: $UUID$$Type): boolean
@@ -1018,22 +1015,25 @@ public "setTaskList"(tasks: $List$$Type<($Task$$Type)>): void
 public "setRewardList"(rewards: $List$$Type<($Reward$$Type)>): void
 public "getRepeatCooldown"(): integer
 public "buildDescriptionIndex"(): $List<($Pair<(integer), (integer)>)>
-public "isQuestObjectExcluded"(teamData: $TeamData$$Type): boolean
 public "editedFromGUI"(): void
+public "readData"(nbt: $CompoundTag$$Type, provider: $HolderLookup$Provider$$Type): void
+public "writeData"(nbt: $CompoundTag$$Type, provider: $HolderLookup$Provider$$Type): void
+public "getTasks"(): $Collection<($Task)>
+public "getSubtitle"(): $Component
 public "onCreated"(): void
+public "getShape"(): StringJS
 public "getWidth"(): double
 public "getHeight"(): double
-public "setSize"(size: double): void
-public "getObjectType"(): $QuestObjectType
 public "getChildren"(): $Collection<($QuestObject)>
-public "getShape"(): StringJS
 public "getDescription"(): $List<($Component)>
 public "getY"(): double
+public "setSize"(size: double): void
+public "getObjectType"(): $QuestObjectType
 public "getSize"(): double
 public "addDependency"(object: $QuestObject$$Type): void
+public "isOptional"(): boolean
 public "addTask"(task: $Task$$Type): void
 public "getX"(): double
-public "isOptional"(): boolean
 public "isVisible"(data: $TeamData$$Type): boolean
 public "setY"(y: double): void
 public "copyToClipboard"(): void
@@ -1045,12 +1045,13 @@ public "getTitle"(): $Component
 public "getRotation"(): double
 public "getId"(): long
 set "x"(value: double)
-get "subtitle"(): $Component
-get "tasks"(): $Collection<($Task)>
 get "exclusiveQuest"(): boolean
 get "iconScale"(): double
 get "questFile"(): $BaseQuestFile
 get "chapter"(): $Chapter
+get "parentID"(): long
+get "altTitle"(): $Component
+get "altIcon"(): $Icon
 get "tasksAsList"(): $List<($Task)>
 get "minRequiredDependencies"(): integer
 get "guidePage"(): StringJS
@@ -1061,9 +1062,6 @@ get "minWidth"(): integer
 get "rawDescription"(): $List<(StringJS)>
 set "rawDescription"(value: $List$$Type<(StringJS)>)
 get "requireSequentialTasks"(): boolean
-get "parentID"(): long
-get "altTitle"(): $Component
-get "altIcon"(): $Icon
 get "progressionMode"(): $ProgressionMode
 get "questChapter"(): $Chapter
 get "relatedQuest"(): $Quest
@@ -1072,17 +1070,19 @@ get "movableID"(): long
 set "taskList"(value: $List$$Type<($Task$$Type)>)
 set "rewardList"(value: $List$$Type<($Reward$$Type)>)
 get "repeatCooldown"(): integer
+get "tasks"(): $Collection<($Task)>
+get "subtitle"(): $Component
+get "shape"(): StringJS
 get "width"(): double
 get "height"(): double
-set "size"(value: double)
-get "objectType"(): $QuestObjectType
 get "children"(): $Collection<($QuestObject)>
-get "shape"(): StringJS
 get "description"(): $List<($Component)>
 get "y"(): double
+set "size"(value: double)
+get "objectType"(): $QuestObjectType
 get "size"(): double
-get "x"(): double
 get "optional"(): boolean
+get "x"(): double
 set "y"(value: double)
 get "rewards"(): $Collection<($Reward)>
 get "alignToCorner"(): boolean
@@ -1103,9 +1103,9 @@ import {$ConfigGroup$$Type} from "dev.ftb.mods.ftblibrary.config.ConfigGroup"
 import {$Icon} from "dev.ftb.mods.ftblibrary.icon.Icon"
 import {$Collection} from "java.util.Collection"
 import {$QuestObjectType} from "dev.ftb.mods.ftbquests.quest.QuestObjectType"
+import {$Comparator$$Type} from "java.util.Comparator"
 import {$UUID$$Type} from "java.util.UUID"
 import {$Chapter, $Chapter$$Type} from "dev.ftb.mods.ftbquests.quest.Chapter"
-import {$Comparator$$Type} from "java.util.Comparator"
 import {$List} from "java.util.List"
 import {$Component} from "net.minecraft.network.chat.Component"
 import {$TeamData$$Type} from "dev.ftb.mods.ftbquests.quest.TeamData"
@@ -1142,8 +1142,8 @@ public "isLastGroup"(): boolean
 public "toggleCollapsed"(): void
 public "isGuiCollapsed"(): boolean
 public "onCreated"(): void
-public "getObjectType"(): $QuestObjectType
 public "getChildren"(): $Collection<($QuestObject)>
+public "getObjectType"(): $QuestObjectType
 public "getFile"(): $BaseQuestFile
 public "isVisible"(data: $TeamData$$Type): boolean
 get "questFile"(): $BaseQuestFile
@@ -1154,8 +1154,8 @@ get "altIcon"(): $Icon
 get "firstGroup"(): boolean
 get "lastGroup"(): boolean
 get "guiCollapsed"(): boolean
-get "objectType"(): $QuestObjectType
 get "children"(): $Collection<($QuestObject)>
+get "objectType"(): $QuestObjectType
 get "file"(): $BaseQuestFile
 }
 /**
@@ -1198,9 +1198,9 @@ import {$Optional} from "java.util.Optional"
 import {$BaseQuestFile$$Type} from "dev.ftb.mods.ftbquests.quest.BaseQuestFile"
 import {$TranslationTable$$Type} from "dev.ftb.mods.ftbquests.quest.translation.TranslationTable"
 import {$List, $List$$Type} from "java.util.List"
-import {$QuestObjectBase$$Type} from "dev.ftb.mods.ftbquests.quest.QuestObjectBase"
 import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
 import {$Path$$Type} from "java.nio.file.Path"
+import {$QuestObjectBase$$Type} from "dev.ftb.mods.ftbquests.quest.QuestObjectBase"
 import {$TranslationKey$$Type} from "dev.ftb.mods.ftbquests.quest.translation.TranslationKey"
 
 export class $TranslationManager {
@@ -1208,19 +1208,19 @@ static readonly "DEFAULT_FALLBACK_LOCALE": StringJS
 
 constructor()
 
-public "syncTableFromServer"(locale: StringJS, table: $TranslationTable$$Type): void
-public static "syncTable"(player: $ServerPlayer$$Type, language: StringJS): void
-public "saveToNBT"(langFolder: $Path$$Type, force: boolean): void
 public "loadFromNBT"(file: $BaseQuestFile$$Type, langFolder: $Path$$Type): void
-public "addTranslation"(object: $QuestObjectBase$$Type, locale: StringJS, subKey: $TranslationKey$$Type, message: $List$$Type<(StringJS)>): void
 public "addTranslation"(object: $QuestObjectBase$$Type, locale: StringJS, subKey: $TranslationKey$$Type, message: StringJS): void
+public "addTranslation"(object: $QuestObjectBase$$Type, locale: StringJS, subKey: $TranslationKey$$Type, message: $List$$Type<(StringJS)>): void
 public "addInitialTranslation"(extra: $CompoundTag$$Type, locale: StringJS, translationKey: $TranslationKey$$Type, value: StringJS): void
 public "removeAllTranslations"(obj: $QuestObjectBase$$Type): void
+public "saveToNBT"(langFolder: $Path$$Type, force: boolean): void
 public "sendTranslationsToPlayer"(player: $ServerPlayer$$Type): void
 public "getStringTranslation"(object: $QuestObjectBase$$Type, locale: StringJS, subKey: $TranslationKey$$Type): $Optional<(StringJS)>
 public "getStringListTranslation"(object: $QuestObjectBase$$Type, locale: StringJS, subKey: $TranslationKey$$Type): $Optional<($List<(StringJS)>)>
 public "processInitialTranslation"(extra: $CompoundTag$$Type, object: $QuestObjectBase$$Type): void
 public "sendTableToPlayer"(player: $ServerPlayer$$Type, locale: StringJS): void
+public static "syncTable"(player: $ServerPlayer$$Type, language: StringJS): void
+public "syncTableFromServer"(locale: StringJS, table: $TranslationTable$$Type): void
 public "hasMissingTranslation"(object: $QuestObjectBase$$Type, key: $TranslationKey$$Type): boolean
 }
 /**
@@ -1236,13 +1236,13 @@ declare module "dev.ftb.mods.ftbquests.item.LootCrateItem" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$LootCrate} from "dev.ftb.mods.ftbquests.quest.loot.LootCrate"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$List$$Type} from "java.util.List"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
@@ -1347,10 +1347,10 @@ export class $EntityWeight {
 
 constructor()
 
-public "readData"(nbt: $CompoundTag$$Type): void
-public "writeData"(nbt: $CompoundTag$$Type): void
 public "writeNetData"(data: $FriendlyByteBuf$$Type): void
 public "readNetData"(data: $FriendlyByteBuf$$Type): void
+public "readData"(nbt: $CompoundTag$$Type): void
+public "writeData"(nbt: $CompoundTag$$Type): void
 public "getWeight"(entity: $Entity$$Type): integer
 }
 /**
@@ -1370,9 +1370,9 @@ static readonly "CLAIMED": $RewardClaimType
 static readonly "CAN_CLAIM": $RewardClaimType
 static readonly "CANT_CLAIM": $RewardClaimType
 
-public "cantClaim"(): boolean
 public "isClaimed"(): boolean
 public "canClaim"(): boolean
+public "cantClaim"(): boolean
 public static "values"(): ($RewardClaimType)[]
 public static "valueOf"(name: StringJS): $RewardClaimType
 get "claimed"(): boolean
@@ -1423,8 +1423,8 @@ import {$Component} from "net.minecraft.network.chat.Component"
 import {$SNBTCompoundTag, $SNBTCompoundTag$$Type} from "dev.ftb.mods.ftblibrary.snbt.SNBTCompoundTag"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$QuestObject$$Type} from "dev.ftb.mods.ftbquests.quest.QuestObject"
-import {$BaseQuestFile, $BaseQuestFile$$Type} from "dev.ftb.mods.ftbquests.quest.BaseQuestFile"
 import {$Quest$$Type} from "dev.ftb.mods.ftbquests.quest.Quest"
+import {$BaseQuestFile, $BaseQuestFile$$Type} from "dev.ftb.mods.ftbquests.quest.BaseQuestFile"
 import {$Task$$Type} from "dev.ftb.mods.ftbquests.quest.task.Task"
 import {$Date, $Date$$Type} from "java.util.Date"
 import {$ServerPlayer, $ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
@@ -1438,10 +1438,7 @@ static readonly "STREAM_CODEC": $StreamCodec<($FriendlyByteBuf), ($TeamData)>
 constructor(teamId: $UUID$$Type, file: $BaseQuestFile$$Type)
 constructor(teamId: $UUID$$Type, file: $BaseQuestFile$$Type, name: StringJS)
 
-public "setLocked"(newLocked: boolean): boolean
 public "markDirty"(): void
-public "resetProgress"(task: $Task$$Type): void
-public "mergeData"(from: $TeamData$$Type): void
 public "getOnlineMembers"(): $Collection<($ServerPlayer)>
 public "getTeamId"(): $UUID
 public "isRewardClaimed"(player: $UUID$$Type, reward: $Reward$$Type): boolean
@@ -1450,6 +1447,7 @@ public "addProgress"(task: $Task$$Type, progress: long): void
 public "clearCachedProgress"(): void
 public "hasUnclaimedRewards"(player: $UUID$$Type, object: $QuestObject$$Type): boolean
 public "getRelativeProgress"(object: $QuestObject$$Type): integer
+public "checkAutoCompletion"(quest: $Quest$$Type): void
 public "canStartTasks"(quest: $Quest$$Type): boolean
 public "isExcludedByOtherQuestline"(qo: $QuestObject$$Type): boolean
 public "getCompletionCount"(quest: $Quest$$Type): integer
@@ -1457,12 +1455,12 @@ public "areDependenciesComplete"(quest: $Quest$$Type): boolean
 public "areDependenciesVisible"(quest: $Quest$$Type): boolean
 public "isRewardBlocked"(reward: $Reward$$Type): boolean
 public "getClaimType"(player: $UUID$$Type, reward: $Reward$$Type): $RewardClaimType
+public "mergeData"(from: $TeamData$$Type): void
 public "mergeClaimedRewards"(from: $TeamData$$Type): void
-public "checkAutoCompletion"(quest: $Quest$$Type): void
 public "deleteReward"(reward: $Reward$$Type): void
 public "resetReward"(player: $UUID$$Type, reward: $Reward$$Type): boolean
-public "claimReward"(player: $ServerPlayer$$Type, reward: $Reward$$Type, notify: boolean): void
 public "claimReward"(player: $ServerPlayer$$Type, reward: $Reward$$Type, notify: boolean, when: long): void
+public "claimReward"(player: $ServerPlayer$$Type, reward: $Reward$$Type, notify: boolean): void
 public "clearRepeatCooldown"(q: $Quest$$Type): void
 public "isQuestPinned"(player: $Player$$Type, id: long): boolean
 public "setQuestPinned"(player: $Player$$Type, id: long, pinned: boolean): void
@@ -1475,11 +1473,13 @@ public "getMilliSecondsUntilRepeatable"(quest: $Quest$$Type): long
 public "markRewardAsClaimed"(player: $UUID$$Type, reward: $Reward$$Type, date: long): boolean
 public "getPinnedQuestIds"(player: $Player$$Type): $LongSet
 public "getCannotStartReason"(quest: $Quest$$Type): $Component
+public "setLocked"(newLocked: boolean): boolean
 public "setCanEdit"(player: $Player$$Type, newCanEdit: boolean): boolean
 public "getCanEdit"(player: $Player$$Type): boolean
-public "copyData"(from: $TeamData$$Type): void
+public "resetProgress"(task: $Task$$Type): void
 public "setCompleted"(id: long, time: $Date$$Type): boolean
 public "isCompleted"(object: $QuestObject$$Type): boolean
+public "copyData"(from: $TeamData$$Type): void
 public "getName"(): StringJS
 public static "get"(player: $Player$$Type): $TeamData
 public "toString"(): StringJS
@@ -1488,16 +1488,16 @@ public "isStarted"(object: $QuestObject$$Type): boolean
 public "getFile"(): $BaseQuestFile
 public "isLocked"(): boolean
 public "setStarted"(questId: long, time: $Date$$Type): boolean
-public "saveIfChanged"(): void
 public "deserializeNBT"(nbt: $SNBTCompoundTag$$Type): void
 public "serializeNBT"(): $SNBTCompoundTag
 public "getProgress"(taskId: long): long
 public "getProgress"(task: $Task$$Type): long
 public "setProgress"(task: $Task$$Type, progress: long): void
-set "locked"(value: boolean)
+public "saveIfChanged"(): void
 get "onlineMembers"(): $Collection<($ServerPlayer)>
 get "teamId"(): $UUID
 set "rewardsBlocked"(value: boolean)
+set "locked"(value: boolean)
 get "name"(): StringJS
 set "name"(value: StringJS)
 get "file"(): $BaseQuestFile
@@ -1521,8 +1521,8 @@ import {$ITaskScreen$$Interface} from "dev.ftb.mods.ftbquests.block.entity.ITask
 import {$Component} from "net.minecraft.network.chat.Component"
 import {$TaskScreenBlockEntity, $TaskScreenBlockEntity$$Type} from "dev.ftb.mods.ftbquests.block.entity.TaskScreenBlockEntity"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
-import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Nameable$$Interface} from "net.minecraft.world.Nameable"
+import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -1568,21 +1568,21 @@ import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$Reward} from "dev.ftb.mods.ftbquests.quest.reward.Reward"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
-import {$UUID$$Type} from "java.util.UUID"
 import {$LootCrate} from "dev.ftb.mods.ftbquests.quest.loot.LootCrate"
 import {$ProgressionMode} from "dev.ftb.mods.ftbquests.quest.ProgressionMode"
+import {$UUID$$Type} from "java.util.UUID"
 import {$DefaultChapterGroup} from "dev.ftb.mods.ftbquests.quest.DefaultChapterGroup"
 import {$List} from "java.util.List"
 import {$Component} from "net.minecraft.network.chat.Component"
 import {$QuestFile$$Interface} from "dev.ftb.mods.ftbquests.api.QuestFile"
-import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$TaskType} from "dev.ftb.mods.ftbquests.quest.task.TaskType"
+import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$QuestObject} from "dev.ftb.mods.ftbquests.quest.QuestObject"
 import {$QuestLink$$Type} from "dev.ftb.mods.ftbquests.quest.QuestLink"
 import {$RewardType} from "dev.ftb.mods.ftbquests.quest.reward.RewardType"
 import {$Quest, $Quest$$Type} from "dev.ftb.mods.ftbquests.quest.Quest"
-import {$Set} from "java.util.Set"
 import {$Class$$Type} from "java.lang.Class"
+import {$Set} from "java.util.Set"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$Team$$Type} from "dev.ftb.mods.ftbteams.api.Team"
 import {$RewardTable, $RewardTable$$Type} from "dev.ftb.mods.ftbquests.quest.loot.RewardTable"
@@ -1592,8 +1592,8 @@ import {$ChapterGroup, $ChapterGroup$$Type} from "dev.ftb.mods.ftbquests.quest.C
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$Collection} from "java.util.Collection"
 import {$Env} from "dev.architectury.utils.Env"
-import {$QuestObjectType, $QuestObjectType$$Type} from "dev.ftb.mods.ftbquests.quest.QuestObjectType"
 import {$Chapter, $Chapter$$Type} from "dev.ftb.mods.ftbquests.quest.Chapter"
+import {$QuestObjectType, $QuestObjectType$$Type} from "dev.ftb.mods.ftbquests.quest.QuestObjectType"
 import {$Predicate$$Type} from "java.util.function.Predicate"
 import {$TeamData, $TeamData$$Type} from "dev.ftb.mods.ftbquests.quest.TeamData"
 import {$HolderLookup$Provider, $HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
@@ -1618,11 +1618,8 @@ static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($BaseQ
 
 constructor()
 
-public "addData"(data: $TeamData$$Type, override: boolean): void
-public "markDirty"(): void
 public "getFolder"(): $Path
-public "readData"(nbt: $CompoundTag$$Type, provider: $HolderLookup$Provider$$Type): void
-public "writeData"(nbt: $CompoundTag$$Type, provider: $HolderLookup$Provider$$Type): void
+public "markDirty"(): void
 public "getTeamData"(player: $Player$$Type): $Optional<($TeamData)>
 public "getQuestFile"(): $BaseQuestFile
 public "getRelativeProgressFromChildren"(data: $TeamData$$Type): integer
@@ -1656,8 +1653,8 @@ public "writeNetDataFull"(buffer: $RegistryFriendlyByteBuf$$Type): void
 public "readNetDataFull"(buffer: $RegistryFriendlyByteBuf$$Type): void
 public "getParentID"(): long
 public "getNullableTeamData"(id: $UUID$$Type): $TeamData
-public "getOrCreateTeamData"(player: $Entity$$Type): $TeamData
 public "getOrCreateTeamData"(teamId: $UUID$$Type): $TeamData
+public "getOrCreateTeamData"(player: $Entity$$Type): $TeamData
 public "getOrCreateTeamData"(team: $Team$$Type): $TeamData
 public "getAllTeamData"(): $Collection<($TeamData)>
 public "getAltTitle"(): $Component
@@ -1699,21 +1696,24 @@ public "forAllChapterGroups"(consumer: $Consumer$$Type<($ChapterGroup)>): void
 public "forAllQuestLinks"(consumer: $Consumer$$Type<($QuestLink)>): void
 public "moveChapterGroup"(id: long, movingUp: boolean): boolean
 public "getLootCrateNoDrop"(): $EntityWeight
+public "addData"(data: $TeamData$$Type, override: boolean): void
+public "readData"(nbt: $CompoundTag$$Type, provider: $HolderLookup$Provider$$Type): void
+public "writeData"(nbt: $CompoundTag$$Type, provider: $HolderLookup$Provider$$Type): void
 public "isServerSide"(): boolean
+public "getTask"(id: long): $Task
 public "newID"(): long
-public "isLoading"(): boolean
-public "getID"(obj: any): long
-public "getLocale"(): StringJS
-public "getObjectType"(): $QuestObjectType
 public "getChildren"(): $Collection<($QuestObject)>
 public "getBase"(id: long): $QuestObjectBase
 public "getFallbackLocale"(): StringJS
-public "getTask"(id: long): $Task
+public "isLoading"(): boolean
+public "getID"(obj: any): long
+public "getObjectType"(): $QuestObjectType
 public "remove"(id: long): $QuestObjectBase
 public "get"(id: long): $QuestObject
 public "collect"<T extends $QuestObjectBase>(cls: $Class$$Type<(T)>, filter: $Predicate$$Type<(T)>): $List<(T)>
 public "collect"<T extends $QuestObjectBase>(clazz: $Class$$Type<(T)>): $List<(T)>
 public "create"(id: long, type: $QuestObjectType$$Type, parent: long, extra: $CompoundTag$$Type): $QuestObjectBase
+public "getLocale"(): StringJS
 public "getSide"(): $Env
 public "deleteObject"(arg0: long): void
 public "canEdit"(): boolean
@@ -1753,11 +1753,11 @@ get "rewardTables"(): $List<($RewardTable)>
 get "chapterGroups"(): $List<($ChapterGroup)>
 get "lootCrateNoDrop"(): $EntityWeight
 get "serverSide"(): boolean
-get "loading"(): boolean
-get "locale"(): StringJS
-get "objectType"(): $QuestObjectType
 get "children"(): $Collection<($QuestObject)>
 get "fallbackLocale"(): StringJS
+get "loading"(): boolean
+get "objectType"(): $QuestObjectType
+get "locale"(): StringJS
 get "side"(): $Env
 get "dropLootCrates"(): boolean
 }
@@ -1778,10 +1778,10 @@ import {$List$$Type} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockItem} from "net.minecraft.world.item.BlockItem"
-import {$AdditionalItemPlacement, $AdditionalItemPlacement$$Type} from "net.mehvahdjukaar.moonlight.api.item.additional_placements.AdditionalItemPlacement"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
+import {$AdditionalItemPlacement, $AdditionalItemPlacement$$Type} from "net.mehvahdjukaar.moonlight.api.item.additional_placements.AdditionalItemPlacement"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 
 export class $QuestBarrierBlockItem extends $BlockItem {
 static readonly "BASE_ATTACK_DAMAGE_ID": $ResourceLocation
@@ -1831,8 +1831,8 @@ export type $RewardType$Provider$$Type = ((arg0: long, arg1: $Quest) => $Reward$
  */
 export type $RewardType$Provider$$Original = $RewardType$Provider;}
 declare module "dev.ftb.mods.ftbquests.block.TaskScreenBlock$Aux" {
-import {$TaskScreenBlock} from "dev.ftb.mods.ftbquests.block.TaskScreenBlock"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
+import {$TaskScreenBlock} from "dev.ftb.mods.ftbquests.block.TaskScreenBlock"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$BlockBehaviour$Properties, $BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
@@ -1884,11 +1884,11 @@ declare module "dev.ftb.mods.ftbquests.quest.loot.RewardTable" {
 import {$ConfigGroup$$Type} from "dev.ftb.mods.ftblibrary.config.ConfigGroup"
 import {$Icon} from "dev.ftb.mods.ftblibrary.icon.Icon"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
-import {$Collection} from "java.util.Collection"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$Collection} from "java.util.Collection"
 import {$Optional} from "java.util.Optional"
-import {$QuestObjectType} from "dev.ftb.mods.ftbquests.quest.QuestObjectType"
 import {$LootCrate} from "dev.ftb.mods.ftbquests.quest.loot.LootCrate"
+import {$QuestObjectType} from "dev.ftb.mods.ftbquests.quest.QuestObjectType"
 import {$List} from "java.util.List"
 import {$WeightedReward, $WeightedReward$$Type} from "dev.ftb.mods.ftbquests.quest.loot.WeightedReward"
 import {$Runnable$$Type} from "java.lang.Runnable"
@@ -1896,8 +1896,8 @@ import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
 import {$TooltipList$$Type} from "dev.ftb.mods.ftblibrary.util.TooltipList"
-import {$RegistryFriendlyByteBuf$$Type} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Quest} from "dev.ftb.mods.ftbquests.quest.Quest"
+import {$RegistryFriendlyByteBuf$$Type} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$BaseQuestFile, $BaseQuestFile$$Type} from "dev.ftb.mods.ftbquests.quest.BaseQuestFile"
 import {$RecipeModHelper$Components} from "dev.ftb.mods.ftbquests.integration.RecipeModHelper$Components"
 import {$Set} from "java.util.Set"
@@ -1911,8 +1911,6 @@ constructor(id: long, file: $BaseQuestFile$$Type)
 
 public "addMouseOverText"(list: $TooltipList$$Type, includeWeight: boolean, includeEmpty: boolean): void
 public "getTotalWeight"(includeEmpty: boolean): float
-public "readData"(nbt: $CompoundTag$$Type, provider: $HolderLookup$Provider$$Type): void
-public "writeData"(nbt: $CompoundTag$$Type, provider: $HolderLookup$Provider$$Type): void
 public "getQuestFile"(): $BaseQuestFile
 public "deleteSelf"(): void
 public "getLootCrate"(): $LootCrate
@@ -1936,6 +1934,8 @@ public "getFakeQuest"(): $Quest
 public "makeWeightedItemReward"(stack: $ItemStack$$Type, weight: float): $WeightedReward
 public "toggleLootCrate"(): $LootCrate
 public "shouldShowTooltip"(): boolean
+public "readData"(nbt: $CompoundTag$$Type, provider: $HolderLookup$Provider$$Type): void
+public "writeData"(nbt: $CompoundTag$$Type, provider: $HolderLookup$Provider$$Type): void
 public "onCreated"(): void
 public "getObjectType"(): $QuestObjectType
 public "copy"(): $RewardTable
@@ -1969,9 +1969,9 @@ import {$Icon} from "dev.ftb.mods.ftblibrary.icon.Icon"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
-import {$Chapter} from "dev.ftb.mods.ftbquests.quest.Chapter"
-import {$QuestObjectType} from "dev.ftb.mods.ftbquests.quest.QuestObjectType"
 import {$Comparable$$Interface} from "java.lang.Comparable"
+import {$QuestObjectType} from "dev.ftb.mods.ftbquests.quest.QuestObjectType"
+import {$Chapter} from "dev.ftb.mods.ftbquests.quest.Chapter"
 import {$List$$Type} from "java.util.List"
 import {$Runnable$$Type} from "java.lang.Runnable"
 import {$Component} from "net.minecraft.network.chat.Component"
@@ -1980,13 +1980,13 @@ import {$TranslationKey$$Type} from "dev.ftb.mods.ftbquests.quest.translation.Tr
 import {$HolderLookup$Provider, $HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$ProgressChange$$Type} from "dev.ftb.mods.ftbquests.util.ProgressChange"
-import {$RegistryFriendlyByteBuf$$Type} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$BaseQuestFile} from "dev.ftb.mods.ftbquests.quest.BaseQuestFile"
-import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$RegistryFriendlyByteBuf$$Type} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$RecipeModHelper$Components} from "dev.ftb.mods.ftbquests.integration.RecipeModHelper$Components"
+import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$MutableComponent} from "net.minecraft.network.chat.MutableComponent"
-import {$Set} from "java.util.Set"
 import {$Tag$$Type} from "net.minecraft.nbt.Tag"
+import {$Set} from "java.util.Set"
 
 export class $QuestObjectBase implements $Comparable$$Interface<($QuestObjectBase)> {
 readonly "id": long
@@ -1994,15 +1994,13 @@ readonly "id": long
 constructor(id: long)
 
 public "hasTag"(tag: StringJS): boolean
-public "readData"(nbt: $CompoundTag$$Type, provider: $HolderLookup$Provider$$Type): void
-public "writeData"(nbt: $CompoundTag$$Type, provider: $HolderLookup$Provider$$Type): void
 public "getQuestFile"(): $BaseQuestFile
 public "deleteSelf"(): void
 public "deleteChildren"(): void
 public "clearCachedData"(): void
 public static "itemOrMissingFromNBT"(tag: $Tag$$Type, provider: $HolderLookup$Provider$$Type): $ItemStack
-public static "getCodeString"(id: long): StringJS
 public "getCodeString"(): StringJS
+public static "getCodeString"(id: long): StringJS
 public static "getCodeString"(object: $QuestObjectBase$$Type): StringJS
 public "writeNetData"(buffer: $RegistryFriendlyByteBuf$$Type): void
 public "readNetData"(buffer: $RegistryFriendlyByteBuf$$Type): void
@@ -2029,20 +2027,22 @@ public "editedFromGUI"(): void
 public "editedFromGUIOnServer"(): void
 public "createSubGroup"(group: $ConfigGroup$$Type): $ConfigGroup
 public "onEditButtonClicked"(gui: $Runnable$$Type): void
+public "readData"(nbt: $CompoundTag$$Type, provider: $HolderLookup$Provider$$Type): void
+public "writeData"(nbt: $CompoundTag$$Type, provider: $HolderLookup$Provider$$Type): void
 public "onCreated"(): void
 public static "getID"(object: $QuestObjectBase$$Type): long
-public "isValid"(): boolean
 public "getObjectType"(): $QuestObjectType
 public "equals"(object: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
-public "compareTo"(arg0: any): integer
 public "compareTo"(other: $QuestObjectBase$$Type): integer
+public "compareTo"(arg0: any): integer
 public "getId"(): long
 public static "copy"<T extends $QuestObjectBase>(orig: T, factory: $Supplier$$Type<(T)>): T
 public static "isNull"(object: $QuestObjectBase$$Type): boolean
 public "getPath"(): $Optional<(StringJS)>
 public "getIcon"(): $Icon
+public "isValid"(): boolean
 public "getTitle"(): $Component
 public "getTags"(): $Set<(StringJS)>
 public "holderLookup"(): $HolderLookup$Provider
@@ -2056,10 +2056,10 @@ get "questChapter"(): $Chapter
 set "rawIcon"(value: $ItemStack$$Type)
 get "rawTitle"(): StringJS
 get "mutableTitle"(): $MutableComponent
-get "valid"(): boolean
 get "objectType"(): $QuestObjectType
 get "path"(): $Optional<(StringJS)>
 get "icon"(): $Icon
+get "valid"(): boolean
 get "title"(): $Component
 get "tags"(): $Set<(StringJS)>
 }
@@ -2074,13 +2074,13 @@ export type $QuestObjectBase$$Type = ($QuestObjectBase);
 export type $QuestObjectBase$$Original = $QuestObjectBase;}
 declare module "dev.ftb.mods.ftbquests.quest.QuestObjectType" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$Enum} from "java.lang.Enum"
+import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$Predicate, $Predicate$$Type, $Predicate$$Interface} from "java.util.function.Predicate"
 import {$Component} from "net.minecraft.network.chat.Component"
 import {$QuestObjectBase, $QuestObjectBase$$Type} from "dev.ftb.mods.ftbquests.quest.QuestObjectBase"
-import {$NameMap} from "dev.ftb.mods.ftblibrary.config.NameMap"
 import {$ChatFormatting} from "net.minecraft.ChatFormatting"
+import {$NameMap} from "dev.ftb.mods.ftblibrary.config.NameMap"
 
 export class $QuestObjectType extends $Enum<($QuestObjectType)> implements $Predicate$$Interface<($QuestObjectBase)> {
 static readonly "TASK": $QuestObjectType
@@ -2104,11 +2104,11 @@ public "test"(object: $QuestObjectBase$$Type): boolean
 public static "valueOf"(name: StringJS): $QuestObjectType
 public "getId"(): StringJS
 public "getColor"(): $ChatFormatting
-public "or"(arg0: $Predicate$$Type<($QuestObjectBase)>): $Predicate<($QuestObjectBase)>
+public static "not"<T>(arg0: $Predicate$$Type<($QuestObjectBase)>): $Predicate<($QuestObjectBase)>
 public static "isEqual"<T>(arg0: any): $Predicate<($QuestObjectBase)>
 public "negate"(): $Predicate<($QuestObjectBase)>
 public "and"(arg0: $Predicate$$Type<($QuestObjectBase)>): $Predicate<($QuestObjectBase)>
-public static "not"<T>(arg0: $Predicate$$Type<($QuestObjectBase)>): $Predicate<($QuestObjectBase)>
+public "or"(arg0: $Predicate$$Type<($QuestObjectBase)>): $Predicate<($QuestObjectBase)>
 get "completedMessage"(): $Component
 get "id"(): StringJS
 get "color"(): $ChatFormatting
@@ -2130,10 +2130,10 @@ import {$List$$Type} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockItem} from "net.minecraft.world.item.BlockItem"
-import {$AdditionalItemPlacement, $AdditionalItemPlacement$$Type} from "net.mehvahdjukaar.moonlight.api.item.additional_placements.AdditionalItemPlacement"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
+import {$AdditionalItemPlacement, $AdditionalItemPlacement$$Type} from "net.mehvahdjukaar.moonlight.api.item.additional_placements.AdditionalItemPlacement"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 
 export class $StageBarrierBlockItem extends $BlockItem {
 static readonly "BASE_ATTACK_DAMAGE_ID": $ResourceLocation
@@ -2169,8 +2169,8 @@ import {$List$$Type} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 
 export class $MissingItem extends $Item {
 static readonly "BASE_ATTACK_DAMAGE_ID": $ResourceLocation
@@ -2223,14 +2223,14 @@ import {$Component} from "net.minecraft.network.chat.Component"
 import {$TaskType} from "dev.ftb.mods.ftbquests.quest.task.TaskType"
 import {$QuestObject} from "dev.ftb.mods.ftbquests.quest.QuestObject"
 import {$TooltipList$$Type} from "dev.ftb.mods.ftblibrary.util.TooltipList"
-import {$Quest, $Quest$$Type} from "dev.ftb.mods.ftbquests.quest.Quest"
 import {$BaseQuestFile} from "dev.ftb.mods.ftbquests.quest.BaseQuestFile"
+import {$Quest, $Quest$$Type} from "dev.ftb.mods.ftbquests.quest.Quest"
 import {$Set} from "java.util.Set"
 import {$ConfigGroup, $ConfigGroup$$Type} from "dev.ftb.mods.ftblibrary.config.ConfigGroup"
 import {$Icon} from "dev.ftb.mods.ftblibrary.icon.Icon"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
-import {$Chapter} from "dev.ftb.mods.ftbquests.quest.Chapter"
 import {$QuestObjectType} from "dev.ftb.mods.ftbquests.quest.QuestObjectType"
+import {$Chapter} from "dev.ftb.mods.ftbquests.quest.Chapter"
 import {$Widget$$Type} from "dev.ftb.mods.ftblibrary.ui.Widget"
 import {$TeamData$$Type} from "dev.ftb.mods.ftbquests.quest.TeamData"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
@@ -2251,8 +2251,6 @@ constructor(id: long, quest: $Quest$$Type)
 public "canInsertItem"(): boolean
 public "addMouseOverText"(list: $TooltipList$$Type, teamData: $TeamData$$Type): void
 public "getIngredient"(widget: $Widget$$Type): $Optional<($PositionedIngredient)>
-public "readData"(nbt: $CompoundTag$$Type, provider: $HolderLookup$Provider$$Type): void
-public "writeData"(nbt: $CompoundTag$$Type, provider: $HolderLookup$Provider$$Type): void
 public "getMaxProgress"(): long
 public "formatMaxProgress"(): StringJS
 public "formatProgress"(teamData: $TeamData$$Type, progress: long): StringJS
@@ -2283,12 +2281,14 @@ public "getQuestChapter"(): $Chapter
 public "forceProgress"(teamData: $TeamData$$Type, progressChange: $ProgressChange$$Type): void
 public "cacheProgress"(): boolean
 public "checkOnLogin"(): boolean
-public "submitTask"(teamData: $TeamData$$Type, player: $ServerPlayer$$Type): void
 public "submitTask"(teamData: $TeamData$$Type, player: $ServerPlayer$$Type, craftedItem: $ItemStack$$Type): void
+public "submitTask"(teamData: $TeamData$$Type, player: $ServerPlayer$$Type): void
 public "isOptionalForProgression"(teamData: $TeamData$$Type): boolean
 public "getRelatedQuest"(): $Quest
 public "editedFromGUI"(): void
 public "createSubGroup"(group: $ConfigGroup$$Type): $ConfigGroup
+public "readData"(nbt: $CompoundTag$$Type, provider: $HolderLookup$Provider$$Type): void
+public "writeData"(nbt: $CompoundTag$$Type, provider: $HolderLookup$Provider$$Type): void
 public "onCreated"(): void
 public "getObjectType"(): $QuestObjectType
 public "getType"(): $TaskType
@@ -2322,9 +2322,9 @@ export interface $Movable$$Interface {
 get "alignToCorner"(): boolean
 get "chapter"(): $Chapter
 get "movableID"(): long
+get "shape"(): StringJS
 get "width"(): double
 get "height"(): double
-get "shape"(): StringJS
 get "y"(): double
 get "title"(): $Component
 get "x"(): double
@@ -2338,9 +2338,9 @@ export class $Movable implements $Movable$$Interface {
  "getChapter"(): $Chapter
  "getMovableID"(): long
  "initiateMoveClientSide"(arg0: $Chapter$$Type, arg1: double, arg2: double): void
+ "getShape"(): StringJS
  "getWidth"(): double
  "getHeight"(): double
- "getShape"(): StringJS
  "getY"(): double
  "getTitle"(): $Component
  "getX"(): double
@@ -2391,8 +2391,8 @@ export type $ITaskScreen$$Type = ($ITaskScreen);
 export type $ITaskScreen$$Original = $ITaskScreen;}
 declare module "dev.ftb.mods.ftbquests.quest.translation.TranslationKey" {
 import {$Enum} from "java.lang.Enum"
-import {$Either, $Either$$Type} from "com.mojang.datafixers.util.Either"
 import {$List, $List$$Type} from "java.util.List"
+import {$Either, $Either$$Type} from "com.mojang.datafixers.util.Either"
 import {$NameMap} from "dev.ftb.mods.ftblibrary.config.NameMap"
 
 export class $TranslationKey extends $Enum<($TranslationKey)> {
@@ -2428,13 +2428,13 @@ import {$Icon, $Icon$$Type} from "dev.ftb.mods.ftblibrary.icon.Icon"
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$FriendlyByteBuf, $FriendlyByteBuf$$Type} from "net.minecraft.network.FriendlyByteBuf"
 import {$Chapter, $Chapter$$Type} from "dev.ftb.mods.ftbquests.quest.Chapter"
-import {$Component} from "net.minecraft.network.chat.Component"
 import {$Movable$$Interface} from "dev.ftb.mods.ftbquests.quest.Movable"
+import {$Component} from "net.minecraft.network.chat.Component"
 import {$TeamData$$Type} from "dev.ftb.mods.ftbquests.quest.TeamData"
 import {$WeakReference} from "java.lang.ref.WeakReference"
 import {$Color4I} from "dev.ftb.mods.ftblibrary.icon.Color4I"
-import {$GuiGraphics$$Type} from "net.minecraft.client.gui.GuiGraphics"
 import {$TooltipList$$Type} from "dev.ftb.mods.ftblibrary.util.TooltipList"
+import {$GuiGraphics$$Type} from "net.minecraft.client.gui.GuiGraphics"
 
 export class $ChapterImage implements $Movable$$Interface {
 static readonly "FTBQ_IMAGE": StringJS
@@ -2444,9 +2444,6 @@ static "STREAM_CODEC": $StreamCodec<($FriendlyByteBuf), ($ChapterImage)>
 constructor(c: $Chapter$$Type)
 
 public "onMoved"(x: double, y: double, chapterId: long): void
-public "setImage"(image: $Icon$$Type): $ChapterImage
-public "readData"(nbt: $CompoundTag$$Type): void
-public "writeData"(nbt: $CompoundTag$$Type): $CompoundTag
 public static "fromNet"(parent: $Chapter$$Type, buf: $FriendlyByteBuf$$Type): $ChapterImage
 public "isAlignToCorner"(): boolean
 public "drawMoved"(graphics: $GuiGraphics$$Type): void
@@ -2462,10 +2459,13 @@ public "isAspectRatioOff"(): boolean
 public "fixupAspectRatio"(adjustWidth: boolean): void
 public "shouldShowImage"(teamData: $TeamData$$Type): boolean
 public static "isImageInClipboard"(): boolean
+public "setImage"(image: $Icon$$Type): $ChapterImage
+public "readData"(nbt: $CompoundTag$$Type): void
+public "writeData"(nbt: $CompoundTag$$Type): $CompoundTag
 public "getOrder"(): integer
+public "getShape"(): StringJS
 public "getWidth"(): double
 public "getHeight"(): double
-public "getShape"(): StringJS
 public "getY"(): double
 public "copy"(newChapter: $Chapter$$Type, newX: double, newY: double): $ChapterImage
 public "getImage"(): $Icon
@@ -2476,17 +2476,17 @@ public "getRotation"(): double
 public "setPosition"(x: double, y: double): $ChapterImage
 public "copyToClipboard"(): void
 public "getAlpha"(): integer
-set "image"(value: $Icon$$Type)
 get "alignToCorner"(): boolean
 get "chapter"(): $Chapter
 get "movableID"(): long
 get "click"(): StringJS
 get "aspectRatioOff"(): boolean
 public static get "imageInClipboard"(): boolean
+set "image"(value: $Icon$$Type)
 get "order"(): integer
+get "shape"(): StringJS
 get "width"(): double
 get "height"(): double
-get "shape"(): StringJS
 get "y"(): double
 get "image"(): $Icon
 get "title"(): $Component
@@ -2537,8 +2537,8 @@ import {$Codec} from "com.mojang.serialization.Codec"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$ResourceKey, $ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
-import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
+import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$MinecraftServer$$Type} from "net.minecraft.server.MinecraftServer"
 import {$Record} from "java.lang.Record"
 
@@ -2563,8 +2563,8 @@ public "withRelative"(relative: boolean): $BaseBarrierBlockEntity$TeleportData
 public "withEnabled"(enabled: boolean): $BaseBarrierBlockEntity$TeleportData
 public "teleportPlayer"(player: $ServerPlayer$$Type): void
 public "withDestPos"(pos: $BlockPos$$Type): $BaseBarrierBlockEntity$TeleportData
-public "relative"(): boolean
 public "getLevel"(server: $MinecraftServer$$Type): $Level
+public "relative"(): boolean
 public "equals"(o: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
@@ -2577,7 +2577,7 @@ public "yaw"(): float
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $BaseBarrierBlockEntity$TeleportData$$Type = ({"enabled"?: boolean, "yaw"?: float, "relative"?: boolean, "dest"?: $BlockPos$$Type, "dimId"?: ($ResourceKey$$Type<($Level$$Type)>)?, "pitch"?: float}) | ([enabled?: boolean, yaw?: float, relative?: boolean, dest?: $BlockPos$$Type, dimId?: ($ResourceKey$$Type<($Level$$Type)>)?, pitch?: float]);
+export type $BaseBarrierBlockEntity$TeleportData$$Type = ({"yaw"?: float, "relative"?: boolean, "dest"?: $BlockPos$$Type, "dimId"?: ($ResourceKey$$Type<($Level$$Type)>)?, "pitch"?: float, "enabled"?: boolean}) | ([yaw?: float, relative?: boolean, dest?: $BlockPos$$Type, dimId?: ($ResourceKey$$Type<($Level$$Type)>)?, pitch?: float, enabled?: boolean]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -2597,10 +2597,10 @@ constructor(origin: $QuestObjectBase$$Type, playerId: $UUID$$Type)
 public "getPlayerId"(): $UUID
 public "shouldReset"(): boolean
 public "shouldNotify"(): boolean
+public "maybeForceProgress"(teamId: $UUID$$Type): void
 public static "createServerSide"(origin: long, reset: boolean, playerId: $UUID$$Type, notifications: boolean): $ProgressChange
 public "setReset"(reset: boolean): $ProgressChange
 public "withNotifications"(): $ProgressChange
-public "maybeForceProgress"(teamId: $UUID$$Type): void
 public "getDate"(): $Date
 get "playerId"(): $UUID
 set "reset"(value: boolean)
@@ -2715,8 +2715,8 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 
 constructor(blockEntityType: $BlockEntityType$$Type<(never)>, blockPos: $BlockPos$$Type, blockState: $BlockState$$Type)
 
-public "loadAdditional"(tag: $CompoundTag$$Type, provider: $HolderLookup$Provider$$Type): void
 public "getUpdatePacket"(): $Packet<($ClientGamePacketListener)>
+public "loadAdditional"(tag: $CompoundTag$$Type, provider: $HolderLookup$Provider$$Type): void
 public "saveAdditional"(compoundTag: $CompoundTag$$Type, provider: $HolderLookup$Provider$$Type): void
 public "getUpdateTag"(provider: $HolderLookup$Provider$$Type): $CompoundTag
 public "fillConfigGroup"(): $ConfigGroup
@@ -2754,8 +2754,8 @@ import {$ConfigGroup} from "dev.ftb.mods.ftblibrary.config.ConfigGroup"
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
-import {$UUID, $UUID$$Type} from "java.util.UUID"
 import {$ITaskScreen$$Interface} from "dev.ftb.mods.ftbquests.block.entity.ITaskScreen"
+import {$UUID, $UUID$$Type} from "java.util.UUID"
 import {$EditableBlockEntity} from "dev.ftb.mods.ftbquests.block.entity.EditableBlockEntity"
 import {$TeamData, $TeamData$$Type} from "dev.ftb.mods.ftbquests.quest.TeamData"
 import {$ClientGamePacketListener} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
@@ -2772,8 +2772,8 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 
 constructor(blockPos: $BlockPos$$Type, blockState: $BlockState$$Type)
 
-public "loadAdditional"(compoundTag: $CompoundTag$$Type, provider: $HolderLookup$Provider$$Type): void
 public "getUpdatePacket"(): $Packet<($ClientGamePacketListener)>
+public "loadAdditional"(compoundTag: $CompoundTag$$Type, provider: $HolderLookup$Provider$$Type): void
 public "getUpdateTag"(provider: $HolderLookup$Provider$$Type): $CompoundTag
 public "getTeamId"(): $UUID
 public "fillConfigGroup"(data: $TeamData$$Type): $ConfigGroup
@@ -2855,9 +2855,9 @@ import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$QuestLink$$Type} from "dev.ftb.mods.ftbquests.quest.QuestLink"
 import {$Collection} from "java.util.Collection"
 import {$Optional} from "java.util.Optional"
-import {$Chapter$$Type} from "dev.ftb.mods.ftbquests.quest.Chapter"
 import {$Quest$$Type} from "dev.ftb.mods.ftbquests.quest.Quest"
 import {$UUID$$Type} from "java.util.UUID"
+import {$Chapter$$Type} from "dev.ftb.mods.ftbquests.quest.Chapter"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$TeamData} from "dev.ftb.mods.ftbquests.quest.TeamData"
 import {$Team$$Type} from "dev.ftb.mods.ftbteams.api.Team"
@@ -2896,8 +2896,8 @@ export type $QuestFile$$Type = ($QuestFile);
 export type $QuestFile$$Original = $QuestFile;}
 declare module "dev.ftb.mods.ftbquests.block.TaskScreenBlock" {
 import {$BaseEntityBlock} from "net.minecraft.world.level.block.BaseEntityBlock"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$List$$Type} from "java.util.List"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
@@ -2915,8 +2915,8 @@ import {$BoundingBox} from "net.minecraft.world.level.levelgen.structure.Boundin
 import {$RenderShape} from "net.minecraft.world.level.block.RenderShape"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$TaskScreenBlockEntity} from "dev.ftb.mods.ftbquests.block.entity.TaskScreenBlockEntity"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
@@ -2954,8 +2954,8 @@ public "appendHoverText"(itemStack: $ItemStack$$Type, context: $Item$TooltipCont
 public "getDestroyProgress"(blockState: $BlockState$$Type, player: $Player$$Type, blockGetter: $BlockGetter$$Type, blockPos: $BlockPos$$Type): float
 public "newBlockEntity"(blockPos: $BlockPos$$Type, blockState: $BlockState$$Type): $BlockEntity
 public static "blockEntityProvider"(): $BlockEntityType$BlockEntitySupplier<($TaskScreenBlockEntity)>
-public static "getMultiblockBounds"(corePos: $BlockPos$$Type, size: integer, facing: $Direction$$Type): $BoundingBox
 public static "blockEntityAuxProvider"(): $BlockEntityType$BlockEntitySupplier<($TaskScreenAuxBlockEntity)>
+public static "getMultiblockBounds"(corePos: $BlockPos$$Type, size: integer, facing: $Direction$$Type): $BoundingBox
 public "getSize"(): integer
 public "getRenderShape"(state: $BlockState$$Type): $RenderShape
 public "onRemove"(blockState: $BlockState$$Type, level: $Level$$Type, blockPos: $BlockPos$$Type, newState: $BlockState$$Type, isMoving: boolean): void
@@ -2987,9 +2987,9 @@ public "getTypeId"(): $ResourceLocation
 public "getIconSupplier"(): $Icon
 public "createTask"(id: long, quest: $Quest$$Type): $Task
 public static "createTask"(id: long, quest: $Quest$$Type, typeId: StringJS): $Task
+public "makeExtraNBT"(): $CompoundTag
 public "setGuiProvider"(p: $TaskType$GuiProvider$$Type): $TaskType
 public "getGuiProvider"(): $TaskType$GuiProvider
-public "makeExtraNBT"(): $CompoundTag
 public "getTypeForNBT"(): StringJS
 public "getDisplayName"(): $Component
 public "setDisplayName"(name: $Component$$Type): $TaskType
@@ -3017,8 +3017,8 @@ import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.Blo
 import {$IEditable$$Interface} from "dev.ftb.mods.ftbquests.block.entity.IEditable"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
-import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
 
 export class $EditableBlockEntity extends $BlockEntity implements $IEditable$$Interface {
 static readonly "ATTACHMENTS_NBT_KEY": StringJS

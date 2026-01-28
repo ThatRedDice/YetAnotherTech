@@ -1,8 +1,8 @@
 declare module "dan200.computercraft.api.pocket.AbstractPocketUpgrade" {
-import {$DataComponentPatch, $DataComponentPatch$$Type} from "net.minecraft.core.component.DataComponentPatch"
 import {$IPocketAccess$$Type} from "dan200.computercraft.api.pocket.IPocketAccess"
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
+import {$DataComponentPatch, $DataComponentPatch$$Type} from "net.minecraft.core.component.DataComponentPatch"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Registry} from "net.minecraft.core.Registry"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
@@ -37,13 +37,13 @@ export type $AbstractPocketUpgrade$$Type = ($AbstractPocketUpgrade);
  */
 export type $AbstractPocketUpgrade$$Original = $AbstractPocketUpgrade;}
 declare module "dan200.computercraft.api.pocket.IPocketUpgrade" {
-import {$DataComponentPatch, $DataComponentPatch$$Type} from "net.minecraft.core.component.DataComponentPatch"
 import {$IPocketAccess$$Type} from "dan200.computercraft.api.pocket.IPocketAccess"
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
+import {$DataComponentPatch, $DataComponentPatch$$Type} from "net.minecraft.core.component.DataComponentPatch"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Registry} from "net.minecraft.core.Registry"
-import {$UpgradeBase$$Interface} from "dan200.computercraft.api.upgrades.UpgradeBase"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$UpgradeBase$$Interface} from "dan200.computercraft.api.upgrades.UpgradeBase"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
 import {$Component} from "net.minecraft.network.chat.Component"
 import {$IPeripheral, $IPeripheral$$Type} from "dan200.computercraft.api.peripheral.IPeripheral"
@@ -102,10 +102,10 @@ get "light"(): integer
 get "upgradeData"(): $DataComponentPatch
 set "colour"(value: integer)
 get "colour"(): integer
-set "upgradeData"(value: $DataComponentPatch$$Type)
-get "position"(): $Vec3
-get "level"(): $ServerLevel
 get "entity"(): $Entity
+set "upgradeData"(value: $DataComponentPatch$$Type)
+get "level"(): $ServerLevel
+get "position"(): $Vec3
 set "light"(value: integer)
 }
 
@@ -116,11 +116,11 @@ export class $IPocketAccess implements $IPocketAccess$$Interface {
  "getUpgradeData"(): $DataComponentPatch
  "setColour"(arg0: integer): void
  "getColour"(): integer
+ "getEntity"(): $Entity
  "setUpgradeData"(arg0: $DataComponentPatch$$Type): void
  "invalidatePeripheral"(): void
- "getPosition"(): $Vec3
  "getLevel"(): $ServerLevel
- "getEntity"(): $Entity
+ "getPosition"(): $Vec3
  "setLight"(arg0: integer): void
 }
 /**

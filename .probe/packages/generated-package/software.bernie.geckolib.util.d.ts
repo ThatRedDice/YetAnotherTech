@@ -21,22 +21,22 @@ constructor(argbInt: integer)
 public "getRed"(): integer
 public "getGreen"(): integer
 public "getBlue"(): integer
-public static "ofRGBA"(arg0: float, arg1: float, arg2: float, arg3: float): $Color
+public static "ofARGB"(arg0: integer, arg1: integer, arg2: integer, arg3: integer): $Color
+public static "ofARGB"(arg0: float, arg1: float, arg2: float, arg3: float): $Color
+public "argbInt"(): integer
 public static "ofRGBA"(arg0: integer, arg1: integer, arg2: integer, arg3: integer): $Color
+public static "ofRGBA"(arg0: float, arg1: float, arg2: float, arg3: float): $Color
 public static "HSBtoARGB"(arg0: float, arg1: float, arg2: float): integer
-public static "ofRGB"(arg0: integer, arg1: integer, arg2: integer): $Color
 public static "ofRGB"(arg0: float, arg1: float, arg2: float): $Color
+public static "ofRGB"(arg0: integer, arg1: integer, arg2: integer): $Color
 public static "ofHSB"(arg0: float, arg1: float, arg2: float): $Color
 public "getAlphaFloat"(): float
 public "getRedFloat"(): float
 public "getGreenFloat"(): float
 public "getBlueFloat"(): float
-public static "ofARGB"(arg0: float, arg1: float, arg2: float, arg3: float): $Color
-public static "ofARGB"(arg0: integer, arg1: integer, arg2: integer, arg3: integer): $Color
-public "argbInt"(): integer
+public static "ofOpaque"(arg0: integer): $Color
 public "brighter"(arg0: double): $Color
 public "darker"(arg0: float): $Color
-public static "ofOpaque"(arg0: integer): $Color
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer

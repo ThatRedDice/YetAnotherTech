@@ -1,12 +1,12 @@
 declare module "rearth.oritech.item.other.ColorCartridgeItem" {
-import {$ColorableMachine$ColorVariant, $ColorableMachine$ColorVariant$$Type} from "rearth.oritech.util.ColorableMachine$ColorVariant"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
+import {$ColorableMachine$ColorVariant, $ColorableMachine$ColorVariant$$Type} from "rearth.oritech.util.ColorableMachine$ColorVariant"
 import {$List$$Type} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
@@ -44,8 +44,8 @@ import {$List$$Type} from "java.util.List"
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$EnergyApi$ItemProvider$$Interface} from "rearth.oritech.api.energy.EnergyApi$ItemProvider"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$EnergyApi$EnergyStorage} from "rearth.oritech.api.energy.EnergyApi$EnergyStorage"
@@ -63,8 +63,8 @@ static readonly "BY_BLOCK": $Map<($Block), ($Item)>
 
 constructor(arg0: $Block$$Type, arg1: $Item$Properties$$Type)
 
-public "getEnergyStorage"(arg0: $ItemStack$$Type): $EnergyApi$EnergyStorage
 public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
+public "getEnergyStorage"(arg0: $ItemStack$$Type): $EnergyApi$EnergyStorage
 public "isBarVisible"(arg0: $ItemStack$$Type): boolean
 public "getBarWidth"(arg0: $ItemStack$$Type): integer
 public "getBarColor"(arg0: $ItemStack$$Type): integer
@@ -86,12 +86,12 @@ export type $SmallEnergyStorageBlockItem$$Original = $SmallEnergyStorageBlockIte
 declare module "rearth.oritech.item.other.MobCaptureItem" {
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$List, $List$$Type} from "java.util.List"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
@@ -128,12 +128,12 @@ declare module "rearth.oritech.item.other.SmallFluidTankBlockItem" {
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$List$$Type} from "java.util.List"
-import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$FluidApi$ItemProvider$$Interface} from "rearth.oritech.api.fluid.FluidApi$ItemProvider"
+import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"
@@ -176,12 +176,12 @@ import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$List$$Type} from "java.util.List"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 
 export class $CustomTooltipItem extends $Item {
 static readonly "BASE_ATTACK_DAMAGE_ID": $ResourceLocation

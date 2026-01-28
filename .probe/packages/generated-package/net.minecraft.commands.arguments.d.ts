@@ -1,7 +1,7 @@
 declare module "net.minecraft.commands.arguments.ResourceOrTagKeyArgument$Info" {
 import {$ArgumentTypeInfo$Template, $ArgumentTypeInfo$Template$$Type} from "net.minecraft.commands.synchronization.ArgumentTypeInfo$Template"
-import {$ResourceOrTagKeyArgument, $ResourceOrTagKeyArgument$$Type} from "net.minecraft.commands.arguments.ResourceOrTagKeyArgument"
 import {$ArgumentType$$Type} from "com.mojang.brigadier.arguments.ArgumentType"
+import {$ResourceOrTagKeyArgument, $ResourceOrTagKeyArgument$$Type} from "net.minecraft.commands.arguments.ResourceOrTagKeyArgument"
 import {$FriendlyByteBuf$$Type} from "net.minecraft.network.FriendlyByteBuf"
 import {$JsonObject$$Type} from "com.google.gson.JsonObject"
 import {$ResourceOrTagKeyArgument$Info$Template, $ResourceOrTagKeyArgument$Info$Template$$Type} from "net.minecraft.commands.arguments.ResourceOrTagKeyArgument$Info$Template"
@@ -28,8 +28,8 @@ export type $ResourceOrTagKeyArgument$Info$$Type<T> = ($ResourceOrTagKeyArgument
  */
 export type $ResourceOrTagKeyArgument$Info$$Original<T> = $ResourceOrTagKeyArgument$Info<(T)>;}
 declare module "net.minecraft.commands.arguments.ArgumentSignatures$Entry" {
-import {$MessageSignature, $MessageSignature$$Type} from "net.minecraft.network.chat.MessageSignature"
 import {$FriendlyByteBuf$$Type} from "net.minecraft.network.FriendlyByteBuf"
+import {$MessageSignature, $MessageSignature$$Type} from "net.minecraft.network.chat.MessageSignature"
 import {$Record} from "java.lang.Record"
 
 export class $ArgumentSignatures$Entry extends $Record {
@@ -47,7 +47,7 @@ public "write"(arg0: $FriendlyByteBuf$$Type): void
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $ArgumentSignatures$Entry$$Type = ({"name"?: StringJS, "signature"?: $MessageSignature$$Type}) | ([name?: StringJS, signature?: $MessageSignature$$Type]);
+export type $ArgumentSignatures$Entry$$Type = ({"signature"?: $MessageSignature$$Type, "name"?: StringJS}) | ([signature?: $MessageSignature$$Type, name?: StringJS]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -127,8 +127,8 @@ export type $ArgumentSignatures$$Original = $ArgumentSignatures;}
 declare module "net.minecraft.commands.arguments.ScoreHolderArgument$Info" {
 import {$ArgumentTypeInfo$Template, $ArgumentTypeInfo$Template$$Type} from "net.minecraft.commands.synchronization.ArgumentTypeInfo$Template"
 import {$ArgumentType$$Type} from "com.mojang.brigadier.arguments.ArgumentType"
-import {$ScoreHolderArgument$Info$Template, $ScoreHolderArgument$Info$Template$$Type} from "net.minecraft.commands.arguments.ScoreHolderArgument$Info$Template"
 import {$FriendlyByteBuf$$Type} from "net.minecraft.network.FriendlyByteBuf"
+import {$ScoreHolderArgument$Info$Template, $ScoreHolderArgument$Info$Template$$Type} from "net.minecraft.commands.arguments.ScoreHolderArgument$Info$Template"
 import {$ScoreHolderArgument, $ScoreHolderArgument$$Type} from "net.minecraft.commands.arguments.ScoreHolderArgument"
 import {$JsonObject$$Type} from "com.google.gson.JsonObject"
 import {$ArgumentTypeInfo$$Interface} from "net.minecraft.commands.synchronization.ArgumentTypeInfo"
@@ -200,8 +200,8 @@ export type $TimeArgument$Info$Template$$Type = ($TimeArgument$Info$Template);
  */
 export type $TimeArgument$Info$Template$$Original = $TimeArgument$Info$Template;}
 declare module "net.minecraft.commands.arguments.ResourceOrTagKeyArgument$Result" {
-import {$Registry$$Type} from "net.minecraft.core.Registry"
 import {$Optional} from "java.util.Optional"
+import {$Registry$$Type} from "net.minecraft.core.Registry"
 import {$TagKey} from "net.minecraft.tags.TagKey"
 import {$Either} from "com.mojang.datafixers.util.Either"
 import {$Predicate, $Predicate$$Type, $Predicate$$Interface} from "java.util.function.Predicate"
@@ -215,12 +215,12 @@ export class $ResourceOrTagKeyArgument$Result<T> implements $ResourceOrTagKeyArg
  "asPrintable"(): StringJS
  "cast"<E>(arg0: $ResourceKey$$Type<($Registry<(E)>)>): $Optional<($ResourceOrTagKeyArgument$Result<(E)>)>
  "unwrap"(): $Either<($ResourceKey<(T)>), ($TagKey<(T)>)>
- "or"(arg0: $Predicate$$Type<($Holder<(T)>)>): $Predicate<($Holder<(T)>)>
+static "not"<T>(arg0: $Predicate$$Type<($Holder<(T)>)>): $Predicate<($Holder<(T)>)>
 static "isEqual"<T>(arg0: any): $Predicate<($Holder<(T)>)>
  "negate"(): $Predicate<($Holder<(T)>)>
  "and"(arg0: $Predicate$$Type<($Holder<(T)>)>): $Predicate<($Holder<(T)>)>
-static "not"<T>(arg0: $Predicate$$Type<($Holder<(T)>)>): $Predicate<($Holder<(T)>)>
  "test"(arg0: $Holder$$Type<(T)>): boolean
+ "or"(arg0: $Predicate$$Type<($Holder<(T)>)>): $Predicate<($Holder<(T)>)>
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -261,8 +261,8 @@ import {$SuggestionsBuilder$$Type} from "com.mojang.brigadier.suggestion.Suggest
 import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$CommandContext$$Type} from "com.mojang.brigadier.context.CommandContext"
 import {$CommandBuildContext$$Type} from "net.minecraft.commands.CommandBuildContext"
-import {$Enchantment} from "net.minecraft.world.item.enchantment.Enchantment"
 import {$ArgumentType$$Interface} from "com.mojang.brigadier.arguments.ArgumentType"
+import {$Enchantment} from "net.minecraft.world.item.enchantment.Enchantment"
 import {$Structure} from "net.minecraft.world.level.levelgen.structure.Structure"
 import {$Registry$$Type} from "net.minecraft.core.Registry"
 import {$CompletableFuture} from "java.util.concurrent.CompletableFuture"
@@ -283,9 +283,9 @@ public "listSuggestions"<S>(arg0: $CommandContext$$Type<(S)>, arg1: $Suggestions
 public static "getSummonableEntityType"(arg0: $CommandContext$$Type<($CommandSourceStack$$Type)>, arg1: StringJS): $Holder$Reference<($EntityType<(never)>)>
 public static "getMobEffect"(arg0: $CommandContext$$Type<($CommandSourceStack$$Type)>, arg1: StringJS): $Holder$Reference<($MobEffect)>
 public static "getEnchantment"(arg0: $CommandContext$$Type<($CommandSourceStack$$Type)>, arg1: StringJS): $Holder$Reference<($Enchantment)>
-public static "resource"<T>(arg0: $CommandBuildContext$$Type, arg1: $ResourceKey$$Type<($Registry<(T)>)>): $ResourceArgument<(T)>
-public static "getAttribute"(arg0: $CommandContext$$Type<($CommandSourceStack$$Type)>, arg1: StringJS): $Holder$Reference<($Attribute)>
 public "getExamples"(): $Collection<(StringJS)>
+public static "getAttribute"(arg0: $CommandContext$$Type<($CommandSourceStack$$Type)>, arg1: StringJS): $Holder$Reference<($Attribute)>
+public static "resource"<T>(arg0: $CommandBuildContext$$Type, arg1: $ResourceKey$$Type<($Registry<(T)>)>): $ResourceArgument<(T)>
 public static "getResource"<T>(arg0: $CommandContext$$Type<($CommandSourceStack$$Type)>, arg1: StringJS, arg2: $ResourceKey$$Type<($Registry<(T)>)>): $Holder$Reference<(T)>
 public "parse"(arg0: $StringReader$$Type): $Holder$Reference<(T)>
 public static "getEntityType"(arg0: $CommandContext$$Type<($CommandSourceStack$$Type)>, arg1: StringJS): $Holder$Reference<($EntityType<(never)>)>
@@ -502,8 +502,8 @@ export type $ResourceKeyArgument$Info$$Type<T> = ($ResourceKeyArgument$Info<(T)>
 export type $ResourceKeyArgument$Info$$Original<T> = $ResourceKeyArgument$Info<(T)>;}
 declare module "net.minecraft.commands.arguments.selector.EntitySelector" {
 import {$UUID$$Type} from "java.util.UUID"
-import {$Predicate, $Predicate$$Type} from "java.util.function.Predicate"
 import {$List, $List$$Type} from "java.util.List"
+import {$Predicate, $Predicate$$Type} from "java.util.function.Predicate"
 import {$MinMaxBounds$Doubles$$Type} from "net.minecraft.advancements.critereon.MinMaxBounds$Doubles"
 import {$Component} from "net.minecraft.network.chat.Component"
 import {$Vec3, $Vec3$$Type} from "net.minecraft.world.phys.Vec3"
@@ -736,11 +736,11 @@ public static "getPlayers"(arg0: $CommandContext$$Type<($CommandSourceStack$$Typ
 public "listSuggestions"<S>(arg0: $CommandContext$$Type<(S)>, arg1: $SuggestionsBuilder$$Type): $CompletableFuture<($Suggestions)>
 public static "getOptionalEntities"(arg0: $CommandContext$$Type<($CommandSourceStack$$Type)>, arg1: StringJS): $Collection<($Entity)>
 public static "getOptionalPlayers"(arg0: $CommandContext$$Type<($CommandSourceStack$$Type)>, arg1: StringJS): $Collection<($ServerPlayer)>
+public "getExamples"(): $Collection<(StringJS)>
+public static "getEntity"(arg0: $CommandContext$$Type<($CommandSourceStack$$Type)>, arg1: StringJS): $Entity
 public static "getEntities"(arg0: $CommandContext$$Type<($CommandSourceStack$$Type)>, arg1: StringJS): $Collection<($Entity)>
 public static "entities"(): $EntityArgument
 public static "entity"(): $EntityArgument
-public "getExamples"(): $Collection<(StringJS)>
-public static "getEntity"(arg0: $CommandContext$$Type<($CommandSourceStack$$Type)>, arg1: StringJS): $Entity
 public "parse"(arg0: $StringReader$$Type): $EntitySelector
 public "parse"(arg0: $StringReader$$Type, arg1: any): any
 public static "player"(): $EntityArgument
@@ -807,8 +807,8 @@ export type $ArgumentSignatures$Signer$$Type = ((arg0: StringJS) => $MessageSign
  */
 export type $ArgumentSignatures$Signer$$Original = $ArgumentSignatures$Signer;}
 declare module "net.minecraft.commands.arguments.ResourceOrTagArgument$Result" {
-import {$Registry$$Type} from "net.minecraft.core.Registry"
 import {$Optional} from "java.util.Optional"
+import {$Registry$$Type} from "net.minecraft.core.Registry"
 import {$Either} from "com.mojang.datafixers.util.Either"
 import {$Predicate, $Predicate$$Type, $Predicate$$Interface} from "java.util.function.Predicate"
 import {$Holder$Reference} from "net.minecraft.core.Holder$Reference"
@@ -823,12 +823,12 @@ export class $ResourceOrTagArgument$Result<T> implements $ResourceOrTagArgument$
  "asPrintable"(): StringJS
  "cast"<E>(arg0: $ResourceKey$$Type<($Registry<(E)>)>): $Optional<($ResourceOrTagArgument$Result<(E)>)>
  "unwrap"(): $Either<($Holder$Reference<(T)>), ($HolderSet$Named<(T)>)>
- "or"(arg0: $Predicate$$Type<($Holder<(T)>)>): $Predicate<($Holder<(T)>)>
+static "not"<T>(arg0: $Predicate$$Type<($Holder<(T)>)>): $Predicate<($Holder<(T)>)>
 static "isEqual"<T>(arg0: any): $Predicate<($Holder<(T)>)>
  "negate"(): $Predicate<($Holder<(T)>)>
  "and"(arg0: $Predicate$$Type<($Holder<(T)>)>): $Predicate<($Holder<(T)>)>
-static "not"<T>(arg0: $Predicate$$Type<($Holder<(T)>)>): $Predicate<($Holder<(T)>)>
  "test"(arg0: $Holder$$Type<(T)>): boolean
+ "or"(arg0: $Predicate$$Type<($Holder<(T)>)>): $Predicate<($Holder<(T)>)>
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_

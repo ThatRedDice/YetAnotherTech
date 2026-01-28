@@ -1,15 +1,15 @@
 declare module "appeng.recipes.quartzcutting.QuartzCuttingRecipe" {
-import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$CraftingInput$$Type} from "net.minecraft.world.item.crafting.CraftingInput"
+import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Ingredient, $Ingredient$$Type} from "net.minecraft.world.item.crafting.Ingredient"
 import {$RecipeType} from "net.minecraft.world.item.crafting.RecipeType"
-import {$CraftingBookCategory} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$CraftingBookCategory} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$NonNullList, $NonNullList$$Type} from "net.minecraft.core.NonNullList"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
-import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
+import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$CraftingRecipe$$Interface} from "net.minecraft.world.item.crafting.CraftingRecipe"
 import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -20,17 +20,17 @@ static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($Quart
 
 constructor(arg0: $ItemStack$$Type, arg1: $NonNullList$$Type<($Ingredient$$Type)>)
 
-public "assemble"(arg0: $CraftingInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
 public "assemble"(arg0: $RecipeInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
-public "getRemainingItems"(arg0: $RecipeInput$$Type): $NonNullList
+public "assemble"(arg0: $CraftingInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
 public "getRemainingItems"(arg0: $CraftingInput$$Type): $NonNullList<($ItemStack)>
+public "getRemainingItems"(arg0: $RecipeInput$$Type): $NonNullList
 public "getSerializer"(): $RecipeSerializer<(never)>
-public "getIngredients"(): $NonNullList<($Ingredient)>
 public "canCraftInDimensions"(arg0: integer, arg1: integer): boolean
 public "getResultItem"(arg0: $HolderLookup$Provider$$Type): $ItemStack
+public "getIngredients"(): $NonNullList<($Ingredient)>
 public "category"(): $CraftingBookCategory
-public "matches"(arg0: $CraftingInput$$Type, arg1: $Level$$Type): boolean
 public "matches"(arg0: $RecipeInput$$Type, arg1: $Level$$Type): boolean
+public "matches"(arg0: $CraftingInput$$Type, arg1: $Level$$Type): boolean
 public "getType"(): $RecipeType<(never)>
 public "showNotification"(): boolean
 public "getToastSymbol"(): $ItemStack
@@ -56,8 +56,8 @@ export type $QuartzCuttingRecipe$$Type = ($QuartzCuttingRecipe);
 export type $QuartzCuttingRecipe$$Original = $QuartzCuttingRecipe;}
 declare module "appeng.recipes.quartzcutting.QuartzCuttingRecipeSerializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$QuartzCuttingRecipe} from "appeng.recipes.quartzcutting.QuartzCuttingRecipe"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"

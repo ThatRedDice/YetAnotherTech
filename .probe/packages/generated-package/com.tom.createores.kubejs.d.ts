@@ -10,8 +10,8 @@ import {$FluidIngredient} from "com.tom.createores.util.FluidIngredient"
 import {$RecipeTypeFunction} from "dev.latvian.mods.kubejs.recipe.RecipeTypeFunction"
 import {$ExcavatingRecipeJS} from "com.tom.createores.kubejs.ExcavatingRecipeJS"
 import {$JsonObject} from "com.google.gson.JsonObject"
-import {$SourceLine} from "dev.latvian.mods.kubejs.script.SourceLine"
 import {$TickDuration} from "dev.latvian.mods.kubejs.util.TickDuration"
+import {$SourceLine} from "dev.latvian.mods.kubejs.script.SourceLine"
 
 export class $DrillingRecipeJS extends $ExcavatingRecipeJS<($DrillingRecipeJS)> {
  "newRecipe": boolean
@@ -50,14 +50,14 @@ declare module "com.tom.createores.kubejs.VeinRecipeJS" {
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$RecipeSchema} from "dev.latvian.mods.kubejs.recipe.schema.RecipeSchema"
 import {$RecipeComponent} from "dev.latvian.mods.kubejs.recipe.component.RecipeComponent"
-import {$RecipeKey} from "dev.latvian.mods.kubejs.recipe.RecipeKey"
 import {$RandomSpreadStructurePlacementJS} from "com.tom.createores.kubejs.RandomSpreadStructurePlacementJS"
+import {$RecipeKey} from "dev.latvian.mods.kubejs.recipe.RecipeKey"
 import {$KubeRecipeFactory} from "dev.latvian.mods.kubejs.recipe.schema.KubeRecipeFactory"
 import {$Component} from "net.minecraft.network.chat.Component"
 import {$ThreeState} from "com.tom.createores.util.ThreeState"
 import {$TypeInfo} from "dev.latvian.mods.rhino.type.TypeInfo"
-import {$RecipeTypeFunction} from "dev.latvian.mods.kubejs.recipe.RecipeTypeFunction"
 import {$KubeRecipe} from "dev.latvian.mods.kubejs.recipe.KubeRecipe"
+import {$RecipeTypeFunction} from "dev.latvian.mods.kubejs.recipe.RecipeTypeFunction"
 import {$RandomSpreadType, $RandomSpreadType$$Type} from "net.minecraft.world.level.levelgen.structure.placement.RandomSpreadType"
 import {$JsonObject} from "com.google.gson.JsonObject"
 import {$SourceLine} from "dev.latvian.mods.kubejs.script.SourceLine"
@@ -93,7 +93,6 @@ constructor()
 public "alwaysInfinite"(): $VeinRecipeJS
 public "alwaysFinite"(): $VeinRecipeJS
 public "defaultFinite"(): $VeinRecipeJS
-public "initValues"(arg0: boolean): void
 public "biomeWhitelist"(arg0: StringJS): $VeinRecipeJS
 public "placement"(arg0: integer, arg1: integer, arg2: integer): $VeinRecipeJS
 public "veinSize"(arg0: float, arg1: float): $VeinRecipeJS
@@ -101,6 +100,7 @@ public "biomeBlacklist"(arg0: StringJS): $VeinRecipeJS
 public "reduction"(arg0: $StructurePlacement$FrequencyReductionMethod$$Type): $VeinRecipeJS
 public "priority"(arg0: integer): $VeinRecipeJS
 public "spread"(arg0: $RandomSpreadType$$Type): $VeinRecipeJS
+public "initValues"(arg0: boolean): void
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -134,15 +134,15 @@ declare module "com.tom.createores.kubejs.ExtractorRecipeJS" {
 import {$RecipeSchema} from "dev.latvian.mods.kubejs.recipe.schema.RecipeSchema"
 import {$Ingredient} from "net.minecraft.world.item.crafting.Ingredient"
 import {$RecipeKey} from "dev.latvian.mods.kubejs.recipe.RecipeKey"
-import {$KubeRecipeFactory} from "dev.latvian.mods.kubejs.recipe.schema.KubeRecipeFactory"
 import {$FluidStack} from "net.neoforged.neoforge.fluids.FluidStack"
+import {$KubeRecipeFactory} from "dev.latvian.mods.kubejs.recipe.schema.KubeRecipeFactory"
 import {$TypeInfo} from "dev.latvian.mods.rhino.type.TypeInfo"
 import {$FluidIngredient} from "com.tom.createores.util.FluidIngredient"
 import {$RecipeTypeFunction} from "dev.latvian.mods.kubejs.recipe.RecipeTypeFunction"
 import {$ExcavatingRecipeJS} from "com.tom.createores.kubejs.ExcavatingRecipeJS"
 import {$JsonObject} from "com.google.gson.JsonObject"
-import {$SourceLine} from "dev.latvian.mods.kubejs.script.SourceLine"
 import {$TickDuration} from "dev.latvian.mods.kubejs.util.TickDuration"
+import {$SourceLine} from "dev.latvian.mods.kubejs.script.SourceLine"
 
 export class $ExtractorRecipeJS extends $ExcavatingRecipeJS<($ExtractorRecipeJS)> {
  "newRecipe": boolean
@@ -208,13 +208,13 @@ declare module "com.tom.createores.kubejs.ExcavatingRecipeJS" {
 import {$TypeInfo} from "dev.latvian.mods.rhino.type.TypeInfo"
 import {$FluidIngredient, $FluidIngredient$$Type} from "com.tom.createores.util.FluidIngredient"
 import {$RecipeSchema, $RecipeSchema$$Type} from "dev.latvian.mods.kubejs.recipe.schema.RecipeSchema"
+import {$KubeRecipe} from "dev.latvian.mods.kubejs.recipe.KubeRecipe"
 import {$RecipeTypeFunction} from "dev.latvian.mods.kubejs.recipe.RecipeTypeFunction"
 import {$Ingredient, $Ingredient$$Type} from "net.minecraft.world.item.crafting.Ingredient"
-import {$KubeRecipe} from "dev.latvian.mods.kubejs.recipe.KubeRecipe"
 import {$RecipeKey} from "dev.latvian.mods.kubejs.recipe.RecipeKey"
 import {$JsonObject} from "com.google.gson.JsonObject"
-import {$SourceLine} from "dev.latvian.mods.kubejs.script.SourceLine"
 import {$TickDuration} from "dev.latvian.mods.kubejs.util.TickDuration"
+import {$SourceLine} from "dev.latvian.mods.kubejs.script.SourceLine"
 
 export class $ExcavatingRecipeJS<T extends $ExcavatingRecipeJS<(object)>> extends $KubeRecipe {
  "newRecipe": boolean
@@ -237,10 +237,10 @@ static readonly "DRILL": $RecipeKey<($Ingredient)>
 constructor()
 
 public static "addFuncs"<T extends $ExcavatingRecipeJS<(object)>>(arg0: $RecipeSchema$$Type): $RecipeSchema
-public "initValues"(arg0: boolean): void
 public "fluid"(arg0: $FluidIngredient$$Type): T
 public "stress"(arg0: integer): T
 public "priority"(arg0: integer): T
+public "initValues"(arg0: boolean): void
 public "drill"(arg0: $Ingredient$$Type): T
 }
 /**

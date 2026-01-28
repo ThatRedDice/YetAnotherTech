@@ -1,8 +1,8 @@
 declare module "rearth.oritech.api.energy.containers.DynamicEnergyStorage" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$SyncType$$Type} from "rearth.oritech.api.networking.SyncType"
-import {$EnergyApi$EnergyStorage} from "rearth.oritech.api.energy.EnergyApi$EnergyStorage"
 import {$UpdatableField$$Interface} from "rearth.oritech.api.networking.UpdatableField"
+import {$EnergyApi$EnergyStorage} from "rearth.oritech.api.energy.EnergyApi$EnergyStorage"
 import {$Runnable$$Type} from "java.lang.Runnable"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 
@@ -13,9 +13,9 @@ static readonly "PACKET_CODEC": $StreamCodec<($ByteBuf), ($DynamicEnergyStorage)
  "maxInsert": long
  "capacity": long
 
-constructor(arg0: long, arg1: long, arg2: long, arg3: long)
-constructor(arg0: long, arg1: long, arg2: long, arg3: $Runnable$$Type, arg4: boolean)
 constructor(arg0: long, arg1: long, arg2: long, arg3: $Runnable$$Type)
+constructor(arg0: long, arg1: long, arg2: long, arg3: $Runnable$$Type, arg4: boolean)
+constructor(arg0: long, arg1: long, arg2: long, arg3: long)
 
 public "setAmount"(arg0: long): void
 public "getMaxExtract"(): long
@@ -25,18 +25,18 @@ public "getDeltaCodec"(): $StreamCodec<($ByteBuf), (long)>
 public "getFullCodec"(): $StreamCodec<($ByteBuf), ($DynamicEnergyStorage)>
 public "handleDeltaUpdate"(arg0: long): void
 public "handleDeltaUpdate"(arg0: any): void
-public "handleFullUpdate"(arg0: any): void
 public "handleFullUpdate"(arg0: $DynamicEnergyStorage$$Type): void
+public "handleFullUpdate"(arg0: any): void
 public "insertIgnoringLimit"(arg0: long, arg1: boolean): long
+public "setMaxExtract"(arg0: long): void
 public "setMaxInsert"(arg0: long): void
 public "getFullData"(): $DynamicEnergyStorage
 public "getMaxInsert"(): long
-public "setMaxExtract"(arg0: long): void
-public "getCapacity"(): long
 public "setCapacity"(arg0: long): void
 public "update"(): void
 public "extract"(arg0: long, arg1: boolean): long
 public "insert"(arg0: long, arg1: boolean): long
+public "getCapacity"(): long
 public "getAmount"(): long
 get "deltaData"(): any
 get "deltaCodec"(): $StreamCodec<($ByteBuf), (long)>
@@ -99,13 +99,13 @@ export {} // Mark the file as a module, do not remove unless there are other imp
 export class $EnergyApi$EnergyStorage {
 constructor()
 
-public "setAmount"(arg0: long): void
 public "supportsExtraction"(): boolean
 public "supportsInsertion"(): boolean
-public "getCapacity"(): long
+public "setAmount"(arg0: long): void
 public "update"(): void
 public "extract"(arg0: long, arg1: boolean): long
 public "insert"(arg0: long, arg1: boolean): long
+public "getCapacity"(): long
 public "getAmount"(): long
 set "amount"(value: long)
 get "capacity"(): long

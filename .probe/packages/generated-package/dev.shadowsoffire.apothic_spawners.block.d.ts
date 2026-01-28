@@ -4,13 +4,12 @@ import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$List$$Type} from "java.util.List"
 import {$SpawnerBlockEntity} from "net.minecraft.world.level.block.entity.SpawnerBlockEntity"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
-import {$BaseSpawner} from "net.minecraft.world.level.BaseSpawner"
 import {$SpawnerStat} from "dev.shadowsoffire.apothic_spawners.stats.SpawnerStat"
-import {$Packet} from "net.minecraft.network.protocol.Packet"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$BaseSpawner} from "net.minecraft.world.level.BaseSpawner"
 
 export class $ApothSpawnerTile extends $SpawnerBlockEntity {
  "spawner": $BaseSpawner
@@ -20,13 +19,11 @@ constructor(arg0: $BlockPos$$Type, arg1: $BlockState$$Type)
 
 public "loadAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "hasBeenModified"(): boolean
-public "saveAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "getStatsMap"(): $Map<($SpawnerStat<(never)>), (any)>
-public "getUpdatePacket"(): $Packet
+public "saveAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public static "appendHoverText"(arg0: $ItemStack$$Type, arg1: $List$$Type<($Component$$Type)>, arg2: StringJS): void
 public static "getSpawnEntityDisplayName"(arg0: $ItemStack$$Type, arg1: StringJS): $Component
 get "statsMap"(): $Map<($SpawnerStat<(never)>), (any)>
-get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -41,12 +38,12 @@ declare module "dev.shadowsoffire.apothic_spawners.block.ApothSpawnerItem" {
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockItem} from "net.minecraft.world.item.BlockItem"
-import {$AdditionalItemPlacement, $AdditionalItemPlacement$$Type} from "net.mehvahdjukaar.moonlight.api.item.additional_placements.AdditionalItemPlacement"
 import {$Component} from "net.minecraft.network.chat.Component"
+import {$AdditionalItemPlacement, $AdditionalItemPlacement$$Type} from "net.mehvahdjukaar.moonlight.api.item.additional_placements.AdditionalItemPlacement"
 
 export class $ApothSpawnerItem extends $BlockItem {
 static readonly "BASE_ATTACK_DAMAGE_ID": $ResourceLocation
@@ -77,8 +74,8 @@ export type $ApothSpawnerItem$$Type = ($ApothSpawnerItem);
 export type $ApothSpawnerItem$$Original = $ApothSpawnerItem;}
 declare module "dev.shadowsoffire.apothic_spawners.block.ApothSpawnerBlock" {
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
-import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$LootParams$Builder$$Type} from "net.minecraft.world.level.storage.loot.LootParams$Builder"
+import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$List, $List$$Type} from "java.util.List"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
@@ -93,8 +90,8 @@ import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.st
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$HitResult$$Type} from "net.minecraft.world.phys.HitResult"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$ItemInteractionResult} from "net.minecraft.world.ItemInteractionResult"
 import {$SpawnerBlock} from "net.minecraft.world.level.block.SpawnerBlock"

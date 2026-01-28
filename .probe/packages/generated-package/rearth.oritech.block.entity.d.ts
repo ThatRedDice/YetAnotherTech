@@ -25,7 +25,7 @@ public "data"(): $MachineAddonController$BaseAddonData
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $ShrinkerBlockEntity$ShrunkAddonData$$Type = ({"silk"?: boolean, "fluid"?: boolean, "yieldCount"?: integer, "data"?: $MachineAddonController$BaseAddonData$$Type, "quarryCount"?: integer, "cropFilter"?: boolean}) | ([silk?: boolean, fluid?: boolean, yieldCount?: integer, data?: $MachineAddonController$BaseAddonData$$Type, quarryCount?: integer, cropFilter?: boolean]);
+export type $ShrinkerBlockEntity$ShrunkAddonData$$Type = ({"fluid"?: boolean, "yieldCount"?: integer, "data"?: $MachineAddonController$BaseAddonData$$Type, "quarryCount"?: integer, "cropFilter"?: boolean, "silk"?: boolean}) | ([fluid?: boolean, yieldCount?: integer, data?: $MachineAddonController$BaseAddonData$$Type, quarryCount?: integer, cropFilter?: boolean, silk?: boolean]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -119,8 +119,8 @@ static readonly "ACTIVE_AUGMENTS_DATA": $Attachment<($Map<($ResourceLocation), (
 readonly "toggleable": boolean
 readonly "id": $ResourceLocation
 
-public "refreshClient"(arg0: $Player$$Type): void
 public "toggle"(arg0: $Player$$Type): void
+public "refreshClient"(arg0: $Player$$Type): void
 public static "registerAttachmentTypes"(): void
 public "installToPlayer"(arg0: $Player$$Type): void
 public "removeFromPlayer"(arg0: $Player$$Type): void
@@ -143,10 +143,10 @@ export type $Augment$$Type = ($Augment);
 export type $Augment$$Original = $Augment;}
 declare module "rearth.oritech.block.entity.interaction.LaserArmBlockEntity" {
 import {$SyncType$$Type} from "rearth.oritech.api.networking.SyncType"
-import {$ColorableMachine$ColorVariant, $ColorableMachine$ColorVariant$$Type} from "rearth.oritech.util.ColorableMachine$ColorVariant"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$Optional} from "java.util.Optional"
+import {$ColorableMachine$ColorVariant, $ColorableMachine$ColorVariant$$Type} from "rearth.oritech.util.ColorableMachine$ColorVariant"
 import {$ScreenProvider$ArrowConfiguration} from "rearth.oritech.util.ScreenProvider$ArrowConfiguration"
+import {$Optional} from "java.util.Optional"
 import {$ScreenProvider$GuiSlot} from "rearth.oritech.util.ScreenProvider$GuiSlot"
 import {$Inventory$$Type} from "net.minecraft.world.entity.player.Inventory"
 import {$MultiblockMachineController$$Interface} from "rearth.oritech.util.MultiblockMachineController"
@@ -154,8 +154,8 @@ import {$SimpleInventoryStorage} from "rearth.oritech.api.item.containers.Simple
 import {$ColorableMachine$$Interface} from "rearth.oritech.util.ColorableMachine"
 import {$ExtendedMenuProvider$$Interface} from "dev.architectury.registry.menu.ExtendedMenuProvider"
 import {$OritechRecipe} from "rearth.oritech.init.recipes.OritechRecipe"
-import {$MachineAddonController$$Interface} from "rearth.oritech.util.MachineAddonController"
 import {$GeoBlockEntity$$Interface} from "software.bernie.geckolib.animatable.GeoBlockEntity"
+import {$MachineAddonController$$Interface} from "rearth.oritech.util.MachineAddonController"
 import {$Vec3i} from "net.minecraft.core.Vec3i"
 import {$DynamicEnergyStorage} from "rearth.oritech.api.energy.containers.DynamicEnergyStorage"
 import {$FluidApi$SingleSlotStorage$$Type} from "rearth.oritech.api.fluid.FluidApi$SingleSlotStorage"
@@ -164,8 +164,8 @@ import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockStat
 import {$ArrayList} from "java.util.ArrayList"
 import {$FriendlyByteBuf$$Type} from "net.minecraft.network.FriendlyByteBuf"
 import {$AnimatableManager$ControllerRegistrar$$Type} from "software.bernie.geckolib.animation.AnimatableManager$ControllerRegistrar"
-import {$RedstoneAddonBlockEntity$RedstoneControllable$$Interface} from "rearth.oritech.block.entity.addons.RedstoneAddonBlockEntity$RedstoneControllable"
 import {$AbstractContainerMenu, $AbstractContainerMenu$$Type} from "net.minecraft.world.inventory.AbstractContainerMenu"
+import {$RedstoneAddonBlockEntity$RedstoneControllable$$Interface} from "rearth.oritech.block.entity.addons.RedstoneAddonBlockEntity$RedstoneControllable"
 import {$RecipeHolder} from "net.minecraft.world.item.crafting.RecipeHolder"
 import {$MachineAddonController$AddonBlock, $MachineAddonController$AddonBlock$$Type} from "rearth.oritech.util.MachineAddonController$AddonBlock"
 import {$EnergyApi$EnergyStorage} from "rearth.oritech.api.energy.EnergyApi$EnergyStorage"
@@ -179,8 +179,8 @@ import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component} from "net.minecraft.network.chat.Component"
 import {$Tuple} from "net.minecraft.util.Tuple"
 import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$Vec3} from "net.minecraft.world.phys.Vec3"
 import {$ScreenProvider$BarConfiguration} from "rearth.oritech.util.ScreenProvider$BarConfiguration"
+import {$Vec3} from "net.minecraft.world.phys.Vec3"
 import {$ItemApi$InventoryStorage} from "rearth.oritech.api.item.ItemApi$InventoryStorage"
 import {$MachineAddonController$BaseAddonData, $MachineAddonController$BaseAddonData$$Type} from "rearth.oritech.util.MachineAddonController$BaseAddonData"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
@@ -214,11 +214,15 @@ static "LASER_TARGET_PACKET_CODEC": $WorldPacketCodec<($RegistryFriendlyByteBuf)
 
 constructor(arg0: $BlockPos$$Type, arg1: $BlockState$$Type)
 
-public "getEnergyStorage"(arg0: $Direction$$Type): $EnergyApi$EnergyStorage
 public "sendUpdate"(arg0: $SyncType$$Type, arg1: $ServerPlayer$$Type): void
 public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $NetworkedBlockEntity$$Type): void
 public "createMenu"(arg0: integer, arg1: $Inventory$$Type, arg2: $Player$$Type): $AbstractContainerMenu
 public "canPassThrough"(arg0: $BlockState$$Type, arg1: $BlockPos$$Type): boolean
+public "getEnergyStorage"(arg0: $Direction$$Type): $EnergyApi$EnergyStorage
+public "showProgress"(): boolean
+public "isFiring"(): boolean
+public "getDefaultCapacity"(): long
+public "getDefaultInsertRate"(): long
 public "getLaserHeadPosition"(): $BlockPos
 public "energyRequiredToFire"(): integer
 public "getLaserPlayerEntity"(): $Player
@@ -229,10 +233,6 @@ public "isTargetingDeepdrill"(arg0: $Block$$Type): boolean
 public "isTargetingCatalyst"(arg0: $Block$$Type): boolean
 public "getExtraExtensionLabels"(): $List<($Tuple<($Component), ($Component)>)>
 public "getDamageTick"(): float
-public "setRedstonePowered"(arg0: boolean): void
-public "addBlockBreakProgress"(arg0: integer): void
-public "getBlockBreakProgress"(): integer
-public "getTargetBlockEnergyNeeded"(): integer
 public "registerControllers"(arg0: $AnimatableManager$ControllerRegistrar$$Type): void
 public "getAnimatableInstanceCache"(): $AnimatableInstanceCache
 public "finishBlockBreaking"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): void
@@ -240,9 +240,11 @@ public static "tryGetRecipeOfBlock"(arg0: $BlockState$$Type, arg1: $Level$$Type)
 public "getInventoryStorage"(arg0: $Direction$$Type): $ItemApi$InventoryStorage
 public "saveExtraData"(arg0: $FriendlyByteBuf$$Type): void
 public "getTickUpdateInterval"(): integer
-public "getDefaultCapacity"(): long
-public "getDefaultInsertRate"(): long
 public "isTargetingUnstableContainer"(arg0: $Block$$Type): boolean
+public "setRedstonePowered"(arg0: boolean): void
+public "addBlockBreakProgress"(arg0: integer): void
+public "getBlockBreakProgress"(): integer
+public "getTargetBlockEnergyNeeded"(): integer
 public "setTargetFromDesignator"(arg0: $BlockPos$$Type): boolean
 public "cycleHunterTargetMode"(): void
 public "getConnectedCores"(): $ArrayList<($BlockPos)>
@@ -287,17 +289,15 @@ public "currentRedstoneEffect"(): StringJS
 public "onRedstoneEvent"(arg0: boolean): void
 public "getCurrentColor"(): $ColorableMachine$ColorVariant
 public "assignColor"(arg0: $ColorableMachine$ColorVariant$$Type): void
-public "isFiring"(): boolean
-public "showProgress"(): boolean
-public "isActive"(arg0: $BlockState$$Type): boolean
 public "getDisplayName"(): $Component
+public "isActive"(arg0: $BlockState$$Type): boolean
 public "getCurrentTarget"(): $BlockPos
 public "getProgress"(): float
+public "getTick"(arg0: any): double
 public "getAnimData"<D>(arg0: $SerializableDataTicket$$Type<(D)>): D
 public "setAnimData"<D>(arg0: $SerializableDataTicket$$Type<(D)>, arg1: D): void
 public "triggerAnim"(arg0: StringJS, arg1: StringJS): void
 public "stopTriggeredAnim"(arg0: StringJS, arg1: StringJS): void
-public "getTick"(arg0: any): double
 public "showEnergy"(): boolean
 public "showArmor"(): boolean
 public "showExpansionPanel"(): boolean
@@ -332,17 +332,18 @@ public static "getItemStackComparatorOutput"(arg0: $ItemStack$$Type): integer
 public static "getFluidStorageComparatorOutput"(arg0: $FluidApi$SingleSlotStorage$$Type): integer
 public "shouldTriggerClientSideContainerClosingOnOpen"(): boolean
 public "writeClientSideData"(arg0: $AbstractContainerMenu$$Type, arg1: $RegistryFriendlyByteBuf$$Type): void
+get "firing"(): boolean
+get "defaultCapacity"(): long
+get "defaultInsertRate"(): long
 get "laserHeadPosition"(): $BlockPos
 get "laserPlayerEntity"(): $Player
 get "extraExtensionLabels"(): $List<($Tuple<($Component), ($Component)>)>
 get "damageTick"(): float
+get "animatableInstanceCache"(): $AnimatableInstanceCache
+get "tickUpdateInterval"(): integer
 set "redstonePowered"(value: boolean)
 get "blockBreakProgress"(): integer
 get "targetBlockEnergyNeeded"(): integer
-get "animatableInstanceCache"(): $AnimatableInstanceCache
-get "tickUpdateInterval"(): integer
-get "defaultCapacity"(): long
-get "defaultInsertRate"(): long
 set "targetFromDesignator"(value: $BlockPos$$Type)
 get "connectedCores"(): $ArrayList<($BlockPos)>
 get "facingForMultiblock"(): $Direction
@@ -376,7 +377,6 @@ get "blockFacingProperty"(): $Property<($Direction)>
 get "comparatorEnergyAmount"(): integer
 get "comparatorProgress"(): integer
 get "comparatorActiveState"(): integer
-get "firing"(): boolean
 get "displayName"(): $Component
 get "currentTarget"(): $BlockPos
 get "progress"(): float
@@ -402,8 +402,8 @@ declare module "rearth.oritech.block.entity.pipes.GenericPipeInterfaceEntity$Pip
 import {$HashSet} from "java.util.HashSet"
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$Direction} from "net.minecraft.core.Direction"
-import {$SavedData} from "net.minecraft.world.level.saveddata.SavedData"
 import {$Set} from "java.util.Set"
+import {$SavedData} from "net.minecraft.world.level.saveddata.SavedData"
 import {$SavedData$Factory} from "net.minecraft.world.level.saveddata.SavedData$Factory"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$Tuple} from "net.minecraft.util.Tuple"

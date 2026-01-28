@@ -1,8 +1,8 @@
 declare module "dev.shadowsoffire.apotheosis.mixin.LivingEntityInvoker" {
 import {$MobEffectInstance$$Type} from "net.minecraft.world.effect.MobEffectInstance"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
-import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
+import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 
 export interface $LivingEntityInvoker$$Interface {
 }

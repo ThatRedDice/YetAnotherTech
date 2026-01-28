@@ -8,23 +8,15 @@ import {$ConnectionPredicate} from "xfacthd.framedblocks.api.predicate.contex.Co
 import {$ShapeProvider, $ShapeProvider$$Type} from "xfacthd.framedblocks.api.shapes.ShapeProvider"
 
 export interface $IBlockType$$Interface {
-get "sideSkipPredicate"(): $SideSkipPredicate
-get "connectionPredicate"(): $ConnectionPredicate
-get "fullFacePredicate"(): $FullFacePredicate
 get "minimumConTexMode"(): $ConTexMode
 get "doubleBlock"(): boolean
+get "sideSkipPredicate"(): $SideSkipPredicate
+get "fullFacePredicate"(): $FullFacePredicate
+get "connectionPredicate"(): $ConnectionPredicate
 get "name"(): StringJS
 }
 
 export class $IBlockType implements $IBlockType$$Interface {
- "getSideSkipPredicate"(): $SideSkipPredicate
- "canOccludeWithSolidCamo"(): boolean
- "canLockState"(): boolean
- "allowMakingIntangible"(): boolean
- "supportsWaterLogging"(): boolean
- "getConnectionPredicate"(): $ConnectionPredicate
- "supportsConnectedTextures"(): boolean
- "getFullFacePredicate"(): $FullFacePredicate
  "generateOcclusionShapes"(arg0: $ImmutableList$$Type<($BlockState$$Type)>, arg1: $ShapeProvider$$Type): $ShapeProvider
  "hasSpecialHitbox"(): boolean
  "generateShapes"(arg0: $ImmutableList$$Type<($BlockState$$Type)>): $ShapeProvider
@@ -33,6 +25,14 @@ export class $IBlockType implements $IBlockType$$Interface {
  "hasBlockItem"(): boolean
  "hasSpecialTile"(): boolean
  "isDoubleBlock"(): boolean
+ "getSideSkipPredicate"(): $SideSkipPredicate
+ "canOccludeWithSolidCamo"(): boolean
+ "canLockState"(): boolean
+ "allowMakingIntangible"(): boolean
+ "supportsWaterLogging"(): boolean
+ "getFullFacePredicate"(): $FullFacePredicate
+ "getConnectionPredicate"(): $ConnectionPredicate
+ "supportsConnectedTextures"(): boolean
  "getName"(): StringJS
  "compareTo"(arg0: $IBlockType$$Type): integer
 }

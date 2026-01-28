@@ -137,21 +137,21 @@ export type $ComputerBlock$$Type<T> = ($ComputerBlock<(T)>);
 export type $ComputerBlock$$Original<T> = $ComputerBlock<(T)>;}
 declare module "dan200.computercraft.shared.computer.core.ServerComputer" {
 import {$ComputerState} from "dan200.computercraft.shared.computer.core.ComputerState"
-import {$UUID} from "java.util.UUID"
 import {$ServerComputer$Properties, $ServerComputer$Properties$$Type} from "dan200.computercraft.shared.computer.core.ServerComputer$Properties"
+import {$UUID} from "java.util.UUID"
 import {$TerminalState} from "dan200.computercraft.shared.computer.terminal.TerminalState"
 import {$ComputerComponent} from "dan200.computercraft.api.component.ComputerComponent"
 import {$WorkMonitor} from "dan200.computercraft.api.peripheral.WorkMonitor"
-import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$WritableMount} from "dan200.computercraft.api.filesystem.WritableMount"
+import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ComputerEnvironment$$Interface} from "dan200.computercraft.core.computer.ComputerEnvironment"
 import {$ComputerSide$$Type} from "dan200.computercraft.core.computer.ComputerSide"
 import {$ServerLevel, $ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$MetricsObserver} from "dan200.computercraft.core.metrics.MetricsObserver"
 import {$IPeripheral, $IPeripheral$$Type} from "dan200.computercraft.api.peripheral.IPeripheral"
-import {$UserComputerInput} from "dan200.computercraft.core.input.UserComputerInput"
+import {$MetricsObserver} from "dan200.computercraft.core.metrics.MetricsObserver"
 import {$ComputerFamily, $ComputerFamily$$Type} from "dan200.computercraft.shared.computer.core.ComputerFamily"
+import {$UserComputerInput} from "dan200.computercraft.core.input.UserComputerInput"
 
 export class $ServerComputer implements $ComputerEnvironment$$Interface {
 static readonly "METRICS": $ComputerComponent<($MetricsObserver)>
@@ -174,37 +174,37 @@ public "getRedstoneOutput"(arg0: $ComputerSide$$Type): integer
 public "setRedstoneInput"(arg0: $ComputerSide$$Type, arg1: integer, arg2: integer): void
 public "getMetrics"(): $MetricsObserver
 public "createRootMount"(): $WritableMount
+public "getLabel"(): StringJS
+public "setLabel"(arg0: StringJS): void
+public "keepAlive"(): void
+public "getFamily"(): $ComputerFamily
 public "getDay"(): integer
 public "getTimeOfDay"(): double
-public "getID"(): integer
-public "getPosition"(): $BlockPos
-public "keepAlive"(): void
-public "setLabel"(arg0: StringJS): void
-public "getFamily"(): $ComputerFamily
 public "getLevel"(): $ServerLevel
-public "getLabel"(): StringJS
+public "getID"(): integer
 public "shutdown"(): void
 public "register"(): $UUID
 public static "properties"(arg0: integer, arg1: $ComputerFamily$$Type): $ServerComputer$Properties
 public "isOn"(): boolean
 public "getState"(): $ComputerState
 public "close"(): void
+public "getPosition"(): $BlockPos
 public "reboot"(): void
 public "setPosition"(arg0: $ServerLevel$$Type, arg1: $BlockPos$$Type): void
 get "mainThreadMonitor"(): $WorkMonitor
 get "instanceUUID"(): $UUID
 get "terminalState"(): $TerminalState
 get "metrics"(): $MetricsObserver
-get "day"(): integer
-get "timeOfDay"(): double
-get "ID"(): integer
-get "position"(): $BlockPos
+get "label"(): StringJS
 set "label"(value: StringJS)
 get "family"(): $ComputerFamily
+get "day"(): integer
+get "timeOfDay"(): double
 get "level"(): $ServerLevel
-get "label"(): StringJS
+get "ID"(): integer
 get "on"(): boolean
 get "state"(): $ComputerState
+get "position"(): $BlockPos
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -220,8 +220,8 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
 export class $ComputerState extends $Enum<($ComputerState)> implements $StringRepresentable$$Interface {
@@ -235,11 +235,11 @@ public static "valueOf"(arg0: StringJS): $ComputerState
 public "getTexture"(): StringJS
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "texture"(): StringJS
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
@@ -264,12 +264,12 @@ import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$IBundledRedstoneBlock$$Interface} from "dan200.computercraft.shared.common.IBundledRedstoneBlock"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$HorizontalDirectionalBlock} from "net.minecraft.world.level.block.HorizontalDirectionalBlock"
@@ -341,7 +341,7 @@ public "height"(): integer
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $TerminalSize$$Type = ({"height"?: integer, "width"?: integer}) | ([height?: integer, width?: integer]);
+export type $TerminalSize$$Type = ({"width"?: integer, "height"?: integer}) | ([width?: integer, height?: integer]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -357,8 +357,8 @@ import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$RegistryEntry$$Type} from "dan200.computercraft.shared.platform.RegistryEntry"
 import {$ComputerBlockEntity} from "dan200.computercraft.shared.computer.blocks.ComputerBlockEntity"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$ComputerBlock} from "dan200.computercraft.shared.computer.blocks.ComputerBlock"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
+import {$ComputerBlock} from "dan200.computercraft.shared.computer.blocks.ComputerBlock"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -404,8 +404,8 @@ import {$TerminalSize$$Type} from "dan200.computercraft.shared.computer.core.Ter
 import {$ComputerComponent$$Type} from "dan200.computercraft.api.component.ComputerComponent"
 
 export class $ServerComputer$Properties {
-public "storageCapacity"(arg0: long): $ServerComputer$Properties
 public "terminalSize"(arg0: $TerminalSize$$Type): $ServerComputer$Properties
+public "storageCapacity"(arg0: long): $ServerComputer$Properties
 public "label"(arg0: StringJS): $ServerComputer$Properties
 public "addComponent"<T>(arg0: $ComputerComponent$$Type<(T)>, arg1: T): $ServerComputer$Properties
 }
@@ -447,8 +447,8 @@ import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Component} from "net.minecraft.network.chat.Component"
 import {$Inventory$$Type} from "net.minecraft.world.entity.player.Inventory"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
-import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Nameable$$Interface} from "net.minecraft.world.Nameable"
+import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$AbstractContainerMenu} from "net.minecraft.world.inventory.AbstractContainerMenu"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$ServerComputer} from "dan200.computercraft.shared.computer.core.ServerComputer"
@@ -463,25 +463,25 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 
 constructor(arg0: $BlockEntityType$$Type<($AbstractComputerBlockEntity$$Type)>, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $ComputerFamily$$Type)
 
-public "loadAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "getUpdatePacket"(): $ClientboundBlockEntityDataPacket
+public "loadAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "saveAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "getUpdateTag"(arg0: $HolderLookup$Provider$$Type): $CompoundTag
 public "updateInputsImmediately"(): void
 public "getServerComputer"(): $ServerComputer
-public "isUsable"(arg0: $Player$$Type): boolean
 public "createServerComputer"(): $ServerComputer
+public "isUsable"(arg0: $Player$$Type): boolean
 public "neighborBlockEntityChanged"(arg0: $BlockPos$$Type): void
 public "neighbourShapeChanged"(arg0: $Direction$$Type): void
 public "isAdminOnly"(): boolean
 public "updateRedstone"(): void
 public "getComputerID"(): integer
 public "setComputerID"(arg0: integer): void
+public "getLabel"(): StringJS
 public "setLabel"(arg0: StringJS): void
 public "getFamily"(): $ComputerFamily
-public "getLabel"(): StringJS
-public "getName"(): $Component
 public "getDisplayName"(): $Component
+public "getName"(): $Component
 /**
  * 
  * @deprecated
@@ -498,11 +498,11 @@ get "serverComputer"(): $ServerComputer
 get "adminOnly"(): boolean
 get "computerID"(): integer
 set "computerID"(value: integer)
+get "label"(): StringJS
 set "label"(value: StringJS)
 get "family"(): $ComputerFamily
-get "label"(): StringJS
-get "name"(): $Component
 get "displayName"(): $Component
+get "name"(): $Component
 get "removed"(): void
 get "customName"(): $Component
 }

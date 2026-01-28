@@ -4,8 +4,8 @@ import {$Collection$$Type} from "java.util.Collection"
 import {$IModFile$$Type} from "net.neoforged.neoforgespi.locating.IModFile"
 import {$ModuleLayer$$Type} from "java.lang.ModuleLayer"
 import {$ModFileScanData$$Type} from "net.neoforged.neoforgespi.language.ModFileScanData"
-import {$IModInfo$$Type} from "net.neoforged.neoforgespi.language.IModInfo"
 import {$ModContainer, $ModContainer$$Type} from "net.neoforged.fml.ModContainer"
+import {$IModInfo$$Type} from "net.neoforged.neoforgespi.language.IModInfo"
 
 export interface $IModLanguageLoader$$Interface {
 }
@@ -54,53 +54,53 @@ export type $ModFileScanData$AnnotationData$$Type = ({"clazz"?: $Type$$Type, "an
 export type $ModFileScanData$AnnotationData$$Original = $ModFileScanData$AnnotationData;}
 declare module "net.neoforged.neoforgespi.language.IModInfo" {
 import {$ArtifactVersion} from "org.apache.maven.artifact.versioning.ArtifactVersion"
-import {$IModFileInfo} from "net.neoforged.neoforgespi.language.IModFileInfo"
 import {$Map} from "java.util.Map"
+import {$IModFileInfo} from "net.neoforged.neoforgespi.language.IModFileInfo"
 import {$Optional} from "java.util.Optional"
 import {$IModInfo$ModVersion} from "net.neoforged.neoforgespi.language.IModInfo$ModVersion"
-import {$List} from "java.util.List"
 import {$IConfigurable} from "net.neoforged.neoforgespi.language.IConfigurable"
+import {$List} from "java.util.List"
 import {$URL} from "java.net.URL"
-import {$ForgeFeature$Bound} from "net.neoforged.neoforgespi.locating.ForgeFeature$Bound"
 import {$VersionRange} from "org.apache.maven.artifact.versioning.VersionRange"
+import {$ForgeFeature$Bound} from "net.neoforged.neoforgespi.locating.ForgeFeature$Bound"
 import {$IModLanguageLoader} from "net.neoforged.neoforgespi.language.IModLanguageLoader"
 
 export interface $IModInfo$$Interface {
-get "loader"(): $IModLanguageLoader
-get "description"(): StringJS
 get "namespace"(): StringJS
+get "description"(): StringJS
+get "loader"(): $IModLanguageLoader
 get "displayName"(): StringJS
 get "version"(): $ArtifactVersion
 get "config"(): $IConfigurable
 get "modId"(): StringJS
+get "dependencies"(): $List<($IModInfo$ModVersion)>
+get "owningFile"(): $IModFileInfo
+get "modURL"(): $Optional<($URL)>
 get "forgeFeatures"(): $List<($ForgeFeature$Bound)>
 get "modProperties"(): $Map<(StringJS), (any)>
 get "updateURL"(): $Optional<($URL)>
 get "logoFile"(): $Optional<(StringJS)>
 get "logoBlur"(): boolean
-get "modURL"(): $Optional<($URL)>
-get "owningFile"(): $IModFileInfo
-get "dependencies"(): $List<($IModInfo$ModVersion)>
 }
 
 export class $IModInfo implements $IModInfo$$Interface {
 static readonly "UNBOUNDED": $VersionRange
 
- "getLoader"(): $IModLanguageLoader
- "getDescription"(): StringJS
  "getNamespace"(): StringJS
+ "getDescription"(): StringJS
+ "getLoader"(): $IModLanguageLoader
  "getDisplayName"(): StringJS
  "getVersion"(): $ArtifactVersion
  "getConfig"(): $IConfigurable
  "getModId"(): StringJS
+ "getDependencies"(): $List<($IModInfo$ModVersion)>
+ "getOwningFile"(): $IModFileInfo
+ "getModURL"(): $Optional<($URL)>
  "getForgeFeatures"(): $List<($ForgeFeature$Bound)>
  "getModProperties"(): $Map<(StringJS), (any)>
  "getUpdateURL"(): $Optional<($URL)>
  "getLogoFile"(): $Optional<(StringJS)>
  "getLogoBlur"(): boolean
- "getModURL"(): $Optional<($URL)>
- "getOwningFile"(): $IModFileInfo
- "getDependencies"(): $List<($IModInfo$ModVersion)>
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -152,7 +152,7 @@ public "acceptedVersions"(): $VersionRange
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $IModFileInfo$LanguageSpec$$Type = ({"languageName"?: StringJS, "acceptedVersions"?: $VersionRange$$Type}) | ([languageName?: StringJS, acceptedVersions?: $VersionRange$$Type]);
+export type $IModFileInfo$LanguageSpec$$Type = ({"acceptedVersions"?: $VersionRange$$Type, "languageName"?: StringJS}) | ([acceptedVersions?: $VersionRange$$Type, languageName?: StringJS]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -232,8 +232,8 @@ import {$VersionRange} from "org.apache.maven.artifact.versioning.VersionRange"
 import {$IModInfo, $IModInfo$$Type} from "net.neoforged.neoforgespi.language.IModInfo"
 
 export interface $IModInfo$ModVersion$$Interface {
-get "reason"(): $Optional<(StringJS)>
 set "owner"(value: $IModInfo$$Type)
+get "reason"(): $Optional<(StringJS)>
 get "type"(): $IModInfo$DependencyType
 get "owner"(): $IModInfo
 get "side"(): $IModInfo$DependencySide
@@ -244,8 +244,8 @@ get "referralURL"(): $Optional<($URL)>
 }
 
 export class $IModInfo$ModVersion implements $IModInfo$ModVersion$$Interface {
- "getReason"(): $Optional<(StringJS)>
  "setOwner"(arg0: $IModInfo$$Type): void
+ "getReason"(): $Optional<(StringJS)>
  "getType"(): $IModInfo$DependencyType
  "getOwner"(): $IModInfo
  "getSide"(): $IModInfo$DependencySide
@@ -287,12 +287,12 @@ declare module "net.neoforged.neoforgespi.language.ModFileScanData" {
 import {$IModFileInfo, $IModFileInfo$$Type} from "net.neoforged.neoforgespi.language.IModFileInfo"
 import {$Annotation$$Type} from "java.lang.annotation.Annotation"
 import {$List} from "java.util.List"
-import {$Set} from "java.util.Set"
 import {$Class$$Type} from "java.lang.Class"
-import {$ModFileScanData$ClassData} from "net.neoforged.neoforgespi.language.ModFileScanData$ClassData"
+import {$Set} from "java.util.Set"
 import {$Stream} from "java.util.stream.Stream"
-import {$ElementType$$Type} from "java.lang.annotation.ElementType"
+import {$ModFileScanData$ClassData} from "net.neoforged.neoforgespi.language.ModFileScanData$ClassData"
 import {$ModFileScanData$AnnotationData} from "net.neoforged.neoforgespi.language.ModFileScanData$AnnotationData"
+import {$ElementType$$Type} from "java.lang.annotation.ElementType"
 
 export class $ModFileScanData {
 constructor()
@@ -319,8 +319,8 @@ declare module "net.neoforged.neoforgespi.language.IModFileInfo" {
 import {$Map} from "java.util.Map"
 import {$IModFile} from "net.neoforged.neoforgespi.locating.IModFile"
 import {$IModFileInfo$LanguageSpec} from "net.neoforged.neoforgespi.language.IModFileInfo$LanguageSpec"
-import {$List} from "java.util.List"
 import {$IConfigurable} from "net.neoforged.neoforgespi.language.IConfigurable"
+import {$List} from "java.util.List"
 import {$IModInfo} from "net.neoforged.neoforgespi.language.IModInfo"
 
 export interface $IModFileInfo$$Interface {

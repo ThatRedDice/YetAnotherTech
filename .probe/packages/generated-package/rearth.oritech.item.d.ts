@@ -30,11 +30,11 @@ constructor(arg0: $Block$$Type, arg1: $Item$Properties$$Type, arg2: float, arg3:
 public "createGeoRenderer"(arg0: $Consumer$$Type<($GeoRenderProvider)>): void
 public "registerControllers"(arg0: $AnimatableManager$ControllerRegistrar$$Type): void
 public "getAnimatableInstanceCache"(): $AnimatableInstanceCache
+public "getTick"(arg0: any): double
 public static "registerSyncedAnimatable"(arg0: $GeoAnimatable$$Type): void
 public "isPerspectiveAware"(): boolean
 public "animatableCacheOverride"(): $AnimatableInstanceCache
 public static "getOrAssignId"(arg0: $ItemStack$$Type, arg1: $ServerLevel$$Type): long
-public "getTick"(arg0: any): double
 public static "getId"(arg0: $ItemStack$$Type): long
 public "getAnimData"<D>(arg0: long, arg1: $SerializableDataTicket$$Type<(D)>): D
 public "setAnimData"<D>(arg0: $Entity$$Type, arg1: long, arg2: $SerializableDataTicket$$Type<(D)>, arg3: D): void
@@ -66,18 +66,18 @@ export type $OritechGeoItem$$Type = ($OritechGeoItem);
  */
 export type $OritechGeoItem$$Original = $OritechGeoItem;}
 declare module "rearth.oritech.item.UnstableContainerItem" {
-import {$Map} from "java.util.Map"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$Map} from "java.util.Map"
 import {$List, $List$$Type} from "java.util.List"
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$GeoRenderProvider$$Type} from "software.bernie.geckolib.animatable.client.GeoRenderProvider"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$AnimatableInstanceCache} from "software.bernie.geckolib.animatable.instance.AnimatableInstanceCache"
-import {$GeoItem$$Interface} from "software.bernie.geckolib.animatable.GeoItem"
 import {$AnimatableManager$ControllerRegistrar$$Type} from "software.bernie.geckolib.animation.AnimatableManager$ControllerRegistrar"
 import {$Consumer$$Type} from "java.util.function.Consumer"
+import {$GeoItem$$Interface} from "software.bernie.geckolib.animatable.GeoItem"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$GeoAnimatable$$Type} from "software.bernie.geckolib.animatable.GeoAnimatable"
@@ -106,11 +106,11 @@ public "createGeoRenderer"(arg0: $Consumer$$Type<($GeoRenderProvider)>): void
 public "registerControllers"(arg0: $AnimatableManager$ControllerRegistrar$$Type): void
 public "getAnimatableInstanceCache"(): $AnimatableInstanceCache
 public static "getBlocksFromTag"(arg0: $TagKey$$Type<($Block)>): $List<($MutableComponent)>
+public "getTick"(arg0: any): double
 public static "registerSyncedAnimatable"(arg0: $GeoAnimatable$$Type): void
 public "isPerspectiveAware"(): boolean
 public "animatableCacheOverride"(): $AnimatableInstanceCache
 public static "getOrAssignId"(arg0: $ItemStack$$Type, arg1: $ServerLevel$$Type): long
-public "getTick"(arg0: any): double
 public static "getId"(arg0: $ItemStack$$Type): long
 public "getAnimData"<D>(arg0: long, arg1: $SerializableDataTicket$$Type<(D)>): D
 public "setAnimData"<D>(arg0: $Entity$$Type, arg1: long, arg2: $SerializableDataTicket$$Type<(D)>, arg3: D): void

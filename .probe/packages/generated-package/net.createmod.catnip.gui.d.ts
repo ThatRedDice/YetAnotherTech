@@ -12,8 +12,8 @@ static "EMPTY": $RenderElement
 constructor()
 constructor(arg0: $FadableScreenElement$$Type, arg1: $FadableScreenElement$$Type)
 
-public "withStencilRenderer"<T extends $DelegatedStencilElement>(arg0: $FadableScreenElement$$Type): T
 public "withElementRenderer"<T extends $DelegatedStencilElement>(arg0: $FadableScreenElement$$Type): T
+public "withStencilRenderer"<T extends $DelegatedStencilElement>(arg0: $FadableScreenElement$$Type): T
 public "renderStencil"(arg0: $GuiGraphics$$Type): void
 public "renderElement"(arg0: $GuiGraphics$$Type): void
 public "cleanUp"(arg0: $GuiGraphics$$Type): void
@@ -58,8 +58,8 @@ import {$PositionedRectangle} from "io.wispforest.owo.ui.core.PositionedRectangl
 import {$List} from "java.util.List"
 import {$AbstractWidget} from "net.minecraft.client.gui.components.AbstractWidget"
 import {$Runnable$$Type} from "java.lang.Runnable"
-import {$Component as $Component$0} from "net.minecraft.network.chat.Component"
-import {$Component$$Type} from "io.wispforest.owo.ui.core.Component"
+import {$Component} from "net.minecraft.network.chat.Component"
+import {$Component$$Type as $Component$0$$Type} from "io.wispforest.owo.ui.core.Component"
 import {$GuiGraphics$$Type} from "net.minecraft.client.gui.GuiGraphics"
 import {$TickableGuiEventListener$$Interface} from "net.createmod.catnip.gui.TickableGuiEventListener"
 import {$Color} from "net.createmod.catnip.theme.Color"
@@ -82,21 +82,21 @@ static readonly "COLOR_IDLE": $Couple<($Color)>
 static readonly "COLOR_DISABLED": $Couple<($Color)>
 static readonly "COLOR_FAIL": $Couple<($Color)>
 
-public "atZLevel"<T extends $AbstractSimiWidget>(arg0: float): T
 public "withCallback"<T extends $AbstractSimiWidget>(arg0: $Runnable$$Type): T
 public "withCallback"<T extends $AbstractSimiWidget>(arg0: $BiConsumer$$Type<(integer), (integer)>): T
-public "getToolTip"(): $List<($Component$0)>
+public "getToolTip"(): $List<($Component)>
 public "runCallback"(arg0: double, arg1: double): void
 public "tick"(): void
 public "render"(arg0: $GuiGraphics$$Type, arg1: integer, arg2: integer, arg3: float): void
 public "setActive"<T extends $AbstractSimiWidget>(arg0: boolean): T
-public "setHeight"(arg0: integer): void
 public "onClick"(arg0: double, arg1: double): void
 public "updateWidgetNarration"(arg0: $NarrationElementOutput$$Type): void
-public static "bypassCheck"(component: $Component$$Type, runnable: $Runnable$$Type): void
+public "setHeight"(arg0: integer): void
+public "atZLevel"<T extends $AbstractSimiWidget>(arg0: float): T
+public static "bypassCheck"(component: $Component$0$$Type, runnable: $Runnable$$Type): void
 public static "of"(x: integer, y: integer, size: $Size$$Type): $PositionedRectangle
 public static "of"(x: integer, y: integer, width: integer, height: integer): $PositionedRectangle
-get "toolTip"(): $List<($Component$0)>
+get "toolTip"(): $List<($Component)>
 set "height"(value: integer)
 }
 /**
@@ -137,10 +137,10 @@ import {$ScreenRectangle} from "net.minecraft.client.gui.navigation.ScreenRectan
 import {$ComponentPath} from "net.minecraft.client.gui.ComponentPath"
 
 export interface $TickableGuiEventListener$$Interface extends $GuiEventListener$$Interface {
-get "currentFocusPath"(): $ComponentPath
-get "rectangle"(): $ScreenRectangle
 set "focused"(value: boolean)
 get "focused"(): boolean
+get "currentFocusPath"(): $ComponentPath
+get "rectangle"(): $ScreenRectangle
 get "tabOrderGroup"(): integer
 }
 
@@ -148,10 +148,6 @@ export class $TickableGuiEventListener implements $TickableGuiEventListener$$Int
  "tick"(): void
  "keyPressed"(arg0: integer, arg1: integer, arg2: integer): boolean
  "mouseClicked"(arg0: double, arg1: double, arg2: integer): boolean
- "nextFocusPath"(arg0: $FocusNavigationEvent$$Type): $ComponentPath
- "getCurrentFocusPath"(): $ComponentPath
- "isMouseOver"(arg0: double, arg1: double): boolean
- "getRectangle"(): $ScreenRectangle
  "setFocused"(arg0: boolean): void
  "mouseReleased"(arg0: double, arg1: double, arg2: integer): boolean
  "mouseDragged"(arg0: double, arg1: double, arg2: integer, arg3: double, arg4: double): boolean
@@ -159,6 +155,10 @@ export class $TickableGuiEventListener implements $TickableGuiEventListener$$Int
  "keyReleased"(arg0: integer, arg1: integer, arg2: integer): boolean
  "charTyped"(arg0: character, arg1: integer): boolean
  "isFocused"(): boolean
+ "nextFocusPath"(arg0: $FocusNavigationEvent$$Type): $ComponentPath
+ "getCurrentFocusPath"(): $ComponentPath
+ "isMouseOver"(arg0: double, arg1: double): boolean
+ "getRectangle"(): $ScreenRectangle
  "mouseMoved"(arg0: double, arg1: double): void
  "getTabOrderGroup"(): integer
 }
@@ -188,8 +188,8 @@ export class $TextureSheetSegment implements $TextureSheetSegment$$Interface {
  "getStartY"(): integer
  "getWidth"(): integer
  "getHeight"(): integer
- "getLocation"(): $ResourceLocation
  "bind"(): void
+ "getLocation"(): $ResourceLocation
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_

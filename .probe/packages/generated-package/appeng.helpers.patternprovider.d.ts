@@ -17,9 +17,9 @@ static "NUMBER_OF_SLOTS": integer
 
 constructor(arg0: $Runnable$$Type)
 
+public "addDrops"(arg0: $List$$Type<($ItemStack$$Type)>, arg1: $Level$$Type, arg2: $BlockPos$$Type): void
 public "canExtract"(): boolean
 public "canInsert"(): boolean
-public "addDrops"(arg0: $List$$Type<($ItemStack$$Type)>, arg1: $Level$$Type, arg2: $BlockPos$$Type): void
 public "injectIntoNetwork"(arg0: $MEStorage$$Type, arg1: $IActionSource$$Type, arg2: $Consumer$$Type<($GenericStack)>): boolean
 public static "checkPreconditions"(arg0: $AEKey$$Type, arg1: long, arg2: $Actionable$$Type, arg3: $IActionSource$$Type): void
 }
@@ -74,8 +74,8 @@ import {$PatternContainer$$Interface} from "appeng.helpers.patternprovider.Patte
 import {$IPriorityHost$$Interface} from "appeng.helpers.IPriorityHost"
 import {$ItemLike$$Type} from "net.minecraft.world.level.ItemLike"
 import {$AEItemKey} from "appeng.api.stacks.AEItemKey"
-import {$PatternContainerGroup} from "appeng.api.implementations.blockentities.PatternContainerGroup"
 import {$IConfigManager} from "appeng.api.util.IConfigManager"
+import {$PatternContainerGroup} from "appeng.api.implementations.blockentities.PatternContainerGroup"
 import {$IGrid} from "appeng.api.networking.IGrid"
 import {$IUpgradeInventory} from "appeng.api.upgrades.IUpgradeInventory"
 import {$ISubMenu$$Type} from "appeng.menu.ISubMenu"
@@ -83,8 +83,6 @@ import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$EnumSet} from "java.util.EnumSet"
 
 export interface $PatternProviderLogicHost$$Interface extends $IConfigurableObject$$Interface, $IPriorityHost$$Interface, $PatternContainer$$Interface, $IUpgradeableObject$$Interface {
-get "logic"(): $PatternProviderLogic
-get "upgrades"(): $IUpgradeInventory
 get "configManager"(): $IConfigManager
 get "grid"(): $IGrid
 get "terminalIcon"(): $AEItemKey
@@ -92,6 +90,8 @@ get "visibleInTerminal"(): boolean
 get "terminalPatternInventory"(): $InternalInventory
 get "terminalSortOrder"(): long
 get "terminalGroup"(): $PatternContainerGroup
+get "logic"(): $PatternProviderLogic
+get "upgrades"(): $IUpgradeInventory
 set "priority"(value: integer)
 get "priority"(): integer
 get "targets"(): $EnumSet<($Direction)>
@@ -100,8 +100,6 @@ get "mainMenuIcon"(): $ItemStack
 }
 
 export class $PatternProviderLogicHost implements $PatternProviderLogicHost$$Interface {
- "getLogic"(): $PatternProviderLogic
- "getUpgrades"(): $IUpgradeInventory
  "getConfigManager"(): $IConfigManager
  "getGrid"(): $IGrid
  "returnToMainMenu"(arg0: $Player$$Type, arg1: $ISubMenu$$Type): void
@@ -111,6 +109,8 @@ export class $PatternProviderLogicHost implements $PatternProviderLogicHost$$Int
  "getTerminalPatternInventory"(): $InternalInventory
  "getTerminalSortOrder"(): long
  "getTerminalGroup"(): $PatternContainerGroup
+ "getLogic"(): $PatternProviderLogic
+ "getUpgrades"(): $IUpgradeInventory
  "setPriority"(arg0: integer): void
  "getPriority"(): integer
  "getTargets"(): $EnumSet<($Direction)>
@@ -138,13 +138,13 @@ import {$List, $List$$Type} from "java.util.List"
 import {$InternalInventory} from "appeng.api.inventories.InternalInventory"
 import {$DataComponentMap$Builder$$Type} from "net.minecraft.core.component.DataComponentMap$Builder"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$KeyCounter$$Type} from "appeng.api.stacks.KeyCounter"
 import {$AppEngInternalInventory$$Type} from "appeng.util.inv.AppEngInternalInventory"
+import {$KeyCounter$$Type} from "appeng.api.stacks.KeyCounter"
 import {$ICraftingProvider$$Interface} from "appeng.api.networking.crafting.ICraftingProvider"
 import {$PatternContainerGroup} from "appeng.api.implementations.blockentities.PatternContainerGroup"
 import {$IConfigManager} from "appeng.api.util.IConfigManager"
-import {$Set} from "java.util.Set"
 import {$IUpgradeInventory} from "appeng.api.upgrades.IUpgradeInventory"
+import {$Set} from "java.util.Set"
 import {$AEKey} from "appeng.api.stacks.AEKey"
 import {$GenericStack} from "appeng.api.stacks.GenericStack"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
@@ -169,20 +169,19 @@ static readonly "NBT_UNLOCK_EVENT": StringJS
 constructor(arg0: $IManagedGridNode$$Type, arg1: $PatternProviderLogicHost$$Type, arg2: integer)
 constructor(arg0: $IManagedGridNode$$Type, arg1: $PatternProviderLogicHost$$Type)
 
-public "getUpgrades"(): $IUpgradeInventory
+public "addDrops"(arg0: $List$$Type<($ItemStack$$Type)>): void
 public "getConfigManager"(): $IConfigManager
 public "clearContent"(): void
 public "readFromNBT"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "writeToNBT"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
-public "addDrops"(arg0: $List$$Type<($ItemStack$$Type)>): void
+public "onMainNodeStateChanged"(): void
+public "getPatternPriority"(): integer
+public "pushPattern"(arg0: $IPatternDetails$$Type, arg1: ($KeyCounter$$Type)[]): boolean
+public "getAvailablePatterns"(): $List<($IPatternDetails)>
+public "isBusy"(): boolean
 public "getGrid"(): $IGrid
 public "exportSettings"(arg0: $DataComponentMap$Builder$$Type): void
 public "importSettings"(arg0: $DataComponentMap$$Type, arg1: $Player$$Type): void
-public "isBusy"(): boolean
-public "getAvailablePatterns"(): $List<($IPatternDetails)>
-public "getPatternPriority"(): integer
-public "pushPattern"(arg0: $IPatternDetails$$Type, arg1: ($KeyCounter$$Type)[]): boolean
-public "onMainNodeStateChanged"(): void
 public "updateRedstoneState"(): void
 public "saveChanges"(): void
 public "saveChangedInventory"(arg0: $AppEngInternalInventory$$Type): void
@@ -195,26 +194,27 @@ public "updatePatterns"(): void
 public "getPatternInv"(): $InternalInventory
 public "getSortValue"(): long
 public "getTerminalGroup"(): $PatternContainerGroup
+public "getUpgrades"(): $IUpgradeInventory
 public "isBlocking"(): boolean
 public "setPriority"(arg0: integer): void
 public "getPriority"(): integer
 public "isClientSide"(): boolean
-public static "requestUpdate"(arg0: $IManagedGridNode$$Type): void
 public "getEmitableItems"(): $Set<($AEKey)>
+public static "requestUpdate"(arg0: $IManagedGridNode$$Type): void
 public "getInstalledUpgrades"(arg0: $ItemLike$$Type): integer
 public "isUpgradedWith"(arg0: $ItemLike$$Type): boolean
-get "upgrades"(): $IUpgradeInventory
 get "configManager"(): $IConfigManager
-get "grid"(): $IGrid
-get "busy"(): boolean
-get "availablePatterns"(): $List<($IPatternDetails)>
 get "patternPriority"(): integer
+get "availablePatterns"(): $List<($IPatternDetails)>
+get "busy"(): boolean
+get "grid"(): $IGrid
 get "craftingLockedReason"(): $LockCraftingMode
 get "unlockStack"(): $GenericStack
 get "returnInv"(): $PatternProviderReturnInventory
 get "patternInv"(): $InternalInventory
 get "sortValue"(): long
 get "terminalGroup"(): $PatternContainerGroup
+get "upgrades"(): $IUpgradeInventory
 get "blocking"(): boolean
 set "priority"(value: integer)
 get "priority"(): integer

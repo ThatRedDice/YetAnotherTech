@@ -8,11 +8,11 @@ import {$AEKey$$Type} from "appeng.api.stacks.AEKey"
 import {$Runnable$$Type} from "java.lang.Runnable"
 
 export class $ConfigInventory$Builder {
+public "allowOverstacking"(arg0: boolean): $ConfigInventory$Builder
+public "supportedTypes"(arg0: $AEKeyType$$Type, ...arg1: ($AEKeyType$$Type)[]): $ConfigInventory$Builder
+public "supportedTypes"(arg0: $Collection$$Type<($AEKeyType$$Type)>): $ConfigInventory$Builder
 public "slotFilter"(arg0: $AEKeySlotFilter$$Type): $ConfigInventory$Builder
 public "slotFilter"(arg0: $Predicate$$Type<($AEKey)>): $ConfigInventory$Builder
-public "allowOverstacking"(arg0: boolean): $ConfigInventory$Builder
-public "supportedTypes"(arg0: $Collection$$Type<($AEKeyType$$Type)>): $ConfigInventory$Builder
-public "supportedTypes"(arg0: $AEKeyType$$Type, ...arg1: ($AEKeyType$$Type)[]): $ConfigInventory$Builder
 public "changeListener"(arg0: $Runnable$$Type): $ConfigInventory$Builder
 public "supportedType"(arg0: $AEKeyType$$Type): $ConfigInventory$Builder
 public "build"(): $ConfigInventory
@@ -53,14 +53,14 @@ public "getDelegate"(): $GenericStackInv
 public "getStackInSlot"(arg0: integer): $ItemStack
 public "getSlotLimit"(arg0: integer): integer
 public "isItemValid"(arg0: integer, arg1: $ItemStack$$Type): boolean
+public "getRedstoneSignal"(): integer
 public "addItems"(arg0: $ItemStack$$Type): $ItemStack
 public "addItems"(arg0: $ItemStack$$Type, arg1: boolean): $ItemStack
-public "getRedstoneSignal"(): integer
 public "getSubInventory"(arg0: integer, arg1: integer): $InternalInventory
-public "getSlotInv"(arg0: integer): $InternalInventory
 public static "wrapExternal"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $Direction$$Type): $ItemTransfer
 public "toItemHandler"(): $IItemHandler
 public "toContainer"(): $Container
+public "getSlotInv"(arg0: integer): $InternalInventory
 public "simulateAdd"(arg0: $ItemStack$$Type): $ItemStack
 public "removeItems"(arg0: integer, arg1: $ItemStack$$Type, arg2: $Predicate$$Type<($ItemStack)>): $ItemStack
 public "simulateRemove"(arg0: integer, arg1: $ItemStack$$Type, arg2: $Predicate$$Type<($ItemStack)>): $ItemStack
@@ -180,8 +180,8 @@ import {$Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 import {$ConfigInventory$Builder} from "appeng.util.ConfigInventory$Builder"
 import {$ItemLike$$Type} from "net.minecraft.world.level.ItemLike"
 import {$IActionSource$$Type} from "appeng.api.networking.security.IActionSource"
-import {$Set} from "java.util.Set"
 import {$Actionable$$Type} from "appeng.api.config.Actionable"
+import {$Set} from "java.util.Set"
 import {$AEKey, $AEKey$$Type} from "appeng.api.stacks.AEKey"
 import {$GenericStack, $GenericStack$$Type} from "appeng.api.stacks.GenericStack"
 import {$ConfigMenuInventory} from "appeng.util.ConfigMenuInventory"
@@ -190,9 +190,9 @@ import {$GenericStackInv} from "appeng.helpers.externalstorage.GenericStackInv"
 export class $ConfigInventory extends $GenericStackInv {
 public "getMaxAmount"(arg0: $AEKey$$Type): long
 public static "emptyTypes"(): $ConfigInventory
-public static "configTypes"(arg0: integer): $ConfigInventory$Builder
 public "createMenuWrapper"(): $ConfigMenuInventory
 public static "configStacks"(arg0: integer): $ConfigInventory$Builder
+public static "configTypes"(arg0: integer): $ConfigInventory$Builder
 public "getKey"(arg0: integer): $AEKey
 public "keySet"(): $Set<($AEKey)>
 public "getStack"(arg0: integer): $GenericStack

@@ -36,8 +36,8 @@ declare module "com.simibubi.create.impl.contraption.storage.FallbackMountedStor
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$SimpleMountedStorage} from "com.simibubi.create.api.contraption.storage.item.simple.SimpleMountedStorage"
-import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$IItemHandler$$Type} from "net.neoforged.neoforge.items.IItemHandler"
+import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$MountedItemStorageType} from "com.simibubi.create.api.contraption.storage.item.MountedItemStorageType"
 import {$MountedItemStorage} from "com.simibubi.create.api.contraption.storage.item.MountedItemStorage"
 

@@ -55,20 +55,20 @@ get "tanks"(): integer
 }
 
 export class $IStorageFluidHandler implements $IStorageFluidHandler$$Interface {
- "drain"(arg0: $FluidStack$$Type, arg1: $IFluidHandler$FluidAction$$Type, arg2: boolean): $FluidStack
- "drain"(arg0: integer, arg1: $IFluidHandler$FluidAction$$Type, arg2: boolean): $FluidStack
- "drain"(arg0: $TagKey$$Type<($Fluid)>, arg1: integer, arg2: $IFluidHandler$FluidAction$$Type, arg3: boolean): $FluidStack
- "fill"(arg0: $TagKey$$Type<($Fluid)>, arg1: integer, arg2: $Fluid$$Type, arg3: $IFluidHandler$FluidAction$$Type): integer
  "fill"(arg0: $FluidStack$$Type, arg1: $IFluidHandler$FluidAction$$Type, arg2: boolean): integer
  "fill"(arg0: $TagKey$$Type<($Fluid)>, arg1: integer, arg2: $Fluid$$Type, arg3: $IFluidHandler$FluidAction$$Type, arg4: boolean): integer
+ "fill"(arg0: $TagKey$$Type<($Fluid)>, arg1: integer, arg2: $Fluid$$Type, arg3: $IFluidHandler$FluidAction$$Type): integer
+ "drain"(arg0: integer, arg1: $IFluidHandler$FluidAction$$Type, arg2: boolean): $FluidStack
+ "drain"(arg0: $FluidStack$$Type, arg1: $IFluidHandler$FluidAction$$Type, arg2: boolean): $FluidStack
+ "drain"(arg0: $TagKey$$Type<($Fluid)>, arg1: integer, arg2: $IFluidHandler$FluidAction$$Type, arg3: boolean): $FluidStack
  "getContainer"(): $ItemStack
  "getTanks"(): integer
  "getFluidInTank"(arg0: integer): $FluidStack
  "getTankCapacity"(arg0: integer): integer
  "isFluidValid"(arg0: integer, arg1: $FluidStack$$Type): boolean
+ "fill"(arg0: $FluidStack$$Type, arg1: $IFluidHandler$FluidAction$$Type): integer
  "drain"(arg0: $FluidStack$$Type, arg1: $IFluidHandler$FluidAction$$Type): $FluidStack
  "drain"(arg0: integer, arg1: $IFluidHandler$FluidAction$$Type): $FluidStack
- "fill"(arg0: $FluidStack$$Type, arg1: $IFluidHandler$FluidAction$$Type): integer
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -80,8 +80,8 @@ export type $IStorageFluidHandler$$Type = ($IStorageFluidHandler);
  */
 export type $IStorageFluidHandler$$Original = $IStorageFluidHandler;}
 declare module "net.p3pp3rf1y.sophisticatedcore.api.IStorageWrapper" {
-import {$ITrackedContentsItemHandler} from "net.p3pp3rf1y.sophisticatedcore.inventory.ITrackedContentsItemHandler"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$ITrackedContentsItemHandler} from "net.p3pp3rf1y.sophisticatedcore.inventory.ITrackedContentsItemHandler"
 import {$Optional} from "java.util.Optional"
 import {$UUID} from "java.util.UUID"
 import {$Runnable$$Type} from "java.lang.Runnable"
@@ -90,13 +90,17 @@ import {$UpgradeHandler} from "net.p3pp3rf1y.sophisticatedcore.upgrades.UpgradeH
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ITintable$$Interface} from "net.p3pp3rf1y.sophisticatedcore.util.ITintable"
 import {$SettingsHandler} from "net.p3pp3rf1y.sophisticatedcore.settings.SettingsHandler"
-import {$InventoryHandler} from "net.p3pp3rf1y.sophisticatedcore.inventory.InventoryHandler"
 import {$IStorageFluidHandler} from "net.p3pp3rf1y.sophisticatedcore.api.IStorageFluidHandler"
-import {$IEnergyStorage} from "net.neoforged.neoforge.energy.IEnergyStorage"
+import {$InventoryHandler} from "net.p3pp3rf1y.sophisticatedcore.inventory.InventoryHandler"
 import {$RenderInfo} from "net.p3pp3rf1y.sophisticatedcore.renderdata.RenderInfo"
+import {$IEnergyStorage} from "net.neoforged.neoforge.energy.IEnergyStorage"
 import {$SortBy, $SortBy$$Type} from "net.p3pp3rf1y.sophisticatedcore.common.gui.SortBy"
 
 export interface $IStorageWrapper$$Interface extends $ITintable$$Interface {
+get "inventoryForUpgradeProcessing"(): $ITrackedContentsItemHandler
+get "inventoryHandler"(): $InventoryHandler
+get "settingsHandler"(): $SettingsHandler
+get "upgradeHandler"(): $UpgradeHandler
 get "contentsUuid"(): $Optional<($UUID)>
 get "baseStackSizeMultiplier"(): integer
 set "inventorySlotChangeHandler"(value: $Runnable$$Type)
@@ -106,18 +110,14 @@ get "openTabId"(): $Optional<(integer)>
 set "openTabId"(value: integer)
 set "sortBy"(value: $SortBy$$Type)
 get "sortBy"(): $SortBy
-get "numberOfSlotRows"(): integer
 set "persistent"(value: boolean)
 get "renderInfo"(): $RenderInfo
 get "columnsTaken"(): integer
+get "numberOfSlotRows"(): integer
 get "energyStorage"(): $Optional<($IEnergyStorage)>
 get "wrappedStorageStack"(): $ItemStack
 set "upgradeCachesInvalidatedHandler"(value: $Runnable$$Type)
 get "storageType"(): StringJS
-get "inventoryForUpgradeProcessing"(): $ITrackedContentsItemHandler
-get "inventoryHandler"(): $InventoryHandler
-get "settingsHandler"(): $SettingsHandler
-get "upgradeHandler"(): $UpgradeHandler
 get "displayName"(): $Component
 get "fluidHandler"(): $Optional<($IStorageFluidHandler)>
 get "mainColor"(): integer
@@ -127,6 +127,10 @@ get "accentColor"(): integer
 export class $IStorageWrapper implements $IStorageWrapper$$Interface {
 static readonly "SETTINGS_TAG": StringJS
 
+ "getInventoryForUpgradeProcessing"(): $ITrackedContentsItemHandler
+ "getInventoryHandler"(): $InventoryHandler
+ "getSettingsHandler"(): $SettingsHandler
+ "getUpgradeHandler"(): $UpgradeHandler
  "getContentsUuid"(): $Optional<($UUID)>
  "onContentsNbtUpdated"(): void
  "getBaseStackSizeMultiplier"(): integer
@@ -138,13 +142,13 @@ static readonly "SETTINGS_TAG": StringJS
  "removeOpenTabId"(): void
  "setSortBy"(arg0: $SortBy$$Type): void
  "getSortBy"(): $SortBy
- "getNumberOfSlotRows"(): integer
  "refreshInventoryForUpgradeProcessing"(): void
  "setPersistent"(arg0: boolean): void
  "fillWithLoot"(arg0: $Player$$Type): void
  "getRenderInfo"(): $RenderInfo
  "setColumnsTaken"(arg0: integer, arg1: boolean): void
  "getColumnsTaken"(): integer
+ "getNumberOfSlotRows"(): integer
  "getEnergyStorage"(): $Optional<($IEnergyStorage)>
  "getWrappedStorageStack"(): $ItemStack
  "isUpgradeRunnable"(arg0: $ItemStack$$Type): boolean
@@ -152,12 +156,8 @@ static readonly "SETTINGS_TAG": StringJS
  "setUpgradeCachesInvalidatedHandler"(arg0: $Runnable$$Type): void
  "getStorageType"(): StringJS
  "refreshInventoryForInputOutput"(): void
- "getInventoryForUpgradeProcessing"(): $ITrackedContentsItemHandler
- "getInventoryHandler"(): $InventoryHandler
- "getSettingsHandler"(): $SettingsHandler
- "getUpgradeHandler"(): $UpgradeHandler
- "sort"(): void
  "getDisplayName"(): $Component
+ "sort"(): void
  "onInit"(): void
  "getFluidHandler"(): $Optional<($IStorageFluidHandler)>
  "getMainColor"(): integer

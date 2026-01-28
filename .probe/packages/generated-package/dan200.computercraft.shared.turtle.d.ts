@@ -10,8 +10,8 @@ import {$CauldronInteraction} from "net.minecraft.core.cauldron.CauldronInteract
 import {$UpgradeData} from "dan200.computercraft.api.upgrades.UpgradeData"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$TurtleSide$$Type} from "dan200.computercraft.api.turtle.TurtleSide"
-import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$TurtleOverlay} from "dan200.computercraft.shared.turtle.TurtleOverlay"
+import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$AdditionalItemPlacement, $AdditionalItemPlacement$$Type} from "net.mehvahdjukaar.moonlight.api.item.additional_placements.AdditionalItemPlacement"
 
@@ -65,9 +65,9 @@ static readonly "REGISTRY": $ResourceKey<($Registry<($TurtleOverlay)>)>
 
 constructor(model: $ResourceLocation$$Type, showElfOverlay: boolean)
 
+public "model"(): $ResourceLocation
 public static "showElfOverlay"(arg0: $TurtleOverlay$$Type, arg1: boolean): boolean
 public "showElfOverlay"(): boolean
-public "model"(): $ResourceLocation
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
@@ -141,8 +141,8 @@ import {$SimpleWaterloggedBlock$$Interface} from "net.minecraft.world.level.bloc
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Explosion$$Type} from "net.minecraft.world.level.Explosion"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$TurtleBlockEntity, $TurtleBlockEntity$$Type} from "dan200.computercraft.shared.turtle.blocks.TurtleBlockEntity"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
+import {$TurtleBlockEntity, $TurtleBlockEntity$$Type} from "dan200.computercraft.shared.turtle.blocks.TurtleBlockEntity"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -190,8 +190,8 @@ public "getExplosionResistance"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Typ
 public "setPlacedBy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $LivingEntity$$Type, arg4: $ItemStack$$Type): void
 public "getTicker"<U extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(U)>): $BlockEntityTicker<(U)>
 public "getPickupSound"(): $Optional<($SoundEvent)>
-public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "canPlaceLiquid"(arg0: $Player$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $Fluid$$Type): boolean
+public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "pickupBlock"(arg0: $Player$$Type, arg1: $LevelAccessor$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): $ItemStack
 public "getPickupSound"(arg0: $BlockState$$Type): $Optional<($SoundEvent)>
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
@@ -209,11 +209,11 @@ export type $TurtleBlock$$Original = $TurtleBlock;}
 declare module "dan200.computercraft.shared.turtle.upgrades.TurtleCraftingTable" {
 import {$AbstractTurtleUpgrade} from "dan200.computercraft.api.turtle.AbstractTurtleUpgrade"
 import {$ITurtleUpgrade} from "dan200.computercraft.api.turtle.ITurtleUpgrade"
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Registry} from "net.minecraft.core.Registry"
-import {$ITurtleAccess$$Type} from "dan200.computercraft.api.turtle.ITurtleAccess"
 import {$TurtleSide$$Type} from "dan200.computercraft.api.turtle.TurtleSide"
+import {$ITurtleAccess$$Type} from "dan200.computercraft.api.turtle.ITurtleAccess"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
 import {$IPeripheral} from "dan200.computercraft.api.peripheral.IPeripheral"
 import {$UpgradeType} from "dan200.computercraft.api.upgrades.UpgradeType"
@@ -297,8 +297,8 @@ import {$Item$$Type} from "net.minecraft.world.item.Item"
 import {$Set$$Type} from "java.util.Set"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$ITurtleUpgrade} from "dan200.computercraft.api.turtle.ITurtleUpgrade"
+import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$Predicate$$Type} from "java.util.function.Predicate"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$IntSupplier$$Type} from "java.util.function.IntSupplier"
@@ -306,8 +306,8 @@ import {$LevelBlock} from "dev.latvian.mods.kubejs.level.LevelBlock"
 import {$Container, $Container$$Type} from "net.minecraft.world.Container"
 import {$AbstractContainerMenu} from "net.minecraft.world.inventory.AbstractContainerMenu"
 import {$TurtleOverlay} from "dan200.computercraft.shared.turtle.TurtleOverlay"
-import {$IPeripheral} from "dan200.computercraft.api.peripheral.IPeripheral"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
+import {$IPeripheral} from "dan200.computercraft.api.peripheral.IPeripheral"
 import {$ComputerFamily$$Type} from "dan200.computercraft.shared.computer.core.ComputerFamily"
 
 export class $TurtleBlockEntity extends $AbstractComputerBlockEntity implements $BasicContainer$$Interface {
@@ -324,7 +324,6 @@ public "getItems"(): $List
 public "saveAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "getUpdateTag"(arg0: $HolderLookup$Provider$$Type): $CompoundTag
 public "setDirection"(arg0: $Direction$$Type): void
-public "peripheral"(): $IPeripheral
 public "getColour"(): integer
 public "onTileEntityChange"(): void
 public "getToolRenderAngle"(arg0: $TurtleSide$$Type, arg1: float): float
@@ -336,6 +335,8 @@ public "getFuelLimit"(): integer
 public "loadServer"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "loadClient"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "transferStateFrom"(arg0: $TurtleBlockEntity$$Type): void
+public "peripheral"(): $IPeripheral
+public "getRenderOffset"(arg0: float): $Vec3
 public "getAccess"(): $ITurtleAccess
 public "getDirection"(): $Direction
 /**
@@ -344,7 +345,6 @@ public "getDirection"(): $Direction
  */
 public "removeComponentsFromTag"(arg0: $CompoundTag$$Type): void
 public "getOverlay"(): $TurtleOverlay
-public "getRenderOffset"(arg0: float): $Vec3
 public "setChanged"(): void
 public "stillValid"(arg0: $Player$$Type): boolean
 public "neighborChanged"(arg0: $BlockPos$$Type): void
@@ -428,11 +428,11 @@ export type $TurtleBlockEntity$$Original = $TurtleBlockEntity;}
 declare module "dan200.computercraft.shared.turtle.upgrades.TurtleSpeaker" {
 import {$AbstractTurtleUpgrade} from "dan200.computercraft.api.turtle.AbstractTurtleUpgrade"
 import {$ITurtleUpgrade} from "dan200.computercraft.api.turtle.ITurtleUpgrade"
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Registry} from "net.minecraft.core.Registry"
-import {$ITurtleAccess$$Type} from "dan200.computercraft.api.turtle.ITurtleAccess"
 import {$TurtleSide$$Type} from "dan200.computercraft.api.turtle.TurtleSide"
+import {$ITurtleAccess$$Type} from "dan200.computercraft.api.turtle.ITurtleAccess"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
 import {$IPeripheral} from "dan200.computercraft.api.peripheral.IPeripheral"
 import {$UpgradeType} from "dan200.computercraft.api.upgrades.UpgradeType"

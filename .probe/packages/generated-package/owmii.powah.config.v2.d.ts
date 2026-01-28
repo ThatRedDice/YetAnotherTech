@@ -1,6 +1,6 @@
 declare module "owmii.powah.config.v2.types.CableConfig" {
-import {$Tier, $Tier$$Type} from "owmii.powah.block.Tier"
 import {$Enum$$Type} from "java.lang.Enum"
+import {$Tier, $Tier$$Type} from "owmii.powah.block.Tier"
 import {$TieredEnergyValues, $TieredEnergyValues$$Type} from "owmii.powah.config.v2.values.TieredEnergyValues"
 import {$IEnergyConfig$$Interface} from "owmii.powah.config.IEnergyConfig"
 
@@ -11,8 +11,8 @@ constructor(arg0: $TieredEnergyValues$$Type)
 
 public "getTransfer"(arg0: $Tier$$Type): long
 public "getTransfer"(arg0: $Enum$$Type): long
-public "getCapacity"(arg0: $Enum$$Type): long
 public "getCapacity"(arg0: $Tier$$Type): long
+public "getCapacity"(arg0: $Enum$$Type): long
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -51,8 +51,8 @@ export type $TieredChannelValues$$Type = ($TieredChannelValues);
  */
 export type $TieredChannelValues$$Original = $TieredChannelValues;}
 declare module "owmii.powah.config.v2.types.GeneratorConfig" {
-import {$Tier, $Tier$$Type} from "owmii.powah.block.Tier"
 import {$Enum$$Type} from "java.lang.Enum"
+import {$Tier, $Tier$$Type} from "owmii.powah.block.Tier"
 import {$TieredEnergyValues, $TieredEnergyValues$$Type} from "owmii.powah.config.v2.values.TieredEnergyValues"
 import {$IEnergyConfig$$Interface} from "owmii.powah.config.IEnergyConfig"
 
@@ -65,9 +65,9 @@ constructor(arg0: $TieredEnergyValues$$Type, arg1: $TieredEnergyValues$$Type, ar
 
 public "getTransfer"(arg0: $Tier$$Type): long
 public "getTransfer"(arg0: $Enum$$Type): long
-public "getCapacity"(arg0: $Enum$$Type): long
-public "getCapacity"(arg0: $Tier$$Type): long
 public "getGeneration"(arg0: $Tier$$Type): long
+public "getCapacity"(arg0: $Tier$$Type): long
+public "getCapacity"(arg0: $Enum$$Type): long
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -79,8 +79,8 @@ export type $GeneratorConfig$$Type = ($GeneratorConfig);
  */
 export type $GeneratorConfig$$Original = $GeneratorConfig;}
 declare module "owmii.powah.config.v2.types.EnderConfig" {
-import {$Tier, $Tier$$Type} from "owmii.powah.block.Tier"
 import {$Enum$$Type} from "java.lang.Enum"
+import {$Tier, $Tier$$Type} from "owmii.powah.block.Tier"
 import {$TieredChannelValues, $TieredChannelValues$$Type} from "owmii.powah.config.v2.values.TieredChannelValues"
 import {$TieredEnergyValues, $TieredEnergyValues$$Type} from "owmii.powah.config.v2.values.TieredEnergyValues"
 import {$IEnergyConfig$$Interface} from "owmii.powah.config.IEnergyConfig"
@@ -93,8 +93,8 @@ constructor(arg0: $TieredEnergyValues$$Type, arg1: $TieredChannelValues$$Type)
 
 public "getTransfer"(arg0: $Tier$$Type): long
 public "getTransfer"(arg0: $Enum$$Type): long
-public "getCapacity"(arg0: $Enum$$Type): long
 public "getCapacity"(arg0: $Tier$$Type): long
+public "getCapacity"(arg0: $Enum$$Type): long
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -106,8 +106,8 @@ export type $EnderConfig$$Type = ($EnderConfig);
  */
 export type $EnderConfig$$Original = $EnderConfig;}
 declare module "owmii.powah.config.v2.types.EnergyConfig" {
-import {$Tier, $Tier$$Type} from "owmii.powah.block.Tier"
 import {$Enum$$Type} from "java.lang.Enum"
+import {$Tier, $Tier$$Type} from "owmii.powah.block.Tier"
 import {$TieredEnergyValues, $TieredEnergyValues$$Type} from "owmii.powah.config.v2.values.TieredEnergyValues"
 import {$IEnergyConfig$$Interface} from "owmii.powah.config.IEnergyConfig"
 
@@ -119,8 +119,8 @@ constructor(arg0: $TieredEnergyValues$$Type, arg1: $TieredEnergyValues$$Type)
 
 public "getTransfer"(arg0: $Tier$$Type): long
 public "getTransfer"(arg0: $Enum$$Type): long
-public "getCapacity"(arg0: $Enum$$Type): long
 public "getCapacity"(arg0: $Tier$$Type): long
+public "getCapacity"(arg0: $Enum$$Type): long
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -132,8 +132,8 @@ export type $EnergyConfig$$Type = ($EnergyConfig);
  */
 export type $EnergyConfig$$Original = $EnergyConfig;}
 declare module "owmii.powah.config.v2.types.ChargingConfig" {
-import {$Tier, $Tier$$Type} from "owmii.powah.block.Tier"
 import {$Enum$$Type} from "java.lang.Enum"
+import {$Tier, $Tier$$Type} from "owmii.powah.block.Tier"
 import {$TieredEnergyValues, $TieredEnergyValues$$Type} from "owmii.powah.config.v2.values.TieredEnergyValues"
 import {$IEnergyConfig$$Interface} from "owmii.powah.config.IEnergyConfig"
 
@@ -147,8 +147,8 @@ constructor(arg0: $TieredEnergyValues$$Type, arg1: $TieredEnergyValues$$Type, ar
 public "getTransfer"(arg0: $Tier$$Type): long
 public "getTransfer"(arg0: $Enum$$Type): long
 public "getChargingSpeed"(arg0: $Tier$$Type): long
-public "getCapacity"(arg0: $Enum$$Type): long
 public "getCapacity"(arg0: $Tier$$Type): long
+public "getCapacity"(arg0: $Enum$$Type): long
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_

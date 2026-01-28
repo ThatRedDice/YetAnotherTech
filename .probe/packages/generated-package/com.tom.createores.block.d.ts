@@ -12,9 +12,9 @@ import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Prov
 export class $ExcavatingBlockEntityImpl<R extends $ExcavatingRecipe> extends $ExcavatingBlockEntity<(R)> {
 static readonly "ATTACHMENTS_NBT_KEY": StringJS
 
-public "addToGoggleTooltip"(arg0: $List$$Type<($Component$$Type)>, arg1: boolean): boolean
-public "addToGoggleTooltip"(arg0: $List$$Type<($Component$$Type)>, arg1: R): void
 public "getCaps"<T>(arg0: $BlockCapability$$Type<(T), ($Direction$$Type)>, arg1: $IOBlockType$$Type): T
+public "addToGoggleTooltip"(arg0: $List$$Type<($Component$$Type)>, arg1: R): void
+public "addToGoggleTooltip"(arg0: $List$$Type<($Component$$Type)>, arg1: boolean): boolean
 public "write"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type, arg2: boolean): void
 }
 /**
@@ -27,9 +27,9 @@ export type $ExcavatingBlockEntityImpl$$Type<R> = ($ExcavatingBlockEntityImpl<(R
  */
 export type $ExcavatingBlockEntityImpl$$Original<R> = $ExcavatingBlockEntityImpl<(R)>;}
 declare module "com.tom.createores.block.KineticInputBlock" {
+import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
 import {$KineticBlock} from "com.simibubi.create.content.kinetics.base.KineticBlock"
 import {$IBE$$Interface} from "com.simibubi.create.foundation.block.IBE"
-import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
@@ -43,8 +43,8 @@ import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType, $BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Function$$Type} from "java.util.function.Function"
 import {$KineticInputBlockEntity, $KineticInputBlockEntity$$Type} from "com.tom.createores.block.entity.KineticInputBlockEntity"
-import {$Item} from "net.minecraft.world.item.Item"
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
+import {$Item} from "net.minecraft.world.item.Item"
 import {$Class} from "java.lang.Class"
 import {$UseOnContext, $UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
@@ -91,27 +91,27 @@ static readonly "SHAFT_FACING": $DirectionProperty
 
 constructor(arg0: $BlockBehaviour$Properties$$Type)
 
-public "updateShape"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $BlockState$$Type, arg3: $LevelAccessor$$Type, arg4: $BlockPos$$Type, arg5: $BlockPos$$Type): $BlockState
-public "playerWillDestroy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $Player$$Type): $BlockState
+public "getParentDir"(arg0: $BlockState$$Type): $Direction
+public "hasShaftTowards"(arg0: $LevelReader$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $Direction$$Type): boolean
+public "getMinimumRequiredSpeedLevel"(): $IRotate$SpeedLevel
 public "propagatesSkylightDown"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): boolean
 public "getShadeBrightness"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): float
+public "updateShape"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $BlockState$$Type, arg3: $LevelAccessor$$Type, arg4: $BlockPos$$Type, arg5: $BlockPos$$Type): $BlockState
+public "playerWillDestroy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $Player$$Type): $BlockState
 public "getVisualShape"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $CollisionContext$$Type): $VoxelShape
 public "getRotationAxis"(arg0: $BlockState$$Type): $Direction$Axis
 public "getBlockEntityType"(): $BlockEntityType<($KineticInputBlockEntity)>
-public "hasShaftTowards"(arg0: $LevelReader$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $Direction$$Type): boolean
-public "getMinimumRequiredSpeedLevel"(): $IRotate$SpeedLevel
 public "getBlockEntityClass"(): $Class<($KineticInputBlockEntity)>
-public "getParentDir"(arg0: $BlockState$$Type): $Direction
 public "getCloneItemStack"(arg0: $BlockState$$Type, arg1: $HitResult$$Type, arg2: $LevelReader$$Type, arg3: $BlockPos$$Type, arg4: $Player$$Type): $ItemStack
 public "canSurvive"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type): boolean
-public "onWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $InteractionResult
-public "onSneakWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $InteractionResult
 public "onActivate"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $BlockHitResult$$Type): $InteractionResult
 public "onActivate"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $InteractionHand$$Type, arg5: $BlockHitResult$$Type): $ItemInteractionResult
-public "destroyParent"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $Player$$Type): void
 public static "makeCtx"(arg0: $UseOnContext$$Type, arg1: $BlockPos$$Type): $UseOnContext
-public "pickBlock"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type): $ItemStack
+public "destroyParent"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $Player$$Type): void
+public "onWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $InteractionResult
+public "onSneakWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $InteractionResult
 public "hasParent"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type): boolean
+public "pickBlock"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type): $ItemStack
 public "getTicker"<S extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(S)>): $BlockEntityTicker<(S)>
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
 public "getBlockEntityOptional"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type): $Optional<($KineticInputBlockEntity)>
@@ -126,8 +126,8 @@ public "getListener"<T extends $BlockEntity>(arg0: $ServerLevel$$Type, arg1: T):
 public static "playRotateSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public static "playRemoveSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
-get "blockEntityType"(): $BlockEntityType<($KineticInputBlockEntity)>
 get "minimumRequiredSpeedLevel"(): $IRotate$SpeedLevel
+get "blockEntityType"(): $BlockEntityType<($KineticInputBlockEntity)>
 get "blockEntityClass"(): $Class<($KineticInputBlockEntity)>
 }
 /**
@@ -147,32 +147,32 @@ import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
-import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
+import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$Vec3i} from "net.minecraft.core.Vec3i"
 import {$ItemInteractionResult} from "net.minecraft.world.ItemInteractionResult"
 import {$MultiblockPart$$Interface} from "com.tom.createores.block.MultiblockPart"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$MultiblockPart$MultiblockMainPart$MultiblockPartType, $MultiblockPart$MultiblockMainPart$MultiblockPartType$$Type} from "com.tom.createores.block.MultiblockPart$MultiblockMainPart$MultiblockPartType"
+import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export interface $MultiblockPart$MultiblockMainPart$$Interface extends $MultiblockPart$$Interface {
 get "multiblockLayout"(): ((($MultiblockPart$MultiblockMainPart$MultiblockPartType)[])[])[]
 }
 
 export class $MultiblockPart$MultiblockMainPart implements $MultiblockPart$MultiblockMainPart$$Interface {
- "onWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $InteractionResult
  "getMultiblockLayout"(): ((($MultiblockPart$MultiblockMainPart$MultiblockPartType)[])[])[]
  "getBlockRotation"(arg0: $Direction$$Type, arg1: $MultiblockPart$MultiblockMainPart$MultiblockPartType$$Type): $Direction
  "getPartTypeAt"(arg0: $Direction$$Type, arg1: integer, arg2: integer, arg3: integer): $MultiblockPart$MultiblockMainPart$MultiblockPartType
  "getGhostDirection"(arg0: $Direction$$Type, arg1: integer, arg2: integer, arg3: integer): $Direction
+ "onWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $InteractionResult
  "getSize"(arg0: $Direction$$Type): $Vec3i
  "getStart"(arg0: $Direction$$Type): $Vec3i
-static "propsGhost"(): $NonNullUnaryOperator<($BlockBehaviour$Properties)>
  "onActivate"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $InteractionHand$$Type, arg5: $BlockHitResult$$Type): $ItemInteractionResult
  "onActivate"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $BlockHitResult$$Type): $InteractionResult
+static "propsGhost"(): $NonNullUnaryOperator<($BlockBehaviour$Properties)>
 static "props"(): $NonNullUnaryOperator<($BlockBehaviour$Properties)>
  "pickBlock"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type): $ItemStack
 static "playRotateSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
@@ -270,8 +270,8 @@ import {$IHaveGoggleInformation$$Interface} from "com.simibubi.create.api.equipm
 import {$List$$Type} from "java.util.List"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$IFluidHandler$$Type} from "net.neoforged.neoforge.fluids.capability.IFluidHandler"
-import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
@@ -307,12 +307,12 @@ import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$Vec3i} from "net.minecraft.core.Vec3i"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$MultiblockPart$MultiblockMainPart$MultiblockPartType, $MultiblockPart$MultiblockMainPart$MultiblockPartType$$Type} from "com.tom.createores.block.MultiblockPart$MultiblockMainPart$MultiblockPartType"
+import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$NonNullUnaryOperator} from "com.tterrag.registrate.util.nullness.NonNullUnaryOperator"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
@@ -357,16 +357,16 @@ public "mirror"(arg0: $BlockState$$Type, arg1: $Mirror$$Type): $BlockState
 public "pickBlock"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type): $ItemStack
 public "getCloneItemStack"(arg0: $BlockState$$Type, arg1: $HitResult$$Type, arg2: $LevelReader$$Type, arg3: $BlockPos$$Type, arg4: $Player$$Type): $ItemStack
 public "onRemove"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: boolean): void
-public "onWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $InteractionResult
 public "getMultiblockLayout"(): ((($MultiblockPart$MultiblockMainPart$MultiblockPartType)[])[])[]
 public "getBlockRotation"(arg0: $Direction$$Type, arg1: $MultiblockPart$MultiblockMainPart$MultiblockPartType$$Type): $Direction
 public "getPartTypeAt"(arg0: $Direction$$Type, arg1: integer, arg2: integer, arg3: integer): $MultiblockPart$MultiblockMainPart$MultiblockPartType
 public "getGhostDirection"(arg0: $Direction$$Type, arg1: integer, arg2: integer, arg3: integer): $Direction
+public "onWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $InteractionResult
 public "getSize"(arg0: $Direction$$Type): $Vec3i
 public "getStart"(arg0: $Direction$$Type): $Vec3i
-public static "propsGhost"(): $NonNullUnaryOperator<($BlockBehaviour$Properties)>
 public "onActivate"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $InteractionHand$$Type, arg5: $BlockHitResult$$Type): $ItemInteractionResult
 public "onActivate"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $BlockHitResult$$Type): $InteractionResult
+public static "propsGhost"(): $NonNullUnaryOperator<($BlockBehaviour$Properties)>
 public static "props"(): $NonNullUnaryOperator<($BlockBehaviour$Properties)>
 public static "playRotateSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public "getRotatedBlockState"(arg0: $BlockState$$Type, arg1: $Direction$$Type): $BlockState
@@ -391,24 +391,24 @@ import {$Direction} from "net.minecraft.core.Direction"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 
 export interface $IDrill$$Interface {
-get "YOffset"(): float
-get "facing"(): $Direction
 get "below"(): $BlockPos
 get "drill"(): $ItemStack
 get "drillOffset"(): float
 get "prevRotation"(): float
+get "YOffset"(): float
+get "facing"(): $Direction
 get "rotation"(): float
 }
 
 export class $IDrill implements $IDrill$$Interface {
- "shouldRenderShaft"(): boolean
- "getYOffset"(): float
- "getFacing"(): $Direction
  "getBelow"(): $BlockPos
  "getDrill"(): $ItemStack
  "shouldRenderRubble"(): boolean
  "getDrillOffset"(): float
  "getPrevRotation"(): float
+ "getYOffset"(): float
+ "getFacing"(): $Direction
+ "shouldRenderShaft"(): boolean
  "getRotation"(): float
 }
 /**
@@ -423,16 +423,16 @@ export type $IDrill$$Original = $IDrill;}
 declare module "com.tom.createores.block.entity.SampleDrillBlockEntity" {
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$List$$Type} from "java.util.List"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Direction} from "net.minecraft.core.Direction"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$SmartBlockEntity} from "com.simibubi.create.foundation.blockEntity.SmartBlockEntity"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$IHaveHoveringInformation$$Interface} from "com.simibubi.create.api.equipment.goggles.IHaveHoveringInformation"
 import {$IHaveGoggleInformation$$Interface} from "com.simibubi.create.api.equipment.goggles.IHaveGoggleInformation"
+import {$IHaveHoveringInformation$$Interface} from "com.simibubi.create.api.equipment.goggles.IHaveHoveringInformation"
 import {$IDrill$$Interface} from "com.tom.createores.block.entity.IDrill"
 import {$BlockEntityBehaviour$$Type} from "com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour"
 import {$IFluidHandler$$Type} from "net.neoforged.neoforge.fluids.capability.IFluidHandler"
@@ -445,21 +445,21 @@ static readonly "DRILL_TIME": integer
 
 constructor(arg0: $BlockEntityType$$Type<(never)>, arg1: $BlockPos$$Type, arg2: $BlockState$$Type)
 
-public "shouldRenderShaft"(): boolean
+public "getBelow"(): $BlockPos
+public "clickedWithItem"(arg0: $Player$$Type, arg1: $InteractionHand$$Type): boolean
+public "setDrilling"(arg0: boolean): void
+public "setAirTankLevel"(arg0: float): void
+public "getDrill"(): $ItemStack
+public "shouldRenderRubble"(): boolean
+public "getDrillOffset"(): float
+public "getPrevRotation"(): float
+public "addToGoggleTooltip"(arg0: $List$$Type<($Component$$Type)>, arg1: boolean): boolean
 public "getYOffset"(): float
 public "clicked"(arg0: $Player$$Type): void
 public "addBehaviours"(arg0: $List$$Type<($BlockEntityBehaviour$$Type)>): void
 public "lazyTick"(): void
 public "getFacing"(): $Direction
-public "addToGoggleTooltip"(arg0: $List$$Type<($Component$$Type)>, arg1: boolean): boolean
-public "getBelow"(): $BlockPos
-public "getDrill"(): $ItemStack
-public "clickedWithItem"(arg0: $Player$$Type, arg1: $InteractionHand$$Type): boolean
-public "setDrilling"(arg0: boolean): void
-public "setAirTankLevel"(arg0: float): void
-public "shouldRenderRubble"(): boolean
-public "getDrillOffset"(): float
-public "getPrevRotation"(): float
+public "shouldRenderShaft"(): boolean
 public "tick"(): void
 public "write"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type, arg2: boolean): void
 public "getRotation"(): float
@@ -467,14 +467,14 @@ public "setProgress"(arg0: integer): void
 public "containedFluidTooltip"(arg0: $List$$Type<($Component$$Type)>, arg1: boolean, arg2: $IFluidHandler$$Type): boolean
 public "addToTooltip"(arg0: $List$$Type<($Component$$Type)>, arg1: boolean): boolean
 public "getIcon"(arg0: boolean): $ItemStack
-get "YOffset"(): float
-get "facing"(): $Direction
 get "below"(): $BlockPos
-get "drill"(): $ItemStack
 set "drilling"(value: boolean)
 set "airTankLevel"(value: float)
+get "drill"(): $ItemStack
 get "drillOffset"(): float
 get "prevRotation"(): float
+get "YOffset"(): float
+get "facing"(): $Direction
 get "rotation"(): float
 set "progress"(value: integer)
 }
@@ -488,8 +488,8 @@ export type $SampleDrillBlockEntity$$Type = ($SampleDrillBlockEntity);
  */
 export type $SampleDrillBlockEntity$$Original = $SampleDrillBlockEntity;}
 declare module "com.tom.createores.block.MultiblockBlock" {
-import {$IBE$$Interface} from "com.simibubi.create.foundation.block.IBE"
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
+import {$IBE$$Interface} from "com.simibubi.create.foundation.block.IBE"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
@@ -498,12 +498,12 @@ import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties, $BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
-import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$MultiblockBlockEntity, $MultiblockBlockEntity$$Type} from "com.tom.createores.block.entity.MultiblockBlockEntity"
+import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType, $BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Function$$Type} from "java.util.function.Function"
-import {$Item} from "net.minecraft.world.item.Item"
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
+import {$Item} from "net.minecraft.world.item.Item"
 import {$Class} from "java.lang.Class"
 import {$UseOnContext, $UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
@@ -549,25 +549,25 @@ static readonly "UPDATE_CLIENTS": integer
 
 constructor(arg0: $BlockBehaviour$Properties$$Type)
 
-public "updateShape"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $BlockState$$Type, arg3: $LevelAccessor$$Type, arg4: $BlockPos$$Type, arg5: $BlockPos$$Type): $BlockState
-public "playerWillDestroy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $Player$$Type): $BlockState
+public "getParentDir"(arg0: $BlockState$$Type): $Direction
 public "propagatesSkylightDown"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): boolean
 public "getShadeBrightness"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): float
+public "updateShape"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $BlockState$$Type, arg3: $LevelAccessor$$Type, arg4: $BlockPos$$Type, arg5: $BlockPos$$Type): $BlockState
+public "playerWillDestroy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $Player$$Type): $BlockState
 public "getVisualShape"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $CollisionContext$$Type): $VoxelShape
 public "getBlockEntityType"(): $BlockEntityType<($MultiblockBlockEntity)>
 public "getBlockEntityClass"(): $Class<($MultiblockBlockEntity)>
-public "getParentDir"(arg0: $BlockState$$Type): $Direction
 public "getRenderShape"(arg0: $BlockState$$Type): $RenderShape
 public "getCloneItemStack"(arg0: $BlockState$$Type, arg1: $HitResult$$Type, arg2: $LevelReader$$Type, arg3: $BlockPos$$Type, arg4: $Player$$Type): $ItemStack
 public "canSurvive"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type): boolean
-public "onWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $InteractionResult
-public "onSneakWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $InteractionResult
 public "onActivate"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $BlockHitResult$$Type): $InteractionResult
 public "onActivate"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $InteractionHand$$Type, arg5: $BlockHitResult$$Type): $ItemInteractionResult
-public "destroyParent"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $Player$$Type): void
 public static "makeCtx"(arg0: $UseOnContext$$Type, arg1: $BlockPos$$Type): $UseOnContext
-public "pickBlock"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type): $ItemStack
+public "destroyParent"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $Player$$Type): void
+public "onWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $InteractionResult
+public "onSneakWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $InteractionResult
 public "hasParent"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type): boolean
+public "pickBlock"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type): $ItemStack
 public "getTicker"<S extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(S)>): $BlockEntityTicker<(S)>
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
 public "getBlockEntityOptional"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type): $Optional<($MultiblockBlockEntity)>
@@ -598,8 +598,8 @@ export type $MultiblockBlock$$Type = ($MultiblockBlock);
 export type $MultiblockBlock$$Original = $MultiblockBlock;}
 declare module "com.tom.createores.block.IOBlock" {
 import {$IBE$$Interface} from "com.simibubi.create.foundation.block.IBE"
-import {$BaseEntityBlock} from "net.minecraft.world.level.block.BaseEntityBlock"
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
+import {$BaseEntityBlock} from "net.minecraft.world.level.block.BaseEntityBlock"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
@@ -612,8 +612,8 @@ import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType, $BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Function$$Type} from "java.util.function.Function"
 import {$IOBlockEntity, $IOBlockEntity$$Type} from "com.tom.createores.block.entity.IOBlockEntity"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Class} from "java.lang.Class"
 import {$UseOnContext, $UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
@@ -658,24 +658,24 @@ static readonly "TYPE": $EnumProperty<($IOBlockType)>
 
 constructor(arg0: $BlockBehaviour$Properties$$Type)
 
-public "updateShape"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $BlockState$$Type, arg3: $LevelAccessor$$Type, arg4: $BlockPos$$Type, arg5: $BlockPos$$Type): $BlockState
-public "playerWillDestroy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $Player$$Type): $BlockState
+public "getParentDir"(arg0: $BlockState$$Type): $Direction
 public "propagatesSkylightDown"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): boolean
 public "getShadeBrightness"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): float
+public "updateShape"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $BlockState$$Type, arg3: $LevelAccessor$$Type, arg4: $BlockPos$$Type, arg5: $BlockPos$$Type): $BlockState
+public "playerWillDestroy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $Player$$Type): $BlockState
 public "getVisualShape"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $CollisionContext$$Type): $VoxelShape
 public "getBlockEntityType"(): $BlockEntityType<($IOBlockEntity)>
 public "getBlockEntityClass"(): $Class<($IOBlockEntity)>
-public "getParentDir"(arg0: $BlockState$$Type): $Direction
 public "getCloneItemStack"(arg0: $BlockState$$Type, arg1: $HitResult$$Type, arg2: $LevelReader$$Type, arg3: $BlockPos$$Type, arg4: $Player$$Type): $ItemStack
 public "canSurvive"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type): boolean
-public "onWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $InteractionResult
-public "onSneakWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $InteractionResult
 public "onActivate"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $BlockHitResult$$Type): $InteractionResult
 public "onActivate"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $InteractionHand$$Type, arg5: $BlockHitResult$$Type): $ItemInteractionResult
-public "destroyParent"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $Player$$Type): void
 public static "makeCtx"(arg0: $UseOnContext$$Type, arg1: $BlockPos$$Type): $UseOnContext
-public "pickBlock"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type): $ItemStack
+public "destroyParent"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $Player$$Type): void
+public "onWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $InteractionResult
+public "onSneakWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $InteractionResult
 public "hasParent"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type): boolean
+public "pickBlock"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type): $ItemStack
 public "getTicker"<S extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(S)>): $BlockEntityTicker<(S)>
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
 public "getBlockEntityOptional"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type): $Optional<($IOBlockEntity)>
@@ -721,8 +721,8 @@ import {$Class} from "java.lang.Class"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$ExtractorBlockEntity, $ExtractorBlockEntity$$Type} from "com.tom.createores.block.entity.ExtractorBlockEntity"
-import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$MultiblockPart$MultiblockMainPart$MultiblockPartType, $MultiblockPart$MultiblockMainPart$MultiblockPartType$$Type} from "com.tom.createores.block.MultiblockPart$MultiblockMainPart$MultiblockPartType"
+import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$NonNullUnaryOperator} from "com.tterrag.registrate.util.nullness.NonNullUnaryOperator"
@@ -758,12 +758,12 @@ static readonly "UPDATE_CLIENTS": integer
 
 constructor(arg0: $BlockBehaviour$Properties$$Type)
 
-public "getBlockEntityType"(): $BlockEntityType<($ExtractorBlockEntity)>
-public "getBlockEntityClass"(): $Class<($ExtractorBlockEntity)>
 public "getMultiblockLayout"(): ((($MultiblockPart$MultiblockMainPart$MultiblockPartType)[])[])[]
 public "getBlockRotation"(arg0: $Direction$$Type, arg1: $MultiblockPart$MultiblockMainPart$MultiblockPartType$$Type): $Direction
 public "onActivate"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $BlockHitResult$$Type): $InteractionResult
 public "onActivate"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $InteractionHand$$Type, arg5: $BlockHitResult$$Type): $ItemInteractionResult
+public "getBlockEntityType"(): $BlockEntityType<($ExtractorBlockEntity)>
+public "getBlockEntityClass"(): $Class<($ExtractorBlockEntity)>
 public "getStart"(arg0: $Direction$$Type): $Vec3i
 public "getTicker"<S extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(S)>): $BlockEntityTicker<(S)>
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
@@ -779,9 +779,9 @@ public static "props"(): $NonNullUnaryOperator<($BlockBehaviour$Properties)>
 public static "playRotateSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public static "playRemoveSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
+get "multiblockLayout"(): ((($MultiblockPart$MultiblockMainPart$MultiblockPartType)[])[])[]
 get "blockEntityType"(): $BlockEntityType<($ExtractorBlockEntity)>
 get "blockEntityClass"(): $Class<($ExtractorBlockEntity)>
-get "multiblockLayout"(): ((($MultiblockPart$MultiblockMainPart$MultiblockPartType)[])[])[]
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -809,8 +809,8 @@ import {$Item} from "net.minecraft.world.item.Item"
 import {$Class} from "java.lang.Class"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
-import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$MultiblockPart$MultiblockMainPart$MultiblockPartType, $MultiblockPart$MultiblockMainPart$MultiblockPartType$$Type} from "com.tom.createores.block.MultiblockPart$MultiblockMainPart$MultiblockPartType"
+import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$DrillBlockEntity, $DrillBlockEntity$$Type} from "com.tom.createores.block.entity.DrillBlockEntity"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
@@ -847,12 +847,12 @@ static readonly "UPDATE_CLIENTS": integer
 
 constructor(arg0: $BlockBehaviour$Properties$$Type)
 
-public "getBlockEntityType"(): $BlockEntityType<($DrillBlockEntity)>
-public "getBlockEntityClass"(): $Class<($DrillBlockEntity)>
 public "getMultiblockLayout"(): ((($MultiblockPart$MultiblockMainPart$MultiblockPartType)[])[])[]
 public "getBlockRotation"(arg0: $Direction$$Type, arg1: $MultiblockPart$MultiblockMainPart$MultiblockPartType$$Type): $Direction
 public "onActivate"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $BlockHitResult$$Type): $InteractionResult
 public "onActivate"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $InteractionHand$$Type, arg5: $BlockHitResult$$Type): $ItemInteractionResult
+public "getBlockEntityType"(): $BlockEntityType<($DrillBlockEntity)>
+public "getBlockEntityClass"(): $Class<($DrillBlockEntity)>
 public "getStart"(arg0: $Direction$$Type): $Vec3i
 public "getTicker"<S extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(S)>): $BlockEntityTicker<(S)>
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
@@ -868,9 +868,9 @@ public static "props"(): $NonNullUnaryOperator<($BlockBehaviour$Properties)>
 public static "playRotateSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public static "playRemoveSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
+get "multiblockLayout"(): ((($MultiblockPart$MultiblockMainPart$MultiblockPartType)[])[])[]
 get "blockEntityType"(): $BlockEntityType<($DrillBlockEntity)>
 get "blockEntityClass"(): $Class<($DrillBlockEntity)>
-get "multiblockLayout"(): ((($MultiblockPart$MultiblockMainPart$MultiblockPartType)[])[])[]
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -887,8 +887,8 @@ import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.Blo
 import {$IHaveGoggleInformation$$Interface} from "com.simibubi.create.api.equipment.goggles.IHaveGoggleInformation"
 import {$List$$Type} from "java.util.List"
 import {$IFluidHandler$$Type} from "net.neoforged.neoforge.fluids.capability.IFluidHandler"
-import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
@@ -929,8 +929,8 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 
 constructor(arg0: $BlockEntityType$$Type<(never)>, arg1: $BlockPos$$Type, arg2: $BlockState$$Type)
 
-public "addToGoggleTooltip"(arg0: $List$$Type<($Component$$Type)>, arg1: boolean): boolean
 public "getCaps"<T>(arg0: $BlockCapability$$Type<(T), ($Direction$$Type)>, arg1: $IOBlockType$$Type): T
+public "addToGoggleTooltip"(arg0: $List$$Type<($Component$$Type)>, arg1: boolean): boolean
 public "write"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type, arg2: boolean): void
 }
 /**
@@ -977,8 +977,8 @@ declare module "com.tom.createores.block.entity.ExcavatingBlockEntity" {
 import {$BlockCapability$$Type} from "net.neoforged.neoforge.capabilities.BlockCapability"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$List$$Type} from "java.util.List"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
 import {$ExcavatingRecipe, $ExcavatingRecipe$$Type} from "com.tom.createores.recipe.ExcavatingRecipe"
 import {$IOBlockType$$Type} from "com.tom.createores.util.IOBlockType"
@@ -998,36 +998,36 @@ import {$BlockPos} from "net.minecraft.core.BlockPos"
 export class $ExcavatingBlockEntity<R extends $ExcavatingRecipe> extends $SmartBlockEntity implements $MultiblockCapHandler$$Interface, $IDrill$$Interface {
 static readonly "ATTACHMENTS_NBT_KEY": StringJS
 
-public "shouldRenderShaft"(): boolean
-public "getYOffset"(): float
-public "addBehaviours"(arg0: $List$$Type<($BlockEntityBehaviour$$Type)>): void
-public "lazyTick"(): void
-public "getFacing"(): $Direction
-public "addToGoggleTooltip"(arg0: $List$$Type<($Component$$Type)>, arg1: boolean): boolean
-public "addToGoggleTooltip"(arg0: $List$$Type<($Component$$Type)>, arg1: R): void
 public "getBelow"(): $BlockPos
+public "dropInv"(): void
 public "getDrill"(): $ItemStack
 public "updateRecipe"(): void
-public "dropInv"(): void
 public "addKinetic"(arg0: $MultiblockCapHandler$Kinetic$$Type): void
 public "shouldRenderRubble"(): boolean
 public "getDrillOffset"(): float
 public "getPrevRotation"(): float
+public "addToGoggleTooltip"(arg0: $List$$Type<($Component$$Type)>, arg1: boolean): boolean
+public "addToGoggleTooltip"(arg0: $List$$Type<($Component$$Type)>, arg1: R): void
+public "getYOffset"(): float
+public "addBehaviours"(arg0: $List$$Type<($BlockEntityBehaviour$$Type)>): void
+public "lazyTick"(): void
+public "getFacing"(): $Direction
+public "shouldRenderShaft"(): boolean
 public "tick"(): void
 public "initialize"(): void
 public "write"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type, arg2: boolean): void
-public "getRotation"(): float
-public "onClick"(arg0: $Player$$Type): $InteractionResult
 public "onClick"(arg0: $Player$$Type, arg1: $InteractionHand$$Type): $ItemInteractionResult
+public "onClick"(arg0: $Player$$Type): $InteractionResult
+public "getRotation"(): float
 public "getCaps"<T>(arg0: $BlockCapability$$Type<(T), ($Direction$$Type)>, arg1: $IOBlockType$$Type): T
 public "containedFluidTooltip"(arg0: $List$$Type<($Component$$Type)>, arg1: boolean, arg2: $IFluidHandler$$Type): boolean
 public "getIcon"(arg0: boolean): $ItemStack
-get "YOffset"(): float
-get "facing"(): $Direction
 get "below"(): $BlockPos
 get "drill"(): $ItemStack
 get "drillOffset"(): float
 get "prevRotation"(): float
+get "YOffset"(): float
+get "facing"(): $Direction
 get "rotation"(): float
 }
 /**
@@ -1047,8 +1047,8 @@ import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
-import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
+import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$ItemInteractionResult} from "net.minecraft.world.ItemInteractionResult"
@@ -1063,15 +1063,15 @@ export interface $MultiblockPart$MultiblockGhostPart$$Interface extends $Multibl
 }
 
 export class $MultiblockPart$MultiblockGhostPart implements $MultiblockPart$MultiblockGhostPart$$Interface {
- "onWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $InteractionResult
- "onSneakWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $InteractionResult
  "getParentDir"(arg0: $BlockState$$Type): $Direction
  "onActivate"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $BlockHitResult$$Type): $InteractionResult
  "onActivate"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $InteractionHand$$Type, arg5: $BlockHitResult$$Type): $ItemInteractionResult
- "destroyParent"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $Player$$Type): void
 static "makeCtx"(arg0: $UseOnContext$$Type, arg1: $BlockPos$$Type): $UseOnContext
- "pickBlock"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type): $ItemStack
+ "destroyParent"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $Player$$Type): void
+ "onWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $InteractionResult
+ "onSneakWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $InteractionResult
  "hasParent"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type): boolean
+ "pickBlock"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type): $ItemStack
 static "propsGhost"(): $NonNullUnaryOperator<($BlockBehaviour$Properties)>
 static "props"(): $NonNullUnaryOperator<($BlockBehaviour$Properties)>
 static "playRotateSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
@@ -1118,13 +1118,13 @@ export type $MultiblockPart$MultiblockMainPart$MultiblockPartType$$Original = $M
 declare module "com.tom.createores.block.entity.MultiblockCapHandler$Kinetic" {
 export {} // Mark the file as a module, do not remove unless there are other import/exports!
 export interface $MultiblockCapHandler$Kinetic$$Interface {
-get "rotationSpeed"(): float
 set "stress"(value: float)
+get "rotationSpeed"(): float
 }
 
 export class $MultiblockCapHandler$Kinetic implements $MultiblockCapHandler$Kinetic$$Interface {
- "getRotationSpeed"(): float
  "setStress"(arg0: float): void
+ "getRotationSpeed"(): float
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -1143,8 +1143,8 @@ import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
-import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
+import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$ItemInteractionResult} from "net.minecraft.world.ItemInteractionResult"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
@@ -1156,13 +1156,13 @@ export interface $MultiblockPart$$Interface extends $IWrenchable$$Interface {
 }
 
 export class $MultiblockPart implements $MultiblockPart$$Interface {
-static "propsGhost"(): $NonNullUnaryOperator<($BlockBehaviour$Properties)>
  "onActivate"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $InteractionHand$$Type, arg5: $BlockHitResult$$Type): $ItemInteractionResult
  "onActivate"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $BlockHitResult$$Type): $InteractionResult
+static "propsGhost"(): $NonNullUnaryOperator<($BlockBehaviour$Properties)>
 static "props"(): $NonNullUnaryOperator<($BlockBehaviour$Properties)>
  "pickBlock"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type): $ItemStack
-static "playRotateSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
  "onWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $InteractionResult
+static "playRotateSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
  "getRotatedBlockState"(arg0: $BlockState$$Type, arg1: $Direction$$Type): $BlockState
  "updateAfterWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $BlockState
 static "playRemoveSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
@@ -1184,8 +1184,8 @@ import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$MultiblockCapHandler$Kinetic$$Interface} from "com.tom.createores.block.entity.MultiblockCapHandler$Kinetic"
 import {$KineticBlockEntity} from "com.simibubi.create.content.kinetics.base.KineticBlockEntity"
-import {$SequencedGearshiftBlockEntity$SequenceContext} from "com.simibubi.create.content.kinetics.transmission.sequencer.SequencedGearshiftBlockEntity$SequenceContext"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$SequencedGearshiftBlockEntity$SequenceContext} from "com.simibubi.create.content.kinetics.transmission.sequencer.SequencedGearshiftBlockEntity$SequenceContext"
 
 export class $KineticInputBlockEntity extends $KineticBlockEntity implements $MultiblockCapHandler$Kinetic$$Interface {
  "sequenceContext": $SequencedGearshiftBlockEntity$SequenceContext
@@ -1198,14 +1198,14 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 
 constructor(arg0: $BlockEntityType$$Type<(never)>, arg1: $BlockPos$$Type, arg2: $BlockState$$Type)
 
-public "getRotationSpeed"(): float
+public "setStress"(arg0: float): void
 public "addToGoggleTooltip"(arg0: $List$$Type<($Component$$Type)>, arg1: boolean): boolean
 public "calculateStressApplied"(): float
 public "calculateAddedStressCapacity"(): float
-public "setStress"(arg0: float): void
+public "getRotationSpeed"(): float
 public "initialize"(): void
-get "rotationSpeed"(): float
 set "stress"(value: float)
+get "rotationSpeed"(): float
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -1217,8 +1217,8 @@ export type $KineticInputBlockEntity$$Type = ($KineticInputBlockEntity);
  */
 export type $KineticInputBlockEntity$$Original = $KineticInputBlockEntity;}
 declare module "com.tom.createores.block.entity.DrillBlockEntity" {
-import {$DrillingRecipe} from "com.tom.createores.recipe.DrillingRecipe"
 import {$BlockCapability$$Type} from "net.neoforged.neoforge.capabilities.BlockCapability"
+import {$DrillingRecipe} from "com.tom.createores.recipe.DrillingRecipe"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Direction$$Type} from "net.minecraft.core.Direction"

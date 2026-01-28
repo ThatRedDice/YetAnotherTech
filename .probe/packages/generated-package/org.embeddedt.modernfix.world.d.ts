@@ -2,11 +2,11 @@ declare module "org.embeddedt.modernfix.world.StrongholdLocationCache" {
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$List, $List$$Type} from "java.util.List"
 import {$SavedData} from "net.minecraft.world.level.saveddata.SavedData"
-import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$SavedData$Factory} from "net.minecraft.world.level.saveddata.SavedData$Factory"
+import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$ChunkPos, $ChunkPos$$Type} from "net.minecraft.world.level.ChunkPos"
-import {$Holder$$Type} from "net.minecraft.core.Holder"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$Holder$$Type} from "net.minecraft.core.Holder"
 import {$DimensionType$$Type} from "net.minecraft.world.level.dimension.DimensionType"
 
 export class $StrongholdLocationCache extends $SavedData {

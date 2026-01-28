@@ -4,8 +4,8 @@ import {$Map} from "java.util.Map"
 import {$List$$Type} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
@@ -40,8 +40,8 @@ declare module "appeng.items.materials.EnergyCardItem" {
 import {$UpgradeCardItem} from "appeng.items.materials.UpgradeCardItem"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 
 export class $EnergyCardItem extends $UpgradeCardItem {
@@ -72,13 +72,13 @@ import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$List$$Type} from "java.util.List"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$AEBaseItem} from "appeng.items.AEBaseItem"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 
 export class $NamePressItem extends $AEBaseItem {
 static readonly "BASE_ATTACK_DAMAGE_ID": $ResourceLocation
@@ -106,11 +106,11 @@ declare module "appeng.items.materials.StorageComponentItem" {
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$IStorageComponent$$Interface} from "appeng.api.implementations.items.IStorageComponent"
 import {$AEBaseItem} from "appeng.items.AEBaseItem"
+import {$IStorageComponent$$Interface} from "appeng.api.implementations.items.IStorageComponent"
 
 export class $StorageComponentItem extends $AEBaseItem implements $IStorageComponent$$Interface {
 static readonly "BASE_ATTACK_DAMAGE_ID": $ResourceLocation
@@ -138,8 +138,8 @@ export type $StorageComponentItem$$Original = $StorageComponentItem;}
 declare module "appeng.items.materials.MaterialItem" {
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$AEBaseItem} from "appeng.items.AEBaseItem"
 

@@ -25,19 +25,19 @@ export class $ValueLayout$OfFloat implements $ValueLayout$OfFloat$$Interface {
  "withoutName"(): $MemoryLayout
  "withOrder"(arg0: $ByteOrder$$Type): $ValueLayout
  "withName"(arg0: StringJS): $MemoryLayout
- "arrayElementVarHandle"(...arg0: (integer)[]): $VarHandle
  "carrier"(): $Class<(never)>
  "order"(): $ByteOrder
-static "sequenceLayout"(arg0: long, arg1: $MemoryLayout$$Type): $SequenceLayout
+ "arrayElementVarHandle"(...arg0: (integer)[]): $VarHandle
+ "byteSize"(): long
+ "byteAlignment"(): long
 static "sequenceLayout"(arg0: $MemoryLayout$$Type): $SequenceLayout
+static "sequenceLayout"(arg0: long, arg1: $MemoryLayout$$Type): $SequenceLayout
  "byteOffsetHandle"(...arg0: ($MemoryLayout$PathElement$$Type)[]): $MethodHandle
  "varHandle"(...arg0: ($MemoryLayout$PathElement$$Type)[]): $VarHandle
  "sliceHandle"(...arg0: ($MemoryLayout$PathElement$$Type)[]): $MethodHandle
 static "paddingLayout"(arg0: long): $PaddingLayout
 static "structLayout"(...arg0: ($MemoryLayout$$Type)[]): $StructLayout
 static "unionLayout"(...arg0: ($MemoryLayout$$Type)[]): $UnionLayout
- "byteSize"(): long
- "byteAlignment"(): long
  "name"(): $Optional<(StringJS)>
  "equals"(arg0: any): boolean
  "toString"(): StringJS
@@ -84,19 +84,19 @@ export class $AddressLayout implements $AddressLayout$$Interface {
  "withOrder"(arg0: $ByteOrder$$Type): $ValueLayout
  "targetLayout"(): $Optional<($MemoryLayout)>
  "withName"(arg0: StringJS): $MemoryLayout
- "arrayElementVarHandle"(...arg0: (integer)[]): $VarHandle
  "carrier"(): $Class<(never)>
  "order"(): $ByteOrder
-static "sequenceLayout"(arg0: long, arg1: $MemoryLayout$$Type): $SequenceLayout
+ "arrayElementVarHandle"(...arg0: (integer)[]): $VarHandle
+ "byteSize"(): long
+ "byteAlignment"(): long
 static "sequenceLayout"(arg0: $MemoryLayout$$Type): $SequenceLayout
+static "sequenceLayout"(arg0: long, arg1: $MemoryLayout$$Type): $SequenceLayout
  "byteOffsetHandle"(...arg0: ($MemoryLayout$PathElement$$Type)[]): $MethodHandle
  "varHandle"(...arg0: ($MemoryLayout$PathElement$$Type)[]): $VarHandle
  "sliceHandle"(...arg0: ($MemoryLayout$PathElement$$Type)[]): $MethodHandle
 static "paddingLayout"(arg0: long): $PaddingLayout
 static "structLayout"(...arg0: ($MemoryLayout$$Type)[]): $StructLayout
 static "unionLayout"(...arg0: ($MemoryLayout$$Type)[]): $UnionLayout
- "byteSize"(): long
- "byteAlignment"(): long
  "name"(): $Optional<(StringJS)>
  "equals"(arg0: any): boolean
  "toString"(): StringJS
@@ -115,8 +115,8 @@ export type $AddressLayout$$Type = ($AddressLayout);
 export type $AddressLayout$$Original = $AddressLayout;}
 declare module "java.lang.foreign.SegmentAllocator" {
 import {$ValueLayout$OfByte$$Type} from "java.lang.foreign.ValueLayout$OfByte"
-import {$MemorySegment, $MemorySegment$$Type} from "java.lang.foreign.MemorySegment"
 import {$ValueLayout$OfLong$$Type} from "java.lang.foreign.ValueLayout$OfLong"
+import {$MemorySegment, $MemorySegment$$Type} from "java.lang.foreign.MemorySegment"
 import {$ValueLayout$OfDouble$$Type} from "java.lang.foreign.ValueLayout$OfDouble"
 import {$AddressLayout$$Type} from "java.lang.foreign.AddressLayout"
 import {$MemoryLayout$$Type} from "java.lang.foreign.MemoryLayout"
@@ -136,28 +136,28 @@ export interface $SegmentAllocator$$Interface {
 }
 
 export class $SegmentAllocator implements $SegmentAllocator$$Interface {
- "allocateUtf8String"(arg0: StringJS): $MemorySegment
-static "slicingAllocator"(arg0: $MemorySegment$$Type): $SegmentAllocator
+ "allocateArray"(arg0: $ValueLayout$OfLong$$Type, ...arg1: (long)[]): $MemorySegment
  "allocateArray"(arg0: $ValueLayout$OfFloat$$Type, ...arg1: (float)[]): $MemorySegment
  "allocateArray"(arg0: $ValueLayout$OfInt$$Type, ...arg1: (integer)[]): $MemorySegment
- "allocateArray"(arg0: $ValueLayout$OfChar$$Type, ...arg1: (character)[]): $MemorySegment
- "allocateArray"(arg0: $ValueLayout$OfShort$$Type, ...arg1: (short)[]): $MemorySegment
- "allocateArray"(arg0: $ValueLayout$OfLong$$Type, ...arg1: (long)[]): $MemorySegment
- "allocateArray"(arg0: $ValueLayout$OfDouble$$Type, ...arg1: (double)[]): $MemorySegment
- "allocateArray"(arg0: $MemoryLayout$$Type, arg1: long): $MemorySegment
  "allocateArray"(arg0: $ValueLayout$OfByte$$Type, ...arg1: (byte)[]): $MemorySegment
+ "allocateArray"(arg0: $ValueLayout$OfShort$$Type, ...arg1: (short)[]): $MemorySegment
+ "allocateArray"(arg0: $ValueLayout$OfChar$$Type, ...arg1: (character)[]): $MemorySegment
+ "allocateArray"(arg0: $MemoryLayout$$Type, arg1: long): $MemorySegment
+ "allocateArray"(arg0: $ValueLayout$OfDouble$$Type, ...arg1: (double)[]): $MemorySegment
+static "slicingAllocator"(arg0: $MemorySegment$$Type): $SegmentAllocator
+ "allocateUtf8String"(arg0: StringJS): $MemorySegment
 static "prefixAllocator"(arg0: $MemorySegment$$Type): $SegmentAllocator
- "allocate"(arg0: $MemoryLayout$$Type): $MemorySegment
- "allocate"(arg0: $ValueLayout$OfChar$$Type, arg1: character): $MemorySegment
  "allocate"(arg0: long): $MemorySegment
+ "allocate"(arg0: $ValueLayout$OfChar$$Type, arg1: character): $MemorySegment
+ "allocate"(arg0: $MemoryLayout$$Type): $MemorySegment
  "allocate"(arg0: long, arg1: long): $MemorySegment
  "allocate"(arg0: $ValueLayout$OfByte$$Type, arg1: byte): $MemorySegment
- "allocate"(arg0: $ValueLayout$OfShort$$Type, arg1: short): $MemorySegment
+ "allocate"(arg0: $AddressLayout$$Type, arg1: $MemorySegment$$Type): $MemorySegment
  "allocate"(arg0: $ValueLayout$OfDouble$$Type, arg1: double): $MemorySegment
  "allocate"(arg0: $ValueLayout$OfLong$$Type, arg1: long): $MemorySegment
  "allocate"(arg0: $ValueLayout$OfFloat$$Type, arg1: float): $MemorySegment
  "allocate"(arg0: $ValueLayout$OfInt$$Type, arg1: integer): $MemorySegment
- "allocate"(arg0: $AddressLayout$$Type, arg1: $MemorySegment$$Type): $MemorySegment
+ "allocate"(arg0: $ValueLayout$OfShort$$Type, arg1: short): $MemorySegment
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -195,19 +195,19 @@ export class $ValueLayout$OfBoolean implements $ValueLayout$OfBoolean$$Interface
  "withoutName"(): $MemoryLayout
  "withOrder"(arg0: $ByteOrder$$Type): $ValueLayout
  "withName"(arg0: StringJS): $MemoryLayout
- "arrayElementVarHandle"(...arg0: (integer)[]): $VarHandle
  "carrier"(): $Class<(never)>
  "order"(): $ByteOrder
-static "sequenceLayout"(arg0: long, arg1: $MemoryLayout$$Type): $SequenceLayout
+ "arrayElementVarHandle"(...arg0: (integer)[]): $VarHandle
+ "byteSize"(): long
+ "byteAlignment"(): long
 static "sequenceLayout"(arg0: $MemoryLayout$$Type): $SequenceLayout
+static "sequenceLayout"(arg0: long, arg1: $MemoryLayout$$Type): $SequenceLayout
  "byteOffsetHandle"(...arg0: ($MemoryLayout$PathElement$$Type)[]): $MethodHandle
  "varHandle"(...arg0: ($MemoryLayout$PathElement$$Type)[]): $VarHandle
  "sliceHandle"(...arg0: ($MemoryLayout$PathElement$$Type)[]): $MethodHandle
 static "paddingLayout"(arg0: long): $PaddingLayout
 static "structLayout"(...arg0: ($MemoryLayout$$Type)[]): $StructLayout
 static "unionLayout"(...arg0: ($MemoryLayout$$Type)[]): $UnionLayout
- "byteSize"(): long
- "byteAlignment"(): long
  "name"(): $Optional<(StringJS)>
  "equals"(arg0: any): boolean
  "toString"(): StringJS
@@ -249,16 +249,16 @@ export class $UnionLayout implements $UnionLayout$$Interface {
  "withoutName"(): $MemoryLayout
  "withName"(arg0: StringJS): $MemoryLayout
  "memberLayouts"(): $List<($MemoryLayout)>
-static "sequenceLayout"(arg0: long, arg1: $MemoryLayout$$Type): $SequenceLayout
+ "byteSize"(): long
+ "byteAlignment"(): long
 static "sequenceLayout"(arg0: $MemoryLayout$$Type): $SequenceLayout
+static "sequenceLayout"(arg0: long, arg1: $MemoryLayout$$Type): $SequenceLayout
  "byteOffsetHandle"(...arg0: ($MemoryLayout$PathElement$$Type)[]): $MethodHandle
  "varHandle"(...arg0: ($MemoryLayout$PathElement$$Type)[]): $VarHandle
  "sliceHandle"(...arg0: ($MemoryLayout$PathElement$$Type)[]): $MethodHandle
 static "paddingLayout"(arg0: long): $PaddingLayout
 static "structLayout"(...arg0: ($MemoryLayout$$Type)[]): $StructLayout
 static "unionLayout"(...arg0: ($MemoryLayout$$Type)[]): $UnionLayout
- "byteSize"(): long
- "byteAlignment"(): long
  "name"(): $Optional<(StringJS)>
  "equals"(arg0: any): boolean
  "toString"(): StringJS
@@ -302,19 +302,19 @@ export class $ValueLayout$OfShort implements $ValueLayout$OfShort$$Interface {
  "withoutName"(): $MemoryLayout
  "withOrder"(arg0: $ByteOrder$$Type): $ValueLayout
  "withName"(arg0: StringJS): $MemoryLayout
- "arrayElementVarHandle"(...arg0: (integer)[]): $VarHandle
  "carrier"(): $Class<(never)>
  "order"(): $ByteOrder
-static "sequenceLayout"(arg0: long, arg1: $MemoryLayout$$Type): $SequenceLayout
+ "arrayElementVarHandle"(...arg0: (integer)[]): $VarHandle
+ "byteSize"(): long
+ "byteAlignment"(): long
 static "sequenceLayout"(arg0: $MemoryLayout$$Type): $SequenceLayout
+static "sequenceLayout"(arg0: long, arg1: $MemoryLayout$$Type): $SequenceLayout
  "byteOffsetHandle"(...arg0: ($MemoryLayout$PathElement$$Type)[]): $MethodHandle
  "varHandle"(...arg0: ($MemoryLayout$PathElement$$Type)[]): $VarHandle
  "sliceHandle"(...arg0: ($MemoryLayout$PathElement$$Type)[]): $MethodHandle
 static "paddingLayout"(arg0: long): $PaddingLayout
 static "structLayout"(...arg0: ($MemoryLayout$$Type)[]): $StructLayout
 static "unionLayout"(...arg0: ($MemoryLayout$$Type)[]): $UnionLayout
- "byteSize"(): long
- "byteAlignment"(): long
  "name"(): $Optional<(StringJS)>
  "equals"(arg0: any): boolean
  "toString"(): StringJS
@@ -356,33 +356,33 @@ export interface $Arena$$Interface extends $SegmentAllocator$$Interface, $AutoCl
 
 export class $Arena implements $Arena$$Interface {
 static "ofAuto"(): $Arena
-static "ofShared"(): $Arena
 static "ofConfined"(): $Arena
+static "ofShared"(): $Arena
 static "global"(): $Arena
  "scope"(): $MemorySegment$Scope
  "close"(): void
  "allocate"(arg0: long, arg1: long): $MemorySegment
- "allocateUtf8String"(arg0: StringJS): $MemorySegment
-static "slicingAllocator"(arg0: $MemorySegment$$Type): $SegmentAllocator
+ "allocateArray"(arg0: $ValueLayout$OfLong$$Type, ...arg1: (long)[]): $MemorySegment
  "allocateArray"(arg0: $ValueLayout$OfFloat$$Type, ...arg1: (float)[]): $MemorySegment
  "allocateArray"(arg0: $ValueLayout$OfInt$$Type, ...arg1: (integer)[]): $MemorySegment
- "allocateArray"(arg0: $ValueLayout$OfChar$$Type, ...arg1: (character)[]): $MemorySegment
- "allocateArray"(arg0: $ValueLayout$OfShort$$Type, ...arg1: (short)[]): $MemorySegment
- "allocateArray"(arg0: $ValueLayout$OfLong$$Type, ...arg1: (long)[]): $MemorySegment
- "allocateArray"(arg0: $ValueLayout$OfDouble$$Type, ...arg1: (double)[]): $MemorySegment
- "allocateArray"(arg0: $MemoryLayout$$Type, arg1: long): $MemorySegment
  "allocateArray"(arg0: $ValueLayout$OfByte$$Type, ...arg1: (byte)[]): $MemorySegment
+ "allocateArray"(arg0: $ValueLayout$OfShort$$Type, ...arg1: (short)[]): $MemorySegment
+ "allocateArray"(arg0: $ValueLayout$OfChar$$Type, ...arg1: (character)[]): $MemorySegment
+ "allocateArray"(arg0: $MemoryLayout$$Type, arg1: long): $MemorySegment
+ "allocateArray"(arg0: $ValueLayout$OfDouble$$Type, ...arg1: (double)[]): $MemorySegment
+static "slicingAllocator"(arg0: $MemorySegment$$Type): $SegmentAllocator
+ "allocateUtf8String"(arg0: StringJS): $MemorySegment
 static "prefixAllocator"(arg0: $MemorySegment$$Type): $SegmentAllocator
- "allocate"(arg0: $MemoryLayout$$Type): $MemorySegment
- "allocate"(arg0: $ValueLayout$OfChar$$Type, arg1: character): $MemorySegment
  "allocate"(arg0: long): $MemorySegment
+ "allocate"(arg0: $ValueLayout$OfChar$$Type, arg1: character): $MemorySegment
+ "allocate"(arg0: $MemoryLayout$$Type): $MemorySegment
  "allocate"(arg0: $ValueLayout$OfByte$$Type, arg1: byte): $MemorySegment
- "allocate"(arg0: $ValueLayout$OfShort$$Type, arg1: short): $MemorySegment
+ "allocate"(arg0: $AddressLayout$$Type, arg1: $MemorySegment$$Type): $MemorySegment
  "allocate"(arg0: $ValueLayout$OfDouble$$Type, arg1: double): $MemorySegment
  "allocate"(arg0: $ValueLayout$OfLong$$Type, arg1: long): $MemorySegment
  "allocate"(arg0: $ValueLayout$OfFloat$$Type, arg1: float): $MemorySegment
  "allocate"(arg0: $ValueLayout$OfInt$$Type, arg1: integer): $MemorySegment
- "allocate"(arg0: $AddressLayout$$Type, arg1: $MemorySegment$$Type): $MemorySegment
+ "allocate"(arg0: $ValueLayout$OfShort$$Type, arg1: short): $MemorySegment
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -420,19 +420,19 @@ export class $ValueLayout$OfChar implements $ValueLayout$OfChar$$Interface {
  "withoutName"(): $MemoryLayout
  "withOrder"(arg0: $ByteOrder$$Type): $ValueLayout
  "withName"(arg0: StringJS): $MemoryLayout
- "arrayElementVarHandle"(...arg0: (integer)[]): $VarHandle
  "carrier"(): $Class<(never)>
  "order"(): $ByteOrder
-static "sequenceLayout"(arg0: long, arg1: $MemoryLayout$$Type): $SequenceLayout
+ "arrayElementVarHandle"(...arg0: (integer)[]): $VarHandle
+ "byteSize"(): long
+ "byteAlignment"(): long
 static "sequenceLayout"(arg0: $MemoryLayout$$Type): $SequenceLayout
+static "sequenceLayout"(arg0: long, arg1: $MemoryLayout$$Type): $SequenceLayout
  "byteOffsetHandle"(...arg0: ($MemoryLayout$PathElement$$Type)[]): $MethodHandle
  "varHandle"(...arg0: ($MemoryLayout$PathElement$$Type)[]): $VarHandle
  "sliceHandle"(...arg0: ($MemoryLayout$PathElement$$Type)[]): $MethodHandle
 static "paddingLayout"(arg0: long): $PaddingLayout
 static "structLayout"(...arg0: ($MemoryLayout$$Type)[]): $StructLayout
 static "unionLayout"(...arg0: ($MemoryLayout$$Type)[]): $UnionLayout
- "byteSize"(): long
- "byteAlignment"(): long
  "name"(): $Optional<(StringJS)>
  "equals"(arg0: any): boolean
  "toString"(): StringJS
@@ -465,8 +465,8 @@ import {$ValueLayout$OfByte$$Type} from "java.lang.foreign.ValueLayout$OfByte"
 import {$AddressLayout$$Type} from "java.lang.foreign.AddressLayout"
 import {$MemoryLayout$$Type} from "java.lang.foreign.MemoryLayout"
 import {$ValueLayout$$Type} from "java.lang.foreign.ValueLayout"
-import {$ByteBuffer} from "java.nio.ByteBuffer"
 import {$ValueLayout$OfFloat$$Type} from "java.lang.foreign.ValueLayout$OfFloat"
+import {$ByteBuffer} from "java.nio.ByteBuffer"
 import {$Stream} from "java.util.stream.Stream"
 import {$MemorySegment$Scope} from "java.lang.foreign.MemorySegment$Scope"
 import {$ValueLayout$OfChar$$Type} from "java.lang.foreign.ValueLayout$OfChar"
@@ -486,27 +486,6 @@ get "loaded"(): boolean
 export class $MemorySegment implements $MemorySegment$$Interface {
 static readonly "NULL": $MemorySegment
 
- "setAtIndex"(arg0: $ValueLayout$OfByte$$Type, arg1: long, arg2: byte): void
- "setAtIndex"(arg0: $ValueLayout$OfInt$$Type, arg1: long, arg2: integer): void
- "setAtIndex"(arg0: $ValueLayout$OfFloat$$Type, arg1: long, arg2: float): void
- "setAtIndex"(arg0: $ValueLayout$OfChar$$Type, arg1: long, arg2: character): void
- "setAtIndex"(arg0: $ValueLayout$OfBoolean$$Type, arg1: long, arg2: boolean): void
- "setAtIndex"(arg0: $ValueLayout$OfLong$$Type, arg1: long, arg2: long): void
- "setAtIndex"(arg0: $AddressLayout$$Type, arg1: long, arg2: $MemorySegment$$Type): void
- "setAtIndex"(arg0: $ValueLayout$OfShort$$Type, arg1: long, arg2: short): void
- "setAtIndex"(arg0: $ValueLayout$OfDouble$$Type, arg1: long, arg2: double): void
- "copyFrom"(arg0: $MemorySegment$$Type): $MemorySegment
- "byteSize"(): long
- "isAccessibleBy"(arg0: $Thread$$Type): boolean
- "asSlice"(arg0: long, arg1: $MemoryLayout$$Type): $MemorySegment
- "asSlice"(arg0: long): $MemorySegment
- "asSlice"(arg0: long, arg1: long, arg2: long): $MemorySegment
- "asSlice"(arg0: long, arg1: long): $MemorySegment
-static "ofBuffer"(arg0: $Buffer$$Type): $MemorySegment
- "heapBase"(): $Optional<(never)>
- "reinterpret"(arg0: $Arena$$Type, arg1: $Consumer$$Type<($MemorySegment)>): $MemorySegment
- "reinterpret"(arg0: long): $MemorySegment
- "reinterpret"(arg0: long, arg1: $Arena$$Type, arg2: $Consumer$$Type<($MemorySegment)>): $MemorySegment
  "asReadOnly"(): $MemorySegment
  "isMapped"(): boolean
  "asOverlappingSlice"(arg0: $MemorySegment$$Type): $Optional<($MemorySegment)>
@@ -514,23 +493,44 @@ static "ofBuffer"(arg0: $Buffer$$Type): $MemorySegment
  "asByteBuffer"(): $ByteBuffer
  "getUtf8String"(arg0: long): StringJS
  "setUtf8String"(arg0: long, arg1: StringJS): void
-static "ofArray"(arg0: (long)[]): $MemorySegment
-static "ofArray"(arg0: (byte)[]): $MemorySegment
-static "ofArray"(arg0: (double)[]): $MemorySegment
-static "ofArray"(arg0: (short)[]): $MemorySegment
-static "ofArray"(arg0: (integer)[]): $MemorySegment
 static "ofArray"(arg0: (float)[]): $MemorySegment
+static "ofArray"(arg0: (long)[]): $MemorySegment
+static "ofArray"(arg0: (double)[]): $MemorySegment
+static "ofArray"(arg0: (byte)[]): $MemorySegment
+static "ofArray"(arg0: (integer)[]): $MemorySegment
+static "ofArray"(arg0: (short)[]): $MemorySegment
 static "ofArray"(arg0: (character)[]): $MemorySegment
 static "ofAddress"(arg0: long): $MemorySegment
- "getAtIndex"(arg0: $ValueLayout$OfInt$$Type, arg1: long): integer
  "getAtIndex"(arg0: $ValueLayout$OfFloat$$Type, arg1: long): float
- "getAtIndex"(arg0: $ValueLayout$OfLong$$Type, arg1: long): long
- "getAtIndex"(arg0: $ValueLayout$OfDouble$$Type, arg1: long): double
- "getAtIndex"(arg0: $AddressLayout$$Type, arg1: long): $MemorySegment
+ "getAtIndex"(arg0: $ValueLayout$OfInt$$Type, arg1: long): integer
  "getAtIndex"(arg0: $ValueLayout$OfByte$$Type, arg1: long): byte
  "getAtIndex"(arg0: $ValueLayout$OfBoolean$$Type, arg1: long): boolean
  "getAtIndex"(arg0: $ValueLayout$OfChar$$Type, arg1: long): character
  "getAtIndex"(arg0: $ValueLayout$OfShort$$Type, arg1: long): short
+ "getAtIndex"(arg0: $ValueLayout$OfDouble$$Type, arg1: long): double
+ "getAtIndex"(arg0: $ValueLayout$OfLong$$Type, arg1: long): long
+ "getAtIndex"(arg0: $AddressLayout$$Type, arg1: long): $MemorySegment
+ "setAtIndex"(arg0: $ValueLayout$OfDouble$$Type, arg1: long, arg2: double): void
+ "setAtIndex"(arg0: $ValueLayout$OfBoolean$$Type, arg1: long, arg2: boolean): void
+ "setAtIndex"(arg0: $ValueLayout$OfByte$$Type, arg1: long, arg2: byte): void
+ "setAtIndex"(arg0: $AddressLayout$$Type, arg1: long, arg2: $MemorySegment$$Type): void
+ "setAtIndex"(arg0: $ValueLayout$OfChar$$Type, arg1: long, arg2: character): void
+ "setAtIndex"(arg0: $ValueLayout$OfFloat$$Type, arg1: long, arg2: float): void
+ "setAtIndex"(arg0: $ValueLayout$OfInt$$Type, arg1: long, arg2: integer): void
+ "setAtIndex"(arg0: $ValueLayout$OfShort$$Type, arg1: long, arg2: short): void
+ "setAtIndex"(arg0: $ValueLayout$OfLong$$Type, arg1: long, arg2: long): void
+ "byteSize"(): long
+ "isAccessibleBy"(arg0: $Thread$$Type): boolean
+ "copyFrom"(arg0: $MemorySegment$$Type): $MemorySegment
+ "asSlice"(arg0: long, arg1: $MemoryLayout$$Type): $MemorySegment
+ "asSlice"(arg0: long): $MemorySegment
+ "asSlice"(arg0: long, arg1: long): $MemorySegment
+ "asSlice"(arg0: long, arg1: long, arg2: long): $MemorySegment
+static "ofBuffer"(arg0: $Buffer$$Type): $MemorySegment
+ "heapBase"(): $Optional<(never)>
+ "reinterpret"(arg0: long, arg1: $Arena$$Type, arg2: $Consumer$$Type<($MemorySegment)>): $MemorySegment
+ "reinterpret"(arg0: $Arena$$Type, arg1: $Consumer$$Type<($MemorySegment)>): $MemorySegment
+ "reinterpret"(arg0: long): $MemorySegment
  "scope"(): $MemorySegment$Scope
  "get"(arg0: $ValueLayout$OfFloat$$Type, arg1: long): float
  "get"(arg0: $ValueLayout$OfInt$$Type, arg1: long): integer
@@ -610,16 +610,16 @@ export class $StructLayout implements $StructLayout$$Interface {
  "withoutName"(): $MemoryLayout
  "withName"(arg0: StringJS): $MemoryLayout
  "memberLayouts"(): $List<($MemoryLayout)>
-static "sequenceLayout"(arg0: long, arg1: $MemoryLayout$$Type): $SequenceLayout
+ "byteSize"(): long
+ "byteAlignment"(): long
 static "sequenceLayout"(arg0: $MemoryLayout$$Type): $SequenceLayout
+static "sequenceLayout"(arg0: long, arg1: $MemoryLayout$$Type): $SequenceLayout
  "byteOffsetHandle"(...arg0: ($MemoryLayout$PathElement$$Type)[]): $MethodHandle
  "varHandle"(...arg0: ($MemoryLayout$PathElement$$Type)[]): $VarHandle
  "sliceHandle"(...arg0: ($MemoryLayout$PathElement$$Type)[]): $MethodHandle
 static "paddingLayout"(arg0: long): $PaddingLayout
 static "structLayout"(...arg0: ($MemoryLayout$$Type)[]): $StructLayout
 static "unionLayout"(...arg0: ($MemoryLayout$$Type)[]): $UnionLayout
- "byteSize"(): long
- "byteAlignment"(): long
  "name"(): $Optional<(StringJS)>
  "equals"(arg0: any): boolean
  "toString"(): StringJS
@@ -688,19 +688,19 @@ export class $ValueLayout$OfByte implements $ValueLayout$OfByte$$Interface {
  "withoutName"(): $MemoryLayout
  "withOrder"(arg0: $ByteOrder$$Type): $ValueLayout
  "withName"(arg0: StringJS): $MemoryLayout
- "arrayElementVarHandle"(...arg0: (integer)[]): $VarHandle
  "carrier"(): $Class<(never)>
  "order"(): $ByteOrder
-static "sequenceLayout"(arg0: long, arg1: $MemoryLayout$$Type): $SequenceLayout
+ "arrayElementVarHandle"(...arg0: (integer)[]): $VarHandle
+ "byteSize"(): long
+ "byteAlignment"(): long
 static "sequenceLayout"(arg0: $MemoryLayout$$Type): $SequenceLayout
+static "sequenceLayout"(arg0: long, arg1: $MemoryLayout$$Type): $SequenceLayout
  "byteOffsetHandle"(...arg0: ($MemoryLayout$PathElement$$Type)[]): $MethodHandle
  "varHandle"(...arg0: ($MemoryLayout$PathElement$$Type)[]): $VarHandle
  "sliceHandle"(...arg0: ($MemoryLayout$PathElement$$Type)[]): $MethodHandle
 static "paddingLayout"(arg0: long): $PaddingLayout
 static "structLayout"(...arg0: ($MemoryLayout$$Type)[]): $StructLayout
 static "unionLayout"(...arg0: ($MemoryLayout$$Type)[]): $UnionLayout
- "byteSize"(): long
- "byteAlignment"(): long
  "name"(): $Optional<(StringJS)>
  "equals"(arg0: any): boolean
  "toString"(): StringJS
@@ -744,19 +744,19 @@ export class $ValueLayout$OfInt implements $ValueLayout$OfInt$$Interface {
  "withoutName"(): $MemoryLayout
  "withOrder"(arg0: $ByteOrder$$Type): $ValueLayout
  "withName"(arg0: StringJS): $MemoryLayout
- "arrayElementVarHandle"(...arg0: (integer)[]): $VarHandle
  "carrier"(): $Class<(never)>
  "order"(): $ByteOrder
-static "sequenceLayout"(arg0: long, arg1: $MemoryLayout$$Type): $SequenceLayout
+ "arrayElementVarHandle"(...arg0: (integer)[]): $VarHandle
+ "byteSize"(): long
+ "byteAlignment"(): long
 static "sequenceLayout"(arg0: $MemoryLayout$$Type): $SequenceLayout
+static "sequenceLayout"(arg0: long, arg1: $MemoryLayout$$Type): $SequenceLayout
  "byteOffsetHandle"(...arg0: ($MemoryLayout$PathElement$$Type)[]): $MethodHandle
  "varHandle"(...arg0: ($MemoryLayout$PathElement$$Type)[]): $VarHandle
  "sliceHandle"(...arg0: ($MemoryLayout$PathElement$$Type)[]): $MethodHandle
 static "paddingLayout"(arg0: long): $PaddingLayout
 static "structLayout"(...arg0: ($MemoryLayout$$Type)[]): $StructLayout
 static "unionLayout"(...arg0: ($MemoryLayout$$Type)[]): $UnionLayout
- "byteSize"(): long
- "byteAlignment"(): long
  "name"(): $Optional<(StringJS)>
  "equals"(arg0: any): boolean
  "toString"(): StringJS
@@ -800,19 +800,19 @@ export class $ValueLayout$OfDouble implements $ValueLayout$OfDouble$$Interface {
  "withoutName"(): $MemoryLayout
  "withOrder"(arg0: $ByteOrder$$Type): $ValueLayout
  "withName"(arg0: StringJS): $MemoryLayout
- "arrayElementVarHandle"(...arg0: (integer)[]): $VarHandle
  "carrier"(): $Class<(never)>
  "order"(): $ByteOrder
-static "sequenceLayout"(arg0: long, arg1: $MemoryLayout$$Type): $SequenceLayout
+ "arrayElementVarHandle"(...arg0: (integer)[]): $VarHandle
+ "byteSize"(): long
+ "byteAlignment"(): long
 static "sequenceLayout"(arg0: $MemoryLayout$$Type): $SequenceLayout
+static "sequenceLayout"(arg0: long, arg1: $MemoryLayout$$Type): $SequenceLayout
  "byteOffsetHandle"(...arg0: ($MemoryLayout$PathElement$$Type)[]): $MethodHandle
  "varHandle"(...arg0: ($MemoryLayout$PathElement$$Type)[]): $VarHandle
  "sliceHandle"(...arg0: ($MemoryLayout$PathElement$$Type)[]): $MethodHandle
 static "paddingLayout"(arg0: long): $PaddingLayout
 static "structLayout"(...arg0: ($MemoryLayout$$Type)[]): $StructLayout
 static "unionLayout"(...arg0: ($MemoryLayout$$Type)[]): $UnionLayout
- "byteSize"(): long
- "byteAlignment"(): long
  "name"(): $Optional<(StringJS)>
  "equals"(arg0: any): boolean
  "toString"(): StringJS
@@ -848,18 +848,18 @@ export interface $MemoryLayout$$Interface {
 }
 
 export class $MemoryLayout implements $MemoryLayout$$Interface {
+ "byteSize"(): long
+ "byteAlignment"(): long
  "withByteAlignment"(arg0: long): $MemoryLayout
  "withoutName"(): $MemoryLayout
-static "sequenceLayout"(arg0: long, arg1: $MemoryLayout$$Type): $SequenceLayout
 static "sequenceLayout"(arg0: $MemoryLayout$$Type): $SequenceLayout
+static "sequenceLayout"(arg0: long, arg1: $MemoryLayout$$Type): $SequenceLayout
  "byteOffsetHandle"(...arg0: ($MemoryLayout$PathElement$$Type)[]): $MethodHandle
  "varHandle"(...arg0: ($MemoryLayout$PathElement$$Type)[]): $VarHandle
  "sliceHandle"(...arg0: ($MemoryLayout$PathElement$$Type)[]): $MethodHandle
 static "paddingLayout"(arg0: long): $PaddingLayout
 static "structLayout"(...arg0: ($MemoryLayout$$Type)[]): $StructLayout
 static "unionLayout"(...arg0: ($MemoryLayout$$Type)[]): $UnionLayout
- "byteSize"(): long
- "byteAlignment"(): long
  "name"(): $Optional<(StringJS)>
  "equals"(arg0: any): boolean
  "toString"(): StringJS
@@ -899,16 +899,16 @@ export class $PaddingLayout implements $PaddingLayout$$Interface {
  "withByteAlignment"(arg0: long): $PaddingLayout
  "withoutName"(): $MemoryLayout
  "withName"(arg0: StringJS): $MemoryLayout
-static "sequenceLayout"(arg0: long, arg1: $MemoryLayout$$Type): $SequenceLayout
+ "byteSize"(): long
+ "byteAlignment"(): long
 static "sequenceLayout"(arg0: $MemoryLayout$$Type): $SequenceLayout
+static "sequenceLayout"(arg0: long, arg1: $MemoryLayout$$Type): $SequenceLayout
  "byteOffsetHandle"(...arg0: ($MemoryLayout$PathElement$$Type)[]): $MethodHandle
  "varHandle"(...arg0: ($MemoryLayout$PathElement$$Type)[]): $VarHandle
  "sliceHandle"(...arg0: ($MemoryLayout$PathElement$$Type)[]): $MethodHandle
 static "paddingLayout"(arg0: long): $PaddingLayout
 static "structLayout"(...arg0: ($MemoryLayout$$Type)[]): $StructLayout
 static "unionLayout"(...arg0: ($MemoryLayout$$Type)[]): $UnionLayout
- "byteSize"(): long
- "byteAlignment"(): long
  "name"(): $Optional<(StringJS)>
  "equals"(arg0: any): boolean
  "toString"(): StringJS
@@ -979,19 +979,19 @@ export class $ValueLayout$OfLong implements $ValueLayout$OfLong$$Interface {
  "withoutName"(): $MemoryLayout
  "withOrder"(arg0: $ByteOrder$$Type): $ValueLayout
  "withName"(arg0: StringJS): $MemoryLayout
- "arrayElementVarHandle"(...arg0: (integer)[]): $VarHandle
  "carrier"(): $Class<(never)>
  "order"(): $ByteOrder
-static "sequenceLayout"(arg0: long, arg1: $MemoryLayout$$Type): $SequenceLayout
+ "arrayElementVarHandle"(...arg0: (integer)[]): $VarHandle
+ "byteSize"(): long
+ "byteAlignment"(): long
 static "sequenceLayout"(arg0: $MemoryLayout$$Type): $SequenceLayout
+static "sequenceLayout"(arg0: long, arg1: $MemoryLayout$$Type): $SequenceLayout
  "byteOffsetHandle"(...arg0: ($MemoryLayout$PathElement$$Type)[]): $MethodHandle
  "varHandle"(...arg0: ($MemoryLayout$PathElement$$Type)[]): $VarHandle
  "sliceHandle"(...arg0: ($MemoryLayout$PathElement$$Type)[]): $MethodHandle
 static "paddingLayout"(arg0: long): $PaddingLayout
 static "structLayout"(...arg0: ($MemoryLayout$$Type)[]): $StructLayout
 static "unionLayout"(...arg0: ($MemoryLayout$$Type)[]): $UnionLayout
- "byteSize"(): long
- "byteAlignment"(): long
  "name"(): $Optional<(StringJS)>
  "equals"(arg0: any): boolean
  "toString"(): StringJS
@@ -1009,14 +1009,14 @@ export type $ValueLayout$OfLong$$Type = ($ValueLayout$OfLong);
  */
 export type $ValueLayout$OfLong$$Original = $ValueLayout$OfLong;}
 declare module "java.lang.foreign.ValueLayout" {
-import {$ValueLayout$OfLong} from "java.lang.foreign.ValueLayout$OfLong"
 import {$StructLayout} from "java.lang.foreign.StructLayout"
-import {$ValueLayout$OfDouble} from "java.lang.foreign.ValueLayout$OfDouble"
+import {$ValueLayout$OfLong} from "java.lang.foreign.ValueLayout$OfLong"
 import {$ByteOrder, $ByteOrder$$Type} from "java.nio.ByteOrder"
+import {$ValueLayout$OfDouble} from "java.lang.foreign.ValueLayout$OfDouble"
 import {$Optional} from "java.util.Optional"
 import {$ValueLayout$OfInt} from "java.lang.foreign.ValueLayout$OfInt"
-import {$MethodHandle} from "java.lang.invoke.MethodHandle"
 import {$ValueLayout$OfBoolean} from "java.lang.foreign.ValueLayout$OfBoolean"
+import {$MethodHandle} from "java.lang.invoke.MethodHandle"
 import {$ValueLayout$OfShort} from "java.lang.foreign.ValueLayout$OfShort"
 import {$PaddingLayout} from "java.lang.foreign.PaddingLayout"
 import {$UnionLayout} from "java.lang.foreign.UnionLayout"
@@ -1056,23 +1056,23 @@ static readonly "JAVA_DOUBLE_UNALIGNED": $ValueLayout$OfDouble
 static readonly "JAVA_SHORT_UNALIGNED": $ValueLayout$OfShort
 static readonly "JAVA_INT": $ValueLayout$OfInt
 
- "arrayElementVarHandle"(...arg0: (integer)[]): $VarHandle
  "withByteAlignment"(arg0: long): $ValueLayout
- "withoutName"(): $ValueLayout
+ "withoutName"(): $MemoryLayout
  "withOrder"(arg0: $ByteOrder$$Type): $ValueLayout
  "carrier"(): $Class<(never)>
  "order"(): $ByteOrder
- "withName"(arg0: StringJS): $MemoryLayout
-static "sequenceLayout"(arg0: long, arg1: $MemoryLayout$$Type): $SequenceLayout
+ "arrayElementVarHandle"(...arg0: (integer)[]): $VarHandle
+ "withName"(arg0: StringJS): $ValueLayout
+ "byteSize"(): long
+ "byteAlignment"(): long
 static "sequenceLayout"(arg0: $MemoryLayout$$Type): $SequenceLayout
+static "sequenceLayout"(arg0: long, arg1: $MemoryLayout$$Type): $SequenceLayout
  "byteOffsetHandle"(...arg0: ($MemoryLayout$PathElement$$Type)[]): $MethodHandle
  "varHandle"(...arg0: ($MemoryLayout$PathElement$$Type)[]): $VarHandle
  "sliceHandle"(...arg0: ($MemoryLayout$PathElement$$Type)[]): $MethodHandle
 static "paddingLayout"(arg0: long): $PaddingLayout
 static "structLayout"(...arg0: ($MemoryLayout$$Type)[]): $StructLayout
 static "unionLayout"(...arg0: ($MemoryLayout$$Type)[]): $UnionLayout
- "byteSize"(): long
- "byteAlignment"(): long
  "name"(): $Optional<(StringJS)>
  "equals"(arg0: any): boolean
  "toString"(): StringJS
@@ -1108,24 +1108,24 @@ export interface $SequenceLayout$$Interface extends $MemoryLayout$$Interface {
 }
 
 export class $SequenceLayout implements $SequenceLayout$$Interface {
- "reshape"(...arg0: (long)[]): $SequenceLayout
  "flatten"(): $SequenceLayout
- "elementCount"(): long
- "withByteAlignment"(arg0: long): $MemoryLayout
+ "withByteAlignment"(arg0: long): $SequenceLayout
  "withoutName"(): $MemoryLayout
  "elementLayout"(): $MemoryLayout
  "withElementCount"(arg0: long): $SequenceLayout
+ "elementCount"(): long
+ "reshape"(...arg0: (long)[]): $SequenceLayout
  "withName"(arg0: StringJS): $MemoryLayout
-static "sequenceLayout"(arg0: long, arg1: $MemoryLayout$$Type): $SequenceLayout
+ "byteSize"(): long
+ "byteAlignment"(): long
 static "sequenceLayout"(arg0: $MemoryLayout$$Type): $SequenceLayout
+static "sequenceLayout"(arg0: long, arg1: $MemoryLayout$$Type): $SequenceLayout
  "byteOffsetHandle"(...arg0: ($MemoryLayout$PathElement$$Type)[]): $MethodHandle
  "varHandle"(...arg0: ($MemoryLayout$PathElement$$Type)[]): $VarHandle
  "sliceHandle"(...arg0: ($MemoryLayout$PathElement$$Type)[]): $MethodHandle
 static "paddingLayout"(arg0: long): $PaddingLayout
 static "structLayout"(...arg0: ($MemoryLayout$$Type)[]): $StructLayout
 static "unionLayout"(...arg0: ($MemoryLayout$$Type)[]): $UnionLayout
- "byteSize"(): long
- "byteAlignment"(): long
  "name"(): $Optional<(StringJS)>
  "equals"(arg0: any): boolean
  "toString"(): StringJS

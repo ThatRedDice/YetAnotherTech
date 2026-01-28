@@ -1,6 +1,6 @@
 declare module "io.wispforest.accessories.commands.RecordArgumentTypeInfo" {
-import {$StructEndec, $StructEndec$$Type} from "io.wispforest.endec.StructEndec"
 import {$ArgumentTypeInfo$Template, $ArgumentTypeInfo$Template$$Type} from "net.minecraft.commands.synchronization.ArgumentTypeInfo$Template"
+import {$StructEndec, $StructEndec$$Type} from "io.wispforest.endec.StructEndec"
 import {$BiFunction, $BiFunction$$Type} from "java.util.function.BiFunction"
 import {$CommandBuildContext, $CommandBuildContext$$Type} from "net.minecraft.commands.CommandBuildContext"
 import {$ArgumentType, $ArgumentType$$Type} from "com.mojang.brigadier.arguments.ArgumentType"

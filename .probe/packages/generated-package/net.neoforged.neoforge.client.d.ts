@@ -1,6 +1,6 @@
 declare module "net.neoforged.neoforge.client.event.ClientPlayerNetworkEvent$LoggingIn" {
-import {$MultiPlayerGameMode$$Type} from "net.minecraft.client.multiplayer.MultiPlayerGameMode"
 import {$LocalPlayer$$Type} from "net.minecraft.client.player.LocalPlayer"
+import {$MultiPlayerGameMode$$Type} from "net.minecraft.client.multiplayer.MultiPlayerGameMode"
 import {$ClientPlayerNetworkEvent} from "net.neoforged.neoforge.client.event.ClientPlayerNetworkEvent"
 import {$Connection$$Type} from "net.minecraft.network.Connection"
 
@@ -43,8 +43,8 @@ declare module "net.neoforged.neoforge.client.event.AddSectionGeometryEvent" {
 import {$List} from "java.util.List"
 import {$Event} from "net.neoforged.bus.api.Event"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
-import {$AddSectionGeometryEvent$AdditionalSectionRenderer, $AddSectionGeometryEvent$AdditionalSectionRenderer$$Type} from "net.neoforged.neoforge.client.event.AddSectionGeometryEvent$AdditionalSectionRenderer"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$AddSectionGeometryEvent$AdditionalSectionRenderer, $AddSectionGeometryEvent$AdditionalSectionRenderer$$Type} from "net.neoforged.neoforge.client.event.AddSectionGeometryEvent$AdditionalSectionRenderer"
 
 export class $AddSectionGeometryEvent extends $Event {
 constructor(arg0: $BlockPos$$Type, arg1: $Level$$Type)
@@ -115,8 +115,8 @@ export type $RegisterParticleProvidersEvent$$Original = $RegisterParticleProvide
 declare module "net.neoforged.neoforge.client.event.RenderPlayerEvent$Pre" {
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$MultiBufferSource$$Type} from "net.minecraft.client.renderer.MultiBufferSource"
-import {$PoseStack$$Type} from "com.mojang.blaze3d.vertex.PoseStack"
 import {$ICancellableEvent$$Interface} from "net.neoforged.bus.api.ICancellableEvent"
+import {$PoseStack$$Type} from "com.mojang.blaze3d.vertex.PoseStack"
 import {$Entity} from "net.minecraft.world.entity.Entity"
 import {$PlayerRenderer$$Type} from "net.minecraft.client.renderer.entity.player.PlayerRenderer"
 import {$RenderPlayerEvent} from "net.neoforged.neoforge.client.event.RenderPlayerEvent"
@@ -333,8 +333,8 @@ export type $ModelFile$$Type = ($ModelFile);
  */
 export type $ModelFile$$Original = $ModelFile;}
 declare module "net.neoforged.neoforge.client.event.ClientChatReceivedEvent$Player" {
-import {$PlayerChatMessage, $PlayerChatMessage$$Type} from "net.minecraft.network.chat.PlayerChatMessage"
 import {$UUID$$Type} from "java.util.UUID"
+import {$PlayerChatMessage, $PlayerChatMessage$$Type} from "net.minecraft.network.chat.PlayerChatMessage"
 import {$ClientChatReceivedEvent} from "net.neoforged.neoforge.client.event.ClientChatReceivedEvent"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$ChatType$Bound$$Type} from "net.minecraft.network.chat.ChatType$Bound"
@@ -383,8 +383,8 @@ export type $RenderLevelStageEvent$Stage$$Type = ($RenderLevelStageEvent$Stage);
  */
 export type $RenderLevelStageEvent$Stage$$Original = $RenderLevelStageEvent$Stage;}
 declare module "net.neoforged.neoforge.client.event.RegisterEntitySpectatorShadersEvent" {
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Map$$Type} from "java.util.Map"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Event} from "net.neoforged.bus.api.Event"
 import {$IModBusEvent$$Interface} from "net.neoforged.fml.event.IModBusEvent"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
@@ -407,8 +407,8 @@ declare module "net.neoforged.neoforge.client.event.RegisterColorHandlersEvent$I
 import {$BlockColors, $BlockColors$$Type} from "net.minecraft.client.color.block.BlockColors"
 import {$ItemColors, $ItemColors$$Type} from "net.minecraft.client.color.item.ItemColors"
 import {$ItemLike$$Type} from "net.minecraft.world.level.ItemLike"
-import {$RegisterColorHandlersEvent} from "net.neoforged.neoforge.client.event.RegisterColorHandlersEvent"
 import {$ItemColor$$Type} from "net.minecraft.client.color.item.ItemColor"
+import {$RegisterColorHandlersEvent} from "net.neoforged.neoforge.client.event.RegisterColorHandlersEvent"
 
 export class $RegisterColorHandlersEvent$Item extends $RegisterColorHandlersEvent {
 constructor(arg0: $ItemColors$$Type, arg1: $BlockColors$$Type)
@@ -579,15 +579,15 @@ import {$PlayerRenderer} from "net.minecraft.client.renderer.entity.player.Playe
 
 export class $RenderPlayerEvent extends $PlayerEvent {
 public "getPackedLight"(): integer
-public "getPartialTick"(): float
 public "getRenderer"(): $PlayerRenderer
 public "getPoseStack"(): $PoseStack
+public "getPartialTick"(): float
 public "getMultiBufferSource"(): $MultiBufferSource
 public "getEntity"(): $Entity
 get "packedLight"(): integer
-get "partialTick"(): float
 get "renderer"(): $PlayerRenderer
 get "poseStack"(): $PoseStack
+get "partialTick"(): float
 get "multiBufferSource"(): $MultiBufferSource
 get "entity"(): $Entity
 }
@@ -631,8 +631,8 @@ export type $ScreenEvent$KeyReleased$Post$$Original = $ScreenEvent$KeyReleased$P
 declare module "net.neoforged.neoforge.client.event.RenderHandEvent" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$MultiBufferSource, $MultiBufferSource$$Type} from "net.minecraft.client.renderer.MultiBufferSource"
-import {$InteractionHand, $InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$ICancellableEvent$$Interface} from "net.neoforged.bus.api.ICancellableEvent"
+import {$InteractionHand, $InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$PoseStack, $PoseStack$$Type} from "com.mojang.blaze3d.vertex.PoseStack"
 import {$Event} from "net.neoforged.bus.api.Event"
 
@@ -644,9 +644,9 @@ public "getInterpolatedPitch"(): float
 public "getSwingProgress"(): float
 public "getEquipProgress"(): float
 public "getHand"(): $InteractionHand
+public "getPoseStack"(): $PoseStack
 public "getItemStack"(): $ItemStack
 public "getPartialTick"(): float
-public "getPoseStack"(): $PoseStack
 public "getMultiBufferSource"(): $MultiBufferSource
 public "setCanceled"(arg0: boolean): void
 public "isCanceled"(): boolean
@@ -655,9 +655,9 @@ get "interpolatedPitch"(): float
 get "swingProgress"(): float
 get "equipProgress"(): float
 get "hand"(): $InteractionHand
+get "poseStack"(): $PoseStack
 get "itemStack"(): $ItemStack
 get "partialTick"(): float
-get "poseStack"(): $PoseStack
 get "multiBufferSource"(): $MultiBufferSource
 set "canceled"(value: boolean)
 get "canceled"(): boolean
@@ -708,8 +708,8 @@ constructor(arg0: $Map$$Type<($EntityType$$Type<(never)>), ($EntityRenderer$$Typ
 
 public "getEntityTypes"(): $Set<($EntityType<(never)>)>
 public "getContext"(): $EntityRendererProvider$Context
-public "getEntityModels"(): $EntityModelSet
 public "getRenderer"<T extends $Entity, R extends $EntityRenderer<(object)>>(arg0: $EntityType$$Type<(T)>): R
+public "getEntityModels"(): $EntityModelSet
 public "getSkin"<R extends $EntityRenderer<(object)>>(arg0: $PlayerSkin$Model$$Type): R
 public "getSkins"(): $Set<($PlayerSkin$Model)>
 get "entityTypes"(): $Set<($EntityType<(never)>)>
@@ -824,8 +824,8 @@ declare module "net.neoforged.neoforge.client.event.RenderTooltipEvent$Color" {
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$GuiGraphics$$Type} from "net.minecraft.client.gui.GuiGraphics"
 import {$List$$Type} from "java.util.List"
-import {$Font$$Type} from "net.minecraft.client.gui.Font"
 import {$RenderTooltipEvent} from "net.neoforged.neoforge.client.event.RenderTooltipEvent"
+import {$Font$$Type} from "net.minecraft.client.gui.Font"
 import {$ClientTooltipComponent$$Type} from "net.minecraft.client.gui.screens.inventory.tooltip.ClientTooltipComponent"
 
 export class $RenderTooltipEvent$Color extends $RenderTooltipEvent {
@@ -924,8 +924,8 @@ export type $ScreenEvent$KeyPressed$Pre$$Type = ($ScreenEvent$KeyPressed$Pre);
  */
 export type $ScreenEvent$KeyPressed$Pre$$Original = $ScreenEvent$KeyPressed$Pre;}
 declare module "net.neoforged.neoforge.client.event.CustomizeGuiOverlayEvent$Chat" {
-import {$GuiGraphics$$Type} from "net.minecraft.client.gui.GuiGraphics"
 import {$Window$$Type} from "com.mojang.blaze3d.platform.Window"
+import {$GuiGraphics$$Type} from "net.minecraft.client.gui.GuiGraphics"
 import {$DeltaTracker$$Type} from "net.minecraft.client.DeltaTracker"
 import {$CustomizeGuiOverlayEvent} from "net.neoforged.neoforge.client.event.CustomizeGuiOverlayEvent"
 
@@ -955,8 +955,8 @@ import {$TooltipComponent, $TooltipComponent$$Type} from "net.minecraft.world.in
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$FormattedText, $FormattedText$$Type} from "net.minecraft.network.chat.FormattedText"
 import {$ICancellableEvent$$Interface} from "net.neoforged.bus.api.ICancellableEvent"
-import {$Either, $Either$$Type} from "com.mojang.datafixers.util.Either"
 import {$List, $List$$Type} from "java.util.List"
+import {$Either, $Either$$Type} from "com.mojang.datafixers.util.Either"
 import {$Event} from "net.neoforged.bus.api.Event"
 
 export class $RenderTooltipEvent$GatherComponents extends $Event implements $ICancellableEvent$$Interface {
@@ -965,17 +965,17 @@ constructor(arg0: $ItemStack$$Type, arg1: integer, arg2: integer, arg3: $List$$T
 public "setMaxWidth"(arg0: integer): void
 public "getMaxWidth"(): integer
 public "getTooltipElements"(): $List<($Either<($FormattedText), ($TooltipComponent)>)>
-public "getItemStack"(): $ItemStack
 public "getScreenWidth"(): integer
 public "getScreenHeight"(): integer
+public "getItemStack"(): $ItemStack
 public "setCanceled"(arg0: boolean): void
 public "isCanceled"(): boolean
 set "maxWidth"(value: integer)
 get "maxWidth"(): integer
 get "tooltipElements"(): $List<($Either<($FormattedText), ($TooltipComponent)>)>
-get "itemStack"(): $ItemStack
 get "screenWidth"(): integer
 get "screenHeight"(): integer
+get "itemStack"(): $ItemStack
 set "canceled"(value: boolean)
 get "canceled"(): boolean
 }
@@ -1075,11 +1075,11 @@ export class $ViewportEvent extends $Event {
 constructor(arg0: $GameRenderer$$Type, arg1: $Camera$$Type, arg2: double)
 
 public "getCamera"(): $Camera
-public "getPartialTick"(): double
 public "getRenderer"(): $GameRenderer
+public "getPartialTick"(): double
 get "camera"(): $Camera
-get "partialTick"(): double
 get "renderer"(): $GameRenderer
+get "partialTick"(): double
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -1108,7 +1108,7 @@ public "layer"(): $LayeredDraw$Layer
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $GuiLayerManager$NamedLayer$$Type = ({"name"?: $ResourceLocation$$Type, "layer"?: $LayeredDraw$Layer$$Type}) | ([name?: $ResourceLocation$$Type, layer?: $LayeredDraw$Layer$$Type]);
+export type $GuiLayerManager$NamedLayer$$Type = ({"layer"?: $LayeredDraw$Layer$$Type, "name"?: $ResourceLocation$$Type}) | ([layer?: $LayeredDraw$Layer$$Type, name?: $ResourceLocation$$Type]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -1253,8 +1253,8 @@ public "nested"(): T
 public "getBuilder"(arg0: StringJS): T
 public "button"(arg0: StringJS, arg1: $ResourceLocation$$Type): T
 public "cross"(arg0: StringJS, arg1: $ResourceLocation$$Type): T
-public static "saveStable"<T>(arg0: $CachedOutput$$Type, arg1: $HolderLookup$Provider$$Type, arg2: $Codec$$Type<(T)>, arg3: T, arg4: $Path$$Type): $CompletableFuture<(never)>
 public static "saveStable"(arg0: $CachedOutput$$Type, arg1: $JsonElement$$Type, arg2: $Path$$Type): $CompletableFuture
+public static "saveStable"<T>(arg0: $CachedOutput$$Type, arg1: $HolderLookup$Provider$$Type, arg2: $Codec$$Type<(T)>, arg3: T, arg4: $Path$$Type): $CompletableFuture<(never)>
 public "getName"(): StringJS
 get "name"(): StringJS
 }
@@ -1270,9 +1270,9 @@ export type $ModelProvider$$Original<T> = $ModelProvider<(T)>;}
 declare module "net.neoforged.neoforge.client.event.ModelEvent$BakingCompleted" {
 import {$Map, $Map$$Type} from "java.util.Map"
 import {$ModelEvent} from "net.neoforged.neoforge.client.event.ModelEvent"
+import {$BakedModel, $BakedModel$$Type} from "net.minecraft.client.resources.model.BakedModel"
 import {$ModelBakery, $ModelBakery$$Type} from "net.minecraft.client.resources.model.ModelBakery"
 import {$ModelResourceLocation, $ModelResourceLocation$$Type} from "net.minecraft.client.resources.model.ModelResourceLocation"
-import {$BakedModel, $BakedModel$$Type} from "net.minecraft.client.resources.model.BakedModel"
 import {$IModBusEvent$$Interface} from "net.neoforged.fml.event.IModBusEvent"
 import {$ModelManager, $ModelManager$$Type} from "net.minecraft.client.resources.model.ModelManager"
 
@@ -1445,9 +1445,9 @@ export type $ToastAddEvent$$Original = $ToastAddEvent;}
 declare module "net.neoforged.neoforge.client.model.generators.MultiPartBlockStateBuilder$PartBuilder" {
 import {$MultiPartBlockStateBuilder} from "net.neoforged.neoforge.client.model.generators.MultiPartBlockStateBuilder"
 import {$Comparable, $Comparable$$Type} from "java.lang.Comparable"
+import {$Multimap} from "com.google.common.collect.Multimap"
 import {$List} from "java.util.List"
 import {$MultiPartBlockStateBuilder$PartBuilder$ConditionGroup} from "net.neoforged.neoforge.client.model.generators.MultiPartBlockStateBuilder$PartBuilder$ConditionGroup"
-import {$Multimap} from "com.google.common.collect.Multimap"
 import {$Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$BlockStateProvider$ConfiguredModelList} from "net.neoforged.neoforge.client.model.generators.BlockStateProvider$ConfiguredModelList"
 import {$Property, $Property$$Type} from "net.minecraft.world.level.block.state.properties.Property"
@@ -1457,9 +1457,9 @@ readonly "nestedConditionGroups": $List<($MultiPartBlockStateBuilder$PartBuilder
  "models": $BlockStateProvider$ConfiguredModelList
 readonly "conditions": $Multimap<($Property<(never)>), ($Comparable<(never)>)>
 
+public "canApplyTo"(arg0: $Block$$Type): boolean
 public "useOr"(): $MultiPartBlockStateBuilder$PartBuilder
 public "nestedGroup"(): $MultiPartBlockStateBuilder$PartBuilder$ConditionGroup
-public "canApplyTo"(arg0: $Block$$Type): boolean
 public "end"(): $MultiPartBlockStateBuilder
 public "condition"<T extends $Comparable<(object)>>(arg0: $Property$$Type<(T)>, ...arg1: (T)[]): $MultiPartBlockStateBuilder$PartBuilder
 }
@@ -1474,8 +1474,8 @@ export type $MultiPartBlockStateBuilder$PartBuilder$$Type = ($MultiPartBlockStat
 export type $MultiPartBlockStateBuilder$PartBuilder$$Original = $MultiPartBlockStateBuilder$PartBuilder;}
 declare module "net.neoforged.neoforge.client.event.ScreenEvent$MouseButtonReleased$Post" {
 import {$ScreenEvent$MouseButtonReleased} from "net.neoforged.neoforge.client.event.ScreenEvent$MouseButtonReleased"
-import {$ScreenEvent$MouseButtonReleased$Post$Result, $ScreenEvent$MouseButtonReleased$Post$Result$$Type} from "net.neoforged.neoforge.client.event.ScreenEvent$MouseButtonReleased$Post$Result"
 import {$Screen$$Type} from "net.minecraft.client.gui.screens.Screen"
+import {$ScreenEvent$MouseButtonReleased$Post$Result, $ScreenEvent$MouseButtonReleased$Post$Result$$Type} from "net.neoforged.neoforge.client.event.ScreenEvent$MouseButtonReleased$Post$Result"
 
 export class $ScreenEvent$MouseButtonReleased$Post extends $ScreenEvent$MouseButtonReleased {
 constructor(arg0: $Screen$$Type, arg1: double, arg2: double, arg3: integer, arg4: boolean)
@@ -1639,26 +1639,26 @@ export type $ClientPlayerNetworkEvent$Clone$$Original = $ClientPlayerNetworkEven
 declare module "net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent" {
 import {$IClientItemExtensions$$Type} from "net.neoforged.neoforge.client.extensions.common.IClientItemExtensions"
 import {$IClientMobEffectExtensions$$Type} from "net.neoforged.neoforge.client.extensions.common.IClientMobEffectExtensions"
-import {$Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Event} from "net.neoforged.bus.api.Event"
-import {$Item$$Type} from "net.minecraft.world.item.Item"
+import {$Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$IClientFluidTypeExtensions$$Type} from "net.neoforged.neoforge.client.extensions.common.IClientFluidTypeExtensions"
+import {$Item$$Type} from "net.minecraft.world.item.Item"
 import {$FluidType$$Type} from "net.neoforged.neoforge.fluids.FluidType"
 import {$IModBusEvent$$Interface} from "net.neoforged.fml.event.IModBusEvent"
+import {$IClientBlockExtensions$$Type} from "net.neoforged.neoforge.client.extensions.common.IClientBlockExtensions"
 import {$Holder$$Type} from "net.minecraft.core.Holder"
 import {$MobEffect$$Type} from "net.minecraft.world.effect.MobEffect"
-import {$IClientBlockExtensions$$Type} from "net.neoforged.neoforge.client.extensions.common.IClientBlockExtensions"
 
 export class $RegisterClientExtensionsEvent extends $Event implements $IModBusEvent$$Interface {
-public "registerItem"(arg0: $IClientItemExtensions$$Type, ...arg1: ($Item$$Type)[]): void
-public "registerItem"(arg0: $IClientItemExtensions$$Type, ...arg1: ($Holder$$Type<($Item$$Type)>)[]): void
 public "registerBlock"(arg0: $IClientBlockExtensions$$Type, ...arg1: ($Holder$$Type<($Block$$Type)>)[]): void
 public "registerBlock"(arg0: $IClientBlockExtensions$$Type, ...arg1: ($Block$$Type)[]): void
-public "isItemRegistered"(arg0: $Item$$Type): boolean
+public "registerItem"(arg0: $IClientItemExtensions$$Type, ...arg1: ($Item$$Type)[]): void
+public "registerItem"(arg0: $IClientItemExtensions$$Type, ...arg1: ($Holder$$Type<($Item$$Type)>)[]): void
 public "registerMobEffect"(arg0: $IClientMobEffectExtensions$$Type, ...arg1: ($Holder$$Type<($MobEffect$$Type)>)[]): void
 public "registerMobEffect"(arg0: $IClientMobEffectExtensions$$Type, ...arg1: ($MobEffect$$Type)[]): void
 public "isMobEffectRegistered"(arg0: $MobEffect$$Type): boolean
 public "isFluidTypeRegistered"(arg0: $FluidType$$Type): boolean
+public "isItemRegistered"(arg0: $Item$$Type): boolean
 public "registerFluidType"(arg0: $IClientFluidTypeExtensions$$Type, ...arg1: ($FluidType$$Type)[]): void
 public "registerFluidType"(arg0: $IClientFluidTypeExtensions$$Type, ...arg1: ($Holder$$Type<($FluidType$$Type)>)[]): void
 public "isBlockRegistered"(arg0: $Block$$Type): boolean
@@ -1674,8 +1674,8 @@ export type $RegisterClientExtensionsEvent$$Type = ($RegisterClientExtensionsEve
 export type $RegisterClientExtensionsEvent$$Original = $RegisterClientExtensionsEvent;}
 declare module "net.neoforged.neoforge.client.event.RegisterNamedRenderTypesEvent" {
 import {$RenderTypeGroup$$Type} from "net.neoforged.neoforge.client.RenderTypeGroup"
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Map$$Type} from "java.util.Map"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Event} from "net.neoforged.bus.api.Event"
 import {$IModBusEvent$$Interface} from "net.neoforged.fml.event.IModBusEvent"
 import {$RenderType$$Type} from "net.minecraft.client.renderer.RenderType"
@@ -1717,8 +1717,8 @@ export type $RenderGuiLayerEvent$Post$$Type = ($RenderGuiLayerEvent$Post);
 export type $RenderGuiLayerEvent$Post$$Original = $RenderGuiLayerEvent$Post;}
 declare module "net.neoforged.neoforge.client.model.generators.ModelBuilder$RootTransformsBuilder" {
 import {$ModelBuilder} from "net.neoforged.neoforge.client.model.generators.ModelBuilder"
-import {$Transformation$$Type} from "com.mojang.math.Transformation"
 import {$TransformationHelper$TransformOrigin$$Type} from "net.neoforged.neoforge.common.util.TransformationHelper$TransformOrigin"
+import {$Transformation$$Type} from "com.mojang.math.Transformation"
 import {$Vector3f$$Type} from "org.joml.Vector3f"
 import {$JsonObject} from "com.google.gson.JsonObject"
 import {$Quaternionf$$Type} from "org.joml.Quaternionf"
@@ -1726,10 +1726,10 @@ import {$Quaternionf$$Type} from "org.joml.Quaternionf"
 export class $ModelBuilder$RootTransformsBuilder {
 public "rightRotation"(arg0: $Quaternionf$$Type): $ModelBuilder$RootTransformsBuilder
 public "rightRotation"(arg0: float, arg1: float, arg2: float, arg3: boolean): $ModelBuilder$RootTransformsBuilder
-public "postRotation"(arg0: float, arg1: float, arg2: float, arg3: boolean): $ModelBuilder$RootTransformsBuilder
-public "postRotation"(arg0: $Quaternionf$$Type): $ModelBuilder$RootTransformsBuilder
 public "leftRotation"(arg0: float, arg1: float, arg2: float, arg3: boolean): $ModelBuilder$RootTransformsBuilder
 public "leftRotation"(arg0: $Quaternionf$$Type): $ModelBuilder$RootTransformsBuilder
+public "postRotation"(arg0: $Quaternionf$$Type): $ModelBuilder$RootTransformsBuilder
+public "postRotation"(arg0: float, arg1: float, arg2: float, arg3: boolean): $ModelBuilder$RootTransformsBuilder
 public "origin"(arg0: $TransformationHelper$TransformOrigin$$Type): $ModelBuilder$RootTransformsBuilder
 public "origin"(arg0: $Vector3f$$Type): $ModelBuilder$RootTransformsBuilder
 public "end"(): $ModelBuilder<(T)>
@@ -1753,8 +1753,8 @@ export type $ModelBuilder$RootTransformsBuilder$$Type = ($ModelBuilder$RootTrans
  */
 export type $ModelBuilder$RootTransformsBuilder$$Original = $ModelBuilder$RootTransformsBuilder;}
 declare module "net.neoforged.neoforge.client.event.CustomizeGuiOverlayEvent$BossEventProgress" {
-import {$GuiGraphics$$Type} from "net.minecraft.client.gui.GuiGraphics"
 import {$Window$$Type} from "com.mojang.blaze3d.platform.Window"
+import {$GuiGraphics$$Type} from "net.minecraft.client.gui.GuiGraphics"
 import {$ICancellableEvent$$Interface} from "net.neoforged.bus.api.ICancellableEvent"
 import {$LerpingBossEvent, $LerpingBossEvent$$Type} from "net.minecraft.client.gui.components.LerpingBossEvent"
 import {$DeltaTracker$$Type} from "net.minecraft.client.DeltaTracker"
@@ -1914,15 +1914,15 @@ import {$LivingEntityRenderer} from "net.minecraft.client.renderer.entity.Living
 export class $RenderLivingEvent<T extends $LivingEntity, M extends $EntityModel<(object)>> extends $Event {
 public "getPackedLight"(): integer
 public "getEntity"(): $LivingEntity
-public "getPartialTick"(): float
 public "getRenderer"(): $LivingEntityRenderer<(T), (M)>
 public "getPoseStack"(): $PoseStack
+public "getPartialTick"(): float
 public "getMultiBufferSource"(): $MultiBufferSource
 get "packedLight"(): integer
 get "entity"(): $LivingEntity
-get "partialTick"(): float
 get "renderer"(): $LivingEntityRenderer<(T), (M)>
 get "poseStack"(): $PoseStack
+get "partialTick"(): float
 get "multiBufferSource"(): $MultiBufferSource
 }
 /**
@@ -1949,9 +1949,9 @@ export interface $IDimensionSpecialEffectsExtension$$Interface {
 export class $IDimensionSpecialEffectsExtension implements $IDimensionSpecialEffectsExtension$$Interface {
  "adjustLightmapColors"(arg0: $ClientLevel$$Type, arg1: float, arg2: float, arg3: float, arg4: float, arg5: integer, arg6: integer, arg7: $Vector3f$$Type): void
  "renderSky"(arg0: $ClientLevel$$Type, arg1: integer, arg2: float, arg3: $Matrix4f$$Type, arg4: $Camera$$Type, arg5: $Matrix4f$$Type, arg6: boolean, arg7: $Runnable$$Type): boolean
+ "renderClouds"(arg0: $ClientLevel$$Type, arg1: integer, arg2: float, arg3: $PoseStack$$Type, arg4: double, arg5: double, arg6: double, arg7: $Matrix4f$$Type, arg8: $Matrix4f$$Type): boolean
  "renderSnowAndRain"(arg0: $ClientLevel$$Type, arg1: integer, arg2: float, arg3: $LightTexture$$Type, arg4: double, arg5: double, arg6: double): boolean
  "tickRain"(arg0: $ClientLevel$$Type, arg1: integer, arg2: $Camera$$Type): boolean
- "renderClouds"(arg0: $ClientLevel$$Type, arg1: integer, arg2: float, arg3: $PoseStack$$Type, arg4: double, arg5: double, arg6: double, arg7: $Matrix4f$$Type, arg8: $Matrix4f$$Type): boolean
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -1966,8 +1966,8 @@ declare module "net.neoforged.neoforge.client.model.generators.MultiPartBlockSta
 import {$MultiPartBlockStateBuilder$PartBuilder} from "net.neoforged.neoforge.client.model.generators.MultiPartBlockStateBuilder$PartBuilder"
 import {$ConfiguredModel$Builder} from "net.neoforged.neoforge.client.model.generators.ConfiguredModel$Builder"
 import {$Block$$Type} from "net.minecraft.world.level.block.Block"
-import {$IGeneratedBlockState$$Interface} from "net.neoforged.neoforge.client.model.generators.IGeneratedBlockState"
 import {$JsonObject} from "com.google.gson.JsonObject"
+import {$IGeneratedBlockState$$Interface} from "net.neoforged.neoforge.client.model.generators.IGeneratedBlockState"
 
 export class $MultiPartBlockStateBuilder implements $IGeneratedBlockState$$Interface {
 constructor(arg0: $Block$$Type)
@@ -1996,8 +1996,8 @@ import {$ModelState$$Type} from "net.minecraft.client.resources.model.ModelState
 import {$ItemTransforms} from "net.minecraft.client.renderer.block.model.ItemTransforms"
 import {$RenderTypeGroup} from "net.neoforged.neoforge.client.RenderTypeGroup"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
-import {$Transformation, $Transformation$$Type} from "com.mojang.math.Transformation"
 import {$Function$$Type} from "java.util.function.Function"
+import {$Transformation, $Transformation$$Type} from "com.mojang.math.Transformation"
 import {$ModelBaker$$Type} from "net.minecraft.client.resources.model.ModelBaker"
 import {$IUnbakedGeometry, $IUnbakedGeometry$$Type} from "net.neoforged.neoforge.client.model.geometry.IUnbakedGeometry"
 
@@ -2015,27 +2015,27 @@ public "getRootTransform"(): $Transformation
 public "getRenderTypeHint"(): $ResourceLocation
 public "isComponentVisible"(arg0: StringJS, arg1: boolean): boolean
 public "copyFrom"(arg0: $BlockGeometryBakingContext$$Type): void
+public "hasCustomGeometry"(): boolean
+public "getCustomGeometry"(): $IUnbakedGeometry<(never)>
 public "isGui3d"(): boolean
 public "useAmbientOcclusion"(): boolean
 public "bake"(arg0: $ModelBaker$$Type, arg1: $Function$$Type<($Material), ($TextureAtlasSprite$$Type)>, arg2: $ModelState$$Type, arg3: $ItemOverrides$$Type): $BakedModel
 public "getMaterial"(arg0: StringJS): $Material
-public "hasCustomGeometry"(): boolean
-public "getCustomGeometry"(): $IUnbakedGeometry<(never)>
-public "setGui3d"(arg0: boolean): void
 public "setCustomGeometry"(arg0: $IUnbakedGeometry$$Type<(never)>): void
 public "setRootTransform"(arg0: $Transformation$$Type): void
 public "setRenderTypeHint"(arg0: $ResourceLocation$$Type): void
+public "setGui3d"(arg0: boolean): void
 public "getRenderType"(arg0: $ResourceLocation$$Type): $RenderTypeGroup
 get "transforms"(): $ItemTransforms
 get "modelName"(): StringJS
 get "rootTransform"(): $Transformation
 get "renderTypeHint"(): $ResourceLocation
-get "gui3d"(): boolean
 get "customGeometry"(): $IUnbakedGeometry<(never)>
-set "gui3d"(value: boolean)
+get "gui3d"(): boolean
 set "customGeometry"(value: $IUnbakedGeometry$$Type<(never)>)
 set "rootTransform"(value: $Transformation$$Type)
 set "renderTypeHint"(value: $ResourceLocation$$Type)
+set "gui3d"(value: boolean)
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -2087,8 +2087,8 @@ export type $ScreenEvent$Closing$$Type = ($ScreenEvent$Closing);
  */
 export type $ScreenEvent$Closing$$Original = $ScreenEvent$Closing;}
 declare module "net.neoforged.neoforge.client.event.ClientPlayerNetworkEvent" {
-import {$MultiPlayerGameMode} from "net.minecraft.client.multiplayer.MultiPlayerGameMode"
 import {$LocalPlayer} from "net.minecraft.client.player.LocalPlayer"
+import {$MultiPlayerGameMode} from "net.minecraft.client.multiplayer.MultiPlayerGameMode"
 import {$Event} from "net.neoforged.bus.api.Event"
 import {$Connection} from "net.minecraft.network.Connection"
 
@@ -2121,16 +2121,16 @@ import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.st
 export class $RenderBlockScreenEffectEvent extends $Event implements $ICancellableEvent$$Interface {
 constructor(arg0: $Player$$Type, arg1: $PoseStack$$Type, arg2: $RenderBlockScreenEffectEvent$OverlayType$$Type, arg3: $BlockState$$Type, arg4: $BlockPos$$Type)
 
+public "getPoseStack"(): $PoseStack
 public "getBlockPos"(): $BlockPos
 public "getBlockState"(): $BlockState
-public "getPoseStack"(): $PoseStack
 public "getPlayer"(): $Player
 public "getOverlayType"(): $RenderBlockScreenEffectEvent$OverlayType
 public "setCanceled"(arg0: boolean): void
 public "isCanceled"(): boolean
+get "poseStack"(): $PoseStack
 get "blockPos"(): $BlockPos
 get "blockState"(): $BlockState
-get "poseStack"(): $PoseStack
 get "player"(): $Player
 get "overlayType"(): $RenderBlockScreenEffectEvent$OverlayType
 set "canceled"(value: boolean)
@@ -2201,16 +2201,16 @@ declare module "net.neoforged.neoforge.client.model.generators.BlockModelProvide
 import {$Map} from "java.util.Map"
 import {$JsonElement$$Type} from "com.google.gson.JsonElement"
 import {$CachedOutput$$Type} from "net.minecraft.data.CachedOutput"
-import {$ModelProvider} from "net.neoforged.neoforge.client.model.generators.ModelProvider"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$ModelProvider} from "net.neoforged.neoforge.client.model.generators.ModelProvider"
 import {$ExistingFileHelper$ResourceType} from "net.neoforged.neoforge.common.data.ExistingFileHelper$ResourceType"
 import {$PackOutput$$Type} from "net.minecraft.data.PackOutput"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Codec$$Type} from "com.mojang.serialization.Codec"
 import {$CompletableFuture} from "java.util.concurrent.CompletableFuture"
 import {$ExistingFileHelper, $ExistingFileHelper$$Type} from "net.neoforged.neoforge.common.data.ExistingFileHelper"
-import {$BlockModelBuilder} from "net.neoforged.neoforge.client.model.generators.BlockModelBuilder"
 import {$Path$$Type} from "java.nio.file.Path"
+import {$BlockModelBuilder} from "net.neoforged.neoforge.client.model.generators.BlockModelBuilder"
 
 export class $BlockModelProvider extends $ModelProvider<($BlockModelBuilder)> {
 static readonly "TEXTURE": $ExistingFileHelper$ResourceType
@@ -2222,8 +2222,8 @@ static readonly "BLOCK_FOLDER": StringJS
 constructor(arg0: $PackOutput$$Type, arg1: StringJS, arg2: $ExistingFileHelper$$Type)
 
 public "getName"(): StringJS
-public static "saveStable"<T>(arg0: $CachedOutput$$Type, arg1: $HolderLookup$Provider$$Type, arg2: $Codec$$Type<(T)>, arg3: T, arg4: $Path$$Type): $CompletableFuture<(never)>
 public static "saveStable"(arg0: $CachedOutput$$Type, arg1: $JsonElement$$Type, arg2: $Path$$Type): $CompletableFuture
+public static "saveStable"<T>(arg0: $CachedOutput$$Type, arg1: $HolderLookup$Provider$$Type, arg2: $Codec$$Type<(T)>, arg3: T, arg4: $Path$$Type): $CompletableFuture<(never)>
 get "name"(): StringJS
 }
 /**
@@ -2292,25 +2292,25 @@ import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$GuiGraphics$$Type} from "net.minecraft.client.gui.GuiGraphics"
 import {$ICancellableEvent$$Interface} from "net.neoforged.bus.api.ICancellableEvent"
 import {$List$$Type} from "java.util.List"
-import {$Font$$Type} from "net.minecraft.client.gui.Font"
 import {$RenderTooltipEvent} from "net.neoforged.neoforge.client.event.RenderTooltipEvent"
 import {$ClientTooltipPositioner, $ClientTooltipPositioner$$Type} from "net.minecraft.client.gui.screens.inventory.tooltip.ClientTooltipPositioner"
+import {$Font$$Type} from "net.minecraft.client.gui.Font"
 import {$ClientTooltipComponent$$Type} from "net.minecraft.client.gui.screens.inventory.tooltip.ClientTooltipComponent"
 
 export class $RenderTooltipEvent$Pre extends $RenderTooltipEvent implements $ICancellableEvent$$Interface {
 constructor(arg0: $ItemStack$$Type, arg1: $GuiGraphics$$Type, arg2: integer, arg3: integer, arg4: integer, arg5: integer, arg6: $Font$$Type, arg7: $List$$Type<($ClientTooltipComponent$$Type)>, arg8: $ClientTooltipPositioner$$Type)
 
 public "setX"(arg0: integer): void
-public "getTooltipPositioner"(): $ClientTooltipPositioner
 public "setFont"(arg0: $Font$$Type): void
+public "getTooltipPositioner"(): $ClientTooltipPositioner
 public "getScreenWidth"(): integer
 public "getScreenHeight"(): integer
 public "setY"(arg0: integer): void
 public "setCanceled"(arg0: boolean): void
 public "isCanceled"(): boolean
 set "x"(value: integer)
-get "tooltipPositioner"(): $ClientTooltipPositioner
 set "font"(value: $Font$$Type)
+get "tooltipPositioner"(): $ClientTooltipPositioner
 get "screenWidth"(): integer
 get "screenHeight"(): integer
 set "y"(value: integer)
@@ -2377,7 +2377,7 @@ public "ambientOcclusion"(): boolean
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $ExtraFaceData$$Type = ({"skyLight"?: integer, "blockLight"?: integer, "color"?: integer, "ambientOcclusion"?: boolean}) | ([skyLight?: integer, blockLight?: integer, color?: integer, ambientOcclusion?: boolean]);
+export type $ExtraFaceData$$Type = ({"blockLight"?: integer, "color"?: integer, "ambientOcclusion"?: boolean, "skyLight"?: integer}) | ([blockLight?: integer, color?: integer, ambientOcclusion?: boolean, skyLight?: integer]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -2426,12 +2426,12 @@ import {$RenderType, $RenderType$$Type} from "net.minecraft.client.renderer.Rend
 import {$Consumer$$Type} from "java.util.function.Consumer"
 
 export class $ChunkRenderTypeSet implements $Iterable$$Interface<($RenderType)> {
+public static "intersection"(...arg0: ($ChunkRenderTypeSet$$Type)[]): $ChunkRenderTypeSet
+public static "intersection"(arg0: $Iterable$$Type): $ChunkRenderTypeSet
+public static "intersection"(arg0: $Collection$$Type<($ChunkRenderTypeSet$$Type)>): $ChunkRenderTypeSet
+public static "union"(arg0: $Iterable$$Type): $ChunkRenderTypeSet
 public static "union"(arg0: $Collection$$Type<($ChunkRenderTypeSet$$Type)>): $ChunkRenderTypeSet
 public static "union"(...arg0: ($ChunkRenderTypeSet$$Type)[]): $ChunkRenderTypeSet
-public static "union"(arg0: $Iterable$$Type): $ChunkRenderTypeSet
-public static "intersection"(arg0: $Collection$$Type<($ChunkRenderTypeSet$$Type)>): $ChunkRenderTypeSet
-public static "intersection"(arg0: $Iterable$$Type): $ChunkRenderTypeSet
-public static "intersection"(...arg0: ($ChunkRenderTypeSet$$Type)[]): $ChunkRenderTypeSet
 public "isEmpty"(): boolean
 public "iterator"(): $Iterator
 public static "of"(...arg0: ($RenderType$$Type)[]): $ChunkRenderTypeSet
@@ -2491,8 +2491,8 @@ export type $ScreenEvent$MouseScrolled$Post$$Original = $ScreenEvent$MouseScroll
 declare module "net.neoforged.neoforge.client.event.ViewportEvent$RenderFog" {
 import {$ICancellableEvent$$Interface} from "net.neoforged.bus.api.ICancellableEvent"
 import {$Camera$$Type} from "net.minecraft.client.Camera"
-import {$FogType, $FogType$$Type} from "net.minecraft.world.level.material.FogType"
 import {$FogShape, $FogShape$$Type} from "com.mojang.blaze3d.shaders.FogShape"
+import {$FogType, $FogType$$Type} from "net.minecraft.world.level.material.FogType"
 import {$FogRenderer$FogMode, $FogRenderer$FogMode$$Type} from "net.minecraft.client.renderer.FogRenderer$FogMode"
 import {$ViewportEvent} from "net.neoforged.neoforge.client.event.ViewportEvent"
 
@@ -2532,8 +2532,8 @@ export type $ViewportEvent$RenderFog$$Type = ($ViewportEvent$RenderFog);
  */
 export type $ViewportEvent$RenderFog$$Original = $ViewportEvent$RenderFog;}
 declare module "net.neoforged.neoforge.client.event.ModelEvent$RegisterGeometryLoaders" {
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Map$$Type} from "java.util.Map"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$ModelEvent} from "net.neoforged.neoforge.client.event.ModelEvent"
 import {$IGeometryLoader$$Type} from "net.neoforged.neoforge.client.model.geometry.IGeometryLoader"
 import {$IModBusEvent$$Interface} from "net.neoforged.fml.event.IModBusEvent"
@@ -2578,8 +2578,8 @@ export type $ScreenEvent$KeyPressed$$Original = $ScreenEvent$KeyPressed;}
 declare module "net.neoforged.neoforge.client.model.generators.MultiPartBlockStateBuilder$PartBuilder$ConditionGroup" {
 import {$MultiPartBlockStateBuilder$PartBuilder, $MultiPartBlockStateBuilder$PartBuilder$$Type} from "net.neoforged.neoforge.client.model.generators.MultiPartBlockStateBuilder$PartBuilder"
 import {$Comparable, $Comparable$$Type} from "java.lang.Comparable"
-import {$List} from "java.util.List"
 import {$Multimap} from "com.google.common.collect.Multimap"
+import {$List} from "java.util.List"
 import {$Property, $Property$$Type} from "net.minecraft.world.level.block.state.properties.Property"
 
 export class $MultiPartBlockStateBuilder$PartBuilder$ConditionGroup {
@@ -2604,8 +2604,8 @@ export type $MultiPartBlockStateBuilder$PartBuilder$ConditionGroup$$Type = ($Mul
  */
 export type $MultiPartBlockStateBuilder$PartBuilder$ConditionGroup$$Original = $MultiPartBlockStateBuilder$PartBuilder$ConditionGroup;}
 declare module "net.neoforged.neoforge.client.event.EntityRenderersEvent$CreateSkullModels" {
-import {$SkullModelBase$$Type} from "net.minecraft.client.model.SkullModelBase"
 import {$ImmutableMap$Builder$$Type} from "com.google.common.collect.ImmutableMap$Builder"
+import {$SkullModelBase$$Type} from "net.minecraft.client.model.SkullModelBase"
 import {$EntityRenderersEvent} from "net.neoforged.neoforge.client.event.EntityRenderersEvent"
 import {$SkullBlock$Type$$Type} from "net.minecraft.world.level.block.SkullBlock$Type"
 import {$EntityModelSet, $EntityModelSet$$Type} from "net.minecraft.client.model.geom.EntityModelSet"
@@ -2654,8 +2654,8 @@ export type $GatherEffectScreenTooltipsEvent$$Type = ($GatherEffectScreenTooltip
 export type $GatherEffectScreenTooltipsEvent$$Original = $GatherEffectScreenTooltipsEvent;}
 declare module "net.neoforged.neoforge.client.settings.KeyModifier" {
 import {$Enum} from "java.lang.Enum"
-import {$List} from "java.util.List"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$List} from "java.util.List"
 import {$IKeyConflictContext$$Type} from "net.neoforged.neoforge.client.settings.IKeyConflictContext"
 import {$InputConstants$Key, $InputConstants$Key$$Type} from "com.mojang.blaze3d.platform.InputConstants$Key"
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
@@ -2673,8 +2673,8 @@ public static "valueOf"(arg0: StringJS): $KeyModifier
 public "matches"(arg0: $InputConstants$Key$$Type): boolean
 public "isActive"(arg0: $IKeyConflictContext$$Type): boolean
 public static "getKeyModifier"(arg0: $InputConstants$Key$$Type): $KeyModifier
-public "getCombinedName"(arg0: $InputConstants$Key$$Type, arg1: $Supplier$$Type<($Component$$Type)>): $Component
 public static "valueFromString"(arg0: StringJS): $KeyModifier
+public "getCombinedName"(arg0: $InputConstants$Key$$Type, arg1: $Supplier$$Type<($Component$$Type)>): $Component
 /**
  * 
  * @deprecated
@@ -2760,8 +2760,8 @@ readonly "weight": integer
 readonly "model": $ModelFile
 static readonly "DEFAULT_WEIGHT": integer
 
-constructor(arg0: $ModelFile$$Type)
 constructor(arg0: $ModelFile$$Type, arg1: integer, arg2: integer, arg3: boolean)
+constructor(arg0: $ModelFile$$Type)
 constructor(arg0: $ModelFile$$Type, arg1: integer, arg2: integer, arg3: boolean, arg4: integer)
 
 public static "allYRotations"(arg0: $ModelFile$$Type, arg1: integer, arg2: boolean, arg3: integer): ($ConfiguredModel)[]
@@ -2849,8 +2849,8 @@ import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$SpriteSource$$Type} from "net.minecraft.client.renderer.texture.atlas.SpriteSource"
 import {$Event} from "net.neoforged.bus.api.Event"
 import {$SpriteSourceType, $SpriteSourceType$$Type} from "net.minecraft.client.renderer.texture.atlas.SpriteSourceType"
-import {$MapCodec$$Type} from "com.mojang.serialization.MapCodec"
 import {$IModBusEvent$$Interface} from "net.neoforged.fml.event.IModBusEvent"
+import {$MapCodec$$Type} from "com.mojang.serialization.MapCodec"
 
 export class $RegisterSpriteSourceTypesEvent extends $Event implements $IModBusEvent$$Interface {
 constructor(arg0: $BiMap$$Type<($ResourceLocation$$Type), ($SpriteSourceType$$Type)>)
@@ -2878,18 +2878,18 @@ import {$ViewportEvent} from "net.neoforged.neoforge.client.event.ViewportEvent"
 export class $ViewportEvent$ComputeFogColor extends $ViewportEvent {
 constructor(arg0: $Camera$$Type, arg1: float, arg2: float, arg3: float, arg4: float)
 
-public "setRed"(arg0: float): void
-public "setGreen"(arg0: float): void
-public "setBlue"(arg0: float): void
 public "getRed"(): float
 public "getGreen"(): float
 public "getBlue"(): float
-set "red"(value: float)
-set "green"(value: float)
-set "blue"(value: float)
+public "setRed"(arg0: float): void
+public "setGreen"(arg0: float): void
+public "setBlue"(arg0: float): void
 get "red"(): float
 get "green"(): float
 get "blue"(): float
+set "red"(value: float)
+set "green"(value: float)
+set "blue"(value: float)
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -2929,8 +2929,8 @@ export type $ClientChatEvent$$Type = ($ClientChatEvent);
 export type $ClientChatEvent$$Original = $ClientChatEvent;}
 declare module "net.neoforged.neoforge.client.event.RegisterColorHandlersEvent$ColorResolvers" {
 import {$ImmutableList$Builder$$Type} from "com.google.common.collect.ImmutableList$Builder"
-import {$RegisterColorHandlersEvent} from "net.neoforged.neoforge.client.event.RegisterColorHandlersEvent"
 import {$ColorResolver$$Type} from "net.minecraft.world.level.ColorResolver"
+import {$RegisterColorHandlersEvent} from "net.neoforged.neoforge.client.event.RegisterColorHandlersEvent"
 
 export class $RegisterColorHandlersEvent$ColorResolvers extends $RegisterColorHandlersEvent {
 constructor(arg0: $ImmutableList$Builder$$Type<($ColorResolver$$Type)>)
@@ -2969,8 +2969,8 @@ export type $ScreenEvent$CharacterTyped$Pre$$Type = ($ScreenEvent$CharacterTyped
  */
 export type $ScreenEvent$CharacterTyped$Pre$$Original = $ScreenEvent$CharacterTyped$Pre;}
 declare module "net.neoforged.neoforge.client.event.GatherSkippedAttributeTooltipsEvent" {
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$EquipmentSlotGroup$$Type} from "net.minecraft.world.entity.EquipmentSlotGroup"
 import {$Event} from "net.neoforged.bus.api.Event"
 import {$AttributeTooltipContext, $AttributeTooltipContext$$Type} from "net.neoforged.neoforge.common.util.AttributeTooltipContext"
@@ -3050,8 +3050,8 @@ import {$VertexFormatElement$$Type} from "com.mojang.blaze3d.vertex.VertexFormat
 import {$VertexConsumer} from "com.mojang.blaze3d.vertex.VertexConsumer"
 import {$Vector3f$$Type} from "org.joml.Vector3f"
 import {$ByteBuffer$$Type} from "java.nio.ByteBuffer"
-import {$BakedQuad$$Type} from "net.minecraft.client.renderer.block.model.BakedQuad"
 import {$Matrix3f$$Type} from "org.joml.Matrix3f"
+import {$BakedQuad$$Type} from "net.minecraft.client.renderer.block.model.BakedQuad"
 
 export interface $IVertexConsumerExtension$$Interface {
 }
@@ -3252,8 +3252,8 @@ static readonly "DEFAULT": $IClientItemExtensions
  "getScopeOverlayTexture"(arg0: $ItemStack$$Type): $ResourceLocation
 static "of"(arg0: $ItemStack$$Type): $IClientItemExtensions
 static "of"(arg0: $Item$$Type): $IClientItemExtensions
- "getFont"(arg0: $ItemStack$$Type, arg1: $IClientItemExtensions$FontContext$$Type): $Font
  "getCustomRenderer"(): $BlockEntityWithoutLevelRenderer
+ "getFont"(arg0: $ItemStack$$Type, arg1: $IClientItemExtensions$FontContext$$Type): $Font
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -3296,8 +3296,8 @@ import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
 import {$Minecraft$$Type} from "net.minecraft.client.Minecraft"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$FluidType$$Type} from "net.neoforged.neoforge.fluids.FluidType"
 import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
+import {$FluidType$$Type} from "net.neoforged.neoforge.fluids.FluidType"
 import {$FogRenderer$FogMode$$Type} from "net.minecraft.client.renderer.FogRenderer$FogMode"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
@@ -3349,9 +3349,9 @@ import {$ItemModelBuilder, $ItemModelBuilder$$Type} from "net.neoforged.neoforge
 export class $ItemModelBuilder$OverrideBuilder {
 constructor(arg0: $ItemModelBuilder$$Type)
 
-public "predicate"(arg0: $ResourceLocation$$Type, arg1: float): $ItemModelBuilder$OverrideBuilder
 public "model"(arg0: $ModelFile$$Type): $ItemModelBuilder$OverrideBuilder
 public "end"(): $ItemModelBuilder
+public "predicate"(arg0: $ResourceLocation$$Type, arg1: float): $ItemModelBuilder$OverrideBuilder
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -3370,28 +3370,28 @@ import {$KeyMapping$$Type} from "net.minecraft.client.KeyMapping"
 import {$Component} from "net.minecraft.network.chat.Component"
 
 export interface $IKeyMappingExtension$$Interface {
-get "key"(): $InputConstants$Key
 get "displayName"(): $Component
+get "key"(): $InputConstants$Key
 get "toDefault"(): void
-get "conflictContextAndModifierActive"(): boolean
 get "keyConflictContext"(): $IKeyConflictContext
 get "keyModifier"(): $KeyModifier
 get "defaultKeyModifier"(): $KeyModifier
 set "keyConflictContext"(value: $IKeyConflictContext$$Type)
+get "conflictContextAndModifierActive"(): boolean
 }
 
 export class $IKeyMappingExtension implements $IKeyMappingExtension$$Interface {
- "getKey"(): $InputConstants$Key
  "getDisplayName"(): $Component
+ "getKey"(): $InputConstants$Key
  "setToDefault"(): void
- "isConflictContextAndModifierActive"(): boolean
- "isActiveAndMatches"(arg0: $InputConstants$Key$$Type): boolean
  "getKeyConflictContext"(): $IKeyConflictContext
  "getKeyModifier"(): $KeyModifier
  "getDefaultKeyModifier"(): $KeyModifier
  "setKeyConflictContext"(arg0: $IKeyConflictContext$$Type): void
  "setKeyModifierAndCode"(arg0: $KeyModifier$$Type, arg1: $InputConstants$Key$$Type): void
  "hasKeyModifierConflict"(arg0: $KeyMapping$$Type): boolean
+ "isConflictContextAndModifierActive"(): boolean
+ "isActiveAndMatches"(arg0: $InputConstants$Key$$Type): boolean
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -3406,9 +3406,9 @@ declare module "net.neoforged.neoforge.client.model.data.ModelDataManager" {
 import {$Long2ObjectMap} from "it.unimi.dsi.fastutil.longs.Long2ObjectMap"
 import {$SectionPos$$Type} from "net.minecraft.core.SectionPos"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$ChunkEvent$Unload$$Type} from "net.neoforged.neoforge.event.level.ChunkEvent$Unload"
 import {$ModelData} from "net.neoforged.neoforge.client.model.data.ModelData"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$Long2ObjectFunction} from "it.unimi.dsi.fastutil.longs.Long2ObjectFunction"
 
@@ -3512,8 +3512,8 @@ import {$ChunkRenderTypeSet} from "net.neoforged.neoforge.client.ChunkRenderType
 import {$ModelData, $ModelData$$Type} from "net.neoforged.neoforge.client.model.data.ModelData"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$RenderType, $RenderType$$Type} from "net.minecraft.client.renderer.RenderType"
-import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
+import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export interface $IBakedModelExtension$$Interface {
 }
@@ -3618,17 +3618,17 @@ constructor(arg0: $ItemFrame$$Type, arg1: $ItemFrameRenderer$$Type<(never)>, arg
 
 public "getPackedLight"(): integer
 public "getItemFrameEntity"(): $ItemFrame
-public "getItemStack"(): $ItemStack
 public "getRenderer"(): $ItemFrameRenderer<(never)>
 public "getPoseStack"(): $PoseStack
+public "getItemStack"(): $ItemStack
 public "getMultiBufferSource"(): $MultiBufferSource
 public "setCanceled"(arg0: boolean): void
 public "isCanceled"(): boolean
 get "packedLight"(): integer
 get "itemFrameEntity"(): $ItemFrame
-get "itemStack"(): $ItemStack
 get "renderer"(): $ItemFrameRenderer<(never)>
 get "poseStack"(): $PoseStack
+get "itemStack"(): $ItemStack
 get "multiBufferSource"(): $MultiBufferSource
 set "canceled"(value: boolean)
 get "canceled"(): boolean
@@ -3670,8 +3670,8 @@ declare module "net.neoforged.neoforge.client.event.RegisterDimensionTransitionS
 import {$Map$$Type} from "java.util.Map"
 import {$Pair$$Type} from "com.mojang.datafixers.util.Pair"
 import {$Event} from "net.neoforged.bus.api.Event"
-import {$DimensionTransitionScreenManager$ReceivingLevelScreenFactory$$Type} from "net.neoforged.neoforge.client.DimensionTransitionScreenManager$ReceivingLevelScreenFactory"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$DimensionTransitionScreenManager$ReceivingLevelScreenFactory$$Type} from "net.neoforged.neoforge.client.DimensionTransitionScreenManager$ReceivingLevelScreenFactory"
 import {$ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
 import {$IModBusEvent$$Interface} from "net.neoforged.fml.event.IModBusEvent"
 
@@ -3692,14 +3692,14 @@ export type $RegisterDimensionTransitionScreenEvent$$Type = ($RegisterDimensionT
  */
 export type $RegisterDimensionTransitionScreenEvent$$Original = $RegisterDimensionTransitionScreenEvent;}
 declare module "net.neoforged.neoforge.client.model.generators.ConfiguredModel$Builder" {
-import {$ModelFile$$Type} from "net.neoforged.neoforge.client.model.generators.ModelFile"
 import {$ConfiguredModel} from "net.neoforged.neoforge.client.model.generators.ConfiguredModel"
+import {$ModelFile$$Type} from "net.neoforged.neoforge.client.model.generators.ModelFile"
 
 export class $ConfiguredModel$Builder<T> {
+public "nextModel"(): $ConfiguredModel$Builder<(T)>
 public "modelFile"(arg0: $ModelFile$$Type): $ConfiguredModel$Builder<(T)>
 public "addModel"(): T
 public "uvLock"(arg0: boolean): $ConfiguredModel$Builder<(T)>
-public "nextModel"(): $ConfiguredModel$Builder<(T)>
 public "buildLast"(): $ConfiguredModel
 public "build"(): ($ConfiguredModel)[]
 public "weight"(arg0: integer): $ConfiguredModel$Builder<(T)>
@@ -3736,8 +3736,8 @@ export type $ModelBuilder$TransformsBuilder$$Type = ($ModelBuilder$TransformsBui
  */
 export type $ModelBuilder$TransformsBuilder$$Original = $ModelBuilder$TransformsBuilder;}
 declare module "net.neoforged.neoforge.client.event.InputEvent$MouseScrollingEvent" {
-import {$ICancellableEvent$$Interface} from "net.neoforged.bus.api.ICancellableEvent"
 import {$InputEvent} from "net.neoforged.neoforge.client.event.InputEvent"
+import {$ICancellableEvent$$Interface} from "net.neoforged.bus.api.ICancellableEvent"
 
 export class $InputEvent$MouseScrollingEvent extends $InputEvent implements $ICancellableEvent$$Interface {
 constructor(arg0: double, arg1: double, arg2: boolean, arg3: boolean, arg4: boolean, arg5: double, arg6: double)
@@ -3805,8 +3805,8 @@ public "partialState"(): $VariantBlockStateBuilder$PartialBlockstate
 public "setModels"(...arg0: ($ConfiguredModel$$Type)[]): $VariantBlockStateBuilder
 public "modelForState"(): $ConfiguredModel$Builder<($VariantBlockStateBuilder)>
 public "addModels"(...arg0: ($ConfiguredModel$$Type)[]): $VariantBlockStateBuilder$PartialBlockstate
-public "getSetStates"(): $SortedMap<($Property<(never)>), ($Comparable<(never)>)>
 public static "comparingByProperties"(): $Comparator<($VariantBlockStateBuilder$PartialBlockstate)>
+public "getSetStates"(): $SortedMap<($Property<(never)>), ($Comparable<(never)>)>
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
@@ -3814,11 +3814,11 @@ public "test"(arg0: any): boolean
 public "test"(arg0: $BlockState$$Type): boolean
 public "with"<T extends $Comparable<(object)>>(arg0: $Property$$Type<(T)>, arg1: T): $VariantBlockStateBuilder$PartialBlockstate
 public "getOwner"(): $Block
-public "or"(arg0: $Predicate$$Type<($BlockState)>): $Predicate<($BlockState)>
+public static "not"<T>(arg0: $Predicate$$Type<($BlockState)>): $Predicate<($BlockState)>
 public static "isEqual"<T>(arg0: any): $Predicate<($BlockState)>
 public "negate"(): $Predicate<($BlockState)>
 public "and"(arg0: $Predicate$$Type<($BlockState)>): $Predicate<($BlockState)>
-public static "not"<T>(arg0: $Predicate$$Type<($BlockState)>): $Predicate<($BlockState)>
+public "or"(arg0: $Predicate$$Type<($BlockState)>): $Predicate<($BlockState)>
 set "models"(value: ($ConfiguredModel$$Type)[])
 get "setStates"(): $SortedMap<($Property<(never)>), ($Comparable<(never)>)>
 get "owner"(): $Block
@@ -3854,10 +3854,10 @@ declare module "net.neoforged.neoforge.client.event.RegisterMenuScreensEvent" {
 import {$Map$$Type} from "java.util.Map"
 import {$AbstractContainerMenu} from "net.minecraft.world.inventory.AbstractContainerMenu"
 import {$Screen} from "net.minecraft.client.gui.screens.Screen"
-import {$MenuType$$Type} from "net.minecraft.world.inventory.MenuType"
 import {$Event} from "net.neoforged.bus.api.Event"
-import {$MenuScreens$ScreenConstructor$$Type} from "net.minecraft.client.gui.screens.MenuScreens$ScreenConstructor"
+import {$MenuType$$Type} from "net.minecraft.world.inventory.MenuType"
 import {$IModBusEvent$$Interface} from "net.neoforged.fml.event.IModBusEvent"
+import {$MenuScreens$ScreenConstructor$$Type} from "net.minecraft.client.gui.screens.MenuScreens$ScreenConstructor"
 
 export class $RegisterMenuScreensEvent extends $Event implements $IModBusEvent$$Interface {
 constructor(arg0: $Map$$Type<($MenuType$$Type<(never)>), ($MenuScreens$ScreenConstructor$$Type<(never), (never)>)>)
@@ -3907,34 +3907,34 @@ export type $IAbstractWidgetExtension$$Type = ($IAbstractWidgetExtension);
  */
 export type $IAbstractWidgetExtension$$Original = $IAbstractWidgetExtension;}
 declare module "net.neoforged.neoforge.client.event.RenderNameTagEvent" {
-import {$EntityEvent} from "net.neoforged.neoforge.event.entity.EntityEvent"
 import {$EntityRenderer, $EntityRenderer$$Type} from "net.minecraft.client.renderer.entity.EntityRenderer"
+import {$EntityEvent} from "net.neoforged.neoforge.event.entity.EntityEvent"
 import {$MultiBufferSource, $MultiBufferSource$$Type} from "net.minecraft.client.renderer.MultiBufferSource"
 import {$PoseStack, $PoseStack$$Type} from "com.mojang.blaze3d.vertex.PoseStack"
-import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
+import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$TriState, $TriState$$Type} from "net.neoforged.neoforge.common.util.TriState"
 
 export class $RenderNameTagEvent extends $EntityEvent {
 constructor(arg0: $Entity$$Type, arg1: $Component$$Type, arg2: $EntityRenderer$$Type<(never)>, arg3: $PoseStack$$Type, arg4: $MultiBufferSource$$Type, arg5: integer, arg6: float)
 
-public "getPackedLight"(): integer
-public "getEntityRenderer"(): $EntityRenderer<(never)>
 public "setCanRender"(arg0: $TriState$$Type): void
 public "getOriginalContent"(): $Component
+public "getPackedLight"(): integer
+public "getEntityRenderer"(): $EntityRenderer<(never)>
 public "setContent"(arg0: $Component$$Type): void
 public "getContent"(): $Component
-public "getPartialTick"(): float
 public "getPoseStack"(): $PoseStack
+public "getPartialTick"(): float
 public "canRender"(): $TriState
 public "getMultiBufferSource"(): $MultiBufferSource
+get "originalContent"(): $Component
 get "packedLight"(): integer
 get "entityRenderer"(): $EntityRenderer<(never)>
-get "originalContent"(): $Component
 set "content"(value: $Component$$Type)
 get "content"(): $Component
-get "partialTick"(): float
 get "poseStack"(): $PoseStack
+get "partialTick"(): float
 get "multiBufferSource"(): $MultiBufferSource
 }
 /**
@@ -3989,11 +3989,11 @@ constructor(arg0: $ModelBuilder$$Type)
 public "cube"(arg0: StringJS): $ModelBuilder$ElementBuilder
 public "face"(arg0: $Direction$$Type): $ModelBuilder$ElementBuilder$FaceBuilder
 public "faces"(arg0: $BiConsumer$$Type<($Direction), ($ModelBuilder$ElementBuilder$FaceBuilder)>): $ModelBuilder$ElementBuilder
-public "textureAll"(arg0: StringJS): $ModelBuilder$ElementBuilder
-public "allFacesExcept"(arg0: $BiConsumer$$Type<($Direction), ($ModelBuilder$ElementBuilder$FaceBuilder)>, arg1: $Set$$Type<($Direction$$Type)>): $ModelBuilder$ElementBuilder
-public "allFaces"(arg0: $BiConsumer$$Type<($Direction), ($ModelBuilder$ElementBuilder$FaceBuilder)>): $ModelBuilder$ElementBuilder
 public "emissivity"(arg0: integer, arg1: integer): $ModelBuilder$ElementBuilder
+public "allFaces"(arg0: $BiConsumer$$Type<($Direction), ($ModelBuilder$ElementBuilder$FaceBuilder)>): $ModelBuilder$ElementBuilder
 public "texture"(arg0: StringJS): $ModelBuilder$ElementBuilder
+public "allFacesExcept"(arg0: $BiConsumer$$Type<($Direction), ($ModelBuilder$ElementBuilder$FaceBuilder)>, arg1: $Set$$Type<($Direction$$Type)>): $ModelBuilder$ElementBuilder
+public "textureAll"(arg0: StringJS): $ModelBuilder$ElementBuilder
 public "end"(): T
 public "from"(arg0: float, arg1: float, arg2: float): $ModelBuilder$ElementBuilder
 public "to"(arg0: float, arg1: float, arg2: float): $ModelBuilder$ElementBuilder
@@ -4034,8 +4034,8 @@ export type $ClientPauseChangeEvent$Pre$$Type = ($ClientPauseChangeEvent$Pre);
 export type $ClientPauseChangeEvent$Pre$$Original = $ClientPauseChangeEvent$Pre;}
 declare module "net.neoforged.neoforge.client.event.RegisterDimensionSpecialEffectsEvent" {
 import {$DimensionSpecialEffects$$Type} from "net.minecraft.client.renderer.DimensionSpecialEffects"
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Map$$Type} from "java.util.Map"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Event} from "net.neoforged.bus.api.Event"
 import {$IModBusEvent$$Interface} from "net.neoforged.fml.event.IModBusEvent"
 
@@ -4085,17 +4085,17 @@ import {$UnaryOperator$$Type} from "java.util.function.UnaryOperator"
 import {$LayeredDraw$Layer$$Type} from "net.minecraft.client.gui.LayeredDraw$Layer"
 import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$List$$Type} from "java.util.List"
-import {$Event} from "net.neoforged.bus.api.Event"
 import {$GuiLayerManager$NamedLayer$$Type} from "net.neoforged.neoforge.client.gui.GuiLayerManager$NamedLayer"
+import {$Event} from "net.neoforged.bus.api.Event"
 import {$IModBusEvent$$Interface} from "net.neoforged.fml.event.IModBusEvent"
 
 export class $RegisterGuiLayersEvent extends $Event implements $IModBusEvent$$Interface {
 constructor(arg0: $List$$Type<($GuiLayerManager$NamedLayer$$Type)>)
 
-public "wrapLayer"(arg0: $ResourceLocation$$Type, arg1: $UnaryOperator$$Type<($LayeredDraw$Layer)>): void
 public "registerBelowAll"(arg0: $ResourceLocation$$Type, arg1: $LayeredDraw$Layer$$Type): void
 public "registerBelow"(arg0: $ResourceLocation$$Type, arg1: $ResourceLocation$$Type, arg2: $LayeredDraw$Layer$$Type): void
 public "replaceLayer"(arg0: $ResourceLocation$$Type, arg1: $LayeredDraw$Layer$$Type): void
+public "wrapLayer"(arg0: $ResourceLocation$$Type, arg1: $UnaryOperator$$Type<($LayeredDraw$Layer)>): void
 public "registerAbove"(arg0: $ResourceLocation$$Type, arg1: $ResourceLocation$$Type, arg2: $LayeredDraw$Layer$$Type): void
 public "registerAboveAll"(arg0: $ResourceLocation$$Type, arg1: $LayeredDraw$Layer$$Type): void
 }
@@ -4124,8 +4124,8 @@ export type $RegisterColorHandlersEvent$$Type = ($RegisterColorHandlersEvent);
  */
 export type $RegisterColorHandlersEvent$$Original = $RegisterColorHandlersEvent;}
 declare module "net.neoforged.neoforge.client.event.RegisterMaterialAtlasesEvent" {
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Map$$Type} from "java.util.Map"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Event} from "net.neoforged.bus.api.Event"
 import {$IModBusEvent$$Interface} from "net.neoforged.fml.event.IModBusEvent"
 
@@ -4192,8 +4192,8 @@ declare module "net.neoforged.neoforge.client.model.generators.VariantBlockState
 import {$Map} from "java.util.Map"
 import {$Function$$Type} from "java.util.function.Function"
 import {$Block} from "net.minecraft.world.level.block.Block"
-import {$IGeneratedBlockState$$Interface} from "net.neoforged.neoforge.client.model.generators.IGeneratedBlockState"
 import {$JsonObject} from "com.google.gson.JsonObject"
+import {$IGeneratedBlockState$$Interface} from "net.neoforged.neoforge.client.model.generators.IGeneratedBlockState"
 import {$VariantBlockStateBuilder$PartialBlockstate, $VariantBlockStateBuilder$PartialBlockstate$$Type} from "net.neoforged.neoforge.client.model.generators.VariantBlockStateBuilder$PartialBlockstate"
 import {$BlockStateProvider$ConfiguredModelList} from "net.neoforged.neoforge.client.model.generators.BlockStateProvider$ConfiguredModelList"
 import {$ConfiguredModel$$Type} from "net.neoforged.neoforge.client.model.generators.ConfiguredModel"
@@ -4415,9 +4415,9 @@ import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$ParticleEngine$$Type} from "net.minecraft.client.particle.ParticleEngine"
 import {$Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$HitResult$$Type} from "net.minecraft.world.phys.HitResult"
+import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Vector3d, $Vector3d$$Type} from "org.joml.Vector3d"
 
@@ -4429,9 +4429,9 @@ static readonly "DEFAULT": $IClientBlockExtensions
 
  "getFogColor"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type, arg4: $Vector3d$$Type, arg5: float): $Vector3d
  "playBreakSound"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type): boolean
- "addHitEffects"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $HitResult$$Type, arg3: $ParticleEngine$$Type): boolean
  "addDestroyEffects"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $ParticleEngine$$Type): boolean
  "areBreakingParticlesTinted"(arg0: $BlockState$$Type, arg1: $ClientLevel$$Type, arg2: $BlockPos$$Type): boolean
+ "addHitEffects"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $HitResult$$Type, arg3: $ParticleEngine$$Type): boolean
 static "of"(arg0: $Block$$Type): $IClientBlockExtensions
 static "of"(arg0: $BlockState$$Type): $IClientBlockExtensions
 }
@@ -4450,14 +4450,14 @@ import {$Event} from "net.neoforged.bus.api.Event"
 export class $CalculatePlayerTurnEvent extends $Event {
 constructor(arg0: double, arg1: boolean)
 
-public "setMouseSensitivity"(arg0: double): void
-public "setCinematicCameraEnabled"(arg0: boolean): void
 public "getMouseSensitivity"(): double
 public "getCinematicCameraEnabled"(): boolean
-set "mouseSensitivity"(value: double)
-set "cinematicCameraEnabled"(value: boolean)
+public "setMouseSensitivity"(arg0: double): void
+public "setCinematicCameraEnabled"(arg0: boolean): void
 get "mouseSensitivity"(): double
 get "cinematicCameraEnabled"(): boolean
+set "mouseSensitivity"(value: double)
+set "cinematicCameraEnabled"(value: boolean)
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -4530,8 +4530,8 @@ export type $ScreenEvent$MouseButtonPressed$Post$Result$$Type = (("force_handled
  */
 export type $ScreenEvent$MouseButtonPressed$Post$Result$$Original = $ScreenEvent$MouseButtonPressed$Post$Result;}
 declare module "net.neoforged.neoforge.client.event.ClientPlayerNetworkEvent$LoggingOut" {
-import {$MultiPlayerGameMode, $MultiPlayerGameMode$$Type} from "net.minecraft.client.multiplayer.MultiPlayerGameMode"
 import {$LocalPlayer, $LocalPlayer$$Type} from "net.minecraft.client.player.LocalPlayer"
+import {$MultiPlayerGameMode, $MultiPlayerGameMode$$Type} from "net.minecraft.client.multiplayer.MultiPlayerGameMode"
 import {$ClientPlayerNetworkEvent} from "net.neoforged.neoforge.client.event.ClientPlayerNetworkEvent"
 import {$Connection, $Connection$$Type} from "net.minecraft.network.Connection"
 
@@ -4666,11 +4666,11 @@ constructor()
 constructor(arg0: $Predicate$$Type<(T)>)
 
 public "test"(arg0: T): boolean
-public "or"(arg0: $Predicate$$Type<(T)>): $Predicate<(T)>
+public static "not"<T>(arg0: $Predicate$$Type<(T)>): $Predicate<(T)>
 public static "isEqual"<T>(arg0: any): $Predicate<(T)>
 public "negate"(): $Predicate<(T)>
 public "and"(arg0: $Predicate$$Type<(T)>): $Predicate<(T)>
-public static "not"<T>(arg0: $Predicate$$Type<(T)>): $Predicate<(T)>
+public "or"(arg0: $Predicate$$Type<(T)>): $Predicate<(T)>
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -4703,8 +4703,8 @@ export type $IGeneratedBlockState$$Type = (() => $JsonObject$$Type);
 export type $IGeneratedBlockState$$Original = $IGeneratedBlockState;}
 declare module "net.neoforged.neoforge.client.event.RegisterItemDecorationsEvent" {
 import {$Map$$Type} from "java.util.Map"
-import {$ItemLike$$Type} from "net.minecraft.world.level.ItemLike"
 import {$List$$Type} from "java.util.List"
+import {$ItemLike$$Type} from "net.minecraft.world.level.ItemLike"
 import {$Event} from "net.neoforged.bus.api.Event"
 import {$Item$$Type} from "net.minecraft.world.item.Item"
 import {$IItemDecorator$$Type} from "net.neoforged.neoforge.client.IItemDecorator"
@@ -4801,8 +4801,8 @@ import {$Map} from "java.util.Map"
 import {$JsonElement$$Type} from "com.google.gson.JsonElement"
 import {$Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$CachedOutput$$Type} from "net.minecraft.data.CachedOutput"
-import {$ModelProvider} from "net.neoforged.neoforge.client.model.generators.ModelProvider"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$ModelProvider} from "net.neoforged.neoforge.client.model.generators.ModelProvider"
 import {$ItemModelBuilder} from "net.neoforged.neoforge.client.model.generators.ItemModelBuilder"
 import {$ExistingFileHelper$ResourceType} from "net.neoforged.neoforge.common.data.ExistingFileHelper$ResourceType"
 import {$PackOutput$$Type} from "net.minecraft.data.PackOutput"
@@ -4831,8 +4831,8 @@ public "handheldItem"(arg0: $Item$$Type): $ItemModelBuilder
 public "spawnEggItem"(arg0: $ResourceLocation$$Type): $ItemModelBuilder
 public "spawnEggItem"(arg0: $Item$$Type): $ItemModelBuilder
 public "getName"(): StringJS
-public static "saveStable"<T>(arg0: $CachedOutput$$Type, arg1: $HolderLookup$Provider$$Type, arg2: $Codec$$Type<(T)>, arg3: T, arg4: $Path$$Type): $CompletableFuture<(never)>
 public static "saveStable"(arg0: $CachedOutput$$Type, arg1: $JsonElement$$Type, arg2: $Path$$Type): $CompletableFuture
+public static "saveStable"<T>(arg0: $CachedOutput$$Type, arg1: $HolderLookup$Provider$$Type, arg2: $Codec$$Type<(T)>, arg3: T, arg4: $Path$$Type): $CompletableFuture<(never)>
 get "name"(): StringJS
 }
 /**
@@ -4858,9 +4858,9 @@ import {$ImmutableMap} from "com.google.common.collect.ImmutableMap"
 import {$FenceBlock$$Type} from "net.minecraft.world.level.block.FenceBlock"
 import {$ButtonBlock$$Type} from "net.minecraft.world.level.block.ButtonBlock"
 import {$PackOutput$$Type} from "net.minecraft.data.PackOutput"
+import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$BlockModelProvider} from "net.neoforged.neoforge.client.model.generators.BlockModelProvider"
 import {$MultiPartBlockStateBuilder, $MultiPartBlockStateBuilder$$Type} from "net.neoforged.neoforge.client.model.generators.MultiPartBlockStateBuilder"
-import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Codec$$Type} from "com.mojang.serialization.Codec"
 import {$PressurePlateBlock$$Type} from "net.minecraft.world.level.block.PressurePlateBlock"
 import {$Function$$Type} from "java.util.function.Function"
@@ -4875,12 +4875,12 @@ import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Prov
 import {$ModelFile, $ModelFile$$Type} from "net.neoforged.neoforge.client.model.generators.ModelFile"
 import {$ItemModelProvider} from "net.neoforged.neoforge.client.model.generators.ItemModelProvider"
 import {$FenceGateBlock$$Type} from "net.minecraft.world.level.block.FenceGateBlock"
-import {$IronBarsBlock$$Type} from "net.minecraft.world.level.block.IronBarsBlock"
 import {$CompletableFuture} from "java.util.concurrent.CompletableFuture"
+import {$IronBarsBlock$$Type} from "net.minecraft.world.level.block.IronBarsBlock"
 import {$DataProvider$$Interface} from "net.minecraft.data.DataProvider"
 import {$ExistingFileHelper$$Type} from "net.neoforged.neoforge.common.data.ExistingFileHelper"
-import {$TrapDoorBlock$$Type} from "net.minecraft.world.level.block.TrapDoorBlock"
 import {$Path$$Type} from "java.nio.file.Path"
+import {$TrapDoorBlock$$Type} from "net.minecraft.world.level.block.TrapDoorBlock"
 import {$WallBlock$$Type} from "net.minecraft.world.level.block.WallBlock"
 import {$ConfiguredModel$$Type} from "net.neoforged.neoforge.client.model.generators.ConfiguredModel"
 import {$Property} from "net.minecraft.world.level.block.state.properties.Property"
@@ -4893,114 +4893,114 @@ constructor(arg0: $PackOutput$$Type, arg1: StringJS, arg2: $ExistingFileHelper$$
 public "modLoc"(arg0: StringJS): $ResourceLocation
 public "cubeAll"(arg0: $Block$$Type): $ModelFile
 public "models"(): $BlockModelProvider
-public "simpleBlock"(arg0: $Block$$Type, ...arg1: ($ConfiguredModel$$Type)[]): void
 public "simpleBlock"(arg0: $Block$$Type): void
+public "simpleBlock"(arg0: $Block$$Type, ...arg1: ($ConfiguredModel$$Type)[]): void
 public "simpleBlock"(arg0: $Block$$Type, arg1: $ModelFile$$Type): void
 public "simpleBlock"(arg0: $Block$$Type, arg1: $Function$$Type<($ModelFile), (($ConfiguredModel$$Type)[])>): void
+public "itemModels"(): $ItemModelProvider
 public "blockTexture"(arg0: $Block$$Type): $ResourceLocation
 public "simpleBlockItem"(arg0: $Block$$Type, arg1: $ModelFile$$Type): void
 public "getVariantBuilder"(arg0: $Block$$Type): $VariantBlockStateBuilder
-public "axisBlock"(arg0: $RotatedPillarBlock$$Type, arg1: $ResourceLocation$$Type, arg2: $ResourceLocation$$Type): void
 public "axisBlock"(arg0: $RotatedPillarBlock$$Type, arg1: $ResourceLocation$$Type): void
+public "axisBlock"(arg0: $RotatedPillarBlock$$Type, arg1: $ResourceLocation$$Type, arg2: $ResourceLocation$$Type): void
 public "axisBlock"(arg0: $RotatedPillarBlock$$Type): void
 public "axisBlock"(arg0: $RotatedPillarBlock$$Type, arg1: $ModelFile$$Type, arg2: $ModelFile$$Type): void
 public "axisBlockWithRenderType"(arg0: $RotatedPillarBlock$$Type, arg1: $ResourceLocation$$Type): void
 public "axisBlockWithRenderType"(arg0: $RotatedPillarBlock$$Type, arg1: StringJS): void
-public "axisBlockWithRenderType"(arg0: $RotatedPillarBlock$$Type, arg1: $ResourceLocation$$Type, arg2: $ResourceLocation$$Type, arg3: $ResourceLocation$$Type): void
 public "axisBlockWithRenderType"(arg0: $RotatedPillarBlock$$Type, arg1: $ResourceLocation$$Type, arg2: StringJS): void
-public "axisBlockWithRenderType"(arg0: $RotatedPillarBlock$$Type, arg1: $ResourceLocation$$Type, arg2: $ResourceLocation$$Type): void
 public "axisBlockWithRenderType"(arg0: $RotatedPillarBlock$$Type, arg1: $ResourceLocation$$Type, arg2: $ResourceLocation$$Type, arg3: StringJS): void
-public "horizontalBlock"(arg0: $Block$$Type, arg1: $Function$$Type<($BlockState), ($ModelFile$$Type)>): void
+public "axisBlockWithRenderType"(arg0: $RotatedPillarBlock$$Type, arg1: $ResourceLocation$$Type, arg2: $ResourceLocation$$Type, arg3: $ResourceLocation$$Type): void
+public "axisBlockWithRenderType"(arg0: $RotatedPillarBlock$$Type, arg1: $ResourceLocation$$Type, arg2: $ResourceLocation$$Type): void
 public "horizontalBlock"(arg0: $Block$$Type, arg1: $Function$$Type<($BlockState), ($ModelFile$$Type)>, arg2: integer): void
+public "horizontalBlock"(arg0: $Block$$Type, arg1: $Function$$Type<($BlockState), ($ModelFile$$Type)>): void
 public "horizontalBlock"(arg0: $Block$$Type, arg1: $ResourceLocation$$Type, arg2: $ResourceLocation$$Type, arg3: $ResourceLocation$$Type): void
-public "horizontalBlock"(arg0: $Block$$Type, arg1: $ModelFile$$Type): void
 public "horizontalBlock"(arg0: $Block$$Type, arg1: $ModelFile$$Type, arg2: integer): void
-public "horizontalFaceBlock"(arg0: $Block$$Type, arg1: $Function$$Type<($BlockState), ($ModelFile$$Type)>, arg2: integer): void
-public "horizontalFaceBlock"(arg0: $Block$$Type, arg1: $ModelFile$$Type, arg2: integer): void
+public "horizontalBlock"(arg0: $Block$$Type, arg1: $ModelFile$$Type): void
 public "horizontalFaceBlock"(arg0: $Block$$Type, arg1: $ModelFile$$Type): void
+public "horizontalFaceBlock"(arg0: $Block$$Type, arg1: $ModelFile$$Type, arg2: integer): void
 public "horizontalFaceBlock"(arg0: $Block$$Type, arg1: $Function$$Type<($BlockState), ($ModelFile$$Type)>): void
-public "directionalBlock"(arg0: $Block$$Type, arg1: $Function$$Type<($BlockState), ($ModelFile$$Type)>, arg2: integer): void
+public "horizontalFaceBlock"(arg0: $Block$$Type, arg1: $Function$$Type<($BlockState), ($ModelFile$$Type)>, arg2: integer): void
 public "directionalBlock"(arg0: $Block$$Type, arg1: $Function$$Type<($BlockState), ($ModelFile$$Type)>): void
 public "directionalBlock"(arg0: $Block$$Type, arg1: $ModelFile$$Type): void
 public "directionalBlock"(arg0: $Block$$Type, arg1: $ModelFile$$Type, arg2: integer): void
-public "stairsBlock"(arg0: $StairBlock$$Type, arg1: $ResourceLocation$$Type, arg2: $ResourceLocation$$Type, arg3: $ResourceLocation$$Type): void
-public "stairsBlock"(arg0: $StairBlock$$Type, arg1: $ResourceLocation$$Type): void
+public "directionalBlock"(arg0: $Block$$Type, arg1: $Function$$Type<($BlockState), ($ModelFile$$Type)>, arg2: integer): void
 public "stairsBlock"(arg0: $StairBlock$$Type, arg1: StringJS, arg2: $ResourceLocation$$Type): void
+public "stairsBlock"(arg0: $StairBlock$$Type, arg1: $ResourceLocation$$Type, arg2: $ResourceLocation$$Type, arg3: $ResourceLocation$$Type): void
 public "stairsBlock"(arg0: $StairBlock$$Type, arg1: StringJS, arg2: $ResourceLocation$$Type, arg3: $ResourceLocation$$Type, arg4: $ResourceLocation$$Type): void
+public "stairsBlock"(arg0: $StairBlock$$Type, arg1: $ResourceLocation$$Type): void
 public "stairsBlock"(arg0: $StairBlock$$Type, arg1: $ModelFile$$Type, arg2: $ModelFile$$Type, arg3: $ModelFile$$Type): void
-public "stairsBlockWithRenderType"(arg0: $StairBlock$$Type, arg1: $ResourceLocation$$Type, arg2: StringJS): void
+public "stairsBlockWithRenderType"(arg0: $StairBlock$$Type, arg1: $ResourceLocation$$Type, arg2: $ResourceLocation$$Type, arg3: $ResourceLocation$$Type, arg4: $ResourceLocation$$Type): void
+public "stairsBlockWithRenderType"(arg0: $StairBlock$$Type, arg1: $ResourceLocation$$Type, arg2: $ResourceLocation$$Type, arg3: $ResourceLocation$$Type, arg4: StringJS): void
+public "stairsBlockWithRenderType"(arg0: $StairBlock$$Type, arg1: StringJS, arg2: $ResourceLocation$$Type, arg3: StringJS): void
+public "stairsBlockWithRenderType"(arg0: $StairBlock$$Type, arg1: StringJS, arg2: $ResourceLocation$$Type, arg3: $ResourceLocation$$Type, arg4: $ResourceLocation$$Type, arg5: $ResourceLocation$$Type): void
+public "stairsBlockWithRenderType"(arg0: $StairBlock$$Type, arg1: StringJS, arg2: $ResourceLocation$$Type, arg3: $ResourceLocation$$Type, arg4: $ResourceLocation$$Type, arg5: StringJS): void
 public "stairsBlockWithRenderType"(arg0: $StairBlock$$Type, arg1: $ResourceLocation$$Type, arg2: $ResourceLocation$$Type): void
 public "stairsBlockWithRenderType"(arg0: $StairBlock$$Type, arg1: StringJS, arg2: $ResourceLocation$$Type, arg3: $ResourceLocation$$Type): void
-public "stairsBlockWithRenderType"(arg0: $StairBlock$$Type, arg1: $ResourceLocation$$Type, arg2: $ResourceLocation$$Type, arg3: $ResourceLocation$$Type, arg4: $ResourceLocation$$Type): void
-public "stairsBlockWithRenderType"(arg0: $StairBlock$$Type, arg1: StringJS, arg2: $ResourceLocation$$Type, arg3: $ResourceLocation$$Type, arg4: $ResourceLocation$$Type, arg5: $ResourceLocation$$Type): void
-public "stairsBlockWithRenderType"(arg0: $StairBlock$$Type, arg1: StringJS, arg2: $ResourceLocation$$Type, arg3: StringJS): void
-public "stairsBlockWithRenderType"(arg0: $StairBlock$$Type, arg1: $ResourceLocation$$Type, arg2: $ResourceLocation$$Type, arg3: $ResourceLocation$$Type, arg4: StringJS): void
-public "stairsBlockWithRenderType"(arg0: $StairBlock$$Type, arg1: StringJS, arg2: $ResourceLocation$$Type, arg3: $ResourceLocation$$Type, arg4: $ResourceLocation$$Type, arg5: StringJS): void
-public "slabBlock"(arg0: $SlabBlock$$Type, arg1: $ResourceLocation$$Type, arg2: $ResourceLocation$$Type): void
-public "slabBlock"(arg0: $SlabBlock$$Type, arg1: $ResourceLocation$$Type, arg2: $ResourceLocation$$Type, arg3: $ResourceLocation$$Type, arg4: $ResourceLocation$$Type): void
+public "stairsBlockWithRenderType"(arg0: $StairBlock$$Type, arg1: $ResourceLocation$$Type, arg2: StringJS): void
 public "slabBlock"(arg0: $SlabBlock$$Type, arg1: $ModelFile$$Type, arg2: $ModelFile$$Type, arg3: $ModelFile$$Type): void
-public "buttonBlock"(arg0: $ButtonBlock$$Type, arg1: $ModelFile$$Type, arg2: $ModelFile$$Type): void
+public "slabBlock"(arg0: $SlabBlock$$Type, arg1: $ResourceLocation$$Type, arg2: $ResourceLocation$$Type, arg3: $ResourceLocation$$Type, arg4: $ResourceLocation$$Type): void
+public "slabBlock"(arg0: $SlabBlock$$Type, arg1: $ResourceLocation$$Type, arg2: $ResourceLocation$$Type): void
 public "buttonBlock"(arg0: $ButtonBlock$$Type, arg1: $ResourceLocation$$Type): void
-public "pressurePlateBlock"(arg0: $PressurePlateBlock$$Type, arg1: $ModelFile$$Type, arg2: $ModelFile$$Type): void
+public "buttonBlock"(arg0: $ButtonBlock$$Type, arg1: $ModelFile$$Type, arg2: $ModelFile$$Type): void
 public "pressurePlateBlock"(arg0: $PressurePlateBlock$$Type, arg1: $ResourceLocation$$Type): void
+public "pressurePlateBlock"(arg0: $PressurePlateBlock$$Type, arg1: $ModelFile$$Type, arg2: $ModelFile$$Type): void
 public "signBlock"(arg0: $StandingSignBlock$$Type, arg1: $WallSignBlock$$Type, arg2: $ModelFile$$Type): void
 public "signBlock"(arg0: $StandingSignBlock$$Type, arg1: $WallSignBlock$$Type, arg2: $ResourceLocation$$Type): void
-public "hangingSignBlock"(arg0: $CeilingHangingSignBlock$$Type, arg1: $WallHangingSignBlock$$Type, arg2: $ResourceLocation$$Type): void
 public "hangingSignBlock"(arg0: $CeilingHangingSignBlock$$Type, arg1: $WallHangingSignBlock$$Type, arg2: $ModelFile$$Type): void
+public "hangingSignBlock"(arg0: $CeilingHangingSignBlock$$Type, arg1: $WallHangingSignBlock$$Type, arg2: $ResourceLocation$$Type): void
 public "getMultipartBuilder"(arg0: $Block$$Type): $MultiPartBlockStateBuilder
 public "fourWayMultipart"(arg0: $MultiPartBlockStateBuilder$$Type, arg1: $ModelFile$$Type): void
 public "fourWayBlock"(arg0: $CrossCollisionBlock$$Type, arg1: $ModelFile$$Type, arg2: $ModelFile$$Type): void
 public "fenceGateBlock"(arg0: $FenceGateBlock$$Type, arg1: $ResourceLocation$$Type): void
 public "fenceGateBlock"(arg0: $FenceGateBlock$$Type, arg1: $ModelFile$$Type, arg2: $ModelFile$$Type, arg3: $ModelFile$$Type, arg4: $ModelFile$$Type): void
 public "fenceGateBlock"(arg0: $FenceGateBlock$$Type, arg1: StringJS, arg2: $ResourceLocation$$Type): void
+public "wallBlock"(arg0: $WallBlock$$Type, arg1: $ResourceLocation$$Type): void
 public "wallBlock"(arg0: $WallBlock$$Type, arg1: $ModelFile$$Type, arg2: $ModelFile$$Type, arg3: $ModelFile$$Type): void
 public "wallBlock"(arg0: $WallBlock$$Type, arg1: StringJS, arg2: $ResourceLocation$$Type): void
-public "wallBlock"(arg0: $WallBlock$$Type, arg1: $ResourceLocation$$Type): void
-public "paneBlock"(arg0: $IronBarsBlock$$Type, arg1: $ResourceLocation$$Type, arg2: $ResourceLocation$$Type): void
 public "paneBlock"(arg0: $IronBarsBlock$$Type, arg1: $ModelFile$$Type, arg2: $ModelFile$$Type, arg3: $ModelFile$$Type, arg4: $ModelFile$$Type, arg5: $ModelFile$$Type): void
+public "paneBlock"(arg0: $IronBarsBlock$$Type, arg1: $ResourceLocation$$Type, arg2: $ResourceLocation$$Type): void
 public "paneBlock"(arg0: $IronBarsBlock$$Type, arg1: StringJS, arg2: $ResourceLocation$$Type, arg3: $ResourceLocation$$Type): void
+public "doorBlock"(arg0: $DoorBlock$$Type, arg1: $ModelFile$$Type, arg2: $ModelFile$$Type, arg3: $ModelFile$$Type, arg4: $ModelFile$$Type, arg5: $ModelFile$$Type, arg6: $ModelFile$$Type, arg7: $ModelFile$$Type, arg8: $ModelFile$$Type): void
 public "doorBlock"(arg0: $DoorBlock$$Type, arg1: $ResourceLocation$$Type, arg2: $ResourceLocation$$Type): void
 public "doorBlock"(arg0: $DoorBlock$$Type, arg1: StringJS, arg2: $ResourceLocation$$Type, arg3: $ResourceLocation$$Type): void
-public "doorBlock"(arg0: $DoorBlock$$Type, arg1: $ModelFile$$Type, arg2: $ModelFile$$Type, arg3: $ModelFile$$Type, arg4: $ModelFile$$Type, arg5: $ModelFile$$Type, arg6: $ModelFile$$Type, arg7: $ModelFile$$Type, arg8: $ModelFile$$Type): void
-public "trapdoorBlock"(arg0: $TrapDoorBlock$$Type, arg1: $ModelFile$$Type, arg2: $ModelFile$$Type, arg3: $ModelFile$$Type, arg4: boolean): void
-public "trapdoorBlock"(arg0: $TrapDoorBlock$$Type, arg1: $ResourceLocation$$Type, arg2: boolean): void
 public "trapdoorBlock"(arg0: $TrapDoorBlock$$Type, arg1: StringJS, arg2: $ResourceLocation$$Type, arg3: boolean): void
+public "trapdoorBlock"(arg0: $TrapDoorBlock$$Type, arg1: $ResourceLocation$$Type, arg2: boolean): void
+public "trapdoorBlock"(arg0: $TrapDoorBlock$$Type, arg1: $ModelFile$$Type, arg2: $ModelFile$$Type, arg3: $ModelFile$$Type, arg4: boolean): void
 public "mcLoc"(arg0: StringJS): $ResourceLocation
 public "simpleBlockWithItem"(arg0: $Block$$Type, arg1: $ModelFile$$Type): void
 public "logBlock"(arg0: $RotatedPillarBlock$$Type): void
-public "logBlockWithRenderType"(arg0: $RotatedPillarBlock$$Type, arg1: $ResourceLocation$$Type): void
 public "logBlockWithRenderType"(arg0: $RotatedPillarBlock$$Type, arg1: StringJS): void
+public "logBlockWithRenderType"(arg0: $RotatedPillarBlock$$Type, arg1: $ResourceLocation$$Type): void
 public "fenceBlock"(arg0: $FenceBlock$$Type, arg1: StringJS, arg2: $ResourceLocation$$Type): void
 public "fenceBlock"(arg0: $FenceBlock$$Type, arg1: $ResourceLocation$$Type): void
-public "fenceBlockWithRenderType"(arg0: $FenceBlock$$Type, arg1: StringJS, arg2: $ResourceLocation$$Type, arg3: $ResourceLocation$$Type): void
+public "fenceBlockWithRenderType"(arg0: $FenceBlock$$Type, arg1: $ResourceLocation$$Type, arg2: StringJS): void
 public "fenceBlockWithRenderType"(arg0: $FenceBlock$$Type, arg1: $ResourceLocation$$Type, arg2: $ResourceLocation$$Type): void
 public "fenceBlockWithRenderType"(arg0: $FenceBlock$$Type, arg1: StringJS, arg2: $ResourceLocation$$Type, arg3: StringJS): void
-public "fenceBlockWithRenderType"(arg0: $FenceBlock$$Type, arg1: $ResourceLocation$$Type, arg2: StringJS): void
-public "fenceGateBlockWithRenderType"(arg0: $FenceGateBlock$$Type, arg1: $ResourceLocation$$Type, arg2: $ResourceLocation$$Type): void
+public "fenceBlockWithRenderType"(arg0: $FenceBlock$$Type, arg1: StringJS, arg2: $ResourceLocation$$Type, arg3: $ResourceLocation$$Type): void
 public "fenceGateBlockWithRenderType"(arg0: $FenceGateBlock$$Type, arg1: $ResourceLocation$$Type, arg2: StringJS): void
 public "fenceGateBlockWithRenderType"(arg0: $FenceGateBlock$$Type, arg1: StringJS, arg2: $ResourceLocation$$Type, arg3: StringJS): void
+public "fenceGateBlockWithRenderType"(arg0: $FenceGateBlock$$Type, arg1: $ResourceLocation$$Type, arg2: $ResourceLocation$$Type): void
 public "fenceGateBlockWithRenderType"(arg0: $FenceGateBlock$$Type, arg1: StringJS, arg2: $ResourceLocation$$Type, arg3: $ResourceLocation$$Type): void
-public "wallBlockWithRenderType"(arg0: $WallBlock$$Type, arg1: StringJS, arg2: $ResourceLocation$$Type, arg3: StringJS): void
-public "wallBlockWithRenderType"(arg0: $WallBlock$$Type, arg1: $ResourceLocation$$Type, arg2: StringJS): void
 public "wallBlockWithRenderType"(arg0: $WallBlock$$Type, arg1: $ResourceLocation$$Type, arg2: $ResourceLocation$$Type): void
 public "wallBlockWithRenderType"(arg0: $WallBlock$$Type, arg1: StringJS, arg2: $ResourceLocation$$Type, arg3: $ResourceLocation$$Type): void
-public "paneBlockWithRenderType"(arg0: $IronBarsBlock$$Type, arg1: $ResourceLocation$$Type, arg2: $ResourceLocation$$Type, arg3: StringJS): void
-public "paneBlockWithRenderType"(arg0: $IronBarsBlock$$Type, arg1: StringJS, arg2: $ResourceLocation$$Type, arg3: $ResourceLocation$$Type, arg4: StringJS): void
-public "paneBlockWithRenderType"(arg0: $IronBarsBlock$$Type, arg1: $ResourceLocation$$Type, arg2: $ResourceLocation$$Type, arg3: $ResourceLocation$$Type): void
+public "wallBlockWithRenderType"(arg0: $WallBlock$$Type, arg1: $ResourceLocation$$Type, arg2: StringJS): void
+public "wallBlockWithRenderType"(arg0: $WallBlock$$Type, arg1: StringJS, arg2: $ResourceLocation$$Type, arg3: StringJS): void
 public "paneBlockWithRenderType"(arg0: $IronBarsBlock$$Type, arg1: StringJS, arg2: $ResourceLocation$$Type, arg3: $ResourceLocation$$Type, arg4: $ResourceLocation$$Type): void
-public "doorBlockWithRenderType"(arg0: $DoorBlock$$Type, arg1: $ResourceLocation$$Type, arg2: $ResourceLocation$$Type, arg3: $ResourceLocation$$Type): void
+public "paneBlockWithRenderType"(arg0: $IronBarsBlock$$Type, arg1: StringJS, arg2: $ResourceLocation$$Type, arg3: $ResourceLocation$$Type, arg4: StringJS): void
+public "paneBlockWithRenderType"(arg0: $IronBarsBlock$$Type, arg1: $ResourceLocation$$Type, arg2: $ResourceLocation$$Type, arg3: StringJS): void
+public "paneBlockWithRenderType"(arg0: $IronBarsBlock$$Type, arg1: $ResourceLocation$$Type, arg2: $ResourceLocation$$Type, arg3: $ResourceLocation$$Type): void
 public "doorBlockWithRenderType"(arg0: $DoorBlock$$Type, arg1: $ResourceLocation$$Type, arg2: $ResourceLocation$$Type, arg3: StringJS): void
 public "doorBlockWithRenderType"(arg0: $DoorBlock$$Type, arg1: StringJS, arg2: $ResourceLocation$$Type, arg3: $ResourceLocation$$Type, arg4: StringJS): void
+public "doorBlockWithRenderType"(arg0: $DoorBlock$$Type, arg1: $ResourceLocation$$Type, arg2: $ResourceLocation$$Type, arg3: $ResourceLocation$$Type): void
 public "doorBlockWithRenderType"(arg0: $DoorBlock$$Type, arg1: StringJS, arg2: $ResourceLocation$$Type, arg3: $ResourceLocation$$Type, arg4: $ResourceLocation$$Type): void
-public "trapdoorBlockWithRenderType"(arg0: $TrapDoorBlock$$Type, arg1: $ResourceLocation$$Type, arg2: boolean, arg3: $ResourceLocation$$Type): void
 public "trapdoorBlockWithRenderType"(arg0: $TrapDoorBlock$$Type, arg1: StringJS, arg2: $ResourceLocation$$Type, arg3: boolean, arg4: StringJS): void
+public "trapdoorBlockWithRenderType"(arg0: $TrapDoorBlock$$Type, arg1: $ResourceLocation$$Type, arg2: boolean, arg3: $ResourceLocation$$Type): void
 public "trapdoorBlockWithRenderType"(arg0: $TrapDoorBlock$$Type, arg1: StringJS, arg2: $ResourceLocation$$Type, arg3: boolean, arg4: $ResourceLocation$$Type): void
 public "trapdoorBlockWithRenderType"(arg0: $TrapDoorBlock$$Type, arg1: $ResourceLocation$$Type, arg2: boolean, arg3: StringJS): void
-public "itemModels"(): $ItemModelProvider
 public "getName"(): StringJS
 public "run"(arg0: $CachedOutput$$Type): $CompletableFuture<(never)>
-public static "saveStable"<T>(arg0: $CachedOutput$$Type, arg1: $HolderLookup$Provider$$Type, arg2: $Codec$$Type<(T)>, arg3: T, arg4: $Path$$Type): $CompletableFuture<(never)>
 public static "saveStable"(arg0: $CachedOutput$$Type, arg1: $JsonElement$$Type, arg2: $Path$$Type): $CompletableFuture
+public static "saveStable"<T>(arg0: $CachedOutput$$Type, arg1: $HolderLookup$Provider$$Type, arg2: $Codec$$Type<(T)>, arg3: T, arg4: $Path$$Type): $CompletableFuture<(never)>
 get "name"(): StringJS
 }
 /**
@@ -5042,29 +5042,29 @@ export type $ScreenEvent$MouseButtonPressed$Post$$Type = ($ScreenEvent$MouseButt
  */
 export type $ScreenEvent$MouseButtonPressed$Post$$Original = $ScreenEvent$MouseButtonPressed$Post;}
 declare module "net.neoforged.neoforge.client.event.InputEvent$InteractionKeyMappingTriggered" {
-import {$InteractionHand, $InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
-import {$ICancellableEvent$$Interface} from "net.neoforged.bus.api.ICancellableEvent"
 import {$InputEvent} from "net.neoforged.neoforge.client.event.InputEvent"
+import {$ICancellableEvent$$Interface} from "net.neoforged.bus.api.ICancellableEvent"
+import {$InteractionHand, $InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$KeyMapping, $KeyMapping$$Type} from "net.minecraft.client.KeyMapping"
 
 export class $InputEvent$InteractionKeyMappingTriggered extends $InputEvent implements $ICancellableEvent$$Interface {
 constructor(arg0: integer, arg1: $KeyMapping$$Type, arg2: $InteractionHand$$Type)
 
+public "getHand"(): $InteractionHand
 public "setSwingHand"(arg0: boolean): void
 public "isPickBlock"(): boolean
 public "isAttack"(): boolean
 public "isUseItem"(): boolean
 public "getKeyMapping"(): $KeyMapping
-public "getHand"(): $InteractionHand
 public "shouldSwingHand"(): boolean
 public "setCanceled"(arg0: boolean): void
 public "isCanceled"(): boolean
+get "hand"(): $InteractionHand
 set "swingHand"(value: boolean)
 get "pickBlock"(): boolean
 get "attack"(): boolean
 get "useItem"(): boolean
 get "keyMapping"(): $KeyMapping
-get "hand"(): $InteractionHand
 set "canceled"(value: boolean)
 get "canceled"(): boolean
 }
@@ -5081,8 +5081,8 @@ declare module "net.neoforged.neoforge.client.event.EntityRenderersEvent$Registe
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$BlockEntityRendererProvider$$Type} from "net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider"
 import {$EntityRenderersEvent} from "net.neoforged.neoforge.client.event.EntityRenderersEvent"
-import {$EntityRendererProvider$$Type} from "net.minecraft.client.renderer.entity.EntityRendererProvider"
 import {$Entity} from "net.minecraft.world.entity.Entity"
+import {$EntityRendererProvider$$Type} from "net.minecraft.client.renderer.entity.EntityRendererProvider"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
 
@@ -5106,8 +5106,8 @@ import {$TextureAtlasSprite, $TextureAtlasSprite$$Type} from "net.minecraft.clie
 import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Material, $Material$$Type} from "net.minecraft.client.resources.model.Material"
 import {$ItemOverrides, $ItemOverrides$$Type} from "net.minecraft.client.renderer.block.model.ItemOverrides"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$BakedModel, $BakedModel$$Type} from "net.minecraft.client.resources.model.BakedModel"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$IGeometryBakingContext, $IGeometryBakingContext$$Type} from "net.neoforged.neoforge.client.model.geometry.IGeometryBakingContext"
 import {$Set} from "java.util.Set"
 import {$ModelBaker, $ModelBaker$$Type} from "net.minecraft.client.resources.model.ModelBaker"
@@ -5135,8 +5135,8 @@ export type $IUnbakedGeometry$$Type<T> = ((arg0: $IGeometryBakingContext, arg1: 
  */
 export type $IUnbakedGeometry$$Original<T> = $IUnbakedGeometry<(T)>;}
 declare module "net.neoforged.neoforge.client.model.generators.ModelBuilder" {
-import {$ModelBuilder$RootTransformsBuilder} from "net.neoforged.neoforge.client.model.generators.ModelBuilder$RootTransformsBuilder"
 import {$BiFunction$$Type} from "java.util.function.BiFunction"
+import {$ModelBuilder$RootTransformsBuilder} from "net.neoforged.neoforge.client.model.generators.ModelBuilder$RootTransformsBuilder"
 import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$ExistingFileHelper$$Type} from "net.neoforged.neoforge.common.data.ExistingFileHelper"
 import {$BlockModel$GuiLight$$Type} from "net.minecraft.client.renderer.block.model.BlockModel$GuiLight"
@@ -5218,8 +5218,8 @@ export type $ScreenEvent$MouseDragged$Pre$$Original = $ScreenEvent$MouseDragged$
 declare module "net.neoforged.neoforge.client.event.RegisterRecipeBookCategoriesEvent" {
 import {$Map$$Type} from "java.util.Map"
 import {$RecipeHolder$$Type} from "net.minecraft.world.item.crafting.RecipeHolder"
-import {$RecipeBookType$$Type} from "net.minecraft.world.inventory.RecipeBookType"
 import {$Function$$Type} from "java.util.function.Function"
+import {$RecipeBookType$$Type} from "net.minecraft.world.inventory.RecipeBookType"
 import {$List$$Type} from "java.util.List"
 import {$Event} from "net.neoforged.bus.api.Event"
 import {$RecipeType$$Type} from "net.minecraft.world.item.crafting.RecipeType"
@@ -5373,14 +5373,14 @@ import {$Camera, $Camera$$Type} from "net.minecraft.client.Camera"
 export class $CalculateDetachedCameraDistanceEvent extends $Event {
 constructor(arg0: $Camera$$Type, arg1: boolean, arg2: float, arg3: float)
 
-public "getCamera"(): $Camera
 public "isCameraFlipped"(): boolean
 public "getEntityScalingFactor"(): float
+public "getCamera"(): $Camera
 public "getDistance"(): float
 public "setDistance"(arg0: float): void
-get "camera"(): $Camera
 get "cameraFlipped"(): boolean
 get "entityScalingFactor"(): float
+get "camera"(): $Camera
 get "distance"(): float
 set "distance"(value: float)
 }
@@ -5398,9 +5398,9 @@ import {$TextureAtlasSprite, $TextureAtlasSprite$$Type} from "net.minecraft.clie
 import {$ModelEvent} from "net.neoforged.neoforge.client.event.ModelEvent"
 import {$Map, $Map$$Type} from "java.util.Map"
 import {$Material, $Material$$Type} from "net.minecraft.client.resources.model.Material"
-import {$Function, $Function$$Type} from "java.util.function.Function"
-import {$BakedModel, $BakedModel$$Type} from "net.minecraft.client.resources.model.BakedModel"
 import {$ModelBakery, $ModelBakery$$Type} from "net.minecraft.client.resources.model.ModelBakery"
+import {$BakedModel, $BakedModel$$Type} from "net.minecraft.client.resources.model.BakedModel"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$ModelResourceLocation, $ModelResourceLocation$$Type} from "net.minecraft.client.resources.model.ModelResourceLocation"
 import {$IModBusEvent$$Interface} from "net.neoforged.fml.event.IModBusEvent"
 
@@ -5425,8 +5425,8 @@ export type $ModelEvent$ModifyBakingResult$$Type = ($ModelEvent$ModifyBakingResu
 export type $ModelEvent$ModifyBakingResult$$Original = $ModelEvent$ModifyBakingResult;}
 declare module "net.neoforged.neoforge.client.event.RegisterClientReloadListenersEvent" {
 import {$Event} from "net.neoforged.bus.api.Event"
-import {$PreparableReloadListener$$Type} from "net.minecraft.server.packs.resources.PreparableReloadListener"
 import {$ReloadableResourceManager$$Type} from "net.minecraft.server.packs.resources.ReloadableResourceManager"
+import {$PreparableReloadListener$$Type} from "net.minecraft.server.packs.resources.PreparableReloadListener"
 import {$IModBusEvent$$Interface} from "net.neoforged.fml.event.IModBusEvent"
 
 export class $RegisterClientReloadListenersEvent extends $Event implements $IModBusEvent$$Interface {
@@ -5565,8 +5565,8 @@ constructor()
 
 public "copyFrom"(arg0: $BlockGeometryBakingContext$VisibilityData$$Type): void
 public "isVisible"(arg0: StringJS, arg1: boolean): boolean
-public "hasCustomVisibility"(arg0: StringJS): boolean
 public "setVisibilityState"(arg0: StringJS, arg1: boolean): void
+public "hasCustomVisibility"(arg0: StringJS): boolean
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -5580,9 +5580,9 @@ export type $BlockGeometryBakingContext$VisibilityData$$Original = $BlockGeometr
 declare module "net.neoforged.neoforge.client.event.RenderHighlightEvent$Block" {
 import {$BlockHitResult, $BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
 import {$MultiBufferSource$$Type} from "net.minecraft.client.renderer.MultiBufferSource"
+import {$ICancellableEvent$$Interface} from "net.neoforged.bus.api.ICancellableEvent"
 import {$RenderHighlightEvent} from "net.neoforged.neoforge.client.event.RenderHighlightEvent"
 import {$PoseStack$$Type} from "com.mojang.blaze3d.vertex.PoseStack"
-import {$ICancellableEvent$$Interface} from "net.neoforged.bus.api.ICancellableEvent"
 import {$LevelRenderer$$Type} from "net.minecraft.client.renderer.LevelRenderer"
 import {$DeltaTracker$$Type} from "net.minecraft.client.DeltaTracker"
 import {$Camera$$Type} from "net.minecraft.client.Camera"
@@ -5691,8 +5691,8 @@ export type $ScreenEvent$MouseDragged$Post$$Type = ($ScreenEvent$MouseDragged$Po
  */
 export type $ScreenEvent$MouseDragged$Post$$Original = $ScreenEvent$MouseDragged$Post;}
 declare module "net.neoforged.neoforge.client.event.CustomizeGuiOverlayEvent$DebugText" {
-import {$GuiGraphics$$Type} from "net.minecraft.client.gui.GuiGraphics"
 import {$Window$$Type} from "com.mojang.blaze3d.platform.Window"
+import {$GuiGraphics$$Type} from "net.minecraft.client.gui.GuiGraphics"
 import {$List, $List$$Type} from "java.util.List"
 import {$DeltaTracker$$Type} from "net.minecraft.client.DeltaTracker"
 import {$CustomizeGuiOverlayEvent} from "net.neoforged.neoforge.client.event.CustomizeGuiOverlayEvent"
@@ -5793,21 +5793,21 @@ constructor(arg0: $RenderLevelStageEvent$Stage$$Type, arg1: $LevelRenderer$$Type
 public "getCamera"(): $Camera
 public "getLevelRenderer"(): $LevelRenderer
 public "getRenderTick"(): integer
-public "getModelViewMatrix"(): $Matrix4f
-public "getPartialTick"(): $DeltaTracker
-public "getStage"(): $RenderLevelStageEvent$Stage
 public "getProjectionMatrix"(): $Matrix4f
 public "getFrustum"(): $Frustum
 public "getPoseStack"(): $PoseStack
+public "getModelViewMatrix"(): $Matrix4f
+public "getPartialTick"(): $DeltaTracker
+public "getStage"(): $RenderLevelStageEvent$Stage
 get "camera"(): $Camera
 get "levelRenderer"(): $LevelRenderer
 get "renderTick"(): integer
-get "modelViewMatrix"(): $Matrix4f
-get "partialTick"(): $DeltaTracker
-get "stage"(): $RenderLevelStageEvent$Stage
 get "projectionMatrix"(): $Matrix4f
 get "frustum"(): $Frustum
 get "poseStack"(): $PoseStack
+get "modelViewMatrix"(): $Matrix4f
+get "partialTick"(): $DeltaTracker
+get "stage"(): $RenderLevelStageEvent$Stage
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -5820,8 +5820,8 @@ export type $RenderLevelStageEvent$$Type = ($RenderLevelStageEvent);
 export type $RenderLevelStageEvent$$Original = $RenderLevelStageEvent;}
 declare module "net.neoforged.neoforge.client.event.RenderLivingEvent$Pre" {
 import {$MultiBufferSource$$Type} from "net.minecraft.client.renderer.MultiBufferSource"
-import {$PoseStack$$Type} from "com.mojang.blaze3d.vertex.PoseStack"
 import {$ICancellableEvent$$Interface} from "net.neoforged.bus.api.ICancellableEvent"
+import {$PoseStack$$Type} from "com.mojang.blaze3d.vertex.PoseStack"
 import {$RenderLivingEvent} from "net.neoforged.neoforge.client.event.RenderLivingEvent"
 import {$EntityModel} from "net.minecraft.client.model.EntityModel"
 import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
@@ -5853,17 +5853,17 @@ import {$Music, $Music$$Type} from "net.minecraft.sounds.Music"
 export class $SelectMusicEvent extends $Event implements $ICancellableEvent$$Interface {
 constructor(arg0: $Music$$Type, arg1: $SoundInstance$$Type)
 
+public "getMusic"(): $Music
 public "getOriginalMusic"(): $Music
 public "getPlayingMusic"(): $SoundInstance
 public "setMusic"(arg0: $Music$$Type): void
 public "overrideMusic"(arg0: $Music$$Type): void
-public "getMusic"(): $Music
 public "setCanceled"(arg0: boolean): void
 public "isCanceled"(): boolean
+get "music"(): $Music
 get "originalMusic"(): $Music
 get "playingMusic"(): $SoundInstance
 set "music"(value: $Music$$Type)
-get "music"(): $Music
 set "canceled"(value: boolean)
 get "canceled"(): boolean
 }

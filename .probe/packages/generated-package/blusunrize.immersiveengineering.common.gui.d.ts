@@ -58,7 +58,7 @@ public "codec"(): $StreamCodec<($RegistryFriendlyByteBuf), (T)>
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $GenericDataSerializers$DataSerializer$$Type<T> = ({"codec"?: $StreamCodec$$Type<($RegistryFriendlyByteBuf$$Type), (T)>, "equals"?: $BiPredicate$$Type<(T), (T)>, "id"?: integer, "copy"?: $UnaryOperator$$Type<(T)>}) | ([codec?: $StreamCodec$$Type<($RegistryFriendlyByteBuf$$Type), (T)>, equals?: $BiPredicate$$Type<(T), (T)>, id?: integer, copy?: $UnaryOperator$$Type<(T)>]);
+export type $GenericDataSerializers$DataSerializer$$Type<T> = ({"equals"?: $BiPredicate$$Type<(T), (T)>, "id"?: integer, "copy"?: $UnaryOperator$$Type<(T)>, "codec"?: $StreamCodec$$Type<($RegistryFriendlyByteBuf$$Type), (T)>}) | ([equals?: $BiPredicate$$Type<(T), (T)>, id?: integer, copy?: $UnaryOperator$$Type<(T)>, codec?: $StreamCodec$$Type<($RegistryFriendlyByteBuf$$Type), (T)>]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -84,7 +84,7 @@ public "serializer"(): $GenericDataSerializers$DataSerializer<(T)>
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $GenericDataSerializers$DataPair$$Type<T> = ({"serializer"?: $GenericDataSerializers$DataSerializer$$Type<(T)>, "data"?: T}) | ([serializer?: $GenericDataSerializers$DataSerializer$$Type<(T)>, data?: T]);
+export type $GenericDataSerializers$DataPair$$Type<T> = ({"data"?: T, "serializer"?: $GenericDataSerializers$DataSerializer$$Type<(T)>}) | ([data?: T, serializer?: $GenericDataSerializers$DataSerializer$$Type<(T)>]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -108,14 +108,14 @@ export type $IEContainerMenu$MenuContext$$Type = ({"isValid"?: $Predicate$$Type<
  */
 export type $IEContainerMenu$MenuContext$$Original = $IEContainerMenu$MenuContext;}
 declare module "blusunrize.immersiveengineering.common.gui.sync.GenericContainerData" {
-import {$FluidTank$$Type} from "net.neoforged.neoforge.fluids.capability.templates.FluidTank"
 import {$IMutableEnergyStorage$$Type} from "blusunrize.immersiveengineering.api.energy.IMutableEnergyStorage"
+import {$FluidTank$$Type} from "net.neoforged.neoforge.fluids.capability.templates.FluidTank"
 import {$GenericDataSerializers$DataSerializer$$Type} from "blusunrize.immersiveengineering.common.gui.sync.GenericDataSerializers$DataSerializer"
 import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$GenericDataSerializers$DataPair} from "blusunrize.immersiveengineering.common.gui.sync.GenericDataSerializers$DataPair"
 import {$FluidStack} from "net.neoforged.neoforge.fluids.FluidStack"
-import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$GetterAndSetter$$Type} from "blusunrize.immersiveengineering.common.gui.sync.GetterAndSetter"
+import {$Consumer$$Type} from "java.util.function.Consumer"
 
 export class $GenericContainerData<T> {
 constructor(arg0: $GenericDataSerializers$DataSerializer$$Type<(T)>, arg1: $GetterAndSetter$$Type<(T)>)
@@ -148,8 +148,8 @@ import {$Record} from "java.lang.Record"
 export class $IEContainerMenu$MultiblockMenuContext<S extends $IMultiblockState> extends $Record {
 constructor(mbContext: $IMultiblockContext$$Type<(S)>, clickedPos: $BlockPos$$Type)
 
-public "mbContext"(): $IMultiblockContext<(S)>
 public "clickedPos"(): $BlockPos
+public "mbContext"(): $IMultiblockContext<(S)>
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
@@ -173,8 +173,9 @@ export class $GetterAndSetter<T> extends $Record implements $Supplier$$Interface
 constructor(getter: $Supplier$$Type<(T)>, setter: $Consumer$$Type<(T)>)
 
 public static "getterOnly"<T>(arg0: $Supplier$$Type<(T)>): $GetterAndSetter<(T)>
-public static "standalone"<T>(arg0: T): $GetterAndSetter<(T)>
 public "setter"(): $Consumer<(T)>
+public "getter"(): $Supplier<(T)>
+public static "standalone"<T>(arg0: T): $GetterAndSetter<(T)>
 public "get"(): T
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
@@ -182,7 +183,6 @@ public "hashCode"(): integer
 public static "constant"<T>(arg0: T): $GetterAndSetter<(T)>
 public "set"(arg0: T): void
 public "accept"(arg0: T): void
-public "getter"(): $Supplier<(T)>
 public static "forArray"<T>(arg0: (T)[]): $List<($GetterAndSetter<(T)>)>
 public "andThen"(arg0: $Consumer$$Type<(T)>): $Consumer<(T)>
 get "ter"(): $Consumer<(T)>
@@ -192,7 +192,7 @@ get "ter"(): $Supplier<(T)>
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $GetterAndSetter$$Type<T> = ({"getter"?: $Supplier$$Type<(T)>, "setter"?: $Consumer$$Type<(T)>}) | ([getter?: $Supplier$$Type<(T)>, setter?: $Consumer$$Type<(T)>]);
+export type $GetterAndSetter$$Type<T> = ({"setter"?: $Consumer$$Type<(T)>, "getter"?: $Supplier$$Type<(T)>}) | ([setter?: $Consumer$$Type<(T)>, getter?: $Supplier$$Type<(T)>]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -209,13 +209,13 @@ import {$GenericDataSerializers$DataPair$$Type} from "blusunrize.immersiveengine
 import {$GenericContainerData$$Type} from "blusunrize.immersiveengineering.common.gui.sync.GenericContainerData"
 import {$Inventory$$Type} from "net.minecraft.world.entity.player.Inventory"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
-import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Slot, $Slot$$Type} from "net.minecraft.world.inventory.Slot"
+import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$AbstractContainerMenu} from "net.minecraft.world.inventory.AbstractContainerMenu"
-import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$IScreenMessageReceive$$Interface} from "blusunrize.immersiveengineering.common.gui.IScreenMessageReceive"
-import {$MenuType$$Type} from "net.minecraft.world.inventory.MenuType"
+import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$IEContainerMenu$MenuContext} from "blusunrize.immersiveengineering.common.gui.IEContainerMenu$MenuContext"
+import {$MenuType$$Type} from "net.minecraft.world.inventory.MenuType"
 import {$PlayerContainerEvent$Close$$Type} from "net.neoforged.neoforge.event.entity.player.PlayerContainerEvent$Close"
 import {$ClickType$$Type} from "net.minecraft.world.inventory.ClickType"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
@@ -238,18 +238,18 @@ readonly "containerListeners": $List<($ContainerListener)>
  "containerId": integer
 static readonly "QUICKCRAFT_TYPE_CHARITABLE": integer
 
-public static "itemCtx"(arg0: $MenuType$$Type<(never)>, arg1: integer, arg2: $Inventory$$Type, arg3: $EquipmentSlot$$Type, arg4: $ItemStack$$Type): $IEContainerMenu$MenuContext
+public "receiveSync"(arg0: $List$$Type<($Pair$$Type<(integer), ($GenericDataSerializers$DataPair$$Type<(never)>)>)>): void
 public "quickMoveStack"(arg0: $Player$$Type, arg1: integer): $ItemStack
 public "clicked"(arg0: integer, arg1: integer, arg2: $ClickType$$Type, arg3: $Player$$Type): void
-public "receiveSync"(arg0: $List$$Type<($Pair$$Type<(integer), ($GenericDataSerializers$DataPair$$Type<(never)>)>)>): void
 public static "blockCtx"(arg0: $MenuType$$Type<(never)>, arg1: integer, arg2: $BlockEntity$$Type): $IEContainerMenu$MenuContext
+public static "moveItemStackToWithMayPlace"(arg0: $List$$Type<($Slot$$Type)>, arg1: $IEContainerMenu$MoveItemsFunc$$Type, arg2: $ItemStack$$Type, arg3: integer, arg4: integer): boolean
 public "addGenericData"(arg0: $GenericContainerData$$Type<(never)>): void
 public "moveToMatchingSlotOrAdjacent"(arg0: $ItemStack$$Type, arg1: integer, arg2: integer): boolean
 public static "onContainerOpened"(arg0: $PlayerContainerEvent$Open$$Type): void
 public static "onContainerClosed"(arg0: $PlayerContainerEvent$Close$$Type): void
 public static "multiblockCtx"(arg0: $MenuType$$Type<(never)>, arg1: integer, arg2: $IEContainerMenu$MultiblockMenuContext$$Type<(never)>): $IEContainerMenu$MenuContext
 public static "clientCtx"(arg0: $MenuType$$Type<(never)>, arg1: integer): $IEContainerMenu$MenuContext
-public static "moveItemStackToWithMayPlace"(arg0: $List$$Type<($Slot$$Type)>, arg1: $IEContainerMenu$MoveItemsFunc$$Type, arg2: $ItemStack$$Type, arg3: integer, arg4: integer): boolean
+public static "itemCtx"(arg0: $MenuType$$Type<(never)>, arg1: integer, arg2: $Inventory$$Type, arg3: $EquipmentSlot$$Type, arg4: $ItemStack$$Type): $IEContainerMenu$MenuContext
 public "removed"(arg0: $Player$$Type): void
 public "broadcastChanges"(): void
 public "stillValid"(arg0: $Player$$Type): boolean

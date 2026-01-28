@@ -3,8 +3,8 @@ import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
-import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$Holder} from "net.minecraft.core.Holder"
+import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 
 export class $SoundEvent {
 static readonly "CODEC": $Codec<($Holder<($SoundEvent)>)>

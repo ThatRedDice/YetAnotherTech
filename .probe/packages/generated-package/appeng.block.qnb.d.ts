@@ -7,9 +7,9 @@ import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$QuantumBaseBlock} from "appeng.block.qnb.QuantumBaseBlock"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
+import {$Item} from "net.minecraft.world.item.Item"
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
-import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -60,8 +60,8 @@ import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.
 import {$SimpleWaterloggedBlock$$Interface} from "net.minecraft.world.level.block.SimpleWaterloggedBlock"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
@@ -72,8 +72,8 @@ import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
-import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
+import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 
@@ -106,8 +106,8 @@ public "getFluidState"(arg0: $BlockState$$Type): $FluidState
 public "onRemove"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: boolean): void
 public "neighborChanged"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Block$$Type, arg4: $BlockPos$$Type, arg5: boolean): void
 public "getPickupSound"(): $Optional<($SoundEvent)>
-public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "canPlaceLiquid"(arg0: $Player$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $Fluid$$Type): boolean
+public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "pickupBlock"(arg0: $Player$$Type, arg1: $LevelAccessor$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): $ItemStack
 public "getPickupSound"(arg0: $BlockState$$Type): $Optional<($SoundEvent)>
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
@@ -156,9 +156,9 @@ import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
 import {$QuantumBaseBlock} from "appeng.block.qnb.QuantumBaseBlock"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
+import {$Item} from "net.minecraft.world.item.Item"
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
-import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"

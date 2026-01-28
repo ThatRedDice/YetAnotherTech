@@ -70,9 +70,9 @@ export type $IBasicCellItem$$Type = ($IBasicCellItem);
 export type $IBasicCellItem$$Original = $IBasicCellItem;}
 declare module "appeng.api.storage.cells.ICellWorkbenchItem" {
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$Item} from "net.minecraft.world.item.Item"
 import {$FuzzyMode, $FuzzyMode$$Type} from "appeng.api.config.FuzzyMode"
 import {$ConfigInventory} from "appeng.util.ConfigInventory"
-import {$Item} from "net.minecraft.world.item.Item"
 import {$IUpgradeInventory} from "appeng.api.upgrades.IUpgradeInventory"
 import {$IUpgradeableItem$$Interface} from "appeng.api.upgrades.IUpgradeableItem"
 
@@ -100,8 +100,8 @@ declare module "appeng.api.storage.cells.StorageCell" {
 import {$KeyCounter, $KeyCounter$$Type} from "appeng.api.stacks.KeyCounter"
 import {$MEStorage$$Interface} from "appeng.api.storage.MEStorage"
 import {$IActionSource$$Type} from "appeng.api.networking.security.IActionSource"
-import {$CellState} from "appeng.api.storage.cells.CellState"
 import {$Actionable$$Type} from "appeng.api.config.Actionable"
+import {$CellState} from "appeng.api.storage.cells.CellState"
 import {$AEKey$$Type} from "appeng.api.stacks.AEKey"
 import {$Component} from "net.minecraft.network.chat.Component"
 

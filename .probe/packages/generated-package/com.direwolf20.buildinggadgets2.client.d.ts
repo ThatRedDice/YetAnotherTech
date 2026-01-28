@@ -88,8 +88,8 @@ export type $ItemFlowParticleData$$Type = ($ItemFlowParticleData);
 export type $ItemFlowParticleData$$Original = $ItemFlowParticleData;}
 declare module "com.direwolf20.buildinggadgets2.client.particles.fluidparticle.FluidFlowParticleType" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$ParticleType} from "net.minecraft.core.particles.ParticleType"
 import {$FluidFlowParticleData} from "com.direwolf20.buildinggadgets2.client.particles.fluidparticle.FluidFlowParticleData"
+import {$ParticleType} from "net.minecraft.core.particles.ParticleType"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 

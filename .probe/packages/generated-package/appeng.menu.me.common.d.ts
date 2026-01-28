@@ -10,9 +10,9 @@ get "allEntries"(): $Set<($GridInventoryEntry)>
 }
 
 export class $IClientRepo implements $IClientRepo$$Interface {
- "getByIngredient"(arg0: $Ingredient$$Type): $Collection<($GridInventoryEntry)>
  "handleUpdate"(arg0: boolean, arg1: $List$$Type<($GridInventoryEntry$$Type)>): void
  "getAllEntries"(): $Set<($GridInventoryEntry)>
+ "getByIngredient"(arg0: $Ingredient$$Type): $Collection<($GridInventoryEntry)>
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -30,14 +30,14 @@ export class $GridInventoryEntry {
 constructor(arg0: long, arg1: $AEKey$$Type, arg2: long, arg3: long, arg4: boolean)
 
 public "getStoredAmount"(): long
-public "isMeaningful"(): boolean
 public "isCraftable"(): boolean
+public "isMeaningful"(): boolean
 public "getWhat"(): $AEKey
 public "getSerial"(): long
 public "getRequestableAmount"(): long
 get "storedAmount"(): long
-get "meaningful"(): boolean
 get "craftable"(): boolean
+get "meaningful"(): boolean
 get "what"(): $AEKey
 get "serial"(): long
 get "requestableAmount"(): long
@@ -81,8 +81,8 @@ import {$Runnable$$Type} from "java.lang.Runnable"
 import {$Inventory$$Type} from "net.minecraft.world.entity.player.Inventory"
 import {$KeyTypeSelectionMenu$$Interface} from "appeng.menu.interfaces.KeyTypeSelectionMenu"
 import {$ShortSet$$Type} from "it.unimi.dsi.fastutil.shorts.ShortSet"
-import {$LinkStatusAwareMenu$$Interface} from "appeng.menu.guisync.LinkStatusAwareMenu"
 import {$Slot} from "net.minecraft.world.inventory.Slot"
+import {$LinkStatusAwareMenu$$Interface} from "appeng.menu.guisync.LinkStatusAwareMenu"
 import {$Object2IntOpenHashMap$$Type} from "it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap"
 import {$IMEInteractionHandler$$Interface} from "appeng.menu.me.common.IMEInteractionHandler"
 import {$KeyTypeSelectionMenu$SyncedKeyTypes} from "appeng.menu.interfaces.KeyTypeSelectionMenu$SyncedKeyTypes"
@@ -90,8 +90,8 @@ import {$IConfigManager} from "appeng.api.util.IConfigManager"
 import {$AEKey$$Type} from "appeng.api.stacks.AEKey"
 import {$ITerminalHost, $ITerminalHost$$Type} from "appeng.api.storage.ITerminalHost"
 import {$AEBaseMenu} from "appeng.menu.AEBaseMenu"
-import {$IConfigurableObject$$Interface} from "appeng.api.util.IConfigurableObject"
 import {$ContainerListener} from "net.minecraft.world.inventory.ContainerListener"
+import {$IConfigurableObject$$Interface} from "appeng.api.util.IConfigurableObject"
 import {$Ingredient$$Type} from "net.minecraft.world.item.crafting.Ingredient"
 import {$AEKeyType$$Type} from "appeng.api.stacks.AEKeyType"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
@@ -124,6 +124,11 @@ static readonly "QUICKCRAFT_TYPE_CHARITABLE": integer
 
 constructor(arg0: $MenuType$$Type<(never)>, arg1: integer, arg2: $Inventory$$Type, arg3: $ITerminalHost$$Type)
 
+public "getConfigManager"(): $IConfigManager
+public "handleInteraction"(arg0: long, arg1: $InventoryAction$$Type): void
+public "getGridNode"(): $IGridNode
+public "getLinkStatus"(): $ILinkStatus
+public "onServerDataSync"(arg0: $ShortSet$$Type): void
 public "isKeyVisible"(arg0: $AEKey$$Type): boolean
 public "getClientRepo"(): $IClientRepo
 public "getViewCells"(): $List<($ItemStack)>
@@ -134,15 +139,13 @@ public "canConfigureTypeFilter"(): boolean
 public "setLinkStatus"(arg0: $ILinkStatus$$Type): void
 public "getServerKeyTypeSelection"(): $KeyTypeSelection
 public "getClientKeyTypeSelection"(): $KeyTypeSelectionMenu$SyncedKeyTypes
-public "getConfigManager"(): $IConfigManager
-public "handleInteraction"(arg0: long, arg1: $InventoryAction$$Type): void
 public "getToolbox"(): $ToolboxMenu
-public "getGridNode"(): $IGridNode
-public "getLinkStatus"(): $ILinkStatus
-public "onServerDataSync"(arg0: $ShortSet$$Type): void
 public "getHost"(): $ITerminalHost
 public "broadcastChanges"(): void
 public "selectKeyType"(arg0: $AEKeyType$$Type, arg1: boolean): void
+get "configManager"(): $IConfigManager
+get "gridNode"(): $IGridNode
+get "linkStatus"(): $ILinkStatus
 get "clientRepo"(): $IClientRepo
 get "viewCells"(): $List<($ItemStack)>
 set "gui"(value: $Runnable$$Type)
@@ -150,10 +153,7 @@ set "clientRepo"(value: $IClientRepo$$Type)
 set "linkStatus"(value: $ILinkStatus$$Type)
 get "serverKeyTypeSelection"(): $KeyTypeSelection
 get "clientKeyTypeSelection"(): $KeyTypeSelectionMenu$SyncedKeyTypes
-get "configManager"(): $IConfigManager
 get "toolbox"(): $ToolboxMenu
-get "gridNode"(): $IGridNode
-get "linkStatus"(): $ILinkStatus
 get "host"(): $ITerminalHost
 }
 /**

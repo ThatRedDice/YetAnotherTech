@@ -18,14 +18,14 @@ export type $Destroyable$$Type = ($Destroyable);
  */
 export type $Destroyable$$Original = $Destroyable;}
 declare module "javax.security.auth.Subject" {
-import {$Principal, $Principal$$Type} from "java.security.Principal"
 import {$PrivilegedAction$$Type} from "java.security.PrivilegedAction"
+import {$Principal, $Principal$$Type} from "java.security.Principal"
 import {$Callable$$Type} from "java.util.concurrent.Callable"
 import {$Serializable$$Interface} from "java.io.Serializable"
 import {$PrivilegedExceptionAction$$Type} from "java.security.PrivilegedExceptionAction"
 import {$AccessControlContext$$Type} from "java.security.AccessControlContext"
-import {$Set, $Set$$Type} from "java.util.Set"
 import {$Class$$Type} from "java.lang.Class"
+import {$Set, $Set$$Type} from "java.util.Set"
 
 export class $Subject implements $Serializable$$Interface {
 constructor()

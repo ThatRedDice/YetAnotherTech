@@ -3,11 +3,11 @@ import {$IChestOrDrive$$Interface} from "appeng.api.implementations.blockentitie
 import {$IGridNode} from "appeng.api.networking.IGridNode"
 import {$IEnergySource, $IEnergySource$$Interface} from "appeng.api.networking.energy.IEnergySource"
 import {$MEStorage} from "appeng.api.storage.MEStorage"
-import {$PowerMultiplier$$Type} from "appeng.api.config.PowerMultiplier"
 import {$StorageCell} from "appeng.api.storage.cells.StorageCell"
+import {$PowerMultiplier$$Type} from "appeng.api.config.PowerMultiplier"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$CellState} from "appeng.api.storage.cells.CellState"
 import {$Actionable$$Type} from "appeng.api.config.Actionable"
+import {$CellState} from "appeng.api.storage.cells.CellState"
 
 export interface $IMEChest$$Interface extends $IChestOrDrive$$Interface, $IEnergySource$$Interface {
 get "powered"(): boolean
@@ -17,9 +17,9 @@ get "actionableNode"(): $IGridNode
 
 export class $IMEChest implements $IMEChest$$Interface {
  "isPowered"(): boolean
+ "getCellInventory"(arg0: integer): $MEStorage
  "getCellCount"(): integer
  "getCellStatus"(arg0: integer): $CellState
- "getCellInventory"(arg0: integer): $MEStorage
  "getCellItem"(arg0: integer): $Item
  "getOriginalCellInventory"(arg0: integer): $StorageCell
  "isCellBlinking"(arg0: integer): boolean
@@ -40,8 +40,8 @@ declare module "appeng.api.implementations.blockentities.ICraftingMachine" {
 import {$KeyCounter$$Type} from "appeng.api.stacks.KeyCounter"
 import {$IPatternDetails$$Type} from "appeng.api.crafting.IPatternDetails"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
-import {$PatternContainerGroup} from "appeng.api.implementations.blockentities.PatternContainerGroup"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$PatternContainerGroup} from "appeng.api.implementations.blockentities.PatternContainerGroup"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 
@@ -98,26 +98,26 @@ export type $IWirelessAccessPoint$$Original = $IWirelessAccessPoint;}
 declare module "appeng.api.implementations.blockentities.PatternContainerGroup" {
 import {$RegistryFriendlyByteBuf$$Type} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$List, $List$$Type} from "java.util.List"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$AEItemKey, $AEItemKey$$Type} from "appeng.api.stacks.AEItemKey"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$Record} from "java.lang.Record"
 
 export class $PatternContainerGroup extends $Record {
 constructor(icon: $AEItemKey$$Type, name: $Component$$Type, tooltip: $List$$Type<($Component$$Type)>)
 
-public static "readFromPacket"(arg0: $RegistryFriendlyByteBuf$$Type): $PatternContainerGroup
-public "writeToPacket"(arg0: $RegistryFriendlyByteBuf$$Type): void
 public static "nothing"(): $PatternContainerGroup
 public static "fromMachine"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $Direction$$Type): $PatternContainerGroup
+public static "readFromPacket"(arg0: $RegistryFriendlyByteBuf$$Type): $PatternContainerGroup
+public "writeToPacket"(arg0: $RegistryFriendlyByteBuf$$Type): void
 public "name"(): $Component
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
-public "icon"(): $AEItemKey
 public "tooltip"(): $List<($Component)>
+public "icon"(): $AEItemKey
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -154,8 +154,8 @@ declare module "appeng.api.implementations.blockentities.IChestOrDrive" {
 import {$IGridNode} from "appeng.api.networking.IGridNode"
 import {$MEStorage} from "appeng.api.storage.MEStorage"
 import {$StorageCell} from "appeng.api.storage.cells.StorageCell"
-import {$Item} from "net.minecraft.world.item.Item"
 import {$IActionHost$$Interface} from "appeng.api.networking.security.IActionHost"
+import {$Item} from "net.minecraft.world.item.Item"
 import {$CellState} from "appeng.api.storage.cells.CellState"
 
 export interface $IChestOrDrive$$Interface extends $IActionHost$$Interface {
@@ -166,9 +166,9 @@ get "actionableNode"(): $IGridNode
 
 export class $IChestOrDrive implements $IChestOrDrive$$Interface {
  "isPowered"(): boolean
+ "getCellInventory"(arg0: integer): $MEStorage
  "getCellCount"(): integer
  "getCellStatus"(arg0: integer): $CellState
- "getCellInventory"(arg0: integer): $MEStorage
  "getCellItem"(arg0: integer): $Item
  "getOriginalCellInventory"(arg0: integer): $StorageCell
  "isCellBlinking"(arg0: integer): boolean

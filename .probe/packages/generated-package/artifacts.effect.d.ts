@@ -5,8 +5,8 @@ import {$Codec} from "com.mojang.serialization.Codec"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Attribute} from "net.minecraft.world.entity.ai.attributes.Attribute"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Holder} from "net.minecraft.core.Holder"
+import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$MobEffect$AttributeTemplate} from "net.minecraft.world.effect.MobEffect$AttributeTemplate"
 
 export class $MagnetismMobEffect extends $MobEffect {

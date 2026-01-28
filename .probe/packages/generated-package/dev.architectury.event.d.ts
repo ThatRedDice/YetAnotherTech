@@ -7,8 +7,8 @@ public "interruptsFurtherEvaluation"(): boolean
 public "asMinecraft"(): $InteractionResult
 public static "interruptTrue"(): $EventResult
 public static "interruptDefault"(): $EventResult
-public static "pass"(): $EventResult
 public "isFalse"(): boolean
+public static "pass"(): $EventResult
 public static "interrupt"(value: boolean): $EventResult
 public "value"(): boolean
 public "isEmpty"(): boolean

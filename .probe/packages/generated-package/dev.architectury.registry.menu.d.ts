@@ -1,8 +1,8 @@
 declare module "dev.architectury.registry.menu.ExtendedMenuProvider" {
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$MenuProvider$$Interface} from "net.minecraft.world.MenuProvider"
-import {$AbstractContainerMenu, $AbstractContainerMenu$$Type} from "net.minecraft.world.inventory.AbstractContainerMenu"
 import {$FriendlyByteBuf$$Type} from "net.minecraft.network.FriendlyByteBuf"
+import {$AbstractContainerMenu, $AbstractContainerMenu$$Type} from "net.minecraft.world.inventory.AbstractContainerMenu"
 import {$RegistryFriendlyByteBuf$$Type} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Component} from "net.minecraft.network.chat.Component"
 import {$Inventory$$Type} from "net.minecraft.world.entity.player.Inventory"

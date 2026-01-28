@@ -8,10 +8,10 @@ import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.
 
 export interface $IMultiBlockEntityContainer$Fluid$$Interface extends $IMultiBlockEntityContainer$$Interface {
 get "maxWidth"(): integer
-get "controllerBE"(): T
-get "controller"(): boolean
 get "controller"(): $BlockPos
 set "controller"(value: $BlockPos$$Type)
+get "controllerBE"(): T
+get "controller"(): boolean
 get "mainConnectionAxis"(): $Direction$Axis
 get "lastKnownPos"(): $BlockPos
 set "extraData"(value: any)
@@ -23,16 +23,16 @@ get "extraData"(): any
 }
 
 export class $IMultiBlockEntityContainer$Fluid implements $IMultiBlockEntityContainer$Fluid$$Interface {
+ "getFluid"(arg0: integer): $FluidStack
  "getTankSize"(arg0: integer): integer
  "setTankSize"(arg0: integer, arg1: integer): void
  "hasTank"(): boolean
- "getFluid"(arg0: integer): $FluidStack
  "getTank"(arg0: integer): $IFluidTank
  "getMaxWidth"(): integer
- "getControllerBE"<T extends $BlockEntity>(): T
- "isController"(): boolean
  "getController"(): $BlockPos
  "setController"(arg0: $BlockPos$$Type): void
+ "getControllerBE"<T extends $BlockEntity>(): T
+ "isController"(): boolean
  "removeController"(arg0: boolean): void
  "notifyMultiUpdated"(): void
  "getMainConnectionAxis"(): $Direction$Axis
@@ -299,8 +299,8 @@ constructor(arg0: integer, arg1: integer)
 
 public "asStencil"(): $DelegatedStencilElement
 public "bind"(): void
-public "render"(arg0: $PoseStack$$Type, arg1: $MultiBufferSource$$Type, arg2: integer): void
 public "render"(arg0: $GuiGraphics$$Type, arg1: integer, arg2: integer): void
+public "render"(arg0: $PoseStack$$Type, arg1: $MultiBufferSource$$Type, arg2: integer): void
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -321,8 +321,8 @@ export interface $GuiAccessor$$Interface {
 
 export class $GuiAccessor implements $GuiAccessor$$Interface {
  "create$getSubtitleOverlay"(): $SubtitleOverlay
- "create$getToolHighlightTimer"(): integer
  "create$renderTextureOverlay"(arg0: $GuiGraphics$$Type, arg1: $ResourceLocation$$Type, arg2: float): void
+ "create$getToolHighlightTimer"(): integer
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -334,8 +334,8 @@ export type $GuiAccessor$$Type = ($GuiAccessor);
  */
 export type $GuiAccessor$$Original = $GuiAccessor;}
 declare module "com.simibubi.create.foundation.advancement.CriterionTriggerBase$Instance" {
-import {$Optional} from "java.util.Optional"
 import {$ContextAwarePredicate} from "net.minecraft.advancements.critereon.ContextAwarePredicate"
+import {$Optional} from "java.util.Optional"
 import {$CriterionValidator$$Type} from "net.minecraft.advancements.critereon.CriterionValidator"
 import {$SimpleCriterionTrigger$SimpleInstance$$Interface} from "net.minecraft.advancements.critereon.SimpleCriterionTrigger$SimpleInstance"
 
@@ -355,16 +355,16 @@ export type $CriterionTriggerBase$Instance$$Type = ($CriterionTriggerBase$Instan
  */
 export type $CriterionTriggerBase$Instance$$Original = $CriterionTriggerBase$Instance;}
 declare module "com.simibubi.create.foundation.block.CreateCopperStairBlock" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$StairsShape} from "net.minecraft.world.level.block.state.properties.StairsShape"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$StairBlock} from "net.minecraft.world.level.block.StairBlock"
 import {$Half} from "net.minecraft.world.level.block.state.properties.Half"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$DirectionProperty} from "net.minecraft.world.level.block.state.properties.DirectionProperty"
@@ -411,8 +411,8 @@ export type $CreateCopperStairBlock$$Type = ($CreateCopperStairBlock);
 export type $CreateCopperStairBlock$$Original = $CreateCopperStairBlock;}
 declare module "com.simibubi.create.foundation.recipe.IRecipeTypeInfo" {
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
 import {$RecipeInput} from "net.minecraft.world.item.crafting.RecipeInput"
+import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
 import {$RecipeType} from "net.minecraft.world.item.crafting.RecipeType"
 import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 
@@ -438,8 +438,8 @@ export type $IRecipeTypeInfo$$Type = ($IRecipeTypeInfo);
 export type $IRecipeTypeInfo$$Original = $IRecipeTypeInfo;}
 declare module "com.simibubi.create.foundation.virtualWorld.VirtualRenderWorld" {
 import {$Iterable} from "java.lang.Iterable"
-import {$MapId, $MapId$$Type} from "net.minecraft.world.level.saveddata.maps.MapId"
 import {$LevelLightEngine} from "net.minecraft.world.level.lighting.LevelLightEngine"
+import {$MapId, $MapId$$Type} from "net.minecraft.world.level.saveddata.maps.MapId"
 import {$LevelHeightAccessor} from "net.minecraft.world.level.LevelHeightAccessor"
 import {$ChunkAccess} from "net.minecraft.world.level.chunk.ChunkAccess"
 import {$SoundEvent$$Type} from "net.minecraft.sounds.SoundEvent"
@@ -449,8 +449,8 @@ import {$Vec3i$$Type} from "net.minecraft.core.Vec3i"
 import {$GameEvent$$Type} from "net.minecraft.world.level.gameevent.GameEvent"
 import {$SoundSource$$Type} from "net.minecraft.sounds.SoundSource"
 import {$Biome} from "net.minecraft.world.level.biome.Biome"
-import {$TickRateManager} from "net.minecraft.world.TickRateManager"
 import {$MapItemSavedData, $MapItemSavedData$$Type} from "net.minecraft.world.level.saveddata.maps.MapItemSavedData"
+import {$TickRateManager} from "net.minecraft.world.TickRateManager"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$ArrayList} from "java.util.ArrayList"
 import {$BiomeManager} from "net.minecraft.world.level.biome.BiomeManager"
@@ -466,8 +466,8 @@ import {$FeatureFlagSet} from "net.minecraft.world.flag.FeatureFlagSet"
 import {$BlockSnapshot} from "net.neoforged.neoforge.common.util.BlockSnapshot"
 import {$List} from "java.util.List"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
-import {$Trackable} from "dev.uncandango.alltheleaks.mixin.Trackable"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
+import {$Trackable} from "dev.uncandango.alltheleaks.mixin.Trackable"
 import {$ChunkSource} from "net.minecraft.world.level.chunk.ChunkSource"
 import {$Runnable$$Type} from "java.lang.Runnable"
 import {$VisualizationLevel$$Interface} from "dev.engine_room.flywheel.api.visualization.VisualizationLevel"
@@ -477,15 +477,15 @@ import {$Codec} from "com.mojang.serialization.Codec"
 import {$Function$$Type} from "java.util.function.Function"
 import {$Class} from "java.lang.Class"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$ModelData} from "net.neoforged.neoforge.client.model.data.ModelData"
 import {$ObjectOpenCustomHashSet} from "it.unimi.dsi.fastutil.objects.ObjectOpenCustomHashSet"
+import {$ModelData} from "net.neoforged.neoforge.client.model.data.ModelData"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$LightLayer$$Type} from "net.minecraft.world.level.LightLayer"
-import {$GameEvent$Context$$Type} from "net.minecraft.world.level.gameevent.GameEvent$Context"
-import {$Collection$$Type} from "java.util.Collection"
 import {$Map} from "java.util.Map"
 import {$TickingBlockEntity} from "net.minecraft.world.level.block.entity.TickingBlockEntity"
+import {$Collection$$Type} from "java.util.Collection"
+import {$GameEvent$Context$$Type} from "net.minecraft.world.level.gameevent.GameEvent$Context"
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$LevelTickAccess} from "net.minecraft.world.ticks.LevelTickAccess"
 import {$EntityGetter} from "net.minecraft.world.level.EntityGetter"
@@ -516,16 +516,17 @@ readonly "blockEntityTickers": $List<($TickingBlockEntity)>
 
 constructor(arg0: $Level$$Type, arg1: integer, arg2: integer, arg3: $Vec3i$$Type, arg4: $Runnable$$Type)
 
+public static "nextMultipleOf16"(arg0: integer): integer
 public "setExternalLight"(arg0: integer): void
 public "resetExternalLight"(): void
-public static "nextMultipleOf16"(arg0: integer): integer
+public "getEntity"(arg0: integer): $Entity
 public "runLightEngine"(): void
 public "getHeight"(): integer
-public "getEntity"(arg0: integer): $Entity
+public "setBlockEntities"(arg0: $Collection$$Type<($BlockEntity$$Type)>): void
 public "clear"(): void
 public "isLoaded"(arg0: $BlockPos$$Type): boolean
-public "setBlock"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type, arg2: integer, arg3: integer): boolean
 public "getFluidState"(arg0: $BlockPos$$Type): $FluidState
+public "setBlock"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type, arg2: integer, arg3: integer): boolean
 public "getBlockState"(arg0: integer, arg1: integer, arg2: integer): $BlockState
 public "getBlockState"(arg0: $BlockPos$$Type): $BlockState
 public "enabledFeatures"(): $FeatureFlagSet
@@ -540,9 +541,10 @@ public "getScoreboard"(): $Scoreboard
 public "getMinBuildHeight"(): integer
 public "getDayTimeFraction"(): float
 public "levelEvent"(arg0: $Player$$Type, arg1: integer, arg2: $BlockPos$$Type, arg3: integer): void
+public "getChunk"(arg0: integer, arg1: integer): $LevelChunk
 public "getChunk"(arg0: $BlockPos$$Type): $ChunkAccess
-public "getChunk"(arg0: integer, arg1: integer): $ChunkAccess
 public "getBiomeManager"(): $BiomeManager
+public "sendBlockUpdated"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type, arg2: $BlockState$$Type, arg3: integer): void
 public "getLightEngine"(): $LevelLightEngine
 public "gatherChunkSourceStats"(): StringJS
 public "setBlockEntity"(arg0: $BlockEntity$$Type): void
@@ -551,12 +553,11 @@ public "getMapData"(arg0: $MapId$$Type): $MapItemSavedData
 public "setMapData"(arg0: $MapId$$Type, arg1: $MapItemSavedData$$Type): void
 public "getFreeMapId"(): $MapId
 public "destroyBlockProgress"(arg0: integer, arg1: $BlockPos$$Type, arg2: integer): void
-public "getRecipeManager"(): $RecipeManager
 public "getMaxBuildHeight"(): integer
 public "isOutsideBuildHeight"(arg0: $BlockPos$$Type): boolean
 public "isOutsideBuildHeight"(arg0: integer): boolean
-public "sendBlockUpdated"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type, arg2: $BlockState$$Type, arg3: integer): void
 public "updateNeighbourForOutputSignal"(arg0: $BlockPos$$Type, arg1: $Block$$Type): void
+public "getRecipeManager"(): $RecipeManager
 public "potionBrewing"(): $PotionBrewing
 public "setDayTimeFraction"(arg0: float): void
 public "getDayTimePerTick"(): float
@@ -578,7 +579,6 @@ public "getMinSection"(): integer
 public "getSectionIndexFromSectionY"(arg0: integer): integer
 public "getSectionYFromSectionIndex"(arg0: integer): integer
 public "getModelData"(arg0: $BlockPos$$Type): $ModelData
-public "setBlockEntities"(arg0: $Collection$$Type<($BlockEntity$$Type)>): void
 public "supportsVisualization"(): boolean
 public "self"(): $EntityGetter
 public static "create"(arg0: integer, arg1: integer): $LevelHeightAccessor
@@ -590,6 +590,7 @@ public static "getAllLoadedEntities"(level: $Level$$Type): $Iterable<($Entity)>
 public static "traverseBlocks"<T, C>(arg0: $Vec3$$Type, arg1: $Vec3$$Type, arg2: C, arg3: $BiFunction$$Type<(C), ($BlockPos), (T)>, arg4: $Function$$Type<(C), (T)>): T
 set "externalLight"(value: integer)
 get "height"(): integer
+set "blockEntities"(value: $Collection$$Type<($BlockEntity$$Type)>)
 get "chunkSource"(): $ChunkSource
 get "scoreboard"(): $Scoreboard
 get "minBuildHeight"(): integer
@@ -598,8 +599,8 @@ get "biomeManager"(): $BiomeManager
 get "lightEngine"(): $LevelLightEngine
 set "blockEntity"(value: $BlockEntity$$Type)
 get "freeMapId"(): $MapId
-get "recipeManager"(): $RecipeManager
 get "maxBuildHeight"(): integer
+get "recipeManager"(): $RecipeManager
 set "dayTimeFraction"(value: float)
 get "dayTimePerTick"(): float
 set "dayTimePerTick"(value: float)
@@ -608,7 +609,6 @@ get "fluidTicks"(): $LevelTickAccess<($Fluid)>
 get "sectionsCount"(): integer
 get "maxSection"(): integer
 get "minSection"(): integer
-set "blockEntities"(value: $Collection$$Type<($BlockEntity$$Type)>)
 public static get "summary"(): $Map<($Class<(never)>), ($Map<($Class<(never)>), (long)>)>
 }
 /**
@@ -642,8 +642,8 @@ export type $NbtAccounterAccessor$$Original = $NbtAccounterAccessor;}
 declare module "com.simibubi.create.foundation.item.UncontainableBlockItem" {
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$AdditionalItemPlacement, $AdditionalItemPlacement$$Type} from "net.mehvahdjukaar.moonlight.api.item.additional_placements.AdditionalItemPlacement"
@@ -679,8 +679,8 @@ import {$EditBox$$Type} from "net.minecraft.client.gui.components.EditBox"
 import {$ModularGuiLine$$Type} from "com.simibubi.create.foundation.gui.ModularGuiLine"
 import {$TooltipArea$$Type} from "com.simibubi.create.foundation.gui.widget.TooltipArea"
 import {$BiConsumer$$Type} from "java.util.function.BiConsumer"
-import {$ScrollInput$$Type} from "com.simibubi.create.foundation.gui.widget.ScrollInput"
 import {$Font$$Type} from "net.minecraft.client.gui.Font"
+import {$ScrollInput$$Type} from "com.simibubi.create.foundation.gui.widget.ScrollInput"
 import {$SelectionScrollInput$$Type} from "com.simibubi.create.foundation.gui.widget.SelectionScrollInput"
 import {$Label$$Type} from "com.simibubi.create.foundation.gui.widget.Label"
 
@@ -709,11 +709,11 @@ import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.Blo
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$ClientboundBlockEntityDataPacket, $ClientboundBlockEntityDataPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$Connection$$Type} from "net.minecraft.network.Connection"
+import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
-import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$HolderGetter} from "net.minecraft.core.HolderGetter"
+import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $SyncedBlockEntity extends $BlockEntity {
 static readonly "ATTACHMENTS_NBT_KEY": StringJS
@@ -742,11 +742,11 @@ export type $SyncedBlockEntity$$Type = ($SyncedBlockEntity);
 export type $SyncedBlockEntity$$Original = $SyncedBlockEntity;}
 declare module "com.simibubi.create.foundation.item.LayeredArmorItem" {
 import {$HumanoidModel$$Type} from "net.minecraft.client.model.HumanoidModel"
-import {$MultiBufferSource$$Type} from "net.minecraft.client.renderer.MultiBufferSource"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$PoseStack$$Type} from "com.mojang.blaze3d.vertex.PoseStack"
+import {$MultiBufferSource$$Type} from "net.minecraft.client.renderer.MultiBufferSource"
 import {$EquipmentSlot, $EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$CustomRenderedArmorItem$$Interface} from "com.simibubi.create.foundation.item.CustomRenderedArmorItem"
+import {$PoseStack$$Type} from "com.mojang.blaze3d.vertex.PoseStack"
 import {$HumanoidArmorLayer$$Type} from "net.minecraft.client.renderer.entity.layers.HumanoidArmorLayer"
 import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 
@@ -884,18 +884,18 @@ import {$ItemHelper$ExtractionCountMode} from "com.simibubi.create.foundation.it
 import {$BlockEntityBehaviour} from "com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour"
 import {$Predicate$$Type} from "com.google.common.base.Predicate"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$CapManipulationBehaviourBase$InterfaceProvider$$Type} from "com.simibubi.create.foundation.blockEntity.behaviour.inventory.CapManipulationBehaviourBase$InterfaceProvider"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
+import {$CapManipulationBehaviourBase$InterfaceProvider$$Type} from "com.simibubi.create.foundation.blockEntity.behaviour.inventory.CapManipulationBehaviourBase$InterfaceProvider"
 
 export class $CapManipulationBehaviourBase<T, S extends $CapManipulationBehaviourBase<(object), (object)>> extends $BlockEntityBehaviour {
  "blockEntity": $SmartBlockEntity
 
 constructor(arg0: $SmartBlockEntity$$Type, arg1: $CapManipulationBehaviourBase$InterfaceProvider$$Type)
 
-public "findNewCapability"(): void
-public "lazyTick"(): void
 public "getModeFromFilter"(): $ItemHelper$ExtractionCountMode
 public "getAmountFromFilter"(): integer
+public "lazyTick"(): void
+public "findNewCapability"(): void
 public "onNeighborChanged"(arg0: $BlockPos$$Type): void
 public "bypassSidedness"(): S
 public "hasInventory"(): boolean
@@ -970,10 +970,10 @@ import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.
 
 export interface $IMultiBlockEntityContainer$$Interface {
 get "maxWidth"(): integer
-get "controllerBE"(): T
-get "controller"(): boolean
 get "controller"(): $BlockPos
 set "controller"(value: $BlockPos$$Type)
+get "controllerBE"(): T
+get "controller"(): boolean
 get "mainConnectionAxis"(): $Direction$Axis
 get "lastKnownPos"(): $BlockPos
 set "extraData"(value: any)
@@ -986,10 +986,10 @@ get "extraData"(): any
 
 export class $IMultiBlockEntityContainer implements $IMultiBlockEntityContainer$$Interface {
  "getMaxWidth"(): integer
- "getControllerBE"<T extends $BlockEntity>(): T
- "isController"(): boolean
  "getController"(): $BlockPos
  "setController"(arg0: $BlockPos$$Type): void
+ "getControllerBE"<T extends $BlockEntity>(): T
+ "isController"(): boolean
  "removeController"(arg0: boolean): void
  "notifyMultiUpdated"(): void
  "getMainConnectionAxis"(): $Direction$Axis
@@ -1085,9 +1085,9 @@ import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Prov
 export class $SmartFluidTankBehaviour$TankSegment {
 constructor(arg0: $SmartFluidTankBehaviour$$Type, arg1: integer)
 
-public "onFluidStackChanged"(): void
 public "writeNBT"(arg0: $HolderLookup$Provider$$Type): $CompoundTag
 public "readNBT"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type, arg2: boolean): void
+public "onFluidStackChanged"(): void
 public "getRenderedFluid"(): $FluidStack
 public "getTotalUnits"(arg0: float): float
 public "getFluidLevel"(): $LerpedFloat
@@ -1133,9 +1133,9 @@ export class $IBE<T extends $BlockEntity> implements $IBE$$Interface {
  "getBlockEntityOptional"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type): $Optional<(T)>
  "getBlockEntityType"(): $BlockEntityType<(T)>
  "withBlockEntityDo"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $Consumer$$Type<(T)>): void
+ "getBlockEntityClass"(): $Class<(T)>
  "onBlockEntityUse"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $Function$$Type<(T), ($InteractionResult$$Type)>): $InteractionResult
  "onBlockEntityUseItemOn"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $Function$$Type<(T), ($ItemInteractionResult$$Type)>): $ItemInteractionResult
- "getBlockEntityClass"(): $Class<(T)>
  "getBlockEntity"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type): T
 static "onRemove"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): void
  "getListener"<T extends $BlockEntity>(arg0: $ServerLevel$$Type, arg1: T): $GameEventListener
@@ -1175,10 +1175,10 @@ import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.
 
 export interface $IMultiBlockEntityContainer$Inventory$$Interface extends $IMultiBlockEntityContainer$$Interface {
 get "maxWidth"(): integer
-get "controllerBE"(): T
-get "controller"(): boolean
 get "controller"(): $BlockPos
 set "controller"(value: $BlockPos$$Type)
+get "controllerBE"(): T
+get "controller"(): boolean
 get "mainConnectionAxis"(): $Direction$Axis
 get "lastKnownPos"(): $BlockPos
 set "extraData"(value: any)
@@ -1192,10 +1192,10 @@ get "extraData"(): any
 export class $IMultiBlockEntityContainer$Inventory implements $IMultiBlockEntityContainer$Inventory$$Interface {
  "hasInventory"(): boolean
  "getMaxWidth"(): integer
- "getControllerBE"<T extends $BlockEntity>(): T
- "isController"(): boolean
  "getController"(): $BlockPos
  "setController"(arg0: $BlockPos$$Type): void
+ "getControllerBE"<T extends $BlockEntity>(): T
+ "isController"(): boolean
  "removeController"(arg0: boolean): void
  "notifyMultiUpdated"(): void
  "getMainConnectionAxis"(): $Direction$Axis
@@ -1267,8 +1267,8 @@ public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
 public "getRotatedBlockState"(arg0: $BlockState$$Type, arg1: $Direction$$Type): $BlockState
 public "rotate"(arg0: $BlockState$$Type, arg1: $Rotation$$Type): $BlockState
 public "mirror"(arg0: $BlockState$$Type, arg1: $Mirror$$Type): $BlockState
-public static "playRotateSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public "onWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $InteractionResult
+public static "playRotateSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public "updateAfterWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $BlockState
 public static "playRemoveSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public "onSneakWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $InteractionResult
@@ -1426,8 +1426,8 @@ static readonly "TYPE": $BehaviourType<($DeferralBehaviour)>
 
 constructor(arg0: $SmartBlockEntity$$Type, arg1: $Supplier$$Type<(boolean)>)
 
-public "isSafeNBT"(): boolean
 public "scheduleUpdate"(): void
+public "isSafeNBT"(): boolean
 public "tick"(): void
 public "write"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type, arg2: boolean): void
 public "read"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type, arg2: boolean): void
@@ -1451,8 +1451,8 @@ import {$Matrix4f} from "org.joml.Matrix4f"
 export class $Matrix3d {
 constructor()
 
-public "asYRotation"(arg0: float): $Matrix3d
 public "transpose"(): $Matrix3d
+public "asYRotation"(arg0: float): $Matrix3d
 public "asIdentity"(): $Matrix3d
 public "asXRotation"(arg0: float): $Matrix3d
 public "asZRotation"(arg0: float): $Matrix3d
@@ -1480,8 +1480,8 @@ import {$GuiGraphics$$Type} from "net.minecraft.client.gui.GuiGraphics"
 import {$AbstractSimiWidget} from "net.createmod.catnip.gui.widget.AbstractSimiWidget"
 import {$Color} from "net.createmod.catnip.theme.Color"
 import {$List$$Type} from "java.util.List"
-import {$Couple} from "net.createmod.catnip.data.Couple"
 import {$Runnable$$Type} from "java.lang.Runnable"
+import {$Couple} from "net.createmod.catnip.data.Couple"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$Size$$Type} from "io.wispforest.owo.ui.core.Size"
 
@@ -1518,17 +1518,17 @@ export type $TooltipArea$$Type = ($TooltipArea);
  */
 export type $TooltipArea$$Original = $TooltipArea;}
 declare module "com.simibubi.create.foundation.advancement.AdvancementBehaviour" {
-import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$SmartBlockEntity, $SmartBlockEntity$$Type} from "com.simibubi.create.foundation.blockEntity.SmartBlockEntity"
+import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$UUID$$Type} from "java.util.UUID"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockEntityBehaviour} from "com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour"
-import {$BehaviourType} from "com.simibubi.create.foundation.blockEntity.behaviour.BehaviourType"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$BehaviourType} from "com.simibubi.create.foundation.blockEntity.behaviour.BehaviourType"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$CreateAdvancement$$Type} from "com.simibubi.create.foundation.advancement.CreateAdvancement"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$CreateAdvancement$$Type} from "com.simibubi.create.foundation.advancement.CreateAdvancement"
 
 export class $AdvancementBehaviour extends $BlockEntityBehaviour {
  "blockEntity": $SmartBlockEntity
@@ -1536,19 +1536,19 @@ static readonly "TYPE": $BehaviourType<($AdvancementBehaviour)>
 
 constructor(arg0: $SmartBlockEntity$$Type, ...arg1: ($CreateAdvancement$$Type)[])
 
-public "setPlayer"(arg0: $UUID$$Type): void
-public static "tryAward"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $CreateAdvancement$$Type): void
-public "isOwnerPresent"(): boolean
 public static "setPlacedBy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $LivingEntity$$Type): void
 public "awardPlayer"(arg0: $CreateAdvancement$$Type): void
 public "awardPlayerIfNear"(arg0: $CreateAdvancement$$Type, arg1: integer): void
+public static "tryAward"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $CreateAdvancement$$Type): void
+public "isOwnerPresent"(): boolean
+public "setPlayer"(arg0: $UUID$$Type): void
 public "add"(...arg0: ($CreateAdvancement$$Type)[]): void
 public "initialize"(): void
 public "write"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type, arg2: boolean): void
 public "read"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type, arg2: boolean): void
 public "getType"(): $BehaviourType<(never)>
-set "player"(value: $UUID$$Type)
 get "ownerPresent"(): boolean
+set "player"(value: $UUID$$Type)
 get "type"(): $BehaviourType<(never)>
 }
 /**
@@ -1563,8 +1563,8 @@ export type $AdvancementBehaviour$$Original = $AdvancementBehaviour;}
 declare module "com.simibubi.create.foundation.gui.AllGuiTextures" {
 import {$ScreenElement$$Interface} from "net.createmod.catnip.gui.element.ScreenElement"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$GuiGraphics$$Type} from "net.minecraft.client.gui.GuiGraphics"
 import {$Enum} from "java.lang.Enum"
+import {$GuiGraphics$$Type} from "net.minecraft.client.gui.GuiGraphics"
 import {$Color$$Type} from "net.createmod.catnip.theme.Color"
 import {$TextureSheetSegment$$Interface} from "net.createmod.catnip.gui.TextureSheetSegment"
 
@@ -1852,8 +1852,8 @@ import {$Component$$Type as $Component$0$$Type} from "io.wispforest.owo.ui.core.
 import {$PositionedRectangle} from "io.wispforest.owo.ui.core.PositionedRectangle"
 import {$AbstractSimiWidget} from "net.createmod.catnip.gui.widget.AbstractSimiWidget"
 import {$Color} from "net.createmod.catnip.theme.Color"
-import {$Couple} from "net.createmod.catnip.data.Couple"
 import {$Runnable$$Type} from "java.lang.Runnable"
+import {$Couple} from "net.createmod.catnip.data.Couple"
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$Size$$Type} from "io.wispforest.owo.ui.core.Size"
 
@@ -1896,8 +1896,8 @@ export type $Label$$Original = $Label;}
 declare module "com.simibubi.create.foundation.blockEntity.SmartBlockEntity" {
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$Collection} from "java.util.Collection"
-import {$IInteractionChecker$$Interface} from "com.simibubi.create.foundation.utility.IInteractionChecker"
 import {$List$$Type} from "java.util.List"
+import {$IInteractionChecker$$Interface} from "com.simibubi.create.foundation.utility.IInteractionChecker"
 import {$CachedRenderBBBlockEntity} from "com.simibubi.create.foundation.blockEntity.CachedRenderBBBlockEntity"
 import {$BehaviourType$$Type} from "com.simibubi.create.foundation.blockEntity.behaviour.BehaviourType"
 import {$ItemRequirement} from "com.simibubi.create.content.schematics.requirement.ItemRequirement"
@@ -1910,8 +1910,8 @@ import {$RegistryFriendlyByteBuf$$Type} from "net.minecraft.network.RegistryFrie
 import {$BlockEntityBehaviour, $BlockEntityBehaviour$$Type} from "com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$SpecialBlockEntityItemRequirement$$Interface} from "com.simibubi.create.api.schematic.requirement.SpecialBlockEntityItemRequirement"
-import {$PartialSafeNBT$$Interface} from "com.simibubi.create.api.schematic.nbt.PartialSafeNBT"
 import {$CreateAdvancement$$Type} from "com.simibubi.create.foundation.advancement.CreateAdvancement"
+import {$PartialSafeNBT$$Interface} from "com.simibubi.create.api.schematic.nbt.PartialSafeNBT"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $SmartBlockEntity extends $CachedRenderBBBlockEntity implements $PartialSafeNBT$$Interface, $IInteractionChecker$$Interface, $SpecialBlockEntityItemRequirement$$Interface, $VirtualBlockEntity$$Interface {
@@ -1941,12 +1941,12 @@ public "sendToMenu"(arg0: $RegistryFriendlyByteBuf$$Type): void
 public "refreshBlockState"(): void
 public "registerAwardables"(arg0: $List$$Type<($BlockEntityBehaviour$$Type)>, ...arg1: ($CreateAdvancement$$Type)[]): void
 public "awardIfNear"(arg0: $CreateAdvancement$$Type, arg1: integer): void
-public "invalidate"(): void
 public "tick"(): void
 public "remove"(): void
 public "isVirtual"(): boolean
 public "initialize"(): void
 public "destroy"(): void
+public "invalidate"(): void
 public "award"(arg0: $CreateAdvancement$$Type): void
 public "setRemoved"(): void
 set "lazyTickRate"(value: integer)
@@ -2011,8 +2011,8 @@ constructor(arg0: integer, arg1: $SyncedBlockEntity$$Type, arg2: integer, arg3: 
 constructor(arg0: integer, arg1: $SyncedBlockEntity$$Type, arg2: integer, arg3: boolean, arg4: $BiPredicate$$Type<(integer), ($ItemStack)>)
 constructor(arg0: $IItemHandlerModifiable$$Type, arg1: integer, arg2: boolean)
 
-public "getStackLimit"(arg0: integer, arg1: $ItemStack$$Type): integer
 public "forbidExtraction"(): $SmartInventory
+public "getStackLimit"(arg0: integer, arg1: $ItemStack$$Type): integer
 public "whenContentsChanged"(arg0: $Consumer$$Type<(integer)>): $SmartInventory
 public "forbidInsertion"(): $SmartInventory
 public "withMaxStackSize"(arg0: integer): $SmartInventory
@@ -2110,8 +2110,8 @@ import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
 import {$SimpleWaterloggedBlock$$Interface} from "net.minecraft.world.level.block.SimpleWaterloggedBlock"
-import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
+import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
@@ -2132,8 +2132,8 @@ static "withWater"(arg0: $LevelAccessor$$Type, arg1: $BlockState$$Type, arg2: $B
  "updateWater"(arg0: $LevelAccessor$$Type, arg1: $BlockState$$Type, arg2: $BlockPos$$Type): void
  "fluidState"(arg0: $BlockState$$Type): $FluidState
  "getPickupSound"(): $Optional<($SoundEvent)>
- "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
  "canPlaceLiquid"(arg0: $Player$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $Fluid$$Type): boolean
+ "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
  "pickupBlock"(arg0: $Player$$Type, arg1: $LevelAccessor$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): $ItemStack
  "getPickupSound"(arg0: $BlockState$$Type): $Optional<($SoundEvent)>
 }
@@ -2150,10 +2150,10 @@ declare module "com.simibubi.create.foundation.blockEntity.behaviour.scrollValue
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$SmartBlockEntity, $SmartBlockEntity$$Type} from "com.simibubi.create.foundation.blockEntity.SmartBlockEntity"
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
-import {$ValueSettingsBoard} from "com.simibubi.create.foundation.blockEntity.behaviour.ValueSettingsBoard"
 import {$Enum} from "java.lang.Enum"
-import {$BehaviourType} from "com.simibubi.create.foundation.blockEntity.behaviour.BehaviourType"
+import {$ValueSettingsBoard} from "com.simibubi.create.foundation.blockEntity.behaviour.ValueSettingsBoard"
 import {$Class$$Type} from "java.lang.Class"
+import {$BehaviourType} from "com.simibubi.create.foundation.blockEntity.behaviour.BehaviourType"
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$ScrollValueBehaviour} from "com.simibubi.create.foundation.blockEntity.behaviour.scrollValue.ScrollValueBehaviour"
 import {$ValueBoxTransform$$Type} from "com.simibubi.create.foundation.blockEntity.behaviour.ValueBoxTransform"
@@ -2230,8 +2230,8 @@ import {$SmartBlockEntity, $SmartBlockEntity$$Type} from "com.simibubi.create.fo
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$SmartFluidTank} from "com.simibubi.create.foundation.fluid.SmartFluidTank"
 import {$BlockEntityBehaviour} from "com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour"
-import {$IFluidHandler} from "net.neoforged.neoforge.fluids.capability.IFluidHandler"
 import {$BehaviourType, $BehaviourType$$Type} from "com.simibubi.create.foundation.blockEntity.behaviour.BehaviourType"
+import {$IFluidHandler} from "net.neoforged.neoforge.fluids.capability.IFluidHandler"
 import {$Runnable$$Type} from "java.lang.Runnable"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Consumer$$Type} from "java.util.function.Consumer"
@@ -2244,16 +2244,16 @@ static readonly "TYPE": $BehaviourType<($SmartFluidTankBehaviour)>
 
 constructor(arg0: $BehaviourType$$Type<($SmartFluidTankBehaviour$$Type)>, arg1: $SmartBlockEntity$$Type, arg2: integer, arg3: integer, arg4: boolean)
 
-public "sendDataImmediately"(): void
-public "sendDataLazily"(): void
-public "getTanks"(): ($SmartFluidTankBehaviour$TankSegment)[]
 public "getPrimaryTank"(): $SmartFluidTankBehaviour$TankSegment
 public "forbidExtraction"(): $SmartFluidTankBehaviour
+public "getTanks"(): ($SmartFluidTankBehaviour$TankSegment)[]
+public "sendDataImmediately"(): void
 public "forbidInsertion"(): $SmartFluidTankBehaviour
 public "whenFluidUpdates"(arg0: $Runnable$$Type): $SmartFluidTankBehaviour
 public "allowInsertion"(): $SmartFluidTankBehaviour
 public "allowExtraction"(): $SmartFluidTankBehaviour
 public "getPrimaryHandler"(): $SmartFluidTank
+public "sendDataLazily"(): void
 public "tick"(): void
 public "isEmpty"(): boolean
 public static "single"(arg0: $SmartBlockEntity$$Type, arg1: integer): $SmartFluidTankBehaviour
@@ -2264,8 +2264,8 @@ public "forEach"(arg0: $Consumer$$Type<($SmartFluidTankBehaviour$TankSegment)>):
 public "getType"(): $BehaviourType<(never)>
 public "unload"(): void
 public "getCapability"(): $IFluidHandler
-get "tanks"(): ($SmartFluidTankBehaviour$TankSegment)[]
 get "primaryTank"(): $SmartFluidTankBehaviour$TankSegment
+get "tanks"(): ($SmartFluidTankBehaviour$TankSegment)[]
 get "primaryHandler"(): $SmartFluidTank
 get "empty"(): boolean
 get "type"(): $BehaviourType<(never)>
@@ -2354,8 +2354,8 @@ public "topLeft"(): $ConnectedTextureBehaviour$ContextRequirement$Builder
 public "topRight"(): $ConnectedTextureBehaviour$ContextRequirement$Builder
 public "corners"(): $ConnectedTextureBehaviour$ContextRequirement$Builder
 public "axisAligned"(): $ConnectedTextureBehaviour$ContextRequirement$Builder
-public "down"(): $ConnectedTextureBehaviour$ContextRequirement$Builder
 public "up"(): $ConnectedTextureBehaviour$ContextRequirement$Builder
+public "down"(): $ConnectedTextureBehaviour$ContextRequirement$Builder
 public "left"(): $ConnectedTextureBehaviour$ContextRequirement$Builder
 public "right"(): $ConnectedTextureBehaviour$ContextRequirement$Builder
 public "build"(): $ConnectedTextureBehaviour$ContextRequirement
@@ -2450,8 +2450,8 @@ export type $CriterionTriggerBase$$Original<T> = $CriterionTriggerBase<(T)>;}
 declare module "com.simibubi.create.foundation.blockEntity.behaviour.inventory.InvManipulationBehaviour" {
 import {$SmartBlockEntity, $SmartBlockEntity$$Type} from "com.simibubi.create.foundation.blockEntity.SmartBlockEntity"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$IdentifiedInventory} from "com.simibubi.create.content.logistics.packager.IdentifiedInventory"
 import {$Predicate$$Type} from "java.util.function.Predicate"
+import {$IdentifiedInventory} from "com.simibubi.create.content.logistics.packager.IdentifiedInventory"
 import {$ItemHelper$ExtractionCountMode$$Type} from "com.simibubi.create.foundation.item.ItemHelper$ExtractionCountMode"
 import {$BehaviourType} from "com.simibubi.create.foundation.blockEntity.behaviour.BehaviourType"
 import {$CapManipulationBehaviourBase$InterfaceProvider$$Type} from "com.simibubi.create.foundation.blockEntity.behaviour.inventory.CapManipulationBehaviourBase$InterfaceProvider"
@@ -2575,16 +2575,16 @@ import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$BehaviourType} from "com.simibubi.create.foundation.blockEntity.behaviour.BehaviourType"
 import {$ValueSettingsBehaviour$$Interface} from "com.simibubi.create.foundation.blockEntity.behaviour.ValueSettingsBehaviour"
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
-import {$ValueSettingsBehaviour$ValueSettings, $ValueSettingsBehaviour$ValueSettings$$Type} from "com.simibubi.create.foundation.blockEntity.behaviour.ValueSettingsBehaviour$ValueSettings"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$ValueSettingsBehaviour$ValueSettings, $ValueSettingsBehaviour$ValueSettings$$Type} from "com.simibubi.create.foundation.blockEntity.behaviour.ValueSettingsBehaviour$ValueSettings"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$ValueBoxTransform, $ValueBoxTransform$$Type} from "com.simibubi.create.foundation.blockEntity.behaviour.ValueBoxTransform"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$SmartBlockEntity, $SmartBlockEntity$$Type} from "com.simibubi.create.foundation.blockEntity.SmartBlockEntity"
 import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$ValueSettingsBoard} from "com.simibubi.create.foundation.blockEntity.behaviour.ValueSettingsBoard"
-import {$Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function$$Type} from "java.util.function.Function"
 import {$BlockEntityBehaviour, $BlockEntityBehaviour$$Type} from "com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour"
 
 export class $ScrollValueBehaviour extends $BlockEntityBehaviour implements $ValueSettingsBehaviour$$Interface {
@@ -2595,6 +2595,11 @@ static readonly "TYPE": $BehaviourType<($ScrollValueBehaviour)>
 
 constructor(arg0: $Component$$Type, arg1: $SmartBlockEntity$$Type, arg2: $ValueBoxTransform$$Type)
 
+public "requiresWrench"(): $ScrollValueBehaviour
+public "testHit"(arg0: $Vec3$$Type): boolean
+public "formatValue"(): StringJS
+public "withCallback"(arg0: $Consumer$$Type<(integer)>): $ScrollValueBehaviour
+public "isSafeNBT"(): boolean
 public "withFormatter"(arg0: $Function$$Type<(integer), (StringJS)>): $ScrollValueBehaviour
 public "getValueSettings"(): $ValueSettingsBehaviour$ValueSettings
 public "withClientCallback"(arg0: $Consumer$$Type<(integer)>): $ScrollValueBehaviour
@@ -2604,11 +2609,6 @@ public "createBoard"(arg0: $Player$$Type, arg1: $BlockHitResult$$Type): $ValueSe
 public "setValueSettings"(arg0: $Player$$Type, arg1: $ValueSettingsBehaviour$ValueSettings$$Type, arg2: boolean): void
 public "onlyVisibleWithWrench"(): boolean
 public "onShortInteract"(arg0: $Player$$Type, arg1: $InteractionHand$$Type, arg2: $Direction$$Type, arg3: $BlockHitResult$$Type): void
-public "formatValue"(): StringJS
-public "withCallback"(arg0: $Consumer$$Type<(integer)>): $ScrollValueBehaviour
-public "isSafeNBT"(): boolean
-public "requiresWrench"(): $ScrollValueBehaviour
-public "testHit"(arg0: $Vec3$$Type): boolean
 public "setLabel"(arg0: $Component$$Type): void
 public "getValue"(): integer
 public "write"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type, arg2: boolean): void
@@ -2617,18 +2617,18 @@ public "setValue"(arg0: integer): void
 public "getType"(): $BehaviourType<(never)>
 public "isActive"(): boolean
 public "between"(arg0: integer, arg1: integer): $ScrollValueBehaviour
-public "acceptsValueSettings"(): boolean
+public "netId"(): integer
 public "playFeedbackSound"(arg0: $BlockEntityBehaviour$$Type): void
+public "acceptsValueSettings"(): boolean
 public "newSettingHovered"(arg0: $ValueSettingsBehaviour$ValueSettings$$Type): void
 public "getClipboardKey"(): StringJS
 public "writeToClipboard"(arg0: $HolderLookup$Provider$$Type, arg1: $CompoundTag$$Type, arg2: $Direction$$Type): boolean
 public "readFromClipboard"(arg0: $HolderLookup$Provider$$Type, arg1: $CompoundTag$$Type, arg2: $Player$$Type, arg3: $Direction$$Type, arg4: boolean): boolean
 public "bypassesInput"(arg0: $ItemStack$$Type): boolean
-public "netId"(): integer
 public "mayInteract"(arg0: $Player$$Type): boolean
+get "safeNBT"(): boolean
 get "valueSettings"(): $ValueSettingsBehaviour$ValueSettings
 get "slotPositioning"(): $ValueBoxTransform
-get "safeNBT"(): boolean
 get "type"(): $BehaviourType<(never)>
 get "active"(): boolean
 get "clipboardKey"(): StringJS
@@ -2672,8 +2672,8 @@ import {$PositionedRectangle} from "io.wispforest.owo.ui.core.PositionedRectangl
 import {$Color} from "net.createmod.catnip.theme.Color"
 import {$List$$Type} from "java.util.List"
 import {$ScrollInput} from "com.simibubi.create.foundation.gui.widget.ScrollInput"
-import {$Couple} from "net.createmod.catnip.data.Couple"
 import {$Runnable$$Type} from "java.lang.Runnable"
+import {$Couple} from "net.createmod.catnip.data.Couple"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$Size$$Type} from "io.wispforest.owo.ui.core.Size"
 
@@ -2709,23 +2709,23 @@ export type $SelectionScrollInput$$Type = ($SelectionScrollInput);
  */
 export type $SelectionScrollInput$$Original = $SelectionScrollInput;}
 declare module "com.simibubi.create.foundation.block.CreateWeatheringCopperStairBlock" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$StairsShape} from "net.minecraft.world.level.block.state.properties.StairsShape"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$Enum} from "java.lang.Enum"
 import {$Optional} from "java.util.Optional"
+import {$Enum} from "java.lang.Enum"
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Half} from "net.minecraft.world.level.block.state.properties.Half"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
-import {$Item} from "net.minecraft.world.item.Item"
 import {$WeatheringCopperStairBlock} from "net.minecraft.world.level.block.WeatheringCopperStairBlock"
+import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
-import {$WeatheringCopper$WeatherState$$Type} from "net.minecraft.world.level.block.WeatheringCopper$WeatherState"
 import {$DirectionProperty} from "net.minecraft.world.level.block.state.properties.DirectionProperty"
+import {$WeatheringCopper$WeatherState$$Type} from "net.minecraft.world.level.block.WeatheringCopper$WeatherState"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $CreateWeatheringCopperStairBlock extends $WeatheringCopperStairBlock {
@@ -2855,8 +2855,8 @@ declare module "com.simibubi.create.foundation.item.TagDependentIngredientItem" 
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$TagKey$$Type} from "net.minecraft.tags.TagKey"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item, $Item$$Type} from "net.minecraft.world.item.Item"
 
 export class $TagDependentIngredientItem extends $Item {
@@ -2885,15 +2885,15 @@ declare module "com.simibubi.create.foundation.blockEntity.behaviour.filtering.F
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Predicate$$Type} from "java.util.function.Predicate"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$BehaviourType} from "com.simibubi.create.foundation.blockEntity.behaviour.BehaviourType"
 import {$FluidStack$$Type} from "net.neoforged.neoforge.fluids.FluidStack"
-import {$ValueSettingsBehaviour$$Interface} from "com.simibubi.create.foundation.blockEntity.behaviour.ValueSettingsBehaviour"
 import {$ItemRequirement} from "com.simibubi.create.content.schematics.requirement.ItemRequirement"
-import {$ValueSettingsBehaviour$ValueSettings, $ValueSettingsBehaviour$ValueSettings$$Type} from "com.simibubi.create.foundation.blockEntity.behaviour.ValueSettingsBehaviour$ValueSettings"
+import {$ValueSettingsBehaviour$$Interface} from "com.simibubi.create.foundation.blockEntity.behaviour.ValueSettingsBehaviour"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$ValueSettingsBehaviour$ValueSettings, $ValueSettingsBehaviour$ValueSettings$$Type} from "com.simibubi.create.foundation.blockEntity.behaviour.ValueSettingsBehaviour$ValueSettings"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$ValueBoxTransform, $ValueBoxTransform$$Type} from "com.simibubi.create.foundation.blockEntity.behaviour.ValueBoxTransform"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
@@ -2913,9 +2913,15 @@ static readonly "TYPE": $BehaviourType<($FilteringBehaviour)>
 
 constructor(arg0: $SmartBlockEntity$$Type, arg1: $ValueBoxTransform$$Type)
 
-public "acceptsValueSettings"(): boolean
+public "testHit"(arg0: $Vec3$$Type): boolean
+public "netId"(): integer
+public "formatValue"(arg0: $ValueSettingsBehaviour$ValueSettings$$Type): $MutableComponent
+public "withCallback"(arg0: $Consumer$$Type<($ItemStack)>): $FilteringBehaviour
+public "getRequiredItems"(): $ItemRequirement
+public "isSafeNBT"(): boolean
 public "getValueSettings"(): $ValueSettingsBehaviour$ValueSettings
 public "onlyActiveWhen"(arg0: $Supplier$$Type<(boolean)>): $FilteringBehaviour
+public "acceptsValueSettings"(): boolean
 public "getSlotPositioning"(): $ValueBoxTransform
 public "createBoard"(arg0: $Player$$Type, arg1: $BlockHitResult$$Type): $ValueSettingsBoard
 public "setValueSettings"(arg0: $Player$$Type, arg1: $ValueSettingsBehaviour$ValueSettings$$Type, arg2: boolean): void
@@ -2932,21 +2938,15 @@ public "anyAmount"(): boolean
 public "getTip"(): $MutableComponent
 public "getAmountTip"(): $MutableComponent
 public "getCountLabelForValueBox"(): $MutableComponent
-public "netId"(): integer
-public "formatValue"(arg0: $ValueSettingsBehaviour$ValueSettings$$Type): $MutableComponent
-public "withCallback"(arg0: $Consumer$$Type<($ItemStack)>): $FilteringBehaviour
-public "getRequiredItems"(): $ItemRequirement
-public "isSafeNBT"(): boolean
 public "forFluids"(): $FilteringBehaviour
 public "forRecipes"(): $FilteringBehaviour
 public "isRecipeFilter"(): boolean
-public "testHit"(arg0: $Vec3$$Type): boolean
+public "getLabel"(): $MutableComponent
+public "setLabel"(arg0: $MutableComponent$$Type): void
 public "getFilter"(arg0: $Direction$$Type): $ItemStack
 public "getFilter"(): $ItemStack
-public "setLabel"(arg0: $MutableComponent$$Type): void
-public "setFilter"(arg0: $ItemStack$$Type): boolean
 public "setFilter"(arg0: $Direction$$Type, arg1: $ItemStack$$Type): boolean
-public "getLabel"(): $MutableComponent
+public "setFilter"(arg0: $ItemStack$$Type): boolean
 public "test"(arg0: $ItemStack$$Type): boolean
 public "test"(arg0: $FluidStack$$Type): boolean
 public "write"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type, arg2: boolean): void
@@ -2954,16 +2954,18 @@ public "read"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type, arg2
 public "destroy"(): void
 public "getType"(): $BehaviourType<(never)>
 public "isActive"(): boolean
-public "getMaxStackSize"(): integer
-public "getMaxStackSize"(arg0: $ItemStack$$Type): integer
-public "getMaxStackSize"(arg0: $Direction$$Type): integer
 public "getRenderDistance"(): float
+public "getMaxStackSize"(): integer
+public "getMaxStackSize"(arg0: $Direction$$Type): integer
+public "getMaxStackSize"(arg0: $ItemStack$$Type): integer
 public "getAmount"(): integer
 public "playFeedbackSound"(arg0: $BlockEntityBehaviour$$Type): void
-public "newSettingHovered"(arg0: $ValueSettingsBehaviour$ValueSettings$$Type): void
 public "onlyVisibleWithWrench"(): boolean
+public "newSettingHovered"(arg0: $ValueSettingsBehaviour$ValueSettings$$Type): void
 public "bypassesInput"(arg0: $ItemStack$$Type): boolean
 public "mayInteract"(arg0: $Player$$Type): boolean
+get "requiredItems"(): $ItemRequirement
+get "safeNBT"(): boolean
 get "valueSettings"(): $ValueSettingsBehaviour$ValueSettings
 get "slotPositioning"(): $ValueBoxTransform
 get "clipboardKey"(): StringJS
@@ -2971,17 +2973,15 @@ get "countVisible"(): boolean
 get "tip"(): $MutableComponent
 get "amountTip"(): $MutableComponent
 get "countLabelForValueBox"(): $MutableComponent
-get "requiredItems"(): $ItemRequirement
-get "safeNBT"(): boolean
 get "recipeFilter"(): boolean
-get "filter"(): $ItemStack
-set "label"(value: $MutableComponent$$Type)
-set "filter"(value: $ItemStack$$Type)
 get "label"(): $MutableComponent
+set "label"(value: $MutableComponent$$Type)
+get "filter"(): $ItemStack
+set "filter"(value: $ItemStack$$Type)
 get "type"(): $BehaviourType<(never)>
 get "active"(): boolean
-get "maxStackSize"(): integer
 get "renderDistance"(): float
+get "maxStackSize"(): integer
 get "amount"(): integer
 }
 /**
@@ -3014,15 +3014,15 @@ export type $SmartFluidTank$$Type = ($SmartFluidTank);
  */
 export type $SmartFluidTank$$Original = $SmartFluidTank;}
 declare module "com.simibubi.create.foundation.advancement.CreateAdvancement" {
-import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$UnaryOperator$$Type} from "java.util.function.UnaryOperator"
+import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$CreateAdvancement$Builder$$Type} from "com.simibubi.create.foundation.advancement.CreateAdvancement$Builder"
 
 export class $CreateAdvancement {
 constructor(arg0: StringJS, arg1: $UnaryOperator$$Type<($CreateAdvancement$Builder)>)
 
-public "isAlreadyAwardedTo"(arg0: $Player$$Type): boolean
 public "awardTo"(arg0: $Player$$Type): void
+public "isAlreadyAwardedTo"(arg0: $Player$$Type): boolean
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -3054,8 +3054,8 @@ export type $BehaviourType$$Type<T> = ($BehaviourType<(T)>);
  */
 export type $BehaviourType$$Original<T> = $BehaviourType<(T)>;}
 declare module "com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour" {
-import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$SmartBlockEntity, $SmartBlockEntity$$Type} from "com.simibubi.create.foundation.blockEntity.SmartBlockEntity"
+import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$Level} from "net.minecraft.world.level.Level"
 import {$BehaviourType, $BehaviourType$$Type} from "com.simibubi.create.foundation.blockEntity.behaviour.BehaviourType"
@@ -3070,13 +3070,13 @@ export class $BlockEntityBehaviour {
 
 constructor(arg0: $SmartBlockEntity$$Type)
 
-public "getWorld"(): $Level
-public "onBlockChanged"(arg0: $BlockState$$Type): void
 public "setLazyTickRate"(arg0: integer): void
 public "getRequiredItems"(): $ItemRequirement
 public "lazyTick"(): void
 public "isSafeNBT"(): boolean
 public "writeSafe"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
+public "getWorld"(): $Level
+public "onBlockChanged"(arg0: $BlockState$$Type): void
 public "onNeighborChanged"(arg0: $BlockPos$$Type): void
 public "tick"(): void
 public static "get"<T extends $BlockEntityBehaviour>(arg0: $BlockEntity$$Type, arg1: $BehaviourType$$Type<(T)>): T
@@ -3088,10 +3088,10 @@ public "destroy"(): void
 public "getType"(): $BehaviourType<(never)>
 public "unload"(): void
 public "getPos"(): $BlockPos
-get "world"(): $Level
 set "lazyTickRate"(value: integer)
 get "requiredItems"(): $ItemRequirement
 get "safeNBT"(): boolean
+get "world"(): $Level
 get "type"(): $BehaviourType<(never)>
 get "pos"(): $BlockPos
 }
@@ -3114,12 +3114,12 @@ export class $ValueSettingsBoard extends $Record {
 constructor(title: $Component$$Type, maxValue: integer, milestoneInterval: integer, rows: $List$$Type<($Component$$Type)>, formatter: $ValueSettingsFormatter$$Type)
 
 public "milestoneInterval"(): integer
+public "rows"(): $List<($Component)>
 public "maxValue"(): integer
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
 public "formatter"(): $ValueSettingsFormatter
-public "rows"(): $List<($Component)>
 public "title"(): $Component
 }
 /**
@@ -3184,8 +3184,8 @@ import {$Consumer$$Type} from "java.util.function.Consumer"
 export class $ModularGuiLine {
 constructor()
 
-public "renderWidgetBG"(arg0: integer, arg1: $GuiGraphics$$Type): void
 public "saveValues"(arg0: $CompoundTag$$Type): void
+public "renderWidgetBG"(arg0: integer, arg1: $GuiGraphics$$Type): void
 public "loadValues"<T extends $GuiEventListener>(arg0: $CompoundTag$$Type, arg1: $Consumer$$Type<(T)>, arg2: $Consumer$$Type<(T)>): void
 public "clear"(): void
 public "add"(arg0: $Pair$$Type<($AbstractWidget$$Type), (StringJS)>): void
@@ -3232,8 +3232,8 @@ import {$AbstractSimiWidget} from "net.createmod.catnip.gui.widget.AbstractSimiW
 import {$Runnable$$Type} from "java.lang.Runnable"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$ScrollValueBehaviour$StepContext, $ScrollValueBehaviour$StepContext$$Type} from "com.simibubi.create.foundation.blockEntity.behaviour.scrollValue.ScrollValueBehaviour$StepContext"
-import {$Label$$Type} from "com.simibubi.create.foundation.gui.widget.Label"
 import {$Consumer$$Type} from "java.util.function.Consumer"
+import {$Label$$Type} from "com.simibubi.create.foundation.gui.widget.Label"
 import {$Component$$Type as $Component$0$$Type} from "io.wispforest.owo.ui.core.Component"
 import {$Color} from "net.createmod.catnip.theme.Color"
 import {$Function, $Function$$Type} from "java.util.function.Function"
@@ -3258,13 +3258,13 @@ static readonly "COLOR_FAIL": $Couple<($Color)>
 
 constructor(arg0: integer, arg1: integer, arg2: integer, arg3: integer)
 
+public "addHint"(arg0: $MutableComponent$$Type): $ScrollInput
+public "removeCallback"(): $ScrollInput
 public "withStepFunction"(arg0: $Function$$Type<($ScrollValueBehaviour$StepContext), (integer)>): $ScrollInput
 public "standardStep"(): $Function<($ScrollValueBehaviour$StepContext), (integer)>
-public "addHint"(arg0: $MutableComponent$$Type): $ScrollInput
+public "onChanged"(): void
 public "calling"(arg0: $Consumer$$Type<(integer)>): $ScrollInput
 public "withShiftStep"(arg0: integer): $ScrollInput
-public "removeCallback"(): $ScrollInput
-public "onChanged"(): void
 public "titled"(arg0: $MutableComponent$$Type): $ScrollInput
 public "writingTo"(arg0: $Label$$Type): $ScrollInput
 public "withRange"(arg0: integer, arg1: integer): $ScrollInput
@@ -3319,14 +3319,14 @@ import {$FluidStack, $FluidStack$$Type} from "net.neoforged.neoforge.fluids.Flui
 export class $CombinedTankWrapper implements $IFluidHandler$$Interface {
 constructor(...arg0: ($IFluidHandler$$Type)[])
 
-public "enforceVariety"(): $CombinedTankWrapper
 public "getTanks"(): integer
 public "getFluidInTank"(arg0: integer): $FluidStack
 public "getTankCapacity"(arg0: integer): integer
 public "isFluidValid"(arg0: integer, arg1: $FluidStack$$Type): boolean
+public "enforceVariety"(): $CombinedTankWrapper
+public "fill"(arg0: $FluidStack$$Type, arg1: $IFluidHandler$FluidAction$$Type): integer
 public "drain"(arg0: $FluidStack$$Type, arg1: $IFluidHandler$FluidAction$$Type): $FluidStack
 public "drain"(arg0: integer, arg1: $IFluidHandler$FluidAction$$Type): $FluidStack
-public "fill"(arg0: $FluidStack$$Type, arg1: $IFluidHandler$FluidAction$$Type): integer
 get "tanks"(): integer
 }
 /**
@@ -3453,14 +3453,14 @@ import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
-import {$ValueSettingsBehaviour$ValueSettings, $ValueSettingsBehaviour$ValueSettings$$Type} from "com.simibubi.create.foundation.blockEntity.behaviour.ValueSettingsBehaviour$ValueSettings"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$ValueSettingsBehaviour$ValueSettings, $ValueSettingsBehaviour$ValueSettings$$Type} from "com.simibubi.create.foundation.blockEntity.behaviour.ValueSettingsBehaviour$ValueSettings"
 import {$ValueBoxTransform} from "com.simibubi.create.foundation.blockEntity.behaviour.ValueBoxTransform"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$ValueSettingsBoard} from "com.simibubi.create.foundation.blockEntity.behaviour.ValueSettingsBoard"
-import {$ClipboardCloneable$$Interface} from "com.simibubi.create.content.equipment.clipboard.ClipboardCloneable"
 import {$BlockEntityBehaviour$$Type} from "com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour"
+import {$ClipboardCloneable$$Interface} from "com.simibubi.create.content.equipment.clipboard.ClipboardCloneable"
 
 export interface $ValueSettingsBehaviour$$Interface extends $ClipboardCloneable$$Interface {
 get "valueSettings"(): $ValueSettingsBehaviour$ValueSettings
@@ -3470,21 +3470,21 @@ get "active"(): boolean
 }
 
 export class $ValueSettingsBehaviour implements $ValueSettingsBehaviour$$Interface {
- "acceptsValueSettings"(): boolean
+ "testHit"(arg0: $Vec3$$Type): boolean
+ "netId"(): integer
  "getValueSettings"(): $ValueSettingsBehaviour$ValueSettings
  "playFeedbackSound"(arg0: $BlockEntityBehaviour$$Type): void
- "newSettingHovered"(arg0: $ValueSettingsBehaviour$ValueSettings$$Type): void
+ "acceptsValueSettings"(): boolean
  "getSlotPositioning"(): $ValueBoxTransform
  "createBoard"(arg0: $Player$$Type, arg1: $BlockHitResult$$Type): $ValueSettingsBoard
  "setValueSettings"(arg0: $Player$$Type, arg1: $ValueSettingsBehaviour$ValueSettings$$Type, arg2: boolean): void
  "onlyVisibleWithWrench"(): boolean
  "onShortInteract"(arg0: $Player$$Type, arg1: $InteractionHand$$Type, arg2: $Direction$$Type, arg3: $BlockHitResult$$Type): void
+ "newSettingHovered"(arg0: $ValueSettingsBehaviour$ValueSettings$$Type): void
  "getClipboardKey"(): StringJS
  "writeToClipboard"(arg0: $HolderLookup$Provider$$Type, arg1: $CompoundTag$$Type, arg2: $Direction$$Type): boolean
  "readFromClipboard"(arg0: $HolderLookup$Provider$$Type, arg1: $CompoundTag$$Type, arg2: $Player$$Type, arg3: $Direction$$Type, arg4: boolean): boolean
  "bypassesInput"(arg0: $ItemStack$$Type): boolean
- "netId"(): integer
- "testHit"(arg0: $Vec3$$Type): boolean
  "isActive"(): boolean
  "mayInteract"(arg0: $Player$$Type): boolean
 }
@@ -3509,8 +3509,8 @@ export interface $CapManipulationBehaviourBase$InterfaceProvider$$Interface {
 }
 
 export class $CapManipulationBehaviourBase$InterfaceProvider implements $CapManipulationBehaviourBase$InterfaceProvider$$Interface {
-static "towardBlockFacing"(): $CapManipulationBehaviourBase$InterfaceProvider
 static "oppositeOfBlockFacing"(): $CapManipulationBehaviourBase$InterfaceProvider
+static "towardBlockFacing"(): $CapManipulationBehaviourBase$InterfaceProvider
  "getTarget"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type): $BlockFace
 }
 /**

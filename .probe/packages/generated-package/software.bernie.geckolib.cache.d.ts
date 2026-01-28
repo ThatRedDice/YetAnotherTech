@@ -3,8 +3,8 @@ import {$List} from "java.util.List"
 import {$BoneSnapshot} from "software.bernie.geckolib.animation.state.BoneSnapshot"
 import {$GeoCube} from "software.bernie.geckolib.cache.object.GeoCube"
 import {$Matrix4f, $Matrix4f$$Type} from "org.joml.Matrix4f"
-import {$Vector3d, $Vector3d$$Type} from "org.joml.Vector3d"
 import {$Matrix3f, $Matrix3f$$Type} from "org.joml.Matrix3f"
+import {$Vector3d, $Vector3d$$Type} from "org.joml.Vector3d"
 
 export class $GeoBone {
 constructor(arg0: $GeoBone$$Type, arg1: StringJS, arg2: boolean, arg3: double, arg4: boolean, arg5: boolean)
@@ -24,46 +24,8 @@ public "setWorldSpaceMatrix"(arg0: $Matrix4f$$Type): void
 public "getCubes"(): $List<($GeoCube)>
 public "isHidingChildren"(): boolean
 public "getChildBones"(): $List<($GeoBone)>
-public "getScaleX"(): float
-public "getScaleY"(): float
-public "getInitialSnapshot"(): $BoneSnapshot
 public "updatePosition"(arg0: float, arg1: float, arg2: float): void
-public "setHidden"(arg0: boolean): void
-public "updatePivot"(arg0: float, arg1: float, arg2: float): void
-public "getInflate"(): double
-public "getName"(): StringJS
-public "equals"(arg0: any): boolean
-public "hashCode"(): integer
-public "isHidden"(): boolean
-public "getParent"(): $GeoBone
-public "getMirror"(): boolean
-public "getRotationVector"(): $Vector3d
-public "saveSnapshot"(): $BoneSnapshot
-public "setPosX"(arg0: float): void
-public "setPosY"(arg0: float): void
-public "getPivotX"(): float
-public "getPivotY"(): float
-public "updateScale"(arg0: float, arg1: float, arg2: float): void
-public "getPivotZ"(): float
-public "getRotZ"(): float
-public "setRotZ"(arg0: float): void
-public "setTrackingMatrices"(arg0: boolean): void
-public "hasScaleChanged"(): boolean
-public "hasRotationChanged"(): boolean
-public "hasPositionChanged"(): boolean
-public "resetStateChanges"(): void
-public "saveInitialSnapshot"(): void
-public "shouldNeverRender"(): boolean
-public "getReset"(): boolean
-public "setWorldSpaceNormal"(arg0: $Matrix3f$$Type): void
-public "getWorldSpaceNormal"(): $Matrix3f
-public "getLocalPosition"(): $Vector3d
-public "getModelPosition"(): $Vector3d
-public "setModelPosition"(arg0: $Vector3d$$Type): void
-public "getModelRotationMatrix"(): $Matrix4f
-public "getPositionVector"(): $Vector3d
-public "getScaleVector"(): $Vector3d
-public "addRotationOffsetFromBone"(arg0: $GeoBone$$Type): void
+public "getInitialSnapshot"(): $BoneSnapshot
 public "markRotationAsChanged"(): void
 public "markPositionAsChanged"(): void
 public "setPosZ"(arg0: float): void
@@ -80,6 +42,44 @@ public "getModelSpaceMatrix"(): $Matrix4f
 public "getWorldSpaceMatrix"(): $Matrix4f
 public "getPosZ"(): float
 public "getScaleZ"(): float
+public "hasScaleChanged"(): boolean
+public "hasRotationChanged"(): boolean
+public "hasPositionChanged"(): boolean
+public "resetStateChanges"(): void
+public "saveInitialSnapshot"(): void
+public "shouldNeverRender"(): boolean
+public "getReset"(): boolean
+public "setWorldSpaceNormal"(arg0: $Matrix3f$$Type): void
+public "getWorldSpaceNormal"(): $Matrix3f
+public "getLocalPosition"(): $Vector3d
+public "getModelPosition"(): $Vector3d
+public "setModelPosition"(arg0: $Vector3d$$Type): void
+public "getModelRotationMatrix"(): $Matrix4f
+public "getPositionVector"(): $Vector3d
+public "getScaleVector"(): $Vector3d
+public "addRotationOffsetFromBone"(arg0: $GeoBone$$Type): void
+public "updatePivot"(arg0: float, arg1: float, arg2: float): void
+public "getInflate"(): double
+public "setHidden"(arg0: boolean): void
+public "getScaleX"(): float
+public "getScaleY"(): float
+public "getName"(): StringJS
+public "equals"(arg0: any): boolean
+public "hashCode"(): integer
+public "isHidden"(): boolean
+public "getParent"(): $GeoBone
+public "getMirror"(): boolean
+public "getRotationVector"(): $Vector3d
+public "saveSnapshot"(): $BoneSnapshot
+public "setPosX"(arg0: float): void
+public "setPosY"(arg0: float): void
+public "getPivotX"(): float
+public "updateScale"(arg0: float, arg1: float, arg2: float): void
+public "getPivotY"(): float
+public "getPivotZ"(): float
+public "getRotZ"(): float
+public "setRotZ"(arg0: float): void
+public "setTrackingMatrices"(arg0: boolean): void
 get "posX"(): float
 get "posY"(): float
 get "rotY"(): float
@@ -94,33 +94,7 @@ set "worldSpaceMatrix"(value: $Matrix4f$$Type)
 get "cubes"(): $List<($GeoCube)>
 get "hidingChildren"(): boolean
 get "childBones"(): $List<($GeoBone)>
-get "scaleX"(): float
-get "scaleY"(): float
 get "initialSnapshot"(): $BoneSnapshot
-set "hidden"(value: boolean)
-get "inflate"(): double
-get "name"(): StringJS
-get "hidden"(): boolean
-get "parent"(): $GeoBone
-get "mirror"(): boolean
-get "rotationVector"(): $Vector3d
-set "posX"(value: float)
-set "posY"(value: float)
-get "pivotX"(): float
-get "pivotY"(): float
-get "pivotZ"(): float
-get "rotZ"(): float
-set "rotZ"(value: float)
-set "trackingMatrices"(value: boolean)
-get "reset"(): boolean
-set "worldSpaceNormal"(value: $Matrix3f$$Type)
-get "worldSpaceNormal"(): $Matrix3f
-get "localPosition"(): $Vector3d
-get "modelPosition"(): $Vector3d
-set "modelPosition"(value: $Vector3d$$Type)
-get "modelRotationMatrix"(): $Matrix4f
-get "positionVector"(): $Vector3d
-get "scaleVector"(): $Vector3d
 set "posZ"(value: float)
 set "scaleX"(value: float)
 set "scaleY"(value: float)
@@ -134,6 +108,32 @@ get "modelSpaceMatrix"(): $Matrix4f
 get "worldSpaceMatrix"(): $Matrix4f
 get "posZ"(): float
 get "scaleZ"(): float
+get "reset"(): boolean
+set "worldSpaceNormal"(value: $Matrix3f$$Type)
+get "worldSpaceNormal"(): $Matrix3f
+get "localPosition"(): $Vector3d
+get "modelPosition"(): $Vector3d
+set "modelPosition"(value: $Vector3d$$Type)
+get "modelRotationMatrix"(): $Matrix4f
+get "positionVector"(): $Vector3d
+get "scaleVector"(): $Vector3d
+get "inflate"(): double
+set "hidden"(value: boolean)
+get "scaleX"(): float
+get "scaleY"(): float
+get "name"(): StringJS
+get "hidden"(): boolean
+get "parent"(): $GeoBone
+get "mirror"(): boolean
+get "rotationVector"(): $Vector3d
+set "posX"(value: float)
+set "posY"(value: float)
+get "pivotX"(): float
+get "pivotY"(): float
+get "pivotZ"(): float
+get "rotZ"(): float
+set "rotZ"(value: float)
+set "trackingMatrices"(value: boolean)
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -193,7 +193,7 @@ public "searchForChildBone"(arg0: $GeoBone$$Type, arg1: StringJS): $GeoBone
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $BakedGeoModel$$Type = ({"properties"?: $ModelProperties$$Type, "topLevelBones"?: $List$$Type<($GeoBone$$Type)>}) | ([properties?: $ModelProperties$$Type, topLevelBones?: $List$$Type<($GeoBone$$Type)>]);
+export type $BakedGeoModel$$Type = ({"topLevelBones"?: $List$$Type<($GeoBone$$Type)>, "properties"?: $ModelProperties$$Type}) | ([topLevelBones?: $List$$Type<($GeoBone$$Type)>, properties?: $ModelProperties$$Type]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */

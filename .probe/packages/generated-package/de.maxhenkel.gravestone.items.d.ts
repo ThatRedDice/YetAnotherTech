@@ -4,11 +4,11 @@ import {$Death, $Death$$Type} from "de.maxhenkel.gravestone.corelib.death.Death"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
-import {$Item} from "net.minecraft.world.item.Item"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$Item} from "net.minecraft.world.item.Item"
 import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
 
 export class $ObituaryItem extends $Item {

@@ -103,6 +103,7 @@ import {$VertexConsumer, $VertexConsumer$$Type} from "com.mojang.blaze3d.vertex.
 import {$SpriteContents} from "net.minecraft.client.renderer.texture.SpriteContents"
 
 export class $TextureAtlasSprite implements $SpriteOpacity$$Interface {
+public "createTicker"(): $TextureAtlasSprite$Ticker
 public "moreculling$getUnmipmappedImage"(): $NativeImage
 public "getUOffset"(arg0: float): float
 public "getVOffset"(arg0: float): float
@@ -112,7 +113,6 @@ public "moreculling$hasTranslucency"(arg0: $List$$Type): boolean
 public "moreculling$hasTranslucency"(arg0: $QuadBounds$$Type): boolean
 public "moreculling$hasTranslucency"(arg0: $QuadBounds$$Type, arg1: $List$$Type): boolean
 public "moreculling$hasTranslucency"(): boolean
-public "createTicker"(): $TextureAtlasSprite$Ticker
 public "uvShrinkRatio"(): float
 public "contents"(): $SpriteContents
 public "getY"(): integer
@@ -182,8 +182,8 @@ declare module "net.minecraft.client.renderer.debug.GoalSelectorDebugRenderer" {
 import {$DebugRenderer$SimpleDebugRenderer$$Interface} from "net.minecraft.client.renderer.debug.DebugRenderer$SimpleDebugRenderer"
 import {$GoalDebugPayload$DebugGoal$$Type} from "net.minecraft.network.protocol.common.custom.GoalDebugPayload$DebugGoal"
 import {$MultiBufferSource$$Type} from "net.minecraft.client.renderer.MultiBufferSource"
-import {$PoseStack$$Type} from "com.mojang.blaze3d.vertex.PoseStack"
 import {$List$$Type} from "java.util.List"
+import {$PoseStack$$Type} from "com.mojang.blaze3d.vertex.PoseStack"
 import {$Minecraft$$Type} from "net.minecraft.client.Minecraft"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 
@@ -232,7 +232,7 @@ public "hashCode"(): integer
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $BlockElementFace$$Type = ({"texture"?: StringJS, "parent"?: $MutableObject$$Type<($BlockElement$$Type)>, "tintIndex"?: integer, "uv"?: $BlockFaceUV$$Type, "faceData"?: $ExtraFaceData$$Type, "cullForDirection"?: $Direction$$Type}) | ([texture?: StringJS, parent?: $MutableObject$$Type<($BlockElement$$Type)>, tintIndex?: integer, uv?: $BlockFaceUV$$Type, faceData?: $ExtraFaceData$$Type, cullForDirection?: $Direction$$Type]);
+export type $BlockElementFace$$Type = ({"parent"?: $MutableObject$$Type<($BlockElement$$Type)>, "tintIndex"?: integer, "uv"?: $BlockFaceUV$$Type, "faceData"?: $ExtraFaceData$$Type, "cullForDirection"?: $Direction$$Type, "texture"?: StringJS}) | ([parent?: $MutableObject$$Type<($BlockElement$$Type)>, tintIndex?: integer, uv?: $BlockFaceUV$$Type, faceData?: $ExtraFaceData$$Type, cullForDirection?: $Direction$$Type, texture?: StringJS]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -257,7 +257,7 @@ public "axis"(): $Direction$Axis
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $BlockElementRotation$$Type = ({"origin"?: $Vector3f$$Type, "rescale"?: boolean, "axis"?: $Direction$Axis$$Type, "angle"?: float}) | ([origin?: $Vector3f$$Type, rescale?: boolean, axis?: $Direction$Axis$$Type, angle?: float]);
+export type $BlockElementRotation$$Type = ({"rescale"?: boolean, "axis"?: $Direction$Axis$$Type, "angle"?: float, "origin"?: $Vector3f$$Type}) | ([rescale?: boolean, axis?: $Direction$Axis$$Type, angle?: float, origin?: $Vector3f$$Type]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -266,10 +266,10 @@ declare module "net.minecraft.client.renderer.LightTexture" {
 import {$GameRenderer$$Type} from "net.minecraft.client.renderer.GameRenderer"
 import {$AutoCloseable$$Interface} from "java.lang.AutoCloseable"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$LightTextureAccessor$$Interface} from "net.irisshaders.iris.mixin.LightTextureAccessor"
 import {$Minecraft$$Type} from "net.minecraft.client.Minecraft"
-import {$DimensionType$$Type} from "net.minecraft.world.level.dimension.DimensionType"
+import {$LightTextureAccessor$$Interface} from "net.irisshaders.iris.mixin.LightTextureAccessor"
 import {$DynamicTexture} from "net.minecraft.client.renderer.texture.DynamicTexture"
+import {$DimensionType$$Type} from "net.minecraft.world.level.dimension.DimensionType"
 
 export class $LightTexture implements $AutoCloseable$$Interface, $LightTextureAccessor$$Interface {
 static readonly "FULL_BRIGHT": integer
@@ -324,8 +324,8 @@ export type $EntityRendererProvider$$Type<T> = ((arg0: $EntityRendererProvider$C
  */
 export type $EntityRendererProvider$$Original<T> = $EntityRendererProvider<(T)>;}
 declare module "net.minecraft.client.renderer.ShaderInstance" {
-import {$ShaderProgramAccessor$$Interface} from "io.wispforest.owo.mixin.shader.ShaderProgramAccessor"
 import {$Program} from "com.mojang.blaze3d.shaders.Program"
+import {$ShaderProgramAccessor$$Interface} from "io.wispforest.owo.mixin.shader.ShaderProgramAccessor"
 import {$Shader$$Interface} from "com.mojang.blaze3d.shaders.Shader"
 import {$Map} from "java.util.Map"
 import {$AutoCloseable$$Interface} from "java.lang.AutoCloseable"
@@ -374,23 +374,23 @@ public "clear"(): void
 public "apply"(): void
 public "getId"(): integer
 public "close"(): void
+public "redirect$bol000$oculus$iris$setupGeometryShader"(arg0: $Reader$$Type, arg1: $ResourceProvider$$Type, arg2: $ResourceLocation$$Type, arg3: $VertexFormat$$Type): $JsonObject
+public "redirect$bol000$oculus$iris$redirectBindAttributeLocation"(arg0: integer, arg1: integer, arg2: charseq): void
+public "getUniform"(arg0: StringJS): $Uniform
+public "getVertexProgram"(): $Program
+public "getFragmentProgram"(): $Program
 public "safeGetUniform"(arg0: StringJS): $AbstractUniform
 public "attachToProgram"(): void
 public "getVertexFormat"(): $VertexFormat
 public "setDefaultUniforms"(arg0: $VertexFormat$Mode$$Type, arg1: $Matrix4f$$Type, arg2: $Matrix4f$$Type, arg3: $Window$$Type): void
 public "iris$createExtraShaders"(arg0: $ResourceProvider$$Type, arg1: $ResourceLocation$$Type): void
 public "owo$getLoadedUniforms"(): $Map
-public "getVertexProgram"(): $Program
-public "getFragmentProgram"(): $Program
-public "redirect$bol000$oculus$iris$setupGeometryShader"(arg0: $Reader$$Type, arg1: $ResourceProvider$$Type, arg2: $ResourceLocation$$Type, arg3: $VertexFormat$$Type): $JsonObject
-public "redirect$bol000$oculus$iris$redirectBindAttributeLocation"(arg0: integer, arg1: integer, arg2: charseq): void
-public "getUniform"(arg0: StringJS): $Uniform
 public "setSampler"(arg0: StringJS, arg1: any): void
 get "name"(): StringJS
 get "id"(): integer
-get "vertexFormat"(): $VertexFormat
 get "vertexProgram"(): $Program
 get "fragmentProgram"(): $Program
+get "vertexFormat"(): $VertexFormat
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -483,8 +483,8 @@ declare module "net.minecraft.client.renderer.entity.EntityRenderDispatcher" {
 import {$EntityRenderer} from "net.minecraft.client.renderer.entity.EntityRenderer"
 import {$PoseStack$$Type} from "com.mojang.blaze3d.vertex.PoseStack"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$Font$$Type} from "net.minecraft.client.gui.Font"
 import {$Frustum$$Type} from "net.minecraft.client.renderer.culling.Frustum"
+import {$Font$$Type} from "net.minecraft.client.gui.Font"
 import {$OwoEntityRenderDispatcherExtension$$Interface} from "io.wispforest.owo.util.pond.OwoEntityRenderDispatcherExtension"
 import {$Camera, $Camera$$Type} from "net.minecraft.client.Camera"
 import {$ProfilerFiller$$Type} from "net.minecraft.util.profiling.ProfilerFiller"
@@ -496,8 +496,8 @@ import {$BlockRenderDispatcher$$Type} from "net.minecraft.client.renderer.block.
 import {$EntityRenderDispatcherAccessor$$Interface} from "com.simibubi.create.foundation.mixin.accessor.EntityRenderDispatcherAccessor"
 import {$Executor$$Type} from "java.util.concurrent.Executor"
 import {$Minecraft$$Type} from "net.minecraft.client.Minecraft"
-import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$Quaternionf, $Quaternionf$$Type} from "org.joml.Quaternionf"
+import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$EntityType} from "net.minecraft.world.entity.EntityType"
 import {$Map} from "java.util.Map"
 import {$PlayerSkin$Model} from "net.minecraft.client.resources.PlayerSkin$Model"
@@ -506,8 +506,8 @@ import {$PreparableReloadListener$PreparationBarrier$$Type} from "net.minecraft.
 import {$TextureManager, $TextureManager$$Type} from "net.minecraft.client.renderer.texture.TextureManager"
 import {$CompletableFuture} from "java.util.concurrent.CompletableFuture"
 import {$ItemInHandRenderer} from "net.minecraft.client.renderer.ItemInHandRenderer"
-import {$EntityModelSet$$Type} from "net.minecraft.client.model.geom.EntityModelSet"
 import {$ResourceManager$$Type} from "net.minecraft.server.packs.resources.ResourceManager"
+import {$EntityModelSet$$Type} from "net.minecraft.client.model.geom.EntityModelSet"
 
 export class $EntityRenderDispatcher implements $ResourceManagerReloadListener$$Interface, $OwoEntityRenderDispatcherExtension$$Interface, $EntityRenderDispatcherAccessor$$Interface {
  "crosshairPickEntity": $Entity
@@ -520,18 +520,18 @@ constructor(arg0: $Minecraft$$Type, arg1: $TextureManager$$Type, arg2: $ItemRend
 
 public "owo$showNametag"(): boolean
 public "owo$counterRotate"(): boolean
-public "getSkinMap"(): $Map<($PlayerSkin$Model), ($EntityRenderer<($Player)>)>
 public "cameraOrientation"(): $Quaternionf
 public "create$getRenderers"(): $Map
+public "getSkinMap"(): $Map<($PlayerSkin$Model), ($EntityRenderer<($Player)>)>
 public "owo$setCounterRotate"(counterRotate: boolean): void
 public "owo$setShowNametag"(showNametag: boolean): void
 public "setLevel"(arg0: $Level$$Type): void
 public "prepare"(arg0: $Level$$Type, arg1: $Camera$$Type, arg2: $Entity$$Type): void
 public "render"<E extends $Entity>(arg0: E, arg1: double, arg2: double, arg3: double, arg4: float, arg5: float, arg6: $PoseStack$$Type, arg7: $MultiBufferSource$$Type, arg8: integer): void
+public "getRenderer"(entity: $Entity$$Type): $EntityRenderer
+public "getPackedLightCoords"<E extends $Entity>(arg0: E, arg1: float): integer
 public "getItemInHandRenderer"(): $ItemInHandRenderer
 public "onResourceManagerReload"(arg0: $ResourceManager$$Type): void
-public "getPackedLightCoords"<E extends $Entity>(arg0: E, arg1: float): integer
-public "getRenderer"(entity: $Entity$$Type): $EntityRenderer
 public "distanceToSqr"(arg0: $Entity$$Type): double
 public "distanceToSqr"(arg0: double, arg1: double, arg2: double): double
 public "shouldRender"<E extends $Entity>(arg0: E, arg1: $Frustum$$Type, arg2: double, arg3: double, arg4: double): boolean
@@ -568,8 +568,8 @@ import {$ModelManager, $ModelManager$$Type} from "net.minecraft.client.resources
 import {$BlockModelShaperAccessor$$Interface} from "ca.fxco.moreculling.mixin.accessors.BlockModelShaperAccessor"
 import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Property$$Type} from "net.minecraft.world.level.block.state.properties.Property"
+import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $BlockModelShaper implements $BlockModelShaperAccessor$$Interface {
 constructor(arg0: $ModelManager$$Type)
@@ -578,6 +578,7 @@ public "replaceCache"(arg0: $Map$$Type<($BlockState$$Type), ($BakedModel$$Type)>
 public static "stateToModelLocation"(arg0: $BlockState$$Type): $ModelResourceLocation
 public static "stateToModelLocation"(arg0: $ResourceLocation$$Type, arg1: $BlockState$$Type): $ModelResourceLocation
 public "getTexture"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type): $TextureAtlasSprite
+public static "statePropertiesToString"(arg0: $Map$$Type<($Property$$Type<(never)>), ($Comparable$$Type<(never)>)>): StringJS
 public "getModelManager"(): $ModelManager
 public "getBlockModel"(arg0: $BlockState$$Type): $BakedModel
 /**
@@ -586,7 +587,6 @@ public "getBlockModel"(arg0: $BlockState$$Type): $BakedModel
  */
 public "getParticleIcon"(arg0: $BlockState$$Type): $TextureAtlasSprite
 public "getModels"(): $Map
-public static "statePropertiesToString"(arg0: $Map$$Type<($Property$$Type<(never)>), ($Comparable$$Type<(never)>)>): StringJS
 get "modelManager"(): $ModelManager
 get "models"(): $Map
 }
@@ -608,11 +608,11 @@ import {$RenderStateShard$WriteMaskStateShard} from "net.minecraft.client.render
 import {$RenderStateShard$DepthTestStateShard} from "net.minecraft.client.renderer.RenderStateShard$DepthTestStateShard"
 import {$RenderStateShard$ColorLogicStateShard} from "net.minecraft.client.renderer.RenderStateShard$ColorLogicStateShard"
 import {$RenderStateShard$OverlayStateShard} from "net.minecraft.client.renderer.RenderStateShard$OverlayStateShard"
-import {$RenderStateShard$LineStateShard} from "net.minecraft.client.renderer.RenderStateShard$LineStateShard"
 import {$RenderStateShard$CullStateShard} from "net.minecraft.client.renderer.RenderStateShard$CullStateShard"
+import {$RenderStateShard$LineStateShard} from "net.minecraft.client.renderer.RenderStateShard$LineStateShard"
 import {$RenderStateShard$TextureStateShard} from "net.minecraft.client.renderer.RenderStateShard$TextureStateShard"
-import {$RenderStateShard$TransparencyStateShard} from "net.minecraft.client.renderer.RenderStateShard$TransparencyStateShard"
 import {$RenderStateShard$LightmapStateShard} from "net.minecraft.client.renderer.RenderStateShard$LightmapStateShard"
+import {$RenderStateShard$TransparencyStateShard} from "net.minecraft.client.renderer.RenderStateShard$TransparencyStateShard"
 import {$Supplier, $Supplier$$Type} from "java.util.function.Supplier"
 import {$RenderStateShard} from "net.minecraft.client.renderer.RenderStateShard"
 import {$RenderStateShard$TexturingStateShard} from "net.minecraft.client.renderer.RenderStateShard$TexturingStateShard"
@@ -769,9 +769,9 @@ public "getCloudHeight"(): float
 public "constantAmbientLight"(): boolean
 public "adjustLightmapColors"(arg0: $ClientLevel$$Type, arg1: float, arg2: float, arg3: float, arg4: float, arg5: integer, arg6: integer, arg7: $Vector3f$$Type): void
 public "renderSky"(arg0: $ClientLevel$$Type, arg1: integer, arg2: float, arg3: $Matrix4f$$Type, arg4: $Camera$$Type, arg5: $Matrix4f$$Type, arg6: boolean, arg7: $Runnable$$Type): boolean
+public "renderClouds"(arg0: $ClientLevel$$Type, arg1: integer, arg2: float, arg3: $PoseStack$$Type, arg4: double, arg5: double, arg6: double, arg7: $Matrix4f$$Type, arg8: $Matrix4f$$Type): boolean
 public "renderSnowAndRain"(arg0: $ClientLevel$$Type, arg1: integer, arg2: float, arg3: $LightTexture$$Type, arg4: double, arg5: double, arg6: double): boolean
 public "tickRain"(arg0: $ClientLevel$$Type, arg1: integer, arg2: $Camera$$Type): boolean
-public "renderClouds"(arg0: $ClientLevel$$Type, arg1: integer, arg2: float, arg3: $PoseStack$$Type, arg4: double, arg5: double, arg6: double, arg7: $Matrix4f$$Type, arg8: $Matrix4f$$Type): boolean
 get "cloudHeight"(): float
 }
 /**
@@ -789,18 +789,18 @@ import {$GameTestDebugRenderer} from "net.minecraft.client.renderer.debug.GameTe
 import {$MultiBufferSource$BufferSource$$Type} from "net.minecraft.client.renderer.MultiBufferSource$BufferSource"
 import {$Optional} from "java.util.Optional"
 import {$CallbackInfo$$Type} from "org.spongepowered.asm.mixin.injection.callback.CallbackInfo"
-import {$VillageSectionsDebugRenderer} from "net.minecraft.client.renderer.debug.VillageSectionsDebugRenderer"
 import {$PoseStack$$Type} from "com.mojang.blaze3d.vertex.PoseStack"
+import {$VillageSectionsDebugRenderer} from "net.minecraft.client.renderer.debug.VillageSectionsDebugRenderer"
 import {$RaidDebugRenderer} from "net.minecraft.client.renderer.debug.RaidDebugRenderer"
-import {$GoalSelectorDebugRenderer} from "net.minecraft.client.renderer.debug.GoalSelectorDebugRenderer"
 import {$GameEventListenerRenderer} from "net.minecraft.client.renderer.debug.GameEventListenerRenderer"
+import {$GoalSelectorDebugRenderer} from "net.minecraft.client.renderer.debug.GoalSelectorDebugRenderer"
 import {$BeeDebugRenderer} from "net.minecraft.client.renderer.debug.BeeDebugRenderer"
 import {$BreezeDebugRenderer} from "net.minecraft.client.renderer.debug.BreezeDebugRenderer"
 import {$MultiBufferSource$$Type} from "net.minecraft.client.renderer.MultiBufferSource"
 import {$PathfindingRenderer} from "net.minecraft.client.renderer.debug.PathfindingRenderer"
 import {$LightSectionDebugRenderer} from "net.minecraft.client.renderer.debug.LightSectionDebugRenderer"
-import {$BrainDebugRenderer} from "net.minecraft.client.renderer.debug.BrainDebugRenderer"
 import {$Minecraft$$Type} from "net.minecraft.client.Minecraft"
+import {$BrainDebugRenderer} from "net.minecraft.client.renderer.debug.BrainDebugRenderer"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$AABB$$Type} from "net.minecraft.world.phys.AABB"
@@ -831,12 +831,12 @@ readonly "worldGenAttemptRenderer": $DebugRenderer$SimpleDebugRenderer
 
 constructor(arg0: $Minecraft$$Type)
 
-public static "renderFloatingText"(arg0: $PoseStack$$Type, arg1: $MultiBufferSource$$Type, arg2: StringJS, arg3: integer, arg4: integer, arg5: integer, arg6: integer): void
-public static "renderFloatingText"(arg0: $PoseStack$$Type, arg1: $MultiBufferSource$$Type, arg2: StringJS, arg3: double, arg4: double, arg5: double, arg6: integer, arg7: float, arg8: boolean, arg9: float, arg10: boolean): void
-public static "renderFloatingText"(arg0: $PoseStack$$Type, arg1: $MultiBufferSource$$Type, arg2: StringJS, arg3: double, arg4: double, arg5: double, arg6: integer, arg7: float): void
-public static "renderFloatingText"(arg0: $PoseStack$$Type, arg1: $MultiBufferSource$$Type, arg2: StringJS, arg3: double, arg4: double, arg5: double, arg6: integer): void
-public "handler$ebl000$moonlight$supp$renderVanillaDebug"(poseStack: $PoseStack$$Type, bufferSource: $MultiBufferSource$BufferSource$$Type, camX: double, camY: double, camZ: double, ci: $CallbackInfo$$Type): void
 public static "getTargetedEntity"(arg0: $Entity$$Type, arg1: integer): $Optional<($Entity)>
+public static "renderFloatingText"(arg0: $PoseStack$$Type, arg1: $MultiBufferSource$$Type, arg2: StringJS, arg3: double, arg4: double, arg5: double, arg6: integer): void
+public static "renderFloatingText"(arg0: $PoseStack$$Type, arg1: $MultiBufferSource$$Type, arg2: StringJS, arg3: integer, arg4: integer, arg5: integer, arg6: integer): void
+public static "renderFloatingText"(arg0: $PoseStack$$Type, arg1: $MultiBufferSource$$Type, arg2: StringJS, arg3: double, arg4: double, arg5: double, arg6: integer, arg7: float): void
+public static "renderFloatingText"(arg0: $PoseStack$$Type, arg1: $MultiBufferSource$$Type, arg2: StringJS, arg3: double, arg4: double, arg5: double, arg6: integer, arg7: float, arg8: boolean, arg9: float, arg10: boolean): void
+public "handler$ebl000$moonlight$supp$renderVanillaDebug"(poseStack: $PoseStack$$Type, bufferSource: $MultiBufferSource$BufferSource$$Type, camX: double, camY: double, camZ: double, ci: $CallbackInfo$$Type): void
 public static "renderFilledUnitCube"(arg0: $PoseStack$$Type, arg1: $MultiBufferSource$$Type, arg2: $BlockPos$$Type, arg3: float, arg4: float, arg5: float, arg6: float): void
 public static "renderFilledBox"(arg0: $PoseStack$$Type, arg1: $MultiBufferSource$$Type, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: float, arg9: float, arg10: float, arg11: float): void
 public static "renderFilledBox"(arg0: $PoseStack$$Type, arg1: $MultiBufferSource$$Type, arg2: $BlockPos$$Type, arg3: $BlockPos$$Type, arg4: float, arg5: float, arg6: float, arg7: float): void
@@ -856,8 +856,8 @@ export type $DebugRenderer$$Type = ($DebugRenderer);
  */
 export type $DebugRenderer$$Original = $DebugRenderer;}
 declare module "net.minecraft.client.renderer.texture.SpriteContents$InterpolationData" {
-import {$AutoCloseable$$Interface} from "java.lang.AutoCloseable"
 import {$CallbackInfo$$Type} from "org.spongepowered.asm.mixin.injection.callback.CallbackInfo"
+import {$AutoCloseable$$Interface} from "java.lang.AutoCloseable"
 import {$SpriteContents$$Type} from "net.minecraft.client.renderer.texture.SpriteContents"
 
 export class $SpriteContents$InterpolationData implements $AutoCloseable$$Interface {
@@ -888,20 +888,20 @@ import {$PostChain} from "net.minecraft.client.renderer.PostChain"
 import {$Minecraft, $Minecraft$$Type} from "net.minecraft.client.Minecraft"
 import {$OverlayTexture} from "net.minecraft.client.renderer.texture.OverlayTexture"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$GameRendererAccessor$$Interface} from "net.irisshaders.iris.mixin.GameRendererAccessor"
+import {$GameRendererAccessor$$Interface as $GameRendererAccessor$0$$Interface} from "net.irisshaders.iris.mixin.GameRendererAccessor"
 import {$LightTexture} from "net.minecraft.client.renderer.LightTexture"
 import {$AutoCloseable$$Interface} from "java.lang.AutoCloseable"
-import {$GameRendererAccessor$$Interface as $GameRendererAccessor$1$$Interface} from "net.createmod.ponder.mixin.client.accessor.GameRendererAccessor"
+import {$GameRendererAccessor$$Interface} from "net.createmod.ponder.mixin.client.accessor.GameRendererAccessor"
 import {$PreparableReloadListener} from "net.minecraft.server.packs.resources.PreparableReloadListener"
 import {$CallbackInfoReturnable$$Type} from "org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable"
 import {$MapRenderer} from "net.minecraft.client.gui.MapRenderer"
 import {$ItemInHandRenderer, $ItemInHandRenderer$$Type} from "net.minecraft.client.renderer.ItemInHandRenderer"
-import {$GameRendererAccessor$$Interface as $GameRendererAccessor$0$$Interface} from "forge.me.thosea.badoptimizations.mixin.accessors.GameRendererAccessor"
+import {$GameRendererAccessor$$Interface as $GameRendererAccessor$1$$Interface} from "forge.me.thosea.badoptimizations.mixin.accessors.GameRendererAccessor"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$DeltaTracker$$Type} from "net.minecraft.client.DeltaTracker"
 import {$ResourceManager$$Type} from "net.minecraft.server.packs.resources.ResourceManager"
 
-export class $GameRenderer implements $AutoCloseable$$Interface, $GameRendererAccessor$$Interface, $GameRendererAccessor$1$$Interface, $IMixinGameRenderer$$Interface, $GameRendererAccessor$0$$Interface {
+export class $GameRenderer implements $AutoCloseable$$Interface, $GameRendererAccessor$0$$Interface, $GameRendererAccessor$$Interface, $IMixinGameRenderer$$Interface, $GameRendererAccessor$1$$Interface {
  "postEffect": $PostChain
 readonly "renderBuffers": $RenderBuffers
 static readonly "ITEM_ACTIVATION_ANIMATION_LENGTH": integer
@@ -922,34 +922,8 @@ public "resize"(arg0: integer, arg1: integer): void
 public "getMinecraft"(): $Minecraft
 public "render"(arg0: $DeltaTracker$$Type, arg1: boolean): void
 public static "getPositionTexShader"(): $ShaderInstance
-public static "getPositionColorShader"(): $ShaderInstance
-public static "getPositionTexColorShader"(): $ShaderInstance
-public "createReloadListener"(): $PreparableReloadListener
-public "preloadUiShader"(arg0: $ResourceProvider$$Type): void
-public "getMainCamera"(): $Camera
-public "currentEffect"(): $PostChain
-public "shutdownEffect"(): void
-public "checkEntityPostEffect"(arg0: $Entity$$Type): void
-public "resetData"(): void
-public "isPanoramicMode"(): boolean
-public "setRenderBlockOutline"(arg0: boolean): void
-public "setPanoramicMode"(arg0: boolean): void
-public "renderLevel"(arg0: $DeltaTracker$$Type): void
-public "renderZoomed"(arg0: float, arg1: float, arg2: float): void
-public static "getRendertypeTextBackgroundSeeThroughShader"(): $ShaderInstance
-public static "getRendertypeLightningShader"(): $ShaderInstance
-public static "getRendertypeTripwireShader"(): $ShaderInstance
-public static "getRendertypeEndPortalShader"(): $ShaderInstance
-public static "getRendertypeEndGatewayShader"(): $ShaderInstance
-public static "getRendertypeCloudsShader"(): $ShaderInstance
-public static "getRendertypeLinesShader"(): $ShaderInstance
-public static "getRendertypeGuiShader"(): $ShaderInstance
-public static "getRendertypeGuiOverlayShader"(): $ShaderInstance
-public static "getRendertypeGuiTextHighlightShader"(): $ShaderInstance
-public static "getRendertypeGuiGhostRecipeOverlayShader"(): $ShaderInstance
-public static "getRendertypeBreezeWindShader"(): $ShaderInstance
-public "setRenderHand"(arg0: boolean): void
-public "togglePostEffect"(): void
+public static "getRendertypeArmorGlintShader"(): $ShaderInstance
+public static "getRendertypeGlintDirectShader"(): $ShaderInstance
 public "getShader"(arg0: StringJS): $ShaderInstance
 public "getFov"(arg0: $Camera$$Type, arg1: float, arg2: boolean): double
 public "handler$zca000$immersive_aircraft$immersiveAircraft$renderWorld"(poseStack: $PoseStack$$Type, partialTicks: float, ci: $CallbackInfo$$Type): void
@@ -963,8 +937,6 @@ public "displayItemActivation"(arg0: $ItemStack$$Type): void
 public "getDarkenWorldAmount"(arg0: float): float
 public "getRenderDistance"(): float
 public static "getParticleShader"(): $ShaderInstance
-public static "getRendertypeArmorGlintShader"(): $ShaderInstance
-public static "getRendertypeGlintDirectShader"(): $ShaderInstance
 public "lightTexture"(): $LightTexture
 public "overlayTexture"(): $OverlayTexture
 public static "getPositionColorLightmapShader"(): $ShaderInstance
@@ -1005,7 +977,6 @@ public static "getRendertypeTextShader"(): $ShaderInstance
 public static "getRendertypeTextBackgroundShader"(): $ShaderInstance
 public static "getRendertypeTextIntensityShader"(): $ShaderInstance
 public static "getRendertypeTextSeeThroughShader"(): $ShaderInstance
-public static "getRendertypeTextIntensitySeeThroughShader"(): $ShaderInstance
 public "getBlurEffect"(): $PostChain
 public "getRenderHand"(): boolean
 public "getPanoramicMode"(): boolean
@@ -1015,34 +986,44 @@ public "invokeGetFov"(arg0: $Camera$$Type, arg1: float, arg2: boolean): double
 public "shouldRenderBlockOutlineA"(): boolean
 public "getBlurEffect_FancyMenu"(): $PostChain
 public "bo$getSkyDarkness"(): float
+public static "getRendertypeTextBackgroundSeeThroughShader"(): $ShaderInstance
+public static "getRendertypeTextIntensitySeeThroughShader"(): $ShaderInstance
+public static "getRendertypeLightningShader"(): $ShaderInstance
+public static "getRendertypeTripwireShader"(): $ShaderInstance
+public static "getRendertypeEndPortalShader"(): $ShaderInstance
+public static "getRendertypeEndGatewayShader"(): $ShaderInstance
+public static "getRendertypeCloudsShader"(): $ShaderInstance
+public static "getRendertypeLinesShader"(): $ShaderInstance
+public static "getRendertypeGuiShader"(): $ShaderInstance
+public static "getRendertypeGuiOverlayShader"(): $ShaderInstance
+public static "getRendertypeGuiTextHighlightShader"(): $ShaderInstance
+public static "getRendertypeGuiGhostRecipeOverlayShader"(): $ShaderInstance
+public static "getRendertypeBreezeWindShader"(): $ShaderInstance
+public "setRenderHand"(arg0: boolean): void
+public "togglePostEffect"(): void
+public static "getPositionColorShader"(): $ShaderInstance
+public static "getPositionTexColorShader"(): $ShaderInstance
+public "createReloadListener"(): $PreparableReloadListener
+public "preloadUiShader"(arg0: $ResourceProvider$$Type): void
+public "getMainCamera"(): $Camera
+public "currentEffect"(): $PostChain
+public "shutdownEffect"(): void
+public "checkEntityPostEffect"(arg0: $Entity$$Type): void
+public "resetData"(): void
+public "isPanoramicMode"(): boolean
+public "setRenderBlockOutline"(arg0: boolean): void
+public "setPanoramicMode"(arg0: boolean): void
+public "renderLevel"(arg0: $DeltaTracker$$Type): void
+public "renderZoomed"(arg0: float, arg1: float, arg2: float): void
 public "processBlurEffect"(arg0: float): void
 get "minecraft"(): $Minecraft
 public static get "positionTexShader"(): $ShaderInstance
-public static get "positionColorShader"(): $ShaderInstance
-public static get "positionTexColorShader"(): $ShaderInstance
-get "mainCamera"(): $Camera
-get "panoramicMode"(): boolean
-set "renderBlockOutline"(value: boolean)
-set "panoramicMode"(value: boolean)
-public static get "rendertypeTextBackgroundSeeThroughShader"(): $ShaderInstance
-public static get "rendertypeLightningShader"(): $ShaderInstance
-public static get "rendertypeTripwireShader"(): $ShaderInstance
-public static get "rendertypeEndPortalShader"(): $ShaderInstance
-public static get "rendertypeEndGatewayShader"(): $ShaderInstance
-public static get "rendertypeCloudsShader"(): $ShaderInstance
-public static get "rendertypeLinesShader"(): $ShaderInstance
-public static get "rendertypeGuiShader"(): $ShaderInstance
-public static get "rendertypeGuiOverlayShader"(): $ShaderInstance
-public static get "rendertypeGuiTextHighlightShader"(): $ShaderInstance
-public static get "rendertypeGuiGhostRecipeOverlayShader"(): $ShaderInstance
-public static get "rendertypeBreezeWindShader"(): $ShaderInstance
-set "renderHand"(value: boolean)
+public static get "rendertypeArmorGlintShader"(): $ShaderInstance
+public static get "rendertypeGlintDirectShader"(): $ShaderInstance
 get "depthFar"(): float
 get "mapRenderer"(): $MapRenderer
 get "renderDistance"(): float
 public static get "particleShader"(): $ShaderInstance
-public static get "rendertypeArmorGlintShader"(): $ShaderInstance
-public static get "rendertypeGlintDirectShader"(): $ShaderInstance
 public static get "positionColorLightmapShader"(): $ShaderInstance
 public static get "positionShader"(): $ShaderInstance
 public static get "positionColorTexLightmapShader"(): $ShaderInstance
@@ -1081,11 +1062,30 @@ public static get "rendertypeTextShader"(): $ShaderInstance
 public static get "rendertypeTextBackgroundShader"(): $ShaderInstance
 public static get "rendertypeTextIntensityShader"(): $ShaderInstance
 public static get "rendertypeTextSeeThroughShader"(): $ShaderInstance
-public static get "rendertypeTextIntensitySeeThroughShader"(): $ShaderInstance
 get "blurEffect"(): $PostChain
 get "renderHand"(): boolean
 get "panoramicMode"(): boolean
 get "blurEffect_FancyMenu"(): $PostChain
+public static get "rendertypeTextBackgroundSeeThroughShader"(): $ShaderInstance
+public static get "rendertypeTextIntensitySeeThroughShader"(): $ShaderInstance
+public static get "rendertypeLightningShader"(): $ShaderInstance
+public static get "rendertypeTripwireShader"(): $ShaderInstance
+public static get "rendertypeEndPortalShader"(): $ShaderInstance
+public static get "rendertypeEndGatewayShader"(): $ShaderInstance
+public static get "rendertypeCloudsShader"(): $ShaderInstance
+public static get "rendertypeLinesShader"(): $ShaderInstance
+public static get "rendertypeGuiShader"(): $ShaderInstance
+public static get "rendertypeGuiOverlayShader"(): $ShaderInstance
+public static get "rendertypeGuiTextHighlightShader"(): $ShaderInstance
+public static get "rendertypeGuiGhostRecipeOverlayShader"(): $ShaderInstance
+public static get "rendertypeBreezeWindShader"(): $ShaderInstance
+set "renderHand"(value: boolean)
+public static get "positionColorShader"(): $ShaderInstance
+public static get "positionTexColorShader"(): $ShaderInstance
+get "mainCamera"(): $Camera
+get "panoramicMode"(): boolean
+set "renderBlockOutline"(value: boolean)
+set "panoramicMode"(value: boolean)
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -1140,17 +1140,17 @@ export type $EntityRendererProvider$Context$$Type = ($EntityRendererProvider$Con
 export type $EntityRendererProvider$Context$$Original = $EntityRendererProvider$Context;}
 declare module "net.minecraft.client.renderer.block.ModelBlockRenderer" {
 import {$BitSet$$Type} from "java.util.BitSet"
-import {$PoseStack$$Type} from "com.mojang.blaze3d.vertex.PoseStack"
-import {$BakedModel$$Type} from "net.minecraft.client.resources.model.BakedModel"
 import {$List$$Type} from "java.util.List"
+import {$BakedModel$$Type} from "net.minecraft.client.resources.model.BakedModel"
+import {$PoseStack$$Type} from "com.mojang.blaze3d.vertex.PoseStack"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$VertexConsumer$$Type} from "com.mojang.blaze3d.vertex.VertexConsumer"
 import {$BakedQuad$$Type} from "net.minecraft.client.renderer.block.model.BakedQuad"
 import {$ExtendedBlockModelRenderer$$Interface} from "ca.fxco.moreculling.api.renderers.ExtendedBlockModelRenderer"
 import {$BlockColors, $BlockColors$$Type} from "net.minecraft.client.color.block.BlockColors"
-import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
-import {$PoseStack$Pose$$Type} from "com.mojang.blaze3d.vertex.PoseStack$Pose"
 import {$ModelBlockRenderer$AmbientOcclusionFace$$Type} from "net.minecraft.client.renderer.block.ModelBlockRenderer$AmbientOcclusionFace"
+import {$PoseStack$Pose$$Type} from "com.mojang.blaze3d.vertex.PoseStack$Pose"
+import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
 import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
 import {$ModelData$$Type} from "net.neoforged.neoforge.client.model.data.ModelData"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
@@ -1219,9 +1219,9 @@ import {$AutoCloseable$$Interface} from "java.lang.AutoCloseable"
 import {$Uniform} from "com.mojang.blaze3d.shaders.Uniform"
 import {$JsonObject$$Type} from "com.google.gson.JsonObject"
 import {$EffectProgram} from "com.mojang.blaze3d.shaders.EffectProgram"
-import {$IntSupplier$$Type} from "java.util.function.IntSupplier"
-import {$Effect$$Interface} from "com.mojang.blaze3d.shaders.Effect"
 import {$Program$Type$$Type} from "com.mojang.blaze3d.shaders.Program$Type"
+import {$Effect$$Interface} from "com.mojang.blaze3d.shaders.Effect"
+import {$IntSupplier$$Type} from "java.util.function.IntSupplier"
 
 export class $EffectInstance implements $Effect$$Interface, $AutoCloseable$$Interface {
 constructor(arg0: $ResourceProvider$$Type, arg1: StringJS)
@@ -1234,11 +1234,11 @@ public "clear"(): void
 public "apply"(): void
 public "getId"(): integer
 public "close"(): void
-public "safeGetUniform"(arg0: StringJS): $AbstractUniform
-public "attachToProgram"(): void
+public "getUniform"(arg0: StringJS): $Uniform
 public "getVertexProgram"(): $Program
 public "getFragmentProgram"(): $Program
-public "getUniform"(arg0: StringJS): $Uniform
+public "safeGetUniform"(arg0: StringJS): $AbstractUniform
+public "attachToProgram"(): void
 public "setSampler"(arg0: StringJS, arg1: $IntSupplier$$Type): void
 get "name"(): StringJS
 get "id"(): integer
@@ -1297,8 +1297,8 @@ import {$Reader$$Type} from "java.io.Reader"
 import {$BlockElementFace, $BlockElementFace$$Type} from "net.minecraft.client.renderer.block.model.BlockElementFace"
 import {$BlockElement, $BlockElement$$Type} from "net.minecraft.client.renderer.block.model.BlockElement"
 import {$ModelState$$Type} from "net.minecraft.client.resources.model.ModelState"
-import {$UnbakedModel$$Type, $UnbakedModel$$Interface} from "net.minecraft.client.resources.model.UnbakedModel"
 import {$ExtendedUnbakedModel$$Interface} from "ca.fxco.moreculling.api.model.ExtendedUnbakedModel"
+import {$UnbakedModel$$Type, $UnbakedModel$$Interface} from "net.minecraft.client.resources.model.UnbakedModel"
 import {$BakedQuad} from "net.minecraft.client.renderer.block.model.BakedQuad"
 import {$BlockGeometryBakingContext} from "net.neoforged.neoforge.client.model.geometry.BlockGeometryBakingContext"
 import {$ItemOverride, $ItemOverride$$Type} from "net.minecraft.client.renderer.block.model.ItemOverride"
@@ -1315,35 +1315,35 @@ static readonly "FACE_BAKERY": $FaceBakery
 
 constructor(arg0: $ResourceLocation$$Type, arg1: $List$$Type<($BlockElement$$Type)>, arg2: $Map$$Type<(StringJS), ($Either$$Type<($Material$$Type), (StringJS)>)>, arg3: boolean, arg4: $BlockModel$GuiLight$$Type, arg5: $ItemTransforms$$Type, arg6: $List$$Type<($ItemOverride$$Type)>)
 
+public "getTransforms"(): $ItemTransforms
 public "resolveParents"(arg0: $Function$$Type<($ResourceLocation), ($UnbakedModel$$Type)>): void
 public "moreculling$setCullShapeElements"(arg0: $List$$Type): void
 public "moreculling$getCullShapeElements"(arg0: $ResourceLocation$$Type): $List
 public "moreculling$setUseModelShape"(arg0: boolean): void
 public "moreculling$getUseModelShape"(arg0: $ResourceLocation$$Type): boolean
 public "moreculling$modifyElementFace"(arg0: $BlockElementFace$$Type): $BlockElementFace
-public "getTransforms"(): $ItemTransforms
+public static "fromStream"(arg0: $Reader$$Type): $BlockModel
 /**
  * 
  * @deprecated
  */
 public "getElements"(): $List<($BlockElement)>
-public static "fromStream"(arg0: $Reader$$Type): $BlockModel
 public "toString"(): StringJS
 public "isResolved"(): boolean
 public static "fromString"(arg0: StringJS): $BlockModel
+public "hasAmbientOcclusion"(): boolean
 public "getOverrides"(arg0: $ModelBaker$$Type, arg1: $BlockModel$$Type, arg2: $Function$$Type<($Material), ($TextureAtlasSprite$$Type)>): $ItemOverrides
 public "getOverrides"(): $List<($ItemOverride)>
 public "getDependencies"(): $Collection<($ResourceLocation)>
-public "bake"(arg0: $ModelBaker$$Type, arg1: $BlockModel$$Type, arg2: $Function$$Type<($Material), ($TextureAtlasSprite$$Type)>, arg3: $ModelState$$Type, arg4: boolean): $BakedModel
-public "bake"(arg0: $ModelBaker$$Type, arg1: $Function$$Type<($Material), ($TextureAtlasSprite$$Type)>, arg2: $ModelState$$Type): $BakedModel
-public "hasTexture"(arg0: StringJS): boolean
-public "hasAmbientOcclusion"(): boolean
-public "getMaterial"(arg0: StringJS): $Material
 public "getParentLocation"(): $ResourceLocation
 public "getGuiLight"(): $BlockModel$GuiLight
 public "bakeVanilla"(arg0: $ModelBaker$$Type, arg1: $BlockModel$$Type, arg2: $Function$$Type<($Material), ($TextureAtlasSprite$$Type)>, arg3: $ModelState$$Type, arg4: boolean): $BakedModel
 public "getRootModel"(): $BlockModel
 public static "bakeFace"(arg0: $BlockElement$$Type, arg1: $BlockElementFace$$Type, arg2: $TextureAtlasSprite$$Type, arg3: $Direction$$Type, arg4: $ModelState$$Type): $BakedQuad
+public "bake"(arg0: $ModelBaker$$Type, arg1: $Function$$Type<($Material), ($TextureAtlasSprite$$Type)>, arg2: $ModelState$$Type): $BakedModel
+public "bake"(arg0: $ModelBaker$$Type, arg1: $BlockModel$$Type, arg2: $Function$$Type<($Material), ($TextureAtlasSprite$$Type)>, arg3: $ModelState$$Type, arg4: boolean): $BakedModel
+public "getMaterial"(arg0: StringJS): $Material
+public "hasTexture"(arg0: StringJS): boolean
 get "transforms"(): $ItemTransforms
 get "elements"(): $List<($BlockElement)>
 get "resolved"(): boolean
@@ -1375,8 +1375,8 @@ constructor(arg0: $SectionRenderDispatcher$$Type, arg1: $Level$$Type, arg2: inte
 
 public "setDirty"(arg0: integer, arg1: integer, arg2: integer, arg3: boolean): void
 public "getViewDistance"(): integer
-public "repositionCamera"(arg0: double, arg1: double): void
 public "releaseAllBuffers"(): void
+public "repositionCamera"(arg0: double, arg1: double): void
 public "getLevelHeightAccessor"(): $LevelHeightAccessor
 get "viewDistance"(): integer
 get "levelHeightAccessor"(): $LevelHeightAccessor
@@ -1400,8 +1400,8 @@ import {$ColorResolver$$Type} from "net.minecraft.world.level.ColorResolver"
 import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$BlockAndTintGetter$$Interface} from "net.minecraft.world.level.BlockAndTintGetter"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function$$Type} from "java.util.function.Function"
 import {$ModelData} from "net.neoforged.neoforge.client.model.data.ModelData"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$Stream} from "java.util.stream.Stream"
@@ -1413,8 +1413,8 @@ import {$ChunkPos$$Type} from "net.minecraft.world.level.ChunkPos"
 import {$BiFunction$$Type} from "java.util.function.BiFunction"
 import {$VoxelShape$$Type} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$ClipContext$$Type} from "net.minecraft.world.level.ClipContext"
-import {$FluidState} from "net.minecraft.world.level.material.FluidState"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
+import {$FluidState} from "net.minecraft.world.level.material.FluidState"
 import {$AABB$$Type} from "net.minecraft.world.phys.AABB"
 
 export class $RenderChunkRegion implements $BlockAndTintGetter$$Interface {
@@ -1491,24 +1491,13 @@ export class $BakedQuad implements $QuadOpacity$$Interface, $BakedQuadAccess$$In
 constructor(arg0: (integer)[], arg1: integer, arg2: $Direction$$Type, arg3: $TextureAtlasSprite$$Type, arg4: boolean)
 constructor(arg0: (integer)[], arg1: integer, arg2: $Direction$$Type, arg3: $TextureAtlasSprite$$Type, arg4: boolean, arg5: boolean)
 
-public "moreculling$getTextureTranslucency"(): boolean
-public "getNormalFace"(): $ModelQuadFacing
-public "getLight"(arg0: integer): integer
 public "hasShade"(): boolean
+public "getLight"(arg0: integer): integer
 public "isShade"(): boolean
 public "getFlags"(): integer
 public "getY"(arg0: integer): float
-public "setFlags"(arg0: integer): void
-public "getVertices"(): (integer)[]
-public "getDirection"(): $Direction
-public "getX"(arg0: integer): float
-public "getZ"(arg0: integer): float
-public "getSprite"(): $TextureAtlasSprite
-public "getColor"(arg0: integer): integer
-public "moreculling$resetTranslucencyCache"(): void
-public "isTinted"(): boolean
-public "getTintIndex"(): integer
-public "getColorIndex"(): integer
+public "moreculling$getTextureTranslucency"(): boolean
+public "getNormalFace"(): $ModelQuadFacing
 public "getForgeNormal"(arg0: integer): integer
 public "getComputedFaceNormal"(): integer
 public "getTexU"(arg0: integer): float
@@ -1516,20 +1505,31 @@ public "getTexV"(arg0: integer): float
 public "getLightFace"(): $Direction
 public "hasAmbientOcclusion"(): boolean
 public "setVertices"(arg0: (integer)[]): void
+public "setFlags"(arg0: integer): void
+public "isTinted"(): boolean
+public "getTintIndex"(): integer
+public "getColorIndex"(): integer
+public "getVertices"(): (integer)[]
+public "getDirection"(): $Direction
+public "getX"(arg0: integer): float
+public "getZ"(arg0: integer): float
+public "getSprite"(): $TextureAtlasSprite
+public "getColor"(arg0: integer): integer
+public "moreculling$resetTranslucencyCache"(): void
 public "getTransparencyLevel"(): $SpriteTransparencyLevel
 public "hasColor"(): boolean
 public "getModFaceNormal"(): integer
-get "normalFace"(): $ModelQuadFacing
 get "shade"(): boolean
 get "flags"(): integer
-set "flags"(value: integer)
-get "vertices"(): (integer)[]
-get "direction"(): $Direction
-get "tinted"(): boolean
-get "colorIndex"(): integer
+get "normalFace"(): $ModelQuadFacing
 get "computedFaceNormal"(): integer
 get "lightFace"(): $Direction
 set "vertices"(value: (integer)[])
+set "flags"(value: integer)
+get "tinted"(): boolean
+get "colorIndex"(): integer
+get "vertices"(): (integer)[]
+get "direction"(): $Direction
 get "transparencyLevel"(): $SpriteTransparencyLevel
 get "modFaceNormal"(): integer
 }
@@ -1543,15 +1543,15 @@ export type $BakedQuad$$Type = ($BakedQuad);
  */
 export type $BakedQuad$$Original = $BakedQuad;}
 declare module "net.minecraft.client.renderer.chunk.SectionRenderDispatcher" {
-import {$SectionRenderDispatcher$RenderSection$CompileTask$$Type} from "net.minecraft.client.renderer.chunk.SectionRenderDispatcher$RenderSection$CompileTask"
 import {$VertexBuffer$$Type} from "com.mojang.blaze3d.vertex.VertexBuffer"
+import {$SectionRenderDispatcher$RenderSection$CompileTask$$Type} from "net.minecraft.client.renderer.chunk.SectionRenderDispatcher$RenderSection$CompileTask"
 import {$RenderBuffers$$Type} from "net.minecraft.client.renderer.RenderBuffers"
-import {$LevelRenderer$$Type} from "net.minecraft.client.renderer.LevelRenderer"
 import {$ChunkBuilderAccess$$Interface} from "me.cominixo.betterf3.ducks.ChunkBuilderAccess"
+import {$LevelRenderer$$Type} from "net.minecraft.client.renderer.LevelRenderer"
 import {$ByteBufferBuilder$Result$$Type} from "com.mojang.blaze3d.vertex.ByteBufferBuilder$Result"
 import {$BlockEntityRenderDispatcher$$Type} from "net.minecraft.client.renderer.blockentity.BlockEntityRenderDispatcher"
-import {$SectionRenderDispatcher$RenderSection$$Type} from "net.minecraft.client.renderer.chunk.SectionRenderDispatcher$RenderSection"
 import {$ClientLevel$$Type} from "net.minecraft.client.multiplayer.ClientLevel"
+import {$SectionRenderDispatcher$RenderSection$$Type} from "net.minecraft.client.renderer.chunk.SectionRenderDispatcher$RenderSection"
 import {$RenderRegionCache$$Type} from "net.minecraft.client.renderer.chunk.RenderRegionCache"
 import {$Vec3, $Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$MeshData$$Type} from "com.mojang.blaze3d.vertex.MeshData"
@@ -1568,26 +1568,26 @@ public "uploadSectionIndexBuffer"(arg0: $ByteBufferBuilder$Result$$Type, arg1: $
 public "betterF3$getQueuedTaskCount"(): integer
 public "betterF3$getUploadQueue"(): $Queue
 public "betterF3$getBufferCount"(): integer
-public "isQueueEmpty"(): boolean
-public "setCamera"(arg0: $Vec3$$Type): void
-public "getCameraPosition"(): $Vec3
 public "getToBatchCount"(): integer
 public "getToUpload"(): integer
 public "getFreeBufferCount"(): integer
-public "setLevel"(arg0: $ClientLevel$$Type): void
+public "setCamera"(arg0: $Vec3$$Type): void
+public "getCameraPosition"(): $Vec3
 public "dispose"(): void
+public "setLevel"(arg0: $ClientLevel$$Type): void
+public "isQueueEmpty"(): boolean
 public "schedule"(arg0: $SectionRenderDispatcher$RenderSection$CompileTask$$Type): void
 public "blockUntilClear"(): void
 public "rebuildSectionSync"(arg0: $SectionRenderDispatcher$RenderSection$$Type, arg1: $RenderRegionCache$$Type): void
 public "uploadAllPendingUploads"(): void
 public "getStats"(): StringJS
-get "queueEmpty"(): boolean
-set "camera"(value: $Vec3$$Type)
-get "cameraPosition"(): $Vec3
 get "toBatchCount"(): integer
 get "toUpload"(): integer
 get "freeBufferCount"(): integer
+set "camera"(value: $Vec3$$Type)
+get "cameraPosition"(): $Vec3
 set "level"(value: $ClientLevel$$Type)
+get "queueEmpty"(): boolean
 get "stats"(): StringJS
 }
 /**
@@ -1632,12 +1632,12 @@ import {$Runnable} from "java.lang.Runnable"
 import {$RenderStateShard$WriteMaskStateShard} from "net.minecraft.client.renderer.RenderStateShard$WriteMaskStateShard"
 import {$RenderStateShard$DepthTestStateShard} from "net.minecraft.client.renderer.RenderStateShard$DepthTestStateShard"
 import {$RenderStateShard$ColorLogicStateShard} from "net.minecraft.client.renderer.RenderStateShard$ColorLogicStateShard"
-import {$RenderStateShard$LineStateShard} from "net.minecraft.client.renderer.RenderStateShard$LineStateShard"
 import {$RenderStateShard$CullStateShard} from "net.minecraft.client.renderer.RenderStateShard$CullStateShard"
-import {$RenderStateShard$ShaderStateShard} from "net.minecraft.client.renderer.RenderStateShard$ShaderStateShard"
+import {$RenderStateShard$LineStateShard} from "net.minecraft.client.renderer.RenderStateShard$LineStateShard"
 import {$RenderStateShard$TextureStateShard} from "net.minecraft.client.renderer.RenderStateShard$TextureStateShard"
-import {$RenderStateShard$TransparencyStateShard} from "net.minecraft.client.renderer.RenderStateShard$TransparencyStateShard"
+import {$RenderStateShard$ShaderStateShard} from "net.minecraft.client.renderer.RenderStateShard$ShaderStateShard"
 import {$RenderStateShard$LightmapStateShard} from "net.minecraft.client.renderer.RenderStateShard$LightmapStateShard"
+import {$RenderStateShard$TransparencyStateShard} from "net.minecraft.client.renderer.RenderStateShard$TransparencyStateShard"
 import {$RenderStateShard$TexturingStateShard} from "net.minecraft.client.renderer.RenderStateShard$TexturingStateShard"
 import {$RenderStateShard$OutputStateShard} from "net.minecraft.client.renderer.RenderStateShard$OutputStateShard"
 import {$RenderStateShard$BooleanStateShard} from "net.minecraft.client.renderer.RenderStateShard$BooleanStateShard"
@@ -1766,10 +1766,10 @@ readonly "rotation": integer
 
 constructor(arg0: (float)[], arg1: integer)
 
-public "getU"(arg0: integer): float
-public "getV"(arg0: integer): float
 public "getReverseIndex"(arg0: integer): integer
 public "setMissingUv"(arg0: (float)[]): void
+public "getU"(arg0: integer): float
+public "getV"(arg0: integer): float
 set "missingUv"(value: (float)[])
 }
 /**
@@ -1785,17 +1785,17 @@ declare module "net.minecraft.client.renderer.texture.SpriteContents" {
 import {$TextureAtlasSprite$$Type} from "net.minecraft.client.renderer.texture.TextureAtlasSprite"
 import {$SpriteContentsExtension$$Interface as $SpriteContentsExtension$0$$Interface} from "net.irisshaders.iris.pbr.texture.SpriteContentsExtension"
 import {$SpriteTransparencyLevel} from "org.embeddedt.embeddium.impl.render.chunk.sprite.SpriteTransparencyLevel"
-import {$AutoCloseable$$Interface} from "java.lang.AutoCloseable"
 import {$IntStream} from "java.util.stream.IntStream"
+import {$AutoCloseable$$Interface} from "java.lang.AutoCloseable"
 import {$SpriteContents$AnimatedTexture} from "net.minecraft.client.renderer.texture.SpriteContents$AnimatedTexture"
 import {$SpriteContentsExtension$$Interface} from "net.irisshaders.iris.texture.SpriteContentsExtension"
-import {$SpriteContentsAccessor$$Interface} from "ca.fxco.moreculling.mixin.accessors.SpriteContentsAccessor"
-import {$SpriteContentsAccessor$$Interface as $SpriteContentsAccessor$1$$Interface} from "net.irisshaders.iris.mixin.texture.SpriteContentsAccessor"
-import {$FrameSize$$Type} from "net.minecraft.client.resources.metadata.animation.FrameSize"
+import {$SpriteContentsAccessor$$Interface as $SpriteContentsAccessor$1$$Interface} from "ca.fxco.moreculling.mixin.accessors.SpriteContentsAccessor"
+import {$SpriteContentsAccessor$$Interface as $SpriteContentsAccessor$0$$Interface} from "net.irisshaders.iris.mixin.texture.SpriteContentsAccessor"
 import {$SpriteContentsExtended$$Interface} from "org.embeddedt.embeddium.impl.render.texture.SpriteContentsExtended"
+import {$FrameSize$$Type} from "net.minecraft.client.resources.metadata.animation.FrameSize"
 import {$Stitcher$Entry$$Interface} from "net.minecraft.client.renderer.texture.Stitcher$Entry"
 import {$SpriteContents$Ticker} from "net.minecraft.client.renderer.texture.SpriteContents$Ticker"
-import {$SpriteContentsAccessor$$Interface as $SpriteContentsAccessor$0$$Interface} from "org.embeddedt.embeddium.impl.mixin.features.textures.animations.upload.SpriteContentsAccessor"
+import {$SpriteContentsAccessor$$Interface} from "org.embeddedt.embeddium.impl.mixin.features.textures.animations.upload.SpriteContentsAccessor"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$PBRSpriteHolder} from "net.irisshaders.iris.pbr.texture.PBRSpriteHolder"
 import {$NativeImage, $NativeImage$$Type} from "com.mojang.blaze3d.platform.NativeImage"
@@ -1805,16 +1805,16 @@ import {$ResourceMetadata, $ResourceMetadata$$Type} from "net.minecraft.server.p
 import {$IPotentiallyInvisibleSpriteContents$$Interface} from "com.railwayteam.railways.mixin_interfaces.IPotentiallyInvisibleSpriteContents"
 import {$SpriteTransparencyLevelHolder$$Interface} from "org.embeddedt.embeddium.impl.render.chunk.sprite.SpriteTransparencyLevelHolder"
 
-export class $SpriteContents implements $Stitcher$Entry$$Interface, $AutoCloseable$$Interface, $IPotentiallyInvisibleSpriteContents$$Interface, $SpriteContentsExtension$$Interface, $SpriteContentsAccessor$1$$Interface, $SpriteContentsExtension$0$$Interface, $SpriteContentsAccessor$$Interface, $SpriteContentsAccessor$0$$Interface, $SpriteTransparencyLevelHolder$$Interface, $SpriteContentsExtended$$Interface, $SpriteContentsInvoker$$Interface {
+export class $SpriteContents implements $Stitcher$Entry$$Interface, $AutoCloseable$$Interface, $IPotentiallyInvisibleSpriteContents$$Interface, $SpriteContentsExtension$$Interface, $SpriteContentsAccessor$0$$Interface, $SpriteContentsExtension$0$$Interface, $SpriteContentsAccessor$1$$Interface, $SpriteContentsAccessor$$Interface, $SpriteTransparencyLevelHolder$$Interface, $SpriteContentsExtended$$Interface, $SpriteContentsInvoker$$Interface {
 readonly "animatedTexture": $SpriteContents$AnimatedTexture
  "byMipLevel": ($NativeImage)[]
  "originalImage": $NativeImage
 
 constructor(arg0: $ResourceLocation$$Type, arg1: $FrameSize$$Type, arg2: $NativeImage$$Type, arg3: $ResourceMetadata$$Type)
 
-public "getOriginalImage"(): $NativeImage
-public "createTicker"(): $SpriteTicker
 public "isTransparent"(arg0: integer, arg1: integer, arg2: integer): boolean
+public "createTicker"(): $SpriteTicker
+public "getOriginalImage"(): $NativeImage
 public "getFrameCount"(): integer
 public "getImages"(): ($NativeImage)[]
 public "name"(): $ResourceLocation
@@ -1829,7 +1829,6 @@ public "getPBRHolder"(): $PBRSpriteHolder
 public "getOrCreatePBRHolder"(): $PBRSpriteHolder
 public "getUniqueFrames"(): $IntStream
 public "increaseMipLevel"(arg0: integer): void
-public "railways$shouldDoInvisibility"(): boolean
 public "railways$uploadFrame"(arg0: boolean): void
 public "railways$isVisible"(): boolean
 public "getCreatedTicker"(): $SpriteContents$Ticker
@@ -1839,6 +1838,7 @@ public "sodium$hasAnimation"(): boolean
 public "sodium$isActive"(): boolean
 public "getAnimatedTexture"(): $SpriteContents$AnimatedTexture
 public "invokeUpload"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: ($NativeImage$$Type)[]): void
+public "railways$shouldDoInvisibility"(): boolean
 public static "getTransparencyLevel"(arg0: $TextureAtlasSprite$$Type): $SpriteTransparencyLevel
 public static "getTransparencyLevel"(arg0: $SpriteContents$$Type): $SpriteTransparencyLevel
 get "frameCount"(): integer
@@ -1881,15 +1881,15 @@ export class $ItemInHandRenderer {
 constructor(arg0: $Minecraft$$Type, arg1: $EntityRenderDispatcher$$Type, arg2: $ItemRenderer$$Type)
 
 public "tick"(): void
+public "renderHandsWithItems"(arg0: float, arg1: $PoseStack$$Type, arg2: $MultiBufferSource$BufferSource$$Type, arg3: $LocalPlayer$$Type, arg4: integer): void
 public "renderItem"(arg0: $LivingEntity$$Type, arg1: $ItemStack$$Type, arg2: $ItemDisplayContext$$Type, arg3: boolean, arg4: $PoseStack$$Type, arg5: $MultiBufferSource$$Type, arg6: integer): void
 public "itemUsed"(arg0: $InteractionHand$$Type): void
-public "renderHandsWithItems"(arg0: float, arg1: $PoseStack$$Type, arg2: $MultiBufferSource$BufferSource$$Type, arg3: $LocalPlayer$$Type, arg4: integer): void
-public "applyItemArmTransform"(arg0: $PoseStack$$Type, arg1: $HumanoidArm$$Type, arg2: float): void
-public "handler$ebn000$moonlight$renderSpecial"(player: $AbstractClientPlayer$$Type, partialTicks: float, pitch: float, hand: $InteractionHand$$Type, swingProgress: float, stack: $ItemStack$$Type, equippedProgress: float, poseStack: $PoseStack$$Type, buffer: $MultiBufferSource$$Type, combinedLight: integer, ci: $CallbackInfo$$Type, arm: $HumanoidArm$$Type): void
-public "applyItemArmAttackTransform"(arg0: $PoseStack$$Type, arg1: $HumanoidArm$$Type, arg2: float): void
 public "calculateMapTilt"(arg0: float): float
 public "renderMapHand"(arg0: $PoseStack$$Type, arg1: $MultiBufferSource$$Type, arg2: integer, arg3: $HumanoidArm$$Type): void
 public "renderPlayerArm"(arg0: $PoseStack$$Type, arg1: $MultiBufferSource$$Type, arg2: integer, arg3: float, arg4: float, arg5: $HumanoidArm$$Type): void
+public "applyItemArmAttackTransform"(arg0: $PoseStack$$Type, arg1: $HumanoidArm$$Type, arg2: float): void
+public "applyItemArmTransform"(arg0: $PoseStack$$Type, arg1: $HumanoidArm$$Type, arg2: float): void
+public "handler$ebn000$moonlight$renderSpecial"(player: $AbstractClientPlayer$$Type, partialTicks: float, pitch: float, hand: $InteractionHand$$Type, swingProgress: float, stack: $ItemStack$$Type, equippedProgress: float, poseStack: $PoseStack$$Type, buffer: $MultiBufferSource$$Type, combinedLight: integer, ci: $CallbackInfo$$Type, arm: $HumanoidArm$$Type): void
 public "handler$ebn000$moonlight$animateItem"(player: $AbstractClientPlayer$$Type, partialTicks: float, pitch: float, hand: $InteractionHand$$Type, swingProgress: float, stack: $ItemStack$$Type, handHeight: float, poseStack: $PoseStack$$Type, buffer: $MultiBufferSource$$Type, combinedLight: integer, ci: $CallbackInfo$$Type): void
 }
 /**
@@ -1956,15 +1956,15 @@ export type $OverlayTexture$$Type = ($OverlayTexture);
 export type $OverlayTexture$$Original = $OverlayTexture;}
 declare module "net.minecraft.client.renderer.entity.player.PlayerRenderer" {
 import {$Vec3} from "net.minecraft.world.phys.Vec3"
-import {$MultiBufferSource$$Type} from "net.minecraft.client.renderer.MultiBufferSource"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$PoseStack$$Type} from "com.mojang.blaze3d.vertex.PoseStack"
+import {$MultiBufferSource$$Type} from "net.minecraft.client.renderer.MultiBufferSource"
 import {$PlayerModel} from "net.minecraft.client.model.PlayerModel"
+import {$PoseStack$$Type} from "com.mojang.blaze3d.vertex.PoseStack"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$EntityRendererProvider$Context$$Type} from "net.minecraft.client.renderer.entity.EntityRendererProvider$Context"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$AbstractClientPlayer, $AbstractClientPlayer$$Type} from "net.minecraft.client.player.AbstractClientPlayer"
 import {$LivingEntityRenderer} from "net.minecraft.client.renderer.entity.LivingEntityRenderer"
+import {$AbstractClientPlayer, $AbstractClientPlayer$$Type} from "net.minecraft.client.player.AbstractClientPlayer"
 
 export class $PlayerRenderer extends $LivingEntityRenderer<($AbstractClientPlayer), ($PlayerModel<($AbstractClientPlayer)>)> {
  "shadowRadius": float
@@ -1976,11 +1976,11 @@ public "renderRightHand"(arg0: $PoseStack$$Type, arg1: $MultiBufferSource$$Type,
 public "renderLeftHand"(arg0: $PoseStack$$Type, arg1: $MultiBufferSource$$Type, arg2: integer, arg3: $AbstractClientPlayer$$Type): void
 public "getTextureLocation"(arg0: $AbstractClientPlayer$$Type): $ResourceLocation
 public "getTextureLocation"(arg0: $Entity$$Type): $ResourceLocation
+public "getRenderOffset"(arg0: $AbstractClientPlayer$$Type, arg1: float): $Vec3
+public "getRenderOffset"(arg0: $Entity$$Type, arg1: float): $Vec3
 public "render"(arg0: $AbstractClientPlayer$$Type, arg1: float, arg2: float, arg3: $PoseStack$$Type, arg4: $MultiBufferSource$$Type, arg5: integer): void
 public "render"(arg0: $LivingEntity$$Type, arg1: float, arg2: float, arg3: $PoseStack$$Type, arg4: $MultiBufferSource$$Type, arg5: integer): void
 public "render"(arg0: $Entity$$Type, arg1: float, arg2: float, arg3: $PoseStack$$Type, arg4: $MultiBufferSource$$Type, arg5: integer): void
-public "getRenderOffset"(arg0: $AbstractClientPlayer$$Type, arg1: float): $Vec3
-public "getRenderOffset"(arg0: $Entity$$Type, arg1: float): $Vec3
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -2009,8 +2009,8 @@ export type $ItemOverrides$BakedOverride$$Type = ($ItemOverrides$BakedOverride);
 export type $ItemOverrides$BakedOverride$$Original = $ItemOverrides$BakedOverride;}
 declare module "net.minecraft.client.renderer.entity.layers.RenderLayer" {
 import {$MultiBufferSource$$Type} from "net.minecraft.client.renderer.MultiBufferSource"
-import {$RenderLayerParent$$Type} from "net.minecraft.client.renderer.entity.RenderLayerParent"
 import {$PoseStack$$Type} from "com.mojang.blaze3d.vertex.PoseStack"
+import {$RenderLayerParent$$Type} from "net.minecraft.client.renderer.entity.RenderLayerParent"
 import {$EntityModel} from "net.minecraft.client.model.EntityModel"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$IUpperPartHelper$$Interface} from "dev.kosmx.playerAnim.impl.IUpperPartHelper"
@@ -2037,22 +2037,28 @@ export type $RenderLayer$$Type<T, M> = ($RenderLayer<(T), (M)>);
 export type $RenderLayer$$Original<T, M> = $RenderLayer<(T), (M)>;}
 declare module "net.minecraft.client.renderer.RenderType$CompositeState$CompositeStateBuilder" {
 import {$RenderType$CompositeState} from "net.minecraft.client.renderer.RenderType$CompositeState"
-import {$RenderStateShard$EmptyTextureStateShard$$Type} from "net.minecraft.client.renderer.RenderStateShard$EmptyTextureStateShard"
 import {$RenderStateShard$LayeringStateShard$$Type} from "net.minecraft.client.renderer.RenderStateShard$LayeringStateShard"
+import {$RenderStateShard$EmptyTextureStateShard$$Type} from "net.minecraft.client.renderer.RenderStateShard$EmptyTextureStateShard"
 import {$RenderStateShard$WriteMaskStateShard$$Type} from "net.minecraft.client.renderer.RenderStateShard$WriteMaskStateShard"
 import {$RenderType$OutlineProperty$$Type} from "net.minecraft.client.renderer.RenderType$OutlineProperty"
 import {$RenderStateShard$DepthTestStateShard$$Type} from "net.minecraft.client.renderer.RenderStateShard$DepthTestStateShard"
 import {$RenderStateShard$ColorLogicStateShard$$Type} from "net.minecraft.client.renderer.RenderStateShard$ColorLogicStateShard"
 import {$RenderStateShard$OverlayStateShard$$Type} from "net.minecraft.client.renderer.RenderStateShard$OverlayStateShard"
-import {$RenderStateShard$LineStateShard$$Type} from "net.minecraft.client.renderer.RenderStateShard$LineStateShard"
 import {$RenderStateShard$CullStateShard$$Type} from "net.minecraft.client.renderer.RenderStateShard$CullStateShard"
+import {$RenderStateShard$LineStateShard$$Type} from "net.minecraft.client.renderer.RenderStateShard$LineStateShard"
 import {$RenderStateShard$ShaderStateShard$$Type} from "net.minecraft.client.renderer.RenderStateShard$ShaderStateShard"
-import {$RenderStateShard$TransparencyStateShard$$Type} from "net.minecraft.client.renderer.RenderStateShard$TransparencyStateShard"
 import {$RenderStateShard$LightmapStateShard$$Type} from "net.minecraft.client.renderer.RenderStateShard$LightmapStateShard"
+import {$RenderStateShard$TransparencyStateShard$$Type} from "net.minecraft.client.renderer.RenderStateShard$TransparencyStateShard"
 import {$RenderStateShard$TexturingStateShard$$Type} from "net.minecraft.client.renderer.RenderStateShard$TexturingStateShard"
 import {$RenderStateShard$OutputStateShard$$Type} from "net.minecraft.client.renderer.RenderStateShard$OutputStateShard"
 
 export class $RenderType$CompositeState$CompositeStateBuilder {
+public "setColorLogicState"(arg0: $RenderStateShard$ColorLogicStateShard$$Type): $RenderType$CompositeState$CompositeStateBuilder
+public "setTextureState"(arg0: $RenderStateShard$EmptyTextureStateShard$$Type): $RenderType$CompositeState$CompositeStateBuilder
+public "setTransparencyState"(arg0: $RenderStateShard$TransparencyStateShard$$Type): $RenderType$CompositeState$CompositeStateBuilder
+public "setOutputState"(arg0: $RenderStateShard$OutputStateShard$$Type): $RenderType$CompositeState$CompositeStateBuilder
+public "createCompositeState"(arg0: boolean): $RenderType$CompositeState
+public "createCompositeState"(arg0: $RenderType$OutlineProperty$$Type): $RenderType$CompositeState
 public "setCullState"(arg0: $RenderStateShard$CullStateShard$$Type): $RenderType$CompositeState$CompositeStateBuilder
 public "setOverlayState"(arg0: $RenderStateShard$OverlayStateShard$$Type): $RenderType$CompositeState$CompositeStateBuilder
 public "setLayeringState"(arg0: $RenderStateShard$LayeringStateShard$$Type): $RenderType$CompositeState$CompositeStateBuilder
@@ -2060,14 +2066,12 @@ public "setDepthTestState"(arg0: $RenderStateShard$DepthTestStateShard$$Type): $
 public "setTexturingState"(arg0: $RenderStateShard$TexturingStateShard$$Type): $RenderType$CompositeState$CompositeStateBuilder
 public "setWriteMaskState"(arg0: $RenderStateShard$WriteMaskStateShard$$Type): $RenderType$CompositeState$CompositeStateBuilder
 public "setLineState"(arg0: $RenderStateShard$LineStateShard$$Type): $RenderType$CompositeState$CompositeStateBuilder
-public "setColorLogicState"(arg0: $RenderStateShard$ColorLogicStateShard$$Type): $RenderType$CompositeState$CompositeStateBuilder
 public "setLightmapState"(arg0: $RenderStateShard$LightmapStateShard$$Type): $RenderType$CompositeState$CompositeStateBuilder
 public "setShaderState"(arg0: $RenderStateShard$ShaderStateShard$$Type): $RenderType$CompositeState$CompositeStateBuilder
-public "setTextureState"(arg0: $RenderStateShard$EmptyTextureStateShard$$Type): $RenderType$CompositeState$CompositeStateBuilder
-public "setTransparencyState"(arg0: $RenderStateShard$TransparencyStateShard$$Type): $RenderType$CompositeState$CompositeStateBuilder
-public "setOutputState"(arg0: $RenderStateShard$OutputStateShard$$Type): $RenderType$CompositeState$CompositeStateBuilder
-public "createCompositeState"(arg0: boolean): $RenderType$CompositeState
-public "createCompositeState"(arg0: $RenderType$OutlineProperty$$Type): $RenderType$CompositeState
+set "colorLogicState"(value: $RenderStateShard$ColorLogicStateShard$$Type)
+set "textureState"(value: $RenderStateShard$EmptyTextureStateShard$$Type)
+set "transparencyState"(value: $RenderStateShard$TransparencyStateShard$$Type)
+set "outputState"(value: $RenderStateShard$OutputStateShard$$Type)
 set "cullState"(value: $RenderStateShard$CullStateShard$$Type)
 set "overlayState"(value: $RenderStateShard$OverlayStateShard$$Type)
 set "layeringState"(value: $RenderStateShard$LayeringStateShard$$Type)
@@ -2075,12 +2079,8 @@ set "depthTestState"(value: $RenderStateShard$DepthTestStateShard$$Type)
 set "texturingState"(value: $RenderStateShard$TexturingStateShard$$Type)
 set "writeMaskState"(value: $RenderStateShard$WriteMaskStateShard$$Type)
 set "lineState"(value: $RenderStateShard$LineStateShard$$Type)
-set "colorLogicState"(value: $RenderStateShard$ColorLogicStateShard$$Type)
 set "lightmapState"(value: $RenderStateShard$LightmapStateShard$$Type)
 set "shaderState"(value: $RenderStateShard$ShaderStateShard$$Type)
-set "textureState"(value: $RenderStateShard$EmptyTextureStateShard$$Type)
-set "transparencyState"(value: $RenderStateShard$TransparencyStateShard$$Type)
-set "outputState"(value: $RenderStateShard$OutputStateShard$$Type)
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -2096,28 +2096,28 @@ import {$Vec3} from "net.minecraft.world.phys.Vec3"
 import {$MultiBufferSource$$Type} from "net.minecraft.client.renderer.MultiBufferSource"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$PoseStack$$Type} from "com.mojang.blaze3d.vertex.PoseStack"
-import {$Font} from "net.minecraft.client.gui.Font"
 import {$Frustum$$Type} from "net.minecraft.client.renderer.culling.Frustum"
+import {$Font} from "net.minecraft.client.gui.Font"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$CallbackInfoReturnable$$Type} from "org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable"
 import {$AABB} from "net.minecraft.world.phys.AABB"
+import {$CallbackInfoReturnable$$Type} from "org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable"
 import {$EntityRendererInter$$Interface} from "dev.tr7zw.entityculling.access.EntityRendererInter"
 
 export class $EntityRenderer<T extends $Entity> implements $EntityRendererInter$$Interface {
  "shadowRadius": float
 static readonly "LEASH_RENDER_STEPS": integer
 
-public "handler$ejk000$irons_spellbooks$renderRayOverride"(arg0: $Entity$$Type, arg1: $Frustum$$Type, arg2: double, arg3: double, arg4: double, arg5: $CallbackInfoReturnable$$Type): void
 public "entityCullingIgnoresCulling"(entity: $Entity$$Type): boolean
 public "entityCullingGetCullingBox"(entity: $Entity$$Type): $AABB
+public "handler$ejk000$irons_spellbooks$renderRayOverride"(arg0: $Entity$$Type, arg1: $Frustum$$Type, arg2: double, arg3: double, arg4: double, arg5: $CallbackInfoReturnable$$Type): void
 public "getTextureLocation"(arg0: T): $ResourceLocation
-public "render"(arg0: T, arg1: float, arg2: float, arg3: $PoseStack$$Type, arg4: $MultiBufferSource$$Type, arg5: integer): void
-public "getFont"(): $Font
 public "shadowShouldShowName"(entity: $Entity$$Type): boolean
 public "getRenderOffset"(arg0: T, arg1: float): $Vec3
 public "shadowRenderNameTag"(entity: $Entity$$Type, component: $Component$$Type, poseStack: $PoseStack$$Type, multiBufferSource: $MultiBufferSource$$Type, light: integer, delta: float): void
+public "render"(arg0: T, arg1: float, arg2: float, arg3: $PoseStack$$Type, arg4: $MultiBufferSource$$Type, arg5: integer): void
 public "getPackedLightCoords"(arg0: T, arg1: float): integer
+public "getFont"(): $Font
 public "shouldRender"(arg0: T, arg1: $Frustum$$Type, arg2: double, arg3: double, arg4: double): boolean
 get "font"(): $Font
 }
@@ -2260,11 +2260,11 @@ import {$RenderStateShard$DepthTestStateShard} from "net.minecraft.client.render
 import {$RenderStateShard$ColorLogicStateShard} from "net.minecraft.client.renderer.RenderStateShard$ColorLogicStateShard"
 import {$RenderStateShard$OverlayStateShard} from "net.minecraft.client.renderer.RenderStateShard$OverlayStateShard"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
-import {$RenderStateShard$LineStateShard} from "net.minecraft.client.renderer.RenderStateShard$LineStateShard"
 import {$RenderStateShard$CullStateShard} from "net.minecraft.client.renderer.RenderStateShard$CullStateShard"
+import {$RenderStateShard$LineStateShard} from "net.minecraft.client.renderer.RenderStateShard$LineStateShard"
 import {$RenderStateShard$ShaderStateShard} from "net.minecraft.client.renderer.RenderStateShard$ShaderStateShard"
-import {$RenderStateShard$TransparencyStateShard} from "net.minecraft.client.renderer.RenderStateShard$TransparencyStateShard"
 import {$RenderStateShard$LightmapStateShard} from "net.minecraft.client.renderer.RenderStateShard$LightmapStateShard"
+import {$RenderStateShard$TransparencyStateShard} from "net.minecraft.client.renderer.RenderStateShard$TransparencyStateShard"
 import {$RenderStateShard$TexturingStateShard} from "net.minecraft.client.renderer.RenderStateShard$TexturingStateShard"
 import {$RenderStateShard$OutputStateShard} from "net.minecraft.client.renderer.RenderStateShard$OutputStateShard"
 
@@ -2417,12 +2417,12 @@ import {$RenderStateShard$DepthTestStateShard} from "net.minecraft.client.render
 import {$RenderStateShard$ColorLogicStateShard} from "net.minecraft.client.renderer.RenderStateShard$ColorLogicStateShard"
 import {$RenderStateShard$OverlayStateShard} from "net.minecraft.client.renderer.RenderStateShard$OverlayStateShard"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$RenderStateShard$LineStateShard} from "net.minecraft.client.renderer.RenderStateShard$LineStateShard"
 import {$RenderStateShard$CullStateShard} from "net.minecraft.client.renderer.RenderStateShard$CullStateShard"
-import {$RenderStateShard$ShaderStateShard} from "net.minecraft.client.renderer.RenderStateShard$ShaderStateShard"
+import {$RenderStateShard$LineStateShard} from "net.minecraft.client.renderer.RenderStateShard$LineStateShard"
 import {$RenderStateShard$TextureStateShard} from "net.minecraft.client.renderer.RenderStateShard$TextureStateShard"
-import {$RenderStateShard$TransparencyStateShard} from "net.minecraft.client.renderer.RenderStateShard$TransparencyStateShard"
+import {$RenderStateShard$ShaderStateShard} from "net.minecraft.client.renderer.RenderStateShard$ShaderStateShard"
 import {$RenderStateShard$LightmapStateShard} from "net.minecraft.client.renderer.RenderStateShard$LightmapStateShard"
+import {$RenderStateShard$TransparencyStateShard} from "net.minecraft.client.renderer.RenderStateShard$TransparencyStateShard"
 import {$RenderStateShard} from "net.minecraft.client.renderer.RenderStateShard"
 import {$RenderStateShard$TexturingStateShard} from "net.minecraft.client.renderer.RenderStateShard$TexturingStateShard"
 import {$RenderStateShard$OutputStateShard} from "net.minecraft.client.renderer.RenderStateShard$OutputStateShard"
@@ -2552,8 +2552,8 @@ import {$NativeImage, $NativeImage$$Type} from "com.mojang.blaze3d.platform.Nati
 import {$Path$$Type} from "java.nio.file.Path"
 import {$Dumpable$$Interface} from "net.minecraft.client.renderer.texture.Dumpable"
 import {$TextureAccess$$Interface} from "journeymap.client.texture.TextureAccess"
-import {$AbstractTexture} from "net.minecraft.client.renderer.texture.AbstractTexture"
 import {$ResourceManager$$Type} from "net.minecraft.server.packs.resources.ResourceManager"
+import {$AbstractTexture} from "net.minecraft.client.renderer.texture.AbstractTexture"
 
 export class $DynamicTexture extends $AbstractTexture implements $Dumpable$$Interface, $IMixinDynamicTexture$$Interface, $TextureAccess$$Interface {
 static readonly "NOT_ASSIGNED": integer
@@ -2567,8 +2567,8 @@ public "load"(arg0: $ResourceManager$$Type): void
 public "close"(): void
 public "dumpContents"(pResourceLocation: $ResourceLocation$$Type, pPath: $Path$$Type): void
 public "upload"(): void
-public "wrapOperation$ebm000$moonlight$forceMipMap"(instance: $NativeImage$$Type, a: integer, b: integer, c: integer, autoClose: boolean, op: $Operation$$Type): void
 public "wrapOperation$ebm000$moonlight$forceMipMap"(a: integer, b: integer, c: integer, op: $Operation$$Type): void
+public "wrapOperation$ebm000$moonlight$forceMipMap"(instance: $NativeImage$$Type, a: integer, b: integer, c: integer, autoClose: boolean, op: $Operation$$Type): void
 public "journeymap$getWidth"(): integer
 public "journeymap$hasImage"(): boolean
 public "journeymap$getHeight"(): integer
@@ -2599,8 +2599,8 @@ import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$MultiBufferSource$$Type} from "net.minecraft.client.renderer.MultiBufferSource"
 import {$GameEvent$$Type} from "net.minecraft.world.level.gameevent.GameEvent"
 import {$PoseStack$$Type} from "com.mojang.blaze3d.vertex.PoseStack"
-import {$ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
 import {$Minecraft$$Type} from "net.minecraft.client.Minecraft"
+import {$ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
 
 export class $GameEventListenerRenderer implements $DebugRenderer$SimpleDebugRenderer$$Interface {
 constructor(arg0: $Minecraft$$Type)
@@ -2659,20 +2659,20 @@ import {$ProfilerFiller$$Type} from "net.minecraft.util.profiling.ProfilerFiller
 import {$BlockColors$$Type} from "net.minecraft.client.color.block.BlockColors"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
 import {$MultiBufferSource$$Type} from "net.minecraft.client.renderer.MultiBufferSource"
-import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
 import {$ResourceManagerReloadListener$$Interface} from "net.minecraft.server.packs.resources.ResourceManagerReloadListener"
+import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
 import {$CompletableFuture} from "java.util.concurrent.CompletableFuture"
 import {$LiquidBlockRenderer} from "net.minecraft.client.renderer.block.LiquidBlockRenderer"
 import {$Executor$$Type} from "java.util.concurrent.Executor"
-import {$ModelBlockRenderer} from "net.minecraft.client.renderer.block.ModelBlockRenderer"
 import {$ModelData$$Type} from "net.neoforged.neoforge.client.model.data.ModelData"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$ModelBlockRenderer} from "net.minecraft.client.renderer.block.ModelBlockRenderer"
 import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$BlockModelShaper, $BlockModelShaper$$Type} from "net.minecraft.client.renderer.block.BlockModelShaper"
 import {$RenderType$$Type} from "net.minecraft.client.renderer.RenderType"
 import {$BlockEntityWithoutLevelRenderer$$Type} from "net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer"
-import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$ResourceManager$$Type} from "net.minecraft.server.packs.resources.ResourceManager"
+import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $BlockRenderDispatcher implements $ResourceManagerReloadListener$$Interface {
 constructor(arg0: $BlockModelShaper$$Type, arg1: $BlockEntityWithoutLevelRenderer$$Type, arg2: $BlockColors$$Type)
@@ -2716,10 +2716,10 @@ export type $BlockRenderDispatcher$$Type = ($BlockRenderDispatcher);
 export type $BlockRenderDispatcher$$Original = $BlockRenderDispatcher;}
 declare module "net.minecraft.client.renderer.entity.ItemRenderer" {
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$PoseStack$$Type} from "com.mojang.blaze3d.vertex.PoseStack"
 import {$List$$Type} from "java.util.List"
 import {$ModelResourceLocation} from "net.minecraft.client.resources.model.ModelResourceLocation"
 import {$BakedModel, $BakedModel$$Type} from "net.minecraft.client.resources.model.BakedModel"
+import {$PoseStack$$Type} from "com.mojang.blaze3d.vertex.PoseStack"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Camera$$Type} from "net.minecraft.client.Camera"
@@ -2733,11 +2733,11 @@ import {$ItemFrame$$Type} from "net.minecraft.world.entity.decoration.ItemFrame"
 import {$Minecraft$$Type} from "net.minecraft.client.Minecraft"
 import {$BlockEntityWithoutLevelRenderer, $BlockEntityWithoutLevelRenderer$$Type} from "net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer"
 import {$ExtendedItemRenderer$$Interface} from "ca.fxco.moreculling.api.renderers.ExtendedItemRenderer"
-import {$ItemRendererAccessor$$Interface} from "net.createmod.ponder.mixin.client.accessor.ItemRendererAccessor"
 import {$ItemDisplayContext$$Type} from "net.minecraft.world.item.ItemDisplayContext"
+import {$ItemRendererAccessor$$Interface} from "net.createmod.ponder.mixin.client.accessor.ItemRendererAccessor"
 import {$VertexConsumer, $VertexConsumer$$Type} from "com.mojang.blaze3d.vertex.VertexConsumer"
-import {$ModelManager$$Type} from "net.minecraft.client.resources.model.ModelManager"
 import {$PreparableReloadListener$PreparationBarrier$$Type} from "net.minecraft.server.packs.resources.PreparableReloadListener$PreparationBarrier"
+import {$ModelManager$$Type} from "net.minecraft.client.resources.model.ModelManager"
 import {$BakedQuad$$Type} from "net.minecraft.client.renderer.block.model.BakedQuad"
 import {$TextureManager, $TextureManager$$Type} from "net.minecraft.client.renderer.texture.TextureManager"
 import {$ItemColors$$Type} from "net.minecraft.client.color.item.ItemColors"
@@ -2764,8 +2764,8 @@ static readonly "TRIDENT_IN_HAND_MODEL": $ModelResourceLocation
 constructor(arg0: $Minecraft$$Type, arg1: $TextureManager$$Type, arg2: $ModelManager$$Type, arg3: $ItemColors$$Type, arg4: $BlockEntityWithoutLevelRenderer$$Type)
 
 public "render"(arg0: $ItemStack$$Type, arg1: $ItemDisplayContext$$Type, arg2: boolean, arg3: $PoseStack$$Type, arg4: $MultiBufferSource$$Type, arg5: integer, arg6: integer, arg7: $BakedModel$$Type): void
-public "getModel"(arg0: $ItemStack$$Type, arg1: $Level$$Type, arg2: $LivingEntity$$Type, arg3: integer): $BakedModel
-public "onResourceManagerReload"(arg0: $ResourceManager$$Type): void
+public "renderStatic"(arg0: $LivingEntity$$Type, arg1: $ItemStack$$Type, arg2: $ItemDisplayContext$$Type, arg3: boolean, arg4: $PoseStack$$Type, arg5: $MultiBufferSource$$Type, arg6: $Level$$Type, arg7: integer, arg8: integer, arg9: integer): void
+public "renderStatic"(arg0: $ItemStack$$Type, arg1: $ItemDisplayContext$$Type, arg2: integer, arg3: integer, arg4: $PoseStack$$Type, arg5: $MultiBufferSource$$Type, arg6: $Level$$Type, arg7: integer): void
 public "getItemModelShaper"(): $ItemModelShaper
 public "renderModelLists"(arg0: $BakedModel$$Type, arg1: $ItemStack$$Type, arg2: integer, arg3: integer, arg4: $PoseStack$$Type, arg5: $VertexConsumer$$Type): void
 public "renderQuadList"(arg0: $PoseStack$$Type, arg1: $VertexConsumer$$Type, arg2: $List$$Type<($BakedQuad$$Type)>, arg3: $ItemStack$$Type, arg4: integer, arg5: integer): void
@@ -2778,9 +2778,9 @@ public "moreculling$renderBakedItemModelWithoutFace"(arg0: $BakedModel$$Type, ar
 public "moreculling$renderBakedItemModelOnly3Faces"(arg0: $BakedModel$$Type, arg1: $ItemStack$$Type, arg2: integer, arg3: integer, arg4: $PoseStack$$Type, arg5: $VertexConsumer$$Type, arg6: $Direction$$Type, arg7: $Direction$$Type, arg8: $Direction$$Type): void
 public "moreculling$renderBakedItemModelForFace"(arg0: $BakedModel$$Type, arg1: $ItemStack$$Type, arg2: integer, arg3: integer, arg4: $PoseStack$$Type, arg5: $VertexConsumer$$Type, arg6: $Direction$$Type): void
 public "moreculling$renderItemFrameItem"(arg0: $ItemStack$$Type, arg1: $PoseStack$$Type, arg2: $MultiBufferSource$$Type, arg3: integer, arg4: $ItemFrame$$Type, arg5: $Camera$$Type): void
-public "renderStatic"(arg0: $ItemStack$$Type, arg1: $ItemDisplayContext$$Type, arg2: integer, arg3: integer, arg4: $PoseStack$$Type, arg5: $MultiBufferSource$$Type, arg6: $Level$$Type, arg7: integer): void
-public "renderStatic"(arg0: $LivingEntity$$Type, arg1: $ItemStack$$Type, arg2: $ItemDisplayContext$$Type, arg3: boolean, arg4: $PoseStack$$Type, arg5: $MultiBufferSource$$Type, arg6: $Level$$Type, arg7: integer, arg8: integer, arg9: integer): void
 public "catnip$getTextureManager"(): $TextureManager
+public "getModel"(arg0: $ItemStack$$Type, arg1: $Level$$Type, arg2: $LivingEntity$$Type, arg3: integer): $BakedModel
+public "onResourceManagerReload"(arg0: $ResourceManager$$Type): void
 public "reload"(arg0: $PreparableReloadListener$PreparationBarrier$$Type, arg1: $ResourceManager$$Type, arg2: $ProfilerFiller$$Type, arg3: $ProfilerFiller$$Type, arg4: $Executor$$Type, arg5: $Executor$$Type): $CompletableFuture<(void)>
 public "getName"(): StringJS
 get "itemModelShaper"(): $ItemModelShaper
@@ -2810,9 +2810,9 @@ constructor(arg0: $ModelManager$$Type)
 
 public "rebuildCache"(): void
 public "register"(arg0: $Item$$Type, arg1: $ModelResourceLocation$$Type): void
-public "getModelManager"(): $ModelManager
-public "getItemModel"(arg0: $ItemStack$$Type): $BakedModel
 public "getItemModel"(arg0: $Item$$Type): $BakedModel
+public "getItemModel"(arg0: $ItemStack$$Type): $BakedModel
+public "getModelManager"(): $ModelManager
 get "modelManager"(): $ModelManager
 }
 /**
@@ -2832,12 +2832,12 @@ import {$RenderStateShard$WriteMaskStateShard} from "net.minecraft.client.render
 import {$RenderStateShard$DepthTestStateShard} from "net.minecraft.client.renderer.RenderStateShard$DepthTestStateShard"
 import {$RenderStateShard$ColorLogicStateShard} from "net.minecraft.client.renderer.RenderStateShard$ColorLogicStateShard"
 import {$RenderStateShard$OverlayStateShard} from "net.minecraft.client.renderer.RenderStateShard$OverlayStateShard"
-import {$RenderStateShard$LineStateShard} from "net.minecraft.client.renderer.RenderStateShard$LineStateShard"
 import {$RenderStateShard$CullStateShard} from "net.minecraft.client.renderer.RenderStateShard$CullStateShard"
-import {$RenderStateShard$ShaderStateShard} from "net.minecraft.client.renderer.RenderStateShard$ShaderStateShard"
+import {$RenderStateShard$LineStateShard} from "net.minecraft.client.renderer.RenderStateShard$LineStateShard"
 import {$RenderStateShard$TextureStateShard} from "net.minecraft.client.renderer.RenderStateShard$TextureStateShard"
-import {$RenderStateShard$TransparencyStateShard} from "net.minecraft.client.renderer.RenderStateShard$TransparencyStateShard"
+import {$RenderStateShard$ShaderStateShard} from "net.minecraft.client.renderer.RenderStateShard$ShaderStateShard"
 import {$RenderStateShard$LightmapStateShard} from "net.minecraft.client.renderer.RenderStateShard$LightmapStateShard"
+import {$RenderStateShard$TransparencyStateShard} from "net.minecraft.client.renderer.RenderStateShard$TransparencyStateShard"
 import {$RenderStateShard} from "net.minecraft.client.renderer.RenderStateShard"
 import {$RenderStateShard$OutputStateShard} from "net.minecraft.client.renderer.RenderStateShard$OutputStateShard"
 
@@ -3002,17 +3002,17 @@ import {$Particle} from "net.minecraft.client.particle.Particle"
 import {$Frustum, $Frustum$$Type} from "net.minecraft.client.renderer.culling.Frustum"
 import {$JukeboxSong$$Type} from "net.minecraft.world.item.JukeboxSong"
 import {$Camera$$Type} from "net.minecraft.client.Camera"
-import {$LevelRendererAccessor$$Interface as $LevelRendererAccessor$2$$Interface} from "com.simibubi.create.foundation.mixin.accessor.LevelRendererAccessor"
+import {$LevelRendererAccessor$$Interface} from "com.simibubi.create.foundation.mixin.accessor.LevelRendererAccessor"
 import {$Holder$$Type} from "net.minecraft.core.Holder"
 import {$ProfilerFiller$$Type} from "net.minecraft.util.profiling.ProfilerFiller"
 import {$SectionRenderDispatcher$RenderSection$$Type} from "net.minecraft.client.renderer.chunk.SectionRenderDispatcher$RenderSection"
 import {$MultiBufferSource$$Type} from "net.minecraft.client.renderer.MultiBufferSource"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$CullingDataCache$$Interface} from "net.irisshaders.iris.shadows.CullingDataCache"
+import {$LevelRendererAccessor$$Interface as $LevelRendererAccessor$2$$Interface} from "net.irisshaders.iris.mixin.LevelRendererAccessor"
 import {$BlockDestructionProgress} from "net.minecraft.server.level.BlockDestructionProgress"
-import {$LevelRendererAccessor$$Interface as $LevelRendererAccessor$0$$Interface} from "net.irisshaders.iris.mixin.LevelRendererAccessor"
-import {$GameRenderer$$Type} from "net.minecraft.client.renderer.GameRenderer"
+import {$CullingDataCache$$Interface} from "net.irisshaders.iris.shadows.CullingDataCache"
 import {$AutoCloseable$$Interface} from "java.lang.AutoCloseable"
+import {$GameRenderer$$Type} from "net.minecraft.client.renderer.GameRenderer"
 import {$WorldRendererExtended$$Interface} from "org.embeddedt.embeddium.impl.world.WorldRendererExtended"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$BlockEntityRenderDispatcher$$Type} from "net.minecraft.client.renderer.blockentity.BlockEntityRenderDispatcher"
@@ -3021,8 +3021,8 @@ import {$WorldRendererAccess$$Interface} from "blusunrize.immersiveengineering.m
 import {$VoxelShape$$Type} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$SectionRenderDispatcher} from "net.minecraft.client.renderer.chunk.SectionRenderDispatcher"
 import {$DeltaTracker$$Type} from "net.minecraft.client.DeltaTracker"
-import {$ViewArea} from "net.minecraft.client.renderer.ViewArea"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
+import {$ViewArea} from "net.minecraft.client.renderer.ViewArea"
 import {$AABB$$Type} from "net.minecraft.world.phys.AABB"
 import {$RenderType$$Type} from "net.minecraft.client.renderer.RenderType"
 import {$ResourceManager$$Type} from "net.minecraft.server.packs.resources.ResourceManager"
@@ -3032,29 +3032,29 @@ import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Runnable$$Type} from "java.lang.Runnable"
 import {$Matrix4f$$Type} from "org.joml.Matrix4f"
 import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
-import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
 import {$ResourceManagerReloadListener$$Interface} from "net.minecraft.server.packs.resources.ResourceManagerReloadListener"
-import {$LevelRendererAccessor$$Interface as $LevelRendererAccessor$1$$Interface} from "ca.fxco.moreculling.mixin.accessors.LevelRendererAccessor"
+import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
 import {$Executor$$Type} from "java.util.concurrent.Executor"
+import {$LevelRendererAccessor$$Interface as $LevelRendererAccessor$0$$Interface} from "ca.fxco.moreculling.mixin.accessors.LevelRendererAccessor"
 import {$Minecraft$$Type} from "net.minecraft.client.Minecraft"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$RenderTarget} from "com.mojang.blaze3d.pipeline.RenderTarget"
 import {$Collection$$Type} from "java.util.Collection"
 import {$LightTexture$$Type} from "net.minecraft.client.renderer.LightTexture"
-import {$EmbeddiumWorldRenderer} from "org.embeddedt.embeddium.impl.render.EmbeddiumWorldRenderer"
 import {$VertexConsumer$$Type} from "com.mojang.blaze3d.vertex.VertexConsumer"
+import {$EmbeddiumWorldRenderer} from "org.embeddedt.embeddium.impl.render.EmbeddiumWorldRenderer"
 import {$ChunkPos$$Type} from "net.minecraft.world.level.ChunkPos"
 import {$PreparableReloadListener$PreparationBarrier$$Type} from "net.minecraft.server.packs.resources.PreparableReloadListener$PreparationBarrier"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$CompletableFuture} from "java.util.concurrent.CompletableFuture"
 import {$EntityRenderDispatcher, $EntityRenderDispatcher$$Type} from "net.minecraft.client.renderer.entity.EntityRenderDispatcher"
 import {$AccessorLevelRenderer$$Interface} from "com.railwayteam.railways.mixin.client.AccessorLevelRenderer"
-import {$LevelRendererAccessor$$Interface} from "dev.engine_room.flywheel.backend.mixin.LevelRendererAccessor"
-import {$Int2ObjectMap} from "it.unimi.dsi.fastutil.ints.Int2ObjectMap"
+import {$LevelRendererAccessor$$Interface as $LevelRendererAccessor$1$$Interface} from "dev.engine_room.flywheel.backend.mixin.LevelRendererAccessor"
 import {$ParticleOptions$$Type} from "net.minecraft.core.particles.ParticleOptions"
+import {$Int2ObjectMap} from "it.unimi.dsi.fastutil.ints.Int2ObjectMap"
 
-export class $LevelRenderer implements $ResourceManagerReloadListener$$Interface, $AutoCloseable$$Interface, $AccessorLevelRenderer$$Interface, $LevelRendererAccessor$0$$Interface, $CullingDataCache$$Interface, $LevelRendererAccessor$1$$Interface, $WorldRendererAccess$$Interface, $LevelRendererAccessor$$Interface, $LevelRendererAccessor$2$$Interface, $WorldRendererExtended$$Interface {
+export class $LevelRenderer implements $ResourceManagerReloadListener$$Interface, $AutoCloseable$$Interface, $AccessorLevelRenderer$$Interface, $LevelRendererAccessor$2$$Interface, $CullingDataCache$$Interface, $LevelRendererAccessor$0$$Interface, $WorldRendererAccess$$Interface, $LevelRendererAccessor$1$$Interface, $LevelRendererAccessor$$Interface, $WorldRendererExtended$$Interface {
  "renderBuffers": $RenderBuffers
  "renderedEntities": integer
  "level": $ClientLevel
@@ -3076,6 +3076,12 @@ public "setLevel"(arg0: $ClientLevel$$Type): void
 public "clear"(): void
 public "close"(): void
 public "resize"(arg0: integer, arg1: integer): void
+public static "renderFace"(arg0: $PoseStack$$Type, arg1: $VertexConsumer$$Type, arg2: $Direction$$Type, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float, arg9: float, arg10: float, arg11: float, arg12: float): void
+public "updateGlobalBlockEntities"(arg0: $Collection$$Type<($BlockEntity$$Type)>, arg1: $Collection$$Type<($BlockEntity$$Type)>): void
+public "railways$getRenderBuffers"(): $RenderBuffers
+public "invokeDoesMobEffectBlockSky"(arg0: $Camera$$Type): boolean
+public "iterateVisibleBlockEntities"(arg0: $Consumer$$Type): void
+public "shouldShowEntityOutlines"(): boolean
 public "getSectionRenderDispatcher"(): $SectionRenderDispatcher
 public "getTotalSections"(): double
 public "getLastViewDistance"(): double
@@ -3086,16 +3092,10 @@ public "handler$zzi000$geckolib$captureRenderedEntities"(arg0: $DeltaTracker$$Ty
 public "renderSky"(arg0: $Matrix4f$$Type, arg1: $Matrix4f$$Type, arg2: float, arg3: $Camera$$Type, arg4: boolean, arg5: $Runnable$$Type): void
 public "isSectionCompiled"(arg0: $BlockPos$$Type): boolean
 public "renderHitOutline"(arg0: $PoseStack$$Type, arg1: $VertexConsumer$$Type, arg2: $Entity$$Type, arg3: double, arg4: double, arg5: double, arg6: $BlockPos$$Type, arg7: $BlockState$$Type): void
-public "saveState"(): void
-public "restoreState"(): void
-public "getEntityRenderDispatcher"(): $EntityRenderDispatcher
-public "needsUpdate"(): void
-public "graphicsChanged"(): void
-public "renderLevel"(arg0: $DeltaTracker$$Type, arg1: boolean, arg2: $Camera$$Type, arg3: $GameRenderer$$Type, arg4: $LightTexture$$Type, arg5: $Matrix4f$$Type, arg6: $Matrix4f$$Type): void
-public "allChanged"(): void
-public "onResourceManagerReload"(arg0: $ResourceManager$$Type): void
+public "handler$ble000$supermartijn642corelib$renderLevel"(deltaTracker: $DeltaTracker$$Type, bl: boolean, camera: $Camera$$Type, gameRenderer: $GameRenderer$$Type, lightTexture: $LightTexture$$Type, matrix4f: $Matrix4f$$Type, matrix4f2: $Matrix4f$$Type, ci: $CallbackInfo$$Type): void
+public "renderClouds"(arg0: $PoseStack$$Type, arg1: $Matrix4f$$Type, arg2: $Matrix4f$$Type, arg3: float, arg4: double, arg5: double, arg6: double): void
+public "handler$bmk000$patchouli$onRender"(arg0: $DeltaTracker$$Type, arg1: boolean, arg2: $Camera$$Type, arg3: $GameRenderer$$Type, arg4: $LightTexture$$Type, arg5: $Matrix4f$$Type, arg6: $Matrix4f$$Type, arg7: $CallbackInfo$$Type): void
 public "sodium$getWorldRenderer"(): $EmbeddiumWorldRenderer
-public "iterateVisibleBlockEntities"(arg0: $Consumer$$Type): void
 public "getSectionStatistics"(): StringJS
 public "callAddParticleInternal"(arg0: $ParticleOptions$$Type, arg1: boolean, arg2: boolean, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double): $Particle
 public "invokeRenderSectionLayer"(arg0: $RenderType$$Type, arg1: double, arg2: double, arg3: double, arg4: $Matrix4f$$Type, arg5: $Matrix4f$$Type): void
@@ -3112,48 +3112,48 @@ public "create$getCullingFrustum"(): $Frustum
 public "create$getCapturedFrustum"(): $Frustum
 public "captureFrustum"(): void
 public "initOutline"(): void
-public "shouldShowEntityOutlines"(): boolean
 public "tickRain"(arg0: $Camera$$Type): void
 public "doEntityOutline"(): void
+public "countRenderedSections"(): integer
+public "hasRenderedAllSections"(): boolean
+public "prepareCullFrustum"(arg0: $Vec3$$Type, arg1: $Matrix4f$$Type, arg2: $Matrix4f$$Type): void
+public "getTicks"(): integer
+public "getFrustum"(): $Frustum
+public "killFrustum"(): void
+public "handler$bfa000$embeddium$renderCloudsFast"(arg0: $PoseStack$$Type, arg1: $Matrix4f$$Type, arg2: $Matrix4f$$Type, arg3: float, arg4: double, arg5: double, arg6: double, arg7: $CallbackInfo$$Type): void
+public static "renderShape"(arg0: $PoseStack$$Type, arg1: $VertexConsumer$$Type, arg2: $VoxelShape$$Type, arg3: double, arg4: double, arg5: double, arg6: float, arg7: float, arg8: float, arg9: float): void
+public static "renderVoxelShape"(arg0: $PoseStack$$Type, arg1: $VertexConsumer$$Type, arg2: $VoxelShape$$Type, arg3: double, arg4: double, arg5: double, arg6: float, arg7: float, arg8: float, arg9: float, arg10: boolean): void
+public static "renderLineBox"(arg0: $VertexConsumer$$Type, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: float, arg8: float, arg9: float, arg10: float): void
+public static "renderLineBox"(arg0: $PoseStack$$Type, arg1: $VertexConsumer$$Type, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: float, arg9: float, arg10: float, arg11: float): void
+public static "renderLineBox"(arg0: $PoseStack$$Type, arg1: $VertexConsumer$$Type, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: float, arg9: float, arg10: float, arg11: float, arg12: float, arg13: float, arg14: float): void
+public static "renderLineBox"(arg0: $PoseStack$$Type, arg1: $VertexConsumer$$Type, arg2: $AABB$$Type, arg3: float, arg4: float, arg5: float, arg6: float): void
+public static "addChainedFilledBoxVertices"(arg0: $PoseStack$$Type, arg1: $VertexConsumer$$Type, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float, arg9: float, arg10: float, arg11: float): void
+public static "addChainedFilledBoxVertices"(arg0: $PoseStack$$Type, arg1: $VertexConsumer$$Type, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: float, arg9: float, arg10: float, arg11: float): void
 public "setSectionDirty"(arg0: integer, arg1: integer, arg2: integer): void
 public "requestOutlineEffect"(): void
 public "playJukeboxSong"(arg0: $Holder$$Type<($JukeboxSong)>, arg1: $BlockPos$$Type): void
 public "notifyNearbyEntities"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: boolean): void
 public "stopJukeboxSongAndNotifyNearby"(arg0: $BlockPos$$Type): void
 public "addParticleInternal"(arg0: $ParticleOptions$$Type, arg1: boolean, arg2: boolean, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double): $Particle
-public "updateGlobalBlockEntities"(arg0: $Collection$$Type<($BlockEntity$$Type)>, arg1: $Collection$$Type<($BlockEntity$$Type)>): void
-public "railways$getRenderBuffers"(): $RenderBuffers
-public "invokeDoesMobEffectBlockSky"(arg0: $Camera$$Type): boolean
-public "countRenderedSections"(): integer
-public "hasRenderedAllSections"(): boolean
-public "prepareCullFrustum"(arg0: $Vec3$$Type, arg1: $Matrix4f$$Type, arg2: $Matrix4f$$Type): void
-public "getTicks"(): integer
-public "getFrustum"(): $Frustum
 public "getItemEntityTarget"(): $RenderTarget
 public "getCloudsTarget"(): $RenderTarget
 public "getWeatherTarget"(): $RenderTarget
 public "getParticlesTarget"(): $RenderTarget
 public "getTranslucentTarget"(): $RenderTarget
-public "handler$ble000$supermartijn642corelib$renderLevel"(deltaTracker: $DeltaTracker$$Type, bl: boolean, camera: $Camera$$Type, gameRenderer: $GameRenderer$$Type, lightTexture: $LightTexture$$Type, matrix4f: $Matrix4f$$Type, matrix4f2: $Matrix4f$$Type, ci: $CallbackInfo$$Type): void
-public "renderClouds"(arg0: $PoseStack$$Type, arg1: $Matrix4f$$Type, arg2: $Matrix4f$$Type, arg3: float, arg4: double, arg5: double, arg6: double): void
-public "handler$bmk000$patchouli$onRender"(arg0: $DeltaTracker$$Type, arg1: boolean, arg2: $Camera$$Type, arg3: $GameRenderer$$Type, arg4: $LightTexture$$Type, arg5: $Matrix4f$$Type, arg6: $Matrix4f$$Type, arg7: $CallbackInfo$$Type): void
-public "killFrustum"(): void
-public "handler$bfa000$embeddium$renderCloudsFast"(arg0: $PoseStack$$Type, arg1: $Matrix4f$$Type, arg2: $Matrix4f$$Type, arg3: float, arg4: double, arg5: double, arg6: double, arg7: $CallbackInfo$$Type): void
-public static "renderShape"(arg0: $PoseStack$$Type, arg1: $VertexConsumer$$Type, arg2: $VoxelShape$$Type, arg3: double, arg4: double, arg5: double, arg6: float, arg7: float, arg8: float, arg9: float): void
-public static "renderVoxelShape"(arg0: $PoseStack$$Type, arg1: $VertexConsumer$$Type, arg2: $VoxelShape$$Type, arg3: double, arg4: double, arg5: double, arg6: float, arg7: float, arg8: float, arg9: float, arg10: boolean): void
-public static "renderLineBox"(arg0: $PoseStack$$Type, arg1: $VertexConsumer$$Type, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: float, arg9: float, arg10: float, arg11: float, arg12: float, arg13: float, arg14: float): void
-public static "renderLineBox"(arg0: $PoseStack$$Type, arg1: $VertexConsumer$$Type, arg2: $AABB$$Type, arg3: float, arg4: float, arg5: float, arg6: float): void
-public static "renderLineBox"(arg0: $PoseStack$$Type, arg1: $VertexConsumer$$Type, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: float, arg9: float, arg10: float, arg11: float): void
-public static "renderLineBox"(arg0: $VertexConsumer$$Type, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: float, arg8: float, arg9: float, arg10: float): void
-public static "addChainedFilledBoxVertices"(arg0: $PoseStack$$Type, arg1: $VertexConsumer$$Type, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: float, arg9: float, arg10: float, arg11: float): void
-public static "addChainedFilledBoxVertices"(arg0: $PoseStack$$Type, arg1: $VertexConsumer$$Type, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float, arg9: float, arg10: float, arg11: float): void
-public static "renderFace"(arg0: $PoseStack$$Type, arg1: $VertexConsumer$$Type, arg2: $Direction$$Type, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float, arg9: float, arg10: float, arg11: float, arg12: float): void
-public "addParticle"(arg0: $ParticleOptions$$Type, arg1: boolean, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double): void
+public "saveState"(): void
+public "restoreState"(): void
+public "getEntityRenderDispatcher"(): $EntityRenderDispatcher
+public "needsUpdate"(): void
+public "graphicsChanged"(): void
+public "renderLevel"(arg0: $DeltaTracker$$Type, arg1: boolean, arg2: $Camera$$Type, arg3: $GameRenderer$$Type, arg4: $LightTexture$$Type, arg5: $Matrix4f$$Type, arg6: $Matrix4f$$Type): void
+public "allChanged"(): void
+public "onResourceManagerReload"(arg0: $ResourceManager$$Type): void
 public "addParticle"(arg0: $ParticleOptions$$Type, arg1: boolean, arg2: boolean, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double): void
+public "addParticle"(arg0: $ParticleOptions$$Type, arg1: boolean, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double): void
 public "levelEvent"(arg0: integer, arg1: $BlockPos$$Type, arg2: integer): void
+public "setBlocksDirty"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: integer, arg5: integer): void
 public "globalLevelEvent"(arg0: integer, arg1: $BlockPos$$Type, arg2: integer): void
 public "destroyBlockProgress"(arg0: integer, arg1: $BlockPos$$Type, arg2: integer): void
-public "setBlocksDirty"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: integer, arg5: integer): void
 public "onChunkLoaded"(arg0: $ChunkPos$$Type): void
 public "blockChanged"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $BlockState$$Type, arg4: integer): void
 public "setBlockDirty"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type, arg2: $BlockState$$Type): void
@@ -3163,7 +3163,6 @@ public "getName"(): StringJS
 get "sectionRenderDispatcher"(): $SectionRenderDispatcher
 get "totalSections"(): double
 get "entityStatistics"(): StringJS
-get "entityRenderDispatcher"(): $EntityRenderDispatcher
 get "sectionStatistics"(): StringJS
 get "destructionProgress"(): $Long2ObjectMap
 get "ticks"(): integer
@@ -3173,6 +3172,7 @@ get "cloudsTarget"(): $RenderTarget
 get "weatherTarget"(): $RenderTarget
 get "particlesTarget"(): $RenderTarget
 get "translucentTarget"(): $RenderTarget
+get "entityRenderDispatcher"(): $EntityRenderDispatcher
 get "name"(): StringJS
 }
 /**
@@ -3242,12 +3242,12 @@ import {$Runnable, $Runnable$$Type} from "java.lang.Runnable"
 import {$RenderStateShard$WriteMaskStateShard} from "net.minecraft.client.renderer.RenderStateShard$WriteMaskStateShard"
 import {$RenderStateShard$DepthTestStateShard} from "net.minecraft.client.renderer.RenderStateShard$DepthTestStateShard"
 import {$RenderStateShard$OverlayStateShard} from "net.minecraft.client.renderer.RenderStateShard$OverlayStateShard"
-import {$RenderStateShard$LineStateShard} from "net.minecraft.client.renderer.RenderStateShard$LineStateShard"
 import {$RenderStateShard$CullStateShard} from "net.minecraft.client.renderer.RenderStateShard$CullStateShard"
-import {$RenderStateShard$ShaderStateShard} from "net.minecraft.client.renderer.RenderStateShard$ShaderStateShard"
+import {$RenderStateShard$LineStateShard} from "net.minecraft.client.renderer.RenderStateShard$LineStateShard"
 import {$RenderStateShard$TextureStateShard} from "net.minecraft.client.renderer.RenderStateShard$TextureStateShard"
-import {$RenderStateShard$TransparencyStateShard} from "net.minecraft.client.renderer.RenderStateShard$TransparencyStateShard"
+import {$RenderStateShard$ShaderStateShard} from "net.minecraft.client.renderer.RenderStateShard$ShaderStateShard"
 import {$RenderStateShard$LightmapStateShard} from "net.minecraft.client.renderer.RenderStateShard$LightmapStateShard"
+import {$RenderStateShard$TransparencyStateShard} from "net.minecraft.client.renderer.RenderStateShard$TransparencyStateShard"
 import {$RenderStateShard} from "net.minecraft.client.renderer.RenderStateShard"
 import {$RenderStateShard$TexturingStateShard} from "net.minecraft.client.renderer.RenderStateShard$TexturingStateShard"
 import {$RenderStateShard$OutputStateShard} from "net.minecraft.client.renderer.RenderStateShard$OutputStateShard"
@@ -3456,15 +3456,15 @@ import {$Font$$Type} from "net.minecraft.client.gui.Font"
 import {$HitResult, $HitResult$$Type} from "net.minecraft.world.phys.HitResult"
 import {$Camera, $Camera$$Type} from "net.minecraft.client.Camera"
 import {$PreparableReloadListener$PreparationBarrier$$Type} from "net.minecraft.server.packs.resources.PreparableReloadListener$PreparationBarrier"
-import {$ProfilerFiller$$Type} from "net.minecraft.util.profiling.ProfilerFiller"
 import {$ItemRenderer$$Type} from "net.minecraft.client.renderer.entity.ItemRenderer"
+import {$ProfilerFiller$$Type} from "net.minecraft.util.profiling.ProfilerFiller"
 import {$MultiBufferSource$$Type} from "net.minecraft.client.renderer.MultiBufferSource"
 import {$ResourceManagerReloadListener$$Interface} from "net.minecraft.server.packs.resources.ResourceManagerReloadListener"
 import {$CompletableFuture} from "java.util.concurrent.CompletableFuture"
 import {$BlockRenderDispatcher$$Type} from "net.minecraft.client.renderer.block.BlockRenderDispatcher"
+import {$Executor$$Type} from "java.util.concurrent.Executor"
 import {$EntityRenderDispatcher$$Type} from "net.minecraft.client.renderer.entity.EntityRenderDispatcher"
 import {$Supplier$$Type} from "java.util.function.Supplier"
-import {$Executor$$Type} from "java.util.concurrent.Executor"
 import {$BlockEntityRenderer} from "net.minecraft.client.renderer.blockentity.BlockEntityRenderer"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$ResourceManager$$Type} from "net.minecraft.server.packs.resources.ResourceManager"
@@ -3481,9 +3481,9 @@ public "handler$ekb000$entityculling$render"(blockEntity: $BlockEntity$$Type, f:
 public "setLevel"(arg0: $Level$$Type): void
 public "prepare"(arg0: $Level$$Type, arg1: $Camera$$Type, arg2: $HitResult$$Type): void
 public "render"<E extends $BlockEntity>(arg0: E, arg1: float, arg2: $PoseStack$$Type, arg3: $MultiBufferSource$$Type): void
+public "getRenderer"(blockEntity: $BlockEntity$$Type): $BlockEntityRenderer
 public "renderItem"<E extends $BlockEntity>(arg0: E, arg1: $PoseStack$$Type, arg2: $MultiBufferSource$$Type, arg3: integer, arg4: integer): boolean
 public "onResourceManagerReload"(arg0: $ResourceManager$$Type): void
-public "getRenderer"(blockEntity: $BlockEntity$$Type): $BlockEntityRenderer
 public "reload"(arg0: $PreparableReloadListener$PreparationBarrier$$Type, arg1: $ResourceManager$$Type, arg2: $ProfilerFiller$$Type, arg3: $ProfilerFiller$$Type, arg4: $Executor$$Type, arg5: $Executor$$Type): $CompletableFuture<(void)>
 public "getName"(): StringJS
 get "name"(): StringJS
@@ -3560,10 +3560,10 @@ import {$List} from "java.util.List"
 import {$PoseStack$$Type} from "com.mojang.blaze3d.vertex.PoseStack"
 import {$LivingEntityRendererETFTextureGetter$$Interface} from "journeymap.client.render.draw.LivingEntityRendererETFTextureGetter"
 import {$EntityRendererProvider$Context$$Type} from "net.minecraft.client.renderer.entity.EntityRendererProvider$Context"
-import {$LivingEntityRendererAccessor$$Interface as $LivingEntityRendererAccessor$1$$Interface} from "net.sweenus.simplyswords.mixin.client.LivingEntityRendererAccessor"
-import {$LivingEntityRendererAccessor$$Interface as $LivingEntityRendererAccessor$0$$Interface} from "artifacts.mixin.accessors.client.LivingEntityRendererAccessor"
-import {$MultiBufferSource$$Type} from "net.minecraft.client.renderer.MultiBufferSource"
+import {$LivingEntityRendererAccessor$$Interface as $LivingEntityRendererAccessor$1$$Interface} from "artifacts.mixin.accessors.client.LivingEntityRendererAccessor"
+import {$LivingEntityRendererAccessor$$Interface as $LivingEntityRendererAccessor$0$$Interface} from "net.sweenus.simplyswords.mixin.client.LivingEntityRendererAccessor"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
+import {$MultiBufferSource$$Type} from "net.minecraft.client.renderer.MultiBufferSource"
 import {$RenderLayerParent$$Interface} from "net.minecraft.client.renderer.entity.RenderLayerParent"
 import {$EntityModel, $EntityModel$$Type} from "net.minecraft.client.model.EntityModel"
 import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
@@ -3571,7 +3571,7 @@ import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$LivingEntityRendererAccessor$$Interface} from "io.wispforest.accessories.mixin.client.LivingEntityRendererAccessor"
 import {$AccessorLivingEntityRenderer$$Interface} from "com.railwayteam.railways.mixin.client.AccessorLivingEntityRenderer"
 
-export class $LivingEntityRenderer<T extends $LivingEntity, M extends $EntityModel<(object)>> extends $EntityRenderer<(T)> implements $RenderLayerParent$$Interface<(T), (M)>, $AccessorLivingEntityRenderer$$Interface, $LivingEntityRendererAccessor$$Interface, $LivingEntityRendererETFTextureGetter$$Interface, $LivingEntityRendererAccessor$0$$Interface, $LivingEntityRendererAccessor$1$$Interface {
+export class $LivingEntityRenderer<T extends $LivingEntity, M extends $EntityModel<(object)>> extends $EntityRenderer<(T)> implements $RenderLayerParent$$Interface<(T), (M)>, $AccessorLivingEntityRenderer$$Interface, $LivingEntityRendererAccessor$$Interface, $LivingEntityRendererETFTextureGetter$$Interface, $LivingEntityRendererAccessor$1$$Interface, $LivingEntityRendererAccessor$0$$Interface {
  "shadowRadius": float
 static readonly "LEASH_RENDER_STEPS": integer
 
@@ -3584,8 +3584,8 @@ public "getETFTextureLocation"(arg0: $LivingEntity$$Type): $ResourceLocation
 public "callSetupRotations"(arg0: $LivingEntity$$Type, arg1: $PoseStack$$Type, arg2: float, arg3: float, arg4: float, arg5: float): void
 public "invokeAddFeature"(arg0: $RenderLayer$$Type): boolean
 public static "getOverlayCoords"(arg0: $LivingEntity$$Type, arg1: float): integer
-public "render"(arg0: $Entity$$Type, arg1: float, arg2: float, arg3: $PoseStack$$Type, arg4: $MultiBufferSource$$Type, arg5: integer): void
 public "render"(arg0: T, arg1: float, arg2: float, arg3: $PoseStack$$Type, arg4: $MultiBufferSource$$Type, arg5: integer): void
+public "render"(arg0: $Entity$$Type, arg1: float, arg2: float, arg3: $PoseStack$$Type, arg4: $MultiBufferSource$$Type, arg5: integer): void
 public "getModel"(): M
 public "getLayers"(): $List
 public "addLayer"(arg0: $RenderLayer$$Type<(T), (M)>): boolean
@@ -3619,8 +3619,8 @@ export class $MultiBufferSource$BufferSource implements $MultiBufferSource$$Inte
 
 constructor(arg0: $ByteBufferBuilder$$Type, arg1: $SequencedMap$$Type<($RenderType$$Type), ($ByteBufferBuilder$$Type)>)
 
-public "getFallbackBuffer"(): $ByteBufferBuilder
 public "getFixedBuffers"(): $SequencedMap
+public "getFallbackBuffer"(): $ByteBufferBuilder
 public "getBuffer"(arg0: $RenderType$$Type): $VertexConsumer
 public "endLastBatch"(): void
 public "endBatch"(arg0: $RenderType$$Type, arg1: $BufferBuilder$$Type): void
@@ -3663,8 +3663,8 @@ export class $BlockEntityWithoutLevelRenderer implements $ResourceManagerReloadL
 constructor(arg0: $BlockEntityRenderDispatcher$$Type, arg1: $EntityModelSet$$Type)
 
 public "handler$zzg000$geckolib$renderGeckolibItem"(arg0: $ItemStack$$Type, arg1: $ItemDisplayContext$$Type, arg2: $PoseStack$$Type, arg3: $MultiBufferSource$$Type, arg4: integer, arg5: integer, arg6: $CallbackInfo$$Type): void
-public "onResourceManagerReload"(arg0: $ResourceManager$$Type): void
 public "renderByItem"(arg0: $ItemStack$$Type, arg1: $ItemDisplayContext$$Type, arg2: $PoseStack$$Type, arg3: $MultiBufferSource$$Type, arg4: integer, arg5: integer): void
+public "onResourceManagerReload"(arg0: $ResourceManager$$Type): void
 public "reload"(arg0: $PreparableReloadListener$PreparationBarrier$$Type, arg1: $ResourceManager$$Type, arg2: $ProfilerFiller$$Type, arg3: $ProfilerFiller$$Type, arg4: $Executor$$Type, arg5: $Executor$$Type): $CompletableFuture<(void)>
 public "getName"(): StringJS
 get "name"(): StringJS
@@ -3681,9 +3681,9 @@ export type $BlockEntityWithoutLevelRenderer$$Original = $BlockEntityWithoutLeve
 declare module "net.minecraft.client.renderer.texture.TextureAtlas" {
 import {$TextureAtlasSprite} from "net.minecraft.client.renderer.texture.TextureAtlasSprite"
 import {$Map} from "java.util.Map"
-import {$SpriteFinderImpl$SpriteFinderAccess$$Interface as $SpriteFinderImpl$SpriteFinderAccess$0$$Interface} from "appeng.thirdparty.fabric.SpriteFinderImpl$SpriteFinderAccess"
 import {$PBRAtlasHolder} from "net.irisshaders.iris.pbr.texture.PBRAtlasHolder"
 import {$Tickable$$Interface} from "net.minecraft.client.renderer.texture.Tickable"
+import {$SpriteFinderImpl$SpriteFinderAccess$$Interface} from "appeng.thirdparty.fabric.SpriteFinderImpl$SpriteFinderAccess"
 import {$SpriteFinderImpl} from "dev.technici4n.moderndynamics.thirdparty.fabric.SpriteFinderImpl"
 import {$List} from "java.util.List"
 import {$SpriteContents} from "net.minecraft.client.renderer.texture.SpriteContents"
@@ -3694,10 +3694,10 @@ import {$SpriteLoader$Preparations$$Type} from "net.minecraft.client.renderer.te
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$TextureAtlasAccessor$$Interface} from "net.irisshaders.iris.mixin.texture.TextureAtlasAccessor"
 import {$Path$$Type} from "java.nio.file.Path"
-import {$SpriteFinderImpl$SpriteFinderAccess$$Interface} from "dev.technici4n.moderndynamics.thirdparty.fabric.SpriteFinderImpl$SpriteFinderAccess"
+import {$SpriteFinderImpl$SpriteFinderAccess$$Interface as $SpriteFinderImpl$SpriteFinderAccess$0$$Interface} from "dev.technici4n.moderndynamics.thirdparty.fabric.SpriteFinderImpl$SpriteFinderAccess"
 import {$ResourceManager$$Type} from "net.minecraft.server.packs.resources.ResourceManager"
 
-export class $TextureAtlas extends $AbstractTexture implements $Dumpable$$Interface, $Tickable$$Interface, $SpriteFinderImpl$SpriteFinderAccess$$Interface, $TextureAtlasAccessor$$Interface, $TextureAtlasExtension$$Interface, $SpriteFinderImpl$SpriteFinderAccess$0$$Interface {
+export class $TextureAtlas extends $AbstractTexture implements $Dumpable$$Interface, $Tickable$$Interface, $SpriteFinderImpl$SpriteFinderAccess$0$$Interface, $TextureAtlasAccessor$$Interface, $TextureAtlasExtension$$Interface, $SpriteFinderImpl$SpriteFinderAccess$$Interface {
 static readonly "NOT_ASSIGNED": integer
 /**
  * 
@@ -3714,15 +3714,11 @@ static readonly "LOCATION_PARTICLES": $ResourceLocation
 
 constructor(arg0: $ResourceLocation$$Type)
 
+public "tick"(): void
 public "getWidth"(): integer
 public "getHeight"(): integer
-public "tick"(): void
 public "load"(arg0: $ResourceManager$$Type): void
 public "location"(): $ResourceLocation
-public "getTexturesByName"(): $Map
-public "getMipLevel"(): integer
-public "callGetWidth"(): integer
-public "callGetHeight"(): integer
 public "fabric_spriteFinder"(): $SpriteFinderImpl
 public "clearTextureData"(): void
 public "dumpContents"(arg0: $ResourceLocation$$Type, arg1: $Path$$Type): void
@@ -3731,15 +3727,19 @@ public "updateFilter"(arg0: $SpriteLoader$Preparations$$Type): void
 public "getTextures"(): $Map<($ResourceLocation), ($TextureAtlasSprite)>
 public "getPBRHolder"(): $PBRAtlasHolder
 public "getOrCreatePBRHolder"(): $PBRAtlasHolder
+public "getTexturesByName"(): $Map
+public "getMipLevel"(): integer
+public "callGetWidth"(): integer
+public "callGetHeight"(): integer
 public "upload"(arg0: $SpriteLoader$Preparations$$Type): void
 public "getSprite"(arg0: $ResourceLocation$$Type): $TextureAtlasSprite
 public "maxSupportedTextureSize"(): integer
 get "width"(): integer
 get "height"(): integer
-get "mipLevel"(): integer
 get "textures"(): $Map<($ResourceLocation), ($TextureAtlasSprite)>
 get "PBRHolder"(): $PBRAtlasHolder
 get "orCreatePBRHolder"(): $PBRAtlasHolder
+get "mipLevel"(): integer
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -3778,12 +3778,12 @@ import {$RenderStateShard$WriteMaskStateShard} from "net.minecraft.client.render
 import {$RenderStateShard$DepthTestStateShard} from "net.minecraft.client.renderer.RenderStateShard$DepthTestStateShard"
 import {$RenderStateShard$ColorLogicStateShard} from "net.minecraft.client.renderer.RenderStateShard$ColorLogicStateShard"
 import {$RenderStateShard$OverlayStateShard} from "net.minecraft.client.renderer.RenderStateShard$OverlayStateShard"
-import {$RenderStateShard$LineStateShard} from "net.minecraft.client.renderer.RenderStateShard$LineStateShard"
 import {$RenderStateShard$CullStateShard} from "net.minecraft.client.renderer.RenderStateShard$CullStateShard"
-import {$RenderStateShard$ShaderStateShard} from "net.minecraft.client.renderer.RenderStateShard$ShaderStateShard"
+import {$RenderStateShard$LineStateShard} from "net.minecraft.client.renderer.RenderStateShard$LineStateShard"
 import {$RenderStateShard$TextureStateShard} from "net.minecraft.client.renderer.RenderStateShard$TextureStateShard"
-import {$RenderStateShard$TransparencyStateShard} from "net.minecraft.client.renderer.RenderStateShard$TransparencyStateShard"
+import {$RenderStateShard$ShaderStateShard} from "net.minecraft.client.renderer.RenderStateShard$ShaderStateShard"
 import {$RenderStateShard$LightmapStateShard} from "net.minecraft.client.renderer.RenderStateShard$LightmapStateShard"
+import {$RenderStateShard$TransparencyStateShard} from "net.minecraft.client.renderer.RenderStateShard$TransparencyStateShard"
 import {$RenderStateShard} from "net.minecraft.client.renderer.RenderStateShard"
 import {$RenderStateShard$TexturingStateShard} from "net.minecraft.client.renderer.RenderStateShard$TexturingStateShard"
 import {$RenderStateShard$OutputStateShard} from "net.minecraft.client.renderer.RenderStateShard$OutputStateShard"
@@ -3959,10 +3959,10 @@ constructor(arg0: $EntityRendererProvider$Context$$Type)
 
 public "getTextureLocation"(arg0: T): $ResourceLocation
 public "getTextureLocation"(arg0: $Entity$$Type): $ResourceLocation
-public "render"(arg0: T, arg1: float, arg2: float, arg3: $PoseStack$$Type, arg4: $MultiBufferSource$$Type, arg5: integer): void
-public "render"(arg0: $Entity$$Type, arg1: float, arg2: float, arg3: $PoseStack$$Type, arg4: $MultiBufferSource$$Type, arg5: integer): void
 public "getRenderOffset"(arg0: $Entity$$Type, arg1: float): $Vec3
 public "getRenderOffset"(arg0: T, arg1: float): $Vec3
+public "render"(arg0: T, arg1: float, arg2: float, arg3: $PoseStack$$Type, arg4: $MultiBufferSource$$Type, arg5: integer): void
+public "render"(arg0: $Entity$$Type, arg1: float, arg2: float, arg3: $PoseStack$$Type, arg4: $MultiBufferSource$$Type, arg5: integer): void
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -4008,10 +4008,10 @@ import {$PoseStack$$Type} from "com.mojang.blaze3d.vertex.PoseStack"
 import {$ArmorRenderingExtension$$Interface} from "io.wispforest.accessories.api.client.ArmorRenderingExtension"
 import {$ModelManager$$Type} from "net.minecraft.client.resources.model.ModelManager"
 import {$HumanoidModel, $HumanoidModel$$Type} from "net.minecraft.client.model.HumanoidModel"
-import {$MultiBufferSource$$Type} from "net.minecraft.client.renderer.MultiBufferSource"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
+import {$MultiBufferSource$$Type} from "net.minecraft.client.renderer.MultiBufferSource"
 import {$RenderLayerParent$$Type} from "net.minecraft.client.renderer.entity.RenderLayerParent"
+import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$HumanoidArmorLayerAccessor$$Interface} from "com.simibubi.create.foundation.mixin.accessor.HumanoidArmorLayerAccessor"
@@ -4027,9 +4027,9 @@ public "render"(arg0: $PoseStack$$Type, arg1: $MultiBufferSource$$Type, arg2: in
 public "wrapWithCondition$zzh000$geckolib$wrapArmorPieceRender"(arg0: $HumanoidArmorLayer$$Type, arg1: $PoseStack$$Type, arg2: $MultiBufferSource$$Type, arg3: $LivingEntity$$Type, arg4: $EquipmentSlot$$Type, arg5: integer, arg6: $HumanoidModel$$Type, arg7: float, arg8: float, arg9: float, arg10: float, arg11: float, arg12: float): boolean
 public "handler$ccp000$simplehats$renderArmorPiece"(arg0: $PoseStack$$Type, arg1: $MultiBufferSource$$Type, arg2: $LivingEntity$$Type, arg3: $EquipmentSlot$$Type, arg4: integer, arg5: $HumanoidModel$$Type, arg6: float, arg7: float, arg8: float, arg9: float, arg10: float, arg11: float, arg12: $CallbackInfo$$Type): void
 public "renderEquipmentStack"(stack: $ItemStack$$Type, poseStack: $PoseStack$$Type, multiBufferSource: $MultiBufferSource$$Type, livingEntity: $LivingEntity$$Type, equipmentSlot: $EquipmentSlot$$Type, light: integer, limbSwing: float, limbSwingAmount: float, partialTicks: float, ageInTicks: float, netHeadYaw: float, headPitch: float): void
-public static "getArmorLocationCache$create_$md$a93e73$3"(): $Map
+public static "getArmorLocationCache$create_$md$b00d76$3"(): $Map
 public static "create$getArmorLocationCache"(): $Map<(StringJS), ($ResourceLocation)>
-public static get "armorLocationCache$create_$md$a93e73$3"(): $Map
+public static get "armorLocationCache$create_$md$b00d76$3"(): $Map
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -4102,11 +4102,11 @@ static readonly "NOT_ASSIGNED": integer
 constructor()
 
 public "setFilter"(arg0: boolean, arg1: boolean): void
+public "bind"(): void
 public "reset"(arg0: $TextureManager$$Type, arg1: $ResourceManager$$Type, arg2: $ResourceLocation$$Type, arg3: $Executor$$Type): void
 public "load"(arg0: $ResourceManager$$Type): void
 public "getId"(): integer
 public "close"(): void
-public "bind"(): void
 public "setBlurMipmap"(arg0: boolean, arg1: boolean): void
 public "restoreLastBlurMipmap"(): void
 public "releaseId"(): void
@@ -4129,23 +4129,23 @@ export class $GpuWarnlistManager extends $SimplePreparableReloadListener<($GpuWa
 constructor()
 
 public "dismissWarningAndSkipFabulous"(): void
-public "hasWarnings"(): boolean
-public "dismissWarning"(): void
-public "isShowingWarning"(): boolean
 public "resetWarnings"(): void
 public "getRendererWarnings"(): StringJS
 public "getVersionWarnings"(): StringJS
 public "getVendorWarnings"(): StringJS
-public "getAllWarnings"(): StringJS
-public "showWarning"(): void
+public "hasWarnings"(): boolean
+public "dismissWarning"(): void
+public "isShowingWarning"(): boolean
 public "willShowWarning"(): boolean
 public "isSkippingFabulous"(): boolean
-get "showingWarning"(): boolean
+public "getAllWarnings"(): StringJS
+public "showWarning"(): void
 get "rendererWarnings"(): StringJS
 get "versionWarnings"(): StringJS
 get "vendorWarnings"(): StringJS
-get "allWarnings"(): StringJS
+get "showingWarning"(): boolean
 get "skippingFabulous"(): boolean
+get "allWarnings"(): StringJS
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -4165,10 +4165,10 @@ import {$RenderStateShard$DepthTestStateShard} from "net.minecraft.client.render
 import {$RenderStateShard$ColorLogicStateShard} from "net.minecraft.client.renderer.RenderStateShard$ColorLogicStateShard"
 import {$RenderStateShard$OverlayStateShard} from "net.minecraft.client.renderer.RenderStateShard$OverlayStateShard"
 import {$RenderStateShard$LineStateShard} from "net.minecraft.client.renderer.RenderStateShard$LineStateShard"
-import {$RenderStateShard$ShaderStateShard} from "net.minecraft.client.renderer.RenderStateShard$ShaderStateShard"
 import {$RenderStateShard$TextureStateShard} from "net.minecraft.client.renderer.RenderStateShard$TextureStateShard"
-import {$RenderStateShard$TransparencyStateShard} from "net.minecraft.client.renderer.RenderStateShard$TransparencyStateShard"
+import {$RenderStateShard$ShaderStateShard} from "net.minecraft.client.renderer.RenderStateShard$ShaderStateShard"
 import {$RenderStateShard$LightmapStateShard} from "net.minecraft.client.renderer.RenderStateShard$LightmapStateShard"
+import {$RenderStateShard$TransparencyStateShard} from "net.minecraft.client.renderer.RenderStateShard$TransparencyStateShard"
 import {$RenderStateShard$TexturingStateShard} from "net.minecraft.client.renderer.RenderStateShard$TexturingStateShard"
 import {$RenderStateShard$OutputStateShard} from "net.minecraft.client.renderer.RenderStateShard$OutputStateShard"
 import {$RenderStateShard$BooleanStateShard} from "net.minecraft.client.renderer.RenderStateShard$BooleanStateShard"
@@ -4298,12 +4298,12 @@ import {$RenderStateShard$WriteMaskStateShard} from "net.minecraft.client.render
 import {$RenderStateShard$DepthTestStateShard} from "net.minecraft.client.renderer.RenderStateShard$DepthTestStateShard"
 import {$RenderStateShard$ColorLogicStateShard} from "net.minecraft.client.renderer.RenderStateShard$ColorLogicStateShard"
 import {$RenderStateShard$OverlayStateShard} from "net.minecraft.client.renderer.RenderStateShard$OverlayStateShard"
-import {$RenderStateShard$LineStateShard} from "net.minecraft.client.renderer.RenderStateShard$LineStateShard"
 import {$RenderStateShard$CullStateShard} from "net.minecraft.client.renderer.RenderStateShard$CullStateShard"
-import {$RenderStateShard$ShaderStateShard} from "net.minecraft.client.renderer.RenderStateShard$ShaderStateShard"
+import {$RenderStateShard$LineStateShard} from "net.minecraft.client.renderer.RenderStateShard$LineStateShard"
 import {$RenderStateShard$TextureStateShard} from "net.minecraft.client.renderer.RenderStateShard$TextureStateShard"
-import {$RenderStateShard$TransparencyStateShard} from "net.minecraft.client.renderer.RenderStateShard$TransparencyStateShard"
+import {$RenderStateShard$ShaderStateShard} from "net.minecraft.client.renderer.RenderStateShard$ShaderStateShard"
 import {$RenderStateShard$LightmapStateShard} from "net.minecraft.client.renderer.RenderStateShard$LightmapStateShard"
+import {$RenderStateShard$TransparencyStateShard} from "net.minecraft.client.renderer.RenderStateShard$TransparencyStateShard"
 import {$RenderStateShard$TexturingStateShard} from "net.minecraft.client.renderer.RenderStateShard$TexturingStateShard"
 import {$RenderStateShardAccessor$$Interface as $RenderStateShardAccessor$0$$Interface} from "net.irisshaders.iris.mixin.rendertype.RenderStateShardAccessor"
 import {$RenderStateShard$OutputStateShard} from "net.minecraft.client.renderer.RenderStateShard$OutputStateShard"
@@ -4412,23 +4412,23 @@ constructor(arg0: StringJS, arg1: $Runnable$$Type, arg2: $Runnable$$Type)
 
 public "getName"(): StringJS
 public "toString"(): StringJS
-public static "getTranslucentTransparency$oculus_$md$a93e73$0"(): $RenderStateShard$TransparencyStateShard
-public static "getNO_TRANSPARENCY$oculus_$md$a93e73$1"(): $RenderStateShard$TransparencyStateShard
-public static "getGLINT_TRANSPARENCY$oculus_$md$a93e73$2"(): $RenderStateShard$TransparencyStateShard
-public static "getCRUMBLING_TRANSPARENCY$oculus_$md$a93e73$3"(): $RenderStateShard$TransparencyStateShard
+public static "setupGlintTexturing"(arg0: float): void
+public static "getTranslucentTransparency$oculus_$md$b00d76$0"(): $RenderStateShard$TransparencyStateShard
+public static "getNO_TRANSPARENCY$oculus_$md$b00d76$1"(): $RenderStateShard$TransparencyStateShard
+public static "getGLINT_TRANSPARENCY$oculus_$md$b00d76$2"(): $RenderStateShard$TransparencyStateShard
+public static "getCRUMBLING_TRANSPARENCY$oculus_$md$b00d76$3"(): $RenderStateShard$TransparencyStateShard
 public "setupRenderState"(): void
 public "clearRenderState"(): void
-public static "setupGlintTexturing"(arg0: float): void
 public static "getTranslucentTransparency"(): $RenderStateShard$TransparencyStateShard
 public static "getNO_TRANSPARENCY"(): $RenderStateShard$TransparencyStateShard
 public static "getGLINT_TRANSPARENCY"(): $RenderStateShard$TransparencyStateShard
 public static "getCRUMBLING_TRANSPARENCY"(): $RenderStateShard$TransparencyStateShard
-public static get "translucentTransparency$oculus_$md$a93e73$0"(): $RenderStateShard$TransparencyStateShard
-public static get "NO_TRANSPARENCY$oculus_$md$a93e73$1"(): $RenderStateShard$TransparencyStateShard
-public static get "GLINT_TRANSPARENCY$oculus_$md$a93e73$2"(): $RenderStateShard$TransparencyStateShard
-public static get "CRUMBLING_TRANSPARENCY$oculus_$md$a93e73$3"(): $RenderStateShard$TransparencyStateShard
-get "upRenderState"(): void
 public static set "upGlintTexturing"(value: float)
+public static get "translucentTransparency$oculus_$md$b00d76$0"(): $RenderStateShard$TransparencyStateShard
+public static get "NO_TRANSPARENCY$oculus_$md$b00d76$1"(): $RenderStateShard$TransparencyStateShard
+public static get "GLINT_TRANSPARENCY$oculus_$md$b00d76$2"(): $RenderStateShard$TransparencyStateShard
+public static get "CRUMBLING_TRANSPARENCY$oculus_$md$b00d76$3"(): $RenderStateShard$TransparencyStateShard
+get "upRenderState"(): void
 public static get "translucentTransparency"(): $RenderStateShard$TransparencyStateShard
 }
 /**
@@ -4473,8 +4473,8 @@ public "toString"(): StringJS
 public "hashCode"(): integer
 public "width"(): integer
 public "height"(): integer
-public "missing"(): $TextureAtlasSprite
 public "mipLevel"(): integer
+public "missing"(): $TextureAtlasSprite
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -4511,8 +4511,8 @@ public "releaseBuffers"(): void
 public "compileSync"(arg0: $RenderRegionCache$$Type): void
 public "setDirty"(arg0: boolean): void
 public "setOrigin"(arg0: integer, arg1: integer, arg2: integer): void
-public "getBuffer"(arg0: $RenderType$$Type): $VertexBuffer
 public "isDirty"(): boolean
+public "getBuffer"(arg0: $RenderType$$Type): $VertexBuffer
 public "getOrigin"(): $BlockPos
 public "getCompiled"(): $SectionRenderDispatcher$CompiledSection
 public "isDirtyFromPlayer"(): boolean
@@ -4544,12 +4544,12 @@ import {$Runnable} from "java.lang.Runnable"
 import {$RenderStateShard$DepthTestStateShard} from "net.minecraft.client.renderer.RenderStateShard$DepthTestStateShard"
 import {$RenderStateShard$ColorLogicStateShard} from "net.minecraft.client.renderer.RenderStateShard$ColorLogicStateShard"
 import {$RenderStateShard$OverlayStateShard} from "net.minecraft.client.renderer.RenderStateShard$OverlayStateShard"
-import {$RenderStateShard$LineStateShard} from "net.minecraft.client.renderer.RenderStateShard$LineStateShard"
 import {$RenderStateShard$CullStateShard} from "net.minecraft.client.renderer.RenderStateShard$CullStateShard"
-import {$RenderStateShard$ShaderStateShard} from "net.minecraft.client.renderer.RenderStateShard$ShaderStateShard"
+import {$RenderStateShard$LineStateShard} from "net.minecraft.client.renderer.RenderStateShard$LineStateShard"
 import {$RenderStateShard$TextureStateShard} from "net.minecraft.client.renderer.RenderStateShard$TextureStateShard"
-import {$RenderStateShard$TransparencyStateShard} from "net.minecraft.client.renderer.RenderStateShard$TransparencyStateShard"
+import {$RenderStateShard$ShaderStateShard} from "net.minecraft.client.renderer.RenderStateShard$ShaderStateShard"
 import {$RenderStateShard$LightmapStateShard} from "net.minecraft.client.renderer.RenderStateShard$LightmapStateShard"
+import {$RenderStateShard$TransparencyStateShard} from "net.minecraft.client.renderer.RenderStateShard$TransparencyStateShard"
 import {$RenderStateShard} from "net.minecraft.client.renderer.RenderStateShard"
 import {$RenderStateShard$TexturingStateShard} from "net.minecraft.client.renderer.RenderStateShard$TexturingStateShard"
 import {$RenderStateShard$OutputStateShard} from "net.minecraft.client.renderer.RenderStateShard$OutputStateShard"
@@ -4675,8 +4675,8 @@ declare module "net.minecraft.client.renderer.block.model.ItemOverrides" {
 import {$TextureAtlasSprite$$Type} from "net.minecraft.client.renderer.texture.TextureAtlasSprite"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Material$$Type} from "net.minecraft.client.resources.model.Material"
-import {$BakedModel, $BakedModel$$Type} from "net.minecraft.client.resources.model.BakedModel"
 import {$List$$Type} from "java.util.List"
+import {$BakedModel, $BakedModel$$Type} from "net.minecraft.client.resources.model.BakedModel"
 import {$BlockModel$$Type} from "net.minecraft.client.renderer.block.model.BlockModel"
 import {$ImmutableList} from "com.google.common.collect.ImmutableList"
 import {$ItemOverrides$BakedOverride} from "net.minecraft.client.renderer.block.model.ItemOverrides$BakedOverride"
@@ -4806,12 +4806,12 @@ import {$RenderStateShard$WriteMaskStateShard} from "net.minecraft.client.render
 import {$RenderStateShard$DepthTestStateShard} from "net.minecraft.client.renderer.RenderStateShard$DepthTestStateShard"
 import {$RenderStateShard$ColorLogicStateShard} from "net.minecraft.client.renderer.RenderStateShard$ColorLogicStateShard"
 import {$RenderStateShard$OverlayStateShard} from "net.minecraft.client.renderer.RenderStateShard$OverlayStateShard"
-import {$RenderStateShard$LineStateShard} from "net.minecraft.client.renderer.RenderStateShard$LineStateShard"
 import {$RenderStateShard$CullStateShard} from "net.minecraft.client.renderer.RenderStateShard$CullStateShard"
-import {$RenderStateShard$ShaderStateShard} from "net.minecraft.client.renderer.RenderStateShard$ShaderStateShard"
+import {$RenderStateShard$LineStateShard} from "net.minecraft.client.renderer.RenderStateShard$LineStateShard"
 import {$RenderStateShard$TextureStateShard} from "net.minecraft.client.renderer.RenderStateShard$TextureStateShard"
-import {$RenderStateShard$TransparencyStateShard} from "net.minecraft.client.renderer.RenderStateShard$TransparencyStateShard"
+import {$RenderStateShard$ShaderStateShard} from "net.minecraft.client.renderer.RenderStateShard$ShaderStateShard"
 import {$RenderStateShard$LightmapStateShard} from "net.minecraft.client.renderer.RenderStateShard$LightmapStateShard"
+import {$RenderStateShard$TransparencyStateShard} from "net.minecraft.client.renderer.RenderStateShard$TransparencyStateShard"
 import {$RenderStateShard} from "net.minecraft.client.renderer.RenderStateShard"
 import {$RenderStateShard$TexturingStateShard} from "net.minecraft.client.renderer.RenderStateShard$TexturingStateShard"
 import {$RenderStateShard$OutputStateShard} from "net.minecraft.client.renderer.RenderStateShard$OutputStateShard"
@@ -4983,13 +4983,13 @@ export type $SpriteContents$FrameInfo$$Type = ($SpriteContents$FrameInfo);
 export type $SpriteContents$FrameInfo$$Original = $SpriteContents$FrameInfo;}
 declare module "net.minecraft.client.renderer.debug.StructureRenderer" {
 import {$DebugRenderer$SimpleDebugRenderer$$Interface} from "net.minecraft.client.renderer.debug.DebugRenderer$SimpleDebugRenderer"
-import {$MultiBufferSource$$Type} from "net.minecraft.client.renderer.MultiBufferSource"
 import {$BoundingBox$$Type} from "net.minecraft.world.level.levelgen.structure.BoundingBox"
-import {$PoseStack$$Type} from "com.mojang.blaze3d.vertex.PoseStack"
+import {$MultiBufferSource$$Type} from "net.minecraft.client.renderer.MultiBufferSource"
 import {$List$$Type} from "java.util.List"
+import {$PoseStack$$Type} from "com.mojang.blaze3d.vertex.PoseStack"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
 import {$Minecraft$$Type} from "net.minecraft.client.Minecraft"
+import {$ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
 import {$StructuresDebugPayload$PieceInfo$$Type} from "net.minecraft.network.protocol.common.custom.StructuresDebugPayload$PieceInfo"
 
 export class $StructureRenderer implements $DebugRenderer$SimpleDebugRenderer$$Interface {
@@ -5049,10 +5049,10 @@ import {$RenderStateShard$DepthTestStateShard} from "net.minecraft.client.render
 import {$RenderStateShard$ColorLogicStateShard} from "net.minecraft.client.renderer.RenderStateShard$ColorLogicStateShard"
 import {$RenderStateShard$OverlayStateShard} from "net.minecraft.client.renderer.RenderStateShard$OverlayStateShard"
 import {$RenderStateShard$CullStateShard} from "net.minecraft.client.renderer.RenderStateShard$CullStateShard"
-import {$RenderStateShard$ShaderStateShard} from "net.minecraft.client.renderer.RenderStateShard$ShaderStateShard"
 import {$RenderStateShard$TextureStateShard} from "net.minecraft.client.renderer.RenderStateShard$TextureStateShard"
-import {$RenderStateShard$TransparencyStateShard} from "net.minecraft.client.renderer.RenderStateShard$TransparencyStateShard"
+import {$RenderStateShard$ShaderStateShard} from "net.minecraft.client.renderer.RenderStateShard$ShaderStateShard"
 import {$RenderStateShard$LightmapStateShard} from "net.minecraft.client.renderer.RenderStateShard$LightmapStateShard"
+import {$RenderStateShard$TransparencyStateShard} from "net.minecraft.client.renderer.RenderStateShard$TransparencyStateShard"
 import {$RenderStateShard} from "net.minecraft.client.renderer.RenderStateShard"
 import {$RenderStateShard$TexturingStateShard} from "net.minecraft.client.renderer.RenderStateShard$TexturingStateShard"
 import {$RenderStateShard$OutputStateShard} from "net.minecraft.client.renderer.RenderStateShard$OutputStateShard"
@@ -5182,10 +5182,10 @@ import {$RenderStateShard$WriteMaskStateShard} from "net.minecraft.client.render
 import {$RenderStateShard$DepthTestStateShard} from "net.minecraft.client.renderer.RenderStateShard$DepthTestStateShard"
 import {$RenderStateShard$ColorLogicStateShard} from "net.minecraft.client.renderer.RenderStateShard$ColorLogicStateShard"
 import {$RenderStateShard$OverlayStateShard} from "net.minecraft.client.renderer.RenderStateShard$OverlayStateShard"
-import {$RenderStateShard$LineStateShard} from "net.minecraft.client.renderer.RenderStateShard$LineStateShard"
 import {$RenderStateShard$CullStateShard} from "net.minecraft.client.renderer.RenderStateShard$CullStateShard"
-import {$RenderStateShard$ShaderStateShard} from "net.minecraft.client.renderer.RenderStateShard$ShaderStateShard"
+import {$RenderStateShard$LineStateShard} from "net.minecraft.client.renderer.RenderStateShard$LineStateShard"
 import {$RenderStateShard$TextureStateShard} from "net.minecraft.client.renderer.RenderStateShard$TextureStateShard"
+import {$RenderStateShard$ShaderStateShard} from "net.minecraft.client.renderer.RenderStateShard$ShaderStateShard"
 import {$RenderStateShard$TransparencyStateShard} from "net.minecraft.client.renderer.RenderStateShard$TransparencyStateShard"
 import {$RenderStateShard$TexturingStateShard} from "net.minecraft.client.renderer.RenderStateShard$TexturingStateShard"
 import {$RenderStateShard$OutputStateShard} from "net.minecraft.client.renderer.RenderStateShard$OutputStateShard"
@@ -5315,12 +5315,12 @@ import {$RenderStateShard$WriteMaskStateShard} from "net.minecraft.client.render
 import {$RenderStateShard$DepthTestStateShard} from "net.minecraft.client.renderer.RenderStateShard$DepthTestStateShard"
 import {$RenderStateShard$ColorLogicStateShard} from "net.minecraft.client.renderer.RenderStateShard$ColorLogicStateShard"
 import {$RenderStateShard$OverlayStateShard} from "net.minecraft.client.renderer.RenderStateShard$OverlayStateShard"
-import {$RenderStateShard$LineStateShard} from "net.minecraft.client.renderer.RenderStateShard$LineStateShard"
 import {$RenderStateShard$CullStateShard} from "net.minecraft.client.renderer.RenderStateShard$CullStateShard"
-import {$RenderStateShard$ShaderStateShard} from "net.minecraft.client.renderer.RenderStateShard$ShaderStateShard"
+import {$RenderStateShard$LineStateShard} from "net.minecraft.client.renderer.RenderStateShard$LineStateShard"
 import {$RenderStateShard$TextureStateShard} from "net.minecraft.client.renderer.RenderStateShard$TextureStateShard"
-import {$RenderStateShard$TransparencyStateShard} from "net.minecraft.client.renderer.RenderStateShard$TransparencyStateShard"
+import {$RenderStateShard$ShaderStateShard} from "net.minecraft.client.renderer.RenderStateShard$ShaderStateShard"
 import {$RenderStateShard$LightmapStateShard} from "net.minecraft.client.renderer.RenderStateShard$LightmapStateShard"
+import {$RenderStateShard$TransparencyStateShard} from "net.minecraft.client.renderer.RenderStateShard$TransparencyStateShard"
 import {$RenderStateShard} from "net.minecraft.client.renderer.RenderStateShard"
 import {$RenderStateShard$TexturingStateShard} from "net.minecraft.client.renderer.RenderStateShard$TexturingStateShard"
 
@@ -5447,12 +5447,12 @@ import {$Runnable} from "java.lang.Runnable"
 import {$RenderStateShard$WriteMaskStateShard} from "net.minecraft.client.renderer.RenderStateShard$WriteMaskStateShard"
 import {$RenderStateShard$ColorLogicStateShard} from "net.minecraft.client.renderer.RenderStateShard$ColorLogicStateShard"
 import {$RenderStateShard$OverlayStateShard} from "net.minecraft.client.renderer.RenderStateShard$OverlayStateShard"
-import {$RenderStateShard$LineStateShard} from "net.minecraft.client.renderer.RenderStateShard$LineStateShard"
 import {$RenderStateShard$CullStateShard} from "net.minecraft.client.renderer.RenderStateShard$CullStateShard"
-import {$RenderStateShard$ShaderStateShard} from "net.minecraft.client.renderer.RenderStateShard$ShaderStateShard"
+import {$RenderStateShard$LineStateShard} from "net.minecraft.client.renderer.RenderStateShard$LineStateShard"
 import {$RenderStateShard$TextureStateShard} from "net.minecraft.client.renderer.RenderStateShard$TextureStateShard"
-import {$RenderStateShard$TransparencyStateShard} from "net.minecraft.client.renderer.RenderStateShard$TransparencyStateShard"
+import {$RenderStateShard$ShaderStateShard} from "net.minecraft.client.renderer.RenderStateShard$ShaderStateShard"
 import {$RenderStateShard$LightmapStateShard} from "net.minecraft.client.renderer.RenderStateShard$LightmapStateShard"
+import {$RenderStateShard$TransparencyStateShard} from "net.minecraft.client.renderer.RenderStateShard$TransparencyStateShard"
 import {$RenderStateShard} from "net.minecraft.client.renderer.RenderStateShard"
 import {$RenderStateShard$TexturingStateShard} from "net.minecraft.client.renderer.RenderStateShard$TexturingStateShard"
 import {$RenderStateShard$OutputStateShard} from "net.minecraft.client.renderer.RenderStateShard$OutputStateShard"
@@ -5576,8 +5576,8 @@ export type $RenderStateShard$DepthTestStateShard$$Type = ($RenderStateShard$Dep
 export type $RenderStateShard$DepthTestStateShard$$Original = $RenderStateShard$DepthTestStateShard;}
 declare module "net.minecraft.client.renderer.texture.atlas.SpriteSource$SpriteSupplier" {
 import {$Function, $Function$$Type, $Function$$Interface} from "java.util.function.Function"
-import {$SpriteContents, $SpriteContents$$Type} from "net.minecraft.client.renderer.texture.SpriteContents"
 import {$SpriteResourceLoader, $SpriteResourceLoader$$Type} from "net.minecraft.client.renderer.texture.atlas.SpriteResourceLoader"
+import {$SpriteContents, $SpriteContents$$Type} from "net.minecraft.client.renderer.texture.SpriteContents"
 
 export interface $SpriteSource$SpriteSupplier$$Interface extends $Function$$Interface<($SpriteResourceLoader), ($SpriteContents)> {
 
@@ -5608,10 +5608,10 @@ import {$RenderStateShard$WriteMaskStateShard} from "net.minecraft.client.render
 import {$RenderStateShard$DepthTestStateShard} from "net.minecraft.client.renderer.RenderStateShard$DepthTestStateShard"
 import {$RenderStateShard$ColorLogicStateShard} from "net.minecraft.client.renderer.RenderStateShard$ColorLogicStateShard"
 import {$RenderStateShard$OverlayStateShard} from "net.minecraft.client.renderer.RenderStateShard$OverlayStateShard"
-import {$RenderStateShard$LineStateShard} from "net.minecraft.client.renderer.RenderStateShard$LineStateShard"
 import {$RenderStateShard$CullStateShard} from "net.minecraft.client.renderer.RenderStateShard$CullStateShard"
-import {$RenderStateShard$ShaderStateShard} from "net.minecraft.client.renderer.RenderStateShard$ShaderStateShard"
+import {$RenderStateShard$LineStateShard} from "net.minecraft.client.renderer.RenderStateShard$LineStateShard"
 import {$RenderStateShard$TextureStateShard} from "net.minecraft.client.renderer.RenderStateShard$TextureStateShard"
+import {$RenderStateShard$ShaderStateShard} from "net.minecraft.client.renderer.RenderStateShard$ShaderStateShard"
 import {$RenderStateShard$LightmapStateShard} from "net.minecraft.client.renderer.RenderStateShard$LightmapStateShard"
 import {$RenderStateShard} from "net.minecraft.client.renderer.RenderStateShard"
 import {$RenderStateShard$TexturingStateShard} from "net.minecraft.client.renderer.RenderStateShard$TexturingStateShard"
@@ -5735,7 +5735,7 @@ export type $RenderStateShard$TransparencyStateShard$$Type = ($RenderStateShard$
 export type $RenderStateShard$TransparencyStateShard$$Original = $RenderStateShard$TransparencyStateShard;}
 declare module "net.minecraft.client.renderer.RenderType" {
 import {$Optional} from "java.util.Optional"
-import {$RenderTypeAccessor$$Interface} from "net.createmod.ponder.mixin.client.accessor.RenderTypeAccessor"
+import {$RenderTypeAccessor$$Interface as $RenderTypeAccessor$0$$Interface} from "net.createmod.ponder.mixin.client.accessor.RenderTypeAccessor"
 import {$List} from "java.util.List"
 import {$RenderStateShard$LayeringStateShard} from "net.minecraft.client.renderer.RenderStateShard$LayeringStateShard"
 import {$ImmutableList} from "com.google.common.collect.ImmutableList"
@@ -5749,7 +5749,7 @@ import {$RenderStateShard$LightmapStateShard} from "net.minecraft.client.rendere
 import {$RenderStateShard} from "net.minecraft.client.renderer.RenderStateShard"
 import {$RenderStateShard$TexturingStateShard} from "net.minecraft.client.renderer.RenderStateShard$TexturingStateShard"
 import {$RenderTypeAccessor$$Interface as $RenderTypeAccessor$1$$Interface} from "net.irisshaders.batchedentityrendering.mixin.RenderTypeAccessor"
-import {$RenderTypeAccessor$$Interface as $RenderTypeAccessor$0$$Interface} from "net.irisshaders.iris.mixin.rendertype.RenderTypeAccessor"
+import {$RenderTypeAccessor$$Interface} from "net.irisshaders.iris.mixin.rendertype.RenderTypeAccessor"
 import {$RenderType$CompositeState$$Type} from "net.minecraft.client.renderer.RenderType$CompositeState"
 import {$RenderStateShard$EmptyTextureStateShard} from "net.minecraft.client.renderer.RenderStateShard$EmptyTextureStateShard"
 import {$TransparencyType, $TransparencyType$$Type} from "net.irisshaders.batchedentityrendering.impl.TransparencyType"
@@ -5758,16 +5758,16 @@ import {$RenderStateShard$ColorLogicStateShard} from "net.minecraft.client.rende
 import {$RenderStateShard$OverlayStateShard} from "net.minecraft.client.renderer.RenderStateShard$OverlayStateShard"
 import {$BiFunction} from "java.util.function.BiFunction"
 import {$MeshData$$Type} from "com.mojang.blaze3d.vertex.MeshData"
-import {$RenderStateShard$LineStateShard} from "net.minecraft.client.renderer.RenderStateShard$LineStateShard"
 import {$RenderStateShard$CullStateShard} from "net.minecraft.client.renderer.RenderStateShard$CullStateShard"
-import {$RenderStateShard$ShaderStateShard} from "net.minecraft.client.renderer.RenderStateShard$ShaderStateShard"
+import {$RenderStateShard$LineStateShard} from "net.minecraft.client.renderer.RenderStateShard$LineStateShard"
 import {$RenderStateShard$TextureStateShard} from "net.minecraft.client.renderer.RenderStateShard$TextureStateShard"
+import {$RenderStateShard$ShaderStateShard} from "net.minecraft.client.renderer.RenderStateShard$ShaderStateShard"
 import {$RenderStateShard$TransparencyStateShard} from "net.minecraft.client.renderer.RenderStateShard$TransparencyStateShard"
 import {$VertexFormat$Mode, $VertexFormat$Mode$$Type} from "com.mojang.blaze3d.vertex.VertexFormat$Mode"
 import {$RenderStateShard$OutputStateShard} from "net.minecraft.client.renderer.RenderStateShard$OutputStateShard"
 import {$VertexFormat, $VertexFormat$$Type} from "com.mojang.blaze3d.vertex.VertexFormat"
 
-export class $RenderType extends $RenderStateShard implements $RenderTypeAccessor$0$$Interface, $BlendingStateHolder$$Interface, $RenderTypeAccessor$1$$Interface, $RenderTypeAccessor$$Interface {
+export class $RenderType extends $RenderStateShard implements $RenderTypeAccessor$$Interface, $BlendingStateHolder$$Interface, $RenderTypeAccessor$1$$Interface, $RenderTypeAccessor$0$$Interface {
 static readonly "RENDERTYPE_ARMOR_CUTOUT_NO_CULL_SHADER": $RenderStateShard$ShaderStateShard
 static readonly "TEXT": $Function<($ResourceLocation), ($RenderType)>
 static readonly "TEXT_BACKGROUND_SEE_THROUGH": $RenderType
@@ -5936,39 +5936,48 @@ public static "lightning"(): $RenderType
 public static "chunkBufferLayers"(): $List<($RenderType)>
 public static "eyes"(arg0: $ResourceLocation$$Type): $RenderType
 public "bufferSize"(): integer
+public static "text"(arg0: $ResourceLocation$$Type): $RenderType
 public "mode"(): $VertexFormat$Mode
 public "toString"(): StringJS
 public static "lines"(): $RenderType
 public "format"(): $VertexFormat
+public static "cutout"(): $RenderType
+public static "createArmorDecalCutoutNoCull"(arg0: $ResourceLocation$$Type): $RenderType
 public static "create"(arg0: StringJS, arg1: $VertexFormat$$Type, arg2: $VertexFormat$Mode$$Type, arg3: integer, arg4: boolean, arg5: boolean, arg6: $RenderType$CompositeState$$Type): $RenderType$CompositeRenderType
 public static "create"(arg0: StringJS, arg1: $VertexFormat$$Type, arg2: $VertexFormat$Mode$$Type, arg3: integer, arg4: $RenderType$CompositeState$$Type): $RenderType$CompositeRenderType
-public static "text"(arg0: $ResourceLocation$$Type): $RenderType
-public "isOutline"(): boolean
 public static "beaconBeam"(arg0: $ResourceLocation$$Type, arg1: boolean): $RenderType
 public static "breezeEyes"(arg0: $ResourceLocation$$Type): $RenderType
-public static "breezeWind"(arg0: $ResourceLocation$$Type, arg1: float, arg2: float): $RenderType
-public "draw"(arg0: $MeshData$$Type): void
-public static "waterMask"(): $RenderType
 public "outline"(): $Optional<($RenderType)>
 public static "outline"(arg0: $ResourceLocation$$Type): $RenderType
+public "draw"(arg0: $MeshData$$Type): void
+public static "waterMask"(): $RenderType
+public static "breezeWind"(arg0: $ResourceLocation$$Type, arg1: float, arg2: float): $RenderType
 public static "crumbling"(arg0: $ResourceLocation$$Type): $RenderType
-public static "debugQuads"(): $RenderType
-public static "createArmorDecalCutoutNoCull"(arg0: $ResourceLocation$$Type): $RenderType
+public "getTransparencyType"(): $TransparencyType
+public "setTransparencyType"(arg0: $TransparencyType$$Type): void
+public "shouldSortOnUpload"(): boolean
+public static "catnip$create$ponder_$md$b00d76$0"(arg0: StringJS, arg1: $VertexFormat$$Type, arg2: $VertexFormat$Mode$$Type, arg3: integer, arg4: boolean, arg5: boolean, arg6: $RenderType$CompositeState$$Type): $RenderType$CompositeRenderType
 public static "glint"(): $RenderType
-public static "lineStrip"(): $RenderType
 public static "clouds"(): $RenderType
-public static "dragonRays"(): $RenderType
+public static "lineStrip"(): $RenderType
 public static "endGateway"(): $RenderType
+public static "debugQuads"(): $RenderType
+public static "dragonRays"(): $RenderType
+public static "dragonRaysDepth"(): $RenderType
 public static "guiOverlay"(): $RenderType
+public "isOutline"(): boolean
 public static "gui"(): $RenderType
 public static "leash"(): $RenderType
+public static "translucent"(): $RenderType
+public static "translucentMovingBlock"(): $RenderType
+public static "endPortal"(): $RenderType
 public static "armorCutoutNoCull"(arg0: $ResourceLocation$$Type): $RenderType
 public static "entitySolid"(arg0: $ResourceLocation$$Type): $RenderType
 public static "entityCutout"(arg0: $ResourceLocation$$Type): $RenderType
-public static "entityCutoutNoCull"(arg0: $ResourceLocation$$Type, arg1: boolean): $RenderType
 public static "entityCutoutNoCull"(arg0: $ResourceLocation$$Type): $RenderType
-public static "entityCutoutNoCullZOffset"(arg0: $ResourceLocation$$Type, arg1: boolean): $RenderType
+public static "entityCutoutNoCull"(arg0: $ResourceLocation$$Type, arg1: boolean): $RenderType
 public static "entityCutoutNoCullZOffset"(arg0: $ResourceLocation$$Type): $RenderType
+public static "entityCutoutNoCullZOffset"(arg0: $ResourceLocation$$Type, arg1: boolean): $RenderType
 public static "itemEntityTranslucentCull"(arg0: $ResourceLocation$$Type): $RenderType
 public static "entityTranslucentCull"(arg0: $ResourceLocation$$Type): $RenderType
 public static "entityTranslucent"(arg0: $ResourceLocation$$Type, arg1: boolean): $RenderType
@@ -5992,7 +6001,6 @@ public static "textIntensityPolygonOffset"(arg0: $ResourceLocation$$Type): $Rend
 public static "textSeeThrough"(arg0: $ResourceLocation$$Type): $RenderType
 public static "textBackgroundSeeThrough"(): $RenderType
 public static "textIntensitySeeThrough"(arg0: $ResourceLocation$$Type): $RenderType
-public static "dragonRaysDepth"(): $RenderType
 public static "cloudsDepthOnly"(): $RenderType
 public static "debugLineStrip"(arg0: double): $RenderType
 public static "debugFilledBox"(): $RenderType
@@ -6002,14 +6010,6 @@ public static "guiTextHighlight"(): $RenderType
 public static "guiGhostRecipeOverlay"(): $RenderType
 public "canConsolidateConsecutiveGeometry"(): boolean
 public "getChunkLayerId"(): integer
-public "getTransparencyType"(): $TransparencyType
-public "setTransparencyType"(arg0: $TransparencyType$$Type): void
-public "shouldSortOnUpload"(): boolean
-public static "catnip$create$ponder_$md$a93e73$0"(arg0: StringJS, arg1: $VertexFormat$$Type, arg2: $VertexFormat$Mode$$Type, arg3: integer, arg4: boolean, arg5: boolean, arg6: $RenderType$CompositeState$$Type): $RenderType$CompositeRenderType
-public static "translucent"(): $RenderType
-public static "translucentMovingBlock"(): $RenderType
-public static "cutout"(): $RenderType
-public static "endPortal"(): $RenderType
 public "affectsCrumbling"(): boolean
 public "sortOnUpload"(): boolean
 public static "cutoutMipped"(): $RenderType
@@ -6037,23 +6037,23 @@ import {$IntStream} from "java.util.stream.IntStream"
 import {$List} from "java.util.List"
 import {$SpriteContents$FrameInfo} from "net.minecraft.client.renderer.texture.SpriteContents$FrameInfo"
 import {$AnimatedTextureDuck$$Interface} from "com.railwayteam.railways.mixin_interfaces.AnimatedTextureDuck"
-import {$SpriteContentsAnimationAccessor$$Interface as $SpriteContentsAnimationAccessor$0$$Interface} from "org.embeddedt.embeddium.impl.mixin.features.textures.animations.upload.SpriteContentsAnimationAccessor"
+import {$SpriteContentsAnimationAccessor$$Interface} from "org.embeddedt.embeddium.impl.mixin.features.textures.animations.upload.SpriteContentsAnimationAccessor"
 import {$SpriteTicker} from "net.minecraft.client.renderer.texture.SpriteTicker"
-import {$SpriteContentsAnimationAccessor$$Interface} from "org.embeddedt.embeddium.impl.mixin.features.textures.animations.tracking.SpriteContentsAnimationAccessor"
+import {$SpriteContentsAnimationAccessor$$Interface as $SpriteContentsAnimationAccessor$0$$Interface} from "org.embeddedt.embeddium.impl.mixin.features.textures.animations.tracking.SpriteContentsAnimationAccessor"
 
-export class $SpriteContents$AnimatedTexture implements $AnimatedTextureDuck$$Interface, $SpriteContentsAnimatedTextureAccessor$$Interface, $SpriteContentsAnimationAccessor$$Interface, $SpriteContentsAnimationAccessor$0$$Interface {
+export class $SpriteContents$AnimatedTexture implements $AnimatedTextureDuck$$Interface, $SpriteContentsAnimatedTextureAccessor$$Interface, $SpriteContentsAnimationAccessor$0$$Interface, $SpriteContentsAnimationAccessor$$Interface {
 readonly "frames": $List<($SpriteContents$FrameInfo)>
 readonly "frameRowSize": integer
 readonly "interpolateFrames": boolean
 
+public "createTicker"(): $SpriteTicker
+public "getFrameX"(arg0: integer): integer
+public "getFrameY"(arg0: integer): integer
 public "uploadFrame"(arg0: integer, arg1: integer, arg2: integer): void
 public "invokeUploadFrame"(arg0: integer, arg1: integer, arg2: integer): void
 public "getFrameRowSize"(): integer
-public "getFrameX"(arg0: integer): integer
-public "getFrameY"(arg0: integer): integer
-public "createTicker"(): $SpriteTicker
-public "getFrames"(): $List
 public "uploadFirstFrame"(arg0: integer, arg1: integer): void
+public "getFrames"(): $List
 public "getUniqueFrames"(): $IntStream
 public "railways$uploadWithVisibility"(): void
 get "uniqueFrames"(): $IntStream
@@ -6071,29 +6071,29 @@ declare module "net.minecraft.client.renderer.texture.SpriteContents$Ticker" {
 import {$CallbackInfo$$Type} from "org.spongepowered.asm.mixin.injection.callback.CallbackInfo"
 import {$SpriteContents$AnimatedTexture, $SpriteContents$AnimatedTexture$$Type} from "net.minecraft.client.renderer.texture.SpriteContents$AnimatedTexture"
 import {$SpriteContents$$Type} from "net.minecraft.client.renderer.texture.SpriteContents"
-import {$SpriteContentsAnimatorImplAccessor$$Interface} from "org.embeddedt.embeddium.impl.mixin.features.textures.animations.upload.SpriteContentsAnimatorImplAccessor"
 import {$SpriteTicker$$Interface} from "net.minecraft.client.renderer.texture.SpriteTicker"
+import {$SpriteContentsAnimatorImplAccessor$$Interface} from "org.embeddedt.embeddium.impl.mixin.features.textures.animations.upload.SpriteContentsAnimatorImplAccessor"
 import {$SpriteContents$InterpolationData$$Type} from "net.minecraft.client.renderer.texture.SpriteContents$InterpolationData"
 import {$SpriteContentsTickerAccessor$$Interface} from "net.irisshaders.iris.mixin.texture.SpriteContentsTickerAccessor"
 
 export class $SpriteContents$Ticker implements $SpriteTicker$$Interface, $SpriteContentsTickerAccessor$$Interface, $SpriteContentsAnimatorImplAccessor$$Interface {
-public "getFrameTicks"(): integer
-public "getAnimationInfo"(): $SpriteContents$AnimatedTexture
-public "getSubFrame"(): integer
-public "handler$bfg000$embeddium$assignParent"(arg0: $SpriteContents$$Type, arg1: $SpriteContents$AnimatedTexture$$Type, arg2: $SpriteContents$InterpolationData$$Type, arg3: $CallbackInfo$$Type): void
 public "getFrame"(): integer
-public "setSubFrame"(arg0: integer): void
 public "setFrame"(arg0: integer): void
 public "close"(): void
-public "getFrameIndex"(): integer
 public "tickAndUpload"(arg0: integer, arg1: integer): void
-get "frameTicks"(): integer
-get "animationInfo"(): $SpriteContents$AnimatedTexture
-get "subFrame"(): integer
+public "getFrameIndex"(): integer
+public "handler$bfg000$embeddium$assignParent"(arg0: $SpriteContents$$Type, arg1: $SpriteContents$AnimatedTexture$$Type, arg2: $SpriteContents$InterpolationData$$Type, arg3: $CallbackInfo$$Type): void
+public "getSubFrame"(): integer
+public "setSubFrame"(arg0: integer): void
+public "getAnimationInfo"(): $SpriteContents$AnimatedTexture
+public "getFrameTicks"(): integer
 get "frame"(): integer
-set "subFrame"(value: integer)
 set "frame"(value: integer)
 get "frameIndex"(): integer
+get "subFrame"(): integer
+set "subFrame"(value: integer)
+get "animationInfo"(): $SpriteContents$AnimatedTexture
+get "frameTicks"(): integer
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -6112,11 +6112,11 @@ import {$ImmutableList} from "com.google.common.collect.ImmutableList"
 import {$RenderStateShard$WriteMaskStateShard} from "net.minecraft.client.renderer.RenderStateShard$WriteMaskStateShard"
 import {$RenderStateShard$DepthTestStateShard} from "net.minecraft.client.renderer.RenderStateShard$DepthTestStateShard"
 import {$RenderStateShard$OverlayStateShard} from "net.minecraft.client.renderer.RenderStateShard$OverlayStateShard"
-import {$RenderStateShard$LineStateShard} from "net.minecraft.client.renderer.RenderStateShard$LineStateShard"
 import {$RenderStateShard$CullStateShard} from "net.minecraft.client.renderer.RenderStateShard$CullStateShard"
+import {$RenderStateShard$LineStateShard} from "net.minecraft.client.renderer.RenderStateShard$LineStateShard"
 import {$RenderStateShard$ShaderStateShard} from "net.minecraft.client.renderer.RenderStateShard$ShaderStateShard"
-import {$RenderStateShard$TransparencyStateShard} from "net.minecraft.client.renderer.RenderStateShard$TransparencyStateShard"
 import {$RenderStateShard$LightmapStateShard} from "net.minecraft.client.renderer.RenderStateShard$LightmapStateShard"
+import {$RenderStateShard$TransparencyStateShard} from "net.minecraft.client.renderer.RenderStateShard$TransparencyStateShard"
 import {$RenderStateShard} from "net.minecraft.client.renderer.RenderStateShard"
 import {$RenderStateShard$TexturingStateShard} from "net.minecraft.client.renderer.RenderStateShard$TexturingStateShard"
 import {$CompositeStateAccessor$$Interface} from "net.irisshaders.batchedentityrendering.mixin.CompositeStateAccessor"
@@ -6161,8 +6161,8 @@ constructor(arg0: $List$$Type<($SectionBufferBuilderPack$$Type)>)
 public "getFreeBufferCount"(): integer
 public "isEmpty"(): boolean
 public "release"(arg0: $SectionBufferBuilderPack$$Type): void
-public "acquire"(): $SectionBufferBuilderPack
 public static "allocate"(arg0: integer): $SectionBufferBuilderPool
+public "acquire"(): $SectionBufferBuilderPack
 get "freeBufferCount"(): integer
 get "empty"(): boolean
 }
@@ -6197,8 +6197,8 @@ export type $ItemOverride$Predicate$$Type = ($ItemOverride$Predicate);
 export type $ItemOverride$Predicate$$Original = $ItemOverride$Predicate;}
 declare module "net.minecraft.client.renderer.RenderBuffers" {
 import {$DrawCallTrackingRenderBuffers$$Interface} from "net.irisshaders.batchedentityrendering.impl.DrawCallTrackingRenderBuffers"
-import {$MultiBufferSource$BufferSource} from "net.minecraft.client.renderer.MultiBufferSource$BufferSource"
 import {$MemoryTrackingRenderBuffers$$Interface} from "net.irisshaders.batchedentityrendering.impl.MemoryTrackingRenderBuffers"
+import {$MultiBufferSource$BufferSource} from "net.minecraft.client.renderer.MultiBufferSource$BufferSource"
 import {$SectionBufferBuilderPool} from "net.minecraft.client.renderer.SectionBufferBuilderPool"
 import {$SectionBufferBuilderPack} from "net.minecraft.client.renderer.SectionBufferBuilderPack"
 import {$RenderBuffersExt$$Interface} from "net.irisshaders.batchedentityrendering.impl.RenderBuffersExt"
@@ -6208,23 +6208,23 @@ export class $RenderBuffers implements $MemoryTrackingRenderBuffers$$Interface, 
 constructor(arg0: integer)
 
 public "getEntityBufferAllocatedSize"(): long
-public "getMiscBufferAllocatedSize"(): long
-public "getMaxBegins"(): integer
-public "freeAndDeleteBuffers"(): void
 public "getDrawCalls"(): integer
+public "getMiscBufferAllocatedSize"(): long
+public "freeAndDeleteBuffers"(): void
 public "fixedBufferPack"(): $SectionBufferBuilderPack
 public "sectionBufferPool"(): $SectionBufferBuilderPool
+public "getMaxBegins"(): integer
 public "getRenderTypes"(): integer
-public "crumblingBufferSource"(): $MultiBufferSource$BufferSource
-public "bufferSource"(): $MultiBufferSource$BufferSource
 public "resetDrawCounts"(): void
 public "endLevelRendering"(): void
+public "crumblingBufferSource"(): $MultiBufferSource$BufferSource
 public "outlineBufferSource"(): $OutlineBufferSource
+public "bufferSource"(): $MultiBufferSource$BufferSource
 public "beginLevelRendering"(): void
 get "entityBufferAllocatedSize"(): long
+get "drawCalls"(): integer
 get "miscBufferAllocatedSize"(): long
 get "maxBegins"(): integer
-get "drawCalls"(): integer
 get "renderTypes"(): integer
 }
 /**
@@ -6238,8 +6238,8 @@ export type $RenderBuffers$$Type = ($RenderBuffers);
 export type $RenderBuffers$$Original = $RenderBuffers;}
 declare module "net.minecraft.client.renderer.PostChain" {
 import {$TextureManager$$Type} from "net.minecraft.client.renderer.texture.TextureManager"
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$ResourceProvider$$Type} from "net.minecraft.server.packs.resources.ResourceProvider"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$AutoCloseable$$Interface} from "java.lang.AutoCloseable"
 import {$PostPass} from "net.minecraft.client.renderer.PostPass"
 import {$RenderTarget, $RenderTarget$$Type} from "com.mojang.blaze3d.pipeline.RenderTarget"
@@ -6374,8 +6374,8 @@ static readonly "INTENTIONAL_MISSING_TEXTURE": $ResourceLocation
 constructor(arg0: $ResourceManager$$Type)
 
 public "bindForSetup"(arg0: $ResourceLocation$$Type): void
-public "reload"(arg0: $PreparableReloadListener$PreparationBarrier$$Type, arg1: $ResourceManager$$Type, arg2: $ProfilerFiller$$Type, arg3: $ProfilerFiller$$Type, arg4: $Executor$$Type, arg5: $Executor$$Type): $CompletableFuture<(void)>
 public "tick"(): void
+public "reload"(arg0: $PreparableReloadListener$PreparationBarrier$$Type, arg1: $ResourceManager$$Type, arg2: $ProfilerFiller$$Type, arg3: $ProfilerFiller$$Type, arg4: $Executor$$Type, arg5: $Executor$$Type): $CompletableFuture<(void)>
 public "register"(arg0: StringJS, arg1: $DynamicTexture$$Type): $ResourceLocation
 public "register"(arg0: $ResourceLocation$$Type, arg1: $AbstractTexture$$Type): void
 public "close"(): void
@@ -6414,15 +6414,15 @@ import {$BlendingStateHolder$$Interface} from "net.irisshaders.batchedentityrend
 import {$RenderStateShard$ColorLogicStateShard} from "net.minecraft.client.renderer.RenderStateShard$ColorLogicStateShard"
 import {$RenderStateShard$OverlayStateShard} from "net.minecraft.client.renderer.RenderStateShard$OverlayStateShard"
 import {$BiFunction} from "java.util.function.BiFunction"
-import {$RenderStateShard$LineStateShard} from "net.minecraft.client.renderer.RenderStateShard$LineStateShard"
 import {$RenderStateShard$CullStateShard} from "net.minecraft.client.renderer.RenderStateShard$CullStateShard"
-import {$RenderStateShard$ShaderStateShard} from "net.minecraft.client.renderer.RenderStateShard$ShaderStateShard"
+import {$RenderStateShard$LineStateShard} from "net.minecraft.client.renderer.RenderStateShard$LineStateShard"
 import {$RenderStateShard$TextureStateShard} from "net.minecraft.client.renderer.RenderStateShard$TextureStateShard"
+import {$RenderStateShard$ShaderStateShard} from "net.minecraft.client.renderer.RenderStateShard$ShaderStateShard"
 import {$RenderStateShard$TransparencyStateShard} from "net.minecraft.client.renderer.RenderStateShard$TransparencyStateShard"
 import {$VertexFormat$Mode$$Type} from "com.mojang.blaze3d.vertex.VertexFormat$Mode"
 import {$RenderStateShard$OutputStateShard} from "net.minecraft.client.renderer.RenderStateShard$OutputStateShard"
-import {$RenderType} from "net.minecraft.client.renderer.RenderType"
 import {$VertexFormat$$Type} from "com.mojang.blaze3d.vertex.VertexFormat"
+import {$RenderType} from "net.minecraft.client.renderer.RenderType"
 
 export class $RenderType$CompositeRenderType extends $RenderType implements $BlendingStateHolder$$Interface {
 static readonly "RENDERTYPE_ARMOR_CUTOUT_NO_CULL_SHADER": $RenderStateShard$ShaderStateShard
@@ -6587,10 +6587,10 @@ static readonly "BLOCK_SHEET": $RenderStateShard$TextureStateShard
 
 public "toString"(): StringJS
 public "state"(): $RenderType$CompositeState
-public "isOutline"(): boolean
 public "outline"(): $Optional<($RenderType)>
 public "getTransparencyType"(): $TransparencyType
 public "setTransparencyType"(arg0: $TransparencyType$$Type): void
+public "isOutline"(): boolean
 public static "catnip$create"(arg0: StringJS, arg1: $VertexFormat$$Type, arg2: $VertexFormat$Mode$$Type, arg3: integer, arg4: boolean, arg5: boolean, arg6: $RenderType$CompositeState$$Type): $RenderType$CompositeRenderType
 public static "getTranslucentTransparency"(): $RenderStateShard$TransparencyStateShard
 public static "getNO_TRANSPARENCY"(): $RenderStateShard$TransparencyStateShard
@@ -6702,8 +6702,8 @@ export type $ItemPropertyFunction$$Type = ((arg0: $ItemStack, arg1: $ClientLevel
 export type $ItemPropertyFunction$$Original = $ItemPropertyFunction;}
 declare module "net.minecraft.client.renderer.debug.RaidDebugRenderer" {
 import {$DebugRenderer$SimpleDebugRenderer$$Interface} from "net.minecraft.client.renderer.debug.DebugRenderer$SimpleDebugRenderer"
-import {$MultiBufferSource$$Type} from "net.minecraft.client.renderer.MultiBufferSource"
 import {$Collection$$Type} from "java.util.Collection"
+import {$MultiBufferSource$$Type} from "net.minecraft.client.renderer.MultiBufferSource"
 import {$PoseStack$$Type} from "com.mojang.blaze3d.vertex.PoseStack"
 import {$Minecraft$$Type} from "net.minecraft.client.Minecraft"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"

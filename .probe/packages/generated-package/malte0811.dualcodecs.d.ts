@@ -2,8 +2,8 @@ declare module "malte0811.dualcodecs.DualMapCodec" {
 import {$StreamCodec, $StreamCodec$$Type} from "net.minecraft.network.codec.StreamCodec"
 import {$Function$$Type} from "java.util.function.Function"
 import {$MapCodec, $MapCodec$$Type} from "com.mojang.serialization.MapCodec"
-import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$DualCodec} from "malte0811.dualcodecs.DualCodec"
+import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$Record} from "java.lang.Record"
 
 export class $DualMapCodec<S extends $ByteBuf, T> extends $Record {
@@ -22,7 +22,7 @@ public "mapCodec"(): $MapCodec<(T)>
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $DualMapCodec$$Type<S, T> = ({"mapCodec"?: $MapCodec$$Type<(T)>, "streamCodec"?: $StreamCodec$$Type<(S), (T)>}) | ([mapCodec?: $MapCodec$$Type<(T)>, streamCodec?: $StreamCodec$$Type<(S), (T)>]);
+export type $DualMapCodec$$Type<S, T> = ({"streamCodec"?: $StreamCodec$$Type<(S), (T)>, "mapCodec"?: $MapCodec$$Type<(T)>}) | ([streamCodec?: $StreamCodec$$Type<(S), (T)>, mapCodec?: $MapCodec$$Type<(T)>]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -32,11 +32,11 @@ import {$StreamCodec, $StreamCodec$$Type} from "net.minecraft.network.codec.Stre
 import {$DualMapCodec, $DualMapCodec$$Type} from "malte0811.dualcodecs.DualMapCodec"
 import {$Optional} from "java.util.Optional"
 import {$Codec, $Codec$$Type} from "com.mojang.serialization.Codec"
-import {$List} from "java.util.List"
 import {$Function$$Type} from "java.util.function.Function"
+import {$List} from "java.util.List"
 import {$JsonElement, $JsonElement$$Type} from "com.google.gson.JsonElement"
-import {$Set} from "java.util.Set"
 import {$Tag, $Tag$$Type} from "net.minecraft.nbt.Tag"
+import {$Set} from "java.util.Set"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$Record} from "java.lang.Record"
 
@@ -45,8 +45,8 @@ constructor(codec: $Codec$$Type<(T)>, streamCodec: $StreamCodec$$Type<(S), (T)>)
 
 public "streamCodec"(): $StreamCodec<(S), (T)>
 public "fromNBT"(arg0: $Tag$$Type): T
-public "fromJSON"(arg0: $JsonElement$$Type): T
 public "castStream"<S1 extends $ByteBuf>(): $DualCodec<(S1), (T)>
+public "fromJSON"(arg0: $JsonElement$$Type): T
 public "toJSON"(arg0: T): $JsonElement
 public "dispatch"<V>(arg0: $Function$$Type<(V), (T)>, arg1: $Function$$Type<(T), ($DualMapCodec$$Type<(S), (V)>)>): $DualCodec<(S), (V)>
 public "equals"(arg0: any): boolean
@@ -66,7 +66,7 @@ get "of"(): $DualCodec<(S), ($Set<(T)>)>
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $DualCodec$$Type<S, T> = ({"streamCodec"?: $StreamCodec$$Type<(S), (T)>, "codec"?: $Codec$$Type<(T)>}) | ([streamCodec?: $StreamCodec$$Type<(S), (T)>, codec?: $Codec$$Type<(T)>]);
+export type $DualCodec$$Type<S, T> = ({"codec"?: $Codec$$Type<(T)>, "streamCodec"?: $StreamCodec$$Type<(S), (T)>}) | ([codec?: $Codec$$Type<(T)>, streamCodec?: $StreamCodec$$Type<(S), (T)>]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */

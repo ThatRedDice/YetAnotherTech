@@ -1,6 +1,6 @@
 declare module "net.minecraft.data.loot.LootTableProvider" {
-import {$JsonElement$$Type} from "com.google.gson.JsonElement"
 import {$List, $List$$Type} from "java.util.List"
+import {$JsonElement$$Type} from "com.google.gson.JsonElement"
 import {$CachedOutput$$Type} from "net.minecraft.data.CachedOutput"
 import {$LootTable$$Type} from "net.minecraft.world.level.storage.loot.LootTable"
 import {$LootTableProvider$SubProviderEntry, $LootTableProvider$SubProviderEntry$$Type} from "net.minecraft.data.loot.LootTableProvider$SubProviderEntry"
@@ -19,8 +19,8 @@ constructor(arg0: $PackOutput$$Type, arg1: $Set$$Type<($ResourceKey$$Type<($Loot
 public "getTables"(): $List<($LootTableProvider$SubProviderEntry)>
 public "getName"(): StringJS
 public "run"(arg0: $CachedOutput$$Type): $CompletableFuture<(never)>
-public static "saveStable"<T>(arg0: $CachedOutput$$Type, arg1: $HolderLookup$Provider$$Type, arg2: $Codec$$Type<(T)>, arg3: T, arg4: $Path$$Type): $CompletableFuture<(never)>
 public static "saveStable"(arg0: $CachedOutput$$Type, arg1: $JsonElement$$Type, arg2: $Path$$Type): $CompletableFuture
+public static "saveStable"<T>(arg0: $CachedOutput$$Type, arg1: $HolderLookup$Provider$$Type, arg2: $Codec$$Type<(T)>, arg3: T, arg4: $Path$$Type): $CompletableFuture<(never)>
 get "tables"(): $List<($LootTableProvider$SubProviderEntry)>
 get "name"(): StringJS
 }

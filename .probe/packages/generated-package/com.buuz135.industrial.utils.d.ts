@@ -27,8 +27,8 @@ declare module "com.buuz135.industrial.utils.apihandlers.straw.LavaStrawHandler"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$StrawHandlerBase} from "com.buuz135.industrial.utils.apihandlers.straw.StrawHandlerBase"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$StrawHandlerBase} from "com.buuz135.industrial.utils.apihandlers.straw.StrawHandlerBase"
 
 export class $LavaStrawHandler extends $StrawHandlerBase {
 constructor()
@@ -75,8 +75,8 @@ declare module "com.buuz135.industrial.utils.apihandlers.straw.WaterStrawHandler
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$StrawHandlerBase} from "com.buuz135.industrial.utils.apihandlers.straw.StrawHandlerBase"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$StrawHandlerBase} from "com.buuz135.industrial.utils.apihandlers.straw.StrawHandlerBase"
 
 export class $WaterStrawHandler extends $StrawHandlerBase {
 constructor()
@@ -151,8 +151,8 @@ import {$MobEffectInstance$$Type} from "net.minecraft.world.effect.MobEffectInst
 import {$Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$StrawHandlerBase} from "com.buuz135.industrial.utils.apihandlers.straw.StrawHandlerBase"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$StrawHandlerBase} from "com.buuz135.industrial.utils.apihandlers.straw.StrawHandlerBase"
 import {$Holder$$Type} from "net.minecraft.core.Holder"
 import {$MobEffect$$Type} from "net.minecraft.world.effect.MobEffect"
 
@@ -228,8 +228,8 @@ declare module "com.buuz135.industrial.utils.apihandlers.straw.EssenceStrawHandl
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$StrawHandlerBase} from "com.buuz135.industrial.utils.apihandlers.straw.StrawHandlerBase"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$StrawHandlerBase} from "com.buuz135.industrial.utils.apihandlers.straw.StrawHandlerBase"
 
 export class $EssenceStrawHandler extends $StrawHandlerBase {
 constructor()
@@ -292,8 +292,8 @@ declare module "com.buuz135.industrial.utils.apihandlers.straw.MilkStrawHandler"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$StrawHandlerBase} from "com.buuz135.industrial.utils.apihandlers.straw.StrawHandlerBase"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$StrawHandlerBase} from "com.buuz135.industrial.utils.apihandlers.straw.StrawHandlerBase"
 
 export class $MilkStrawHandler extends $StrawHandlerBase {
 constructor()

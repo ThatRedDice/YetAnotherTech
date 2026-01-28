@@ -1,6 +1,6 @@
 declare module "com.ridanisaurus.emendatusenigmatica.tabs.EECreativeTab" {
-import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Collection} from "java.util.Collection"
+import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$CreativeModeTab} from "net.minecraft.world.item.CreativeModeTab"
 import {$Function$$Type} from "java.util.function.Function"

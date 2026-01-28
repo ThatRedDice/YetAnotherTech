@@ -19,15 +19,15 @@ get "redstoneSignal"(): integer
 }
 
 export class $InternalInventory implements $InternalInventory$$Interface {
+ "getRedstoneSignal"(): integer
  "addItems"(arg0: $ItemStack$$Type): $ItemStack
  "addItems"(arg0: $ItemStack$$Type, arg1: boolean): $ItemStack
- "getRedstoneSignal"(): integer
  "getSubInventory"(arg0: integer, arg1: integer): $InternalInventory
- "getSlotInv"(arg0: integer): $InternalInventory
  "setItemDirect"(arg0: integer, arg1: $ItemStack$$Type): void
 static "wrapExternal"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $Direction$$Type): $ItemTransfer
  "toItemHandler"(): $IItemHandler
  "toContainer"(): $Container
+ "getSlotInv"(arg0: integer): $InternalInventory
  "simulateAdd"(arg0: $ItemStack$$Type): $ItemStack
  "removeItems"(arg0: integer, arg1: $ItemStack$$Type, arg2: $Predicate$$Type<($ItemStack)>): $ItemStack
  "simulateRemove"(arg0: integer, arg1: $ItemStack$$Type, arg2: $Predicate$$Type<($ItemStack)>): $ItemStack
@@ -75,14 +75,14 @@ export class $BaseInternalInventory implements $InternalInventory$$Interface {
 constructor()
 
 public "toItemHandler"(): $IItemHandler
+public "getRedstoneSignal"(): integer
 public "addItems"(arg0: $ItemStack$$Type): $ItemStack
 public "addItems"(arg0: $ItemStack$$Type, arg1: boolean): $ItemStack
-public "getRedstoneSignal"(): integer
 public "getSubInventory"(arg0: integer, arg1: integer): $InternalInventory
-public "getSlotInv"(arg0: integer): $InternalInventory
 public "setItemDirect"(arg0: integer, arg1: $ItemStack$$Type): void
 public static "wrapExternal"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $Direction$$Type): $ItemTransfer
 public "toContainer"(): $Container
+public "getSlotInv"(arg0: integer): $InternalInventory
 public "simulateAdd"(arg0: $ItemStack$$Type): $ItemStack
 public "removeItems"(arg0: integer, arg1: $ItemStack$$Type, arg2: $Predicate$$Type<($ItemStack)>): $ItemStack
 public "simulateRemove"(arg0: integer, arg1: $ItemStack$$Type, arg2: $Predicate$$Type<($ItemStack)>): $ItemStack

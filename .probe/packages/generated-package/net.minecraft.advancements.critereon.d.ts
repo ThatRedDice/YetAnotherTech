@@ -93,19 +93,19 @@ import {$EntityFlagsPredicate} from "net.minecraft.advancements.critereon.Entity
 export class $EntityFlagsPredicate$Builder {
 constructor()
 
+public "setIsFlying"(arg0: boolean): $EntityFlagsPredicate$Builder
+public "setOnFire"(arg0: boolean): $EntityFlagsPredicate$Builder
 public "setCrouching"(arg0: boolean): $EntityFlagsPredicate$Builder
 public "setIsBaby"(arg0: boolean): $EntityFlagsPredicate$Builder
-public "setOnFire"(arg0: boolean): $EntityFlagsPredicate$Builder
-public "setIsFlying"(arg0: boolean): $EntityFlagsPredicate$Builder
 public static "flags"(): $EntityFlagsPredicate$Builder
 public "build"(): $EntityFlagsPredicate
 public "setSprinting"(arg0: boolean): $EntityFlagsPredicate$Builder
 public "setOnGround"(arg0: boolean): $EntityFlagsPredicate$Builder
 public "setSwimming"(arg0: boolean): $EntityFlagsPredicate$Builder
+set "isFlying"(value: boolean)
+set "onFire"(value: boolean)
 set "crouching"(value: boolean)
 set "isBaby"(value: boolean)
-set "onFire"(value: boolean)
-set "isFlying"(value: boolean)
 set "sprinting"(value: boolean)
 set "onGround"(value: boolean)
 set "swimming"(value: boolean)
@@ -150,30 +150,30 @@ export type $SlotsPredicate$$Original = $SlotsPredicate;}
 declare module "net.minecraft.advancements.critereon.RecipeCraftedTrigger$TriggerInstance" {
 import {$Criterion} from "net.minecraft.advancements.Criterion"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
-import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$ContextAwarePredicate, $ContextAwarePredicate$$Type} from "net.minecraft.advancements.critereon.ContextAwarePredicate"
+import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$List, $List$$Type} from "java.util.List"
 import {$CriterionValidator$$Type} from "net.minecraft.advancements.critereon.CriterionValidator"
 import {$ItemPredicate$Builder$$Type} from "net.minecraft.advancements.critereon.ItemPredicate$Builder"
-import {$ItemPredicate, $ItemPredicate$$Type} from "net.minecraft.advancements.critereon.ItemPredicate"
 import {$Record} from "java.lang.Record"
 import {$SimpleCriterionTrigger$SimpleInstance$$Interface} from "net.minecraft.advancements.critereon.SimpleCriterionTrigger$SimpleInstance"
+import {$ItemPredicate, $ItemPredicate$$Type} from "net.minecraft.advancements.critereon.ItemPredicate"
 
 export class $RecipeCraftedTrigger$TriggerInstance extends $Record implements $SimpleCriterionTrigger$SimpleInstance$$Interface {
 static readonly "CODEC": $Codec<($RecipeCraftedTrigger$TriggerInstance)>
 
 constructor(arg0: ($ContextAwarePredicate$$Type)?, arg1: $ResourceLocation$$Type, arg2: $List$$Type<($ItemPredicate$$Type)>)
 
-public static "crafterCraftedItem"(arg0: $ResourceLocation$$Type): $Criterion<($RecipeCraftedTrigger$TriggerInstance)>
 public "ingredients"(): $List<($ItemPredicate)>
-public "recipeId"(): $ResourceLocation
-public static "craftedItem"(arg0: $ResourceLocation$$Type, arg1: $List$$Type<($ItemPredicate$Builder$$Type)>): $Criterion<($RecipeCraftedTrigger$TriggerInstance)>
 public static "craftedItem"(arg0: $ResourceLocation$$Type): $Criterion<($RecipeCraftedTrigger$TriggerInstance)>
+public static "craftedItem"(arg0: $ResourceLocation$$Type, arg1: $List$$Type<($ItemPredicate$Builder$$Type)>): $Criterion<($RecipeCraftedTrigger$TriggerInstance)>
+public "recipeId"(): $ResourceLocation
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
 public "player"(): $Optional<($ContextAwarePredicate)>
+public static "crafterCraftedItem"(arg0: $ResourceLocation$$Type): $Criterion<($RecipeCraftedTrigger$TriggerInstance)>
 public "validate"(arg0: $CriterionValidator$$Type): void
 }
 /**
@@ -236,11 +236,11 @@ export type $MinMaxBounds$Ints$$Original = $MinMaxBounds$Ints;}
 declare module "net.minecraft.advancements.critereon.DefaultBlockInteractionTrigger$TriggerInstance" {
 import {$LootContext$$Type} from "net.minecraft.world.level.storage.loot.LootContext"
 import {$Optional, $Optional$$Type} from "java.util.Optional"
-import {$ContextAwarePredicate, $ContextAwarePredicate$$Type} from "net.minecraft.advancements.critereon.ContextAwarePredicate"
 import {$Codec} from "com.mojang.serialization.Codec"
+import {$ContextAwarePredicate, $ContextAwarePredicate$$Type} from "net.minecraft.advancements.critereon.ContextAwarePredicate"
 import {$CriterionValidator$$Type} from "net.minecraft.advancements.critereon.CriterionValidator"
-import {$Record} from "java.lang.Record"
 import {$SimpleCriterionTrigger$SimpleInstance$$Interface} from "net.minecraft.advancements.critereon.SimpleCriterionTrigger$SimpleInstance"
+import {$Record} from "java.lang.Record"
 
 export class $DefaultBlockInteractionTrigger$TriggerInstance extends $Record implements $SimpleCriterionTrigger$SimpleInstance$$Interface {
 static readonly "CODEC": $Codec<($DefaultBlockInteractionTrigger$TriggerInstance)>
@@ -274,7 +274,7 @@ export class $StatePropertiesPredicate$PropertyMatcher extends $Record {
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $StatePropertiesPredicate$PropertyMatcher$$Type = ({"name"?: StringJS, "valueMatcher"?: $StatePropertiesPredicate$ValueMatcher$$Type}) | ([name?: StringJS, valueMatcher?: $StatePropertiesPredicate$ValueMatcher$$Type]);
+export type $StatePropertiesPredicate$PropertyMatcher$$Type = ({"valueMatcher"?: $StatePropertiesPredicate$ValueMatcher$$Type, "name"?: StringJS}) | ([valueMatcher?: $StatePropertiesPredicate$ValueMatcher$$Type, name?: StringJS]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -291,8 +291,8 @@ import {$ItemPredicate} from "net.minecraft.advancements.critereon.ItemPredicate
 
 export class $ItemPredicate$Builder {
 public "withCount"(arg0: $MinMaxBounds$Ints$$Type): $ItemPredicate$Builder
-public "withSubPredicate"<T extends $ItemSubPredicate>(arg0: $ItemSubPredicate$Type$$Type<(T)>, arg1: T): $ItemPredicate$Builder
 public "hasComponents"(arg0: $DataComponentPredicate$$Type): $ItemPredicate$Builder
+public "withSubPredicate"<T extends $ItemSubPredicate>(arg0: $ItemSubPredicate$Type$$Type<(T)>, arg1: T): $ItemPredicate$Builder
 public static "item"(): $ItemPredicate$Builder
 public "of"(arg0: $TagKey$$Type<($Item)>): $ItemPredicate$Builder
 public "of"(...arg0: ($ItemLike$$Type)[]): $ItemPredicate$Builder
@@ -352,8 +352,8 @@ public "hashCode"(): integer
 public "matches"(arg0: $Holder$$Type<(T)>): boolean
 public static "is"<T>(arg0: $TagKey$$Type<(T)>): $TagPredicate<(T)>
 public "expected"(): boolean
-public static "isNot"<T>(arg0: $TagKey$$Type<(T)>): $TagPredicate<(T)>
 public static "codec"<T>(arg0: $ResourceKey$$Type<($Registry<(T)>)>): $Codec<($TagPredicate<(T)>)>
+public static "isNot"<T>(arg0: $TagKey$$Type<(T)>): $TagPredicate<(T)>
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -391,8 +391,8 @@ declare module "net.minecraft.advancements.critereon.CriterionValidator" {
 import {$HolderGetter$Provider$$Type} from "net.minecraft.core.HolderGetter$Provider"
 import {$Optional$$Type} from "java.util.Optional"
 import {$ContextAwarePredicate$$Type} from "net.minecraft.advancements.critereon.ContextAwarePredicate"
-import {$ProblemReporter$$Type} from "net.minecraft.util.ProblemReporter"
 import {$List$$Type} from "java.util.List"
+import {$ProblemReporter$$Type} from "net.minecraft.util.ProblemReporter"
 import {$LootContextParamSet$$Type} from "net.minecraft.world.level.storage.loot.parameters.LootContextParamSet"
 
 export class $CriterionValidator {
@@ -446,8 +446,8 @@ import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$Predicate, $Predicate$$Type, $Predicate$$Interface} from "java.util.function.Predicate"
 import {$DataComponentPredicate, $DataComponentPredicate$$Type} from "net.minecraft.core.component.DataComponentPredicate"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$HolderSet, $HolderSet$$Type} from "net.minecraft.core.HolderSet"
 import {$Item, $Item$$Type} from "net.minecraft.world.item.Item"
+import {$HolderSet, $HolderSet$$Type} from "net.minecraft.core.HolderSet"
 import {$ItemSubPredicate$Type, $ItemSubPredicate$Type$$Type} from "net.minecraft.advancements.critereon.ItemSubPredicate$Type"
 import {$ItemSubPredicate, $ItemSubPredicate$$Type} from "net.minecraft.advancements.critereon.ItemSubPredicate"
 import {$Record} from "java.lang.Record"
@@ -466,17 +466,17 @@ public "test"(arg0: any): boolean
 public "test"(arg0: $ItemStack$$Type): boolean
 public "count"(): $MinMaxBounds$Ints
 public "components"(): $DataComponentPredicate
-public "or"(arg0: $Predicate$$Type<($ItemStack)>): $Predicate<($ItemStack)>
+public static "not"<T>(arg0: $Predicate$$Type<($ItemStack)>): $Predicate<($ItemStack)>
 public static "isEqual"<T>(arg0: any): $Predicate<($ItemStack)>
 public "negate"(): $Predicate<($ItemStack)>
 public "and"(arg0: $Predicate$$Type<($ItemStack)>): $Predicate<($ItemStack)>
-public static "not"<T>(arg0: $Predicate$$Type<($ItemStack)>): $Predicate<($ItemStack)>
+public "or"(arg0: $Predicate$$Type<($ItemStack)>): $Predicate<($ItemStack)>
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $ItemPredicate$$Type = ({"components"?: $DataComponentPredicate$$Type, "count"?: $MinMaxBounds$Ints$$Type, "items"?: ($HolderSet$$Type<($Item$$Type)>)?, "subPredicates"?: $Map$$Type<($ItemSubPredicate$Type$$Type<(never)>), ($ItemSubPredicate$$Type)>}) | ([components?: $DataComponentPredicate$$Type, count?: $MinMaxBounds$Ints$$Type, items?: ($HolderSet$$Type<($Item$$Type)>)?, subPredicates?: $Map$$Type<($ItemSubPredicate$Type$$Type<(never)>), ($ItemSubPredicate$$Type)>]);
+export type $ItemPredicate$$Type = ({"count"?: $MinMaxBounds$Ints$$Type, "items"?: ($HolderSet$$Type<($Item$$Type)>)?, "subPredicates"?: $Map$$Type<($ItemSubPredicate$Type$$Type<(never)>), ($ItemSubPredicate$$Type)>, "components"?: $DataComponentPredicate$$Type}) | ([count?: $MinMaxBounds$Ints$$Type, items?: ($HolderSet$$Type<($Item$$Type)>)?, subPredicates?: $Map$$Type<($ItemSubPredicate$Type$$Type<(never)>), ($ItemSubPredicate$$Type)>, components?: $DataComponentPredicate$$Type]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -514,11 +514,11 @@ export type $ItemSubPredicate$Type$$Original<T> = $ItemSubPredicate$Type<(T)>;}
 declare module "net.minecraft.advancements.critereon.AnyBlockInteractionTrigger$TriggerInstance" {
 import {$LootContext$$Type} from "net.minecraft.world.level.storage.loot.LootContext"
 import {$Optional, $Optional$$Type} from "java.util.Optional"
-import {$ContextAwarePredicate, $ContextAwarePredicate$$Type} from "net.minecraft.advancements.critereon.ContextAwarePredicate"
 import {$Codec} from "com.mojang.serialization.Codec"
+import {$ContextAwarePredicate, $ContextAwarePredicate$$Type} from "net.minecraft.advancements.critereon.ContextAwarePredicate"
 import {$CriterionValidator$$Type} from "net.minecraft.advancements.critereon.CriterionValidator"
-import {$Record} from "java.lang.Record"
 import {$SimpleCriterionTrigger$SimpleInstance$$Interface} from "net.minecraft.advancements.critereon.SimpleCriterionTrigger$SimpleInstance"
+import {$Record} from "java.lang.Record"
 
 export class $AnyBlockInteractionTrigger$TriggerInstance extends $Record implements $SimpleCriterionTrigger$SimpleInstance$$Interface {
 static readonly "CODEC": $Codec<($AnyBlockInteractionTrigger$TriggerInstance)>
@@ -547,8 +547,8 @@ import {$Criterion} from "net.minecraft.advancements.Criterion"
 import {$EntityPredicate$Builder$$Type} from "net.minecraft.advancements.critereon.EntityPredicate$Builder"
 import {$LootContext$$Type} from "net.minecraft.world.level.storage.loot.LootContext"
 import {$Collection$$Type} from "java.util.Collection"
-import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$ContextAwarePredicate, $ContextAwarePredicate$$Type} from "net.minecraft.advancements.critereon.ContextAwarePredicate"
+import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$List, $List$$Type} from "java.util.List"
 import {$CriterionValidator$$Type} from "net.minecraft.advancements.critereon.CriterionValidator"
@@ -573,7 +573,7 @@ public "player"(): $Optional<($ContextAwarePredicate)>
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $ChanneledLightningTrigger$TriggerInstance$$Type = ({"victims"?: $List$$Type<($ContextAwarePredicate$$Type)>, "player"?: ($ContextAwarePredicate$$Type)?}) | ([victims?: $List$$Type<($ContextAwarePredicate$$Type)>, player?: ($ContextAwarePredicate$$Type)?]);
+export type $ChanneledLightningTrigger$TriggerInstance$$Type = ({"player"?: ($ContextAwarePredicate$$Type)?, "victims"?: $List$$Type<($ContextAwarePredicate$$Type)>}) | ([player?: ($ContextAwarePredicate$$Type)?, victims?: $List$$Type<($ContextAwarePredicate$$Type)>]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -582,14 +582,14 @@ declare module "net.minecraft.advancements.critereon.UsingItemTrigger$TriggerIns
 import {$Criterion} from "net.minecraft.advancements.Criterion"
 import {$EntityPredicate$Builder$$Type} from "net.minecraft.advancements.critereon.EntityPredicate$Builder"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$ContextAwarePredicate, $ContextAwarePredicate$$Type} from "net.minecraft.advancements.critereon.ContextAwarePredicate"
+import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$CriterionValidator$$Type} from "net.minecraft.advancements.critereon.CriterionValidator"
 import {$ItemPredicate$Builder$$Type} from "net.minecraft.advancements.critereon.ItemPredicate$Builder"
-import {$ItemPredicate, $ItemPredicate$$Type} from "net.minecraft.advancements.critereon.ItemPredicate"
 import {$Record} from "java.lang.Record"
 import {$SimpleCriterionTrigger$SimpleInstance$$Interface} from "net.minecraft.advancements.critereon.SimpleCriterionTrigger$SimpleInstance"
+import {$ItemPredicate, $ItemPredicate$$Type} from "net.minecraft.advancements.critereon.ItemPredicate"
 
 export class $UsingItemTrigger$TriggerInstance extends $Record implements $SimpleCriterionTrigger$SimpleInstance$$Interface {
 static readonly "CODEC": $Codec<($UsingItemTrigger$TriggerInstance)>
@@ -597,11 +597,11 @@ static readonly "CODEC": $Codec<($UsingItemTrigger$TriggerInstance)>
 constructor(arg0: ($ContextAwarePredicate$$Type)?, arg1: ($ItemPredicate$$Type)?)
 
 public "item"(): $Optional<($ItemPredicate)>
+public static "lookingAt"(arg0: $EntityPredicate$Builder$$Type, arg1: $ItemPredicate$Builder$$Type): $Criterion<($UsingItemTrigger$TriggerInstance)>
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
 public "matches"(arg0: $ItemStack$$Type): boolean
-public static "lookingAt"(arg0: $EntityPredicate$Builder$$Type, arg1: $ItemPredicate$Builder$$Type): $Criterion<($UsingItemTrigger$TriggerInstance)>
 public "player"(): $Optional<($ContextAwarePredicate)>
 public "validate"(arg0: $CriterionValidator$$Type): void
 }
@@ -609,7 +609,7 @@ public "validate"(arg0: $CriterionValidator$$Type): void
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $UsingItemTrigger$TriggerInstance$$Type = ({"item"?: ($ItemPredicate$$Type)?, "player"?: ($ContextAwarePredicate$$Type)?}) | ([item?: ($ItemPredicate$$Type)?, player?: ($ContextAwarePredicate$$Type)?]);
+export type $UsingItemTrigger$TriggerInstance$$Type = ({"player"?: ($ContextAwarePredicate$$Type)?, "item"?: ($ItemPredicate$$Type)?}) | ([player?: ($ContextAwarePredicate$$Type)?, item?: ($ItemPredicate$$Type)?]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -635,8 +635,8 @@ constructor(arg0: ($ContextAwarePredicate$$Type)?, arg1: ($ItemPredicate$$Type)?
 
 public static "fishedItem"(arg0: ($ItemPredicate$$Type)?, arg1: ($EntityPredicate$$Type)?, arg2: ($ItemPredicate$$Type)?): $Criterion<($FishingRodHookedTrigger$TriggerInstance)>
 public "rod"(): $Optional<($ItemPredicate)>
-public "entity"(): $Optional<($ContextAwarePredicate)>
 public "item"(): $Optional<($ItemPredicate)>
+public "entity"(): $Optional<($ContextAwarePredicate)>
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
@@ -658,19 +658,17 @@ import {$Criterion} from "net.minecraft.advancements.Criterion"
 import {$EntityPredicate$Builder$$Type} from "net.minecraft.advancements.critereon.EntityPredicate$Builder"
 import {$LootContext$$Type} from "net.minecraft.world.level.storage.loot.LootContext"
 import {$Optional, $Optional$$Type} from "java.util.Optional"
-import {$ContextAwarePredicate, $ContextAwarePredicate$$Type} from "net.minecraft.advancements.critereon.ContextAwarePredicate"
 import {$Codec} from "com.mojang.serialization.Codec"
+import {$ContextAwarePredicate, $ContextAwarePredicate$$Type} from "net.minecraft.advancements.critereon.ContextAwarePredicate"
 import {$CriterionValidator$$Type} from "net.minecraft.advancements.critereon.CriterionValidator"
-import {$Record} from "java.lang.Record"
 import {$SimpleCriterionTrigger$SimpleInstance$$Interface} from "net.minecraft.advancements.critereon.SimpleCriterionTrigger$SimpleInstance"
+import {$Record} from "java.lang.Record"
 
 export class $TameAnimalTrigger$TriggerInstance extends $Record implements $SimpleCriterionTrigger$SimpleInstance$$Interface {
 static readonly "CODEC": $Codec<($TameAnimalTrigger$TriggerInstance)>
 
 constructor(arg0: ($ContextAwarePredicate$$Type)?, arg1: ($ContextAwarePredicate$$Type)?)
 
-public static "tamedAnimal"(arg0: $EntityPredicate$Builder$$Type): $Criterion<($TameAnimalTrigger$TriggerInstance)>
-public static "tamedAnimal"(): $Criterion<($TameAnimalTrigger$TriggerInstance)>
 public "entity"(): $Optional<($ContextAwarePredicate)>
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
@@ -678,27 +676,28 @@ public "hashCode"(): integer
 public "matches"(arg0: $LootContext$$Type): boolean
 public "validate"(arg0: $CriterionValidator$$Type): void
 public "player"(): $Optional<($ContextAwarePredicate)>
+public static "tamedAnimal"(): $Criterion<($TameAnimalTrigger$TriggerInstance)>
+public static "tamedAnimal"(arg0: $EntityPredicate$Builder$$Type): $Criterion<($TameAnimalTrigger$TriggerInstance)>
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $TameAnimalTrigger$TriggerInstance$$Type = ({"entity"?: ($ContextAwarePredicate$$Type)?, "player"?: ($ContextAwarePredicate$$Type)?}) | ([entity?: ($ContextAwarePredicate$$Type)?, player?: ($ContextAwarePredicate$$Type)?]);
+export type $TameAnimalTrigger$TriggerInstance$$Type = ({"player"?: ($ContextAwarePredicate$$Type)?, "entity"?: ($ContextAwarePredicate$$Type)?}) | ([player?: ($ContextAwarePredicate$$Type)?, entity?: ($ContextAwarePredicate$$Type)?]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
 export type $TameAnimalTrigger$TriggerInstance$$Original = $TameAnimalTrigger$TriggerInstance;}
 declare module "net.minecraft.advancements.critereon.DamagePredicate$Builder" {
 import {$EntityPredicate$$Type} from "net.minecraft.advancements.critereon.EntityPredicate"
-import {$DamageSourcePredicate$$Type} from "net.minecraft.advancements.critereon.DamageSourcePredicate"
 import {$MinMaxBounds$Doubles$$Type} from "net.minecraft.advancements.critereon.MinMaxBounds$Doubles"
+import {$DamageSourcePredicate$$Type} from "net.minecraft.advancements.critereon.DamageSourcePredicate"
 import {$DamagePredicate} from "net.minecraft.advancements.critereon.DamagePredicate"
 import {$DamageSourcePredicate$Builder$$Type} from "net.minecraft.advancements.critereon.DamageSourcePredicate$Builder"
 
 export class $DamagePredicate$Builder {
 constructor()
 
-public "takenDamage"(arg0: $MinMaxBounds$Doubles$$Type): $DamagePredicate$Builder
 public "sourceEntity"(arg0: $EntityPredicate$$Type): $DamagePredicate$Builder
 public "blocked"(arg0: boolean): $DamagePredicate$Builder
 public "dealtDamage"(arg0: $MinMaxBounds$Doubles$$Type): $DamagePredicate$Builder
@@ -706,6 +705,7 @@ public static "damageInstance"(): $DamagePredicate$Builder
 public "type"(arg0: $DamageSourcePredicate$Builder$$Type): $DamagePredicate$Builder
 public "type"(arg0: $DamageSourcePredicate$$Type): $DamagePredicate$Builder
 public "build"(): $DamagePredicate
+public "takenDamage"(arg0: $MinMaxBounds$Doubles$$Type): $DamagePredicate$Builder
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -740,16 +740,16 @@ export type $TameAnimalTrigger$$Type = ($TameAnimalTrigger);
 export type $TameAnimalTrigger$$Original = $TameAnimalTrigger;}
 declare module "net.minecraft.advancements.critereon.SlideDownBlockTrigger$TriggerInstance" {
 import {$Criterion} from "net.minecraft.advancements.Criterion"
-import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$ContextAwarePredicate, $ContextAwarePredicate$$Type} from "net.minecraft.advancements.critereon.ContextAwarePredicate"
+import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$StatePropertiesPredicate, $StatePropertiesPredicate$$Type} from "net.minecraft.advancements.critereon.StatePropertiesPredicate"
 import {$CriterionValidator$$Type} from "net.minecraft.advancements.critereon.CriterionValidator"
 import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
-import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Record} from "java.lang.Record"
 import {$SimpleCriterionTrigger$SimpleInstance$$Interface} from "net.minecraft.advancements.critereon.SimpleCriterionTrigger$SimpleInstance"
+import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $SlideDownBlockTrigger$TriggerInstance extends $Record implements $SimpleCriterionTrigger$SimpleInstance$$Interface {
 static readonly "CODEC": $Codec<($SlideDownBlockTrigger$TriggerInstance)>
@@ -822,8 +822,8 @@ declare module "net.minecraft.advancements.critereon.EntityTypePredicate" {
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$TagKey$$Type} from "net.minecraft.tags.TagKey"
 import {$HolderSet, $HolderSet$$Type} from "net.minecraft.core.HolderSet"
-import {$Record} from "java.lang.Record"
 import {$EntityType, $EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$Record} from "java.lang.Record"
 
 export class $EntityTypePredicate extends $Record {
 static readonly "CODEC": $Codec<($EntityTypePredicate)>
@@ -851,8 +851,8 @@ declare module "net.minecraft.advancements.critereon.PickedUpItemTrigger" {
 import {$SimpleCriterionTrigger} from "net.minecraft.advancements.critereon.SimpleCriterionTrigger"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
+import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$PickedUpItemTrigger$TriggerInstance} from "net.minecraft.advancements.critereon.PickedUpItemTrigger$TriggerInstance"
 
 export class $PickedUpItemTrigger extends $SimpleCriterionTrigger<($PickedUpItemTrigger$TriggerInstance)> {
@@ -872,10 +872,10 @@ export type $PickedUpItemTrigger$$Type = ($PickedUpItemTrigger);
 export type $PickedUpItemTrigger$$Original = $PickedUpItemTrigger;}
 declare module "net.minecraft.advancements.critereon.KilledTrigger" {
 import {$SimpleCriterionTrigger} from "net.minecraft.advancements.critereon.SimpleCriterionTrigger"
-import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
+import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
 import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
+import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$KilledTrigger$TriggerInstance} from "net.minecraft.advancements.critereon.KilledTrigger$TriggerInstance"
 
 export class $KilledTrigger extends $SimpleCriterionTrigger<($KilledTrigger$TriggerInstance)> {
@@ -894,8 +894,8 @@ export type $KilledTrigger$$Type = ($KilledTrigger);
  */
 export type $KilledTrigger$$Original = $KilledTrigger;}
 declare module "net.minecraft.advancements.critereon.BrewedPotionTrigger" {
-import {$SimpleCriterionTrigger} from "net.minecraft.advancements.critereon.SimpleCriterionTrigger"
 import {$Potion$$Type} from "net.minecraft.world.item.alchemy.Potion"
+import {$SimpleCriterionTrigger} from "net.minecraft.advancements.critereon.SimpleCriterionTrigger"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$BrewedPotionTrigger$TriggerInstance} from "net.minecraft.advancements.critereon.BrewedPotionTrigger$TriggerInstance"
 import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
@@ -920,13 +920,13 @@ declare module "net.minecraft.advancements.critereon.ItemDurabilityTrigger$Trigg
 import {$MinMaxBounds$Ints, $MinMaxBounds$Ints$$Type} from "net.minecraft.advancements.critereon.MinMaxBounds$Ints"
 import {$Criterion} from "net.minecraft.advancements.Criterion"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$ContextAwarePredicate, $ContextAwarePredicate$$Type} from "net.minecraft.advancements.critereon.ContextAwarePredicate"
+import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$CriterionValidator$$Type} from "net.minecraft.advancements.critereon.CriterionValidator"
-import {$ItemPredicate, $ItemPredicate$$Type} from "net.minecraft.advancements.critereon.ItemPredicate"
 import {$Record} from "java.lang.Record"
 import {$SimpleCriterionTrigger$SimpleInstance$$Interface} from "net.minecraft.advancements.critereon.SimpleCriterionTrigger$SimpleInstance"
+import {$ItemPredicate, $ItemPredicate$$Type} from "net.minecraft.advancements.critereon.ItemPredicate"
 
 export class $ItemDurabilityTrigger$TriggerInstance extends $Record implements $SimpleCriterionTrigger$SimpleInstance$$Interface {
 static readonly "CODEC": $Codec<($ItemDurabilityTrigger$TriggerInstance)>
@@ -964,8 +964,8 @@ export class $DamageSourcePredicate$Builder {
 constructor()
 
 public static "damageType"(): $DamageSourcePredicate$Builder
-public "direct"(arg0: $EntityPredicate$Builder$$Type): $DamageSourcePredicate$Builder
 public "tag"(arg0: $TagPredicate$$Type<($DamageType$$Type)>): $DamageSourcePredicate$Builder
+public "direct"(arg0: $EntityPredicate$Builder$$Type): $DamageSourcePredicate$Builder
 public "isDirect"(arg0: boolean): $DamageSourcePredicate$Builder
 public "source"(arg0: $EntityPredicate$Builder$$Type): $DamageSourcePredicate$Builder
 public "build"(): $DamageSourcePredicate
@@ -983,9 +983,9 @@ declare module "net.minecraft.advancements.critereon.LightningStrikeTrigger" {
 import {$SimpleCriterionTrigger} from "net.minecraft.advancements.critereon.SimpleCriterionTrigger"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$List$$Type} from "java.util.List"
-import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$LightningBolt$$Type} from "net.minecraft.world.entity.LightningBolt"
 import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
+import {$LightningBolt$$Type} from "net.minecraft.world.entity.LightningBolt"
+import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$LightningStrikeTrigger$TriggerInstance} from "net.minecraft.advancements.critereon.LightningStrikeTrigger$TriggerInstance"
 
 export class $LightningStrikeTrigger extends $SimpleCriterionTrigger<($LightningStrikeTrigger$TriggerInstance)> {
@@ -1005,8 +1005,8 @@ export type $LightningStrikeTrigger$$Type = ($LightningStrikeTrigger);
 export type $LightningStrikeTrigger$$Original = $LightningStrikeTrigger;}
 declare module "net.minecraft.advancements.critereon.RecipeCraftedTrigger" {
 import {$SimpleCriterionTrigger} from "net.minecraft.advancements.critereon.SimpleCriterionTrigger"
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$List$$Type} from "java.util.List"
 import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
@@ -1032,15 +1032,15 @@ import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$BlockPredicate, $BlockPredicate$$Type} from "net.minecraft.advancements.critereon.BlockPredicate"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$LightPredicate, $LightPredicate$$Type} from "net.minecraft.advancements.critereon.LightPredicate"
-import {$Structure, $Structure$$Type} from "net.minecraft.world.level.levelgen.structure.Structure"
 import {$Codec} from "com.mojang.serialization.Codec"
+import {$Structure, $Structure$$Type} from "net.minecraft.world.level.levelgen.structure.Structure"
 import {$FluidPredicate, $FluidPredicate$$Type} from "net.minecraft.advancements.critereon.FluidPredicate"
 import {$HolderSet, $HolderSet$$Type} from "net.minecraft.core.HolderSet"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$ResourceKey, $ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
 import {$Biome, $Biome$$Type} from "net.minecraft.world.level.biome.Biome"
-import {$LocationPredicate$PositionPredicate, $LocationPredicate$PositionPredicate$$Type} from "net.minecraft.advancements.critereon.LocationPredicate$PositionPredicate"
 import {$Record} from "java.lang.Record"
+import {$LocationPredicate$PositionPredicate, $LocationPredicate$PositionPredicate$$Type} from "net.minecraft.advancements.critereon.LocationPredicate$PositionPredicate"
 
 export class $LocationPredicate extends $Record {
 static readonly "CODEC": $Codec<($LocationPredicate)>
@@ -1065,7 +1065,7 @@ public "canSeeSky"(): $Optional<(boolean)>
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $LocationPredicate$$Type = ({"dimension"?: ($ResourceKey$$Type<($Level$$Type)>)?, "canSeeSky"?: (boolean)?, "structures"?: ($HolderSet$$Type<($Structure$$Type)>)?, "block"?: ($BlockPredicate$$Type)?, "light"?: ($LightPredicate$$Type)?, "position"?: ($LocationPredicate$PositionPredicate$$Type)?, "fluid"?: ($FluidPredicate$$Type)?, "biomes"?: ($HolderSet$$Type<($Biome$$Type)>)?, "smokey"?: (boolean)?}) | ([dimension?: ($ResourceKey$$Type<($Level$$Type)>)?, canSeeSky?: (boolean)?, structures?: ($HolderSet$$Type<($Structure$$Type)>)?, block?: ($BlockPredicate$$Type)?, light?: ($LightPredicate$$Type)?, position?: ($LocationPredicate$PositionPredicate$$Type)?, fluid?: ($FluidPredicate$$Type)?, biomes?: ($HolderSet$$Type<($Biome$$Type)>)?, smokey?: (boolean)?]);
+export type $LocationPredicate$$Type = ({"structures"?: ($HolderSet$$Type<($Structure$$Type)>)?, "block"?: ($BlockPredicate$$Type)?, "light"?: ($LightPredicate$$Type)?, "position"?: ($LocationPredicate$PositionPredicate$$Type)?, "fluid"?: ($FluidPredicate$$Type)?, "biomes"?: ($HolderSet$$Type<($Biome$$Type)>)?, "smokey"?: (boolean)?, "dimension"?: ($ResourceKey$$Type<($Level$$Type)>)?, "canSeeSky"?: (boolean)?}) | ([structures?: ($HolderSet$$Type<($Structure$$Type)>)?, block?: ($BlockPredicate$$Type)?, light?: ($LightPredicate$$Type)?, position?: ($LocationPredicate$PositionPredicate$$Type)?, fluid?: ($FluidPredicate$$Type)?, biomes?: ($HolderSet$$Type<($Biome$$Type)>)?, smokey?: (boolean)?, dimension?: ($ResourceKey$$Type<($Level$$Type)>)?, canSeeSky?: (boolean)?]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -1188,9 +1188,9 @@ import {$Criterion} from "net.minecraft.advancements.Criterion"
 import {$ContextAwarePredicate, $ContextAwarePredicate$$Type} from "net.minecraft.advancements.critereon.ContextAwarePredicate"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$ItemPredicate$Builder$$Type} from "net.minecraft.advancements.critereon.ItemPredicate$Builder"
-import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Record} from "java.lang.Record"
 import {$SimpleCriterionTrigger$SimpleInstance$$Interface} from "net.minecraft.advancements.critereon.SimpleCriterionTrigger$SimpleInstance"
+import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $BeeNestDestroyedTrigger$TriggerInstance extends $Record implements $SimpleCriterionTrigger$SimpleInstance$$Interface {
 static readonly "CODEC": $Codec<($BeeNestDestroyedTrigger$TriggerInstance)>
@@ -1212,7 +1212,7 @@ public "validate"(arg0: $CriterionValidator$$Type): void
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $BeeNestDestroyedTrigger$TriggerInstance$$Type = ({"beesInside"?: $MinMaxBounds$Ints$$Type, "player"?: ($ContextAwarePredicate$$Type)?, "item"?: ($ItemPredicate$$Type)?, "block"?: ($Holder$$Type<($Block$$Type)>)?}) | ([beesInside?: $MinMaxBounds$Ints$$Type, player?: ($ContextAwarePredicate$$Type)?, item?: ($ItemPredicate$$Type)?, block?: ($Holder$$Type<($Block$$Type)>)?]);
+export type $BeeNestDestroyedTrigger$TriggerInstance$$Type = ({"player"?: ($ContextAwarePredicate$$Type)?, "item"?: ($ItemPredicate$$Type)?, "block"?: ($Holder$$Type<($Block$$Type)>)?, "beesInside"?: $MinMaxBounds$Ints$$Type}) | ([player?: ($ContextAwarePredicate$$Type)?, item?: ($ItemPredicate$$Type)?, block?: ($Holder$$Type<($Block$$Type)>)?, beesInside?: $MinMaxBounds$Ints$$Type]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -1221,11 +1221,11 @@ declare module "net.minecraft.advancements.critereon.CuredZombieVillagerTrigger$
 import {$Criterion} from "net.minecraft.advancements.Criterion"
 import {$LootContext$$Type} from "net.minecraft.world.level.storage.loot.LootContext"
 import {$Optional, $Optional$$Type} from "java.util.Optional"
-import {$ContextAwarePredicate, $ContextAwarePredicate$$Type} from "net.minecraft.advancements.critereon.ContextAwarePredicate"
 import {$Codec} from "com.mojang.serialization.Codec"
+import {$ContextAwarePredicate, $ContextAwarePredicate$$Type} from "net.minecraft.advancements.critereon.ContextAwarePredicate"
 import {$CriterionValidator$$Type} from "net.minecraft.advancements.critereon.CriterionValidator"
-import {$Record} from "java.lang.Record"
 import {$SimpleCriterionTrigger$SimpleInstance$$Interface} from "net.minecraft.advancements.critereon.SimpleCriterionTrigger$SimpleInstance"
+import {$Record} from "java.lang.Record"
 
 export class $CuredZombieVillagerTrigger$TriggerInstance extends $Record implements $SimpleCriterionTrigger$SimpleInstance$$Interface {
 static readonly "CODEC": $Codec<($CuredZombieVillagerTrigger$TriggerInstance)>
@@ -1239,8 +1239,8 @@ public "toString"(): StringJS
 public "hashCode"(): integer
 public "matches"(arg0: $LootContext$$Type, arg1: $LootContext$$Type): boolean
 public "validate"(arg0: $CriterionValidator$$Type): void
-public "zombie"(): $Optional<($ContextAwarePredicate)>
 public "player"(): $Optional<($ContextAwarePredicate)>
+public "zombie"(): $Optional<($ContextAwarePredicate)>
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -1275,15 +1275,15 @@ export type $MinMaxBounds$BoundsFactory$$Original<T, R> = $MinMaxBounds$BoundsFa
 declare module "net.minecraft.advancements.critereon.ConsumeItemTrigger$TriggerInstance" {
 import {$Criterion} from "net.minecraft.advancements.Criterion"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$ContextAwarePredicate, $ContextAwarePredicate$$Type} from "net.minecraft.advancements.critereon.ContextAwarePredicate"
+import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$ItemLike$$Type} from "net.minecraft.world.level.ItemLike"
 import {$CriterionValidator$$Type} from "net.minecraft.advancements.critereon.CriterionValidator"
 import {$ItemPredicate$Builder$$Type} from "net.minecraft.advancements.critereon.ItemPredicate$Builder"
-import {$ItemPredicate, $ItemPredicate$$Type} from "net.minecraft.advancements.critereon.ItemPredicate"
 import {$Record} from "java.lang.Record"
 import {$SimpleCriterionTrigger$SimpleInstance$$Interface} from "net.minecraft.advancements.critereon.SimpleCriterionTrigger$SimpleInstance"
+import {$ItemPredicate, $ItemPredicate$$Type} from "net.minecraft.advancements.critereon.ItemPredicate"
 
 export class $ConsumeItemTrigger$TriggerInstance extends $Record implements $SimpleCriterionTrigger$SimpleInstance$$Interface {
 static readonly "CODEC": $Codec<($ConsumeItemTrigger$TriggerInstance)>
@@ -1305,7 +1305,7 @@ public "validate"(arg0: $CriterionValidator$$Type): void
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $ConsumeItemTrigger$TriggerInstance$$Type = ({"item"?: ($ItemPredicate$$Type)?, "player"?: ($ContextAwarePredicate$$Type)?}) | ([item?: ($ItemPredicate$$Type)?, player?: ($ContextAwarePredicate$$Type)?]);
+export type $ConsumeItemTrigger$TriggerInstance$$Type = ({"player"?: ($ContextAwarePredicate$$Type)?, "item"?: ($ItemPredicate$$Type)?}) | ([player?: ($ContextAwarePredicate$$Type)?, item?: ($ItemPredicate$$Type)?]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -1313,14 +1313,14 @@ export type $ConsumeItemTrigger$TriggerInstance$$Original = $ConsumeItemTrigger$
 declare module "net.minecraft.advancements.critereon.FilledBucketTrigger$TriggerInstance" {
 import {$Criterion} from "net.minecraft.advancements.Criterion"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$ContextAwarePredicate, $ContextAwarePredicate$$Type} from "net.minecraft.advancements.critereon.ContextAwarePredicate"
+import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$CriterionValidator$$Type} from "net.minecraft.advancements.critereon.CriterionValidator"
 import {$ItemPredicate$Builder$$Type} from "net.minecraft.advancements.critereon.ItemPredicate$Builder"
-import {$ItemPredicate, $ItemPredicate$$Type} from "net.minecraft.advancements.critereon.ItemPredicate"
 import {$Record} from "java.lang.Record"
 import {$SimpleCriterionTrigger$SimpleInstance$$Interface} from "net.minecraft.advancements.critereon.SimpleCriterionTrigger$SimpleInstance"
+import {$ItemPredicate, $ItemPredicate$$Type} from "net.minecraft.advancements.critereon.ItemPredicate"
 
 export class $FilledBucketTrigger$TriggerInstance extends $Record implements $SimpleCriterionTrigger$SimpleInstance$$Interface {
 static readonly "CODEC": $Codec<($FilledBucketTrigger$TriggerInstance)>
@@ -1340,7 +1340,7 @@ public "validate"(arg0: $CriterionValidator$$Type): void
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $FilledBucketTrigger$TriggerInstance$$Type = ({"item"?: ($ItemPredicate$$Type)?, "player"?: ($ContextAwarePredicate$$Type)?}) | ([item?: ($ItemPredicate$$Type)?, player?: ($ContextAwarePredicate$$Type)?]);
+export type $FilledBucketTrigger$TriggerInstance$$Type = ({"player"?: ($ContextAwarePredicate$$Type)?, "item"?: ($ItemPredicate$$Type)?}) | ([player?: ($ContextAwarePredicate$$Type)?, item?: ($ItemPredicate$$Type)?]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -1349,8 +1349,8 @@ declare module "net.minecraft.advancements.critereon.FluidPredicate" {
 import {$Fluid, $Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$HolderSet, $HolderSet$$Type} from "net.minecraft.core.HolderSet"
 import {$StatePropertiesPredicate, $StatePropertiesPredicate$$Type} from "net.minecraft.advancements.critereon.StatePropertiesPredicate"
+import {$HolderSet, $HolderSet$$Type} from "net.minecraft.core.HolderSet"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$Record} from "java.lang.Record"
@@ -1371,7 +1371,7 @@ public "fluids"(): $Optional<($HolderSet<($Fluid)>)>
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $FluidPredicate$$Type = ({"properties"?: ($StatePropertiesPredicate$$Type)?, "fluids"?: ($HolderSet$$Type<($Fluid$$Type)>)?}) | ([properties?: ($StatePropertiesPredicate$$Type)?, fluids?: ($HolderSet$$Type<($Fluid$$Type)>)?]);
+export type $FluidPredicate$$Type = ({"fluids"?: ($HolderSet$$Type<($Fluid$$Type)>)?, "properties"?: ($StatePropertiesPredicate$$Type)?}) | ([fluids?: ($HolderSet$$Type<($Fluid$$Type)>)?, properties?: ($StatePropertiesPredicate$$Type)?]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -1379,22 +1379,23 @@ export type $FluidPredicate$$Original = $FluidPredicate;}
 declare module "net.minecraft.advancements.critereon.LocationPredicate$Builder" {
 import {$Structure$$Type} from "net.minecraft.world.level.levelgen.structure.Structure"
 import {$BlockPredicate$Builder$$Type} from "net.minecraft.advancements.critereon.BlockPredicate$Builder"
-import {$HolderSet$$Type} from "net.minecraft.core.HolderSet"
-import {$LightPredicate$Builder$$Type} from "net.minecraft.advancements.critereon.LightPredicate$Builder"
-import {$LocationPredicate} from "net.minecraft.advancements.critereon.LocationPredicate"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$LocationPredicate} from "net.minecraft.advancements.critereon.LocationPredicate"
+import {$LightPredicate$Builder$$Type} from "net.minecraft.advancements.critereon.LightPredicate$Builder"
+import {$HolderSet$$Type} from "net.minecraft.core.HolderSet"
 import {$MinMaxBounds$Doubles$$Type} from "net.minecraft.advancements.critereon.MinMaxBounds$Doubles"
-import {$FluidPredicate$Builder$$Type} from "net.minecraft.advancements.critereon.FluidPredicate$Builder"
 import {$ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
+import {$FluidPredicate$Builder$$Type} from "net.minecraft.advancements.critereon.FluidPredicate$Builder"
 import {$Biome$$Type} from "net.minecraft.world.level.biome.Biome"
 import {$Holder$$Type} from "net.minecraft.core.Holder"
 
 export class $LocationPredicate$Builder {
 constructor()
 
-public "setFluid"(arg0: $FluidPredicate$Builder$$Type): $LocationPredicate$Builder
 public "setX"(arg0: $MinMaxBounds$Doubles$$Type): $LocationPredicate$Builder
 public "setZ"(arg0: $MinMaxBounds$Doubles$$Type): $LocationPredicate$Builder
+public "setCanSeeSky"(arg0: boolean): $LocationPredicate$Builder
+public "setFluid"(arg0: $FluidPredicate$Builder$$Type): $LocationPredicate$Builder
 public static "inBiome"(arg0: $Holder$$Type<($Biome)>): $LocationPredicate$Builder
 public "setBiomes"(arg0: $HolderSet$$Type<($Biome)>): $LocationPredicate$Builder
 public static "inDimension"(arg0: $ResourceKey$$Type<($Level)>): $LocationPredicate$Builder
@@ -1402,20 +1403,19 @@ public static "inStructure"(arg0: $Holder$$Type<($Structure)>): $LocationPredica
 public "setStructures"(arg0: $HolderSet$$Type<($Structure)>): $LocationPredicate$Builder
 public static "atYLocation"(arg0: $MinMaxBounds$Doubles$$Type): $LocationPredicate$Builder
 public "setSmokey"(arg0: boolean): $LocationPredicate$Builder
-public "setCanSeeSky"(arg0: boolean): $LocationPredicate$Builder
 public static "location"(): $LocationPredicate$Builder
 public "build"(): $LocationPredicate
 public "setBlock"(arg0: $BlockPredicate$Builder$$Type): $LocationPredicate$Builder
 public "setLight"(arg0: $LightPredicate$Builder$$Type): $LocationPredicate$Builder
 public "setY"(arg0: $MinMaxBounds$Doubles$$Type): $LocationPredicate$Builder
 public "setDimension"(arg0: $ResourceKey$$Type<($Level)>): $LocationPredicate$Builder
-set "fluid"(value: $FluidPredicate$Builder$$Type)
 set "x"(value: $MinMaxBounds$Doubles$$Type)
 set "z"(value: $MinMaxBounds$Doubles$$Type)
+set "canSeeSky"(value: boolean)
+set "fluid"(value: $FluidPredicate$Builder$$Type)
 set "biomes"(value: $HolderSet$$Type<($Biome)>)
 set "structures"(value: $HolderSet$$Type<($Structure)>)
 set "smokey"(value: boolean)
-set "canSeeSky"(value: boolean)
 set "block"(value: $BlockPredicate$Builder$$Type)
 set "light"(value: $LightPredicate$Builder$$Type)
 set "y"(value: $MinMaxBounds$Doubles$$Type)
@@ -1460,9 +1460,9 @@ import {$LootContext$$Type} from "net.minecraft.world.level.storage.loot.LootCon
 import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$CriterionValidator$$Type} from "net.minecraft.advancements.critereon.CriterionValidator"
 import {$Criterion} from "net.minecraft.advancements.Criterion"
-import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
 import {$ContextAwarePredicate, $ContextAwarePredicate$$Type} from "net.minecraft.advancements.critereon.ContextAwarePredicate"
 import {$Codec} from "com.mojang.serialization.Codec"
+import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
 import {$EntityPredicate$$Type} from "net.minecraft.advancements.critereon.EntityPredicate"
 import {$DamagePredicate$Builder$$Type} from "net.minecraft.advancements.critereon.DamagePredicate$Builder"
 import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
@@ -1475,8 +1475,8 @@ static readonly "CODEC": $Codec<($PlayerHurtEntityTrigger$TriggerInstance)>
 
 constructor(arg0: ($ContextAwarePredicate$$Type)?, arg1: ($DamagePredicate$$Type)?, arg2: ($ContextAwarePredicate$$Type)?)
 
-public static "playerHurtEntity"(arg0: $DamagePredicate$Builder$$Type, arg1: ($EntityPredicate$$Type)?): $Criterion<($PlayerHurtEntityTrigger$TriggerInstance)>
 public static "playerHurtEntity"(arg0: ($DamagePredicate$$Type)?, arg1: ($EntityPredicate$$Type)?): $Criterion<($PlayerHurtEntityTrigger$TriggerInstance)>
+public static "playerHurtEntity"(arg0: $DamagePredicate$Builder$$Type, arg1: ($EntityPredicate$$Type)?): $Criterion<($PlayerHurtEntityTrigger$TriggerInstance)>
 public static "playerHurtEntity"(arg0: ($EntityPredicate$$Type)?): $Criterion<($PlayerHurtEntityTrigger$TriggerInstance)>
 public static "playerHurtEntity"(): $Criterion<($PlayerHurtEntityTrigger$TriggerInstance)>
 public static "playerHurtEntityWithDamage"(arg0: $DamagePredicate$Builder$$Type): $Criterion<($PlayerHurtEntityTrigger$TriggerInstance)>
@@ -1502,8 +1502,8 @@ export type $PlayerHurtEntityTrigger$TriggerInstance$$Original = $PlayerHurtEnti
 declare module "net.minecraft.advancements.critereon.LightningStrikeTrigger$TriggerInstance" {
 import {$Criterion} from "net.minecraft.advancements.Criterion"
 import {$LootContext$$Type} from "net.minecraft.world.level.storage.loot.LootContext"
-import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$ContextAwarePredicate, $ContextAwarePredicate$$Type} from "net.minecraft.advancements.critereon.ContextAwarePredicate"
+import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$List$$Type} from "java.util.List"
 import {$EntityPredicate$$Type} from "net.minecraft.advancements.critereon.EntityPredicate"
@@ -1556,11 +1556,11 @@ constructor(arg0: ($ContextAwarePredicate$$Type)?)
 
 public static "sleptInBed"(): $Criterion<($PlayerTrigger$TriggerInstance)>
 public static "raidWon"(): $Criterion<($PlayerTrigger$TriggerInstance)>
-public static "avoidVibration"(): $Criterion<($PlayerTrigger$TriggerInstance)>
 public static "walkOnBlockWithEquipment"(arg0: $Block$$Type, arg1: $Item$$Type): $Criterion<($PlayerTrigger$TriggerInstance)>
+public static "avoidVibration"(): $Criterion<($PlayerTrigger$TriggerInstance)>
+public static "located"(arg0: ($EntityPredicate$$Type)?): $Criterion<($PlayerTrigger$TriggerInstance)>
 public static "located"(arg0: $LocationPredicate$Builder$$Type): $Criterion<($PlayerTrigger$TriggerInstance)>
 public static "located"(arg0: $EntityPredicate$Builder$$Type): $Criterion<($PlayerTrigger$TriggerInstance)>
-public static "located"(arg0: ($EntityPredicate$$Type)?): $Criterion<($PlayerTrigger$TriggerInstance)>
 public static "tick"(): $Criterion<($PlayerTrigger$TriggerInstance)>
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
@@ -1582,8 +1582,8 @@ import {$MinMaxBounds$Ints, $MinMaxBounds$Ints$$Type} from "net.minecraft.advanc
 import {$Criterion} from "net.minecraft.advancements.Criterion"
 import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$LootContext$$Type} from "net.minecraft.world.level.storage.loot.LootContext"
-import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$ContextAwarePredicate, $ContextAwarePredicate$$Type} from "net.minecraft.advancements.critereon.ContextAwarePredicate"
+import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$CriterionValidator$$Type} from "net.minecraft.advancements.critereon.CriterionValidator"
 import {$Record} from "java.lang.Record"
@@ -1641,8 +1641,8 @@ import {$Criterion} from "net.minecraft.advancements.Criterion"
 import {$PlayerAdvancements$$Type} from "net.minecraft.server.PlayerAdvancements"
 import {$CriterionTrigger$Listener$$Type} from "net.minecraft.advancements.CriterionTrigger$Listener"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$CriterionTrigger$$Interface} from "net.minecraft.advancements.CriterionTrigger"
 import {$SimpleCriterionTrigger$SimpleInstance, $SimpleCriterionTrigger$SimpleInstance$$Type} from "net.minecraft.advancements.critereon.SimpleCriterionTrigger$SimpleInstance"
+import {$CriterionTrigger$$Interface} from "net.minecraft.advancements.CriterionTrigger"
 
 export class $SimpleCriterionTrigger<T extends $SimpleCriterionTrigger$SimpleInstance> implements $CriterionTrigger$$Interface<(T)> {
 constructor()
@@ -1692,8 +1692,8 @@ declare module "net.minecraft.advancements.critereon.UsedEnderEyeTrigger" {
 import {$UsedEnderEyeTrigger$TriggerInstance} from "net.minecraft.advancements.critereon.UsedEnderEyeTrigger$TriggerInstance"
 import {$SimpleCriterionTrigger} from "net.minecraft.advancements.critereon.SimpleCriterionTrigger"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 
 export class $UsedEnderEyeTrigger extends $SimpleCriterionTrigger<($UsedEnderEyeTrigger$TriggerInstance)> {
 constructor()
@@ -1714,14 +1714,14 @@ declare module "net.minecraft.advancements.critereon.PickedUpItemTrigger$Trigger
 import {$Criterion} from "net.minecraft.advancements.Criterion"
 import {$LootContext$$Type} from "net.minecraft.world.level.storage.loot.LootContext"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$ContextAwarePredicate, $ContextAwarePredicate$$Type} from "net.minecraft.advancements.critereon.ContextAwarePredicate"
+import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$CriterionValidator$$Type} from "net.minecraft.advancements.critereon.CriterionValidator"
 import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
-import {$ItemPredicate, $ItemPredicate$$Type} from "net.minecraft.advancements.critereon.ItemPredicate"
 import {$Record} from "java.lang.Record"
 import {$SimpleCriterionTrigger$SimpleInstance$$Interface} from "net.minecraft.advancements.critereon.SimpleCriterionTrigger$SimpleInstance"
+import {$ItemPredicate, $ItemPredicate$$Type} from "net.minecraft.advancements.critereon.ItemPredicate"
 
 export class $PickedUpItemTrigger$TriggerInstance extends $Record implements $SimpleCriterionTrigger$SimpleInstance$$Interface {
 static readonly "CODEC": $Codec<($PickedUpItemTrigger$TriggerInstance)>
@@ -1730,8 +1730,8 @@ constructor(arg0: ($ContextAwarePredicate$$Type)?, arg1: ($ItemPredicate$$Type)?
 
 public static "thrownItemPickedUpByEntity"(arg0: $ContextAwarePredicate$$Type, arg1: ($ItemPredicate$$Type)?, arg2: ($ContextAwarePredicate$$Type)?): $Criterion<($PickedUpItemTrigger$TriggerInstance)>
 public static "thrownItemPickedUpByPlayer"(arg0: ($ContextAwarePredicate$$Type)?, arg1: ($ItemPredicate$$Type)?, arg2: ($ContextAwarePredicate$$Type)?): $Criterion<($PickedUpItemTrigger$TriggerInstance)>
-public "entity"(): $Optional<($ContextAwarePredicate)>
 public "item"(): $Optional<($ItemPredicate)>
+public "entity"(): $Optional<($ContextAwarePredicate)>
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
@@ -1760,14 +1760,14 @@ import {$EntityTypePredicate, $EntityTypePredicate$$Type} from "net.minecraft.ad
 import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$EntityPredicate$Builder$$Type} from "net.minecraft.advancements.critereon.EntityPredicate$Builder"
 import {$EntityEquipmentPredicate, $EntityEquipmentPredicate$$Type} from "net.minecraft.advancements.critereon.EntityEquipmentPredicate"
-import {$Codec} from "com.mojang.serialization.Codec"
 import {$ContextAwarePredicate} from "net.minecraft.advancements.critereon.ContextAwarePredicate"
+import {$Codec} from "com.mojang.serialization.Codec"
 import {$DistancePredicate, $DistancePredicate$$Type} from "net.minecraft.advancements.critereon.DistancePredicate"
 import {$SlotsPredicate, $SlotsPredicate$$Type} from "net.minecraft.advancements.critereon.SlotsPredicate"
-import {$EntityPredicate$LocationWrapper, $EntityPredicate$LocationWrapper$$Type} from "net.minecraft.advancements.critereon.EntityPredicate$LocationWrapper"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
-import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
+import {$EntityPredicate$LocationWrapper, $EntityPredicate$LocationWrapper$$Type} from "net.minecraft.advancements.critereon.EntityPredicate$LocationWrapper"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
+import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
 import {$MovementPredicate, $MovementPredicate$$Type} from "net.minecraft.advancements.critereon.MovementPredicate"
 import {$Record} from "java.lang.Record"
 
@@ -1817,11 +1817,11 @@ import {$Criterion} from "net.minecraft.advancements.Criterion"
 import {$EntityPredicate$Builder$$Type} from "net.minecraft.advancements.critereon.EntityPredicate$Builder"
 import {$LootContext$$Type} from "net.minecraft.world.level.storage.loot.LootContext"
 import {$Optional, $Optional$$Type} from "java.util.Optional"
-import {$ContextAwarePredicate, $ContextAwarePredicate$$Type} from "net.minecraft.advancements.critereon.ContextAwarePredicate"
 import {$Codec} from "com.mojang.serialization.Codec"
+import {$ContextAwarePredicate, $ContextAwarePredicate$$Type} from "net.minecraft.advancements.critereon.ContextAwarePredicate"
 import {$CriterionValidator$$Type} from "net.minecraft.advancements.critereon.CriterionValidator"
-import {$Record} from "java.lang.Record"
 import {$SimpleCriterionTrigger$SimpleInstance$$Interface} from "net.minecraft.advancements.critereon.SimpleCriterionTrigger$SimpleInstance"
+import {$Record} from "java.lang.Record"
 
 export class $SummonedEntityTrigger$TriggerInstance extends $Record implements $SimpleCriterionTrigger$SimpleInstance$$Interface {
 static readonly "CODEC": $Codec<($SummonedEntityTrigger$TriggerInstance)>
@@ -1841,7 +1841,7 @@ public "player"(): $Optional<($ContextAwarePredicate)>
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $SummonedEntityTrigger$TriggerInstance$$Type = ({"entity"?: ($ContextAwarePredicate$$Type)?, "player"?: ($ContextAwarePredicate$$Type)?}) | ([entity?: ($ContextAwarePredicate$$Type)?, player?: ($ContextAwarePredicate$$Type)?]);
+export type $SummonedEntityTrigger$TriggerInstance$$Type = ({"player"?: ($ContextAwarePredicate$$Type)?, "entity"?: ($ContextAwarePredicate$$Type)?}) | ([player?: ($ContextAwarePredicate$$Type)?, entity?: ($ContextAwarePredicate$$Type)?]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -1856,10 +1856,10 @@ static readonly "CODEC": $Codec<($MovementPredicate)>
 
 constructor(arg0: $MinMaxBounds$Doubles$$Type, arg1: $MinMaxBounds$Doubles$$Type, arg2: $MinMaxBounds$Doubles$$Type, arg3: $MinMaxBounds$Doubles$$Type, arg4: $MinMaxBounds$Doubles$$Type, arg5: $MinMaxBounds$Doubles$$Type, arg6: $MinMaxBounds$Doubles$$Type)
 
-public "verticalSpeed"(): $MinMaxBounds$Doubles
-public static "verticalSpeed"(arg0: $MinMaxBounds$Doubles$$Type): $MovementPredicate
 public static "horizontalSpeed"(arg0: $MinMaxBounds$Doubles$$Type): $MovementPredicate
 public "horizontalSpeed"(): $MinMaxBounds$Doubles
+public "verticalSpeed"(): $MinMaxBounds$Doubles
+public static "verticalSpeed"(arg0: $MinMaxBounds$Doubles$$Type): $MovementPredicate
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
@@ -1876,7 +1876,7 @@ public "fallDistance"(): $MinMaxBounds$Doubles
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $MovementPredicate$$Type = ({"z"?: $MinMaxBounds$Doubles$$Type, "speed"?: $MinMaxBounds$Doubles$$Type, "verticalSpeed"?: $MinMaxBounds$Doubles$$Type, "horizontalSpeed"?: $MinMaxBounds$Doubles$$Type, "x"?: $MinMaxBounds$Doubles$$Type, "y"?: $MinMaxBounds$Doubles$$Type, "fallDistance"?: $MinMaxBounds$Doubles$$Type}) | ([z?: $MinMaxBounds$Doubles$$Type, speed?: $MinMaxBounds$Doubles$$Type, verticalSpeed?: $MinMaxBounds$Doubles$$Type, horizontalSpeed?: $MinMaxBounds$Doubles$$Type, x?: $MinMaxBounds$Doubles$$Type, y?: $MinMaxBounds$Doubles$$Type, fallDistance?: $MinMaxBounds$Doubles$$Type]);
+export type $MovementPredicate$$Type = ({"speed"?: $MinMaxBounds$Doubles$$Type, "verticalSpeed"?: $MinMaxBounds$Doubles$$Type, "horizontalSpeed"?: $MinMaxBounds$Doubles$$Type, "x"?: $MinMaxBounds$Doubles$$Type, "y"?: $MinMaxBounds$Doubles$$Type, "fallDistance"?: $MinMaxBounds$Doubles$$Type, "z"?: $MinMaxBounds$Doubles$$Type}) | ([speed?: $MinMaxBounds$Doubles$$Type, verticalSpeed?: $MinMaxBounds$Doubles$$Type, horizontalSpeed?: $MinMaxBounds$Doubles$$Type, x?: $MinMaxBounds$Doubles$$Type, y?: $MinMaxBounds$Doubles$$Type, fallDistance?: $MinMaxBounds$Doubles$$Type, z?: $MinMaxBounds$Doubles$$Type]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -1886,8 +1886,8 @@ import {$NbtPredicate$$Type} from "net.minecraft.advancements.critereon.NbtPredi
 import {$MobEffectsPredicate$Builder$$Type} from "net.minecraft.advancements.critereon.MobEffectsPredicate$Builder"
 import {$EntitySubPredicate$$Type} from "net.minecraft.advancements.critereon.EntitySubPredicate"
 import {$LocationPredicate$Builder$$Type} from "net.minecraft.advancements.critereon.LocationPredicate$Builder"
-import {$EntityEquipmentPredicate$Builder$$Type} from "net.minecraft.advancements.critereon.EntityEquipmentPredicate$Builder"
 import {$EntityTypePredicate$$Type} from "net.minecraft.advancements.critereon.EntityTypePredicate"
+import {$EntityEquipmentPredicate$Builder$$Type} from "net.minecraft.advancements.critereon.EntityEquipmentPredicate$Builder"
 import {$EntityEquipmentPredicate$$Type} from "net.minecraft.advancements.critereon.EntityEquipmentPredicate"
 import {$DistancePredicate$$Type} from "net.minecraft.advancements.critereon.DistancePredicate"
 import {$TagKey$$Type} from "net.minecraft.tags.TagKey"
@@ -1900,17 +1900,17 @@ import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
 export class $EntityPredicate$Builder {
 constructor()
 
-public "movementAffectedBy"(arg0: $LocationPredicate$Builder$$Type): $EntityPredicate$Builder
 public "entityType"(arg0: $EntityTypePredicate$$Type): $EntityPredicate$Builder
 public "subPredicate"(arg0: $EntitySubPredicate$$Type): $EntityPredicate$Builder
 public "targetedEntity"(arg0: $EntityPredicate$Builder$$Type): $EntityPredicate$Builder
 public "located"(arg0: $LocationPredicate$Builder$$Type): $EntityPredicate$Builder
 public "steppingOn"(arg0: $LocationPredicate$Builder$$Type): $EntityPredicate$Builder
+public "movementAffectedBy"(arg0: $LocationPredicate$Builder$$Type): $EntityPredicate$Builder
 public "periodicTick"(arg0: integer): $EntityPredicate$Builder
 public static "entity"(): $EntityPredicate$Builder
 public "flags"(arg0: $EntityFlagsPredicate$Builder$$Type): $EntityPredicate$Builder
-public "of"(arg0: $EntityType$$Type<(never)>): $EntityPredicate$Builder
 public "of"(arg0: $TagKey$$Type<($EntityType<(never)>)>): $EntityPredicate$Builder
+public "of"(arg0: $EntityType$$Type<(never)>): $EntityPredicate$Builder
 public "slots"(arg0: $SlotsPredicate$$Type): $EntityPredicate$Builder
 public "distance"(arg0: $DistancePredicate$$Type): $EntityPredicate$Builder
 public "build"(): $EntityPredicate
@@ -1958,13 +1958,13 @@ import {$Criterion} from "net.minecraft.advancements.Criterion"
 import {$EntityPredicate$Builder$$Type} from "net.minecraft.advancements.critereon.EntityPredicate$Builder"
 import {$LootContext$$Type} from "net.minecraft.world.level.storage.loot.LootContext"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$ContextAwarePredicate, $ContextAwarePredicate$$Type} from "net.minecraft.advancements.critereon.ContextAwarePredicate"
+import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$CriterionValidator$$Type} from "net.minecraft.advancements.critereon.CriterionValidator"
-import {$ItemPredicate, $ItemPredicate$$Type} from "net.minecraft.advancements.critereon.ItemPredicate"
 import {$Record} from "java.lang.Record"
 import {$SimpleCriterionTrigger$SimpleInstance$$Interface} from "net.minecraft.advancements.critereon.SimpleCriterionTrigger$SimpleInstance"
+import {$ItemPredicate, $ItemPredicate$$Type} from "net.minecraft.advancements.critereon.ItemPredicate"
 
 export class $TradeTrigger$TriggerInstance extends $Record implements $SimpleCriterionTrigger$SimpleInstance$$Interface {
 static readonly "CODEC": $Codec<($TradeTrigger$TriggerInstance)>
@@ -1994,8 +1994,8 @@ export type $TradeTrigger$TriggerInstance$$Original = $TradeTrigger$TriggerInsta
 declare module "net.minecraft.advancements.critereon.EntityHurtPlayerTrigger" {
 import {$EntityHurtPlayerTrigger$TriggerInstance} from "net.minecraft.advancements.critereon.EntityHurtPlayerTrigger$TriggerInstance"
 import {$SimpleCriterionTrigger} from "net.minecraft.advancements.critereon.SimpleCriterionTrigger"
-import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
 import {$Codec} from "com.mojang.serialization.Codec"
+import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
 import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
 
 export class $EntityHurtPlayerTrigger extends $SimpleCriterionTrigger<($EntityHurtPlayerTrigger$TriggerInstance)> {
@@ -2016,8 +2016,8 @@ export type $EntityHurtPlayerTrigger$$Original = $EntityHurtPlayerTrigger;}
 declare module "net.minecraft.advancements.critereon.EffectsChangedTrigger" {
 import {$SimpleCriterionTrigger} from "net.minecraft.advancements.critereon.SimpleCriterionTrigger"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
+import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$EffectsChangedTrigger$TriggerInstance} from "net.minecraft.advancements.critereon.EffectsChangedTrigger$TriggerInstance"
 
 export class $EffectsChangedTrigger extends $SimpleCriterionTrigger<($EffectsChangedTrigger$TriggerInstance)> {
@@ -2060,8 +2060,8 @@ export type $EnchantedItemTrigger$$Original = $EnchantedItemTrigger;}
 declare module "net.minecraft.advancements.critereon.BrewedPotionTrigger$TriggerInstance" {
 import {$Criterion} from "net.minecraft.advancements.Criterion"
 import {$Potion, $Potion$$Type} from "net.minecraft.world.item.alchemy.Potion"
-import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$ContextAwarePredicate, $ContextAwarePredicate$$Type} from "net.minecraft.advancements.critereon.ContextAwarePredicate"
+import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$CriterionValidator$$Type} from "net.minecraft.advancements.critereon.CriterionValidator"
 import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
@@ -2073,20 +2073,20 @@ static readonly "CODEC": $Codec<($BrewedPotionTrigger$TriggerInstance)>
 
 constructor(arg0: ($ContextAwarePredicate$$Type)?, arg1: ($Holder$$Type<($Potion$$Type)>)?)
 
-public static "brewedPotion"(): $Criterion<($BrewedPotionTrigger$TriggerInstance)>
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
 public "matches"(arg0: $Holder$$Type<($Potion)>): boolean
 public "player"(): $Optional<($ContextAwarePredicate)>
 public "potion"(): $Optional<($Holder<($Potion)>)>
+public static "brewedPotion"(): $Criterion<($BrewedPotionTrigger$TriggerInstance)>
 public "validate"(arg0: $CriterionValidator$$Type): void
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $BrewedPotionTrigger$TriggerInstance$$Type = ({"potion"?: ($Holder$$Type<($Potion$$Type)>)?, "player"?: ($ContextAwarePredicate$$Type)?}) | ([potion?: ($Holder$$Type<($Potion$$Type)>)?, player?: ($ContextAwarePredicate$$Type)?]);
+export type $BrewedPotionTrigger$TriggerInstance$$Type = ({"player"?: ($ContextAwarePredicate$$Type)?, "potion"?: ($Holder$$Type<($Potion$$Type)>)?}) | ([player?: ($ContextAwarePredicate$$Type)?, potion?: ($Holder$$Type<($Potion$$Type)>)?]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -2094,13 +2094,13 @@ export type $BrewedPotionTrigger$TriggerInstance$$Original = $BrewedPotionTrigge
 declare module "net.minecraft.advancements.critereon.DamageSourcePredicate" {
 import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$Optional, $Optional$$Type} from "java.util.Optional"
-import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
 import {$Codec} from "com.mojang.serialization.Codec"
+import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
 import {$List, $List$$Type} from "java.util.List"
 import {$EntityPredicate, $EntityPredicate$$Type} from "net.minecraft.advancements.critereon.EntityPredicate"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
-import {$TagPredicate, $TagPredicate$$Type} from "net.minecraft.advancements.critereon.TagPredicate"
 import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
+import {$TagPredicate, $TagPredicate$$Type} from "net.minecraft.advancements.critereon.TagPredicate"
 import {$DamageType, $DamageType$$Type} from "net.minecraft.world.damagesource.DamageType"
 import {$Record} from "java.lang.Record"
 
@@ -2124,7 +2124,7 @@ get "direct"(): $Optional<(boolean)>
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $DamageSourcePredicate$$Type = ({"sourceEntity"?: ($EntityPredicate$$Type)?, "tags"?: $List$$Type<($TagPredicate$$Type<($DamageType$$Type)>)>, "isDirect"?: (boolean)?, "directEntity"?: ($EntityPredicate$$Type)?}) | ([sourceEntity?: ($EntityPredicate$$Type)?, tags?: $List$$Type<($TagPredicate$$Type<($DamageType$$Type)>)>, isDirect?: (boolean)?, directEntity?: ($EntityPredicate$$Type)?]);
+export type $DamageSourcePredicate$$Type = ({"tags"?: $List$$Type<($TagPredicate$$Type<($DamageType$$Type)>)>, "isDirect"?: (boolean)?, "directEntity"?: ($EntityPredicate$$Type)?, "sourceEntity"?: ($EntityPredicate$$Type)?}) | ([tags?: $List$$Type<($TagPredicate$$Type<($DamageType$$Type)>)>, isDirect?: (boolean)?, directEntity?: ($EntityPredicate$$Type)?, sourceEntity?: ($EntityPredicate$$Type)?]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -2133,8 +2133,8 @@ declare module "net.minecraft.advancements.critereon.SummonedEntityTrigger" {
 import {$SimpleCriterionTrigger} from "net.minecraft.advancements.critereon.SimpleCriterionTrigger"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$SummonedEntityTrigger$TriggerInstance} from "net.minecraft.advancements.critereon.SummonedEntityTrigger$TriggerInstance"
-import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
+import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 
 export class $SummonedEntityTrigger extends $SimpleCriterionTrigger<($SummonedEntityTrigger$TriggerInstance)> {
 constructor()
@@ -2154,9 +2154,9 @@ export type $SummonedEntityTrigger$$Original = $SummonedEntityTrigger;}
 declare module "net.minecraft.advancements.critereon.BlockPredicate$Builder" {
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$Collection$$Type} from "java.util.Collection"
-import {$TagKey$$Type} from "net.minecraft.tags.TagKey"
 import {$StatePropertiesPredicate$Builder$$Type} from "net.minecraft.advancements.critereon.StatePropertiesPredicate$Builder"
 import {$BlockPredicate} from "net.minecraft.advancements.critereon.BlockPredicate"
+import {$TagKey$$Type} from "net.minecraft.tags.TagKey"
 import {$Block$$Type} from "net.minecraft.world.level.block.Block"
 
 export class $BlockPredicate$Builder {
@@ -2181,23 +2181,23 @@ export type $BlockPredicate$Builder$$Original = $BlockPredicate$Builder;}
 declare module "net.minecraft.advancements.critereon.RecipeUnlockedTrigger$TriggerInstance" {
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Optional, $Optional$$Type} from "java.util.Optional"
-import {$ContextAwarePredicate, $ContextAwarePredicate$$Type} from "net.minecraft.advancements.critereon.ContextAwarePredicate"
 import {$Codec} from "com.mojang.serialization.Codec"
+import {$ContextAwarePredicate, $ContextAwarePredicate$$Type} from "net.minecraft.advancements.critereon.ContextAwarePredicate"
 import {$RecipeHolder$$Type} from "net.minecraft.world.item.crafting.RecipeHolder"
 import {$CriterionValidator$$Type} from "net.minecraft.advancements.critereon.CriterionValidator"
-import {$Record} from "java.lang.Record"
 import {$SimpleCriterionTrigger$SimpleInstance$$Interface} from "net.minecraft.advancements.critereon.SimpleCriterionTrigger$SimpleInstance"
+import {$Record} from "java.lang.Record"
 
 export class $RecipeUnlockedTrigger$TriggerInstance extends $Record implements $SimpleCriterionTrigger$SimpleInstance$$Interface {
 static readonly "CODEC": $Codec<($RecipeUnlockedTrigger$TriggerInstance)>
 
 constructor(arg0: ($ContextAwarePredicate$$Type)?, arg1: $ResourceLocation$$Type)
 
+public "recipe"(): $ResourceLocation
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
 public "matches"(arg0: $RecipeHolder$$Type<(never)>): boolean
-public "recipe"(): $ResourceLocation
 public "player"(): $Optional<($ContextAwarePredicate)>
 public "validate"(arg0: $CriterionValidator$$Type): void
 }
@@ -2242,9 +2242,9 @@ import {$CriterionValidator$$Type} from "net.minecraft.advancements.critereon.Cr
 import {$DamageSourcePredicate$Builder$$Type} from "net.minecraft.advancements.critereon.DamageSourcePredicate$Builder"
 import {$Criterion} from "net.minecraft.advancements.Criterion"
 import {$EntityPredicate$Builder$$Type} from "net.minecraft.advancements.critereon.EntityPredicate$Builder"
-import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
 import {$ContextAwarePredicate, $ContextAwarePredicate$$Type} from "net.minecraft.advancements.critereon.ContextAwarePredicate"
 import {$Codec} from "com.mojang.serialization.Codec"
+import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
 import {$EntityPredicate$$Type} from "net.minecraft.advancements.critereon.EntityPredicate"
 import {$DamageSourcePredicate, $DamageSourcePredicate$$Type} from "net.minecraft.advancements.critereon.DamageSourcePredicate"
 import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
@@ -2294,8 +2294,8 @@ import {$SimpleCriterionTrigger} from "net.minecraft.advancements.critereon.Simp
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$ItemUsedOnLocationTrigger$TriggerInstance} from "net.minecraft.advancements.critereon.ItemUsedOnLocationTrigger$TriggerInstance"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 
 export class $ItemUsedOnLocationTrigger extends $SimpleCriterionTrigger<($ItemUsedOnLocationTrigger$TriggerInstance)> {
 constructor()
@@ -2399,15 +2399,16 @@ import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$BannerPattern$$Type} from "net.minecraft.world.level.block.entity.BannerPattern"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
+import {$HolderGetter$$Type} from "net.minecraft.core.HolderGetter"
 import {$Record} from "java.lang.Record"
 import {$ItemPredicate, $ItemPredicate$$Type} from "net.minecraft.advancements.critereon.ItemPredicate"
-import {$HolderGetter$$Type} from "net.minecraft.core.HolderGetter"
 
 export class $EntityEquipmentPredicate extends $Record {
 static readonly "CODEC": $Codec<($EntityEquipmentPredicate)>
 
 constructor(arg0: ($ItemPredicate$$Type)?, arg1: ($ItemPredicate$$Type)?, arg2: ($ItemPredicate$$Type)?, arg3: ($ItemPredicate$$Type)?, arg4: ($ItemPredicate$$Type)?, arg5: ($ItemPredicate$$Type)?, arg6: ($ItemPredicate$$Type)?)
 
+public static "captainPredicate"(arg0: $HolderGetter$$Type<($BannerPattern$$Type)>): $EntityEquipmentPredicate
 public "chest"(): $Optional<($ItemPredicate)>
 public "mainhand"(): $Optional<($ItemPredicate)>
 public "feet"(): $Optional<($ItemPredicate)>
@@ -2419,7 +2420,6 @@ public "matches"(arg0: $Entity$$Type): boolean
 public "head"(): $Optional<($ItemPredicate)>
 public "body"(): $Optional<($ItemPredicate)>
 public "offhand"(): $Optional<($ItemPredicate)>
-public static "captainPredicate"(arg0: $HolderGetter$$Type<($BannerPattern$$Type)>): $EntityEquipmentPredicate
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -2432,10 +2432,10 @@ export type $EntityEquipmentPredicate$$Type = ({"chest"?: ($ItemPredicate$$Type)
 export type $EntityEquipmentPredicate$$Original = $EntityEquipmentPredicate;}
 declare module "net.minecraft.advancements.critereon.EntityHurtPlayerTrigger$TriggerInstance" {
 import {$Criterion} from "net.minecraft.advancements.Criterion"
-import {$Optional, $Optional$$Type} from "java.util.Optional"
-import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
 import {$ContextAwarePredicate, $ContextAwarePredicate$$Type} from "net.minecraft.advancements.critereon.ContextAwarePredicate"
+import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$Codec} from "com.mojang.serialization.Codec"
+import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
 import {$DamagePredicate$Builder$$Type} from "net.minecraft.advancements.critereon.DamagePredicate$Builder"
 import {$CriterionValidator$$Type} from "net.minecraft.advancements.critereon.CriterionValidator"
 import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
@@ -2448,22 +2448,22 @@ static readonly "CODEC": $Codec<($EntityHurtPlayerTrigger$TriggerInstance)>
 
 constructor(arg0: ($ContextAwarePredicate$$Type)?, arg1: ($DamagePredicate$$Type)?)
 
-public static "entityHurtPlayer"(arg0: $DamagePredicate$$Type): $Criterion<($EntityHurtPlayerTrigger$TriggerInstance)>
-public static "entityHurtPlayer"(): $Criterion<($EntityHurtPlayerTrigger$TriggerInstance)>
-public static "entityHurtPlayer"(arg0: $DamagePredicate$Builder$$Type): $Criterion<($EntityHurtPlayerTrigger$TriggerInstance)>
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
 public "matches"(arg0: $ServerPlayer$$Type, arg1: $DamageSource$$Type, arg2: float, arg3: float, arg4: boolean): boolean
 public "player"(): $Optional<($ContextAwarePredicate)>
 public "damage"(): $Optional<($DamagePredicate)>
+public static "entityHurtPlayer"(arg0: $DamagePredicate$Builder$$Type): $Criterion<($EntityHurtPlayerTrigger$TriggerInstance)>
+public static "entityHurtPlayer"(): $Criterion<($EntityHurtPlayerTrigger$TriggerInstance)>
+public static "entityHurtPlayer"(arg0: $DamagePredicate$$Type): $Criterion<($EntityHurtPlayerTrigger$TriggerInstance)>
 public "validate"(arg0: $CriterionValidator$$Type): void
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $EntityHurtPlayerTrigger$TriggerInstance$$Type = ({"damage"?: ($DamagePredicate$$Type)?, "player"?: ($ContextAwarePredicate$$Type)?}) | ([damage?: ($DamagePredicate$$Type)?, player?: ($ContextAwarePredicate$$Type)?]);
+export type $EntityHurtPlayerTrigger$TriggerInstance$$Type = ({"player"?: ($ContextAwarePredicate$$Type)?, "damage"?: ($DamagePredicate$$Type)?}) | ([player?: ($ContextAwarePredicate$$Type)?, damage?: ($DamagePredicate$$Type)?]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -2473,8 +2473,8 @@ import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$SimpleCriterionTrigger} from "net.minecraft.advancements.critereon.SimpleCriterionTrigger"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$TargetBlockTrigger$TriggerInstance} from "net.minecraft.advancements.critereon.TargetBlockTrigger$TriggerInstance"
-import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
+import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 
 export class $TargetBlockTrigger extends $SimpleCriterionTrigger<($TargetBlockTrigger$TriggerInstance)> {
 constructor()
@@ -2518,8 +2518,8 @@ export type $MobEffectsPredicate$Builder$$Original = $MobEffectsPredicate$Builde
 declare module "net.minecraft.advancements.critereon.DefaultBlockInteractionTrigger" {
 import {$SimpleCriterionTrigger} from "net.minecraft.advancements.critereon.SimpleCriterionTrigger"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$DefaultBlockInteractionTrigger$TriggerInstance} from "net.minecraft.advancements.critereon.DefaultBlockInteractionTrigger$TriggerInstance"
 
 export class $DefaultBlockInteractionTrigger extends $SimpleCriterionTrigger<($DefaultBlockInteractionTrigger$TriggerInstance)> {
@@ -2589,8 +2589,8 @@ export type $EntityPredicate$LocationWrapper$$Original = $EntityPredicate$Locati
 declare module "net.minecraft.advancements.critereon.EnterBlockTrigger" {
 import {$SimpleCriterionTrigger} from "net.minecraft.advancements.critereon.SimpleCriterionTrigger"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$EnterBlockTrigger$TriggerInstance} from "net.minecraft.advancements.critereon.EnterBlockTrigger$TriggerInstance"
 import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
+import {$EnterBlockTrigger$TriggerInstance} from "net.minecraft.advancements.critereon.EnterBlockTrigger$TriggerInstance"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $EnterBlockTrigger extends $SimpleCriterionTrigger<($EnterBlockTrigger$TriggerInstance)> {
@@ -2678,8 +2678,8 @@ export type $NbtPredicate$$Type = ({"tag"?: $CompoundTag$$Type}) | ([tag?: $Comp
  */
 export type $NbtPredicate$$Original = $NbtPredicate;}
 declare module "net.minecraft.advancements.critereon.SimpleCriterionTrigger$SimpleInstance" {
-import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$ContextAwarePredicate, $ContextAwarePredicate$$Type} from "net.minecraft.advancements.critereon.ContextAwarePredicate"
+import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$CriterionValidator$$Type} from "net.minecraft.advancements.critereon.CriterionValidator"
 import {$CriterionTriggerInstance$$Interface} from "net.minecraft.advancements.CriterionTriggerInstance"
 
@@ -2705,8 +2705,8 @@ declare module "net.minecraft.advancements.critereon.BredAnimalsTrigger$TriggerI
 import {$Criterion} from "net.minecraft.advancements.Criterion"
 import {$EntityPredicate$Builder$$Type} from "net.minecraft.advancements.critereon.EntityPredicate$Builder"
 import {$LootContext$$Type} from "net.minecraft.world.level.storage.loot.LootContext"
-import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$ContextAwarePredicate, $ContextAwarePredicate$$Type} from "net.minecraft.advancements.critereon.ContextAwarePredicate"
+import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$EntityPredicate$$Type} from "net.minecraft.advancements.critereon.EntityPredicate"
 import {$CriterionValidator$$Type} from "net.minecraft.advancements.critereon.CriterionValidator"
@@ -2744,11 +2744,11 @@ declare module "net.minecraft.advancements.critereon.StartRidingTrigger$TriggerI
 import {$Criterion} from "net.minecraft.advancements.Criterion"
 import {$EntityPredicate$Builder$$Type} from "net.minecraft.advancements.critereon.EntityPredicate$Builder"
 import {$Optional, $Optional$$Type} from "java.util.Optional"
-import {$ContextAwarePredicate, $ContextAwarePredicate$$Type} from "net.minecraft.advancements.critereon.ContextAwarePredicate"
 import {$Codec} from "com.mojang.serialization.Codec"
+import {$ContextAwarePredicate, $ContextAwarePredicate$$Type} from "net.minecraft.advancements.critereon.ContextAwarePredicate"
 import {$CriterionValidator$$Type} from "net.minecraft.advancements.critereon.CriterionValidator"
-import {$Record} from "java.lang.Record"
 import {$SimpleCriterionTrigger$SimpleInstance$$Interface} from "net.minecraft.advancements.critereon.SimpleCriterionTrigger$SimpleInstance"
+import {$Record} from "java.lang.Record"
 
 export class $StartRidingTrigger$TriggerInstance extends $Record implements $SimpleCriterionTrigger$SimpleInstance$$Interface {
 static readonly "CODEC": $Codec<($StartRidingTrigger$TriggerInstance)>
@@ -2775,13 +2775,13 @@ declare module "net.minecraft.advancements.critereon.EnchantedItemTrigger$Trigge
 import {$MinMaxBounds$Ints, $MinMaxBounds$Ints$$Type} from "net.minecraft.advancements.critereon.MinMaxBounds$Ints"
 import {$Criterion} from "net.minecraft.advancements.Criterion"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$ContextAwarePredicate, $ContextAwarePredicate$$Type} from "net.minecraft.advancements.critereon.ContextAwarePredicate"
+import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$CriterionValidator$$Type} from "net.minecraft.advancements.critereon.CriterionValidator"
-import {$ItemPredicate, $ItemPredicate$$Type} from "net.minecraft.advancements.critereon.ItemPredicate"
 import {$Record} from "java.lang.Record"
 import {$SimpleCriterionTrigger$SimpleInstance$$Interface} from "net.minecraft.advancements.critereon.SimpleCriterionTrigger$SimpleInstance"
+import {$ItemPredicate, $ItemPredicate$$Type} from "net.minecraft.advancements.critereon.ItemPredicate"
 
 export class $EnchantedItemTrigger$TriggerInstance extends $Record implements $SimpleCriterionTrigger$SimpleInstance$$Interface {
 static readonly "CODEC": $Codec<($EnchantedItemTrigger$TriggerInstance)>
@@ -2789,8 +2789,8 @@ static readonly "CODEC": $Codec<($EnchantedItemTrigger$TriggerInstance)>
 constructor(arg0: ($ContextAwarePredicate$$Type)?, arg1: ($ItemPredicate$$Type)?, arg2: $MinMaxBounds$Ints$$Type)
 
 public static "enchantedItem"(): $Criterion<($EnchantedItemTrigger$TriggerInstance)>
-public "levels"(): $MinMaxBounds$Ints
 public "item"(): $Optional<($ItemPredicate)>
+public "levels"(): $MinMaxBounds$Ints
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
@@ -2881,8 +2881,8 @@ export type $MinMaxBounds$Doubles$$Original = $MinMaxBounds$Doubles;}
 declare module "net.minecraft.advancements.critereon.ConsumeItemTrigger" {
 import {$SimpleCriterionTrigger} from "net.minecraft.advancements.critereon.SimpleCriterionTrigger"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$ConsumeItemTrigger$TriggerInstance} from "net.minecraft.advancements.critereon.ConsumeItemTrigger$TriggerInstance"
 import {$Codec} from "com.mojang.serialization.Codec"
+import {$ConsumeItemTrigger$TriggerInstance} from "net.minecraft.advancements.critereon.ConsumeItemTrigger$TriggerInstance"
 import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
 
 export class $ConsumeItemTrigger extends $SimpleCriterionTrigger<($ConsumeItemTrigger$TriggerInstance)> {
@@ -2902,8 +2902,8 @@ export type $ConsumeItemTrigger$$Type = ($ConsumeItemTrigger);
 export type $ConsumeItemTrigger$$Original = $ConsumeItemTrigger;}
 declare module "net.minecraft.advancements.critereon.ChangeDimensionTrigger$TriggerInstance" {
 import {$Criterion} from "net.minecraft.advancements.Criterion"
-import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$ContextAwarePredicate, $ContextAwarePredicate$$Type} from "net.minecraft.advancements.critereon.ContextAwarePredicate"
+import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$CriterionValidator$$Type} from "net.minecraft.advancements.critereon.CriterionValidator"
@@ -2940,8 +2940,8 @@ export type $ChangeDimensionTrigger$TriggerInstance$$Type = ({"to"?: ($ResourceK
 export type $ChangeDimensionTrigger$TriggerInstance$$Original = $ChangeDimensionTrigger$TriggerInstance;}
 declare module "net.minecraft.advancements.critereon.DamagePredicate" {
 import {$Optional, $Optional$$Type} from "java.util.Optional"
-import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
 import {$Codec} from "com.mojang.serialization.Codec"
+import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
 import {$EntityPredicate, $EntityPredicate$$Type} from "net.minecraft.advancements.critereon.EntityPredicate"
 import {$MinMaxBounds$Doubles, $MinMaxBounds$Doubles$$Type} from "net.minecraft.advancements.critereon.MinMaxBounds$Doubles"
 import {$DamageSourcePredicate, $DamageSourcePredicate$$Type} from "net.minecraft.advancements.critereon.DamageSourcePredicate"
@@ -2953,7 +2953,6 @@ static readonly "CODEC": $Codec<($DamagePredicate)>
 
 constructor(arg0: $MinMaxBounds$Doubles$$Type, arg1: $MinMaxBounds$Doubles$$Type, arg2: ($EntityPredicate$$Type)?, arg3: (boolean)?, arg4: ($DamageSourcePredicate$$Type)?)
 
-public "takenDamage"(): $MinMaxBounds$Doubles
 public "sourceEntity"(): $Optional<($EntityPredicate)>
 public "blocked"(): $Optional<(boolean)>
 public "dealtDamage"(): $MinMaxBounds$Doubles
@@ -2962,6 +2961,7 @@ public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
 public "matches"(arg0: $ServerPlayer$$Type, arg1: $DamageSource$$Type, arg2: float, arg3: float, arg4: boolean): boolean
+public "takenDamage"(): $MinMaxBounds$Doubles
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -2982,8 +2982,8 @@ import {$StateDefinition$$Type} from "net.minecraft.world.level.block.state.Stat
 import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$StatePropertiesPredicate$PropertyMatcher, $StatePropertiesPredicate$PropertyMatcher$$Type} from "net.minecraft.advancements.critereon.StatePropertiesPredicate$PropertyMatcher"
-import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Record} from "java.lang.Record"
+import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $StatePropertiesPredicate extends $Record {
 static readonly "CODEC": $Codec<($StatePropertiesPredicate)>
@@ -3013,8 +3013,8 @@ declare module "net.minecraft.advancements.critereon.AnyBlockInteractionTrigger"
 import {$SimpleCriterionTrigger} from "net.minecraft.advancements.critereon.SimpleCriterionTrigger"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$AnyBlockInteractionTrigger$TriggerInstance} from "net.minecraft.advancements.critereon.AnyBlockInteractionTrigger$TriggerInstance"
 
 export class $AnyBlockInteractionTrigger extends $SimpleCriterionTrigger<($AnyBlockInteractionTrigger$TriggerInstance)> {
@@ -3074,14 +3074,14 @@ declare module "net.minecraft.advancements.critereon.PlayerInteractTrigger$Trigg
 import {$Criterion} from "net.minecraft.advancements.Criterion"
 import {$LootContext$$Type} from "net.minecraft.world.level.storage.loot.LootContext"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$ContextAwarePredicate, $ContextAwarePredicate$$Type} from "net.minecraft.advancements.critereon.ContextAwarePredicate"
+import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$CriterionValidator$$Type} from "net.minecraft.advancements.critereon.CriterionValidator"
 import {$ItemPredicate$Builder$$Type} from "net.minecraft.advancements.critereon.ItemPredicate$Builder"
-import {$ItemPredicate, $ItemPredicate$$Type} from "net.minecraft.advancements.critereon.ItemPredicate"
 import {$Record} from "java.lang.Record"
 import {$SimpleCriterionTrigger$SimpleInstance$$Interface} from "net.minecraft.advancements.critereon.SimpleCriterionTrigger$SimpleInstance"
+import {$ItemPredicate, $ItemPredicate$$Type} from "net.minecraft.advancements.critereon.ItemPredicate"
 
 export class $PlayerInteractTrigger$TriggerInstance extends $Record implements $SimpleCriterionTrigger$SimpleInstance$$Interface {
 static readonly "CODEC": $Codec<($PlayerInteractTrigger$TriggerInstance)>
@@ -3090,8 +3090,8 @@ constructor(arg0: ($ContextAwarePredicate$$Type)?, arg1: ($ItemPredicate$$Type)?
 
 public static "itemUsedOnEntity"(arg0: $ItemPredicate$Builder$$Type, arg1: ($ContextAwarePredicate$$Type)?): $Criterion<($PlayerInteractTrigger$TriggerInstance)>
 public static "itemUsedOnEntity"(arg0: ($ContextAwarePredicate$$Type)?, arg1: $ItemPredicate$Builder$$Type, arg2: ($ContextAwarePredicate$$Type)?): $Criterion<($PlayerInteractTrigger$TriggerInstance)>
-public "entity"(): $Optional<($ContextAwarePredicate)>
 public "item"(): $Optional<($ItemPredicate)>
+public "entity"(): $Optional<($ContextAwarePredicate)>
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
@@ -3112,8 +3112,8 @@ declare module "net.minecraft.advancements.critereon.PlayerInteractTrigger" {
 import {$SimpleCriterionTrigger} from "net.minecraft.advancements.critereon.SimpleCriterionTrigger"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
+import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$PlayerInteractTrigger$TriggerInstance} from "net.minecraft.advancements.critereon.PlayerInteractTrigger$TriggerInstance"
 
 export class $PlayerInteractTrigger extends $SimpleCriterionTrigger<($PlayerInteractTrigger$TriggerInstance)> {
@@ -3138,8 +3138,8 @@ import {$Codec} from "com.mojang.serialization.Codec"
 import {$MobEffectsPredicate$MobEffectInstancePredicate, $MobEffectsPredicate$MobEffectInstancePredicate$$Type} from "net.minecraft.advancements.critereon.MobEffectsPredicate$MobEffectInstancePredicate"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$MobEffect, $MobEffect$$Type} from "net.minecraft.world.effect.MobEffect"
 import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
+import {$MobEffect, $MobEffect$$Type} from "net.minecraft.world.effect.MobEffect"
 import {$Record} from "java.lang.Record"
 
 export class $MobEffectsPredicate extends $Record {
@@ -3304,9 +3304,9 @@ export type $MobEffectsPredicate$MobEffectInstancePredicate$$Type = ({"ambient"?
  */
 export type $MobEffectsPredicate$MobEffectInstancePredicate$$Original = $MobEffectsPredicate$MobEffectInstancePredicate;}
 declare module "net.minecraft.advancements.critereon.LevitationTrigger" {
+import {$LevitationTrigger$TriggerInstance} from "net.minecraft.advancements.critereon.LevitationTrigger$TriggerInstance"
 import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$SimpleCriterionTrigger} from "net.minecraft.advancements.critereon.SimpleCriterionTrigger"
-import {$LevitationTrigger$TriggerInstance} from "net.minecraft.advancements.critereon.LevitationTrigger$TriggerInstance"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
 
@@ -3351,9 +3351,9 @@ declare module "net.minecraft.advancements.critereon.KilledByCrossbowTrigger" {
 import {$SimpleCriterionTrigger} from "net.minecraft.advancements.critereon.SimpleCriterionTrigger"
 import {$Collection$$Type} from "java.util.Collection"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$KilledByCrossbowTrigger$TriggerInstance} from "net.minecraft.advancements.critereon.KilledByCrossbowTrigger$TriggerInstance"
 import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
+import {$KilledByCrossbowTrigger$TriggerInstance} from "net.minecraft.advancements.critereon.KilledByCrossbowTrigger$TriggerInstance"
+import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 
 export class $KilledByCrossbowTrigger extends $SimpleCriterionTrigger<($KilledByCrossbowTrigger$TriggerInstance)> {
 constructor()
@@ -3374,8 +3374,8 @@ declare module "net.minecraft.advancements.critereon.LevitationTrigger$TriggerIn
 import {$MinMaxBounds$Ints, $MinMaxBounds$Ints$$Type} from "net.minecraft.advancements.critereon.MinMaxBounds$Ints"
 import {$Criterion} from "net.minecraft.advancements.Criterion"
 import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
-import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$ContextAwarePredicate, $ContextAwarePredicate$$Type} from "net.minecraft.advancements.critereon.ContextAwarePredicate"
+import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$DistancePredicate, $DistancePredicate$$Type} from "net.minecraft.advancements.critereon.DistancePredicate"
 import {$CriterionValidator$$Type} from "net.minecraft.advancements.critereon.CriterionValidator"
@@ -3409,16 +3409,16 @@ export type $LevitationTrigger$TriggerInstance$$Type = ({"duration"?: $MinMaxBou
 export type $LevitationTrigger$TriggerInstance$$Original = $LevitationTrigger$TriggerInstance;}
 declare module "net.minecraft.advancements.critereon.EnterBlockTrigger$TriggerInstance" {
 import {$Criterion} from "net.minecraft.advancements.Criterion"
-import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$ContextAwarePredicate, $ContextAwarePredicate$$Type} from "net.minecraft.advancements.critereon.ContextAwarePredicate"
+import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$StatePropertiesPredicate, $StatePropertiesPredicate$$Type} from "net.minecraft.advancements.critereon.StatePropertiesPredicate"
 import {$CriterionValidator$$Type} from "net.minecraft.advancements.critereon.CriterionValidator"
 import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
-import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Record} from "java.lang.Record"
 import {$SimpleCriterionTrigger$SimpleInstance$$Interface} from "net.minecraft.advancements.critereon.SimpleCriterionTrigger$SimpleInstance"
+import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $EnterBlockTrigger$TriggerInstance extends $Record implements $SimpleCriterionTrigger$SimpleInstance$$Interface {
 static readonly "CODEC": $Codec<($EnterBlockTrigger$TriggerInstance)>
@@ -3487,8 +3487,8 @@ export type $InventoryChangeTrigger$TriggerInstance$$Type = ({"items"?: $List$$T
  */
 export type $InventoryChangeTrigger$TriggerInstance$$Original = $InventoryChangeTrigger$TriggerInstance;}
 declare module "net.minecraft.advancements.critereon.ItemSubPredicate" {
-import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
+import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$ItemSubPredicate$Type} from "net.minecraft.advancements.critereon.ItemSubPredicate$Type"
 
@@ -3516,8 +3516,8 @@ import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$SimpleCriterionTrigger} from "net.minecraft.advancements.critereon.SimpleCriterionTrigger"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$FallAfterExplosionTrigger$TriggerInstance} from "net.minecraft.advancements.critereon.FallAfterExplosionTrigger$TriggerInstance"
-import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
+import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 
 export class $FallAfterExplosionTrigger extends $SimpleCriterionTrigger<($FallAfterExplosionTrigger$TriggerInstance)> {
 constructor()
@@ -3537,14 +3537,14 @@ export type $FallAfterExplosionTrigger$$Original = $FallAfterExplosionTrigger;}
 declare module "net.minecraft.advancements.critereon.ShotCrossbowTrigger$TriggerInstance" {
 import {$Criterion} from "net.minecraft.advancements.Criterion"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$ContextAwarePredicate, $ContextAwarePredicate$$Type} from "net.minecraft.advancements.critereon.ContextAwarePredicate"
+import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$ItemLike$$Type} from "net.minecraft.world.level.ItemLike"
 import {$CriterionValidator$$Type} from "net.minecraft.advancements.critereon.CriterionValidator"
-import {$ItemPredicate, $ItemPredicate$$Type} from "net.minecraft.advancements.critereon.ItemPredicate"
 import {$Record} from "java.lang.Record"
 import {$SimpleCriterionTrigger$SimpleInstance$$Interface} from "net.minecraft.advancements.critereon.SimpleCriterionTrigger$SimpleInstance"
+import {$ItemPredicate, $ItemPredicate$$Type} from "net.minecraft.advancements.critereon.ItemPredicate"
 
 export class $ShotCrossbowTrigger$TriggerInstance extends $Record implements $SimpleCriterionTrigger$SimpleInstance$$Interface {
 static readonly "CODEC": $Codec<($ShotCrossbowTrigger$TriggerInstance)>
@@ -3565,7 +3565,7 @@ public "validate"(arg0: $CriterionValidator$$Type): void
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $ShotCrossbowTrigger$TriggerInstance$$Type = ({"item"?: ($ItemPredicate$$Type)?, "player"?: ($ContextAwarePredicate$$Type)?}) | ([item?: ($ItemPredicate$$Type)?, player?: ($ContextAwarePredicate$$Type)?]);
+export type $ShotCrossbowTrigger$TriggerInstance$$Type = ({"player"?: ($ContextAwarePredicate$$Type)?, "item"?: ($ItemPredicate$$Type)?}) | ([player?: ($ContextAwarePredicate$$Type)?, item?: ($ItemPredicate$$Type)?]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -3684,11 +3684,11 @@ declare module "net.minecraft.advancements.critereon.ConstructBeaconTrigger$Trig
 import {$MinMaxBounds$Ints, $MinMaxBounds$Ints$$Type} from "net.minecraft.advancements.critereon.MinMaxBounds$Ints"
 import {$Criterion} from "net.minecraft.advancements.Criterion"
 import {$Optional, $Optional$$Type} from "java.util.Optional"
-import {$ContextAwarePredicate, $ContextAwarePredicate$$Type} from "net.minecraft.advancements.critereon.ContextAwarePredicate"
 import {$Codec} from "com.mojang.serialization.Codec"
+import {$ContextAwarePredicate, $ContextAwarePredicate$$Type} from "net.minecraft.advancements.critereon.ContextAwarePredicate"
 import {$CriterionValidator$$Type} from "net.minecraft.advancements.critereon.CriterionValidator"
-import {$Record} from "java.lang.Record"
 import {$SimpleCriterionTrigger$SimpleInstance$$Interface} from "net.minecraft.advancements.critereon.SimpleCriterionTrigger$SimpleInstance"
+import {$Record} from "java.lang.Record"
 
 export class $ConstructBeaconTrigger$TriggerInstance extends $Record implements $SimpleCriterionTrigger$SimpleInstance$$Interface {
 static readonly "CODEC": $Codec<($ConstructBeaconTrigger$TriggerInstance)>
@@ -3697,11 +3697,11 @@ constructor(arg0: ($ContextAwarePredicate$$Type)?, arg1: $MinMaxBounds$Ints$$Typ
 
 public static "constructedBeacon"(arg0: $MinMaxBounds$Ints$$Type): $Criterion<($ConstructBeaconTrigger$TriggerInstance)>
 public static "constructedBeacon"(): $Criterion<($ConstructBeaconTrigger$TriggerInstance)>
-public "level"(): $MinMaxBounds$Ints
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
 public "matches"(arg0: integer): boolean
+public "level"(): $MinMaxBounds$Ints
 public "player"(): $Optional<($ContextAwarePredicate)>
 public "validate"(arg0: $CriterionValidator$$Type): void
 }
@@ -3716,11 +3716,11 @@ export type $ConstructBeaconTrigger$TriggerInstance$$Type = ({"level"?: $MinMaxB
 export type $ConstructBeaconTrigger$TriggerInstance$$Original = $ConstructBeaconTrigger$TriggerInstance;}
 declare module "net.minecraft.advancements.critereon.PlayerHurtEntityTrigger" {
 import {$SimpleCriterionTrigger} from "net.minecraft.advancements.critereon.SimpleCriterionTrigger"
-import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
 import {$Codec} from "com.mojang.serialization.Codec"
+import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
 import {$PlayerHurtEntityTrigger$TriggerInstance} from "net.minecraft.advancements.critereon.PlayerHurtEntityTrigger$TriggerInstance"
-import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
+import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 
 export class $PlayerHurtEntityTrigger extends $SimpleCriterionTrigger<($PlayerHurtEntityTrigger$TriggerInstance)> {
 constructor()
@@ -3742,8 +3742,8 @@ import {$ChanneledLightningTrigger$TriggerInstance} from "net.minecraft.advancem
 import {$SimpleCriterionTrigger} from "net.minecraft.advancements.critereon.SimpleCriterionTrigger"
 import {$Collection$$Type} from "java.util.Collection"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
+import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 
 export class $ChanneledLightningTrigger extends $SimpleCriterionTrigger<($ChanneledLightningTrigger$TriggerInstance)> {
 constructor()
@@ -3783,8 +3783,8 @@ export type $StartRidingTrigger$$Type = ($StartRidingTrigger);
 export type $StartRidingTrigger$$Original = $StartRidingTrigger;}
 declare module "net.minecraft.advancements.critereon.LootTableTrigger$TriggerInstance" {
 import {$Criterion} from "net.minecraft.advancements.Criterion"
-import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$ContextAwarePredicate, $ContextAwarePredicate$$Type} from "net.minecraft.advancements.critereon.ContextAwarePredicate"
+import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$CriterionValidator$$Type} from "net.minecraft.advancements.critereon.CriterionValidator"
 import {$ResourceKey, $ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
@@ -3931,14 +3931,14 @@ export type $FallAfterExplosionTrigger$TriggerInstance$$Original = $FallAfterExp
 declare module "net.minecraft.advancements.critereon.UsedTotemTrigger$TriggerInstance" {
 import {$Criterion} from "net.minecraft.advancements.Criterion"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$ContextAwarePredicate, $ContextAwarePredicate$$Type} from "net.minecraft.advancements.critereon.ContextAwarePredicate"
+import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$ItemLike$$Type} from "net.minecraft.world.level.ItemLike"
 import {$CriterionValidator$$Type} from "net.minecraft.advancements.critereon.CriterionValidator"
-import {$ItemPredicate, $ItemPredicate$$Type} from "net.minecraft.advancements.critereon.ItemPredicate"
 import {$Record} from "java.lang.Record"
 import {$SimpleCriterionTrigger$SimpleInstance$$Interface} from "net.minecraft.advancements.critereon.SimpleCriterionTrigger$SimpleInstance"
+import {$ItemPredicate, $ItemPredicate$$Type} from "net.minecraft.advancements.critereon.ItemPredicate"
 
 export class $UsedTotemTrigger$TriggerInstance extends $Record implements $SimpleCriterionTrigger$SimpleInstance$$Interface {
 static readonly "CODEC": $Codec<($UsedTotemTrigger$TriggerInstance)>
@@ -3959,7 +3959,7 @@ public "validate"(arg0: $CriterionValidator$$Type): void
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $UsedTotemTrigger$TriggerInstance$$Type = ({"item"?: ($ItemPredicate$$Type)?, "player"?: ($ContextAwarePredicate$$Type)?}) | ([item?: ($ItemPredicate$$Type)?, player?: ($ContextAwarePredicate$$Type)?]);
+export type $UsedTotemTrigger$TriggerInstance$$Type = ({"player"?: ($ContextAwarePredicate$$Type)?, "item"?: ($ItemPredicate$$Type)?}) | ([player?: ($ContextAwarePredicate$$Type)?, item?: ($ItemPredicate$$Type)?]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -3989,8 +3989,8 @@ export type $BeeNestDestroyedTrigger$$Type = ($BeeNestDestroyedTrigger);
 export type $BeeNestDestroyedTrigger$$Original = $BeeNestDestroyedTrigger;}
 declare module "net.minecraft.advancements.critereon.FishingRodHookedTrigger" {
 import {$SimpleCriterionTrigger} from "net.minecraft.advancements.critereon.SimpleCriterionTrigger"
-import {$Collection$$Type} from "java.util.Collection"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$Collection$$Type} from "java.util.Collection"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$FishingHook$$Type} from "net.minecraft.world.entity.projectile.FishingHook"
 import {$FishingRodHookedTrigger$TriggerInstance} from "net.minecraft.advancements.critereon.FishingRodHookedTrigger$TriggerInstance"
@@ -4013,12 +4013,12 @@ export type $FishingRodHookedTrigger$$Type = ($FishingRodHookedTrigger);
 export type $FishingRodHookedTrigger$$Original = $FishingRodHookedTrigger;}
 declare module "net.minecraft.advancements.critereon.UsedEnderEyeTrigger$TriggerInstance" {
 import {$Optional, $Optional$$Type} from "java.util.Optional"
-import {$ContextAwarePredicate, $ContextAwarePredicate$$Type} from "net.minecraft.advancements.critereon.ContextAwarePredicate"
 import {$Codec} from "com.mojang.serialization.Codec"
+import {$ContextAwarePredicate, $ContextAwarePredicate$$Type} from "net.minecraft.advancements.critereon.ContextAwarePredicate"
 import {$MinMaxBounds$Doubles, $MinMaxBounds$Doubles$$Type} from "net.minecraft.advancements.critereon.MinMaxBounds$Doubles"
 import {$CriterionValidator$$Type} from "net.minecraft.advancements.critereon.CriterionValidator"
-import {$Record} from "java.lang.Record"
 import {$SimpleCriterionTrigger$SimpleInstance$$Interface} from "net.minecraft.advancements.critereon.SimpleCriterionTrigger$SimpleInstance"
+import {$Record} from "java.lang.Record"
 
 export class $UsedEnderEyeTrigger$TriggerInstance extends $Record implements $SimpleCriterionTrigger$SimpleInstance$$Interface {
 static readonly "CODEC": $Codec<($UsedEnderEyeTrigger$TriggerInstance)>

@@ -1,9 +1,9 @@
 declare module "net.irisshaders.iris.compat.embeddium.mixin.monocle.mixin.EmbeddiumWorldRendererAssessor" {
 import {$BlockEntityRenderDispatcher$$Type} from "net.minecraft.client.renderer.blockentity.BlockEntityRenderDispatcher"
-import {$RenderBuffers$$Type} from "net.minecraft.client.renderer.RenderBuffers"
 import {$BlockDestructionProgress$$Type} from "net.minecraft.server.level.BlockDestructionProgress"
-import {$MultiBufferSource$BufferSource$$Type} from "net.minecraft.client.renderer.MultiBufferSource$BufferSource"
+import {$RenderBuffers$$Type} from "net.minecraft.client.renderer.RenderBuffers"
 import {$SortedSet$$Type} from "java.util.SortedSet"
+import {$MultiBufferSource$BufferSource$$Type} from "net.minecraft.client.renderer.MultiBufferSource$BufferSource"
 import {$Long2ObjectMap$$Type} from "it.unimi.dsi.fastutil.longs.Long2ObjectMap"
 import {$PoseStack$$Type} from "com.mojang.blaze3d.vertex.PoseStack"
 

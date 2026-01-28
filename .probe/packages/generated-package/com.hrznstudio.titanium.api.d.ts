@@ -86,17 +86,17 @@ export class $FilterSlot<T> {
 constructor(arg0: integer, arg1: integer, arg2: integer, arg3: T)
 
 public "getFilterID"(): integer
-public "getFilter"(): T
-public "setColor"(arg0: $DyeColor$$Type): void
 public "setColor"(arg0: integer): void
+public "setColor"(arg0: $DyeColor$$Type): void
+public "getFilter"(): T
 public "setFilter"(arg0: T): void
 public "getY"(): integer
 public "getX"(): integer
 public "getColor"(): integer
 get "filterID"(): integer
-get "filter"(): T
-set "color"(value: $DyeColor$$Type)
 set "color"(value: integer)
+set "color"(value: $DyeColor$$Type)
+get "filter"(): T
 set "filter"(value: T)
 get "y"(): integer
 get "x"(): integer
@@ -207,9 +207,9 @@ export type $IFilter$$Original<T> = $IFilter<(T)>;}
 declare module "com.hrznstudio.titanium.api.client.IScreenAddon" {
 import {$GuiEventListener$$Interface} from "net.minecraft.client.gui.components.events.GuiEventListener"
 import {$FocusNavigationEvent$$Type} from "net.minecraft.client.gui.navigation.FocusNavigationEvent"
-import {$GuiGraphics$$Type} from "net.minecraft.client.gui.GuiGraphics"
-import {$ScreenRectangle} from "net.minecraft.client.gui.navigation.ScreenRectangle"
 import {$IAssetProvider$$Type} from "com.hrznstudio.titanium.client.screen.asset.IAssetProvider"
+import {$ScreenRectangle} from "net.minecraft.client.gui.navigation.ScreenRectangle"
+import {$GuiGraphics$$Type} from "net.minecraft.client.gui.GuiGraphics"
 import {$Screen$$Type} from "net.minecraft.client.gui.screens.Screen"
 import {$List} from "java.util.List"
 import {$ComponentPath} from "net.minecraft.client.gui.ComponentPath"
@@ -227,13 +227,12 @@ get "tabOrderGroup"(): integer
 
 export class $IScreenAddon implements $IScreenAddon$$Interface {
  "drawForegroundLayer"(arg0: $GuiGraphics$$Type, arg1: $Screen$$Type, arg2: $IAssetProvider$$Type, arg3: integer, arg4: integer, arg5: integer, arg6: integer, arg7: float): void
- "drawBackgroundLayer"(arg0: $GuiGraphics$$Type, arg1: $Screen$$Type, arg2: $IAssetProvider$$Type, arg3: integer, arg4: integer, arg5: integer, arg6: integer, arg7: float): void
  "isBackground"(): boolean
+ "drawBackgroundLayer"(arg0: $GuiGraphics$$Type, arg1: $Screen$$Type, arg2: $IAssetProvider$$Type, arg3: integer, arg4: integer, arg5: integer, arg6: integer, arg7: float): void
  "init"(arg0: integer, arg1: integer): void
  "keyPressed"(arg0: integer, arg1: integer, arg2: integer): boolean
  "mouseClicked"(arg0: double, arg1: double, arg2: integer): boolean
  "getTooltipLines"(): $List<($Component)>
- "isMouseOver"(arg0: double, arg1: double): boolean
  "setFocused"(arg0: boolean): void
  "mouseReleased"(arg0: double, arg1: double, arg2: integer): boolean
  "mouseDragged"(arg0: double, arg1: double, arg2: integer, arg3: double, arg4: double): boolean
@@ -241,6 +240,7 @@ export class $IScreenAddon implements $IScreenAddon$$Interface {
  "keyReleased"(arg0: integer, arg1: integer, arg2: integer): boolean
  "charTyped"(arg0: character, arg1: integer): boolean
  "isFocused"(): boolean
+ "isMouseOver"(arg0: double, arg1: double): boolean
  "mouseMoved"(arg0: double, arg1: double): void
  "nextFocusPath"(arg0: $FocusNavigationEvent$$Type): $ComponentPath
  "getCurrentFocusPath"(): $ComponentPath

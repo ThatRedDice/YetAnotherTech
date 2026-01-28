@@ -128,10 +128,10 @@ export type $MapOpacity$$Type = ($MapOpacity);
  */
 export type $MapOpacity$$Original = $MapOpacity;}
 declare module "ca.fxco.moreculling.api.renderers.ExtendedItemRenderer" {
-import {$MultiBufferSource$$Type} from "net.minecraft.client.renderer.MultiBufferSource"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$PoseStack$$Type} from "com.mojang.blaze3d.vertex.PoseStack"
+import {$MultiBufferSource$$Type} from "net.minecraft.client.renderer.MultiBufferSource"
 import {$BakedModel$$Type} from "net.minecraft.client.resources.model.BakedModel"
+import {$PoseStack$$Type} from "com.mojang.blaze3d.vertex.PoseStack"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$ItemFrame$$Type} from "net.minecraft.world.entity.decoration.ItemFrame"
 import {$VertexConsumer$$Type} from "com.mojang.blaze3d.vertex.VertexConsumer"

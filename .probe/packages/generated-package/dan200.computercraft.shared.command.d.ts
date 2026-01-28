@@ -1,6 +1,6 @@
 declare module "dan200.computercraft.shared.command.arguments.RepeatArgumentType" {
-import {$CommandContext$$Type} from "com.mojang.brigadier.context.CommandContext"
 import {$SimpleCommandExceptionType$$Type} from "com.mojang.brigadier.exceptions.SimpleCommandExceptionType"
+import {$CommandContext$$Type} from "com.mojang.brigadier.context.CommandContext"
 import {$ArgumentType$$Type, $ArgumentType$$Interface} from "com.mojang.brigadier.arguments.ArgumentType"
 import {$Collection} from "java.util.Collection"
 import {$Suggestions} from "com.mojang.brigadier.suggestion.Suggestions"
@@ -33,8 +33,8 @@ import {$SimpleCommandExceptionType, $SimpleCommandExceptionType$$Type} from "co
 import {$CommandBuildContext$$Type} from "net.minecraft.commands.CommandBuildContext"
 import {$RepeatArgumentType} from "dan200.computercraft.shared.command.arguments.RepeatArgumentType"
 import {$RepeatArgumentType$Info, $RepeatArgumentType$Info$$Type} from "dan200.computercraft.shared.command.arguments.RepeatArgumentType$Info"
-import {$ArgumentTypeInfo} from "net.minecraft.commands.synchronization.ArgumentTypeInfo"
 import {$Record} from "java.lang.Record"
+import {$ArgumentTypeInfo} from "net.minecraft.commands.synchronization.ArgumentTypeInfo"
 
 export class $RepeatArgumentType$Template extends $Record implements $ArgumentTypeInfo$Template$$Interface<($RepeatArgumentType<(never), (never)>)> {
 constructor(info: $RepeatArgumentType$Info$$Type, child: $ArgumentTypeInfo$Template$$Type<(never)>, flatten: boolean, some: $SimpleCommandExceptionType$$Type)
@@ -53,7 +53,7 @@ public "some"(): $SimpleCommandExceptionType
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $RepeatArgumentType$Template$$Type = ({"info"?: $RepeatArgumentType$Info$$Type, "child"?: $ArgumentTypeInfo$Template$$Type<(never)>, "flatten"?: boolean, "some"?: $SimpleCommandExceptionType$$Type}) | ([info?: $RepeatArgumentType$Info$$Type, child?: $ArgumentTypeInfo$Template$$Type<(never)>, flatten?: boolean, some?: $SimpleCommandExceptionType$$Type]);
+export type $RepeatArgumentType$Template$$Type = ({"child"?: $ArgumentTypeInfo$Template$$Type<(never)>, "flatten"?: boolean, "some"?: $SimpleCommandExceptionType$$Type, "info"?: $RepeatArgumentType$Info$$Type}) | ([child?: $ArgumentTypeInfo$Template$$Type<(never)>, flatten?: boolean, some?: $SimpleCommandExceptionType$$Type, info?: $RepeatArgumentType$Info$$Type]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */

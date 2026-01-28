@@ -28,8 +28,8 @@ export type $BlockWithTile$$Type = ({"block"?: $DeferredHolder$$Type<($Block$$Ty
 export type $BlockWithTile$$Original = $BlockWithTile;}
 declare module "com.hrznstudio.titanium.module.DeferredRegistryHelper" {
 import {$BasicBlock$$Type} from "com.hrznstudio.titanium.block.BasicBlock"
-import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$TitaniumTab$$Type} from "com.hrznstudio.titanium.tab.TitaniumTab"
+import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$BasicTileBlock$$Type} from "com.hrznstudio.titanium.block.BasicTileBlock"
 import {$DeferredHolder, $DeferredHolder$$Type} from "net.neoforged.neoforge.registries.DeferredHolder"
 import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
@@ -38,8 +38,8 @@ import {$BlockEntityType, $BlockEntityType$$Type} from "net.minecraft.world.leve
 import {$Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$DeferredRegister} from "net.neoforged.neoforge.registries.DeferredRegister"
-import {$Item$$Type} from "net.minecraft.world.item.Item"
 import {$BlockWithTile} from "com.hrznstudio.titanium.module.BlockWithTile"
+import {$Item$$Type} from "net.minecraft.world.item.Item"
 import {$ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
 import {$EntityType, $EntityType$$Type} from "net.minecraft.world.entity.EntityType"
 
@@ -53,10 +53,10 @@ public "registerBlockEntityType"(arg0: StringJS, arg1: $Supplier$$Type<($BlockEn
 public "registerEntityType"(arg0: StringJS, arg1: $Supplier$$Type<($EntityType$$Type<(never)>)>): $Holder<($EntityType<(never)>)>
 public "getRegistry"<T>(arg0: $ResourceKey$$Type<($Registry<(T)>)>): $DeferredRegister<(T)>
 public "registerCapabilities"(arg0: $Holder$$Type<($BlockEntityType<(never)>)>): void
+public "registerBlockWithTileItem"(arg0: StringJS, arg1: $Supplier$$Type<($BasicTileBlock$$Type<(never)>)>, arg2: $Function$$Type<($DeferredHolder<($Block), ($Block)>), ($Supplier$$Type<($Item$$Type)>)>, arg3: $TitaniumTab$$Type): $BlockWithTile
 public "registerGeneric"<T>(arg0: $ResourceKey$$Type<($Registry<(T)>)>, arg1: StringJS, arg2: $Supplier$$Type<(T)>): $DeferredHolder<(T), (T)>
 public "registerTyped"<T, R>(arg0: $ResourceKey$$Type<($Registry<(T)>)>, arg1: StringJS, arg2: $Supplier$$Type<(R)>): $DeferredHolder<(T), (R)>
 public "registerBlockWithTile"(arg0: StringJS, arg1: $Supplier$$Type<($BasicTileBlock$$Type<(never)>)>, arg2: $TitaniumTab$$Type): $BlockWithTile
-public "registerBlockWithTileItem"(arg0: StringJS, arg1: $Supplier$$Type<($BasicTileBlock$$Type<(never)>)>, arg2: $Function$$Type<($DeferredHolder<($Block), ($Block)>), ($Supplier$$Type<($Item$$Type)>)>, arg3: $TitaniumTab$$Type): $BlockWithTile
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_

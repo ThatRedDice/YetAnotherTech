@@ -2,8 +2,8 @@ declare module "java.lang.constant.DirectMethodHandleDesc" {
 import {$MethodHandles$Lookup$$Type} from "java.lang.invoke.MethodHandles$Lookup"
 import {$DirectMethodHandleDesc$Kind, $DirectMethodHandleDesc$Kind$$Type} from "java.lang.constant.DirectMethodHandleDesc$Kind"
 import {$MethodHandleDesc, $MethodHandleDesc$$Interface} from "java.lang.constant.MethodHandleDesc"
-import {$ClassDesc, $ClassDesc$$Type} from "java.lang.constant.ClassDesc"
 import {$MethodTypeDesc, $MethodTypeDesc$$Type} from "java.lang.constant.MethodTypeDesc"
+import {$ClassDesc, $ClassDesc$$Type} from "java.lang.constant.ClassDesc"
 
 /**
  * This class is not allowed By KubeJS!
@@ -67,8 +67,8 @@ export type $ConstantDesc$$Original = $ConstantDesc;}
 declare module "java.lang.constant.MethodTypeDesc" {
 import {$ConstantDesc$$Interface} from "java.lang.constant.ConstantDesc"
 import {$MethodHandles$Lookup$$Type} from "java.lang.invoke.MethodHandles$Lookup"
-import {$ClassDesc, $ClassDesc$$Type} from "java.lang.constant.ClassDesc"
 import {$List, $List$$Type} from "java.util.List"
+import {$ClassDesc, $ClassDesc$$Type} from "java.lang.constant.ClassDesc"
 import {$TypeDescriptor$OfField, $TypeDescriptor$OfField$$Type} from "java.lang.invoke.TypeDescriptor$OfField"
 import {$MethodType} from "java.lang.invoke.MethodType"
 import {$TypeDescriptor$OfMethod, $TypeDescriptor$OfMethod$$Interface} from "java.lang.invoke.TypeDescriptor$OfMethod"
@@ -179,8 +179,8 @@ declare module "java.lang.constant.MethodHandleDesc" {
 import {$ConstantDesc$$Interface} from "java.lang.constant.ConstantDesc"
 import {$MethodHandles$Lookup$$Type} from "java.lang.invoke.MethodHandles$Lookup"
 import {$DirectMethodHandleDesc$Kind$$Type} from "java.lang.constant.DirectMethodHandleDesc$Kind"
-import {$ClassDesc$$Type} from "java.lang.constant.ClassDesc"
 import {$MethodTypeDesc, $MethodTypeDesc$$Type} from "java.lang.constant.MethodTypeDesc"
+import {$ClassDesc$$Type} from "java.lang.constant.ClassDesc"
 import {$DirectMethodHandleDesc} from "java.lang.constant.DirectMethodHandleDesc"
 
 /**

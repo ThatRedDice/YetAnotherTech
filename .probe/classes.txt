@@ -1981,6 +1981,7 @@ me.desht.pneumaticcraft.common.recipes.other.HeatPropertiesRecipeImpl$Serializer
 me.desht.pneumaticcraft.common.network.SyncedField$FieldType	4
 net.minecraft.commands.SharedSuggestionProvider	1
 com.simibubi.create.content.trains.entity.TrainStatus$StatusMessage	4
+com.railwayteam.railways.mixin.conductor_possession.AccessorClientChunkCacheStorage	3
 net.minecraft.world.level.biome.AmbientMoodSettings	1
 blusunrize.immersiveengineering.api.crafting.MultiblockRecipe$RecipeMultiplier	2
 dev.latvian.mods.rhino.util.DataObject	4
@@ -2184,6 +2185,7 @@ net.p3pp3rf1y.sophisticatedcore.upgrades.IOverflowResponseUpgrade	2
 com.simibubi.create.content.kinetics.gauge.GaugeBlockEntity	1
 net.minecraft.commands.arguments.ArgumentSignatures	4
 com.google.common.collect.AbstractMapBasedMultimap	4
+appeng.items.contents.PortableCellMenuHost	1
 com.buuz135.functionalstorage.inventory.ILockable	3
 ca.fxco.moreculling.api.quad.QuadOpacity	3
 net.sweenus.simplyswords.power.powers.TrailblazePower	0
@@ -4634,6 +4636,7 @@ net.neoforged.neoforge.energy.EnergyStorage	3
 net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber$EnchantmentSubscriber	3
 rearth.oritech.block.blocks.pipes.energy.SuperConductorConnectionBlock$FramedSuperConductorConnectionBlock	0
 net.minecraft.network.protocol.game.ClientboundTagQueryPacket	2
+me.cominixo.betterf3.ducks.ClientChunkManagerAccess	2
 net.minecraft.advancements.critereon.ConsumeItemTrigger$TriggerInstance	1
 com.nigthbeam.reconstructedwands.api.IWandCore	1
 net.minecraft.advancements.critereon.FilledBucketTrigger$TriggerInstance	1
@@ -9820,6 +9823,7 @@ com.simibubi.create.content.schematics.SchematicPrinter$BlockTargetHandler	3
 net.minecraft.tags.TagBuilder	3
 net.minecraft.world.entity.MobCategory	0
 net.minecraft.core.Registry	1
+net.minecraft.client.multiplayer.ClientChunkCache	1
 net.neoforged.neoforge.event.entity.living.LivingEntityUseItemEvent$Start	0
 me.desht.pneumaticcraft.common.inventory.AmadronMenu$EnumProblemState	3
 net.minecraft.network.protocol.game.ClientboundLightUpdatePacketData	3
@@ -11418,6 +11422,7 @@ com.electronwill.nightconfig.core.utils.WriterSupplier	5
 me.desht.pneumaticcraft.common.block.AbstractAssemblyIOUnitBlock$Import	0
 io.redspace.ironsspellbooks.api.spells.CastSource	1
 me.desht.pneumaticcraft.common.block.ElevatorFrameBlock	0
+net.minecraft.client.multiplayer.ClientChunkCache$Storage	2
 net.minecraft.world.entity.projectile.windcharge.AbstractWindCharge	2
 com.mojang.blaze3d.font.GlyphInfo	3
 net.p3pp3rf1y.sophisticatedcore.util.ItemBase	0
@@ -11437,6 +11442,7 @@ dev.latvian.mods.rhino.IdFunctionObject	2
 mcjty.rftoolsdim.modules.dimlets.data.DimletKey	1
 com.simibubi.create.content.redstone.link.controller.LecternControllerBlockEntity	1
 net.minecraft.commands.synchronization.brigadier.FloatArgumentInfo$Template	1
+me.cominixo.betterf3.ducks.ClientChunkMapAccess	3
 net.mehvahdjukaar.supplementaries.common.block.blocks.NetheriteDoorBlock	0
 net.mehvahdjukaar.supplementaries.common.block.blocks.FirePitBlock	0
 me.desht.pneumaticcraft.api.pressure.IPressurizableItem	1

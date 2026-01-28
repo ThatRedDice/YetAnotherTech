@@ -1,7 +1,7 @@
 declare module "dev.shadowsoffire.apotheosis.recipe.CharmInfusionRecipe$Serializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$CharmInfusionRecipe} from "dev.shadowsoffire.apotheosis.recipe.CharmInfusionRecipe"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
@@ -29,8 +29,8 @@ export type $CharmInfusionRecipe$Serializer$$Original = $CharmInfusionRecipe$Ser
 declare module "dev.shadowsoffire.apotheosis.recipe.PotionCharmRecipe$Serializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$PotionCharmRecipe} from "dev.shadowsoffire.apotheosis.recipe.PotionCharmRecipe"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
 
@@ -87,8 +87,8 @@ import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$ShapedRecipePattern, $ShapedRecipePattern$$Type} from "net.minecraft.world.item.crafting.ShapedRecipePattern"
 import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$ShapedRecipe} from "net.minecraft.world.item.crafting.ShapedRecipe"
-import {$CraftingBookCategory$$Type} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$CraftingBookCategory$$Type} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$PotionContents} from "net.minecraft.world.item.alchemy.PotionContents"
 import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"

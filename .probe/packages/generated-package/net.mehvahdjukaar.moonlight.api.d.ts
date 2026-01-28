@@ -1,6 +1,6 @@
 declare module "net.mehvahdjukaar.moonlight.api.item.IThirdPersonAnimationProvider" {
-import {$HumanoidArm$$Type} from "net.minecraft.world.entity.HumanoidArm"
 import {$HumanoidModel$$Type} from "net.minecraft.client.model.HumanoidModel"
+import {$HumanoidArm$$Type} from "net.minecraft.world.entity.HumanoidArm"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Item$$Type} from "net.minecraft.world.item.Item"
 import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
@@ -27,8 +27,8 @@ export type $IThirdPersonAnimationProvider$$Type = ($IThirdPersonAnimationProvid
 export type $IThirdPersonAnimationProvider$$Original = $IThirdPersonAnimationProvider;}
 declare module "net.mehvahdjukaar.moonlight.api.events.neoforge.LightningStruckBlockEvent" {
 import {$BlockEvent} from "net.neoforged.neoforge.event.level.BlockEvent"
-import {$LightningBolt, $LightningBolt$$Type} from "net.minecraft.world.entity.LightningBolt"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$LightningBolt, $LightningBolt$$Type} from "net.minecraft.world.entity.LightningBolt"
 import {$LevelAccessor, $LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$ILightningStruckBlockEvent, $ILightningStruckBlockEvent$$Interface} from "net.mehvahdjukaar.moonlight.api.events.ILightningStruckBlockEvent"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -59,8 +59,8 @@ declare module "net.mehvahdjukaar.moonlight.api.fluids.SoftFluid" {
 import {$FoodProvider} from "net.mehvahdjukaar.moonlight.api.fluids.FoodProvider"
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$Optional} from "java.util.Optional"
-import {$FluidContainerList} from "net.mehvahdjukaar.moonlight.api.fluids.FluidContainerList"
 import {$Pair} from "com.mojang.datafixers.util.Pair"
+import {$FluidContainerList} from "net.mehvahdjukaar.moonlight.api.fluids.FluidContainerList"
 import {$SoftFluid$TintMethod} from "net.mehvahdjukaar.moonlight.api.fluids.SoftFluid$TintMethod"
 import {$Component} from "net.minecraft.network.chat.Component"
 import {$DataComponentType} from "net.minecraft.core.component.DataComponentType"
@@ -89,6 +89,9 @@ constructor(fluid: $Holder$$Type<($Fluid)>)
 public "isFood"(): boolean
 public "getContainerList"(): $FluidContainerList
 public "getEmptyContainer"(filledContainer: $Item$$Type): $Optional<($Item)>
+public "getStillTexture"(): $ResourceLocation
+public "getFlowingTexture"(): $ResourceLocation
+public "getTintColor"(): integer
 public "getTranslatedName"(): $Component
 public "getFoodProvider"(): $FoodProvider
 public "getPreservedComponents"(): $HolderSet<($DataComponentType<(never)>)>
@@ -108,14 +111,14 @@ public "isEmptyFluid"(): boolean
 public "getFilledContainer"(emptyContainer: $Item$$Type): $Optional<($Item)>
 public "getEmissivity"(): integer
 public "isColored"(): boolean
-public "getStillTexture"(): $ResourceLocation
-public "getFlowingTexture"(): $ResourceLocation
-public "getTintColor"(): integer
 public "getLuminosity"(): integer
 public "isEnabled"(): boolean
 public "isEquivalent"(fluid: $Holder$$Type<($Fluid)>): boolean
 get "food"(): boolean
 get "containerList"(): $FluidContainerList
+get "stillTexture"(): $ResourceLocation
+get "flowingTexture"(): $ResourceLocation
+get "tintColor"(): integer
 get "translatedName"(): $Component
 get "foodProvider"(): $FoodProvider
 get "preservedComponents"(): $HolderSet<($DataComponentType<(never)>)>
@@ -127,9 +130,6 @@ get "equivalentFluids"(): $HolderSet<($Fluid)>
 get "emptyFluid"(): boolean
 get "emissivity"(): integer
 get "colored"(): boolean
-get "stillTexture"(): $ResourceLocation
-get "flowingTexture"(): $ResourceLocation
-get "tintColor"(): integer
 get "luminosity"(): integer
 get "enabled"(): boolean
 /**
@@ -210,8 +210,8 @@ export type $FireConsumeBlockEvent$$Type = ($FireConsumeBlockEvent);
 export type $FireConsumeBlockEvent$$Original = $FireConsumeBlockEvent;}
 declare module "net.mehvahdjukaar.moonlight.api.events.IVillagerBrainEvent" {
 import {$Map} from "java.util.Map"
-import {$MemoryModuleType} from "net.minecraft.world.entity.ai.memory.MemoryModuleType"
 import {$Optional} from "java.util.Optional"
+import {$MemoryModuleType} from "net.minecraft.world.entity.ai.memory.MemoryModuleType"
 import {$Pair, $Pair$$Type} from "com.mojang.datafixers.util.Pair"
 import {$SensorType$$Type} from "net.minecraft.world.entity.ai.sensing.SensorType"
 import {$ImmutableList$$Type} from "com.google.common.collect.ImmutableList"
@@ -313,8 +313,8 @@ export type $IRotatable$$Type = ((arg0: $BlockState, arg1: $LevelAccessor, arg2:
  */
 export type $IRotatable$$Original = $IRotatable;}
 declare module "net.mehvahdjukaar.moonlight.api.events.neoforge.DropItemOnDeathEvent" {
-import {$IDropItemOnDeathEvent, $IDropItemOnDeathEvent$$Interface} from "net.mehvahdjukaar.moonlight.api.events.IDropItemOnDeathEvent"
 import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
+import {$IDropItemOnDeathEvent, $IDropItemOnDeathEvent$$Interface} from "net.mehvahdjukaar.moonlight.api.events.IDropItemOnDeathEvent"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$ICancellableEvent$$Interface} from "net.neoforged.bus.api.ICancellableEvent"
 import {$Event} from "net.neoforged.bus.api.Event"
@@ -350,8 +350,8 @@ export type $DropItemOnDeathEvent$$Original = $DropItemOnDeathEvent;}
 declare module "net.mehvahdjukaar.moonlight.api.item.BlockTypeBasedBlockItem" {
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$AdditionalItemPlacement, $AdditionalItemPlacement$$Type} from "net.mehvahdjukaar.moonlight.api.item.additional_placements.AdditionalItemPlacement"
@@ -499,8 +499,8 @@ export type $HolderReference$$Original<A> = $HolderReference<(A)>;}
 declare module "net.mehvahdjukaar.moonlight.api.item.BlockTypeBasedItem" {
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockType, $BlockType$$Type} from "net.mehvahdjukaar.moonlight.api.set.BlockType"
 
@@ -604,13 +604,13 @@ export class $WorldSavedDataType<D extends $WorldSavedData> {
 static readonly "CODEC": $Codec<($WorldSavedDataType<($WorldSavedData)>)>
 static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($WorldSavedDataType<($WorldSavedData)>)>
 
-constructor(id: $ResourceLocation$$Type, overworldToDataConstructor: $Function$$Type<($ServerLevel), (D)>, codec: $Codec$$Type<(D)>, streamCodec: $StreamCodec$$Type<($RegistryFriendlyByteBuf$$Type), (D)>, scope: $WorldSavedDataType$Scope$$Type)
 constructor(id: $ResourceLocation$$Type, overworldToDataConstructor: $Function$$Type<($ServerLevel), (D)>, codec: $Codec$$Type<(D)>, streamCodec: $StreamCodec$$Type<($RegistryFriendlyByteBuf$$Type), (D)>)
+constructor(id: $ResourceLocation$$Type, overworldToDataConstructor: $Function$$Type<($ServerLevel), (D)>, codec: $Codec$$Type<(D)>, streamCodec: $StreamCodec$$Type<($RegistryFriendlyByteBuf$$Type), (D)>, scope: $WorldSavedDataType$Scope$$Type)
 
 public "isSyncable"(): boolean
 public "getStreamCodec"(): $StreamCodec<($RegistryFriendlyByteBuf), (D)>
-public "getData"(level: $Level$$Type): D
 public "setData"(level: $Level$$Type, data: D): void
+public "getData"(level: $Level$$Type): D
 public "getName"(): StringJS
 public "getCodec"(): $Codec<(D)>
 get "syncable"(): boolean
@@ -641,8 +641,8 @@ import {$BlockPlacerItem} from "net.mehvahdjukaar.moonlight.api.item.additional_
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$BlockPlaceContext, $BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
-import {$FoodProperties$$Type} from "net.minecraft.world.food.FoodProperties"
 import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
+import {$FoodProperties$$Type} from "net.minecraft.world.food.FoodProperties"
 
 export class $AdditionalItemPlacement {
 constructor(placeable: $Block$$Type)
@@ -792,13 +792,13 @@ export type $IDropItemOnDeathEvent$$Type = ($IDropItemOnDeathEvent);
  */
 export type $IDropItemOnDeathEvent$$Original = $IDropItemOnDeathEvent;}
 declare module "net.mehvahdjukaar.moonlight.api.events.neoforge.VillagerBrainEvent" {
-import {$Brain$$Type} from "net.minecraft.world.entity.ai.Brain"
 import {$Map} from "java.util.Map"
-import {$MemoryModuleType} from "net.minecraft.world.entity.ai.memory.MemoryModuleType"
+import {$Brain$$Type} from "net.minecraft.world.entity.ai.Brain"
 import {$Optional} from "java.util.Optional"
+import {$MemoryModuleType} from "net.minecraft.world.entity.ai.memory.MemoryModuleType"
 import {$Pair, $Pair$$Type} from "com.mojang.datafixers.util.Pair"
-import {$Event} from "net.neoforged.bus.api.Event"
 import {$SensorType$$Type} from "net.minecraft.world.entity.ai.sensing.SensorType"
+import {$Event} from "net.neoforged.bus.api.Event"
 import {$ImmutableList$$Type} from "com.google.common.collect.ImmutableList"
 import {$Villager, $Villager$$Type} from "net.minecraft.world.entity.npc.Villager"
 import {$Sensor$$Type} from "net.minecraft.world.entity.ai.sensing.Sensor"
@@ -832,13 +832,13 @@ export type $VillagerBrainEvent$$Type = ($VillagerBrainEvent);
  */
 export type $VillagerBrainEvent$$Original = $VillagerBrainEvent;}
 declare module "net.mehvahdjukaar.moonlight.api.item.IThirdPersonSpecialItemRenderer" {
-import {$HumanoidArm, $HumanoidArm$$Type} from "net.minecraft.world.entity.HumanoidArm"
 import {$Player} from "net.minecraft.world.entity.player.Player"
+import {$HumanoidArm, $HumanoidArm$$Type} from "net.minecraft.world.entity.HumanoidArm"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$MultiBufferSource, $MultiBufferSource$$Type} from "net.minecraft.client.renderer.MultiBufferSource"
 import {$PoseStack, $PoseStack$$Type} from "com.mojang.blaze3d.vertex.PoseStack"
-import {$Item$$Type} from "net.minecraft.world.item.Item"
 import {$EntityModel, $EntityModel$$Type} from "net.minecraft.client.model.EntityModel"
+import {$Item$$Type} from "net.minecraft.world.item.Item"
 import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 
 export interface $IThirdPersonSpecialItemRenderer$$Interface {
@@ -847,8 +847,8 @@ export interface $IThirdPersonSpecialItemRenderer$$Interface {
 }
 
 export class $IThirdPersonSpecialItemRenderer implements $IThirdPersonSpecialItemRenderer$$Interface {
- "renderThirdPersonItem"<T extends $Player, M extends $EntityModel<(object)>>(arg0: M, arg1: $LivingEntity$$Type, arg2: $ItemStack$$Type, arg3: $HumanoidArm$$Type, arg4: $PoseStack$$Type, arg5: $MultiBufferSource$$Type, arg6: integer): void
 static "attachToItem"(target: $Item$$Type, object: $IThirdPersonSpecialItemRenderer$$Type): void
+ "renderThirdPersonItem"<T extends $Player, M extends $EntityModel<(object)>>(arg0: M, arg1: $LivingEntity$$Type, arg2: $ItemStack$$Type, arg3: $HumanoidArm$$Type, arg4: $PoseStack$$Type, arg5: $MultiBufferSource$$Type, arg6: integer): void
 static "get"(target: $Item$$Type): $IThirdPersonSpecialItemRenderer
 }
 /**
@@ -865,8 +865,8 @@ import {$CustomMapData$Type} from "net.mehvahdjukaar.moonlight.api.map.CustomMap
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$CustomMapData$DirtyCounter, $CustomMapData$DirtyCounter$$Type} from "net.mehvahdjukaar.moonlight.api.map.CustomMapData$DirtyCounter"
-import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$Component} from "net.minecraft.network.chat.Component"
+import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$MapItemSavedData$$Type} from "net.minecraft.world.level.saveddata.maps.MapItemSavedData"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Consumer$$Type} from "java.util.function.Consumer"
@@ -902,8 +902,8 @@ import {$Iterable$$Interface} from "java.lang.Iterable"
 import {$Iterator} from "java.util.Iterator"
 import {$Collection} from "java.util.Collection"
 import {$Optional} from "java.util.Optional"
-import {$FluidContainerList$Category, $FluidContainerList$Category$$Type} from "net.mehvahdjukaar.moonlight.api.fluids.FluidContainerList$Category"
 import {$Codec} from "com.mojang.serialization.Codec"
+import {$FluidContainerList$Category, $FluidContainerList$Category$$Type} from "net.mehvahdjukaar.moonlight.api.fluids.FluidContainerList$Category"
 import {$Spliterator} from "java.util.Spliterator"
 import {$List, $List$$Type} from "java.util.List"
 import {$Item, $Item$$Type} from "net.minecraft.world.item.Item"
@@ -987,11 +987,11 @@ static readonly "CODEC": $Codec<($Holder<($MLMapDecorationType<(never), (never)>
 static readonly "DIRECT_CODEC": $Codec<($MLMapDecorationType<(never), (never)>)>
 static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($Holder<($MLMapDecorationType<(never), (never)>)>)>
 
+public static "fromWorldSimple"(markerFromWorldFactory: $TriFunction$$Type<($Holder<($MLMapDecorationType<(never), (never)>)>), ($BlockGetter), ($BlockPos), ($SimpleMapMarker$$Type)>): $MLSpecialMapDecorationType<($MLMapDecoration), ($SimpleMapMarker)>
 public "isFromWorld"(): boolean
 public "getCustomFactoryID"(): $ResourceLocation
 public "createMarkerFromWorld"(reader: $BlockGetter$$Type, pos: $BlockPos$$Type): M
 public static "fromWorldCustomMarker"<D extends $MLMapDecoration, M extends $MLMapMarker<(object)>>(markerCodec: $MapCodec$$Type<(M)>, decorationCodec: $StreamCodec$$Type<($RegistryFriendlyByteBuf$$Type), (D)>, markerFromWorldFactory: $TriFunction$$Type<($Holder<($MLMapDecorationType<(never), (never)>)>), ($BlockGetter), ($BlockPos), (M)>): $MLSpecialMapDecorationType<(D), (M)>
-public static "fromWorldSimple"(markerFromWorldFactory: $TriFunction$$Type<($Holder<($MLMapDecorationType<(never), (never)>)>), ($BlockGetter), ($BlockPos), ($SimpleMapMarker$$Type)>): $MLSpecialMapDecorationType<($MLMapDecoration), ($SimpleMapMarker)>
 public static "standaloneCustomMarker"<D extends $MLMapDecoration, M extends $MLMapMarker<(object)>>(markerCodec: $MapCodec$$Type<(M)>, decorationCode: $StreamCodec$$Type<($RegistryFriendlyByteBuf$$Type), (D)>): $MLSpecialMapDecorationType<(D), (M)>
 get "fromWorld"(): boolean
 get "customFactoryID"(): $ResourceLocation
@@ -1033,8 +1033,8 @@ import {$Optional$$Type} from "java.util.Optional"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$MLMapDecorationType$$Type} from "net.mehvahdjukaar.moonlight.api.map.decoration.MLMapDecorationType"
 import {$MLMapMarker} from "net.mehvahdjukaar.moonlight.api.map.decoration.MLMapMarker"
-import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$Holder$$Type} from "net.minecraft.core.Holder"
 import {$MLMapDecoration} from "net.mehvahdjukaar.moonlight.api.map.decoration.MLMapDecoration"
@@ -1100,8 +1100,8 @@ import {$List$$Type} from "java.util.List"
 import {$CustomPacketPayload$Type} from "net.minecraft.network.protocol.common.custom.CustomPacketPayload$Type"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
 import {$CustomPacketPayload, $CustomPacketPayload$$Interface} from "net.minecraft.network.protocol.common.custom.CustomPacketPayload"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ServerboundCustomPayloadPacket} from "net.minecraft.network.protocol.common.ServerboundCustomPayloadPacket"
 import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$ClientboundCustomPayloadPacket} from "net.minecraft.network.protocol.common.ClientboundCustomPayloadPacket"
@@ -1135,13 +1135,13 @@ export type $Message$$Type = ($Message);
  */
 export type $Message$$Original = $Message;}
 declare module "net.mehvahdjukaar.moonlight.api.worldgen.ISpecialSpawnsStructure" {
-import {$Structure, $Structure$$Type} from "net.minecraft.world.level.levelgen.structure.Structure"
 import {$MobCategory, $MobCategory$$Type} from "net.minecraft.world.entity.MobCategory"
+import {$Structure, $Structure$$Type} from "net.minecraft.world.level.levelgen.structure.Structure"
 import {$LongSet, $LongSet$$Type} from "it.unimi.dsi.fastutil.longs.LongSet"
 import {$WeightedRandomList, $WeightedRandomList$$Type} from "net.minecraft.util.random.WeightedRandomList"
 import {$StructureManager, $StructureManager$$Type} from "net.minecraft.world.level.StructureManager"
-import {$MobSpawnSettings$SpawnerData, $MobSpawnSettings$SpawnerData$$Type} from "net.minecraft.world.level.biome.MobSpawnSettings$SpawnerData"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$MobSpawnSettings$SpawnerData, $MobSpawnSettings$SpawnerData$$Type} from "net.minecraft.world.level.biome.MobSpawnSettings$SpawnerData"
 
 export interface $ISpecialSpawnsStructure$$Interface {
 
@@ -1171,8 +1171,8 @@ import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item, $Item$$Type} from "net.minecraft.world.item.Item"
-import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$AdditionalItemPlacement, $AdditionalItemPlacement$$Type} from "net.mehvahdjukaar.moonlight.api.item.additional_placements.AdditionalItemPlacement"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -1267,25 +1267,25 @@ import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
 export class $FluidContainerList$Category {
 static readonly "CODEC": $Codec<($FluidContainerList$Category)>
 
-public "getEmptySound"(): $SoundEvent
-public "getFillSound"(): $SoundEvent
 public "getEmptyContainer"(): $Item
 public "getFilledItems"(): $List<($Item)>
+public "getEmptySound"(): $SoundEvent
+public "getFillSound"(): $SoundEvent
 public "getFirstFilled"(): $Optional<($Item)>
-public "getCapacity"(): integer
 public "isEmpty"(): boolean
+public "getCapacity"(): integer
 /**
  * 
  * @deprecated
  */
 public "getAmount"(): integer
-get "emptySound"(): $SoundEvent
-get "fillSound"(): $SoundEvent
 get "emptyContainer"(): $Item
 get "filledItems"(): $List<($Item)>
+get "emptySound"(): $SoundEvent
+get "fillSound"(): $SoundEvent
 get "firstFilled"(): $Optional<($Item)>
-get "capacity"(): integer
 get "empty"(): boolean
+get "capacity"(): integer
 get "amount"(): integer
 }
 /**
@@ -1311,13 +1311,13 @@ static readonly "CODEC": $Codec<($FoodProvider)>
 static readonly "CUSTOM_PROVIDERS": $Map<($Item), ($FoodProvider)>
 static readonly "EMPTY": $FoodProvider
 
-public "getDivider"(): integer
 public "getFoodItem"(): $Item
+public "getDivider"(): integer
 public "consume"(player: $Player$$Type, world: $Level$$Type, nbtApplier: $Consumer$$Type<($ItemStack)>): boolean
 public "isEmpty"(): boolean
 public static "create"(item: $Item$$Type, divider: integer): $FoodProvider
-get "divider"(): integer
 get "foodItem"(): $Item
+get "divider"(): integer
 get "empty"(): boolean
 }
 /**
@@ -1331,8 +1331,8 @@ export type $FoodProvider$$Type = ($FoodProvider);
 export type $FoodProvider$$Original = $FoodProvider;}
 declare module "net.mehvahdjukaar.moonlight.api.worldgen.SpawnBoxSettings" {
 import {$Map, $Map$$Type} from "java.util.Map"
-import {$MobCategory, $MobCategory$$Type} from "net.minecraft.world.entity.MobCategory"
 import {$Codec} from "com.mojang.serialization.Codec"
+import {$MobCategory, $MobCategory$$Type} from "net.minecraft.world.entity.MobCategory"
 import {$WeightedRandomList, $WeightedRandomList$$Type} from "net.minecraft.util.random.WeightedRandomList"
 import {$MobSpawnSettings$SpawnerData, $MobSpawnSettings$SpawnerData$$Type} from "net.minecraft.world.level.biome.MobSpawnSettings$SpawnerData"
 import {$Record} from "java.lang.Record"
@@ -1343,8 +1343,8 @@ static readonly "EMPTY": $SpawnBoxSettings
 
 constructor(spawnOverrides: $Map$$Type<($MobCategory$$Type), ($Map$$Type<(StringJS), ($WeightedRandomList$$Type<($MobSpawnSettings$SpawnerData$$Type)>)>)>)
 
-public "spawnOverrides"(): $Map<($MobCategory), ($Map<(StringJS), ($WeightedRandomList<($MobSpawnSettings$SpawnerData)>)>)>
 public "hasCategory"(category: $MobCategory$$Type): boolean
+public "spawnOverrides"(): $Map<($MobCategory), ($Map<(StringJS), ($WeightedRandomList<($MobSpawnSettings$SpawnerData)>)>)>
 public "get"(boxID: StringJS, category: $MobCategory$$Type): $WeightedRandomList<($MobSpawnSettings$SpawnerData)>
 public "equals"(o: any): boolean
 public "toString"(): StringJS
@@ -1455,14 +1455,14 @@ export class $AfterLanguageLoadEvent implements $SimpleEvent$$Interface {
 constructor(lines: $Map$$Type<(StringJS), (StringJS)>, info: $List$$Type<(StringJS)>)
 
 public "addEntries"(builder: $LangBuilder$$Type): void
-public "getLanguageInfo"(): $Collection<(StringJS)>
 public "getAllEntries"(): $Collection<(StringJS)>
+public "getLanguageInfo"(): $Collection<(StringJS)>
 public "getEntry"(key: StringJS): StringJS
 public "addEntry"(key: StringJS, translation: StringJS): void
 public "isDefault"(): boolean
 public "getExtraLanguageLines"(): $Map<(StringJS), (StringJS)>
-get "languageInfo"(): $Collection<(StringJS)>
 get "allEntries"(): $Collection<(StringJS)>
+get "languageInfo"(): $Collection<(StringJS)>
 get "default"(): boolean
 get "extraLanguageLines"(): $Map<(StringJS), (StringJS)>
 }
@@ -1481,13 +1481,13 @@ import {$Record} from "java.lang.Record"
 export class $Triplet<L, M, R> extends $Record {
 constructor(left: L, middle: M, right: R)
 
-public "middle"(): M
 public "equals"(o: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
 public static "of"<A, B, C>(left: A, middle: B, right: C): $Triplet<(A), (B), (C)>
 public "left"(): L
 public "right"(): R
+public "middle"(): M
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -1502,8 +1502,8 @@ declare module "net.mehvahdjukaar.moonlight.api.item.WoodBasedItem" {
 import {$BlockTypeBasedItem} from "net.mehvahdjukaar.moonlight.api.item.BlockTypeBasedItem"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$WoodType, $WoodType$$Type} from "net.mehvahdjukaar.moonlight.api.set.wood.WoodType"
 
@@ -1530,13 +1530,13 @@ export type $WoodBasedItem$$Type = ($WoodBasedItem);
 export type $WoodBasedItem$$Original = $WoodBasedItem;}
 declare module "net.mehvahdjukaar.moonlight.api.worldgen.ISpawnBoxStructure" {
 import {$SpawnBoxSettings, $SpawnBoxSettings$$Type} from "net.mehvahdjukaar.moonlight.api.worldgen.SpawnBoxSettings"
-import {$MobCategory$$Type} from "net.minecraft.world.entity.MobCategory"
 import {$Structure$$Type} from "net.minecraft.world.level.levelgen.structure.Structure"
+import {$MobCategory$$Type} from "net.minecraft.world.entity.MobCategory"
 import {$LongSet$$Type} from "it.unimi.dsi.fastutil.longs.LongSet"
 import {$WeightedRandomList} from "net.minecraft.util.random.WeightedRandomList"
 import {$StructureManager$$Type} from "net.minecraft.world.level.StructureManager"
-import {$MobSpawnSettings$SpawnerData} from "net.minecraft.world.level.biome.MobSpawnSettings$SpawnerData"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$MobSpawnSettings$SpawnerData} from "net.minecraft.world.level.biome.MobSpawnSettings$SpawnerData"
 import {$ISpecialSpawnsStructure$$Interface} from "net.mehvahdjukaar.moonlight.api.worldgen.ISpecialSpawnsStructure"
 
 export interface $ISpawnBoxStructure$$Interface extends $ISpecialSpawnsStructure$$Interface {
@@ -1594,12 +1594,12 @@ static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($Custo
 
 constructor(type: $CustomMapData$Type$$Type<(P), (D)>, patch: P)
 
-public "patch"(): P
 public "type"(): $CustomMapData$Type<(P), (D)>
 public "equals"(o: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
 public "apply"(customData: $Map$$Type<($CustomMapData$Type$$Type<(never), (never)>), ($CustomMapData$$Type<(never), (never)>)>): void
+public "patch"(): P
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -1637,15 +1637,15 @@ export type $ILightable$FireSoundType$$Type = ((arg0: $LevelAccessor, arg1: $Blo
 export type $ILightable$FireSoundType$$Original = $ILightable$FireSoundType;}
 declare module "net.mehvahdjukaar.moonlight.api.map.decoration.MLMapMarker" {
 import {$RecordCodecBuilder$Instance$$Type} from "com.mojang.serialization.codecs.RecordCodecBuilder$Instance"
-import {$Products$P7} from "com.mojang.datafixers.Products$P7"
 import {$Optional, $Optional$$Type} from "java.util.Optional"
+import {$Products$P7} from "com.mojang.datafixers.Products$P7"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$RecordCodecBuilder$Mu} from "com.mojang.serialization.codecs.RecordCodecBuilder$Mu"
 import {$MLMapDecorationType, $MLMapDecorationType$$Type} from "net.mehvahdjukaar.moonlight.api.map.decoration.MLMapDecorationType"
-import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
+import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$MapItemSavedData$$Type} from "net.minecraft.world.level.saveddata.maps.MapItemSavedData"
+import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
 import {$MLMapDecoration} from "net.mehvahdjukaar.moonlight.api.map.decoration.MLMapDecoration"
 
 export class $MLMapMarker<D extends $MLMapDecoration> {
@@ -1660,18 +1660,18 @@ public "shouldRefreshFromWorld"(): boolean
 public "preventsExtending"(): boolean
 public static "baseCodecGroup"<T extends $MLMapMarker<(object)>>(instance: $RecordCodecBuilder$Instance$$Type<(T)>): $Products$P7<($RecordCodecBuilder$Mu<(T)>), ($Holder<($MLMapDecorationType<(never), (never)>)>), ($BlockPos), (float), ($Optional<($Component)>), ($Optional<(boolean)>), ($Optional<(boolean)>), (boolean)>
 public "getFlags"(): integer
+public "getDisplayName"(): $Optional<($Component)>
 public "equals"(o: any): boolean
 public "hashCode"(): integer
 public "getType"(): $Holder<($MLMapDecorationType<(never), (never)>)>
-public "getDisplayName"(): $Optional<($Component)>
 public "hasFlag"(flag: integer): boolean
 public "getRotation"(): float
 public "shouldSave"(): boolean
 public "getPos"(): $BlockPos
 get "markerUniqueId"(): StringJS
 get "flags"(): integer
-get "type"(): $Holder<($MLMapDecorationType<(never), (never)>)>
 get "displayName"(): $Optional<($Component)>
+get "type"(): $Holder<($MLMapDecorationType<(never), (never)>)>
 get "rotation"(): float
 get "pos"(): $BlockPos
 }
@@ -1687,8 +1687,8 @@ export type $MLMapMarker$$Original<D> = $MLMapMarker<(D)>;}
 declare module "net.mehvahdjukaar.moonlight.api.set.BlockType" {
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$BlockTypeRegistry} from "net.mehvahdjukaar.moonlight.api.set.BlockTypeRegistry"
-import {$SoundType} from "net.minecraft.world.level.block.SoundType"
 import {$ItemLike} from "net.minecraft.world.level.ItemLike"
+import {$SoundType} from "net.minecraft.world.level.block.SoundType"
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Item, $Item$$Type} from "net.minecraft.world.item.Item"
 import {$Set} from "java.util.Set"
@@ -1700,9 +1700,9 @@ readonly "id": $ResourceLocation
 public "getTranslationKey"(): StringJS
 public "getReadableName"(): StringJS
 public "getItemOfThis"(key: StringJS): $Item
+public "getVariantId"(baseName: StringJS): StringJS
 public "getVariantId"(postfix: StringJS, prefix: StringJS): StringJS
 public "getVariantId"(baseName: StringJS, prefix: boolean): StringJS
-public "getVariantId"(baseName: StringJS): StringJS
 public static "changeType"<T extends $BlockType>(current: any, originalMat: T, destinationMat: T): any
 public static "changeItemType"<T extends $BlockType>(current: $Item$$Type, originalMat: T, destinationMat: T): $Item
 public static "changeBlockType"<T extends $BlockType>(current: $Block$$Type, originalMat: T, destinationMat: T): $Block
@@ -1710,17 +1710,17 @@ public "getBlockOfThis"(key: StringJS): $Block
 public "getAppendableId"(): StringJS
 public "getAppendableIdWith"(suffix: StringJS): StringJS
 public "getAppendableIdWith"(prefix: StringJS, suffix: StringJS): StringJS
-public "createPathWith"(shortenedId: StringJS, suffix: StringJS): StringJS
 public "createPathWith"(shortenedId: StringJS, prefix: StringJS, suffix: StringJS): StringJS
+public "createPathWith"(shortenedId: StringJS, suffix: StringJS): StringJS
 public "createFullIdWith"(modIdOrEmpty: StringJS, folderOrEmpty: StringJS, shortenedIdOrEmpty: StringJS, prefixOrEmpty: StringJS, suffix: StringJS): StringJS
 public "hasChild"(key: StringJS): boolean
 public "mainChild"(): $ItemLike
 public "getChildKey"(child: any): StringJS
-public "removeChild"(childKey: StringJS): void
-public "addChild"(genericName: StringJS, obj: any): void
-public "getChildren"(): $Set<($Map$Entry<(StringJS), (any)>)>
-public "getChild"(key: StringJS): any
 public "getNamespace"(): StringJS
+public "addChild"(genericName: StringJS, obj: any): void
+public "getChild"(key: StringJS): any
+public "getChildren"(): $Set<($Map$Entry<(StringJS), (any)>)>
+public "removeChild"(childKey: StringJS): void
 public "toString"(): StringJS
 public "getTypeName"(): StringJS
 public "getId"(): $ResourceLocation
@@ -1731,8 +1731,8 @@ public "isVanilla"(): boolean
 get "translationKey"(): StringJS
 get "readableName"(): StringJS
 get "appendableId"(): StringJS
-get "children"(): $Set<($Map$Entry<(StringJS), (any)>)>
 get "namespace"(): StringJS
+get "children"(): $Set<($Map$Entry<(StringJS), (any)>)>
 get "typeName"(): StringJS
 get "registry"(): $BlockTypeRegistry<(T)>
 get "sound"(): $SoundType
@@ -1751,15 +1751,16 @@ declare module "net.mehvahdjukaar.moonlight.api.map.decoration.MLJsonMapDecorati
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$MLMapDecorationType} from "net.mehvahdjukaar.moonlight.api.map.decoration.MLMapDecorationType"
-import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
+import {$MLMapMarker} from "net.mehvahdjukaar.moonlight.api.map.decoration.MLMapMarker"
 import {$RuleTest, $RuleTest$$Type} from "net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest"
+import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$Holder} from "net.minecraft.core.Holder"
 import {$MLMapDecoration} from "net.mehvahdjukaar.moonlight.api.map.decoration.MLMapDecoration"
 import {$SimpleMapMarker} from "net.mehvahdjukaar.moonlight.api.map.decoration.SimpleMapMarker"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Structure, $Structure$$Type} from "net.minecraft.world.level.levelgen.structure.Structure"
 import {$Codec} from "com.mojang.serialization.Codec"
+import {$Structure, $Structure$$Type} from "net.minecraft.world.level.levelgen.structure.Structure"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$HolderSet, $HolderSet$$Type} from "net.minecraft.core.HolderSet"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
@@ -1769,24 +1770,24 @@ static readonly "CODEC": $Codec<($Holder<($MLMapDecorationType<(never), (never)>
 static readonly "DIRECT_CODEC": $Codec<($MLMapDecorationType<(never), (never)>)>
 static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($Holder<($MLMapDecorationType<(never), (never)>)>)>
 
-constructor(target: ($RuleTest$$Type)?)
-constructor(target: ($RuleTest$$Type)?, name: ($Component$$Type)?, rotation: float, mapColor: integer, structure: ($HolderSet$$Type<($Structure$$Type)>)?)
 constructor(target: ($RuleTest$$Type)?, name: ($Component$$Type)?, rotation: float, mapColor: integer)
+constructor(target: ($RuleTest$$Type)?, name: ($Component$$Type)?, rotation: float, mapColor: integer, structure: ($HolderSet$$Type<($Structure$$Type)>)?)
+constructor(target: ($RuleTest$$Type)?)
 
 public "isFromWorld"(): boolean
 public "getCustomFactoryID"(): $ResourceLocation
-public "createMarkerFromWorld"(reader: $BlockGetter$$Type, pos: $BlockPos$$Type): $SimpleMapMarker
+public "createMarkerFromWorld"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type): $MLMapMarker
 public "getDefaultMapColor"(): integer
 public "getAssociatedStructure"(): $Optional<($HolderSet<($Structure)>)>
-public "getTarget"(): $Optional<($RuleTest)>
 public "getDisplayName"(): $Optional<($Component)>
+public "getTarget"(): $Optional<($RuleTest)>
 public "getRotation"(): float
 get "fromWorld"(): boolean
 get "customFactoryID"(): $ResourceLocation
 get "defaultMapColor"(): integer
 get "associatedStructure"(): $Optional<($HolderSet<($Structure)>)>
-get "target"(): $Optional<($RuleTest)>
 get "displayName"(): $Optional<($Component)>
+get "target"(): $Optional<($RuleTest)>
 get "rotation"(): float
 }
 /**
@@ -1800,8 +1801,8 @@ export type $MLJsonMapDecorationType$$Type = ($MLJsonMapDecorationType);
 export type $MLJsonMapDecorationType$$Original = $MLJsonMapDecorationType;}
 declare module "net.mehvahdjukaar.moonlight.api.resources.assets.LangBuilder" {
 import {$Map} from "java.util.Map"
-import {$Registry$$Type} from "net.minecraft.core.Registry"
 import {$AfterLanguageLoadEvent$$Type} from "net.mehvahdjukaar.moonlight.api.events.AfterLanguageLoadEvent"
+import {$Registry$$Type} from "net.minecraft.core.Registry"
 import {$JsonElement} from "com.google.gson.JsonElement"
 import {$Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Item$$Type} from "net.minecraft.world.item.Item"
@@ -1812,13 +1813,13 @@ import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
 export class $LangBuilder {
 constructor()
 
-public "addGenericEntry"(key: StringJS, translation: StringJS): void
-public "addSimpleEntry"<T>(reg: $Registry$$Type<(T)>, entry: T): void
-public static "getReadableComponent"(key: StringJS, ...arg1: (StringJS)[]): $Component
 public static "getReadableName"(name: StringJS): StringJS
 public static "addDynamicEntry"(lang: $AfterLanguageLoadEvent$$Type, key: StringJS, type: $BlockType$$Type, entityType: $EntityType$$Type<(never)>): void
 public static "addDynamicEntry"(lang: $AfterLanguageLoadEvent$$Type, key: StringJS, type: $BlockType$$Type, item: $Item$$Type): void
 public static "addDynamicEntry"(lang: $AfterLanguageLoadEvent$$Type, key: StringJS, type: $BlockType$$Type, block: $Block$$Type): void
+public "addGenericEntry"(key: StringJS, translation: StringJS): void
+public "addSimpleEntry"<T>(reg: $Registry$$Type<(T)>, entry: T): void
+public static "getReadableComponent"(key: StringJS, ...arg1: (StringJS)[]): $Component
 public "entries"(): $Map<(StringJS), (StringJS)>
 public "addEntry"(block: $Block$$Type, translation: StringJS): void
 public "addEntry"<T>(reg: $Registry$$Type<(T)>, entry: T, translation: StringJS): void
@@ -1845,8 +1846,8 @@ import {$DataComponentType$$Type} from "net.minecraft.core.component.DataCompone
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
 import {$HolderGetter$$Type} from "net.minecraft.core.HolderGetter"
-import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
 import {$Codec} from "com.mojang.serialization.Codec"
+import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
 import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$TooltipProvider} from "net.minecraft.world.item.component.TooltipProvider"
 import {$ResourceKey, $ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
@@ -1854,8 +1855,8 @@ import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$HolderReference$$Type} from "net.mehvahdjukaar.moonlight.api.misc.HolderReference"
 import {$Pair} from "com.mojang.datafixers.util.Pair"
 import {$Multimap} from "com.google.common.collect.Multimap"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$DataComponentHolder$$Type, $DataComponentHolder$$Interface} from "net.minecraft.core.component.DataComponentHolder"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Consumer$$Type} from "java.util.function.Consumer"
@@ -1875,34 +1876,34 @@ static readonly "CODEC": $Codec<($SoftFluidStack)>
 static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($SoftFluidStack)>
 
 public "fluid"(): $SoftFluid
-public static "fromItem"(itemStack: $ItemStack$$Type, reg: $HolderLookup$Provider$$Type): $Pair<($SoftFluidStack), ($FluidContainerList$Category)>
 /**
  * 
  * @deprecated
  */
 public static "fromItem"(itemStack: $ItemStack$$Type): $Pair<($SoftFluidStack), ($FluidContainerList$Category)>
+public static "fromItem"(itemStack: $ItemStack$$Type, reg: $HolderLookup$Provider$$Type): $Pair<($SoftFluidStack), ($FluidContainerList$Category)>
 public static "bowl"(fluid: $Holder$$Type<($SoftFluid)>): $SoftFluidStack
 public "isSameFluidSameComponents"(other: $SoftFluidStack$$Type): boolean
 public static "hashFluidAndComponents"(stack: $SoftFluidStack$$Type): integer
 public "getContainerList"(): $FluidContainerList
-/**
- * 
- * @deprecated
- */
-public static "fromFluid"(fluid: $Fluid$$Type, amount: integer, component: $DataComponentPatch$$Type): $SoftFluidStack
-public static "fromFluid"(fluid: $FluidState$$Type, reg: $HolderLookup$Provider$$Type): $SoftFluidStack
+public static "fromFluid"(fluid: $Fluid$$Type, amount: integer, component: $DataComponentPatch$$Type, reg: $HolderLookup$Provider$$Type): $SoftFluidStack
 /**
  * 
  * @deprecated
  */
 public static "fromFluid"(fluid: $FluidState$$Type): $SoftFluidStack
-public static "fromFluid"(fluid: $Fluid$$Type, amount: integer, reg: $HolderLookup$Provider$$Type): $SoftFluidStack
+public static "fromFluid"(fluid: $FluidState$$Type, reg: $HolderLookup$Provider$$Type): $SoftFluidStack
 /**
  * 
  * @deprecated
  */
 public static "fromFluid"(fluid: $Fluid$$Type, amount: integer): $SoftFluidStack
-public static "fromFluid"(fluid: $Fluid$$Type, amount: integer, component: $DataComponentPatch$$Type, reg: $HolderLookup$Provider$$Type): $SoftFluidStack
+public static "fromFluid"(fluid: $Fluid$$Type, amount: integer, reg: $HolderLookup$Provider$$Type): $SoftFluidStack
+/**
+ * 
+ * @deprecated
+ */
+public static "fromFluid"(fluid: $Fluid$$Type, amount: integer, component: $DataComponentPatch$$Type): $SoftFluidStack
 public "getFoodProvider"(): $FoodProvider
 public "getFlowingColor"(world: $BlockAndTintGetter$$Type, pos: $BlockPos$$Type): integer
 public "getStillColor"(world: $BlockAndTintGetter$$Type, pos: $BlockPos$$Type): integer
@@ -1912,40 +1913,40 @@ public "getVanillaFluid"(): $Holder<($Fluid)>
 public "splitToItem"(emptyContainer: $ItemStack$$Type): $Pair<($ItemStack), ($FluidContainerList$Category)>
 public "getParticleColor"(world: $BlockAndTintGetter$$Type, pos: $BlockPos$$Type): integer
 public "copyComponentsTo"(to: $DataComponentHolder$$Type): void
-public "consume"(amount: integer, entity: $LivingEntity$$Type): void
 public static "bucket"(fluid: $Holder$$Type<($SoftFluid)>): $SoftFluidStack
+public "getDisplayName"(): $Component
+public "consume"(amount: integer, entity: $LivingEntity$$Type): void
 public "equals"(o: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
 public static "load"(lookupProvider: $HolderLookup$Provider$$Type, tag: $Tag$$Type): $SoftFluidStack
 public "isEmpty"(): boolean
 public "split"(amount: integer): $SoftFluidStack
-public static "of"(fluid: $Holder$$Type<($SoftFluid)>): $SoftFluidStack
 public static "of"(fluid: $Holder$$Type<($SoftFluid)>, count: integer): $SoftFluidStack
 public static "of"(fluid: $Holder$$Type<($SoftFluid)>, count: integer, tag: $DataComponentPatch$$Type): $SoftFluidStack
+public static "of"(fluid: $Holder$$Type<($SoftFluid)>): $SoftFluidStack
+public static "empty"(lookupProvider: $HolderLookup$Provider$$Type): $SoftFluidStack
+public static "empty"(reg: $HolderGetter$$Type<($SoftFluid$$Type)>): $SoftFluidStack
 /**
  * 
  * @deprecated
  */
 public static "empty"(): $SoftFluidStack
-public static "empty"(reg: $HolderGetter$$Type<($SoftFluid$$Type)>): $SoftFluidStack
-public static "empty"(lookupProvider: $HolderLookup$Provider$$Type): $SoftFluidStack
 public "set"<T>(type: $DataComponentType$$Type<(T)>, component: T): T
 public "getCount"(): integer
 public "save"(lookupProvider: $HolderLookup$Provider$$Type): $Tag
 public "copy"(): $SoftFluidStack
-public "is"(fluid: $HolderRef$$Type<($SoftFluid$$Type)>): boolean
 public "is"(fluid: $HolderReference$$Type<($SoftFluid$$Type)>): boolean
-public "is"(fluid: $Holder$$Type<($SoftFluid)>): boolean
+public "is"(fluid: $HolderRef$$Type<($SoftFluid$$Type)>): boolean
 /**
  * 
  * @deprecated
  */
 public "is"(fluid: $SoftFluid$$Type): boolean
-public "is"(location: $ResourceKey$$Type<($SoftFluid)>): boolean
 public "is"(tag: $TagKey$$Type<($SoftFluid)>): boolean
+public "is"(location: $ResourceKey$$Type<($SoftFluid)>): boolean
+public "is"(fluid: $Holder$$Type<($SoftFluid)>): boolean
 public "grow"(amount: integer): void
-public "getDisplayName"(): $Component
 public "isEquivalent"(fluid: $Holder$$Type<($Fluid)>, componentPatch: $DataComponentPatch$$Type): boolean
 public "isEquivalent"(fluid: $Holder$$Type<($Fluid)>): boolean
 public "setCount"(count: integer): void
@@ -1971,8 +1972,8 @@ public "getOrDefault"<T>(arg0: $Supplier$$Type<($DataComponentType$$Type<(T)>)>,
 get "containerList"(): $FluidContainerList
 get "foodProvider"(): $FoodProvider
 get "vanillaFluid"(): $Holder<($Fluid)>
-get "count"(): integer
 get "displayName"(): $Component
+get "count"(): integer
 set "count"(value: integer)
 get "components"(): $DataComponentMap
 get "holder"(): $Holder<($SoftFluid)>
@@ -1991,8 +1992,8 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
 export class $SoftFluid$TintMethod extends $Enum<($SoftFluid$TintMethod)> implements $StringRepresentable$$Interface {
@@ -2007,11 +2008,11 @@ public static "values"(): ($SoftFluid$TintMethod)[]
 public static "valueOf"(name: StringJS): $SoftFluid$TintMethod
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
 }
@@ -2048,12 +2049,12 @@ import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Objec
 import {$LootParams$Builder$$Type} from "net.minecraft.world.level.storage.loot.LootParams$Builder"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
-import {$List} from "java.util.List"
 import {$SoundType} from "net.minecraft.world.level.block.SoundType"
+import {$List} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
-import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
+import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$Explosion$$Type} from "net.minecraft.world.level.Explosion"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
@@ -2150,8 +2151,8 @@ declare module "net.mehvahdjukaar.moonlight.api.item.WoodBasedBlockItem" {
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$BlockTypeBasedBlockItem} from "net.mehvahdjukaar.moonlight.api.item.BlockTypeBasedBlockItem"
-import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$AdditionalItemPlacement, $AdditionalItemPlacement$$Type} from "net.mehvahdjukaar.moonlight.api.item.additional_placements.AdditionalItemPlacement"
 import {$WoodType, $WoodType$$Type} from "net.mehvahdjukaar.moonlight.api.set.wood.WoodType"
@@ -2182,22 +2183,22 @@ export type $WoodBasedBlockItem$$Type = ($WoodBasedBlockItem);
  */
 export type $WoodBasedBlockItem$$Original = $WoodBasedBlockItem;}
 declare module "net.mehvahdjukaar.moonlight.api.events.ILightningStruckBlockEvent" {
-import {$LightningBolt, $LightningBolt$$Type} from "net.minecraft.world.entity.LightningBolt"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$LightningBolt, $LightningBolt$$Type} from "net.minecraft.world.entity.LightningBolt"
 import {$LevelAccessor, $LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$SimpleEvent$$Interface} from "net.mehvahdjukaar.moonlight.api.events.SimpleEvent"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export interface $ILightningStruckBlockEvent$$Interface extends $SimpleEvent$$Interface {
-get "level"(): $LevelAccessor
 get "entity"(): $LightningBolt
+get "level"(): $LevelAccessor
 get "state"(): $BlockState
 get "pos"(): $BlockPos
 }
 
 export class $ILightningStruckBlockEvent implements $ILightningStruckBlockEvent$$Interface {
- "getLevel"(): $LevelAccessor
  "getEntity"(): $LightningBolt
+ "getLevel"(): $LevelAccessor
  "getState"(): $BlockState
 static "create"(state: $BlockState$$Type, level: $LevelAccessor$$Type, pos: $BlockPos$$Type, entity: $LightningBolt$$Type): $ILightningStruckBlockEvent
  "getPos"(): $BlockPos
@@ -2226,15 +2227,15 @@ constructor(type: $Holder$$Type<($MLMapDecorationType<(never), (never)>)>, x: by
 
 public "getRot"(): byte
 public "getY"(): byte
+public "getDisplayName"(): $Component
 public "equals"(obj: any): boolean
 public "hashCode"(): integer
 public "getType"(): $Holder<($MLMapDecorationType<(never), (never)>)>
-public "getDisplayName"(): $Component
 public "getX"(): byte
 get "rot"(): byte
 get "y"(): byte
-get "type"(): $Holder<($MLMapDecorationType<(never), (never)>)>
 get "displayName"(): $Component
+get "type"(): $Holder<($MLMapDecorationType<(never), (never)>)>
 get "x"(): byte
 }
 /**
@@ -2250,8 +2251,8 @@ declare module "net.mehvahdjukaar.moonlight.api.item.IFirstPersonAnimationProvid
 import {$HumanoidArm, $HumanoidArm$$Type} from "net.minecraft.world.entity.HumanoidArm"
 import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$InteractionHand, $InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$PoseStack, $PoseStack$$Type} from "com.mojang.blaze3d.vertex.PoseStack"
+import {$InteractionHand, $InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Item$$Type} from "net.minecraft.world.item.Item"
 
 export interface $IFirstPersonAnimationProvider$$Interface {
@@ -2300,8 +2301,8 @@ export type $INamedSupplier$$Original<T> = $INamedSupplier<(T)>;}
 declare module "net.mehvahdjukaar.moonlight.api.misc.HolderRef" {
 import {$Predicate$$Type} from "java.util.function.Predicate"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
 import {$HolderGetter$$Type} from "net.minecraft.core.HolderGetter"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
@@ -2312,8 +2313,8 @@ import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$OptHolderRef} from "net.mehvahdjukaar.moonlight.api.misc.OptHolderRef"
 
 export class $HolderRef<T> {
-public "getID"(): $ResourceLocation
 public static "clearCache"(): void
+public "getID"(): $ResourceLocation
 public "get"(level: $Level$$Type): T
 public "get"(entity: $Entity$$Type): T
 public "get"(level: $LevelReader$$Type): T
@@ -2356,8 +2357,8 @@ export type $HolderRef$$Type<T> = ($HolderRef<(T)>);
  */
 export type $HolderRef$$Original<T> = $HolderRef<(T)>;}
 declare module "net.mehvahdjukaar.moonlight.api.block.ModStairBlock" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$StairsShape} from "net.minecraft.world.level.block.state.properties.StairsShape"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$StairBlock} from "net.minecraft.world.level.block.StairBlock"
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
@@ -2366,8 +2367,8 @@ import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$Supplier$$Type} from "java.util.function.Supplier"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$DirectionProperty} from "net.minecraft.world.level.block.state.properties.DirectionProperty"
@@ -2417,17 +2418,17 @@ import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Objec
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
 import {$SimpleWaterloggedBlock$$Interface} from "net.minecraft.world.level.block.SimpleWaterloggedBlock"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
-import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
+import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
@@ -2459,8 +2460,8 @@ public "getStateForPlacement"(context: $BlockPlaceContext$$Type): $BlockState
 public "updateShape"(stateIn: $BlockState$$Type, facing: $Direction$$Type, facingState: $BlockState$$Type, worldIn: $LevelAccessor$$Type, currentPos: $BlockPos$$Type, facingPos: $BlockPos$$Type): $BlockState
 public "getFluidState"(state: $BlockState$$Type): $FluidState
 public "getPickupSound"(): $Optional<($SoundEvent)>
-public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "canPlaceLiquid"(arg0: $Player$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $Fluid$$Type): boolean
+public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "pickupBlock"(arg0: $Player$$Type, arg1: $LevelAccessor$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): $ItemStack
 public "getPickupSound"(arg0: $BlockState$$Type): $Optional<($SoundEvent)>
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
@@ -2529,10 +2530,10 @@ declare module "net.mehvahdjukaar.moonlight.api.block.ILightable" {
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$ILightable$FireSoundType$$Type} from "net.mehvahdjukaar.moonlight.api.block.ILightable$FireSoundType"
+import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$ItemInteractionResult} from "net.minecraft.world.ItemInteractionResult"
+import {$ILightable$FireSoundType$$Type} from "net.mehvahdjukaar.moonlight.api.block.ILightable$FireSoundType"
 import {$TagKey} from "net.minecraft.tags.TagKey"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
@@ -2546,13 +2547,13 @@ export interface $ILightable$$Interface {
 export class $ILightable implements $ILightable$$Interface {
 static readonly "FLINT_AND_STEELS": $TagKey<($Item)>
 
+ "tryLightUp"(player: $Entity$$Type, state: $BlockState$$Type, pos: $BlockPos$$Type, world: $LevelAccessor$$Type, fireSourceType: $ILightable$FireSoundType$$Type): boolean
+ "tryExtinguish"(player: $Entity$$Type, state: $BlockState$$Type, pos: $BlockPos$$Type, world: $LevelAccessor$$Type): boolean
 /**
  * 
  * @deprecated
  */
  "interactWithEntity"(level: $Level$$Type, state: $BlockState$$Type, projectile: $Entity$$Type, pos: $BlockPos$$Type): boolean
- "tryLightUp"(player: $Entity$$Type, state: $BlockState$$Type, pos: $BlockPos$$Type, world: $LevelAccessor$$Type, fireSourceType: $ILightable$FireSoundType$$Type): boolean
- "tryExtinguish"(player: $Entity$$Type, state: $BlockState$$Type, pos: $BlockPos$$Type, world: $LevelAccessor$$Type): boolean
  "canBeExtinguishedBy"(item: $ItemStack$$Type): boolean
  "playExtinguishSound"(world: $LevelAccessor$$Type, pos: $BlockPos$$Type): void
  "spawnSmokeParticles"(state: $BlockState$$Type, pos: $BlockPos$$Type, world: $LevelAccessor$$Type): void
@@ -2607,17 +2608,17 @@ static readonly "CODEC": $Codec<($Holder<($MLMapDecorationType<(never), (never)>
 static readonly "DIRECT_CODEC": $Codec<($MLMapDecorationType<(never), (never)>)>
 static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($Holder<($MLMapDecorationType<(never), (never)>)>)>
 
-public "getMarkerCodec"(): $MapCodec<(M)>
 public "getCustomFactoryID"(): $ResourceLocation
 public "createMarkerFromWorld"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type): M
 public "getDefaultMapColor"(): integer
 public "getAssociatedStructure"(): $Optional<($HolderSet<($Structure)>)>
 public "getDecorationCodec"(): $StreamCodec<($RegistryFriendlyByteBuf), (D)>
-get "markerCodec"(): $MapCodec<(M)>
+public "getMarkerCodec"(): $MapCodec<(M)>
 get "customFactoryID"(): $ResourceLocation
 get "defaultMapColor"(): integer
 get "associatedStructure"(): $Optional<($HolderSet<($Structure)>)>
 get "decorationCodec"(): $StreamCodec<($RegistryFriendlyByteBuf), (D)>
+get "markerCodec"(): $MapCodec<(M)>
 /**
  * This field is a type stub generated by ProbeJS and shall not be used in any sense.
  */

@@ -32,16 +32,15 @@ import {$SoundBuffer$$Type} from "com.mojang.blaze3d.audio.SoundBuffer"
 export class $Channel {
 static readonly "BUFFER_DURATION_SECONDS": integer
 
-public "playing"(): boolean
-public "setRelative"(arg0: boolean): void
 public "unpause"(): void
+public "setRelative"(arg0: boolean): void
+public "playing"(): boolean
 public "setPitch"(arg0: float): void
 public "setVolume"(arg0: float): void
 public "pumpBuffers"(arg0: integer): void
 public "stop"(): void
 public "destroy"(): void
 public "stopped"(): boolean
-public "updateStream"(): void
 public "play"(): void
 public "pause"(): void
 public "attachBufferStream"(arg0: $AudioStream$$Type): void
@@ -50,6 +49,7 @@ public "linearAttenuation"(arg0: float): void
 public "disableAttenuation"(): void
 public "setLooping"(arg0: boolean): void
 public "setSelfPosition"(arg0: $Vec3$$Type): void
+public "updateStream"(): void
 set "relative"(value: boolean)
 set "pitch"(value: float)
 set "volume"(value: float)

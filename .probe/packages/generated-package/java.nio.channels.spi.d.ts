@@ -24,8 +24,8 @@ export type $AbstractSelector$$Type = ($AbstractSelector);
 export type $AbstractSelector$$Original = $AbstractSelector;}
 declare module "java.nio.channels.spi.AbstractSelectableChannel" {
 import {$Selector$$Type} from "java.nio.channels.Selector"
-import {$SelectionKey} from "java.nio.channels.SelectionKey"
 import {$SelectorProvider} from "java.nio.channels.spi.SelectorProvider"
+import {$SelectionKey} from "java.nio.channels.SelectionKey"
 import {$SelectableChannel} from "java.nio.channels.SelectableChannel"
 
 /**
@@ -34,13 +34,13 @@ import {$SelectableChannel} from "java.nio.channels.SelectableChannel"
  * Loading the class using require() will not throw an error, but the class will be undefined.
  */
 export class $AbstractSelectableChannel extends $SelectableChannel {
-public "configureBlocking"(arg0: boolean): $SelectableChannel
 public "isBlocking"(): boolean
 public "keyFor"(arg0: $Selector$$Type): $SelectionKey
 public "blockingLock"(): any
 public "isRegistered"(): boolean
 public "register"(arg0: $Selector$$Type, arg1: integer, arg2: any): $SelectionKey
 public "provider"(): $SelectorProvider
+public "configureBlocking"(arg0: boolean): $SelectableChannel
 public "isOpen"(): boolean
 public "close"(): void
 get "blocking"(): boolean
@@ -83,8 +83,8 @@ declare module "java.nio.channels.spi.SelectorProvider" {
 import {$Channel} from "java.nio.channels.Channel"
 import {$ProtocolFamily$$Type} from "java.net.ProtocolFamily"
 import {$ServerSocketChannel} from "java.nio.channels.ServerSocketChannel"
-import {$SocketChannel} from "java.nio.channels.SocketChannel"
 import {$AbstractSelector} from "java.nio.channels.spi.AbstractSelector"
+import {$SocketChannel} from "java.nio.channels.SocketChannel"
 import {$Pipe} from "java.nio.channels.Pipe"
 import {$DatagramChannel} from "java.nio.channels.DatagramChannel"
 

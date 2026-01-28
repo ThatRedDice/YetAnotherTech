@@ -3,8 +3,8 @@ import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$LevelBlock} from "dev.latvian.mods.kubejs.level.LevelBlock"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Container} from "net.minecraft.world.Container"
-import {$List} from "java.util.List"
 import {$ItemPredicate$$Type} from "dev.latvian.mods.kubejs.item.ItemPredicate"
+import {$List} from "java.util.List"
 import {$IItemHandlerModifiable$$Interface} from "net.neoforged.neoforge.items.IItemHandlerModifiable"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$FramedStorageMenu} from "xfacthd.framedblocks.common.menu.FramedStorageMenu"
@@ -82,8 +82,8 @@ import {$IStorageBlockItemHandler$$Interface} from "xfacthd.framedblocks.common.
 export class $StorageBlockItemStackHandler extends $ItemStackHandler implements $IStorageBlockItemHandler$$Interface {
 constructor(arg0: $FramedStorageBlockEntity$$Type, arg1: integer)
 
-public "createMenu"(arg0: integer, arg1: $Inventory$$Type): $FramedStorageMenu
 public "getBackingList"(): $List<($ItemStack)>
+public "createMenu"(arg0: integer, arg1: $Inventory$$Type): $FramedStorageMenu
 public "close"(): void
 public "open"(): void
 public "stillValid"(arg0: $Player$$Type): boolean

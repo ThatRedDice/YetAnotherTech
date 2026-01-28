@@ -1,12 +1,12 @@
 declare module "com.buuz135.industrial.api.conveyor.ConveyorUpgradeFactory" {
 import {$List} from "java.util.List"
-import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
 import {$ImmutableSet} from "com.google.common.collect.ImmutableSet"
+import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$RecipeOutput$$Type} from "net.minecraft.data.recipes.RecipeOutput"
-import {$ConveyorUpgrade} from "com.buuz135.industrial.api.conveyor.ConveyorUpgrade"
 import {$IBlockContainer$$Type} from "com.buuz135.industrial.api.IBlockContainer"
+import {$ConveyorUpgrade} from "com.buuz135.industrial.api.conveyor.ConveyorUpgrade"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Item, $Item$$Type} from "net.minecraft.world.item.Item"
 import {$Set} from "java.util.Set"
@@ -27,8 +27,8 @@ public "getUpgradeItem"(): $Item
 public "getName"(): StringJS
 public "create"(arg0: $IBlockContainer$$Type, arg1: $Direction$$Type): $ConveyorUpgrade
 public "getTextures"(): $Set<($ResourceLocation)>
-public "getModel"(arg0: $Direction$$Type, arg1: $Direction$$Type): $ResourceLocation
 public "getItemModel"(): $ResourceLocation
+public "getModel"(arg0: $Direction$$Type, arg1: $Direction$$Type): $ResourceLocation
 public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 get "validFacings"(): $Set<($Direction)>
 set "upgradeItem"(value: $Item$$Type)
@@ -48,11 +48,11 @@ export type $ConveyorUpgradeFactory$$Type = ($ConveyorUpgradeFactory);
 export type $ConveyorUpgradeFactory$$Original = $ConveyorUpgradeFactory;}
 declare module "com.buuz135.industrial.api.conveyor.ConveyorUpgrade" {
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
-import {$IGuiComponent$$Type} from "com.buuz135.industrial.api.conveyor.gui.IGuiComponent"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
+import {$IGuiComponent$$Type} from "com.buuz135.industrial.api.conveyor.gui.IGuiComponent"
 import {$Collection} from "java.util.Collection"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$List$$Type} from "java.util.List"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level} from "net.minecraft.world.level.Level"
 import {$INBTSerializable$$Interface} from "net.neoforged.neoforge.common.util.INBTSerializable"
@@ -62,8 +62,8 @@ import {$IBlockContainer, $IBlockContainer$$Type} from "com.buuz135.industrial.a
 import {$ConveyorUpgradeFactory, $ConveyorUpgradeFactory$$Type} from "com.buuz135.industrial.api.conveyor.ConveyorUpgradeFactory"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$Tag$$Type} from "net.minecraft.nbt.Tag"
-import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
+import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 
 export class $ConveyorUpgrade implements $INBTSerializable$$Interface<($CompoundTag)> {
 constructor(arg0: $IBlockContainer$$Type, arg1: $ConveyorUpgradeFactory$$Type, arg2: $Direction$$Type)
@@ -75,8 +75,8 @@ public "handleEntity"(arg0: $Entity$$Type): void
 public "onUpgradeRemoved"(): void
 public "handleButtonInteraction"(arg0: integer, arg1: $CompoundTag$$Type): void
 public "addComponentsToGui"(arg0: $List$$Type<($IGuiComponent$$Type)>): void
-public "getWorld"(): $Level
 public "getDrops"(): $Collection<($ItemStack)>
+public "getWorld"(): $Level
 public "getRedstoneOutput"(): integer
 public "getContainer"(): $IBlockContainer
 public "update"(): void
@@ -87,8 +87,8 @@ public "deserializeNBT"(arg0: $HolderLookup$Provider$$Type, arg1: $CompoundTag$$
 public "deserializeNBT"(arg0: $HolderLookup$Provider$$Type, arg1: $Tag$$Type): void
 public "serializeNBT"(arg0: $HolderLookup$Provider$$Type): $CompoundTag
 public "getPos"(): $BlockPos
-get "world"(): $Level
 get "drops"(): $Collection<($ItemStack)>
+get "world"(): $Level
 get "redstoneOutput"(): integer
 get "container"(): $IBlockContainer
 get "factory"(): $ConveyorUpgradeFactory
@@ -169,8 +169,8 @@ export type $IBlockContainer$$Type<T> = ($IBlockContainer<(T)>);
 export type $IBlockContainer$$Original<T> = $IBlockContainer<(T)>;}
 declare module "com.buuz135.industrial.api.transporter.TransporterTypeFactory" {
 import {$List} from "java.util.List"
-import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
 import {$ImmutableSet} from "com.google.common.collect.ImmutableSet"
+import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$RecipeOutput$$Type} from "net.minecraft.data.recipes.RecipeOutput"
 import {$IBlockContainer$$Type} from "com.buuz135.industrial.api.IBlockContainer"
@@ -197,8 +197,8 @@ public "getUpgradeItem"(): $Item
 public "getName"(): StringJS
 public "create"(arg0: $IBlockContainer$$Type, arg1: $Direction$$Type, arg2: $TransporterTypeFactory$TransporterAction$$Type): $TransporterType
 public "getTextures"(): $Set<($ResourceLocation)>
-public "getModel"(arg0: $Direction$$Type, arg1: $TransporterTypeFactory$TransporterAction$$Type): $ResourceLocation
 public "getItemModel"(): $ResourceLocation
+public "getModel"(arg0: $Direction$$Type, arg1: $TransporterTypeFactory$TransporterAction$$Type): $ResourceLocation
 public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 get "validFacings"(): $Set<($Direction)>
 set "upgradeItem"(value: $Item$$Type)
@@ -257,21 +257,21 @@ export type $TransporterTypeFactory$TransporterAction$$Type = (("insert") | ("ex
 export type $TransporterTypeFactory$TransporterAction$$Original = $TransporterTypeFactory$TransporterAction;}
 declare module "com.buuz135.industrial.api.transporter.TransporterType" {
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
-import {$Collection} from "java.util.Collection"
 import {$IGuiComponent$$Type} from "com.buuz135.industrial.api.conveyor.gui.IGuiComponent"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
-import {$PoseStack$$Type} from "com.mojang.blaze3d.vertex.PoseStack"
+import {$Collection} from "java.util.Collection"
 import {$List$$Type} from "java.util.List"
+import {$PoseStack$$Type} from "com.mojang.blaze3d.vertex.PoseStack"
 import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$Vector3f$$Type} from "org.joml.Vector3f"
 import {$INBTSerializable$$Interface} from "net.neoforged.neoforge.common.util.INBTSerializable"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
-import {$IBlockContainer, $IBlockContainer$$Type} from "com.buuz135.industrial.api.IBlockContainer"
 import {$TransporterTypeFactory, $TransporterTypeFactory$$Type} from "com.buuz135.industrial.api.transporter.TransporterTypeFactory"
+import {$IBlockContainer, $IBlockContainer$$Type} from "com.buuz135.industrial.api.IBlockContainer"
 import {$MultiBufferSource$$Type} from "net.minecraft.client.renderer.MultiBufferSource"
-import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$TransporterTypeFactory$TransporterAction, $TransporterTypeFactory$TransporterAction$$Type} from "com.buuz135.industrial.api.transporter.TransporterTypeFactory$TransporterAction"
+import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$Tag$$Type} from "net.minecraft.nbt.Tag"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"

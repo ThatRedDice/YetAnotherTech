@@ -1,8 +1,8 @@
 declare module "appeng.recipes.game.StorageCellDisassemblyRecipeSerializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$StorageCellDisassemblyRecipe} from "appeng.recipes.game.StorageCellDisassemblyRecipe"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
 
@@ -23,16 +23,16 @@ export type $StorageCellDisassemblyRecipeSerializer$$Type = ($StorageCellDisasse
  */
 export type $StorageCellDisassemblyRecipeSerializer$$Original = $StorageCellDisassemblyRecipeSerializer;}
 declare module "appeng.recipes.game.StorageCellUpgradeRecipe" {
-import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$CraftingInput$$Type} from "net.minecraft.world.item.crafting.CraftingInput"
+import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Ingredient} from "net.minecraft.world.item.crafting.Ingredient"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
+import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$CustomRecipe} from "net.minecraft.world.item.crafting.CustomRecipe"
 import {$Item, $Item$$Type} from "net.minecraft.world.item.Item"
 import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
@@ -45,26 +45,26 @@ static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($Stora
 
 constructor(arg0: $Item$$Type, arg1: $Item$$Type, arg2: $Item$$Type, arg3: $Item$$Type)
 
-public "getInputCell"(): $Item
-public "getInputComponent"(): $Item
-public "getResultCell"(): $Item
-public "getResultComponent"(): $Item
 public "assemble"(arg0: $RecipeInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
 public "assemble"(arg0: $CraftingInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
 public "getRemainingItems"(arg0: $CraftingInput$$Type): $NonNullList<($ItemStack)>
 public "getRemainingItems"(arg0: $RecipeInput$$Type): $NonNullList
 public "getSerializer"(): $RecipeSerializer<(never)>
-public "getIngredients"(): $NonNullList<($Ingredient)>
 public "canCraftInDimensions"(arg0: integer, arg1: integer): boolean
 public "getResultItem"(arg0: $HolderLookup$Provider$$Type): $ItemStack
-public "matches"(arg0: $RecipeInput$$Type, arg1: $Level$$Type): boolean
+public "getIngredients"(): $NonNullList<($Ingredient)>
 public "matches"(arg0: $CraftingInput$$Type, arg1: $Level$$Type): boolean
+public "matches"(arg0: $RecipeInput$$Type, arg1: $Level$$Type): boolean
+public "getInputCell"(): $Item
+public "getInputComponent"(): $Item
+public "getResultCell"(): $Item
+public "getResultComponent"(): $Item
+get "serializer"(): $RecipeSerializer<(never)>
+get "ingredients"(): $NonNullList<($Ingredient)>
 get "inputCell"(): $Item
 get "inputComponent"(): $Item
 get "resultCell"(): $Item
 get "resultComponent"(): $Item
-get "serializer"(): $RecipeSerializer<(never)>
-get "ingredients"(): $NonNullList<($Ingredient)>
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -76,15 +76,15 @@ export type $StorageCellUpgradeRecipe$$Type = ($StorageCellUpgradeRecipe);
  */
 export type $StorageCellUpgradeRecipe$$Original = $StorageCellUpgradeRecipe;}
 declare module "appeng.recipes.game.CraftingUnitTransformRecipe" {
-import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$CraftingInput$$Type} from "net.minecraft.world.item.crafting.CraftingInput"
+import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$RecipeType} from "net.minecraft.world.item.crafting.RecipeType"
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
-import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
+import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$CustomRecipe} from "net.minecraft.world.item.crafting.CustomRecipe"
 import {$Item, $Item$$Type} from "net.minecraft.world.item.Item"
 import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
@@ -101,16 +101,16 @@ public "assemble"(arg0: $RecipeInput$$Type, arg1: $HolderLookup$Provider$$Type):
 public "getSerializer"(): $RecipeSerializer<(never)>
 public "canCraftInDimensions"(arg0: integer, arg1: integer): boolean
 public "getResultItem"(arg0: $HolderLookup$Provider$$Type): $ItemStack
-public "getUpgradeItem"(): $Item
 public "getUpgradedBlock"(): $Block
 public static "getUpgradedBlock"(arg0: $Level$$Type, arg1: $ItemStack$$Type): $Block
 public static "getRemovedUpgrade"(arg0: $Level$$Type, arg1: $Block$$Type): $ItemStack
+public "getUpgradeItem"(): $Item
 public "matches"(arg0: $CraftingInput$$Type, arg1: $Level$$Type): boolean
 public "matches"(arg0: $RecipeInput$$Type, arg1: $Level$$Type): boolean
 public "getType"(): $RecipeType<(never)>
 get "serializer"(): $RecipeSerializer<(never)>
-get "upgradeItem"(): $Item
 get "upgradedBlock"(): $Block
+get "upgradeItem"(): $Item
 get "type"(): $RecipeType<(never)>
 }
 /**
@@ -124,8 +124,8 @@ export type $CraftingUnitTransformRecipe$$Type = ($CraftingUnitTransformRecipe);
 export type $CraftingUnitTransformRecipe$$Original = $CraftingUnitTransformRecipe;}
 declare module "appeng.recipes.game.RemoveItemUpgradeRecipeSerializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$RemoveItemUpgradeRecipe} from "appeng.recipes.game.RemoveItemUpgradeRecipe"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
@@ -151,8 +151,8 @@ export type $RemoveItemUpgradeRecipeSerializer$$Original = $RemoveItemUpgradeRec
 declare module "appeng.recipes.game.StorageCellUpgradeRecipeSerializer" {
 import {$StorageCellUpgradeRecipe} from "appeng.recipes.game.StorageCellUpgradeRecipe"
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
 
@@ -175,16 +175,16 @@ export type $StorageCellUpgradeRecipeSerializer$$Type = ($StorageCellUpgradeReci
  */
 export type $StorageCellUpgradeRecipeSerializer$$Original = $StorageCellUpgradeRecipeSerializer;}
 declare module "appeng.recipes.game.AddItemUpgradeRecipe" {
-import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$CraftingInput$$Type} from "net.minecraft.world.item.crafting.CraftingInput"
+import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Ingredient} from "net.minecraft.world.item.crafting.Ingredient"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
+import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$CustomRecipe} from "net.minecraft.world.item.crafting.CustomRecipe"
 import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -195,12 +195,12 @@ static readonly "INSTANCE": $AddItemUpgradeRecipe
 static readonly "SERIALIZER_ID": $ResourceLocation
 static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($AddItemUpgradeRecipe)>
 
-public "assemble"(arg0: $RecipeInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
 public "assemble"(arg0: $CraftingInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
+public "assemble"(arg0: $RecipeInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
 public "getSerializer"(): $RecipeSerializer<(never)>
-public "getIngredients"(): $NonNullList<($Ingredient)>
 public "canCraftInDimensions"(arg0: integer, arg1: integer): boolean
 public "getResultItem"(arg0: $HolderLookup$Provider$$Type): $ItemStack
+public "getIngredients"(): $NonNullList<($Ingredient)>
 public "matches"(arg0: $CraftingInput$$Type, arg1: $Level$$Type): boolean
 public "matches"(arg0: $RecipeInput$$Type, arg1: $Level$$Type): boolean
 get "serializer"(): $RecipeSerializer<(never)>
@@ -218,8 +218,8 @@ export type $AddItemUpgradeRecipe$$Original = $AddItemUpgradeRecipe;}
 declare module "appeng.recipes.game.AddItemUpgradeRecipeSerializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$AddItemUpgradeRecipe} from "appeng.recipes.game.AddItemUpgradeRecipe"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
 
@@ -243,8 +243,8 @@ export type $AddItemUpgradeRecipeSerializer$$Type = ($AddItemUpgradeRecipeSerial
 export type $AddItemUpgradeRecipeSerializer$$Original = $AddItemUpgradeRecipeSerializer;}
 declare module "appeng.recipes.game.CraftingUnitTransformRecipeSerializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$CraftingUnitTransformRecipe} from "appeng.recipes.game.CraftingUnitTransformRecipe"
@@ -266,16 +266,16 @@ export type $CraftingUnitTransformRecipeSerializer$$Type = ($CraftingUnitTransfo
  */
 export type $CraftingUnitTransformRecipeSerializer$$Original = $CraftingUnitTransformRecipeSerializer;}
 declare module "appeng.recipes.game.RemoveItemUpgradeRecipe" {
-import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$CraftingInput$$Type} from "net.minecraft.world.item.crafting.CraftingInput"
+import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Ingredient} from "net.minecraft.world.item.crafting.Ingredient"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
+import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$CustomRecipe} from "net.minecraft.world.item.crafting.CustomRecipe"
 import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -291,9 +291,9 @@ public "assemble"(arg0: $CraftingInput$$Type, arg1: $HolderLookup$Provider$$Type
 public "getRemainingItems"(arg0: $RecipeInput$$Type): $NonNullList
 public "getRemainingItems"(arg0: $CraftingInput$$Type): $NonNullList<($ItemStack)>
 public "getSerializer"(): $RecipeSerializer<(never)>
-public "getIngredients"(): $NonNullList<($Ingredient)>
 public "canCraftInDimensions"(arg0: integer, arg1: integer): boolean
 public "getResultItem"(arg0: $HolderLookup$Provider$$Type): $ItemStack
+public "getIngredients"(): $NonNullList<($Ingredient)>
 public "matches"(arg0: $CraftingInput$$Type, arg1: $Level$$Type): boolean
 public "matches"(arg0: $RecipeInput$$Type, arg1: $Level$$Type): boolean
 get "serializer"(): $RecipeSerializer<(never)>
@@ -309,15 +309,15 @@ export type $RemoveItemUpgradeRecipe$$Type = ($RemoveItemUpgradeRecipe);
  */
 export type $RemoveItemUpgradeRecipe$$Original = $RemoveItemUpgradeRecipe;}
 declare module "appeng.recipes.game.StorageCellDisassemblyRecipe" {
-import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$CraftingInput$$Type} from "net.minecraft.world.item.crafting.CraftingInput"
+import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$List, $List$$Type} from "java.util.List"
 import {$RecipeType} from "net.minecraft.world.item.crafting.RecipeType"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
-import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
+import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$CustomRecipe} from "net.minecraft.world.item.crafting.CustomRecipe"
 import {$Item, $Item$$Type} from "net.minecraft.world.item.Item"
 import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
@@ -329,22 +329,22 @@ static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($Stora
 
 constructor(arg0: $Item$$Type, arg1: $List$$Type<($ItemStack$$Type)>)
 
-public "getStorageCell"(): $Item
-public "getCellDisassemblyItems"(): $List<($ItemStack)>
+public "canDisassemble"(): boolean
 public "assemble"(arg0: $CraftingInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
 public "assemble"(arg0: $RecipeInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
 public "getSerializer"(): $RecipeSerializer<(never)>
 public "canCraftInDimensions"(arg0: integer, arg1: integer): boolean
 public "getResultItem"(arg0: $HolderLookup$Provider$$Type): $ItemStack
-public "canDisassemble"(): boolean
 public static "getDisassemblyResult"(arg0: $Level$$Type, arg1: $Item$$Type): $List<($ItemStack)>
-public "matches"(arg0: $CraftingInput$$Type, arg1: $Level$$Type): boolean
 public "matches"(arg0: $RecipeInput$$Type, arg1: $Level$$Type): boolean
+public "matches"(arg0: $CraftingInput$$Type, arg1: $Level$$Type): boolean
 public "getType"(): $RecipeType<(never)>
-get "storageCell"(): $Item
-get "cellDisassemblyItems"(): $List<($ItemStack)>
+public "getStorageCell"(): $Item
+public "getCellDisassemblyItems"(): $List<($ItemStack)>
 get "serializer"(): $RecipeSerializer<(never)>
 get "type"(): $RecipeType<(never)>
+get "storageCell"(): $Item
+get "cellDisassemblyItems"(): $List<($ItemStack)>
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_

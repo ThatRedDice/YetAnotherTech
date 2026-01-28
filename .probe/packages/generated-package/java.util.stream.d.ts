@@ -1,7 +1,7 @@
 declare module "java.util.stream.BaseStream" {
 import {$Iterator} from "java.util.Iterator"
-import {$AutoCloseable$$Interface} from "java.lang.AutoCloseable"
 import {$Spliterator} from "java.util.Spliterator"
+import {$AutoCloseable$$Interface} from "java.lang.AutoCloseable"
 import {$Runnable$$Type} from "java.lang.Runnable"
 
 export interface $BaseStream$$Interface<T, S extends $BaseStream<(object), (object)>> extends $AutoCloseable$$Interface {
@@ -50,11 +50,10 @@ export type $Stream$Builder$$Type<T> = ($Stream$Builder<(T)>);
 export type $Stream$Builder$$Original<T> = $Stream$Builder<(T)>;}
 declare module "java.util.stream.LongStream" {
 import {$LongPredicate$$Type} from "java.util.function.LongPredicate"
-import {$Iterator} from "java.util.Iterator"
 import {$LongStream$LongMapMultiConsumer$$Type} from "java.util.stream.LongStream$LongMapMultiConsumer"
-import {$BaseStream$$Interface} from "java.util.stream.BaseStream"
-import {$IntStream} from "java.util.stream.IntStream"
 import {$Spliterator} from "java.util.Spliterator"
+import {$IntStream} from "java.util.stream.IntStream"
+import {$BaseStream, $BaseStream$$Interface} from "java.util.stream.BaseStream"
 import {$OptionalDouble} from "java.util.OptionalDouble"
 import {$OptionalLong} from "java.util.OptionalLong"
 import {$LongFunction$$Type} from "java.util.function.LongFunction"
@@ -65,37 +64,38 @@ import {$LongSupplier$$Type} from "java.util.function.LongSupplier"
 import {$LongToDoubleFunction$$Type} from "java.util.function.LongToDoubleFunction"
 import {$LongConsumer$$Type} from "java.util.function.LongConsumer"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$PrimitiveIterator$OfLong} from "java.util.PrimitiveIterator$OfLong"
 import {$BiConsumer$$Type} from "java.util.function.BiConsumer"
-import {$LongBinaryOperator$$Type} from "java.util.function.LongBinaryOperator"
 import {$LongSummaryStatistics} from "java.util.LongSummaryStatistics"
+import {$LongBinaryOperator$$Type} from "java.util.function.LongBinaryOperator"
 import {$DoubleStream} from "java.util.stream.DoubleStream"
 import {$Stream} from "java.util.stream.Stream"
-import {$ObjLongConsumer$$Type} from "java.util.function.ObjLongConsumer"
 import {$LongStream$Builder} from "java.util.stream.LongStream$Builder"
+import {$ObjLongConsumer$$Type} from "java.util.function.ObjLongConsumer"
 
 export interface $LongStream$$Interface extends $BaseStream$$Interface<(long), ($LongStream)> {
 }
 
 export class $LongStream implements $LongStream$$Interface {
- "findFirst"(): $OptionalLong
- "allMatch"(arg0: $LongPredicate$$Type): boolean
- "noneMatch"(arg0: $LongPredicate$$Type): boolean
- "dropWhile"(arg0: $LongPredicate$$Type): $LongStream
- "mapToInt"(arg0: $LongToIntFunction$$Type): $IntStream
- "mapToDouble"(arg0: $LongToDoubleFunction$$Type): $DoubleStream
- "mapMulti"(arg0: $LongStream$LongMapMultiConsumer$$Type): $LongStream
- "takeWhile"(arg0: $LongPredicate$$Type): $LongStream
- "forEachOrdered"(arg0: $LongConsumer$$Type): void
- "sequential"(): $LongStream
  "average"(): $OptionalDouble
  "summaryStatistics"(): $LongSummaryStatistics
  "asDoubleStream"(): $DoubleStream
 static "rangeClosed"(arg0: long, arg1: long): $LongStream
  "mapToObj"<U>(arg0: $LongFunction$$Type<(U)>): $Stream<(U)>
+ "mapToInt"(arg0: $LongToIntFunction$$Type): $IntStream
+ "mapToDouble"(arg0: $LongToDoubleFunction$$Type): $DoubleStream
+ "mapMulti"(arg0: $LongStream$LongMapMultiConsumer$$Type): $LongStream
+ "takeWhile"(arg0: $LongPredicate$$Type): $LongStream
+ "forEachOrdered"(arg0: $LongConsumer$$Type): void
+ "sequential"(): $BaseStream
+ "dropWhile"(arg0: $LongPredicate$$Type): $LongStream
+ "distinct"(): $LongStream
+ "findFirst"(): $OptionalLong
+ "allMatch"(arg0: $LongPredicate$$Type): boolean
  "min"(): $OptionalLong
  "max"(): $OptionalLong
  "toArray"(): (long)[]
- "iterator"(): $Iterator
+ "iterator"(): $PrimitiveIterator$OfLong
  "map"(arg0: $LongUnaryOperator$$Type): $LongStream
  "collect"<R>(arg0: $Supplier$$Type<(R)>, arg1: $ObjLongConsumer$$Type<(R)>, arg2: $BiConsumer$$Type<(R), (R)>): R
 static "of"(...arg0: (long)[]): $LongStream
@@ -114,15 +114,15 @@ static "empty"(): $LongStream
  "peek"(arg0: $LongConsumer$$Type): $LongStream
  "skip"(arg0: long): $LongStream
  "sum"(): long
- "reduce"(arg0: long, arg1: $LongBinaryOperator$$Type): long
  "reduce"(arg0: $LongBinaryOperator$$Type): $OptionalLong
+ "reduce"(arg0: long, arg1: $LongBinaryOperator$$Type): long
+static "iterate"(arg0: long, arg1: $LongPredicate$$Type, arg2: $LongUnaryOperator$$Type): $LongStream
+static "iterate"(arg0: long, arg1: $LongUnaryOperator$$Type): $LongStream
 static "range"(arg0: long, arg1: long): $LongStream
  "parallel"(): $LongStream
-static "iterate"(arg0: long, arg1: $LongUnaryOperator$$Type): $LongStream
-static "iterate"(arg0: long, arg1: $LongPredicate$$Type, arg2: $LongUnaryOperator$$Type): $LongStream
+ "noneMatch"(arg0: $LongPredicate$$Type): boolean
  "sorted"(): $LongStream
 static "generate"(arg0: $LongSupplier$$Type): $LongStream
- "distinct"(): $LongStream
  "boxed"(): $Stream<(long)>
  "onClose"(arg0: $Runnable$$Type): $LongStream
  "isParallel"(): boolean
@@ -244,22 +244,22 @@ export type $IntStream$Builder$$Type = ($IntStream$Builder);
 export type $IntStream$Builder$$Original = $IntStream$Builder;}
 declare module "java.util.stream.IntStream" {
 import {$Iterator} from "java.util.Iterator"
-import {$BaseStream, $BaseStream$$Interface} from "java.util.stream.BaseStream"
+import {$BaseStream$$Interface} from "java.util.stream.BaseStream"
 import {$OptionalDouble} from "java.util.OptionalDouble"
 import {$LongStream} from "java.util.stream.LongStream"
 import {$Runnable$$Type} from "java.lang.Runnable"
 import {$IntPredicate$$Type} from "java.util.function.IntPredicate"
 import {$IntBinaryOperator$$Type} from "java.util.function.IntBinaryOperator"
-import {$IntFunction$$Type} from "java.util.function.IntFunction"
 import {$IntSupplier$$Type} from "java.util.function.IntSupplier"
 import {$IntStream$Builder} from "java.util.stream.IntStream$Builder"
+import {$IntFunction$$Type} from "java.util.function.IntFunction"
 import {$IntUnaryOperator$$Type} from "java.util.function.IntUnaryOperator"
 import {$IntToLongFunction$$Type} from "java.util.function.IntToLongFunction"
 import {$IntStream$IntMapMultiConsumer$$Type} from "java.util.stream.IntStream$IntMapMultiConsumer"
 import {$OptionalInt} from "java.util.OptionalInt"
 import {$Spliterator$OfInt} from "java.util.Spliterator$OfInt"
-import {$IntConsumer$$Type} from "java.util.function.IntConsumer"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$IntConsumer$$Type} from "java.util.function.IntConsumer"
 import {$BiConsumer$$Type} from "java.util.function.BiConsumer"
 import {$IntSummaryStatistics} from "java.util.IntSummaryStatistics"
 import {$ObjIntConsumer$$Type} from "java.util.function.ObjIntConsumer"
@@ -271,30 +271,30 @@ export interface $IntStream$$Interface extends $BaseStream$$Interface<(integer),
 }
 
 export class $IntStream implements $IntStream$$Interface {
- "findFirst"(): $OptionalInt
- "allMatch"(arg0: $IntPredicate$$Type): boolean
- "noneMatch"(arg0: $IntPredicate$$Type): boolean
- "dropWhile"(arg0: $IntPredicate$$Type): $IntStream
- "mapToLong"(arg0: $IntToLongFunction$$Type): $LongStream
- "mapToDouble"(arg0: $IntToDoubleFunction$$Type): $DoubleStream
- "mapMulti"(arg0: $IntStream$IntMapMultiConsumer$$Type): $IntStream
- "takeWhile"(arg0: $IntPredicate$$Type): $IntStream
- "forEachOrdered"(arg0: $IntConsumer$$Type): void
- "sequential"(): $BaseStream
  "average"(): $OptionalDouble
  "summaryStatistics"(): $IntSummaryStatistics
  "asLongStream"(): $LongStream
  "asDoubleStream"(): $DoubleStream
 static "rangeClosed"(arg0: integer, arg1: integer): $IntStream
  "mapToObj"<U>(arg0: $IntFunction$$Type<(U)>): $Stream<(U)>
+ "mapToLong"(arg0: $IntToLongFunction$$Type): $LongStream
+ "mapToDouble"(arg0: $IntToDoubleFunction$$Type): $DoubleStream
+ "mapMulti"(arg0: $IntStream$IntMapMultiConsumer$$Type): $IntStream
+ "takeWhile"(arg0: $IntPredicate$$Type): $IntStream
+ "forEachOrdered"(arg0: $IntConsumer$$Type): void
+ "sequential"(): $IntStream
+ "dropWhile"(arg0: $IntPredicate$$Type): $IntStream
+ "distinct"(): $IntStream
+ "findFirst"(): $OptionalInt
+ "allMatch"(arg0: $IntPredicate$$Type): boolean
  "min"(): $OptionalInt
  "max"(): $OptionalInt
  "toArray"(): (integer)[]
  "iterator"(): $Iterator
  "map"(arg0: $IntUnaryOperator$$Type): $IntStream
  "collect"<R>(arg0: $Supplier$$Type<(R)>, arg1: $ObjIntConsumer$$Type<(R)>, arg2: $BiConsumer$$Type<(R), (R)>): R
-static "of"(arg0: integer): $IntStream
 static "of"(...arg0: (integer)[]): $IntStream
+static "of"(arg0: integer): $IntStream
  "count"(): long
 static "builder"(): $IntStream$Builder
 static "concat"(arg0: $IntStream$$Type, arg1: $IntStream$$Type): $IntStream
@@ -309,15 +309,15 @@ static "empty"(): $IntStream
  "peek"(arg0: $IntConsumer$$Type): $IntStream
  "skip"(arg0: long): $IntStream
  "sum"(): integer
- "reduce"(arg0: integer, arg1: $IntBinaryOperator$$Type): integer
  "reduce"(arg0: $IntBinaryOperator$$Type): $OptionalInt
+ "reduce"(arg0: integer, arg1: $IntBinaryOperator$$Type): integer
+static "iterate"(arg0: integer, arg1: $IntPredicate$$Type, arg2: $IntUnaryOperator$$Type): $IntStream
+static "iterate"(arg0: integer, arg1: $IntUnaryOperator$$Type): $IntStream
 static "range"(arg0: integer, arg1: integer): $IntStream
  "parallel"(): $IntStream
-static "iterate"(arg0: integer, arg1: $IntUnaryOperator$$Type): $IntStream
-static "iterate"(arg0: integer, arg1: $IntPredicate$$Type, arg2: $IntUnaryOperator$$Type): $IntStream
+ "noneMatch"(arg0: $IntPredicate$$Type): boolean
  "sorted"(): $IntStream
 static "generate"(arg0: $IntSupplier$$Type): $IntStream
- "distinct"(): $IntStream
  "boxed"(): $Stream<(integer)>
  "onClose"(arg0: $Runnable$$Type): $IntStream
  "isParallel"(): boolean
@@ -338,8 +338,9 @@ import {$DoubleStream$Builder} from "java.util.stream.DoubleStream$Builder"
 import {$Iterator} from "java.util.Iterator"
 import {$DoubleUnaryOperator$$Type} from "java.util.function.DoubleUnaryOperator"
 import {$DoubleStream$DoubleMapMultiConsumer$$Type} from "java.util.stream.DoubleStream$DoubleMapMultiConsumer"
-import {$BaseStream, $BaseStream$$Interface} from "java.util.stream.BaseStream"
+import {$Spliterator} from "java.util.Spliterator"
 import {$IntStream} from "java.util.stream.IntStream"
+import {$BaseStream, $BaseStream$$Interface} from "java.util.stream.BaseStream"
 import {$OptionalDouble} from "java.util.OptionalDouble"
 import {$LongStream} from "java.util.stream.LongStream"
 import {$Runnable$$Type} from "java.lang.Runnable"
@@ -350,9 +351,8 @@ import {$DoubleToIntFunction$$Type} from "java.util.function.DoubleToIntFunction
 import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$BiConsumer$$Type} from "java.util.function.BiConsumer"
 import {$ObjDoubleConsumer$$Type} from "java.util.function.ObjDoubleConsumer"
-import {$DoubleFunction$$Type} from "java.util.function.DoubleFunction"
 import {$DoubleSummaryStatistics} from "java.util.DoubleSummaryStatistics"
-import {$Spliterator$OfDouble} from "java.util.Spliterator$OfDouble"
+import {$DoubleFunction$$Type} from "java.util.function.DoubleFunction"
 import {$Stream} from "java.util.stream.Stream"
 import {$DoublePredicate$$Type} from "java.util.function.DoublePredicate"
 import {$DoubleToLongFunction$$Type} from "java.util.function.DoubleToLongFunction"
@@ -361,32 +361,32 @@ export interface $DoubleStream$$Interface extends $BaseStream$$Interface<(double
 }
 
 export class $DoubleStream implements $DoubleStream$$Interface {
- "findFirst"(): $OptionalDouble
- "allMatch"(arg0: $DoublePredicate$$Type): boolean
- "noneMatch"(arg0: $DoublePredicate$$Type): boolean
- "dropWhile"(arg0: $DoublePredicate$$Type): $DoubleStream
+ "average"(): $OptionalDouble
+ "summaryStatistics"(): $DoubleSummaryStatistics
+ "mapToObj"<U>(arg0: $DoubleFunction$$Type<(U)>): $Stream<(U)>
  "mapToInt"(arg0: $DoubleToIntFunction$$Type): $IntStream
  "mapToLong"(arg0: $DoubleToLongFunction$$Type): $LongStream
  "mapMulti"(arg0: $DoubleStream$DoubleMapMultiConsumer$$Type): $DoubleStream
  "takeWhile"(arg0: $DoublePredicate$$Type): $DoubleStream
  "forEachOrdered"(arg0: $DoubleConsumer$$Type): void
- "sequential"(): $BaseStream
- "average"(): $OptionalDouble
- "summaryStatistics"(): $DoubleSummaryStatistics
- "mapToObj"<U>(arg0: $DoubleFunction$$Type<(U)>): $Stream<(U)>
+ "sequential"(): $DoubleStream
+ "dropWhile"(arg0: $DoublePredicate$$Type): $DoubleStream
+ "distinct"(): $DoubleStream
+ "findFirst"(): $OptionalDouble
+ "allMatch"(arg0: $DoublePredicate$$Type): boolean
  "min"(): $OptionalDouble
  "max"(): $OptionalDouble
  "toArray"(): (double)[]
  "iterator"(): $Iterator
  "map"(arg0: $DoubleUnaryOperator$$Type): $DoubleStream
  "collect"<R>(arg0: $Supplier$$Type<(R)>, arg1: $ObjDoubleConsumer$$Type<(R)>, arg2: $BiConsumer$$Type<(R), (R)>): R
-static "of"(arg0: double): $DoubleStream
 static "of"(...arg0: (double)[]): $DoubleStream
+static "of"(arg0: double): $DoubleStream
  "count"(): long
 static "builder"(): $DoubleStream$Builder
 static "concat"(arg0: $DoubleStream$$Type, arg1: $DoubleStream$$Type): $DoubleStream
  "limit"(arg0: long): $DoubleStream
- "spliterator"(): $Spliterator$OfDouble
+ "spliterator"(): $Spliterator
  "filter"(arg0: $DoublePredicate$$Type): $DoubleStream
 static "empty"(): $DoubleStream
  "anyMatch"(arg0: $DoublePredicate$$Type): boolean
@@ -398,12 +398,12 @@ static "empty"(): $DoubleStream
  "sum"(): double
  "reduce"(arg0: $DoubleBinaryOperator$$Type): $OptionalDouble
  "reduce"(arg0: double, arg1: $DoubleBinaryOperator$$Type): double
- "parallel"(): $BaseStream
 static "iterate"(arg0: double, arg1: $DoubleUnaryOperator$$Type): $DoubleStream
 static "iterate"(arg0: double, arg1: $DoublePredicate$$Type, arg2: $DoubleUnaryOperator$$Type): $DoubleStream
+ "parallel"(): $BaseStream
+ "noneMatch"(arg0: $DoublePredicate$$Type): boolean
  "sorted"(): $DoubleStream
 static "generate"(arg0: $DoubleSupplier$$Type): $DoubleStream
- "distinct"(): $DoubleStream
  "boxed"(): $Stream<(double)>
  "onClose"(arg0: $Runnable$$Type): $DoubleStream
  "isParallel"(): boolean
@@ -442,10 +442,10 @@ export type $DoubleStream$Builder$$Type = ($DoubleStream$Builder);
  */
 export type $DoubleStream$Builder$$Original = $DoubleStream$Builder;}
 declare module "java.util.stream.Stream" {
-import {$Optional} from "java.util.Optional"
 import {$ToDoubleFunction$$Type} from "java.util.function.ToDoubleFunction"
-import {$BaseStream$$Interface} from "java.util.stream.BaseStream"
+import {$Optional} from "java.util.Optional"
 import {$Spliterator} from "java.util.Spliterator"
+import {$BaseStream$$Interface} from "java.util.stream.BaseStream"
 import {$List} from "java.util.List"
 import {$Stream$Builder} from "java.util.stream.Stream$Builder"
 import {$BinaryOperator$$Type} from "java.util.function.BinaryOperator"
@@ -453,12 +453,12 @@ import {$Runnable$$Type} from "java.lang.Runnable"
 import {$IntFunction$$Type} from "java.util.function.IntFunction"
 import {$ToLongFunction$$Type} from "java.util.function.ToLongFunction"
 import {$LongConsumer$$Type} from "java.util.function.LongConsumer"
+import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$Function$$Type} from "java.util.function.Function"
 import {$IntConsumer$$Type} from "java.util.function.IntConsumer"
-import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$Collector$$Type} from "java.util.stream.Collector"
-import {$UnaryOperator$$Type} from "java.util.function.UnaryOperator"
 import {$Iterator} from "java.util.Iterator"
+import {$UnaryOperator$$Type} from "java.util.function.UnaryOperator"
 import {$Comparator$$Type} from "java.util.Comparator"
 import {$IntStream, $IntStream$$Type} from "java.util.stream.IntStream"
 import {$Predicate$$Type} from "java.util.function.Predicate"
@@ -474,10 +474,6 @@ export interface $Stream$$Interface<T> extends $BaseStream$$Interface<(T), ($Str
 }
 
 export class $Stream<T> implements $Stream$$Interface {
- "findFirst"(): $Optional<(T)>
- "allMatch"(arg0: $Predicate$$Type<(T)>): boolean
- "noneMatch"(arg0: $Predicate$$Type<(T)>): boolean
- "dropWhile"(arg0: $Predicate$$Type<(T)>): $Stream<(T)>
  "flatMapToInt"(arg0: $Function$$Type<(T), ($IntStream$$Type)>): $IntStream
  "flatMapToLong"(arg0: $Function$$Type<(T), ($LongStream$$Type)>): $LongStream
  "flatMapToDouble"(arg0: $Function$$Type<(T), ($DoubleStream$$Type)>): $DoubleStream
@@ -490,10 +486,15 @@ export class $Stream<T> implements $Stream$$Interface {
  "mapMultiToDouble"(arg0: $BiConsumer$$Type<(T), ($DoubleConsumer)>): $DoubleStream
  "takeWhile"(arg0: $Predicate$$Type<(T)>): $Stream<(T)>
  "forEachOrdered"(arg0: $Consumer$$Type<(T)>): void
+ "dropWhile"(arg0: $Predicate$$Type<(T)>): $Stream<(T)>
+ "distinct"(): $Stream<(T)>
+static "ofNullable"<T>(arg0: T): $Stream<(T)>
+ "findFirst"(): $Optional<(T)>
+ "allMatch"(arg0: $Predicate$$Type<(T)>): boolean
  "min"(arg0: $Comparator$$Type<(T)>): $Optional<(T)>
  "max"(arg0: $Comparator$$Type<(T)>): $Optional<(T)>
- "toArray"<A>(arg0: $IntFunction$$Type<((A)[])>): (A)[]
  "toArray"(): (any)[]
+ "toArray"<A>(arg0: $IntFunction$$Type<((A)[])>): (A)[]
  "map"<R>(arg0: $Function$$Type<(T), (R)>): $Stream<(R)>
  "collect"<R>(arg0: $Supplier$$Type<(R)>, arg1: $BiConsumer$$Type<(R), (T)>, arg2: $BiConsumer$$Type<(R), (R)>): R
  "collect"<R, A>(arg0: $Collector$$Type<(T), (A), (R)>): R
@@ -512,16 +513,15 @@ static "empty"<T>(): $Stream<(T)>
  "findAny"(): $Optional<(T)>
  "peek"(arg0: $Consumer$$Type<(T)>): $Stream<(T)>
  "skip"(arg0: long): $Stream<(T)>
- "reduce"<U>(arg0: U, arg1: $BiFunction$$Type<(U), (T), (U)>, arg2: $BinaryOperator$$Type<(U)>): U
  "reduce"(arg0: $BinaryOperator$$Type<(T)>): $Optional<(T)>
+ "reduce"<U>(arg0: U, arg1: $BiFunction$$Type<(U), (T), (U)>, arg2: $BinaryOperator$$Type<(U)>): U
  "reduce"(arg0: T, arg1: $BinaryOperator$$Type<(T)>): T
-static "iterate"<T>(arg0: T, arg1: $UnaryOperator$$Type<(T)>): $Stream<(T)>
 static "iterate"<T>(arg0: T, arg1: $Predicate$$Type<(T)>, arg2: $UnaryOperator$$Type<(T)>): $Stream<(T)>
- "sorted"(): $Stream<(T)>
+static "iterate"<T>(arg0: T, arg1: $UnaryOperator$$Type<(T)>): $Stream<(T)>
+ "noneMatch"(arg0: $Predicate$$Type<(T)>): boolean
  "sorted"(arg0: $Comparator$$Type<(T)>): $Stream<(T)>
+ "sorted"(): $Stream<(T)>
 static "generate"<T>(arg0: $Supplier$$Type<(T)>): $Stream<(T)>
- "distinct"(): $Stream<(T)>
-static "ofNullable"<T>(arg0: T): $Stream<(T)>
  "onClose"(arg0: $Runnable$$Type): $Stream<(T)>
  "isParallel"(): boolean
  "sequential"(): $Stream<(T)>
@@ -561,10 +561,10 @@ export type $DoubleStream$DoubleMapMultiConsumer$$Type = ((arg0: double, arg1: $
  */
 export type $DoubleStream$DoubleMapMultiConsumer$$Original = $DoubleStream$DoubleMapMultiConsumer;}
 declare module "java.util.stream.Collector" {
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier, $Supplier$$Type} from "java.util.function.Supplier"
-import {$Collector$Characteristics, $Collector$Characteristics$$Type} from "java.util.stream.Collector$Characteristics"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$BiConsumer, $BiConsumer$$Type} from "java.util.function.BiConsumer"
+import {$Collector$Characteristics, $Collector$Characteristics$$Type} from "java.util.stream.Collector$Characteristics"
 import {$Set} from "java.util.Set"
 import {$BinaryOperator, $BinaryOperator$$Type} from "java.util.function.BinaryOperator"
 

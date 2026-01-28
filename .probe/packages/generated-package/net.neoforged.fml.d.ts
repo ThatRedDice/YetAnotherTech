@@ -32,8 +32,8 @@ import {$IModFile, $IModFile$$Type} from "net.neoforged.neoforgespi.locating.IMo
 import {$List, $List$$Type} from "java.util.List"
 import {$Throwable, $Throwable$$Type} from "java.lang.Throwable"
 import {$Path, $Path$$Type} from "java.nio.file.Path"
-import {$IModInfo, $IModInfo$$Type} from "net.neoforged.neoforgespi.language.IModInfo"
 import {$Record} from "java.lang.Record"
+import {$IModInfo, $IModInfo$$Type} from "net.neoforged.neoforgespi.language.IModInfo"
 
 /**
  * This class is not allowed By KubeJS!
@@ -51,16 +51,16 @@ public "toString"(): StringJS
 public "hashCode"(): integer
 public "cause"(): $Throwable
 public static "error"(arg0: StringJS, ...arg1: (any)[]): $ModLoadingIssue
-public "withCause"(arg0: $Throwable$$Type): $ModLoadingIssue
-public "withAffectedPath"(arg0: $Path$$Type): $ModLoadingIssue
-public "withSeverity"(arg0: $ModLoadingIssue$Severity$$Type): $ModLoadingIssue
-public "withAffectedModFile"(arg0: $IModFile$$Type): $ModLoadingIssue
+public "affectedMod"(): $IModInfo
+public "withAffectedMod"(arg0: $IModInfo$$Type): $ModLoadingIssue
 public "translationKey"(): StringJS
 public "translationArgs"(): $List<(any)>
 public "affectedPath"(): $Path
 public "affectedModFile"(): $IModFile
-public "affectedMod"(): $IModInfo
-public "withAffectedMod"(arg0: $IModInfo$$Type): $ModLoadingIssue
+public "withCause"(arg0: $Throwable$$Type): $ModLoadingIssue
+public "withAffectedPath"(arg0: $Path$$Type): $ModLoadingIssue
+public "withSeverity"(arg0: $ModLoadingIssue$Severity$$Type): $ModLoadingIssue
+public "withAffectedModFile"(arg0: $IModFile$$Type): $ModLoadingIssue
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -96,10 +96,10 @@ declare module "net.neoforged.fml.ModContainer" {
 import {$ModConfig$Type$$Type} from "net.neoforged.fml.config.ModConfig$Type"
 import {$IEventBus} from "net.neoforged.bus.api.IEventBus"
 import {$Optional} from "java.util.Optional"
-import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$EventPriority$$Type} from "net.neoforged.bus.api.EventPriority"
-import {$IExtensionPoint, $IExtensionPoint$$Type} from "net.neoforged.fml.IExtensionPoint"
+import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$Event, $Event$$Type} from "net.neoforged.bus.api.Event"
+import {$IExtensionPoint, $IExtensionPoint$$Type} from "net.neoforged.fml.IExtensionPoint"
 import {$Class$$Type} from "java.lang.Class"
 import {$IConfigSpec$$Type} from "net.neoforged.fml.config.IConfigSpec"
 import {$IModInfo, $IModInfo$$Type} from "net.neoforged.neoforgespi.language.IModInfo"
@@ -116,17 +116,17 @@ public "getNamespace"(): StringJS
 public "registerConfig"(arg0: $ModConfig$Type$$Type, arg1: $IConfigSpec$$Type): void
 public "registerConfig"(arg0: $ModConfig$Type$$Type, arg1: $IConfigSpec$$Type, arg2: StringJS): void
 public "getModId"(): StringJS
-public "getModInfo"(): $IModInfo
-public "getCustomExtension"<T extends $IExtensionPoint>(arg0: $Class$$Type<(T)>): $Optional<(T)>
-public "registerExtensionPoint"<T extends $IExtensionPoint>(arg0: $Class$$Type<(T)>, arg1: $Supplier$$Type<(T)>): void
-public "registerExtensionPoint"<T extends $IExtensionPoint>(arg0: $Class$$Type<(T)>, arg1: T): void
-public "acceptEvent"<T extends $Event>(arg0: T): void
-public "acceptEvent"<T extends $Event>(arg0: $EventPriority$$Type, arg1: T): void
 public "getEventBus"(): $IEventBus
+public "getCustomExtension"<T extends $IExtensionPoint>(arg0: $Class$$Type<(T)>): $Optional<(T)>
+public "registerExtensionPoint"<T extends $IExtensionPoint>(arg0: $Class$$Type<(T)>, arg1: T): void
+public "registerExtensionPoint"<T extends $IExtensionPoint>(arg0: $Class$$Type<(T)>, arg1: $Supplier$$Type<(T)>): void
+public "getModInfo"(): $IModInfo
+public "acceptEvent"<T extends $Event>(arg0: $EventPriority$$Type, arg1: T): void
+public "acceptEvent"<T extends $Event>(arg0: T): void
 get "namespace"(): StringJS
 get "modId"(): StringJS
-get "modInfo"(): $IModInfo
 get "eventBus"(): $IEventBus
+get "modInfo"(): $IModInfo
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_

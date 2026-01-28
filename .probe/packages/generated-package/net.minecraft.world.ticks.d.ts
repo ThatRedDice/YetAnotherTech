@@ -1,6 +1,6 @@
 declare module "net.minecraft.world.ticks.LevelTickAccess" {
-import {$TickAccess$$Interface} from "net.minecraft.world.ticks.TickAccess"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$TickAccess$$Interface} from "net.minecraft.world.ticks.TickAccess"
 import {$ScheduledTick$$Type} from "net.minecraft.world.ticks.ScheduledTick"
 
 export interface $LevelTickAccess$$Interface<T> extends $TickAccess$$Interface<(T)> {
@@ -26,11 +26,11 @@ import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$LevelBlock} from "dev.latvian.mods.kubejs.level.LevelBlock"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Container, $Container$$Type, $Container$$Interface} from "net.minecraft.world.Container"
-import {$List} from "java.util.List"
 import {$ItemPredicate$$Type} from "dev.latvian.mods.kubejs.item.ItemPredicate"
+import {$List} from "java.util.List"
 import {$Predicate$$Type} from "java.util.function.Predicate"
-import {$Item$$Type} from "net.minecraft.world.item.Item"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$Item$$Type} from "net.minecraft.world.item.Item"
 import {$Set$$Type} from "java.util.Set"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 
@@ -152,12 +152,12 @@ export type $ScheduledTick$$Original<T> = $ScheduledTick<(T)>;}
 declare module "net.minecraft.world.ticks.LevelChunkTicks" {
 import {$SerializableTickContainer$$Interface} from "net.minecraft.world.ticks.SerializableTickContainer"
 import {$Optional$$Type} from "java.util.Optional"
-import {$Predicate$$Type} from "java.util.function.Predicate"
 import {$List$$Type} from "java.util.List"
+import {$Predicate$$Type} from "java.util.function.Predicate"
 import {$SavedTick$$Type} from "net.minecraft.world.ticks.SavedTick"
-import {$ListTag, $ListTag$$Type} from "net.minecraft.nbt.ListTag"
 import {$ScheduledTick, $ScheduledTick$$Type} from "net.minecraft.world.ticks.ScheduledTick"
 import {$ChunkPos$$Type} from "net.minecraft.world.level.ChunkPos"
+import {$ListTag, $ListTag$$Type} from "net.minecraft.nbt.ListTag"
 import {$TickContainerAccess$$Interface} from "net.minecraft.world.ticks.TickContainerAccess"
 import {$Function$$Type} from "java.util.function.Function"
 import {$BiConsumer$$Type} from "java.util.function.BiConsumer"
@@ -169,8 +169,8 @@ constructor()
 constructor(arg0: $List$$Type<($SavedTick$$Type<(T)>)>)
 
 public "hasScheduledTick"(arg0: $BlockPos$$Type, arg1: any): boolean
-public "getAll"(): $Stream
 public "setOnTickAdded"(arg0: $BiConsumer$$Type<($LevelChunkTicks<(T)>), ($ScheduledTick<(T)>)>): void
+public "getAll"(): $Stream
 public static "load"<T>(arg0: $ListTag$$Type, arg1: $Function$$Type<(StringJS), ((T)?)>, arg2: $ChunkPos$$Type): $LevelChunkTicks<(T)>
 public "count"(): integer
 public "schedule"(arg0: $ScheduledTick$$Type): void
@@ -179,8 +179,8 @@ public "peek"(): $ScheduledTick
 public "removeIf"(arg0: $Predicate$$Type): void
 public "poll"(): $ScheduledTick
 public "unpack"(arg0: long): void
-get "all"(): $Stream
 set "onTickAdded"(value: $BiConsumer$$Type<($LevelChunkTicks<(T)>), ($ScheduledTick<(T)>)>)
+get "all"(): $Stream
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -237,14 +237,14 @@ declare module "net.minecraft.world.ticks.ProtoChunkTicks" {
 import {$TickContainerAccess$$Interface} from "net.minecraft.world.ticks.TickContainerAccess"
 import {$SerializableTickContainer$$Interface} from "net.minecraft.world.ticks.SerializableTickContainer"
 import {$Optional$$Type} from "java.util.Optional"
-import {$List} from "java.util.List"
 import {$Function$$Type} from "java.util.function.Function"
+import {$List} from "java.util.List"
 import {$Tag} from "net.minecraft.nbt.Tag"
 import {$SavedTick} from "net.minecraft.world.ticks.SavedTick"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$ListTag$$Type} from "net.minecraft.nbt.ListTag"
 import {$ChunkPos$$Type} from "net.minecraft.world.level.ChunkPos"
 import {$ScheduledTick$$Type} from "net.minecraft.world.ticks.ScheduledTick"
+import {$ListTag$$Type} from "net.minecraft.nbt.ListTag"
 
 export class $ProtoChunkTicks<T> implements $SerializableTickContainer$$Interface<(T)>, $TickContainerAccess$$Interface<(T)> {
 constructor()
@@ -266,8 +266,8 @@ export type $ProtoChunkTicks$$Type<T> = ($ProtoChunkTicks<(T)>);
  */
 export type $ProtoChunkTicks$$Original<T> = $ProtoChunkTicks<(T)>;}
 declare module "net.minecraft.world.ticks.TickContainerAccess" {
-import {$TickAccess$$Interface} from "net.minecraft.world.ticks.TickAccess"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$TickAccess$$Interface} from "net.minecraft.world.ticks.TickAccess"
 import {$ScheduledTick$$Type} from "net.minecraft.world.ticks.ScheduledTick"
 
 export interface $TickContainerAccess$$Interface<T> extends $TickAccess$$Interface<(T)> {
@@ -294,9 +294,9 @@ import {$Hash$Strategy} from "it.unimi.dsi.fastutil.Hash$Strategy"
 import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$Function$$Type} from "java.util.function.Function"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$ListTag$$Type} from "net.minecraft.nbt.ListTag"
 import {$ScheduledTick, $ScheduledTick$$Type} from "net.minecraft.world.ticks.ScheduledTick"
 import {$ChunkPos$$Type} from "net.minecraft.world.level.ChunkPos"
+import {$ListTag$$Type} from "net.minecraft.nbt.ListTag"
 import {$Record} from "java.lang.Record"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 
@@ -305,9 +305,9 @@ static readonly "UNIQUE_TICK_HASH": $Hash$Strategy<($SavedTick<(never)>)>
 
 constructor(arg0: T, arg1: $BlockPos$$Type, arg2: integer, arg3: $TickPriority$$Type)
 
-public static "loadTickList"<T>(arg0: $ListTag$$Type, arg1: $Function$$Type<(StringJS), ((T)?)>, arg2: $ChunkPos$$Type, arg3: $Consumer$$Type<($SavedTick<(T)>)>): void
 public static "saveTick"(arg0: StringJS, arg1: $BlockPos$$Type, arg2: integer, arg3: $TickPriority$$Type): $CompoundTag
 public static "saveTick"<T>(arg0: $ScheduledTick$$Type<(T)>, arg1: $Function$$Type<(T), (StringJS)>, arg2: long): $CompoundTag
+public static "loadTickList"<T>(arg0: $ListTag$$Type, arg1: $Function$$Type<(StringJS), ((T)?)>, arg2: $ChunkPos$$Type, arg3: $Consumer$$Type<($SavedTick<(T)>)>): void
 public static "loadTick"<T>(arg0: $CompoundTag$$Type, arg1: $Function$$Type<(StringJS), ((T)?)>): $Optional<($SavedTick<(T)>)>
 public "priority"(): $TickPriority
 public "type"(): T
@@ -445,13 +445,13 @@ readonly "allContainers": $Long2ObjectMap<($LevelChunkTicks<(T)>)>
 
 constructor(arg0: $LongPredicate$$Type, arg1: $Supplier$$Type<($ProfilerFiller$$Type)>)
 
-public "copyAreaFrom"(arg0: $LevelTicks$$Type<(T)>, arg1: $BoundingBox$$Type, arg2: $Vec3i$$Type): void
-public "clearArea"(arg0: $BoundingBox$$Type): void
 public "willTickThisTick"(arg0: $BlockPos$$Type, arg1: T): boolean
 public "hasScheduledTick"(arg0: $BlockPos$$Type, arg1: T): boolean
 public "removeContainer"(arg0: $ChunkPos$$Type): void
-public "copyArea"(arg0: $BoundingBox$$Type, arg1: $Vec3i$$Type): void
+public "clearArea"(arg0: $BoundingBox$$Type): void
 public "tick"(arg0: long, arg1: integer, arg2: $BiConsumer$$Type<($BlockPos), (T)>): void
+public "copyArea"(arg0: $BoundingBox$$Type, arg1: $Vec3i$$Type): void
+public "copyAreaFrom"(arg0: $LevelTicks$$Type<(T)>, arg1: $BoundingBox$$Type, arg2: $Vec3i$$Type): void
 public "count"(): integer
 public "schedule"(arg0: $ScheduledTick$$Type<(T)>): void
 public "addContainer"(arg0: $ChunkPos$$Type, arg1: $LevelChunkTicks$$Type<(T)>): void

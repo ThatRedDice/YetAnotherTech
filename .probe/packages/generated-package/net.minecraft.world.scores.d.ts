@@ -49,9 +49,9 @@ static readonly "ALWAYS": $Team$Visibility
 static readonly "HIDE_FOR_OWN_TEAM": $Team$Visibility
 
 public static "getAllNames"(): (StringJS)[]
+public "getDisplayName"(): $Component
 public static "values"(): ($Team$Visibility)[]
 public static "valueOf"(arg0: StringJS): $Team$Visibility
-public "getDisplayName"(): $Component
 public static "byName"(arg0: StringJS): $Team$Visibility
 public static get "allNames"(): (StringJS)[]
 get "displayName"(): $Component
@@ -76,9 +76,9 @@ readonly "id": integer
 static readonly "PUSH_OWN_TEAM": $Team$CollisionRule
 static readonly "ALWAYS": $Team$CollisionRule
 
+public "getDisplayName"(): $Component
 public static "values"(): ($Team$CollisionRule)[]
 public static "valueOf"(arg0: StringJS): $Team$CollisionRule
-public "getDisplayName"(): $Component
 public static "byName"(arg0: StringJS): $Team$CollisionRule
 get "displayName"(): $Component
 }
@@ -125,24 +125,24 @@ import {$ObjectiveCriteria$RenderType, $ObjectiveCriteria$RenderType$$Type} from
 export class $Objective {
 constructor(arg0: $Scoreboard$$Type, arg1: StringJS, arg2: $ObjectiveCriteria$$Type, arg3: $Component$$Type, arg4: $ObjectiveCriteria$RenderType$$Type, arg5: boolean, arg6: $NumberFormat$$Type)
 
-public "setDisplayAutoUpdate"(arg0: boolean): void
-public "displayAutoUpdate"(): boolean
 public "numberFormatOrDefault"(arg0: $NumberFormat$$Type): $NumberFormat
 public "setRenderType"(arg0: $ObjectiveCriteria$RenderType$$Type): void
 public "getFormattedDisplayName"(): $Component
 public "getCriteria"(): $ObjectiveCriteria
+public "setDisplayAutoUpdate"(arg0: boolean): void
+public "displayAutoUpdate"(): boolean
 public "numberFormat"(): $NumberFormat
 public "setNumberFormat"(arg0: $NumberFormat$$Type): void
-public "getName"(): StringJS
 public "getDisplayName"(): $Component
+public "getName"(): StringJS
 public "getRenderType"(): $ObjectiveCriteria$RenderType
 public "getScoreboard"(): $Scoreboard
 public "setDisplayName"(arg0: $Component$$Type): void
 set "renderType"(value: $ObjectiveCriteria$RenderType$$Type)
 get "formattedDisplayName"(): $Component
 get "criteria"(): $ObjectiveCriteria
-get "name"(): StringJS
 get "displayName"(): $Component
+get "name"(): StringJS
 get "renderType"(): $ObjectiveCriteria$RenderType
 get "scoreboard"(): $Scoreboard
 set "displayName"(value: $Component$$Type)
@@ -216,8 +216,8 @@ export type $ScoreAccess$$Type = ($ScoreAccess);
  */
 export type $ScoreAccess$$Original = $ScoreAccess;}
 declare module "net.minecraft.world.scores.ScoreHolder" {
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$Component} from "net.minecraft.network.chat.Component"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 
 export interface $ScoreHolder$$Interface {
 
@@ -251,8 +251,8 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
 export class $ObjectiveCriteria$RenderType extends $Enum<($ObjectiveCriteria$RenderType)> implements $StringRepresentable$$Interface {
@@ -266,11 +266,11 @@ public "getId"(): StringJS
 public "getSerializedName"(): StringJS
 public static "byId"(arg0: StringJS): $ObjectiveCriteria$RenderType
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "id"(): StringJS
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
@@ -308,8 +308,8 @@ export type $ScoreboardSaveData$$Type = ($ScoreboardSaveData);
  */
 export type $ScoreboardSaveData$$Original = $ScoreboardSaveData;}
 declare module "net.minecraft.world.scores.PlayerTeam" {
-import {$Team, $Team$$Type} from "net.minecraft.world.scores.Team"
 import {$Collection} from "java.util.Collection"
+import {$Team, $Team$$Type} from "net.minecraft.world.scores.Team"
 import {$MutableComponent} from "net.minecraft.network.chat.MutableComponent"
 import {$Team$Visibility, $Team$Visibility$$Type} from "net.minecraft.world.scores.Team$Visibility"
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
@@ -338,8 +338,8 @@ public "getFormattedName"(arg0: $Component$$Type): $MutableComponent
 public "getNameTagVisibility"(): $Team$Visibility
 public "getCollisionRule"(): $Team$CollisionRule
 public "setColor"(arg0: $ChatFormatting$$Type): void
-public "getName"(): StringJS
 public "getDisplayName"(): $Component
+public "getName"(): StringJS
 public "getColor"(): $ChatFormatting
 public "getScoreboard"(): $Scoreboard
 public "isAllowFriendlyFire"(): boolean
@@ -361,8 +361,8 @@ set "collisionRule"(value: $Team$CollisionRule$$Type)
 get "nameTagVisibility"(): $Team$Visibility
 get "collisionRule"(): $Team$CollisionRule
 set "color"(value: $ChatFormatting$$Type)
-get "name"(): StringJS
 get "displayName"(): $Component
+get "name"(): StringJS
 get "color"(): $ChatFormatting
 get "scoreboard"(): $Scoreboard
 get "allowFriendlyFire"(): boolean
@@ -382,11 +382,11 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
-import {$IntFunction} from "java.util.function.IntFunction"
 import {$ChatFormatting$$Type} from "net.minecraft.ChatFormatting"
+import {$IntFunction} from "java.util.function.IntFunction"
 
 export class $DisplaySlot extends $Enum<($DisplaySlot)> implements $StringRepresentable$$Interface {
 static readonly "BELOW_NAME": $DisplaySlot
@@ -417,11 +417,11 @@ public static "valueOf"(arg0: StringJS): $DisplaySlot
 public "id"(): integer
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
 }
@@ -473,8 +473,8 @@ export type $Team$$Type = ($Team);
  */
 export type $Team$$Original = $Team;}
 declare module "net.minecraft.world.scores.Scoreboard" {
-import {$ObjectiveCriteria$$Type} from "net.minecraft.world.scores.criteria.ObjectiveCriteria"
 import {$Collection} from "java.util.Collection"
+import {$ObjectiveCriteria$$Type} from "net.minecraft.world.scores.criteria.ObjectiveCriteria"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$ObjectiveCriteria$RenderType$$Type} from "net.minecraft.world.scores.criteria.ObjectiveCriteria$RenderType"
 import {$Consumer$$Type} from "java.util.function.Consumer"

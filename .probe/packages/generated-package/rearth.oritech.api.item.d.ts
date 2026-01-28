@@ -2,9 +2,9 @@ declare module "rearth.oritech.api.item.containers.SimpleInventoryStorage" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$SyncType$$Type} from "rearth.oritech.api.networking.SyncType"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$List, $List$$Type} from "java.util.List"
 import {$UpdatableField$$Interface} from "rearth.oritech.api.networking.UpdatableField"
 import {$Predicate$$Type} from "java.util.function.Predicate"
-import {$List, $List$$Type} from "java.util.List"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Runnable$$Type} from "java.lang.Runnable"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
@@ -13,8 +13,8 @@ import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$LevelBlock} from "dev.latvian.mods.kubejs.level.LevelBlock"
 import {$Container, $Container$$Type, $Container$$Interface} from "net.minecraft.world.Container"
 import {$ItemPredicate$$Type} from "dev.latvian.mods.kubejs.item.ItemPredicate"
-import {$Item$$Type} from "net.minecraft.world.item.Item"
 import {$ItemApi$InventoryStorage$$Interface} from "rearth.oritech.api.item.ItemApi$InventoryStorage"
+import {$Item$$Type} from "net.minecraft.world.item.Item"
 import {$Set$$Type} from "java.util.Set"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 
@@ -23,9 +23,9 @@ readonly "heldStacks": $NonNullList<($ItemStack)>
 
 constructor(arg0: integer, arg1: $Runnable$$Type)
 
-public "getSlotCount"(): integer
 public "setItem"(arg0: integer, arg1: $ItemStack$$Type): void
 public "clearContent"(): void
+public "getSlotCount"(): integer
 public "useDeltaOnly"(arg0: $SyncType$$Type): boolean
 public "getDeltaData"(): $List<($ItemStack)>
 public "getDeltaCodec"(): $StreamCodec<($ByteBuf), ($List<($ItemStack)>)>
@@ -128,11 +128,11 @@ get "slotCount"(): integer
 }
 
 export class $ItemApi$InventoryStorage implements $ItemApi$InventoryStorage$$Interface {
+ "supportsExtraction"(): boolean
+ "supportsInsertion"(): boolean
  "getSlotCount"(): integer
  "insertToSlot"(arg0: $ItemStack$$Type, arg1: integer, arg2: boolean): integer
  "extractFromSlot"(arg0: $ItemStack$$Type, arg1: integer, arg2: boolean): integer
- "supportsExtraction"(): boolean
- "supportsInsertion"(): boolean
  "update"(): void
  "extract"(arg0: $ItemStack$$Type, arg1: boolean): integer
  "insert"(arg0: $ItemStack$$Type, arg1: boolean): integer

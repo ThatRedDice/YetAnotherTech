@@ -7,8 +7,8 @@ import {$BaseBlock} from "com.supermartijn642.core.block.BaseBlock"
 import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -21,8 +21,8 @@ import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$EntityHoldingBlock$$Interface} from "com.supermartijn642.core.block.EntityHoldingBlock"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
-import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
+import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -78,8 +78,8 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
 export class $EntangledBlock$State extends $Enum<($EntangledBlock$State)> implements $StringRepresentable$$Interface {
@@ -92,11 +92,11 @@ public static "valueOf"(name: StringJS): $EntangledBlock$State
 public "isBound"(): boolean
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "bound"(): boolean
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
@@ -142,16 +142,16 @@ import {$Map} from "java.util.Map"
 import {$BaseItem$InteractionFeedback} from "com.supermartijn642.core.item.BaseItem$InteractionFeedback"
 import {$BaseItem} from "com.supermartijn642.core.item.BaseItem"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$DataComponentType} from "net.minecraft.core.component.DataComponentType"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BaseItem$ItemUseResult} from "com.supermartijn642.core.item.BaseItem$ItemUseResult"
+import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$EntangledBinderItem$BinderTarget} from "com.supermartijn642.entangled.EntangledBinderItem$BinderTarget"
 
 export class $EntangledBinderItem extends $BaseItem {

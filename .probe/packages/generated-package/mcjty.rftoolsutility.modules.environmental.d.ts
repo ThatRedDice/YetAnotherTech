@@ -1,15 +1,15 @@
 declare module "mcjty.rftoolsutility.modules.environmental.recipes.SyringeBasedRecipe" {
 import {$CraftingInput$$Type} from "net.minecraft.world.item.crafting.CraftingInput"
-import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$BaseShapedRecipe} from "mcjty.lib.crafting.BaseShapedRecipe"
 import {$ShapedRecipePattern, $ShapedRecipePattern$$Type} from "net.minecraft.world.item.crafting.ShapedRecipePattern"
-import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$Ingredient$$Type} from "net.minecraft.world.item.crafting.Ingredient"
+import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$ShapedRecipe$$Type} from "net.minecraft.world.item.crafting.ShapedRecipe"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$NonNullList$$Type} from "net.minecraft.core.NonNullList"
+import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 
 export class $SyringeBasedRecipe extends $BaseShapedRecipe {
 readonly "result": $ItemStack
@@ -61,8 +61,8 @@ export type $SyringeRecipeType$$Type = ($SyringeRecipeType);
 export type $SyringeRecipeType$$Original = $SyringeRecipeType;}
 declare module "mcjty.rftoolsutility.modules.environmental.recipes.SyringeRecipeSerializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$SyringeBasedRecipe} from "mcjty.rftoolsutility.modules.environmental.recipes.SyringeBasedRecipe"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"

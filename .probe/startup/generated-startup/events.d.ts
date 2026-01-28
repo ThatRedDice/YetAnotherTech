@@ -6,8 +6,8 @@ import {$KeybindRegistryKubeEvent} from "dev.latvian.mods.kubejs.client.KeybindR
 import {$BlockModificationKubeEvent} from "dev.latvian.mods.kubejs.block.BlockModificationKubeEvent"
 import {$ItemModificationKubeEvent} from "dev.latvian.mods.kubejs.item.ItemModificationKubeEvent"
 import {$ItemModelPropertiesKubeEvent} from "dev.latvian.mods.kubejs.item.ItemModelPropertiesKubeEvent"
-import {$MenuScreenRegistryKubeEvent} from "dev.latvian.mods.kubejs.client.MenuScreenRegistryKubeEvent"
 import {$EntityRendererRegistryKubeEvent} from "dev.latvian.mods.kubejs.client.EntityRendererRegistryKubeEvent"
+import {$MenuScreenRegistryKubeEvent} from "dev.latvian.mods.kubejs.client.MenuScreenRegistryKubeEvent"
 import {$BlockEntityRendererRegistryKubeEvent} from "dev.latvian.mods.kubejs.client.BlockEntityRendererRegistryKubeEvent"
 import {$CreativeTabKubeEvent} from "dev.latvian.mods.kubejs.item.creativetab.CreativeTabKubeEvent"
 

@@ -197,16 +197,12 @@ import {$AttributeKey} from "io.netty.util.AttributeKey"
  * Loading the class using require() will not throw an error, but the class will be undefined.
  */
 export interface $Attribute$$Interface<T> {
-get "andRemove"(): T
 set "ifAbsent"(value: T)
+get "andRemove"(): T
 }
 
 export class $Attribute<T> implements $Attribute$$Interface {
-/**
- * 
- * @deprecated
- */
- "getAndRemove"(): T
+ "setIfAbsent"(arg0: T): T
 /**
  * 
  * @deprecated
@@ -217,7 +213,11 @@ export class $Attribute<T> implements $Attribute$$Interface {
  "key"(): $AttributeKey<(T)>
  "compareAndSet"(arg0: T, arg1: T): boolean
  "getAndSet"(arg0: T): T
- "setIfAbsent"(arg0: T): T
+/**
+ * 
+ * @deprecated
+ */
+ "getAndRemove"(): T
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_

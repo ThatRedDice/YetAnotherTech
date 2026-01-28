@@ -15,9 +15,9 @@ static readonly "CODEC": $Codec<($FluidIngredient)>
 
 constructor(delegate: $SizedFluidIngredient$$Type)
 
-public static "fromFluidStack"(arg0: $FluidStack$$Type): $FluidIngredient
 public "getRequiredAmount"(): integer
 public "getMatchingFluidStacks"(): $List<($FluidStack)>
+public static "fromFluidStack"(arg0: $FluidStack$$Type): $FluidIngredient
 public static "fromFluid"(arg0: $FlowingFluid$$Type, arg1: integer): $FluidIngredient
 public "delegate"(): $SizedFluidIngredient
 public "equals"(arg0: any): boolean
@@ -44,8 +44,8 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
 export class $ThreeState extends $Enum<($ThreeState)> implements $StringRepresentable$$Interface {
@@ -58,11 +58,11 @@ public static "values"(): ($ThreeState)[]
 public static "valueOf"(arg0: StringJS): $ThreeState
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
 }
@@ -76,13 +76,13 @@ export type $ThreeState$$Type = (("default") | ("always") | ("never"));
  */
 export type $ThreeState$$Original = $ThreeState;}
 declare module "com.tom.createores.util.IOBlockType" {
-import {$BlockCapability} from "net.neoforged.neoforge.capabilities.BlockCapability"
 import {$Keyable} from "com.mojang.serialization.Keyable"
+import {$BlockCapability} from "net.neoforged.neoforge.capabilities.BlockCapability"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Direction} from "net.minecraft.core.Direction"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
@@ -99,11 +99,11 @@ public static "values"(): ($IOBlockType)[]
 public static "valueOf"(arg0: StringJS): $IOBlockType
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "cap"(): $BlockCapability<(never), ($Direction)>
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS

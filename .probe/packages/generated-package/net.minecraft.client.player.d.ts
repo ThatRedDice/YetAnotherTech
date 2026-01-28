@@ -33,8 +33,8 @@ import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$CallbackInfo$$Type} from "org.spongepowered.asm.mixin.injection.callback.CallbackInfo"
 import {$Portal$Transition} from "net.minecraft.world.level.block.Portal$Transition"
-import {$ClientPacketListener, $ClientPacketListener$$Type} from "net.minecraft.client.multiplayer.ClientPacketListener"
 import {$SignBlockEntity$$Type} from "net.minecraft.world.level.block.entity.SignBlockEntity"
+import {$ClientPacketListener, $ClientPacketListener$$Type} from "net.minecraft.client.multiplayer.ClientPacketListener"
 import {$JigsawBlockEntity$$Type} from "net.minecraft.world.level.block.entity.JigsawBlockEntity"
 import {$SoundEvent$$Type} from "net.minecraft.sounds.SoundEvent"
 import {$WeakReference} from "java.lang.ref.WeakReference"
@@ -43,8 +43,8 @@ import {$CommandBlockEntity$$Type} from "net.minecraft.world.level.block.entity.
 import {$MoverType$$Type} from "net.minecraft.world.entity.MoverType"
 import {$ClickAction$$Type} from "net.minecraft.world.inventory.ClickAction"
 import {$SoundSource$$Type} from "net.minecraft.sounds.SoundSource"
-import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$EntityDataAccessor$$Type} from "net.minecraft.network.syncher.EntityDataAccessor"
+import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$Logger} from "org.slf4j.Logger"
 import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$Input, $Input$$Type} from "net.minecraft.client.player.Input"
@@ -57,8 +57,8 @@ import {$ClientLevel, $ClientLevel$$Type} from "net.minecraft.client.multiplayer
 import {$PlayerRideableJumping} from "net.minecraft.world.entity.PlayerRideableJumping"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
 import {$AbstractContainerMenu} from "net.minecraft.world.inventory.AbstractContainerMenu"
-import {$BaseCommandBlock$$Type} from "net.minecraft.world.level.BaseCommandBlock"
 import {$RecipeHolder$$Type} from "net.minecraft.world.item.crafting.RecipeHolder"
+import {$BaseCommandBlock$$Type} from "net.minecraft.world.level.BaseCommandBlock"
 import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$InventoryMenu} from "net.minecraft.world.inventory.InventoryMenu"
 import {$PlayerAccessor$$Interface} from "forge.me.thosea.badoptimizations.mixin.accessors.PlayerAccessor"
@@ -71,8 +71,8 @@ import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$AbstractClientPlayer} from "net.minecraft.client.player.AbstractClientPlayer"
 import {$Player} from "net.minecraft.world.entity.player.Player"
 import {$Vec3, $Vec3$$Type} from "net.minecraft.world.phys.Vec3"
-import {$Abilities} from "net.minecraft.world.entity.player.Abilities"
 import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
+import {$Abilities} from "net.minecraft.world.entity.player.Abilities"
 import {$CloseContainerTransfer$$Interface} from "io.wispforest.accessories.pond.CloseContainerTransfer"
 import {$FishingHook} from "net.minecraft.world.entity.projectile.FishingHook"
 import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState"
@@ -80,9 +80,9 @@ import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$Class} from "java.lang.Class"
 import {$Minecraft, $Minecraft$$Type} from "net.minecraft.client.Minecraft"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
-import {$GameType$$Type} from "net.minecraft.world.level.GameType"
-import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$ObjectOpenCustomHashSet} from "it.unimi.dsi.fastutil.objects.ObjectOpenCustomHashSet"
+import {$BlockPos} from "net.minecraft.core.BlockPos"
+import {$GameType$$Type} from "net.minecraft.world.level.GameType"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$StatsCounter, $StatsCounter$$Type} from "net.minecraft.stats.StatsCounter"
 import {$NotificationToastData$$Type} from "dev.latvian.mods.kubejs.util.NotificationToastData"
@@ -249,9 +249,10 @@ static readonly "BASE_SAFE_FALL_DISTANCE": integer
 
 constructor(arg0: $Minecraft$$Type, arg1: $ClientLevel$$Type, arg2: $ClientPacketListener$$Type, arg3: $StatsCounter$$Type, arg4: $ClientRecipeBook$$Type, arg5: boolean, arg6: boolean)
 
-public "move"(arg0: $MoverType$$Type, arg1: $Vec3$$Type): void
 public "tick"(): void
+public "move"(arg0: $MoverType$$Type, arg1: $Vec3$$Type): void
 public "drop"(arg0: boolean): boolean
+public "isSuppressingSlidingDownLadder"(): boolean
 public "shouldShowDeathScreen"(): boolean
 public "respawn"(): void
 public "isUsingItem"(): boolean
@@ -263,7 +264,6 @@ public "isLocalPlayer"(): boolean
 public "isUnderWater"(): boolean
 public "isTextFilteringEnabled"(): boolean
 public "getViewXRot"(arg0: float): float
-public "isSuppressingSlidingDownLadder"(): boolean
 public "attack"(arg0: $DamageSource$$Type, arg1: float): boolean
 public "removeEffectNoUpdate"(arg0: $Holder$$Type<($MobEffect)>): $MobEffectInstance
 public "heal"(arg0: float): void
@@ -363,12 +363,12 @@ public static "dataOf"(arg0: $ChangeSubscriber$$Type<(never)>, arg1: $ChangeSubs
 public static "containsSubscriber"(arg0: $ChangeSubscriber$$Type<($ItemStack$$Type)>, arg1: integer, arg2: $ChangeSubscriber$$Type<($ItemStack$$Type)>, arg3: integer): boolean
 public static "forNameOnly"(arg0: StringJS): $ScoreHolder
 public static "fromGameProfile"(arg0: $GameProfile$$Type): $ScoreHolder
+get "suppressingSlidingDownLadder"(): boolean
 get "usingItem"(): boolean
 get "handsBusy"(): boolean
 get "localPlayer"(): boolean
 get "underWater"(): boolean
 get "textFilteringEnabled"(): boolean
-get "suppressingSlidingDownLadder"(): boolean
 get "effectiveAi"(): boolean
 get "usedItemHand"(): $InteractionHand
 get "shiftKeyDown"(): boolean
@@ -407,44 +407,44 @@ import {$HumanoidArm} from "net.minecraft.world.entity.HumanoidArm"
 import {$EntityRenderer} from "net.minecraft.client.renderer.entity.EntityRenderer"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
-import {$Trackable} from "dev.uncandango.alltheleaks.mixin.Trackable"
 import {$Level} from "net.minecraft.world.level.Level"
+import {$Trackable} from "dev.uncandango.alltheleaks.mixin.Trackable"
 import {$WeakReference} from "java.lang.ref.WeakReference"
 import {$Player} from "net.minecraft.world.entity.player.Player"
 import {$Vec3} from "net.minecraft.world.phys.Vec3"
 import {$Abilities} from "net.minecraft.world.entity.player.Abilities"
-import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$FishingHook} from "net.minecraft.world.entity.projectile.FishingHook"
+import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$Class} from "java.lang.Class"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
-import {$ObjectOpenCustomHashSet} from "it.unimi.dsi.fastutil.objects.ObjectOpenCustomHashSet"
 import {$Entity} from "net.minecraft.world.entity.Entity"
-import {$NotificationToastData$$Type} from "dev.latvian.mods.kubejs.util.NotificationToastData"
+import {$ObjectOpenCustomHashSet} from "it.unimi.dsi.fastutil.objects.ObjectOpenCustomHashSet"
 import {$ClientPlayerKJS$$Interface} from "dev.latvian.mods.kubejs.core.ClientPlayerKJS"
-import {$PlayerData} from "com.minecraftserverzone.weaponmaster.setup.playerdata.PlayerData"
+import {$NotificationToastData$$Type} from "dev.latvian.mods.kubejs.util.NotificationToastData"
 import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
+import {$PlayerData} from "com.minecraftserverzone.weaponmaster.setup.playerdata.PlayerData"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$Map} from "java.util.Map"
-import {$InteractionHand} from "net.minecraft.world.InteractionHand"
 import {$EntityDimensions} from "net.minecraft.world.entity.EntityDimensions"
+import {$InteractionHand} from "net.minecraft.world.InteractionHand"
 import {$PlayerInfo} from "net.minecraft.client.multiplayer.PlayerInfo"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
+import {$CallbackInfoReturnable$$Type} from "org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable"
 import {$PlayerSkin} from "net.minecraft.client.resources.PlayerSkin"
 import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
-import {$CallbackInfoReturnable$$Type} from "org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$PlayerStatsJS} from "dev.latvian.mods.kubejs.player.PlayerStatsJS"
 import {$ClientLevel, $ClientLevel$$Type} from "net.minecraft.client.multiplayer.ClientLevel"
 import {$AbstractContainerMenu} from "net.minecraft.world.inventory.AbstractContainerMenu"
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$Tag} from "net.minecraft.nbt.Tag"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$InventoryMenu} from "net.minecraft.world.inventory.InventoryMenu"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$AbstractClientPlayerAccessor$$Interface} from "dev.engine_room.flywheel.backend.mixin.AbstractClientPlayerAccessor"
 
 export class $AbstractClientPlayer extends $Player implements $ClientPlayerKJS$$Interface, $AbstractClientPlayerAccessor$$Interface {
@@ -586,11 +586,11 @@ public "tick"(): void
 public "isSpectator"(): boolean
 public "isCreative"(): boolean
 public "bo$getRenderer"(): $EntityRenderer
+public "getDeltaMovementLerped"(arg0: float): $Vec3
 public "getSkin"(): $PlayerSkin
 public "getFieldOfViewModifier"(): float
 public "handler$zbk000$immersive_aircraft$ia$getFieldOfViewModifier"(cir: $CallbackInfoReturnable$$Type): void
 public "flywheel$getPlayerInfo"(): $PlayerInfo
-public "getDeltaMovementLerped"(arg0: float): $Vec3
 public "isSelf"(): boolean
 public "self"(): $Entity
 public "notify"(notification: $NotificationToastData$$Type): void

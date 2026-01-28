@@ -24,8 +24,8 @@ export type $CachedObject$CachedObjectSource$$Type = ((arg0: $ResourceLocation, 
 export type $CachedObject$CachedObjectSource$$Original = $CachedObject$CachedObjectSource;}
 declare module "dev.shadowsoffire.placebo.util.DrawsOnLeft" {
 import {$AbstractContainerScreen, $AbstractContainerScreen$$Type} from "net.minecraft.client.gui.screens.inventory.AbstractContainerScreen"
-import {$GuiGraphics$$Type} from "net.minecraft.client.gui.GuiGraphics"
 import {$FormattedText$$Type} from "net.minecraft.network.chat.FormattedText"
+import {$GuiGraphics$$Type} from "net.minecraft.client.gui.GuiGraphics"
 import {$List$$Type} from "java.util.List"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 

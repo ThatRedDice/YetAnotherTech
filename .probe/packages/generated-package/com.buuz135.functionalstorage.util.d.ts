@@ -53,12 +53,12 @@ import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$List} from "java.util.List"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$Tag, $Tag$$Type} from "net.minecraft.nbt.Tag"
 import {$IFluidHandler} from "net.neoforged.neoforge.fluids.capability.IFluidHandler"
-import {$Tag$$Type} from "net.minecraft.nbt.Tag"
 import {$INBTSerializable$$Interface} from "net.neoforged.neoforge.common.util.INBTSerializable"
 import {$IItemHandler} from "net.neoforged.neoforge.items.IItemHandler"
-import {$StorageControllerTile$$Type} from "com.buuz135.functionalstorage.block.tile.StorageControllerTile"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$StorageControllerTile$$Type} from "com.buuz135.functionalstorage.block.tile.StorageControllerTile"
 
 export class $ConnectedDrawers implements $INBTSerializable$$Interface<($CompoundTag)> {
 constructor(arg0: $Level$$Type, arg1: $StorageControllerTile$$Type<(never)>)
@@ -68,18 +68,18 @@ public "getFluidHandlers"(): $List<($IFluidHandler)>
 public "rebuildShapes"(): void
 public "getConnectedDrawers"(): $List<(long)>
 public "getCachedVoxelShape"(): $VoxelShape
-public "getExtensions"(): integer
 public "setLevel"(arg0: $Level$$Type): void
+public "getExtensions"(): integer
 public "deserializeNBT"(arg0: $HolderLookup$Provider$$Type, arg1: $CompoundTag$$Type): void
 public "deserializeNBT"(arg0: $HolderLookup$Provider$$Type, arg1: $Tag$$Type): void
-public "serializeNBT"(arg0: $HolderLookup$Provider$$Type): $CompoundTag
+public "serializeNBT"(arg0: $HolderLookup$Provider$$Type): $Tag
 public "rebuild"(): void
 get "itemHandlers"(): $List<($IItemHandler)>
 get "fluidHandlers"(): $List<($IFluidHandler)>
 get "connectedDrawers"(): $List<(long)>
 get "cachedVoxelShape"(): $VoxelShape
-get "extensions"(): integer
 set "level"(value: $Level$$Type)
+get "extensions"(): integer
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -94,14 +94,14 @@ declare module "com.buuz135.functionalstorage.util.IWoodType" {
 import {$Block} from "net.minecraft.world.level.block.Block"
 
 export interface $IWoodType$$Interface {
-get "wood"(): $Block
 get "planks"(): $Block
+get "wood"(): $Block
 get "name"(): StringJS
 }
 
 export class $IWoodType implements $IWoodType$$Interface {
- "getWood"(): $Block
  "getPlanks"(): $Block
+ "getWood"(): $Block
  "getName"(): StringJS
 }
 /**

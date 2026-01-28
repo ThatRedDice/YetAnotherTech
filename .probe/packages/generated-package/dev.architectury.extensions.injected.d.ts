@@ -1,6 +1,6 @@
 declare module "dev.architectury.extensions.injected.InjectedFluidExtension" {
-import {$Fluid} from "net.minecraft.world.level.material.Fluid"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
+import {$Fluid} from "net.minecraft.world.level.material.Fluid"
 import {$InjectedRegistryEntryExtension$$Interface} from "dev.architectury.extensions.injected.InjectedRegistryEntryExtension"
 import {$Holder} from "net.minecraft.core.Holder"
 

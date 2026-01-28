@@ -8,8 +8,8 @@ import {$StringReader$$Type} from "com.mojang.brigadier.StringReader"
 import {$SuggestionsBuilder$$Type} from "com.mojang.brigadier.suggestion.SuggestionsBuilder"
 
 export class $IntegerArgumentType implements $ArgumentType$$Interface<(integer)> {
-public "getMinimum"(): integer
 public "getExamples"(): $Collection<(StringJS)>
+public "getMinimum"(): integer
 public "getMaximum"(): integer
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
@@ -21,8 +21,8 @@ public static "integer"(arg0: integer, arg1: integer): $IntegerArgumentType
 public static "integer"(): $IntegerArgumentType
 public "listSuggestions"<S>(arg0: $CommandContext$$Type<(S)>, arg1: $SuggestionsBuilder$$Type): $CompletableFuture<($Suggestions)>
 public "parse"<S>(arg0: $StringReader$$Type, arg1: S): integer
-get "minimum"(): integer
 get "examples"(): $Collection<(StringJS)>
+get "minimum"(): integer
 get "maximum"(): integer
 }
 /**
@@ -47,8 +47,8 @@ export class $LongArgumentType implements $ArgumentType$$Interface<(long)> {
 public static "longArg"(arg0: long): $LongArgumentType
 public static "longArg"(): $LongArgumentType
 public static "longArg"(arg0: long, arg1: long): $LongArgumentType
-public "getMinimum"(): long
 public "getExamples"(): $Collection<(StringJS)>
+public "getMinimum"(): long
 public "getMaximum"(): long
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
@@ -57,8 +57,8 @@ public static "getLong"(arg0: $CommandContext$$Type<(never)>, arg1: StringJS): l
 public "parse"(arg0: $StringReader$$Type): any
 public "listSuggestions"<S>(arg0: $CommandContext$$Type<(S)>, arg1: $SuggestionsBuilder$$Type): $CompletableFuture<($Suggestions)>
 public "parse"<S>(arg0: $StringReader$$Type, arg1: S): long
-get "minimum"(): long
 get "examples"(): $Collection<(StringJS)>
+get "minimum"(): long
 get "maximum"(): long
 }
 /**
@@ -108,11 +108,11 @@ public static "greedyString"(): $StringArgumentType
 public static "escapeIfRequired"(arg0: StringJS): StringJS
 public "getExamples"(): $Collection<(StringJS)>
 public static "word"(): $StringArgumentType
+public static "getString"(arg0: $CommandContext$$Type<(never)>, arg1: StringJS): StringJS
 public "toString"(): StringJS
 public "parse"(arg0: $StringReader$$Type): any
 public "getType"(): $StringArgumentType$StringType
 public static "string"(): $StringArgumentType
-public static "getString"(arg0: $CommandContext$$Type<(never)>, arg1: StringJS): StringJS
 public "listSuggestions"<S>(arg0: $CommandContext$$Type<(S)>, arg1: $SuggestionsBuilder$$Type): $CompletableFuture<($Suggestions)>
 public "parse"<S>(arg0: $StringReader$$Type, arg1: S): StringJS
 get "examples"(): $Collection<(StringJS)>
@@ -140,8 +140,8 @@ export class $DoubleArgumentType implements $ArgumentType$$Interface<(double)> {
 public static "doubleArg"(arg0: double): $DoubleArgumentType
 public static "doubleArg"(): $DoubleArgumentType
 public static "doubleArg"(arg0: double, arg1: double): $DoubleArgumentType
-public "getMinimum"(): double
 public "getExamples"(): $Collection<(StringJS)>
+public "getMinimum"(): double
 public "getMaximum"(): double
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
@@ -150,8 +150,8 @@ public static "getDouble"(arg0: $CommandContext$$Type<(never)>, arg1: StringJS):
 public "parse"(arg0: $StringReader$$Type): any
 public "listSuggestions"<S>(arg0: $CommandContext$$Type<(S)>, arg1: $SuggestionsBuilder$$Type): $CompletableFuture<($Suggestions)>
 public "parse"<S>(arg0: $StringReader$$Type, arg1: S): double
-get "minimum"(): double
 get "examples"(): $Collection<(StringJS)>
+get "minimum"(): double
 get "maximum"(): double
 }
 /**
@@ -176,8 +176,8 @@ export class $FloatArgumentType implements $ArgumentType$$Interface<(float)> {
 public static "floatArg"(arg0: float): $FloatArgumentType
 public static "floatArg"(): $FloatArgumentType
 public static "floatArg"(arg0: float, arg1: float): $FloatArgumentType
-public "getMinimum"(): float
 public "getExamples"(): $Collection<(StringJS)>
+public "getMinimum"(): float
 public "getMaximum"(): float
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
@@ -186,8 +186,8 @@ public static "getFloat"(arg0: $CommandContext$$Type<(never)>, arg1: StringJS): 
 public "parse"(arg0: $StringReader$$Type): any
 public "listSuggestions"<S>(arg0: $CommandContext$$Type<(S)>, arg1: $SuggestionsBuilder$$Type): $CompletableFuture<($Suggestions)>
 public "parse"<S>(arg0: $StringReader$$Type, arg1: S): float
-get "minimum"(): float
 get "examples"(): $Collection<(StringJS)>
+get "minimum"(): float
 get "maximum"(): float
 }
 /**

@@ -3,8 +3,8 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 import {$TextColor} from "net.minecraft.network.chat.TextColor"
 
@@ -19,17 +19,17 @@ static readonly "TOGGLE_RENDER": $ConfigurationToolItem$ConfigurationAction
 public static "values"(): ($ConfigurationToolItem$ConfigurationAction)[]
 public static "valueOf"(arg0: StringJS): $ConfigurationToolItem$ConfigurationAction
 public "getMax"(): integer
-public "getColor"(): $TextColor
 public "getSerializedName"(): StringJS
+public "getColor"(): $TextColor
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "max"(): integer
-get "color"(): $TextColor
 get "serializedName"(): StringJS
+get "color"(): $TextColor
 get "remappedEnumConstantName"(): StringJS
 }
 /**
@@ -45,8 +45,8 @@ declare module "com.buuz135.functionalstorage.item.FSItem" {
 import {$BasicItem} from "com.hrznstudio.titanium.item.BasicItem"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 
 export class $FSItem extends $BasicItem {
@@ -75,8 +75,8 @@ import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$UpgradeItem} from "com.buuz135.functionalstorage.item.UpgradeItem"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$StorageUpgradeItem$StorageTier$$Type} from "com.buuz135.functionalstorage.item.StorageUpgradeItem$StorageTier"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Component} from "net.minecraft.network.chat.Component"
 
@@ -108,8 +108,8 @@ declare module "com.buuz135.functionalstorage.item.ConfigurationToolItem" {
 import {$ConfigurationToolItem$ConfigurationAction} from "com.buuz135.functionalstorage.item.ConfigurationToolItem$ConfigurationAction"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$List$$Type} from "java.util.List"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$FSItem} from "com.buuz135.functionalstorage.item.FSItem"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
@@ -220,8 +220,8 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 import {$TextColor} from "net.minecraft.network.chat.TextColor"
 
@@ -232,16 +232,16 @@ static readonly "REMOVE": $LinkingToolItem$ActionMode
 
 public static "values"(): ($LinkingToolItem$ActionMode)[]
 public static "valueOf"(arg0: StringJS): $LinkingToolItem$ActionMode
-public "getColor"(): $TextColor
 public "getSerializedName"(): StringJS
+public "getColor"(): $TextColor
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
-get "color"(): $TextColor
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
+get "color"(): $TextColor
 get "remappedEnumConstantName"(): StringJS
 }
 /**
@@ -260,8 +260,8 @@ import {$Codec} from "com.mojang.serialization.Codec"
 import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$DataComponentType$$Type} from "net.minecraft.core.component.DataComponentType"
-import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$IItemHandler$$Type} from "net.neoforged.neoforge.items.IItemHandler"
+import {$MapCodec} from "com.mojang.serialization.MapCodec"
 
 export interface $SizeProvider$$Interface {
 }
@@ -270,12 +270,12 @@ export class $SizeProvider implements $SizeProvider$$Interface {
 static readonly "CODEC": $Codec<($SizeProvider)>
 static readonly "REGISTRY": $BiMap<(StringJS), ($MapCodec<($SizeProvider)>)>
 
-static "calculateAsFactor"(arg0: $IItemHandler$$Type, arg1: $Supplier$$Type<($DataComponentType$$Type<($SizeProvider$$Type)>)>, arg2: float, arg3: ($ItemStack$$Type)[]): float
+static "calculate"(arg0: $IItemHandler$$Type, arg1: $Supplier$$Type<($DataComponentType$$Type<($SizeProvider$$Type)>)>, arg2: integer, arg3: ($ItemStack$$Type)[]): integer
+static "calculate"(arg0: $IItemHandler$$Type, arg1: $Supplier$$Type<($DataComponentType$$Type<($SizeProvider$$Type)>)>, arg2: integer): integer
 static "calculateAsFactor"(arg0: $IItemHandler$$Type, arg1: $Supplier$$Type<($DataComponentType$$Type<($SizeProvider$$Type)>)>, arg2: float): float
+static "calculateAsFactor"(arg0: $IItemHandler$$Type, arg1: $Supplier$$Type<($DataComponentType$$Type<($SizeProvider$$Type)>)>, arg2: float, arg3: ($ItemStack$$Type)[]): float
  "applyBaseModifier"(arg0: float): float
  "applyFactorModifier"(arg0: float): float
-static "calculate"(arg0: $IItemHandler$$Type, arg1: $Supplier$$Type<($DataComponentType$$Type<($SizeProvider$$Type)>)>, arg2: integer): integer
-static "calculate"(arg0: $IItemHandler$$Type, arg1: $Supplier$$Type<($DataComponentType$$Type<($SizeProvider$$Type)>)>, arg2: integer, arg3: ($ItemStack$$Type)[]): integer
  "codec"(): $MapCodec<($SizeProvider)>
  "getTooltip"(arg0: $Component$$Type): $Component
 }
@@ -289,20 +289,20 @@ export type $SizeProvider$$Type = ($SizeProvider);
  */
 export type $SizeProvider$$Original = $SizeProvider;}
 declare module "com.buuz135.functionalstorage.item.UpgradeItem" {
-import {$Map} from "java.util.Map"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$Map} from "java.util.Map"
 import {$ControllableDrawerTile$$Type} from "com.buuz135.functionalstorage.block.tile.ControllableDrawerTile"
 import {$List$$Type} from "java.util.List"
-import {$FunctionalUpgradeBehavior$$Type} from "com.buuz135.functionalstorage.item.component.FunctionalUpgradeBehavior"
+import {$SlotAccess$$Type} from "net.minecraft.world.entity.SlotAccess"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
-import {$SlotAccess$$Type} from "net.minecraft.world.entity.SlotAccess"
-import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$FunctionalUpgradeBehavior$$Type} from "com.buuz135.functionalstorage.item.component.FunctionalUpgradeBehavior"
 import {$FSItem} from "com.buuz135.functionalstorage.item.FSItem"
+import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
+import {$FacingUtil$Sideness} from "com.hrznstudio.titanium.util.FacingUtil$Sideness"
 import {$Slot$$Type} from "net.minecraft.world.inventory.Slot"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$FacingUtil$Sideness} from "com.hrznstudio.titanium.util.FacingUtil$Sideness"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$ClickAction$$Type} from "net.minecraft.world.inventory.ClickAction"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
@@ -320,17 +320,17 @@ static readonly "BASE_ATTACK_SPEED_ID": $ResourceLocation
 static readonly "ABSOLUTE_MAX_STACK_SIZE": integer
 static readonly "BY_BLOCK": $Map<($Block), ($Item)>
 
-constructor(arg0: $Item$Properties$$Type, arg1: $UpgradeItem$Type$$Type)
 constructor(arg0: $FunctionalUpgradeBehavior$$Type)
+constructor(arg0: $Item$Properties$$Type, arg1: $UpgradeItem$Type$$Type)
 
 public "hasTooltipDetails"(arg0: $BasicItem$Key$$Type): boolean
 public "addTooltipDetails"(arg0: $BasicItem$Key$$Type, arg1: $ItemStack$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: boolean): void
+public "overrideOtherStackedOnMe"(arg0: $ItemStack$$Type, arg1: $ItemStack$$Type, arg2: $Slot$$Type, arg3: $ClickAction$$Type, arg4: $Player$$Type, arg5: $SlotAccess$$Type): boolean
+public "onCraftedBy"(arg0: $ItemStack$$Type, arg1: $Level$$Type, arg2: $Player$$Type): void
+public static "getFacingRelativeVertical"(arg0: $Direction$$Type, arg1: $Direction$$Type, arg2: $Direction$$Type): $FacingUtil$Sideness
 public static "getRelativeDirectionVertical"(arg0: $Direction$$Type, arg1: $Direction$$Type, arg2: $Direction$$Type): $MutableComponent
 public static "isDirectionUpgrade"(arg0: $Item$$Type): boolean
 public static "getRelativeDirection"(arg0: $Direction$$Type, arg1: $Direction$$Type): $MutableComponent
-public static "getFacingRelativeVertical"(arg0: $Direction$$Type, arg1: $Direction$$Type, arg2: $Direction$$Type): $FacingUtil$Sideness
-public "overrideOtherStackedOnMe"(arg0: $ItemStack$$Type, arg1: $ItemStack$$Type, arg2: $Slot$$Type, arg3: $ClickAction$$Type, arg4: $Player$$Type, arg5: $SlotAccess$$Type): boolean
-public "onCraftedBy"(arg0: $ItemStack$$Type, arg1: $Level$$Type, arg2: $Player$$Type): void
 public "getDescription"(arg0: $ItemStack$$Type, arg1: $ControllableDrawerTile$$Type<(never)>): $Component
 public "getType"(): $UpgradeItem$Type
 public static "getDirection"(arg0: $ItemStack$$Type): $Direction
@@ -369,8 +369,8 @@ export type $UpgradeItem$Type$$Original = $UpgradeItem$Type;}
 declare module "com.buuz135.functionalstorage.item.LinkingToolItem" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$List, $List$$Type} from "java.util.List"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$FSItem} from "com.buuz135.functionalstorage.item.FSItem"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
@@ -380,8 +380,8 @@ import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
-import {$Item} from "net.minecraft.world.item.Item"
 import {$LinkingToolItem$LinkingMode} from "com.buuz135.functionalstorage.item.LinkingToolItem$LinkingMode"
+import {$Item} from "net.minecraft.world.item.Item"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$AABB$$Type} from "net.minecraft.world.phys.AABB"
@@ -423,8 +423,8 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 import {$TextColor} from "net.minecraft.network.chat.TextColor"
 
@@ -435,16 +435,16 @@ static readonly "MULTIPLE": $LinkingToolItem$LinkingMode
 
 public static "values"(): ($LinkingToolItem$LinkingMode)[]
 public static "valueOf"(arg0: StringJS): $LinkingToolItem$LinkingMode
-public "getColor"(): $TextColor
 public "getSerializedName"(): StringJS
+public "getColor"(): $TextColor
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
-get "color"(): $TextColor
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
+get "color"(): $TextColor
 get "remappedEnumConstantName"(): StringJS
 }
 /**

@@ -1,13 +1,13 @@
 declare module "dev.ftb.mods.ftbteams.api.TeamManager" {
 import {$CompoundTag} from "net.minecraft.nbt.CompoundTag"
-import {$Color4I$$Type} from "dev.ftb.mods.ftblibrary.icon.Color4I"
-import {$Map} from "java.util.Map"
 import {$Collection} from "java.util.Collection"
+import {$Map} from "java.util.Map"
+import {$Color4I$$Type} from "dev.ftb.mods.ftblibrary.icon.Color4I"
 import {$Optional} from "java.util.Optional"
 import {$UUID, $UUID$$Type} from "java.util.UUID"
 import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
-import {$MinecraftServer} from "net.minecraft.server.MinecraftServer"
 import {$CommandSourceStack$$Type} from "net.minecraft.commands.CommandSourceStack"
+import {$MinecraftServer} from "net.minecraft.server.MinecraftServer"
 import {$Team} from "dev.ftb.mods.ftbteams.api.Team"
 
 export interface $TeamManager$$Interface {
@@ -53,21 +53,19 @@ import {$Collection} from "java.util.Collection"
 import {$UUID, $UUID$$Type} from "java.util.UUID"
 import {$List} from "java.util.List"
 import {$TeamRank$$Type} from "dev.ftb.mods.ftbteams.api.TeamRank"
-import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$SNBTCompoundTag} from "dev.ftb.mods.ftblibrary.snbt.SNBTCompoundTag"
+import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$TeamProperty$$Type} from "dev.ftb.mods.ftbteams.api.property.TeamProperty"
 import {$ServerPlayer} from "net.minecraft.server.level.ServerPlayer"
 import {$TeamPropertyCollection$$Type} from "dev.ftb.mods.ftbteams.api.property.TeamPropertyCollection"
-import {$MinecraftServer$$Type} from "net.minecraft.server.MinecraftServer"
 import {$CommandSourceStack$$Type} from "net.minecraft.commands.CommandSourceStack"
+import {$MinecraftServer$$Type} from "net.minecraft.server.MinecraftServer"
 import {$TeamManagerImpl$$Type} from "dev.ftb.mods.ftbteams.data.TeamManagerImpl"
 
 export class $AbstractTeam extends $AbstractTeamBase {
 constructor(manager: $TeamManagerImpl$$Type, id: $UUID$$Type)
 
-public "getOnlineRanked"(rank: $TeamRank$$Type): $List<($ServerPlayer)>
-public "declineInvitation"(source: $CommandSourceStack$$Type): integer
 public "markDirty"(): void
 public "sendMessage"(from: $UUID$$Type, text: $Component$$Type): void
 public "sendMessage"(senderId: $UUID$$Type, message: StringJS): void
@@ -77,6 +75,8 @@ public "syncOnePropertyToAll"<T>(server: $MinecraftServer$$Type, property: $Team
 public "syncOnePropertyToTeam"<T>(property: $TeamProperty$$Type<(T)>, value: T): void
 public "updatePropertiesFrom"(newProperties: $TeamPropertyCollection$$Type): void
 public "settings"<T>(source: $CommandSourceStack$$Type, key: $TeamProperty$$Type<(T)>, value: StringJS): integer
+public "getOnlineRanked"(rank: $TeamRank$$Type): $List<($ServerPlayer)>
+public "declineInvitation"(source: $CommandSourceStack$$Type): integer
 public "getOwner"(): $UUID
 public "deserializeNBT"(tag: $CompoundTag$$Type, provider: $HolderLookup$Provider$$Type): void
 public "serializeNBT"(provider: $HolderLookup$Provider$$Type): $SNBTCompoundTag
@@ -95,8 +95,8 @@ export type $AbstractTeam$$Type = ($AbstractTeam);
 export type $AbstractTeam$$Original = $AbstractTeam;}
 declare module "dev.ftb.mods.ftbteams.api.property.TeamProperty" {
 import {$ConfigGroup$$Type} from "dev.ftb.mods.ftblibrary.config.ConfigGroup"
-import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$TeamPropertyValue, $TeamPropertyValue$$Type} from "dev.ftb.mods.ftbteams.api.property.TeamPropertyValue"
+import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$TeamPropertyType} from "dev.ftb.mods.ftbteams.api.property.TeamPropertyType"
 import {$Optional} from "java.util.Optional"
 import {$RegistryFriendlyByteBuf$$Type} from "net.minecraft.network.RegistryFriendlyByteBuf"
@@ -171,14 +171,15 @@ import {$Team, $Team$$Interface} from "dev.ftb.mods.ftbteams.api.Team"
 import {$MinecraftServer$$Type} from "net.minecraft.server.MinecraftServer"
 
 export class $AbstractTeamBase implements $Team$$Interface {
-public "markDirty"(): void
 public "isMember"(uuid: $UUID$$Type): boolean
-public "getMessageHistory"(): $List<($TeamMessage)>
-public "getRankForPlayer"(playerId: $UUID$$Type): $TeamRank
+public "markDirty"(): void
 public "getPlayersByRank"(minRank: $TeamRank$$Type): $Map<($UUID), ($TeamRank)>
 public "getTypeTranslationKey"(): StringJS
 public "getColoredName"(): $Component
 public "createParty"(description: StringJS, color: $Color4I$$Type): $Team
+public "getTeamId"(): $UUID
+public "getMessageHistory"(): $List<($TeamMessage)>
+public "getRankForPlayer"(playerId: $UUID$$Type): $TeamRank
 public "isFreeToJoin"(): boolean
 public "getMaxMessageHistorySize"(): integer
 public "isAllyOrBetter"(profile: $UUID$$Type): boolean
@@ -186,9 +187,8 @@ public "isOfficerOrBetter"(profile: $UUID$$Type): boolean
 public "isInvited"(profile: $UUID$$Type): boolean
 public "addMessages"(messages: $Collection$$Type<($TeamMessage$$Type)>): void
 public "invalidateTeam"(): void
-public "getTeamId"(): $UUID
-public "isValid"(): boolean
 public "getDescription"(): StringJS
+public "getDisplayName"(): StringJS
 public "getName"(): $Component
 public "getProperty"<T>(property: $TeamProperty$$Type<(T)>): T
 public "equals"(o: any): boolean
@@ -198,7 +198,7 @@ public "setProperty"<T>(property: $TeamProperty$$Type<(T)>, value: T): void
 public "getProperties"(): $TeamPropertyCollection
 public "getId"(): $UUID
 public "getType"(): $TeamType
-public "getDisplayName"(): StringJS
+public "isValid"(): boolean
 public "addMessage"(message: $TeamMessage$$Type): void
 public "getShortName"(): StringJS
 public "removeMember"(id: $UUID$$Type): void
@@ -206,40 +206,40 @@ public "getMembers"(): $Set<($UUID)>
 public "addMember"(id: $UUID$$Type, rank: $TeamRank$$Type): void
 public "getColor"(): integer
 public "getExtraData"(): $CompoundTag
-public "sendMessage"(arg0: $UUID$$Type, arg1: $Component$$Type): void
 public "sendMessage"(arg0: $UUID$$Type, arg1: StringJS): void
-public "isPlayerTeam"(): boolean
-public "isPartyTeam"(): boolean
-public "isServerTeam"(): boolean
+public "sendMessage"(arg0: $UUID$$Type, arg1: $Component$$Type): void
 public "getTeamInfo"(): $List<($Component)>
 public "isClientTeam"(): boolean
 public "getOnlineMembers"(): $Collection<($ServerPlayer)>
 public "syncOnePropertyToAll"<T>(arg0: $MinecraftServer$$Type, arg1: $TeamProperty$$Type<(T)>, arg2: T): void
 public "syncOnePropertyToTeam"<T>(arg0: $TeamProperty$$Type<(T)>, arg1: T): void
+public "isPlayerTeam"(): boolean
+public "isPartyTeam"(): boolean
+public "isServerTeam"(): boolean
 public "getOwner"(): $UUID
-get "messageHistory"(): $List<($TeamMessage)>
 get "typeTranslationKey"(): StringJS
 get "coloredName"(): $Component
+get "teamId"(): $UUID
+get "messageHistory"(): $List<($TeamMessage)>
 get "freeToJoin"(): boolean
 get "maxMessageHistorySize"(): integer
-get "teamId"(): $UUID
-get "valid"(): boolean
 get "description"(): StringJS
+get "displayName"(): StringJS
 get "name"(): $Component
 get "properties"(): $TeamPropertyCollection
 get "id"(): $UUID
 get "type"(): $TeamType
-get "displayName"(): StringJS
+get "valid"(): boolean
 get "shortName"(): StringJS
 get "members"(): $Set<($UUID)>
 get "color"(): integer
 get "extraData"(): $CompoundTag
-get "playerTeam"(): boolean
-get "partyTeam"(): boolean
-get "serverTeam"(): boolean
 get "teamInfo"(): $List<($Component)>
 get "clientTeam"(): boolean
 get "onlineMembers"(): $Collection<($ServerPlayer)>
+get "playerTeam"(): boolean
+get "partyTeam"(): boolean
+get "serverTeam"(): boolean
 get "owner"(): $UUID
 }
 /**
@@ -279,8 +279,8 @@ import {$ArgumentType$$Interface} from "com.mojang.brigadier.arguments.ArgumentT
 import {$Collection} from "java.util.Collection"
 import {$Suggestions} from "com.mojang.brigadier.suggestion.Suggestions"
 import {$CompletableFuture} from "java.util.concurrent.CompletableFuture"
-import {$TeamProperty} from "dev.ftb.mods.ftbteams.api.property.TeamProperty"
 import {$StringReader$$Type} from "com.mojang.brigadier.StringReader"
+import {$TeamProperty} from "dev.ftb.mods.ftbteams.api.property.TeamProperty"
 import {$SuggestionsBuilder$$Type} from "com.mojang.brigadier.suggestion.SuggestionsBuilder"
 import {$CommandSourceStack$$Type} from "net.minecraft.commands.CommandSourceStack"
 
@@ -360,8 +360,8 @@ import {$AbstractTeam} from "dev.ftb.mods.ftbteams.data.AbstractTeam"
 import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Team$$Type} from "dev.ftb.mods.ftbteams.api.Team"
 import {$TeamManagerImpl$$Type} from "dev.ftb.mods.ftbteams.data.TeamManagerImpl"
 import {$ChatFormatting} from "net.minecraft.ChatFormatting"
@@ -375,16 +375,16 @@ public "createTeam"(manager: $TeamManagerImpl$$Type, id: $UUID$$Type): $Abstract
 public static "values"(): ($TeamType)[]
 public static "valueOf"(name: StringJS): $TeamType
 public "matches"(team: $Team$$Type): boolean
-public "getColor"(): $ChatFormatting
 public "getSerializedName"(): StringJS
+public "getColor"(): $ChatFormatting
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
-get "color"(): $ChatFormatting
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
+get "color"(): $ChatFormatting
 get "remappedEnumConstantName"(): StringJS
 }
 /**
@@ -397,11 +397,11 @@ export type $TeamType$$Type = (("player") | ("party") | ("server"));
  */
 export type $TeamType$$Original = $TeamType;}
 declare module "dev.ftb.mods.ftbteams.api.property.TeamPropertyType" {
-import {$TeamPropertyType$FromNet$$Type} from "dev.ftb.mods.ftbteams.api.property.TeamPropertyType$FromNet"
 import {$BigInteger} from "java.math.BigInteger"
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
-import {$Map} from "java.util.Map"
+import {$TeamPropertyType$FromNet$$Type} from "dev.ftb.mods.ftbteams.api.property.TeamPropertyType$FromNet"
 import {$Color4I} from "dev.ftb.mods.ftblibrary.icon.Color4I"
+import {$Map} from "java.util.Map"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$RegistryFriendlyByteBuf$$Type} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$TeamProperty, $TeamProperty$$Type} from "dev.ftb.mods.ftbteams.api.property.TeamProperty"
 import {$List} from "java.util.List"
@@ -444,16 +444,16 @@ import {$Optional} from "java.util.Optional"
 import {$UUID, $UUID$$Type} from "java.util.UUID"
 import {$PlayerTeam} from "dev.ftb.mods.ftbteams.data.PlayerTeam"
 import {$PartyTeam} from "dev.ftb.mods.ftbteams.data.PartyTeam"
-import {$Component} from "net.minecraft.network.chat.Component"
 import {$SNBTCompoundTag} from "dev.ftb.mods.ftblibrary.snbt.SNBTCompoundTag"
+import {$Component} from "net.minecraft.network.chat.Component"
 import {$AbstractTeam, $AbstractTeam$$Type} from "dev.ftb.mods.ftbteams.data.AbstractTeam"
 import {$TeamManager$$Interface} from "dev.ftb.mods.ftbteams.api.TeamManager"
 import {$LevelResource} from "net.minecraft.world.level.storage.LevelResource"
 import {$Color4I$$Type} from "dev.ftb.mods.ftblibrary.icon.Color4I"
 import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
-import {$Team, $Team$$Type} from "dev.ftb.mods.ftbteams.api.Team"
-import {$MinecraftServer, $MinecraftServer$$Type} from "net.minecraft.server.MinecraftServer"
 import {$CommandSourceStack$$Type} from "net.minecraft.commands.CommandSourceStack"
+import {$MinecraftServer, $MinecraftServer$$Type} from "net.minecraft.server.MinecraftServer"
+import {$Team, $Team$$Type} from "dev.ftb.mods.ftbteams.api.Team"
 
 export class $TeamManagerImpl implements $TeamManager$$Interface {
 static readonly "FOLDER_NAME": $LevelResource
@@ -461,12 +461,7 @@ static "INSTANCE": $TeamManagerImpl
 
 constructor(s: $MinecraftServer$$Type)
 
-public "getTeamNameMap"(): $Map<(StringJS), ($Team)>
-public "getPersonalTeamForPlayerID"(uuid: $UUID$$Type): $PlayerTeam
-public "getPlayerName"(id: $UUID$$Type): $Component
 public "markDirty"(): void
-public "playerLoggedIn"(player: $ServerPlayer$$Type, id: $UUID$$Type, name: StringJS): void
-public "syncAllToPlayer"(player: $ServerPlayer$$Type, selfTeam: $AbstractTeam$$Type): void
 public "playerLoggedOut"(player: $ServerPlayer$$Type): void
 public "syncToAll"(...teams: ($Team$$Type)[]): void
 public "isChatRedirected"(player: $ServerPlayer$$Type): boolean
@@ -484,6 +479,11 @@ public "setChatRedirected"(player: $ServerPlayer$$Type, redirect: boolean): void
 public "getTeamMap"(): $Map<($UUID), ($AbstractTeam)>
 public "createParty"(player: $ServerPlayer$$Type, name: StringJS): $PartyTeam
 public "createParty"(playerId: $UUID$$Type, player: $ServerPlayer$$Type, name: StringJS, description: StringJS, color: $Color4I$$Type): $PartyTeam
+public "playerLoggedIn"(player: $ServerPlayer$$Type, id: $UUID$$Type, name: StringJS): void
+public "getPlayerName"(id: $UUID$$Type): $Component
+public "syncAllToPlayer"(player: $ServerPlayer$$Type, selfTeam: $AbstractTeam$$Type): void
+public "getTeamNameMap"(): $Map<(StringJS), ($Team)>
+public "getPersonalTeamForPlayerID"(uuid: $UUID$$Type): $PlayerTeam
 public "load"(): void
 public "getId"(): $UUID
 public "saveNow"(): void
@@ -491,10 +491,10 @@ public "getServer"(): $MinecraftServer
 public "serializeNBT"(): $SNBTCompoundTag
 public "getExtraData"(): $CompoundTag
 public "createServerTeam"(commandSourceStack: $CommandSourceStack$$Type, name: StringJS, description: StringJS, color: $Color4I$$Type): $Team
-get "teamNameMap"(): $Map<(StringJS), ($Team)>
 get "teams"(): $Collection<($Team)>
 get "knownPlayerTeams"(): $Map<($UUID), ($Team)>
 get "teamMap"(): $Map<($UUID), ($AbstractTeam)>
+get "teamNameMap"(): $Map<(StringJS), ($Team)>
 get "id"(): $UUID
 get "server"(): $MinecraftServer
 get "extraData"(): $CompoundTag
@@ -510,47 +510,47 @@ export type $TeamManagerImpl$$Type = ($TeamManagerImpl);
 export type $TeamManagerImpl$$Original = $TeamManagerImpl;}
 declare module "dev.ftb.mods.ftbteams.data.PlayerTeam" {
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
-import {$Collection} from "java.util.Collection"
 import {$UUID, $UUID$$Type} from "java.util.UUID"
+import {$List} from "java.util.List"
 import {$TeamRank} from "dev.ftb.mods.ftbteams.api.TeamRank"
-import {$AbstractTeam, $AbstractTeam$$Type} from "dev.ftb.mods.ftbteams.data.AbstractTeam"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$AbstractTeam, $AbstractTeam$$Type} from "dev.ftb.mods.ftbteams.data.AbstractTeam"
 import {$TeamType} from "dev.ftb.mods.ftbteams.data.TeamType"
 import {$Set$$Type} from "java.util.Set"
 import {$KnownClientPlayer} from "dev.ftb.mods.ftbteams.api.client.KnownClientPlayer"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$ServerPlayer, $ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$Team} from "dev.ftb.mods.ftbteams.api.Team"
 import {$TeamManagerImpl$$Type} from "dev.ftb.mods.ftbteams.data.TeamManagerImpl"
 
 export class $PlayerTeam extends $AbstractTeam {
 constructor(manager: $TeamManagerImpl$$Type, id: $UUID$$Type)
 
+public "updatePresence"(): void
+public "getOnlineMembers"(): $List<($ServerPlayer)>
+public "createParty"(playerId: $UUID$$Type, player: $ServerPlayer$$Type, name: StringJS, description: StringJS, color: integer, invited: $Set$$Type<($GameProfile$$Type)>): $Team
+public "createClientPlayer"(): $KnownClientPlayer
+public "getTeamId"(): $UUID
+public "isPlayerTeam"(): boolean
+public "getRankForPlayer"(playerId: $UUID$$Type): $TeamRank
+public "isOnline"(): boolean
+public "getPlayerName"(): StringJS
 public "setOnline"(online: boolean): void
 public "getEffectiveTeam"(): $AbstractTeam
 public "setEffectiveTeam"(effectiveTeam: $AbstractTeam$$Type): void
 public "hasTeam"(): boolean
-public "getPlayerName"(): StringJS
-public "updatePresence"(): void
-public "isPlayerTeam"(): boolean
-public "getRankForPlayer"(playerId: $UUID$$Type): $TeamRank
-public "getOnlineMembers"(): $Collection
-public "createParty"(playerId: $UUID$$Type, player: $ServerPlayer$$Type, name: StringJS, description: StringJS, color: integer, invited: $Set$$Type<($GameProfile$$Type)>): $Team
-public "createClientPlayer"(): $KnownClientPlayer
-public "getTeamId"(): $UUID
-public "isOnline"(): boolean
 public "getType"(): $TeamType
 public "deserializeNBT"(tag: $CompoundTag$$Type, provider: $HolderLookup$Provider$$Type): void
 public "getPlayer"(): $ServerPlayer
 public "setPlayerName"(playerName: StringJS): void
+get "onlineMembers"(): $List<($ServerPlayer)>
+get "teamId"(): $UUID
+get "playerTeam"(): boolean
+get "online"(): boolean
+get "playerName"(): StringJS
 set "online"(value: boolean)
 get "effectiveTeam"(): $AbstractTeam
 set "effectiveTeam"(value: $AbstractTeam$$Type)
-get "playerName"(): StringJS
-get "playerTeam"(): boolean
-get "onlineMembers"(): $Collection
-get "teamId"(): $UUID
-get "online"(): boolean
 get "type"(): $TeamType
 get "player"(): $ServerPlayer
 set "playerName"(value: StringJS)
@@ -568,13 +568,13 @@ declare module "dev.ftb.mods.ftbteams.api.TeamRank" {
 import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$Icon} from "dev.ftb.mods.ftblibrary.icon.Icon"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
-import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Optional} from "java.util.Optional"
+import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
-import {$Component} from "net.minecraft.network.chat.Component"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
+import {$Component} from "net.minecraft.network.chat.Component"
 import {$NameMap} from "dev.ftb.mods.ftblibrary.config.NameMap"
 
 export class $TeamRank extends $Enum<($TeamRank)> implements $StringRepresentable$$Interface {
@@ -587,34 +587,34 @@ static readonly "OFFICER": $TeamRank
 static readonly "NONE": $TeamRank
 static readonly "MEMBER": $TeamRank
 
-public "isEnemyOrWorse"(): boolean
-public "isNoneOrBetter"(): boolean
 public "isMemberOrBetter"(): boolean
 public "isAllyOrBetter"(): boolean
 public "isOfficerOrBetter"(): boolean
 public "isInvitedOrBetter"(): boolean
 public "isOwner"(): boolean
+public "getDisplayName"(): $Component
+public "isEnemyOrWorse"(): boolean
+public "isNoneOrBetter"(): boolean
 public static "values"(): ($TeamRank)[]
 public static "valueOf"(name: StringJS): $TeamRank
-public "getDisplayName"(): $Component
 public "getIcon"(): $Optional<($Icon)>
 public "isAtLeast"(rank: $TeamRank$$Type): boolean
 public "getSerializedName"(): StringJS
 public "getPower"(): integer
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
-get "enemyOrWorse"(): boolean
-get "noneOrBetter"(): boolean
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "memberOrBetter"(): boolean
 get "allyOrBetter"(): boolean
 get "officerOrBetter"(): boolean
 get "invitedOrBetter"(): boolean
 get "owner"(): boolean
 get "displayName"(): $Component
+get "enemyOrWorse"(): boolean
+get "noneOrBetter"(): boolean
 get "icon"(): $Optional<($Icon)>
 get "serializedName"(): StringJS
 get "power"(): integer
@@ -689,9 +689,9 @@ import {$Record} from "java.lang.Record"
 export class $KnownClientPlayer extends $Record {
 constructor(id: $UUID$$Type, name: StringJS, online: boolean, teamId: $UUID$$Type, profile: $GameProfile$$Type, extraData: $CompoundTag$$Type)
 
-public "online"(): boolean
 public "isInternalTeam"(): boolean
 public "isOnlineAndNotInParty"(): boolean
+public "online"(): boolean
 public "extraData"(): $CompoundTag
 public "name"(): StringJS
 public "profile"(): $GameProfile
@@ -707,7 +707,7 @@ get "onlineAndNotInParty"(): boolean
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $KnownClientPlayer$$Type = ({"profile"?: $GameProfile$$Type, "online"?: boolean, "extraData"?: $CompoundTag$$Type, "name"?: StringJS, "teamId"?: $UUID$$Type, "id"?: $UUID$$Type}) | ([profile?: $GameProfile$$Type, online?: boolean, extraData?: $CompoundTag$$Type, name?: StringJS, teamId?: $UUID$$Type, id?: $UUID$$Type]);
+export type $KnownClientPlayer$$Type = ({"online"?: boolean, "extraData"?: $CompoundTag$$Type, "name"?: StringJS, "teamId"?: $UUID$$Type, "id"?: $UUID$$Type, "profile"?: $GameProfile$$Type}) | ([online?: boolean, extraData?: $CompoundTag$$Type, name?: StringJS, teamId?: $UUID$$Type, id?: $UUID$$Type, profile?: $GameProfile$$Type]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -729,21 +729,21 @@ import {$TeamPropertyCollection} from "dev.ftb.mods.ftbteams.api.property.TeamPr
 import {$MinecraftServer$$Type} from "net.minecraft.server.MinecraftServer"
 
 export interface $Team$$Interface {
-get "playerTeam"(): boolean
-get "partyTeam"(): boolean
-get "serverTeam"(): boolean
-get "messageHistory"(): $List<($TeamMessage)>
 get "teamInfo"(): $List<($Component)>
 get "typeTranslationKey"(): StringJS
 get "clientTeam"(): boolean
 get "onlineMembers"(): $Collection<($ServerPlayer)>
 get "coloredName"(): $Component
 get "teamId"(): $UUID
-get "valid"(): boolean
+get "playerTeam"(): boolean
+get "partyTeam"(): boolean
+get "serverTeam"(): boolean
+get "messageHistory"(): $List<($TeamMessage)>
 get "name"(): $Component
 get "properties"(): $TeamPropertyCollection
 get "id"(): $UUID
 get "owner"(): $UUID
+get "valid"(): boolean
 get "shortName"(): StringJS
 get "members"(): $Set<($UUID)>
 get "extraData"(): $CompoundTag
@@ -751,13 +751,8 @@ get "extraData"(): $CompoundTag
 
 export class $Team implements $Team$$Interface {
  "markDirty"(): void
- "sendMessage"(arg0: $UUID$$Type, arg1: $Component$$Type): void
  "sendMessage"(arg0: $UUID$$Type, arg1: StringJS): void
- "isPlayerTeam"(): boolean
- "isPartyTeam"(): boolean
- "isServerTeam"(): boolean
- "getMessageHistory"(): $List<($TeamMessage)>
- "getRankForPlayer"(arg0: $UUID$$Type): $TeamRank
+ "sendMessage"(arg0: $UUID$$Type, arg1: $Component$$Type): void
  "getTeamInfo"(): $List<($Component)>
  "getPlayersByRank"(arg0: $TeamRank$$Type): $Map<($UUID), ($TeamRank)>
  "getTypeTranslationKey"(): StringJS
@@ -768,13 +763,18 @@ export class $Team implements $Team$$Interface {
  "syncOnePropertyToAll"<T>(arg0: $MinecraftServer$$Type, arg1: $TeamProperty$$Type<(T)>, arg2: T): void
  "syncOnePropertyToTeam"<T>(arg0: $TeamProperty$$Type<(T)>, arg1: T): void
  "getTeamId"(): $UUID
- "isValid"(): boolean
+ "isPlayerTeam"(): boolean
+ "isPartyTeam"(): boolean
+ "isServerTeam"(): boolean
+ "getMessageHistory"(): $List<($TeamMessage)>
+ "getRankForPlayer"(arg0: $UUID$$Type): $TeamRank
  "getName"(): $Component
  "getProperty"<T>(arg0: $TeamProperty$$Type<(T)>): T
  "setProperty"<T>(arg0: $TeamProperty$$Type<(T)>, arg1: T): void
  "getProperties"(): $TeamPropertyCollection
  "getId"(): $UUID
  "getOwner"(): $UUID
+ "isValid"(): boolean
  "getShortName"(): StringJS
  "getMembers"(): $Set<($UUID)>
  "getExtraData"(): $CompoundTag
@@ -896,8 +896,8 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 import {$NameMap} from "dev.ftb.mods.ftblibrary.config.NameMap"
 
@@ -912,11 +912,11 @@ public static "values"(): ($PrivacyMode)[]
 public static "valueOf"(name: StringJS): $PrivacyMode
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
 }
@@ -935,19 +935,16 @@ import {$Collection, $Collection$$Type} from "java.util.Collection"
 import {$TeamType} from "dev.ftb.mods.ftbteams.data.TeamType"
 import {$UUID, $UUID$$Type} from "java.util.UUID"
 import {$TeamRank} from "dev.ftb.mods.ftbteams.api.TeamRank"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
+import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$AbstractTeam} from "dev.ftb.mods.ftbteams.data.AbstractTeam"
 import {$CommandSourceStack$$Type} from "net.minecraft.commands.CommandSourceStack"
-import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$TeamManagerImpl$$Type} from "dev.ftb.mods.ftbteams.data.TeamManagerImpl"
 
 export class $PartyTeam extends $AbstractTeam {
 constructor(manager: $TeamManagerImpl$$Type, id: $UUID$$Type)
 
-public "forceDisband"(from: $CommandSourceStack$$Type): integer
-public "listAllies"(source: $CommandSourceStack$$Type): integer
-public "leave"(id: $UUID$$Type): integer
 public "isPartyTeam"(): boolean
 public "getRankForPlayer"(playerId: $UUID$$Type): $TeamRank
 public "addAlly"(source: $CommandSourceStack$$Type, players: $Collection$$Type<($GameProfile$$Type)>): integer
@@ -958,8 +955,11 @@ public "transferOwnership"(from: $CommandSourceStack$$Type, toProfile: $GameProf
 public "invite"(inviter: $ServerPlayer$$Type, profiles: $Collection$$Type<($GameProfile$$Type)>): integer
 public "removeAlly"(source: $CommandSourceStack$$Type, players: $Collection$$Type<($GameProfile$$Type)>): integer
 public "isOwner"(profile: $UUID$$Type): boolean
-public "join"(player: $ServerPlayer$$Type): integer
+public "leave"(id: $UUID$$Type): integer
+public "forceDisband"(from: $CommandSourceStack$$Type): integer
+public "listAllies"(source: $CommandSourceStack$$Type): integer
 public "join"(player: $ServerPlayer$$Type, playerProfile: $GameProfile$$Type): integer
+public "join"(player: $ServerPlayer$$Type): integer
 public "getType"(): $TeamType
 public "getOwner"(): $UUID
 public "kick"(from: $CommandSourceStack$$Type, players: $Collection$$Type<($GameProfile$$Type)>): integer

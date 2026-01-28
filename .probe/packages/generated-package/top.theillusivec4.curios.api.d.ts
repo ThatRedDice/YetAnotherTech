@@ -37,8 +37,8 @@ import {$LootContext$$Type} from "net.minecraft.world.level.storage.loot.LootCon
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$UUID$$Type} from "java.util.UUID"
 import {$ICurio$DropRule} from "top.theillusivec4.curios.api.type.capability.ICurio$DropRule"
-import {$Multimap} from "com.google.common.collect.Multimap"
 import {$List, $List$$Type} from "java.util.List"
+import {$Multimap} from "com.google.common.collect.Multimap"
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Holder} from "net.minecraft.core.Holder"
@@ -59,26 +59,26 @@ get "stack"(): $ItemStack
 export class $ICurio implements $ICurio$$Interface {
  "canEquip"(arg0: $SlotContext$$Type): boolean
  "isEnderMask"(arg0: $SlotContext$$Type, arg1: $EnderMan$$Type): boolean
+ "curioTick"(arg0: $SlotContext$$Type): void
  "getSlotsTooltip"(arg0: $List$$Type<($Component$$Type)>, arg1: $Item$TooltipContext$$Type): $List<($Component)>
 /**
  * 
  * @deprecated
  */
  "getSlotsTooltip"(arg0: $List$$Type<($Component$$Type)>): $List<($Component)>
+static "playBreakAnimation"(arg0: $ItemStack$$Type, arg1: $LivingEntity$$Type): void
 /**
  * 
  * @deprecated
  */
  "getDropRule"(arg0: $SlotContext$$Type, arg1: $DamageSource$$Type, arg2: integer, arg3: boolean): $ICurio$DropRule
  "getDropRule"(arg0: $SlotContext$$Type, arg1: $DamageSource$$Type, arg2: boolean): $ICurio$DropRule
-static "playBreakAnimation"(arg0: $ItemStack$$Type, arg1: $LivingEntity$$Type): void
  "getAttributesTooltip"(arg0: $List$$Type<($Component$$Type)>, arg1: $Item$TooltipContext$$Type): $List<($Component)>
 /**
  * 
  * @deprecated
  */
  "getAttributesTooltip"(arg0: $List$$Type<($Component$$Type)>): $List<($Component)>
- "curioTick"(arg0: $SlotContext$$Type): void
  "onEquip"(arg0: $SlotContext$$Type, arg1: $ItemStack$$Type): void
  "onUnequip"(arg0: $SlotContext$$Type, arg1: $ItemStack$$Type): void
  "canUnequip"(arg0: $SlotContext$$Type): boolean
@@ -112,8 +112,8 @@ export type $ICurio$$Type = (() => $ItemStack$$Type);
 export type $ICurio$$Original = $ICurio;}
 declare module "top.theillusivec4.curios.api.event.SlotModifiersUpdatedEvent" {
 import {$LivingEvent} from "net.neoforged.neoforge.event.entity.living.LivingEvent"
-import {$Set, $Set$$Type} from "java.util.Set"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$Set, $Set$$Type} from "java.util.Set"
 
 export class $SlotModifiersUpdatedEvent extends $LivingEvent {
 constructor(arg0: $LivingEntity$$Type, arg1: $Set$$Type<(StringJS)>)
@@ -158,8 +158,8 @@ import {$LevelBlock} from "dev.latvian.mods.kubejs.level.LevelBlock"
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Container} from "net.minecraft.world.Container"
-import {$List} from "java.util.List"
 import {$ItemPredicate$$Type} from "dev.latvian.mods.kubejs.item.ItemPredicate"
+import {$List} from "java.util.List"
 import {$IItemHandlerModifiable$$Interface} from "net.neoforged.neoforge.items.IItemHandlerModifiable"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$IItemHandler} from "net.neoforged.neoforge.items.IItemHandler"
@@ -227,23 +227,23 @@ export type $IDynamicStackHandler$$Type = ($IDynamicStackHandler);
 export type $IDynamicStackHandler$$Original = $IDynamicStackHandler;}
 declare module "top.theillusivec4.curios.api.type.capability.ICuriosItemHandler" {
 import {$AttributeModifier, $AttributeModifier$$Type} from "net.minecraft.world.entity.ai.attributes.AttributeModifier"
+import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$LootContext$$Type} from "net.minecraft.world.level.storage.loot.LootContext"
 import {$Map, $Map$$Type} from "java.util.Map"
-import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$List} from "java.util.List"
 import {$Predicate$$Type} from "java.util.function.Predicate"
 import {$Multimap, $Multimap$$Type} from "com.google.common.collect.Multimap"
 import {$SlotResult} from "top.theillusivec4.curios.api.SlotResult"
 import {$ListTag, $ListTag$$Type} from "net.minecraft.nbt.ListTag"
-import {$ICurioStacksHandler, $ICurioStacksHandler$$Type} from "top.theillusivec4.curios.api.type.inventory.ICurioStacksHandler"
 import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
+import {$ICurioStacksHandler, $ICurioStacksHandler$$Type} from "top.theillusivec4.curios.api.type.inventory.ICurioStacksHandler"
 import {$AttributeModifier$Operation$$Type} from "net.minecraft.world.entity.ai.attributes.AttributeModifier$Operation"
 import {$IItemHandlerModifiable} from "net.neoforged.neoforge.items.IItemHandlerModifiable"
 import {$Item$$Type} from "net.minecraft.world.item.Item"
-import {$Set} from "java.util.Set"
 import {$LivingEntity} from "net.minecraft.world.entity.LivingEntity"
 import {$Tag, $Tag$$Type} from "net.minecraft.nbt.Tag"
+import {$Set} from "java.util.Set"
 import {$Logger} from "org.slf4j.Logger"
 
 export interface $ICuriosItemHandler$$Interface {
@@ -262,7 +262,6 @@ get "curios"(): $Map<(StringJS), ($ICurioStacksHandler)>
 export class $ICuriosItemHandler implements $ICuriosItemHandler$$Interface {
 static readonly "LOGGER": $Logger
 
- "saveInventory"(arg0: boolean): $ListTag
  "getStacksHandler"(arg0: StringJS): $Optional<($ICurioStacksHandler)>
  "isEquipped"(arg0: $Item$$Type): boolean
  "isEquipped"(arg0: $Predicate$$Type<($ItemStack)>): boolean
@@ -270,6 +269,14 @@ static readonly "LOGGER": $Logger
  "removeSlotModifiers"(arg0: $Multimap$$Type<(StringJS), ($AttributeModifier$$Type)>): void
  "clearSlotModifiers"(): void
  "clearCachedSlotModifiers"(): void
+ "setEquippedCurio"(arg0: StringJS, arg1: integer, arg2: $ItemStack$$Type): void
+ "findCurios"(...arg0: (StringJS)[]): $List<($SlotResult)>
+ "findCurios"(arg0: $Item$$Type): $List<($SlotResult)>
+ "findCurios"(arg0: $Predicate$$Type<($ItemStack)>): $List<($SlotResult)>
+ "findCurios"(arg0: boolean, ...arg1: (StringJS)[]): $List<($SlotResult)>
+ "findCurios"(arg0: $Predicate$$Type<($ItemStack)>, arg1: boolean, arg2: StringJS): $List<($SlotResult)>
+ "findCurio"(arg0: StringJS, arg1: integer): $Optional<($SlotResult)>
+ "findCurio"(arg0: StringJS, arg1: integer, arg2: boolean): $Optional<($SlotResult)>
 /**
  * 
  * @deprecated
@@ -290,14 +297,6 @@ static readonly "LOGGER": $Logger
  * @deprecated
  */
  "lockSlotType"(arg0: StringJS): void
- "setEquippedCurio"(arg0: StringJS, arg1: integer, arg2: $ItemStack$$Type): void
- "findCurios"(arg0: $Predicate$$Type<($ItemStack)>): $List<($SlotResult)>
- "findCurios"(arg0: $Item$$Type): $List<($SlotResult)>
- "findCurios"(arg0: $Predicate$$Type<($ItemStack)>, arg1: boolean, arg2: StringJS): $List<($SlotResult)>
- "findCurios"(...arg0: (StringJS)[]): $List<($SlotResult)>
- "findCurios"(arg0: boolean, ...arg1: (StringJS)[]): $List<($SlotResult)>
- "findCurio"(arg0: StringJS, arg1: integer, arg2: boolean): $Optional<($SlotResult)>
- "findCurio"(arg0: StringJS, arg1: integer): $Optional<($SlotResult)>
  "setCurios"(arg0: $Map$$Type<(StringJS), ($ICurioStacksHandler$$Type)>): void
  "getVisibleSlots"(): integer
  "isSlotActive"(arg0: StringJS, arg1: integer): boolean
@@ -312,6 +311,8 @@ static readonly "LOGGER": $Logger
  "addPermanentSlotModifier"(arg0: StringJS, arg1: $ResourceLocation$$Type, arg2: double, arg3: $AttributeModifier$Operation$$Type): void
  "addPermanentSlotModifiers"(arg0: $Multimap$$Type<(StringJS), ($AttributeModifier$$Type)>): void
  "removeSlotModifier"(arg0: StringJS, arg1: $ResourceLocation$$Type): void
+ "writeTag"(): $Tag
+ "readTag"(arg0: $Tag$$Type): void
 /**
  * 
  * @deprecated
@@ -327,8 +328,7 @@ static readonly "LOGGER": $Logger
  * @deprecated
  */
  "getFortuneBonus"(): integer
- "writeTag"(): $Tag
- "readTag"(arg0: $Tag$$Type): void
+ "saveInventory"(arg0: boolean): $ListTag
  "reset"(): void
  "getModifiers"(): $Multimap<(StringJS), ($AttributeModifier)>
  "getSlots"(): integer
@@ -357,9 +357,9 @@ import {$LootContext$$Type} from "net.minecraft.world.level.storage.loot.LootCon
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$UUID$$Type} from "java.util.UUID"
 import {$ICurio$DropRule} from "top.theillusivec4.curios.api.type.capability.ICurio$DropRule"
-import {$ICurio} from "top.theillusivec4.curios.api.type.capability.ICurio"
-import {$Multimap} from "com.google.common.collect.Multimap"
 import {$List, $List$$Type} from "java.util.List"
+import {$Multimap} from "com.google.common.collect.Multimap"
+import {$ICurio} from "top.theillusivec4.curios.api.type.capability.ICurio"
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Holder} from "net.minecraft.core.Holder"
@@ -378,25 +378,25 @@ static readonly "defaultInstance": $ICurio
 
  "canEquip"(arg0: $SlotContext$$Type, arg1: $ItemStack$$Type): boolean
  "isEnderMask"(arg0: $SlotContext$$Type, arg1: $EnderMan$$Type, arg2: $ItemStack$$Type): boolean
- "getSlotsTooltip"(arg0: $List$$Type<($Component$$Type)>, arg1: $Item$TooltipContext$$Type, arg2: $ItemStack$$Type): $List<($Component)>
+ "curioTick"(arg0: $SlotContext$$Type, arg1: $ItemStack$$Type): void
 /**
  * 
  * @deprecated
  */
  "getSlotsTooltip"(arg0: $List$$Type<($Component$$Type)>, arg1: $ItemStack$$Type): $List<($Component)>
+ "getSlotsTooltip"(arg0: $List$$Type<($Component$$Type)>, arg1: $Item$TooltipContext$$Type, arg2: $ItemStack$$Type): $List<($Component)>
+ "getDropRule"(arg0: $SlotContext$$Type, arg1: $DamageSource$$Type, arg2: boolean, arg3: $ItemStack$$Type): $ICurio$DropRule
 /**
  * 
  * @deprecated
  */
  "getDropRule"(arg0: $SlotContext$$Type, arg1: $DamageSource$$Type, arg2: integer, arg3: boolean, arg4: $ItemStack$$Type): $ICurio$DropRule
- "getDropRule"(arg0: $SlotContext$$Type, arg1: $DamageSource$$Type, arg2: boolean, arg3: $ItemStack$$Type): $ICurio$DropRule
- "getAttributesTooltip"(arg0: $List$$Type<($Component$$Type)>, arg1: $Item$TooltipContext$$Type, arg2: $ItemStack$$Type): $List<($Component)>
 /**
  * 
  * @deprecated
  */
  "getAttributesTooltip"(arg0: $List$$Type<($Component$$Type)>, arg1: $ItemStack$$Type): $List<($Component)>
- "curioTick"(arg0: $SlotContext$$Type, arg1: $ItemStack$$Type): void
+ "getAttributesTooltip"(arg0: $List$$Type<($Component$$Type)>, arg1: $Item$TooltipContext$$Type, arg2: $ItemStack$$Type): $List<($Component)>
  "onEquip"(arg0: $SlotContext$$Type, arg1: $ItemStack$$Type, arg2: $ItemStack$$Type): void
  "onUnequip"(arg0: $SlotContext$$Type, arg1: $ItemStack$$Type, arg2: $ItemStack$$Type): void
  "canUnequip"(arg0: $SlotContext$$Type, arg1: $ItemStack$$Type): boolean
@@ -435,9 +435,9 @@ import {$Record} from "java.lang.Record"
 export class $SlotContext extends $Record {
 constructor(identifier: StringJS, entity: $LivingEntity$$Type, index: integer, cosmetic: boolean, visible: boolean)
 
-public "entity"(): $LivingEntity
 public "identifier"(): StringJS
 public "visible"(): boolean
+public "entity"(): $LivingEntity
 public "index"(): integer
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
@@ -497,22 +497,22 @@ import {$Collection, $Collection$$Type} from "java.util.Collection"
 import {$DamageSource, $DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
 import {$ICuriosItemHandler, $ICuriosItemHandler$$Type} from "top.theillusivec4.curios.api.type.capability.ICuriosItemHandler"
 import {$ICancellableEvent$$Interface} from "net.neoforged.bus.api.ICancellableEvent"
-import {$ItemEntity, $ItemEntity$$Type} from "net.minecraft.world.entity.item.ItemEntity"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$ItemEntity, $ItemEntity$$Type} from "net.minecraft.world.entity.item.ItemEntity"
 
 export class $CurioDropsEvent extends $LivingEvent implements $ICancellableEvent$$Interface {
 constructor(arg0: $LivingEntity$$Type, arg1: $ICuriosItemHandler$$Type, arg2: $DamageSource$$Type, arg3: $Collection$$Type<($ItemEntity$$Type)>, arg4: integer, arg5: boolean)
 
-public "getCurioHandler"(): $ICuriosItemHandler
 public "getDrops"(): $Collection<($ItemEntity)>
 public "isRecentlyHit"(): boolean
+public "getCurioHandler"(): $ICuriosItemHandler
 public "getSource"(): $DamageSource
 public "getLootingLevel"(): integer
 public "setCanceled"(arg0: boolean): void
 public "isCanceled"(): boolean
-get "curioHandler"(): $ICuriosItemHandler
 get "drops"(): $Collection<($ItemEntity)>
 get "recentlyHit"(): boolean
+get "curioHandler"(): $ICuriosItemHandler
 get "source"(): $DamageSource
 get "lootingLevel"(): integer
 set "canceled"(value: boolean)
@@ -532,23 +532,23 @@ import {$LivingEvent} from "net.neoforged.neoforge.event.entity.living.LivingEve
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$DamageSource, $DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
 import {$ICuriosItemHandler, $ICuriosItemHandler$$Type} from "top.theillusivec4.curios.api.type.capability.ICuriosItemHandler"
-import {$ICurio$DropRule, $ICurio$DropRule$$Type} from "top.theillusivec4.curios.api.type.capability.ICurio$DropRule"
 import {$Predicate, $Predicate$$Type} from "java.util.function.Predicate"
-import {$ImmutableList} from "com.google.common.collect.ImmutableList"
+import {$ICurio$DropRule, $ICurio$DropRule$$Type} from "top.theillusivec4.curios.api.type.capability.ICurio$DropRule"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$ImmutableList} from "com.google.common.collect.ImmutableList"
 import {$Tuple} from "net.minecraft.util.Tuple"
 
 export class $DropRulesEvent extends $LivingEvent {
 constructor(arg0: $LivingEntity$$Type, arg1: $ICuriosItemHandler$$Type, arg2: $DamageSource$$Type, arg3: integer, arg4: boolean)
 
-public "getCurioHandler"(): $ICuriosItemHandler
 public "isRecentlyHit"(): boolean
+public "getCurioHandler"(): $ICuriosItemHandler
 public "getSource"(): $DamageSource
 public "getOverrides"(): $ImmutableList<($Tuple<($Predicate<($ItemStack)>), ($ICurio$DropRule)>)>
 public "addOverride"(arg0: $Predicate$$Type<($ItemStack)>, arg1: $ICurio$DropRule$$Type): void
 public "getLootingLevel"(): integer
-get "curioHandler"(): $ICuriosItemHandler
 get "recentlyHit"(): boolean
+get "curioHandler"(): $ICuriosItemHandler
 get "source"(): $DamageSource
 get "overrides"(): $ImmutableList<($Tuple<($Predicate<($ItemStack)>), ($ICurio$DropRule)>)>
 get "lootingLevel"(): integer
@@ -619,12 +619,12 @@ export type $CurioCanUnequipEvent$$Original = $CurioCanUnequipEvent;}
 declare module "top.theillusivec4.curios.api.event.CurioAttributeModifierEvent" {
 import {$SlotContext, $SlotContext$$Type} from "top.theillusivec4.curios.api.SlotContext"
 import {$AttributeModifier, $AttributeModifier$$Type} from "net.minecraft.world.entity.ai.attributes.AttributeModifier"
-import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
-import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Collection} from "java.util.Collection"
+import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Multimap, $Multimap$$Type} from "com.google.common.collect.Multimap"
-import {$Event} from "net.neoforged.bus.api.Event"
 import {$Attribute, $Attribute$$Type} from "net.minecraft.world.entity.ai.attributes.Attribute"
+import {$Event} from "net.neoforged.bus.api.Event"
 import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
 
 export class $CurioAttributeModifierEvent extends $Event {
@@ -655,8 +655,8 @@ export type $CurioAttributeModifierEvent$$Type = ($CurioAttributeModifierEvent);
  */
 export type $CurioAttributeModifierEvent$$Original = $CurioAttributeModifierEvent;}
 declare module "top.theillusivec4.curios.api.SlotPredicate" {
-import {$MinMaxBounds$Ints, $MinMaxBounds$Ints$$Type} from "net.minecraft.advancements.critereon.MinMaxBounds$Ints"
 import {$SlotContext$$Type} from "top.theillusivec4.curios.api.SlotContext"
+import {$MinMaxBounds$Ints, $MinMaxBounds$Ints$$Type} from "net.minecraft.advancements.critereon.MinMaxBounds$Ints"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$List, $List$$Type} from "java.util.List"
 import {$Record} from "java.lang.Record"
@@ -711,10 +711,10 @@ export type $CurioChangeEvent$$Original = $CurioChangeEvent;}
 declare module "top.theillusivec4.curios.api.type.inventory.ICurioStacksHandler" {
 import {$AttributeModifier, $AttributeModifier$$Type} from "net.minecraft.world.entity.ai.attributes.AttributeModifier"
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
-import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
-import {$Map} from "java.util.Map"
 import {$Collection} from "java.util.Collection"
 import {$IDynamicStackHandler} from "top.theillusivec4.curios.api.type.inventory.IDynamicStackHandler"
+import {$Map} from "java.util.Map"
+import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$AttributeModifier$Operation$$Type} from "net.minecraft.world.entity.ai.attributes.AttributeModifier$Operation"
 import {$ICurio$DropRule} from "top.theillusivec4.curios.api.type.capability.ICurio$DropRule"
 import {$Set} from "java.util.Set"

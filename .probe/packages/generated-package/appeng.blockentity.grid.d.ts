@@ -1,18 +1,18 @@
 declare module "appeng.blockentity.grid.AENetworkedBlockEntity" {
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
-import {$AEBaseBlockEntity} from "appeng.blockentity.AEBaseBlockEntity"
 import {$IGridNodeListener$State$$Type} from "appeng.api.networking.IGridNodeListener$State"
+import {$AEBaseBlockEntity} from "appeng.blockentity.AEBaseBlockEntity"
 import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$AECableType} from "appeng.api.util.AECableType"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$IGridNode} from "appeng.api.networking.IGridNode"
-import {$BlockOrientation$$Type} from "appeng.api.orientation.BlockOrientation"
 import {$IManagedGridNode} from "appeng.api.networking.IManagedGridNode"
+import {$BlockOrientation$$Type} from "appeng.api.orientation.BlockOrientation"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$Set} from "java.util.Set"
 import {$IGrid$$Type} from "appeng.api.networking.IGrid"
+import {$Set} from "java.util.Set"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$IGridConnectedBlockEntity$$Interface} from "appeng.me.helpers.IGridConnectedBlockEntity"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -27,13 +27,13 @@ public "clearRemoved"(): void
 public "onChunkUnloaded"(): void
 public "getMainNode"(): $IManagedGridNode
 public "getCableConnectionType"(arg0: $Direction$$Type): $AECableType
-public "onReady"(): void
 public "loadTag"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
+public "onReady"(): void
 public "setRemoved"(): void
-public "getGridNode"(arg0: $Direction$$Type): $IGridNode
-public "getGridNode"(): $IGridNode
 public "onMainNodeStateChanged"(arg0: $IGridNodeListener$State$$Type): void
 public "getActionableNode"(): $IGridNode
+public "getGridNode"(arg0: $Direction$$Type): $IGridNode
+public "getGridNode"(): $IGridNode
 public "saveChanges"(): void
 public "getGridConnectableSides"(arg0: $BlockOrientation$$Type): $Set<($Direction)>
 public "ifGridPresent"(arg0: $Consumer$$Type<($IGrid)>): boolean
@@ -41,8 +41,8 @@ public "setOwner"(arg0: $Player$$Type): void
 public static "tryClear"(arg0: any): void
 get "mainNode"(): $IManagedGridNode
 get "removed"(): void
-get "gridNode"(): $IGridNode
 get "actionableNode"(): $IGridNode
+get "gridNode"(): $IGridNode
 set "owner"(value: $Player$$Type)
 }
 /**
@@ -56,20 +56,20 @@ export type $AENetworkedBlockEntity$$Type = ($AENetworkedBlockEntity);
 export type $AENetworkedBlockEntity$$Original = $AENetworkedBlockEntity;}
 declare module "appeng.blockentity.grid.AENetworkedPoweredBlockEntity" {
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
-import {$IEnergySource} from "appeng.api.networking.energy.IEnergySource"
 import {$IGridNodeListener$State$$Type} from "appeng.api.networking.IGridNodeListener$State"
+import {$IEnergySource} from "appeng.api.networking.energy.IEnergySource"
 import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$AECableType} from "appeng.api.util.AECableType"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$AEBasePoweredBlockEntity} from "appeng.blockentity.powersink.AEBasePoweredBlockEntity"
 import {$IGridNode} from "appeng.api.networking.IGridNode"
-import {$BlockOrientation$$Type} from "appeng.api.orientation.BlockOrientation"
+import {$AEBasePoweredBlockEntity} from "appeng.blockentity.powersink.AEBasePoweredBlockEntity"
 import {$IManagedGridNode} from "appeng.api.networking.IManagedGridNode"
+import {$BlockOrientation$$Type} from "appeng.api.orientation.BlockOrientation"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$Set} from "java.util.Set"
 import {$IGrid$$Type} from "appeng.api.networking.IGrid"
+import {$Set} from "java.util.Set"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$IGridConnectedBlockEntity$$Interface} from "appeng.me.helpers.IGridConnectedBlockEntity"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -84,13 +84,13 @@ public "clearRemoved"(): void
 public "onChunkUnloaded"(): void
 public "getMainNode"(): $IManagedGridNode
 public "getCableConnectionType"(arg0: $Direction$$Type): $AECableType
-public "onReady"(): void
 public "loadTag"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
+public "onReady"(): void
 public "setRemoved"(): void
-public "getGridNode"(arg0: $Direction$$Type): $IGridNode
-public "getGridNode"(): $IGridNode
 public "onMainNodeStateChanged"(arg0: $IGridNodeListener$State$$Type): void
 public "getActionableNode"(): $IGridNode
+public "getGridNode"(arg0: $Direction$$Type): $IGridNode
+public "getGridNode"(): $IGridNode
 public "saveChanges"(): void
 public "getGridConnectableSides"(arg0: $BlockOrientation$$Type): $Set<($Direction)>
 public "ifGridPresent"(arg0: $Consumer$$Type<($IGrid)>): boolean
@@ -100,8 +100,8 @@ public "isClientSide"(): boolean
 public static "tryClear"(arg0: any): void
 get "mainNode"(): $IManagedGridNode
 get "removed"(): void
-get "gridNode"(): $IGridNode
 get "actionableNode"(): $IGridNode
+get "gridNode"(): $IGridNode
 set "owner"(value: $Player$$Type)
 get "clientSide"(): boolean
 }
@@ -124,11 +124,11 @@ import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$AECableType} from "appeng.api.util.AECableType"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$IGridNode} from "appeng.api.networking.IGridNode"
-import {$BlockOrientation$$Type} from "appeng.api.orientation.BlockOrientation"
 import {$IManagedGridNode} from "appeng.api.networking.IManagedGridNode"
+import {$BlockOrientation$$Type} from "appeng.api.orientation.BlockOrientation"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$Set} from "java.util.Set"
 import {$IGrid$$Type} from "appeng.api.networking.IGrid"
+import {$Set} from "java.util.Set"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$IGridConnectedBlockEntity$$Interface} from "appeng.me.helpers.IGridConnectedBlockEntity"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -142,13 +142,13 @@ public "saveAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$
 public "clearRemoved"(): void
 public "onChunkUnloaded"(): void
 public "getMainNode"(): $IManagedGridNode
-public "onReady"(): void
 public "loadTag"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
+public "onReady"(): void
 public "setRemoved"(): void
-public "getGridNode"(arg0: $Direction$$Type): $IGridNode
-public "getGridNode"(): $IGridNode
 public "onMainNodeStateChanged"(arg0: $IGridNodeListener$State$$Type): void
 public "getActionableNode"(): $IGridNode
+public "getGridNode"(arg0: $Direction$$Type): $IGridNode
+public "getGridNode"(): $IGridNode
 public "saveChanges"(): void
 public "getGridConnectableSides"(arg0: $BlockOrientation$$Type): $Set<($Direction)>
 public "ifGridPresent"(arg0: $Consumer$$Type<($IGrid)>): boolean
@@ -158,8 +158,8 @@ public "isClientSide"(): boolean
 public static "tryClear"(arg0: any): void
 get "mainNode"(): $IManagedGridNode
 get "removed"(): void
-get "gridNode"(): $IGridNode
 get "actionableNode"(): $IGridNode
+get "gridNode"(): $IGridNode
 set "owner"(value: $Player$$Type)
 get "clientSide"(): boolean
 }

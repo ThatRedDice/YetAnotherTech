@@ -1,14 +1,14 @@
 declare module "dan200.computercraft.shared.common.HorizontalContainerBlock" {
-import {$BaseEntityBlock} from "net.minecraft.world.level.block.BaseEntityBlock"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
+import {$BaseEntityBlock} from "net.minecraft.world.level.block.BaseEntityBlock"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
+import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$DirectionProperty} from "net.minecraft.world.level.block.state.properties.DirectionProperty"
 import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 

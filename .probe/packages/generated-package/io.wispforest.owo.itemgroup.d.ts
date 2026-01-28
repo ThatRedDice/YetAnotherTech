@@ -48,7 +48,7 @@ public "tab"(): integer
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $ItemGroupReference$$Type = ({"groupSup"?: $Supplier$$Type<($OwoItemGroup$$Type)>, "tab"?: integer}) | ([groupSup?: $Supplier$$Type<($OwoItemGroup$$Type)>, tab?: integer]);
+export type $ItemGroupReference$$Type = ({"tab"?: integer, "groupSup"?: $Supplier$$Type<($OwoItemGroup$$Type)>}) | ([tab?: integer, groupSup?: $Supplier$$Type<($OwoItemGroup$$Type)>]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -98,20 +98,20 @@ export type $OwoItemGroup$ScrollerTextures$$Type = ({"disabled"?: $ResourceLocat
 export type $OwoItemGroup$ScrollerTextures$$Original = $OwoItemGroup$ScrollerTextures;}
 declare module "io.wispforest.owo.itemgroup.OwoItemGroup$Builder" {
 import {$OwoItemGroup$ScrollerTextures$$Type} from "io.wispforest.owo.itemgroup.OwoItemGroup$ScrollerTextures"
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$OwoItemGroup, $OwoItemGroup$$Type} from "io.wispforest.owo.itemgroup.OwoItemGroup"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$OwoItemGroup$TabTextures$$Type} from "io.wispforest.owo.itemgroup.OwoItemGroup$TabTextures"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 
 export class $OwoItemGroup$Builder {
 public "backgroundTexture"(backgroundTexture: $ResourceLocation$$Type): $OwoItemGroup$Builder
-public "disableDynamicTitle"(): $OwoItemGroup$Builder
-public "withoutMultipleSelection"(): $OwoItemGroup$Builder
 public "scrollerTextures"(scrollerTextures: $OwoItemGroup$ScrollerTextures$$Type): $OwoItemGroup$Builder
 public "tabTextures"(tabTextures: $OwoItemGroup$TabTextures$$Type): $OwoItemGroup$Builder
 public "tabStackHeight"(tabStackHeight: integer): $OwoItemGroup$Builder
 public "buttonStackHeight"(buttonStackHeight: integer): $OwoItemGroup$Builder
 public "displaySingleTab"(): $OwoItemGroup$Builder
+public "disableDynamicTitle"(): $OwoItemGroup$Builder
+public "withoutMultipleSelection"(): $OwoItemGroup$Builder
 public "build"(): $OwoItemGroup
 public "initializer"(initializer: $Consumer$$Type<($OwoItemGroup)>): $OwoItemGroup$Builder
 }
@@ -125,8 +125,8 @@ export type $OwoItemGroup$Builder$$Type = ($OwoItemGroup$Builder);
  */
 export type $OwoItemGroup$Builder$$Original = $OwoItemGroup$Builder;}
 declare module "io.wispforest.owo.itemgroup.Icon" {
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$GuiGraphics, $GuiGraphics$$Type} from "net.minecraft.client.gui.GuiGraphics"
 import {$ItemLike$$Type} from "net.minecraft.world.level.ItemLike"
 
@@ -165,14 +165,14 @@ static readonly "ICONS_TEXTURE": $ResourceLocation
 constructor(group: $CreativeModeTab$$Type, icon: $Icon$$Type, name: StringJS, texture: $ResourceLocation$$Type, action: $Runnable$$Type)
 constructor(group: $CreativeModeTab$$Type, icon: $Icon$$Type, name: StringJS, action: $Runnable$$Type)
 
+public "texture"(): $ResourceLocation
 public static "github"(group: $CreativeModeTab$$Type, url: StringJS): $ItemGroupButton
 public static "modrinth"(group: $CreativeModeTab$$Type, url: StringJS): $ItemGroupButton
 public static "discord"(group: $CreativeModeTab$$Type, url: StringJS): $ItemGroupButton
-public "texture"(): $ResourceLocation
 public static "link"(group: $CreativeModeTab$$Type, icon: $Icon$$Type, name: StringJS, url: StringJS): $ItemGroupButton
 public "action"(): $Runnable
-public "icon"(): $Icon
 public "tooltip"(): $Component
+public "icon"(): $Icon
 public static "curseforge"(group: $CreativeModeTab$$Type, url: StringJS): $ItemGroupButton
 public static "tooltipFor"(group: $CreativeModeTab$$Type, component: StringJS, componentName: StringJS): $Component
 }
@@ -205,9 +205,9 @@ public "name"(): $Component
 public "equals"(o: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
+public "tooltip"(): $Component
 public "icon"(): $Icon
 public "primary"(): boolean
-public "tooltip"(): $Component
 public static "tooltipFor"(group: $CreativeModeTab$$Type, component: StringJS, componentName: StringJS): $Component
 }
 /**
@@ -229,13 +229,13 @@ import {$ItemGroupButton, $ItemGroupButton$$Type} from "io.wispforest.owo.itemgr
 import {$CreativeModeTab$ItemDisplayParameters$$Type} from "net.minecraft.world.item.CreativeModeTab$ItemDisplayParameters"
 import {$ItemGroupTab} from "io.wispforest.owo.itemgroup.gui.ItemGroupTab"
 import {$IntSet} from "it.unimi.dsi.fastutil.ints.IntSet"
-import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$OwoItemGroup$ScrollerTextures} from "io.wispforest.owo.itemgroup.OwoItemGroup$ScrollerTextures"
+import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$CreativeModeTab} from "net.minecraft.world.item.CreativeModeTab"
 import {$OwoItemGroup$TabTextures} from "io.wispforest.owo.itemgroup.OwoItemGroup$TabTextures"
 import {$CreativeModeTab$Output} from "net.minecraft.world.item.CreativeModeTab$Output"
-import {$TagKey$$Type} from "net.minecraft.tags.TagKey"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$TagKey$$Type} from "net.minecraft.tags.TagKey"
 import {$BiConsumer} from "java.util.function.BiConsumer"
 import {$Item, $Item$$Type} from "net.minecraft.world.item.Item"
 import {$ItemGroupTab$ContentSupplier$$Type} from "io.wispforest.owo.itemgroup.gui.ItemGroupTab$ContentSupplier"
@@ -253,10 +253,11 @@ static readonly "DEFAULT_STACK_GENERATOR": $BiConsumer<($Item), ($CreativeModeTa
 public "hasAnyItems"(): boolean
 public "shouldDisplay"(): boolean
 public "buildContents"(context: $CreativeModeTab$ItemDisplayParameters$$Type): void
-public "addTab"(icon: $Icon$$Type, name: StringJS, contentTag: $TagKey$$Type<($Item)>, primary: boolean): void
+public "addButton"(button: $ItemGroupButton$$Type): void
 public "addTab"(icon: $Icon$$Type, name: StringJS, contentTag: $TagKey$$Type<($Item)>, texture: $ResourceLocation$$Type, primary: boolean): void
-public "addCustomTab"(icon: $Icon$$Type, name: StringJS, contentSupplier: $ItemGroupTab$ContentSupplier$$Type, texture: $ResourceLocation$$Type, primary: boolean): void
+public "addTab"(icon: $Icon$$Type, name: StringJS, contentTag: $TagKey$$Type<($Item)>, primary: boolean): void
 public "addCustomTab"(icon: $Icon$$Type, name: StringJS, contentSupplier: $ItemGroupTab$ContentSupplier$$Type, primary: boolean): void
+public "addCustomTab"(icon: $Icon$$Type, name: StringJS, contentSupplier: $ItemGroupTab$ContentSupplier$$Type, texture: $ResourceLocation$$Type, primary: boolean): void
 public "selectSingleTab"(tab: integer, context: $CreativeModeTab$ItemDisplayParameters$$Type): void
 public "selectTab"(tab: integer, context: $CreativeModeTab$ItemDisplayParameters$$Type): void
 public "deselectTab"(tab: integer, context: $CreativeModeTab$ItemDisplayParameters$$Type): void
@@ -271,7 +272,6 @@ public "getButtonStackHeight"(): integer
 public "hasDynamicTitle"(): boolean
 public "shouldDisplaySingleTab"(): boolean
 public "canSelectMultipleTabs"(): boolean
-public "addButton"(button: $ItemGroupButton$$Type): void
 public static "builder"(id: $ResourceLocation$$Type, iconSupplier: $Supplier$$Type<($Icon$$Type)>): $OwoItemGroup$Builder
 public "initialize"(): void
 public "id"(): $ResourceLocation
@@ -304,8 +304,8 @@ export interface $OwoItemGroup$ButtonDefinition$$Interface {
 export class $OwoItemGroup$ButtonDefinition implements $OwoItemGroup$ButtonDefinition$$Interface {
 static "tooltipFor"(group: $CreativeModeTab$$Type, component: StringJS, componentName: StringJS): $Component
  "texture"(): $ResourceLocation
- "icon"(): $Icon
  "tooltip"(): $Component
+ "icon"(): $Icon
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -321,8 +321,8 @@ import {$ItemGroupReference$$Type} from "io.wispforest.owo.itemgroup.ItemGroupRe
 import {$OwoItemGroup, $OwoItemGroup$$Type} from "io.wispforest.owo.itemgroup.OwoItemGroup"
 import {$CreativeModeTab$Output, $CreativeModeTab$Output$$Type} from "net.minecraft.world.item.CreativeModeTab$Output"
 import {$Supplier, $Supplier$$Type} from "java.util.function.Supplier"
-import {$BiConsumer, $BiConsumer$$Type} from "java.util.function.BiConsumer"
 import {$Item$Properties} from "net.minecraft.world.item.Item$Properties"
+import {$BiConsumer, $BiConsumer$$Type} from "java.util.function.BiConsumer"
 import {$Item, $Item$$Type} from "net.minecraft.world.item.Item"
 
 export interface $OwoItemSettingsExtension$$Interface {

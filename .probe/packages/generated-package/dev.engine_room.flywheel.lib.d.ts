@@ -47,16 +47,16 @@ import {$Quaternionfc$$Type} from "org.joml.Quaternionfc"
 import {$PoseStack$$Type} from "com.mojang.blaze3d.vertex.PoseStack"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Transform$$Interface} from "dev.engine_room.flywheel.lib.transform.Transform"
-import {$Direction$Axis$$Type} from "net.minecraft.core.Direction$Axis"
 import {$PoseStack$Pose$$Type} from "com.mojang.blaze3d.vertex.PoseStack$Pose"
+import {$Direction$Axis$$Type} from "net.minecraft.core.Direction$Axis"
 import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
-import {$Vector3ic$$Type} from "org.joml.Vector3ic"
 import {$Matrix4fc$$Type} from "org.joml.Matrix4fc"
-import {$Matrix3fc$$Type} from "org.joml.Matrix3fc"
+import {$Vector3ic$$Type} from "org.joml.Vector3ic"
 import {$Axis$$Type} from "com.mojang.math.Axis"
 import {$Vec3i$$Type} from "net.minecraft.core.Vec3i"
-import {$Vector3fc$$Type} from "org.joml.Vector3fc"
+import {$Matrix3fc$$Type} from "org.joml.Matrix3fc"
 import {$PoseTransformStack} from "dev.engine_room.flywheel.lib.transform.PoseTransformStack"
+import {$Vector3fc$$Type} from "org.joml.Vector3fc"
 import {$AxisAngle4f$$Type} from "org.joml.AxisAngle4f"
 
 export interface $TransformStack$$Interface<Self extends $TransformStack<(object)>> extends $Transform$$Interface<(Self)> {
@@ -133,9 +133,9 @@ static "of"(stack: $PoseStack$$Type): $PoseTransformStack
  "rotateTo"(from: $Vector3fc$$Type, to: $Vector3fc$$Type): Self
  "rotateTo"(from: $Direction$$Type, to: $Direction$$Type): Self
  "rotateTo"(fromX: float, fromY: float, fromZ: float, toX: float, toY: float, toZ: float): Self
- "scaleZ"(factor: float): Self
  "scaleX"(factor: float): Self
  "scaleY"(factor: float): Self
+ "scaleZ"(factor: float): Self
  "scale"(factors: $Vector3fc$$Type): Self
  "scale"(arg0: float, arg1: float, arg2: float): Self
  "scale"(factor: float): Self
@@ -154,14 +154,14 @@ import {$Quaternionfc$$Type} from "org.joml.Quaternionfc"
 import {$Affine$$Interface} from "dev.engine_room.flywheel.lib.transform.Affine"
 import {$PoseStack$$Type} from "com.mojang.blaze3d.vertex.PoseStack"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
-import {$Direction$Axis$$Type} from "net.minecraft.core.Direction$Axis"
 import {$PoseStack$Pose$$Type} from "com.mojang.blaze3d.vertex.PoseStack$Pose"
+import {$Direction$Axis$$Type} from "net.minecraft.core.Direction$Axis"
 import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
-import {$Vector3ic$$Type} from "org.joml.Vector3ic"
 import {$Matrix4fc$$Type} from "org.joml.Matrix4fc"
-import {$Matrix3fc$$Type} from "org.joml.Matrix3fc"
+import {$Vector3ic$$Type} from "org.joml.Vector3ic"
 import {$Axis$$Type} from "com.mojang.math.Axis"
 import {$Vec3i$$Type} from "net.minecraft.core.Vec3i"
+import {$Matrix3fc$$Type} from "org.joml.Matrix3fc"
 import {$Vector3fc$$Type} from "org.joml.Vector3fc"
 import {$AxisAngle4f$$Type} from "org.joml.AxisAngle4f"
 
@@ -236,9 +236,9 @@ export class $Transform<Self extends $Transform<(object)>> implements $Transform
  "rotateTo"(from: $Vector3fc$$Type, to: $Vector3fc$$Type): Self
  "rotateTo"(from: $Direction$$Type, to: $Direction$$Type): Self
  "rotateTo"(fromX: float, fromY: float, fromZ: float, toX: float, toY: float, toZ: float): Self
- "scaleZ"(factor: float): Self
  "scaleX"(factor: float): Self
  "scaleY"(factor: float): Self
+ "scaleZ"(factor: float): Self
  "scale"(factors: $Vector3fc$$Type): Self
  "scale"(arg0: float, arg1: float, arg2: float): Self
  "scale"(factor: float): Self
@@ -332,9 +332,9 @@ export class $Affine<Self extends $Affine<(object)>> implements $Affine$$Interfa
  "rotateTo"(from: $Vector3fc$$Type, to: $Vector3fc$$Type): Self
  "rotateTo"(from: $Direction$$Type, to: $Direction$$Type): Self
  "rotateTo"(fromX: float, fromY: float, fromZ: float, toX: float, toY: float, toZ: float): Self
- "scaleZ"(factor: float): Self
  "scaleX"(factor: float): Self
  "scaleY"(factor: float): Self
+ "scaleZ"(factor: float): Self
  "scale"(factors: $Vector3fc$$Type): Self
  "scale"(arg0: float, arg1: float, arg2: float): Self
  "scale"(factor: float): Self
@@ -402,19 +402,19 @@ import {$BakedModel, $BakedModel$$Type} from "net.minecraft.client.resources.mod
 import {$ConcurrentMap} from "java.util.concurrent.ConcurrentMap"
 
 export class $PartialModel implements $AccessorPartialModel$$Interface {
-public static "setPopulateOnInit$railways_$md$a93e73$1"(arg0: boolean): void
-public static "getPopulateOnInit$railways_$md$a93e73$2"(): boolean
+public static "setPopulateOnInit$railways_$md$b00d76$1"(arg0: boolean): void
+public static "getPopulateOnInit$railways_$md$b00d76$2"(): boolean
 public "railways$setBakedModel"(arg0: $BakedModel$$Type): void
-public static "getALL$railways_$md$a93e73$0"(): $ConcurrentMap
+public static "getALL$railways_$md$b00d76$0"(): $ConcurrentMap
 public "get"(): $BakedModel
 public static "of"(modelLocation: $ResourceLocation$$Type): $PartialModel
 public "modelLocation"(): $ResourceLocation
 public static "railways$getALL"(): $ConcurrentMap<($ResourceLocation), ($PartialModel)>
 public static "railways$setPopulateOnInit"(arg0: boolean): void
 public static "railways$getPopulateOnInit"(): boolean
-public static set "populateOnInit$railways_$md$a93e73$1"(value: boolean)
-public static get "populateOnInit$railways_$md$a93e73$2"(): boolean
-public static get "ALL$railways_$md$a93e73$0"(): $ConcurrentMap
+public static set "populateOnInit$railways_$md$b00d76$1"(value: boolean)
+public static get "populateOnInit$railways_$md$b00d76$2"(): boolean
+public static get "ALL$railways_$md$b00d76$0"(): $ConcurrentMap
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -434,9 +434,9 @@ export interface $Scale$$Interface<Self extends $Scale<(object)>> {
 }
 
 export class $Scale<Self extends $Scale<(object)>> implements $Scale$$Interface {
- "scaleZ"(factor: float): Self
  "scaleX"(factor: float): Self
  "scaleY"(factor: float): Self
+ "scaleZ"(factor: float): Self
  "scale"(factors: $Vector3fc$$Type): Self
  "scale"(arg0: float, arg1: float, arg2: float): Self
  "scale"(factor: float): Self
@@ -457,14 +457,14 @@ import {$PoseStack, $PoseStack$$Type} from "com.mojang.blaze3d.vertex.PoseStack"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Rotate} from "dev.engine_room.flywheel.lib.transform.Rotate"
 import {$TransformStack, $TransformStack$$Interface} from "dev.engine_room.flywheel.lib.transform.TransformStack"
-import {$Direction$Axis$$Type} from "net.minecraft.core.Direction$Axis"
 import {$PoseStack$Pose$$Type} from "com.mojang.blaze3d.vertex.PoseStack$Pose"
+import {$Direction$Axis$$Type} from "net.minecraft.core.Direction$Axis"
 import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
-import {$Vector3ic$$Type} from "org.joml.Vector3ic"
 import {$Matrix4fc$$Type} from "org.joml.Matrix4fc"
-import {$Matrix3fc$$Type} from "org.joml.Matrix3fc"
+import {$Vector3ic$$Type} from "org.joml.Vector3ic"
 import {$Axis$$Type} from "com.mojang.math.Axis"
 import {$Vec3i$$Type} from "net.minecraft.core.Vec3i"
+import {$Matrix3fc$$Type} from "org.joml.Matrix3fc"
 import {$Vector3fc$$Type} from "org.joml.Vector3fc"
 import {$AxisAngle4f$$Type} from "org.joml.AxisAngle4f"
 
@@ -543,9 +543,9 @@ public "rotateZ"(radians: float): $PoseTransformStack
 public "rotateTo"(from: $Vector3fc$$Type, to: $Vector3fc$$Type): $PoseTransformStack
 public "rotateTo"(from: $Direction$$Type, to: $Direction$$Type): $PoseTransformStack
 public "rotateTo"(fromX: float, fromY: float, fromZ: float, toX: float, toY: float, toZ: float): $PoseTransformStack
-public "scaleZ"(factor: float): $PoseTransformStack
 public "scaleX"(factor: float): $PoseTransformStack
 public "scaleY"(factor: float): $PoseTransformStack
+public "scaleZ"(factor: float): $PoseTransformStack
 public "scale"(factors: $Vector3fc$$Type): $PoseTransformStack
 public "scale"(factor: float): $PoseTransformStack
 }

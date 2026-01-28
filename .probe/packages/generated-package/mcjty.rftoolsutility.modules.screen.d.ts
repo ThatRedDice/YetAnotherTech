@@ -11,8 +11,8 @@ import {$GenericModuleItem} from "mcjty.rftoolsbase.tools.GenericModuleItem"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$ButtonScreenModule, $ButtonScreenModule$$Type} from "mcjty.rftoolsutility.modules.screen.modules.ButtonScreenModule"
 import {$Codec} from "com.mojang.serialization.Codec"
+import {$ButtonScreenModule, $ButtonScreenModule$$Type} from "mcjty.rftoolsutility.modules.screen.modules.ButtonScreenModule"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Function$$Type} from "java.util.function.Function"
 import {$Item} from "net.minecraft.world.item.Item"
@@ -33,8 +33,8 @@ public "doesSneakBypassUse"(arg0: $ItemStack$$Type, arg1: $LevelReader$$Type, ar
 public "createClientScreenModule"(): $IClientScreenModule<(never)>
 public "createServerScreenModule"(): $IScreenModule<(never), (never)>
 public "componentType"(): $DataComponentType<($IScreenModule<(never), (never)>)>
-public static "data"(arg0: $ItemStack$$Type, arg1: $Function$$Type<($ButtonScreenModule), ($ButtonScreenModule$$Type)>): void
 public static "data"(arg0: $ItemStack$$Type): $ButtonScreenModule
+public static "data"(arg0: $ItemStack$$Type, arg1: $Function$$Type<($ButtonScreenModule), ($ButtonScreenModule$$Type)>): void
 public "getModuleName"(): StringJS
 public static "getChannel"(arg0: $ItemStack$$Type): integer
 public "codec"(): $Codec<($IScreenModule<(never), (never)>)>
@@ -56,15 +56,15 @@ import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$IModuleGuiBuilder$$Type} from "mcjty.rftoolsbase.api.screens.IModuleGuiBuilder"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
-import {$IClientScreenModule} from "mcjty.rftoolsbase.api.screens.IClientScreenModule"
 import {$List$$Type} from "java.util.List"
+import {$IClientScreenModule} from "mcjty.rftoolsbase.api.screens.IClientScreenModule"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$DataComponentType} from "net.minecraft.core.component.DataComponentType"
-import {$RedstoneScreenModule, $RedstoneScreenModule$$Type} from "mcjty.rftoolsutility.modules.screen.modules.RedstoneScreenModule"
 import {$IScreenModule} from "mcjty.rftoolsbase.api.screens.IScreenModule"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
+import {$RedstoneScreenModule, $RedstoneScreenModule$$Type} from "mcjty.rftoolsutility.modules.screen.modules.RedstoneScreenModule"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$GenericModuleItem} from "mcjty.rftoolsbase.tools.GenericModuleItem"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
@@ -117,8 +117,8 @@ import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$Explosion$$Type} from "net.minecraft.world.level.Explosion"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -131,8 +131,8 @@ import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
-import {$BaseBlock} from "mcjty.lib.blocks.BaseBlock"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
+import {$BaseBlock} from "mcjty.lib.blocks.BaseBlock"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$Property} from "net.minecraft.world.level.block.state.properties.Property"
 
@@ -160,9 +160,9 @@ static readonly "UPDATE_CLIENTS": integer
 
 constructor()
 
+public "useWithoutItem"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $BlockHitResult$$Type): $InteractionResult
 public "wasExploded"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $Explosion$$Type): void
 public "canEntityDestroy"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): boolean
-public "useWithoutItem"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $BlockHitResult$$Type): $InteractionResult
 public "doAttack"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public "getScreenBlockPos"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type): $BlockPos
 public "getShape"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $CollisionContext$$Type): $VoxelShape
@@ -243,8 +243,8 @@ import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$IAttackableBlock$$Interface} from "mcjty.rftoolsutility.modules.screen.blocks.IAttackableBlock"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$IModuleProvider} from "mcjty.rftoolsbase.api.screens.IModuleProvider"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -258,9 +258,9 @@ import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$BaseBlock} from "mcjty.lib.blocks.BaseBlock"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
+import {$BaseBlock} from "mcjty.lib.blocks.BaseBlock"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$DirectionProperty} from "net.minecraft.world.level.block.state.properties.DirectionProperty"
@@ -300,9 +300,9 @@ constructor(arg0: $BlockEntityType$BlockEntitySupplier$$Type<($BlockEntity$$Type
 
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
 public "setPlacedBy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $LivingEntity$$Type, arg4: $ItemStack$$Type): void
+public "doAttack"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public static "hasModuleProvider"(arg0: $ItemStack$$Type): boolean
 public static "getModuleProvider"(arg0: $ItemStack$$Type): $IModuleProvider
-public "doAttack"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public "cycleSizeTranspMode"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public "cycleSizeMode"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public "cycleTranspMode"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
@@ -333,8 +333,8 @@ static readonly "SMOOTHING": double
 
 constructor()
 
-public "setShowdiff"(arg0: boolean): void
 public "getContentsValue"(arg0: long, arg1: long, arg2: long): $IModuleDataContents
+public "setShowdiff"(arg0: boolean): void
 set "showdiff"(value: boolean)
 }
 /**
@@ -418,7 +418,7 @@ get "rfPerTick"(): integer
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $TextScreenModule$$Type = ({"align"?: $TextAlign$$Type, "color"?: integer, "large"?: boolean, "line"?: StringJS}) | ([align?: $TextAlign$$Type, color?: integer, large?: boolean, line?: StringJS]);
+export type $TextScreenModule$$Type = ({"color"?: integer, "large"?: boolean, "line"?: StringJS, "align"?: $TextAlign$$Type}) | ([color?: integer, large?: boolean, line?: StringJS, align?: $TextAlign$$Type]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -427,8 +427,8 @@ declare module "mcjty.rftoolsutility.modules.screen.modules.ButtonScreenModule" 
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$IScreenDataHelper$$Type} from "mcjty.rftoolsbase.api.screens.IScreenDataHelper"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$IModuleDataBoolean} from "mcjty.rftoolsbase.api.screens.data.IModuleDataBoolean"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$IModuleDataBoolean} from "mcjty.rftoolsbase.api.screens.data.IModuleDataBoolean"
 import {$IScreenModule, $IScreenModule$$Interface} from "mcjty.rftoolsbase.api.screens.IScreenModule"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$TextAlign, $TextAlign$$Type} from "mcjty.rftoolsbase.api.screens.TextAlign"
@@ -480,7 +480,7 @@ get "rfPerTick"(): integer
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $ButtonScreenModule$$Type = ({"channel"?: integer, "toggle"?: boolean, "align"?: $TextAlign$$Type, "color"?: integer, "button"?: StringJS, "buttonColor"?: integer, "line"?: StringJS}) | ([channel?: integer, toggle?: boolean, align?: $TextAlign$$Type, color?: integer, button?: StringJS, buttonColor?: integer, line?: StringJS]);
+export type $ButtonScreenModule$$Type = ({"toggle"?: boolean, "align"?: $TextAlign$$Type, "color"?: integer, "button"?: StringJS, "buttonColor"?: integer, "line"?: StringJS, "channel"?: integer}) | ([toggle?: boolean, align?: $TextAlign$$Type, color?: integer, button?: StringJS, buttonColor?: integer, line?: StringJS, channel?: integer]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -585,8 +585,8 @@ import {$GlobalPos, $GlobalPos$$Type} from "net.minecraft.core.GlobalPos"
 import {$ScreenModuleHelper, $ScreenModuleHelper$$Type} from "mcjty.rftoolsutility.modules.screen.modules.ScreenModuleHelper"
 import {$FormatStyle, $FormatStyle$$Type} from "mcjty.rftoolsbase.api.screens.FormatStyle"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$ILevelRenderHelper, $ILevelRenderHelper$$Type} from "mcjty.rftoolsbase.api.screens.ILevelRenderHelper"
 import {$BarMode, $BarMode$$Type} from "mcjty.rftoolsbase.api.screens.BarMode"
+import {$ILevelRenderHelper, $ILevelRenderHelper$$Type} from "mcjty.rftoolsbase.api.screens.ILevelRenderHelper"
 import {$IModuleDataContents} from "mcjty.rftoolsbase.api.screens.data.IModuleDataContents"
 import {$Record} from "java.lang.Record"
 
@@ -598,14 +598,15 @@ static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($Energ
 constructor(arg0: $GlobalPos$$Type, arg1: $Direction$$Type, arg2: StringJS, arg3: integer, arg4: $TextAlign$$Type, arg5: $ILevelRenderHelper$$Type, arg6: StringJS)
 constructor(pos: $GlobalPos$$Type, side: $Direction$$Type, helper: $ScreenModuleHelper$$Type, active: boolean, line: StringJS, color: integer, align: $TextAlign$$Type, rfRenderer: $ILevelRenderHelper$$Type, monitor: StringJS)
 
+public "withActive"(arg0: boolean): $EnergyBarScreenModule
 public "getAlign"(): $TextAlign
+public "withPos"(arg0: $GlobalPos$$Type): $EnergyBarScreenModule
+public "withSide"(arg0: $Direction$$Type): $EnergyBarScreenModule
+public "withFormat"(arg0: $FormatStyle$$Type): $EnergyBarScreenModule
 public "mouseClick"(arg0: $ItemStack$$Type, arg1: $Level$$Type, arg2: integer, arg3: integer, arg4: boolean, arg5: $Player$$Type): $ItemStack
 public "getRfPerTick"(): integer
 public "withAlign"(arg0: $TextAlign$$Type): $EnergyBarScreenModule
-public "withPos"(arg0: $GlobalPos$$Type): $EnergyBarScreenModule
-public "withSide"(arg0: $Direction$$Type): $EnergyBarScreenModule
 public "withMonitor"(arg0: StringJS): $EnergyBarScreenModule
-public "withFormat"(arg0: $FormatStyle$$Type): $EnergyBarScreenModule
 public "getBarMode"(): $BarMode
 public "withBarMode"(arg0: $BarMode$$Type): $EnergyBarScreenModule
 public "isHideBar"(): boolean
@@ -614,13 +615,12 @@ public "getNegColor"(): integer
 public "withNegColor"(arg0: integer): $EnergyBarScreenModule
 public "getPosColor"(): integer
 public "withPosColor"(arg0: integer): $EnergyBarScreenModule
-public "withActive"(arg0: boolean): $EnergyBarScreenModule
 public "rfRenderer"(): $ILevelRenderHelper
 public "getRfRenderer"(): $ILevelRenderHelper
 public "helper"(): $ScreenModuleHelper
+public "getFormat"(): $FormatStyle
 public "getData"(arg0: $IScreenDataHelper$$Type, arg1: $Level$$Type, arg2: long): $IModuleDataContents
 public "active"(): boolean
-public "getFormat"(): $FormatStyle
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
@@ -658,8 +658,8 @@ export type $EnergyBarScreenModule$$Original = $EnergyBarScreenModule;}
 declare module "mcjty.rftoolsutility.modules.screen.items.modules.EnergyPlusModuleItem" {
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$EnergyModuleItem} from "mcjty.rftoolsutility.modules.screen.items.modules.EnergyModuleItem"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 
 export class $EnergyPlusModuleItem extends $EnergyModuleItem {
@@ -748,8 +748,8 @@ import {$GlobalPos, $GlobalPos$$Type} from "net.minecraft.core.GlobalPos"
 import {$ScreenModuleHelper, $ScreenModuleHelper$$Type} from "mcjty.rftoolsutility.modules.screen.modules.ScreenModuleHelper"
 import {$FormatStyle, $FormatStyle$$Type} from "mcjty.rftoolsbase.api.screens.FormatStyle"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$ILevelRenderHelper, $ILevelRenderHelper$$Type} from "mcjty.rftoolsbase.api.screens.ILevelRenderHelper"
 import {$BarMode, $BarMode$$Type} from "mcjty.rftoolsbase.api.screens.BarMode"
+import {$ILevelRenderHelper, $ILevelRenderHelper$$Type} from "mcjty.rftoolsbase.api.screens.ILevelRenderHelper"
 import {$IModuleDataContents} from "mcjty.rftoolsbase.api.screens.data.IModuleDataContents"
 import {$Record} from "java.lang.Record"
 
@@ -761,13 +761,14 @@ static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($Fluid
 constructor(arg0: $GlobalPos$$Type, arg1: StringJS, arg2: integer, arg3: $TextAlign$$Type, arg4: $ILevelRenderHelper$$Type, arg5: StringJS)
 constructor(pos: $GlobalPos$$Type, helper: $ScreenModuleHelper$$Type, active: boolean, line: StringJS, color: integer, align: $TextAlign$$Type, mbRenderer: $ILevelRenderHelper$$Type, monitor: StringJS)
 
+public "withActive"(arg0: boolean): $FluidBarScreenModule
 public "getAlign"(): $TextAlign
+public "withPos"(arg0: $GlobalPos$$Type): $FluidBarScreenModule
+public "withFormat"(arg0: $FormatStyle$$Type): $FluidBarScreenModule
 public "mouseClick"(arg0: $ItemStack$$Type, arg1: $Level$$Type, arg2: integer, arg3: integer, arg4: boolean, arg5: $Player$$Type): $ItemStack
 public "getRfPerTick"(): integer
 public "withAlign"(arg0: $TextAlign$$Type): $FluidBarScreenModule
-public "withPos"(arg0: $GlobalPos$$Type): $FluidBarScreenModule
 public "withMonitor"(arg0: StringJS): $FluidBarScreenModule
-public "withFormat"(arg0: $FormatStyle$$Type): $FluidBarScreenModule
 public "getBarMode"(): $BarMode
 public "withBarMode"(arg0: $BarMode$$Type): $FluidBarScreenModule
 public "isHideBar"(): boolean
@@ -776,13 +777,12 @@ public "getNegColor"(): integer
 public "withNegColor"(arg0: integer): $FluidBarScreenModule
 public "getPosColor"(): integer
 public "withPosColor"(arg0: integer): $FluidBarScreenModule
-public "withActive"(arg0: boolean): $FluidBarScreenModule
 public "mbRenderer"(): $ILevelRenderHelper
 public "getMbRenderer"(): $ILevelRenderHelper
 public "helper"(): $ScreenModuleHelper
+public "getFormat"(): $FormatStyle
 public "getData"(arg0: $IScreenDataHelper$$Type, arg1: $Level$$Type, arg2: long): $IModuleData
 public "active"(): boolean
-public "getFormat"(): $FormatStyle
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
@@ -839,20 +839,20 @@ static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($Count
 constructor(arg0: $GlobalPos$$Type, arg1: StringJS, arg2: integer, arg3: integer, arg4: $FormatStyle$$Type, arg5: $TextAlign$$Type, arg6: StringJS)
 constructor(pos: $GlobalPos$$Type, active: boolean, line: StringJS, color: integer, cntcolor: integer, format: $FormatStyle$$Type, align: $TextAlign$$Type, monitor: StringJS)
 
+public "withActive"(arg0: boolean): $CounterScreenModule
 public "getAlign"(): $TextAlign
+public "withPos"(arg0: $GlobalPos$$Type): $CounterScreenModule
+public "withFormat"(arg0: $FormatStyle$$Type): $CounterScreenModule
 public "mouseClick"(arg0: $ItemStack$$Type, arg1: $Level$$Type, arg2: integer, arg3: integer, arg4: boolean, arg5: $Player$$Type): $ItemStack
 public "getRfPerTick"(): integer
 public "withAlign"(arg0: $TextAlign$$Type): $CounterScreenModule
-public "withPos"(arg0: $GlobalPos$$Type): $CounterScreenModule
 public "withMonitor"(arg0: StringJS): $CounterScreenModule
-public "withFormat"(arg0: $FormatStyle$$Type): $CounterScreenModule
 public "getCntcolor"(): integer
 public "withCntcolor"(arg0: integer): $CounterScreenModule
-public "withActive"(arg0: boolean): $CounterScreenModule
 public "cntcolor"(): integer
+public "getFormat"(): $FormatStyle
 public "getData"(arg0: $IScreenDataHelper$$Type, arg1: $Level$$Type, arg2: long): $IModuleDataInteger
 public "active"(): boolean
-public "getFormat"(): $FormatStyle
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
@@ -886,14 +886,14 @@ import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$IModuleGuiBuilder$$Type} from "mcjty.rftoolsbase.api.screens.IModuleGuiBuilder"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
-import {$IClientScreenModule} from "mcjty.rftoolsbase.api.screens.IClientScreenModule"
 import {$List$$Type} from "java.util.List"
+import {$IClientScreenModule} from "mcjty.rftoolsbase.api.screens.IClientScreenModule"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$DataComponentType} from "net.minecraft.core.component.DataComponentType"
 import {$IScreenModule} from "mcjty.rftoolsbase.api.screens.IScreenModule"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$GenericModuleItem} from "mcjty.rftoolsbase.tools.GenericModuleItem"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Codec} from "com.mojang.serialization.Codec"
@@ -1001,8 +1001,8 @@ public "getComponentsToPreserve"(): $Collection<($DataComponentType<(never)>)>
 public "createClientScreenModule"(): $IClientScreenModule<(never)>
 public "createServerScreenModule"(): $IScreenModule<(never), (never)>
 public "componentType"(): $DataComponentType<($IScreenModule<(never), (never)>)>
-public static "data"(arg0: $ItemStack$$Type): $CounterScreenModule
 public static "data"(arg0: $ItemStack$$Type, arg1: $Consumer$$Type<($CounterScreenModule)>): void
+public static "data"(arg0: $ItemStack$$Type): $CounterScreenModule
 public "getModuleName"(): StringJS
 public "codec"(): $Codec<($IScreenModule<(never), (never)>)>
 public "createGui"(arg0: $IModuleGuiBuilder$$Type): void
@@ -1174,15 +1174,16 @@ constructor(arg0: integer, arg1: $GlobalPos$$Type, arg2: $Direction$$Type)
 constructor(channel: integer, pos: $GlobalPos$$Type, side: $Direction$$Type, active: boolean, line: StringJS, yestext: StringJS, notext: StringJS, color: integer, yescolor: integer, nocolor: integer, analog: boolean, align: $TextAlign$$Type, monitor: StringJS)
 constructor(arg0: integer, arg1: $GlobalPos$$Type, arg2: $Direction$$Type, arg3: StringJS, arg4: StringJS, arg5: StringJS, arg6: integer, arg7: integer, arg8: integer, arg9: boolean, arg10: $TextAlign$$Type, arg11: StringJS)
 
+public "withActive"(arg0: boolean): $RedstoneScreenModule
 public "getAlign"(): $TextAlign
+public "withPos"(arg0: $GlobalPos$$Type): $RedstoneScreenModule
+public "withSide"(arg0: $Direction$$Type): $RedstoneScreenModule
 public "analog"(): boolean
 public "withAnalog"(arg0: boolean): $RedstoneScreenModule
 public "withChannel"(arg0: integer): $RedstoneScreenModule
 public "mouseClick"(arg0: $ItemStack$$Type, arg1: $Level$$Type, arg2: integer, arg3: integer, arg4: boolean, arg5: $Player$$Type): $ItemStack
 public "getRfPerTick"(): integer
 public "withAlign"(arg0: $TextAlign$$Type): $RedstoneScreenModule
-public "withPos"(arg0: $GlobalPos$$Type): $RedstoneScreenModule
-public "withSide"(arg0: $Direction$$Type): $RedstoneScreenModule
 public "withMonitor"(arg0: StringJS): $RedstoneScreenModule
 public "isAnalog"(): boolean
 public "getNocolor"(): integer
@@ -1193,11 +1194,10 @@ public "getYescolor"(): integer
 public "withYescolor"(arg0: integer): $RedstoneScreenModule
 public "getYestext"(): StringJS
 public "withYestext"(arg0: StringJS): $RedstoneScreenModule
-public "withActive"(arg0: boolean): $RedstoneScreenModule
-public "yestext"(): StringJS
-public "notext"(): StringJS
 public "yescolor"(): integer
 public "nocolor"(): integer
+public "yestext"(): StringJS
+public "notext"(): StringJS
 public "getData"(arg0: $IScreenDataHelper$$Type, arg1: $Level$$Type, arg2: long): $IModuleDataInteger
 public "active"(): boolean
 public "equals"(arg0: any): boolean
@@ -1255,14 +1255,14 @@ export type $IAttackableBlock$$Original = $IAttackableBlock;}
 declare module "mcjty.rftoolsutility.modules.screen.items.ScreenLinkItem" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$List$$Type} from "java.util.List"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$ITabletSupport$$Interface} from "mcjty.rftoolsbase.api.various.ITabletSupport"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
@@ -1319,12 +1319,12 @@ static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($Inven
 constructor(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: $GlobalPos$$Type, arg5: StringJS)
 constructor(slot1: integer, slot2: integer, slot3: integer, slot4: integer, pos: $GlobalPos$$Type, active: boolean, monitor: StringJS)
 
+public "withActive"(arg0: boolean): $InventoryScreenModule
 public "slot4"(): integer
 public "slot3"(): integer
+public "withPos"(arg0: $GlobalPos$$Type): $InventoryScreenModule
 public "mouseClick"(arg0: $ItemStack$$Type, arg1: $Level$$Type, arg2: integer, arg3: integer, arg4: boolean, arg5: $Player$$Type): $ItemStack
 public "getRfPerTick"(): integer
-public "withPos"(arg0: $GlobalPos$$Type): $InventoryScreenModule
-public "withMonitor"(arg0: StringJS): $InventoryScreenModule
 public "getSlot4"(): integer
 public "withSlot4"(arg0: integer): $InventoryScreenModule
 public "getSlot3"(): integer
@@ -1333,7 +1333,7 @@ public "getSlot2"(): integer
 public "withSlot2"(arg0: integer): $InventoryScreenModule
 public "getSlot1"(): integer
 public "withSlot1"(arg0: integer): $InventoryScreenModule
-public "withActive"(arg0: boolean): $InventoryScreenModule
+public "withMonitor"(arg0: StringJS): $InventoryScreenModule
 public "getData"(arg0: $IScreenDataHelper$$Type, arg1: $Level$$Type, arg2: long): $InventoryScreenModule$ModuleDataStacks
 public "active"(): boolean
 public "equals"(arg0: any): boolean
@@ -1474,6 +1474,7 @@ import {$IScreenDataHelper$$Type} from "mcjty.rftoolsbase.api.screens.IScreenDat
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$IScreenModule$$Interface} from "mcjty.rftoolsbase.api.screens.IScreenModule"
+import {$IModuleData} from "mcjty.rftoolsbase.api.screens.data.IModuleData"
 import {$IModuleDataString} from "mcjty.rftoolsbase.api.screens.data.IModuleDataString"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Codec} from "com.mojang.serialization.Codec"
@@ -1490,22 +1491,22 @@ static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($Machi
 constructor(arg0: integer, arg1: $GlobalPos$$Type, arg2: integer, arg3: integer, arg4: StringJS)
 constructor(tag: integer, pos: $GlobalPos$$Type, active: boolean, labcolor: integer, txtcolor: integer, monitor: StringJS)
 
+public "withActive"(arg0: boolean): $MachineInformationScreenModule
+public "withPos"(arg0: $GlobalPos$$Type): $MachineInformationScreenModule
+public "mouseClick"(arg0: $ItemStack$$Type, arg1: $Level$$Type, arg2: integer, arg3: integer, arg4: boolean, arg5: $Player$$Type): $ItemStack
+public "getRfPerTick"(): integer
 public "getTxtcolor"(): integer
 public "withTxtcolor"(arg0: integer): $MachineInformationScreenModule
 public "getLabcolor"(): integer
 public "withLabcolor"(arg0: integer): $MachineInformationScreenModule
-public "mouseClick"(arg0: $ItemStack$$Type, arg1: $Level$$Type, arg2: integer, arg3: integer, arg4: boolean, arg5: $Player$$Type): $ItemStack
-public "getRfPerTick"(): integer
-public "withPos"(arg0: $GlobalPos$$Type): $MachineInformationScreenModule
 public "withMonitor"(arg0: StringJS): $MachineInformationScreenModule
-public "withActive"(arg0: boolean): $MachineInformationScreenModule
 public "labcolor"(): integer
 public "txtcolor"(): integer
-public "getData"(arg0: $IScreenDataHelper$$Type, arg1: $Level$$Type, arg2: long): $IModuleDataString
-public "getTag"(): integer
-public "active"(): boolean
-public "withTag"(arg0: integer): $MachineInformationScreenModule
 public "tag"(): integer
+public "withTag"(arg0: integer): $MachineInformationScreenModule
+public "getTag"(): integer
+public "getData"(arg0: $IScreenDataHelper$$Type, arg1: $Level$$Type, arg2: long): $IModuleData
+public "active"(): boolean
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer

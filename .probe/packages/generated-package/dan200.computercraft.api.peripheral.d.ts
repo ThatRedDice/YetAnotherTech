@@ -34,8 +34,8 @@ export type $IDynamicPeripheral$$Type = ($IDynamicPeripheral);
 export type $IDynamicPeripheral$$Original = $IDynamicPeripheral;}
 declare module "dan200.computercraft.api.peripheral.IComputerAccess" {
 import {$WritableMount$$Type} from "dan200.computercraft.api.filesystem.WritableMount"
-import {$Map} from "java.util.Map"
 import {$Mount$$Type} from "dan200.computercraft.api.filesystem.Mount"
+import {$Map} from "java.util.Map"
 import {$IPeripheral} from "dan200.computercraft.api.peripheral.IPeripheral"
 import {$WorkMonitor} from "dan200.computercraft.api.peripheral.WorkMonitor"
 

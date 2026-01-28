@@ -40,8 +40,8 @@ import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$NodeHost} from "dev.technici4n.moderndynamics.network.NodeHost"
 import {$Vec3, $Vec3$$Type} from "net.minecraft.world.phys.Vec3"
+import {$NodeHost} from "dev.technici4n.moderndynamics.network.NodeHost"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Class$$Type} from "java.lang.Class"
@@ -66,9 +66,7 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 
 constructor(arg0: $BlockEntityType$$Type<(never)>, arg1: $BlockPos$$Type, arg2: $BlockState$$Type)
 
-public "useWithoutItem"(arg0: $Player$$Type, arg1: $BlockHitResult$$Type): $InteractionResult
-public "clearRemoved"(): void
-public "onRemoved"(): void
+public "getApiInstance"(arg0: $BlockCapability$$Type<(never), ($Direction$$Type)>, arg1: $Direction$$Type): any
 public "getHosts"(): ($NodeHost)[]
 public "getAttachment"(arg0: $Direction$$Type): $AttachedAttachment
 public "updateCachedShape"(arg0: integer, arg1: integer): void
@@ -84,7 +82,9 @@ public "toTag"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): vo
 public "getCachedShape"(): $VoxelShape
 public "overridePickBlock"(arg0: $HitResult$$Type): $ItemStack
 public "getClientSideConnections"(): integer
-public "getApiInstance"(arg0: $BlockCapability$$Type<(never), ($Direction$$Type)>, arg1: $Direction$$Type): any
+public "useWithoutItem"(arg0: $Player$$Type, arg1: $BlockHitResult$$Type): $InteractionResult
+public "clearRemoved"(): void
+public "onRemoved"(): void
 public "sync"(): void
 public "clientTick"(): void
 public "useItemOn"(arg0: $Player$$Type, arg1: $InteractionHand$$Type, arg2: $BlockHitResult$$Type): $ItemInteractionResult
@@ -110,8 +110,8 @@ export type $PipeBlockEntity$$Type = ($PipeBlockEntity);
 export type $PipeBlockEntity$$Original = $PipeBlockEntity;}
 declare module "dev.technici4n.moderndynamics.pipe.PipeBlock" {
 import {$PipeItem, $PipeItem$$Type} from "dev.technici4n.moderndynamics.pipe.PipeItem"
-import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$LootParams$Builder$$Type} from "net.minecraft.world.level.storage.loot.LootParams$Builder"
+import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$List} from "java.util.List"
@@ -123,12 +123,12 @@ import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$HitResult$$Type} from "net.minecraft.world.phys.HitResult"
@@ -137,9 +137,9 @@ import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
-import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
+import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 
@@ -165,16 +165,16 @@ static readonly "UPDATE_CLIENTS": integer
 
 constructor(arg0: StringJS)
 
+public "isTransparent"(): boolean
+public "setTransparent"(arg0: boolean): $PipeBlock
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
 public "updateShape"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $BlockState$$Type, arg3: $LevelAccessor$$Type, arg4: $BlockPos$$Type, arg5: $BlockPos$$Type): $BlockState
 public "getDrops"(arg0: $BlockState$$Type, arg1: $LootParams$Builder$$Type): $List<($ItemStack)>
 public "hasDynamicShape"(): boolean
 public "setItem"(arg0: $PipeItem$$Type): void
 public "getTicker"<T extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
-public "setTransparent"(arg0: boolean): $PipeBlock
-public "isTransparent"(): boolean
-public "getItem"(): $PipeItem
 public "getShape"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $CollisionContext$$Type): $VoxelShape
+public "getItem"(): $PipeItem
 public "getFluidState"(arg0: $BlockState$$Type): $FluidState
 public "getCloneItemStack"(arg0: $BlockState$$Type, arg1: $HitResult$$Type, arg2: $LevelReader$$Type, arg3: $BlockPos$$Type, arg4: $Player$$Type): $ItemStack
 public "onRemove"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: boolean): void
@@ -182,13 +182,13 @@ public "neighborChanged"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $Blo
 public "getLightBlock"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): integer
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
 public "getPickupSound"(): $Optional<($SoundEvent)>
-public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "canPlaceLiquid"(arg0: $Player$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $Fluid$$Type): boolean
+public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "pickupBlock"(arg0: $Player$$Type, arg1: $LevelAccessor$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): $ItemStack
 public "getPickupSound"(arg0: $BlockState$$Type): $Optional<($SoundEvent)>
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
-set "transparent"(value: boolean)
 get "transparent"(): boolean
+set "transparent"(value: boolean)
 get "pickupSound"(): $Optional<($SoundEvent)>
 }
 /**

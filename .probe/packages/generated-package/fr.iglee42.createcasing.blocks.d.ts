@@ -4,8 +4,8 @@ import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$Bl
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
-import {$RollerBlock} from "com.simibubi.create.content.contraptions.actors.roller.RollerBlock"
 import {$RollerBlockEntity} from "com.simibubi.create.content.contraptions.actors.roller.RollerBlockEntity"
+import {$RollerBlock} from "com.simibubi.create.content.contraptions.actors.roller.RollerBlock"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Item} from "net.minecraft.world.item.Item"
@@ -62,8 +62,8 @@ import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$BlockEntityType} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$ChainConveyorBlockEntity} from "com.simibubi.create.content.kinetics.chainConveyor.ChainConveyorBlockEntity"
+import {$BlockEntityType} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -212,16 +212,16 @@ static readonly "AXIS": $EnumProperty<($Direction$Axis)>
 public static "large"(arg0: $BlockBehaviour$Properties$$Type): $WoodenCogwheelBlock
 public "getBlockEntityType"(): $BlockEntityType<($KineticBlockEntity)>
 public static "small"(arg0: $BlockBehaviour$Properties$$Type): $WoodenCogwheelBlock
-public static "isLargeCog"(arg0: $BlockState$$Type): boolean
+public static "isSmallCog"(arg0: $Block$$Type): boolean
+public static "isSmallCog"(arg0: $BlockState$$Type): boolean
 public static "isLargeCog"(arg0: $Block$$Type): boolean
+public static "isLargeCog"(arg0: $BlockState$$Type): boolean
 public static "isDedicatedCogWheel"(arg0: $Block$$Type): boolean
 public static "isDedicatedCogItem"(arg0: $ItemStack$$Type): boolean
 public static "isSmallCogItem"(arg0: $ItemStack$$Type): boolean
 public static "isLargeCogItem"(arg0: $ItemStack$$Type): boolean
-public static "isSmallCog"(arg0: $BlockState$$Type): boolean
-public static "isSmallCog"(arg0: $Block$$Type): boolean
-public "getRotationAxis"(arg0: $BlockState$$Type): $Direction$Axis
 public "hasShaftTowards"(arg0: $LevelReader$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $Direction$$Type): boolean
+public "getRotationAxis"(arg0: $BlockState$$Type): $Direction$Axis
 public static "playRotateSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public static "playRemoveSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public static "onRemove"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): void
@@ -295,8 +295,8 @@ export type $CustomEncasedFanBlock$$Type = ($CustomEncasedFanBlock);
 export type $CustomEncasedFanBlock$$Original = $CustomEncasedFanBlock;}
 declare module "fr.iglee42.createcasing.blocks.publics.PublicEncasedCogwheelBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$SimpleKineticBlockEntity} from "com.simibubi.create.content.kinetics.simpleRelays.SimpleKineticBlockEntity"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$SimpleKineticBlockEntity} from "com.simibubi.create.content.kinetics.simpleRelays.SimpleKineticBlockEntity"
 import {$EncasedCogwheelBlock} from "com.simibubi.create.content.kinetics.simpleRelays.encased.EncasedCogwheelBlock"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
@@ -307,8 +307,8 @@ import {$Direction$Axis} from "net.minecraft.core.Direction$Axis"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Supplier$$Type} from "java.util.function.Supplier"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -339,14 +339,14 @@ static readonly "AXIS": $EnumProperty<($Direction$Axis)>
 constructor(arg0: $BlockBehaviour$Properties$$Type, arg1: boolean, arg2: $Supplier$$Type<($Block$$Type)>)
 
 public "getBlockEntityType"(): $BlockEntityType<($SimpleKineticBlockEntity)>
-public static "isLargeCog"(arg0: $BlockState$$Type): boolean
+public static "isSmallCog"(arg0: $Block$$Type): boolean
+public static "isSmallCog"(arg0: $BlockState$$Type): boolean
 public static "isLargeCog"(arg0: $Block$$Type): boolean
+public static "isLargeCog"(arg0: $BlockState$$Type): boolean
 public static "isDedicatedCogWheel"(arg0: $Block$$Type): boolean
 public static "isDedicatedCogItem"(arg0: $ItemStack$$Type): boolean
 public static "isSmallCogItem"(arg0: $ItemStack$$Type): boolean
 public static "isLargeCogItem"(arg0: $ItemStack$$Type): boolean
-public static "isSmallCog"(arg0: $BlockState$$Type): boolean
-public static "isSmallCog"(arg0: $Block$$Type): boolean
 public static "onRemove"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): void
 public static "playRotateSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public static "playRemoveSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
@@ -363,8 +363,8 @@ export type $PublicEncasedCogwheelBlock$$Type = ($PublicEncasedCogwheelBlock);
  */
 export type $PublicEncasedCogwheelBlock$$Original = $PublicEncasedCogwheelBlock;}
 declare module "fr.iglee42.createcasing.blocks.customs.CustomGearboxBlock" {
-import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$LootParams$Builder$$Type} from "net.minecraft.world.level.storage.loot.LootParams$Builder"
+import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$List} from "java.util.List"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
@@ -383,8 +383,8 @@ import {$GearboxBlockEntity} from "com.simibubi.create.content.kinetics.gearbox.
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$HitResult$$Type} from "net.minecraft.world.phys.HitResult"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
-import {$GearboxBlock} from "com.simibubi.create.content.kinetics.gearbox.GearboxBlock"
 import {$Direction$Axis} from "net.minecraft.core.Direction$Axis"
+import {$GearboxBlock} from "com.simibubi.create.content.kinetics.gearbox.GearboxBlock"
 import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 
@@ -430,10 +430,10 @@ export type $CustomGearboxBlock$$Type = ($CustomGearboxBlock);
 export type $CustomGearboxBlock$$Original = $CustomGearboxBlock;}
 declare module "fr.iglee42.createcasing.blocks.customs.CustomPressBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$MechanicalPressBlock} from "com.simibubi.create.content.kinetics.press.MechanicalPressBlock"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$Direction} from "net.minecraft.core.Direction"
+import {$MechanicalPressBlock} from "com.simibubi.create.content.kinetics.press.MechanicalPressBlock"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$MechanicalPressBlockEntity} from "com.simibubi.create.content.kinetics.press.MechanicalPressBlockEntity"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
@@ -494,11 +494,11 @@ import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$DepotBlockEntity} from "com.simibubi.create.content.logistics.depot.DepotBlockEntity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$DepotBlockEntity} from "com.simibubi.create.content.logistics.depot.DepotBlockEntity"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
-import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$DepotBlock} from "com.simibubi.create.content.logistics.depot.DepotBlock"
+import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $CustomDepotBlock extends $DepotBlock {
@@ -550,8 +550,8 @@ import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$SawBlock} from "com.simibubi.create.content.kinetics.saw.SawBlock"
 import {$BlockEntityType} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$DirectionProperty} from "net.minecraft.world.level.block.state.properties.DirectionProperty"
@@ -686,8 +686,8 @@ import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$Direction$Axis} from "net.minecraft.core.Direction$Axis"
 import {$InteractionResult, $InteractionResult$$Type} from "net.minecraft.world.InteractionResult"
 import {$ItemInteractionResult, $ItemInteractionResult$$Type} from "net.minecraft.world.ItemInteractionResult"
-import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
+import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -715,14 +715,14 @@ static readonly "AXIS": $EnumProperty<($Direction$Axis)>
 
 constructor(arg0: $BlockBehaviour$Properties$$Type)
 
+public "hasShaftTowards"(arg0: $LevelReader$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $Direction$$Type): boolean
+public "hideStressImpact"(): boolean
+public "isSmallCog"(): boolean
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
 public "getRotationAxis"(arg0: $BlockState$$Type): $Direction$Axis
 public "getBlockEntityType"(): $BlockEntityType<($CreativeCogwheelBlockEntity)>
-public "isDedicatedCogWheel"(): boolean
-public "hasShaftTowards"(arg0: $LevelReader$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $Direction$$Type): boolean
-public "hideStressImpact"(): boolean
 public "getBlockEntityClass"(): $Class<($CreativeCogwheelBlockEntity)>
-public "isSmallCog"(): boolean
+public "isDedicatedCogWheel"(): boolean
 public "getTicker"<S extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(S)>): $BlockEntityTicker<(S)>
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
 public "getBlockEntityOptional"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type): $Optional<($CreativeCogwheelBlockEntity)>
@@ -731,23 +731,23 @@ public "onBlockEntityUse"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2:
 public "onBlockEntityUseItemOn"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $Function$$Type<($CreativeCogwheelBlockEntity), ($ItemInteractionResult$$Type)>): $ItemInteractionResult
 public "getBlockEntity"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type): $CreativeCogwheelBlockEntity
 public static "onRemove"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): void
+public static "isSmallCog"(arg0: $Block$$Type): boolean
+public static "isSmallCog"(arg0: $BlockState$$Type): boolean
 public "isLargeCog"(): boolean
-public static "isLargeCog"(arg0: $BlockState$$Type): boolean
 public static "isLargeCog"(arg0: $Block$$Type): boolean
+public static "isLargeCog"(arg0: $BlockState$$Type): boolean
 public static "isDedicatedCogWheel"(arg0: $Block$$Type): boolean
 public static "isDedicatedCogItem"(arg0: $ItemStack$$Type): boolean
 public static "isSmallCogItem"(arg0: $ItemStack$$Type): boolean
 public static "isLargeCogItem"(arg0: $ItemStack$$Type): boolean
-public static "isSmallCog"(arg0: $BlockState$$Type): boolean
-public static "isSmallCog"(arg0: $Block$$Type): boolean
 public "getListener"<T extends $BlockEntity>(arg0: $ServerLevel$$Type, arg1: T): $GameEventListener
 public static "playRotateSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public static "playRemoveSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
-get "blockEntityType"(): $BlockEntityType<($CreativeCogwheelBlockEntity)>
-get "dedicatedCogWheel"(): boolean
-get "blockEntityClass"(): $Class<($CreativeCogwheelBlockEntity)>
 get "smallCog"(): boolean
+get "blockEntityType"(): $BlockEntityType<($CreativeCogwheelBlockEntity)>
+get "blockEntityClass"(): $Class<($CreativeCogwheelBlockEntity)>
+get "dedicatedCogWheel"(): boolean
 get "largeCog"(): boolean
 }
 /**
@@ -761,8 +761,8 @@ export type $CreativeCogwheelBlock$$Type = ($CreativeCogwheelBlock);
 export type $CreativeCogwheelBlock$$Original = $CreativeCogwheelBlock;}
 declare module "fr.iglee42.createcasing.blocks.customs.CustomGearshiftBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$GearshiftBlock} from "com.simibubi.create.content.kinetics.transmission.GearshiftBlock"
+import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
@@ -771,8 +771,8 @@ import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$Direction$Axis} from "net.minecraft.core.Direction$Axis"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -829,8 +829,8 @@ import {$BlockEntityType} from "net.minecraft.world.level.block.entity.BlockEnti
 import {$Item} from "net.minecraft.world.item.Item"
 import {$DrillBlockEntity} from "com.simibubi.create.content.kinetics.drill.DrillBlockEntity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$DrillBlock} from "com.simibubi.create.content.kinetics.drill.DrillBlock"
+import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$DirectionProperty} from "net.minecraft.world.level.block.state.properties.DirectionProperty"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
@@ -932,8 +932,8 @@ export type $CustomShaftBlock$$Type = ($CustomShaftBlock);
  */
 export type $CustomShaftBlock$$Original = $CustomShaftBlock;}
 declare module "fr.iglee42.createcasing.blocks.ConfigurableGearboxBlock" {
-import {$KineticBlock} from "com.simibubi.create.content.kinetics.base.KineticBlock"
 import {$IBE$$Interface} from "com.simibubi.create.foundation.block.IBE"
+import {$KineticBlock} from "com.simibubi.create.content.kinetics.base.KineticBlock"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$Optional} from "java.util.Optional"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
@@ -950,8 +950,8 @@ import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$GearboxBlockEntity, $GearboxBlockEntity$$Type} from "com.simibubi.create.content.kinetics.gearbox.GearboxBlockEntity"
+import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -991,10 +991,10 @@ static readonly "EAST": $BooleanProperty
 
 constructor(arg0: $BlockBehaviour$Properties$$Type)
 
+public "hasShaftTowards"(arg0: $LevelReader$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $Direction$$Type): boolean
 public static "getPropertyByDirection"(arg0: $Direction$$Type): $BooleanProperty
 public "getRotationAxis"(arg0: $BlockState$$Type): $Direction$Axis
 public "getBlockEntityType"(): $BlockEntityType<($GearboxBlockEntity)>
-public "hasShaftTowards"(arg0: $LevelReader$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $Direction$$Type): boolean
 public "getBlockEntityClass"(): $Class<($GearboxBlockEntity)>
 public "onWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $InteractionResult
 public "onSneakWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $InteractionResult
@@ -1023,8 +1023,8 @@ export type $ConfigurableGearboxBlock$$Type = ($ConfigurableGearboxBlock);
  */
 export type $ConfigurableGearboxBlock$$Original = $ConfigurableGearboxBlock;}
 declare module "fr.iglee42.createcasing.blocks.customs.EncasedCustomCogwheelBlock" {
-import {$SimpleKineticBlockEntity} from "com.simibubi.create.content.kinetics.simpleRelays.SimpleKineticBlockEntity"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$SimpleKineticBlockEntity} from "com.simibubi.create.content.kinetics.simpleRelays.SimpleKineticBlockEntity"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
@@ -1076,14 +1076,14 @@ public "getCogwheel"(): $Supplier<($Block)>
 public "getBlockEntityType"(): $BlockEntityType<($SimpleKineticBlockEntity)>
 public "onSneakWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $InteractionResult
 public "getCloneItemStack"(arg0: $BlockState$$Type, arg1: $HitResult$$Type, arg2: $LevelReader$$Type, arg3: $BlockPos$$Type, arg4: $Player$$Type): $ItemStack
-public static "isLargeCog"(arg0: $BlockState$$Type): boolean
+public static "isSmallCog"(arg0: $Block$$Type): boolean
+public static "isSmallCog"(arg0: $BlockState$$Type): boolean
 public static "isLargeCog"(arg0: $Block$$Type): boolean
+public static "isLargeCog"(arg0: $BlockState$$Type): boolean
 public static "isDedicatedCogWheel"(arg0: $Block$$Type): boolean
 public static "isDedicatedCogItem"(arg0: $ItemStack$$Type): boolean
 public static "isSmallCogItem"(arg0: $ItemStack$$Type): boolean
 public static "isLargeCogItem"(arg0: $ItemStack$$Type): boolean
-public static "isSmallCog"(arg0: $BlockState$$Type): boolean
-public static "isSmallCog"(arg0: $Block$$Type): boolean
 public static "onRemove"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): void
 public static "playRotateSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public static "playRemoveSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
@@ -1113,8 +1113,8 @@ import {$ChainDriveBlock$Part} from "com.simibubi.create.content.kinetics.chainD
 import {$Direction$Axis} from "net.minecraft.core.Direction$Axis"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
@@ -1175,10 +1175,10 @@ import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$DeployerBlock} from "com.simibubi.create.content.kinetics.deployer.DeployerBlock"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$BlockEntityType} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$DeployerBlockEntity} from "com.simibubi.create.content.kinetics.deployer.DeployerBlockEntity"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
+import {$BlockEntityType} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$DirectionProperty} from "net.minecraft.world.level.block.state.properties.DirectionProperty"
@@ -1226,8 +1226,8 @@ export type $CustomDeployerBlock$$Original = $CustomDeployerBlock;}
 declare module "fr.iglee42.createcasing.blocks.customs.CustomChainDriveBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$KineticBlockEntity} from "com.simibubi.create.content.kinetics.base.KineticBlockEntity"
@@ -1236,8 +1236,8 @@ import {$ChainDriveBlock$Part} from "com.simibubi.create.content.kinetics.chainD
 import {$Direction$Axis} from "net.minecraft.core.Direction$Axis"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
@@ -1303,8 +1303,8 @@ import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$FluidPipeBlockEntity} from "com.simibubi.create.content.fluids.pipes.FluidPipeBlockEntity"
 import {$Supplier$$Type} from "java.util.function.Supplier"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$EncasedPipeBlock} from "com.simibubi.create.content.fluids.pipes.EncasedPipeBlock"
@@ -1358,8 +1358,8 @@ import {$KineticBlockEntity} from "com.simibubi.create.content.kinetics.base.Kin
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$Direction$Axis} from "net.minecraft.core.Direction$Axis"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$BlockEntityType} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$EncasedShaftBlock} from "com.simibubi.create.content.kinetics.simpleRelays.encased.EncasedShaftBlock"
+import {$BlockEntityType} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
@@ -1476,8 +1476,8 @@ declare module "fr.iglee42.createcasing.blocks.customs.CustomMixerBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$MechanicalMixerBlockEntity} from "com.simibubi.create.content.kinetics.mixer.MechanicalMixerBlockEntity"
+import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$MechanicalMixerBlock} from "com.simibubi.create.content.kinetics.mixer.MechanicalMixerBlock"
@@ -1512,14 +1512,14 @@ constructor(arg0: $BlockBehaviour$Properties$$Type)
 
 public "getBlockEntityType"(): $BlockEntityType<($MechanicalMixerBlockEntity)>
 public static "onRemove"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): void
-public static "isLargeCog"(arg0: $BlockState$$Type): boolean
+public static "isSmallCog"(arg0: $Block$$Type): boolean
+public static "isSmallCog"(arg0: $BlockState$$Type): boolean
 public static "isLargeCog"(arg0: $Block$$Type): boolean
+public static "isLargeCog"(arg0: $BlockState$$Type): boolean
 public static "isDedicatedCogWheel"(arg0: $Block$$Type): boolean
 public static "isDedicatedCogItem"(arg0: $ItemStack$$Type): boolean
 public static "isSmallCogItem"(arg0: $ItemStack$$Type): boolean
 public static "isLargeCogItem"(arg0: $ItemStack$$Type): boolean
-public static "isSmallCog"(arg0: $BlockState$$Type): boolean
-public static "isSmallCog"(arg0: $Block$$Type): boolean
 public static "playRotateSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public static "playRemoveSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
@@ -1605,8 +1605,8 @@ import {$ClutchBlock} from "com.simibubi.create.content.kinetics.transmission.Cl
 import {$Direction$Axis} from "net.minecraft.core.Direction$Axis"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"

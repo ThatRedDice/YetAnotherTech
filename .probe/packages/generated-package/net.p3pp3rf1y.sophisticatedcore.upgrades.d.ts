@@ -15,16 +15,16 @@ import {$IStorageWrapper$$Type} from "net.p3pp3rf1y.sophisticatedcore.api.IStora
 export class $FeedingUpgradeWrapper extends $UpgradeWrapperBase<($FeedingUpgradeWrapper), ($FeedingUpgradeItem)> implements $ITickableUpgrade$$Interface, $IFilteredUpgrade$$Interface {
 constructor(arg0: $IStorageWrapper$$Type, arg1: $ItemStack$$Type, arg2: $Consumer$$Type<($ItemStack)>)
 
+public "getFilterLogic"(): $FilterLogic
 public "shouldFeedImmediatelyWhenHurt"(): boolean
 public "setFeedAtHungerLevel"(arg0: $HungerLevel$$Type): void
 public "setFeedImmediatelyWhenHurt"(arg0: boolean): void
 public "getFeedAtHungerLevel"(): $HungerLevel
-public "getFilterLogic"(): $FilterLogic
 public "tick"(arg0: $Entity$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type): void
+get "filterLogic"(): $FilterLogic
 set "feedAtHungerLevel"(value: $HungerLevel$$Type)
 set "feedImmediatelyWhenHurt"(value: boolean)
 get "feedAtHungerLevel"(): $HungerLevel
-get "filterLogic"(): $FilterLogic
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -36,8 +36,8 @@ export type $FeedingUpgradeWrapper$$Type = ($FeedingUpgradeWrapper);
  */
 export type $FeedingUpgradeWrapper$$Original = $FeedingUpgradeWrapper;}
 declare module "net.p3pp3rf1y.sophisticatedcore.upgrades.ContentsFilterLogic" {
-import {$MemorySettingsCategory$$Type} from "net.p3pp3rf1y.sophisticatedcore.settings.memory.MemorySettingsCategory"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$MemorySettingsCategory$$Type} from "net.p3pp3rf1y.sophisticatedcore.settings.memory.MemorySettingsCategory"
 import {$FilterLogic} from "net.p3pp3rf1y.sophisticatedcore.upgrades.FilterLogic"
 import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$InventoryHandler$$Type} from "net.p3pp3rf1y.sophisticatedcore.inventory.InventoryHandler"
@@ -134,12 +134,12 @@ export type $UpgradeGroup$$Original = $UpgradeGroup;}
 declare module "net.p3pp3rf1y.sophisticatedcore.upgrades.EntityMatch" {
 import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
+import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
-import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
 export class $EntityMatch extends $Enum<($EntityMatch)> implements $StringRepresentable$$Interface {
@@ -155,11 +155,11 @@ public static "valueOf"(arg0: StringJS): $EntityMatch
 public "next"(): $EntityMatch
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
 }
@@ -177,8 +177,8 @@ import {$AlchemyCondition, $AlchemyCondition$$Type} from "net.p3pp3rf1y.sophisti
 import {$AlchemyUpgradeWrapper$FinishUsing, $AlchemyUpgradeWrapper$FinishUsing$$Type} from "net.p3pp3rf1y.sophisticatedcore.upgrades.alchemy.AlchemyUpgradeWrapper$FinishUsing"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$AlchemyUpgradeWrapper$AlchemyItemEntityMatcher, $AlchemyUpgradeWrapper$AlchemyItemEntityMatcher$$Type} from "net.p3pp3rf1y.sophisticatedcore.upgrades.alchemy.AlchemyUpgradeWrapper$AlchemyItemEntityMatcher"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Predicate, $Predicate$$Type} from "java.util.function.Predicate"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$AlchemyUpgradeWrapper$StartUsing, $AlchemyUpgradeWrapper$StartUsing$$Type} from "net.p3pp3rf1y.sophisticatedcore.upgrades.alchemy.AlchemyUpgradeWrapper$StartUsing"
 import {$AlchemyUpgradeWrapper$AlchemyItemStackMatcher, $AlchemyUpgradeWrapper$AlchemyItemStackMatcher$$Type} from "net.p3pp3rf1y.sophisticatedcore.upgrades.alchemy.AlchemyUpgradeWrapper$AlchemyItemStackMatcher"
 import {$Record} from "java.lang.Record"
@@ -187,12 +187,12 @@ export class $AlchemyUpgradeWrapper$AlchemyItemDefinition extends $Record {
 constructor(filter: $Predicate$$Type<($ItemStack)>, getDefaultCondition: $Function$$Type<($ItemStack), ($AlchemyCondition$$Type)>, canApply: $AlchemyUpgradeWrapper$AlchemyItemEntityMatcher$$Type, stackMatches: $AlchemyUpgradeWrapper$AlchemyItemStackMatcher$$Type, startUsing: $AlchemyUpgradeWrapper$StartUsing$$Type, finishUsing: $AlchemyUpgradeWrapper$FinishUsing$$Type, hasItemUseEffects: boolean)
 constructor(arg0: $Predicate$$Type<($ItemStack)>, arg1: $Function$$Type<($ItemStack), ($AlchemyCondition$$Type)>, arg2: $AlchemyUpgradeWrapper$AlchemyItemEntityMatcher$$Type, arg3: $AlchemyUpgradeWrapper$AlchemyItemStackMatcher$$Type, arg4: $AlchemyUpgradeWrapper$StartUsing$$Type, arg5: $AlchemyUpgradeWrapper$FinishUsing$$Type)
 
-public "hasItemUseEffects"(): boolean
-public "canApply"(): $AlchemyUpgradeWrapper$AlchemyItemEntityMatcher
+public "finishUsing"(): $AlchemyUpgradeWrapper$FinishUsing
 public "stackMatches"(): $AlchemyUpgradeWrapper$AlchemyItemStackMatcher
 public "startUsing"(): $AlchemyUpgradeWrapper$StartUsing
 public "getDefaultCondition"(): $Function<($ItemStack), ($AlchemyCondition)>
-public "finishUsing"(): $AlchemyUpgradeWrapper$FinishUsing
+public "hasItemUseEffects"(): boolean
+public "canApply"(): $AlchemyUpgradeWrapper$AlchemyItemEntityMatcher
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
@@ -218,8 +218,8 @@ import {$FilterItemStackHandler} from "net.p3pp3rf1y.sophisticatedcore.util.Filt
 export class $FilterLogic$ObservableFilterItemStackHandler extends $FilterItemStackHandler {
 constructor(arg0: $FilterLogic$$Type, arg1: integer)
 
-public "setOnSlotChange"(arg0: $IntConsumer$$Type): void
 public "initFilters"(arg0: $List$$Type<($ItemStack$$Type)>): void
+public "setOnSlotChange"(arg0: $IntConsumer$$Type): void
 public "isItemValid"(arg0: integer, arg1: $ItemStack$$Type): boolean
 set "onSlotChange"(value: $IntConsumer$$Type)
 }
@@ -258,8 +258,8 @@ export type $ICookingUpgrade$$Type<T> = (() => $CookingLogic$$Type<(T)>);
  */
 export type $ICookingUpgrade$$Original<T> = $ICookingUpgrade<(T)>;}
 declare module "net.p3pp3rf1y.sophisticatedcore.upgrades.magnet.MagnetUpgradeWrapper" {
-import {$UpgradeWrapperBase} from "net.p3pp3rf1y.sophisticatedcore.upgrades.UpgradeWrapperBase"
 import {$MagnetUpgradeItem} from "net.p3pp3rf1y.sophisticatedcore.upgrades.magnet.MagnetUpgradeItem"
+import {$UpgradeWrapperBase} from "net.p3pp3rf1y.sophisticatedcore.upgrades.UpgradeWrapperBase"
 import {$IPickupResponseUpgrade$$Interface} from "net.p3pp3rf1y.sophisticatedcore.upgrades.IPickupResponseUpgrade"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$FilterLogic} from "net.p3pp3rf1y.sophisticatedcore.upgrades.FilterLogic"
@@ -436,8 +436,8 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
 export class $ContentsFilterType extends $Enum<($ContentsFilterType)> implements $StringRepresentable$$Interface {
@@ -451,11 +451,11 @@ public static "valueOf"(arg0: StringJS): $ContentsFilterType
 public "next"(): $ContentsFilterType
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
 }
@@ -516,8 +516,8 @@ import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$ContentsFilterLogic} from "net.p3pp3rf1y.sophisticatedcore.upgrades.ContentsFilterLogic"
 import {$IContentsFilteredUpgrade$$Interface} from "net.p3pp3rf1y.sophisticatedcore.upgrades.IContentsFilteredUpgrade"
-import {$PickupUpgradeItem} from "net.p3pp3rf1y.sophisticatedcore.upgrades.pickup.PickupUpgradeItem"
 import {$IStorageWrapper$$Type} from "net.p3pp3rf1y.sophisticatedcore.api.IStorageWrapper"
+import {$PickupUpgradeItem} from "net.p3pp3rf1y.sophisticatedcore.upgrades.pickup.PickupUpgradeItem"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 
 export class $PickupUpgradeWrapper extends $UpgradeWrapperBase<($PickupUpgradeWrapper), ($PickupUpgradeItem)> implements $IPickupResponseUpgrade$$Interface, $IContentsFilteredUpgrade$$Interface {
@@ -580,11 +580,11 @@ get "filterLogic"(): $FilterLogic
 }
 
 export class $IOverflowResponseUpgrade implements $IOverflowResponseUpgrade$$Interface {
+ "getFilterLogic"(): $FilterLogic
+ "stackMatchesFilter"(arg0: $ItemStack$$Type): boolean
  "worksInGui"(): boolean
  "onSlotOverflow"(arg0: $ItemStack$$Type): $ItemStack
  "onStorageOverflow"(arg0: $ItemStack$$Type): $ItemStack
- "getFilterLogic"(): $FilterLogic
- "stackMatchesFilter"(arg0: $ItemStack$$Type): boolean
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -605,20 +605,14 @@ import {$Runnable$$Type} from "java.lang.Runnable"
 import {$IUpgradeWrapper} from "net.p3pp3rf1y.sophisticatedcore.upgrades.IUpgradeWrapper"
 import {$UpgradeType$$Type} from "net.p3pp3rf1y.sophisticatedcore.upgrades.UpgradeType"
 import {$IStorageWrapper$$Type} from "net.p3pp3rf1y.sophisticatedcore.api.IStorageWrapper"
-import {$ItemStackHandler} from "net.neoforged.neoforge.items.ItemStackHandler"
 import {$Consumer$$Type} from "java.util.function.Consumer"
+import {$ItemStackHandler} from "net.neoforged.neoforge.items.ItemStackHandler"
 
 export class $UpgradeHandler extends $ItemStackHandler {
 static readonly "UPGRADE_INVENTORY_TAG": StringJS
 
 constructor(arg0: integer, arg1: $IStorageWrapper$$Type, arg2: $CompoundTag$$Type, arg3: $Runnable$$Type, arg4: $Runnable$$Type)
 
-public "setRenderUpgradeItems"(): void
-public "registerUpgradeDefaultsHandler"<T extends $IUpgradeWrapper>(arg0: $Class$$Type<(T)>, arg1: $Consumer$$Type<(T)>): void
-public "setRefreshCallBack"(arg0: $Runnable$$Type): void
-public "removeRefreshCallback"(): void
-public "increaseSize"(arg0: integer): void
-public "getListOfWrappersThatImplement"<T>(arg0: $Class$$Type<(T)>): $List<(T)>
 public "hasUpgrade"<T extends $IUpgradeWrapper>(arg0: $UpgradeType$$Type<(T)>): boolean
 public "getWrappersThatImplement"<T>(arg0: $Class$$Type<(T)>): $List<(T)>
 public "getSlotWrappers"(): $Map<(integer), ($IUpgradeWrapper)>
@@ -626,19 +620,25 @@ public "setPersistent"(arg0: boolean): void
 public "saveInventory"(): void
 public "getWrappersThatImplementFromMainStorage"<T>(arg0: $Class$$Type<(T)>): $List<(T)>
 public "refreshUpgradeWrappers"(): void
-public "setSize"(arg0: integer): void
+public "setRenderUpgradeItems"(): void
+public "registerUpgradeDefaultsHandler"<T extends $IUpgradeWrapper>(arg0: $Class$$Type<(T)>, arg1: $Consumer$$Type<(T)>): void
+public "setRefreshCallBack"(arg0: $Runnable$$Type): void
+public "removeRefreshCallback"(): void
+public "increaseSize"(arg0: integer): void
+public "getListOfWrappersThatImplement"<T>(arg0: $Class$$Type<(T)>): $List<(T)>
 public "copyTo"(arg0: $UpgradeHandler$$Type): void
-public "getTypeWrappers"<T extends $IUpgradeWrapper>(arg0: $UpgradeType$$Type<(T)>): $List<(T)>
+public "setSize"(arg0: integer): void
 public "refreshWrappersThatImplementAndTypeWrappers"(): void
+public "getTypeWrappers"<T extends $IUpgradeWrapper>(arg0: $UpgradeType$$Type<(T)>): $List<(T)>
 public "insertItem"(arg0: integer, arg1: $ItemStack$$Type, arg2: boolean): $ItemStack
 public "extractItem"(arg0: integer, arg1: integer, arg2: boolean): $ItemStack
 public "getSlotLimit"(arg0: integer): integer
 public "isItemValid"(arg0: integer, arg1: $ItemStack$$Type): boolean
 public "setStackInSlot"(arg0: integer, arg1: $ItemStack$$Type): void
-get "renderUpgradeItems"(): void
-set "refreshCallBack"(value: $Runnable$$Type)
 get "slotWrappers"(): $Map<(integer), ($IUpgradeWrapper)>
 set "persistent"(value: boolean)
+get "renderUpgradeItems"(): void
+set "refreshCallBack"(value: $Runnable$$Type)
 set "size"(value: integer)
 }
 /**
@@ -674,12 +674,12 @@ static readonly "BY_BLOCK": $Map<($Block), ($Item)>
 
 constructor(arg0: $IntSupplier$$Type, arg1: $IUpgradeCountLimitConfig$$Type)
 
-public "getUpgradeConflicts"(): $List<($IUpgradeItem$UpgradeConflictDefinition)>
 public "getFilterSlotCount"(): integer
+public "getUpgradeConflicts"(): $List<($IUpgradeItem$UpgradeConflictDefinition)>
 public "getType"(): $UpgradeType<($FeedingUpgradeWrapper)>
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
-get "upgradeConflicts"(): $List<($IUpgradeItem$UpgradeConflictDefinition)>
 get "filterSlotCount"(): integer
+get "upgradeConflicts"(): $List<($IUpgradeItem$UpgradeConflictDefinition)>
 get "type"(): $UpgradeType<($FeedingUpgradeWrapper)>
 }
 /**
@@ -720,13 +720,13 @@ static readonly "BY_BLOCK": $Map<($Block), ($Item)>
 
 constructor(arg0: $TankUpgradeConfig$$Type, arg1: $IUpgradeCountLimitConfig$$Type)
 
+public "getTankCapacity"(arg0: $IStorageWrapper$$Type): integer
 public "checkExtraInsertConditions"(arg0: $ItemStack$$Type, arg1: $IStorageWrapper$$Type, arg2: boolean, arg3: $IUpgradeItem$$Type<(never)>): $UpgradeSlotChangeResult
 public "getUpgradeConflicts"(): $List<($IUpgradeItem$UpgradeConflictDefinition)>
 public "getInventoryColumnsTaken"(): integer
 public "getAdjustedStackMultiplier"(arg0: $IStorageWrapper$$Type): double
 public "getBaseCapacity"(arg0: $IStorageWrapper$$Type): integer
 public "getTankUpgradeConfig"(): $TankUpgradeConfig
-public "getTankCapacity"(arg0: $IStorageWrapper$$Type): integer
 public "getType"(): $UpgradeType<($TankUpgradeWrapper)>
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "upgradeConflicts"(): $List<($IUpgradeItem$UpgradeConflictDefinition)>
@@ -744,8 +744,8 @@ export type $TankUpgradeItem$$Type = ($TankUpgradeItem);
  */
 export type $TankUpgradeItem$$Original = $TankUpgradeItem;}
 declare module "net.p3pp3rf1y.sophisticatedcore.upgrades.IUpgradeCountLimitConfig" {
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$UpgradeGroup$$Type} from "net.p3pp3rf1y.sophisticatedcore.upgrades.UpgradeGroup"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 
 export interface $IUpgradeCountLimitConfig$$Interface {
 }
@@ -786,8 +786,8 @@ export type $AutoCookingUpgradeWrapper$AutoSmokingUpgradeWrapper$$Type = ($AutoC
 export type $AutoCookingUpgradeWrapper$AutoSmokingUpgradeWrapper$$Original = $AutoCookingUpgradeWrapper$AutoSmokingUpgradeWrapper;}
 declare module "net.p3pp3rf1y.sophisticatedcore.upgrades.cooking.CookingUpgradeWrapper$SmokingUpgradeWrapper" {
 import {$SmokingRecipe} from "net.minecraft.world.item.crafting.SmokingRecipe"
-import {$SmokingUpgradeItem} from "net.p3pp3rf1y.sophisticatedcore.upgrades.cooking.SmokingUpgradeItem"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$SmokingUpgradeItem} from "net.p3pp3rf1y.sophisticatedcore.upgrades.cooking.SmokingUpgradeItem"
 import {$CookingUpgradeWrapper} from "net.p3pp3rf1y.sophisticatedcore.upgrades.cooking.CookingUpgradeWrapper"
 import {$IStorageWrapper$$Type} from "net.p3pp3rf1y.sophisticatedcore.api.IStorageWrapper"
 import {$Consumer$$Type} from "java.util.function.Consumer"
@@ -893,8 +893,8 @@ export type $PumpUpgradeConfig$$Type = ($PumpUpgradeConfig);
  */
 export type $PumpUpgradeConfig$$Original = $PumpUpgradeConfig;}
 declare module "net.p3pp3rf1y.sophisticatedcore.upgrades.cooking.AutoCookingUpgradeWrapper$AutoBlastingUpgradeWrapper" {
-import {$AutoBlastingUpgradeItem} from "net.p3pp3rf1y.sophisticatedcore.upgrades.cooking.AutoBlastingUpgradeItem"
 import {$BlastingRecipe} from "net.minecraft.world.item.crafting.BlastingRecipe"
+import {$AutoBlastingUpgradeItem} from "net.p3pp3rf1y.sophisticatedcore.upgrades.cooking.AutoBlastingUpgradeItem"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$AutoCookingUpgradeWrapper} from "net.p3pp3rf1y.sophisticatedcore.upgrades.cooking.AutoCookingUpgradeWrapper"
 import {$IStorageWrapper$$Type} from "net.p3pp3rf1y.sophisticatedcore.api.IStorageWrapper"
@@ -916,12 +916,12 @@ export type $AutoCookingUpgradeWrapper$AutoBlastingUpgradeWrapper$$Original = $A
 declare module "net.p3pp3rf1y.sophisticatedcore.upgrades.PrimaryMatch" {
 import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
+import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
-import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
 export class $PrimaryMatch extends $Enum<($PrimaryMatch)> implements $StringRepresentable$$Interface {
@@ -937,11 +937,11 @@ public static "valueOf"(arg0: StringJS): $PrimaryMatch
 public "next"(): $PrimaryMatch
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
 }
@@ -979,12 +979,12 @@ export type $BatteryUpgradeConfig$$Original = $BatteryUpgradeConfig;}
 declare module "net.p3pp3rf1y.sophisticatedcore.upgrades.voiding.VoidType" {
 import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
+import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
-import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
 export class $VoidType extends $Enum<($VoidType)> implements $StringRepresentable$$Interface {
@@ -1000,11 +1000,11 @@ public static "valueOf"(arg0: StringJS): $VoidType
 public "next"(): $VoidType
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
 }
@@ -1020,12 +1020,12 @@ export type $VoidType$$Original = $VoidType;}
 declare module "net.p3pp3rf1y.sophisticatedcore.upgrades.filter.Direction" {
 import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
+import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
-import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
 export class $Direction extends $Enum<($Direction)> implements $StringRepresentable$$Interface {
@@ -1041,11 +1041,11 @@ public static "valueOf"(arg0: StringJS): $Direction
 public "next"(): $Direction
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
 }
@@ -1082,12 +1082,12 @@ static readonly "BY_BLOCK": $Map<($Block), ($Item)>
 
 constructor(arg0: $IntSupplier$$Type, arg1: $IUpgradeCountLimitConfig$$Type)
 
-public "getUpgradeConflicts"(): $List<($IUpgradeItem$UpgradeConflictDefinition)>
 public "getFilterSlotCount"(): integer
+public "getUpgradeConflicts"(): $List<($IUpgradeItem$UpgradeConflictDefinition)>
 public "getType"(): $UpgradeType<($PickupUpgradeWrapper)>
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
-get "upgradeConflicts"(): $List<($IUpgradeItem$UpgradeConflictDefinition)>
 get "filterSlotCount"(): integer
+get "upgradeConflicts"(): $List<($IUpgradeItem$UpgradeConflictDefinition)>
 get "type"(): $UpgradeType<($PickupUpgradeWrapper)>
 }
 /**
@@ -1102,8 +1102,8 @@ export type $PickupUpgradeItem$$Original = $PickupUpgradeItem;}
 declare module "net.p3pp3rf1y.sophisticatedcore.upgrades.UpgradeType" {
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$IUpgradeWrapper} from "net.p3pp3rf1y.sophisticatedcore.upgrades.IUpgradeWrapper"
-import {$UpgradeType$IFactory$$Type} from "net.p3pp3rf1y.sophisticatedcore.upgrades.UpgradeType$IFactory"
 import {$IStorageWrapper$$Type} from "net.p3pp3rf1y.sophisticatedcore.api.IStorageWrapper"
+import {$UpgradeType$IFactory$$Type} from "net.p3pp3rf1y.sophisticatedcore.upgrades.UpgradeType$IFactory"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 
 export class $UpgradeType<T extends $IUpgradeWrapper> {
@@ -1123,12 +1123,12 @@ export type $UpgradeType$$Original<T> = $UpgradeType<(T)>;}
 declare module "net.p3pp3rf1y.sophisticatedcore.upgrades.jukebox.RepeatMode" {
 import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
+import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
-import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
 export class $RepeatMode extends $Enum<($RepeatMode)> implements $StringRepresentable$$Interface {
@@ -1144,11 +1144,11 @@ public static "valueOf"(arg0: StringJS): $RepeatMode
 public "next"(): $RepeatMode
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
 }
@@ -1165,13 +1165,14 @@ declare module "net.p3pp3rf1y.sophisticatedcore.upgrades.pump.PumpUpgradeWrapper
 import {$UpgradeWrapperBase} from "net.p3pp3rf1y.sophisticatedcore.upgrades.UpgradeWrapperBase"
 import {$PumpUpgradeItem} from "net.p3pp3rf1y.sophisticatedcore.upgrades.pump.PumpUpgradeItem"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$IStorageWrapper$$Type} from "net.p3pp3rf1y.sophisticatedcore.api.IStorageWrapper"
 import {$ITickableUpgrade$$Interface} from "net.p3pp3rf1y.sophisticatedcore.upgrades.ITickableUpgrade"
 import {$FluidFilterLogic} from "net.p3pp3rf1y.sophisticatedcore.upgrades.pump.FluidFilterLogic"
 
 export class $PumpUpgradeWrapper extends $UpgradeWrapperBase<($PumpUpgradeWrapper), ($PumpUpgradeItem)> implements $ITickableUpgrade$$Interface {
+public "isInput"(): boolean
 public "getAdjustedStackMultiplier"(arg0: $IStorageWrapper$$Type): integer
 public "setInteractWithFluidHandlers"(arg0: boolean): void
 public "shouldInteractWithFluidHandlers"(): boolean
@@ -1181,13 +1182,12 @@ public "setInteractWithWorld"(arg0: boolean): void
 public "shouldInteractWithHand"(): boolean
 public "shouldInteractWithWorld"(): boolean
 public "getFluidFilterLogic"(): $FluidFilterLogic
-public "isInput"(): boolean
 public "tick"(arg0: $Entity$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type): void
+get "input"(): boolean
 set "interactWithFluidHandlers"(value: boolean)
 set "interactWithHand"(value: boolean)
 set "interactWithWorld"(value: boolean)
 get "fluidFilterLogic"(): $FluidFilterLogic
-get "input"(): boolean
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -1200,8 +1200,8 @@ export type $PumpUpgradeWrapper$$Type = ($PumpUpgradeWrapper);
 export type $PumpUpgradeWrapper$$Original = $PumpUpgradeWrapper;}
 declare module "net.p3pp3rf1y.sophisticatedcore.upgrades.FilterLogic" {
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$TagKey, $TagKey$$Type} from "net.minecraft.tags.TagKey"
 import {$Predicate$$Type} from "java.util.function.Predicate"
+import {$TagKey, $TagKey$$Type} from "net.minecraft.tags.TagKey"
 import {$FilterLogic$ObservableFilterItemStackHandler} from "net.p3pp3rf1y.sophisticatedcore.upgrades.FilterLogic$ObservableFilterItemStackHandler"
 import {$Item, $Item$$Type} from "net.minecraft.world.item.Item"
 import {$Set} from "java.util.Set"
@@ -1212,8 +1212,8 @@ import {$DeferredHolder, $DeferredHolder$$Type} from "net.neoforged.neoforge.reg
 import {$Consumer$$Type} from "java.util.function.Consumer"
 
 export class $FilterLogic {
-constructor(arg0: $ItemStack$$Type, arg1: $Consumer$$Type<($ItemStack)>, arg2: integer, arg3: $Predicate$$Type<($ItemStack)>, arg4: $DeferredHolder$$Type<($DataComponentType$$Type<(never)>), ($DataComponentType$$Type<($FilterAttributes$$Type)>)>)
 constructor(arg0: $ItemStack$$Type, arg1: $Consumer$$Type<($ItemStack)>, arg2: integer, arg3: $DeferredHolder$$Type<($DataComponentType$$Type<(never)>), ($DataComponentType$$Type<($FilterAttributes$$Type)>)>)
+constructor(arg0: $ItemStack$$Type, arg1: $Consumer$$Type<($ItemStack)>, arg2: integer, arg3: $Predicate$$Type<($ItemStack)>, arg4: $DeferredHolder$$Type<($DataComponentType$$Type<(never)>), ($DataComponentType$$Type<($FilterAttributes$$Type)>)>)
 
 public "matchesFilter"(arg0: $ItemStack$$Type): boolean
 public "isAllowList"(): boolean
@@ -1259,8 +1259,8 @@ export type $FilterLogic$$Original = $FilterLogic;}
 declare module "net.p3pp3rf1y.sophisticatedcore.upgrades.crafting.CraftingUpgradeWrapper" {
 import {$UpgradeWrapperBase} from "net.p3pp3rf1y.sophisticatedcore.upgrades.UpgradeWrapperBase"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$CraftingUpgradeItem} from "net.p3pp3rf1y.sophisticatedcore.upgrades.crafting.CraftingUpgradeItem"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$CraftingUpgradeItem} from "net.p3pp3rf1y.sophisticatedcore.upgrades.crafting.CraftingUpgradeItem"
 import {$StatefulComponentItemHandler} from "net.p3pp3rf1y.sophisticatedcore.inventory.StatefulComponentItemHandler"
 import {$IStorageWrapper$$Type} from "net.p3pp3rf1y.sophisticatedcore.api.IStorageWrapper"
 import {$Consumer$$Type} from "java.util.function.Consumer"
@@ -1268,13 +1268,13 @@ import {$Consumer$$Type} from "java.util.function.Consumer"
 export class $CraftingUpgradeWrapper extends $UpgradeWrapperBase<($CraftingUpgradeWrapper), ($CraftingUpgradeItem)> {
 constructor(arg0: $IStorageWrapper$$Type, arg1: $ItemStack$$Type, arg2: $Consumer$$Type<($ItemStack)>)
 
+public "canBeDisabled"(): boolean
 public "insertIntoStorageOrPlayer"(arg0: $Player$$Type, arg1: $ItemStack$$Type): boolean
 public "extractFromStorageOrPlayer"(arg0: $Player$$Type, arg1: $ItemStack$$Type): boolean
 public "setShiftClickIntoStorage"(arg0: boolean): void
 public "shouldShiftClickIntoStorage"(): boolean
 public "shouldRefillCraftingGridNBT"(): boolean
 public "setRefillCraftingGridNBT"(arg0: boolean): void
-public "canBeDisabled"(): boolean
 public "getInventory"(): $StatefulComponentItemHandler
 set "shiftClickIntoStorage"(value: boolean)
 set "refillCraftingGridNBT"(value: boolean)
@@ -1319,36 +1319,36 @@ static readonly "FUEL_SLOT": integer
 constructor(arg0: $ItemStack$$Type, arg1: $Consumer$$Type<($ItemStack)>, arg2: $CookingUpgradeConfig$$Type, arg3: $RecipeType$$Type<(T)>, arg4: float)
 constructor(arg0: $ItemStack$$Type, arg1: $Consumer$$Type<($ItemStack)>, arg2: $Predicate$$Type<($ItemStack)>, arg3: $Predicate$$Type<($ItemStack)>, arg4: $CookingUpgradeConfig$$Type, arg5: $RecipeType$$Type<(T)>, arg6: float)
 
-public "setFuel"(arg0: $ItemStack$$Type): void
+public "getRecipesToAwardAndPopExperience"(arg0: $ServerLevel$$Type, arg1: $Vec3$$Type): $List<($RecipeHolder<(never)>)>
+public "getFuel"(): $ItemStack
+public "awardUsedRecipesAndPopExperience"(arg0: $ServerPlayer$$Type): void
 public "getCookOutput"(): $ItemStack
 public "getCookingInventory"(): $CookingLogic$CookingComponentItemHandler
 public "getCookInput"(): $ItemStack
 public "getStoredExperience"(): float
 public "drainStoredExperience"(arg0: float): void
 public "setCookInput"(arg0: $ItemStack$$Type): void
-public "getRecipesToAwardAndPopExperience"(arg0: $ServerLevel$$Type, arg1: $Vec3$$Type): $List<($RecipeHolder<(never)>)>
-public "getFuel"(): $ItemStack
-public "awardUsedRecipesAndPopExperience"(arg0: $ServerPlayer$$Type): void
+public "setFuel"(arg0: $ItemStack$$Type): void
+public "getBurnTimeTotal"(): integer
 public "isCooking"(): boolean
 public "getBurnTimeFinish"(): long
 public "getCookTimeFinish"(): long
 public "getCookTimeTotal"(): integer
-public "getBurnTimeTotal"(): integer
 public "tick"(arg0: $Level$$Type): boolean
 public "pause"(): void
 public "isBurning"(arg0: $Level$$Type): boolean
-set "fuel"(value: $ItemStack$$Type)
+get "fuel"(): $ItemStack
 get "cookOutput"(): $ItemStack
 get "cookingInventory"(): $CookingLogic$CookingComponentItemHandler
 get "cookInput"(): $ItemStack
 get "storedExperience"(): float
 set "cookInput"(value: $ItemStack$$Type)
-get "fuel"(): $ItemStack
+set "fuel"(value: $ItemStack$$Type)
+get "burnTimeTotal"(): integer
 get "cooking"(): boolean
 get "burnTimeFinish"(): long
 get "cookTimeFinish"(): long
 get "cookTimeTotal"(): integer
-get "burnTimeTotal"(): integer
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -1535,8 +1535,8 @@ import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyBy
 import {$TagKey, $TagKey$$Type} from "net.minecraft.tags.TagKey"
 import {$Item, $Item$$Type} from "net.minecraft.world.item.Item"
 import {$Set, $Set$$Type} from "java.util.Set"
-import {$PrimaryMatch, $PrimaryMatch$$Type} from "net.p3pp3rf1y.sophisticatedcore.upgrades.PrimaryMatch"
 import {$ItemContainerContents, $ItemContainerContents$$Type} from "net.minecraft.world.item.component.ItemContainerContents"
+import {$PrimaryMatch, $PrimaryMatch$$Type} from "net.p3pp3rf1y.sophisticatedcore.upgrades.PrimaryMatch"
 import {$Record} from "java.lang.Record"
 
 export class $FilterAttributes extends $Record {
@@ -1545,7 +1545,6 @@ static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($Filte
 
 constructor(tagKeys: $Set$$Type<($TagKey$$Type<($Item$$Type)>)>, isAllowList: boolean, matchDurability: boolean, matchComponents: boolean, primaryMatch: $PrimaryMatch$$Type, matchAnyTag: boolean, filterItems: $ItemContainerContents$$Type, filterByStorage: boolean, filterByInventory: boolean)
 
-public "setFilterItem"(arg0: integer, arg1: $ItemStack$$Type): $FilterAttributes
 public "setFilterByStorage"(arg0: boolean): $FilterAttributes
 public "filterByStorage"(): boolean
 public "tagKeys"(): $Set<($TagKey<($Item)>)>
@@ -1561,8 +1560,9 @@ public "setMatchComponents"(arg0: boolean): $FilterAttributes
 public "setMatchDurability"(arg0: boolean): $FilterAttributes
 public "setAllowList"(arg0: boolean): $FilterAttributes
 public "setTagKeys"(arg0: $Set$$Type<($TagKey$$Type<($Item$$Type)>)>): $FilterAttributes
-public "setFilterByInventory"(arg0: boolean): $FilterAttributes
+public "setFilterItem"(arg0: integer, arg1: $ItemStack$$Type): $FilterAttributes
 public "filterByInventory"(): boolean
+public "setFilterByInventory"(arg0: boolean): $FilterAttributes
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
@@ -1573,7 +1573,7 @@ set "allowList"(value: boolean)
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $FilterAttributes$$Type = ({"primaryMatch"?: $PrimaryMatch$$Type, "filterByStorage"?: boolean, "filterByInventory"?: boolean, "filterItems"?: $ItemContainerContents$$Type, "matchAnyTag"?: boolean, "tagKeys"?: $Set$$Type<($TagKey$$Type<($Item$$Type)>)>, "isAllowList"?: boolean, "matchComponents"?: boolean, "matchDurability"?: boolean}) | ([primaryMatch?: $PrimaryMatch$$Type, filterByStorage?: boolean, filterByInventory?: boolean, filterItems?: $ItemContainerContents$$Type, matchAnyTag?: boolean, tagKeys?: $Set$$Type<($TagKey$$Type<($Item$$Type)>)>, isAllowList?: boolean, matchComponents?: boolean, matchDurability?: boolean]);
+export type $FilterAttributes$$Type = ({"filterByInventory"?: boolean, "filterItems"?: $ItemContainerContents$$Type, "matchAnyTag"?: boolean, "tagKeys"?: $Set$$Type<($TagKey$$Type<($Item$$Type)>)>, "isAllowList"?: boolean, "matchComponents"?: boolean, "matchDurability"?: boolean, "primaryMatch"?: $PrimaryMatch$$Type, "filterByStorage"?: boolean}) | ([filterByInventory?: boolean, filterItems?: $ItemContainerContents$$Type, matchAnyTag?: boolean, tagKeys?: $Set$$Type<($TagKey$$Type<($Item$$Type)>)>, isAllowList?: boolean, matchComponents?: boolean, matchDurability?: boolean, primaryMatch?: $PrimaryMatch$$Type, filterByStorage?: boolean]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -1625,8 +1625,8 @@ export type $AutoCookingUpgradeWrapper$AutoSmeltingUpgradeWrapper$$Type = ($Auto
 export type $AutoCookingUpgradeWrapper$AutoSmeltingUpgradeWrapper$$Original = $AutoCookingUpgradeWrapper$AutoSmeltingUpgradeWrapper;}
 declare module "net.p3pp3rf1y.sophisticatedcore.upgrades.jukebox.JukeboxUpgradeItem" {
 import {$JukeboxUpgradeWrapper} from "net.p3pp3rf1y.sophisticatedcore.upgrades.jukebox.JukeboxUpgradeWrapper"
-import {$UpgradeGroup} from "net.p3pp3rf1y.sophisticatedcore.upgrades.UpgradeGroup"
 import {$Map} from "java.util.Map"
+import {$UpgradeGroup} from "net.p3pp3rf1y.sophisticatedcore.upgrades.UpgradeGroup"
 import {$List} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$IUpgradeItem$UpgradeConflictDefinition} from "net.p3pp3rf1y.sophisticatedcore.upgrades.IUpgradeItem$UpgradeConflictDefinition"
@@ -1693,13 +1693,13 @@ static readonly "BY_BLOCK": $Map<($Block), ($Item)>
 
 constructor(arg0: boolean, arg1: $IntSupplier$$Type, arg2: $IUpgradeCountLimitConfig$$Type)
 
+public "getFilterSlotCount"(): integer
 public "getUpgradeConflicts"(): $List<($IUpgradeItem$UpgradeConflictDefinition)>
 public "shouldCompactThreeByThree"(): boolean
-public "getFilterSlotCount"(): integer
 public "getType"(): $UpgradeType<($CompactingUpgradeWrapper)>
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
-get "upgradeConflicts"(): $List<($IUpgradeItem$UpgradeConflictDefinition)>
 get "filterSlotCount"(): integer
+get "upgradeConflicts"(): $List<($IUpgradeItem$UpgradeConflictDefinition)>
 get "type"(): $UpgradeType<($CompactingUpgradeWrapper)>
 }
 /**
@@ -1757,8 +1757,8 @@ declare module "net.p3pp3rf1y.sophisticatedcore.upgrades.compacting.CompactingUp
 import {$UpgradeWrapperBase} from "net.p3pp3rf1y.sophisticatedcore.upgrades.UpgradeWrapperBase"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$IInsertResponseUpgrade$$Interface} from "net.p3pp3rf1y.sophisticatedcore.upgrades.IInsertResponseUpgrade"
-import {$IExtractResponseUpgrade$$Interface} from "net.p3pp3rf1y.sophisticatedcore.upgrades.IExtractResponseUpgrade"
 import {$FilterLogic} from "net.p3pp3rf1y.sophisticatedcore.upgrades.FilterLogic"
+import {$IExtractResponseUpgrade$$Interface} from "net.p3pp3rf1y.sophisticatedcore.upgrades.IExtractResponseUpgrade"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$IFilteredUpgrade$$Interface} from "net.p3pp3rf1y.sophisticatedcore.upgrades.IFilteredUpgrade"
 import {$IItemHandlerSimpleInserter$$Type} from "net.p3pp3rf1y.sophisticatedcore.inventory.IItemHandlerSimpleInserter"
@@ -1775,6 +1775,7 @@ import {$IStorageWrapper$$Type} from "net.p3pp3rf1y.sophisticatedcore.api.IStora
 export class $CompactingUpgradeWrapper extends $UpgradeWrapperBase<($CompactingUpgradeWrapper), ($CompactingUpgradeItem)> implements $IInsertResponseUpgrade$$Interface, $IFilteredUpgrade$$Interface, $ISlotChangeResponseUpgrade$$Interface, $ITickableUpgrade$$Interface, $IExtractResponseUpgrade$$Interface {
 constructor(arg0: $IStorageWrapper$$Type, arg1: $ItemStack$$Type, arg2: $Consumer$$Type<($ItemStack)>)
 
+public "getFilterLogic"(): $FilterLogic
 public "setCompactNonUncraftable"(arg0: boolean): void
 public "setShouldWorkdInGUI"(arg0: boolean): void
 public "resetFullSlotInfo"(): void
@@ -1783,13 +1784,12 @@ public "onAfterInsert"(arg0: $IItemHandlerSimpleInserter$$Type, arg1: integer): 
 public "onAfterExtract"(arg0: $IItemHandlerSimpleInserter$$Type, arg1: integer, arg2: $ItemStack$$Type): void
 public "onSlotChange"(arg0: $IItemHandler$$Type, arg1: integer): void
 public "shouldCompactNonUncraftable"(): boolean
-public "getFilterLogic"(): $FilterLogic
 public "tick"(arg0: $Entity$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type): void
-public "onBeforeInsert"(arg0: $InventoryHandler$$Type, arg1: integer, arg2: $ItemStack$$Type, arg3: boolean): $ItemStack
 public "onBeforeInsert"(arg0: $InventoryHandler$$Type, arg1: $ItemStack$$Type, arg2: boolean): $ItemStack
+public "onBeforeInsert"(arg0: $InventoryHandler$$Type, arg1: integer, arg2: $ItemStack$$Type, arg3: boolean): $ItemStack
+get "filterLogic"(): $FilterLogic
 set "compactNonUncraftable"(value: boolean)
 set "shouldWorkdInGUI"(value: boolean)
-get "filterLogic"(): $FilterLogic
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -1862,12 +1862,12 @@ export type $IRenderedBatteryUpgrade$BatteryRenderInfo$$Original = $IRenderedBat
 declare module "net.p3pp3rf1y.sophisticatedcore.upgrades.feeding.HungerLevel" {
 import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
+import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
-import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
 export class $HungerLevel extends $Enum<($HungerLevel)> implements $StringRepresentable$$Interface {
@@ -1883,11 +1883,11 @@ public static "valueOf"(arg0: StringJS): $HungerLevel
 public "next"(): $HungerLevel
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
 }
@@ -1902,8 +1902,8 @@ export type $HungerLevel$$Type = (("any") | ("half") | ("full"));
 export type $HungerLevel$$Original = $HungerLevel;}
 declare module "net.p3pp3rf1y.sophisticatedcore.upgrades.stonecutter.StonecutterUpgradeItem" {
 import {$BlockConverterUpgradeItem} from "net.p3pp3rf1y.sophisticatedcore.upgrades.blockconverter.BlockConverterUpgradeItem"
-import {$StonecutterUpgradeItem$Wrapper} from "net.p3pp3rf1y.sophisticatedcore.upgrades.stonecutter.StonecutterUpgradeItem$Wrapper"
 import {$Map} from "java.util.Map"
+import {$StonecutterUpgradeItem$Wrapper} from "net.p3pp3rf1y.sophisticatedcore.upgrades.stonecutter.StonecutterUpgradeItem$Wrapper"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
@@ -1957,24 +1957,24 @@ static readonly "OUTPUT_RESULT_SLOT": integer
 static readonly "OUTPUT_SLOT": integer
 static readonly "INPUT_RESULT_SLOT": integer
 
+public "getTankCapacity"(): integer
+public "canBeDisabled"(): boolean
 public "getMinimumMultiplierRequired"(): integer
 public "forceUpdateTankRenderInfo"(): void
-public "drainHandler"(arg0: $IFluidHandlerItem$$Type, arg1: $Consumer$$Type<($ItemStack)>, arg2: boolean, arg3: boolean): boolean
 public "drainHandler"(arg0: $IFluidHandlerItem$$Type, arg1: $Consumer$$Type<($ItemStack)>): void
+public "drainHandler"(arg0: $IFluidHandlerItem$$Type, arg1: $Consumer$$Type<($ItemStack)>, arg2: boolean, arg3: boolean): boolean
 public "fillHandler"(arg0: $IFluidHandlerItem$$Type, arg1: $Consumer$$Type<($ItemStack)>, arg2: boolean, arg3: boolean): boolean
 public "setTankRenderInfoUpdateCallback"(arg0: $Consumer$$Type<($IRenderedTankUpgrade$TankRenderInfo)>): void
 public "interactWithCursorStack"(arg0: $ItemStack$$Type, arg1: $Consumer$$Type<($ItemStack)>): void
-public "getTankCapacity"(): integer
-public "canBeDisabled"(): boolean
-public "drain"(arg0: integer, arg1: $IFluidHandler$FluidAction$$Type, arg2: boolean): $FluidStack
 public "tick"(arg0: $Entity$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type): void
 public "getContents"(): $FluidStack
 public static "getContents"(arg0: $ItemStack$$Type): $SimpleFluidContent
 public "fill"(arg0: $FluidStack$$Type, arg1: $IFluidHandler$FluidAction$$Type, arg2: boolean): integer
+public "drain"(arg0: integer, arg1: $IFluidHandler$FluidAction$$Type, arg2: boolean): $FluidStack
 public "getInventory"(): $TankUpgradeWrapper$TankComponentItemHandler
+get "tankCapacity"(): integer
 get "minimumMultiplierRequired"(): integer
 set "tankRenderInfoUpdateCallback"(value: $Consumer$$Type<($IRenderedTankUpgrade$TankRenderInfo)>)
-get "tankCapacity"(): integer
 get "contents"(): $FluidStack
 get "inventory"(): $TankUpgradeWrapper$TankComponentItemHandler
 }
@@ -2072,11 +2072,12 @@ import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$AutomationDirection, $AutomationDirection$$Type} from "net.p3pp3rf1y.sophisticatedcore.upgrades.xppump.AutomationDirection"
 import {$XpPumpUpgradeItem} from "net.p3pp3rf1y.sophisticatedcore.upgrades.xppump.XpPumpUpgradeItem"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$ITickableUpgrade$$Interface} from "net.p3pp3rf1y.sophisticatedcore.upgrades.ITickableUpgrade"
 
 export class $XpPumpUpgradeWrapper extends $UpgradeWrapperBase<($XpPumpUpgradeWrapper), ($XpPumpUpgradeItem)> implements $ITickableUpgrade$$Interface {
+public "setDirection"(arg0: $AutomationDirection$$Type): void
 public "setLevelsToStore"(arg0: integer): void
 public "setLevelsToTake"(arg0: integer): void
 public "getLevelsToStore"(): integer
@@ -2087,17 +2088,16 @@ public "giveLevelsToPlayer"(arg0: $Player$$Type): void
 public "takeLevelsFromPlayer"(arg0: $Player$$Type): void
 public "giveAllExperienceToPlayer"(arg0: $Player$$Type): void
 public "takeAllExperienceFromPlayer"(arg0: $Player$$Type): void
-public "setDirection"(arg0: $AutomationDirection$$Type): void
 public "tick"(arg0: $Entity$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type): void
 public "getLevel"(): integer
 public "setLevel"(arg0: integer): void
 public "getDirection"(): $AutomationDirection
+set "direction"(value: $AutomationDirection$$Type)
 set "levelsToStore"(value: integer)
 set "levelsToTake"(value: integer)
 get "levelsToStore"(): integer
 get "levelsToTake"(): integer
 set "mendItems"(value: boolean)
-set "direction"(value: $AutomationDirection$$Type)
 get "level"(): integer
 set "level"(value: integer)
 get "direction"(): $AutomationDirection
@@ -2218,8 +2218,8 @@ export type $IUpgradeAccessModifier$$Type = ((arg0: $IUpgradeWrapperAccessor) =>
  */
 export type $IUpgradeAccessModifier$$Original = $IUpgradeAccessModifier;}
 declare module "net.p3pp3rf1y.sophisticatedcore.upgrades.tank.TankUpgradeWrapper$TankComponentItemHandler" {
-import {$TankUpgradeWrapper$$Type} from "net.p3pp3rf1y.sophisticatedcore.upgrades.tank.TankUpgradeWrapper"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$TankUpgradeWrapper$$Type} from "net.p3pp3rf1y.sophisticatedcore.upgrades.tank.TankUpgradeWrapper"
 import {$ComponentItemHandler} from "net.neoforged.neoforge.items.ComponentItemHandler"
 
 export class $TankUpgradeWrapper$TankComponentItemHandler extends $ComponentItemHandler {
@@ -2249,12 +2249,12 @@ import {$Consumer$$Type} from "java.util.function.Consumer"
 export class $BlockConverterUpgradeWrapper<U extends $BlockConverterUpgradeItem<(object), (object)>, W extends $BlockConverterUpgradeWrapper<(object), (object)>> extends $UpgradeWrapperBase<(W), (U)> {
 constructor(arg0: $IStorageWrapper$$Type, arg1: $ItemStack$$Type, arg2: $Consumer$$Type<($ItemStack)>)
 
+public "canBeDisabled"(): boolean
 public "setShiftClickIntoStorage"(arg0: boolean): void
 public "shouldShiftClickIntoStorage"(): boolean
 public "getInputInventory"(): $IItemHandlerModifiable
 public "getRecipeId"(): $Optional<($ResourceLocation)>
 public "setRecipeId"(arg0: $ResourceLocation$$Type): void
-public "canBeDisabled"(): boolean
 set "shiftClickIntoStorage"(value: boolean)
 get "inputInventory"(): $IItemHandlerModifiable
 get "recipeId"(): $Optional<($ResourceLocation)>
@@ -2300,9 +2300,9 @@ export interface $IInsertResponseUpgrade$$Interface {
 }
 
 export class $IInsertResponseUpgrade implements $IInsertResponseUpgrade$$Interface {
- "onBeforeInsert"(arg0: $InventoryHandler$$Type, arg1: integer, arg2: $ItemStack$$Type, arg3: boolean): $ItemStack
- "onBeforeInsert"(arg0: $InventoryHandler$$Type, arg1: $ItemStack$$Type, arg2: boolean): $ItemStack
  "onAfterInsert"(arg0: $IItemHandlerSimpleInserter$$Type, arg1: integer): void
+ "onBeforeInsert"(arg0: $InventoryHandler$$Type, arg1: $ItemStack$$Type, arg2: boolean): $ItemStack
+ "onBeforeInsert"(arg0: $InventoryHandler$$Type, arg1: integer, arg2: $ItemStack$$Type, arg3: boolean): $ItemStack
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -2314,8 +2314,8 @@ export type $IInsertResponseUpgrade$$Type = ($IInsertResponseUpgrade);
  */
 export type $IInsertResponseUpgrade$$Original = $IInsertResponseUpgrade;}
 declare module "net.p3pp3rf1y.sophisticatedcore.upgrades.cooking.AutoCookingUpgradeWrapper" {
-import {$UpgradeWrapperBase} from "net.p3pp3rf1y.sophisticatedcore.upgrades.UpgradeWrapperBase"
 import {$CookingLogic} from "net.p3pp3rf1y.sophisticatedcore.upgrades.cooking.CookingLogic"
+import {$UpgradeWrapperBase} from "net.p3pp3rf1y.sophisticatedcore.upgrades.UpgradeWrapperBase"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$FilterLogic} from "net.p3pp3rf1y.sophisticatedcore.upgrades.FilterLogic"
 import {$RecipeType$$Type} from "net.minecraft.world.item.crafting.RecipeType"
@@ -2332,10 +2332,10 @@ import {$UpgradeItemBase} from "net.p3pp3rf1y.sophisticatedcore.upgrades.Upgrade
 export class $AutoCookingUpgradeWrapper<W extends $AutoCookingUpgradeWrapper<(object), (object), (object)>, U extends $UpgradeItemBase<(object)>, R extends $AbstractCookingRecipe> extends $UpgradeWrapperBase<(W), (U)> implements $ITickableUpgrade$$Interface, $ICookingUpgrade$$Interface<(R)> {
 constructor(arg0: $IStorageWrapper$$Type, arg1: $ItemStack$$Type, arg2: $Consumer$$Type<($ItemStack)>, arg3: $RecipeType$$Type<(R)>, arg4: float)
 
+public "onBeforeRemoved"(): void
 public "getCookingLogic"(): $CookingLogic<(R)>
 public "getFuelFilterLogic"(): $FilterLogic
 public "getInputFilterLogic"(): $FilterLogic
-public "onBeforeRemoved"(): void
 public "tick"(arg0: $Entity$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type): void
 public "setEnabled"(arg0: boolean): void
 get "cookingLogic"(): $CookingLogic<(R)>
@@ -2361,15 +2361,15 @@ export class $IRenderedTankUpgrade$TankRenderInfo {
 constructor()
 constructor(arg0: $FluidStack$$Type, arg1: float)
 
+public "getFluid"(): $Optional<($FluidStack)>
 public "setFluid"(arg0: $FluidStack$$Type): void
 public "setFillRatio"(arg0: float): void
-public "getFluid"(): $Optional<($FluidStack)>
 public static "deserialize"(arg0: $CompoundTag$$Type): $IRenderedTankUpgrade$TankRenderInfo
 public "serialize"(): $CompoundTag
 public "getFillRatio"(): float
+get "fluid"(): $Optional<($FluidStack)>
 set "fluid"(value: $FluidStack$$Type)
 set "fillRatio"(value: float)
-get "fluid"(): $Optional<($FluidStack)>
 get "fillRatio"(): float
 }
 /**
@@ -2439,14 +2439,14 @@ static readonly "BY_BLOCK": $Map<($Block), ($Item)>
 
 constructor(arg0: $VoidUpgradeConfig$$Type, arg1: $IUpgradeCountLimitConfig$$Type)
 
+public "getFilterSlotCount"(): integer
 public "getUpgradeConflicts"(): $List<($IUpgradeItem$UpgradeConflictDefinition)>
 public "isVoidAlwaysEnabled"(): boolean
-public "getFilterSlotCount"(): integer
 public "getType"(): $UpgradeType<($VoidUpgradeWrapper)>
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
+get "filterSlotCount"(): integer
 get "upgradeConflicts"(): $List<($IUpgradeItem$UpgradeConflictDefinition)>
 get "voidAlwaysEnabled"(): boolean
-get "filterSlotCount"(): integer
 get "type"(): $UpgradeType<($VoidUpgradeWrapper)>
 }
 /**
@@ -2482,12 +2482,12 @@ static readonly "BY_BLOCK": $Map<($Block), ($Item)>
 
 constructor(arg0: $IntSupplier$$Type, arg1: $IUpgradeCountLimitConfig$$Type)
 
-public "getUpgradeConflicts"(): $List<($IUpgradeItem$UpgradeConflictDefinition)>
 public "getFilterSlotCount"(): integer
+public "getUpgradeConflicts"(): $List<($IUpgradeItem$UpgradeConflictDefinition)>
 public "getType"(): $UpgradeType<($FilterUpgradeWrapper)>
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
-get "upgradeConflicts"(): $List<($IUpgradeItem$UpgradeConflictDefinition)>
 get "filterSlotCount"(): integer
+get "upgradeConflicts"(): $List<($IUpgradeItem$UpgradeConflictDefinition)>
 get "type"(): $UpgradeType<($FilterUpgradeWrapper)>
 }
 /**
@@ -2552,9 +2552,9 @@ import {$Consumer$$Type} from "java.util.function.Consumer"
 export class $FluidFilterLogic {
 constructor(arg0: integer, arg1: $ItemStack$$Type, arg2: $Consumer$$Type<($ItemStack)>)
 
+public "getFluid"(arg0: integer): $FluidStack
 public "setFluid"(arg0: integer, arg1: $FluidStack$$Type): void
 public "fluidMatches"(arg0: $FluidStack$$Type): boolean
-public "getFluid"(arg0: integer): $FluidStack
 public "getNumberOfFluidFilters"(): integer
 get "numberOfFluidFilters"(): integer
 }
@@ -2572,17 +2572,18 @@ import {$UpgradeWrapperBase} from "net.p3pp3rf1y.sophisticatedcore.upgrades.Upgr
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$JukeboxUpgradeItem} from "net.p3pp3rf1y.sophisticatedcore.upgrades.jukebox.JukeboxUpgradeItem"
-import {$RepeatMode, $RepeatMode$$Type} from "net.p3pp3rf1y.sophisticatedcore.upgrades.jukebox.RepeatMode"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$RepeatMode, $RepeatMode$$Type} from "net.p3pp3rf1y.sophisticatedcore.upgrades.jukebox.RepeatMode"
 import {$JukeboxSong} from "net.minecraft.world.item.JukeboxSong"
-import {$ITickableUpgrade$$Interface} from "net.p3pp3rf1y.sophisticatedcore.upgrades.ITickableUpgrade"
 import {$IItemHandler} from "net.neoforged.neoforge.items.IItemHandler"
+import {$ITickableUpgrade$$Interface} from "net.p3pp3rf1y.sophisticatedcore.upgrades.ITickableUpgrade"
 import {$Holder} from "net.minecraft.core.Holder"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 
 export class $JukeboxUpgradeWrapper extends $UpgradeWrapperBase<($JukeboxUpgradeWrapper), ($JukeboxUpgradeItem)> implements $ITickableUpgrade$$Interface {
+public "onBeforeRemoved"(): void
 public "getDiscSlotActive"(): integer
 public "playNext"(): void
 public "playNext"(arg0: boolean): void
@@ -2595,7 +2596,6 @@ public "setShuffleEnabled"(arg0: boolean): void
 public "setRepeatMode"(arg0: $RepeatMode$$Type): void
 public "getDiscInventory"(): $IItemHandler
 public "getDiscFinishTime"(): long
-public "onBeforeRemoved"(): void
 public "tick"(arg0: $Entity$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type): void
 public "next"(): void
 public "stop"(arg0: $LivingEntity$$Type): void
@@ -2646,12 +2646,12 @@ export type $IAutoCookingUpgradeItem$$Original = $IAutoCookingUpgradeItem;}
 declare module "net.p3pp3rf1y.sophisticatedcore.upgrades.xppump.AutomationDirection" {
 import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
+import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
-import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
 export class $AutomationDirection extends $Enum<($AutomationDirection)> implements $StringRepresentable$$Interface {
@@ -2668,11 +2668,11 @@ public static "valueOf"(arg0: StringJS): $AutomationDirection
 public "next"(): $AutomationDirection
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
 }
@@ -2686,8 +2686,8 @@ export type $AutomationDirection$$Type = (("input") | ("output") | ("keep") | ("
  */
 export type $AutomationDirection$$Original = $AutomationDirection;}
 declare module "net.p3pp3rf1y.sophisticatedcore.upgrades.voiding.VoidUpgradeWrapper" {
-import {$UpgradeWrapperBase} from "net.p3pp3rf1y.sophisticatedcore.upgrades.UpgradeWrapperBase"
 import {$VoidUpgradeItem} from "net.p3pp3rf1y.sophisticatedcore.upgrades.voiding.VoidUpgradeItem"
+import {$UpgradeWrapperBase} from "net.p3pp3rf1y.sophisticatedcore.upgrades.UpgradeWrapperBase"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$IInsertResponseUpgrade$$Interface} from "net.p3pp3rf1y.sophisticatedcore.upgrades.IInsertResponseUpgrade"
 import {$FilterLogic} from "net.p3pp3rf1y.sophisticatedcore.upgrades.FilterLogic"
@@ -2708,29 +2708,29 @@ import {$IStorageWrapper$$Type} from "net.p3pp3rf1y.sophisticatedcore.api.IStora
 export class $VoidUpgradeWrapper extends $UpgradeWrapperBase<($VoidUpgradeWrapper), ($VoidUpgradeItem)> implements $IInsertResponseUpgrade$$Interface, $IFilteredUpgrade$$Interface, $ISlotChangeResponseUpgrade$$Interface, $ITickableUpgrade$$Interface, $IOverflowResponseUpgrade$$Interface {
 constructor(arg0: $IStorageWrapper$$Type, arg1: $ItemStack$$Type, arg2: $Consumer$$Type<($ItemStack)>)
 
+public "getFilterLogic"(): $FilterLogic
+public "stackMatchesFilter"(arg0: $ItemStack$$Type): boolean
 public "isVoidAlwaysEnabled"(): boolean
-public "onBeforeInsert"(arg0: $InventoryHandler$$Type, arg1: $ItemStack$$Type, arg2: boolean): $ItemStack
-public "onBeforeInsert"(arg0: $InventoryHandler$$Type, arg1: integer, arg2: $ItemStack$$Type, arg3: boolean): $ItemStack
 public "setVoidType"(arg0: $VoidType$$Type): void
-public "getVoidType"(): $VoidType
 public "setShouldWorkdInGUI"(arg0: boolean): void
 public "shouldWorkInGUI"(): boolean
 public "onSlotChange"(arg0: $IItemHandler$$Type, arg1: integer): void
+public "onBeforeInsert"(arg0: $InventoryHandler$$Type, arg1: integer, arg2: $ItemStack$$Type, arg3: boolean): $ItemStack
+public "onBeforeInsert"(arg0: $InventoryHandler$$Type, arg1: $ItemStack$$Type, arg2: boolean): $ItemStack
 public "worksInGui"(): boolean
 public "onSlotOverflow"(arg0: $ItemStack$$Type): $ItemStack
 public "onStorageOverflow"(arg0: $ItemStack$$Type): $ItemStack
 public "setVoidOverflowDefaultOrLoadFromNbt"(arg0: $VoidType$$Type): void
 public "shouldVoidOverflow"(): boolean
-public "getFilterLogic"(): $FilterLogic
-public "stackMatchesFilter"(arg0: $ItemStack$$Type): boolean
+public "getVoidType"(): $VoidType
 public "tick"(arg0: $Entity$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type): void
 public "onAfterInsert"(arg0: $IItemHandlerSimpleInserter$$Type, arg1: integer): void
+get "filterLogic"(): $FilterLogic
 get "voidAlwaysEnabled"(): boolean
 set "voidType"(value: $VoidType$$Type)
-get "voidType"(): $VoidType
 set "shouldWorkdInGUI"(value: boolean)
 set "voidOverflowDefaultOrLoadFromNbt"(value: $VoidType$$Type)
-get "filterLogic"(): $FilterLogic
+get "voidType"(): $VoidType
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -2819,11 +2819,11 @@ import {$List, $List$$Type} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$IUpgradeItem$UpgradeConflictDefinition} from "net.p3pp3rf1y.sophisticatedcore.upgrades.IUpgradeItem$UpgradeConflictDefinition"
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ItemBase} from "net.p3pp3rf1y.sophisticatedcore.util.ItemBase"
-import {$IUpgradeItem$$Type, $IUpgradeItem$$Interface} from "net.p3pp3rf1y.sophisticatedcore.upgrades.IUpgradeItem"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
+import {$IUpgradeItem$$Type, $IUpgradeItem$$Interface} from "net.p3pp3rf1y.sophisticatedcore.upgrades.IUpgradeItem"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$IUpgradeWrapper} from "net.p3pp3rf1y.sophisticatedcore.upgrades.IUpgradeWrapper"
@@ -2838,9 +2838,9 @@ static readonly "BASE_ATTACK_SPEED_ID": $ResourceLocation
 static readonly "ABSOLUTE_MAX_STACK_SIZE": integer
 static readonly "BY_BLOCK": $Map<($Block), ($Item)>
 
+public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
 public "getUpgradesPerStorage"(arg0: StringJS): integer
 public "getUpgradesInGroupPerStorage"(arg0: StringJS): integer
-public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
 public "getName"(): $Component
 public "checkExtraInsertConditions"(arg0: $ItemStack$$Type, arg1: $IStorageWrapper$$Type, arg2: boolean, arg3: integer, arg4: $IUpgradeItem$$Type<(never)>): $UpgradeSlotChangeResult
 public "checkExtraInsertConditions"(arg0: $ItemStack$$Type, arg1: $IStorageWrapper$$Type, arg2: boolean, arg3: $IUpgradeItem$$Type<(never)>): $UpgradeSlotChangeResult
@@ -2922,19 +2922,19 @@ export type $UpgradeWrapperBase$$Type<W, T> = ($UpgradeWrapperBase<(W), (T)>);
  */
 export type $UpgradeWrapperBase$$Original<W, T> = $UpgradeWrapperBase<(W), (T)>;}
 declare module "net.p3pp3rf1y.sophisticatedcore.upgrades.cooking.CookingUpgradeWrapper" {
-import {$UpgradeWrapperBase} from "net.p3pp3rf1y.sophisticatedcore.upgrades.UpgradeWrapperBase"
 import {$CookingLogic} from "net.p3pp3rf1y.sophisticatedcore.upgrades.cooking.CookingLogic"
+import {$UpgradeWrapperBase} from "net.p3pp3rf1y.sophisticatedcore.upgrades.UpgradeWrapperBase"
 import {$ICookingUpgrade$$Interface} from "net.p3pp3rf1y.sophisticatedcore.upgrades.cooking.ICookingUpgrade"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$AbstractCookingRecipe} from "net.minecraft.world.item.crafting.AbstractCookingRecipe"
-import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$ITickableUpgrade$$Interface} from "net.p3pp3rf1y.sophisticatedcore.upgrades.ITickableUpgrade"
 import {$UpgradeItemBase} from "net.p3pp3rf1y.sophisticatedcore.upgrades.UpgradeItemBase"
 
 export class $CookingUpgradeWrapper<W extends $CookingUpgradeWrapper<(object), (object), (object)>, U extends $UpgradeItemBase<(object)>, R extends $AbstractCookingRecipe> extends $UpgradeWrapperBase<(W), (U)> implements $ITickableUpgrade$$Interface, $ICookingUpgrade$$Interface<(R)> {
-public "getCookingLogic"(): $CookingLogic<(R)>
 public "onBeforeRemoved"(): void
+public "getCookingLogic"(): $CookingLogic<(R)>
 public "tick"(arg0: $Entity$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type): void
 public "setEnabled"(arg0: boolean): void
 get "cookingLogic"(): $CookingLogic<(R)>
@@ -2995,8 +2995,8 @@ import {$IAutoCookingUpgradeItem$$Interface} from "net.p3pp3rf1y.sophisticatedco
 import {$UpgradeGroup} from "net.p3pp3rf1y.sophisticatedcore.upgrades.UpgradeGroup"
 import {$Map} from "java.util.Map"
 import {$List} from "java.util.List"
-import {$AutoCookingUpgradeWrapper$AutoSmokingUpgradeWrapper} from "net.p3pp3rf1y.sophisticatedcore.upgrades.cooking.AutoCookingUpgradeWrapper$AutoSmokingUpgradeWrapper"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$AutoCookingUpgradeWrapper$AutoSmokingUpgradeWrapper} from "net.p3pp3rf1y.sophisticatedcore.upgrades.cooking.AutoCookingUpgradeWrapper$AutoSmokingUpgradeWrapper"
 import {$IUpgradeItem$UpgradeConflictDefinition} from "net.p3pp3rf1y.sophisticatedcore.upgrades.IUpgradeItem$UpgradeConflictDefinition"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Item} from "net.minecraft.world.item.Item"
@@ -3062,8 +3062,8 @@ import {$Block} from "net.minecraft.world.level.block.Block"
 import {$IUpgradeItem$UpgradeConflictDefinition} from "net.p3pp3rf1y.sophisticatedcore.upgrades.IUpgradeItem$UpgradeConflictDefinition"
 import {$IUpgradeItem$$Type} from "net.p3pp3rf1y.sophisticatedcore.upgrades.IUpgradeItem"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$StackUpgradeItem$Wrapper} from "net.p3pp3rf1y.sophisticatedcore.upgrades.stack.StackUpgradeItem$Wrapper"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$StackUpgradeItem$Wrapper} from "net.p3pp3rf1y.sophisticatedcore.upgrades.stack.StackUpgradeItem$Wrapper"
 import {$IUpgradeCountLimitConfig$$Type} from "net.p3pp3rf1y.sophisticatedcore.upgrades.IUpgradeCountLimitConfig"
 import {$IStorageWrapper$$Type} from "net.p3pp3rf1y.sophisticatedcore.api.IStorageWrapper"
 import {$UpgradeType} from "net.p3pp3rf1y.sophisticatedcore.upgrades.UpgradeType"
@@ -3190,14 +3190,14 @@ static readonly "BY_BLOCK": $Map<($Block), ($Item)>
 
 constructor(arg0: $IntSupplier$$Type, arg1: $IntSupplier$$Type, arg2: $IUpgradeCountLimitConfig$$Type)
 
-public "getUpgradeConflicts"(): $List<($IUpgradeItem$UpgradeConflictDefinition)>
 public "getRadius"(): integer
 public "getFilterSlotCount"(): integer
+public "getUpgradeConflicts"(): $List<($IUpgradeItem$UpgradeConflictDefinition)>
 public "getType"(): $UpgradeType<($MagnetUpgradeWrapper)>
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
-get "upgradeConflicts"(): $List<($IUpgradeItem$UpgradeConflictDefinition)>
 get "radius"(): integer
 get "filterSlotCount"(): integer
+get "upgradeConflicts"(): $List<($IUpgradeItem$UpgradeConflictDefinition)>
 get "type"(): $UpgradeType<($MagnetUpgradeWrapper)>
 }
 /**
@@ -3233,12 +3233,12 @@ export type $IExtractResponseUpgrade$$Original = $IExtractResponseUpgrade;}
 declare module "net.p3pp3rf1y.sophisticatedcore.upgrades.alchemy.AlchemyCondition" {
 import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
+import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
-import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
@@ -3263,11 +3263,11 @@ public "next"(): $AlchemyCondition
 public "defaultValue"(): float
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
 }
@@ -3284,8 +3284,8 @@ declare module "net.p3pp3rf1y.sophisticatedcore.upgrades.battery.BatteryUpgradeW
 import {$UpgradeWrapperBase} from "net.p3pp3rf1y.sophisticatedcore.upgrades.UpgradeWrapperBase"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$ITickableUpgrade$$Interface} from "net.p3pp3rf1y.sophisticatedcore.upgrades.ITickableUpgrade"
 import {$IItemHandler} from "net.neoforged.neoforge.items.IItemHandler"
+import {$ITickableUpgrade$$Interface} from "net.p3pp3rf1y.sophisticatedcore.upgrades.ITickableUpgrade"
 import {$BatteryUpgradeItem} from "net.p3pp3rf1y.sophisticatedcore.upgrades.battery.BatteryUpgradeItem"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$IStackableContentsUpgrade$$Interface} from "net.p3pp3rf1y.sophisticatedcore.upgrades.IStackableContentsUpgrade"
@@ -3299,14 +3299,14 @@ export class $BatteryUpgradeWrapper extends $UpgradeWrapperBase<($BatteryUpgrade
 static readonly "INPUT_SLOT": integer
 static readonly "OUTPUT_SLOT": integer
 
+public "canExtract"(): boolean
+public "extractEnergy"(arg0: integer, arg1: boolean): integer
+public "receiveEnergy"(arg0: integer, arg1: boolean): integer
+public "canReceive"(): boolean
+public "canBeDisabled"(): boolean
 public "getMinimumMultiplierRequired"(): integer
 public "setBatteryRenderInfoUpdateCallback"(arg0: $Consumer$$Type<($IRenderedBatteryUpgrade$BatteryRenderInfo)>): void
 public "forceUpdateBatteryRenderInfo"(): void
-public "extractEnergy"(arg0: integer, arg1: boolean): integer
-public "receiveEnergy"(arg0: integer, arg1: boolean): integer
-public "canExtract"(): boolean
-public "canReceive"(): boolean
-public "canBeDisabled"(): boolean
 public "tick"(arg0: $Entity$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type): void
 public "getInventory"(): $IItemHandler
 public "getEnergyStored"(): integer
@@ -3340,14 +3340,20 @@ import {$AlchemyCondition, $AlchemyCondition$$Type} from "net.p3pp3rf1y.sophisti
 import {$AlchemyUpgradeItem} from "net.p3pp3rf1y.sophisticatedcore.upgrades.alchemy.AlchemyUpgradeItem"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$AlchemyUpgradeWrapper$ObservableFilterItemStackHandler} from "net.p3pp3rf1y.sophisticatedcore.upgrades.alchemy.AlchemyUpgradeWrapper$ObservableFilterItemStackHandler"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 
 export class $AlchemyUpgradeWrapper extends $UpgradeWrapperBase<($AlchemyUpgradeWrapper), ($AlchemyUpgradeItem)> implements $ITickableUpgrade$$Interface {
-public "shouldMatchAllEffects"(): boolean
+public "getFilterHandler"(): $AlchemyUpgradeWrapper$ObservableFilterItemStackHandler
+public static "addItemDefinition"(arg0: $AlchemyUpgradeWrapper$AlchemyItemDefinition$$Type): void
+public static "stackPotionEffectsMatch"(arg0: $ItemStack$$Type, arg1: $ItemStack$$Type, arg2: boolean, arg3: boolean, arg4: boolean): boolean
+public static "getDefaultConditionForPotion"(arg0: $ItemStack$$Type): $AlchemyCondition
+public static "shouldApplyPotionEffectsTo"(arg0: $LivingEntity$$Type, arg1: $ItemStack$$Type, arg2: boolean, arg3: boolean): boolean
+public "isValidAlchemyItem"(arg0: $ItemStack$$Type): boolean
+public "getFilterAttributes"(): $List<($AlchemyFilterAttribute)>
 public "setConditionValue"(arg0: integer, arg1: $AlchemyCondition$$Type, arg2: float): void
 public "getCondition"(arg0: integer): $AlchemyCondition
-public "getFilterAttributes"(): $List<($AlchemyFilterAttribute)>
+public "shouldMatchAllEffects"(): boolean
 public "setMatchAllEffects"(arg0: boolean): void
 public "shouldMatchEffectDuration"(): boolean
 public "setMatchEffectDuration"(arg0: boolean): void
@@ -3355,22 +3361,16 @@ public "shouldMatchEffectAmplifier"(): boolean
 public "setMatchEffectAmplifier"(arg0: boolean): void
 public "getEntityMatch"(): $EntityMatch
 public "setEntityMatch"(arg0: $EntityMatch$$Type): void
-public static "addItemDefinition"(arg0: $AlchemyUpgradeWrapper$AlchemyItemDefinition$$Type): void
-public static "stackPotionEffectsMatch"(arg0: $ItemStack$$Type, arg1: $ItemStack$$Type, arg2: boolean, arg3: boolean, arg4: boolean): boolean
-public static "getDefaultConditionForPotion"(arg0: $ItemStack$$Type): $AlchemyCondition
-public static "shouldApplyPotionEffectsTo"(arg0: $LivingEntity$$Type, arg1: $ItemStack$$Type, arg2: boolean, arg3: boolean): boolean
-public "isValidAlchemyItem"(arg0: $ItemStack$$Type): boolean
-public "getFilterHandler"(): $AlchemyUpgradeWrapper$ObservableFilterItemStackHandler
 public "tick"(arg0: $Entity$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type): void
 public "getValue"(arg0: integer): float
 public "triggerItemUseEffects"(arg0: $Level$$Type): void
+get "filterHandler"(): $AlchemyUpgradeWrapper$ObservableFilterItemStackHandler
 get "filterAttributes"(): $List<($AlchemyFilterAttribute)>
 set "matchAllEffects"(value: boolean)
 set "matchEffectDuration"(value: boolean)
 set "matchEffectAmplifier"(value: boolean)
 get "entityMatch"(): $EntityMatch
 set "entityMatch"(value: $EntityMatch$$Type)
-get "filterHandler"(): $AlchemyUpgradeWrapper$ObservableFilterItemStackHandler
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -3404,12 +3404,12 @@ static readonly "BY_BLOCK": $Map<($Block), ($Item)>
 
 constructor(arg0: $IntSupplier$$Type, arg1: $IUpgradeCountLimitConfig$$Type)
 
-public "getUpgradeConflicts"(): $List<($IUpgradeItem$UpgradeConflictDefinition)>
 public "getFilterSlotCount"(): integer
+public "getUpgradeConflicts"(): $List<($IUpgradeItem$UpgradeConflictDefinition)>
 public "getType"(): $UpgradeType<($AlchemyUpgradeWrapper)>
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
-get "upgradeConflicts"(): $List<($IUpgradeItem$UpgradeConflictDefinition)>
 get "filterSlotCount"(): integer
+get "upgradeConflicts"(): $List<($IUpgradeItem$UpgradeConflictDefinition)>
 get "type"(): $UpgradeType<($AlchemyUpgradeWrapper)>
 }
 /**
@@ -3426,9 +3426,9 @@ import {$UpgradeWrapperBase} from "net.p3pp3rf1y.sophisticatedcore.upgrades.Upgr
 import {$StackUpgradeItem} from "net.p3pp3rf1y.sophisticatedcore.upgrades.stack.StackUpgradeItem"
 
 export class $StackUpgradeItem$Wrapper extends $UpgradeWrapperBase<($StackUpgradeItem$Wrapper), ($StackUpgradeItem)> {
-public "getStackSizeMultiplier"(): double
 public "canBeDisabled"(): boolean
 public "hideSettingsTab"(): boolean
+public "getStackSizeMultiplier"(): double
 get "stackSizeMultiplier"(): double
 }
 /**
@@ -3443,8 +3443,8 @@ export type $StackUpgradeItem$Wrapper$$Original = $StackUpgradeItem$Wrapper;}
 declare module "net.p3pp3rf1y.sophisticatedcore.upgrades.infinity.InfinityUpgradeItem" {
 import {$UpgradeSlotChangeResult} from "net.p3pp3rf1y.sophisticatedcore.common.gui.UpgradeSlotChangeResult"
 import {$Map} from "java.util.Map"
-import {$List} from "java.util.List"
 import {$SlotRange$$Type} from "net.p3pp3rf1y.sophisticatedcore.util.SlotRange"
+import {$List} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$IInventoryPartHandler} from "net.p3pp3rf1y.sophisticatedcore.inventory.IInventoryPartHandler"
 import {$IUpgradeItem$UpgradeConflictDefinition} from "net.p3pp3rf1y.sophisticatedcore.upgrades.IUpgradeItem$UpgradeConflictDefinition"

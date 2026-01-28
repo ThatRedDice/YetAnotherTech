@@ -48,8 +48,8 @@ export type $PipeCollisionEvent$$Original = $PipeCollisionEvent;}
 declare module "com.simibubi.create.api.event.PipeCollisionEvent$Spill" {
 import {$Fluid, $Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$PipeCollisionEvent} from "com.simibubi.create.api.event.PipeCollisionEvent"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$PipeCollisionEvent} from "com.simibubi.create.api.event.PipeCollisionEvent"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $PipeCollisionEvent$Spill extends $PipeCollisionEvent {
@@ -74,8 +74,8 @@ import {$RegistryEntry$$Type} from "com.tterrag.registrate.util.entry.RegistryEn
 import {$ModularGuiLineBuilder$$Type} from "com.simibubi.create.foundation.gui.ModularGuiLineBuilder"
 import {$NonNullUnaryOperator} from "com.tterrag.registrate.util.nullness.NonNullUnaryOperator"
 import {$DisplayTargetStats$$Type} from "com.simibubi.create.content.redstone.displayLink.target.DisplayTargetStats"
-import {$List} from "java.util.List"
 import {$DisplayLinkContext$$Type} from "com.simibubi.create.content.redstone.displayLink.DisplayLinkContext"
+import {$List} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$FlapDisplayLayout$$Type} from "com.simibubi.create.content.trains.display.FlapDisplayLayout"
 import {$Component} from "net.minecraft.network.chat.Component"
@@ -86,8 +86,8 @@ import {$BlockEntityType} from "net.minecraft.world.level.block.entity.BlockEnti
 import {$MutableComponent} from "net.minecraft.network.chat.MutableComponent"
 import {$BlockBuilder} from "com.tterrag.registrate.builders.BlockBuilder"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$SimpleRegistry$Multi} from "com.simibubi.create.api.registry.SimpleRegistry$Multi"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
+import {$SimpleRegistry$Multi} from "com.simibubi.create.api.registry.SimpleRegistry$Multi"
 
 export class $DisplaySource {
 static readonly "BY_BLOCK_ENTITY": $SimpleRegistry$Multi<($BlockEntityType<(never)>), ($DisplaySource)>
@@ -134,25 +134,26 @@ export type $DisplaySource$$Type = (Special.CreateDisplaySource);
 export type $DisplaySource$$Original = $DisplaySource;}
 declare module "com.simibubi.create.api.equipment.potatoCannon.PotatoCannonProjectileType" {
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
-import {$PotatoProjectileEntityHitAction, $PotatoProjectileEntityHitAction$$Type} from "com.simibubi.create.api.equipment.potatoCannon.PotatoProjectileEntityHitAction"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$EntityHitResult$$Type} from "net.minecraft.world.phys.EntityHitResult"
+import {$PotatoProjectileEntityHitAction, $PotatoProjectileEntityHitAction$$Type} from "com.simibubi.create.api.equipment.potatoCannon.PotatoProjectileEntityHitAction"
 import {$Optional, $Optional$$Type} from "java.util.Optional"
+import {$EntityHitResult$$Type} from "net.minecraft.world.phys.EntityHitResult"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$HolderSet, $HolderSet$$Type} from "net.minecraft.core.HolderSet"
 import {$Item, $Item$$Type} from "net.minecraft.world.item.Item"
+import {$HolderSet, $HolderSet$$Type} from "net.minecraft.core.HolderSet"
 import {$Holder$Reference} from "net.minecraft.core.Holder$Reference"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$PotatoProjectileBlockHitAction, $PotatoProjectileBlockHitAction$$Type} from "com.simibubi.create.api.equipment.potatoCannon.PotatoProjectileBlockHitAction"
+import {$Record} from "java.lang.Record"
 import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
 import {$PotatoProjectileRenderMode, $PotatoProjectileRenderMode$$Type} from "com.simibubi.create.api.equipment.potatoCannon.PotatoProjectileRenderMode"
-import {$Record} from "java.lang.Record"
 
 export class $PotatoCannonProjectileType extends $Record {
 static readonly "CODEC": $Codec<($PotatoCannonProjectileType)>
 
 constructor(items: $HolderSet$$Type<($Item)>, reloadTicks: integer, damage: integer, split: integer, knockback: float, drag: float, velocityMultiplier: float, gravityMultiplier: float, soundPitch: float, sticky: boolean, dropStack: $ItemStack$$Type, renderMode: $PotatoProjectileRenderMode$$Type, preEntityHit: ($PotatoProjectileEntityHitAction$$Type)?, onEntityHit: ($PotatoProjectileEntityHitAction$$Type)?, onBlockHit: ($PotatoProjectileBlockHitAction$$Type)?)
 
+public "dropStack"(): $ItemStack
 public static "getTypeForItem"(arg0: $RegistryAccess$$Type, arg1: $Item$$Type): $Optional<($Holder$Reference<($PotatoCannonProjectileType)>)>
 public "velocityMultiplier"(): float
 public "soundPitch"(): float
@@ -162,7 +163,6 @@ public "preEntityHit"(): $Optional<($PotatoProjectileEntityHitAction)>
 public "preEntityHit"(arg0: $ItemStack$$Type, arg1: $EntityHitResult$$Type): boolean
 public "onEntityHit"(arg0: $ItemStack$$Type, arg1: $EntityHitResult$$Type): boolean
 public "onEntityHit"(): $Optional<($PotatoProjectileEntityHitAction)>
-public "dropStack"(): $ItemStack
 public "onBlockHit"(): $Optional<($PotatoProjectileBlockHitAction)>
 public "onBlockHit"(arg0: $LevelAccessor$$Type, arg1: $ItemStack$$Type, arg2: $BlockHitResult$$Type): boolean
 public "items"(): $HolderSet<($Item)>
@@ -171,8 +171,8 @@ public "toString"(): StringJS
 public "hashCode"(): integer
 public "split"(): integer
 public "sticky"(): boolean
-public "drag"(): float
 public "renderMode"(): $PotatoProjectileRenderMode
+public "drag"(): float
 public "knockback"(): float
 public "damage"(): integer
 /**
@@ -242,12 +242,12 @@ export interface $SimpleRegistry$$Interface<K, V> {
 }
 
 export class $SimpleRegistry<K, V> implements $SimpleRegistry$$Interface {
- "invalidate"(): void
  "registerProvider"(arg0: $SimpleRegistry$Provider$$Type<(K), (V)>): void
  "get"(arg0: $StateHolder$$Type<(K), (never)>): V
  "get"(arg0: K): V
  "register"(arg0: K, arg1: V): void
 static "create"<K, V>(): $SimpleRegistry<(K), (V)>
+ "invalidate"(): void
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -283,12 +283,12 @@ static readonly "BY_BLOCK": $SimpleRegistry<($Block), ($DisplayTarget)>
 constructor()
 
 public static "displayTarget"<B extends $Block, P>(arg0: $RegistryEntry$$Type<($DisplayTarget$$Type), ($DisplayTarget$$Type)>): $NonNullUnaryOperator<($BlockBuilder<(B), (P)>)>
-public "provideStats"(arg0: $DisplayLinkContext$$Type): $DisplayTargetStats
-public "requiresComponentSanitization"(): boolean
-public "acceptText"(arg0: integer, arg1: $List$$Type<($MutableComponent$$Type)>, arg2: $DisplayLinkContext$$Type): void
 public "isReserved"(arg0: integer, arg1: $BlockEntity$$Type, arg2: $DisplayLinkContext$$Type): boolean
 public "getLineOptionText"(arg0: integer): $Component
 public "getMultiblockBounds"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type): $AABB
+public "provideStats"(arg0: $DisplayLinkContext$$Type): $DisplayTargetStats
+public "requiresComponentSanitization"(): boolean
+public "acceptText"(arg0: integer, arg1: $List$$Type<($MutableComponent$$Type)>, arg2: $DisplayLinkContext$$Type): void
 public static "get"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type): $DisplayTarget
 public static "get"(arg0: $ResourceLocation$$Type): $DisplayTarget
 public static "reserve"(arg0: integer, arg1: $BlockEntity$$Type, arg2: $DisplayLinkContext$$Type): void
@@ -437,8 +437,8 @@ export type $PotatoProjectileBlockHitAction$$Original = $PotatoProjectileBlockHi
 declare module "com.simibubi.create.api.event.PipeCollisionEvent$Flow" {
 import {$Fluid, $Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$PipeCollisionEvent} from "com.simibubi.create.api.event.PipeCollisionEvent"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$PipeCollisionEvent} from "com.simibubi.create.api.event.PipeCollisionEvent"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $PipeCollisionEvent$Flow extends $PipeCollisionEvent {
@@ -477,9 +477,9 @@ public "getTanks"(): integer
 public "getFluidInTank"(arg0: integer): $FluidStack
 public "getTankCapacity"(arg0: integer): integer
 public "isFluidValid"(arg0: integer, arg1: $FluidStack$$Type): boolean
+public "fill"(arg0: $FluidStack$$Type, arg1: $IFluidHandler$FluidAction$$Type): integer
 public "drain"(arg0: $FluidStack$$Type, arg1: $IFluidHandler$FluidAction$$Type): $FluidStack
 public "drain"(arg0: integer, arg1: $IFluidHandler$FluidAction$$Type): $FluidStack
-public "fill"(arg0: $FluidStack$$Type, arg1: $IFluidHandler$FluidAction$$Type): integer
 get "tanks"(): integer
 }
 /**
@@ -503,8 +503,8 @@ readonly "holder": $Holder$Reference<($ContraptionType)>
 
 constructor(arg0: $Supplier$$Type<($Contraption$$Type)>)
 
-public "is"(arg0: $TagKey$$Type<($ContraptionType)>): boolean
 public static "fromType"(arg0: StringJS): $Contraption
+public "is"(arg0: $TagKey$$Type<($ContraptionType)>): boolean
 /**
  * This field is a type stub generated by ProbeJS and shall not be used in any sense.
  */
@@ -554,8 +554,8 @@ import {$SimpleRegistry} from "com.simibubi.create.api.registry.SimpleRegistry"
 import {$MountedItemStorage} from "com.simibubi.create.api.contraption.storage.item.MountedItemStorage"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$TagKey$$Type} from "net.minecraft.tags.TagKey"
-import {$Holder$Reference} from "net.minecraft.core.Holder$Reference"
 import {$BlockBuilder} from "com.tterrag.registrate.builders.BlockBuilder"
+import {$Holder$Reference} from "net.minecraft.core.Holder$Reference"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -623,8 +623,8 @@ import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyBy
 import {$ItemPredicate$$Type} from "dev.latvian.mods.kubejs.item.ItemPredicate"
 import {$IItemHandlerModifiable$$Interface} from "net.neoforged.neoforge.items.IItemHandlerModifiable"
 import {$StructureTemplate$StructureBlockInfo$$Type} from "net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate$StructureBlockInfo"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$MountedItemStorageType} from "com.simibubi.create.api.contraption.storage.item.MountedItemStorageType"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -710,8 +710,8 @@ export type $MountedFluidStorageWrapper$$Original = $MountedFluidStorageWrapper;
 declare module "com.simibubi.create.api.packager.InventoryIdentifier" {
 import {$BlockFace, $BlockFace$$Type} from "net.createmod.catnip.math.BlockFace"
 import {$Block} from "net.minecraft.world.level.block.Block"
-import {$InventoryIdentifier$Finder} from "com.simibubi.create.api.packager.InventoryIdentifier$Finder"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$InventoryIdentifier$Finder} from "com.simibubi.create.api.packager.InventoryIdentifier$Finder"
 import {$SimpleRegistry} from "com.simibubi.create.api.registry.SimpleRegistry"
 
 export interface $InventoryIdentifier$$Interface {
@@ -811,14 +811,14 @@ export type $IHaveGoggleInformation$$Type = ($IHaveGoggleInformation);
  */
 export type $IHaveGoggleInformation$$Original = $IHaveGoggleInformation;}
 declare module "com.simibubi.create.api.behaviour.interaction.MovingInteractionBehaviour" {
-import {$AbstractContraptionEntity$$Type} from "com.simibubi.create.content.contraptions.AbstractContraptionEntity"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
+import {$AbstractContraptionEntity$$Type} from "com.simibubi.create.content.contraptions.AbstractContraptionEntity"
 import {$NonNullConsumer} from "com.tterrag.registrate.util.nullness.NonNullConsumer"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$SimpleRegistry} from "com.simibubi.create.api.registry.SimpleRegistry"
-import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 
 export class $MovingInteractionBehaviour {
 static readonly "REGISTRY": $SimpleRegistry<($Block), ($MovingInteractionBehaviour)>
@@ -892,9 +892,9 @@ public "getTanks"(): integer
 public "getFluidInTank"(arg0: integer): $FluidStack
 public "getTankCapacity"(arg0: integer): integer
 public "isFluidValid"(arg0: integer, arg1: $FluidStack$$Type): boolean
+public "fill"(arg0: $FluidStack$$Type, arg1: $IFluidHandler$FluidAction$$Type): integer
 public "drain"(arg0: $FluidStack$$Type, arg1: $IFluidHandler$FluidAction$$Type): $FluidStack
 public "drain"(arg0: integer, arg1: $IFluidHandler$FluidAction$$Type): $FluidStack
-public "fill"(arg0: $FluidStack$$Type, arg1: $IFluidHandler$FluidAction$$Type): integer
 get "tanks"(): integer
 }
 /**
@@ -932,8 +932,8 @@ import {$BlockEntityType} from "net.minecraft.world.level.block.entity.BlockEnti
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$FluidStack, $FluidStack$$Type} from "net.neoforged.neoforge.fluids.FluidStack"
-import {$SimpleRegistry} from "com.simibubi.create.api.registry.SimpleRegistry"
 import {$SpoutBlockEntity, $SpoutBlockEntity$$Type} from "com.simibubi.create.content.fluids.spout.SpoutBlockEntity"
+import {$SimpleRegistry} from "com.simibubi.create.api.registry.SimpleRegistry"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
 
 export interface $BlockSpoutingBehaviour$$Interface {
@@ -960,8 +960,8 @@ export type $BlockSpoutingBehaviour$$Original = $BlockSpoutingBehaviour;}
 declare module "com.simibubi.create.api.registry.SimpleRegistry$Provider" {
 import {$Fluid, $Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 import {$BlockEntityType, $BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$TagKey$$Type} from "net.minecraft.tags.TagKey"
 import {$Function$$Type} from "java.util.function.Function"
+import {$TagKey$$Type} from "net.minecraft.tags.TagKey"
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Item, $Item$$Type} from "net.minecraft.world.item.Item"
 import {$Runnable$$Type} from "java.lang.Runnable"
@@ -1024,8 +1024,8 @@ import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyBy
 import {$IItemHandlerModifiable} from "net.neoforged.neoforge.items.IItemHandlerModifiable"
 import {$IItemHandler$$Type} from "net.neoforged.neoforge.items.IItemHandler"
 import {$MountedItemStorageType} from "com.simibubi.create.api.contraption.storage.item.MountedItemStorageType"
-import {$ItemStackHandler} from "net.neoforged.neoforge.items.ItemStackHandler"
 import {$MountedItemStorage} from "com.simibubi.create.api.contraption.storage.item.MountedItemStorage"
+import {$ItemStackHandler} from "net.neoforged.neoforge.items.ItemStackHandler"
 
 export class $WrapperMountedItemStorage<T extends $IItemHandlerModifiable> extends $MountedItemStorage {
 static readonly "CODEC": $Codec<($MountedItemStorage)>
@@ -1238,9 +1238,9 @@ export class $SimpleRegistry$Multi<K, V> implements $SimpleRegistry$Multi$$Inter
  "add"(arg0: K, arg1: V): void
 static "create"<K, V>(): $SimpleRegistry$Multi<(K), (V)>
  "addProvider"(arg0: $SimpleRegistry$Provider$$Type<(K), (V)>): void
- "invalidate"(): void
  "registerProvider"(arg0: $SimpleRegistry$Provider$$Type<(K), ($List$$Type<(V)>)>): void
  "register"(arg0: K, arg1: $List$$Type<(V)>): void
+ "invalidate"(): void
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -1254,12 +1254,12 @@ export type $SimpleRegistry$Multi$$Original<K, V> = $SimpleRegistry$Multi<(K), (
 declare module "com.simibubi.create.api.contraption.storage.item.chest.ChestMountedStorage" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
-import {$SimpleMountedStorage} from "com.simibubi.create.api.contraption.storage.item.simple.SimpleMountedStorage"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$SimpleMountedStorage} from "com.simibubi.create.api.contraption.storage.item.simple.SimpleMountedStorage"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
-import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$IItemHandler$$Type} from "net.neoforged.neoforge.items.IItemHandler"
+import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$MountedItemStorageType} from "com.simibubi.create.api.contraption.storage.item.MountedItemStorageType"
 import {$MountedItemStorage} from "com.simibubi.create.api.contraption.storage.item.MountedItemStorage"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"

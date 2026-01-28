@@ -8,8 +8,8 @@ import {$Component} from "net.minecraft.network.chat.Component"
 import {$SpawnerStat$$Type, $SpawnerStat$$Interface} from "dev.shadowsoffire.apothic_spawners.stats.SpawnerStat"
 
 export class $VanillaStat implements $SpawnerStat$$Interface<(integer)> {
-public "formatValue"(arg0: integer): StringJS
 public "getValueCodec"(): $Codec<(integer)>
+public "formatValue"(arg0: integer): StringJS
 public static "createTooltip"(arg0: $SpawnerStat$$Type<(never)>, arg1: $MutableComponent$$Type): $Component
 public static "createTooltip"(arg0: $SpawnerStat$$Type<(never)>, arg1: StringJS): $Component
 public "name"(): $MutableComponent
@@ -53,8 +53,8 @@ get "id"(): $ResourceLocation
 }
 
 export class $SpawnerStat<T> implements $SpawnerStat$$Interface {
- "formatValue"(arg0: T): StringJS
  "getValueCodec"(): $Codec<(T)>
+ "formatValue"(arg0: T): StringJS
 static "createTooltip"(arg0: $SpawnerStat$$Type<(never)>, arg1: $MutableComponent$$Type): $Component
 static "createTooltip"(arg0: $SpawnerStat$$Type<(never)>, arg1: StringJS): $Component
  "name"(): $MutableComponent
@@ -78,8 +78,8 @@ declare module "dev.shadowsoffire.apothic_spawners.stats.BooleanStat" {
 import {$CustomStat} from "dev.shadowsoffire.apothic_spawners.stats.CustomStat"
 import {$Optional$$Type} from "java.util.Optional"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$ApothSpawnerTile$$Type} from "dev.shadowsoffire.apothic_spawners.block.ApothSpawnerTile"
 import {$MutableComponent$$Type} from "net.minecraft.network.chat.MutableComponent"
+import {$ApothSpawnerTile$$Type} from "dev.shadowsoffire.apothic_spawners.block.ApothSpawnerTile"
 import {$Component} from "net.minecraft.network.chat.Component"
 import {$SpawnerStat$$Type} from "dev.shadowsoffire.apothic_spawners.stats.SpawnerStat"
 
@@ -107,8 +107,8 @@ declare module "dev.shadowsoffire.apothic_spawners.stats.CustomStat" {
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Optional$$Type} from "java.util.Optional"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$ApothSpawnerTile$$Type} from "dev.shadowsoffire.apothic_spawners.block.ApothSpawnerTile"
 import {$MutableComponent, $MutableComponent$$Type} from "net.minecraft.network.chat.MutableComponent"
+import {$ApothSpawnerTile$$Type} from "dev.shadowsoffire.apothic_spawners.block.ApothSpawnerTile"
 import {$Component} from "net.minecraft.network.chat.Component"
 import {$SpawnerStat$$Type, $SpawnerStat$$Interface} from "dev.shadowsoffire.apothic_spawners.stats.SpawnerStat"
 
@@ -120,8 +120,8 @@ public "toString"(): StringJS
 public "getValue"(arg0: $ApothSpawnerTile$$Type): T
 public "setValue"(arg0: $ApothSpawnerTile$$Type, arg1: T): void
 public "getTooltip"(arg0: $ApothSpawnerTile$$Type): $Component
-public "formatValue"(arg0: T): StringJS
 public "getValueCodec"(): $Codec<(T)>
+public "formatValue"(arg0: T): StringJS
 public static "createTooltip"(arg0: $SpawnerStat$$Type<(never)>, arg1: $MutableComponent$$Type): $Component
 public static "createTooltip"(arg0: $SpawnerStat$$Type<(never)>, arg1: StringJS): $Component
 public "name"(): $MutableComponent
@@ -144,17 +144,17 @@ declare module "dev.shadowsoffire.apothic_spawners.stats.PercentageStat" {
 import {$CustomStat} from "dev.shadowsoffire.apothic_spawners.stats.CustomStat"
 import {$Optional$$Type} from "java.util.Optional"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$ApothSpawnerTile$$Type} from "dev.shadowsoffire.apothic_spawners.block.ApothSpawnerTile"
 import {$MutableComponent$$Type} from "net.minecraft.network.chat.MutableComponent"
+import {$ApothSpawnerTile$$Type} from "dev.shadowsoffire.apothic_spawners.block.ApothSpawnerTile"
 import {$Component} from "net.minecraft.network.chat.Component"
 import {$SpawnerStat$$Type} from "dev.shadowsoffire.apothic_spawners.stats.SpawnerStat"
 
 export class $PercentageStat extends $CustomStat<(float)> {
 constructor(arg0: float)
 
+public "getValueCodec"(): $Codec<(float)>
 public "formatValue"(arg0: float): StringJS
 public "formatValue"(arg0: any): StringJS
-public "getValueCodec"(): $Codec<(float)>
 public "getTooltipImpl"(arg0: $ApothSpawnerTile$$Type): $Component
 public "applyModifier"(arg0: $ApothSpawnerTile$$Type, arg1: float, arg2: (float)?, arg3: (float)?): boolean
 public "applyModifier"(arg0: $ApothSpawnerTile$$Type, arg1: any, arg2: $Optional$$Type, arg3: $Optional$$Type): boolean
@@ -175,17 +175,17 @@ declare module "dev.shadowsoffire.apothic_spawners.stats.LevelStat" {
 import {$CustomStat} from "dev.shadowsoffire.apothic_spawners.stats.CustomStat"
 import {$Optional$$Type} from "java.util.Optional"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$ApothSpawnerTile$$Type} from "dev.shadowsoffire.apothic_spawners.block.ApothSpawnerTile"
 import {$MutableComponent$$Type} from "net.minecraft.network.chat.MutableComponent"
+import {$ApothSpawnerTile$$Type} from "dev.shadowsoffire.apothic_spawners.block.ApothSpawnerTile"
 import {$Component} from "net.minecraft.network.chat.Component"
 import {$SpawnerStat$$Type} from "dev.shadowsoffire.apothic_spawners.stats.SpawnerStat"
 
 export class $LevelStat extends $CustomStat<(integer)> {
 constructor(arg0: integer)
 
+public "getValueCodec"(): $Codec<(integer)>
 public "formatValue"(arg0: any): StringJS
 public "formatValue"(arg0: integer): StringJS
-public "getValueCodec"(): $Codec<(integer)>
 public "getTooltipImpl"(arg0: $ApothSpawnerTile$$Type): $Component
 public "applyModifier"(arg0: $ApothSpawnerTile$$Type, arg1: integer, arg2: (integer)?, arg3: (integer)?): boolean
 public "applyModifier"(arg0: $ApothSpawnerTile$$Type, arg1: any, arg2: $Optional$$Type, arg3: $Optional$$Type): boolean

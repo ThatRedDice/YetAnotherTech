@@ -9,8 +9,8 @@ import {$InventoryVehicleEntity$$Type} from "immersive_aircraft.entity.Inventory
 export class $SparseSimpleInventory extends $SimpleContainer {
 constructor(size: integer)
 
-public "createTag"(levelRegistry: $HolderLookup$Provider$$Type): $ListTag
 public "tick"(entity: $InventoryVehicleEntity$$Type): void
+public "createTag"(levelRegistry: $HolderLookup$Provider$$Type): $ListTag
 public "fromTag"(tag: $ListTag$$Type, levelRegistry: $HolderLookup$Provider$$Type): void
 public static "stillValidBlockEntity"(arg0: $BlockEntity$$Type, arg1: $Player$$Type): boolean
 public static "stillValidBlockEntity"(arg0: $BlockEntity$$Type, arg1: $Player$$Type, arg2: float): boolean
@@ -31,8 +31,8 @@ import {$RegistryFriendlyByteBuf$$Type} from "net.minecraft.network.RegistryFrie
 import {$Rect2iCommon} from "immersive_aircraft.util.Rect2iCommon"
 import {$List} from "java.util.List"
 import {$JsonObject$$Type} from "com.google.gson.JsonObject"
-import {$SlotDescription, $SlotDescription$$Type} from "immersive_aircraft.entity.inventory.slots.SlotDescription"
 import {$JsonArray$$Type} from "com.google.gson.JsonArray"
+import {$SlotDescription, $SlotDescription$$Type} from "immersive_aircraft.entity.inventory.slots.SlotDescription"
 import {$SlotDescription$SlotDescriptionDecoder, $SlotDescription$SlotDescriptionDecoder$$Type} from "immersive_aircraft.entity.inventory.slots.SlotDescription$SlotDescriptionDecoder"
 import {$SlotDescription$SlotDescriptionFactory, $SlotDescription$SlotDescriptionFactory$$Type} from "immersive_aircraft.entity.inventory.slots.SlotDescription$SlotDescriptionFactory"
 

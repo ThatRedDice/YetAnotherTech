@@ -1,7 +1,7 @@
 declare module "mcjty.rftoolsutility.modules.spawner.recipes.SpawnerRecipeSerializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$SpawnerRecipe} from "mcjty.rftoolsutility.modules.spawner.recipes.SpawnerRecipe"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
@@ -56,8 +56,8 @@ import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$BaseBlock} from "mcjty.lib.blocks.BaseBlock"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
-import {$Property} from "net.minecraft.world.level.block.state.properties.Property"
 import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
+import {$Property} from "net.minecraft.world.level.block.state.properties.Property"
 
 export class $MatterBeamerBlock extends $BaseBlock {
 static readonly "UPDATE_IMMEDIATE": integer
@@ -192,13 +192,13 @@ export type $SpawnerRecipes$MobSpawnAmount$$Original = $SpawnerRecipes$MobSpawnA
 declare module "mcjty.rftoolsutility.modules.spawner.items.SyringeItem" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$List, $List$$Type} from "java.util.List"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"

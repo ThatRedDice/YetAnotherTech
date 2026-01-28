@@ -64,9 +64,9 @@ static readonly "BY_BLOCK": $Map<($Block), ($Item)>
 
 constructor()
 
-public static "onLivingUpdate"(entity: $LivingEntity$$Type): void
 public "isCosmetic"(): boolean
 public static "shouldGlide"(entity: $LivingEntity$$Type): boolean
+public static "onLivingUpdate"(entity: $LivingEntity$$Type): void
 public "use"(level: $Level$$Type, player: $Player$$Type, hand: $InteractionHand$$Type): $InteractionResultHolder<($ItemStack)>
 public "getUseDuration"(itemStack: $ItemStack$$Type, livingEntity: $LivingEntity$$Type): integer
 public "getUseAnimation"(stack: $ItemStack$$Type): $UseAnim
@@ -91,12 +91,12 @@ import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$List$$Type} from "java.util.List"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 
 export class $ArtifactItem extends $Item {
 static readonly "BASE_ATTACK_DAMAGE_ID": $ResourceLocation
@@ -127,12 +127,12 @@ import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$List$$Type} from "java.util.List"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 
 export class $WearableArtifactItem extends $Item {
 static readonly "BASE_ATTACK_DAMAGE_ID": $ResourceLocation

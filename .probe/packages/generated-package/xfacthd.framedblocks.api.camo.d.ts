@@ -36,8 +36,8 @@ export interface $TriggerRegistrar$$Interface {
 export class $TriggerRegistrar implements $TriggerRegistrar$$Interface {
 static readonly "DEFAULT_REMOVAL": $Predicate<($ItemStack)>
 
- "registerRemovalPredicate"(arg0: $Predicate$$Type<($ItemStack)>): void
  "registerApplicationPredicate"(arg0: $Predicate$$Type<($ItemStack)>): void
+ "registerRemovalPredicate"(arg0: $Predicate$$Type<($ItemStack)>): void
  "registerApplicationItem"(arg0: $Item$$Type): void
  "registerRemovalItem"(arg0: $Item$$Type): void
 }
@@ -64,8 +64,8 @@ export class $CamoClientHandler<T extends $CamoContent<(object)>> {
 constructor()
 
 public "getRenderTypes"(arg0: T, arg1: $RandomSource$$Type, arg2: $ModelData$$Type): $ChunkRenderTypeSet
-public "getOrCreateModel"(arg0: T): $BakedModel
 public "makeHitDestroyParticle"(arg0: $ClientLevel$$Type, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: T, arg8: $BlockPos$$Type): $Particle
+public "getOrCreateModel"(arg0: T): $BakedModel
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -92,13 +92,20 @@ import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$ParticleOptions} from "net.minecraft.core.particles.ParticleOptions"
-import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
+import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $BlockCamoContent extends $CamoContent<($BlockCamoContent)> {
 constructor(arg0: $BlockState$$Type)
 
-public "getClientHandler"(): $CamoClientHandler<($BlockCamoContent)>
+public "getCamoId"(): StringJS
+public "makeRunningLandingParticles"(arg0: $BlockPos$$Type): $ParticleOptions
+public "getAppearanceState"(): $BlockState
+public "isOccludedBy"(arg0: $CamoContent$$Type<(never)>, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockPos$$Type): boolean
+public "isOccludedBy"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockPos$$Type): boolean
+public "occludes"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockPos$$Type): boolean
+public "propagatesSkylightDown"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type): boolean
+public "getShadeBrightness"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: float): float
 public "getExplosionResistance"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $Explosion$$Type): float
 public "isSolid"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type): boolean
 public "canOcclude"(): boolean
@@ -110,19 +117,12 @@ public "getFireSpreadSpeed"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg
 public "canEntityDestroy"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $Entity$$Type): boolean
 public "shouldDisplayFluidOverlay"(arg0: $BlockAndTintGetter$$Type, arg1: $BlockPos$$Type, arg2: $FluidState$$Type): boolean
 public "getMapColor"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type): $MapColor
-public "propagatesSkylightDown"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type): boolean
-public "getShadeBrightness"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: float): float
 public "getCamoName"(): $MutableComponent
 public "getAsBlockState"(): $BlockState
 public "isEmissive"(): boolean
-public "getCamoId"(): StringJS
-public "makeRunningLandingParticles"(arg0: $BlockPos$$Type): $ParticleOptions
-public "getAppearanceState"(): $BlockState
-public "isOccludedBy"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockPos$$Type): boolean
-public "isOccludedBy"(arg0: $CamoContent$$Type<(never)>, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockPos$$Type): boolean
-public "occludes"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockPos$$Type): boolean
 public "getTintColor"(arg0: $BlockAndTintGetter$$Type, arg1: $BlockPos$$Type, arg2: integer): integer
 public "getTintColor"(arg0: $ItemStack$$Type, arg1: integer): integer
+public "getClientHandler"(): $CamoClientHandler<($BlockCamoContent)>
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
@@ -130,12 +130,12 @@ public "getState"(): $BlockState
 public "getSoundType"(): $SoundType
 public "getFriction"(arg0: $LevelReader$$Type, arg1: $BlockPos$$Type, arg2: $Entity$$Type, arg3: float): float
 public "getLightEmission"(): integer
-get "clientHandler"(): $CamoClientHandler<($BlockCamoContent)>
+get "camoId"(): StringJS
+get "appearanceState"(): $BlockState
 get "camoName"(): $MutableComponent
 get "asBlockState"(): $BlockState
 get "emissive"(): boolean
-get "camoId"(): StringJS
-get "appearanceState"(): $BlockState
+get "clientHandler"(): $CamoClientHandler<($BlockCamoContent)>
 get "state"(): $BlockState
 get "soundType"(): $SoundType
 get "lightEmission"(): integer
@@ -150,9 +150,9 @@ export type $BlockCamoContent$$Type = ($BlockCamoContent);
  */
 export type $BlockCamoContent$$Original = $BlockCamoContent;}
 declare module "xfacthd.framedblocks.api.camo.block.rotator.RegisterBlockCamoRotatorsEvent" {
+import {$Event} from "net.neoforged.bus.api.Event"
 import {$BiConsumer$$Type} from "java.util.function.BiConsumer"
 import {$Block$$Type} from "net.minecraft.world.level.block.Block"
-import {$Event} from "net.neoforged.bus.api.Event"
 import {$BlockCamoRotator$$Type} from "xfacthd.framedblocks.api.camo.block.rotator.BlockCamoRotator"
 
 export class $RegisterBlockCamoRotatorsEvent extends $Event {
@@ -176,9 +176,9 @@ import {$CamoContainerFactory} from "xfacthd.framedblocks.api.camo.CamoContainer
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $AbstractBlockCamoContainer<T extends $AbstractBlockCamoContainer<(object)>> extends $CamoContainer<($BlockCamoContent), (T)> {
-public "canRotateCamo"(): boolean
-public "rotateCamo"(): T
 public "copyWithState"(arg0: $BlockState$$Type): T
+public "canRotateCamo"(): boolean
+public "rotateCamo"(): $CamoContainer
 public "getFactory"(): $CamoContainerFactory
 public "getState"(): $BlockState
 get "factory"(): $CamoContainerFactory
@@ -209,15 +209,22 @@ import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$ParticleOptions} from "net.minecraft.core.particles.ParticleOptions"
-import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
+import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $EmptyCamoContent extends $CamoContent<($EmptyCamoContent)> {
 static readonly "EMPTY": $EmptyCamoContent
 
 constructor()
 
-public "getClientHandler"(): $CamoClientHandler<($EmptyCamoContent)>
+public "getCamoId"(): StringJS
+public "makeRunningLandingParticles"(arg0: $BlockPos$$Type): $ParticleOptions
+public "getAppearanceState"(): $BlockState
+public "isOccludedBy"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockPos$$Type): boolean
+public "isOccludedBy"(arg0: $CamoContent$$Type<(never)>, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockPos$$Type): boolean
+public "occludes"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockPos$$Type): boolean
+public "propagatesSkylightDown"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type): boolean
+public "getShadeBrightness"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: float): float
 public "getExplosionResistance"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $Explosion$$Type): float
 public "isSolid"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type): boolean
 public "canOcclude"(): boolean
@@ -229,31 +236,24 @@ public "getFireSpreadSpeed"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg
 public "canEntityDestroy"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $Entity$$Type): boolean
 public "shouldDisplayFluidOverlay"(arg0: $BlockAndTintGetter$$Type, arg1: $BlockPos$$Type, arg2: $FluidState$$Type): boolean
 public "getMapColor"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type): $MapColor
-public "propagatesSkylightDown"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type): boolean
-public "getShadeBrightness"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: float): float
 public "getCamoName"(): $MutableComponent
 public "getAsBlockState"(): $BlockState
 public "isEmissive"(): boolean
-public "getCamoId"(): StringJS
-public "makeRunningLandingParticles"(arg0: $BlockPos$$Type): $ParticleOptions
-public "getAppearanceState"(): $BlockState
-public "isOccludedBy"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockPos$$Type): boolean
-public "isOccludedBy"(arg0: $CamoContent$$Type<(never)>, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockPos$$Type): boolean
-public "occludes"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockPos$$Type): boolean
-public "getTintColor"(arg0: $BlockAndTintGetter$$Type, arg1: $BlockPos$$Type, arg2: integer): integer
 public "getTintColor"(arg0: $ItemStack$$Type, arg1: integer): integer
+public "getTintColor"(arg0: $BlockAndTintGetter$$Type, arg1: $BlockPos$$Type, arg2: integer): integer
+public "getClientHandler"(): $CamoClientHandler<($EmptyCamoContent)>
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
 public "getSoundType"(): $SoundType
 public "getFriction"(arg0: $LevelReader$$Type, arg1: $BlockPos$$Type, arg2: $Entity$$Type, arg3: float): float
 public "getLightEmission"(): integer
-get "clientHandler"(): $CamoClientHandler<($EmptyCamoContent)>
+get "camoId"(): StringJS
+get "appearanceState"(): $BlockState
 get "camoName"(): $MutableComponent
 get "asBlockState"(): $BlockState
 get "emissive"(): boolean
-get "camoId"(): StringJS
-get "appearanceState"(): $BlockState
+get "clientHandler"(): $CamoClientHandler<($EmptyCamoContent)>
 get "soundType"(): $SoundType
 get "lightEmission"(): integer
 }
@@ -267,6 +267,7 @@ export type $EmptyCamoContent$$Type = ($EmptyCamoContent);
  */
 export type $EmptyCamoContent$$Original = $EmptyCamoContent;}
 declare module "xfacthd.framedblocks.api.camo.block.SimpleBlockCamoContainer" {
+import {$CamoContainer} from "xfacthd.framedblocks.api.camo.CamoContainer"
 import {$CamoContainerFactory} from "xfacthd.framedblocks.api.camo.CamoContainerFactory"
 import {$AbstractBlockCamoContainer} from "xfacthd.framedblocks.api.camo.block.AbstractBlockCamoContainer"
 import {$SimpleBlockCamoContainerFactory$$Type} from "xfacthd.framedblocks.api.camo.block.SimpleBlockCamoContainerFactory"
@@ -279,6 +280,7 @@ public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
 public "getFactory"(): $CamoContainerFactory
+public "rotateCamo"(): $CamoContainer
 get "factory"(): $CamoContainerFactory
 }
 /**
@@ -292,8 +294,8 @@ export type $SimpleBlockCamoContainer$$Type = ($SimpleBlockCamoContainer);
 export type $SimpleBlockCamoContainer$$Original = $SimpleBlockCamoContainer;}
 declare module "xfacthd.framedblocks.api.camo.CamoContainer" {
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
-import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$MapColor} from "net.minecraft.world.level.material.MapColor"
+import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$CamoContainerFactory} from "xfacthd.framedblocks.api.camo.CamoContainerFactory"
 import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
@@ -342,13 +344,21 @@ import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$ParticleOptions} from "net.minecraft.core.particles.ParticleOptions"
-import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
+import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $CamoContent<C extends $CamoContent<(object)>> implements $QuadCacheKey$$Interface {
 constructor()
 
-public "getClientHandler"(): $CamoClientHandler<(C)>
+public "getCamoId"(): StringJS
+public "makeRunningLandingParticles"(arg0: $BlockPos$$Type): $ParticleOptions
+public "getAppearanceState"(): $BlockState
+public "isOccludedBy"(arg0: $CamoContent$$Type<(never)>, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockPos$$Type): boolean
+public "isOccludedBy"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockPos$$Type): boolean
+public "occludes"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockPos$$Type): boolean
+public "ctCtx"(): any
+public "propagatesSkylightDown"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type): boolean
+public "getShadeBrightness"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: float): float
 public "getExplosionResistance"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $Explosion$$Type): float
 public "isSolid"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type): boolean
 public "canOcclude"(): boolean
@@ -360,21 +370,13 @@ public "getFireSpreadSpeed"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg
 public "canEntityDestroy"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $Entity$$Type): boolean
 public "shouldDisplayFluidOverlay"(arg0: $BlockAndTintGetter$$Type, arg1: $BlockPos$$Type, arg2: $FluidState$$Type): boolean
 public "getMapColor"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type): $MapColor
-public "propagatesSkylightDown"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type): boolean
-public "getShadeBrightness"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: float): float
 public "getCamoName"(): $MutableComponent
 public "getAsBlockState"(): $BlockState
 public "isEmissive"(): boolean
 public "camo"(): $CamoContent<(never)>
-public "getCamoId"(): StringJS
-public "makeRunningLandingParticles"(arg0: $BlockPos$$Type): $ParticleOptions
-public "getAppearanceState"(): $BlockState
-public "isOccludedBy"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockPos$$Type): boolean
-public "isOccludedBy"(arg0: $CamoContent$$Type<(never)>, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockPos$$Type): boolean
-public "occludes"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockPos$$Type): boolean
-public "ctCtx"(): any
 public "getTintColor"(arg0: $BlockAndTintGetter$$Type, arg1: $BlockPos$$Type, arg2: integer): integer
 public "getTintColor"(arg0: $ItemStack$$Type, arg1: integer): integer
+public "getClientHandler"(): $CamoClientHandler<(C)>
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
@@ -382,12 +384,12 @@ public "isEmpty"(): boolean
 public "getSoundType"(): $SoundType
 public "getFriction"(arg0: $LevelReader$$Type, arg1: $BlockPos$$Type, arg2: $Entity$$Type, arg3: float): float
 public "getLightEmission"(): integer
-get "clientHandler"(): $CamoClientHandler<(C)>
+get "camoId"(): StringJS
+get "appearanceState"(): $BlockState
 get "camoName"(): $MutableComponent
 get "asBlockState"(): $BlockState
 get "emissive"(): boolean
-get "camoId"(): StringJS
-get "appearanceState"(): $BlockState
+get "clientHandler"(): $CamoClientHandler<(C)>
 get "empty"(): boolean
 get "soundType"(): $SoundType
 get "lightEmission"(): integer
@@ -409,8 +411,8 @@ import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$Component} from "net.minecraft.network.chat.Component"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$Component} from "net.minecraft.network.chat.Component"
 import {$TriggerRegistrar$$Type} from "xfacthd.framedblocks.api.camo.TriggerRegistrar"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 
@@ -419,22 +421,22 @@ static readonly "MSG_BLACKLISTED": $Component
 
 constructor()
 
-public "canTriviallyConvertToItemStack"(): boolean
-public "streamCodec"(): $StreamCodec<($RegistryFriendlyByteBuf), (T)>
-/**
- * 
- * @deprecated
- */
-public "handleInteraction"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $Player$$Type, arg3: T, arg4: $ItemStack$$Type): T
-public "handleInteraction"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $Player$$Type, arg3: T, arg4: $ItemStack$$Type, arg5: $InteractionHand$$Type): T
 public "applyCamo"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $Player$$Type, arg3: $ItemStack$$Type): T
-public "dropCamo"(arg0: T): $ItemStack
 public "removeCamo"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $Player$$Type, arg3: $ItemStack$$Type, arg4: T): boolean
+public "dropCamo"(arg0: T): $ItemStack
 public "validateCamo"(arg0: T): boolean
 public "canApplyInCraftingRecipe"(arg0: $ItemStack$$Type): boolean
 public "applyCamoInCraftingRecipe"(arg0: $ItemStack$$Type): T
 public "getCraftingRemainder"(arg0: $ItemStack$$Type): $ItemStack
 public "registerTriggerItems"(arg0: $TriggerRegistrar$$Type): void
+public "canTriviallyConvertToItemStack"(): boolean
+public "streamCodec"(): $StreamCodec<($RegistryFriendlyByteBuf), (T)>
+public "handleInteraction"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $Player$$Type, arg3: T, arg4: $ItemStack$$Type, arg5: $InteractionHand$$Type): T
+/**
+ * 
+ * @deprecated
+ */
+public "handleInteraction"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $Player$$Type, arg3: T, arg4: $ItemStack$$Type): T
 public "codec"(): $MapCodec<(T)>
 /**
  * This field is a type stub generated by ProbeJS and shall not be used in any sense.
@@ -461,8 +463,8 @@ import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$CamoContainerFactory} from "xfacthd.framedblocks.api.camo.CamoContainerFactory"
 import {$AbstractBlockCamoContainer, $AbstractBlockCamoContainer$$Type} from "xfacthd.framedblocks.api.camo.block.AbstractBlockCamoContainer"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$Component} from "net.minecraft.network.chat.Component"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$Component} from "net.minecraft.network.chat.Component"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $AbstractBlockCamoContainerFactory<T extends $AbstractBlockCamoContainer<(object)>> extends $CamoContainerFactory<(T)> {
@@ -473,8 +475,8 @@ constructor()
 public "applyCamo"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $Player$$Type, arg3: $ItemStack$$Type): $CamoContainer
 public "removeCamo"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $Player$$Type, arg3: $ItemStack$$Type, arg4: $CamoContainer$$Type): boolean
 public "removeCamo"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $Player$$Type, arg3: $ItemStack$$Type, arg4: T): boolean
-public "validateCamo"(arg0: T): boolean
 public "validateCamo"(arg0: $CamoContainer$$Type): boolean
+public "validateCamo"(arg0: T): boolean
 public "isValidBlockInternal"(arg0: $BlockState$$Type): boolean
 }
 /**
@@ -528,16 +530,16 @@ static readonly "MSG_BLACKLISTED": $Component
 
 constructor()
 
-public "canTriviallyConvertToItemStack"(): boolean
-public "streamCodec"(): $StreamCodec<($RegistryFriendlyByteBuf), ($EmptyCamoContainer)>
 public "applyCamo"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $Player$$Type, arg3: $ItemStack$$Type): $CamoContainer
-public "dropCamo"(arg0: $EmptyCamoContainer$$Type): $ItemStack
-public "dropCamo"(arg0: $CamoContainer$$Type): $ItemStack
 public "removeCamo"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $Player$$Type, arg3: $ItemStack$$Type, arg4: $EmptyCamoContainer$$Type): boolean
 public "removeCamo"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $Player$$Type, arg3: $ItemStack$$Type, arg4: $CamoContainer$$Type): boolean
-public "validateCamo"(arg0: $EmptyCamoContainer$$Type): boolean
+public "dropCamo"(arg0: $CamoContainer$$Type): $ItemStack
+public "dropCamo"(arg0: $EmptyCamoContainer$$Type): $ItemStack
 public "validateCamo"(arg0: $CamoContainer$$Type): boolean
+public "validateCamo"(arg0: $EmptyCamoContainer$$Type): boolean
 public "registerTriggerItems"(arg0: $TriggerRegistrar$$Type): void
+public "canTriviallyConvertToItemStack"(): boolean
+public "streamCodec"(): $StreamCodec<($RegistryFriendlyByteBuf), ($EmptyCamoContainer)>
 public "codec"(): $MapCodec<($EmptyCamoContainer)>
 }
 /**
@@ -557,8 +559,8 @@ import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$SimpleBlockCamoContainer, $SimpleBlockCamoContainer$$Type} from "xfacthd.framedblocks.api.camo.block.SimpleBlockCamoContainer"
-import {$Component} from "net.minecraft.network.chat.Component"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$Component} from "net.minecraft.network.chat.Component"
 import {$AbstractBlockCamoContainerFactory} from "xfacthd.framedblocks.api.camo.block.AbstractBlockCamoContainerFactory"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 
@@ -567,13 +569,13 @@ static readonly "MSG_BLACKLISTED": $Component
 
 constructor()
 
-public "canTriviallyConvertToItemStack"(): boolean
-public "streamCodec"(): $StreamCodec<($RegistryFriendlyByteBuf), ($SimpleBlockCamoContainer)>
 public "dropCamo"(arg0: $CamoContainer$$Type): $ItemStack
 public "dropCamo"(arg0: $SimpleBlockCamoContainer$$Type): $ItemStack
 public "canApplyInCraftingRecipe"(arg0: $ItemStack$$Type): boolean
-public "applyCamoInCraftingRecipe"(arg0: $ItemStack$$Type): $SimpleBlockCamoContainer
+public "applyCamoInCraftingRecipe"(arg0: $ItemStack$$Type): $CamoContainer
 public "getCraftingRemainder"(arg0: $ItemStack$$Type): $ItemStack
+public "canTriviallyConvertToItemStack"(): boolean
+public "streamCodec"(): $StreamCodec<($RegistryFriendlyByteBuf), ($SimpleBlockCamoContainer)>
 public "codec"(): $MapCodec<($SimpleBlockCamoContainer)>
 public "applyCamo"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $Player$$Type, arg3: $ItemStack$$Type): $CamoContainer
 }

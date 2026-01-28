@@ -9,8 +9,8 @@ import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$LecternBlock} from "net.minecraft.world.level.block.LecternBlock"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$LecternBlock} from "net.minecraft.world.level.block.LecternBlock"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$CustomLecternBlockEntity} from "dan200.computercraft.shared.lectern.CustomLecternBlockEntity"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
@@ -99,8 +99,8 @@ import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
-import {$ClientGamePacketListener} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$ClientGamePacketListener} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $CustomLecternBlockEntity extends $BlockEntity {
@@ -108,8 +108,8 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 
 constructor(arg0: $BlockPos$$Type, arg1: $BlockState$$Type)
 
-public "loadAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "getUpdatePacket"(): $Packet<($ClientGamePacketListener)>
+public "loadAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "getUpdateTag"(arg0: $HolderLookup$Provider$$Type): $CompoundTag
 public "clearRemoved"(): void
 public "getItem"(): $ItemStack

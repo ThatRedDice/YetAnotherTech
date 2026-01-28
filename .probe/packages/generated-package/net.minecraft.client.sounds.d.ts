@@ -34,8 +34,8 @@ export type $SoundEngineExecutor$$Type = ($SoundEngineExecutor);
 export type $SoundEngineExecutor$$Original = $SoundEngineExecutor;}
 declare module "net.minecraft.client.sounds.SoundEngine" {
 import {$Sound$$Type} from "net.minecraft.client.resources.sounds.Sound"
-import {$ListenerTransform} from "com.mojang.blaze3d.audio.ListenerTransform"
 import {$SoundEngineExecutor} from "net.minecraft.client.sounds.SoundEngineExecutor"
+import {$ListenerTransform} from "com.mojang.blaze3d.audio.ListenerTransform"
 import {$List} from "java.util.List"
 import {$Multimap} from "com.google.common.collect.Multimap"
 import {$Options$$Type} from "net.minecraft.client.Options"
@@ -63,30 +63,30 @@ public "getDebugString"(): StringJS
 public "getListenerTransform"(): $ListenerTransform
 public "updateCategoryVolume"(arg0: $SoundSource$$Type, arg1: float): void
 public "stopAll"(): void
+public "tick"(arg0: boolean): void
 public "addEventListener"(arg0: $SoundEventListener$$Type): void
 public "reload"(): void
-public "tick"(arg0: boolean): void
 public "removeEventListener"(arg0: $SoundEventListener$$Type): void
 public "stop"(arg0: $ResourceLocation$$Type, arg1: $SoundSource$$Type): void
 public "stop"(arg0: $SoundInstance$$Type): void
 public "resume"(): void
 public "destroy"(): void
 public "isActive"(arg0: $SoundInstance$$Type): boolean
-public "getLoadedMelody"(): boolean
+public "getAvailableSoundDevices"(): $List<(StringJS)>
 public "play"(arg0: $SoundInstance$$Type): void
 public "pause"(): void
 public "emergencyShutdown"(): void
 public "updateSource"(arg0: $Camera$$Type): void
-public "requestPreload"(arg0: $Sound$$Type): void
-public "modifyExpressionValue$eec000$immersiveengineering$adjustVolumeAtStart"(arg0: float, arg1: $SoundInstance$$Type): float
-public "modifyReturnValue$eec000$immersiveengineering$adjustVolumeForEarmuffs"(arg0: float, arg1: $SoundInstance$$Type): float
 public "playDelayed"(arg0: $SoundInstance$$Type, arg1: integer): void
 public "queueTickingSound"(arg0: $TickableSoundInstance$$Type): void
-public "getAvailableSoundDevices"(): $List<(StringJS)>
+public "modifyExpressionValue$eec000$immersiveengineering$adjustVolumeAtStart"(arg0: float, arg1: $SoundInstance$$Type): float
+public "modifyReturnValue$eec000$immersiveengineering$adjustVolumeForEarmuffs"(arg0: float, arg1: $SoundInstance$$Type): float
+public "getLoadedMelody"(): boolean
+public "requestPreload"(arg0: $Sound$$Type): void
 get "debugString"(): StringJS
 get "listenerTransform"(): $ListenerTransform
-get "loadedMelody"(): boolean
 get "availableSoundDevices"(): $List<(StringJS)>
+get "loadedMelody"(): boolean
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -107,8 +107,8 @@ get "weight"(): integer
 
 export class $Weighted<T> implements $Weighted$$Interface {
  "getWeight"(): integer
- "preloadIfRequired"(arg0: $SoundEngine$$Type): void
  "getSound"(arg0: $RandomSource$$Type): T
+ "preloadIfRequired"(arg0: $SoundEngine$$Type): void
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -120,10 +120,10 @@ export type $Weighted$$Type<T> = ($Weighted<(T)>);
  */
 export type $Weighted$$Original<T> = $Weighted<(T)>;}
 declare module "net.minecraft.client.sounds.MusicManager" {
-import {$SoundInstance} from "net.minecraft.client.resources.sounds.SoundInstance"
 import {$Minecraft$$Type} from "net.minecraft.client.Minecraft"
-import {$IMixinMusicManager$$Interface} from "de.keksuccino.fancymenu.mixin.mixins.common.client.IMixinMusicManager"
+import {$SoundInstance} from "net.minecraft.client.resources.sounds.SoundInstance"
 import {$Music$$Type} from "net.minecraft.sounds.Music"
+import {$IMixinMusicManager$$Interface} from "de.keksuccino.fancymenu.mixin.mixins.common.client.IMixinMusicManager"
 
 export class $MusicManager implements $IMixinMusicManager$$Interface {
 constructor(arg0: $Minecraft$$Type)
@@ -146,10 +146,10 @@ export type $MusicManager$$Type = ($MusicManager);
  */
 export type $MusicManager$$Original = $MusicManager;}
 declare module "net.minecraft.client.sounds.SoundBufferLibrary" {
-import {$Collection$$Type} from "java.util.Collection"
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$ResourceProvider$$Type} from "net.minecraft.server.packs.resources.ResourceProvider"
 import {$Sound$$Type} from "net.minecraft.client.resources.sounds.Sound"
+import {$Collection$$Type} from "java.util.Collection"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$CompletableFuture} from "java.util.concurrent.CompletableFuture"
 import {$AudioStream} from "net.minecraft.client.sounds.AudioStream"
 import {$SoundBuffer} from "com.mojang.blaze3d.audio.SoundBuffer"
@@ -173,8 +173,8 @@ export type $SoundBufferLibrary$$Type = ($SoundBufferLibrary);
 export type $SoundBufferLibrary$$Original = $SoundBufferLibrary;}
 declare module "net.minecraft.client.sounds.SoundManager" {
 import {$SoundManager$Preparations} from "net.minecraft.client.sounds.SoundManager$Preparations"
-import {$Sound} from "net.minecraft.client.resources.sounds.Sound"
 import {$Collection} from "java.util.Collection"
+import {$Sound} from "net.minecraft.client.resources.sounds.Sound"
 import {$ListenerTransform} from "com.mojang.blaze3d.audio.ListenerTransform"
 import {$SoundEngine} from "net.minecraft.client.sounds.SoundEngine"
 import {$List} from "java.util.List"
@@ -204,8 +204,8 @@ public "getListenerTransform"(): $ListenerTransform
 public "getSoundEngineMelody"(): $SoundEngine
 public "getSoundEvent"(arg0: $ResourceLocation$$Type): $WeighedSoundEvents
 public "getAvailableSounds"(): $Collection<($ResourceLocation)>
-public "reload"(): void
 public "tick"(arg0: boolean): void
+public "reload"(): void
 public "stop"(arg0: $SoundInstance$$Type): void
 public "stop"(arg0: $ResourceLocation$$Type, arg1: $SoundSource$$Type): void
 public "stop"(): void
@@ -214,14 +214,14 @@ public "destroy"(): void
 public "isActive"(arg0: $SoundInstance$$Type): boolean
 public "removeListener"(arg0: $SoundEventListener$$Type): void
 public "addListener"(arg0: $SoundEventListener$$Type): void
+public "updateSourceVolume"(arg0: $SoundSource$$Type, arg1: float): void
+public "getAvailableSoundDevices"(): $List<(StringJS)>
 public "play"(arg0: $SoundInstance$$Type): void
 public "pause"(): void
 public "emergencyShutdown"(): void
 public "updateSource"(arg0: $Camera$$Type): void
 public "playDelayed"(arg0: $SoundInstance$$Type, arg1: integer): void
 public "queueTickingSound"(arg0: $TickableSoundInstance$$Type): void
-public "updateSourceVolume"(arg0: $SoundSource$$Type, arg1: float): void
-public "getAvailableSoundDevices"(): $List<(StringJS)>
 get "debugString"(): StringJS
 get "listenerTransform"(): $ListenerTransform
 get "soundEngineMelody"(): $SoundEngine
@@ -262,8 +262,8 @@ export type $AudioStream$$Type = ($AudioStream);
 export type $AudioStream$$Original = $AudioStream;}
 declare module "net.minecraft.client.sounds.WeighedSoundEvents" {
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Sound, $Sound$$Type} from "net.minecraft.client.resources.sounds.Sound"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$SoundEngine$$Type} from "net.minecraft.client.sounds.SoundEngine"
 import {$Weighted$$Type, $Weighted$$Interface} from "net.minecraft.client.sounds.Weighted"
 import {$Component} from "net.minecraft.network.chat.Component"
@@ -274,8 +274,8 @@ constructor(arg0: $ResourceLocation$$Type, arg1: StringJS)
 public "getSubtitle"(): $Component
 public "addSound"(arg0: $Weighted$$Type<($Sound$$Type)>): void
 public "getWeight"(): integer
-public "preloadIfRequired"(arg0: $SoundEngine$$Type): void
 public "getSound"(arg0: $RandomSource$$Type): any
+public "preloadIfRequired"(arg0: $SoundEngine$$Type): void
 get "subtitle"(): $Component
 get "weight"(): integer
 }

@@ -6,11 +6,11 @@ import {$Optional} from "java.util.Optional"
 import {$PatchedDataComponentMap} from "net.minecraft.core.component.PatchedDataComponentMap"
 import {$DataComponentType$$Type} from "net.minecraft.core.component.DataComponentType"
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
 import {$DataComponentHolder$$Interface} from "net.minecraft.core.component.DataComponentHolder"
-import {$Holder$$Type} from "net.minecraft.core.Holder"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$Holder$$Type} from "net.minecraft.core.Holder"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$BiFunction$$Type} from "java.util.function.BiFunction"
 import {$DataComponentPatch, $DataComponentPatch$$Type} from "net.minecraft.core.component.DataComponentPatch"
@@ -31,10 +31,10 @@ public "getTranslationKey"(): StringJS
 public "copyWithAmount"(amount: long): $FluidStack
 public "isFluidEqual"(other: $FluidStack$$Type): boolean
 public static "bucketAmount"(): long
+public "getRawFluidSupplier"(): $Supplier<($Fluid)>
 public "getRawFluid"(): $Fluid
 public "isFluidStackEqual"(other: $FluidStack$$Type): boolean
 public "isComponentEqual"(other: $FluidStack$$Type): boolean
-public "getRawFluidSupplier"(): $Supplier<($Fluid)>
 public "getName"(): $Component
 public "remove"<T>(type: $DataComponentType$$Type<(T)>): T
 public "equals"(o: any): boolean
@@ -75,8 +75,8 @@ public "getOrDefault"<T>(arg0: $Supplier$$Type<($DataComponentType$$Type<(T)>)>,
 get "fluid"(): $Fluid
 set "amount"(value: long)
 get "translationKey"(): StringJS
-get "rawFluid"(): $Fluid
 get "rawFluidSupplier"(): $Supplier<($Fluid)>
+get "rawFluid"(): $Fluid
 get "name"(): $Component
 get "patch"(): $DataComponentPatch
 get "components"(): $PatchedDataComponentMap

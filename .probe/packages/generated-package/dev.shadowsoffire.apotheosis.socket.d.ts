@@ -3,17 +3,17 @@ import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$GenContext$$Type} from "dev.shadowsoffire.apotheosis.tiers.GenContext"
 import {$Map} from "java.util.Map"
 import {$WorldTier$$Type} from "dev.shadowsoffire.apotheosis.tiers.WorldTier"
-import {$WeightedEntry$Wrapper} from "net.minecraft.util.random.WeightedEntry$Wrapper"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
+import {$WeightedEntry$Wrapper} from "net.minecraft.util.random.WeightedEntry$Wrapper"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
-import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$TextColor} from "net.minecraft.network.chat.TextColor"
+import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$IntFunction} from "java.util.function.IntFunction"
 import {$Keyable} from "com.mojang.serialization.Keyable"
-import {$Codec, $Codec$$Type} from "com.mojang.serialization.Codec"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
+import {$Codec, $Codec$$Type} from "com.mojang.serialization.Codec"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$MutableComponent} from "net.minecraft.network.chat.MutableComponent"
 import {$TieredWeights$Weighted, $TieredWeights$Weighted$$Type, $TieredWeights$Weighted$$Interface} from "dev.shadowsoffire.apotheosis.tiers.TieredWeights$Weighted"
 import {$Set, $Set$$Type} from "java.util.Set"
@@ -41,21 +41,21 @@ public "next"(): $Purity
 public static "random"(arg0: $GenContext$$Type): $Purity
 public static "random"(arg0: $GenContext$$Type, arg1: $Set$$Type<($Purity$$Type)>): $Purity
 public "isAtLeast"(arg0: $Purity$$Type): boolean
-public "getColor"(): $TextColor
 public "getSerializedName"(): StringJS
+public "getColor"(): $TextColor
 public static "mapCodec"<T>(arg0: $Codec$$Type<(T)>): $MapCodec<($Map<($Purity), (T)>)>
 public "weights"(): $TieredWeights
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 public static "wrap"<T extends $TieredWeights$Weighted>(arg0: T, arg1: $WorldTier$$Type, arg2: float): $WeightedEntry$Wrapper<(T)>
 public "wrap"<T extends $TieredWeights$Weighted>(arg0: $WorldTier$$Type, arg1: float): $WeightedEntry$Wrapper<(T)>
 get "name"(): StringJS
-get "color"(): $TextColor
 get "serializedName"(): StringJS
+get "color"(): $TextColor
 get "remappedEnumConstantName"(): StringJS
 }
 /**
@@ -69,16 +69,16 @@ export type $Purity$$Type = (("cracked") | ("chipped") | ("flawed") | ("normal")
 export type $Purity$$Original = $Purity;}
 declare module "dev.shadowsoffire.apotheosis.socket.gem.cutting.GemCuttingRecipe" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$Ingredient} from "net.minecraft.world.item.crafting.Ingredient"
 import {$Recipe$$Interface} from "net.minecraft.world.item.crafting.Recipe"
+import {$Ingredient} from "net.minecraft.world.item.crafting.Ingredient"
 import {$List$$Type} from "java.util.List"
 import {$RecipeType} from "net.minecraft.world.item.crafting.RecipeType"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$GemCuttingRecipe$CuttingRecipeInput, $GemCuttingRecipe$CuttingRecipeInput$$Type} from "dev.shadowsoffire.apotheosis.socket.gem.cutting.GemCuttingRecipe$CuttingRecipeInput"
 import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
-import {$SizedIngredient, $SizedIngredient$$Type} from "net.neoforged.neoforge.common.crafting.SizedIngredient"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$SizedIngredient, $SizedIngredient$$Type} from "net.neoforged.neoforge.common.crafting.SizedIngredient"
 
 export interface $GemCuttingRecipe$$Interface extends $Recipe$$Interface<($GemCuttingRecipe$CuttingRecipeInput)> {
 get "type"(): $RecipeType<(never)>
@@ -91,6 +91,7 @@ get "special"(): boolean
 }
 
 export class $GemCuttingRecipe implements $GemCuttingRecipe$$Interface {
+static "getMatch"(arg0: $ItemStack$$Type, arg1: $List$$Type<($SizedIngredient$$Type)>): $SizedIngredient
 static "getMatchOrThrow"(arg0: $ItemStack$$Type, arg1: $List$$Type<($SizedIngredient$$Type)>): $SizedIngredient
  "decrementInputs"(arg0: $GemCuttingRecipe$CuttingRecipeInput$$Type, arg1: $Level$$Type): void
  "isValidBaseItem"(arg0: $GemCuttingRecipe$CuttingRecipeInput$$Type, arg1: $ItemStack$$Type): boolean
@@ -98,14 +99,13 @@ static "getMatchOrThrow"(arg0: $ItemStack$$Type, arg1: $List$$Type<($SizedIngred
  "isValidLeftItem"(arg0: $GemCuttingRecipe$CuttingRecipeInput$$Type, arg1: $ItemStack$$Type): boolean
  "isValidRightItem"(arg0: $GemCuttingRecipe$CuttingRecipeInput$$Type, arg1: $ItemStack$$Type): boolean
  "canCraftInDimensions"(arg0: integer, arg1: integer): boolean
-static "getMatch"(arg0: $ItemStack$$Type, arg1: $List$$Type<($SizedIngredient$$Type)>): $SizedIngredient
 static "anyMatch"(arg0: $ItemStack$$Type, arg1: $List$$Type<($SizedIngredient$$Type)>): boolean
  "getType"(): $RecipeType<(never)>
  "assemble"(arg0: $GemCuttingRecipe$CuttingRecipeInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
  "getRemainingItems"(arg0: $GemCuttingRecipe$CuttingRecipeInput$$Type): $NonNullList<($ItemStack)>
  "getSerializer"(): $RecipeSerializer<(never)>
- "getIngredients"(): $NonNullList<($Ingredient)>
  "getResultItem"(arg0: $HolderLookup$Provider$$Type): $ItemStack
+ "getIngredients"(): $NonNullList<($Ingredient)>
  "showNotification"(): boolean
  "getToastSymbol"(): $ItemStack
  "isIncomplete"(): boolean
@@ -124,8 +124,8 @@ export type $GemCuttingRecipe$$Type = ($GemCuttingRecipe);
 export type $GemCuttingRecipe$$Original = $GemCuttingRecipe;}
 declare module "dev.shadowsoffire.apotheosis.socket.gem.cutting.BasicGemCuttingRecipe$Serializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$BasicGemCuttingRecipe} from "dev.shadowsoffire.apotheosis.socket.gem.cutting.BasicGemCuttingRecipe"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
@@ -158,15 +158,15 @@ import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$HorizontalDirectionalBlock} from "net.minecraft.world.level.block.HorizontalDirectionalBlock"
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$MenuProvider} from "net.minecraft.world.MenuProvider"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -198,8 +198,8 @@ static readonly "FACING": $DirectionProperty
 constructor(arg0: $BlockBehaviour$Properties$$Type)
 
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
-public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
 public "getMenuProvider"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type): $MenuProvider
+public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
 public "getShape"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $CollisionContext$$Type): $VoxelShape
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 }
@@ -219,9 +219,9 @@ import {$DynamicHolder, $DynamicHolder$$Type} from "dev.shadowsoffire.placebo.re
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$Gem, $Gem$$Type} from "dev.shadowsoffire.apotheosis.socket.gem.Gem"
 import {$GemView$$Interface} from "dev.shadowsoffire.apotheosis.socket.gem.GemView"
+import {$AttributeTooltipContext$$Type} from "net.neoforged.neoforge.common.util.AttributeTooltipContext"
 import {$Record} from "java.lang.Record"
 import {$Consumer$$Type} from "java.util.function.Consumer"
-import {$AttributeTooltipContext$$Type} from "net.neoforged.neoforge.common.util.AttributeTooltipContext"
 
 export class $UnsocketedGem extends $Record implements $GemView$$Interface {
 constructor(gem: $DynamicHolder$$Type<($Gem$$Type)>, purity: $Purity$$Type, gemStack: $ItemStack$$Type)
@@ -232,11 +232,11 @@ public "isPerfect"(): boolean
 public "addInformation"(arg0: $Consumer$$Type<($Component)>, arg1: $AttributeTooltipContext$$Type): void
 public "canApplyTo"(arg0: $ItemStack$$Type): boolean
 public "gemStack"(): $ItemStack
-public "isValid"(): boolean
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
 public static "of"(arg0: $ItemStack$$Type): $UnsocketedGem
+public "isValid"(): boolean
 get "perfect"(): boolean
 get "valid"(): boolean
 }
@@ -259,8 +259,8 @@ import {$Purity, $Purity$$Type} from "dev.shadowsoffire.apotheosis.socket.gem.Pu
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
-import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
+import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$GemCuttingRecipe$$Interface} from "dev.shadowsoffire.apotheosis.socket.gem.cutting.GemCuttingRecipe"
 import {$GemCuttingRecipe$CuttingRecipeInput$$Type} from "dev.shadowsoffire.apotheosis.socket.gem.cutting.GemCuttingRecipe$CuttingRecipeInput"
 import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
@@ -291,9 +291,9 @@ public "matches"(arg0: $GemCuttingRecipe$CuttingRecipeInput$$Type, arg1: $Level$
 public "matches"(arg0: $RecipeInput$$Type, arg1: $Level$$Type): boolean
 public "left"(): $List<($SizedIngredient)>
 public "right"(): $List<($SizedIngredient)>
+public static "getMatch"(arg0: $ItemStack$$Type, arg1: $List$$Type<($SizedIngredient$$Type)>): $SizedIngredient
 public static "getMatchOrThrow"(arg0: $ItemStack$$Type, arg1: $List$$Type<($SizedIngredient$$Type)>): $SizedIngredient
 public "canCraftInDimensions"(arg0: integer, arg1: integer): boolean
-public static "getMatch"(arg0: $ItemStack$$Type, arg1: $List$$Type<($SizedIngredient$$Type)>): $SizedIngredient
 public static "anyMatch"(arg0: $ItemStack$$Type, arg1: $List$$Type<($SizedIngredient$$Type)>): boolean
 public "getType"(): $RecipeType<(never)>
 public "getRemainingItems"(arg0: $GemCuttingRecipe$CuttingRecipeInput$$Type): $NonNullList<($ItemStack)>
@@ -354,8 +354,8 @@ import {$GetEnchantmentLevelEvent$$Type} from "net.neoforged.neoforge.event.ench
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$LootCategory, $LootCategory$$Type} from "dev.shadowsoffire.apotheosis.loot.LootCategory"
+import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$LootContext$$Type} from "net.minecraft.world.level.storage.loot.LootContext"
 import {$Purity, $Purity$$Type} from "dev.shadowsoffire.apotheosis.socket.gem.Purity"
 import {$HitResult$$Type} from "net.minecraft.world.phys.HitResult"
@@ -369,8 +369,8 @@ import {$GemBonus} from "dev.shadowsoffire.apotheosis.socket.gem.bonus.GemBonus"
 import {$DynamicHolder, $DynamicHolder$$Type} from "dev.shadowsoffire.placebo.reload.DynamicHolder"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
-import {$Record} from "java.lang.Record"
 import {$AttributeTooltipContext$$Type} from "net.neoforged.neoforge.common.util.AttributeTooltipContext"
+import {$Record} from "java.lang.Record"
 
 export class $GemInstance extends $Record implements $GemView$$Interface {
 static "EMPTY": $GemInstance
@@ -384,8 +384,8 @@ public "isPerfect"(): boolean
 public "addInformation"(arg0: $Consumer$$Type<($Component)>, arg1: $AttributeTooltipContext$$Type): void
 public "onProjectileImpact"(arg0: $Projectile$$Type, arg1: $HitResult$$Type): void
 public "onItemUse"(arg0: $UseOnContext$$Type): $InteractionResult
-public "getGem"(): $Gem
 public "doPostAttack"(arg0: $LivingEntity$$Type, arg1: $Entity$$Type): void
+public "getGem"(): $Gem
 public "modifyLoot"(arg0: $ObjectArrayList$$Type<($ItemStack$$Type)>, arg1: $LootContext$$Type): void
 public "onHurt"(arg0: $DamageSource$$Type, arg1: $LivingEntity$$Type, arg2: float): float
 public "getDamageBonus"(arg0: $Entity$$Type): float
@@ -398,12 +398,10 @@ public "addModifiers"(arg0: $StackAttributeModifiersEvent$$Type): void
 public "canApplyTo"(arg0: $ItemStack$$Type): boolean
 public "skipModifierIds"(arg0: $Consumer$$Type<($ResourceLocation)>): void
 public "getSocketBonusTooltip"(arg0: $AttributeTooltipContext$$Type): $Component
-public static "socketed"(arg0: $LootCategory$$Type, arg1: $ItemStack$$Type, arg2: integer): $GemInstance
 public static "socketed"(arg0: $ItemStack$$Type, arg1: $ItemStack$$Type, arg2: integer): $GemInstance
+public static "socketed"(arg0: $LootCategory$$Type, arg1: $ItemStack$$Type, arg2: integer): $GemInstance
 public "getBonus"(): $Optional<($GemBonus)>
 public "gemStack"(): $ItemStack
-public "category"(): $LootCategory
-public "isValid"(): boolean
 /**
  * 
  * @deprecated
@@ -419,16 +417,18 @@ public "equalsUnsocketed"(arg0: $GemInstance$$Type): boolean
  * @deprecated
  */
 public "isValidUnsocketed"(): boolean
+public "category"(): $LootCategory
 public "slot"(): integer
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
+public "isValid"(): boolean
 public "getDamageProtection"(arg0: $DamageSource$$Type): float
 get "perfect"(): boolean
 get "durabilityBonusPercentage"(): float
 get "bonus"(): $Optional<($GemBonus)>
-get "valid"(): boolean
 get "validUnsocketed"(): boolean
+get "valid"(): boolean
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -448,8 +448,8 @@ import {$RecipeType} from "net.minecraft.world.item.crafting.RecipeType"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
-import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
+import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$GemCuttingRecipe$$Interface} from "dev.shadowsoffire.apotheosis.socket.gem.cutting.GemCuttingRecipe"
 import {$GemCuttingRecipe$CuttingRecipeInput$$Type} from "dev.shadowsoffire.apotheosis.socket.gem.cutting.GemCuttingRecipe$CuttingRecipeInput"
 import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
@@ -482,9 +482,9 @@ public "matches"(arg0: $GemCuttingRecipe$CuttingRecipeInput$$Type, arg1: $Level$
 public "top"(): $List<($SizedIngredient)>
 public "left"(): $List<($SizedIngredient)>
 public "right"(): $List<($SizedIngredient)>
+public static "getMatch"(arg0: $ItemStack$$Type, arg1: $List$$Type<($SizedIngredient$$Type)>): $SizedIngredient
 public static "getMatchOrThrow"(arg0: $ItemStack$$Type, arg1: $List$$Type<($SizedIngredient$$Type)>): $SizedIngredient
 public "canCraftInDimensions"(arg0: integer, arg1: integer): boolean
-public static "getMatch"(arg0: $ItemStack$$Type, arg1: $List$$Type<($SizedIngredient$$Type)>): $SizedIngredient
 public static "anyMatch"(arg0: $ItemStack$$Type, arg1: $List$$Type<($SizedIngredient$$Type)>): boolean
 public "getType"(): $RecipeType<(never)>
 public "getRemainingItems"(arg0: $GemCuttingRecipe$CuttingRecipeInput$$Type): $NonNullList<($ItemStack)>
@@ -563,9 +563,9 @@ export type $GemCuttingRecipe$CuttingRecipeInput$$Original = $GemCuttingRecipe$C
 declare module "dev.shadowsoffire.apotheosis.socket.AddSocketsRecipe" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
-import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
-import {$Ingredient, $Ingredient$$Type} from "net.minecraft.world.item.crafting.Ingredient"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
+import {$Ingredient, $Ingredient$$Type} from "net.minecraft.world.item.crafting.Ingredient"
+import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$SmithingRecipeInput$$Type} from "net.minecraft.world.item.crafting.SmithingRecipeInput"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
@@ -586,7 +586,6 @@ readonly "addition": $Ingredient
 
 constructor(arg0: $Ingredient$$Type, arg1: integer)
 
-public "getMaxSockets"(): integer
 public "assemble"(arg0: $SmithingRecipeInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
 public "assemble"(arg0: $RecipeInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
 public "getSerializer"(): $RecipeSerializer<(never)>
@@ -594,10 +593,11 @@ public "getInput"(): $Ingredient
 public "matches"(arg0: $SmithingRecipeInput$$Type, arg1: $Level$$Type): boolean
 public "matches"(arg0: $RecipeInput$$Type, arg1: $Level$$Type): boolean
 public "isSpecial"(): boolean
-get "maxSockets"(): integer
+public "getMaxSockets"(): integer
 get "serializer"(): $RecipeSerializer<(never)>
 get "input"(): $Ingredient
 get "special"(): boolean
+get "maxSockets"(): integer
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -611,8 +611,8 @@ export type $AddSocketsRecipe$$Original = $AddSocketsRecipe;}
 declare module "dev.shadowsoffire.apotheosis.socket.AddSocketsRecipe$Serializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$AddSocketsRecipe} from "dev.shadowsoffire.apotheosis.socket.AddSocketsRecipe"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
 
@@ -638,8 +638,8 @@ declare module "dev.shadowsoffire.apotheosis.socket.gem.Gem" {
 import {$Constraints, $Constraints$$Type} from "dev.shadowsoffire.apotheosis.tiers.Constraints"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$WorldTier$$Type} from "dev.shadowsoffire.apotheosis.tiers.WorldTier"
-import {$WeightedEntry$Wrapper} from "net.minecraft.util.random.WeightedEntry$Wrapper"
 import {$Optional} from "java.util.Optional"
+import {$WeightedEntry$Wrapper} from "net.minecraft.util.random.WeightedEntry$Wrapper"
 import {$CodecProvider$$Interface} from "dev.shadowsoffire.placebo.codec.CodecProvider"
 import {$List, $List$$Type} from "java.util.List"
 import {$Purity, $Purity$$Type} from "dev.shadowsoffire.apotheosis.socket.gem.Purity"
@@ -788,7 +788,7 @@ public "types"(): $HolderSet<($LootCategory)>
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $GemClass$$Type = ({"key"?: StringJS, "types"?: $HolderSet$$Type<($LootCategory)>}) | ([key?: StringJS, types?: $HolderSet$$Type<($LootCategory)>]);
+export type $GemClass$$Type = ({"types"?: $HolderSet$$Type<($LootCategory)>, "key"?: StringJS}) | ([types?: $HolderSet$$Type<($LootCategory)>, key?: StringJS]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -796,8 +796,8 @@ export type $GemClass$$Original = $GemClass;}
 declare module "dev.shadowsoffire.apotheosis.socket.gem.cutting.PurityUpgradeRecipe$Serializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$PurityUpgradeRecipe} from "dev.shadowsoffire.apotheosis.socket.gem.cutting.PurityUpgradeRecipe"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
 
@@ -825,12 +825,12 @@ import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$ITabFiller, $ITabFiller$$Interface} from "dev.shadowsoffire.placebo.tabs.ITabFiller"
 import {$List$$Type} from "java.util.List"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Purity, $Purity$$Type} from "dev.shadowsoffire.apotheosis.socket.gem.Purity"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$Gem, $Gem$$Type} from "dev.shadowsoffire.apotheosis.socket.gem.Gem"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$CreativeModeTab$$Type} from "net.minecraft.world.item.CreativeModeTab"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"

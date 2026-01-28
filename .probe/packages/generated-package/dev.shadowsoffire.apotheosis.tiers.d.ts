@@ -22,7 +22,7 @@ public "getWeight"(arg0: float): integer
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $TieredWeights$Weight$$Type = ({"quality"?: float, "weight"?: integer}) | ([quality?: float, weight?: integer]);
+export type $TieredWeights$Weight$$Type = ({"weight"?: integer, "quality"?: float}) | ([weight?: integer, quality?: float]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -39,8 +39,8 @@ import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Codec, $Codec$$Type} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$MutableComponent} from "net.minecraft.network.chat.MutableComponent"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 
@@ -65,11 +65,11 @@ public static "valueOf"(arg0: StringJS): $WorldTier
 public "getSerializedName"(): StringJS
 public static "mapCodec"<T>(arg0: $Codec$$Type<(T)>): $MapCodec<($Map<($WorldTier), (T)>)>
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "unlockAdvancement"(): $ResourceLocation
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
@@ -165,16 +165,16 @@ import {$Constraints} from "dev.shadowsoffire.apotheosis.tiers.Constraints"
 import {$WorldTier$$Type} from "dev.shadowsoffire.apotheosis.tiers.WorldTier"
 import {$TagKey$$Type} from "net.minecraft.tags.TagKey"
 import {$HolderLookup$RegistryLookup$$Type} from "net.minecraft.core.HolderLookup$RegistryLookup"
-import {$HolderSet$$Type} from "net.minecraft.core.HolderSet"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$HolderSet$$Type} from "net.minecraft.core.HolderSet"
 import {$ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
 import {$Biome$$Type} from "net.minecraft.world.level.biome.Biome"
 
 export class $Constraints$Builder {
 constructor()
 
-public "gameStages"(...arg0: (StringJS)[]): $Constraints$Builder
 public "tiers"(...arg0: ($WorldTier$$Type)[]): $Constraints$Builder
+public "gameStages"(...arg0: (StringJS)[]): $Constraints$Builder
 public "dimensions"(...arg0: ($ResourceKey$$Type<($Level$$Type)>)[]): $Constraints$Builder
 public "build"(): $Constraints
 public "biomes"(arg0: $HolderLookup$RegistryLookup$$Type<($Biome$$Type)>, arg1: $TagKey$$Type<($Biome)>): $Constraints$Builder
@@ -208,20 +208,20 @@ constructor(rand: $RandomSource$$Type, tier: $WorldTier$$Type, luck: float, dime
 
 public "luck"(): float
 public "tier"(): $WorldTier
+public static "forPlayer"(arg0: $Player$$Type): $GenContext
+public static "forPlayer"(arg0: $RandomSource$$Type, arg1: $Player$$Type): $GenContext
 public static "forPlayerAtPos"(arg0: $RandomSource$$Type, arg1: $Player$$Type, arg2: $BlockPos$$Type): $GenContext
 public static "forLoot"(arg0: $LootContext$$Type): $GenContext
-public static "forPlayer"(arg0: $RandomSource$$Type, arg1: $Player$$Type): $GenContext
-public static "forPlayer"(arg0: $Player$$Type): $GenContext
-public static "standalone"(arg0: $RandomSource$$Type, arg1: $WorldTier$$Type, arg2: float, arg3: $ServerLevel$$Type, arg4: $BlockPos$$Type): $GenContext
 public "dimension"(): $ResourceKey<($Level)>
-public "rand"(): $RandomSource
 public static "findPlayer"(arg0: $LootContext$$Type): $Player
+public "rand"(): $RandomSource
+public static "standalone"(arg0: $RandomSource$$Type, arg1: $WorldTier$$Type, arg2: float, arg3: $ServerLevel$$Type, arg4: $BlockPos$$Type): $GenContext
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
 public static "dummy"(arg0: $RandomSource$$Type): $GenContext
-public "biome"(): $Holder<($Biome)>
 public "stages"(): $Set<(StringJS)>
+public "biome"(): $Holder<($Biome)>
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -281,10 +281,10 @@ static readonly "EMPTY": $Constraints
 
 constructor(tiers: $Set$$Type<($WorldTier$$Type)>, dimensions: $Set$$Type<($ResourceKey$$Type<($Level$$Type)>)>, biomes: $HolderSet$$Type<($Biome)>, gameStages: $Set$$Type<(StringJS)>)
 
+public "tiers"(): $Set<($WorldTier)>
 public "gameStages"(): $Set<(StringJS)>
 public static "forDimension"(arg0: $ResourceKey$$Type<($Level)>): $Constraints
 public static "forBiomes"(arg0: $HolderLookup$RegistryLookup$$Type<($Biome$$Type)>, arg1: $TagKey$$Type<($Biome)>): $Constraints
-public "tiers"(): $Set<($WorldTier)>
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer

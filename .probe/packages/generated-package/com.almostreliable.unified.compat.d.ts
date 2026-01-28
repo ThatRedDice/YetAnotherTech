@@ -1,6 +1,6 @@
 declare module "com.almostreliable.unified.compat.kube.AlmostKube" {
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Set} from "java.util.Set"
 
 export class $AlmostKube {
@@ -31,8 +31,8 @@ import {$NonNullList} from "net.minecraft.core.NonNullList"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$ClientRecipeTracker$ClientRecipeLink, $ClientRecipeTracker$ClientRecipeLink$$Type} from "com.almostreliable.unified.compat.viewer.ClientRecipeTracker$ClientRecipeLink"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
-import {$RecipeInput, $RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$Recipe$$Interface} from "net.minecraft.world.item.crafting.Recipe"
+import {$RecipeInput, $RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$Record} from "java.lang.Record"
 
@@ -58,8 +58,8 @@ public "toString"(): StringJS
 public "hashCode"(): integer
 public "matches"(recipeInput: $RecipeInput$$Type, level: $Level$$Type): boolean
 public "getType"(): $RecipeType<(never)>
-public "recipes"(): $Map<($ResourceLocation), ($ClientRecipeTracker$ClientRecipeLink)>
 public "getLink"(recipeId: $ResourceLocation$$Type): $ClientRecipeTracker$ClientRecipeLink
+public "recipes"(): $Map<($ResourceLocation), ($ClientRecipeTracker$ClientRecipeLink)>
 public "getRemainingItems"(arg0: $RecipeInput$$Type): $NonNullList<($ItemStack)>
 public "getIngredients"(): $NonNullList<($Ingredient)>
 public "showNotification"(): boolean
@@ -80,7 +80,7 @@ get "special"(): boolean
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $ClientRecipeTracker$$Type = ({"namespace"?: StringJS, "recipes"?: $Map$$Type<($ResourceLocation$$Type), ($ClientRecipeTracker$ClientRecipeLink$$Type)>}) | ([namespace?: StringJS, recipes?: $Map$$Type<($ResourceLocation$$Type), ($ClientRecipeTracker$ClientRecipeLink$$Type)>]);
+export type $ClientRecipeTracker$$Type = ({"recipes"?: $Map$$Type<($ResourceLocation$$Type), ($ClientRecipeTracker$ClientRecipeLink$$Type)>, "namespace"?: StringJS}) | ([recipes?: $Map$$Type<($ResourceLocation$$Type), ($ClientRecipeTracker$ClientRecipeLink$$Type)>, namespace?: StringJS]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -113,8 +113,8 @@ export type $ClientRecipeTracker$ClientRecipeLink$$Original = $ClientRecipeTrack
 declare module "com.almostreliable.unified.compat.viewer.ClientRecipeTracker$Serializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$ClientRecipeTracker$ClientRecipeLink} from "com.almostreliable.unified.compat.viewer.ClientRecipeTracker$ClientRecipeLink"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$ClientRecipeTracker} from "com.almostreliable.unified.compat.viewer.ClientRecipeTracker"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"

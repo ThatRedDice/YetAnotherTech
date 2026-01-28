@@ -8,8 +8,8 @@ export class $AbuseReport extends $Record {
 constructor(opinionComments: StringJS, reason: StringJS, evidence: $ReportEvidence$$Type, skinUrl: StringJS, reportedEntity: $ReportedEntity$$Type, createdTime: $Instant$$Type)
 
 public "createdTime"(): $Instant
-public "evidence"(): $ReportEvidence
 public "opinionComments"(): StringJS
+public "evidence"(): $ReportEvidence
 public "reportedEntity"(): $ReportedEntity
 public static "name"(arg0: StringJS, arg1: $ReportedEntity$$Type, arg2: $Instant$$Type): $AbuseReport
 public "equals"(arg0: any): boolean
@@ -24,7 +24,7 @@ public "skinUrl"(): StringJS
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $AbuseReport$$Type = ({"skinUrl"?: StringJS, "opinionComments"?: StringJS, "createdTime"?: $Instant$$Type, "reportedEntity"?: $ReportedEntity$$Type, "evidence"?: $ReportEvidence$$Type, "reason"?: StringJS}) | ([skinUrl?: StringJS, opinionComments?: StringJS, createdTime?: $Instant$$Type, reportedEntity?: $ReportedEntity$$Type, evidence?: $ReportEvidence$$Type, reason?: StringJS]);
+export type $AbuseReport$$Type = ({"opinionComments"?: StringJS, "createdTime"?: $Instant$$Type, "reportedEntity"?: $ReportedEntity$$Type, "evidence"?: $ReportEvidence$$Type, "reason"?: StringJS, "skinUrl"?: StringJS}) | ([opinionComments?: StringJS, createdTime?: $Instant$$Type, reportedEntity?: $ReportedEntity$$Type, evidence?: $ReportEvidence$$Type, reason?: StringJS, skinUrl?: StringJS]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -201,8 +201,8 @@ export type $TelemetryEvent$$Type = ($TelemetryEvent);
  */
 export type $TelemetryEvent$$Original = $TelemetryEvent;}
 declare module "com.mojang.authlib.minecraft.MinecraftSessionService" {
-import {$InetAddress$$Type} from "java.net.InetAddress"
 import {$UUID$$Type} from "java.util.UUID"
+import {$InetAddress$$Type} from "java.net.InetAddress"
 import {$MinecraftProfileTextures} from "com.mojang.authlib.minecraft.MinecraftProfileTextures"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$Property, $Property$$Type} from "com.mojang.authlib.properties.Property"
@@ -248,15 +248,15 @@ public "toString"(): StringJS
 public "hashCode"(): integer
 public "message"(): StringJS
 public "timestamp"(): $Instant
+public "profileId"(): $UUID
 public "sessionId"(): $UUID
 public "salt"(): long
-public "profileId"(): $UUID
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $ReportChatMessage$$Type = ({"messageReported"?: boolean, "sessionId"?: $UUID$$Type, "signature"?: $ByteBuffer$$Type, "timestamp"?: $Instant$$Type, "profileId"?: $UUID$$Type, "lastSeen"?: $List$$Type<($ByteBuffer$$Type)>, "index"?: integer, "message"?: StringJS, "salt"?: long}) | ([messageReported?: boolean, sessionId?: $UUID$$Type, signature?: $ByteBuffer$$Type, timestamp?: $Instant$$Type, profileId?: $UUID$$Type, lastSeen?: $List$$Type<($ByteBuffer$$Type)>, index?: integer, message?: StringJS, salt?: long]);
+export type $ReportChatMessage$$Type = ({"sessionId"?: $UUID$$Type, "signature"?: $ByteBuffer$$Type, "timestamp"?: $Instant$$Type, "profileId"?: $UUID$$Type, "lastSeen"?: $List$$Type<($ByteBuffer$$Type)>, "index"?: integer, "message"?: StringJS, "salt"?: long, "messageReported"?: boolean}) | ([sessionId?: $UUID$$Type, signature?: $ByteBuffer$$Type, timestamp?: $Instant$$Type, profileId?: $UUID$$Type, lastSeen?: $List$$Type<($ByteBuffer$$Type)>, index?: integer, message?: StringJS, salt?: long, messageReported?: boolean]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -304,7 +304,7 @@ public "reasonMessage"(): StringJS
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $BanDetails$$Type = ({"id"?: $UUID$$Type, "reasonMessage"?: StringJS, "reason"?: StringJS, "expires"?: $Instant$$Type}) | ([id?: $UUID$$Type, reasonMessage?: StringJS, reason?: StringJS, expires?: $Instant$$Type]);
+export type $BanDetails$$Type = ({"reasonMessage"?: StringJS, "reason"?: StringJS, "expires"?: $Instant$$Type, "id"?: $UUID$$Type}) | ([reasonMessage?: StringJS, reason?: StringJS, expires?: $Instant$$Type, id?: $UUID$$Type]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -334,8 +334,8 @@ export type $TelemetryPropertyContainer$$Type = ($TelemetryPropertyContainer);
 export type $TelemetryPropertyContainer$$Original = $TelemetryPropertyContainer;}
 declare module "com.mojang.authlib.minecraft.UserApiService" {
 import {$AbuseReportRequest$$Type} from "com.mojang.authlib.yggdrasil.request.AbuseReportRequest"
-import {$UserApiService$UserProperties} from "com.mojang.authlib.minecraft.UserApiService$UserProperties"
 import {$UUID$$Type} from "java.util.UUID"
+import {$UserApiService$UserProperties} from "com.mojang.authlib.minecraft.UserApiService$UserProperties"
 import {$Executor$$Type} from "java.util.concurrent.Executor"
 import {$TelemetrySession} from "com.mojang.authlib.minecraft.TelemetrySession"
 import {$KeyPairResponse} from "com.mojang.authlib.yggdrasil.response.KeyPairResponse"
@@ -389,7 +389,7 @@ public "bannedScopes"(): $Map<(StringJS), ($BanDetails)>
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $UserApiService$UserProperties$$Type = ({"flags"?: $Set$$Type<($UserApiService$UserFlag$$Type)>, "bannedScopes"?: $Map$$Type<(StringJS), ($BanDetails$$Type)>}) | ([flags?: $Set$$Type<($UserApiService$UserFlag$$Type)>, bannedScopes?: $Map$$Type<(StringJS), ($BanDetails$$Type)>]);
+export type $UserApiService$UserProperties$$Type = ({"bannedScopes"?: $Map$$Type<(StringJS), ($BanDetails$$Type)>, "flags"?: $Set$$Type<($UserApiService$UserFlag$$Type)>}) | ([bannedScopes?: $Map$$Type<(StringJS), ($BanDetails$$Type)>, flags?: $Set$$Type<($UserApiService$UserFlag$$Type)>]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */

@@ -7,9 +7,9 @@ constructor()
 
 public static "getUnInterpolatedU"(arg0: $TextureAtlasSprite$$Type, arg1: float): float
 public static "getUnInterpolatedV"(arg0: $TextureAtlasSprite$$Type, arg1: float): float
-public "getOriginalResourceLocation"(): $ResourceLocation
 public "getTargetU"(arg0: float): float
 public "getTargetV"(arg0: float): float
+public "getOriginalResourceLocation"(): $ResourceLocation
 public "getTargetResourceLocation"(): $ResourceLocation
 public "set"(arg0: $ResourceLocation$$Type, arg1: $ResourceLocation$$Type): void
 public "getTarget"(): $TextureAtlasSprite
@@ -35,19 +35,19 @@ import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$VertexConsumer$$Type} from "com.mojang.blaze3d.vertex.VertexConsumer"
 import {$Matrix4f$$Type} from "org.joml.Matrix4f"
 import {$TransformStack$$Interface} from "dev.engine_room.flywheel.lib.transform.TransformStack"
-import {$Direction$Axis$$Type} from "net.minecraft.core.Direction$Axis"
 import {$PoseStack$Pose$$Type} from "com.mojang.blaze3d.vertex.PoseStack$Pose"
+import {$Direction$Axis$$Type} from "net.minecraft.core.Direction$Axis"
 import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
-import {$Vector3ic$$Type} from "org.joml.Vector3ic"
 import {$Matrix4fc$$Type} from "org.joml.Matrix4fc"
-import {$Matrix3fc$$Type} from "org.joml.Matrix3fc"
+import {$Vector3ic$$Type} from "org.joml.Vector3ic"
 import {$Axis$$Type} from "com.mojang.math.Axis"
 import {$Vec3i$$Type} from "net.minecraft.core.Vec3i"
+import {$Matrix3fc$$Type} from "org.joml.Matrix3fc"
 import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
-import {$SpriteShiftEntry$$Type} from "net.createmod.catnip.render.SpriteShiftEntry"
 import {$Color$$Type} from "net.createmod.catnip.theme.Color"
-import {$Vector3fc$$Type} from "org.joml.Vector3fc"
+import {$SpriteShiftEntry$$Type} from "net.createmod.catnip.render.SpriteShiftEntry"
 import {$PoseTransformStack} from "dev.engine_room.flywheel.lib.transform.PoseTransformStack"
+import {$Vector3fc$$Type} from "org.joml.Vector3fc"
 import {$AxisAngle4f$$Type} from "org.joml.AxisAngle4f"
 
 export interface $SuperByteBuffer$$Interface extends $TransformStack$$Interface<($SuperByteBuffer)> {
@@ -57,9 +57,9 @@ get "empty"(): boolean
 
 export class $SuperByteBuffer implements $SuperByteBuffer$$Interface {
  "getTransforms"(): $PoseStack
- "renderInto"(arg0: $PoseStack$$Type, arg1: $VertexConsumer$$Type): void
  "useLevelLight"<Self extends $SuperByteBuffer>(arg0: $BlockAndTintGetter$$Type): Self
  "useLevelLight"<Self extends $SuperByteBuffer>(arg0: $BlockAndTintGetter$$Type, arg1: $Matrix4f$$Type): Self
+ "renderInto"(arg0: $PoseStack$$Type, arg1: $VertexConsumer$$Type): void
  "shiftUVScrolling"<Self extends $SuperByteBuffer>(arg0: $SpriteShiftEntry$$Type, arg1: float): Self
  "shiftUVScrolling"<Self extends $SuperByteBuffer>(arg0: $SpriteShiftEntry$$Type, arg1: float, arg2: float): Self
 static "maxLight"(arg0: integer, arg1: integer): integer
@@ -145,9 +145,9 @@ static "of"(stack: $PoseStack$$Type): $PoseTransformStack
  "rotateTo"(from: $Vector3fc$$Type, to: $Vector3fc$$Type): $SuperByteBuffer
  "rotateTo"(from: $Direction$$Type, to: $Direction$$Type): $SuperByteBuffer
  "rotateTo"(fromX: float, fromY: float, fromZ: float, toX: float, toY: float, toZ: float): $SuperByteBuffer
- "scaleZ"(factor: float): $SuperByteBuffer
  "scaleX"(factor: float): $SuperByteBuffer
  "scaleY"(factor: float): $SuperByteBuffer
+ "scaleZ"(factor: float): $SuperByteBuffer
  "scale"(factors: $Vector3fc$$Type): $SuperByteBuffer
  "scale"(arg0: float, arg1: float, arg2: float): $SuperByteBuffer
  "scale"(factor: float): $SuperByteBuffer

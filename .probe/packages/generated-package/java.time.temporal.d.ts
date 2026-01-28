@@ -4,15 +4,15 @@ import {$TemporalField$$Type} from "java.time.temporal.TemporalField"
 
 export class $ValueRange implements $Serializable$$Interface {
 public "getMinimum"(): long
-public "isValidIntValue"(arg0: long): boolean
-public "isFixed"(): boolean
-public "getLargestMinimum"(): long
-public "getSmallestMaximum"(): long
 public "getMaximum"(): long
 public "checkValidValue"(arg0: long, arg1: $TemporalField$$Type): long
 public "isIntValue"(): boolean
 public "isValidValue"(arg0: long): boolean
 public "checkValidIntValue"(arg0: long, arg1: $TemporalField$$Type): integer
+public "isValidIntValue"(arg0: long): boolean
+public "isFixed"(): boolean
+public "getLargestMinimum"(): long
+public "getSmallestMaximum"(): long
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
@@ -20,11 +20,11 @@ public static "of"(arg0: long, arg1: long): $ValueRange
 public static "of"(arg0: long, arg1: long, arg2: long): $ValueRange
 public static "of"(arg0: long, arg1: long, arg2: long, arg3: long): $ValueRange
 get "minimum"(): long
+get "maximum"(): long
+get "intValue"(): boolean
 get "fixed"(): boolean
 get "largestMinimum"(): long
 get "smallestMaximum"(): long
-get "maximum"(): long
-get "intValue"(): boolean
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -152,10 +152,10 @@ export class $TemporalField implements $TemporalField$$Interface {
  "adjustInto"<R extends $Temporal>(arg0: R, arg1: long): R
  "getBaseUnit"(): $TemporalUnit
  "getRangeUnit"(): $TemporalUnit
+ "getDisplayName"(arg0: $Locale$$Type): StringJS
  "toString"(): StringJS
  "resolve"(arg0: $Map$$Type<($TemporalField$$Type), (long)>, arg1: $TemporalAccessor$$Type, arg2: $ResolverStyle$$Type): $TemporalAccessor
  "range"(): $ValueRange
- "getDisplayName"(arg0: $Locale$$Type): StringJS
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -252,9 +252,9 @@ import {$Map$$Type} from "java.util.Map"
 import {$TemporalUnit} from "java.time.temporal.TemporalUnit"
 import {$Enum} from "java.lang.Enum"
 import {$TemporalAccessor, $TemporalAccessor$$Type} from "java.time.temporal.TemporalAccessor"
+import {$Locale$$Type} from "java.util.Locale"
 import {$ValueRange} from "java.time.temporal.ValueRange"
 import {$Temporal, $Temporal$$Type} from "java.time.temporal.Temporal"
-import {$Locale$$Type} from "java.util.Locale"
 import {$TemporalField$$Type, $TemporalField$$Interface} from "java.time.temporal.TemporalField"
 
 export class $ChronoField extends $Enum<($ChronoField)> implements $TemporalField$$Interface {
@@ -299,11 +299,11 @@ public "adjustInto"<R extends $Temporal>(arg0: R, arg1: long): R
 public "checkValidIntValue"(arg0: long): integer
 public "getBaseUnit"(): $TemporalUnit
 public "getRangeUnit"(): $TemporalUnit
+public "getDisplayName"(arg0: $Locale$$Type): StringJS
 public "toString"(): StringJS
 public static "values"(): ($ChronoField)[]
 public static "valueOf"(arg0: StringJS): $ChronoField
 public "range"(): $ValueRange
-public "getDisplayName"(arg0: $Locale$$Type): StringJS
 public "resolve"(arg0: $Map$$Type<($TemporalField$$Type), (long)>, arg1: $TemporalAccessor$$Type, arg2: $ResolverStyle$$Type): $TemporalAccessor
 get "dateBased"(): boolean
 get "timeBased"(): boolean

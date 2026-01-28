@@ -33,9 +33,9 @@ export interface $CommandFunction$$Interface<T> {
 }
 
 export class $CommandFunction<T> implements $CommandFunction$$Interface {
+static "parseCommand"<T extends $ExecutionCommandSource<(object)>>(arg0: $CommandDispatcher$$Type<(T)>, arg1: T, arg2: $StringReader$$Type): $UnboundEntryAction<(T)>
 static "fromLines"<T extends $ExecutionCommandSource<(object)>>(arg0: $ResourceLocation$$Type, arg1: $CommandDispatcher$$Type<(T)>, arg2: T, arg3: $List$$Type<(StringJS)>): $CommandFunction<(T)>
 static "checkCommandLineLength"(arg0: charseq): void
-static "parseCommand"<T extends $ExecutionCommandSource<(object)>>(arg0: $CommandDispatcher$$Type<(T)>, arg1: T, arg2: $StringReader$$Type): $UnboundEntryAction<(T)>
  "id"(): $ResourceLocation
  "instantiate"(arg0: $CompoundTag$$Type, arg1: $CommandDispatcher$$Type<(T)>): $InstantiatedFunction<(T)>
 }

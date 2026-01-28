@@ -1,6 +1,6 @@
 declare module "com.ridanisaurus.emendatusenigmatica.plugin.model.deposit.sphere.SphereDepositConfigModel" {
-import {$ValidationManager} from "com.ridanisaurus.emendatusenigmatica.api.validation.ValidationManager"
 import {$Codec} from "com.mojang.serialization.Codec"
+import {$ValidationManager} from "com.ridanisaurus.emendatusenigmatica.api.validation.ValidationManager"
 import {$List, $List$$Type} from "java.util.List"
 import {$SampleBlockDefinitionModel, $SampleBlockDefinitionModel$$Type} from "com.ridanisaurus.emendatusenigmatica.plugin.model.deposit.sample.SampleBlockDefinitionModel"
 import {$CommonBlockDefinitionModel, $CommonBlockDefinitionModel$$Type} from "com.ridanisaurus.emendatusenigmatica.plugin.model.deposit.common.CommonBlockDefinitionModel"
@@ -32,8 +32,8 @@ export type $SphereDepositConfigModel$$Type = ($SphereDepositConfigModel);
  */
 export type $SphereDepositConfigModel$$Original = $SphereDepositConfigModel;}
 declare module "com.ridanisaurus.emendatusenigmatica.plugin.model.deposit.vanilla.VanillaDepositConfigModel" {
-import {$ValidationManager} from "com.ridanisaurus.emendatusenigmatica.api.validation.ValidationManager"
 import {$Codec} from "com.mojang.serialization.Codec"
+import {$ValidationManager} from "com.ridanisaurus.emendatusenigmatica.api.validation.ValidationManager"
 import {$List, $List$$Type} from "java.util.List"
 
 export class $VanillaDepositConfigModel {
@@ -86,8 +86,8 @@ export type $CommonDepositModelBase$$Type = ($CommonDepositModelBase);
  */
 export type $CommonDepositModelBase$$Original = $CommonDepositModelBase;}
 declare module "com.ridanisaurus.emendatusenigmatica.plugin.model.deposit.dike.DikeDepositConfigModel" {
-import {$ValidationManager} from "com.ridanisaurus.emendatusenigmatica.api.validation.ValidationManager"
 import {$Codec} from "com.mojang.serialization.Codec"
+import {$ValidationManager} from "com.ridanisaurus.emendatusenigmatica.api.validation.ValidationManager"
 import {$List, $List$$Type} from "java.util.List"
 import {$SampleBlockDefinitionModel, $SampleBlockDefinitionModel$$Type} from "com.ridanisaurus.emendatusenigmatica.plugin.model.deposit.sample.SampleBlockDefinitionModel"
 import {$CommonBlockDefinitionModel, $CommonBlockDefinitionModel$$Type} from "com.ridanisaurus.emendatusenigmatica.plugin.model.deposit.common.CommonBlockDefinitionModel"
@@ -119,8 +119,8 @@ export type $DikeDepositConfigModel$$Type = ($DikeDepositConfigModel);
  */
 export type $DikeDepositConfigModel$$Original = $DikeDepositConfigModel;}
 declare module "com.ridanisaurus.emendatusenigmatica.plugin.model.deposit.geode.GeodeDepositModel" {
-import {$GeodeDepositConfigModel$$Type} from "com.ridanisaurus.emendatusenigmatica.plugin.model.deposit.geode.GeodeDepositConfigModel"
 import {$Codec} from "com.mojang.serialization.Codec"
+import {$GeodeDepositConfigModel$$Type} from "com.ridanisaurus.emendatusenigmatica.plugin.model.deposit.geode.GeodeDepositConfigModel"
 import {$List, $List$$Type} from "java.util.List"
 import {$SampleBlockDefinitionModel} from "com.ridanisaurus.emendatusenigmatica.plugin.model.deposit.sample.SampleBlockDefinitionModel"
 import {$CommonDepositModelBase} from "com.ridanisaurus.emendatusenigmatica.plugin.model.deposit.common.CommonDepositModelBase"
@@ -134,33 +134,33 @@ constructor(arg0: StringJS, arg1: StringJS, arg2: $List$$Type<(StringJS)>, arg3:
 public "getPlacement"(): StringJS
 public "getRarity"(): StringJS
 public "getChance"(): integer
+public "hasSamples"(): boolean
+public "getPlacementChance"(): integer
+public "getInnerShellBlocks"(): $List<($CommonBlockDefinitionModel)>
+public "getSampleBlocks"(): $List<($SampleBlockDefinitionModel)>
 public "getFillerTypes"(): $List<(StringJS)>
 public "getMaxYLevel"(): integer
 public "getMinYLevel"(): integer
-public "getSampleBlocks"(): $List<($SampleBlockDefinitionModel)>
-public "getInnerBlocks"(): $List<($CommonBlockDefinitionModel)>
-public "getFillBlocks"(): $List<($CommonBlockDefinitionModel)>
-public "getInnerShellBlocks"(): $List<($CommonBlockDefinitionModel)>
-public "getOuterShellBlocks"(): $List<($CommonBlockDefinitionModel)>
-public "hasSamples"(): boolean
-public "getPlacementChance"(): integer
 public "getClusters"(): $List<(StringJS)>
 public "getCrackChance"(): double
+public "getInnerBlocks"(): $List<($CommonBlockDefinitionModel)>
+public "getFillBlocks"(): $List<($CommonBlockDefinitionModel)>
+public "getOuterShellBlocks"(): $List<($CommonBlockDefinitionModel)>
 public "getType"(): StringJS
 get "placement"(): StringJS
 get "rarity"(): StringJS
 get "chance"(): integer
+get "placementChance"(): integer
+get "innerShellBlocks"(): $List<($CommonBlockDefinitionModel)>
+get "sampleBlocks"(): $List<($SampleBlockDefinitionModel)>
 get "fillerTypes"(): $List<(StringJS)>
 get "maxYLevel"(): integer
 get "minYLevel"(): integer
-get "sampleBlocks"(): $List<($SampleBlockDefinitionModel)>
-get "innerBlocks"(): $List<($CommonBlockDefinitionModel)>
-get "fillBlocks"(): $List<($CommonBlockDefinitionModel)>
-get "innerShellBlocks"(): $List<($CommonBlockDefinitionModel)>
-get "outerShellBlocks"(): $List<($CommonBlockDefinitionModel)>
-get "placementChance"(): integer
 get "clusters"(): $List<(StringJS)>
 get "crackChance"(): double
+get "innerBlocks"(): $List<($CommonBlockDefinitionModel)>
+get "fillBlocks"(): $List<($CommonBlockDefinitionModel)>
+get "outerShellBlocks"(): $List<($CommonBlockDefinitionModel)>
 get "type"(): StringJS
 }
 /**
@@ -186,10 +186,10 @@ constructor(arg0: StringJS, arg1: StringJS, arg2: $List$$Type<(StringJS)>, arg3:
 public "getPlacement"(): StringJS
 public "getRarity"(): StringJS
 public "getChance"(): integer
+public "getPlacementChance"(): integer
 public "getFillerTypes"(): $List<(StringJS)>
 public "getMaxYLevel"(): integer
 public "getMinYLevel"(): integer
-public "getPlacementChance"(): integer
 public "getBlock"(): StringJS
 public "getType"(): StringJS
 public "getSize"(): integer
@@ -197,10 +197,10 @@ public "getMaterial"(): StringJS
 get "placement"(): StringJS
 get "rarity"(): StringJS
 get "chance"(): integer
+get "placementChance"(): integer
 get "fillerTypes"(): $List<(StringJS)>
 get "maxYLevel"(): integer
 get "minYLevel"(): integer
-get "placementChance"(): integer
 get "block"(): StringJS
 get "type"(): StringJS
 get "size"(): integer
@@ -216,8 +216,8 @@ export type $VanillaDepositModel$$Type = ($VanillaDepositModel);
  */
 export type $VanillaDepositModel$$Original = $VanillaDepositModel;}
 declare module "com.ridanisaurus.emendatusenigmatica.plugin.model.deposit.sample.SampleBlockDefinitionModel" {
-import {$ValidationManager} from "com.ridanisaurus.emendatusenigmatica.api.validation.ValidationManager"
 import {$Codec} from "com.mojang.serialization.Codec"
+import {$ValidationManager} from "com.ridanisaurus.emendatusenigmatica.api.validation.ValidationManager"
 
 export class $SampleBlockDefinitionModel {
 static readonly "CODEC": $Codec<($SampleBlockDefinitionModel)>
@@ -226,13 +226,13 @@ static readonly "VALIDATION_MANAGER": $ValidationManager
 constructor(arg0: StringJS, arg1: StringJS, arg2: StringJS, arg3: integer, arg4: StringJS)
 
 public "getStrata"(): StringJS
-public "getTag"(): StringJS
 public "getBlock"(): StringJS
+public "getTag"(): StringJS
 public "getWeight"(): integer
 public "getMaterial"(): StringJS
 get "strata"(): StringJS
-get "tag"(): StringJS
 get "block"(): StringJS
+get "tag"(): StringJS
 get "weight"(): integer
 get "material"(): StringJS
 }
@@ -261,23 +261,23 @@ constructor(arg0: StringJS, arg1: StringJS, arg2: $List$$Type<(StringJS)>, arg3:
 public "getPlacement"(): StringJS
 public "getRarity"(): StringJS
 public "getChance"(): integer
+public "hasSamples"(): boolean
+public "getPlacementChance"(): integer
+public "getSampleBlocks"(): $List<($SampleBlockDefinitionModel)>
 public "getFillerTypes"(): $List<(StringJS)>
 public "getMaxYLevel"(): integer
 public "getMinYLevel"(): integer
-public "getSampleBlocks"(): $List<($SampleBlockDefinitionModel)>
-public "hasSamples"(): boolean
-public "getPlacementChance"(): integer
 public "getType"(): StringJS
 public "getSize"(): integer
 public "getBlocks"(): $List<($CommonBlockDefinitionModel)>
 get "placement"(): StringJS
 get "rarity"(): StringJS
 get "chance"(): integer
+get "placementChance"(): integer
+get "sampleBlocks"(): $List<($SampleBlockDefinitionModel)>
 get "fillerTypes"(): $List<(StringJS)>
 get "maxYLevel"(): integer
 get "minYLevel"(): integer
-get "sampleBlocks"(): $List<($SampleBlockDefinitionModel)>
-get "placementChance"(): integer
 get "type"(): StringJS
 get "size"(): integer
 get "blocks"(): $List<($CommonBlockDefinitionModel)>
@@ -292,8 +292,8 @@ export type $DenseDepositModel$$Type = ($DenseDepositModel);
  */
 export type $DenseDepositModel$$Original = $DenseDepositModel;}
 declare module "com.ridanisaurus.emendatusenigmatica.plugin.model.deposit.dense.DenseDepositConfigModel" {
-import {$ValidationManager} from "com.ridanisaurus.emendatusenigmatica.api.validation.ValidationManager"
 import {$Codec} from "com.mojang.serialization.Codec"
+import {$ValidationManager} from "com.ridanisaurus.emendatusenigmatica.api.validation.ValidationManager"
 import {$List, $List$$Type} from "java.util.List"
 import {$SampleBlockDefinitionModel, $SampleBlockDefinitionModel$$Type} from "com.ridanisaurus.emendatusenigmatica.plugin.model.deposit.sample.SampleBlockDefinitionModel"
 import {$CommonBlockDefinitionModel, $CommonBlockDefinitionModel$$Type} from "com.ridanisaurus.emendatusenigmatica.plugin.model.deposit.common.CommonBlockDefinitionModel"
@@ -341,23 +341,23 @@ public "getPlacement"(): StringJS
 public "getRarity"(): StringJS
 public "getRadius"(): integer
 public "getChance"(): integer
+public "hasSamples"(): boolean
+public "getPlacementChance"(): integer
+public "getSampleBlocks"(): $List<($SampleBlockDefinitionModel)>
 public "getFillerTypes"(): $List<(StringJS)>
 public "getMaxYLevel"(): integer
 public "getMinYLevel"(): integer
-public "getSampleBlocks"(): $List<($SampleBlockDefinitionModel)>
-public "hasSamples"(): boolean
-public "getPlacementChance"(): integer
 public "getType"(): StringJS
 public "getBlocks"(): $List<($CommonBlockDefinitionModel)>
 get "placement"(): StringJS
 get "rarity"(): StringJS
 get "radius"(): integer
 get "chance"(): integer
+get "placementChance"(): integer
+get "sampleBlocks"(): $List<($SampleBlockDefinitionModel)>
 get "fillerTypes"(): $List<(StringJS)>
 get "maxYLevel"(): integer
 get "minYLevel"(): integer
-get "sampleBlocks"(): $List<($SampleBlockDefinitionModel)>
-get "placementChance"(): integer
 get "type"(): StringJS
 get "blocks"(): $List<($CommonBlockDefinitionModel)>
 }
@@ -386,23 +386,23 @@ constructor(arg0: StringJS, arg1: StringJS, arg2: $List$$Type<(StringJS)>, arg3:
 public "getPlacement"(): StringJS
 public "getRarity"(): StringJS
 public "getChance"(): integer
+public "hasSamples"(): boolean
+public "getPlacementChance"(): integer
+public "getSampleBlocks"(): $List<($SampleBlockDefinitionModel)>
 public "getFillerTypes"(): $List<(StringJS)>
 public "getMaxYLevel"(): integer
 public "getMinYLevel"(): integer
-public "getSampleBlocks"(): $List<($SampleBlockDefinitionModel)>
-public "hasSamples"(): boolean
-public "getPlacementChance"(): integer
 public "getType"(): StringJS
 public "getSize"(): integer
 public "getBlocks"(): $List<($CommonBlockDefinitionModel)>
 get "placement"(): StringJS
 get "rarity"(): StringJS
 get "chance"(): integer
+get "placementChance"(): integer
+get "sampleBlocks"(): $List<($SampleBlockDefinitionModel)>
 get "fillerTypes"(): $List<(StringJS)>
 get "maxYLevel"(): integer
 get "minYLevel"(): integer
-get "sampleBlocks"(): $List<($SampleBlockDefinitionModel)>
-get "placementChance"(): integer
 get "type"(): StringJS
 get "size"(): integer
 get "blocks"(): $List<($CommonBlockDefinitionModel)>
@@ -417,8 +417,8 @@ export type $DikeDepositModel$$Type = ($DikeDepositModel);
  */
 export type $DikeDepositModel$$Original = $DikeDepositModel;}
 declare module "com.ridanisaurus.emendatusenigmatica.plugin.model.deposit.common.CommonBlockDefinitionModel" {
-import {$ValidationManager} from "com.ridanisaurus.emendatusenigmatica.api.validation.ValidationManager"
 import {$Codec} from "com.mojang.serialization.Codec"
+import {$ValidationManager} from "com.ridanisaurus.emendatusenigmatica.api.validation.ValidationManager"
 
 export class $CommonBlockDefinitionModel {
 static readonly "CODEC": $Codec<($CommonBlockDefinitionModel)>
@@ -426,14 +426,14 @@ static readonly "VALIDATION_MANAGER": $ValidationManager
 
 constructor(arg0: StringJS, arg1: StringJS, arg2: StringJS, arg3: integer, arg4: integer, arg5: integer)
 
-public "getTag"(): StringJS
 public "getBlock"(): StringJS
+public "getTag"(): StringJS
 public "getMax"(): integer
 public "getMin"(): integer
 public "getWeight"(): integer
 public "getMaterial"(): StringJS
-get "tag"(): StringJS
 get "block"(): StringJS
+get "tag"(): StringJS
 get "max"(): integer
 get "min"(): integer
 get "weight"(): integer
@@ -449,8 +449,8 @@ export type $CommonBlockDefinitionModel$$Type = ($CommonBlockDefinitionModel);
  */
 export type $CommonBlockDefinitionModel$$Original = $CommonBlockDefinitionModel;}
 declare module "com.ridanisaurus.emendatusenigmatica.plugin.model.deposit.geode.GeodeDepositConfigModel" {
-import {$ValidationManager} from "com.ridanisaurus.emendatusenigmatica.api.validation.ValidationManager"
 import {$Codec} from "com.mojang.serialization.Codec"
+import {$ValidationManager} from "com.ridanisaurus.emendatusenigmatica.api.validation.ValidationManager"
 import {$List, $List$$Type} from "java.util.List"
 import {$SampleBlockDefinitionModel, $SampleBlockDefinitionModel$$Type} from "com.ridanisaurus.emendatusenigmatica.plugin.model.deposit.sample.SampleBlockDefinitionModel"
 import {$CommonBlockDefinitionModel, $CommonBlockDefinitionModel$$Type} from "com.ridanisaurus.emendatusenigmatica.plugin.model.deposit.common.CommonBlockDefinitionModel"

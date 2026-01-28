@@ -271,8 +271,8 @@ get "destroyingBlock"(): boolean
 }
 
 export class $ServerPlayerGameModeAccess implements $ServerPlayerGameModeAccess$$Interface {
- "hasDelayedDestroy"(): boolean
  "isDestroyingBlock"(): boolean
+ "hasDelayedDestroy"(): boolean
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_

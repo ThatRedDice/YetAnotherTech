@@ -65,8 +65,8 @@ constructor(arg0: $IFluidTank$$Type, arg1: $AABB$$Type, ...arg2: ($Direction$$Ty
 public "getFaces"(): $BitSet
 public "without"(arg0: $Direction$$Type): $TankRenderInfo
 public "getBounds"(): $AABB
-public "getTank"(): $IFluidTank
 public "shouldRender"(arg0: $Direction$$Type): boolean
+public "getTank"(): $IFluidTank
 get "faces"(): $BitSet
 get "bounds"(): $AABB
 get "tank"(): $IFluidTank

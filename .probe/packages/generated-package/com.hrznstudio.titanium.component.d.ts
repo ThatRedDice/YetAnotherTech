@@ -19,8 +19,8 @@ export type $ICapabilityHolder$$Type<T> = ($ICapabilityHolder<(T)>);
  */
 export type $ICapabilityHolder$$Original<T> = $ICapabilityHolder<(T)>;}
 declare module "com.hrznstudio.titanium.component.IComponentBundle" {
-import {$IComponentHandler$$Type} from "com.hrznstudio.titanium.component.IComponentHandler"
 import {$IScreenAddon} from "com.hrznstudio.titanium.api.client.IScreenAddon"
+import {$IComponentHandler$$Type} from "com.hrznstudio.titanium.component.IComponentHandler"
 import {$List} from "java.util.List"
 import {$IFactory} from "com.hrznstudio.titanium.api.IFactory"
 import {$IScreenAddonProvider$$Interface} from "com.hrznstudio.titanium.api.client.IScreenAddonProvider"
@@ -48,8 +48,8 @@ export type $IComponentBundle$$Type = ($IComponentBundle);
  */
 export type $IComponentBundle$$Original = $IComponentBundle;}
 declare module "com.hrznstudio.titanium.component.energy.EnergyStorageComponent" {
-import {$EnergyStorage} from "net.neoforged.neoforge.energy.EnergyStorage"
 import {$IScreenAddon} from "com.hrznstudio.titanium.api.client.IScreenAddon"
+import {$EnergyStorage} from "net.neoforged.neoforge.energy.EnergyStorage"
 import {$IComponentHarness, $IComponentHarness$$Type} from "com.hrznstudio.titanium.component.IComponentHarness"
 import {$List} from "java.util.List"
 import {$IFactory} from "com.hrznstudio.titanium.api.IFactory"
@@ -62,10 +62,10 @@ constructor(arg0: integer, arg1: integer, arg2: integer)
 constructor(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: integer)
 constructor(arg0: integer, arg1: integer, arg2: integer, arg3: integer)
 
-public "getScreenAddons"(): $List<($IFactory<($IScreenAddon)>)>
-public "getContainerAddons"(): $List<($IFactory<($IContainerAddon)>)>
 public "extractEnergy"(arg0: integer, arg1: boolean): integer
 public "receiveEnergy"(arg0: integer, arg1: boolean): integer
+public "getScreenAddons"(): $List<($IFactory<($IScreenAddon)>)>
+public "getContainerAddons"(): $List<($IFactory<($IContainerAddon)>)>
 public "setComponentHarness"(arg0: T): void
 public "setEnergyStored"(arg0: integer): void
 public "getY"(): integer
@@ -108,10 +108,10 @@ constructor()
 
 public "getScreenAddons"(): $List<($IFactory<($IScreenAddon)>)>
 public "getContainerAddons"(): $List<($IFactory<($IContainerAddon)>)>
+public "getTanks"(): $HashSet<($FluidTankComponent<(T)>)>
 public "getCapabilityForSide"(arg0: $FacingUtil$Sideness$$Type): $Optional<($MultiTankComponent$MultiTankCapabilityHandler<(T)>)>
 public "handleFacingChange"(arg0: StringJS, arg1: $FacingUtil$Sideness$$Type, arg2: integer): boolean
 public "rebuildCapability"(arg0: ($FacingUtil$Sideness$$Type)[]): void
-public "getTanks"(): $HashSet<($FluidTankComponent<(T)>)>
 public "add"(...arg0: (any)[]): void
 public "canInteract"(): boolean
 get "screenAddons"(): $List<($IFactory<($IScreenAddon)>)>
@@ -138,8 +138,8 @@ import {$IFacingComponent$FaceMode} from "com.hrznstudio.titanium.component.side
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 
 export interface $IFacingComponent$$Interface {
-get "facingModes"(): $Map<($FacingUtil$Sideness), ($IFacingComponent$FaceMode)>
 get "validFacingModes"(): ($IFacingComponent$FaceMode)[]
+get "facingModes"(): $Map<($FacingUtil$Sideness), ($IFacingComponent$FaceMode)>
 get "facingHandlerX"(): integer
 get "facingHandlerY"(): integer
 get "name"(): StringJS
@@ -147,11 +147,11 @@ get "color"(): integer
 }
 
 export class $IFacingComponent implements $IFacingComponent$$Interface {
- "getFacingModes"(): $Map<($FacingUtil$Sideness), ($IFacingComponent$FaceMode)>
  "getValidFacingModes"(): ($IFacingComponent$FaceMode)[]
+ "getFacingModes"(): $Map<($FacingUtil$Sideness), ($IFacingComponent$FaceMode)>
+ "setFacingHandlerPos"(arg0: integer, arg1: integer): $IFacingComponent
  "getFacingHandlerX"(): integer
  "getFacingHandlerY"(): integer
- "setFacingHandlerPos"(arg0: integer, arg1: integer): $IFacingComponent
  "work"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $Direction$$Type, arg3: integer): boolean
  "getName"(): StringJS
  "getColor"(): integer
@@ -291,9 +291,9 @@ import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Prov
 import {$ProgressBarComponent$BarDirection, $ProgressBarComponent$BarDirection$$Type} from "com.hrznstudio.titanium.component.progress.ProgressBarComponent$BarDirection"
 import {$IScreenAddon} from "com.hrznstudio.titanium.api.client.IScreenAddon"
 import {$DyeColor, $DyeColor$$Type} from "net.minecraft.world.item.DyeColor"
-import {$Tag$$Type} from "net.minecraft.nbt.Tag"
 import {$IContainerAddonProvider$$Interface} from "com.hrznstudio.titanium.container.addon.IContainerAddonProvider"
 import {$IScreenAddonProvider$$Interface} from "com.hrznstudio.titanium.api.client.IScreenAddonProvider"
+import {$Tag$$Type} from "net.minecraft.nbt.Tag"
 
 export class $ProgressBarComponent<T extends $IComponentHarness> implements $INBTSerializable$$Interface<($CompoundTag)>, $IScreenAddonProvider$$Interface, $IContainerAddonProvider$$Interface {
 constructor(arg0: integer, arg1: integer, arg2: integer, arg3: integer)
@@ -303,13 +303,18 @@ public "getScreenAddons"(): $List<($IFactory<($IScreenAddon)>)>
 public "getContainerAddons"(): $List<($IFactory<($IContainerAddon)>)>
 public "getPosX"(): integer
 public "getPosY"(): integer
+public "getMaxProgress"(): integer
 public "setComponentHarness"(arg0: T): $ProgressBarComponent<(T)>
+public "getComponentHarness"(): T
 public "getCanIncrease"(): $Predicate<(T)>
 public "getIncreaseType"(): boolean
-public "tickBar"(): void
 public "getCanReset"(): $Predicate<(T)>
-public "getComponentHarness"(): T
-public "getMaxProgress"(): integer
+public "tickBar"(): void
+public "getTickingTime"(): integer
+public "setTickingTime"(arg0: integer): $ProgressBarComponent<(T)>
+public "getProgressIncrease"(): integer
+public "getBarDirection"(): $ProgressBarComponent$BarDirection
+public static "getTextureDiffuseColors"(arg0: $DyeColor$$Type): (float)[]
 public "setBarDirection"(arg0: $ProgressBarComponent$BarDirection$$Type): $ProgressBarComponent<(T)>
 public "setIncreaseType"(arg0: boolean): $ProgressBarComponent<(T)>
 public "setOnFinishWork"(arg0: $Runnable$$Type): $ProgressBarComponent<(T)>
@@ -317,11 +322,6 @@ public "setOnTickWork"(arg0: $Runnable$$Type): $ProgressBarComponent<(T)>
 public "setCanReset"(arg0: $Predicate$$Type<(T)>): $ProgressBarComponent<(T)>
 public "setCanIncrease"(arg0: $Predicate$$Type<(T)>): $ProgressBarComponent<(T)>
 public "setProgressIncrease"(arg0: integer): $ProgressBarComponent<(T)>
-public "getTickingTime"(): integer
-public "setTickingTime"(arg0: integer): $ProgressBarComponent<(T)>
-public "getProgressIncrease"(): integer
-public "getBarDirection"(): $ProgressBarComponent$BarDirection
-public static "getTextureDiffuseColors"(arg0: $DyeColor$$Type): (float)[]
 public "setOnStart"(arg0: $Runnable$$Type): $ProgressBarComponent<(T)>
 public "setColor"(arg0: $DyeColor$$Type): $ProgressBarComponent<(T)>
 public "onStart"(): void
@@ -337,12 +337,16 @@ get "screenAddons"(): $List<($IFactory<($IScreenAddon)>)>
 get "containerAddons"(): $List<($IFactory<($IContainerAddon)>)>
 get "posX"(): integer
 get "posY"(): integer
+get "maxProgress"(): integer
 set "componentHarness"(value: T)
+get "componentHarness"(): T
 get "canIncrease"(): $Predicate<(T)>
 get "increaseType"(): boolean
 get "canReset"(): $Predicate<(T)>
-get "componentHarness"(): T
-get "maxProgress"(): integer
+get "tickingTime"(): integer
+set "tickingTime"(value: integer)
+get "progressIncrease"(): integer
+get "barDirection"(): $ProgressBarComponent$BarDirection
 set "barDirection"(value: $ProgressBarComponent$BarDirection$$Type)
 set "increaseType"(value: boolean)
 set "onFinishWork"(value: $Runnable$$Type)
@@ -350,10 +354,6 @@ set "onTickWork"(value: $Runnable$$Type)
 set "canReset"(value: $Predicate$$Type<(T)>)
 set "canIncrease"(value: $Predicate$$Type<(T)>)
 set "progressIncrease"(value: integer)
-get "tickingTime"(): integer
-set "tickingTime"(value: integer)
-get "progressIncrease"(): integer
-get "barDirection"(): $ProgressBarComponent$BarDirection
 set "color"(value: $DyeColor$$Type)
 set "maxProgress"(value: integer)
 get "color"(): $DyeColor
@@ -411,20 +411,19 @@ export type $ButtonComponent$$Original = $ButtonComponent;}
 declare module "com.hrznstudio.titanium.component.inventory.SidedInventoryComponent" {
 import {$IAsset$$Type} from "com.hrznstudio.titanium.api.client.IAsset"
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
+import {$Map} from "java.util.Map"
 import {$Color} from "java.awt.Color"
 import {$IComponentHarness} from "com.hrznstudio.titanium.component.IComponentHarness"
 import {$List} from "java.util.List"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
-import {$IFactory} from "com.hrznstudio.titanium.api.IFactory"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$IFactory} from "com.hrznstudio.titanium.api.IFactory"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
-import {$HashMap} from "java.util.HashMap"
-import {$FacingUtil$Sideness} from "com.hrznstudio.titanium.util.FacingUtil$Sideness"
 import {$IFacingComponent$$Interface} from "com.hrznstudio.titanium.component.sideness.IFacingComponent"
 import {$IScreenAddon} from "com.hrznstudio.titanium.api.client.IScreenAddon"
-import {$InventoryComponent} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
 import {$DyeColor$$Type} from "net.minecraft.world.item.DyeColor"
 import {$Rectangle} from "java.awt.Rectangle"
+import {$InventoryComponent} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
 import {$Tag$$Type} from "net.minecraft.nbt.Tag"
 import {$IFacingComponent$FaceMode, $IFacingComponent$FaceMode$$Type} from "com.hrznstudio.titanium.component.sideness.IFacingComponent$FaceMode"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
@@ -433,17 +432,17 @@ export class $SidedInventoryComponent<T extends $IComponentHarness> extends $Inv
 constructor(arg0: StringJS, arg1: integer, arg2: integer, arg3: integer, arg4: integer)
 
 public "getScreenAddons"(): $List<($IFactory<($IScreenAddon)>)>
-public "getFacingModes"(): $HashMap<($FacingUtil$Sideness), ($IFacingComponent$FaceMode)>
-public "getValidFacingModes"(): ($IFacingComponent$FaceMode)[]
 public "getColorForSlotRendering"(arg0: integer): $Color
-public "setValidFaceModes"(...arg0: ($IFacingComponent$FaceMode$$Type)[]): $SidedInventoryComponent<(T)>
-public "disableFacingAddon"(): $SidedInventoryComponent<(T)>
+public "getValidFacingModes"(): ($IFacingComponent$FaceMode)[]
+public "getFacingModes"(): $Map
+public "setFacingHandlerPos"(arg0: integer, arg1: integer): $SidedInventoryComponent<(T)>
 public "getFacingHandlerX"(): integer
 public "getFacingHandlerY"(): integer
-public "setFacingHandlerPos"(arg0: integer, arg1: integer): $SidedInventoryComponent<(T)>
-public "work"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $Direction$$Type, arg3: integer): boolean
+public "setValidFaceModes"(...arg0: ($IFacingComponent$FaceMode$$Type)[]): $SidedInventoryComponent<(T)>
+public "disableFacingAddon"(): $SidedInventoryComponent<(T)>
 public "setColor"(arg0: integer): $SidedInventoryComponent<(T)>
 public "setColor"(arg0: $DyeColor$$Type): $SidedInventoryComponent<(T)>
+public "work"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $Direction$$Type, arg3: integer): boolean
 public "getColor"(): integer
 public "deserializeNBT"(arg0: $HolderLookup$Provider$$Type, arg1: $CompoundTag$$Type): void
 public "deserializeNBT"(arg0: $HolderLookup$Provider$$Type, arg1: $Tag$$Type): void
@@ -451,11 +450,11 @@ public "serializeNBT"(arg0: $HolderLookup$Provider$$Type): $CompoundTag
 public "getRectangle"(arg0: $IAsset$$Type): $Rectangle
 public "getName"(): StringJS
 get "screenAddons"(): $List<($IFactory<($IScreenAddon)>)>
-get "facingModes"(): $HashMap<($FacingUtil$Sideness), ($IFacingComponent$FaceMode)>
 get "validFacingModes"(): ($IFacingComponent$FaceMode)[]
-set "validFaceModes"(value: ($IFacingComponent$FaceMode$$Type)[])
+get "facingModes"(): $Map
 get "facingHandlerX"(): integer
 get "facingHandlerY"(): integer
+set "validFaceModes"(value: ($IFacingComponent$FaceMode$$Type)[])
 set "color"(value: integer)
 set "color"(value: $DyeColor$$Type)
 get "color"(): integer
@@ -477,16 +476,17 @@ import {$Map} from "java.util.Map"
 import {$IComponentHarness} from "com.hrznstudio.titanium.component.IComponentHarness"
 import {$List} from "java.util.List"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
-import {$IFactory} from "com.hrznstudio.titanium.api.IFactory"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$IFactory} from "com.hrznstudio.titanium.api.IFactory"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$FluidTankComponent} from "com.hrznstudio.titanium.component.fluid.FluidTankComponent"
 import {$FacingUtil$Sideness} from "com.hrznstudio.titanium.util.FacingUtil$Sideness"
-import {$IFacingComponent, $IFacingComponent$$Interface} from "com.hrznstudio.titanium.component.sideness.IFacingComponent"
+import {$IFacingComponent$$Interface} from "com.hrznstudio.titanium.component.sideness.IFacingComponent"
 import {$IScreenAddon} from "com.hrznstudio.titanium.api.client.IScreenAddon"
 import {$FluidTank} from "net.neoforged.neoforge.fluids.capability.templates.FluidTank"
 import {$DyeColor$$Type} from "net.minecraft.world.item.DyeColor"
 import {$Rectangle} from "java.awt.Rectangle"
+import {$Tag} from "net.minecraft.nbt.Tag"
 import {$IScreenAddonProvider$$Interface} from "com.hrznstudio.titanium.api.client.IScreenAddonProvider"
 import {$IFacingComponent$FaceMode, $IFacingComponent$FaceMode$$Type} from "com.hrznstudio.titanium.component.sideness.IFacingComponent$FaceMode"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
@@ -495,29 +495,30 @@ export class $SidedFluidTankComponent<T extends $IComponentHarness> extends $Flu
 constructor(arg0: StringJS, arg1: integer, arg2: integer, arg3: integer, arg4: integer)
 
 public "getScreenAddons"(): $List<($IFactory<($IScreenAddon)>)>
-public "getFacingModes"(): $Map<($FacingUtil$Sideness), ($IFacingComponent$FaceMode)>
-public "getValidFacingModes"(): ($IFacingComponent$FaceMode)[]
 public "readFromNBT"(arg0: $HolderLookup$Provider$$Type, arg1: $CompoundTag$$Type): $FluidTank
 public "writeToNBT"(arg0: $HolderLookup$Provider$$Type, arg1: $CompoundTag$$Type): $CompoundTag
-public "setValidFaceModes"(...arg0: ($IFacingComponent$FaceMode$$Type)[]): $SidedFluidTankComponent<(T)>
-public "disableFacingAddon"(): $SidedFluidTankComponent<(T)>
+public "getValidFacingModes"(): ($IFacingComponent$FaceMode)[]
+public "getFacingModes"(): $Map<($FacingUtil$Sideness), ($IFacingComponent$FaceMode)>
+public "setFacingHandlerPos"(arg0: integer, arg1: integer): $SidedFluidTankComponent<(T)>
 public "getFacingHandlerX"(): integer
 public "getFacingHandlerY"(): integer
-public "setFacingHandlerPos"(arg0: integer, arg1: integer): $IFacingComponent
-public "work"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $Direction$$Type, arg3: integer): boolean
-public "setColor"(arg0: integer): $SidedFluidTankComponent<(T)>
+public "setValidFaceModes"(...arg0: ($IFacingComponent$FaceMode$$Type)[]): $SidedFluidTankComponent<(T)>
+public "disableFacingAddon"(): $SidedFluidTankComponent<(T)>
 public "setColor"(arg0: $DyeColor$$Type): $SidedFluidTankComponent<(T)>
+public "setColor"(arg0: integer): $SidedFluidTankComponent<(T)>
+public "work"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $Direction$$Type, arg3: integer): boolean
 public "getColor"(): integer
 public "getRectangle"(arg0: $IAsset$$Type): $Rectangle
 public "getName"(): StringJS
+public "serializeNBT"(arg0: $HolderLookup$Provider$$Type): $Tag
 get "screenAddons"(): $List<($IFactory<($IScreenAddon)>)>
-get "facingModes"(): $Map<($FacingUtil$Sideness), ($IFacingComponent$FaceMode)>
 get "validFacingModes"(): ($IFacingComponent$FaceMode)[]
-set "validFaceModes"(value: ($IFacingComponent$FaceMode$$Type)[])
+get "facingModes"(): $Map<($FacingUtil$Sideness), ($IFacingComponent$FaceMode)>
 get "facingHandlerX"(): integer
 get "facingHandlerY"(): integer
-set "color"(value: integer)
+set "validFaceModes"(value: ($IFacingComponent$FaceMode$$Type)[])
 set "color"(value: $DyeColor$$Type)
+set "color"(value: integer)
 get "color"(): integer
 get "name"(): StringJS
 }
@@ -532,8 +533,8 @@ export type $SidedFluidTankComponent$$Type<T> = ($SidedFluidTankComponent<(T)>);
 export type $SidedFluidTankComponent$$Original<T> = $SidedFluidTankComponent<(T)>;}
 declare module "com.hrznstudio.titanium.component.inventory.InventoryComponent" {
 import {$BiPredicate, $BiPredicate$$Type} from "java.util.function.BiPredicate"
-import {$Map} from "java.util.Map"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$Map} from "java.util.Map"
 import {$Color, $Color$$Type} from "java.awt.Color"
 import {$IComponentHarness, $IComponentHarness$$Type} from "com.hrznstudio.titanium.component.IComponentHarness"
 import {$List} from "java.util.List"
@@ -542,10 +543,10 @@ import {$IFactory} from "com.hrznstudio.titanium.api.IFactory"
 import {$IContainerAddon} from "com.hrznstudio.titanium.container.addon.IContainerAddon"
 import {$IScreenAddon} from "com.hrznstudio.titanium.api.client.IScreenAddon"
 import {$Function, $Function$$Type} from "java.util.function.Function"
-import {$BiConsumer, $BiConsumer$$Type} from "java.util.function.BiConsumer"
 import {$DyeColor$$Type} from "net.minecraft.world.item.DyeColor"
-import {$IScreenAddonProvider$$Interface} from "com.hrznstudio.titanium.api.client.IScreenAddonProvider"
+import {$BiConsumer, $BiConsumer$$Type} from "java.util.function.BiConsumer"
 import {$IContainerAddonProvider$$Interface} from "com.hrznstudio.titanium.container.addon.IContainerAddonProvider"
+import {$IScreenAddonProvider$$Interface} from "com.hrznstudio.titanium.api.client.IScreenAddonProvider"
 import {$Pair, $Pair$$Type} from "org.apache.commons.lang3.tuple.Pair"
 import {$ItemStackHandler} from "net.neoforged.neoforge.items.ItemStackHandler"
 
@@ -557,14 +558,15 @@ public "getContainerAddons"(): $List<($IFactory<($IContainerAddon)>)>
 public "getXPos"(): integer
 public "getSlotPosition"(): $Function<(integer), ($Pair<(integer), (integer)>)>
 public "getYPos"(): integer
+public "setXPos"(arg0: integer): void
+public "setRange"(arg0: integer, arg1: integer): $InventoryComponent<(T)>
 public "setInputFilter"(arg0: $BiPredicate$$Type<($ItemStack), (integer)>): $InventoryComponent<(T)>
 public "setOnSlotChanged"(arg0: $BiConsumer$$Type<($ItemStack), (integer)>): $InventoryComponent<(T)>
-public "setSlotLimit"(arg0: integer, arg1: integer): $InventoryComponent<(T)>
 public "setSlotLimit"(arg0: integer): $InventoryComponent<(T)>
+public "setSlotLimit"(arg0: integer, arg1: integer): $InventoryComponent<(T)>
 public "setComponentHarness"(arg0: T): $InventoryComponent<(T)>
 public "setColorGuiEnabled"(arg0: boolean): $InventoryComponent<(T)>
 public "setOutputFilter"(arg0: $BiPredicate$$Type<($ItemStack), (integer)>): $InventoryComponent<(T)>
-public "getItemStackForSlotRendering"(arg0: integer): $ItemStack
 public "setYPos"(arg0: integer): void
 public "getComponentHarness"(): T
 public "getInsertPredicate"(): $BiPredicate<($ItemStack), (integer)>
@@ -573,15 +575,14 @@ public "getOnSlotChanged"(): $BiConsumer<($ItemStack), (integer)>
 public "isColorGuiEnabled"(): boolean
 public "getSlotToColorRenderMap"(): $Map<(integer), ($Color)>
 public "setSlotToItemStackRender"(arg0: integer, arg1: $ItemStack$$Type): $InventoryComponent<(T)>
+public "setSlotToColorRender"(arg0: integer, arg1: $DyeColor$$Type): $InventoryComponent<(T)>
 public "setSlotToColorRender"(arg0: integer, arg1: $Color$$Type): $InventoryComponent<(T)>
 public "setSlotToColorRender"(arg0: integer, arg1: integer): $InventoryComponent<(T)>
-public "setSlotToColorRender"(arg0: integer, arg1: $DyeColor$$Type): $InventoryComponent<(T)>
 public "getColorForSlotRendering"(arg0: integer): $Color
 public "getSlotVisiblePredicate"(): $Predicate<(integer)>
 public "setSlotVisiblePredicate"(arg0: $Predicate$$Type<(integer)>): $InventoryComponent<(T)>
 public "setSlotPosition"(arg0: $Function$$Type<(integer), ($Pair$$Type<(integer), (integer)>)>): $InventoryComponent<(T)>
-public "setRange"(arg0: integer, arg1: integer): $InventoryComponent<(T)>
-public "setXPos"(arg0: integer): void
+public "getItemStackForSlotRendering"(arg0: integer): $ItemStack
 public "getName"(): StringJS
 public "insertItem"(arg0: integer, arg1: $ItemStack$$Type, arg2: boolean): $ItemStack
 public "extractItem"(arg0: integer, arg1: integer, arg2: boolean): $ItemStack
@@ -595,6 +596,7 @@ get "containerAddons"(): $List<($IFactory<($IContainerAddon)>)>
 get "XPos"(): integer
 get "slotPosition"(): $Function<(integer), ($Pair<(integer), (integer)>)>
 get "YPos"(): integer
+set "XPos"(value: integer)
 set "inputFilter"(value: $BiPredicate$$Type<($ItemStack), (integer)>)
 set "onSlotChanged"(value: $BiConsumer$$Type<($ItemStack), (integer)>)
 set "slotLimit"(value: integer)
@@ -611,7 +613,6 @@ get "slotToColorRenderMap"(): $Map<(integer), ($Color)>
 get "slotVisiblePredicate"(): $Predicate<(integer)>
 set "slotVisiblePredicate"(value: $Predicate$$Type<(integer)>)
 set "slotPosition"(value: $Function$$Type<(integer), ($Pair$$Type<(integer), (integer)>)>)
-set "XPos"(value: integer)
 get "name"(): StringJS
 get "XSize"(): integer
 get "YSize"(): integer
@@ -640,47 +641,47 @@ import {$FluidTankComponent$Type, $FluidTankComponent$Type$$Type} from "com.hrzn
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$IScreenAddon} from "com.hrznstudio.titanium.api.client.IScreenAddon"
 import {$FluidTank} from "net.neoforged.neoforge.fluids.capability.templates.FluidTank"
-import {$Tag$$Type} from "net.minecraft.nbt.Tag"
 import {$IContainerAddonProvider$$Interface} from "com.hrznstudio.titanium.container.addon.IContainerAddonProvider"
 import {$IScreenAddonProvider$$Interface} from "com.hrznstudio.titanium.api.client.IScreenAddonProvider"
+import {$Tag, $Tag$$Type} from "net.minecraft.nbt.Tag"
 
 export class $FluidTankComponent<T extends $IComponentHarness> extends $FluidTank implements $IScreenAddonProvider$$Interface, $IContainerAddonProvider$$Interface, $INBTSerializable$$Interface<($CompoundTag)> {
 constructor(arg0: StringJS, arg1: integer, arg2: integer, arg3: integer)
 
 public "getScreenAddons"(): $List<($IFactory<($IScreenAddon)>)>
 public "getContainerAddons"(): $List<($IFactory<($IContainerAddon)>)>
-public "drainForced"(arg0: integer, arg1: $IFluidHandler$FluidAction$$Type): $FluidStack
 public "drainForced"(arg0: $FluidStack$$Type, arg1: $IFluidHandler$FluidAction$$Type): $FluidStack
-public "setFluidStack"(arg0: $FluidStack$$Type): void
+public "drainForced"(arg0: integer, arg1: $IFluidHandler$FluidAction$$Type): $FluidStack
 public "getPosX"(): integer
 public "getPosY"(): integer
 public "setComponentHarness"(arg0: T): $FluidTankComponent<(T)>
 public "getComponentHarness"(): T
-public "getTankAction"(): $FluidTankComponent$Action
+public "setFluidStack"(arg0: $FluidStack$$Type): void
 public "getTankType"(): $FluidTankComponent$Type
 public "setTankType"(arg0: $FluidTankComponent$Type$$Type): $FluidTankComponent<(T)>
 public "setOnContentChange"(arg0: $Runnable$$Type): $FluidTankComponent<(T)>
+public "getTankAction"(): $FluidTankComponent$Action
 public "fillForced"(arg0: $FluidStack$$Type, arg1: $IFluidHandler$FluidAction$$Type): integer
 public "setTankAction"(arg0: $FluidTankComponent$Action$$Type): $FluidTankComponent<(T)>
-public "drain"(arg0: $FluidStack$$Type, arg1: $IFluidHandler$FluidAction$$Type): $FluidStack
-public "drain"(arg0: integer, arg1: $IFluidHandler$FluidAction$$Type): $FluidStack
 public "getName"(): StringJS
 public "fill"(arg0: $FluidStack$$Type, arg1: $IFluidHandler$FluidAction$$Type): integer
+public "drain"(arg0: integer, arg1: $IFluidHandler$FluidAction$$Type): $FluidStack
+public "drain"(arg0: $FluidStack$$Type, arg1: $IFluidHandler$FluidAction$$Type): $FluidStack
 public "deserializeNBT"(arg0: $HolderLookup$Provider$$Type, arg1: $Tag$$Type): void
 public "deserializeNBT"(arg0: $HolderLookup$Provider$$Type, arg1: $CompoundTag$$Type): void
-public "serializeNBT"(arg0: $HolderLookup$Provider$$Type): $CompoundTag
+public "serializeNBT"(arg0: $HolderLookup$Provider$$Type): $Tag
 public "canInteract"(): boolean
 get "screenAddons"(): $List<($IFactory<($IScreenAddon)>)>
 get "containerAddons"(): $List<($IFactory<($IContainerAddon)>)>
-set "fluidStack"(value: $FluidStack$$Type)
 get "posX"(): integer
 get "posY"(): integer
 set "componentHarness"(value: T)
 get "componentHarness"(): T
-get "tankAction"(): $FluidTankComponent$Action
+set "fluidStack"(value: $FluidStack$$Type)
 get "tankType"(): $FluidTankComponent$Type
 set "tankType"(value: $FluidTankComponent$Type$$Type)
 set "onContentChange"(value: $Runnable$$Type)
+get "tankAction"(): $FluidTankComponent$Action
 set "tankAction"(value: $FluidTankComponent$Action$$Type)
 get "name"(): StringJS
 }
@@ -764,10 +765,10 @@ public "getTanks"(): integer
 public "getFluidInTank"(arg0: integer): $FluidStack
 public "getTankCapacity"(arg0: integer): integer
 public "isFluidValid"(arg0: integer, arg1: $FluidStack$$Type): boolean
-public "drain"(arg0: $FluidStack$$Type, arg1: $IFluidHandler$FluidAction$$Type): $FluidStack
-public "drain"(arg0: integer, arg1: $IFluidHandler$FluidAction$$Type): $FluidStack
 public "isEmpty"(): boolean
 public "fill"(arg0: $FluidStack$$Type, arg1: $IFluidHandler$FluidAction$$Type): integer
+public "drain"(arg0: integer, arg1: $IFluidHandler$FluidAction$$Type): $FluidStack
+public "drain"(arg0: $FluidStack$$Type, arg1: $IFluidHandler$FluidAction$$Type): $FluidStack
 get "tanks"(): integer
 get "empty"(): boolean
 }
@@ -805,9 +806,9 @@ export type $IFacingComponentHarness$$Type = ($IFacingComponentHarness);
  */
 export type $IFacingComponentHarness$$Original = $IFacingComponentHarness;}
 declare module "com.hrznstudio.titanium.component.progress.ProgressBarComponent$BarDirection" {
-import {$GuiGraphics$$Type} from "net.minecraft.client.gui.GuiGraphics"
-import {$Enum} from "java.lang.Enum"
 import {$IAssetProvider$$Type} from "com.hrznstudio.titanium.client.screen.asset.IAssetProvider"
+import {$Enum} from "java.lang.Enum"
+import {$GuiGraphics$$Type} from "net.minecraft.client.gui.GuiGraphics"
 import {$IComponentHarness} from "com.hrznstudio.titanium.component.IComponentHarness"
 import {$Screen$$Type} from "net.minecraft.client.gui.screens.Screen"
 import {$ProgressBarScreenAddon$$Type} from "com.hrznstudio.titanium.client.screen.addon.ProgressBarScreenAddon"

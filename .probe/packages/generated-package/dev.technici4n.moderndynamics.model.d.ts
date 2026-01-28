@@ -1,8 +1,8 @@
 declare module "dev.technici4n.moderndynamics.model.AttachmentModelData" {
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$Item, $Item$$Type} from "net.minecraft.world.item.Item"
-import {$RenderedAttachment$$Type} from "dev.technici4n.moderndynamics.attachment.RenderedAttachment"
 import {$Record} from "java.lang.Record"
+import {$RenderedAttachment$$Type} from "dev.technici4n.moderndynamics.attachment.RenderedAttachment"
 
 export class $AttachmentModelData extends $Record {
 constructor(modelId: StringJS, item: $Item$$Type)
@@ -20,7 +20,7 @@ public "write"(arg0: $CompoundTag$$Type): $CompoundTag
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $AttachmentModelData$$Type = ({"item"?: $Item$$Type, "modelId"?: StringJS}) | ([item?: $Item$$Type, modelId?: StringJS]);
+export type $AttachmentModelData$$Type = ({"modelId"?: StringJS, "item"?: $Item$$Type}) | ([modelId?: StringJS, item?: $Item$$Type]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */

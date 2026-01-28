@@ -10,11 +10,11 @@ static readonly "DEFAULT": $SpatialPylonBlockEntity$ClientState
 
 constructor(powered: boolean, online: boolean, axisPosition: $SpatialPylonBlockEntity$AxisPosition$$Type, axis: $Direction$Axis$$Type)
 
-public "writeToStream"(arg0: $FriendlyByteBuf$$Type): void
 public "online"(): boolean
+public "writeToStream"(arg0: $FriendlyByteBuf$$Type): void
 public static "readFromStream"(arg0: $FriendlyByteBuf$$Type): $SpatialPylonBlockEntity$ClientState
-public static "readFromNbt"(arg0: $CompoundTag$$Type): $SpatialPylonBlockEntity$ClientState
 public "writeToNbt"(arg0: $CompoundTag$$Type): void
+public static "readFromNbt"(arg0: $CompoundTag$$Type): $SpatialPylonBlockEntity$ClientState
 public "axisPosition"(): $SpatialPylonBlockEntity$AxisPosition
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
@@ -43,8 +43,8 @@ import {$Set} from "java.util.Set"
 import {$ModelData} from "net.neoforged.neoforge.client.model.data.ModelData"
 import {$SpatialPylonBlockEntity$ClientState} from "appeng.blockentity.spatial.SpatialPylonBlockEntity$ClientState"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$SpatialPylonCluster, $SpatialPylonCluster$$Type} from "appeng.me.cluster.implementations.SpatialPylonCluster"
+import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $SpatialPylonBlockEntity extends $AENetworkedBlockEntity implements $IAEMultiBlock$$Interface<($SpatialPylonCluster)> {
 static readonly "STATE": $ModelProperty<($SpatialPylonBlockEntity$ClientState)>
@@ -52,14 +52,14 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 
 constructor(arg0: $BlockEntityType$$Type<(never)>, arg1: $BlockPos$$Type, arg2: $BlockState$$Type)
 
-public "updateStatus"(arg0: $SpatialPylonCluster$$Type): void
-public "getClientState"(): $SpatialPylonBlockEntity$ClientState
 public "onChunkUnloaded"(): void
-public "onMainNodeStateChanged"(arg0: $IGridNodeListener$State$$Type): void
+public "getClientState"(): $SpatialPylonBlockEntity$ClientState
 public "getCluster"(): $SpatialPylonCluster
-public "onReady"(): void
+public "onMainNodeStateChanged"(arg0: $IGridNodeListener$State$$Type): void
 public "getGridConnectableSides"(arg0: $BlockOrientation$$Type): $Set<($Direction)>
+public "onReady"(): void
 public "recalculateDisplay"(): void
+public "updateStatus"(arg0: $SpatialPylonCluster$$Type): void
 public "isValid"(): boolean
 public "disconnect"(arg0: boolean): void
 public "setRemoved"(): void
@@ -85,8 +85,8 @@ export type $SpatialPylonBlockEntity$$Original = $SpatialPylonBlockEntity;}
 declare module "appeng.blockentity.spatial.SpatialAnchorBlockEntity" {
 import {$TickRateModulation} from "appeng.api.networking.ticking.TickRateModulation"
 import {$IGridTickable$$Interface} from "appeng.api.networking.ticking.IGridTickable"
-import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$IConfigurableObject$$Interface} from "appeng.api.util.IConfigurableObject"
+import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$IGridNodeListener$State$$Type} from "appeng.api.networking.IGridNodeListener$State"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$DimensionalBlockPos} from "appeng.api.util.DimensionalBlockPos"
@@ -103,8 +103,8 @@ import {$IConfigManager} from "appeng.api.util.IConfigManager"
 import {$Set} from "java.util.Set"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
-import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$TickingRequest} from "appeng.api.networking.ticking.TickingRequest"
+import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $SpatialAnchorBlockEntity extends $AENetworkedBlockEntity implements $IGridTickable$$Interface, $IConfigurableObject$$Interface, $IOverlayDataSource$$Interface {
 static readonly "ATTACHMENTS_NBT_KEY": StringJS

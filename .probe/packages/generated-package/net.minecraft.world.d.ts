@@ -55,9 +55,9 @@ export class $InteractionResultHolder<T> {
 constructor(arg0: $InteractionResult$$Type, arg1: T)
 
 public static "pass"<T>(arg0: T): $InteractionResultHolder<(T)>
-public static "consume"<T>(arg0: T): $InteractionResultHolder<(T)>
-public static "success"<T>(arg0: T): $InteractionResultHolder<(T)>
 public "getResult"(): $InteractionResult
+public static "success"<T>(arg0: T): $InteractionResultHolder<(T)>
+public static "consume"<T>(arg0: T): $InteractionResultHolder<(T)>
 public static "fail"<T>(arg0: T): $InteractionResultHolder<(T)>
 public "getObject"(): T
 public static "sidedSuccess"<T>(arg0: T, arg1: boolean): $InteractionResultHolder<(T)>
@@ -115,8 +115,8 @@ public "isSteppingForward"(): boolean
 public "setTickRate"(arg0: float): void
 public "setFrozen"(arg0: boolean): void
 public "setFrozenTicksToRun"(arg0: integer): void
-public "frozenTicksToRun"(): integer
 public "nanosecondsPerTick"(): long
+public "frozenTicksToRun"(): integer
 public "tick"(): void
 public "isFrozen"(): boolean
 public "runsNormally"(): boolean
@@ -153,10 +153,10 @@ public "getName"(): $Component
 public "setName"(arg0: $Component$$Type): void
 public "getId"(): $UUID
 public "shouldCreateWorldFog"(): boolean
+public "shouldDarkenScreen"(): boolean
 public "setOverlay"(arg0: $BossEvent$BossBarOverlay$$Type): void
 public "getColor"(): $BossEvent$BossBarColor
 public "getOverlay"(): $BossEvent$BossBarOverlay
-public "shouldDarkenScreen"(): boolean
 public "getProgress"(): float
 public "setProgress"(arg0: float): void
 public "shouldPlayBossMusic"(): boolean
@@ -375,8 +375,8 @@ import {$Predicate$$Type} from "java.util.function.Predicate"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$LithiumCooldownReceivingInventory$$Interface} from "net.caffeinemc.mods.lithium.api.inventory.LithiumCooldownReceivingInventory"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$Clearable$$Interface} from "net.minecraft.world.Clearable"
 import {$LevelBlock} from "dev.latvian.mods.kubejs.level.LevelBlock"
+import {$Clearable$$Interface} from "net.minecraft.world.Clearable"
 import {$ItemPredicate$$Type} from "dev.latvian.mods.kubejs.item.ItemPredicate"
 import {$LithiumTransferConditionInventory$$Interface} from "net.caffeinemc.mods.lithium.api.inventory.LithiumTransferConditionInventory"
 import {$Item$$Type} from "net.minecraft.world.item.Item"
@@ -517,10 +517,10 @@ public "getItems"(): $NonNullList<($ItemStack)>
 public "fillStackedContents"(arg0: $StackedContents$$Type): void
 public "removeItemType"(arg0: $Item$$Type, arg1: integer): $ItemStack
 public "canAddItem"(arg0: $ItemStack$$Type): boolean
+public "removeAllItems"(): $List<($ItemStack)>
+public "createTag"(arg0: $HolderLookup$Provider$$Type): $ListTag
 public "addItem"(arg0: $ItemStack$$Type): $ItemStack
 public "getItem"(arg0: integer): $ItemStack
-public "createTag"(arg0: $HolderLookup$Provider$$Type): $ListTag
-public "removeAllItems"(): $List<($ItemStack)>
 public "removeItem"(arg0: integer, arg1: integer): $ItemStack
 public "toString"(): StringJS
 public "isEmpty"(): boolean
@@ -597,8 +597,8 @@ export type $SimpleContainer$$Original = $SimpleContainer;}
 declare module "net.minecraft.world.RandomSequences" {
 import {$RandomSource} from "net.minecraft.util.RandomSource"
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$RandomSequence$$Type} from "net.minecraft.world.RandomSequence"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$BiConsumer$$Type} from "java.util.function.BiConsumer"
 import {$SavedData} from "net.minecraft.world.level.saveddata.SavedData"
 import {$SavedData$Factory} from "net.minecraft.world.level.saveddata.SavedData$Factory"
@@ -679,10 +679,10 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
-import {$Component} from "net.minecraft.network.chat.Component"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
+import {$Component} from "net.minecraft.network.chat.Component"
 
 export class $Difficulty extends $Enum<($Difficulty)> implements $StringRepresentable$$Interface {
 static readonly "EASY": $Difficulty
@@ -692,24 +692,24 @@ static readonly "HARD": $Difficulty
 static readonly "NORMAL": $Difficulty
 
 public "getInfo"(): $Component
+public "getDisplayName"(): $Component
 public static "values"(): ($Difficulty)[]
 public static "valueOf"(arg0: StringJS): $Difficulty
 public "getKey"(): StringJS
 public "getId"(): integer
-public "getDisplayName"(): $Component
 public static "byName"(arg0: StringJS): $Difficulty
 public "getSerializedName"(): StringJS
 public static "byId"(arg0: integer): $Difficulty
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "info"(): $Component
+get "displayName"(): $Component
 get "key"(): StringJS
 get "id"(): integer
-get "displayName"(): $Component
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
 }
@@ -757,11 +757,11 @@ import {$List} from "java.util.List"
 import {$Predicate$$Type} from "java.util.function.Predicate"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$LootTable, $LootTable$$Type} from "net.minecraft.world.level.storage.loot.LootTable"
-import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$Operation$$Type} from "com.llamalad7.mixinextras.injector.wrapoperation.Operation"
+import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
 import {$LevelBlock} from "dev.latvian.mods.kubejs.level.LevelBlock"
+import {$Operation$$Type} from "com.llamalad7.mixinextras.injector.wrapoperation.Operation"
 import {$Container, $Container$$Type, $Container$$Interface} from "net.minecraft.world.Container"
 import {$ItemPredicate$$Type} from "dev.latvian.mods.kubejs.item.ItemPredicate"
 import {$Item$$Type} from "net.minecraft.world.item.Item"
@@ -901,14 +901,14 @@ import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component
 export interface $Nameable$$Interface {
 
 (): $Component$$Type
-get "name"(): $Component
 get "displayName"(): $Component
+get "name"(): $Component
 get "customName"(): $Component
 }
 
 export class $Nameable implements $Nameable$$Interface {
- "getName"(): $Component
  "getDisplayName"(): $Component
+ "getName"(): $Component
  "hasCustomName"(): boolean
  "getCustomName"(): $Component
 }

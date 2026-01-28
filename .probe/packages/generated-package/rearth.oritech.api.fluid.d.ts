@@ -7,13 +7,13 @@ constructor()
 
 public "supportsExtraction"(): boolean
 public "supportsInsertion"(): boolean
-public "getCapacity"(): long
 public "update"(): void
 public "extract"(arg0: $FluidStack$$Type, arg1: boolean): long
 public "insert"(arg0: $FluidStack$$Type, arg1: boolean): long
 public "getContent"(): $List<($FluidStack)>
-get "capacity"(): long
+public "getCapacity"(): long
 get "content"(): $List<($FluidStack)>
+get "capacity"(): long
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_

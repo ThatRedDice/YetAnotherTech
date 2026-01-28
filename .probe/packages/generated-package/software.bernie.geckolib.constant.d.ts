@@ -11,13 +11,13 @@ static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($Seria
 
 constructor(arg0: StringJS, arg1: $Class$$Type<(D)>)
 
-public "streamCodec"(): $StreamCodec<($RegistryFriendlyByteBuf), (D)>
-public static "ofEnum"<E extends $Enum<(object)>>(arg0: $ResourceLocation$$Type, arg1: $Class$$Type<(E)>): $SerializableDataTicket<(E)>
+public static "ofInt"(arg0: $ResourceLocation$$Type): $SerializableDataTicket<(integer)>
 public static "ofDouble"(arg0: $ResourceLocation$$Type): $SerializableDataTicket<(double)>
 public static "ofFloat"(arg0: $ResourceLocation$$Type): $SerializableDataTicket<(float)>
-public static "ofBoolean"(arg0: $ResourceLocation$$Type): $SerializableDataTicket<(boolean)>
-public static "ofInt"(arg0: $ResourceLocation$$Type): $SerializableDataTicket<(integer)>
 public static "ofString"(arg0: $ResourceLocation$$Type): $SerializableDataTicket<(StringJS)>
+public "streamCodec"(): $StreamCodec<($RegistryFriendlyByteBuf), (D)>
+public static "ofEnum"<E extends $Enum<(object)>>(arg0: $ResourceLocation$$Type, arg1: $Class$$Type<(E)>): $SerializableDataTicket<(E)>
+public static "ofBoolean"(arg0: $ResourceLocation$$Type): $SerializableDataTicket<(boolean)>
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_

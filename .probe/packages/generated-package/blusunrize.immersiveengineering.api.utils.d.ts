@@ -3,15 +3,15 @@ export {} // Mark the file as a module, do not remove unless there are other imp
 export class $ComputerControlState {
 constructor()
 
-public "isAttached"(): boolean
 public "setOneRef"(): void
+public "isAttached"(): boolean
 public "addReference"(): void
 public "removeReference"(): void
 public "clear"(): void
 public "isEnabled"(): boolean
 public "setEnabled"(arg0: boolean): void
-get "attached"(): boolean
 get "oneRef"(): void
+get "attached"(): boolean
 get "enabled"(): boolean
 set "enabled"(value: boolean)
 }
@@ -62,8 +62,8 @@ declare module "blusunrize.immersiveengineering.api.utils.Color4" {
 import {$DyeColor$$Type} from "net.minecraft.world.item.DyeColor"
 import {$Tag, $Tag$$Type} from "net.minecraft.nbt.Tag"
 import {$Vector3f} from "org.joml.Vector3f"
-import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$DualCodec} from "malte0811.dualcodecs.DualCodec"
+import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$Record} from "java.lang.Record"
 
 export class $Color4 extends $Record {
@@ -74,8 +74,8 @@ constructor(arg0: integer, arg1: integer, arg2: integer, arg3: integer)
 constructor(r: float, g: float, b: float, a: float)
 
 public "toVector3f"(): $Vector3f
-public static "fromRGB"(arg0: integer): $Color4
 public static "fromARGB"(arg0: integer): $Color4
+public static "fromRGB"(arg0: integer): $Color4
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
@@ -122,10 +122,10 @@ import {$Supplier$$Interface} from "java.util.function.Supplier"
 
 export class $SetRestrictedField<T> implements $Supplier$$Interface<(T)> {
 public static "startInitializing"(arg0: boolean): void
+public static "common"<T>(): $SetRestrictedField<(T)>
 public static "lock"(arg0: boolean): void
 public "get"(): T
 public "setValue"(arg0: T): void
-public static "common"<T>(): $SetRestrictedField<(T)>
 public static "client"<T>(): $SetRestrictedField<(T)>
 public "isInitialized"(): boolean
 set "value"(value: T)

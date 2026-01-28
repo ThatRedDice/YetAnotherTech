@@ -6,7 +6,6 @@ import {$ArchitecturyFluidAttributes$$Type} from "dev.architectury.core.fluid.Ar
 import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
-import {$Holder} from "net.minecraft.core.Holder"
 
 export class $ArchitecturyFlowingFluid$Flowing extends $ArchitecturyFlowingFluid {
 static readonly "FLUID_STATE_REGISTRY": $IdMapper<($FluidState)>
@@ -17,7 +16,6 @@ constructor(attributes: $ArchitecturyFluidAttributes$$Type)
 
 public "isSource"(state: $FluidState$$Type): boolean
 public "getAmount"(state: $FluidState$$Type): integer
-public "asHolder"(): $Holder
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 public static "wrap"(o: any): $ReplacementMatch
 }
@@ -32,11 +30,11 @@ export type $ArchitecturyFlowingFluid$Flowing$$Type = ($ArchitecturyFlowingFluid
 export type $ArchitecturyFlowingFluid$Flowing$$Original = $ArchitecturyFlowingFluid$Flowing;}
 declare module "dev.architectury.core.fluid.ArchitecturyFluidAttributes" {
 import {$Rarity} from "net.minecraft.world.item.Rarity"
-import {$Component} from "net.minecraft.network.chat.Component"
 import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
+import {$Component} from "net.minecraft.network.chat.Component"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
-import {$Fluid} from "net.minecraft.world.level.material.Fluid"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
+import {$Fluid} from "net.minecraft.world.level.material.Fluid"
 import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$FluidStack$$Type} from "dev.architectury.fluid.FluidStack"
@@ -47,8 +45,6 @@ import {$LiquidBlock} from "net.minecraft.world.level.block.LiquidBlock"
 export interface $ArchitecturyFluidAttributes$$Interface {
 get "sourceFluid"(): $Fluid
 get "flowingFluid"(): $Fluid
-get "emptySound"(): $SoundEvent
-get "fillSound"(): $SoundEvent
 get "density"(): integer
 get "temperature"(): integer
 get "viscosity"(): integer
@@ -56,14 +52,16 @@ get "rarity"(): $Rarity
 get "lighterThanAir"(): boolean
 get "explosionResistance"(): float
 get "tickDelay"(): integer
-get "dropOff"(): integer
 get "slopeFindDistance"(): integer
+get "dropOff"(): integer
 get "overlayTexture"(): $ResourceLocation
 get "translationKey"(): StringJS
-get "bucketItem"(): $Item
-get "sourceTexture"(): $ResourceLocation
+get "emptySound"(): $SoundEvent
+get "fillSound"(): $SoundEvent
 get "flowingTexture"(): $ResourceLocation
 get "luminosity"(): integer
+get "bucketItem"(): $Item
+get "sourceTexture"(): $ResourceLocation
 get "block"(): $LiquidBlock
 get "name"(): $Component
 get "color"(): integer
@@ -72,60 +70,60 @@ get "color"(): integer
 export class $ArchitecturyFluidAttributes implements $ArchitecturyFluidAttributes$$Interface {
  "getSourceFluid"(): $Fluid
  "getFlowingFluid"(): $Fluid
- "getEmptySound"(): $SoundEvent
- "getEmptySound"(arg0: $FluidStack$$Type, arg1: $BlockAndTintGetter$$Type, arg2: $BlockPos$$Type): $SoundEvent
- "getEmptySound"(stack: $FluidStack$$Type): $SoundEvent
- "getFillSound"(stack: $FluidStack$$Type): $SoundEvent
- "getFillSound"(arg0: $FluidStack$$Type, arg1: $BlockAndTintGetter$$Type, arg2: $BlockPos$$Type): $SoundEvent
- "getFillSound"(): $SoundEvent
  "canConvertToSource"(): boolean
- "getDensity"(stack: $FluidStack$$Type): integer
  "getDensity"(arg0: $FluidStack$$Type, arg1: $BlockAndTintGetter$$Type, arg2: $BlockPos$$Type): integer
+ "getDensity"(stack: $FluidStack$$Type): integer
  "getDensity"(): integer
  "getTemperature"(stack: $FluidStack$$Type): integer
- "getTemperature"(arg0: $FluidStack$$Type, arg1: $BlockAndTintGetter$$Type, arg2: $BlockPos$$Type): integer
  "getTemperature"(): integer
+ "getTemperature"(arg0: $FluidStack$$Type, arg1: $BlockAndTintGetter$$Type, arg2: $BlockPos$$Type): integer
  "getViscosity"(): integer
- "getViscosity"(arg0: $FluidStack$$Type, arg1: $BlockAndTintGetter$$Type, arg2: $BlockPos$$Type): integer
  "getViscosity"(stack: $FluidStack$$Type): integer
+ "getViscosity"(arg0: $FluidStack$$Type, arg1: $BlockAndTintGetter$$Type, arg2: $BlockPos$$Type): integer
+ "getRarity"(arg0: $FluidStack$$Type, arg1: $BlockAndTintGetter$$Type, arg2: $BlockPos$$Type): $Rarity
  "getRarity"(stack: $FluidStack$$Type): $Rarity
  "getRarity"(): $Rarity
- "getRarity"(arg0: $FluidStack$$Type, arg1: $BlockAndTintGetter$$Type, arg2: $BlockPos$$Type): $Rarity
  "isLighterThanAir"(): boolean
  "isLighterThanAir"(arg0: $FluidStack$$Type, arg1: $BlockAndTintGetter$$Type, arg2: $BlockPos$$Type): boolean
  "isLighterThanAir"(stack: $FluidStack$$Type): boolean
  "getExplosionResistance"(): float
  "getTickDelay"(arg0: $LevelReader$$Type): integer
  "getTickDelay"(): integer
- "getDropOff"(arg0: $LevelReader$$Type): integer
- "getDropOff"(): integer
- "getSlopeFindDistance"(arg0: $LevelReader$$Type): integer
  "getSlopeFindDistance"(): integer
+ "getSlopeFindDistance"(arg0: $LevelReader$$Type): integer
+ "getDropOff"(): integer
+ "getDropOff"(arg0: $LevelReader$$Type): integer
  "getOverlayTexture"(): $ResourceLocation
  "getOverlayTexture"(stack: $FluidStack$$Type): $ResourceLocation
  "getOverlayTexture"(state: $FluidState$$Type, level: $BlockAndTintGetter$$Type, pos: $BlockPos$$Type): $ResourceLocation
- "getTranslationKey"(arg0: $FluidStack$$Type): StringJS
  "getTranslationKey"(): StringJS
- "getBucketItem"(): $Item
- "getSourceTexture"(): $ResourceLocation
- "getSourceTexture"(state: $FluidState$$Type, level: $BlockAndTintGetter$$Type, pos: $BlockPos$$Type): $ResourceLocation
-/**
- * 
- * @deprecated
- */
- "getSourceTexture"(arg0: $FluidStack$$Type, arg1: $BlockAndTintGetter$$Type, arg2: $BlockPos$$Type): $ResourceLocation
- "getSourceTexture"(stack: $FluidStack$$Type): $ResourceLocation
+ "getTranslationKey"(arg0: $FluidStack$$Type): StringJS
+ "getEmptySound"(stack: $FluidStack$$Type): $SoundEvent
+ "getEmptySound"(arg0: $FluidStack$$Type, arg1: $BlockAndTintGetter$$Type, arg2: $BlockPos$$Type): $SoundEvent
+ "getEmptySound"(): $SoundEvent
+ "getFillSound"(arg0: $FluidStack$$Type, arg1: $BlockAndTintGetter$$Type, arg2: $BlockPos$$Type): $SoundEvent
+ "getFillSound"(): $SoundEvent
+ "getFillSound"(stack: $FluidStack$$Type): $SoundEvent
+ "getFlowingTexture"(stack: $FluidStack$$Type): $ResourceLocation
+ "getFlowingTexture"(): $ResourceLocation
  "getFlowingTexture"(state: $FluidState$$Type, level: $BlockAndTintGetter$$Type, pos: $BlockPos$$Type): $ResourceLocation
 /**
  * 
  * @deprecated
  */
  "getFlowingTexture"(arg0: $FluidStack$$Type, arg1: $BlockAndTintGetter$$Type, arg2: $BlockPos$$Type): $ResourceLocation
- "getFlowingTexture"(stack: $FluidStack$$Type): $ResourceLocation
- "getFlowingTexture"(): $ResourceLocation
- "getLuminosity"(stack: $FluidStack$$Type): integer
- "getLuminosity"(arg0: $FluidStack$$Type, arg1: $BlockAndTintGetter$$Type, arg2: $BlockPos$$Type): integer
  "getLuminosity"(): integer
+ "getLuminosity"(arg0: $FluidStack$$Type, arg1: $BlockAndTintGetter$$Type, arg2: $BlockPos$$Type): integer
+ "getLuminosity"(stack: $FluidStack$$Type): integer
+ "getBucketItem"(): $Item
+/**
+ * 
+ * @deprecated
+ */
+ "getSourceTexture"(arg0: $FluidStack$$Type, arg1: $BlockAndTintGetter$$Type, arg2: $BlockPos$$Type): $ResourceLocation
+ "getSourceTexture"(state: $FluidState$$Type, level: $BlockAndTintGetter$$Type, pos: $BlockPos$$Type): $ResourceLocation
+ "getSourceTexture"(): $ResourceLocation
+ "getSourceTexture"(stack: $FluidStack$$Type): $ResourceLocation
  "getBlock"(): $LiquidBlock
  "getName"(stack: $FluidStack$$Type): $Component
  "getName"(): $Component
@@ -134,9 +132,9 @@ export class $ArchitecturyFluidAttributes implements $ArchitecturyFluidAttribute
  * @deprecated
  */
  "getColor"(arg0: $FluidStack$$Type, arg1: $BlockAndTintGetter$$Type, arg2: $BlockPos$$Type): integer
+ "getColor"(): integer
  "getColor"(stack: $FluidStack$$Type): integer
  "getColor"(state: $FluidState$$Type, level: $BlockAndTintGetter$$Type, pos: $BlockPos$$Type): integer
- "getColor"(): integer
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -173,7 +171,6 @@ import {$ArchitecturyFluidAttributes$$Type} from "dev.architectury.core.fluid.Ar
 import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
-import {$Holder} from "net.minecraft.core.Holder"
 
 export class $ArchitecturyFlowingFluid$Source extends $ArchitecturyFlowingFluid {
 static readonly "FLUID_STATE_REGISTRY": $IdMapper<($FluidState)>
@@ -184,7 +181,6 @@ constructor(attributes: $ArchitecturyFluidAttributes$$Type)
 
 public "isSource"(state: $FluidState$$Type): boolean
 public "getAmount"(state: $FluidState$$Type): integer
-public "asHolder"(): $Holder
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 public static "wrap"(o: any): $ReplacementMatch
 }
@@ -199,15 +195,14 @@ export type $ArchitecturyFlowingFluid$Source$$Type = ($ArchitecturyFlowingFluid$
 export type $ArchitecturyFlowingFluid$Source$$Original = $ArchitecturyFlowingFluid$Source;}
 declare module "dev.architectury.core.fluid.ArchitecturyFlowingFluid" {
 import {$ReplacementMatch} from "dev.latvian.mods.kubejs.recipe.match.ReplacementMatch"
-import {$Optional} from "java.util.Optional"
-import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
-import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
-import {$Holder} from "net.minecraft.core.Holder"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$Fluid, $Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
+import {$Optional} from "java.util.Optional"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
+import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
+import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
 import {$FluidState} from "net.minecraft.world.level.material.FluidState"
 import {$BaseFlowingFluid} from "net.neoforged.neoforge.fluids.BaseFlowingFluid"
 
@@ -222,7 +217,6 @@ public "isSame"(fluid: $Fluid$$Type): boolean
 public "getFlowing"(): $Fluid
 public "getSource"(): $Fluid
 public "getBucket"(): $Item
-public "asHolder"(): $Holder
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 public static "wrap"(o: any): $ReplacementMatch
 get "pickupSound"(): $Optional<($SoundEvent)>

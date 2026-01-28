@@ -1,8 +1,8 @@
 declare module "com.hlysine.create_connected.CCGuiTextures" {
 import {$ScreenElement$$Interface} from "net.createmod.catnip.gui.element.ScreenElement"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$GuiGraphics$$Type} from "net.minecraft.client.gui.GuiGraphics"
 import {$Enum} from "java.lang.Enum"
+import {$GuiGraphics$$Type} from "net.minecraft.client.gui.GuiGraphics"
 import {$Color$$Type} from "net.createmod.catnip.theme.Color"
 
 export class $CCGuiTextures extends $Enum<($CCGuiTextures)> implements $ScreenElement$$Interface {
@@ -19,11 +19,11 @@ readonly "startX": integer
 static readonly "SEQUENCER_INSTRUCTION": $CCGuiTextures
 readonly "height": integer
 
+public "bind"(): void
 public static "values"(): ($CCGuiTextures)[]
 public static "valueOf"(arg0: StringJS): $CCGuiTextures
-public "bind"(): void
-public "render"(arg0: $GuiGraphics$$Type, arg1: integer, arg2: integer, arg3: $Color$$Type): void
 public "render"(arg0: $GuiGraphics$$Type, arg1: integer, arg2: integer): void
+public "render"(arg0: $GuiGraphics$$Type, arg1: integer, arg2: integer, arg3: $Color$$Type): void
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_

@@ -50,18 +50,18 @@ import {$IGridService$$Interface} from "appeng.api.networking.IGridService"
 import {$ControllerState} from "appeng.api.networking.pathing.ControllerState"
 
 export interface $IPathingService$$Interface extends $IGridService$$Interface {
-get "channelMode"(): $ChannelMode
 get "networkBooting"(): boolean
 get "controllerState"(): $ControllerState
 get "usedChannels"(): integer
+get "channelMode"(): $ChannelMode
 }
 
 export class $IPathingService implements $IPathingService$$Interface {
- "getChannelMode"(): $ChannelMode
  "isNetworkBooting"(): boolean
  "getControllerState"(): $ControllerState
  "repath"(): void
  "getUsedChannels"(): integer
+ "getChannelMode"(): $ChannelMode
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_

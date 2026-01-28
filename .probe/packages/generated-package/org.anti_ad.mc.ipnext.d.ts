@@ -22,19 +22,19 @@ declare module "org.anti_ad.mc.ipnext.mixin.IMixinKeyBinding" {
 import {$InputConstants$Key} from "com.mojang.blaze3d.platform.InputConstants$Key"
 
 export interface $IMixinKeyBinding$$Interface {
+get "keyCode"(): $InputConstants$Key
+get "pressed"(): boolean
 get "timesPressed"(): integer
 set "pressed"(value: boolean)
 set "timesPressed"(value: integer)
-get "keyCode"(): $InputConstants$Key
-get "pressed"(): boolean
 }
 
 export class $IMixinKeyBinding implements $IMixinKeyBinding$$Interface {
+ "getKeyCode"(): $InputConstants$Key
+ "getPressed"(): boolean
  "getTimesPressed"(): integer
  "setPressed"(arg0: boolean): void
  "setTimesPressed"(arg0: integer): void
- "getKeyCode"(): $InputConstants$Key
- "getPressed"(): boolean
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_

@@ -1,10 +1,10 @@
 declare module "net.mehvahdjukaar.supplementaries.integration.neoforge.create.SpeakerBlockDisplayTarget" {
-import {$BlockEntityType} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$DisplayTargetStats} from "com.simibubi.create.content.redstone.displayLink.target.DisplayTargetStats"
-import {$List$$Type} from "java.util.List"
+import {$BlockEntityType} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$DisplayLinkContext$$Type} from "com.simibubi.create.content.redstone.displayLink.DisplayLinkContext"
-import {$Block} from "net.minecraft.world.level.block.Block"
+import {$List$$Type} from "java.util.List"
 import {$MutableComponent$$Type} from "net.minecraft.network.chat.MutableComponent"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$SimpleRegistry} from "com.simibubi.create.api.registry.SimpleRegistry"
 import {$DisplayTarget} from "com.simibubi.create.api.behaviour.display.DisplayTarget"
 
@@ -30,10 +30,10 @@ declare module "net.mehvahdjukaar.supplementaries.integration.neoforge.create.Fl
 import {$ModularGuiLineBuilder$$Type} from "com.simibubi.create.foundation.gui.ModularGuiLineBuilder"
 import {$DisplaySource} from "com.simibubi.create.api.behaviour.display.DisplaySource"
 import {$BlockEntityType} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$List} from "java.util.List"
 import {$DisplayLinkContext$$Type} from "com.simibubi.create.content.redstone.displayLink.DisplayLinkContext"
-import {$Block} from "net.minecraft.world.level.block.Block"
+import {$List} from "java.util.List"
 import {$MutableComponent} from "net.minecraft.network.chat.MutableComponent"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$PercentOrProgressBarDisplaySource} from "com.simibubi.create.content.redstone.displayLink.source.PercentOrProgressBarDisplaySource"
 import {$SimpleRegistry$Multi} from "com.simibubi.create.api.registry.SimpleRegistry$Multi"
 
@@ -58,12 +58,12 @@ export type $FluidFillLevelDisplaySource$$Type = ($FluidFillLevelDisplaySource);
  */
 export type $FluidFillLevelDisplaySource$$Original = $FluidFillLevelDisplaySource;}
 declare module "net.mehvahdjukaar.supplementaries.integration.neoforge.create.NoticeBoardDisplayTarget" {
-import {$BlockEntityType} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$DisplayTargetStats} from "com.simibubi.create.content.redstone.displayLink.target.DisplayTargetStats"
-import {$List$$Type} from "java.util.List"
+import {$BlockEntityType} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$DisplayLinkContext$$Type} from "com.simibubi.create.content.redstone.displayLink.DisplayLinkContext"
-import {$Block} from "net.minecraft.world.level.block.Block"
+import {$List$$Type} from "java.util.List"
 import {$MutableComponent$$Type} from "net.minecraft.network.chat.MutableComponent"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$SimpleRegistry} from "com.simibubi.create.api.registry.SimpleRegistry"
 import {$Component} from "net.minecraft.network.chat.Component"
 import {$DisplayTarget} from "com.simibubi.create.api.behaviour.display.DisplayTarget"
@@ -74,9 +74,9 @@ static readonly "BY_BLOCK": $SimpleRegistry<($Block), ($DisplayTarget)>
 
 constructor()
 
+public "getLineOptionText"(line: integer): $Component
 public "provideStats"(context: $DisplayLinkContext$$Type): $DisplayTargetStats
 public "acceptText"(line: integer, text: $List$$Type<($MutableComponent$$Type)>, context: $DisplayLinkContext$$Type): void
-public "getLineOptionText"(line: integer): $Component
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -92,8 +92,8 @@ import {$SingleLineDisplaySource} from "com.simibubi.create.content.redstone.dis
 import {$DisplaySource} from "com.simibubi.create.api.behaviour.display.DisplaySource"
 import {$BlockEntityType} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$List} from "java.util.List"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$MutableComponent} from "net.minecraft.network.chat.MutableComponent"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$SimpleRegistry$Multi} from "com.simibubi.create.api.registry.SimpleRegistry$Multi"
 
 export class $NoticeBoardDisplaySource extends $SingleLineDisplaySource {
@@ -116,12 +116,12 @@ export type $NoticeBoardDisplaySource$$Type = ($NoticeBoardDisplaySource);
  */
 export type $NoticeBoardDisplaySource$$Original = $NoticeBoardDisplaySource;}
 declare module "net.mehvahdjukaar.supplementaries.integration.neoforge.create.BlackboardDisplayTarget" {
-import {$BlockEntityType} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$DisplayTargetStats} from "com.simibubi.create.content.redstone.displayLink.target.DisplayTargetStats"
-import {$List$$Type} from "java.util.List"
+import {$BlockEntityType} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$DisplayLinkContext$$Type} from "com.simibubi.create.content.redstone.displayLink.DisplayLinkContext"
-import {$Block} from "net.minecraft.world.level.block.Block"
+import {$List$$Type} from "java.util.List"
 import {$MutableComponent$$Type} from "net.minecraft.network.chat.MutableComponent"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$SimpleRegistry} from "com.simibubi.create.api.registry.SimpleRegistry"
 import {$DisplayTarget} from "com.simibubi.create.api.behaviour.display.DisplayTarget"
 
@@ -147,8 +147,8 @@ declare module "net.mehvahdjukaar.supplementaries.integration.neoforge.create.Gl
 import {$SingleLineDisplaySource} from "com.simibubi.create.content.redstone.displayLink.source.SingleLineDisplaySource"
 import {$DisplaySource} from "com.simibubi.create.api.behaviour.display.DisplaySource"
 import {$BlockEntityType} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$MutableComponent} from "net.minecraft.network.chat.MutableComponent"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$SimpleRegistry$Multi} from "com.simibubi.create.api.registry.SimpleRegistry$Multi"
 
 export class $GlobeDisplaySource extends $SingleLineDisplaySource {
@@ -175,8 +175,8 @@ import {$SingleLineDisplaySource} from "com.simibubi.create.content.redstone.dis
 import {$DisplaySource} from "com.simibubi.create.api.behaviour.display.DisplaySource"
 import {$BlockEntityType} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$List} from "java.util.List"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$MutableComponent} from "net.minecraft.network.chat.MutableComponent"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$SimpleRegistry$Multi} from "com.simibubi.create.api.registry.SimpleRegistry$Multi"
 
 export class $ItemDisplayDisplaySource extends $SingleLineDisplaySource {
@@ -228,14 +228,14 @@ export type $PresentRecipientAttribute$Type$$Type = ($PresentRecipientAttribute$
  */
 export type $PresentRecipientAttribute$Type$$Original = $PresentRecipientAttribute$Type;}
 declare module "net.mehvahdjukaar.supplementaries.integration.neoforge.create.ClockDisplaySource" {
-import {$ModularGuiLineBuilder$$Type} from "com.simibubi.create.foundation.gui.ModularGuiLineBuilder"
 import {$SingleLineDisplaySource} from "com.simibubi.create.content.redstone.displayLink.source.SingleLineDisplaySource"
+import {$ModularGuiLineBuilder$$Type} from "com.simibubi.create.foundation.gui.ModularGuiLineBuilder"
 import {$DisplaySource} from "com.simibubi.create.api.behaviour.display.DisplaySource"
 import {$BlockEntityType} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$List} from "java.util.List"
 import {$DisplayLinkContext$$Type} from "com.simibubi.create.content.redstone.displayLink.DisplayLinkContext"
-import {$Block} from "net.minecraft.world.level.block.Block"
+import {$List} from "java.util.List"
 import {$MutableComponent} from "net.minecraft.network.chat.MutableComponent"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$SimpleRegistry$Multi} from "com.simibubi.create.api.registry.SimpleRegistry$Multi"
 
 export class $ClockDisplaySource extends $SingleLineDisplaySource {
@@ -260,12 +260,12 @@ export type $ClockDisplaySource$$Type = ($ClockDisplaySource);
  */
 export type $ClockDisplaySource$$Original = $ClockDisplaySource;}
 declare module "net.mehvahdjukaar.supplementaries.integration.neoforge.create.TextHolderDisplayTarget" {
-import {$BlockEntityType} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$DisplayTargetStats} from "com.simibubi.create.content.redstone.displayLink.target.DisplayTargetStats"
-import {$List$$Type} from "java.util.List"
+import {$BlockEntityType} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$DisplayLinkContext$$Type} from "com.simibubi.create.content.redstone.displayLink.DisplayLinkContext"
-import {$Block} from "net.minecraft.world.level.block.Block"
+import {$List$$Type} from "java.util.List"
 import {$MutableComponent$$Type} from "net.minecraft.network.chat.MutableComponent"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$SimpleRegistry} from "com.simibubi.create.api.registry.SimpleRegistry"
 import {$DisplayTarget} from "com.simibubi.create.api.behaviour.display.DisplayTarget"
 

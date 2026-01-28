@@ -4,8 +4,8 @@ import {$Map} from "java.util.Map"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Attribute} from "net.minecraft.world.entity.ai.attributes.Attribute"
-import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Holder} from "net.minecraft.core.Holder"
+import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$MobEffect$AttributeTemplate} from "net.minecraft.world.effect.MobEffect$AttributeTemplate"
 
 export class $WeavingMobEffect extends $MobEffect {
@@ -30,8 +30,8 @@ import {$InstantenousMobEffect} from "net.minecraft.world.effect.InstantenousMob
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Attribute} from "net.minecraft.world.entity.ai.attributes.Attribute"
-import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Holder} from "net.minecraft.core.Holder"
+import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$MobEffect$AttributeTemplate} from "net.minecraft.world.effect.MobEffect$AttributeTemplate"
 
 export class $SaturationMobEffect extends $InstantenousMobEffect {
@@ -56,8 +56,8 @@ import {$Codec} from "com.mojang.serialization.Codec"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Attribute} from "net.minecraft.world.entity.ai.attributes.Attribute"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Holder} from "net.minecraft.core.Holder"
+import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$MobEffect$AttributeTemplate} from "net.minecraft.world.effect.MobEffect$AttributeTemplate"
 
 export class $PoisonMobEffect extends $MobEffect {
@@ -83,8 +83,8 @@ import {$Map} from "java.util.Map"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Attribute} from "net.minecraft.world.entity.ai.attributes.Attribute"
-import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Holder} from "net.minecraft.core.Holder"
+import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$MobEffect$AttributeTemplate} from "net.minecraft.world.effect.MobEffect$AttributeTemplate"
 
 export class $BadOmenMobEffect extends $MobEffect {
@@ -108,8 +108,8 @@ import {$Map} from "java.util.Map"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Attribute} from "net.minecraft.world.entity.ai.attributes.Attribute"
-import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Holder} from "net.minecraft.core.Holder"
+import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$MobEffect$AttributeTemplate} from "net.minecraft.world.effect.MobEffect$AttributeTemplate"
 
 export class $OozingMobEffect extends $MobEffect {
@@ -133,8 +133,8 @@ import {$Map} from "java.util.Map"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Attribute} from "net.minecraft.world.entity.ai.attributes.Attribute"
-import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Holder} from "net.minecraft.core.Holder"
+import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$MobEffect$AttributeTemplate} from "net.minecraft.world.effect.MobEffect$AttributeTemplate"
 
 export class $WindChargedMobEffect extends $MobEffect {
@@ -158,8 +158,8 @@ import {$Map} from "java.util.Map"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Attribute} from "net.minecraft.world.entity.ai.attributes.Attribute"
-import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Holder} from "net.minecraft.core.Holder"
+import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$MobEffect$AttributeTemplate} from "net.minecraft.world.effect.MobEffect$AttributeTemplate"
 
 export class $InfestedMobEffect extends $MobEffect {
@@ -183,8 +183,8 @@ import {$Map} from "java.util.Map"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Attribute} from "net.minecraft.world.entity.ai.attributes.Attribute"
-import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Holder} from "net.minecraft.core.Holder"
+import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$MobEffect$AttributeTemplate} from "net.minecraft.world.effect.MobEffect$AttributeTemplate"
 
 export class $WitherMobEffect extends $MobEffect {
@@ -209,8 +209,8 @@ import {$Codec} from "com.mojang.serialization.Codec"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Attribute} from "net.minecraft.world.entity.ai.attributes.Attribute"
 import {$MobEffectCategory$$Type} from "net.minecraft.world.effect.MobEffectCategory"
-import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Holder} from "net.minecraft.core.Holder"
+import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$MobEffect$AttributeTemplate} from "net.minecraft.world.effect.MobEffect$AttributeTemplate"
 
 export class $InstantenousMobEffect extends $MobEffect {
@@ -239,8 +239,8 @@ import {$Map} from "java.util.Map"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Attribute} from "net.minecraft.world.entity.ai.attributes.Attribute"
-import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Holder} from "net.minecraft.core.Holder"
+import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$MobEffect$AttributeTemplate} from "net.minecraft.world.effect.MobEffect$AttributeTemplate"
 
 export class $RaidOmenMobEffect extends $MobEffect {
@@ -264,8 +264,8 @@ import {$Map} from "java.util.Map"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Attribute} from "net.minecraft.world.entity.ai.attributes.Attribute"
-import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Holder} from "net.minecraft.core.Holder"
+import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$MobEffect$AttributeTemplate} from "net.minecraft.world.effect.MobEffect$AttributeTemplate"
 
 export class $RegenerationMobEffect extends $MobEffect {
@@ -289,8 +289,8 @@ import {$Map} from "java.util.Map"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Attribute} from "net.minecraft.world.entity.ai.attributes.Attribute"
-import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Holder} from "net.minecraft.core.Holder"
+import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$MobEffect$AttributeTemplate} from "net.minecraft.world.effect.MobEffect$AttributeTemplate"
 
 export class $HungerMobEffect extends $MobEffect {
@@ -314,8 +314,8 @@ import {$Map} from "java.util.Map"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Attribute} from "net.minecraft.world.entity.ai.attributes.Attribute"
-import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Holder} from "net.minecraft.core.Holder"
+import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$MobEffect$AttributeTemplate} from "net.minecraft.world.effect.MobEffect$AttributeTemplate"
 
 export class $AbsorptionMobEffect extends $MobEffect {
@@ -344,8 +344,8 @@ export class $MobEffect$AttributeTemplate extends $Record {
 constructor(arg0: $ResourceLocation$$Type, arg1: double, arg2: $AttributeModifier$Operation$$Type)
 constructor(id: $ResourceLocation$$Type, amount: double, operation: $AttributeModifier$Operation$$Type, curve: $Int2DoubleFunction$$Type)
 
-public "amount"(): double
 public "curve"(): $Int2DoubleFunction
+public "amount"(): double
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
@@ -367,8 +367,8 @@ import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$MobEffectInstance$$Type} from "net.minecraft.world.effect.MobEffectInstance"
 import {$FeatureFlagSet, $FeatureFlagSet$$Type} from "net.minecraft.world.flag.FeatureFlagSet"
 import {$FeatureFlag$$Type} from "net.minecraft.world.flag.FeatureFlag"
-import {$Component} from "net.minecraft.network.chat.Component"
 import {$SoundEvent$$Type} from "net.minecraft.sounds.SoundEvent"
+import {$Component} from "net.minecraft.network.chat.Component"
 import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
 import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$EffectCure$$Type} from "net.neoforged.neoforge.common.EffectCure"
@@ -382,8 +382,8 @@ import {$Map} from "java.util.Map"
 import {$IMobEffectExtension$$Interface} from "net.neoforged.neoforge.common.extensions.IMobEffectExtension"
 import {$Entity$RemovalReason$$Type} from "net.minecraft.world.entity.Entity$RemovalReason"
 import {$Consumer$$Type} from "java.util.function.Consumer"
-import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
 import {$AttributeModifier$Operation$$Type} from "net.minecraft.world.entity.ai.attributes.AttributeModifier$Operation"
+import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$IClientMobEffectExtensions$$Type} from "net.neoforged.neoforge.client.extensions.common.IClientMobEffectExtensions"
 import {$BiConsumer$$Type} from "java.util.function.BiConsumer"
@@ -418,8 +418,8 @@ public "setBlendDuration"(arg0: integer): $MobEffect
 public "initializeClient"(arg0: $Consumer$$Type<($IClientMobEffectExtensions)>): void
 public "getDisplayName"(): $Component
 public "getCategory"(): $MobEffectCategory
-public "requiredFeatures"(...arg0: ($FeatureFlag$$Type)[]): $MobEffect
 public "requiredFeatures"(): $FeatureFlagSet
+public "requiredFeatures"(...arg0: ($FeatureFlag$$Type)[]): $MobEffect
 public "getDescriptionId"(): StringJS
 public "getColor"(): integer
 public "onMobRemoved"(arg0: $LivingEntity$$Type, arg1: integer, arg2: $Entity$RemovalReason$$Type): void
@@ -464,8 +464,8 @@ import {$InstantenousMobEffect} from "net.minecraft.world.effect.InstantenousMob
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Attribute} from "net.minecraft.world.entity.ai.attributes.Attribute"
-import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Holder} from "net.minecraft.core.Holder"
+import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$MobEffect$AttributeTemplate} from "net.minecraft.world.effect.MobEffect$AttributeTemplate"
 
 export class $HealOrHarmMobEffect extends $InstantenousMobEffect {
@@ -512,16 +512,16 @@ import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$Comparable$$Interface} from "java.lang.Comparable"
 import {$Runnable$$Type} from "java.lang.Runnable"
 import {$Entity$RemovalReason$$Type} from "net.minecraft.world.entity.Entity$RemovalReason"
-import {$MobEffect, $MobEffect$$Type} from "net.minecraft.world.effect.MobEffect"
 import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
+import {$MobEffect, $MobEffect$$Type} from "net.minecraft.world.effect.MobEffect"
 import {$EffectCure} from "net.neoforged.neoforge.common.EffectCure"
-import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
 import {$Codec} from "com.mojang.serialization.Codec"
+import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Int2IntFunction$$Type} from "it.unimi.dsi.fastutil.ints.Int2IntFunction"
-import {$Set} from "java.util.Set"
 import {$Tag} from "net.minecraft.nbt.Tag"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$Set} from "java.util.Set"
 import {$MobEffectInstanceAccessor$$Interface} from "com.simibubi.create.foundation.mixin.accessor.MobEffectInstanceAccessor"
 import {$ParticleOptions} from "net.minecraft.core.particles.ParticleOptions"
 

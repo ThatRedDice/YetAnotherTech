@@ -2,8 +2,8 @@ declare module "net.minecraft.resources.RegistryOps" {
 import {$DynamicOps$$Type} from "com.mojang.serialization.DynamicOps"
 import {$Optional} from "java.util.Optional"
 import {$DelegatingOps} from "net.minecraft.resources.DelegatingOps"
-import {$Dynamic, $Dynamic$$Type} from "com.mojang.serialization.Dynamic"
 import {$HolderLookup$RegistryLookup} from "net.minecraft.core.HolderLookup$RegistryLookup"
+import {$Dynamic, $Dynamic$$Type} from "com.mojang.serialization.Dynamic"
 import {$HolderOwner} from "net.minecraft.core.HolderOwner"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$HolderGetter} from "net.minecraft.core.HolderGetter"
@@ -22,12 +22,12 @@ public static "retrieveGetter"<E, O>(arg0: $ResourceKey$$Type<($Registry<(E)>)>)
 public static "retrieveRegistryLookup"<E>(arg0: $ResourceKey$$Type<($Registry<(E)>)>): $MapCodec<($HolderLookup$RegistryLookup<(E)>)>
 public static "retrieveElement"<E, O>(arg0: $ResourceKey$$Type<(E)>): $RecordCodecBuilder<(O), ($Holder$Reference<(E)>)>
 public "owo$infoGetter"(): $RegistryOps$RegistryInfoLookup
+public "getter"<E>(arg0: $ResourceKey$$Type<($Registry<(E)>)>): $Optional<($HolderGetter<(E)>)>
 public "equals"(arg0: any): boolean
 public "hashCode"(): integer
 public "owner"<E>(arg0: $ResourceKey$$Type<($Registry<(E)>)>): $Optional<($HolderOwner<(E)>)>
 public static "create"<T>(arg0: $DynamicOps$$Type<(T)>, arg1: $RegistryOps$RegistryInfoLookup$$Type): $RegistryOps<(T)>
 public static "create"<T>(arg0: $DynamicOps$$Type<(T)>, arg1: $HolderLookup$Provider$$Type): $RegistryOps<(T)>
-public "getter"<E>(arg0: $ResourceKey$$Type<($Registry<(E)>)>): $Optional<($HolderGetter<(E)>)>
 public "withParent"<U>(arg0: $DynamicOps$$Type<(U)>): $RegistryOps<(U)>
 public "lookupProvider"(): $RegistryOps$RegistryInfoLookup
 }
@@ -43,8 +43,8 @@ export type $RegistryOps$$Original<T> = $RegistryOps<(T)>;}
 declare module "net.minecraft.resources.DelegatingOps" {
 import {$Map$$Type} from "java.util.Map"
 import {$DynamicOps, $DynamicOps$$Type, $DynamicOps$$Interface} from "com.mojang.serialization.DynamicOps"
-import {$Pair, $Pair$$Type} from "com.mojang.datafixers.util.Pair"
 import {$DelegatingOpsAccessor$$Interface} from "io.wispforest.accessories.mixin.DelegatingOpsAccessor"
+import {$Pair, $Pair$$Type} from "com.mojang.datafixers.util.Pair"
 import {$IntStream, $IntStream$$Type} from "java.util.stream.IntStream"
 import {$List$$Type} from "java.util.List"
 import {$DataResult} from "com.mojang.serialization.DataResult"
@@ -63,18 +63,18 @@ import {$Stream, $Stream$$Type} from "java.util.stream.Stream"
 
 export class $DelegatingOps<T> implements $DynamicOps$$Interface<(T)>, $DelegatingOpsAccessor$$Interface, $ForwardingDynamicOpsAccessor$$Interface {
 public "owo$delegate"(): $DynamicOps
-public "getMap"(arg0: T): $DataResult<($MapLike<(T)>)>
+public "getStream"(arg0: T): $DataResult<($Stream<(T)>)>
+public "delegate"(): $DynamicOps
+public "createMap"(arg0: $Map$$Type<(T), (T)>): T
+public "createMap"(arg0: $Stream$$Type<($Pair$$Type<(T), (T)>)>): T
 public "createLong"(arg0: long): T
 public "createString"(arg0: StringJS): T
-public "delegate"(): $DynamicOps
-public "createMap"(arg0: $Stream$$Type<($Pair$$Type<(T), (T)>)>): T
-public "createMap"(arg0: $Map$$Type<(T), (T)>): T
-public "getStream"(arg0: T): $DataResult<($Stream<(T)>)>
 public "remove"(arg0: T, arg1: StringJS): T
 public "empty"(): T
 public "emptyList"(): T
 public "getByteBuffer"(arg0: T): $DataResult<($ByteBuffer)>
 public "emptyMap"(): T
+public "getMap"(arg0: T): $DataResult<($MapLike<(T)>)>
 public "getList"(arg0: T): $DataResult<($Consumer<($Consumer<(T)>)>)>
 public "createList"(arg0: $Stream$$Type<(T)>): T
 public "getBooleanValue"(arg0: T): $DataResult<(boolean)>
@@ -89,15 +89,15 @@ public "createShort"(arg0: short): T
 public "createInt"(arg0: integer): T
 public "createBoolean"(arg0: boolean): T
 public "createByte"(arg0: byte): T
+public "createIntList"(arg0: $IntStream$$Type): T
+public "getLongStream"(arg0: T): $DataResult<($LongStream)>
 public "createByteList"(arg0: $ByteBuffer$$Type): T
 public "getIntStream"(arg0: T): $DataResult<($IntStream)>
-public "createIntList"(arg0: $IntStream$$Type): T
 public "mergeToList"(arg0: T, arg1: $List$$Type<(T)>): $DataResult<(T)>
 public "mergeToList"(arg0: T, arg1: T): $DataResult<(T)>
-public "mergeToMap"(arg0: T, arg1: $MapLike$$Type<(T)>): $DataResult<(T)>
 public "mergeToMap"(arg0: T, arg1: T, arg2: T): $DataResult<(T)>
+public "mergeToMap"(arg0: T, arg1: $MapLike$$Type<(T)>): $DataResult<(T)>
 public "mergeToMap"(arg0: T, arg1: $Map$$Type<(T), (T)>): $DataResult<(T)>
-public "getLongStream"(arg0: T): $DataResult<($LongStream)>
 public "createLongList"(arg0: $LongStream$$Type): T
 public "listBuilder"(): $ListBuilder<(T)>
 public "createNumeric"(arg0: number): T
@@ -152,19 +152,19 @@ declare module "net.minecraft.resources.RegistryOps$RegistryInfo" {
 import {$HolderLookup$RegistryLookup$$Type} from "net.minecraft.core.HolderLookup$RegistryLookup"
 import {$Lifecycle, $Lifecycle$$Type} from "com.mojang.serialization.Lifecycle"
 import {$HolderOwner, $HolderOwner$$Type} from "net.minecraft.core.HolderOwner"
-import {$Record} from "java.lang.Record"
 import {$HolderGetter, $HolderGetter$$Type} from "net.minecraft.core.HolderGetter"
+import {$Record} from "java.lang.Record"
 
 export class $RegistryOps$RegistryInfo<T> extends $Record {
 constructor(owner: $HolderOwner$$Type<(T)>, getter: $HolderGetter$$Type<(T)>, elementsLifecycle: $Lifecycle$$Type)
 
 public "elementsLifecycle"(): $Lifecycle
 public static "fromRegistryLookup"<T>(arg0: $HolderLookup$RegistryLookup$$Type<(T)>): $RegistryOps$RegistryInfo<(T)>
+public "getter"(): $HolderGetter<(T)>
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
 public "owner"(): $HolderOwner<(T)>
-public "getter"(): $HolderGetter<(T)>
 get "ter"(): $HolderGetter<(T)>
 }
 /**
@@ -177,8 +177,8 @@ export type $RegistryOps$RegistryInfo$$Type<T> = ({"getter"?: $HolderGetter$$Typ
  */
 export type $RegistryOps$RegistryInfo$$Original<T> = $RegistryOps$RegistryInfo<(T)>;}
 declare module "net.minecraft.resources.ResourceLocation" {
-import {$SimpleCommandExceptionType} from "com.mojang.brigadier.exceptions.SimpleCommandExceptionType"
 import {$UnaryOperator$$Type} from "java.util.function.UnaryOperator"
+import {$SimpleCommandExceptionType} from "com.mojang.brigadier.exceptions.SimpleCommandExceptionType"
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$Comparable$$Interface} from "java.lang.Comparable"
@@ -253,8 +253,8 @@ declare module "net.minecraft.resources.FileToIdConverter" {
 import {$Map} from "java.util.Map"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$List} from "java.util.List"
-import {$ResourceManager$$Type} from "net.minecraft.server.packs.resources.ResourceManager"
 import {$Resource} from "net.minecraft.server.packs.resources.Resource"
+import {$ResourceManager$$Type} from "net.minecraft.server.packs.resources.ResourceManager"
 
 export class $FileToIdConverter {
 constructor(arg0: StringJS, arg1: StringJS)

@@ -22,13 +22,13 @@ export type $TableCraftingInput$$Type = ($TableCraftingInput);
 export type $TableCraftingInput$$Original = $TableCraftingInput;}
 declare module "com.blakebr0.extendedcrafting.api.crafting.ITableRecipe" {
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
-import {$Ingredient} from "net.minecraft.world.item.crafting.Ingredient"
 import {$Recipe$$Interface} from "net.minecraft.world.item.crafting.Recipe"
+import {$Ingredient} from "net.minecraft.world.item.crafting.Ingredient"
 import {$RecipeType} from "net.minecraft.world.item.crafting.RecipeType"
 import {$TableCraftingInput, $TableCraftingInput$$Type} from "com.blakebr0.extendedcrafting.api.TableCraftingInput"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
+import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 
 export interface $ITableRecipe$$Interface extends $Recipe$$Interface<($TableCraftingInput)> {
@@ -48,9 +48,9 @@ export class $ITableRecipe implements $ITableRecipe$$Interface {
  "assemble"(arg0: $TableCraftingInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
  "getRemainingItems"(arg0: $TableCraftingInput$$Type): $NonNullList<($ItemStack)>
  "getSerializer"(): $RecipeSerializer<(never)>
- "getIngredients"(): $NonNullList<($Ingredient)>
  "canCraftInDimensions"(arg0: integer, arg1: integer): boolean
  "getResultItem"(arg0: $HolderLookup$Provider$$Type): $ItemStack
+ "getIngredients"(): $NonNullList<($Ingredient)>
  "showNotification"(): boolean
  "getToastSymbol"(): $ItemStack
  "isIncomplete"(): boolean
@@ -71,12 +71,12 @@ export type $ITableRecipe$$Original = $ITableRecipe;}
 declare module "com.blakebr0.extendedcrafting.api.crafting.IEnderCrafterRecipe" {
 import {$CraftingInput, $CraftingInput$$Type} from "net.minecraft.world.item.crafting.CraftingInput"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
-import {$Ingredient} from "net.minecraft.world.item.crafting.Ingredient"
 import {$Recipe$$Interface} from "net.minecraft.world.item.crafting.Recipe"
+import {$Ingredient} from "net.minecraft.world.item.crafting.Ingredient"
 import {$RecipeType} from "net.minecraft.world.item.crafting.RecipeType"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
+import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 
 export interface $IEnderCrafterRecipe$$Interface extends $Recipe$$Interface<($CraftingInput)> {
@@ -95,9 +95,9 @@ export class $IEnderCrafterRecipe implements $IEnderCrafterRecipe$$Interface {
  "assemble"(arg0: $CraftingInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
  "getRemainingItems"(arg0: $CraftingInput$$Type): $NonNullList<($ItemStack)>
  "getSerializer"(): $RecipeSerializer<(never)>
- "getIngredients"(): $NonNullList<($Ingredient)>
  "canCraftInDimensions"(arg0: integer, arg1: integer): boolean
  "getResultItem"(arg0: $HolderLookup$Provider$$Type): $ItemStack
+ "getIngredients"(): $NonNullList<($Ingredient)>
  "showNotification"(): boolean
  "getToastSymbol"(): $ItemStack
  "isIncomplete"(): boolean
@@ -118,14 +118,14 @@ export type $IEnderCrafterRecipe$$Original = $IEnderCrafterRecipe;}
 declare module "com.blakebr0.extendedcrafting.api.crafting.ICombinationRecipe" {
 import {$CraftingInput, $CraftingInput$$Type} from "net.minecraft.world.item.crafting.CraftingInput"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
-import {$Ingredient} from "net.minecraft.world.item.crafting.Ingredient"
 import {$Recipe$$Interface} from "net.minecraft.world.item.crafting.Recipe"
+import {$Ingredient} from "net.minecraft.world.item.crafting.Ingredient"
 import {$List} from "java.util.List"
 import {$RecipeType} from "net.minecraft.world.item.crafting.RecipeType"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component} from "net.minecraft.network.chat.Component"
-import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
+import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 
 export interface $ICombinationRecipe$$Interface extends $Recipe$$Interface<($CraftingInput)> {
@@ -150,9 +150,9 @@ export class $ICombinationRecipe implements $ICombinationRecipe$$Interface {
  "assemble"(arg0: $CraftingInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
  "getRemainingItems"(arg0: $CraftingInput$$Type): $NonNullList<($ItemStack)>
  "getSerializer"(): $RecipeSerializer<(never)>
- "getIngredients"(): $NonNullList<($Ingredient)>
  "canCraftInDimensions"(arg0: integer, arg1: integer): boolean
  "getResultItem"(arg0: $HolderLookup$Provider$$Type): $ItemStack
+ "getIngredients"(): $NonNullList<($Ingredient)>
  "showNotification"(): boolean
  "getToastSymbol"(): $ItemStack
  "isIncomplete"(): boolean
@@ -173,12 +173,12 @@ export type $ICombinationRecipe$$Original = $ICombinationRecipe;}
 declare module "com.blakebr0.extendedcrafting.api.crafting.ICompressorRecipe" {
 import {$CraftingInput, $CraftingInput$$Type} from "net.minecraft.world.item.crafting.CraftingInput"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
-import {$Ingredient} from "net.minecraft.world.item.crafting.Ingredient"
 import {$Recipe$$Interface} from "net.minecraft.world.item.crafting.Recipe"
+import {$Ingredient} from "net.minecraft.world.item.crafting.Ingredient"
 import {$RecipeType} from "net.minecraft.world.item.crafting.RecipeType"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
+import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 
 export interface $ICompressorRecipe$$Interface extends $Recipe$$Interface<($CraftingInput)> {
@@ -202,9 +202,9 @@ export class $ICompressorRecipe implements $ICompressorRecipe$$Interface {
  "assemble"(arg0: $CraftingInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
  "getRemainingItems"(arg0: $CraftingInput$$Type): $NonNullList<($ItemStack)>
  "getSerializer"(): $RecipeSerializer<(never)>
- "getIngredients"(): $NonNullList<($Ingredient)>
  "canCraftInDimensions"(arg0: integer, arg1: integer): boolean
  "getResultItem"(arg0: $HolderLookup$Provider$$Type): $ItemStack
+ "getIngredients"(): $NonNullList<($Ingredient)>
  "showNotification"(): boolean
  "getToastSymbol"(): $ItemStack
  "isIncomplete"(): boolean
@@ -225,12 +225,12 @@ export type $ICompressorRecipe$$Original = $ICompressorRecipe;}
 declare module "com.blakebr0.extendedcrafting.api.crafting.IFluxCrafterRecipe" {
 import {$CraftingInput, $CraftingInput$$Type} from "net.minecraft.world.item.crafting.CraftingInput"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
-import {$Ingredient} from "net.minecraft.world.item.crafting.Ingredient"
 import {$Recipe$$Interface} from "net.minecraft.world.item.crafting.Recipe"
+import {$Ingredient} from "net.minecraft.world.item.crafting.Ingredient"
 import {$RecipeType} from "net.minecraft.world.item.crafting.RecipeType"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
+import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 
 export interface $IFluxCrafterRecipe$$Interface extends $Recipe$$Interface<($CraftingInput)> {
@@ -251,9 +251,9 @@ export class $IFluxCrafterRecipe implements $IFluxCrafterRecipe$$Interface {
  "assemble"(arg0: $CraftingInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
  "getRemainingItems"(arg0: $CraftingInput$$Type): $NonNullList<($ItemStack)>
  "getSerializer"(): $RecipeSerializer<(never)>
- "getIngredients"(): $NonNullList<($Ingredient)>
  "canCraftInDimensions"(arg0: integer, arg1: integer): boolean
  "getResultItem"(arg0: $HolderLookup$Provider$$Type): $ItemStack
+ "getIngredients"(): $NonNullList<($Ingredient)>
  "showNotification"(): boolean
  "getToastSymbol"(): $ItemStack
  "isIncomplete"(): boolean

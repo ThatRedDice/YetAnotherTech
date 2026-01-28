@@ -20,15 +20,15 @@ public "side"(): $RelativeBlockFace
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $CapabilityPosition$$Type = ({"side"?: $RelativeBlockFace$$Type, "posInMultiblock"?: $BlockPos$$Type}) | ([side?: $RelativeBlockFace$$Type, posInMultiblock?: $BlockPos$$Type]);
+export type $CapabilityPosition$$Type = ({"posInMultiblock"?: $BlockPos$$Type, "side"?: $RelativeBlockFace$$Type}) | ([posInMultiblock?: $BlockPos$$Type, side?: $RelativeBlockFace$$Type]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
 export type $CapabilityPosition$$Original = $CapabilityPosition;}
 declare module "blusunrize.immersiveengineering.api.multiblocks.blocks.env.IMultiblockBEHelperMaster$Factory" {
 import {$MultiblockRegistration, $MultiblockRegistration$$Type} from "blusunrize.immersiveengineering.api.multiblocks.blocks.MultiblockRegistration"
-import {$MultiblockBlockEntityMaster, $MultiblockBlockEntityMaster$$Type} from "blusunrize.immersiveengineering.api.multiblocks.blocks.registry.MultiblockBlockEntityMaster"
 import {$IMultiblockBEHelperMaster, $IMultiblockBEHelperMaster$$Type} from "blusunrize.immersiveengineering.api.multiblocks.blocks.env.IMultiblockBEHelperMaster"
+import {$MultiblockBlockEntityMaster, $MultiblockBlockEntityMaster$$Type} from "blusunrize.immersiveengineering.api.multiblocks.blocks.registry.MultiblockBlockEntityMaster"
 import {$IMultiblockState} from "blusunrize.immersiveengineering.api.multiblocks.blocks.logic.IMultiblockState"
 
 export interface $IMultiblockBEHelperMaster$Factory$$Interface {
@@ -51,13 +51,13 @@ export type $IMultiblockBEHelperMaster$Factory$$Original = $IMultiblockBEHelperM
 declare module "blusunrize.immersiveengineering.api.multiblocks.blocks.component.IMultiblockComponent" {
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
+import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$IMultiblockComponent$CapabilityRegistrar$$Type} from "blusunrize.immersiveengineering.api.multiblocks.blocks.component.IMultiblockComponent$CapabilityRegistrar"
 import {$ItemInteractionResult} from "net.minecraft.world.ItemInteractionResult"
-import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$IMultiblockContext$$Type} from "blusunrize.immersiveengineering.api.multiblocks.blocks.env.IMultiblockContext"
-import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 
 export interface $IMultiblockComponent$$Interface<State> {
@@ -66,8 +66,8 @@ export interface $IMultiblockComponent$$Interface<State> {
 export class $IMultiblockComponent<State> implements $IMultiblockComponent$$Interface {
  "click"(arg0: $IMultiblockContext$$Type<(State)>, arg1: $BlockPos$$Type, arg2: $Player$$Type, arg3: $InteractionHand$$Type, arg4: $BlockHitResult$$Type, arg5: boolean): $ItemInteractionResult
  "onEntityCollision"(arg0: $IMultiblockContext$$Type<(State)>, arg1: $BlockPos$$Type, arg2: $Entity$$Type): void
- "onRemoved"(arg0: $IMultiblockContext$$Type<(State)>): void
  "dropExtraItems"(arg0: State, arg1: $Consumer$$Type<($ItemStack)>): void
+ "onRemoved"(arg0: $IMultiblockContext$$Type<(State)>): void
  "registerCapabilities"(arg0: $IMultiblockComponent$CapabilityRegistrar$$Type<(State)>): void
 }
 /**
@@ -90,19 +90,19 @@ import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
-import {$IMultiblockState} from "blusunrize.immersiveengineering.api.multiblocks.blocks.logic.IMultiblockState"
 import {$HitResult$$Type} from "net.minecraft.world.phys.HitResult"
+import {$IMultiblockState} from "blusunrize.immersiveengineering.api.multiblocks.blocks.logic.IMultiblockState"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$ItemInteractionResult} from "net.minecraft.world.ItemInteractionResult"
@@ -142,8 +142,8 @@ public "getCloneItemStack"(arg0: $BlockState$$Type, arg1: $HitResult$$Type, arg2
 public "getCollisionShape"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $CollisionContext$$Type): $VoxelShape
 public "entityInside"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): void
 public "onRemove"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: boolean): void
-public "neighborChanged"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Block$$Type, arg4: $BlockPos$$Type, arg5: boolean): void
 public "hasAnalogOutputSignal"(arg0: $BlockState$$Type): boolean
+public "neighborChanged"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Block$$Type, arg4: $BlockPos$$Type, arg5: boolean): void
 public "getListener"<T extends $BlockEntity>(arg0: $ServerLevel$$Type, arg1: T): $GameEventListener
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 }
@@ -171,8 +171,8 @@ import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$IModelOffsetProvider$$Interface} from "blusunrize.immersiveengineering.api.client.IModelOffsetProvider"
 import {$Connection$$Type} from "net.minecraft.network.Connection"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
-import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$IMultiblockBEHelperDummy} from "blusunrize.immersiveengineering.api.multiblocks.blocks.env.IMultiblockBEHelperDummy"
+import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $MultiblockBlockEntityDummy<State extends $IMultiblockState> extends $BlockEntity implements $IModelOffsetProvider$$Interface, $IMultiblockBE$$Interface<(State)> {
 static readonly "ATTACHMENTS_NBT_KEY": StringJS
@@ -199,8 +199,8 @@ export type $MultiblockBlockEntityDummy$$Type<State> = ($MultiblockBlockEntityDu
 export type $MultiblockBlockEntityDummy$$Original<State> = $MultiblockBlockEntityDummy<(State)>;}
 declare module "blusunrize.immersiveengineering.api.multiblocks.blocks.registry.MultiblockPartBlock$WithMirrorState" {
 import {$MultiblockRegistration$$Type} from "blusunrize.immersiveengineering.api.multiblocks.blocks.MultiblockRegistration"
-import {$MultiblockPartBlock} from "blusunrize.immersiveengineering.api.multiblocks.blocks.registry.MultiblockPartBlock"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
+import {$MultiblockPartBlock} from "blusunrize.immersiveengineering.api.multiblocks.blocks.registry.MultiblockPartBlock"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$IMultiblockState} from "blusunrize.immersiveengineering.api.multiblocks.blocks.logic.IMultiblockState"
@@ -247,8 +247,8 @@ declare module "blusunrize.immersiveengineering.api.multiblocks.blocks.Multibloc
 import {$MultiblockRegistration, $MultiblockRegistration$$Type} from "blusunrize.immersiveengineering.api.multiblocks.blocks.MultiblockRegistration"
 import {$MultiblockPartBlock$$Type} from "blusunrize.immersiveengineering.api.multiblocks.blocks.registry.MultiblockPartBlock"
 import {$Block$$Type} from "net.minecraft.world.level.block.Block"
-import {$IMultiblockState} from "blusunrize.immersiveengineering.api.multiblocks.blocks.logic.IMultiblockState"
 import {$IMultiblockLogic$$Type} from "blusunrize.immersiveengineering.api.multiblocks.blocks.logic.IMultiblockLogic"
+import {$IMultiblockState} from "blusunrize.immersiveengineering.api.multiblocks.blocks.logic.IMultiblockState"
 import {$IMultiblockComponent, $IMultiblockComponent$$Type} from "blusunrize.immersiveengineering.api.multiblocks.blocks.component.IMultiblockComponent"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$Consumer$$Type} from "java.util.function.Consumer"
@@ -296,8 +296,8 @@ export type $MultiblockRegistrationBuilder$$Type<State, Self> = ($MultiblockRegi
 export type $MultiblockRegistrationBuilder$$Original<State, Self> = $MultiblockRegistrationBuilder<(State), (Self)>;}
 declare module "blusunrize.immersiveengineering.api.multiblocks.blocks.component.IMultiblockComponent$CapabilityRegistrar" {
 import {$BlockCapability, $BlockCapability$$Type} from "net.neoforged.neoforge.capabilities.BlockCapability"
-import {$CapabilityPosition$$Type} from "blusunrize.immersiveengineering.api.multiblocks.blocks.util.CapabilityPosition"
 import {$Function$$Type} from "java.util.function.Function"
+import {$CapabilityPosition$$Type} from "blusunrize.immersiveengineering.api.multiblocks.blocks.util.CapabilityPosition"
 import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
 import {$IMultiblockComponent$CapabilityGetter, $IMultiblockComponent$CapabilityGetter$$Type} from "blusunrize.immersiveengineering.api.multiblocks.blocks.component.IMultiblockComponent$CapabilityGetter"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
@@ -360,8 +360,8 @@ static readonly "RIGHT": $RelativeBlockFace
 static readonly "UP": $RelativeBlockFace
 static readonly "HORIZONTAL": ($RelativeBlockFace)[]
 
-public "offsetRelative"(arg0: $BlockPos$$Type, arg1: integer): $BlockPos
 public "forFront"(arg0: $MultiblockOrientation$$Type): $Direction
+public "offsetRelative"(arg0: $BlockPos$$Type, arg1: integer): $BlockPos
 public static "values"(): ($RelativeBlockFace)[]
 public static "valueOf"(arg0: StringJS): $RelativeBlockFace
 public static "from"(arg0: $MultiblockOrientation$$Type, arg1: $Direction$$Type): $RelativeBlockFace
@@ -380,8 +380,8 @@ export type $RelativeBlockFace$$Original = $RelativeBlockFace;}
 declare module "blusunrize.immersiveengineering.api.multiblocks.MultiblockHandler$IMultiblock" {
 import {$ClientMultiblocks$MultiblockManualData$$Type} from "blusunrize.immersiveengineering.api.multiblocks.ClientMultiblocks$MultiblockManualData"
 import {$List} from "java.util.List"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component} from "net.minecraft.network.chat.Component"
 import {$Consumer$$Type} from "java.util.function.Consumer"
@@ -407,8 +407,8 @@ export class $MultiblockHandler$IMultiblock implements $MultiblockHandler$IMulti
  "isBlockTrigger"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $Level$$Type): boolean
  "createStructure"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $Direction$$Type, arg3: $Player$$Type): boolean
  "getBlock"(): $Block
- "getSize"(arg0: $Level$$Type): $Vec3i
  "getDisplayName"(): $Component
+ "getSize"(arg0: $Level$$Type): $Vec3i
  "disassemble"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: boolean, arg3: $Direction$$Type): void
  "getUniqueName"(): $ResourceLocation
  "getStructure"(arg0: $Level$$Type): $List<($StructureTemplate$StructureBlockInfo)>
@@ -445,8 +445,8 @@ export type $MultiblockRegistration$Disassembler$$Type = ((arg0: $Level, arg1: $
  */
 export type $MultiblockRegistration$Disassembler$$Original = $MultiblockRegistration$Disassembler;}
 declare module "blusunrize.immersiveengineering.api.multiblocks.ClientMultiblocks$MultiblockManualData" {
-import {$MultiBufferSource$$Type} from "net.minecraft.client.renderer.MultiBufferSource"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
+import {$MultiBufferSource$$Type} from "net.minecraft.client.renderer.MultiBufferSource"
 import {$PoseStack$$Type} from "com.mojang.blaze3d.vertex.PoseStack"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
 
@@ -536,8 +536,8 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 
 constructor(arg0: $BlockEntityType$$Type<(never)>, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $MultiblockRegistration$$Type<(State)>)
 
-public "loadAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "getUpdatePacket"(): $Packet<($ClientGamePacketListener)>
+public "loadAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "getUpdateTag"(arg0: $HolderLookup$Provider$$Type): $CompoundTag
 public "onDataPacket"(arg0: $Connection$$Type, arg1: $ClientboundBlockEntityDataPacket$$Type, arg2: $HolderLookup$Provider$$Type): void
 public "handleUpdateTag"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
@@ -610,13 +610,13 @@ import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
-import {$IMultiblockContext} from "blusunrize.immersiveengineering.api.multiblocks.blocks.env.IMultiblockContext"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
+import {$IMultiblockContext} from "blusunrize.immersiveengineering.api.multiblocks.blocks.env.IMultiblockContext"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$IMultiblockState} from "blusunrize.immersiveengineering.api.multiblocks.blocks.logic.IMultiblockState"
 import {$ShapeType$$Type} from "blusunrize.immersiveengineering.api.multiblocks.blocks.util.ShapeType"
-import {$ClientGamePacketListener} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$ClientGamePacketListener} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ItemInteractionResult} from "net.minecraft.world.ItemInteractionResult"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
@@ -628,17 +628,16 @@ import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 
 export interface $IMultiblockBEHelper$$Interface<State extends $IMultiblockState> {
-get "comparatorValue"(): integer
 get "multiblock"(): $MultiblockRegistration<(State)>
 get "updatePacket"(): $Packet<($ClientGamePacketListener)>
 get "pickBlock"(): $ItemStack
 get "positionInMB"(): $BlockPos
+get "comparatorValue"(): integer
 get "context"(): $IMultiblockContext<(State)>
 get "state"(): State
 }
 
 export class $IMultiblockBEHelper<State extends $IMultiblockState> implements $IMultiblockBEHelper$$Interface {
- "getComparatorValue"(): integer
  "getMultiblock"(): $MultiblockRegistration<(State)>
  "getUpdatePacket"(): $Packet<($ClientGamePacketListener)>
  "saveAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
@@ -647,13 +646,14 @@ export class $IMultiblockBEHelper<State extends $IMultiblockState> implements $I
  "handleUpdateTag"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
  "getOriginalBlock"(arg0: $Level$$Type): $BlockState
  "click"(arg0: $Player$$Type, arg1: $InteractionHand$$Type, arg2: $BlockHitResult$$Type): $ItemInteractionResult
- "onNeighborChanged"(arg0: $BlockPos$$Type): void
- "getPickBlock"(): $ItemStack
  "onEntityCollided"(arg0: $Entity$$Type): void
+ "getPickBlock"(): $ItemStack
  "markDisassembling"(): void
- "getPositionInMB"(): $BlockPos
  "getCapabilityPosition"(arg0: $Direction$$Type): $CapabilityPosition
+ "getPositionInMB"(): $BlockPos
  "getRedstoneInput"(arg0: $RelativeBlockFace$$Type): integer
+ "getComparatorValue"(): integer
+ "onNeighborChanged"(arg0: $BlockPos$$Type): void
  "getShape"(arg0: $CollisionContext$$Type, arg1: $ShapeType$$Type): $VoxelShape
  "load"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
  "getContext"(): $IMultiblockContext<(State)>
@@ -692,9 +692,9 @@ import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$StructureTemplate, $StructureTemplate$$Type} from "net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$TemplateMultiblock$TemplateData} from "blusunrize.immersiveengineering.api.multiblocks.TemplateMultiblock$TemplateData"
+import {$MultiblockHandler$IMultiblock$$Interface} from "blusunrize.immersiveengineering.api.multiblocks.MultiblockHandler$IMultiblock"
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
 import {$TagKey$$Type} from "net.minecraft.tags.TagKey"
-import {$MultiblockHandler$IMultiblock$$Interface} from "blusunrize.immersiveengineering.api.multiblocks.MultiblockHandler$IMultiblock"
 
 export class $TemplateMultiblock implements $MultiblockHandler$IMultiblock$$Interface {
 static readonly "SYNCED_CLIENT_TEMPLATES": $Map<($ResourceLocation), ($StructureTemplate)>
@@ -772,10 +772,10 @@ import {$MultiblockRegistration$ExtraComponent, $MultiblockRegistration$ExtraCom
 import {$Vec3i, $Vec3i$$Type} from "net.minecraft.core.Vec3i"
 import {$MultiblockBlockEntityMaster, $MultiblockBlockEntityMaster$$Type} from "blusunrize.immersiveengineering.api.multiblocks.blocks.registry.MultiblockBlockEntityMaster"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
-import {$MultiblockBlockEntityDummy, $MultiblockBlockEntityDummy$$Type} from "blusunrize.immersiveengineering.api.multiblocks.blocks.registry.MultiblockBlockEntityDummy"
 import {$BlockEntityType, $BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$Function, $Function$$Type} from "java.util.function.Function"
+import {$MultiblockBlockEntityDummy, $MultiblockBlockEntityDummy$$Type} from "blusunrize.immersiveengineering.api.multiblocks.blocks.registry.MultiblockBlockEntityDummy"
 import {$Supplier, $Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StructureTemplate$StructureBlockInfo, $StructureTemplate$StructureBlockInfo$$Type} from "net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate$StructureBlockInfo"
 import {$Item, $Item$$Type} from "net.minecraft.world.item.Item"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
@@ -784,7 +784,6 @@ import {$Record} from "java.lang.Record"
 export class $MultiblockRegistration<State extends $IMultiblockState> extends $Record {
 constructor(logic: $IMultiblockLogic$$Type<(State)>, extraComponents: $List$$Type<($MultiblockRegistration$ExtraComponent$$Type<(State), (never)>)>, masterBE: $Supplier$$Type<($BlockEntityType$$Type<($MultiblockBlockEntityMaster$$Type<(State)>)>)>, dummyBE: $Supplier$$Type<($BlockEntityType$$Type<($MultiblockBlockEntityDummy$$Type<(State)>)>)>, block: $Supplier$$Type<($MultiblockPartBlock$$Type<(State)>)>, blockItem: $Supplier$$Type<($Item$$Type)>, mirrorable: boolean, hasComparatorOutput: boolean, redstoneInputAware: boolean, postProcessesShape: boolean, getMasterPosInMB: $Supplier$$Type<($BlockPos$$Type)>, getSize: $Function$$Type<($Level), ($Vec3i$$Type)>, disassemble: $MultiblockRegistration$Disassembler$$Type, getStructure: $Function$$Type<($Level), ($List$$Type<($StructureTemplate$StructureBlockInfo$$Type)>)>, id: $ResourceLocation$$Type)
 
-public "logic"(): $IMultiblockLogic<(State)>
 public "iconStack"(): $ItemStack
 public "blockItem"(): $Supplier<($Item)>
 public "masterBE"(): $Supplier<($BlockEntityType<($MultiblockBlockEntityMaster<(State)>)>)>
@@ -796,6 +795,7 @@ public "mirrorable"(): boolean
 public "extraComponents"(): $List<($MultiblockRegistration$ExtraComponent<(State), (never)>)>
 public "redstoneInputAware"(): boolean
 public "getMasterPosInMB"(): $Supplier<($BlockPos)>
+public "logic"(): $IMultiblockLogic<(State)>
 public "size"(arg0: $Level$$Type): $Vec3i
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
@@ -812,7 +812,7 @@ get "structure"(): $Function<($Level), ($List<($StructureTemplate$StructureBlock
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $MultiblockRegistration$$Type<State> = ({"masterBE"?: $Supplier$$Type<($BlockEntityType$$Type<($MultiblockBlockEntityMaster$$Type<(State)>)>)>, "redstoneInputAware"?: boolean, "dummyBE"?: $Supplier$$Type<($BlockEntityType$$Type<($MultiblockBlockEntityDummy$$Type<(State)>)>)>, "getMasterPosInMB"?: $Supplier$$Type<($BlockPos$$Type)>, "mirrorable"?: boolean, "disassemble"?: $MultiblockRegistration$Disassembler$$Type, "id"?: $ResourceLocation$$Type, "getStructure"?: $Function$$Type<($Level$$Type), ($List$$Type<($StructureTemplate$StructureBlockInfo$$Type)>)>, "blockItem"?: $Supplier$$Type<($Item$$Type)>, "hasComparatorOutput"?: boolean, "postProcessesShape"?: boolean, "extraComponents"?: $List$$Type<($MultiblockRegistration$ExtraComponent$$Type<(State), (never)>)>, "block"?: $Supplier$$Type<($MultiblockPartBlock$$Type<(State)>)>, "logic"?: $IMultiblockLogic$$Type<(State)>, "getSize"?: $Function$$Type<($Level$$Type), ($Vec3i$$Type)>}) | ([masterBE?: $Supplier$$Type<($BlockEntityType$$Type<($MultiblockBlockEntityMaster$$Type<(State)>)>)>, redstoneInputAware?: boolean, dummyBE?: $Supplier$$Type<($BlockEntityType$$Type<($MultiblockBlockEntityDummy$$Type<(State)>)>)>, getMasterPosInMB?: $Supplier$$Type<($BlockPos$$Type)>, mirrorable?: boolean, disassemble?: $MultiblockRegistration$Disassembler$$Type, id?: $ResourceLocation$$Type, getStructure?: $Function$$Type<($Level$$Type), ($List$$Type<($StructureTemplate$StructureBlockInfo$$Type)>)>, blockItem?: $Supplier$$Type<($Item$$Type)>, hasComparatorOutput?: boolean, postProcessesShape?: boolean, extraComponents?: $List$$Type<($MultiblockRegistration$ExtraComponent$$Type<(State), (never)>)>, block?: $Supplier$$Type<($MultiblockPartBlock$$Type<(State)>)>, logic?: $IMultiblockLogic$$Type<(State)>, getSize?: $Function$$Type<($Level$$Type), ($Vec3i$$Type)>]);
+export type $MultiblockRegistration$$Type<State> = ({"redstoneInputAware"?: boolean, "dummyBE"?: $Supplier$$Type<($BlockEntityType$$Type<($MultiblockBlockEntityDummy$$Type<(State)>)>)>, "getMasterPosInMB"?: $Supplier$$Type<($BlockPos$$Type)>, "mirrorable"?: boolean, "disassemble"?: $MultiblockRegistration$Disassembler$$Type, "id"?: $ResourceLocation$$Type, "getStructure"?: $Function$$Type<($Level$$Type), ($List$$Type<($StructureTemplate$StructureBlockInfo$$Type)>)>, "blockItem"?: $Supplier$$Type<($Item$$Type)>, "hasComparatorOutput"?: boolean, "postProcessesShape"?: boolean, "extraComponents"?: $List$$Type<($MultiblockRegistration$ExtraComponent$$Type<(State), (never)>)>, "block"?: $Supplier$$Type<($MultiblockPartBlock$$Type<(State)>)>, "logic"?: $IMultiblockLogic$$Type<(State)>, "getSize"?: $Function$$Type<($Level$$Type), ($Vec3i$$Type)>, "masterBE"?: $Supplier$$Type<($BlockEntityType$$Type<($MultiblockBlockEntityMaster$$Type<(State)>)>)>}) | ([redstoneInputAware?: boolean, dummyBE?: $Supplier$$Type<($BlockEntityType$$Type<($MultiblockBlockEntityDummy$$Type<(State)>)>)>, getMasterPosInMB?: $Supplier$$Type<($BlockPos$$Type)>, mirrorable?: boolean, disassemble?: $MultiblockRegistration$Disassembler$$Type, id?: $ResourceLocation$$Type, getStructure?: $Function$$Type<($Level$$Type), ($List$$Type<($StructureTemplate$StructureBlockInfo$$Type)>)>, blockItem?: $Supplier$$Type<($Item$$Type)>, hasComparatorOutput?: boolean, postProcessesShape?: boolean, extraComponents?: $List$$Type<($MultiblockRegistration$ExtraComponent$$Type<(State), (never)>)>, block?: $Supplier$$Type<($MultiblockPartBlock$$Type<(State)>)>, logic?: $IMultiblockLogic$$Type<(State)>, getSize?: $Function$$Type<($Level$$Type), ($Vec3i$$Type)>, masterBE?: $Supplier$$Type<($BlockEntityType$$Type<($MultiblockBlockEntityMaster$$Type<(State)>)>)>]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -904,8 +904,8 @@ import {$MultiblockRegistration, $MultiblockRegistration$$Type} from "blusunrize
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$SetRestrictedField} from "blusunrize.immersiveengineering.api.utils.SetRestrictedField"
-import {$IMultiblockContext} from "blusunrize.immersiveengineering.api.multiblocks.blocks.env.IMultiblockContext"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
+import {$IMultiblockContext} from "blusunrize.immersiveengineering.api.multiblocks.blocks.env.IMultiblockContext"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$IMultiblockBEHelperMaster$Factory} from "blusunrize.immersiveengineering.api.multiblocks.blocks.env.IMultiblockBEHelperMaster$Factory"
@@ -918,12 +918,12 @@ import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$IMultiblockState} from "blusunrize.immersiveengineering.api.multiblocks.blocks.logic.IMultiblockState"
 import {$ShapeType$$Type} from "blusunrize.immersiveengineering.api.multiblocks.blocks.util.ShapeType"
-import {$ClientGamePacketListener} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$ClientGamePacketListener} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
 import {$ItemInteractionResult} from "net.minecraft.world.ItemInteractionResult"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
-import {$CapabilityPosition} from "blusunrize.immersiveengineering.api.multiblocks.blocks.util.CapabilityPosition"
 import {$IMultiblockBEHelper, $IMultiblockBEHelper$$Interface} from "blusunrize.immersiveengineering.api.multiblocks.blocks.env.IMultiblockBEHelper"
+import {$CapabilityPosition} from "blusunrize.immersiveengineering.api.multiblocks.blocks.util.CapabilityPosition"
 import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$AABB} from "net.minecraft.world.phys.AABB"
 
@@ -931,11 +931,11 @@ export interface $IMultiblockBEHelperMaster$$Interface<State extends $IMultibloc
 get "renderBoundingBox"(): $AABB
 get "context"(): $IMultiblockContext<(State)>
 get "state"(): State
-get "comparatorValue"(): integer
 get "multiblock"(): $MultiblockRegistration<(State)>
 get "updatePacket"(): $Packet<($ClientGamePacketListener)>
 get "pickBlock"(): $ItemStack
 get "positionInMB"(): $BlockPos
+get "comparatorValue"(): integer
 }
 
 export class $IMultiblockBEHelperMaster<State extends $IMultiblockState> implements $IMultiblockBEHelperMaster$$Interface {
@@ -944,11 +944,10 @@ static readonly "MAKE_HELPER": $SetRestrictedField<($IMultiblockBEHelperMaster$F
  "tickClient"(): void
  "tickServer"(): void
  "getRenderBoundingBox"(): $AABB
- "onRemoved"(): void
  "invalidateAllCaps"(): void
+ "onRemoved"(): void
  "getContext"(): $IMultiblockContext<(State)>
  "getState"(): State
- "getComparatorValue"(): integer
  "getMultiblock"(): $MultiblockRegistration<(State)>
  "getUpdatePacket"(): $Packet<($ClientGamePacketListener)>
  "saveAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
@@ -957,13 +956,14 @@ static readonly "MAKE_HELPER": $SetRestrictedField<($IMultiblockBEHelperMaster$F
  "handleUpdateTag"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
  "getOriginalBlock"(arg0: $Level$$Type): $BlockState
  "click"(arg0: $Player$$Type, arg1: $InteractionHand$$Type, arg2: $BlockHitResult$$Type): $ItemInteractionResult
- "onNeighborChanged"(arg0: $BlockPos$$Type): void
- "getPickBlock"(): $ItemStack
  "onEntityCollided"(arg0: $Entity$$Type): void
+ "getPickBlock"(): $ItemStack
  "markDisassembling"(): void
- "getPositionInMB"(): $BlockPos
  "getCapabilityPosition"(arg0: $Direction$$Type): $CapabilityPosition
+ "getPositionInMB"(): $BlockPos
  "getRedstoneInput"(arg0: $RelativeBlockFace$$Type): integer
+ "getComparatorValue"(): integer
+ "onNeighborChanged"(arg0: $BlockPos$$Type): void
  "getShape"(arg0: $CollisionContext$$Type, arg1: $ShapeType$$Type): $VoxelShape
  "load"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
  "asType"<OtherState extends $IMultiblockState>(arg0: $MultiblockRegistration$$Type<(OtherState)>): $IMultiblockBEHelper<(OtherState)>
@@ -1007,8 +1007,8 @@ export type $TemplateMultiblock$TemplateData$$Original = $TemplateMultiblock$Tem
 declare module "blusunrize.immersiveengineering.api.multiblocks.MultiblockAdvancementTrigger" {
 import {$PlayerAdvancements$$Type} from "net.minecraft.server.PlayerAdvancements"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$ItemPredicate$$Type} from "net.minecraft.advancements.critereon.ItemPredicate"
 import {$CriterionTrigger, $CriterionTrigger$$Interface} from "net.minecraft.advancements.CriterionTrigger"
+import {$ItemPredicate$$Type} from "net.minecraft.advancements.critereon.ItemPredicate"
 import {$Criterion} from "net.minecraft.advancements.Criterion"
 import {$CriterionTrigger$Listener$$Type} from "net.minecraft.advancements.CriterionTrigger$Listener"
 import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
@@ -1126,8 +1126,8 @@ import {$Vec3, $Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$VoxelShape, $VoxelShape$$Type} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Record} from "java.lang.Record"
+import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $MultiblockOrientation extends $Record {
 constructor(front: $Direction$$Type, mirrored: boolean)
@@ -1137,8 +1137,8 @@ public "getAbsoluteOffset"(arg0: $BlockPos$$Type): $BlockPos
 public "getAbsoluteOffset"(arg0: $Vec3$$Type): $Vec3
 public "getPosInMB"(arg0: $BlockPos$$Type): $BlockPos
 public "transformRelativeShape"(arg0: $VoxelShape$$Type): $VoxelShape
-public "front"(): $Direction
 public "mirrored"(): boolean
+public "front"(): $Direction
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
@@ -1202,9 +1202,9 @@ import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$IMultiblockLevel} from "blusunrize.immersiveengineering.api.multiblocks.blocks.env.IMultiblockLevel"
 
 export interface $IMultiblockContext$$Interface<State> {
-get "valid"(): $BooleanSupplier
 get "level"(): $IMultiblockLevel
 get "state"(): State
+get "valid"(): $BooleanSupplier
 }
 
 export class $IMultiblockContext<State> implements $IMultiblockContext$$Interface {
@@ -1215,9 +1215,9 @@ export class $IMultiblockContext<State> implements $IMultiblockContext$$Interfac
  "getRedstoneInputValue"(arg0: $BlockPos$$Type, arg1: $RelativeBlockFace$$Type, arg2: integer): integer
  "markDirtyAndSync"(): void
  "setComparatorOutputFor"(arg0: $BlockPos$$Type, arg1: integer): void
- "isValid"(): $BooleanSupplier
  "getLevel"(): $IMultiblockLevel
  "getState"(): State
+ "isValid"(): $BooleanSupplier
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -1258,8 +1258,8 @@ export class $IMultiblockLevel implements $IMultiblockLevel$$Interface {
  "toRelative"(arg0: $Direction$$Type): $RelativeBlockFace
  "getRawLevel"(): $Level
  "shouldTickModulo"(arg0: integer): boolean
- "getAbsoluteOrigin"(): $BlockPos
  "forciblyGetBlockEntity"(arg0: $BlockPos$$Type): $BlockEntity
+ "getAbsoluteOrigin"(): $BlockPos
  "setBlock"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): void
  "getBlockState"(arg0: $BlockPos$$Type): $BlockState
  "getBlockEntity"(arg0: $BlockPos$$Type): $BlockEntity
@@ -1282,8 +1282,8 @@ import {$MultiblockRegistration, $MultiblockRegistration$$Type} from "blusunrize
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$SetRestrictedField} from "blusunrize.immersiveengineering.api.utils.SetRestrictedField"
-import {$IMultiblockContext} from "blusunrize.immersiveengineering.api.multiblocks.blocks.env.IMultiblockContext"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
+import {$IMultiblockContext} from "blusunrize.immersiveengineering.api.multiblocks.blocks.env.IMultiblockContext"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
@@ -1295,22 +1295,22 @@ import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$IMultiblockState} from "blusunrize.immersiveengineering.api.multiblocks.blocks.logic.IMultiblockState"
 import {$ShapeType$$Type} from "blusunrize.immersiveengineering.api.multiblocks.blocks.util.ShapeType"
-import {$ClientGamePacketListener} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$ClientGamePacketListener} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
 import {$ItemInteractionResult} from "net.minecraft.world.ItemInteractionResult"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
-import {$CapabilityPosition} from "blusunrize.immersiveengineering.api.multiblocks.blocks.util.CapabilityPosition"
 import {$IMultiblockBEHelper, $IMultiblockBEHelper$$Interface} from "blusunrize.immersiveengineering.api.multiblocks.blocks.env.IMultiblockBEHelper"
+import {$CapabilityPosition} from "blusunrize.immersiveengineering.api.multiblocks.blocks.util.CapabilityPosition"
 import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$IMultiblockBEHelperDummy$Factory} from "blusunrize.immersiveengineering.api.multiblocks.blocks.env.IMultiblockBEHelperDummy$Factory"
 
 export interface $IMultiblockBEHelperDummy$$Interface<State extends $IMultiblockState> extends $IMultiblockBEHelper$$Interface<(State)> {
 set "positionInMB"(value: $BlockPos$$Type)
-get "comparatorValue"(): integer
 get "multiblock"(): $MultiblockRegistration<(State)>
 get "updatePacket"(): $Packet<($ClientGamePacketListener)>
 get "pickBlock"(): $ItemStack
 get "positionInMB"(): $BlockPos
+get "comparatorValue"(): integer
 get "context"(): $IMultiblockContext<(State)>
 get "state"(): State
 }
@@ -1319,7 +1319,6 @@ export class $IMultiblockBEHelperDummy<State extends $IMultiblockState> implemen
 static readonly "MAKE_HELPER": $SetRestrictedField<($IMultiblockBEHelperDummy$Factory)>
 
  "setPositionInMB"(arg0: $BlockPos$$Type): void
- "getComparatorValue"(): integer
  "getMultiblock"(): $MultiblockRegistration<(State)>
  "getUpdatePacket"(): $Packet<($ClientGamePacketListener)>
  "saveAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
@@ -1328,13 +1327,14 @@ static readonly "MAKE_HELPER": $SetRestrictedField<($IMultiblockBEHelperDummy$Fa
  "handleUpdateTag"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
  "getOriginalBlock"(arg0: $Level$$Type): $BlockState
  "click"(arg0: $Player$$Type, arg1: $InteractionHand$$Type, arg2: $BlockHitResult$$Type): $ItemInteractionResult
- "onNeighborChanged"(arg0: $BlockPos$$Type): void
- "getPickBlock"(): $ItemStack
  "onEntityCollided"(arg0: $Entity$$Type): void
+ "getPickBlock"(): $ItemStack
  "markDisassembling"(): void
- "getPositionInMB"(): $BlockPos
  "getCapabilityPosition"(arg0: $Direction$$Type): $CapabilityPosition
+ "getPositionInMB"(): $BlockPos
  "getRedstoneInput"(arg0: $RelativeBlockFace$$Type): integer
+ "getComparatorValue"(): integer
+ "onNeighborChanged"(arg0: $BlockPos$$Type): void
  "getShape"(arg0: $CollisionContext$$Type, arg1: $ShapeType$$Type): $VoxelShape
  "load"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
  "getContext"(): $IMultiblockContext<(State)>
@@ -1379,8 +1379,8 @@ export class $IMultiblockLogic<State extends $IMultiblockState> implements $IMul
  "postProcessAbsoluteShape"(arg0: $IMultiblockContext$$Type<(State)>, arg1: $VoxelShape$$Type, arg2: $CollisionContext$$Type, arg3: $BlockPos$$Type, arg4: $ShapeType$$Type): $VoxelShape
  "click"(arg0: $IMultiblockContext$$Type<(State)>, arg1: $BlockPos$$Type, arg2: $Player$$Type, arg3: $InteractionHand$$Type, arg4: $BlockHitResult$$Type, arg5: boolean): $ItemInteractionResult
  "onEntityCollision"(arg0: $IMultiblockContext$$Type<(State)>, arg1: $BlockPos$$Type, arg2: $Entity$$Type): void
- "onRemoved"(arg0: $IMultiblockContext$$Type<(State)>): void
  "dropExtraItems"(arg0: State, arg1: $Consumer$$Type<($ItemStack)>): void
+ "onRemoved"(arg0: $IMultiblockContext$$Type<(State)>): void
  "registerCapabilities"(arg0: $IMultiblockComponent$CapabilityRegistrar$$Type<(State)>): void
 }
 /**
@@ -1405,14 +1405,14 @@ export class $MultiblockHandler$MultiblockFormEvent extends $PlayerEvent impleme
 constructor(arg0: $Player$$Type, arg1: $MultiblockHandler$IMultiblock$$Type, arg2: $BlockPos$$Type, arg3: $ItemStack$$Type)
 
 public "getMultiblock"(): $MultiblockHandler$IMultiblock
-public "getClickedBlock"(): $BlockPos
 public "getHammer"(): $ItemStack
+public "getClickedBlock"(): $BlockPos
 public "setCanceled"(arg0: boolean): void
 public "isCanceled"(): boolean
 public "getEntity"(): $Entity
 get "multiblock"(): $MultiblockHandler$IMultiblock
-get "clickedBlock"(): $BlockPos
 get "hammer"(): $ItemStack
+get "clickedBlock"(): $BlockPos
 set "canceled"(value: boolean)
 get "canceled"(): boolean
 get "entity"(): $Entity
@@ -1434,9 +1434,9 @@ import {$Supplier} from "java.util.function.Supplier"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level} from "net.minecraft.world.level.Level"
 import {$Runnable} from "java.lang.Runnable"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$IMultiblockState} from "blusunrize.immersiveengineering.api.multiblocks.blocks.logic.IMultiblockState"
 import {$ICommonMultiblockContext$$Interface} from "blusunrize.immersiveengineering.api.multiblocks.blocks.env.ICommonMultiblockContext"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 
 export interface $IInitialMultiblockContext$$Interface<State extends $IMultiblockState> extends $ICommonMultiblockContext$$Interface {
 get "markDirtyRunnable"(): $Runnable
@@ -1445,10 +1445,10 @@ get "blockUpdateRunnable"(): $Runnable
 }
 
 export class $IInitialMultiblockContext<State extends $IMultiblockState> implements $IInitialMultiblockContext$$Interface {
- "levelSupplier"(): $Supplier<($Level)>
  "getMarkDirtyRunnable"(): $Runnable
  "getSyncRunnable"(): $Runnable
  "getBlockUpdateRunnable"(): $Runnable
+ "levelSupplier"(): $Supplier<($Level)>
  "getCapabilityAt"<T, C>(arg0: $BlockCapability$$Type<(T), (C)>, arg1: $BlockPos$$Type, arg2: C): $Supplier<(T)>
  "getCapabilityAt"<T>(arg0: $BlockCapability$$Type<(T), ($Direction$$Type)>, arg1: $BlockPos$$Type, arg2: $RelativeBlockFace$$Type): $Supplier<(T)>
  "getCapabilityAt"<T>(arg0: $BlockCapability$$Type<(T), ($Direction$$Type)>, arg1: $MultiblockFace$$Type): $Supplier<(T)>

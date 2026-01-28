@@ -46,8 +46,8 @@ import {$InetAddress$$Type} from "java.net.InetAddress"
 import {$List} from "java.util.List"
 import {$Supplier} from "java.util.function.Supplier"
 import {$NioEventLoopGroup} from "io.netty.channel.nio.NioEventLoopGroup"
-import {$Connection} from "net.minecraft.network.Connection"
 import {$EpollEventLoopGroup} from "io.netty.channel.epoll.EpollEventLoopGroup"
+import {$Connection} from "net.minecraft.network.Connection"
 import {$MinecraftServer, $MinecraftServer$$Type} from "net.minecraft.server.MinecraftServer"
 
 export class $ServerConnectionListener {
@@ -81,10 +81,10 @@ import {$ServerboundClientInformationPacket$$Type} from "net.minecraft.network.p
 import {$ServerboundPongPacket$$Type} from "net.minecraft.network.protocol.common.ServerboundPongPacket"
 import {$CustomPacketPayload$Type$$Type} from "net.minecraft.network.protocol.common.custom.CustomPacketPayload$Type"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$ServerboundCookieResponsePacket$$Type} from "net.minecraft.network.protocol.cookie.ServerboundCookieResponsePacket"
 import {$CommonListenerCookie$$Type} from "net.minecraft.server.network.CommonListenerCookie"
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
+import {$ServerboundCookieResponsePacket$$Type} from "net.minecraft.network.protocol.cookie.ServerboundCookieResponsePacket"
 import {$Exception$$Type} from "java.lang.Exception"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Throwable$$Type} from "java.lang.Throwable"
 import {$ReentrantBlockableEventLoop} from "net.minecraft.util.thread.ReentrantBlockableEventLoop"
 import {$PacketFlow} from "net.minecraft.network.protocol.PacketFlow"
@@ -94,15 +94,15 @@ import {$CustomPacketPayload$$Type} from "net.minecraft.network.protocol.common.
 import {$ServerboundKeepAlivePacket$$Type} from "net.minecraft.network.protocol.common.ServerboundKeepAlivePacket"
 import {$DisconnectionDetails, $DisconnectionDetails$$Type} from "net.minecraft.network.DisconnectionDetails"
 import {$ServerboundCustomPayloadPacket$$Type} from "net.minecraft.network.protocol.common.ServerboundCustomPayloadPacket"
-import {$ConnectionType} from "net.neoforged.neoforge.network.connection.ConnectionType"
 import {$ServerCommonNetworkHandlerAccessor$$Interface} from "io.wispforest.owo.mixin.ServerCommonNetworkHandlerAccessor"
+import {$ConnectionType} from "net.neoforged.neoforge.network.connection.ConnectionType"
 import {$ConnectionProtocol} from "net.minecraft.network.ConnectionProtocol"
 import {$Packet$$Type} from "net.minecraft.network.protocol.Packet"
 import {$GameProfile} from "com.mojang.authlib.GameProfile"
 import {$ServerboundResourcePackPacket$$Type} from "net.minecraft.network.protocol.common.ServerboundResourcePackPacket"
 import {$Connection, $Connection$$Type} from "net.minecraft.network.Connection"
-import {$MinecraftServer, $MinecraftServer$$Type} from "net.minecraft.server.MinecraftServer"
 import {$CrashReportCategory$$Type} from "net.minecraft.CrashReportCategory"
+import {$MinecraftServer, $MinecraftServer$$Type} from "net.minecraft.server.MinecraftServer"
 
 export class $ServerCommonPacketListenerImpl implements $ServerCommonPacketListener$$Interface, $ServerCommonNetworkHandlerAccessor$$Interface {
 static readonly "LATENCY_CHECK_INTERVAL": integer
@@ -273,25 +273,25 @@ public static "codec"<T>(arg0: $Codec$$Type<(T)>): $Codec<($Filterable<(T)>)>
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $Filterable$$Type<T> = ({"filtered"?: (T)?, "raw"?: T}) | ([filtered?: (T)?, raw?: T]);
+export type $Filterable$$Type<T> = ({"raw"?: T, "filtered"?: (T)?}) | ([raw?: T, filtered?: (T)?]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
 export type $Filterable$$Original<T> = $Filterable<(T)>;}
 declare module "net.minecraft.server.network.ServerGamePacketListenerImpl" {
-import {$ServerboundChunkBatchReceivedPacket$$Type} from "net.minecraft.network.protocol.game.ServerboundChunkBatchReceivedPacket"
 import {$Iterable$$Type} from "java.lang.Iterable"
+import {$ServerboundChunkBatchReceivedPacket$$Type} from "net.minecraft.network.protocol.game.ServerboundChunkBatchReceivedPacket"
 import {$FilteredText} from "net.minecraft.server.network.FilteredText"
 import {$ServerboundClientInformationPacket$$Type} from "net.minecraft.network.protocol.common.ServerboundClientInformationPacket"
 import {$PlayerChatMessage$$Type} from "net.minecraft.network.chat.PlayerChatMessage"
-import {$ServerboundPlayerActionPacket$$Type} from "net.minecraft.network.protocol.game.ServerboundPlayerActionPacket"
 import {$CallbackInfo$$Type} from "org.spongepowered.asm.mixin.injection.callback.CallbackInfo"
+import {$ServerboundPlayerActionPacket$$Type} from "net.minecraft.network.protocol.game.ServerboundPlayerActionPacket"
 import {$ServerboundMovePlayerPacket$$Type} from "net.minecraft.network.protocol.game.ServerboundMovePlayerPacket"
 import {$ServerboundRecipeBookSeenRecipePacket$$Type} from "net.minecraft.network.protocol.game.ServerboundRecipeBookSeenRecipePacket"
 import {$ServerboundSetStructureBlockPacket$$Type} from "net.minecraft.network.protocol.game.ServerboundSetStructureBlockPacket"
 import {$ServerboundSignUpdatePacket$$Type} from "net.minecraft.network.protocol.game.ServerboundSignUpdatePacket"
-import {$ServerboundAcceptTeleportationPacket$$Type} from "net.minecraft.network.protocol.game.ServerboundAcceptTeleportationPacket"
 import {$ServerCommonPacketListenerImpl} from "net.minecraft.server.network.ServerCommonPacketListenerImpl"
+import {$ServerboundAcceptTeleportationPacket$$Type} from "net.minecraft.network.protocol.game.ServerboundAcceptTeleportationPacket"
 import {$ServerboundPickItemPacket$$Type} from "net.minecraft.network.protocol.game.ServerboundPickItemPacket"
 import {$RelativeMovement$$Type} from "net.minecraft.world.entity.RelativeMovement"
 import {$ServerboundUseItemPacket$$Type} from "net.minecraft.network.protocol.game.ServerboundUseItemPacket"
@@ -305,8 +305,8 @@ import {$ServerPlayNetHandlerAccess$$Interface} from "blusunrize.immersiveengine
 import {$ServerboundUseItemOnPacket$$Type} from "net.minecraft.network.protocol.game.ServerboundUseItemOnPacket"
 import {$ServerboundEditBookPacket$$Type} from "net.minecraft.network.protocol.game.ServerboundEditBookPacket"
 import {$DisconnectionDetails$$Type} from "net.minecraft.network.DisconnectionDetails"
-import {$ServerboundCustomPayloadPacket$$Type} from "net.minecraft.network.protocol.common.ServerboundCustomPayloadPacket"
 import {$ServerboundContainerClosePacket$$Type} from "net.minecraft.network.protocol.game.ServerboundContainerClosePacket"
+import {$ServerboundCustomPayloadPacket$$Type} from "net.minecraft.network.protocol.common.ServerboundCustomPayloadPacket"
 import {$ServerboundChatCommandPacket$$Type} from "net.minecraft.network.protocol.game.ServerboundChatCommandPacket"
 import {$ServerboundPingRequestPacket$$Type} from "net.minecraft.network.protocol.ping.ServerboundPingRequestPacket"
 import {$ServerboundBlockEntityTagQueryPacket$$Type} from "net.minecraft.network.protocol.game.ServerboundBlockEntityTagQueryPacket"
@@ -322,26 +322,26 @@ import {$List, $List$$Type} from "java.util.List"
 import {$ServerboundConfigurationAcknowledgedPacket$$Type} from "net.minecraft.network.protocol.game.ServerboundConfigurationAcknowledgedPacket"
 import {$ServerboundSetJigsawBlockPacket$$Type} from "net.minecraft.network.protocol.game.ServerboundSetJigsawBlockPacket"
 import {$ServerboundSetCarriedItemPacket$$Type} from "net.minecraft.network.protocol.game.ServerboundSetCarriedItemPacket"
-import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$ServerboundRecipeBookChangeSettingsPacket$$Type} from "net.minecraft.network.protocol.game.ServerboundRecipeBookChangeSettingsPacket"
+import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$ServerboundContainerButtonClickPacket$$Type} from "net.minecraft.network.protocol.game.ServerboundContainerButtonClickPacket"
 import {$ServerboundContainerSlotStateChangedPacket$$Type} from "net.minecraft.network.protocol.game.ServerboundContainerSlotStateChangedPacket"
 import {$ServerboundSetCommandBlockPacket$$Type} from "net.minecraft.network.protocol.game.ServerboundSetCommandBlockPacket"
-import {$ServerboundTeleportToEntityPacket$$Type} from "net.minecraft.network.protocol.game.ServerboundTeleportToEntityPacket"
 import {$CommonListenerCookie$$Type} from "net.minecraft.server.network.CommonListenerCookie"
+import {$ServerboundTeleportToEntityPacket$$Type} from "net.minecraft.network.protocol.game.ServerboundTeleportToEntityPacket"
 import {$PlayerChunkSender} from "net.minecraft.server.network.PlayerChunkSender"
 import {$ServerboundPlayerAbilitiesPacket$$Type} from "net.minecraft.network.protocol.game.ServerboundPlayerAbilitiesPacket"
-import {$ServerboundSetBeaconPacket$$Type} from "net.minecraft.network.protocol.game.ServerboundSetBeaconPacket"
 import {$Exception$$Type} from "java.lang.Exception"
+import {$ServerboundSetBeaconPacket$$Type} from "net.minecraft.network.protocol.game.ServerboundSetBeaconPacket"
 import {$ServerPlayerConnection$$Interface} from "net.minecraft.server.network.ServerPlayerConnection"
 import {$ServerboundInteractPacket$$Type} from "net.minecraft.network.protocol.game.ServerboundInteractPacket"
 import {$ServerboundEntityTagQueryPacket$$Type} from "net.minecraft.network.protocol.game.ServerboundEntityTagQueryPacket"
 import {$TickablePacketListener$$Interface} from "net.minecraft.network.TickablePacketListener"
 import {$ServerboundSeenAdvancementsPacket$$Type} from "net.minecraft.network.protocol.game.ServerboundSeenAdvancementsPacket"
-import {$ServerboundCommandSuggestionPacket$$Type} from "net.minecraft.network.protocol.game.ServerboundCommandSuggestionPacket"
 import {$ServerboundPlayerCommandPacket$$Type} from "net.minecraft.network.protocol.game.ServerboundPlayerCommandPacket"
-import {$PacketFlow} from "net.minecraft.network.protocol.PacketFlow"
+import {$ServerboundCommandSuggestionPacket$$Type} from "net.minecraft.network.protocol.game.ServerboundCommandSuggestionPacket"
 import {$ServerboundMoveVehiclePacket$$Type} from "net.minecraft.network.protocol.game.ServerboundMoveVehiclePacket"
+import {$PacketFlow} from "net.minecraft.network.protocol.PacketFlow"
 import {$ServerboundChatAckPacket$$Type} from "net.minecraft.network.protocol.game.ServerboundChatAckPacket"
 import {$ServerboundDebugSampleSubscriptionPacket$$Type} from "net.minecraft.network.protocol.game.ServerboundDebugSampleSubscriptionPacket"
 import {$ServerboundJigsawGeneratePacket$$Type} from "net.minecraft.network.protocol.game.ServerboundJigsawGeneratePacket"
@@ -369,6 +369,7 @@ readonly "chunkSender": $PlayerChunkSender
 constructor(arg0: $MinecraftServer$$Type, arg1: $Connection$$Type, arg2: $ServerPlayer$$Type, arg3: $CommonListenerCookie$$Type)
 
 public "handleContainerSlotStateChanged"(arg0: $ServerboundContainerSlotStateChangedPacket$$Type): void
+public "handler$edh000$ftbquests$handleClientInformation"(packet: $ServerboundClientInformationPacket$$Type, ci: $CallbackInfo$$Type): void
 public "resetPosition"(): void
 public "ackBlockChangesUpTo"(arg0: integer): void
 public "filterTextPacket"(arg0: $List$$Type<(StringJS)>): $CompletableFuture<($List<($FilteredText)>)>
@@ -418,7 +419,6 @@ public "handleSetCreativeModeSlot"(arg0: $ServerboundSetCreativeModeSlotPacket$$
 public "handleSignUpdate"(arg0: $ServerboundSignUpdatePacket$$Type): void
 public "handlePlayerAbilities"(arg0: $ServerboundPlayerAbilitiesPacket$$Type): void
 public "handleClientInformation"(arg0: $ServerboundClientInformationPacket$$Type): void
-public "handler$edh000$ftbquests$handleClientInformation"(packet: $ServerboundClientInformationPacket$$Type, ci: $CallbackInfo$$Type): void
 public "handleChangeDifficulty"(arg0: $ServerboundChangeDifficultyPacket$$Type): void
 public "handleLockDifficulty"(arg0: $ServerboundLockDifficultyPacket$$Type): void
 public "handleChatSessionUpdate"(arg0: $ServerboundChatSessionUpdatePacket$$Type): void
@@ -431,8 +431,8 @@ public "setAboveGroundTickCount"(arg0: integer): void
 public "tick"(): void
 public "getRemoteAddress"(): $SocketAddress
 public "handlePickItem"(arg0: $ServerboundPickItemPacket$$Type): void
-public "teleport"(arg0: double, arg1: double, arg2: double, arg3: float, arg4: float, arg5: $Set$$Type<($RelativeMovement$$Type)>): void
 public "teleport"(arg0: double, arg1: double, arg2: double, arg3: float, arg4: float): void
+public "teleport"(arg0: double, arg1: double, arg2: double, arg3: float, arg4: float, arg5: $Set$$Type<($RelativeMovement$$Type)>): void
 public "getPlayer"(): $ServerPlayer
 public "onDisconnect"(arg0: $DisconnectionDetails$$Type): void
 public "isAcceptingMessages"(): boolean

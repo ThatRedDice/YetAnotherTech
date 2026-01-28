@@ -12,21 +12,21 @@ static readonly "DEFAULT_SPACE_WIDTH": float
 constructor(arg0: StringJS)
 
 public "sendStatus"(arg0: $Player$$Type): void
-public "forGoggles"(arg0: $List$$Type<($MutableComponent$$Type)>, arg1: integer): void
 public "forGoggles"(arg0: $List$$Type<($MutableComponent$$Type)>): void
-public "space"(): $LangBuilder
+public "forGoggles"(arg0: $List$$Type<($MutableComponent$$Type)>, arg1: integer): void
 public "addTo"(arg0: $List$$Type<($MutableComponent$$Type)>): void
+public "space"(): $LangBuilder
+public "text"(arg0: $ChatFormatting$$Type, arg1: StringJS): $LangBuilder
+public "text"(arg0: StringJS): $LangBuilder
+public "text"(arg0: integer, arg1: StringJS): $LangBuilder
 public "add"(arg0: $LangBuilder$$Type): $LangBuilder
 public "add"(arg0: $Component$$Type): $LangBuilder
 public "add"(arg0: $MutableComponent$$Type): $LangBuilder
 public "component"(): $MutableComponent
 public "newLine"(): $LangBuilder
-public "color"(arg0: integer): $LangBuilder
 public "color"(arg0: $Color$$Type): $LangBuilder
+public "color"(arg0: integer): $LangBuilder
 public "string"(): StringJS
-public "text"(arg0: $ChatFormatting$$Type, arg1: StringJS): $LangBuilder
-public "text"(arg0: integer, arg1: StringJS): $LangBuilder
-public "text"(arg0: StringJS): $LangBuilder
 public "json"(): StringJS
 public "style"(arg0: $ChatFormatting$$Type): $LangBuilder
 public static "resolveBuilders"(arg0: (any)[]): (any)[]

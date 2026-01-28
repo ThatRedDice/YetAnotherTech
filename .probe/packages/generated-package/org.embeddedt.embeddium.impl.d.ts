@@ -59,8 +59,8 @@ export type $CachingPoseStack$$Type = ((arg0: boolean) => void);
 export type $CachingPoseStack$$Original = $CachingPoseStack;}
 declare module "org.embeddedt.embeddium.impl.model.color.interop.BlockColorsExtended" {
 import {$BlockColors$$Type} from "net.minecraft.client.color.block.BlockColors"
-import {$ReferenceSet} from "it.unimi.dsi.fastutil.objects.ReferenceSet"
 import {$Reference2ReferenceMap} from "it.unimi.dsi.fastutil.objects.Reference2ReferenceMap"
+import {$ReferenceSet} from "it.unimi.dsi.fastutil.objects.ReferenceSet"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$BlockColor} from "net.minecraft.client.color.block.BlockColor"
 
@@ -69,8 +69,8 @@ export interface $BlockColorsExtended$$Interface {
 
 export class $BlockColorsExtended implements $BlockColorsExtended$$Interface {
  "sodium$getProviders"(): $Reference2ReferenceMap<($Block), ($BlockColor)>
- "sodium$getOverridenVanillaBlocks"(): $ReferenceSet<($Block)>
 static "getOverridenVanillaBlocks"(arg0: $BlockColors$$Type): $ReferenceSet<($Block)>
+ "sodium$getOverridenVanillaBlocks"(): $ReferenceSet<($Block)>
 static "getProviders"(arg0: $BlockColors$$Type): $Reference2ReferenceMap<($Block), ($BlockColor)>
 }
 /**
@@ -126,8 +126,8 @@ export type $EpsilonizableBlockElement$$Original = $EpsilonizableBlockElement;}
 declare module "org.embeddedt.embeddium.impl.model.quad.BakedQuadView" {
 import {$TextureAtlasSprite} from "net.minecraft.client.renderer.texture.TextureAtlasSprite"
 import {$SpriteTransparencyLevel} from "org.embeddedt.embeddium.impl.render.chunk.sprite.SpriteTransparencyLevel"
-import {$Direction} from "net.minecraft.core.Direction"
 import {$ModelQuadView$$Interface} from "org.embeddedt.embeddium.impl.model.quad.ModelQuadView"
+import {$Direction} from "net.minecraft.core.Direction"
 import {$ModelQuadFacing} from "org.embeddedt.embeddium.impl.model.quad.properties.ModelQuadFacing"
 
 export interface $BakedQuadView$$Interface extends $ModelQuadView$$Interface {
@@ -135,27 +135,22 @@ get "normalFace"(): $ModelQuadFacing
 set "flags"(value: integer)
 get "transparencyLevel"(): $SpriteTransparencyLevel
 get "flags"(): integer
-get "sprite"(): $TextureAtlasSprite
-get "colorIndex"(): integer
 get "computedFaceNormal"(): integer
 get "lightFace"(): $Direction
 get "modFaceNormal"(): integer
+get "colorIndex"(): integer
+get "sprite"(): $TextureAtlasSprite
 }
 
 export class $BakedQuadView implements $BakedQuadView$$Interface {
- "getNormalFace"(): $ModelQuadFacing
  "hasShade"(): boolean
+ "getNormalFace"(): $ModelQuadFacing
  "setFlags"(arg0: integer): void
  "getTransparencyLevel"(): $SpriteTransparencyLevel
  "getLight"(arg0: integer): integer
  "getFlags"(): integer
  "getY"(arg0: integer): float
- "getX"(arg0: integer): float
- "getZ"(arg0: integer): float
- "getSprite"(): $TextureAtlasSprite
- "getColor"(arg0: integer): integer
  "hasColor"(): boolean
- "getColorIndex"(): integer
  "getForgeNormal"(arg0: integer): integer
  "getComputedFaceNormal"(): integer
  "getTexU"(arg0: integer): float
@@ -163,6 +158,11 @@ export class $BakedQuadView implements $BakedQuadView$$Interface {
  "getLightFace"(): $Direction
  "getModFaceNormal"(): integer
  "hasAmbientOcclusion"(): boolean
+ "getColorIndex"(): integer
+ "getX"(arg0: integer): float
+ "getZ"(arg0: integer): float
+ "getSprite"(): $TextureAtlasSprite
+ "getColor"(arg0: integer): integer
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -467,8 +467,8 @@ export type $ViewportProvider$$Original = $ViewportProvider;}
 declare module "org.embeddedt.embeddium.impl.render.EmbeddiumWorldRenderer" {
 import {$Iterator} from "java.util.Iterator"
 import {$Viewport$$Type} from "org.embeddedt.embeddium.impl.render.viewport.Viewport"
-import {$RenderBuffers$$Type} from "net.minecraft.client.renderer.RenderBuffers"
 import {$BlockDestructionProgress$$Type} from "net.minecraft.server.level.BlockDestructionProgress"
+import {$RenderBuffers$$Type} from "net.minecraft.client.renderer.RenderBuffers"
 import {$Collection} from "java.util.Collection"
 import {$MultiBufferSource$BufferSource$$Type} from "net.minecraft.client.renderer.MultiBufferSource$BufferSource"
 import {$SortedSet$$Type} from "java.util.SortedSet"
@@ -477,9 +477,9 @@ import {$Long2ObjectMap$$Type} from "it.unimi.dsi.fastutil.longs.Long2ObjectMap"
 import {$Camera$$Type} from "net.minecraft.client.Camera"
 import {$Matrix4f$$Type} from "org.joml.Matrix4f"
 import {$Consumer$$Type} from "java.util.function.Consumer"
-import {$EmbeddiumWorldRendererAssessor$$Interface} from "net.irisshaders.iris.compat.embeddium.mixin.monocle.mixin.EmbeddiumWorldRendererAssessor"
 import {$BlockEntityRenderDispatcher$$Type} from "net.minecraft.client.renderer.blockentity.BlockEntityRenderDispatcher"
 import {$ClientLevel$$Type} from "net.minecraft.client.multiplayer.ClientLevel"
+import {$EmbeddiumWorldRendererAssessor$$Interface} from "net.irisshaders.iris.compat.embeddium.mixin.monocle.mixin.EmbeddiumWorldRendererAssessor"
 import {$Minecraft$$Type} from "net.minecraft.client.Minecraft"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
@@ -532,23 +532,18 @@ import {$Direction} from "net.minecraft.core.Direction"
 
 export interface $ModelQuadView$$Interface {
 get "flags"(): integer
-get "sprite"(): $TextureAtlasSprite
-get "colorIndex"(): integer
 get "computedFaceNormal"(): integer
 get "lightFace"(): $Direction
 get "modFaceNormal"(): integer
+get "colorIndex"(): integer
+get "sprite"(): $TextureAtlasSprite
 }
 
 export class $ModelQuadView implements $ModelQuadView$$Interface {
  "getLight"(arg0: integer): integer
  "getFlags"(): integer
  "getY"(arg0: integer): float
- "getX"(arg0: integer): float
- "getZ"(arg0: integer): float
- "getSprite"(): $TextureAtlasSprite
- "getColor"(arg0: integer): integer
  "hasColor"(): boolean
- "getColorIndex"(): integer
  "getForgeNormal"(arg0: integer): integer
  "getComputedFaceNormal"(): integer
  "getTexU"(arg0: integer): float
@@ -556,6 +551,11 @@ export class $ModelQuadView implements $ModelQuadView$$Interface {
  "getLightFace"(): $Direction
  "getModFaceNormal"(): integer
  "hasAmbientOcclusion"(): boolean
+ "getColorIndex"(): integer
+ "getX"(arg0: integer): float
+ "getZ"(arg0: integer): float
+ "getSprite"(): $TextureAtlasSprite
+ "getColor"(arg0: integer): integer
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -613,15 +613,15 @@ declare module "org.embeddedt.embeddium.impl.mixin.features.textures.animations.
 import {$SpriteContents$AnimatedTexture} from "net.minecraft.client.renderer.texture.SpriteContents$AnimatedTexture"
 
 export interface $SpriteContentsAnimatorImplAccessor$$Interface {
-get "frameTicks"(): integer
-get "animationInfo"(): $SpriteContents$AnimatedTexture
 get "frameIndex"(): integer
+get "animationInfo"(): $SpriteContents$AnimatedTexture
+get "frameTicks"(): integer
 }
 
 export class $SpriteContentsAnimatorImplAccessor implements $SpriteContentsAnimatorImplAccessor$$Interface {
- "getFrameTicks"(): integer
- "getAnimationInfo"(): $SpriteContents$AnimatedTexture
  "getFrameIndex"(): integer
+ "getAnimationInfo"(): $SpriteContents$AnimatedTexture
+ "getFrameTicks"(): integer
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -835,14 +835,14 @@ export class $Viewport {
 constructor(arg0: $Frustum$$Type, arg1: $Vector3d$$Type)
 
 public "getChunkCoord"(): $SectionPos
-public "getTransform"(): $CameraTransform
 public "getBlockCoord"(): $BlockPos
+public "getTransform"(): $CameraTransform
 public "isBoxVisible"(arg0: integer, arg1: integer, arg2: integer, arg3: float): boolean
 public "isBoxVisible"(arg0: $AABB$$Type): boolean
 public "isBoxVisible"(arg0: integer, arg1: integer, arg2: integer, arg3: float, arg4: float, arg5: float): boolean
 get "chunkCoord"(): $SectionPos
-get "transform"(): $CameraTransform
 get "blockCoord"(): $BlockPos
+get "transform"(): $CameraTransform
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_

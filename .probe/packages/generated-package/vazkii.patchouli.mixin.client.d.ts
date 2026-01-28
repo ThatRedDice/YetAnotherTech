@@ -47,13 +47,13 @@ import {$ByteBufferBuilder} from "com.mojang.blaze3d.vertex.ByteBufferBuilder"
 import {$RenderType} from "net.minecraft.client.renderer.RenderType"
 
 export interface $AccessorMultiBufferSource$$Interface {
-get "fallbackBuffer"(): $ByteBufferBuilder
 get "fixedBuffers"(): $SequencedMap<($RenderType), ($ByteBufferBuilder)>
+get "fallbackBuffer"(): $ByteBufferBuilder
 }
 
 export class $AccessorMultiBufferSource implements $AccessorMultiBufferSource$$Interface {
- "getFallbackBuffer"(): $ByteBufferBuilder
  "getFixedBuffers"(): $SequencedMap<($RenderType), ($ByteBufferBuilder)>
+ "getFallbackBuffer"(): $ByteBufferBuilder
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -65,18 +65,18 @@ export type $AccessorMultiBufferSource$$Type = ($AccessorMultiBufferSource);
  */
 export type $AccessorMultiBufferSource$$Original = $AccessorMultiBufferSource;}
 declare module "vazkii.patchouli.mixin.client.AccessorScreen" {
-import {$NarratableEntry} from "net.minecraft.client.gui.narration.NarratableEntry"
 import {$List} from "java.util.List"
+import {$NarratableEntry} from "net.minecraft.client.gui.narration.NarratableEntry"
 import {$Renderable} from "net.minecraft.client.gui.components.Renderable"
 
 export interface $AccessorScreen$$Interface {
-get "narratables"(): $List<($NarratableEntry)>
 get "renderables"(): $List<($Renderable)>
+get "narratables"(): $List<($NarratableEntry)>
 }
 
 export class $AccessorScreen implements $AccessorScreen$$Interface {
- "getNarratables"(): $List<($NarratableEntry)>
  "getRenderables"(): $List<($Renderable)>
+ "getNarratables"(): $List<($NarratableEntry)>
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_

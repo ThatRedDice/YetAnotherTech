@@ -13,16 +13,16 @@ static "STREAM_CODEC": $StreamCodec<($ByteBuf), ($BlockFace)>
 
 constructor(arg0: $BlockPos$$Type, arg1: $Direction$$Type)
 
-public "getOppositeFace"(): $Direction
 public "getFace"(): $Direction
 public static "fromNBT"(arg0: $CompoundTag$$Type): $BlockFace
+public "getOppositeFace"(): $Direction
 public "getConnectedPos"(): $BlockPos
 public "isEquivalent"(arg0: $BlockFace$$Type): boolean
 public "serializeNBT"(): $CompoundTag
 public "getOpposite"(): $BlockFace
 public "getPos"(): $BlockPos
-get "oppositeFace"(): $Direction
 get "face"(): $Direction
+get "oppositeFace"(): $Direction
 get "connectedPos"(): $BlockPos
 get "opposite"(): $BlockFace
 get "pos"(): $BlockPos
@@ -68,8 +68,8 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
@@ -79,17 +79,17 @@ static readonly "LEFT": $Pointing
 static readonly "RIGHT": $Pointing
 static readonly "UP": $Pointing
 
-public "getCombinedDirection"(arg0: $Direction$$Type): $Direction
 public "getXRotation"(): integer
+public "getCombinedDirection"(arg0: $Direction$$Type): $Direction
 public static "values"(): ($Pointing)[]
 public static "valueOf"(arg0: StringJS): $Pointing
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "XRotation"(): integer
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS

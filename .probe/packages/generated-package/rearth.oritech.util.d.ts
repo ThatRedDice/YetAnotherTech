@@ -22,7 +22,7 @@ public "efficiency"(): float
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $MachineAddonController$BaseAddonData$$Type = ({"efficiency"?: float, "extraChambers"?: integer, "energyBonusTransfer"?: long, "maxBurstTicks"?: integer, "energyBonusCapacity"?: long, "speed"?: float}) | ([efficiency?: float, extraChambers?: integer, energyBonusTransfer?: long, maxBurstTicks?: integer, energyBonusCapacity?: long, speed?: float]);
+export type $MachineAddonController$BaseAddonData$$Type = ({"extraChambers"?: integer, "energyBonusTransfer"?: long, "maxBurstTicks"?: integer, "energyBonusCapacity"?: long, "speed"?: float, "efficiency"?: float}) | ([extraChambers?: integer, energyBonusTransfer?: long, maxBurstTicks?: integer, energyBonusCapacity?: long, speed?: float, efficiency?: float]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -100,25 +100,25 @@ static readonly "PACKET_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($Fluid
 static readonly "FLUID_INGREDIENT_ENDEC": $Endec<($FluidIngredient)>
 static readonly "EMPTY": $FluidIngredient
 
-constructor(fluidContent: $Either$$Type<($TagKey$$Type<($Fluid$$Type)>), ($ResourceLocation$$Type)>, amount: long)
 constructor()
+constructor(fluidContent: $Either$$Type<($TagKey$$Type<($Fluid$$Type)>), ($ResourceLocation$$Type)>, amount: long)
 
 public "getFluid"(): $Fluid
 public "hasTag"(): boolean
-public "withAmount"(arg0: long): $FluidIngredient
-public "withAmount"(arg0: float): $FluidIngredient
-public "withContent"(arg0: $TagKey$$Type<($Fluid)>): $FluidIngredient
-public "withContent"(arg0: $ResourceLocation$$Type): $FluidIngredient
-public "withContent"(arg0: $ResourceKey$$Type<($Fluid)>): $FluidIngredient
-public "withContent"(arg0: $Fluid$$Type): $FluidIngredient
 public "fluidContent"(): $Either<($TagKey<($Fluid)>), ($ResourceLocation)>
 public "matchesFluid"(arg0: $FluidStack$$Type): boolean
 public "matchesFluid"(arg0: $Fluid$$Type): boolean
 public "withSpecificAmount"(arg0: long): $FluidIngredient
 public static "ofStack"(arg0: $FluidStack$$Type): $FluidIngredient
 public "getFluidStacks"(): $List<($FluidStack)>
-public "getTag"(): $TagKey<($Fluid)>
+public "withAmount"(arg0: long): $FluidIngredient
+public "withAmount"(arg0: float): $FluidIngredient
+public "withContent"(arg0: $ResourceKey$$Type<($Fluid)>): $FluidIngredient
+public "withContent"(arg0: $Fluid$$Type): $FluidIngredient
+public "withContent"(arg0: $TagKey$$Type<($Fluid)>): $FluidIngredient
+public "withContent"(arg0: $ResourceLocation$$Type): $FluidIngredient
 public "amount"(): long
+public "getTag"(): $TagKey<($Fluid)>
 public "name"(): $Component
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
@@ -126,11 +126,11 @@ public "hashCode"(): integer
 public "test"(arg0: any): boolean
 public "test"(arg0: $FluidStack$$Type): boolean
 public "isEmpty"(): boolean
-public "or"(arg0: $Predicate$$Type<($FluidStack)>): $Predicate<($FluidStack)>
+public static "not"<T>(arg0: $Predicate$$Type<($FluidStack)>): $Predicate<($FluidStack)>
 public static "isEqual"<T>(arg0: any): $Predicate<($FluidStack)>
 public "negate"(): $Predicate<($FluidStack)>
 public "and"(arg0: $Predicate$$Type<($FluidStack)>): $Predicate<($FluidStack)>
-public static "not"<T>(arg0: $Predicate$$Type<($FluidStack)>): $Predicate<($FluidStack)>
+public "or"(arg0: $Predicate$$Type<($FluidStack)>): $Predicate<($FluidStack)>
 get "fluid"(): $Fluid
 get "fluidStacks"(): $List<($FluidStack)>
 get "tag"(): $TagKey<($Fluid)>
@@ -140,18 +140,18 @@ get "empty"(): boolean
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $FluidIngredient$$Type = ({"fluidContent"?: $Either$$Type<($TagKey$$Type<($Fluid$$Type)>), ($ResourceLocation$$Type)>, "amount"?: long}) | ([fluidContent?: $Either$$Type<($TagKey$$Type<($Fluid$$Type)>), ($ResourceLocation$$Type)>, amount?: long]);
+export type $FluidIngredient$$Type = ({"amount"?: long, "fluidContent"?: $Either$$Type<($TagKey$$Type<($Fluid$$Type)>), ($ResourceLocation$$Type)>}) | ([amount?: long, fluidContent?: $Either$$Type<($TagKey$$Type<($Fluid$$Type)>), ($ResourceLocation$$Type)>]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
 export type $FluidIngredient$$Original = $FluidIngredient;}
 declare module "rearth.oritech.util.ScreenProvider" {
-import {$Optional} from "java.util.Optional"
 import {$ScreenProvider$ArrowConfiguration} from "rearth.oritech.util.ScreenProvider$ArrowConfiguration"
+import {$Optional} from "java.util.Optional"
 import {$List} from "java.util.List"
 import {$Direction} from "net.minecraft.core.Direction"
-import {$InventoryInputMode} from "rearth.oritech.util.InventoryInputMode"
 import {$ScreenProvider$GuiSlot} from "rearth.oritech.util.ScreenProvider$GuiSlot"
+import {$InventoryInputMode} from "rearth.oritech.util.InventoryInputMode"
 import {$Component} from "net.minecraft.network.chat.Component"
 import {$Tuple} from "net.minecraft.util.Tuple"
 import {$ScreenProvider$BarConfiguration} from "rearth.oritech.util.ScreenProvider$BarConfiguration"
@@ -176,6 +176,7 @@ get "progress"(): float
 }
 
 export class $ScreenProvider implements $ScreenProvider$$Interface {
+ "showProgress"(): boolean
  "getExtraExtensionLabels"(): $List<($Tuple<($Component), ($Component)>)>
  "getGuiSlots"(): $List<($ScreenProvider$GuiSlot)>
  "getDisplayedEnergyUsage"(): float
@@ -195,7 +196,6 @@ export class $ScreenProvider implements $ScreenProvider$$Interface {
  "getFluidConfiguration"(): $ScreenProvider$BarConfiguration
  "getWikiLink"(): $Optional<(StringJS)>
  "getIndicatorConfiguration"(): $ScreenProvider$ArrowConfiguration
- "showProgress"(): boolean
  "getProgress"(): float
 }
 /**
@@ -215,8 +215,8 @@ import {$Vec3i} from "net.minecraft.core.Vec3i"
 import {$List} from "java.util.List"
 import {$EnergyApi$EnergyStorage} from "rearth.oritech.api.energy.EnergyApi$EnergyStorage"
 import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
-import {$ItemApi$InventoryStorage} from "rearth.oritech.api.item.ItemApi$InventoryStorage"
 import {$Level} from "net.minecraft.world.level.Level"
+import {$ItemApi$InventoryStorage} from "rearth.oritech.api.item.ItemApi$InventoryStorage"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
@@ -372,7 +372,7 @@ public "height"(): integer
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $ScreenProvider$BarConfiguration$$Type = ({"width"?: integer, "height"?: integer, "x"?: integer, "y"?: integer}) | ([width?: integer, height?: integer, x?: integer, y?: integer]);
+export type $ScreenProvider$BarConfiguration$$Type = ({"height"?: integer, "x"?: integer, "y"?: integer, "width"?: integer}) | ([height?: integer, x?: integer, y?: integer, width?: integer]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -381,12 +381,12 @@ declare module "rearth.oritech.util.MachineAddonController" {
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$Vec3i} from "net.minecraft.core.Vec3i"
 import {$DynamicEnergyStorage} from "rearth.oritech.api.energy.containers.DynamicEnergyStorage"
-import {$MachineAddonController$AddonBlock, $MachineAddonController$AddonBlock$$Type} from "rearth.oritech.util.MachineAddonController$AddonBlock"
 import {$List, $List$$Type} from "java.util.List"
+import {$MachineAddonController$AddonBlock, $MachineAddonController$AddonBlock$$Type} from "rearth.oritech.util.MachineAddonController$AddonBlock"
 import {$ScreenProvider} from "rearth.oritech.util.ScreenProvider"
 import {$Direction} from "net.minecraft.core.Direction"
-import {$ItemApi$InventoryStorage} from "rearth.oritech.api.item.ItemApi$InventoryStorage"
 import {$Level} from "net.minecraft.world.level.Level"
+import {$ItemApi$InventoryStorage} from "rearth.oritech.api.item.ItemApi$InventoryStorage"
 import {$MachineAddonController$BaseAddonData, $MachineAddonController$BaseAddonData$$Type} from "rearth.oritech.util.MachineAddonController$BaseAddonData"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
 
@@ -408,13 +408,13 @@ get "worldForAddon"(): $Level
 }
 
 export class $MachineAddonController implements $MachineAddonController$$Interface {
+ "getDefaultCapacity"(): long
+ "getDefaultInsertRate"(): long
  "gatherAddonStats"(arg0: $List$$Type<($MachineAddonController$AddonBlock$$Type)>): void
  "getAdditionalStatFromAddon"(arg0: $MachineAddonController$AddonBlock$$Type): void
  "writeAddonToNbt"(arg0: $CompoundTag$$Type): void
  "loadAddonNbtData"(arg0: $CompoundTag$$Type): void
  "updateEnergyContainer"(): void
- "getDefaultCapacity"(): long
- "getDefaultInsertRate"(): long
  "getCoreQuality"(): float
  "getConnectedAddons"(): $List<($BlockPos)>
  "getOpenAddonSlots"(): $List<($BlockPos)>
@@ -464,7 +464,7 @@ public "horizontal"(): boolean
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $ScreenProvider$ArrowConfiguration$$Type = ({"full"?: $ResourceLocation$$Type, "empty"?: $ResourceLocation$$Type, "horizontal"?: boolean, "height"?: integer, "x"?: integer, "width"?: integer, "y"?: integer}) | ([full?: $ResourceLocation$$Type, empty?: $ResourceLocation$$Type, horizontal?: boolean, height?: integer, x?: integer, width?: integer, y?: integer]);
+export type $ScreenProvider$ArrowConfiguration$$Type = ({"empty"?: $ResourceLocation$$Type, "horizontal"?: boolean, "height"?: integer, "x"?: integer, "width"?: integer, "y"?: integer, "full"?: $ResourceLocation$$Type}) | ([empty?: $ResourceLocation$$Type, horizontal?: boolean, height?: integer, x?: integer, width?: integer, y?: integer, full?: $ResourceLocation$$Type]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -491,17 +491,17 @@ public "hashCode"(): integer
 public "test"(arg0: $ItemStack$$Type): boolean
 public "test"(arg0: any): boolean
 public "count"(): integer
-public "or"(arg0: $Predicate$$Type<($ItemStack)>): $Predicate<($ItemStack)>
+public static "not"<T>(arg0: $Predicate$$Type<($ItemStack)>): $Predicate<($ItemStack)>
 public static "isEqual"<T>(arg0: any): $Predicate<($ItemStack)>
 public "negate"(): $Predicate<($ItemStack)>
 public "and"(arg0: $Predicate$$Type<($ItemStack)>): $Predicate<($ItemStack)>
-public static "not"<T>(arg0: $Predicate$$Type<($ItemStack)>): $Predicate<($ItemStack)>
+public "or"(arg0: $Predicate$$Type<($ItemStack)>): $Predicate<($ItemStack)>
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $SizedIngredient$$Type = ({"count"?: integer, "ingredient"?: $Ingredient$$Type}) | ([count?: integer, ingredient?: $Ingredient$$Type]);
+export type $SizedIngredient$$Type = ({"ingredient"?: $Ingredient$$Type, "count"?: integer}) | ([ingredient?: $Ingredient$$Type, count?: integer]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */

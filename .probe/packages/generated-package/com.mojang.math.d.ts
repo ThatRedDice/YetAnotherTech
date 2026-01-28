@@ -42,21 +42,21 @@ export class $Transformation implements $ITransformationExtension$$Interface {
 static readonly "CODEC": $Codec<($Transformation)>
 static readonly "EXTENDED_CODEC": $Codec<($Transformation)>
 
-constructor(arg0: $Vector3f$$Type, arg1: $Quaternionf$$Type, arg2: $Vector3f$$Type, arg3: $Quaternionf$$Type)
 constructor(arg0: $Matrix4f$$Type)
+constructor(arg0: $Vector3f$$Type, arg1: $Quaternionf$$Type, arg2: $Vector3f$$Type, arg3: $Quaternionf$$Type)
 
 public "getLeftRotation"(): $Quaternionf
 public "getRightRotation"(): $Quaternionf
-public "getMatrix"(): $Matrix4f
 public "getNormalMatrix"(): $Matrix3f
+public "getMatrix"(): $Matrix4f
 public "equals"(arg0: any): boolean
 public "hashCode"(): integer
 public static "identity"(): $Transformation
 public "compose"(arg0: $Transformation$$Type): $Transformation
 public "inverse"(): $Transformation
 public "slerp"(arg0: $Transformation$$Type, arg1: float): $Transformation
-public "getTranslation"(): $Vector3f
 public "getScale"(): $Vector3f
+public "getTranslation"(): $Vector3f
 public "applyOrigin"(arg0: $Vector3f$$Type): $Transformation
 public "rotateTransform"(arg0: $Direction$$Type): $Direction
 public "blockCenterToCorner"(): $Transformation
@@ -66,10 +66,10 @@ public "transformNormal"(arg0: $Vector3f$$Type): void
 public "transformPosition"(arg0: $Vector4f$$Type): void
 get "leftRotation"(): $Quaternionf
 get "rightRotation"(): $Quaternionf
-get "matrix"(): $Matrix4f
 get "normalMatrix"(): $Matrix3f
-get "translation"(): $Vector3f
+get "matrix"(): $Matrix4f
 get "scale"(): $Vector3f
+get "translation"(): $Vector3f
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -87,8 +87,8 @@ import {$FrontAndTop, $FrontAndTop$$Type} from "net.minecraft.core.FrontAndTop"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 import {$Matrix3f} from "org.joml.Matrix3f"
@@ -148,17 +148,17 @@ public "inverts"(arg0: $Direction$Axis$$Type): boolean
 public "toString"(): StringJS
 public static "values"(): ($OctahedralGroup)[]
 public static "valueOf"(arg0: StringJS): $OctahedralGroup
-public "compose"(arg0: $OctahedralGroup$$Type): $OctahedralGroup
 public "rotate"(arg0: $FrontAndTop$$Type): $FrontAndTop
 public "rotate"(arg0: $Direction$$Type): $Direction
+public "compose"(arg0: $OctahedralGroup$$Type): $OctahedralGroup
 public "inverse"(): $OctahedralGroup
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
 }

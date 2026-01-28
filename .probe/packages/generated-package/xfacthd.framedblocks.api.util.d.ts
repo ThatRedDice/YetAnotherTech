@@ -1,11 +1,11 @@
 declare module "xfacthd.framedblocks.api.util.CamoList" {
-import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$Iterable$$Interface} from "java.lang.Iterable"
+import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$Iterator} from "java.util.Iterator"
 import {$CamoContainer, $CamoContainer$$Type} from "xfacthd.framedblocks.api.camo.CamoContainer"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Spliterator} from "java.util.Spliterator"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$List$$Type} from "java.util.List"
 import {$Stream} from "java.util.stream.Stream"
 import {$Consumer$$Type} from "java.util.function.Consumer"

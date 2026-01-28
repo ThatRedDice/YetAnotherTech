@@ -33,8 +33,8 @@ export type $ExtendedCraftingUnitType$$Type = (("storage_1024") | ("storage_4096
  */
 export type $ExtendedCraftingUnitType$$Original = $ExtendedCraftingUnitType;}
 declare module "com.the9grounds.aeadditions.block.MEWirelessTransceiverBlock" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$Block} from "net.minecraft.world.level.block.Block"
@@ -90,18 +90,18 @@ declare module "com.the9grounds.aeadditions.block.CraftingStorageBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$LootParams$Builder$$Type} from "net.minecraft.world.level.storage.loot.LootParams$Builder"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$AbstractCraftingUnitBlock} from "appeng.block.crafting.AbstractCraftingUnitBlock"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
+import {$AbstractCraftingUnitBlock} from "appeng.block.crafting.AbstractCraftingUnitBlock"
 import {$List} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$CraftingBlockEntity} from "appeng.blockentity.crafting.CraftingBlockEntity"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$ExtendedCraftingUnitType$$Type} from "com.the9grounds.aeadditions.block.crafting.ExtendedCraftingUnitType"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$ICraftingUnitType} from "appeng.block.crafting.ICraftingUnitType"
+import {$ExtendedCraftingUnitType$$Type} from "com.the9grounds.aeadditions.block.crafting.ExtendedCraftingUnitType"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 

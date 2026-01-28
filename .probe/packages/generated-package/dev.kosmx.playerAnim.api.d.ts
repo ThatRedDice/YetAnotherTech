@@ -43,8 +43,8 @@ export type $TransformType$$Original = $TransformType;}
 declare module "dev.kosmx.playerAnim.api.layered.IAnimation" {
 import {$FirstPersonMode} from "dev.kosmx.playerAnim.api.firstPerson.FirstPersonMode"
 import {$FirstPersonConfiguration} from "dev.kosmx.playerAnim.api.firstPerson.FirstPersonConfiguration"
-import {$Vec3f, $Vec3f$$Type} from "dev.kosmx.playerAnim.core.util.Vec3f"
 import {$TransformType$$Type} from "dev.kosmx.playerAnim.api.TransformType"
+import {$Vec3f, $Vec3f$$Type} from "dev.kosmx.playerAnim.core.util.Vec3f"
 
 export interface $IAnimation$$Interface {
 set "upAnim"(value: float)
@@ -52,10 +52,10 @@ get "active"(): boolean
 }
 
 export class $IAnimation implements $IAnimation$$Interface {
+ "getFirstPersonConfiguration"(tickDelta: float): $FirstPersonConfiguration
  "get3DTransform"(arg0: StringJS, arg1: $TransformType$$Type, arg2: float, arg3: $Vec3f$$Type): $Vec3f
  "setupAnim"(arg0: float): void
  "getFirstPersonMode"(tickDelta: float): $FirstPersonMode
- "getFirstPersonConfiguration"(tickDelta: float): $FirstPersonConfiguration
  "tick"(): void
  "isActive"(): boolean
 }
@@ -98,8 +98,8 @@ export type $FirstPersonMode$$Original = $FirstPersonMode;}
 declare module "dev.kosmx.playerAnim.api.firstPerson.FirstPersonConfiguration" {
 export {} // Mark the file as a module, do not remove unless there are other import/exports!
 export class $FirstPersonConfiguration {
-constructor()
 constructor(showRightArm: boolean, showLeftArm: boolean, showRightItem: boolean, showLeftItem: boolean)
+constructor()
 
 public "isShowRightArm"(): boolean
 public "isShowLeftArm"(): boolean
@@ -134,17 +134,17 @@ declare module "dev.kosmx.playerAnim.api.layered.AnimationStack" {
 import {$FirstPersonMode} from "dev.kosmx.playerAnim.api.firstPerson.FirstPersonMode"
 import {$FirstPersonConfiguration} from "dev.kosmx.playerAnim.api.firstPerson.FirstPersonConfiguration"
 import {$IAnimation$$Type, $IAnimation$$Interface} from "dev.kosmx.playerAnim.api.layered.IAnimation"
-import {$Vec3f, $Vec3f$$Type} from "dev.kosmx.playerAnim.core.util.Vec3f"
 import {$TransformType$$Type} from "dev.kosmx.playerAnim.api.TransformType"
+import {$Vec3f, $Vec3f$$Type} from "dev.kosmx.playerAnim.core.util.Vec3f"
 
 export class $AnimationStack implements $IAnimation$$Interface {
 constructor()
 
+public "addAnimLayer"(priority: integer, layer: $IAnimation$$Type): void
+public "getFirstPersonConfiguration"(tickDelta: float): $FirstPersonConfiguration
 public "get3DTransform"(modelName: StringJS, type: $TransformType$$Type, tickDelta: float, value0: $Vec3f$$Type): $Vec3f
 public "setupAnim"(tickDelta: float): void
 public "getFirstPersonMode"(tickDelta: float): $FirstPersonMode
-public "getFirstPersonConfiguration"(tickDelta: float): $FirstPersonConfiguration
-public "addAnimLayer"(priority: integer, layer: $IAnimation$$Type): void
 public "removeLayer"(layerLevel: integer): boolean
 public "removeLayer"(layer: $IAnimation$$Type): boolean
 public "tick"(): void

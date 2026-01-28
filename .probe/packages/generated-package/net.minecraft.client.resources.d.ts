@@ -39,20 +39,20 @@ public "getLocation"(): $ResourceLocation
 public "getType"(): $Sound$Type
 public "getPath"(): $ResourceLocation
 public "getWeight"(): integer
+public "getVolume"(): $SampledFloat
+public "getPitch"(): $SampledFloat
+public "getSound"(arg0: $RandomSource$$Type): any
 public "preloadIfRequired"(arg0: $SoundEngine$$Type): void
 public "shouldStream"(): boolean
 public "shouldPreload"(): boolean
 public "getAttenuationDistance"(): integer
-public "getVolume"(): $SampledFloat
-public "getPitch"(): $SampledFloat
-public "getSound"(arg0: $RandomSource$$Type): any
 get "location"(): $ResourceLocation
 get "type"(): $Sound$Type
 get "path"(): $ResourceLocation
 get "weight"(): integer
-get "attenuationDistance"(): integer
 get "volume"(): $SampledFloat
 get "pitch"(): $SampledFloat
+get "attenuationDistance"(): integer
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -92,16 +92,16 @@ import {$ClientLanguage$$Type} from "net.minecraft.client.resources.language.Cli
 import {$Locale} from "java.util.Locale"
 import {$PreparableReloadListener$PreparationBarrier$$Type} from "net.minecraft.server.packs.resources.PreparableReloadListener$PreparationBarrier"
 import {$SortedMap} from "java.util.SortedMap"
-import {$ProfilerFiller$$Type} from "net.minecraft.util.profiling.ProfilerFiller"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$ResourceManager$$Type} from "net.minecraft.server.packs.resources.ResourceManager"
+import {$ProfilerFiller$$Type} from "net.minecraft.util.profiling.ProfilerFiller"
 
 export class $LanguageManager implements $ResourceManagerReloadListener$$Interface {
 constructor(arg0: StringJS, arg1: $Consumer$$Type<($ClientLanguage)>)
 
 public "getLanguages"(): $SortedMap<(StringJS), ($LanguageInfo)>
-public "getSelected"(): StringJS
 public "getLanguage"(arg0: StringJS): $LanguageInfo
+public "getSelected"(): StringJS
 public "setSelected"(arg0: StringJS): void
 public "onResourceManagerReload"(arg0: $ResourceManager$$Type): void
 public "getJavaLocale"(): $Locale
@@ -128,8 +128,8 @@ import {$GuiSpriteScaling} from "net.minecraft.client.resources.metadata.gui.Gui
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 
@@ -144,11 +144,11 @@ public static "valueOf"(arg0: StringJS): $GuiSpriteScaling$Type
 public "codec"(): $MapCodec<($GuiSpriteScaling)>
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
 }
@@ -185,8 +185,8 @@ export type $ModelState$$Type = ($ModelState);
  */
 export type $ModelState$$Original = $ModelState;}
 declare module "net.minecraft.client.resources.MapDecorationTextureManager" {
-import {$TextureManager$$Type} from "net.minecraft.client.renderer.texture.TextureManager"
 import {$TextureAtlasSprite} from "net.minecraft.client.renderer.texture.TextureAtlasSprite"
+import {$TextureManager$$Type} from "net.minecraft.client.renderer.texture.TextureManager"
 import {$MapDecoration$$Type} from "net.minecraft.world.level.saveddata.maps.MapDecoration"
 import {$TextureAtlasHolder} from "net.minecraft.client.resources.TextureAtlasHolder"
 
@@ -221,7 +221,7 @@ public "source"(): StringJS
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $BlockStateModelLoader$LoadedJson$$Type = ({"source"?: StringJS, "data"?: $JsonElement$$Type}) | ([source?: StringJS, data?: $JsonElement$$Type]);
+export type $BlockStateModelLoader$LoadedJson$$Type = ({"data"?: $JsonElement$$Type, "source"?: StringJS}) | ([data?: $JsonElement$$Type, source?: StringJS]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -229,11 +229,11 @@ export type $BlockStateModelLoader$LoadedJson$$Original = $BlockStateModelLoader
 declare module "net.minecraft.client.resources.SkinManager" {
 import {$TextureManager$$Type} from "net.minecraft.client.renderer.texture.TextureManager"
 import {$CompletableFuture} from "java.util.concurrent.CompletableFuture"
-import {$Supplier} from "java.util.function.Supplier"
 import {$Executor$$Type} from "java.util.concurrent.Executor"
+import {$Supplier} from "java.util.function.Supplier"
 import {$MinecraftSessionService$$Type} from "com.mojang.authlib.minecraft.MinecraftSessionService"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$Path$$Type} from "java.nio.file.Path"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$PlayerSkin} from "net.minecraft.client.resources.PlayerSkin"
 
 export class $SkinManager {
@@ -255,16 +255,16 @@ export type $SkinManager$$Original = $SkinManager;}
 declare module "net.minecraft.client.resources.model.BakedModel" {
 import {$TextureAtlasSprite} from "net.minecraft.client.renderer.texture.TextureAtlasSprite"
 import {$ItemDisplayContext$$Type} from "net.minecraft.world.item.ItemDisplayContext"
-import {$BakedOpacity$$Interface} from "ca.fxco.moreculling.api.model.BakedOpacity"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$BakedOpacity$$Interface} from "ca.fxco.moreculling.api.model.BakedOpacity"
 import {$ItemOverrides} from "net.minecraft.client.renderer.block.model.ItemOverrides"
 import {$IBakedModelExtension$$Interface} from "net.neoforged.neoforge.client.extensions.IBakedModelExtension"
 import {$List} from "java.util.List"
 import {$PoseStack$$Type} from "com.mojang.blaze3d.vertex.PoseStack"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$BakedQuad} from "net.minecraft.client.renderer.block.model.BakedQuad"
-import {$ItemTransforms} from "net.minecraft.client.renderer.block.model.ItemTransforms"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
+import {$ItemTransforms} from "net.minecraft.client.renderer.block.model.ItemTransforms"
 import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
 import {$VoxelShape, $VoxelShape$$Type} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$BakedModel_extendsMixin$$Interface} from "ca.fxco.moreculling.mixin.models.BakedModel_extendsMixin"
@@ -352,9 +352,9 @@ declare module "net.minecraft.client.resources.model.ModelBaker" {
 import {$TextureAtlasSprite, $TextureAtlasSprite$$Type} from "net.minecraft.client.renderer.texture.TextureAtlasSprite"
 import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Material, $Material$$Type} from "net.minecraft.client.resources.model.Material"
-import {$Function, $Function$$Type} from "java.util.function.Function"
-import {$IModelBakerExtension$$Interface} from "net.neoforged.neoforge.client.extensions.IModelBakerExtension"
 import {$BakedModel} from "net.minecraft.client.resources.model.BakedModel"
+import {$IModelBakerExtension$$Interface} from "net.neoforged.neoforge.client.extensions.IModelBakerExtension"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$ModelResourceLocation$$Type} from "net.minecraft.client.resources.model.ModelResourceLocation"
 import {$ModelState$$Type} from "net.minecraft.client.resources.model.ModelState"
 import {$UnbakedModel, $UnbakedModel$$Type} from "net.minecraft.client.resources.model.UnbakedModel"
@@ -400,14 +400,14 @@ public "height"(): integer
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $FrameSize$$Type = ({"height"?: integer, "width"?: integer}) | ([height?: integer, width?: integer]);
+export type $FrameSize$$Type = ({"width"?: integer, "height"?: integer}) | ([width?: integer, height?: integer]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
 export type $FrameSize$$Original = $FrameSize;}
 declare module "net.minecraft.client.resources.PaintingTextureManager" {
-import {$TextureManager$$Type} from "net.minecraft.client.renderer.texture.TextureManager"
 import {$TextureAtlasSprite} from "net.minecraft.client.renderer.texture.TextureAtlasSprite"
+import {$TextureManager$$Type} from "net.minecraft.client.renderer.texture.TextureManager"
 import {$PaintingVariant$$Type} from "net.minecraft.world.entity.decoration.PaintingVariant"
 import {$TextureAtlasHolder} from "net.minecraft.client.resources.TextureAtlasHolder"
 
@@ -469,8 +469,8 @@ declare module "net.minecraft.client.resources.model.ModelBakery" {
 import {$Map, $Map$$Type} from "java.util.Map"
 import {$Material} from "net.minecraft.client.resources.model.Material"
 import {$ModelResourceLocation} from "net.minecraft.client.resources.model.ModelResourceLocation"
-import {$BakedModel} from "net.minecraft.client.resources.model.BakedModel"
 import {$List, $List$$Type} from "java.util.List"
+import {$BakedModel} from "net.minecraft.client.resources.model.BakedModel"
 import {$BlockModel, $BlockModel$$Type} from "net.minecraft.client.renderer.block.model.BlockModel"
 import {$UnbakedModel} from "net.minecraft.client.resources.model.UnbakedModel"
 import {$ProfilerFiller$$Type} from "net.minecraft.util.profiling.ProfilerFiller"
@@ -522,8 +522,8 @@ export type $ModelBakery$$Type = ($ModelBakery);
  */
 export type $ModelBakery$$Original = $ModelBakery;}
 declare module "net.minecraft.client.resources.MobEffectTextureManager" {
-import {$TextureManager$$Type} from "net.minecraft.client.renderer.texture.TextureManager"
 import {$TextureAtlasSprite} from "net.minecraft.client.renderer.texture.TextureAtlasSprite"
+import {$TextureManager$$Type} from "net.minecraft.client.renderer.texture.TextureManager"
 import {$TextureAtlasHolder} from "net.minecraft.client.resources.TextureAtlasHolder"
 import {$Holder$$Type} from "net.minecraft.core.Holder"
 import {$MobEffect$$Type} from "net.minecraft.world.effect.MobEffect"
@@ -631,28 +631,28 @@ export type $PlayerSkin$Model$$Type = (("slim") | ("wide"));
 export type $PlayerSkin$Model$$Original = $PlayerSkin$Model;}
 declare module "net.minecraft.client.resources.sounds.TickableSoundInstance" {
 import {$RandomSource} from "net.minecraft.util.RandomSource"
-import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Sound, $Sound$$Type} from "net.minecraft.client.resources.sounds.Sound"
+import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$SoundInstance$Attenuation} from "net.minecraft.client.resources.sounds.SoundInstance$Attenuation"
 import {$CompletableFuture} from "java.util.concurrent.CompletableFuture"
-import {$SoundSource} from "net.minecraft.sounds.SoundSource"
 import {$WeighedSoundEvents} from "net.minecraft.client.sounds.WeighedSoundEvents"
+import {$SoundSource} from "net.minecraft.sounds.SoundSource"
 import {$SoundManager$$Type} from "net.minecraft.client.sounds.SoundManager"
 import {$SoundInstance$$Interface} from "net.minecraft.client.resources.sounds.SoundInstance"
-import {$SoundBufferLibrary$$Type} from "net.minecraft.client.sounds.SoundBufferLibrary"
 import {$AudioStream} from "net.minecraft.client.sounds.AudioStream"
+import {$SoundBufferLibrary$$Type} from "net.minecraft.client.sounds.SoundBufferLibrary"
 
 export interface $TickableSoundInstance$$Interface extends $SoundInstance$$Interface {
 get "stopped"(): boolean
-get "source"(): $SoundSource
 get "y"(): double
 get "delay"(): integer
+get "source"(): $SoundSource
 get "location"(): $ResourceLocation
 get "relative"(): boolean
-get "x"(): double
-get "z"(): double
 get "looping"(): boolean
 get "attenuation"(): $SoundInstance$Attenuation
+get "x"(): double
+get "z"(): double
 get "volume"(): float
 get "pitch"(): float
 get "sound"(): $Sound
@@ -661,20 +661,20 @@ get "sound"(): $Sound
 export class $TickableSoundInstance implements $TickableSoundInstance$$Interface {
  "tick"(): void
  "isStopped"(): boolean
- "getSource"(): $SoundSource
  "getStream"(arg0: $SoundBufferLibrary$$Type, arg1: $Sound$$Type, arg2: boolean): $CompletableFuture<($AudioStream)>
  "getY"(): double
  "getDelay"(): integer
+ "getSource"(): $SoundSource
  "getLocation"(): $ResourceLocation
  "resolve"(arg0: $SoundManager$$Type): $WeighedSoundEvents
  "isRelative"(): boolean
- "getX"(): double
- "getZ"(): double
-static "createUnseededRandom"(): $RandomSource
  "isLooping"(): boolean
  "getAttenuation"(): $SoundInstance$Attenuation
  "canStartSilent"(): boolean
  "canPlaySound"(): boolean
+static "createUnseededRandom"(): $RandomSource
+ "getX"(): double
+ "getZ"(): double
  "getVolume"(): float
  "getPitch"(): float
  "getSound"(): $Sound
@@ -716,13 +716,13 @@ declare module "net.minecraft.client.resources.model.UnbakedModel" {
 import {$TextureAtlasSprite$$Type} from "net.minecraft.client.renderer.texture.TextureAtlasSprite"
 import {$Collection} from "java.util.Collection"
 import {$Material$$Type} from "net.minecraft.client.resources.model.Material"
-import {$BakedModel} from "net.minecraft.client.resources.model.BakedModel"
 import {$List, $List$$Type} from "java.util.List"
+import {$BakedModel} from "net.minecraft.client.resources.model.BakedModel"
 import {$BlockElementFace, $BlockElementFace$$Type} from "net.minecraft.client.renderer.block.model.BlockElementFace"
 import {$CullShapeElement, $CullShapeElement$$Type} from "ca.fxco.moreculling.api.model.CullShapeElement"
 import {$ModelState$$Type} from "net.minecraft.client.resources.model.ModelState"
-import {$ExtendedUnbakedModel$$Interface} from "ca.fxco.moreculling.api.model.ExtendedUnbakedModel"
 import {$UnbakedModel_extendsMixin$$Interface} from "ca.fxco.moreculling.mixin.models.cullshape.UnbakedModel_extendsMixin"
+import {$ExtendedUnbakedModel$$Interface} from "ca.fxco.moreculling.api.model.ExtendedUnbakedModel"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Function$$Type} from "java.util.function.Function"
 import {$ModelBaker$$Type} from "net.minecraft.client.resources.model.ModelBaker"
@@ -762,8 +762,8 @@ public "textureUrl"(): StringJS
 public "elytraTexture"(): $ResourceLocation
 public "capeTexture"(): $ResourceLocation
 public "texture"(): $ResourceLocation
-public "secure"(): boolean
 public "model"(): $PlayerSkin$Model
+public "secure"(): boolean
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
@@ -772,33 +772,28 @@ public "hashCode"(): integer
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $PlayerSkin$$Type = ({"secure"?: boolean, "model"?: $PlayerSkin$Model$$Type, "elytraTexture"?: $ResourceLocation$$Type, "capeTexture"?: $ResourceLocation$$Type, "texture"?: $ResourceLocation$$Type, "textureUrl"?: StringJS}) | ([secure?: boolean, model?: $PlayerSkin$Model$$Type, elytraTexture?: $ResourceLocation$$Type, capeTexture?: $ResourceLocation$$Type, texture?: $ResourceLocation$$Type, textureUrl?: StringJS]);
+export type $PlayerSkin$$Type = ({"model"?: $PlayerSkin$Model$$Type, "elytraTexture"?: $ResourceLocation$$Type, "capeTexture"?: $ResourceLocation$$Type, "texture"?: $ResourceLocation$$Type, "textureUrl"?: StringJS, "secure"?: boolean}) | ([model?: $PlayerSkin$Model$$Type, elytraTexture?: $ResourceLocation$$Type, capeTexture?: $ResourceLocation$$Type, texture?: $ResourceLocation$$Type, textureUrl?: StringJS, secure?: boolean]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
 export type $PlayerSkin$$Original = $PlayerSkin;}
 declare module "net.minecraft.client.resources.server.DownloadedPackSource" {
 import {$CompletableFuture} from "java.util.concurrent.CompletableFuture"
-import {$AutoCloseable$$Interface} from "java.lang.AutoCloseable"
 import {$UUID$$Type} from "java.util.UUID"
+import {$AutoCloseable$$Interface} from "java.lang.AutoCloseable"
 import {$GameConfig$UserData$$Type} from "net.minecraft.client.main.GameConfig$UserData"
 import {$URL$$Type} from "java.net.URL"
 import {$ServerPackManager$PackPromptStatus$$Type} from "net.minecraft.client.resources.server.ServerPackManager$PackPromptStatus"
 import {$Minecraft$$Type} from "net.minecraft.client.Minecraft"
 import {$Path$$Type} from "java.nio.file.Path"
-import {$RepositorySource} from "net.minecraft.server.packs.repository.RepositorySource"
 import {$Connection$$Type} from "net.minecraft.network.Connection"
+import {$RepositorySource} from "net.minecraft.server.packs.repository.RepositorySource"
 
 export class $DownloadedPackSource implements $AutoCloseable$$Interface {
 constructor(arg0: $Minecraft$$Type, arg1: $Path$$Type, arg2: $GameConfig$UserData$$Type)
 
 public "popAll"(): void
 public "close"(): void
-public "createRepositorySource"(): $RepositorySource
-public "onRecovery"(): void
-public "cleanupAfterDisconnect"(): void
-public "onReloadSuccess"(): void
-public "onRecoveryFailure"(): void
 public "pushPack"(arg0: $UUID$$Type, arg1: $URL$$Type, arg2: StringJS): void
 public "pushLocalPack"(arg0: $UUID$$Type, arg1: $Path$$Type): void
 public "popPack"(arg0: $UUID$$Type): void
@@ -807,6 +802,11 @@ public "allowServerPacks"(): void
 public "rejectServerPacks"(): void
 public "configureForLocalWorld"(): void
 public "waitForPackFeedback"(arg0: $UUID$$Type): $CompletableFuture<(void)>
+public "createRepositorySource"(): $RepositorySource
+public "onRecovery"(): void
+public "cleanupAfterDisconnect"(): void
+public "onReloadSuccess"(): void
+public "onRecoveryFailure"(): void
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -819,46 +819,46 @@ export type $DownloadedPackSource$$Type = ($DownloadedPackSource);
 export type $DownloadedPackSource$$Original = $DownloadedPackSource;}
 declare module "net.minecraft.client.resources.sounds.SoundInstance" {
 import {$RandomSource} from "net.minecraft.util.RandomSource"
-import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Sound, $Sound$$Type} from "net.minecraft.client.resources.sounds.Sound"
+import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$SoundInstance$Attenuation} from "net.minecraft.client.resources.sounds.SoundInstance$Attenuation"
 import {$CompletableFuture} from "java.util.concurrent.CompletableFuture"
-import {$SoundSource} from "net.minecraft.sounds.SoundSource"
 import {$WeighedSoundEvents} from "net.minecraft.client.sounds.WeighedSoundEvents"
+import {$SoundSource} from "net.minecraft.sounds.SoundSource"
 import {$SoundManager$$Type} from "net.minecraft.client.sounds.SoundManager"
-import {$SoundBufferLibrary$$Type} from "net.minecraft.client.sounds.SoundBufferLibrary"
 import {$AudioStream} from "net.minecraft.client.sounds.AudioStream"
+import {$SoundBufferLibrary$$Type} from "net.minecraft.client.sounds.SoundBufferLibrary"
 
 export interface $SoundInstance$$Interface {
-get "source"(): $SoundSource
 get "y"(): double
 get "delay"(): integer
+get "source"(): $SoundSource
 get "location"(): $ResourceLocation
 get "relative"(): boolean
-get "x"(): double
-get "z"(): double
 get "looping"(): boolean
 get "attenuation"(): $SoundInstance$Attenuation
+get "x"(): double
+get "z"(): double
 get "volume"(): float
 get "pitch"(): float
 get "sound"(): $Sound
 }
 
 export class $SoundInstance implements $SoundInstance$$Interface {
- "getSource"(): $SoundSource
  "getStream"(arg0: $SoundBufferLibrary$$Type, arg1: $Sound$$Type, arg2: boolean): $CompletableFuture<($AudioStream)>
  "getY"(): double
  "getDelay"(): integer
+ "getSource"(): $SoundSource
  "getLocation"(): $ResourceLocation
  "resolve"(arg0: $SoundManager$$Type): $WeighedSoundEvents
  "isRelative"(): boolean
- "getX"(): double
- "getZ"(): double
-static "createUnseededRandom"(): $RandomSource
  "isLooping"(): boolean
  "getAttenuation"(): $SoundInstance$Attenuation
  "canStartSilent"(): boolean
  "canPlaySound"(): boolean
+static "createUnseededRandom"(): $RandomSource
+ "getX"(): double
+ "getZ"(): double
  "getVolume"(): float
  "getPitch"(): float
  "getSound"(): $Sound
@@ -885,11 +885,11 @@ import {$BlockColors$$Type} from "net.minecraft.client.color.block.BlockColors"
 import {$TextureManager$$Type} from "net.minecraft.client.renderer.texture.TextureManager"
 import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$CompletableFuture} from "java.util.concurrent.CompletableFuture"
-import {$ModelBakery} from "net.minecraft.client.resources.model.ModelBakery"
 import {$Executor$$Type} from "java.util.concurrent.Executor"
+import {$ModelBakery} from "net.minecraft.client.resources.model.ModelBakery"
 import {$BlockModelShaper} from "net.minecraft.client.renderer.block.BlockModelShaper"
-import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$ResourceManager$$Type} from "net.minecraft.server.packs.resources.ResourceManager"
+import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $ModelManager implements $PreparableReloadListener$$Interface, $AutoCloseable$$Interface {
  "bakedRegistry": $Map<($ModelResourceLocation), ($BakedModel)>
@@ -899,12 +899,12 @@ constructor(arg0: $TextureManager$$Type, arg1: $BlockColors$$Type, arg2: integer
 public "getModelBakery"(): $ModelBakery
 public "reload"(arg0: $PreparableReloadListener$PreparationBarrier$$Type, arg1: $ResourceManager$$Type, arg2: $ProfilerFiller$$Type, arg3: $ProfilerFiller$$Type, arg4: $Executor$$Type, arg5: $Executor$$Type): $CompletableFuture<(void)>
 public "close"(): void
+public "requiresRender"(arg0: $BlockState$$Type, arg1: $BlockState$$Type): boolean
 public "getModel"(arg0: $ModelResourceLocation$$Type): $BakedModel
 public "getBlockModelShaper"(): $BlockModelShaper
 public "getMissingModel"(): $BakedModel
 public "getAtlas"(arg0: $ResourceLocation$$Type): $TextureAtlas
 public "updateMaxMipLevel"(arg0: integer): void
-public "requiresRender"(arg0: $BlockState$$Type, arg1: $BlockState$$Type): boolean
 public "getName"(): StringJS
 get "modelBakery"(): $ModelBakery
 get "blockModelShaper"(): $BlockModelShaper
@@ -950,9 +950,9 @@ static readonly "STANDALONE_VARIANT": StringJS
 
 constructor(id: $ResourceLocation$$Type, variant: StringJS)
 
-public static "standalone"(arg0: $ResourceLocation$$Type): $ModelResourceLocation
-public "variant"(): StringJS
 public "getVariant"(): StringJS
+public "variant"(): StringJS
+public static "standalone"(arg0: $ResourceLocation$$Type): $ModelResourceLocation
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
@@ -964,7 +964,7 @@ public static "inventory"(arg0: $ResourceLocation$$Type): $ModelResourceLocation
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $ModelResourceLocation$$Type = ({"id"?: $ResourceLocation$$Type, "variant"?: StringJS}) | ([id?: $ResourceLocation$$Type, variant?: StringJS]);
+export type $ModelResourceLocation$$Type = ({"variant"?: StringJS, "id"?: $ResourceLocation$$Type}) | ([variant?: StringJS, id?: $ResourceLocation$$Type]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */

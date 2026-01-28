@@ -11,14 +11,14 @@ import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Explosion$$Type} from "net.minecraft.world.level.Explosion"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$PlayerInteractEvent$RightClickBlock$$Type} from "net.neoforged.neoforge.event.entity.player.PlayerInteractEvent$RightClickBlock"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$Block} from "net.minecraft.world.level.block.Block"
@@ -30,9 +30,9 @@ import {$Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
-import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
+import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$DirectionProperty} from "net.minecraft.world.level.block.state.properties.DirectionProperty"
 
@@ -62,15 +62,15 @@ static readonly "FACING": $DirectionProperty
 constructor(arg0: float)
 constructor()
 
-public static "playerInteract"(arg0: $PlayerInteractEvent$RightClickBlock$$Type): void
+public "useWithoutItem"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $BlockHitResult$$Type): $InteractionResult
 public "updateShape"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $BlockState$$Type, arg3: $LevelAccessor$$Type, arg4: $BlockPos$$Type, arg5: $BlockPos$$Type): $BlockState
+public "getAnalogOutputSignal"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type): integer
 public "getExplosionResistance"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $Explosion$$Type): float
 public "playerWillDestroy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $Player$$Type): $BlockState
 public "canEntityDestroy"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): boolean
-public "useWithoutItem"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $BlockHitResult$$Type): $InteractionResult
-public "getAnalogOutputSignal"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type): integer
 public "getTicker"<T extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
+public static "playerInteract"(arg0: $PlayerInteractEvent$RightClickBlock$$Type): void
 public "getShape"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $CollisionContext$$Type): $VoxelShape
 public "getFluidState"(arg0: $BlockState$$Type): $FluidState
 public "animateTick"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $RandomSource$$Type): void
@@ -79,8 +79,8 @@ public "onRemove"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$
 public "hasAnalogOutputSignal"(arg0: $BlockState$$Type): boolean
 public "getListener"<T extends $BlockEntity>(arg0: $ServerLevel$$Type, arg1: T): $GameEventListener
 public "getPickupSound"(): $Optional<($SoundEvent)>
-public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "canPlaceLiquid"(arg0: $Player$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $Fluid$$Type): boolean
+public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "pickupBlock"(arg0: $Player$$Type, arg1: $LevelAccessor$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): $ItemStack
 public "getPickupSound"(arg0: $BlockState$$Type): $Optional<($SoundEvent)>
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
@@ -100,17 +100,17 @@ import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$List$$Type} from "java.util.List"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
-import {$IStashStorageItem$$Interface} from "net.p3pp3rf1y.sophisticatedcore.api.IStashStorageItem"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$IStashStorageItem$$Interface} from "net.p3pp3rf1y.sophisticatedcore.api.IStashStorageItem"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$Slot$$Type} from "net.minecraft.world.inventory.Slot"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$TooltipComponent} from "net.minecraft.world.inventory.tooltip.TooltipComponent"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$ClickAction$$Type} from "net.minecraft.world.inventory.ClickAction"
-import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
-import {$EquipmentSlot} from "net.minecraft.world.entity.EquipmentSlot"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$EquipmentSlot} from "net.minecraft.world.entity.EquipmentSlot"
+import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
@@ -119,11 +119,11 @@ import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$UnaryOperator$$Type} from "java.util.function.UnaryOperator"
 import {$Map} from "java.util.Map"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$SlotAccess$$Type} from "net.minecraft.world.entity.SlotAccess"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$BackpackBlock$$Type} from "net.p3pp3rf1y.sophisticatedbackpacks.backpack.BackpackBlock"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$IntSupplier$$Type} from "java.util.function.IntSupplier"
 import {$Consumer$$Type} from "java.util.function.Consumer"
@@ -140,15 +140,9 @@ static readonly "BASE_ATTACK_SPEED_ID": $ResourceLocation
 static readonly "ABSOLUTE_MAX_STACK_SIZE": integer
 static readonly "BY_BLOCK": $Map<($Block), ($Item)>
 
-constructor(arg0: $IntSupplier$$Type, arg1: $IntSupplier$$Type, arg2: $Supplier$$Type<($BackpackBlock$$Type)>)
 constructor(arg0: $IntSupplier$$Type, arg1: $IntSupplier$$Type, arg2: $Supplier$$Type<($BackpackBlock$$Type)>, arg3: $UnaryOperator$$Type<($Item$Properties)>)
+constructor(arg0: $IntSupplier$$Type, arg1: $IntSupplier$$Type, arg2: $Supplier$$Type<($BackpackBlock$$Type)>)
 
-public "getNumberOfSlots"(): integer
-public static "setColors"(arg0: $ItemStack$$Type, arg1: integer, arg2: integer): void
-public "addCreativeTabItems"(arg0: $Consumer$$Type<($ItemStack)>): void
-public "tryPlace"(arg0: $Player$$Type, arg1: $Direction$$Type, arg2: $BlockPlaceContext$$Type): $InteractionResult
-public "stash"(arg0: $ItemStack$$Type, arg1: $ItemStack$$Type, arg2: boolean): $ItemStack
-public "getNumberOfUpgradeSlots"(): integer
 public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
 public "useOn"(arg0: $UseOnContext$$Type): $InteractionResult
 public "overrideStackedOnOther"(arg0: $ItemStack$$Type, arg1: $Slot$$Type, arg2: $ClickAction$$Type, arg3: $Player$$Type): boolean
@@ -160,14 +154,20 @@ public "hasCustomEntity"(arg0: $ItemStack$$Type): boolean
 public "shouldCauseReequipAnimation"(arg0: $ItemStack$$Type, arg1: $ItemStack$$Type, arg2: boolean): boolean
 public "getItemStashable"(arg0: $HolderLookup$Provider$$Type, arg1: $ItemStack$$Type, arg2: $ItemStack$$Type): $IStashStorageItem$StashResult
 public "getInventoryTooltip"(arg0: $ItemStack$$Type): $Optional<($TooltipComponent)>
+public "tryPlace"(arg0: $Player$$Type, arg1: $Direction$$Type, arg2: $BlockPlaceContext$$Type): $InteractionResult
+public "stash"(arg0: $ItemStack$$Type, arg1: $ItemStack$$Type, arg2: boolean): $ItemStack
+public "getNumberOfUpgradeSlots"(): integer
+public "getNumberOfSlots"(): integer
+public static "setColors"(arg0: $ItemStack$$Type, arg1: integer, arg2: integer): void
+public "addCreativeTabItems"(arg0: $Consumer$$Type<($ItemStack)>): void
 public "createEntity"(arg0: $Level$$Type, arg1: $Entity$$Type, arg2: $ItemStack$$Type): $Entity
 public "use"(arg0: $Level$$Type, arg1: $Player$$Type, arg2: $InteractionHand$$Type): $InteractionResultHolder<($ItemStack)>
 public "getTooltipImage"(arg0: $ItemStack$$Type): $Optional<($TooltipComponent)>
 public "makesPiglinsNeutral"(arg0: $ItemStack$$Type, arg1: $LivingEntity$$Type): boolean
 public "getEquipmentSlot"(arg0: $ItemStack$$Type): $EquipmentSlot
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
-get "numberOfSlots"(): integer
 get "numberOfUpgradeSlots"(): integer
+get "numberOfSlots"(): integer
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_

@@ -1,12 +1,12 @@
 declare module "appeng.block.crafting.PushDirection" {
 import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
+import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
-import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
@@ -24,16 +24,16 @@ static readonly "STREAM_CODEC": $StreamCodec<($FriendlyByteBuf), ($PushDirection
 public static "fromDirection"(arg0: $Direction$$Type): $PushDirection
 public static "values"(): ($PushDirection)[]
 public static "valueOf"(arg0: StringJS): $PushDirection
-public "getDirection"(): $Direction
 public "getSerializedName"(): StringJS
+public "getDirection"(): $Direction
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
-get "direction"(): $Direction
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
+get "direction"(): $Direction
 get "remappedEnumConstantName"(): StringJS
 }
 /**
@@ -109,8 +109,8 @@ export type $ICraftingUnitType$$Type = ($ICraftingUnitType);
  */
 export type $ICraftingUnitType$$Original = $ICraftingUnitType;}
 declare module "appeng.block.crafting.AbstractCraftingUnitBlock" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$AEBaseEntityBlock} from "appeng.block.AEBaseEntityBlock"
@@ -123,8 +123,8 @@ import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$ICraftingUnitType, $ICraftingUnitType$$Type} from "appeng.block.crafting.ICraftingUnitType"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
@@ -232,8 +232,8 @@ import {$Block} from "net.minecraft.world.level.block.Block"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 
@@ -278,8 +278,8 @@ import {$Block} from "net.minecraft.world.level.block.Block"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$CraftingMonitorBlockEntity} from "appeng.blockentity.crafting.CraftingMonitorBlockEntity"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$ICraftingUnitType, $ICraftingUnitType$$Type} from "appeng.block.crafting.ICraftingUnitType"
 import {$IOrientationStrategy} from "appeng.api.orientation.IOrientationStrategy"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -330,8 +330,8 @@ import {$Block} from "net.minecraft.world.level.block.Block"
 import {$CraftingBlockEntity} from "appeng.blockentity.crafting.CraftingBlockEntity"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$ICraftingUnitType, $ICraftingUnitType$$Type} from "appeng.block.crafting.ICraftingUnitType"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"

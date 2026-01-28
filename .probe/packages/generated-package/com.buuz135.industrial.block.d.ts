@@ -26,6 +26,7 @@ import {$Runnable} from "java.lang.Runnable"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$IndustrialProcessingTile} from "com.buuz135.industrial.block.tile.IndustrialProcessingTile"
 import {$InventoryComponent$$Type} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$Pair} from "org.apache.commons.lang3.tuple.Pair"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
@@ -39,18 +40,20 @@ constructor(arg0: $BlockPos$$Type, arg1: $BlockState$$Type)
 public "loadSettings"(arg0: $Player$$Type, arg1: $CompoundTag$$Type): void
 public "saveSettings"(arg0: $Player$$Type, arg1: $CompoundTag$$Type): void
 public "getMaxProgress"(): integer
-public "canIncrease"(): boolean
 public static "getSlotPos"(arg0: integer): $Pair<(integer), (integer)>
+public "canIncrease"(): boolean
 public "setLevel"(arg0: $Level$$Type): void
 public "getSelf"(): $DissolutionChamberTile
 public "onFinish"(): $Runnable
 public "setChanged"(): void
 public static "readInventory"(arg0: $RegistryAccess$$Type, arg1: $CompoundTag$$Type): $List<($ItemStack)>
 public static "writeInventory"(arg0: $RegistryAccess$$Type, arg1: $InventoryComponent$$Type): $CompoundTag
+public "getUpdatePacket"(): $Packet
 get "maxProgress"(): integer
 set "level"(value: $Level$$Type)
 get "self"(): $DissolutionChamberTile
 get "changed"(): void
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -68,6 +71,7 @@ import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$List} from "java.util.List"
 import {$IndustrialAreaWorkingTile} from "com.buuz135.industrial.block.tile.IndustrialAreaWorkingTile"
 import {$InventoryComponent$$Type} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$IndustrialWorkingTile$WorkAction} from "com.buuz135.industrial.block.tile.IndustrialWorkingTile$WorkAction"
 import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
@@ -86,8 +90,10 @@ public "work"(): $IndustrialWorkingTile$WorkAction
 public "getSelf"(): $AnimalBabySeparatorTile
 public static "readInventory"(arg0: $RegistryAccess$$Type, arg1: $CompoundTag$$Type): $List<($ItemStack)>
 public static "writeInventory"(arg0: $RegistryAccess$$Type, arg1: $InventoryComponent$$Type): $CompoundTag
+public "getUpdatePacket"(): $Packet
 get "maxProgress"(): integer
 get "self"(): $AnimalBabySeparatorTile
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -101,8 +107,8 @@ export type $AnimalBabySeparatorTile$$Original = $AnimalBabySeparatorTile;}
 declare module "com.buuz135.industrial.block.agriculturehusbandry.AnimalBabySeparatorBlock" {
 import {$AnimalBabySeparatorTile} from "com.buuz135.industrial.block.agriculturehusbandry.tile.AnimalBabySeparatorTile"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$RecipeOutput$$Type} from "net.minecraft.data.recipes.RecipeOutput"
@@ -137,9 +143,9 @@ static readonly "FACING_HORIZONTAL": $DirectionProperty
 
 constructor()
 
+public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($AnimalBabySeparatorTile)>
 public "getRotationType"(): $RotatableBlock$RotationType
-public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "tileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($AnimalBabySeparatorTile)>
 get "rotationType"(): $RotatableBlock$RotationType
@@ -155,8 +161,8 @@ export type $AnimalBabySeparatorBlock$$Type = ($AnimalBabySeparatorBlock);
 export type $AnimalBabySeparatorBlock$$Original = $AnimalBabySeparatorBlock;}
 declare module "com.buuz135.industrial.block.transportstorage.TransporterBlock" {
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$List} from "java.util.List"
@@ -166,11 +172,11 @@ import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
 import {$SimpleWaterloggedBlock$$Interface} from "net.minecraft.world.level.block.SimpleWaterloggedBlock"
 import {$BasicBlockLootTables$$Type} from "com.hrznstudio.titanium.datagenerator.loot.block.BasicBlockLootTables"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$LootTable$Builder} from "net.minecraft.world.level.storage.loot.LootTable$Builder"
+import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$TransporterTile} from "com.buuz135.industrial.block.transportstorage.tile.TransporterTile"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -187,8 +193,8 @@ import {$Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 import {$ItemInteractionResult} from "net.minecraft.world.ItemInteractionResult"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$Pair} from "org.apache.commons.lang3.tuple.Pair"
-import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
+import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 
 export class $TransporterBlock extends $BasicTileBlock<($TransporterTile)> implements $SimpleWaterloggedBlock$$Interface {
@@ -226,8 +232,8 @@ public "getLootTable"(arg0: any): $LootTable$Builder
 public "getLootTable"(arg0: $BasicBlockLootTables$$Type): $LootTable$Builder
 public "hasIndividualRenderVoxelShape"(): boolean
 public "getPickupSound"(): $Optional<($SoundEvent)>
-public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "canPlaceLiquid"(arg0: $Player$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $Fluid$$Type): boolean
+public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "pickupBlock"(arg0: $Player$$Type, arg1: $LevelAccessor$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): $ItemStack
 public "getPickupSound"(arg0: $BlockState$$Type): $Optional<($SoundEvent)>
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
@@ -252,6 +258,7 @@ import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$InventoryComponent$$Type} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
 import {$BlockWithTile$$Type} from "com.hrznstudio.titanium.module.BlockWithTile"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$IndustrialWorkingTile} from "com.buuz135.industrial.block.tile.IndustrialWorkingTile"
 import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
@@ -266,17 +273,19 @@ public "loadSettings"(arg0: $Player$$Type, arg1: $CompoundTag$$Type): void
 public "saveSettings"(arg0: $Player$$Type, arg1: $CompoundTag$$Type): void
 public "canAcceptAugment"(arg0: $ItemStack$$Type): boolean
 public "isSpawnParticles"(): boolean
+public "getPointedBlockPos"(): $BlockPos
 public "getWorkingArea"(): $VoxelShape
 public "increasePointer"(): void
 public "isShowingArea"(): boolean
-public "getPointedBlockPos"(): $BlockPos
 public "isLoaded"(arg0: $BlockPos$$Type): boolean
 public static "readInventory"(arg0: $RegistryAccess$$Type, arg1: $CompoundTag$$Type): $List<($ItemStack)>
 public static "writeInventory"(arg0: $RegistryAccess$$Type, arg1: $InventoryComponent$$Type): $CompoundTag
+public "getUpdatePacket"(): $Packet
 get "spawnParticles"(): boolean
+get "pointedBlockPos"(): $BlockPos
 get "workingArea"(): $VoxelShape
 get "showingArea"(): boolean
-get "pointedBlockPos"(): $BlockPos
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -289,8 +298,8 @@ export type $IndustrialAreaWorkingTile$$Type<T> = ($IndustrialAreaWorkingTile<(T
 export type $IndustrialAreaWorkingTile$$Original<T> = $IndustrialAreaWorkingTile<(T)>;}
 declare module "com.buuz135.industrial.block.resourceproduction.OreLaserBaseBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$RecipeOutput$$Type} from "net.minecraft.data.recipes.RecipeOutput"
@@ -325,8 +334,8 @@ static readonly "FACING_HORIZONTAL": $DirectionProperty
 
 constructor()
 
-public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($OreLaserBaseTile)>
 public "registerRecipe"(arg0: $RecipeOutput$$Type): void
+public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($OreLaserBaseTile)>
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "tileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($OreLaserBaseTile)>
 }
@@ -341,10 +350,10 @@ export type $OreLaserBaseBlock$$Type = ($OreLaserBaseBlock);
 export type $OreLaserBaseBlock$$Original = $OreLaserBaseBlock;}
 declare module "com.buuz135.industrial.block.resourceproduction.MaterialStoneWorkFactoryBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$MaterialStoneWorkFactoryTile} from "com.buuz135.industrial.block.resourceproduction.tile.MaterialStoneWorkFactoryTile"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$MaterialStoneWorkFactoryTile} from "com.buuz135.industrial.block.resourceproduction.tile.MaterialStoneWorkFactoryTile"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$RecipeOutput$$Type} from "net.minecraft.data.recipes.RecipeOutput"
 import {$IndustrialBlock} from "com.buuz135.industrial.block.IndustrialBlock"
@@ -378,9 +387,9 @@ static readonly "FACING_HORIZONTAL": $DirectionProperty
 
 constructor()
 
+public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($MaterialStoneWorkFactoryTile)>
 public "getRotationType"(): $RotatableBlock$RotationType
-public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "tileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($MaterialStoneWorkFactoryTile)>
 get "rotationType"(): $RotatableBlock$RotationType
@@ -396,10 +405,10 @@ export type $MaterialStoneWorkFactoryBlock$$Type = ($MaterialStoneWorkFactoryBlo
 export type $MaterialStoneWorkFactoryBlock$$Original = $MaterialStoneWorkFactoryBlock;}
 declare module "com.buuz135.industrial.block.misc.MobDetectorBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$MobDetectorTile} from "com.buuz135.industrial.block.misc.tile.MobDetectorTile"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
@@ -436,9 +445,9 @@ static readonly "FACING_HORIZONTAL": $DirectionProperty
 
 constructor()
 
+public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($MobDetectorTile)>
 public "getRotationType"(): $RotatableBlock$RotationType
-public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public "isSignalSource"(arg0: $BlockState$$Type): boolean
 public "getSignal"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $Direction$$Type): integer
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
@@ -456,12 +465,12 @@ export type $MobDetectorBlock$$Type = ($MobDetectorBlock);
 export type $MobDetectorBlock$$Original = $MobDetectorBlock;}
 declare module "com.buuz135.industrial.block.core.LatexProcessingUnitBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
-import {$RecipeOutput$$Type} from "net.minecraft.data.recipes.RecipeOutput"
 import {$LatexProcessingUnitTile} from "com.buuz135.industrial.block.core.tile.LatexProcessingUnitTile"
+import {$RecipeOutput$$Type} from "net.minecraft.data.recipes.RecipeOutput"
 import {$IndustrialBlock} from "com.buuz135.industrial.block.IndustrialBlock"
 import {$RotatableBlock$RotationType} from "com.hrznstudio.titanium.block.RotatableBlock$RotationType"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
@@ -493,9 +502,9 @@ static readonly "FACING_HORIZONTAL": $DirectionProperty
 
 constructor()
 
+public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($LatexProcessingUnitTile)>
 public "getRotationType"(): $RotatableBlock$RotationType
-public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "tileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($LatexProcessingUnitTile)>
 get "rotationType"(): $RotatableBlock$RotationType
@@ -513,9 +522,10 @@ declare module "com.buuz135.industrial.block.agriculturehusbandry.tile.PlantGath
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$List} from "java.util.List"
-import {$ActiveTile} from "com.hrznstudio.titanium.block.tile.ActiveTile"
 import {$IndustrialAreaWorkingTile} from "com.buuz135.industrial.block.tile.IndustrialAreaWorkingTile"
 import {$InventoryComponent$$Type} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
+import {$ActiveTile} from "com.hrznstudio.titanium.block.tile.ActiveTile"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$IndustrialWorkingTile$WorkAction} from "com.buuz135.industrial.block.tile.IndustrialWorkingTile$WorkAction"
 import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
@@ -531,8 +541,10 @@ public "work"(): $IndustrialWorkingTile$WorkAction
 public "getSelf"(): $ActiveTile
 public static "readInventory"(arg0: $RegistryAccess$$Type, arg1: $CompoundTag$$Type): $List<($ItemStack)>
 public static "writeInventory"(arg0: $RegistryAccess$$Type, arg1: $InventoryComponent$$Type): $CompoundTag
+public "getUpdatePacket"(): $Packet
 get "maxProgress"(): integer
 get "self"(): $ActiveTile
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -545,11 +557,11 @@ export type $PlantGathererTile$$Type = ($PlantGathererTile);
 export type $PlantGathererTile$$Original = $PlantGathererTile;}
 declare module "com.buuz135.industrial.block.resourceproduction.SporesRecreatorBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block} from "net.minecraft.world.level.block.Block"
-import {$SporesRecreatorTile} from "com.buuz135.industrial.block.resourceproduction.tile.SporesRecreatorTile"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
+import {$SporesRecreatorTile} from "com.buuz135.industrial.block.resourceproduction.tile.SporesRecreatorTile"
 import {$RecipeOutput$$Type} from "net.minecraft.data.recipes.RecipeOutput"
 import {$IndustrialBlock} from "com.buuz135.industrial.block.IndustrialBlock"
 import {$RotatableBlock$RotationType} from "com.hrznstudio.titanium.block.RotatableBlock$RotationType"
@@ -582,9 +594,9 @@ static readonly "FACING_HORIZONTAL": $DirectionProperty
 
 constructor()
 
+public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($SporesRecreatorTile)>
 public "getRotationType"(): $RotatableBlock$RotationType
-public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "tileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($SporesRecreatorTile)>
 get "rotationType"(): $RotatableBlock$RotationType
@@ -604,10 +616,11 @@ import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$List} from "java.util.List"
 import {$IndustrialAreaWorkingTile} from "com.buuz135.industrial.block.tile.IndustrialAreaWorkingTile"
 import {$InventoryComponent$$Type} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$IndustrialWorkingTile$WorkAction} from "com.buuz135.industrial.block.tile.IndustrialWorkingTile$WorkAction"
-import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
 
 export class $FluidCollectorTile extends $IndustrialAreaWorkingTile<($FluidCollectorTile)> {
 static readonly "ATTACHMENTS_NBT_KEY": StringJS
@@ -619,8 +632,10 @@ public "work"(): $IndustrialWorkingTile$WorkAction
 public "getSelf"(): $FluidCollectorTile
 public static "readInventory"(arg0: $RegistryAccess$$Type, arg1: $CompoundTag$$Type): $List<($ItemStack)>
 public static "writeInventory"(arg0: $RegistryAccess$$Type, arg1: $InventoryComponent$$Type): $CompoundTag
+public "getUpdatePacket"(): $Packet
 get "maxProgress"(): integer
 get "self"(): $FluidCollectorTile
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -632,29 +647,30 @@ export type $FluidCollectorTile$$Type = ($FluidCollectorTile);
  */
 export type $FluidCollectorTile$$Original = $FluidCollectorTile;}
 declare module "com.buuz135.industrial.block.transportstorage.tile.TransporterTile" {
-import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
-import {$SidedInventoryComponent} from "com.hrznstudio.titanium.component.inventory.SidedInventoryComponent"
-import {$Map} from "java.util.Map"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$List} from "java.util.List"
-import {$ActiveTile, $ActiveTile$$Type} from "com.hrznstudio.titanium.block.tile.ActiveTile"
 import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
-import {$IFactory} from "com.hrznstudio.titanium.api.IFactory"
 import {$Inventory$$Type} from "net.minecraft.world.entity.player.Inventory"
-import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
+import {$InventoryComponent} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
+import {$IAugmentType$$Type} from "com.hrznstudio.titanium.api.augment.IAugmentType"
+import {$ModelData} from "net.neoforged.neoforge.client.model.data.ModelData"
+import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$SidedInventoryComponent} from "com.hrznstudio.titanium.component.inventory.SidedInventoryComponent"
+import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
+import {$Map} from "java.util.Map"
+import {$ActiveTile, $ActiveTile$$Type} from "com.hrznstudio.titanium.block.tile.ActiveTile"
+import {$IFactory} from "com.hrznstudio.titanium.api.IFactory"
+import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$IBlockContainer$$Interface} from "com.buuz135.industrial.api.IBlockContainer"
 import {$IScreenAddon} from "com.hrznstudio.titanium.api.client.IScreenAddon"
 import {$TransporterTypeFactory, $TransporterTypeFactory$$Type} from "com.buuz135.industrial.api.transporter.TransporterTypeFactory"
 import {$AbstractContainerMenu} from "net.minecraft.world.inventory.AbstractContainerMenu"
-import {$InventoryComponent} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
-import {$IAugmentType$$Type} from "com.hrznstudio.titanium.api.augment.IAugmentType"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$TransporterType} from "com.buuz135.industrial.api.transporter.TransporterType"
-import {$ModelData} from "net.neoforged.neoforge.client.model.data.ModelData"
-import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
-import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $TransporterTile extends $ActiveTile<($TransporterTile)> implements $IBlockContainer$$Interface<($TransporterTypeFactory)> {
 static readonly "ATTACHMENTS_NBT_KEY": StringJS
@@ -682,23 +698,25 @@ public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState
 public "loadAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "createMenu"(arg0: integer, arg1: $Inventory$$Type, arg2: $Player$$Type): $AbstractContainerMenu
 public "initClient"(): void
-public "getAugmentFactory"(): $IFactory<($InventoryComponent<($TransporterTile)>)>
 public "getAugmentBackground"(): $IFactory<($IScreenAddon)>
+public "getAugmentFactory"(): $IFactory<($InventoryComponent<($TransporterTile)>)>
 public "getSelf"(): $ActiveTile
+public "getBlockPosition"(): $BlockPos
 public "clientTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $BlockEntity$$Type): void
 public "clientTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $TransporterTile$$Type): void
-public "getBlockPosition"(): $BlockPos
 public "getModelData"(): $ModelData
+public "getUpdatePacket"(): $Packet
 get "augmentInventory"(): $SidedInventoryComponent<($TransporterTile)>
 get "transporterTypeMap"(): $Map<($Direction), ($TransporterType)>
 get "blockWorld"(): $Level
 get "entityFilter"(): $List<(integer)>
 get "installedAugments"(): $List<($ItemStack)>
-get "augmentFactory"(): $IFactory<($InventoryComponent<($TransporterTile)>)>
 get "augmentBackground"(): $IFactory<($IScreenAddon)>
+get "augmentFactory"(): $IFactory<($InventoryComponent<($TransporterTile)>)>
 get "self"(): $ActiveTile
 get "blockPosition"(): $BlockPos
 get "modelData"(): $ModelData
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -714,8 +732,8 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
@@ -738,24 +756,24 @@ public static "values"(): ($ConveyorBlock$EnumType)[]
 public static "valueOf"(arg0: StringJS): $ConveyorBlock$EnumType
 public "isUp"(): boolean
 public "getTexture"(): StringJS
+public "getSerializedName"(): StringJS
 public "getModel"(): StringJS
 public "isDown"(): boolean
-public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "fast"(): boolean
 get "fast"(): $ConveyorBlock$EnumType
 get "vertical"(): boolean
 get "name"(): StringJS
 get "up"(): boolean
 get "texture"(): StringJS
+get "serializedName"(): StringJS
 get "model"(): StringJS
 get "down"(): boolean
-get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
 }
 /**
@@ -769,13 +787,14 @@ export type $ConveyorBlock$EnumType$$Type = (("flat") | ("up") | ("down") | ("fl
 export type $ConveyorBlock$EnumType$$Original = $ConveyorBlock$EnumType;}
 declare module "com.buuz135.industrial.block.agriculturehusbandry.tile.SewageComposterTile" {
 import {$SidedFluidTankComponent} from "com.hrznstudio.titanium.component.fluid.SidedFluidTankComponent"
-import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$SidedInventoryComponent} from "com.hrznstudio.titanium.component.inventory.SidedInventoryComponent"
-import {$IndustrialProcessingTile} from "com.buuz135.industrial.block.tile.IndustrialProcessingTile"
+import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$List} from "java.util.List"
-import {$InventoryComponent$$Type} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
 import {$Runnable} from "java.lang.Runnable"
+import {$IndustrialProcessingTile} from "com.buuz135.industrial.block.tile.IndustrialProcessingTile"
+import {$InventoryComponent$$Type} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -793,8 +812,10 @@ public "getSelf"(): $SewageComposterTile
 public "onFinish"(): $Runnable
 public static "readInventory"(arg0: $RegistryAccess$$Type, arg1: $CompoundTag$$Type): $List<($ItemStack)>
 public static "writeInventory"(arg0: $RegistryAccess$$Type, arg1: $InventoryComponent$$Type): $CompoundTag
+public "getUpdatePacket"(): $Packet
 get "maxProgress"(): integer
 get "self"(): $SewageComposterTile
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -807,11 +828,11 @@ export type $SewageComposterTile$$Type = ($SewageComposterTile);
 export type $SewageComposterTile$$Original = $SewageComposterTile;}
 declare module "com.buuz135.industrial.block.resourceproduction.SludgeRefinerBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block} from "net.minecraft.world.level.block.Block"
-import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$SludgeRefinerTile} from "com.buuz135.industrial.block.resourceproduction.tile.SludgeRefinerTile"
+import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$RecipeOutput$$Type} from "net.minecraft.data.recipes.RecipeOutput"
 import {$IndustrialBlock} from "com.buuz135.industrial.block.IndustrialBlock"
 import {$RotatableBlock$RotationType} from "com.hrznstudio.titanium.block.RotatableBlock$RotationType"
@@ -844,9 +865,9 @@ static readonly "FACING_HORIZONTAL": $DirectionProperty
 
 constructor()
 
+public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($SludgeRefinerTile)>
 public "getRotationType"(): $RotatableBlock$RotationType
-public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "tileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($SludgeRefinerTile)>
 get "rotationType"(): $RotatableBlock$RotationType
@@ -864,9 +885,10 @@ declare module "com.buuz135.industrial.block.misc.tile.InfinityChargerTile" {
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$List} from "java.util.List"
-import {$InventoryComponent$$Type} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
 import {$ActiveTile$$Type} from "com.hrznstudio.titanium.block.tile.ActiveTile"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$InventoryComponent$$Type} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$IndustrialMachineTile} from "com.buuz135.industrial.block.tile.IndustrialMachineTile"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
@@ -884,7 +906,9 @@ public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState
 public "getSelf"(): $InfinityChargerTile
 public static "readInventory"(arg0: $RegistryAccess$$Type, arg1: $CompoundTag$$Type): $List<($ItemStack)>
 public static "writeInventory"(arg0: $RegistryAccess$$Type, arg1: $InventoryComponent$$Type): $CompoundTag
+public "getUpdatePacket"(): $Packet
 get "self"(): $InfinityChargerTile
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -902,6 +926,7 @@ import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$List} from "java.util.List"
 import {$IndustrialAreaWorkingTile} from "com.buuz135.industrial.block.tile.IndustrialAreaWorkingTile"
 import {$InventoryComponent$$Type} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$IndustrialWorkingTile$WorkAction} from "com.buuz135.industrial.block.tile.IndustrialWorkingTile$WorkAction"
 import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
@@ -922,10 +947,12 @@ public "getSelf"(): $LaserDrillTile
 public "findTarget"(): void
 public static "readInventory"(arg0: $RegistryAccess$$Type, arg1: $CompoundTag$$Type): $List<($ItemStack)>
 public static "writeInventory"(arg0: $RegistryAccess$$Type, arg1: $InventoryComponent$$Type): $CompoundTag
+public "getUpdatePacket"(): $Packet
 get "maxProgress"(): integer
 get "workingArea"(): $VoxelShape
 get "target"(): $BlockPos
 get "self"(): $LaserDrillTile
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -938,6 +965,7 @@ export type $LaserDrillTile$$Type = ($LaserDrillTile);
 export type $LaserDrillTile$$Original = $LaserDrillTile;}
 declare module "com.buuz135.industrial.block.generator.tile.PitifulGeneratorTile" {
 import {$IndustrialGeneratorTile} from "com.buuz135.industrial.block.tile.IndustrialGeneratorTile"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$ProgressBarComponent} from "com.hrznstudio.titanium.component.progress.ProgressBarComponent"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -952,15 +980,17 @@ public "canStart"(): boolean
 public "getProgressBar"(): $ProgressBarComponent<($PitifulGeneratorTile)>
 public "getEnergyCapacity"(): integer
 public "isSmart"(): boolean
-public "getExtractingEnergy"(): integer
 public "getEnergyProducedEveryTick"(): integer
+public "getExtractingEnergy"(): integer
 public "getSelf"(): $PitifulGeneratorTile
+public "getUpdatePacket"(): $Packet
 get "progressBar"(): $ProgressBarComponent<($PitifulGeneratorTile)>
 get "energyCapacity"(): integer
 get "smart"(): boolean
-get "extractingEnergy"(): integer
 get "energyProducedEveryTick"(): integer
+get "extractingEnergy"(): integer
 get "self"(): $PitifulGeneratorTile
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -1004,18 +1034,19 @@ declare module "com.buuz135.industrial.block.transportstorage.tile.ConveyorTile"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$Map} from "java.util.Map"
 import {$List} from "java.util.List"
-import {$ActiveTile, $ActiveTile$$Type} from "com.hrznstudio.titanium.block.tile.ActiveTile"
 import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
+import {$ActiveTile, $ActiveTile$$Type} from "com.hrznstudio.titanium.block.tile.ActiveTile"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$Inventory$$Type} from "net.minecraft.world.entity.player.Inventory"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$ConveyorUpgrade} from "com.buuz135.industrial.api.conveyor.ConveyorUpgrade"
 import {$IBlockContainer$$Interface} from "com.buuz135.industrial.api.IBlockContainer"
+import {$ConveyorUpgrade} from "com.buuz135.industrial.api.conveyor.ConveyorUpgrade"
 import {$FluidTank} from "net.neoforged.neoforge.fluids.capability.templates.FluidTank"
 import {$ConveyorUpgradeFactory, $ConveyorUpgradeFactory$$Type} from "com.buuz135.industrial.api.conveyor.ConveyorUpgradeFactory"
 import {$AbstractContainerMenu} from "net.minecraft.world.inventory.AbstractContainerMenu"
 import {$DyeColor$$Type} from "net.minecraft.world.item.DyeColor"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$ConveyorBlock$EnumType, $ConveyorBlock$EnumType$$Type} from "com.buuz135.industrial.block.transportstorage.ConveyorBlock$EnumType"
 import {$ModelData} from "net.neoforged.neoforge.client.model.data.ModelData"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
@@ -1049,20 +1080,21 @@ public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState
 public "loadAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "createMenu"(arg0: integer, arg1: $Inventory$$Type, arg2: $Player$$Type): $AbstractContainerMenu
 public "isSticky"(): boolean
-public "getFacing"(): $Direction
 public "getCollisionBoxes"(): $List<($AABB)>
+public "getFacing"(): $Direction
 public "markForUpdate"(): void
-public "setType"(arg0: $ConveyorBlock$EnumType$$Type): void
 public "setColor"(arg0: integer): void
 public "setColor"(arg0: $DyeColor$$Type): void
+public "setType"(arg0: $ConveyorBlock$EnumType$$Type): void
 public "getSelf"(): $ActiveTile
+public "getBlockPosition"(): $BlockPos
 public "clientTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $BlockEntity$$Type): void
 public "clientTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $ConveyorTile$$Type): void
 public "getColor"(): integer
-public "getTank"(): $FluidTank
-public "getBlockPosition"(): $BlockPos
 public "getModelData"(): $ModelData
+public "getTank"(): $FluidTank
 public "getPower"(): integer
+public "getUpdatePacket"(): $Packet
 get "conveyorType"(): $ConveyorBlock$EnumType
 get "upgradeMap"(): $Map<($Direction), ($ConveyorUpgrade)>
 set "facing"(value: $Direction$$Type)
@@ -1070,17 +1102,18 @@ set "sticky"(value: boolean)
 get "blockWorld"(): $Level
 get "entityFilter"(): $List<(integer)>
 get "sticky"(): boolean
-get "facing"(): $Direction
 get "collisionBoxes"(): $List<($AABB)>
-set "type"(value: $ConveyorBlock$EnumType$$Type)
+get "facing"(): $Direction
 set "color"(value: integer)
 set "color"(value: $DyeColor$$Type)
+set "type"(value: $ConveyorBlock$EnumType$$Type)
 get "self"(): $ActiveTile
-get "color"(): integer
-get "tank"(): $FluidTank
 get "blockPosition"(): $BlockPos
+get "color"(): integer
 get "modelData"(): $ModelData
+get "tank"(): $FluidTank
 get "power"(): integer
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -1092,8 +1125,8 @@ export type $ConveyorTile$$Type = ($ConveyorTile);
  */
 export type $ConveyorTile$$Original = $ConveyorTile;}
 declare module "com.buuz135.industrial.block.generator.mycelial.IMycelialGeneratorType" {
-import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$BiPredicate} from "java.util.function.BiPredicate"
+import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$List} from "java.util.List"
 import {$Predicate} from "java.util.function.Predicate"
@@ -1103,8 +1136,8 @@ import {$FluidStack} from "net.neoforged.neoforge.fluids.FluidStack"
 import {$INBTSerializable$$Type} from "net.neoforged.neoforge.common.util.INBTSerializable"
 import {$ShapedRecipeBuilder, $ShapedRecipeBuilder$$Type} from "net.minecraft.data.recipes.ShapedRecipeBuilder"
 import {$DyeColor} from "net.minecraft.world.item.DyeColor"
-import {$IMycelialGeneratorType$Input} from "com.buuz135.industrial.block.generator.mycelial.IMycelialGeneratorType$Input"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$IMycelialGeneratorType$Input} from "com.buuz135.industrial.block.generator.mycelial.IMycelialGeneratorType$Input"
 import {$Pair} from "org.apache.commons.lang3.tuple.Pair"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
@@ -1124,9 +1157,9 @@ static readonly "TYPES": $List<($IMycelialGeneratorType)>
 
  "getSlotSize"(): integer
  "addIngredients"(arg0: $ShapedRecipeBuilder$$Type): $ShapedRecipeBuilder
- "canStart"(arg0: ($INBTSerializable$$Type<($CompoundTag$$Type)>)[]): boolean
  "getSlotInputPredicates"(): $List<($BiPredicate<($ItemStack), (integer)>)>
  "getTankInputPredicates"(): $List<($Predicate<($FluidStack)>)>
+ "canStart"(arg0: ($INBTSerializable$$Type<($CompoundTag$$Type)>)[]): boolean
  "getTimeAndPowerGeneration"(arg0: ($INBTSerializable$$Type<($CompoundTag$$Type)>)[]): $Pair<(integer), (integer)>
  "getInputColors"(): ($DyeColor)[]
  "getDisplay"(): $Item
@@ -1148,8 +1181,8 @@ declare module "com.buuz135.industrial.block.transportstorage.TransporterBlock$I
 import {$BuildCreativeModeTabContentsEvent$$Type} from "net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$TitaniumTab$$Type} from "com.hrznstudio.titanium.tab.TitaniumTab"
+import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$ISpecialCreativeTabItem$$Interface} from "com.hrznstudio.titanium.api.ISpecialCreativeTabItem"
 import {$AdditionalItemPlacement, $AdditionalItemPlacement$$Type} from "net.mehvahdjukaar.moonlight.api.item.additional_placements.AdditionalItemPlacement"
@@ -1185,15 +1218,16 @@ declare module "com.buuz135.industrial.block.agriculturehusbandry.tile.WitherBui
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$List} from "java.util.List"
-import {$ActiveTile} from "com.hrznstudio.titanium.block.tile.ActiveTile"
 import {$IndustrialAreaWorkingTile} from "com.buuz135.industrial.block.tile.IndustrialAreaWorkingTile"
+import {$ActiveTile} from "com.hrznstudio.titanium.block.tile.ActiveTile"
 import {$IndustrialWorkingTile$WorkAction} from "com.buuz135.industrial.block.tile.IndustrialWorkingTile$WorkAction"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$InventoryComponent$$Type} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
-import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$ItemStackHandler$$Type} from "net.neoforged.neoforge.items.ItemStackHandler"
+import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $WitherBuilderTile extends $IndustrialAreaWorkingTile<($WitherBuilderTile)> {
 static readonly "ATTACHMENTS_NBT_KEY": StringJS
@@ -1201,15 +1235,17 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 constructor(arg0: $BlockPos$$Type, arg1: $BlockState$$Type)
 
 public "getMaxProgress"(): integer
-public "getWorkingArea"(): $VoxelShape
 public "getDefaultOrFind"(arg0: integer, arg1: $ItemStackHandler$$Type, arg2: $ItemStack$$Type): $ItemStack
+public "getWorkingArea"(): $VoxelShape
 public "work"(): $IndustrialWorkingTile$WorkAction
 public "getSelf"(): $ActiveTile
 public static "readInventory"(arg0: $RegistryAccess$$Type, arg1: $CompoundTag$$Type): $List<($ItemStack)>
 public static "writeInventory"(arg0: $RegistryAccess$$Type, arg1: $InventoryComponent$$Type): $CompoundTag
+public "getUpdatePacket"(): $Packet
 get "maxProgress"(): integer
 get "workingArea"(): $VoxelShape
 get "self"(): $ActiveTile
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -1221,11 +1257,12 @@ export type $WitherBuilderTile$$Type = ($WitherBuilderTile);
  */
 export type $WitherBuilderTile$$Original = $WitherBuilderTile;}
 declare module "com.buuz135.industrial.block.resourceproduction.tile.FluidLaserBaseTile" {
-import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$List} from "java.util.List"
+import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$InventoryComponent$$Type} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$IndustrialMachineTile} from "com.buuz135.industrial.block.tile.IndustrialMachineTile"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$ProgressBarComponent} from "com.hrznstudio.titanium.component.progress.ProgressBarComponent"
@@ -1248,9 +1285,11 @@ public "getSelf"(): $FluidLaserBaseTile
 public "setChanged"(): void
 public static "readInventory"(arg0: $RegistryAccess$$Type, arg1: $CompoundTag$$Type): $List<($ItemStack)>
 public static "writeInventory"(arg0: $RegistryAccess$$Type, arg1: $InventoryComponent$$Type): $CompoundTag
+public "getUpdatePacket"(): $Packet
 get "bar"(): $ProgressBarComponent<($FluidLaserBaseTile)>
 get "self"(): $FluidLaserBaseTile
 get "changed"(): void
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -1263,8 +1302,8 @@ export type $FluidLaserBaseTile$$Type = ($FluidLaserBaseTile);
 export type $FluidLaserBaseTile$$Original = $FluidLaserBaseTile;}
 declare module "com.buuz135.industrial.block.misc.StasisChamberBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$StasisChamberTile} from "com.buuz135.industrial.block.misc.tile.StasisChamberTile"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -1300,9 +1339,9 @@ static readonly "FACING_HORIZONTAL": $DirectionProperty
 
 constructor()
 
+public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($StasisChamberTile)>
 public "getRotationType"(): $RotatableBlock$RotationType
-public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "tileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($StasisChamberTile)>
 get "rotationType"(): $RotatableBlock$RotationType
@@ -1318,8 +1357,8 @@ export type $StasisChamberBlock$$Type = ($StasisChamberBlock);
 export type $StasisChamberBlock$$Original = $StasisChamberBlock;}
 declare module "com.buuz135.industrial.block.resourceproduction.FermentationStationBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$RecipeOutput$$Type} from "net.minecraft.data.recipes.RecipeOutput"
@@ -1355,9 +1394,9 @@ static readonly "FACING_HORIZONTAL": $DirectionProperty
 
 constructor()
 
+public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($FermentationStationTile)>
 public "getRotationType"(): $RotatableBlock$RotationType
-public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "tileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($FermentationStationTile)>
 get "rotationType"(): $RotatableBlock$RotationType
@@ -1377,10 +1416,11 @@ import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$List} from "java.util.List"
 import {$IndustrialAreaWorkingTile} from "com.buuz135.industrial.block.tile.IndustrialAreaWorkingTile"
 import {$InventoryComponent$$Type} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$IndustrialWorkingTile$WorkAction} from "com.buuz135.industrial.block.tile.IndustrialWorkingTile$WorkAction"
-import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
 
 export class $FluidPlacerTile extends $IndustrialAreaWorkingTile<($FluidPlacerTile)> {
 static readonly "ATTACHMENTS_NBT_KEY": StringJS
@@ -1392,8 +1432,10 @@ public "work"(): $IndustrialWorkingTile$WorkAction
 public "getSelf"(): $FluidPlacerTile
 public static "readInventory"(arg0: $RegistryAccess$$Type, arg1: $CompoundTag$$Type): $List<($ItemStack)>
 public static "writeInventory"(arg0: $RegistryAccess$$Type, arg1: $InventoryComponent$$Type): $CompoundTag
+public "getUpdatePacket"(): $Packet
 get "maxProgress"(): integer
 get "self"(): $FluidPlacerTile
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -1453,19 +1495,19 @@ export type $PinkSlimeBlock$$Type = ($PinkSlimeBlock);
  */
 export type $PinkSlimeBlock$$Original = $PinkSlimeBlock;}
 declare module "com.buuz135.industrial.block.tool.InfinityBackpackBlock" {
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
-import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$LootParams$Builder$$Type} from "net.minecraft.world.level.storage.loot.LootParams$Builder"
+import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$List} from "java.util.List"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BasicBlockLootTables$$Type} from "com.hrznstudio.titanium.datagenerator.loot.block.BasicBlockLootTables"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$LootTable$Builder} from "net.minecraft.world.level.storage.loot.LootTable$Builder"
+import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
@@ -1476,8 +1518,8 @@ import {$RotatableBlock} from "com.hrznstudio.titanium.block.RotatableBlock"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$RotatableBlock$RotationType} from "com.hrznstudio.titanium.block.RotatableBlock$RotationType"
-import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$InfinityBackpackTile} from "com.buuz135.industrial.block.tool.tile.InfinityBackpackTile"
+import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$DirectionProperty} from "net.minecraft.world.level.block.state.properties.DirectionProperty"
 
@@ -1536,9 +1578,10 @@ import {$ItemInteractionResult} from "net.minecraft.world.ItemInteractionResult"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$BlockWithTile$$Type} from "com.hrznstudio.titanium.module.BlockWithTile"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$GeneratorTile} from "com.hrznstudio.titanium.block.tile.GeneratorTile"
+import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $IndustrialGeneratorTile<T extends $IndustrialGeneratorTile<(object)>> extends $GeneratorTile<(T)> {
 static readonly "ATTACHMENTS_NBT_KEY": StringJS
@@ -1547,6 +1590,8 @@ constructor(arg0: $BlockWithTile$$Type, arg1: $BlockPos$$Type, arg2: $BlockState
 
 public "onActivated"(arg0: $Player$$Type, arg1: $InteractionHand$$Type, arg2: $Direction$$Type, arg3: double, arg4: double, arg5: double): $ItemInteractionResult
 public "initClient"(): void
+public "getUpdatePacket"(): $Packet
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -1559,8 +1604,8 @@ export type $IndustrialGeneratorTile$$Type<T> = ($IndustrialGeneratorTile<(T)>);
 export type $IndustrialGeneratorTile$$Original<T> = $IndustrialGeneratorTile<(T)>;}
 declare module "com.buuz135.industrial.block.resourceproduction.FluidCollectorBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$RecipeOutput$$Type} from "net.minecraft.data.recipes.RecipeOutput"
@@ -1570,8 +1615,8 @@ import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$DirectionProperty} from "net.minecraft.world.level.block.state.properties.DirectionProperty"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$FluidCollectorTile} from "com.buuz135.industrial.block.resourceproduction.tile.FluidCollectorTile"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $FluidCollectorBlock extends $IndustrialBlock<($FluidCollectorTile)> {
 static readonly "UPDATE_IMMEDIATE": integer
@@ -1596,9 +1641,9 @@ static readonly "FACING_HORIZONTAL": $DirectionProperty
 
 constructor()
 
+public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($FluidCollectorTile)>
 public "getRotationType"(): $RotatableBlock$RotationType
-public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "tileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($FluidCollectorTile)>
 get "rotationType"(): $RotatableBlock$RotationType
@@ -1618,10 +1663,11 @@ import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$List} from "java.util.List"
 import {$IndustrialAreaWorkingTile} from "com.buuz135.industrial.block.tile.IndustrialAreaWorkingTile"
 import {$InventoryComponent$$Type} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$IndustrialWorkingTile$WorkAction} from "com.buuz135.industrial.block.tile.IndustrialWorkingTile$WorkAction"
-import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
 
 export class $BlockBreakerTile extends $IndustrialAreaWorkingTile<($BlockBreakerTile)> {
 static readonly "ATTACHMENTS_NBT_KEY": StringJS
@@ -1633,8 +1679,10 @@ public "work"(): $IndustrialWorkingTile$WorkAction
 public "getSelf"(): $BlockBreakerTile
 public static "readInventory"(arg0: $RegistryAccess$$Type, arg1: $CompoundTag$$Type): $List<($ItemStack)>
 public static "writeInventory"(arg0: $RegistryAccess$$Type, arg1: $InventoryComponent$$Type): $CompoundTag
+public "getUpdatePacket"(): $Packet
 get "maxProgress"(): integer
 get "self"(): $BlockBreakerTile
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -1651,10 +1699,11 @@ import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$List} from "java.util.List"
 import {$IndustrialAreaWorkingTile} from "com.buuz135.industrial.block.tile.IndustrialAreaWorkingTile"
 import {$InventoryComponent$$Type} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$IndustrialWorkingTile$WorkAction} from "com.buuz135.industrial.block.tile.IndustrialWorkingTile$WorkAction"
-import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
 
 export class $AnimalFeederTile extends $IndustrialAreaWorkingTile<($AnimalFeederTile)> {
 static readonly "ATTACHMENTS_NBT_KEY": StringJS
@@ -1666,8 +1715,10 @@ public "work"(): $IndustrialWorkingTile$WorkAction
 public "getSelf"(): $AnimalFeederTile
 public static "readInventory"(arg0: $RegistryAccess$$Type, arg1: $CompoundTag$$Type): $List<($ItemStack)>
 public static "writeInventory"(arg0: $RegistryAccess$$Type, arg1: $InventoryComponent$$Type): $CompoundTag
+public "getUpdatePacket"(): $Packet
 get "maxProgress"(): integer
 get "self"(): $AnimalFeederTile
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -1680,8 +1731,8 @@ export type $AnimalFeederTile$$Type = ($AnimalFeederTile);
 export type $AnimalFeederTile$$Original = $AnimalFeederTile;}
 declare module "com.buuz135.industrial.block.resourceproduction.FluidLaserBaseBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$RecipeOutput$$Type} from "net.minecraft.data.recipes.RecipeOutput"
@@ -1716,8 +1767,8 @@ static readonly "FACING_HORIZONTAL": $DirectionProperty
 
 constructor()
 
-public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($FluidLaserBaseTile)>
 public "registerRecipe"(arg0: $RecipeOutput$$Type): void
+public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($FluidLaserBaseTile)>
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "tileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($FluidLaserBaseTile)>
 }
@@ -1732,15 +1783,15 @@ export type $FluidLaserBaseBlock$$Type = ($FluidLaserBaseBlock);
 export type $FluidLaserBaseBlock$$Original = $FluidLaserBaseBlock;}
 declare module "com.buuz135.industrial.block.resourceproduction.WaterCondensatorBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$List$$Type} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
+import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
 import {$WaterCondensatorTile} from "com.buuz135.industrial.block.resourceproduction.tile.WaterCondensatorTile"
 import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
-import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$RecipeOutput$$Type} from "net.minecraft.data.recipes.RecipeOutput"
 import {$IndustrialBlock} from "com.buuz135.industrial.block.IndustrialBlock"
@@ -1774,10 +1825,10 @@ static readonly "FACING_HORIZONTAL": $DirectionProperty
 
 constructor()
 
+public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($WaterCondensatorTile)>
 public "getRotationType"(): $RotatableBlock$RotationType
 public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
-public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "tileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($WaterCondensatorTile)>
 get "rotationType"(): $RotatableBlock$RotationType
@@ -1793,8 +1844,8 @@ export type $WaterCondensatorBlock$$Type = ($WaterCondensatorBlock);
 export type $WaterCondensatorBlock$$Original = $WaterCondensatorBlock;}
 declare module "com.buuz135.industrial.block.agriculturehusbandry.AnimalRancherBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$RecipeOutput$$Type} from "net.minecraft.data.recipes.RecipeOutput"
@@ -1830,9 +1881,9 @@ static readonly "FACING_HORIZONTAL": $DirectionProperty
 
 constructor()
 
+public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($AnimalRancherTile)>
 public "getRotationType"(): $RotatableBlock$RotationType
-public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "tileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($AnimalRancherTile)>
 get "rotationType"(): $RotatableBlock$RotationType
@@ -1850,9 +1901,10 @@ declare module "com.buuz135.industrial.block.misc.tile.MobDetectorTile" {
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$List} from "java.util.List"
-import {$ActiveTile} from "com.hrznstudio.titanium.block.tile.ActiveTile"
 import {$IndustrialAreaWorkingTile} from "com.buuz135.industrial.block.tile.IndustrialAreaWorkingTile"
 import {$InventoryComponent$$Type} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
+import {$ActiveTile} from "com.hrznstudio.titanium.block.tile.ActiveTile"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$IndustrialWorkingTile$WorkAction} from "com.buuz135.industrial.block.tile.IndustrialWorkingTile$WorkAction"
 import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
@@ -1869,9 +1921,11 @@ public "work"(): $IndustrialWorkingTile$WorkAction
 public "getSelf"(): $ActiveTile
 public static "readInventory"(arg0: $RegistryAccess$$Type, arg1: $CompoundTag$$Type): $List<($ItemStack)>
 public static "writeInventory"(arg0: $RegistryAccess$$Type, arg1: $InventoryComponent$$Type): $CompoundTag
+public "getUpdatePacket"(): $Packet
 get "redstoneSignal"(): integer
 get "maxProgress"(): integer
 get "self"(): $ActiveTile
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -1889,6 +1943,7 @@ import {$List} from "java.util.List"
 import {$ActiveTile} from "com.hrznstudio.titanium.block.tile.ActiveTile"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$InventoryComponent$$Type} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$IndustrialMachineTile} from "com.buuz135.industrial.block.tile.IndustrialMachineTile"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$ProgressBarComponent} from "com.hrznstudio.titanium.component.progress.ProgressBarComponent"
@@ -1911,9 +1966,11 @@ public "getSelf"(): $ActiveTile
 public "setChanged"(): void
 public static "readInventory"(arg0: $RegistryAccess$$Type, arg1: $CompoundTag$$Type): $List<($ItemStack)>
 public static "writeInventory"(arg0: $RegistryAccess$$Type, arg1: $InventoryComponent$$Type): $CompoundTag
+public "getUpdatePacket"(): $Packet
 get "bar"(): $ProgressBarComponent<($OreLaserBaseTile)>
 get "self"(): $ActiveTile
 get "changed"(): void
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -1926,8 +1983,8 @@ export type $OreLaserBaseTile$$Type = ($OreLaserBaseTile);
 export type $OreLaserBaseTile$$Original = $OreLaserBaseTile;}
 declare module "com.buuz135.industrial.block.agriculturehusbandry.SewageComposterBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$RecipeOutput$$Type} from "net.minecraft.data.recipes.RecipeOutput"
@@ -1963,9 +2020,9 @@ static readonly "FACING_HORIZONTAL": $DirectionProperty
 
 constructor()
 
+public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($SewageComposterTile)>
 public "getRotationType"(): $RotatableBlock$RotationType
-public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "tileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($SewageComposterTile)>
 get "rotationType"(): $RotatableBlock$RotationType
@@ -1981,8 +2038,8 @@ export type $SewageComposterBlock$$Type = ($SewageComposterBlock);
 export type $SewageComposterBlock$$Original = $SewageComposterBlock;}
 declare module "com.buuz135.industrial.block.agriculturehusbandry.MobCrusherBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$MobCrusherTile} from "com.buuz135.industrial.block.agriculturehusbandry.tile.MobCrusherTile"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -2018,9 +2075,9 @@ static readonly "FACING_HORIZONTAL": $DirectionProperty
 
 constructor()
 
+public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($MobCrusherTile)>
 public "getRotationType"(): $RotatableBlock$RotationType
-public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "tileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($MobCrusherTile)>
 get "rotationType"(): $RotatableBlock$RotationType
@@ -2038,8 +2095,8 @@ declare module "com.buuz135.industrial.block.MachineFrameBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$BasicBlock} from "com.hrznstudio.titanium.block.BasicBlock"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$TitaniumTab$$Type} from "com.hrznstudio.titanium.tab.TitaniumTab"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Rarity$$Type} from "net.minecraft.world.item.Rarity"
 import {$BasicBlockLootTables$$Type} from "com.hrznstudio.titanium.datagenerator.loot.block.BasicBlockLootTables"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -2089,12 +2146,12 @@ import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Level} from "net.minecraft.world.level.Level"
 
 export class $MaterialStoneWorkFactoryTile$StoneWorkAction {
-public "getWork"(): $BiFunction<($Level), ($ItemStack), ($ItemStack)>
 public "getShrinkAmount"(): integer
+public "getWork"(): $BiFunction<($Level), ($ItemStack), ($ItemStack)>
 public "getIcon"(): $ItemStack
 public "getAction"(): StringJS
-get "work"(): $BiFunction<($Level), ($ItemStack), ($ItemStack)>
 get "shrinkAmount"(): integer
+get "work"(): $BiFunction<($Level), ($ItemStack), ($ItemStack)>
 get "icon"(): $ItemStack
 get "action"(): StringJS
 }
@@ -2109,15 +2166,15 @@ export type $MaterialStoneWorkFactoryTile$StoneWorkAction$$Type = ($MaterialSton
 export type $MaterialStoneWorkFactoryTile$StoneWorkAction$$Original = $MaterialStoneWorkFactoryTile$StoneWorkAction;}
 declare module "com.buuz135.industrial.block.core.FluidExtractorBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$List$$Type} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$FluidExtractorTile} from "com.buuz135.industrial.block.core.tile.FluidExtractorTile"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$RecipeOutput$$Type} from "net.minecraft.data.recipes.RecipeOutput"
 import {$IndustrialBlock} from "com.buuz135.industrial.block.IndustrialBlock"
@@ -2151,10 +2208,10 @@ static readonly "FACING_HORIZONTAL": $DirectionProperty
 
 constructor()
 
+public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($FluidExtractorTile)>
 public "getRotationType"(): $RotatableBlock$RotationType
 public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
-public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "tileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($FluidExtractorTile)>
 get "rotationType"(): $RotatableBlock$RotationType
@@ -2170,6 +2227,7 @@ export type $FluidExtractorBlock$$Type = ($FluidExtractorBlock);
 export type $FluidExtractorBlock$$Original = $FluidExtractorBlock;}
 declare module "com.buuz135.industrial.block.generator.tile.BiofuelGeneratorTile" {
 import {$IndustrialGeneratorTile} from "com.buuz135.industrial.block.tile.IndustrialGeneratorTile"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$ProgressBarComponent} from "com.hrznstudio.titanium.component.progress.ProgressBarComponent"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -2183,14 +2241,16 @@ public "consumeFuel"(): integer
 public "canStart"(): boolean
 public "getProgressBar"(): $ProgressBarComponent
 public "getEnergyCapacity"(): integer
-public "getExtractingEnergy"(): integer
 public "getEnergyProducedEveryTick"(): integer
+public "getExtractingEnergy"(): integer
 public "getSelf"(): $BiofuelGeneratorTile
+public "getUpdatePacket"(): $Packet
 get "progressBar"(): $ProgressBarComponent
 get "energyCapacity"(): integer
-get "extractingEnergy"(): integer
 get "energyProducedEveryTick"(): integer
+get "extractingEnergy"(): integer
 get "self"(): $BiofuelGeneratorTile
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -2203,8 +2263,8 @@ export type $BiofuelGeneratorTile$$Type = ($BiofuelGeneratorTile);
 export type $BiofuelGeneratorTile$$Original = $BiofuelGeneratorTile;}
 declare module "com.buuz135.industrial.block.resourceproduction.MarineFisherBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$MarineFisherTile} from "com.buuz135.industrial.block.resourceproduction.tile.MarineFisherTile"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -2239,8 +2299,8 @@ static readonly "FACING_HORIZONTAL": $DirectionProperty
 
 constructor()
 
-public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($MarineFisherTile)>
 public "registerRecipe"(arg0: $RecipeOutput$$Type): void
+public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($MarineFisherTile)>
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "tileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($MarineFisherTile)>
 }
@@ -2260,6 +2320,7 @@ import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$List} from "java.util.List"
 import {$IndustrialAreaWorkingTile} from "com.buuz135.industrial.block.tile.IndustrialAreaWorkingTile"
 import {$InventoryComponent$$Type} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$IndustrialWorkingTile$WorkAction} from "com.buuz135.industrial.block.tile.IndustrialWorkingTile$WorkAction"
 import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
@@ -2277,8 +2338,10 @@ public "work"(): $IndustrialWorkingTile$WorkAction
 public "getSelf"(): $SewerTile
 public static "readInventory"(arg0: $RegistryAccess$$Type, arg1: $CompoundTag$$Type): $List<($ItemStack)>
 public static "writeInventory"(arg0: $RegistryAccess$$Type, arg1: $InventoryComponent$$Type): $CompoundTag
+public "getUpdatePacket"(): $Packet
 get "maxProgress"(): integer
 get "self"(): $SewerTile
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -2295,10 +2358,11 @@ import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$IndustrialProcessingTile} from "com.buuz135.industrial.block.tile.IndustrialProcessingTile"
 import {$List} from "java.util.List"
 import {$InventoryComponent$$Type} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$Runnable} from "java.lang.Runnable"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
 
 export class $EnchantmentSorterTile extends $IndustrialProcessingTile<($EnchantmentSorterTile)> {
 static readonly "ATTACHMENTS_NBT_KEY": StringJS
@@ -2311,8 +2375,10 @@ public "getSelf"(): $EnchantmentSorterTile
 public "onFinish"(): $Runnable
 public static "readInventory"(arg0: $RegistryAccess$$Type, arg1: $CompoundTag$$Type): $List<($ItemStack)>
 public static "writeInventory"(arg0: $RegistryAccess$$Type, arg1: $InventoryComponent$$Type): $CompoundTag
+public "getUpdatePacket"(): $Packet
 get "maxProgress"(): integer
 get "self"(): $EnchantmentSorterTile
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -2326,12 +2392,14 @@ export type $EnchantmentSorterTile$$Original = $EnchantmentSorterTile;}
 declare module "com.buuz135.industrial.block.misc.tile.StasisChamberTile" {
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
-import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$List} from "java.util.List"
 import {$IndustrialAreaWorkingTile} from "com.buuz135.industrial.block.tile.IndustrialAreaWorkingTile"
-import {$InventoryComponent$$Type} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$ActiveTile} from "com.hrznstudio.titanium.block.tile.ActiveTile"
 import {$IndustrialWorkingTile$WorkAction} from "com.buuz135.industrial.block.tile.IndustrialWorkingTile$WorkAction"
+import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
+import {$InventoryComponent$$Type} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
@@ -2343,12 +2411,14 @@ constructor(arg0: $BlockPos$$Type, arg1: $BlockState$$Type)
 public "getMaxProgress"(): integer
 public "getWorkingArea"(): $VoxelShape
 public "work"(): $IndustrialWorkingTile$WorkAction
-public "getSelf"(): $StasisChamberTile
+public "getSelf"(): $ActiveTile
 public static "readInventory"(arg0: $RegistryAccess$$Type, arg1: $CompoundTag$$Type): $List<($ItemStack)>
 public static "writeInventory"(arg0: $RegistryAccess$$Type, arg1: $InventoryComponent$$Type): $CompoundTag
+public "getUpdatePacket"(): $Packet
 get "maxProgress"(): integer
 get "workingArea"(): $VoxelShape
-get "self"(): $StasisChamberTile
+get "self"(): $ActiveTile
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -2371,6 +2441,7 @@ import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ItemInteractionResult} from "net.minecraft.world.ItemInteractionResult"
 import {$InventoryComponent$$Type} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
 import {$BlockWithTile$$Type} from "com.hrznstudio.titanium.module.BlockWithTile"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$IndustrialMachineTile} from "com.buuz135.industrial.block.tile.IndustrialMachineTile"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
@@ -2383,14 +2454,16 @@ constructor(arg0: $BlockWithTile$$Type, arg1: integer, arg2: $BlockPos$$Type, ar
 
 public "canAcceptAugment"(arg0: $ItemStack$$Type): boolean
 public "onActivated"(arg0: $Player$$Type, arg1: $InteractionHand$$Type, arg2: $Direction$$Type, arg3: double, arg4: double, arg5: double): $ItemInteractionResult
-public "hasEnergy"(arg0: integer): boolean
-public "getAssetProvider"(): $IAssetProvider
 public "getMaxProgress"(): integer
+public "getAssetProvider"(): $IAssetProvider
+public "hasEnergy"(arg0: integer): boolean
 public "work"(): $IndustrialWorkingTile$WorkAction
 public static "readInventory"(arg0: $RegistryAccess$$Type, arg1: $CompoundTag$$Type): $List<($ItemStack)>
 public static "writeInventory"(arg0: $RegistryAccess$$Type, arg1: $InventoryComponent$$Type): $CompoundTag
-get "assetProvider"(): $IAssetProvider
+public "getUpdatePacket"(): $Packet
 get "maxProgress"(): integer
+get "assetProvider"(): $IAssetProvider
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -2403,8 +2476,8 @@ export type $IndustrialWorkingTile$$Type<T> = ($IndustrialWorkingTile<(T)>);
 export type $IndustrialWorkingTile$$Original<T> = $IndustrialWorkingTile<(T)>;}
 declare module "com.buuz135.industrial.block.agriculturehusbandry.AnimalFeederBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$RecipeOutput$$Type} from "net.minecraft.data.recipes.RecipeOutput"
@@ -2440,9 +2513,9 @@ static readonly "FACING_HORIZONTAL": $DirectionProperty
 
 constructor()
 
+public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($AnimalFeederTile)>
 public "getRotationType"(): $RotatableBlock$RotationType
-public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "tileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($AnimalFeederTile)>
 get "rotationType"(): $RotatableBlock$RotationType
@@ -2463,8 +2536,8 @@ import {$IAssetProvider} from "com.hrznstudio.titanium.client.screen.asset.IAsse
 import {$IMachineSettings$$Interface} from "com.buuz135.industrial.api.IMachineSettings"
 import {$List} from "java.util.List"
 import {$IRedstoneReader$$Interface} from "com.hrznstudio.titanium.api.redstone.IRedstoneReader"
-import {$Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
+import {$Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$MachineTile} from "com.hrznstudio.titanium.block.tile.MachineTile"
 import {$RedstoneAction} from "com.hrznstudio.titanium.block.redstone.RedstoneAction"
@@ -2473,6 +2546,7 @@ import {$FluidTankComponent$$Type} from "com.hrznstudio.titanium.component.fluid
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$InventoryComponent$$Type} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
 import {$BlockWithTile$$Type} from "com.hrznstudio.titanium.module.BlockWithTile"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$RedstoneManager} from "com.hrznstudio.titanium.block.redstone.RedstoneManager"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
@@ -2488,10 +2562,10 @@ public "loadSettings"(arg0: $Player$$Type, arg1: $CompoundTag$$Type): void
 public "saveSettings"(arg0: $Player$$Type, arg1: $CompoundTag$$Type): void
 public "canAcceptAugment"(arg0: $ItemStack$$Type): boolean
 public "setUuid"(arg0: StringJS): void
-public "addTank"(arg0: $FluidTankComponent$$Type<(T)>): void
 public "initClient"(): void
-public "onNeighborChanged"(arg0: $Block$$Type, arg1: $BlockPos$$Type): void
 public "getAssetProvider"(): $IAssetProvider
+public "addTank"(arg0: $FluidTankComponent$$Type<(T)>): void
+public "onNeighborChanged"(arg0: $Block$$Type, arg1: $BlockPos$$Type): void
 public "getRedstoneManager"(): $RedstoneManager<($RedstoneAction)>
 public "getEnvironmentValue"(arg0: boolean, arg1: $Direction$$Type): $IRedstoneState
 public "clientTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $BlockEntity$$Type): void
@@ -2499,10 +2573,12 @@ public "clientTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState
 public "getUuid"(): StringJS
 public static "readInventory"(arg0: $RegistryAccess$$Type, arg1: $CompoundTag$$Type): $List<($ItemStack)>
 public static "writeInventory"(arg0: $RegistryAccess$$Type, arg1: $InventoryComponent$$Type): $CompoundTag
+public "getUpdatePacket"(): $Packet
 set "uuid"(value: StringJS)
 get "assetProvider"(): $IAssetProvider
 get "redstoneManager"(): $RedstoneManager<($RedstoneAction)>
 get "uuid"(): StringJS
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -2515,8 +2591,8 @@ export type $IndustrialMachineTile$$Type<T> = ($IndustrialMachineTile<(T)>);
 export type $IndustrialMachineTile$$Original<T> = $IndustrialMachineTile<(T)>;}
 declare module "com.buuz135.industrial.block.agriculturehusbandry.PlantGathererBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$RecipeOutput$$Type} from "net.minecraft.data.recipes.RecipeOutput"
@@ -2552,9 +2628,9 @@ static readonly "FACING_HORIZONTAL": $DirectionProperty
 
 constructor()
 
+public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($PlantGathererTile)>
 public "getRotationType"(): $RotatableBlock$RotationType
-public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "tileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($PlantGathererTile)>
 get "rotationType"(): $RotatableBlock$RotationType
@@ -2569,14 +2645,15 @@ export type $PlantGathererBlock$$Type = ($PlantGathererBlock);
  */
 export type $PlantGathererBlock$$Original = $PlantGathererBlock;}
 declare module "com.buuz135.industrial.block.misc.tile.EnchantmentExtractorTile" {
-import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
-import {$IndustrialProcessingTile} from "com.buuz135.industrial.block.tile.IndustrialProcessingTile"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$List} from "java.util.List"
 import {$ActiveTile} from "com.hrznstudio.titanium.block.tile.ActiveTile"
-import {$InventoryComponent$$Type} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
 import {$Runnable} from "java.lang.Runnable"
+import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
+import {$IndustrialProcessingTile} from "com.buuz135.industrial.block.tile.IndustrialProcessingTile"
+import {$InventoryComponent$$Type} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -2594,8 +2671,10 @@ public "getSelf"(): $ActiveTile
 public "onFinish"(): $Runnable
 public static "readInventory"(arg0: $RegistryAccess$$Type, arg1: $CompoundTag$$Type): $List<($ItemStack)>
 public static "writeInventory"(arg0: $RegistryAccess$$Type, arg1: $InventoryComponent$$Type): $CompoundTag
+public "getUpdatePacket"(): $Packet
 get "maxProgress"(): integer
 get "self"(): $ActiveTile
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -2611,8 +2690,8 @@ import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Objec
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$BasicTile} from "com.hrznstudio.titanium.block.tile.BasicTile"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$TitaniumTab$$Type} from "com.hrznstudio.titanium.tab.TitaniumTab"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$RotatableBlock} from "com.hrznstudio.titanium.block.RotatableBlock"
@@ -2671,6 +2750,7 @@ import {$Runnable} from "java.lang.Runnable"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$IndustrialProcessingTile} from "com.buuz135.industrial.block.tile.IndustrialProcessingTile"
 import {$InventoryComponent$$Type} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
@@ -2692,8 +2772,10 @@ public "getSelf"(): $ActiveTile
 public "onFinish"(): $Runnable
 public static "readInventory"(arg0: $RegistryAccess$$Type, arg1: $CompoundTag$$Type): $List<($ItemStack)>
 public static "writeInventory"(arg0: $RegistryAccess$$Type, arg1: $InventoryComponent$$Type): $CompoundTag
+public "getUpdatePacket"(): $Packet
 get "maxProgress"(): integer
 get "self"(): $ActiveTile
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -2728,8 +2810,8 @@ export type $FluidExtractorTile$FluidExtractionProgress$$Type = ($FluidExtractor
 export type $FluidExtractorTile$FluidExtractionProgress$$Original = $FluidExtractorTile$FluidExtractionProgress;}
 declare module "com.buuz135.industrial.block.resourceproduction.ResourcefulFurnaceBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$RecipeOutput$$Type} from "net.minecraft.data.recipes.RecipeOutput"
@@ -2765,9 +2847,9 @@ static readonly "FACING_HORIZONTAL": $DirectionProperty
 
 constructor()
 
+public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($ResourcefulFurnaceTile)>
 public "getRotationType"(): $RotatableBlock$RotationType
-public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "tileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($ResourcefulFurnaceTile)>
 get "rotationType"(): $RotatableBlock$RotationType
@@ -2783,8 +2865,8 @@ export type $ResourcefulFurnaceBlock$$Type = ($ResourcefulFurnaceBlock);
 export type $ResourcefulFurnaceBlock$$Original = $ResourcefulFurnaceBlock;}
 declare module "com.buuz135.industrial.block.misc.EnchantmentFactoryBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$EnchantmentFactoryTile} from "com.buuz135.industrial.block.misc.tile.EnchantmentFactoryTile"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -2820,9 +2902,9 @@ static readonly "FACING_HORIZONTAL": $DirectionProperty
 
 constructor()
 
+public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($EnchantmentFactoryTile)>
 public "getRotationType"(): $RotatableBlock$RotationType
-public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "tileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($EnchantmentFactoryTile)>
 get "rotationType"(): $RotatableBlock$RotationType
@@ -2838,8 +2920,8 @@ export type $EnchantmentFactoryBlock$$Type = ($EnchantmentFactoryBlock);
 export type $EnchantmentFactoryBlock$$Original = $EnchantmentFactoryBlock;}
 declare module "com.buuz135.industrial.block.agriculturehusbandry.SlaughterFactoryBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$RecipeOutput$$Type} from "net.minecraft.data.recipes.RecipeOutput"
@@ -2848,8 +2930,8 @@ import {$RotatableBlock$RotationType} from "com.hrznstudio.titanium.block.Rotata
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
-import {$DirectionProperty} from "net.minecraft.world.level.block.state.properties.DirectionProperty"
 import {$SlaughterFactoryTile} from "com.buuz135.industrial.block.agriculturehusbandry.tile.SlaughterFactoryTile"
+import {$DirectionProperty} from "net.minecraft.world.level.block.state.properties.DirectionProperty"
 import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $SlaughterFactoryBlock extends $IndustrialBlock<($SlaughterFactoryTile)> {
@@ -2875,9 +2957,9 @@ static readonly "FACING_HORIZONTAL": $DirectionProperty
 
 constructor()
 
+public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($SlaughterFactoryTile)>
 public "getRotationType"(): $RotatableBlock$RotationType
-public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "tileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($SlaughterFactoryTile)>
 get "rotationType"(): $RotatableBlock$RotationType
@@ -2893,8 +2975,8 @@ export type $SlaughterFactoryBlock$$Type = ($SlaughterFactoryBlock);
 export type $SlaughterFactoryBlock$$Original = $SlaughterFactoryBlock;}
 declare module "com.buuz135.industrial.block.misc.InfinityChargerBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$InfinityChargerTile} from "com.buuz135.industrial.block.misc.tile.InfinityChargerTile"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -2930,9 +3012,9 @@ static readonly "FACING_HORIZONTAL": $DirectionProperty
 
 constructor()
 
+public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($InfinityChargerTile)>
 public "getRotationType"(): $RotatableBlock$RotationType
-public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "tileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($InfinityChargerTile)>
 get "rotationType"(): $RotatableBlock$RotationType
@@ -2956,6 +3038,7 @@ import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$TagKey} from "net.minecraft.tags.TagKey"
 import {$InventoryComponent$$Type} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$IndustrialWorkingTile} from "com.buuz135.industrial.block.tile.IndustrialWorkingTile"
 import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
@@ -2974,8 +3057,10 @@ public "work"(): $IndustrialWorkingTile$WorkAction
 public "getSelf"(): $ActiveTile
 public static "readInventory"(arg0: $RegistryAccess$$Type, arg1: $CompoundTag$$Type): $List<($ItemStack)>
 public static "writeInventory"(arg0: $RegistryAccess$$Type, arg1: $InventoryComponent$$Type): $CompoundTag
+public "getUpdatePacket"(): $Packet
 get "maxProgress"(): integer
 get "self"(): $ActiveTile
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -2987,15 +3072,16 @@ export type $BioReactorTile$$Type = ($BioReactorTile);
  */
 export type $BioReactorTile$$Original = $BioReactorTile;}
 declare module "com.buuz135.industrial.block.agriculturehusbandry.tile.PlantSowerTile" {
-import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$List} from "java.util.List"
-import {$DyeColor} from "net.minecraft.world.item.DyeColor"
 import {$IndustrialAreaWorkingTile} from "com.buuz135.industrial.block.tile.IndustrialAreaWorkingTile"
-import {$InventoryComponent$$Type} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$IndustrialWorkingTile$WorkAction} from "com.buuz135.industrial.block.tile.IndustrialWorkingTile$WorkAction"
+import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
+import {$InventoryComponent$$Type} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
+import {$DyeColor} from "net.minecraft.world.item.DyeColor"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
@@ -3012,8 +3098,10 @@ public "work"(): $IndustrialWorkingTile$WorkAction
 public "getSelf"(): $PlantSowerTile
 public static "readInventory"(arg0: $RegistryAccess$$Type, arg1: $CompoundTag$$Type): $List<($ItemStack)>
 public static "writeInventory"(arg0: $RegistryAccess$$Type, arg1: $InventoryComponent$$Type): $CompoundTag
+public "getUpdatePacket"(): $Packet
 get "maxProgress"(): integer
 get "self"(): $PlantSowerTile
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -3030,10 +3118,11 @@ import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$IndustrialProcessingTile} from "com.buuz135.industrial.block.tile.IndustrialProcessingTile"
 import {$List} from "java.util.List"
 import {$InventoryComponent$$Type} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$Runnable} from "java.lang.Runnable"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
 
 export class $FluidSievingMachineTile extends $IndustrialProcessingTile<($FluidSievingMachineTile)> {
 static readonly "ATTACHMENTS_NBT_KEY": StringJS
@@ -3046,8 +3135,10 @@ public "getSelf"(): $FluidSievingMachineTile
 public "onFinish"(): $Runnable
 public static "readInventory"(arg0: $RegistryAccess$$Type, arg1: $CompoundTag$$Type): $List<($ItemStack)>
 public static "writeInventory"(arg0: $RegistryAccess$$Type, arg1: $InventoryComponent$$Type): $CompoundTag
+public "getUpdatePacket"(): $Packet
 get "maxProgress"(): integer
 get "self"(): $FluidSievingMachineTile
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -3060,8 +3151,8 @@ export type $FluidSievingMachineTile$$Type = ($FluidSievingMachineTile);
 export type $FluidSievingMachineTile$$Original = $FluidSievingMachineTile;}
 declare module "com.buuz135.industrial.block.agriculturehusbandry.MobDuplicatorBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$RecipeOutput$$Type} from "net.minecraft.data.recipes.RecipeOutput"
@@ -3096,8 +3187,8 @@ static readonly "FACING_HORIZONTAL": $DirectionProperty
 
 constructor()
 
-public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($MobDuplicatorTile)>
 public "registerRecipe"(arg0: $RecipeOutput$$Type): void
+public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($MobDuplicatorTile)>
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "tileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($MobDuplicatorTile)>
 }
@@ -3141,10 +3232,10 @@ export type $RangeManager$RangeType$$Type = (("front") | ("behind") | ("top") | 
  */
 export type $RangeManager$RangeType$$Original = $RangeManager$RangeType;}
 declare module "com.buuz135.industrial.block.generator.MycelialReactorBlock" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
@@ -3187,8 +3278,8 @@ constructor()
 
 public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($MycelialReactorTile)>
 public "getRotationType"(): $RotatableBlock$RotationType
-public "setPlacedBy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $LivingEntity$$Type, arg4: $ItemStack$$Type): void
 public "useWithoutItem"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $BlockHitResult$$Type): $InteractionResult
+public "setPlacedBy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $LivingEntity$$Type, arg4: $ItemStack$$Type): void
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "tileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($MycelialReactorTile)>
 get "rotationType"(): $RotatableBlock$RotationType
@@ -3204,14 +3295,14 @@ export type $MycelialReactorBlock$$Type = ($MycelialReactorBlock);
 export type $MycelialReactorBlock$$Original = $MycelialReactorBlock;}
 declare module "com.buuz135.industrial.block.resourceproduction.LaserDrillBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$LaserDrillTile} from "com.buuz135.industrial.block.resourceproduction.tile.LaserDrillTile"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
-import {$RecipeOutput$$Type} from "net.minecraft.data.recipes.RecipeOutput"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
+import {$RecipeOutput$$Type} from "net.minecraft.data.recipes.RecipeOutput"
 import {$IndustrialBlock} from "com.buuz135.industrial.block.IndustrialBlock"
 import {$RotatableBlock$RotationType} from "com.hrznstudio.titanium.block.RotatableBlock$RotationType"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
@@ -3244,9 +3335,9 @@ static readonly "FACING_HORIZONTAL": $DirectionProperty
 
 constructor()
 
+public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($LaserDrillTile)>
 public "getRotationType"(): $RotatableBlock$RotationType
-public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public "animateTick"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $RandomSource$$Type): void
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "tileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($LaserDrillTile)>
@@ -3268,6 +3359,7 @@ import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$List} from "java.util.List"
 import {$IndustrialAreaWorkingTile} from "com.buuz135.industrial.block.tile.IndustrialAreaWorkingTile"
 import {$InventoryComponent$$Type} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$IndustrialWorkingTile$WorkAction} from "com.buuz135.industrial.block.tile.IndustrialWorkingTile$WorkAction"
 import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
@@ -3284,8 +3376,10 @@ public "work"(): $IndustrialWorkingTile$WorkAction
 public "getSelf"(): $PlantFertilizerTile
 public static "readInventory"(arg0: $RegistryAccess$$Type, arg1: $CompoundTag$$Type): $List<($ItemStack)>
 public static "writeInventory"(arg0: $RegistryAccess$$Type, arg1: $InventoryComponent$$Type): $CompoundTag
+public "getUpdatePacket"(): $Packet
 get "maxProgress"(): integer
 get "self"(): $PlantFertilizerTile
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -3298,8 +3392,8 @@ export type $PlantFertilizerTile$$Type = ($PlantFertilizerTile);
 export type $PlantFertilizerTile$$Original = $PlantFertilizerTile;}
 declare module "com.buuz135.industrial.block.misc.EnchantmentApplicatorBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$RecipeOutput$$Type} from "net.minecraft.data.recipes.RecipeOutput"
@@ -3335,9 +3429,9 @@ static readonly "FACING_HORIZONTAL": $DirectionProperty
 
 constructor()
 
+public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($EnchantmentApplicatorTile)>
 public "getRotationType"(): $RotatableBlock$RotationType
-public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "tileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($EnchantmentApplicatorTile)>
 get "rotationType"(): $RotatableBlock$RotationType
@@ -3352,15 +3446,16 @@ export type $EnchantmentApplicatorBlock$$Type = ($EnchantmentApplicatorBlock);
  */
 export type $EnchantmentApplicatorBlock$$Original = $EnchantmentApplicatorBlock;}
 declare module "com.buuz135.industrial.block.agriculturehusbandry.tile.MobDuplicatorTile" {
-import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
-import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$List} from "java.util.List"
 import {$IndustrialAreaWorkingTile} from "com.buuz135.industrial.block.tile.IndustrialAreaWorkingTile"
-import {$InventoryComponent$$Type} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$IndustrialWorkingTile$WorkAction} from "com.buuz135.industrial.block.tile.IndustrialWorkingTile$WorkAction"
+import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
+import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
+import {$InventoryComponent$$Type} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
@@ -3377,9 +3472,11 @@ public "work"(): $IndustrialWorkingTile$WorkAction
 public "getSelf"(): $MobDuplicatorTile
 public static "readInventory"(arg0: $RegistryAccess$$Type, arg1: $CompoundTag$$Type): $List<($ItemStack)>
 public static "writeInventory"(arg0: $RegistryAccess$$Type, arg1: $InventoryComponent$$Type): $CompoundTag
+public "getUpdatePacket"(): $Packet
 get "maxProgress"(): integer
 get "workingArea"(): $VoxelShape
 get "self"(): $MobDuplicatorTile
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -3392,12 +3489,13 @@ export type $MobDuplicatorTile$$Type = ($MobDuplicatorTile);
 export type $MobDuplicatorTile$$Original = $MobDuplicatorTile;}
 declare module "com.buuz135.industrial.block.misc.tile.EnchantmentApplicatorTile" {
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
-import {$IndustrialProcessingTile} from "com.buuz135.industrial.block.tile.IndustrialProcessingTile"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$List} from "java.util.List"
-import {$InventoryComponent$$Type} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
-import {$IFluidHandler$$Type} from "net.neoforged.neoforge.fluids.capability.IFluidHandler"
 import {$Runnable} from "java.lang.Runnable"
+import {$IndustrialProcessingTile} from "com.buuz135.industrial.block.tile.IndustrialProcessingTile"
+import {$InventoryComponent$$Type} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
+import {$IFluidHandler$$Type} from "net.neoforged.neoforge.fluids.capability.IFluidHandler"
 import {$Pair} from "org.apache.commons.lang3.tuple.Pair"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
@@ -3409,8 +3507,8 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 constructor(arg0: $BlockPos$$Type, arg1: $BlockState$$Type)
 
 public "initClient"(): void
-public static "drainAmount"(arg0: integer, arg1: $IFluidHandler$$Type): integer
 public "getMaxProgress"(): integer
+public static "drainAmount"(arg0: integer, arg1: $IFluidHandler$$Type): integer
 public "updateRepairOutput"(): $Pair<($ItemStack), (integer)>
 public static "getMatchingAmount"(arg0: $IFluidHandler$$Type): integer
 public static "getEssenceConsumed"(arg0: integer): integer
@@ -3419,8 +3517,10 @@ public "getSelf"(): $EnchantmentApplicatorTile
 public "onFinish"(): $Runnable
 public static "readInventory"(arg0: $RegistryAccess$$Type, arg1: $CompoundTag$$Type): $List<($ItemStack)>
 public static "writeInventory"(arg0: $RegistryAccess$$Type, arg1: $InventoryComponent$$Type): $CompoundTag
+public "getUpdatePacket"(): $Packet
 get "maxProgress"(): integer
 get "self"(): $EnchantmentApplicatorTile
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -3464,8 +3564,8 @@ export type $ConveyorBlock$ConveyorItem$$Type = ($ConveyorBlock$ConveyorItem);
 export type $ConveyorBlock$ConveyorItem$$Original = $ConveyorBlock$ConveyorItem;}
 declare module "com.buuz135.industrial.block.resourceproduction.FluidSievingMachineBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$FluidSievingMachineTile} from "com.buuz135.industrial.block.resourceproduction.tile.FluidSievingMachineTile"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -3501,9 +3601,9 @@ static readonly "FACING_HORIZONTAL": $DirectionProperty
 
 constructor()
 
+public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($FluidSievingMachineTile)>
 public "getRotationType"(): $RotatableBlock$RotationType
-public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "tileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($FluidSievingMachineTile)>
 get "rotationType"(): $RotatableBlock$RotationType
@@ -3519,8 +3619,8 @@ export type $FluidSievingMachineBlock$$Type = ($FluidSievingMachineBlock);
 export type $FluidSievingMachineBlock$$Original = $FluidSievingMachineBlock;}
 declare module "com.buuz135.industrial.block.agriculturehusbandry.PlantFertilizerBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$PlantFertilizerTile} from "com.buuz135.industrial.block.agriculturehusbandry.tile.PlantFertilizerTile"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -3556,9 +3656,9 @@ static readonly "FACING_HORIZONTAL": $DirectionProperty
 
 constructor()
 
+public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($PlantFertilizerTile)>
 public "getRotationType"(): $RotatableBlock$RotationType
-public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "tileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($PlantFertilizerTile)>
 get "rotationType"(): $RotatableBlock$RotationType
@@ -3574,8 +3674,8 @@ export type $PlantFertilizerBlock$$Type = ($PlantFertilizerBlock);
 export type $PlantFertilizerBlock$$Original = $PlantFertilizerBlock;}
 declare module "com.buuz135.industrial.block.generator.PitifulGeneratorBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$PitifulGeneratorTile} from "com.buuz135.industrial.block.generator.tile.PitifulGeneratorTile"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -3611,9 +3711,9 @@ static readonly "FACING_HORIZONTAL": $DirectionProperty
 
 constructor()
 
+public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($PitifulGeneratorTile)>
 public "getRotationType"(): $RotatableBlock$RotationType
-public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "tileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($PitifulGeneratorTile)>
 get "rotationType"(): $RotatableBlock$RotationType
@@ -3629,8 +3729,8 @@ export type $PitifulGeneratorBlock$$Type = ($PitifulGeneratorBlock);
 export type $PitifulGeneratorBlock$$Original = $PitifulGeneratorBlock;}
 declare module "com.buuz135.industrial.block.transportstorage.ConveyorBlock" {
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$List} from "java.util.List"
@@ -3641,11 +3741,11 @@ import {$SimpleWaterloggedBlock$$Interface} from "net.minecraft.world.level.bloc
 import {$ConveyorBlock$ConveyorItem} from "com.buuz135.industrial.block.transportstorage.ConveyorBlock$ConveyorItem"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$RecipeOutput$$Type} from "net.minecraft.data.recipes.RecipeOutput"
-import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
+import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$Item} from "net.minecraft.world.item.Item"
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
+import {$Item} from "net.minecraft.world.item.Item"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -3660,19 +3760,19 @@ import {$NonNullList} from "net.minecraft.core.NonNullList"
 import {$ConveyorTile} from "com.buuz135.industrial.block.transportstorage.tile.ConveyorTile"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
-import {$ItemInteractionResult} from "net.minecraft.world.ItemInteractionResult"
 import {$Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
+import {$ItemInteractionResult} from "net.minecraft.world.ItemInteractionResult"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$ConveyorBlock$EnumType} from "com.buuz135.industrial.block.transportstorage.ConveyorBlock$EnumType"
 import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
+import {$ConveyorBlock$EnumType} from "com.buuz135.industrial.block.transportstorage.ConveyorBlock$EnumType"
 import {$IRecipeProvider$$Interface} from "com.hrznstudio.titanium.api.IRecipeProvider"
+import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
-import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
-import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
+import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$DirectionProperty} from "net.minecraft.world.level.block.state.properties.DirectionProperty"
 
 export class $ConveyorBlock extends $BasicTileBlock<($ConveyorTile)> implements $SimpleWaterloggedBlock$$Interface, $IRecipeProvider$$Interface {
@@ -3700,6 +3800,7 @@ static readonly "TYPE": $EnumProperty<($ConveyorBlock$EnumType)>
 constructor(arg0: $TitaniumTab$$Type)
 
 public "getBoundingBoxes"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): $List<($VoxelShape)>
+public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($ConveyorTile)>
 public "hasCustomBoxes"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): boolean
 public "getDynamicDrops"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: boolean): $NonNullList<($ItemStack)>
@@ -3709,9 +3810,8 @@ public "setPlacedBy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockStat
 public "isPossibleToRespawnInThis"(arg0: $BlockState$$Type): boolean
 public "getStateAtViewpoint"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $Vec3$$Type): $BlockState
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
-public "registerRecipe"(arg0: $RecipeOutput$$Type): void
-public "getItem"(): $ConveyorBlock$ConveyorItem
 public "getShape"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $CollisionContext$$Type): $VoxelShape
+public "getItem"(): $ConveyorBlock$ConveyorItem
 public "getFluidState"(arg0: $BlockState$$Type): $FluidState
 public "getRenderShape"(arg0: $BlockState$$Type): $RenderShape
 public "useItemOn"(arg0: $ItemStack$$Type, arg1: $BlockState$$Type, arg2: $Level$$Type, arg3: $BlockPos$$Type, arg4: $Player$$Type, arg5: $InteractionHand$$Type, arg6: $BlockHitResult$$Type): $ItemInteractionResult
@@ -3723,8 +3823,8 @@ public "getDirectSignal"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2
 public "getSignal"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $Direction$$Type): integer
 public "hasIndividualRenderVoxelShape"(): boolean
 public "getPickupSound"(): $Optional<($SoundEvent)>
-public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "canPlaceLiquid"(arg0: $Player$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $Fluid$$Type): boolean
+public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "pickupBlock"(arg0: $Player$$Type, arg1: $LevelAccessor$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): $ItemStack
 public "getPickupSound"(arg0: $BlockState$$Type): $Optional<($SoundEvent)>
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
@@ -3761,10 +3861,10 @@ export type $IndustrialWorkingTile$WorkAction$$Type = ($IndustrialWorkingTile$Wo
  */
 export type $IndustrialWorkingTile$WorkAction$$Original = $IndustrialWorkingTile$WorkAction;}
 declare module "com.buuz135.industrial.block.agriculturehusbandry.WitherBuilderBlock" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$WitherBuilderTile} from "com.buuz135.industrial.block.agriculturehusbandry.tile.WitherBuilderTile"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$RecipeOutput$$Type} from "net.minecraft.data.recipes.RecipeOutput"
@@ -3799,9 +3899,9 @@ static readonly "FACING_HORIZONTAL": $DirectionProperty
 
 constructor()
 
+public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($WitherBuilderTile)>
 public "getRotationType"(): $RotatableBlock$RotationType
-public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "tileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($WitherBuilderTile)>
 get "rotationType"(): $RotatableBlock$RotationType
@@ -3817,8 +3917,8 @@ export type $WitherBuilderBlock$$Type = ($WitherBuilderBlock);
 export type $WitherBuilderBlock$$Original = $WitherBuilderBlock;}
 declare module "com.buuz135.industrial.block.generator.BiofuelGeneratorBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$RecipeOutput$$Type} from "net.minecraft.data.recipes.RecipeOutput"
@@ -3854,9 +3954,9 @@ static readonly "FACING_HORIZONTAL": $DirectionProperty
 
 constructor()
 
+public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($BiofuelGeneratorTile)>
 public "getRotationType"(): $RotatableBlock$RotationType
-public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "tileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($BiofuelGeneratorTile)>
 get "rotationType"(): $RotatableBlock$RotationType
@@ -3872,8 +3972,8 @@ export type $BiofuelGeneratorBlock$$Type = ($BiofuelGeneratorBlock);
 export type $BiofuelGeneratorBlock$$Original = $BiofuelGeneratorBlock;}
 declare module "com.buuz135.industrial.block.resourceproduction.BlockPlacerBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$BlockPlacerTile} from "com.buuz135.industrial.block.resourceproduction.tile.BlockPlacerTile"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -3909,9 +4009,9 @@ static readonly "FACING_HORIZONTAL": $DirectionProperty
 
 constructor()
 
+public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($BlockPlacerTile)>
 public "getRotationType"(): $RotatableBlock$RotationType
-public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "tileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($BlockPlacerTile)>
 get "rotationType"(): $RotatableBlock$RotationType
@@ -3927,8 +4027,8 @@ export type $BlockPlacerBlock$$Type = ($BlockPlacerBlock);
 export type $BlockPlacerBlock$$Original = $BlockPlacerBlock;}
 declare module "com.buuz135.industrial.block.misc.EnchantmentExtractorBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$EnchantmentExtractorTile} from "com.buuz135.industrial.block.misc.tile.EnchantmentExtractorTile"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -3964,9 +4064,9 @@ static readonly "FACING_HORIZONTAL": $DirectionProperty
 
 constructor()
 
+public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($EnchantmentExtractorTile)>
 public "getRotationType"(): $RotatableBlock$RotationType
-public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "tileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($EnchantmentExtractorTile)>
 get "rotationType"(): $RotatableBlock$RotationType
@@ -3982,8 +4082,8 @@ export type $EnchantmentExtractorBlock$$Type = ($EnchantmentExtractorBlock);
 export type $EnchantmentExtractorBlock$$Original = $EnchantmentExtractorBlock;}
 declare module "com.buuz135.industrial.block.resourceproduction.DyeMixerBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$RecipeOutput$$Type} from "net.minecraft.data.recipes.RecipeOutput"
@@ -4019,9 +4119,9 @@ static readonly "FACING_HORIZONTAL": $DirectionProperty
 
 constructor()
 
+public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($DyeMixerTile)>
 public "getRotationType"(): $RotatableBlock$RotationType
-public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "tileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($DyeMixerTile)>
 get "rotationType"(): $RotatableBlock$RotationType
@@ -4041,13 +4141,13 @@ import {$MaterialStoneWorkFactoryTile$StoneWorkAction} from "com.buuz135.industr
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$List} from "java.util.List"
-import {$ActiveTile} from "com.hrznstudio.titanium.block.tile.ActiveTile"
 import {$Runnable} from "java.lang.Runnable"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$IndustrialProcessingTile} from "com.buuz135.industrial.block.tile.IndustrialProcessingTile"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$StoneWorkGenerateRecipe} from "com.buuz135.industrial.recipe.StoneWorkGenerateRecipe"
 import {$InventoryComponent$$Type} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -4065,13 +4165,15 @@ public "getRecipe"(): $Optional<($StoneWorkGenerateRecipe)>
 public "getNextRecipe"(arg0: boolean): $ResourceLocation
 public "getMaxProgress"(): integer
 public "canIncrease"(): boolean
-public "getSelf"(): $ActiveTile
+public "getSelf"(): $MaterialStoneWorkFactoryTile
 public "onFinish"(): $Runnable
 public static "readInventory"(arg0: $RegistryAccess$$Type, arg1: $CompoundTag$$Type): $List<($ItemStack)>
 public static "writeInventory"(arg0: $RegistryAccess$$Type, arg1: $InventoryComponent$$Type): $CompoundTag
+public "getUpdatePacket"(): $Packet
 get "recipe"(): $Optional<($StoneWorkGenerateRecipe)>
 get "maxProgress"(): integer
-get "self"(): $ActiveTile
+get "self"(): $MaterialStoneWorkFactoryTile
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -4084,8 +4186,8 @@ export type $MaterialStoneWorkFactoryTile$$Type = ($MaterialStoneWorkFactoryTile
 export type $MaterialStoneWorkFactoryTile$$Original = $MaterialStoneWorkFactoryTile;}
 declare module "com.buuz135.industrial.block.core.DissolutionChamberBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$DissolutionChamberTile} from "com.buuz135.industrial.block.core.tile.DissolutionChamberTile"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -4121,9 +4223,9 @@ static readonly "FACING_HORIZONTAL": $DirectionProperty
 
 constructor()
 
+public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($DissolutionChamberTile)>
 public "getRotationType"(): $RotatableBlock$RotationType
-public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "tileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($DissolutionChamberTile)>
 get "rotationType"(): $RotatableBlock$RotationType
@@ -4139,8 +4241,8 @@ export type $DissolutionChamberBlock$$Type = ($DissolutionChamberBlock);
 export type $DissolutionChamberBlock$$Original = $DissolutionChamberBlock;}
 declare module "com.buuz135.industrial.block.misc.EnchantmentSorterBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$RecipeOutput$$Type} from "net.minecraft.data.recipes.RecipeOutput"
@@ -4176,9 +4278,9 @@ static readonly "FACING_HORIZONTAL": $DirectionProperty
 
 constructor()
 
+public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($EnchantmentSorterTile)>
 public "getRotationType"(): $RotatableBlock$RotationType
-public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "tileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($EnchantmentSorterTile)>
 get "rotationType"(): $RotatableBlock$RotationType
@@ -4194,8 +4296,8 @@ export type $EnchantmentSorterBlock$$Type = ($EnchantmentSorterBlock);
 export type $EnchantmentSorterBlock$$Original = $EnchantmentSorterBlock;}
 declare module "com.buuz135.industrial.block.agriculturehusbandry.SewerBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$RecipeOutput$$Type} from "net.minecraft.data.recipes.RecipeOutput"
@@ -4231,9 +4333,9 @@ static readonly "FACING_HORIZONTAL": $DirectionProperty
 
 constructor()
 
+public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($SewerTile)>
 public "getRotationType"(): $RotatableBlock$RotationType
-public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "tileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($SewerTile)>
 get "rotationType"(): $RotatableBlock$RotationType
@@ -4249,8 +4351,8 @@ export type $SewerBlock$$Type = ($SewerBlock);
 export type $SewerBlock$$Original = $SewerBlock;}
 declare module "com.buuz135.industrial.block.generator.MycelialGeneratorBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$IMycelialGeneratorType, $IMycelialGeneratorType$$Type} from "com.buuz135.industrial.block.generator.mycelial.IMycelialGeneratorType"
 import {$Block} from "net.minecraft.world.level.block.Block"
@@ -4291,10 +4393,10 @@ static readonly "FACING_HORIZONTAL": $DirectionProperty
 
 constructor(arg0: $IMycelialGeneratorType$$Type)
 
+public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($MycelialGeneratorTile)>
 public "getRotationType"(): $RotatableBlock$RotationType
 public "setPlacedBy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $LivingEntity$$Type, arg4: $ItemStack$$Type): void
-public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public "getType"(): $IMycelialGeneratorType
 public "onRemove"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: boolean): void
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
@@ -4312,15 +4414,16 @@ export type $MycelialGeneratorBlock$$Type = ($MycelialGeneratorBlock);
  */
 export type $MycelialGeneratorBlock$$Original = $MycelialGeneratorBlock;}
 declare module "com.buuz135.industrial.block.agriculturehusbandry.tile.MobCrusherTile" {
-import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
-import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$List} from "java.util.List"
 import {$IndustrialAreaWorkingTile} from "com.buuz135.industrial.block.tile.IndustrialAreaWorkingTile"
-import {$InventoryComponent$$Type} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$IndustrialWorkingTile$WorkAction} from "com.buuz135.industrial.block.tile.IndustrialWorkingTile$WorkAction"
+import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
+import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
+import {$InventoryComponent$$Type} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
@@ -4337,9 +4440,11 @@ public "work"(): $IndustrialWorkingTile$WorkAction
 public "getSelf"(): $MobCrusherTile
 public static "readInventory"(arg0: $RegistryAccess$$Type, arg1: $CompoundTag$$Type): $List<($ItemStack)>
 public static "writeInventory"(arg0: $RegistryAccess$$Type, arg1: $InventoryComponent$$Type): $CompoundTag
+public "getUpdatePacket"(): $Packet
 get "maxProgress"(): integer
 get "workingArea"(): $VoxelShape
 get "self"(): $MobCrusherTile
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -4351,37 +4456,36 @@ export type $MobCrusherTile$$Type = ($MobCrusherTile);
  */
 export type $MobCrusherTile$$Original = $MobCrusherTile;}
 declare module "com.buuz135.industrial.block.tool.tile.InfinityBackpackTile" {
-import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$BasicTile} from "com.hrznstudio.titanium.block.tile.BasicTile"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$List} from "java.util.List"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$IFactory} from "com.hrznstudio.titanium.api.IFactory"
 import {$Component} from "net.minecraft.network.chat.Component"
 import {$Inventory$$Type} from "net.minecraft.world.entity.player.Inventory"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$IButtonHandler$$Interface} from "com.hrznstudio.titanium.network.IButtonHandler"
-import {$IScreenAddon} from "com.hrznstudio.titanium.api.client.IScreenAddon"
-import {$ItemInteractionResult} from "net.minecraft.world.ItemInteractionResult"
 import {$MenuProvider, $MenuProvider$$Interface} from "net.minecraft.world.MenuProvider"
-import {$AbstractContainerMenu, $AbstractContainerMenu$$Type} from "net.minecraft.world.inventory.AbstractContainerMenu"
-import {$RegistryFriendlyByteBuf$$Type} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$ContainerLevelAccess} from "net.minecraft.world.inventory.ContainerLevelAccess"
 import {$IScreenAddonProvider$$Interface} from "com.hrznstudio.titanium.api.client.IScreenAddonProvider"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$ITickableBlockEntity$$Interface} from "com.hrznstudio.titanium.block.tile.ITickableBlockEntity"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
+import {$IFactory} from "com.hrznstudio.titanium.api.IFactory"
+import {$IScreenAddon} from "com.hrznstudio.titanium.api.client.IScreenAddon"
+import {$ItemInteractionResult} from "net.minecraft.world.ItemInteractionResult"
+import {$AbstractContainerMenu, $AbstractContainerMenu$$Type} from "net.minecraft.world.inventory.AbstractContainerMenu"
+import {$RegistryFriendlyByteBuf$$Type} from "net.minecraft.network.RegistryFriendlyByteBuf"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
+import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 
 export class $InfinityBackpackTile extends $BasicTile<($InfinityBackpackTile)> implements $MenuProvider$$Interface, $IScreenAddonProvider$$Interface, $IButtonHandler$$Interface, $ITickableBlockEntity$$Interface<($InfinityBackpackTile)> {
 static readonly "ATTACHMENTS_NBT_KEY": StringJS
 
 constructor(arg0: $BlockPos$$Type, arg1: $BlockState$$Type)
 
-public "getBackpack"(): $ItemStack
-public "setBackpack"(arg0: $ItemStack$$Type): void
 public "onActivated"(arg0: $Player$$Type, arg1: $InteractionHand$$Type, arg2: $Direction$$Type, arg3: double, arg4: double, arg5: double): $ItemInteractionResult
 public "handleButtonMessage"(arg0: integer, arg1: $Player$$Type, arg2: $CompoundTag$$Type): void
 public "getScreenAddons"(): $List<($IFactory<($IScreenAddon)>)>
@@ -4389,17 +4493,21 @@ public "getWorldPosCallable"(): $ContainerLevelAccess
 public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $BlockEntity$$Type): void
 public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $InfinityBackpackTile$$Type): void
 public "createMenu"(arg0: integer, arg1: $Inventory$$Type, arg2: $Player$$Type): $AbstractContainerMenu
+public "setBackpack"(arg0: $ItemStack$$Type): void
+public "getBackpack"(): $ItemStack
 public "getStackMenuProvider"(): $MenuProvider
 public "getDisplayName"(): $Component
 public "clientTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $InfinityBackpackTile$$Type): void
+public "getUpdatePacket"(): $Packet
 public "shouldTriggerClientSideContainerClosingOnOpen"(): boolean
 public "writeClientSideData"(arg0: $AbstractContainerMenu$$Type, arg1: $RegistryFriendlyByteBuf$$Type): void
-get "backpack"(): $ItemStack
-set "backpack"(value: $ItemStack$$Type)
 get "screenAddons"(): $List<($IFactory<($IScreenAddon)>)>
 get "worldPosCallable"(): $ContainerLevelAccess
+set "backpack"(value: $ItemStack$$Type)
+get "backpack"(): $ItemStack
 get "stackMenuProvider"(): $MenuProvider
 get "displayName"(): $Component
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -4416,10 +4524,11 @@ import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$IndustrialProcessingTile} from "com.buuz135.industrial.block.tile.IndustrialProcessingTile"
 import {$List} from "java.util.List"
 import {$InventoryComponent$$Type} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$Runnable} from "java.lang.Runnable"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
 
 export class $ResourcefulFurnaceTile extends $IndustrialProcessingTile<($ResourcefulFurnaceTile)> {
 static readonly "ATTACHMENTS_NBT_KEY": StringJS
@@ -4433,8 +4542,10 @@ public "onFinish"(): $Runnable
 public "setChanged"(): void
 public static "readInventory"(arg0: $RegistryAccess$$Type, arg1: $CompoundTag$$Type): $List<($ItemStack)>
 public static "writeInventory"(arg0: $RegistryAccess$$Type, arg1: $InventoryComponent$$Type): $CompoundTag
+public "getUpdatePacket"(): $Packet
 get "self"(): $ResourcefulFurnaceTile
 get "changed"(): void
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -4447,8 +4558,8 @@ export type $ResourcefulFurnaceTile$$Type = ($ResourcefulFurnaceTile);
 export type $ResourcefulFurnaceTile$$Original = $ResourcefulFurnaceTile;}
 declare module "com.buuz135.industrial.block.resourceproduction.PotionBrewerBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$PotionBrewerTile} from "com.buuz135.industrial.block.resourceproduction.tile.PotionBrewerTile"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -4484,9 +4595,9 @@ static readonly "FACING_HORIZONTAL": $DirectionProperty
 
 constructor()
 
+public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($PotionBrewerTile)>
 public "getRotationType"(): $RotatableBlock$RotationType
-public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "tileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($PotionBrewerTile)>
 get "rotationType"(): $RotatableBlock$RotationType
@@ -4504,8 +4615,9 @@ declare module "com.buuz135.industrial.block.resourceproduction.tile.WaterConden
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$List} from "java.util.List"
-import {$ActiveTile} from "com.hrznstudio.titanium.block.tile.ActiveTile"
 import {$InventoryComponent$$Type} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
+import {$ActiveTile} from "com.hrznstudio.titanium.block.tile.ActiveTile"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$IndustrialWorkingTile$WorkAction} from "com.buuz135.industrial.block.tile.IndustrialWorkingTile$WorkAction"
 import {$IndustrialWorkingTile} from "com.buuz135.industrial.block.tile.IndustrialWorkingTile"
@@ -4522,8 +4634,10 @@ public "work"(): $IndustrialWorkingTile$WorkAction
 public "getSelf"(): $ActiveTile
 public static "readInventory"(arg0: $RegistryAccess$$Type, arg1: $CompoundTag$$Type): $List<($ItemStack)>
 public static "writeInventory"(arg0: $RegistryAccess$$Type, arg1: $InventoryComponent$$Type): $CompoundTag
+public "getUpdatePacket"(): $Packet
 get "maxProgress"(): integer
 get "self"(): $ActiveTile
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -4541,15 +4655,16 @@ import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$List} from "java.util.List"
 import {$IndustrialAreaWorkingTile} from "com.buuz135.industrial.block.tile.IndustrialAreaWorkingTile"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$FluidExtractorRecipe} from "com.buuz135.industrial.recipe.FluidExtractorRecipe"
 import {$ChunkPos} from "net.minecraft.world.level.ChunkPos"
+import {$FluidExtractorRecipe} from "com.buuz135.industrial.recipe.FluidExtractorRecipe"
 import {$IndustrialWorkingTile$WorkAction} from "com.buuz135.industrial.block.tile.IndustrialWorkingTile$WorkAction"
 import {$HashMap} from "java.util.HashMap"
 import {$InventoryComponent$$Type} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
-import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$DimensionType} from "net.minecraft.world.level.dimension.DimensionType"
+import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $FluidExtractorTile extends $IndustrialAreaWorkingTile<($FluidExtractorTile)> {
 static "EXTRACTION": $HashMap<($DimensionType), ($HashMap<($ChunkPos), ($HashMap<($BlockPos), ($FluidExtractorTile$FluidExtractionProgress)>)>)>
@@ -4557,14 +4672,16 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 
 constructor(arg0: $BlockPos$$Type, arg1: $BlockState$$Type)
 
-public "findRecipe"(arg0: $Level$$Type, arg1: $BlockPos$$Type): $FluidExtractorRecipe
 public "getMaxProgress"(): integer
+public "findRecipe"(arg0: $Level$$Type, arg1: $BlockPos$$Type): $FluidExtractorRecipe
 public "work"(): $IndustrialWorkingTile$WorkAction
 public "getSelf"(): $FluidExtractorTile
 public static "readInventory"(arg0: $RegistryAccess$$Type, arg1: $CompoundTag$$Type): $List<($ItemStack)>
 public static "writeInventory"(arg0: $RegistryAccess$$Type, arg1: $InventoryComponent$$Type): $CompoundTag
+public "getUpdatePacket"(): $Packet
 get "maxProgress"(): integer
 get "self"(): $FluidExtractorTile
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -4577,8 +4694,8 @@ export type $FluidExtractorTile$$Type = ($FluidExtractorTile);
 export type $FluidExtractorTile$$Original = $FluidExtractorTile;}
 declare module "com.buuz135.industrial.block.generator.BioReactorBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$RecipeOutput$$Type} from "net.minecraft.data.recipes.RecipeOutput"
@@ -4614,9 +4731,9 @@ static readonly "FACING_HORIZONTAL": $DirectionProperty
 
 constructor()
 
+public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($BioReactorTile)>
 public "getRotationType"(): $RotatableBlock$RotationType
-public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "tileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($BioReactorTile)>
 get "rotationType"(): $RotatableBlock$RotationType
@@ -4632,10 +4749,10 @@ export type $BioReactorBlock$$Type = ($BioReactorBlock);
 export type $BioReactorBlock$$Original = $BioReactorBlock;}
 declare module "com.buuz135.industrial.block.agriculturehusbandry.HydroponicBedBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$RecipeOutput$$Type} from "net.minecraft.data.recipes.RecipeOutput"
@@ -4646,8 +4763,8 @@ import {$HydroponicBedTile} from "com.buuz135.industrial.block.agriculturehusban
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$DirectionProperty} from "net.minecraft.world.level.block.state.properties.DirectionProperty"
-import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
+import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $HydroponicBedBlock extends $IndustrialBlock<($HydroponicBedTile)> {
 static readonly "UPDATE_IMMEDIATE": integer
@@ -4672,9 +4789,9 @@ static readonly "FACING_HORIZONTAL": $DirectionProperty
 
 constructor()
 
+public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($HydroponicBedTile)>
 public "canSustainPlant"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $Direction$$Type, arg4: $BlockState$$Type): $TriState
-public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "tileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($HydroponicBedTile)>
 }
@@ -4691,8 +4808,8 @@ declare module "com.buuz135.industrial.block.MachineFrameBlock$MachineFrameItem"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$TitaniumTab$$Type} from "com.hrznstudio.titanium.tab.TitaniumTab"
+import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Rarity$$Type} from "net.minecraft.world.item.Rarity"
 import {$BlockItem} from "net.minecraft.world.item.BlockItem"
@@ -4725,17 +4842,18 @@ export type $MachineFrameBlock$MachineFrameItem$$Type = ($MachineFrameBlock$Mach
  */
 export type $MachineFrameBlock$MachineFrameItem$$Original = $MachineFrameBlock$MachineFrameItem;}
 declare module "com.buuz135.industrial.block.resourceproduction.tile.PotionBrewerTile" {
-import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
-import {$IndustrialProcessingTile} from "com.buuz135.industrial.block.tile.IndustrialProcessingTile"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$List} from "java.util.List"
-import {$InventoryComponent$$Type} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
 import {$Runnable} from "java.lang.Runnable"
+import {$ProgressBarComponent$BarDirection} from "com.hrznstudio.titanium.component.progress.ProgressBarComponent$BarDirection"
+import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
+import {$IndustrialProcessingTile} from "com.buuz135.industrial.block.tile.IndustrialProcessingTile"
+import {$InventoryComponent$$Type} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$ProgressBarComponent$BarDirection} from "com.hrznstudio.titanium.component.progress.ProgressBarComponent$BarDirection"
 
 export class $PotionBrewerTile extends $IndustrialProcessingTile<($PotionBrewerTile)> {
 static readonly "ATTACHMENTS_NBT_KEY": StringJS
@@ -4750,8 +4868,10 @@ public "getSelf"(): $PotionBrewerTile
 public "onFinish"(): $Runnable
 public static "readInventory"(arg0: $RegistryAccess$$Type, arg1: $CompoundTag$$Type): $List<($ItemStack)>
 public static "writeInventory"(arg0: $RegistryAccess$$Type, arg1: $InventoryComponent$$Type): $CompoundTag
+public "getUpdatePacket"(): $Packet
 get "barDirection"(): $ProgressBarComponent$BarDirection
 get "self"(): $PotionBrewerTile
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -4768,10 +4888,11 @@ import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$IndustrialProcessingTile} from "com.buuz135.industrial.block.tile.IndustrialProcessingTile"
 import {$List} from "java.util.List"
 import {$InventoryComponent$$Type} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$Runnable} from "java.lang.Runnable"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
 
 export class $LatexProcessingUnitTile extends $IndustrialProcessingTile<($LatexProcessingUnitTile)> {
 static readonly "ATTACHMENTS_NBT_KEY": StringJS
@@ -4783,7 +4904,9 @@ public "getSelf"(): $LatexProcessingUnitTile
 public "onFinish"(): $Runnable
 public static "readInventory"(arg0: $RegistryAccess$$Type, arg1: $CompoundTag$$Type): $List<($ItemStack)>
 public static "writeInventory"(arg0: $RegistryAccess$$Type, arg1: $InventoryComponent$$Type): $CompoundTag
+public "getUpdatePacket"(): $Packet
 get "self"(): $LatexProcessingUnitTile
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -4799,8 +4922,9 @@ import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$IndustrialProcessingTile} from "com.buuz135.industrial.block.tile.IndustrialProcessingTile"
 import {$List} from "java.util.List"
-import {$ActiveTile} from "com.hrznstudio.titanium.block.tile.ActiveTile"
 import {$InventoryComponent$$Type} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
+import {$ActiveTile} from "com.hrznstudio.titanium.block.tile.ActiveTile"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$Runnable} from "java.lang.Runnable"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
@@ -4817,8 +4941,10 @@ public "getSelf"(): $ActiveTile
 public "onFinish"(): $Runnable
 public static "readInventory"(arg0: $RegistryAccess$$Type, arg1: $CompoundTag$$Type): $List<($ItemStack)>
 public static "writeInventory"(arg0: $RegistryAccess$$Type, arg1: $InventoryComponent$$Type): $CompoundTag
+public "getUpdatePacket"(): $Packet
 get "maxProgress"(): integer
 get "self"(): $ActiveTile
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -4841,6 +4967,7 @@ import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ItemInteractionResult} from "net.minecraft.world.ItemInteractionResult"
 import {$InventoryComponent$$Type} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
 import {$BlockWithTile$$Type} from "com.hrznstudio.titanium.module.BlockWithTile"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$IndustrialMachineTile} from "com.buuz135.industrial.block.tile.IndustrialMachineTile"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$ProgressBarComponent} from "com.hrznstudio.titanium.component.progress.ProgressBarComponent"
@@ -4860,9 +4987,11 @@ public "canIncrease"(): boolean
 public "onFinish"(): $Runnable
 public static "readInventory"(arg0: $RegistryAccess$$Type, arg1: $CompoundTag$$Type): $List<($ItemStack)>
 public static "writeInventory"(arg0: $RegistryAccess$$Type, arg1: $InventoryComponent$$Type): $CompoundTag
+public "getUpdatePacket"(): $Packet
 get "progressBar"(): $ProgressBarComponent<(T)>
 get "maxProgress"(): integer
 get "barDirection"(): $ProgressBarComponent$BarDirection
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -4880,6 +5009,7 @@ import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$IndustrialProcessingTile} from "com.buuz135.industrial.block.tile.IndustrialProcessingTile"
 import {$List} from "java.util.List"
 import {$InventoryComponent$$Type} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$Runnable} from "java.lang.Runnable"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
@@ -4898,7 +5028,9 @@ public "getSelf"(): $DyeMixerTile
 public "onFinish"(): $Runnable
 public static "readInventory"(arg0: $RegistryAccess$$Type, arg1: $CompoundTag$$Type): $List<($ItemStack)>
 public static "writeInventory"(arg0: $RegistryAccess$$Type, arg1: $InventoryComponent$$Type): $CompoundTag
+public "getUpdatePacket"(): $Packet
 get "self"(): $DyeMixerTile
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -4912,12 +5044,13 @@ export type $DyeMixerTile$$Original = $DyeMixerTile;}
 declare module "com.buuz135.industrial.block.generator.tile.MycelialGeneratorTile" {
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$IMycelialGeneratorType$$Type} from "com.buuz135.industrial.block.generator.mycelial.IMycelialGeneratorType"
-import {$ActiveTile$$Type} from "com.hrznstudio.titanium.block.tile.ActiveTile"
+import {$ActiveTile, $ActiveTile$$Type} from "com.hrznstudio.titanium.block.tile.ActiveTile"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$GeneratorTile$$Type} from "com.hrznstudio.titanium.block.tile.GeneratorTile"
-import {$IndustrialGeneratorTile} from "com.buuz135.industrial.block.tile.IndustrialGeneratorTile"
 import {$BlockWithTile$$Type} from "com.hrznstudio.titanium.module.BlockWithTile"
+import {$IndustrialGeneratorTile} from "com.buuz135.industrial.block.tile.IndustrialGeneratorTile"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$ProgressBarComponent} from "com.hrznstudio.titanium.component.progress.ProgressBarComponent"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
@@ -4931,27 +5064,29 @@ constructor(arg0: $BlockWithTile$$Type, arg1: $IMycelialGeneratorType$$Type, arg
 public "consumeFuel"(): integer
 public "canStart"(): boolean
 public "getProgressBar"(): $ProgressBarComponent<($MycelialGeneratorTile)>
+public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $BlockEntity$$Type): void
+public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $MycelialGeneratorTile$$Type): void
 public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $ActiveTile$$Type): void
 public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $GeneratorTile$$Type): void
-public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $MycelialGeneratorTile$$Type): void
-public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $BlockEntity$$Type): void
 public "loadAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "initClient"(): void
 public "getEnergyCapacity"(): integer
 public "isSmart"(): boolean
-public "getExtractingEnergy"(): integer
 public "getEnergyProducedEveryTick"(): integer
+public "getExtractingEnergy"(): integer
 public "setOwner"(arg0: StringJS): void
 public "getOwner"(): StringJS
-public "getSelf"(): $MycelialGeneratorTile
+public "getSelf"(): $ActiveTile
+public "getUpdatePacket"(): $Packet
 get "progressBar"(): $ProgressBarComponent<($MycelialGeneratorTile)>
 get "energyCapacity"(): integer
 get "smart"(): boolean
-get "extractingEnergy"(): integer
 get "energyProducedEveryTick"(): integer
+get "extractingEnergy"(): integer
 set "owner"(value: StringJS)
 get "owner"(): StringJS
-get "self"(): $MycelialGeneratorTile
+get "self"(): $ActiveTile
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -4969,14 +5104,15 @@ import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$List} from "java.util.List"
 import {$ActiveTile, $ActiveTile$$Type} from "com.hrznstudio.titanium.block.tile.ActiveTile"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$IndustrialWorkingTile$WorkAction} from "com.buuz135.industrial.block.tile.IndustrialWorkingTile$WorkAction"
 import {$IItemHandler$$Type} from "net.neoforged.neoforge.items.IItemHandler"
+import {$IndustrialWorkingTile$WorkAction} from "com.buuz135.industrial.block.tile.IndustrialWorkingTile$WorkAction"
 import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$InventoryComponent$$Type} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
 import {$PlantRecollectable$$Type} from "com.buuz135.industrial.api.plant.PlantRecollectable"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$ProgressBarComponent$$Type} from "com.hrznstudio.titanium.component.progress.ProgressBarComponent"
+import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$IndustrialWorkingTile, $IndustrialWorkingTile$$Type} from "com.buuz135.industrial.block.tile.IndustrialWorkingTile"
 import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -4997,10 +5133,12 @@ public "work"(): $IndustrialWorkingTile$WorkAction
 public "getSelf"(): $ActiveTile
 public static "readInventory"(arg0: $RegistryAccess$$Type, arg1: $CompoundTag$$Type): $List<($ItemStack)>
 public static "writeInventory"(arg0: $RegistryAccess$$Type, arg1: $InventoryComponent$$Type): $CompoundTag
+public "getUpdatePacket"(): $Packet
 get "maxProgress"(): integer
 get "water"(): $SidedFluidTankComponent<($HydroponicBedTile)>
 get "ether"(): $SidedFluidTankComponent<($HydroponicBedTile)>
 get "self"(): $ActiveTile
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -5016,11 +5154,12 @@ import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$List} from "java.util.List"
 import {$InventoryComponent$$Type} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$IndustrialWorkingTile$WorkAction} from "com.buuz135.industrial.block.tile.IndustrialWorkingTile$WorkAction"
 import {$IndustrialWorkingTile} from "com.buuz135.industrial.block.tile.IndustrialWorkingTile"
-import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
 
 export class $SimulatedHydroponicBedTile extends $IndustrialWorkingTile<($SimulatedHydroponicBedTile)> {
 static readonly "ATTACHMENTS_NBT_KEY": StringJS
@@ -5032,8 +5171,10 @@ public "work"(): $IndustrialWorkingTile$WorkAction
 public "getSelf"(): $SimulatedHydroponicBedTile
 public static "readInventory"(arg0: $RegistryAccess$$Type, arg1: $CompoundTag$$Type): $List<($ItemStack)>
 public static "writeInventory"(arg0: $RegistryAccess$$Type, arg1: $InventoryComponent$$Type): $CompoundTag
+public "getUpdatePacket"(): $Packet
 get "maxProgress"(): integer
 get "self"(): $SimulatedHydroponicBedTile
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -5046,13 +5187,13 @@ export type $SimulatedHydroponicBedTile$$Type = ($SimulatedHydroponicBedTile);
 export type $SimulatedHydroponicBedTile$$Original = $SimulatedHydroponicBedTile;}
 declare module "com.buuz135.industrial.block.resourceproduction.FluidPlacerBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$RecipeOutput$$Type} from "net.minecraft.data.recipes.RecipeOutput"
-import {$FluidPlacerTile} from "com.buuz135.industrial.block.resourceproduction.tile.FluidPlacerTile"
 import {$IndustrialBlock} from "com.buuz135.industrial.block.IndustrialBlock"
+import {$FluidPlacerTile} from "com.buuz135.industrial.block.resourceproduction.tile.FluidPlacerTile"
 import {$RotatableBlock$RotationType} from "com.hrznstudio.titanium.block.RotatableBlock$RotationType"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$Item} from "net.minecraft.world.item.Item"
@@ -5083,9 +5224,9 @@ static readonly "FACING_HORIZONTAL": $DirectionProperty
 
 constructor()
 
+public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($FluidPlacerTile)>
 public "getRotationType"(): $RotatableBlock$RotationType
-public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "tileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($FluidPlacerTile)>
 get "rotationType"(): $RotatableBlock$RotationType
@@ -5102,13 +5243,14 @@ export type $FluidPlacerBlock$$Original = $FluidPlacerBlock;}
 declare module "com.buuz135.industrial.block.generator.tile.MycelialReactorTile" {
 import {$List} from "java.util.List"
 import {$ActiveTile, $ActiveTile$$Type} from "com.hrznstudio.titanium.block.tile.ActiveTile"
-import {$IndustrialGeneratorTile} from "com.buuz135.industrial.block.tile.IndustrialGeneratorTile"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
+import {$IndustrialGeneratorTile} from "com.buuz135.industrial.block.tile.IndustrialGeneratorTile"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$ProgressBarComponent} from "com.hrznstudio.titanium.component.progress.ProgressBarComponent"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
-import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$HashMap} from "java.util.HashMap"
+import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$GeneratorTile$$Type} from "com.hrznstudio.titanium.block.tile.GeneratorTile"
 
 export class $MycelialReactorTile extends $IndustrialGeneratorTile<($MycelialReactorTile)> {
@@ -5127,20 +5269,22 @@ public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState
 public "getEnergyCapacity"(): integer
 public "setCanWork"(arg0: boolean): void
 public "getBar"(): $ProgressBarComponent<($MycelialReactorTile)>
-public "getExtractingEnergy"(): integer
 public "getEnergyProducedEveryTick"(): integer
+public "getExtractingEnergy"(): integer
 public "setOwner"(arg0: StringJS): void
 public "getOwner"(): StringJS
 public "getSelf"(): $ActiveTile
+public "getUpdatePacket"(): $Packet
 get "progressBar"(): $ProgressBarComponent<($MycelialReactorTile)>
 get "energyCapacity"(): integer
 set "canWork"(value: boolean)
 get "bar"(): $ProgressBarComponent<($MycelialReactorTile)>
-get "extractingEnergy"(): integer
 get "energyProducedEveryTick"(): integer
+get "extractingEnergy"(): integer
 set "owner"(value: StringJS)
 get "owner"(): StringJS
 get "self"(): $ActiveTile
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -5153,8 +5297,8 @@ export type $MycelialReactorTile$$Type = ($MycelialReactorTile);
 export type $MycelialReactorTile$$Original = $MycelialReactorTile;}
 declare module "com.buuz135.industrial.block.resourceproduction.MechanicalDirtBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$IndustrialBlock} from "com.buuz135.industrial.block.IndustrialBlock"
@@ -5211,6 +5355,7 @@ import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$List} from "java.util.List"
 import {$IndustrialAreaWorkingTile} from "com.buuz135.industrial.block.tile.IndustrialAreaWorkingTile"
 import {$InventoryComponent$$Type} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$IndustrialWorkingTile$WorkAction} from "com.buuz135.industrial.block.tile.IndustrialWorkingTile$WorkAction"
 import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
@@ -5227,9 +5372,11 @@ public "work"(): $IndustrialWorkingTile$WorkAction
 public "getSelf"(): $SlaughterFactoryTile
 public static "readInventory"(arg0: $RegistryAccess$$Type, arg1: $CompoundTag$$Type): $List<($ItemStack)>
 public static "writeInventory"(arg0: $RegistryAccess$$Type, arg1: $InventoryComponent$$Type): $CompoundTag
+public "getUpdatePacket"(): $Packet
 get "maxProgress"(): integer
 get "workingArea"(): $VoxelShape
 get "self"(): $SlaughterFactoryTile
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -5244,9 +5391,10 @@ declare module "com.buuz135.industrial.block.agriculturehusbandry.tile.AnimalRan
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$List} from "java.util.List"
-import {$ActiveTile} from "com.hrznstudio.titanium.block.tile.ActiveTile"
 import {$IndustrialAreaWorkingTile} from "com.buuz135.industrial.block.tile.IndustrialAreaWorkingTile"
 import {$InventoryComponent$$Type} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
+import {$ActiveTile} from "com.hrznstudio.titanium.block.tile.ActiveTile"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$IndustrialWorkingTile$WorkAction} from "com.buuz135.industrial.block.tile.IndustrialWorkingTile$WorkAction"
 import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
@@ -5262,8 +5410,10 @@ public "work"(): $IndustrialWorkingTile$WorkAction
 public "getSelf"(): $ActiveTile
 public static "readInventory"(arg0: $RegistryAccess$$Type, arg1: $CompoundTag$$Type): $List<($ItemStack)>
 public static "writeInventory"(arg0: $RegistryAccess$$Type, arg1: $InventoryComponent$$Type): $CompoundTag
+public "getUpdatePacket"(): $Packet
 get "maxProgress"(): integer
 get "self"(): $ActiveTile
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -5278,8 +5428,8 @@ declare module "com.buuz135.industrial.block.IndustrialBlockItem" {
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$TitaniumTab$$Type} from "com.hrznstudio.titanium.tab.TitaniumTab"
+import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$AdditionalItemPlacement, $AdditionalItemPlacement$$Type} from "net.mehvahdjukaar.moonlight.api.item.additional_placements.AdditionalItemPlacement"
@@ -5317,6 +5467,7 @@ import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$List} from "java.util.List"
 import {$IndustrialAreaWorkingTile} from "com.buuz135.industrial.block.tile.IndustrialAreaWorkingTile"
 import {$InventoryComponent$$Type} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$IndustrialWorkingTile$WorkAction} from "com.buuz135.industrial.block.tile.IndustrialWorkingTile$WorkAction"
 import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
@@ -5333,9 +5484,11 @@ public "work"(): $IndustrialWorkingTile$WorkAction
 public "getSelf"(): $MarineFisherTile
 public static "readInventory"(arg0: $RegistryAccess$$Type, arg1: $CompoundTag$$Type): $List<($ItemStack)>
 public static "writeInventory"(arg0: $RegistryAccess$$Type, arg1: $InventoryComponent$$Type): $CompoundTag
+public "getUpdatePacket"(): $Packet
 get "maxProgress"(): integer
 get "workingArea"(): $VoxelShape
 get "self"(): $MarineFisherTile
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -5348,8 +5501,8 @@ export type $MarineFisherTile$$Type = ($MarineFisherTile);
 export type $MarineFisherTile$$Original = $MarineFisherTile;}
 declare module "com.buuz135.industrial.block.resourceproduction.BlockBreakerBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$RecipeOutput$$Type} from "net.minecraft.data.recipes.RecipeOutput"
@@ -5385,9 +5538,9 @@ static readonly "FACING_HORIZONTAL": $DirectionProperty
 
 constructor()
 
+public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($BlockBreakerTile)>
 public "getRotationType"(): $RotatableBlock$RotationType
-public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "tileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($BlockBreakerTile)>
 get "rotationType"(): $RotatableBlock$RotationType
@@ -5402,14 +5555,15 @@ export type $BlockBreakerBlock$$Type = ($BlockBreakerBlock);
  */
 export type $BlockBreakerBlock$$Original = $BlockBreakerBlock;}
 declare module "com.buuz135.industrial.block.misc.tile.EnchantmentFactoryTile" {
-import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
-import {$IndustrialProcessingTile} from "com.buuz135.industrial.block.tile.IndustrialProcessingTile"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$List} from "java.util.List"
 import {$ActiveTile} from "com.hrznstudio.titanium.block.tile.ActiveTile"
-import {$InventoryComponent$$Type} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
 import {$Runnable} from "java.lang.Runnable"
+import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
+import {$IndustrialProcessingTile} from "com.buuz135.industrial.block.tile.IndustrialProcessingTile"
+import {$InventoryComponent$$Type} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -5429,8 +5583,10 @@ public "getSelf"(): $ActiveTile
 public "onFinish"(): $Runnable
 public static "readInventory"(arg0: $RegistryAccess$$Type, arg1: $CompoundTag$$Type): $List<($ItemStack)>
 public static "writeInventory"(arg0: $RegistryAccess$$Type, arg1: $InventoryComponent$$Type): $CompoundTag
+public "getUpdatePacket"(): $Packet
 get "maxProgress"(): integer
 get "self"(): $ActiveTile
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -5443,8 +5599,8 @@ export type $EnchantmentFactoryTile$$Type = ($EnchantmentFactoryTile);
 export type $EnchantmentFactoryTile$$Original = $EnchantmentFactoryTile;}
 declare module "com.buuz135.industrial.block.agriculturehusbandry.SimulatedHydroponicBedBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$RecipeOutput$$Type} from "net.minecraft.data.recipes.RecipeOutput"
@@ -5479,8 +5635,8 @@ static readonly "FACING_HORIZONTAL": $DirectionProperty
 
 constructor()
 
-public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($SimulatedHydroponicBedTile)>
 public "registerRecipe"(arg0: $RecipeOutput$$Type): void
+public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($SimulatedHydroponicBedTile)>
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "tileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($SimulatedHydroponicBedTile)>
 }
@@ -5502,6 +5658,7 @@ import {$ActiveTile$$Type} from "com.hrznstudio.titanium.block.tile.ActiveTile"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$IndustrialWorkingTile$WorkAction} from "com.buuz135.industrial.block.tile.IndustrialWorkingTile$WorkAction"
 import {$InventoryComponent$$Type} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$IndustrialWorkingTile} from "com.buuz135.industrial.block.tile.IndustrialWorkingTile"
@@ -5522,9 +5679,11 @@ public "work"(): $IndustrialWorkingTile$WorkAction
 public "getSelf"(): $MechanicalDirtTile
 public static "readInventory"(arg0: $RegistryAccess$$Type, arg1: $CompoundTag$$Type): $List<($ItemStack)>
 public static "writeInventory"(arg0: $RegistryAccess$$Type, arg1: $InventoryComponent$$Type): $CompoundTag
+public "getUpdatePacket"(): $Packet
 get "maxProgress"(): integer
 get "meat"(): $SidedFluidTankComponent<($MechanicalDirtTile)>
 get "self"(): $MechanicalDirtTile
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -5537,8 +5696,8 @@ export type $MechanicalDirtTile$$Type = ($MechanicalDirtTile);
 export type $MechanicalDirtTile$$Original = $MechanicalDirtTile;}
 declare module "com.buuz135.industrial.block.agriculturehusbandry.PlantSowerBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$RecipeOutput$$Type} from "net.minecraft.data.recipes.RecipeOutput"
@@ -5575,10 +5734,10 @@ static readonly "FACING_HORIZONTAL": $DirectionProperty
 
 constructor()
 
+public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($PlantSowerTile)>
 public "getRotationType"(): $RotatableBlock$RotationType
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
-public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "tileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($PlantSowerTile)>
 get "rotationType"(): $RotatableBlock$RotationType
@@ -5598,10 +5757,11 @@ import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$List} from "java.util.List"
 import {$IndustrialAreaWorkingTile} from "com.buuz135.industrial.block.tile.IndustrialAreaWorkingTile"
 import {$InventoryComponent$$Type} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$IndustrialWorkingTile$WorkAction} from "com.buuz135.industrial.block.tile.IndustrialWorkingTile$WorkAction"
-import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
 
 export class $BlockPlacerTile extends $IndustrialAreaWorkingTile<($BlockPlacerTile)> {
 static readonly "ATTACHMENTS_NBT_KEY": StringJS
@@ -5613,8 +5773,10 @@ public "work"(): $IndustrialWorkingTile$WorkAction
 public "getSelf"(): $BlockPlacerTile
 public static "readInventory"(arg0: $RegistryAccess$$Type, arg1: $CompoundTag$$Type): $List<($ItemStack)>
 public static "writeInventory"(arg0: $RegistryAccess$$Type, arg1: $InventoryComponent$$Type): $CompoundTag
+public "getUpdatePacket"(): $Packet
 get "maxProgress"(): integer
 get "self"(): $BlockPlacerTile
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -5631,10 +5793,11 @@ import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$IndustrialProcessingTile} from "com.buuz135.industrial.block.tile.IndustrialProcessingTile"
 import {$List} from "java.util.List"
 import {$InventoryComponent$$Type} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$Runnable} from "java.lang.Runnable"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
 
 export class $SludgeRefinerTile extends $IndustrialProcessingTile<($SludgeRefinerTile)> {
 static readonly "ATTACHMENTS_NBT_KEY": StringJS
@@ -5646,7 +5809,9 @@ public "getSelf"(): $SludgeRefinerTile
 public "onFinish"(): $Runnable
 public static "readInventory"(arg0: $RegistryAccess$$Type, arg1: $CompoundTag$$Type): $List<($ItemStack)>
 public static "writeInventory"(arg0: $RegistryAccess$$Type, arg1: $InventoryComponent$$Type): $CompoundTag
+public "getUpdatePacket"(): $Packet
 get "self"(): $SludgeRefinerTile
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -5684,8 +5849,9 @@ import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$IndustrialProcessingTile} from "com.buuz135.industrial.block.tile.IndustrialProcessingTile"
 import {$List} from "java.util.List"
-import {$ActiveTile} from "com.hrznstudio.titanium.block.tile.ActiveTile"
 import {$InventoryComponent$$Type} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
+import {$ActiveTile} from "com.hrznstudio.titanium.block.tile.ActiveTile"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$Runnable} from "java.lang.Runnable"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
@@ -5701,7 +5867,9 @@ public "getSelf"(): $ActiveTile
 public "onFinish"(): $Runnable
 public static "readInventory"(arg0: $RegistryAccess$$Type, arg1: $CompoundTag$$Type): $List<($ItemStack)>
 public static "writeInventory"(arg0: $RegistryAccess$$Type, arg1: $InventoryComponent$$Type): $CompoundTag
+public "getUpdatePacket"(): $Packet
 get "self"(): $ActiveTile
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -5714,8 +5882,8 @@ export type $SporesRecreatorTile$$Type = ($SporesRecreatorTile);
 export type $SporesRecreatorTile$$Original = $SporesRecreatorTile;}
 declare module "com.buuz135.industrial.block.resourceproduction.WashingFactoryBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$RecipeOutput$$Type} from "net.minecraft.data.recipes.RecipeOutput"
@@ -5751,9 +5919,9 @@ static readonly "FACING_HORIZONTAL": $DirectionProperty
 
 constructor()
 
+public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($WashingFactoryTile)>
 public "getRotationType"(): $RotatableBlock$RotationType
-public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "tileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($WashingFactoryTile)>
 get "rotationType"(): $RotatableBlock$RotationType

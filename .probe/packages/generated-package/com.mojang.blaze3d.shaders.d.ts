@@ -13,7 +13,7 @@ public "getName"(): StringJS
 public static "values"(): ($Program$Type)[]
 public static "valueOf"(arg0: StringJS): $Program$Type
 public "getPrograms"(): $Map<(StringJS), ($Program)>
-public static "createProgramType$oculus_$md$a93e73$0"(arg0: StringJS, arg1: integer, arg2: StringJS, arg3: StringJS, arg4: integer): $Program$Type
+public static "createProgramType$oculus_$md$b00d76$0"(arg0: StringJS, arg1: integer, arg2: StringJS, arg3: StringJS, arg4: integer): $Program$Type
 public static "createProgramType"(arg0: StringJS, arg1: integer, arg2: StringJS, arg3: StringJS, arg4: integer): $Program$Type
 get "extension"(): StringJS
 get "name"(): StringJS
@@ -78,8 +78,8 @@ constructor(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: in
 constructor()
 constructor(arg0: integer, arg1: integer, arg2: integer)
 
-public static "stringToBlendFactor"(arg0: StringJS): integer
 public static "stringToBlendFunc"(arg0: StringJS): integer
+public static "stringToBlendFactor"(arg0: StringJS): integer
 public "equals"(arg0: any): boolean
 public "hashCode"(): integer
 public "apply"(): void
@@ -148,8 +148,8 @@ public "getIntBuffer"(): $IntBuffer
 public "getFloatBuffer"(): $FloatBuffer
 public static "uploadInteger"(arg0: integer, arg1: integer): void
 public static "getTypeFromString"(arg0: StringJS): integer
-public "setSafe"(arg0: float, arg1: float, arg2: float, arg3: float): void
 public "setSafe"(arg0: integer, arg1: integer, arg2: integer, arg3: integer): void
+public "setSafe"(arg0: float, arg1: float, arg2: float, arg3: float): void
 public "upload"(): void
 public "setMat2x2"(arg0: float, arg1: float, arg2: float, arg3: float): void
 public "setMat2x3"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): void
@@ -209,9 +209,9 @@ get "fragmentProgram"(): $Program
 export class $Shader implements $Shader$$Interface {
  "markDirty"(): void
  "getId"(): integer
- "attachToProgram"(): void
  "getVertexProgram"(): $Program
  "getFragmentProgram"(): $Program
+ "attachToProgram"(): void
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -280,9 +280,9 @@ get "fragmentProgram"(): $Program
 export class $Effect implements $Effect$$Interface {
  "markDirty"(): void
  "getId"(): integer
- "attachToProgram"(): void
  "getVertexProgram"(): $Program
  "getFragmentProgram"(): $Program
+ "attachToProgram"(): void
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_

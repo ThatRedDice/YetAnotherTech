@@ -9,8 +9,8 @@ import {$Optional} from "java.util.Optional"
 import {$Unbreakable$$Type} from "net.minecraft.world.item.component.Unbreakable"
 import {$RelativeURL} from "dev.latvian.mods.kubejs.web.RelativeURL"
 import {$DataComponentType$$Type} from "net.minecraft.core.component.DataComponentType"
-import {$CustomData$$Type} from "net.minecraft.world.item.component.CustomData"
 import {$JukeboxPlayable$$Type} from "net.minecraft.world.item.JukeboxPlayable"
+import {$CustomData$$Type} from "net.minecraft.world.item.component.CustomData"
 import {$FluidIngredient$$Type} from "net.neoforged.neoforge.fluids.crafting.FluidIngredient"
 import {$WritableBookContent$$Type} from "net.minecraft.world.item.component.WritableBookContent"
 import {$AdventureModePredicate$$Type} from "net.minecraft.world.item.AdventureModePredicate"
@@ -20,10 +20,10 @@ import {$ItemEnchantments$$Type} from "net.minecraft.world.item.enchantment.Item
 import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$HolderSet$$Type} from "net.minecraft.core.HolderSet"
 import {$MapPostProcessing$$Type} from "net.minecraft.world.item.component.MapPostProcessing"
-import {$MutableDataComponentHolderFunctions} from "dev.latvian.mods.kubejs.component.MutableDataComponentHolderFunctions"
 import {$TooltipProvider} from "net.minecraft.world.item.component.TooltipProvider"
-import {$FluidType, $FluidType$$Type} from "net.neoforged.neoforge.fluids.FluidType"
+import {$MutableDataComponentHolderFunctions} from "dev.latvian.mods.kubejs.component.MutableDataComponentHolderFunctions"
 import {$Stream} from "java.util.stream.Stream"
+import {$FluidType, $FluidType$$Type} from "net.neoforged.neoforge.fluids.FluidType"
 import {$SeededContainerLoot$$Type} from "net.minecraft.world.item.component.SeededContainerLoot"
 import {$DyedItemColor$$Type} from "net.minecraft.world.item.component.DyedItemColor"
 import {$ItemLore$$Type} from "net.minecraft.world.item.component.ItemLore"
@@ -45,8 +45,8 @@ import {$MapItemColor$$Type} from "net.minecraft.world.item.component.MapItemCol
 import {$ResolvableProfile$$Type} from "net.minecraft.world.item.component.ResolvableProfile"
 import {$Unit$$Type} from "net.minecraft.util.Unit"
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$ReplacementMatch} from "dev.latvian.mods.kubejs.recipe.match.ReplacementMatch"
 import {$ComponentFunctions} from "dev.latvian.mods.kubejs.component.ComponentFunctions"
+import {$ReplacementMatch} from "dev.latvian.mods.kubejs.recipe.match.ReplacementMatch"
 import {$UUID$$Type} from "java.util.UUID"
 import {$MutableDataComponentHolder, $MutableDataComponentHolder$$Interface} from "net.neoforged.neoforge.common.MutableDataComponentHolder"
 import {$ItemAttributeModifiers$$Type} from "net.minecraft.world.item.component.ItemAttributeModifiers"
@@ -63,8 +63,8 @@ import {$Codec} from "com.mojang.serialization.Codec"
 import {$LockCode$$Type} from "net.minecraft.world.LockCode"
 import {$DyeColor$$Type} from "net.minecraft.world.item.DyeColor"
 import {$ResourceKey, $ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
-import {$FluidLike} from "dev.latvian.mods.kubejs.fluid.FluidLike"
 import {$PotionContents$$Type} from "net.minecraft.world.item.alchemy.PotionContents"
+import {$FluidLike} from "dev.latvian.mods.kubejs.fluid.FluidLike"
 import {$ItemContainerContents$$Type} from "net.minecraft.world.item.component.ItemContainerContents"
 import {$ArmorTrim$$Type} from "net.minecraft.world.item.armortrim.ArmorTrim"
 import {$UnaryOperator$$Type} from "java.util.function.UnaryOperator"
@@ -144,6 +144,11 @@ public "containsFluid"(arg0: $FluidStack$$Type): boolean
  * @deprecated
  */
 public "isFluidStackIdentical"(arg0: $FluidStack$$Type): boolean
+/**
+ * 
+ * @deprecated
+ */
+public "getDisplayName"(): $Component
 public "toString"(): StringJS
 public "isEmpty"(): boolean
 public static "matches"(arg0: $FluidStack$$Type, arg1: $FluidStack$$Type): boolean
@@ -152,26 +157,21 @@ public "save"(arg0: $HolderLookup$Provider$$Type, arg1: $Tag$$Type): $Tag
 public "save"(arg0: $HolderLookup$Provider$$Type): $Tag
 public static "parse"(arg0: $HolderLookup$Provider$$Type, arg1: $Tag$$Type): $Optional<($FluidStack)>
 public "copy"(): $FluidStack
-public "is"(arg0: $TagKey$$Type<($Fluid)>): boolean
 public "is"(arg0: $Holder$$Type<($Fluid)>): boolean
-public "is"(arg0: $Predicate$$Type<($Holder<($Fluid)>)>): boolean
+public "is"(arg0: $TagKey$$Type<($Fluid)>): boolean
 public "is"(arg0: $Fluid$$Type): boolean
 public "is"(arg0: $HolderSet$$Type<($Fluid)>): boolean
+public "is"(arg0: $Predicate$$Type<($Holder<($Fluid)>)>): boolean
 public "is"(arg0: $FluidType$$Type): boolean
 public "grow"(arg0: integer): void
-/**
- * 
- * @deprecated
- */
-public "getDisplayName"(): $Component
 public "limitSize"(arg0: integer): void
 public "getComponents"(): $DataComponentMap
 public "shrink"(arg0: integer): void
 public "getHoverName"(): $Component
 public "getDescriptionId"(): StringJS
-public "getTags"(): $Stream<($TagKey<($Fluid)>)>
 public "getFluidType"(): $FluidType
 public "getAmount"(): integer
+public "getTags"(): $Stream<($TagKey<($Fluid)>)>
 public "copyFrom"(arg0: $DataComponentHolder$$Type, ...arg1: ($DataComponentType$$Type<(never)>)[]): void
 public "copyFrom"(arg0: $DataComponentHolder$$Type, ...arg1: ($Supplier$$Type<($DataComponentType$$Type<(never)>)>)[]): void
 public "update"<T, U>(arg0: $DataComponentType$$Type<(T)>, arg1: T, arg2: U, arg3: $BiFunction$$Type<(T), (U), (T)>): T
@@ -191,9 +191,9 @@ public "kjs$getWebIconURL"(ops: $DynamicOps$$Type<($Tag$$Type)>, size: integer):
 public "kjs$equalsIgnoringCount"(stack: $FluidStack$$Type): boolean
 public "matches"(cx: $RecipeMatchContext$$Type, ingredient: $FluidIngredient$$Type, exact: boolean): boolean
 public "matches"(cx: $RecipeMatchContext$$Type, s: $FluidStack$$Type, exact: boolean): boolean
+public "getCodec"(): $Codec<(never)>
 public "kjs$self"(): $FluidStack
 public "getKey"(): $ResourceKey<($Fluid)>
-public "getCodec"(): $Codec<(never)>
 public "specialEquals"(o: any, shallow: boolean): boolean
 public "isEmpty"(): boolean
 public "getId"(): StringJS
@@ -250,22 +250,22 @@ get "componentsPatchEmpty"(): boolean
 set "amount"(value: integer)
 get "translationKey"(): StringJS
 get "fluidHolder"(): $Holder<($Fluid)>
-get "empty"(): boolean
 get "displayName"(): $Component
+get "empty"(): boolean
 get "components"(): $DataComponentMap
 get "hoverName"(): $Component
 get "descriptionId"(): StringJS
-get "tags"(): $Stream<($TagKey<($Fluid)>)>
 get "fluidType"(): $FluidType
 get "amount"(): integer
+get "tags"(): $Stream<($TagKey<($Fluid)>)>
 get "fluid"(): $Fluid
 get "amount"(): integer
 get "registryId"(): $ResourceKey<($Registry<($Fluid)>)>
 get "registry"(): $Registry<($Fluid)>
 get "idLocation"(): $ResourceLocation
 get "mod"(): StringJS
-get "key"(): $ResourceKey<($Fluid)>
 get "codec"(): $Codec<(never)>
+get "key"(): $ResourceKey<($Fluid)>
 get "empty"(): boolean
 get "id"(): StringJS
 get "componentHolder"(): $MutableDataComponentHolder
@@ -295,63 +295,63 @@ set "blockStateProperties"(value: $Map$$Type<(StringJS), (StringJS)>)
 set "lockCode"(value: StringJS)
 set "containerLootTable"(value: $ResourceKey$$Type<($LootTable)>)
 }
-export type ComponentTypeMap = {"minecraft:custom_model_data": $CustomModelData$$Type;
-"minecraft:debug_stick_state": $DebugStickState$$Type;
-"minecraft:entity_data": $CustomData$$Type;
-"minecraft:recipes": $List$$Type<($ResourceLocation$$Type)>;
-"minecraft:can_place_on": $AdventureModePredicate$$Type;
-"minecraft:intangible_projectile": $Unit$$Type;
-"minecraft:hide_additional_tooltip": $Unit$$Type;
-"minecraft:dyed_color": $DyedItemColor$$Type;
-"minecraft:custom_name": $Component$$Type;
+export type ComponentTypeMap = {"minecraft:intangible_projectile": $Unit$$Type;
+"minecraft:custom_data": $CustomData$$Type;
+"minecraft:enchantment_glint_override": boolean;
+"minecraft:creative_slot_lock": $Unit$$Type;
+"minecraft:item_name": $Component$$Type;
+"minecraft:map_id": $MapId$$Type;
+"minecraft:lock": $LockCode$$Type;
+"minecraft:rarity": $Rarity$$Type;
+"minecraft:charged_projectiles": $ChargedProjectiles$$Type;
 "minecraft:suspicious_stew_effects": $SuspiciousStewEffects$$Type;
-"minecraft:bucket_entity_data": $CustomData$$Type;
-"minecraft:map_color": $MapItemColor$$Type;
-"minecraft:trim": $ArmorTrim$$Type;
-"minecraft:tool": $Tool$$Type;
-"minecraft:enchantments": $ItemEnchantments$$Type;
-"minecraft:written_book_content": $WrittenBookContent$$Type;
-"minecraft:lodestone_tracker": $LodestoneTracker$$Type;
-"minecraft:instrument": $Holder$$Type<($Instrument$$Type)>;
-"minecraft:can_break": $AdventureModePredicate$$Type;
 "minecraft:block_entity_data": $CustomData$$Type;
-"minecraft:bees": $List$$Type<($BeehiveBlockEntity$Occupant$$Type)>;
+"minecraft:fireworks": $Fireworks$$Type;
+"minecraft:map_decorations": $MapDecorations$$Type;
+"minecraft:potion_contents": $PotionContents$$Type;
 "minecraft:firework_explosion": $FireworkExplosion$$Type;
-"minecraft:banner_patterns": $BannerPatternLayers$$Type;
-"minecraft:max_damage": integer;
+"minecraft:profile": $ResolvableProfile$$Type;
+"minecraft:pot_decorations": $PotDecorations$$Type;
 "minecraft:block_state": $BlockItemStateProperties$$Type;
 "minecraft:base_color": $DyeColor$$Type;
-"minecraft:note_block_sound": $ResourceLocation$$Type;
-"minecraft:custom_data": $CustomData$$Type;
-"minecraft:rarity": $Rarity$$Type;
-"minecraft:map_post_processing": $MapPostProcessing$$Type;
-"minecraft:lore": $ItemLore$$Type;
-"minecraft:jukebox_playable": $JukeboxPlayable$$Type;
-"minecraft:container": $ItemContainerContents$$Type;
-"minecraft:max_stack_size": integer;
-"minecraft:map_decorations": $MapDecorations$$Type;
-"minecraft:lock": $LockCode$$Type;
-"minecraft:stored_enchantments": $ItemEnchantments$$Type;
-"minecraft:damage": integer;
-"minecraft:potion_contents": $PotionContents$$Type;
-"minecraft:container_loot": $SeededContainerLoot$$Type;
-"minecraft:hide_tooltip": $Unit$$Type;
-"minecraft:enchantment_glint_override": boolean;
-"minecraft:item_name": $Component$$Type;
-"minecraft:unbreakable": $Unbreakable$$Type;
-"minecraft:bundle_contents": $BundleContents$$Type;
 "minecraft:ominous_bottle_amplifier": integer;
-"minecraft:repair_cost": integer;
-"minecraft:profile": $ResolvableProfile$$Type;
-"minecraft:charged_projectiles": $ChargedProjectiles$$Type;
+"minecraft:max_damage": integer;
 "minecraft:fire_resistant": $Unit$$Type;
-"minecraft:map_id": $MapId$$Type;
-"minecraft:pot_decorations": $PotDecorations$$Type;
+"minecraft:entity_data": $CustomData$$Type;
+"minecraft:banner_patterns": $BannerPatternLayers$$Type;
+"minecraft:hide_additional_tooltip": $Unit$$Type;
+"minecraft:container_loot": $SeededContainerLoot$$Type;
+"minecraft:stored_enchantments": $ItemEnchantments$$Type;
+"minecraft:bees": $List$$Type<($BeehiveBlockEntity$Occupant$$Type)>;
+"minecraft:can_break": $AdventureModePredicate$$Type;
+"minecraft:debug_stick_state": $DebugStickState$$Type;
+"minecraft:note_block_sound": $ResourceLocation$$Type;
+"minecraft:dyed_color": $DyedItemColor$$Type;
 "minecraft:food": $FoodProperties$$Type;
-"minecraft:attribute_modifiers": $ItemAttributeModifiers$$Type;
+"minecraft:written_book_content": $WrittenBookContent$$Type;
 "minecraft:writable_book_content": $WritableBookContent$$Type;
-"minecraft:creative_slot_lock": $Unit$$Type;
-"minecraft:fireworks": $Fireworks$$Type};
+"minecraft:custom_model_data": $CustomModelData$$Type;
+"minecraft:lodestone_tracker": $LodestoneTracker$$Type;
+"minecraft:damage": integer;
+"minecraft:map_color": $MapItemColor$$Type;
+"minecraft:repair_cost": integer;
+"minecraft:container": $ItemContainerContents$$Type;
+"minecraft:can_place_on": $AdventureModePredicate$$Type;
+"minecraft:custom_name": $Component$$Type;
+"minecraft:jukebox_playable": $JukeboxPlayable$$Type;
+"minecraft:trim": $ArmorTrim$$Type;
+"minecraft:instrument": $Holder$$Type<($Instrument$$Type)>;
+"minecraft:hide_tooltip": $Unit$$Type;
+"minecraft:lore": $ItemLore$$Type;
+"minecraft:bundle_contents": $BundleContents$$Type;
+"minecraft:max_stack_size": integer;
+"minecraft:enchantments": $ItemEnchantments$$Type;
+"minecraft:recipes": $List$$Type<($ResourceLocation$$Type)>;
+"minecraft:attribute_modifiers": $ItemAttributeModifiers$$Type;
+"minecraft:unbreakable": $Unbreakable$$Type;
+"minecraft:bucket_entity_data": $CustomData$$Type;
+"minecraft:tool": $Tool$$Type;
+"minecraft:map_post_processing": $MapPostProcessing$$Type};
 export type ComponentTypes = keyof ComponentTypeMap;
 export type FluidWithAmount = {"fluid": Special.Fluid, "amount"?: integer};
 /**
@@ -400,21 +400,21 @@ public "hashCode"(): integer
 public "test"(arg0: any): boolean
 public "test"(arg0: $FluidStack$$Type): boolean
 public "isEmpty"(): boolean
+public static "of"(): $FluidIngredient
 public static "of"(...arg0: ($Fluid$$Type)[]): $FluidIngredient
 public static "of"(...arg0: ($FluidStack$$Type)[]): $FluidIngredient
-public static "of"(): $FluidIngredient
-public static "single"(arg0: $Fluid$$Type): $FluidIngredient
 public static "single"(arg0: $Holder$$Type<($Fluid)>): $FluidIngredient
+public static "single"(arg0: $Fluid$$Type): $FluidIngredient
 public static "single"(arg0: $FluidStack$$Type): $FluidIngredient
 public static "empty"(): $FluidIngredient
 public "getType"(): $FluidIngredientType<(never)>
 public "isSimple"(): boolean
 public "self"(): $FluidIngredient
-public "or"(arg0: $Predicate$$Type<($FluidStack)>): $Predicate<($FluidStack)>
+public static "not"<T>(arg0: $Predicate$$Type<($FluidStack)>): $Predicate<($FluidStack)>
 public static "isEqual"<T>(arg0: any): $Predicate<($FluidStack)>
 public "negate"(): $Predicate<($FluidStack)>
 public "and"(arg0: $Predicate$$Type<($FluidStack)>): $Predicate<($FluidStack)>
-public static "not"<T>(arg0: $Predicate$$Type<($FluidStack)>): $Predicate<($FluidStack)>
+public "or"(arg0: $Predicate$$Type<($FluidStack)>): $Predicate<($FluidStack)>
 public "withAmount"(amount: integer): $SizedFluidIngredient
 public "matches"(cx: $RecipeMatchContext$$Type, s: $FluidStack$$Type, exact: boolean): boolean
 public "matches"(cx: $RecipeMatchContext$$Type, arg1: $FluidIngredient$$Type, exact: boolean): boolean
@@ -461,34 +461,34 @@ export type $FluidType$DripstoneDripInfo$$Type = ({"dripParticle"?: $ParticleOpt
  */
 export type $FluidType$DripstoneDripInfo$$Original = $FluidType$DripstoneDripInfo;}
 declare module "net.neoforged.neoforge.fluids.FluidType$Properties" {
-import {$Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$PathType$$Type} from "net.minecraft.world.level.pathfinder.PathType"
+import {$Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Rarity$$Type} from "net.minecraft.world.item.Rarity"
 import {$SoundEvent$$Type} from "net.minecraft.sounds.SoundEvent"
 import {$ParticleOptions$$Type} from "net.minecraft.core.particles.ParticleOptions"
 import {$SoundAction$$Type} from "net.neoforged.neoforge.common.SoundAction"
 
 export class $FluidType$Properties {
+public "canDrown"(arg0: boolean): $FluidType$Properties
+public "fallDistanceModifier"(arg0: float): $FluidType$Properties
 public "descriptionId"(arg0: StringJS): $FluidType$Properties
 public "temperature"(arg0: integer): $FluidType$Properties
 public "rarity"(arg0: $Rarity$$Type): $FluidType$Properties
-public "canDrown"(arg0: boolean): $FluidType$Properties
-public "fallDistanceModifier"(arg0: float): $FluidType$Properties
 public "canConvertToSource"(arg0: boolean): $FluidType$Properties
 public "supportsBoating"(arg0: boolean): $FluidType$Properties
-public "pathType"(arg0: $PathType$$Type): $FluidType$Properties
 public "adjacentPathType"(arg0: $PathType$$Type): $FluidType$Properties
 public "lightLevel"(arg0: integer): $FluidType$Properties
 public "viscosity"(arg0: integer): $FluidType$Properties
+public "pathType"(arg0: $PathType$$Type): $FluidType$Properties
 public static "create"(): $FluidType$Properties
 public "density"(arg0: integer): $FluidType$Properties
 public "sound"(arg0: $SoundAction$$Type, arg1: $SoundEvent$$Type): $FluidType$Properties
-public "addDripstoneDripping"(arg0: float, arg1: $ParticleOptions$$Type, arg2: $Block$$Type, arg3: $SoundEvent$$Type): $FluidType$Properties
 public "motionScale"(arg0: double): $FluidType$Properties
 public "canPushEntity"(arg0: boolean): $FluidType$Properties
 public "canSwim"(arg0: boolean): $FluidType$Properties
 public "canExtinguish"(arg0: boolean): $FluidType$Properties
 public "canHydrate"(arg0: boolean): $FluidType$Properties
+public "addDripstoneDripping"(arg0: float, arg1: $ParticleOptions$$Type, arg2: $Block$$Type, arg3: $SoundEvent$$Type): $FluidType$Properties
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -513,10 +513,10 @@ export class $IFluidTank implements $IFluidTank$$Interface {
  "getFluid"(): $FluidStack
  "isFluidValid"(arg0: $FluidStack$$Type): boolean
  "getFluidAmount"(): integer
+ "fill"(arg0: $FluidStack$$Type, arg1: $IFluidHandler$FluidAction$$Type): integer
  "getCapacity"(): integer
  "drain"(arg0: integer, arg1: $IFluidHandler$FluidAction$$Type): $FluidStack
  "drain"(arg0: $FluidStack$$Type, arg1: $IFluidHandler$FluidAction$$Type): $FluidStack
- "fill"(arg0: $FluidStack$$Type, arg1: $IFluidHandler$FluidAction$$Type): integer
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -540,9 +540,9 @@ export class $IFluidHandler implements $IFluidHandler$$Interface {
  "getFluidInTank"(arg0: integer): $FluidStack
  "getTankCapacity"(arg0: integer): integer
  "isFluidValid"(arg0: integer, arg1: $FluidStack$$Type): boolean
+ "fill"(arg0: $FluidStack$$Type, arg1: $IFluidHandler$FluidAction$$Type): integer
  "drain"(arg0: $FluidStack$$Type, arg1: $IFluidHandler$FluidAction$$Type): $FluidStack
  "drain"(arg0: integer, arg1: $IFluidHandler$FluidAction$$Type): $FluidStack
- "fill"(arg0: $FluidStack$$Type, arg1: $IFluidHandler$FluidAction$$Type): integer
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -582,7 +582,7 @@ public "codec"(): $MapCodec<(T)>
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $FluidIngredientType$$Type<T> = (Special.NeoforgeFluidIngredientType) | ({"streamCodec"?: $StreamCodec$$Type<($RegistryFriendlyByteBuf$$Type), (T)>, "codec"?: $MapCodec$$Type<(T)>}) | ([streamCodec?: $StreamCodec$$Type<($RegistryFriendlyByteBuf$$Type), (T)>, codec?: $MapCodec$$Type<(T)>]);
+export type $FluidIngredientType$$Type<T> = (Special.NeoforgeFluidIngredientType) | ({"codec"?: $MapCodec$$Type<(T)>, "streamCodec"?: $StreamCodec$$Type<($RegistryFriendlyByteBuf$$Type), (T)>}) | ([codec?: $MapCodec$$Type<(T)>, streamCodec?: $StreamCodec$$Type<($RegistryFriendlyByteBuf$$Type), (T)>]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -593,8 +593,8 @@ import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Mob$$Type} from "net.minecraft.world.entity.Mob"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$FluidStack$$Type} from "net.neoforged.neoforge.fluids.FluidStack"
-import {$Component} from "net.minecraft.network.chat.Component"
 import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
+import {$Component} from "net.minecraft.network.chat.Component"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
@@ -602,10 +602,10 @@ import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintG
 import {$PathType, $PathType$$Type} from "net.minecraft.world.level.pathfinder.PathType"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$SoundAction$$Type} from "net.neoforged.neoforge.common.SoundAction"
-import {$ItemEntity$$Type} from "net.minecraft.world.entity.item.ItemEntity"
+import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Rarity} from "net.minecraft.world.item.Rarity"
+import {$ItemEntity$$Type} from "net.minecraft.world.entity.item.ItemEntity"
 import {$Lazy} from "net.neoforged.neoforge.common.util.Lazy"
 import {$FluidType$DripstoneDripInfo} from "net.neoforged.neoforge.fluids.FluidType$DripstoneDripInfo"
 import {$Consumer$$Type} from "java.util.function.Consumer"
@@ -713,9 +713,9 @@ export type $FluidType$$Type = (Special.NeoforgeFluidType);
 export type $FluidType$$Original = $FluidType;}
 declare module "net.neoforged.neoforge.fluids.RegisterCauldronFluidContentEvent" {
 import {$Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
+import {$Event} from "net.neoforged.bus.api.Event"
 import {$IntegerProperty$$Type} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
 import {$Block$$Type} from "net.minecraft.world.level.block.Block"
-import {$Event} from "net.neoforged.bus.api.Event"
 import {$IModBusEvent$$Interface} from "net.neoforged.fml.event.IModBusEvent"
 
 export class $RegisterCauldronFluidContentEvent extends $Event implements $IModBusEvent$$Interface {
@@ -773,9 +773,9 @@ export class $IFluidHandlerItem implements $IFluidHandlerItem$$Interface {
  "getFluidInTank"(arg0: integer): $FluidStack
  "getTankCapacity"(arg0: integer): integer
  "isFluidValid"(arg0: integer, arg1: $FluidStack$$Type): boolean
+ "fill"(arg0: $FluidStack$$Type, arg1: $IFluidHandler$FluidAction$$Type): integer
  "drain"(arg0: $FluidStack$$Type, arg1: $IFluidHandler$FluidAction$$Type): $FluidStack
  "drain"(arg0: integer, arg1: $IFluidHandler$FluidAction$$Type): $FluidStack
- "fill"(arg0: $FluidStack$$Type, arg1: $IFluidHandler$FluidAction$$Type): integer
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -789,17 +789,16 @@ export type $IFluidHandlerItem$$Original = $IFluidHandlerItem;}
 declare module "net.neoforged.neoforge.fluids.capability.templates.FluidTank" {
 import {$IFluidHandler$FluidAction$$Type} from "net.neoforged.neoforge.fluids.capability.IFluidHandler$FluidAction"
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
-import {$IFluidTank$$Interface} from "net.neoforged.neoforge.fluids.IFluidTank"
 import {$Predicate$$Type} from "java.util.function.Predicate"
+import {$IFluidTank$$Interface} from "net.neoforged.neoforge.fluids.IFluidTank"
 import {$IFluidHandler$$Interface} from "net.neoforged.neoforge.fluids.capability.IFluidHandler"
 import {$FluidStack, $FluidStack$$Type} from "net.neoforged.neoforge.fluids.FluidStack"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 
 export class $FluidTank implements $IFluidHandler$$Interface, $IFluidTank$$Interface {
-constructor(arg0: integer)
 constructor(arg0: integer, arg1: $Predicate$$Type<($FluidStack)>)
+constructor(arg0: integer)
 
-public "setFluid"(arg0: $FluidStack$$Type): void
 public "getFluid"(): $FluidStack
 public "getTanks"(): integer
 public "getFluidInTank"(arg0: integer): $FluidStack
@@ -810,22 +809,23 @@ public "getFluidAmount"(): integer
 public "setValidator"(arg0: $Predicate$$Type<($FluidStack)>): $FluidTank
 public "readFromNBT"(arg0: $HolderLookup$Provider$$Type, arg1: $CompoundTag$$Type): $FluidTank
 public "writeToNBT"(arg0: $HolderLookup$Provider$$Type, arg1: $CompoundTag$$Type): $CompoundTag
-public "getCapacity"(): integer
-public "drain"(arg0: $FluidStack$$Type, arg1: $IFluidHandler$FluidAction$$Type): $FluidStack
-public "drain"(arg0: integer, arg1: $IFluidHandler$FluidAction$$Type): $FluidStack
+public "setFluid"(arg0: $FluidStack$$Type): void
 public "setCapacity"(arg0: integer): $FluidTank
 public "getSpace"(): integer
 public "isEmpty"(): boolean
 public "fill"(arg0: $FluidStack$$Type, arg1: $IFluidHandler$FluidAction$$Type): integer
-set "fluid"(value: $FluidStack$$Type)
+public "getCapacity"(): integer
+public "drain"(arg0: $FluidStack$$Type, arg1: $IFluidHandler$FluidAction$$Type): $FluidStack
+public "drain"(arg0: integer, arg1: $IFluidHandler$FluidAction$$Type): $FluidStack
 get "fluid"(): $FluidStack
 get "tanks"(): integer
 get "fluidAmount"(): integer
 set "validator"(value: $Predicate$$Type<($FluidStack)>)
-get "capacity"(): integer
+set "fluid"(value: $FluidStack$$Type)
 set "capacity"(value: integer)
 get "space"(): integer
 get "empty"(): boolean
+get "capacity"(): integer
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -843,7 +843,6 @@ import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$BaseFlowingFluid$Properties$$Type} from "net.neoforged.neoforge.fluids.BaseFlowingFluid$Properties"
 import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
-import {$Holder} from "net.minecraft.core.Holder"
 import {$BaseFlowingFluid} from "net.neoforged.neoforge.fluids.BaseFlowingFluid"
 
 export class $BaseFlowingFluid$Source extends $BaseFlowingFluid {
@@ -855,7 +854,6 @@ constructor(arg0: $BaseFlowingFluid$Properties$$Type)
 
 public "isSource"(arg0: $FluidState$$Type): boolean
 public "getAmount"(arg0: $FluidState$$Type): integer
-public "asHolder"(): $Holder
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 public static "wrap"(o: any): $ReplacementMatch
 }
@@ -875,15 +873,14 @@ import {$FlowingFluid} from "net.minecraft.world.level.material.FlowingFluid"
 import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
-import {$Holder} from "net.minecraft.core.Holder"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$Fluid, $Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$FluidType} from "net.neoforged.neoforge.fluids.FluidType"
 import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
+import {$FluidType} from "net.neoforged.neoforge.fluids.FluidType"
 
 export class $BaseFlowingFluid extends $FlowingFluid {
 static readonly "FLUID_STATE_REGISTRY": $IdMapper<($FluidState)>
@@ -898,7 +895,6 @@ public "getFlowing"(): $Fluid
 public "getSource"(): $Fluid
 public "getBucket"(): $Item
 public "getFluidType"(): $FluidType
-public "asHolder"(): $Holder
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 public static "wrap"(o: any): $ReplacementMatch
 get "pickupSound"(): $Optional<($SoundEvent)>
@@ -921,18 +917,18 @@ import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$DataComponentMap} from "net.minecraft.core.component.DataComponentMap"
 import {$Predicate$$Type} from "java.util.function.Predicate"
 import {$FluidStack, $FluidStack$$Type} from "net.neoforged.neoforge.fluids.FluidStack"
-import {$DataComponentType$$Type} from "net.minecraft.core.component.DataComponentType"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
+import {$DataComponentType$$Type} from "net.minecraft.core.component.DataComponentType"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
 import {$DataComponentHolder$$Interface} from "net.minecraft.core.component.DataComponentHolder"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$Fluid, $Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
-import {$TagKey$$Type} from "net.minecraft.tags.TagKey"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$TagKey$$Type} from "net.minecraft.tags.TagKey"
 import {$HolderSet$$Type} from "net.minecraft.core.HolderSet"
 import {$TooltipProvider} from "net.minecraft.world.item.component.TooltipProvider"
 import {$FluidType, $FluidType$$Type} from "net.neoforged.neoforge.fluids.FluidType"
@@ -993,7 +989,6 @@ import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$BaseFlowingFluid$Properties$$Type} from "net.neoforged.neoforge.fluids.BaseFlowingFluid$Properties"
 import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
-import {$Holder} from "net.minecraft.core.Holder"
 import {$BaseFlowingFluid} from "net.neoforged.neoforge.fluids.BaseFlowingFluid"
 
 export class $BaseFlowingFluid$Flowing extends $BaseFlowingFluid {
@@ -1005,7 +1000,6 @@ constructor(arg0: $BaseFlowingFluid$Properties$$Type)
 
 public "isSource"(arg0: $FluidState$$Type): boolean
 public "getAmount"(arg0: $FluidState$$Type): integer
-public "asHolder"(): $Holder
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 public static "wrap"(o: any): $ReplacementMatch
 }

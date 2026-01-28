@@ -45,13 +45,13 @@ export type $RealmsClient$CompatibleVersionResponse$$Original = $RealmsClient$Co
 declare module "com.mojang.realmsclient.client.RealmsClient" {
 import {$RealmsServerAddress} from "com.mojang.realmsclient.dto.RealmsServerAddress"
 import {$BackupList} from "com.mojang.realmsclient.dto.BackupList"
-import {$UploadInfo} from "com.mojang.realmsclient.dto.UploadInfo"
 import {$RealmsServer} from "com.mojang.realmsclient.dto.RealmsServer"
+import {$UploadInfo} from "com.mojang.realmsclient.dto.UploadInfo"
 import {$RealmsWorldOptions$$Type} from "com.mojang.realmsclient.dto.RealmsWorldOptions"
 import {$WorldTemplatePaginatedList} from "com.mojang.realmsclient.dto.WorldTemplatePaginatedList"
-import {$Subscription} from "com.mojang.realmsclient.dto.Subscription"
 import {$PendingInvitesList} from "com.mojang.realmsclient.dto.PendingInvitesList"
 import {$UUID$$Type} from "java.util.UUID"
+import {$Subscription} from "com.mojang.realmsclient.dto.Subscription"
 import {$List, $List$$Type} from "java.util.List"
 import {$RealmsClient$CompatibleVersionResponse} from "com.mojang.realmsclient.client.RealmsClient$CompatibleVersionResponse"
 import {$WorldGenerationInfo$$Type} from "com.mojang.realmsclient.util.WorldGenerationInfo"
@@ -60,11 +60,11 @@ import {$Ops} from "com.mojang.realmsclient.dto.Ops"
 import {$RealmsClient$Environment} from "com.mojang.realmsclient.client.RealmsClient$Environment"
 import {$RealmsNotification} from "com.mojang.realmsclient.dto.RealmsNotification"
 import {$ServerActivityList} from "com.mojang.realmsclient.dto.ServerActivityList"
-import {$RealmsServerPlayerLists} from "com.mojang.realmsclient.dto.RealmsServerPlayerLists"
 import {$WorldDownload} from "com.mojang.realmsclient.dto.WorldDownload"
-import {$PingResult$$Type} from "com.mojang.realmsclient.dto.PingResult"
+import {$RealmsServerPlayerLists} from "com.mojang.realmsclient.dto.RealmsServerPlayerLists"
 import {$RealmsNews} from "com.mojang.realmsclient.dto.RealmsNews"
 import {$Minecraft$$Type} from "net.minecraft.client.Minecraft"
+import {$PingResult$$Type} from "com.mojang.realmsclient.dto.PingResult"
 import {$RealmsServer$WorldType$$Type} from "com.mojang.realmsclient.dto.RealmsServer$WorldType"
 
 export class $RealmsClient {
@@ -79,11 +79,11 @@ public "getLiveStats"(): $RealmsServerPlayerLists
 public "listRealms"(): $RealmsServerList
 public "listSnapshotEligibleRealms"(): $List<($RealmsServer)>
 public "getActivity"(arg0: long): $ServerActivityList
-public "updateSlot"(arg0: long, arg1: integer, arg2: $RealmsWorldOptions$$Type): void
+public "invite"(arg0: long, arg1: StringJS): $RealmsServer
 public "notificationsDismiss"(arg0: $List$$Type<($UUID$$Type)>): void
 public "sendPingResults"(arg0: $PingResult$$Type): void
 public "notificationsSeen"(arg0: $List$$Type<($UUID$$Type)>): void
-public "invite"(arg0: long, arg1: StringJS): $RealmsServer
+public "updateSlot"(arg0: long, arg1: integer, arg2: $RealmsWorldOptions$$Type): void
 public "getNotifications"(): $List<($RealmsNotification)>
 public "update"(arg0: long, arg1: StringJS, arg2: StringJS): void
 public "join"(arg0: long): $RealmsServerAddress

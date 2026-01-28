@@ -22,8 +22,8 @@ export type $PackSelectionConfig$$Type = ({"required"?: boolean, "defaultPositio
  */
 export type $PackSelectionConfig$$Original = $PackSelectionConfig;}
 declare module "net.minecraft.server.packs.metadata.MetadataSectionType" {
-import {$Codec$$Type} from "com.mojang.serialization.Codec"
 import {$MetadataSectionSerializer$$Interface} from "net.minecraft.server.packs.metadata.MetadataSectionSerializer"
+import {$Codec$$Type} from "com.mojang.serialization.Codec"
 import {$JsonObject, $JsonObject$$Type} from "com.google.gson.JsonObject"
 
 export interface $MetadataSectionType$$Interface<T> extends $MetadataSectionSerializer$$Interface<(T)> {
@@ -46,8 +46,8 @@ export type $MetadataSectionType$$Type<T> = ($MetadataSectionType<(T)>);
  */
 export type $MetadataSectionType$$Original<T> = $MetadataSectionType<(T)>;}
 declare module "net.minecraft.server.packs.resources.IoSupplier" {
-import {$InputStream} from "java.io.InputStream"
 import {$Path$$Type} from "java.nio.file.Path"
+import {$InputStream} from "java.io.InputStream"
 import {$ZipFile$$Type} from "java.util.zip.ZipFile"
 import {$ZipEntry$$Type} from "java.util.zip.ZipEntry"
 
@@ -124,8 +124,8 @@ export type $ResourceMetadata$$Type = ((arg0: $MetadataSectionSerializer<(T)>) =
  */
 export type $ResourceMetadata$$Original = $ResourceMetadata;}
 declare module "net.minecraft.server.packs.repository.RepositorySource" {
-import {$Consumer, $Consumer$$Type} from "java.util.function.Consumer"
 import {$Pack, $Pack$$Type} from "net.minecraft.server.packs.repository.Pack"
+import {$Consumer, $Consumer$$Type} from "java.util.function.Consumer"
 
 export interface $RepositorySource$$Interface {
 
@@ -149,8 +149,8 @@ import {$CompletableFuture} from "java.util.concurrent.CompletableFuture"
 import {$Executor$$Type} from "java.util.concurrent.Executor"
 import {$PreparableReloadListener$$Interface} from "net.minecraft.server.packs.resources.PreparableReloadListener"
 import {$PreparableReloadListener$PreparationBarrier$$Type} from "net.minecraft.server.packs.resources.PreparableReloadListener$PreparationBarrier"
-import {$ProfilerFiller$$Type} from "net.minecraft.util.profiling.ProfilerFiller"
 import {$ResourceManager, $ResourceManager$$Type} from "net.minecraft.server.packs.resources.ResourceManager"
+import {$ProfilerFiller$$Type} from "net.minecraft.util.profiling.ProfilerFiller"
 
 export interface $ResourceManagerReloadListener$$Interface extends $PreparableReloadListener$$Interface {
 
@@ -193,18 +193,18 @@ export type $MetadataSectionSerializer$$Type<T> = ($MetadataSectionSerializer<(T
  */
 export type $MetadataSectionSerializer$$Original<T> = $MetadataSectionSerializer<(T)>;}
 declare module "net.minecraft.server.packs.repository.Pack" {
-import {$FeatureFlagSet} from "net.minecraft.world.flag.FeatureFlagSet"
 import {$PackLocationInfo, $PackLocationInfo$$Type} from "net.minecraft.server.packs.PackLocationInfo"
+import {$FeatureFlagSet} from "net.minecraft.world.flag.FeatureFlagSet"
 import {$PackMetadataSection$$Type} from "net.minecraft.server.packs.metadata.pack.PackMetadataSection"
-import {$Pack$Metadata, $Pack$Metadata$$Type} from "net.minecraft.server.packs.repository.Pack$Metadata"
 import {$List, $List$$Type} from "java.util.List"
+import {$Pack$Metadata, $Pack$Metadata$$Type} from "net.minecraft.server.packs.repository.Pack$Metadata"
 import {$PackResources} from "net.minecraft.server.packs.PackResources"
 import {$PackSource} from "net.minecraft.server.packs.repository.PackSource"
 import {$Component} from "net.minecraft.network.chat.Component"
 import {$Pack$ResourcesSupplier$$Type} from "net.minecraft.server.packs.repository.Pack$ResourcesSupplier"
 import {$Pack$Position} from "net.minecraft.server.packs.repository.Pack$Position"
-import {$PackCompatibility} from "net.minecraft.server.packs.repository.PackCompatibility"
 import {$InclusiveRange} from "net.minecraft.util.InclusiveRange"
+import {$PackCompatibility} from "net.minecraft.server.packs.repository.PackCompatibility"
 import {$PackType$$Type} from "net.minecraft.server.packs.PackType"
 import {$PackSelectionConfig, $PackSelectionConfig$$Type} from "net.minecraft.server.packs.PackSelectionConfig"
 import {$Stream} from "java.util.stream.Stream"
@@ -213,10 +213,10 @@ export class $Pack {
 constructor(arg0: $PackLocationInfo$$Type, arg1: $Pack$ResourcesSupplier$$Type, arg2: $Pack$Metadata$$Type, arg3: $PackSelectionConfig$$Type)
 
 public static "readMetaAndCreate"(arg0: $PackLocationInfo$$Type, arg1: $Pack$ResourcesSupplier$$Type, arg2: $PackType$$Type, arg3: $PackSelectionConfig$$Type): $Pack
+public "getPackSource"(): $PackSource
 public static "getDeclaredPackVersions"(arg0: StringJS, arg1: $PackMetadataSection$$Type): $InclusiveRange<(integer)>
 public "getChatLink"(arg0: boolean): $Component
 public "withChildren"(arg0: $List$$Type<($Pack$$Type)>): $Pack
-public "getPackSource"(): $PackSource
 public "getChildren"(): $List<($Pack)>
 public "getDescription"(): $Component
 public "equals"(arg0: any): boolean
@@ -226,25 +226,25 @@ public "location"(): $PackLocationInfo
 public "getId"(): StringJS
 public "open"(): $PackResources
 public "getTitle"(): $Component
+public "isFixedPosition"(): boolean
 public "isRequired"(): boolean
 public "hidden"(): $Pack
-public "getCompatibility"(): $PackCompatibility
-public static "readPackMetadata"(arg0: $PackLocationInfo$$Type, arg1: $Pack$ResourcesSupplier$$Type, arg2: integer): $Pack$Metadata
 public "getDefaultPosition"(): $Pack$Position
 public "selectionConfig"(): $PackSelectionConfig
+public "getCompatibility"(): $PackCompatibility
+public static "readPackMetadata"(arg0: $PackLocationInfo$$Type, arg1: $Pack$ResourcesSupplier$$Type, arg2: integer): $Pack$Metadata
 public "getRequestedFeatures"(): $FeatureFlagSet
 public "streamSelfAndChildren"(): $Stream<($Pack)>
-public "isFixedPosition"(): boolean
 get "packSource"(): $PackSource
 get "children"(): $List<($Pack)>
 get "description"(): $Component
 get "id"(): StringJS
 get "title"(): $Component
-get "required"(): boolean
-get "compatibility"(): $PackCompatibility
-get "defaultPosition"(): $Pack$Position
-get "requestedFeatures"(): $FeatureFlagSet
 get "fixedPosition"(): boolean
+get "required"(): boolean
+get "defaultPosition"(): $Pack$Position
+get "compatibility"(): $PackCompatibility
+get "requestedFeatures"(): $FeatureFlagSet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -355,8 +355,8 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
 export class $PackType extends $Enum<($PackType)> implements $StringRepresentable$$Interface {
@@ -368,11 +368,11 @@ public static "valueOf"(arg0: StringJS): $PackType
 public "getSerializedName"(): StringJS
 public "getDirectory"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
 get "directory"(): StringJS
 get "remappedEnumConstantName"(): StringJS
@@ -400,11 +400,11 @@ public static "forVersion"(arg0: $InclusiveRange$$Type<(integer)>, arg1: integer
 public "getDescription"(): $Component
 public static "values"(): ($PackCompatibility)[]
 public static "valueOf"(arg0: StringJS): $PackCompatibility
-public "getConfirmation"(): $Component
 public "isCompatible"(): boolean
+public "getConfirmation"(): $Component
 get "description"(): $Component
-get "confirmation"(): $Component
 get "compatible"(): boolean
+get "confirmation"(): $Component
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -491,18 +491,18 @@ import {$Predicate$$Type} from "java.util.function.Predicate"
 import {$PackResources, $PackResources$$Type} from "net.minecraft.server.packs.PackResources"
 import {$PreparableReloadListener$$Type} from "net.minecraft.server.packs.resources.PreparableReloadListener"
 import {$ReloadInstance} from "net.minecraft.server.packs.resources.ReloadInstance"
-import {$ResourceProvider} from "net.minecraft.server.packs.resources.ResourceProvider"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
+import {$ResourceProvider} from "net.minecraft.server.packs.resources.ResourceProvider"
 import {$CompletableFuture$$Type} from "java.util.concurrent.CompletableFuture"
 import {$PackType, $PackType$$Type} from "net.minecraft.server.packs.PackType"
-import {$BufferedReader} from "java.io.BufferedReader"
 import {$Executor$$Type} from "java.util.concurrent.Executor"
+import {$BufferedReader} from "java.io.BufferedReader"
 import {$Set} from "java.util.Set"
 import {$InputStream} from "java.io.InputStream"
 import {$Stream} from "java.util.stream.Stream"
+import {$Unit$$Type} from "net.minecraft.util.Unit"
 import {$Resource, $Resource$$Type} from "net.minecraft.server.packs.resources.Resource"
 import {$ResourceManager$$Interface} from "net.minecraft.server.packs.resources.ResourceManager"
-import {$Unit$$Type} from "net.minecraft.util.Unit"
 
 export class $ReloadableResourceManager implements $ResourceManager$$Interface, $AutoCloseable$$Interface {
 readonly "type": $PackType
@@ -512,13 +512,13 @@ constructor(arg0: $PackType$$Type)
 public "getResource"(arg0: $ResourceLocation$$Type): $Optional<($Resource)>
 public "close"(): void
 public "listResources"(arg0: StringJS, arg1: $Predicate$$Type<($ResourceLocation)>): $Map<($ResourceLocation), ($Resource)>
-public "getNamespaces"(): $Set<(StringJS)>
 public "registerReloadListener"(arg0: $PreparableReloadListener$$Type): void
+public "getNamespaces"(): $Set<(StringJS)>
 public "createReload"(arg0: $Executor$$Type, arg1: $Executor$$Type, arg2: $CompletableFuture$$Type<($Unit$$Type)>, arg3: $List$$Type<($PackResources$$Type)>): $ReloadInstance
 public "getResourceStack"(arg0: $ResourceLocation$$Type): $List<($Resource)>
-public "registerReloadListenerIfNotPresent"(arg0: $PreparableReloadListener$$Type): void
 public "listResourceStacks"(arg0: StringJS, arg1: $Predicate$$Type<($ResourceLocation)>): $Map<($ResourceLocation), ($List<($Resource)>)>
 public "listPacks"(): $Stream<($PackResources)>
+public "registerReloadListenerIfNotPresent"(arg0: $PreparableReloadListener$$Type): void
 public "open"(arg0: $ResourceLocation$$Type): $InputStream
 public static "fromMap"(arg0: $Map$$Type<($ResourceLocation$$Type), ($Resource$$Type)>): $ResourceProvider
 public "getResourceOrThrow"(arg0: $ResourceLocation$$Type): $Resource
@@ -636,16 +636,16 @@ export type $PreparableReloadListener$PreparationBarrier$$Type = ((arg0: T) => $
  */
 export type $PreparableReloadListener$PreparationBarrier$$Original = $PreparableReloadListener$PreparationBarrier;}
 declare module "net.minecraft.server.packs.AbstractPackResources" {
-import {$PackLocationInfo} from "net.minecraft.server.packs.PackLocationInfo"
 import {$KnownPack} from "net.minecraft.server.packs.repository.KnownPack"
+import {$PackLocationInfo} from "net.minecraft.server.packs.PackLocationInfo"
 import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
-import {$Optional} from "java.util.Optional"
 import {$MetadataSectionSerializer$$Type} from "net.minecraft.server.packs.metadata.MetadataSectionSerializer"
+import {$Optional} from "java.util.Optional"
 import {$PackType$$Type} from "net.minecraft.server.packs.PackType"
 import {$PackResources$ResourceOutput$$Type} from "net.minecraft.server.packs.PackResources$ResourceOutput"
 import {$PackResources$$Interface} from "net.minecraft.server.packs.PackResources"
-import {$Set} from "java.util.Set"
 import {$IoSupplier} from "net.minecraft.server.packs.resources.IoSupplier"
+import {$Set} from "java.util.Set"
 import {$InputStream, $InputStream$$Type} from "java.io.InputStream"
 
 export class $AbstractPackResources implements $PackResources$$Interface {
@@ -696,12 +696,12 @@ export type $ReloadInstance$$Type = ($ReloadInstance);
 export type $ReloadInstance$$Original = $ReloadInstance;}
 declare module "net.minecraft.server.packs.resources.SimplePreparableReloadListener" {
 import {$CompletableFuture} from "java.util.concurrent.CompletableFuture"
-import {$ContextAwareReloadListener} from "net.neoforged.neoforge.resource.ContextAwareReloadListener"
 import {$Executor$$Type} from "java.util.concurrent.Executor"
+import {$ContextAwareReloadListener} from "net.neoforged.neoforge.resource.ContextAwareReloadListener"
 import {$PreparableReloadListener$$Interface} from "net.minecraft.server.packs.resources.PreparableReloadListener"
 import {$PreparableReloadListener$PreparationBarrier$$Type} from "net.minecraft.server.packs.resources.PreparableReloadListener$PreparationBarrier"
-import {$ProfilerFiller$$Type} from "net.minecraft.util.profiling.ProfilerFiller"
 import {$ResourceManager$$Type} from "net.minecraft.server.packs.resources.ResourceManager"
+import {$ProfilerFiller$$Type} from "net.minecraft.util.profiling.ProfilerFiller"
 
 /**
  * 
@@ -786,8 +786,8 @@ import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$PackType$$Type} from "net.minecraft.server.packs.PackType"
 import {$PackResources$ResourceOutput$$Type} from "net.minecraft.server.packs.PackResources$ResourceOutput"
 import {$Set} from "java.util.Set"
-import {$InputStream} from "java.io.InputStream"
 import {$Path$$Type} from "java.nio.file.Path"
+import {$InputStream} from "java.io.InputStream"
 
 export class $VanillaPackResources implements $PackResources$$Interface {
 public "getResource"(arg0: $PackType$$Type, arg1: $ResourceLocation$$Type): $IoSupplier<($InputStream)>
@@ -797,8 +797,8 @@ public "listResources"(arg0: $PackType$$Type, arg1: StringJS, arg2: StringJS, ar
 public "getNamespaces"(arg0: $PackType$$Type): $Set<(StringJS)>
 public "asProvider"(): $ResourceProvider
 public "listRawPaths"(arg0: $PackType$$Type, arg1: $ResourceLocation$$Type, arg2: $Consumer$$Type<($Path)>): void
-public "getRootResource"(...arg0: (StringJS)[]): $IoSupplier<($InputStream)>
 public "getMetadataSection"<T>(arg0: $MetadataSectionSerializer$$Type<(T)>): T
+public "getRootResource"(...arg0: (StringJS)[]): $IoSupplier<($InputStream)>
 public "knownPackInfo"(): $Optional<($KnownPack)>
 public "packId"(): StringJS
 public "isHidden"(): boolean
@@ -829,24 +829,24 @@ constructor(...arg0: ($RepositorySource$$Type)[])
 
 public "reload"(): void
 public "isAvailable"(arg0: StringJS): boolean
-public "openAllSelected"(): $List<($PackResources)>
-public "getSelectedPacks"(): $Collection<($Pack)>
-public "setSelected"(arg0: $Collection$$Type<(StringJS)>): void
-public static "displayPackList"(arg0: $Collection$$Type<($Pack$$Type)>): StringJS
-public "getSelectedIds"(): $Collection<(StringJS)>
 public "rebuildSelected"(arg0: $Collection$$Type<(StringJS)>): $List<($Pack)>
 public "addPack"(arg0: StringJS): boolean
 public "removePack"(arg0: StringJS): boolean
 public "getAvailablePacks"(): $Collection<($Pack)>
 public "getAvailableIds"(): $Collection<(StringJS)>
+public "getSelectedIds"(): $Collection<(StringJS)>
+public "openAllSelected"(): $List<($PackResources)>
+public "getSelectedPacks"(): $Collection<($Pack)>
+public "setSelected"(arg0: $Collection$$Type<(StringJS)>): void
+public static "displayPackList"(arg0: $Collection$$Type<($Pack$$Type)>): StringJS
 public "getRequestedFeatureFlags"(): $FeatureFlagSet
 public "getPack"(arg0: StringJS): $Pack
 public "addPackFinder"(arg0: $RepositorySource$$Type): void
-get "selectedPacks"(): $Collection<($Pack)>
-set "selected"(value: $Collection$$Type<(StringJS)>)
-get "selectedIds"(): $Collection<(StringJS)>
 get "availablePacks"(): $Collection<($Pack)>
 get "availableIds"(): $Collection<(StringJS)>
+get "selectedIds"(): $Collection<(StringJS)>
+get "selectedPacks"(): $Collection<($Pack)>
+set "selected"(value: $Collection$$Type<(StringJS)>)
 get "requestedFeatureFlags"(): $FeatureFlagSet
 }
 /**
@@ -948,10 +948,10 @@ export type $Pack$Metadata$$Type = ({"description"?: $Component$$Type, "overlays
  */
 export type $Pack$Metadata$$Original = $Pack$Metadata;}
 declare module "net.minecraft.server.packs.PackResources" {
-import {$PackLocationInfo} from "net.minecraft.server.packs.PackLocationInfo"
 import {$KnownPack} from "net.minecraft.server.packs.repository.KnownPack"
-import {$Optional} from "java.util.Optional"
+import {$PackLocationInfo} from "net.minecraft.server.packs.PackLocationInfo"
 import {$MetadataSectionSerializer$$Type} from "net.minecraft.server.packs.metadata.MetadataSectionSerializer"
+import {$Optional} from "java.util.Optional"
 import {$AutoCloseable$$Interface} from "java.lang.AutoCloseable"
 import {$IoSupplier} from "net.minecraft.server.packs.resources.IoSupplier"
 import {$IPackResourcesExtension$$Interface} from "net.neoforged.neoforge.common.extensions.IPackResourcesExtension"
@@ -974,9 +974,9 @@ static readonly "METADATA_EXTENSION": StringJS
  "close"(): void
  "listResources"(arg0: $PackType$$Type, arg1: StringJS, arg2: StringJS, arg3: $PackResources$ResourceOutput$$Type): void
  "getNamespaces"(arg0: $PackType$$Type): $Set<(StringJS)>
+ "getMetadataSection"<T>(arg0: $MetadataSectionSerializer$$Type<(T)>): T
  "knownPackInfo"(): $Optional<($KnownPack)>
  "getRootResource"(...arg0: (StringJS)[]): $IoSupplier<($InputStream)>
- "getMetadataSection"<T>(arg0: $MetadataSectionSerializer$$Type<(T)>): T
  "packId"(): StringJS
  "isHidden"(): boolean
 }

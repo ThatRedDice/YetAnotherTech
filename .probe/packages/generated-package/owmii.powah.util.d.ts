@@ -18,15 +18,15 @@ public "read"(arg0: $CompoundTag$$Type, arg1: StringJS): void
 public "setAll"(arg0: double): void
 public "getMax"(): double
 public "getEmpty"(): double
-public "setMax"(arg0: double): void
 public "getTicks"(): double
+public "setMax"(arg0: double): void
 public "setTicks"(arg0: double): void
 public "subSized"(): float
 public static "delayed"(arg0: double): boolean
 set "all"(value: double)
 get "max"(): double
-set "max"(value: double)
 get "ticks"(): double
+set "max"(value: double)
 set "ticks"(value: double)
 }
 /**

@@ -59,8 +59,8 @@ import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Prov
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$IWireSyncManager$$Type} from "blusunrize.immersiveengineering.api.wires.IWireSyncManager"
-import {$IICProxyProvider, $IICProxyProvider$$Type} from "blusunrize.immersiveengineering.api.wires.proxy.IICProxyProvider"
 import {$IImmersiveConnectable, $IImmersiveConnectable$$Type} from "blusunrize.immersiveengineering.api.wires.IImmersiveConnectable"
+import {$IICProxyProvider, $IICProxyProvider$$Type} from "blusunrize.immersiveengineering.api.wires.proxy.IICProxyProvider"
 import {$ConnectionPoint, $ConnectionPoint$$Type} from "blusunrize.immersiveengineering.api.wires.ConnectionPoint"
 import {$Function} from "java.util.function.Function"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
@@ -73,28 +73,28 @@ static readonly "SANITIZE_CONNECTIONS": $SetRestrictedField<($BooleanSupplier)>
 
 constructor(arg0: boolean, arg1: $IICProxyProvider$$Type, arg2: $IWireSyncManager$$Type)
 
+public static "getNetwork"(arg0: $Level$$Type): $GlobalWireNetwork
 public "addConnection"(arg0: $Connection$$Type): void
-public "readFromNBT"(arg0: $CompoundTag$$Type): void
-public "removeConnection"(arg0: $Connection$$Type): void
 public "getCollisionData"(): $WireCollisionData
 public "removeInsertAndDropConnection"(arg0: $Connection$$Type, arg1: $Player$$Type, arg2: $Level$$Type): void
-public "getNullableLocalNet"(arg0: $BlockPos$$Type): $LocalWireNetwork
-public "getNullableLocalNet"(arg0: $ConnectionPoint$$Type): $LocalWireNetwork
 public "getLocalNet"(arg0: $BlockPos$$Type): $LocalWireNetwork
 public "getLocalNet"(arg0: $ConnectionPoint$$Type): $LocalWireNetwork
 public "updateCatenaryData"(arg0: $Connection$$Type): void
 public "removeAllConnectionsAt"(arg0: $IImmersiveConnectable$$Type, arg1: $Consumer$$Type<($Connection)>): void
 public "removeAllConnectionsAt"(arg0: $ConnectionPoint$$Type, arg1: $Consumer$$Type<($Connection)>): void
+public "getNullableLocalNet"(arg0: $ConnectionPoint$$Type): $LocalWireNetwork
+public "getNullableLocalNet"(arg0: $BlockPos$$Type): $LocalWireNetwork
 public "removeAndDropConnection"(arg0: $Connection$$Type, arg1: $BlockPos$$Type, arg2: $Level$$Type): void
 public "onConnectorUnload"(arg0: $IImmersiveConnectable$$Type): void
 public "removeConnector"(arg0: $IImmersiveConnectable$$Type): void
-public "onConnectorLoad"(arg0: $IImmersiveConnectable$$Type, arg1: boolean): void
 public "onConnectorLoad"(arg0: $IImmersiveConnectable$$Type, arg1: $Level$$Type): void
+public "onConnectorLoad"(arg0: $IImmersiveConnectable$$Type, arg1: boolean): void
 public "getAllConnectorsIn"(arg0: $ChunkPos$$Type): $Collection<($ConnectionPoint)>
 public "getExistingConnector"(arg0: $ConnectionPoint$$Type): $IImmersiveConnectable
 public "getProxyProvider"(): $IICProxyProvider
+public "readFromNBT"(arg0: $CompoundTag$$Type): void
 public static "onWorldUnload"(arg0: $LevelEvent$Unload$$Type): void
-public static "getNetwork"(arg0: $Level$$Type): $GlobalWireNetwork
+public "removeConnection"(arg0: $Connection$$Type): void
 public "update"(arg0: $Level$$Type): void
 public "save"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): $CompoundTag
 get "collisionData"(): $WireCollisionData
@@ -111,8 +111,8 @@ export type $GlobalWireNetwork$$Type = ($GlobalWireNetwork);
 export type $GlobalWireNetwork$$Original = $GlobalWireNetwork;}
 declare module "blusunrize.immersiveengineering.api.wires.proxy.IICProxyProvider" {
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
-import {$Collection$$Type} from "java.util.Collection"
 import {$Connection$$Type} from "blusunrize.immersiveengineering.api.wires.Connection"
+import {$Collection$$Type} from "java.util.Collection"
 import {$IImmersiveConnectable, $IImmersiveConnectable$$Type} from "blusunrize.immersiveengineering.api.wires.IImmersiveConnectable"
 import {$ConnectionPoint$$Type} from "blusunrize.immersiveengineering.api.wires.ConnectionPoint"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
@@ -146,9 +146,9 @@ import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 
 export class $WireCollisionData {
 public "addConnection"(arg0: $Connection$$Type): void
-public "removeConnection"(arg0: $Connection$$Type): void
 public "getWiresIn"(arg0: $SectionPos$$Type): $List<($WireCollisionData$ConnectionSegments)>
 public "getCollisionInfo"(arg0: $BlockPos$$Type): $Collection<($WireCollisionData$CollisionInfo)>
+public "removeConnection"(arg0: $Connection$$Type): void
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -163,8 +163,8 @@ declare module "blusunrize.immersiveengineering.api.wires.ConnectionPoint" {
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$Comparable$$Interface} from "java.lang.Comparable"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$DualCodec} from "malte0811.dualcodecs.DualCodec"
+import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$Record} from "java.lang.Record"
 
 export class $ConnectionPoint extends $Record implements $Comparable$$Interface<($ConnectionPoint)> {
@@ -213,31 +213,31 @@ import {$Class$$Type} from "java.lang.Class"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
 
 export class $LocalWireNetwork implements $IWorldTickable$$Interface {
-constructor(arg0: $CompoundTag$$Type, arg1: $GlobalWireNetwork$$Type)
 constructor(arg0: $GlobalWireNetwork$$Type)
+constructor(arg0: $CompoundTag$$Type, arg1: $GlobalWireNetwork$$Type)
 
 public "getConnector"(arg0: $BlockPos$$Type): $IImmersiveConnectable
 public "getConnector"(arg0: $ConnectionPoint$$Type): $IImmersiveConnectable
-public "writeToNBT"(): $CompoundTag
 public "getConnectionPoints"(): $Collection<($ConnectionPoint)>
 public "getConnectors"(): $Collection<($BlockPos)>
 public "getAllHandlers"(): $Collection<($LocalNetworkHandler)>
 public "addAsFutureTask"(arg0: $Runnable$$Type): void
+public "writeToNBT"(): $CompoundTag
 public "setInvalid"(): void
-public "isValid"(arg0: $ConnectionPoint$$Type): boolean
-public "isValid"(): boolean
+public "getVersion"(): integer
 public "toString"(): StringJS
 public "update"(arg0: $Level$$Type): void
 public "getHandler"<T extends $LocalNetworkHandler>(arg0: $ResourceLocation$$Type, arg1: $Class$$Type<(T)>): T
-public "getVersion"(): integer
+public "isValid"(arg0: $ConnectionPoint$$Type): boolean
+public "isValid"(): boolean
 public "getConnections"(arg0: $ConnectionPoint$$Type): $Collection<($Connection)>
 public "getConnections"(arg0: $BlockPos$$Type): $Collection<($Connection)>
 get "connectionPoints"(): $Collection<($ConnectionPoint)>
 get "connectors"(): $Collection<($BlockPos)>
 get "allHandlers"(): $Collection<($LocalNetworkHandler)>
 get "invalid"(): void
-get "valid"(): boolean
 get "version"(): integer
+get "valid"(): boolean
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -278,8 +278,8 @@ import {$Connection, $Connection$$Type} from "blusunrize.immersiveengineering.ap
 import {$TargetingInfo$$Type} from "blusunrize.immersiveengineering.api.TargetingInfo"
 import {$ILocalHandlerProvider$$Interface} from "blusunrize.immersiveengineering.api.wires.localhandlers.ILocalHandlerProvider"
 import {$Vec3} from "net.minecraft.world.phys.Vec3"
-import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Vec3i$$Type} from "net.minecraft.core.Vec3i"
+import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$ConnectionPoint, $ConnectionPoint$$Type} from "blusunrize.immersiveengineering.api.wires.ConnectionPoint"
 import {$Set} from "java.util.Set"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
@@ -293,7 +293,7 @@ get "requestedHandlers"(): $Collection<($ResourceLocation)>
 }
 
 export class $IImmersiveConnectable implements $IImmersiveConnectable$$Interface {
- "removeCable"(arg0: $Connection$$Type, arg1: $ConnectionPoint$$Type): void
+ "canConnect"(): boolean
  "getConnectionOffset"(arg0: $ConnectionPoint$$Type, arg1: $ConnectionPoint$$Type, arg2: $WireType$$Type): $Vec3
  "canConnectCable"(arg0: $WireType$$Type, arg1: $ConnectionPoint$$Type, arg2: $Vec3i$$Type): boolean
  "getIgnored"(arg0: $IImmersiveConnectable$$Type): $Set<($BlockPos)>
@@ -302,7 +302,7 @@ export class $IImmersiveConnectable implements $IImmersiveConnectable$$Interface
  "getInternalConnections"(): $Iterable<($Connection)>
  "getTargetedPoint"(arg0: $TargetingInfo$$Type, arg1: $Vec3i$$Type): $ConnectionPoint
  "connectCable"(arg0: $WireType$$Type, arg1: $ConnectionPoint$$Type, arg2: $IImmersiveConnectable$$Type, arg3: $ConnectionPoint$$Type): void
- "canConnect"(): boolean
+ "removeCable"(arg0: $Connection$$Type, arg1: $ConnectionPoint$$Type): void
  "isProxy"(): boolean
  "getPosition"(): $BlockPos
  "getRequestedHandlers"(): $Collection<($ResourceLocation)>
@@ -343,8 +343,8 @@ import {$Collection} from "java.util.Collection"
 import {$Connection, $Connection$$Type} from "blusunrize.immersiveengineering.api.wires.Connection"
 import {$TargetingInfo$$Type} from "blusunrize.immersiveengineering.api.TargetingInfo"
 import {$Vec3} from "net.minecraft.world.phys.Vec3"
-import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Vec3i$$Type} from "net.minecraft.core.Vec3i"
+import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$IImmersiveConnectable$$Type, $IImmersiveConnectable$$Interface} from "blusunrize.immersiveengineering.api.wires.IImmersiveConnectable"
 import {$ConnectionPoint, $ConnectionPoint$$Type} from "blusunrize.immersiveengineering.api.wires.ConnectionPoint"
 import {$Set} from "java.util.Set"
@@ -368,7 +368,7 @@ export class $EnergyTransferHandler$EnergyConnector implements $EnergyTransferHa
  "insertEnergy"(arg0: integer): void
  "getAvailableEnergy"(): integer
  "onEnergyPassedThrough"(arg0: double): void
- "removeCable"(arg0: $Connection$$Type, arg1: $ConnectionPoint$$Type): void
+ "canConnect"(): boolean
  "getConnectionOffset"(arg0: $ConnectionPoint$$Type, arg1: $ConnectionPoint$$Type, arg2: $WireType$$Type): $Vec3
  "canConnectCable"(arg0: $WireType$$Type, arg1: $ConnectionPoint$$Type, arg2: $Vec3i$$Type): boolean
  "getIgnored"(arg0: $IImmersiveConnectable$$Type): $Set<($BlockPos)>
@@ -377,7 +377,7 @@ export class $EnergyTransferHandler$EnergyConnector implements $EnergyTransferHa
  "getInternalConnections"(): $Iterable<($Connection)>
  "getTargetedPoint"(arg0: $TargetingInfo$$Type, arg1: $Vec3i$$Type): $ConnectionPoint
  "connectCable"(arg0: $WireType$$Type, arg1: $ConnectionPoint$$Type, arg2: $IImmersiveConnectable$$Type, arg3: $ConnectionPoint$$Type): void
- "canConnect"(): boolean
+ "removeCable"(arg0: $Connection$$Type, arg1: $ConnectionPoint$$Type): void
  "isProxy"(): boolean
  "getPosition"(): $BlockPos
  "getRequestedHandlers"(): $Collection<($ResourceLocation)>
@@ -399,8 +399,8 @@ import {$Connection, $Connection$$Type} from "blusunrize.immersiveengineering.ap
 import {$TargetingInfo$$Type} from "blusunrize.immersiveengineering.api.TargetingInfo"
 import {$EnergyTransferHandler$EnergyConnector$$Interface} from "blusunrize.immersiveengineering.api.wires.localhandlers.EnergyTransferHandler$EnergyConnector"
 import {$Vec3} from "net.minecraft.world.phys.Vec3"
-import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Vec3i$$Type} from "net.minecraft.core.Vec3i"
+import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$IImmersiveConnectable$$Type} from "blusunrize.immersiveengineering.api.wires.IImmersiveConnectable"
 import {$ConnectionPoint, $ConnectionPoint$$Type} from "blusunrize.immersiveengineering.api.wires.ConnectionPoint"
 import {$Set} from "java.util.Set"
@@ -426,7 +426,7 @@ export class $EnergyTransferHandler$LimitingEnergyConnector implements $EnergyTr
  "insertEnergy"(arg0: integer): void
  "getAvailableEnergy"(): integer
  "onEnergyPassedThrough"(arg0: double): void
- "removeCable"(arg0: $Connection$$Type, arg1: $ConnectionPoint$$Type): void
+ "canConnect"(): boolean
  "getConnectionOffset"(arg0: $ConnectionPoint$$Type, arg1: $ConnectionPoint$$Type, arg2: $WireType$$Type): $Vec3
  "canConnectCable"(arg0: $WireType$$Type, arg1: $ConnectionPoint$$Type, arg2: $Vec3i$$Type): boolean
  "getIgnored"(arg0: $IImmersiveConnectable$$Type): $Set<($BlockPos)>
@@ -435,7 +435,7 @@ export class $EnergyTransferHandler$LimitingEnergyConnector implements $EnergyTr
  "getInternalConnections"(): $Iterable<($Connection)>
  "getTargetedPoint"(arg0: $TargetingInfo$$Type, arg1: $Vec3i$$Type): $ConnectionPoint
  "connectCable"(arg0: $WireType$$Type, arg1: $ConnectionPoint$$Type, arg2: $IImmersiveConnectable$$Type, arg3: $ConnectionPoint$$Type): void
- "canConnect"(): boolean
+ "removeCable"(arg0: $Connection$$Type, arg1: $ConnectionPoint$$Type): void
  "isProxy"(): boolean
  "getPosition"(): $BlockPos
  "getRequestedHandlers"(): $Collection<($ResourceLocation)>
@@ -473,7 +473,7 @@ get "inBlock"(): boolean
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $WireCollisionData$CollisionInfo$$Type = ({"isInBlock"?: boolean, "connection"?: $Connection$$Type, "intersectA"?: $Vec3$$Type, "intersectB"?: $Vec3$$Type}) | ([isInBlock?: boolean, connection?: $Connection$$Type, intersectA?: $Vec3$$Type, intersectB?: $Vec3$$Type]);
+export type $WireCollisionData$CollisionInfo$$Type = ({"connection"?: $Connection$$Type, "intersectA"?: $Vec3$$Type, "intersectB"?: $Vec3$$Type, "isInBlock"?: boolean}) | ([connection?: $Connection$$Type, intersectA?: $Vec3$$Type, intersectB?: $Vec3$$Type, isInBlock?: boolean]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -489,9 +489,9 @@ export interface $IWireCoil$$Interface {
 }
 
 export class $IWireCoil implements $IWireCoil$$Interface {
+ "getWireType"(arg0: $ItemStack$$Type): $WireType
  "canConnectCable"(arg0: $ItemStack$$Type, arg1: $BlockEntity$$Type): boolean
  "consumeWire"(arg0: $ItemStack$$Type, arg1: integer): void
- "getWireType"(arg0: $ItemStack$$Type): $WireType
  "getMaxLength"(arg0: $ItemStack$$Type): integer
 }
 /**
@@ -647,10 +647,10 @@ export type $IWorldTickable$$Type = ((arg0: $Level) => void);
  */
 export type $IWorldTickable$$Original = $IWorldTickable;}
 declare module "blusunrize.immersiveengineering.api.wires.localhandlers.LocalNetworkHandler" {
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Connection$$Type} from "blusunrize.immersiveengineering.api.wires.Connection"
-import {$LocalWireNetwork$$Type} from "blusunrize.immersiveengineering.api.wires.LocalWireNetwork"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$IImmersiveConnectable$$Type} from "blusunrize.immersiveengineering.api.wires.IImmersiveConnectable"
+import {$LocalWireNetwork$$Type} from "blusunrize.immersiveengineering.api.wires.LocalWireNetwork"
 import {$ConnectionPoint$$Type} from "blusunrize.immersiveengineering.api.wires.ConnectionPoint"
 import {$GlobalWireNetwork$$Type} from "blusunrize.immersiveengineering.api.wires.GlobalWireNetwork"
 import {$ILocalHandlerConstructor$$Type} from "blusunrize.immersiveengineering.api.wires.localhandlers.ILocalHandlerConstructor"
@@ -678,14 +678,14 @@ export type $LocalNetworkHandler$$Type = ($LocalNetworkHandler);
  */
 export type $LocalNetworkHandler$$Original = $LocalNetworkHandler;}
 declare module "blusunrize.immersiveengineering.api.wires.WireType" {
-import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Collection} from "java.util.Collection"
-import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
+import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Connection$$Type} from "blusunrize.immersiveengineering.api.wires.Connection"
+import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$LinkedHashSet} from "java.util.LinkedHashSet"
 import {$ILocalHandlerProvider$$Interface} from "blusunrize.immersiveengineering.api.wires.localhandlers.ILocalHandlerProvider"
-import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$DualCodec} from "malte0811.dualcodecs.DualCodec"
+import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 
 export class $WireType implements $ILocalHandlerProvider$$Interface {
 static "INTERNAL_CONNECTION": $WireType
@@ -706,21 +706,21 @@ static "ELECTRUM": $WireType
 
 constructor()
 
-public "getRenderDiameter"(): double
+public static "getValues"(): $LinkedHashSet<($WireType)>
 public "getSlack"(): double
 public "getWireCoil"(arg0: $Connection$$Type): $ItemStack
 public static "getIEWireTypes"(): $Collection<($WireType)>
-public static "getValues"(): $LinkedHashSet<($WireType)>
+public "getRenderDiameter"(): double
 public "getColour"(arg0: $Connection$$Type): integer
 public static "getValue"(arg0: StringJS): $WireType
 public "getCategory"(): StringJS
 public "getMaxLength"(): integer
 public "getUniqueName"(): StringJS
 public "getRequestedHandlers"(): $Collection<($ResourceLocation)>
-get "renderDiameter"(): double
+public static get "values"(): $LinkedHashSet<($WireType)>
 get "slack"(): double
 public static get "IEWireTypes"(): $Collection<($WireType)>
-public static get "values"(): $LinkedHashSet<($WireType)>
+get "renderDiameter"(): double
 get "category"(): StringJS
 get "maxLength"(): integer
 get "uniqueName"(): StringJS

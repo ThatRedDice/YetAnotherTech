@@ -2,8 +2,8 @@ declare module "appeng.me.service.CraftingService" {
 import {$Iterable} from "java.lang.Iterable"
 import {$CraftingLink$$Type} from "appeng.crafting.CraftingLink"
 import {$AEKeyFilter$$Type} from "appeng.api.storage.AEKeyFilter"
-import {$IActionSource$$Type} from "appeng.api.networking.security.IActionSource"
 import {$ImmutableSet} from "com.google.common.collect.ImmutableSet"
+import {$IActionSource$$Type} from "appeng.api.networking.security.IActionSource"
 import {$Future} from "java.util.concurrent.Future"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Actionable$$Type} from "appeng.api.config.Actionable"
@@ -32,23 +32,23 @@ export class $CraftingService implements $ICraftingService$$Interface, $IGridSer
 constructor(arg0: $IGrid$$Type, arg1: $IStorageService$$Type, arg2: $IEnergyService$$Type)
 
 public "onServerEndTick"(): void
-public "canEmitFor"(arg0: $AEKey$$Type): boolean
-public "getCraftables"(arg0: $AEKeyFilter$$Type): $Set<($AEKey)>
-public "isRequesting"(arg0: $AEKey$$Type): boolean
-public "getRequestedAmount"(arg0: $AEKey$$Type): long
-public "isRequestingAny"(): boolean
-public "addLink"(arg0: $CraftingLink$$Type): void
-public "insertIntoCpus"(arg0: $AEKey$$Type, arg1: long, arg2: $Actionable$$Type): long
-public "hasCpu"(arg0: $ICraftingCPU$$Type): boolean
-public "refreshNodeCraftingProvider"(arg0: $IGridNode$$Type): void
 public "getCraftingFor"(arg0: $AEKey$$Type): $Collection<($IPatternDetails)>
 public "addGlobalCraftingProvider"(arg0: $ICraftingProvider$$Type): void
 public "getFuzzyCraftable"(arg0: $AEKey$$Type, arg1: $AEKeyFilter$$Type): $AEKey
 public "beginCraftingCalculation"(arg0: $Level$$Type, arg1: $ICraftingSimulationRequester$$Type, arg2: $AEKey$$Type, arg3: long, arg4: $CalculationStrategy$$Type): $Future<($ICraftingPlan)>
 public "submitJob"(arg0: $ICraftingPlan$$Type, arg1: $ICraftingRequester$$Type, arg2: $ICraftingCPU$$Type, arg3: boolean, arg4: $IActionSource$$Type): $ICraftingSubmitResult
 public "getCpus"(): $ImmutableSet<($ICraftingCPU)>
+public "canEmitFor"(arg0: $AEKey$$Type): boolean
+public "getCraftables"(arg0: $AEKeyFilter$$Type): $Set<($AEKey)>
+public "isRequesting"(arg0: $AEKey$$Type): boolean
+public "getRequestedAmount"(arg0: $AEKey$$Type): long
+public "isRequestingAny"(): boolean
+public "refreshNodeCraftingProvider"(arg0: $IGridNode$$Type): void
 public "removeGlobalCraftingProvider"(arg0: $ICraftingProvider$$Type): void
 public "refreshGlobalCraftingProvider"(arg0: $ICraftingProvider$$Type): void
+public "insertIntoCpus"(arg0: $AEKey$$Type, arg1: long, arg2: $Actionable$$Type): long
+public "hasCpu"(arg0: $ICraftingCPU$$Type): boolean
+public "addLink"(arg0: $CraftingLink$$Type): void
 public "getProviders"(arg0: $IPatternDetails$$Type): $Iterable<($ICraftingProvider)>
 public "removeNode"(arg0: $IGridNode$$Type): void
 public "addNode"(arg0: $IGridNode$$Type, arg1: $CompoundTag$$Type): void
@@ -58,8 +58,8 @@ public "onLevelEndTick"(arg0: $Level$$Type): void
 public "onLevelStartTick"(arg0: $Level$$Type): void
 public "saveNodeData"(arg0: $IGridNode$$Type, arg1: $CompoundTag$$Type): void
 public "debugDump"(arg0: $JsonWriter$$Type, arg1: $HolderLookup$Provider$$Type): void
-get "requestingAny"(): boolean
 get "cpus"(): $ImmutableSet<($ICraftingCPU)>
+get "requestingAny"(): boolean
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_

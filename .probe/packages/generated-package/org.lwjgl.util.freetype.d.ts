@@ -95,17 +95,17 @@ public static "create"(arg0: long, arg1: integer): $FT_Vector$Buffer
 public static "create"(): $FT_Vector
 public "y"(arg0: long): $FT_Vector
 public "y"(): long
-public static "malloc"(arg0: integer, arg1: $MemoryStack$$Type): $FT_Vector$Buffer
-public static "malloc"(): $FT_Vector
-public static "malloc"(arg0: $MemoryStack$$Type): $FT_Vector
-public static "malloc"(arg0: integer): $FT_Vector$Buffer
-public static "calloc"(arg0: integer): $FT_Vector$Buffer
-public static "calloc"(): $FT_Vector
 public static "calloc"(arg0: integer, arg1: $MemoryStack$$Type): $FT_Vector$Buffer
 public static "calloc"(arg0: $MemoryStack$$Type): $FT_Vector
+public static "calloc"(): $FT_Vector
+public static "calloc"(arg0: integer): $FT_Vector$Buffer
 public static "createSafe"(arg0: long, arg1: integer): $FT_Vector$Buffer
 public static "createSafe"(arg0: long): $FT_Vector
 public "sizeof"(): integer
+public static "malloc"(arg0: integer): $FT_Vector$Buffer
+public static "malloc"(): $FT_Vector
+public static "malloc"(arg0: $MemoryStack$$Type): $FT_Vector
+public static "malloc"(arg0: integer, arg1: $MemoryStack$$Type): $FT_Vector$Buffer
 public "close"(): void
 public "free"(): void
 }
@@ -127,13 +127,13 @@ export class $FT_Size_Metrics$Buffer extends $StructBuffer<($FT_Size_Metrics), (
 constructor(arg0: $ByteBuffer$$Type)
 constructor(arg0: long, arg1: integer)
 
-public "ascender"(): long
-public "descender"(): long
 public "x_scale"(): long
 public "y_scale"(): long
 public "x_ppem"(): short
 public "y_ppem"(): short
 public "max_advance"(): long
+public "ascender"(): long
+public "descender"(): long
 public "height"(): long
 }
 /**
@@ -147,9 +147,9 @@ export type $FT_Size_Metrics$Buffer$$Type = ($FT_Size_Metrics$Buffer);
 export type $FT_Size_Metrics$Buffer$$Original = $FT_Size_Metrics$Buffer;}
 declare module "org.lwjgl.util.freetype.FT_CharMap$Buffer" {
 import {$StructBuffer} from "org.lwjgl.system.StructBuffer"
-import {$FT_CharMap} from "org.lwjgl.util.freetype.FT_CharMap"
 import {$FT_Face} from "org.lwjgl.util.freetype.FT_Face"
 import {$ByteBuffer$$Type} from "java.nio.ByteBuffer"
+import {$FT_CharMap} from "org.lwjgl.util.freetype.FT_CharMap"
 
 export class $FT_CharMap$Buffer extends $StructBuffer<($FT_CharMap), ($FT_CharMap$Buffer)> {
 constructor(arg0: $ByteBuffer$$Type)
@@ -170,12 +170,12 @@ export type $FT_CharMap$Buffer$$Type = ($FT_CharMap$Buffer);
  */
 export type $FT_CharMap$Buffer$$Original = $FT_CharMap$Buffer;}
 declare module "org.lwjgl.util.freetype.FT_GlyphSlot$Buffer" {
-import {$StructBuffer} from "org.lwjgl.system.StructBuffer"
 import {$FT_Glyph_Metrics} from "org.lwjgl.util.freetype.FT_Glyph_Metrics"
+import {$StructBuffer} from "org.lwjgl.system.StructBuffer"
 import {$FT_Generic} from "org.lwjgl.util.freetype.FT_Generic"
 import {$FT_Vector} from "org.lwjgl.util.freetype.FT_Vector"
-import {$FT_Outline} from "org.lwjgl.util.freetype.FT_Outline"
 import {$FT_Face} from "org.lwjgl.util.freetype.FT_Face"
+import {$FT_Outline} from "org.lwjgl.util.freetype.FT_Outline"
 import {$ByteBuffer$$Type} from "java.nio.ByteBuffer"
 import {$FT_GlyphSlot} from "org.lwjgl.util.freetype.FT_GlyphSlot"
 import {$FT_Bitmap} from "org.lwjgl.util.freetype.FT_Bitmap"
@@ -184,20 +184,20 @@ export class $FT_GlyphSlot$Buffer extends $StructBuffer<($FT_GlyphSlot), ($FT_Gl
 constructor(arg0: $ByteBuffer$$Type)
 constructor(arg0: long, arg1: integer)
 
-public "bitmap_left"(): integer
-public "bitmap_top"(): integer
 public "face"(): $FT_Face
-public "bitmap"(): $FT_Bitmap
 public "glyph_index"(): integer
+public "bitmap"(): $FT_Bitmap
 public "linearHoriAdvance"(): long
 public "linearVertAdvance"(): long
 public "lsb_delta"(): long
 public "rsb_delta"(): long
+public "metrics"(): $FT_Glyph_Metrics
+public "bitmap_left"(): integer
+public "bitmap_top"(): integer
 public "next"(): $FT_GlyphSlot
 public "format"(): integer
 public "generic"(): $FT_Generic
 public "advance"(): $FT_Vector
-public "metrics"(): $FT_Glyph_Metrics
 public "library"(): long
 public "outline"(): $FT_Outline
 }
@@ -232,21 +232,21 @@ public "pointer"(): long
 public "value"(): long
 public "value"(arg0: long): $FT_StreamDesc
 public "set"(arg0: $FT_StreamDesc$$Type): $FT_StreamDesc
-public static "create"(arg0: long): $FT_StreamDesc
-public static "create"(arg0: long, arg1: integer): $FT_StreamDesc$Buffer
 public static "create"(arg0: integer): $FT_StreamDesc$Buffer
+public static "create"(arg0: long, arg1: integer): $FT_StreamDesc$Buffer
 public static "create"(): $FT_StreamDesc
-public static "malloc"(arg0: integer): $FT_StreamDesc$Buffer
-public static "malloc"(arg0: $MemoryStack$$Type): $FT_StreamDesc
-public static "malloc"(arg0: integer, arg1: $MemoryStack$$Type): $FT_StreamDesc$Buffer
-public static "malloc"(): $FT_StreamDesc
+public static "create"(arg0: long): $FT_StreamDesc
 public static "calloc"(arg0: integer, arg1: $MemoryStack$$Type): $FT_StreamDesc$Buffer
-public static "calloc"(): $FT_StreamDesc
 public static "calloc"(arg0: $MemoryStack$$Type): $FT_StreamDesc
+public static "calloc"(): $FT_StreamDesc
 public static "calloc"(arg0: integer): $FT_StreamDesc$Buffer
 public static "createSafe"(arg0: long, arg1: integer): $FT_StreamDesc$Buffer
 public static "createSafe"(arg0: long): $FT_StreamDesc
 public "sizeof"(): integer
+public static "malloc"(arg0: integer): $FT_StreamDesc$Buffer
+public static "malloc"(): $FT_StreamDesc
+public static "malloc"(arg0: $MemoryStack$$Type): $FT_StreamDesc
+public static "malloc"(arg0: integer, arg1: $MemoryStack$$Type): $FT_StreamDesc$Buffer
 public static "npointer"(arg0: long, arg1: long): void
 public static "npointer"(arg0: long): long
 public "close"(): void
@@ -303,8 +303,8 @@ import {$FT_Size} from "org.lwjgl.util.freetype.FT_Size"
 import {$FT_Generic, $FT_Generic$$Type} from "org.lwjgl.util.freetype.FT_Generic"
 import {$FT_Size_Metrics, $FT_Size_Metrics$$Type} from "org.lwjgl.util.freetype.FT_Size_Metrics"
 import {$NativeResource$$Interface} from "org.lwjgl.system.NativeResource"
-import {$FT_Face, $FT_Face$$Type} from "org.lwjgl.util.freetype.FT_Face"
 import {$ByteBuffer$$Type} from "java.nio.ByteBuffer"
+import {$FT_Face, $FT_Face$$Type} from "org.lwjgl.util.freetype.FT_Face"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 
 export class $FT_Size$Buffer extends $StructBuffer<($FT_Size), ($FT_Size$Buffer)> implements $NativeResource$$Interface {
@@ -313,11 +313,11 @@ constructor(arg0: long, arg1: integer)
 
 public "face"(): $FT_Face
 public "face"(arg0: $FT_Face$$Type): $FT_Size$Buffer
-public "generic"(arg0: $Consumer$$Type<($FT_Generic)>): $FT_Size$Buffer
-public "generic"(arg0: $FT_Generic$$Type): $FT_Size$Buffer
-public "generic"(): $FT_Generic
 public "metrics"(): $FT_Size_Metrics
 public "metrics"(arg0: $FT_Size_Metrics$$Type): $FT_Size$Buffer
+public "generic"(arg0: $FT_Generic$$Type): $FT_Size$Buffer
+public "generic"(arg0: $Consumer$$Type<($FT_Generic)>): $FT_Size$Buffer
+public "generic"(): $FT_Generic
 public "close"(): void
 public "free"(): void
 }
@@ -347,39 +347,39 @@ static readonly "SIZEOF": integer
 
 constructor(arg0: $ByteBuffer$$Type)
 
-public static "nxMin"(arg0: long): long
-public static "nxMin"(arg0: long, arg1: long): void
-public static "nyMin"(arg0: long, arg1: long): void
-public static "nyMin"(arg0: long): long
-public static "nxMax"(arg0: long): long
-public static "nxMax"(arg0: long, arg1: long): void
-public static "nyMax"(arg0: long): long
-public static "nyMax"(arg0: long, arg1: long): void
-public "xMin"(arg0: long): $FT_BBox
 public "xMin"(): long
-public "yMin"(): long
+public "xMin"(arg0: long): $FT_BBox
 public "yMin"(arg0: long): $FT_BBox
+public "yMin"(): long
 public "xMax"(): long
 public "xMax"(arg0: long): $FT_BBox
 public "yMax"(arg0: long): $FT_BBox
 public "yMax"(): long
-public "set"(arg0: $FT_BBox$$Type): $FT_BBox
+public static "nxMin"(arg0: long): long
+public static "nxMin"(arg0: long, arg1: long): void
+public static "nyMin"(arg0: long): long
+public static "nyMin"(arg0: long, arg1: long): void
+public static "nxMax"(arg0: long): long
+public static "nxMax"(arg0: long, arg1: long): void
+public static "nyMax"(arg0: long): long
+public static "nyMax"(arg0: long, arg1: long): void
 public "set"(arg0: long, arg1: long, arg2: long, arg3: long): $FT_BBox
-public static "create"(arg0: long): $FT_BBox
+public "set"(arg0: $FT_BBox$$Type): $FT_BBox
 public static "create"(): $FT_BBox
+public static "create"(arg0: long): $FT_BBox
 public static "create"(arg0: integer): $FT_BBox$Buffer
 public static "create"(arg0: long, arg1: integer): $FT_BBox$Buffer
+public static "calloc"(): $FT_BBox
+public static "calloc"(arg0: integer, arg1: $MemoryStack$$Type): $FT_BBox$Buffer
+public static "calloc"(arg0: $MemoryStack$$Type): $FT_BBox
+public static "calloc"(arg0: integer): $FT_BBox$Buffer
+public static "createSafe"(arg0: long, arg1: integer): $FT_BBox$Buffer
+public static "createSafe"(arg0: long): $FT_BBox
+public "sizeof"(): integer
+public static "malloc"(arg0: $MemoryStack$$Type): $FT_BBox
 public static "malloc"(arg0: integer): $FT_BBox$Buffer
 public static "malloc"(): $FT_BBox
 public static "malloc"(arg0: integer, arg1: $MemoryStack$$Type): $FT_BBox$Buffer
-public static "malloc"(arg0: $MemoryStack$$Type): $FT_BBox
-public static "calloc"(arg0: integer): $FT_BBox$Buffer
-public static "calloc"(arg0: integer, arg1: $MemoryStack$$Type): $FT_BBox$Buffer
-public static "calloc"(arg0: $MemoryStack$$Type): $FT_BBox
-public static "calloc"(): $FT_BBox
-public static "createSafe"(arg0: long): $FT_BBox
-public static "createSafe"(arg0: long, arg1: integer): $FT_BBox$Buffer
-public "sizeof"(): integer
 public "close"(): void
 public "free"(): void
 }
@@ -448,16 +448,18 @@ import {$FT_Size} from "org.lwjgl.util.freetype.FT_Size"
 import {$FT_BBox} from "org.lwjgl.util.freetype.FT_BBox"
 import {$FT_Generic} from "org.lwjgl.util.freetype.FT_Generic"
 import {$FT_Bitmap_Size$Buffer} from "org.lwjgl.util.freetype.FT_Bitmap_Size$Buffer"
-import {$FT_CharMap} from "org.lwjgl.util.freetype.FT_CharMap"
-import {$PointerBuffer} from "org.lwjgl.PointerBuffer"
 import {$FT_Face} from "org.lwjgl.util.freetype.FT_Face"
+import {$PointerBuffer} from "org.lwjgl.PointerBuffer"
 import {$ByteBuffer, $ByteBuffer$$Type} from "java.nio.ByteBuffer"
+import {$FT_CharMap} from "org.lwjgl.util.freetype.FT_CharMap"
 import {$FT_GlyphSlot} from "org.lwjgl.util.freetype.FT_GlyphSlot"
 
 export class $FT_Face$Buffer extends $StructBuffer<($FT_Face), ($FT_Face$Buffer)> {
 constructor(arg0: $ByteBuffer$$Type)
 constructor(arg0: long, arg1: integer)
 
+public "glyph"(): $FT_GlyphSlot
+public "bbox"(): $FT_BBox
 public "num_faces"(): long
 public "style_flags"(): long
 public "num_glyphs"(): long
@@ -479,8 +481,6 @@ public "underline_thickness"(): short
 public "face_index"(): long
 public "charmap"(): $FT_CharMap
 public "face_flags"(): long
-public "bbox"(): $FT_BBox
-public "glyph"(): $FT_GlyphSlot
 public "size"(): $FT_Size
 public "generic"(): $FT_Generic
 public "height"(): short
@@ -563,10 +563,10 @@ export type $FT_StreamDesc$Buffer$$Type = ($FT_StreamDesc$Buffer);
 export type $FT_StreamDesc$Buffer$$Original = $FT_StreamDesc$Buffer;}
 declare module "org.lwjgl.util.freetype.FT_Memory$Buffer" {
 import {$FT_Memory} from "org.lwjgl.util.freetype.FT_Memory"
-import {$StructBuffer} from "org.lwjgl.system.StructBuffer"
 import {$FT_Alloc_Func} from "org.lwjgl.util.freetype.FT_Alloc_Func"
-import {$FT_Free_Func} from "org.lwjgl.util.freetype.FT_Free_Func"
+import {$StructBuffer} from "org.lwjgl.system.StructBuffer"
 import {$FT_Realloc_FuncI$$Type} from "org.lwjgl.util.freetype.FT_Realloc_FuncI"
+import {$FT_Free_Func} from "org.lwjgl.util.freetype.FT_Free_Func"
 import {$FT_Alloc_FuncI$$Type} from "org.lwjgl.util.freetype.FT_Alloc_FuncI"
 import {$FT_Realloc_Func} from "org.lwjgl.util.freetype.FT_Realloc_Func"
 import {$NativeResource$$Interface} from "org.lwjgl.system.NativeResource"
@@ -622,10 +622,10 @@ constructor(arg0: $ByteBuffer$$Type)
 
 public "alloc"(): $FT_Alloc_Func
 public "alloc"(arg0: $FT_Alloc_FuncI$$Type): $FT_Memory
-public static "nuser"(arg0: long): long
-public static "nuser"(arg0: long, arg1: long): void
 public "free$"(): $FT_Free_Func
 public "free$"(arg0: $FT_Free_FuncI$$Type): $FT_Memory
+public static "nuser"(arg0: long): long
+public static "nuser"(arg0: long, arg1: long): void
 public static "nalloc"(arg0: long): $FT_Alloc_Func
 public static "nalloc"(arg0: long, arg1: $FT_Alloc_FuncI$$Type): void
 public static "nfree$"(arg0: long, arg1: $FT_Free_FuncI$$Type): void
@@ -640,19 +640,19 @@ public static "create"(arg0: integer): $FT_Memory$Buffer
 public static "create"(arg0: long, arg1: integer): $FT_Memory$Buffer
 public static "create"(arg0: long): $FT_Memory
 public static "create"(): $FT_Memory
-public static "malloc"(arg0: integer): $FT_Memory$Buffer
-public static "malloc"(): $FT_Memory
-public static "malloc"(arg0: $MemoryStack$$Type): $FT_Memory
-public static "malloc"(arg0: integer, arg1: $MemoryStack$$Type): $FT_Memory$Buffer
-public static "calloc"(arg0: integer): $FT_Memory$Buffer
 public static "calloc"(arg0: integer, arg1: $MemoryStack$$Type): $FT_Memory$Buffer
 public static "calloc"(): $FT_Memory
+public static "calloc"(arg0: integer): $FT_Memory$Buffer
 public static "calloc"(arg0: $MemoryStack$$Type): $FT_Memory
 public static "createSafe"(arg0: long, arg1: integer): $FT_Memory$Buffer
 public static "createSafe"(arg0: long): $FT_Memory
 public "sizeof"(): integer
-public "realloc"(): $FT_Realloc_Func
+public static "malloc"(arg0: integer): $FT_Memory$Buffer
+public static "malloc"(arg0: integer, arg1: $MemoryStack$$Type): $FT_Memory$Buffer
+public static "malloc"(arg0: $MemoryStack$$Type): $FT_Memory
+public static "malloc"(): $FT_Memory
 public "realloc"(arg0: $FT_Realloc_FuncI$$Type): $FT_Memory
+public "realloc"(): $FT_Realloc_Func
 public "close"(): void
 public "free"(): void
 }
@@ -668,11 +668,11 @@ export type $FT_Memory$$Original = $FT_Memory;}
 declare module "org.lwjgl.util.freetype.FT_Outline" {
 import {$MemoryStack$$Type} from "org.lwjgl.system.MemoryStack"
 import {$Struct} from "org.lwjgl.system.Struct"
-import {$FT_Vector$Buffer} from "org.lwjgl.util.freetype.FT_Vector$Buffer"
 import {$FT_Outline$Buffer} from "org.lwjgl.util.freetype.FT_Outline$Buffer"
+import {$FT_Vector$Buffer} from "org.lwjgl.util.freetype.FT_Vector$Buffer"
 import {$NativeResource$$Interface} from "org.lwjgl.system.NativeResource"
-import {$ShortBuffer} from "java.nio.ShortBuffer"
 import {$ByteBuffer, $ByteBuffer$$Type} from "java.nio.ByteBuffer"
+import {$ShortBuffer} from "java.nio.ShortBuffer"
 
 export class $FT_Outline extends $Struct<($FT_Outline)> implements $NativeResource$$Interface {
 static readonly "CONTOURS": integer
@@ -686,31 +686,31 @@ static readonly "TAGS": integer
 
 constructor(arg0: $ByteBuffer$$Type)
 
-public "tags"(): $ByteBuffer
 public static "npoints"(arg0: long): $FT_Vector$Buffer
+public "n_contours"(): short
 public "n_points"(): short
 public "contours"(): $ShortBuffer
 public static "nn_contours"(arg0: long): short
 public static "nn_points"(arg0: long): short
 public static "ntags"(arg0: long): $ByteBuffer
 public static "ncontours"(arg0: long): $ShortBuffer
-public "n_contours"(): short
+public "tags"(): $ByteBuffer
 public "flags"(): integer
-public static "create"(): $FT_Outline
-public static "create"(arg0: integer): $FT_Outline$Buffer
 public static "create"(arg0: long, arg1: integer): $FT_Outline$Buffer
+public static "create"(arg0: integer): $FT_Outline$Buffer
+public static "create"(): $FT_Outline
 public static "create"(arg0: long): $FT_Outline
-public static "malloc"(): $FT_Outline
+public static "calloc"(arg0: $MemoryStack$$Type): $FT_Outline
+public static "calloc"(arg0: integer): $FT_Outline$Buffer
+public static "calloc"(arg0: integer, arg1: $MemoryStack$$Type): $FT_Outline$Buffer
+public static "calloc"(): $FT_Outline
+public static "createSafe"(arg0: long): $FT_Outline
+public static "createSafe"(arg0: long, arg1: integer): $FT_Outline$Buffer
+public "sizeof"(): integer
 public static "malloc"(arg0: integer, arg1: $MemoryStack$$Type): $FT_Outline$Buffer
 public static "malloc"(arg0: integer): $FT_Outline$Buffer
+public static "malloc"(): $FT_Outline
 public static "malloc"(arg0: $MemoryStack$$Type): $FT_Outline
-public static "calloc"(): $FT_Outline
-public static "calloc"(arg0: integer): $FT_Outline$Buffer
-public static "calloc"(arg0: $MemoryStack$$Type): $FT_Outline
-public static "calloc"(arg0: integer, arg1: $MemoryStack$$Type): $FT_Outline$Buffer
-public static "createSafe"(arg0: long, arg1: integer): $FT_Outline$Buffer
-public static "createSafe"(arg0: long): $FT_Outline
-public "sizeof"(): integer
 public static "nflags"(arg0: long): integer
 public "points"(): $FT_Vector$Buffer
 public "close"(): void
@@ -762,10 +762,10 @@ export class $FT_Bitmap$Buffer extends $StructBuffer<($FT_Bitmap), ($FT_Bitmap$B
 constructor(arg0: $ByteBuffer$$Type)
 constructor(arg0: long, arg1: integer)
 
+public "rows"(): integer
 public "num_grays"(): short
 public "palette_mode"(): byte
 public "buffer"(arg0: integer): $ByteBuffer
-public "rows"(): integer
 public "width"(): integer
 public "palette"(): long
 public "pitch"(): integer
@@ -828,10 +828,6 @@ static readonly "DESCENDER": integer
 
 constructor(arg0: $ByteBuffer$$Type)
 
-public "ascender"(): long
-public "descender"(): long
-public static "nascender"(arg0: long): long
-public static "ndescender"(arg0: long): long
 public "x_scale"(): long
 public "y_scale"(): long
 public "x_ppem"(): short
@@ -842,6 +838,10 @@ public static "ny_ppem"(arg0: long): short
 public static "nx_scale"(arg0: long): long
 public static "ny_scale"(arg0: long): long
 public static "nmax_advance"(arg0: long): long
+public "ascender"(): long
+public "descender"(): long
+public static "nascender"(arg0: long): long
+public static "ndescender"(arg0: long): long
 public static "create"(arg0: long): $FT_Size_Metrics
 public static "create"(arg0: long, arg1: integer): $FT_Size_Metrics$Buffer
 public "height"(): long
@@ -864,8 +864,8 @@ import {$FT_Glyph_Metrics} from "org.lwjgl.util.freetype.FT_Glyph_Metrics"
 import {$Struct} from "org.lwjgl.system.Struct"
 import {$FT_Generic} from "org.lwjgl.util.freetype.FT_Generic"
 import {$FT_Vector} from "org.lwjgl.util.freetype.FT_Vector"
-import {$FT_Outline} from "org.lwjgl.util.freetype.FT_Outline"
 import {$FT_Face} from "org.lwjgl.util.freetype.FT_Face"
+import {$FT_Outline} from "org.lwjgl.util.freetype.FT_Outline"
 import {$ByteBuffer, $ByteBuffer$$Type} from "java.nio.ByteBuffer"
 import {$FT_GlyphSlot$Buffer} from "org.lwjgl.util.freetype.FT_GlyphSlot$Buffer"
 import {$FT_Bitmap} from "org.lwjgl.util.freetype.FT_Bitmap"
@@ -898,14 +898,18 @@ static readonly "FACE": integer
 
 constructor(arg0: $ByteBuffer$$Type)
 
-public "bitmap_left"(): integer
-public "bitmap_top"(): integer
-public static "ngeneric"(arg0: long): $FT_Generic
-public static "ninternal"(arg0: long): long
-public static "nnext"(arg0: long): $FT_GlyphSlot
 public "face"(): $FT_Face
-public "bitmap"(): $FT_Bitmap
 public "glyph_index"(): integer
+public "bitmap"(): $FT_Bitmap
+public "linearHoriAdvance"(): long
+public "linearVertAdvance"(): long
+public "lsb_delta"(): long
+public "rsb_delta"(): long
+public static "nlibrary"(arg0: long): long
+public static "nface"(arg0: long): $FT_Face
+public static "nnext"(arg0: long): $FT_GlyphSlot
+public static "nglyph_index"(arg0: long): integer
+public static "nmetrics"(arg0: long): $FT_Glyph_Metrics
 public static "nlinearHoriAdvance"(arg0: long): long
 public static "nlinearVertAdvance"(arg0: long): long
 public static "nadvance"(arg0: long): $FT_Vector
@@ -921,26 +925,22 @@ public static "ncontrol_len"(arg0: long): long
 public static "nlsb_delta"(arg0: long): long
 public static "nrsb_delta"(arg0: long): long
 public static "nother"(arg0: long): long
-public "linearHoriAdvance"(): long
-public "linearVertAdvance"(): long
-public "lsb_delta"(): long
-public "rsb_delta"(): long
-public static "nlibrary"(arg0: long): long
-public static "nface"(arg0: long): $FT_Face
-public static "nglyph_index"(arg0: long): integer
-public static "nmetrics"(arg0: long): $FT_Glyph_Metrics
+public "metrics"(): $FT_Glyph_Metrics
+public "bitmap_left"(): integer
+public "bitmap_top"(): integer
+public static "ngeneric"(arg0: long): $FT_Generic
+public static "ninternal"(arg0: long): long
 public "next"(): $FT_GlyphSlot
 public "format"(): integer
 public static "create"(arg0: long, arg1: integer): $FT_GlyphSlot$Buffer
 public static "create"(arg0: long): $FT_GlyphSlot
 public "generic"(): $FT_Generic
 public "advance"(): $FT_Vector
-public "metrics"(): $FT_Glyph_Metrics
 public "library"(): long
+public "outline"(): $FT_Outline
 public static "createSafe"(arg0: long): $FT_GlyphSlot
 public static "createSafe"(arg0: long, arg1: integer): $FT_GlyphSlot$Buffer
 public "sizeof"(): integer
-public "outline"(): $FT_Outline
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -1029,6 +1029,7 @@ static readonly "NUM_GRAYS": integer
 
 constructor(arg0: $ByteBuffer$$Type)
 
+public "rows"(): integer
 public "num_grays"(): short
 public "palette_mode"(): byte
 public static "nrows"(arg0: long): integer
@@ -1039,24 +1040,23 @@ public static "npixel_mode"(arg0: long): byte
 public static "npalette_mode"(arg0: long): byte
 public static "npalette"(arg0: long): long
 public "buffer"(arg0: integer): $ByteBuffer
-public static "create"(arg0: long): $FT_Bitmap
 public static "create"(arg0: integer): $FT_Bitmap$Buffer
 public static "create"(arg0: long, arg1: integer): $FT_Bitmap$Buffer
+public static "create"(arg0: long): $FT_Bitmap
 public static "create"(): $FT_Bitmap
-public "rows"(): integer
 public "width"(): integer
-public static "malloc"(arg0: integer, arg1: $MemoryStack$$Type): $FT_Bitmap$Buffer
-public static "malloc"(arg0: $MemoryStack$$Type): $FT_Bitmap
-public static "malloc"(arg0: integer): $FT_Bitmap$Buffer
-public static "malloc"(): $FT_Bitmap
-public static "calloc"(): $FT_Bitmap
-public static "calloc"(arg0: integer): $FT_Bitmap$Buffer
 public static "calloc"(arg0: integer, arg1: $MemoryStack$$Type): $FT_Bitmap$Buffer
+public static "calloc"(arg0: integer): $FT_Bitmap$Buffer
 public static "calloc"(arg0: $MemoryStack$$Type): $FT_Bitmap
-public static "createSafe"(arg0: long, arg1: integer): $FT_Bitmap$Buffer
+public static "calloc"(): $FT_Bitmap
 public static "createSafe"(arg0: long): $FT_Bitmap
+public static "createSafe"(arg0: long, arg1: integer): $FT_Bitmap$Buffer
 public "sizeof"(): integer
 public static "nwidth"(arg0: long): integer
+public static "malloc"(arg0: integer): $FT_Bitmap$Buffer
+public static "malloc"(arg0: integer, arg1: $MemoryStack$$Type): $FT_Bitmap$Buffer
+public static "malloc"(): $FT_Bitmap
+public static "malloc"(arg0: $MemoryStack$$Type): $FT_Bitmap
 public "palette"(): long
 public "pitch"(): integer
 public "pixel_mode"(): byte
@@ -1097,8 +1097,8 @@ export type $FT_Alloc_Func$$Type = ($FT_Alloc_Func);
 export type $FT_Alloc_Func$$Original = $FT_Alloc_Func;}
 declare module "org.lwjgl.util.freetype.FT_Stream" {
 import {$FT_StreamDesc, $FT_StreamDesc$$Type} from "org.lwjgl.util.freetype.FT_StreamDesc"
-import {$FT_Stream_IoFunc} from "org.lwjgl.util.freetype.FT_Stream_IoFunc"
 import {$FT_Stream_CloseFuncI$$Type} from "org.lwjgl.util.freetype.FT_Stream_CloseFuncI"
+import {$FT_Stream_IoFunc} from "org.lwjgl.util.freetype.FT_Stream_IoFunc"
 import {$NativeResource$$Interface} from "org.lwjgl.system.NativeResource"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$MemoryStack$$Type} from "org.lwjgl.system.MemoryStack"
@@ -1125,28 +1125,28 @@ static readonly "CURSOR": integer
 
 constructor(arg0: $ByteBuffer$$Type)
 
-public static "nmemory"(arg0: long): $FT_Memory
-public static "nmemory"(arg0: long, arg1: $FT_Memory$$Type): void
+public static "ncursor"(arg0: long, arg1: integer): $ByteBuffer
+public static "ncursor"(arg0: long, arg1: $ByteBuffer$$Type): void
+public static "nlimit$"(arg0: long, arg1: integer): $ByteBuffer
+public static "nlimit$"(arg0: long, arg1: $ByteBuffer$$Type): void
 public "close$"(arg0: $FT_Stream_CloseFuncI$$Type): $FT_Stream
 public "close$"(): $FT_Stream_CloseFunc
-public static "nbase"(arg0: long): $ByteBuffer
 public static "nbase"(arg0: long, arg1: $ByteBuffer$$Type): void
+public static "nbase"(arg0: long): $ByteBuffer
 public static "npos"(arg0: long, arg1: long): void
 public static "npos"(arg0: long): long
 public static "ndescriptor"(arg0: long): $FT_StreamDesc
 public static "ndescriptor"(arg0: long, arg1: $FT_StreamDesc$$Type): void
-public static "npathname"(arg0: long): $FT_StreamDesc
 public static "npathname"(arg0: long, arg1: $FT_StreamDesc$$Type): void
-public static "nclose$"(arg0: long): $FT_Stream_CloseFunc
+public static "npathname"(arg0: long): $FT_StreamDesc
 public static "nclose$"(arg0: long, arg1: $FT_Stream_CloseFuncI$$Type): void
-public static "ncursor"(arg0: long, arg1: integer): $ByteBuffer
-public static "ncursor"(arg0: long, arg1: $ByteBuffer$$Type): void
-public static "nlimit$"(arg0: long, arg1: $ByteBuffer$$Type): void
-public static "nlimit$"(arg0: long, arg1: integer): $ByteBuffer
+public static "nclose$"(arg0: long): $FT_Stream_CloseFunc
 public static "nsize"(arg0: long): long
 public static "nsize"(arg0: long, arg1: long): void
-public "base"(arg0: $ByteBuffer$$Type): $FT_Stream
+public static "nmemory"(arg0: long, arg1: $FT_Memory$$Type): void
+public static "nmemory"(arg0: long): $FT_Memory
 public "base"(): $ByteBuffer
+public "base"(arg0: $ByteBuffer$$Type): $FT_Stream
 public "size"(): long
 public "size"(arg0: long): $FT_Stream
 public "set"(arg0: $FT_Stream$$Type): $FT_Stream
@@ -1164,20 +1164,20 @@ public "pos"(arg0: long): $FT_Stream
 public "pos"(): long
 public static "nread"(arg0: long): $FT_Stream_IoFunc
 public static "nread"(arg0: long, arg1: $FT_Stream_IoFuncI$$Type): void
-public "pathname"(): $FT_StreamDesc
-public "pathname"(arg0: $FT_StreamDesc$$Type): $FT_Stream
 public "pathname"(arg0: $Consumer$$Type<($FT_StreamDesc)>): $FT_Stream
-public static "malloc"(): $FT_Stream
-public static "malloc"(arg0: integer, arg1: $MemoryStack$$Type): $FT_Stream$Buffer
-public static "malloc"(arg0: integer): $FT_Stream$Buffer
-public static "malloc"(arg0: $MemoryStack$$Type): $FT_Stream
-public static "calloc"(): $FT_Stream
+public "pathname"(arg0: $FT_StreamDesc$$Type): $FT_Stream
+public "pathname"(): $FT_StreamDesc
 public static "calloc"(arg0: integer): $FT_Stream$Buffer
-public static "calloc"(arg0: $MemoryStack$$Type): $FT_Stream
+public static "calloc"(): $FT_Stream
 public static "calloc"(arg0: integer, arg1: $MemoryStack$$Type): $FT_Stream$Buffer
+public static "calloc"(arg0: $MemoryStack$$Type): $FT_Stream
 public static "createSafe"(arg0: long): $FT_Stream
 public static "createSafe"(arg0: long, arg1: integer): $FT_Stream$Buffer
 public "sizeof"(): integer
+public static "malloc"(): $FT_Stream
+public static "malloc"(arg0: integer): $FT_Stream$Buffer
+public static "malloc"(arg0: integer, arg1: $MemoryStack$$Type): $FT_Stream$Buffer
+public static "malloc"(arg0: $MemoryStack$$Type): $FT_Stream
 public "close"(): void
 public "free"(): void
 }
@@ -1204,8 +1204,8 @@ static readonly "SIZEOF": integer
 
 constructor(arg0: $ByteBuffer$$Type)
 
-public static "nnext"(arg0: long): $FT_ListNode
 public static "nprev"(arg0: long): $FT_ListNode
+public static "nnext"(arg0: long): $FT_ListNode
 public "next"(): $FT_ListNode
 public "data"(arg0: integer): $ByteBuffer
 public "prev"(): $FT_ListNode
@@ -1228,8 +1228,8 @@ export type $FT_ListNode$$Original = $FT_ListNode;}
 declare module "org.lwjgl.util.freetype.FT_Size" {
 import {$MemoryStack$$Type} from "org.lwjgl.system.MemoryStack"
 import {$Struct} from "org.lwjgl.system.Struct"
-import {$FT_Generic, $FT_Generic$$Type} from "org.lwjgl.util.freetype.FT_Generic"
 import {$FT_Size_Metrics, $FT_Size_Metrics$$Type} from "org.lwjgl.util.freetype.FT_Size_Metrics"
+import {$FT_Generic, $FT_Generic$$Type} from "org.lwjgl.util.freetype.FT_Generic"
 import {$FT_Size_Internal, $FT_Size_Internal$$Type} from "org.lwjgl.util.freetype.FT_Size_Internal"
 import {$FT_Size$Buffer} from "org.lwjgl.util.freetype.FT_Size$Buffer"
 import {$NativeResource$$Interface} from "org.lwjgl.system.NativeResource"
@@ -1247,39 +1247,39 @@ static readonly "FACE": integer
 
 constructor(arg0: $ByteBuffer$$Type)
 
-public static "ngeneric"(arg0: long): $FT_Generic
-public static "ngeneric"(arg0: long, arg1: $FT_Generic$$Type): void
-public static "ninternal"(arg0: long, arg1: $FT_Size_Internal$$Type): void
-public static "ninternal"(arg0: long): $FT_Size_Internal
 public "face"(): $FT_Face
 public "face"(arg0: $FT_Face$$Type): $FT_Size
 public static "nface"(arg0: long): $FT_Face
 public static "nface"(arg0: long, arg1: $FT_Face$$Type): void
-public static "nmetrics"(arg0: long, arg1: $FT_Size_Metrics$$Type): void
 public static "nmetrics"(arg0: long): $FT_Size_Metrics
+public static "nmetrics"(arg0: long, arg1: $FT_Size_Metrics$$Type): void
+public "metrics"(arg0: $FT_Size_Metrics$$Type): $FT_Size
+public "metrics"(): $FT_Size_Metrics
+public static "ngeneric"(arg0: long, arg1: $FT_Generic$$Type): void
+public static "ngeneric"(arg0: long): $FT_Generic
+public static "ninternal"(arg0: long): $FT_Size_Internal
+public static "ninternal"(arg0: long, arg1: $FT_Size_Internal$$Type): void
 public static "validate"(arg0: long): void
 public "set"(arg0: $FT_Size$$Type): $FT_Size
 public "set"(arg0: $FT_Face$$Type, arg1: $FT_Generic$$Type, arg2: $FT_Size_Metrics$$Type): $FT_Size
 public static "create"(arg0: long, arg1: integer): $FT_Size$Buffer
-public static "create"(arg0: integer): $FT_Size$Buffer
-public static "create"(arg0: long): $FT_Size
 public static "create"(): $FT_Size
-public "generic"(): $FT_Generic
-public "generic"(arg0: $Consumer$$Type<($FT_Generic)>): $FT_Size
+public static "create"(arg0: long): $FT_Size
+public static "create"(arg0: integer): $FT_Size$Buffer
 public "generic"(arg0: $FT_Generic$$Type): $FT_Size
-public "metrics"(arg0: $FT_Size_Metrics$$Type): $FT_Size
-public "metrics"(): $FT_Size_Metrics
-public static "malloc"(): $FT_Size
-public static "malloc"(arg0: $MemoryStack$$Type): $FT_Size
-public static "malloc"(arg0: integer): $FT_Size$Buffer
-public static "malloc"(arg0: integer, arg1: $MemoryStack$$Type): $FT_Size$Buffer
-public static "calloc"(): $FT_Size
+public "generic"(arg0: $Consumer$$Type<($FT_Generic)>): $FT_Size
+public "generic"(): $FT_Generic
 public static "calloc"(arg0: integer): $FT_Size$Buffer
-public static "calloc"(arg0: $MemoryStack$$Type): $FT_Size
+public static "calloc"(): $FT_Size
 public static "calloc"(arg0: integer, arg1: $MemoryStack$$Type): $FT_Size$Buffer
+public static "calloc"(arg0: $MemoryStack$$Type): $FT_Size
 public static "createSafe"(arg0: long, arg1: integer): $FT_Size$Buffer
 public static "createSafe"(arg0: long): $FT_Size
 public "sizeof"(): integer
+public static "malloc"(): $FT_Size
+public static "malloc"(arg0: integer): $FT_Size$Buffer
+public static "malloc"(arg0: integer, arg1: $MemoryStack$$Type): $FT_Size$Buffer
+public static "malloc"(arg0: $MemoryStack$$Type): $FT_Size
 public "close"(): void
 public "free"(): void
 }
@@ -1345,8 +1345,8 @@ import {$FT_List} from "org.lwjgl.util.freetype.FT_List"
 import {$FT_Memory} from "org.lwjgl.util.freetype.FT_Memory"
 import {$FT_Size} from "org.lwjgl.util.freetype.FT_Size"
 import {$Struct} from "org.lwjgl.system.Struct"
-import {$FT_Face$Buffer} from "org.lwjgl.util.freetype.FT_Face$Buffer"
 import {$FT_Generic} from "org.lwjgl.util.freetype.FT_Generic"
+import {$FT_Face$Buffer} from "org.lwjgl.util.freetype.FT_Face$Buffer"
 import {$FT_Bitmap_Size$Buffer} from "org.lwjgl.util.freetype.FT_Bitmap_Size$Buffer"
 import {$ByteBuffer, $ByteBuffer$$Type} from "java.nio.ByteBuffer"
 import {$FT_CharMap} from "org.lwjgl.util.freetype.FT_CharMap"
@@ -1389,6 +1389,9 @@ static readonly "CHARMAP": integer
 
 constructor(arg0: $ByteBuffer$$Type)
 
+public "glyph"(): $FT_GlyphSlot
+public "bbox"(): $FT_BBox
+public static "nsize"(arg0: long): $FT_Size
 public "num_faces"(): long
 public "style_flags"(): long
 public "num_glyphs"(): long
@@ -1409,9 +1412,6 @@ public "underline_position"(): short
 public "underline_thickness"(): short
 public static "nnum_faces"(arg0: long): long
 public static "nface_index"(arg0: long): long
-public "face_index"(): long
-public "charmap"(): $FT_CharMap
-public "face_flags"(): long
 public static "nface_flags"(arg0: long): long
 public static "nstyle_flags"(arg0: long): long
 public static "nnum_glyphs"(arg0: long): long
@@ -1441,9 +1441,9 @@ public static "nsizes_list"(arg0: long): $FT_List
 public static "nautohint"(arg0: long): $FT_Generic
 public static "nextensions"(arg0: long): long
 public static "ninternal"(arg0: long): long
-public "bbox"(): $FT_BBox
-public static "nsize"(arg0: long): $FT_Size
-public "glyph"(): $FT_GlyphSlot
+public "face_index"(): long
+public "charmap"(): $FT_CharMap
+public "face_flags"(): long
 public "size"(): $FT_Size
 public static "create"(arg0: long): $FT_Face
 public static "create"(arg0: long, arg1: integer): $FT_Face$Buffer
@@ -1491,8 +1491,8 @@ export type $FT_Stream_CloseFuncI$$Type = ((arg0: long) => void);
  */
 export type $FT_Stream_CloseFuncI$$Original = $FT_Stream_CloseFuncI;}
 declare module "org.lwjgl.util.freetype.FT_Glyph_Metrics$Buffer" {
-import {$StructBuffer} from "org.lwjgl.system.StructBuffer"
 import {$FT_Glyph_Metrics} from "org.lwjgl.util.freetype.FT_Glyph_Metrics"
+import {$StructBuffer} from "org.lwjgl.system.StructBuffer"
 import {$ByteBuffer$$Type} from "java.nio.ByteBuffer"
 
 export class $FT_Glyph_Metrics$Buffer extends $StructBuffer<($FT_Glyph_Metrics), ($FT_Glyph_Metrics$Buffer)> {
@@ -1545,8 +1545,8 @@ export type $FT_Vector$Buffer$$Type = ($FT_Vector$Buffer);
 export type $FT_Vector$Buffer$$Original = $FT_Vector$Buffer;}
 declare module "org.lwjgl.util.freetype.FT_Generic$Buffer" {
 import {$StructBuffer} from "org.lwjgl.system.StructBuffer"
-import {$FT_Generic_FinalizerI$$Type} from "org.lwjgl.util.freetype.FT_Generic_FinalizerI"
 import {$FT_Generic} from "org.lwjgl.util.freetype.FT_Generic"
+import {$FT_Generic_FinalizerI$$Type} from "org.lwjgl.util.freetype.FT_Generic_FinalizerI"
 import {$FT_Generic_Finalizer} from "org.lwjgl.util.freetype.FT_Generic_Finalizer"
 import {$NativeResource$$Interface} from "org.lwjgl.system.NativeResource"
 import {$ByteBuffer$$Type} from "java.nio.ByteBuffer"
@@ -1588,11 +1588,11 @@ static readonly "FACE": integer
 constructor(arg0: $ByteBuffer$$Type)
 
 public "face"(): $FT_Face
-public "platform_id"(): short
-public "encoding_id"(): short
 public static "nencoding"(arg0: long): integer
 public static "nplatform_id"(arg0: long): short
 public static "nencoding_id"(arg0: long): short
+public "platform_id"(): short
+public "encoding_id"(): short
 public static "nface"(arg0: long): $FT_Face
 public "encoding"(): integer
 public static "create"(arg0: long): $FT_CharMap
@@ -1667,17 +1667,17 @@ public static "create"(arg0: integer): $FT_Generic$Buffer
 public static "create"(arg0: long, arg1: integer): $FT_Generic$Buffer
 public static "create"(arg0: long): $FT_Generic
 public static "create"(): $FT_Generic
-public static "malloc"(arg0: $MemoryStack$$Type): $FT_Generic
-public static "malloc"(arg0: integer, arg1: $MemoryStack$$Type): $FT_Generic$Buffer
-public static "malloc"(arg0: integer): $FT_Generic$Buffer
-public static "malloc"(): $FT_Generic
+public static "calloc"(arg0: integer, arg1: $MemoryStack$$Type): $FT_Generic$Buffer
+public static "calloc"(arg0: $MemoryStack$$Type): $FT_Generic
 public static "calloc"(): $FT_Generic
 public static "calloc"(arg0: integer): $FT_Generic$Buffer
-public static "calloc"(arg0: $MemoryStack$$Type): $FT_Generic
-public static "calloc"(arg0: integer, arg1: $MemoryStack$$Type): $FT_Generic$Buffer
 public static "createSafe"(arg0: long, arg1: integer): $FT_Generic$Buffer
 public static "createSafe"(arg0: long): $FT_Generic
 public "sizeof"(): integer
+public static "malloc"(arg0: integer): $FT_Generic$Buffer
+public static "malloc"(): $FT_Generic
+public static "malloc"(arg0: $MemoryStack$$Type): $FT_Generic
+public static "malloc"(arg0: integer, arg1: $MemoryStack$$Type): $FT_Generic$Buffer
 public static "ndata"(arg0: long, arg1: long): void
 public static "ndata"(arg0: long): long
 public "close"(): void
@@ -1753,18 +1753,18 @@ declare module "org.lwjgl.util.freetype.FT_Outline$Buffer" {
 import {$StructBuffer} from "org.lwjgl.system.StructBuffer"
 import {$FT_Vector$Buffer} from "org.lwjgl.util.freetype.FT_Vector$Buffer"
 import {$NativeResource$$Interface} from "org.lwjgl.system.NativeResource"
-import {$ShortBuffer} from "java.nio.ShortBuffer"
 import {$FT_Outline} from "org.lwjgl.util.freetype.FT_Outline"
 import {$ByteBuffer, $ByteBuffer$$Type} from "java.nio.ByteBuffer"
+import {$ShortBuffer} from "java.nio.ShortBuffer"
 
 export class $FT_Outline$Buffer extends $StructBuffer<($FT_Outline), ($FT_Outline$Buffer)> implements $NativeResource$$Interface {
 constructor(arg0: $ByteBuffer$$Type)
 constructor(arg0: long, arg1: integer)
 
-public "tags"(): $ByteBuffer
+public "n_contours"(): short
 public "n_points"(): short
 public "contours"(): $ShortBuffer
-public "n_contours"(): short
+public "tags"(): $ByteBuffer
 public "flags"(): integer
 public "points"(): $FT_Vector$Buffer
 public "close"(): void
@@ -1805,8 +1805,8 @@ export type $FT_Free_Func$$Original = $FT_Free_Func;}
 declare module "org.lwjgl.util.freetype.FT_Stream$Buffer" {
 import {$FT_StreamDesc, $FT_StreamDesc$$Type} from "org.lwjgl.util.freetype.FT_StreamDesc"
 import {$StructBuffer} from "org.lwjgl.system.StructBuffer"
-import {$FT_Stream_IoFunc} from "org.lwjgl.util.freetype.FT_Stream_IoFunc"
 import {$FT_Stream_CloseFuncI$$Type} from "org.lwjgl.util.freetype.FT_Stream_CloseFuncI"
+import {$FT_Stream_IoFunc} from "org.lwjgl.util.freetype.FT_Stream_IoFunc"
 import {$FT_Stream_CloseFunc} from "org.lwjgl.util.freetype.FT_Stream_CloseFunc"
 import {$NativeResource$$Interface} from "org.lwjgl.system.NativeResource"
 import {$ByteBuffer, $ByteBuffer$$Type} from "java.nio.ByteBuffer"

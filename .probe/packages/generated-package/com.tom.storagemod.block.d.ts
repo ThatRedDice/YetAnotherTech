@@ -3,8 +3,8 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
 export class $AbstractStorageTerminalBlock$TerminalPos extends $Enum<($AbstractStorageTerminalBlock$TerminalPos)> implements $StringRepresentable$$Interface {
@@ -16,11 +16,11 @@ public static "values"(): ($AbstractStorageTerminalBlock$TerminalPos)[]
 public static "valueOf"(arg0: StringJS): $AbstractStorageTerminalBlock$TerminalPos
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
 }
@@ -52,8 +52,8 @@ import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Objec
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$RenderShape} from "net.minecraft.world.level.block.RenderShape"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
@@ -119,8 +119,8 @@ import {$List, $List$$Type} from "java.util.List"
 import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$NeoForgeBlock$$Interface} from "com.tom.storagemod.block.NeoForgeBlock"
-import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
+import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
 import {$SimpleWaterloggedBlock$$Interface} from "net.minecraft.world.level.block.SimpleWaterloggedBlock"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
@@ -130,19 +130,19 @@ import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Map} from "java.util.Map"
-import {$IInventoryCable$$Interface} from "com.tom.storagemod.block.IInventoryCable"
 import {$BlockFace} from "com.tom.storagemod.util.BlockFace"
+import {$IInventoryCable$$Interface} from "com.tom.storagemod.block.IInventoryCable"
 import {$Block$$Type} from "net.minecraft.world.level.block.Block"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
-import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
+import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 
@@ -190,11 +190,11 @@ public "getFluidState"(arg0: $BlockState$$Type): $FluidState
 public "neighborChanged"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Block$$Type, arg4: $BlockPos$$Type, arg5: boolean): void
 public "onNeighborChange"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $BlockPos$$Type): void
 public "getPickupSound"(): $Optional<($SoundEvent)>
-public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "canPlaceLiquid"(arg0: $Player$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $Fluid$$Type): boolean
+public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "pickupBlock"(arg0: $Player$$Type, arg1: $LevelAccessor$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): $ItemStack
-public "canConnectFrom"(arg0: $BlockState$$Type, arg1: $Direction$$Type): boolean
 public static "canConnect"(arg0: $BlockState$$Type, arg1: $Direction$$Type): boolean
+public "canConnectFrom"(arg0: $BlockState$$Type, arg1: $Direction$$Type): boolean
 public "getPickupSound"(arg0: $BlockState$$Type): $Optional<($SoundEvent)>
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "functionalNode"(): boolean
@@ -217,8 +217,8 @@ import {$AbstractInventoryHopperBlock} from "com.tom.storagemod.block.AbstractIn
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -279,12 +279,12 @@ import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
-import {$IInventoryCable$$Interface} from "com.tom.storagemod.block.IInventoryCable"
 import {$BlockFace} from "com.tom.storagemod.util.BlockFace"
 import {$RenderShape} from "net.minecraft.world.level.block.RenderShape"
+import {$IInventoryCable$$Interface} from "com.tom.storagemod.block.IInventoryCable"
 import {$Block$$Type} from "net.minecraft.world.level.block.Block"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
@@ -319,9 +319,9 @@ public "destroy"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $Block
 public "getRenderShape"(arg0: $BlockState$$Type): $RenderShape
 public "neighborChanged"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Block$$Type, arg4: $BlockPos$$Type, arg5: boolean): void
 public "onNeighborChange"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $BlockPos$$Type): void
+public static "canConnect"(arg0: $BlockState$$Type, arg1: $Direction$$Type): boolean
 public "canConnectFrom"(arg0: $BlockState$$Type, arg1: $Direction$$Type): boolean
 public "isFunctionalNode"(): boolean
-public static "canConnect"(arg0: $BlockState$$Type, arg1: $Direction$$Type): boolean
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "functionalNode"(): boolean
 }
@@ -352,12 +352,12 @@ import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
-import {$IInventoryCable$$Interface} from "com.tom.storagemod.block.IInventoryCable"
 import {$BlockFace} from "com.tom.storagemod.util.BlockFace"
 import {$RenderShape} from "net.minecraft.world.level.block.RenderShape"
+import {$IInventoryCable$$Interface} from "com.tom.storagemod.block.IInventoryCable"
 import {$Block$$Type} from "net.minecraft.world.level.block.Block"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
@@ -391,10 +391,10 @@ public "destroy"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $Block
 public "getRenderShape"(arg0: $BlockState$$Type): $RenderShape
 public "neighborChanged"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Block$$Type, arg4: $BlockPos$$Type, arg5: boolean): void
 public "onNeighborChange"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $BlockPos$$Type): void
+public static "canConnect"(arg0: $BlockState$$Type, arg1: $Direction$$Type): boolean
 public "nextScan"(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockPos$$Type): $List<($BlockFace)>
 public "canConnectFrom"(arg0: $BlockState$$Type, arg1: $Direction$$Type): boolean
 public "isFunctionalNode"(): boolean
-public static "canConnect"(arg0: $BlockState$$Type, arg1: $Direction$$Type): boolean
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "functionalNode"(): boolean
 }
@@ -455,13 +455,13 @@ import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$AbstractStorageTerminalBlock} from "com.tom.storagemod.block.AbstractStorageTerminalBlock"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$AbstractStorageTerminalBlock$TerminalPos} from "com.tom.storagemod.block.AbstractStorageTerminalBlock$TerminalPos"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
@@ -521,18 +521,18 @@ import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
-import {$IInventoryCable$$Interface} from "com.tom.storagemod.block.IInventoryCable"
 import {$BlockFace} from "com.tom.storagemod.util.BlockFace"
 import {$RenderShape} from "net.minecraft.world.level.block.RenderShape"
+import {$IInventoryCable$$Interface} from "com.tom.storagemod.block.IInventoryCable"
 import {$Block$$Type} from "net.minecraft.world.level.block.Block"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
@@ -588,8 +588,8 @@ public "mirror"(arg0: $BlockState$$Type, arg1: $Mirror$$Type): $BlockState
 public "getRenderShape"(arg0: $BlockState$$Type): $RenderShape
 public "neighborChanged"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Block$$Type, arg4: $BlockPos$$Type, arg5: boolean): void
 public "onNeighborChange"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $BlockPos$$Type): void
-public "isFunctionalNode"(): boolean
 public static "canConnect"(arg0: $BlockState$$Type, arg1: $Direction$$Type): boolean
+public "isFunctionalNode"(): boolean
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "functionalNode"(): boolean
 }
@@ -622,13 +622,13 @@ import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
-import {$IInventoryCable$$Interface} from "com.tom.storagemod.block.IInventoryCable"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$BlockFace} from "com.tom.storagemod.util.BlockFace"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$RenderShape} from "net.minecraft.world.level.block.RenderShape"
+import {$IInventoryCable$$Interface} from "com.tom.storagemod.block.IInventoryCable"
 import {$Block$$Type} from "net.minecraft.world.level.block.Block"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
@@ -673,9 +673,9 @@ public "paint"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Typ
 public "getHighlightShape"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): $VoxelShape
 public "withConnectionProperties"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type): $BlockState
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
+public "propagatesSkylightDown"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): boolean
 public "updateShape"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $BlockState$$Type, arg3: $LevelAccessor$$Type, arg4: $BlockPos$$Type, arg5: $BlockPos$$Type): $BlockState
 public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
-public "propagatesSkylightDown"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): boolean
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
 public "destroy"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type): void
 public "rotate"(arg0: $BlockState$$Type, arg1: $Rotation$$Type): $BlockState
@@ -683,8 +683,8 @@ public "mirror"(arg0: $BlockState$$Type, arg1: $Mirror$$Type): $BlockState
 public "getRenderShape"(arg0: $BlockState$$Type): $RenderShape
 public "neighborChanged"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Block$$Type, arg4: $BlockPos$$Type, arg5: boolean): void
 public "onNeighborChange"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $BlockPos$$Type): void
-public "canConnectFrom"(arg0: $BlockState$$Type, arg1: $Direction$$Type): boolean
 public static "canConnect"(arg0: $BlockState$$Type, arg1: $Direction$$Type): boolean
+public "canConnectFrom"(arg0: $BlockState$$Type, arg1: $Direction$$Type): boolean
 public "tryScrape"(arg0: $ItemStack$$Type, arg1: $BlockState$$Type, arg2: $Level$$Type, arg3: $BlockPos$$Type, arg4: $Player$$Type, arg5: $InteractionHand$$Type): boolean
 public static "readBlockState"(arg0: $Level$$Type, arg1: $CompoundTag$$Type): $BlockState
 public static "playerHasShieldUseIntent"(arg0: $Player$$Type, arg1: $InteractionHand$$Type): boolean
@@ -705,15 +705,15 @@ declare module "com.tom.storagemod.block.OpenCrateBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BaseEntityBlock} from "net.minecraft.world.level.block.BaseEntityBlock"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$Mirror$$Type} from "net.minecraft.world.level.block.Mirror"
 import {$RenderShape} from "net.minecraft.world.level.block.RenderShape"
 import {$List$$Type} from "java.util.List"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
@@ -775,18 +775,18 @@ import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
-import {$IInventoryCable$$Interface} from "com.tom.storagemod.block.IInventoryCable"
 import {$BlockFace} from "com.tom.storagemod.util.BlockFace"
 import {$RenderShape} from "net.minecraft.world.level.block.RenderShape"
+import {$IInventoryCable$$Interface} from "com.tom.storagemod.block.IInventoryCable"
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
@@ -829,8 +829,8 @@ public "rotate"(arg0: $BlockState$$Type, arg1: $Rotation$$Type): $BlockState
 public "mirror"(arg0: $BlockState$$Type, arg1: $Mirror$$Type): $BlockState
 public "getRenderShape"(arg0: $BlockState$$Type): $RenderShape
 public "neighborChanged"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Block$$Type, arg4: $BlockPos$$Type, arg5: boolean): void
-public "isFunctionalNode"(): boolean
 public static "canConnect"(arg0: $BlockState$$Type, arg1: $Direction$$Type): boolean
+public "isFunctionalNode"(): boolean
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "functionalNode"(): boolean
 }
@@ -873,8 +873,8 @@ export type $IPaintable$$Type = ((arg0: $Level, arg1: $BlockPos, arg2: $BlockSta
  */
 export type $IPaintable$$Original = $IPaintable;}
 declare module "com.tom.storagemod.block.IInventoryCable" {
-import {$List} from "java.util.List"
 import {$BlockFace} from "com.tom.storagemod.util.BlockFace"
+import {$List} from "java.util.List"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
@@ -885,10 +885,10 @@ get "functionalNode"(): boolean
 }
 
 export class $IInventoryCable implements $IInventoryCable$$Interface {
+static "canConnect"(arg0: $BlockState$$Type, arg1: $Direction$$Type): boolean
  "nextScan"(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockPos$$Type): $List<($BlockFace)>
  "canConnectFrom"(arg0: $BlockState$$Type, arg1: $Direction$$Type): boolean
  "isFunctionalNode"(): boolean
-static "canConnect"(arg0: $BlockState$$Type, arg1: $Direction$$Type): boolean
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -909,8 +909,8 @@ import {$RenderShape} from "net.minecraft.world.level.block.RenderShape"
 import {$List$$Type} from "java.util.List"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
@@ -977,15 +977,15 @@ import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$AbstractStorageTerminalBlock$TerminalPos} from "com.tom.storagemod.block.AbstractStorageTerminalBlock$TerminalPos"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
-import {$IInventoryCable$$Interface} from "com.tom.storagemod.block.IInventoryCable"
 import {$BlockFace} from "com.tom.storagemod.util.BlockFace"
 import {$RenderShape} from "net.minecraft.world.level.block.RenderShape"
+import {$IInventoryCable$$Interface} from "com.tom.storagemod.block.IInventoryCable"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
@@ -994,9 +994,9 @@ import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
-import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
+import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$DirectionProperty} from "net.minecraft.world.level.block.state.properties.DirectionProperty"
@@ -1036,11 +1036,11 @@ public "mirror"(arg0: $BlockState$$Type, arg1: $Mirror$$Type): $BlockState
 public "getFluidState"(arg0: $BlockState$$Type): $FluidState
 public "getRenderShape"(arg0: $BlockState$$Type): $RenderShape
 public "getPickupSound"(): $Optional<($SoundEvent)>
-public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "canPlaceLiquid"(arg0: $Player$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $Fluid$$Type): boolean
+public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "pickupBlock"(arg0: $Player$$Type, arg1: $LevelAccessor$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): $ItemStack
-public "isFunctionalNode"(): boolean
 public static "canConnect"(arg0: $BlockState$$Type, arg1: $Direction$$Type): boolean
+public "isFunctionalNode"(): boolean
 public "getPickupSound"(arg0: $BlockState$$Type): $Optional<($SoundEvent)>
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "pickupSound"(): $Optional<($SoundEvent)>
@@ -1073,16 +1073,16 @@ export type $IInventoryNode$$Type = ($IInventoryNode);
 export type $IInventoryNode$$Original = $IInventoryNode;}
 declare module "com.tom.storagemod.block.TrimBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$List$$Type} from "java.util.List"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
@@ -1142,18 +1142,18 @@ import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
-import {$IInventoryCable$$Interface} from "com.tom.storagemod.block.IInventoryCable"
 import {$BlockFace} from "com.tom.storagemod.util.BlockFace"
 import {$RenderShape} from "net.minecraft.world.level.block.RenderShape"
+import {$IInventoryCable$$Interface} from "com.tom.storagemod.block.IInventoryCable"
 import {$Block$$Type} from "net.minecraft.world.level.block.Block"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
@@ -1207,8 +1207,8 @@ public "onNeighborChange"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg
 public "getDirectSignal"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $Direction$$Type): integer
 public "isSignalSource"(arg0: $BlockState$$Type): boolean
 public "getSignal"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $Direction$$Type): integer
-public "isFunctionalNode"(): boolean
 public static "canConnect"(arg0: $BlockState$$Type, arg1: $Direction$$Type): boolean
+public "isFunctionalNode"(): boolean
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "functionalNode"(): boolean
 }
@@ -1240,8 +1240,8 @@ import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Objec
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$RenderShape} from "net.minecraft.world.level.block.RenderShape"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
@@ -1299,13 +1299,13 @@ import {$List$$Type} from "java.util.List"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$AbstractStorageTerminalBlock} from "com.tom.storagemod.block.AbstractStorageTerminalBlock"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$AbstractStorageTerminalBlock$TerminalPos} from "com.tom.storagemod.block.AbstractStorageTerminalBlock$TerminalPos"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
@@ -1354,8 +1354,8 @@ export type $StorageTerminalBlock$$Original = $StorageTerminalBlock;}
 declare module "com.tom.storagemod.block.FramedInventoryCableConnectorBlock" {
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$InventoryCableConnectorBlock} from "com.tom.storagemod.block.InventoryCableConnectorBlock"
 import {$List$$Type} from "java.util.List"
+import {$InventoryCableConnectorBlock} from "com.tom.storagemod.block.InventoryCableConnectorBlock"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$IConfiguratorHighlight$$Interface} from "com.tom.storagemod.block.IConfiguratorHighlight"
@@ -1363,15 +1363,15 @@ import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$IPaintable$$Interface} from "com.tom.storagemod.block.IPaintable"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"

@@ -2,11 +2,11 @@ declare module "net.minecraft.client.tutorial.Tutorial" {
 import {$Input$$Type} from "net.minecraft.client.player.Input"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$TutorialSteps$$Type} from "net.minecraft.client.tutorial.TutorialSteps"
-import {$Component} from "net.minecraft.network.chat.Component"
 import {$HitResult$$Type} from "net.minecraft.world.phys.HitResult"
+import {$Component} from "net.minecraft.network.chat.Component"
 import {$Options$$Type} from "net.minecraft.client.Options"
-import {$TutorialToast$$Type} from "net.minecraft.client.gui.components.toasts.TutorialToast"
 import {$ClientLevel$$Type} from "net.minecraft.client.multiplayer.ClientLevel"
+import {$TutorialToast$$Type} from "net.minecraft.client.gui.components.toasts.TutorialToast"
 import {$ClickAction$$Type} from "net.minecraft.world.inventory.ClickAction"
 import {$Minecraft, $Minecraft$$Type} from "net.minecraft.client.Minecraft"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
@@ -21,16 +21,16 @@ public static "key"(arg0: StringJS): $Component
 public "start"(): void
 public "stop"(): void
 public "getMinecraft"(): $Minecraft
+public "setStep"(arg0: $TutorialSteps$$Type): void
+public "onMouse"(arg0: double, arg1: double): void
+public "onDestroyBlock"(arg0: $ClientLevel$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: float): void
+public "onGetItem"(arg0: $ItemStack$$Type): void
 public "onLookAt"(arg0: $ClientLevel$$Type, arg1: $HitResult$$Type): void
 public "addTimedToast"(arg0: $TutorialToast$$Type, arg1: integer): void
 public "removeTimedToast"(arg0: $TutorialToast$$Type): void
 public "onOpenInventory"(): void
 public "onInput"(arg0: $Input$$Type): void
 public "onInventoryAction"(arg0: $ItemStack$$Type, arg1: $ItemStack$$Type, arg2: $ClickAction$$Type): void
-public "setStep"(arg0: $TutorialSteps$$Type): void
-public "onMouse"(arg0: double, arg1: double): void
-public "onDestroyBlock"(arg0: $ClientLevel$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: float): void
-public "onGetItem"(arg0: $ItemStack$$Type): void
 get "survival"(): boolean
 get "minecraft"(): $Minecraft
 set "step"(value: $TutorialSteps$$Type)
@@ -58,12 +58,12 @@ export interface $TutorialStepInstance$$Interface {
 export class $TutorialStepInstance implements $TutorialStepInstance$$Interface {
  "tick"(): void
  "clear"(): void
- "onLookAt"(arg0: $ClientLevel$$Type, arg1: $HitResult$$Type): void
- "onOpenInventory"(): void
- "onInput"(arg0: $Input$$Type): void
  "onMouse"(arg0: double, arg1: double): void
  "onDestroyBlock"(arg0: $ClientLevel$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: float): void
  "onGetItem"(arg0: $ItemStack$$Type): void
+ "onLookAt"(arg0: $ClientLevel$$Type, arg1: $HitResult$$Type): void
+ "onOpenInventory"(): void
+ "onInput"(arg0: $Input$$Type): void
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_

@@ -8,10 +8,9 @@ static readonly "LIGATURE": byte
 static readonly "COMPONENT": byte
 static readonly "STANDARD": byte
 
-constructor(arg0: boolean, arg1: float, arg2: float, arg3: $Rectangle2D$$Type, arg4: byte)
 constructor(arg0: float, arg1: $Rectangle2D$$Type, arg2: byte)
+constructor(arg0: boolean, arg1: float, arg2: float, arg3: $Rectangle2D$$Type, arg4: byte)
 
-public "getAdvance"(): float
 public "getBounds2D"(): $Rectangle2D
 public "isStandard"(): boolean
 public "getAdvanceX"(): float
@@ -23,7 +22,7 @@ public "isCombining"(): boolean
 public "isComponent"(): boolean
 public "isWhitespace"(): boolean
 public "getType"(): integer
-get "advance"(): float
+public "getAdvance"(): float
 get "bounds2D"(): $Rectangle2D
 get "standard"(): boolean
 get "advanceX"(): float
@@ -35,6 +34,7 @@ get "combining"(): boolean
 get "component"(): boolean
 get "whitespace"(): boolean
 get "type"(): integer
+get "advance"(): float
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -52,22 +52,22 @@ export class $FontRenderContext {
 constructor(arg0: $AffineTransform$$Type, arg1: boolean, arg2: boolean)
 constructor(arg0: $AffineTransform$$Type, arg1: any, arg2: any)
 
-public "usesFractionalMetrics"(): boolean
-public "getTransformType"(): integer
 public "getTransform"(): $AffineTransform
-public "getFractionalMetricsHint"(): any
+public "getTransformType"(): integer
 public "isAntiAliased"(): boolean
+public "usesFractionalMetrics"(): boolean
 public "getAntiAliasingHint"(): any
 public "equals"(arg0: $FontRenderContext$$Type): boolean
 public "equals"(arg0: any): boolean
 public "hashCode"(): integer
 public "isTransformed"(): boolean
-get "transformType"(): integer
+public "getFractionalMetricsHint"(): any
 get "transform"(): $AffineTransform
-get "fractionalMetricsHint"(): any
+get "transformType"(): integer
 get "antiAliased"(): boolean
 get "antiAliasingHint"(): any
 get "transformed"(): boolean
+get "fractionalMetricsHint"(): any
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -97,10 +97,9 @@ static readonly "FLAG_MASK": integer
 static readonly "FLAG_COMPLEX_GLYPHS": integer
 static readonly "FLAG_RUN_RTL": integer
 
-public "getGlyphPixelBounds"(arg0: integer, arg1: $FontRenderContext$$Type, arg2: float, arg3: float): $Rectangle
 public "getGlyphCharIndex"(arg0: integer): integer
-public "getGlyphOutline"(arg0: integer, arg1: float, arg2: float): $Shape
 public "getGlyphOutline"(arg0: integer): $Shape
+public "getGlyphOutline"(arg0: integer, arg1: float, arg2: float): $Shape
 public "getGlyphVisualBounds"(arg0: integer): $Shape
 public "performDefaultLayout"(): void
 public "getGlyphCode"(arg0: integer): integer
@@ -117,6 +116,7 @@ public "getGlyphPositions"(arg0: integer, arg1: integer, arg2: (float)[]): (floa
 public "getGlyphLogicalBounds"(arg0: integer): $Shape
 public "getGlyphMetrics"(arg0: integer): $GlyphMetrics
 public "getGlyphJustificationInfo"(arg0: integer): $GlyphJustificationInfo
+public "getGlyphPixelBounds"(arg0: integer, arg1: $FontRenderContext$$Type, arg2: float, arg3: float): $Rectangle
 public "getFontRenderContext"(): $FontRenderContext
 public "getOutline"(): $Shape
 public "getOutline"(arg0: float, arg1: float): $Shape
@@ -257,10 +257,10 @@ public "getStrikethroughOffset"(): float
 public "getStrikethroughThickness"(): float
 public "getUnderlineOffset"(): float
 public "getUnderlineThickness"(): float
+public "getHeight"(): float
 public "getAscent"(): float
 public "getDescent"(): float
 public "getLeading"(): float
-public "getHeight"(): float
 get "numChars"(): integer
 get "baselineIndex"(): integer
 get "baselineOffsets"(): (float)[]
@@ -268,10 +268,10 @@ get "strikethroughOffset"(): float
 get "strikethroughThickness"(): float
 get "underlineOffset"(): float
 get "underlineThickness"(): float
+get "height"(): float
 get "ascent"(): float
 get "descent"(): float
 get "leading"(): float
-get "height"(): float
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_

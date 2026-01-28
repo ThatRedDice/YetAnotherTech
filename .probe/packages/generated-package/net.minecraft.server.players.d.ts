@@ -29,9 +29,8 @@ import {$StoredUserEntry, $StoredUserEntry$$Type} from "net.minecraft.server.pla
 export class $StoredUserList<K, V extends $StoredUserEntry<(object)>> {
 constructor(arg0: $File$$Type)
 
-public "getUserList"(): (StringJS)[]
-public "remove"(arg0: K): void
 public "remove"(arg0: $StoredUserEntry$$Type<(K)>): void
+public "remove"(arg0: K): void
 public "get"(arg0: K): V
 public "load"(): void
 public "isEmpty"(): boolean
@@ -39,10 +38,11 @@ public "add"(arg0: V): void
 public "save"(): void
 public "getFile"(): $File
 public "getEntries"(): $Collection<(V)>
-get "userList"(): (StringJS)[]
+public "getUserList"(): (StringJS)[]
 get "empty"(): boolean
 get "file"(): $File
 get "entries"(): $Collection<(V)>
+get "userList"(): (StringJS)[]
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -62,8 +62,8 @@ import {$GameProfile, $GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 export class $UserWhiteList extends $StoredUserList<($GameProfile), ($UserWhiteListEntry)> {
 constructor(arg0: $File$$Type)
 
-public "getUserList"(): (StringJS)[]
 public "isWhiteListed"(arg0: $GameProfile$$Type): boolean
+public "getUserList"(): (StringJS)[]
 get "userList"(): (StringJS)[]
 }
 /**
@@ -93,12 +93,12 @@ export type $StoredUserEntry$$Original<T> = $StoredUserEntry<(T)>;}
 declare module "net.minecraft.server.players.GameProfileCache" {
 import {$Map} from "java.util.Map"
 import {$Optional} from "java.util.Optional"
-import {$CompletableFuture} from "java.util.concurrent.CompletableFuture"
 import {$File$$Type} from "java.io.File"
+import {$CompletableFuture} from "java.util.concurrent.CompletableFuture"
 import {$UUID$$Type} from "java.util.UUID"
 import {$GameProfileCache$GameProfileInfo} from "net.minecraft.server.players.GameProfileCache$GameProfileInfo"
-import {$List} from "java.util.List"
 import {$Executor$$Type} from "java.util.concurrent.Executor"
+import {$List} from "java.util.List"
 import {$GameProfile, $GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$GameProfileRepository$$Type} from "com.mojang.authlib.GameProfileRepository"
 
@@ -137,8 +137,8 @@ import {$GameProfile, $GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 export class $ServerOpList extends $StoredUserList<($GameProfile), ($ServerOpListEntry)> {
 constructor(arg0: $File$$Type)
 
-public "getUserList"(): (StringJS)[]
 public "canBypassPlayerLimit"(arg0: $GameProfile$$Type): boolean
+public "getUserList"(): (StringJS)[]
 get "userList"(): (StringJS)[]
 }
 /**
@@ -174,8 +174,8 @@ export type $UserBanList$$Type = ($UserBanList);
 export type $UserBanList$$Original = $UserBanList;}
 declare module "net.minecraft.server.players.PlayerList" {
 import {$PlayerAdvancements} from "net.minecraft.server.PlayerAdvancements"
-import {$Optional} from "java.util.Optional"
 import {$SocketAddress$$Type} from "java.net.SocketAddress"
+import {$Optional} from "java.util.Optional"
 import {$UUID$$Type} from "java.util.UUID"
 import {$PlayerChatMessage$$Type} from "net.minecraft.network.chat.PlayerChatMessage"
 import {$List} from "java.util.List"
@@ -198,14 +198,14 @@ import {$UserBanList} from "net.minecraft.server.players.UserBanList"
 import {$ClientInformation$$Type} from "net.minecraft.server.level.ClientInformation"
 import {$RegistryLayer$$Type} from "net.minecraft.server.RegistryLayer"
 import {$ServerOpList} from "net.minecraft.server.players.ServerOpList"
-import {$Packet$$Type} from "net.minecraft.network.protocol.Packet"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$Packet$$Type} from "net.minecraft.network.protocol.Packet"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$ServerPlayer, $ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$Connection$$Type} from "net.minecraft.network.Connection"
-import {$MinecraftServer, $MinecraftServer$$Type} from "net.minecraft.server.MinecraftServer"
 import {$CommandSourceStack$$Type} from "net.minecraft.commands.CommandSourceStack"
+import {$MinecraftServer, $MinecraftServer$$Type} from "net.minecraft.server.MinecraftServer"
 import {$ChatType$Bound$$Type} from "net.minecraft.network.chat.ChatType$Bound"
 
 export class $PlayerList {
@@ -218,16 +218,9 @@ static readonly "DUPLICATE_LOGIN_DISCONNECT_MESSAGE": $Component
 
 constructor(arg0: $MinecraftServer$$Type, arg1: $LayeredRegistryAccess$$Type<($RegistryLayer$$Type)>, arg2: $PlayerDataStorage$$Type, arg3: integer)
 
-public "canPlayerLogin"(arg0: $SocketAddress$$Type, arg1: $GameProfile$$Type): $Component
-public "getWhiteListNames"(): (StringJS)[]
-public "getOpNames"(): (StringJS)[]
-public "reloadWhiteList"(): void
 public "isUsingWhitelist"(): boolean
 public "setUsingWhiteList"(arg0: boolean): void
 public "getPlayersWithAddress"(arg0: StringJS): $List<($ServerPlayer)>
-public "getPlayerForLogin"(arg0: $GameProfile$$Type, arg1: $ClientInformation$$Type): $ServerPlayer
-public "disconnectAllPlayersWithProfile"(arg0: $GameProfile$$Type): boolean
-public "placeNewPlayer"(arg0: $Connection$$Type, arg1: $ServerPlayer$$Type, arg2: $CommonListenerCookie$$Type): void
 public "setViewDistance"(arg0: integer): void
 public "setSimulationDistance"(arg0: integer): void
 public "setAllowCommandsForAllPlayers"(arg0: boolean): void
@@ -251,8 +244,8 @@ public "getSimulationDistance"(): integer
 public "saveAll"(): void
 public "getPlayers"(): $List<($ServerPlayer)>
 public "getPlayerByName"(arg0: StringJS): $ServerPlayer
-public "broadcastChatMessage"(arg0: $PlayerChatMessage$$Type, arg1: $CommandSourceStack$$Type, arg2: $ChatType$Bound$$Type): void
 public "broadcastChatMessage"(arg0: $PlayerChatMessage$$Type, arg1: $ServerPlayer$$Type, arg2: $ChatType$Bound$$Type): void
+public "broadcastChatMessage"(arg0: $PlayerChatMessage$$Type, arg1: $CommandSourceStack$$Type, arg2: $ChatType$Bound$$Type): void
 public "addWorldborderListener"(arg0: $ServerLevel$$Type): void
 public "getSingleplayerData"(): $CompoundTag
 public "getMaxPlayers"(): integer
@@ -263,20 +256,25 @@ public "getWhiteList"(): $UserWhiteList
 public "isWhiteListed"(arg0: $GameProfile$$Type): boolean
 public "isAllowCommandsForAllPlayers"(): boolean
 public "tick"(): void
+public "placeNewPlayer"(arg0: $Connection$$Type, arg1: $ServerPlayer$$Type, arg2: $CommonListenerCookie$$Type): void
 public "canBypassPlayerLimit"(arg0: $GameProfile$$Type): boolean
 public "remove"(arg0: $ServerPlayer$$Type): void
 public "load"(arg0: $ServerPlayer$$Type): $Optional<($CompoundTag)>
 public "op"(arg0: $GameProfile$$Type): void
 public "removeAll"(): void
-public "respawn"(arg0: $ServerPlayer$$Type, arg1: boolean, arg2: $Entity$RemovalReason$$Type): $ServerPlayer
 public "getOps"(): $ServerOpList
+public "respawn"(arg0: $ServerPlayer$$Type, arg1: boolean, arg2: $Entity$RemovalReason$$Type): $ServerPlayer
 public "getServer"(): $MinecraftServer
 public "broadcast"(arg0: $Player$$Type, arg1: double, arg2: double, arg3: double, arg4: double, arg5: $ResourceKey$$Type<($Level)>, arg6: $Packet$$Type<(never)>): void
 public "getPlayer"(arg0: $UUID$$Type): $ServerPlayer
 public "deop"(arg0: $GameProfile$$Type): void
+public "canPlayerLogin"(arg0: $SocketAddress$$Type, arg1: $GameProfile$$Type): $Component
+public "getPlayerForLogin"(arg0: $GameProfile$$Type, arg1: $ClientInformation$$Type): $ServerPlayer
+public "disconnectAllPlayersWithProfile"(arg0: $GameProfile$$Type): boolean
 public "getIpBans"(): $IpBanList
-get "whiteListNames"(): (StringJS)[]
-get "opNames"(): (StringJS)[]
+public "getWhiteListNames"(): (StringJS)[]
+public "getOpNames"(): (StringJS)[]
+public "reloadWhiteList"(): void
 get "usingWhitelist"(): boolean
 set "usingWhiteList"(value: boolean)
 set "viewDistance"(value: integer)
@@ -295,6 +293,8 @@ get "allowCommandsForAllPlayers"(): boolean
 get "ops"(): $ServerOpList
 get "server"(): $MinecraftServer
 get "ipBans"(): $IpBanList
+get "whiteListNames"(): (StringJS)[]
+get "opNames"(): (StringJS)[]
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -310,14 +310,14 @@ import {$Date} from "java.util.Date"
 import {$GameProfile} from "com.mojang.authlib.GameProfile"
 
 export class $GameProfileCache$GameProfileInfo {
-public "setLastAccess"(arg0: long): void
 public "getLastAccess"(): long
 public "getExpirationDate"(): $Date
 public "getProfile"(): $GameProfile
-set "lastAccess"(value: long)
+public "setLastAccess"(arg0: long): void
 get "lastAccess"(): long
 get "expirationDate"(): $Date
 get "profile"(): $GameProfile
+set "lastAccess"(value: long)
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -331,8 +331,8 @@ export type $GameProfileCache$GameProfileInfo$$Original = $GameProfileCache$Game
 declare module "net.minecraft.server.players.IpBanListEntry" {
 import {$BanListEntry} from "net.minecraft.server.players.BanListEntry"
 import {$SimpleDateFormat} from "java.text.SimpleDateFormat"
-import {$Date$$Type} from "java.util.Date"
 import {$JsonObject$$Type} from "com.google.gson.JsonObject"
+import {$Date$$Type} from "java.util.Date"
 import {$Component} from "net.minecraft.network.chat.Component"
 
 export class $IpBanListEntry extends $BanListEntry<(StringJS)> {
@@ -356,17 +356,17 @@ export type $IpBanListEntry$$Type = ($IpBanListEntry);
  */
 export type $IpBanListEntry$$Original = $IpBanListEntry;}
 declare module "net.minecraft.server.players.IpBanList" {
-import {$File$$Type} from "java.io.File"
 import {$SocketAddress$$Type} from "java.net.SocketAddress"
-import {$StoredUserList} from "net.minecraft.server.players.StoredUserList"
+import {$File$$Type} from "java.io.File"
 import {$IpBanListEntry} from "net.minecraft.server.players.IpBanListEntry"
+import {$StoredUserList} from "net.minecraft.server.players.StoredUserList"
 
 export class $IpBanList extends $StoredUserList<(StringJS), ($IpBanListEntry)> {
 constructor(arg0: $File$$Type)
 
+public "get"(arg0: $SocketAddress$$Type): $IpBanListEntry
 public "isBanned"(arg0: $SocketAddress$$Type): boolean
 public "isBanned"(arg0: StringJS): boolean
-public "get"(arg0: $SocketAddress$$Type): $IpBanListEntry
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -380,8 +380,8 @@ export type $IpBanList$$Original = $IpBanList;}
 declare module "net.minecraft.server.players.UserBanListEntry" {
 import {$BanListEntry} from "net.minecraft.server.players.BanListEntry"
 import {$SimpleDateFormat} from "java.text.SimpleDateFormat"
-import {$Date$$Type} from "java.util.Date"
 import {$JsonObject$$Type} from "com.google.gson.JsonObject"
+import {$Date$$Type} from "java.util.Date"
 import {$Component} from "net.minecraft.network.chat.Component"
 import {$GameProfile, $GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 
@@ -426,8 +426,8 @@ export type $UserWhiteListEntry$$Type = ($UserWhiteListEntry);
 export type $UserWhiteListEntry$$Original = $UserWhiteListEntry;}
 declare module "net.minecraft.server.players.BanListEntry" {
 import {$SimpleDateFormat} from "java.text.SimpleDateFormat"
-import {$Date, $Date$$Type} from "java.util.Date"
 import {$StoredUserEntry} from "net.minecraft.server.players.StoredUserEntry"
+import {$Date, $Date$$Type} from "java.util.Date"
 import {$Component} from "net.minecraft.network.chat.Component"
 
 export class $BanListEntry<T> extends $StoredUserEntry<(T)> {
@@ -439,13 +439,13 @@ constructor(arg0: T, arg1: $Date$$Type, arg2: StringJS, arg3: $Date$$Type, arg4:
 public "getCreated"(): $Date
 public "getExpires"(): $Date
 public "getSource"(): StringJS
-public "getReason"(): StringJS
 public "getDisplayName"(): $Component
+public "getReason"(): StringJS
 get "created"(): $Date
 get "expires"(): $Date
 get "source"(): StringJS
-get "reason"(): StringJS
 get "displayName"(): $Component
+get "reason"(): StringJS
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_

@@ -35,21 +35,19 @@ import {$DataLayer, $DataLayer$$Type} from "net.minecraft.world.level.chunk.Data
 export class $SWMRNibbleArray {
 static readonly "ARRAY_SIZE": integer
 
-constructor(bytes: (byte)[])
 constructor(bytes: (byte)[], isNullNibble: boolean)
+constructor(bytes: (byte)[])
 constructor()
 constructor(bytes: (byte)[], state: integer)
 
 public "setZero"(): void
 public static "fromVanilla"(nibble: $DataLayer$$Type): $SWMRNibbleArray
 public "setFull"(): void
-public "setHidden"(): void
-public "isDirty"(): boolean
 public "toVanillaNibble"(): $DataLayer
 public "isNullNibbleVisible"(): boolean
 public "updateVisible"(): boolean
-public "getUpdating"(index: integer): integer
 public "getUpdating"(x: integer, y: integer, z: integer): integer
+public "getUpdating"(index: integer): integer
 public "isInitialisedUpdating"(): boolean
 public "getSaveState"(): $SWMRNibbleArray$SaveState
 public "extrudeLower"(other: $SWMRNibbleArray$$Type): void
@@ -62,6 +60,8 @@ public "isUninitialisedVisible"(): boolean
 public "isInitialisedVisible"(): boolean
 public "isHiddenUpdating"(): boolean
 public "isHiddenVisible"(): boolean
+public "setHidden"(): void
+public "isDirty"(): boolean
 public "toString"(): StringJS
 public "set"(index: integer, value: integer): void
 public "set"(x: integer, y: integer, z: integer, value: integer): void
@@ -69,8 +69,6 @@ public "getVisible"(index: integer): integer
 public "getVisible"(x: integer, y: integer, z: integer): integer
 get "zero"(): void
 get "full"(): void
-get "hidden"(): void
-get "dirty"(): boolean
 get "nullNibbleVisible"(): boolean
 get "initialisedUpdating"(): boolean
 get "saveState"(): $SWMRNibbleArray$SaveState
@@ -83,6 +81,8 @@ get "uninitialisedVisible"(): boolean
 get "initialisedVisible"(): boolean
 get "hiddenUpdating"(): boolean
 get "hiddenVisible"(): boolean
+get "hidden"(): void
+get "dirty"(): boolean
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -104,8 +104,8 @@ import {$LightChunkGetter, $LightChunkGetter$$Type} from "net.minecraft.world.le
 import {$ChunkPos, $ChunkPos$$Type} from "net.minecraft.world.level.ChunkPos"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$ShortCollection$$Type} from "it.unimi.dsi.fastutil.shorts.ShortCollection"
-import {$SectionPos$$Type} from "net.minecraft.core.SectionPos"
 import {$IntConsumer$$Type} from "java.util.function.IntConsumer"
+import {$SectionPos$$Type} from "net.minecraft.core.SectionPos"
 import {$Set$$Type} from "java.util.Set"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$StarLightInterface$LightQueue$ChunkTasks} from "ca.spottedleaf.starlight.common.light.StarLightInterface$LightQueue$ChunkTasks"
@@ -136,10 +136,10 @@ public "getSkyLightValue"(blockPos: $BlockPos$$Type, chunk: $ChunkAccess$$Type):
 public "getBlockLightValue"(blockPos: $BlockPos$$Type, chunk: $ChunkAccess$$Type): integer
 public "loadInChunk"(chunkX: integer, chunkZ: integer, emptySections: (boolean)[]): void
 public "relightChunks"(chunks: $Set$$Type<($ChunkPos$$Type)>, chunkLightCallback: $Consumer$$Type<($ChunkPos)>, onComplete: $IntConsumer$$Type): void
-public "checkSkyEdges"(chunkX: integer, chunkZ: integer, sections: $ShortCollection$$Type): void
 public "checkSkyEdges"(chunkX: integer, chunkZ: integer): void
-public "checkBlockEdges"(chunkX: integer, chunkZ: integer): void
+public "checkSkyEdges"(chunkX: integer, chunkZ: integer, sections: $ShortCollection$$Type): void
 public "checkBlockEdges"(chunkX: integer, chunkZ: integer, sections: $ShortCollection$$Type): void
+public "checkBlockEdges"(chunkX: integer, chunkZ: integer): void
 public "removeChunkTasks"(pos: $ChunkPos$$Type): void
 public "hasUpdates"(): boolean
 public "isClientSide"(): boolean
@@ -209,14 +209,14 @@ export type $StarLightLightingProvider$$Original = $StarLightLightingProvider;}
 declare module "ca.spottedleaf.starlight.common.blockstate.ExtendedAbstractBlockState" {
 export {} // Mark the file as a module, do not remove unless there are other import/exports!
 export interface $ExtendedAbstractBlockState$$Interface {
-get "conditionallyFullOpaque"(): boolean
 get "opacityIfCached"(): integer
+get "conditionallyFullOpaque"(): boolean
 }
 
 export class $ExtendedAbstractBlockState implements $ExtendedAbstractBlockState$$Interface {
+ "getOpacityIfCached"(): integer
  "isConditionallyFullOpaque"(): boolean
  "scalablelux$actuallyDynamicLightEmission"(): boolean
- "getOpacityIfCached"(): integer
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_

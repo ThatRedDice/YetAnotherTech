@@ -23,8 +23,8 @@ export type $KitOutPlayerEvent$$Original = $KitOutPlayerEvent;}
 declare module "appeng.server.testplots.SpawnExtraGridTestTools" {
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Event} from "net.neoforged.bus.api.Event"
-import {$InternalInventory, $InternalInventory$$Type} from "appeng.api.inventories.InternalInventory"
 import {$IGrid, $IGrid$$Type} from "appeng.api.networking.IGrid"
+import {$InternalInventory, $InternalInventory$$Type} from "appeng.api.inventories.InternalInventory"
 
 export class $SpawnExtraGridTestTools extends $Event {
 constructor(arg0: $ResourceLocation$$Type, arg1: $InternalInventory$$Type, arg2: $IGrid$$Type)

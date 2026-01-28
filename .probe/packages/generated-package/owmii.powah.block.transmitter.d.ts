@@ -6,20 +6,21 @@ import {$Tier$$Type} from "owmii.powah.block.Tier"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$ChargingConfig} from "owmii.powah.config.v2.types.ChargingConfig"
-import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$Inventory$$Type} from "net.minecraft.world.entity.player.Inventory"
-import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
+import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$AbstractEnergyBlock} from "owmii.powah.lib.block.AbstractEnergyBlock"
+import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$AbstractContainer} from "owmii.powah.lib.logistics.inventory.AbstractContainer"
+import {$EnergyBlockItem} from "owmii.powah.lib.item.EnergyBlockItem"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
+import {$CreativeModeTab$$Type} from "net.minecraft.world.item.CreativeModeTab"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$ItemBlock} from "owmii.powah.lib.item.ItemBlock"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$AbstractTileEntity$$Type} from "owmii.powah.lib.block.AbstractTileEntity"
@@ -64,8 +65,8 @@ public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockE
 public "getContainer"(arg0: integer, arg1: $Inventory$$Type, arg2: $AbstractTileEntity$$Type, arg3: $BlockHitResult$$Type): $AbstractContainer
 public "getShape"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $CollisionContext$$Type): $VoxelShape
 public "getConfig"(): any
-public "getBlockItem"(arg0: $Item$Properties$$Type, arg1: $ResourceKey$$Type): $ItemBlock
 public "canSurvive"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type): boolean
+public "getBlockItem"(arg0: $Item$Properties$$Type, arg1: $ResourceKey$$Type<($CreativeModeTab)>): $EnergyBlockItem
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "config"(): any
 }

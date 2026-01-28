@@ -1,7 +1,7 @@
 declare module "dev.shadowsoffire.apothic_enchanting.table.infusion.KeepNBTInfusionRecipe$Serializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$KeepNBTInfusionRecipe} from "dev.shadowsoffire.apothic_enchanting.table.infusion.KeepNBTInfusionRecipe"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
@@ -27,8 +27,8 @@ export type $KeepNBTInfusionRecipe$Serializer$$Type = ($KeepNBTInfusionRecipe$Se
 export type $KeepNBTInfusionRecipe$Serializer$$Original = $KeepNBTInfusionRecipe$Serializer;}
 declare module "dev.shadowsoffire.apothic_enchanting.table.infusion.InfusionRecipe$Serializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$InfusionRecipe} from "dev.shadowsoffire.apothic_enchanting.table.infusion.InfusionRecipe"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
@@ -54,8 +54,8 @@ export type $InfusionRecipe$Serializer$$Type = ($InfusionRecipe$Serializer);
 export type $InfusionRecipe$Serializer$$Original = $InfusionRecipe$Serializer;}
 declare module "dev.shadowsoffire.apothic_enchanting.table.EnchantmentTableStats$Builder" {
 import {$Enchantment$$Type} from "net.minecraft.world.item.enchantment.Enchantment"
-import {$Holder$$Type} from "net.minecraft.core.Holder"
 import {$EnchantmentTableStats} from "dev.shadowsoffire.apothic_enchanting.table.EnchantmentTableStats"
+import {$Holder$$Type} from "net.minecraft.core.Holder"
 
 export class $EnchantmentTableStats$Builder {
 constructor(arg0: integer)
@@ -82,8 +82,8 @@ export type $EnchantmentTableStats$Builder$$Type = ($EnchantmentTableStats$Build
 export type $EnchantmentTableStats$Builder$$Original = $EnchantmentTableStats$Builder;}
 declare module "dev.shadowsoffire.apothic_enchanting.table.EnchantingStatRegistry$Stats" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$Codec} from "com.mojang.serialization.Codec"
+import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$Record} from "java.lang.Record"
 
 export class $EnchantingStatRegistry$Stats extends $Record {
@@ -139,9 +139,9 @@ export type $KeepNBTInfusionRecipe$$Type = ($KeepNBTInfusionRecipe);
 export type $KeepNBTInfusionRecipe$$Original = $KeepNBTInfusionRecipe;}
 declare module "dev.shadowsoffire.apothic_enchanting.table.infusion.InfusionRecipe" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$Recipe$$Interface} from "net.minecraft.world.item.crafting.Recipe"
 import {$Ingredient, $Ingredient$$Type} from "net.minecraft.world.item.crafting.Ingredient"
 import {$RecipeInput, $RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
-import {$Recipe$$Interface} from "net.minecraft.world.item.crafting.Recipe"
 import {$RecipeType} from "net.minecraft.world.item.crafting.RecipeType"
 import {$EnchantingStatRegistry$Stats, $EnchantingStatRegistry$Stats$$Type} from "dev.shadowsoffire.apothic_enchanting.table.EnchantingStatRegistry$Stats"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
@@ -156,8 +156,6 @@ static readonly "NO_MAX": $EnchantingStatRegistry$Stats
 
 constructor(arg0: $ItemStack$$Type, arg1: $Ingredient$$Type, arg2: $EnchantingStatRegistry$Stats$$Type, arg3: $EnchantingStatRegistry$Stats$$Type)
 
-public "getRequirements"(): $EnchantingStatRegistry$Stats
-public "getMaxRequirements"(): $EnchantingStatRegistry$Stats
 public "assemble"(arg0: $ItemStack$$Type, arg1: float, arg2: float, arg3: float): $ItemStack
 /**
  * 
@@ -176,16 +174,18 @@ public "canCraftInDimensions"(arg0: integer, arg1: integer): boolean
  * @deprecated
  */
 public "getResultItem"(arg0: $HolderLookup$Provider$$Type): $ItemStack
-public "getInput"(): $Ingredient
+public "getRequirements"(): $EnchantingStatRegistry$Stats
+public "getMaxRequirements"(): $EnchantingStatRegistry$Stats
 public "getOutput"(): $ItemStack
+public static "findMatch"(arg0: $Level$$Type, arg1: $ItemStack$$Type, arg2: float, arg3: float, arg4: float): $InfusionRecipe
+public "getInput"(): $Ingredient
+public "matches"(arg0: $ItemStack$$Type, arg1: float, arg2: float, arg3: float): boolean
 /**
  * 
  * @deprecated
  */
 public "matches"(arg0: $RecipeInput$$Type, arg1: $Level$$Type): boolean
-public "matches"(arg0: $ItemStack$$Type, arg1: float, arg2: float, arg3: float): boolean
 public "getType"(): $RecipeType<(never)>
-public static "findMatch"(arg0: $Level$$Type, arg1: $ItemStack$$Type, arg2: float, arg3: float, arg4: float): $InfusionRecipe
 public "getRemainingItems"(arg0: $RecipeInput$$Type): $NonNullList<($ItemStack)>
 public "getIngredients"(): $NonNullList<($Ingredient)>
 public "showNotification"(): boolean
@@ -193,11 +193,11 @@ public "getToastSymbol"(): $ItemStack
 public "isIncomplete"(): boolean
 public "getGroup"(): StringJS
 public "isSpecial"(): boolean
+get "serializer"(): $RecipeSerializer<(never)>
 get "requirements"(): $EnchantingStatRegistry$Stats
 get "maxRequirements"(): $EnchantingStatRegistry$Stats
-get "serializer"(): $RecipeSerializer<(never)>
-get "input"(): $Ingredient
 get "output"(): $ItemStack
+get "input"(): $Ingredient
 get "type"(): $RecipeType<(never)>
 get "ingredients"(): $NonNullList<($Ingredient)>
 get "toastSymbol"(): $ItemStack
@@ -272,8 +272,8 @@ export type $ApothEnchantingTableBlock$$Type = ($ApothEnchantingTableBlock);
 export type $ApothEnchantingTableBlock$$Original = $ApothEnchantingTableBlock;}
 declare module "dev.shadowsoffire.apothic_enchanting.table.EnchantmentTableStats" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$Enchantment, $Enchantment$$Type} from "net.minecraft.world.item.enchantment.Enchantment"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
+import {$Enchantment, $Enchantment$$Type} from "net.minecraft.world.item.enchantment.Enchantment"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$EnchantmentTableStats$Builder$$Type} from "dev.shadowsoffire.apothic_enchanting.table.EnchantmentTableStats$Builder"
 import {$Set, $Set$$Type} from "java.util.Set"
@@ -306,7 +306,7 @@ public static "gatherStats"(arg0: $LevelReader$$Type, arg1: $BlockPos$$Type, arg
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $EnchantmentTableStats$$Type = ({"treasure"?: boolean, "clues"?: integer, "stable"?: boolean, "eterna"?: float, "blacklist"?: $Set$$Type<($Holder$$Type<($Enchantment$$Type)>)>, "quanta"?: float, "arcana"?: float}) | ([treasure?: boolean, clues?: integer, stable?: boolean, eterna?: float, blacklist?: $Set$$Type<($Holder$$Type<($Enchantment$$Type)>)>, quanta?: float, arcana?: float]);
+export type $EnchantmentTableStats$$Type = ({"clues"?: integer, "stable"?: boolean, "eterna"?: float, "blacklist"?: $Set$$Type<($Holder$$Type<($Enchantment$$Type)>)>, "quanta"?: float, "arcana"?: float, "treasure"?: boolean}) | ([clues?: integer, stable?: boolean, eterna?: float, blacklist?: $Set$$Type<($Holder$$Type<($Enchantment$$Type)>)>, quanta?: float, arcana?: float, treasure?: boolean]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */

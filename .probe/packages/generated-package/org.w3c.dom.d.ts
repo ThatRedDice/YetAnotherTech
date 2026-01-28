@@ -1,21 +1,27 @@
 declare module "org.w3c.dom.Attr" {
 import {$UserDataHandler$$Type} from "org.w3c.dom.UserDataHandler"
-import {$Node, $Node$$Type, $Node$$Interface} from "org.w3c.dom.Node"
 import {$Element} from "org.w3c.dom.Element"
+import {$Node, $Node$$Type, $Node$$Interface} from "org.w3c.dom.Node"
 import {$Document} from "org.w3c.dom.Document"
 import {$NamedNodeMap} from "org.w3c.dom.NamedNodeMap"
 import {$NodeList} from "org.w3c.dom.NodeList"
 import {$TypeInfo} from "org.w3c.dom.TypeInfo"
 
 export interface $Attr$$Interface extends $Node$$Interface {
-get "schemaTypeInfo"(): $TypeInfo
-get "id"(): boolean
 get "specified"(): boolean
 get "ownerElement"(): $Element
+get "schemaTypeInfo"(): $TypeInfo
+get "id"(): boolean
 get "name"(): StringJS
 get "value"(): StringJS
 set "value"(value: StringJS)
+get "ownerDocument"(): $Document
+get "namespaceURI"(): StringJS
+set "prefix"(value: StringJS)
+get "textContent"(): StringJS
+set "textContent"(value: StringJS)
 get "nodeType"(): short
+get "localName"(): StringJS
 get "lastChild"(): $Node
 get "nodeName"(): StringJS
 set "nodeValue"(value: StringJS)
@@ -25,43 +31,20 @@ get "nextSibling"(): $Node
 get "previousSibling"(): $Node
 get "nodeValue"(): StringJS
 get "baseURI"(): StringJS
-get "localName"(): StringJS
-get "ownerDocument"(): $Document
-get "namespaceURI"(): StringJS
-set "prefix"(value: StringJS)
-get "textContent"(): StringJS
-set "textContent"(value: StringJS)
 get "attributes"(): $NamedNodeMap
 get "prefix"(): StringJS
 get "childNodes"(): $NodeList
 }
 
 export class $Attr implements $Attr$$Interface {
- "getSchemaTypeInfo"(): $TypeInfo
- "isId"(): boolean
  "getSpecified"(): boolean
  "getOwnerElement"(): $Element
+ "getSchemaTypeInfo"(): $TypeInfo
+ "isId"(): boolean
  "getName"(): StringJS
  "getValue"(): StringJS
  "setValue"(arg0: StringJS): void
- "getNodeType"(): short
- "appendChild"(arg0: $Node$$Type): $Node
- "getLastChild"(): $Node
- "getNodeName"(): StringJS
- "removeChild"(arg0: $Node$$Type): $Node
- "setNodeValue"(arg0: StringJS): void
- "getParentNode"(): $Node
- "getFirstChild"(): $Node
- "cloneNode"(arg0: boolean): $Node
- "getNextSibling"(): $Node
- "getPreviousSibling"(): $Node
- "getNodeValue"(): StringJS
- "insertBefore"(arg0: $Node$$Type, arg1: $Node$$Type): $Node
- "getBaseURI"(): StringJS
- "setUserData"(arg0: StringJS, arg1: any, arg2: $UserDataHandler$$Type): any
  "getFeature"(arg0: StringJS, arg1: StringJS): any
- "hasAttributes"(): boolean
- "getLocalName"(): StringJS
  "normalize"(): void
  "getOwnerDocument"(): $Document
  "replaceChild"(arg0: $Node$$Type, arg1: $Node$$Type): $Node
@@ -77,6 +60,23 @@ export class $Attr implements $Attr$$Interface {
  "lookupNamespaceURI"(arg0: StringJS): StringJS
  "isEqualNode"(arg0: $Node$$Type): boolean
  "getUserData"(arg0: StringJS): any
+ "setUserData"(arg0: StringJS, arg1: any, arg2: $UserDataHandler$$Type): any
+ "getNodeType"(): short
+ "hasAttributes"(): boolean
+ "getLocalName"(): StringJS
+ "appendChild"(arg0: $Node$$Type): $Node
+ "getLastChild"(): $Node
+ "getNodeName"(): StringJS
+ "removeChild"(arg0: $Node$$Type): $Node
+ "setNodeValue"(arg0: StringJS): void
+ "getParentNode"(): $Node
+ "getFirstChild"(): $Node
+ "cloneNode"(arg0: boolean): $Node
+ "getNextSibling"(): $Node
+ "getPreviousSibling"(): $Node
+ "getNodeValue"(): StringJS
+ "insertBefore"(arg0: $Node$$Type, arg1: $Node$$Type): $Node
+ "getBaseURI"(): StringJS
  "isSupported"(arg0: StringJS, arg1: StringJS): boolean
  "getAttributes"(): $NamedNodeMap
  "getPrefix"(): StringJS
@@ -94,12 +94,12 @@ export type $Attr$$Original = $Attr;}
 declare module "org.w3c.dom.Document" {
 import {$UserDataHandler$$Type} from "org.w3c.dom.UserDataHandler"
 import {$Comment} from "org.w3c.dom.Comment"
-import {$Node, $Node$$Type, $Node$$Interface} from "org.w3c.dom.Node"
 import {$Element} from "org.w3c.dom.Element"
+import {$Node, $Node$$Type, $Node$$Interface} from "org.w3c.dom.Node"
 import {$Text} from "org.w3c.dom.Text"
 import {$NamedNodeMap} from "org.w3c.dom.NamedNodeMap"
-import {$DocumentType} from "org.w3c.dom.DocumentType"
 import {$DOMConfiguration} from "org.w3c.dom.DOMConfiguration"
+import {$DocumentType} from "org.w3c.dom.DocumentType"
 import {$DOMImplementation} from "org.w3c.dom.DOMImplementation"
 import {$NodeList} from "org.w3c.dom.NodeList"
 import {$Attr} from "org.w3c.dom.Attr"
@@ -109,11 +109,6 @@ import {$ProcessingInstruction} from "org.w3c.dom.ProcessingInstruction"
 import {$DocumentFragment} from "org.w3c.dom.DocumentFragment"
 
 export interface $Document$$Interface extends $Node$$Interface {
-set "xmlVersion"(value: StringJS)
-set "strictErrorChecking"(value: boolean)
-set "documentURI"(value: StringJS)
-set "xmlStandalone"(value: boolean)
-get "documentURI"(): StringJS
 get "xmlEncoding"(): StringJS
 get "xmlVersion"(): StringJS
 get "xmlStandalone"(): boolean
@@ -122,8 +117,19 @@ get "strictErrorChecking"(): boolean
 get "inputEncoding"(): StringJS
 get "domConfig"(): $DOMConfiguration
 get "implementation"(): $DOMImplementation
+set "xmlVersion"(value: StringJS)
+set "strictErrorChecking"(value: boolean)
+set "documentURI"(value: StringJS)
+set "xmlStandalone"(value: boolean)
+get "documentURI"(): StringJS
 get "documentElement"(): $Element
+get "ownerDocument"(): $Document
+get "namespaceURI"(): StringJS
+set "prefix"(value: StringJS)
+get "textContent"(): StringJS
+set "textContent"(value: StringJS)
 get "nodeType"(): short
+get "localName"(): StringJS
 get "lastChild"(): $Node
 get "nodeName"(): StringJS
 set "nodeValue"(value: StringJS)
@@ -133,32 +139,12 @@ get "nextSibling"(): $Node
 get "previousSibling"(): $Node
 get "nodeValue"(): StringJS
 get "baseURI"(): StringJS
-get "localName"(): StringJS
-get "ownerDocument"(): $Document
-get "namespaceURI"(): StringJS
-set "prefix"(value: StringJS)
-get "textContent"(): StringJS
-set "textContent"(value: StringJS)
 get "attributes"(): $NamedNodeMap
 get "prefix"(): StringJS
 get "childNodes"(): $NodeList
 }
 
 export class $Document implements $Document$$Interface {
- "createEntityReference"(arg0: StringJS): $EntityReference
- "setXmlVersion"(arg0: StringJS): void
- "createComment"(arg0: StringJS): $Comment
- "createProcessingInstruction"(arg0: StringJS, arg1: StringJS): $ProcessingInstruction
- "setStrictErrorChecking"(arg0: boolean): void
- "setDocumentURI"(arg0: StringJS): void
- "setXmlStandalone"(arg0: boolean): void
- "createCDATASection"(arg0: StringJS): $CDATASection
- "createTextNode"(arg0: StringJS): $Text
- "getDocumentURI"(): StringJS
- "createAttributeNS"(arg0: StringJS, arg1: StringJS): $Attr
- "createAttribute"(arg0: StringJS): $Attr
- "createElementNS"(arg0: StringJS, arg1: StringJS): $Element
- "createElement"(arg0: StringJS): $Element
  "importNode"(arg0: $Node$$Type, arg1: boolean): $Node
  "getXmlEncoding"(): StringJS
  "getXmlVersion"(): StringJS
@@ -175,25 +161,22 @@ export class $Document implements $Document$$Interface {
  "getElementById"(arg0: StringJS): $Element
  "getElementsByTagNameNS"(arg0: StringJS, arg1: StringJS): $NodeList
  "getImplementation"(): $DOMImplementation
+ "createEntityReference"(arg0: StringJS): $EntityReference
+ "setXmlVersion"(arg0: StringJS): void
+ "createComment"(arg0: StringJS): $Comment
+ "createProcessingInstruction"(arg0: StringJS, arg1: StringJS): $ProcessingInstruction
+ "setStrictErrorChecking"(arg0: boolean): void
+ "setDocumentURI"(arg0: StringJS): void
+ "setXmlStandalone"(arg0: boolean): void
+ "createCDATASection"(arg0: StringJS): $CDATASection
+ "createTextNode"(arg0: StringJS): $Text
+ "getDocumentURI"(): StringJS
+ "createAttributeNS"(arg0: StringJS, arg1: StringJS): $Attr
+ "createAttribute"(arg0: StringJS): $Attr
+ "createElementNS"(arg0: StringJS, arg1: StringJS): $Element
+ "createElement"(arg0: StringJS): $Element
  "getDocumentElement"(): $Element
- "getNodeType"(): short
- "appendChild"(arg0: $Node$$Type): $Node
- "getLastChild"(): $Node
- "getNodeName"(): StringJS
- "removeChild"(arg0: $Node$$Type): $Node
- "setNodeValue"(arg0: StringJS): void
- "getParentNode"(): $Node
- "getFirstChild"(): $Node
- "cloneNode"(arg0: boolean): $Node
- "getNextSibling"(): $Node
- "getPreviousSibling"(): $Node
- "getNodeValue"(): StringJS
- "insertBefore"(arg0: $Node$$Type, arg1: $Node$$Type): $Node
- "getBaseURI"(): StringJS
- "setUserData"(arg0: StringJS, arg1: any, arg2: $UserDataHandler$$Type): any
  "getFeature"(arg0: StringJS, arg1: StringJS): any
- "hasAttributes"(): boolean
- "getLocalName"(): StringJS
  "normalize"(): void
  "getOwnerDocument"(): $Document
  "replaceChild"(arg0: $Node$$Type, arg1: $Node$$Type): $Node
@@ -209,6 +192,23 @@ export class $Document implements $Document$$Interface {
  "lookupNamespaceURI"(arg0: StringJS): StringJS
  "isEqualNode"(arg0: $Node$$Type): boolean
  "getUserData"(arg0: StringJS): any
+ "setUserData"(arg0: StringJS, arg1: any, arg2: $UserDataHandler$$Type): any
+ "getNodeType"(): short
+ "hasAttributes"(): boolean
+ "getLocalName"(): StringJS
+ "appendChild"(arg0: $Node$$Type): $Node
+ "getLastChild"(): $Node
+ "getNodeName"(): StringJS
+ "removeChild"(arg0: $Node$$Type): $Node
+ "setNodeValue"(arg0: StringJS): void
+ "getParentNode"(): $Node
+ "getFirstChild"(): $Node
+ "cloneNode"(arg0: boolean): $Node
+ "getNextSibling"(): $Node
+ "getPreviousSibling"(): $Node
+ "getNodeValue"(): StringJS
+ "insertBefore"(arg0: $Node$$Type, arg1: $Node$$Type): $Node
+ "getBaseURI"(): StringJS
  "isSupported"(arg0: StringJS, arg1: StringJS): boolean
  "getAttributes"(): $NamedNodeMap
  "getPrefix"(): StringJS
@@ -259,12 +259,12 @@ get "length"(): integer
 }
 
 export class $NamedNodeMap implements $NamedNodeMap$$Interface {
+ "getNamedItemNS"(arg0: StringJS, arg1: StringJS): $Node
+ "item"(arg0: integer): $Node
  "removeNamedItemNS"(arg0: StringJS, arg1: StringJS): $Node
  "getNamedItem"(arg0: StringJS): $Node
  "setNamedItem"(arg0: $Node$$Type): $Node
  "setNamedItemNS"(arg0: $Node$$Type): $Node
- "getNamedItemNS"(arg0: StringJS, arg1: StringJS): $Node
- "item"(arg0: integer): $Node
  "getLength"(): integer
  "removeNamedItem"(arg0: StringJS): $Node
 }
@@ -284,7 +284,13 @@ import {$NamedNodeMap} from "org.w3c.dom.NamedNodeMap"
 import {$NodeList} from "org.w3c.dom.NodeList"
 
 export interface $Node$$Interface {
+get "ownerDocument"(): $Document
+get "namespaceURI"(): StringJS
+set "prefix"(value: StringJS)
+get "textContent"(): StringJS
+set "textContent"(value: StringJS)
 get "nodeType"(): short
+get "localName"(): StringJS
 get "lastChild"(): $Node
 get "nodeName"(): StringJS
 set "nodeValue"(value: StringJS)
@@ -294,12 +300,6 @@ get "nextSibling"(): $Node
 get "previousSibling"(): $Node
 get "nodeValue"(): StringJS
 get "baseURI"(): StringJS
-get "localName"(): StringJS
-get "ownerDocument"(): $Document
-get "namespaceURI"(): StringJS
-set "prefix"(value: StringJS)
-get "textContent"(): StringJS
-set "textContent"(value: StringJS)
 get "attributes"(): $NamedNodeMap
 get "prefix"(): StringJS
 get "childNodes"(): $NodeList
@@ -325,24 +325,7 @@ static readonly "DOCUMENT_POSITION_FOLLOWING": short
 static readonly "ATTRIBUTE_NODE": short
 static readonly "DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC": short
 
- "getNodeType"(): short
- "appendChild"(arg0: $Node$$Type): $Node
- "getLastChild"(): $Node
- "getNodeName"(): StringJS
- "removeChild"(arg0: $Node$$Type): $Node
- "setNodeValue"(arg0: StringJS): void
- "getParentNode"(): $Node
- "getFirstChild"(): $Node
- "cloneNode"(arg0: boolean): $Node
- "getNextSibling"(): $Node
- "getPreviousSibling"(): $Node
- "getNodeValue"(): StringJS
- "insertBefore"(arg0: $Node$$Type, arg1: $Node$$Type): $Node
- "getBaseURI"(): StringJS
- "setUserData"(arg0: StringJS, arg1: any, arg2: $UserDataHandler$$Type): any
  "getFeature"(arg0: StringJS, arg1: StringJS): any
- "hasAttributes"(): boolean
- "getLocalName"(): StringJS
  "normalize"(): void
  "getOwnerDocument"(): $Document
  "replaceChild"(arg0: $Node$$Type, arg1: $Node$$Type): $Node
@@ -358,6 +341,23 @@ static readonly "DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC": short
  "lookupNamespaceURI"(arg0: StringJS): StringJS
  "isEqualNode"(arg0: $Node$$Type): boolean
  "getUserData"(arg0: StringJS): any
+ "setUserData"(arg0: StringJS, arg1: any, arg2: $UserDataHandler$$Type): any
+ "getNodeType"(): short
+ "hasAttributes"(): boolean
+ "getLocalName"(): StringJS
+ "appendChild"(arg0: $Node$$Type): $Node
+ "getLastChild"(): $Node
+ "getNodeName"(): StringJS
+ "removeChild"(arg0: $Node$$Type): $Node
+ "setNodeValue"(arg0: StringJS): void
+ "getParentNode"(): $Node
+ "getFirstChild"(): $Node
+ "cloneNode"(arg0: boolean): $Node
+ "getNextSibling"(): $Node
+ "getPreviousSibling"(): $Node
+ "getNodeValue"(): StringJS
+ "insertBefore"(arg0: $Node$$Type, arg1: $Node$$Type): $Node
+ "getBaseURI"(): StringJS
  "isSupported"(arg0: StringJS, arg1: StringJS): boolean
  "getAttributes"(): $NamedNodeMap
  "getPrefix"(): StringJS
@@ -432,7 +432,13 @@ get "schemaTypeInfo"(): $TypeInfo
 set "attributeNodeNS"(value: $Attr$$Type)
 set "attributeNode"(value: $Attr$$Type)
 get "tagName"(): StringJS
+get "ownerDocument"(): $Document
+get "namespaceURI"(): StringJS
+set "prefix"(value: StringJS)
+get "textContent"(): StringJS
+set "textContent"(value: StringJS)
 get "nodeType"(): short
+get "localName"(): StringJS
 get "lastChild"(): $Node
 get "nodeName"(): StringJS
 set "nodeValue"(value: StringJS)
@@ -442,30 +448,12 @@ get "nextSibling"(): $Node
 get "previousSibling"(): $Node
 get "nodeValue"(): StringJS
 get "baseURI"(): StringJS
-get "localName"(): StringJS
-get "ownerDocument"(): $Document
-get "namespaceURI"(): StringJS
-set "prefix"(value: StringJS)
-get "textContent"(): StringJS
-set "textContent"(value: StringJS)
 get "attributes"(): $NamedNodeMap
 get "prefix"(): StringJS
 get "childNodes"(): $NodeList
 }
 
 export class $Element implements $Element$$Interface {
- "hasAttribute"(arg0: StringJS): boolean
- "hasAttributeNS"(arg0: StringJS, arg1: StringJS): boolean
- "setIdAttributeNS"(arg0: StringJS, arg1: StringJS, arg2: boolean): void
- "getSchemaTypeInfo"(): $TypeInfo
- "removeAttribute"(arg0: StringJS): void
- "setAttributeNodeNS"(arg0: $Attr$$Type): $Attr
- "setAttributeNode"(arg0: $Attr$$Type): $Attr
- "setIdAttributeNode"(arg0: $Attr$$Type, arg1: boolean): void
- "getAttributeNodeNS"(arg0: StringJS, arg1: StringJS): $Attr
- "getAttributeNode"(arg0: StringJS): $Attr
- "setAttributeNS"(arg0: StringJS, arg1: StringJS, arg2: StringJS): void
- "setIdAttribute"(arg0: StringJS, arg1: boolean): void
  "removeAttributeNode"(arg0: $Attr$$Type): $Attr
  "getElementsByTagName"(arg0: StringJS): $NodeList
  "getElementsByTagNameNS"(arg0: StringJS, arg1: StringJS): $NodeList
@@ -473,25 +461,20 @@ export class $Element implements $Element$$Interface {
  "removeAttributeNS"(arg0: StringJS, arg1: StringJS): void
  "setAttribute"(arg0: StringJS, arg1: StringJS): void
  "getAttribute"(arg0: StringJS): StringJS
+ "removeAttribute"(arg0: StringJS): void
+ "hasAttribute"(arg0: StringJS): boolean
+ "hasAttributeNS"(arg0: StringJS, arg1: StringJS): boolean
+ "setIdAttributeNS"(arg0: StringJS, arg1: StringJS, arg2: boolean): void
+ "getSchemaTypeInfo"(): $TypeInfo
+ "setAttributeNodeNS"(arg0: $Attr$$Type): $Attr
+ "setAttributeNode"(arg0: $Attr$$Type): $Attr
+ "setIdAttributeNode"(arg0: $Attr$$Type, arg1: boolean): void
+ "getAttributeNodeNS"(arg0: StringJS, arg1: StringJS): $Attr
+ "getAttributeNode"(arg0: StringJS): $Attr
+ "setAttributeNS"(arg0: StringJS, arg1: StringJS, arg2: StringJS): void
+ "setIdAttribute"(arg0: StringJS, arg1: boolean): void
  "getTagName"(): StringJS
- "getNodeType"(): short
- "appendChild"(arg0: $Node$$Type): $Node
- "getLastChild"(): $Node
- "getNodeName"(): StringJS
- "removeChild"(arg0: $Node$$Type): $Node
- "setNodeValue"(arg0: StringJS): void
- "getParentNode"(): $Node
- "getFirstChild"(): $Node
- "cloneNode"(arg0: boolean): $Node
- "getNextSibling"(): $Node
- "getPreviousSibling"(): $Node
- "getNodeValue"(): StringJS
- "insertBefore"(arg0: $Node$$Type, arg1: $Node$$Type): $Node
- "getBaseURI"(): StringJS
- "setUserData"(arg0: StringJS, arg1: any, arg2: $UserDataHandler$$Type): any
  "getFeature"(arg0: StringJS, arg1: StringJS): any
- "hasAttributes"(): boolean
- "getLocalName"(): StringJS
  "normalize"(): void
  "getOwnerDocument"(): $Document
  "replaceChild"(arg0: $Node$$Type, arg1: $Node$$Type): $Node
@@ -507,6 +490,23 @@ export class $Element implements $Element$$Interface {
  "lookupNamespaceURI"(arg0: StringJS): StringJS
  "isEqualNode"(arg0: $Node$$Type): boolean
  "getUserData"(arg0: StringJS): any
+ "setUserData"(arg0: StringJS, arg1: any, arg2: $UserDataHandler$$Type): any
+ "getNodeType"(): short
+ "hasAttributes"(): boolean
+ "getLocalName"(): StringJS
+ "appendChild"(arg0: $Node$$Type): $Node
+ "getLastChild"(): $Node
+ "getNodeName"(): StringJS
+ "removeChild"(arg0: $Node$$Type): $Node
+ "setNodeValue"(arg0: StringJS): void
+ "getParentNode"(): $Node
+ "getFirstChild"(): $Node
+ "cloneNode"(arg0: boolean): $Node
+ "getNextSibling"(): $Node
+ "getPreviousSibling"(): $Node
+ "getNodeValue"(): StringJS
+ "insertBefore"(arg0: $Node$$Type, arg1: $Node$$Type): $Node
+ "getBaseURI"(): StringJS
  "isSupported"(arg0: StringJS, arg1: StringJS): boolean
  "getAttributes"(): $NamedNodeMap
  "getPrefix"(): StringJS

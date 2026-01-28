@@ -13,9 +13,9 @@ static readonly "X_4": $FunctionalStorage$DrawerType
 public "getSlotPosition"(): $Function<(integer), ($Pair<(integer), (integer)>)>
 public "getSlotAmount"(): integer
 public "getTag"(): $TagKey<($Item)>
+public "getDisplayName"(): StringJS
 public static "values"(): ($FunctionalStorage$DrawerType)[]
 public static "valueOf"(arg0: StringJS): $FunctionalStorage$DrawerType
-public "getDisplayName"(): StringJS
 public "getSlots"(): integer
 get "slotPosition"(): $Function<(integer), ($Pair<(integer), (integer)>)>
 get "slotAmount"(): integer

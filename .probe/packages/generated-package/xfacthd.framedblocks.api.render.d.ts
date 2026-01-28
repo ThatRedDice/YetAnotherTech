@@ -22,10 +22,10 @@ export type $BlockDebugRenderer$$Type<T> = ($BlockDebugRenderer<(T)>);
  */
 export type $BlockDebugRenderer$$Original<T> = $BlockDebugRenderer<(T)>;}
 declare module "xfacthd.framedblocks.api.render.RegisterOutlineRenderersEvent" {
-import {$IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
 import {$OutlineRenderer$$Type} from "xfacthd.framedblocks.api.render.OutlineRenderer"
-import {$BiConsumer$$Type} from "java.util.function.BiConsumer"
+import {$IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
 import {$Event} from "net.neoforged.bus.api.Event"
+import {$BiConsumer$$Type} from "java.util.function.BiConsumer"
 import {$IModBusEvent$$Interface} from "net.neoforged.fml.event.IModBusEvent"
 
 export class $RegisterOutlineRenderersEvent extends $Event implements $IModBusEvent$$Interface {
@@ -59,11 +59,11 @@ export interface $OutlineRenderer$$Interface {
 export class $OutlineRenderer implements $OutlineRenderer$$Interface {
 static readonly "YN_DIR": ($Quaternionf)[]
 
-static "drawLine"(arg0: $VertexConsumer$$Type, arg1: $PoseStack$$Type, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float): void
  "getRotationDir"(arg0: $BlockState$$Type): $Direction
 static "makeQuaternionArray"(): ($Quaternionf)[]
  "rotateMatrix"(arg0: $PoseStack$$Type, arg1: $BlockState$$Type): void
 static "mirrorHorizontally"(arg0: $PoseStack$$Type, arg1: boolean): void
+static "drawLine"(arg0: $VertexConsumer$$Type, arg1: $PoseStack$$Type, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float): void
  "draw"(arg0: $BlockState$$Type, arg1: $PoseStack$$Type, arg2: $VertexConsumer$$Type): void
  "draw"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $PoseStack$$Type, arg4: $VertexConsumer$$Type): void
 }
@@ -78,8 +78,8 @@ export type $OutlineRenderer$$Type = ((arg0: $BlockState, arg1: $PoseStack, arg2
 export type $OutlineRenderer$$Original = $OutlineRenderer;}
 declare module "xfacthd.framedblocks.api.render.debug.AttachDebugRenderersEvent" {
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$BiConsumer$$Type} from "java.util.function.BiConsumer"
 import {$Event} from "net.neoforged.bus.api.Event"
+import {$BiConsumer$$Type} from "java.util.function.BiConsumer"
 import {$FramedBlockEntity, $FramedBlockEntity$$Type} from "xfacthd.framedblocks.api.block.blockentity.FramedBlockEntity"
 import {$BlockDebugRenderer$$Type} from "xfacthd.framedblocks.api.render.debug.BlockDebugRenderer"
 import {$IModBusEvent$$Interface} from "net.neoforged.fml.event.IModBusEvent"

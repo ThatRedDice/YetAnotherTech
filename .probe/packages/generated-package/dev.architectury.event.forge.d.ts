@@ -5,8 +5,8 @@ export interface $EventHandlerImplCommon$LevelEventAttachment$$Interface {
 }
 
 export class $EventHandlerImplCommon$LevelEventAttachment implements $EventHandlerImplCommon$LevelEventAttachment$$Interface {
- "architectury$getAttachedLevel"(): $LevelAccessor
  "architectury$attachLevel"(arg0: $LevelAccessor$$Type): void
+ "architectury$getAttachedLevel"(): $LevelAccessor
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_

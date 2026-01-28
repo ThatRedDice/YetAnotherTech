@@ -5,15 +5,15 @@ import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Tier$$Type} from "owmii.powah.block.Tier"
 import {$Optional} from "java.util.Optional"
 import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
+import {$Inventory$$Type} from "net.minecraft.world.entity.player.Inventory"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$SimpleWaterloggedBlock$$Interface} from "net.minecraft.world.level.block.SimpleWaterloggedBlock"
-import {$Inventory$$Type} from "net.minecraft.world.entity.player.Inventory"
-import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$AbstractEnergyBlock} from "owmii.powah.lib.block.AbstractEnergyBlock"
+import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$AbstractContainer} from "owmii.powah.lib.logistics.inventory.AbstractContainer"
 import {$EnergyBlockItem} from "owmii.powah.lib.item.EnergyBlockItem"
-import {$CreativeModeTab$$Type} from "net.minecraft.world.item.CreativeModeTab"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
+import {$CreativeModeTab$$Type} from "net.minecraft.world.item.CreativeModeTab"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
@@ -29,8 +29,8 @@ import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
-import {$EnergyConfig} from "owmii.powah.config.v2.types.EnergyConfig"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
+import {$EnergyConfig} from "owmii.powah.config.v2.types.EnergyConfig"
 
 export class $EnergyCellBlock extends $AbstractEnergyBlock<($EnergyConfig), ($EnergyCellBlock)> implements $SimpleWaterloggedBlock$$Interface {
 static readonly "UPDATE_IMMEDIATE": integer
@@ -59,8 +59,8 @@ public "getContainer"(arg0: integer, arg1: $Inventory$$Type, arg2: $AbstractTile
 public "getConfig"(): any
 public "getBlockItem"(arg0: $Item$Properties$$Type, arg1: $ResourceKey$$Type<($CreativeModeTab)>): $EnergyBlockItem
 public "getPickupSound"(): $Optional<($SoundEvent)>
-public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "canPlaceLiquid"(arg0: $Player$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $Fluid$$Type): boolean
+public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "pickupBlock"(arg0: $Player$$Type, arg1: $LevelAccessor$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): $ItemStack
 public "getPickupSound"(arg0: $BlockState$$Type): $Optional<($SoundEvent)>
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean

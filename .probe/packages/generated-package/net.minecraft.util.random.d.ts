@@ -34,8 +34,8 @@ public "toString"(): StringJS
 public "hashCode"(): integer
 public "data"(): T
 public "weight"(): $Weight
-public "getWeight"(): $Weight
 public static "codec"<E>(arg0: $Codec$$Type<(E)>): $Codec<($WeightedEntry$Wrapper<(E)>)>
+public "getWeight"(): $Weight
 public static "wrap"<T>(arg0: T, arg1: integer): $WeightedEntry$Wrapper<(T)>
 }
 /**
@@ -112,8 +112,8 @@ export type $Weight$$Type = ($Weight);
 export type $Weight$$Original = $Weight;}
 declare module "net.minecraft.util.random.SimpleWeightedRandomList" {
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
-import {$WeightedEntry$Wrapper} from "net.minecraft.util.random.WeightedEntry$Wrapper"
 import {$Optional} from "java.util.Optional"
+import {$WeightedEntry$Wrapper} from "net.minecraft.util.random.WeightedEntry$Wrapper"
 import {$Codec, $Codec$$Type} from "com.mojang.serialization.Codec"
 import {$WeightedRandomList} from "net.minecraft.util.random.WeightedRandomList"
 import {$SimpleWeightedRandomList$Builder} from "net.minecraft.util.random.SimpleWeightedRandomList$Builder"

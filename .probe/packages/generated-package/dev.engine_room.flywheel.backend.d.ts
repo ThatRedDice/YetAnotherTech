@@ -39,8 +39,8 @@ export type $AbstractClientPlayerAccessor$$Type = (() => $PlayerInfo$$Type);
  */
 export type $AbstractClientPlayerAccessor$$Original = $AbstractClientPlayerAccessor;}
 declare module "dev.engine_room.flywheel.backend.mixin.light.LightEngineAccessor" {
-import {$LayerLightSectionStorage, $LayerLightSectionStorage$$Type} from "net.minecraft.world.level.lighting.LayerLightSectionStorage"
 import {$DataLayerStorageMap} from "net.minecraft.world.level.lighting.DataLayerStorageMap"
+import {$LayerLightSectionStorage, $LayerLightSectionStorage$$Type} from "net.minecraft.world.level.lighting.LayerLightSectionStorage"
 
 export interface $LightEngineAccessor$$Interface<M extends $DataLayerStorageMap<(object)>, S extends $LayerLightSectionStorage<(object)>> {
 

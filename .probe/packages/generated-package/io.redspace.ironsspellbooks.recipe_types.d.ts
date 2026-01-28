@@ -1,8 +1,8 @@
 declare module "io.redspace.ironsspellbooks.recipe_types.alchemist_cauldron.EmptyAlchemistCauldronRecipe$Serializer" {
 import {$EmptyAlchemistCauldronRecipe} from "io.redspace.ironsspellbooks.recipe_types.alchemist_cauldron.EmptyAlchemistCauldronRecipe"
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
 
@@ -34,10 +34,10 @@ import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$FluidStack, $FluidStack$$Type} from "net.neoforged.neoforge.fluids.FluidStack"
 import {$SoundEvent, $SoundEvent$$Type} from "net.minecraft.sounds.SoundEvent"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
-import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
-import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
+import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
 import {$Recipe$$Interface} from "net.minecraft.world.item.crafting.Recipe"
+import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$Record} from "java.lang.Record"
 
@@ -85,14 +85,14 @@ export type $EmptyAlchemistCauldronRecipe$$Type = ({"input"?: $Ingredient$$Type,
 export type $EmptyAlchemistCauldronRecipe$$Original = $EmptyAlchemistCauldronRecipe;}
 declare module "io.redspace.ironsspellbooks.recipe_types.NoAdditionSmithingTransformRecipe" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$Ingredient, $Ingredient$$Type} from "net.minecraft.world.item.crafting.Ingredient"
-import {$RecipeType} from "net.minecraft.world.item.crafting.RecipeType"
+import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$SmithingRecipeInput$$Type} from "net.minecraft.world.item.crafting.SmithingRecipeInput"
+import {$RecipeType} from "net.minecraft.world.item.crafting.RecipeType"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$SmithingRecipe$$Interface} from "net.minecraft.world.item.crafting.SmithingRecipe"
-import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
+import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 
 export class $NoAdditionSmithingTransformRecipe implements $SmithingRecipe$$Interface {
@@ -169,7 +169,7 @@ get "empty"(): boolean
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $EmptyAlchemistCauldronRecipe$Input$$Type = ({"item"?: $ItemStack$$Type, "fluid"?: $FluidStack$$Type}) | ([item?: $ItemStack$$Type, fluid?: $FluidStack$$Type]);
+export type $EmptyAlchemistCauldronRecipe$Input$$Type = ({"fluid"?: $FluidStack$$Type, "item"?: $ItemStack$$Type}) | ([fluid?: $FluidStack$$Type, item?: $ItemStack$$Type]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -185,8 +185,8 @@ import {$RecipeOutput$$Type} from "net.minecraft.data.recipes.RecipeOutput"
 import {$Criterion$$Type} from "net.minecraft.advancements.Criterion"
 import {$Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
-import {$TagKey$$Type} from "net.minecraft.tags.TagKey"
 import {$ItemLike$$Type} from "net.minecraft.world.level.ItemLike"
+import {$TagKey$$Type} from "net.minecraft.tags.TagKey"
 import {$Item, $Item$$Type} from "net.minecraft.world.item.Item"
 
 export class $BrewAlchemistCauldronRecipe$Builder implements $RecipeBuilder$$Interface {
@@ -195,12 +195,12 @@ constructor()
 public "unlockedBy"(arg0: StringJS, arg1: $Criterion$$Type<(never)>): $RecipeBuilder
 public "withInput"(arg0: $FluidStack$$Type): $BrewAlchemistCauldronRecipe$Builder
 public "withInput"(arg0: $Holder$$Type<($Fluid)>, arg1: integer): $BrewAlchemistCauldronRecipe$Builder
+public "withByproduct"(arg0: $Holder$$Type<($Item)>): $BrewAlchemistCauldronRecipe$Builder
+public "withByproduct"(arg0: $Item$$Type): $BrewAlchemistCauldronRecipe$Builder
+public "withByproduct"(arg0: $ItemStack$$Type): $BrewAlchemistCauldronRecipe$Builder
 public "withReagent"(arg0: $ItemStack$$Type): $BrewAlchemistCauldronRecipe$Builder
 public "withReagent"(arg0: $TagKey$$Type<($Item)>): $BrewAlchemistCauldronRecipe$Builder
 public "withReagent"(arg0: $Item$$Type): $BrewAlchemistCauldronRecipe$Builder
-public "withByproduct"(arg0: $Item$$Type): $BrewAlchemistCauldronRecipe$Builder
-public "withByproduct"(arg0: $Holder$$Type<($Item)>): $BrewAlchemistCauldronRecipe$Builder
-public "withByproduct"(arg0: $ItemStack$$Type): $BrewAlchemistCauldronRecipe$Builder
 public "saveSoak"(arg0: $RecipeOutput$$Type): void
 public "withResult"(arg0: $FluidStack$$Type): $BrewAlchemistCauldronRecipe$Builder
 public "withResult"(arg0: $Holder$$Type<($Fluid)>, arg1: integer): $BrewAlchemistCauldronRecipe$Builder
@@ -224,8 +224,8 @@ export type $BrewAlchemistCauldronRecipe$Builder$$Type = ($BrewAlchemistCauldron
 export type $BrewAlchemistCauldronRecipe$Builder$$Original = $BrewAlchemistCauldronRecipe$Builder;}
 declare module "io.redspace.ironsspellbooks.recipe_types.NoAdditionSmithingTransformRecipe$Serializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$NoAdditionSmithingTransformRecipe} from "io.redspace.ironsspellbooks.recipe_types.NoAdditionSmithingTransformRecipe"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
@@ -250,8 +250,8 @@ export type $NoAdditionSmithingTransformRecipe$Serializer$$Type = ($NoAdditionSm
 export type $NoAdditionSmithingTransformRecipe$Serializer$$Original = $NoAdditionSmithingTransformRecipe$Serializer;}
 declare module "io.redspace.ironsspellbooks.recipe_types.alchemist_cauldron.BrewAlchemistCauldronRecipe$Serializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$BrewAlchemistCauldronRecipe} from "io.redspace.ironsspellbooks.recipe_types.alchemist_cauldron.BrewAlchemistCauldronRecipe"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
@@ -287,30 +287,30 @@ import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$FluidStack, $FluidStack$$Type} from "net.neoforged.neoforge.fluids.FluidStack"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
-import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$Recipe$$Interface} from "net.minecraft.world.item.crafting.Recipe"
+import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$Record} from "java.lang.Record"
 
 export class $BrewAlchemistCauldronRecipe extends $Record implements $Recipe$$Interface<($BrewAlchemistCauldronRecipe$Input)> {
 constructor(fluidIn: $FluidStack$$Type, reagent: $Ingredient$$Type, results: $List$$Type<($FluidStack$$Type)>, byproduct: ($ItemStack$$Type)?)
 
-public "assemble"(arg0: $BrewAlchemistCauldronRecipe$Input$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
 public "assemble"(arg0: $RecipeInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
+public "assemble"(arg0: $BrewAlchemistCauldronRecipe$Input$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
 public "getSerializer"(): $RecipeSerializer<(never)>
 public "canCraftInDimensions"(arg0: integer, arg1: integer): boolean
 public "getResultItem"(arg0: $HolderLookup$Provider$$Type): $ItemStack
 public "fluidIn"(): $FluidStack
-public "byproduct"(): $Optional<($ItemStack)>
 public "reagent"(): $Ingredient
+public "byproduct"(): $Optional<($ItemStack)>
+public "results"(): $List<($FluidStack)>
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
-public "matches"(arg0: $RecipeInput$$Type, arg1: $Level$$Type): boolean
 public "matches"(arg0: $BrewAlchemistCauldronRecipe$Input$$Type, arg1: $Level$$Type): boolean
+public "matches"(arg0: $RecipeInput$$Type, arg1: $Level$$Type): boolean
 public static "builder"(): $BrewAlchemistCauldronRecipe$Builder
 public "getType"(): $RecipeType<(never)>
-public "results"(): $List<($FluidStack)>
 public "getRemainingItems"(arg0: $BrewAlchemistCauldronRecipe$Input$$Type): $NonNullList<($ItemStack)>
 public "getIngredients"(): $NonNullList<($Ingredient)>
 public "showNotification"(): boolean
@@ -330,7 +330,7 @@ get "special"(): boolean
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $BrewAlchemistCauldronRecipe$$Type = ({"results"?: $List$$Type<($FluidStack$$Type)>, "fluidIn"?: $FluidStack$$Type, "byproduct"?: ($ItemStack$$Type)?, "reagent"?: $Ingredient$$Type}) | ([results?: $List$$Type<($FluidStack$$Type)>, fluidIn?: $FluidStack$$Type, byproduct?: ($ItemStack$$Type)?, reagent?: $Ingredient$$Type]);
+export type $BrewAlchemistCauldronRecipe$$Type = ({"fluidIn"?: $FluidStack$$Type, "byproduct"?: ($ItemStack$$Type)?, "reagent"?: $Ingredient$$Type, "results"?: $List$$Type<($FluidStack$$Type)>}) | ([fluidIn?: $FluidStack$$Type, byproduct?: ($ItemStack$$Type)?, reagent?: $Ingredient$$Type, results?: $List$$Type<($FluidStack$$Type)>]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -365,7 +365,7 @@ get "empty"(): boolean
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $BrewAlchemistCauldronRecipe$Input$$Type = ({"fluidIn"?: $FluidStack$$Type, "reagent"?: $ItemStack$$Type}) | ([fluidIn?: $FluidStack$$Type, reagent?: $ItemStack$$Type]);
+export type $BrewAlchemistCauldronRecipe$Input$$Type = ({"reagent"?: $ItemStack$$Type, "fluidIn"?: $FluidStack$$Type}) | ([reagent?: $ItemStack$$Type, fluidIn?: $FluidStack$$Type]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -373,8 +373,8 @@ export type $BrewAlchemistCauldronRecipe$Input$$Original = $BrewAlchemistCauldro
 declare module "io.redspace.ironsspellbooks.recipe_types.alchemist_cauldron.FillAlchemistCauldronRecipe$Serializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$FillAlchemistCauldronRecipe} from "io.redspace.ironsspellbooks.recipe_types.alchemist_cauldron.FillAlchemistCauldronRecipe"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
 
@@ -399,17 +399,17 @@ export type $FillAlchemistCauldronRecipe$Serializer$$Type = ($FillAlchemistCauld
 export type $FillAlchemistCauldronRecipe$Serializer$$Original = $FillAlchemistCauldronRecipe$Serializer;}
 declare module "io.redspace.ironsspellbooks.recipe_types.alchemist_cauldron.FillAlchemistCauldronRecipe" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$Ingredient, $Ingredient$$Type} from "net.minecraft.world.item.crafting.Ingredient"
 import {$SingleRecipeInput, $SingleRecipeInput$$Type} from "net.minecraft.world.item.crafting.SingleRecipeInput"
+import {$Ingredient, $Ingredient$$Type} from "net.minecraft.world.item.crafting.Ingredient"
 import {$RecipeType} from "net.minecraft.world.item.crafting.RecipeType"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$FluidStack, $FluidStack$$Type} from "net.neoforged.neoforge.fluids.FluidStack"
 import {$SoundEvent, $SoundEvent$$Type} from "net.minecraft.sounds.SoundEvent"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
-import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
-import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
+import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
 import {$Recipe$$Interface} from "net.minecraft.world.item.crafting.Recipe"
+import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$Record} from "java.lang.Record"
 

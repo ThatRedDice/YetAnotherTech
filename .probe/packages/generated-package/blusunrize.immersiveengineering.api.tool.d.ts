@@ -78,8 +78,8 @@ import {$PrevSlot} from "blusunrize.immersiveengineering.api.tool.upgrade.PrevSl
 import {$UpgradeData$UpgradeEntry} from "blusunrize.immersiveengineering.api.tool.upgrade.UpgradeData$UpgradeEntry"
 import {$Cooldown} from "blusunrize.immersiveengineering.api.tool.upgrade.Cooldown"
 import {$Unit} from "com.mojang.datafixers.util.Unit"
-import {$DualCodec, $DualCodec$$Type} from "malte0811.dualcodecs.DualCodec"
 import {$ByteBuf, $ByteBuf$$Type} from "io.netty.buffer.ByteBuf"
+import {$DualCodec, $DualCodec$$Type} from "malte0811.dualcodecs.DualCodec"
 import {$Record} from "java.lang.Record"
 
 export class $UpgradeEffect<T> extends $Record {
@@ -133,8 +133,8 @@ export type $UpgradeEffect$$Type<T> = ({"valueCodec"?: $DualCodec$$Type<($ByteBu
  */
 export type $UpgradeEffect$$Original<T> = $UpgradeEffect<(T)>;}
 declare module "blusunrize.immersiveengineering.api.tool.upgrade.Cooldown" {
-import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$DualCodec} from "malte0811.dualcodecs.DualCodec"
+import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$Record} from "java.lang.Record"
 
 export class $Cooldown extends $Record {
@@ -166,8 +166,8 @@ import {$LogicCircuitHandler$ILogicCircuitHandler$$Type} from "blusunrize.immers
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$Component} from "net.minecraft.network.chat.Component"
 import {$LogicCircuitHandler$LogicCircuitOperator, $LogicCircuitHandler$LogicCircuitOperator$$Type} from "blusunrize.immersiveengineering.api.tool.LogicCircuitHandler$LogicCircuitOperator"
-import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$DualCodec} from "malte0811.dualcodecs.DualCodec"
+import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 
 export class $LogicCircuitHandler$LogicCircuitInstruction {
 static readonly "CODECS": $DualCodec<($ByteBuf), ($LogicCircuitHandler$LogicCircuitInstruction)>
@@ -177,12 +177,12 @@ constructor(arg0: $LogicCircuitHandler$LogicCircuitOperator$$Type, arg1: $LogicC
 public "getFormattedString"(): $Component
 public "getOutput"(): $LogicCircuitHandler$LogicCircuitRegister
 public "getInputs"(): ($LogicCircuitHandler$LogicCircuitRegister)[]
-public "getOperator"(): $LogicCircuitHandler$LogicCircuitOperator
 public "equals"(arg0: any): boolean
 public "hashCode"(): integer
 public "apply"(arg0: $LogicCircuitHandler$ILogicCircuitHandler$$Type): void
 public static "deserialize"(arg0: $CompoundTag$$Type): $LogicCircuitHandler$LogicCircuitInstruction
 public "serialize"(): $CompoundTag
+public "getOperator"(): $LogicCircuitHandler$LogicCircuitOperator
 get "formattedString"(): $Component
 get "output"(): $LogicCircuitHandler$LogicCircuitRegister
 get "inputs"(): ($LogicCircuitHandler$LogicCircuitRegister)[]
@@ -200,8 +200,8 @@ export type $LogicCircuitHandler$LogicCircuitInstruction$$Original = $LogicCircu
 declare module "blusunrize.immersiveengineering.api.tool.LogicCircuitHandler$LogicCircuitOperator" {
 import {$Enum} from "java.lang.Enum"
 import {$MutableComponent} from "net.minecraft.network.chat.MutableComponent"
-import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$DualCodec} from "malte0811.dualcodecs.DualCodec"
+import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 
 export class $LogicCircuitHandler$LogicCircuitOperator extends $Enum<($LogicCircuitHandler$LogicCircuitOperator)> {
 static readonly "NOR": $LogicCircuitHandler$LogicCircuitOperator
@@ -248,19 +248,19 @@ import {$Record} from "java.lang.Record"
 export class $IConveyorModelRender$RenderContext<T extends $IConveyorBelt> extends $Record {
 constructor(type: $IConveyorType$$Type<(T)>, instance: T, coverFallback: $Block$$Type)
 
-public "coverFallback"(): $Block
-public "getFacing"(): $Direction
 public "getConveyorDirection"(): $ConveyorHandler$ConveyorDirection
 public "getCover"(): $Block
+public "getFacing"(): $Direction
+public "coverFallback"(): $Block
 public "type"(): $IConveyorType<(T)>
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
 public "instance"(): T
 public "isActiveOr"(arg0: boolean): boolean
-get "facing"(): $Direction
 get "conveyorDirection"(): $ConveyorHandler$ConveyorDirection
 get "cover"(): $Block
+get "facing"(): $Direction
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -287,15 +287,15 @@ export interface $IUpgradeableTool$$Interface {
 
 export class $IUpgradeableTool implements $IUpgradeableTool$$Interface {
  "removeUpgrade"(arg0: $ItemStack$$Type, arg1: $Player$$Type, arg2: $ItemStack$$Type): void
- "getUpgrades"(arg0: $ItemStack$$Type): $UpgradeData
- "removeFromWorkbench"(arg0: $Player$$Type, arg1: $ItemStack$$Type): void
  "finishUpgradeRecalculation"(arg0: $ItemStack$$Type, arg1: $RegistryAccess$$Type): void
+ "removeFromWorkbench"(arg0: $Player$$Type, arg1: $ItemStack$$Type): void
  "canModify"(arg0: $ItemStack$$Type): boolean
  "getWorkbenchSlots"(arg0: $AbstractContainerMenu$$Type, arg1: $ItemStack$$Type, arg2: $Level$$Type, arg3: $Supplier$$Type<($Player$$Type)>, arg4: $IItemHandler$$Type): ($Slot)[]
  "clearUpgrades"(arg0: $ItemStack$$Type): void
  "recalculateUpgrades"(arg0: $ItemStack$$Type, arg1: $Level$$Type, arg2: $Player$$Type): void
  "canTakeFromWorkbench"(arg0: $ItemStack$$Type): boolean
  "getUpgradeAfterRemoval"(arg0: $ItemStack$$Type, arg1: $ItemStack$$Type): $ItemStack
+ "getUpgrades"(arg0: $ItemStack$$Type): $UpgradeData
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -364,8 +364,8 @@ export type $INoisyTool$$Type = ($INoisyTool);
 export type $INoisyTool$$Original = $INoisyTool;}
 declare module "blusunrize.immersiveengineering.api.tool.upgrade.IUpgrade" {
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$Set} from "java.util.Set"
 import {$UpgradeData, $UpgradeData$$Type} from "blusunrize.immersiveengineering.api.tool.upgrade.UpgradeData"
+import {$Set} from "java.util.Set"
 
 export interface $IUpgrade$$Interface {
 }
@@ -430,8 +430,8 @@ export type $ConveyorWall$$Type = (("left") | ("right"));
  */
 export type $ConveyorWall$$Original = $ConveyorWall;}
 declare module "blusunrize.immersiveengineering.api.tool.IElectricEquipment" {
-import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map, $Map$$Type} from "java.util.Map"
+import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$DamageSource, $DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
 import {$EquipmentSlot, $EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
@@ -464,8 +464,8 @@ import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$BakedQuad, $BakedQuad$$Type} from "net.minecraft.client.renderer.block.model.BakedQuad"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$ConveyorWall$$Type} from "blusunrize.immersiveengineering.api.tool.conveyor.ConveyorWall"
-import {$Transformation, $Transformation$$Type} from "com.mojang.math.Transformation"
 import {$Function$$Type} from "java.util.function.Function"
+import {$Transformation, $Transformation$$Type} from "com.mojang.math.Transformation"
 import {$IConveyorBelt} from "blusunrize.immersiveengineering.api.tool.conveyor.IConveyorBelt"
 import {$ModelBaker$$Type} from "net.minecraft.client.resources.model.ModelBaker"
 import {$RenderType$$Type} from "net.minecraft.client.renderer.RenderType"
@@ -478,7 +478,6 @@ get "activeTexture"(): $ResourceLocation
 }
 
 export class $IConveyorModelRender<T extends $IConveyorBelt> implements $IConveyorModelRender$$Interface {
- "modifyQuads"(arg0: $List$$Type<($BakedQuad$$Type)>, arg1: $IConveyorModelRender$RenderContext$$Type<(T)>, arg2: $RenderType$$Type): $List<($BakedQuad)>
 static "getDefaultData"<T extends $IConveyorBelt>(arg0: $IConveyorModelRender$$Type<(T)>, arg1: $IConveyorModelRender$RenderContext$$Type<(T)>): $BasicConveyorCacheData
  "shouldRenderWall"(arg0: $Direction$$Type, arg1: $ConveyorWall$$Type, arg2: $IConveyorModelRender$RenderContext$$Type<(T)>): boolean
  "getModelCacheKey"(arg0: $IConveyorModelRender$RenderContext$$Type<(T)>): any
@@ -486,6 +485,7 @@ static "getDefaultData"<T extends $IConveyorBelt>(arg0: $IConveyorModelRender$$T
  "getInactiveTexture"(): $ResourceLocation
  "getColouredStripesTexture"(): $ResourceLocation
  "updateCachedModels"(arg0: $ModelBaker$$Type, arg1: $Function$$Type<($Material), ($TextureAtlasSprite$$Type)>): void
+ "modifyQuads"(arg0: $List$$Type<($BakedQuad$$Type)>, arg1: $IConveyorModelRender$RenderContext$$Type<(T)>, arg2: $RenderType$$Type): $List<($BakedQuad)>
  "getActiveTexture"(): $ResourceLocation
 }
 /**
@@ -537,8 +537,8 @@ get "facing"(): $Direction
 }
 
 export class $ConveyorHandler$IConveyorBlockEntity<T extends $IConveyorBelt> implements $ConveyorHandler$IConveyorBlockEntity$$Interface {
- "sigOutputDirections"(): ($Direction)[]
  "getConveyorInstance"(): T
+ "sigOutputDirections"(): ($Direction)[]
  "getFacing"(): $Direction
 }
 /**
@@ -607,13 +607,11 @@ import {$IConveyorType} from "blusunrize.immersiveengineering.api.tool.conveyor.
 import {$Vec3} from "net.minecraft.world.phys.Vec3"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$DyeColor, $DyeColor$$Type} from "net.minecraft.world.item.DyeColor"
-import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
+import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
 
 export interface $IConveyorBelt$$Interface {
-get "facing"(): $Direction
-get "outputInventory"(): $BlockPos
 get "selectionShape"(): $VoxelShape
 get "conveyorDirection"(): $ConveyorHandler$ConveyorDirection
 set "conveyorDirection"(value: $ConveyorHandler$ConveyorDirection$$Type)
@@ -624,6 +622,8 @@ set "cover"(value: $Block$$Type)
 get "outputBlocked"(): boolean
 get "nextConveyorCandidates"(): $List<($BlockPos)>
 get "outputConveyor"(): $IConveyorBelt
+get "facing"(): $Direction
+get "outputInventory"(): $BlockPos
 get "type"(): $IConveyorType<(never)>
 get "active"(): boolean
 get "blocked"(): boolean
@@ -639,9 +639,6 @@ static readonly "FULL_BLOCK": $VoxelShape
  "tickServer"(): void
 static "isCovered"(arg0: $IConveyorBelt$$Type, arg1: $Block$$Type): boolean
  "onEntityCollision"(arg0: $Entity$$Type): void
- "getFacing"(): $Direction
- "handleInsertion"(arg0: $ItemEntity$$Type, arg1: $ConveyorHandler$ConveyorDirection$$Type, arg2: double, arg3: double): void
- "getOutputInventory"(): $BlockPos
  "sigTransportDirections"(): ($Direction)[]
  "onItemDeployed"(arg0: $ItemEntity$$Type): void
  "getSelectionShape"(): $VoxelShape
@@ -660,6 +657,9 @@ static "isCovered"(arg0: $IConveyorBelt$$Type, arg1: $Block$$Type): boolean
 static "getCoverOrDefault"(arg0: $IConveyorBelt$$Type, arg1: $Block$$Type): $Block
  "afterRotation"(arg0: $Direction$$Type, arg1: $Direction$$Type): void
  "getOutputConveyor"(): $IConveyorBelt
+ "getFacing"(): $Direction
+ "handleInsertion"(arg0: $ItemEntity$$Type, arg1: $ConveyorHandler$ConveyorDirection$$Type, arg2: double, arg3: double): void
+ "getOutputInventory"(): $BlockPos
  "getType"(): $IConveyorType<(never)>
  "isActive"(): boolean
  "getDirection"(arg0: $Entity$$Type, arg1: boolean): $Vec3
@@ -700,8 +700,8 @@ export type $ConveyorHandler$IConveyorBlock$$Original = $ConveyorHandler$IConvey
 declare module "blusunrize.immersiveengineering.api.tool.LogicCircuitHandler$LogicCircuitRegister" {
 import {$Enum} from "java.lang.Enum"
 import {$MutableComponent} from "net.minecraft.network.chat.MutableComponent"
-import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$DualCodec} from "malte0811.dualcodecs.DualCodec"
+import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 
 export class $LogicCircuitHandler$LogicCircuitRegister extends $Enum<($LogicCircuitHandler$LogicCircuitRegister)> {
 static readonly "GRAY": $LogicCircuitHandler$LogicCircuitRegister
@@ -765,8 +765,8 @@ export type $LogicCircuitHandler$ILogicCircuitHandler$$Type = ($LogicCircuitHand
 export type $LogicCircuitHandler$ILogicCircuitHandler$$Original = $LogicCircuitHandler$ILogicCircuitHandler;}
 declare module "blusunrize.immersiveengineering.api.tool.upgrade.UpgradeData$UpgradeEntry" {
 import {$UpgradeEffect, $UpgradeEffect$$Type} from "blusunrize.immersiveengineering.api.tool.upgrade.UpgradeEffect"
-import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$DualCodec} from "malte0811.dualcodecs.DualCodec"
+import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$Record} from "java.lang.Record"
 
 export class $UpgradeData$UpgradeEntry<T> extends $Record {
@@ -791,8 +791,8 @@ export type $UpgradeData$UpgradeEntry$$Type<T> = ({"value"?: T, "type"?: $Upgrad
 export type $UpgradeData$UpgradeEntry$$Original<T> = $UpgradeData$UpgradeEntry<(T)>;}
 declare module "blusunrize.immersiveengineering.api.tool.upgrade.PrevSlot" {
 import {$Optional, $Optional$$Type} from "java.util.Optional"
-import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$DualCodec} from "malte0811.dualcodecs.DualCodec"
+import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$Record} from "java.lang.Record"
 
 export class $PrevSlot extends $Record {
@@ -834,9 +834,9 @@ export type $IConfigurableTool$ToolConfig$$Type = ($IConfigurableTool$ToolConfig
  */
 export type $IConfigurableTool$ToolConfig$$Original = $IConfigurableTool$ToolConfig;}
 declare module "blusunrize.immersiveengineering.api.tool.conveyor.BasicConveyorCacheData" {
-import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
-import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
 import {$DyeColor, $DyeColor$$Type} from "net.minecraft.world.item.DyeColor"
+import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
+import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$ConveyorHandler$ConveyorDirection, $ConveyorHandler$ConveyorDirection$$Type} from "blusunrize.immersiveengineering.api.tool.conveyor.ConveyorHandler$ConveyorDirection"
 import {$Record} from "java.lang.Record"
 
@@ -858,7 +858,7 @@ public "facing"(): $Direction
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $BasicConveyorCacheData$$Type = ({"direction"?: $ConveyorHandler$ConveyorDirection$$Type, "active"?: boolean, "rightWall"?: boolean, "color"?: $DyeColor$$Type, "leftWall"?: boolean, "cover"?: $Block$$Type, "facing"?: $Direction$$Type}) | ([direction?: $ConveyorHandler$ConveyorDirection$$Type, active?: boolean, rightWall?: boolean, color?: $DyeColor$$Type, leftWall?: boolean, cover?: $Block$$Type, facing?: $Direction$$Type]);
+export type $BasicConveyorCacheData$$Type = ({"active"?: boolean, "rightWall"?: boolean, "color"?: $DyeColor$$Type, "leftWall"?: boolean, "cover"?: $Block$$Type, "facing"?: $Direction$$Type, "direction"?: $ConveyorHandler$ConveyorDirection$$Type}) | ([active?: boolean, rightWall?: boolean, color?: $DyeColor$$Type, leftWall?: boolean, cover?: $Block$$Type, facing?: $Direction$$Type, direction?: $ConveyorHandler$ConveyorDirection$$Type]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -888,12 +888,12 @@ import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$UUID$$Type} from "java.util.UUID"
 import {$List$$Type} from "java.util.List"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$HitResult$$Type} from "net.minecraft.world.phys.HitResult"
-import {$BulletHandler$CodecsAndDefault} from "blusunrize.immersiveengineering.api.tool.BulletHandler$CodecsAndDefault"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
+import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
+import {$BulletHandler$CodecsAndDefault} from "blusunrize.immersiveengineering.api.tool.BulletHandler$CodecsAndDefault"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Color4} from "blusunrize.immersiveengineering.api.utils.Color4"
@@ -911,11 +911,11 @@ export class $BulletHandler$IBullet<StackData> implements $BulletHandler$IBullet
  "addTooltip"(arg0: StackData, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
  "onHitTarget"(arg0: $Level$$Type, arg1: $HitResult$$Type, arg2: $UUID$$Type, arg3: $Entity$$Type, arg4: boolean, arg5: StackData): void
  "getTranslationKey"(arg0: StackData, arg1: StringJS): StringJS
- "getCasing"(arg0: $ItemStack$$Type): $ItemStack
  "isProperCartridge"(): boolean
  "getProjectileCount"(arg0: $Player$$Type): integer
  "isValidForTurret"(): boolean
  "getColour"(arg0: StackData, arg1: integer): $Color4
+ "getCasing"(arg0: $ItemStack$$Type): $ItemStack
  "getTextures"(): ($ResourceLocation)[]
  "getCodec"(): $BulletHandler$CodecsAndDefault<(StackData)>
  "getProjectile"(arg0: $Player$$Type, arg1: StackData, arg2: $Entity$$Type, arg3: boolean): $Entity
@@ -938,8 +938,8 @@ get "facing"(): $Direction
 }
 
 export class $ConveyorHandler$IConveyorAttachable implements $ConveyorHandler$IConveyorAttachable$$Interface {
- "getFacing"(): $Direction
  "sigOutputDirections"(): ($Direction)[]
+ "getFacing"(): $Direction
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -952,12 +952,12 @@ export type $ConveyorHandler$IConveyorAttachable$$Type = ($ConveyorHandler$IConv
 export type $ConveyorHandler$IConveyorAttachable$$Original = $ConveyorHandler$IConveyorAttachable;}
 declare module "blusunrize.immersiveengineering.api.tool.upgrade.UpgradeData" {
 import {$UnaryOperator$$Type} from "java.util.function.UnaryOperator"
-import {$UpgradeData$UpgradeEntry, $UpgradeData$UpgradeEntry$$Type} from "blusunrize.immersiveengineering.api.tool.upgrade.UpgradeData$UpgradeEntry"
 import {$List, $List$$Type} from "java.util.List"
+import {$UpgradeData$UpgradeEntry, $UpgradeData$UpgradeEntry$$Type} from "blusunrize.immersiveengineering.api.tool.upgrade.UpgradeData$UpgradeEntry"
 import {$UpgradeEffect$$Type} from "blusunrize.immersiveengineering.api.tool.upgrade.UpgradeEffect"
 import {$Unit$$Type} from "com.mojang.datafixers.util.Unit"
-import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$DualCodec} from "malte0811.dualcodecs.DualCodec"
+import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$Record} from "java.lang.Record"
 
 export class $UpgradeData extends $Record {

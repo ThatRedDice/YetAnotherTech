@@ -4,8 +4,8 @@ import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
 export class $AssemblyRecipe$AssemblyProgramType extends $Enum<($AssemblyRecipe$AssemblyProgramType)> implements $StringRepresentable$$Interface {
@@ -14,19 +14,19 @@ static readonly "CODEC": $Codec<($AssemblyRecipe$AssemblyProgramType)>
 static readonly "LASER": $AssemblyRecipe$AssemblyProgramType
 static readonly "DRILL": $AssemblyRecipe$AssemblyProgramType
 
-public "getRecipeType"(): $ResourceLocation
 public "getRegistryName"(): StringJS
+public "getRecipeType"(): $ResourceLocation
 public static "values"(): ($AssemblyRecipe$AssemblyProgramType)[]
 public static "valueOf"(arg0: StringJS): $AssemblyRecipe$AssemblyProgramType
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
-get "recipeType"(): $ResourceLocation
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "registryName"(): StringJS
+get "recipeType"(): $ResourceLocation
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
 }
@@ -110,25 +110,25 @@ export type $IInventoryItem$$Original = $IInventoryItem;}
 declare module "me.desht.pneumaticcraft.api.crafting.recipe.HeatFrameCoolingRecipe" {
 import {$PneumaticCraftRecipe} from "me.desht.pneumaticcraft.api.crafting.recipe.PneumaticCraftRecipe"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$Ingredient} from "net.minecraft.world.item.crafting.Ingredient"
 import {$FluidContainerIngredient} from "me.desht.pneumaticcraft.api.crafting.ingredient.FluidContainerIngredient"
+import {$Ingredient} from "net.minecraft.world.item.crafting.Ingredient"
 import {$Either} from "com.mojang.datafixers.util.Either"
 
 export class $HeatFrameCoolingRecipe extends $PneumaticCraftRecipe {
 constructor()
 
+public "getOutput"(): $ItemStack
 public "calculateOutputQuantity"(arg0: double): integer
-public "getThresholdTemperature"(): integer
 public "getBonusMultiplier"(): float
+public "getThresholdTemperature"(): integer
 public "getBonusLimit"(): float
 public "getInput"(): $Either<($Ingredient), ($FluidContainerIngredient)>
-public "getOutput"(): $ItemStack
 public "matches"(arg0: $ItemStack$$Type): boolean
-get "thresholdTemperature"(): integer
+get "output"(): $ItemStack
 get "bonusMultiplier"(): float
+get "thresholdTemperature"(): integer
 get "bonusLimit"(): float
 get "input"(): $Either<($Ingredient), ($FluidContainerIngredient)>
-get "output"(): $ItemStack
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -180,30 +180,30 @@ import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.st
 export class $HeatPropertiesRecipe extends $PneumaticCraftRecipe {
 constructor()
 
-public "getLogic"(): $IHeatExchangerLogic
-public "getThermalResistance"(): $Optional<(double)>
 public "getTemperature"(): integer
 public "getTransforms"(): $HeatPropertiesRecipe$Transforms
+public "getLogic"(): $IHeatExchangerLogic
+public "getThermalResistance"(): $Optional<(double)>
+public "getTransformColdFlowing"(): $Optional<($BlockState)>
+public "getInputDisplayName"(): $Component
 public "getTransformHot"(): $Optional<($BlockState)>
 public "getTransformCold"(): $Optional<($BlockState)>
 public "getTransformHotFlowing"(): $Optional<($BlockState)>
-public "getTransformColdFlowing"(): $Optional<($BlockState)>
-public "getInputDisplayName"(): $Component
 public "getHeatCapacity"(): $Optional<(integer)>
 public "getBlockStatePredicates"(): $Map<(StringJS), (StringJS)>
 public "getBlock"(): $Block
 public "matchState"(arg0: $BlockState$$Type): boolean
 public "getBlockState"(): $BlockState
 public "getDescriptionKey"(): StringJS
-get "logic"(): $IHeatExchangerLogic
-get "thermalResistance"(): $Optional<(double)>
 get "temperature"(): integer
 get "transforms"(): $HeatPropertiesRecipe$Transforms
+get "logic"(): $IHeatExchangerLogic
+get "thermalResistance"(): $Optional<(double)>
+get "transformColdFlowing"(): $Optional<($BlockState)>
+get "inputDisplayName"(): $Component
 get "transformHot"(): $Optional<($BlockState)>
 get "transformCold"(): $Optional<($BlockState)>
 get "transformHotFlowing"(): $Optional<($BlockState)>
-get "transformColdFlowing"(): $Optional<($BlockState)>
-get "inputDisplayName"(): $Component
 get "heatCapacity"(): $Optional<(integer)>
 get "blockStatePredicates"(): $Map<(StringJS), (StringJS)>
 get "block"(): $Block
@@ -232,11 +232,11 @@ constructor(arg0: $Predicate$$Type<($ItemStack)>, arg1: $BiConsumer$$Type<($Item
 public "getConsumer"(arg0: $ItemStack$$Type): $Consumer<($Player)>
 public "test"(arg0: any): boolean
 public "test"(arg0: $ItemStack$$Type): boolean
-public "or"(arg0: $Predicate$$Type<($ItemStack)>): $Predicate<($ItemStack)>
+public static "not"<T>(arg0: $Predicate$$Type<($ItemStack)>): $Predicate<($ItemStack)>
 public static "isEqual"<T>(arg0: any): $Predicate<($ItemStack)>
 public "negate"(): $Predicate<($ItemStack)>
 public "and"(arg0: $Predicate$$Type<($ItemStack)>): $Predicate<($ItemStack)>
-public static "not"<T>(arg0: $Predicate$$Type<($ItemStack)>): $Predicate<($ItemStack)>
+public "or"(arg0: $Predicate$$Type<($ItemStack)>): $Predicate<($ItemStack)>
 /**
  * This field is a type stub generated by ProbeJS and shall not be used in any sense.
  */
@@ -271,7 +271,7 @@ public "input"(): boolean
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $PressureChamberRecipe$RecipeSlot$$Type = ({"index"?: integer, "input"?: boolean}) | ([index?: integer, input?: boolean]);
+export type $PressureChamberRecipe$RecipeSlot$$Type = ({"input"?: boolean, "index"?: integer}) | ([input?: boolean, index?: integer]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -308,11 +308,11 @@ export type $ThermoPlantRecipe$Inputs$$Type = ({"inputFluid"?: ($SizedFluidIngre
  */
 export type $ThermoPlantRecipe$Inputs$$Original = $ThermoPlantRecipe$Inputs;}
 declare module "me.desht.pneumaticcraft.api.heat.IHeatExchangerLogic" {
-import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$BiPredicate, $BiPredicate$$Type} from "java.util.function.BiPredicate"
+import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$Optional} from "java.util.Optional"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$HeatBehaviour} from "me.desht.pneumaticcraft.api.heat.HeatBehaviour"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Class$$Type} from "java.lang.Class"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
@@ -320,6 +320,7 @@ import {$TemperatureListener$$Type} from "me.desht.pneumaticcraft.api.heat.Tempe
 import {$LevelAccessor, $LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 
 export interface $IHeatExchangerLogic$$Interface {
+get "temperature"(): double
 get "ambientTemperature"(): double
 get "temperatureAsInt"(): integer
 set "temperature"(value: double)
@@ -327,16 +328,17 @@ set "thermalCapacity"(value: double)
 set "thermalResistance"(value: double)
 get "thermalCapacity"(): double
 get "thermalResistance"(): double
-get "temperature"(): double
 }
 
 export class $IHeatExchangerLogic implements $IHeatExchangerLogic$$Interface {
 static readonly "ALL_BLOCKS": $BiPredicate<($LevelAccessor), ($BlockPos)>
 
- "isSideConnected"(arg0: $Direction$$Type): boolean
+ "addHeat"(arg0: double): void
+ "getTemperature"(): double
  "getAmbientTemperature"(): double
  "getHeatBehaviour"<T extends $HeatBehaviour>(arg0: $BlockPos$$Type, arg1: $Class$$Type<(T)>): $Optional<(T)>
  "getTemperatureAsInt"(): integer
+ "isSideConnected"(arg0: $Direction$$Type): boolean
  "setTemperature"(arg0: double): void
  "initializeAsHull"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BiPredicate$$Type<($LevelAccessor), ($BlockPos)>, ...arg3: ($Direction$$Type)[]): void
  "setThermalCapacity"(arg0: double): void
@@ -350,8 +352,6 @@ static readonly "ALL_BLOCKS": $BiPredicate<($LevelAccessor), ($BlockPos)>
  "addTemperatureListener"(arg0: $TemperatureListener$$Type): void
  "removeTemperatureListener"(arg0: $TemperatureListener$$Type): void
  "initializeAmbientTemperature"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
- "getTemperature"(): double
- "addHeat"(arg0: double): void
  "tick"(): void
  "deserializeNBT"(arg0: $CompoundTag$$Type): void
  "serializeNBT"(): $CompoundTag
@@ -385,10 +385,10 @@ static "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($AmadronTradeRe
 
 constructor(resource: $Either$$Type<($ItemStack$$Type), ($FluidStack$$Type)>)
 
+public "getFluid"(): $FluidStack
 public "totalSpaceRequired"(arg0: integer): integer
 public "findSpaceInFluidOutput"(arg0: $IFluidHandler$$Type, arg1: integer): integer
 public "findSpaceInItemOutput"(arg0: $IItemHandler$$Type, arg1: integer): integer
-public "getFluid"(): $FluidStack
 public "countTradesInInventory"(arg0: $IItemHandler$$Type): integer
 public "countTradesInTank"(arg0: $IFluidHandler$$Type): integer
 public "resource"(): $Either<($ItemStack), ($FluidStack)>
@@ -462,12 +462,12 @@ public "toString"(): StringJS
 public "hashCode"(): integer
 public "x"(): integer
 public "copy"(): $WidgetSettings
+public "tooltip"(): $Component
 public "resize"(arg0: integer, arg1: integer): $WidgetSettings
 public "y"(): integer
 public "width"(): integer
 public "height"(): integer
 public "title"(): $Component
-public "tooltip"(): $Component
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -511,21 +511,21 @@ import {$Direction} from "net.minecraft.core.Direction"
 import {$IAirHandlerMachine} from "me.desht.pneumaticcraft.api.tileentity.IAirHandlerMachine"
 
 export interface $IAirHandlerMachine$Connection$$Interface {
-get "airHandler"(): $IAirHandlerMachine
-get "maxDispersion"(): integer
-get "direction"(): $Direction
 set "maxDispersion"(value: integer)
 set "airToDisperse"(value: integer)
 get "dispersedAir"(): integer
+get "airHandler"(): $IAirHandlerMachine
+get "maxDispersion"(): integer
+get "direction"(): $Direction
 }
 
 export class $IAirHandlerMachine$Connection implements $IAirHandlerMachine$Connection$$Interface {
- "getAirHandler"(): $IAirHandlerMachine
- "getMaxDispersion"(): integer
- "getDirection"(): $Direction
  "setMaxDispersion"(arg0: integer): void
  "setAirToDisperse"(arg0: integer): void
  "getDispersedAir"(): integer
+ "getAirHandler"(): $IAirHandlerMachine
+ "getMaxDispersion"(): integer
+ "getDirection"(): $Direction
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -539,14 +539,16 @@ export type $IAirHandlerMachine$Connection$$Original = $IAirHandlerMachine$Conne
 declare module "me.desht.pneumaticcraft.api.crafting.recipe.AmadronRecipe" {
 import {$PneumaticCraftRecipe} from "me.desht.pneumaticcraft.api.crafting.recipe.PneumaticCraftRecipe"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$AmadronTradeResource} from "me.desht.pneumaticcraft.api.crafting.AmadronTradeResource"
 import {$IPlayerFilter} from "me.desht.pneumaticcraft.api.misc.IPlayerFilter"
+import {$AmadronTradeResource} from "me.desht.pneumaticcraft.api.crafting.AmadronTradeResource"
 import {$List$$Type} from "java.util.List"
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 
 export class $AmadronRecipe extends $PneumaticCraftRecipe {
 constructor()
 
+public "isUsableByPlayer"(arg0: $Player$$Type): boolean
+public "getWhitelist"(): $IPlayerFilter
 public "isRemovableBy"(arg0: $Player$$Type): boolean
 public "getMaxStock"(): integer
 public "getStock"(): integer
@@ -559,10 +561,9 @@ public "getBlacklist"(): $IPlayerFilter
 public "passesQuery"(arg0: StringJS): boolean
 public "addAvailabilityData"(arg0: $Player$$Type, arg1: $List$$Type<($Component$$Type)>): void
 public "isLocationLimited"(): boolean
-public "isUsableByPlayer"(arg0: $Player$$Type): boolean
-public "getWhitelist"(): $IPlayerFilter
-public "getInput"(): $AmadronTradeResource
 public "getOutput"(): $AmadronTradeResource
+public "getInput"(): $AmadronTradeResource
+get "whitelist"(): $IPlayerFilter
 get "maxStock"(): integer
 get "stock"(): integer
 set "stock"(value: integer)
@@ -572,9 +573,8 @@ get "tradeLevel"(): integer
 get "villagerTrade"(): boolean
 get "blacklist"(): $IPlayerFilter
 get "locationLimited"(): boolean
-get "whitelist"(): $IPlayerFilter
-get "input"(): $AmadronTradeResource
 get "output"(): $AmadronTradeResource
+get "input"(): $AmadronTradeResource
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -626,8 +626,8 @@ static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($Fluid
 
 constructor(tag: $TagKey$$Type<($Fluid)>, amount: integer)
 
-public "amount"(): integer
 public "tag"(): $TagKey<($Fluid)>
+public "amount"(): integer
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
@@ -670,8 +670,8 @@ export class $FuelQualityRecipe extends $PneumaticCraftRecipe {
 constructor()
 
 public "getFuel"(): $FluidIngredient
-public "matchesFluid"(arg0: $Fluid$$Type): boolean
 public "getBurnRate"(): float
+public "matchesFluid"(arg0: $Fluid$$Type): boolean
 public "getAirPerBucket"(): integer
 get "fuel"(): $FluidIngredient
 get "burnRate"(): float
@@ -727,17 +727,17 @@ static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($AreaT
 
 constructor(arg0: StringJS)
 
-public "addArea"(arg0: $Consumer$$Type<($BlockPos)>, arg1: $BlockPos$$Type, arg2: $BlockPos$$Type, arg3: integer, arg4: integer, arg5: integer, arg6: integer, arg7: integer, arg8: integer): void
-public "addUIWidgets"(arg0: $List$$Type<($AreaTypeWidget$$Type)>): void
-public "convertFromLegacy"(arg0: $EnumOldAreaType$$Type, arg1: integer): void
-public "isDeterministic"(): boolean
 public "getSerializer"(): $AreaTypeSerializer<($AreaType)>
 public "getTranslationKey"(): StringJS
+public "addArea"(arg0: $Consumer$$Type<($BlockPos)>, arg1: $BlockPos$$Type, arg2: $BlockPos$$Type, arg3: integer, arg4: integer, arg5: integer, arg6: integer, arg7: integer, arg8: integer): void
+public "addUIWidgets"(arg0: $List$$Type<($AreaTypeWidget$$Type)>): void
+public "isDeterministic"(): boolean
+public "convertFromLegacy"(arg0: $EnumOldAreaType$$Type, arg1: integer): void
 public "getName"(): StringJS
 public "copy"(): $AreaType
-get "deterministic"(): boolean
 get "serializer"(): $AreaTypeSerializer<($AreaType)>
 get "translationKey"(): StringJS
+get "deterministic"(): boolean
 get "name"(): StringJS
 }
 /**
@@ -780,29 +780,34 @@ import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
-import {$EntityCapability$$Type} from "net.neoforged.neoforge.capabilities.EntityCapability"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$EntityCapability$$Type} from "net.neoforged.neoforge.capabilities.EntityCapability"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$RegistryFriendlyByteBuf$$Type} from "net.minecraft.network.RegistryFriendlyByteBuf"
-import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
+import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
 
 export interface $ISemiBlock$$Interface {
+get "drops"(): $NonNullList<($ItemStack)>
+get "world"(): $Level
 get "semiblockId"(): $ResourceLocation
 get "semiblockDisplayName"(): $Component
 get "cachedTileEntity"(): $BlockEntity
 get "trackingId"(): integer
-get "world"(): $Level
-get "drops"(): $NonNullList<($ItemStack)>
 get "valid"(): boolean
 get "color"(): integer
 get "blockPos"(): $BlockPos
 }
 
 export class $ISemiBlock implements $ISemiBlock$$Interface {
+ "getDrops"(): $NonNullList<($ItemStack)>
+ "addTooltip"(arg0: $Consumer$$Type<($Component)>, arg1: $Player$$Type, arg2: $CompoundTag$$Type, arg3: boolean): void
+ "canPlace"(arg0: $Direction$$Type): boolean
+ "getWorld"(): $Level
+ "onPlaced"(arg0: $Player$$Type, arg1: $ItemStack$$Type, arg2: $Direction$$Type): void
  "killedByEntity"(arg0: $Entity$$Type): void
  "onRightClickWithConfigurator"(arg0: $Player$$Type, arg1: $Direction$$Type): boolean
  "canCoexist"(arg0: $ISemiBlock$$Type): boolean
@@ -815,13 +820,8 @@ export class $ISemiBlock implements $ISemiBlock$$Interface {
  "getSemiblockCapability"<T>(arg0: $EntityCapability$$Type<(T), (void)>): $Optional<(T)>
  "getSemiblockCapability"<T>(arg0: $EntityCapability$$Type<(T), ($Direction$$Type)>, arg1: $Direction$$Type): $Optional<(T)>
 static "byTrackingId"(arg0: $Level$$Type, arg1: integer): $ISemiBlock
- "getWorld"(): $Level
- "getDrops"(): $NonNullList<($ItemStack)>
- "addTooltip"(arg0: $Consumer$$Type<($Component)>, arg1: $Player$$Type, arg2: $CompoundTag$$Type, arg3: boolean): void
- "canPlace"(arg0: $Direction$$Type): boolean
- "onPlaced"(arg0: $Player$$Type, arg1: $ItemStack$$Type, arg2: $Direction$$Type): void
- "isValid"(): boolean
  "tick"(): void
+ "isValid"(): boolean
  "getColor"(): integer
  "getBlockPos"(): $BlockPos
  "serializeNBT"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): $CompoundTag
@@ -838,8 +838,8 @@ export type $ISemiBlock$$Original = $ISemiBlock;}
 declare module "me.desht.pneumaticcraft.api.misc.IPlayerFilter" {
 import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$IPlayerMatcher} from "me.desht.pneumaticcraft.api.misc.IPlayerMatcher"
-import {$Predicate, $Predicate$$Type, $Predicate$$Interface} from "java.util.function.Predicate"
 import {$List, $List$$Type} from "java.util.List"
+import {$Predicate, $Predicate$$Type, $Predicate$$Interface} from "java.util.function.Predicate"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 
 export interface $IPlayerFilter$$Interface extends $Predicate$$Interface<($Player)> {
@@ -848,15 +848,15 @@ get "real"(): boolean
 
 export class $IPlayerFilter implements $IPlayerFilter$$Interface {
  "matchAll"(): boolean
- "getDescription"(arg0: $Player$$Type, arg1: $List$$Type<($Component$$Type)>): void
  "matchers"(): $List<($IPlayerMatcher)>
+ "getDescription"(arg0: $Player$$Type, arg1: $List$$Type<($Component$$Type)>): void
  "isReal"(): boolean
- "or"(arg0: $Predicate$$Type<($Player)>): $Predicate<($Player)>
+static "not"<T>(arg0: $Predicate$$Type<($Player)>): $Predicate<($Player)>
 static "isEqual"<T>(arg0: any): $Predicate<($Player)>
  "negate"(): $Predicate<($Player)>
  "and"(arg0: $Predicate$$Type<($Player)>): $Predicate<($Player)>
-static "not"<T>(arg0: $Predicate$$Type<($Player)>): $Predicate<($Player)>
  "test"(arg0: $Player$$Type): boolean
+ "or"(arg0: $Predicate$$Type<($Player)>): $Predicate<($Player)>
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -878,15 +878,15 @@ static readonly "CODEC": $Codec<($TemperatureRange)>
 static "STREAM_CODEC": $StreamCodec<($ByteBuf), ($TemperatureRange)>
 
 public "isAny"(): boolean
-public "hasMin"(): boolean
 public "hasMax"(): boolean
+public "hasMin"(): boolean
 public "inRange"(arg0: integer): boolean
 public "inRange"(arg0: double): boolean
+public static "any"(): $TemperatureRange
 public static "invalid"(): $TemperatureRange
 public static "min"(arg0: integer): $TemperatureRange
 public static "max"(arg0: integer): $TemperatureRange
 public static "of"(arg0: integer, arg1: integer): $TemperatureRange
-public static "any"(): $TemperatureRange
 public "getMax"(): integer
 public "getMin"(): integer
 public "asString"(arg0: $TemperatureRange$TemperatureScale$$Type): StringJS
@@ -936,10 +936,10 @@ import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockStat
 export class $HarvestHandler {
 constructor()
 
+public "canHarvest"(arg0: $Level$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $IDrone$$Type): boolean
+public "harvest"(arg0: $Level$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $IDrone$$Type): void
 public "harvestAndReplant"(arg0: $Level$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $IDrone$$Type): boolean
 public "addFilterItems"(arg0: $Level$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $IDrone$$Type): $List<($ItemStack)>
-public "harvest"(arg0: $Level$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $IDrone$$Type): void
-public "canHarvest"(arg0: $Level$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $IDrone$$Type): boolean
 /**
  * This field is a type stub generated by ProbeJS and shall not be used in any sense.
  */
@@ -995,7 +995,7 @@ public "cycle"(): $IntList
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $PressureChamberRecipe$SlotCycle$$Type = ({"cycle"?: $IntList$$Type, "slot"?: $PressureChamberRecipe$RecipeSlot$$Type}) | ([cycle?: $IntList$$Type, slot?: $PressureChamberRecipe$RecipeSlot$$Type]);
+export type $PressureChamberRecipe$SlotCycle$$Type = ({"slot"?: $PressureChamberRecipe$RecipeSlot$$Type, "cycle"?: $IntList$$Type}) | ([slot?: $PressureChamberRecipe$RecipeSlot$$Type, cycle?: $IntList$$Type]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -1128,10 +1128,10 @@ declare module "me.desht.pneumaticcraft.api.misc.IPlayerMatcher" {
 import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$IPlayerMatcher$MatcherType} from "me.desht.pneumaticcraft.api.misc.IPlayerMatcher$MatcherType"
-import {$Predicate, $Predicate$$Type, $Predicate$$Interface} from "java.util.function.Predicate"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$List$$Type} from "java.util.List"
+import {$Predicate, $Predicate$$Type, $Predicate$$Interface} from "java.util.function.Predicate"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 
 export interface $IPlayerMatcher$$Interface extends $Predicate$$Interface<($Player)> {
@@ -1144,12 +1144,12 @@ static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($IPlay
  "standardTooltip"(arg0: $Player$$Type, arg1: $List$$Type<($Component$$Type)>, arg2: $Component$$Type, arg3: $List$$Type<($Component$$Type)>): void
  "addDescription"(arg0: $Player$$Type, arg1: $List$$Type<($Component$$Type)>): void
  "type"(): $IPlayerMatcher$MatcherType<($IPlayerMatcher)>
- "or"(arg0: $Predicate$$Type<($Player)>): $Predicate<($Player)>
+static "not"<T>(arg0: $Predicate$$Type<($Player)>): $Predicate<($Player)>
 static "isEqual"<T>(arg0: any): $Predicate<($Player)>
  "negate"(): $Predicate<($Player)>
  "and"(arg0: $Predicate$$Type<($Player)>): $Predicate<($Player)>
-static "not"<T>(arg0: $Predicate$$Type<($Player)>): $Predicate<($Player)>
  "test"(arg0: $Player$$Type): boolean
+ "or"(arg0: $Predicate$$Type<($Player)>): $Predicate<($Player)>
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -1239,8 +1239,8 @@ export type $ProgWidgetType$$Type<P> = (Special.PneumaticcraftProgWidgets);
 export type $ProgWidgetType$$Original<P> = $ProgWidgetType<(P)>;}
 declare module "me.desht.pneumaticcraft.api.remote.BaseSettings" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$Codec} from "com.mojang.serialization.Codec"
+import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$Record} from "java.lang.Record"
 
@@ -1263,7 +1263,7 @@ public "hashCode"(): integer
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $BaseSettings$$Type = ({"enableVariable"?: StringJS, "enablingValue"?: $BlockPos$$Type}) | ([enableVariable?: StringJS, enablingValue?: $BlockPos$$Type]);
+export type $BaseSettings$$Type = ({"enablingValue"?: $BlockPos$$Type, "enableVariable"?: StringJS}) | ([enablingValue?: $BlockPos$$Type, enableVariable?: StringJS]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -1281,9 +1281,9 @@ import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 export class $HeatBehaviour {
 constructor()
 
+public "getWorld"(): $Level
 public "getHeatExchanger"(): $IHeatExchangerLogic
 public "getCachedTileEntity"(): $BlockEntity
-public "getWorld"(): $Level
 public "tick"(): void
 public "equals"(arg0: any): boolean
 public "hashCode"(): integer
@@ -1295,9 +1295,9 @@ public "getBlockState"(): $BlockState
 public "deserializeNBT"(arg0: $CompoundTag$$Type): void
 public "serializeNBT"(): $CompoundTag
 public "getPos"(): $BlockPos
+get "world"(): $Level
 get "heatExchanger"(): $IHeatExchangerLogic
 get "cachedTileEntity"(): $BlockEntity
-get "world"(): $Level
 get "id"(): $ResourceLocation
 get "applicable"(): boolean
 get "direction"(): $Direction
@@ -1321,13 +1321,13 @@ static readonly "EASY": $IProgWidget$WidgetDifficulty
 static readonly "MEDIUM": $IProgWidget$WidgetDifficulty
 static readonly "ADVANCED": $IProgWidget$WidgetDifficulty
 
+public "getTranslationKey"(): StringJS
 public "getTooltipTranslationKey"(): StringJS
 public "isNotMoreDifficult"(arg0: $IProgWidget$WidgetDifficulty$$Type): boolean
-public "getTranslationKey"(): StringJS
 public static "values"(): ($IProgWidget$WidgetDifficulty)[]
 public static "valueOf"(arg0: StringJS): $IProgWidget$WidgetDifficulty
-get "tooltipTranslationKey"(): StringJS
 get "translationKey"(): StringJS
+get "tooltipTranslationKey"(): StringJS
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -1339,19 +1339,19 @@ export type $IProgWidget$WidgetDifficulty$$Type = (("easy") | ("medium") | ("adv
  */
 export type $IProgWidget$WidgetDifficulty$$Original = $IProgWidget$WidgetDifficulty;}
 declare module "me.desht.pneumaticcraft.api.semiblock.SemiblockEvent" {
-import {$Direction} from "net.minecraft.core.Direction"
 import {$Event} from "net.neoforged.bus.api.Event"
+import {$Direction} from "net.minecraft.core.Direction"
 import {$Level} from "net.minecraft.world.level.Level"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$ISemiBlock} from "me.desht.pneumaticcraft.api.semiblock.ISemiBlock"
 
 export class $SemiblockEvent extends $Event {
-public "getSemiblock"(): $ISemiBlock
 public "getWorld"(): $Level
+public "getSemiblock"(): $ISemiBlock
 public "getSide"(): $Direction
 public "getPos"(): $BlockPos
-get "semiblock"(): $ISemiBlock
 get "world"(): $Level
+get "semiblock"(): $ISemiBlock
 get "side"(): $Direction
 get "pos"(): $BlockPos
 }
@@ -1411,8 +1411,8 @@ export class $HoeHandler$DefaultHoeHandler extends $HoeHandler {
 constructor()
 
 public "test"(arg0: any): boolean
-public static "isEqual"<T>(arg0: any): $Predicate<(T)>
 public static "not"<T>(arg0: $Predicate$$Type<(T)>): $Predicate<(T)>
+public static "isEqual"<T>(arg0: any): $Predicate<(T)>
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -1437,8 +1437,8 @@ static "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($ThermoPlantRec
 
 constructor(outputFluid: $FluidStack$$Type, outputItem: $ItemStack$$Type)
 
-public "outputItem"(): $ItemStack
 public "outputFluid"(): $FluidStack
+public "outputItem"(): $ItemStack
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
@@ -1506,27 +1506,28 @@ import {$UUID} from "java.util.UUID"
 import {$List} from "java.util.List"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level} from "net.minecraft.world.level.Level"
-import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$FakePlayer} from "net.neoforged.neoforge.common.util.FakePlayer"
 import {$SoundEvent$$Type} from "net.minecraft.sounds.SoundEvent"
+import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$Player} from "net.minecraft.world.entity.player.Player"
 import {$Vec3} from "net.minecraft.world.phys.Vec3"
 import {$IProgWidget, $IProgWidget$$Type} from "me.desht.pneumaticcraft.api.drone.IProgWidget"
 import {$SoundSource$$Type} from "net.minecraft.sounds.SoundSource"
 import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
-import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$IPathNavigator} from "me.desht.pneumaticcraft.api.drone.IPathNavigator"
 import {$ProgWidgetType$$Type} from "me.desht.pneumaticcraft.api.drone.ProgWidgetType"
 import {$IDroneDebugger} from "me.desht.pneumaticcraft.api.drone.debug.IDroneDebugger"
 import {$ItemEntity$$Type} from "net.minecraft.world.entity.item.ItemEntity"
 import {$PNCUpgrade$$Type} from "me.desht.pneumaticcraft.api.upgrade.PNCUpgrade"
-import {$Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 import {$FluidTank} from "net.neoforged.neoforge.fluids.capability.templates.FluidTank"
+import {$Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 import {$IItemHandlerModifiable} from "net.neoforged.neoforge.items.IItemHandlerModifiable"
 import {$IEnergyStorage} from "net.neoforged.neoforge.energy.IEnergyStorage"
 
 export interface $IDrone$$Interface {
+get "ownerUUID"(): $UUID
 get "energyStorage"(): $IEnergyStorage
 get "controllerPos"(): $BlockPos
 get "fluidTank"(): $FluidTank
@@ -1547,7 +1548,6 @@ get "dronePressure"(): float
 get "activeWidgetIndex"(): integer
 get "droneName"(): $Component
 get "activeWidget"(): $IProgWidget
-get "ownerUUID"(): $UUID
 get "label"(): StringJS
 set "name"(value: $Component$$Type)
 get "owner"(): $Player
@@ -1556,6 +1556,8 @@ get "inv"(): $IItemHandlerModifiable
 }
 
 export class $IDrone implements $IDrone$$Interface {
+ "dropItem"(arg0: $ItemStack$$Type): void
+ "getOwnerUUID"(): $UUID
  "getEnergyStorage"(): $IEnergyStorage
  "getControllerPos"(): $BlockPos
  "getFluidTank"(): $FluidTank
@@ -1571,8 +1573,8 @@ export class $IDrone implements $IDrone$$Interface {
  "getPathNavigator"(): $IPathNavigator
  "sendWireframeToClient"(arg0: $BlockPos$$Type): void
  "isBlockValidPathfindBlock"(arg0: $BlockPos$$Type): boolean
- "setDugBlock"(arg0: $BlockPos$$Type): void
  "setDugBlock"(arg0: $BlockPos$$Type, arg1: $Direction$$Type): void
+ "setDugBlock"(arg0: $BlockPos$$Type): void
  "getProgWidgets"(): $List<($IProgWidget)>
  "setActiveProgram"(arg0: $IProgWidget$$Type): void
  "isProgramApplicable"(arg0: $ProgWidgetType$$Type<(never)>): boolean
@@ -1591,8 +1593,6 @@ export class $IDrone implements $IDrone$$Interface {
  "storeTrackerData"(arg0: $ItemStack$$Type): void
  "getActiveWidget"(): $IProgWidget
  "resetAttackCount"(): void
- "dropItem"(arg0: $ItemStack$$Type): void
- "getOwnerUUID"(): $UUID
  "getLabel"(): StringJS
  "setName"(arg0: $Component$$Type): void
  "getOwner"(): $Player
@@ -1656,8 +1656,8 @@ public "getOutputItem"(): $ItemStack
 public "getInputItem"(): $Optional<($Ingredient)>
 public "getRequiredPressure"(): float
 public "testItem"(arg0: $ItemStack$$Type): boolean
-public "isExothermic"(): boolean
 public "getInputFluid"(): $Optional<($SizedFluidIngredient)>
+public "isExothermic"(): boolean
 public "testFluid"(arg0: $FluidStack$$Type): boolean
 public "inputs"(): $ThermoPlantRecipe$Inputs
 public "matches"(arg0: $FluidStack$$Type, arg1: $ItemStack$$Type): boolean
@@ -1670,8 +1670,8 @@ get "outputFluid"(): $FluidStack
 get "outputItem"(): $ItemStack
 get "inputItem"(): $Optional<($Ingredient)>
 get "requiredPressure"(): float
-get "exothermic"(): boolean
 get "inputFluid"(): $Optional<($SizedFluidIngredient)>
+get "exothermic"(): boolean
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -1690,8 +1690,8 @@ import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$IAirHandler$$Interface} from "me.desht.pneumaticcraft.api.tileentity.IAirHandler"
 import {$IAirHandlerMachine$Connection} from "me.desht.pneumaticcraft.api.tileentity.IAirHandlerMachine$Connection"
-import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$IManoMeasurable$$Interface} from "me.desht.pneumaticcraft.api.tileentity.IManoMeasurable"
+import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$FloatPredicate$$Type} from "it.unimi.dsi.fastutil.floats.FloatPredicate"
 import {$Tag} from "net.minecraft.nbt.Tag"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
@@ -1727,10 +1727,10 @@ export class $IAirHandlerMachine implements $IAirHandlerMachine$$Interface {
  "deserializeNBT"(arg0: $CompoundTag$$Type): void
  "serializeNBT"(): $Tag
  "getPressure"(): float
+ "addAir"(arg0: integer): void
  "getBaseVolume"(): integer
  "setBaseVolume"(arg0: integer): void
  "maxPressure"(): float
- "addAir"(arg0: integer): void
  "getAir"(): integer
  "getVolume"(): integer
  "printManometerMessage"(arg0: $Player$$Type, arg1: $List$$Type<($Component$$Type)>): void
@@ -1756,14 +1756,14 @@ import {$IProgWidget$WidgetDifficulty, $IProgWidget$WidgetDifficulty$$Type} from
 import {$ProgWidgetType, $ProgWidgetType$$Type} from "me.desht.pneumaticcraft.api.drone.ProgWidgetType"
 
 export interface $IProgWidget$$Interface {
+set "x"(value: integer)
+get "translationKey"(): StringJS
 get "typeID"(): $ResourceLocation
 get "connectedParameters"(): ($IProgWidget)[]
 get "extraStringInfo"(): $List<($Component)>
 get "maxUV"(): $Pair<(float), (float)>
 set "outputWidget"(value: $IProgWidget$$Type)
 get "outputWidget"(): $IProgWidget
-set "x"(value: integer)
-get "translationKey"(): StringJS
 get "width"(): integer
 get "height"(): integer
 get "available"(): boolean
@@ -1780,10 +1780,14 @@ set "y"(value: integer)
 }
 
 export class $IProgWidget implements $IProgWidget$$Interface {
+ "setX"(arg0: integer): void
+ "getTranslationKey"(): StringJS
  "freeToUse"(): boolean
  "getTypeID"(): $ResourceLocation
+ "copyWidget"(): $IProgWidget
  "hasStepInput"(): boolean
  "hasStepOutput"(): boolean
+ "isDifficultyOK"(arg0: $IProgWidget$WidgetDifficulty$$Type): boolean
  "getConnectedParameters"(): ($IProgWidget)[]
  "getWidgetAI"(arg0: $IDrone$$Type, arg1: $IProgWidget$$Type): $Goal
  "getExtraStringInfo"(): $List<($Component)>
@@ -1795,17 +1799,13 @@ export class $IProgWidget implements $IProgWidget$$Interface {
  "setOutputWidget"(arg0: $IProgWidget$$Type): void
  "getOutputWidget"(arg0: $IDrone$$Type, arg1: $List$$Type<($IProgWidget$$Type)>): $IProgWidget
  "getOutputWidget"(): $IProgWidget
- "copyWidget"(): $IProgWidget
  "canBeRunByComputers"(arg0: $IDrone$$Type, arg1: $IProgWidget$$Type): boolean
- "isDifficultyOK"(arg0: $IProgWidget$WidgetDifficulty$$Type): boolean
- "setX"(arg0: integer): void
- "getTranslationKey"(): StringJS
  "getWidth"(): integer
  "getHeight"(): integer
  "isAvailable"(): boolean
  "setParent"(arg0: $IProgWidget$$Type): void
- "setParameter"(arg0: integer, arg1: $IProgWidget$$Type): void
  "getY"(): integer
+ "setParameter"(arg0: integer, arg1: $IProgWidget$$Type): void
  "returnType"(): $ProgWidgetType<(never)>
  "getParent"(): $IProgWidget
  "getType"(): $ProgWidgetType<(never)>
@@ -1852,8 +1852,8 @@ export type $IManoMeasurable$$Type = ((arg0: $Player, arg1: $List<($Component)>)
 export type $IManoMeasurable$$Original = $IManoMeasurable;}
 declare module "me.desht.pneumaticcraft.api.drone.debug.DroneDebugEntry" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$Optional, $Optional$$Type} from "java.util.Optional"
+import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$Record} from "java.lang.Record"
 
@@ -1877,7 +1877,7 @@ public "getPos"(): $BlockPos
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $DroneDebugEntry$$Type = ({"receivedTime"?: long, "message"?: StringJS, "progWidgetIndex"?: integer, "pos"?: ($BlockPos$$Type)?}) | ([receivedTime?: long, message?: StringJS, progWidgetIndex?: integer, pos?: ($BlockPos$$Type)?]);
+export type $DroneDebugEntry$$Type = ({"message"?: StringJS, "progWidgetIndex"?: integer, "pos"?: ($BlockPos$$Type)?, "receivedTime"?: long}) | ([message?: StringJS, progWidgetIndex?: integer, pos?: ($BlockPos$$Type)?, receivedTime?: long]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -1888,11 +1888,11 @@ import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Ingredient} from "net.minecraft.world.item.crafting.Ingredient"
 import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$RecipeType} from "net.minecraft.world.item.crafting.RecipeType"
-import {$CraftingBookCategory} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$CraftingBookCategory} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$CraftingRecipe$$Interface} from "net.minecraft.world.item.crafting.CraftingRecipe"
-import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
+import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 
 export class $PneumaticCraftRecipe implements $CraftingRecipe$$Interface {
@@ -1934,8 +1934,8 @@ import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$UUID, $UUID$$Type} from "java.util.UUID"
 import {$List, $List$$Type} from "java.util.List"
-import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
+import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
 
 export interface $IPositionProvider$$Interface {
 
@@ -2023,9 +2023,9 @@ import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$WidgetSettings} from "me.desht.pneumaticcraft.api.remote.WidgetSettings"
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
-import {$BaseSettings} from "me.desht.pneumaticcraft.api.remote.BaseSettings"
 import {$UUID$$Type} from "java.util.UUID"
+import {$BaseSettings} from "me.desht.pneumaticcraft.api.remote.BaseSettings"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Set$$Type} from "java.util.Set"
 import {$RemoteWidgetType, $RemoteWidgetType$$Type} from "me.desht.pneumaticcraft.api.remote.RemoteWidgetType"
 
@@ -2039,14 +2039,14 @@ static readonly "CODEC": $Codec<($IRemoteWidget)>
 static readonly "TRAY_WIDGET_X": integer
 static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($IRemoteWidget)>
 
+ "getTranslationKey"(): StringJS
+static "getTranslationKey"(arg0: $RemoteWidgetType$$Type<(never)>): StringJS
 static "getTooltipTranslationKey"(arg0: $RemoteWidgetType$$Type<(never)>): StringJS
- "discoverVariables"(arg0: $Set$$Type<(StringJS)>, arg1: $UUID$$Type): void
  "widgetSettings"(): $WidgetSettings
  "copyToPos"(arg0: integer, arg1: integer): $IRemoteWidget
  "baseSettings"(): $BaseSettings
  "hasConfigurableText"(): boolean
-static "getTranslationKey"(arg0: $RemoteWidgetType$$Type<(never)>): StringJS
- "getTranslationKey"(): StringJS
+ "discoverVariables"(arg0: $Set$$Type<(StringJS)>, arg1: $UUID$$Type): void
  "isEnabled"(arg0: $Player$$Type): boolean
  "getType"(): $RemoteWidgetType<($IRemoteWidget)>
  "copy"(): $IRemoteWidget
@@ -2063,8 +2063,8 @@ export type $IRemoteWidget$$Original = $IRemoteWidget;}
 declare module "me.desht.pneumaticcraft.api.drone.debug.IDroneDebugger" {
 import {$Collection} from "java.util.Collection"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$DroneDebugEntry, $DroneDebugEntry$$Type} from "me.desht.pneumaticcraft.api.drone.debug.DroneDebugEntry"
 import {$ServerPlayer, $ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
+import {$DroneDebugEntry, $DroneDebugEntry$$Type} from "me.desht.pneumaticcraft.api.drone.debug.DroneDebugEntry"
 
 export interface $IDroneDebugger$$Interface {
 get "debuggingPlayers"(): $Collection<($ServerPlayer)>
@@ -2124,13 +2124,13 @@ constructor()
 
 public "getInputAmount"(): integer
 public "getProgramType"(): $AssemblyRecipe$AssemblyProgramType
-public "getInput"(): $SizedIngredient
 public "getOutput"(): $ItemStack
+public "getInput"(): $SizedIngredient
 public "matches"(arg0: $ItemStack$$Type): boolean
 get "inputAmount"(): integer
 get "programType"(): $AssemblyRecipe$AssemblyProgramType
-get "input"(): $SizedIngredient
 get "output"(): $ItemStack
+get "input"(): $SizedIngredient
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -2171,14 +2171,14 @@ import {$ItemStackSet} from "dev.latvian.mods.kubejs.item.ItemStackSet"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Ingredient} from "net.minecraft.world.item.crafting.Ingredient"
 import {$Predicate, $Predicate$$Type} from "java.util.function.Predicate"
-import {$FluidStack, $FluidStack$$Type} from "net.neoforged.neoforge.fluids.FluidStack"
 import {$FluidContainerIngredient$TagWithAmount, $FluidContainerIngredient$TagWithAmount$$Type} from "me.desht.pneumaticcraft.api.crafting.ingredient.FluidContainerIngredient$TagWithAmount"
+import {$FluidStack, $FluidStack$$Type} from "net.neoforged.neoforge.fluids.FluidStack"
 import {$Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 import {$ICustomIngredient$$Interface} from "net.neoforged.neoforge.common.crafting.ICustomIngredient"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
-import {$TagKey$$Type} from "net.minecraft.tags.TagKey"
 import {$ItemPredicate} from "dev.latvian.mods.kubejs.item.ItemPredicate"
+import {$TagKey$$Type} from "net.minecraft.tags.TagKey"
 import {$Either, $Either$$Type} from "com.mojang.datafixers.util.Either"
 import {$Item, $Item$$Type} from "net.minecraft.world.item.Item"
 import {$Set} from "java.util.Set"
@@ -2218,11 +2218,11 @@ public "getFirst"(): $ItemStack
 public "test"(itemStack: any): boolean
 public static "wrap"(from: any): $ItemPredicate
 public "isWildcard"(): boolean
-public "or"(arg0: $Predicate$$Type<($ItemStack)>): $Predicate<($ItemStack)>
+public static "not"<T>(arg0: $Predicate$$Type<($ItemStack)>): $Predicate<($ItemStack)>
 public static "isEqual"<T>(arg0: any): $Predicate<($ItemStack)>
 public "negate"(): $Predicate<($ItemStack)>
 public "and"(arg0: $Predicate$$Type<($ItemStack)>): $Predicate<($ItemStack)>
-public static "not"<T>(arg0: $Predicate$$Type<($ItemStack)>): $Predicate<($ItemStack)>
+public "or"(arg0: $Predicate$$Type<($ItemStack)>): $Predicate<($ItemStack)>
 get "items"(): $Stream<($ItemStack)>
 get "type"(): $IngredientType<(never)>
 get "simple"(): boolean
@@ -2349,15 +2349,15 @@ public "codec"(): $MapCodec<(P)>
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $IPlayerMatcher$MatcherType$$Type<P> = (Special.PneumaticcraftPlayerMatchers) | ({"streamCodec"?: $StreamCodec$$Type<($RegistryFriendlyByteBuf$$Type), (P)>, "codec"?: $MapCodec$$Type<(P)>}) | ([streamCodec?: $StreamCodec$$Type<($RegistryFriendlyByteBuf$$Type), (P)>, codec?: $MapCodec$$Type<(P)>]);
+export type $IPlayerMatcher$MatcherType$$Type<P> = (Special.PneumaticcraftPlayerMatchers) | ({"codec"?: $MapCodec$$Type<(P)>, "streamCodec"?: $StreamCodec$$Type<($RegistryFriendlyByteBuf$$Type), (P)>}) | ([codec?: $MapCodec$$Type<(P)>, streamCodec?: $StreamCodec$$Type<($RegistryFriendlyByteBuf$$Type), (P)>]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
 export type $IPlayerMatcher$MatcherType$$Original<P> = $IPlayerMatcher$MatcherType<(P)>;}
 declare module "me.desht.pneumaticcraft.api.client.pneumatic_helmet.FluidTrackEvent" {
 import {$ICancellableEvent$$Interface} from "net.neoforged.bus.api.ICancellableEvent"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Event} from "net.neoforged.bus.api.Event"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$IFluidHandler} from "net.neoforged.neoforge.fluids.capability.IFluidHandler"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 
@@ -2482,8 +2482,8 @@ import {$Map} from "java.util.Map"
 import {$List} from "java.util.List"
 import {$IntCollection} from "it.unimi.dsi.fastutil.ints.IntCollection"
 import {$PressureChamberRecipe$RecipeSlot} from "me.desht.pneumaticcraft.api.crafting.recipe.PressureChamberRecipe$RecipeSlot"
-import {$IntList, $IntList$$Type} from "it.unimi.dsi.fastutil.ints.IntList"
 import {$IItemHandler$$Type} from "net.neoforged.neoforge.items.IItemHandler"
+import {$IntList, $IntList$$Type} from "it.unimi.dsi.fastutil.ints.IntList"
 import {$SizedIngredient} from "net.neoforged.neoforge.common.crafting.SizedIngredient"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 
@@ -2494,12 +2494,12 @@ public "getPressure"(): float
 public "getCraftingPressure"(arg0: $IItemHandler$$Type, arg1: $IntList$$Type): float
 public "craftRecipe"(arg0: $IItemHandler$$Type, arg1: $IntList$$Type, arg2: boolean): $List<($ItemStack)>
 public "findIngredients"(arg0: $IItemHandler$$Type): $IntCollection
+public "getSyncForDisplay"(arg0: $PressureChamberRecipe$SlotCycle$$Type): $Map<($PressureChamberRecipe$RecipeSlot), ($IntList)>
 public "getInputsForDisplay"(arg0: $HolderLookup$Provider$$Type): $List<($List<($ItemStack)>)>
 public "isValidInputItem"(arg0: $ItemStack$$Type): boolean
 public "getTooltipKey"(arg0: boolean, arg1: StringJS): StringJS
 public "getCraftingPressureForDisplay"(): float
 public "getResultsForDisplay"(arg0: $HolderLookup$Provider$$Type): $List<($List<($ItemStack)>)>
-public "getSyncForDisplay"(arg0: $PressureChamberRecipe$SlotCycle$$Type): $Map<($PressureChamberRecipe$RecipeSlot), ($IntList)>
 public "getInputs"(): $List<($SizedIngredient)>
 public "getOutputs"(): $List<($ItemStack)>
 get "pressure"(): float
@@ -2585,10 +2585,10 @@ get "volume"(): integer
 
 export class $IAirHandler implements $IAirHandler$$Interface {
  "getPressure"(): float
+ "addAir"(arg0: integer): void
  "getBaseVolume"(): integer
  "setBaseVolume"(arg0: integer): void
  "maxPressure"(): float
- "addAir"(arg0: integer): void
  "getAir"(): integer
  "getVolume"(): integer
 }
@@ -2648,8 +2648,8 @@ import {$MapCodec, $MapCodec$$Type} from "com.mojang.serialization.MapCodec"
 export class $AreaTypeSerializer<A extends $AreaType> {
 constructor(arg0: $Supplier$$Type<(A)>, arg1: $MapCodec$$Type<(A)>, arg2: $StreamCodec$$Type<($RegistryFriendlyByteBuf$$Type), (A)>)
 
-public "createDefaultInstance"(): A
 public "streamCodec"(): $StreamCodec<($RegistryFriendlyByteBuf), (A)>
+public "createDefaultInstance"(): A
 public "codec"(): $MapCodec<(A)>
 public static "createType"<A extends $AreaType>(arg0: $Supplier$$Type<(A)>, arg1: $MapCodec$$Type<(A)>, arg2: $StreamCodec$$Type<($RegistryFriendlyByteBuf$$Type), (A)>): $AreaTypeSerializer<(A)>
 /**

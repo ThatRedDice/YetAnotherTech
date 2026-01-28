@@ -101,8 +101,8 @@ import {$Ingredient} from "net.minecraft.world.item.crafting.Ingredient"
 import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$RecipeWrapper, $RecipeWrapper$$Type} from "net.neoforged.neoforge.items.wrapper.RecipeWrapper"
-import {$ProcessingRecipeParams$$Type} from "com.simibubi.create.content.processing.recipe.ProcessingRecipeParams"
 import {$IRecipeTypeInfo} from "com.simibubi.create.foundation.recipe.IRecipeTypeInfo"
+import {$ProcessingRecipeParams$$Type} from "com.simibubi.create.content.processing.recipe.ProcessingRecipeParams"
 import {$StandardProcessingRecipe} from "com.simibubi.create.content.processing.recipe.StandardProcessingRecipe"
 
 export class $RollingRecipe extends $StandardProcessingRecipe<($RecipeWrapper)> {
@@ -110,12 +110,12 @@ static readonly "TYPE_INFO": $IRecipeTypeInfo
 
 constructor(arg0: $ProcessingRecipeParams$$Type)
 
-public "getIngredient"(): $Ingredient
 public "getResultStack"(): $ItemStack
+public "getIngredient"(): $Ingredient
 public "matches"(arg0: $RecipeInput$$Type, arg1: $Level$$Type): boolean
 public "matches"(arg0: $RecipeWrapper$$Type, arg1: $Level$$Type): boolean
-get "ingredient"(): $Ingredient
 get "resultStack"(): $ItemStack
+get "ingredient"(): $Ingredient
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -160,13 +160,13 @@ export type $ChargingRecipe$$Type = ($ChargingRecipe);
 export type $ChargingRecipe$$Original = $ChargingRecipe;}
 declare module "com.mrh0.createaddition.recipe.liquid_burning.LiquidBurningRecipe$Serializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
-import {$ProcessingRecipe$Factory$$Type} from "com.simibubi.create.content.processing.recipe.ProcessingRecipe$Factory"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$LiquidBurningRecipe} from "com.mrh0.createaddition.recipe.liquid_burning.LiquidBurningRecipe"
+import {$ProcessingRecipe$Factory$$Type} from "com.simibubi.create.content.processing.recipe.ProcessingRecipe$Factory"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
-import {$LiquidBurningRecipeParams$$Type} from "com.mrh0.createaddition.recipe.liquid_burning.LiquidBurningRecipeParams"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
+import {$LiquidBurningRecipeParams$$Type} from "com.mrh0.createaddition.recipe.liquid_burning.LiquidBurningRecipeParams"
 
 export class $LiquidBurningRecipe$Serializer<R extends $LiquidBurningRecipe> implements $RecipeSerializer$$Interface<(R)> {
 constructor(arg0: $ProcessingRecipe$Factory$$Type<($LiquidBurningRecipeParams), (R)>)
@@ -186,10 +186,10 @@ export type $LiquidBurningRecipe$Serializer$$Type<R> = ($LiquidBurningRecipe$Ser
 export type $LiquidBurningRecipe$Serializer$$Original<R> = $LiquidBurningRecipe$Serializer<(R)>;}
 declare module "com.mrh0.createaddition.recipe.charging.ChargingRecipe$Serializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
-import {$ChargingRecipe} from "com.mrh0.createaddition.recipe.charging.ChargingRecipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$ChargingRecipeParams$$Type} from "com.mrh0.createaddition.recipe.charging.ChargingRecipeParams"
+import {$ChargingRecipe} from "com.mrh0.createaddition.recipe.charging.ChargingRecipe"
 import {$ProcessingRecipe$Factory$$Type} from "com.simibubi.create.content.processing.recipe.ProcessingRecipe$Factory"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
@@ -224,14 +224,14 @@ static readonly "TYPE_INFO": $IRecipeTypeInfo
 
 constructor(arg0: $LiquidBurningRecipeParams$$Type)
 
+public "isSuperheated"(): boolean
 public "getBurnTime"(): integer
 public "getFluidInput"(): $SizedFluidIngredient
-public "isSuperheated"(): boolean
 public "matches"(arg0: $FluidRecipeWrapper$$Type, arg1: $Level$$Type): boolean
 public "matches"(arg0: $RecipeInput$$Type, arg1: $Level$$Type): boolean
+get "superheated"(): boolean
 get "burnTime"(): integer
 get "fluidInput"(): $SizedFluidIngredient
-get "superheated"(): boolean
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -254,10 +254,10 @@ static "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($LiquidBurningR
 
 constructor()
 
-public "getBurnTime"(): integer
 public "isSuperheated"(): boolean
-get "burnTime"(): integer
+public "getBurnTime"(): integer
 get "superheated"(): boolean
+get "burnTime"(): integer
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_

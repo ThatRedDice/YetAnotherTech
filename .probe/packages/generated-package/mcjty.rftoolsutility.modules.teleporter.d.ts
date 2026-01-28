@@ -6,8 +6,8 @@ import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$IItemCycler$$Interface} from "mcjty.rftoolsbase.api.various.IItemCycler"
 import {$Block} from "net.minecraft.world.level.block.Block"
-import {$ChargedPorterItem} from "mcjty.rftoolsutility.modules.teleporter.items.porter.ChargedPorterItem"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$ChargedPorterItem} from "mcjty.rftoolsutility.modules.teleporter.items.porter.ChargedPorterItem"
 
 export class $AdvancedChargedPorterItem extends $ChargedPorterItem implements $IItemCycler$$Interface {
 static readonly "BASE_ATTACK_DAMAGE_ID": $ResourceLocation
@@ -43,8 +43,8 @@ import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
+import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $DestinationAnalyzerBlock extends $Block {
@@ -83,8 +83,8 @@ export type $DestinationAnalyzerBlock$$Type = ($DestinationAnalyzerBlock);
 export type $DestinationAnalyzerBlock$$Original = $DestinationAnalyzerBlock;}
 declare module "mcjty.rftoolsutility.modules.teleporter.blocks.SimpleDialerBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$LogicSlabBlock} from "mcjty.lib.blocks.LogicSlabBlock"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$LogicSlabBlock} from "mcjty.lib.blocks.LogicSlabBlock"
 import {$LogicFacing} from "mcjty.lib.varia.LogicFacing"
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
@@ -202,15 +202,15 @@ export type $MatterTransmitterBlock$$Original = $MatterTransmitterBlock;}
 declare module "mcjty.rftoolsutility.modules.teleporter.items.porter.ChargedPorterItem" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$ITooltipSettings$$Interface} from "mcjty.lib.tooltips.ITooltipSettings"
-import {$List$$Type} from "java.util.List"
 import {$IEnergyItem$$Interface} from "mcjty.lib.varia.IEnergyItem"
+import {$List$$Type} from "java.util.List"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$DataComponentType} from "net.minecraft.core.component.DataComponentType"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
 import {$Supplier} from "java.util.function.Supplier"
+import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
@@ -220,9 +220,9 @@ import {$Collection} from "java.util.Collection"
 import {$Map} from "java.util.Map"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
 import {$ChargedPorterData, $ChargedPorterData$$Type} from "mcjty.rftoolsutility.modules.teleporter.data.ChargedPorterData"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$IEnergyStorage} from "net.neoforged.neoforge.energy.IEnergyStorage"
 
@@ -243,16 +243,16 @@ public "inventoryTick"(arg0: $ItemStack$$Type, arg1: $Level$$Type, arg2: $Entity
 public "shouldCauseReequipAnimation"(arg0: $ItemStack$$Type, arg1: $ItemStack$$Type, arg2: boolean): boolean
 public "getMaxExtract"(): integer
 public "getMaxReceive"(): $Supplier<(integer)>
-public "getComponentsToPreserve"(): $Collection<($DataComponentType<(never)>)>
 public "getManualEntry"(): $ManualEntry
 public static "initOverrides"(arg0: $ChargedPorterItem$$Type): void
 public "getMaxEnergyStoredL"(arg0: $ItemStack$$Type): long
 public "receiveEnergyL"(arg0: $ItemStack$$Type, arg1: long, arg2: boolean): long
 public "extractEnergyL"(arg0: $ItemStack$$Type, arg1: long, arg2: boolean): long
 public "getEnergyStoredL"(arg0: $ItemStack$$Type): long
+public "getComponentsToPreserve"(): $Collection<($DataComponentType<(never)>)>
 public "extractEnergyNoMax"(arg0: $ChargedPorterData$$Type, arg1: integer, arg2: boolean): $ChargedPorterData
-public "getCapacity"(): $Supplier<(integer)>
 public "use"(arg0: $Level$$Type, arg1: $Player$$Type, arg2: $InteractionHand$$Type): $InteractionResultHolder<($ItemStack)>
+public "getCapacity"(): $Supplier<(integer)>
 public "createEnergyStorage"(arg0: $ItemStack$$Type): $IEnergyStorage
 public "extractEnergy"(arg0: $ItemStack$$Type, arg1: integer, arg2: boolean): integer
 public "receiveEnergy"(arg0: $ItemStack$$Type, arg1: integer, arg2: boolean): integer
@@ -262,8 +262,8 @@ public "getMaxWidth"(): integer
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "maxExtract"(): integer
 get "maxReceive"(): $Supplier<(integer)>
-get "componentsToPreserve"(): $Collection<($DataComponentType<(never)>)>
 get "manualEntry"(): $ManualEntry
+get "componentsToPreserve"(): $Collection<($DataComponentType<(never)>)>
 get "capacity"(): $Supplier<(integer)>
 get "maxWidth"(): integer
 }
@@ -291,9 +291,9 @@ constructor(energy: integer, currentTarget: integer, targets: $List$$Type<(integ
 
 public "energy"(): integer
 public "tpTimer"(): integer
-public "withEnergy"(arg0: integer): $ChargedPorterData
 public "withTpTimer"(arg0: integer): $ChargedPorterData
 public "withCurrentTarget"(arg0: integer): $ChargedPorterData
+public "withEnergy"(arg0: integer): $ChargedPorterData
 public "withTargets"(arg0: $List$$Type<(integer)>): $ChargedPorterData
 public "currentTarget"(): integer
 public "equals"(arg0: any): boolean
@@ -380,8 +380,8 @@ import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$BaseBlock} from "mcjty.lib.blocks.BaseBlock"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
-import {$Property} from "net.minecraft.world.level.block.state.properties.Property"
 import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
+import {$Property} from "net.minecraft.world.level.block.state.properties.Property"
 
 export class $DialingDeviceBlock extends $BaseBlock {
 static readonly "UPDATE_IMMEDIATE": integer
@@ -428,8 +428,8 @@ import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
+import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $MatterBoosterBlock extends $Block {
@@ -468,11 +468,11 @@ export type $MatterBoosterBlock$$Type = ($MatterBoosterBlock);
 export type $MatterBoosterBlock$$Original = $MatterBoosterBlock;}
 declare module "mcjty.rftoolsutility.modules.teleporter.items.teleportprobe.TeleportProbeItem" {
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
+import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Item} from "net.minecraft.world.item.Item"

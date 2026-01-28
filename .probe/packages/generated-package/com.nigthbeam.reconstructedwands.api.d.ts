@@ -52,8 +52,8 @@ export interface $IWandSupplier$$Interface {
 }
 
 export class $IWandSupplier implements $IWandSupplier$$Interface {
- "getSupply"(arg0: $BlockItem$$Type): void
  "getPlaceSnapshot"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockHitResult$$Type, arg3: $BlockState$$Type): $PlaceSnapshot
+ "getSupply"(arg0: $BlockItem$$Type): void
  "takeItemStack"(arg0: $ItemStack$$Type): integer
 }
 /**

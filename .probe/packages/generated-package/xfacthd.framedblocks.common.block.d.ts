@@ -2,8 +2,8 @@ declare module "xfacthd.framedblocks.common.block.sign.FramedWallHangingSignBloc
 import {$AbstractFramedHangingSignBlock} from "xfacthd.framedblocks.common.block.sign.AbstractFramedHangingSignBlock"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -154,8 +154,8 @@ import {$FramedVerticalStairsBlock} from "xfacthd.framedblocks.common.block.stai
 import {$Tuple} from "net.minecraft.util.Tuple"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$DoubleBlockStateCache} from "xfacthd.framedblocks.common.data.doubleblock.DoubleBlockStateCache"
+import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$CamoGetter} from "xfacthd.framedblocks.common.data.doubleblock.CamoGetter"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$SideSkipPredicate$$Type} from "xfacthd.framedblocks.api.predicate.cull.SideSkipPredicate"
@@ -253,8 +253,8 @@ export interface $ISlopeBlock$IRailSlopeBlock$$Interface extends $ISlopeBlock$$I
 }
 
 export class $ISlopeBlock$IRailSlopeBlock implements $ISlopeBlock$IRailSlopeBlock$$Interface {
- "getFacing"(arg0: $BlockState$$Type): $Direction
  "getSlopeType"(arg0: $BlockState$$Type): $SlopeType
+ "getFacing"(arg0: $BlockState$$Type): $Direction
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -266,15 +266,15 @@ export type $ISlopeBlock$IRailSlopeBlock$$Type = ($ISlopeBlock$IRailSlopeBlock);
  */
 export type $ISlopeBlock$IRailSlopeBlock$$Original = $ISlopeBlock$IRailSlopeBlock;}
 declare module "xfacthd.framedblocks.common.block.IFramedDoubleBlock" {
-import {$CamoContainer$$Type} from "xfacthd.framedblocks.api.camo.CamoContainer"
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
+import {$CamoContainer$$Type} from "xfacthd.framedblocks.api.camo.CamoContainer"
 import {$LootParams$Builder$$Type} from "net.minecraft.world.level.storage.loot.LootParams$Builder"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$IFramedBlock$$Interface} from "xfacthd.framedblocks.api.block.IFramedBlock"
 import {$Mob$$Type} from "net.minecraft.world.entity.Mob"
-import {$ItemAbility$$Type} from "net.neoforged.neoforge.common.ItemAbility"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
+import {$ItemAbility$$Type} from "net.neoforged.neoforge.common.ItemAbility"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$SideSkipPredicate$$Type} from "xfacthd.framedblocks.api.predicate.cull.SideSkipPredicate"
@@ -284,25 +284,25 @@ import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BubbleColumnDirection} from "net.neoforged.neoforge.common.enums.BubbleColumnDirection"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
-import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$SoundType} from "net.minecraft.world.level.block.SoundType"
 import {$HitResult$$Type} from "net.minecraft.world.phys.HitResult"
 import {$StateCache} from "xfacthd.framedblocks.api.block.cache.StateCache"
-import {$TreeConfiguration$$Type} from "net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration"
 import {$ShapeProvider$$Type} from "xfacthd.framedblocks.api.shapes.ShapeProvider"
-import {$CamoList$$Type} from "xfacthd.framedblocks.api.util.CamoList"
+import {$TreeConfiguration$$Type} from "net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
+import {$CamoList$$Type} from "xfacthd.framedblocks.api.util.CamoList"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$IBlockType, $IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
 import {$BiConsumer$$Type} from "java.util.function.BiConsumer"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
-import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$SolidityCheck} from "xfacthd.framedblocks.common.data.doubleblock.SolidityCheck"
 import {$MapColor, $MapColor$$Type} from "net.minecraft.world.level.material.MapColor"
 import {$List, $List$$Type} from "java.util.List"
@@ -313,16 +313,16 @@ import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$Tuple} from "net.minecraft.util.Tuple"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$DoubleBlockStateCache} from "xfacthd.framedblocks.common.data.doubleblock.DoubleBlockStateCache"
-import {$CamoGetter} from "xfacthd.framedblocks.common.data.doubleblock.CamoGetter"
+import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$Explosion$$Type} from "net.minecraft.world.level.Explosion"
+import {$CamoGetter} from "xfacthd.framedblocks.common.data.doubleblock.CamoGetter"
 import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Class} from "java.lang.Class"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$ModelData, $ModelData$$Type} from "net.neoforged.neoforge.client.model.data.ModelData"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$DoubleBlockTopInteractionMode} from "xfacthd.framedblocks.common.data.doubleblock.DoubleBlockTopInteractionMode"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
@@ -412,8 +412,8 @@ static "createProperties"(arg0: $IBlockType$$Type): $BlockBehaviour$Properties
  "rotate"(arg0: $BlockState$$Type, arg1: $BlockHitResult$$Type, arg2: $Rotation$$Type): $BlockState
  "getFriction"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): float
  "isSuffocating"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): boolean
- "getLightEmission"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): integer
  "onBlockStateChange"(arg0: $LevelReader$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $BlockState$$Type): void
+ "getLightEmission"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): integer
  "getTicker"<T extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
  "getListener"<T extends $BlockEntity>(arg0: $ServerLevel$$Type, arg1: T): $GameEventListener
  "getBlockPathType"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $Mob$$Type): $PathType
@@ -469,8 +469,8 @@ export type $IFramedDoubleBlock$$Type = ($IFramedDoubleBlock);
 export type $IFramedDoubleBlock$$Original = $IFramedDoubleBlock;}
 declare module "xfacthd.framedblocks.common.block.interactive.pressureplate.FramedWeightedPressurePlateBlock" {
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
-import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$LootParams$Builder$$Type} from "net.minecraft.world.level.storage.loot.LootParams$Builder"
+import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$IFramedBlock$$Interface} from "xfacthd.framedblocks.api.block.IFramedBlock"
@@ -481,11 +481,10 @@ import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$SideSkipPredicate$$Type} from "xfacthd.framedblocks.api.predicate.cull.SideSkipPredicate"
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
-import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
-import {$BlockType} from "xfacthd.framedblocks.common.data.BlockType"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$SoundType} from "net.minecraft.world.level.block.SoundType"
 import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
@@ -494,13 +493,13 @@ import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
 import {$ShapeProvider$$Type} from "xfacthd.framedblocks.api.shapes.ShapeProvider"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$CamoList$$Type} from "xfacthd.framedblocks.api.util.CamoList"
-import {$IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
+import {$IBlockType, $IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
-import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$MapColor, $MapColor$$Type} from "net.minecraft.world.level.material.MapColor"
 import {$List, $List$$Type} from "java.util.List"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
@@ -509,15 +508,15 @@ import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Explosion$$Type} from "net.minecraft.world.level.Explosion"
-import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
+import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Class} from "java.lang.Class"
 import {$WeightedPressurePlateBlock} from "net.minecraft.world.level.block.WeightedPressurePlateBlock"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$ModelData, $ModelData$$Type} from "net.neoforged.neoforge.client.model.data.ModelData"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
@@ -549,18 +548,18 @@ static readonly "INSTANT": float
 static readonly "UPDATE_CLIENTS": integer
 static readonly "STATE_MERGER": $FramedWeightedPressurePlateBlock$WeightedStateMerger
 
+public static "goldWaterloggable"(): $FramedWeightedPressurePlateBlock
+public static "ironWaterloggable"(): $FramedWeightedPressurePlateBlock
 public static "iron"(): $FramedWeightedPressurePlateBlock
 public static "gold"(): $FramedWeightedPressurePlateBlock
 public "setPlacedBy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $LivingEntity$$Type, arg4: $ItemStack$$Type): void
 public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
-public "getBlockType"(): $BlockType
+public "getBlockType"(): $IBlockType
 public "getItemModelSource"(): $BlockState
 public "getJadeRenderState"(arg0: $BlockState$$Type): $BlockState
 public "doesBlockOccludeBeaconBeam"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type): boolean
 public "handleBlockLeftClick"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type): boolean
 public "getJadeTargetClass"(): $Class<($Block)>
-public static "goldWaterloggable"(): $FramedWeightedPressurePlateBlock
-public static "ironWaterloggable"(): $FramedWeightedPressurePlateBlock
 public "hidesNeighborFace"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $BlockState$$Type, arg4: $Direction$$Type): boolean
 public "getExplosionResistance"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $Explosion$$Type): float
 public "getFlammability"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $Direction$$Type): integer
@@ -607,21 +606,21 @@ public "shouldRenderAsBlockInJadeTooltip"(): boolean
 public "getJadeRenderScale"(arg0: $BlockState$$Type): float
 public "shouldApplyGuiTransformFromModel"(): boolean
 public "getCache"(arg0: $BlockState$$Type): $StateCache
-public "initCache"(arg0: $BlockState$$Type): $StateCache
 public static "createProperties"(arg0: $IBlockType$$Type): $BlockBehaviour$Properties
 public "rotate"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $Rotation$$Type): $BlockState
 public "rotate"(arg0: $BlockState$$Type, arg1: $BlockHitResult$$Type, arg2: $Rotation$$Type): $BlockState
+public "initCache"(arg0: $BlockState$$Type): $StateCache
 public "addLandingEffects"(arg0: $BlockState$$Type, arg1: $ServerLevel$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $LivingEntity$$Type, arg5: integer): boolean
 public "getSoundType"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): $SoundType
 public "getFriction"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): float
 public "addRunningEffects"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): boolean
 public "isSuffocating"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): boolean
-public "getLightEmission"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): integer
 public "onBlockStateChange"(arg0: $LevelReader$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $BlockState$$Type): void
+public "getLightEmission"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): integer
 public "getTicker"<T extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
 public "getListener"<T extends $BlockEntity>(arg0: $ServerLevel$$Type, arg1: T): $GameEventListener
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
-get "blockType"(): $BlockType
+get "blockType"(): $IBlockType
 get "itemModelSource"(): $BlockState
 get "jadeTargetClass"(): $Class<($Block)>
 }
@@ -643,8 +642,8 @@ import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
-import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
+import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
 import {$TorchBlock} from "net.minecraft.world.level.block.TorchBlock"
@@ -705,8 +704,8 @@ import {$Optional} from "java.util.Optional"
 import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component} from "net.minecraft.network.chat.Component"
-import {$FramedStorageBlock} from "xfacthd.framedblocks.common.block.cube.FramedStorageBlock"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
+import {$FramedStorageBlock} from "xfacthd.framedblocks.common.block.cube.FramedStorageBlock"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
@@ -755,12 +754,12 @@ static readonly "TITLE_COMBINER": $DoubleBlockCombiner$Combiner<($FramedChestBlo
 
 constructor()
 
+public static "getConnectionDirection"(arg0: $BlockState$$Type): $Direction
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
 public "getTicker"<T extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
 public "getJadeRenderState"(arg0: $BlockState$$Type): $BlockState
 public "handleBlockLeftClick"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type): boolean
-public static "getConnectionDirection"(arg0: $BlockState$$Type): $Direction
 public static "combine"(arg0: $FramedChestBlockEntity$$Type, arg1: boolean): $DoubleBlockCombiner$NeighborCombineResult<($FramedChestBlockEntity)>
 public static "combine"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: boolean): $DoubleBlockCombiner$NeighborCombineResult<($FramedChestBlockEntity)>
 public "rotate"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $Rotation$$Type): $BlockState
@@ -819,18 +818,18 @@ static readonly "UPDATE_CLIENTS": integer
 
 constructor(arg0: $BlockType$$Type)
 
-public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
+public "isInnerPrism"(): boolean
 public static "getStateForPlacement"<T extends $Block>(arg0: $BlockPlaceContext$$Type, arg1: T): $BlockState
+public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
 public "getItemModelSource"(): $BlockState
 public "getJadeRenderState"(arg0: $BlockState$$Type): $BlockState
 public "handleBlockLeftClick"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type): boolean
-public "isInnerPrism"(): boolean
 public static "isCamoEmissiveRendering"(arg0: $ModelData$$Type): boolean
 public static "toggleYSlope"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type): boolean
 public static "createProperties"(arg0: $IBlockType$$Type): $BlockBehaviour$Properties
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
-get "itemModelSource"(): $BlockState
 get "innerPrism"(): boolean
+get "itemModelSource"(): $BlockState
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -847,8 +846,8 @@ import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
-import {$SimpleWaterloggedBlock$$Interface} from "net.minecraft.world.level.block.SimpleWaterloggedBlock"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
+import {$SimpleWaterloggedBlock$$Interface} from "net.minecraft.world.level.block.SimpleWaterloggedBlock"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$FramedWeightedPressurePlateBlock$WeightedStateMerger} from "xfacthd.framedblocks.common.block.interactive.pressureplate.FramedWeightedPressurePlateBlock$WeightedStateMerger"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
@@ -865,7 +864,7 @@ import {$HitResult$$Type} from "net.minecraft.world.phys.HitResult"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
-import {$IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
+import {$IBlockType, $IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
 import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
@@ -896,15 +895,17 @@ static readonly "STATE_MERGER": $FramedWeightedPressurePlateBlock$WeightedStateM
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
 public "getCloneItemStack"(arg0: $BlockState$$Type, arg1: $HitResult$$Type, arg2: $LevelReader$$Type, arg3: $BlockPos$$Type, arg4: $Player$$Type): $ItemStack
 public "getPickupSound"(): $Optional<($SoundEvent)>
-public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "canPlaceLiquid"(arg0: $Player$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $Fluid$$Type): boolean
+public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "pickupBlock"(arg0: $Player$$Type, arg1: $LevelAccessor$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): $ItemStack
+public "getBlockType"(): $IBlockType
 public static "isCamoEmissiveRendering"(arg0: $ModelData$$Type): boolean
 public static "toggleYSlope"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type): boolean
 public static "createProperties"(arg0: $IBlockType$$Type): $BlockBehaviour$Properties
 public "getPickupSound"(arg0: $BlockState$$Type): $Optional<($SoundEvent)>
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "pickupSound"(): $Optional<($SoundEvent)>
+get "blockType"(): $IBlockType
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -925,8 +926,8 @@ import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$FramedBlock} from "xfacthd.framedblocks.common.block.FramedBlock"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
+import {$FramedBlock} from "xfacthd.framedblocks.common.block.FramedBlock"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$ModelData$$Type} from "net.neoforged.neoforge.client.model.data.ModelData"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
@@ -934,8 +935,8 @@ import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.st
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockType$$Type} from "xfacthd.framedblocks.common.data.BlockType"
 import {$Block} from "net.minecraft.world.level.block.Block"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
@@ -987,8 +988,8 @@ export type $FramedFlatSlopeSlabCornerBlock$$Type = ($FramedFlatSlopeSlabCornerB
 export type $FramedFlatSlopeSlabCornerBlock$$Original = $FramedFlatSlopeSlabCornerBlock;}
 declare module "xfacthd.framedblocks.common.block.door.FramedTrapDoorBlock" {
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
-import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$LootParams$Builder$$Type} from "net.minecraft.world.level.storage.loot.LootParams$Builder"
+import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$IFramedBlock$$Interface} from "xfacthd.framedblocks.api.block.IFramedBlock"
@@ -999,11 +1000,11 @@ import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$SideSkipPredicate$$Type} from "xfacthd.framedblocks.api.predicate.cull.SideSkipPredicate"
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
-import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$BlockType} from "xfacthd.framedblocks.common.data.BlockType"
+import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$SoundType} from "net.minecraft.world.level.block.SoundType"
 import {$StateCache} from "xfacthd.framedblocks.api.block.cache.StateCache"
@@ -1011,16 +1012,16 @@ import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
 import {$ShapeProvider$$Type} from "xfacthd.framedblocks.api.shapes.ShapeProvider"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$CamoList$$Type} from "xfacthd.framedblocks.api.util.CamoList"
-import {$IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
+import {$IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$TrapDoorBlock} from "net.minecraft.world.level.block.TrapDoorBlock"
+import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
-import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$MapColor, $MapColor$$Type} from "net.minecraft.world.level.material.MapColor"
 import {$List, $List$$Type} from "java.util.List"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
@@ -1029,14 +1030,14 @@ import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Explosion$$Type} from "net.minecraft.world.level.Explosion"
-import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
+import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Class} from "java.lang.Class"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$ModelData, $ModelData$$Type} from "net.neoforged.neoforge.client.model.data.ModelData"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
@@ -1127,17 +1128,17 @@ public "shouldRenderAsBlockInJadeTooltip"(): boolean
 public "getJadeRenderScale"(arg0: $BlockState$$Type): float
 public "shouldApplyGuiTransformFromModel"(): boolean
 public "getCache"(arg0: $BlockState$$Type): $StateCache
-public "initCache"(arg0: $BlockState$$Type): $StateCache
 public static "createProperties"(arg0: $IBlockType$$Type): $BlockBehaviour$Properties
 public "rotate"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $Rotation$$Type): $BlockState
 public "rotate"(arg0: $BlockState$$Type, arg1: $BlockHitResult$$Type, arg2: $Rotation$$Type): $BlockState
+public "initCache"(arg0: $BlockState$$Type): $StateCache
 public "addLandingEffects"(arg0: $BlockState$$Type, arg1: $ServerLevel$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $LivingEntity$$Type, arg5: integer): boolean
 public "getSoundType"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): $SoundType
 public "getFriction"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): float
 public "addRunningEffects"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): boolean
 public "isSuffocating"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): boolean
-public "getLightEmission"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): integer
 public "onBlockStateChange"(arg0: $LevelReader$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $BlockState$$Type): void
+public "getLightEmission"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): integer
 public "getTicker"<T extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
 public "getListener"<T extends $BlockEntity>(arg0: $ServerLevel$$Type, arg1: T): $GameEventListener
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
@@ -1165,8 +1166,8 @@ import {$Tuple} from "net.minecraft.util.Tuple"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
-import {$ISlopeBlock$$Interface} from "xfacthd.framedblocks.common.block.ISlopeBlock"
 import {$CamoGetter} from "xfacthd.framedblocks.common.data.doubleblock.CamoGetter"
+import {$ISlopeBlock$$Interface} from "xfacthd.framedblocks.common.block.ISlopeBlock"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$SlopeType} from "xfacthd.framedblocks.common.data.property.SlopeType"
@@ -1208,6 +1209,8 @@ static readonly "UPDATE_CLIENTS": integer
 
 constructor()
 
+public "getSlopeType"(arg0: $BlockState$$Type): $SlopeType
+public "isHorizontalSlope"(arg0: $BlockState$$Type): boolean
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
 public "getItemModelSource"(): $BlockState
@@ -1218,8 +1221,6 @@ public "calculateSolidityCheck"(arg0: $BlockState$$Type, arg1: $Direction$$Type)
 public "getJadeRenderState"(arg0: $BlockState$$Type): $BlockState
 public "handleBlockLeftClick"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type): boolean
 public "getFacing"(arg0: $BlockState$$Type): $Direction
-public "getSlopeType"(arg0: $BlockState$$Type): $SlopeType
-public "isHorizontalSlope"(arg0: $BlockState$$Type): boolean
 public "rotate"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $Rotation$$Type): $BlockState
 public static "testComponent"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $BlockState$$Type, arg4: $Direction$$Type): boolean
 public static "printCamoData"(arg0: $CamoContainer$$Type<(never), (never)>, arg1: $CamoContainer$$Type<(never), (never)>, arg2: boolean): $Optional<($MutableComponent)>
@@ -1243,8 +1244,8 @@ export type $FramedDividedSlopeBlock$$Original = $FramedDividedSlopeBlock;}
 declare module "xfacthd.framedblocks.common.block.slab.FramedSlabEdgeBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -1357,8 +1358,8 @@ export type $FramedPathBlock$$Type = ($FramedPathBlock);
 export type $FramedPathBlock$$Original = $FramedPathBlock;}
 declare module "xfacthd.framedblocks.common.block.rail.fancy.FramedFancyRailBlock" {
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
-import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$LootParams$Builder$$Type} from "net.minecraft.world.level.storage.loot.LootParams$Builder"
+import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$IFramedBlock$$Interface} from "xfacthd.framedblocks.api.block.IFramedBlock"
@@ -1369,8 +1370,8 @@ import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$SideSkipPredicate$$Type} from "xfacthd.framedblocks.api.predicate.cull.SideSkipPredicate"
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
-import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
@@ -1386,9 +1387,9 @@ import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
+import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
-import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$MapColor, $MapColor$$Type} from "net.minecraft.world.level.material.MapColor"
 import {$List, $List$$Type} from "java.util.List"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
@@ -1397,14 +1398,14 @@ import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Explosion$$Type} from "net.minecraft.world.level.Explosion"
-import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
+import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Class} from "java.lang.Class"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$ModelData, $ModelData$$Type} from "net.neoforged.neoforge.client.model.data.ModelData"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$RailShape} from "net.minecraft.world.level.block.state.properties.RailShape"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
@@ -1492,17 +1493,17 @@ public "shouldRenderAsBlockInJadeTooltip"(): boolean
 public "getJadeRenderScale"(arg0: $BlockState$$Type): float
 public "shouldApplyGuiTransformFromModel"(): boolean
 public "getCache"(arg0: $BlockState$$Type): $StateCache
-public "initCache"(arg0: $BlockState$$Type): $StateCache
 public static "createProperties"(arg0: $IBlockType$$Type): $BlockBehaviour$Properties
 public "rotate"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $Rotation$$Type): $BlockState
 public "rotate"(arg0: $BlockState$$Type, arg1: $BlockHitResult$$Type, arg2: $Rotation$$Type): $BlockState
+public "initCache"(arg0: $BlockState$$Type): $StateCache
 public "addLandingEffects"(arg0: $BlockState$$Type, arg1: $ServerLevel$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $LivingEntity$$Type, arg5: integer): boolean
 public "getSoundType"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): $SoundType
 public "getFriction"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): float
 public "addRunningEffects"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): boolean
 public "isSuffocating"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): boolean
-public "getLightEmission"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): integer
 public "onBlockStateChange"(arg0: $LevelReader$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $BlockState$$Type): void
+public "getLightEmission"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): integer
 public "getTicker"<T extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
 public "getListener"<T extends $BlockEntity>(arg0: $ServerLevel$$Type, arg1: T): $GameEventListener
 public "moreculling$shouldAttemptToCull"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $BlockGetter$$Type, arg3: $BlockPos$$Type): boolean
@@ -1527,8 +1528,8 @@ import {$AbstractFramedHangingSignBlock} from "xfacthd.framedblocks.common.block
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
@@ -1630,12 +1631,12 @@ static readonly "UPDATE_CLIENTS": integer
 
 constructor()
 
+public static "getFlowerPotState"(arg0: $Block$$Type): $BlockState
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
 public "getItemModelSource"(): $BlockState
 public "getJadeRenderState"(arg0: $BlockState$$Type): $BlockState
 public "doesBlockOccludeBeaconBeam"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type): boolean
-public static "getFlowerPotState"(arg0: $Block$$Type): $BlockState
 public static "isCamoEmissiveRendering"(arg0: $ModelData$$Type): boolean
 public static "toggleYSlope"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type): boolean
 public static "createProperties"(arg0: $IBlockType$$Type): $BlockBehaviour$Properties
@@ -1652,9 +1653,9 @@ export type $FramedFlowerPotBlock$$Type = ($FramedFlowerPotBlock);
  */
 export type $FramedFlowerPotBlock$$Original = $FramedFlowerPotBlock;}
 declare module "xfacthd.framedblocks.common.block.slopeslab.FramedFlatStackedSlopeSlabCornerBlock" {
+import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
 import {$AbstractFramedDoubleBlock} from "xfacthd.framedblocks.common.block.AbstractFramedDoubleBlock"
 import {$CamoContainer$$Type} from "xfacthd.framedblocks.api.camo.CamoContainer"
-import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$Optional} from "java.util.Optional"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
@@ -1987,12 +1988,12 @@ declare module "xfacthd.framedblocks.common.block.pillar.FramedPillarBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$BlockType$$Type} from "xfacthd.framedblocks.common.data.BlockType"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
-import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$IPillarLikeBlock$$Interface} from "xfacthd.framedblocks.common.block.IPillarLikeBlock"
+import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$FramedBlock} from "xfacthd.framedblocks.common.block.FramedBlock"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
@@ -2027,10 +2028,10 @@ static readonly "UPDATE_CLIENTS": integer
 
 constructor(arg0: $BlockType$$Type)
 
+public "getPillarConnection"(arg0: $BlockState$$Type, arg1: $Direction$$Type): $PillarConnection
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
 public "getItemModelSource"(): $BlockState
 public "getJadeRenderState"(arg0: $BlockState$$Type): $BlockState
-public "getPillarConnection"(arg0: $BlockState$$Type, arg1: $Direction$$Type): $PillarConnection
 public "rotate"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $Rotation$$Type): $BlockState
 public static "isCamoEmissiveRendering"(arg0: $ModelData$$Type): boolean
 public static "toggleYSlope"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type): boolean
@@ -2049,8 +2050,8 @@ export type $FramedPillarBlock$$Type = ($FramedPillarBlock);
 export type $FramedPillarBlock$$Original = $FramedPillarBlock;}
 declare module "xfacthd.framedblocks.common.block.pillar.FramedFenceBlock" {
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
-import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$LootParams$Builder$$Type} from "net.minecraft.world.level.storage.loot.LootParams$Builder"
+import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$IFramedBlock$$Interface} from "xfacthd.framedblocks.api.block.IFramedBlock"
@@ -2060,11 +2061,11 @@ import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$SideSkipPredicate$$Type} from "xfacthd.framedblocks.api.predicate.cull.SideSkipPredicate"
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
-import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$BlockType} from "xfacthd.framedblocks.common.data.BlockType"
+import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$SoundType} from "net.minecraft.world.level.block.SoundType"
 import {$StateCache} from "xfacthd.framedblocks.api.block.cache.StateCache"
@@ -2072,14 +2073,14 @@ import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
 import {$ShapeProvider$$Type} from "xfacthd.framedblocks.api.shapes.ShapeProvider"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$CamoList$$Type} from "xfacthd.framedblocks.api.util.CamoList"
-import {$IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
+import {$IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
-import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$MapColor, $MapColor$$Type} from "net.minecraft.world.level.material.MapColor"
 import {$List, $List$$Type} from "java.util.List"
 import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
@@ -2089,14 +2090,14 @@ import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$FenceBlock} from "net.minecraft.world.level.block.FenceBlock"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Explosion$$Type} from "net.minecraft.world.level.Explosion"
-import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
+import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Class} from "java.lang.Class"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$ModelData, $ModelData$$Type} from "net.neoforged.neoforge.client.model.data.ModelData"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$Map} from "java.util.Map"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
@@ -2189,17 +2190,17 @@ public "shouldRenderAsBlockInJadeTooltip"(): boolean
 public "getJadeRenderScale"(arg0: $BlockState$$Type): float
 public "shouldApplyGuiTransformFromModel"(): boolean
 public "getCache"(arg0: $BlockState$$Type): $StateCache
-public "initCache"(arg0: $BlockState$$Type): $StateCache
 public static "createProperties"(arg0: $IBlockType$$Type): $BlockBehaviour$Properties
 public "rotate"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $Rotation$$Type): $BlockState
 public "rotate"(arg0: $BlockState$$Type, arg1: $BlockHitResult$$Type, arg2: $Rotation$$Type): $BlockState
+public "initCache"(arg0: $BlockState$$Type): $StateCache
 public "addLandingEffects"(arg0: $BlockState$$Type, arg1: $ServerLevel$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $LivingEntity$$Type, arg5: integer): boolean
 public "getSoundType"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): $SoundType
 public "getFriction"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): float
 public "addRunningEffects"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): boolean
 public "isSuffocating"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): boolean
-public "getLightEmission"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): integer
 public "onBlockStateChange"(arg0: $LevelReader$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $BlockState$$Type): void
+public "getLightEmission"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): integer
 public "getTicker"<T extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
 public "getListener"<T extends $BlockEntity>(arg0: $ServerLevel$$Type, arg1: T): $GameEventListener
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
@@ -2217,8 +2218,8 @@ export type $FramedFenceBlock$$Type = ($FramedFenceBlock);
  */
 export type $FramedFenceBlock$$Original = $FramedFenceBlock;}
 declare module "xfacthd.framedblocks.common.block.special.PoweredFramingSawBlock" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$Block} from "net.minecraft.world.level.block.Block"
@@ -2296,9 +2297,9 @@ export type $IPillarLikeBlock$$Type = ((arg0: $BlockState, arg1: $Direction) => 
  */
 export type $IPillarLikeBlock$$Original = $IPillarLikeBlock;}
 declare module "xfacthd.framedblocks.common.block.slopepanel.FramedInverseDoubleSlopePanelBlock" {
+import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
 import {$AbstractFramedDoubleBlock} from "xfacthd.framedblocks.common.block.AbstractFramedDoubleBlock"
 import {$CamoContainer$$Type} from "xfacthd.framedblocks.api.camo.CamoContainer"
-import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$Optional} from "java.util.Optional"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
@@ -2418,6 +2419,7 @@ static readonly "UPDATE_SUPPRESS_DROPS": integer
 static readonly "INSTANT": float
 static readonly "UPDATE_CLIENTS": integer
 
+public static "openEditScreen"(arg0: $Player$$Type, arg1: $FramedSignBlockEntity$$Type, arg2: boolean): void
 public "isPossibleToRespawnInThis"(arg0: $BlockState$$Type): boolean
 public "getTicker"<T extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
@@ -2425,7 +2427,6 @@ public "getYRotationDegrees"(arg0: $BlockState$$Type): float
 public "getSignHitboxCenterPosition"(arg0: $BlockState$$Type): $Vec3
 public "getTextLineHeight"(): integer
 public "getMaxTextLineWidth"(): integer
-public static "openEditScreen"(arg0: $Player$$Type, arg1: $FramedSignBlockEntity$$Type, arg2: boolean): void
 public static "isCamoEmissiveRendering"(arg0: $ModelData$$Type): boolean
 public static "toggleYSlope"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type): boolean
 public static "createProperties"(arg0: $IBlockType$$Type): $BlockBehaviour$Properties
@@ -2583,8 +2584,8 @@ export type $FramedVerticalStairsBlock$$Original = $FramedVerticalStairsBlock;}
 declare module "xfacthd.framedblocks.common.block.cube.FramedLayeredCubeBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
@@ -2653,8 +2654,8 @@ import {$Half} from "net.minecraft.world.level.block.state.properties.Half"
 import {$Tuple} from "net.minecraft.util.Tuple"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$DoubleBlockStateCache} from "xfacthd.framedblocks.common.data.doubleblock.DoubleBlockStateCache"
+import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$CamoGetter} from "xfacthd.framedblocks.common.data.doubleblock.CamoGetter"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$SideSkipPredicate$$Type} from "xfacthd.framedblocks.api.predicate.cull.SideSkipPredicate"
@@ -2664,8 +2665,8 @@ import {$ModelData, $ModelData$$Type} from "net.neoforged.neoforge.client.model.
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$DoubleBlockTopInteractionMode} from "xfacthd.framedblocks.common.data.doubleblock.DoubleBlockTopInteractionMode"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$StairsShape} from "net.minecraft.world.level.block.state.properties.StairsShape"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$SoundType} from "net.minecraft.world.level.block.SoundType"
 import {$FramedStairsBlock} from "xfacthd.framedblocks.common.block.stairs.standard.FramedStairsBlock"
 import {$StateCache} from "xfacthd.framedblocks.api.block.cache.StateCache"
@@ -2677,8 +2678,8 @@ import {$IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
 import {$MutableComponent} from "net.minecraft.network.chat.MutableComponent"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
+import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$DirectionProperty} from "net.minecraft.world.level.block.state.properties.DirectionProperty"
@@ -2750,26 +2751,26 @@ export type $FramedSlicedStairsSlabBlock$$Type = ($FramedSlicedStairsSlabBlock);
  */
 export type $FramedSlicedStairsSlabBlock$$Original = $FramedSlicedStairsSlabBlock;}
 declare module "xfacthd.framedblocks.common.block.slope.FramedDoublePrismCornerBlock" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$CamoContainer$$Type} from "xfacthd.framedblocks.api.camo.CamoContainer"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$Optional} from "java.util.Optional"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Tuple} from "net.minecraft.util.Tuple"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
-import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
+import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
 import {$MutableComponent} from "net.minecraft.network.chat.MutableComponent"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$FramedDoubleThreewayCornerBlock} from "xfacthd.framedblocks.common.block.slope.FramedDoubleThreewayCornerBlock"
 import {$ModelData$$Type} from "net.neoforged.neoforge.client.model.data.ModelData"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$FramedDoubleThreewayCornerBlock} from "xfacthd.framedblocks.common.block.slope.FramedDoubleThreewayCornerBlock"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -2875,8 +2876,8 @@ export type $FramedCheckeredPanelSegmentBlock$$Type = ($FramedCheckeredPanelSegm
 export type $FramedCheckeredPanelSegmentBlock$$Original = $FramedCheckeredPanelSegmentBlock;}
 declare module "xfacthd.framedblocks.common.block.pane.FramedPaneBlock" {
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
-import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$LootParams$Builder$$Type} from "net.minecraft.world.level.storage.loot.LootParams$Builder"
+import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$IFramedBlock$$Interface} from "xfacthd.framedblocks.api.block.IFramedBlock"
@@ -2886,11 +2887,11 @@ import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$SideSkipPredicate$$Type} from "xfacthd.framedblocks.api.predicate.cull.SideSkipPredicate"
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
-import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
+import {$BlockType$$Type} from "xfacthd.framedblocks.common.data.BlockType"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
-import {$BlockType, $BlockType$$Type} from "xfacthd.framedblocks.common.data.BlockType"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$SoundType} from "net.minecraft.world.level.block.SoundType"
 import {$StateCache} from "xfacthd.framedblocks.api.block.cache.StateCache"
@@ -2898,14 +2899,14 @@ import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
 import {$ShapeProvider$$Type} from "xfacthd.framedblocks.api.shapes.ShapeProvider"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$CamoList$$Type} from "xfacthd.framedblocks.api.util.CamoList"
-import {$IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
+import {$IBlockType, $IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
-import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$MapColor, $MapColor$$Type} from "net.minecraft.world.level.material.MapColor"
 import {$List, $List$$Type} from "java.util.List"
 import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
@@ -2914,14 +2915,14 @@ import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Explosion$$Type} from "net.minecraft.world.level.Explosion"
-import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
+import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Class} from "java.lang.Class"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$ModelData, $ModelData$$Type} from "net.neoforged.neoforge.client.model.data.ModelData"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$Map} from "java.util.Map"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
@@ -2962,7 +2963,7 @@ constructor(arg0: $BlockType$$Type)
 
 public "setPlacedBy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $LivingEntity$$Type, arg4: $ItemStack$$Type): void
 public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
-public "getBlockType"(): $BlockType
+public "getBlockType"(): $IBlockType
 public "getItemModelSource"(): $BlockState
 public "getJadeRenderState"(arg0: $BlockState$$Type): $BlockState
 public "hidesNeighborFace"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $BlockState$$Type, arg4: $Direction$$Type): boolean
@@ -3014,21 +3015,21 @@ public "shouldRenderAsBlockInJadeTooltip"(): boolean
 public "getJadeRenderScale"(arg0: $BlockState$$Type): float
 public "shouldApplyGuiTransformFromModel"(): boolean
 public "getCache"(arg0: $BlockState$$Type): $StateCache
-public "initCache"(arg0: $BlockState$$Type): $StateCache
 public static "createProperties"(arg0: $IBlockType$$Type): $BlockBehaviour$Properties
 public "rotate"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $Rotation$$Type): $BlockState
 public "rotate"(arg0: $BlockState$$Type, arg1: $BlockHitResult$$Type, arg2: $Rotation$$Type): $BlockState
+public "initCache"(arg0: $BlockState$$Type): $StateCache
 public "addLandingEffects"(arg0: $BlockState$$Type, arg1: $ServerLevel$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $LivingEntity$$Type, arg5: integer): boolean
 public "getSoundType"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): $SoundType
 public "getFriction"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): float
 public "addRunningEffects"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): boolean
 public "isSuffocating"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): boolean
-public "getLightEmission"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): integer
 public "onBlockStateChange"(arg0: $LevelReader$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $BlockState$$Type): void
+public "getLightEmission"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): integer
 public "getTicker"<T extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
 public "getListener"<T extends $BlockEntity>(arg0: $ServerLevel$$Type, arg1: T): $GameEventListener
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
-get "blockType"(): $BlockType
+get "blockType"(): $IBlockType
 get "itemModelSource"(): $BlockState
 get "jadeTargetClass"(): $Class<($Block)>
 }
@@ -3193,8 +3194,8 @@ import {$Half} from "net.minecraft.world.level.block.state.properties.Half"
 import {$Tuple} from "net.minecraft.util.Tuple"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$DoubleBlockStateCache} from "xfacthd.framedblocks.common.data.doubleblock.DoubleBlockStateCache"
+import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$CamoGetter} from "xfacthd.framedblocks.common.data.doubleblock.CamoGetter"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$SideSkipPredicate$$Type} from "xfacthd.framedblocks.api.predicate.cull.SideSkipPredicate"
@@ -3204,8 +3205,8 @@ import {$ModelData, $ModelData$$Type} from "net.neoforged.neoforge.client.model.
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$DoubleBlockTopInteractionMode} from "xfacthd.framedblocks.common.data.doubleblock.DoubleBlockTopInteractionMode"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$StairsShape} from "net.minecraft.world.level.block.state.properties.StairsShape"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$SoundType} from "net.minecraft.world.level.block.SoundType"
 import {$FramedStairsBlock} from "xfacthd.framedblocks.common.block.stairs.standard.FramedStairsBlock"
 import {$StateCache} from "xfacthd.framedblocks.api.block.cache.StateCache"
@@ -3217,8 +3218,8 @@ import {$IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
 import {$MutableComponent} from "net.minecraft.network.chat.MutableComponent"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
+import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$DirectionProperty} from "net.minecraft.world.level.block.state.properties.DirectionProperty"
@@ -3406,8 +3407,8 @@ export interface $ISlopeBlock$$Interface {
 }
 
 export class $ISlopeBlock implements $ISlopeBlock$$Interface {
- "getFacing"(arg0: $BlockState$$Type): $Direction
  "getSlopeType"(arg0: $BlockState$$Type): $SlopeType
+ "getFacing"(arg0: $BlockState$$Type): $Direction
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -3421,8 +3422,8 @@ export type $ISlopeBlock$$Original = $ISlopeBlock;}
 declare module "xfacthd.framedblocks.common.block.slope.FramedSlopeBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$IComplexSlopeSource$$Interface} from "xfacthd.framedblocks.common.block.IComplexSlopeSource"
@@ -3462,13 +3463,13 @@ static readonly "UPDATE_CLIENTS": integer
 
 constructor()
 
+public "getSlopeType"(arg0: $BlockState$$Type): $SlopeType
+public "isHorizontalSlope"(arg0: $BlockState$$Type): boolean
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
 public "getItemModelSource"(): $BlockState
 public "getJadeRenderState"(arg0: $BlockState$$Type): $BlockState
 public "handleBlockLeftClick"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type): boolean
 public "getFacing"(arg0: $BlockState$$Type): $Direction
-public "getSlopeType"(arg0: $BlockState$$Type): $SlopeType
-public "isHorizontalSlope"(arg0: $BlockState$$Type): boolean
 public "rotate"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $Rotation$$Type): $BlockState
 public static "isCamoEmissiveRendering"(arg0: $ModelData$$Type): boolean
 public static "toggleYSlope"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type): boolean
@@ -3486,8 +3487,8 @@ export type $FramedSlopeBlock$$Type = ($FramedSlopeBlock);
  */
 export type $FramedSlopeBlock$$Original = $FramedSlopeBlock;}
 declare module "xfacthd.framedblocks.common.block.slopepanelcorner.FramedCornerSlopePanelBlock" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$BlockType$$Type} from "xfacthd.framedblocks.common.data.BlockType"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
@@ -3529,8 +3530,8 @@ static readonly "UPDATE_CLIENTS": integer
 
 constructor(arg0: $BlockType$$Type)
 
-public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
 public static "getStateForPlacement"(arg0: $Block$$Type, arg1: $BlockPlaceContext$$Type, arg2: boolean, arg3: boolean): $BlockState
+public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
 public "getItemModelSource"(): $BlockState
 public "getJadeRenderState"(arg0: $BlockState$$Type): $BlockState
 public "createBlockItem"(): $BlockItem
@@ -3724,12 +3725,12 @@ import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Tuple} from "net.minecraft.util.Tuple"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$DoubleBlockStateCache} from "xfacthd.framedblocks.common.data.doubleblock.DoubleBlockStateCache"
+import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$CamoGetter} from "xfacthd.framedblocks.common.data.doubleblock.CamoGetter"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$SideSkipPredicate$$Type} from "xfacthd.framedblocks.api.predicate.cull.SideSkipPredicate"
 import {$FramedConnectingPyramidBlock} from "xfacthd.framedblocks.common.block.slope.FramedConnectingPyramidBlock"
+import {$SideSkipPredicate$$Type} from "xfacthd.framedblocks.api.predicate.cull.SideSkipPredicate"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$ModelData, $ModelData$$Type} from "net.neoforged.neoforge.client.model.data.ModelData"
@@ -3872,6 +3873,7 @@ static readonly "UPDATE_CLIENTS": integer
 
 constructor()
 
+public "isHorizontalSlope"(arg0: $BlockState$$Type): boolean
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
 public "getItemModelSource"(): $BlockState
@@ -3881,7 +3883,6 @@ public "calculateCamoGetter"(arg0: $BlockState$$Type, arg1: $Direction$$Type, ar
 public "calculateSolidityCheck"(arg0: $BlockState$$Type, arg1: $Direction$$Type): $SolidityCheck
 public "getJadeRenderState"(arg0: $BlockState$$Type): $BlockState
 public "handleBlockLeftClick"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type): boolean
-public "isHorizontalSlope"(arg0: $BlockState$$Type): boolean
 public "rotate"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $Rotation$$Type): $BlockState
 public static "testComponent"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $BlockState$$Type, arg4: $Direction$$Type): boolean
 public static "printCamoData"(arg0: $CamoContainer$$Type<(never), (never)>, arg1: $CamoContainer$$Type<(never), (never)>, arg2: boolean): $Optional<($MutableComponent)>
@@ -3990,16 +3991,16 @@ import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
-import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
+import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$WallTorchBlock} from "net.minecraft.world.level.block.WallTorchBlock"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$IBlockType, $IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$ModelData$$Type} from "net.neoforged.neoforge.client.model.data.ModelData"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$FramedWallTorchBlock} from "xfacthd.framedblocks.common.block.torch.FramedWallTorchBlock"
+import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$DirectionProperty} from "net.minecraft.world.level.block.state.properties.DirectionProperty"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
@@ -4056,8 +4057,8 @@ import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Tuple} from "net.minecraft.util.Tuple"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$DoubleBlockStateCache} from "xfacthd.framedblocks.common.data.doubleblock.DoubleBlockStateCache"
+import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$CamoGetter} from "xfacthd.framedblocks.common.data.doubleblock.CamoGetter"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$SideSkipPredicate$$Type} from "xfacthd.framedblocks.api.predicate.cull.SideSkipPredicate"
@@ -4146,11 +4147,11 @@ export type $FramedVerticalSlicedSlopedStairsSlopeBlock$$Type = ($FramedVertical
  */
 export type $FramedVerticalSlicedSlopedStairsSlopeBlock$$Original = $FramedVerticalSlicedSlopedStairsSlopeBlock;}
 declare module "xfacthd.framedblocks.common.block.slopepanel.FramedExtendedSlopePanelBlock" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -4307,12 +4308,12 @@ static readonly "UPDATE_CLIENTS": integer
 
 constructor()
 
-public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
+public static "mirrorPanel"(arg0: $BlockState$$Type, arg1: $Mirror$$Type): $BlockState
 public static "getStateForPlacement"(arg0: $Block$$Type, arg1: $BlockPlaceContext$$Type): $BlockState
+public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
 public "getItemModelSource"(): $BlockState
 public "getJadeRenderState"(arg0: $BlockState$$Type): $BlockState
 public "handleBlockLeftClick"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type): boolean
-public static "mirrorPanel"(arg0: $BlockState$$Type, arg1: $Mirror$$Type): $BlockState
 public "rotate"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $Rotation$$Type): $BlockState
 public static "isCamoEmissiveRendering"(arg0: $ModelData$$Type): boolean
 public static "toggleYSlope"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type): boolean
@@ -4333,12 +4334,12 @@ declare module "xfacthd.framedblocks.common.block.pillar.FramedHalfPillarBlock" 
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$BlockType$$Type} from "xfacthd.framedblocks.common.data.BlockType"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
-import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$IPillarLikeBlock$$Interface} from "xfacthd.framedblocks.common.block.IPillarLikeBlock"
+import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$FramedBlock} from "xfacthd.framedblocks.common.block.FramedBlock"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
@@ -4373,10 +4374,10 @@ static readonly "UPDATE_CLIENTS": integer
 
 constructor(arg0: $BlockType$$Type)
 
+public "getPillarConnection"(arg0: $BlockState$$Type, arg1: $Direction$$Type): $PillarConnection
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
 public "getItemModelSource"(): $BlockState
 public "getJadeRenderState"(arg0: $BlockState$$Type): $BlockState
-public "getPillarConnection"(arg0: $BlockState$$Type, arg1: $Direction$$Type): $PillarConnection
 public "rotate"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $Rotation$$Type): $BlockState
 public static "isCamoEmissiveRendering"(arg0: $ModelData$$Type): boolean
 public static "toggleYSlope"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type): boolean
@@ -4522,8 +4523,8 @@ export type $FramedCornerPillarBlock$$Type = ($FramedCornerPillarBlock);
 export type $FramedCornerPillarBlock$$Original = $FramedCornerPillarBlock;}
 declare module "xfacthd.framedblocks.common.block.interactive.button.FramedButtonBlock" {
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
-import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$LootParams$Builder$$Type} from "net.minecraft.world.level.storage.loot.LootParams$Builder"
+import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$IFramedBlock$$Interface} from "xfacthd.framedblocks.api.block.IFramedBlock"
@@ -4533,11 +4534,11 @@ import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$SideSkipPredicate$$Type} from "xfacthd.framedblocks.api.predicate.cull.SideSkipPredicate"
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
-import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$BlockType} from "xfacthd.framedblocks.common.data.BlockType"
+import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$SoundType} from "net.minecraft.world.level.block.SoundType"
 import {$StateCache} from "xfacthd.framedblocks.api.block.cache.StateCache"
@@ -4546,15 +4547,15 @@ import {$ShapeProvider$$Type} from "xfacthd.framedblocks.api.shapes.ShapeProvide
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$CamoList$$Type} from "xfacthd.framedblocks.api.util.CamoList"
 import {$AttachFace} from "net.minecraft.world.level.block.state.properties.AttachFace"
-import {$IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
+import {$IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
+import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
-import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$FramedButtonBlock$ButtonStateMerger} from "xfacthd.framedblocks.common.block.interactive.button.FramedButtonBlock$ButtonStateMerger"
 import {$MapColor, $MapColor$$Type} from "net.minecraft.world.level.material.MapColor"
 import {$List, $List$$Type} from "java.util.List"
@@ -4565,14 +4566,14 @@ import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$ButtonBlock} from "net.minecraft.world.level.block.ButtonBlock"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Explosion$$Type} from "net.minecraft.world.level.Explosion"
-import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
+import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Class} from "java.lang.Class"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$ModelData, $ModelData$$Type} from "net.neoforged.neoforge.client.model.data.ModelData"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$BlockSetType} from "net.minecraft.world.level.block.state.properties.BlockSetType"
 import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
@@ -4666,16 +4667,16 @@ public static "toggleYSlope"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: 
 public "shouldRenderAsBlockInJadeTooltip"(): boolean
 public "shouldApplyGuiTransformFromModel"(): boolean
 public "getCache"(arg0: $BlockState$$Type): $StateCache
-public "initCache"(arg0: $BlockState$$Type): $StateCache
 public static "createProperties"(arg0: $IBlockType$$Type): $BlockBehaviour$Properties
 public "rotate"(arg0: $BlockState$$Type, arg1: $BlockHitResult$$Type, arg2: $Rotation$$Type): $BlockState
+public "initCache"(arg0: $BlockState$$Type): $StateCache
 public "addLandingEffects"(arg0: $BlockState$$Type, arg1: $ServerLevel$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $LivingEntity$$Type, arg5: integer): boolean
 public "getSoundType"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): $SoundType
 public "getFriction"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): float
 public "addRunningEffects"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): boolean
 public "isSuffocating"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): boolean
-public "getLightEmission"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): integer
 public "onBlockStateChange"(arg0: $LevelReader$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $BlockState$$Type): void
+public "getLightEmission"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): integer
 public "getTicker"<T extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
 public "getListener"<T extends $BlockEntity>(arg0: $ServerLevel$$Type, arg1: T): $GameEventListener
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
@@ -4704,8 +4705,8 @@ import {$Half} from "net.minecraft.world.level.block.state.properties.Half"
 import {$Tuple} from "net.minecraft.util.Tuple"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$DoubleBlockStateCache} from "xfacthd.framedblocks.common.data.doubleblock.DoubleBlockStateCache"
+import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$CamoGetter} from "xfacthd.framedblocks.common.data.doubleblock.CamoGetter"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$SideSkipPredicate$$Type} from "xfacthd.framedblocks.api.predicate.cull.SideSkipPredicate"
@@ -4715,8 +4716,8 @@ import {$ModelData, $ModelData$$Type} from "net.neoforged.neoforge.client.model.
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$DoubleBlockTopInteractionMode} from "xfacthd.framedblocks.common.data.doubleblock.DoubleBlockTopInteractionMode"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$StairsShape} from "net.minecraft.world.level.block.state.properties.StairsShape"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$SoundType} from "net.minecraft.world.level.block.SoundType"
 import {$FramedStairsBlock} from "xfacthd.framedblocks.common.block.stairs.standard.FramedStairsBlock"
 import {$StateCache} from "xfacthd.framedblocks.api.block.cache.StateCache"
@@ -4729,8 +4730,8 @@ import {$IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
 import {$MutableComponent} from "net.minecraft.network.chat.MutableComponent"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
+import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
@@ -4765,10 +4766,10 @@ static readonly "FACING": $DirectionProperty
 constructor()
 
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
-public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
-public "canPlaceLiquid"(arg0: $Player$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $Fluid$$Type): boolean
-public "pickupBlock"(arg0: $Player$$Type, arg1: $LevelAccessor$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): $ItemStack
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
+public "canPlaceLiquid"(arg0: $Player$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $Fluid$$Type): boolean
+public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
+public "pickupBlock"(arg0: $Player$$Type, arg1: $LevelAccessor$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): $ItemStack
 public "getItemModelSource"(): $BlockState
 public "calculateBlockPair"(arg0: $BlockState$$Type): $Tuple<($BlockState), ($BlockState)>
 public "calculateTopInteractionMode"(arg0: $BlockState$$Type): $DoubleBlockTopInteractionMode
@@ -4811,8 +4812,8 @@ export type $FramedDoubleStairsBlock$$Original = $FramedDoubleStairsBlock;}
 declare module "xfacthd.framedblocks.common.block.cube.FramedStorageBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$BlockType$$Type} from "xfacthd.framedblocks.common.data.BlockType"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$BlockType$$Type} from "xfacthd.framedblocks.common.data.BlockType"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
@@ -4932,8 +4933,8 @@ import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Component} from "net.minecraft.network.chat.Component"
-import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
+import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $FramingSawBlock extends $Block {
@@ -4971,9 +4972,9 @@ export type $FramingSawBlock$$Type = ($FramingSawBlock);
  */
 export type $FramingSawBlock$$Original = $FramingSawBlock;}
 declare module "xfacthd.framedblocks.common.block.slopepanelcorner.FramedInverseDoubleCornerSlopePanelWallBlock" {
+import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
 import {$AbstractFramedDoubleBlock} from "xfacthd.framedblocks.common.block.AbstractFramedDoubleBlock"
 import {$CamoContainer$$Type} from "xfacthd.framedblocks.api.camo.CamoContainer"
-import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$Optional} from "java.util.Optional"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
@@ -5055,8 +5056,8 @@ export type $FramedInverseDoubleCornerSlopePanelWallBlock$$Original = $FramedInv
 declare module "xfacthd.framedblocks.common.block.slab.FramedCheckeredSlabSegmentBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -5113,9 +5114,9 @@ export type $FramedCheckeredSlabSegmentBlock$$Type = ($FramedCheckeredSlabSegmen
  */
 export type $FramedCheckeredSlabSegmentBlock$$Original = $FramedCheckeredSlabSegmentBlock;}
 declare module "xfacthd.framedblocks.common.block.slopepanelcorner.FramedInverseDoubleCornerSlopePanelBlock" {
+import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
 import {$AbstractFramedDoubleBlock} from "xfacthd.framedblocks.common.block.AbstractFramedDoubleBlock"
 import {$CamoContainer$$Type} from "xfacthd.framedblocks.api.camo.CamoContainer"
-import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$Optional} from "java.util.Optional"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
@@ -5207,8 +5208,8 @@ import {$Half} from "net.minecraft.world.level.block.state.properties.Half"
 import {$Tuple} from "net.minecraft.util.Tuple"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$DoubleBlockStateCache} from "xfacthd.framedblocks.common.data.doubleblock.DoubleBlockStateCache"
+import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$CamoGetter} from "xfacthd.framedblocks.common.data.doubleblock.CamoGetter"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$SideSkipPredicate$$Type} from "xfacthd.framedblocks.api.predicate.cull.SideSkipPredicate"
@@ -5218,8 +5219,8 @@ import {$ModelData, $ModelData$$Type} from "net.neoforged.neoforge.client.model.
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$DoubleBlockTopInteractionMode} from "xfacthd.framedblocks.common.data.doubleblock.DoubleBlockTopInteractionMode"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$StairsShape} from "net.minecraft.world.level.block.state.properties.StairsShape"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$SoundType} from "net.minecraft.world.level.block.SoundType"
 import {$FramedStairsBlock} from "xfacthd.framedblocks.common.block.stairs.standard.FramedStairsBlock"
 import {$StateCache} from "xfacthd.framedblocks.api.block.cache.StateCache"
@@ -5231,8 +5232,8 @@ import {$IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
 import {$MutableComponent} from "net.minecraft.network.chat.MutableComponent"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
+import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$DirectionProperty} from "net.minecraft.world.level.block.state.properties.DirectionProperty"
@@ -5344,17 +5345,17 @@ static readonly "UPDATE_CLIENTS": integer
 
 constructor(arg0: $BlockType$$Type)
 
+public "isInnerPrism"(): boolean
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
 public "getItemModelSource"(): $BlockState
 public "getJadeRenderState"(arg0: $BlockState$$Type): $BlockState
 public "handleBlockLeftClick"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type): boolean
-public "isInnerPrism"(): boolean
 public static "isCamoEmissiveRendering"(arg0: $ModelData$$Type): boolean
 public static "toggleYSlope"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type): boolean
 public static "createProperties"(arg0: $IBlockType$$Type): $BlockBehaviour$Properties
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
-get "itemModelSource"(): $BlockState
 get "innerPrism"(): boolean
+get "itemModelSource"(): $BlockState
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -5576,8 +5577,8 @@ import {$FramedVerticalStairsBlock} from "xfacthd.framedblocks.common.block.stai
 import {$Tuple} from "net.minecraft.util.Tuple"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$DoubleBlockStateCache} from "xfacthd.framedblocks.common.data.doubleblock.DoubleBlockStateCache"
+import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$CamoGetter} from "xfacthd.framedblocks.common.data.doubleblock.CamoGetter"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$SideSkipPredicate$$Type} from "xfacthd.framedblocks.api.predicate.cull.SideSkipPredicate"
@@ -5627,6 +5628,7 @@ static readonly "UPDATE_CLIENTS": integer
 
 constructor(arg0: $BlockType$$Type)
 
+public static "generateShapes"(arg0: $ImmutableList$$Type<($BlockState$$Type)>): $ShapeProvider
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
 public "getItemModelSource"(): $BlockState
@@ -5635,7 +5637,6 @@ public "calculateTopInteractionMode"(arg0: $BlockState$$Type): $DoubleBlockTopIn
 public "calculateCamoGetter"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $Direction$$Type): $CamoGetter
 public "calculateSolidityCheck"(arg0: $BlockState$$Type, arg1: $Direction$$Type): $SolidityCheck
 public "getJadeRenderState"(arg0: $BlockState$$Type): $BlockState
-public static "generateShapes"(arg0: $ImmutableList$$Type<($BlockState$$Type)>): $ShapeProvider
 public "isCamoEmissiveRendering"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): boolean
 public "getTopInteractionMode"(arg0: $BlockState$$Type): $DoubleBlockTopInteractionMode
 public "getBlockPair"(arg0: $BlockState$$Type): $Tuple<($BlockState), ($BlockState)>
@@ -5674,8 +5675,8 @@ export type $FramedVerticalSlicedStairsBlock$$Type = ($FramedVerticalSlicedStair
 export type $FramedVerticalSlicedStairsBlock$$Original = $FramedVerticalSlicedStairsBlock;}
 declare module "xfacthd.framedblocks.common.block.torch.FramedRedstoneWallTorchBlock" {
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
-import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$LootParams$Builder$$Type} from "net.minecraft.world.level.storage.loot.LootParams$Builder"
+import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$IFramedBlock$$Interface} from "xfacthd.framedblocks.api.block.IFramedBlock"
@@ -5685,25 +5686,24 @@ import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$SideSkipPredicate$$Type} from "xfacthd.framedblocks.api.predicate.cull.SideSkipPredicate"
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
-import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
-import {$BlockType} from "xfacthd.framedblocks.common.data.BlockType"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$SoundType} from "net.minecraft.world.level.block.SoundType"
 import {$StateCache} from "xfacthd.framedblocks.api.block.cache.StateCache"
 import {$ShapeProvider$$Type} from "xfacthd.framedblocks.api.shapes.ShapeProvider"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$CamoList$$Type} from "xfacthd.framedblocks.api.util.CamoList"
-import {$IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
+import {$IBlockType, $IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
-import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$MapColor, $MapColor$$Type} from "net.minecraft.world.level.material.MapColor"
 import {$List, $List$$Type} from "java.util.List"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
@@ -5712,14 +5712,14 @@ import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Explosion$$Type} from "net.minecraft.world.level.Explosion"
-import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
+import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Class} from "java.lang.Class"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$ModelData, $ModelData$$Type} from "net.neoforged.neoforge.client.model.data.ModelData"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$ItemInteractionResult} from "net.minecraft.world.ItemInteractionResult"
@@ -5757,7 +5757,7 @@ static readonly "FACING": $DirectionProperty
 constructor()
 
 public "setPlacedBy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $LivingEntity$$Type, arg4: $ItemStack$$Type): void
-public "getBlockType"(): $BlockType
+public "getBlockType"(): $IBlockType
 public "getItemModelSource"(): $BlockState
 public "getJadeRenderState"(arg0: $BlockState$$Type): $BlockState
 public "getJadeRenderScale"(arg0: $BlockState$$Type): float
@@ -5811,9 +5811,9 @@ public "getJadeTargetClass"(): $Class<($Block)>
 public "shouldRenderAsBlockInJadeTooltip"(): boolean
 public "shouldApplyGuiTransformFromModel"(): boolean
 public "getCache"(arg0: $BlockState$$Type): $StateCache
-public "initCache"(arg0: $BlockState$$Type): $StateCache
 public static "createProperties"(arg0: $IBlockType$$Type): $BlockBehaviour$Properties
 public "rotate"(arg0: $BlockState$$Type, arg1: $BlockHitResult$$Type, arg2: $Rotation$$Type): $BlockState
+public "initCache"(arg0: $BlockState$$Type): $StateCache
 public "addLandingEffects"(arg0: $BlockState$$Type, arg1: $ServerLevel$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $LivingEntity$$Type, arg5: integer): boolean
 public "getSoundType"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): $SoundType
 public "getFriction"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): float
@@ -5827,7 +5827,7 @@ public "moreculling$shouldAttemptToCull"(arg0: $BlockState$$Type, arg1: $Directi
 public "moreculling$canCull"(): boolean
 public "moreculling$setCanCull"(arg0: boolean): void
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
-get "blockType"(): $BlockType
+get "blockType"(): $IBlockType
 get "itemModelSource"(): $BlockState
 get "jadeTargetClass"(): $Class<($Block)>
 }
@@ -5962,8 +5962,8 @@ export type $FramedTubeBlock$$Original = $FramedTubeBlock;}
 declare module "xfacthd.framedblocks.common.block.slopeedge.FramedSlopeEdgeBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$IComplexSlopeSource$$Interface} from "xfacthd.framedblocks.common.block.IComplexSlopeSource"
@@ -6001,11 +6001,11 @@ static readonly "UPDATE_CLIENTS": integer
 
 constructor()
 
+public "isHorizontalSlope"(arg0: $BlockState$$Type): boolean
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
 public "getItemModelSource"(): $BlockState
 public "getJadeRenderState"(arg0: $BlockState$$Type): $BlockState
 public "handleBlockLeftClick"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type): boolean
-public "isHorizontalSlope"(arg0: $BlockState$$Type): boolean
 public "rotate"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $Rotation$$Type): $BlockState
 public static "isCamoEmissiveRendering"(arg0: $ModelData$$Type): boolean
 public static "toggleYSlope"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type): boolean
@@ -6081,8 +6081,8 @@ export type $FramedWallBoardBlock$$Type = ($FramedWallBoardBlock);
 export type $FramedWallBoardBlock$$Original = $FramedWallBoardBlock;}
 declare module "xfacthd.framedblocks.common.block.torch.FramedTorchBlock" {
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
-import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$LootParams$Builder$$Type} from "net.minecraft.world.level.storage.loot.LootParams$Builder"
+import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$IFramedBlock$$Interface} from "xfacthd.framedblocks.api.block.IFramedBlock"
@@ -6093,9 +6093,10 @@ import {$TorchBlock} from "net.minecraft.world.level.block.TorchBlock"
 import {$SideSkipPredicate$$Type} from "xfacthd.framedblocks.api.predicate.cull.SideSkipPredicate"
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
-import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
+import {$BlockType} from "xfacthd.framedblocks.common.data.BlockType"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$SoundType} from "net.minecraft.world.level.block.SoundType"
@@ -6105,12 +6106,12 @@ import {$ShapeProvider$$Type} from "xfacthd.framedblocks.api.shapes.ShapeProvide
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$CamoList$$Type} from "xfacthd.framedblocks.api.util.CamoList"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
-import {$IBlockType, $IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
+import {$IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
-import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$MapColor, $MapColor$$Type} from "net.minecraft.world.level.material.MapColor"
 import {$List, $List$$Type} from "java.util.List"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
@@ -6119,14 +6120,14 @@ import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Explosion$$Type} from "net.minecraft.world.level.Explosion"
-import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
+import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Class} from "java.lang.Class"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$ModelData, $ModelData$$Type} from "net.neoforged.neoforge.client.model.data.ModelData"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
@@ -6159,7 +6160,7 @@ constructor()
 
 public "setPlacedBy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $LivingEntity$$Type, arg4: $ItemStack$$Type): void
 public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
-public "getBlockType"(): $IBlockType
+public "getBlockType"(): $BlockType
 public "getItemModelSource"(): $BlockState
 public "getJadeRenderState"(arg0: $BlockState$$Type): $BlockState
 public "createBlockItem"(): $BlockItem
@@ -6212,10 +6213,10 @@ public static "toggleYSlope"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: 
 public "shouldRenderAsBlockInJadeTooltip"(): boolean
 public "shouldApplyGuiTransformFromModel"(): boolean
 public "getCache"(arg0: $BlockState$$Type): $StateCache
-public "initCache"(arg0: $BlockState$$Type): $StateCache
 public static "createProperties"(arg0: $IBlockType$$Type): $BlockBehaviour$Properties
 public "rotate"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $Rotation$$Type): $BlockState
 public "rotate"(arg0: $BlockState$$Type, arg1: $BlockHitResult$$Type, arg2: $Rotation$$Type): $BlockState
+public "initCache"(arg0: $BlockState$$Type): $StateCache
 public "addLandingEffects"(arg0: $BlockState$$Type, arg1: $ServerLevel$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $LivingEntity$$Type, arg5: integer): boolean
 public "getSoundType"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): $SoundType
 public "getFriction"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): float
@@ -6229,7 +6230,7 @@ public "moreculling$shouldAttemptToCull"(arg0: $BlockState$$Type, arg1: $Directi
 public "moreculling$canCull"(): boolean
 public "moreculling$setCanCull"(arg0: boolean): void
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
-get "blockType"(): $IBlockType
+get "blockType"(): $BlockType
 get "itemModelSource"(): $BlockState
 get "jadeTargetClass"(): $Class<($Block)>
 }
@@ -6250,8 +6251,8 @@ import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
-import {$FramedBlock} from "xfacthd.framedblocks.common.block.FramedBlock"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
+import {$FramedBlock} from "xfacthd.framedblocks.common.block.FramedBlock"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
@@ -6259,8 +6260,8 @@ import {$ModelData$$Type} from "net.neoforged.neoforge.client.model.data.ModelDa
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockType$$Type} from "xfacthd.framedblocks.common.data.BlockType"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
+import {$BlockType$$Type} from "xfacthd.framedblocks.common.data.BlockType"
 import {$SoundType} from "net.minecraft.world.level.block.SoundType"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$HitResult$$Type} from "net.minecraft.world.phys.HitResult"
@@ -6322,11 +6323,11 @@ export type $FramedItemFrameBlock$$Type = ($FramedItemFrameBlock);
  */
 export type $FramedItemFrameBlock$$Original = $FramedItemFrameBlock;}
 declare module "xfacthd.framedblocks.common.block.slopepanel.FramedCompoundSlopePanelBlock" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -6386,8 +6387,8 @@ export type $FramedCompoundSlopePanelBlock$$Type = ($FramedCompoundSlopePanelBlo
 export type $FramedCompoundSlopePanelBlock$$Original = $FramedCompoundSlopePanelBlock;}
 declare module "xfacthd.framedblocks.common.block.cube.FramedTargetBlock" {
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
-import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$LootParams$Builder$$Type} from "net.minecraft.world.level.storage.loot.LootParams$Builder"
+import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$IFramedBlock$$Interface} from "xfacthd.framedblocks.api.block.IFramedBlock"
@@ -6397,8 +6398,8 @@ import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$SideSkipPredicate$$Type} from "xfacthd.framedblocks.api.predicate.cull.SideSkipPredicate"
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
-import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
@@ -6412,9 +6413,9 @@ import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$IBlockType, $IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
-import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$MapColor, $MapColor$$Type} from "net.minecraft.world.level.material.MapColor"
 import {$List, $List$$Type} from "java.util.List"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
@@ -6423,14 +6424,14 @@ import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Explosion$$Type} from "net.minecraft.world.level.Explosion"
-import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
+import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Class} from "java.lang.Class"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$ModelData, $ModelData$$Type} from "net.neoforged.neoforge.client.model.data.ModelData"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TargetBlock} from "net.minecraft.world.level.block.TargetBlock"
@@ -6516,17 +6517,17 @@ public "shouldRenderAsBlockInJadeTooltip"(): boolean
 public "getJadeRenderScale"(arg0: $BlockState$$Type): float
 public "shouldApplyGuiTransformFromModel"(): boolean
 public "getCache"(arg0: $BlockState$$Type): $StateCache
-public "initCache"(arg0: $BlockState$$Type): $StateCache
 public static "createProperties"(arg0: $IBlockType$$Type): $BlockBehaviour$Properties
 public "rotate"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $Rotation$$Type): $BlockState
 public "rotate"(arg0: $BlockState$$Type, arg1: $BlockHitResult$$Type, arg2: $Rotation$$Type): $BlockState
+public "initCache"(arg0: $BlockState$$Type): $StateCache
 public "addLandingEffects"(arg0: $BlockState$$Type, arg1: $ServerLevel$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $LivingEntity$$Type, arg5: integer): boolean
 public "getSoundType"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): $SoundType
 public "getFriction"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): float
 public "addRunningEffects"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): boolean
 public "isSuffocating"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): boolean
-public "getLightEmission"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): integer
 public "onBlockStateChange"(arg0: $LevelReader$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $BlockState$$Type): void
+public "getLightEmission"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): integer
 public "getTicker"<T extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
 public "getListener"<T extends $BlockEntity>(arg0: $ServerLevel$$Type, arg1: T): $GameEventListener
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
@@ -6601,8 +6602,8 @@ export type $FramedGlowingCubeBlock$$Original = $FramedGlowingCubeBlock;}
 declare module "xfacthd.framedblocks.common.block.cube.FramedCollapsibleBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$BlockType$$Type} from "xfacthd.framedblocks.common.data.BlockType"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$BlockType$$Type} from "xfacthd.framedblocks.common.data.BlockType"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
@@ -6666,8 +6667,8 @@ export type $FramedCollapsibleBlock$$Type = ($FramedCollapsibleBlock);
 export type $FramedCollapsibleBlock$$Original = $FramedCollapsibleBlock;}
 declare module "xfacthd.framedblocks.common.block.interactive.pressureplate.FramedPressurePlateBlock" {
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
-import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$LootParams$Builder$$Type} from "net.minecraft.world.level.storage.loot.LootParams$Builder"
+import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$IFramedBlock$$Interface} from "xfacthd.framedblocks.api.block.IFramedBlock"
@@ -6677,9 +6678,10 @@ import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$SideSkipPredicate$$Type} from "xfacthd.framedblocks.api.predicate.cull.SideSkipPredicate"
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
-import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
+import {$BlockType} from "xfacthd.framedblocks.common.data.BlockType"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$SoundType} from "net.minecraft.world.level.block.SoundType"
@@ -6689,13 +6691,13 @@ import {$ShapeProvider$$Type} from "xfacthd.framedblocks.api.shapes.ShapeProvide
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$CamoList$$Type} from "xfacthd.framedblocks.api.util.CamoList"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
-import {$IBlockType, $IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
+import {$IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
-import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$MapColor, $MapColor$$Type} from "net.minecraft.world.level.material.MapColor"
 import {$List, $List$$Type} from "java.util.List"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
@@ -6704,15 +6706,15 @@ import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Explosion$$Type} from "net.minecraft.world.level.Explosion"
-import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
-import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
+import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$PressurePlateBlock} from "net.minecraft.world.level.block.PressurePlateBlock"
+import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Class} from "java.lang.Class"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$ModelData, $ModelData$$Type} from "net.neoforged.neoforge.client.model.data.ModelData"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
@@ -6742,10 +6744,13 @@ static readonly "UPDATE_SUPPRESS_DROPS": integer
 static readonly "INSTANT": float
 static readonly "UPDATE_CLIENTS": integer
 
+public static "woodWaterloggable"(): $FramedPressurePlateBlock
+public static "stoneWaterloggable"(): $FramedPressurePlateBlock
+public static "obsidianWaterloggable"(): $FramedPressurePlateBlock
 public static "stone"(): $FramedPressurePlateBlock
 public "setPlacedBy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $LivingEntity$$Type, arg4: $ItemStack$$Type): void
 public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
-public "getBlockType"(): $IBlockType
+public "getBlockType"(): $BlockType
 public static "obsidian"(): $FramedPressurePlateBlock
 public "getItemModelSource"(): $BlockState
 public "getJadeRenderState"(arg0: $BlockState$$Type): $BlockState
@@ -6753,9 +6758,6 @@ public "doesBlockOccludeBeaconBeam"(arg0: $BlockState$$Type, arg1: $LevelReader$
 public "handleBlockLeftClick"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type): boolean
 public "getJadeTargetClass"(): $Class<($Block)>
 public static "wood"(): $FramedPressurePlateBlock
-public static "woodWaterloggable"(): $FramedPressurePlateBlock
-public static "stoneWaterloggable"(): $FramedPressurePlateBlock
-public static "obsidianWaterloggable"(): $FramedPressurePlateBlock
 public "hidesNeighborFace"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $BlockState$$Type, arg4: $Direction$$Type): boolean
 public "getExplosionResistance"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $Explosion$$Type): float
 public "getFlammability"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $Direction$$Type): integer
@@ -6802,21 +6804,21 @@ public "shouldRenderAsBlockInJadeTooltip"(): boolean
 public "getJadeRenderScale"(arg0: $BlockState$$Type): float
 public "shouldApplyGuiTransformFromModel"(): boolean
 public "getCache"(arg0: $BlockState$$Type): $StateCache
-public "initCache"(arg0: $BlockState$$Type): $StateCache
 public static "createProperties"(arg0: $IBlockType$$Type): $BlockBehaviour$Properties
 public "rotate"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $Rotation$$Type): $BlockState
 public "rotate"(arg0: $BlockState$$Type, arg1: $BlockHitResult$$Type, arg2: $Rotation$$Type): $BlockState
+public "initCache"(arg0: $BlockState$$Type): $StateCache
 public "addLandingEffects"(arg0: $BlockState$$Type, arg1: $ServerLevel$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $LivingEntity$$Type, arg5: integer): boolean
 public "getSoundType"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): $SoundType
 public "getFriction"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): float
 public "addRunningEffects"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): boolean
 public "isSuffocating"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): boolean
-public "getLightEmission"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): integer
 public "onBlockStateChange"(arg0: $LevelReader$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $BlockState$$Type): void
+public "getLightEmission"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): integer
 public "getTicker"<T extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
 public "getListener"<T extends $BlockEntity>(arg0: $ServerLevel$$Type, arg1: T): $GameEventListener
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
-get "blockType"(): $IBlockType
+get "blockType"(): $BlockType
 get "itemModelSource"(): $BlockState
 get "jadeTargetClass"(): $Class<($Block)>
 }
@@ -6911,8 +6913,8 @@ export type $FramedDoubleCornerBlock$$Type = ($FramedDoubleCornerBlock);
 export type $FramedDoubleCornerBlock$$Original = $FramedDoubleCornerBlock;}
 declare module "xfacthd.framedblocks.common.block.rail.vanillaslope.FramedDetectorRailSlopeBlock" {
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
-import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$LootParams$Builder$$Type} from "net.minecraft.world.level.storage.loot.LootParams$Builder"
+import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$IFramedBlock$$Interface} from "xfacthd.framedblocks.api.block.IFramedBlock"
@@ -6923,28 +6925,28 @@ import {$SideSkipPredicate$$Type} from "xfacthd.framedblocks.api.predicate.cull.
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$SlopeType} from "xfacthd.framedblocks.common.data.property.SlopeType"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
-import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$BlockType} from "xfacthd.framedblocks.common.data.BlockType"
+import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$SoundType} from "net.minecraft.world.level.block.SoundType"
 import {$StateCache} from "xfacthd.framedblocks.api.block.cache.StateCache"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
 import {$ShapeProvider$$Type} from "xfacthd.framedblocks.api.shapes.ShapeProvider"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
-import {$CamoList$$Type} from "xfacthd.framedblocks.api.util.CamoList"
 import {$ISlopeBlock$IRailSlopeBlock$$Interface} from "xfacthd.framedblocks.common.block.ISlopeBlock$IRailSlopeBlock"
-import {$IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
+import {$CamoList$$Type} from "xfacthd.framedblocks.api.util.CamoList"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
+import {$IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
+import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
-import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$Property} from "net.minecraft.world.level.block.state.properties.Property"
 import {$MapColor, $MapColor$$Type} from "net.minecraft.world.level.material.MapColor"
@@ -6956,14 +6958,14 @@ import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$DetectorRailBlock} from "net.minecraft.world.level.block.DetectorRailBlock"
 import {$Explosion$$Type} from "net.minecraft.world.level.Explosion"
-import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
+import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Class} from "java.lang.Class"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$ModelData, $ModelData$$Type} from "net.neoforged.neoforge.client.model.data.ModelData"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$RailShape, $RailShape$$Type} from "net.minecraft.world.level.block.state.properties.RailShape"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
@@ -7055,19 +7057,19 @@ public "shouldRenderAsBlockInJadeTooltip"(): boolean
 public "getJadeRenderScale"(arg0: $BlockState$$Type): float
 public "shouldApplyGuiTransformFromModel"(): boolean
 public "getCache"(arg0: $BlockState$$Type): $StateCache
-public "initCache"(arg0: $BlockState$$Type): $StateCache
 public static "createProperties"(arg0: $IBlockType$$Type): $BlockBehaviour$Properties
 public "rotate"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $Rotation$$Type): $BlockState
 public "rotate"(arg0: $BlockState$$Type, arg1: $BlockHitResult$$Type, arg2: $Rotation$$Type): $BlockState
+public "initCache"(arg0: $BlockState$$Type): $StateCache
 public "addLandingEffects"(arg0: $BlockState$$Type, arg1: $ServerLevel$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $LivingEntity$$Type, arg5: integer): boolean
 public "getSoundType"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): $SoundType
 public "getFriction"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): float
 public "addRunningEffects"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): boolean
 public "isSuffocating"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): boolean
-public "getLightEmission"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): integer
 public "onBlockStateChange"(arg0: $LevelReader$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $BlockState$$Type): void
-public "getFacing"(arg0: $BlockState$$Type): $Direction
+public "getLightEmission"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): integer
 public "getSlopeType"(arg0: $BlockState$$Type): $SlopeType
+public "getFacing"(arg0: $BlockState$$Type): $Direction
 public "getTicker"<T extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
 public "getListener"<T extends $BlockEntity>(arg0: $ServerLevel$$Type, arg1: T): $GameEventListener
 public "moreculling$shouldAttemptToCull"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $BlockGetter$$Type, arg3: $BlockPos$$Type): boolean
@@ -7129,18 +7131,18 @@ static readonly "UPDATE_CLIENTS": integer
 
 constructor(arg0: $BlockType$$Type)
 
-public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
+public "isInnerPrism"(): boolean
 public static "getStateForPlacement"(arg0: $BlockPlaceContext$$Type, arg1: $Block$$Type): $BlockState
+public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
 public "getItemModelSource"(): $BlockState
 public "getJadeRenderState"(arg0: $BlockState$$Type): $BlockState
 public "handleBlockLeftClick"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type): boolean
-public "isInnerPrism"(): boolean
 public static "isCamoEmissiveRendering"(arg0: $ModelData$$Type): boolean
 public static "toggleYSlope"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type): boolean
 public static "createProperties"(arg0: $IBlockType$$Type): $BlockBehaviour$Properties
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
-get "itemModelSource"(): $BlockState
 get "innerPrism"(): boolean
+get "itemModelSource"(): $BlockState
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -7152,18 +7154,18 @@ export type $FramedPrismBlock$$Type = ($FramedPrismBlock);
  */
 export type $FramedPrismBlock$$Original = $FramedPrismBlock;}
 declare module "xfacthd.framedblocks.common.block.slopepanelcorner.FramedSmallDoubleCornerSlopePanelBlock" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$CamoContainer$$Type} from "xfacthd.framedblocks.api.camo.CamoContainer"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$BlockType$$Type} from "xfacthd.framedblocks.common.data.BlockType"
 import {$Optional} from "java.util.Optional"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
-import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
+import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
@@ -7218,8 +7220,8 @@ declare module "xfacthd.framedblocks.common.block.slopeedge.FramedElevatedCorner
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$BlockType$$Type} from "xfacthd.framedblocks.common.data.BlockType"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -7285,8 +7287,8 @@ import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Tuple} from "net.minecraft.util.Tuple"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$DoubleBlockStateCache} from "xfacthd.framedblocks.common.data.doubleblock.DoubleBlockStateCache"
+import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$CamoGetter} from "xfacthd.framedblocks.common.data.doubleblock.CamoGetter"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$SideSkipPredicate$$Type} from "xfacthd.framedblocks.api.predicate.cull.SideSkipPredicate"
@@ -7376,8 +7378,8 @@ export type $FramedSlicedSlopedStairsSlabBlock$$Type = ($FramedSlicedSlopedStair
 export type $FramedSlicedSlopedStairsSlabBlock$$Original = $FramedSlicedSlopedStairsSlabBlock;}
 declare module "xfacthd.framedblocks.common.block.rail.fancy.FramedFancyPoweredRailBlock" {
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
-import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$LootParams$Builder$$Type} from "net.minecraft.world.level.storage.loot.LootParams$Builder"
+import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$IFramedBlock$$Interface} from "xfacthd.framedblocks.api.block.IFramedBlock"
@@ -7387,8 +7389,8 @@ import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$SideSkipPredicate$$Type} from "xfacthd.framedblocks.api.predicate.cull.SideSkipPredicate"
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
-import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
@@ -7405,9 +7407,9 @@ import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
+import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
-import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$MapColor, $MapColor$$Type} from "net.minecraft.world.level.material.MapColor"
 import {$List, $List$$Type} from "java.util.List"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
@@ -7416,14 +7418,14 @@ import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Explosion$$Type} from "net.minecraft.world.level.Explosion"
-import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
+import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Class} from "java.lang.Class"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$ModelData, $ModelData$$Type} from "net.neoforged.neoforge.client.model.data.ModelData"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$RailShape} from "net.minecraft.world.level.block.state.properties.RailShape"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
@@ -7512,17 +7514,17 @@ public "shouldRenderAsBlockInJadeTooltip"(): boolean
 public "getJadeRenderScale"(arg0: $BlockState$$Type): float
 public "shouldApplyGuiTransformFromModel"(): boolean
 public "getCache"(arg0: $BlockState$$Type): $StateCache
-public "initCache"(arg0: $BlockState$$Type): $StateCache
 public static "createProperties"(arg0: $IBlockType$$Type): $BlockBehaviour$Properties
 public "rotate"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $Rotation$$Type): $BlockState
 public "rotate"(arg0: $BlockState$$Type, arg1: $BlockHitResult$$Type, arg2: $Rotation$$Type): $BlockState
+public "initCache"(arg0: $BlockState$$Type): $StateCache
 public "addLandingEffects"(arg0: $BlockState$$Type, arg1: $ServerLevel$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $LivingEntity$$Type, arg5: integer): boolean
 public "getSoundType"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): $SoundType
 public "getFriction"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): float
 public "addRunningEffects"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): boolean
 public "isSuffocating"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): boolean
-public "getLightEmission"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): integer
 public "onBlockStateChange"(arg0: $LevelReader$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $BlockState$$Type): void
+public "getLightEmission"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): integer
 public "getTicker"<T extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
 public "getListener"<T extends $BlockEntity>(arg0: $ServerLevel$$Type, arg1: T): $GameEventListener
 public "moreculling$shouldAttemptToCull"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $BlockGetter$$Type, arg3: $BlockPos$$Type): boolean
@@ -7711,12 +7713,12 @@ import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$FramedBlock} from "xfacthd.framedblocks.common.block.FramedBlock"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
+import {$FramedBlock} from "xfacthd.framedblocks.common.block.FramedBlock"
 import {$IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
 import {$Item} from "net.minecraft.world.item.Item"
@@ -7906,8 +7908,8 @@ export type $FramedFloorBlock$$Type = ($FramedFloorBlock);
 export type $FramedFloorBlock$$Original = $FramedFloorBlock;}
 declare module "xfacthd.framedblocks.common.block.torch.FramedLanternBlock" {
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
-import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$LootParams$Builder$$Type} from "net.minecraft.world.level.storage.loot.LootParams$Builder"
+import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$IFramedBlock$$Interface} from "xfacthd.framedblocks.api.block.IFramedBlock"
@@ -7917,27 +7919,27 @@ import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$SideSkipPredicate$$Type} from "xfacthd.framedblocks.api.predicate.cull.SideSkipPredicate"
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
-import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$BlockType$$Type} from "xfacthd.framedblocks.common.data.BlockType"
+import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$SoundType} from "net.minecraft.world.level.block.SoundType"
 import {$StateCache} from "xfacthd.framedblocks.api.block.cache.StateCache"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
 import {$ShapeProvider$$Type} from "xfacthd.framedblocks.api.shapes.ShapeProvider"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
-import {$CamoList$$Type} from "xfacthd.framedblocks.api.util.CamoList"
 import {$LanternBlock} from "net.minecraft.world.level.block.LanternBlock"
+import {$CamoList$$Type} from "xfacthd.framedblocks.api.util.CamoList"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$IBlockType, $IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
-import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$MapColor, $MapColor$$Type} from "net.minecraft.world.level.material.MapColor"
 import {$List, $List$$Type} from "java.util.List"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
@@ -7946,14 +7948,14 @@ import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Explosion$$Type} from "net.minecraft.world.level.Explosion"
-import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
+import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Class} from "java.lang.Class"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$ModelData, $ModelData$$Type} from "net.neoforged.neoforge.client.model.data.ModelData"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
@@ -8041,10 +8043,10 @@ public "shouldRenderAsBlockInJadeTooltip"(): boolean
 public "getJadeRenderScale"(arg0: $BlockState$$Type): float
 public "shouldApplyGuiTransformFromModel"(): boolean
 public "getCache"(arg0: $BlockState$$Type): $StateCache
-public "initCache"(arg0: $BlockState$$Type): $StateCache
 public static "createProperties"(arg0: $IBlockType$$Type): $BlockBehaviour$Properties
 public "rotate"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $Rotation$$Type): $BlockState
 public "rotate"(arg0: $BlockState$$Type, arg1: $BlockHitResult$$Type, arg2: $Rotation$$Type): $BlockState
+public "initCache"(arg0: $BlockState$$Type): $StateCache
 public "addLandingEffects"(arg0: $BlockState$$Type, arg1: $ServerLevel$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $LivingEntity$$Type, arg5: integer): boolean
 public "getSoundType"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): $SoundType
 public "getFriction"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): float
@@ -8070,8 +8072,8 @@ export type $FramedLanternBlock$$Original = $FramedLanternBlock;}
 declare module "xfacthd.framedblocks.common.block.sign.FramedStandingSignBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$AbstractFramedSignBlock} from "xfacthd.framedblocks.common.block.sign.AbstractFramedSignBlock"
 import {$BlockItem} from "net.minecraft.world.item.BlockItem"
@@ -8192,12 +8194,12 @@ export type $AbstractFramedHangingSignBlock$$Type = ($AbstractFramedHangingSignB
  */
 export type $AbstractFramedHangingSignBlock$$Original = $AbstractFramedHangingSignBlock;}
 declare module "xfacthd.framedblocks.common.block.slopepanelcorner.FramedExtendedCornerSlopePanelWallBlock" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$BlockType$$Type} from "xfacthd.framedblocks.common.data.BlockType"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -8347,8 +8349,8 @@ import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$FramedBlock} from "xfacthd.framedblocks.common.block.FramedBlock"
@@ -8485,9 +8487,9 @@ export type $FramedDoubleThreewayCornerBlock$$Type = ($FramedDoubleThreewayCorne
  */
 export type $FramedDoubleThreewayCornerBlock$$Original = $FramedDoubleThreewayCornerBlock;}
 declare module "xfacthd.framedblocks.common.block.slopepanel.FramedFlatStackedSlopePanelCornerBlock" {
+import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
 import {$AbstractFramedDoubleBlock} from "xfacthd.framedblocks.common.block.AbstractFramedDoubleBlock"
 import {$CamoContainer$$Type} from "xfacthd.framedblocks.api.camo.CamoContainer"
-import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$Optional} from "java.util.Optional"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
@@ -8619,6 +8621,7 @@ static readonly "UPDATE_CLIENTS": integer
 
 constructor(arg0: $BlockType$$Type)
 
+public "isInnerPrism"(): boolean
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
 public "getItemModelSource"(): $BlockState
@@ -8628,7 +8631,6 @@ public "calculateCamoGetter"(arg0: $BlockState$$Type, arg1: $Direction$$Type, ar
 public "calculateSolidityCheck"(arg0: $BlockState$$Type, arg1: $Direction$$Type): $SolidityCheck
 public "getJadeRenderState"(arg0: $BlockState$$Type): $BlockState
 public "handleBlockLeftClick"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type): boolean
-public "isInnerPrism"(): boolean
 public static "testComponent"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $BlockState$$Type, arg4: $Direction$$Type): boolean
 public static "printCamoData"(arg0: $CamoContainer$$Type<(never), (never)>, arg1: $CamoContainer$$Type<(never), (never)>, arg2: boolean): $Optional<($MutableComponent)>
 public static "getCamoComponent"(arg0: $CamoContainer$$Type<(never), (never)>): $MutableComponent
@@ -8637,8 +8639,8 @@ public "doesBlockOccludeBeaconBeam"(arg0: $BlockState$$Type, arg1: $LevelReader$
 public static "toggleYSlope"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type): boolean
 public static "createProperties"(arg0: $IBlockType$$Type): $BlockBehaviour$Properties
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
-get "itemModelSource"(): $BlockState
 get "innerPrism"(): boolean
+get "itemModelSource"(): $BlockState
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -8740,11 +8742,11 @@ import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Tuple} from "net.minecraft.util.Tuple"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$DoubleBlockStateCache} from "xfacthd.framedblocks.common.data.doubleblock.DoubleBlockStateCache"
+import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$CamoGetter} from "xfacthd.framedblocks.common.data.doubleblock.CamoGetter"
-import {$FramedBlock} from "xfacthd.framedblocks.common.block.FramedBlock"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
+import {$FramedBlock} from "xfacthd.framedblocks.common.block.FramedBlock"
 import {$SideSkipPredicate$$Type} from "xfacthd.framedblocks.api.predicate.cull.SideSkipPredicate"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
@@ -8861,8 +8863,8 @@ export type $FramedWeightedPressurePlateBlock$WeightedStateMerger$$Original = $F
 declare module "xfacthd.framedblocks.common.block.pillar.FramedWallBlock" {
 import {$WallSide} from "net.minecraft.world.level.block.state.properties.WallSide"
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
-import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$LootParams$Builder$$Type} from "net.minecraft.world.level.storage.loot.LootParams$Builder"
+import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$IFramedBlock$$Interface} from "xfacthd.framedblocks.api.block.IFramedBlock"
@@ -8872,11 +8874,11 @@ import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$SideSkipPredicate$$Type} from "xfacthd.framedblocks.api.predicate.cull.SideSkipPredicate"
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
-import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$BlockType} from "xfacthd.framedblocks.common.data.BlockType"
+import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$SoundType} from "net.minecraft.world.level.block.SoundType"
 import {$StateCache} from "xfacthd.framedblocks.api.block.cache.StateCache"
@@ -8884,15 +8886,15 @@ import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
 import {$ShapeProvider$$Type} from "xfacthd.framedblocks.api.shapes.ShapeProvider"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$CamoList$$Type} from "xfacthd.framedblocks.api.util.CamoList"
-import {$IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
+import {$IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
+import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
-import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$WallBlock} from "net.minecraft.world.level.block.WallBlock"
 import {$MapColor, $MapColor$$Type} from "net.minecraft.world.level.material.MapColor"
 import {$List, $List$$Type} from "java.util.List"
@@ -8902,14 +8904,14 @@ import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Explosion$$Type} from "net.minecraft.world.level.Explosion"
-import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
+import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Class} from "java.lang.Class"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$ModelData, $ModelData$$Type} from "net.neoforged.neoforge.client.model.data.ModelData"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
@@ -9001,17 +9003,17 @@ public "shouldRenderAsBlockInJadeTooltip"(): boolean
 public "getJadeRenderScale"(arg0: $BlockState$$Type): float
 public "shouldApplyGuiTransformFromModel"(): boolean
 public "getCache"(arg0: $BlockState$$Type): $StateCache
-public "initCache"(arg0: $BlockState$$Type): $StateCache
 public static "createProperties"(arg0: $IBlockType$$Type): $BlockBehaviour$Properties
 public "rotate"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $Rotation$$Type): $BlockState
 public "rotate"(arg0: $BlockState$$Type, arg1: $BlockHitResult$$Type, arg2: $Rotation$$Type): $BlockState
+public "initCache"(arg0: $BlockState$$Type): $StateCache
 public "addLandingEffects"(arg0: $BlockState$$Type, arg1: $ServerLevel$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $LivingEntity$$Type, arg5: integer): boolean
 public "getSoundType"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): $SoundType
 public "getFriction"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): float
 public "addRunningEffects"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): boolean
 public "isSuffocating"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): boolean
-public "getLightEmission"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): integer
 public "onBlockStateChange"(arg0: $LevelReader$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $BlockState$$Type): void
+public "getLightEmission"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): integer
 public "getTicker"<T extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
 public "getListener"<T extends $BlockEntity>(arg0: $ServerLevel$$Type, arg1: T): $GameEventListener
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
@@ -9190,12 +9192,12 @@ export type $FramedDoubleCornerSlopePanelWallBlock$$Type = ($FramedDoubleCornerS
  */
 export type $FramedDoubleCornerSlopePanelWallBlock$$Original = $FramedDoubleCornerSlopePanelWallBlock;}
 declare module "xfacthd.framedblocks.common.block.slopeslab.FramedFlatElevatedSlopeSlabCornerBlock" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$BlockType$$Type} from "xfacthd.framedblocks.common.data.BlockType"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -9398,8 +9400,8 @@ import {$FramedBlockEntity$$Type} from "xfacthd.framedblocks.api.block.blockenti
 import {$Tuple} from "net.minecraft.util.Tuple"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$DoubleBlockStateCache} from "xfacthd.framedblocks.common.data.doubleblock.DoubleBlockStateCache"
+import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$CamoGetter} from "xfacthd.framedblocks.common.data.doubleblock.CamoGetter"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$SideSkipPredicate$$Type} from "xfacthd.framedblocks.api.predicate.cull.SideSkipPredicate"
@@ -9414,12 +9416,12 @@ import {$SoundType} from "net.minecraft.world.level.block.SoundType"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$StateCache} from "xfacthd.framedblocks.api.block.cache.StateCache"
 import {$IFramedDoubleBlock$$Interface} from "xfacthd.framedblocks.common.block.IFramedDoubleBlock"
+import {$BiFunction$$Type} from "java.util.function.BiFunction"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
-import {$BiFunction$$Type} from "java.util.function.BiFunction"
 import {$CamoList$$Type} from "xfacthd.framedblocks.api.util.CamoList"
 import {$ISlopeBlock$IRailSlopeBlock$$Interface} from "xfacthd.framedblocks.common.block.ISlopeBlock$IRailSlopeBlock"
-import {$IBlockType, $IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
+import {$IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
 import {$MutableComponent} from "net.minecraft.network.chat.MutableComponent"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
@@ -9474,7 +9476,6 @@ public "initCache"(arg0: $BlockState$$Type): $StateCache
 public "addLandingEffects"(arg0: $BlockState$$Type, arg1: $ServerLevel$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $LivingEntity$$Type, arg5: integer): boolean
 public "getSoundType"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): $SoundType
 public "addRunningEffects"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): boolean
-public "getBlockType"(): $IBlockType
 public static "isCamoEmissiveRendering"(arg0: $ModelData$$Type): boolean
 public static "toggleYSlope"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type): boolean
 public static "createProperties"(arg0: $IBlockType$$Type): $BlockBehaviour$Properties
@@ -9482,7 +9483,6 @@ public "moreculling$shouldAttemptToCull"(arg0: $BlockState$$Type, arg1: $Directi
 public "moreculling$canCull"(): boolean
 public "moreculling$setCanCull"(arg0: boolean): void
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
-get "blockType"(): $IBlockType
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -9583,11 +9583,11 @@ import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$FramedBlockEntity$$Type} from "xfacthd.framedblocks.api.block.blockentity.FramedBlockEntity"
 import {$Tuple} from "net.minecraft.util.Tuple"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
-import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$DetectorRailBlock} from "net.minecraft.world.level.block.DetectorRailBlock"
+import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$FramedDetectorRailSlopeBlock} from "xfacthd.framedblocks.common.block.rail.vanillaslope.FramedDetectorRailSlopeBlock"
-import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$DoubleBlockStateCache} from "xfacthd.framedblocks.common.data.doubleblock.DoubleBlockStateCache"
+import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$CamoGetter} from "xfacthd.framedblocks.common.data.doubleblock.CamoGetter"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$SideSkipPredicate$$Type} from "xfacthd.framedblocks.api.predicate.cull.SideSkipPredicate"
@@ -9602,17 +9602,17 @@ import {$RailShape} from "net.minecraft.world.level.block.state.properties.RailS
 import {$SoundType} from "net.minecraft.world.level.block.SoundType"
 import {$StateCache} from "xfacthd.framedblocks.api.block.cache.StateCache"
 import {$IFramedDoubleBlock$$Interface} from "xfacthd.framedblocks.common.block.IFramedDoubleBlock"
+import {$BiFunction$$Type} from "java.util.function.BiFunction"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
-import {$BiFunction$$Type} from "java.util.function.BiFunction"
 import {$CamoList$$Type} from "xfacthd.framedblocks.api.util.CamoList"
 import {$ISlopeBlock$IRailSlopeBlock$$Interface} from "xfacthd.framedblocks.common.block.ISlopeBlock$IRailSlopeBlock"
 import {$IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
 import {$MutableComponent} from "net.minecraft.network.chat.MutableComponent"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
+import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$SolidityCheck} from "xfacthd.framedblocks.common.data.doubleblock.SolidityCheck"
@@ -9710,12 +9710,12 @@ export type $FramedButtonBlock$ButtonStateMerger$$Type = ($FramedButtonBlock$But
  */
 export type $FramedButtonBlock$ButtonStateMerger$$Original = $FramedButtonBlock$ButtonStateMerger;}
 declare module "xfacthd.framedblocks.common.block.slopepanelcorner.FramedExtendedCornerSlopePanelBlock" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$BlockType$$Type} from "xfacthd.framedblocks.common.data.BlockType"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
@@ -9778,8 +9778,8 @@ export type $FramedExtendedCornerSlopePanelBlock$$Original = $FramedExtendedCorn
 declare module "xfacthd.framedblocks.common.block.slab.FramedMasonryCornerSegmentBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -9837,8 +9837,8 @@ export type $FramedMasonryCornerSegmentBlock$$Type = ($FramedMasonryCornerSegmen
 export type $FramedMasonryCornerSegmentBlock$$Original = $FramedMasonryCornerSegmentBlock;}
 declare module "xfacthd.framedblocks.common.block.door.FramedFenceGateBlock" {
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
-import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$LootParams$Builder$$Type} from "net.minecraft.world.level.storage.loot.LootParams$Builder"
+import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$IFramedBlock$$Interface} from "xfacthd.framedblocks.api.block.IFramedBlock"
@@ -9849,11 +9849,11 @@ import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$SideSkipPredicate$$Type} from "xfacthd.framedblocks.api.predicate.cull.SideSkipPredicate"
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
-import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$BlockType} from "xfacthd.framedblocks.common.data.BlockType"
+import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$SoundType} from "net.minecraft.world.level.block.SoundType"
 import {$StateCache} from "xfacthd.framedblocks.api.block.cache.StateCache"
@@ -9861,14 +9861,14 @@ import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
 import {$ShapeProvider$$Type} from "xfacthd.framedblocks.api.shapes.ShapeProvider"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$CamoList$$Type} from "xfacthd.framedblocks.api.util.CamoList"
-import {$IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
+import {$IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
-import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$MapColor, $MapColor$$Type} from "net.minecraft.world.level.material.MapColor"
 import {$List, $List$$Type} from "java.util.List"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
@@ -9877,14 +9877,14 @@ import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Explosion$$Type} from "net.minecraft.world.level.Explosion"
-import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
+import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Class} from "java.lang.Class"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$ModelData, $ModelData$$Type} from "net.neoforged.neoforge.client.model.data.ModelData"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
@@ -9977,17 +9977,17 @@ public "shouldRenderAsBlockInJadeTooltip"(): boolean
 public "getJadeRenderScale"(arg0: $BlockState$$Type): float
 public "shouldApplyGuiTransformFromModel"(): boolean
 public "getCache"(arg0: $BlockState$$Type): $StateCache
-public "initCache"(arg0: $BlockState$$Type): $StateCache
 public static "createProperties"(arg0: $IBlockType$$Type): $BlockBehaviour$Properties
 public "rotate"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $Rotation$$Type): $BlockState
 public "rotate"(arg0: $BlockState$$Type, arg1: $BlockHitResult$$Type, arg2: $Rotation$$Type): $BlockState
+public "initCache"(arg0: $BlockState$$Type): $StateCache
 public "addLandingEffects"(arg0: $BlockState$$Type, arg1: $ServerLevel$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $LivingEntity$$Type, arg5: integer): boolean
 public "getSoundType"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): $SoundType
 public "getFriction"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): float
 public "addRunningEffects"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): boolean
 public "isSuffocating"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): boolean
-public "getLightEmission"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): integer
 public "onBlockStateChange"(arg0: $LevelReader$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $BlockState$$Type): void
+public "getLightEmission"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): integer
 public "getTicker"<T extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
 public "getListener"<T extends $BlockEntity>(arg0: $ServerLevel$$Type, arg1: T): $GameEventListener
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
@@ -10006,8 +10006,8 @@ export type $FramedFenceGateBlock$$Type = ($FramedFenceGateBlock);
 export type $FramedFenceGateBlock$$Original = $FramedFenceGateBlock;}
 declare module "xfacthd.framedblocks.common.block.torch.FramedWallTorchBlock" {
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
-import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$LootParams$Builder$$Type} from "net.minecraft.world.level.storage.loot.LootParams$Builder"
+import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$IFramedBlock$$Interface} from "xfacthd.framedblocks.api.block.IFramedBlock"
@@ -10017,8 +10017,8 @@ import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$SideSkipPredicate$$Type} from "xfacthd.framedblocks.api.predicate.cull.SideSkipPredicate"
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
-import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
@@ -10031,9 +10031,9 @@ import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$IBlockType, $IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
-import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$MapColor, $MapColor$$Type} from "net.minecraft.world.level.material.MapColor"
 import {$List, $List$$Type} from "java.util.List"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
@@ -10042,18 +10042,18 @@ import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Explosion$$Type} from "net.minecraft.world.level.Explosion"
-import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
+import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Class} from "java.lang.Class"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$ModelData, $ModelData$$Type} from "net.neoforged.neoforge.client.model.data.ModelData"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
-import {$ItemInteractionResult} from "net.minecraft.world.ItemInteractionResult"
 import {$WallTorchBlock} from "net.minecraft.world.level.block.WallTorchBlock"
+import {$ItemInteractionResult} from "net.minecraft.world.ItemInteractionResult"
 import {$MutableComponent} from "net.minecraft.network.chat.MutableComponent"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$BlueprintData$$Type} from "xfacthd.framedblocks.api.blueprint.BlueprintData"
@@ -10136,9 +10136,9 @@ public static "toggleYSlope"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: 
 public "shouldRenderAsBlockInJadeTooltip"(): boolean
 public "shouldApplyGuiTransformFromModel"(): boolean
 public "getCache"(arg0: $BlockState$$Type): $StateCache
-public "initCache"(arg0: $BlockState$$Type): $StateCache
 public static "createProperties"(arg0: $IBlockType$$Type): $BlockBehaviour$Properties
 public "rotate"(arg0: $BlockState$$Type, arg1: $BlockHitResult$$Type, arg2: $Rotation$$Type): $BlockState
+public "initCache"(arg0: $BlockState$$Type): $StateCache
 public "addLandingEffects"(arg0: $BlockState$$Type, arg1: $ServerLevel$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $LivingEntity$$Type, arg5: integer): boolean
 public "getSoundType"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): $SoundType
 public "getFriction"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): float
@@ -10169,8 +10169,8 @@ declare module "xfacthd.framedblocks.common.block.stairs.standard.FramedSlopedSt
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$BlockType$$Type} from "xfacthd.framedblocks.common.data.BlockType"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -10370,8 +10370,8 @@ declare module "xfacthd.framedblocks.common.block.slopeedge.FramedCornerSlopeEdg
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$BlockType$$Type} from "xfacthd.framedblocks.common.data.BlockType"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -10430,8 +10430,8 @@ export type $FramedCornerSlopeEdgeBlock$$Type = ($FramedCornerSlopeEdgeBlock);
 export type $FramedCornerSlopeEdgeBlock$$Original = $FramedCornerSlopeEdgeBlock;}
 declare module "xfacthd.framedblocks.common.block.pillar.FramedChainBlock" {
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
-import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$LootParams$Builder$$Type} from "net.minecraft.world.level.storage.loot.LootParams$Builder"
+import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$IFramedBlock$$Interface} from "xfacthd.framedblocks.api.block.IFramedBlock"
@@ -10440,10 +10440,10 @@ import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$SideSkipPredicate$$Type} from "xfacthd.framedblocks.api.predicate.cull.SideSkipPredicate"
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
-import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$ChainBlock} from "net.minecraft.world.level.block.ChainBlock"
-import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
+import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
@@ -10460,9 +10460,9 @@ import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
+import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
-import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$MapColor, $MapColor$$Type} from "net.minecraft.world.level.material.MapColor"
 import {$List, $List$$Type} from "java.util.List"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
@@ -10471,14 +10471,14 @@ import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Explosion$$Type} from "net.minecraft.world.level.Explosion"
-import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
+import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Class} from "java.lang.Class"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$ModelData, $ModelData$$Type} from "net.neoforged.neoforge.client.model.data.ModelData"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
@@ -10566,17 +10566,17 @@ public "shouldRenderAsBlockInJadeTooltip"(): boolean
 public "getJadeRenderScale"(arg0: $BlockState$$Type): float
 public "shouldApplyGuiTransformFromModel"(): boolean
 public "getCache"(arg0: $BlockState$$Type): $StateCache
-public "initCache"(arg0: $BlockState$$Type): $StateCache
 public static "createProperties"(arg0: $IBlockType$$Type): $BlockBehaviour$Properties
 public "rotate"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $Rotation$$Type): $BlockState
 public "rotate"(arg0: $BlockState$$Type, arg1: $BlockHitResult$$Type, arg2: $Rotation$$Type): $BlockState
+public "initCache"(arg0: $BlockState$$Type): $StateCache
 public "addLandingEffects"(arg0: $BlockState$$Type, arg1: $ServerLevel$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $LivingEntity$$Type, arg5: integer): boolean
 public "getSoundType"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): $SoundType
 public "getFriction"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): float
 public "addRunningEffects"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): boolean
 public "isSuffocating"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): boolean
-public "getLightEmission"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): integer
 public "onBlockStateChange"(arg0: $LevelReader$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $BlockState$$Type): void
+public "getLightEmission"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): integer
 public "getTicker"<T extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
 public "getListener"<T extends $BlockEntity>(arg0: $ServerLevel$$Type, arg1: T): $GameEventListener
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
@@ -10595,8 +10595,8 @@ export type $FramedChainBlock$$Type = ($FramedChainBlock);
 export type $FramedChainBlock$$Original = $FramedChainBlock;}
 declare module "xfacthd.framedblocks.common.block.stairs.standard.FramedStairsBlock" {
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
-import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$LootParams$Builder$$Type} from "net.minecraft.world.level.storage.loot.LootParams$Builder"
+import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$IFramedBlock$$Interface} from "xfacthd.framedblocks.api.block.IFramedBlock"
@@ -10607,12 +10607,12 @@ import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$SideSkipPredicate$$Type} from "xfacthd.framedblocks.api.predicate.cull.SideSkipPredicate"
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
-import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
+import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$StairsShape} from "net.minecraft.world.level.block.state.properties.StairsShape"
-import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockType, $BlockType$$Type} from "xfacthd.framedblocks.common.data.BlockType"
+import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$SoundType} from "net.minecraft.world.level.block.SoundType"
 import {$StateCache} from "xfacthd.framedblocks.api.block.cache.StateCache"
@@ -10620,15 +10620,15 @@ import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
 import {$ShapeProvider$$Type} from "xfacthd.framedblocks.api.shapes.ShapeProvider"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$CamoList$$Type} from "xfacthd.framedblocks.api.util.CamoList"
-import {$IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
+import {$IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
+import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
-import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$MapColor, $MapColor$$Type} from "net.minecraft.world.level.material.MapColor"
 import {$StairBlock} from "net.minecraft.world.level.block.StairBlock"
 import {$List, $List$$Type} from "java.util.List"
@@ -10638,14 +10638,14 @@ import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Explosion$$Type} from "net.minecraft.world.level.Explosion"
-import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
+import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Class} from "java.lang.Class"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$ModelData, $ModelData$$Type} from "net.neoforged.neoforge.client.model.data.ModelData"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
@@ -10735,17 +10735,17 @@ public "shouldRenderAsBlockInJadeTooltip"(): boolean
 public "getJadeRenderScale"(arg0: $BlockState$$Type): float
 public "shouldApplyGuiTransformFromModel"(): boolean
 public "getCache"(arg0: $BlockState$$Type): $StateCache
-public "initCache"(arg0: $BlockState$$Type): $StateCache
 public static "createProperties"(arg0: $IBlockType$$Type): $BlockBehaviour$Properties
 public "rotate"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $Rotation$$Type): $BlockState
 public "rotate"(arg0: $BlockState$$Type, arg1: $BlockHitResult$$Type, arg2: $Rotation$$Type): $BlockState
+public "initCache"(arg0: $BlockState$$Type): $StateCache
 public "addLandingEffects"(arg0: $BlockState$$Type, arg1: $ServerLevel$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $LivingEntity$$Type, arg5: integer): boolean
 public "getSoundType"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): $SoundType
 public "getFriction"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): float
 public "addRunningEffects"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): boolean
 public "isSuffocating"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): boolean
-public "getLightEmission"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): integer
 public "onBlockStateChange"(arg0: $LevelReader$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $BlockState$$Type): void
+public "getLightEmission"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): integer
 public "getTicker"<T extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
 public "getListener"<T extends $BlockEntity>(arg0: $ServerLevel$$Type, arg1: T): $GameEventListener
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
@@ -10814,6 +10814,7 @@ static readonly "UPDATE_CLIENTS": integer
 
 constructor(arg0: $BlockType$$Type)
 
+public "isInnerPrism"(): boolean
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
 public "getItemModelSource"(): $BlockState
@@ -10823,7 +10824,6 @@ public "calculateCamoGetter"(arg0: $BlockState$$Type, arg1: $Direction$$Type, ar
 public "calculateSolidityCheck"(arg0: $BlockState$$Type, arg1: $Direction$$Type): $SolidityCheck
 public "getJadeRenderState"(arg0: $BlockState$$Type): $BlockState
 public "handleBlockLeftClick"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type): boolean
-public "isInnerPrism"(): boolean
 public static "testComponent"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $BlockState$$Type, arg4: $Direction$$Type): boolean
 public static "printCamoData"(arg0: $CamoContainer$$Type<(never), (never)>, arg1: $CamoContainer$$Type<(never), (never)>, arg2: boolean): $Optional<($MutableComponent)>
 public static "getCamoComponent"(arg0: $CamoContainer$$Type<(never), (never)>): $MutableComponent
@@ -10832,8 +10832,8 @@ public "doesBlockOccludeBeaconBeam"(arg0: $BlockState$$Type, arg1: $LevelReader$
 public static "toggleYSlope"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type): boolean
 public static "createProperties"(arg0: $IBlockType$$Type): $BlockBehaviour$Properties
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
-get "itemModelSource"(): $BlockState
 get "innerPrism"(): boolean
+get "itemModelSource"(): $BlockState
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -10932,8 +10932,8 @@ import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Tuple} from "net.minecraft.util.Tuple"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$DoubleBlockStateCache} from "xfacthd.framedblocks.common.data.doubleblock.DoubleBlockStateCache"
+import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$CamoGetter} from "xfacthd.framedblocks.common.data.doubleblock.CamoGetter"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$SideSkipPredicate$$Type} from "xfacthd.framedblocks.api.predicate.cull.SideSkipPredicate"
@@ -11028,8 +11028,8 @@ import {$BlockType$$Type} from "xfacthd.framedblocks.common.data.BlockType"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
-import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$FramedCornerSlopePanelBlock} from "xfacthd.framedblocks.common.block.slopepanelcorner.FramedCornerSlopePanelBlock"
+import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
@@ -11076,8 +11076,8 @@ export type $FramedLargeInnerCornerSlopePanelBlock$$Type = ($FramedLargeInnerCor
 export type $FramedLargeInnerCornerSlopePanelBlock$$Original = $FramedLargeInnerCornerSlopePanelBlock;}
 declare module "xfacthd.framedblocks.common.block.cube.FramedBouncyCubeBlock" {
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
-import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$LootParams$Builder$$Type} from "net.minecraft.world.level.storage.loot.LootParams$Builder"
+import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$IFramedBlock$$Interface} from "xfacthd.framedblocks.api.block.IFramedBlock"
@@ -11087,8 +11087,8 @@ import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$SideSkipPredicate$$Type} from "xfacthd.framedblocks.api.predicate.cull.SideSkipPredicate"
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
-import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
@@ -11102,9 +11102,9 @@ import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$IBlockType, $IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
-import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$MapColor, $MapColor$$Type} from "net.minecraft.world.level.material.MapColor"
 import {$List, $List$$Type} from "java.util.List"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
@@ -11113,15 +11113,15 @@ import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Explosion$$Type} from "net.minecraft.world.level.Explosion"
-import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
-import {$SlimeBlock} from "net.minecraft.world.level.block.SlimeBlock"
+import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
+import {$SlimeBlock} from "net.minecraft.world.level.block.SlimeBlock"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Class} from "java.lang.Class"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$ModelData, $ModelData$$Type} from "net.neoforged.neoforge.client.model.data.ModelData"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
@@ -11206,17 +11206,17 @@ public "shouldRenderAsBlockInJadeTooltip"(): boolean
 public "getJadeRenderScale"(arg0: $BlockState$$Type): float
 public "shouldApplyGuiTransformFromModel"(): boolean
 public "getCache"(arg0: $BlockState$$Type): $StateCache
-public "initCache"(arg0: $BlockState$$Type): $StateCache
 public static "createProperties"(arg0: $IBlockType$$Type): $BlockBehaviour$Properties
 public "rotate"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $Rotation$$Type): $BlockState
 public "rotate"(arg0: $BlockState$$Type, arg1: $BlockHitResult$$Type, arg2: $Rotation$$Type): $BlockState
+public "initCache"(arg0: $BlockState$$Type): $StateCache
 public "addLandingEffects"(arg0: $BlockState$$Type, arg1: $ServerLevel$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $LivingEntity$$Type, arg5: integer): boolean
 public "getSoundType"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): $SoundType
 public "getFriction"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): float
 public "addRunningEffects"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): boolean
 public "isSuffocating"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): boolean
-public "getLightEmission"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): integer
 public "onBlockStateChange"(arg0: $LevelReader$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $BlockState$$Type): void
+public "getLightEmission"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): integer
 public "getTicker"<T extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
 public "getListener"<T extends $BlockEntity>(arg0: $ServerLevel$$Type, arg1: T): $GameEventListener
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
@@ -11293,8 +11293,8 @@ export type $FramedPrismCornerBlock$$Original = $FramedPrismCornerBlock;}
 declare module "xfacthd.framedblocks.common.block.pillar.FramedThreewayCornerPillarBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -11391,17 +11391,17 @@ static readonly "UPDATE_CLIENTS": integer
 
 constructor(arg0: $BlockType$$Type)
 
+public "isInnerPrism"(): boolean
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
 public "getItemModelSource"(): $BlockState
 public "getJadeRenderState"(arg0: $BlockState$$Type): $BlockState
 public "handleBlockLeftClick"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type): boolean
-public "isInnerPrism"(): boolean
 public static "isCamoEmissiveRendering"(arg0: $ModelData$$Type): boolean
 public static "toggleYSlope"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type): boolean
 public static "createProperties"(arg0: $IBlockType$$Type): $BlockBehaviour$Properties
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
-get "itemModelSource"(): $BlockState
 get "innerPrism"(): boolean
+get "itemModelSource"(): $BlockState
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -11547,6 +11547,7 @@ static readonly "UPDATE_CLIENTS": integer
 
 constructor()
 
+public "isHorizontalSlope"(arg0: $BlockState$$Type): boolean
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
 public "getItemModelSource"(): $BlockState
@@ -11556,7 +11557,6 @@ public "calculateCamoGetter"(arg0: $BlockState$$Type, arg1: $Direction$$Type, ar
 public "calculateSolidityCheck"(arg0: $BlockState$$Type, arg1: $Direction$$Type): $SolidityCheck
 public "getJadeRenderState"(arg0: $BlockState$$Type): $BlockState
 public "handleBlockLeftClick"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type): boolean
-public "isHorizontalSlope"(arg0: $BlockState$$Type): boolean
 public "rotate"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $Rotation$$Type): $BlockState
 public static "testComponent"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $BlockState$$Type, arg4: $Direction$$Type): boolean
 public static "printCamoData"(arg0: $CamoContainer$$Type<(never), (never)>, arg1: $CamoContainer$$Type<(never), (never)>, arg2: boolean): $Optional<($MutableComponent)>
@@ -11578,18 +11578,18 @@ export type $FramedDoubleSlopeBlock$$Type = ($FramedDoubleSlopeBlock);
  */
 export type $FramedDoubleSlopeBlock$$Original = $FramedDoubleSlopeBlock;}
 declare module "xfacthd.framedblocks.common.block.slopepanelcorner.FramedSmallDoubleCornerSlopePanelWallBlock" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$CamoContainer$$Type} from "xfacthd.framedblocks.api.camo.CamoContainer"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$BlockType$$Type} from "xfacthd.framedblocks.common.data.BlockType"
 import {$Optional} from "java.util.Optional"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
-import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
+import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$FramedDoubleCornerSlopePanelWallBlock} from "xfacthd.framedblocks.common.block.slopepanelcorner.FramedDoubleCornerSlopePanelWallBlock"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
@@ -11699,8 +11699,8 @@ export type $FramedCheckeredCubeSegmentBlock$$Type = ($FramedCheckeredCubeSegmen
 export type $FramedCheckeredCubeSegmentBlock$$Original = $FramedCheckeredCubeSegmentBlock;}
 declare module "xfacthd.framedblocks.common.block.cube.FramedRedstoneBlock" {
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
-import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$LootParams$Builder$$Type} from "net.minecraft.world.level.storage.loot.LootParams$Builder"
+import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$IFramedBlock$$Interface} from "xfacthd.framedblocks.api.block.IFramedBlock"
@@ -11711,8 +11711,8 @@ import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$SideSkipPredicate$$Type} from "xfacthd.framedblocks.api.predicate.cull.SideSkipPredicate"
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
-import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
@@ -11726,9 +11726,9 @@ import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$IBlockType, $IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
-import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$MapColor, $MapColor$$Type} from "net.minecraft.world.level.material.MapColor"
 import {$List, $List$$Type} from "java.util.List"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
@@ -11737,14 +11737,14 @@ import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Explosion$$Type} from "net.minecraft.world.level.Explosion"
-import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
+import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Class} from "java.lang.Class"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$ModelData, $ModelData$$Type} from "net.neoforged.neoforge.client.model.data.ModelData"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
@@ -11829,17 +11829,17 @@ public "shouldRenderAsBlockInJadeTooltip"(): boolean
 public "getJadeRenderScale"(arg0: $BlockState$$Type): float
 public "shouldApplyGuiTransformFromModel"(): boolean
 public "getCache"(arg0: $BlockState$$Type): $StateCache
-public "initCache"(arg0: $BlockState$$Type): $StateCache
 public static "createProperties"(arg0: $IBlockType$$Type): $BlockBehaviour$Properties
 public "rotate"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $Rotation$$Type): $BlockState
 public "rotate"(arg0: $BlockState$$Type, arg1: $BlockHitResult$$Type, arg2: $Rotation$$Type): $BlockState
+public "initCache"(arg0: $BlockState$$Type): $StateCache
 public "addLandingEffects"(arg0: $BlockState$$Type, arg1: $ServerLevel$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $LivingEntity$$Type, arg5: integer): boolean
 public "getSoundType"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): $SoundType
 public "getFriction"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): float
 public "addRunningEffects"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): boolean
 public "isSuffocating"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): boolean
-public "getLightEmission"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): integer
 public "onBlockStateChange"(arg0: $LevelReader$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $BlockState$$Type): void
+public "getLightEmission"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): integer
 public "getTicker"<T extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
 public "getListener"<T extends $BlockEntity>(arg0: $ServerLevel$$Type, arg1: T): $GameEventListener
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
@@ -11936,9 +11936,9 @@ export type $FramedDoubleThreewayCornerPillarBlock$$Type = ($FramedDoubleThreewa
  */
 export type $FramedDoubleThreewayCornerPillarBlock$$Original = $FramedDoubleThreewayCornerPillarBlock;}
 declare module "xfacthd.framedblocks.common.block.slopepanelcorner.FramedStackedCornerSlopePanelWallBlock" {
+import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
 import {$AbstractFramedDoubleBlock} from "xfacthd.framedblocks.common.block.AbstractFramedDoubleBlock"
 import {$CamoContainer$$Type} from "xfacthd.framedblocks.api.camo.CamoContainer"
-import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$Optional} from "java.util.Optional"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
@@ -12022,20 +12022,20 @@ declare module "xfacthd.framedblocks.common.block.pillar.FramedLatticeBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$BlockType$$Type} from "xfacthd.framedblocks.common.data.BlockType"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
-import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$IPillarLikeBlock$$Interface} from "xfacthd.framedblocks.common.block.IPillarLikeBlock"
+import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$FramedBlock} from "xfacthd.framedblocks.common.block.FramedBlock"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
 import {$PillarConnection} from "xfacthd.framedblocks.common.data.property.PillarConnection"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$ModelData$$Type} from "net.neoforged.neoforge.client.model.data.ModelData"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
@@ -12063,11 +12063,11 @@ static readonly "UPDATE_CLIENTS": integer
 
 constructor(arg0: $BlockType$$Type)
 
+public static "getPropFromAxis"(arg0: $Direction$$Type): $BooleanProperty
+public "getPillarConnection"(arg0: $BlockState$$Type, arg1: $Direction$$Type): $PillarConnection
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
 public "getItemModelSource"(): $BlockState
 public "getJadeRenderState"(arg0: $BlockState$$Type): $BlockState
-public static "getPropFromAxis"(arg0: $Direction$$Type): $BooleanProperty
-public "getPillarConnection"(arg0: $BlockState$$Type, arg1: $Direction$$Type): $PillarConnection
 public "rotate"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $Rotation$$Type): $BlockState
 public static "isCamoEmissiveRendering"(arg0: $ModelData$$Type): boolean
 public static "toggleYSlope"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type): boolean
@@ -12086,8 +12086,8 @@ export type $FramedLatticeBlock$$Type = ($FramedLatticeBlock);
 export type $FramedLatticeBlock$$Original = $FramedLatticeBlock;}
 declare module "xfacthd.framedblocks.common.block.rail.vanillaslope.FramedRailSlopeBlock" {
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
-import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$LootParams$Builder$$Type} from "net.minecraft.world.level.storage.loot.LootParams$Builder"
+import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$IFramedBlock$$Interface} from "xfacthd.framedblocks.api.block.IFramedBlock"
@@ -12098,9 +12098,10 @@ import {$SideSkipPredicate$$Type} from "xfacthd.framedblocks.api.predicate.cull.
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$SlopeType} from "xfacthd.framedblocks.common.data.property.SlopeType"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
-import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
+import {$BlockType} from "xfacthd.framedblocks.common.data.BlockType"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$SoundType} from "net.minecraft.world.level.block.SoundType"
@@ -12108,16 +12109,16 @@ import {$StateCache} from "xfacthd.framedblocks.api.block.cache.StateCache"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
 import {$ShapeProvider$$Type} from "xfacthd.framedblocks.api.shapes.ShapeProvider"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
-import {$CamoList$$Type} from "xfacthd.framedblocks.api.util.CamoList"
 import {$ISlopeBlock$IRailSlopeBlock$$Interface} from "xfacthd.framedblocks.common.block.ISlopeBlock$IRailSlopeBlock"
+import {$CamoList$$Type} from "xfacthd.framedblocks.api.util.CamoList"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
-import {$IBlockType, $IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
+import {$IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
-import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$Property} from "net.minecraft.world.level.block.state.properties.Property"
 import {$MapColor, $MapColor$$Type} from "net.minecraft.world.level.material.MapColor"
@@ -12128,14 +12129,14 @@ import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Explosion$$Type} from "net.minecraft.world.level.Explosion"
-import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
+import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Class} from "java.lang.Class"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$ModelData, $ModelData$$Type} from "net.neoforged.neoforge.client.model.data.ModelData"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$RailShape, $RailShape$$Type} from "net.minecraft.world.level.block.state.properties.RailShape"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$BaseRailBlock} from "net.minecraft.world.level.block.BaseRailBlock"
@@ -12170,7 +12171,7 @@ static readonly "UPDATE_CLIENTS": integer
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
 public "setPlacedBy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $LivingEntity$$Type, arg4: $ItemStack$$Type): void
 public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
-public "getBlockType"(): $IBlockType
+public "getBlockType"(): $BlockType
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
 public "getShapeProperty"(): $Property<($RailShape)>
 public "isValidRailShape"(arg0: $RailShape$$Type): boolean
@@ -12226,26 +12227,26 @@ public "shouldRenderAsBlockInJadeTooltip"(): boolean
 public "getJadeRenderScale"(arg0: $BlockState$$Type): float
 public "shouldApplyGuiTransformFromModel"(): boolean
 public "getCache"(arg0: $BlockState$$Type): $StateCache
-public "initCache"(arg0: $BlockState$$Type): $StateCache
 public static "createProperties"(arg0: $IBlockType$$Type): $BlockBehaviour$Properties
 public "rotate"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $Rotation$$Type): $BlockState
 public "rotate"(arg0: $BlockState$$Type, arg1: $BlockHitResult$$Type, arg2: $Rotation$$Type): $BlockState
+public "initCache"(arg0: $BlockState$$Type): $StateCache
 public "addLandingEffects"(arg0: $BlockState$$Type, arg1: $ServerLevel$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $LivingEntity$$Type, arg5: integer): boolean
 public "getSoundType"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): $SoundType
 public "getFriction"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): float
 public "addRunningEffects"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): boolean
 public "isSuffocating"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): boolean
-public "getLightEmission"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): integer
 public "onBlockStateChange"(arg0: $LevelReader$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $BlockState$$Type): void
-public "getFacing"(arg0: $BlockState$$Type): $Direction
+public "getLightEmission"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): integer
 public "getSlopeType"(arg0: $BlockState$$Type): $SlopeType
+public "getFacing"(arg0: $BlockState$$Type): $Direction
 public "getTicker"<T extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
 public "getListener"<T extends $BlockEntity>(arg0: $ServerLevel$$Type, arg1: T): $GameEventListener
 public "moreculling$shouldAttemptToCull"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $BlockGetter$$Type, arg3: $BlockPos$$Type): boolean
 public "moreculling$canCull"(): boolean
 public "moreculling$setCanCull"(arg0: boolean): void
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
-get "blockType"(): $IBlockType
+get "blockType"(): $BlockType
 get "shapeProperty"(): $Property<($RailShape)>
 get "itemModelSource"(): $BlockState
 get "jadeTargetClass"(): $Class<($Block)>
@@ -12340,8 +12341,8 @@ export type $FramedInverseDoubleSlopeSlabBlock$$Original = $FramedInverseDoubleS
 declare module "xfacthd.framedblocks.common.block.cube.FramedMiniCubeBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -12477,13 +12478,13 @@ import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Objec
 import {$FramedPyramidBlock} from "xfacthd.framedblocks.common.block.slope.FramedPyramidBlock"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$BlockType$$Type} from "xfacthd.framedblocks.common.data.BlockType"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
-import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
+import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
 import {$PillarConnection} from "xfacthd.framedblocks.common.data.property.PillarConnection"
@@ -12515,8 +12516,8 @@ static readonly "UPDATE_CLIENTS": integer
 
 constructor(arg0: $BlockType$$Type)
 
-public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
 public static "computeConnection"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $Direction$$Type): $PillarConnection
+public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
 public static "isCamoEmissiveRendering"(arg0: $ModelData$$Type): boolean
 public static "toggleYSlope"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type): boolean
 public static "createProperties"(arg0: $IBlockType$$Type): $BlockBehaviour$Properties
@@ -12535,8 +12536,8 @@ declare module "xfacthd.framedblocks.common.block.slope.FramedThreewayCornerBloc
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$BlockType$$Type} from "xfacthd.framedblocks.common.data.BlockType"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -12676,8 +12677,8 @@ declare module "xfacthd.framedblocks.common.block.slope.FramedPyramidBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$BlockType$$Type} from "xfacthd.framedblocks.common.data.BlockType"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -12743,8 +12744,8 @@ import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Tuple} from "net.minecraft.util.Tuple"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$DoubleBlockStateCache} from "xfacthd.framedblocks.common.data.doubleblock.DoubleBlockStateCache"
+import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$CamoGetter} from "xfacthd.framedblocks.common.data.doubleblock.CamoGetter"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$SideSkipPredicate$$Type} from "xfacthd.framedblocks.api.predicate.cull.SideSkipPredicate"
@@ -12957,8 +12958,8 @@ export type $FramedCollapsibleCopycatBlock$$Type = ($FramedCollapsibleCopycatBlo
 export type $FramedCollapsibleCopycatBlock$$Original = $FramedCollapsibleCopycatBlock;}
 declare module "xfacthd.framedblocks.common.block.interactive.FramedLeverBlock" {
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
-import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$LootParams$Builder$$Type} from "net.minecraft.world.level.storage.loot.LootParams$Builder"
+import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$IFramedBlock$$Interface} from "xfacthd.framedblocks.api.block.IFramedBlock"
@@ -12968,11 +12969,11 @@ import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$SideSkipPredicate$$Type} from "xfacthd.framedblocks.api.predicate.cull.SideSkipPredicate"
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
-import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$BlockType} from "xfacthd.framedblocks.common.data.BlockType"
+import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$SoundType} from "net.minecraft.world.level.block.SoundType"
 import {$StateCache} from "xfacthd.framedblocks.api.block.cache.StateCache"
@@ -12981,15 +12982,15 @@ import {$ShapeProvider$$Type} from "xfacthd.framedblocks.api.shapes.ShapeProvide
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$CamoList$$Type} from "xfacthd.framedblocks.api.util.CamoList"
 import {$AttachFace} from "net.minecraft.world.level.block.state.properties.AttachFace"
-import {$IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
+import {$IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
+import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
-import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$MapColor, $MapColor$$Type} from "net.minecraft.world.level.material.MapColor"
 import {$LeverBlock} from "net.minecraft.world.level.block.LeverBlock"
 import {$List, $List$$Type} from "java.util.List"
@@ -12999,14 +13000,14 @@ import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Explosion$$Type} from "net.minecraft.world.level.Explosion"
-import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
+import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Class} from "java.lang.Class"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$ModelData, $ModelData$$Type} from "net.neoforged.neoforge.client.model.data.ModelData"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
@@ -13096,16 +13097,16 @@ public static "toggleYSlope"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: 
 public "getJadeTargetClass"(): $Class<($Block)>
 public "shouldRenderAsBlockInJadeTooltip"(): boolean
 public "getCache"(arg0: $BlockState$$Type): $StateCache
-public "initCache"(arg0: $BlockState$$Type): $StateCache
 public static "createProperties"(arg0: $IBlockType$$Type): $BlockBehaviour$Properties
 public "rotate"(arg0: $BlockState$$Type, arg1: $BlockHitResult$$Type, arg2: $Rotation$$Type): $BlockState
+public "initCache"(arg0: $BlockState$$Type): $StateCache
 public "addLandingEffects"(arg0: $BlockState$$Type, arg1: $ServerLevel$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $LivingEntity$$Type, arg5: integer): boolean
 public "getSoundType"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): $SoundType
 public "getFriction"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): float
 public "addRunningEffects"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): boolean
 public "isSuffocating"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): boolean
-public "getLightEmission"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): integer
 public "onBlockStateChange"(arg0: $LevelReader$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $BlockState$$Type): void
+public "getLightEmission"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): integer
 public "getTicker"<T extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
 public "getListener"<T extends $BlockEntity>(arg0: $ServerLevel$$Type, arg1: T): $GameEventListener
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
@@ -13131,8 +13132,8 @@ import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Tuple} from "net.minecraft.util.Tuple"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$DoubleBlockStateCache} from "xfacthd.framedblocks.common.data.doubleblock.DoubleBlockStateCache"
+import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$CamoGetter} from "xfacthd.framedblocks.common.data.doubleblock.CamoGetter"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$SideSkipPredicate$$Type} from "xfacthd.framedblocks.api.predicate.cull.SideSkipPredicate"
@@ -13142,8 +13143,8 @@ import {$ModelData, $ModelData$$Type} from "net.neoforged.neoforge.client.model.
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$DoubleBlockTopInteractionMode} from "xfacthd.framedblocks.common.data.doubleblock.DoubleBlockTopInteractionMode"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$FramedPillarSocketBlock} from "xfacthd.framedblocks.common.block.pillar.FramedPillarSocketBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$SoundType} from "net.minecraft.world.level.block.SoundType"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$StateCache} from "xfacthd.framedblocks.api.block.cache.StateCache"
@@ -13230,8 +13231,8 @@ import {$FramedVerticalStairsBlock} from "xfacthd.framedblocks.common.block.stai
 import {$Tuple} from "net.minecraft.util.Tuple"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$DoubleBlockStateCache} from "xfacthd.framedblocks.common.data.doubleblock.DoubleBlockStateCache"
+import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$CamoGetter} from "xfacthd.framedblocks.common.data.doubleblock.CamoGetter"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$SideSkipPredicate$$Type} from "xfacthd.framedblocks.api.predicate.cull.SideSkipPredicate"
@@ -13324,8 +13325,8 @@ export type $FramedVerticalDoubleStairsBlock$$Original = $FramedVerticalDoubleSt
 declare module "xfacthd.framedblocks.common.block.slab.FramedSlabBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
@@ -13389,8 +13390,8 @@ import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
-import {$SimpleWaterloggedBlock$$Interface} from "net.minecraft.world.level.block.SimpleWaterloggedBlock"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
+import {$SimpleWaterloggedBlock$$Interface} from "net.minecraft.world.level.block.SimpleWaterloggedBlock"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
@@ -13405,7 +13406,7 @@ import {$HitResult$$Type} from "net.minecraft.world.phys.HitResult"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
-import {$IBlockType, $IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
+import {$IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
@@ -13435,17 +13436,15 @@ static readonly "UPDATE_CLIENTS": integer
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
 public "getCloneItemStack"(arg0: $BlockState$$Type, arg1: $HitResult$$Type, arg2: $LevelReader$$Type, arg3: $BlockPos$$Type, arg4: $Player$$Type): $ItemStack
 public "getPickupSound"(): $Optional<($SoundEvent)>
-public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "canPlaceLiquid"(arg0: $Player$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $Fluid$$Type): boolean
+public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "pickupBlock"(arg0: $Player$$Type, arg1: $LevelAccessor$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): $ItemStack
-public "getBlockType"(): $IBlockType
 public static "isCamoEmissiveRendering"(arg0: $ModelData$$Type): boolean
 public static "toggleYSlope"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type): boolean
 public static "createProperties"(arg0: $IBlockType$$Type): $BlockBehaviour$Properties
 public "getPickupSound"(arg0: $BlockState$$Type): $Optional<($SoundEvent)>
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "pickupSound"(): $Optional<($SoundEvent)>
-get "blockType"(): $IBlockType
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -13457,9 +13456,9 @@ export type $FramedWaterloggablePressurePlateBlock$$Type = ($FramedWaterloggable
  */
 export type $FramedWaterloggablePressurePlateBlock$$Original = $FramedWaterloggablePressurePlateBlock;}
 declare module "xfacthd.framedblocks.common.block.slopeedge.FramedStackedSlopeEdgeBlock" {
+import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
 import {$AbstractFramedDoubleBlock} from "xfacthd.framedblocks.common.block.AbstractFramedDoubleBlock"
 import {$CamoContainer$$Type} from "xfacthd.framedblocks.api.camo.CamoContainer"
-import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$Optional} from "java.util.Optional"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
@@ -13509,6 +13508,7 @@ static readonly "UPDATE_CLIENTS": integer
 
 constructor()
 
+public "isHorizontalSlope"(arg0: $BlockState$$Type): boolean
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
 public "getItemModelSource"(): $BlockState
@@ -13518,7 +13518,6 @@ public "calculateCamoGetter"(arg0: $BlockState$$Type, arg1: $Direction$$Type, ar
 public "calculateSolidityCheck"(arg0: $BlockState$$Type, arg1: $Direction$$Type): $SolidityCheck
 public "getJadeRenderState"(arg0: $BlockState$$Type): $BlockState
 public "handleBlockLeftClick"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type): boolean
-public "isHorizontalSlope"(arg0: $BlockState$$Type): boolean
 public "rotate"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $Rotation$$Type): $BlockState
 public "rotate"(arg0: $BlockState$$Type, arg1: $BlockHitResult$$Type, arg2: $Rotation$$Type): $BlockState
 public static "testComponent"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $BlockState$$Type, arg4: $Direction$$Type): boolean
@@ -13542,8 +13541,8 @@ export type $FramedStackedSlopeEdgeBlock$$Type = ($FramedStackedSlopeEdgeBlock);
 export type $FramedStackedSlopeEdgeBlock$$Original = $FramedStackedSlopeEdgeBlock;}
 declare module "xfacthd.framedblocks.common.block.rail.fancy.FramedFancyDetectorRailBlock" {
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
-import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$LootParams$Builder$$Type} from "net.minecraft.world.level.storage.loot.LootParams$Builder"
+import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$IFramedBlock$$Interface} from "xfacthd.framedblocks.api.block.IFramedBlock"
@@ -13553,8 +13552,8 @@ import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$SideSkipPredicate$$Type} from "xfacthd.framedblocks.api.predicate.cull.SideSkipPredicate"
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
-import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
@@ -13570,9 +13569,9 @@ import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
+import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
-import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$MapColor, $MapColor$$Type} from "net.minecraft.world.level.material.MapColor"
 import {$List, $List$$Type} from "java.util.List"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
@@ -13582,14 +13581,14 @@ import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$DetectorRailBlock} from "net.minecraft.world.level.block.DetectorRailBlock"
 import {$Explosion$$Type} from "net.minecraft.world.level.Explosion"
-import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
+import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Class} from "java.lang.Class"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$ModelData, $ModelData$$Type} from "net.neoforged.neoforge.client.model.data.ModelData"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$RailShape} from "net.minecraft.world.level.block.state.properties.RailShape"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
@@ -13678,17 +13677,17 @@ public "shouldRenderAsBlockInJadeTooltip"(): boolean
 public "getJadeRenderScale"(arg0: $BlockState$$Type): float
 public "shouldApplyGuiTransformFromModel"(): boolean
 public "getCache"(arg0: $BlockState$$Type): $StateCache
-public "initCache"(arg0: $BlockState$$Type): $StateCache
 public static "createProperties"(arg0: $IBlockType$$Type): $BlockBehaviour$Properties
 public "rotate"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $Rotation$$Type): $BlockState
 public "rotate"(arg0: $BlockState$$Type, arg1: $BlockHitResult$$Type, arg2: $Rotation$$Type): $BlockState
+public "initCache"(arg0: $BlockState$$Type): $StateCache
 public "addLandingEffects"(arg0: $BlockState$$Type, arg1: $ServerLevel$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $LivingEntity$$Type, arg5: integer): boolean
 public "getSoundType"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): $SoundType
 public "getFriction"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): float
 public "addRunningEffects"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): boolean
 public "isSuffocating"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): boolean
-public "getLightEmission"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): integer
 public "onBlockStateChange"(arg0: $LevelReader$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $BlockState$$Type): void
+public "getLightEmission"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): integer
 public "getTicker"<T extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
 public "getListener"<T extends $BlockEntity>(arg0: $ServerLevel$$Type, arg1: T): $GameEventListener
 public "moreculling$shouldAttemptToCull"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $BlockGetter$$Type, arg3: $BlockPos$$Type): boolean
@@ -13709,9 +13708,9 @@ export type $FramedFancyDetectorRailBlock$$Type = ($FramedFancyDetectorRailBlock
  */
 export type $FramedFancyDetectorRailBlock$$Original = $FramedFancyDetectorRailBlock;}
 declare module "xfacthd.framedblocks.common.block.slab.FramedAdjustableDoubleBlock" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$AbstractFramedDoubleBlock} from "xfacthd.framedblocks.common.block.AbstractFramedDoubleBlock"
 import {$CamoContainer$$Type} from "xfacthd.framedblocks.api.camo.CamoContainer"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$Optional} from "java.util.Optional"
 import {$Block} from "net.minecraft.world.level.block.Block"
@@ -13720,8 +13719,8 @@ import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Tuple} from "net.minecraft.util.Tuple"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
-import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
+import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
@@ -13779,8 +13778,8 @@ export type $FramedAdjustableDoubleBlock$$Type = ($FramedAdjustableDoubleBlock);
 export type $FramedAdjustableDoubleBlock$$Original = $FramedAdjustableDoubleBlock;}
 declare module "xfacthd.framedblocks.common.block.torch.FramedRedstoneTorchBlock" {
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
-import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$LootParams$Builder$$Type} from "net.minecraft.world.level.storage.loot.LootParams$Builder"
+import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$IFramedBlock$$Interface} from "xfacthd.framedblocks.api.block.IFramedBlock"
@@ -13790,10 +13789,11 @@ import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$SideSkipPredicate$$Type} from "xfacthd.framedblocks.api.predicate.cull.SideSkipPredicate"
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
-import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$RedstoneTorchBlock} from "net.minecraft.world.level.block.RedstoneTorchBlock"
+import {$BlockType} from "xfacthd.framedblocks.common.data.BlockType"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$SoundType} from "net.minecraft.world.level.block.SoundType"
@@ -13803,13 +13803,13 @@ import {$ShapeProvider$$Type} from "xfacthd.framedblocks.api.shapes.ShapeProvide
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$CamoList$$Type} from "xfacthd.framedblocks.api.util.CamoList"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
-import {$IBlockType, $IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
+import {$IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
-import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$MapColor, $MapColor$$Type} from "net.minecraft.world.level.material.MapColor"
 import {$List, $List$$Type} from "java.util.List"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
@@ -13818,14 +13818,14 @@ import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Explosion$$Type} from "net.minecraft.world.level.Explosion"
-import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
+import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Class} from "java.lang.Class"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$ModelData, $ModelData$$Type} from "net.neoforged.neoforge.client.model.data.ModelData"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
@@ -13862,7 +13862,7 @@ constructor()
 
 public "setPlacedBy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $LivingEntity$$Type, arg4: $ItemStack$$Type): void
 public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
-public "getBlockType"(): $IBlockType
+public "getBlockType"(): $BlockType
 public "getItemModelSource"(): $BlockState
 public "getJadeRenderState"(arg0: $BlockState$$Type): $BlockState
 public "createBlockItem"(): $BlockItem
@@ -13915,10 +13915,10 @@ public "getJadeTargetClass"(): $Class<($Block)>
 public "shouldRenderAsBlockInJadeTooltip"(): boolean
 public "shouldApplyGuiTransformFromModel"(): boolean
 public "getCache"(arg0: $BlockState$$Type): $StateCache
-public "initCache"(arg0: $BlockState$$Type): $StateCache
 public static "createProperties"(arg0: $IBlockType$$Type): $BlockBehaviour$Properties
 public "rotate"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $Rotation$$Type): $BlockState
 public "rotate"(arg0: $BlockState$$Type, arg1: $BlockHitResult$$Type, arg2: $Rotation$$Type): $BlockState
+public "initCache"(arg0: $BlockState$$Type): $StateCache
 public "addLandingEffects"(arg0: $BlockState$$Type, arg1: $ServerLevel$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $LivingEntity$$Type, arg5: integer): boolean
 public "getSoundType"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): $SoundType
 public "getFriction"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): float
@@ -13932,7 +13932,7 @@ public "moreculling$shouldAttemptToCull"(arg0: $BlockState$$Type, arg1: $Directi
 public "moreculling$canCull"(): boolean
 public "moreculling$setCanCull"(arg0: boolean): void
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
-get "blockType"(): $IBlockType
+get "blockType"(): $BlockType
 get "itemModelSource"(): $BlockState
 get "jadeTargetClass"(): $Class<($Block)>
 }
@@ -13953,11 +13953,11 @@ import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$FramedBlockEntity$$Type} from "xfacthd.framedblocks.api.block.blockentity.FramedBlockEntity"
 import {$Tuple} from "net.minecraft.util.Tuple"
-import {$FramedPoweredRailSlopeBlock} from "xfacthd.framedblocks.common.block.rail.vanillaslope.FramedPoweredRailSlopeBlock"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
+import {$FramedPoweredRailSlopeBlock} from "xfacthd.framedblocks.common.block.rail.vanillaslope.FramedPoweredRailSlopeBlock"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$DoubleBlockStateCache} from "xfacthd.framedblocks.common.data.doubleblock.DoubleBlockStateCache"
+import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$CamoGetter} from "xfacthd.framedblocks.common.data.doubleblock.CamoGetter"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$SideSkipPredicate$$Type} from "xfacthd.framedblocks.api.predicate.cull.SideSkipPredicate"
@@ -13974,17 +13974,17 @@ import {$SoundType} from "net.minecraft.world.level.block.SoundType"
 import {$PoweredRailBlock} from "net.minecraft.world.level.block.PoweredRailBlock"
 import {$StateCache} from "xfacthd.framedblocks.api.block.cache.StateCache"
 import {$IFramedDoubleBlock$$Interface} from "xfacthd.framedblocks.common.block.IFramedDoubleBlock"
+import {$BiFunction$$Type} from "java.util.function.BiFunction"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
-import {$BiFunction$$Type} from "java.util.function.BiFunction"
 import {$CamoList$$Type} from "xfacthd.framedblocks.api.util.CamoList"
 import {$ISlopeBlock$IRailSlopeBlock$$Interface} from "xfacthd.framedblocks.common.block.ISlopeBlock$IRailSlopeBlock"
-import {$IBlockType, $IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
+import {$IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
 import {$MutableComponent} from "net.minecraft.network.chat.MutableComponent"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
+import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$SolidityCheck} from "xfacthd.framedblocks.common.data.doubleblock.SolidityCheck"
@@ -14036,7 +14036,6 @@ public "initCache"(arg0: $BlockState$$Type): $StateCache
 public "addLandingEffects"(arg0: $BlockState$$Type, arg1: $ServerLevel$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $LivingEntity$$Type, arg5: integer): boolean
 public "getSoundType"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): $SoundType
 public "addRunningEffects"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): boolean
-public "getBlockType"(): $IBlockType
 public static "isCamoEmissiveRendering"(arg0: $ModelData$$Type): boolean
 public static "toggleYSlope"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type): boolean
 public static "createProperties"(arg0: $IBlockType$$Type): $BlockBehaviour$Properties
@@ -14044,7 +14043,6 @@ public "moreculling$shouldAttemptToCull"(arg0: $BlockState$$Type, arg1: $Directi
 public "moreculling$canCull"(): boolean
 public "moreculling$setCanCull"(arg0: boolean): void
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
-get "blockType"(): $IBlockType
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -14057,8 +14055,8 @@ export type $FramedFancyPoweredRailSlopeBlock$$Type = ($FramedFancyPoweredRailSl
 export type $FramedFancyPoweredRailSlopeBlock$$Original = $FramedFancyPoweredRailSlopeBlock;}
 declare module "xfacthd.framedblocks.common.block.rail.vanillaslope.FramedPoweredRailSlopeBlock" {
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
-import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$LootParams$Builder$$Type} from "net.minecraft.world.level.storage.loot.LootParams$Builder"
+import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$IFramedBlock$$Interface} from "xfacthd.framedblocks.api.block.IFramedBlock"
@@ -14069,9 +14067,10 @@ import {$SideSkipPredicate$$Type} from "xfacthd.framedblocks.api.predicate.cull.
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$SlopeType} from "xfacthd.framedblocks.common.data.property.SlopeType"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
-import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
+import {$BlockType} from "xfacthd.framedblocks.common.data.BlockType"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$SoundType} from "net.minecraft.world.level.block.SoundType"
@@ -14080,17 +14079,17 @@ import {$StateCache} from "xfacthd.framedblocks.api.block.cache.StateCache"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
 import {$ShapeProvider$$Type} from "xfacthd.framedblocks.api.shapes.ShapeProvider"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
-import {$CamoList$$Type} from "xfacthd.framedblocks.api.util.CamoList"
 import {$ISlopeBlock$IRailSlopeBlock$$Interface} from "xfacthd.framedblocks.common.block.ISlopeBlock$IRailSlopeBlock"
+import {$CamoList$$Type} from "xfacthd.framedblocks.api.util.CamoList"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
-import {$IBlockType, $IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
+import {$IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
+import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
-import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$Property} from "net.minecraft.world.level.block.state.properties.Property"
 import {$MapColor, $MapColor$$Type} from "net.minecraft.world.level.material.MapColor"
@@ -14101,14 +14100,14 @@ import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Explosion$$Type} from "net.minecraft.world.level.Explosion"
-import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
+import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Class} from "java.lang.Class"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$ModelData, $ModelData$$Type} from "net.neoforged.neoforge.client.model.data.ModelData"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$RailShape, $RailShape$$Type} from "net.minecraft.world.level.block.state.properties.RailShape"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
@@ -14141,10 +14140,12 @@ static readonly "UPDATE_SUPPRESS_DROPS": integer
 static readonly "INSTANT": float
 static readonly "UPDATE_CLIENTS": integer
 
+public static "poweredFancy"(): $FramedPoweredRailSlopeBlock
+public static "activatorFancy"(): $FramedPoweredRailSlopeBlock
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
 public "setPlacedBy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $LivingEntity$$Type, arg4: $ItemStack$$Type): void
 public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
-public "getBlockType"(): $IBlockType
+public "getBlockType"(): $BlockType
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
 public "getShapeProperty"(): $Property<($RailShape)>
 public "isValidRailShape"(arg0: $RailShape$$Type): boolean
@@ -14153,8 +14154,6 @@ public "getJadeRenderState"(arg0: $BlockState$$Type): $BlockState
 public "doesBlockOccludeBeaconBeam"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type): boolean
 public "handleBlockLeftClick"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type): boolean
 public "getJadeTargetClass"(): $Class<($Block)>
-public static "poweredFancy"(): $FramedPoweredRailSlopeBlock
-public static "activatorFancy"(): $FramedPoweredRailSlopeBlock
 public static "powered"(): $FramedPoweredRailSlopeBlock
 public static "activator"(): $FramedPoweredRailSlopeBlock
 public "hidesNeighborFace"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $BlockState$$Type, arg4: $Direction$$Type): boolean
@@ -14202,26 +14201,26 @@ public "shouldRenderAsBlockInJadeTooltip"(): boolean
 public "getJadeRenderScale"(arg0: $BlockState$$Type): float
 public "shouldApplyGuiTransformFromModel"(): boolean
 public "getCache"(arg0: $BlockState$$Type): $StateCache
-public "initCache"(arg0: $BlockState$$Type): $StateCache
 public static "createProperties"(arg0: $IBlockType$$Type): $BlockBehaviour$Properties
 public "rotate"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $Rotation$$Type): $BlockState
 public "rotate"(arg0: $BlockState$$Type, arg1: $BlockHitResult$$Type, arg2: $Rotation$$Type): $BlockState
+public "initCache"(arg0: $BlockState$$Type): $StateCache
 public "addLandingEffects"(arg0: $BlockState$$Type, arg1: $ServerLevel$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $LivingEntity$$Type, arg5: integer): boolean
 public "getSoundType"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): $SoundType
 public "getFriction"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): float
 public "addRunningEffects"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): boolean
 public "isSuffocating"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): boolean
-public "getLightEmission"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): integer
 public "onBlockStateChange"(arg0: $LevelReader$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $BlockState$$Type): void
-public "getFacing"(arg0: $BlockState$$Type): $Direction
+public "getLightEmission"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): integer
 public "getSlopeType"(arg0: $BlockState$$Type): $SlopeType
+public "getFacing"(arg0: $BlockState$$Type): $Direction
 public "getTicker"<T extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
 public "getListener"<T extends $BlockEntity>(arg0: $ServerLevel$$Type, arg1: T): $GameEventListener
 public "moreculling$shouldAttemptToCull"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $BlockGetter$$Type, arg3: $BlockPos$$Type): boolean
 public "moreculling$canCull"(): boolean
 public "moreculling$setCanCull"(arg0: boolean): void
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
-get "blockType"(): $IBlockType
+get "blockType"(): $BlockType
 get "shapeProperty"(): $Property<($RailShape)>
 get "itemModelSource"(): $BlockState
 get "jadeTargetClass"(): $Class<($Block)>
@@ -14367,8 +14366,8 @@ export type $FramedLargeInnerCornerSlopePanelWallBlock$$Type = ($FramedLargeInne
 export type $FramedLargeInnerCornerSlopePanelWallBlock$$Original = $FramedLargeInnerCornerSlopePanelWallBlock;}
 declare module "xfacthd.framedblocks.common.block.interactive.FramedHopperBlock" {
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
-import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$LootParams$Builder$$Type} from "net.minecraft.world.level.storage.loot.LootParams$Builder"
+import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$IFramedBlock$$Interface} from "xfacthd.framedblocks.api.block.IFramedBlock"
@@ -14378,8 +14377,8 @@ import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$SideSkipPredicate$$Type} from "xfacthd.framedblocks.api.predicate.cull.SideSkipPredicate"
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
-import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
@@ -14394,9 +14393,9 @@ import {$IBlockType, $IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlo
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
-import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$MapColor, $MapColor$$Type} from "net.minecraft.world.level.material.MapColor"
 import {$List, $List$$Type} from "java.util.List"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
@@ -14405,14 +14404,14 @@ import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Explosion$$Type} from "net.minecraft.world.level.Explosion"
-import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
+import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Class} from "java.lang.Class"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$ModelData, $ModelData$$Type} from "net.neoforged.neoforge.client.model.data.ModelData"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
@@ -14501,17 +14500,17 @@ public "shouldRenderAsBlockInJadeTooltip"(): boolean
 public "getJadeRenderScale"(arg0: $BlockState$$Type): float
 public "shouldApplyGuiTransformFromModel"(): boolean
 public "getCache"(arg0: $BlockState$$Type): $StateCache
-public "initCache"(arg0: $BlockState$$Type): $StateCache
 public static "createProperties"(arg0: $IBlockType$$Type): $BlockBehaviour$Properties
 public "rotate"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $Rotation$$Type): $BlockState
 public "rotate"(arg0: $BlockState$$Type, arg1: $BlockHitResult$$Type, arg2: $Rotation$$Type): $BlockState
+public "initCache"(arg0: $BlockState$$Type): $StateCache
 public "addLandingEffects"(arg0: $BlockState$$Type, arg1: $ServerLevel$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $LivingEntity$$Type, arg5: integer): boolean
 public "getSoundType"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): $SoundType
 public "getFriction"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): float
 public "addRunningEffects"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): boolean
 public "isSuffocating"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): boolean
-public "getLightEmission"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): integer
 public "onBlockStateChange"(arg0: $LevelReader$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $BlockState$$Type): void
+public "getLightEmission"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): integer
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "blockType"(): $IBlockType
 get "itemModelSource"(): $BlockState
@@ -14527,9 +14526,9 @@ export type $FramedHopperBlock$$Type = ($FramedHopperBlock);
  */
 export type $FramedHopperBlock$$Original = $FramedHopperBlock;}
 declare module "xfacthd.framedblocks.common.block.slopepanel.FramedStackedSlopePanelBlock" {
+import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
 import {$AbstractFramedDoubleBlock} from "xfacthd.framedblocks.common.block.AbstractFramedDoubleBlock"
 import {$CamoContainer$$Type} from "xfacthd.framedblocks.api.camo.CamoContainer"
-import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$Optional} from "java.util.Optional"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
@@ -14673,8 +14672,8 @@ export type $FramedLadderBlock$$Original = $FramedLadderBlock;}
 declare module "xfacthd.framedblocks.common.block.slab.FramedSlabCornerBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -14731,11 +14730,11 @@ export type $FramedSlabCornerBlock$$Type = ($FramedSlabCornerBlock);
  */
 export type $FramedSlabCornerBlock$$Original = $FramedSlabCornerBlock;}
 declare module "xfacthd.framedblocks.common.block.slopeedge.FramedElevatedSlopeEdgeBlock" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$IComplexSlopeSource$$Interface} from "xfacthd.framedblocks.common.block.IComplexSlopeSource"
@@ -14773,11 +14772,11 @@ static readonly "UPDATE_CLIENTS": integer
 
 constructor()
 
+public "isHorizontalSlope"(arg0: $BlockState$$Type): boolean
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
 public "getItemModelSource"(): $BlockState
 public "getJadeRenderState"(arg0: $BlockState$$Type): $BlockState
 public "handleBlockLeftClick"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type): boolean
-public "isHorizontalSlope"(arg0: $BlockState$$Type): boolean
 public "rotate"(arg0: $BlockState$$Type, arg1: $BlockHitResult$$Type, arg2: $Rotation$$Type): $BlockState
 public "rotate"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $Rotation$$Type): $BlockState
 public static "isCamoEmissiveRendering"(arg0: $ModelData$$Type): boolean
@@ -14854,8 +14853,8 @@ export type $FramedGateBlock$$Type = ($FramedGateBlock);
 export type $FramedGateBlock$$Original = $FramedGateBlock;}
 declare module "xfacthd.framedblocks.common.block.pillar.FramedLightningRodBlock" {
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
-import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$LootParams$Builder$$Type} from "net.minecraft.world.level.storage.loot.LootParams$Builder"
+import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$IFramedBlock$$Interface} from "xfacthd.framedblocks.api.block.IFramedBlock"
@@ -14865,9 +14864,9 @@ import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$SideSkipPredicate$$Type} from "xfacthd.framedblocks.api.predicate.cull.SideSkipPredicate"
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
-import {$LightningRodBlock} from "net.minecraft.world.level.block.LightningRodBlock"
-import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
+import {$LightningRodBlock} from "net.minecraft.world.level.block.LightningRodBlock"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
@@ -14881,9 +14880,9 @@ import {$IBlockType, $IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlo
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
-import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$MapColor, $MapColor$$Type} from "net.minecraft.world.level.material.MapColor"
 import {$List, $List$$Type} from "java.util.List"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
@@ -14892,14 +14891,14 @@ import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Explosion$$Type} from "net.minecraft.world.level.Explosion"
-import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
+import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Class} from "java.lang.Class"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$ModelData, $ModelData$$Type} from "net.neoforged.neoforge.client.model.data.ModelData"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$ItemInteractionResult} from "net.minecraft.world.ItemInteractionResult"
@@ -14987,17 +14986,17 @@ public "shouldRenderAsBlockInJadeTooltip"(): boolean
 public "getJadeRenderScale"(arg0: $BlockState$$Type): float
 public "shouldApplyGuiTransformFromModel"(): boolean
 public "getCache"(arg0: $BlockState$$Type): $StateCache
-public "initCache"(arg0: $BlockState$$Type): $StateCache
 public static "createProperties"(arg0: $IBlockType$$Type): $BlockBehaviour$Properties
 public "rotate"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $Rotation$$Type): $BlockState
 public "rotate"(arg0: $BlockState$$Type, arg1: $BlockHitResult$$Type, arg2: $Rotation$$Type): $BlockState
+public "initCache"(arg0: $BlockState$$Type): $StateCache
 public "addLandingEffects"(arg0: $BlockState$$Type, arg1: $ServerLevel$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $LivingEntity$$Type, arg5: integer): boolean
 public "getSoundType"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): $SoundType
 public "getFriction"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): float
 public "addRunningEffects"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): boolean
 public "isSuffocating"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): boolean
-public "getLightEmission"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): integer
 public "onBlockStateChange"(arg0: $LevelReader$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $BlockState$$Type): void
+public "getLightEmission"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): integer
 public "getTicker"<T extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
 public "getListener"<T extends $BlockEntity>(arg0: $ServerLevel$$Type, arg1: T): $GameEventListener
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
@@ -15017,8 +15016,8 @@ export type $FramedLightningRodBlock$$Original = $FramedLightningRodBlock;}
 declare module "xfacthd.framedblocks.common.block.sign.FramedWallSignBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$AbstractFramedSignBlock} from "xfacthd.framedblocks.common.block.sign.AbstractFramedSignBlock"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
@@ -15078,9 +15077,9 @@ export type $FramedWallSignBlock$$Type = ($FramedWallSignBlock);
  */
 export type $FramedWallSignBlock$$Original = $FramedWallSignBlock;}
 declare module "xfacthd.framedblocks.common.block.slopeslab.FramedStackedSlopeSlabBlock" {
+import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
 import {$AbstractFramedDoubleBlock} from "xfacthd.framedblocks.common.block.AbstractFramedDoubleBlock"
 import {$CamoContainer$$Type} from "xfacthd.framedblocks.api.camo.CamoContainer"
-import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$Optional} from "java.util.Optional"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
@@ -15161,8 +15160,8 @@ export type $FramedStackedSlopeSlabBlock$$Type = ($FramedStackedSlopeSlabBlock);
 export type $FramedStackedSlopeSlabBlock$$Original = $FramedStackedSlopeSlabBlock;}
 declare module "xfacthd.framedblocks.common.block.door.FramedDoorBlock" {
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
-import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$LootParams$Builder$$Type} from "net.minecraft.world.level.storage.loot.LootParams$Builder"
+import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$IFramedBlock$$Interface} from "xfacthd.framedblocks.api.block.IFramedBlock"
@@ -15174,11 +15173,11 @@ import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$SideSkipPredicate$$Type} from "xfacthd.framedblocks.api.predicate.cull.SideSkipPredicate"
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
-import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$BlockType} from "xfacthd.framedblocks.common.data.BlockType"
+import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$SoundType} from "net.minecraft.world.level.block.SoundType"
 import {$StateCache} from "xfacthd.framedblocks.api.block.cache.StateCache"
@@ -15186,15 +15185,15 @@ import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
 import {$ShapeProvider$$Type} from "xfacthd.framedblocks.api.shapes.ShapeProvider"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$CamoList$$Type} from "xfacthd.framedblocks.api.util.CamoList"
-import {$IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
+import {$IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
+import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
-import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$MapColor, $MapColor$$Type} from "net.minecraft.world.level.material.MapColor"
 import {$List, $List$$Type} from "java.util.List"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
@@ -15203,14 +15202,14 @@ import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Explosion$$Type} from "net.minecraft.world.level.Explosion"
-import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
+import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Class} from "java.lang.Class"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$ModelData, $ModelData$$Type} from "net.neoforged.neoforge.client.model.data.ModelData"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$DoorBlock} from "net.minecraft.world.level.block.DoorBlock"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
@@ -15302,17 +15301,17 @@ public "getJadeTargetClass"(): $Class<($Block)>
 public "getJadeRenderScale"(arg0: $BlockState$$Type): float
 public "shouldApplyGuiTransformFromModel"(): boolean
 public "getCache"(arg0: $BlockState$$Type): $StateCache
-public "initCache"(arg0: $BlockState$$Type): $StateCache
 public static "createProperties"(arg0: $IBlockType$$Type): $BlockBehaviour$Properties
 public "rotate"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $Rotation$$Type): $BlockState
 public "rotate"(arg0: $BlockState$$Type, arg1: $BlockHitResult$$Type, arg2: $Rotation$$Type): $BlockState
+public "initCache"(arg0: $BlockState$$Type): $StateCache
 public "addLandingEffects"(arg0: $BlockState$$Type, arg1: $ServerLevel$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $LivingEntity$$Type, arg5: integer): boolean
 public "getSoundType"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): $SoundType
 public "getFriction"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): float
 public "addRunningEffects"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): boolean
 public "isSuffocating"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): boolean
-public "getLightEmission"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): integer
 public "onBlockStateChange"(arg0: $LevelReader$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $BlockState$$Type): void
+public "getLightEmission"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): integer
 public "getTicker"<T extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
 public "getListener"<T extends $BlockEntity>(arg0: $ServerLevel$$Type, arg1: T): $GameEventListener
 public "moreculling$shouldAttemptToCull"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $BlockGetter$$Type, arg3: $BlockPos$$Type): boolean
@@ -15336,8 +15335,8 @@ declare module "xfacthd.framedblocks.common.block.slopeedge.FramedThreewayCorner
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$BlockType$$Type} from "xfacthd.framedblocks.common.data.BlockType"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -15401,9 +15400,9 @@ import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
-import {$FramedBlock} from "xfacthd.framedblocks.common.block.FramedBlock"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
+import {$FramedBlock} from "xfacthd.framedblocks.common.block.FramedBlock"
+import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$ModelData$$Type} from "net.neoforged.neoforge.client.model.data.ModelData"
@@ -15468,9 +15467,9 @@ export type $FramedOneWayWindowBlock$$Type = ($FramedOneWayWindowBlock);
  */
 export type $FramedOneWayWindowBlock$$Original = $FramedOneWayWindowBlock;}
 declare module "xfacthd.framedblocks.common.block.slopepanel.FramedFlatInverseDoubleSlopePanelCornerBlock" {
+import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
 import {$AbstractFramedDoubleBlock} from "xfacthd.framedblocks.common.block.AbstractFramedDoubleBlock"
 import {$CamoContainer$$Type} from "xfacthd.framedblocks.api.camo.CamoContainer"
-import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$Optional} from "java.util.Optional"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
@@ -15552,8 +15551,8 @@ export type $FramedFlatInverseDoubleSlopePanelCornerBlock$$Original = $FramedFla
 declare module "xfacthd.framedblocks.common.block.stairs.vertical.FramedVerticalHalfStairsBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -15706,13 +15705,13 @@ import {$FramedLargeButtonBlock$LargeButtonStateMerger} from "xfacthd.framedbloc
 import {$BlockSetType} from "net.minecraft.world.level.block.state.properties.BlockSetType"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$AttachFace} from "net.minecraft.world.level.block.state.properties.AttachFace"
-import {$IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
+import {$IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
 import {$FramedButtonBlock} from "xfacthd.framedblocks.common.block.interactive.button.FramedButtonBlock"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
-import {$FramedButtonBlock$ButtonStateMerger} from "xfacthd.framedblocks.common.block.interactive.button.FramedButtonBlock$ButtonStateMerger"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
+import {$FramedButtonBlock$ButtonStateMerger} from "xfacthd.framedblocks.common.block.interactive.button.FramedButtonBlock$ButtonStateMerger"
 import {$DirectionProperty} from "net.minecraft.world.level.block.state.properties.DirectionProperty"
 
 export class $FramedLargeButtonBlock extends $FramedButtonBlock {
@@ -15768,8 +15767,8 @@ import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Tuple} from "net.minecraft.util.Tuple"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$DoubleBlockStateCache} from "xfacthd.framedblocks.common.data.doubleblock.DoubleBlockStateCache"
+import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$CamoGetter} from "xfacthd.framedblocks.common.data.doubleblock.CamoGetter"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$SideSkipPredicate$$Type} from "xfacthd.framedblocks.api.predicate.cull.SideSkipPredicate"
@@ -16045,8 +16044,8 @@ import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Tuple} from "net.minecraft.util.Tuple"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$DoubleBlockStateCache} from "xfacthd.framedblocks.common.data.doubleblock.DoubleBlockStateCache"
+import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$CamoGetter} from "xfacthd.framedblocks.common.data.doubleblock.CamoGetter"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$SideSkipPredicate$$Type} from "xfacthd.framedblocks.api.predicate.cull.SideSkipPredicate"
@@ -16138,8 +16137,8 @@ declare module "xfacthd.framedblocks.common.block.slope.FramedCornerSlopeBlock" 
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$BlockType$$Type} from "xfacthd.framedblocks.common.data.BlockType"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -16277,11 +16276,11 @@ export type $FramedElevatedDoubleSlopeSlabBlock$$Type = ($FramedElevatedDoubleSl
  */
 export type $FramedElevatedDoubleSlopeSlabBlock$$Original = $FramedElevatedDoubleSlopeSlabBlock;}
 declare module "xfacthd.framedblocks.common.block.slopeslab.FramedElevatedSlopeSlabBlock" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -16342,8 +16341,8 @@ export type $FramedElevatedSlopeSlabBlock$$Original = $FramedElevatedSlopeSlabBl
 declare module "xfacthd.framedblocks.common.block.slope.FramedHalfSlopeBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
@@ -16403,9 +16402,9 @@ export type $FramedHalfSlopeBlock$$Type = ($FramedHalfSlopeBlock);
  */
 export type $FramedHalfSlopeBlock$$Original = $FramedHalfSlopeBlock;}
 declare module "xfacthd.framedblocks.common.block.slopeslab.FramedFlatInverseDoubleSlopeSlabCornerBlock" {
+import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
 import {$AbstractFramedDoubleBlock} from "xfacthd.framedblocks.common.block.AbstractFramedDoubleBlock"
 import {$CamoContainer$$Type} from "xfacthd.framedblocks.api.camo.CamoContainer"
-import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$Optional} from "java.util.Optional"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
@@ -16485,9 +16484,9 @@ export type $FramedFlatInverseDoubleSlopeSlabCornerBlock$$Type = ($FramedFlatInv
  */
 export type $FramedFlatInverseDoubleSlopeSlabCornerBlock$$Original = $FramedFlatInverseDoubleSlopeSlabCornerBlock;}
 declare module "xfacthd.framedblocks.common.block.slopepanelcorner.FramedStackedCornerSlopePanelBlock" {
+import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
 import {$AbstractFramedDoubleBlock} from "xfacthd.framedblocks.common.block.AbstractFramedDoubleBlock"
 import {$CamoContainer$$Type} from "xfacthd.framedblocks.api.camo.CamoContainer"
-import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$Optional} from "java.util.Optional"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
@@ -16572,8 +16571,8 @@ export type $FramedStackedCornerSlopePanelBlock$$Original = $FramedStackedCorner
 declare module "xfacthd.framedblocks.common.block.stairs.standard.FramedHalfStairsBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -16630,12 +16629,12 @@ export type $FramedHalfStairsBlock$$Type = ($FramedHalfStairsBlock);
  */
 export type $FramedHalfStairsBlock$$Original = $FramedHalfStairsBlock;}
 declare module "xfacthd.framedblocks.common.block.stairs.vertical.FramedVerticalSlopedStairsBlock" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$BlockType$$Type} from "xfacthd.framedblocks.common.data.BlockType"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -16745,6 +16744,7 @@ static readonly "UPDATE_CLIENTS": integer
 
 constructor()
 
+public "isHorizontalSlope"(arg0: $BlockState$$Type): boolean
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
 public "getItemModelSource"(): $BlockState
@@ -16754,7 +16754,6 @@ public "calculateCamoGetter"(arg0: $BlockState$$Type, arg1: $Direction$$Type, ar
 public "calculateSolidityCheck"(arg0: $BlockState$$Type, arg1: $Direction$$Type): $SolidityCheck
 public "getJadeRenderState"(arg0: $BlockState$$Type): $BlockState
 public "handleBlockLeftClick"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type): boolean
-public "isHorizontalSlope"(arg0: $BlockState$$Type): boolean
 public "rotate"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $Rotation$$Type): $BlockState
 public static "testComponent"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $BlockState$$Type, arg4: $Direction$$Type): boolean
 public static "printCamoData"(arg0: $CamoContainer$$Type<(never), (never)>, arg1: $CamoContainer$$Type<(never), (never)>, arg2: boolean): $Optional<($MutableComponent)>
@@ -16804,8 +16803,8 @@ export type $FramedLargeButtonBlock$LargeButtonStateMerger$$Type = ($FramedLarge
  */
 export type $FramedLargeButtonBlock$LargeButtonStateMerger$$Original = $FramedLargeButtonBlock$LargeButtonStateMerger;}
 declare module "xfacthd.framedblocks.common.block.slopepanel.FramedFlatSlopePanelCornerBlock" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$BlockType$$Type} from "xfacthd.framedblocks.common.data.BlockType"
 import {$Mirror$$Type} from "net.minecraft.world.level.block.Mirror"
@@ -16847,12 +16846,12 @@ static readonly "UPDATE_CLIENTS": integer
 
 constructor(arg0: $BlockType$$Type)
 
-public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
+public static "mirrorCorner"(arg0: $BlockState$$Type, arg1: $Mirror$$Type): $BlockState
 public static "getStateForPlacement"(arg0: $Block$$Type, arg1: boolean, arg2: $BlockPlaceContext$$Type): $BlockState
+public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
 public "getItemModelSource"(): $BlockState
 public "getJadeRenderState"(arg0: $BlockState$$Type): $BlockState
 public "handleBlockLeftClick"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type): boolean
-public static "mirrorCorner"(arg0: $BlockState$$Type, arg1: $Mirror$$Type): $BlockState
 public "rotate"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $Rotation$$Type): $BlockState
 public "rotate"(arg0: $BlockState$$Type, arg1: $BlockHitResult$$Type, arg2: $Rotation$$Type): $BlockState
 public static "isCamoEmissiveRendering"(arg0: $ModelData$$Type): boolean
@@ -16951,12 +16950,12 @@ export type $FramedFlatDoubleSlopePanelCornerBlock$$Type = ($FramedFlatDoubleSlo
  */
 export type $FramedFlatDoubleSlopePanelCornerBlock$$Original = $FramedFlatDoubleSlopePanelCornerBlock;}
 declare module "xfacthd.framedblocks.common.block.slopepanel.FramedFlatExtendedSlopePanelCornerBlock" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$BlockType$$Type} from "xfacthd.framedblocks.common.data.BlockType"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -17015,8 +17014,8 @@ export type $FramedFlatExtendedSlopePanelCornerBlock$$Type = ($FramedFlatExtende
  */
 export type $FramedFlatExtendedSlopePanelCornerBlock$$Original = $FramedFlatExtendedSlopePanelCornerBlock;}
 declare module "xfacthd.framedblocks.common.block.slopepanelcorner.FramedCornerSlopePanelWallBlock" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$BlockType$$Type} from "xfacthd.framedblocks.common.data.BlockType"
 import {$Mirror$$Type} from "net.minecraft.world.level.block.Mirror"
@@ -17058,12 +17057,12 @@ static readonly "UPDATE_CLIENTS": integer
 
 constructor(arg0: $BlockType$$Type)
 
-public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
+public static "mirrorCornerPanel"(arg0: $BlockState$$Type, arg1: $Mirror$$Type): $BlockState
 public static "getStateForPlacement"(arg0: $Block$$Type, arg1: $BlockPlaceContext$$Type, arg2: boolean): $BlockState
+public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
 public "getItemModelSource"(): $BlockState
 public "getJadeRenderState"(arg0: $BlockState$$Type): $BlockState
 public "handleBlockLeftClick"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type): boolean
-public static "mirrorCornerPanel"(arg0: $BlockState$$Type, arg1: $Mirror$$Type): $BlockState
 public "rotate"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $Rotation$$Type): $BlockState
 public "rotate"(arg0: $BlockState$$Type, arg1: $BlockHitResult$$Type, arg2: $Rotation$$Type): $BlockState
 public static "isCamoEmissiveRendering"(arg0: $ModelData$$Type): boolean
@@ -17084,8 +17083,8 @@ export type $FramedCornerSlopePanelWallBlock$$Original = $FramedCornerSlopePanel
 declare module "xfacthd.framedblocks.common.block.slope.FramedVerticalHalfSlopeBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$IComplexSlopeSource$$Interface} from "xfacthd.framedblocks.common.block.IComplexSlopeSource"
@@ -17123,11 +17122,11 @@ static readonly "UPDATE_CLIENTS": integer
 
 constructor()
 
+public "isHorizontalSlope"(arg0: $BlockState$$Type): boolean
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
 public "getItemModelSource"(): $BlockState
 public "getJadeRenderState"(arg0: $BlockState$$Type): $BlockState
 public "handleBlockLeftClick"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type): boolean
-public "isHorizontalSlope"(arg0: $BlockState$$Type): boolean
 public "rotate"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $Rotation$$Type): $BlockState
 public static "isCamoEmissiveRendering"(arg0: $ModelData$$Type): boolean
 public static "toggleYSlope"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type): boolean

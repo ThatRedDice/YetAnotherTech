@@ -4,8 +4,8 @@ import {$LootParams$Builder$$Type} from "net.minecraft.world.level.storage.loot.
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$Mob$$Type} from "net.minecraft.world.entity.Mob"
-import {$ItemAbility$$Type} from "net.neoforged.neoforge.common.ItemAbility"
 import {$BlockBehaviour$Properties} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
+import {$ItemAbility$$Type} from "net.neoforged.neoforge.common.ItemAbility"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$IBlockExtension$$Interface} from "net.neoforged.neoforge.common.extensions.IBlockExtension"
 import {$Supplier$$Type} from "java.util.function.Supplier"
@@ -16,26 +16,26 @@ import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BubbleColumnDirection} from "net.neoforged.neoforge.common.enums.BubbleColumnDirection"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
-import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$SoundType} from "net.minecraft.world.level.block.SoundType"
 import {$HitResult$$Type} from "net.minecraft.world.phys.HitResult"
 import {$StateCache} from "xfacthd.framedblocks.api.block.cache.StateCache"
-import {$TreeConfiguration$$Type} from "net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration"
 import {$ShapeProvider$$Type} from "xfacthd.framedblocks.api.shapes.ShapeProvider"
-import {$CamoList$$Type} from "xfacthd.framedblocks.api.util.CamoList"
+import {$TreeConfiguration$$Type} from "net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
+import {$CamoList$$Type} from "xfacthd.framedblocks.api.util.CamoList"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$IBlockType, $IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
 import {$BiConsumer$$Type} from "java.util.function.BiConsumer"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
-import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$MapColor, $MapColor$$Type} from "net.minecraft.world.level.material.MapColor"
 import {$List, $List$$Type} from "java.util.List"
 import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
@@ -50,8 +50,8 @@ import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintG
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Class} from "java.lang.Class"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$ModelData, $ModelData$$Type} from "net.neoforged.neoforge.client.model.data.ModelData"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$ItemInteractionResult} from "net.minecraft.world.ItemInteractionResult"
@@ -125,17 +125,17 @@ static "toggleYSlope"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockP
  "getJadeRenderScale"(arg0: $BlockState$$Type): float
  "shouldApplyGuiTransformFromModel"(): boolean
  "getCache"(arg0: $BlockState$$Type): $StateCache
- "initCache"(arg0: $BlockState$$Type): $StateCache
 static "createProperties"(arg0: $IBlockType$$Type): $BlockBehaviour$Properties
  "rotate"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $Rotation$$Type): $BlockState
  "rotate"(arg0: $BlockState$$Type, arg1: $BlockHitResult$$Type, arg2: $Rotation$$Type): $BlockState
+ "initCache"(arg0: $BlockState$$Type): $StateCache
  "addLandingEffects"(arg0: $BlockState$$Type, arg1: $ServerLevel$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $LivingEntity$$Type, arg5: integer): boolean
  "getSoundType"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): $SoundType
  "getFriction"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): float
  "addRunningEffects"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): boolean
  "isSuffocating"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): boolean
- "getLightEmission"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): integer
  "onBlockStateChange"(arg0: $LevelReader$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $BlockState$$Type): void
+ "getLightEmission"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): integer
  "getTicker"<T extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
  "getListener"<T extends $BlockEntity>(arg0: $ServerLevel$$Type, arg1: T): $GameEventListener
  "getBlockPathType"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $Mob$$Type): $PathType
@@ -237,8 +237,8 @@ export type $IStateCacheAccessor$$Type = ($IStateCacheAccessor);
  */
 export type $IStateCacheAccessor$$Original = $IStateCacheAccessor;}
 declare module "xfacthd.framedblocks.api.block.blockentity.FramedBlockEntity" {
-import {$CamoContainer, $CamoContainer$$Type} from "xfacthd.framedblocks.api.camo.CamoContainer"
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
+import {$CamoContainer, $CamoContainer$$Type} from "xfacthd.framedblocks.api.camo.CamoContainer"
 import {$MapColor} from "net.minecraft.world.level.material.MapColor"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$IFramedBlock} from "xfacthd.framedblocks.api.block.IFramedBlock"
@@ -263,7 +263,8 @@ import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Prov
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$ItemInteractionResult} from "net.minecraft.world.ItemInteractionResult"
 import {$IBlockType} from "xfacthd.framedblocks.api.type.IBlockType"
-import {$ClientboundBlockEntityDataPacket, $ClientboundBlockEntityDataPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket"
+import {$ClientboundBlockEntityDataPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$BlueprintData, $BlueprintData$$Type} from "xfacthd.framedblocks.api.blueprint.BlueprintData"
 import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$Connection$$Type} from "net.minecraft.network.Connection"
@@ -279,14 +280,19 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 constructor(arg0: $BlockPos$$Type, arg1: $BlockState$$Type)
 constructor(arg0: $BlockEntityType$$Type<(never)>, arg1: $BlockPos$$Type, arg2: $BlockState$$Type)
 
+public "canTriviallyDropAllCamos"(): boolean
+public "isSolidSide"(arg0: $Direction$$Type): boolean
+public "isMarkedIntangible"(): boolean
+public "writeToBlueprint"(): $BlueprintData
+public "applyBlueprintData"(arg0: $BlueprintData$$Type): void
 public "isReinforced"(): boolean
 public "setCamo"(arg0: $CamoContainer$$Type<(never), (never)>, arg1: boolean): void
 public "setCamo"(arg0: $CamoContainer$$Type<(never), (never)>, arg1: $BlockHitResult$$Type, arg2: $Player$$Type): void
 public "setIntangible"(arg0: boolean): void
 public "setReinforced"(arg0: boolean): void
 public "getMapColor"(): $MapColor
+public "getUpdatePacket"(): $Packet
 public "loadAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
-public "getUpdatePacket"(): $ClientboundBlockEntityDataPacket
 public "getBlockType"(): $IBlockType
 public "saveAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "getUpdateTag"(arg0: $HolderLookup$Provider$$Type): $CompoundTag
@@ -294,12 +300,12 @@ public "onDataPacket"(arg0: $Connection$$Type, arg1: $ClientboundBlockEntityData
 public "handleUpdateTag"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "updateCulling"(arg0: boolean, arg1: boolean): void
 public "isIntangible"(arg0: $CollisionContext$$Type): boolean
+public "getCamo"(arg0: $BlockHitResult$$Type, arg1: $Vec3$$Type, arg2: $Vec3$$Type): $CamoContainer<(never), (never)>
 public "getCamo"(): $CamoContainer<(never), (never)>
-public "getCamo"(arg0: $Direction$$Type): $CamoContainer<(never), (never)>
 public "getCamo"(arg0: $BlockState$$Type): $CamoContainer<(never), (never)>
+public "getCamo"(arg0: $Direction$$Type): $CamoContainer<(never), (never)>
 public "getCamo"(arg0: $Direction$$Type, arg1: $Direction$$Type): $CamoContainer<(never), (never)>
 public "getCamo"(arg0: $BlockHitResult$$Type, arg1: $Player$$Type): $CamoContainer<(never), (never)>
-public "getCamo"(arg0: $BlockHitResult$$Type, arg1: $Vec3$$Type, arg2: $Vec3$$Type): $CamoContainer<(never), (never)>
 public "checkCamoSolid"(): void
 public "canAutoApplyCamoOnPlacement"(): boolean
 public "handleInteraction"(arg0: $Player$$Type, arg1: $InteractionHand$$Type, arg2: $BlockHitResult$$Type): $ItemInteractionResult
@@ -311,19 +317,14 @@ public "getCamoFlammability"(arg0: $Direction$$Type): integer
 public "getCamoFireSpreadSpeed"(arg0: $Direction$$Type): integer
 public "getCamoShadeBrightness"(arg0: float): float
 public "getCamoBeaconColorMultiplier"(arg0: $LevelReader$$Type, arg1: $BlockPos$$Type, arg2: $BlockPos$$Type): integer
-public "canCamoSustainPlant"(arg0: $BlockGetter$$Type, arg1: $Direction$$Type, arg2: $BlockState$$Type): $TriState
 /**
  * 
  * @deprecated
  */
 public "canCamoSustainPlant"(arg0: $Direction$$Type, arg1: $BlockState$$Type): $TriState
+public "canCamoSustainPlant"(arg0: $BlockGetter$$Type, arg1: $Direction$$Type, arg2: $BlockState$$Type): $TriState
 public "shouldCamoDisplayFluidOverlay"(arg0: $BlockAndTintGetter$$Type, arg1: $BlockPos$$Type, arg2: $FluidState$$Type): boolean
 public "canEntityDestroyCamo"(arg0: $Entity$$Type): boolean
-public "canTriviallyDropAllCamos"(): boolean
-public "isSolidSide"(arg0: $Direction$$Type): boolean
-public "isMarkedIntangible"(): boolean
-public "writeToBlueprint"(): $BlueprintData
-public "applyBlueprintData"(arg0: $BlueprintData$$Type): void
 public "getBlock"(): $IFramedBlock
 public "onLoad"(): void
 public "removeComponentsFromTag"(arg0: $CompoundTag$$Type): void
@@ -332,14 +333,14 @@ public "isGlowing"(): boolean
 public "setBlockState"(arg0: $BlockState$$Type): void
 public "getModelData"(): $ModelData
 public "getModelData"(arg0: boolean): $ModelData
+get "markedIntangible"(): boolean
 get "reinforced"(): boolean
 set "intangible"(value: boolean)
 set "reinforced"(value: boolean)
 get "mapColor"(): $MapColor
-get "updatePacket"(): $ClientboundBlockEntityDataPacket
+get "updatePacket"(): $Packet
 get "blockType"(): $IBlockType
 get "camo"(): $CamoContainer<(never), (never)>
-get "markedIntangible"(): boolean
 get "block"(): $IFramedBlock
 set "glowing"(value: boolean)
 get "glowing"(): boolean
@@ -384,8 +385,8 @@ export type $IFramedDoubleBlockEntity$$Type = (() => $CamoContainer$$Type<(never
 export type $IFramedDoubleBlockEntity$$Original = $IFramedDoubleBlockEntity;}
 declare module "xfacthd.framedblocks.api.block.AbstractFramedBlock" {
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
-import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$LootParams$Builder$$Type} from "net.minecraft.world.level.storage.loot.LootParams$Builder"
+import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$IFramedBlock$$Interface} from "xfacthd.framedblocks.api.block.IFramedBlock"
@@ -397,8 +398,8 @@ import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$SideSkipPredicate$$Type} from "xfacthd.framedblocks.api.predicate.cull.SideSkipPredicate"
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
-import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
@@ -413,9 +414,9 @@ import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$IBlockType, $IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
-import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$MapColor, $MapColor$$Type} from "net.minecraft.world.level.material.MapColor"
 import {$List, $List$$Type} from "java.util.List"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
@@ -424,14 +425,14 @@ import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Explosion$$Type} from "net.minecraft.world.level.Explosion"
-import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
+import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Class} from "java.lang.Class"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$ModelData, $ModelData$$Type} from "net.neoforged.neoforge.client.model.data.ModelData"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$UnaryOperator$$Type} from "java.util.function.UnaryOperator"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
@@ -466,10 +467,10 @@ constructor(arg0: $IBlockType$$Type, arg1: $UnaryOperator$$Type<($BlockBehaviour
 
 public "setPlacedBy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $LivingEntity$$Type, arg4: $ItemStack$$Type): void
 public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
-public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
-public "canPlaceLiquid"(arg0: $Player$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $Fluid$$Type): boolean
-public "pickupBlock"(arg0: $Player$$Type, arg1: $LevelAccessor$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): $ItemStack
 public "getBlockType"(): $IBlockType
+public "canPlaceLiquid"(arg0: $Player$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $Fluid$$Type): boolean
+public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
+public "pickupBlock"(arg0: $Player$$Type, arg1: $LevelAccessor$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): $ItemStack
 public "doesBlockOccludeBeaconBeam"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type): boolean
 public "hidesNeighborFace"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $BlockState$$Type, arg4: $Direction$$Type): boolean
 public "getExplosionResistance"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $Explosion$$Type): float
@@ -521,17 +522,17 @@ public "shouldRenderAsBlockInJadeTooltip"(): boolean
 public "getJadeRenderScale"(arg0: $BlockState$$Type): float
 public "shouldApplyGuiTransformFromModel"(): boolean
 public "getCache"(arg0: $BlockState$$Type): $StateCache
-public "initCache"(arg0: $BlockState$$Type): $StateCache
 public static "createProperties"(arg0: $IBlockType$$Type): $BlockBehaviour$Properties
 public "rotate"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $Rotation$$Type): $BlockState
 public "rotate"(arg0: $BlockState$$Type, arg1: $BlockHitResult$$Type, arg2: $Rotation$$Type): $BlockState
+public "initCache"(arg0: $BlockState$$Type): $StateCache
 public "addLandingEffects"(arg0: $BlockState$$Type, arg1: $ServerLevel$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $LivingEntity$$Type, arg5: integer): boolean
 public "getSoundType"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): $SoundType
 public "getFriction"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): float
 public "addRunningEffects"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): boolean
 public "isSuffocating"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): boolean
-public "getLightEmission"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): integer
 public "onBlockStateChange"(arg0: $LevelReader$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $BlockState$$Type): void
+public "getLightEmission"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): integer
 public "getPickupSound"(): $Optional<($SoundEvent)>
 public "getTicker"<T extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
 public "getListener"<T extends $BlockEntity>(arg0: $ServerLevel$$Type, arg1: T): $GameEventListener

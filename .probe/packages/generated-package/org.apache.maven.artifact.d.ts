@@ -4,23 +4,23 @@ import {$List, $List$$Type} from "java.util.List"
 import {$Artifact, $Artifact$$Type} from "org.apache.maven.artifact.Artifact"
 import {$Proxy, $Proxy$$Type} from "org.apache.maven.repository.Proxy"
 import {$ArtifactMetadata$$Type} from "org.apache.maven.artifact.metadata.ArtifactMetadata"
-import {$ArtifactRepositoryLayout, $ArtifactRepositoryLayout$$Type} from "org.apache.maven.artifact.repository.layout.ArtifactRepositoryLayout"
 import {$Authentication, $Authentication$$Type} from "org.apache.maven.artifact.repository.Authentication"
+import {$ArtifactRepositoryLayout, $ArtifactRepositoryLayout$$Type} from "org.apache.maven.artifact.repository.layout.ArtifactRepositoryLayout"
 
 export interface $ArtifactRepository$$Interface {
 set "blocked"(value: boolean)
 get "blacklisted"(): boolean
+set "proxy"(value: $Proxy$$Type)
 get "basedir"(): StringJS
 set "snapshotUpdatePolicy"(value: $ArtifactRepositoryPolicy$$Type)
 set "releaseUpdatePolicy"(value: $ArtifactRepositoryPolicy$$Type)
+get "uniqueVersion"(): boolean
 set "blacklisted"(value: boolean)
 get "projectAware"(): boolean
 set "authentication"(value: $Authentication$$Type)
 get "authentication"(): $Authentication
 get "mirroredRepositories"(): $List<($ArtifactRepository)>
 set "mirroredRepositories"(value: $List$$Type<($ArtifactRepository$$Type)>)
-get "uniqueVersion"(): boolean
-set "proxy"(value: $Proxy$$Type)
 get "key"(): StringJS
 get "id"(): StringJS
 get "protocol"(): StringJS
@@ -42,11 +42,17 @@ export class $ArtifactRepository implements $ArtifactRepository$$Interface {
  * @deprecated
  */
  "isBlacklisted"(): boolean
- "pathOfRemoteRepositoryMetadata"(arg0: $ArtifactMetadata$$Type): StringJS
- "pathOfLocalRepositoryMetadata"(arg0: $ArtifactMetadata$$Type, arg1: $ArtifactRepository$$Type): StringJS
+ "setProxy"(arg0: $Proxy$$Type): void
  "getBasedir"(): StringJS
  "setSnapshotUpdatePolicy"(arg0: $ArtifactRepositoryPolicy$$Type): void
+ "pathOfRemoteRepositoryMetadata"(arg0: $ArtifactMetadata$$Type): StringJS
+ "pathOfLocalRepositoryMetadata"(arg0: $ArtifactMetadata$$Type, arg1: $ArtifactRepository$$Type): StringJS
  "setReleaseUpdatePolicy"(arg0: $ArtifactRepositoryPolicy$$Type): void
+/**
+ * 
+ * @deprecated
+ */
+ "isUniqueVersion"(): boolean
 /**
  * 
  * @deprecated
@@ -58,12 +64,6 @@ export class $ArtifactRepository implements $ArtifactRepository$$Interface {
  "getAuthentication"(): $Authentication
  "getMirroredRepositories"(): $List<($ArtifactRepository)>
  "setMirroredRepositories"(arg0: $List$$Type<($ArtifactRepository$$Type)>): void
-/**
- * 
- * @deprecated
- */
- "isUniqueVersion"(): boolean
- "setProxy"(arg0: $Proxy$$Type): void
  "getKey"(): StringJS
  "find"(arg0: $Artifact$$Type): $Artifact
  "getId"(): StringJS
@@ -72,12 +72,12 @@ export class $ArtifactRepository implements $ArtifactRepository$$Interface {
  "getLayout"(): $ArtifactRepositoryLayout
  "setLayout"(arg0: $ArtifactRepositoryLayout$$Type): void
  "setId"(arg0: StringJS): void
+ "pathOf"(arg0: $Artifact$$Type): StringJS
  "getReleases"(): $ArtifactRepositoryPolicy
  "getSnapshots"(): $ArtifactRepositoryPolicy
  "getProxy"(): $Proxy
  "isBlocked"(): boolean
  "setUrl"(arg0: StringJS): void
- "pathOf"(arg0: $Artifact$$Type): StringJS
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -152,9 +152,9 @@ import {$VersionRange, $VersionRange$$Type} from "org.apache.maven.artifact.vers
 import {$ArtifactMetadata, $ArtifactMetadata$$Type} from "org.apache.maven.artifact.metadata.ArtifactMetadata"
 
 export interface $Artifact$$Interface extends $Comparable$$Interface<($Artifact)> {
-get "downloadUrl"(): StringJS
-get "release"(): boolean
 set "scope"(value: StringJS)
+get "release"(): boolean
+get "snapshot"(): boolean
 get "baseVersion"(): StringJS
 set "baseVersion"(value: StringJS)
 get "dependencyConflictId"(): StringJS
@@ -173,8 +173,8 @@ set "artifactHandler"(value: $ArtifactHandler$$Type)
 get "availableVersions"(): $List<($ArtifactVersion)>
 set "availableVersions"(value: $List$$Type<($ArtifactVersion$$Type)>)
 set "optional"(value: boolean)
-get "snapshot"(): boolean
 get "repository"(): $ArtifactRepository
+get "version"(): StringJS
 set "version"(value: StringJS)
 get "id"(): StringJS
 get "type"(): StringJS
@@ -182,17 +182,17 @@ get "scope"(): StringJS
 get "resolved"(): boolean
 set "release"(value: boolean)
 get "file"(): $File
-get "version"(): StringJS
 set "file"(value: $File$$Type)
-get "selectedVersion"(): $ArtifactVersion
-get "selectedVersionKnown"(): boolean
 get "groupId"(): StringJS
 get "artifactId"(): StringJS
 get "classifier"(): StringJS
+get "selectedVersion"(): $ArtifactVersion
+get "selectedVersionKnown"(): boolean
 get "dependencyTrail"(): $List<(StringJS)>
 get "versionRange"(): $VersionRange
 get "optional"(): boolean
 set "groupId"(value: StringJS)
+get "downloadUrl"(): StringJS
 }
 
 export class $Artifact implements $Artifact$$Interface {
@@ -209,9 +209,9 @@ static readonly "SCOPE_COMPILE": StringJS
 static readonly "SCOPE_COMPILE_PLUS_RUNTIME": StringJS
 static readonly "LATEST_VERSION": StringJS
 
- "getDownloadUrl"(): StringJS
- "isRelease"(): boolean
  "setScope"(arg0: StringJS): void
+ "isRelease"(): boolean
+ "isSnapshot"(): boolean
  "getBaseVersion"(): StringJS
  "hasClassifier"(): boolean
  "setBaseVersion"(arg0: StringJS): void
@@ -234,8 +234,8 @@ static readonly "LATEST_VERSION": StringJS
  "getAvailableVersions"(): $List<($ArtifactVersion)>
  "setAvailableVersions"(arg0: $List$$Type<($ArtifactVersion$$Type)>): void
  "setOptional"(arg0: boolean): void
- "isSnapshot"(): boolean
  "getRepository"(): $ArtifactRepository
+ "getVersion"(): StringJS
  "setVersion"(arg0: StringJS): void
  "getId"(): StringJS
  "getType"(): StringJS
@@ -243,17 +243,17 @@ static readonly "LATEST_VERSION": StringJS
  "isResolved"(): boolean
  "setRelease"(arg0: boolean): void
  "getFile"(): $File
- "getVersion"(): StringJS
  "setFile"(arg0: $File$$Type): void
- "getSelectedVersion"(): $ArtifactVersion
- "isSelectedVersionKnown"(): boolean
  "getGroupId"(): StringJS
  "getArtifactId"(): StringJS
  "getClassifier"(): StringJS
+ "getSelectedVersion"(): $ArtifactVersion
+ "isSelectedVersionKnown"(): boolean
  "getDependencyTrail"(): $List<(StringJS)>
  "getVersionRange"(): $VersionRange
  "isOptional"(): boolean
  "setGroupId"(arg0: StringJS): void
+ "getDownloadUrl"(): StringJS
  "compareTo"(arg0: $Artifact$$Type): integer
 }
 /**
@@ -275,12 +275,13 @@ export class $VersionRange {
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
+public static "createFromVersionSpec"(arg0: StringJS): $VersionRange
+public "getRecommendedVersion"(): $ArtifactVersion
 /**
  * 
  * @deprecated
  */
 public "cloneOf"(): $VersionRange
-public "getRecommendedVersion"(): $ArtifactVersion
 public "getRestrictions"(): $List<($Restriction)>
 public static "createFromVersion"(arg0: StringJS): $VersionRange
 public "restrict"(arg0: $VersionRange$$Type): $VersionRange
@@ -289,7 +290,6 @@ public "isSelectedVersionKnown"(arg0: $Artifact$$Type): boolean
 public "matchVersion"(arg0: $List$$Type<($ArtifactVersion$$Type)>): $ArtifactVersion
 public "containsVersion"(arg0: $ArtifactVersion$$Type): boolean
 public "hasRestrictions"(): boolean
-public static "createFromVersionSpec"(arg0: StringJS): $VersionRange
 get "recommendedVersion"(): $ArtifactVersion
 get "restrictions"(): $List<($Restriction)>
 }
@@ -306,8 +306,8 @@ declare module "org.apache.maven.artifact.handler.ArtifactHandler" {
 export {} // Mark the file as a module, do not remove unless there are other import/exports!
 export interface $ArtifactHandler$$Interface {
 get "packaging"(): StringJS
-get "addedToClasspath"(): boolean
 get "includesDependencies"(): boolean
+get "addedToClasspath"(): boolean
 get "extension"(): StringJS
 get "language"(): StringJS
 get "classifier"(): StringJS
@@ -318,8 +318,8 @@ export class $ArtifactHandler implements $ArtifactHandler$$Interface {
 static readonly "ROLE": StringJS
 
  "getPackaging"(): StringJS
- "isAddedToClasspath"(): boolean
  "isIncludesDependencies"(): boolean
+ "isAddedToClasspath"(): boolean
  "getExtension"(): StringJS
  "getLanguage"(): StringJS
  "getClassifier"(): StringJS
@@ -377,16 +377,16 @@ declare module "org.apache.maven.artifact.versioning.ArtifactVersion" {
 import {$Comparable$$Interface} from "java.lang.Comparable"
 
 export interface $ArtifactVersion$$Interface extends $Comparable$$Interface<($ArtifactVersion)> {
-get "majorVersion"(): integer
 get "minorVersion"(): integer
+get "majorVersion"(): integer
 get "incrementalVersion"(): integer
 get "buildNumber"(): integer
 get "qualifier"(): StringJS
 }
 
 export class $ArtifactVersion implements $ArtifactVersion$$Interface {
- "getMajorVersion"(): integer
  "getMinorVersion"(): integer
+ "getMajorVersion"(): integer
  "getIncrementalVersion"(): integer
  "getBuildNumber"(): integer
  "getQualifier"(): StringJS

@@ -1,8 +1,8 @@
 declare module "dan200.computercraft.core.methods.PeripheralMethod" {
 import {$ILuaContext, $ILuaContext$$Type} from "dan200.computercraft.api.lua.ILuaContext"
 import {$MethodResult, $MethodResult$$Type} from "dan200.computercraft.api.lua.MethodResult"
-import {$IComputerAccess, $IComputerAccess$$Type} from "dan200.computercraft.api.peripheral.IComputerAccess"
 import {$IArguments, $IArguments$$Type} from "dan200.computercraft.api.lua.IArguments"
+import {$IComputerAccess, $IComputerAccess$$Type} from "dan200.computercraft.api.peripheral.IComputerAccess"
 
 export interface $PeripheralMethod$$Interface {
 

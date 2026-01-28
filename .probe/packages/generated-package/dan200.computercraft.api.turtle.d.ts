@@ -18,8 +18,8 @@ export type $TurtleVerb$$Type = (("dig") | ("attack"));
  */
 export type $TurtleVerb$$Original = $TurtleVerb;}
 declare module "dan200.computercraft.api.turtle.ITurtleUpgrade" {
-import {$TurtleUpgradeType} from "dan200.computercraft.api.turtle.TurtleUpgradeType"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$TurtleUpgradeType} from "dan200.computercraft.api.turtle.TurtleUpgradeType"
 import {$ITurtleAccess$$Type} from "dan200.computercraft.api.turtle.ITurtleAccess"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$TurtleVerb$$Type} from "dan200.computercraft.api.turtle.TurtleVerb"
@@ -102,8 +102,8 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
 export class $TurtleToolDurability extends $Enum<($TurtleToolDurability)> implements $StringRepresentable$$Interface {
@@ -116,11 +116,11 @@ public static "values"(): ($TurtleToolDurability)[]
 public static "valueOf"(arg0: StringJS): $TurtleToolDurability
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
 }
@@ -163,8 +163,8 @@ export type $TurtleAnimation$$Type = (("none") | ("move_forward") | ("move_back"
 export type $TurtleAnimation$$Original = $TurtleAnimation;}
 declare module "dan200.computercraft.api.turtle.AbstractTurtleUpgrade" {
 import {$ITurtleUpgrade, $ITurtleUpgrade$$Interface} from "dan200.computercraft.api.turtle.ITurtleUpgrade"
-import {$TurtleUpgradeType} from "dan200.computercraft.api.turtle.TurtleUpgradeType"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$TurtleUpgradeType} from "dan200.computercraft.api.turtle.TurtleUpgradeType"
 import {$ITurtleAccess$$Type} from "dan200.computercraft.api.turtle.ITurtleAccess"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$TurtleVerb$$Type} from "dan200.computercraft.api.turtle.TurtleVerb"
@@ -215,8 +215,8 @@ public static "success"(arg0: (any)[]): $TurtleCommandResult
 public "getErrorMessage"(): StringJS
 public static "failure"(arg0: StringJS): $TurtleCommandResult
 public static "failure"(): $TurtleCommandResult
-public "getResults"(): (any)[]
 public "isSuccess"(): boolean
+public "getResults"(): (any)[]
 get "errorMessage"(): StringJS
 get "results"(): (any)[]
 }
@@ -283,23 +283,23 @@ import {$UpgradeData, $UpgradeData$$Type} from "dan200.computercraft.api.upgrade
 import {$DataComponentPatch, $DataComponentPatch$$Type} from "net.minecraft.core.component.DataComponentPatch"
 import {$Container} from "net.minecraft.world.Container"
 import {$TurtleSide$$Type} from "dan200.computercraft.api.turtle.TurtleSide"
-import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameProfile} from "com.mojang.authlib.GameProfile"
+import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$IPeripheral} from "dan200.computercraft.api.peripheral.IPeripheral"
 
 export interface $ITurtleAccess$$Interface {
 set "direction"(value: $Direction$$Type)
-set "selectedSlot"(value: integer)
-get "selectedSlot"(): integer
 set "colour"(value: integer)
 set "fuelLevel"(value: integer)
 get "colour"(): integer
 get "fuelLevel"(): integer
 get "fuelLimit"(): integer
+set "selectedSlot"(value: integer)
+get "selectedSlot"(): integer
 get "owningPlayer"(): $GameProfile
 get "fuelNeeded"(): boolean
-get "position"(): $BlockPos
 get "level"(): $Level
+get "position"(): $BlockPos
 get "removed"(): boolean
 get "direction"(): $Direction
 get "inventory"(): $Container
@@ -312,22 +312,22 @@ export class $ITurtleAccess implements $ITurtleAccess$$Interface {
  "playAnimation"(arg0: $TurtleAnimation$$Type): void
  "getUpgradeData"(arg0: $TurtleSide$$Type): $DataComponentPatch
  "setDirection"(arg0: $Direction$$Type): void
- "getPeripheral"(arg0: $TurtleSide$$Type): $IPeripheral
- "setSelectedSlot"(arg0: integer): void
- "getSelectedSlot"(): integer
  "setColour"(arg0: integer): void
  "setFuelLevel"(arg0: integer): void
  "getColour"(): integer
  "getFuelLevel"(): integer
  "getUpgradeWithData"(arg0: $TurtleSide$$Type): $UpgradeData<($ITurtleUpgrade)>
  "getFuelLimit"(): integer
+ "setSelectedSlot"(arg0: integer): void
+ "getSelectedSlot"(): integer
+ "getPeripheral"(arg0: $TurtleSide$$Type): $IPeripheral
  "getOwningPlayer"(): $GameProfile
  "isFuelNeeded"(): boolean
  "addFuel"(arg0: integer): void
  "executeCommand"(arg0: $TurtleCommand$$Type): $MethodResult
  "setUpgradeData"(arg0: $TurtleSide$$Type, arg1: $DataComponentPatch$$Type): void
- "getPosition"(): $BlockPos
  "getLevel"(): $Level
+ "getPosition"(): $BlockPos
  "isRemoved"(): boolean
  "getDirection"(): $Direction
  "getInventory"(): $Container

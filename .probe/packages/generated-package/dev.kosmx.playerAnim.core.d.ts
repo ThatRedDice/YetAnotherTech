@@ -4,9 +4,9 @@ import {$Vector3} from "dev.kosmx.playerAnim.core.util.Vector3"
 export class $Vec3d extends $Vector3<(double)> {
 constructor(x: double, y: double, z: double)
 
-public "squaredDistanceTo"(vec3d: $Vec3d$$Type): double
-public "dotProduct"(other: $Vec3d$$Type): double
 public "crossProduct"(other: $Vec3d$$Type): $Vec3d
+public "dotProduct"(other: $Vec3d$$Type): double
+public "squaredDistanceTo"(vec3d: $Vec3d$$Type): double
 public "scale"(scalar: double): $Vec3d
 public "add"(other: $Vec3d$$Type): $Vec3d
 public "subtract"(rhs: $Vec3d$$Type): $Vec3d
@@ -30,9 +30,9 @@ static readonly "ZERO": $Vec3f
 
 constructor(x: float, y: float, z: float)
 
-public "squaredDistanceTo"(vec3d: $Vec3d$$Type): double
-public "dotProduct"(other: $Vec3f$$Type): float
 public "crossProduct"(other: $Vec3f$$Type): $Vec3f
+public "dotProduct"(other: $Vec3f$$Type): float
+public "squaredDistanceTo"(vec3d: $Vec3d$$Type): double
 public "scale"(scalar: float): $Vec3f
 public "add"(other: $Vec3f$$Type): $Vec3f
 public "subtract"(rhs: $Vec3f$$Type): $Vec3f
@@ -112,27 +112,27 @@ export type $Pair$$Type<L, R> = ($Pair<(L), (R)>);
  */
 export type $Pair$$Original<L, R> = $Pair<(L), (R)>;}
 declare module "dev.kosmx.playerAnim.core.impl.AnimationProcessor" {
-import {$Pair} from "dev.kosmx.playerAnim.core.util.Pair"
 import {$FirstPersonMode} from "dev.kosmx.playerAnim.api.firstPerson.FirstPersonMode"
+import {$Pair} from "dev.kosmx.playerAnim.core.util.Pair"
 import {$FirstPersonConfiguration} from "dev.kosmx.playerAnim.api.firstPerson.FirstPersonConfiguration"
 import {$IAnimation$$Type} from "dev.kosmx.playerAnim.api.layered.IAnimation"
-import {$Vec3f, $Vec3f$$Type} from "dev.kosmx.playerAnim.core.util.Vec3f"
 import {$TransformType$$Type} from "dev.kosmx.playerAnim.api.TransformType"
+import {$Vec3f, $Vec3f$$Type} from "dev.kosmx.playerAnim.core.util.Vec3f"
 
 export class $AnimationProcessor {
 constructor(animation: $IAnimation$$Type)
 
+public "isFirstPersonAnimationDisabled"(): boolean
+public "getFirstPersonConfiguration"(): $FirstPersonConfiguration
 public "get3DTransform"(modelName: StringJS, type: $TransformType$$Type, value0: $Vec3f$$Type): $Vec3f
 public "getFirstPersonMode"(): $FirstPersonMode
-public "getFirstPersonConfiguration"(): $FirstPersonConfiguration
 public "getBend"(modelName: StringJS): $Pair<(float), (float)>
-public "isFirstPersonAnimationDisabled"(): boolean
 public "tick"(): void
 public "isActive"(): boolean
 public "setTickDelta"(tickDelta: float): void
-get "firstPersonMode"(): $FirstPersonMode
-get "firstPersonConfiguration"(): $FirstPersonConfiguration
 get "firstPersonAnimationDisabled"(): boolean
+get "firstPersonConfiguration"(): $FirstPersonConfiguration
+get "firstPersonMode"(): $FirstPersonMode
 get "active"(): boolean
 set "tickDelta"(value: float)
 }

@@ -1,8 +1,8 @@
 declare module "com.almostreliable.unified.unification.worldgen.WorldGenBiomeModifier" {
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$ModifiableBiomeInfo$BiomeInfo$Builder$$Type} from "net.neoforged.neoforge.common.world.ModifiableBiomeInfo$BiomeInfo$Builder"
-import {$Biome$$Type} from "net.minecraft.world.level.biome.Biome"
 import {$BiomeModifier$Phase$$Type} from "net.neoforged.neoforge.common.world.BiomeModifier$Phase"
+import {$Biome$$Type} from "net.minecraft.world.level.biome.Biome"
 import {$BiomeModifier, $BiomeModifier$$Interface} from "net.neoforged.neoforge.common.world.BiomeModifier"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$Holder$$Type} from "net.minecraft.core.Holder"
@@ -15,8 +15,8 @@ static readonly "UNKNOWN_BIOME_ID": $ResourceLocation
 constructor()
 
 public static "bindUnifier"(modifier: $WorldGenBiomeModifier$$Type, registryAccess: $RegistryAccess$$Type): void
-public "modify"(biome: $Holder$$Type<($Biome)>, phase: $BiomeModifier$Phase$$Type, builder: $ModifiableBiomeInfo$BiomeInfo$Builder$$Type): void
 public "codec"(): $MapCodec<($BiomeModifier)>
+public "modify"(biome: $Holder$$Type<($Biome)>, phase: $BiomeModifier$Phase$$Type, builder: $ModifiableBiomeInfo$BiomeInfo$Builder$$Type): void
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_

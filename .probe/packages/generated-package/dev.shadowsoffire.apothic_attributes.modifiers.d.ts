@@ -63,17 +63,17 @@ export type $EntityEquipmentSlot$$Type = (Special.ApothicAttributesEntityEquipme
 export type $EntityEquipmentSlot$$Original = $EntityEquipmentSlot;}
 declare module "dev.shadowsoffire.apothic_attributes.modifiers.StackAttributeModifiers" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$AttributeModifier$$Type} from "net.minecraft.world.entity.ai.attributes.AttributeModifier"
 import {$StackAttributeModifiers$Entry, $StackAttributeModifiers$Entry$$Type} from "dev.shadowsoffire.apothic_attributes.modifiers.StackAttributeModifiers$Entry"
-import {$ItemAttributeModifiers$$Type} from "net.minecraft.world.item.component.ItemAttributeModifiers"
+import {$AttributeModifier$$Type} from "net.minecraft.world.entity.ai.attributes.AttributeModifier"
 import {$List, $List$$Type} from "java.util.List"
+import {$ItemAttributeModifiers$$Type} from "net.minecraft.world.item.component.ItemAttributeModifiers"
 import {$Holder$$Type} from "net.minecraft.core.Holder"
 import {$StackAttributeModifiers$Builder} from "dev.shadowsoffire.apothic_attributes.modifiers.StackAttributeModifiers$Builder"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$EntityEquipmentSlot$$Type} from "dev.shadowsoffire.apothic_attributes.modifiers.EntityEquipmentSlot"
-import {$BiConsumer$$Type} from "java.util.function.BiConsumer"
 import {$Attribute$$Type} from "net.minecraft.world.entity.ai.attributes.Attribute"
+import {$BiConsumer$$Type} from "java.util.function.BiConsumer"
 import {$EntitySlotGroup$$Type} from "dev.shadowsoffire.apothic_attributes.modifiers.EntitySlotGroup"
 import {$Record} from "java.lang.Record"
 
@@ -107,8 +107,8 @@ export type $StackAttributeModifiers$$Type = ({"modifiers"?: $List$$Type<($Stack
 export type $StackAttributeModifiers$$Original = $StackAttributeModifiers;}
 declare module "dev.shadowsoffire.apothic_attributes.modifiers.StackAttributeModifiers$Builder" {
 import {$AttributeModifier$$Type} from "net.minecraft.world.entity.ai.attributes.AttributeModifier"
-import {$StackAttributeModifiers} from "dev.shadowsoffire.apothic_attributes.modifiers.StackAttributeModifiers"
 import {$Attribute$$Type} from "net.minecraft.world.entity.ai.attributes.Attribute"
+import {$StackAttributeModifiers} from "dev.shadowsoffire.apothic_attributes.modifiers.StackAttributeModifiers"
 import {$EntitySlotGroup$$Type} from "dev.shadowsoffire.apothic_attributes.modifiers.EntitySlotGroup"
 import {$Holder$$Type} from "net.minecraft.core.Holder"
 
@@ -143,12 +143,12 @@ static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($Stack
 constructor(attribute: $Holder$$Type<($Attribute)>, modifier: $AttributeModifier$$Type, slots: $EntitySlotGroup$$Type)
 
 public "attribute"(): $Holder<($Attribute)>
+public "modifier"(): $AttributeModifier
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
 public "matches"(arg0: $Holder$$Type<($Attribute)>, arg1: $ResourceLocation$$Type): boolean
 public "slots"(): $EntitySlotGroup
-public "modifier"(): $AttributeModifier
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -162,13 +162,13 @@ export type $StackAttributeModifiers$Entry$$Original = $StackAttributeModifiers$
 declare module "dev.shadowsoffire.apothic_attributes.modifiers.StackAttributeModifiersEvent" {
 import {$StackAttributeModifiers$Entry, $StackAttributeModifiers$Entry$$Type} from "dev.shadowsoffire.apothic_attributes.modifiers.StackAttributeModifiers$Entry"
 import {$AttributeModifier$$Type} from "net.minecraft.world.entity.ai.attributes.AttributeModifier"
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$List} from "java.util.List"
 import {$Predicate$$Type} from "java.util.function.Predicate"
+import {$Attribute$$Type} from "net.minecraft.world.entity.ai.attributes.Attribute"
 import {$Event} from "net.neoforged.bus.api.Event"
 import {$StackAttributeModifiers, $StackAttributeModifiers$$Type} from "dev.shadowsoffire.apothic_attributes.modifiers.StackAttributeModifiers"
-import {$Attribute$$Type} from "net.minecraft.world.entity.ai.attributes.Attribute"
 import {$EntitySlotGroup$$Type} from "dev.shadowsoffire.apothic_attributes.modifiers.EntitySlotGroup"
 import {$Holder$$Type} from "net.minecraft.core.Holder"
 
@@ -204,8 +204,8 @@ import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
-import {$Predicate, $Predicate$$Type, $Predicate$$Interface} from "java.util.function.Predicate"
 import {$EntityEquipmentSlot, $EntityEquipmentSlot$$Type} from "dev.shadowsoffire.apothic_attributes.modifiers.EntityEquipmentSlot"
+import {$Predicate, $Predicate$$Type, $Predicate$$Interface} from "java.util.function.Predicate"
 import {$HolderSet, $HolderSet$$Type} from "net.minecraft.core.HolderSet"
 import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
 import {$Record} from "java.lang.Record"
@@ -223,11 +223,11 @@ public "test"(arg0: $Holder$$Type<($EntityEquipmentSlot)>): boolean
 public "test"(arg0: any): boolean
 public "id"(): $ResourceLocation
 public "slots"(): $HolderSet<($EntityEquipmentSlot)>
-public "or"(arg0: $Predicate$$Type<($Holder<($EntityEquipmentSlot)>)>): $Predicate<($Holder<($EntityEquipmentSlot)>)>
+public static "not"<T>(arg0: $Predicate$$Type<($Holder<($EntityEquipmentSlot)>)>): $Predicate<($Holder<($EntityEquipmentSlot)>)>
 public static "isEqual"<T>(arg0: any): $Predicate<($Holder<($EntityEquipmentSlot)>)>
 public "negate"(): $Predicate<($Holder<($EntityEquipmentSlot)>)>
 public "and"(arg0: $Predicate$$Type<($Holder<($EntityEquipmentSlot)>)>): $Predicate<($Holder<($EntityEquipmentSlot)>)>
-public static "not"<T>(arg0: $Predicate$$Type<($Holder<($EntityEquipmentSlot)>)>): $Predicate<($Holder<($EntityEquipmentSlot)>)>
+public "or"(arg0: $Predicate$$Type<($Holder<($EntityEquipmentSlot)>)>): $Predicate<($Holder<($EntityEquipmentSlot)>)>
 /**
  * This field is a type stub generated by ProbeJS and shall not be used in any sense.
  */
@@ -241,7 +241,7 @@ public static "not"<T>(arg0: $Predicate$$Type<($Holder<($EntityEquipmentSlot)>)>
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $EntitySlotGroup$$Type = (Special.ApothicAttributesEntitySlotGroup) | ({"id"?: $ResourceLocation$$Type, "slots"?: $HolderSet$$Type<($EntityEquipmentSlot)>}) | ([id?: $ResourceLocation$$Type, slots?: $HolderSet$$Type<($EntityEquipmentSlot)>]);
+export type $EntitySlotGroup$$Type = (Special.ApothicAttributesEntitySlotGroup) | ({"slots"?: $HolderSet$$Type<($EntityEquipmentSlot)>, "id"?: $ResourceLocation$$Type}) | ([slots?: $HolderSet$$Type<($EntityEquipmentSlot)>, id?: $ResourceLocation$$Type]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */

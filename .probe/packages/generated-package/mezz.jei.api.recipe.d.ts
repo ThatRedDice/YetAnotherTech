@@ -45,8 +45,8 @@ export type $IFocus$$Type<V> = ($IFocus<(V)>);
  */
 export type $IFocus$$Original<V> = $IFocus<(V)>;}
 declare module "mezz.jei.api.recipe.IFocusGroup" {
-import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$RecipeIngredientRole$$Type} from "mezz.jei.api.recipe.RecipeIngredientRole"
+import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$IFocus} from "mezz.jei.api.recipe.IFocus"
 import {$List} from "java.util.List"
 import {$IIngredientType$$Type} from "mezz.jei.api.ingredients.IIngredientType"

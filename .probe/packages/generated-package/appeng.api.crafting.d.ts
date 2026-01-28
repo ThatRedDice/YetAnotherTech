@@ -1,6 +1,6 @@
 declare module "appeng.api.crafting.InvalidPatternTooltipStrategy" {
-import {$Exception, $Exception$$Type} from "java.lang.Exception"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$Exception, $Exception$$Type} from "java.lang.Exception"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$PatternDetailsTooltip, $PatternDetailsTooltip$$Type} from "appeng.api.crafting.PatternDetailsTooltip"
 import {$TooltipFlag, $TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
@@ -28,10 +28,10 @@ import {$List} from "java.util.List"
 import {$AEItemKey} from "appeng.api.stacks.AEItemKey"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$PatternDetailsTooltip} from "appeng.api.crafting.PatternDetailsTooltip"
-import {$GenericStack} from "appeng.api.stacks.GenericStack"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
-import {$IPatternDetails$IInput} from "appeng.api.crafting.IPatternDetails$IInput"
+import {$GenericStack} from "appeng.api.stacks.GenericStack"
 import {$IPatternDetails$PatternInputSink$$Type} from "appeng.api.crafting.IPatternDetails$PatternInputSink"
+import {$IPatternDetails$IInput} from "appeng.api.crafting.IPatternDetails$IInput"
 
 export interface $IPatternDetails$$Interface {
 get "primaryOutput"(): $GenericStack
@@ -71,8 +71,8 @@ get "multiplier"(): long
 export class $IPatternDetails$IInput implements $IPatternDetails$IInput$$Interface {
  "getPossibleInputs"(): ($GenericStack)[]
  "getRemainingKey"(arg0: $AEKey$$Type): $AEKey
- "isValid"(arg0: $AEKey$$Type, arg1: $Level$$Type): boolean
  "getMultiplier"(): long
+ "isValid"(arg0: $AEKey$$Type, arg1: $Level$$Type): boolean
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -139,21 +139,21 @@ static readonly "OUTPUT_TEXT_CRAFTS": $Component
 
 constructor(arg0: $Component$$Type)
 
+public "addInputsAndOutputs"(arg0: $IPatternDetails$$Type): void
 public "addOutput"(arg0: $GenericStack$$Type): void
 public "addOutput"(arg0: $AEKey$$Type, arg1: long): void
-public "addInputsAndOutputs"(arg0: $IPatternDetails$$Type): void
-public "getOutputMethod"(): $Component
-public "setOutputMethod"(arg0: $Component$$Type): void
+public "getInputs"(): $List<($GenericStack)>
 public "addInput"(arg0: $GenericStack$$Type): void
 public "addInput"(arg0: $AEKey$$Type, arg1: long): void
-public "getInputs"(): $List<($GenericStack)>
+public "getOutputMethod"(): $Component
+public "setOutputMethod"(arg0: $Component$$Type): void
 public "getProperties"(): $List<($PatternDetailsTooltip$Property)>
 public "getOutputs"(): $List<($GenericStack)>
 public "addProperty"(arg0: $Component$$Type, arg1: $Component$$Type): void
 public "addProperty"(arg0: $Component$$Type): void
+get "inputs"(): $List<($GenericStack)>
 get "outputMethod"(): $Component
 set "outputMethod"(value: $Component$$Type)
-get "inputs"(): $List<($GenericStack)>
 get "properties"(): $List<($PatternDetailsTooltip$Property)>
 get "outputs"(): $List<($GenericStack)>
 }
@@ -183,7 +183,7 @@ public "hashCode"(): integer
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $PatternDetailsTooltip$Property$$Type = ({"name"?: $Component$$Type, "value"?: $Component$$Type}) | ([name?: $Component$$Type, value?: $Component$$Type]);
+export type $PatternDetailsTooltip$Property$$Type = ({"value"?: $Component$$Type, "name"?: $Component$$Type}) | ([value?: $Component$$Type, name?: $Component$$Type]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */

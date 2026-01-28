@@ -11,12 +11,12 @@ static readonly "SERIALIZER": $IAttachmentSerializer<($CompoundTag), ($Capabilit
 constructor(arg0: $ResourceLocation$$Type)
 
 public "getShaderType"(): $ResourceLocation
-public "setShader"(arg0: $ResourceLocation$$Type): void
 public "getShader"(): $ResourceLocation
+public "setShader"(arg0: $ResourceLocation$$Type): void
 public "getCase"(): $ShaderCase
 get "shaderType"(): $ResourceLocation
-set "shader"(value: $ResourceLocation$$Type)
 get "shader"(): $ResourceLocation
+set "shader"(value: $ResourceLocation$$Type)
 get "case"(): $ShaderCase
 }
 /**
@@ -34,17 +34,17 @@ import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Color4, $Color4$$Type} from "blusunrize.immersiveengineering.api.utils.Color4"
 
 export class $ShaderCase {
-public "getRenderColor"(arg0: StringJS, arg1: integer, arg2: $Color4$$Type): $Color4
-public "getShaderType"(): $ResourceLocation
-public "getTextureReplacement"(arg0: StringJS, arg1: integer): $ResourceLocation
 public "getLayerInsertionIndex"(): integer
 public "shouldRenderGroupForPass"(arg0: StringJS, arg1: integer): boolean
 public "stitchIntoSheet"(): boolean
+public "getTextureReplacement"(arg0: StringJS, arg1: integer): $ResourceLocation
+public "getShaderType"(): $ResourceLocation
+public "getRenderColor"(arg0: StringJS, arg1: integer, arg2: $Color4$$Type): $Color4
 public "getLayers"(): ($ShaderLayer)[]
 public "addLayers"(...arg0: ($ShaderLayer$$Type)[]): $ShaderCase
 public "addLayers"(arg0: integer, ...arg1: ($ShaderLayer$$Type)[]): $ShaderCase
-get "shaderType"(): $ResourceLocation
 get "layerInsertionIndex"(): integer
+get "shaderType"(): $ResourceLocation
 get "layers"(): ($ShaderLayer)[]
 }
 /**
@@ -63,15 +63,15 @@ import {$ShaderCase} from "blusunrize.immersiveengineering.api.shader.ShaderCase
 export interface $CapabilityShader$ShaderWrapper$$Interface {
 get "shaderType"(): $ResourceLocation
 get "case"(): $ShaderCase
-set "shader"(value: $ResourceLocation$$Type)
 get "shader"(): $ResourceLocation
+set "shader"(value: $ResourceLocation$$Type)
 }
 
 export class $CapabilityShader$ShaderWrapper implements $CapabilityShader$ShaderWrapper$$Interface {
  "getShaderType"(): $ResourceLocation
  "getCase"(): $ShaderCase
- "setShader"(arg0: $ResourceLocation$$Type): void
  "getShader"(): $ResourceLocation
+ "setShader"(arg0: $ResourceLocation$$Type): void
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -111,23 +111,23 @@ import {$RenderType, $RenderType$$Type} from "net.minecraft.client.renderer.Rend
 export class $ShaderLayer {
 constructor(arg0: $ResourceLocation$$Type, arg1: integer)
 
-public "setTextureBounds"(...arg0: (double)[]): $ShaderLayer
 public "setCutoutBounds"(...arg0: (double)[]): $ShaderLayer
+public "setTextureBounds"(...arg0: (double)[]): $ShaderLayer
 public "getTextureBounds"(): (double)[]
 public "getCutoutBounds"(): (double)[]
 public "isDynamicLayer"(): boolean
+public "isTranslucent"(): boolean
 public "getTexture"(): $ResourceLocation
 public "getColor"(): $Color4
 public "getRenderType"(arg0: $RenderType$$Type): $RenderType
-public "isTranslucent"(): boolean
-set "textureBounds"(value: (double)[])
 set "cutoutBounds"(value: (double)[])
+set "textureBounds"(value: (double)[])
 get "textureBounds"(): (double)[]
 get "cutoutBounds"(): (double)[]
 get "dynamicLayer"(): boolean
+get "translucent"(): boolean
 get "texture"(): $ResourceLocation
 get "color"(): $Color4
-get "translucent"(): boolean
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_

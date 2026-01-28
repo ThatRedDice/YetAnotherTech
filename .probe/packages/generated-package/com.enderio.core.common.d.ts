@@ -38,21 +38,21 @@ public "connectMany"(arg0: TNode, arg1: $List$$Type<(TNode)>): void
 public "connectMany"(arg0: TNode, arg1: $List$$Type<(TNode)>, arg2: $Consumer$$Type<(TNet)>): void
 public "createNodeList"(): $List<(TNode)>
 public "createEdgeIndices"(): $Network$IndexedEdgeList
-public "isValid"(): boolean
 public "nodes"(): $Set<(TNode)>
-public "remove"(arg0: TNode, arg1: $Consumer$$Type<(TNet)>): void
 public "remove"(arg0: TNode): void
+public "remove"(arg0: TNode, arg1: $Consumer$$Type<(TNet)>): void
 public "isEmpty"(): boolean
 public "contains"(arg0: TNode): boolean
-public "connect"(arg0: TNode, arg1: TNode): void
 public "connect"(arg0: TNode, arg1: TNode, arg2: $Consumer$$Type<(TNet)>): void
+public "connect"(arg0: TNode, arg1: TNode): void
+public "isValid"(): boolean
 public "disconnect"(arg0: TNode, arg1: TNode, arg2: $Consumer$$Type<(TNet)>): void
 public "disconnect"(arg0: TNode, arg1: TNode): void
 public "edges"(): $Stream<($Pair<(TNode), (TNode)>)>
 public "neighbors"(arg0: TNode): $Set<(TNode)>
 get "discarded"(): boolean
-get "valid"(): boolean
 get "empty"(): boolean
+get "valid"(): boolean
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -65,10 +65,10 @@ export type $Network$$Type<TNet, TNode> = ($Network<(TNet), (TNode)>);
 export type $Network$$Original<TNet, TNode> = $Network<(TNet), (TNode)>;}
 declare module "com.enderio.core.common.recipes.WrappedShapedRecipe$Serializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
-import {$ShapedRecipe$$Type} from "net.minecraft.world.item.crafting.ShapedRecipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Function$$Type} from "java.util.function.Function"
+import {$ShapedRecipe$$Type} from "net.minecraft.world.item.crafting.ShapedRecipe"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$WrappedShapedRecipe} from "com.enderio.core.common.recipes.WrappedShapedRecipe"
@@ -123,10 +123,10 @@ import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Prov
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$Codec, $Codec$$Type} from "com.mojang.serialization.Codec"
 import {$RegistryFriendlyByteBuf, $RegistryFriendlyByteBuf$$Type} from "net.minecraft.network.RegistryFriendlyByteBuf"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
-import {$Set} from "java.util.Set"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Tag, $Tag$$Type} from "net.minecraft.nbt.Tag"
+import {$Set} from "java.util.Set"
 import {$Record} from "java.lang.Record"
 
 export class $NetworkDataSlot$CodecType<T> extends $Record implements $NetworkDataSlot$Type$$Interface<(T)> {
@@ -144,8 +144,8 @@ public "read"(arg0: $RegistryFriendlyByteBuf$$Type, arg1: $Supplier$$Type<(T)>):
 public "save"(arg0: $HolderLookup$Provider$$Type, arg1: T): $Tag
 public "parse"(arg0: $HolderLookup$Provider$$Type, arg1: $Tag$$Type, arg2: $Supplier$$Type<(T)>): T
 public "create"(arg0: $Supplier$$Type<(T)>, arg1: $Consumer$$Type<(T)>): $NetworkDataSlot<(T)>
-public static "createList"<T>(arg0: $Codec$$Type<(T)>, arg1: $StreamCodec$$Type<($RegistryFriendlyByteBuf$$Type), (T)>): $NetworkDataSlot$CodecType<($List<(T)>)>
 public "codec"(): $Codec<(T)>
+public static "createList"<T>(arg0: $Codec$$Type<(T)>, arg1: $StreamCodec$$Type<($RegistryFriendlyByteBuf$$Type), (T)>): $NetworkDataSlot$CodecType<($List<(T)>)>
 public static "createSet"<T>(arg0: $Codec$$Type<(T)>, arg1: $StreamCodec$$Type<($RegistryFriendlyByteBuf$$Type), (T)>): $NetworkDataSlot$CodecType<($Set<(T)>)>
 public "hashFunction"(): $Function<(T), (integer)>
 }
@@ -309,8 +309,8 @@ import {$ShapedRecipePattern} from "net.minecraft.world.item.crafting.ShapedReci
 import {$Ingredient} from "net.minecraft.world.item.crafting.Ingredient"
 import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$ShapedRecipe} from "net.minecraft.world.item.crafting.ShapedRecipe"
-import {$CraftingBookCategory} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$CraftingBookCategory} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$CraftingRecipe$$Interface} from "net.minecraft.world.item.crafting.CraftingRecipe"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
@@ -323,14 +323,14 @@ public "assemble"(arg0: $CraftingInput$$Type, arg1: $HolderLookup$Provider$$Type
 public "assemble"(arg0: $RecipeInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
 public "getRemainingItems"(arg0: $CraftingInput$$Type): $NonNullList<($ItemStack)>
 public "getRemainingItems"(arg0: $RecipeInput$$Type): $NonNullList
-public "getIngredients"(): $NonNullList<($Ingredient)>
 public "canCraftInDimensions"(arg0: integer, arg1: integer): boolean
 public "getResultItem"(arg0: $HolderLookup$Provider$$Type): $ItemStack
+public "getIngredients"(): $NonNullList<($Ingredient)>
 public "getToastSymbol"(): $ItemStack
 public "isIncomplete"(): boolean
-public "category"(): $CraftingBookCategory
 public "getWidth"(): integer
 public "getHeight"(): integer
+public "category"(): $CraftingBookCategory
 public "matches"(arg0: $CraftingInput$$Type, arg1: $Level$$Type): boolean
 public "matches"(arg0: $RecipeInput$$Type, arg1: $Level$$Type): boolean
 public "getGroup"(): StringJS

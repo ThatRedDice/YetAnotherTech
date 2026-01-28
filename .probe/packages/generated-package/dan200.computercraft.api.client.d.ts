@@ -47,8 +47,8 @@ import {$DataComponentPatch, $DataComponentPatch$$Type} from "net.minecraft.core
 import {$ITurtleUpgrade, $ITurtleUpgrade$$Type} from "dan200.computercraft.api.turtle.ITurtleUpgrade"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$ModelLocation$$Type} from "dan200.computercraft.api.client.ModelLocation"
-import {$TurtleSide, $TurtleSide$$Type} from "dan200.computercraft.api.turtle.TurtleSide"
 import {$ITurtleAccess, $ITurtleAccess$$Type} from "dan200.computercraft.api.turtle.ITurtleAccess"
+import {$TurtleSide, $TurtleSide$$Type} from "dan200.computercraft.api.turtle.TurtleSide"
 import {$Stream} from "java.util.stream.Stream"
 import {$TransformedModel, $TransformedModel$$Type} from "dan200.computercraft.api.client.TransformedModel"
 
@@ -82,8 +82,8 @@ import {$Stream} from "java.util.stream.Stream"
 import {$ModelManager$$Type} from "net.minecraft.client.resources.model.ModelManager"
 
 export class $ModelLocation {
-public static "ofModel"(arg0: $ModelResourceLocation$$Type): $ModelLocation
 public static "ofResource"(arg0: $ResourceLocation$$Type): $ModelLocation
+public static "ofModel"(arg0: $ModelResourceLocation$$Type): $ModelLocation
 public "getDependencies"(): $Stream<($ResourceLocation)>
 public "getModel"(arg0: $ModelManager$$Type): $BakedModel
 get "dependencies"(): $Stream<($ResourceLocation)>
@@ -98,12 +98,12 @@ export type $ModelLocation$$Type = ($ModelLocation);
  */
 export type $ModelLocation$$Original = $ModelLocation;}
 declare module "dan200.computercraft.api.client.TransformedModel" {
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$ModelLocation$$Type} from "dan200.computercraft.api.client.ModelLocation"
-import {$Transformation, $Transformation$$Type} from "com.mojang.math.Transformation"
-import {$ModelResourceLocation$$Type} from "net.minecraft.client.resources.model.ModelResourceLocation"
 import {$BakedModel, $BakedModel$$Type} from "net.minecraft.client.resources.model.BakedModel"
+import {$ModelResourceLocation$$Type} from "net.minecraft.client.resources.model.ModelResourceLocation"
+import {$Transformation, $Transformation$$Type} from "com.mojang.math.Transformation"
 import {$Record} from "java.lang.Record"
 
 export class $TransformedModel extends $Record {

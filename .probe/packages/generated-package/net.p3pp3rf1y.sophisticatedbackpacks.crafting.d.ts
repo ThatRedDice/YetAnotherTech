@@ -16,8 +16,8 @@ readonly "addition": $Ingredient
 
 constructor(arg0: $SmithingTransformRecipe$$Type)
 
-public "assemble"(arg0: $RecipeInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
 public "assemble"(arg0: $SmithingRecipeInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
+public "assemble"(arg0: $RecipeInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
 public "getSerializer"(): $RecipeSerializer<(never)>
 public "isSpecial"(): boolean
 public "getCompose"(): $SmithingTransformRecipe
@@ -36,8 +36,8 @@ export type $SmithingBackpackUpgradeRecipe$$Type = ($SmithingBackpackUpgradeReci
 export type $SmithingBackpackUpgradeRecipe$$Original = $SmithingBackpackUpgradeRecipe;}
 declare module "net.p3pp3rf1y.sophisticatedbackpacks.crafting.SmithingBackpackUpgradeRecipe$Serializer" {
 import {$RecipeWrapperSerializer} from "net.p3pp3rf1y.sophisticatedcore.crafting.RecipeWrapperSerializer"
-import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
 import {$SmithingBackpackUpgradeRecipe} from "net.p3pp3rf1y.sophisticatedbackpacks.crafting.SmithingBackpackUpgradeRecipe"
+import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
 import {$SmithingTransformRecipe} from "net.minecraft.world.item.crafting.SmithingTransformRecipe"
 import {$RecipeSerializer, $RecipeSerializer$$Type} from "net.minecraft.world.item.crafting.RecipeSerializer"
 

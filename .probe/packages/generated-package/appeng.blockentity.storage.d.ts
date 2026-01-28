@@ -1,14 +1,14 @@
 declare module "appeng.blockentity.storage.SkyChestBlockEntity" {
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$AEBaseInvBlockEntity} from "appeng.blockentity.AEBaseInvBlockEntity"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$AEBaseInvBlockEntity} from "appeng.blockentity.AEBaseInvBlockEntity"
 import {$InternalInventory} from "appeng.api.inventories.InternalInventory"
 import {$ClientTickingBlockEntity$$Interface} from "appeng.blockentity.ClientTickingBlockEntity"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
-import {$LidBlockEntity$$Interface} from "net.minecraft.world.level.block.entity.LidBlockEntity"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
+import {$LidBlockEntity$$Interface} from "net.minecraft.world.level.block.entity.LidBlockEntity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
@@ -44,8 +44,8 @@ import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$AEBaseBlockEntity} from "appeng.blockentity.AEBaseBlockEntity"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$IFluidTank} from "net.neoforged.neoforge.fluids.IFluidTank"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$IFluidHandler} from "net.neoforged.neoforge.fluids.capability.IFluidHandler"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
@@ -58,8 +58,8 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 constructor(arg0: $BlockEntityType$$Type<(never)>, arg1: $BlockPos$$Type, arg2: $BlockState$$Type)
 
 public "saveAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
-public "onPlayerUse"(arg0: $Player$$Type, arg1: $InteractionHand$$Type): boolean
 public "loadTag"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
+public "onPlayerUse"(arg0: $Player$$Type, arg1: $InteractionHand$$Type): boolean
 public "getTank"(): $IFluidTank
 public "getFluidHandler"(): $IFluidHandler
 public static "tryClear"(arg0: any): void
@@ -83,18 +83,18 @@ import {$IGridNodeListener$State$$Type} from "appeng.api.networking.IGridNodeLis
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$KeyTypeSelection} from "appeng.api.util.KeyTypeSelection"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
-import {$InternalInventory} from "appeng.api.inventories.InternalInventory"
 import {$Actionable$$Type} from "appeng.api.config.Actionable"
+import {$InternalInventory} from "appeng.api.inventories.InternalInventory"
 import {$IStorageProvider$$Interface} from "appeng.api.storage.IStorageProvider"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$AppEngInternalInventory$$Type} from "appeng.util.inv.AppEngInternalInventory"
 import {$IStorageMounts$$Type} from "appeng.api.storage.IStorageMounts"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$IMEChest$$Interface} from "appeng.api.implementations.blockentities.IMEChest"
-import {$IConfigManager} from "appeng.api.util.IConfigManager"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$IFluidHandler} from "net.neoforged.neoforge.fluids.capability.IFluidHandler"
+import {$IConfigManager} from "appeng.api.util.IConfigManager"
+import {$IMEChest$$Interface} from "appeng.api.implementations.blockentities.IMEChest"
 import {$IUpgradeInventory} from "appeng.api.upgrades.IUpgradeInventory"
+import {$IFluidHandler} from "net.neoforged.neoforge.fluids.capability.IFluidHandler"
 import {$ISubMenu$$Type} from "appeng.menu.ISubMenu"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$ServerTickingBlockEntity$$Interface} from "appeng.blockentity.ServerTickingBlockEntity"
@@ -106,10 +106,10 @@ import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$IEnergySource} from "appeng.api.networking.energy.IEnergySource"
 import {$MEStorage} from "appeng.api.storage.MEStorage"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
-import {$IPriorityHost$$Interface} from "appeng.helpers.IPriorityHost"
 import {$IManagedGridNode$$Type} from "appeng.api.networking.IManagedGridNode"
-import {$PowerMultiplier$$Type} from "appeng.api.config.PowerMultiplier"
+import {$IPriorityHost$$Interface} from "appeng.helpers.IPriorityHost"
 import {$StorageCell} from "appeng.api.storage.cells.StorageCell"
+import {$PowerMultiplier$$Type} from "appeng.api.config.PowerMultiplier"
 import {$ItemLike$$Type} from "net.minecraft.world.level.ItemLike"
 import {$CellState} from "appeng.api.storage.cells.CellState"
 
@@ -124,12 +124,8 @@ public "serverTick"(): void
 public "isPowered"(): boolean
 public "getCell"(): $ItemStack
 public "saveAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
-public "getCellCount"(): integer
-public "getCellStatus"(arg0: integer): $CellState
-public "openCellInventoryMenu"(arg0: $Player$$Type): void
-public "getMEStorage"(arg0: $Direction$$Type): $MEStorage
-public "mountInventories"(arg0: $IStorageMounts$$Type): void
 public "onMainNodeStateChanged"(arg0: $IGridNodeListener$State$$Type): void
+public "mountInventories"(arg0: $IStorageMounts$$Type): void
 public "getCellInventory"(arg0: integer): $MEStorage
 public "recolourBlock"(arg0: $Direction$$Type, arg1: $AEColor$$Type, arg2: $Player$$Type): boolean
 public "returnToMainMenu"(arg0: $Player$$Type, arg1: $ISubMenu$$Type): void
@@ -139,6 +135,10 @@ public "getLinkStatus"(): $ILinkStatus
 public "onChangeInventory"(arg0: $AppEngInternalInventory$$Type, arg1: integer): void
 public "loadTag"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "getInternalInventory"(): $InternalInventory
+public "getCellCount"(): integer
+public "getCellStatus"(arg0: integer): $CellState
+public "openCellInventoryMenu"(arg0: $Player$$Type): void
+public "getMEStorage"(arg0: $Direction$$Type): $MEStorage
 public "getCellItem"(arg0: integer): $Item
 public "getOriginalCellInventory"(arg0: integer): $StorageCell
 public "isCellBlinking"(arg0: integer): boolean
@@ -152,20 +152,20 @@ public "getCloseHotkey"(): StringJS
 public static "requestUpdate"(arg0: $IManagedGridNode$$Type): void
 public "extractAEPower"(arg0: double, arg1: $Actionable$$Type, arg2: $PowerMultiplier$$Type): double
 public static "empty"(): $IEnergySource
-public "getUpgrades"(): $IUpgradeInventory
 public "getInstalledUpgrades"(arg0: $ItemLike$$Type): integer
 public "isUpgradedWith"(arg0: $ItemLike$$Type): boolean
+public "getUpgrades"(): $IUpgradeInventory
 public "saveChanges"(): void
 public "isClientSide"(): boolean
 public static "tryClear"(arg0: any): void
 get "configManager"(): $IConfigManager
 get "powered"(): boolean
 get "cell"(): $ItemStack
-get "cellCount"(): integer
 get "mainMenuIcon"(): $ItemStack
 get "keyTypeSelection"(): $KeyTypeSelection
 get "linkStatus"(): $ILinkStatus
 get "internalInventory"(): $InternalInventory
+get "cellCount"(): integer
 set "cell"(value: $ItemStack$$Type)
 set "priority"(value: integer)
 get "priority"(): integer
@@ -186,8 +186,8 @@ export type $MEChestBlockEntity$$Type = ($MEChestBlockEntity);
 export type $MEChestBlockEntity$$Original = $MEChestBlockEntity;}
 declare module "appeng.blockentity.storage.IOPortBlockEntity" {
 import {$IGridTickable$$Interface} from "appeng.api.networking.ticking.IGridTickable"
-import {$IGridNodeListener$State$$Type} from "appeng.api.networking.IGridNodeListener$State"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$IGridNodeListener$State$$Type} from "appeng.api.networking.IGridNodeListener$State"
 import {$IUpgradeableObject$$Interface} from "appeng.api.upgrades.IUpgradeableObject"
 import {$List$$Type} from "java.util.List"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
@@ -203,8 +203,8 @@ import {$IUpgradeInventory} from "appeng.api.upgrades.IUpgradeInventory"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$TickRateModulation} from "appeng.api.networking.ticking.TickRateModulation"
-import {$IConfigurableObject$$Interface} from "appeng.api.util.IConfigurableObject"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
+import {$IConfigurableObject$$Interface} from "appeng.api.util.IConfigurableObject"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$IGridNode$$Type} from "appeng.api.networking.IGridNode"
 import {$StorageCell$$Type} from "appeng.api.storage.cells.StorageCell"
@@ -216,12 +216,10 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 
 constructor(arg0: $BlockEntityType$$Type<(never)>, arg1: $BlockPos$$Type, arg2: $BlockState$$Type)
 
-public "getUpgrades"(): $IUpgradeInventory
 public "getConfigManager"(): $IConfigManager
 public "clearContent"(): void
 public "saveAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "addAdditionalDrops"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $List$$Type<($ItemStack$$Type)>): void
-public "matchesFullnessMode"(arg0: $StorageCell$$Type): boolean
 public "getTickingRequest"(arg0: $IGridNode$$Type): $TickingRequest
 public "tickingRequest"(arg0: $IGridNode$$Type, arg1: integer): $TickRateModulation
 public "onMainNodeStateChanged"(arg0: $IGridNodeListener$State$$Type): void
@@ -231,15 +229,17 @@ public "updateRedstoneState"(): void
 public "onChangeInventory"(arg0: $AppEngInternalInventory$$Type, arg1: integer): void
 public "loadTag"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "getInternalInventory"(): $InternalInventory
+public "matchesFullnessMode"(arg0: $StorageCell$$Type): boolean
+public "getUpgrades"(): $IUpgradeInventory
 public "isActive"(): boolean
 public "getInstalledUpgrades"(arg0: $ItemLike$$Type): integer
 public "isUpgradedWith"(arg0: $ItemLike$$Type): boolean
 public "saveChanges"(): void
 public "isClientSide"(): boolean
 public static "tryClear"(arg0: any): void
-get "upgrades"(): $IUpgradeInventory
 get "configManager"(): $IConfigManager
 get "internalInventory"(): $InternalInventory
+get "upgrades"(): $IUpgradeInventory
 get "active"(): boolean
 get "clientSide"(): boolean
 }
@@ -254,14 +254,14 @@ export type $IOPortBlockEntity$$Type = ($IOPortBlockEntity);
 export type $IOPortBlockEntity$$Original = $IOPortBlockEntity;}
 declare module "appeng.blockentity.storage.DriveBlockEntity" {
 import {$IChestOrDrive$$Interface} from "appeng.api.implementations.blockentities.IChestOrDrive"
-import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$IGridNodeListener$State$$Type} from "appeng.api.networking.IGridNodeListener$State"
+import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
 import {$InternalInventory} from "appeng.api.inventories.InternalInventory"
 import {$IStorageProvider$$Interface} from "appeng.api.storage.IStorageProvider"
 import {$AENetworkedInvBlockEntity} from "appeng.blockentity.grid.AENetworkedInvBlockEntity"
-import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$AECableType} from "appeng.api.util.AECableType"
+import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$AppEngInternalInventory$$Type} from "appeng.util.inv.AppEngInternalInventory"
 import {$IStorageMounts$$Type} from "appeng.api.storage.IStorageMounts"
 import {$BlockOrientation$$Type} from "appeng.api.orientation.BlockOrientation"
@@ -276,8 +276,8 @@ import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$MEStorage} from "appeng.api.storage.MEStorage"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$IGridNode} from "appeng.api.networking.IGridNode"
-import {$IPriorityHost$$Interface} from "appeng.helpers.IPriorityHost"
 import {$IManagedGridNode$$Type} from "appeng.api.networking.IManagedGridNode"
+import {$IPriorityHost$$Interface} from "appeng.helpers.IPriorityHost"
 import {$StorageCell} from "appeng.api.storage.cells.StorageCell"
 import {$CellState} from "appeng.api.storage.cells.CellState"
 
@@ -288,19 +288,19 @@ constructor(arg0: $BlockEntityType$$Type<(never)>, arg1: $BlockPos$$Type, arg2: 
 
 public "isPowered"(): boolean
 public "saveAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
-public "getCellCount"(): integer
-public "getCellStatus"(arg0: integer): $CellState
-public "mountInventories"(arg0: $IStorageMounts$$Type): void
 public "onMainNodeStateChanged"(arg0: $IGridNodeListener$State$$Type): void
+public "mountInventories"(arg0: $IStorageMounts$$Type): void
 public "getCableConnectionType"(arg0: $Direction$$Type): $AECableType
 public "getCellInventory"(arg0: integer): $MEStorage
 public "returnToMainMenu"(arg0: $Player$$Type, arg1: $ISubMenu$$Type): void
 public "getMainMenuIcon"(): $ItemStack
 public "onChangeInventory"(arg0: $AppEngInternalInventory$$Type, arg1: integer): void
-public "onReady"(): void
 public "getGridConnectableSides"(arg0: $BlockOrientation$$Type): $Set<($Direction)>
 public "loadTag"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
+public "onReady"(): void
 public "getInternalInventory"(): $InternalInventory
+public "getCellCount"(): integer
+public "getCellStatus"(arg0: integer): $CellState
 public "getCellItem"(arg0: integer): $Item
 public "getOriginalCellInventory"(arg0: integer): $StorageCell
 public "isCellBlinking"(arg0: integer): boolean
@@ -314,9 +314,9 @@ public "saveChanges"(): void
 public "isClientSide"(): boolean
 public static "tryClear"(arg0: any): void
 get "powered"(): boolean
-get "cellCount"(): integer
 get "mainMenuIcon"(): $ItemStack
 get "internalInventory"(): $InternalInventory
+get "cellCount"(): integer
 set "priority"(value: integer)
 get "priority"(): integer
 get "modelData"(): $ModelData

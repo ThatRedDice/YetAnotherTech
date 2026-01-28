@@ -153,9 +153,9 @@ export interface $ComponentExtension$$Interface<T extends $Component> {
 }
 
 export class $ComponentExtension<T extends $Component> implements $ComponentExtension$$Interface {
- "allowIndividualOverdraw"(arg0: boolean): T
- "allowIndividualOverdraw"(): boolean
 static "bypassCheck"(component: $Component$$Type, runnable: $Runnable$$Type): void
+ "allowIndividualOverdraw"(): boolean
+ "allowIndividualOverdraw"(arg0: boolean): T
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -167,8 +167,8 @@ export type $ComponentExtension$$Type<T> = ($ComponentExtension<(T)>);
  */
 export type $ComponentExtension$$Original<T> = $ComponentExtension<(T)>;}
 declare module "io.wispforest.accessories.pond.stack.PatchedDataComponentMapExtension" {
-import {$ItemStackMutation} from "io.wispforest.accessories.utils.ItemStackMutation"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$ItemStackMutation} from "io.wispforest.accessories.utils.ItemStackMutation"
 import {$EventStream} from "io.wispforest.owo.util.EventStream"
 
 export interface $PatchedDataComponentMapExtension$$Interface {

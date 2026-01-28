@@ -46,21 +46,21 @@ export type $MenuBuilder$ScreenFactory$$Type<M, T> = ((arg0: M, arg1: $Inventory
 export type $MenuBuilder$ScreenFactory$$Original<M, T> = $MenuBuilder$ScreenFactory<(M), (T)>;}
 declare module "com.tterrag.registrate.builders.BlockBuilder" {
 import {$NonNullBiConsumer$$Type} from "com.tterrag.registrate.util.nullness.NonNullBiConsumer"
-import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$AbstractBuilder} from "com.tterrag.registrate.builders.AbstractBuilder"
+import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$DataGenContext$$Type} from "com.tterrag.registrate.providers.DataGenContext"
 import {$RegistrateBlockLootTables$$Type} from "com.tterrag.registrate.providers.loot.RegistrateBlockLootTables"
 import {$NonNullSupplier, $NonNullSupplier$$Type} from "com.tterrag.registrate.util.nullness.NonNullSupplier"
 import {$BlockEntityBuilder} from "com.tterrag.registrate.builders.BlockEntityBuilder"
 import {$RegistrateBlockstateProvider$$Type} from "com.tterrag.registrate.providers.RegistrateBlockstateProvider"
-import {$Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function$$Type} from "java.util.function.Function"
 import {$BuilderCallback$$Type} from "com.tterrag.registrate.builders.BuilderCallback"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$NonNullFunction$$Type} from "com.tterrag.registrate.util.nullness.NonNullFunction"
 import {$AbstractRegistrate$$Type} from "com.tterrag.registrate.AbstractRegistrate"
+import {$NonNullFunction$$Type} from "com.tterrag.registrate.util.nullness.NonNullFunction"
 import {$NonNullBiFunction$$Type} from "com.tterrag.registrate.util.nullness.NonNullBiFunction"
 import {$BlockColor$$Type} from "net.minecraft.client.color.block.BlockColor"
 import {$NonNullUnaryOperator$$Type} from "com.tterrag.registrate.util.nullness.NonNullUnaryOperator"
@@ -78,25 +78,25 @@ export class $BlockBuilder<T extends $Block, P> extends $AbstractBuilder<($Block
 public "initialProperties"(arg0: $NonNullSupplier$$Type<($Block$$Type)>): $BlockBuilder<(T), (P)>
 public "defaultLang"(): $BlockBuilder<(T), (P)>
 public "loot"(arg0: $NonNullBiConsumer$$Type<($RegistrateBlockLootTables), (T)>): $BlockBuilder<(T), (P)>
-public "clientExtension"(arg0: $NonNullSupplier$$Type<($Supplier$$Type<($IClientBlockExtensions$$Type)>)>): $BlockBuilder<(T), (P)>
+public "simpleItem"(): $BlockBuilder<(T), (P)>
 /**
  * 
  * @deprecated
  */
 public "clientExtension"(arg0: $Function$$Type<(T), ($NonNullSupplier$$Type<($Supplier$$Type<($IClientBlockExtensions$$Type)>)>)>): $BlockBuilder<(T), (P)>
+public "clientExtension"(arg0: $NonNullSupplier$$Type<($Supplier$$Type<($IClientBlockExtensions$$Type)>)>): $BlockBuilder<(T), (P)>
 public "defaultBlockstate"(): $BlockBuilder<(T), (P)>
 public "defaultLoot"(): $BlockBuilder<(T), (P)>
-public "simpleItem"(): $BlockBuilder<(T), (P)>
 public "simpleBlockEntity"<BE extends $BlockEntity>(arg0: $BlockEntityBuilder$BlockEntityFactory$$Type<(BE)>): $BlockBuilder<(T), (P)>
+public "tag"(...arg0: ($TagKey$$Type<($Block$$Type)>)[]): $BlockBuilder<(T), (P)>
 public "item"(): $ItemBuilder<($BlockItem), ($BlockBuilder<(T), (P)>)>
 public "item"<I extends $Item>(arg0: $NonNullBiFunction$$Type<(T), ($Item$Properties), (I)>): $ItemBuilder<(I), ($BlockBuilder<(T), (P)>)>
-public "tag"(...arg0: ($TagKey$$Type<($Block$$Type)>)[]): $BlockBuilder<(T), (P)>
+public "recipe"(arg0: $NonNullBiConsumer$$Type<($DataGenContext<($Block), (T)>), ($RegistrateRecipeProvider)>): $BlockBuilder<(T), (P)>
 public "register"(): $BlockEntry<(T)>
 public "properties"(arg0: $NonNullUnaryOperator$$Type<($BlockBehaviour$Properties)>): $BlockBuilder<(T), (P)>
 public "color"(arg0: $NonNullSupplier$$Type<($Supplier$$Type<($BlockColor$$Type)>)>): $BlockBuilder<(T), (P)>
 public static "create"<T extends $Block, P>(arg0: $AbstractRegistrate$$Type<(never)>, arg1: P, arg2: StringJS, arg3: $BuilderCallback$$Type, arg4: $NonNullFunction$$Type<($BlockBehaviour$Properties), (T)>): $BlockBuilder<(T), (P)>
 public "lang"(arg0: StringJS): $BlockBuilder<(T), (P)>
-public "recipe"(arg0: $NonNullBiConsumer$$Type<($DataGenContext<($Block), (T)>), ($RegistrateRecipeProvider)>): $BlockBuilder<(T), (P)>
 public "blockstate"(arg0: $NonNullBiConsumer$$Type<($DataGenContext<($Block), (T)>), ($RegistrateBlockstateProvider)>): $BlockBuilder<(T), (P)>
 public "blockEntity"<BE extends $BlockEntity>(arg0: $BlockEntityBuilder$BlockEntityFactory$$Type<(BE)>): $BlockEntityBuilder<(BE), ($BlockBuilder<(T), (P)>)>
 /**
@@ -145,8 +145,8 @@ import {$Registry$$Type} from "net.minecraft.core.Registry"
 import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$BuilderCallback$$Type} from "com.tterrag.registrate.builders.BuilderCallback"
 import {$AbstractRegistrate$$Type} from "com.tterrag.registrate.AbstractRegistrate"
-import {$AbstractBuilder} from "com.tterrag.registrate.builders.AbstractBuilder"
 import {$ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
+import {$AbstractBuilder} from "com.tterrag.registrate.builders.AbstractBuilder"
 
 export class $NoConfigBuilder<R, T, P> extends $AbstractBuilder<(R), (T), (P), ($NoConfigBuilder<(R), (T), (P)>)> {
 constructor(arg0: $AbstractRegistrate$$Type<(never)>, arg1: P, arg2: StringJS, arg3: $BuilderCallback$$Type, arg4: $ResourceKey$$Type<($Registry<(R)>)>, arg5: $NonNullSupplier$$Type<(T)>)
@@ -189,6 +189,7 @@ export type $BlockEntityBuilder$BlockEntityFactory$$Type<T> = ((arg0: $BlockEnti
 export type $BlockEntityBuilder$BlockEntityFactory$$Original<T> = $BlockEntityBuilder$BlockEntityFactory<(T)>;}
 declare module "com.tterrag.registrate.builders.EntityBuilder" {
 import {$EntityRenderer$$Type} from "net.minecraft.client.renderer.entity.EntityRenderer"
+import {$RegistryEntry} from "com.tterrag.registrate.util.entry.RegistryEntry"
 import {$EntityType$EntityFactory$$Type} from "net.minecraft.world.entity.EntityType$EntityFactory"
 import {$NonNullBiConsumer$$Type} from "com.tterrag.registrate.util.nullness.NonNullBiConsumer"
 import {$SpawnEggItem} from "net.minecraft.world.item.SpawnEggItem"
@@ -196,11 +197,11 @@ import {$AbstractBuilder} from "com.tterrag.registrate.builders.AbstractBuilder"
 import {$RegistrateEntityLootTables$$Type} from "com.tterrag.registrate.providers.loot.RegistrateEntityLootTables"
 import {$SpawnPlacementType$$Type} from "net.minecraft.world.entity.SpawnPlacementType"
 import {$NonNullSupplier, $NonNullSupplier$$Type} from "com.tterrag.registrate.util.nullness.NonNullSupplier"
-import {$NonNullConsumer$$Type} from "com.tterrag.registrate.util.nullness.NonNullConsumer"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$NonNullConsumer$$Type} from "com.tterrag.registrate.util.nullness.NonNullConsumer"
 import {$BuilderCallback$$Type} from "com.tterrag.registrate.builders.BuilderCallback"
-import {$NonNullFunction$$Type} from "com.tterrag.registrate.util.nullness.NonNullFunction"
 import {$AbstractRegistrate$$Type} from "com.tterrag.registrate.AbstractRegistrate"
+import {$NonNullFunction$$Type} from "com.tterrag.registrate.util.nullness.NonNullFunction"
 import {$Entity} from "net.minecraft.world.entity.Entity"
 import {$EntityType, $EntityType$$Type} from "net.minecraft.world.entity.EntityType"
 import {$RegisterSpawnPlacementsEvent$Operation$$Type} from "net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent$Operation"
@@ -209,7 +210,6 @@ import {$SpawnPlacements$SpawnPredicate$$Type} from "net.minecraft.world.entity.
 import {$EntityRendererProvider$Context$$Type} from "net.minecraft.client.renderer.entity.EntityRendererProvider$Context"
 import {$Heightmap$Types$$Type} from "net.minecraft.world.level.levelgen.Heightmap$Types"
 import {$MobCategory$$Type} from "net.minecraft.world.entity.MobCategory"
-import {$EntityEntry} from "com.tterrag.registrate.util.entry.EntityEntry"
 import {$TagKey$$Type} from "net.minecraft.tags.TagKey"
 import {$AttributeSupplier$Builder$$Type} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
 import {$ItemBuilder} from "com.tterrag.registrate.builders.ItemBuilder"
@@ -229,9 +229,9 @@ public "loot"(arg0: $NonNullBiConsumer$$Type<($RegistrateEntityLootTables), ($En
  */
 public "spawnEgg"(arg0: integer, arg1: integer): $ItemBuilder<($SpawnEggItem), ($EntityBuilder<(T), (P)>)>
 public "renderer"(arg0: $NonNullSupplier$$Type<($NonNullFunction$$Type<($EntityRendererProvider$Context$$Type), ($EntityRenderer$$Type<(T)>)>)>): $EntityBuilder<(T), (P)>
-public "attributes"(arg0: $Supplier$$Type<($AttributeSupplier$Builder$$Type)>): $EntityBuilder<(T), (P)>
 public "tag"(...arg0: ($TagKey$$Type<($EntityType$$Type<(never)>)>)[]): $EntityBuilder<(T), (P)>
-public "register"(): $EntityEntry<(T)>
+public "attributes"(arg0: $Supplier$$Type<($AttributeSupplier$Builder$$Type)>): $EntityBuilder<(T), (P)>
+public "register"(): $RegistryEntry
 public "properties"(arg0: $NonNullConsumer$$Type<($EntityType$Builder<(T)>)>): $EntityBuilder<(T), (P)>
 public static "create"<T extends $Entity, P>(arg0: $AbstractRegistrate$$Type<(never)>, arg1: P, arg2: StringJS, arg3: $BuilderCallback$$Type, arg4: $EntityType$EntityFactory$$Type<(T)>, arg5: $MobCategory$$Type): $EntityBuilder<(T), (P)>
 public "lang"(arg0: StringJS): $EntityBuilder<(T), (P)>
@@ -271,10 +271,10 @@ export type $MenuBuilder$MenuFactory$$Type<T> = ((arg0: $MenuType<(T)>, arg1: in
  */
 export type $MenuBuilder$MenuFactory$$Original<T> = $MenuBuilder$MenuFactory<(T)>;}
 declare module "com.tterrag.registrate.builders.ItemBuilder" {
-import {$ItemEntry} from "com.tterrag.registrate.util.entry.ItemEntry"
+import {$RegistryEntry} from "com.tterrag.registrate.util.entry.RegistryEntry"
 import {$RegistrateItemModelProvider$$Type} from "com.tterrag.registrate.providers.RegistrateItemModelProvider"
-import {$NonNullUnaryOperator$$Type} from "com.tterrag.registrate.util.nullness.NonNullUnaryOperator"
 import {$CreativeModeTabModifier$$Type} from "com.tterrag.registrate.util.CreativeModeTabModifier"
+import {$NonNullUnaryOperator$$Type} from "com.tterrag.registrate.util.nullness.NonNullUnaryOperator"
 import {$NonNullBiConsumer$$Type} from "com.tterrag.registrate.util.nullness.NonNullBiConsumer"
 import {$RegistrateRecipeProvider$$Type} from "com.tterrag.registrate.providers.RegistrateRecipeProvider"
 import {$AbstractBuilder} from "com.tterrag.registrate.builders.AbstractBuilder"
@@ -283,14 +283,14 @@ import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$NonNullSupplier, $NonNullSupplier$$Type} from "com.tterrag.registrate.util.nullness.NonNullSupplier"
 import {$IClientItemExtensions$$Type} from "net.neoforged.neoforge.client.extensions.common.IClientItemExtensions"
 import {$CreativeModeTab$$Type} from "net.minecraft.world.item.CreativeModeTab"
+import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$Function$$Type} from "java.util.function.Function"
 import {$TagKey$$Type} from "net.minecraft.tags.TagKey"
-import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$BuilderCallback$$Type} from "com.tterrag.registrate.builders.BuilderCallback"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item, $Item$$Type} from "net.minecraft.world.item.Item"
-import {$NonNullFunction$$Type} from "com.tterrag.registrate.util.nullness.NonNullFunction"
 import {$AbstractRegistrate$$Type} from "com.tterrag.registrate.AbstractRegistrate"
+import {$NonNullFunction$$Type} from "com.tterrag.registrate.util.nullness.NonNullFunction"
 import {$ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
 import {$ItemColor$$Type} from "net.minecraft.client.color.item.ItemColor"
 
@@ -301,27 +301,27 @@ public "burnTime"(arg0: integer): $ItemBuilder<(T), (P)>
 public "defaultModel"(): $ItemBuilder<(T), (P)>
 public "removeTab"(arg0: $ResourceKey$$Type<($CreativeModeTab)>): $ItemBuilder<(T), (P)>
 public "compostable"(arg0: float): $ItemBuilder<(T), (P)>
-public "clientExtension"(arg0: $NonNullSupplier$$Type<($Supplier$$Type<($IClientItemExtensions$$Type)>)>): $ItemBuilder<(T), (P)>
 /**
  * 
  * @deprecated
  */
 public "clientExtension"(arg0: $Function$$Type<(T), ($NonNullSupplier$$Type<($Supplier$$Type<($IClientItemExtensions$$Type)>)>)>): $ItemBuilder<(T), (P)>
+public "clientExtension"(arg0: $NonNullSupplier$$Type<($Supplier$$Type<($IClientItemExtensions$$Type)>)>): $ItemBuilder<(T), (P)>
 public "model"(arg0: $NonNullBiConsumer$$Type<($DataGenContext<($Item), (T)>), ($RegistrateItemModelProvider)>): $ItemBuilder<(T), (P)>
 public "tag"(...arg0: ($TagKey$$Type<($Item$$Type)>)[]): $ItemBuilder<(T), (P)>
-public "register"(): $ItemEntry<(T)>
+public "recipe"(arg0: $NonNullBiConsumer$$Type<($DataGenContext<($Item), (T)>), ($RegistrateRecipeProvider)>): $ItemBuilder<(T), (P)>
+public "register"(): $RegistryEntry
 public "properties"(arg0: $NonNullUnaryOperator$$Type<($Item$Properties)>): $ItemBuilder<(T), (P)>
-public "tab"(arg0: $ResourceKey$$Type<($CreativeModeTab)>): $ItemBuilder<(T), (P)>
 public "tab"(arg0: $ResourceKey$$Type<($CreativeModeTab)>, arg1: $NonNullBiConsumer$$Type<($DataGenContext<($Item), (T)>), ($CreativeModeTabModifier)>): $ItemBuilder<(T), (P)>
 /**
  * 
  * @deprecated
  */
 public "tab"(arg0: $ResourceKey$$Type<($CreativeModeTab)>, arg1: $Consumer$$Type<($CreativeModeTabModifier)>): $ItemBuilder<(T), (P)>
+public "tab"(arg0: $ResourceKey$$Type<($CreativeModeTab)>): $ItemBuilder<(T), (P)>
 public "color"(arg0: $NonNullSupplier$$Type<($Supplier$$Type<($ItemColor$$Type)>)>): $ItemBuilder<(T), (P)>
 public static "create"<T extends $Item, P>(arg0: $AbstractRegistrate$$Type<(never)>, arg1: P, arg2: StringJS, arg3: $BuilderCallback$$Type, arg4: $NonNullFunction$$Type<($Item$Properties), (T)>): $ItemBuilder<(T), (P)>
 public "lang"(arg0: StringJS): $ItemBuilder<(T), (P)>
-public "recipe"(arg0: $NonNullBiConsumer$$Type<($DataGenContext<($Item), (T)>), ($RegistrateRecipeProvider)>): $ItemBuilder<(T), (P)>
 public static "lazy"<T>(arg0: $Supplier$$Type<(T)>): $NonNullSupplier<(T)>
 public static "of"<T>(arg0: $Supplier$$Type<(T)>, arg1: $NonNullSupplier$$Type<(StringJS)>): $NonNullSupplier<(T)>
 public static "of"<T>(arg0: $Supplier$$Type<(T)>): $NonNullSupplier<(T)>
@@ -337,23 +337,23 @@ export type $ItemBuilder$$Type<T, P> = ($ItemBuilder<(T), (P)>);
 export type $ItemBuilder$$Original<T, P> = $ItemBuilder<(T), (P)>;}
 declare module "com.tterrag.registrate.builders.MenuBuilder" {
 import {$MenuBuilder$MenuFactory$$Type} from "com.tterrag.registrate.builders.MenuBuilder$MenuFactory"
+import {$RegistryEntry} from "com.tterrag.registrate.util.entry.RegistryEntry"
 import {$Screen} from "net.minecraft.client.gui.screens.Screen"
 import {$AbstractBuilder} from "com.tterrag.registrate.builders.AbstractBuilder"
 import {$NonNullSupplier, $NonNullSupplier$$Type} from "com.tterrag.registrate.util.nullness.NonNullSupplier"
 import {$AbstractContainerMenu} from "net.minecraft.world.inventory.AbstractContainerMenu"
 import {$Supplier$$Type} from "java.util.function.Supplier"
-import {$BuilderCallback$$Type} from "com.tterrag.registrate.builders.BuilderCallback"
 import {$MenuType} from "net.minecraft.world.inventory.MenuType"
 import {$MenuBuilder$ScreenFactory$$Type} from "com.tterrag.registrate.builders.MenuBuilder$ScreenFactory"
+import {$BuilderCallback$$Type} from "com.tterrag.registrate.builders.BuilderCallback"
 import {$AbstractRegistrate$$Type} from "com.tterrag.registrate.AbstractRegistrate"
-import {$MenuEntry} from "com.tterrag.registrate.util.entry.MenuEntry"
 import {$MenuBuilder$ForgeMenuFactory$$Type} from "com.tterrag.registrate.builders.MenuBuilder$ForgeMenuFactory"
 
 export class $MenuBuilder<T extends $AbstractContainerMenu, S extends $Screen, P> extends $AbstractBuilder<($MenuType<(never)>), ($MenuType<(T)>), (P), ($MenuBuilder<(T), (S), (P)>)> {
 constructor(arg0: $AbstractRegistrate$$Type<(never)>, arg1: P, arg2: StringJS, arg3: $BuilderCallback$$Type, arg4: $MenuBuilder$ForgeMenuFactory$$Type<(T)>, arg5: $NonNullSupplier$$Type<($MenuBuilder$ScreenFactory$$Type<(T), (S)>)>)
 constructor(arg0: $AbstractRegistrate$$Type<(never)>, arg1: P, arg2: StringJS, arg3: $BuilderCallback$$Type, arg4: $MenuBuilder$MenuFactory$$Type<(T)>, arg5: $NonNullSupplier$$Type<($MenuBuilder$ScreenFactory$$Type<(T), (S)>)>)
 
-public "register"(): $MenuEntry<(T)>
+public "register"(): $RegistryEntry
 public static "lazy"<T>(arg0: $Supplier$$Type<(T)>): $NonNullSupplier<(T)>
 public static "of"<T>(arg0: $Supplier$$Type<(T)>, arg1: $NonNullSupplier$$Type<(StringJS)>): $NonNullSupplier<(T)>
 public static "of"<T>(arg0: $Supplier$$Type<(T)>): $NonNullSupplier<(T)>
@@ -368,17 +368,17 @@ export type $MenuBuilder$$Type<T, S, P> = ($MenuBuilder<(T), (S), (P)>);
  */
 export type $MenuBuilder$$Original<T, S, P> = $MenuBuilder<(T), (S), (P)>;}
 declare module "com.tterrag.registrate.builders.Builder" {
-import {$RegistryEntry, $RegistryEntry$$Type} from "com.tterrag.registrate.util.entry.RegistryEntry"
 import {$RegistrateProvider} from "com.tterrag.registrate.providers.RegistrateProvider"
+import {$RegistryEntry, $RegistryEntry$$Type} from "com.tterrag.registrate.util.entry.RegistryEntry"
 import {$NonNullBiConsumer$$Type} from "com.tterrag.registrate.util.nullness.NonNullBiConsumer"
 import {$DataGenContext$$Type} from "com.tterrag.registrate.providers.DataGenContext"
 import {$NonNullSupplier, $NonNullSupplier$$Type, $NonNullSupplier$$Interface} from "com.tterrag.registrate.util.nullness.NonNullSupplier"
 import {$Registry, $Registry$$Type} from "net.minecraft.core.Registry"
-import {$NonNullConsumer$$Type} from "com.tterrag.registrate.util.nullness.NonNullConsumer"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$NonNullConsumer$$Type} from "com.tterrag.registrate.util.nullness.NonNullConsumer"
 import {$DataMapType$$Type} from "net.neoforged.neoforge.registries.datamaps.DataMapType"
-import {$NonNullFunction$$Type} from "com.tterrag.registrate.util.nullness.NonNullFunction"
 import {$AbstractRegistrate} from "com.tterrag.registrate.AbstractRegistrate"
+import {$NonNullFunction$$Type} from "com.tterrag.registrate.util.nullness.NonNullFunction"
 import {$ResourceKey, $ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
 import {$ProviderType$$Type} from "com.tterrag.registrate.providers.ProviderType"
 
@@ -397,8 +397,8 @@ export class $Builder<R, T, P, S extends $Builder<(object), (object), (object), 
  "dataMap"<D>(arg0: $DataMapType$$Type<(R), (D)>, arg1: D): S
  "dataMap"<D>(arg0: $DataMapType$$Type<(R), (D)>, arg1: $NonNullFunction$$Type<($DataGenContext<(R), (T)>), (D)>): S
  "onRegisterAfter"<OR>(arg0: $ResourceKey$$Type<($Registry<(OR)>)>, arg1: $NonNullConsumer$$Type<(T)>): S
- "getEntry"(): T
  "setData"<D extends $RegistrateProvider>(arg0: $ProviderType$$Type<(D)>, arg1: $NonNullBiConsumer$$Type<($DataGenContext<(R), (T)>), (D)>): S
+ "getEntry"(): T
  "getName"(): StringJS
  "get"(): $RegistryEntry<(R), (T)>
  "transform"<R2, T2, P2, S2 extends $Builder<(object), (object), (object), (object)>>(arg0: $NonNullFunction$$Type<(S), (S2)>): S2
@@ -429,28 +429,28 @@ import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.
 import {$NonNullSupplier, $NonNullSupplier$$Type} from "com.tterrag.registrate.util.nullness.NonNullSupplier"
 import {$BucketItem} from "net.minecraft.world.item.BucketItem"
 import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
-import {$NonNullConsumer$$Type} from "com.tterrag.registrate.util.nullness.NonNullConsumer"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$NonNullConsumer$$Type} from "com.tterrag.registrate.util.nullness.NonNullConsumer"
 import {$BuilderCallback$$Type} from "com.tterrag.registrate.builders.BuilderCallback"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$BlockBuilder} from "com.tterrag.registrate.builders.BlockBuilder"
 import {$BaseFlowingFluid$Properties$$Type} from "net.neoforged.neoforge.fluids.BaseFlowingFluid$Properties"
-import {$NonNullFunction$$Type} from "com.tterrag.registrate.util.nullness.NonNullFunction"
 import {$AbstractRegistrate$$Type} from "com.tterrag.registrate.AbstractRegistrate"
+import {$NonNullFunction$$Type} from "com.tterrag.registrate.util.nullness.NonNullFunction"
 import {$NonNullBiFunction$$Type} from "com.tterrag.registrate.util.nullness.NonNullBiFunction"
 import {$FluidType$$Type} from "net.neoforged.neoforge.fluids.FluidType"
 import {$Fluid, $Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 import {$FluidBuilder$FluidTypeFactory$$Type} from "com.tterrag.registrate.builders.FluidBuilder$FluidTypeFactory"
 import {$TagKey$$Type} from "net.minecraft.tags.TagKey"
 import {$ItemBuilder} from "com.tterrag.registrate.builders.ItemBuilder"
-import {$RenderType$$Type} from "net.minecraft.client.renderer.RenderType"
 import {$LiquidBlock} from "net.minecraft.world.level.block.LiquidBlock"
+import {$RenderType$$Type} from "net.minecraft.client.renderer.RenderType"
 import {$BaseFlowingFluid, $BaseFlowingFluid$$Type} from "net.neoforged.neoforge.fluids.BaseFlowingFluid"
 import {$BaseFlowingFluid$Flowing} from "net.neoforged.neoforge.fluids.BaseFlowingFluid$Flowing"
 
 export class $FluidBuilder<T extends $BaseFlowingFluid, P> extends $AbstractBuilder<($Fluid), (T), (P), ($FluidBuilder<(T), (P)>)> {
-constructor(arg0: $AbstractRegistrate$$Type<(never)>, arg1: P, arg2: StringJS, arg3: $BuilderCallback$$Type, arg4: $ResourceLocation$$Type, arg5: $ResourceLocation$$Type, arg6: $NonNullSupplier$$Type<($FluidType$$Type)>, arg7: $NonNullFunction$$Type<($BaseFlowingFluid$Properties), (T)>)
 constructor(arg0: $AbstractRegistrate$$Type<(never)>, arg1: P, arg2: StringJS, arg3: $BuilderCallback$$Type, arg4: $ResourceLocation$$Type, arg5: $ResourceLocation$$Type, arg6: $FluidBuilder$FluidTypeFactory$$Type, arg7: $NonNullFunction$$Type<($BaseFlowingFluid$Properties), (T)>)
+constructor(arg0: $AbstractRegistrate$$Type<(never)>, arg1: P, arg2: StringJS, arg3: $BuilderCallback$$Type, arg4: $ResourceLocation$$Type, arg5: $ResourceLocation$$Type, arg6: $NonNullSupplier$$Type<($FluidType$$Type)>, arg7: $NonNullFunction$$Type<($BaseFlowingFluid$Properties), (T)>)
 
 public "fluidProperties"(arg0: $NonNullConsumer$$Type<($BaseFlowingFluid$Properties)>): $FluidBuilder<(T), (P)>
 public "defaultLang"(): $FluidBuilder<(T), (P)>
@@ -466,13 +466,13 @@ public "register"(): $RegistryEntry
 public "source"(arg0: $NonNullFunction$$Type<($BaseFlowingFluid$Properties), ($BaseFlowingFluid$$Type)>): $FluidBuilder<(T), (P)>
 public "properties"(arg0: $NonNullConsumer$$Type<($FluidType$Properties)>): $FluidBuilder<(T), (P)>
 public static "create"<P>(arg0: $AbstractRegistrate$$Type<(never)>, arg1: P, arg2: StringJS, arg3: $BuilderCallback$$Type, arg4: $ResourceLocation$$Type, arg5: $ResourceLocation$$Type, arg6: $FluidBuilder$FluidTypeFactory$$Type): $FluidBuilder<($BaseFlowingFluid$Flowing), (P)>
-public static "create"<T extends $BaseFlowingFluid, P>(arg0: $AbstractRegistrate$$Type<(never)>, arg1: P, arg2: StringJS, arg3: $BuilderCallback$$Type, arg4: $ResourceLocation$$Type, arg5: $ResourceLocation$$Type, arg6: $NonNullSupplier$$Type<($FluidType$$Type)>, arg7: $NonNullFunction$$Type<($BaseFlowingFluid$Properties), (T)>): $FluidBuilder<(T), (P)>
-public static "create"<T extends $BaseFlowingFluid, P>(arg0: $AbstractRegistrate$$Type<(never)>, arg1: P, arg2: StringJS, arg3: $BuilderCallback$$Type, arg4: $ResourceLocation$$Type, arg5: $ResourceLocation$$Type, arg6: $FluidBuilder$FluidTypeFactory$$Type, arg7: $NonNullFunction$$Type<($BaseFlowingFluid$Properties), (T)>): $FluidBuilder<(T), (P)>
 public static "create"<P>(arg0: $AbstractRegistrate$$Type<(never)>, arg1: P, arg2: StringJS, arg3: $BuilderCallback$$Type, arg4: $ResourceLocation$$Type, arg5: $ResourceLocation$$Type): $FluidBuilder<($BaseFlowingFluid$Flowing), (P)>
+public static "create"<T extends $BaseFlowingFluid, P>(arg0: $AbstractRegistrate$$Type<(never)>, arg1: P, arg2: StringJS, arg3: $BuilderCallback$$Type, arg4: $ResourceLocation$$Type, arg5: $ResourceLocation$$Type, arg6: $NonNullSupplier$$Type<($FluidType$$Type)>, arg7: $NonNullFunction$$Type<($BaseFlowingFluid$Properties), (T)>): $FluidBuilder<(T), (P)>
 public static "create"<P>(arg0: $AbstractRegistrate$$Type<(never)>, arg1: P, arg2: StringJS, arg3: $BuilderCallback$$Type, arg4: $ResourceLocation$$Type, arg5: $ResourceLocation$$Type, arg6: $NonNullSupplier$$Type<($FluidType$$Type)>): $FluidBuilder<($BaseFlowingFluid$Flowing), (P)>
+public static "create"<T extends $BaseFlowingFluid, P>(arg0: $AbstractRegistrate$$Type<(never)>, arg1: P, arg2: StringJS, arg3: $BuilderCallback$$Type, arg4: $ResourceLocation$$Type, arg5: $ResourceLocation$$Type, arg6: $FluidBuilder$FluidTypeFactory$$Type, arg7: $NonNullFunction$$Type<($BaseFlowingFluid$Properties), (T)>): $FluidBuilder<(T), (P)>
 public static "create"<T extends $BaseFlowingFluid, P>(arg0: $AbstractRegistrate$$Type<(never)>, arg1: P, arg2: StringJS, arg3: $BuilderCallback$$Type, arg4: $ResourceLocation$$Type, arg5: $ResourceLocation$$Type, arg6: $NonNullFunction$$Type<($BaseFlowingFluid$Properties), (T)>): $FluidBuilder<(T), (P)>
-public "block"(): $BlockBuilder<($LiquidBlock), ($FluidBuilder<(T), (P)>)>
 public "block"<B extends $LiquidBlock>(arg0: $NonNullBiFunction$$Type<(T), ($BlockBehaviour$Properties), (B)>): $BlockBuilder<(B), ($FluidBuilder<(T), (P)>)>
+public "block"(): $BlockBuilder<($LiquidBlock), ($FluidBuilder<(T), (P)>)>
 public "lang"(arg0: StringJS): $FluidBuilder<(T), (P)>
 public "removeTag"(...arg0: ($TagKey$$Type<($Fluid$$Type)>)[]): $FluidBuilder<(T), (P)>
 public "renderType"(arg0: $Supplier$$Type<($Supplier$$Type<($RenderType$$Type)>)>): $FluidBuilder<(T), (P)>
@@ -490,21 +490,21 @@ export type $FluidBuilder$$Type<T, P> = ($FluidBuilder<(T), (P)>);
  */
 export type $FluidBuilder$$Original<T, P> = $FluidBuilder<(T), (P)>;}
 declare module "com.tterrag.registrate.builders.AbstractBuilder" {
-import {$RegistryEntry, $RegistryEntry$$Type} from "com.tterrag.registrate.util.entry.RegistryEntry"
 import {$RegistrateProvider} from "com.tterrag.registrate.providers.RegistrateProvider"
+import {$RegistryEntry, $RegistryEntry$$Type} from "com.tterrag.registrate.util.entry.RegistryEntry"
 import {$NonNullBiConsumer$$Type} from "com.tterrag.registrate.util.nullness.NonNullBiConsumer"
 import {$TagsProvider} from "net.minecraft.data.tags.TagsProvider"
-import {$DataGenContext$$Type} from "com.tterrag.registrate.providers.DataGenContext"
 import {$Builder, $Builder$$Interface} from "com.tterrag.registrate.builders.Builder"
+import {$DataGenContext$$Type} from "com.tterrag.registrate.providers.DataGenContext"
 import {$NonNullSupplier, $NonNullSupplier$$Type} from "com.tterrag.registrate.util.nullness.NonNullSupplier"
 import {$Registry, $Registry$$Type} from "net.minecraft.core.Registry"
+import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$TagKey$$Type} from "net.minecraft.tags.TagKey"
 import {$NonNullConsumer$$Type} from "com.tterrag.registrate.util.nullness.NonNullConsumer"
-import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$BuilderCallback$$Type} from "com.tterrag.registrate.builders.BuilderCallback"
 import {$DataMapType$$Type} from "net.neoforged.neoforge.registries.datamaps.DataMapType"
-import {$NonNullFunction$$Type} from "com.tterrag.registrate.util.nullness.NonNullFunction"
 import {$AbstractRegistrate, $AbstractRegistrate$$Type} from "com.tterrag.registrate.AbstractRegistrate"
+import {$NonNullFunction$$Type} from "com.tterrag.registrate.util.nullness.NonNullFunction"
 import {$ResourceKey, $ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
 import {$ProviderType$$Type} from "com.tterrag.registrate.providers.ProviderType"
 
@@ -512,8 +512,8 @@ export class $AbstractBuilder<R, T, P, S extends $AbstractBuilder<(object), (obj
 constructor(arg0: $AbstractRegistrate$$Type<(never)>, arg1: P, arg2: StringJS, arg3: $BuilderCallback$$Type, arg4: $ResourceKey$$Type<($Registry<(R)>)>)
 
 public "asSupplier"(): $NonNullSupplier<(T)>
-public "asOptional"(): S
 public "getRegistryKey"(): $ResourceKey<($Registry<(R)>)>
+public "asOptional"(): S
 public "tag"<TP extends $TagsProvider<(object)>>(arg0: $ProviderType$$Type<(TP)>, ...arg1: ($TagKey$$Type<(R)>)[]): S
 public "getName"(): StringJS
 public "register"(): $RegistryEntry<(R), (T)>
@@ -526,8 +526,8 @@ public "addMiscData"<D extends $RegistrateProvider>(arg0: $ProviderType$$Type<(D
 public "dataMap"<D>(arg0: $DataMapType$$Type<(R), (D)>, arg1: D): S
 public "dataMap"<D>(arg0: $DataMapType$$Type<(R), (D)>, arg1: $NonNullFunction$$Type<($DataGenContext<(R), (T)>), (D)>): S
 public "onRegisterAfter"<OR>(arg0: $ResourceKey$$Type<($Registry<(OR)>)>, arg1: $NonNullConsumer$$Type<(T)>): S
-public "getEntry"(): T
 public "setData"<D extends $RegistrateProvider>(arg0: $ProviderType$$Type<(D)>, arg1: $NonNullBiConsumer$$Type<($DataGenContext<(R), (T)>), (D)>): S
+public "getEntry"(): T
 public "get"(): $RegistryEntry<(R), (T)>
 public "transform"<R2, T2, P2, S2 extends $Builder<(object), (object), (object), (object)>>(arg0: $NonNullFunction$$Type<(S), (S2)>): S2
 public "build"(): P
@@ -563,8 +563,8 @@ import {$BlockEntityType} from "net.minecraft.world.level.block.entity.BlockEnti
 import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$BuilderCallback$$Type} from "com.tterrag.registrate.builders.BuilderCallback"
 import {$BlockEntityRenderer$$Type} from "net.minecraft.client.renderer.blockentity.BlockEntityRenderer"
-import {$NonNullFunction$$Type} from "com.tterrag.registrate.util.nullness.NonNullFunction"
 import {$AbstractRegistrate$$Type} from "com.tterrag.registrate.AbstractRegistrate"
+import {$NonNullFunction$$Type} from "com.tterrag.registrate.util.nullness.NonNullFunction"
 import {$BlockEntityRendererProvider$Context$$Type} from "net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider$Context"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
 

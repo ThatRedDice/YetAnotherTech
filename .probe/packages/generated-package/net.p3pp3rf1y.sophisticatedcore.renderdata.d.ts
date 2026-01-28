@@ -3,8 +3,8 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
 export class $DisplaySide extends $Enum<($DisplaySide)> implements $StringRepresentable$$Interface {
@@ -19,11 +19,11 @@ public "next"(): $DisplaySide
 public "previous"(): $DisplaySide
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
 }
@@ -121,11 +121,13 @@ import {$RenderInfo$ItemDisplayRenderInfo} from "net.p3pp3rf1y.sophisticatedcore
 import {$IRenderedBatteryUpgrade$BatteryRenderInfo, $IRenderedBatteryUpgrade$BatteryRenderInfo$$Type} from "net.p3pp3rf1y.sophisticatedcore.upgrades.IRenderedBatteryUpgrade$BatteryRenderInfo"
 
 export class $RenderInfo {
-public "getUpgradeItems"(): $List<($ItemStack)>
-public "setUpgradeItems"(arg0: $List$$Type<($ItemStack$$Type)>): void
-public "resetUpgradeInfo"(arg0: boolean): void
-public "setTankRenderInfo"(arg0: $TankPosition$$Type, arg1: $IRenderedTankUpgrade$TankRenderInfo$$Type): void
-public "setBatteryRenderInfo"(arg0: $IRenderedBatteryUpgrade$BatteryRenderInfo$$Type): void
+public "refreshDisplayItemsAndInaccessibleSlots"(arg0: $List$$Type<($RenderInfo$DisplayItem$$Type)>, arg1: $List$$Type<(integer)>): void
+public "refreshItemDisplayRenderInfo"(arg0: $List$$Type<($RenderInfo$DisplayItem$$Type)>, arg1: $List$$Type<(integer)>, arg2: $List$$Type<(integer)>, arg3: $List$$Type<(integer)>, arg4: $List$$Type<(float)>): void
+public "showsCountsAndFillRatios"(): boolean
+public "refreshSlotCountsFillRatiosAndInfiniteSlots"(arg0: $List$$Type<(integer)>, arg1: $List$$Type<(float)>, arg2: $List$$Type<(integer)>): void
+public "setDisplayItemsChangeListener"(arg0: $Consumer$$Type<($RenderInfo)>): void
+public "removeAllUpgradeRenderData"(): void
+public "deserializeFrom"(arg0: $CompoundTag$$Type): void
 public "setUpgradeRenderData"<T extends $IUpgradeRenderData>(arg0: $UpgradeRenderDataType$$Type<(T)>, arg1: T): void
 public "removeUpgradeRenderData"(arg0: $UpgradeRenderDataType$$Type<(never)>): void
 public "getUpgradeRenderData"(): $Map<($UpgradeRenderDataType<(never)>), ($IUpgradeRenderData)>
@@ -134,22 +136,20 @@ public "getTankRenderInfos"(): $Map<($TankPosition), ($IRenderedTankUpgrade$Tank
 public "getBatteryRenderInfo"(): $Optional<($IRenderedBatteryUpgrade$BatteryRenderInfo)>
 public "getNbt"(): $CompoundTag
 public "getItemDisplayRenderInfo"(): $RenderInfo$ItemDisplayRenderInfo
-public "showsCountsAndFillRatios"(): boolean
-public "refreshDisplayItemsAndInaccessibleSlots"(arg0: $List$$Type<($RenderInfo$DisplayItem$$Type)>, arg1: $List$$Type<(integer)>): void
-public "refreshSlotCountsFillRatiosAndInfiniteSlots"(arg0: $List$$Type<(integer)>, arg1: $List$$Type<(float)>, arg2: $List$$Type<(integer)>): void
-public "refreshItemDisplayRenderInfo"(arg0: $List$$Type<($RenderInfo$DisplayItem$$Type)>, arg1: $List$$Type<(integer)>, arg2: $List$$Type<(integer)>, arg3: $List$$Type<(integer)>, arg4: $List$$Type<(float)>): void
-public "setDisplayItemsChangeListener"(arg0: $Consumer$$Type<($RenderInfo)>): void
-public "removeAllUpgradeRenderData"(): void
-public "deserializeFrom"(arg0: $CompoundTag$$Type): void
-get "upgradeItems"(): $List<($ItemStack)>
-set "upgradeItems"(value: $List$$Type<($ItemStack$$Type)>)
-set "batteryRenderInfo"(value: $IRenderedBatteryUpgrade$BatteryRenderInfo$$Type)
+public "getUpgradeItems"(): $List<($ItemStack)>
+public "setUpgradeItems"(arg0: $List$$Type<($ItemStack$$Type)>): void
+public "resetUpgradeInfo"(arg0: boolean): void
+public "setTankRenderInfo"(arg0: $TankPosition$$Type, arg1: $IRenderedTankUpgrade$TankRenderInfo$$Type): void
+public "setBatteryRenderInfo"(arg0: $IRenderedBatteryUpgrade$BatteryRenderInfo$$Type): void
+set "displayItemsChangeListener"(value: $Consumer$$Type<($RenderInfo)>)
 get "upgradeRenderData"(): $Map<($UpgradeRenderDataType<(never)>), ($IUpgradeRenderData)>
 get "tankRenderInfos"(): $Map<($TankPosition), ($IRenderedTankUpgrade$TankRenderInfo)>
 get "batteryRenderInfo"(): $Optional<($IRenderedBatteryUpgrade$BatteryRenderInfo)>
 get "nbt"(): $CompoundTag
 get "itemDisplayRenderInfo"(): $RenderInfo$ItemDisplayRenderInfo
-set "displayItemsChangeListener"(value: $Consumer$$Type<($RenderInfo)>)
+get "upgradeItems"(): $List<($ItemStack)>
+set "upgradeItems"(value: $List$$Type<($ItemStack$$Type)>)
+set "batteryRenderInfo"(value: $IRenderedBatteryUpgrade$BatteryRenderInfo$$Type)
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -172,20 +172,20 @@ static readonly "SLOT_COUNTS_TAG": StringJS
 
 constructor()
 
-public "getDisplayItems"(): $List<($RenderInfo$DisplayItem)>
-public "getDisplayItem"(): $Optional<($RenderInfo$DisplayItem)>
-public "getInaccessibleSlots"(): $List<(integer)>
+public "getInfiniteSlots"(): $List<(integer)>
 public "getSlotCounts"(): $List<(integer)>
 public "getSlotFillRatios"(): $List<(float)>
-public "getInfiniteSlots"(): $List<(integer)>
+public "getInaccessibleSlots"(): $List<(integer)>
+public "getDisplayItems"(): $List<($RenderInfo$DisplayItem)>
+public "getDisplayItem"(): $Optional<($RenderInfo$DisplayItem)>
 public static "deserialize"(arg0: $CompoundTag$$Type): $RenderInfo$ItemDisplayRenderInfo
 public "serialize"(): $CompoundTag
-get "displayItems"(): $List<($RenderInfo$DisplayItem)>
-get "displayItem"(): $Optional<($RenderInfo$DisplayItem)>
-get "inaccessibleSlots"(): $List<(integer)>
+get "infiniteSlots"(): $List<(integer)>
 get "slotCounts"(): $List<(integer)>
 get "slotFillRatios"(): $List<(float)>
-get "infiniteSlots"(): $List<(integer)>
+get "inaccessibleSlots"(): $List<(integer)>
+get "displayItems"(): $List<($RenderInfo$DisplayItem)>
+get "displayItem"(): $Optional<($RenderInfo$DisplayItem)>
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -201,8 +201,8 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
 export class $TankPosition extends $Enum<($TankPosition)> implements $StringRepresentable$$Interface {
@@ -213,11 +213,11 @@ public static "values"(): ($TankPosition)[]
 public static "valueOf"(arg0: StringJS): $TankPosition
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
 }

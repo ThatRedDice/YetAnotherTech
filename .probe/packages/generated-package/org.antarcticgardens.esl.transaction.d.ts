@@ -78,8 +78,8 @@ export type $SnapshotParticipant$$Original<T> = $SnapshotParticipant<(T)>;}
 declare module "org.antarcticgardens.esl.transaction.Transaction" {
 import {$AutoCloseable$$Interface} from "java.lang.AutoCloseable"
 import {$TransactionContext$$Interface} from "org.antarcticgardens.esl.transaction.TransactionContext"
-import {$TransactionContext$OuterCloseCallback$$Type} from "org.antarcticgardens.esl.transaction.TransactionContext$OuterCloseCallback"
 import {$TransactionContext$CloseCallback$$Type} from "org.antarcticgardens.esl.transaction.TransactionContext$CloseCallback"
+import {$TransactionContext$OuterCloseCallback$$Type} from "org.antarcticgardens.esl.transaction.TransactionContext$OuterCloseCallback"
 
 export interface $Transaction$$Interface extends $AutoCloseable$$Interface, $TransactionContext$$Interface {
 get "open"(): boolean
@@ -87,10 +87,10 @@ get "nestingDepth"(): integer
 }
 
 export class $Transaction implements $Transaction$$Interface {
+ "abort"(): void
  "commit"(): void
  "isOpen"(): boolean
  "close"(): void
- "abort"(): void
  "openNested"(): $Transaction
  "getNestingDepth"(): integer
  "getOpenTransaction"(arg0: integer): $Transaction
@@ -108,8 +108,8 @@ export type $Transaction$$Type = ($Transaction);
 export type $Transaction$$Original = $Transaction;}
 declare module "org.antarcticgardens.esl.transaction.TransactionContext" {
 import {$Transaction} from "org.antarcticgardens.esl.transaction.Transaction"
-import {$TransactionContext$OuterCloseCallback$$Type} from "org.antarcticgardens.esl.transaction.TransactionContext$OuterCloseCallback"
 import {$TransactionContext$CloseCallback$$Type} from "org.antarcticgardens.esl.transaction.TransactionContext$CloseCallback"
+import {$TransactionContext$OuterCloseCallback$$Type} from "org.antarcticgardens.esl.transaction.TransactionContext$OuterCloseCallback"
 
 export interface $TransactionContext$$Interface {
 get "nestingDepth"(): integer

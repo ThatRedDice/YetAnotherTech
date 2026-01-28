@@ -4,26 +4,26 @@ import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 export class $StoredItemStack {
 constructor(arg0: $ItemStack$$Type, arg1: long)
 constructor(arg0: $ItemStack$$Type, arg1: long, arg2: integer)
-constructor(arg0: $StoredItemStack$$Type)
 constructor(arg0: $ItemStack$$Type)
+constructor(arg0: $StoredItemStack$$Type)
 
 public "getActualStack"(): $ItemStack
 public "equalItem"(arg0: $StoredItemStack$$Type): boolean
 public "getQuantity"(): long
 public "equalDetails"(arg0: $StoredItemStack$$Type): boolean
-public "equals"(arg0: any): boolean
+public "getDisplayName"(): StringJS
 public "equals"(arg0: $StoredItemStack$$Type): boolean
+public "equals"(arg0: any): boolean
 public "hashCode"(): integer
 public static "merge"(arg0: $StoredItemStack$$Type, arg1: $StoredItemStack$$Type): $StoredItemStack
 public "getStack"(): $ItemStack
 public "grow"(arg0: long): void
-public "getDisplayName"(): StringJS
 public "setCount"(arg0: long): void
 public "getMaxStackSize"(): integer
 get "actualStack"(): $ItemStack
 get "quantity"(): long
-get "stack"(): $ItemStack
 get "displayName"(): StringJS
+get "stack"(): $ItemStack
 set "count"(value: long)
 get "maxStackSize"(): integer
 }

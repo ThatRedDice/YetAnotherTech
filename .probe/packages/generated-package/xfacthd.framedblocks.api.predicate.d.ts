@@ -25,10 +25,10 @@ static readonly "DIR_OPPOSITE": $FullFacePredicate
 static readonly "Y_AXIS": $FullFacePredicate
 static readonly "AXIS": $FullFacePredicate
 
- "or"(arg0: $BiPredicate$$Type): $BiPredicate
- "and"(arg0: $BiPredicate$$Type): $BiPredicate
+ "and"(arg0: $BiPredicate$$Type<($BlockState), ($Direction)>): $FullFacePredicate
  "test"(arg0: $BlockState$$Type, arg1: $Direction$$Type): boolean
  "test"(arg0: any, arg1: any): boolean
+ "or"(arg0: $BiPredicate$$Type<($BlockState), ($Direction)>): $FullFacePredicate
  "negate"(): $BiPredicate<($BlockState), ($Direction)>
 }
 /**

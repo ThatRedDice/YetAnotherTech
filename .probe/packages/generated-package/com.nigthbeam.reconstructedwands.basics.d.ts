@@ -103,10 +103,10 @@ readonly "direction": $OptionEnum<($WandOptions$DIRECTION)>
 
 constructor(arg0: $ItemStack$$Type)
 
+public "matchBlocks"(arg0: $Block$$Type, arg1: $Block$$Type): boolean
+public "testLock"(arg0: $WandOptions$LOCK$$Type): boolean
 public "hasUpgrade"(arg0: $IWandUpgrade$$Type): boolean
 public "addUpgrade"(arg0: $IWandUpgrade$$Type): boolean
-public "testLock"(arg0: $WandOptions$LOCK$$Type): boolean
-public "matchBlocks"(arg0: $Block$$Type, arg1: $Block$$Type): boolean
 public "get"(arg0: StringJS): $IOption<(never)>
 public "save"(): void
 }

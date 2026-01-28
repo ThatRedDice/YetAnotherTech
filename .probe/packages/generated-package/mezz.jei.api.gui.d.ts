@@ -25,8 +25,8 @@ import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 import {$Optional$$Type} from "java.util.Optional"
 import {$Ingredient$$Type} from "net.minecraft.world.item.crafting.Ingredient"
-import {$ItemLike$$Type} from "net.minecraft.world.level.ItemLike"
 import {$List$$Type} from "java.util.List"
+import {$ItemLike$$Type} from "net.minecraft.world.level.ItemLike"
 import {$IIngredientType$$Type} from "mezz.jei.api.ingredients.IIngredientType"
 import {$ITypedIngredient$$Type} from "mezz.jei.api.ingredients.ITypedIngredient"
 
@@ -34,17 +34,17 @@ export interface $IIngredientConsumer$$Interface {
 }
 
 export class $IIngredientConsumer implements $IIngredientConsumer$$Interface {
+ "addItemStacks"(arg0: $List$$Type<($ItemStack$$Type)>): $IIngredientConsumer
  "addTypedIngredients"(arg0: $List$$Type<($ITypedIngredient$$Type<(never)>)>): $IIngredientConsumer
  "addTypedIngredient"<I>(arg0: $ITypedIngredient$$Type<(I)>): $IIngredientConsumer
  "addIngredientsUnsafe"(arg0: $List$$Type<(never)>): $IIngredientConsumer
+ "addItemLike"(arg0: $ItemLike$$Type): $IIngredientConsumer
  "addOptionalTypedIngredients"(arg0: $List$$Type<(($ITypedIngredient$$Type<(never)>)?)>): $IIngredientConsumer
  "addIngredients"<I>(arg0: $IIngredientType$$Type<(I)>, arg1: $List$$Type<(I)>): $IIngredientConsumer
  "addIngredients"(arg0: $Ingredient$$Type): $IIngredientConsumer
  "addItemStack"(arg0: $ItemStack$$Type): $IIngredientConsumer
- "addItemLike"(arg0: $ItemLike$$Type): $IIngredientConsumer
- "addItemStacks"(arg0: $List$$Type<($ItemStack$$Type)>): $IIngredientConsumer
- "addFluidStack"(arg0: $Fluid$$Type, arg1: long, arg2: $DataComponentPatch$$Type): $IIngredientConsumer
  "addFluidStack"(arg0: $Fluid$$Type, arg1: long): $IIngredientConsumer
+ "addFluidStack"(arg0: $Fluid$$Type, arg1: long, arg2: $DataComponentPatch$$Type): $IIngredientConsumer
  "addFluidStack"(arg0: $Fluid$$Type): $IIngredientConsumer
  "addIngredient"<I>(arg0: $IIngredientType$$Type<(I)>, arg1: I): $IIngredientConsumer
 }
@@ -62,27 +62,27 @@ import {$DataComponentPatch$$Type} from "net.minecraft.core.component.DataCompon
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 import {$Ingredient$$Type} from "net.minecraft.world.item.crafting.Ingredient"
-import {$ItemLike$$Type} from "net.minecraft.world.level.ItemLike"
 import {$List$$Type} from "java.util.List"
+import {$ItemLike$$Type} from "net.minecraft.world.level.ItemLike"
 import {$IIngredientType$$Type} from "mezz.jei.api.ingredients.IIngredientType"
-import {$IIngredientConsumer, $IIngredientConsumer$$Interface} from "mezz.jei.api.gui.builder.IIngredientConsumer"
 import {$ITypedIngredient$$Type} from "mezz.jei.api.ingredients.ITypedIngredient"
+import {$IIngredientConsumer, $IIngredientConsumer$$Interface} from "mezz.jei.api.gui.builder.IIngredientConsumer"
 
 export interface $IIngredientAcceptor$$Interface<THIS extends $IIngredientAcceptor<(object)>> extends $IIngredientConsumer$$Interface {
 }
 
 export class $IIngredientAcceptor<THIS extends $IIngredientAcceptor<(object)>> implements $IIngredientAcceptor$$Interface {
+ "addItemStacks"(arg0: $List$$Type<($ItemStack$$Type)>): THIS
  "addTypedIngredients"(arg0: $List$$Type<($ITypedIngredient$$Type<(never)>)>): THIS
- "addTypedIngredient"(arg0: $ITypedIngredient$$Type): $IIngredientConsumer
- "addIngredientsUnsafe"(arg0: $List$$Type): $IIngredientConsumer
- "addOptionalTypedIngredients"(arg0: $List$$Type): $IIngredientConsumer
- "addIngredients"(arg0: $IIngredientType$$Type, arg1: $List$$Type): $IIngredientConsumer
- "addIngredients"(arg0: $Ingredient$$Type): $IIngredientConsumer
- "addItemStack"(arg0: $ItemStack$$Type): $IIngredientConsumer
+ "addTypedIngredient"<I>(arg0: $ITypedIngredient$$Type<(I)>): THIS
+ "addIngredientsUnsafe"(arg0: $List$$Type<(never)>): THIS
  "addItemLike"(arg0: $ItemLike$$Type): $IIngredientConsumer
- "addItemStacks"(arg0: $List$$Type): $IIngredientConsumer
+ "addOptionalTypedIngredients"(arg0: $List$$Type): $IIngredientConsumer
+ "addIngredients"(arg0: $Ingredient$$Type): $IIngredientConsumer
+ "addIngredients"(arg0: $IIngredientType$$Type, arg1: $List$$Type): $IIngredientConsumer
+ "addItemStack"(arg0: $ItemStack$$Type): $IIngredientConsumer
  "addFluidStack"(arg0: $Fluid$$Type, arg1: long, arg2: $DataComponentPatch$$Type): THIS
- "addFluidStack"(arg0: $Fluid$$Type, arg1: long): THIS
+ "addFluidStack"(arg0: $Fluid$$Type, arg1: long): $IIngredientConsumer
  "addFluidStack"(arg0: $Fluid$$Type): $IIngredientConsumer
  "addIngredient"<I>(arg0: $IIngredientType$$Type<(I)>, arg1: I): THIS
 }
@@ -131,8 +131,8 @@ import {$ISlottedRecipeWidget$$Type} from "mezz.jei.api.gui.widgets.ISlottedReci
 import {$List$$Type} from "java.util.List"
 import {$IJeiGuiEventListener$$Type} from "mezz.jei.api.gui.inputs.IJeiGuiEventListener"
 import {$IRecipeSlotDrawable$$Type} from "mezz.jei.api.gui.ingredient.IRecipeSlotDrawable"
-import {$IRecipeSlotDrawablesView} from "mezz.jei.api.gui.ingredient.IRecipeSlotDrawablesView"
 import {$IDrawable$$Type} from "mezz.jei.api.gui.drawable.IDrawable"
+import {$IRecipeSlotDrawablesView} from "mezz.jei.api.gui.ingredient.IRecipeSlotDrawablesView"
 import {$IRecipeWidget$$Type} from "mezz.jei.api.gui.widgets.IRecipeWidget"
 import {$IScrollBoxWidget} from "mezz.jei.api.gui.widgets.IScrollBoxWidget"
 import {$IPlaceable} from "mezz.jei.api.gui.placement.IPlaceable"
@@ -285,12 +285,12 @@ declare module "mezz.jei.api.gui.builder.IRecipeSlotBuilder" {
 import {$IIngredientRenderer$$Type} from "mezz.jei.api.ingredients.IIngredientRenderer"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Ingredient$$Type} from "net.minecraft.world.item.crafting.Ingredient"
-import {$IRecipeSlotRichTooltipCallback$$Type} from "mezz.jei.api.gui.ingredient.IRecipeSlotRichTooltipCallback"
 import {$List$$Type} from "java.util.List"
+import {$IRecipeSlotRichTooltipCallback$$Type} from "mezz.jei.api.gui.ingredient.IRecipeSlotRichTooltipCallback"
 import {$IRecipeSlotTooltipCallback$$Type} from "mezz.jei.api.gui.ingredient.IRecipeSlotTooltipCallback"
 import {$IIngredientConsumer} from "mezz.jei.api.gui.builder.IIngredientConsumer"
 import {$IDrawable$$Type} from "mezz.jei.api.gui.drawable.IDrawable"
-import {$IIngredientAcceptor, $IIngredientAcceptor$$Interface} from "mezz.jei.api.gui.builder.IIngredientAcceptor"
+import {$IIngredientAcceptor$$Interface} from "mezz.jei.api.gui.builder.IIngredientAcceptor"
 import {$DataComponentPatch$$Type} from "net.minecraft.core.component.DataComponentPatch"
 import {$Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 import {$IPlaceable$$Interface} from "mezz.jei.api.gui.placement.IPlaceable"
@@ -311,12 +311,12 @@ get "height"(): integer
 export class $IRecipeSlotBuilder implements $IRecipeSlotBuilder$$Interface {
  "setOutputSlotBackground"(): $IRecipeSlotBuilder
  "setStandardSlotBackground"(): $IRecipeSlotBuilder
- "addRichTooltipCallback"(arg0: $IRecipeSlotRichTooltipCallback$$Type): $IRecipeSlotBuilder
  "setSlotName"(arg0: StringJS): $IRecipeSlotBuilder
+ "addRichTooltipCallback"(arg0: $IRecipeSlotRichTooltipCallback$$Type): $IRecipeSlotBuilder
  "setBackground"(arg0: $IDrawable$$Type, arg1: integer, arg2: integer): $IRecipeSlotBuilder
- "setCustomRenderer"<T>(arg0: $IIngredientType$$Type<(T)>, arg1: $IIngredientRenderer$$Type<(T)>): $IRecipeSlotBuilder
- "addFluidStack"(arg0: $Fluid$$Type, arg1: long, arg2: $DataComponentPatch$$Type): $IIngredientAcceptor
+ "addFluidStack"(arg0: $Fluid$$Type, arg1: long, arg2: $DataComponentPatch$$Type): $IRecipeSlotBuilder
  "addFluidStack"(arg0: $Fluid$$Type, arg1: long): $IRecipeSlotBuilder
+ "setCustomRenderer"<T>(arg0: $IIngredientType$$Type<(T)>, arg1: $IIngredientRenderer$$Type<(T)>): $IRecipeSlotBuilder
  "setOverlay"(arg0: $IDrawable$$Type, arg1: integer, arg2: integer): $IRecipeSlotBuilder
  "setFluidRenderer"(arg0: long, arg1: boolean, arg2: integer, arg3: integer): $IRecipeSlotBuilder
 /**
@@ -324,15 +324,15 @@ export class $IRecipeSlotBuilder implements $IRecipeSlotBuilder$$Interface {
  * @deprecated
  */
  "addTooltipCallback"(arg0: $IRecipeSlotTooltipCallback$$Type): $IRecipeSlotBuilder
+ "addItemStacks"(arg0: $List$$Type<($ItemStack$$Type)>): $IRecipeSlotBuilder
  "addTypedIngredients"(arg0: $List$$Type<($ITypedIngredient$$Type<(never)>)>): $IRecipeSlotBuilder
- "addTypedIngredient"(arg0: $ITypedIngredient$$Type): $IIngredientConsumer
- "addIngredientsUnsafe"(arg0: $List$$Type): $IIngredientConsumer
- "addOptionalTypedIngredients"(arg0: $List$$Type): $IIngredientConsumer
- "addIngredients"(arg0: $IIngredientType$$Type, arg1: $List$$Type): $IIngredientConsumer
- "addIngredients"(arg0: $Ingredient$$Type): $IIngredientConsumer
- "addItemStack"(arg0: $ItemStack$$Type): $IIngredientConsumer
+ "addTypedIngredient"<I>(arg0: $ITypedIngredient$$Type<(I)>): $IRecipeSlotBuilder
+ "addIngredientsUnsafe"(arg0: $List$$Type<(never)>): $IRecipeSlotBuilder
  "addItemLike"(arg0: $ItemLike$$Type): $IIngredientConsumer
- "addItemStacks"(arg0: $List$$Type): $IIngredientConsumer
+ "addOptionalTypedIngredients"(arg0: $List$$Type): $IIngredientConsumer
+ "addIngredients"(arg0: $Ingredient$$Type): $IIngredientConsumer
+ "addIngredients"(arg0: $IIngredientType$$Type, arg1: $List$$Type): $IIngredientConsumer
+ "addItemStack"(arg0: $ItemStack$$Type): $IIngredientConsumer
  "addFluidStack"(arg0: $Fluid$$Type): $IIngredientConsumer
  "addIngredient"<I>(arg0: $IIngredientType$$Type<(I)>, arg1: I): $IRecipeSlotBuilder
  "getWidth"(): integer
@@ -383,20 +383,20 @@ get "shapeless"(): void
 export class $IRecipeLayoutBuilder implements $IRecipeLayoutBuilder$$Interface {
  "addOutputSlot"(arg0: integer, arg1: integer): $IRecipeSlotBuilder
  "addOutputSlot"(): $IRecipeSlotBuilder
+ "setShapeless"(): void
+ "setShapeless"(arg0: integer, arg1: integer): void
  "addInputSlot"(arg0: integer, arg1: integer): $IRecipeSlotBuilder
  "addInputSlot"(): $IRecipeSlotBuilder
  "createFocusLink"(...arg0: ($IIngredientAcceptor$$Type<(never)>)[]): void
+ "moveRecipeTransferButton"(arg0: integer, arg1: integer): void
  "addInvisibleIngredients"(arg0: $RecipeIngredientRole$$Type): $IIngredientAcceptor<(never)>
 /**
  * 
  * @deprecated
  */
  "addSlotToWidget"(arg0: $RecipeIngredientRole$$Type, arg1: $ISlottedWidgetFactory$$Type<(never)>): $IRecipeSlotBuilder
- "addSlot"(arg0: $RecipeIngredientRole$$Type): $IRecipeSlotBuilder
  "addSlot"(arg0: $RecipeIngredientRole$$Type, arg1: integer, arg2: integer): $IRecipeSlotBuilder
- "setShapeless"(arg0: integer, arg1: integer): void
- "setShapeless"(): void
- "moveRecipeTransferButton"(arg0: integer, arg1: integer): void
+ "addSlot"(arg0: $RecipeIngredientRole$$Type): $IRecipeSlotBuilder
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -431,8 +431,8 @@ export type $IDrawable$$Type = ($IDrawable);
  */
 export type $IDrawable$$Original = $IDrawable;}
 declare module "mezz.jei.api.gui.ingredient.IRecipeSlotDrawable" {
-import {$IRecipeSlotView$$Interface} from "mezz.jei.api.gui.ingredient.IRecipeSlotView"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
+import {$IRecipeSlotView$$Interface} from "mezz.jei.api.gui.ingredient.IRecipeSlotView"
 import {$RecipeIngredientRole} from "mezz.jei.api.recipe.RecipeIngredientRole"
 import {$Optional} from "java.util.Optional"
 import {$ITooltipBuilder$$Type} from "mezz.jei.api.gui.builder.ITooltipBuilder"
@@ -466,6 +466,7 @@ export class $IRecipeSlotDrawable implements $IRecipeSlotDrawable$$Interface {
  "clearDisplayOverrides"(): void
  "getAreaIncludingBackground"(): $Rect2i
  "draw"(arg0: $GuiGraphics$$Type): void
+ "drawTooltip"(arg0: $GuiGraphics$$Type, arg1: integer, arg2: integer): void
  "isMouseOver"(arg0: double, arg1: double): boolean
 /**
  * 
@@ -478,7 +479,6 @@ export class $IRecipeSlotDrawable implements $IRecipeSlotDrawable$$Interface {
  */
  "getTooltip"(arg0: $ITooltipBuilder$$Type): void
  "setPosition"(arg0: integer, arg1: integer): void
- "drawTooltip"(arg0: $GuiGraphics$$Type, arg1: integer, arg2: integer): void
 /**
  * 
  * @deprecated
@@ -497,8 +497,8 @@ export class $IRecipeSlotDrawable implements $IRecipeSlotDrawable$$Interface {
  "getDisplayedIngredient"(): $Optional<($ITypedIngredient<(never)>)>
  "getItemStacks"(): $Stream<($ItemStack)>
  "getIngredients"<T>(arg0: $IIngredientType$$Type<(T)>): $Stream<(T)>
- "getSlotName"(): $Optional<(StringJS)>
  "drawHighlight"(arg0: $GuiGraphics$$Type, arg1: integer): void
+ "getSlotName"(): $Optional<(StringJS)>
  "isEmpty"(): boolean
 }
 /**

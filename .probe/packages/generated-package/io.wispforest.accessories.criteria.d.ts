@@ -1,12 +1,12 @@
 declare module "io.wispforest.accessories.criteria.AccessoryChangedCriterion$Conditions" {
-import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$ContextAwarePredicate, $ContextAwarePredicate$$Type} from "net.minecraft.advancements.critereon.ContextAwarePredicate"
+import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$List, $List$$Type} from "java.util.List"
 import {$CriterionValidator$$Type} from "net.minecraft.advancements.critereon.CriterionValidator"
-import {$ItemPredicate, $ItemPredicate$$Type} from "net.minecraft.advancements.critereon.ItemPredicate"
 import {$Record} from "java.lang.Record"
 import {$SimpleCriterionTrigger$SimpleInstance$$Interface} from "net.minecraft.advancements.critereon.SimpleCriterionTrigger$SimpleInstance"
+import {$ItemPredicate, $ItemPredicate$$Type} from "net.minecraft.advancements.critereon.ItemPredicate"
 
 export class $AccessoryChangedCriterion$Conditions extends $Record implements $SimpleCriterionTrigger$SimpleInstance$$Interface {
 static readonly "CODEC": $Codec<($AccessoryChangedCriterion$Conditions)>

@@ -20,14 +20,14 @@ export type $ZipConstants$$Type = ($ZipConstants);
  */
 export type $ZipConstants$$Original = $ZipConstants;}
 declare module "java.util.zip.ZipFile" {
-import {$Charset$$Type} from "java.nio.charset.Charset"
 import {$File$$Type} from "java.io.File"
+import {$Charset$$Type} from "java.nio.charset.Charset"
 import {$Closeable$$Interface} from "java.io.Closeable"
 import {$InputStream} from "java.io.InputStream"
 import {$Stream} from "java.util.stream.Stream"
 import {$Enumeration} from "java.util.Enumeration"
-import {$ZipEntry, $ZipEntry$$Type} from "java.util.zip.ZipEntry"
 import {$ZipConstants$$Interface} from "java.util.zip.ZipConstants"
+import {$ZipEntry, $ZipEntry$$Type} from "java.util.zip.ZipEntry"
 
 /**
  * This class is not allowed By KubeJS!
@@ -68,8 +68,8 @@ export type $ZipFile$$Original = $ZipFile;}
 declare module "java.util.zip.ZipEntry" {
 import {$LocalDateTime, $LocalDateTime$$Type} from "java.time.LocalDateTime"
 import {$Cloneable$$Interface} from "java.lang.Cloneable"
-import {$FileTime, $FileTime$$Type} from "java.nio.file.attribute.FileTime"
 import {$ZipConstants$$Interface} from "java.util.zip.ZipConstants"
+import {$FileTime, $FileTime$$Type} from "java.nio.file.attribute.FileTime"
 
 /**
  * This class is not allowed By KubeJS!
@@ -83,6 +83,8 @@ static readonly "DEFLATED": integer
 constructor(arg0: $ZipEntry$$Type)
 constructor(arg0: StringJS)
 
+public "getLastModifiedTime"(): $FileTime
+public "setLastModifiedTime"(arg0: $FileTime$$Type): $ZipEntry
 public "setTime"(arg0: long): void
 public "setTimeLocal"(arg0: $LocalDateTime$$Type): void
 public "getTimeLocal"(): $LocalDateTime
@@ -99,8 +101,6 @@ public "setMethod"(arg0: integer): void
 public "setExtra"(arg0: (byte)[]): void
 public "getExtra"(): (byte)[]
 public "setComment"(arg0: StringJS): void
-public "getLastModifiedTime"(): $FileTime
-public "setLastModifiedTime"(arg0: $FileTime$$Type): $ZipEntry
 public "getName"(): StringJS
 public "toString"(): StringJS
 public "hashCode"(): integer
@@ -108,8 +108,10 @@ public "clone"(): any
 public "getMethod"(): integer
 public "getSize"(): long
 public "isDirectory"(): boolean
-public "getTime"(): long
 public "getComment"(): StringJS
+public "getTime"(): long
+get "lastModifiedTime"(): $FileTime
+set "lastModifiedTime"(value: $FileTime$$Type)
 set "time"(value: long)
 set "timeLocal"(value: $LocalDateTime$$Type)
 get "timeLocal"(): $LocalDateTime
@@ -126,14 +128,12 @@ set "method"(value: integer)
 set "extra"(value: (byte)[])
 get "extra"(): (byte)[]
 set "comment"(value: StringJS)
-get "lastModifiedTime"(): $FileTime
-set "lastModifiedTime"(value: $FileTime$$Type)
 get "name"(): StringJS
 get "method"(): integer
 get "size"(): long
 get "directory"(): boolean
-get "time"(): long
 get "comment"(): StringJS
+get "time"(): long
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_

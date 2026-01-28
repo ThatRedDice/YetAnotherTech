@@ -8,10 +8,10 @@ export interface $IActionSource$$Interface {
 }
 
 export class $IActionSource implements $IActionSource$$Interface {
- "machine"(): $Optional<($IActionHost)>
+static "ofMachine"(arg0: $IActionHost$$Type): $IActionSource
 static "ofPlayer"(arg0: $Player$$Type, arg1: $IActionHost$$Type): $IActionSource
 static "ofPlayer"(arg0: $Player$$Type): $IActionSource
-static "ofMachine"(arg0: $IActionHost$$Type): $IActionSource
+ "machine"(): $Optional<($IActionHost)>
  "context"<T>(arg0: $Class$$Type<(T)>): $Optional<(T)>
 static "empty"(): $IActionSource
  "player"(): $Optional<($Player)>

@@ -1,8 +1,8 @@
 declare module "appeng.recipes.mattercannon.MatterCannonAmmoSerializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$MatterCannonAmmo} from "appeng.recipes.mattercannon.MatterCannonAmmo"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
 
@@ -32,11 +32,11 @@ import {$NonNullList} from "net.minecraft.core.NonNullList"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$RecipeOutput$$Type} from "net.minecraft.data.recipes.RecipeOutput"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
-import {$RecipeInput, $RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe$$Interface} from "net.minecraft.world.item.crafting.Recipe"
-import {$TagKey$$Type} from "net.minecraft.tags.TagKey"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
+import {$RecipeInput, $RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$ItemLike$$Type} from "net.minecraft.world.level.ItemLike"
+import {$TagKey$$Type} from "net.minecraft.tags.TagKey"
 import {$Item$$Type} from "net.minecraft.world.item.Item"
 import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -63,9 +63,9 @@ public static "ammo"(arg0: $RecipeOutput$$Type, arg1: $ResourceLocation$$Type, a
 public static "ammo"(arg0: $RecipeOutput$$Type, arg1: $ResourceLocation$$Type, arg2: $ItemLike$$Type, arg3: float): void
 public "getSerializer"(): $RecipeSerializer<(never)>
 public "getAmmo"(): $Ingredient
-public "getIngredients"(): $NonNullList<($Ingredient)>
 public "canCraftInDimensions"(arg0: integer, arg1: integer): boolean
 public "getResultItem"(arg0: $HolderLookup$Provider$$Type): $ItemStack
+public "getIngredients"(): $NonNullList<($Ingredient)>
 public "matches"(arg0: $RecipeInput$$Type, arg1: $Level$$Type): boolean
 public "getType"(): $RecipeType<(never)>
 public "getWeight"(): float

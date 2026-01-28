@@ -1,7 +1,7 @@
 declare module "com.hrznstudio.titanium.client.screen.addon.ProgressBarScreenAddon" {
 import {$BasicScreenAddon} from "com.hrznstudio.titanium.client.screen.addon.BasicScreenAddon"
-import {$GuiGraphics$$Type} from "net.minecraft.client.gui.GuiGraphics"
 import {$IAssetProvider$$Type} from "com.hrznstudio.titanium.client.screen.asset.IAssetProvider"
+import {$GuiGraphics$$Type} from "net.minecraft.client.gui.GuiGraphics"
 import {$IComponentHarness} from "com.hrznstudio.titanium.component.IComponentHarness"
 import {$Screen$$Type} from "net.minecraft.client.gui.screens.Screen"
 import {$List} from "java.util.List"
@@ -73,9 +73,9 @@ export type $IHasAssetProvider$$Original = $IHasAssetProvider;}
 declare module "com.hrznstudio.titanium.client.screen.addon.BasicScreenAddon" {
 import {$IScreenAddon$$Interface} from "com.hrznstudio.titanium.api.client.IScreenAddon"
 import {$FocusNavigationEvent$$Type} from "net.minecraft.client.gui.navigation.FocusNavigationEvent"
-import {$GuiGraphics$$Type} from "net.minecraft.client.gui.GuiGraphics"
-import {$ScreenRectangle} from "net.minecraft.client.gui.navigation.ScreenRectangle"
 import {$IAssetProvider$$Type} from "com.hrznstudio.titanium.client.screen.asset.IAssetProvider"
+import {$ScreenRectangle} from "net.minecraft.client.gui.navigation.ScreenRectangle"
+import {$GuiGraphics$$Type} from "net.minecraft.client.gui.GuiGraphics"
 import {$Screen$$Type} from "net.minecraft.client.gui.screens.Screen"
 import {$List} from "java.util.List"
 import {$ComponentPath} from "net.minecraft.client.gui.ComponentPath"
@@ -84,16 +84,16 @@ import {$Component} from "net.minecraft.network.chat.Component"
 export class $BasicScreenAddon implements $IScreenAddon$$Interface {
 public "getPosX"(): integer
 public "getPosY"(): integer
-public "isMouseOver"(arg0: double, arg1: double): boolean
 public "setFocused"(arg0: boolean): void
 public "isFocused"(): boolean
+public "isMouseOver"(arg0: double, arg1: double): boolean
 public "getXSize"(): integer
 public "getYSize"(): integer
 public "setPosX"(arg0: integer): void
 public "setPosY"(arg0: integer): void
 public "drawForegroundLayer"(arg0: $GuiGraphics$$Type, arg1: $Screen$$Type, arg2: $IAssetProvider$$Type, arg3: integer, arg4: integer, arg5: integer, arg6: integer, arg7: float): void
-public "drawBackgroundLayer"(arg0: $GuiGraphics$$Type, arg1: $Screen$$Type, arg2: $IAssetProvider$$Type, arg3: integer, arg4: integer, arg5: integer, arg6: integer, arg7: float): void
 public "isBackground"(): boolean
+public "drawBackgroundLayer"(arg0: $GuiGraphics$$Type, arg1: $Screen$$Type, arg2: $IAssetProvider$$Type, arg3: integer, arg4: integer, arg5: integer, arg6: integer, arg7: float): void
 public "init"(arg0: integer, arg1: integer): void
 public "keyPressed"(arg0: integer, arg1: integer, arg2: integer): boolean
 public "mouseClicked"(arg0: double, arg1: double, arg2: integer): boolean

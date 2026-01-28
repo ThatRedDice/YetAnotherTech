@@ -1,7 +1,7 @@
 declare module "com.almostreliable.kubeio.recipe.TankKubeRecipe" {
 import {$TypeInfo} from "dev.latvian.mods.rhino.type.TypeInfo"
-import {$KubeRecipe} from "dev.latvian.mods.kubejs.recipe.KubeRecipe"
 import {$RecipeTypeFunction} from "dev.latvian.mods.kubejs.recipe.RecipeTypeFunction"
+import {$KubeRecipe} from "dev.latvian.mods.kubejs.recipe.KubeRecipe"
 import {$JsonObject} from "com.google.gson.JsonObject"
 import {$KubeRecipeFactory} from "dev.latvian.mods.kubejs.recipe.schema.KubeRecipeFactory"
 import {$SourceLine} from "dev.latvian.mods.kubejs.script.SourceLine"
@@ -34,8 +34,8 @@ export type $TankKubeRecipe$$Type = ($TankKubeRecipe);
 export type $TankKubeRecipe$$Original = $TankKubeRecipe;}
 declare module "com.almostreliable.kubeio.recipe.FireCraftingKubeRecipe" {
 import {$TypeInfo} from "dev.latvian.mods.rhino.type.TypeInfo"
-import {$KubeRecipe} from "dev.latvian.mods.kubejs.recipe.KubeRecipe"
 import {$RecipeTypeFunction} from "dev.latvian.mods.kubejs.recipe.RecipeTypeFunction"
+import {$KubeRecipe} from "dev.latvian.mods.kubejs.recipe.KubeRecipe"
 import {$TagKey$$Type} from "net.minecraft.tags.TagKey"
 import {$Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$JsonObject} from "com.google.gson.JsonObject"
@@ -72,8 +72,8 @@ export type $FireCraftingKubeRecipe$$Type = ($FireCraftingKubeRecipe);
 export type $FireCraftingKubeRecipe$$Original = $FireCraftingKubeRecipe;}
 declare module "com.almostreliable.kubeio.recipe.AlloySmelterKubeRecipe" {
 import {$TypeInfo} from "dev.latvian.mods.rhino.type.TypeInfo"
-import {$KubeRecipe} from "dev.latvian.mods.kubejs.recipe.KubeRecipe"
 import {$RecipeTypeFunction} from "dev.latvian.mods.kubejs.recipe.RecipeTypeFunction"
+import {$KubeRecipe} from "dev.latvian.mods.kubejs.recipe.KubeRecipe"
 import {$JsonObject} from "com.google.gson.JsonObject"
 import {$KubeRecipeFactory} from "dev.latvian.mods.kubejs.recipe.schema.KubeRecipeFactory"
 import {$SourceLine} from "dev.latvian.mods.kubejs.script.SourceLine"

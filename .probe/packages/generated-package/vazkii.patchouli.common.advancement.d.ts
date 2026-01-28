@@ -1,8 +1,8 @@
 declare module "vazkii.patchouli.common.advancement.BookOpenTrigger$TriggerInstance" {
 import {$MinMaxBounds$Ints, $MinMaxBounds$Ints$$Type} from "net.minecraft.advancements.critereon.MinMaxBounds$Ints"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
-import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$ContextAwarePredicate, $ContextAwarePredicate$$Type} from "net.minecraft.advancements.critereon.ContextAwarePredicate"
+import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$CriterionValidator$$Type} from "net.minecraft.advancements.critereon.CriterionValidator"
 import {$Record} from "java.lang.Record"

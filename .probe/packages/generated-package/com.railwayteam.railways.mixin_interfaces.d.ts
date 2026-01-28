@@ -65,8 +65,8 @@ export interface $IHasCustomOutline$$Interface {
 }
 
 export class $IHasCustomOutline implements $IHasCustomOutline$$Interface {
- "drawLine"(arg0: $VertexConsumer$$Type, arg1: $PoseStack$$Type, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double): void
  "drawLineWithAxisOffset"(arg0: $VertexConsumer$$Type, arg1: $PoseStack$$Type, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double, arg9: $Direction$Axis$$Type): void
+ "drawLine"(arg0: $VertexConsumer$$Type, arg1: $PoseStack$$Type, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double): void
  "matrixRotation"(arg0: $PoseStack$$Type, arg1: $BlockState$$Type): void
  "customOutline"(arg0: $PoseStack$$Type, arg1: $VertexConsumer$$Type, arg2: $BlockState$$Type): void
 }
@@ -97,10 +97,10 @@ export type $IDeployAnywayBlockItem$$Type = ($IDeployAnywayBlockItem);
 export type $IDeployAnywayBlockItem$$Original = $IDeployAnywayBlockItem;}
 declare module "com.railwayteam.railways.mixin_interfaces.IGenericCrossingTrackBE" {
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
-import {$List} from "java.util.List"
 import {$BakedModel} from "net.minecraft.client.resources.model.BakedModel"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
+import {$List} from "java.util.List"
 import {$TrackShape, $TrackShape$$Type} from "com.simibubi.create.content.trains.track.TrackShape"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Pair, $Pair$$Type} from "net.createmod.catnip.data.Pair"
 import {$TrackMaterial, $TrackMaterial$$Type} from "com.simibubi.create.content.trains.track.TrackMaterial"
 import {$BakedQuad} from "net.minecraft.client.renderer.block.model.BakedQuad"
@@ -157,9 +157,9 @@ export interface $IGenerallySearchableNavigation$$Interface {
 }
 
 export class $IGenerallySearchableNavigation implements $IGenerallySearchableNavigation$$Interface {
- "railways$searchGeneral"(arg0: double, arg1: boolean, arg2: $IGenerallySearchableNavigation$PointTest$$Type): void
- "railways$searchGeneral"(arg0: double, arg1: double, arg2: boolean, arg3: $IGenerallySearchableNavigation$PointTest$$Type): void
  "railways$findNearestApproachableSwitch"(arg0: boolean): $Pair<($TrackSwitch), ($Pair<(boolean), ($Optional<($TrackSwitchBlock$SwitchState)>)>)>
+ "railways$searchGeneral"(arg0: double, arg1: double, arg2: boolean, arg3: $IGenerallySearchableNavigation$PointTest$$Type): void
+ "railways$searchGeneral"(arg0: double, arg1: boolean, arg2: $IGenerallySearchableNavigation$PointTest$$Type): void
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -174,8 +174,8 @@ declare module "com.railwayteam.railways.mixin_interfaces.IGenerallySearchableNa
 import {$Map, $Map$$Type} from "java.util.Map"
 import {$TrackEdgePoint, $TrackEdgePoint$$Type} from "com.simibubi.create.content.trains.signal.TrackEdgePoint"
 import {$TrackNode, $TrackNode$$Type} from "com.simibubi.create.content.trains.graph.TrackNode"
-import {$Couple, $Couple$$Type} from "net.createmod.catnip.data.Couple"
 import {$Pair, $Pair$$Type} from "net.createmod.catnip.data.Pair"
+import {$Couple, $Couple$$Type} from "net.createmod.catnip.data.Couple"
 import {$TrackEdge, $TrackEdge$$Type} from "com.simibubi.create.content.trains.graph.TrackEdge"
 
 export interface $IGenerallySearchableNavigation$PointTest$$Interface {
@@ -201,9 +201,9 @@ export interface $IPotentiallyInvisibleSpriteContents$$Interface {
 }
 
 export class $IPotentiallyInvisibleSpriteContents implements $IPotentiallyInvisibleSpriteContents$$Interface {
- "railways$shouldDoInvisibility"(): boolean
  "railways$uploadFrame"(arg0: boolean): void
  "railways$isVisible"(): boolean
+ "railways$shouldDoInvisibility"(): boolean
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -384,9 +384,9 @@ set "trackCasing"(value: $SlabBlock$$Type)
 }
 
 export class $IHasTrackCasing implements $IHasTrackCasing$$Interface {
-static "getTrackCasing"(arg0: $Level$$Type, arg1: $BlockPos$$Type): $SlabBlock
- "getTrackCasing"(): $SlabBlock
 static "setAlternateModel"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: boolean): boolean
+ "getTrackCasing"(): $SlabBlock
+static "getTrackCasing"(arg0: $Level$$Type, arg1: $BlockPos$$Type): $SlabBlock
 static "isAlternate"(arg0: $Level$$Type, arg1: $BlockPos$$Type): boolean
  "isAlternate"(): boolean
  "setAlternate"(arg0: boolean): void
@@ -464,20 +464,20 @@ declare module "com.railwayteam.railways.mixin_interfaces.IStandardBogeyTEVirtua
 import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
 
 export interface $IStandardBogeyTEVirtualCoupling$$Interface {
+set "front"(value: boolean)
 set "couplingDistance"(value: double)
 get "couplingDistance"(): double
 set "couplingDirection"(value: $Direction$$Type)
 get "couplingDirection"(): $Direction
-set "front"(value: boolean)
 get "front"(): boolean
 }
 
 export class $IStandardBogeyTEVirtualCoupling implements $IStandardBogeyTEVirtualCoupling$$Interface {
+ "setFront"(arg0: boolean): void
  "setCouplingDistance"(arg0: double): void
  "getCouplingDistance"(): double
  "setCouplingDirection"(arg0: $Direction$$Type): void
  "getCouplingDirection"(): $Direction
- "setFront"(arg0: boolean): void
  "getFront"(): boolean
 }
 /**
@@ -532,9 +532,9 @@ import {$TrackEdge$$Type} from "com.simibubi.create.content.trains.graph.TrackEd
 
 export interface $ISwitchDisabledEdge$$Interface {
 set "automatic"(value: boolean)
-get "automaticallySelected"(): void
 get "automaticallySelectedPriority"(): integer
 get "automaticallySelected"(): boolean
+get "automaticallySelected"(): void
 get "enabled"(): boolean
 get "automatic"(): boolean
 set "enabled"(value: boolean)
@@ -543,15 +543,15 @@ set "enabled"(value: boolean)
 export class $ISwitchDisabledEdge implements $ISwitchDisabledEdge$$Interface {
  "setAutomatic"(arg0: boolean): void
 static "isDisabled"(arg0: $TrackEdge$$Type): boolean
- "setAutomaticallySelected"(): void
 static "automaticallySelect"(arg0: $TrackEdge$$Type): void
  "getAutomaticallySelectedPriority"(): integer
  "isAutomaticallySelected"(): boolean
  "ackAutomaticSelection"(): void
-static "isEnabled"(arg0: $TrackEdge$$Type): boolean
+ "setAutomaticallySelected"(): void
  "isEnabled"(): boolean
-static "isAutomatic"(arg0: $TrackEdge$$Type): boolean
+static "isEnabled"(arg0: $TrackEdge$$Type): boolean
  "isAutomatic"(): boolean
+static "isAutomatic"(arg0: $TrackEdge$$Type): boolean
  "setEnabled"(arg0: boolean): void
 }
 /**

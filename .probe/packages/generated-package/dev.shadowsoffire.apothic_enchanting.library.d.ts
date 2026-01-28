@@ -1,7 +1,7 @@
 declare module "dev.shadowsoffire.apothic_enchanting.library.EnchLibraryBlock" {
+import {$LootParams$Builder$$Type} from "net.minecraft.world.level.storage.loot.LootParams$Builder"
 import {$BlockEntityType$BlockEntitySupplier$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$LootParams$Builder$$Type} from "net.minecraft.world.level.storage.loot.LootParams$Builder"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$List, $List$$Type} from "java.util.List"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
@@ -15,14 +15,14 @@ import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$HorizontalDirectionalBlock} from "net.minecraft.world.level.block.HorizontalDirectionalBlock"
 import {$HitResult$$Type} from "net.minecraft.world.phys.HitResult"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$EnchLibraryTile$$Type} from "dev.shadowsoffire.apothic_enchanting.library.EnchLibraryTile"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
@@ -56,10 +56,10 @@ static readonly "FACING": $DirectionProperty
 constructor(arg0: $BlockEntityType$BlockEntitySupplier$$Type<($EnchLibraryTile$$Type)>, arg1: integer)
 
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
+public "getMenuProvider"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type): $MenuProvider
 public "getDrops"(arg0: $BlockState$$Type, arg1: $LootParams$Builder$$Type): $List<($ItemStack)>
 public "setPlacedBy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $LivingEntity$$Type, arg4: $ItemStack$$Type): void
 public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
-public "getMenuProvider"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type): $MenuProvider
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
 public "getCloneItemStack"(arg0: $BlockState$$Type, arg1: $HitResult$$Type, arg2: $LevelReader$$Type, arg3: $BlockPos$$Type, arg4: $Player$$Type): $ItemStack
 public "onRemove"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: boolean): void
@@ -83,8 +83,8 @@ import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$HolderLookup$RegistryLookup$$Type} from "net.minecraft.core.HolderLookup$RegistryLookup"
 import {$IItemHandler} from "net.neoforged.neoforge.items.IItemHandler"
-import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
 import {$Enchantment, $Enchantment$$Type} from "net.minecraft.world.item.enchantment.Enchantment"
 import {$Object2IntMap} from "it.unimi.dsi.fastutil.objects.Object2IntMap"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
@@ -101,6 +101,12 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 constructor(arg0: $BlockEntityType$$Type<(never)>, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: integer)
 
 public "canExtract"(arg0: $Holder$$Type<($Enchantment)>, arg1: integer, arg2: integer): boolean
+public "getUpdatePacket"(): $Packet
+public "loadAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
+public "getItemHandler"(arg0: $Direction$$Type): $IItemHandler
+public "saveAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
+public "getUpdateTag"(arg0: $HolderLookup$Provider$$Type): $CompoundTag
+public "onDataPacket"(arg0: $Connection$$Type, arg1: $ClientboundBlockEntityDataPacket$$Type, arg2: $HolderLookup$Provider$$Type): void
 public static "levelToPoints"(arg0: integer): integer
 public "saveEnchData"(arg0: $CompoundTag$$Type): void
 public "loadEnchData"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$RegistryLookup$$Type<($Enchantment$$Type)>): void
@@ -108,18 +114,12 @@ public "depositBook"(arg0: $ItemStack$$Type): void
 public "extractEnchant"(arg0: $ItemStack$$Type, arg1: $Holder$$Type<($Enchantment)>, arg2: integer): void
 public "getPointsMap"(): $Object2IntMap<($Holder<($Enchantment)>)>
 public "getLevelsMap"(): $Object2IntMap<($Holder<($Enchantment)>)>
-public "loadAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
-public "getUpdatePacket"(): $Packet
-public "getItemHandler"(arg0: $Direction$$Type): $IItemHandler
-public "saveAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
-public "getUpdateTag"(arg0: $HolderLookup$Provider$$Type): $CompoundTag
-public "onDataPacket"(arg0: $Connection$$Type, arg1: $ClientboundBlockEntityDataPacket$$Type, arg2: $HolderLookup$Provider$$Type): void
 public "removeListener"(arg0: $EnchLibraryContainer$$Type): void
 public "addListener"(arg0: $EnchLibraryContainer$$Type): void
 public "getMax"(arg0: $Holder$$Type<($Enchantment)>): integer
+get "updatePacket"(): $Packet
 get "pointsMap"(): $Object2IntMap<($Holder<($Enchantment)>)>
 get "levelsMap"(): $Object2IntMap<($Holder<($Enchantment)>)>
-get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_

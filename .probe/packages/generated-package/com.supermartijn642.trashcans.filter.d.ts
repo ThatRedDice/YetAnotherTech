@@ -7,13 +7,13 @@ export class $ItemFilter {
 constructor()
 
 public "getRepresentingItem"(): $ItemStack
-public "isValid"(): boolean
 public "matches"(stack: any): boolean
 public "write"(provider: $HolderLookup$Provider$$Type): $Tag
 public "getId"(): StringJS
+public "isValid"(): boolean
 get "representingItem"(): $ItemStack
-get "valid"(): boolean
 get "id"(): StringJS
+get "valid"(): boolean
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_

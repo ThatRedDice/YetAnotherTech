@@ -27,9 +27,6 @@ import {$Set} from "java.util.Set"
 import {$Function$$Type} from "com.google.common.base.Function"
 
 export class $Optional<T> implements $Serializable$$Interface {
-public "or"(secondChoice: $Optional$$Type<(T)>): $Optional<(T)>
-public "or"(supplier: $Supplier$$Type<(T)>): T
-public "or"(defaultValue: T): T
 public "get"(): T
 public "equals"(object: any): boolean
 public "toString"(): StringJS
@@ -37,6 +34,9 @@ public "hashCode"(): integer
 public static "of"<T>(reference: T): $Optional<(T)>
 public "transform"<V>(arg0: $Function$$Type<(T), (V)>): $Optional<(V)>
 public "isPresent"(): boolean
+public "or"(secondChoice: $Optional$$Type<(T)>): $Optional<(T)>
+public "or"(supplier: $Supplier$$Type<(T)>): T
+public "or"(defaultValue: T): T
 public "asSet"(): $Set<(T)>
 public static "absent"<T>(): $Optional<(T)>
 public static "fromNullable"<T>(nullableReference: T): $Optional<(T)>
@@ -88,11 +88,11 @@ export class $Predicate<T> implements $Predicate$$Interface {
  "equals"(object: any): boolean
  "test"(input: T): boolean
  "apply"(input: T): boolean
- "or"(arg0: $Predicate$0$$Type<(T)>): $Predicate$0<(T)>
+static "not"<T>(arg0: $Predicate$0$$Type<(T)>): $Predicate$0<(T)>
 static "isEqual"<T>(arg0: any): $Predicate$0<(T)>
  "negate"(): $Predicate$0<(T)>
  "and"(arg0: $Predicate$0$$Type<(T)>): $Predicate$0<(T)>
-static "not"<T>(arg0: $Predicate$0$$Type<(T)>): $Predicate$0<(T)>
+ "or"(arg0: $Predicate$0$$Type<(T)>): $Predicate$0<(T)>
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_

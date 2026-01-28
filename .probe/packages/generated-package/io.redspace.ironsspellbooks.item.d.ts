@@ -4,8 +4,8 @@ import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Optional} from "java.util.Optional"
 import {$List} from "java.util.List"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Component} from "net.minecraft.network.chat.Component"
 import {$ReadableLoreItem} from "io.redspace.ironsspellbooks.item.ReadableLoreItem"
@@ -38,8 +38,8 @@ declare module "io.redspace.ironsspellbooks.item.armor.UpgradeOrbType" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional, $Optional$$Type} from "java.util.Optional"
-import {$AttributeModifier$Operation, $AttributeModifier$Operation$$Type} from "net.minecraft.world.entity.ai.attributes.AttributeModifier$Operation"
 import {$Codec} from "com.mojang.serialization.Codec"
+import {$AttributeModifier$Operation, $AttributeModifier$Operation$$Type} from "net.minecraft.world.entity.ai.attributes.AttributeModifier$Operation"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Attribute, $Attribute$$Type} from "net.minecraft.world.entity.ai.attributes.Attribute"
 import {$Item$$Type} from "net.minecraft.world.item.Item"
@@ -83,19 +83,19 @@ import {$IPresetSpellContainer$$Interface} from "io.redspace.ironsspellbooks.api
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$Optional} from "java.util.Optional"
-import {$CurioBaseItem} from "io.redspace.ironsspellbooks.item.curios.CurioBaseItem"
-import {$PoseStack$$Type} from "com.mojang.blaze3d.vertex.PoseStack"
 import {$List, $List$$Type} from "java.util.List"
+import {$PoseStack$$Type} from "com.mojang.blaze3d.vertex.PoseStack"
+import {$CurioBaseItem} from "io.redspace.ironsspellbooks.item.curios.CurioBaseItem"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Holder$$Type} from "net.minecraft.core.Holder"
 import {$SlotContext$$Type} from "top.theillusivec4.curios.api.SlotContext"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$ISpellbook$$Interface} from "io.redspace.ironsspellbooks.api.item.ISpellbook"
-import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Attribute$$Type} from "net.minecraft.world.entity.ai.attributes.Attribute"
+import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$ILecternPlaceable$$Interface} from "io.redspace.ironsspellbooks.item.ILecternPlaceable"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$ICurio$SoundInfo} from "top.theillusivec4.curios.api.type.capability.ICurio$SoundInfo"
@@ -108,16 +108,16 @@ static readonly "BASE_ATTACK_SPEED_ID": $ResourceLocation
 static readonly "ABSOLUTE_MAX_STACK_SIZE": integer
 static readonly "BY_BLOCK": $Map<($Block), ($Item)>
 
+constructor()
 constructor(arg0: integer)
 constructor(arg0: integer, arg1: $Item$Properties$$Type)
-constructor()
 
 public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
 public "initializeSpellContainer"(arg0: $ItemStack$$Type): void
 public "getPages"(arg0: $ItemStack$$Type): $List<($Component)>
 public "canEquipFromUse"(arg0: $SlotContext$$Type, arg1: $ItemStack$$Type): boolean
-public "withAttribute"(arg0: $Holder$$Type<($Attribute)>, arg1: double): $SpellBook
 public "getMaxSpellSlots"(): integer
+public "withAttribute"(arg0: $Holder$$Type<($Attribute)>, arg1: double): $SpellBook
 public "isUnique"(): boolean
 public "getEquipSound"(arg0: $SlotContext$$Type, arg1: $ItemStack$$Type): $ICurio$SoundInfo
 public "simpleTextureOverride"(arg0: $ItemStack$$Type): $Optional<($ResourceLocation)>
@@ -141,18 +141,18 @@ import {$Map} from "java.util.Map"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$Holder$$Type} from "net.minecraft.core.Holder"
 import {$Tier, $Tier$$Type} from "net.minecraft.world.item.Tier"
+import {$Holder$$Type} from "net.minecraft.core.Holder"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$UseAnim} from "net.minecraft.world.item.UseAnim"
 import {$Enchantment$$Type} from "net.minecraft.world.item.enchantment.Enchantment"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
-import {$MagicSwordItem} from "io.redspace.ironsspellbooks.api.item.weapons.MagicSwordItem"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$MagicSwordItem} from "io.redspace.ironsspellbooks.api.item.weapons.MagicSwordItem"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$SpellDataRegistryHolder$$Type} from "io.redspace.ironsspellbooks.api.registry.SpellDataRegistryHolder"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$SpellDataRegistryHolder$$Type} from "io.redspace.ironsspellbooks.api.registry.SpellDataRegistryHolder"
 
 export class $TwilightGaleItem extends $MagicSwordItem {
 static readonly "BASE_ATTACK_DAMAGE_ID": $ResourceLocation
@@ -186,8 +186,8 @@ import {$CastingItem} from "io.redspace.ironsspellbooks.item.CastingItem"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 
 export class $StaffItem extends $CastingItem {
@@ -217,13 +217,13 @@ export type $StaffItem$$Original = $StaffItem;}
 declare module "io.redspace.ironsspellbooks.item.consumables.DrinkableItem" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$List$$Type} from "java.util.List"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$UseAnim} from "net.minecraft.world.item.UseAnim"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
@@ -269,8 +269,8 @@ import {$List$$Type} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 
 export class $NecronomiconSpellBook extends $UniqueSpellBook {
 static readonly "BASE_ATTACK_DAMAGE_ID": $ResourceLocation
@@ -303,15 +303,15 @@ import {$ItemAttributeModifiers} from "net.minecraft.world.item.component.ItemAt
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$EnderMan$$Type} from "net.minecraft.world.entity.monster.EnderMan"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Equipable} from "net.minecraft.world.item.Equipable"
+import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$GeoAnimatable$$Type} from "software.bernie.geckolib.animatable.GeoAnimatable"
 import {$Supplier} from "java.util.function.Supplier"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$ExtendedArmorItem} from "io.redspace.ironsspellbooks.item.armor.ExtendedArmorItem"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$DispenseItemBehavior} from "net.minecraft.core.dispenser.DispenseItemBehavior"
+import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$ArmorItem$Type$$Type} from "net.minecraft.world.item.ArmorItem$Type"
 
 export class $PumpkinArmorItem extends $ExtendedArmorItem {
@@ -345,13 +345,13 @@ export type $PumpkinArmorItem$$Type = ($PumpkinArmorItem);
 export type $PumpkinArmorItem$$Original = $PumpkinArmorItem;}
 declare module "io.redspace.ironsspellbooks.item.FurledMapItem" {
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
+import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
-import {$Block} from "net.minecraft.world.level.block.Block"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$MutableComponent$$Type} from "net.minecraft.network.chat.MutableComponent"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
@@ -388,10 +388,10 @@ import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Optional} from "java.util.Optional"
 import {$List} from "java.util.List"
 import {$PoseStack$$Type} from "com.mojang.blaze3d.vertex.PoseStack"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
-import {$ILecternPlaceable$$Interface} from "io.redspace.ironsspellbooks.item.ILecternPlaceable"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$ILecternPlaceable$$Interface} from "io.redspace.ironsspellbooks.item.ILecternPlaceable"
 import {$Component} from "net.minecraft.network.chat.Component"
 
 export class $RuinedBookItem extends $Item implements $ILecternPlaceable$$Interface {
@@ -427,8 +427,8 @@ declare module "io.redspace.ironsspellbooks.item.curios.BetrayerSignetRingItem" 
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$PassiveAbilityCurio} from "io.redspace.ironsspellbooks.item.curios.PassiveAbilityCurio"
-import {$LivingIncomingDamageEvent$$Type} from "net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$LivingIncomingDamageEvent$$Type} from "net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent"
 import {$Item} from "net.minecraft.world.item.Item"
 
 export class $BetrayerSignetRingItem extends $PassiveAbilityCurio {
@@ -460,15 +460,15 @@ import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$ItemAttributeModifiers} from "net.minecraft.world.item.component.ItemAttributeModifiers"
 import {$Block} from "net.minecraft.world.level.block.Block"
-import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Equipable} from "net.minecraft.world.item.Equipable"
+import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$GeoAnimatable$$Type} from "software.bernie.geckolib.animatable.GeoAnimatable"
 import {$Supplier} from "java.util.function.Supplier"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$ImbuableChestplateArmorItem} from "io.redspace.ironsspellbooks.item.armor.ImbuableChestplateArmorItem"
-import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$DispenseItemBehavior} from "net.minecraft.core.dispenser.DispenseItemBehavior"
+import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$ArmorItem$Type$$Type} from "net.minecraft.world.item.ArmorItem$Type"
 
 export class $NetheriteMageArmorItem extends $ImbuableChestplateArmorItem {
@@ -505,15 +505,15 @@ import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$ItemAttributeModifiers} from "net.minecraft.world.item.component.ItemAttributeModifiers"
 import {$Block} from "net.minecraft.world.level.block.Block"
-import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Equipable} from "net.minecraft.world.item.Equipable"
+import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$GeoAnimatable$$Type} from "software.bernie.geckolib.animatable.GeoAnimatable"
 import {$Supplier} from "java.util.function.Supplier"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$ImbuableChestplateArmorItem} from "io.redspace.ironsspellbooks.item.armor.ImbuableChestplateArmorItem"
-import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$DispenseItemBehavior} from "net.minecraft.core.dispenser.DispenseItemBehavior"
+import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$ArmorItem$Type$$Type} from "net.minecraft.world.item.ArmorItem$Type"
 
 export class $CultistArmorItem extends $ImbuableChestplateArmorItem {
@@ -584,8 +584,8 @@ import {$List$$Type} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 
 export class $ShrivingStoneItem extends $Item {
 static readonly "BASE_ATTACK_DAMAGE_ID": $ResourceLocation
@@ -618,15 +618,15 @@ import {$ItemAttributeModifiers} from "net.minecraft.world.item.component.ItemAt
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Holder$$Type} from "net.minecraft.core.Holder"
 import {$AttributeContainer$$Type} from "io.redspace.ironsspellbooks.item.weapons.AttributeContainer"
-import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Equipable} from "net.minecraft.world.item.Equipable"
+import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$GeoAnimatable$$Type} from "software.bernie.geckolib.animatable.GeoAnimatable"
 import {$Supplier} from "java.util.function.Supplier"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$ExtendedArmorItem} from "io.redspace.ironsspellbooks.item.armor.ExtendedArmorItem"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$DispenseItemBehavior} from "net.minecraft.core.dispenser.DispenseItemBehavior"
+import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$ArmorItem$Type$$Type} from "net.minecraft.world.item.ArmorItem$Type"
 
 export class $ImbuableChestplateArmorItem extends $ExtendedArmorItem implements $IPresetSpellContainer$$Interface {
@@ -704,8 +704,8 @@ import {$UpgradeType$$Type} from "io.redspace.ironsspellbooks.item.armor.Upgrade
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Component} from "net.minecraft.network.chat.Component"
 
@@ -743,15 +743,15 @@ import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$ItemAttributeModifiers} from "net.minecraft.world.item.component.ItemAttributeModifiers"
 import {$Block} from "net.minecraft.world.level.block.Block"
-import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Equipable} from "net.minecraft.world.item.Equipable"
+import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$GeoAnimatable$$Type} from "software.bernie.geckolib.animatable.GeoAnimatable"
 import {$Supplier} from "java.util.function.Supplier"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$ImbuableChestplateArmorItem} from "io.redspace.ironsspellbooks.item.armor.ImbuableChestplateArmorItem"
-import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$DispenseItemBehavior} from "net.minecraft.core.dispenser.DispenseItemBehavior"
+import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$ArmorItem$Type$$Type} from "net.minecraft.world.item.ArmorItem$Type"
 
 export class $PaladinArmorItem extends $ImbuableChestplateArmorItem {
@@ -786,8 +786,8 @@ declare module "io.redspace.ironsspellbooks.item.curios.ExpulsionRing" {
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$PassiveAbilityCurio} from "io.redspace.ironsspellbooks.item.curios.PassiveAbilityCurio"
-import {$LivingIncomingDamageEvent$$Type} from "net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$LivingIncomingDamageEvent$$Type} from "net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent"
 import {$Item} from "net.minecraft.world.item.Item"
 
 export class $ExpulsionRing extends $PassiveAbilityCurio {
@@ -822,8 +822,8 @@ import {$Map} from "java.util.Map"
 import {$List$$Type} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$DrinkableItem} from "io.redspace.ironsspellbooks.item.consumables.DrinkableItem"
 import {$Supplier$$Type} from "java.util.function.Supplier"
@@ -860,14 +860,14 @@ declare module "io.redspace.ironsspellbooks.item.curios.AffinityRing" {
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$CurioBaseItem} from "io.redspace.ironsspellbooks.item.curios.CurioBaseItem"
 import {$List$$Type} from "java.util.List"
-import {$Block} from "net.minecraft.world.level.block.Block"
+import {$CurioBaseItem} from "io.redspace.ironsspellbooks.item.curios.CurioBaseItem"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 
 export class $AffinityRing extends $CurioBaseItem {
 static readonly "BASE_ATTACK_DAMAGE_ID": $ResourceLocation
@@ -930,8 +930,8 @@ export type $UpgradeType$$Type = ($UpgradeType);
  */
 export type $UpgradeType$$Original = $UpgradeType;}
 declare module "io.redspace.ironsspellbooks.item.CinderousSoulcallerItem" {
-import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
+import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
@@ -973,16 +973,16 @@ import {$Map} from "java.util.Map"
 import {$IDisableJacket$$Interface} from "io.redspace.ironsspellbooks.item.armor.IDisableJacket"
 import {$ItemAttributeModifiers} from "net.minecraft.world.item.component.ItemAttributeModifiers"
 import {$Block} from "net.minecraft.world.level.block.Block"
-import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Equipable} from "net.minecraft.world.item.Equipable"
+import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$GeoAnimatable$$Type} from "software.bernie.geckolib.animatable.GeoAnimatable"
 import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$Supplier} from "java.util.function.Supplier"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$ImbuableChestplateArmorItem} from "io.redspace.ironsspellbooks.item.armor.ImbuableChestplateArmorItem"
-import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$DispenseItemBehavior} from "net.minecraft.core.dispenser.DispenseItemBehavior"
+import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$ArmorItem$Type$$Type} from "net.minecraft.world.item.ArmorItem$Type"
 
 export class $WizardArmorItem extends $ImbuableChestplateArmorItem implements $IDisableJacket$$Interface {
@@ -1019,8 +1019,8 @@ declare module "io.redspace.ironsspellbooks.item.CastingItem" {
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 
 export class $CastingItem extends $Item {
@@ -1048,13 +1048,13 @@ export type $CastingItem$$Original = $CastingItem;}
 declare module "io.redspace.ironsspellbooks.item.Scroll" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$List$$Type} from "java.util.List"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$IScroll$$Interface} from "io.redspace.ironsspellbooks.api.item.IScroll"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
@@ -1093,12 +1093,12 @@ import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$List$$Type} from "java.util.List"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 
 export class $SimpleDescriptiveItem extends $Item {
 static readonly "BASE_ATTACK_DAMAGE_ID": $ResourceLocation
@@ -1125,8 +1125,8 @@ export type $SimpleDescriptiveItem$$Original = $SimpleDescriptiveItem;}
 declare module "io.redspace.ironsspellbooks.item.weapons.pyrium_staff.PyriumStaffItem" {
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$StaffItem} from "io.redspace.ironsspellbooks.item.weapons.StaffItem"
 
@@ -1158,15 +1158,15 @@ import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$ItemAttributeModifiers} from "net.minecraft.world.item.component.ItemAttributeModifiers"
 import {$Block} from "net.minecraft.world.level.block.Block"
-import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Equipable} from "net.minecraft.world.item.Equipable"
+import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$GeoAnimatable$$Type} from "software.bernie.geckolib.animatable.GeoAnimatable"
 import {$Supplier} from "java.util.function.Supplier"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$ImbuableChestplateArmorItem} from "io.redspace.ironsspellbooks.item.armor.ImbuableChestplateArmorItem"
-import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$DispenseItemBehavior} from "net.minecraft.core.dispenser.DispenseItemBehavior"
+import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$ArmorItem$Type$$Type} from "net.minecraft.world.item.ArmorItem$Type"
 
 export class $CryomancerArmorItem extends $ImbuableChestplateArmorItem {
@@ -1205,8 +1205,8 @@ import {$List$$Type} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 
 export class $SpellSlotUpgradeItem extends $Item {
 static readonly "BASE_ATTACK_DAMAGE_ID": $ResourceLocation
@@ -1237,8 +1237,8 @@ import {$Map} from "java.util.Map"
 import {$List$$Type} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ReadableLoreItem} from "io.redspace.ironsspellbooks.item.ReadableLoreItem"
 import {$WrittenBookContent} from "net.minecraft.world.item.component.WrittenBookContent"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
@@ -1277,8 +1277,8 @@ import {$UniqueItem$$Interface} from "io.redspace.ironsspellbooks.item.UniqueIte
 import {$List$$Type} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"
@@ -1338,10 +1338,10 @@ declare module "io.redspace.ironsspellbooks.item.curios.SimpleDescriptiveCurio" 
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$CurioBaseItem} from "io.redspace.ironsspellbooks.item.curios.CurioBaseItem"
 import {$List, $List$$Type} from "java.util.List"
-import {$Block} from "net.minecraft.world.level.block.Block"
+import {$CurioBaseItem} from "io.redspace.ironsspellbooks.item.curios.CurioBaseItem"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
@@ -1442,8 +1442,8 @@ import {$List$$Type} from "java.util.List"
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"
@@ -1479,21 +1479,21 @@ declare module "io.redspace.ironsspellbooks.item.armor.InfernalSorcererArmorItem
 import {$GeoArmorRenderer} from "software.bernie.geckolib.renderer.GeoArmorRenderer"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
-import {$ItemAttributeModifiers} from "net.minecraft.world.item.component.ItemAttributeModifiers"
 import {$List$$Type} from "java.util.List"
+import {$ItemAttributeModifiers} from "net.minecraft.world.item.component.ItemAttributeModifiers"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
-import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Equipable} from "net.minecraft.world.item.Equipable"
+import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$GeoAnimatable$$Type} from "software.bernie.geckolib.animatable.GeoAnimatable"
 import {$Supplier} from "java.util.function.Supplier"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$ImbuableChestplateArmorItem} from "io.redspace.ironsspellbooks.item.armor.ImbuableChestplateArmorItem"
-import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$DispenseItemBehavior} from "net.minecraft.core.dispenser.DispenseItemBehavior"
+import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$ArmorItem$Type$$Type} from "net.minecraft.world.item.ArmorItem$Type"
 
 export class $InfernalSorcererArmorItem extends $ImbuableChestplateArmorItem {
@@ -1533,15 +1533,15 @@ import {$Map} from "java.util.Map"
 import {$ItemAttributeModifiers} from "net.minecraft.world.item.component.ItemAttributeModifiers"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$IArmorCapeProvider$$Interface} from "io.redspace.ironsspellbooks.item.armor.IArmorCapeProvider"
-import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Equipable} from "net.minecraft.world.item.Equipable"
+import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$GeoAnimatable$$Type} from "software.bernie.geckolib.animatable.GeoAnimatable"
 import {$Supplier} from "java.util.function.Supplier"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$ImbuableChestplateArmorItem} from "io.redspace.ironsspellbooks.item.armor.ImbuableChestplateArmorItem"
-import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$DispenseItemBehavior} from "net.minecraft.core.dispenser.DispenseItemBehavior"
+import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$ArmorItem$Type$$Type} from "net.minecraft.world.item.ArmorItem$Type"
 
 export class $PyromancerArmorItem extends $ImbuableChestplateArmorItem implements $IArmorCapeProvider$$Interface {
@@ -1580,15 +1580,15 @@ import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$ItemAttributeModifiers} from "net.minecraft.world.item.component.ItemAttributeModifiers"
 import {$Block} from "net.minecraft.world.level.block.Block"
-import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Equipable} from "net.minecraft.world.item.Equipable"
+import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$GeoAnimatable$$Type} from "software.bernie.geckolib.animatable.GeoAnimatable"
 import {$Supplier} from "java.util.function.Supplier"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$ExtendedArmorItem} from "io.redspace.ironsspellbooks.item.armor.ExtendedArmorItem"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$DispenseItemBehavior} from "net.minecraft.core.dispenser.DispenseItemBehavior"
+import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$ArmorItem$Type$$Type} from "net.minecraft.world.item.ArmorItem$Type"
 
 export class $GoldCrownArmorItem extends $ExtendedArmorItem {
@@ -1622,13 +1622,13 @@ export type $GoldCrownArmorItem$$Original = $GoldCrownArmorItem;}
 declare module "io.redspace.ironsspellbooks.item.WaywardCompass" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$List$$Type} from "java.util.List"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$GlobalPos} from "net.minecraft.core.GlobalPos"
@@ -1671,8 +1671,8 @@ import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$SpellBook} from "io.redspace.ironsspellbooks.item.SpellBook"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 
 export class $CursedDollSpellbookItem extends $SpellBook {
 static readonly "BASE_ATTACK_DAMAGE_ID": $ResourceLocation
@@ -1703,8 +1703,8 @@ import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$List} from "java.util.List"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$SimpleDescriptiveCurio} from "io.redspace.ironsspellbooks.item.curios.SimpleDescriptiveCurio"
@@ -1777,25 +1777,25 @@ public "getAttributeModifiers"(arg0: $SlotContext$$Type, arg1: $ResourceLocation
 public "isEquippedBy"(arg0: $LivingEntity$$Type): boolean
 public "canEquip"(arg0: $SlotContext$$Type, arg1: $ItemStack$$Type): boolean
 public "isEnderMask"(arg0: $SlotContext$$Type, arg1: $EnderMan$$Type, arg2: $ItemStack$$Type): boolean
-public "getSlotsTooltip"(arg0: $List$$Type<($Component$$Type)>, arg1: $Item$TooltipContext$$Type, arg2: $ItemStack$$Type): $List<($Component)>
+public "curioTick"(arg0: $SlotContext$$Type, arg1: $ItemStack$$Type): void
 /**
  * 
  * @deprecated
  */
 public "getSlotsTooltip"(arg0: $List$$Type<($Component$$Type)>, arg1: $ItemStack$$Type): $List<($Component)>
+public "getSlotsTooltip"(arg0: $List$$Type<($Component$$Type)>, arg1: $Item$TooltipContext$$Type, arg2: $ItemStack$$Type): $List<($Component)>
+public "getDropRule"(arg0: $SlotContext$$Type, arg1: $DamageSource$$Type, arg2: boolean, arg3: $ItemStack$$Type): $ICurio$DropRule
 /**
  * 
  * @deprecated
  */
 public "getDropRule"(arg0: $SlotContext$$Type, arg1: $DamageSource$$Type, arg2: integer, arg3: boolean, arg4: $ItemStack$$Type): $ICurio$DropRule
-public "getDropRule"(arg0: $SlotContext$$Type, arg1: $DamageSource$$Type, arg2: boolean, arg3: $ItemStack$$Type): $ICurio$DropRule
-public "getAttributesTooltip"(arg0: $List$$Type<($Component$$Type)>, arg1: $Item$TooltipContext$$Type, arg2: $ItemStack$$Type): $List<($Component)>
 /**
  * 
  * @deprecated
  */
 public "getAttributesTooltip"(arg0: $List$$Type<($Component$$Type)>, arg1: $ItemStack$$Type): $List<($Component)>
-public "curioTick"(arg0: $SlotContext$$Type, arg1: $ItemStack$$Type): void
+public "getAttributesTooltip"(arg0: $List$$Type<($Component$$Type)>, arg1: $Item$TooltipContext$$Type, arg2: $ItemStack$$Type): $List<($Component)>
 public "onEquip"(arg0: $SlotContext$$Type, arg1: $ItemStack$$Type, arg2: $ItemStack$$Type): void
 public "onUnequip"(arg0: $SlotContext$$Type, arg1: $ItemStack$$Type, arg2: $ItemStack$$Type): void
 public "canUnequip"(arg0: $SlotContext$$Type, arg1: $ItemStack$$Type): boolean
@@ -1829,13 +1829,13 @@ export type $CurioBaseItem$$Original = $CurioBaseItem;}
 declare module "io.redspace.ironsspellbooks.item.consumables.NetherwardTinctureItem" {
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$List$$Type} from "java.util.List"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
-import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
+import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
@@ -1901,15 +1901,15 @@ import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$ItemAttributeModifiers} from "net.minecraft.world.item.component.ItemAttributeModifiers"
 import {$Block} from "net.minecraft.world.level.block.Block"
-import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Equipable} from "net.minecraft.world.item.Equipable"
+import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$GeoAnimatable$$Type} from "software.bernie.geckolib.animatable.GeoAnimatable"
 import {$Supplier} from "java.util.function.Supplier"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$ExtendedArmorItem} from "io.redspace.ironsspellbooks.item.armor.ExtendedArmorItem"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$DispenseItemBehavior} from "net.minecraft.core.dispenser.DispenseItemBehavior"
+import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$ArmorItem$Type$$Type} from "net.minecraft.world.item.ArmorItem$Type"
 
 export class $WanderingMagicianArmorItem extends $ExtendedArmorItem {
@@ -1947,15 +1947,15 @@ import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$ItemAttributeModifiers} from "net.minecraft.world.item.component.ItemAttributeModifiers"
 import {$Block} from "net.minecraft.world.level.block.Block"
-import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Equipable} from "net.minecraft.world.item.Equipable"
+import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$GeoAnimatable$$Type} from "software.bernie.geckolib.animatable.GeoAnimatable"
 import {$Supplier} from "java.util.function.Supplier"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$ExtendedArmorItem} from "io.redspace.ironsspellbooks.item.armor.ExtendedArmorItem"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$DispenseItemBehavior} from "net.minecraft.core.dispenser.DispenseItemBehavior"
+import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$ArmorItem$Type$$Type} from "net.minecraft.world.item.ArmorItem$Type"
 
 export class $TarnishedCrownArmorItem extends $ExtendedArmorItem implements $IPresetSpellContainer$$Interface {
@@ -1993,15 +1993,15 @@ import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$ItemAttributeModifiers} from "net.minecraft.world.item.component.ItemAttributeModifiers"
 import {$Block} from "net.minecraft.world.level.block.Block"
-import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Equipable} from "net.minecraft.world.item.Equipable"
+import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$GeoAnimatable$$Type} from "software.bernie.geckolib.animatable.GeoAnimatable"
 import {$Supplier} from "java.util.function.Supplier"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$ImbuableChestplateArmorItem} from "io.redspace.ironsspellbooks.item.armor.ImbuableChestplateArmorItem"
-import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$DispenseItemBehavior} from "net.minecraft.core.dispenser.DispenseItemBehavior"
+import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$ArmorItem$Type$$Type} from "net.minecraft.world.item.ArmorItem$Type"
 
 export class $BootsOfSpeedArmorItem extends $ImbuableChestplateArmorItem {
@@ -2066,16 +2066,16 @@ import {$Map} from "java.util.Map"
 import {$IDisableJacket$$Interface} from "io.redspace.ironsspellbooks.item.armor.IDisableJacket"
 import {$ItemAttributeModifiers} from "net.minecraft.world.item.component.ItemAttributeModifiers"
 import {$Block} from "net.minecraft.world.level.block.Block"
-import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Equipable} from "net.minecraft.world.item.Equipable"
+import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$GeoAnimatable$$Type} from "software.bernie.geckolib.animatable.GeoAnimatable"
 import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$Supplier} from "java.util.function.Supplier"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$ImbuableChestplateArmorItem} from "io.redspace.ironsspellbooks.item.armor.ImbuableChestplateArmorItem"
-import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$DispenseItemBehavior} from "net.minecraft.core.dispenser.DispenseItemBehavior"
+import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$ArmorItem$Type$$Type} from "net.minecraft.world.item.ArmorItem$Type"
 
 export class $ShadowwalkerArmorItem extends $ImbuableChestplateArmorItem implements $IDisableJacket$$Interface {
@@ -2112,8 +2112,8 @@ import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$PassiveAbilityCurio} from "io.redspace.ironsspellbooks.item.curios.PassiveAbilityCurio"
-import {$LivingIncomingDamageEvent$$Type} from "net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$LivingIncomingDamageEvent$$Type} from "net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Component} from "net.minecraft.network.chat.Component"
 
@@ -2149,15 +2149,15 @@ import {$Map} from "java.util.Map"
 import {$ItemAttributeModifiers} from "net.minecraft.world.item.component.ItemAttributeModifiers"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$IArmorCapeProvider$$Interface} from "io.redspace.ironsspellbooks.item.armor.IArmorCapeProvider"
-import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Equipable} from "net.minecraft.world.item.Equipable"
+import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$GeoAnimatable$$Type} from "software.bernie.geckolib.animatable.GeoAnimatable"
 import {$Supplier} from "java.util.function.Supplier"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$ImbuableChestplateArmorItem} from "io.redspace.ironsspellbooks.item.armor.ImbuableChestplateArmorItem"
-import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$DispenseItemBehavior} from "net.minecraft.core.dispenser.DispenseItemBehavior"
+import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$ArmorItem$Type$$Type} from "net.minecraft.world.item.ArmorItem$Type"
 
 export class $ElectromancerArmorItem extends $ImbuableChestplateArmorItem implements $IArmorCapeProvider$$Interface {
@@ -2194,8 +2194,8 @@ declare module "io.redspace.ironsspellbooks.item.consumables.FireAleItem" {
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$DrinkableItem} from "io.redspace.ironsspellbooks.item.consumables.DrinkableItem"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 
 export class $FireAleItem extends $DrinkableItem {
@@ -2289,15 +2289,15 @@ import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$ItemAttributeModifiers} from "net.minecraft.world.item.component.ItemAttributeModifiers"
 import {$Block} from "net.minecraft.world.level.block.Block"
-import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Equipable} from "net.minecraft.world.item.Equipable"
+import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$GeoAnimatable$$Type} from "software.bernie.geckolib.animatable.GeoAnimatable"
 import {$Supplier} from "java.util.function.Supplier"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$ImbuableChestplateArmorItem} from "io.redspace.ironsspellbooks.item.armor.ImbuableChestplateArmorItem"
-import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$DispenseItemBehavior} from "net.minecraft.core.dispenser.DispenseItemBehavior"
+import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$ArmorItem$Type$$Type} from "net.minecraft.world.item.ArmorItem$Type"
 
 export class $ArchevokerArmorItem extends $ImbuableChestplateArmorItem {
@@ -2365,8 +2365,8 @@ import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$List, $List$$Type} from "java.util.List"
-import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$SimpleDescriptiveCurio} from "io.redspace.ironsspellbooks.item.curios.SimpleDescriptiveCurio"
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
@@ -2382,8 +2382,8 @@ static readonly "BY_BLOCK": $Map<($Block), ($Item)>
 
 constructor(arg0: $Item$Properties$$Type)
 
-public "getAttributesTooltip"(arg0: $List$$Type<($Component$$Type)>, arg1: $Item$TooltipContext$$Type, arg2: $ItemStack$$Type): $List<($Component)>
 public "curioTick"(arg0: $SlotContext$$Type, arg1: $ItemStack$$Type): void
+public "getAttributesTooltip"(arg0: $List$$Type<($Component$$Type)>, arg1: $Item$TooltipContext$$Type, arg2: $ItemStack$$Type): $List<($Component)>
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 }
 /**
@@ -2396,8 +2396,8 @@ export type $TeleportationAmuletItem$$Type = ($TeleportationAmuletItem);
  */
 export type $TeleportationAmuletItem$$Original = $TeleportationAmuletItem;}
 declare module "io.redspace.ironsspellbooks.item.armor.ExtendedArmorItem" {
-import {$ArmorMaterial$$Type} from "net.minecraft.world.item.ArmorMaterial"
 import {$GeoArmorRenderer} from "software.bernie.geckolib.renderer.GeoArmorRenderer"
+import {$ArmorMaterial$$Type} from "net.minecraft.world.item.ArmorMaterial"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$ItemAttributeModifiers} from "net.minecraft.world.item.component.ItemAttributeModifiers"
 import {$Holder$$Type} from "net.minecraft.core.Holder"
@@ -2405,8 +2405,8 @@ import {$AttributeContainer, $AttributeContainer$$Type} from "io.redspace.ironss
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$GeoAnimatable$$Type} from "software.bernie.geckolib.animatable.GeoAnimatable"
 import {$Supplier} from "java.util.function.Supplier"
-import {$ArmorItem} from "net.minecraft.world.item.ArmorItem"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$ArmorItem} from "net.minecraft.world.item.ArmorItem"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$DispenseItemBehavior} from "net.minecraft.core.dispenser.DispenseItemBehavior"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
@@ -2415,9 +2415,9 @@ import {$Map} from "java.util.Map"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$GeoRenderProvider$$Type} from "software.bernie.geckolib.animatable.client.GeoRenderProvider"
 import {$AnimatableInstanceCache} from "software.bernie.geckolib.animatable.instance.AnimatableInstanceCache"
-import {$GeoItem$$Interface} from "software.bernie.geckolib.animatable.GeoItem"
 import {$AnimatableManager$ControllerRegistrar$$Type} from "software.bernie.geckolib.animation.AnimatableManager$ControllerRegistrar"
 import {$Consumer$$Type} from "java.util.function.Consumer"
+import {$GeoItem$$Interface} from "software.bernie.geckolib.animatable.GeoItem"
 import {$Equipable} from "net.minecraft.world.item.Equipable"
 import {$Attribute$$Type} from "net.minecraft.world.entity.ai.attributes.Attribute"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
@@ -2439,15 +2439,15 @@ public "getDefaultAttributeModifiers"(): $ItemAttributeModifiers
 public "createGeoRenderer"(arg0: $Consumer$$Type<($GeoRenderProvider)>): void
 public "registerControllers"(arg0: $AnimatableManager$ControllerRegistrar$$Type): void
 public "getAnimatableInstanceCache"(): $AnimatableInstanceCache
-public static "withManaAndSpellPowerAttribute"(arg0: integer, arg1: double): ($AttributeContainer)[]
 public "supplyRenderer"(): $GeoArmorRenderer<(never)>
 public static "schoolAttributes"(arg0: $Holder$$Type<($Attribute)>): ($AttributeContainer)[]
 public static "withManaAttribute"(arg0: integer): ($AttributeContainer)[]
+public static "withManaAndSpellPowerAttribute"(arg0: integer, arg1: double): ($AttributeContainer)[]
+public "getTick"(arg0: any): double
 public static "registerSyncedAnimatable"(arg0: $GeoAnimatable$$Type): void
 public "isPerspectiveAware"(): boolean
 public "animatableCacheOverride"(): $AnimatableInstanceCache
 public static "getOrAssignId"(arg0: $ItemStack$$Type, arg1: $ServerLevel$$Type): long
-public "getTick"(arg0: any): double
 public static "getId"(arg0: $ItemStack$$Type): long
 public "getAnimData"<D>(arg0: long, arg1: $SerializableDataTicket$$Type<(D)>): D
 public "setAnimData"<D>(arg0: $Entity$$Type, arg1: long, arg2: $SerializableDataTicket$$Type<(D)>, arg3: D): void
@@ -2479,16 +2479,16 @@ export type $ExtendedArmorItem$$Original = $ExtendedArmorItem;}
 declare module "io.redspace.ironsspellbooks.item.weapons.AutoloaderCrossbow" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
+import {$List$$Type} from "java.util.List"
 import {$Predicate} from "java.util.function.Predicate"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
-import {$List$$Type} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$ItemEntity$$Type} from "net.minecraft.world.entity.item.ItemEntity"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
+import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
 import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$CrossbowItem} from "net.minecraft.world.item.CrossbowItem"
-import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
@@ -2519,10 +2519,10 @@ public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Typ
 public "inventoryTick"(arg0: $ItemStack$$Type, arg1: $Level$$Type, arg2: $Entity$$Type, arg3: integer, arg4: boolean): void
 public "onEntityItemUpdate"(arg0: $ItemStack$$Type, arg1: $ItemEntity$$Type): boolean
 public static "getChargeDuration"(arg0: $ItemStack$$Type, arg1: $LivingEntity$$Type): integer
+public static "setLoading"(arg0: $ItemStack$$Type, arg1: boolean): void
+public static "getLoadingTicks"(arg0: $ItemStack$$Type): integer
 public static "startLoading"(arg0: $Player$$Type, arg1: $ItemStack$$Type): void
 public static "setLoadingTicks"(arg0: $ItemStack$$Type, arg1: integer): void
-public static "getLoadingTicks"(arg0: $ItemStack$$Type): integer
-public static "setLoading"(arg0: $ItemStack$$Type, arg1: boolean): void
 public static "isLoading"(arg0: $ItemStack$$Type): boolean
 public "use"(arg0: $Level$$Type, arg1: $Player$$Type, arg2: $InteractionHand$$Type): $InteractionResultHolder<($ItemStack)>
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
@@ -2560,8 +2560,8 @@ static readonly "BY_BLOCK": $Map<($Block), ($Item)>
 
 constructor(arg0: $Item$Properties$$Type)
 
-public "getPosition"(arg0: $Vec3$$Type, arg1: float, arg2: float, arg3: float, arg4: $Vec2$$Type): $Vec3
 public "use"(arg0: $Level$$Type, arg1: $Player$$Type, arg2: $InteractionHand$$Type): $InteractionResultHolder<($ItemStack)>
+public "getPosition"(arg0: $Vec3$$Type, arg1: float, arg2: float, arg3: float, arg4: $Vec2$$Type): $Vec3
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 }
 /**
@@ -2597,13 +2597,13 @@ export type $IArmorCapeProvider$$Original = $IArmorCapeProvider;}
 declare module "io.redspace.ironsspellbooks.item.EldritchManuscript" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$List$$Type} from "java.util.List"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
@@ -2639,15 +2639,15 @@ import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$ItemAttributeModifiers} from "net.minecraft.world.item.component.ItemAttributeModifiers"
 import {$Block} from "net.minecraft.world.level.block.Block"
-import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Equipable} from "net.minecraft.world.item.Equipable"
+import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$GeoAnimatable$$Type} from "software.bernie.geckolib.animatable.GeoAnimatable"
 import {$Supplier} from "java.util.function.Supplier"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$ImbuableChestplateArmorItem} from "io.redspace.ironsspellbooks.item.armor.ImbuableChestplateArmorItem"
-import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$DispenseItemBehavior} from "net.minecraft.core.dispenser.DispenseItemBehavior"
+import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$ArmorItem$Type$$Type} from "net.minecraft.world.item.ArmorItem$Type"
 
 export class $PlaguedArmorItem extends $ImbuableChestplateArmorItem {
@@ -2686,10 +2686,10 @@ import {$List$$Type} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockItem} from "net.minecraft.world.item.BlockItem"
-import {$AdditionalItemPlacement, $AdditionalItemPlacement$$Type} from "net.mehvahdjukaar.moonlight.api.item.additional_placements.AdditionalItemPlacement"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
+import {$AdditionalItemPlacement, $AdditionalItemPlacement$$Type} from "net.mehvahdjukaar.moonlight.api.item.additional_placements.AdditionalItemPlacement"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 
 export class $PortalFrameBlockItem extends $BlockItem {
 static readonly "BASE_ATTACK_DAMAGE_ID": $ResourceLocation
@@ -2783,8 +2783,8 @@ declare module "io.redspace.ironsspellbooks.item.EnergizedCoreItem" {
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 
@@ -2816,15 +2816,15 @@ import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$ItemAttributeModifiers} from "net.minecraft.world.item.component.ItemAttributeModifiers"
 import {$Block} from "net.minecraft.world.level.block.Block"
-import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Equipable} from "net.minecraft.world.item.Equipable"
+import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$GeoAnimatable$$Type} from "software.bernie.geckolib.animatable.GeoAnimatable"
 import {$Supplier} from "java.util.function.Supplier"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$ImbuableChestplateArmorItem} from "io.redspace.ironsspellbooks.item.armor.ImbuableChestplateArmorItem"
-import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$DispenseItemBehavior} from "net.minecraft.core.dispenser.DispenseItemBehavior"
+import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$ArmorItem$Type$$Type} from "net.minecraft.world.item.ArmorItem$Type"
 
 export class $PriestArmorItem extends $ImbuableChestplateArmorItem {
@@ -2861,8 +2861,8 @@ import {$Map} from "java.util.Map"
 import {$List$$Type} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Fluid, $Fluid$$Type} from "net.minecraft.world.level.material.Fluid"

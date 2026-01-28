@@ -48,8 +48,8 @@ public "header"(): StringJS
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
-public "nuggets"(): $List<(StringJS)>
 public "appendHeader"(arg0: $StringBuilder$$Type, arg1: $List$$Type<(StringJS)>): void
+public "nuggets"(): $List<(StringJS)>
 public "getErrorComment"(): StringJS
 get "errorComment"(): StringJS
 }
@@ -87,8 +87,8 @@ export type $ReportedException$$Type = ($ReportedException);
  */
 export type $ReportedException$$Original = $ReportedException;}
 declare module "net.minecraft.SystemReport" {
-import {$StringBuilder$$Type} from "java.lang.StringBuilder"
 import {$Map} from "java.util.Map"
+import {$StringBuilder$$Type} from "java.lang.StringBuilder"
 import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$SystemReportAccessor$$Interface} from "com.simibubi.create.foundation.mixin.accessor.SystemReportAccessor"
 
@@ -101,15 +101,15 @@ public "getEntries"(): $Map
 public "setDetail"(arg0: StringJS, arg1: StringJS): void
 public "setDetail"(arg0: StringJS, arg1: $Supplier$$Type<(StringJS)>): void
 public "toLineSeparatedString"(): StringJS
-public static "getOPERATING_SYSTEM$create_$md$a93e73$2"(): StringJS
-public static "getJAVA_VERSION$create_$md$a93e73$3"(): StringJS
+public static "getOPERATING_SYSTEM$create_$md$b00d76$2"(): StringJS
+public static "getJAVA_VERSION$create_$md$b00d76$3"(): StringJS
 public static "sizeInMiB"(arg0: long): float
 public "appendToCrashReportString"(arg0: $StringBuilder$$Type): void
 public static "getOPERATING_SYSTEM"(): StringJS
 public static "getJAVA_VERSION"(): StringJS
 get "entries"(): $Map
-public static get "OPERATING_SYSTEM$create_$md$a93e73$2"(): StringJS
-public static get "JAVA_VERSION$create_$md$a93e73$3"(): StringJS
+public static get "OPERATING_SYSTEM$create_$md$b00d76$2"(): StringJS
+public static get "JAVA_VERSION$create_$md$b00d76$3"(): StringJS
 public static get "OPERATING_SYSTEM"(): StringJS
 public static get "JAVA_VERSION"(): StringJS
 }
@@ -191,8 +191,8 @@ import {$Collection} from "java.util.Collection"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$KubeColor$$Interface} from "dev.latvian.mods.kubejs.color.KubeColor"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 import {$TextColor} from "net.minecraft.network.chat.TextColor"
@@ -238,14 +238,14 @@ public "getChar"(): character
 public static "valueOf"(arg0: StringJS): $ChatFormatting
 public "getId"(): integer
 public static "getByName"(arg0: StringJS): $ChatFormatting
-public "getColor"(): integer
 public "getSerializedName"(): StringJS
+public "getColor"(): integer
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 public "getFireworkRGB"(): integer
 public "toHexString"(): StringJS
 public "serialize"(): StringJS
@@ -259,8 +259,8 @@ get "color"(): boolean
 get "name"(): StringJS
 get "char"(): character
 get "id"(): integer
-get "color"(): integer
 get "serializedName"(): StringJS
+get "color"(): integer
 get "remappedEnumConstantName"(): StringJS
 get "fireworkRGB"(): integer
 }
@@ -296,8 +296,8 @@ export type $BlockUtil$FoundRectangle$$Original = $BlockUtil$FoundRectangle;}
 declare module "net.minecraft.CrashReportCategory" {
 import {$LevelHeightAccessor$$Type} from "net.minecraft.world.level.LevelHeightAccessor"
 import {$StringBuilder$$Type} from "java.lang.StringBuilder"
-import {$StackTraceElement, $StackTraceElement$$Type} from "java.lang.StackTraceElement"
 import {$CrashReportDetail$$Type} from "net.minecraft.CrashReportDetail"
+import {$StackTraceElement, $StackTraceElement$$Type} from "java.lang.StackTraceElement"
 import {$Throwable$$Type} from "java.lang.Throwable"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"

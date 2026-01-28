@@ -139,6 +139,7 @@ public static "defineModulesWithOneLoader"(arg0: $Configuration$$Type, arg1: $Li
 public "defineModulesWithOneLoader"(arg0: $Configuration$$Type, arg1: $ClassLoader$$Type): $ModuleLayer
 public static "defineModulesWithManyLoaders"(arg0: $Configuration$$Type, arg1: $List$$Type<($ModuleLayer$$Type)>, arg2: $ClassLoader$$Type): $ModuleLayer$Controller
 public "defineModulesWithManyLoaders"(arg0: $Configuration$$Type, arg1: $ClassLoader$$Type): $ModuleLayer
+public "findLoader"(arg0: StringJS): $ClassLoader
 public "toString"(): StringJS
 public static "empty"(): $ModuleLayer
 public static "boot"(): $ModuleLayer
@@ -146,9 +147,8 @@ public "modules"(): $Set<($Module)>
 public "configuration"(): $Configuration
 public "parents"(): $List<($ModuleLayer)>
 public "findModule"(arg0: StringJS): $Optional<($Module)>
-public static "defineModules"(arg0: $Configuration$$Type, arg1: $List$$Type<($ModuleLayer$$Type)>, arg2: $Function$$Type<(StringJS), ($ClassLoader$$Type)>): $ModuleLayer$Controller
 public "defineModules"(arg0: $Configuration$$Type, arg1: $Function$$Type<(StringJS), ($ClassLoader$$Type)>): $ModuleLayer
-public "findLoader"(arg0: StringJS): $ClassLoader
+public static "defineModules"(arg0: $Configuration$$Type, arg1: $List$$Type<($ModuleLayer$$Type)>, arg2: $Function$$Type<(StringJS), ($ClassLoader$$Type)>): $ModuleLayer$Controller
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -186,8 +186,8 @@ export type $ModuleLayer$Controller$$Type = ($ModuleLayer$Controller);
 export type $ModuleLayer$Controller$$Original = $ModuleLayer$Controller;}
 declare module "java.lang.Double" {
 import {$ConstantDesc$$Interface} from "java.lang.constant.ConstantDesc"
-import {$Constable$$Interface} from "java.lang.constant.Constable"
 import {$MethodHandles$Lookup$$Type} from "java.lang.invoke.MethodHandles$Lookup"
+import {$Constable$$Interface} from "java.lang.constant.Constable"
 import {$Optional} from "java.util.Optional"
 import {$Comparable$$Interface} from "java.lang.Comparable"
 import {$Class} from "java.lang.Class"
@@ -289,8 +289,8 @@ export type $Thread$UncaughtExceptionHandler$$Original = $Thread$UncaughtExcepti
 declare module "java.lang.Enum" {
 import {$Constable$$Interface} from "java.lang.constant.Constable"
 import {$Optional} from "java.util.Optional"
-import {$Serializable$$Interface} from "java.io.Serializable"
 import {$Comparable$$Interface} from "java.lang.Comparable"
+import {$Serializable$$Interface} from "java.io.Serializable"
 import {$Class, $Class$$Type} from "java.lang.Class"
 import {$Enum$EnumDesc} from "java.lang.Enum$EnumDesc"
 
@@ -352,10 +352,10 @@ export type $Thread$State$$Original = $Thread$State;}
 declare module "java.lang.Module" {
 import {$ModuleDescriptor} from "java.lang.module.ModuleDescriptor"
 import {$AnnotatedElement$$Interface} from "java.lang.reflect.AnnotatedElement"
-import {$ModuleLayer} from "java.lang.ModuleLayer"
 import {$Annotation, $Annotation$$Type} from "java.lang.annotation.Annotation"
-import {$Set} from "java.util.Set"
+import {$ModuleLayer} from "java.lang.ModuleLayer"
 import {$Class$$Type} from "java.lang.Class"
+import {$Set} from "java.util.Set"
 import {$InputStream} from "java.io.InputStream"
 import {$ClassLoader} from "java.lang.ClassLoader"
 
@@ -412,13 +412,13 @@ export type $Module$$Type = ($Module);
 export type $Module$$Original = $Module;}
 declare module "java.lang.Thread" {
 import {$Map} from "java.util.Map"
-import {$StackTraceElement} from "java.lang.StackTraceElement"
 import {$Thread$State} from "java.lang.Thread$State"
 import {$Thread$Builder$OfVirtual} from "java.lang.Thread$Builder$OfVirtual"
+import {$StackTraceElement} from "java.lang.StackTraceElement"
 import {$ThreadGroup, $ThreadGroup$$Type} from "java.lang.ThreadGroup"
 import {$Thread$Builder$OfPlatform} from "java.lang.Thread$Builder$OfPlatform"
-import {$Duration$$Type} from "java.time.Duration"
 import {$Runnable$$Type, $Runnable$$Interface} from "java.lang.Runnable"
+import {$Duration$$Type} from "java.time.Duration"
 import {$Thread$UncaughtExceptionHandler, $Thread$UncaughtExceptionHandler$$Type} from "java.lang.Thread$UncaughtExceptionHandler"
 import {$ClassLoader, $ClassLoader$$Type} from "java.lang.ClassLoader"
 
@@ -576,9 +576,9 @@ export type $AbstractStringBuilder$$Type = ($AbstractStringBuilder);
  */
 export type $AbstractStringBuilder$$Original = $AbstractStringBuilder;}
 declare module "java.lang.StringBuilder" {
+import {$Comparable$$Interface} from "java.lang.Comparable"
 import {$Serializable$$Interface} from "java.io.Serializable"
 import {$Appendable, $Appendable$$Interface} from "java.lang.Appendable"
-import {$Comparable$$Interface} from "java.lang.Comparable"
 import {$IntStream} from "java.util.stream.IntStream"
 import {$StringBuffer$$Type} from "java.lang.StringBuffer"
 import {$AbstractStringBuilder} from "java.lang.AbstractStringBuilder"
@@ -727,16 +727,12 @@ import {$List} from "java.util.List"
  * Loading the class using require() will not throw an error, but the class will be undefined.
  */
 export class $Runtime$Version implements $Comparable$$Interface<($Runtime$Version)> {
-public "interim"(): integer
-public "equalsIgnoreOptional"(arg0: any): boolean
-public "patch"(): integer
-public "compareToIgnoreOptional"(arg0: $Runtime$Version$$Type): integer
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "version"(): $List<(integer)>
 public "hashCode"(): integer
-public "compareTo"(arg0: any): integer
 public "compareTo"(arg0: $Runtime$Version$$Type): integer
+public "compareTo"(arg0: any): integer
 public "update"(): integer
 public "feature"(): integer
 /**
@@ -745,9 +741,6 @@ public "feature"(): integer
  */
 public "security"(): integer
 public static "parse"(arg0: StringJS): $Runtime$Version
-public "pre"(): $Optional<(StringJS)>
-public "build"(): $Optional<(integer)>
-public "optional"(): $Optional<(StringJS)>
 /**
  * 
  * @deprecated
@@ -758,6 +751,13 @@ public "major"(): integer
  * @deprecated
  */
 public "minor"(): integer
+public "pre"(): $Optional<(StringJS)>
+public "build"(): $Optional<(integer)>
+public "optional"(): $Optional<(StringJS)>
+public "interim"(): integer
+public "equalsIgnoreOptional"(arg0: any): boolean
+public "patch"(): integer
+public "compareToIgnoreOptional"(arg0: $Runtime$Version$$Type): integer
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -870,8 +870,8 @@ export type $Comparable$$Type<T> = ((arg0: T) => integer);
 export type $Comparable$$Original<T> = $Comparable<(T)>;}
 declare module "java.lang.Throwable" {
 import {$StackTraceElement, $StackTraceElement$$Type} from "java.lang.StackTraceElement"
-import {$Serializable$$Interface} from "java.io.Serializable"
 import {$PrintStream$$Type} from "java.io.PrintStream"
+import {$Serializable$$Interface} from "java.io.Serializable"
 import {$PrintWriter$$Type} from "java.io.PrintWriter"
 
 /**
@@ -1002,8 +1002,8 @@ export type $ThreadGroup$$Type = ($ThreadGroup);
 export type $ThreadGroup$$Original = $ThreadGroup;}
 declare module "java.lang.Float" {
 import {$ConstantDesc$$Interface} from "java.lang.constant.ConstantDesc"
-import {$Constable$$Interface} from "java.lang.constant.Constable"
 import {$MethodHandles$Lookup$$Type} from "java.lang.invoke.MethodHandles$Lookup"
+import {$Constable$$Interface} from "java.lang.constant.Constable"
 import {$Optional} from "java.util.Optional"
 import {$Comparable$$Interface} from "java.lang.Comparable"
 import {$Class} from "java.lang.Class"
@@ -1158,8 +1158,8 @@ export type $StackTraceElement$$Type = ($StackTraceElement);
  */
 export type $StackTraceElement$$Original = $StackTraceElement;}
 declare module "java.lang.Thread$Builder$OfPlatform" {
-import {$ThreadFactory} from "java.util.concurrent.ThreadFactory"
 import {$ThreadGroup$$Type} from "java.lang.ThreadGroup"
+import {$ThreadFactory} from "java.util.concurrent.ThreadFactory"
 import {$Thread$Builder, $Thread$Builder$$Interface} from "java.lang.Thread$Builder"
 import {$Thread} from "java.lang.Thread"
 import {$Runnable$$Type} from "java.lang.Runnable"
@@ -1198,8 +1198,8 @@ export type $Thread$Builder$OfPlatform$$Type = ($Thread$Builder$OfPlatform);
 export type $Thread$Builder$OfPlatform$$Original = $Thread$Builder$OfPlatform;}
 declare module "java.lang.Long" {
 import {$ConstantDesc$$Interface} from "java.lang.constant.ConstantDesc"
-import {$Constable$$Interface} from "java.lang.constant.Constable"
 import {$MethodHandles$Lookup$$Type} from "java.lang.invoke.MethodHandles$Lookup"
+import {$Constable$$Interface} from "java.lang.constant.Constable"
 import {$Optional} from "java.util.Optional"
 import {$Comparable$$Interface} from "java.lang.Comparable"
 import {$Class} from "java.lang.Class"
@@ -1287,23 +1287,23 @@ export type $Long$$Type = ($Long);
 export type $Long$$Original = $Long;}
 declare module "java.lang.Class" {
 import {$Constable$$Interface} from "java.lang.constant.Constable"
-import {$RecordComponent} from "java.lang.reflect.RecordComponent"
 import {$Optional} from "java.util.Optional"
+import {$RecordComponent} from "java.lang.reflect.RecordComponent"
 import {$ClassDesc} from "java.lang.constant.ClassDesc"
 import {$TypeDescriptor$OfField, $TypeDescriptor$OfField$$Interface} from "java.lang.invoke.TypeDescriptor$OfField"
 import {$Field} from "java.lang.reflect.Field"
-import {$AccessFlag} from "java.lang.reflect.AccessFlag"
 import {$Method} from "java.lang.reflect.Method"
+import {$AccessFlag} from "java.lang.reflect.AccessFlag"
 import {$GenericDeclaration$$Interface} from "java.lang.reflect.GenericDeclaration"
 import {$TypeVariable} from "java.lang.reflect.TypeVariable"
-import {$Package} from "java.lang.Package"
 import {$AnnotatedElement$$Interface} from "java.lang.reflect.AnnotatedElement"
+import {$Package} from "java.lang.Package"
 import {$Serializable$$Interface} from "java.io.Serializable"
 import {$Annotation, $Annotation$$Type} from "java.lang.annotation.Annotation"
 import {$AnnotatedType} from "java.lang.reflect.AnnotatedType"
 import {$Type, $Type$$Interface} from "java.lang.reflect.Type"
-import {$ProtectionDomain} from "java.security.ProtectionDomain"
 import {$URL} from "java.net.URL"
+import {$ProtectionDomain} from "java.security.ProtectionDomain"
 import {$Set} from "java.util.Set"
 import {$Constructor} from "java.lang.reflect.Constructor"
 import {$InputStream} from "java.io.InputStream"
@@ -1640,9 +1640,9 @@ export type $Enum$EnumDesc$$Type<E> = ($Enum$EnumDesc<(E)>);
  */
 export type $Enum$EnumDesc$$Original<E> = $Enum$EnumDesc<(E)>;}
 declare module "java.lang.StringBuffer" {
+import {$Comparable$$Interface} from "java.lang.Comparable"
 import {$Serializable$$Interface} from "java.io.Serializable"
 import {$Appendable, $Appendable$$Interface} from "java.lang.Appendable"
-import {$Comparable$$Interface} from "java.lang.Comparable"
 import {$IntStream} from "java.util.stream.IntStream"
 import {$AbstractStringBuilder} from "java.lang.AbstractStringBuilder"
 
@@ -1806,8 +1806,8 @@ export type $IllegalStateException$$Original = $IllegalStateException;}
 declare module "java.lang.Boolean" {
 import {$Constable$$Interface} from "java.lang.constant.Constable"
 import {$Optional} from "java.util.Optional"
-import {$Serializable$$Interface} from "java.io.Serializable"
 import {$Comparable$$Interface} from "java.lang.Comparable"
+import {$Serializable$$Interface} from "java.io.Serializable"
 import {$Class} from "java.lang.Class"
 import {$DynamicConstantDesc} from "java.lang.constant.DynamicConstantDesc"
 
@@ -2011,8 +2011,8 @@ export type $AutoCloseable$$Type = (() => void);
 export type $AutoCloseable$$Original = $AutoCloseable;}
 declare module "java.lang.Integer" {
 import {$ConstantDesc$$Interface} from "java.lang.constant.ConstantDesc"
-import {$Constable$$Interface} from "java.lang.constant.Constable"
 import {$MethodHandles$Lookup$$Type} from "java.lang.invoke.MethodHandles$Lookup"
+import {$Constable$$Interface} from "java.lang.constant.Constable"
 import {$Optional} from "java.util.Optional"
 import {$Comparable$$Interface} from "java.lang.Comparable"
 import {$Class} from "java.lang.Class"

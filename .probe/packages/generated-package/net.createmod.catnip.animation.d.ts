@@ -6,23 +6,23 @@ import {$LerpedFloat$Interpolator$$Type} from "net.createmod.catnip.animation.Le
 export class $LerpedFloat {
 constructor(arg0: $LerpedFloat$Interpolator$$Type)
 
-public "getChaseTarget"(): float
-public "setValueNoUpdate"(arg0: double): void
-public "chaseTimed"(arg0: double, arg1: integer): $LerpedFloat
-public "disableSmartAngleChasing"(): $LerpedFloat
-public "updateChaseSpeed"(arg0: double): boolean
-public "forceNextSync"(): void
+public "updateChaseTarget"(arg0: float): void
 public static "linear"(): $LerpedFloat
 public "writeNBT"(): $CompoundTag
 public "readNBT"(arg0: $CompoundTag$$Type, arg1: boolean): void
 public "chase"(arg0: double, arg1: double, arg2: $LerpedFloat$Chaser$$Type): $LerpedFloat
 public "tickChaser"(): void
 public "startWithValue"(arg0: double): $LerpedFloat
+public "getChaseTarget"(): float
+public "setValueNoUpdate"(arg0: double): void
+public "chaseTimed"(arg0: double, arg1: integer): $LerpedFloat
+public "disableSmartAngleChasing"(): $LerpedFloat
+public "updateChaseSpeed"(arg0: double): boolean
+public "forceNextSync"(): void
 public static "angular"(): $LerpedFloat
 public "settled"(): boolean
-public "updateChaseTarget"(arg0: float): void
-public "getValue"(): float
 public "getValue"(arg0: float): float
+public "getValue"(): float
 public "setValue"(arg0: double): void
 get "chaseTarget"(): float
 set "valueNoUpdate"(value: double)

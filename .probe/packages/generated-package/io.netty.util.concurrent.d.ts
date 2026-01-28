@@ -10,8 +10,8 @@ import {$ScheduledFuture as $ScheduledFuture$0} from "io.netty.util.concurrent.S
 import {$EventExecutorGroup$$Interface} from "io.netty.util.concurrent.EventExecutorGroup"
 import {$Runnable, $Runnable$$Type} from "java.lang.Runnable"
 import {$EventExecutor, $EventExecutor$$Type} from "io.netty.util.concurrent.EventExecutor"
-import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$TimeUnit$$Type} from "java.util.concurrent.TimeUnit"
+import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$ScheduledFuture} from "java.util.concurrent.ScheduledFuture"
 
 /**
@@ -96,9 +96,9 @@ export type $RejectedExecutionHandler$$Type = ((arg0: $Runnable, arg1: $SingleTh
  */
 export type $RejectedExecutionHandler$$Original = $RejectedExecutionHandler;}
 declare module "io.netty.util.concurrent.ScheduledFuture" {
+import {$Delayed$$Type} from "java.util.concurrent.Delayed"
 import {$GenericFutureListener$$Type} from "io.netty.util.concurrent.GenericFutureListener"
 import {$ScheduledFuture$$Interface as $ScheduledFuture$0$$Interface} from "java.util.concurrent.ScheduledFuture"
-import {$Delayed$$Type} from "java.util.concurrent.Delayed"
 import {$Future, $Future$$Type, $Future$$Interface} from "io.netty.util.concurrent.Future"
 import {$Future$State} from "java.util.concurrent.Future$State"
 import {$Throwable} from "java.lang.Throwable"
@@ -111,30 +111,30 @@ import {$TimeUnit$$Type} from "java.util.concurrent.TimeUnit"
  */
 export interface $ScheduledFuture$$Interface<V> extends $Future$$Interface<(V)>, $ScheduledFuture$0$$Interface<(V)> {
 get "now"(): V
-get "cancellable"(): boolean
 get "success"(): boolean
+get "cancellable"(): boolean
 get "cancelled"(): boolean
 get "done"(): boolean
 }
 
 export class $ScheduledFuture<V> implements $ScheduledFuture$$Interface {
- "syncUninterruptibly"(): $Future<(V)>
  "addListeners"(...arg0: ($GenericFutureListener$$Type<($Future$$Type<(V)>)>)[]): $Future<(V)>
+ "syncUninterruptibly"(): $Future<(V)>
  "getNow"(): V
- "removeListeners"(...arg0: ($GenericFutureListener$$Type<($Future$$Type<(V)>)>)[]): $Future<(V)>
  "cause"(): $Throwable
  "cancel"(arg0: boolean): boolean
  "await"(arg0: long): boolean
  "await"(): $Future<(V)>
  "await"(arg0: long, arg1: $TimeUnit$$Type): boolean
  "sync"(): $Future<(V)>
- "awaitUninterruptibly"(arg0: long, arg1: $TimeUnit$$Type): boolean
- "awaitUninterruptibly"(arg0: long): boolean
  "awaitUninterruptibly"(): $Future<(V)>
+ "awaitUninterruptibly"(arg0: long): boolean
+ "awaitUninterruptibly"(arg0: long, arg1: $TimeUnit$$Type): boolean
+ "removeListeners"(...arg0: ($GenericFutureListener$$Type<($Future$$Type<(V)>)>)[]): $Future<(V)>
  "removeListener"(arg0: $GenericFutureListener$$Type<($Future$$Type<(V)>)>): $Future<(V)>
  "addListener"(arg0: $GenericFutureListener$$Type<($Future$$Type<(V)>)>): $Future<(V)>
- "isCancellable"(): boolean
  "isSuccess"(): boolean
+ "isCancellable"(): boolean
  "isCancelled"(): boolean
  "resultNow"(): V
  "exceptionNow"(): $Throwable
@@ -167,8 +167,8 @@ import {$ScheduledFuture} from "io.netty.util.concurrent.ScheduledFuture"
 import {$EventExecutorGroup, $EventExecutorGroup$$Interface} from "io.netty.util.concurrent.EventExecutorGroup"
 import {$Runnable, $Runnable$$Type} from "java.lang.Runnable"
 import {$Promise} from "io.netty.util.concurrent.Promise"
-import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$TimeUnit$$Type} from "java.util.concurrent.TimeUnit"
+import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$Throwable$$Type} from "java.lang.Throwable"
 import {$ProgressivePromise} from "io.netty.util.concurrent.ProgressivePromise"
 
@@ -275,30 +275,30 @@ import {$TimeUnit$$Type} from "java.util.concurrent.TimeUnit"
  */
 export interface $Future$$Interface<V> extends $Future$0$$Interface<(V)> {
 get "now"(): V
-get "cancellable"(): boolean
 get "success"(): boolean
+get "cancellable"(): boolean
 get "cancelled"(): boolean
 get "done"(): boolean
 }
 
 export class $Future<V> implements $Future$$Interface {
- "syncUninterruptibly"(): $Future<(V)>
  "addListeners"(...arg0: ($GenericFutureListener$$Type<($Future$$Type<(V)>)>)[]): $Future<(V)>
+ "syncUninterruptibly"(): $Future<(V)>
  "getNow"(): V
- "removeListeners"(...arg0: ($GenericFutureListener$$Type<($Future$$Type<(V)>)>)[]): $Future<(V)>
  "cause"(): $Throwable
  "cancel"(arg0: boolean): boolean
  "await"(arg0: long): boolean
  "await"(): $Future<(V)>
  "await"(arg0: long, arg1: $TimeUnit$$Type): boolean
  "sync"(): $Future<(V)>
- "awaitUninterruptibly"(arg0: long, arg1: $TimeUnit$$Type): boolean
- "awaitUninterruptibly"(arg0: long): boolean
  "awaitUninterruptibly"(): $Future<(V)>
+ "awaitUninterruptibly"(arg0: long): boolean
+ "awaitUninterruptibly"(arg0: long, arg1: $TimeUnit$$Type): boolean
+ "removeListeners"(...arg0: ($GenericFutureListener$$Type<($Future$$Type<(V)>)>)[]): $Future<(V)>
  "removeListener"(arg0: $GenericFutureListener$$Type<($Future$$Type<(V)>)>): $Future<(V)>
  "addListener"(arg0: $GenericFutureListener$$Type<($Future$$Type<(V)>)>): $Future<(V)>
- "isCancellable"(): boolean
  "isSuccess"(): boolean
+ "isCancellable"(): boolean
  "isCancelled"(): boolean
  "resultNow"(): V
  "exceptionNow"(): $Throwable
@@ -323,8 +323,8 @@ import {$Future} from "io.netty.util.concurrent.Future"
 import {$List} from "java.util.List"
 import {$Future as $Future$0} from "java.util.concurrent.Future"
 import {$Thread$$Type} from "java.lang.Thread"
-import {$EventExecutorGroup} from "io.netty.util.concurrent.EventExecutorGroup"
 import {$Runnable$$Type} from "java.lang.Runnable"
+import {$EventExecutorGroup} from "io.netty.util.concurrent.EventExecutorGroup"
 import {$Promise} from "io.netty.util.concurrent.Promise"
 import {$EventExecutor} from "io.netty.util.concurrent.EventExecutor"
 import {$TimeUnit$$Type} from "java.util.concurrent.TimeUnit"
@@ -341,13 +341,13 @@ import {$OrderedEventExecutor$$Interface} from "io.netty.util.concurrent.Ordered
  * Loading the class using require() will not throw an error, but the class will be undefined.
  */
 export class $SingleThreadEventExecutor extends $AbstractScheduledEventExecutor implements $OrderedEventExecutor$$Interface {
-public "inEventLoop"(arg0: $Thread$$Type): boolean
 public "pendingTasks"(): integer
+public "inEventLoop"(arg0: $Thread$$Type): boolean
 public "awaitTermination"(arg0: long, arg1: $TimeUnit$$Type): boolean
-public "invokeAll"<T>(arg0: $Collection$$Type<($Callable$$Type<(T)>)>, arg1: long, arg2: $TimeUnit$$Type): $List<($Future$0<(T)>)>
 public "invokeAll"<T>(arg0: $Collection$$Type<($Callable$$Type<(T)>)>): $List<($Future$0<(T)>)>
-public "invokeAny"<T>(arg0: $Collection$$Type<($Callable$$Type<(T)>)>, arg1: long, arg2: $TimeUnit$$Type): T
+public "invokeAll"<T>(arg0: $Collection$$Type<($Callable$$Type<(T)>)>, arg1: long, arg2: $TimeUnit$$Type): $List<($Future$0<(T)>)>
 public "invokeAny"<T>(arg0: $Collection$$Type<($Callable$$Type<(T)>)>): T
+public "invokeAny"<T>(arg0: $Collection$$Type<($Callable$$Type<(T)>)>, arg1: long, arg2: $TimeUnit$$Type): T
 public "lazyExecute"(arg0: $Runnable$$Type): void
 public "threadProperties"(): $ThreadProperties
 /**
@@ -357,9 +357,9 @@ public "threadProperties"(): $ThreadProperties
 public "shutdown"(): void
 public "execute"(arg0: $Runnable$$Type): void
 public "isTerminated"(): boolean
+public "isShutdown"(): boolean
 public "addShutdownHook"(arg0: $Runnable$$Type): void
 public "removeShutdownHook"(arg0: $Runnable$$Type): void
-public "isShutdown"(): boolean
 public "isShuttingDown"(): boolean
 public "shutdownGracefully"(arg0: long, arg1: long, arg2: $TimeUnit$$Type): $Future<(never)>
 public "terminationFuture"(): $Future<(never)>
@@ -373,6 +373,7 @@ public "inEventLoop"(): boolean
 public "newPromise"<V>(): $Promise<(V)>
 public "parent"(): $EventExecutorGroup
 public "next"(): $EventExecutor
+public "submit"(arg0: $Runnable$$Type): $Future$0
 public "submit"(arg0: $Runnable$$Type, arg1: any): $Future$0
 get "terminated"(): boolean
 get "shuttingDown"(): boolean
@@ -398,8 +399,8 @@ import {$Future as $Future$0} from "java.util.concurrent.Future"
 import {$ScheduledFuture} from "io.netty.util.concurrent.ScheduledFuture"
 import {$Runnable, $Runnable$$Type} from "java.lang.Runnable"
 import {$EventExecutor, $EventExecutor$$Type} from "io.netty.util.concurrent.EventExecutor"
-import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$TimeUnit$$Type} from "java.util.concurrent.TimeUnit"
+import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$ScheduledExecutorService$$Interface} from "java.util.concurrent.ScheduledExecutorService"
 
 /**
@@ -498,8 +499,8 @@ import {$EventExecutorGroup} from "io.netty.util.concurrent.EventExecutorGroup"
 import {$Runnable, $Runnable$$Type} from "java.lang.Runnable"
 import {$Promise} from "io.netty.util.concurrent.Promise"
 import {$EventExecutor, $EventExecutor$$Type, $EventExecutor$$Interface} from "io.netty.util.concurrent.EventExecutor"
-import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$TimeUnit$$Type} from "java.util.concurrent.TimeUnit"
+import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$Throwable$$Type} from "java.lang.Throwable"
 import {$ProgressivePromise} from "io.netty.util.concurrent.ProgressivePromise"
 
@@ -580,19 +581,19 @@ import {$TimeUnit$$Type} from "java.util.concurrent.TimeUnit"
  */
 export interface $ProgressiveFuture$$Interface<V> extends $Future$$Interface<(V)> {
 get "now"(): V
-get "cancellable"(): boolean
 get "success"(): boolean
+get "cancellable"(): boolean
 get "cancelled"(): boolean
 get "done"(): boolean
 }
 
 export class $ProgressiveFuture<V> implements $ProgressiveFuture$$Interface {
- "syncUninterruptibly"(): $ProgressiveFuture<(V)>
  "addListeners"(...arg0: ($GenericFutureListener$$Type<($Future$$Type<(V)>)>)[]): $ProgressiveFuture<(V)>
- "removeListeners"(...arg0: ($GenericFutureListener$$Type<($Future$$Type<(V)>)>)[]): $ProgressiveFuture<(V)>
+ "syncUninterruptibly"(): $ProgressiveFuture<(V)>
  "await"(): $ProgressiveFuture<(V)>
  "sync"(): $ProgressiveFuture<(V)>
  "awaitUninterruptibly"(): $ProgressiveFuture<(V)>
+ "removeListeners"(...arg0: ($GenericFutureListener$$Type<($Future$$Type<(V)>)>)[]): $ProgressiveFuture<(V)>
  "removeListener"(arg0: $GenericFutureListener$$Type<($Future$$Type<(V)>)>): $ProgressiveFuture<(V)>
  "addListener"(arg0: $GenericFutureListener$$Type<($Future$$Type<(V)>)>): $ProgressiveFuture<(V)>
  "getNow"(): V
@@ -600,10 +601,10 @@ export class $ProgressiveFuture<V> implements $ProgressiveFuture$$Interface {
  "cancel"(arg0: boolean): boolean
  "await"(arg0: long): boolean
  "await"(arg0: long, arg1: $TimeUnit$$Type): boolean
- "awaitUninterruptibly"(arg0: long, arg1: $TimeUnit$$Type): boolean
  "awaitUninterruptibly"(arg0: long): boolean
- "isCancellable"(): boolean
+ "awaitUninterruptibly"(arg0: long, arg1: $TimeUnit$$Type): boolean
  "isSuccess"(): boolean
+ "isCancellable"(): boolean
  "isCancelled"(): boolean
  "resultNow"(): V
  "exceptionNow"(): $Throwable
@@ -640,6 +641,7 @@ public "schedule"(arg0: $Callable$$Type, arg1: long, arg2: $TimeUnit$$Type): $Sc
 public "schedule"(arg0: $Runnable$$Type, arg1: long, arg2: $TimeUnit$$Type): $ScheduledFuture
 public "scheduleWithFixedDelay"(arg0: $Runnable$$Type, arg1: long, arg2: long, arg3: $TimeUnit$$Type): $ScheduledFuture
 public "scheduleAtFixedRate"(arg0: $Runnable$$Type, arg1: long, arg2: long, arg3: $TimeUnit$$Type): $ScheduledFuture$0<(never)>
+public "submit"(arg0: $Runnable$$Type): $Future
 public "submit"(arg0: $Runnable$$Type, arg1: any): $Future
 }
 /**
@@ -713,11 +715,11 @@ export type $ThreadProperties$$Original = $ThreadProperties;}
 declare module "io.netty.util.concurrent.MultithreadEventExecutorGroup" {
 import {$ScheduledFuture} from "java.util.concurrent.ScheduledFuture"
 import {$Iterator} from "java.util.Iterator"
-import {$Future} from "io.netty.util.concurrent.Future"
-import {$Future as $Future$0} from "java.util.concurrent.Future"
+import {$Future as $Future$0} from "io.netty.util.concurrent.Future"
+import {$Future} from "java.util.concurrent.Future"
 import {$Runnable$$Type} from "java.lang.Runnable"
-import {$AbstractEventExecutorGroup} from "io.netty.util.concurrent.AbstractEventExecutorGroup"
 import {$EventExecutor} from "io.netty.util.concurrent.EventExecutor"
+import {$AbstractEventExecutorGroup} from "io.netty.util.concurrent.AbstractEventExecutorGroup"
 import {$TimeUnit$$Type} from "java.util.concurrent.TimeUnit"
 
 /**
@@ -738,10 +740,10 @@ public "isTerminated"(): boolean
 public "isShutdown"(): boolean
 public "executorCount"(): integer
 public "isShuttingDown"(): boolean
-public "shutdownGracefully"(arg0: long, arg1: long, arg2: $TimeUnit$$Type): $Future<(never)>
-public "terminationFuture"(): $Future<(never)>
-public "submit"(arg0: $Runnable$$Type): $Future$0
-public "submit"(arg0: $Runnable$$Type, arg1: any): $Future$0
+public "shutdownGracefully"(arg0: long, arg1: long, arg2: $TimeUnit$$Type): $Future$0<(never)>
+public "terminationFuture"(): $Future$0<(never)>
+public "submit"(arg0: $Runnable$$Type): $Future
+public "submit"(arg0: $Runnable$$Type, arg1: any): $Future
 public "schedule"(arg0: $Runnable$$Type, arg1: long, arg2: $TimeUnit$$Type): $ScheduledFuture
 public "scheduleWithFixedDelay"(arg0: $Runnable$$Type, arg1: long, arg2: long, arg3: $TimeUnit$$Type): $ScheduledFuture
 get "terminated"(): boolean
@@ -773,24 +775,24 @@ set "success"(value: V)
 set "failure"(value: $Throwable$$Type)
 get "uncancellable"(): boolean
 get "now"(): V
-get "cancellable"(): boolean
 get "success"(): boolean
+get "cancellable"(): boolean
 get "cancelled"(): boolean
 get "done"(): boolean
 }
 
 export class $Promise<V> implements $Promise$$Interface {
  "setSuccess"(arg0: V): $Promise<(V)>
+ "addListeners"(...arg0: ($GenericFutureListener$$Type<($Future$$Type<(V)>)>)[]): $Promise<(V)>
  "syncUninterruptibly"(): $Promise<(V)>
  "trySuccess"(arg0: V): boolean
  "setFailure"(arg0: $Throwable$$Type): $Promise<(V)>
  "tryFailure"(arg0: $Throwable$$Type): boolean
  "setUncancellable"(): boolean
- "addListeners"(...arg0: ($GenericFutureListener$$Type<($Future$$Type<(V)>)>)[]): $Promise<(V)>
- "removeListeners"(...arg0: ($GenericFutureListener$$Type<($Future$$Type<(V)>)>)[]): $Promise<(V)>
  "await"(): $Promise<(V)>
  "sync"(): $Promise<(V)>
  "awaitUninterruptibly"(): $Promise<(V)>
+ "removeListeners"(...arg0: ($GenericFutureListener$$Type<($Future$$Type<(V)>)>)[]): $Promise<(V)>
  "removeListener"(arg0: $GenericFutureListener$$Type<($Future$$Type<(V)>)>): $Promise<(V)>
  "addListener"(arg0: $GenericFutureListener$$Type<($Future$$Type<(V)>)>): $Promise<(V)>
  "getNow"(): V
@@ -798,10 +800,10 @@ export class $Promise<V> implements $Promise$$Interface {
  "cancel"(arg0: boolean): boolean
  "await"(arg0: long): boolean
  "await"(arg0: long, arg1: $TimeUnit$$Type): boolean
- "awaitUninterruptibly"(arg0: long, arg1: $TimeUnit$$Type): boolean
  "awaitUninterruptibly"(arg0: long): boolean
- "isCancellable"(): boolean
+ "awaitUninterruptibly"(arg0: long, arg1: $TimeUnit$$Type): boolean
  "isSuccess"(): boolean
+ "isCancellable"(): boolean
  "isCancelled"(): boolean
  "resultNow"(): V
  "exceptionNow"(): $Throwable
@@ -838,22 +840,22 @@ set "success"(value: V)
 set "failure"(value: $Throwable$$Type)
 get "uncancellable"(): boolean
 get "now"(): V
-get "cancellable"(): boolean
 get "success"(): boolean
+get "cancellable"(): boolean
 get "cancelled"(): boolean
 get "done"(): boolean
 }
 
 export class $ProgressivePromise<V> implements $ProgressivePromise$$Interface {
  "setSuccess"(arg0: V): $ProgressivePromise<(V)>
+ "addListeners"(...arg0: ($GenericFutureListener$$Type<($Future$$Type<(V)>)>)[]): $ProgressivePromise<(V)>
  "syncUninterruptibly"(): $ProgressivePromise<(V)>
  "setFailure"(arg0: $Throwable$$Type): $ProgressivePromise<(V)>
- "addListeners"(...arg0: ($GenericFutureListener$$Type<($Future$$Type<(V)>)>)[]): $ProgressivePromise<(V)>
- "removeListeners"(...arg0: ($GenericFutureListener$$Type<($Future$$Type<(V)>)>)[]): $ProgressivePromise<(V)>
  "tryProgress"(arg0: long, arg1: long): boolean
  "await"(): $ProgressivePromise<(V)>
  "sync"(): $ProgressivePromise<(V)>
  "awaitUninterruptibly"(): $ProgressivePromise<(V)>
+ "removeListeners"(...arg0: ($GenericFutureListener$$Type<($Future$$Type<(V)>)>)[]): $ProgressivePromise<(V)>
  "removeListener"(arg0: $GenericFutureListener$$Type<($Future$$Type<(V)>)>): $ProgressivePromise<(V)>
  "addListener"(arg0: $GenericFutureListener$$Type<($Future$$Type<(V)>)>): $ProgressivePromise<(V)>
  "setProgress"(arg0: long, arg1: long): $ProgressivePromise<(V)>
@@ -865,10 +867,10 @@ export class $ProgressivePromise<V> implements $ProgressivePromise$$Interface {
  "cancel"(arg0: boolean): boolean
  "await"(arg0: long): boolean
  "await"(arg0: long, arg1: $TimeUnit$$Type): boolean
- "awaitUninterruptibly"(arg0: long, arg1: $TimeUnit$$Type): boolean
  "awaitUninterruptibly"(arg0: long): boolean
- "isCancellable"(): boolean
+ "awaitUninterruptibly"(arg0: long, arg1: $TimeUnit$$Type): boolean
  "isSuccess"(): boolean
+ "isCancellable"(): boolean
  "isCancelled"(): boolean
  "resultNow"(): V
  "exceptionNow"(): $Throwable

@@ -1,13 +1,13 @@
 declare module "com.direwolf20.buildinggadgets2.common.items.TemplateItem" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$List$$Type} from "java.util.List"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
@@ -39,14 +39,14 @@ export type $TemplateItem$$Original = $TemplateItem;}
 declare module "com.direwolf20.buildinggadgets2.common.items.GadgetDestruction" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
+import {$List$$Type} from "java.util.List"
 import {$BaseGadget} from "com.direwolf20.buildinggadgets2.common.items.BaseGadget"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
-import {$List$$Type} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
@@ -63,9 +63,9 @@ static readonly "BY_BLOCK": $Map<($Block), ($Item)>
 
 constructor()
 
-public "gadgetTarget"(): $GadgetTarget
 public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
 public "getEnergyCost"(): integer
+public "gadgetTarget"(): $GadgetTarget
 public "use"(arg0: $Level$$Type, arg1: $Player$$Type, arg2: $InteractionHand$$Type): $InteractionResultHolder<($ItemStack)>
 public "undo"(arg0: $Level$$Type, arg1: $Player$$Type, arg2: $ItemStack$$Type): void
 public "getEnergyMax"(): integer
@@ -83,8 +83,8 @@ export type $GadgetDestruction$$Type = ($GadgetDestruction);
  */
 export type $GadgetDestruction$$Original = $GadgetDestruction;}
 declare module "com.direwolf20.buildinggadgets2.common.blocks.RenderBlock" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$Block} from "net.minecraft.world.level.block.Block"
@@ -149,13 +149,13 @@ declare module "com.direwolf20.buildinggadgets2.common.items.BaseGadget" {
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$List$$Type} from "java.util.List"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
@@ -174,15 +174,15 @@ static readonly "BY_BLOCK": $Map<($Block), ($Item)>
 
 constructor()
 
+public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
+public "getMaxDamage"(arg0: $ItemStack$$Type): integer
+public "shouldCauseReequipAnimation"(arg0: $ItemStack$$Type, arg1: $ItemStack$$Type, arg2: boolean): boolean
 public static "getHitPos"(arg0: $ItemActionContext$$Type): $BlockPos
+public "getEnergyCost"(): integer
 public "gadgetTarget"(): $GadgetTarget
 public "bindToInventory"(arg0: $Level$$Type, arg1: $Player$$Type, arg2: $ItemStack$$Type, arg3: $BlockHitResult$$Type): boolean
 public "rotateModes"(arg0: $ItemStack$$Type): $ResourceLocation
 public static "getGadget"(arg0: $Player$$Type): $ItemStack
-public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
-public "getMaxDamage"(arg0: $ItemStack$$Type): integer
-public "shouldCauseReequipAnimation"(arg0: $ItemStack$$Type, arg1: $ItemStack$$Type, arg2: boolean): boolean
-public "getEnergyCost"(): integer
 public "canUndo"(arg0: $Level$$Type, arg1: $Player$$Type, arg2: $ItemStack$$Type): boolean
 public "use"(arg0: $Level$$Type, arg1: $Player$$Type, arg2: $InteractionHand$$Type): $InteractionResultHolder<($ItemStack)>
 public "isBarVisible"(arg0: $ItemStack$$Type): boolean
@@ -211,8 +211,8 @@ import {$List$$Type} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 
 export class $Redprint extends $Item {
 static readonly "BASE_ATTACK_DAMAGE_ID": $ResourceLocation
@@ -245,8 +245,8 @@ import {$List$$Type} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$GadgetTarget} from "com.direwolf20.buildinggadgets2.api.gadgets.GadgetTarget"
 
 export class $GadgetBuilding extends $BaseGadget {
@@ -259,9 +259,9 @@ static readonly "BY_BLOCK": $Map<($Block), ($Item)>
 
 constructor()
 
-public "gadgetTarget"(): $GadgetTarget
 public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
 public "getEnergyCost"(): integer
+public "gadgetTarget"(): $GadgetTarget
 public "getEnergyMax"(): integer
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "energyCost"(): integer
@@ -283,8 +283,8 @@ import {$BaseGadget} from "com.direwolf20.buildinggadgets2.common.items.BaseGadg
 import {$List$$Type} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$ItemActionContext$$Type} from "com.direwolf20.buildinggadgets2.util.context.ItemActionContext"
@@ -300,10 +300,10 @@ static readonly "BY_BLOCK": $Map<($Block), ($Item)>
 
 constructor()
 
-public "gadgetTarget"(): $GadgetTarget
-public "buildAndStore"(arg0: $ItemActionContext$$Type, arg1: $ItemStack$$Type): void
 public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
 public "getEnergyCost"(): integer
+public "gadgetTarget"(): $GadgetTarget
+public "buildAndStore"(arg0: $ItemActionContext$$Type, arg1: $ItemStack$$Type): void
 public "getEnergyMax"(): integer
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "energyCost"(): integer
@@ -321,13 +321,13 @@ export type $GadgetCopyPaste$$Original = $GadgetCopyPaste;}
 declare module "com.direwolf20.buildinggadgets2.common.items.GadgetCutPaste" {
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
-import {$BaseGadget} from "com.direwolf20.buildinggadgets2.common.items.BaseGadget"
 import {$List$$Type} from "java.util.List"
+import {$BaseGadget} from "com.direwolf20.buildinggadgets2.common.items.BaseGadget"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Item} from "net.minecraft.world.item.Item"
@@ -345,11 +345,11 @@ static readonly "BY_BLOCK": $Map<($Block), ($Item)>
 
 constructor()
 
-public static "customCutValidation"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $Player$$Type, arg3: $BlockPos$$Type): boolean
-public "gadgetTarget"(): $GadgetTarget
-public "cutAndStore"(arg0: $Player$$Type, arg1: $ItemStack$$Type): void
 public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
+public "cutAndStore"(arg0: $Player$$Type, arg1: $ItemStack$$Type): void
+public static "customCutValidation"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $Player$$Type, arg3: $BlockPos$$Type): boolean
 public "getEnergyCost"(): integer
+public "gadgetTarget"(): $GadgetTarget
 public "getEnergyMax"(): integer
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "energyCost"(): integer
@@ -365,9 +365,9 @@ export type $GadgetCutPaste$$Type = ($GadgetCutPaste);
  */
 export type $GadgetCutPaste$$Original = $GadgetCutPaste;}
 declare module "com.direwolf20.buildinggadgets2.common.blocks.TemplateManager" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$Block} from "net.minecraft.world.level.block.Block"
@@ -429,13 +429,13 @@ export type $TemplateManager$$Original = $TemplateManager;}
 declare module "com.direwolf20.buildinggadgets2.common.items.GadgetExchanger" {
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
-import {$BaseGadget} from "com.direwolf20.buildinggadgets2.common.items.BaseGadget"
 import {$List$$Type} from "java.util.List"
+import {$BaseGadget} from "com.direwolf20.buildinggadgets2.common.items.BaseGadget"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Holder$$Type} from "net.minecraft.core.Holder"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Enchantment$$Type} from "net.minecraft.world.item.enchantment.Enchantment"
@@ -453,12 +453,12 @@ static readonly "BY_BLOCK": $Map<($Block), ($Item)>
 
 constructor()
 
-public "gadgetTarget"(): $GadgetTarget
 public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
 public "isEnchantable"(arg0: $ItemStack$$Type): boolean
 public "getEnchantmentValue"(): integer
 public "isPrimaryItemFor"(arg0: $ItemStack$$Type, arg1: $Holder$$Type<($Enchantment)>): boolean
 public "getEnergyCost"(): integer
+public "gadgetTarget"(): $GadgetTarget
 public "undo"(arg0: $Level$$Type, arg1: $Player$$Type, arg2: $ItemStack$$Type): void
 public "getEnergyMax"(): integer
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean

@@ -2,8 +2,8 @@ declare module "java.time.chrono.Era" {
 import {$TemporalAccessor$$Interface} from "java.time.temporal.TemporalAccessor"
 import {$TextStyle$$Type} from "java.time.format.TextStyle"
 import {$Locale$$Type} from "java.util.Locale"
-import {$ValueRange} from "java.time.temporal.ValueRange"
 import {$Temporal, $Temporal$$Type} from "java.time.temporal.Temporal"
+import {$ValueRange} from "java.time.temporal.ValueRange"
 import {$TemporalAdjuster$$Interface} from "java.time.temporal.TemporalAdjuster"
 import {$TemporalQuery$$Type} from "java.time.temporal.TemporalQuery"
 import {$TemporalField$$Type} from "java.time.temporal.TemporalField"
@@ -16,13 +16,13 @@ get "value"(): integer
 
 export class $Era implements $Era$$Interface {
  "adjustInto"(arg0: $Temporal$$Type): $Temporal
+ "getDisplayName"(arg0: $TextStyle$$Type, arg1: $Locale$$Type): StringJS
  "get"(arg0: $TemporalField$$Type): integer
  "getLong"(arg0: $TemporalField$$Type): long
  "getValue"(): integer
  "isSupported"(arg0: $TemporalField$$Type): boolean
  "query"<R>(arg0: $TemporalQuery$$Type<(R)>): R
  "range"(arg0: $TemporalField$$Type): $ValueRange
- "getDisplayName"(arg0: $TextStyle$$Type, arg1: $Locale$$Type): StringJS
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -60,16 +60,16 @@ get "offset"(): $ZoneOffset
 }
 
 export class $ChronoZonedDateTime<D extends $ChronoLocalDate> implements $ChronoZonedDateTime$$Interface {
- "getZone"(): $ZoneId
+ "minus"(arg0: long, arg1: $TemporalUnit$$Type): $ChronoZonedDateTime<(D)>
+ "minus"(arg0: $TemporalAmount$$Type): $Temporal
  "toEpochSecond"(): long
  "toInstant"(): $Instant
- "isEqual"(arg0: $ChronoZonedDateTime$$Type<(never)>): boolean
- "minus"(arg0: long, arg1: $TemporalUnit$$Type): $ChronoZonedDateTime<(D)>
- "minus"(arg0: $TemporalAmount$$Type): $ChronoZonedDateTime<(D)>
+ "getZone"(): $ZoneId
  "isAfter"(arg0: $ChronoZonedDateTime$$Type<(never)>): boolean
  "isBefore"(arg0: $ChronoZonedDateTime$$Type<(never)>): boolean
  "getChronology"(): $Chronology
 static "timeLineOrder"(): $Comparator<($ChronoZonedDateTime<(never)>)>
+ "isEqual"(arg0: $ChronoZonedDateTime$$Type<(never)>): boolean
  "withZoneSameInstant"(arg0: $ZoneId$$Type): $ChronoZonedDateTime<(D)>
  "withZoneSameLocal"(arg0: $ZoneId$$Type): $ChronoZonedDateTime<(D)>
  "withLaterOffsetAtOverlap"(): $ChronoZonedDateTime<(D)>
@@ -85,12 +85,12 @@ static "from"(arg0: $TemporalAccessor$$Type): $ChronoZonedDateTime<(never)>
  "isSupported"(arg0: $TemporalField$$Type): boolean
  "isSupported"(arg0: $TemporalUnit$$Type): boolean
  "with"(arg0: $TemporalField$$Type, arg1: long): $ChronoZonedDateTime<(D)>
- "with"(arg0: $TemporalAdjuster$$Type): $ChronoZonedDateTime<(D)>
+ "with"(arg0: $TemporalAdjuster$$Type): $Temporal
  "query"<R>(arg0: $TemporalQuery$$Type<(R)>): R
  "getOffset"(): $ZoneOffset
  "range"(arg0: $TemporalField$$Type): $ValueRange
- "plus"(arg0: long, arg1: $TemporalUnit$$Type): $ChronoZonedDateTime<(D)>
  "plus"(arg0: $TemporalAmount$$Type): $Temporal
+ "plus"(arg0: long, arg1: $TemporalUnit$$Type): $ChronoZonedDateTime<(D)>
  "toLocalDate"(): D
  "toLocalDateTime"(): $ChronoLocalDateTime<(D)>
  "toLocalTime"(): $LocalTime
@@ -131,13 +131,10 @@ get "chronology"(): $Chronology
 }
 
 export class $ChronoLocalDate implements $ChronoLocalDate$$Interface {
+ "minus"(arg0: long, arg1: $TemporalUnit$$Type): $Temporal
+ "minus"(arg0: $TemporalAmount$$Type): $Temporal
  "getEra"(): $Era
  "isLeapYear"(): boolean
- "isEqual"(arg0: $ChronoLocalDate$$Type): boolean
- "lengthOfMonth"(): integer
- "toEpochDay"(): long
- "minus"(arg0: long, arg1: $TemporalUnit$$Type): $ChronoLocalDate
- "minus"(arg0: $TemporalAmount$$Type): $ChronoLocalDate
  "adjustInto"(arg0: $Temporal$$Type): $Temporal
  "isAfter"(arg0: $ChronoLocalDate$$Type): boolean
  "isBefore"(arg0: $ChronoLocalDate$$Type): boolean
@@ -145,6 +142,9 @@ export class $ChronoLocalDate implements $ChronoLocalDate$$Interface {
 static "timeLineOrder"(): $Comparator<($ChronoLocalDate)>
  "lengthOfYear"(): integer
  "atTime"(arg0: $LocalTime$$Type): $ChronoLocalDateTime<(never)>
+ "isEqual"(arg0: $ChronoLocalDate$$Type): boolean
+ "lengthOfMonth"(): integer
+ "toEpochDay"(): long
  "equals"(arg0: any): boolean
  "toString"(): StringJS
  "hashCode"(): integer
@@ -152,13 +152,13 @@ static "timeLineOrder"(): $Comparator<($ChronoLocalDate)>
  "compareTo"(arg0: any): integer
  "format"(arg0: $DateTimeFormatter$$Type): StringJS
 static "from"(arg0: $TemporalAccessor$$Type): $ChronoLocalDate
- "isSupported"(arg0: $TemporalField$$Type): boolean
  "isSupported"(arg0: $TemporalUnit$$Type): boolean
+ "isSupported"(arg0: $TemporalField$$Type): boolean
  "with"(arg0: $TemporalAdjuster$$Type): $Temporal
- "with"(arg0: $TemporalField$$Type, arg1: long): $ChronoLocalDate
+ "with"(arg0: $TemporalField$$Type, arg1: long): $Temporal
  "query"<R>(arg0: $TemporalQuery$$Type<(R)>): R
- "plus"(arg0: $TemporalAmount$$Type): $ChronoLocalDate
  "plus"(arg0: long, arg1: $TemporalUnit$$Type): $ChronoLocalDate
+ "plus"(arg0: $TemporalAmount$$Type): $ChronoLocalDate
  "until"(arg0: $Temporal$$Type, arg1: $TemporalUnit$$Type): long
  "until"(arg0: $ChronoLocalDate$$Type): $ChronoPeriod
  "get"(arg0: $TemporalField$$Type): integer
@@ -177,8 +177,8 @@ export type $ChronoLocalDate$$Original = $ChronoLocalDate;}
 declare module "java.time.chrono.IsoChronology" {
 import {$Era, $Era$$Type} from "java.time.chrono.Era"
 import {$ChronoField$$Type} from "java.time.temporal.ChronoField"
-import {$AbstractChronology} from "java.time.chrono.AbstractChronology"
 import {$Map$$Type} from "java.util.Map"
+import {$AbstractChronology} from "java.time.chrono.AbstractChronology"
 import {$Clock$$Type} from "java.time.Clock"
 import {$List} from "java.util.List"
 import {$ZoneOffset$$Type} from "java.time.ZoneOffset"
@@ -186,51 +186,52 @@ import {$TemporalAccessor$$Type} from "java.time.temporal.TemporalAccessor"
 import {$ChronoZonedDateTime} from "java.time.chrono.ChronoZonedDateTime"
 import {$Locale$$Type} from "java.util.Locale"
 import {$ChronoLocalDate} from "java.time.chrono.ChronoLocalDate"
-import {$TemporalField$$Type} from "java.time.temporal.TemporalField"
+import {$IsoEra} from "java.time.chrono.IsoEra"
+import {$ChronoPeriod} from "java.time.chrono.ChronoPeriod"
+import {$ZonedDateTime} from "java.time.ZonedDateTime"
+import {$LocalDateTime} from "java.time.LocalDateTime"
 import {$ResolverStyle$$Type} from "java.time.format.ResolverStyle"
 import {$ZoneId$$Type} from "java.time.ZoneId"
 import {$Serializable$$Interface} from "java.io.Serializable"
 import {$LocalDate} from "java.time.LocalDate"
 import {$Set} from "java.util.Set"
-import {$Period} from "java.time.Period"
 import {$ValueRange} from "java.time.temporal.ValueRange"
 import {$Chronology} from "java.time.chrono.Chronology"
-import {$ChronoLocalDateTime} from "java.time.chrono.ChronoLocalDateTime"
 import {$Instant$$Type} from "java.time.Instant"
 
 export class $IsoChronology extends $AbstractChronology implements $Serializable$$Interface {
 static readonly "INSTANCE": $IsoChronology
 
+public "getCalendarType"(): StringJS
 public "isLeapYear"(arg0: long): boolean
 public "eras"(): $List<($Era)>
-public "date"(arg0: $TemporalAccessor$$Type): $LocalDate
-public "date"(arg0: $Era$$Type, arg1: integer, arg2: integer, arg3: integer): $ChronoLocalDate
 public "date"(arg0: integer, arg1: integer, arg2: integer): $ChronoLocalDate
+public "date"(arg0: $TemporalAccessor$$Type): $ChronoLocalDate
+public "date"(arg0: $Era$$Type, arg1: integer, arg2: integer, arg3: integer): $LocalDate
+public "localDateTime"(arg0: $TemporalAccessor$$Type): $LocalDateTime
+public "eraOf"(arg0: integer): $IsoEra
 public "epochSecond"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: integer, arg5: integer, arg6: $ZoneOffset$$Type): long
-public "prolepticYear"(arg0: $Era$$Type, arg1: integer): integer
-public "dateYearDay"(arg0: $Era$$Type, arg1: integer, arg2: integer): $LocalDate
-public "dateYearDay"(arg0: integer, arg1: integer): $ChronoLocalDate
-public "dateNow"(arg0: $ZoneId$$Type): $ChronoLocalDate
-public "dateNow"(): $ChronoLocalDate
-public "dateNow"(arg0: $Clock$$Type): $ChronoLocalDate
-public "resolveDate"(arg0: $Map$$Type<($TemporalField$$Type), (long)>, arg1: $ResolverStyle$$Type): $LocalDate
-public "zonedDateTime"(arg0: $Instant$$Type, arg1: $ZoneId$$Type): $ChronoZonedDateTime
-public "zonedDateTime"(arg0: $TemporalAccessor$$Type): $ChronoZonedDateTime
-public "dateEpochDay"(arg0: long): $LocalDate
-public "isIsoBased"(): boolean
-public "getCalendarType"(): StringJS
-public "localDateTime"(arg0: $TemporalAccessor$$Type): $ChronoLocalDateTime
-public "eraOf"(arg0: integer): $Era
 public "getId"(): StringJS
 public "range"(arg0: $ChronoField$$Type): $ValueRange
-public "period"(arg0: integer, arg1: integer, arg2: integer): $Period
-public static "ofLocale"(arg0: $Locale$$Type): $Chronology
-public static "getAvailableChronologies"(): $Set<($Chronology)>
+public "period"(arg0: integer, arg1: integer, arg2: integer): $ChronoPeriod
+public "prolepticYear"(arg0: $Era$$Type, arg1: integer): integer
+public "dateYearDay"(arg0: $Era$$Type, arg1: integer, arg2: integer): $LocalDate
+public "dateYearDay"(arg0: integer, arg1: integer): $LocalDate
+public "dateNow"(arg0: $Clock$$Type): $ChronoLocalDate
+public "dateNow"(): $LocalDate
+public "dateNow"(arg0: $ZoneId$$Type): $ChronoLocalDate
+public "resolveDate"(arg0: $Map$$Type, arg1: $ResolverStyle$$Type): $ChronoLocalDate
+public "zonedDateTime"(arg0: $TemporalAccessor$$Type): $ZonedDateTime
+public "zonedDateTime"(arg0: $Instant$$Type, arg1: $ZoneId$$Type): $ChronoZonedDateTime
+public "dateEpochDay"(arg0: long): $LocalDate
+public "isIsoBased"(): boolean
 public static "of"(arg0: StringJS): $Chronology
 public static "from"(arg0: $TemporalAccessor$$Type): $Chronology
-get "isoBased"(): boolean
+public static "ofLocale"(arg0: $Locale$$Type): $Chronology
+public static "getAvailableChronologies"(): $Set<($Chronology)>
 get "calendarType"(): StringJS
 get "id"(): StringJS
+get "isoBased"(): boolean
 public static get "availableChronologies"(): $Set<($Chronology)>
 }
 /**
@@ -246,10 +247,10 @@ declare module "java.time.chrono.Chronology" {
 import {$Era, $Era$$Type} from "java.time.chrono.Era"
 import {$ChronoField$$Type} from "java.time.temporal.ChronoField"
 import {$Map$$Type} from "java.util.Map"
-import {$Clock$$Type} from "java.time.Clock"
 import {$Comparable$$Interface} from "java.lang.Comparable"
-import {$List} from "java.util.List"
+import {$Clock$$Type} from "java.time.Clock"
 import {$ZoneOffset$$Type} from "java.time.ZoneOffset"
+import {$List} from "java.util.List"
 import {$TemporalAccessor$$Type} from "java.time.temporal.TemporalAccessor"
 import {$TextStyle$$Type} from "java.time.format.TextStyle"
 import {$ChronoZonedDateTime} from "java.time.chrono.ChronoZonedDateTime"
@@ -265,26 +266,40 @@ import {$ChronoLocalDateTime} from "java.time.chrono.ChronoLocalDateTime"
 import {$Instant$$Type} from "java.time.Instant"
 
 export interface $Chronology$$Interface extends $Comparable$$Interface<($Chronology)> {
-get "isoBased"(): boolean
-public static get "availableChronologies"(): $Set<($Chronology)>
 get "calendarType"(): StringJS
 get "id"(): StringJS
+get "isoBased"(): boolean
+public static get "availableChronologies"(): $Set<($Chronology)>
 }
 
 export class $Chronology implements $Chronology$$Interface {
+ "getCalendarType"(): StringJS
  "isLeapYear"(arg0: long): boolean
  "eras"(): $List<($Era)>
- "date"(arg0: $TemporalAccessor$$Type): $ChronoLocalDate
  "date"(arg0: integer, arg1: integer, arg2: integer): $ChronoLocalDate
  "date"(arg0: $Era$$Type, arg1: integer, arg2: integer, arg3: integer): $ChronoLocalDate
- "epochSecond"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: integer, arg5: integer, arg6: $ZoneOffset$$Type): long
+ "date"(arg0: $TemporalAccessor$$Type): $ChronoLocalDate
+ "localDateTime"(arg0: $TemporalAccessor$$Type): $ChronoLocalDateTime<($ChronoLocalDate)>
+ "eraOf"(arg0: integer): $Era
+ "getDisplayName"(arg0: $TextStyle$$Type, arg1: $Locale$$Type): StringJS
  "epochSecond"(arg0: $Era$$Type, arg1: integer, arg2: integer, arg3: integer, arg4: integer, arg5: integer, arg6: integer, arg7: $ZoneOffset$$Type): long
+ "epochSecond"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: integer, arg5: integer, arg6: $ZoneOffset$$Type): long
+ "equals"(arg0: any): boolean
+ "toString"(): StringJS
+ "hashCode"(): integer
+ "compareTo"(arg0: any): integer
+ "compareTo"(arg0: $Chronology$$Type): integer
+static "of"(arg0: StringJS): $Chronology
+static "from"(arg0: $TemporalAccessor$$Type): $Chronology
+ "getId"(): StringJS
+ "range"(arg0: $ChronoField$$Type): $ValueRange
+ "period"(arg0: integer, arg1: integer, arg2: integer): $ChronoPeriod
  "prolepticYear"(arg0: $Era$$Type, arg1: integer): integer
- "dateYearDay"(arg0: integer, arg1: integer): $ChronoLocalDate
  "dateYearDay"(arg0: $Era$$Type, arg1: integer, arg2: integer): $ChronoLocalDate
- "dateNow"(arg0: $Clock$$Type): $ChronoLocalDate
- "dateNow"(arg0: $ZoneId$$Type): $ChronoLocalDate
+ "dateYearDay"(arg0: integer, arg1: integer): $ChronoLocalDate
  "dateNow"(): $ChronoLocalDate
+ "dateNow"(arg0: $ZoneId$$Type): $ChronoLocalDate
+ "dateNow"(arg0: $Clock$$Type): $ChronoLocalDate
  "resolveDate"(arg0: $Map$$Type<($TemporalField$$Type), (long)>, arg1: $ResolverStyle$$Type): $ChronoLocalDate
  "zonedDateTime"(arg0: $TemporalAccessor$$Type): $ChronoZonedDateTime<($ChronoLocalDate)>
  "zonedDateTime"(arg0: $Instant$$Type, arg1: $ZoneId$$Type): $ChronoZonedDateTime<($ChronoLocalDate)>
@@ -292,20 +307,6 @@ export class $Chronology implements $Chronology$$Interface {
  "isIsoBased"(): boolean
 static "ofLocale"(arg0: $Locale$$Type): $Chronology
 static "getAvailableChronologies"(): $Set<($Chronology)>
- "getCalendarType"(): StringJS
- "localDateTime"(arg0: $TemporalAccessor$$Type): $ChronoLocalDateTime<($ChronoLocalDate)>
- "eraOf"(arg0: integer): $Era
- "equals"(arg0: any): boolean
- "toString"(): StringJS
- "hashCode"(): integer
- "compareTo"(arg0: $Chronology$$Type): integer
- "compareTo"(arg0: any): integer
-static "of"(arg0: StringJS): $Chronology
-static "from"(arg0: $TemporalAccessor$$Type): $Chronology
- "getId"(): StringJS
- "range"(arg0: $ChronoField$$Type): $ValueRange
- "getDisplayName"(arg0: $TextStyle$$Type, arg1: $Locale$$Type): StringJS
- "period"(arg0: integer, arg1: integer, arg2: integer): $ChronoPeriod
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -341,17 +342,17 @@ get "chronology"(): $Chronology
 }
 
 export class $ChronoLocalDateTime<D extends $ChronoLocalDate> implements $ChronoLocalDateTime$$Interface {
+ "minus"(arg0: long, arg1: $TemporalUnit$$Type): $Temporal
+ "minus"(arg0: $TemporalAmount$$Type): $Temporal
  "toEpochSecond"(arg0: $ZoneOffset$$Type): long
  "toInstant"(arg0: $ZoneOffset$$Type): $Instant
- "isEqual"(arg0: $ChronoLocalDateTime$$Type<(never)>): boolean
- "minus"(arg0: long, arg1: $TemporalUnit$$Type): $ChronoLocalDateTime<(D)>
- "minus"(arg0: $TemporalAmount$$Type): $ChronoLocalDateTime<(D)>
  "adjustInto"(arg0: $Temporal$$Type): $Temporal
  "isAfter"(arg0: $ChronoLocalDateTime$$Type<(never)>): boolean
  "isBefore"(arg0: $ChronoLocalDateTime$$Type<(never)>): boolean
  "atZone"(arg0: $ZoneId$$Type): $ChronoZonedDateTime<(D)>
  "getChronology"(): $Chronology
 static "timeLineOrder"(): $Comparator<($ChronoLocalDateTime<(never)>)>
+ "isEqual"(arg0: $ChronoLocalDateTime$$Type<(never)>): boolean
  "equals"(arg0: any): boolean
  "toString"(): StringJS
  "hashCode"(): integer
@@ -361,7 +362,7 @@ static "timeLineOrder"(): $Comparator<($ChronoLocalDateTime<(never)>)>
 static "from"(arg0: $TemporalAccessor$$Type): $ChronoLocalDateTime<(never)>
  "isSupported"(arg0: $TemporalField$$Type): boolean
  "isSupported"(arg0: $TemporalUnit$$Type): boolean
- "with"(arg0: $TemporalField$$Type, arg1: long): $Temporal
+ "with"(arg0: $TemporalField$$Type, arg1: long): $ChronoLocalDateTime<(D)>
  "with"(arg0: $TemporalAdjuster$$Type): $ChronoLocalDateTime<(D)>
  "query"<R>(arg0: $TemporalQuery$$Type<(R)>): R
  "plus"(arg0: long, arg1: $TemporalUnit$$Type): $ChronoLocalDateTime<(D)>
@@ -398,11 +399,11 @@ get "zero"(): boolean
 }
 
 export class $ChronoPeriod implements $ChronoPeriod$$Interface {
- "normalized"(): $ChronoPeriod
  "isNegative"(): boolean
  "minus"(arg0: $TemporalAmount$$Type): $ChronoPeriod
  "addTo"(arg0: $Temporal$$Type): $Temporal
  "subtractFrom"(arg0: $Temporal$$Type): $Temporal
+ "normalized"(): $ChronoPeriod
  "getChronology"(): $Chronology
  "getUnits"(): $List<($TemporalUnit)>
  "negated"(): $ChronoPeriod

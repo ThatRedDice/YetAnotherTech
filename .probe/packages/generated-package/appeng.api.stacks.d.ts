@@ -4,8 +4,8 @@ import {$Iterator} from "java.util.Iterator"
 import {$Collection} from "java.util.Collection"
 import {$Spliterator} from "java.util.Spliterator"
 import {$FuzzyMode$$Type} from "appeng.api.config.FuzzyMode"
-import {$Set} from "java.util.Set"
 import {$Class$$Type} from "java.lang.Class"
+import {$Set} from "java.util.Set"
 import {$AEKey, $AEKey$$Type} from "appeng.api.stacks.AEKey"
 import {$Object2LongMap$Entry, $Object2LongMap$Entry$$Type} from "it.unimi.dsi.fastutil.objects.Object2LongMap$Entry"
 import {$Consumer$$Type} from "java.util.function.Consumer"
@@ -16,8 +16,8 @@ constructor()
 public "removeEmptySubmaps"(): void
 public "findFuzzy"(arg0: $AEKey$$Type, arg1: $FuzzyMode$$Type): $Collection<($Object2LongMap$Entry<($AEKey)>)>
 public "removeZeros"(): void
-public "getFirstKey"(): $AEKey
 public "getFirstKey"<T extends $AEKey>(arg0: $Class$$Type<(T)>): T
+public "getFirstKey"(): $AEKey
 public "getFirstEntry"(): $Object2LongMap$Entry<($AEKey)>
 public "getFirstEntry"<T extends $AEKey>(arg0: $Class$$Type<(T)>): $Object2LongMap$Entry<($AEKey)>
 public "remove"(arg0: $AEKey$$Type): long
@@ -94,20 +94,20 @@ static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($AEKey
 
 constructor(arg0: $ResourceLocation$$Type, arg1: $Class$$Type<($AEKey$$Type)>, arg2: $Component$$Type)
 
-public "readFromPacket"(arg0: $RegistryFriendlyByteBuf$$Type): $AEKey
 public "getTagNames"(): $Stream<($TagKey<(never)>)>
 public "getRawId"(): byte
-public "getAmountPerOperation"(): integer
 public static "fromRawId"(arg0: integer): $AEKeyType
 public "getAmountPerUnit"(): integer
 public "getUnitSymbol"(): StringJS
 public "getAmountPerByte"(): integer
 public "formatAmount"(arg0: long, arg1: $AmountFormat$$Type): StringJS
 public "supportsFuzzyRangeSearch"(): boolean
+public "getAmountPerOperation"(): integer
 public "loadKeyFromTag"(arg0: $HolderLookup$Provider$$Type, arg1: $CompoundTag$$Type): $AEKey
+public "readFromPacket"(arg0: $RegistryFriendlyByteBuf$$Type): $AEKey
+public static "items"(): $AEKeyType
 public "getKeyClass"(): $Class<($AEKey)>
 public "getDescription"(): $Component
-public static "items"(): $AEKeyType
 public "toString"(): StringJS
 public "contains"(arg0: $AEKey$$Type): boolean
 public "filter"(): $AEKeyFilter
@@ -117,10 +117,10 @@ public static "fluids"(): $AEKeyType
 public "tryCast"(arg0: $AEKey$$Type): $AEKey
 get "tagNames"(): $Stream<($TagKey<(never)>)>
 get "rawId"(): byte
-get "amountPerOperation"(): integer
 get "amountPerUnit"(): integer
 get "unitSymbol"(): StringJS
 get "amountPerByte"(): integer
+get "amountPerOperation"(): integer
 get "keyClass"(): $Class<($AEKey)>
 get "description"(): $Component
 get "id"(): $ResourceLocation
@@ -156,8 +156,8 @@ import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Prov
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$RegistryFriendlyByteBuf, $RegistryFriendlyByteBuf$$Type} from "net.minecraft.network.RegistryFriendlyByteBuf"
-import {$TagKey$$Type} from "net.minecraft.tags.TagKey"
 import {$ItemLike$$Type} from "net.minecraft.world.level.ItemLike"
+import {$TagKey$$Type} from "net.minecraft.tags.TagKey"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$AEKey, $AEKey$$Type} from "appeng.api.stacks.AEKey"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
@@ -170,19 +170,19 @@ static readonly "TYPE_FIELD": StringJS
 static readonly "OPTIONAL_STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($AEKey)>
 static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($AEKey)>
 
-public "writeToPacket"(arg0: $RegistryFriendlyByteBuf$$Type): void
-public "isDamaged"(): boolean
-public "toTag"(arg0: $HolderLookup$Provider$$Type): $CompoundTag
-public "isTagged"(arg0: $TagKey$$Type<(never)>): boolean
-public static "fromPacket"(arg0: $RegistryFriendlyByteBuf$$Type): $AEItemKey
 public "addDrops"(arg0: long, arg1: $List$$Type<($ItemStack$$Type)>, arg2: $Level$$Type, arg3: $BlockPos$$Type): void
-public "getPrimaryKey"(): any
-public "getFuzzySearchMaxValue"(): integer
+public "toTag"(arg0: $HolderLookup$Provider$$Type): $CompoundTag
+public "isDamaged"(): boolean
 public "getFuzzySearchValue"(): integer
-public "dropSecondary"(): $AEItemKey
+public "dropSecondary"(): $AEKey
 public "wrapForDisplayOrFilter"(): $ItemStack
 public "hasComponents"(): boolean
+public "getPrimaryKey"(): any
+public "getFuzzySearchMaxValue"(): integer
 public "getReadOnlyStack"(): $ItemStack
+public "isTagged"(arg0: $TagKey$$Type<(never)>): boolean
+public static "fromPacket"(arg0: $RegistryFriendlyByteBuf$$Type): $AEItemKey
+public "writeToPacket"(arg0: $RegistryFriendlyByteBuf$$Type): void
 public "getItem"(): $Item
 public "get"<T>(arg0: $DataComponentType$$Type<(T)>): T
 public "equals"(arg0: any): boolean
@@ -203,9 +203,9 @@ public "toStack"(arg0: integer): $ItemStack
 public "toStack"(): $ItemStack
 public static "fromTag"(arg0: $HolderLookup$Provider$$Type, arg1: $CompoundTag$$Type): $AEItemKey
 get "damaged"(): boolean
+get "fuzzySearchValue"(): integer
 get "primaryKey"(): any
 get "fuzzySearchMaxValue"(): integer
-get "fuzzySearchValue"(): integer
 get "readOnlyStack"(): $ItemStack
 get "item"(): $Item
 get "id"(): $ResourceLocation
@@ -229,8 +229,8 @@ import {$AEKeyType} from "appeng.api.stacks.AEKeyType"
 import {$List$$Type} from "java.util.List"
 import {$FuzzyMode$$Type} from "appeng.api.config.FuzzyMode"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$Component} from "net.minecraft.network.chat.Component"
 import {$DataComponentType$$Type} from "net.minecraft.core.component.DataComponentType"
+import {$Component} from "net.minecraft.network.chat.Component"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$AmountFormat$$Type} from "appeng.api.stacks.AmountFormat"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
@@ -250,15 +250,9 @@ static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($AEKey
 
 constructor()
 
-public "writeToPacket"(arg0: $RegistryFriendlyByteBuf$$Type): void
-public "fuzzyEquals"(arg0: $AEKey$$Type, arg1: $FuzzyMode$$Type): boolean
-public "toTag"(arg0: $HolderLookup$Provider$$Type): $CompoundTag
-public "isTagged"(arg0: $TagKey$$Type<(never)>): boolean
 public "addDrops"(arg0: long, arg1: $List$$Type<($ItemStack$$Type)>, arg2: $Level$$Type, arg3: $BlockPos$$Type): void
-public "toTagGeneric"(arg0: $HolderLookup$Provider$$Type): $CompoundTag
-public "getPrimaryKey"(): any
-public "getFuzzySearchMaxValue"(): integer
-public "getAmountPerOperation"(): integer
+public "toTag"(arg0: $HolderLookup$Provider$$Type): $CompoundTag
+public "fuzzyEquals"(arg0: $AEKey$$Type, arg1: $FuzzyMode$$Type): boolean
 public "getAmountPerUnit"(): integer
 public "getUnitSymbol"(): StringJS
 public "getAmountPerByte"(): integer
@@ -271,24 +265,30 @@ public static "fromTagGeneric"(arg0: $HolderLookup$Provider$$Type, arg1: $Compou
 public "dropSecondary"(): $AEKey
 public "wrapForDisplayOrFilter"(): $ItemStack
 public "hasComponents"(): boolean
+public "toTagGeneric"(arg0: $HolderLookup$Provider$$Type): $CompoundTag
+public "getPrimaryKey"(): any
+public "getFuzzySearchMaxValue"(): integer
+public "getAmountPerOperation"(): integer
+public "isTagged"(arg0: $TagKey$$Type<(never)>): boolean
+public "writeToPacket"(arg0: $RegistryFriendlyByteBuf$$Type): void
+public "getDisplayName"(): $Component
 public "get"<T>(arg0: $DataComponentType$$Type<(T)>): T
 public "matches"(arg0: $GenericStack$$Type): boolean
 public "getId"(): $ResourceLocation
 public "getType"(): $AEKeyType
-public "getDisplayName"(): $Component
 public static "writeKey"(arg0: $RegistryFriendlyByteBuf$$Type, arg1: $AEKey$$Type): void
 public "getModId"(): StringJS
 public static "readKey"(arg0: $RegistryFriendlyByteBuf$$Type): $AEKey
-get "primaryKey"(): any
-get "fuzzySearchMaxValue"(): integer
-get "amountPerOperation"(): integer
 get "amountPerUnit"(): integer
 get "unitSymbol"(): StringJS
 get "amountPerByte"(): integer
 get "fuzzySearchValue"(): integer
+get "primaryKey"(): any
+get "fuzzySearchMaxValue"(): integer
+get "amountPerOperation"(): integer
+get "displayName"(): $Component
 get "id"(): $ResourceLocation
 get "type"(): $AEKeyType
-get "displayName"(): $Component
 get "modId"(): StringJS
 }
 /**
@@ -330,8 +330,8 @@ import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$RegistryFriendlyByteBuf, $RegistryFriendlyByteBuf$$Type} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$List} from "java.util.List"
-import {$AEKey, $AEKey$$Type} from "appeng.api.stacks.AEKey"
 import {$FluidStack$$Type} from "net.neoforged.neoforge.fluids.FluidStack"
+import {$AEKey, $AEKey$$Type} from "appeng.api.stacks.AEKey"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Record} from "java.lang.Record"
 
@@ -344,22 +344,22 @@ static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($Gener
 
 constructor(what: $AEKey$$Type, amount: long)
 
-public static "fromItemStack"(arg0: $ItemStack$$Type): $GenericStack
 public static "fromFluidStack"(arg0: $FluidStack$$Type): $GenericStack
 public static "writeTag"(arg0: $HolderLookup$Provider$$Type, arg1: $GenericStack$$Type): $CompoundTag
 public static "readTag"(arg0: $HolderLookup$Provider$$Type, arg1: $CompoundTag$$Type): $GenericStack
 public static "wrapInItemStack"(arg0: $GenericStack$$Type): $ItemStack
 public static "wrapInItemStack"(arg0: $AEKey$$Type, arg1: long): $ItemStack
 public static "getStackSizeOrZero"(arg0: $GenericStack$$Type): long
+public static "fromItemStack"(arg0: $ItemStack$$Type): $GenericStack
 public static "readBuffer"(arg0: $RegistryFriendlyByteBuf$$Type): $GenericStack
 public "amount"(): long
+public "what"(): $AEKey
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
 public static "isWrapped"(arg0: $ItemStack$$Type): boolean
 public static "sum"(arg0: $GenericStack$$Type, arg1: $GenericStack$$Type): $GenericStack
 public static "writeBuffer"(arg0: $GenericStack$$Type, arg1: $RegistryFriendlyByteBuf$$Type): void
-public "what"(): $AEKey
 public static "unwrapItemStack"(arg0: $ItemStack$$Type): $GenericStack
 }
 /**

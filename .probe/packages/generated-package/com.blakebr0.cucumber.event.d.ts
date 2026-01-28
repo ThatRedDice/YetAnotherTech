@@ -85,14 +85,14 @@ import {$ServerLevel, $ServerLevel$$Type} from "net.minecraft.server.level.Serve
 export class $ItemBreakEvent extends $Event {
 constructor(arg0: $ItemStack$$Type, arg1: integer, arg2: $ServerLevel$$Type, arg3: $LivingEntity$$Type)
 
-public "getItem"(): $Item
-public "getLevel"(): $ServerLevel
 public "getEntity"(): $LivingEntity
+public "getLevel"(): $ServerLevel
+public "getItem"(): $Item
 public "getItemStack"(): $ItemStack
 public "getAmount"(): integer
-get "item"(): $Item
-get "level"(): $ServerLevel
 get "entity"(): $LivingEntity
+get "level"(): $ServerLevel
+get "item"(): $Item
 get "itemStack"(): $ItemStack
 get "amount"(): integer
 }

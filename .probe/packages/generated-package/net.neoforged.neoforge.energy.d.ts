@@ -10,9 +10,9 @@ constructor(arg0: integer, arg1: integer)
 constructor(arg0: integer, arg1: integer, arg2: integer)
 constructor(arg0: integer, arg1: integer, arg2: integer, arg3: integer)
 
+public "canExtract"(): boolean
 public "extractEnergy"(arg0: integer, arg1: boolean): integer
 public "receiveEnergy"(arg0: integer, arg1: boolean): integer
-public "canExtract"(): boolean
 public "canReceive"(): boolean
 public "deserializeNBT"(arg0: $HolderLookup$Provider$$Type, arg1: $Tag$$Type): void
 public "serializeNBT"(arg0: $HolderLookup$Provider$$Type): $Tag
@@ -38,9 +38,9 @@ get "maxEnergyStored"(): integer
 }
 
 export class $IEnergyStorage implements $IEnergyStorage$$Interface {
+ "canExtract"(): boolean
  "extractEnergy"(arg0: integer, arg1: boolean): integer
  "receiveEnergy"(arg0: integer, arg1: boolean): integer
- "canExtract"(): boolean
  "canReceive"(): boolean
  "getEnergyStored"(): integer
  "getMaxEnergyStored"(): integer

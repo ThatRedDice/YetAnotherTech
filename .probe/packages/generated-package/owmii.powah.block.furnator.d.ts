@@ -6,9 +6,9 @@ import {$Tier$$Type} from "owmii.powah.block.Tier"
 import {$Optional} from "java.util.Optional"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
+import {$Inventory$$Type} from "net.minecraft.world.entity.player.Inventory"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$SimpleWaterloggedBlock$$Interface} from "net.minecraft.world.level.block.SimpleWaterloggedBlock"
-import {$Inventory$$Type} from "net.minecraft.world.entity.player.Inventory"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$AbstractContainer} from "owmii.powah.lib.logistics.inventory.AbstractContainer"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
@@ -16,8 +16,8 @@ import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$ItemBlock} from "owmii.powah.lib.item.ItemBlock"
+import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$AbstractTileEntity$$Type} from "owmii.powah.lib.block.AbstractTileEntity"
@@ -60,8 +60,8 @@ public "getConfig"(): any
 public "animateTick"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $RandomSource$$Type): void
 public "getBlockItem"(arg0: $Item$Properties$$Type, arg1: $ResourceKey$$Type): $ItemBlock
 public "getPickupSound"(): $Optional<($SoundEvent)>
-public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "canPlaceLiquid"(arg0: $Player$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $Fluid$$Type): boolean
+public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "pickupBlock"(arg0: $Player$$Type, arg1: $LevelAccessor$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): $ItemStack
 public "getPickupSound"(arg0: $BlockState$$Type): $Optional<($SoundEvent)>
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean

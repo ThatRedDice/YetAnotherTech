@@ -24,8 +24,8 @@ export type $IMenuItem$$Original = $IMenuItem;}
 declare module "appeng.api.implementations.menuobjects.IPortableTerminal" {
 import {$ITerminalHost$$Interface} from "appeng.api.storage.ITerminalHost"
 import {$ILinkStatus} from "appeng.api.storage.ILinkStatus"
-import {$IEnergySource, $IEnergySource$$Interface} from "appeng.api.networking.energy.IEnergySource"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
+import {$IEnergySource, $IEnergySource$$Interface} from "appeng.api.networking.energy.IEnergySource"
 import {$MEStorage} from "appeng.api.storage.MEStorage"
 import {$Actionable$$Type} from "appeng.api.config.Actionable"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
@@ -50,9 +50,9 @@ export class $IPortableTerminal implements $IPortableTerminal$$Interface {
  "getInventory"(): $MEStorage
  "extractAEPower"(arg0: double, arg1: $Actionable$$Type, arg2: $PowerMultiplier$$Type): double
 static "empty"(): $IEnergySource
- "getUpgrades"(): $IUpgradeInventory
  "getInstalledUpgrades"(arg0: $ItemLike$$Type): integer
  "isUpgradedWith"(arg0: $ItemLike$$Type): boolean
+ "getUpgrades"(): $IUpgradeInventory
  "getConfigManager"(): $IConfigManager
  "returnToMainMenu"(arg0: $Player$$Type, arg1: $ISubMenu$$Type): void
  "getMainMenuIcon"(): $ItemStack
@@ -72,8 +72,8 @@ import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$IUpgradeableObject$$Interface} from "appeng.api.upgrades.IUpgradeableObject"
 import {$ItemLike$$Type} from "net.minecraft.world.level.ItemLike"
 import {$Item, $Item$$Type} from "net.minecraft.world.item.Item"
-import {$IUpgradeInventory} from "appeng.api.upgrades.IUpgradeInventory"
 import {$Actionable$$Type} from "appeng.api.config.Actionable"
+import {$IUpgradeInventory} from "appeng.api.upgrades.IUpgradeInventory"
 import {$AEKey$$Type} from "appeng.api.stacks.AEKey"
 import {$ItemMenuHostLocator, $ItemMenuHostLocator$$Type} from "appeng.menu.locator.ItemMenuHostLocator"
 
@@ -81,13 +81,13 @@ export class $ItemMenuHost<T extends $Item> implements $IUpgradeableObject$$Inte
 constructor(arg0: T, arg1: $Player$$Type, arg2: $ItemMenuHostLocator$$Type)
 
 public "getUpgrades"(): $IUpgradeInventory
-public "consumeIdlePower"(arg0: $Actionable$$Type): boolean
 public "getPlayerInventorySlot"(): integer
+public "consumeIdlePower"(arg0: $Actionable$$Type): boolean
+public "tick"(): void
 public "getLocator"(): $ItemMenuHostLocator
 public "getItem"(): T
-public "isValid"(): boolean
-public "tick"(): void
 public "insert"(arg0: $Player$$Type, arg1: $AEKey$$Type, arg2: long, arg3: $Actionable$$Type): long
+public "isValid"(): boolean
 public "getItemStack"(): $ItemStack
 public "isClientSide"(): boolean
 public "getPlayer"(): $Player

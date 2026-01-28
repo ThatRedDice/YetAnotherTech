@@ -24,8 +24,8 @@ export type $ModifierTrigger$$Original = $ModifierTrigger;}
 declare module "dev.shadowsoffire.apothic_spawners.advancements.ModifierTrigger$TriggerInstance" {
 import {$MinMaxBounds$Ints, $MinMaxBounds$Ints$$Type} from "net.minecraft.advancements.critereon.MinMaxBounds$Ints"
 import {$SpawnerModifier$$Type} from "dev.shadowsoffire.apothic_spawners.modifiers.SpawnerModifier"
-import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$ContextAwarePredicate, $ContextAwarePredicate$$Type} from "net.minecraft.advancements.critereon.ContextAwarePredicate"
+import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$ApothSpawnerTile$$Type} from "dev.shadowsoffire.apothic_spawners.block.ApothSpawnerTile"
 import {$CriterionValidator$$Type} from "net.minecraft.advancements.critereon.CriterionValidator"
@@ -45,8 +45,8 @@ public "ignoreConditions"(): $Optional<(boolean)>
 public "ignoreLight"(): $Optional<(boolean)>
 public "noAI"(): $Optional<(boolean)>
 public "redstone"(): $Optional<(boolean)>
-public "spawnCount"(): $MinMaxBounds$Ints
 public "spawnRange"(): $MinMaxBounds$Ints
+public "spawnCount"(): $MinMaxBounds$Ints
 public "minDelay"(): $MinMaxBounds$Ints
 public "maxDelay"(): $MinMaxBounds$Ints
 public "youthful"(): $Optional<(boolean)>
@@ -62,7 +62,7 @@ public "validate"(arg0: $CriterionValidator$$Type): void
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $ModifierTrigger$TriggerInstance$$Type = ({"spawnRange"?: $MinMaxBounds$Ints$$Type, "redstone"?: (boolean)?, "nearbyEnts"?: $MinMaxBounds$Ints$$Type, "silent"?: (boolean)?, "youthful"?: (boolean)?, "noAI"?: (boolean)?, "maxDelay"?: $MinMaxBounds$Ints$$Type, "spawnCount"?: $MinMaxBounds$Ints$$Type, "ignorePlayers"?: (boolean)?, "ignoreConditions"?: (boolean)?, "playerRange"?: $MinMaxBounds$Ints$$Type, "minDelay"?: $MinMaxBounds$Ints$$Type, "player"?: ($ContextAwarePredicate$$Type)?, "ignoreLight"?: (boolean)?}) | ([spawnRange?: $MinMaxBounds$Ints$$Type, redstone?: (boolean)?, nearbyEnts?: $MinMaxBounds$Ints$$Type, silent?: (boolean)?, youthful?: (boolean)?, noAI?: (boolean)?, maxDelay?: $MinMaxBounds$Ints$$Type, spawnCount?: $MinMaxBounds$Ints$$Type, ignorePlayers?: (boolean)?, ignoreConditions?: (boolean)?, playerRange?: $MinMaxBounds$Ints$$Type, minDelay?: $MinMaxBounds$Ints$$Type, player?: ($ContextAwarePredicate$$Type)?, ignoreLight?: (boolean)?]);
+export type $ModifierTrigger$TriggerInstance$$Type = ({"redstone"?: (boolean)?, "nearbyEnts"?: $MinMaxBounds$Ints$$Type, "silent"?: (boolean)?, "youthful"?: (boolean)?, "noAI"?: (boolean)?, "maxDelay"?: $MinMaxBounds$Ints$$Type, "spawnCount"?: $MinMaxBounds$Ints$$Type, "ignorePlayers"?: (boolean)?, "ignoreConditions"?: (boolean)?, "playerRange"?: $MinMaxBounds$Ints$$Type, "minDelay"?: $MinMaxBounds$Ints$$Type, "player"?: ($ContextAwarePredicate$$Type)?, "ignoreLight"?: (boolean)?, "spawnRange"?: $MinMaxBounds$Ints$$Type}) | ([redstone?: (boolean)?, nearbyEnts?: $MinMaxBounds$Ints$$Type, silent?: (boolean)?, youthful?: (boolean)?, noAI?: (boolean)?, maxDelay?: $MinMaxBounds$Ints$$Type, spawnCount?: $MinMaxBounds$Ints$$Type, ignorePlayers?: (boolean)?, ignoreConditions?: (boolean)?, playerRange?: $MinMaxBounds$Ints$$Type, minDelay?: $MinMaxBounds$Ints$$Type, player?: ($ContextAwarePredicate$$Type)?, ignoreLight?: (boolean)?, spawnRange?: $MinMaxBounds$Ints$$Type]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */

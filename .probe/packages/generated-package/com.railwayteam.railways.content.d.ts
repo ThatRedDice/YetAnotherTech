@@ -4,8 +4,8 @@ import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
 export class $NarrowTrackBufferBlock$Style extends $Enum<($NarrowTrackBufferBlock$Style)> implements $StringRepresentable$$Interface {
@@ -14,16 +14,16 @@ static readonly "STANDARD": $NarrowTrackBufferBlock$Style
 
 public static "values"(): ($NarrowTrackBufferBlock$Style)[]
 public static "valueOf"(arg0: StringJS): $NarrowTrackBufferBlock$Style
-public "getModel"(): $ResourceLocation
 public "getSerializedName"(): StringJS
+public "getModel"(): $ResourceLocation
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
-get "model"(): $ResourceLocation
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
+get "model"(): $ResourceLocation
 get "remappedEnumConstantName"(): StringJS
 }
 /**
@@ -37,8 +37,8 @@ export type $NarrowTrackBufferBlock$Style$$Type = (("standard") | ("mono"));
 export type $NarrowTrackBufferBlock$Style$$Original = $NarrowTrackBufferBlock$Style;}
 declare module "com.railwayteam.railways.content.custom_bogeys.blocks.narrow.NarrowGaugeBogeyBlock$NarrowGaugeStandardStyle" {
 import {$Enum} from "java.lang.Enum"
-import {$BogeyStyle} from "com.simibubi.create.content.trains.bogey.BogeyStyle"
 import {$Supplier} from "java.util.function.Supplier"
+import {$BogeyStyle} from "com.simibubi.create.content.trains.bogey.BogeyStyle"
 import {$BogeySizes$BogeySize} from "com.simibubi.create.content.trains.bogey.BogeySizes$BogeySize"
 
 export class $NarrowGaugeBogeyBlock$NarrowGaugeStandardStyle extends $Enum<($NarrowGaugeBogeyBlock$NarrowGaugeStandardStyle)> {
@@ -74,10 +74,10 @@ import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Pair} from "net.createmod.catnip.data.Pair"
 import {$TrackMaterial, $TrackMaterial$$Type} from "com.simibubi.create.content.trains.track.TrackMaterial"
-import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$BiFunction$$Type} from "java.util.function.BiFunction"
-import {$TrackTargetingBehaviour$RenderedTrackOverlayType$$Type} from "com.simibubi.create.content.trains.track.TrackTargetingBehaviour$RenderedTrackOverlayType"
 import {$TrackNodeLocation$$Type} from "com.simibubi.create.content.trains.graph.TrackNodeLocation"
+import {$TrackTargetingBehaviour$RenderedTrackOverlayType$$Type} from "com.simibubi.create.content.trains.track.TrackTargetingBehaviour$RenderedTrackOverlayType"
+import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$TrackNodeLocation$DiscoveredLocation, $TrackNodeLocation$DiscoveredLocation$$Type} from "com.simibubi.create.content.trains.graph.TrackNodeLocation$DiscoveredLocation"
 import {$Vec3, $Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$Function$$Type} from "java.util.function.Function"
@@ -149,13 +149,13 @@ import {$TrackBufferBlock} from "com.railwayteam.railways.content.buffer.TrackBu
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Class} from "java.lang.Class"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
-import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$TrackBufferBlockEntity} from "com.railwayteam.railways.content.buffer.TrackBufferBlockEntity"
+import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$DirectionProperty} from "net.minecraft.world.level.block.state.properties.DirectionProperty"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
@@ -214,8 +214,8 @@ import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType, $BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Function$$Type} from "java.util.function.Function"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Class} from "java.lang.Class"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
@@ -270,18 +270,18 @@ public "useWithoutItem"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $Bloc
 public "getAnalogOutputSignal"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type): integer
 public "onProjectileHit"(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockHitResult$$Type, arg3: $Projectile$$Type): void
 public "getBlockEntityType"(): $BlockEntityType<($TrackSwitchBlockEntity)>
-public static "manual"(arg0: $BlockBehaviour$Properties$$Type): $TrackSwitchBlock
 public "getBlockEntityClass"(): $Class<($TrackSwitchBlockEntity)>
+public static "manual"(arg0: $BlockBehaviour$Properties$$Type): $TrackSwitchBlock
 public "getShape"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $CollisionContext$$Type): $VoxelShape
 public static "automatic"(arg0: $BlockBehaviour$Properties$$Type): $TrackSwitchBlock
 public "getCollisionShape"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $CollisionContext$$Type): $VoxelShape
 public "onRemove"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: boolean): void
-public "neighborChanged"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Block$$Type, arg4: $BlockPos$$Type, arg5: boolean): void
 /**
  * 
  * @deprecated
  */
 public "hasAnalogOutputSignal"(arg0: $BlockState$$Type): boolean
+public "neighborChanged"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Block$$Type, arg4: $BlockPos$$Type, arg5: boolean): void
 public "getTicker"<S extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(S)>): $BlockEntityTicker<(S)>
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
 public "getBlockEntityOptional"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type): $Optional<($TrackSwitchBlockEntity)>
@@ -290,8 +290,8 @@ public "onBlockEntityUse"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2:
 public "onBlockEntityUseItemOn"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $Function$$Type<($TrackSwitchBlockEntity), ($ItemInteractionResult$$Type)>): $ItemInteractionResult
 public "getBlockEntity"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type): $TrackSwitchBlockEntity
 public static "onRemove"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): void
-public static "playRotateSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public "onWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $InteractionResult
+public static "playRotateSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public "getRotatedBlockState"(arg0: $BlockState$$Type, arg1: $Direction$$Type): $BlockState
 public "updateAfterWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $BlockState
 public static "playRemoveSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
@@ -315,8 +315,8 @@ import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$HorizontalDirectionalBlock} from "net.minecraft.world.level.block.HorizontalDirectionalBlock"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -364,8 +364,8 @@ import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$Bl
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$ItemRequirement} from "com.simibubi.create.content.schematics.requirement.ItemRequirement"
-import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$Vec3} from "net.minecraft.world.phys.Vec3"
+import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Item} from "net.minecraft.world.item.Item"
@@ -412,11 +412,11 @@ static readonly "UPDATE_CLIENTS": integer
 static readonly "AXIS": $EnumProperty<($Direction$Axis)>
 
 public "getBlockEntityType"(): $BlockEntityType<($CRBogeyBlockEntity)>
+public "getBlockEntityClass"(): $Class<($CRBogeyBlockEntity)>
 public "getTrackType"(arg0: $BogeyStyle$$Type): $TrackMaterial$TrackType
 public "getWheelPointSpacing"(): double
 public "getWheelRadius"(): double
 public "getConnectorAnchorOffset"(): $Vec3
-public "getBlockEntityClass"(): $Class<($CRBogeyBlockEntity)>
 public "getDefaultStyle"(): $BogeyStyle
 public "getCloneItemStack"(arg0: $LevelReader$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type): $ItemStack
 public static "onRemove"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): void
@@ -426,10 +426,10 @@ public static "playRotateSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public static "playRemoveSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "blockEntityType"(): $BlockEntityType<($CRBogeyBlockEntity)>
+get "blockEntityClass"(): $Class<($CRBogeyBlockEntity)>
 get "wheelPointSpacing"(): double
 get "wheelRadius"(): double
 get "connectorAnchorOffset"(): $Vec3
-get "blockEntityClass"(): $Class<($CRBogeyBlockEntity)>
 get "defaultStyle"(): $BogeyStyle
 }
 /**
@@ -444,12 +444,12 @@ export type $CRBogeyBlock$$Original = $CRBogeyBlock;}
 declare module "com.railwayteam.railways.content.buffer.TrackBuffer" {
 import {$SingleBlockEntityEdgePoint} from "com.simibubi.create.content.trains.signal.SingleBlockEntityEdgePoint"
 import {$TrackNodeLocation} from "com.simibubi.create.content.trains.graph.TrackNodeLocation"
-import {$TrackNode$$Type} from "com.simibubi.create.content.trains.graph.TrackNode"
 import {$UUID} from "java.util.UUID"
+import {$TrackNode$$Type} from "com.simibubi.create.content.trains.graph.TrackNode"
 import {$Train$$Type} from "com.simibubi.create.content.trains.entity.Train"
 import {$Level} from "net.minecraft.world.level.Level"
-import {$Couple} from "net.createmod.catnip.data.Couple"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
+import {$Couple} from "net.createmod.catnip.data.Couple"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 
 export class $TrackBuffer extends $SingleBlockEntityEdgePoint {
@@ -475,8 +475,8 @@ export type $TrackBuffer$$Type = ($TrackBuffer);
  */
 export type $TrackBuffer$$Original = $TrackBuffer;}
 declare module "com.railwayteam.railways.content.buffer.WoodVariantTrackBufferBlock" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
@@ -489,8 +489,8 @@ import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ItemInteractionResult} from "net.minecraft.world.ItemInteractionResult"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Class} from "java.lang.Class"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
@@ -564,9 +564,9 @@ import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventL
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$SoundType} from "net.minecraft.world.level.block.SoundType"
 import {$FuelTankBlock$Shape} from "com.railwayteam.railways.content.fuel.tank.FuelTankBlock$Shape"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$FuelTankBlockEntity, $FuelTankBlockEntity$$Type} from "com.railwayteam.railways.content.fuel.tank.FuelTankBlockEntity"
 import {$Consumer$$Type} from "java.util.function.Consumer"
@@ -578,8 +578,8 @@ import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
+import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 
@@ -608,12 +608,12 @@ static readonly "UPDATE_CLIENTS": integer
 
 constructor(arg0: $BlockBehaviour$Properties$$Type)
 
-public static "isTank"(arg0: $BlockState$$Type): boolean
-public "setPlacedBy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $LivingEntity$$Type, arg4: $ItemStack$$Type): void
-public "onPlace"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: boolean): void
 public "getBlockSupportShape"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): $VoxelShape
 public "getAnalogOutputSignal"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type): integer
+public "setPlacedBy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $LivingEntity$$Type, arg4: $ItemStack$$Type): void
+public "onPlace"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: boolean): void
 public "getBlockEntityType"(): $BlockEntityType<($FuelTankBlockEntity)>
+public static "isTank"(arg0: $BlockState$$Type): boolean
 public "getBlockEntityClass"(): $Class<($FuelTankBlockEntity)>
 public "onWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $InteractionResult
 public "rotate"(arg0: $BlockState$$Type, arg1: $Rotation$$Type): $BlockState
@@ -621,8 +621,8 @@ public "mirror"(arg0: $BlockState$$Type, arg1: $Mirror$$Type): $BlockState
 public "useItemOn"(arg0: $ItemStack$$Type, arg1: $BlockState$$Type, arg2: $Level$$Type, arg3: $BlockPos$$Type, arg4: $Player$$Type, arg5: $InteractionHand$$Type, arg6: $BlockHitResult$$Type): $ItemInteractionResult
 public "getSoundType"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): $SoundType
 public "onRemove"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: boolean): void
-public "getLightEmission"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): integer
 public "hasAnalogOutputSignal"(arg0: $BlockState$$Type): boolean
+public "getLightEmission"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): integer
 public static "playRotateSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public "getRotatedBlockState"(arg0: $BlockState$$Type, arg1: $Direction$$Type): $BlockState
 public "updateAfterWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $BlockState
@@ -659,8 +659,8 @@ import {$List$$Type} from "java.util.List"
 import {$DyeColor, $DyeColor$$Type} from "net.minecraft.world.item.DyeColor"
 import {$BlockEntityBehaviour$$Type} from "com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour"
 import {$IFluidHandler$$Type} from "net.neoforged.neoforge.fluids.capability.IFluidHandler"
-import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $SmokeStackBlockEntity extends $SmartBlockEntity implements $IHaveGoggleInformation$$Interface {
@@ -668,10 +668,10 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 
 constructor(arg0: $BlockEntityType$$Type<(never)>, arg1: $BlockPos$$Type, arg2: $BlockState$$Type)
 
+public "addToGoggleTooltip"(arg0: $List$$Type<($Component$$Type)>, arg1: boolean): boolean
 public "addBehaviours"(arg0: $List$$Type<($BlockEntityBehaviour$$Type)>): void
 public "setSoul"(arg0: boolean): void
 public "isSoul"(): boolean
-public "addToGoggleTooltip"(arg0: $List$$Type<($Component$$Type)>, arg1: boolean): boolean
 public "tick"(): void
 public "setColor"(arg0: $DyeColor$$Type): void
 public "getIcon"(arg0: boolean): $ItemStack
@@ -694,11 +694,11 @@ export type $SmokeStackBlockEntity$$Original = $SmokeStackBlockEntity;}
 declare module "com.railwayteam.railways.content.distant_signals.SignalDisplaySource" {
 import {$SingleLineDisplaySource} from "com.simibubi.create.content.redstone.displayLink.source.SingleLineDisplaySource"
 import {$Optional} from "java.util.Optional"
-import {$List} from "java.util.List"
 import {$DisplayLinkContext$$Type} from "com.simibubi.create.content.redstone.displayLink.DisplayLinkContext"
+import {$List} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
-import {$Pair} from "net.createmod.catnip.data.Pair"
 import {$SignalBlockEntity} from "com.simibubi.create.content.trains.signal.SignalBlockEntity"
+import {$Pair} from "net.createmod.catnip.data.Pair"
 import {$DisplaySource} from "com.simibubi.create.api.behaviour.display.DisplaySource"
 import {$BlockEntityType} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$MutableComponent, $MutableComponent$$Type} from "net.minecraft.network.chat.MutableComponent"
@@ -715,8 +715,8 @@ static readonly "BY_BLOCK": $SimpleRegistry$Multi<($Block), ($DisplaySource)>
 
 constructor()
 
-public static "isSignalTarget"(arg0: $DisplayLinkContext$$Type): boolean
 public "getPassiveRefreshTicks"(): integer
+public static "isSignalTarget"(arg0: $DisplayLinkContext$$Type): boolean
 public static "hasSignalSource"(arg0: $DisplayLinkContext$$Type): boolean
 public static "getSignalState"(arg0: $DisplayLinkContext$$Type, arg1: $MutableComponent$$Type): $Pair<($SignalBlockEntity$SignalState), ($Optional<($SignalBlockEntity)>)>
 public "updateState"(arg0: $DisplayLinkBlockEntity$$Type): void
@@ -733,8 +733,8 @@ export type $SignalDisplaySource$$Type = ($SignalDisplaySource);
  */
 export type $SignalDisplaySource$$Original = $SignalDisplaySource;}
 declare module "com.railwayteam.railways.content.buffer.single_deco.AbstractDyeableSingleBufferBlock" {
-import {$IBE$$Interface} from "com.simibubi.create.foundation.block.IBE"
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
+import {$IBE$$Interface} from "com.simibubi.create.foundation.block.IBE"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
@@ -746,18 +746,18 @@ import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType, $BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Function$$Type} from "java.util.function.Function"
-import {$Item} from "net.minecraft.world.item.Item"
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
-import {$Class} from "java.lang.Class"
+import {$Item} from "net.minecraft.world.item.Item"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
+import {$Class} from "java.lang.Class"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$IWrenchable$$Interface} from "com.simibubi.create.content.equipment.wrench.IWrenchable"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$DyeableBlockEntity, $DyeableBlockEntity$$Type} from "com.railwayteam.railways.content.buffer.DyeableBlockEntity"
-import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$ProperWaterloggedBlock$$Interface} from "com.simibubi.create.foundation.block.ProperWaterloggedBlock"
+import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$HorizontalDirectionalBlock} from "net.minecraft.world.level.block.HorizontalDirectionalBlock"
@@ -765,15 +765,15 @@ import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$InteractionResult, $InteractionResult$$Type} from "net.minecraft.world.InteractionResult"
-import {$ItemInteractionResult, $ItemInteractionResult$$Type} from "net.minecraft.world.ItemInteractionResult"
 import {$Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
+import {$ItemInteractionResult, $ItemInteractionResult$$Type} from "net.minecraft.world.ItemInteractionResult"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
+import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
-import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
-import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
+import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$DirectionProperty} from "net.minecraft.world.level.block.state.properties.DirectionProperty"
 
 export class $AbstractDyeableSingleBufferBlock extends $HorizontalDirectionalBlock implements $IBE$$Interface<($DyeableBlockEntity)>, $IWrenchable$$Interface, $ProperWaterloggedBlock$$Interface {
@@ -815,8 +815,8 @@ public "onBlockEntityUse"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2:
 public "onBlockEntityUseItemOn"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $Function$$Type<($DyeableBlockEntity), ($ItemInteractionResult$$Type)>): $ItemInteractionResult
 public "getBlockEntity"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type): $DyeableBlockEntity
 public static "onRemove"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): void
-public static "playRotateSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public "onWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $InteractionResult
+public static "playRotateSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public "updateAfterWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $BlockState
 public static "playRemoveSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public "onSneakWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $InteractionResult
@@ -826,8 +826,8 @@ public "updateWater"(arg0: $LevelAccessor$$Type, arg1: $BlockState$$Type, arg2: 
 public "fluidState"(arg0: $BlockState$$Type): $FluidState
 public "getListener"<T extends $BlockEntity>(arg0: $ServerLevel$$Type, arg1: T): $GameEventListener
 public "getPickupSound"(): $Optional<($SoundEvent)>
-public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "canPlaceLiquid"(arg0: $Player$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $Fluid$$Type): boolean
+public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "pickupBlock"(arg0: $Player$$Type, arg1: $LevelAccessor$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): $ItemStack
 public "getPickupSound"(arg0: $BlockState$$Type): $Optional<($SoundEvent)>
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
@@ -854,13 +854,13 @@ import {$ItemRequirement} from "com.simibubi.create.content.schematics.requireme
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$Direction$Axis} from "net.minecraft.core.Direction$Axis"
-import {$Vec3} from "net.minecraft.world.phys.Vec3"
 import {$CRBogeyBlock} from "com.railwayteam.railways.content.custom_bogeys.blocks.base.CRBogeyBlock"
+import {$Vec3} from "net.minecraft.world.phys.Vec3"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$AbstractBogeyBlock} from "com.simibubi.create.content.trains.bogey.AbstractBogeyBlock"
+import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
@@ -920,13 +920,13 @@ import {$ItemRequirement} from "com.simibubi.create.content.schematics.requireme
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$Direction$Axis} from "net.minecraft.core.Direction$Axis"
-import {$Vec3} from "net.minecraft.world.phys.Vec3"
 import {$CRBogeyBlock} from "com.railwayteam.railways.content.custom_bogeys.blocks.base.CRBogeyBlock"
+import {$Vec3} from "net.minecraft.world.phys.Vec3"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$AbstractBogeyBlock} from "com.simibubi.create.content.trains.bogey.AbstractBogeyBlock"
+import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
@@ -984,8 +984,8 @@ import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$Bl
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
-import {$CasingCollisionBlock} from "com.railwayteam.railways.content.custom_tracks.casing.CasingCollisionBlock"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
+import {$CasingCollisionBlock} from "com.railwayteam.railways.content.custom_tracks.casing.CasingCollisionBlock"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
@@ -1043,8 +1043,8 @@ import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$DyeColor$$Type} from "net.minecraft.world.item.DyeColor"
-import {$SmokeStackBlockEntity} from "com.railwayteam.railways.content.smokestack.block.be.SmokeStackBlockEntity"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$SmokeStackBlockEntity} from "com.railwayteam.railways.content.smokestack.block.be.SmokeStackBlockEntity"
 import {$Class} from "java.lang.Class"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$SmokestackStyle} from "com.railwayteam.railways.content.smokestack.SmokestackStyle"
@@ -1053,8 +1053,8 @@ import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.st
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
-import {$AbstractSmokeStackBlock} from "com.railwayteam.railways.content.smokestack.block.AbstractSmokeStackBlock"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
+import {$AbstractSmokeStackBlock} from "com.railwayteam.railways.content.smokestack.block.AbstractSmokeStackBlock"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
 import {$SmokeStackBlock$SmokeStackType, $SmokeStackBlock$SmokeStackType$$Type} from "com.railwayteam.railways.content.smokestack.block.SmokeStackBlock$SmokeStackType"
 import {$ItemInteractionResult} from "net.minecraft.world.ItemInteractionResult"
@@ -1097,9 +1097,9 @@ public static "makeParticles"(arg0: $Level$$Type, arg1: $Vec3$$Type, arg2: boole
 public static "makeParticles"(arg0: $Level$$Type, arg1: $Vec3$$Type, arg2: boolean, arg3: boolean, arg4: $Vec3$$Type, arg5: $Vec3$$Type): void
 public static "makeParticles"(arg0: $Level$$Type, arg1: $Vec3$$Type, arg2: boolean, arg3: boolean, arg4: $Vec3$$Type, arg5: $Vec3$$Type, arg6: double, arg7: boolean, arg8: $DyeColor$$Type, arg9: boolean, arg10: boolean): void
 public "getBlockEntityType"(): $BlockEntityType<($SmokeStackBlockEntity)>
-public static "makeParticlesStationary"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: boolean, arg3: boolean, arg4: $Vec3$$Type, arg5: $Vec3$$Type): void
-public "blockEntityAnimateTick"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $RandomSource$$Type): void
 public "getBlockEntityClass"(): $Class<($SmokeStackBlockEntity)>
+public "blockEntityAnimateTick"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $RandomSource$$Type): void
+public static "makeParticlesStationary"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: boolean, arg3: boolean, arg4: $Vec3$$Type, arg5: $Vec3$$Type): void
 public "useItemOn"(arg0: $ItemStack$$Type, arg1: $BlockState$$Type, arg2: $Level$$Type, arg3: $BlockPos$$Type, arg4: $Player$$Type, arg5: $InteractionHand$$Type, arg6: $BlockHitResult$$Type): $ItemInteractionResult
 public static "withWater"(arg0: $LevelAccessor$$Type, arg1: $BlockState$$Type, arg2: $BlockPos$$Type): $BlockState
 public static "playRotateSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
@@ -1126,12 +1126,12 @@ import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$ItemRequirement} from "com.simibubi.create.content.schematics.requirement.ItemRequirement"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
-import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$Vec3} from "net.minecraft.world.phys.Vec3"
+import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Class} from "java.lang.Class"
 import {$Set} from "java.util.Set"
 import {$AbstractBogeyBlock} from "com.simibubi.create.content.trains.bogey.AbstractBogeyBlock"
@@ -1147,8 +1147,8 @@ import {$TrackMaterial$TrackType} from "com.simibubi.create.content.trains.track
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$Direction$Axis} from "net.minecraft.core.Direction$Axis"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$BogeyStyle, $BogeyStyle$$Type} from "com.simibubi.create.content.trains.bogey.BogeyStyle"
 import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
@@ -1181,13 +1181,13 @@ static readonly "AXIS": $EnumProperty<($Direction$Axis)>
 constructor(arg0: $BlockBehaviour$Properties$$Type)
 
 public "getBlockEntityType"(): $BlockEntityType<($InvisibleBogeyBlockEntity)>
+public "getBlockEntityClass"(): $Class<($InvisibleBogeyBlockEntity)>
 public "isOnIncompatibleTrack"(arg0: $Carriage$$Type, arg1: boolean): boolean
 public "getTrackType"(arg0: $BogeyStyle$$Type): $TrackMaterial$TrackType
 public "getValidPathfindingTypes"(arg0: $BogeyStyle$$Type): $Set<($TrackMaterial$TrackType)>
 public "getWheelPointSpacing"(): double
 public "getWheelRadius"(): double
 public "getConnectorAnchorOffset"(): $Vec3
-public "getBlockEntityClass"(): $Class<($InvisibleBogeyBlockEntity)>
 public "getShape"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $CollisionContext$$Type): $VoxelShape
 public "getDefaultStyle"(): $BogeyStyle
 public "getCloneItemStack"(arg0: $LevelReader$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type): $ItemStack
@@ -1198,10 +1198,10 @@ public static "playRotateSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public static "playRemoveSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "blockEntityType"(): $BlockEntityType<($InvisibleBogeyBlockEntity)>
+get "blockEntityClass"(): $Class<($InvisibleBogeyBlockEntity)>
 get "wheelPointSpacing"(): double
 get "wheelRadius"(): double
 get "connectorAnchorOffset"(): $Vec3
-get "blockEntityClass"(): $Class<($InvisibleBogeyBlockEntity)>
 get "defaultStyle"(): $BogeyStyle
 }
 /**
@@ -1216,8 +1216,8 @@ export type $InvisibleBogeyBlock$$Original = $InvisibleBogeyBlock;}
 declare module "com.railwayteam.railways.content.custom_tracks.generic_crossing.GenericCrossingBlockEntity" {
 import {$TrackShapeLookup$GenericCrossingData$$Type} from "com.railwayteam.railways.content.custom_tracks.generic_crossing.TrackShapeLookup$GenericCrossingData"
 import {$IGenericCrossingTrackBE$$Interface} from "com.railwayteam.railways.mixin_interfaces.IGenericCrossingTrackBE"
-import {$BakedModel} from "net.minecraft.client.resources.model.BakedModel"
 import {$List, $List$$Type} from "java.util.List"
+import {$BakedModel} from "net.minecraft.client.resources.model.BakedModel"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Pair, $Pair$$Type} from "net.createmod.catnip.data.Pair"
 import {$TrackMaterial, $TrackMaterial$$Type} from "com.simibubi.create.content.trains.track.TrackMaterial"
@@ -1266,12 +1266,12 @@ import {$Map} from "java.util.Map"
 import {$ItemAttributeModifiers} from "net.minecraft.world.item.component.ItemAttributeModifiers"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
-import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Equipable} from "net.minecraft.world.item.Equipable"
+import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Supplier} from "java.util.function.Supplier"
+import {$ArmorItem} from "net.minecraft.world.item.ArmorItem"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$DyeColor, $DyeColor$$Type} from "net.minecraft.world.item.DyeColor"
-import {$ArmorItem} from "net.minecraft.world.item.ArmorItem"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$DispenseItemBehavior} from "net.minecraft.core.dispenser.DispenseItemBehavior"
@@ -1340,8 +1340,8 @@ import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$ItemRequirement} from "com.simibubi.create.content.schematics.requirement.ItemRequirement"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$MonoBogeyBlockEntity} from "com.railwayteam.railways.content.custom_bogeys.special.monobogey.MonoBogeyBlockEntity"
-import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$Vec3} from "net.minecraft.world.phys.Vec3"
+import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$AbstractBogeyBlock} from "com.simibubi.create.content.trains.bogey.AbstractBogeyBlock"
@@ -1389,8 +1389,6 @@ static readonly "AXIS": $EnumProperty<($Direction$Axis)>
 
 constructor(arg0: $BlockBehaviour$Properties$$Type)
 
-public "canBeUpsideDown"(): boolean
-public "isUpsideDown"(arg0: $BlockState$$Type): boolean
 public "getTrackType"(arg0: $BogeyStyle$$Type): $TrackMaterial$TrackType
 public "getWheelPointSpacing"(): double
 public "getWheelRadius"(): double
@@ -1398,6 +1396,8 @@ public "getConnectorAnchorOffset"(arg0: boolean): $Vec3
 public "getConnectorAnchorOffset"(): $Vec3
 public "allowsSingleBogeyCarriage"(): boolean
 public "propertiesToCopy"(): $List<($Property<(never)>)>
+public "canBeUpsideDown"(): boolean
+public "isUpsideDown"(arg0: $BlockState$$Type): boolean
 public "getRotatedBlockState"(arg0: $BlockState$$Type, arg1: $Direction$$Type): $BlockState
 public "getVersion"(arg0: $BlockState$$Type, arg1: boolean): $BlockState
 public "getCloneItemStack"(arg0: $LevelReader$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type): $ItemStack
@@ -1429,8 +1429,8 @@ import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$AbstractMonoBogeyBlock} from "com.railwayteam.railways.content.custom_bogeys.special.monobogey.AbstractMonoBogeyBlock"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Class} from "java.lang.Class"
 import {$Set} from "java.util.Set"
 import {$AbstractBogeyBlock} from "com.simibubi.create.content.trains.bogey.AbstractBogeyBlock"
@@ -1445,8 +1445,8 @@ import {$TrackMaterial$TrackType} from "com.simibubi.create.content.trains.track
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$Direction$Axis} from "net.minecraft.core.Direction$Axis"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$BogeyStyle, $BogeyStyle$$Type} from "com.simibubi.create.content.trains.bogey.BogeyStyle"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
@@ -1480,9 +1480,9 @@ static readonly "AXIS": $EnumProperty<($Direction$Axis)>
 constructor(arg0: $BlockBehaviour$Properties$$Type)
 
 public "getBlockEntityType"(): $BlockEntityType<($InvisibleMonoBogeyBlockEntity)>
+public "getBlockEntityClass"(): $Class<($InvisibleMonoBogeyBlockEntity)>
 public "isOnIncompatibleTrack"(arg0: $Carriage$$Type, arg1: boolean): boolean
 public "getValidPathfindingTypes"(arg0: $BogeyStyle$$Type): $Set<($TrackMaterial$TrackType)>
-public "getBlockEntityClass"(): $Class<($InvisibleMonoBogeyBlockEntity)>
 public "getShape"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $CollisionContext$$Type): $VoxelShape
 public "getDefaultStyle"(): $BogeyStyle
 public static "onRemove"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): void
@@ -1542,11 +1542,11 @@ import {$TrackBlockOutline$BezierPointSelection$$Type} from "com.simibubi.create
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
-import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties, $Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$NonNullBiFunction} from "com.tterrag.registrate.util.nullness.NonNullBiFunction"
 import {$EdgePointType$$Type} from "com.simibubi.create.content.trains.graph.EdgePointType"
+import {$NonNullBiFunction} from "com.tterrag.registrate.util.nullness.NonNullBiFunction"
 import {$AdditionalItemPlacement, $AdditionalItemPlacement$$Type} from "net.mehvahdjukaar.moonlight.api.item.additional_placements.AdditionalItemPlacement"
 import {$TrackTargetingBlockItem} from "com.simibubi.create.content.trains.track.TrackTargetingBlockItem"
 
@@ -1610,8 +1610,8 @@ import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$PartialModel} from "dev.engine_room.flywheel.lib.model.baked.PartialModel"
 import {$TrackSwitchBlockEntity$PonderData} from "com.railwayteam.railways.content.switches.TrackSwitchBlockEntity$PonderData"
 import {$TrackSwitchBlock$SwitchState, $TrackSwitchBlock$SwitchState$$Type} from "com.railwayteam.railways.content.switches.TrackSwitchBlock$SwitchState"
-import {$TrackTargetingBehaviour} from "com.simibubi.create.content.trains.track.TrackTargetingBehaviour"
 import {$List$$Type} from "java.util.List"
+import {$TrackTargetingBehaviour} from "com.simibubi.create.content.trains.track.TrackTargetingBehaviour"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$TransformableBlockEntity$$Interface} from "com.simibubi.create.api.contraption.transformable.TransformableBlockEntity"
 import {$StructureTransform$$Type} from "com.simibubi.create.content.contraptions.StructureTransform"
@@ -1632,6 +1632,7 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 
 constructor(arg0: $BlockEntityType$$Type<(never)>, arg1: $BlockPos$$Type, arg2: $BlockState$$Type)
 
+public "addToGoggleTooltip"(arg0: $List$$Type<($Component$$Type)>, arg1: boolean): boolean
 public "addBehaviours"(arg0: $List$$Type<($BlockEntityBehaviour$$Type)>): void
 public "lazyTick"(): void
 public "getTargetAnalogOutput"(): integer
@@ -1642,7 +1643,6 @@ public "clientLazyTick"(): void
 public "setStatePonder"(arg0: $TrackSwitchBlock$SwitchState$$Type): void
 public "hasExit"(arg0: $TrackSwitchBlock$SwitchState$$Type): boolean
 public "getOverlayModel"(): $PartialModel
-public "addToGoggleTooltip"(arg0: $List$$Type<($Component$$Type)>, arg1: boolean): boolean
 public "tick"(): void
 public "isNormal"(): boolean
 public "remove"(): void
@@ -1735,25 +1735,25 @@ export type $LinkPinBlock$$Original = $LinkPinBlock;}
 declare module "com.railwayteam.railways.content.conductor.vent.neoforge.VentBlockImpl" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$IntegerProperty$$Type} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$ItemRequirement} from "com.simibubi.create.content.schematics.requirement.ItemRequirement"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
-import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
-import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$VentBlock} from "com.railwayteam.railways.content.conductor.vent.VentBlock"
+import {$IdMapper} from "net.minecraft.core.IdMapper"
+import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$ICopycatBlock$$Type} from "com.copycatsplus.copycats.foundation.copycat.ICopycatBlock"
+import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $VentBlockImpl extends $VentBlock {
@@ -1783,13 +1783,13 @@ constructor(arg0: $BlockBehaviour$Properties$$Type)
 public "hidesNeighborFace"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $BlockState$$Type, arg4: $Direction$$Type): boolean
 public "supportsExternalFaceHiding"(arg0: $BlockState$$Type): boolean
 public static "create"(arg0: $BlockBehaviour$Properties$$Type): $VentBlock
-public static "playRotateSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public "onWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $InteractionResult
+public static "playRotateSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public static "playRemoveSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public "onSneakWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $InteractionResult
 public static "onRemove"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): void
-public static "getRequiredItemsForLayer"(state: $BlockState$$Type, property: $IntegerProperty$$Type): $ItemRequirement
 public static "getAppearance"(block: $ICopycatBlock$$Type, state: $BlockState$$Type, level: $BlockAndTintGetter$$Type, pos: $BlockPos$$Type, side: $Direction$$Type, queryState: $BlockState$$Type, queryPos: $BlockPos$$Type): $BlockState
+public static "getRequiredItemsForLayer"(state: $BlockState$$Type, property: $IntegerProperty$$Type): $ItemRequirement
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 }
 /**
@@ -1861,11 +1861,11 @@ import {$TrackBlockOutline$BezierPointSelection$$Type} from "com.simibubi.create
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
-import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties, $Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$NonNullBiFunction} from "com.tterrag.registrate.util.nullness.NonNullBiFunction"
 import {$EdgePointType$$Type} from "com.simibubi.create.content.trains.graph.EdgePointType"
+import {$NonNullBiFunction} from "com.tterrag.registrate.util.nullness.NonNullBiFunction"
 import {$AdditionalItemPlacement, $AdditionalItemPlacement$$Type} from "net.mehvahdjukaar.moonlight.api.item.additional_placements.AdditionalItemPlacement"
 import {$TrackTargetingBlockItem} from "com.simibubi.create.content.trains.track.TrackTargetingBlockItem"
 
@@ -1906,13 +1906,13 @@ import {$ItemRequirement} from "com.simibubi.create.content.schematics.requireme
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$Direction$Axis} from "net.minecraft.core.Direction$Axis"
-import {$Vec3} from "net.minecraft.world.phys.Vec3"
 import {$CRBogeyBlock} from "com.railwayteam.railways.content.custom_bogeys.blocks.base.CRBogeyBlock"
+import {$Vec3} from "net.minecraft.world.phys.Vec3"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$AbstractBogeyBlock} from "com.simibubi.create.content.trains.bogey.AbstractBogeyBlock"
+import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
@@ -1989,12 +1989,12 @@ import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
-import {$TrackCouplerBlockEntity, $TrackCouplerBlockEntity$$Type} from "com.railwayteam.railways.content.coupling.coupler.TrackCouplerBlockEntity"
 import {$InteractionResult, $InteractionResult$$Type} from "net.minecraft.world.InteractionResult"
+import {$TrackCouplerBlockEntity, $TrackCouplerBlockEntity$$Type} from "com.railwayteam.railways.content.coupling.coupler.TrackCouplerBlockEntity"
 import {$ItemInteractionResult, $ItemInteractionResult$$Type} from "net.minecraft.world.ItemInteractionResult"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
-import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
+import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -2032,12 +2032,12 @@ public "onWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $Intera
 public "tick"(arg0: $BlockState$$Type, arg1: $ServerLevel$$Type, arg2: $BlockPos$$Type, arg3: $RandomSource$$Type): void
 public static "create"(arg0: $BlockBehaviour$Properties$$Type): $TrackCouplerBlock
 public "onRemove"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: boolean): void
-public "neighborChanged"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Block$$Type, arg4: $BlockPos$$Type, arg5: boolean): void
 /**
  * 
  * @deprecated
  */
 public "hasAnalogOutputSignal"(arg0: $BlockState$$Type): boolean
+public "neighborChanged"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Block$$Type, arg4: $BlockPos$$Type, arg5: boolean): void
 public "getTicker"<S extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(S)>): $BlockEntityTicker<(S)>
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
 public "getBlockEntityOptional"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type): $Optional<($TrackCouplerBlockEntity)>
@@ -2070,8 +2070,8 @@ import {$SingleLineDisplaySource} from "com.simibubi.create.content.redstone.dis
 import {$DisplaySource} from "com.simibubi.create.api.behaviour.display.DisplaySource"
 import {$BlockEntityType} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$List} from "java.util.List"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$MutableComponent} from "net.minecraft.network.chat.MutableComponent"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$SimpleRegistry$Multi} from "com.simibubi.create.api.registry.SimpleRegistry$Multi"
 
 export class $SwitchDisplaySource extends $SingleLineDisplaySource {
@@ -2096,8 +2096,8 @@ export type $SwitchDisplaySource$$Type = ($SwitchDisplaySource);
  */
 export type $SwitchDisplaySource$$Original = $SwitchDisplaySource;}
 declare module "com.railwayteam.railways.content.conductor.whistle.ConductorWhistleFlagBlockEntity" {
-import {$TrackTargetingBehaviour} from "com.simibubi.create.content.trains.track.TrackTargetingBehaviour"
 import {$List$$Type} from "java.util.List"
+import {$TrackTargetingBehaviour} from "com.simibubi.create.content.trains.track.TrackTargetingBehaviour"
 import {$TransformableBlockEntity$$Interface} from "com.simibubi.create.api.contraption.transformable.TransformableBlockEntity"
 import {$StructureTransform$$Type} from "com.simibubi.create.content.contraptions.StructureTransform"
 import {$SmartBlockEntity} from "com.simibubi.create.foundation.blockEntity.SmartBlockEntity"
@@ -2142,13 +2142,13 @@ import {$ItemRequirement} from "com.simibubi.create.content.schematics.requireme
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$Direction$Axis} from "net.minecraft.core.Direction$Axis"
-import {$Vec3} from "net.minecraft.world.phys.Vec3"
 import {$CRBogeyBlock} from "com.railwayteam.railways.content.custom_bogeys.blocks.base.CRBogeyBlock"
+import {$Vec3} from "net.minecraft.world.phys.Vec3"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$AbstractBogeyBlock} from "com.simibubi.create.content.trains.bogey.AbstractBogeyBlock"
+import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
@@ -2227,6 +2227,12 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 
 constructor(arg0: $BlockEntityType$$Type<(never)>, arg1: $BlockPos$$Type, arg2: $BlockState$$Type)
 
+public "addToGoggleTooltip"(arg0: $List$$Type<($Component$$Type)>, arg1: boolean): boolean
+public "getFluid"(arg0: integer): $FluidStack
+public "addBehaviours"(arg0: $List$$Type<($BlockEntityBehaviour$$Type)>): void
+public "sendData"(): void
+public "getMaxWidth"(): integer
+public static "getMaxHeight"(): integer
 public static "getCapacityMultiplier"(): integer
 public "sendDataImmediately"(): void
 public "getFillState"(): float
@@ -2236,17 +2242,11 @@ public "setWindows"(arg0: boolean): void
 public "getTankSize"(arg0: integer): integer
 public "setTankSize"(arg0: integer, arg1: integer): void
 public "hasTank"(): boolean
-public "getFluid"(arg0: integer): $FluidStack
-public "addBehaviours"(arg0: $List$$Type<($BlockEntityBehaviour$$Type)>): void
-public "sendData"(): void
-public "getMaxWidth"(): integer
-public static "getMaxHeight"(): integer
-public "getTotalTankSize"(): integer
-public "getControllerBE"(): $BlockEntity
-public "isController"(): boolean
 public "getController"(): $BlockPos
 public "setController"(arg0: $BlockPos$$Type): void
-public "addToGoggleTooltip"(arg0: $List$$Type<($Component$$Type)>, arg1: boolean): boolean
+public "getControllerBE"(): $BlockEntity
+public "isController"(): boolean
+public "getTotalTankSize"(): integer
 public "removeController"(arg0: boolean): void
 public "getTankInventory"(): $FluidTank
 public "getFluidLevel"(): $LerpedFloat
@@ -2257,13 +2257,13 @@ public "getLastKnownPos"(): $BlockPos
 public "preventConnectivityUpdate"(): void
 public "setExtraData"(arg0: any): void
 public "modifyExtraData"(arg0: any): any
+public static "getMaxSize"(): integer
+public "tick"(): void
 public "getWidth"(): integer
 public "getHeight"(): integer
-public "invalidate"(): void
-public "tick"(): void
-public static "getMaxSize"(): integer
 public "initialize"(): void
 public "write"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type, arg2: boolean): void
+public "invalidate"(): void
 public "getMaxLength"(arg0: $Direction$Axis$$Type, arg1: integer): integer
 public "setWidth"(arg0: integer): void
 public "setHeight"(arg0: integer): void
@@ -2273,25 +2273,25 @@ public "getExtraData"(): any
 public "containedFluidTooltip"(arg0: $List$$Type<($Component$$Type)>, arg1: boolean, arg2: $IFluidHandler$$Type): boolean
 public "getIcon"(arg0: boolean): $ItemStack
 public "getMainAxisOf"(arg0: $BlockEntity$$Type): $Direction$Axis
+get "maxWidth"(): integer
+public static get "maxHeight"(): integer
 public static get "capacityMultiplier"(): integer
 get "fillState"(): float
 set "windows"(value: boolean)
-get "maxWidth"(): integer
-public static get "maxHeight"(): integer
-get "totalTankSize"(): integer
-get "controllerBE"(): $BlockEntity
-get "controller"(): boolean
 get "controller"(): $BlockPos
 set "controller"(value: $BlockPos$$Type)
+get "controllerBE"(): $BlockEntity
+get "controller"(): boolean
+get "totalTankSize"(): integer
 get "tankInventory"(): $FluidTank
 get "fluidLevel"(): $LerpedFloat
 set "fluidLevel"(value: $LerpedFloat$$Type)
 get "mainConnectionAxis"(): $Direction$Axis
 get "lastKnownPos"(): $BlockPos
 set "extraData"(value: any)
+public static get "maxSize"(): integer
 get "width"(): integer
 get "height"(): integer
-public static get "maxSize"(): integer
 set "width"(value: integer)
 set "height"(value: integer)
 get "extraData"(): any
@@ -2370,16 +2370,16 @@ export type $SlidingDoorMode$IHasDoorMode$$Original = $SlidingDoorMode$IHasDoorM
 declare module "com.railwayteam.railways.content.coupling.coupler.TrackCouplerBlockEntity" {
 import {$TrackCouplerBlockEntity$ClientInfo, $TrackCouplerBlockEntity$ClientInfo$$Type} from "com.railwayteam.railways.content.coupling.coupler.TrackCouplerBlockEntity$ClientInfo"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
-import {$TrackTargetingBehaviour} from "com.simibubi.create.content.trains.track.TrackTargetingBehaviour"
 import {$List$$Type} from "java.util.List"
-import {$Component$$Type} from "net.minecraft.network.chat.Component"
+import {$TrackTargetingBehaviour} from "com.simibubi.create.content.trains.track.TrackTargetingBehaviour"
 import {$TrackCouplerBlockEntity$AllowedOperationMode} from "com.railwayteam.railways.content.coupling.coupler.TrackCouplerBlockEntity$AllowedOperationMode"
+import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$TransformableBlockEntity$$Interface} from "com.simibubi.create.api.contraption.transformable.TransformableBlockEntity"
 import {$TrackCouplerBlockEntity$OperationInfo} from "com.railwayteam.railways.content.coupling.coupler.TrackCouplerBlockEntity$OperationInfo"
 import {$StructureTransform$$Type} from "com.simibubi.create.content.contraptions.StructureTransform"
 import {$SmartBlockEntity} from "com.simibubi.create.foundation.blockEntity.SmartBlockEntity"
-import {$TrackCoupler} from "com.railwayteam.railways.content.coupling.coupler.TrackCoupler"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
+import {$TrackCoupler} from "com.railwayteam.railways.content.coupling.coupler.TrackCoupler"
 import {$IHaveGoggleInformation$$Interface} from "com.simibubi.create.api.equipment.goggles.IHaveGoggleInformation"
 import {$BlockEntityBehaviour$$Type} from "com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour"
 import {$IFluidHandler$$Type} from "net.neoforged.neoforge.fluids.capability.IFluidHandler"
@@ -2395,6 +2395,7 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 
 constructor(arg0: $BlockEntityType$$Type<(never)>, arg1: $BlockPos$$Type, arg2: $BlockState$$Type)
 
+public "addToGoggleTooltip"(arg0: $List$$Type<($Component$$Type)>, arg1: boolean): boolean
 public "addBehaviours"(arg0: $List$$Type<($BlockEntityBehaviour$$Type)>): void
 public "lazyTick"(): void
 public "getReportedPower"(): boolean
@@ -2408,7 +2409,6 @@ public "getCoupler"(): $TrackCoupler
 public "getOperationMode"(): $TrackCouplerBlockEntity$OperationMode
 public "areEdgePointsOk"(): boolean
 public "setClientInfo"(arg0: $TrackCouplerBlockEntity$ClientInfo$$Type): void
-public "addToGoggleTooltip"(arg0: $List$$Type<($Component$$Type)>, arg1: boolean): boolean
 public "tick"(): void
 public "transform"(arg0: $BlockEntity$$Type, arg1: $StructureTransform$$Type): void
 public "containedFluidTooltip"(arg0: $List$$Type<($Component$$Type)>, arg1: boolean, arg2: $IFluidHandler$$Type): boolean
@@ -2443,13 +2443,13 @@ import {$ItemRequirement} from "com.simibubi.create.content.schematics.requireme
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$Direction$Axis} from "net.minecraft.core.Direction$Axis"
-import {$Vec3} from "net.minecraft.world.phys.Vec3"
 import {$CRBogeyBlock} from "com.railwayteam.railways.content.custom_bogeys.blocks.base.CRBogeyBlock"
+import {$Vec3} from "net.minecraft.world.phys.Vec3"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$AbstractBogeyBlock} from "com.simibubi.create.content.trains.bogey.AbstractBogeyBlock"
+import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
@@ -2510,8 +2510,8 @@ import {$TrackNodeLocation$$Type} from "com.simibubi.create.content.trains.graph
 import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$Function$$Type} from "java.util.function.Function"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -2519,12 +2519,12 @@ import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Objec
 import {$Collection, $Collection$$Type} from "java.util.Collection"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$TrackMaterial, $TrackMaterial$$Type} from "com.simibubi.create.content.trains.track.TrackMaterial"
+import {$BiFunction$$Type} from "java.util.function.BiFunction"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
-import {$BiFunction$$Type} from "java.util.function.BiFunction"
 import {$TrackNodeLocation$DiscoveredLocation, $TrackNodeLocation$DiscoveredLocation$$Type} from "com.simibubi.create.content.trains.graph.TrackNodeLocation$DiscoveredLocation"
-import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$TrackBlock} from "com.simibubi.create.content.trains.track.TrackBlock"
+import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$TrackShape} from "com.simibubi.create.content.trains.track.TrackShape"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
@@ -2627,8 +2627,8 @@ import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
 export class $MonoTrackBufferBlock$Style extends $Enum<($MonoTrackBufferBlock$Style)> implements $StringRepresentable$$Interface {
@@ -2638,16 +2638,16 @@ static readonly "STANDARD": $MonoTrackBufferBlock$Style
 
 public static "values"(): ($MonoTrackBufferBlock$Style)[]
 public static "valueOf"(arg0: StringJS): $MonoTrackBufferBlock$Style
-public "getModel"(): $ResourceLocation
 public "getSerializedName"(): StringJS
+public "getModel"(): $ResourceLocation
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
-get "model"(): $ResourceLocation
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
+get "model"(): $ResourceLocation
 get "remappedEnumConstantName"(): StringJS
 }
 /**
@@ -2665,8 +2665,8 @@ import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$BlockStateBlockItemGroup$IStyle$$Interface} from "com.railwayteam.railways.content.buffer.BlockStateBlockItemGroup$IStyle"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
@@ -2683,18 +2683,18 @@ public "getLangName"(arg0: boolean): StringJS
 public "getLangName"(arg0: any): StringJS
 public static "values"(): ($HeadstockStyle)[]
 public static "valueOf"(arg0: StringJS): $HeadstockStyle
-public "getModel"(arg0: any): $ResourceLocation
-public "getModel"(arg0: boolean): $ResourceLocation
-public "getModel"(arg0: boolean, arg1: boolean): $ResourceLocation
 public "getSerializedName"(): StringJS
+public "getModel"(arg0: boolean): $ResourceLocation
+public "getModel"(arg0: any): $ResourceLocation
+public "getModel"(arg0: boolean, arg1: boolean): $ResourceLocation
 public "getBlockId"(arg0: boolean): StringJS
 public "getBlockId"(arg0: any): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
 }
@@ -2781,15 +2781,15 @@ import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
-import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$ProperWaterloggedBlock$$Interface} from "com.simibubi.create.foundation.block.ProperWaterloggedBlock"
+import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$RenderShape} from "net.minecraft.world.level.block.RenderShape"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -2798,9 +2798,9 @@ import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
 import {$Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
-import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
+import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 
@@ -2842,8 +2842,8 @@ public static "withWater"(arg0: $LevelAccessor$$Type, arg1: $BlockState$$Type, a
 public "updateWater"(arg0: $LevelAccessor$$Type, arg1: $BlockState$$Type, arg2: $BlockPos$$Type): void
 public "fluidState"(arg0: $BlockState$$Type): $FluidState
 public "getPickupSound"(): $Optional<($SoundEvent)>
-public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "canPlaceLiquid"(arg0: $Player$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $Fluid$$Type): boolean
+public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "pickupBlock"(arg0: $Player$$Type, arg1: $LevelAccessor$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): $ItemStack
 public "getPickupSound"(arg0: $BlockState$$Type): $Optional<($SoundEvent)>
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
@@ -2899,8 +2899,8 @@ import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$LargeBogeyBlock} from "com.railwayteam.railways.content.custom_bogeys.blocks.base.size.LargeBogeyBlock"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$AbstractBogeyBlock} from "com.simibubi.create.content.trains.bogey.AbstractBogeyBlock"
+import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
@@ -2957,12 +2957,12 @@ import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$ItemAttributeModifiers} from "net.minecraft.world.item.component.ItemAttributeModifiers"
 import {$Block} from "net.minecraft.world.level.block.Block"
-import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$EnderMan$$Type} from "net.minecraft.world.entity.monster.EnderMan"
+import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$IClientItemExtensions$$Type} from "net.neoforged.neoforge.client.extensions.common.IClientItemExtensions"
-import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Equipable} from "net.minecraft.world.item.Equipable"
+import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Supplier} from "java.util.function.Supplier"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$DyeColor, $DyeColor$$Type} from "net.minecraft.world.item.DyeColor"
@@ -3003,8 +3003,8 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
 export class $BoilerBlock$Style extends $Enum<($BoilerBlock$Style)> implements $StringRepresentable$$Interface {
@@ -3016,11 +3016,11 @@ public static "valueOf"(arg0: StringJS): $BoilerBlock$Style
 public "getTexture"(): StringJS
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "texture"(): StringJS
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
@@ -3043,13 +3043,13 @@ import {$PoseStack$$Type} from "com.mojang.blaze3d.vertex.PoseStack"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
-import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$TrackNodeLocation$$Type} from "com.simibubi.create.content.trains.graph.TrackNodeLocation"
+import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$Function$$Type} from "java.util.function.Function"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -3059,18 +3059,18 @@ import {$PartialModel} from "dev.engine_room.flywheel.lib.model.baked.PartialMod
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$TrackMaterial, $TrackMaterial$$Type} from "com.simibubi.create.content.trains.track.TrackMaterial"
+import {$BiFunction$$Type} from "java.util.function.BiFunction"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
-import {$BiFunction$$Type} from "java.util.function.BiFunction"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
 import {$TrackNodeLocation$DiscoveredLocation, $TrackNodeLocation$DiscoveredLocation$$Type} from "com.simibubi.create.content.trains.graph.TrackNodeLocation$DiscoveredLocation"
 import {$ItemInteractionResult} from "net.minecraft.world.ItemInteractionResult"
-import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$TrackBlock} from "com.simibubi.create.content.trains.track.TrackBlock"
+import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$TrackShape} from "com.simibubi.create.content.trains.track.TrackShape"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
-import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
+import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 
@@ -3134,8 +3134,8 @@ import {$TrackNodeLocation} from "com.simibubi.create.content.trains.graph.Track
 import {$SingleBlockEntityEdgePoint} from "com.simibubi.create.content.trains.signal.SingleBlockEntityEdgePoint"
 import {$TrackGraph$$Type} from "com.simibubi.create.content.trains.graph.TrackGraph"
 import {$DimensionPalette$$Type} from "com.simibubi.create.content.trains.graph.DimensionPalette"
-import {$Couple} from "net.createmod.catnip.data.Couple"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
+import {$Couple} from "net.createmod.catnip.data.Couple"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 
@@ -3149,11 +3149,11 @@ export class $TrackCoupler extends $SingleBlockEntityEdgePoint {
 constructor()
 
 public "getCurrentTrain"(): $UUID
-public "isActivated"(): boolean
 public "blockEntityAdded"(arg0: $BlockEntity$$Type, arg1: boolean): void
+public "isActivated"(): boolean
 public "getActivation"(): integer
-public "keepAlive"(arg0: $Train$$Type): void
 public "tick"(arg0: $TrackGraph$$Type, arg1: boolean): void
+public "keepAlive"(arg0: $Train$$Type): void
 public "write"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type, arg2: $DimensionPalette$$Type): void
 public "write"(arg0: $FriendlyByteBuf$$Type, arg1: $DimensionPalette$$Type): void
 public "read"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type, arg2: boolean, arg3: $DimensionPalette$$Type): void
@@ -3186,8 +3186,8 @@ import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$LargeBogeyBlock} from "com.railwayteam.railways.content.custom_bogeys.blocks.base.size.LargeBogeyBlock"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$AbstractBogeyBlock} from "com.simibubi.create.content.trains.bogey.AbstractBogeyBlock"
+import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
@@ -3252,8 +3252,8 @@ import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType, $BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Function$$Type} from "java.util.function.Function"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Class} from "java.lang.Class"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
@@ -3342,22 +3342,22 @@ export type $SemaphoreBlock$$Original = $SemaphoreBlock;}
 declare module "com.railwayteam.railways.content.conductor.whistle.ConductorWhistleItem" {
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$List$$Type} from "java.util.List"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
+import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
 import {$TrackTargetingBlockItem} from "com.simibubi.create.content.trains.track.TrackTargetingBlockItem"
 import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
-import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$TrackBlockOutline$BezierPointSelection$$Type} from "com.simibubi.create.content.trains.track.TrackBlockOutline$BezierPointSelection"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$AdditionalItemPlacement, $AdditionalItemPlacement$$Type} from "net.mehvahdjukaar.moonlight.api.item.additional_placements.AdditionalItemPlacement"
 
@@ -3398,8 +3398,8 @@ import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
 export class $StandardTrackBufferBlock$Style extends $Enum<($StandardTrackBufferBlock$Style)> implements $StringRepresentable$$Interface {
@@ -3408,16 +3408,16 @@ static readonly "SHORT": $StandardTrackBufferBlock$Style
 
 public static "values"(): ($StandardTrackBufferBlock$Style)[]
 public static "valueOf"(arg0: StringJS): $StandardTrackBufferBlock$Style
-public "getModel"(): $ResourceLocation
 public "getSerializedName"(): StringJS
+public "getModel"(): $ResourceLocation
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
-get "model"(): $ResourceLocation
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
+get "model"(): $ResourceLocation
 get "remappedEnumConstantName"(): StringJS
 }
 /**
@@ -3439,13 +3439,13 @@ import {$ItemRequirement} from "com.simibubi.create.content.schematics.requireme
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$Direction$Axis} from "net.minecraft.core.Direction$Axis"
-import {$Vec3} from "net.minecraft.world.phys.Vec3"
 import {$CRBogeyBlock} from "com.railwayteam.railways.content.custom_bogeys.blocks.base.CRBogeyBlock"
+import {$Vec3} from "net.minecraft.world.phys.Vec3"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$AbstractBogeyBlock} from "com.simibubi.create.content.trains.bogey.AbstractBogeyBlock"
+import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
@@ -3504,8 +3504,8 @@ import {$TrackNodeLocation$$Type} from "com.simibubi.create.content.trains.graph
 import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$Function$$Type} from "java.util.function.Function"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -3513,12 +3513,12 @@ import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Objec
 import {$Collection, $Collection$$Type} from "java.util.Collection"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$TrackMaterial, $TrackMaterial$$Type} from "com.simibubi.create.content.trains.track.TrackMaterial"
+import {$BiFunction$$Type} from "java.util.function.BiFunction"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
-import {$BiFunction$$Type} from "java.util.function.BiFunction"
 import {$TrackNodeLocation$DiscoveredLocation, $TrackNodeLocation$DiscoveredLocation$$Type} from "com.simibubi.create.content.trains.graph.TrackNodeLocation$DiscoveredLocation"
-import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$TrackBlock} from "com.simibubi.create.content.trains.track.TrackBlock"
+import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$TrackShape} from "com.simibubi.create.content.trains.track.TrackShape"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
@@ -3572,8 +3572,8 @@ export type $NarrowGaugeTrackBlock$$Type = ($NarrowGaugeTrackBlock);
 export type $NarrowGaugeTrackBlock$$Original = $NarrowGaugeTrackBlock;}
 declare module "com.railwayteam.railways.content.buffer.headstock.HeadstockBlockEntity" {
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
-import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$DyeableBlockEntity} from "com.railwayteam.railways.content.buffer.DyeableBlockEntity"
+import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$IMaterialAdaptingBuffer$$Interface} from "com.railwayteam.railways.content.buffer.IMaterialAdaptingBuffer"
@@ -3610,13 +3610,13 @@ import {$ItemRequirement} from "com.simibubi.create.content.schematics.requireme
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$Direction$Axis} from "net.minecraft.core.Direction$Axis"
-import {$Vec3} from "net.minecraft.world.phys.Vec3"
 import {$CRBogeyBlock} from "com.railwayteam.railways.content.custom_bogeys.blocks.base.CRBogeyBlock"
+import {$Vec3} from "net.minecraft.world.phys.Vec3"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$AbstractBogeyBlock} from "com.simibubi.create.content.trains.bogey.AbstractBogeyBlock"
+import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
@@ -3697,13 +3697,13 @@ import {$ItemRequirement} from "com.simibubi.create.content.schematics.requireme
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$Direction$Axis} from "net.minecraft.core.Direction$Axis"
-import {$Vec3} from "net.minecraft.world.phys.Vec3"
 import {$CRBogeyBlock} from "com.railwayteam.railways.content.custom_bogeys.blocks.base.CRBogeyBlock"
+import {$Vec3} from "net.minecraft.world.phys.Vec3"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$AbstractBogeyBlock} from "com.simibubi.create.content.trains.bogey.AbstractBogeyBlock"
+import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
@@ -3758,8 +3758,8 @@ import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$Bl
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$SmokestackStyle} from "com.railwayteam.railways.content.smokestack.SmokestackStyle"
 import {$ShapeWrapper$$Type} from "com.railwayteam.railways.util.ShapeWrapper"
@@ -3828,21 +3828,21 @@ export type $FacingSmokeStackBlock$$Original = $FacingSmokeStackBlock;}
 declare module "com.railwayteam.railways.content.conductor.remote_lens.RemoteLensItem" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$List$$Type} from "java.util.List"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 
 export class $RemoteLensItem extends $Item {
 static readonly "BASE_ATTACK_DAMAGE_ID": $ResourceLocation
@@ -3879,22 +3879,22 @@ import {$ItemRequirement} from "com.simibubi.create.content.schematics.requireme
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
-import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
+import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
 import {$BlockEntityType} from "net.minecraft.world.level.block.entity.BlockEntityType"
+import {$Item} from "net.minecraft.world.item.Item"
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$HeadstockStyle} from "com.railwayteam.railways.content.buffer.headstock.HeadstockStyle"
-import {$Item} from "net.minecraft.world.item.Item"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$ICopycatBlock$$Type} from "com.copycatsplus.copycats.foundation.copycat.ICopycatBlock"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$CopycatBlockEntity} from "com.simibubi.create.content.decoration.copycat.CopycatBlockEntity"
-import {$IntegerProperty$$Type} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
 import {$Block} from "net.minecraft.world.level.block.Block"
-import {$WaterloggedCopycatBlock} from "com.simibubi.create.content.decoration.copycat.WaterloggedCopycatBlock"
+import {$IntegerProperty$$Type} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
 import {$HitResult$$Type} from "net.minecraft.world.phys.HitResult"
+import {$WaterloggedCopycatBlock} from "com.simibubi.create.content.decoration.copycat.WaterloggedCopycatBlock"
 import {$BlockStateBlockItemGroup$GroupedBlock$$Interface} from "com.railwayteam.railways.content.buffer.BlockStateBlockItemGroup$GroupedBlock"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
@@ -3905,8 +3905,8 @@ import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties
 import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
-import {$ItemColor} from "net.minecraft.client.color.item.ItemColor"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
+import {$ItemColor} from "net.minecraft.client.color.item.ItemColor"
 import {$DirectionProperty} from "net.minecraft.world.level.block.state.properties.DirectionProperty"
 
 export class $CopycatHeadstockBlock extends $WaterloggedCopycatBlock implements $BlockStateBlockItemGroup$GroupedBlock$$Interface {
@@ -3933,15 +3933,15 @@ static readonly "FACING": $DirectionProperty
 
 constructor(arg0: $BlockBehaviour$Properties$$Type)
 
+public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
+public "hidesNeighborFace"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $BlockState$$Type, arg4: $Direction$$Type): boolean
+public "supportsExternalFaceHiding"(arg0: $BlockState$$Type): boolean
+public "getBlockEntityType"(): $BlockEntityType<($CopycatBlockEntity)>
 public "canFaceBeOccluded"(arg0: $BlockState$$Type, arg1: $Direction$$Type): boolean
 public "isIgnoredConnectivitySide"(arg0: $BlockAndTintGetter$$Type, arg1: $BlockState$$Type, arg2: $Direction$$Type, arg3: $BlockPos$$Type, arg4: $BlockPos$$Type): boolean
 public "canConnectTexturesToward"(arg0: $BlockAndTintGetter$$Type, arg1: $BlockPos$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): boolean
 public "shouldFaceAlwaysRender"(arg0: $BlockState$$Type, arg1: $Direction$$Type): boolean
 public "isAcceptedRegardless"(arg0: $BlockState$$Type): boolean
-public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
-public "hidesNeighborFace"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $BlockState$$Type, arg4: $Direction$$Type): boolean
-public "supportsExternalFaceHiding"(arg0: $BlockState$$Type): boolean
-public "getBlockEntityType"(): $BlockEntityType<($CopycatBlockEntity)>
 public static "wrappedItemColor"(): $ItemColor
 public "onWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $InteractionResult
 public "onSneakWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $InteractionResult
@@ -3953,8 +3953,8 @@ public static "withWater"(arg0: $LevelAccessor$$Type, arg1: $BlockState$$Type, a
 public static "onRemove"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): void
 public static "playRotateSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public static "playRemoveSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
-public static "getRequiredItemsForLayer"(state: $BlockState$$Type, property: $IntegerProperty$$Type): $ItemRequirement
 public static "getAppearance"(block: $ICopycatBlock$$Type, state: $BlockState$$Type, level: $BlockAndTintGetter$$Type, pos: $BlockPos$$Type, side: $Direction$$Type, queryState: $BlockState$$Type, queryPos: $BlockPos$$Type): $BlockState
+public static "getRequiredItemsForLayer"(state: $BlockState$$Type, property: $IntegerProperty$$Type): $ItemRequirement
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "blockEntityType"(): $BlockEntityType<($CopycatBlockEntity)>
 }
@@ -3995,12 +3995,12 @@ public static "fromLegacy"(arg0: $CompoundTag$$Type): $FuelTankMountedStorage
 public "markClean"(): void
 public "afterSync"(arg0: $Contraption$$Type, arg1: $BlockPos$$Type): void
 public static "fromTank"(arg0: $FuelTankBlockEntity$$Type): $FuelTankMountedStorage
-public "getCapacity"(): integer
 public "isDirty"(): boolean
 public "unmount"(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockPos$$Type, arg3: $BlockEntity$$Type): void
+public "getCapacity"(): integer
 get "fluid"(): $FluidStack
-get "capacity"(): integer
 get "dirty"(): boolean
+get "capacity"(): integer
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -4018,10 +4018,10 @@ import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$WoodVariantTrackBufferBlock} from "com.railwayteam.railways.content.buffer.WoodVariantTrackBufferBlock"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$NarrowTrackBufferBlock$Style} from "com.railwayteam.railways.content.buffer.NarrowTrackBufferBlock$Style"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
@@ -4077,8 +4077,8 @@ import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$TrackTargetingBlockItem$OverlapResult$$Type} from "com.simibubi.create.content.trains.track.TrackTargetingBlockItem$OverlapResult"
-import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$IDeployAnywayBlockItem$$Interface} from "com.railwayteam.railways.mixin_interfaces.IDeployAnywayBlockItem"
+import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$TrackBlockOutline$BezierPointSelection$$Type} from "com.simibubi.create.content.trains.track.TrackBlockOutline$BezierPointSelection"
@@ -4101,8 +4101,8 @@ static readonly "BY_BLOCK": $Map<($Block), ($Item)>
 constructor(arg0: $Block$$Type, arg1: $Item$Properties$$Type)
 
 public "useOn"(arg0: $UseOnContext$$Type): $InteractionResult
-public "useOnCurve"(arg0: $TrackBlockOutline$BezierPointSelection$$Type, arg1: $ItemStack$$Type): boolean
 public static "withGraphLocation"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: boolean, arg3: $BezierTrackPointLocation$$Type, arg4: $BiConsumer$$Type<($TrackTargetingBlockItem$OverlapResult), ($TrackGraphLocation)>): void
+public "useOnCurve"(arg0: $TrackBlockOutline$BezierPointSelection$$Type, arg1: $ItemStack$$Type): boolean
 public "placeHandcar"(arg0: $TrackGraphLocation$$Type, arg1: $Level$$Type, arg2: $Player$$Type, arg3: $BlockPos$$Type, arg4: $Direction$$Type): boolean
 public "moonlight$getAdditionalBehavior"(): $AdditionalItemPlacement
 public "moonlight$setAdditionalBehavior"(arg0: $AdditionalItemPlacement$$Type): void
@@ -4134,8 +4134,8 @@ import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$LargeBogeyBlock} from "com.railwayteam.railways.content.custom_bogeys.blocks.base.size.LargeBogeyBlock"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$AbstractBogeyBlock} from "com.simibubi.create.content.trains.bogey.AbstractBogeyBlock"
+import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
@@ -4249,8 +4249,8 @@ import {$ItemRequirement} from "com.simibubi.create.content.schematics.requireme
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$Vec3} from "net.minecraft.world.phys.Vec3"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$AbstractBogeyBlock} from "com.simibubi.create.content.trains.bogey.AbstractBogeyBlock"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BogeySizes$BogeySize} from "com.simibubi.create.content.trains.bogey.BogeySizes$BogeySize"
@@ -4262,8 +4262,8 @@ import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$Direction$Axis} from "net.minecraft.core.Direction$Axis"
 import {$CRBogeyBlock} from "com.railwayteam.railways.content.custom_bogeys.blocks.base.CRBogeyBlock"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
@@ -4319,8 +4319,8 @@ declare module "com.railwayteam.railways.content.semaphore.SemaphoreItem" {
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$AdditionalItemPlacement, $AdditionalItemPlacement$$Type} from "net.mehvahdjukaar.moonlight.api.item.additional_placements.AdditionalItemPlacement"
@@ -4356,12 +4356,12 @@ declare module "com.railwayteam.railways.content.custom_bogeys.blocks.base.be.CR
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$IHaveGoggleInformation$$Interface} from "com.simibubi.create.api.equipment.goggles.IHaveGoggleInformation"
-import {$BogeyStyle} from "com.simibubi.create.content.trains.bogey.BogeyStyle"
 import {$List$$Type} from "java.util.List"
+import {$BogeyStyle} from "com.simibubi.create.content.trains.bogey.BogeyStyle"
 import {$AbstractBogeyBlockEntity} from "com.simibubi.create.content.trains.bogey.AbstractBogeyBlockEntity"
 import {$IFluidHandler$$Type} from "net.neoforged.neoforge.fluids.capability.IFluidHandler"
-import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $CRBogeyBlockEntity extends $AbstractBogeyBlockEntity implements $IHaveGoggleInformation$$Interface {
@@ -4399,8 +4399,8 @@ import {$CRBogeyBlock} from "com.railwayteam.railways.content.custom_bogeys.bloc
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$AbstractBogeyBlock} from "com.simibubi.create.content.trains.bogey.AbstractBogeyBlock"
+import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
@@ -4456,10 +4456,10 @@ import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$ItemRequirement} from "com.simibubi.create.content.schematics.requirement.ItemRequirement"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
+import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
@@ -4468,8 +4468,8 @@ import {$ICopycatBlock$$Type} from "com.copycatsplus.copycats.foundation.copycat
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$CopycatBlock} from "com.simibubi.create.content.decoration.copycat.CopycatBlock"
-import {$IntegerProperty$$Type} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$IntegerProperty$$Type} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
@@ -4499,23 +4499,23 @@ static readonly "UPDATE_SUPPRESS_DROPS": integer
 static readonly "INSTANT": float
 static readonly "UPDATE_CLIENTS": integer
 
-public "canFaceBeOccluded"(arg0: $BlockState$$Type, arg1: $Direction$$Type): boolean
-public "canConnectTexturesToward"(arg0: $BlockAndTintGetter$$Type, arg1: $BlockPos$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): boolean
+public "useWithoutItem"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $BlockHitResult$$Type): $InteractionResult
 public "hidesNeighborFace"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $BlockState$$Type, arg4: $Direction$$Type): boolean
 public "supportsExternalFaceHiding"(arg0: $BlockState$$Type): boolean
-public "useWithoutItem"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $BlockHitResult$$Type): $InteractionResult
+public "canFaceBeOccluded"(arg0: $BlockState$$Type, arg1: $Direction$$Type): boolean
+public "canConnectTexturesToward"(arg0: $BlockAndTintGetter$$Type, arg1: $BlockPos$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): boolean
 public "teleportConductor"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $Entity$$Type, arg3: $Direction$$Type): void
 public "getShape"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $CollisionContext$$Type): $VoxelShape
 public static "create"(arg0: $BlockBehaviour$Properties$$Type): $VentBlock
 public "getCollisionShape"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $CollisionContext$$Type): $VoxelShape
 public "entityInside"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): void
-public static "playRotateSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public "onWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $InteractionResult
+public static "playRotateSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public static "playRemoveSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public "onSneakWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $InteractionResult
 public static "onRemove"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): void
-public static "getRequiredItemsForLayer"(state: $BlockState$$Type, property: $IntegerProperty$$Type): $ItemRequirement
 public static "getAppearance"(block: $ICopycatBlock$$Type, state: $BlockState$$Type, level: $BlockAndTintGetter$$Type, pos: $BlockPos$$Type, side: $Direction$$Type, queryState: $BlockState$$Type, queryPos: $BlockPos$$Type): $BlockState
+public static "getRequiredItemsForLayer"(state: $BlockState$$Type, property: $IntegerProperty$$Type): $ItemRequirement
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 }
 /**
@@ -4528,14 +4528,14 @@ export type $VentBlock$$Type = ($VentBlock);
  */
 export type $VentBlock$$Original = $VentBlock;}
 declare module "com.railwayteam.railways.content.coupling.TrackCouplerDisplaySource" {
-import {$DisplaySource} from "com.simibubi.create.api.behaviour.display.DisplaySource"
 import {$FlapDisplayBlockEntity$$Type} from "com.simibubi.create.content.trains.display.FlapDisplayBlockEntity"
+import {$DisplaySource} from "com.simibubi.create.api.behaviour.display.DisplaySource"
 import {$DisplayTargetStats$$Type} from "com.simibubi.create.content.redstone.displayLink.target.DisplayTargetStats"
 import {$BlockEntityType} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$List} from "java.util.List"
 import {$DisplayLinkContext$$Type} from "com.simibubi.create.content.redstone.displayLink.DisplayLinkContext"
-import {$Block} from "net.minecraft.world.level.block.Block"
+import {$List} from "java.util.List"
 import {$MutableComponent} from "net.minecraft.network.chat.MutableComponent"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$FlapDisplayLayout$$Type} from "com.simibubi.create.content.trains.display.FlapDisplayLayout"
 import {$SimpleRegistry$Multi} from "com.simibubi.create.api.registry.SimpleRegistry$Multi"
 
@@ -4570,8 +4570,8 @@ import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$TagKey} from "net.minecraft.tags.TagKey"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockStateBlockItemGroup$IStyle$$Interface} from "com.railwayteam.railways.content.buffer.BlockStateBlockItemGroup$IStyle"
 import {$Couple, $Couple$$Type} from "net.createmod.catnip.data.Couple"
@@ -4591,18 +4591,18 @@ public "getLangName"(arg0: any): StringJS
 public static "values"(): ($SmokestackStyle)[]
 public static "valueOf"(arg0: StringJS): $SmokestackStyle
 public "getTexture"(arg0: StringJS): $ResourceLocation
-public "getModel"(arg0: $Couple$$Type<(StringJS)>): $ResourceLocation
-public "getModel"(arg0: any): $ResourceLocation
 public "getSerializedName"(): StringJS
+public "getModel"(arg0: any): $ResourceLocation
+public "getModel"(arg0: $Couple$$Type<(StringJS)>): $ResourceLocation
 public "getBlockId"(arg0: $Couple$$Type<(StringJS)>): StringJS
 public "getBlockId"(): StringJS
 public "getBlockId"(arg0: any): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
 get "blockId"(): StringJS
 get "remappedEnumConstantName"(): StringJS
@@ -4617,13 +4617,13 @@ export type $SmokestackStyle$$Type = (("steel") | ("brass_cap_steel") | ("copper
  */
 export type $SmokestackStyle$$Original = $SmokestackStyle;}
 declare module "com.railwayteam.railways.content.switches.TrackSwitchBlock$SwitchState" {
-import {$TravellingPoint$SteerDirection$$Type} from "com.simibubi.create.content.trains.entity.TravellingPoint$SteerDirection"
 import {$Keyable} from "com.mojang.serialization.Keyable"
+import {$TravellingPoint$SteerDirection$$Type} from "com.simibubi.create.content.trains.entity.TravellingPoint$SteerDirection"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 import {$TrackSwitch$$Type} from "com.railwayteam.railways.content.switches.TrackSwitch"
 import {$TrackSwitchBlock$SwitchConstraint$$Type} from "com.railwayteam.railways.content.switches.TrackSwitchBlock$SwitchConstraint"
@@ -4633,19 +4633,19 @@ static readonly "REVERSE_RIGHT": $TrackSwitchBlock$SwitchState
 static readonly "NORMAL": $TrackSwitchBlock$SwitchState
 static readonly "REVERSE_LEFT": $TrackSwitchBlock$SwitchState
 
-public "canSwitchTo"(arg0: $TrackSwitchBlock$SwitchState$$Type, arg1: $TrackSwitchBlock$SwitchConstraint$$Type): boolean
 public static "fromSteerDirection"(arg0: $TravellingPoint$SteerDirection$$Type, arg1: boolean): $TrackSwitchBlock$SwitchState
 public "nextStateFor"(arg0: $TrackSwitch$$Type, arg1: $TrackSwitchBlock$SwitchConstraint$$Type): $TrackSwitchBlock$SwitchState
+public "canSwitchTo"(arg0: $TrackSwitchBlock$SwitchState$$Type, arg1: $TrackSwitchBlock$SwitchConstraint$$Type): boolean
 public "nextStateForPonder"(arg0: $TrackSwitchBlock$SwitchConstraint$$Type): $TrackSwitchBlock$SwitchState
 public static "values"(): ($TrackSwitchBlock$SwitchState)[]
 public static "valueOf"(arg0: StringJS): $TrackSwitchBlock$SwitchState
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
 }
@@ -4665,10 +4665,10 @@ import {$Record} from "java.lang.Record"
 export class $TrackSwitchBlockEntity$PonderData extends $Record {
 constructor(basePos: $Vec3$$Type, leftBranch: $Vec3$$Type, straightBranch: $Vec3$$Type, rightBranch: $Vec3$$Type)
 
+public "basePos"(): $Vec3
 public "leftBranch"(): $Vec3
 public "straightBranch"(): $Vec3
 public "rightBranch"(): $Vec3
-public "basePos"(): $Vec3
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
@@ -4677,7 +4677,7 @@ public "hashCode"(): integer
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $TrackSwitchBlockEntity$PonderData$$Type = ({"rightBranch"?: $Vec3$$Type, "leftBranch"?: $Vec3$$Type, "basePos"?: $Vec3$$Type, "straightBranch"?: $Vec3$$Type}) | ([rightBranch?: $Vec3$$Type, leftBranch?: $Vec3$$Type, basePos?: $Vec3$$Type, straightBranch?: $Vec3$$Type]);
+export type $TrackSwitchBlockEntity$PonderData$$Type = ({"leftBranch"?: $Vec3$$Type, "basePos"?: $Vec3$$Type, "straightBranch"?: $Vec3$$Type, "rightBranch"?: $Vec3$$Type}) | ([leftBranch?: $Vec3$$Type, basePos?: $Vec3$$Type, straightBranch?: $Vec3$$Type, rightBranch?: $Vec3$$Type]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -4685,8 +4685,8 @@ export type $TrackSwitchBlockEntity$PonderData$$Original = $TrackSwitchBlockEnti
 declare module "com.railwayteam.railways.content.palettes.smokebox.PalettesSmokeboxBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$Direction} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction} from "net.minecraft.core.Direction"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
@@ -4745,27 +4745,27 @@ import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$ProperWaterloggedBlock$$Interface} from "com.simibubi.create.foundation.block.ProperWaterloggedBlock"
+import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$TrackMaterial, $TrackMaterial$$Type} from "com.simibubi.create.content.trains.track.TrackMaterial"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
-import {$BiFunction$$Type} from "java.util.function.BiFunction"
 import {$TrackTargetingBehaviour$RenderedTrackOverlayType$$Type} from "com.simibubi.create.content.trains.track.TrackTargetingBehaviour$RenderedTrackOverlayType"
-import {$TrackNodeLocation$DiscoveredLocation, $TrackNodeLocation$DiscoveredLocation$$Type} from "com.simibubi.create.content.trains.graph.TrackNodeLocation$DiscoveredLocation"
+import {$BiFunction$$Type} from "java.util.function.BiFunction"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
+import {$TrackNodeLocation$DiscoveredLocation, $TrackNodeLocation$DiscoveredLocation$$Type} from "com.simibubi.create.content.trains.graph.TrackNodeLocation$DiscoveredLocation"
 import {$Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$GenericCrossingBlockEntity, $GenericCrossingBlockEntity$$Type} from "com.railwayteam.railways.content.custom_tracks.generic_crossing.GenericCrossingBlockEntity"
 import {$TrackShape} from "com.simibubi.create.content.trains.track.TrackShape"
 import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
+import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
-import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$BezierConnection$$Type} from "com.simibubi.create.content.trains.track.BezierConnection"
-import {$ITrackBlock$$Interface} from "com.simibubi.create.content.trains.track.ITrackBlock"
 import {$IBE$$Interface} from "com.simibubi.create.foundation.block.IBE"
+import {$ITrackBlock$$Interface} from "com.simibubi.create.content.trains.track.ITrackBlock"
 import {$Affine, $Affine$$Type} from "dev.engine_room.flywheel.lib.transform.Affine"
 import {$List} from "java.util.List"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
@@ -4784,8 +4784,8 @@ import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$IWrenchable$$Interface} from "com.simibubi.create.content.equipment.wrench.IWrenchable"
 import {$SpecialBlockItemRequirement$$Interface} from "com.simibubi.create.api.schematic.requirement.SpecialBlockItemRequirement"
 import {$Direction$AxisDirection, $Direction$AxisDirection$$Type} from "net.minecraft.core.Direction$AxisDirection"
-import {$Collection, $Collection$$Type} from "java.util.Collection"
 import {$BezierTrackPointLocation$$Type} from "com.simibubi.create.content.trains.track.BezierTrackPointLocation"
+import {$Collection, $Collection$$Type} from "java.util.Collection"
 import {$PartialModel} from "dev.engine_room.flywheel.lib.model.baked.PartialModel"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
@@ -4824,13 +4824,13 @@ public "getUpNormal"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $Blo
 public "getCurveStart"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $Vec3$$Type): $Vec3
 public "getRequiredItems"(arg0: $BlockState$$Type, arg1: $BlockEntity$$Type): $ItemRequirement
 public "getBlockEntityType"(): $BlockEntityType<($GenericCrossingBlockEntity)>
+public "getBlockEntityClass"(): $Class<($GenericCrossingBlockEntity)>
 public "getBogeyAnchor"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type): $BlockState
 public "getConnected"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: boolean, arg4: $TrackNodeLocation$$Type): $Collection<($TrackNodeLocation$DiscoveredLocation)>
 public "getTrackAxes"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type): $List<($Vec3)>
 public "prepareAssemblyOverlay"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $Direction$$Type, arg4: $PoseStack$$Type): $PartialModel
 public "prepareTrackOverlay"<Self extends $Affine<(object)>>(arg0: $Affine$$Type<(Self)>, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $BezierTrackPointLocation$$Type, arg5: $Direction$AxisDirection$$Type, arg6: $TrackTargetingBehaviour$RenderedTrackOverlayType$$Type): $PartialModel
 public "trackEquals"(arg0: $BlockState$$Type, arg1: $BlockState$$Type): boolean
-public "getBlockEntityClass"(): $Class<($GenericCrossingBlockEntity)>
 public "onWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $InteractionResult
 public "onSneakWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $InteractionResult
 public "tick"(arg0: $BlockState$$Type, arg1: $ServerLevel$$Type, arg2: $BlockPos$$Type, arg3: $RandomSource$$Type): void
@@ -4838,8 +4838,8 @@ public "getShape"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $Bloc
 public "getFluidState"(arg0: $BlockState$$Type): $FluidState
 public "getCollisionShape"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $CollisionContext$$Type): $VoxelShape
 public "onRemove"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: boolean): void
-public "getInteractionShape"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): $VoxelShape
 public "getMaterial"(): $TrackMaterial
+public "getInteractionShape"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): $VoxelShape
 public "getTicker"<S extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(S)>): $BlockEntityTicker<(S)>
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
 public "getBlockEntityOptional"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type): $Optional<($GenericCrossingBlockEntity)>
@@ -4867,8 +4867,8 @@ public "updateWater"(arg0: $LevelAccessor$$Type, arg1: $BlockState$$Type, arg2: 
 public "fluidState"(arg0: $BlockState$$Type): $FluidState
 public "getListener"<T extends $BlockEntity>(arg0: $ServerLevel$$Type, arg1: T): $GameEventListener
 public "getPickupSound"(): $Optional<($SoundEvent)>
-public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "canPlaceLiquid"(arg0: $Player$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $Fluid$$Type): boolean
+public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "pickupBlock"(arg0: $Player$$Type, arg1: $LevelAccessor$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): $ItemStack
 public "getPickupSound"(arg0: $BlockState$$Type): $Optional<($SoundEvent)>
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
@@ -4967,8 +4967,8 @@ import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType, $BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Function$$Type} from "java.util.function.Function"
 import {$DyeColor} from "net.minecraft.world.item.DyeColor"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Class} from "java.lang.Class"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
@@ -4980,11 +4980,11 @@ import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$InteractionResult, $InteractionResult$$Type} from "net.minecraft.world.InteractionResult"
-import {$ItemInteractionResult, $ItemInteractionResult$$Type} from "net.minecraft.world.ItemInteractionResult"
 import {$ConductorWhistleFlagBlockEntity, $ConductorWhistleFlagBlockEntity$$Type} from "com.railwayteam.railways.content.conductor.whistle.ConductorWhistleFlagBlockEntity"
+import {$ItemInteractionResult, $ItemInteractionResult$$Type} from "net.minecraft.world.ItemInteractionResult"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
-import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
+import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -5055,8 +5055,8 @@ import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$LargeBogeyBlock} from "com.railwayteam.railways.content.custom_bogeys.blocks.base.size.LargeBogeyBlock"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$AbstractBogeyBlock} from "com.simibubi.create.content.trains.bogey.AbstractBogeyBlock"
+import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
@@ -5117,8 +5117,8 @@ import {$WrenchableDirectionalBlock} from "com.simibubi.create.foundation.block.
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType, $BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Function$$Type} from "java.util.function.Function"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Class} from "java.lang.Class"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
@@ -5163,13 +5163,13 @@ static readonly "FACING": $DirectionProperty
 constructor(arg0: $BlockBehaviour$Properties$$Type)
 
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
-public "setPlacedBy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $LivingEntity$$Type, arg4: $ItemStack$$Type): void
 public "getAnalogOutputSignal"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type): integer
+public "setPlacedBy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $LivingEntity$$Type, arg4: $ItemStack$$Type): void
 public "getBlockEntityType"(): $BlockEntityType<($PortableFuelInterfaceBlockEntity)>
 public "getBlockEntityClass"(): $Class<($PortableFuelInterfaceBlockEntity)>
 public "getShape"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $CollisionContext$$Type): $VoxelShape
-public "neighborChanged"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Block$$Type, arg4: $BlockPos$$Type, arg5: boolean): void
 public "hasAnalogOutputSignal"(arg0: $BlockState$$Type): boolean
+public "neighborChanged"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Block$$Type, arg4: $BlockPos$$Type, arg5: boolean): void
 public "getTicker"<S extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(S)>): $BlockEntityTicker<(S)>
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
 public "getBlockEntityOptional"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type): $Optional<($PortableFuelInterfaceBlockEntity)>
@@ -5206,8 +5206,8 @@ import {$SingleBlockEntityEdgePoint} from "com.simibubi.create.content.trains.si
 import {$TrackNodeLocation, $TrackNodeLocation$$Type} from "com.simibubi.create.content.trains.graph.TrackNodeLocation"
 import {$TrackGraph$$Type} from "com.simibubi.create.content.trains.graph.TrackGraph"
 import {$DimensionPalette$$Type} from "com.simibubi.create.content.trains.graph.DimensionPalette"
-import {$Couple} from "net.createmod.catnip.data.Couple"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
+import {$Couple} from "net.createmod.catnip.data.Couple"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 
@@ -5221,6 +5221,7 @@ export class $TrackSwitch extends $SingleBlockEntityEdgePoint {
 constructor()
 
 public static "getSelectionPriority"(): integer
+public "updateEdges"(arg0: $TrackGraph$$Type): void
 public "onRemoved"(arg0: $TrackGraph$$Type): void
 public "trySetSwitchState"(arg0: $TrackSwitchBlock$SwitchState$$Type): boolean
 public "getSwitchState"(): $TrackSwitchBlock$SwitchState
@@ -5234,12 +5235,11 @@ public "getSwitchTarget"(): $TrackNodeLocation
 public "shouldAutoTrainsSwitch"(): boolean
 public "getTargetState"(arg0: $TrackNodeLocation$$Type): $TrackSwitchBlock$SwitchState
 public "setEdgesActive"(arg0: $TrackGraph$$Type): void
-public "updateEdges"(arg0: $TrackGraph$$Type): void
 public "tick"(arg0: $TrackGraph$$Type, arg1: boolean): void
 public "write"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type, arg2: $DimensionPalette$$Type): void
 public "write"(arg0: $FriendlyByteBuf$$Type, arg1: $DimensionPalette$$Type): void
-public "read"(arg0: $FriendlyByteBuf$$Type, arg1: $DimensionPalette$$Type): void
 public "read"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type, arg2: boolean, arg3: $DimensionPalette$$Type): void
+public "read"(arg0: $FriendlyByteBuf$$Type, arg1: $DimensionPalette$$Type): void
 public "isAutomatic"(): boolean
 public "getType"(): $EdgePointType<(never)>
 public "isLocked"(): boolean
@@ -5276,8 +5276,8 @@ import {$Vec3} from "net.minecraft.world.phys.Vec3"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$AbstractBogeyBlock} from "com.simibubi.create.content.trains.bogey.AbstractBogeyBlock"
+import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
@@ -5337,9 +5337,9 @@ import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$WoodVariantTrackBufferBlock} from "com.railwayteam.railways.content.buffer.WoodVariantTrackBufferBlock"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
@@ -5397,9 +5397,9 @@ import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$WoodVariantTrackBufferBlock} from "com.railwayteam.railways.content.buffer.WoodVariantTrackBufferBlock"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
@@ -5451,8 +5451,8 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
 export class $FuelTankBlock$Shape extends $Enum<($FuelTankBlock$Shape)> implements $StringRepresentable$$Interface {
@@ -5467,11 +5467,11 @@ public static "values"(): ($FuelTankBlock$Shape)[]
 public static "valueOf"(arg0: StringJS): $FuelTankBlock$Shape
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
 }
@@ -5530,8 +5530,8 @@ export type $IDyedBuffer$$Original = $IDyedBuffer;}
 declare module "com.railwayteam.railways.content.coupling.coupler.neoforge.TrackCouplerBlockImpl" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$TrackCouplerBlock} from "com.railwayteam.railways.content.coupling.coupler.TrackCouplerBlock"
 import {$TrackCouplerBlockEntity$AllowedOperationMode} from "com.railwayteam.railways.content.coupling.coupler.TrackCouplerBlockEntity$AllowedOperationMode"
@@ -5540,8 +5540,8 @@ import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$SignalGetter$$Type} from "net.minecraft.world.level.SignalGetter"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -5615,8 +5615,8 @@ import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.
 import {$DieselSmokeStackBlockEntity} from "com.railwayteam.railways.content.smokestack.block.be.DieselSmokeStackBlockEntity"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Class} from "java.lang.Class"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$SmokestackStyle} from "com.railwayteam.railways.content.smokestack.SmokestackStyle"
@@ -5624,8 +5624,8 @@ import {$ShapeWrapper$$Type} from "com.railwayteam.railways.util.ShapeWrapper"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block} from "net.minecraft.world.level.block.Block"
-import {$AbstractSmokeStackBlock} from "com.railwayteam.railways.content.smokestack.block.AbstractSmokeStackBlock"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
+import {$AbstractSmokeStackBlock} from "com.railwayteam.railways.content.smokestack.block.AbstractSmokeStackBlock"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
@@ -5714,8 +5714,8 @@ export type $SmokeStackBlock$SmokeStackType$$Type = ($SmokeStackBlock$SmokeStack
  */
 export type $SmokeStackBlock$SmokeStackType$$Original = $SmokeStackBlock$SmokeStackType;}
 declare module "com.railwayteam.railways.content.buffer.TrackBufferBlock" {
-import {$IBE$$Interface} from "com.simibubi.create.foundation.block.IBE"
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
+import {$IBE$$Interface} from "com.simibubi.create.foundation.block.IBE"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
@@ -5728,16 +5728,16 @@ import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType, $BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Function$$Type} from "java.util.function.Function"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$Class} from "java.lang.Class"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
+import {$Class} from "java.lang.Class"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$IWrenchable$$Interface} from "com.simibubi.create.content.equipment.wrench.IWrenchable"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$TrackBufferBlockEntity} from "com.railwayteam.railways.content.buffer.TrackBufferBlockEntity"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$ProperWaterloggedBlock$$Interface} from "com.simibubi.create.foundation.block.ProperWaterloggedBlock"
+import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$HorizontalDirectionalBlock} from "net.minecraft.world.level.block.HorizontalDirectionalBlock"
@@ -5746,16 +5746,16 @@ import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$InteractionResult, $InteractionResult$$Type} from "net.minecraft.world.InteractionResult"
-import {$ItemInteractionResult, $ItemInteractionResult$$Type} from "net.minecraft.world.ItemInteractionResult"
 import {$Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
+import {$ItemInteractionResult, $ItemInteractionResult$$Type} from "net.minecraft.world.ItemInteractionResult"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
+import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
-import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
-import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
+import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$DirectionProperty} from "net.minecraft.world.level.block.state.properties.DirectionProperty"
 
 export class $TrackBufferBlock<BE extends $TrackBufferBlockEntity> extends $HorizontalDirectionalBlock implements $IBE$$Interface<(BE)>, $IWrenchable$$Interface, $ProperWaterloggedBlock$$Interface {
@@ -5780,14 +5780,14 @@ static readonly "UPDATE_CLIENTS": integer
 static readonly "FACING": $DirectionProperty
 
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
-public "updateShape"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $BlockState$$Type, arg3: $LevelAccessor$$Type, arg4: $BlockPos$$Type, arg5: $BlockPos$$Type): $BlockState
 public "getOcclusionShape"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): $VoxelShape
+public "updateShape"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $BlockState$$Type, arg3: $LevelAccessor$$Type, arg4: $BlockPos$$Type, arg5: $BlockPos$$Type): $BlockState
 public "getBlockEntityType"(): $BlockEntityType<(BE)>
-public static "getBaseModelYRotationOf"(arg0: $BlockState$$Type, arg1: integer): integer
+public "getBlockEntityClass"(): $Class<(BE)>
 public static "getBaseModelYRotationOf"(arg0: $Direction$$Type): integer
+public static "getBaseModelYRotationOf"(arg0: $BlockState$$Type, arg1: integer): integer
 public static "getBaseModelYRotationOf"(arg0: $Direction$$Type, arg1: integer): integer
 public static "getBaseModelYRotationOf"(arg0: $BlockState$$Type): integer
-public "getBlockEntityClass"(): $Class<(BE)>
 public "getRotatedBlockState"(arg0: $BlockState$$Type, arg1: $Direction$$Type): $BlockState
 public "getFluidState"(arg0: $BlockState$$Type): $FluidState
 public "useItemOn"(arg0: $ItemStack$$Type, arg1: $BlockState$$Type, arg2: $Level$$Type, arg3: $BlockPos$$Type, arg4: $Player$$Type, arg5: $InteractionHand$$Type, arg6: $BlockHitResult$$Type): $ItemInteractionResult
@@ -5801,8 +5801,8 @@ public "onBlockEntityUse"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2:
 public "onBlockEntityUseItemOn"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $Function$$Type<(BE), ($ItemInteractionResult$$Type)>): $ItemInteractionResult
 public "getBlockEntity"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type): BE
 public static "onRemove"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): void
-public static "playRotateSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public "onWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $InteractionResult
+public static "playRotateSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public "updateAfterWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $BlockState
 public static "playRemoveSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public "onSneakWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $InteractionResult
@@ -5812,8 +5812,8 @@ public "updateWater"(arg0: $LevelAccessor$$Type, arg1: $BlockState$$Type, arg2: 
 public "fluidState"(arg0: $BlockState$$Type): $FluidState
 public "getListener"<T extends $BlockEntity>(arg0: $ServerLevel$$Type, arg1: T): $GameEventListener
 public "getPickupSound"(): $Optional<($SoundEvent)>
-public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "canPlaceLiquid"(arg0: $Player$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $Fluid$$Type): boolean
+public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "pickupBlock"(arg0: $Player$$Type, arg1: $LevelAccessor$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): $ItemStack
 public "getPickupSound"(arg0: $BlockState$$Type): $Optional<($SoundEvent)>
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
@@ -5833,8 +5833,8 @@ export type $TrackBufferBlock$$Original<BE> = $TrackBufferBlock<(BE)>;}
 declare module "com.railwayteam.railways.content.buffer.TrackBufferBlockEntity" {
 import {$DyeableBlockEntity} from "com.railwayteam.railways.content.buffer.DyeableBlockEntity"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$TrackTargetingBehaviour} from "com.simibubi.create.content.trains.track.TrackTargetingBehaviour"
 import {$List$$Type} from "java.util.List"
+import {$TrackTargetingBehaviour} from "com.simibubi.create.content.trains.track.TrackTargetingBehaviour"
 import {$BlockEntityBehaviour$$Type} from "com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour"
 import {$TrackBuffer} from "com.railwayteam.railways.content.buffer.TrackBuffer"
 import {$TransformableBlockEntity$$Interface} from "com.simibubi.create.api.contraption.transformable.TransformableBlockEntity"
@@ -5887,13 +5887,13 @@ import {$ItemRequirement} from "com.simibubi.create.content.schematics.requireme
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$Direction$Axis} from "net.minecraft.core.Direction$Axis"
-import {$Vec3} from "net.minecraft.world.phys.Vec3"
 import {$CRBogeyBlock} from "com.railwayteam.railways.content.custom_bogeys.blocks.base.CRBogeyBlock"
+import {$Vec3} from "net.minecraft.world.phys.Vec3"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$AbstractBogeyBlock} from "com.simibubi.create.content.trains.bogey.AbstractBogeyBlock"
+import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
@@ -5951,8 +5951,8 @@ import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$BlockStateBlockItemGroup$IStyle$$Interface} from "com.railwayteam.railways.content.buffer.BlockStateBlockItemGroup$IStyle"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
@@ -5967,20 +5967,20 @@ public "getLangName"(arg0: void): StringJS
 public "getLangName"(arg0: any): StringJS
 public static "values"(): ($LinkPinBlock$Style)[]
 public static "valueOf"(arg0: StringJS): $LinkPinBlock$Style
-public "getModel"(arg0: any): $ResourceLocation
-public "getModel"(arg0: void): $ResourceLocation
-public "getModel"(): $ResourceLocation
 public "getSerializedName"(): StringJS
-public "getBlockId"(arg0: any): StringJS
+public "getModel"(arg0: void): $ResourceLocation
+public "getModel"(arg0: any): $ResourceLocation
+public "getModel"(): $ResourceLocation
 public "getBlockId"(arg0: void): StringJS
+public "getBlockId"(arg0: any): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
-get "model"(): $ResourceLocation
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
+get "model"(): $ResourceLocation
 get "remappedEnumConstantName"(): StringJS
 }
 /**
@@ -5993,14 +5993,14 @@ export type $LinkPinBlock$Style$$Type = (("link") | ("linkless") | ("knuckle") |
  */
 export type $LinkPinBlock$Style$$Original = $LinkPinBlock$Style;}
 declare module "com.railwayteam.railways.content.semaphore.SemaphoreBlockEntity" {
-import {$IOverridableSignal$$Interface} from "com.railwayteam.railways.content.distant_signals.IOverridableSignal"
 import {$SmartBlockEntity} from "com.simibubi.create.foundation.blockEntity.SmartBlockEntity"
+import {$IOverridableSignal$$Interface} from "com.railwayteam.railways.content.distant_signals.IOverridableSignal"
 import {$LerpedFloat} from "net.createmod.catnip.animation.LerpedFloat"
 import {$Optional} from "java.util.Optional"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$List$$Type} from "java.util.List"
-import {$SignalBlockEntity$SignalState, $SignalBlockEntity$SignalState$$Type} from "com.simibubi.create.content.trains.signal.SignalBlockEntity$SignalState"
 import {$BlockEntityBehaviour$$Type} from "com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour"
+import {$SignalBlockEntity$SignalState, $SignalBlockEntity$SignalState$$Type} from "com.simibubi.create.content.trains.signal.SignalBlockEntity$SignalState"
 import {$SignalBlockEntity$$Type} from "com.simibubi.create.content.trains.signal.SignalBlockEntity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -6016,9 +6016,9 @@ constructor(arg0: $BlockEntityType$$Type<(never)>, arg1: $BlockPos$$Type, arg2: 
 
 public "addBehaviours"(arg0: $List$$Type<($BlockEntityBehaviour$$Type)>): void
 public "lazyTick"(): void
+public "wasCachedSearchingUpsideDown"(): boolean
 public "railways$getOverriddenState"(): $Optional<($SignalBlockEntity$SignalState)>
 public "railways$refresh"(arg0: $SignalBlockEntity$$Type, arg1: $SignalBlockEntity$SignalState$$Type, arg2: integer, arg3: boolean): void
-public "wasCachedSearchingUpsideDown"(): boolean
 public "tick"(): void
 public "railways$refresh"(arg0: $SignalBlockEntity$$Type, arg1: $SignalBlockEntity$SignalState$$Type, arg2: integer): void
 }
@@ -6141,16 +6141,16 @@ declare module "com.railwayteam.railways.content.switches.neoforge.TrackSwitchBl
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$TrackSwitchBlock} from "com.railwayteam.railways.content.switches.TrackSwitchBlock"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$SignalGetter$$Type} from "net.minecraft.world.level.SignalGetter"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$DirectionProperty} from "net.minecraft.world.level.block.state.properties.DirectionProperty"
@@ -6196,12 +6196,12 @@ export type $TrackSwitchBlockImpl$$Type = ($TrackSwitchBlockImpl);
  */
 export type $TrackSwitchBlockImpl$$Original = $TrackSwitchBlockImpl;}
 declare module "com.railwayteam.railways.content.distant_signals.SemaphoreDisplayTarget" {
-import {$BlockEntityType} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$DisplayTargetStats} from "com.simibubi.create.content.redstone.displayLink.target.DisplayTargetStats"
-import {$List$$Type} from "java.util.List"
+import {$BlockEntityType} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$DisplayLinkContext$$Type} from "com.simibubi.create.content.redstone.displayLink.DisplayLinkContext"
-import {$Block} from "net.minecraft.world.level.block.Block"
+import {$List$$Type} from "java.util.List"
 import {$MutableComponent$$Type} from "net.minecraft.network.chat.MutableComponent"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$SimpleRegistry} from "com.simibubi.create.api.registry.SimpleRegistry"
 import {$Component} from "net.minecraft.network.chat.Component"
 import {$DisplayTarget} from "com.simibubi.create.api.behaviour.display.DisplayTarget"
@@ -6212,9 +6212,9 @@ static readonly "BY_BLOCK": $SimpleRegistry<($Block), ($DisplayTarget)>
 
 constructor()
 
+public "getLineOptionText"(arg0: integer): $Component
 public "provideStats"(arg0: $DisplayLinkContext$$Type): $DisplayTargetStats
 public "acceptText"(arg0: integer, arg1: $List$$Type<($MutableComponent$$Type)>, arg2: $DisplayLinkContext$$Type): void
-public "getLineOptionText"(arg0: integer): $Component
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -6240,8 +6240,8 @@ import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$LargeBogeyBlock} from "com.railwayteam.railways.content.custom_bogeys.blocks.base.size.LargeBogeyBlock"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$AbstractBogeyBlock} from "com.simibubi.create.content.trains.bogey.AbstractBogeyBlock"
+import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
@@ -6372,8 +6372,8 @@ declare module "com.railwayteam.railways.content.fuel.tank.FuelTankItem" {
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$AdditionalItemPlacement, $AdditionalItemPlacement$$Type} from "net.mehvahdjukaar.moonlight.api.item.additional_placements.AdditionalItemPlacement"
@@ -6414,8 +6414,8 @@ import {$SimpleRegistry} from "com.simibubi.create.api.registry.SimpleRegistry"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
-import {$FuelTankMountedStorage} from "com.railwayteam.railways.content.fuel.tank.FuelTankMountedStorage"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$FuelTankMountedStorage} from "com.railwayteam.railways.content.fuel.tank.FuelTankMountedStorage"
 
 export class $FuelTankMountedStorageType extends $MountedFluidStorageType<($FuelTankMountedStorage)> {
 readonly "codec": $MapCodec<(T)>
@@ -6450,10 +6450,10 @@ import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType, $BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Function$$Type} from "java.util.function.Function"
-import {$Item} from "net.minecraft.world.item.Item"
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
-import {$Class} from "java.lang.Class"
+import {$Item} from "net.minecraft.world.item.Item"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
+import {$Class} from "java.lang.Class"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$IWrenchable$$Interface} from "com.simibubi.create.content.equipment.wrench.IWrenchable"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
@@ -6461,24 +6461,24 @@ import {$SmokestackStyle} from "com.railwayteam.railways.content.smokestack.Smok
 import {$ShapeWrapper$$Type} from "com.railwayteam.railways.util.ShapeWrapper"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$ProperWaterloggedBlock$$Interface} from "com.simibubi.create.foundation.block.ProperWaterloggedBlock"
+import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$InteractionResult, $InteractionResult$$Type} from "net.minecraft.world.InteractionResult"
-import {$ItemInteractionResult, $ItemInteractionResult$$Type} from "net.minecraft.world.ItemInteractionResult"
 import {$Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
+import {$ItemInteractionResult, $ItemInteractionResult$$Type} from "net.minecraft.world.ItemInteractionResult"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
+import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
-import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
-import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
+import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 
 export class $AbstractSmokeStackBlock<T extends $SmartBlockEntity> extends $Block implements $ProperWaterloggedBlock$$Interface, $IWrenchable$$Interface, $IBE$$Interface<(T)> {
 static readonly "UPDATE_IMMEDIATE": integer
@@ -6516,8 +6516,8 @@ public "withWater"(arg0: $BlockState$$Type, arg1: $BlockPlaceContext$$Type): $Bl
 public static "withWater"(arg0: $LevelAccessor$$Type, arg1: $BlockState$$Type, arg2: $BlockPos$$Type): $BlockState
 public "updateWater"(arg0: $LevelAccessor$$Type, arg1: $BlockState$$Type, arg2: $BlockPos$$Type): void
 public "fluidState"(arg0: $BlockState$$Type): $FluidState
-public static "playRotateSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public "onWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $InteractionResult
+public static "playRotateSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public "getRotatedBlockState"(arg0: $BlockState$$Type, arg1: $Direction$$Type): $BlockState
 public "updateAfterWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $BlockState
 public static "playRemoveSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
@@ -6527,14 +6527,14 @@ public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockE
 public "getBlockEntityOptional"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type): $Optional<(T)>
 public "getBlockEntityType"(): $BlockEntityType<(T)>
 public "withBlockEntityDo"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $Consumer$$Type<(T)>): void
+public "getBlockEntityClass"(): $Class<(T)>
 public "onBlockEntityUse"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $Function$$Type<(T), ($InteractionResult$$Type)>): $InteractionResult
 public "onBlockEntityUseItemOn"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $Function$$Type<(T), ($ItemInteractionResult$$Type)>): $ItemInteractionResult
-public "getBlockEntityClass"(): $Class<(T)>
 public "getBlockEntity"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type): T
 public static "onRemove"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): void
 public "getPickupSound"(): $Optional<($SoundEvent)>
-public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "canPlaceLiquid"(arg0: $Player$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $Fluid$$Type): boolean
+public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "pickupBlock"(arg0: $Player$$Type, arg1: $LevelAccessor$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): $ItemStack
 public "getListener"<T extends $BlockEntity>(arg0: $ServerLevel$$Type, arg1: T): $GameEventListener
 public "getPickupSound"(arg0: $BlockState$$Type): $Optional<($SoundEvent)>
@@ -6553,10 +6553,10 @@ export type $AbstractSmokeStackBlock$$Type<T> = ($AbstractSmokeStackBlock<(T)>);
  */
 export type $AbstractSmokeStackBlock$$Original<T> = $AbstractSmokeStackBlock<(T)>;}
 declare module "com.railwayteam.railways.content.buffer.headstock.HeadstockBlock" {
-import {$IBE$$Interface} from "com.simibubi.create.foundation.block.IBE"
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
-import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$IBE$$Interface} from "com.simibubi.create.foundation.block.IBE"
 import {$HeadstockBlockEntity, $HeadstockBlockEntity$$Type} from "com.railwayteam.railways.content.buffer.headstock.HeadstockBlockEntity"
+import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
@@ -6568,37 +6568,37 @@ import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType, $BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Function$$Type} from "java.util.function.Function"
-import {$HeadstockStyle} from "com.railwayteam.railways.content.buffer.headstock.HeadstockStyle"
-import {$Item} from "net.minecraft.world.item.Item"
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
-import {$Class} from "java.lang.Class"
+import {$Item} from "net.minecraft.world.item.Item"
+import {$HeadstockStyle} from "com.railwayteam.railways.content.buffer.headstock.HeadstockStyle"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
+import {$Class} from "java.lang.Class"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$IWrenchable$$Interface} from "com.simibubi.create.content.equipment.wrench.IWrenchable"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$ProperWaterloggedBlock$$Interface} from "com.simibubi.create.foundation.block.ProperWaterloggedBlock"
+import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$HorizontalDirectionalBlock} from "net.minecraft.world.level.block.HorizontalDirectionalBlock"
 import {$HitResult$$Type} from "net.minecraft.world.phys.HitResult"
-import {$BlockStateBlockItemGroup$GroupedBlock$$Interface} from "com.railwayteam.railways.content.buffer.BlockStateBlockItemGroup$GroupedBlock"
 import {$Consumer$$Type} from "java.util.function.Consumer"
+import {$BlockStateBlockItemGroup$GroupedBlock$$Interface} from "com.railwayteam.railways.content.buffer.BlockStateBlockItemGroup$GroupedBlock"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$InteractionResult, $InteractionResult$$Type} from "net.minecraft.world.InteractionResult"
-import {$ItemInteractionResult, $ItemInteractionResult$$Type} from "net.minecraft.world.ItemInteractionResult"
 import {$Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
+import {$ItemInteractionResult, $ItemInteractionResult$$Type} from "net.minecraft.world.ItemInteractionResult"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
+import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
-import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
-import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
+import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$DirectionProperty} from "net.minecraft.world.level.block.state.properties.DirectionProperty"
 
 export class $HeadstockBlock extends $HorizontalDirectionalBlock implements $IBE$$Interface<($HeadstockBlockEntity)>, $IWrenchable$$Interface, $ProperWaterloggedBlock$$Interface, $BlockStateBlockItemGroup$GroupedBlock$$Interface {
@@ -6642,8 +6642,8 @@ public "onBlockEntityUse"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2:
 public "onBlockEntityUseItemOn"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $Function$$Type<($HeadstockBlockEntity), ($ItemInteractionResult$$Type)>): $ItemInteractionResult
 public "getBlockEntity"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type): $HeadstockBlockEntity
 public static "onRemove"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): void
-public static "playRotateSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public "onWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $InteractionResult
+public static "playRotateSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public "getRotatedBlockState"(arg0: $BlockState$$Type, arg1: $Direction$$Type): $BlockState
 public "updateAfterWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $BlockState
 public static "playRemoveSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
@@ -6654,8 +6654,8 @@ public "updateWater"(arg0: $LevelAccessor$$Type, arg1: $BlockState$$Type, arg2: 
 public "fluidState"(arg0: $BlockState$$Type): $FluidState
 public "getListener"<T extends $BlockEntity>(arg0: $ServerLevel$$Type, arg1: T): $GameEventListener
 public "getPickupSound"(): $Optional<($SoundEvent)>
-public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "canPlaceLiquid"(arg0: $Player$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $Fluid$$Type): boolean
+public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "pickupBlock"(arg0: $Player$$Type, arg1: $LevelAccessor$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): $ItemStack
 public "getPickupSound"(arg0: $BlockState$$Type): $Optional<($SoundEvent)>
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
@@ -6682,25 +6682,25 @@ import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$TrackNodeLocation$$Type} from "com.simibubi.create.content.trains.graph.TrackNodeLocation"
-import {$Vec3, $Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$NoCollisionCustomTrackBlock} from "com.railwayteam.railways.content.custom_tracks.NoCollisionCustomTrackBlock"
+import {$Vec3, $Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$Function$$Type} from "java.util.function.Function"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Direction$AxisDirection$$Type} from "net.minecraft.core.Direction$AxisDirection"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Collection, $Collection$$Type} from "java.util.Collection"
 import {$BezierTrackPointLocation$$Type} from "com.simibubi.create.content.trains.track.BezierTrackPointLocation"
 import {$PartialModel} from "dev.engine_room.flywheel.lib.model.baked.PartialModel"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$TrackMaterial, $TrackMaterial$$Type} from "com.simibubi.create.content.trains.track.TrackMaterial"
-import {$ThreadLocal} from "java.lang.ThreadLocal"
-import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$BiFunction$$Type} from "java.util.function.BiFunction"
+import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$TrackTargetingBehaviour$RenderedTrackOverlayType$$Type} from "com.simibubi.create.content.trains.track.TrackTargetingBehaviour$RenderedTrackOverlayType"
+import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$TrackNodeLocation$DiscoveredLocation, $TrackNodeLocation$DiscoveredLocation$$Type} from "com.simibubi.create.content.trains.graph.TrackNodeLocation$DiscoveredLocation"
 import {$TrackShape} from "com.simibubi.create.content.trains.track.TrackShape"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
@@ -6775,8 +6775,8 @@ import {$BoilerBlock$Style} from "com.railwayteam.railways.content.palettes.boil
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$IHaveBigOutline$$Interface} from "com.simibubi.create.foundation.block.IHaveBigOutline"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$IWrenchable$$Interface} from "com.simibubi.create.content.equipment.wrench.IWrenchable"
@@ -6789,8 +6789,8 @@ import {$IHasCustomOutline$$Interface} from "com.railwayteam.railways.mixin_inte
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
-import {$Direction$Axis, $Direction$Axis$$Type} from "net.minecraft.core.Direction$Axis"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
+import {$Direction$Axis, $Direction$Axis$$Type} from "net.minecraft.core.Direction$Axis"
 import {$ItemInteractionResult} from "net.minecraft.world.ItemInteractionResult"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
@@ -6826,25 +6826,25 @@ constructor(arg0: $BlockBehaviour$Properties$$Type)
 
 public "initializeClient"(arg0: $Consumer$$Type): void
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
-public "skipRendering"(arg0: $BlockState$$Type, arg1: $BlockState$$Type, arg2: $Direction$$Type): boolean
 public "getOcclusionShape"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): $VoxelShape
 public "getShadeBrightness"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): float
+public "skipRendering"(arg0: $BlockState$$Type, arg1: $BlockState$$Type, arg2: $Direction$$Type): boolean
 public "getShapeForState"(arg0: $BlockState$$Type): $VoxelShape
 public "getRotatedBlockState"(arg0: $BlockState$$Type, arg1: $Direction$$Type): $BlockState
 public "getShape"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $CollisionContext$$Type): $VoxelShape
 public "rotate"(arg0: $BlockState$$Type, arg1: $Rotation$$Type): $BlockState
-public "useItemOn"(arg0: $ItemStack$$Type, arg1: $BlockState$$Type, arg2: $Level$$Type, arg3: $BlockPos$$Type, arg4: $Player$$Type, arg5: $InteractionHand$$Type, arg6: $BlockHitResult$$Type): $ItemInteractionResult
 public "matrixRotation"(arg0: $PoseStack$$Type, arg1: $BlockState$$Type): void
 public "customOutline"(arg0: $PoseStack$$Type, arg1: $VertexConsumer$$Type, arg2: $BlockState$$Type): void
+public "useItemOn"(arg0: $ItemStack$$Type, arg1: $BlockState$$Type, arg2: $Level$$Type, arg3: $BlockPos$$Type, arg4: $Player$$Type, arg5: $InteractionHand$$Type, arg6: $BlockHitResult$$Type): $ItemInteractionResult
 public "getCollisionShape"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $CollisionContext$$Type): $VoxelShape
 public "getInteractionShape"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): $VoxelShape
-public static "playRotateSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public "onWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $InteractionResult
+public static "playRotateSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public "updateAfterWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $BlockState
 public static "playRemoveSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public "onSneakWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $InteractionResult
-public "drawLine"(arg0: $VertexConsumer$$Type, arg1: $PoseStack$$Type, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double): void
 public "drawLineWithAxisOffset"(arg0: $VertexConsumer$$Type, arg1: $PoseStack$$Type, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double, arg9: $Direction$Axis$$Type): void
+public "drawLine"(arg0: $VertexConsumer$$Type, arg1: $PoseStack$$Type, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double): void
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 }
 /**
@@ -6934,10 +6934,10 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
-import {$Component} from "net.minecraft.network.chat.Component"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
+import {$Component} from "net.minecraft.network.chat.Component"
 
 export class $TrackCouplerBlockEntity$AllowedOperationMode extends $Enum<($TrackCouplerBlockEntity$AllowedOperationMode)> implements $StringRepresentable$$Interface {
 readonly "canDecouple": boolean
@@ -6951,11 +6951,11 @@ public static "values"(): ($TrackCouplerBlockEntity$AllowedOperationMode)[]
 public static "valueOf"(arg0: StringJS): $TrackCouplerBlockEntity$AllowedOperationMode
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "translatedName"(): $Component
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
@@ -6978,8 +6978,8 @@ import {$TrackNodeLocation$$Type} from "com.simibubi.create.content.trains.graph
 import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$Function$$Type} from "java.util.function.Function"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -6987,12 +6987,12 @@ import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Objec
 import {$Collection, $Collection$$Type} from "java.util.Collection"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$TrackMaterial, $TrackMaterial$$Type} from "com.simibubi.create.content.trains.track.TrackMaterial"
+import {$BiFunction$$Type} from "java.util.function.BiFunction"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
-import {$BiFunction$$Type} from "java.util.function.BiFunction"
 import {$TrackNodeLocation$DiscoveredLocation, $TrackNodeLocation$DiscoveredLocation$$Type} from "com.simibubi.create.content.trains.graph.TrackNodeLocation$DiscoveredLocation"
-import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$TrackBlock} from "com.simibubi.create.content.trains.track.TrackBlock"
+import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$TrackShape} from "com.simibubi.create.content.trains.track.TrackShape"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
@@ -7048,8 +7048,8 @@ import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$SmokestackStyle} from "com.railwayteam.railways.content.smokestack.SmokestackStyle"
 import {$ShapeWrapper$$Type} from "com.railwayteam.railways.util.ShapeWrapper"
@@ -7119,8 +7119,8 @@ export type $AxisSmokeStackBlock$$Original = $AxisSmokeStackBlock;}
 declare module "com.railwayteam.railways.content.smokestack.block.be.DieselSmokeStackBlockEntity" {
 import {$SmartBlockEntity} from "com.simibubi.create.foundation.blockEntity.SmartBlockEntity"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$ISpeedNotifiable$$Interface} from "com.railwayteam.railways.content.smokestack.ISpeedNotifiable"
 import {$List$$Type} from "java.util.List"
+import {$ISpeedNotifiable$$Interface} from "com.railwayteam.railways.content.smokestack.ISpeedNotifiable"
 import {$BlockEntityBehaviour$$Type} from "com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"

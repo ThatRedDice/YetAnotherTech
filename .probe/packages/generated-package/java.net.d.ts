@@ -138,6 +138,9 @@ import {$InterfaceAddress} from "java.net.InterfaceAddress"
  * Loading the class using require() will not throw an error, but the class will be undefined.
  */
 export class $NetworkInterface {
+public static "networkInterfaces"(): $Stream<($NetworkInterface)>
+public "inetAddresses"(): $Stream<($InetAddress)>
+public "getDisplayName"(): StringJS
 public "getInterfaceAddresses"(): $List<($InterfaceAddress)>
 public "getSubInterfaces"(): $Enumeration<($NetworkInterface)>
 public "subInterfaces"(): $Stream<($NetworkInterface)>
@@ -145,8 +148,6 @@ public static "getByIndex"(arg0: integer): $NetworkInterface
 public "isPointToPoint"(): boolean
 public "supportsMulticast"(): boolean
 public "getMTU"(): integer
-public static "networkInterfaces"(): $Stream<($NetworkInterface)>
-public "inetAddresses"(): $Stream<($InetAddress)>
 public "getName"(): StringJS
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
@@ -155,13 +156,13 @@ public "isVirtual"(): boolean
 public "getParent"(): $NetworkInterface
 public static "getByName"(arg0: StringJS): $NetworkInterface
 public "getIndex"(): integer
-public "getDisplayName"(): StringJS
 public "isUp"(): boolean
 public "isLoopback"(): boolean
 public static "getNetworkInterfaces"(): $Enumeration<($NetworkInterface)>
 public "getInetAddresses"(): $Enumeration<($InetAddress)>
 public static "getByInetAddress"(arg0: $InetAddress$$Type): $NetworkInterface
 public "getHardwareAddress"(): (byte)[]
+get "displayName"(): StringJS
 get "interfaceAddresses"(): $List<($InterfaceAddress)>
 get "pointToPoint"(): boolean
 get "MTU"(): integer
@@ -169,7 +170,6 @@ get "name"(): StringJS
 get "virtual"(): boolean
 get "parent"(): $NetworkInterface
 get "index"(): integer
-get "displayName"(): StringJS
 get "up"(): boolean
 get "loopback"(): boolean
 get "hardwareAddress"(): (byte)[]
@@ -193,9 +193,8 @@ import {$NetworkInterface$$Type} from "java.net.NetworkInterface"
  * Loading the class using require() will not throw an error, but the class will be undefined.
  */
 export class $InetAddress implements $Serializable$$Interface {
-public "isLinkLocalAddress"(): boolean
-public "isReachable"(arg0: $NetworkInterface$$Type, arg1: integer, arg2: integer): boolean
 public "isReachable"(arg0: integer): boolean
+public "isReachable"(arg0: $NetworkInterface$$Type, arg1: integer, arg2: integer): boolean
 public static "getAllByName"(arg0: StringJS): ($InetAddress)[]
 public static "getByAddress"(arg0: StringJS, arg1: (byte)[]): $InetAddress
 public static "getByAddress"(arg0: (byte)[]): $InetAddress
@@ -211,6 +210,7 @@ public "isMCOrgLocal"(): boolean
 public "getCanonicalHostName"(): StringJS
 public static "getLoopbackAddress"(): $InetAddress
 public static "getLocalHost"(): $InetAddress
+public "isLinkLocalAddress"(): boolean
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
@@ -218,7 +218,6 @@ public "getHostAddress"(): StringJS
 public "getAddress"(): (byte)[]
 public "getHostName"(): StringJS
 public static "getByName"(arg0: StringJS): $InetAddress
-get "linkLocalAddress"(): boolean
 get "multicastAddress"(): boolean
 get "anyLocalAddress"(): boolean
 get "loopbackAddress"(): boolean
@@ -231,6 +230,7 @@ get "MCOrgLocal"(): boolean
 get "canonicalHostName"(): StringJS
 public static get "loopbackAddress"(): $InetAddress
 public static get "localHost"(): $InetAddress
+get "linkLocalAddress"(): boolean
 get "hostAddress"(): StringJS
 get "address"(): (byte)[]
 get "hostName"(): StringJS
@@ -261,37 +261,37 @@ import {$DatagramPacket$$Type} from "java.net.DatagramPacket"
  * Loading the class using require() will not throw an error, but the class will be undefined.
  */
 export class $DatagramSocket implements $Closeable$$Interface {
-constructor(arg0: integer)
-constructor(arg0: integer, arg1: $InetAddress$$Type)
-constructor(arg0: $SocketAddress$$Type)
 constructor()
+constructor(arg0: integer)
+constructor(arg0: $SocketAddress$$Type)
+constructor(arg0: integer, arg1: $InetAddress$$Type)
 
-public "receive"(arg0: $DatagramPacket$$Type): void
 public "joinGroup"(arg0: $SocketAddress$$Type, arg1: $NetworkInterface$$Type): void
 public "leaveGroup"(arg0: $SocketAddress$$Type, arg1: $NetworkInterface$$Type): void
-public "getInetAddress"(): $InetAddress
-public "getRemoteSocketAddress"(): $SocketAddress
-public "getLocalSocketAddress"(): $SocketAddress
-public "getLocalPort"(): integer
-public "getReuseAddress"(): boolean
 public "setBroadcast"(arg0: boolean): void
 /**
  * 
  * @deprecated
  */
 public static "setDatagramSocketImplFactory"(arg0: $DatagramSocketImplFactory$$Type): void
+public "receive"(arg0: $DatagramPacket$$Type): void
+public "getInetAddress"(): $InetAddress
+public "getRemoteSocketAddress"(): $SocketAddress
+public "getLocalSocketAddress"(): $SocketAddress
+public "getLocalPort"(): integer
+public "getReuseAddress"(): boolean
 public "supportedOptions"(): $Set<($SocketOption<(never)>)>
 public "isConnected"(): boolean
 public "setOption"<T>(arg0: $SocketOption$$Type<(T)>, arg1: T): $DatagramSocket
 public "getLocalAddress"(): $InetAddress
 public "getOption"<T>(arg0: $SocketOption$$Type<(T)>): T
+public "bind"(arg0: $SocketAddress$$Type): void
 public "getBroadcast"(): boolean
 public "connect"(arg0: $SocketAddress$$Type): void
 public "connect"(arg0: $InetAddress$$Type, arg1: integer): void
 public "close"(): void
 public "getPort"(): integer
 public "getChannel"(): $DatagramChannel
-public "bind"(arg0: $SocketAddress$$Type): void
 public "disconnect"(): void
 public "isClosed"(): boolean
 public "send"(arg0: $DatagramPacket$$Type): void
@@ -305,13 +305,13 @@ public "getSoTimeout"(): integer
 public "getTrafficClass"(): integer
 public "setSendBufferSize"(arg0: integer): void
 public "isBound"(): boolean
+set "broadcast"(value: boolean)
+public static set "datagramSocketImplFactory"(value: $DatagramSocketImplFactory$$Type)
 get "inetAddress"(): $InetAddress
 get "remoteSocketAddress"(): $SocketAddress
 get "localSocketAddress"(): $SocketAddress
 get "localPort"(): integer
 get "reuseAddress"(): boolean
-set "broadcast"(value: boolean)
-public static set "datagramSocketImplFactory"(value: $DatagramSocketImplFactory$$Type)
 get "connected"(): boolean
 get "localAddress"(): $InetAddress
 get "broadcast"(): boolean
@@ -339,8 +339,8 @@ export type $DatagramSocket$$Type = ($DatagramSocket);
  */
 export type $DatagramSocket$$Original = $DatagramSocket;}
 declare module "java.net.URI" {
-import {$Serializable$$Interface} from "java.io.Serializable"
 import {$Comparable$$Interface} from "java.lang.Comparable"
+import {$Serializable$$Interface} from "java.io.Serializable"
 import {$URL} from "java.net.URL"
 
 /**
@@ -355,14 +355,14 @@ constructor(arg0: StringJS)
 constructor(arg0: StringJS, arg1: StringJS, arg2: StringJS)
 constructor(arg0: StringJS, arg1: StringJS, arg2: StringJS, arg3: StringJS)
 
-public "normalize"(): $URI
-public "relativize"(arg0: $URI$$Type): $URI
 public "getRawSchemeSpecificPart"(): StringJS
 public "parseServerAuthority"(): $URI
 public "getSchemeSpecificPart"(): StringJS
 public "getRawUserInfo"(): StringJS
 public "getFragment"(): StringJS
 public "toASCIIString"(): StringJS
+public "normalize"(): $URI
+public "relativize"(arg0: $URI$$Type): $URI
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
@@ -549,9 +549,9 @@ import {$Closeable$$Interface} from "java.io.Closeable"
  */
 export class $ServerSocket implements $Closeable$$Interface {
 constructor(arg0: integer)
+constructor()
 constructor(arg0: integer, arg1: integer, arg2: $InetAddress$$Type)
 constructor(arg0: integer, arg1: integer)
-constructor()
 
 public "getInetAddress"(): $InetAddress
 public "getLocalSocketAddress"(): $SocketAddress
@@ -560,6 +560,8 @@ public "getReuseAddress"(): boolean
 public "supportedOptions"(): $Set<($SocketOption<(never)>)>
 public "setOption"<T>(arg0: $SocketOption$$Type<(T)>, arg1: T): $ServerSocket
 public "getOption"<T>(arg0: $SocketOption$$Type<(T)>): T
+public "bind"(arg0: $SocketAddress$$Type, arg1: integer): void
+public "bind"(arg0: $SocketAddress$$Type): void
 /**
  * 
  * @deprecated
@@ -569,8 +571,6 @@ public "toString"(): StringJS
 public "accept"(): $Socket
 public "close"(): void
 public "getChannel"(): $ServerSocketChannel
-public "bind"(arg0: $SocketAddress$$Type): void
-public "bind"(arg0: $SocketAddress$$Type, arg1: integer): void
 public "isClosed"(): boolean
 public "setReuseAddress"(arg0: boolean): void
 public "setReceiveBufferSize"(arg0: integer): void
@@ -721,8 +721,8 @@ import {$FileNameMap, $FileNameMap$$Type} from "java.net.FileNameMap"
 import {$List} from "java.util.List"
 import {$URL} from "java.net.URL"
 import {$Class$$Type} from "java.lang.Class"
-import {$InputStream, $InputStream$$Type} from "java.io.InputStream"
 import {$OutputStream} from "java.io.OutputStream"
+import {$InputStream, $InputStream$$Type} from "java.io.InputStream"
 
 /**
  * This class is not allowed By KubeJS!
@@ -875,22 +875,22 @@ import {$InputStream} from "java.io.InputStream"
  * Loading the class using require() will not throw an error, but the class will be undefined.
  */
 export class $Socket implements $Closeable$$Interface {
+constructor(arg0: StringJS, arg1: integer, arg2: $InetAddress$$Type, arg3: integer)
 constructor(arg0: $InetAddress$$Type, arg1: integer)
-constructor(arg0: StringJS, arg1: integer)
+constructor(arg0: $InetAddress$$Type, arg1: integer, arg2: $InetAddress$$Type, arg3: integer)
 /**
  * 
  * @deprecated
  */
 constructor(arg0: $InetAddress$$Type, arg1: integer, arg2: boolean)
-constructor()
-constructor(arg0: $Proxy$$Type)
 /**
  * 
  * @deprecated
  */
 constructor(arg0: StringJS, arg1: integer, arg2: boolean)
-constructor(arg0: $InetAddress$$Type, arg1: integer, arg2: $InetAddress$$Type, arg3: integer)
-constructor(arg0: StringJS, arg1: integer, arg2: $InetAddress$$Type, arg3: integer)
+constructor()
+constructor(arg0: StringJS, arg1: integer)
+constructor(arg0: $Proxy$$Type)
 
 public "isOutputShutdown"(): boolean
 public "isInputShutdown"(): boolean
@@ -908,7 +908,6 @@ public "getOOBInline"(): boolean
  * @deprecated
  */
 public static "setSocketImplFactory"(arg0: $SocketImplFactory$$Type): void
-public "getOutputStream"(): $OutputStream
 public "supportedOptions"(): $Set<($SocketOption<(never)>)>
 public "isConnected"(): boolean
 public "setOption"<T>(arg0: $SocketOption$$Type<(T)>, arg1: T): $Socket
@@ -916,6 +915,8 @@ public "getLocalAddress"(): $InetAddress
 public "getOption"<T>(arg0: $SocketOption$$Type<(T)>): T
 public "shutdownInput"(): void
 public "shutdownOutput"(): void
+public "getOutputStream"(): $OutputStream
+public "bind"(arg0: $SocketAddress$$Type): void
 public "toString"(): StringJS
 public "connect"(arg0: $SocketAddress$$Type): void
 public "connect"(arg0: $SocketAddress$$Type, arg1: integer): void
@@ -923,7 +924,6 @@ public "close"(): void
 public "getInputStream"(): $InputStream
 public "getPort"(): integer
 public "getChannel"(): $SocketChannel
-public "bind"(arg0: $SocketAddress$$Type): void
 public "isClosed"(): boolean
 public "setKeepAlive"(arg0: boolean): void
 public "setOOBInline"(arg0: boolean): void
@@ -952,9 +952,9 @@ get "keepAlive"(): boolean
 get "reuseAddress"(): boolean
 get "OOBInline"(): boolean
 public static set "socketImplFactory"(value: $SocketImplFactory$$Type)
-get "outputStream"(): $OutputStream
 get "connected"(): boolean
 get "localAddress"(): $InetAddress
+get "outputStream"(): $OutputStream
 get "inputStream"(): $InputStream
 get "port"(): integer
 get "channel"(): $SocketChannel

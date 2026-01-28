@@ -9,16 +9,16 @@ constructor(arg0: $ResourceLocation$$Type, arg1: $Screen$$Type, arg2: integer, a
 
 public "getBook"(): $ResourceLocation
 public "getGraphics"(): $GuiGraphics
-public "getScreen"(): $Screen
+public "getPartialTicks"(): float
 public "getMouseX"(): integer
 public "getMouseY"(): integer
-public "getPartialTicks"(): float
+public "getScreen"(): $Screen
 get "book"(): $ResourceLocation
 get "graphics"(): $GuiGraphics
-get "screen"(): $Screen
+get "partialTicks"(): float
 get "mouseX"(): integer
 get "mouseY"(): integer
-get "partialTicks"(): float
+get "screen"(): $Screen
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -195,8 +195,8 @@ declare module "vazkii.patchouli.api.IComponentRenderContext" {
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$GuiGraphics$$Type} from "net.minecraft.client.gui.GuiGraphics"
-import {$Screen} from "net.minecraft.client.gui.screens.Screen"
 import {$Ingredient$$Type} from "net.minecraft.world.item.crafting.Ingredient"
+import {$Screen} from "net.minecraft.client.gui.screens.Screen"
 import {$Style} from "net.minecraft.network.chat.Style"
 import {$List$$Type} from "java.util.List"
 import {$AbstractWidget$$Type} from "net.minecraft.client.gui.components.AbstractWidget"
@@ -205,26 +205,25 @@ import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$Button$$Type} from "net.minecraft.client.gui.components.Button"
 
 export interface $IComponentRenderContext$$Interface {
-get "textColor"(): integer
 set "hoverTooltip"(value: $List$$Type<(StringJS)>)
 set "hoverTooltipComponents"(value: $List$$Type<($Component$$Type)>)
 get "bookTexture"(): $ResourceLocation
 get "craftingTexture"(): $ResourceLocation
 get "headerColor"(): integer
 get "ticksInBook"(): integer
+get "textColor"(): integer
 get "gui"(): $Screen
 get "font"(): $Style
 }
 
 export class $IComponentRenderContext implements $IComponentRenderContext$$Interface {
- "getTextColor"(): integer
- "isAreaHovered"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: integer, arg5: integer): boolean
 /**
  * 
  * @deprecated
  */
  "setHoverTooltip"(arg0: $List$$Type<(StringJS)>): void
  "setHoverTooltipComponents"(arg0: $List$$Type<($Component$$Type)>): void
+ "isAreaHovered"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: integer, arg5: integer): boolean
  "navigateToEntry"(arg0: $ResourceLocation$$Type, arg1: integer, arg2: boolean): boolean
 /**
  * 
@@ -235,11 +234,12 @@ export class $IComponentRenderContext implements $IComponentRenderContext$$Inter
  "getCraftingTexture"(): $ResourceLocation
  "getHeaderColor"(): integer
  "getTicksInBook"(): integer
+ "getTextColor"(): integer
  "renderItemStack"(arg0: $GuiGraphics$$Type, arg1: integer, arg2: integer, arg3: integer, arg4: integer, arg5: $ItemStack$$Type): void
  "getGui"(): $Screen
+ "renderIngredient"(arg0: $GuiGraphics$$Type, arg1: integer, arg2: integer, arg3: integer, arg4: integer, arg5: $Ingredient$$Type): void
  "addWidget"(arg0: $AbstractWidget$$Type, arg1: integer): void
  "getFont"(): $Style
- "renderIngredient"(arg0: $GuiGraphics$$Type, arg1: integer, arg2: integer, arg3: integer, arg4: integer, arg5: $Ingredient$$Type): void
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_

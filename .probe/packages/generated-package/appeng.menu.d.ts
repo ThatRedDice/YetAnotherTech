@@ -5,8 +5,8 @@ import {$List, $List$$Type} from "java.util.List"
 import {$IActionSource} from "appeng.api.networking.security.IActionSource"
 import {$MenuHostLocator, $MenuHostLocator$$Type} from "appeng.menu.locator.MenuHostLocator"
 import {$InventoryAction$$Type} from "appeng.helpers.InventoryAction"
-import {$Inventory, $Inventory$$Type} from "net.minecraft.world.entity.player.Inventory"
 import {$SlotSemantic, $SlotSemantic$$Type} from "appeng.menu.SlotSemantic"
+import {$Inventory, $Inventory$$Type} from "net.minecraft.world.entity.player.Inventory"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
 import {$ShortSet$$Type} from "it.unimi.dsi.fastutil.shorts.ShortSet"
 import {$Slot, $Slot$$Type} from "net.minecraft.world.inventory.Slot"
@@ -36,8 +36,6 @@ static readonly "QUICKCRAFT_TYPE_CHARITABLE": integer
 
 constructor(arg0: $MenuType$$Type<(never)>, arg1: integer, arg2: $Inventory$$Type, arg3: any)
 
-public "onSlotChange"(arg0: $Slot$$Type): void
-public "doAction"(arg0: $ServerPlayer$$Type, arg1: $InventoryAction$$Type, arg2: integer, arg3: long): void
 public "sendAllDataToRemote"(): void
 public "quickMoveStack"(arg0: $Player$$Type, arg1: integer): $ItemStack
 public "clicked"(arg0: integer, arg1: integer, arg2: $ClickType$$Type, arg3: $Player$$Type): void
@@ -61,14 +59,16 @@ public "receiveServerSyncData"(arg0: $RegistryFriendlyByteBuf$$Type): void
 public "receiveClientAction"(arg0: StringJS, arg1: StringJS): void
 public "isReturnedFromSubScreen"(): boolean
 public "setReturnedFromSubScreen"(arg0: boolean): void
+public "onSlotChange"(arg0: $Slot$$Type): void
+public "doAction"(arg0: $ServerPlayer$$Type, arg1: $InventoryAction$$Type, arg2: integer, arg3: long): void
+public "setFilter"(arg0: integer, arg1: $ItemStack$$Type): void
 public "setLocator"(arg0: $MenuHostLocator$$Type): void
 public "getLocator"(): $MenuHostLocator
-public "setFilter"(arg0: integer, arg1: $ItemStack$$Type): void
 public "getTarget"(): any
 public "getSlots"(arg0: $SlotSemantic$$Type): $List<($Slot)>
 public "getBlockEntity"(): $BlockEntity
-public "broadcastChanges"(): void
 public "isClientSide"(): boolean
+public "broadcastChanges"(): void
 public "stillValid"(arg0: $Player$$Type): boolean
 public "getPlayer"(): $Player
 public "canDragTo"(arg0: $Slot$$Type): boolean

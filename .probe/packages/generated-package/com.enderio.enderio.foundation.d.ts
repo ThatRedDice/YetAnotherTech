@@ -2,14 +2,14 @@ declare module "com.enderio.enderio.foundation.block.ProgressMachineBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$Block} from "net.minecraft.world.level.block.Block"
-import {$MachineBlockEntity} from "com.enderio.enderio.foundation.block.entity.MachineBlockEntity"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
+import {$MachineBlockEntity} from "com.enderio.enderio.foundation.block.entity.MachineBlockEntity"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Supplier$$Type} from "java.util.function.Supplier"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$DirectionProperty} from "net.minecraft.world.level.block.state.properties.DirectionProperty"
 import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
@@ -54,8 +54,8 @@ import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$ICustomCreativeTabEntries$$Interface} from "com.enderio.core.common.item.ICustomCreativeTabEntries"
 import {$CreativeModeTab$Output$$Type} from "net.minecraft.world.item.CreativeModeTab$Output"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$CreativeModeTab$ItemDisplayParameters$$Type} from "net.minecraft.world.item.CreativeModeTab$ItemDisplayParameters"
 
@@ -91,20 +91,20 @@ import {$FluidStack, $FluidStack$$Type} from "net.neoforged.neoforge.fluids.Flui
 export class $MachineFluidTank implements $IFluidTank$$Interface {
 constructor(arg0: integer, arg1: $MachineFluidHandler$$Type)
 
-public "setFluid"(arg0: $FluidStack$$Type): void
 public "getFluid"(): $FluidStack
 public "isFluidValid"(arg0: $FluidStack$$Type): boolean
 public "getFluidAmount"(): integer
+public "setFluid"(arg0: $FluidStack$$Type): void
+public "isEmpty"(): boolean
+public "fill"(arg0: $FluidStack$$Type, arg1: $IFluidHandler$FluidAction$$Type): integer
 public "getCapacity"(): integer
 public "drain"(arg0: $FluidStack$$Type, arg1: $IFluidHandler$FluidAction$$Type): $FluidStack
 public "drain"(arg0: integer, arg1: $IFluidHandler$FluidAction$$Type): $FluidStack
-public "isEmpty"(): boolean
-public "fill"(arg0: $FluidStack$$Type, arg1: $IFluidHandler$FluidAction$$Type): integer
-set "fluid"(value: $FluidStack$$Type)
 get "fluid"(): $FluidStack
 get "fluidAmount"(): integer
-get "capacity"(): integer
+set "fluid"(value: $FluidStack$$Type)
 get "empty"(): boolean
+get "capacity"(): integer
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -148,9 +148,9 @@ import {$MultiSlotAccess$$Type} from "com.enderio.enderio.foundation.inventory.M
 import {$IntConsumer$$Type} from "java.util.function.IntConsumer"
 import {$Tag$$Type} from "net.minecraft.nbt.Tag"
 import {$ItemContainerContents, $ItemContainerContents$$Type} from "net.minecraft.world.item.component.ItemContainerContents"
-import {$ItemStackHandler} from "net.neoforged.neoforge.items.ItemStackHandler"
-import {$MachineState$$Type} from "com.enderio.enderio.foundation.state.MachineState"
 import {$MachineInventoryLayout, $MachineInventoryLayout$$Type} from "com.enderio.enderio.foundation.inventory.MachineInventoryLayout"
+import {$MachineState$$Type} from "com.enderio.enderio.foundation.state.MachineState"
+import {$ItemStackHandler} from "net.neoforged.neoforge.items.ItemStackHandler"
 
 export class $MachineInventory extends $ItemStackHandler {
 constructor(arg0: $IOConfigurable$$Type, arg1: $MachineInventoryLayout$$Type)
@@ -213,8 +213,8 @@ import {$IOConfigurable, $IOConfigurable$$Type} from "com.enderio.enderio.api.io
 import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$FluidStack, $FluidStack$$Type} from "net.neoforged.neoforge.fluids.FluidStack"
 import {$INBTSerializable$$Interface} from "net.neoforged.neoforge.common.util.INBTSerializable"
-import {$MachineTankLayout, $MachineTankLayout$$Type} from "com.enderio.enderio.foundation.io.fluid.MachineTankLayout"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$MachineTankLayout, $MachineTankLayout$$Type} from "com.enderio.enderio.foundation.io.fluid.MachineTankLayout"
 import {$IntConsumer$$Type} from "java.util.function.IntConsumer"
 import {$Tag, $Tag$$Type} from "net.minecraft.nbt.Tag"
 import {$IFluidHandler, $IFluidHandler$$Interface} from "net.neoforged.neoforge.fluids.capability.IFluidHandler"
@@ -233,24 +233,24 @@ public "getTankCapacity"(arg0: integer): integer
 public "isFluidValid"(arg0: integer, arg1: $FluidStack$$Type): boolean
 public "canInsert"(arg0: integer): boolean
 public "getForSide"(arg0: $Direction$$Type): $IFluidHandler
-public "addSlotChangedCallback"(arg0: $IntConsumer$$Type): void
 public "setFluidInTank"(arg0: integer, arg1: $FluidStack$$Type): void
-public "drain"(arg0: integer, arg1: $FluidStack$$Type, arg2: $IFluidHandler$FluidAction$$Type): $FluidStack
-public "drain"(arg0: $FluidStack$$Type, arg1: $IFluidHandler$FluidAction$$Type): $FluidStack
-public "drain"(arg0: integer, arg1: integer, arg2: $IFluidHandler$FluidAction$$Type): $FluidStack
-public "drain"(arg0: integer, arg1: $IFluidHandler$FluidAction$$Type): $FluidStack
+public "addSlotChangedCallback"(arg0: $IntConsumer$$Type): void
 public "fill"(arg0: integer, arg1: $FluidStack$$Type, arg2: $IFluidHandler$FluidAction$$Type): integer
 public "fill"(arg0: $FluidStack$$Type, arg1: $IFluidHandler$FluidAction$$Type): integer
+public "drain"(arg0: $FluidStack$$Type, arg1: $IFluidHandler$FluidAction$$Type): $FluidStack
+public "drain"(arg0: integer, arg1: $IFluidHandler$FluidAction$$Type): $FluidStack
+public "drain"(arg0: integer, arg1: $FluidStack$$Type, arg2: $IFluidHandler$FluidAction$$Type): $FluidStack
+public "drain"(arg0: integer, arg1: integer, arg2: $IFluidHandler$FluidAction$$Type): $FluidStack
 public "getLayout"(): $MachineTankLayout
 public "getConfig"(): $IOConfigurable
+public "deserializeNBT"(arg0: $HolderLookup$Provider$$Type, arg1: $Tag$$Type): void
+public "deserializeNBT"(arg0: $HolderLookup$Provider$$Type, arg1: $CompoundTag$$Type): void
+public "serializeNBT"(arg0: $HolderLookup$Provider$$Type): $Tag
 /**
  * 
  * @deprecated
  */
 public "getTank"(arg0: integer): $MachineFluidTank
-public "deserializeNBT"(arg0: $HolderLookup$Provider$$Type, arg1: $CompoundTag$$Type): void
-public "deserializeNBT"(arg0: $HolderLookup$Provider$$Type, arg1: $Tag$$Type): void
-public "serializeNBT"(arg0: $HolderLookup$Provider$$Type): $Tag
 get "tanks"(): integer
 get "layout"(): $MachineTankLayout
 get "config"(): $IOConfigurable
@@ -270,26 +270,26 @@ import {$IEnergyStorage$$Interface} from "net.neoforged.neoforge.energy.IEnergyS
 import {$EnergyIOMode} from "com.enderio.enderio.api.io.energy.EnergyIOMode"
 
 export interface $IMachineEnergyStorage$$Interface extends $IEnergyStorage$$Interface {
-set "energyStored"(value: integer)
 get "IOMode"(): $EnergyIOMode
 get "maxEnergyUse"(): integer
+set "energyStored"(value: integer)
 get "config"(): $IOConfigurable
 get "energyStored"(): integer
 get "maxEnergyStored"(): integer
 }
 
 export class $IMachineEnergyStorage implements $IMachineEnergyStorage$$Interface {
- "setEnergyStored"(arg0: integer): void
  "getIOMode"(): $EnergyIOMode
- "addEnergy"(arg0: integer): integer
  "addEnergy"(arg0: integer, arg1: boolean): integer
+ "addEnergy"(arg0: integer): integer
  "takeEnergy"(arg0: integer): integer
  "getMaxEnergyUse"(): integer
+ "setEnergyStored"(arg0: integer): void
  "consumeEnergy"(arg0: integer, arg1: boolean): integer
  "getConfig"(): $IOConfigurable
+ "canExtract"(): boolean
  "extractEnergy"(arg0: integer, arg1: boolean): integer
  "receiveEnergy"(arg0: integer, arg1: boolean): integer
- "canExtract"(): boolean
  "canReceive"(): boolean
  "getEnergyStored"(): integer
  "getMaxEnergyStored"(): integer
@@ -309,8 +309,8 @@ import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$Bl
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$MachineBlockEntity} from "com.enderio.enderio.foundation.block.entity.MachineBlockEntity"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
+import {$MachineBlockEntity} from "com.enderio.enderio.foundation.block.entity.MachineBlockEntity"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
@@ -408,8 +408,8 @@ import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
-import {$Codec} from "com.mojang.serialization.Codec"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
+import {$Codec} from "com.mojang.serialization.Codec"
 import {$BlockEntityType, $BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Supplier, $Supplier$$Type} from "java.util.function.Supplier"
 import {$Item} from "net.minecraft.world.item.Item"
@@ -504,20 +504,20 @@ import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$MenuProvider$$Interface} from "net.minecraft.world.MenuProvider"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$Set} from "java.util.Set"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
-import {$ModelData} from "net.neoforged.neoforge.client.model.data.ModelData"
+import {$Set} from "java.util.Set"
 import {$Wrenchable$$Interface} from "com.enderio.enderio.foundation.block.entity.Wrenchable"
+import {$ModelData} from "net.neoforged.neoforge.client.model.data.ModelData"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$RedstoneControl, $RedstoneControl$$Type} from "com.enderio.enderio.api.io.RedstoneControl"
-import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$MachineInventoryLayout} from "com.enderio.enderio.foundation.inventory.MachineInventoryLayout"
+import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$NetworkDataSlot$CodecType} from "com.enderio.core.common.network.NetworkDataSlot$CodecType"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$IOConfigurable, $IOConfigurable$$Interface} from "com.enderio.enderio.api.io.IOConfigurable"
-import {$MachineInventory} from "com.enderio.enderio.foundation.inventory.MachineInventory"
 import {$SideConfig} from "com.enderio.enderio.api.io.SideConfig"
+import {$MachineInventory} from "com.enderio.enderio.foundation.inventory.MachineInventory"
 import {$IOConfig} from "com.enderio.enderio.foundation.io.IOConfig"
 import {$IItemHandler} from "net.neoforged.neoforge.items.IItemHandler"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
@@ -549,11 +549,10 @@ public "serverTick"(): void
 public "loadAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "saveAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "canAct"(): boolean
-public "getInventoryLayout"(): $MachineInventoryLayout
-public "createInventoryLayout"(): $MachineInventoryLayout
 public "onBlockEntityUsed"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $InteractionHand$$Type, arg5: $BlockHitResult$$Type): $ItemInteractionResult
+public "getInventoryLayout"(): $MachineInventoryLayout
 public "supportsRedstoneControl"(): boolean
-public "canOpenMenu"(): boolean
+public "createInventoryLayout"(): $MachineInventoryLayout
 public "getDefaultIOConfig"(): $IOConfig
 public "updateMachineState"(arg0: $MachineState$$Type, arg1: boolean): void
 public "isRedstoneBlocked"(): boolean
@@ -565,6 +564,7 @@ public "setIOMode"(arg0: $Direction$$Type, arg1: $IOMode$$Type): void
 public "getMachineStates"(): $Set<($MachineState)>
 public "getRedstoneControl"(): $RedstoneControl
 public "setRedstoneControl"(arg0: $RedstoneControl$$Type): void
+public "canOpenMenu"(): boolean
 public "canActSlow"(): boolean
 public "onWrenched"(arg0: $UseOnContext$$Type): $ItemInteractionResult
 public "hasInventory"(): boolean
@@ -641,8 +641,8 @@ import {$Direction} from "net.minecraft.core.Direction"
 import {$IFluidHandler} from "net.neoforged.neoforge.fluids.capability.IFluidHandler"
 import {$MachineFluidHandler} from "com.enderio.enderio.foundation.io.fluid.MachineFluidHandler"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
-import {$MachineTankLayout} from "com.enderio.enderio.foundation.io.fluid.MachineTankLayout"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$MachineTankLayout} from "com.enderio.enderio.foundation.io.fluid.MachineTankLayout"
 
 export interface $FluidTankUser$$Interface {
 get "tankLayout"(): $MachineTankLayout
@@ -671,8 +671,8 @@ declare module "com.enderio.enderio.foundation.particle.RangeParticleType" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$ParticleType} from "net.minecraft.core.particles.ParticleType"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
-import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RangeParticleData} from "com.enderio.enderio.foundation.particle.RangeParticleData"
+import {$MapCodec} from "com.mojang.serialization.MapCodec"
 
 export class $RangeParticleType extends $ParticleType<($RangeParticleData)> {
 constructor()
@@ -748,12 +748,12 @@ import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$Map, $Map$$Type} from "java.util.Map"
 import {$Optional} from "java.util.Optional"
 import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
-import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$Function$$Type} from "java.util.function.Function"
-import {$Tag, $Tag$$Type} from "net.minecraft.nbt.Tag"
 import {$IOMode, $IOMode$$Type} from "com.enderio.enderio.api.io.IOMode"
+import {$Tag, $Tag$$Type} from "net.minecraft.nbt.Tag"
 import {$Record} from "java.lang.Record"
 
 export class $IOConfig extends $Record {
@@ -834,8 +834,8 @@ declare module "com.enderio.enderio.foundation.block.entity.PoweredMachineBlockE
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Direction} from "net.minecraft.core.Direction"
-import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$SideConfig} from "com.enderio.enderio.api.io.SideConfig"
+import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$MachineInstallable$$Interface} from "com.enderio.enderio.foundation.block.entity.MachineInstallable"
 import {$CapacitorData} from "com.enderio.enderio.api.capacitor.CapacitorData"
 import {$MachineBlockEntity} from "com.enderio.enderio.foundation.block.entity.MachineBlockEntity"
@@ -850,8 +850,8 @@ import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext
 import {$IEnergyStorage} from "net.neoforged.neoforge.energy.IEnergyStorage"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$SoulBindable} from "com.enderio.enderio.api.soul.binding.SoulBindable"
-import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$EnergyIOMode, $EnergyIOMode$$Type} from "com.enderio.enderio.api.io.energy.EnergyIOMode"
+import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $PoweredMachineBlockEntity extends $MachineBlockEntity implements $MachineInstallable$$Interface {
 static readonly "ITEM_HANDLER_PROVIDER": $ICapabilityProvider<($MachineBlockEntity), ($Direction), ($IItemHandler)>
@@ -864,8 +864,8 @@ static readonly "SIDE_CONFIG_PROVIDER": $ICapabilityProvider<($MachineBlockEntit
 
 constructor(arg0: $BlockEntityType$$Type<(never)>, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: boolean, arg4: $CapacitorSupport$$Type, arg5: $EnergyIOMode$$Type, arg6: $CapacitorScalable$$Type, arg7: $CapacitorScalable$$Type)
 
-public "getEnergyStorage"(): $PoweredMachineEnergyStorage
 public "hasEnergy"(): boolean
+public "getEnergyStorage"(): $PoweredMachineEnergyStorage
 public "tryItemInstall"(arg0: $ItemStack$$Type, arg1: $UseOnContext$$Type): $InteractionResult
 public "getMaxEnergyUse"(): integer
 public "requiresCapacitor"(): boolean
@@ -912,20 +912,20 @@ import {$MenuProvider$$Interface} from "net.minecraft.world.MenuProvider"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$Set, $Set$$Type} from "java.util.Set"
-import {$ModelData} from "net.neoforged.neoforge.client.model.data.ModelData"
 import {$Wrenchable$$Interface} from "com.enderio.enderio.foundation.block.entity.Wrenchable"
+import {$ModelData} from "net.neoforged.neoforge.client.model.data.ModelData"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$RedstoneControl, $RedstoneControl$$Type} from "com.enderio.enderio.api.io.RedstoneControl"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$IOConfigurable$$Interface} from "com.enderio.enderio.api.io.IOConfigurable"
-import {$MachineInventory} from "com.enderio.enderio.foundation.inventory.MachineInventory"
 import {$SideConfig} from "com.enderio.enderio.api.io.SideConfig"
+import {$MachineInventory} from "com.enderio.enderio.foundation.inventory.MachineInventory"
 import {$IOConfig} from "com.enderio.enderio.foundation.io.IOConfig"
 import {$IItemHandler} from "net.neoforged.neoforge.items.IItemHandler"
 import {$ClientGamePacketListener} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
-import {$ItemInteractionResult} from "net.minecraft.world.ItemInteractionResult"
 import {$EIOBlockEntity} from "com.enderio.enderio.foundation.block.EIOBlockEntity"
+import {$ItemInteractionResult} from "net.minecraft.world.ItemInteractionResult"
 import {$AbstractContainerMenu, $AbstractContainerMenu$$Type} from "net.minecraft.world.inventory.AbstractContainerMenu"
 import {$RegistryFriendlyByteBuf$$Type} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$ICapabilityProvider} from "net.neoforged.neoforge.capabilities.ICapabilityProvider"
@@ -944,12 +944,12 @@ static readonly "SIDE_CONFIG_PROVIDER": $ICapabilityProvider<($MachineBlockEntit
 
 constructor(arg0: $BlockEntityType$$Type<(never)>, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: boolean)
 
-public "serverTick"(): void
 public "getUpdatePacket"(): $Packet<($ClientGamePacketListener)>
+public "serverTick"(): void
 public "canAct"(arg0: integer): boolean
 public "canAct"(): boolean
-public "supportsRedstoneControl"(): boolean
 public "setMachineOwner"(arg0: $UUID$$Type): void
+public "supportsRedstoneControl"(): boolean
 public "getDefaultIOConfig"(): $IOConfig
 public "isIOConfigMutable"(): boolean
 public "getIOConfig"(): $IOConfig
@@ -965,8 +965,8 @@ public "getRedstoneControl"(): $RedstoneControl
 public "setRedstoneControl"(arg0: $RedstoneControl$$Type): void
 public "onWrenched"(arg0: $UseOnContext$$Type): $ItemInteractionResult
 public "hasInventory"(): boolean
-public "isActive"(): boolean
 public "getDisplayName"(): $Component
+public "isActive"(): boolean
 public "getInventory"(): $MachineInventory
 public "removeComponentsFromTag"(arg0: $CompoundTag$$Type): void
 public "getModelData"(): $ModelData
@@ -986,8 +986,8 @@ get "machineOwnerOrRandom"(): $UUID
 get "machineStates"(): $Set<($MachineState)>
 get "redstoneControl"(): $RedstoneControl
 set "redstoneControl"(value: $RedstoneControl$$Type)
-get "active"(): boolean
 get "displayName"(): $Component
+get "active"(): boolean
 get "inventory"(): $MachineInventory
 get "modelData"(): $ModelData
 }
@@ -1006,9 +1006,9 @@ import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 
 export class $MachineInventoryLayout {
 public "canExtract"(arg0: integer): boolean
-public "getSlotCount"(): integer
 public "getStackLimit"(arg0: integer): integer
 public "canInsert"(arg0: integer): boolean
+public "getSlotCount"(): integer
 public "getCapacitorSlot"(): integer
 public "supportsCapacitor"(): boolean
 public "guiCanInsert"(arg0: integer): boolean
@@ -1075,7 +1075,7 @@ get "type"(): $ParticleType<(never)>
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $RangeParticleData$$Type = ({"color"?: StringJS, "range"?: integer}) | ([color?: StringJS, range?: integer]);
+export type $RangeParticleData$$Type = ({"range"?: integer, "color"?: StringJS}) | ([range?: integer, color?: StringJS]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -1088,8 +1088,8 @@ import {$RecipeType} from "net.minecraft.world.item.crafting.RecipeType"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
-import {$RecipeInput, $RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$Recipe$$Interface} from "net.minecraft.world.item.crafting.Recipe"
+import {$RecipeInput, $RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$OutputStack} from "com.enderio.core.common.recipes.OutputStack"
 import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
@@ -1151,11 +1151,8 @@ import {$MachineFluidTank} from "com.enderio.enderio.foundation.io.fluid.Machine
 export class $TankAccess {
 constructor()
 
-public "setFluid"(arg0: $FluidTankUser$$Type, arg1: $FluidStack$$Type): void
-public "setFluid"(arg0: $MachineFluidHandler$$Type, arg1: $FluidStack$$Type): void
-public "canExtract"(arg0: $FluidTankUser$$Type): boolean
 public "canExtract"(arg0: $MachineFluidHandler$$Type): boolean
-public "isTank"(arg0: integer): boolean
+public "canExtract"(arg0: $FluidTankUser$$Type): boolean
 public "getFluid"(arg0: $FluidTankUser$$Type): $FluidStack
 public "getFluid"(arg0: $MachineFluidHandler$$Type): $FluidStack
 public "isFluidValid"(arg0: $MachineFluidHandler$$Type, arg1: $FluidStack$$Type): boolean
@@ -1164,16 +1161,19 @@ public "canInsert"(arg0: $MachineFluidHandler$$Type): boolean
 public "canInsert"(arg0: $FluidTankUser$$Type): boolean
 public "getFluidAmount"(arg0: $FluidTankUser$$Type): integer
 public "getFluidAmount"(arg0: $MachineFluidHandler$$Type): integer
-public "getCapacity"(arg0: $FluidTankUser$$Type): integer
-public "getCapacity"(arg0: $MachineFluidHandler$$Type): integer
-public "drain"(arg0: $FluidTankUser$$Type, arg1: integer, arg2: $IFluidHandler$FluidAction$$Type): $FluidStack
-public "drain"(arg0: $MachineFluidHandler$$Type, arg1: $FluidStack$$Type, arg2: $IFluidHandler$FluidAction$$Type): $FluidStack
-public "drain"(arg0: $MachineFluidHandler$$Type, arg1: integer, arg2: $IFluidHandler$FluidAction$$Type): $FluidStack
-public "drain"(arg0: $FluidTankUser$$Type, arg1: $FluidStack$$Type, arg2: $IFluidHandler$FluidAction$$Type): $FluidStack
-public "isEmpty"(arg0: $FluidTankUser$$Type): boolean
+public "isTank"(arg0: integer): boolean
+public "setFluid"(arg0: $MachineFluidHandler$$Type, arg1: $FluidStack$$Type): void
+public "setFluid"(arg0: $FluidTankUser$$Type, arg1: $FluidStack$$Type): void
 public "isEmpty"(arg0: $MachineFluidHandler$$Type): boolean
-public "fill"(arg0: $FluidTankUser$$Type, arg1: $FluidStack$$Type, arg2: $IFluidHandler$FluidAction$$Type): integer
+public "isEmpty"(arg0: $FluidTankUser$$Type): boolean
 public "fill"(arg0: $MachineFluidHandler$$Type, arg1: $FluidStack$$Type, arg2: $IFluidHandler$FluidAction$$Type): integer
+public "fill"(arg0: $FluidTankUser$$Type, arg1: $FluidStack$$Type, arg2: $IFluidHandler$FluidAction$$Type): integer
+public "getCapacity"(arg0: $MachineFluidHandler$$Type): integer
+public "getCapacity"(arg0: $FluidTankUser$$Type): integer
+public "drain"(arg0: $MachineFluidHandler$$Type, arg1: $FluidStack$$Type, arg2: $IFluidHandler$FluidAction$$Type): $FluidStack
+public "drain"(arg0: $FluidTankUser$$Type, arg1: integer, arg2: $IFluidHandler$FluidAction$$Type): $FluidStack
+public "drain"(arg0: $FluidTankUser$$Type, arg1: $FluidStack$$Type, arg2: $IFluidHandler$FluidAction$$Type): $FluidStack
+public "drain"(arg0: $MachineFluidHandler$$Type, arg1: integer, arg2: $IFluidHandler$FluidAction$$Type): $FluidStack
 public "getTank"(arg0: $MachineFluidHandler$$Type): $MachineFluidTank
 public "getTank"(arg0: $FluidTankUser$$Type): $MachineFluidTank
 }
@@ -1241,8 +1241,8 @@ import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Objec
 import {$BaseEntityBlock} from "net.minecraft.world.level.block.BaseEntityBlock"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
@@ -1312,16 +1312,16 @@ export type $CapacityTier$$Type = (() => integer);
 export type $CapacityTier$$Original = $CapacityTier;}
 declare module "com.enderio.enderio.foundation.inventory.SingleSlotAccess" {
 import {$MachineInventoryHolder$$Type} from "com.enderio.enderio.foundation.block.entity.MachineInventoryHolder"
-import {$Container$$Type} from "net.minecraft.world.Container"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$Container$$Type} from "net.minecraft.world.Container"
 import {$MultiSlotAccess} from "com.enderio.enderio.foundation.inventory.MultiSlotAccess"
 import {$MachineInventory$$Type} from "com.enderio.enderio.foundation.inventory.MachineInventory"
 
 export class $SingleSlotAccess {
 constructor()
 
-public "isSlot"(arg0: integer): boolean
 public "wrapToMulti"(): $MultiSlotAccess
+public "isSlot"(arg0: integer): boolean
 public "getIndex"(): integer
 public "getItemStack"(arg0: $Container$$Type): $ItemStack
 public "getItemStack"(arg0: $MachineInventoryHolder$$Type): $ItemStack
@@ -1347,8 +1347,8 @@ import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$IntFunction} from "java.util.function.IntFunction"
@@ -1367,11 +1367,11 @@ public static "valueOf"(arg0: StringJS): $MachineStateType
 public "getPriority"(): integer
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "priority"(): integer
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
@@ -1397,28 +1397,28 @@ import {$MachineInventoryLayout} from "com.enderio.enderio.foundation.inventory.
 export class $MachineInventoryLayout$Builder {
 constructor()
 
-public "capacitor"(): $MachineInventoryLayout$Builder
-public "inputSlot"(): $MachineInventoryLayout$Builder
-public "inputSlot"(arg0: integer, arg1: $BiPredicate$$Type<(integer), ($ItemStack)>): $MachineInventoryLayout$Builder
-public "inputSlot"(arg0: integer): $MachineInventoryLayout$Builder
 public "inputSlot"(arg0: $BiPredicate$$Type<(integer), ($ItemStack)>): $MachineInventoryLayout$Builder
-public "outputSlot"(): $MachineInventoryLayout$Builder
+public "inputSlot"(arg0: integer): $MachineInventoryLayout$Builder
+public "inputSlot"(arg0: integer, arg1: $BiPredicate$$Type<(integer), ($ItemStack)>): $MachineInventoryLayout$Builder
+public "inputSlot"(): $MachineInventoryLayout$Builder
 public "outputSlot"(arg0: integer, arg1: $BiPredicate$$Type<(integer), ($ItemStack)>): $MachineInventoryLayout$Builder
+public "outputSlot"(): $MachineInventoryLayout$Builder
 public "outputSlot"(arg0: integer): $MachineInventoryLayout$Builder
 public "outputSlot"(arg0: $BiPredicate$$Type<(integer), ($ItemStack)>): $MachineInventoryLayout$Builder
+public "storageSlot"(): $MachineInventoryLayout$Builder
+public "storageSlot"(arg0: integer): $MachineInventoryLayout$Builder
+public "storageSlot"(arg0: $BiPredicate$$Type<(integer), ($ItemStack)>): $MachineInventoryLayout$Builder
+public "storageSlot"(arg0: integer, arg1: $BiPredicate$$Type<(integer), ($ItemStack)>): $MachineInventoryLayout$Builder
+public "capacitor"(): $MachineInventoryLayout$Builder
 public "slotAccess"(arg0: $SingleSlotAccess$$Type): $MachineInventoryLayout$Builder
 public "slotAccess"(arg0: $MultiSlotAccess$$Type): $MachineInventoryLayout$Builder
 public "setStackLimit"(arg0: integer): $MachineInventoryLayout$Builder
 public "previewSlot"(): $MachineInventoryLayout$Builder
 public "previewSlot"(arg0: integer): $MachineInventoryLayout$Builder
-public "ghostSlot"(arg0: $BiPredicate$$Type<(integer), ($ItemStack)>): $MachineInventoryLayout$Builder
-public "ghostSlot"(arg0: integer): $MachineInventoryLayout$Builder
 public "ghostSlot"(arg0: integer, arg1: $BiPredicate$$Type<(integer), ($ItemStack)>): $MachineInventoryLayout$Builder
 public "ghostSlot"(): $MachineInventoryLayout$Builder
-public "storageSlot"(arg0: integer): $MachineInventoryLayout$Builder
-public "storageSlot"(arg0: $BiPredicate$$Type<(integer), ($ItemStack)>): $MachineInventoryLayout$Builder
-public "storageSlot"(): $MachineInventoryLayout$Builder
-public "storageSlot"(arg0: integer, arg1: $BiPredicate$$Type<(integer), ($ItemStack)>): $MachineInventoryLayout$Builder
+public "ghostSlot"(arg0: integer): $MachineInventoryLayout$Builder
+public "ghostSlot"(arg0: $BiPredicate$$Type<(integer), ($ItemStack)>): $MachineInventoryLayout$Builder
 public "slot"(arg0: $UnaryOperator$$Type<($MachineInventoryLayout$Builder$SlotBuilder)>): $MachineInventoryLayout$Builder
 public "build"(): $MachineInventoryLayout
 set "stackLimit"(value: integer)
@@ -1466,28 +1466,28 @@ import {$EnergyIOMode} from "com.enderio.enderio.api.io.energy.EnergyIOMode"
 export class $PoweredMachineEnergyStorage implements $IEnergyStorage$$Interface, $INBTSerializable$$Interface<($IntTag)>, $IMachineEnergyStorage$$Interface {
 constructor(arg0: $PoweredMachineBlockEntity$$Type)
 
+public "canExtract"(): boolean
 public "extractEnergy"(arg0: integer, arg1: boolean): integer
 public "receiveEnergy"(arg0: integer, arg1: boolean): integer
-public "canExtract"(): boolean
 public "canReceive"(): boolean
-public "setEnergyStored"(arg0: integer): void
+public "getSided"(arg0: $Direction$$Type): $IEnergyStorage
 public "getIOMode"(): $EnergyIOMode
-public "addEnergy"(arg0: integer, arg1: boolean): integer
 public "addEnergy"(arg0: integer): integer
+public "addEnergy"(arg0: integer, arg1: boolean): integer
 public "takeEnergy"(arg0: integer): integer
 public "getMaxEnergyUse"(): integer
+public "setEnergyStored"(arg0: integer): void
 public "consumeEnergy"(arg0: integer): integer
 public "consumeEnergy"(arg0: integer, arg1: boolean): integer
-public "getSided"(arg0: $Direction$$Type): $IEnergyStorage
 public "getConfig"(): $IOConfigurable
 public "deserializeNBT"(arg0: $HolderLookup$Provider$$Type, arg1: $Tag$$Type): void
 public "deserializeNBT"(arg0: $HolderLookup$Provider$$Type, arg1: $IntTag$$Type): void
 public "serializeNBT"(arg0: $HolderLookup$Provider$$Type): $Tag
 public "getEnergyStored"(): integer
 public "getMaxEnergyStored"(): integer
-set "energyStored"(value: integer)
 get "IOMode"(): $EnergyIOMode
 get "maxEnergyUse"(): integer
+set "energyStored"(value: integer)
 get "config"(): $IOConfigurable
 get "energyStored"(): integer
 get "maxEnergyStored"(): integer
@@ -1508,8 +1508,8 @@ import {$NetworkDataSlot$CodecType} from "com.enderio.core.common.network.Networ
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$Tag, $Tag$$Type} from "net.minecraft.nbt.Tag"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$Record} from "java.lang.Record"
 
 export class $ActionRange extends $Record {
@@ -1520,8 +1520,8 @@ static "DATA_SLOT_TYPE": $NetworkDataSlot$CodecType<($ActionRange)>
 constructor(range: integer, isVisible: boolean)
 
 public "addClientParticle"(arg0: $ClientLevel$$Type, arg1: $BlockPos$$Type, arg2: StringJS): void
-public "visible"(): $ActionRange
 public "decrement"(): $ActionRange
+public "visible"(): $ActionRange
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer

@@ -24,12 +24,12 @@ export class $DeferredSupplier<T> implements $DeferredSupplier$$Interface {
  "getKey"(): $ResourceKey<(T)>
  "getId"(): $ResourceLocation
  "toOptional"(): $Optional<(T)>
- "ifPresentOrElse"(action: $Consumer$$Type<(T)>, emptyAction: $Runnable$$Type): void
- "orElseGet"(supplier: $Supplier$$Type<(T)>): T
  "ifPresent"(action: $Consumer$$Type<(T)>): void
  "stream"(): $Stream<(T)>
  "isPresent"(): boolean
  "orElse"(other: T): T
+ "ifPresentOrElse"(action: $Consumer$$Type<(T)>, emptyAction: $Runnable$$Type): void
+ "orElseGet"(supplier: $Supplier$$Type<(T)>): T
  "getOrNull"(): T
  "get"(): T
 }
@@ -70,8 +70,8 @@ import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$DeferredSupplier$$Interface} from "dev.architectury.registry.registries.DeferredSupplier"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Registry} from "net.minecraft.core.Registry"
-import {$TagKey} from "net.minecraft.tags.TagKey"
 import {$Either} from "com.mojang.datafixers.util.Either"
+import {$TagKey} from "net.minecraft.tags.TagKey"
 import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$DataMapType$$Type} from "net.neoforged.neoforge.registries.datamaps.DataMapType"
 import {$ResourceKey, $ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
@@ -123,12 +123,12 @@ static "direct"<T>(arg0: T): $Holder<(T)>
  */
  "isTag"(tagKey: $ResourceLocation$$Type): boolean
  "toOptional"(): $Optional<(T)>
- "ifPresentOrElse"(action: $Consumer$$Type<(T)>, emptyAction: $Runnable$$Type): void
- "orElseGet"(supplier: $Supplier$$Type<(T)>): T
  "ifPresent"(action: $Consumer$$Type<(T)>): void
  "stream"(): $Stream<(T)>
  "isPresent"(): boolean
  "orElse"(other: T): T
+ "ifPresentOrElse"(action: $Consumer$$Type<(T)>, emptyAction: $Runnable$$Type): void
+ "orElseGet"(supplier: $Supplier$$Type<(T)>): T
  "getOrNull"(): T
  "getDelegate"(): $Holder<(T)>
  "unwrapLookup"(): $HolderLookup$RegistryLookup<(T)>
@@ -222,8 +222,8 @@ get "ids"(): $Set<($ResourceLocation)>
 }
 
 export class $Registrar<T> implements $Registrar$$Interface {
- "byRawId"(arg0: integer): T
  "getRawId"(arg0: T): integer
+ "byRawId"(arg0: integer): T
  "delegate"(arg0: $ResourceLocation$$Type): $RegistrySupplier<(T)>
  "get"(arg0: $ResourceLocation$$Type): T
  "wrap"<R>(obj: R): $RegistrySupplier<(R)>

@@ -1,8 +1,8 @@
 declare module "appeng.items.tools.quartz.QuartzSwordItem" {
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$QuartzToolType$$Type} from "appeng.items.tools.quartz.QuartzToolType"
 import {$SwordItem} from "net.minecraft.world.item.SwordItem"
@@ -33,9 +33,9 @@ export type $QuartzSwordItem$$Original = $QuartzSwordItem;}
 declare module "appeng.items.tools.quartz.QuartzSpadeItem" {
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$ShovelItem} from "net.minecraft.world.item.ShovelItem"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
+import {$ShovelItem} from "net.minecraft.world.item.ShovelItem"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$QuartzToolType$$Type} from "appeng.items.tools.quartz.QuartzToolType"
 import {$Tier} from "net.minecraft.world.item.Tier"
@@ -67,8 +67,8 @@ export type $QuartzSpadeItem$$Original = $QuartzSpadeItem;}
 declare module "appeng.items.tools.quartz.QuartzAxeItem" {
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$QuartzToolType$$Type} from "appeng.items.tools.quartz.QuartzToolType"
 import {$AxeItem} from "net.minecraft.world.item.AxeItem"
@@ -141,8 +141,8 @@ export type $QuartzHoeItem$$Original = $QuartzHoeItem;}
 declare module "appeng.items.tools.quartz.QuartzPickaxeItem" {
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$PickaxeItem} from "net.minecraft.world.item.PickaxeItem"
 import {$QuartzToolType$$Type} from "appeng.items.tools.quartz.QuartzToolType"
@@ -197,8 +197,8 @@ export type $QuartzToolType$$Original = $QuartzToolType;}
 declare module "appeng.items.tools.quartz.QuartzWrenchItem" {
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$AEBaseItem} from "appeng.items.AEBaseItem"
 

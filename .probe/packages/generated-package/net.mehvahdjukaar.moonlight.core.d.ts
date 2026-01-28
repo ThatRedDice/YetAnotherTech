@@ -93,8 +93,8 @@ export type $IHoldingPlayerExtension$$Type = ($IHoldingPlayerExtension);
  */
 export type $IHoldingPlayerExtension$$Original = $IHoldingPlayerExtension;}
 declare module "net.mehvahdjukaar.moonlight.core.worldgen.SpawnBoxBlock" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$GameMasterBlock$$Interface} from "net.minecraft.world.level.block.GameMasterBlock"
@@ -147,10 +147,10 @@ export type $SpawnBoxBlock$$Type = ($SpawnBoxBlock);
  */
 export type $SpawnBoxBlock$$Original = $SpawnBoxBlock;}
 declare module "net.mehvahdjukaar.moonlight.core.misc.VillagerBrainEventInternal" {
-import {$Brain$$Type} from "net.minecraft.world.entity.ai.Brain"
 import {$Map} from "java.util.Map"
-import {$MemoryModuleType} from "net.minecraft.world.entity.ai.memory.MemoryModuleType"
+import {$Brain$$Type} from "net.minecraft.world.entity.ai.Brain"
 import {$Optional} from "java.util.Optional"
+import {$MemoryModuleType} from "net.minecraft.world.entity.ai.memory.MemoryModuleType"
 import {$Pair, $Pair$$Type} from "com.mojang.datafixers.util.Pair"
 import {$SensorType$$Type} from "net.minecraft.world.entity.ai.sensing.SensorType"
 import {$ImmutableList$$Type} from "com.google.common.collect.ImmutableList"
@@ -226,12 +226,12 @@ export type $IExtendedPistonTile$$Original = $IExtendedPistonTile;}
 declare module "net.mehvahdjukaar.moonlight.core.criteria_triggers.GrindItemTrigger$Instance" {
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional, $Optional$$Type} from "java.util.Optional"
-import {$ContextAwarePredicate, $ContextAwarePredicate$$Type} from "net.minecraft.advancements.critereon.ContextAwarePredicate"
 import {$Codec} from "com.mojang.serialization.Codec"
+import {$ContextAwarePredicate, $ContextAwarePredicate$$Type} from "net.minecraft.advancements.critereon.ContextAwarePredicate"
 import {$CriterionValidator$$Type} from "net.minecraft.advancements.critereon.CriterionValidator"
+import {$SimpleCriterionTrigger$SimpleInstance$$Interface} from "net.minecraft.advancements.critereon.SimpleCriterionTrigger$SimpleInstance"
 import {$Record} from "java.lang.Record"
 import {$ItemPredicate, $ItemPredicate$$Type} from "net.minecraft.advancements.critereon.ItemPredicate"
-import {$SimpleCriterionTrigger$SimpleInstance$$Interface} from "net.minecraft.advancements.critereon.SimpleCriterionTrigger$SimpleInstance"
 
 export class $GrindItemTrigger$Instance extends $Record implements $SimpleCriterionTrigger$SimpleInstance$$Interface {
 static readonly "CODEC": $Codec<($GrindItemTrigger$Instance)>
@@ -250,7 +250,7 @@ public "validate"(arg0: $CriterionValidator$$Type): void
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $GrindItemTrigger$Instance$$Type = ({"item"?: $ItemPredicate$$Type, "player"?: ($ContextAwarePredicate$$Type)?}) | ([item?: $ItemPredicate$$Type, player?: ($ContextAwarePredicate$$Type)?]);
+export type $GrindItemTrigger$Instance$$Type = ({"player"?: ($ContextAwarePredicate$$Type)?, "item"?: $ItemPredicate$$Type}) | ([player?: ($ContextAwarePredicate$$Type)?, item?: $ItemPredicate$$Type]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */

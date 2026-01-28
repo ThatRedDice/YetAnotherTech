@@ -261,8 +261,8 @@ import {$ValueObject} from "com.mojang.realmsclient.dto.ValueObject"
 
 export class $UploadInfo extends $ValueObject {
 public static "createRequest"(arg0: StringJS): StringJS
-public "getUploadEndpoint"(): $URI
 public static "assembleUri"(arg0: StringJS, arg1: integer): $URI
+public "getUploadEndpoint"(): $URI
 public "getToken"(): StringJS
 public static "parse"(arg0: StringJS): $UploadInfo
 public "isWorldClosed"(): boolean
@@ -379,8 +379,8 @@ export type $PendingInvitesList$$Type = ($PendingInvitesList);
  */
 export type $PendingInvitesList$$Original = $PendingInvitesList;}
 declare module "com.mojang.realmsclient.dto.ServerActivityList" {
-import {$List} from "java.util.List"
 import {$ServerActivity} from "com.mojang.realmsclient.dto.ServerActivity"
+import {$List} from "java.util.List"
 import {$ValueObject} from "com.mojang.realmsclient.dto.ValueObject"
 
 export class $ServerActivityList extends $ValueObject {
@@ -478,12 +478,12 @@ export class $RealmsServer extends $ValueObject {
 
 constructor()
 
-public "toServerData"(arg0: StringJS): $ServerData
 public "needsDowngrade"(): boolean
-public "cloneSlots"(arg0: $Map$$Type<(integer), ($RealmsWorldOptions$$Type)>): $Map<(integer), ($RealmsWorldOptions)>
 public "needsUpgrade"(): boolean
 public "isSnapshotRealm"(): boolean
 public "isMinigameActive"(): boolean
+public "cloneSlots"(arg0: $Map$$Type<(integer), ($RealmsWorldOptions$$Type)>): $Map<(integer), ($RealmsWorldOptions)>
+public "toServerData"(arg0: StringJS): $ServerData
 public "getDescription"(): StringJS
 public "getName"(): StringJS
 public "equals"(arg0: any): boolean
@@ -555,9 +555,9 @@ readonly "compatibility": $RealmsServer$Compatibility
 
 constructor(arg0: boolean, arg1: boolean, arg2: boolean, arg3: boolean, arg4: integer, arg5: boolean, arg6: integer, arg7: integer, arg8: boolean, arg9: StringJS, arg10: StringJS, arg11: $RealmsServer$Compatibility$$Type)
 
+public "getSlotName"(arg0: integer): StringJS
 public static "createDefaults"(): $RealmsWorldOptions
 public static "createEmptyDefaults"(): $RealmsWorldOptions
-public "getSlotName"(arg0: integer): StringJS
 public "clone"(): $RealmsWorldOptions
 public static "parse"(arg0: $JsonObject$$Type): $RealmsWorldOptions
 public "toJson"(): StringJS
@@ -608,22 +608,22 @@ import {$ReflectionBasedSerialization$$Interface} from "com.mojang.realmsclient.
 export class $PlayerInfo extends $ValueObject implements $ReflectionBasedSerialization$$Interface {
 constructor()
 
-public "setOnline"(arg0: boolean): void
-public "setUuid"(arg0: $UUID$$Type): void
-public "getAccepted"(): boolean
-public "setAccepted"(arg0: boolean): void
-public "getOnline"(): boolean
 public "setOperator"(arg0: boolean): void
+public "setUuid"(arg0: $UUID$$Type): void
+public "setAccepted"(arg0: boolean): void
+public "getAccepted"(): boolean
+public "getOnline"(): boolean
+public "setOnline"(arg0: boolean): void
 public "getName"(): StringJS
 public "setName"(arg0: StringJS): void
 public "isOperator"(): boolean
 public "getUuid"(): $UUID
-set "online"(value: boolean)
-set "uuid"(value: $UUID$$Type)
-get "accepted"(): boolean
-set "accepted"(value: boolean)
-get "online"(): boolean
 set "operator"(value: boolean)
+set "uuid"(value: $UUID$$Type)
+set "accepted"(value: boolean)
+get "accepted"(): boolean
+get "online"(): boolean
+set "online"(value: boolean)
 get "name"(): StringJS
 set "name"(value: StringJS)
 get "operator"(): boolean

@@ -11,10 +11,10 @@ get "min"(): $BlockPos
 }
 
 export class $ISpatialService implements $ISpatialService$$Interface {
- "requiredPower"(): long
  "hasRegion"(): boolean
  "isValidRegion"(): boolean
  "currentEfficiency"(): float
+ "requiredPower"(): long
  "getLevel"(): $Level
  "getMax"(): $BlockPos
  "getMin"(): $BlockPos

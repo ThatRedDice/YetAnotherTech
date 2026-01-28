@@ -27,8 +27,8 @@ get "maxBegins"(): integer
 export class $MemoryTrackingRenderBuffers implements $MemoryTrackingRenderBuffers$$Interface {
  "getEntityBufferAllocatedSize"(): long
  "getMiscBufferAllocatedSize"(): long
- "getMaxBegins"(): integer
  "freeAndDeleteBuffers"(): void
+ "getMaxBegins"(): integer
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_

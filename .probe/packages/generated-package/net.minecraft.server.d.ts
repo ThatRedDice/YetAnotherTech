@@ -1,6 +1,6 @@
 declare module "net.minecraft.server.ServerAdvancementManager" {
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Collection} from "java.util.Collection"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$AdvancementTree} from "net.minecraft.advancements.AdvancementTree"
 import {$AdvancementHolder} from "net.minecraft.advancements.AdvancementHolder"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
@@ -25,8 +25,8 @@ export type $ServerAdvancementManager$$Type = ($ServerAdvancementManager);
 export type $ServerAdvancementManager$$Original = $ServerAdvancementManager;}
 declare module "net.minecraft.server.ServerFunctionLibrary" {
 import {$Iterable} from "java.lang.Iterable"
-import {$Map} from "java.util.Map"
 import {$Collection} from "java.util.Collection"
+import {$Map} from "java.util.Map"
 import {$Optional} from "java.util.Optional"
 import {$PreparableReloadListener$$Interface} from "net.minecraft.server.packs.resources.PreparableReloadListener"
 import {$PreparableReloadListener$PreparationBarrier$$Type} from "net.minecraft.server.packs.resources.PreparableReloadListener$PreparationBarrier"
@@ -104,11 +104,11 @@ import {$TagManager} from "net.minecraft.tags.TagManager"
 import {$CallbackInfo$$Type} from "org.spongepowered.asm.mixin.injection.callback.CallbackInfo"
 import {$List} from "java.util.List"
 import {$ServerScriptManager} from "dev.latvian.mods.kubejs.server.ServerScriptManager"
-import {$RecipeManager} from "net.minecraft.world.item.crafting.RecipeManager"
 import {$LayeredRegistryAccess$$Type} from "net.minecraft.core.LayeredRegistryAccess"
 import {$ServerAdvancementManager} from "net.minecraft.server.ServerAdvancementManager"
-import {$Commands} from "net.minecraft.commands.Commands"
+import {$RecipeManager} from "net.minecraft.world.item.crafting.RecipeManager"
 import {$ReloadableServerResourcesKJS$$Interface} from "dev.latvian.mods.kubejs.core.ReloadableServerResourcesKJS"
+import {$Commands} from "net.minecraft.commands.Commands"
 import {$PreparableReloadListener} from "net.minecraft.server.packs.resources.PreparableReloadListener"
 import {$ReloadableServerRegistries$Holder} from "net.minecraft.server.ReloadableServerRegistries$Holder"
 import {$HolderLookup$Provider} from "net.minecraft.core.HolderLookup$Provider"
@@ -128,9 +128,9 @@ public "kjs$getTagManager"(): $TagManager
 public "kjs$getServerScriptManager"(): $ServerScriptManager
 public "fullRegistries"(): $ReloadableServerRegistries$Holder
 public "getRegistryLookup"(): $HolderLookup$Provider
-public static "loadResources"(arg0: $ResourceManager$$Type, arg1: $LayeredRegistryAccess$$Type<($RegistryLayer$$Type)>, arg2: $FeatureFlagSet$$Type, arg3: $Commands$CommandSelection$$Type, arg4: integer, arg5: $Executor$$Type, arg6: $Executor$$Type): $CompletableFuture<($ReloadableServerResources)>
 public "getFunctionLibrary"(): $ServerFunctionLibrary
 public "updateRegistryTags"(): void
+public static "loadResources"(arg0: $ResourceManager$$Type, arg1: $LayeredRegistryAccess$$Type<($RegistryLayer$$Type)>, arg2: $FeatureFlagSet$$Type, arg3: $Commands$CommandSelection$$Type, arg4: integer, arg5: $Executor$$Type, arg6: $Executor$$Type): $CompletableFuture<($ReloadableServerResources)>
 public "listeners"(): $List<($PreparableReloadListener)>
 public "getAdvancements"(): $ServerAdvancementManager
 public "getCommands"(): $Commands
@@ -162,10 +162,10 @@ import {$Record} from "java.lang.Record"
 export class $WorldLoader$PackConfig extends $Record {
 constructor(packRepository: $PackRepository$$Type, initialDataConfig: $WorldDataConfiguration$$Type, safeMode: boolean, initMode: boolean)
 
-public "initialDataConfig"(): $WorldDataConfiguration
 public "initMode"(): boolean
-public "safeMode"(): boolean
+public "initialDataConfig"(): $WorldDataConfiguration
 public "createResourceManager"(): $Pair<($WorldDataConfiguration), ($CloseableResourceManager)>
+public "safeMode"(): boolean
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
@@ -203,7 +203,7 @@ public static "knownType"(arg0: $ServerLinks$KnownLinkType$$Type, arg1: $URI$$Ty
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $ServerLinks$Entry$$Type = ({"type"?: $Either$$Type<($ServerLinks$KnownLinkType$$Type), ($Component$$Type)>, "link"?: $URI$$Type}) | ([type?: $Either$$Type<($ServerLinks$KnownLinkType$$Type), ($Component$$Type)>, link?: $URI$$Type]);
+export type $ServerLinks$Entry$$Type = ({"link"?: $URI$$Type, "type"?: $Either$$Type<($ServerLinks$KnownLinkType$$Type), ($Component$$Type)>}) | ([link?: $URI$$Type, type?: $Either$$Type<($ServerLinks$KnownLinkType$$Type), ($Component$$Type)>]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -239,8 +239,8 @@ declare module "net.minecraft.server.WorldStem" {
 import {$RegistryLayer, $RegistryLayer$$Type} from "net.minecraft.server.RegistryLayer"
 import {$AutoCloseable$$Interface} from "java.lang.AutoCloseable"
 import {$LayeredRegistryAccess, $LayeredRegistryAccess$$Type} from "net.minecraft.core.LayeredRegistryAccess"
-import {$WorldData, $WorldData$$Type} from "net.minecraft.world.level.storage.WorldData"
 import {$ReloadableServerResources, $ReloadableServerResources$$Type} from "net.minecraft.server.ReloadableServerResources"
+import {$WorldData, $WorldData$$Type} from "net.minecraft.world.level.storage.WorldData"
 import {$CloseableResourceManager, $CloseableResourceManager$$Type} from "net.minecraft.server.packs.resources.CloseableResourceManager"
 import {$Record} from "java.lang.Record"
 
@@ -277,13 +277,13 @@ constructor(arg0: $MinecraftServer$$Type)
 
 public "setTickRate"(arg0: float): void
 public "setFrozen"(arg0: boolean): void
+public "checkShouldSprintThisTick"(): boolean
+public "endTickWork"(): void
 public "stepGameIfPaused"(arg0: integer): boolean
 public "stopStepping"(): boolean
 public "stopSprinting"(): boolean
 public "requestGameToSprint"(arg0: integer): boolean
 public "updateJoiningPlayer"(arg0: $ServerPlayer$$Type): void
-public "checkShouldSprintThisTick"(): boolean
-public "endTickWork"(): void
 public "isSprinting"(): boolean
 set "tickRate"(value: float)
 set "frozen"(value: boolean)
@@ -321,7 +321,7 @@ public "hashCode"(): integer
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $ServerLinks$UntrustedEntry$$Type = ({"type"?: $Either$$Type<($ServerLinks$KnownLinkType$$Type), ($Component$$Type)>, "link"?: StringJS}) | ([type?: $Either$$Type<($ServerLinks$KnownLinkType$$Type), ($Component$$Type)>, link?: StringJS]);
+export type $ServerLinks$UntrustedEntry$$Type = ({"link"?: StringJS, "type"?: $Either$$Type<($ServerLinks$KnownLinkType$$Type), ($Component$$Type)>}) | ([link?: StringJS, type?: $Either$$Type<($ServerLinks$KnownLinkType$$Type), ($Component$$Type)>]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -357,10 +357,10 @@ import {$TextFilter} from "net.minecraft.server.network.TextFilter"
 import {$ScheduledEvents$ScheduledEvent} from "dev.latvian.mods.kubejs.util.ScheduledEvents$ScheduledEvent"
 import {$ProfileResults, $ProfileResults$$Type} from "net.minecraft.util.profiling.ProfileResults"
 import {$AutoCloseable$$Interface} from "java.lang.AutoCloseable"
-import {$Difficulty$$Type} from "net.minecraft.world.Difficulty"
 import {$CrashReport$$Type} from "net.minecraft.CrashReport"
-import {$Thread, $Thread$$Type} from "java.lang.Thread"
+import {$Difficulty$$Type} from "net.minecraft.world.Difficulty"
 import {$MinecraftSessionService} from "com.mojang.authlib.minecraft.MinecraftSessionService"
+import {$Thread, $Thread$$Type} from "java.lang.Thread"
 import {$PlayerSelector$$Type} from "dev.latvian.mods.kubejs.core.PlayerSelector"
 import {$LevelResource$$Type} from "net.minecraft.world.level.storage.LevelResource"
 import {$ServerConnectionListener} from "net.minecraft.server.network.ServerConnectionListener"
@@ -376,16 +376,16 @@ import {$RegionStorageInfo$$Type} from "net.minecraft.world.level.chunk.storage.
 import {$StructureTemplateManager} from "net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplateManager"
 import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ServerScoreboard} from "net.minecraft.server.ServerScoreboard"
-import {$WorldStem$$Type} from "net.minecraft.server.WorldStem"
 import {$Function$$Type} from "java.util.function.Function"
+import {$WorldStem$$Type} from "net.minecraft.server.WorldStem"
 import {$Class} from "java.lang.Class"
 import {$ReentrantBlockableEventLoop} from "net.minecraft.util.thread.ReentrantBlockableEventLoop"
-import {$ObjectOpenCustomHashSet} from "it.unimi.dsi.fastutil.objects.ObjectOpenCustomHashSet"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$ObjectOpenCustomHashSet} from "it.unimi.dsi.fastutil.objects.ObjectOpenCustomHashSet"
 import {$CommandSource$$Interface} from "net.minecraft.commands.CommandSource"
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
-import {$Map} from "java.util.Map"
 import {$MinecraftServer$ServerResourcePackInfo} from "net.minecraft.server.MinecraftServer$ServerResourcePackInfo"
+import {$Map} from "java.util.Map"
 import {$MinecraftServerAccessor$$Interface} from "net.createmod.ponder.mixin.accessor.MinecraftServerAccessor"
 import {$ServerInfo$$Interface} from "net.minecraft.server.ServerInfo"
 import {$ChunkPos$$Type} from "net.minecraft.world.level.ChunkPos"
@@ -396,23 +396,23 @@ import {$ReportedException} from "net.minecraft.ReportedException"
 import {$WorldData} from "net.minecraft.world.level.storage.WorldData"
 import {$GameProfile, $GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$Services$$Type} from "net.minecraft.server.Services"
-import {$RuntimeException$$Type} from "java.lang.RuntimeException"
 import {$PlayerList, $PlayerList$$Type} from "net.minecraft.server.players.PlayerList"
 import {$CommandSourceStack, $CommandSourceStack$$Type} from "net.minecraft.commands.CommandSourceStack"
+import {$RuntimeException$$Type} from "java.lang.RuntimeException"
 import {$ChatType$Bound$$Type} from "net.minecraft.network.chat.ChatType$Bound"
 import {$Iterable} from "java.lang.Iterable"
 import {$Optional} from "java.util.Optional"
 import {$AdvancementNode} from "net.minecraft.advancements.AdvancementNode"
 import {$ReloadableServerRegistries$Holder} from "net.minecraft.server.ReloadableServerRegistries$Holder"
-import {$DataFixer, $DataFixer$$Type} from "com.mojang.datafixers.DataFixer"
 import {$ProfilerFiller} from "net.minecraft.util.profiling.ProfilerFiller"
+import {$DataFixer, $DataFixer$$Type} from "com.mojang.datafixers.DataFixer"
 import {$ServerFunctionManager} from "net.minecraft.server.ServerFunctionManager"
 import {$Set} from "java.util.Set"
 import {$TickDuration$$Type} from "dev.latvian.mods.kubejs.util.TickDuration"
 import {$SignatureValidator} from "net.minecraft.util.SignatureValidator"
+import {$ServerAdvancementManager} from "net.minecraft.server.ServerAdvancementManager"
 import {$RecipeManager} from "net.minecraft.world.item.crafting.RecipeManager"
 import {$ServerLinks} from "net.minecraft.server.ServerLinks"
-import {$ServerAdvancementManager} from "net.minecraft.server.ServerAdvancementManager"
 import {$Commands} from "net.minecraft.commands.Commands"
 import {$BooleanSupplier$$Type} from "java.util.function.BooleanSupplier"
 import {$ChunkProgressListenerFactory, $ChunkProgressListenerFactory$$Type} from "net.minecraft.server.level.progress.ChunkProgressListenerFactory"
@@ -431,21 +431,21 @@ import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$Trackable, $Trackable$$Interface} from "dev.uncandango.alltheleaks.mixin.Trackable"
 import {$ScheduledEvents} from "dev.latvian.mods.kubejs.util.ScheduledEvents"
 import {$Runnable$$Type} from "java.lang.Runnable"
-import {$ProcessorHandle} from "net.minecraft.util.thread.ProcessorHandle"
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
+import {$ProcessorHandle} from "net.minecraft.util.thread.ProcessorHandle"
 import {$ITimeTrackingServer$$Interface} from "org.embeddedt.modernfix.duck.ITimeTrackingServer"
-import {$MinecraftServerKJS$$Interface} from "dev.latvian.mods.kubejs.core.MinecraftServerKJS"
 import {$RemoteDebugSampleType$$Type} from "net.minecraft.util.debugchart.RemoteDebugSampleType"
+import {$MinecraftServerKJS$$Interface} from "dev.latvian.mods.kubejs.core.MinecraftServerKJS"
 import {$ChatDecorator} from "net.minecraft.network.chat.ChatDecorator"
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$RegistryAccess$Frozen} from "net.minecraft.core.RegistryAccess$Frozen"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Executor} from "java.util.concurrent.Executor"
-import {$Throwable$$Type} from "java.lang.Throwable"
 import {$ResourceKey, $ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
 import {$TemporalAmount$$Type} from "java.time.temporal.TemporalAmount"
+import {$Throwable$$Type} from "java.lang.Throwable"
+import {$AccessorMixinMinecraftServer$$Interface} from "noobanidus.mods.lootr.common.mixin.accessor.AccessorMixinMinecraftServer"
 import {$GameType, $GameType$$Type} from "net.minecraft.world.level.GameType"
 import {$Entity} from "net.minecraft.world.entity.Entity"
-import {$AccessorMixinMinecraftServer$$Interface} from "noobanidus.mods.lootr.common.mixin.accessor.AccessorMixinMinecraftServer"
 import {$SystemReport, $SystemReport$$Type} from "net.minecraft.SystemReport"
 import {$TickTask, $TickTask$$Type} from "net.minecraft.server.TickTask"
 import {$GameProfileCache} from "net.minecraft.server.players.GameProfileCache"
@@ -470,10 +470,10 @@ constructor(arg0: $Thread$$Type, arg1: $LevelStorageSource$LevelStorageAccess$$T
 
 public "hasGui"(): boolean
 public "getPlayerList"(): $PlayerList
-public "getTickTime"(arg0: $ResourceKey$$Type<($Level)>): (long)[]
 public "createTextFilterForPlayer"(arg0: $ServerPlayer$$Type): $TextFilter
 public "createGameModeForPlayer"(arg0: $ServerPlayer$$Type): $ServerPlayerGameMode
 public "getSpawnRadius"(arg0: $ServerLevel$$Type): integer
+public "getTickTime"(arg0: $ResourceKey$$Type<($Level)>): (long)[]
 public "isPvpAllowed"(): boolean
 public "getProfilePermissions"(arg0: $GameProfile$$Type): integer
 public "getForcedGameType"(): $GameType
@@ -495,8 +495,6 @@ public "getChatDecorator"(): $ChatDecorator
 public "getAllLevels"(): $Iterable<($ServerLevel)>
 public "getCommandStorage"(): $CommandStorage
 public "getServerResources"(): $MinecraftServer$ReloadableResources
-public "getPlayerNames"(): (StringJS)[]
-public "levelKeys"(): $Set<($ResourceKey<($Level)>)>
 public "enforceSecureProfile"(): boolean
 public "getPlayerIdleTimeout"(): integer
 public "isSingleplayerOwner"(arg0: $GameProfile$$Type): boolean
@@ -504,7 +502,6 @@ public "isFlightAllowed"(): boolean
 public "invalidateStatus"(): void
 public "subscribeToDebugSample"(arg0: $ServerPlayer$$Type, arg1: $RemoteDebugSampleType$$Type): void
 public "isResourcePackRequired"(): boolean
-public "catnip$getStorageSource"(): $LevelStorageSource$LevelStorageAccess
 public "getWorldPath"(arg0: $LevelResource$$Type): $Path
 public "getServerModName"(): StringJS
 public "getModdedStatus"(): $ModCheck
@@ -590,26 +587,30 @@ public "reportChunkSaveFailure"(arg0: $Throwable$$Type, arg1: $RegionStorageInfo
 public "mfix$getLastTickStartTime"(): long
 public "getOverworld"(): $ServerLevel
 public "Lootr$getStorageSource"(): $LevelStorageSource$LevelStorageAccess
-public "getConnection"(): $ServerConnectionListener
-public "pollTask"(): boolean
-public "getLevel"(arg0: $ResourceKey$$Type<($Level)>): $ServerLevel
+public "getPlayerNames"(): (StringJS)[]
+public "levelKeys"(): $Set<($ResourceKey<($Level)>)>
+public "catnip$getStorageSource"(): $LevelStorageSource$LevelStorageAccess
 public static "spin"<S extends $MinecraftServer>(arg0: $Function$$Type<($Thread), (S)>): S
+public "pollTask"(): boolean
+public "getConnection"(): $ServerConnectionListener
+public "getLevel"(arg0: $ResourceKey$$Type<($Level)>): $ServerLevel
 public "close"(): void
 public "getFile"(arg0: StringJS): $Path
 public "getPort"(): integer
-public "halt"(arg0: boolean): void
 public "isShutdown"(): boolean
+public "halt"(arg0: boolean): void
 public "managedBlock"(arg0: $BooleanSupplier$$Type): void
 public "isStopped"(): boolean
 public "isRunning"(): boolean
 public "getStatus"(): $ServerStatus
 public "setPort"(arg0: integer): void
+public "getResourceManager"(): $ResourceManager
 public "isDedicated"(): boolean
 public "getProfiler"(): $ProfilerFiller
+public "getWorldScreenshotFile"(): $Optional<($Path)>
 public "getFunctions"(): $ServerFunctionManager
-public "getProxy"(): $Proxy
-public "getResourceManager"(): $ResourceManager
 public "logChatMessage"(arg0: $Component$$Type, arg1: $ChatType$Bound$$Type, arg2: StringJS): void
+public "getProxy"(): $Proxy
 public "isPublished"(): boolean
 public "isHardcore"(): boolean
 public "fillSystemReport"(arg0: $SystemReport$$Type): $SystemReport
@@ -638,11 +639,10 @@ public "waitForTasks"(): void
 public "getCustomBossEvents"(): $CustomBossEvents
 public "setDifficulty"(arg0: $Difficulty$$Type, arg1: boolean): void
 public "setDifficultyLocked"(arg0: boolean): void
-public "getWorldScreenshotFile"(): $Optional<($Path)>
 public "getKeyPair"(): $KeyPair
+public "getScoreboard"(): $ServerScoreboard
 public "atl$getBaseClass"(): $Class
 public "getData"(): $AttachedData
-public "getScoreboard"(): $ServerScoreboard
 public "getGameRules"(): $GameRules
 public "reloadableRegistries"(): $ReloadableServerRegistries$Holder
 public "sendSystemMessage"(arg0: $Component$$Type): void
@@ -654,9 +654,9 @@ public "acceptsSuccess"(): boolean
 public "acceptsFailure"(): boolean
 public "shouldInformAdmins"(): boolean
 public "getRecipeManager"(): $RecipeManager
-public "serverLinks"(): $ServerLinks
 public "potionBrewing"(): $PotionBrewing
 public "overworld"(): $ServerLevel
+public "serverLinks"(): $ServerLinks
 public "getMotd"(): StringJS
 public static "createMisplacedChunkReport"(arg0: $ChunkPos$$Type, arg1: $ChunkPos$$Type): $ReportedException
 public "reportMisplacedChunk"(arg0: $ChunkPos$$Type, arg1: $ChunkPos$$Type, arg2: $RegionStorageInfo$$Type): void
@@ -707,7 +707,6 @@ get "chatDecorator"(): $ChatDecorator
 get "allLevels"(): $Iterable<($ServerLevel)>
 get "commandStorage"(): $CommandStorage
 get "serverResources"(): $MinecraftServer$ReloadableResources
-get "playerNames"(): (StringJS)[]
 get "playerIdleTimeout"(): integer
 get "flightAllowed"(): boolean
 get "resourcePackRequired"(): boolean
@@ -753,6 +752,7 @@ get "tickTimesNanos"(): (long)[]
 get "recordingMetrics"(): boolean
 get "currentlySaving"(): boolean
 get "timeProfilerRunning"(): boolean
+get "playerNames"(): (StringJS)[]
 get "connection"(): $ServerConnectionListener
 get "port"(): integer
 get "shutdown"(): boolean
@@ -760,11 +760,12 @@ get "stopped"(): boolean
 get "running"(): boolean
 get "status"(): $ServerStatus
 set "port"(value: integer)
+get "resourceManager"(): $ResourceManager
 get "dedicated"(): boolean
 get "profiler"(): $ProfilerFiller
+get "worldScreenshotFile"(): $Optional<($Path)>
 get "functions"(): $ServerFunctionManager
 get "proxy"(): $Proxy
-get "resourceManager"(): $ResourceManager
 get "published"(): boolean
 get "hardcore"(): boolean
 get "worldData"(): $WorldData
@@ -779,10 +780,9 @@ get "profileKeySignatureValidator"(): $SignatureValidator
 get "scheduledEvents"(): $ScheduledEvents
 get "customBossEvents"(): $CustomBossEvents
 set "difficultyLocked"(value: boolean)
-get "worldScreenshotFile"(): $Optional<($Path)>
 get "keyPair"(): $KeyPair
-get "data"(): $AttachedData
 get "scoreboard"(): $ServerScoreboard
+get "data"(): $AttachedData
 get "gameRules"(): $GameRules
 get "commands"(): $Commands
 get "persistentData"(): $CompoundTag
@@ -811,9 +811,9 @@ declare module "net.minecraft.server.PlayerAdvancements" {
 import {$Map} from "java.util.Map"
 import {$ServerAdvancementManager$$Type} from "net.minecraft.server.ServerAdvancementManager"
 import {$PlayerAdvancementsAccessor$$Interface} from "dev.uncandango.alltheleaks.mixin.core.main.accessor.PlayerAdvancementsAccessor"
-import {$AdvancementHolder, $AdvancementHolder$$Type} from "net.minecraft.advancements.AdvancementHolder"
-import {$ServerPlayer, $ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
 import {$Path$$Type} from "java.nio.file.Path"
+import {$ServerPlayer, $ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
+import {$AdvancementHolder, $AdvancementHolder$$Type} from "net.minecraft.advancements.AdvancementHolder"
 import {$AdvancementProgress} from "net.minecraft.advancements.AdvancementProgress"
 import {$PlayerList$$Type} from "net.minecraft.server.players.PlayerList"
 import {$DataFixer$$Type} from "com.mojang.datafixers.DataFixer"
@@ -824,11 +824,11 @@ readonly "progress": $Map<($AdvancementHolder), ($AdvancementProgress)>
 
 constructor(arg0: $DataFixer$$Type, arg1: $PlayerList$$Type, arg2: $ServerAdvancementManager$$Type, arg3: $Path$$Type, arg4: $ServerPlayer$$Type)
 
-public "setPlayer"(arg0: $ServerPlayer$$Type): void
 public "flushDirty"(arg0: $ServerPlayer$$Type): void
 public "stopListening"(): void
 public "getOrStartProgress"(arg0: $AdvancementHolder$$Type): $AdvancementProgress
 public "revoke"(arg0: $AdvancementHolder$$Type, arg1: StringJS): boolean
+public "setPlayer"(arg0: $ServerPlayer$$Type): void
 public "reload"(arg0: $ServerAdvancementManager$$Type): void
 public "save"(): void
 public "award"(arg0: $AdvancementHolder$$Type, arg1: StringJS): boolean
@@ -885,8 +885,8 @@ export type $ServerLinks$$Original = $ServerLinks;}
 declare module "net.minecraft.server.ServerLinks$KnownLinkType" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$ServerLinks$Entry} from "net.minecraft.server.ServerLinks$Entry"
-import {$Enum} from "java.lang.Enum"
 import {$URI$$Type} from "java.net.URI"
+import {$Enum} from "java.lang.Enum"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 
 export class $ServerLinks$KnownLinkType extends $Enum<($ServerLinks$KnownLinkType)> {
@@ -968,32 +968,32 @@ export type $ServerInfo$$Original = $ServerInfo;}
 declare module "net.minecraft.server.ServerFunctionManager" {
 import {$Iterable} from "java.lang.Iterable"
 import {$CommandFunction, $CommandFunction$$Type} from "net.minecraft.commands.functions.CommandFunction"
-import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Collection} from "java.util.Collection"
+import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Optional} from "java.util.Optional"
 import {$IProfilingServerFunctionManager$$Interface} from "org.embeddedt.modernfix.duck.IProfilingServerFunctionManager"
 import {$CommandDispatcher} from "com.mojang.brigadier.CommandDispatcher"
 import {$ServerFunctionLibrary$$Type} from "net.minecraft.server.ServerFunctionLibrary"
-import {$MinecraftServer$$Type} from "net.minecraft.server.MinecraftServer"
 import {$CommandSourceStack, $CommandSourceStack$$Type} from "net.minecraft.commands.CommandSourceStack"
+import {$MinecraftServer$$Type} from "net.minecraft.server.MinecraftServer"
 
 export class $ServerFunctionManager implements $IProfilingServerFunctionManager$$Interface {
 constructor(arg0: $MinecraftServer$$Type, arg1: $ServerFunctionLibrary$$Type)
 
+public "getGameLoopSender"(): $CommandSourceStack
+public "getFunctionNames"(): $Iterable<($ResourceLocation)>
 public "getTagNames"(): $Iterable<($ResourceLocation)>
 public "mfix$getProfilingResults"(): StringJS
-public "getFunctionNames"(): $Iterable<($ResourceLocation)>
 public "replaceLibrary"(arg0: $ServerFunctionLibrary$$Type): void
-public "getTag"(arg0: $ResourceLocation$$Type): $Collection<($CommandFunction<($CommandSourceStack)>)>
 public "tick"(): void
+public "getTag"(arg0: $ResourceLocation$$Type): $Collection<($CommandFunction<($CommandSourceStack)>)>
 public "get"(arg0: $ResourceLocation$$Type): $Optional<($CommandFunction<($CommandSourceStack)>)>
 public "execute"(arg0: $CommandFunction$$Type<($CommandSourceStack$$Type)>, arg1: $CommandSourceStack$$Type): void
 public "getDispatcher"(): $CommandDispatcher<($CommandSourceStack)>
-public "getGameLoopSender"(): $CommandSourceStack
-get "tagNames"(): $Iterable<($ResourceLocation)>
-get "functionNames"(): $Iterable<($ResourceLocation)>
-get "dispatcher"(): $CommandDispatcher<($CommandSourceStack)>
 get "gameLoopSender"(): $CommandSourceStack
+get "functionNames"(): $Iterable<($ResourceLocation)>
+get "tagNames"(): $Iterable<($ResourceLocation)>
+get "dispatcher"(): $CommandDispatcher<($CommandSourceStack)>
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -1024,7 +1024,7 @@ public "resourceManager"(): $CloseableResourceManager
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $MinecraftServer$ReloadableResources$$Type = ({"resourceManager"?: $CloseableResourceManager$$Type, "managers"?: $ReloadableServerResources$$Type}) | ([resourceManager?: $CloseableResourceManager$$Type, managers?: $ReloadableServerResources$$Type]);
+export type $MinecraftServer$ReloadableResources$$Type = ({"managers"?: $ReloadableServerResources$$Type, "resourceManager"?: $CloseableResourceManager$$Type}) | ([managers?: $ReloadableServerResources$$Type, resourceManager?: $CloseableResourceManager$$Type]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -1035,12 +1035,12 @@ import {$List} from "java.util.List"
 import {$Objective$$Type} from "net.minecraft.world.scores.Objective"
 import {$ScoreHolder$$Type} from "net.minecraft.world.scores.ScoreHolder"
 import {$Packet} from "net.minecraft.network.protocol.Packet"
-import {$PlayerTeam$$Type} from "net.minecraft.world.scores.PlayerTeam"
 import {$Runnable$$Type} from "java.lang.Runnable"
 import {$SavedData$Factory} from "net.minecraft.world.level.saveddata.SavedData$Factory"
+import {$PlayerTeam$$Type} from "net.minecraft.world.scores.PlayerTeam"
 import {$Scoreboard} from "net.minecraft.world.scores.Scoreboard"
-import {$MinecraftServer$$Type} from "net.minecraft.server.MinecraftServer"
 import {$DisplaySlot$$Type} from "net.minecraft.world.scores.DisplaySlot"
+import {$MinecraftServer$$Type} from "net.minecraft.server.MinecraftServer"
 
 export class $ServerScoreboard extends $Scoreboard {
 static readonly "HIDDEN_SCORE_PREFIX": StringJS

@@ -6,28 +6,28 @@ import {$IWireNode$$Type} from "com.mrh0.createaddition.energy.IWireNode"
 export class $EnergyNetwork {
 constructor(arg0: $Level$$Type)
 
-public "getBuff"(): integer
-public "getMaxBuff"(): integer
-public "demand"(arg0: integer): integer
-public "getDemand"(): integer
 public "getPulled"(): integer
 public "getPushed"(): integer
-public "push"(arg0: integer): integer
-public "push"(arg0: integer, arg1: boolean): integer
-public "invalidate"(): void
-public "isValid"(): boolean
-public "pull"(arg0: integer): integer
-public "pull"(arg0: integer, arg1: boolean): integer
+public "getDemand"(): integer
+public "demand"(arg0: integer): integer
+public "getMaxBuff"(): integer
+public "getBuff"(): integer
 public "tick"(arg0: integer): void
+public "pull"(arg0: integer, arg1: boolean): integer
+public "pull"(arg0: integer): integer
 public "getId"(): integer
 public "removed"(): void
 public static "nextNode"(arg0: $Level$$Type, arg1: $EnergyNetwork$$Type, arg2: $Map$$Type<(StringJS), ($IWireNode$$Type)>, arg3: $IWireNode$$Type, arg4: integer): $EnergyNetwork
-get "buff"(): integer
-get "maxBuff"(): integer
+public "push"(arg0: integer, arg1: boolean): integer
+public "push"(arg0: integer): integer
+public "isValid"(): boolean
+public "invalidate"(): void
 get "pulled"(): integer
 get "pushed"(): integer
-get "valid"(): boolean
+get "maxBuff"(): integer
+get "buff"(): integer
 get "id"(): integer
+get "valid"(): boolean
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -54,9 +54,6 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 
 constructor(arg0: $BlockEntityType$$Type<(never)>, arg1: $BlockPos$$Type, arg2: $BlockState$$Type)
 
-public "addBehaviours"(arg0: $List$$Type<($BlockEntityBehaviour$$Type)>): void
-public "writeSafe"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
-public "updateCache"(arg0: $Direction$$Type): void
 public "isEnergyOutput"(arg0: $Direction$$Type): boolean
 public "isEnergyInput"(arg0: $Direction$$Type): boolean
 public "getMaxIn"(): integer
@@ -66,8 +63,11 @@ public "getMaxOut"(): integer
  * @deprecated
  */
 public "outputTick"(arg0: integer): void
-public "getCapacity"(): integer
+public "addBehaviours"(arg0: $List$$Type<($BlockEntityBehaviour$$Type)>): void
+public "writeSafe"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
+public "updateCache"(arg0: $Direction$$Type): void
 public "tick"(): void
+public "getCapacity"(): integer
 get "maxIn"(): integer
 get "maxOut"(): integer
 get "capacity"(): integer
@@ -82,8 +82,8 @@ export type $AbstractElectricBlockEntity$$Type = ($AbstractElectricBlockEntity);
  */
 export type $AbstractElectricBlockEntity$$Original = $AbstractElectricBlockEntity;}
 declare module "com.mrh0.createaddition.energy.LocalNode" {
-import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$NodeRotation$$Type} from "com.mrh0.createaddition.energy.NodeRotation"
+import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$Vec3i} from "net.minecraft.core.Vec3i"
 import {$WireType, $WireType$$Type} from "com.mrh0.createaddition.energy.WireType"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
@@ -101,17 +101,17 @@ static readonly "TYPE": StringJS
 constructor(arg0: $BlockEntity$$Type, arg1: integer, arg2: integer, arg3: $WireType$$Type, arg4: $BlockPos$$Type)
 constructor(arg0: $BlockEntity$$Type, arg1: $CompoundTag$$Type)
 
-public "getRelativePos"(): $Vec3i
 public "updateRelative"(arg0: $NodeRotation$$Type): void
 public "getOtherIndex"(): integer
+public "getRelativePos"(): $Vec3i
 public "invalid"(): void
 public "write"(arg0: $CompoundTag$$Type): void
 public "getType"(): $WireType
 public "getIndex"(): integer
 public "isInvalid"(): boolean
 public "getPos"(): $BlockPos
-get "relativePos"(): $Vec3i
 get "otherIndex"(): integer
+get "relativePos"(): $Vec3i
 get "type"(): $WireType
 get "index"(): integer
 get "pos"(): $BlockPos
@@ -195,9 +195,9 @@ import {$Direction$Axis, $Direction$Axis$$Type} from "net.minecraft.core.Directi
 import {$Vec3i, $Vec3i$$Type} from "net.minecraft.core.Vec3i"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$Rotation, $Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 
 export class $NodeRotation extends $Enum<($NodeRotation)> implements $StringRepresentable$$Interface {
@@ -223,11 +223,11 @@ public "getSerializedName"(): StringJS
 public "getRotation"(): $Rotation
 public "getAxis"(): $Direction$Axis
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
 get "rotation"(): $Rotation
 get "axis"(): $Direction$Axis
@@ -250,10 +250,10 @@ import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.
 
 export interface $IMultiTileEnergyContainer$$Interface extends $IMultiBlockEntityContainer$$Interface {
 get "maxWidth"(): integer
-get "controllerBE"(): T
-get "controller"(): boolean
 get "controller"(): $BlockPos
 set "controller"(value: $BlockPos$$Type)
+get "controllerBE"(): T
+get "controller"(): boolean
 get "mainConnectionAxis"(): $Direction$Axis
 get "lastKnownPos"(): $BlockPos
 set "extraData"(value: any)
@@ -266,10 +266,10 @@ get "extraData"(): any
 
 export class $IMultiTileEnergyContainer implements $IMultiTileEnergyContainer$$Interface {
  "getMaxWidth"(): integer
- "getControllerBE"<T extends $BlockEntity>(): T
- "isController"(): boolean
  "getController"(): $BlockPos
  "setController"(arg0: $BlockPos$$Type): void
+ "getControllerBE"<T extends $BlockEntity>(): T
+ "isController"(): boolean
  "removeController"(arg0: boolean): void
  "notifyMultiUpdated"(): void
  "getMainConnectionAxis"(): $Direction$Axis
@@ -300,31 +300,28 @@ import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$WireType, $WireType$$Type} from "com.mrh0.createaddition.energy.WireType"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
+import {$EnergyNetwork, $EnergyNetwork$$Type} from "com.mrh0.createaddition.energy.network.EnergyNetwork"
 import {$Vec3, $Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$WireConnectResult} from "com.mrh0.createaddition.energy.WireConnectResult"
-import {$EnergyNetwork, $EnergyNetwork$$Type} from "com.mrh0.createaddition.energy.network.EnergyNetwork"
 import {$Set$$Type} from "java.util.Set"
 import {$ConnectorType} from "com.mrh0.createaddition.blocks.connector.ConnectorType"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$LocalNode, $LocalNode$$Type} from "com.mrh0.createaddition.energy.LocalNode"
 
 export interface $IWireNode$$Interface {
-get "nodeCount"(): integer
 get "availableNode"(): integer
 get "connectorType"(): $ConnectorType
 get "maxWireLength"(): integer
+get "nodeCount"(): integer
 get "pos"(): $BlockPos
 }
 
 export class $IWireNode implements $IWireNode$$Interface {
- "getNodeCount"(): integer
- "getNodePos"(arg0: integer): $BlockPos
- "hasConnection"(arg0: integer): boolean
  "getNetwork"(arg0: integer): $EnergyNetwork
  "setNetwork"(arg0: integer, arg1: $EnergyNetwork$$Type): void
 static "getTypeOfConnection"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockPos$$Type): $WireType
- "getAvailableNode"(): integer
  "getAvailableNode"(arg0: $Vec3$$Type): integer
+ "getAvailableNode"(): integer
  "hasAnyConnection"(): boolean
  "isNodeInput"(arg0: integer): boolean
  "isNodeOutput"(arg0: integer): boolean
@@ -354,11 +351,14 @@ static "getNbtNode"(arg0: $CompoundTag$$Type, arg1: integer): $CompoundTag
 static "readNodeBlockPos"(arg0: $CompoundTag$$Type, arg1: integer, arg2: $BlockPos$$Type): $BlockPos
 static "readNodeWireType"(arg0: $CompoundTag$$Type, arg1: integer): $WireType
 static "readNodeOtherIndex"(arg0: $CompoundTag$$Type, arg1: integer): integer
- "getNodeType"(arg0: integer): $WireType
+ "getNodeCount"(): integer
+ "getNodePos"(arg0: integer): $BlockPos
+ "hasConnection"(arg0: integer): boolean
  "setNode"(arg0: integer, arg1: integer, arg2: $BlockPos$$Type, arg3: $WireType$$Type): void
+ "getNodeType"(arg0: integer): $WireType
 static "connect"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: integer, arg3: $BlockPos$$Type, arg4: integer, arg5: $WireType$$Type): $WireConnectResult
- "removeNode"(arg0: $LocalNode$$Type, arg1: boolean): void
  "removeNode"(arg0: integer, arg1: boolean): void
+ "removeNode"(arg0: $LocalNode$$Type, arg1: boolean): void
  "removeNode"(arg0: integer): void
  "removeNode"(arg0: $LocalNode$$Type): void
 static "disconnect"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockPos$$Type): $WireConnectResult
@@ -384,24 +384,24 @@ static readonly "FESTIVE": $WireType
 static readonly "COPPER": $WireType
 static readonly "ELECTRUM": $WireType
 
-public "isFestive"(): boolean
+public "getSourceDrop"(): $ItemStack
+public "getDrop"(): $ItemStack
 public "getRed"(): integer
 public "getGreen"(): integer
 public "getBlue"(): integer
-public "getSourceDrop"(): $ItemStack
-public "getDrop"(): $ItemStack
+public "isFestive"(): boolean
 public static "values"(): ($WireType)[]
 public static "valueOf"(arg0: StringJS): $WireType
 public static "of"(arg0: $Item$$Type): $WireType
 public static "fromIndex"(arg0: integer): $WireType
 public "transfer"(): integer
 public "getIndex"(): integer
-get "festive"(): boolean
+get "sourceDrop"(): $ItemStack
+get "drop"(): $ItemStack
 get "red"(): integer
 get "green"(): integer
 get "blue"(): integer
-get "sourceDrop"(): $ItemStack
-get "drop"(): $ItemStack
+get "festive"(): boolean
 get "index"(): integer
 }
 /**
@@ -414,8 +414,8 @@ export type $WireType$$Type = (("copper") | ("gold") | ("electrum") | ("festive"
  */
 export type $WireType$$Original = $WireType;}
 declare module "com.mrh0.createaddition.energy.InternalEnergyStorage" {
-import {$EnergyStorage} from "net.neoforged.neoforge.energy.EnergyStorage"
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
+import {$EnergyStorage} from "net.neoforged.neoforge.energy.EnergyStorage"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
@@ -428,7 +428,6 @@ constructor(arg0: integer, arg1: integer, arg2: integer, arg3: integer)
 
 public "canExtract"(): boolean
 public "canReceive"(): boolean
-public "setEnergy"(arg0: integer): void
 public "internalProduceEnergy"(arg0: integer): integer
 public "internalConsumeEnergy"(arg0: integer): integer
 /**
@@ -436,6 +435,7 @@ public "internalConsumeEnergy"(arg0: integer): integer
  * @deprecated
  */
 public "outputToSide"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $Direction$$Type, arg3: integer): void
+public "setEnergy"(arg0: integer): void
 public "setCapacity"(arg0: integer): void
 public "getSpace"(): integer
 public "toString"(): StringJS

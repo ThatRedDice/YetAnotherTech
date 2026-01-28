@@ -1,11 +1,11 @@
 declare module "blusunrize.immersiveengineering.common.crafting.serializers.GeneratedListSerializer" {
-import {$StackWithChance} from "blusunrize.immersiveengineering.api.crafting.StackWithChance"
 import {$IERecipeSerializer} from "blusunrize.immersiveengineering.api.crafting.IERecipeSerializer"
-import {$ItemStack} from "net.minecraft.world.item.ItemStack"
+import {$StackWithChance} from "blusunrize.immersiveengineering.api.crafting.StackWithChance"
 import {$DualMapCodec} from "malte0811.dualcodecs.DualMapCodec"
+import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$List} from "java.util.List"
 import {$GeneratedListRecipe} from "blusunrize.immersiveengineering.common.crafting.GeneratedListRecipe"
 import {$RecipeSerializer, $RecipeSerializer$$Type} from "net.minecraft.world.item.crafting.RecipeSerializer"
@@ -32,13 +32,13 @@ export type $GeneratedListSerializer$$Type = ($GeneratedListSerializer);
  */
 export type $GeneratedListSerializer$$Original = $GeneratedListSerializer;}
 declare module "blusunrize.immersiveengineering.common.crafting.serializers.ArcFurnaceRecipeSerializer" {
-import {$StackWithChance} from "blusunrize.immersiveengineering.api.crafting.StackWithChance"
 import {$IERecipeSerializer} from "blusunrize.immersiveengineering.api.crafting.IERecipeSerializer"
-import {$ItemStack} from "net.minecraft.world.item.ItemStack"
+import {$StackWithChance} from "blusunrize.immersiveengineering.api.crafting.StackWithChance"
 import {$DualMapCodec} from "malte0811.dualcodecs.DualMapCodec"
+import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$List} from "java.util.List"
 import {$ArcFurnaceRecipe} from "blusunrize.immersiveengineering.api.crafting.ArcFurnaceRecipe"
 import {$RecipeSerializer, $RecipeSerializer$$Type} from "net.minecraft.world.item.crafting.RecipeSerializer"
@@ -84,13 +84,13 @@ export type $AbstractFluidAwareRecipe$IMatchLocation$$Type = ((arg0: integer, ar
  */
 export type $AbstractFluidAwareRecipe$IMatchLocation$$Original = $AbstractFluidAwareRecipe$IMatchLocation;}
 declare module "blusunrize.immersiveengineering.common.crafting.serializers.CrusherRecipeSerializer" {
-import {$StackWithChance} from "blusunrize.immersiveengineering.api.crafting.StackWithChance"
 import {$IERecipeSerializer} from "blusunrize.immersiveengineering.api.crafting.IERecipeSerializer"
-import {$ItemStack} from "net.minecraft.world.item.ItemStack"
+import {$StackWithChance} from "blusunrize.immersiveengineering.api.crafting.StackWithChance"
 import {$DualMapCodec} from "malte0811.dualcodecs.DualMapCodec"
+import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$List} from "java.util.List"
 import {$CrusherRecipe} from "blusunrize.immersiveengineering.api.crafting.CrusherRecipe"
 import {$RecipeSerializer, $RecipeSerializer$$Type} from "net.minecraft.world.item.crafting.RecipeSerializer"
@@ -135,14 +135,14 @@ export type $TurnAndCopyRecipe$MatchLocation$$Type = ($TurnAndCopyRecipe$MatchLo
  */
 export type $TurnAndCopyRecipe$MatchLocation$$Original = $TurnAndCopyRecipe$MatchLocation;}
 declare module "blusunrize.immersiveengineering.common.crafting.serializers.BlueprintCraftingRecipeSerializer" {
-import {$StackWithChance} from "blusunrize.immersiveengineering.api.crafting.StackWithChance"
 import {$IERecipeSerializer} from "blusunrize.immersiveengineering.api.crafting.IERecipeSerializer"
-import {$ItemStack} from "net.minecraft.world.item.ItemStack"
+import {$StackWithChance} from "blusunrize.immersiveengineering.api.crafting.StackWithChance"
 import {$DualMapCodec} from "malte0811.dualcodecs.DualMapCodec"
 import {$BlueprintCraftingRecipe} from "blusunrize.immersiveengineering.api.crafting.BlueprintCraftingRecipe"
+import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$List} from "java.util.List"
 import {$RecipeSerializer, $RecipeSerializer$$Type} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$DualCodec} from "malte0811.dualcodecs.DualCodec"
@@ -168,13 +168,13 @@ export type $BlueprintCraftingRecipeSerializer$$Type = ($BlueprintCraftingRecipe
  */
 export type $BlueprintCraftingRecipeSerializer$$Original = $BlueprintCraftingRecipeSerializer;}
 declare module "blusunrize.immersiveengineering.common.crafting.serializers.AlloyRecipeSerializer" {
-import {$StackWithChance} from "blusunrize.immersiveengineering.api.crafting.StackWithChance"
 import {$IERecipeSerializer} from "blusunrize.immersiveengineering.api.crafting.IERecipeSerializer"
+import {$StackWithChance} from "blusunrize.immersiveengineering.api.crafting.StackWithChance"
 import {$AlloyRecipe} from "blusunrize.immersiveengineering.api.crafting.AlloyRecipe"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$List} from "java.util.List"
 import {$RecipeSerializer, $RecipeSerializer$$Type} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$DualCodec} from "malte0811.dualcodecs.DualCodec"
@@ -199,14 +199,14 @@ export type $AlloyRecipeSerializer$$Type = ($AlloyRecipeSerializer);
  */
 export type $AlloyRecipeSerializer$$Original = $AlloyRecipeSerializer;}
 declare module "blusunrize.immersiveengineering.common.crafting.serializers.FermenterRecipeSerializer" {
-import {$StackWithChance} from "blusunrize.immersiveengineering.api.crafting.StackWithChance"
 import {$FermenterRecipe} from "blusunrize.immersiveengineering.api.crafting.FermenterRecipe"
 import {$IERecipeSerializer} from "blusunrize.immersiveengineering.api.crafting.IERecipeSerializer"
-import {$ItemStack} from "net.minecraft.world.item.ItemStack"
+import {$StackWithChance} from "blusunrize.immersiveengineering.api.crafting.StackWithChance"
 import {$DualMapCodec} from "malte0811.dualcodecs.DualMapCodec"
+import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$List} from "java.util.List"
 import {$RecipeSerializer, $RecipeSerializer$$Type} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$DualCodec} from "malte0811.dualcodecs.DualCodec"
@@ -232,16 +232,16 @@ export type $FermenterRecipeSerializer$$Type = ($FermenterRecipeSerializer);
  */
 export type $FermenterRecipeSerializer$$Original = $FermenterRecipeSerializer;}
 declare module "blusunrize.immersiveengineering.common.crafting.serializers.MetalPressRecipeSerializer" {
-import {$StackWithChance} from "blusunrize.immersiveengineering.api.crafting.StackWithChance"
 import {$IERecipeSerializer} from "blusunrize.immersiveengineering.api.crafting.IERecipeSerializer"
-import {$ItemStack} from "net.minecraft.world.item.ItemStack"
+import {$StackWithChance} from "blusunrize.immersiveengineering.api.crafting.StackWithChance"
 import {$DualMapCodec} from "malte0811.dualcodecs.DualMapCodec"
+import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$List} from "java.util.List"
-import {$MetalPressRecipe} from "blusunrize.immersiveengineering.api.crafting.MetalPressRecipe"
 import {$RecipeSerializer, $RecipeSerializer$$Type} from "net.minecraft.world.item.crafting.RecipeSerializer"
+import {$MetalPressRecipe} from "blusunrize.immersiveengineering.api.crafting.MetalPressRecipe"
 import {$DualCodec} from "malte0811.dualcodecs.DualCodec"
 
 export class $MetalPressRecipeSerializer extends $IERecipeSerializer<($MetalPressRecipe)> {
@@ -316,13 +316,13 @@ export type $WindmillBiomeSerializer$$Type = ($WindmillBiomeSerializer);
  */
 export type $WindmillBiomeSerializer$$Original = $WindmillBiomeSerializer;}
 declare module "blusunrize.immersiveengineering.common.crafting.serializers.BlastFurnaceRecipeSerializer" {
-import {$StackWithChance} from "blusunrize.immersiveengineering.api.crafting.StackWithChance"
 import {$IERecipeSerializer} from "blusunrize.immersiveengineering.api.crafting.IERecipeSerializer"
-import {$ItemStack} from "net.minecraft.world.item.ItemStack"
+import {$StackWithChance} from "blusunrize.immersiveengineering.api.crafting.StackWithChance"
 import {$DualMapCodec} from "malte0811.dualcodecs.DualMapCodec"
+import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$List} from "java.util.List"
 import {$BlastFurnaceRecipe} from "blusunrize.immersiveengineering.api.crafting.BlastFurnaceRecipe"
 import {$RecipeSerializer, $RecipeSerializer$$Type} from "net.minecraft.world.item.crafting.RecipeSerializer"
@@ -353,8 +353,8 @@ import {$CraftingInput$$Type} from "net.minecraft.world.item.crafting.CraftingIn
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Ingredient, $Ingredient$$Type} from "net.minecraft.world.item.crafting.Ingredient"
 import {$RecipeType} from "net.minecraft.world.item.crafting.RecipeType"
-import {$CraftingBookCategory} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$CraftingBookCategory} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
@@ -403,13 +403,13 @@ export type $RGBColourationRecipe$$Type = ({"target"?: $Ingredient$$Type}) | ([t
  */
 export type $RGBColourationRecipe$$Original = $RGBColourationRecipe;}
 declare module "blusunrize.immersiveengineering.common.crafting.serializers.RefineryRecipeSerializer" {
-import {$StackWithChance} from "blusunrize.immersiveengineering.api.crafting.StackWithChance"
 import {$IERecipeSerializer} from "blusunrize.immersiveengineering.api.crafting.IERecipeSerializer"
-import {$ItemStack} from "net.minecraft.world.item.ItemStack"
+import {$StackWithChance} from "blusunrize.immersiveengineering.api.crafting.StackWithChance"
 import {$DualMapCodec} from "malte0811.dualcodecs.DualMapCodec"
+import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$List} from "java.util.List"
 import {$RefineryRecipe} from "blusunrize.immersiveengineering.api.crafting.RefineryRecipe"
 import {$RecipeSerializer, $RecipeSerializer$$Type} from "net.minecraft.world.item.crafting.RecipeSerializer"
@@ -438,8 +438,8 @@ export type $RefineryRecipeSerializer$$Original = $RefineryRecipeSerializer;}
 declare module "blusunrize.immersiveengineering.common.crafting.serializers.DamageToolRecipeSerializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$DualMapCodec} from "malte0811.dualcodecs.DualMapCodec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$DamageToolRecipe} from "blusunrize.immersiveengineering.common.crafting.DamageToolRecipe"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
@@ -464,8 +464,8 @@ export type $DamageToolRecipeSerializer$$Type = ($DamageToolRecipeSerializer);
 export type $DamageToolRecipeSerializer$$Original = $DamageToolRecipeSerializer;}
 declare module "blusunrize.immersiveengineering.common.crafting.serializers.WrappingRecipeSerializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Function$$Type} from "java.util.function.Function"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
@@ -489,15 +489,15 @@ export type $WrappingRecipeSerializer$$Original<WrappingType, WrappedType> = $Wr
 declare module "blusunrize.immersiveengineering.common.crafting.GeneratedListRecipe" {
 import {$IERecipeSerializer} from "blusunrize.immersiveengineering.api.crafting.IERecipeSerializer"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
-import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Map} from "java.util.Map"
+import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Recipe, $Recipe$$Type} from "net.minecraft.world.item.crafting.Recipe"
 import {$List, $List$$Type} from "java.util.List"
 import {$Supplier} from "java.util.function.Supplier"
 import {$IListRecipe$$Interface} from "blusunrize.immersiveengineering.api.crafting.cache.IListRecipe"
 import {$GeneratedListRecipe$RecipeListGenerator} from "blusunrize.immersiveengineering.common.crafting.GeneratedListRecipe$RecipeListGenerator"
-import {$IESerializableRecipe} from "blusunrize.immersiveengineering.api.crafting.IESerializableRecipe"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$IESerializableRecipe} from "blusunrize.immersiveengineering.api.crafting.IESerializableRecipe"
 
 export class $GeneratedListRecipe<R extends $Recipe<(object)>, E> extends $IESerializableRecipe implements $IListRecipe$$Interface {
 static "SERIALIZER": $Supplier<($IERecipeSerializer<($GeneratedListRecipe<(never), (never)>)>)>
@@ -540,8 +540,8 @@ export class $TurnAndCopyRecipe extends $AbstractShapedRecipe<($TurnAndCopyRecip
 readonly "result": $ItemStack
 readonly "pattern": $ShapedRecipePattern
 
-constructor(arg0: $ShapedRecipe$$Type, arg1: $List$$Type<(integer)>)
 constructor(arg0: $ShapedRecipe$$Type)
+constructor(arg0: $ShapedRecipe$$Type, arg1: $List$$Type<(integer)>)
 
 public "assemble"(arg0: $CraftingInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
 public "assemble"(arg0: $RecipeInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
@@ -574,8 +574,8 @@ import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$AbstractFluidAwareRecipe$IMatchLocation} from "blusunrize.immersiveengineering.common.crafting.fluidaware.AbstractFluidAwareRecipe$IMatchLocation"
 import {$Ingredient} from "net.minecraft.world.item.crafting.Ingredient"
 import {$RecipeType} from "net.minecraft.world.item.crafting.RecipeType"
-import {$CraftingBookCategory} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$CraftingBookCategory} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
@@ -597,15 +597,15 @@ export class $IFluidAwareRecipe<MatchLocation extends $AbstractFluidAwareRecipe$
  "assemble"(arg0: $RecipeInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
  "getRemainingItems"(arg0: $RecipeInput$$Type): $NonNullList
  "getRemainingItems"(arg0: $CraftingInput$$Type): $NonNullList<($ItemStack)>
+ "findMatch"(arg0: $CraftingInput$$Type): MatchLocation
  "matches"(arg0: $CraftingInput$$Type, arg1: $Level$$Type): boolean
  "matches"(arg0: $RecipeInput$$Type, arg1: $Level$$Type): boolean
- "findMatch"(arg0: $CraftingInput$$Type): MatchLocation
  "category"(): $CraftingBookCategory
  "getType"(): $RecipeType<(never)>
  "getSerializer"(): $RecipeSerializer<(never)>
- "getIngredients"(): $NonNullList<($Ingredient)>
  "canCraftInDimensions"(arg0: integer, arg1: integer): boolean
  "getResultItem"(arg0: $HolderLookup$Provider$$Type): $ItemStack
+ "getIngredients"(): $NonNullList<($Ingredient)>
  "showNotification"(): boolean
  "getToastSymbol"(): $ItemStack
  "isIncomplete"(): boolean
@@ -622,13 +622,13 @@ export type $IFluidAwareRecipe$$Type<MatchLocation> = ($IFluidAwareRecipe<(Match
  */
 export type $IFluidAwareRecipe$$Original<MatchLocation> = $IFluidAwareRecipe<(MatchLocation)>;}
 declare module "blusunrize.immersiveengineering.common.crafting.serializers.SqueezerRecipeSerializer" {
-import {$StackWithChance} from "blusunrize.immersiveengineering.api.crafting.StackWithChance"
 import {$IERecipeSerializer} from "blusunrize.immersiveengineering.api.crafting.IERecipeSerializer"
-import {$ItemStack} from "net.minecraft.world.item.ItemStack"
+import {$StackWithChance} from "blusunrize.immersiveengineering.api.crafting.StackWithChance"
 import {$DualMapCodec} from "malte0811.dualcodecs.DualMapCodec"
+import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$List} from "java.util.List"
 import {$SqueezerRecipe} from "blusunrize.immersiveengineering.api.crafting.SqueezerRecipe"
 import {$RecipeSerializer, $RecipeSerializer$$Type} from "net.minecraft.world.item.crafting.RecipeSerializer"
@@ -657,8 +657,8 @@ export type $SqueezerRecipeSerializer$$Original = $SqueezerRecipeSerializer;}
 declare module "blusunrize.immersiveengineering.common.crafting.serializers.NoContainerSerializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$DualMapCodec} from "malte0811.dualcodecs.DualMapCodec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$INoContainersRecipe} from "blusunrize.immersiveengineering.common.crafting.INoContainersRecipe"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
@@ -686,8 +686,8 @@ declare module "blusunrize.immersiveengineering.common.crafting.fluidaware.Abstr
 import {$CraftingInput$$Type} from "net.minecraft.world.item.crafting.CraftingInput"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$AbstractFluidAwareRecipe$IMatchLocation} from "blusunrize.immersiveengineering.common.crafting.fluidaware.AbstractFluidAwareRecipe$IMatchLocation"
-import {$CraftingBookCategory, $CraftingBookCategory$$Type} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$CraftingBookCategory, $CraftingBookCategory$$Type} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$ShapedRecipePattern, $ShapedRecipePattern$$Type} from "net.minecraft.world.item.crafting.ShapedRecipePattern"
@@ -707,16 +707,16 @@ public "toVanilla"(): $ShapedRecipe
 public "getSerializer"(): $RecipeSerializer<(never)>
 public "canCraftInDimensions"(arg0: integer, arg1: integer): boolean
 public "isIncomplete"(): boolean
-public "category"(): $CraftingBookCategory
 public "getWidth"(): integer
 public "getHeight"(): integer
+public "category"(): $CraftingBookCategory
 public "assemble"(arg0: $CraftingInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
 public "assemble"(arg0: $RecipeInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
 public "getRemainingItems"(arg0: $RecipeInput$$Type): $NonNullList
 public "getRemainingItems"(arg0: $CraftingInput$$Type): $NonNullList<($ItemStack)>
+public "findMatch"(arg0: $CraftingInput$$Type): MatchLocation
 public "matches"(arg0: $CraftingInput$$Type, arg1: $Level$$Type): boolean
 public "matches"(arg0: $RecipeInput$$Type, arg1: $Level$$Type): boolean
-public "findMatch"(arg0: $CraftingInput$$Type): MatchLocation
 get "serializer"(): $RecipeSerializer<(never)>
 get "incomplete"(): boolean
 get "width"(): integer
@@ -769,13 +769,13 @@ export type $ThermoelectricSourceSerializer$$Type = ($ThermoelectricSourceSerial
  */
 export type $ThermoelectricSourceSerializer$$Original = $ThermoelectricSourceSerializer;}
 declare module "blusunrize.immersiveengineering.common.crafting.serializers.BlastFurnaceFuelSerializer" {
-import {$StackWithChance} from "blusunrize.immersiveengineering.api.crafting.StackWithChance"
 import {$IERecipeSerializer} from "blusunrize.immersiveengineering.api.crafting.IERecipeSerializer"
-import {$ItemStack} from "net.minecraft.world.item.ItemStack"
+import {$StackWithChance} from "blusunrize.immersiveengineering.api.crafting.StackWithChance"
 import {$DualMapCodec} from "malte0811.dualcodecs.DualMapCodec"
+import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$List} from "java.util.List"
 import {$BlastFurnaceFuel} from "blusunrize.immersiveengineering.api.crafting.BlastFurnaceFuel"
 import {$RecipeSerializer, $RecipeSerializer$$Type} from "net.minecraft.world.item.crafting.RecipeSerializer"
@@ -805,9 +805,9 @@ declare module "blusunrize.immersiveengineering.common.crafting.GeneratedListRec
 import {$IERecipeTypes$TypeWithClass, $IERecipeTypes$TypeWithClass$$Type} from "blusunrize.immersiveengineering.api.crafting.IERecipeTypes$TypeWithClass"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$List, $List$$Type} from "java.util.List"
 import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier, $Supplier$$Type} from "java.util.function.Supplier"
-import {$List, $List$$Type} from "java.util.List"
 import {$RecipeSerializer$$Type} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$Holder$$Type} from "net.minecraft.core.Holder"
 import {$Record} from "java.lang.Record"
@@ -837,12 +837,12 @@ export type $GeneratedListRecipe$RecipeListGenerator$$Original<T, EarlyResult> =
 declare module "blusunrize.immersiveengineering.common.crafting.DamageToolRecipe" {
 import {$CraftingInput$$Type} from "net.minecraft.world.item.crafting.CraftingInput"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$Ingredient, $Ingredient$$Type} from "net.minecraft.world.item.crafting.Ingredient"
-import {$ShapelessRecipe} from "net.minecraft.world.item.crafting.ShapelessRecipe"
+import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
+import {$ShapelessRecipe} from "net.minecraft.world.item.crafting.ShapelessRecipe"
 import {$NonNullList, $NonNullList$$Type} from "net.minecraft.core.NonNullList"
+import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 
 export class $DamageToolRecipe extends $ShapelessRecipe {
 readonly "result": $ItemStack
@@ -870,13 +870,13 @@ export type $DamageToolRecipe$$Type = ($DamageToolRecipe);
  */
 export type $DamageToolRecipe$$Original = $DamageToolRecipe;}
 declare module "blusunrize.immersiveengineering.common.crafting.serializers.SawmillRecipeSerializer" {
-import {$StackWithChance} from "blusunrize.immersiveengineering.api.crafting.StackWithChance"
 import {$IERecipeSerializer} from "blusunrize.immersiveengineering.api.crafting.IERecipeSerializer"
-import {$ItemStack} from "net.minecraft.world.item.ItemStack"
+import {$StackWithChance} from "blusunrize.immersiveengineering.api.crafting.StackWithChance"
 import {$DualMapCodec} from "malte0811.dualcodecs.DualMapCodec"
+import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$List} from "java.util.List"
 import {$RecipeSerializer, $RecipeSerializer$$Type} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$DualCodec} from "malte0811.dualcodecs.DualCodec"
@@ -903,13 +903,13 @@ export type $SawmillRecipeSerializer$$Type = ($SawmillRecipeSerializer);
  */
 export type $SawmillRecipeSerializer$$Original = $SawmillRecipeSerializer;}
 declare module "blusunrize.immersiveengineering.common.crafting.serializers.ClocheFertilizerSerializer" {
-import {$StackWithChance} from "blusunrize.immersiveengineering.api.crafting.StackWithChance"
 import {$IERecipeSerializer} from "blusunrize.immersiveengineering.api.crafting.IERecipeSerializer"
-import {$ItemStack} from "net.minecraft.world.item.ItemStack"
+import {$StackWithChance} from "blusunrize.immersiveengineering.api.crafting.StackWithChance"
 import {$DualMapCodec} from "malte0811.dualcodecs.DualMapCodec"
+import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$List} from "java.util.List"
 import {$ClocheFertilizer} from "blusunrize.immersiveengineering.api.crafting.ClocheFertilizer"
 import {$RecipeSerializer, $RecipeSerializer$$Type} from "net.minecraft.world.item.crafting.RecipeSerializer"
@@ -939,8 +939,8 @@ declare module "blusunrize.immersiveengineering.common.crafting.serializers.RGBR
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$RGBColourationRecipe} from "blusunrize.immersiveengineering.common.crafting.RGBColourationRecipe"
 import {$DualMapCodec} from "malte0811.dualcodecs.DualMapCodec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
 
@@ -963,14 +963,14 @@ export type $RGBRecipeSerializer$$Type = ($RGBRecipeSerializer);
  */
 export type $RGBRecipeSerializer$$Original = $RGBRecipeSerializer;}
 declare module "blusunrize.immersiveengineering.common.crafting.serializers.HammerCrushingRecipeSerializer" {
-import {$StackWithChance} from "blusunrize.immersiveengineering.api.crafting.StackWithChance"
 import {$IERecipeSerializer} from "blusunrize.immersiveengineering.api.crafting.IERecipeSerializer"
+import {$StackWithChance} from "blusunrize.immersiveengineering.api.crafting.StackWithChance"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
-import {$List} from "java.util.List"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$LazyShapelessRecipe} from "blusunrize.immersiveengineering.common.crafting.LazyShapelessRecipe"
+import {$List} from "java.util.List"
 import {$RecipeSerializer, $RecipeSerializer$$Type} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$DualCodec} from "malte0811.dualcodecs.DualCodec"
 
@@ -997,8 +997,8 @@ declare module "blusunrize.immersiveengineering.common.crafting.serializers.Revo
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$DualMapCodec} from "malte0811.dualcodecs.DualMapCodec"
 import {$RevolverAssemblyRecipe} from "blusunrize.immersiveengineering.common.crafting.RevolverAssemblyRecipe"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
 
@@ -1021,16 +1021,16 @@ export type $RevolverAssemblyRecipeSerializer$$Type = ($RevolverAssemblyRecipeSe
  */
 export type $RevolverAssemblyRecipeSerializer$$Original = $RevolverAssemblyRecipeSerializer;}
 declare module "blusunrize.immersiveengineering.common.crafting.serializers.MixerRecipeSerializer" {
-import {$StackWithChance} from "blusunrize.immersiveengineering.api.crafting.StackWithChance"
 import {$IERecipeSerializer} from "blusunrize.immersiveengineering.api.crafting.IERecipeSerializer"
-import {$ItemStack} from "net.minecraft.world.item.ItemStack"
+import {$StackWithChance} from "blusunrize.immersiveengineering.api.crafting.StackWithChance"
 import {$DualMapCodec} from "malte0811.dualcodecs.DualMapCodec"
+import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$List} from "java.util.List"
-import {$RecipeSerializer, $RecipeSerializer$$Type} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$MixerRecipe} from "blusunrize.immersiveengineering.api.crafting.MixerRecipe"
+import {$RecipeSerializer, $RecipeSerializer$$Type} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$DualCodec} from "malte0811.dualcodecs.DualCodec"
 
 export class $MixerRecipeSerializer extends $IERecipeSerializer<($MixerRecipe)> {
@@ -1054,13 +1054,13 @@ export type $MixerRecipeSerializer$$Type = ($MixerRecipeSerializer);
  */
 export type $MixerRecipeSerializer$$Original = $MixerRecipeSerializer;}
 declare module "blusunrize.immersiveengineering.common.crafting.serializers.BottlingMachineRecipeSerializer" {
-import {$StackWithChance} from "blusunrize.immersiveengineering.api.crafting.StackWithChance"
 import {$IERecipeSerializer} from "blusunrize.immersiveengineering.api.crafting.IERecipeSerializer"
-import {$ItemStack} from "net.minecraft.world.item.ItemStack"
+import {$StackWithChance} from "blusunrize.immersiveengineering.api.crafting.StackWithChance"
 import {$DualMapCodec} from "malte0811.dualcodecs.DualMapCodec"
+import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$List} from "java.util.List"
 import {$BottlingMachineRecipe} from "blusunrize.immersiveengineering.api.crafting.BottlingMachineRecipe"
 import {$RecipeSerializer, $RecipeSerializer$$Type} from "net.minecraft.world.item.crafting.RecipeSerializer"
@@ -1091,8 +1091,8 @@ import {$IERecipeSerializer} from "blusunrize.immersiveengineering.api.crafting.
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$MineralMix$BiomeTagPredicate} from "blusunrize.immersiveengineering.api.excavator.MineralMix$BiomeTagPredicate"
 import {$List} from "java.util.List"
-import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$DualCodec} from "malte0811.dualcodecs.DualCodec"
+import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$StackWithChance} from "blusunrize.immersiveengineering.api.crafting.StackWithChance"
 import {$MineralMix} from "blusunrize.immersiveengineering.api.excavator.MineralMix"
 import {$Codec} from "com.mojang.serialization.Codec"
@@ -1160,8 +1160,8 @@ export type $GeneratorFuelSerializer$$Original = $GeneratorFuelSerializer;}
 declare module "blusunrize.immersiveengineering.common.crafting.serializers.TurnAndCopyRecipeSerializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$DualMapCodec} from "malte0811.dualcodecs.DualMapCodec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$TurnAndCopyRecipe} from "blusunrize.immersiveengineering.common.crafting.fluidaware.TurnAndCopyRecipe"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
@@ -1220,13 +1220,13 @@ export type $ClocheRecipeSerializer$$Type = ($ClocheRecipeSerializer);
  */
 export type $ClocheRecipeSerializer$$Original = $ClocheRecipeSerializer;}
 declare module "blusunrize.immersiveengineering.common.crafting.serializers.CokeOvenRecipeSerializer" {
-import {$StackWithChance} from "blusunrize.immersiveengineering.api.crafting.StackWithChance"
 import {$IERecipeSerializer} from "blusunrize.immersiveengineering.api.crafting.IERecipeSerializer"
-import {$ItemStack} from "net.minecraft.world.item.ItemStack"
+import {$StackWithChance} from "blusunrize.immersiveengineering.api.crafting.StackWithChance"
 import {$DualMapCodec} from "malte0811.dualcodecs.DualMapCodec"
+import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$List} from "java.util.List"
 import {$RecipeSerializer, $RecipeSerializer$$Type} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$DualCodec} from "malte0811.dualcodecs.DualCodec"
@@ -1253,11 +1253,11 @@ export type $CokeOvenRecipeSerializer$$Type = ($CokeOvenRecipeSerializer);
  */
 export type $CokeOvenRecipeSerializer$$Original = $CokeOvenRecipeSerializer;}
 declare module "blusunrize.immersiveengineering.common.crafting.LazyShapelessRecipe" {
-import {$TagOutput, $TagOutput$$Type} from "blusunrize.immersiveengineering.api.crafting.TagOutput"
 import {$CraftingInput$$Type} from "net.minecraft.world.item.crafting.CraftingInput"
+import {$TagOutput, $TagOutput$$Type} from "blusunrize.immersiveengineering.api.crafting.TagOutput"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
-import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$Ingredient, $Ingredient$$Type} from "net.minecraft.world.item.crafting.Ingredient"
+import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$ShapelessRecipe} from "net.minecraft.world.item.crafting.ShapelessRecipe"
 import {$RecipeSerializer, $RecipeSerializer$$Type} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$NonNullList, $NonNullList$$Type} from "net.minecraft.core.NonNullList"
@@ -1292,8 +1292,8 @@ import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$AbstractFluidAwareRecipe$IMatchLocation} from "blusunrize.immersiveengineering.common.crafting.fluidaware.AbstractFluidAwareRecipe$IMatchLocation"
 import {$ShapedRecipePattern} from "net.minecraft.world.item.crafting.ShapedRecipePattern"
 import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
-import {$ShapedRecipe$$Type} from "net.minecraft.world.item.crafting.ShapedRecipe"
 import {$List$$Type} from "java.util.List"
+import {$ShapedRecipe$$Type} from "net.minecraft.world.item.crafting.ShapedRecipe"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$TurnAndCopyRecipe} from "blusunrize.immersiveengineering.common.crafting.fluidaware.TurnAndCopyRecipe"
 import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
@@ -1324,8 +1324,8 @@ export type $RevolverAssemblyRecipe$$Type = ($RevolverAssemblyRecipe);
 export type $RevolverAssemblyRecipe$$Original = $RevolverAssemblyRecipe;}
 declare module "blusunrize.immersiveengineering.common.crafting.serializers.SimpleRecipeSerializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Supplier, $Supplier$$Type} from "java.util.function.Supplier"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
@@ -1357,11 +1357,11 @@ import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Ingredient} from "net.minecraft.world.item.crafting.Ingredient"
 import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$RecipeType} from "net.minecraft.world.item.crafting.RecipeType"
-import {$CraftingBookCategory} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$CraftingBookCategory} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$CraftingRecipe, $CraftingRecipe$$Type, $CraftingRecipe$$Interface} from "net.minecraft.world.item.crafting.CraftingRecipe"
-import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
+import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 
 export interface $INoContainersRecipe$$Interface extends $CraftingRecipe$$Interface {
@@ -1379,12 +1379,12 @@ get "special"(): boolean
 export class $INoContainersRecipe implements $INoContainersRecipe$$Interface {
  "assemble"(arg0: $CraftingInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
  "assemble"(arg0: $RecipeInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
- "getRemainingItems"(arg0: $RecipeInput$$Type): $NonNullList
  "getRemainingItems"(arg0: $CraftingInput$$Type): $NonNullList<($ItemStack)>
+ "getRemainingItems"(arg0: $RecipeInput$$Type): $NonNullList
  "getSerializer"(): $RecipeSerializer<(never)>
- "getIngredients"(): $NonNullList<($Ingredient)>
  "canCraftInDimensions"(arg0: integer, arg1: integer): boolean
  "getResultItem"(arg0: $HolderLookup$Provider$$Type): $ItemStack
+ "getIngredients"(): $NonNullList<($Ingredient)>
  "getToastSymbol"(): $ItemStack
  "isIncomplete"(): boolean
  "baseRecipe"(): $CraftingRecipe

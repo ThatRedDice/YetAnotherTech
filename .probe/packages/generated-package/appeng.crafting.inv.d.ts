@@ -42,8 +42,8 @@ export type $ICraftingInventory$$Type = ($ICraftingInventory);
 export type $ICraftingInventory$$Original = $ICraftingInventory;}
 declare module "appeng.crafting.inv.ListCraftingInventory" {
 import {$Iterable} from "java.lang.Iterable"
-import {$ListCraftingInventory$ChangeListener$$Type} from "appeng.crafting.inv.ListCraftingInventory$ChangeListener"
 import {$KeyCounter} from "appeng.api.stacks.KeyCounter"
+import {$ListCraftingInventory$ChangeListener$$Type} from "appeng.crafting.inv.ListCraftingInventory$ChangeListener"
 import {$ICraftingInventory$$Interface} from "appeng.crafting.inv.ICraftingInventory"
 import {$Actionable$$Type} from "appeng.api.config.Actionable"
 import {$AEKey, $AEKey$$Type} from "appeng.api.stacks.AEKey"
@@ -55,9 +55,9 @@ readonly "list": $KeyCounter
 
 constructor(arg0: $ListCraftingInventory$ChangeListener$$Type)
 
-public "findFuzzyTemplates"(arg0: $AEKey$$Type): $Iterable<($AEKey)>
 public "readFromNBT"(arg0: $ListTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "writeToNBT"(arg0: $HolderLookup$Provider$$Type): $ListTag
+public "findFuzzyTemplates"(arg0: $AEKey$$Type): $Iterable<($AEKey)>
 public "extract"(arg0: $AEKey$$Type, arg1: long, arg2: $Actionable$$Type): long
 public "insert"(arg0: $AEKey$$Type, arg1: long, arg2: $Actionable$$Type): void
 public "clear"(): void

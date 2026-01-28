@@ -26,8 +26,8 @@ declare module "java.lang.invoke.MethodType" {
 import {$Constable$$Interface} from "java.lang.constant.Constable"
 import {$Optional} from "java.util.Optional"
 import {$Serializable$$Interface} from "java.io.Serializable"
-import {$MethodTypeDesc} from "java.lang.constant.MethodTypeDesc"
 import {$List, $List$$Type} from "java.util.List"
+import {$MethodTypeDesc} from "java.lang.constant.MethodTypeDesc"
 import {$TypeDescriptor$OfField, $TypeDescriptor$OfField$$Type} from "java.lang.invoke.TypeDescriptor$OfField"
 import {$Class, $Class$$Type} from "java.lang.Class"
 import {$ClassLoader$$Type} from "java.lang.ClassLoader"
@@ -117,6 +117,8 @@ static readonly "REF_invokeSpecial": integer
 static readonly "REF_invokeStatic": integer
 static readonly "REF_invokeInterface": integer
 
+static "referenceKindToString"(arg0: integer): StringJS
+ "reflectAs"<T extends $Member>(arg0: $Class$$Type<(T)>, arg1: $MethodHandles$Lookup$$Type): T
  "getName"(): StringJS
 static "toString"(arg0: integer, arg1: $Class$$Type<(never)>, arg2: StringJS, arg3: $MethodType$$Type): StringJS
  "getModifiers"(): integer
@@ -124,8 +126,6 @@ static "toString"(arg0: integer, arg1: $Class$$Type<(never)>, arg2: StringJS, ar
  "isVarArgs"(): boolean
  "getReferenceKind"(): integer
  "getMethodType"(): $MethodType
- "reflectAs"<T extends $Member>(arg0: $Class$$Type<(T)>, arg1: $MethodHandles$Lookup$$Type): T
-static "referenceKindToString"(arg0: integer): StringJS
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -197,9 +197,9 @@ import {$VarHandle} from "java.lang.invoke.VarHandle"
 import {$MethodHandle, $MethodHandle$$Type} from "java.lang.invoke.MethodHandle"
 import {$MethodHandles$Lookup$ClassOption$$Type} from "java.lang.invoke.MethodHandles$Lookup$ClassOption"
 import {$Class, $Class$$Type} from "java.lang.Class"
+import {$Constructor$$Type} from "java.lang.reflect.Constructor"
 import {$MethodType$$Type} from "java.lang.invoke.MethodType"
 import {$Field$$Type} from "java.lang.reflect.Field"
-import {$Constructor$$Type} from "java.lang.reflect.Constructor"
 import {$Method$$Type} from "java.lang.reflect.Method"
 
 /**
@@ -216,18 +216,6 @@ static readonly "UNCONDITIONAL": integer
 static readonly "PROTECTED": integer
 static readonly "PRIVATE": integer
 
-public "toString"(): StringJS
-public "findClass"(arg0: StringJS): $Class<(never)>
-public "defineClass"(arg0: (byte)[]): $Class<(never)>
-public "in"(arg0: $Class$$Type<(never)>): $MethodHandles$Lookup
-public "ensureInitialized"<T>(arg0: $Class$$Type<(T)>): $Class<(T)>
-public "revealDirect"(arg0: $MethodHandle$$Type): $MethodHandleInfo
-public "lookupClass"(): $Class<(never)>
-public "previousLookupClass"(): $Class<(never)>
-public "findVirtual"(arg0: $Class$$Type<(never)>, arg1: StringJS, arg2: $MethodType$$Type): $MethodHandle
-public "findStatic"(arg0: $Class$$Type<(never)>, arg1: StringJS, arg2: $MethodType$$Type): $MethodHandle
-public "unreflect"(arg0: $Method$$Type): $MethodHandle
-public "hasFullPrivilegeAccess"(): boolean
 public "accessClass"<T>(arg0: $Class$$Type<(T)>): $Class<(T)>
 public "dropLookupMode"(arg0: integer): $MethodHandles$Lookup
 public "defineHiddenClass"(arg0: (byte)[], arg1: boolean, ...arg2: ($MethodHandles$Lookup$ClassOption$$Type)[]): $MethodHandles$Lookup
@@ -252,6 +240,18 @@ public "unreflectVarHandle"(arg0: $Field$$Type): $VarHandle
  */
 public "hasPrivateAccess"(): boolean
 public "lookupModes"(): integer
+public "toString"(): StringJS
+public "findClass"(arg0: StringJS): $Class<(never)>
+public "defineClass"(arg0: (byte)[]): $Class<(never)>
+public "in"(arg0: $Class$$Type<(never)>): $MethodHandles$Lookup
+public "ensureInitialized"<T>(arg0: $Class$$Type<(T)>): $Class<(T)>
+public "revealDirect"(arg0: $MethodHandle$$Type): $MethodHandleInfo
+public "lookupClass"(): $Class<(never)>
+public "previousLookupClass"(): $Class<(never)>
+public "findVirtual"(arg0: $Class$$Type<(never)>, arg1: StringJS, arg2: $MethodType$$Type): $MethodHandle
+public "findStatic"(arg0: $Class$$Type<(never)>, arg1: StringJS, arg2: $MethodType$$Type): $MethodHandle
+public "unreflect"(arg0: $Method$$Type): $MethodHandle
+public "hasFullPrivilegeAccess"(): boolean
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_

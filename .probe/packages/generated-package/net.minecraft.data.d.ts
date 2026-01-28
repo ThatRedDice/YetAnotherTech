@@ -118,8 +118,8 @@ import {$Codec$$Type} from "com.mojang.serialization.Codec"
 import {$CompletableFuture} from "java.util.concurrent.CompletableFuture"
 import {$Comparator} from "java.util.Comparator"
 import {$JsonElement$$Type} from "com.google.gson.JsonElement"
-import {$AtomicInteger} from "java.util.concurrent.atomic.AtomicInteger"
 import {$CachedOutput$$Type} from "net.minecraft.data.CachedOutput"
+import {$AtomicInteger} from "java.util.concurrent.atomic.AtomicInteger"
 import {$Path$$Type} from "java.nio.file.Path"
 import {$Logger} from "org.slf4j.Logger"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
@@ -134,8 +134,8 @@ static readonly "INDENT_WIDTH": $AtomicInteger
 static readonly "KEY_COMPARATOR": $Comparator<(StringJS)>
 static readonly "LOGGER": $Logger
 
-static "saveStable"<T>(arg0: $CachedOutput$$Type, arg1: $HolderLookup$Provider$$Type, arg2: $Codec$$Type<(T)>, arg3: T, arg4: $Path$$Type): $CompletableFuture<(never)>
 static "saveStable"(arg0: $CachedOutput$$Type, arg1: $JsonElement$$Type, arg2: $Path$$Type): $CompletableFuture
+static "saveStable"<T>(arg0: $CachedOutput$$Type, arg1: $HolderLookup$Provider$$Type, arg2: $Codec$$Type<(T)>, arg3: T, arg4: $Path$$Type): $CompletableFuture<(never)>
  "getName"(): StringJS
  "run"(arg0: $CachedOutput$$Type): $CompletableFuture<(never)>
 }
@@ -149,13 +149,13 @@ export type $DataProvider$$Type = ($DataProvider);
  */
 export type $DataProvider$$Original = $DataProvider;}
 declare module "net.minecraft.data.DataGenerator" {
-import {$DataGenerator$PackGenerator} from "net.minecraft.data.DataGenerator$PackGenerator"
 import {$PackOutput} from "net.minecraft.data.PackOutput"
+import {$DataGenerator$PackGenerator} from "net.minecraft.data.DataGenerator$PackGenerator"
 import {$Map} from "java.util.Map"
-import {$DataProvider, $DataProvider$$Type} from "net.minecraft.data.DataProvider"
 import {$DataProvider$Factory$$Type} from "net.minecraft.data.DataProvider$Factory"
-import {$WorldVersion$$Type} from "net.minecraft.WorldVersion"
+import {$DataProvider, $DataProvider$$Type} from "net.minecraft.data.DataProvider"
 import {$Path, $Path$$Type} from "java.nio.file.Path"
+import {$WorldVersion$$Type} from "net.minecraft.WorldVersion"
 
 export class $DataGenerator {
 readonly "rootOutputFolder": $Path
@@ -186,8 +186,8 @@ export type $DataGenerator$$Type = ($DataGenerator);
  */
 export type $DataGenerator$$Original = $DataGenerator;}
 declare module "net.minecraft.data.DataGenerator$PackGenerator" {
-import {$DataProvider} from "net.minecraft.data.DataProvider"
 import {$DataProvider$Factory$$Type} from "net.minecraft.data.DataProvider$Factory"
+import {$DataProvider} from "net.minecraft.data.DataProvider"
 
 export class $DataGenerator$PackGenerator {
 public "addProvider"<T extends $DataProvider>(arg0: $DataProvider$Factory$$Type<(T)>): T

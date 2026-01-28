@@ -14,39 +14,39 @@ get "empty"(): boolean
 }
 
 export class $LuaTable<K, V> implements $LuaTable$$Interface {
- "optString"(arg0: StringJS): $Optional<(StringJS)>
  "optString"(arg0: integer): $Optional<(StringJS)>
- "optTable"(arg0: integer): $Optional<($Map<(never), (never)>)>
+ "optString"(arg0: StringJS): $Optional<(StringJS)>
  "optTable"(arg0: StringJS): $Optional<($Map<(never), (never)>)>
+ "optTable"(arg0: integer): $Optional<($Map<(never), (never)>)>
  "optBoolean"(arg0: StringJS): $Optional<(boolean)>
  "optBoolean"(arg0: integer): $Optional<(boolean)>
  "optInt"(arg0: integer): $Optional<(integer)>
  "optInt"(arg0: StringJS): $Optional<(integer)>
- "getTable"(arg0: integer): $Map<(never), (never)>
- "getTable"(arg0: StringJS): $Map<(never), (never)>
  "optDouble"(arg0: integer): $Optional<(double)>
  "optDouble"(arg0: StringJS): $Optional<(double)>
- "optLong"(arg0: StringJS): $Optional<(long)>
  "optLong"(arg0: integer): $Optional<(long)>
- "optFiniteDouble"(arg0: integer): $Optional<(double)>
+ "optLong"(arg0: StringJS): $Optional<(long)>
  "optFiniteDouble"(arg0: StringJS): $Optional<(double)>
+ "optFiniteDouble"(arg0: integer): $Optional<(double)>
  "getFiniteDouble"(arg0: StringJS): double
  "getFiniteDouble"(arg0: integer): double
+ "getTable"(arg0: integer): $Map<(never), (never)>
+ "getTable"(arg0: StringJS): $Map<(never), (never)>
+ "getString"(arg0: integer): StringJS
+ "getString"(arg0: StringJS): StringJS
  "remove"(arg0: any): V
  "put"(arg0: K, arg1: V): V
  "length"(): integer
- "getBoolean"(arg0: StringJS): boolean
  "getBoolean"(arg0: integer): boolean
+ "getBoolean"(arg0: StringJS): boolean
  "getInt"(arg0: integer): integer
  "getInt"(arg0: StringJS): integer
- "getLong"(arg0: StringJS): long
  "getLong"(arg0: integer): long
- "getDouble"(arg0: StringJS): double
+ "getLong"(arg0: StringJS): long
  "getDouble"(arg0: integer): double
+ "getDouble"(arg0: StringJS): double
  "clear"(): void
  "putAll"(arg0: $Map$$Type<(K), (V)>): void
- "getString"(arg0: StringJS): StringJS
- "getString"(arg0: integer): StringJS
  "remove"(arg0: any, arg1: any): boolean
  "size"(): integer
  "get"(arg0: any): V
@@ -96,18 +96,18 @@ declare module "dan200.computercraft.api.lua.MethodResult" {
 import {$ILuaCallback, $ILuaCallback$$Type} from "dan200.computercraft.api.lua.ILuaCallback"
 
 export class $MethodResult {
-public "getResult"(): (any)[]
+public static "pullEvent"(arg0: StringJS, arg1: $ILuaCallback$$Type): $MethodResult
 public "getErrorAdjust"(): integer
 public static "pullEventRaw"(arg0: StringJS, arg1: $ILuaCallback$$Type): $MethodResult
 public "adjustError"(arg0: integer): $MethodResult
-public static "of"(...arg0: (any)[]): $MethodResult
+public "getResult"(): (any)[]
 public static "of"(): $MethodResult
 public static "of"(arg0: any): $MethodResult
+public static "of"(...arg0: (any)[]): $MethodResult
 public static "yield"(arg0: (any)[], arg1: $ILuaCallback$$Type): $MethodResult
 public "getCallback"(): $ILuaCallback
-public static "pullEvent"(arg0: StringJS, arg1: $ILuaCallback$$Type): $MethodResult
-get "result"(): (any)[]
 get "errorAdjust"(): integer
+get "result"(): (any)[]
 get "callback"(): $ILuaCallback
 }
 /**
@@ -155,25 +155,26 @@ export class $IArguments implements $IArguments$$Interface {
  "optString"(arg0: integer): $Optional<(StringJS)>
  "optTable"(arg0: integer): $Optional<($Map<(never), (never)>)>
  "optTable"(arg0: integer, arg1: $Map$$Type<(any), (any)>): $Map<(never), (never)>
- "optBoolean"(arg0: integer): $Optional<(boolean)>
  "optBoolean"(arg0: integer, arg1: boolean): boolean
+ "optBoolean"(arg0: integer): $Optional<(boolean)>
  "optInt"(arg0: integer): $Optional<(integer)>
  "optInt"(arg0: integer, arg1: integer): integer
- "getAll"(): (any)[]
- "getTable"(arg0: integer): $Map<(never), (never)>
  "optDouble"(arg0: integer, arg1: double): double
  "optDouble"(arg0: integer): $Optional<(double)>
  "optLong"(arg0: integer, arg1: long): long
  "optLong"(arg0: integer): $Optional<(long)>
  "optEnum"<T extends $Enum<(object)>>(arg0: integer, arg1: $Class$$Type<(T)>): $Optional<(T)>
- "getStringCoerced"(arg0: integer): StringJS
  "optFiniteDouble"(arg0: integer, arg1: double): double
  "optFiniteDouble"(arg0: integer): $Optional<(double)>
  "getFiniteDouble"(arg0: integer): double
  "getTableUnsafe"(arg0: integer): $LuaTable<(never), (never)>
  "optBytes"(arg0: integer): $Optional<($ByteBuffer)>
  "optTableUnsafe"(arg0: integer): $Optional<($LuaTable<(never), (never)>)>
+ "getStringCoerced"(arg0: integer): StringJS
  "getBytesCoerced"(arg0: integer): $ByteBuffer
+ "getAll"(): (any)[]
+ "getTable"(arg0: integer): $Map<(never), (never)>
+ "getString"(arg0: integer): StringJS
  "get"(arg0: integer): any
  "getBoolean"(arg0: integer): boolean
  "getInt"(arg0: integer): integer
@@ -182,7 +183,6 @@ export class $IArguments implements $IArguments$$Interface {
  "getBytes"(arg0: integer): $ByteBuffer
  "count"(): integer
  "getType"(arg0: integer): StringJS
- "getString"(arg0: integer): StringJS
  "drop"(arg0: integer): $IArguments
  "getEnum"<T extends $Enum<(object)>>(arg0: integer, arg1: $Class$$Type<(T)>): T
  "escapes"(): void
@@ -206,8 +206,8 @@ export interface $ILuaContext$$Interface {
 }
 
 export class $ILuaContext implements $ILuaContext$$Interface {
- "issueMainThreadTask"(arg0: $LuaTask$$Type): long
  "executeMainThreadTask"(arg0: $LuaTask$$Type): $MethodResult
+ "issueMainThreadTask"(arg0: $LuaTask$$Type): long
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_

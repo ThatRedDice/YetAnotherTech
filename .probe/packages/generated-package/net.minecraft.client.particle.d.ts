@@ -130,8 +130,8 @@ export type $SimpleAnimatedParticle$$Type = ($SimpleAnimatedParticle);
 export type $SimpleAnimatedParticle$$Original = $SimpleAnimatedParticle;}
 declare module "net.minecraft.client.particle.ParticleEngine$SpriteParticleRegistration" {
 import {$ParticleProvider, $ParticleProvider$$Type} from "net.minecraft.client.particle.ParticleProvider"
-import {$SpriteSet, $SpriteSet$$Type} from "net.minecraft.client.particle.SpriteSet"
 import {$ParticleOptions} from "net.minecraft.core.particles.ParticleOptions"
+import {$SpriteSet, $SpriteSet$$Type} from "net.minecraft.client.particle.SpriteSet"
 
 export interface $ParticleEngine$SpriteParticleRegistration$$Interface<T extends $ParticleOptions> {
 
@@ -224,8 +224,8 @@ import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Particle, $Particle$$Type} from "net.minecraft.client.particle.Particle"
 import {$Frustum$$Type} from "net.minecraft.client.renderer.culling.Frustum"
-import {$Camera$$Type} from "net.minecraft.client.Camera"
 import {$ParticleManagerAccess$$Interface} from "blusunrize.immersiveengineering.mixin.accessors.client.ParticleManagerAccess"
+import {$Camera$$Type} from "net.minecraft.client.Camera"
 import {$ProfilerFiller$$Type} from "net.minecraft.util.profiling.ProfilerFiller"
 import {$ParticleProvider$Sprite$$Type} from "net.minecraft.client.particle.ParticleProvider$Sprite"
 import {$ParticleType$$Type} from "net.minecraft.core.particles.ParticleType"
@@ -238,8 +238,8 @@ import {$ParticleRenderType$$Type} from "net.minecraft.client.particle.ParticleR
 import {$Map} from "java.util.Map"
 import {$LightTexture$$Type} from "net.minecraft.client.renderer.LightTexture"
 import {$Predicate$$Type} from "java.util.function.Predicate"
-import {$ParticleEngine$SpriteParticleRegistration$$Type} from "net.minecraft.client.particle.ParticleEngine$SpriteParticleRegistration"
 import {$PreparableReloadListener$$Interface} from "net.minecraft.server.packs.resources.PreparableReloadListener"
+import {$ParticleEngine$SpriteParticleRegistration$$Type} from "net.minecraft.client.particle.ParticleEngine$SpriteParticleRegistration"
 import {$TextureAtlas} from "net.minecraft.client.renderer.texture.TextureAtlas"
 import {$ParticleEngineAccessor$$Interface} from "net.createmod.ponder.mixin.client.accessor.ParticleEngineAccessor"
 import {$PreparableReloadListener$PreparationBarrier$$Type} from "net.minecraft.server.packs.resources.PreparableReloadListener$PreparationBarrier"
@@ -262,8 +262,8 @@ public "invokeMakeParticle"(arg0: $ParticleOptions$$Type, arg1: double, arg2: do
 public "ponder$getProviders"(): $Map
 public "crack"(arg0: $BlockPos$$Type, arg1: $Direction$$Type): void
 public "iterateParticles"(arg0: $Consumer$$Type<($Particle)>): void
-public "reload"(arg0: $PreparableReloadListener$PreparationBarrier$$Type, arg1: $ResourceManager$$Type, arg2: $ProfilerFiller$$Type, arg3: $ProfilerFiller$$Type, arg4: $Executor$$Type, arg5: $Executor$$Type): $CompletableFuture<(void)>
 public "tick"(): void
+public "reload"(arg0: $PreparableReloadListener$PreparationBarrier$$Type, arg1: $ResourceManager$$Type, arg2: $ProfilerFiller$$Type, arg3: $ProfilerFiller$$Type, arg4: $Executor$$Type, arg5: $Executor$$Type): $CompletableFuture<(void)>
 public "setLevel"(arg0: $ClientLevel$$Type): void
 public "add"(arg0: $Particle$$Type): void
 /**
@@ -289,10 +289,10 @@ public "render"(arg0: $LightTexture$$Type, arg1: $Camera$$Type, arg2: float, arg
  * @deprecated
  */
 public "render"(arg0: $LightTexture$$Type, arg1: $Camera$$Type, arg2: float): void
-public "addBlockHitEffects"(arg0: $BlockPos$$Type, arg1: $BlockHitResult$$Type): void
 public "createParticle"(arg0: $ParticleOptions$$Type, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double): $Particle
-public "createTrackingEmitter"(arg0: $Entity$$Type, arg1: $ParticleOptions$$Type): void
+public "addBlockHitEffects"(arg0: $BlockPos$$Type, arg1: $BlockHitResult$$Type): void
 public "createTrackingEmitter"(arg0: $Entity$$Type, arg1: $ParticleOptions$$Type, arg2: integer): void
+public "createTrackingEmitter"(arg0: $Entity$$Type, arg1: $ParticleOptions$$Type): void
 public "getName"(): StringJS
 set "level"(value: $ClientLevel$$Type)
 get "name"(): StringJS
@@ -336,16 +336,16 @@ public "setParticleSpeed"(arg0: double, arg1: double, arg2: double): void
 public "setLifetime"(arg0: integer): void
 public "getLifetime"(): integer
 public "getParticleGroup"(): $Optional<($ParticleGroup)>
-public "move"(arg0: double, arg1: double, arg2: double): void
 public "tick"(): void
+public "move"(arg0: double, arg1: double, arg2: double): void
 public "setColor"(arg0: float, arg1: float, arg2: float): void
 public "remove"(): void
 public "toString"(): StringJS
 public "scale"(arg0: float): $Particle
 public "isAlive"(): boolean
+public "setPower"(arg0: float): $Particle
 public "render"(arg0: $VertexConsumer$$Type, arg1: $Camera$$Type, arg2: float): void
 public "getRenderType"(): $ParticleRenderType
-public "setPower"(arg0: float): $Particle
 public "setPos"(arg0: double, arg1: double, arg2: double): void
 public "getBoundingBox"(): $AABB
 public "setBoundingBox"(arg0: $AABB$$Type): void
@@ -354,8 +354,8 @@ set "lifetime"(value: integer)
 get "lifetime"(): integer
 get "particleGroup"(): $Optional<($ParticleGroup)>
 get "alive"(): boolean
-get "renderType"(): $ParticleRenderType
 set "power"(value: float)
+get "renderType"(): $ParticleRenderType
 get "boundingBox"(): $AABB
 set "boundingBox"(value: $AABB$$Type)
 get "pos"(): $Vec3

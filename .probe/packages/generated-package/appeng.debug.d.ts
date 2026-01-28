@@ -89,8 +89,8 @@ import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$CreativeModeTab$Output$$Type} from "net.minecraft.world.item.CreativeModeTab$Output"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$AEBaseItem} from "appeng.items.AEBaseItem"
@@ -183,8 +183,8 @@ public "saveAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$
 public "clearRemoved"(): void
 public "saveChangedInventory"(arg0: $AppEngInternalInventory$$Type): void
 public "onChangeInventory"(arg0: $AppEngInternalInventory$$Type, arg1: integer): void
-public "onReady"(): void
 public "loadTag"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
+public "onReady"(): void
 public "isClientSide"(): boolean
 public static "tryClear"(arg0: any): void
 set "item"(value: $Item$$Type)
@@ -280,20 +280,20 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 
 constructor(arg0: $BlockEntityType$$Type<(never)>, arg1: $BlockPos$$Type, arg2: $BlockState$$Type)
 
+public "canExtract"(): boolean
 public "extractEnergy"(arg0: integer, arg1: boolean): integer
 public "receiveEnergy"(arg0: integer, arg1: boolean): integer
-public "canExtract"(): boolean
 public "canReceive"(): boolean
 public "serverTick"(): void
 public "saveAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
-public "getGenerationRate"(): integer
 public "loadTag"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "setGenerationRate"(arg0: integer): void
+public "getGenerationRate"(): integer
 public "getEnergyStored"(): integer
 public "getMaxEnergyStored"(): integer
 public static "tryClear"(arg0: any): void
-get "generationRate"(): integer
 set "generationRate"(value: integer)
+get "generationRate"(): integer
 get "energyStored"(): integer
 get "maxEnergyStored"(): integer
 }
@@ -343,8 +343,8 @@ import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$CreativeModeTab$Output$$Type} from "net.minecraft.world.item.CreativeModeTab$Output"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$EnergyGeneratorBlockEntity} from "appeng.debug.EnergyGeneratorBlockEntity"
+import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $EnergyGeneratorBlock extends $AEBaseEntityBlock<($EnergyGeneratorBlockEntity)> {

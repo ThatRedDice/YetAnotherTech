@@ -16,12 +16,12 @@ import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
-import {$AbstractContainerMenu, $AbstractContainerMenu$$Type} from "net.minecraft.world.inventory.AbstractContainerMenu"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
+import {$AbstractContainerMenu, $AbstractContainerMenu$$Type} from "net.minecraft.world.inventory.AbstractContainerMenu"
 import {$RegistryFriendlyByteBuf$$Type} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
 
@@ -79,9 +79,9 @@ static readonly "BASE_SAFE_FALL_DISTANCE": integer
 public "createMenu"(arg0: integer, arg1: $Inventory$$Type, arg2: $Player$$Type): $AbstractContainerMenu
 public "getComparatorLevel"(): integer
 public "getMinecartType"(): $AbstractMinecart$Type
-public "getContainedBlockEntity"(): T
 public "writeTileToItem"(arg0: $ItemStack$$Type): void
 public "readTileFromItem"(arg0: $LivingEntity$$Type, arg1: $ItemStack$$Type): void
+public "getContainedBlockEntity"(): T
 public "updateSynchedData"(): void
 public "destroy"(arg0: $DamageSource$$Type): void
 public "interact"(arg0: $Player$$Type, arg1: $InteractionHand$$Type): $InteractionResult

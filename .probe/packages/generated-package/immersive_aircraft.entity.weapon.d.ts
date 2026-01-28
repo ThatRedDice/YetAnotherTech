@@ -13,8 +13,8 @@ public "getGunnerOffset"(): integer
 public "clientFire"(arg0: integer): void
 public "setAnimationVariables"<T extends $VehicleEntity>(entity: T, time: float): void
 public "fire"(arg0: $Vector3f$$Type): void
-public "tick"(): void
 public "getEntity"(): $VehicleEntity
+public "tick"(): void
 public "getSlot"(): integer
 public "getStack"(): $ItemStack
 get "mount"(): $WeaponMount

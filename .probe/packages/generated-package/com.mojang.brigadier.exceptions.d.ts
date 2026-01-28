@@ -84,6 +84,15 @@ export interface $BuiltInExceptionProvider$$Interface {
 }
 
 export class $BuiltInExceptionProvider implements $BuiltInExceptionProvider$$Interface {
+ "doubleTooLow"(): $Dynamic2CommandExceptionType
+ "doubleTooHigh"(): $Dynamic2CommandExceptionType
+ "floatTooLow"(): $Dynamic2CommandExceptionType
+ "floatTooHigh"(): $Dynamic2CommandExceptionType
+ "integerTooLow"(): $Dynamic2CommandExceptionType
+ "integerTooHigh"(): $Dynamic2CommandExceptionType
+ "longTooHigh"(): $Dynamic2CommandExceptionType
+ "literalIncorrect"(): $DynamicCommandExceptionType
+ "readerExpectedStartOfQuote"(): $SimpleCommandExceptionType
  "readerExpectedEndOfQuote"(): $SimpleCommandExceptionType
  "readerInvalidEscape"(): $DynamicCommandExceptionType
  "readerInvalidBool"(): $DynamicCommandExceptionType
@@ -101,16 +110,7 @@ export class $BuiltInExceptionProvider implements $BuiltInExceptionProvider$$Int
  "dispatcherUnknownArgument"(): $SimpleCommandExceptionType
  "dispatcherExpectedArgumentSeparator"(): $SimpleCommandExceptionType
  "dispatcherParseException"(): $DynamicCommandExceptionType
- "doubleTooLow"(): $Dynamic2CommandExceptionType
- "doubleTooHigh"(): $Dynamic2CommandExceptionType
- "floatTooLow"(): $Dynamic2CommandExceptionType
- "floatTooHigh"(): $Dynamic2CommandExceptionType
- "integerTooLow"(): $Dynamic2CommandExceptionType
- "integerTooHigh"(): $Dynamic2CommandExceptionType
  "longTooLow"(): $Dynamic2CommandExceptionType
- "longTooHigh"(): $Dynamic2CommandExceptionType
- "literalIncorrect"(): $DynamicCommandExceptionType
- "readerExpectedStartOfQuote"(): $SimpleCommandExceptionType
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -124,8 +124,8 @@ export type $BuiltInExceptionProvider$$Original = $BuiltInExceptionProvider;}
 declare module "com.mojang.brigadier.exceptions.CommandSyntaxException" {
 import {$Exception} from "java.lang.Exception"
 import {$CommandExceptionType, $CommandExceptionType$$Type} from "com.mojang.brigadier.exceptions.CommandExceptionType"
-import {$BuiltInExceptionProvider} from "com.mojang.brigadier.exceptions.BuiltInExceptionProvider"
 import {$Message, $Message$$Type} from "com.mojang.brigadier.Message"
+import {$BuiltInExceptionProvider} from "com.mojang.brigadier.exceptions.BuiltInExceptionProvider"
 
 export class $CommandSyntaxException extends $Exception {
 static "BUILT_IN_EXCEPTIONS": $BuiltInExceptionProvider
@@ -181,8 +181,8 @@ export type $DynamicCommandExceptionType$$Type = ($DynamicCommandExceptionType);
 export type $DynamicCommandExceptionType$$Original = $DynamicCommandExceptionType;}
 declare module "com.mojang.brigadier.exceptions.Dynamic2CommandExceptionType" {
 import {$ImmutableStringReader$$Type} from "com.mojang.brigadier.ImmutableStringReader"
-import {$Dynamic2CommandExceptionType$Function$$Type} from "com.mojang.brigadier.exceptions.Dynamic2CommandExceptionType$Function"
 import {$CommandExceptionType$$Interface} from "com.mojang.brigadier.exceptions.CommandExceptionType"
+import {$Dynamic2CommandExceptionType$Function$$Type} from "com.mojang.brigadier.exceptions.Dynamic2CommandExceptionType$Function"
 import {$CommandSyntaxException} from "com.mojang.brigadier.exceptions.CommandSyntaxException"
 
 export class $Dynamic2CommandExceptionType implements $CommandExceptionType$$Interface {

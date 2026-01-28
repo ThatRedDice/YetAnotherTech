@@ -39,8 +39,8 @@ export type $TransformCircumstance$$Type = ($TransformCircumstance);
 export type $TransformCircumstance$$Original = $TransformCircumstance;}
 declare module "appeng.recipes.transform.TransformRecipeSerializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$TransformRecipe} from "appeng.recipes.transform.TransformRecipe"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
@@ -71,9 +71,9 @@ import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$NonNullList, $NonNullList$$Type} from "net.minecraft.core.NonNullList"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe$$Interface} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
+import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$TransformCircumstance, $TransformCircumstance$$Type} from "appeng.recipes.transform.TransformCircumstance"
 import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -101,10 +101,10 @@ public "getCircumstance"(): $TransformCircumstance
 public "assemble"(arg0: $TransformRecipeInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
 public "assemble"(arg0: $RecipeInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
 public "getSerializer"(): $RecipeSerializer<(never)>
-public "getIngredients"(): $NonNullList<($Ingredient)>
 public "canCraftInDimensions"(arg0: integer, arg1: integer): boolean
 public "getResultItem"(): $ItemStack
 public "getResultItem"(arg0: $HolderLookup$Provider$$Type): $ItemStack
+public "getIngredients"(): $NonNullList<($Ingredient)>
 public "matches"(arg0: $TransformRecipeInput$$Type, arg1: $Level$$Type): boolean
 public "matches"(arg0: $RecipeInput$$Type, arg1: $Level$$Type): boolean
 public "getType"(): $RecipeType<(never)>
@@ -141,8 +141,8 @@ import {$Record} from "java.lang.Record"
 export class $TransformRecipeInput extends $Record implements $RecipeInput$$Interface {
 constructor(items: $List$$Type<($ItemStack$$Type)>)
 
-public "getItem"(arg0: integer): $ItemStack
 public "items"(): $List<($ItemStack)>
+public "getItem"(arg0: integer): $ItemStack
 public "size"(): integer
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS

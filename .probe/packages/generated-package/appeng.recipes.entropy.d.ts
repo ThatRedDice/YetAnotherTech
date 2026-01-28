@@ -56,7 +56,7 @@ public "block"(): $Block
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $EntropyRecipe$BlockInput$$Type = ({"properties"?: $Map$$Type<(StringJS), ($PropertyValueMatcher$$Type)>, "block"?: $Block$$Type}) | ([properties?: $Map$$Type<(StringJS), ($PropertyValueMatcher$$Type)>, block?: $Block$$Type]);
+export type $EntropyRecipe$BlockInput$$Type = ({"block"?: $Block$$Type, "properties"?: $Map$$Type<(StringJS), ($PropertyValueMatcher$$Type)>}) | ([block?: $Block$$Type, properties?: $Map$$Type<(StringJS), ($PropertyValueMatcher$$Type)>]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -64,13 +64,13 @@ export type $EntropyRecipe$BlockInput$$Original = $EntropyRecipe$BlockInput;}
 declare module "appeng.recipes.entropy.EntropyRecipe$Input" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$EntropyRecipe$FluidInput, $EntropyRecipe$FluidInput$$Type} from "appeng.recipes.entropy.EntropyRecipe$FluidInput"
-import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$EntropyRecipe$BlockInput, $EntropyRecipe$BlockInput$$Type} from "appeng.recipes.entropy.EntropyRecipe$BlockInput"
+import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
-import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Record} from "java.lang.Record"
+import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $EntropyRecipe$Input extends $Record {
 static "CODEC": $Codec<($EntropyRecipe$Input)>
@@ -96,8 +96,8 @@ export type $EntropyRecipe$Input$$Type = ({"block"?: ($EntropyRecipe$BlockInput$
 export type $EntropyRecipe$Input$$Original = $EntropyRecipe$Input;}
 declare module "appeng.recipes.entropy.EntropyRecipe$FluidOutput" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$Fluid, $Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 import {$Map, $Map$$Type} from "java.util.Map"
+import {$Fluid, $Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 import {$FriendlyByteBuf$$Type} from "net.minecraft.network.FriendlyByteBuf"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
@@ -134,8 +134,8 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
 export class $EntropyMode extends $Enum<($EntropyMode)> implements $StringRepresentable$$Interface {
@@ -147,11 +147,11 @@ public static "values"(): ($EntropyMode)[]
 public static "valueOf"(arg0: StringJS): $EntropyMode
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
 }
@@ -176,12 +176,12 @@ import {$NonNullList} from "net.minecraft.core.NonNullList"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$EntropyMode, $EntropyMode$$Type} from "appeng.recipes.entropy.EntropyMode"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$RecipeInput, $RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe$$Interface} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
+import {$RecipeInput, $RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
-import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$EntropyRecipe$Output} from "appeng.recipes.entropy.EntropyRecipe$Output"
+import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
@@ -202,16 +202,16 @@ static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($Entro
 public "getDrops"(): $List<($ItemStack)>
 public "assemble"(arg0: $RecipeInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
 public "getSerializer"(): $RecipeSerializer<(never)>
-public "getIngredients"(): $NonNullList<($Ingredient)>
 public "canCraftInDimensions"(arg0: integer, arg1: integer): boolean
 public "getResultItem"(arg0: $HolderLookup$Provider$$Type): $ItemStack
+public "getIngredients"(): $NonNullList<($Ingredient)>
 public "getOutputBlockState"(arg0: $BlockState$$Type): $BlockState
 public "getOutputFluidState"(arg0: $FluidState$$Type): $FluidState
-public "getInput"(): $EntropyRecipe$Input
 public "getOutput"(): $EntropyRecipe$Output
 public "getMode"(): $EntropyMode
-public "matches"(arg0: $RecipeInput$$Type, arg1: $Level$$Type): boolean
+public "getInput"(): $EntropyRecipe$Input
 public "matches"(arg0: $EntropyMode$$Type, arg1: $BlockState$$Type, arg2: $FluidState$$Type): boolean
+public "matches"(arg0: $RecipeInput$$Type, arg1: $Level$$Type): boolean
 public "getType"(): $RecipeType<(never)>
 public "getRemainingItems"(arg0: $RecipeInput$$Type): $NonNullList<($ItemStack)>
 public "showNotification"(): boolean
@@ -222,9 +222,9 @@ public "isSpecial"(): boolean
 get "drops"(): $List<($ItemStack)>
 get "serializer"(): $RecipeSerializer<(never)>
 get "ingredients"(): $NonNullList<($Ingredient)>
-get "input"(): $EntropyRecipe$Input
 get "output"(): $EntropyRecipe$Output
 get "mode"(): $EntropyMode
+get "input"(): $EntropyRecipe$Input
 get "type"(): $RecipeType<(never)>
 get "toastSymbol"(): $ItemStack
 get "incomplete"(): boolean
@@ -242,8 +242,8 @@ export type $EntropyRecipe$$Type = ($EntropyRecipe);
 export type $EntropyRecipe$$Original = $EntropyRecipe;}
 declare module "appeng.recipes.entropy.EntropyRecipeSerializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$EntropyRecipe} from "appeng.recipes.entropy.EntropyRecipe"
@@ -266,8 +266,8 @@ export type $EntropyRecipeSerializer$$Type = ($EntropyRecipeSerializer);
 export type $EntropyRecipeSerializer$$Original = $EntropyRecipeSerializer;}
 declare module "appeng.recipes.entropy.EntropyRecipe$FluidInput" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$Fluid, $Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 import {$Map, $Map$$Type} from "java.util.Map"
+import {$Fluid, $Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 import {$PropertyValueMatcher, $PropertyValueMatcher$$Type} from "appeng.recipes.entropy.PropertyValueMatcher"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
@@ -289,7 +289,7 @@ public "properties"(): $Map<(StringJS), ($PropertyValueMatcher)>
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $EntropyRecipe$FluidInput$$Type = ({"properties"?: $Map$$Type<(StringJS), ($PropertyValueMatcher$$Type)>, "fluid"?: $Fluid$$Type}) | ([properties?: $Map$$Type<(StringJS), ($PropertyValueMatcher$$Type)>, fluid?: $Fluid$$Type]);
+export type $EntropyRecipe$FluidInput$$Type = ({"fluid"?: $Fluid$$Type, "properties"?: $Map$$Type<(StringJS), ($PropertyValueMatcher$$Type)>}) | ([fluid?: $Fluid$$Type, properties?: $Map$$Type<(StringJS), ($PropertyValueMatcher$$Type)>]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -297,8 +297,8 @@ export type $EntropyRecipe$FluidInput$$Original = $EntropyRecipe$FluidInput;}
 declare module "appeng.recipes.entropy.PropertyValueMatcher" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$Map} from "java.util.Map"
-import {$FriendlyByteBuf, $FriendlyByteBuf$$Type} from "net.minecraft.network.FriendlyByteBuf"
 import {$Codec} from "com.mojang.serialization.Codec"
+import {$FriendlyByteBuf, $FriendlyByteBuf$$Type} from "net.minecraft.network.FriendlyByteBuf"
 import {$Comparable, $Comparable$$Type} from "java.lang.Comparable"
 import {$StateHolder$$Type} from "net.minecraft.world.level.block.state.StateHolder"
 import {$Property$$Type} from "net.minecraft.world.level.block.state.properties.Property"

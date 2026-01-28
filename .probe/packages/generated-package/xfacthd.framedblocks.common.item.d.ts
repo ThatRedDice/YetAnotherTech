@@ -1,8 +1,8 @@
 declare module "xfacthd.framedblocks.common.item.VerticalAndWallBlockItem" {
 import {$Map, $Map$$Type} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Item, $Item$$Type} from "net.minecraft.world.item.Item"
 import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$AdditionalItemPlacement, $AdditionalItemPlacement$$Type} from "net.mehvahdjukaar.moonlight.api.item.additional_placements.AdditionalItemPlacement"
@@ -40,8 +40,8 @@ import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
-import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$ItemAbility$$Type} from "net.neoforged.neoforge.common.ItemAbility"
@@ -80,12 +80,12 @@ import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$List$$Type} from "java.util.List"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 
 export class $PhantomPasteItem extends $Item {
 static readonly "BASE_ATTACK_DAMAGE_ID": $ResourceLocation
@@ -145,19 +145,19 @@ export type $FramedHangingSignItem$$Type = ($FramedHangingSignItem);
 export type $FramedHangingSignItem$$Original = $FramedHangingSignItem;}
 declare module "xfacthd.framedblocks.common.item.FramedBlueprintItem" {
 import {$FramedToolItem} from "xfacthd.framedblocks.common.item.FramedToolItem"
-import {$Map} from "java.util.Map"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$Map} from "java.util.Map"
 import {$BlueprintCopyBehaviour} from "xfacthd.framedblocks.api.blueprint.BlueprintCopyBehaviour"
 import {$List$$Type} from "java.util.List"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$CamoList} from "xfacthd.framedblocks.api.util.CamoList"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
+import {$CamoList} from "xfacthd.framedblocks.api.util.CamoList"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
@@ -190,11 +190,11 @@ static readonly "BY_BLOCK": $Map<($Block), ($Item)>
 
 constructor(arg0: $FramedToolType$$Type)
 
+public static "getCamoContainers"(arg0: $BlueprintData$$Type): $CamoList
 public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
 public "useOn"(arg0: $UseOnContext$$Type): $InteractionResult
 public "doesSneakBypassUse"(arg0: $ItemStack$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type): boolean
 public static "getBehaviour"(arg0: $Block$$Type): $BlueprintCopyBehaviour
-public static "getCamoContainers"(arg0: $BlueprintData$$Type): $CamoList
 public static "init"(): void
 public "use"(arg0: $Level$$Type, arg1: $Player$$Type, arg2: $InteractionHand$$Type): $InteractionResultHolder<($ItemStack)>
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean

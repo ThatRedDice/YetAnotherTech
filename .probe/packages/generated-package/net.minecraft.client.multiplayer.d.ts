@@ -26,12 +26,12 @@ export type $ProfileKeyPairManager$$Type = ($ProfileKeyPairManager);
  */
 export type $ProfileKeyPairManager$$Original = $ProfileKeyPairManager;}
 declare module "net.minecraft.client.multiplayer.chat.report.AbuseReportSender" {
-import {$AbuseReport$$Type} from "com.mojang.authlib.minecraft.report.AbuseReport"
 import {$UserApiService$$Type} from "com.mojang.authlib.minecraft.UserApiService"
+import {$AbuseReport$$Type} from "com.mojang.authlib.minecraft.report.AbuseReport"
 import {$CompletableFuture} from "java.util.concurrent.CompletableFuture"
 import {$UUID$$Type} from "java.util.UUID"
-import {$ReportEnvironment$$Type} from "net.minecraft.client.multiplayer.chat.report.ReportEnvironment"
 import {$ReportType$$Type} from "net.minecraft.client.multiplayer.chat.report.ReportType"
+import {$ReportEnvironment$$Type} from "net.minecraft.client.multiplayer.chat.report.ReportEnvironment"
 import {$Unit} from "com.mojang.datafixers.util.Unit"
 import {$AbuseReportLimits} from "com.mojang.authlib.minecraft.report.AbuseReportLimits"
 
@@ -59,8 +59,8 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
 export class $LoggedChatEvent$Type extends $Enum<($LoggedChatEvent$Type)> implements $StringRepresentable$$Interface {
@@ -71,11 +71,11 @@ public static "values"(): ($LoggedChatEvent$Type)[]
 public static "valueOf"(arg0: StringJS): $LoggedChatEvent$Type
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
 }
@@ -127,8 +127,8 @@ export type $LoggedChatEvent$$Type = (() => $LoggedChatEvent$Type$$Type);
  */
 export type $LoggedChatEvent$$Original = $LoggedChatEvent;}
 declare module "net.minecraft.client.multiplayer.chat.report.Report" {
-import {$Screen, $Screen$$Type} from "net.minecraft.client.gui.screens.Screen"
 import {$UUID$$Type} from "java.util.UUID"
+import {$Screen, $Screen$$Type} from "net.minecraft.client.gui.screens.Screen"
 import {$ReportingContext$$Type} from "net.minecraft.client.multiplayer.chat.report.ReportingContext"
 import {$Instant$$Type} from "java.time.Instant"
 
@@ -204,8 +204,8 @@ export type $SessionSearchTrees$$Original = $SessionSearchTrees;}
 declare module "net.minecraft.client.multiplayer.ClientPacketListener" {
 import {$ClientboundSetChunkCacheRadiusPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundSetChunkCacheRadiusPacket"
 import {$ClientboundBlockEventPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundBlockEventPacket"
-import {$CallbackInfo$$Type} from "org.spongepowered.asm.mixin.injection.callback.CallbackInfo"
 import {$PlayerChatMessage$$Type} from "net.minecraft.network.chat.PlayerChatMessage"
+import {$CallbackInfo$$Type} from "org.spongepowered.asm.mixin.injection.callback.CallbackInfo"
 import {$ClientboundCooldownPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundCooldownPacket"
 import {$ClientboundUpdateMobEffectPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundUpdateMobEffectPacket"
 import {$ClientboundUpdateAdvancementsPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundUpdateAdvancementsPacket"
@@ -213,27 +213,27 @@ import {$ServerData} from "net.minecraft.client.multiplayer.ServerData"
 import {$ClientboundContainerSetSlotPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundContainerSetSlotPacket"
 import {$ClientboundSetObjectivePacket$$Type} from "net.minecraft.network.protocol.game.ClientboundSetObjectivePacket"
 import {$ClientboundDeleteChatPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundDeleteChatPacket"
-import {$ClientboundSetScorePacket$$Type} from "net.minecraft.network.protocol.game.ClientboundSetScorePacket"
 import {$ClientboundOpenScreenPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundOpenScreenPacket"
+import {$ClientboundSetScorePacket$$Type} from "net.minecraft.network.protocol.game.ClientboundSetScorePacket"
 import {$ClientboundLevelChunkWithLightPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundLevelChunkWithLightPacket"
 import {$ClientboundSetBorderWarningDistancePacket$$Type} from "net.minecraft.network.protocol.game.ClientboundSetBorderWarningDistancePacket"
 import {$ClientCommonPacketListenerImpl} from "net.minecraft.client.multiplayer.ClientCommonPacketListenerImpl"
-import {$ClientboundSetBorderSizePacket$$Type} from "net.minecraft.network.protocol.game.ClientboundSetBorderSizePacket"
 import {$ClientboundSetActionBarTextPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundSetActionBarTextPacket"
+import {$ClientboundSetBorderSizePacket$$Type} from "net.minecraft.network.protocol.game.ClientboundSetBorderSizePacket"
 import {$ClientboundPlayerAbilitiesPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundPlayerAbilitiesPacket"
-import {$ClientboundSetBorderWarningDelayPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundSetBorderWarningDelayPacket"
 import {$ClientboundBundlePacket$$Type} from "net.minecraft.network.protocol.game.ClientboundBundlePacket"
+import {$ClientboundSetBorderWarningDelayPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundSetBorderWarningDelayPacket"
 import {$CommonListenerCookie$$Type} from "net.minecraft.client.multiplayer.CommonListenerCookie"
 import {$ClientboundPlayerCombatEndPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundPlayerCombatEndPacket"
-import {$ClientboundMoveVehiclePacket$$Type} from "net.minecraft.network.protocol.game.ClientboundMoveVehiclePacket"
 import {$ClientboundInitializeBorderPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundInitializeBorderPacket"
+import {$ClientboundMoveVehiclePacket$$Type} from "net.minecraft.network.protocol.game.ClientboundMoveVehiclePacket"
 import {$ClientboundForgetLevelChunkPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundForgetLevelChunkPacket"
 import {$ClientboundTagQueryPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundTagQueryPacket"
 import {$ClientboundContainerSetContentPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundContainerSetContentPacket"
 import {$ClientboundSetExperiencePacket$$Type} from "net.minecraft.network.protocol.game.ClientboundSetExperiencePacket"
 import {$ConnectionType} from "net.neoforged.neoforge.network.connection.ConnectionType"
-import {$ClientboundTickingStatePacket$$Type} from "net.minecraft.network.protocol.game.ClientboundTickingStatePacket"
 import {$ClientboundSetBorderCenterPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundSetBorderCenterPacket"
+import {$ClientboundTickingStatePacket$$Type} from "net.minecraft.network.protocol.game.ClientboundTickingStatePacket"
 import {$ClientPacketListenerKJS$$Interface} from "dev.latvian.mods.kubejs.core.ClientPacketListenerKJS"
 import {$ClientboundUpdateRecipesPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundUpdateRecipesPacket"
 import {$ClientboundPlayerInfoUpdatePacket$$Type} from "net.minecraft.network.protocol.game.ClientboundPlayerInfoUpdatePacket"
@@ -246,46 +246,46 @@ import {$ClientboundSetEntityMotionPacket$$Type} from "net.minecraft.network.pro
 import {$ClientboundPlayerCombatEnterPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundPlayerCombatEnterPacket"
 import {$FeatureFlagSet, $FeatureFlagSet$$Type} from "net.minecraft.world.flag.FeatureFlagSet"
 import {$ClientboundMerchantOffersPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundMerchantOffersPacket"
-import {$Screen} from "net.minecraft.client.gui.screens.Screen"
 import {$ClientboundChunkBatchFinishedPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundChunkBatchFinishedPacket"
+import {$Screen} from "net.minecraft.client.gui.screens.Screen"
 import {$ClientboundBlockDestructionPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundBlockDestructionPacket"
 import {$ClientboundPlayerPositionPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundPlayerPositionPacket"
 import {$ClientboundPlayerCombatKillPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundPlayerCombatKillPacket"
-import {$TickablePacketListener$$Interface} from "net.minecraft.network.TickablePacketListener"
 import {$ClientboundCommandsPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundCommandsPacket"
+import {$TickablePacketListener$$Interface} from "net.minecraft.network.TickablePacketListener"
 import {$ClientboundBossEventPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundBossEventPacket"
-import {$PacketFlow} from "net.minecraft.network.protocol.PacketFlow"
 import {$ClientboundSetTitlesAnimationPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundSetTitlesAnimationPacket"
+import {$PacketFlow} from "net.minecraft.network.protocol.PacketFlow"
 import {$ClientboundSectionBlocksUpdatePacket$$Type} from "net.minecraft.network.protocol.game.ClientboundSectionBlocksUpdatePacket"
 import {$ClientboundSoundPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundSoundPacket"
-import {$PlayerInfo} from "net.minecraft.client.multiplayer.PlayerInfo"
 import {$ClientboundResetScorePacket$$Type} from "net.minecraft.network.protocol.game.ClientboundResetScorePacket"
+import {$PlayerInfo} from "net.minecraft.client.multiplayer.PlayerInfo"
 import {$IMixinClientPacketListener$$Interface} from "de.keksuccino.konkrete.mixin.mixins.client.IMixinClientPacketListener"
 import {$CustomPacketPayload$$Type} from "net.minecraft.network.protocol.common.custom.CustomPacketPayload"
-import {$CallbackInfoReturnable$$Type} from "org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable"
 import {$ClientboundSetEquipmentPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundSetEquipmentPacket"
-import {$ClientboundTickingStepPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundTickingStepPacket"
 import {$ClientboundDamageEventPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundDamageEventPacket"
-import {$ClientboundAnimatePacket$$Type} from "net.minecraft.network.protocol.game.ClientboundAnimatePacket"
+import {$ClientboundTickingStepPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundTickingStepPacket"
+import {$CallbackInfoReturnable$$Type} from "org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable"
 import {$ClientboundPlayerChatPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundPlayerChatPacket"
+import {$ClientboundAnimatePacket$$Type} from "net.minecraft.network.protocol.game.ClientboundAnimatePacket"
 import {$ClientboundOpenSignEditorPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundOpenSignEditorPacket"
-import {$DebugQueryHandler} from "net.minecraft.client.DebugQueryHandler"
 import {$ClientboundChunksBiomesPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundChunksBiomesPacket"
+import {$DebugQueryHandler} from "net.minecraft.client.DebugQueryHandler"
 import {$ConnectionProtocol} from "net.minecraft.network.ConnectionProtocol"
 import {$GameProfile} from "com.mojang.authlib.GameProfile"
 import {$ClientboundTeleportEntityPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundTeleportEntityPacket"
-import {$ClientboundContainerClosePacket$$Type} from "net.minecraft.network.protocol.game.ClientboundContainerClosePacket"
 import {$ClientboundHurtAnimationPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundHurtAnimationPacket"
+import {$ClientboundContainerClosePacket$$Type} from "net.minecraft.network.protocol.game.ClientboundContainerClosePacket"
 import {$ClientboundSetBorderLerpSizePacket$$Type} from "net.minecraft.network.protocol.game.ClientboundSetBorderLerpSizePacket"
 import {$ClientboundDisguisedChatPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundDisguisedChatPacket"
 import {$ClientboundSetEntityLinkPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundSetEntityLinkPacket"
 import {$ClientboundContainerSetDataPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundContainerSetDataPacket"
 import {$ClientboundRespawnPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundRespawnPacket"
 import {$ClientboundSetChunkCacheCenterPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundSetChunkCacheCenterPacket"
-import {$SharedSuggestionProvider} from "net.minecraft.commands.SharedSuggestionProvider"
 import {$ClientboundAddExperienceOrbPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundAddExperienceOrbPacket"
-import {$ClientboundPlayerInfoRemovePacket$$Type} from "net.minecraft.network.protocol.game.ClientboundPlayerInfoRemovePacket"
+import {$SharedSuggestionProvider} from "net.minecraft.commands.SharedSuggestionProvider"
 import {$ClientboundChunkBatchStartPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundChunkBatchStartPacket"
+import {$ClientboundPlayerInfoRemovePacket$$Type} from "net.minecraft.network.protocol.game.ClientboundPlayerInfoRemovePacket"
 import {$ClientboundSetHealthPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundSetHealthPacket"
 import {$Set} from "java.util.Set"
 import {$ClientboundBlockChangedAckPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundBlockChangedAckPacket"
@@ -294,9 +294,9 @@ import {$ClientboundStopSoundPacket$$Type} from "net.minecraft.network.protocol.
 import {$ClientboundSetTitleTextPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundSetTitleTextPacket"
 import {$ClientboundBlockUpdatePacket$$Type} from "net.minecraft.network.protocol.game.ClientboundBlockUpdatePacket"
 import {$ClientboundSetPassengersPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundSetPassengersPacket"
-import {$ClientboundPlayerLookAtPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundPlayerLookAtPacket"
 import {$RecipeManager} from "net.minecraft.world.item.crafting.RecipeManager"
 import {$ServerLinks} from "net.minecraft.server.ServerLinks"
+import {$ClientboundPlayerLookAtPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundPlayerLookAtPacket"
 import {$ClientboundSoundEntityPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundSoundEntityPacket"
 import {$ClientboundSetCarriedItemPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundSetCarriedItemPacket"
 import {$ClientboundUpdateTagsPacket$$Type} from "net.minecraft.network.protocol.common.ClientboundUpdateTagsPacket"
@@ -304,20 +304,20 @@ import {$ClientboundGameEventPacket$$Type} from "net.minecraft.network.protocol.
 import {$ClientboundLightUpdatePacket$$Type} from "net.minecraft.network.protocol.game.ClientboundLightUpdatePacket"
 import {$ClientboundPongResponsePacket$$Type} from "net.minecraft.network.protocol.ping.ClientboundPongResponsePacket"
 import {$ClientLevel} from "net.minecraft.client.multiplayer.ClientLevel"
-import {$ClientboundSystemChatPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundSystemChatPacket"
 import {$ClientboundServerDataPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundServerDataPacket"
+import {$ClientboundSystemChatPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundSystemChatPacket"
 import {$ClientboundRecipePacket$$Type} from "net.minecraft.network.protocol.game.ClientboundRecipePacket"
 import {$ClientboundSetSubtitleTextPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundSetSubtitleTextPacket"
-import {$ClientboundMapItemDataPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundMapItemDataPacket"
 import {$ClientboundUpdateAttributesPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundUpdateAttributesPacket"
+import {$ClientboundMapItemDataPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundMapItemDataPacket"
 import {$ClientboundOpenBookPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundOpenBookPacket"
 import {$ClientboundSetDefaultSpawnPositionPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundSetDefaultSpawnPositionPacket"
 import {$ClientboundSetEntityDataPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundSetEntityDataPacket"
 import {$ClientboundSetTimePacket$$Type} from "net.minecraft.network.protocol.game.ClientboundSetTimePacket"
 import {$UUID, $UUID$$Type} from "java.util.UUID"
 import {$Level} from "net.minecraft.world.level.Level"
-import {$ClientboundCustomChatCompletionsPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundCustomChatCompletionsPacket"
 import {$ClientboundProjectilePowerPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundProjectilePowerPacket"
+import {$ClientboundCustomChatCompletionsPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundCustomChatCompletionsPacket"
 import {$ClientboundTakeItemEntityPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundTakeItemEntityPacket"
 import {$ClientboundChangeDifficultyPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundChangeDifficultyPacket"
 import {$ClientboundExplodePacket$$Type} from "net.minecraft.network.protocol.game.ClientboundExplodePacket"
@@ -345,14 +345,14 @@ import {$ClientboundRemoveMobEffectPacket$$Type} from "net.minecraft.network.pro
 import {$ClientboundSetSimulationDistancePacket$$Type} from "net.minecraft.network.protocol.game.ClientboundSetSimulationDistancePacket"
 import {$ClientboundLevelEventPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundLevelEventPacket"
 import {$ClientboundEntityEventPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundEntityEventPacket"
-import {$ClientboundPlaceGhostRecipePacket$$Type} from "net.minecraft.network.protocol.game.ClientboundPlaceGhostRecipePacket"
 import {$ClientboundBlockEntityDataPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket"
+import {$ClientboundPlaceGhostRecipePacket$$Type} from "net.minecraft.network.protocol.game.ClientboundPlaceGhostRecipePacket"
+import {$Connection, $Connection$$Type} from "net.minecraft.network.Connection"
 import {$CommandDispatcher, $CommandDispatcher$$Type} from "com.mojang.brigadier.CommandDispatcher"
 import {$ProfileKeyPair$$Type} from "net.minecraft.world.entity.player.ProfileKeyPair"
 import {$Scoreboard} from "net.minecraft.world.scores.Scoreboard"
-import {$Connection, $Connection$$Type} from "net.minecraft.network.Connection"
-import {$ClientAdvancements} from "net.minecraft.client.multiplayer.ClientAdvancements"
 import {$ClientboundRotateHeadPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundRotateHeadPacket"
+import {$ClientAdvancements} from "net.minecraft.client.multiplayer.ClientAdvancements"
 
 export class $ClientPacketListener extends $ClientCommonPacketListenerImpl implements $ClientGamePacketListener$$Interface, $TickablePacketListener$$Interface, $IMixinClientPacketListener$$Interface, $ClientPacketListenerKJS$$Interface, $ClientPacketListenerAccessor$$Interface {
  "serverChunkRadius": integer
@@ -361,8 +361,6 @@ readonly "postDisconnectScreen": $Screen
 
 constructor(arg0: $Minecraft$$Type, arg1: $Connection$$Type, arg2: $CommonListenerCookie$$Type)
 
-public "handleBlockEntityData"(arg0: $ClientboundBlockEntityDataPacket$$Type): void
-public "isFeatureEnabled"(arg0: $FeatureFlagSet$$Type): boolean
 public "searchTrees"(): $SessionSearchTrees
 public "kjs$sessionData"(): $KubeSessionData
 public "handler$cmm000$cucumber$constructor"(arg0: $Minecraft$$Type, arg1: $Connection$$Type, arg2: $CommonListenerCookie$$Type, arg3: $CallbackInfo$$Type): void
@@ -374,6 +372,7 @@ public "handleSetEntityData"(arg0: $ClientboundSetEntityDataPacket$$Type): void
 public "handleTeleportEntity"(arg0: $ClientboundTeleportEntityPacket$$Type): void
 public "handleTickingState"(arg0: $ClientboundTickingStatePacket$$Type): void
 public "handleTickingStep"(arg0: $ClientboundTickingStepPacket$$Type): void
+public "handleMoveEntity"(arg0: $ClientboundMoveEntityPacket$$Type): void
 public "handleRotateMob"(arg0: $ClientboundRotateHeadPacket$$Type): void
 public "handleRemoveEntities"(arg0: $ClientboundRemoveEntitiesPacket$$Type): void
 public "handleChunkBlocksUpdate"(arg0: $ClientboundSectionBlocksUpdatePacket$$Type): void
@@ -478,7 +477,9 @@ public "setCommandsKonkrete"(arg0: $CommandDispatcher$$Type): void
 public "catnip$getServerChunkRadius"(): integer
 public "getConnectionType"(): $ConnectionType
 public "handleGameEvent"(arg0: $ClientboundGameEventPacket$$Type): void
-public "handleAddEntity"(arg0: $ClientboundAddEntityPacket$$Type): void
+public "getSuggestionsProvider"(): $ClientSuggestionProvider
+public "isFeatureEnabled"(arg0: $FeatureFlagSet$$Type): boolean
+public "handleBlockEntityData"(arg0: $ClientboundBlockEntityDataPacket$$Type): void
 public "handleMoveVehicle"(arg0: $ClientboundMoveVehiclePacket$$Type): void
 public "handleMovePlayer"(arg0: $ClientboundPlayerPositionPacket$$Type): void
 public "handleSetCarriedItem"(arg0: $ClientboundSetCarriedItemPacket$$Type): void
@@ -488,12 +489,11 @@ public "handlePlaceRecipe"(arg0: $ClientboundPlaceGhostRecipePacket$$Type): void
 public "handlePlayerAbilities"(arg0: $ClientboundPlayerAbilitiesPacket$$Type): void
 public "handleChangeDifficulty"(arg0: $ClientboundChangeDifficultyPacket$$Type): void
 public "handleCustomPayload"(arg0: $CustomPacketPayload$$Type): void
-public "getSuggestionsProvider"(): $ClientSuggestionProvider
-public "handleMoveEntity"(arg0: $ClientboundMoveEntityPacket$$Type): void
-public "levels"(): $Set<($ResourceKey<($Level)>)>
-public "getConnection"(): $Connection
+public "handleAddEntity"(arg0: $ClientboundAddEntityPacket$$Type): void
 public "tick"(): void
+public "getConnection"(): $Connection
 public "getLevel"(): $ClientLevel
+public "levels"(): $Set<($ResourceKey<($Level)>)>
 public "getId"(): $UUID
 public "close"(): void
 public "enabledFeatures"(): $FeatureFlagSet
@@ -502,7 +502,6 @@ public "clearLevel"(): void
 public "registryAccess"(): $RegistryAccess$Frozen
 public "getServerData"(): $ServerData
 public "updateSearchTrees"(): void
-public "getDebugQueryHandler"(): $DebugQueryHandler
 public "scoreboard"(): $Scoreboard
 public "handleDamageEvent"(arg0: $ClientboundDamageEventPacket$$Type): void
 public "handleEntityEvent"(arg0: $ClientboundEntityEventPacket$$Type): void
@@ -510,16 +509,17 @@ public "getCommands"(): $CommandDispatcher<($SharedSuggestionProvider)>
 public "getPlayerInfo"(arg0: $UUID$$Type): $PlayerInfo
 public "getPlayerInfo"(arg0: StringJS): $PlayerInfo
 public "getLocalGameProfile"(): $GameProfile
-public "getRecipeManager"(): $RecipeManager
+public "handleBlockChangedAck"(arg0: $ClientboundBlockChangedAckPacket$$Type): void
 public "sendUnsignedCommand"(arg0: StringJS): boolean
 public "sendCommand"(arg0: StringJS): void
-public "serverLinks"(): $ServerLinks
 public "sendChat"(arg0: StringJS): void
-public "handleBlockChangedAck"(arg0: $ClientboundBlockChangedAckPacket$$Type): void
+public "getRecipeManager"(): $RecipeManager
 public "potionBrewing"(): $PotionBrewing
+public "serverLinks"(): $ServerLinks
 public "getOnlinePlayerIds"(): $Collection<($UUID)>
 public "getOnlinePlayers"(): $Collection<($PlayerInfo)>
 public "isAcceptingMessages"(): boolean
+public "getDebugQueryHandler"(): $DebugQueryHandler
 public "protocol"(): $ConnectionProtocol
 public "flow"(): $PacketFlow
 set "actionBarText"(value: $ClientboundSetActionBarTextPacket$$Type)
@@ -537,12 +537,12 @@ get "level"(): $ClientLevel
 get "id"(): $UUID
 get "advancements"(): $ClientAdvancements
 get "serverData"(): $ServerData
-get "debugQueryHandler"(): $DebugQueryHandler
 get "localGameProfile"(): $GameProfile
 get "recipeManager"(): $RecipeManager
 get "onlinePlayerIds"(): $Collection<($UUID)>
 get "onlinePlayers"(): $Collection<($PlayerInfo)>
 get "acceptingMessages"(): boolean
+get "debugQueryHandler"(): $DebugQueryHandler
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -555,9 +555,9 @@ export type $ClientPacketListener$$Type = ($ClientPacketListener);
 export type $ClientPacketListener$$Original = $ClientPacketListener;}
 declare module "net.minecraft.client.multiplayer.ClientAdvancements" {
 import {$ClientAdvancements$Listener$$Type} from "net.minecraft.client.multiplayer.ClientAdvancements$Listener"
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$WorldSessionTelemetryManager$$Type} from "net.minecraft.client.telemetry.WorldSessionTelemetryManager"
 import {$Map} from "java.util.Map"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$AdvancementTree} from "net.minecraft.advancements.AdvancementTree"
 import {$CallbackInfo$$Type} from "org.spongepowered.asm.mixin.injection.callback.CallbackInfo"
 import {$AccessorClientAdvancements$$Interface} from "vazkii.patchouli.mixin.client.AccessorClientAdvancements"
@@ -576,8 +576,8 @@ public "getTree"(): $AdvancementTree
 public "get"(arg0: $ResourceLocation$$Type): $AdvancementHolder
 public "update"(arg0: $ClientboundUpdateAdvancementsPacket$$Type): void
 public "getProgress"(): $Map
-public "setListener"(arg0: $ClientAdvancements$Listener$$Type): void
 public "setSelectedTab"(arg0: $AdvancementHolder$$Type, arg1: boolean): void
+public "setListener"(arg0: $ClientAdvancements$Listener$$Type): void
 get "tree"(): $AdvancementTree
 set "listener"(value: $ClientAdvancements$Listener$$Type)
 }
@@ -597,10 +597,10 @@ import {$LoggedChatEvent, $LoggedChatEvent$$Type} from "net.minecraft.client.mul
 export class $ChatLog {
 constructor(arg0: integer)
 
-public "push"(arg0: $LoggedChatEvent$$Type): void
 public "end"(): integer
 public "lookup"(arg0: integer): $LoggedChatEvent
 public "start"(): integer
+public "push"(arg0: $LoggedChatEvent$$Type): void
 public static "codec"(arg0: integer): $Codec<($ChatLog)>
 }
 /**
@@ -624,20 +624,20 @@ import {$CommandContext$$Type} from "com.mojang.brigadier.context.CommandContext
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Function$$Type} from "java.util.function.Function"
 import {$Set} from "java.util.Set"
-import {$Minecraft$$Type} from "net.minecraft.client.Minecraft"
 import {$ResourceKey, $ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
+import {$Minecraft$$Type} from "net.minecraft.client.Minecraft"
 import {$Stream, $Stream$$Type} from "java.util.stream.Stream"
 import {$Collection, $Collection$$Type} from "java.util.Collection"
 import {$Suggestions, $Suggestions$$Type} from "com.mojang.brigadier.suggestion.Suggestions"
 import {$Predicate$$Type} from "java.util.function.Predicate"
 import {$SuggestionsBuilder$$Type} from "com.mojang.brigadier.suggestion.SuggestionsBuilder"
 import {$SharedSuggestionProvider$ElementSuggestionType$$Type} from "net.minecraft.commands.SharedSuggestionProvider$ElementSuggestionType"
-import {$ClientboundCustomChatCompletionsPacket$Action$$Type} from "net.minecraft.network.protocol.game.ClientboundCustomChatCompletionsPacket$Action"
 import {$Consumer$$Type} from "java.util.function.Consumer"
+import {$ClientboundCustomChatCompletionsPacket$Action$$Type} from "net.minecraft.network.protocol.game.ClientboundCustomChatCompletionsPacket$Action"
 import {$Registry$$Type} from "net.minecraft.core.Registry"
 import {$CompletableFuture} from "java.util.concurrent.CompletableFuture"
-import {$RegistryAccess} from "net.minecraft.core.RegistryAccess"
 import {$SharedSuggestionProvider$TextCoordinates, $SharedSuggestionProvider$TextCoordinates$$Type} from "net.minecraft.commands.SharedSuggestionProvider$TextCoordinates"
+import {$RegistryAccess} from "net.minecraft.core.RegistryAccess"
 
 export class $ClientSuggestionProvider implements $SharedSuggestionProvider$$Interface {
 constructor(arg0: $ClientPacketListener$$Type, arg1: $Minecraft$$Type)
@@ -710,17 +710,16 @@ import {$GameEvent$$Type} from "net.minecraft.world.level.gameevent.GameEvent"
 import {$SoundSource$$Type} from "net.minecraft.sounds.SoundSource"
 import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$Biome} from "net.minecraft.world.level.biome.Biome"
-import {$TickRateManager} from "net.minecraft.world.TickRateManager"
 import {$MapItemSavedData, $MapItemSavedData$$Type} from "net.minecraft.world.level.saveddata.maps.MapItemSavedData"
-import {$ClientLevelKJS$$Interface} from "dev.latvian.mods.kubejs.core.ClientLevelKJS"
+import {$TickRateManager} from "net.minecraft.world.TickRateManager"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$ClientLevelKJS$$Interface} from "dev.latvian.mods.kubejs.core.ClientLevelKJS"
 import {$ArrayList} from "java.util.ArrayList"
-import {$CrashReport$$Type} from "net.minecraft.CrashReport"
 import {$RecipeManager} from "net.minecraft.world.item.crafting.RecipeManager"
+import {$CrashReport$$Type} from "net.minecraft.CrashReport"
 import {$BooleanSupplier$$Type} from "java.util.function.BooleanSupplier"
 import {$Entity$RemovalReason$$Type} from "net.minecraft.world.entity.Entity$RemovalReason"
 import {$BiomeSeedProvider$$Interface} from "org.embeddedt.embeddium.impl.world.BiomeSeedProvider"
-import {$LevelData} from "net.minecraft.world.level.storage.LevelData"
 import {$BiFunction$$Type} from "java.util.function.BiFunction"
 import {$RandomSource, $RandomSource$$Type} from "net.minecraft.util.RandomSource"
 import {$Fluid} from "net.minecraft.world.level.material.Fluid"
@@ -736,9 +735,8 @@ import {$BlockSnapshot} from "net.neoforged.neoforge.common.util.BlockSnapshot"
 import {$List, $List$$Type} from "java.util.List"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$FireworkExplosion$$Type} from "net.minecraft.world.item.component.FireworkExplosion"
-import {$Trackable} from "dev.uncandango.alltheleaks.mixin.Trackable"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
-import {$ChunkSource} from "net.minecraft.world.level.chunk.ChunkSource"
+import {$Trackable} from "dev.uncandango.alltheleaks.mixin.Trackable"
 import {$Runnable$$Type} from "java.lang.Runnable"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$TransientEntitySectionManager} from "net.minecraft.world.level.entity.TransientEntitySectionManager"
@@ -747,18 +745,18 @@ import {$Codec} from "com.mojang.serialization.Codec"
 import {$Function$$Type} from "java.util.function.Function"
 import {$Class} from "java.lang.Class"
 import {$ResourceKey, $ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$ModelData} from "net.neoforged.neoforge.client.model.data.ModelData"
 import {$ObjectOpenCustomHashSet} from "it.unimi.dsi.fastutil.objects.ObjectOpenCustomHashSet"
+import {$ModelData} from "net.neoforged.neoforge.client.model.data.ModelData"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$ChunkTracker} from "org.embeddedt.embeddium.impl.render.chunk.map.ChunkTracker"
-import {$GameEvent$Context$$Type} from "net.minecraft.world.level.gameevent.GameEvent$Context"
-import {$Map} from "java.util.Map"
-import {$Collection} from "java.util.Collection"
 import {$BlockPos$MutableBlockPos$$Type} from "net.minecraft.core.BlockPos$MutableBlockPos"
+import {$Collection} from "java.util.Collection"
+import {$Map} from "java.util.Map"
 import {$TickingBlockEntity} from "net.minecraft.world.level.block.entity.TickingBlockEntity"
-import {$ClientLevel$ClientLevelData$$Type} from "net.minecraft.client.multiplayer.ClientLevel$ClientLevelData"
+import {$GameEvent$Context$$Type} from "net.minecraft.world.level.gameevent.GameEvent$Context"
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
+import {$ClientLevel$ClientLevelData, $ClientLevel$ClientLevelData$$Type} from "net.minecraft.client.multiplayer.ClientLevel$ClientLevelData"
 import {$LevelRenderer$$Type} from "net.minecraft.client.renderer.LevelRenderer"
 import {$ExtendedWorld$$Interface} from "ca.spottedleaf.starlight.common.world.ExtendedWorld"
 import {$ChunkPos$$Type} from "net.minecraft.world.level.ChunkPos"
@@ -766,6 +764,7 @@ import {$SpriteSet$$Type} from "net.minecraft.client.particle.SpriteSet"
 import {$LevelTickAccess} from "net.minecraft.world.ticks.LevelTickAccess"
 import {$ChunkTrackerHolder$$Interface} from "org.embeddedt.embeddium.impl.render.chunk.map.ChunkTrackerHolder"
 import {$EntityGetter} from "net.minecraft.world.level.EntityGetter"
+import {$ClientChunkCache} from "net.minecraft.client.multiplayer.ClientChunkCache"
 import {$Scoreboard} from "net.minecraft.world.scores.Scoreboard"
 import {$ParticleOptions$$Type} from "net.minecraft.core.particles.ParticleOptions"
 import {$DimensionType$$Type} from "net.minecraft.world.level.dimension.DimensionType"
@@ -795,32 +794,45 @@ readonly "blockEntityTickers": $List<($TickingBlockEntity)>
 
 constructor(arg0: $ClientPacketListener$$Type, arg1: $ClientLevel$ClientLevelData$$Type, arg2: $ResourceKey$$Type<($Level)>, arg3: $Holder$$Type<($DimensionType)>, arg4: integer, arg5: integer, arg6: $Supplier$$Type<($ProfilerFiller$$Type)>, arg7: $LevelRenderer$$Type, arg8: boolean, arg9: long)
 
-public "tick"(arg0: $BooleanSupplier$$Type): void
 public "getEntity"(arg0: integer): $Entity
+public "tick"(arg0: $BooleanSupplier$$Type): void
 public "toString"(): StringJS
 public "unload"(arg0: $LevelChunk$$Type): void
 public "disconnect"(): void
 public "setBlock"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type, arg2: integer, arg3: integer): boolean
-public "getLevelData"(): $LevelData
+public "getLevelData"(): $ClientLevel$ClientLevelData
 public "enabledFeatures"(): $FeatureFlagSet
 public "tickRateManager"(): $TickRateManager
 public "tickEntities"(): void
 public "fillReportDetails"(arg0: $CrashReport$$Type): $CrashReportCategory
 public "animateTick"(arg0: integer, arg1: integer, arg2: integer): void
-public "getChunkSource"(): $ChunkSource
+public "getChunkSource"(): $ClientChunkCache
 public "effects"(): $DimensionSpecialEffects
 public "shouldTickDeath"(arg0: $Entity$$Type): boolean
 public "playSeededSound"(arg0: $Player$$Type, arg1: $Entity$$Type, arg2: $Holder$$Type<($SoundEvent)>, arg3: $SoundSource$$Type, arg4: float, arg5: float, arg6: long): void
 public "playSeededSound"(arg0: $Player$$Type, arg1: double, arg2: double, arg3: double, arg4: $Holder$$Type<($SoundEvent)>, arg5: $SoundSource$$Type, arg6: float, arg7: float, arg8: long): void
 public "gameEvent"(arg0: $Holder$$Type<($GameEvent)>, arg1: $Vec3$$Type, arg2: $GameEvent$Context$$Type): void
 public "getScoreboard"(): $Scoreboard
-public "addParticle"(arg0: $ParticleOptions$$Type, arg1: boolean, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double): void
 public "addParticle"(arg0: $ParticleOptions$$Type, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double): void
-public "playLocalSound"(arg0: double, arg1: double, arg2: double, arg3: $SoundEvent$$Type, arg4: $SoundSource$$Type, arg5: float, arg6: float, arg7: boolean): void
+public "addParticle"(arg0: $ParticleOptions$$Type, arg1: boolean, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double): void
 public "playLocalSound"(arg0: $Entity$$Type, arg1: $SoundEvent$$Type, arg2: $SoundSource$$Type, arg3: float, arg4: float): void
+public "playLocalSound"(arg0: double, arg1: double, arg2: double, arg3: $SoundEvent$$Type, arg4: $SoundSource$$Type, arg5: float, arg6: float, arg7: boolean): void
 public "getDayTimeFraction"(): float
 public "levelEvent"(arg0: $Player$$Type, arg1: integer, arg2: $BlockPos$$Type, arg3: integer): void
 public "getChunk"(arg0: integer, arg1: integer): $ChunkAccess
+public "handleBlockChangedAck"(arg0: integer): void
+public "setServerVerifiedBlockState"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type, arg2: integer): void
+public "syncBlockState"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type, arg2: $Vec3$$Type): void
+public "setDefaultSpawnPos"(arg0: $BlockPos$$Type, arg1: float): void
+public "queueLightUpdate"(arg0: $Runnable$$Type): void
+public "pollLightUpdates"(): void
+public "isLightUpdateQueueEmpty"(): boolean
+public "setDayTime"(arg0: long): void
+public "entitiesForRendering"(): $Iterable<($Entity)>
+public "tickNonPassenger"(arg0: $Entity$$Type): void
+public "handler$eke000$entityculling$tickEntity"(entity: $Entity$$Type, info: $CallbackInfo$$Type): void
+public "setBlocksDirty"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type, arg2: $BlockState$$Type): void
+public "sendBlockUpdated"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type, arg2: $BlockState$$Type, arg3: integer): void
 public "addDestroyBlockEffect"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): void
 public "hasChunk"(arg0: integer, arg1: integer): boolean
 public "addAlwaysVisibleParticle"(arg0: $ParticleOptions$$Type, arg1: boolean, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double): void
@@ -836,35 +848,6 @@ public "createFireworks"(arg0: double, arg1: double, arg2: double, arg3: double,
 public "getSkyDarken"(arg0: float): float
 public "setSkyFlashTime"(arg0: integer): void
 public "sendPacketToServer"(arg0: $Packet$$Type<(never)>): void
-public "getRecipeManager"(): $RecipeManager
-public "setBlocksDirty"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type, arg2: $BlockState$$Type): void
-public "sendBlockUpdated"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type, arg2: $BlockState$$Type, arg3: integer): void
-public "handleBlockChangedAck"(arg0: integer): void
-public "setServerVerifiedBlockState"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type, arg2: integer): void
-public "syncBlockState"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type, arg2: $Vec3$$Type): void
-public "potionBrewing"(): $PotionBrewing
-public "setDayTimeFraction"(arg0: float): void
-public "getDayTimePerTick"(): float
-public "setDayTimePerTick"(arg0: float): void
-public "getChunkAtImmediately"(chunkX: integer, chunkZ: integer): $LevelChunk
-public "getAnyChunkImmediately"(chunkX: integer, chunkZ: integer): $ChunkAccess
-public "setGameTime"(arg0: long): void
-public "getModelDataManager"(): $ModelDataManager
-public "getBlockTicks"(): $LevelTickAccess<($Block)>
-public "getFluidTicks"(): $LevelTickAccess<($Fluid)>
-public "getShade"(arg0: $Direction$$Type, arg1: boolean): float
-public "getShade"(arg0: float, arg1: float, arg2: float, arg3: boolean): float
-public "getBlockTint"(arg0: $BlockPos$$Type, arg1: $ColorResolver$$Type): integer
-public "getUncachedNoiseBiome"(arg0: integer, arg1: integer, arg2: integer): $Holder<($Biome)>
-public "getModelData"(arg0: $BlockPos$$Type): $ModelData
-public "setDefaultSpawnPos"(arg0: $BlockPos$$Type, arg1: float): void
-public "queueLightUpdate"(arg0: $Runnable$$Type): void
-public "pollLightUpdates"(): void
-public "isLightUpdateQueueEmpty"(): boolean
-public "setDayTime"(arg0: long): void
-public "entitiesForRendering"(): $Iterable<($Entity)>
-public "tickNonPassenger"(arg0: $Entity$$Type): void
-public "handler$eke000$entityculling$tickEntity"(entity: $Entity$$Type, info: $CallbackInfo$$Type): void
 public "onChunkLoaded"(arg0: $ChunkPos$$Type): void
 public "clearTintCaches"(): void
 public "getEntityCount"(): integer
@@ -883,6 +866,22 @@ public "getServerSimulationDistance"(): integer
 public "lithium$getEntityManager"(): $TransientEntitySectionManager
 public "sodium$getBiomeSeed"(): long
 public "sodium$getTracker"(): $ChunkTracker
+public "getRecipeManager"(): $RecipeManager
+public "potionBrewing"(): $PotionBrewing
+public "setDayTimeFraction"(arg0: float): void
+public "getDayTimePerTick"(): float
+public "setDayTimePerTick"(arg0: float): void
+public "getChunkAtImmediately"(chunkX: integer, chunkZ: integer): $LevelChunk
+public "getAnyChunkImmediately"(chunkX: integer, chunkZ: integer): $ChunkAccess
+public "setGameTime"(arg0: long): void
+public "getModelDataManager"(): $ModelDataManager
+public "getBlockTicks"(): $LevelTickAccess<($Block)>
+public "getFluidTicks"(): $LevelTickAccess<($Fluid)>
+public "getShade"(arg0: $Direction$$Type, arg1: boolean): float
+public "getShade"(arg0: float, arg1: float, arg2: float, arg3: boolean): float
+public "getBlockTint"(arg0: $BlockPos$$Type, arg1: $ColorResolver$$Type): integer
+public "getUncachedNoiseBiome"(arg0: integer, arg1: integer, arg2: integer): $Holder<($Biome)>
+public "getModelData"(arg0: $BlockPos$$Type): $ModelData
 public "self"(): $EntityGetter
 public "kubeParticle"(x: double, y: double, z: double, spriteSet: $SpriteSet$$Type): $KubeAnimatedParticle
 public static "getBiomeSeed"(arg0: $ClientLevel$$Type): long
@@ -896,13 +895,19 @@ public static "clearNullReferences"(): void
 public static "getSummary"(): $Map<($Class<(never)>), ($Map<($Class<(never)>), (long)>)>
 public static "getAllLoadedEntities"(level: $Level$$Type): $Iterable<($Entity)>
 public static "traverseBlocks"<T, C>(arg0: $Vec3$$Type, arg1: $Vec3$$Type, arg2: C, arg3: $BiFunction$$Type<(C), ($BlockPos), (T)>, arg4: $Function$$Type<(C), (T)>): T
-get "levelData"(): $LevelData
-get "chunkSource"(): $ChunkSource
+get "levelData"(): $ClientLevel$ClientLevelData
+get "chunkSource"(): $ClientChunkCache
 get "scoreboard"(): $Scoreboard
 get "dayTimeFraction"(): float
+get "lightUpdateQueueEmpty"(): boolean
+set "dayTime"(value: long)
 get "partEntities"(): $Collection<($PartEntity<(never)>)>
 get "freeMapId"(): $MapId
 set "skyFlashTime"(value: integer)
+get "entityCount"(): integer
+get "skyFlashTime"(): integer
+set "serverSimulationDistance"(value: integer)
+get "serverSimulationDistance"(): integer
 get "recipeManager"(): $RecipeManager
 set "dayTimeFraction"(value: float)
 get "dayTimePerTick"(): float
@@ -911,12 +916,6 @@ set "gameTime"(value: long)
 get "modelDataManager"(): $ModelDataManager
 get "blockTicks"(): $LevelTickAccess<($Block)>
 get "fluidTicks"(): $LevelTickAccess<($Fluid)>
-get "lightUpdateQueueEmpty"(): boolean
-set "dayTime"(value: long)
-get "entityCount"(): integer
-get "skyFlashTime"(): integer
-set "serverSimulationDistance"(value: integer)
-get "serverSimulationDistance"(): integer
 get "height"(): integer
 get "minBuildHeight"(): integer
 public static get "summary"(): $Map<($Class<(never)>), ($Map<($Class<(never)>), (long)>)>
@@ -933,8 +932,8 @@ export type $ClientLevel$$Original = $ClientLevel;}
 declare module "net.minecraft.client.multiplayer.PlayerInfo" {
 import {$RemoteChatSession} from "net.minecraft.network.chat.RemoteChatSession"
 import {$PlayerTeam} from "net.minecraft.world.scores.PlayerTeam"
-import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$GameType} from "net.minecraft.world.level.GameType"
+import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$GameProfile, $GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$PlayerSkin} from "net.minecraft.client.resources.PlayerSkin"
 import {$SignedMessageValidator} from "net.minecraft.network.chat.SignedMessageValidator"
@@ -949,8 +948,8 @@ public "getChatSession"(): $RemoteChatSession
 public "getProfile"(): $GameProfile
 public "getLatency"(): integer
 public "getTeam"(): $PlayerTeam
-public "getSkin"(): $PlayerSkin
 public "getGameMode"(): $GameType
+public "getSkin"(): $PlayerSkin
 public "hasVerifiableChat"(): boolean
 get "messageValidator"(): $SignedMessageValidator
 set "tabListDisplayName"(value: $Component$$Type)
@@ -959,8 +958,8 @@ get "chatSession"(): $RemoteChatSession
 get "profile"(): $GameProfile
 get "latency"(): integer
 get "team"(): $PlayerTeam
-get "skin"(): $PlayerSkin
 get "gameMode"(): $GameType
+get "skin"(): $PlayerSkin
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -982,26 +981,25 @@ import {$CrashReportCategory$$Type} from "net.minecraft.CrashReportCategory"
 export class $ClientLevel$ClientLevelData implements $WritableLevelData$$Interface {
 constructor(arg0: $Difficulty$$Type, arg1: boolean, arg2: boolean)
 
-public "getClearColorScale"(): float
 public "isDifficultyLocked"(): boolean
 public "setRaining"(arg0: boolean): void
+public "getHorizonHeight"(arg0: $LevelHeightAccessor$$Type): double
 public "isHardcore"(): boolean
 public "getGameTime"(): long
-public "getHorizonHeight"(arg0: $LevelHeightAccessor$$Type): double
 public "setDifficulty"(arg0: $Difficulty$$Type): void
 public "setDifficultyLocked"(arg0: boolean): void
 public "getDifficulty"(): $Difficulty
 public "getGameRules"(): $GameRules
 public "getDayTime"(): long
 public "fillCrashReportCategory"(arg0: $CrashReportCategory$$Type, arg1: $LevelHeightAccessor$$Type): void
+public "setDayTime"(arg0: long): void
 public "getSpawnPos"(): $BlockPos
 public "getSpawnAngle"(): float
 public "isThundering"(): boolean
 public "isRaining"(): boolean
-public "setGameTime"(arg0: long): void
-public "setDayTime"(arg0: long): void
 public "setSpawn"(arg0: $BlockPos$$Type, arg1: float): void
-get "clearColorScale"(): float
+public "setGameTime"(arg0: long): void
+public "getClearColorScale"(): float
 get "difficultyLocked"(): boolean
 set "raining"(value: boolean)
 get "hardcore"(): boolean
@@ -1011,12 +1009,13 @@ set "difficultyLocked"(value: boolean)
 get "difficulty"(): $Difficulty
 get "gameRules"(): $GameRules
 get "dayTime"(): long
+set "dayTime"(value: long)
 get "spawnPos"(): $BlockPos
 get "spawnAngle"(): float
 get "thundering"(): boolean
 get "raining"(): boolean
 set "gameTime"(value: long)
-set "dayTime"(value: long)
+get "clearColorScale"(): float
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -1029,11 +1028,11 @@ export type $ClientLevel$ClientLevelData$$Type = ($ClientLevel$ClientLevelData);
 export type $ClientLevel$ClientLevelData$$Original = $ClientLevel$ClientLevelData;}
 declare module "net.minecraft.client.multiplayer.chat.ChatListener" {
 import {$MessageSignature$$Type} from "net.minecraft.network.chat.MessageSignature"
-import {$PlayerChatMessage$$Type} from "net.minecraft.network.chat.PlayerChatMessage"
 import {$UUID$$Type} from "java.util.UUID"
+import {$PlayerChatMessage$$Type} from "net.minecraft.network.chat.PlayerChatMessage"
 import {$Minecraft$$Type} from "net.minecraft.client.Minecraft"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$ChatType$Bound$$Type} from "net.minecraft.network.chat.ChatType$Bound"
 
 export class $ChatListener {
@@ -1046,8 +1045,8 @@ public "removeFromDelayedMessageQueue"(arg0: $MessageSignature$$Type): boolean
 public "tick"(): void
 public "queueSize"(): long
 public "clearQueue"(): void
-public "setMessageDelay"(arg0: double): void
 public "acceptNextDelayedMessage"(): void
+public "setMessageDelay"(arg0: double): void
 public "handleSystemMessage"(arg0: $Component$$Type, arg1: boolean): void
 set "messageDelay"(value: double)
 }
@@ -1072,8 +1071,8 @@ import {$ClientPacketListener, $ClientPacketListener$$Type} from "net.minecraft.
 import {$CallbackInfoReturnable$$Type} from "org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable"
 import {$ClientLevel$$Type} from "net.minecraft.client.multiplayer.ClientLevel"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$LocalPlayer, $LocalPlayer$$Type} from "net.minecraft.client.player.LocalPlayer"
+import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$ClientRecipeBook$$Type} from "net.minecraft.client.ClientRecipeBook"
 import {$RecipeHolder$$Type} from "net.minecraft.world.item.crafting.RecipeHolder"
 import {$PlayerControllerAccess$$Interface} from "blusunrize.immersiveengineering.mixin.accessors.client.PlayerControllerAccess"
@@ -1092,16 +1091,16 @@ readonly "connection": $ClientPacketListener
 
 constructor(arg0: $Minecraft$$Type, arg1: $ClientPacketListener$$Type)
 
-public "getDestroyStage"(): integer
-public "handler$chc000$inventoryprofilesnext$clickSlotPre"(arg0: integer, arg1: integer, arg2: integer, arg3: $ClickType$$Type, arg4: $Player$$Type, arg5: $CallbackInfo$$Type): void
-public "handler$chf000$inventoryprofilesnext$internalOnSlotClickBegin"(arg0: integer, arg1: integer, arg2: integer, arg3: $ClickType$$Type, arg4: $Player$$Type, arg5: $CallbackInfo$$Type): void
 public "createPlayer"(arg0: $ClientLevel$$Type, arg1: $StatsCounter$$Type, arg2: $ClientRecipeBook$$Type, arg3: boolean, arg4: boolean): $LocalPlayer
 public "createPlayer"(arg0: $ClientLevel$$Type, arg1: $StatsCounter$$Type, arg2: $ClientRecipeBook$$Type): $LocalPlayer
 public "adjustPlayer"(arg0: $Player$$Type): void
-public "setLocalMode"(arg0: $GameType$$Type): void
 public "setLocalMode"(arg0: $GameType$$Type, arg1: $GameType$$Type): void
+public "setLocalMode"(arg0: $GameType$$Type): void
 public "canHurtPlayer"(): boolean
 public "hasExperience"(): boolean
+public "getDestroyStage"(): integer
+public "handler$chc000$inventoryprofilesnext$clickSlotPre"(arg0: integer, arg1: integer, arg2: integer, arg3: $ClickType$$Type, arg4: $Player$$Type, arg5: $CallbackInfo$$Type): void
+public "handler$chf000$inventoryprofilesnext$internalOnSlotClickBegin"(arg0: integer, arg1: integer, arg2: integer, arg3: $ClickType$$Type, arg4: $Player$$Type, arg5: $CallbackInfo$$Type): void
 public "handler$chc000$inventoryprofilesnext$clickSlot"(arg0: integer, arg1: integer, arg2: integer, arg3: $ClickType$$Type, arg4: $Player$$Type, arg5: $CallbackInfo$$Type): void
 public "handler$chf000$inventoryprofilesnext$postInternalOnSlotClickBegin"(arg0: integer, arg1: integer, arg2: integer, arg3: $ClickType$$Type, arg4: $Player$$Type, arg5: $CallbackInfo$$Type): void
 public "handleInventoryButtonClick"(arg0: integer, arg1: integer): void
@@ -1110,8 +1109,8 @@ public "handleCreativeModeItemDrop"(arg0: $ItemStack$$Type): void
 public "handler$zbn000$immersive_aircraft$hasRidingInventory"(cir: $CallbackInfoReturnable$$Type): void
 public "handler$chd000$inventoryprofilesnext$pickItem"(arg0: integer, arg1: $CallbackInfo$$Type): void
 public "getDestroyProgress"(): float
-public "framedblocks$setDestroyDelay"(arg0: integer): void
 public "handlePlaceRecipe"(arg0: integer, arg1: $RecipeHolder$$Type<(never)>, arg2: boolean): void
+public "framedblocks$setDestroyDelay"(arg0: integer): void
 public "tick"(): void
 public "continueDestroyBlock"(arg0: $BlockPos$$Type, arg1: $Direction$$Type): boolean
 public "stopDestroyBlock"(): void
@@ -1134,8 +1133,8 @@ public "getPlayerMode"(): $GameType
 public "handleInventoryMouseClick"(arg0: integer, arg1: integer, arg2: integer, arg3: $ClickType$$Type, arg4: $Player$$Type): void
 public "handleSlotStateChanged"(arg0: integer, arg1: integer, arg2: boolean): void
 public "getPreviousPlayerMode"(): $GameType
-get "destroyStage"(): integer
 set "localMode"(value: $GameType$$Type)
+get "destroyStage"(): integer
 get "destroying"(): boolean
 get "serverControlledInventory"(): boolean
 get "alwaysFlying"(): boolean
@@ -1174,8 +1173,8 @@ export type $ReportType$$Type = (("chat") | ("skin") | ("username"));
 export type $ReportType$$Original = $ReportType;}
 declare module "net.minecraft.client.multiplayer.chat.report.ReportingContext" {
 import {$UserApiService$$Type} from "com.mojang.authlib.minecraft.UserApiService"
-import {$Screen$$Type} from "net.minecraft.client.gui.screens.Screen"
 import {$UUID$$Type} from "java.util.UUID"
+import {$Screen$$Type} from "net.minecraft.client.gui.screens.Screen"
 import {$Report$$Type} from "net.minecraft.client.multiplayer.chat.report.Report"
 import {$Minecraft$$Type} from "net.minecraft.client.Minecraft"
 import {$Runnable$$Type} from "java.lang.Runnable"
@@ -1186,9 +1185,9 @@ import {$ChatLog, $ChatLog$$Type} from "net.minecraft.client.multiplayer.chat.Ch
 export class $ReportingContext {
 constructor(arg0: $AbuseReportSender$$Type, arg1: $ReportEnvironment$$Type, arg2: $ChatLog$$Type)
 
+public "chatLog"(): $ChatLog
 public "setReportDraft"(arg0: $Report$$Type): void
 public "hasDraftReportFor"(arg0: $UUID$$Type): boolean
-public "chatLog"(): $ChatLog
 public "sender"(): $AbuseReportSender
 public "matches"(arg0: $ReportEnvironment$$Type): boolean
 public static "create"(arg0: $ReportEnvironment$$Type, arg1: $UserApiService$$Type): $ReportingContext
@@ -1294,8 +1293,8 @@ public "hashCode"(): integer
 public "telemetryManager"(): $WorldSessionTelemetryManager
 public "enabledFeatures"(): $FeatureFlagSet
 public "serverData"(): $ServerData
-public "serverLinks"(): $ServerLinks
 public "serverBrand"(): StringJS
+public "serverLinks"(): $ServerLinks
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -1329,6 +1328,60 @@ export type $ServerData$ServerPackStatus$$Type = (("enabled") | ("disabled") | (
  * Original type to represent the class type itself. Use in JSDoc only.
  */
 export type $ServerData$ServerPackStatus$$Original = $ServerData$ServerPackStatus;}
+declare module "net.minecraft.client.multiplayer.ClientChunkCache" {
+import {$LevelLightEngine} from "net.minecraft.world.level.lighting.LevelLightEngine"
+import {$LightLayer$$Type} from "net.minecraft.world.level.LightLayer"
+import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
+import {$FriendlyByteBuf$$Type} from "net.minecraft.network.FriendlyByteBuf"
+import {$CallbackInfo$$Type} from "org.spongepowered.asm.mixin.injection.callback.CallbackInfo"
+import {$ChunkSource} from "net.minecraft.world.level.chunk.ChunkSource"
+import {$BooleanSupplier$$Type} from "java.util.function.BooleanSupplier"
+import {$ClientChunkCache$Storage} from "net.minecraft.client.multiplayer.ClientChunkCache$Storage"
+import {$ChunkPos$$Type} from "net.minecraft.world.level.ChunkPos"
+import {$ChunkStatus$$Type} from "net.minecraft.world.level.chunk.status.ChunkStatus"
+import {$Consumer$$Type} from "java.util.function.Consumer"
+import {$ClientLevel$$Type} from "net.minecraft.client.multiplayer.ClientLevel"
+import {$BlockGetter} from "net.minecraft.world.level.BlockGetter"
+import {$ClientChunkManagerAccess$$Interface} from "me.cominixo.betterf3.ducks.ClientChunkManagerAccess"
+import {$ClientboundLevelChunkPacketData$BlockEntityTagOutput$$Type} from "net.minecraft.network.protocol.game.ClientboundLevelChunkPacketData$BlockEntityTagOutput"
+import {$SectionPos$$Type} from "net.minecraft.core.SectionPos"
+import {$LevelChunk} from "net.minecraft.world.level.chunk.LevelChunk"
+
+export class $ClientChunkCache extends $ChunkSource implements $ClientChunkManagerAccess$$Interface {
+ "lightEngine": $LevelLightEngine
+ "storage": $ClientChunkCache$Storage
+
+constructor(arg0: $ClientLevel$$Type, arg1: integer)
+
+public "handler$znj000$railways$securitycraft$onDrop"(arg0: $ChunkPos$$Type, arg1: $CallbackInfo$$Type): void
+public "handler$znj000$railways$securitycraft$onUpdateViewRadius"(arg0: integer, arg1: $CallbackInfo$$Type): void
+public "handler$znj000$railways$securitycraft$onInit"(arg0: $ClientLevel$$Type, arg1: integer, arg2: $CallbackInfo$$Type): void
+public "updateViewRadius"(arg0: integer): void
+public "updateViewCenter"(arg0: integer, arg1: integer): void
+public "replaceWithPacketData"(arg0: integer, arg1: integer, arg2: $FriendlyByteBuf$$Type, arg3: $CompoundTag$$Type, arg4: $Consumer$$Type<($ClientboundLevelChunkPacketData$BlockEntityTagOutput)>): $LevelChunk
+public "replaceBiomes"(arg0: integer, arg1: integer, arg2: $FriendlyByteBuf$$Type): void
+public "getLoadedChunksCount"(): integer
+public "getChunks"(): $ClientChunkCache$Storage
+public "tick"(arg0: $BooleanSupplier$$Type, arg1: boolean): void
+public "getLevel"(): $BlockGetter
+public "drop"(arg0: $ChunkPos$$Type): void
+public "getChunk"(arg0: integer, arg1: integer, arg2: $ChunkStatus$$Type, arg3: boolean): $LevelChunk
+public "getLightEngine"(): $LevelLightEngine
+public "gatherStats"(): StringJS
+public "onLightUpdate"(arg0: $LightLayer$$Type, arg1: $SectionPos$$Type): void
+get "loadedChunksCount"(): integer
+get "chunks"(): $ClientChunkCache$Storage
+get "level"(): $BlockGetter
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $ClientChunkCache$$Type = ($ClientChunkCache);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $ClientChunkCache$$Original = $ClientChunkCache;}
 declare module "net.minecraft.client.multiplayer.ServerData$Type" {
 import {$Enum} from "java.lang.Enum"
 
@@ -1358,8 +1411,8 @@ import {$CustomPacketPayload$Type$$Type} from "net.minecraft.network.protocol.co
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$ClientCommonNetworkHandlerAccessor$$Interface} from "io.wispforest.owo.mixin.ClientCommonNetworkHandlerAccessor"
 import {$ClientboundDisconnectPacket$$Type} from "net.minecraft.network.protocol.common.ClientboundDisconnectPacket"
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Exception$$Type} from "java.lang.Exception"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$ClientboundResourcePackPushPacket$$Type} from "net.minecraft.network.protocol.common.ClientboundResourcePackPushPacket"
 import {$ClientboundCustomReportDetailsPacket$$Type} from "net.minecraft.network.protocol.common.ClientboundCustomReportDetailsPacket"
 import {$Throwable$$Type} from "java.lang.Throwable"
@@ -1369,8 +1422,8 @@ import {$ClientboundTransferPacket$$Type} from "net.minecraft.network.protocol.c
 import {$CrashReport$$Type} from "net.minecraft.CrashReport"
 import {$ClientboundResourcePackPopPacket$$Type} from "net.minecraft.network.protocol.common.ClientboundResourcePackPopPacket"
 import {$ClientboundUpdateTagsPacket$$Type} from "net.minecraft.network.protocol.common.ClientboundUpdateTagsPacket"
-import {$ClientboundStoreCookiePacket$$Type} from "net.minecraft.network.protocol.common.ClientboundStoreCookiePacket"
 import {$CustomPacketPayload$$Type} from "net.minecraft.network.protocol.common.custom.CustomPacketPayload"
+import {$ClientboundStoreCookiePacket$$Type} from "net.minecraft.network.protocol.common.ClientboundStoreCookiePacket"
 import {$DisconnectionDetails, $DisconnectionDetails$$Type} from "net.minecraft.network.DisconnectionDetails"
 import {$ClientboundServerLinksPacket$$Type} from "net.minecraft.network.protocol.common.ClientboundServerLinksPacket"
 import {$ConnectionType} from "net.neoforged.neoforge.network.connection.ConnectionType"
@@ -1396,8 +1449,8 @@ public "handleKeepAlive"(arg0: $ClientboundKeepAlivePacket$$Type): void
 public "getConnection"(): $Connection
 public "send"(arg0: $Packet$$Type<(never)>): void
 public "handleRequestCookie"(arg0: $ClientboundCookieRequestPacket$$Type): void
-public "onDisconnect"(arg0: $DisconnectionDetails$$Type): void
 public "serverBrand"(): StringJS
+public "onDisconnect"(arg0: $DisconnectionDetails$$Type): void
 public "handleDisconnect"(arg0: $ClientboundDisconnectPacket$$Type): void
 public "onPacketError"(arg0: $Packet$$Type, arg1: $Exception$$Type): void
 public "createDisconnectionInfo"(arg0: $Component$$Type, arg1: $Throwable$$Type): $DisconnectionDetails
@@ -1457,7 +1510,7 @@ public "clientInfo"(): $AbuseReportRequest$ClientInfo
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $ReportEnvironment$$Type = ({"server"?: $ReportEnvironment$Server$$Type, "clientVersion"?: StringJS}) | ([server?: $ReportEnvironment$Server$$Type, clientVersion?: StringJS]);
+export type $ReportEnvironment$$Type = ({"clientVersion"?: StringJS, "server"?: $ReportEnvironment$Server$$Type}) | ([clientVersion?: StringJS, server?: $ReportEnvironment$Server$$Type]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -1486,12 +1539,12 @@ export class $ServerData {
 
 constructor(arg0: StringJS, arg1: StringJS, arg2: $ServerData$Type$$Type)
 
-public "getIconBytes"(): (byte)[]
 public static "validateIcon"(arg0: (byte)[]): (byte)[]
 public "setIconBytes"(arg0: (byte)[]): void
 public "getResourcePackStatus"(): $ServerData$ServerPackStatus
 public "setResourcePackStatus"(arg0: $ServerData$ServerPackStatus$$Type): void
 public "copyNameIconFrom"(arg0: $ServerData$$Type): void
+public "getIconBytes"(): (byte)[]
 public "copyFrom"(arg0: $ServerData$$Type): void
 public "type"(): $ServerData$Type
 public "write"(): $CompoundTag
@@ -1500,10 +1553,10 @@ public "state"(): $ServerData$State
 public "setState"(arg0: $ServerData$State$$Type): void
 public "isRealm"(): boolean
 public "isLan"(): boolean
-get "iconBytes"(): (byte)[]
 set "iconBytes"(value: (byte)[])
 get "resourcePackStatus"(): $ServerData$ServerPackStatus
 set "resourcePackStatus"(value: $ServerData$ServerPackStatus$$Type)
+get "iconBytes"(): (byte)[]
 get "realm"(): boolean
 get "lan"(): boolean
 }
@@ -1516,3 +1569,27 @@ export type $ServerData$$Type = ($ServerData);
  * Original type to represent the class type itself. Use in JSDoc only.
  */
 export type $ServerData$$Original = $ServerData;}
+declare module "net.minecraft.client.multiplayer.ClientChunkCache$Storage" {
+import {$ClientChunkMapAccess$$Interface} from "me.cominixo.betterf3.ducks.ClientChunkMapAccess"
+import {$LevelChunk} from "net.minecraft.world.level.chunk.LevelChunk"
+import {$AtomicReferenceArray} from "java.util.concurrent.atomic.AtomicReferenceArray"
+import {$AccessorClientChunkCacheStorage$$Interface} from "com.railwayteam.railways.mixin.conductor_possession.AccessorClientChunkCacheStorage"
+
+export class $ClientChunkCache$Storage implements $AccessorClientChunkCacheStorage$$Interface, $ClientChunkMapAccess$$Interface {
+readonly "chunks": $AtomicReferenceArray<($LevelChunk)>
+
+public "railways$getViewCenterX"(): integer
+public "railways$setViewCenterX"(arg0: integer): void
+public "railways$getViewCenterZ"(): integer
+public "railways$setViewCenterZ"(arg0: integer): void
+public "getChunks"(): $AtomicReferenceArray
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $ClientChunkCache$Storage$$Type = ($ClientChunkCache$Storage);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $ClientChunkCache$Storage$$Original = $ClientChunkCache$Storage;}

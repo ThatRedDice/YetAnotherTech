@@ -34,18 +34,18 @@ import {$Level$$Type} from "org.slf4j.event.Level"
 import {$Consumer, $Consumer$$Type} from "java.util.function.Consumer"
 import {$ValidationResult$ErrorEntry$Mutable} from "me.fzzyhmstrs.fzzy_config.util.ValidationResult$ErrorEntry$Mutable"
 import {$BiConsumer, $BiConsumer$$Type} from "java.util.function.BiConsumer"
-import {$ValidationResult$ErrorEntry$Type$$Type} from "me.fzzyhmstrs.fzzy_config.util.ValidationResult$ErrorEntry$Type"
 import {$Throwable, $Throwable$$Type} from "java.lang.Throwable"
+import {$ValidationResult$ErrorEntry$Type$$Type} from "me.fzzyhmstrs.fzzy_config.util.ValidationResult$ErrorEntry$Type"
 import {$ValidationResult$ErrorEntry$Entry, $ValidationResult$ErrorEntry$Entry$$Type} from "me.fzzyhmstrs.fzzy_config.util.ValidationResult$ErrorEntry$Entry"
 import {$Logger$$Type} from "org.slf4j.Logger"
 
 export interface $ValidationResult$ErrorEntry$$Interface {
 get "plainString"(): StringJS
 get "loggable"(): boolean
+get "string"(): StringJS
 get "critical"(): boolean
 get "empty"(): boolean
 get "error"(): boolean
-get "string"(): StringJS
 }
 
 export class $ValidationResult$ErrorEntry implements $ValidationResult$ErrorEntry$$Interface {
@@ -63,13 +63,13 @@ static readonly "Companion": $ValidationResult$ErrorEntry$Companion
  "logPlain"(writer: $BiConsumer$$Type<(StringJS), ($Throwable)>): void
  "getPlainString"(): StringJS
 static "createEntryLogger"(logger: $Logger$$Type, level: $Level$$Type): $BiConsumer<(StringJS), ($Throwable)>
-static "createLogger"(logger: $Logger$$Type, level: $Level$$Type, errorsOnly: boolean): $Consumer<($ValidationResult$ErrorEntry$Entry<(never)>)>
  "isLoggable"(): boolean
+static "createLogger"(logger: $Logger$$Type, level: $Level$$Type, errorsOnly: boolean): $Consumer<($ValidationResult$ErrorEntry$Entry<(never)>)>
+ "getString"(): StringJS
  "isCritical"(): boolean
  "log"(writer: $BiConsumer$$Type<(StringJS), ($Throwable)>): void
  "isEmpty"(): boolean
  "isError"(): boolean
- "getString"(): StringJS
  "mutable"(): $ValidationResult$ErrorEntry$Mutable
  "hasType"<C>(arg0: $ValidationResult$ErrorEntry$Type$$Type<(C)>): boolean
 }
@@ -87,20 +87,20 @@ import {$ValidationResult$ErrorEntry$Builder} from "me.fzzyhmstrs.fzzy_config.ut
 import {$ValidationResult$ErrorEntry} from "me.fzzyhmstrs.fzzy_config.util.ValidationResult$ErrorEntry"
 import {$BiConsumer} from "java.util.function.BiConsumer"
 import {$Level$$Type} from "org.slf4j.event.Level"
-import {$ValidationResult$ErrorEntry$Type$$Type} from "me.fzzyhmstrs.fzzy_config.util.ValidationResult$ErrorEntry$Type"
 import {$Throwable} from "java.lang.Throwable"
+import {$ValidationResult$ErrorEntry$Type$$Type} from "me.fzzyhmstrs.fzzy_config.util.ValidationResult$ErrorEntry$Type"
 import {$ValidationResult$ErrorEntry$Entry} from "me.fzzyhmstrs.fzzy_config.util.ValidationResult$ErrorEntry$Entry"
 import {$Logger$$Type} from "org.slf4j.Logger"
 import {$Consumer} from "java.util.function.Consumer"
 
 export class $ValidationResult$ErrorEntry$Companion {
 public "getENTRY_WARN_LOGGER"(): $BiConsumer<(StringJS), ($Throwable)>
+public "getENTRY_ERROR_LOGGER"(): $BiConsumer<(StringJS), ($Throwable)>
 public "getENTRY_INFO_LOGGER"(): $BiConsumer<(StringJS), ($Throwable)>
 public static "createLogger$default"(arg0: $ValidationResult$ErrorEntry$Companion$$Type, arg1: $Logger$$Type, arg2: $Level$$Type, arg3: boolean, arg4: integer, arg5: any): $Consumer
 public static "createEntryLogger$default"(arg0: $ValidationResult$ErrorEntry$Companion$$Type, arg1: $Logger$$Type, arg2: $Level$$Type, arg3: integer, arg4: any): $BiConsumer
-public "createEntryLogger"(logger: $Logger$$Type, level: $Level$$Type): $BiConsumer<(StringJS), ($Throwable)>
-public "getENTRY_ERROR_LOGGER"(): $BiConsumer<(StringJS), ($Throwable)>
 public static "empty$default"(arg0: $ValidationResult$ErrorEntry$Companion$$Type, arg1: StringJS, arg2: integer, arg3: any): $ValidationResult$ErrorEntry
+public "createEntryLogger"(logger: $Logger$$Type, level: $Level$$Type): $BiConsumer<(StringJS), ($Throwable)>
 public "basic"(error: StringJS): $ValidationResult$ErrorEntry
 public "createLogger"(logger: $Logger$$Type, level: $Level$$Type, errorsOnly: boolean): $Consumer<($ValidationResult$ErrorEntry$Entry<(never)>)>
 public "builder"(): $ValidationResult$ErrorEntry$Builder<(StringJS)>
@@ -108,8 +108,8 @@ public "builder"<C>(type: $ValidationResult$ErrorEntry$Type$$Type<(C)>): $Valida
 public "empty"(header: StringJS): $ValidationResult$ErrorEntry
 public "getLOGGER"(): $Consumer<($ValidationResult$ErrorEntry$Entry<(never)>)>
 get "ENTRY_WARN_LOGGER"(): $BiConsumer<(StringJS), ($Throwable)>
-get "ENTRY_INFO_LOGGER"(): $BiConsumer<(StringJS), ($Throwable)>
 get "ENTRY_ERROR_LOGGER"(): $BiConsumer<(StringJS), ($Throwable)>
+get "ENTRY_INFO_LOGGER"(): $BiConsumer<(StringJS), ($Throwable)>
 get "LOGGER"(): $Consumer<($ValidationResult$ErrorEntry$Entry<(never)>)>
 }
 /**
@@ -152,8 +152,8 @@ export type $ValidationResult$ErrorEntry$Type$$Type<C> = ($ValidationResult$Erro
  */
 export type $ValidationResult$ErrorEntry$Type$$Original<C> = $ValidationResult$ErrorEntry$Type<(C)>;}
 declare module "me.fzzyhmstrs.fzzy_config.util.ValidationResult$ErrorEntry$Mutable" {
-import {$ValidationResult$$Type} from "me.fzzyhmstrs.fzzy_config.util.ValidationResult"
 import {$UnaryOperator$$Type} from "java.util.function.UnaryOperator"
+import {$ValidationResult$$Type} from "me.fzzyhmstrs.fzzy_config.util.ValidationResult"
 import {$ValidationResult$ErrorEntry$Builder$$Type} from "me.fzzyhmstrs.fzzy_config.util.ValidationResult$ErrorEntry$Builder"
 import {$ValidationResult$ErrorEntry, $ValidationResult$ErrorEntry$$Type} from "me.fzzyhmstrs.fzzy_config.util.ValidationResult$ErrorEntry"
 import {$Throwable$$Type} from "java.lang.Throwable"
@@ -189,8 +189,8 @@ declare module "me.fzzyhmstrs.fzzy_config.util.ValidationResult" {
 import {$Iterable} from "java.lang.Iterable"
 import {$DefaultConstructorMarker$$Type} from "kotlin.jvm.internal.DefaultConstructorMarker"
 import {$ValidationResult$ErrorEntry, $ValidationResult$ErrorEntry$$Type} from "me.fzzyhmstrs.fzzy_config.util.ValidationResult$ErrorEntry"
-import {$Predicate$$Type} from "java.util.function.Predicate"
 import {$List$$Type} from "java.util.List"
+import {$Predicate$$Type} from "java.util.function.Predicate"
 import {$BiConsumer$$Type} from "java.util.function.BiConsumer"
 import {$Throwable$$Type} from "java.lang.Throwable"
 import {$ValidationResult$ErrorEntry$Type$$Type} from "me.fzzyhmstrs.fzzy_config.util.ValidationResult$ErrorEntry$Type"
@@ -204,18 +204,17 @@ static readonly "Companion": $ValidationResult$Companion
 constructor(storedVal: any, errorContext: $ValidationResult$ErrorEntry$$Type, $constructor_marker: $DefaultConstructorMarker$$Type)
 
 public static "log$default"(arg0: $ValidationResult$$Type, arg1: $BiConsumer$$Type, arg2: integer, arg3: any): $ValidationResult
+public static "logPlain$default"(arg0: $ValidationResult$$Type, arg1: $BiConsumer$$Type, arg2: integer, arg3: any): $ValidationResult
 public "getErrorEntry"(): $ValidationResult$ErrorEntry
 public "writeError"(errors: $List$$Type<(StringJS)>): void
 public "writeWarning"(errors: $List$$Type<(StringJS)>): void
 public "logPlain"(): $ValidationResult<(T)>
 public "logPlain"(writer: $BiConsumer$$Type<(StringJS), ($Throwable)>): $ValidationResult<(T)>
-public static "logPlain$default"(arg0: $ValidationResult$$Type, arg1: $BiConsumer$$Type, arg2: integer, arg3: any): $ValidationResult
 public static "access$getErrorContext$p"($this: $ValidationResult$$Type): $ValidationResult$ErrorEntry
 public static "access$getStoredVal$p"($this: $ValidationResult$$Type): any
 public "has"<C>(t: $ValidationResult$ErrorEntry$Type$$Type<(C)>): boolean
-public "consume"<C>(t: $ValidationResult$ErrorEntry$Type$$Type<(C)>, c: $Consumer$$Type<($ValidationResult$ErrorEntry$Entry<(C)>)>): void
 public "consume"(c: $Consumer$$Type<($ValidationResult$ErrorEntry$Entry<(never)>)>): void
-public "isValid"(): boolean
+public "consume"<C>(t: $ValidationResult$ErrorEntry$Type$$Type<(C)>, c: $Consumer$$Type<($ValidationResult$ErrorEntry$Entry<(C)>)>): void
 public "isCritical"(): boolean
 public "get"(): T
 public "toString"(): StringJS
@@ -223,14 +222,15 @@ public "log"(): $ValidationResult<(T)>
 public "log"(writer: $BiConsumer$$Type<(StringJS), ($Throwable)>): $ValidationResult<(T)>
 public "test"(p: $Predicate$$Type<($ValidationResult$ErrorEntry$Entry<(never)>)>): void
 public "test"<C>(t: $ValidationResult$ErrorEntry$Type$$Type<(C)>, p: $Predicate$$Type<($ValidationResult$ErrorEntry$Entry<(C)>)>): boolean
-public "isError"(): boolean
-public "iterate"(): $Iterable<($ValidationResult$ErrorEntry$Entry<(never)>)>
 public "iterate"<C>(t: $ValidationResult$ErrorEntry$Type$$Type<(C)>): $Iterable<($ValidationResult$ErrorEntry$Entry<(C)>)>
+public "iterate"(): $Iterable<($ValidationResult$ErrorEntry$Entry<(never)>)>
+public "isError"(): boolean
+public "isValid"(): boolean
 public "getError"(): StringJS
 get "errorEntry"(): $ValidationResult$ErrorEntry
-get "valid"(): boolean
 get "critical"(): boolean
 get "error"(): boolean
+get "valid"(): boolean
 get "error"(): StringJS
 }
 /**
@@ -244,8 +244,8 @@ export type $ValidationResult$$Type<T> = ($ValidationResult<(T)>);
 export type $ValidationResult$$Original<T> = $ValidationResult<(T)>;}
 declare module "me.fzzyhmstrs.fzzy_config.util.ValidationResult$ErrorEntry$Entry" {
 import {$BiConsumer$$Type} from "java.util.function.BiConsumer"
-import {$ValidationResult$ErrorEntry$Type} from "me.fzzyhmstrs.fzzy_config.util.ValidationResult$ErrorEntry$Type"
 import {$Throwable, $Throwable$$Type} from "java.lang.Throwable"
+import {$ValidationResult$ErrorEntry$Type} from "me.fzzyhmstrs.fzzy_config.util.ValidationResult$ErrorEntry$Type"
 
 export interface $ValidationResult$ErrorEntry$Entry$$Interface<C> {
 get "e"(): $Throwable
@@ -274,13 +274,13 @@ import {$UnaryOperator$$Type} from "java.util.function.UnaryOperator"
 import {$ValidationResult$ErrorEntry$Builder$$Type} from "me.fzzyhmstrs.fzzy_config.util.ValidationResult$ErrorEntry$Builder"
 import {$DefaultConstructorMarker$$Type} from "kotlin.jvm.internal.DefaultConstructorMarker"
 import {$ValidationResult$ErrorEntry$$Type} from "me.fzzyhmstrs.fzzy_config.util.ValidationResult$ErrorEntry"
+import {$List$$Type} from "java.util.List"
 import {$DataResult$$Type} from "com.mojang.serialization.DataResult"
 import {$Predicate$$Type} from "java.util.function.Predicate"
-import {$List$$Type} from "java.util.List"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$Function$$Type} from "java.util.function.Function"
-import {$ValidationResult$ErrorEntry$Mutable, $ValidationResult$ErrorEntry$Mutable$$Type} from "me.fzzyhmstrs.fzzy_config.util.ValidationResult$ErrorEntry$Mutable"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$ValidationResult$ErrorEntry$Mutable, $ValidationResult$ErrorEntry$Mutable$$Type} from "me.fzzyhmstrs.fzzy_config.util.ValidationResult$ErrorEntry$Mutable"
 import {$BiConsumer$$Type} from "java.util.function.BiConsumer"
 import {$Throwable$$Type} from "java.lang.Throwable"
 import {$ValidationResult$ErrorEntry$Type$$Type} from "me.fzzyhmstrs.fzzy_config.util.ValidationResult$ErrorEntry$Type"

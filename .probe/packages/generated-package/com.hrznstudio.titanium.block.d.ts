@@ -9,37 +9,38 @@ import {$Inventory$$Type} from "net.minecraft.world.entity.player.Inventory"
 import {$FluidTankComponent$$Type} from "com.hrznstudio.titanium.component.fluid.FluidTankComponent"
 import {$MultiFilterComponent} from "com.hrznstudio.titanium.component.filter.MultiFilterComponent"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$IFacingComponent} from "com.hrznstudio.titanium.component.sideness.IFacingComponent"
 import {$IButtonHandler$$Interface} from "com.hrznstudio.titanium.network.IButtonHandler"
+import {$IFacingComponent} from "com.hrznstudio.titanium.component.sideness.IFacingComponent"
 import {$MenuProvider$$Interface} from "net.minecraft.world.MenuProvider"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$MultiButtonComponent} from "com.hrznstudio.titanium.component.button.MultiButtonComponent"
 import {$ContainerLevelAccess} from "net.minecraft.world.inventory.ContainerLevelAccess"
 import {$InventoryComponent$$Type} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
-import {$IFluidHandler} from "net.neoforged.neoforge.fluids.capability.IFluidHandler"
 import {$IScreenAddonProvider$$Interface} from "com.hrznstudio.titanium.api.client.IScreenAddonProvider"
+import {$IFluidHandler} from "net.neoforged.neoforge.fluids.capability.IFluidHandler"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$ITickableBlockEntity$$Interface} from "com.hrznstudio.titanium.block.tile.ITickableBlockEntity"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$IAssetProvider} from "com.hrznstudio.titanium.client.screen.asset.IAssetProvider"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
-import {$Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$MultiTankComponent} from "com.hrznstudio.titanium.component.fluid.MultiTankComponent"
-import {$BasicTileBlock$$Type} from "com.hrznstudio.titanium.block.BasicTileBlock"
+import {$Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$IFactory, $IFactory$$Type} from "com.hrznstudio.titanium.api.IFactory"
+import {$BasicTileBlock$$Type} from "com.hrznstudio.titanium.block.BasicTileBlock"
 import {$IHasAssetProvider$$Interface} from "com.hrznstudio.titanium.client.screen.asset.IHasAssetProvider"
-import {$IFacingComponentHarness$$Interface} from "com.hrznstudio.titanium.component.sideness.IFacingComponentHarness"
 import {$IContainerAddon, $IContainerAddon$$Type} from "com.hrznstudio.titanium.container.addon.IContainerAddon"
+import {$IFacingComponentHarness$$Interface} from "com.hrznstudio.titanium.component.sideness.IFacingComponentHarness"
 import {$IItemHandler} from "net.neoforged.neoforge.items.IItemHandler"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$IFilter$$Type} from "com.hrznstudio.titanium.api.filter.IFilter"
 import {$IScreenAddon, $IScreenAddon$$Type} from "com.hrznstudio.titanium.api.client.IScreenAddon"
-import {$ButtonComponent$$Type} from "com.hrznstudio.titanium.component.button.ButtonComponent"
 import {$ItemInteractionResult} from "net.minecraft.world.ItemInteractionResult"
+import {$ButtonComponent$$Type} from "com.hrznstudio.titanium.component.button.ButtonComponent"
 import {$AbstractContainerMenu, $AbstractContainerMenu$$Type} from "net.minecraft.world.inventory.AbstractContainerMenu"
-import {$RegistryFriendlyByteBuf$$Type} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$IComponentBundle$$Type} from "com.hrznstudio.titanium.component.IComponentBundle"
+import {$RegistryFriendlyByteBuf$$Type} from "net.minecraft.network.RegistryFriendlyByteBuf"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$IContainerAddonProvider$$Interface} from "com.hrznstudio.titanium.container.addon.IContainerAddonProvider"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$ProgressBarComponent$$Type} from "com.hrznstudio.titanium.component.progress.ProgressBarComponent"
@@ -57,6 +58,14 @@ public "getContainerAddons"(): $List<($IFactory<($IContainerAddon)>)>
 public "openGui"(arg0: $Player$$Type): void
 public "getFacingDirection"(): $Direction
 public "getWorldPosCallable"(): $ContainerLevelAccess
+public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: T): void
+public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $BlockEntity$$Type): void
+public "loadAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
+public "createMenu"(arg0: integer, arg1: $Inventory$$Type, arg2: $Player$$Type): $AbstractContainerMenu
+public "getItemHandler"(arg0: $Direction$$Type): $IItemHandler
+public "canInteract"(): boolean
+public "initClient"(): void
+public "getAssetProvider"(): $IAssetProvider
 public "addGuiAddonFactory"(arg0: $IFactory$$Type<($IScreenAddon$$Type)>): void
 public "getFacingHandlerWorkTime"(): integer
 public "getFacingHandlerWorkAmount"(): integer
@@ -70,23 +79,16 @@ public "getComponentWorld"(): $Level
 public "markComponentForUpdate"(arg0: boolean): void
 public "getMultiTankComponent"(): $MultiTankComponent<(T)>
 public "getMultiFilterComponent"(): $MultiFilterComponent
-public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $BlockEntity$$Type): void
-public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: T): void
-public "loadAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
-public "createMenu"(arg0: integer, arg1: $Inventory$$Type, arg2: $Player$$Type): $AbstractContainerMenu
-public "getItemHandler"(arg0: $Direction$$Type): $IItemHandler
-public "canInteract"(): boolean
-public "initClient"(): void
+public "addButton"(arg0: $ButtonComponent$$Type): void
 public "onNeighborChanged"(arg0: $Block$$Type, arg1: $BlockPos$$Type): void
 public "addInventory"(arg0: $InventoryComponent$$Type<(T)>): void
-public "addButton"(arg0: $ButtonComponent$$Type): void
-public "getAssetProvider"(): $IAssetProvider
 public "getDisplayName"(): $Component
 public "addFilter"(arg0: $IFilter$$Type<(never)>): void
 public "addProgressBar"(arg0: $ProgressBarComponent$$Type<(T)>): void
 public "getSelf"(): T
 public "getFluidHandler"(arg0: $Direction$$Type): $IFluidHandler
 public "clientTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: T): void
+public "getUpdatePacket"(): $Packet
 public "shouldTriggerClientSideContainerClosingOnOpen"(): boolean
 public "writeClientSideData"(arg0: $AbstractContainerMenu$$Type, arg1: $RegistryFriendlyByteBuf$$Type): void
 get "multiInventoryComponent"(): $MultiInventoryComponent<(T)>
@@ -94,15 +96,16 @@ get "screenAddons"(): $List<($IFactory<($IScreenAddon)>)>
 get "containerAddons"(): $List<($IFactory<($IContainerAddon)>)>
 get "facingDirection"(): $Direction
 get "worldPosCallable"(): $ContainerLevelAccess
+get "assetProvider"(): $IAssetProvider
 get "facingHandlerWorkTime"(): integer
 get "facingHandlerWorkAmount"(): integer
 get "multiButtonComponent"(): $MultiButtonComponent
 get "componentWorld"(): $Level
 get "multiTankComponent"(): $MultiTankComponent<(T)>
 get "multiFilterComponent"(): $MultiFilterComponent
-get "assetProvider"(): $IAssetProvider
 get "displayName"(): $Component
 get "self"(): T
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -124,8 +127,8 @@ export class $RedstoneManager<T extends $IEnumValues<(object)>> implements $INBT
 constructor(arg0: T, arg1: boolean)
 
 public "setAction"(arg0: T): void
-public "shouldWork"(): boolean
 public "getLastRedstoneState"(): boolean
+public "shouldWork"(): boolean
 public "setLastRedstoneState"(arg0: boolean): void
 public "finish"(): void
 public "getAction"(): T
@@ -198,8 +201,9 @@ export type $RotationHandler$$Original = $RotationHandler;}
 declare module "com.hrznstudio.titanium.block.tile.GeneratorTile" {
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$ActiveTile$$Type} from "com.hrznstudio.titanium.block.tile.ActiveTile"
-import {$BasicTileBlock$$Type} from "com.hrznstudio.titanium.block.BasicTileBlock"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$BasicTileBlock$$Type} from "com.hrznstudio.titanium.block.BasicTileBlock"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$ProgressBarComponent} from "com.hrznstudio.titanium.component.progress.ProgressBarComponent"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
@@ -219,13 +223,15 @@ public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState
 public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: T): void
 public "getEnergyCapacity"(): integer
 public "isSmart"(): boolean
-public "getExtractingEnergy"(): integer
 public "getEnergyProducedEveryTick"(): integer
+public "getExtractingEnergy"(): integer
+public "getUpdatePacket"(): $Packet
 get "progressBar"(): $ProgressBarComponent<(T)>
 get "energyCapacity"(): integer
 get "smart"(): boolean
-get "extractingEnergy"(): integer
 get "energyProducedEveryTick"(): integer
+get "extractingEnergy"(): integer
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -303,16 +309,16 @@ import {$Block} from "net.minecraft.world.level.block.Block"
 import {$TitaniumTab, $TitaniumTab$$Type} from "com.hrznstudio.titanium.tab.TitaniumTab"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
-import {$BasicBlockLootTables$$Type} from "com.hrznstudio.titanium.datagenerator.loot.block.BasicBlockLootTables"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
+import {$BasicBlockLootTables$$Type} from "com.hrznstudio.titanium.datagenerator.loot.block.BasicBlockLootTables"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$RecipeOutput$$Type} from "net.minecraft.data.recipes.RecipeOutput"
 import {$LootTable$Builder} from "net.minecraft.world.level.storage.loot.LootTable$Builder"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$IRecipeProvider$$Interface} from "com.hrznstudio.titanium.api.IRecipeProvider"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -341,11 +347,11 @@ static readonly "UPDATE_CLIENTS": integer
 constructor(arg0: $BlockBehaviour$Properties$$Type)
 
 public "getBoundingBoxes"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): $List<($VoxelShape)>
+public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public "setItemGroup"(arg0: $TitaniumTab$$Type): void
 public "hasCustomBoxes"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): boolean
 public "getDynamicDrops"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: boolean): $NonNullList<($ItemStack)>
 public "getItemGroup"(): $TitaniumTab
-public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public "getCollisionShape"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $CollisionContext$$Type): $VoxelShape
 public "getLootTable"(arg0: $BasicBlockLootTables$$Type): $LootTable$Builder
 public "getLootTable"(arg0: any): $LootTable$Builder
@@ -408,14 +414,15 @@ export type $IScreenInfoProvider$$Type = ($IScreenInfoProvider);
 export type $IScreenInfoProvider$$Original = $IScreenInfoProvider;}
 declare module "com.hrznstudio.titanium.block.tile.PoweredTile" {
 import {$List} from "java.util.List"
-import {$Direction} from "net.minecraft.core.Direction"
 import {$ActiveTile} from "com.hrznstudio.titanium.block.tile.ActiveTile"
-import {$BasicTileBlock$$Type} from "com.hrznstudio.titanium.block.BasicTileBlock"
+import {$Direction} from "net.minecraft.core.Direction"
 import {$IFactory} from "com.hrznstudio.titanium.api.IFactory"
+import {$BasicTileBlock$$Type} from "com.hrznstudio.titanium.block.BasicTileBlock"
 import {$IContainerAddon} from "com.hrznstudio.titanium.container.addon.IContainerAddon"
 import {$EnergyStorageComponent} from "com.hrznstudio.titanium.component.energy.EnergyStorageComponent"
 import {$IScreenAddon} from "com.hrznstudio.titanium.api.client.IScreenAddon"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$Set} from "java.util.Set"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -425,16 +432,18 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 
 constructor(arg0: $BasicTileBlock$$Type<(T)>, arg1: $BlockEntityType$$Type<(never)>, arg2: $BlockPos$$Type, arg3: $BlockState$$Type)
 
-public "getEnergyStorage"(): $EnergyStorageComponent<(T)>
 public "getScreenAddons"(): $List<($IFactory<($IScreenAddon)>)>
 public "getContainerAddons"(): $List<($IFactory<($IContainerAddon)>)>
+public "getEnergyStorage"(): $EnergyStorageComponent<(T)>
 public "getValidEnergyFaces"(): $Set<($Direction)>
 public "setShowEnergy"(arg0: boolean): void
-get "energyStorage"(): $EnergyStorageComponent<(T)>
+public "getUpdatePacket"(): $Packet
 get "screenAddons"(): $List<($IFactory<($IScreenAddon)>)>
 get "containerAddons"(): $List<($IFactory<($IContainerAddon)>)>
+get "energyStorage"(): $EnergyStorageComponent<(T)>
 get "validEnergyFaces"(): $Set<($Direction)>
 set "showEnergy"(value: boolean)
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -446,13 +455,13 @@ export type $PoweredTile$$Type<T> = ($PoweredTile<(T)>);
  */
 export type $PoweredTile$$Original<T> = $PoweredTile<(T)>;}
 declare module "com.hrznstudio.titanium.block.BasicTileBlock" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
-import {$BasicBlock} from "com.hrznstudio.titanium.block.BasicBlock"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$BasicTile} from "com.hrznstudio.titanium.block.tile.BasicTile"
+import {$BasicBlock} from "com.hrznstudio.titanium.block.BasicBlock"
+import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$Optional} from "java.util.Optional"
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
@@ -495,8 +504,8 @@ public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<(never)>
 public "getTileClass"(): $Class<(T)>
 public "getTicker"<R extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(R)>): $BlockEntityTicker<(R)>
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
-public "getListener"<T extends $BlockEntity>(arg0: $ServerLevel$$Type, arg1: T): $GameEventListener
 public "getTile"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type): $Optional<(T)>
+public "getListener"<T extends $BlockEntity>(arg0: $ServerLevel$$Type, arg1: T): $GameEventListener
 public "neighborChanged"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Block$$Type, arg4: $BlockPos$$Type, arg5: boolean): void
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "tileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<(never)>
@@ -547,13 +556,14 @@ import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block$$Type} from "net.minecraft.world.level.block.Block"
-import {$BasicTileBlock, $BasicTileBlock$$Type} from "com.hrznstudio.titanium.block.BasicTileBlock"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$BasicTileBlock, $BasicTileBlock$$Type} from "com.hrznstudio.titanium.block.BasicTileBlock"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ItemInteractionResult} from "net.minecraft.world.ItemInteractionResult"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$ClientboundBlockEntityDataPacket, $ClientboundBlockEntityDataPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
+import {$ClientboundBlockEntityDataPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$Connection$$Type} from "net.minecraft.network.Connection"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
@@ -566,26 +576,26 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 constructor(arg0: $BasicTileBlock$$Type<(T)>, arg1: $BlockEntityType$$Type<(never)>, arg2: $BlockPos$$Type, arg3: $BlockState$$Type)
 
 public "onActivated"(arg0: $Player$$Type, arg1: $InteractionHand$$Type, arg2: $Direction$$Type, arg3: double, arg4: double, arg5: double): $ItemInteractionResult
-public "updateNeigh"(): void
-public "getBasicTileBlock"(): $BasicTileBlock<(T)>
-public "syncObject"(arg0: any): void
+public "getUpdatePacket"(): $Packet
 public "loadAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
-public "getUpdatePacket"(): $ClientboundBlockEntityDataPacket
 public "getUpdateTag"(arg0: $HolderLookup$Provider$$Type): $CompoundTag
 public "onDataPacket"(arg0: $Connection$$Type, arg1: $ClientboundBlockEntityDataPacket$$Type, arg2: $HolderLookup$Provider$$Type): void
 public "isServer"(): boolean
 public "initClient"(): void
-public "onNeighborChanged"(arg0: $Block$$Type, arg1: $BlockPos$$Type): void
 public "handleSyncObject"(arg0: $CompoundTag$$Type): void
 public "markForUpdate"(): void
+public "updateNeigh"(): void
+public "getBasicTileBlock"(): $BasicTileBlock<(T)>
+public "syncObject"(arg0: any): void
+public "onNeighborChanged"(arg0: $Block$$Type, arg1: $BlockPos$$Type): void
 public "setLevel"(arg0: $Level$$Type): void
 public "isClient"(): boolean
 public "getTitleColor"(): integer
 public "getTitleXPos"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float): float
 public "getTitleYPos"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float): float
-get "basicTileBlock"(): $BasicTileBlock<(T)>
-get "updatePacket"(): $ClientboundBlockEntityDataPacket
+get "updatePacket"(): $Packet
 get "server"(): boolean
+get "basicTileBlock"(): $BasicTileBlock<(T)>
 set "level"(value: $Level$$Type)
 get "client"(): boolean
 get "titleColor"(): integer
@@ -601,18 +611,19 @@ export type $BasicTile$$Type<T> = ($BasicTile<(T)>);
 export type $BasicTile$$Original<T> = $BasicTile<(T)>;}
 declare module "com.hrznstudio.titanium.block.tile.MachineTile" {
 import {$SidedInventoryComponent} from "com.hrznstudio.titanium.component.inventory.SidedInventoryComponent"
-import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$IMachine$$Interface} from "com.hrznstudio.titanium.api.IMachine"
+import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$List} from "java.util.List"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
-import {$BasicTileBlock$$Type} from "com.hrznstudio.titanium.block.BasicTileBlock"
 import {$IFactory} from "com.hrznstudio.titanium.api.IFactory"
+import {$BasicTileBlock$$Type} from "com.hrznstudio.titanium.block.BasicTileBlock"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$IScreenAddon} from "com.hrznstudio.titanium.api.client.IScreenAddon"
 import {$ItemInteractionResult} from "net.minecraft.world.ItemInteractionResult"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$InventoryComponent} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$IAugmentType$$Type} from "com.hrznstudio.titanium.api.augment.IAugmentType"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$PoweredTile} from "com.hrznstudio.titanium.block.tile.PoweredTile"
@@ -630,16 +641,18 @@ public "hasAugmentInstalled"(arg0: $IAugmentType$$Type): boolean
 public "getInstalledAugments"(): $List<($ItemStack)>
 public "getInstalledAugments"(arg0: $IAugmentType$$Type): $List<($ItemStack)>
 public "initClient"(): void
-public "getAugmentFactory"(): $IFactory<($InventoryComponent<(T)>)>
 public "getAugmentBackground"(): $IFactory<($IScreenAddon)>
+public "getAugmentFactory"(): $IFactory<($InventoryComponent<(T)>)>
 public "isActive"(): boolean
 public "isPaused"(): boolean
+public "getUpdatePacket"(): $Packet
 get "augmentInventory"(): $SidedInventoryComponent<(T)>
 get "installedAugments"(): $List<($ItemStack)>
-get "augmentFactory"(): $IFactory<($InventoryComponent<(T)>)>
 get "augmentBackground"(): $IFactory<($IScreenAddon)>
+get "augmentFactory"(): $IFactory<($InventoryComponent<(T)>)>
 get "active"(): boolean
 get "paused"(): boolean
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_

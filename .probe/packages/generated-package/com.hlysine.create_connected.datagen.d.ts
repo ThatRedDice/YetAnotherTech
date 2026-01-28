@@ -45,8 +45,8 @@ import {$Criterion} from "net.minecraft.advancements.Criterion"
 import {$PlayerAdvancements$$Type} from "net.minecraft.server.PlayerAdvancements"
 import {$CriterionTrigger$Listener$$Type} from "net.minecraft.advancements.CriterionTrigger$Listener"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$CriterionTriggerBase$Instance, $CriterionTriggerBase$Instance$$Type} from "com.hlysine.create_connected.datagen.advancements.CriterionTriggerBase$Instance"
 import {$Codec} from "com.mojang.serialization.Codec"
+import {$CriterionTriggerBase$Instance, $CriterionTriggerBase$Instance$$Type} from "com.hlysine.create_connected.datagen.advancements.CriterionTriggerBase$Instance"
 import {$CriterionTrigger$$Interface} from "net.minecraft.advancements.CriterionTrigger"
 
 export class $CriterionTriggerBase<T extends $CriterionTriggerBase$Instance> implements $CriterionTrigger$$Interface<(T)> {
@@ -70,8 +70,8 @@ export type $CriterionTriggerBase$$Type<T> = ($CriterionTriggerBase<(T)>);
  */
 export type $CriterionTriggerBase$$Original<T> = $CriterionTriggerBase<(T)>;}
 declare module "com.hlysine.create_connected.datagen.advancements.CriterionTriggerBase$Instance" {
-import {$Optional} from "java.util.Optional"
 import {$ContextAwarePredicate} from "net.minecraft.advancements.critereon.ContextAwarePredicate"
+import {$Optional} from "java.util.Optional"
 import {$CriterionValidator$$Type} from "net.minecraft.advancements.critereon.CriterionValidator"
 import {$SimpleCriterionTrigger$SimpleInstance$$Interface} from "net.minecraft.advancements.critereon.SimpleCriterionTrigger$SimpleInstance"
 

@@ -44,8 +44,8 @@ export type $FireCraftingResult$$Original = $FireCraftingResult;}
 declare module "com.almostreliable.kubeio.binding.SagMillOutputItem" {
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$TagKey$$Type} from "net.minecraft.tags.TagKey"
-import {$Item$$Type} from "net.minecraft.world.item.Item"
 import {$SagMillingRecipe$OutputItem} from "com.enderio.enderio.content.machines.sag_mill.SagMillingRecipe$OutputItem"
+import {$Item$$Type} from "net.minecraft.world.item.Item"
 
 export interface $SagMillOutputItem$$Interface {
 }

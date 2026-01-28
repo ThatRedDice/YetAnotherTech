@@ -8,9 +8,9 @@ import {$GameProfileRepository} from "com.mojang.authlib.GameProfileRepository"
 
 export class $HttpAuthenticationService implements $AuthenticationService$$Interface {
 public "getProxy"(): $Proxy
-public static "constantURL"(arg0: StringJS): $URL
 public static "buildQuery"(arg0: $Map$$Type<(StringJS), (any)>): StringJS
 public static "concatenateURL"(arg0: $URL$$Type, arg1: StringJS): $URL
+public static "constantURL"(arg0: StringJS): $URL
 public "createMinecraftSessionService"(): $MinecraftSessionService
 public "createProfileRepository"(): $GameProfileRepository
 get "proxy"(): $Proxy
@@ -34,8 +34,8 @@ public "name"(): StringJS
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
-public "servicesHost"(): StringJS
 public "sessionHost"(): StringJS
+public "servicesHost"(): StringJS
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_

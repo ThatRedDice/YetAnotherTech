@@ -34,16 +34,16 @@ import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$Explosion$$Type} from "net.minecraft.world.level.Explosion"
-import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
 import {$IBlockExtension$$Interface} from "net.neoforged.neoforge.common.extensions.IBlockExtension"
+import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
 import {$PathType, $PathType$$Type} from "net.minecraft.world.level.pathfinder.PathType"
-import {$Set} from "java.util.Set"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
+import {$Set} from "java.util.Set"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BubbleColumnDirection} from "net.neoforged.neoforge.common.enums.BubbleColumnDirection"
-import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$SoundType} from "net.minecraft.world.level.block.SoundType"
 import {$HitResult$$Type} from "net.minecraft.world.phys.HitResult"
@@ -56,8 +56,8 @@ import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
 import {$BiConsumer$$Type} from "java.util.function.BiConsumer"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
-import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
+import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$PushReaction} from "net.minecraft.world.level.material.PushReaction"
 import {$ParticleOptions} from "net.minecraft.core.particles.ParticleOptions"
@@ -129,11 +129,11 @@ export class $EnchantmentStatBlock implements $EnchantmentStatBlock$$Interface {
  "collisionExtendsVertically"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): boolean
  "addRunningEffects"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): boolean
  "getPistonPushReaction"(arg0: $BlockState$$Type): $PushReaction
+ "onBlockStateChange"(arg0: $LevelReader$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $BlockState$$Type): void
  "onNeighborChange"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $BlockPos$$Type): void
  "getWeakChanges"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type): boolean
  "isBurning"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): boolean
  "getLightEmission"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): integer
- "onBlockStateChange"(arg0: $LevelReader$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $BlockState$$Type): void
  "shouldCheckWeakPower"(arg0: $BlockState$$Type, arg1: $SignalGetter$$Type, arg2: $BlockPos$$Type, arg3: $Direction$$Type): boolean
 }
 /**

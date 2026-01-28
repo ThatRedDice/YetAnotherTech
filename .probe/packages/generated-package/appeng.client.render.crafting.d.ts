@@ -6,18 +6,18 @@ constructor(arg0: byte, arg1: $ItemStack$$Type)
 
 public "isExpired"(): boolean
 public "getSpeed"(): byte
-public "getIs"(): $ItemStack
 public "getAccumulatedTicks"(): float
 public "setAccumulatedTicks"(arg0: float): void
 public "getTicksUntilParticles"(): float
 public "setTicksUntilParticles"(arg0: float): void
+public "getIs"(): $ItemStack
 get "expired"(): boolean
 get "speed"(): byte
-get "is"(): boolean
 get "accumulatedTicks"(): float
 set "accumulatedTicks"(value: float)
 get "ticksUntilParticles"(): float
 set "ticksUntilParticles"(value: float)
+get "is"(): boolean
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_

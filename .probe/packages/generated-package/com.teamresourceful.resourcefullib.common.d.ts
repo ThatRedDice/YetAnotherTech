@@ -27,13 +27,13 @@ export type $CodecRecipeSerializer$$Type<R> = ($CodecRecipeSerializer<(R)>);
 export type $CodecRecipeSerializer$$Original<R> = $CodecRecipeSerializer<(R)>;}
 declare module "com.teamresourceful.resourcefullib.common.recipe.CodecRecipe" {
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
-import {$Ingredient} from "net.minecraft.world.item.crafting.Ingredient"
 import {$Recipe$$Interface} from "net.minecraft.world.item.crafting.Recipe"
+import {$Ingredient} from "net.minecraft.world.item.crafting.Ingredient"
 import {$RecipeInput, $RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$RecipeType} from "net.minecraft.world.item.crafting.RecipeType"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
+import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$CodecRecipeSerializer} from "com.teamresourceful.resourcefullib.common.recipe.CodecRecipeSerializer"
 

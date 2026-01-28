@@ -1,8 +1,8 @@
 declare module "appeng.api.implementations.items.IFacadeItem" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
-import {$IFacadePart} from "appeng.api.parts.IFacadePart"
 import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
+import {$IFacadePart} from "appeng.api.parts.IFacadePart"
 
 export interface $IFacadeItem$$Interface {
 }
@@ -49,11 +49,11 @@ export interface $IAEItemPowerStorage$$Interface {
 }
 
 export class $IAEItemPowerStorage implements $IAEItemPowerStorage$$Interface {
- "getAEMaxPower"(arg0: $ItemStack$$Type): double
- "getPowerFlow"(arg0: $ItemStack$$Type): $AccessRestriction
  "extractAEPower"(arg0: $ItemStack$$Type, arg1: double, arg2: $Actionable$$Type): double
  "getAECurrentPower"(arg0: $ItemStack$$Type): double
  "injectAEPower"(arg0: $ItemStack$$Type, arg1: double, arg2: $Actionable$$Type): double
+ "getAEMaxPower"(arg0: $ItemStack$$Type): double
+ "getPowerFlow"(arg0: $ItemStack$$Type): $AccessRestriction
  "getChargeRate"(arg0: $ItemStack$$Type): double
 }
 /**

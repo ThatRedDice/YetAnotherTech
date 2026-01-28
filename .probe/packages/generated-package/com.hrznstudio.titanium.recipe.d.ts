@@ -1,7 +1,7 @@
 declare module "com.hrznstudio.titanium.recipe.serializer.CodecRecipeSerializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$RecipeType$$Type} from "net.minecraft.world.item.crafting.RecipeType"
 import {$Class$$Type} from "java.lang.Class"
@@ -26,8 +26,8 @@ export type $CodecRecipeSerializer$$Type<T> = ($CodecRecipeSerializer<(T)>);
 export type $CodecRecipeSerializer$$Original<T> = $CodecRecipeSerializer<(T)>;}
 declare module "com.hrznstudio.titanium.recipe.serializer.GenericSerializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$Recipe, $Recipe$$Type} from "net.minecraft.world.item.crafting.Recipe"
 import {$RegistryFriendlyByteBuf, $RegistryFriendlyByteBuf$$Type} from "net.minecraft.network.RegistryFriendlyByteBuf"
+import {$Recipe, $Recipe$$Type} from "net.minecraft.world.item.crafting.Recipe"
 import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$RecipeType$$Type} from "net.minecraft.world.item.crafting.RecipeType"
 import {$Class$$Type} from "java.lang.Class"

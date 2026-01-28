@@ -24,11 +24,11 @@ static readonly "BY_BLOCK": $Map<($Block), ($Item)>
 
 constructor(arg0: $Item$Properties$$Type)
 
-public "getUpgrades"(arg0: $ItemStack$$Type): $IUpgradeInventory
 public "getConfigInventory"(arg0: $ItemStack$$Type): $ConfigInventory
 public "getFuzzyMode"(arg0: $ItemStack$$Type): $FuzzyMode
 public "setFuzzyMode"(arg0: $ItemStack$$Type, arg1: $FuzzyMode$$Type): void
 public static "createItemFilter"(arg0: $Collection$$Type<($ItemStack$$Type)>): $IPartitionList
+public "getUpgrades"(arg0: $ItemStack$$Type): $IUpgradeInventory
 public static "createFilter"(arg0: $AEKeyFilter$$Type, arg1: $Collection$$Type<($ItemStack$$Type)>): $IPartitionList
 public "isEditable"(arg0: $ItemStack$$Type): boolean
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
@@ -49,13 +49,13 @@ import {$List$$Type} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$ISpatialStorageCell$$Interface} from "appeng.api.implementations.items.ISpatialStorageCell"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$AEBaseItem} from "appeng.items.AEBaseItem"
+import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 
 export class $SpatialStorageCellItem extends $AEBaseItem implements $ISpatialStorageCell$$Interface {
@@ -126,8 +126,8 @@ import {$Block} from "net.minecraft.world.level.block.Block"
 import {$FuzzyMode, $FuzzyMode$$Type} from "appeng.api.config.FuzzyMode"
 import {$ConfigInventory} from "appeng.util.ConfigInventory"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipComponent} from "net.minecraft.world.inventory.tooltip.TooltipComponent"
 import {$Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
@@ -180,8 +180,8 @@ import {$TooltipComponent} from "net.minecraft.world.inventory.tooltip.TooltipCo
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
-import {$Item} from "net.minecraft.world.item.Item"
 import {$AEToolItem$$Interface} from "appeng.hooks.AEToolItem"
+import {$Item} from "net.minecraft.world.item.Item"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$IUpgradeInventory} from "appeng.api.upgrades.IUpgradeInventory"
 import {$AEKey$$Type} from "appeng.api.stacks.AEKey"
@@ -190,8 +190,8 @@ import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$AEKeyType, $AEKeyType$$Type} from "appeng.api.stacks.AEKeyType"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$FuzzyMode, $FuzzyMode$$Type} from "appeng.api.config.FuzzyMode"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$AEBaseItem} from "appeng.items.AEBaseItem"
 import {$IBasicCellItem$$Interface} from "appeng.api.storage.cells.IBasicCellItem"
@@ -206,7 +206,6 @@ static readonly "BY_BLOCK": $Map<($Block), ($Item)>
 
 constructor(arg0: $Item$Properties$$Type, arg1: double, arg2: integer, arg3: integer, arg4: integer, arg5: $AEKeyType$$Type)
 
-public "getUpgrades"(arg0: $ItemStack$$Type): $IUpgradeInventory
 public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
 public "onItemUseFirst"(arg0: $ItemStack$$Type, arg1: $UseOnContext$$Type): $InteractionResult
 public "getBytesPerType"(arg0: $ItemStack$$Type): integer
@@ -215,6 +214,7 @@ public "getIdleDrain"(): double
 public "getConfigInventory"(arg0: $ItemStack$$Type): $ConfigInventory
 public "getFuzzyMode"(arg0: $ItemStack$$Type): $FuzzyMode
 public "setFuzzyMode"(arg0: $ItemStack$$Type, arg1: $FuzzyMode$$Type): void
+public "getUpgrades"(arg0: $ItemStack$$Type): $IUpgradeInventory
 public "getBytes"(arg0: $ItemStack$$Type): integer
 public "use"(arg0: $Level$$Type, arg1: $Player$$Type, arg2: $InteractionHand$$Type): $InteractionResultHolder<($ItemStack)>
 public "getTooltipImage"(arg0: $ItemStack$$Type): $Optional<($TooltipComponent)>

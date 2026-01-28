@@ -34,12 +34,12 @@ get "orNull"(): T
 
 export class $OptionalSupplier<T> implements $OptionalSupplier$$Interface {
  "toOptional"(): $Optional<(T)>
- "ifPresentOrElse"(action: $Consumer$$Type<(T)>, emptyAction: $Runnable$$Type): void
- "orElseGet"(supplier: $Supplier$$Type<(T)>): T
  "ifPresent"(action: $Consumer$$Type<(T)>): void
  "stream"(): $Stream<(T)>
  "isPresent"(): boolean
  "orElse"(other: T): T
+ "ifPresentOrElse"(action: $Consumer$$Type<(T)>, emptyAction: $Runnable$$Type): void
+ "orElseGet"(supplier: $Supplier$$Type<(T)>): T
  "getOrNull"(): T
  "get"(): T
 }

@@ -45,12 +45,12 @@ static readonly "BAKE_ROTATE_270": integer
  "fromVanilla"(arg0: $BakedQuad$$Type, arg1: $Direction$$Type): $MutableQuadView
  "fromVanilla"(arg0: (integer)[], arg1: integer): $MutableQuadView
  "colorIndex"(arg0: integer): $MutableQuadView
- "cullFace"(arg0: $Direction$$Type): $MutableQuadView
- "uv"(arg0: integer, arg1: $Vector2f$$Type): $MutableQuadView
  "uv"(arg0: integer, arg1: float, arg2: float): $MutableQuadView
+ "uv"(arg0: integer, arg1: $Vector2f$$Type): $MutableQuadView
+ "cullFace"(arg0: $Direction$$Type): $MutableQuadView
+ "tag"(arg0: integer): $MutableQuadView
  "normal"(arg0: integer, arg1: float, arg2: float, arg3: float): $MutableQuadView
  "normal"(arg0: integer, arg1: $Vector3f$$Type): $MutableQuadView
- "tag"(arg0: integer): $MutableQuadView
  "nominalFace"(arg0: $Direction$$Type): $MutableQuadView
  "spriteBake"(arg0: $TextureAtlasSprite$$Type, arg1: integer): $MutableQuadView
 static "getInstance"(): $MutableQuadView
@@ -62,21 +62,21 @@ static "getInstance"(): $MutableQuadView
  "lightmap"(arg0: integer, arg1: integer, arg2: integer, arg3: integer): $MutableQuadView
  "ambientOcclusion"(arg0: boolean): $MutableQuadView
  "shade"(arg0: boolean): $MutableQuadView
- "toVanilla"(arg0: (integer)[], arg1: integer): void
  "hasShade"(): boolean
- "colorIndex"(): integer
+ "toVanilla"(arg0: (integer)[], arg1: integer): void
  "faceNormal"(): $Vector3f
+ "colorIndex"(): integer
  "lightFace"(): $Direction
  "cullFace"(): $Direction
+ "tag"(): integer
+ "copyTo"(arg0: $MutableQuadView$$Type): void
  "normalX"(arg0: integer): float
  "normalY"(arg0: integer): float
- "copyTo"(arg0: $MutableQuadView$$Type): void
- "tag"(): integer
  "toBakedQuad"(arg0: $TextureAtlasSprite$$Type): $BakedQuad
+ "nominalFace"(): $Direction
  "posByIndex"(arg0: integer, arg1: integer): float
  "copyPos"(arg0: integer, arg1: $Vector3f$$Type): $Vector3f
  "copyUv"(arg0: integer, arg1: $Vector2f$$Type): $Vector2f
- "nominalFace"(): $Direction
  "copyNormal"(arg0: integer, arg1: $Vector3f$$Type): $Vector3f
  "toBlockBakedQuad"(): $BakedQuad
  "x"(arg0: integer): float
@@ -85,10 +85,10 @@ static "getInstance"(): $MutableQuadView
  "color"(arg0: integer): integer
  "u"(arg0: integer): float
  "y"(arg0: integer): float
- "lightmap"(arg0: integer): integer
- "normalZ"(arg0: integer): float
  "hasNormal"(arg0: integer): boolean
  "hasAmbientOcclusion"(): boolean
+ "lightmap"(arg0: integer): integer
+ "normalZ"(arg0: integer): float
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -102,8 +102,8 @@ export type $MutableQuadView$$Original = $MutableQuadView;}
 declare module "appeng.thirdparty.fabric.QuadView" {
 import {$TextureAtlasSprite$$Type} from "net.minecraft.client.renderer.texture.TextureAtlasSprite"
 import {$Direction} from "net.minecraft.core.Direction"
-import {$MutableQuadView$$Type} from "appeng.thirdparty.fabric.MutableQuadView"
 import {$Vector3f, $Vector3f$$Type} from "org.joml.Vector3f"
+import {$MutableQuadView$$Type} from "appeng.thirdparty.fabric.MutableQuadView"
 import {$Vector2f, $Vector2f$$Type} from "org.joml.Vector2f"
 import {$BakedQuad} from "net.minecraft.client.renderer.block.model.BakedQuad"
 
@@ -114,21 +114,21 @@ export class $QuadView implements $QuadView$$Interface {
 static readonly "VANILLA_QUAD_STRIDE": integer
 static readonly "VANILLA_VERTEX_STRIDE": integer
 
- "toVanilla"(arg0: (integer)[], arg1: integer): void
  "hasShade"(): boolean
- "colorIndex"(): integer
+ "toVanilla"(arg0: (integer)[], arg1: integer): void
  "faceNormal"(): $Vector3f
+ "colorIndex"(): integer
  "lightFace"(): $Direction
  "cullFace"(): $Direction
+ "tag"(): integer
+ "copyTo"(arg0: $MutableQuadView$$Type): void
  "normalX"(arg0: integer): float
  "normalY"(arg0: integer): float
- "copyTo"(arg0: $MutableQuadView$$Type): void
- "tag"(): integer
  "toBakedQuad"(arg0: $TextureAtlasSprite$$Type): $BakedQuad
+ "nominalFace"(): $Direction
  "posByIndex"(arg0: integer, arg1: integer): float
  "copyPos"(arg0: integer, arg1: $Vector3f$$Type): $Vector3f
  "copyUv"(arg0: integer, arg1: $Vector2f$$Type): $Vector2f
- "nominalFace"(): $Direction
  "copyNormal"(arg0: integer, arg1: $Vector3f$$Type): $Vector3f
  "toBlockBakedQuad"(): $BakedQuad
  "x"(arg0: integer): float
@@ -137,10 +137,10 @@ static readonly "VANILLA_VERTEX_STRIDE": integer
  "color"(arg0: integer): integer
  "u"(arg0: integer): float
  "y"(arg0: integer): float
- "lightmap"(arg0: integer): integer
- "normalZ"(arg0: integer): float
  "hasNormal"(arg0: integer): boolean
  "hasAmbientOcclusion"(): boolean
+ "lightmap"(arg0: integer): integer
+ "normalZ"(arg0: integer): float
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -153,8 +153,8 @@ export type $QuadView$$Type = ($QuadView);
 export type $QuadView$$Original = $QuadView;}
 declare module "appeng.thirdparty.fabric.SpriteFinderImpl" {
 import {$TextureAtlasSprite, $TextureAtlasSprite$$Type} from "net.minecraft.client.renderer.texture.TextureAtlasSprite"
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Map$$Type} from "java.util.Map"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$TextureAtlas$$Type} from "net.minecraft.client.renderer.texture.TextureAtlas"
 import {$QuadView$$Type} from "appeng.thirdparty.fabric.QuadView"
 import {$SpriteFinder$$Interface} from "appeng.thirdparty.fabric.SpriteFinder"

@@ -5,13 +5,13 @@ export class $PBRType extends $Enum<($PBRType)> {
 static readonly "SPECULAR": $PBRType
 static readonly "NORMAL": $PBRType
 
-public static "removeSuffix"(arg0: StringJS): StringJS
 public "appendSuffix"(arg0: StringJS): StringJS
+public static "removeSuffix"(arg0: StringJS): StringJS
 public static "values"(): ($PBRType)[]
 public static "valueOf"(arg0: StringJS): $PBRType
 public "getDefaultValue"(): integer
-public static "fromFileLocation"(arg0: StringJS): $PBRType
 public "getSuffix"(): StringJS
+public static "fromFileLocation"(arg0: StringJS): $PBRType
 get "defaultValue"(): integer
 get "suffix"(): StringJS
 }
@@ -49,12 +49,12 @@ declare module "net.irisshaders.iris.pbr.texture.PBRAtlasTexture" {
 import {$PBRType, $PBRType$$Type} from "net.irisshaders.iris.pbr.texture.PBRType"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$TextureAtlas$$Type} from "net.minecraft.client.renderer.texture.TextureAtlas"
-import {$AtlasPBRLoader$PBRTextureAtlasSprite, $AtlasPBRLoader$PBRTextureAtlasSprite$$Type} from "net.irisshaders.iris.pbr.loader.AtlasPBRLoader$PBRTextureAtlasSprite"
 import {$Path$$Type} from "java.nio.file.Path"
-import {$AbstractTexture} from "net.minecraft.client.renderer.texture.AbstractTexture"
-import {$SpriteContents$Ticker$$Type} from "net.minecraft.client.renderer.texture.SpriteContents$Ticker"
-import {$PBRDumpable$$Interface} from "net.irisshaders.iris.pbr.texture.PBRDumpable"
+import {$AtlasPBRLoader$PBRTextureAtlasSprite, $AtlasPBRLoader$PBRTextureAtlasSprite$$Type} from "net.irisshaders.iris.pbr.loader.AtlasPBRLoader$PBRTextureAtlasSprite"
 import {$ResourceManager$$Type} from "net.minecraft.server.packs.resources.ResourceManager"
+import {$AbstractTexture} from "net.minecraft.client.renderer.texture.AbstractTexture"
+import {$PBRDumpable$$Interface} from "net.irisshaders.iris.pbr.texture.PBRDumpable"
+import {$SpriteContents$Ticker$$Type} from "net.minecraft.client.renderer.texture.SpriteContents$Ticker"
 
 export class $PBRAtlasTexture extends $AbstractTexture implements $PBRDumpable$$Interface {
 static readonly "NOT_ASSIGNED": integer
@@ -177,15 +177,15 @@ import {$TextureAtlasSprite, $TextureAtlasSprite$$Type} from "net.minecraft.clie
 export class $PBRSpriteHolder {
 constructor()
 
-public "setNormalSprite"(arg0: $TextureAtlasSprite$$Type): void
-public "setSpecularSprite"(arg0: $TextureAtlasSprite$$Type): void
 public "close"(): void
+public "setSpecularSprite"(arg0: $TextureAtlasSprite$$Type): void
 public "getNormalSprite"(): $TextureAtlasSprite
 public "getSpecularSprite"(): $TextureAtlasSprite
-set "normalSprite"(value: $TextureAtlasSprite$$Type)
+public "setNormalSprite"(arg0: $TextureAtlasSprite$$Type): void
 set "specularSprite"(value: $TextureAtlasSprite$$Type)
 get "normalSprite"(): $TextureAtlasSprite
 get "specularSprite"(): $TextureAtlasSprite
+set "normalSprite"(value: $TextureAtlasSprite$$Type)
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_

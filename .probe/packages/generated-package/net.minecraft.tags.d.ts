@@ -39,15 +39,15 @@ export type $TagEntry$$Original = $TagEntry;}
 declare module "net.minecraft.tags.TagManager" {
 import {$TagManager$LoadResult} from "net.minecraft.tags.TagManager$LoadResult"
 import {$CompletableFuture} from "java.util.concurrent.CompletableFuture"
-import {$List} from "java.util.List"
 import {$Executor$$Type} from "java.util.concurrent.Executor"
+import {$List} from "java.util.List"
 import {$ReloadableServerResourcesKJS, $ReloadableServerResourcesKJS$$Type} from "dev.latvian.mods.kubejs.core.ReloadableServerResourcesKJS"
 import {$PreparableReloadListener$$Interface} from "net.minecraft.server.packs.resources.PreparableReloadListener"
 import {$TagManagerKJS$$Interface} from "dev.latvian.mods.kubejs.core.TagManagerKJS"
 import {$PreparableReloadListener$PreparationBarrier$$Type} from "net.minecraft.server.packs.resources.PreparableReloadListener$PreparationBarrier"
-import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
-import {$ProfilerFiller$$Type} from "net.minecraft.util.profiling.ProfilerFiller"
 import {$ResourceManager$$Type} from "net.minecraft.server.packs.resources.ResourceManager"
+import {$ProfilerFiller$$Type} from "net.minecraft.util.profiling.ProfilerFiller"
+import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
 
 export class $TagManager implements $PreparableReloadListener$$Interface, $TagManagerKJS$$Interface {
 constructor(arg0: $RegistryAccess$$Type)
@@ -94,8 +94,8 @@ export type $TagLoader$EntryWithSource$$Type = ({"source"?: StringJS, "remove"?:
  */
 export type $TagLoader$EntryWithSource$$Original = $TagLoader$EntryWithSource;}
 declare module "net.minecraft.tags.TagNetworkSerialization$NetworkPayload" {
-import {$Registry$$Type} from "net.minecraft.core.Registry"
 import {$FriendlyByteBuf$$Type} from "net.minecraft.network.FriendlyByteBuf"
+import {$Registry$$Type} from "net.minecraft.core.Registry"
 
 export class $TagNetworkSerialization$NetworkPayload {
 public "applyToRegistry"<T>(arg0: $Registry$$Type<(T)>): void
@@ -113,9 +113,9 @@ export type $TagNetworkSerialization$NetworkPayload$$Type = ($TagNetworkSerializ
  */
 export type $TagNetworkSerialization$NetworkPayload$$Original = $TagNetworkSerialization$NetworkPayload;}
 declare module "net.minecraft.tags.TagManager$LoadResult" {
-import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Collection, $Collection$$Type} from "java.util.Collection"
 import {$Map, $Map$$Type} from "java.util.Map"
+import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Registry, $Registry$$Type} from "net.minecraft.core.Registry"
 import {$ResourceKey, $ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
 import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
@@ -134,7 +134,7 @@ public "key"(): $ResourceKey<($Registry<(T)>)>
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $TagManager$LoadResult$$Type<T> = ({"key"?: $ResourceKey$$Type<($Registry<(T)>)>, "tags"?: $Map$$Type<($ResourceLocation$$Type), ($Collection$$Type<($Holder$$Type<(T)>)>)>}) | ([key?: $ResourceKey$$Type<($Registry<(T)>)>, tags?: $Map$$Type<($ResourceLocation$$Type), ($Collection$$Type<($Holder$$Type<(T)>)>)>]);
+export type $TagManager$LoadResult$$Type<T> = ({"tags"?: $Map$$Type<($ResourceLocation$$Type), ($Collection$$Type<($Holder$$Type<(T)>)>)>, "key"?: $ResourceKey$$Type<($Registry<(T)>)>}) | ([tags?: $Map$$Type<($ResourceLocation$$Type), ($Collection$$Type<($Holder$$Type<(T)>)>)>, key?: $ResourceKey$$Type<($Registry<(T)>)>]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -198,13 +198,13 @@ public "add"(arg0: $TagEntry$$Type): $TagBuilder
 public static "create"(): $TagBuilder
 public "build"(): $List<($TagEntry)>
 public "addTag"(arg0: $ResourceLocation$$Type): $TagBuilder
+public "getRawBuilder"(): $TagBuilder
 public "removeElement"(arg0: $ResourceLocation$$Type): $TagBuilder
 /**
  * 
  * @deprecated
  */
 public "removeElement"(arg0: $ResourceLocation$$Type, arg1: StringJS): $TagBuilder
-public "getRawBuilder"(): $TagBuilder
 /**
  * 
  * @deprecated
@@ -229,8 +229,8 @@ export type $TagBuilder$$Type = ($TagBuilder);
  */
 export type $TagBuilder$$Original = $TagBuilder;}
 declare module "net.minecraft.tags.TagEntry$Lookup" {
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Collection} from "java.util.Collection"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 
 export interface $TagEntry$Lookup$$Interface<T> {
 }

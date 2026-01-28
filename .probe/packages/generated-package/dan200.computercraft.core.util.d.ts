@@ -20,17 +20,17 @@ static readonly "BROWN": $Colour
 static readonly "GREY": $Colour
 static readonly "ORANGE": $Colour
 
-public "getARGB"(): integer
-public "getR"(): float
-public static "fromInt"(arg0: integer): $Colour
 public "getHex"(): integer
+public static "fromInt"(arg0: integer): $Colour
+public "getR"(): float
+public "getARGB"(): integer
 public "getB"(): float
 public "getG"(): float
 public static "values"(): ($Colour)[]
 public static "valueOf"(arg0: StringJS): $Colour
-get "ARGB"(): integer
-get "r"(): float
 get "hex"(): integer
+get "r"(): float
+get "ARGB"(): integer
 get "b"(): float
 get "g"(): float
 }

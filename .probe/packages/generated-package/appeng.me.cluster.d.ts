@@ -33,10 +33,10 @@ get "destroyed"(): boolean
 }
 
 export class $IAECluster implements $IAECluster$$Interface {
- "updateStatus"(arg0: boolean): void
  "getBlockEntities"(): $Iterator<($BlockEntity)>
  "getBoundsMax"(): $BlockPos
  "getBoundsMin"(): $BlockPos
+ "updateStatus"(arg0: boolean): void
  "isDestroyed"(): boolean
  "destroy"(): void
 }

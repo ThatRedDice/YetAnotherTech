@@ -5,8 +5,8 @@ export interface $BlockCapabilityExtension$$Interface {
 }
 
 export class $BlockCapabilityExtension implements $BlockCapabilityExtension$$Interface {
- "entangled_getIdentifier"(): $ResourceLocation
  "entangled_storeIdentifier"(identifier: $ResourceLocation$$Type): void
+ "entangled_getIdentifier"(): $ResourceLocation
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_

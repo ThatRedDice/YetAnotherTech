@@ -182,23 +182,23 @@ export class $ChannelOutboundInvoker implements $ChannelOutboundInvoker$$Interfa
  "newProgressivePromise"(): $ChannelProgressivePromise
  "newSucceededFuture"(): $ChannelFuture
  "newFailedFuture"(arg0: $Throwable$$Type): $ChannelFuture
- "writeAndFlush"(arg0: any, arg1: $ChannelPromise$$Type): $ChannelFuture
  "writeAndFlush"(arg0: any): $ChannelFuture
+ "writeAndFlush"(arg0: any, arg1: $ChannelPromise$$Type): $ChannelFuture
  "newPromise"(): $ChannelPromise
+ "bind"(arg0: $SocketAddress$$Type): $ChannelFuture
+ "bind"(arg0: $SocketAddress$$Type, arg1: $ChannelPromise$$Type): $ChannelFuture
  "flush"(): $ChannelOutboundInvoker
  "write"(arg0: any, arg1: $ChannelPromise$$Type): $ChannelFuture
  "write"(arg0: any): $ChannelFuture
  "read"(): $ChannelOutboundInvoker
+ "connect"(arg0: $SocketAddress$$Type, arg1: $SocketAddress$$Type, arg2: $ChannelPromise$$Type): $ChannelFuture
  "connect"(arg0: $SocketAddress$$Type, arg1: $ChannelPromise$$Type): $ChannelFuture
  "connect"(arg0: $SocketAddress$$Type, arg1: $SocketAddress$$Type): $ChannelFuture
  "connect"(arg0: $SocketAddress$$Type): $ChannelFuture
- "connect"(arg0: $SocketAddress$$Type, arg1: $SocketAddress$$Type, arg2: $ChannelPromise$$Type): $ChannelFuture
  "close"(): $ChannelFuture
  "close"(arg0: $ChannelPromise$$Type): $ChannelFuture
- "bind"(arg0: $SocketAddress$$Type, arg1: $ChannelPromise$$Type): $ChannelFuture
- "bind"(arg0: $SocketAddress$$Type): $ChannelFuture
- "disconnect"(arg0: $ChannelPromise$$Type): $ChannelFuture
  "disconnect"(): $ChannelFuture
+ "disconnect"(arg0: $ChannelPromise$$Type): $ChannelFuture
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -237,11 +237,11 @@ export type $EventLoopTaskQueueFactory$$Type = ((arg0: integer) => $Queue$$Type<
 export type $EventLoopTaskQueueFactory$$Original = $EventLoopTaskQueueFactory;}
 declare module "io.netty.channel.EventLoop" {
 import {$Iterator} from "java.util.Iterator"
-import {$Callable$$Type} from "java.util.concurrent.Callable"
 import {$Collection$$Type} from "java.util.Collection"
 import {$Future} from "io.netty.util.concurrent.Future"
-import {$EventLoopGroup, $EventLoopGroup$$Interface} from "io.netty.channel.EventLoopGroup"
+import {$Callable$$Type} from "java.util.concurrent.Callable"
 import {$Spliterator} from "java.util.Spliterator"
+import {$EventLoopGroup, $EventLoopGroup$$Interface} from "io.netty.channel.EventLoopGroup"
 import {$List} from "java.util.List"
 import {$Future as $Future$0} from "java.util.concurrent.Future"
 import {$Thread$$Type} from "java.lang.Thread"
@@ -376,8 +376,8 @@ get "void"(): boolean
 set "success"(value: void)
 get "uncancellable"(): boolean
 get "now"(): void
-get "cancellable"(): boolean
 get "success"(): boolean
+get "cancellable"(): boolean
 get "cancelled"(): boolean
 get "done"(): boolean
 }
@@ -385,16 +385,16 @@ get "done"(): boolean
 export class $ChannelPromise implements $ChannelPromise$$Interface {
  "setSuccess"(): $ChannelPromise
  "setSuccess"(arg0: void): $ChannelPromise
+ "addListeners"(...arg0: ($GenericFutureListener$$Type<($Future$$Type<(void)>)>)[]): $ChannelPromise
  "syncUninterruptibly"(): $ChannelPromise
  "trySuccess"(): boolean
  "setFailure"(arg0: $Throwable$$Type): $ChannelPromise
- "addListeners"(...arg0: ($GenericFutureListener$$Type<($Future$$Type<(void)>)>)[]): $ChannelPromise
  "unvoid"(): $ChannelPromise
- "removeListeners"(...arg0: ($GenericFutureListener$$Type<($Future$$Type<(void)>)>)[]): $ChannelPromise
  "await"(): $ChannelPromise
  "sync"(): $ChannelPromise
  "channel"(): $Channel
  "awaitUninterruptibly"(): $ChannelPromise
+ "removeListeners"(...arg0: ($GenericFutureListener$$Type<($Future$$Type<(void)>)>)[]): $ChannelPromise
  "removeListener"(arg0: $GenericFutureListener$$Type<($Future$$Type<(void)>)>): $ChannelPromise
  "addListener"(arg0: $GenericFutureListener$$Type<($Future$$Type<(void)>)>): $ChannelPromise
  "isVoid"(): boolean
@@ -407,10 +407,10 @@ export class $ChannelPromise implements $ChannelPromise$$Interface {
  "cancel"(arg0: boolean): boolean
  "await"(arg0: long): boolean
  "await"(arg0: long, arg1: $TimeUnit$$Type): boolean
- "awaitUninterruptibly"(arg0: long, arg1: $TimeUnit$$Type): boolean
  "awaitUninterruptibly"(arg0: long): boolean
- "isCancellable"(): boolean
+ "awaitUninterruptibly"(arg0: long, arg1: $TimeUnit$$Type): boolean
  "isSuccess"(): boolean
+ "isCancellable"(): boolean
  "isCancelled"(): boolean
  "resultNow"(): void
  "exceptionNow"(): $Throwable
@@ -432,8 +432,8 @@ declare module "io.netty.channel.Channel" {
 import {$EventLoop} from "io.netty.channel.EventLoop"
 import {$ChannelConfig} from "io.netty.channel.ChannelConfig"
 import {$SocketAddress, $SocketAddress$$Type} from "java.net.SocketAddress"
-import {$Channel$Unsafe} from "io.netty.channel.Channel$Unsafe"
 import {$Comparable$$Interface} from "java.lang.Comparable"
+import {$Channel$Unsafe} from "io.netty.channel.Channel$Unsafe"
 import {$ChannelId} from "io.netty.channel.ChannelId"
 import {$ChannelPipeline} from "io.netty.channel.ChannelPipeline"
 import {$ChannelPromise, $ChannelPromise$$Type} from "io.netty.channel.ChannelPromise"
@@ -444,8 +444,8 @@ import {$AttributeMap$$Interface} from "io.netty.util.AttributeMap"
 import {$Throwable$$Type} from "java.lang.Throwable"
 import {$AttributeKey$$Type} from "io.netty.util.AttributeKey"
 import {$ByteBufAllocator} from "io.netty.buffer.ByteBufAllocator"
-import {$Attribute} from "io.netty.util.Attribute"
 import {$ChannelMetadata} from "io.netty.channel.ChannelMetadata"
+import {$Attribute} from "io.netty.util.Attribute"
 
 /**
  * This class is not allowed By KubeJS!
@@ -462,9 +462,8 @@ get "active"(): boolean
 export class $Channel implements $Channel$$Interface {
  "alloc"(): $ByteBufAllocator
  "eventLoop"(): $EventLoop
- "isWritable"(): boolean
- "localAddress"(): $SocketAddress
  "remoteAddress"(): $SocketAddress
+ "isWritable"(): boolean
  "parent"(): $Channel
  "flush"(): $Channel
  "isOpen"(): boolean
@@ -474,6 +473,7 @@ export class $Channel implements $Channel$$Interface {
  "read"(): $Channel
  "isActive"(): boolean
  "config"(): $ChannelConfig
+ "localAddress"(): $SocketAddress
  "metadata"(): $ChannelMetadata
  "pipeline"(): $ChannelPipeline
  "closeFuture"(): $ChannelFuture
@@ -487,21 +487,21 @@ export class $Channel implements $Channel$$Interface {
  "newProgressivePromise"(): $ChannelProgressivePromise
  "newSucceededFuture"(): $ChannelFuture
  "newFailedFuture"(arg0: $Throwable$$Type): $ChannelFuture
- "writeAndFlush"(arg0: any, arg1: $ChannelPromise$$Type): $ChannelFuture
  "writeAndFlush"(arg0: any): $ChannelFuture
+ "writeAndFlush"(arg0: any, arg1: $ChannelPromise$$Type): $ChannelFuture
  "newPromise"(): $ChannelPromise
+ "bind"(arg0: $SocketAddress$$Type): $ChannelFuture
+ "bind"(arg0: $SocketAddress$$Type, arg1: $ChannelPromise$$Type): $ChannelFuture
  "write"(arg0: any, arg1: $ChannelPromise$$Type): $ChannelFuture
  "write"(arg0: any): $ChannelFuture
+ "connect"(arg0: $SocketAddress$$Type, arg1: $SocketAddress$$Type, arg2: $ChannelPromise$$Type): $ChannelFuture
  "connect"(arg0: $SocketAddress$$Type, arg1: $ChannelPromise$$Type): $ChannelFuture
  "connect"(arg0: $SocketAddress$$Type, arg1: $SocketAddress$$Type): $ChannelFuture
  "connect"(arg0: $SocketAddress$$Type): $ChannelFuture
- "connect"(arg0: $SocketAddress$$Type, arg1: $SocketAddress$$Type, arg2: $ChannelPromise$$Type): $ChannelFuture
  "close"(): $ChannelFuture
  "close"(arg0: $ChannelPromise$$Type): $ChannelFuture
- "bind"(arg0: $SocketAddress$$Type, arg1: $ChannelPromise$$Type): $ChannelFuture
- "bind"(arg0: $SocketAddress$$Type): $ChannelFuture
- "disconnect"(arg0: $ChannelPromise$$Type): $ChannelFuture
  "disconnect"(): $ChannelFuture
+ "disconnect"(arg0: $ChannelPromise$$Type): $ChannelFuture
  "compareTo"(arg0: $Channel$$Type): integer
 }
 /**
@@ -560,6 +560,8 @@ import {$ChannelPromise$$Type} from "io.netty.channel.ChannelPromise"
  * Loading the class using require() will not throw an error, but the class will be undefined.
  */
 export class $ChannelOutboundBuffer {
+public "nioBufferSize"(): long
+public "removeBytes"(arg0: long): void
 public "getUserDefinedWritability"(arg0: integer): boolean
 public "totalPendingWriteBytes"(): long
 public "forEachFlushedMessage"(arg0: $ChannelOutboundBuffer$MessageProcessor$$Type): void
@@ -572,20 +574,18 @@ public "nioBuffers"(arg0: integer, arg1: long): ($ByteBuffer)[]
  */
 public "recycle"(): void
 public "currentProgress"(): long
+public "setUserDefinedWritability"(arg0: integer, arg1: boolean): void
 public "isWritable"(): boolean
 public "progress"(arg0: long): void
-public "setUserDefinedWritability"(arg0: integer, arg1: boolean): void
 public "remove"(arg0: $Throwable$$Type): boolean
 public "remove"(): boolean
 public "size"(): integer
 public "isEmpty"(): boolean
 public "current"(): any
 public "addMessage"(arg0: any, arg1: integer, arg2: $ChannelPromise$$Type): void
-public "addFlush"(): void
 public "bytesBeforeUnwritable"(): long
 public "bytesBeforeWritable"(): long
-public "nioBufferSize"(): long
-public "removeBytes"(arg0: long): void
+public "addFlush"(): void
 get "writable"(): boolean
 get "empty"(): boolean
 }
@@ -638,20 +638,20 @@ export interface $Channel$Unsafe$$Interface {
 }
 
 export class $Channel$Unsafe implements $Channel$Unsafe$$Interface {
+ "closeForcibly"(): void
  "voidPromise"(): $ChannelPromise
  "deregister"(arg0: $ChannelPromise$$Type): void
- "localAddress"(): $SocketAddress
  "remoteAddress"(): $SocketAddress
  "beginRead"(): void
  "outboundBuffer"(): $ChannelOutboundBuffer
+ "bind"(arg0: $SocketAddress$$Type, arg1: $ChannelPromise$$Type): void
  "flush"(): void
  "register"(arg0: $EventLoop$$Type, arg1: $ChannelPromise$$Type): void
  "write"(arg0: any, arg1: $ChannelPromise$$Type): void
  "connect"(arg0: $SocketAddress$$Type, arg1: $SocketAddress$$Type, arg2: $ChannelPromise$$Type): void
  "close"(arg0: $ChannelPromise$$Type): void
- "bind"(arg0: $SocketAddress$$Type, arg1: $ChannelPromise$$Type): void
  "disconnect"(arg0: $ChannelPromise$$Type): void
- "closeForcibly"(): void
+ "localAddress"(): $SocketAddress
  "recvBufAllocHandle"(): $RecvByteBufAllocator$Handle
 }
 /**
@@ -679,21 +679,21 @@ import {$TimeUnit$$Type} from "java.util.concurrent.TimeUnit"
 export interface $ChannelFuture$$Interface extends $Future$$Interface<(void)> {
 get "void"(): boolean
 get "now"(): void
-get "cancellable"(): boolean
 get "success"(): boolean
+get "cancellable"(): boolean
 get "cancelled"(): boolean
 get "done"(): boolean
 }
 
 export class $ChannelFuture implements $ChannelFuture$$Interface {
- "syncUninterruptibly"(): $ChannelFuture
  "addListeners"(...arg0: ($GenericFutureListener$$Type<($Future$$Type<(void)>)>)[]): $ChannelFuture
- "removeListeners"(...arg0: ($GenericFutureListener$$Type<($Future$$Type<(void)>)>)[]): $ChannelFuture
+ "syncUninterruptibly"(): $ChannelFuture
  "await"(): $ChannelFuture
  "isVoid"(): boolean
  "sync"(): $ChannelFuture
  "channel"(): $Channel
  "awaitUninterruptibly"(): $ChannelFuture
+ "removeListeners"(...arg0: ($GenericFutureListener$$Type<($Future$$Type<(void)>)>)[]): $ChannelFuture
  "removeListener"(arg0: $GenericFutureListener$$Type<($Future$$Type<(void)>)>): $ChannelFuture
  "addListener"(arg0: $GenericFutureListener$$Type<($Future$$Type<(void)>)>): $ChannelFuture
  "getNow"(): void
@@ -701,10 +701,10 @@ export class $ChannelFuture implements $ChannelFuture$$Interface {
  "cancel"(arg0: boolean): boolean
  "await"(arg0: long): boolean
  "await"(arg0: long, arg1: $TimeUnit$$Type): boolean
- "awaitUninterruptibly"(arg0: long, arg1: $TimeUnit$$Type): boolean
  "awaitUninterruptibly"(arg0: long): boolean
- "isCancellable"(): boolean
+ "awaitUninterruptibly"(arg0: long, arg1: $TimeUnit$$Type): boolean
  "isSuccess"(): boolean
+ "isCancellable"(): boolean
  "isCancelled"(): boolean
  "resultNow"(): void
  "exceptionNow"(): $Throwable
@@ -847,30 +847,30 @@ import {$TimeUnit$$Type} from "java.util.concurrent.TimeUnit"
  * Loading the class using require() will not throw an error, but the class will be undefined.
  */
 export interface $ChannelProgressivePromise$$Interface extends $ProgressivePromise$$Interface<(void)>, $ChannelProgressiveFuture$$Interface, $ChannelPromise$$Interface {
-get "success"(): $ChannelProgressivePromise
 set "success"(value: void)
+get "success"(): $ChannelProgressivePromise
 set "failure"(value: $Throwable$$Type)
 set "success"(value: void)
 get "uncancellable"(): boolean
 get "void"(): boolean
 get "now"(): void
-get "cancellable"(): boolean
 get "success"(): boolean
+get "cancellable"(): boolean
 get "cancelled"(): boolean
 get "done"(): boolean
 }
 
 export class $ChannelProgressivePromise implements $ChannelProgressivePromise$$Interface {
- "setSuccess"(): $ChannelProgressivePromise
  "setSuccess"(arg0: void): $ChannelProgressivePromise
+ "setSuccess"(): $ChannelProgressivePromise
+ "addListeners"(...arg0: ($GenericFutureListener$$Type<($Future$$Type<(void)>)>)[]): $ChannelProgressivePromise
  "syncUninterruptibly"(): $ChannelProgressivePromise
  "setFailure"(arg0: $Throwable$$Type): $ChannelProgressivePromise
- "addListeners"(...arg0: ($GenericFutureListener$$Type<($Future$$Type<(void)>)>)[]): $ChannelProgressivePromise
  "unvoid"(): $ChannelProgressivePromise
- "removeListeners"(...arg0: ($GenericFutureListener$$Type<($Future$$Type<(void)>)>)[]): $ChannelProgressivePromise
  "await"(): $ChannelProgressivePromise
  "sync"(): $ChannelProgressivePromise
  "awaitUninterruptibly"(): $ChannelProgressivePromise
+ "removeListeners"(...arg0: ($GenericFutureListener$$Type<($Future$$Type<(void)>)>)[]): $ChannelProgressivePromise
  "removeListener"(arg0: $GenericFutureListener$$Type<($Future$$Type<(void)>)>): $ChannelProgressivePromise
  "addListener"(arg0: $GenericFutureListener$$Type<($Future$$Type<(void)>)>): $ChannelProgressivePromise
  "setProgress"(arg0: long, arg1: long): $ChannelProgressivePromise
@@ -887,10 +887,10 @@ export class $ChannelProgressivePromise implements $ChannelProgressivePromise$$I
  "cancel"(arg0: boolean): boolean
  "await"(arg0: long): boolean
  "await"(arg0: long, arg1: $TimeUnit$$Type): boolean
- "awaitUninterruptibly"(arg0: long, arg1: $TimeUnit$$Type): boolean
  "awaitUninterruptibly"(arg0: long): boolean
- "isCancellable"(): boolean
+ "awaitUninterruptibly"(arg0: long, arg1: $TimeUnit$$Type): boolean
  "isSuccess"(): boolean
+ "isCancellable"(): boolean
  "isCancelled"(): boolean
  "resultNow"(): void
  "exceptionNow"(): $Throwable
@@ -922,53 +922,46 @@ import {$MessageSizeEstimator, $MessageSizeEstimator$$Type} from "io.netty.chann
  * Loading the class using require() will not throw an error, but the class will be undefined.
  */
 export interface $ChannelConfig$$Interface {
-set "writeBufferWaterMark"(value: $WriteBufferWaterMark$$Type)
-set "options"(value: $Map$$Type<($ChannelOption$$Type<(never)>), (never)>)
+get "recvByteBufAllocator"(): T
 get "autoRead"(): boolean
+set "options"(value: $Map$$Type<($ChannelOption$$Type<(never)>), (never)>)
 get "options"(): $Map<($ChannelOption<(never)>), (any)>
 set "connectTimeoutMillis"(value: integer)
 get "allocator"(): $ByteBufAllocator
 set "autoRead"(value: boolean)
-get "recvByteBufAllocator"(): T
+set "allocator"(value: $ByteBufAllocator$$Type)
 get "autoClose"(): boolean
-set "recvByteBufAllocator"(value: $RecvByteBufAllocator$$Type)
-set "autoClose"(value: boolean)
-set "writeBufferHighWaterMark"(value: integer)
-get "writeBufferLowWaterMark"(): integer
-set "writeBufferLowWaterMark"(value: integer)
-get "messageSizeEstimator"(): $MessageSizeEstimator
-set "messageSizeEstimator"(value: $MessageSizeEstimator$$Type)
-get "writeBufferWaterMark"(): $WriteBufferWaterMark
 get "writeBufferHighWaterMark"(): integer
+set "writeBufferHighWaterMark"(value: integer)
 get "connectTimeoutMillis"(): integer
 get "maxMessagesPerRead"(): integer
 set "maxMessagesPerRead"(value: integer)
 get "writeSpinCount"(): integer
 set "writeSpinCount"(value: integer)
-set "allocator"(value: $ByteBufAllocator$$Type)
+set "recvByteBufAllocator"(value: $RecvByteBufAllocator$$Type)
+set "autoClose"(value: boolean)
+get "writeBufferLowWaterMark"(): integer
+set "writeBufferLowWaterMark"(value: integer)
+get "messageSizeEstimator"(): $MessageSizeEstimator
+set "messageSizeEstimator"(value: $MessageSizeEstimator$$Type)
+get "writeBufferWaterMark"(): $WriteBufferWaterMark
+set "writeBufferWaterMark"(value: $WriteBufferWaterMark$$Type)
 }
 
 export class $ChannelConfig implements $ChannelConfig$$Interface {
- "setWriteBufferWaterMark"(arg0: $WriteBufferWaterMark$$Type): $ChannelConfig
- "setOptions"(arg0: $Map$$Type<($ChannelOption$$Type<(never)>), (never)>): boolean
+ "getRecvByteBufAllocator"<T extends $RecvByteBufAllocator>(): T
  "setOption"<T>(arg0: $ChannelOption$$Type<(T)>, arg1: T): boolean
  "getOption"<T>(arg0: $ChannelOption$$Type<(T)>): T
  "isAutoRead"(): boolean
+ "setOptions"(arg0: $Map$$Type<($ChannelOption$$Type<(never)>), (never)>): boolean
  "getOptions"(): $Map<($ChannelOption<(never)>), (any)>
  "setConnectTimeoutMillis"(arg0: integer): $ChannelConfig
  "getAllocator"(): $ByteBufAllocator
  "setAutoRead"(arg0: boolean): $ChannelConfig
- "getRecvByteBufAllocator"<T extends $RecvByteBufAllocator>(): T
+ "setAllocator"(arg0: $ByteBufAllocator$$Type): $ChannelConfig
  "isAutoClose"(): boolean
- "setRecvByteBufAllocator"(arg0: $RecvByteBufAllocator$$Type): $ChannelConfig
- "setAutoClose"(arg0: boolean): $ChannelConfig
- "setWriteBufferHighWaterMark"(arg0: integer): $ChannelConfig
- "getWriteBufferLowWaterMark"(): integer
- "setWriteBufferLowWaterMark"(arg0: integer): $ChannelConfig
- "getMessageSizeEstimator"(): $MessageSizeEstimator
- "setMessageSizeEstimator"(arg0: $MessageSizeEstimator$$Type): $ChannelConfig
- "getWriteBufferWaterMark"(): $WriteBufferWaterMark
  "getWriteBufferHighWaterMark"(): integer
+ "setWriteBufferHighWaterMark"(arg0: integer): $ChannelConfig
  "getConnectTimeoutMillis"(): integer
 /**
  * 
@@ -982,7 +975,14 @@ export class $ChannelConfig implements $ChannelConfig$$Interface {
  "setMaxMessagesPerRead"(arg0: integer): $ChannelConfig
  "getWriteSpinCount"(): integer
  "setWriteSpinCount"(arg0: integer): $ChannelConfig
- "setAllocator"(arg0: $ByteBufAllocator$$Type): $ChannelConfig
+ "setRecvByteBufAllocator"(arg0: $RecvByteBufAllocator$$Type): $ChannelConfig
+ "setAutoClose"(arg0: boolean): $ChannelConfig
+ "getWriteBufferLowWaterMark"(): integer
+ "setWriteBufferLowWaterMark"(arg0: integer): $ChannelConfig
+ "getMessageSizeEstimator"(): $MessageSizeEstimator
+ "setMessageSizeEstimator"(arg0: $MessageSizeEstimator$$Type): $ChannelConfig
+ "getWriteBufferWaterMark"(): $WriteBufferWaterMark
+ "setWriteBufferWaterMark"(arg0: $WriteBufferWaterMark$$Type): $ChannelConfig
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -1001,8 +1001,8 @@ export {} // Mark the file as a module, do not remove unless there are other imp
  * Loading the class using require() will not throw an error, but the class will be undefined.
  */
 export class $ChannelMetadata {
-constructor(arg0: boolean, arg1: integer)
 constructor(arg0: boolean)
+constructor(arg0: boolean, arg1: integer)
 
 public "hasDisconnect"(): boolean
 public "defaultMaxMessagesPerRead"(): integer
@@ -1048,8 +1048,8 @@ export type $ChannelInboundInvoker$$Type = ($ChannelInboundInvoker);
  */
 export type $ChannelInboundInvoker$$Original = $ChannelInboundInvoker;}
 declare module "io.netty.channel.ChannelId" {
-import {$Serializable$$Interface} from "java.io.Serializable"
 import {$Comparable$$Interface} from "java.lang.Comparable"
+import {$Serializable$$Interface} from "java.io.Serializable"
 
 /**
  * This class is not allowed By KubeJS!
@@ -1078,8 +1078,8 @@ import {$GenericFutureListener$$Type} from "io.netty.util.concurrent.GenericFutu
 import {$ChannelFuture$$Interface} from "io.netty.channel.ChannelFuture"
 import {$Future$$Type} from "io.netty.util.concurrent.Future"
 import {$Future$State} from "java.util.concurrent.Future$State"
-import {$ProgressiveFuture$$Interface} from "io.netty.util.concurrent.ProgressiveFuture"
 import {$Throwable} from "java.lang.Throwable"
+import {$ProgressiveFuture$$Interface} from "io.netty.util.concurrent.ProgressiveFuture"
 import {$Channel} from "io.netty.channel.Channel"
 import {$TimeUnit$$Type} from "java.util.concurrent.TimeUnit"
 
@@ -1091,19 +1091,19 @@ import {$TimeUnit$$Type} from "java.util.concurrent.TimeUnit"
 export interface $ChannelProgressiveFuture$$Interface extends $ChannelFuture$$Interface, $ProgressiveFuture$$Interface<(void)> {
 get "void"(): boolean
 get "now"(): void
-get "cancellable"(): boolean
 get "success"(): boolean
+get "cancellable"(): boolean
 get "cancelled"(): boolean
 get "done"(): boolean
 }
 
 export class $ChannelProgressiveFuture implements $ChannelProgressiveFuture$$Interface {
- "syncUninterruptibly"(): $ChannelProgressiveFuture
  "addListeners"(...arg0: ($GenericFutureListener$$Type<($Future$$Type<(void)>)>)[]): $ChannelProgressiveFuture
- "removeListeners"(...arg0: ($GenericFutureListener$$Type<($Future$$Type<(void)>)>)[]): $ChannelProgressiveFuture
+ "syncUninterruptibly"(): $ChannelProgressiveFuture
  "await"(): $ChannelProgressiveFuture
  "sync"(): $ChannelProgressiveFuture
  "awaitUninterruptibly"(): $ChannelProgressiveFuture
+ "removeListeners"(...arg0: ($GenericFutureListener$$Type<($Future$$Type<(void)>)>)[]): $ChannelProgressiveFuture
  "removeListener"(arg0: $GenericFutureListener$$Type<($Future$$Type<(void)>)>): $ChannelProgressiveFuture
  "addListener"(arg0: $GenericFutureListener$$Type<($Future$$Type<(void)>)>): $ChannelProgressiveFuture
  "isVoid"(): boolean
@@ -1113,10 +1113,10 @@ export class $ChannelProgressiveFuture implements $ChannelProgressiveFuture$$Int
  "cancel"(arg0: boolean): boolean
  "await"(arg0: long): boolean
  "await"(arg0: long, arg1: $TimeUnit$$Type): boolean
- "awaitUninterruptibly"(arg0: long, arg1: $TimeUnit$$Type): boolean
  "awaitUninterruptibly"(arg0: long): boolean
- "isCancellable"(): boolean
+ "awaitUninterruptibly"(arg0: long, arg1: $TimeUnit$$Type): boolean
  "isSuccess"(): boolean
+ "isCancellable"(): boolean
  "isCancelled"(): boolean
  "resultNow"(): void
  "exceptionNow"(): $Throwable
@@ -1156,12 +1156,12 @@ import {$MultithreadEventExecutorGroup} from "io.netty.util.concurrent.Multithre
 export class $MultithreadEventLoopGroup extends $MultithreadEventExecutorGroup implements $EventLoopGroup$$Interface {
 public "next"(): $EventLoop
 public "register"(arg0: $Channel$$Type): $ChannelFuture
+public "register"(arg0: $ChannelPromise$$Type): $ChannelFuture
 /**
  * 
  * @deprecated
  */
 public "register"(arg0: $Channel$$Type, arg1: $ChannelPromise$$Type): $ChannelFuture
-public "register"(arg0: $ChannelPromise$$Type): $ChannelFuture
 public "submit"(arg0: $Runnable$$Type): $Future<(never)>
 public "submit"<T>(arg0: $Runnable$$Type, arg1: T): $Future<(T)>
 public "submit"<T>(arg0: $Callable$$Type<(T)>): $Future<(T)>
@@ -1187,8 +1187,8 @@ export type $MultithreadEventLoopGroup$$Type = ($MultithreadEventLoopGroup);
 export type $MultithreadEventLoopGroup$$Original = $MultithreadEventLoopGroup;}
 declare module "io.netty.channel.ChannelInboundHandlerAdapter" {
 import {$ChannelHandlerAdapter} from "io.netty.channel.ChannelHandlerAdapter"
-import {$ChannelInboundHandler$$Interface} from "io.netty.channel.ChannelInboundHandler"
 import {$Throwable$$Type} from "java.lang.Throwable"
+import {$ChannelInboundHandler$$Interface} from "io.netty.channel.ChannelInboundHandler"
 import {$ChannelHandlerContext$$Type} from "io.netty.channel.ChannelHandlerContext"
 
 /**
@@ -1279,21 +1279,21 @@ export class $ChannelHandlerContext implements $ChannelHandlerContext$$Interface
  "newProgressivePromise"(): $ChannelProgressivePromise
  "newSucceededFuture"(): $ChannelFuture
  "newFailedFuture"(arg0: $Throwable$$Type): $ChannelFuture
- "writeAndFlush"(arg0: any, arg1: $ChannelPromise$$Type): $ChannelFuture
  "writeAndFlush"(arg0: any): $ChannelFuture
+ "writeAndFlush"(arg0: any, arg1: $ChannelPromise$$Type): $ChannelFuture
  "newPromise"(): $ChannelPromise
+ "bind"(arg0: $SocketAddress$$Type): $ChannelFuture
+ "bind"(arg0: $SocketAddress$$Type, arg1: $ChannelPromise$$Type): $ChannelFuture
  "write"(arg0: any, arg1: $ChannelPromise$$Type): $ChannelFuture
  "write"(arg0: any): $ChannelFuture
+ "connect"(arg0: $SocketAddress$$Type, arg1: $SocketAddress$$Type, arg2: $ChannelPromise$$Type): $ChannelFuture
  "connect"(arg0: $SocketAddress$$Type, arg1: $ChannelPromise$$Type): $ChannelFuture
  "connect"(arg0: $SocketAddress$$Type, arg1: $SocketAddress$$Type): $ChannelFuture
  "connect"(arg0: $SocketAddress$$Type): $ChannelFuture
- "connect"(arg0: $SocketAddress$$Type, arg1: $SocketAddress$$Type, arg2: $ChannelPromise$$Type): $ChannelFuture
  "close"(): $ChannelFuture
  "close"(arg0: $ChannelPromise$$Type): $ChannelFuture
- "bind"(arg0: $SocketAddress$$Type, arg1: $ChannelPromise$$Type): $ChannelFuture
- "bind"(arg0: $SocketAddress$$Type): $ChannelFuture
- "disconnect"(arg0: $ChannelPromise$$Type): $ChannelFuture
  "disconnect"(): $ChannelFuture
+ "disconnect"(arg0: $ChannelPromise$$Type): $ChannelFuture
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -1317,10 +1317,10 @@ import {$ScheduledFuture} from "io.netty.util.concurrent.ScheduledFuture"
 import {$EventExecutorGroup$$Interface} from "io.netty.util.concurrent.EventExecutorGroup"
 import {$Runnable, $Runnable$$Type} from "java.lang.Runnable"
 import {$ChannelPromise$$Type} from "io.netty.channel.ChannelPromise"
-import {$EventExecutor, $EventExecutor$$Type} from "io.netty.util.concurrent.EventExecutor"
 import {$Channel$$Type} from "io.netty.channel.Channel"
-import {$Consumer$$Type} from "java.util.function.Consumer"
+import {$EventExecutor, $EventExecutor$$Type} from "io.netty.util.concurrent.EventExecutor"
 import {$TimeUnit$$Type} from "java.util.concurrent.TimeUnit"
+import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$ChannelFuture} from "io.netty.channel.ChannelFuture"
 
 /**
@@ -1421,15 +1421,15 @@ import {$Spliterator} from "java.util.Spliterator"
 import {$List} from "java.util.List"
 import {$EventExecutorGroup$$Type} from "io.netty.util.concurrent.EventExecutorGroup"
 import {$ChannelPromise, $ChannelPromise$$Type} from "io.netty.channel.ChannelPromise"
-import {$ChannelHandlerContext} from "io.netty.channel.ChannelHandlerContext"
 import {$Channel} from "io.netty.channel.Channel"
+import {$ChannelHandlerContext} from "io.netty.channel.ChannelHandlerContext"
 import {$Map$Entry, $Map$Entry$$Type} from "java.util.Map$Entry"
 import {$ChannelOutboundInvoker, $ChannelOutboundInvoker$$Interface} from "io.netty.channel.ChannelOutboundInvoker"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$ChannelFuture} from "io.netty.channel.ChannelFuture"
 import {$ChannelProgressivePromise} from "io.netty.channel.ChannelProgressivePromise"
-import {$ChannelHandler, $ChannelHandler$$Type} from "io.netty.channel.ChannelHandler"
 import {$Class$$Type} from "java.lang.Class"
+import {$ChannelHandler, $ChannelHandler$$Type} from "io.netty.channel.ChannelHandler"
 import {$Throwable$$Type} from "java.lang.Throwable"
 
 /**
@@ -1444,6 +1444,8 @@ export interface $ChannelPipeline$$Interface extends $ChannelInboundInvoker$$Int
 export class $ChannelPipeline implements $ChannelPipeline$$Interface {
  "addAfter"(arg0: StringJS, arg1: StringJS, arg2: $ChannelHandler$$Type): $ChannelPipeline
  "addAfter"(arg0: $EventExecutorGroup$$Type, arg1: StringJS, arg2: StringJS, arg3: $ChannelHandler$$Type): $ChannelPipeline
+ "addBefore"(arg0: $EventExecutorGroup$$Type, arg1: StringJS, arg2: StringJS, arg3: $ChannelHandler$$Type): $ChannelPipeline
+ "addBefore"(arg0: StringJS, arg1: StringJS, arg2: $ChannelHandler$$Type): $ChannelPipeline
  "lastContext"(): $ChannelHandlerContext
  "fireExceptionCaught"(arg0: $Throwable$$Type): $ChannelPipeline
  "fireChannelRead"(arg0: any): $ChannelPipeline
@@ -1454,16 +1456,14 @@ export class $ChannelPipeline implements $ChannelPipeline$$Interface {
  "fireChannelReadComplete"(): $ChannelPipeline
  "fireUserEventTriggered"(arg0: any): $ChannelPipeline
  "fireChannelWritabilityChanged"(): $ChannelPipeline
- "addBefore"(arg0: $EventExecutorGroup$$Type, arg1: StringJS, arg2: StringJS, arg3: $ChannelHandler$$Type): $ChannelPipeline
- "addBefore"(arg0: StringJS, arg1: StringJS, arg2: $ChannelHandler$$Type): $ChannelPipeline
- "remove"<T extends $ChannelHandler>(arg0: $Class$$Type<(T)>): T
  "remove"(arg0: StringJS): $ChannelHandler
  "remove"(arg0: $ChannelHandler$$Type): $ChannelPipeline
- "get"(arg0: StringJS): $ChannelHandler
+ "remove"<T extends $ChannelHandler>(arg0: $Class$$Type<(T)>): T
  "get"<T extends $ChannelHandler>(arg0: $Class$$Type<(T)>): T
- "context"(arg0: StringJS): $ChannelHandlerContext
- "context"(arg0: $ChannelHandler$$Type): $ChannelHandlerContext
+ "get"(arg0: StringJS): $ChannelHandler
  "context"(arg0: $Class$$Type<($ChannelHandler$$Type)>): $ChannelHandlerContext
+ "context"(arg0: $ChannelHandler$$Type): $ChannelHandlerContext
+ "context"(arg0: StringJS): $ChannelHandlerContext
  "flush"(): $ChannelPipeline
  "replace"<T extends $ChannelHandler>(arg0: $Class$$Type<(T)>, arg1: StringJS, arg2: $ChannelHandler$$Type): T
  "replace"(arg0: $ChannelHandler$$Type, arg1: StringJS, arg2: $ChannelHandler$$Type): $ChannelPipeline
@@ -1490,22 +1490,22 @@ export class $ChannelPipeline implements $ChannelPipeline$$Interface {
  "newProgressivePromise"(): $ChannelProgressivePromise
  "newSucceededFuture"(): $ChannelFuture
  "newFailedFuture"(arg0: $Throwable$$Type): $ChannelFuture
- "writeAndFlush"(arg0: any, arg1: $ChannelPromise$$Type): $ChannelFuture
  "writeAndFlush"(arg0: any): $ChannelFuture
+ "writeAndFlush"(arg0: any, arg1: $ChannelPromise$$Type): $ChannelFuture
  "newPromise"(): $ChannelPromise
+ "bind"(arg0: $SocketAddress$$Type): $ChannelFuture
+ "bind"(arg0: $SocketAddress$$Type, arg1: $ChannelPromise$$Type): $ChannelFuture
  "write"(arg0: any, arg1: $ChannelPromise$$Type): $ChannelFuture
  "write"(arg0: any): $ChannelFuture
  "read"(): $ChannelOutboundInvoker
+ "connect"(arg0: $SocketAddress$$Type, arg1: $SocketAddress$$Type, arg2: $ChannelPromise$$Type): $ChannelFuture
  "connect"(arg0: $SocketAddress$$Type, arg1: $ChannelPromise$$Type): $ChannelFuture
  "connect"(arg0: $SocketAddress$$Type, arg1: $SocketAddress$$Type): $ChannelFuture
  "connect"(arg0: $SocketAddress$$Type): $ChannelFuture
- "connect"(arg0: $SocketAddress$$Type, arg1: $SocketAddress$$Type, arg2: $ChannelPromise$$Type): $ChannelFuture
  "close"(): $ChannelFuture
  "close"(arg0: $ChannelPromise$$Type): $ChannelFuture
- "bind"(arg0: $SocketAddress$$Type, arg1: $ChannelPromise$$Type): $ChannelFuture
- "bind"(arg0: $SocketAddress$$Type): $ChannelFuture
- "disconnect"(arg0: $ChannelPromise$$Type): $ChannelFuture
  "disconnect"(): $ChannelFuture
+ "disconnect"(arg0: $ChannelPromise$$Type): $ChannelFuture
  "iterator"(): $Iterator<($Map$Entry<(StringJS), ($ChannelHandler)>)>
  "spliterator"(): $Spliterator<($Map$Entry<(StringJS), ($ChannelHandler)>)>
  "forEach"(arg0: $Consumer$$Type<($Map$Entry<(StringJS), ($ChannelHandler)>)>): void
@@ -1522,13 +1522,13 @@ export type $ChannelPipeline$$Original = $ChannelPipeline;}
 declare module "io.netty.channel.DefaultEventLoopGroup" {
 import {$Callable$$Type} from "java.util.concurrent.Callable"
 import {$Future} from "io.netty.util.concurrent.Future"
-import {$List} from "java.util.List"
 import {$Executor$$Type} from "java.util.concurrent.Executor"
+import {$List} from "java.util.List"
 import {$ThreadFactory$$Type} from "java.util.concurrent.ThreadFactory"
 import {$ScheduledFuture} from "io.netty.util.concurrent.ScheduledFuture"
 import {$Runnable, $Runnable$$Type} from "java.lang.Runnable"
-import {$MultithreadEventLoopGroup} from "io.netty.channel.MultithreadEventLoopGroup"
 import {$TimeUnit$$Type} from "java.util.concurrent.TimeUnit"
+import {$MultithreadEventLoopGroup} from "io.netty.channel.MultithreadEventLoopGroup"
 
 /**
  * This class is not allowed By KubeJS!

@@ -16,8 +16,8 @@ static readonly "NORMAL": $VertexFormatElement
 
 constructor(id: integer, index: integer, type: $VertexFormatElement$Type$$Type, usage: $VertexFormatElement$Usage$$Type, count: integer)
 
-public "usage"(): $VertexFormatElement$Usage
 public "byteSize"(): integer
+public "usage"(): $VertexFormatElement$Usage
 public "index"(): integer
 public "type"(): $VertexFormatElement$Type
 public "equals"(arg0: any): boolean
@@ -27,10 +27,10 @@ public "count"(): integer
 public static "register"(arg0: integer, arg1: integer, arg2: $VertexFormatElement$Type$$Type, arg3: $VertexFormatElement$Usage$$Type, arg4: integer): $VertexFormatElement
 public "id"(): integer
 public "mask"(): integer
-public static "byId"(arg0: integer): $VertexFormatElement
 public static "elementsFromMask"(arg0: integer): $Stream<($VertexFormatElement)>
-public "setupBufferState"(arg0: integer, arg1: long, arg2: integer): void
 public static "findNextId"(): integer
+public "setupBufferState"(arg0: integer, arg1: long, arg2: integer): void
+public static "byId"(arg0: integer): $VertexFormatElement
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -58,9 +58,6 @@ public "hashCode"(): integer
 public static "builder"(): $VertexFormat$Builder
 public "contains"(arg0: $VertexFormatElement$$Type): boolean
 public "getOffset"(arg0: $VertexFormatElement$$Type): integer
-public "getElementName"(arg0: $VertexFormatElement$$Type): StringJS
-public "getVertexSize"(): integer
-public "getOffsetsByElement"(): (integer)[]
 public "getElementsMask"(): integer
 public "setupBufferState"(): void
 public "clearBufferState"(): void
@@ -70,15 +67,18 @@ public "hasPosition"(): boolean
 public "hasNormal"(): boolean
 public "hasColor"(): boolean
 public "hasUV"(arg0: integer): boolean
+public "getOffsetsByElement"(): (integer)[]
+public "getElementName"(arg0: $VertexFormatElement$$Type): StringJS
 public "getElementAttributeNames"(): $List<(StringJS)>
+public "getVertexSize"(): integer
 get "elements"(): $List<($VertexFormatElement)>
-get "vertexSize"(): integer
-get "offsetsByElement"(): (integer)[]
 get "elementsMask"(): integer
 get "upBufferState"(): void
 get "immediateDrawVertexBuffer"(): $VertexBuffer
 get "elementMapping"(): $ImmutableMap<(StringJS), ($VertexFormatElement)>
+get "offsetsByElement"(): (integer)[]
 get "elementAttributeNames"(): $List<(StringJS)>
+get "vertexSize"(): integer
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -263,8 +263,8 @@ export type $VertexFormat$IndexType$$Type = (("short") | ("int"));
 export type $VertexFormat$IndexType$$Original = $VertexFormat$IndexType;}
 declare module "com.mojang.blaze3d.vertex.VertexBuffer" {
 import {$MeshData$$Type} from "com.mojang.blaze3d.vertex.MeshData"
-import {$AutoCloseable$$Interface} from "java.lang.AutoCloseable"
 import {$VertexBuffer$Usage$$Type} from "com.mojang.blaze3d.vertex.VertexBuffer$Usage"
+import {$AutoCloseable$$Interface} from "java.lang.AutoCloseable"
 import {$ShaderInstance$$Type} from "net.minecraft.client.renderer.ShaderInstance"
 import {$ByteBufferBuilder$Result$$Type} from "com.mojang.blaze3d.vertex.ByteBufferBuilder$Result"
 import {$VertexBufferHelper$$Interface} from "net.irisshaders.iris.helpers.VertexBufferHelper"
@@ -277,11 +277,11 @@ constructor(arg0: $VertexBuffer$Usage$$Type)
 public "uploadIndexBuffer"(arg0: $ByteBufferBuilder$Result$$Type): void
 public "saveBinding"(): void
 public "restoreBinding"(): void
-public static "unbind"(): void
 public "getFormat"(): $VertexFormat
+public "bind"(): void
+public static "unbind"(): void
 public "close"(): void
 public "isInvalid"(): boolean
-public "bind"(): void
 public "draw"(): void
 public "drawWithShader"(arg0: $Matrix4f$$Type, arg1: $Matrix4f$$Type, arg2: $ShaderInstance$$Type): void
 public "upload"(arg0: $MeshData$$Type): void
@@ -319,7 +319,7 @@ public "buildSortedIndexBuffer"(arg0: $ByteBufferBuilder$$Type, arg1: $VertexSor
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $MeshData$SortState$$Type = ({"centroids"?: ($Vector3f$$Type)[], "indexType"?: $VertexFormat$IndexType$$Type}) | ([centroids?: ($Vector3f$$Type)[], indexType?: $VertexFormat$IndexType$$Type]);
+export type $MeshData$SortState$$Type = ({"indexType"?: $VertexFormat$IndexType$$Type, "centroids"?: ($Vector3f$$Type)[]}) | ([indexType?: $VertexFormat$IndexType$$Type, centroids?: ($Vector3f$$Type)[]]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -347,16 +347,16 @@ import {$VertexConsumer, $VertexConsumer$$Type, $VertexConsumer$$Interface} from
 import {$Vector3f$$Type} from "org.joml.Vector3f"
 import {$BlockSensitiveBufferBuilder$$Interface} from "net.irisshaders.iris.vertices.BlockSensitiveBufferBuilder"
 import {$Matrix4f$$Type} from "org.joml.Matrix4f"
-import {$Matrix3f$$Type} from "org.joml.Matrix3f"
-import {$BakedQuad$$Type} from "net.minecraft.client.renderer.block.model.BakedQuad"
 import {$VertexFormatDescription$$Type} from "org.embeddedt.embeddium.api.vertex.format.VertexFormatDescription"
+import {$BakedQuad$$Type} from "net.minecraft.client.renderer.block.model.BakedQuad"
+import {$Matrix3f$$Type} from "org.joml.Matrix3f"
 import {$PoseStack$Pose$$Type} from "com.mojang.blaze3d.vertex.PoseStack$Pose"
 import {$MemoryStack$$Type} from "org.lwjgl.system.MemoryStack"
 import {$MeshData} from "com.mojang.blaze3d.vertex.MeshData"
 import {$ByteBufferBuilder, $ByteBufferBuilder$$Type} from "com.mojang.blaze3d.vertex.ByteBufferBuilder"
 import {$VertexFormat$Mode, $VertexFormat$Mode$$Type} from "com.mojang.blaze3d.vertex.VertexFormat$Mode"
-import {$VertexBufferWriter, $VertexBufferWriter$$Type, $VertexBufferWriter$$Interface} from "org.embeddedt.embeddium.api.vertex.buffer.VertexBufferWriter"
 import {$BufferBuilderAccessor$$Interface as $BufferBuilderAccessor$0$$Interface} from "io.wispforest.owo.mixin.BufferBuilderAccessor"
+import {$VertexBufferWriter, $VertexBufferWriter$$Type, $VertexBufferWriter$$Interface} from "org.embeddedt.embeddium.api.vertex.buffer.VertexBufferWriter"
 import {$BufferBuilderExt$$Interface} from "net.irisshaders.batchedentityrendering.impl.BufferBuilderExt"
 import {$ByteBuffer$$Type} from "java.nio.ByteBuffer"
 import {$BufferBuilderAccessor$$Interface} from "net.createmod.ponder.mixin.client.accessor.BufferBuilderAccessor"
@@ -369,11 +369,11 @@ readonly "buffer": $ByteBufferBuilder
 
 constructor(arg0: $ByteBufferBuilder$$Type, arg1: $VertexFormat$Mode$$Type, arg2: $VertexFormat$$Type)
 
-public "push"(arg0: $MemoryStack$$Type, arg1: long, arg2: integer, arg3: $VertexFormatDescription$$Type): void
-public "setColor"(arg0: integer): $VertexConsumer
 public "setColor"(arg0: integer, arg1: integer, arg2: integer, arg3: integer): $VertexConsumer
+public "setColor"(arg0: integer): $VertexConsumer
 public "getFormat"(): $VertexFormat
 public "build"(): $MeshData
+public "push"(arg0: $MemoryStack$$Type, arg1: long, arg2: integer, arg3: $VertexFormatDescription$$Type): void
 public "buildOrThrow"(): $MeshData
 public "setUv1"(arg0: integer, arg1: integer): $VertexConsumer
 public "setUv2"(arg0: integer, arg1: integer): $VertexConsumer
@@ -528,21 +528,21 @@ constructor()
 public "clear"(): boolean
 public "scale"(arg0: float, arg1: float, arg2: float): void
 public "last"(): $PoseStack$Pose
-public "translate"(arg0: float, arg1: float, arg2: float): void
+public "embeddium$setCachingEnabled"(arg0: boolean): void
+public "getPoseStack"(): $Deque
+public "setIdentity"(): void
+public "flywheel$transformStack"(): $PoseTransformStack
+public "flywheel$getPoseStack"(): $Deque
 public "translate"(arg0: double, arg1: double, arg2: double): void
+public "translate"(arg0: float, arg1: float, arg2: float): void
 public "pushPose"(): void
 public "popPose"(): void
 public "mulPose"(arg0: $Matrix4f$$Type): void
 public "mulPose"(arg0: $Quaternionf$$Type): void
 public "rotateAround"(arg0: $Quaternionf$$Type, arg1: float, arg2: float, arg3: float): void
-public "setIdentity"(): void
-public "flywheel$transformStack"(): $PoseTransformStack
-public "flywheel$getPoseStack"(): $Deque
-public "getPoseStack"(): $Deque
-public "embeddium$setCachingEnabled"(arg0: boolean): void
 public "pushTransformation"(arg0: $Transformation$$Type): void
-get "identity"(): void
 get "poseStack"(): $Deque
+get "identity"(): void
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -560,8 +560,8 @@ import {$VertexFormatElement$$Type} from "com.mojang.blaze3d.vertex.VertexFormat
 import {$Vector3f$$Type} from "org.joml.Vector3f"
 import {$ByteBuffer$$Type} from "java.nio.ByteBuffer"
 import {$Matrix4f$$Type} from "org.joml.Matrix4f"
-import {$BakedQuad$$Type} from "net.minecraft.client.renderer.block.model.BakedQuad"
 import {$Matrix3f$$Type} from "org.joml.Matrix3f"
+import {$BakedQuad$$Type} from "net.minecraft.client.renderer.block.model.BakedQuad"
 
 export interface $VertexConsumer$$Interface extends $IVertexConsumerExtension$$Interface {
 set "color"(value: integer)
@@ -628,17 +628,17 @@ import {$AutoCloseable$$Interface} from "java.lang.AutoCloseable"
 import {$ByteBufferBuilder$$Type} from "com.mojang.blaze3d.vertex.ByteBufferBuilder"
 import {$MeshData$SortState} from "com.mojang.blaze3d.vertex.MeshData$SortState"
 import {$ByteBufferBuilder$Result$$Type} from "com.mojang.blaze3d.vertex.ByteBufferBuilder$Result"
-import {$ByteBuffer} from "java.nio.ByteBuffer"
 import {$VertexSorting$$Type} from "com.mojang.blaze3d.vertex.VertexSorting"
+import {$ByteBuffer} from "java.nio.ByteBuffer"
 import {$MeshData$DrawState, $MeshData$DrawState$$Type} from "com.mojang.blaze3d.vertex.MeshData$DrawState"
 
 export class $MeshData implements $AutoCloseable$$Interface {
 constructor(arg0: $ByteBufferBuilder$Result$$Type, arg1: $MeshData$DrawState$$Type)
 
-public "sortQuads"(arg0: $ByteBufferBuilder$$Type, arg1: $VertexSorting$$Type): $MeshData$SortState
 public "drawState"(): $MeshData$DrawState
 public "vertexBuffer"(): $ByteBuffer
 public "indexBuffer"(): $ByteBuffer
+public "sortQuads"(arg0: $ByteBufferBuilder$$Type, arg1: $VertexSorting$$Type): $MeshData$SortState
 public "close"(): void
 }
 /**

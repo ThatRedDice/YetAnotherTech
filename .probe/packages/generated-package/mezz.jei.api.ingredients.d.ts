@@ -40,8 +40,8 @@ get "height"(): integer
 }
 
 export class $IIngredientRenderer<T> implements $IIngredientRenderer$$Interface {
- "renderBatch"(arg0: $GuiGraphics$$Type, arg1: $List$$Type<($BatchRenderElement$$Type<(T)>)>): void
  "getFontRenderer"(arg0: $Minecraft$$Type, arg1: T): $Font
+ "renderBatch"(arg0: $GuiGraphics$$Type, arg1: $List$$Type<($BatchRenderElement$$Type<(T)>)>): void
  "getWidth"(): integer
  "getHeight"(): integer
  "render"(arg0: $GuiGraphics$$Type, arg1: T): void

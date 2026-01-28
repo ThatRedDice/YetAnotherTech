@@ -4,8 +4,8 @@ import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$List$$Type} from "java.util.List"
 import {$BlockItem} from "net.minecraft.world.item.BlockItem"
-import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
+import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
 import {$SimpleWaterloggedBlock$$Interface} from "net.minecraft.world.level.block.SimpleWaterloggedBlock"
 import {$Holder$$Type} from "net.minecraft.core.Holder"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
@@ -13,16 +13,16 @@ import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$PotionContents, $PotionContents$$Type} from "net.minecraft.world.item.alchemy.PotionContents"
-import {$AdditionalItemPlacement, $AdditionalItemPlacement$$Type} from "net.mehvahdjukaar.moonlight.api.item.additional_placements.AdditionalItemPlacement"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$AdditionalItemPlacement, $AdditionalItemPlacement$$Type} from "net.mehvahdjukaar.moonlight.api.item.additional_placements.AdditionalItemPlacement"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Map} from "java.util.Map"
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
-import {$Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 import {$SoftFluidStack$$Type} from "net.mehvahdjukaar.moonlight.api.fluids.SoftFluidStack"
+import {$Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 
@@ -37,16 +37,16 @@ static readonly "BY_BLOCK": $Map<($Block), ($Item)>
 constructor(blockIn: $Block$$Type, builder: $Item$Properties$$Type)
 
 public "appendHoverText"(stack: $ItemStack$$Type, context: $Item$TooltipContext$$Type, tooltips: $List$$Type<($Component$$Type)>, tooltipFlag: $TooltipFlag$$Type): void
+public static "isPotionValid"(potion: $PotionContents$$Type): boolean
 public static "getPotion"(stack: $ItemStack$$Type): $PotionContents
 public static "getPotion"(stack: $SoftFluidStack$$Type): $PotionContents
-public static "isPotionValid"(potion: $PotionContents$$Type): boolean
 public "isBarVisible"(stack: $ItemStack$$Type): boolean
 public "getBarColor"(stack: $ItemStack$$Type): integer
 public "getDescriptionId"(stack: $ItemStack$$Type): StringJS
 public static "createItemStack"(pot: $Holder$$Type<($Potion)>): $ItemStack
 public "getPickupSound"(): $Optional<($SoundEvent)>
-public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "canPlaceLiquid"(arg0: $Player$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $Fluid$$Type): boolean
+public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "pickupBlock"(arg0: $Player$$Type, arg1: $LevelAccessor$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): $ItemStack
 public "moonlight$getAdditionalBehavior"(): $AdditionalItemPlacement
 public "moonlight$setAdditionalBehavior"(arg0: $AdditionalItemPlacement$$Type): void
@@ -66,8 +66,8 @@ export type $BambooSpikesTippedItem$$Type = ($BambooSpikesTippedItem);
  */
 export type $BambooSpikesTippedItem$$Original = $BambooSpikesTippedItem;}
 declare module "net.mehvahdjukaar.supplementaries.common.block.blocks.SignPostBlock" {
-import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$LootParams$Builder$$Type} from "net.minecraft.world.level.storage.loot.LootParams$Builder"
+import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$List} from "java.util.List"
@@ -81,8 +81,8 @@ import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$FenceMimicBlock} from "net.mehvahdjukaar.supplementaries.common.block.blocks.FenceMimicBlock"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$RenderShape} from "net.minecraft.world.level.block.RenderShape"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$IRotatable$$Interface} from "net.mehvahdjukaar.moonlight.api.block.IRotatable"
@@ -139,8 +139,8 @@ export type $SignPostBlock$$Original = $SignPostBlock;}
 declare module "net.mehvahdjukaar.supplementaries.common.items.crafting.TatteredBookRecipe$Serializer" {
 import {$TatteredBookRecipe} from "net.mehvahdjukaar.supplementaries.common.items.crafting.TatteredBookRecipe"
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
 
@@ -215,14 +215,14 @@ import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$Bl
 import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
+import {$PistonMovingBlockEntity$$Type} from "net.minecraft.world.level.block.piston.PistonMovingBlockEntity"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
-import {$PistonMovingBlockEntity$$Type} from "net.minecraft.world.level.block.piston.PistonMovingBlockEntity"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
-import {$Item} from "net.minecraft.world.item.Item"
 import {$IPistonMotionReact$$Interface} from "net.mehvahdjukaar.moonlight.api.block.IPistonMotionReact"
+import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$FallingBlock} from "net.minecraft.world.level.block.FallingBlock"
 import {$FallingBlockEntity$$Type} from "net.minecraft.world.entity.item.FallingBlockEntity"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
@@ -278,11 +278,11 @@ export type $SlidyBlock$$Original = $SlidyBlock;}
 declare module "net.mehvahdjukaar.supplementaries.common.items.crafting.ConfettiDyeRecipe" {
 import {$CraftingInput$$Type} from "net.minecraft.world.item.crafting.CraftingInput"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
-import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$Ingredient$$Type} from "net.minecraft.world.item.crafting.Ingredient"
+import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$CustomRecipe} from "net.minecraft.world.item.crafting.CustomRecipe"
-import {$CraftingBookCategory$$Type} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$CraftingBookCategory$$Type} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 
@@ -319,8 +319,8 @@ import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.
 import {$SimpleWaterloggedBlock$$Interface} from "net.minecraft.world.level.block.SimpleWaterloggedBlock"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
@@ -332,8 +332,8 @@ import {$Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 import {$FenceGateBlock} from "net.minecraft.world.level.block.FenceGateBlock"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
-import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
+import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$DirectionProperty} from "net.minecraft.world.level.block.state.properties.DirectionProperty"
@@ -374,8 +374,8 @@ public "getFluidState"(state: $BlockState$$Type): $FluidState
 public "getSoundType"(state: $BlockState$$Type): $SoundType
 public "neighborChanged"(state: $BlockState$$Type, world: $Level$$Type, pos: $BlockPos$$Type, neighborBlock: $Block$$Type, fromPos: $BlockPos$$Type, moving: boolean): void
 public "getPickupSound"(): $Optional<($SoundEvent)>
-public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "canPlaceLiquid"(arg0: $Player$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $Fluid$$Type): boolean
+public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "pickupBlock"(arg0: $Player$$Type, arg1: $LevelAccessor$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): $ItemStack
 public "getPickupSound"(arg0: $BlockState$$Type): $Optional<($SoundEvent)>
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
@@ -393,8 +393,8 @@ export type $IronGateBlock$$Original = $IronGateBlock;}
 declare module "net.mehvahdjukaar.supplementaries.common.block.blocks.EndermanSkullWallBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$WallSkullBlock} from "net.minecraft.world.level.block.WallSkullBlock"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
@@ -406,9 +406,9 @@ import {$Equipable} from "net.minecraft.world.item.Equipable"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
+import {$Item} from "net.minecraft.world.item.Item"
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
-import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -459,8 +459,8 @@ export type $EndermanSkullWallBlock$$Type = ($EndermanSkullWallBlock);
 export type $EndermanSkullWallBlock$$Original = $EndermanSkullWallBlock;}
 declare module "net.mehvahdjukaar.supplementaries.common.items.crafting.ConfettiDyeRecipe$Serializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$ConfettiDyeRecipe} from "net.mehvahdjukaar.supplementaries.common.items.crafting.ConfettiDyeRecipe"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
@@ -483,13 +483,13 @@ export type $ConfettiDyeRecipe$Serializer$$Type = ($ConfettiDyeRecipe$Serializer
 export type $ConfettiDyeRecipe$Serializer$$Original = $ConfettiDyeRecipe$Serializer;}
 declare module "net.mehvahdjukaar.supplementaries.common.items.EmptySliceMapItem" {
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
+import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
-import {$Block} from "net.minecraft.world.level.block.Block"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$EmptyMapItem} from "net.minecraft.world.item.EmptyMapItem"
@@ -520,8 +520,8 @@ declare module "net.mehvahdjukaar.supplementaries.common.items.WrenchItem" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Holder$$Type} from "net.minecraft.core.Holder"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
@@ -530,8 +530,8 @@ import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 
@@ -578,14 +578,14 @@ import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$DyeColor, $DyeColor$$Type} from "net.minecraft.world.item.DyeColor"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$WaterBlock} from "net.mehvahdjukaar.moonlight.api.block.WaterBlock"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$Vector2i} from "org.joml.Vector2i"
 import {$Block} from "net.minecraft.world.level.block.Block"
@@ -662,8 +662,8 @@ import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
 import {$Direction$Axis} from "net.minecraft.core.Direction$Axis"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -739,13 +739,13 @@ import {$List$$Type} from "java.util.List"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$IColored$$Interface} from "net.mehvahdjukaar.moonlight.api.block.IColored"
-import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$DyeColor, $DyeColor$$Type} from "net.minecraft.world.item.DyeColor"
+import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$AdditionalItemPlacement, $AdditionalItemPlacement$$Type} from "net.mehvahdjukaar.moonlight.api.item.additional_placements.AdditionalItemPlacement"
@@ -784,11 +784,11 @@ export type $BuntingItem$$Original = $BuntingItem;}
 declare module "net.mehvahdjukaar.supplementaries.common.items.crafting.TatteredBookRecipe" {
 import {$CraftingInput$$Type} from "net.minecraft.world.item.crafting.CraftingInput"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
-import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$Ingredient$$Type} from "net.minecraft.world.item.crafting.Ingredient"
+import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$CustomRecipe} from "net.minecraft.world.item.crafting.CustomRecipe"
-import {$CraftingBookCategory$$Type} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$CraftingBookCategory$$Type} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 
@@ -821,8 +821,8 @@ import {$Block} from "net.minecraft.world.level.block.Block"
 import {$DataComponentType} from "net.minecraft.core.component.DataComponentType"
 import {$QuiverContent$Mutable, $QuiverContent$Mutable$$Type} from "net.mehvahdjukaar.supplementaries.common.items.components.QuiverContent$Mutable"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$QuiverContent} from "net.mehvahdjukaar.supplementaries.common.items.components.QuiverContent"
 import {$Function$$Type} from "java.util.function.Function"
+import {$QuiverContent} from "net.mehvahdjukaar.supplementaries.common.items.components.QuiverContent"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
@@ -861,8 +861,8 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
@@ -882,11 +882,11 @@ public static "valueOf"(name: StringJS): $ModBlockProperties$PostType
 public "getOffset"(): float
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "width"(): integer
 get "name"(): StringJS
 get "offset"(): float
@@ -912,9 +912,9 @@ import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
+import {$Item} from "net.minecraft.world.item.Item"
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
-import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$WaterBlock} from "net.mehvahdjukaar.moonlight.api.block.WaterBlock"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
@@ -1006,8 +1006,8 @@ import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$CropBlock} from "net.minecraft.world.level.block.CropBlock"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$IBeeGrowable$$Interface} from "net.mehvahdjukaar.moonlight.api.block.IBeeGrowable"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -1017,8 +1017,8 @@ import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
-import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
+import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
@@ -1087,14 +1087,14 @@ export class $SpawnEntityWithPassengersFeature$ExtraData extends $Record {
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $SpawnEntityWithPassengersFeature$ExtraData$$Type = ({"boatType"?: ($WoodType$$Type)?, "lootTable"?: ($ResourceLocation$$Type)?}) | ([boatType?: ($WoodType$$Type)?, lootTable?: ($ResourceLocation$$Type)?]);
+export type $SpawnEntityWithPassengersFeature$ExtraData$$Type = ({"lootTable"?: ($ResourceLocation$$Type)?, "boatType"?: ($WoodType$$Type)?}) | ([lootTable?: ($ResourceLocation$$Type)?, boatType?: ($WoodType$$Type)?]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
 export type $SpawnEntityWithPassengersFeature$ExtraData$$Original = $SpawnEntityWithPassengersFeature$ExtraData;}
 declare module "net.mehvahdjukaar.supplementaries.common.worldgen.LocatedStructure" {
-import {$Structure, $Structure$$Type} from "net.minecraft.world.level.levelgen.structure.Structure"
 import {$StructureStart, $StructureStart$$Type} from "net.minecraft.world.level.levelgen.structure.StructureStart"
+import {$Structure, $Structure$$Type} from "net.minecraft.world.level.levelgen.structure.Structure"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
 import {$Record} from "java.lang.Record"
@@ -1115,7 +1115,7 @@ public "structure"(): $Holder<($Structure)>
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $LocatedStructure$$Type = ({"distSqrt"?: double, "position"?: $BlockPos$$Type, "start"?: $StructureStart$$Type, "structure"?: $Holder$$Type<($Structure)>}) | ([distSqrt?: double, position?: $BlockPos$$Type, start?: $StructureStart$$Type, structure?: $Holder$$Type<($Structure)>]);
+export type $LocatedStructure$$Type = ({"position"?: $BlockPos$$Type, "start"?: $StructureStart$$Type, "structure"?: $Holder$$Type<($Structure)>, "distSqrt"?: double}) | ([position?: $BlockPos$$Type, start?: $StructureStart$$Type, structure?: $Holder$$Type<($Structure)>, distSqrt?: double]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -1123,8 +1123,8 @@ export type $LocatedStructure$$Original = $LocatedStructure;}
 declare module "net.mehvahdjukaar.supplementaries.common.block.blocks.MovingSlidyBlockSource" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$DirectionalBlock} from "net.minecraft.world.level.block.DirectionalBlock"
 import {$RenderShape} from "net.minecraft.world.level.block.RenderShape"
+import {$DirectionalBlock} from "net.minecraft.world.level.block.DirectionalBlock"
 import {$Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
@@ -1132,8 +1132,8 @@ import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$DirectionProperty} from "net.minecraft.world.level.block.state.properties.DirectionProperty"
@@ -1185,14 +1185,14 @@ import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$WaterBlock} from "net.mehvahdjukaar.moonlight.api.block.WaterBlock"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -1242,8 +1242,8 @@ public "mirror"(state: $BlockState$$Type, mirrorIn: $Mirror$$Type): $BlockState
 public "animateTick"(stateIn: $BlockState$$Type, level: $Level$$Type, pos: $BlockPos$$Type, rand: $RandomSource$$Type): void
 public "getCloneItemStack"(level: $LevelReader$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type): $ItemStack
 public "onRemove"(state: $BlockState$$Type, level: $Level$$Type, pos: $BlockPos$$Type, newState: $BlockState$$Type, isMoving: boolean): void
-public "neighborChanged"(state: $BlockState$$Type, level: $Level$$Type, pos: $BlockPos$$Type, block: $Block$$Type, fromPos: $BlockPos$$Type, isMoving: boolean): void
 public "hasAnalogOutputSignal"(state: $BlockState$$Type): boolean
+public "neighborChanged"(state: $BlockState$$Type, level: $Level$$Type, pos: $BlockPos$$Type, block: $Block$$Type, fromPos: $BlockPos$$Type, isMoving: boolean): void
 public "getTicker"<T extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
 public "getListener"<T extends $BlockEntity>(arg0: $ServerLevel$$Type, arg1: T): $GameEventListener
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
@@ -1262,8 +1262,8 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
 export class $ModBlockProperties$Bunting extends $Enum<($ModBlockProperties$Bunting)> implements $StringRepresentable$$Interface {
@@ -1278,11 +1278,11 @@ public static "values"(): ($ModBlockProperties$Bunting)[]
 public static "valueOf"(name: StringJS): $ModBlockProperties$Bunting
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "connected"(): boolean
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
@@ -1297,8 +1297,8 @@ export type $ModBlockProperties$Bunting$$Type = (("none") | ("rope") | ("bunting
  */
 export type $ModBlockProperties$Bunting$$Original = $ModBlockProperties$Bunting;}
 declare module "net.mehvahdjukaar.supplementaries.common.block.blocks.JarBlock" {
-import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$LootParams$Builder$$Type} from "net.minecraft.world.level.storage.loot.LootParams$Builder"
+import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Mirror$$Type} from "net.minecraft.world.level.block.Mirror"
 import {$List} from "java.util.List"
@@ -1308,14 +1308,14 @@ import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$MenuProvider} from "net.minecraft.world.MenuProvider"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$WaterBlock} from "net.mehvahdjukaar.moonlight.api.block.WaterBlock"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$RenderShape} from "net.minecraft.world.level.block.RenderShape"
 import {$Block} from "net.minecraft.world.level.block.Block"
@@ -1357,10 +1357,10 @@ static readonly "FACING": $DirectionProperty
 constructor(properties: $BlockBehaviour$Properties$$Type)
 
 public "getStateForPlacement"(context: $BlockPlaceContext$$Type): $BlockState
-public "getDrops"(state: $BlockState$$Type, builder: $LootParams$Builder$$Type): $List<($ItemStack)>
-public "getBeaconColorMultiplier"(state: $BlockState$$Type, world: $LevelReader$$Type, pos: $BlockPos$$Type, beaconPos: $BlockPos$$Type): (float)[]
 public "getMenuProvider"(state: $BlockState$$Type, worldIn: $Level$$Type, pos: $BlockPos$$Type): $MenuProvider
 public "getAnalogOutputSignal"(blockState: $BlockState$$Type, world: $Level$$Type, pos: $BlockPos$$Type): integer
+public "getDrops"(state: $BlockState$$Type, builder: $LootParams$Builder$$Type): $List<($ItemStack)>
+public "getBeaconColorMultiplier"(state: $BlockState$$Type, world: $LevelReader$$Type, pos: $BlockPos$$Type, beaconPos: $BlockPos$$Type): (float)[]
 public "getTicker"<T extends $BlockEntity>(pLevel: $Level$$Type, pState: $BlockState$$Type, pBlockEntityType: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
 public "newBlockEntity"(pPos: $BlockPos$$Type, pState: $BlockState$$Type): $BlockEntity
 public "getJarLiquidColor"(pos: $BlockPos$$Type, world: $LevelReader$$Type): integer
@@ -1383,8 +1383,8 @@ export type $JarBlock$$Type = ($JarBlock);
  */
 export type $JarBlock$$Original = $JarBlock;}
 declare module "net.mehvahdjukaar.supplementaries.common.block.blocks.JarBoatBlock" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
@@ -1393,10 +1393,10 @@ import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
+import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
@@ -1459,12 +1459,12 @@ import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$Block} from "net.minecraft.world.level.block.Block"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
@@ -1515,8 +1515,8 @@ export type $LockBlock$$Type = ($LockBlock);
  */
 export type $LockBlock$$Original = $LockBlock;}
 declare module "net.mehvahdjukaar.supplementaries.common.block.blocks.AbstractPresentBlock" {
-import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$LootParams$Builder$$Type} from "net.minecraft.world.level.storage.loot.LootParams$Builder"
+import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$List} from "java.util.List"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
@@ -1527,14 +1527,14 @@ import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$IColored$$Interface} from "net.mehvahdjukaar.moonlight.api.block.IColored"
 import {$DyeColor} from "net.minecraft.world.item.DyeColor"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$WaterBlock} from "net.mehvahdjukaar.moonlight.api.block.WaterBlock"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -1574,10 +1574,10 @@ static readonly "SHAPE_LID": $VoxelShape
 
 public "canBeReplaced"(state: $BlockState$$Type, fluid: $Fluid$$Type): boolean
 public "getStateForPlacement"(context: $BlockPlaceContext$$Type): $BlockState
-public "getDrops"(state: $BlockState$$Type, builder: $LootParams$Builder$$Type): $List<($ItemStack)>
-public "playerWillDestroy"(worldIn: $Level$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type, player: $Player$$Type): $BlockState
 public "getMenuProvider"(state: $BlockState$$Type, worldIn: $Level$$Type, pos: $BlockPos$$Type): $MenuProvider
 public "getAnalogOutputSignal"(blockState: $BlockState$$Type, worldIn: $Level$$Type, pos: $BlockPos$$Type): integer
+public "getDrops"(state: $BlockState$$Type, builder: $LootParams$Builder$$Type): $List<($ItemStack)>
+public "playerWillDestroy"(worldIn: $Level$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type, player: $Player$$Type): $BlockState
 public "tick"(state: $BlockState$$Type, serverLevel: $ServerLevel$$Type, pos: $BlockPos$$Type, rand: $RandomSource$$Type): void
 public "getShape"(state: $BlockState$$Type, worldIn: $BlockGetter$$Type, pos: $BlockPos$$Type, context: $CollisionContext$$Type): $VoxelShape
 public "getColor"(): $DyeColor
@@ -1608,14 +1608,14 @@ import {$List, $List$$Type} from "java.util.List"
 import {$CustomPacketPayload$Type} from "net.minecraft.network.protocol.common.custom.CustomPacketPayload$Type"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
 import {$CustomPacketPayload} from "net.minecraft.network.protocol.common.custom.CustomPacketPayload"
-import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
+import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ServerboundCustomPayloadPacket} from "net.minecraft.network.protocol.common.ServerboundCustomPayloadPacket"
-import {$Vec3, $Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$Message, $Message$$Interface} from "net.mehvahdjukaar.moonlight.api.platform.network.Message"
+import {$Vec3, $Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
-import {$RegistryFriendlyByteBuf, $RegistryFriendlyByteBuf$$Type} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$ClientboundCustomPayloadPacket} from "net.minecraft.network.protocol.common.ClientboundCustomPayloadPacket"
+import {$RegistryFriendlyByteBuf, $RegistryFriendlyByteBuf$$Type} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$ConnectionProtocol$$Type} from "net.minecraft.network.ConnectionProtocol"
 import {$CustomPacketPayload$TypeAndCodec, $CustomPacketPayload$TypeAndCodec$$Type} from "net.minecraft.network.protocol.common.custom.CustomPacketPayload$TypeAndCodec"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
@@ -1663,8 +1663,8 @@ export type $ClientBoundParticlePacket$$Original = $ClientBoundParticlePacket;}
 declare module "net.mehvahdjukaar.supplementaries.common.items.FluteItem" {
 import {$HumanoidArm$$Type} from "net.minecraft.world.entity.HumanoidArm"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$PoseStack$$Type} from "com.mojang.blaze3d.vertex.PoseStack"
 import {$List$$Type} from "java.util.List"
+import {$PoseStack$$Type} from "com.mojang.blaze3d.vertex.PoseStack"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
@@ -1672,16 +1672,16 @@ import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$MultiBufferSource$$Type} from "net.minecraft.client.renderer.MultiBufferSource"
 import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
-import {$Item, $Item$$Type} from "net.minecraft.world.item.Item"
 import {$EntityModel, $EntityModel$$Type} from "net.minecraft.client.model.EntityModel"
+import {$Item, $Item$$Type} from "net.minecraft.world.item.Item"
 import {$IThirdPersonAnimationProvider, $IThirdPersonAnimationProvider$$Type, $IThirdPersonAnimationProvider$$Interface} from "net.mehvahdjukaar.moonlight.api.item.IThirdPersonAnimationProvider"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$SongInstrumentItem} from "net.mehvahdjukaar.supplementaries.common.items.SongInstrumentItem"
 import {$Map} from "java.util.Map"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$HumanoidModel$$Type} from "net.minecraft.client.model.HumanoidModel"
 import {$IFirstPersonAnimationProvider$$Type, $IFirstPersonAnimationProvider$$Interface} from "net.mehvahdjukaar.moonlight.api.item.IFirstPersonAnimationProvider"
 import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
@@ -1701,13 +1701,13 @@ public "appendHoverText"(stack: $ItemStack$$Type, context: $Item$TooltipContext$
 public "isFoil"(pStack: $ItemStack$$Type): boolean
 public "isValidRepairItem"(pStack: $ItemStack$$Type, pRepairCandidate: $ItemStack$$Type): boolean
 public static "getMaxHeadXRot"(xRot: float): float
-public "renderThirdPersonItem"<T extends $Player, M extends $EntityModel<(object)>>(parentModel: M, entity: $LivingEntity$$Type, stack: $ItemStack$$Type, humanoidArm: $HumanoidArm$$Type, poseStack: $PoseStack$$Type, bufferSource: $MultiBufferSource$$Type, light: integer): void
 public static "interactWithPet"(stack: $ItemStack$$Type, player: $Player$$Type, target: $Entity$$Type, hand: $InteractionHand$$Type): boolean
 public "poseLeftArm"<T extends $LivingEntity>(stack: $ItemStack$$Type, model: $HumanoidModel$$Type<(T)>, entity: T, mainHand: $HumanoidArm$$Type): boolean
 public "poseRightArm"<T extends $LivingEntity>(stack: $ItemStack$$Type, model: $HumanoidModel$$Type<(T)>, entity: T, mainHand: $HumanoidArm$$Type): boolean
 public "animateItemFirstPerson"(player: $Player$$Type, stack: $ItemStack$$Type, hand: $InteractionHand$$Type, arm: $HumanoidArm$$Type, poseStack: $PoseStack$$Type, partialTicks: float, pitch: float, attackAnim: float, handHeight: float): void
 public "isTwoHanded"(): boolean
 public "spawnNoteParticle"(level: $Level$$Type, entity: $LivingEntity$$Type, note: integer): void
+public "renderThirdPersonItem"<T extends $Player, M extends $EntityModel<(object)>>(parentModel: M, entity: $LivingEntity$$Type, stack: $ItemStack$$Type, humanoidArm: $HumanoidArm$$Type, poseStack: $PoseStack$$Type, bufferSource: $MultiBufferSource$$Type, light: integer): void
 public "use"(level: $Level$$Type, player: $Player$$Type, handIn: $InteractionHand$$Type): $InteractionResultHolder<($ItemStack)>
 public "releaseUsing"(stack: $ItemStack$$Type, pLevel: $Level$$Type, entity: $LivingEntity$$Type, pTimeCharged: integer): void
 public static "attachToItem"(target: $Item$$Type, object: $IThirdPersonAnimationProvider$$Type): void
@@ -1795,8 +1795,8 @@ import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -1840,8 +1840,8 @@ export type $FeatherBlock$$Type = ($FeatherBlock);
 export type $FeatherBlock$$Original = $FeatherBlock;}
 declare module "net.mehvahdjukaar.supplementaries.common.items.crafting.SafeRecipe$Serializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$SafeRecipe} from "net.mehvahdjukaar.supplementaries.common.items.crafting.SafeRecipe"
@@ -1867,20 +1867,20 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
 export class $BarnaclesMultifaceGrowthFeature$PlacementEnvironment extends $Enum<($BarnaclesMultifaceGrowthFeature$PlacementEnvironment)> implements $StringRepresentable$$Interface {
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public "getSerializedName"(): StringJS
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public "getSerializedName"(): StringJS
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
-get "remappedEnumConstantName"(): StringJS
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
+get "remappedEnumConstantName"(): StringJS
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -1896,9 +1896,9 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
-import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$List, $List$$Type} from "java.util.List"
+import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
@@ -1917,11 +1917,11 @@ public static "values"(): ($ModBlockProperties$RakeDirection)[]
 public static "valueOf"(name: StringJS): $ModBlockProperties$RakeDirection
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "directions"(): $List<($Direction)>
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
@@ -1945,20 +1945,20 @@ import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$WaterBlock} from "net.mehvahdjukaar.moonlight.api.block.WaterBlock"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$RenderShape} from "net.minecraft.world.level.block.RenderShape"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
@@ -1990,8 +1990,8 @@ static readonly "UPDATE_CLIENTS": integer
 
 constructor(properties: $BlockBehaviour$Properties$$Type)
 
-public "appendHoverText"(stack: $ItemStack$$Type, context: $Item$TooltipContext$$Type, tooltipComponents: $List$$Type<($Component$$Type)>, tooltipFlag: $TooltipFlag$$Type): void
 public "getAnalogOutputSignal"(blockState: $BlockState$$Type, world: $Level$$Type, pos: $BlockPos$$Type): integer
+public "appendHoverText"(stack: $ItemStack$$Type, context: $Item$TooltipContext$$Type, tooltipComponents: $List$$Type<($Component$$Type)>, tooltipFlag: $TooltipFlag$$Type): void
 public "getTicker"<T extends $BlockEntity>(pLevel: $Level$$Type, pState: $BlockState$$Type, pBlockEntityType: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
 public "newBlockEntity"(pPos: $BlockPos$$Type, pState: $BlockState$$Type): $BlockEntity
 public static "updatePower"(bs: $BlockState$$Type, world: $Level$$Type, pos: $BlockPos$$Type, isWindCharged: boolean): void
@@ -2026,28 +2026,28 @@ import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$WaterBlock} from "net.mehvahdjukaar.moonlight.api.block.WaterBlock"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
 import {$HitResult$$Type} from "net.minecraft.world.phys.HitResult"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$AttachFace} from "net.minecraft.world.level.block.state.properties.AttachFace"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
-import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
+import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
@@ -2112,8 +2112,8 @@ import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -2153,9 +2153,9 @@ static readonly "FACING": $DirectionProperty
 constructor(properties: $BlockBehaviour$Properties$$Type)
 
 public "getStateForPlacement"(context: $BlockPlaceContext$$Type): $BlockState
+public "propagatesSkylightDown"(state: $BlockState$$Type, reader: $BlockGetter$$Type, pos: $BlockPos$$Type): boolean
 public "updateShape"(stateIn: $BlockState$$Type, facing: $Direction$$Type, facingState: $BlockState$$Type, worldIn: $LevelAccessor$$Type, currentPos: $BlockPos$$Type, facingPos: $BlockPos$$Type): $BlockState
 public "playerWillDestroy"(worldIn: $Level$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type, player: $Player$$Type): $BlockState
-public "propagatesSkylightDown"(state: $BlockState$$Type, reader: $BlockGetter$$Type, pos: $BlockPos$$Type): boolean
 public "getShape"(state: $BlockState$$Type, worldIn: $BlockGetter$$Type, pos: $BlockPos$$Type, context: $CollisionContext$$Type): $VoxelShape
 public "rotate"(state: $BlockState$$Type, rot: $Rotation$$Type): $BlockState
 public "mirror"(state: $BlockState$$Type, mirrorIn: $Mirror$$Type): $BlockState
@@ -2184,26 +2184,26 @@ import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$MimicBlock} from "net.mehvahdjukaar.moonlight.api.block.MimicBlock"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
-import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
+import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$IFrameBlock$$Interface} from "net.mehvahdjukaar.supplementaries.common.block.blocks.IFrameBlock"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
-import {$FluidState} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
+import {$FluidState} from "net.minecraft.world.level.material.FluidState"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 
@@ -2234,21 +2234,21 @@ static readonly "UPDATE_CLIENTS": integer
 constructor(properties: $BlockBehaviour$Properties$$Type)
 
 public "getStateForPlacement"(context: $BlockPlaceContext$$Type): $BlockState
-public "updateShape"(stateIn: $BlockState$$Type, facing: $Direction$$Type, facingState: $BlockState$$Type, worldIn: $LevelAccessor$$Type, currentPos: $BlockPos$$Type, facingPos: $BlockPos$$Type): $BlockState
-public "skipRendering"(state: $BlockState$$Type, adjacentBlockState: $BlockState$$Type, side: $Direction$$Type): boolean
-public "getEnchantPowerBonus"(state: $BlockState$$Type, world: $LevelReader$$Type, pos: $BlockPos$$Type): float
 public "getOcclusionShape"(state: $BlockState$$Type, reader: $BlockGetter$$Type, pos: $BlockPos$$Type): $VoxelShape
 public "propagatesSkylightDown"(state: $BlockState$$Type, reader: $BlockGetter$$Type, pos: $BlockPos$$Type): boolean
 public "getShadeBrightness"(state: $BlockState$$Type, reader: $BlockGetter$$Type, pos: $BlockPos$$Type): float
+public "updateShape"(stateIn: $BlockState$$Type, facing: $Direction$$Type, facingState: $BlockState$$Type, worldIn: $LevelAccessor$$Type, currentPos: $BlockPos$$Type, facingPos: $BlockPos$$Type): $BlockState
 public "getAnalogOutputSignal"(state: $BlockState$$Type, world: $Level$$Type, pos: $BlockPos$$Type): integer
+public "skipRendering"(state: $BlockState$$Type, adjacentBlockState: $BlockState$$Type, side: $Direction$$Type): boolean
+public "getEnchantPowerBonus"(state: $BlockState$$Type, world: $LevelReader$$Type, pos: $BlockPos$$Type): float
 public "newBlockEntity"(pPos: $BlockPos$$Type, pState: $BlockState$$Type): $BlockEntity
 public "registerFilledBlock"(inserted: $Block$$Type, filled: $Block$$Type): void
 public "getFilledBlock"(inserted: $Block$$Type): $Block
 public "getShape"(state: $BlockState$$Type, level: $BlockGetter$$Type, pos: $BlockPos$$Type, collisionContext: $CollisionContext$$Type): $VoxelShape
 public "getFluidState"(state: $BlockState$$Type): $FluidState
 public "getCollisionShape"(state: $BlockState$$Type, reader: $BlockGetter$$Type, pos: $BlockPos$$Type, context: $CollisionContext$$Type): $VoxelShape
-public "getLightBlock"(state: $BlockState$$Type, level: $BlockGetter$$Type, pos: $BlockPos$$Type): integer
 public "hasAnalogOutputSignal"(state: $BlockState$$Type): boolean
+public "getLightBlock"(state: $BlockState$$Type, level: $BlockGetter$$Type, pos: $BlockPos$$Type): integer
 public "getTicker"<T extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
 public "getListener"<T extends $BlockEntity>(arg0: $ServerLevel$$Type, arg1: T): $GameEventListener
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
@@ -2263,8 +2263,8 @@ export type $FrameBlock$$Type = ($FrameBlock);
  */
 export type $FrameBlock$$Original = $FrameBlock;}
 declare module "net.mehvahdjukaar.supplementaries.common.block.blocks.SignPostWallBlock" {
-import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$LootParams$Builder$$Type} from "net.minecraft.world.level.storage.loot.LootParams$Builder"
+import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Mirror$$Type} from "net.minecraft.world.level.block.Mirror"
 import {$List} from "java.util.List"
@@ -2275,14 +2275,14 @@ import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$WaterBlock} from "net.mehvahdjukaar.moonlight.api.block.WaterBlock"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$HitResult$$Type} from "net.minecraft.world.phys.HitResult"
@@ -2350,8 +2350,8 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
 export class $ModBlockProperties$DisplayStatus extends $Enum<($ModBlockProperties$DisplayStatus)> implements $StringRepresentable$$Interface {
@@ -2366,11 +2366,11 @@ public static "values"(): ($ModBlockProperties$DisplayStatus)[]
 public static "valueOf"(name: StringJS): $ModBlockProperties$DisplayStatus
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
 }
@@ -2396,15 +2396,15 @@ import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
+import {$Item} from "net.minecraft.world.item.Item"
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
-import {$Item} from "net.minecraft.world.item.Item"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
-import {$DirectionProperty} from "net.minecraft.world.level.block.state.properties.DirectionProperty"
 import {$PushReaction} from "net.minecraft.world.level.material.PushReaction"
+import {$DirectionProperty} from "net.minecraft.world.level.block.state.properties.DirectionProperty"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $SpringLauncherBlock extends $Block {
@@ -2431,9 +2431,9 @@ static readonly "FACING": $DirectionProperty
 constructor(properties: $BlockBehaviour$Properties$$Type)
 
 public "getStateForPlacement"(context: $BlockPlaceContext$$Type): $BlockState
-public "setPlacedBy"(level: $Level$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type, placer: $LivingEntity$$Type, stack: $ItemStack$$Type): void
 public "useShapeForLightOcclusion"(state: $BlockState$$Type): boolean
 public "propagatesSkylightDown"(state: $BlockState$$Type, reader: $BlockGetter$$Type, pos: $BlockPos$$Type): boolean
+public "setPlacedBy"(level: $Level$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type, placer: $LivingEntity$$Type, stack: $ItemStack$$Type): void
 public "getShape"(state: $BlockState$$Type, level: $BlockGetter$$Type, pos: $BlockPos$$Type, context: $CollisionContext$$Type): $VoxelShape
 public "rotate"(state: $BlockState$$Type, rot: $Rotation$$Type): $BlockState
 public "mirror"(state: $BlockState$$Type, mirrorIn: $Mirror$$Type): $BlockState
@@ -2453,13 +2453,13 @@ export type $SpringLauncherBlock$$Original = $SpringLauncherBlock;}
 declare module "net.mehvahdjukaar.supplementaries.common.items.AltimeterItem" {
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$FeatureFlagSet$$Type} from "net.minecraft.world.flag.FeatureFlagSet"
-import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
+import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
-import {$Block} from "net.minecraft.world.level.block.Block"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Item} from "net.minecraft.world.item.Item"
 
@@ -2490,8 +2490,8 @@ declare module "net.mehvahdjukaar.supplementaries.common.block.blocks.SconceLeve
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$SconceWallBlock} from "net.mehvahdjukaar.supplementaries.common.block.blocks.SconceWallBlock"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -2500,8 +2500,8 @@ import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
 import {$ILightable$FireSoundType$$Type} from "net.mehvahdjukaar.moonlight.api.block.ILightable$FireSoundType"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$Supplier$$Type} from "java.util.function.Supplier"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$SimpleParticleType$$Type} from "net.minecraft.core.particles.SimpleParticleType"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
@@ -2557,8 +2557,8 @@ export type $SconceLeverBlock$$Original = $SconceLeverBlock;}
 declare module "net.mehvahdjukaar.supplementaries.common.worldgen.SpawnEntityWithPassengersFeature$Config" {
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$ConfiguredFeature} from "net.minecraft.world.level.levelgen.feature.ConfiguredFeature"
-import {$StructureTemplatePool$Projection, $StructureTemplatePool$Projection$$Type} from "net.minecraft.world.level.levelgen.structure.pools.StructureTemplatePool$Projection"
 import {$List, $List$$Type} from "java.util.List"
+import {$StructureTemplatePool$Projection, $StructureTemplatePool$Projection$$Type} from "net.minecraft.world.level.levelgen.structure.pools.StructureTemplatePool$Projection"
 import {$SpawnEntityWithPassengersFeature$ExtraData, $SpawnEntityWithPassengersFeature$ExtraData$$Type} from "net.mehvahdjukaar.supplementaries.common.worldgen.SpawnEntityWithPassengersFeature$ExtraData"
 import {$RuleTest, $RuleTest$$Type} from "net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest"
 import {$Stream} from "java.util.stream.Stream"
@@ -2574,8 +2574,8 @@ constructor(entity: $EntityType$$Type<(never)>, passengers: $List$$Type<($Entity
 public "projection"(): $StructureTemplatePool$Projection
 public "attempts"(): integer
 public "groundRule"(): $RuleTest
-public "entity"(): $EntityType<(never)>
 public "persistent"(): boolean
+public "entity"(): $EntityType<(never)>
 public "equals"(o: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
@@ -2597,11 +2597,11 @@ export type $SpawnEntityWithPassengersFeature$Config$$Original = $SpawnEntityWit
 declare module "net.mehvahdjukaar.supplementaries.common.items.crafting.TrappedPresentRecipe" {
 import {$CraftingInput$$Type} from "net.minecraft.world.item.crafting.CraftingInput"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
-import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$Ingredient$$Type} from "net.minecraft.world.item.crafting.Ingredient"
+import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$CustomRecipe} from "net.minecraft.world.item.crafting.CustomRecipe"
-import {$CraftingBookCategory$$Type} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$CraftingBookCategory$$Type} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 
@@ -2627,8 +2627,8 @@ export type $TrappedPresentRecipe$$Type = ($TrappedPresentRecipe);
 export type $TrappedPresentRecipe$$Original = $TrappedPresentRecipe;}
 declare module "net.mehvahdjukaar.supplementaries.common.block.blocks.UrnBlock" {
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
-import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$LootParams$Builder$$Type} from "net.minecraft.world.level.storage.loot.LootParams$Builder"
+import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$List} from "java.util.List"
@@ -2641,13 +2641,13 @@ import {$SimpleWaterloggedBlock$$Interface} from "net.minecraft.world.level.bloc
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
@@ -2657,9 +2657,9 @@ import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$FallingBlock} from "net.minecraft.world.level.block.FallingBlock"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
-import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
+import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 
@@ -2687,13 +2687,13 @@ static readonly "UPDATE_CLIENTS": integer
 constructor(properties: $BlockBehaviour$Properties$$Type)
 
 public "getStateForPlacement"(context: $BlockPlaceContext$$Type): $BlockState
+public "propagatesSkylightDown"(state: $BlockState$$Type, reader: $BlockGetter$$Type, pos: $BlockPos$$Type): boolean
 public "updateShape"(stateIn: $BlockState$$Type, facing: $Direction$$Type, facingState: $BlockState$$Type, worldIn: $LevelAccessor$$Type, currentPos: $BlockPos$$Type, facingPos: $BlockPos$$Type): $BlockState
+public "getAnalogOutputSignal"(blockState: $BlockState$$Type, world: $Level$$Type, pos: $BlockPos$$Type): integer
 public "getDrops"(state: $BlockState$$Type, builder: $LootParams$Builder$$Type): $List<($ItemStack)>
 public "playerWillDestroy"(pLevel: $Level$$Type, pPos: $BlockPos$$Type, pState: $BlockState$$Type, pPlayer: $Player$$Type): $BlockState
 public "onPlace"(state: $BlockState$$Type, worldIn: $Level$$Type, pos: $BlockPos$$Type, oldState: $BlockState$$Type, isMoving: boolean): void
 public "spawnAfterBreak"(state: $BlockState$$Type, level: $ServerLevel$$Type, pos: $BlockPos$$Type, stack: $ItemStack$$Type, bl: boolean): void
-public "propagatesSkylightDown"(state: $BlockState$$Type, reader: $BlockGetter$$Type, pos: $BlockPos$$Type): boolean
-public "getAnalogOutputSignal"(blockState: $BlockState$$Type, world: $Level$$Type, pos: $BlockPos$$Type): integer
 public "onProjectileHit"(pLevel: $Level$$Type, pState: $BlockState$$Type, pHit: $BlockHitResult$$Type, pProjectile: $Projectile$$Type): void
 public "newBlockEntity"(pPos: $BlockPos$$Type, pState: $BlockState$$Type): $BlockEntity
 public "getDustColor"(state: $BlockState$$Type, reader: $BlockGetter$$Type, pos: $BlockPos$$Type): integer
@@ -2706,8 +2706,8 @@ public "hasAnalogOutputSignal"(state: $BlockState$$Type): boolean
 public "getTicker"<T extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
 public "getListener"<T extends $BlockEntity>(arg0: $ServerLevel$$Type, arg1: T): $GameEventListener
 public "getPickupSound"(): $Optional<($SoundEvent)>
-public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "canPlaceLiquid"(arg0: $Player$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $Fluid$$Type): boolean
+public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "pickupBlock"(arg0: $Player$$Type, arg1: $LevelAccessor$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): $ItemStack
 public "getPickupSound"(arg0: $BlockState$$Type): $Optional<($SoundEvent)>
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
@@ -2791,13 +2791,13 @@ public "rotate"(state: $BlockState$$Type, rot: $Rotation$$Type): $BlockState
 public "mirror"(state: $BlockState$$Type, mirrorIn: $Mirror$$Type): $BlockState
 public "neighborChanged"(state: $BlockState$$Type, world: $Level$$Type, pos: $BlockPos$$Type, block: $Block$$Type, fromPos: $BlockPos$$Type, isMoving: boolean): void
 public "triggerEvent"(pState: $BlockState$$Type, pLevel: $Level$$Type, pPos: $BlockPos$$Type, pId: integer, pParam: integer): boolean
+public "tryLightUp"(player: $Entity$$Type, state: $BlockState$$Type, pos: $BlockPos$$Type, world: $LevelAccessor$$Type, fireSourceType: $ILightable$FireSoundType$$Type): boolean
+public "tryExtinguish"(player: $Entity$$Type, state: $BlockState$$Type, pos: $BlockPos$$Type, world: $LevelAccessor$$Type): boolean
 /**
  * 
  * @deprecated
  */
 public "interactWithEntity"(level: $Level$$Type, state: $BlockState$$Type, projectile: $Entity$$Type, pos: $BlockPos$$Type): boolean
-public "tryLightUp"(player: $Entity$$Type, state: $BlockState$$Type, pos: $BlockPos$$Type, world: $LevelAccessor$$Type, fireSourceType: $ILightable$FireSoundType$$Type): boolean
-public "tryExtinguish"(player: $Entity$$Type, state: $BlockState$$Type, pos: $BlockPos$$Type, world: $LevelAccessor$$Type): boolean
 public "canBeExtinguishedBy"(item: $ItemStack$$Type): boolean
 public "playExtinguishSound"(world: $LevelAccessor$$Type, pos: $BlockPos$$Type): void
 public "spawnSmokeParticles"(state: $BlockState$$Type, pos: $BlockPos$$Type, world: $LevelAccessor$$Type): void
@@ -2835,8 +2835,8 @@ import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$LiquidBlockContainer$$Interface} from "net.minecraft.world.level.block.LiquidBlockContainer"
 import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
-import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
+import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 import {$BucketPickup$$Interface} from "net.minecraft.world.level.block.BucketPickup"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
@@ -2850,8 +2850,8 @@ get "pickupSound"(): $Optional<($SoundEvent)>
 
 export class $ILavaAndWaterLoggable implements $ILavaAndWaterLoggable$$Interface {
  "getPickupSound"(): $Optional<($SoundEvent)>
- "placeLiquid"(world: $LevelAccessor$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type, fluidState: $FluidState$$Type): boolean
  "canPlaceLiquid"(player: $Player$$Type, reader: $BlockGetter$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type, fluid: $Fluid$$Type): boolean
+ "placeLiquid"(world: $LevelAccessor$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type, fluidState: $FluidState$$Type): boolean
  "pickupBlock"(player: $Player$$Type, pLevel: $LevelAccessor$$Type, pPos: $BlockPos$$Type, pState: $BlockState$$Type): $ItemStack
  "getPickupSound"(arg0: $BlockState$$Type): $Optional<($SoundEvent)>
 }
@@ -2867,11 +2867,11 @@ export type $ILavaAndWaterLoggable$$Original = $ILavaAndWaterLoggable;}
 declare module "net.mehvahdjukaar.supplementaries.common.items.crafting.SoapClearRecipe" {
 import {$CraftingInput$$Type} from "net.minecraft.world.item.crafting.CraftingInput"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
-import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$Ingredient$$Type} from "net.minecraft.world.item.crafting.Ingredient"
+import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$CustomRecipe} from "net.minecraft.world.item.crafting.CustomRecipe"
-import {$CraftingBookCategory$$Type} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$CraftingBookCategory$$Type} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 
@@ -2908,8 +2908,8 @@ import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -2948,15 +2948,15 @@ static readonly "FACING": $DirectionProperty
 constructor(properties: $BlockBehaviour$Properties$$Type)
 
 public "getStateForPlacement"(context: $BlockPlaceContext$$Type): $BlockState
-public "updateShape"(state: $BlockState$$Type, facing: $Direction$$Type, facingState: $BlockState$$Type, level: $LevelAccessor$$Type, currentPos: $BlockPos$$Type, facingPos: $BlockPos$$Type): $BlockState
 public "getMenuProvider"(state: $BlockState$$Type, worldIn: $Level$$Type, pos: $BlockPos$$Type): $MenuProvider
+public "updateShape"(state: $BlockState$$Type, facing: $Direction$$Type, facingState: $BlockState$$Type, level: $LevelAccessor$$Type, currentPos: $BlockPos$$Type, facingPos: $BlockPos$$Type): $BlockState
 public "getAnalogOutputSignal"(blockState: $BlockState$$Type, world: $Level$$Type, pos: $BlockPos$$Type): integer
 public "newBlockEntity"(pPos: $BlockPos$$Type, pState: $BlockState$$Type): $BlockEntity
 public "rotate"(state: $BlockState$$Type, rot: $Rotation$$Type): $BlockState
 public "mirror"(state: $BlockState$$Type, mirrorIn: $Mirror$$Type): $BlockState
 public "onRemove"(state: $BlockState$$Type, level: $Level$$Type, pos: $BlockPos$$Type, newState: $BlockState$$Type, isMoving: boolean): void
-public "neighborChanged"(state: $BlockState$$Type, world: $Level$$Type, pos: $BlockPos$$Type, pBlock: $Block$$Type, pFromPos: $BlockPos$$Type, pIsMoving: boolean): void
 public "hasAnalogOutputSignal"(state: $BlockState$$Type): boolean
+public "neighborChanged"(state: $BlockState$$Type, world: $Level$$Type, pos: $BlockPos$$Type, pBlock: $Block$$Type, pFromPos: $BlockPos$$Type, pIsMoving: boolean): void
 public "getTicker"<T extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
 public "getListener"<T extends $BlockEntity>(arg0: $ServerLevel$$Type, arg1: T): $GameEventListener
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
@@ -2979,8 +2979,8 @@ import {$HorizontalDirectionalBlock} from "net.minecraft.world.level.block.Horiz
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$IColored$$Interface} from "net.mehvahdjukaar.moonlight.api.block.IColored"
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
+import {$IColored$$Interface} from "net.mehvahdjukaar.moonlight.api.block.IColored"
 import {$DyeColor, $DyeColor$$Type} from "net.minecraft.world.item.DyeColor"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
@@ -3031,8 +3031,8 @@ declare module "net.mehvahdjukaar.supplementaries.common.block.blocks.RopeKnotBl
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$IRopeConnection$$Interface} from "net.mehvahdjukaar.supplementaries.common.block.IRopeConnection"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -3041,8 +3041,8 @@ import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$AbstractRopeKnotBlock} from "net.mehvahdjukaar.supplementaries.common.block.blocks.AbstractRopeKnotBlock"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
@@ -3106,10 +3106,10 @@ export type $RopeKnotBlock$$Original = $RopeKnotBlock;}
 declare module "net.mehvahdjukaar.supplementaries.common.items.BombItem" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$ProjectileItem$DispenseConfig} from "net.minecraft.world.item.ProjectileItem$DispenseConfig"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Projectile, $Projectile$$Type} from "net.minecraft.world.entity.projectile.Projectile"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Position$$Type} from "net.minecraft.core.Position"
@@ -3151,16 +3151,16 @@ export type $BombItem$$Type = ($BombItem);
  */
 export type $BombItem$$Original = $BombItem;}
 declare module "net.mehvahdjukaar.supplementaries.common.block.blocks.EndermanSkullBlock" {
-import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$SkullBlock} from "net.minecraft.world.level.block.SkullBlock"
+import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
@@ -3227,8 +3227,8 @@ import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$AdditionalItemPlacement, $AdditionalItemPlacement$$Type} from "net.mehvahdjukaar.moonlight.api.item.additional_placements.AdditionalItemPlacement"
 import {$StandingAndWallBlockItem} from "net.minecraft.world.item.StandingAndWallBlockItem"
@@ -3271,15 +3271,15 @@ import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$WaterBlock} from "net.mehvahdjukaar.moonlight.api.block.WaterBlock"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$ModBlockProperties$DisplayStatus} from "net.mehvahdjukaar.supplementaries.common.block.ModBlockProperties$DisplayStatus"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$WorldlyContainer} from "net.minecraft.world.WorldlyContainer"
@@ -3290,8 +3290,8 @@ import {$Direction$Axis} from "net.minecraft.core.Direction$Axis"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
-import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
+import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
@@ -3325,8 +3325,8 @@ constructor(properties: $BlockBehaviour$Properties$$Type)
 
 public "getStateForPlacement"(context: $BlockPlaceContext$$Type): $BlockState
 public "updateShape"(stateIn: $BlockState$$Type, facing: $Direction$$Type, facingState: $BlockState$$Type, level: $LevelAccessor$$Type, currentPos: $BlockPos$$Type, facingPos: $BlockPos$$Type): $BlockState
-public "getEnchantPowerBonus"(state: $BlockState$$Type, world: $LevelReader$$Type, pos: $BlockPos$$Type): float
 public "getAnalogOutputSignal"(blockState: $BlockState$$Type, world: $Level$$Type, pos: $BlockPos$$Type): integer
+public "getEnchantPowerBonus"(state: $BlockState$$Type, world: $LevelReader$$Type, pos: $BlockPos$$Type): float
 public "newBlockEntity"(pPos: $BlockPos$$Type, pState: $BlockState$$Type): $BlockEntity
 public static "canConnectTo"(state: $BlockState$$Type, pos: $BlockPos$$Type, world: $LevelAccessor$$Type, dir: $Direction$$Type, hasItem: boolean): boolean
 public static "canHaveItemAbove"(level: $LevelAccessor$$Type, pos: $BlockPos$$Type): boolean
@@ -3356,11 +3356,11 @@ import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Objec
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$Block} from "net.minecraft.world.level.block.Block"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
-import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
+import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $FlippedBlock extends $Block {
@@ -3400,10 +3400,10 @@ export type $FlippedBlock$$Original = $FlippedBlock;}
 declare module "net.mehvahdjukaar.supplementaries.common.utils.SlotReference$Empty" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
-import {$SlotReference, $SlotReference$$Interface} from "net.mehvahdjukaar.supplementaries.common.utils.SlotReference"
-import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$IQuiverEntity$$Type} from "net.mehvahdjukaar.supplementaries.common.entities.IQuiverEntity"
+import {$SlotReference, $SlotReference$$Interface} from "net.mehvahdjukaar.supplementaries.common.utils.SlotReference"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
+import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
@@ -3445,8 +3445,8 @@ import {$List$$Type} from "java.util.List"
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipComponent} from "net.minecraft.world.inventory.tooltip.TooltipComponent"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
@@ -3486,8 +3486,8 @@ import {$LootParams$Builder$$Type} from "net.minecraft.world.level.storage.loot.
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$List} from "java.util.List"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
@@ -3543,8 +3543,8 @@ import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -3617,11 +3617,11 @@ import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$PresentItem} from "net.mehvahdjukaar.supplementaries.common.items.PresentItem"
-import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$AdditionalItemPlacement, $AdditionalItemPlacement$$Type} from "net.mehvahdjukaar.moonlight.api.item.additional_placements.AdditionalItemPlacement"
 import {$Component} from "net.minecraft.network.chat.Component"
+import {$AdditionalItemPlacement, $AdditionalItemPlacement$$Type} from "net.mehvahdjukaar.moonlight.api.item.additional_placements.AdditionalItemPlacement"
 
 export class $TrappedPresentItem extends $PresentItem {
 static readonly "BASE_ATTACK_DAMAGE_ID": $ResourceLocation
@@ -3676,8 +3676,8 @@ import {$SelectableContainerContent$Mut} from "net.mehvahdjukaar.supplementaries
 import {$LunchBaskedContent$Mutable} from "net.mehvahdjukaar.supplementaries.common.items.components.LunchBaskedContent$Mutable"
 import {$SelectableContainerContent} from "net.mehvahdjukaar.supplementaries.common.items.components.SelectableContainerContent"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 
 export class $LunchBaskedContent extends $SelectableContainerContent<($LunchBaskedContent$Mutable)> {
@@ -3714,12 +3714,12 @@ import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
+import {$Item} from "net.minecraft.world.item.Item"
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
-import {$Item} from "net.minecraft.world.item.Item"
 import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$WaterBlock} from "net.mehvahdjukaar.moonlight.api.block.WaterBlock"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -3790,8 +3790,8 @@ import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 import {$LightUpBlock} from "net.mehvahdjukaar.supplementaries.common.block.blocks.LightUpBlock"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
-import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
+import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 
@@ -3849,9 +3849,9 @@ import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
+import {$Item} from "net.minecraft.world.item.Item"
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
-import {$Item} from "net.minecraft.world.item.Item"
 import {$BookPileBlock} from "net.mehvahdjukaar.supplementaries.common.block.blocks.BookPileBlock"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
@@ -3902,18 +3902,18 @@ export type $BookPileHorizontalBlock$$Type = ($BookPileHorizontalBlock);
 export type $BookPileHorizontalBlock$$Original = $BookPileHorizontalBlock;}
 declare module "net.mehvahdjukaar.supplementaries.common.items.BubbleBlowerItem" {
 import {$HumanoidArm$$Type} from "net.minecraft.world.entity.HumanoidArm"
-import {$Map} from "java.util.Map"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$PoseStack$$Type} from "com.mojang.blaze3d.vertex.PoseStack"
+import {$Map} from "java.util.Map"
 import {$List$$Type} from "java.util.List"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
+import {$PoseStack$$Type} from "com.mojang.blaze3d.vertex.PoseStack"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
-import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$HumanoidModel$$Type} from "net.minecraft.client.model.HumanoidModel"
+import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$UseAnim} from "net.minecraft.world.item.UseAnim"
 import {$Enchantment$$Type} from "net.minecraft.world.item.enchantment.Enchantment"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
@@ -3938,8 +3938,8 @@ public "appendHoverText"(stack: $ItemStack$$Type, context: $Item$TooltipContext$
 public "isEnchantable"(stack: $ItemStack$$Type): boolean
 public "getEnchantmentValue"(): integer
 public "shouldCauseReequipAnimation"(oldStack: $ItemStack$$Type, newStack: $ItemStack$$Type, slotChanged: boolean): boolean
-public "allowComponentsUpdateAnimation"(player: $Player$$Type, hand: $InteractionHand$$Type, oldStack: $ItemStack$$Type, newStack: $ItemStack$$Type): boolean
 public "canApplyAtEnchantingTable"(stack: $ItemStack$$Type, enchantment: $Enchantment$$Type): boolean
+public "allowComponentsUpdateAnimation"(player: $Player$$Type, hand: $InteractionHand$$Type, oldStack: $ItemStack$$Type, newStack: $ItemStack$$Type): boolean
 public "poseLeftArm"<T extends $LivingEntity>(stack: $ItemStack$$Type, model: $HumanoidModel$$Type<(T)>, entity: T, mainHand: $HumanoidArm$$Type): boolean
 public "animateHands"<T extends $LivingEntity>(model: $HumanoidModel$$Type<(T)>, entity: T, leftHand: boolean): void
 public "poseRightArm"<T extends $LivingEntity>(stack: $ItemStack$$Type, model: $HumanoidModel$$Type<(T)>, entity: T, mainHand: $HumanoidArm$$Type): boolean
@@ -3978,17 +3978,17 @@ import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$WaterBlock} from "net.mehvahdjukaar.moonlight.api.block.WaterBlock"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
-import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
+import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
@@ -4090,13 +4090,13 @@ public "tryAdding"(pInsertedStack: $ItemStack$$Type): $ItemStack
 public "setSelectedSlot"(selectedSlot: integer): boolean
 public "tryRemovingOne"(): $ItemStack
 public "getSelectedSlot"(): integer
-public "getSelected"(): $ItemStack
 public "getStacks"(): $List<($ItemStack)>
+public "getSelected"(): $ItemStack
 public "toImmutable"(): T
 public "getSlots"(): integer
-public "cycle"(): boolean
-public "cycle"(clockWise: boolean): boolean
 public "cycle"(slotsMoved: integer): boolean
+public "cycle"(clockWise: boolean): boolean
+public "cycle"(): boolean
 public "getStackInSlot"(slot: integer): $ItemStack
 public "insertItem"(slot: integer, stack: $ItemStack$$Type, simulate: boolean): $ItemStack
 public "extractItem"(slot: integer, amount: integer, simulate: boolean): $ItemStack
@@ -4106,8 +4106,8 @@ public "isItemValid"(stack: $ItemStack$$Type): boolean
 public "setStackInSlot"(slot: integer, stack: $ItemStack$$Type): void
 set "selectedSlot"(value: integer)
 get "selectedSlot"(): integer
-get "selected"(): $ItemStack
 get "stacks"(): $List<($ItemStack)>
+get "selected"(): $ItemStack
 get "slots"(): integer
 }
 /**
@@ -4125,11 +4125,11 @@ import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$ItemAttributeModifiers} from "net.minecraft.world.item.component.ItemAttributeModifiers"
 import {$Block} from "net.minecraft.world.level.block.Block"
-import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Equipable} from "net.minecraft.world.item.Equipable"
+import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Supplier} from "java.util.function.Supplier"
-import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$ArmorItem} from "net.minecraft.world.item.ArmorItem"
+import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Holder$Reference} from "net.minecraft.core.Holder$Reference"
 import {$DispenseItemBehavior} from "net.minecraft.core.dispenser.DispenseItemBehavior"
@@ -4169,14 +4169,14 @@ import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$WaterBlock} from "net.mehvahdjukaar.moonlight.api.block.WaterBlock"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -4309,8 +4309,8 @@ import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$Direction$Axis} from "net.minecraft.core.Direction$Axis"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -4360,26 +4360,26 @@ import {$Mirror$$Type} from "net.minecraft.world.level.block.Mirror"
 import {$List, $List$$Type} from "java.util.List"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$LightUpWaterBlock} from "net.mehvahdjukaar.supplementaries.common.block.blocks.LightUpWaterBlock"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
+import {$LightUpWaterBlock} from "net.mehvahdjukaar.supplementaries.common.block.blocks.LightUpWaterBlock"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
-import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$Vec3, $Vec3$$Type} from "net.minecraft.world.phys.Vec3"
-import {$ParticleType, $ParticleType$$Type} from "net.minecraft.core.particles.ParticleType"
+import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$IColored$$Interface} from "net.mehvahdjukaar.moonlight.api.block.IColored"
-import {$Function, $Function$$Type} from "java.util.function.Function"
+import {$ParticleType, $ParticleType$$Type} from "net.minecraft.core.particles.ParticleType"
 import {$Supplier, $Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
+import {$IColored$$Interface} from "net.mehvahdjukaar.moonlight.api.block.IColored"
 import {$DyeColor, $DyeColor$$Type} from "net.minecraft.world.item.DyeColor"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
@@ -4422,6 +4422,7 @@ static readonly "FACING": $DirectionProperty
 static readonly "FACE": $EnumProperty<($AttachFace)>
 
 constructor(color: $DyeColor$$Type, properties: $BlockBehaviour$Properties$$Type, particleOffsets: $Function$$Type<($BlockState), ($List$$Type<($Vec3$$Type)>)>)
+constructor(color: $DyeColor$$Type, properties: $BlockBehaviour$Properties$$Type, particle: $Supplier$$Type<($ParticleType$$Type<($ParticleOptions$$Type)>)>, particleOffsets: $Function$$Type<($BlockState), ($List$$Type<($Vec3$$Type)>)>)
 /**
  * 
  * @deprecated
@@ -4432,7 +4433,6 @@ constructor(color: $DyeColor$$Type, properties: $BlockBehaviour$Properties$$Type
  * @deprecated
  */
 constructor(color: $DyeColor$$Type, properties: $BlockBehaviour$Properties$$Type, particle: $Supplier$$Type<($ParticleType$$Type<($ParticleOptions$$Type)>)>)
-constructor(color: $DyeColor$$Type, properties: $BlockBehaviour$Properties$$Type, particle: $Supplier$$Type<($ParticleType$$Type<($ParticleOptions$$Type)>)>, particleOffsets: $Function$$Type<($BlockState), ($List$$Type<($Vec3$$Type)>)>)
 
 public "canBeReplaced"(state: $BlockState$$Type, useContext: $BlockPlaceContext$$Type): boolean
 public "getStateForPlacement"(context: $BlockPlaceContext$$Type): $BlockState
@@ -4470,13 +4470,13 @@ export type $CandleHolderBlock$$Original = $CandleHolderBlock;}
 declare module "net.mehvahdjukaar.supplementaries.common.items.crafting.SusRecipe" {
 import {$CraftingInput$$Type} from "net.minecraft.world.item.crafting.CraftingInput"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$Ingredient$$Type} from "net.minecraft.world.item.crafting.Ingredient"
+import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$CustomRecipe} from "net.minecraft.world.item.crafting.CustomRecipe"
-import {$CraftingBookCategory$$Type} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
+import {$CraftingBookCategory$$Type} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
+import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 
 export class $SusRecipe extends $CustomRecipe {
@@ -4526,8 +4526,8 @@ export type $IAnalogRotatable$$Original = $IAnalogRotatable;}
 declare module "net.mehvahdjukaar.supplementaries.common.items.LunchBoxItem" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$SelectableContainerItem} from "net.mehvahdjukaar.supplementaries.common.items.SelectableContainerItem"
-import {$SlotReference} from "net.mehvahdjukaar.supplementaries.common.utils.SlotReference"
 import {$List$$Type} from "java.util.List"
+import {$SlotReference} from "net.mehvahdjukaar.supplementaries.common.utils.SlotReference"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$DataComponentType} from "net.minecraft.core.component.DataComponentType"
@@ -4545,8 +4545,8 @@ import {$ILeftClickReact$$Interface} from "net.mehvahdjukaar.moonlight.api.item.
 import {$Map} from "java.util.Map"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$UseAnim} from "net.minecraft.world.item.UseAnim"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 
@@ -4592,15 +4592,15 @@ declare module "net.mehvahdjukaar.supplementaries.common.items.RopeArrowItem" {
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$List$$Type} from "java.util.List"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$SlotAccess$$Type} from "net.minecraft.world.entity.SlotAccess"
 import {$Projectile} from "net.minecraft.world.entity.projectile.Projectile"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Position$$Type} from "net.minecraft.core.Position"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Slot$$Type} from "net.minecraft.world.inventory.Slot"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
@@ -4650,16 +4650,16 @@ declare module "net.mehvahdjukaar.supplementaries.common.block.blocks.RopeBlock"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$Map} from "java.util.Map"
-import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
 import {$AbstractRopeBlock} from "net.mehvahdjukaar.supplementaries.common.block.blocks.AbstractRopeBlock"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -4713,8 +4713,8 @@ export type $RopeBlock$$Type = ($RopeBlock);
 export type $RopeBlock$$Original = $RopeBlock;}
 declare module "net.mehvahdjukaar.supplementaries.common.items.crafting.SoapClearRecipe$Serializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$SoapClearRecipe} from "net.mehvahdjukaar.supplementaries.common.items.crafting.SoapClearRecipe"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
@@ -4741,11 +4741,11 @@ import {$Mirror$$Type} from "net.minecraft.world.level.block.Mirror"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
-import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$ModBlockProperties$RakeDirection} from "net.mehvahdjukaar.supplementaries.common.block.ModBlockProperties$RakeDirection"
+import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
@@ -4753,11 +4753,11 @@ import {$ColorRGBA, $ColorRGBA$$Type} from "net.minecraft.util.ColorRGBA"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
-import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$ColoredFallingBlock} from "net.minecraft.world.level.block.ColoredFallingBlock"
+import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
-import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
+import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -4808,8 +4808,8 @@ export type $RakedGravelBlock$$Type = ($RakedGravelBlock);
 export type $RakedGravelBlock$$Original = $RakedGravelBlock;}
 declare module "net.mehvahdjukaar.supplementaries.common.items.crafting.TrappedPresentRecipe$Serializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$TrappedPresentRecipe} from "net.mehvahdjukaar.supplementaries.common.items.crafting.TrappedPresentRecipe"
@@ -4837,11 +4837,11 @@ import {$List$$Type} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$DyeColor, $DyeColor$$Type} from "net.minecraft.world.item.DyeColor"
+import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 
@@ -4885,8 +4885,8 @@ import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$DyeColor$$Type} from "net.minecraft.world.item.DyeColor"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$AbstractPresentBlock} from "net.mehvahdjukaar.supplementaries.common.block.blocks.AbstractPresentBlock"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
@@ -4949,13 +4949,13 @@ import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Map} from "java.util.Map"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$SlotAccess$$Type} from "net.minecraft.world.entity.SlotAccess"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$SelectableContainerContent$Mut} from "net.mehvahdjukaar.supplementaries.common.items.components.SelectableContainerContent$Mut"
 import {$ItemEntity$$Type} from "net.minecraft.world.entity.item.ItemEntity"
 import {$SelectableContainerContent} from "net.mehvahdjukaar.supplementaries.common.items.components.SelectableContainerContent"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 
 export class $SelectableContainerItem<C extends $SelectableContainerContent<(object)>, M extends $SelectableContainerContent$Mut<(object)>> extends $Item {
@@ -5003,8 +5003,8 @@ export interface $IAntiquable$$Interface {
 }
 
 export class $IAntiquable implements $IAntiquable$$Interface {
- "supplementaries$isAntique"(): boolean
  "supplementaries$setAntique"(arg0: boolean): void
+ "supplementaries$isAntique"(): boolean
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -5026,21 +5026,21 @@ import {$BlockStateConfiguration} from "net.minecraft.world.level.levelgen.featu
 import {$BlockPileConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.BlockPileConfiguration"
 import {$NoneFeatureConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration"
 import {$SpawnEntityWithPassengersFeature$Config, $SpawnEntityWithPassengersFeature$Config$$Type} from "net.mehvahdjukaar.supplementaries.common.worldgen.SpawnEntityWithPassengersFeature$Config"
-import {$UnderwaterMagmaConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.UnderwaterMagmaConfiguration"
 import {$EndGatewayConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.EndGatewayConfiguration"
+import {$UnderwaterMagmaConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.UnderwaterMagmaConfiguration"
 import {$LakeFeature$Configuration} from "net.minecraft.world.level.levelgen.feature.LakeFeature$Configuration"
 import {$RootSystemConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.RootSystemConfiguration"
 import {$BonusChestFeature} from "net.minecraft.world.level.levelgen.feature.BonusChestFeature"
-import {$OreConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration"
 import {$NetherForestVegetationConfig} from "net.minecraft.world.level.levelgen.feature.configurations.NetherForestVegetationConfig"
+import {$OreConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration"
 import {$RandomBooleanFeatureConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.RandomBooleanFeatureConfiguration"
-import {$CountConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.CountConfiguration"
 import {$RandomPatchConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration"
+import {$CountConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.CountConfiguration"
 import {$RandomFeatureConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.RandomFeatureConfiguration"
 import {$HugeMushroomFeatureConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.HugeMushroomFeatureConfiguration"
 import {$SimpleBlockConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration"
-import {$MultifaceGrowthConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.MultifaceGrowthConfiguration"
 import {$DeltaFeatureConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.DeltaFeatureConfiguration"
+import {$MultifaceGrowthConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.MultifaceGrowthConfiguration"
 import {$LayerConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.LayerConfiguration"
 import {$ProbabilityFeatureConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.ProbabilityFeatureConfiguration"
 import {$ReplaceBlockConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.ReplaceBlockConfiguration"
@@ -5055,8 +5055,8 @@ import {$HugeFungusConfiguration} from "net.minecraft.world.level.levelgen.featu
 import {$TreeConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration"
 import {$DiskConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.DiskConfiguration"
 import {$PointedDripstoneConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.PointedDripstoneConfiguration"
-import {$SculkPatchConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.SculkPatchConfiguration"
 import {$SimpleRandomFeatureConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.SimpleRandomFeatureConfiguration"
+import {$SculkPatchConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.SculkPatchConfiguration"
 import {$DripstoneClusterConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.DripstoneClusterConfiguration"
 
 export class $SpawnEntityWithPassengersFeature extends $Feature<($SpawnEntityWithPassengersFeature$Config)> {
@@ -5151,9 +5151,9 @@ static readonly "CODEC": $Codec<($QuiverContent)>
 static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($QuiverContent)>
 
 public "toMutable"(): $SelectableContainerContent$Mut
+public static "empty"(count: integer): $QuiverContent
 public "getSelected"(): $ItemStack
 public "getSelected"(supporterArrows: $Predicate$$Type<($ItemStack)>): $ItemStack
-public static "empty"(count: integer): $QuiverContent
 get "selected"(): $ItemStack
 }
 /**
@@ -5173,8 +5173,8 @@ import {$BlockStateProvider, $BlockStateProvider$$Type} from "net.minecraft.worl
 import {$RuleTest, $RuleTest$$Type} from "net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest"
 import {$Stream} from "java.util.stream.Stream"
 import {$FeatureConfiguration$$Interface} from "net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration"
-import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Record} from "java.lang.Record"
+import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $BasaltAshFeature$Config extends $Record implements $FeatureConfiguration$$Interface {
 static readonly "CODEC": $Codec<($BasaltAshFeature$Config)>
@@ -5213,8 +5213,8 @@ import {$SkullBlock$Type} from "net.minecraft.world.level.block.SkullBlock$Type"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$Equipable} from "net.minecraft.world.item.Equipable"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -5267,10 +5267,10 @@ import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$WaterBlock} from "net.mehvahdjukaar.moonlight.api.block.WaterBlock"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block} from "net.minecraft.world.level.block.Block"
@@ -5311,8 +5311,8 @@ static readonly "FACING": $DirectionProperty
 constructor(properties: $BlockBehaviour$Properties$$Type)
 
 public "getStateForPlacement"(context: $BlockPlaceContext$$Type): $BlockState
-public "updateShape"(stateIn: $BlockState$$Type, facing: $Direction$$Type, facingState: $BlockState$$Type, worldIn: $LevelAccessor$$Type, currentPos: $BlockPos$$Type, facingPos: $BlockPos$$Type): $BlockState
 public "useShapeForLightOcclusion"(state: $BlockState$$Type): boolean
+public "updateShape"(stateIn: $BlockState$$Type, facing: $Direction$$Type, facingState: $BlockState$$Type, worldIn: $LevelAccessor$$Type, currentPos: $BlockPos$$Type, facingPos: $BlockPos$$Type): $BlockState
 public "getShape"(state: $BlockState$$Type, world: $BlockGetter$$Type, pos: $BlockPos$$Type, context: $CollisionContext$$Type): $VoxelShape
 public "rotate"(state: $BlockState$$Type, rot: $Rotation$$Type): $BlockState
 public "mirror"(state: $BlockState$$Type, mirrorIn: $Mirror$$Type): $BlockState
@@ -5344,18 +5344,18 @@ import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$RenderShape} from "net.minecraft.world.level.block.RenderShape"
-import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
+import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
@@ -5390,9 +5390,9 @@ static readonly "FACING": $DirectionProperty
 constructor(properties: $BlockBehaviour$Properties$$Type)
 
 public "getStateForPlacement"(context: $BlockPlaceContext$$Type): $BlockState
-public "isFireSource"(state: $BlockState$$Type, level: $LevelReader$$Type, pos: $BlockPos$$Type, direction: $Direction$$Type): boolean
 public "getOcclusionShape"(state: $BlockState$$Type, worldIn: $BlockGetter$$Type, pos: $BlockPos$$Type): $VoxelShape
 public "propagatesSkylightDown"(state: $BlockState$$Type, reader: $BlockGetter$$Type, pos: $BlockPos$$Type): boolean
+public "isFireSource"(state: $BlockState$$Type, level: $LevelReader$$Type, pos: $BlockPos$$Type, direction: $Direction$$Type): boolean
 public "getTicker"<T extends $BlockEntity>(pLevel: $Level$$Type, pState: $BlockState$$Type, pBlockEntityType: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
 public "newBlockEntity"(pPos: $BlockPos$$Type, pState: $BlockState$$Type): $BlockEntity
 public static "createVoxelShapeY"(height: float): $VoxelShape
@@ -5426,15 +5426,15 @@ import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$Explosion$$Type} from "net.minecraft.world.level.Explosion"
 import {$ILightable$FireSoundType$$Type} from "net.mehvahdjukaar.moonlight.api.block.ILightable$FireSoundType"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Map} from "java.util.Map"
-import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
+import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
@@ -5443,8 +5443,8 @@ import {$LightUpBlock} from "net.mehvahdjukaar.supplementaries.common.block.bloc
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
+import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$RedstoneSide} from "net.minecraft.world.level.block.state.properties.RedstoneSide"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
@@ -5533,8 +5533,8 @@ declare module "net.mehvahdjukaar.supplementaries.common.block.blocks.FrameBrace
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$List} from "java.util.List"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
@@ -5542,8 +5542,8 @@ import {$FrameBlock} from "net.mehvahdjukaar.supplementaries.common.block.blocks
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -5598,8 +5598,8 @@ import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$Equipable} from "net.minecraft.world.item.Equipable"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -5644,10 +5644,9 @@ export type $SpiderSkullWallBlock$$Type = ($SpiderSkullWallBlock);
 export type $SpiderSkullWallBlock$$Original = $SpiderSkullWallBlock;}
 declare module "net.mehvahdjukaar.supplementaries.common.fluids.FiniteFluid" {
 import {$ReplacementMatch} from "dev.latvian.mods.kubejs.recipe.match.ReplacementMatch"
-import {$Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
+import {$Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$Holder} from "net.minecraft.core.Holder"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$BucketItem$$Type} from "net.minecraft.world.item.BucketItem"
 import {$Vec3} from "net.minecraft.world.phys.Vec3"
@@ -5671,14 +5670,13 @@ public "getTickDelay"(level: $LevelReader$$Type): integer
 public "getOwnHeight"(state: $FluidState$$Type): float
 public "getLayersPerBlock"(): integer
 public "makeState"(level: integer): $FluidState
-public "getHeight"(state: $FluidState$$Type, level: $BlockGetter$$Type, pos: $BlockPos$$Type): float
 public "tick"(level: $Level$$Type, pos: $BlockPos$$Type, state: $FluidState$$Type): void
 public "getShape"(state: $FluidState$$Type, level: $BlockGetter$$Type, pos: $BlockPos$$Type): $VoxelShape
+public "getHeight"(state: $FluidState$$Type, level: $BlockGetter$$Type, pos: $BlockPos$$Type): float
 public "getBucket"(): $Item
 public "shouldSlowDown"(state: $FluidState$$Type): boolean
 public "getAmount"(state: $FluidState$$Type): integer
 public "getFlow"(blockReader: $BlockGetter$$Type, pos: $BlockPos$$Type, fluidState: $FluidState$$Type): $Vec3
-public "asHolder"(): $Holder
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 public static "wrap"(o: any): $ReplacementMatch
 get "layersPerBlock"(): integer
@@ -5697,8 +5695,8 @@ declare module "net.mehvahdjukaar.supplementaries.common.items.DispenserMinecart
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$DispenseItemBehavior} from "net.minecraft.core.dispenser.DispenseItemBehavior"
@@ -5737,20 +5735,20 @@ import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.
 import {$MenuProvider} from "net.minecraft.world.MenuProvider"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$WaterBlock} from "net.mehvahdjukaar.moonlight.api.block.WaterBlock"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$RenderShape} from "net.minecraft.world.level.block.RenderShape"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
@@ -5787,9 +5785,9 @@ static readonly "FACING": $DirectionProperty
 constructor(properties: $BlockBehaviour$Properties$$Type)
 
 public "getStateForPlacement"(context: $BlockPlaceContext$$Type): $BlockState
-public "appendHoverText"(stack: $ItemStack$$Type, context: $Item$TooltipContext$$Type, tooltipComponents: $List$$Type<($Component$$Type)>, tooltipFlag: $TooltipFlag$$Type): void
 public "getMenuProvider"(state: $BlockState$$Type, worldIn: $Level$$Type, pos: $BlockPos$$Type): $MenuProvider
 public "getAnalogOutputSignal"(blockState: $BlockState$$Type, world: $Level$$Type, pos: $BlockPos$$Type): integer
+public "appendHoverText"(stack: $ItemStack$$Type, context: $Item$TooltipContext$$Type, tooltipComponents: $List$$Type<($Component$$Type)>, tooltipFlag: $TooltipFlag$$Type): void
 public "getTicker"<T extends $BlockEntity>(pLevel: $Level$$Type, pState: $BlockState$$Type, pBlockEntityType: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
 public "newBlockEntity"(pPos: $BlockPos$$Type, pState: $BlockState$$Type): $BlockEntity
 public "getShape"(state: $BlockState$$Type, world: $BlockGetter$$Type, pos: $BlockPos$$Type, context: $CollisionContext$$Type): $VoxelShape
@@ -5823,15 +5821,15 @@ import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$MimicBlock} from "net.mehvahdjukaar.moonlight.api.block.MimicBlock"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$ModBlockProperties$PostType, $ModBlockProperties$PostType$$Type} from "net.mehvahdjukaar.supplementaries.common.block.ModBlockProperties$PostType"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$IRotatable$$Interface} from "net.mehvahdjukaar.moonlight.api.block.IRotatable"
@@ -5842,11 +5840,11 @@ import {$Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
-import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
-import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
+import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
+import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 
@@ -5893,8 +5891,8 @@ public "mirror"(state: $BlockState$$Type, mirror: $Mirror$$Type): $BlockState
 public "getFluidState"(state: $BlockState$$Type): $FluidState
 public "getCollisionShape"(state: $BlockState$$Type, world: $BlockGetter$$Type, pos: $BlockPos$$Type, context: $CollisionContext$$Type): $VoxelShape
 public "getPickupSound"(): $Optional<($SoundEvent)>
-public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "canPlaceLiquid"(arg0: $Player$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $Fluid$$Type): boolean
+public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "pickupBlock"(arg0: $Player$$Type, arg1: $LevelAccessor$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): $ItemStack
 public "getTicker"<T extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
 public "getListener"<T extends $BlockEntity>(arg0: $ServerLevel$$Type, arg1: T): $GameEventListener
@@ -5928,8 +5926,8 @@ static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($BookT
 constructor(item: $Item$$Type, enchantPower: float, isHorizontal: boolean, bookVisuals: $ResourceLocation$$Type)
 
 public "isHorizontal"(): boolean
-public "enchantPower"(): float
 public "bookVisuals"(): $ResourceLocation
+public "enchantPower"(): float
 public "item"(): $Item
 public "equals"(o: any): boolean
 public "toString"(): StringJS
@@ -5948,7 +5946,7 @@ get "horizontal"(): boolean
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $BookType$$Type = (Special.SupplementariesPlaceableBooks) | ({"isHorizontal"?: boolean, "bookVisuals"?: $ResourceLocation$$Type, "item"?: $Item$$Type, "enchantPower"?: float}) | ([isHorizontal?: boolean, bookVisuals?: $ResourceLocation$$Type, item?: $Item$$Type, enchantPower?: float]);
+export type $BookType$$Type = (Special.SupplementariesPlaceableBooks) | ({"bookVisuals"?: $ResourceLocation$$Type, "item"?: $Item$$Type, "enchantPower"?: float, "isHorizontal"?: boolean}) | ([bookVisuals?: $ResourceLocation$$Type, item?: $Item$$Type, enchantPower?: float, isHorizontal?: boolean]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -5956,14 +5954,14 @@ export type $BookType$$Original = $BookType;}
 declare module "net.mehvahdjukaar.supplementaries.common.items.AbstractMobContainerItem" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$List$$Type} from "java.util.List"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
@@ -6018,8 +6016,8 @@ export type $AbstractMobContainerItem$$Type = ($AbstractMobContainerItem);
  */
 export type $AbstractMobContainerItem$$Original = $AbstractMobContainerItem;}
 declare module "net.mehvahdjukaar.supplementaries.common.block.blocks.BlockGeneratorBlock" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$RenderShape} from "net.minecraft.world.level.block.RenderShape"
@@ -6077,12 +6075,12 @@ declare module "net.mehvahdjukaar.supplementaries.common.items.components.Select
 import {$TooltipComponent$$Interface} from "net.minecraft.world.inventory.tooltip.TooltipComponent"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$List, $List$$Type} from "java.util.List"
-import {$SelectableContainerContent$Mut} from "net.mehvahdjukaar.supplementaries.common.items.components.SelectableContainerContent$Mut"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$SelectableContainerContent$Mut} from "net.mehvahdjukaar.supplementaries.common.items.components.SelectableContainerContent$Mut"
 import {$TooltipProvider$$Interface} from "net.minecraft.world.item.component.TooltipProvider"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 
 export class $SelectableContainerContent<M extends $SelectableContainerContent$Mut<(object)>> implements $TooltipComponent$$Interface, $TooltipProvider$$Interface {
@@ -6098,11 +6096,11 @@ public "getSelectedItemCount"(): integer
 public "getContentUnsafe"(): $List<($ItemStack)>
 public "getSelectedUnsafe"(): $ItemStack
 public "getSelectedItem"(): $Item
-public "getSelected"(): $ItemStack
 public "equals"(o: any): boolean
 public "hashCode"(): integer
 public "isEmpty"(): boolean
 public "getSize"(): integer
+public "getSelected"(): $ItemStack
 public "getStackInSlot"(slot: integer): $ItemStack
 get "selectedCount"(): integer
 get "barSize"(): integer
@@ -6112,9 +6110,9 @@ get "selectedItemCount"(): integer
 get "contentUnsafe"(): $List<($ItemStack)>
 get "selectedUnsafe"(): $ItemStack
 get "selectedItem"(): $Item
-get "selected"(): $ItemStack
 get "empty"(): boolean
 get "size"(): integer
+get "selected"(): $ItemStack
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -6163,11 +6161,11 @@ import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$IColored$$Interface} from "net.mehvahdjukaar.moonlight.api.block.IColored"
 import {$DyeColor, $DyeColor$$Type} from "net.minecraft.world.item.DyeColor"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$WaterBlock} from "net.mehvahdjukaar.moonlight.api.block.WaterBlock"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block} from "net.minecraft.world.level.block.Block"
@@ -6209,9 +6207,9 @@ constructor(color: $DyeColor$$Type, properties: $BlockBehaviour$Properties$$Type
 
 public "canBeReplaced"(state: $BlockState$$Type, fluid: $Fluid$$Type): boolean
 public "getStateForPlacement"(context: $BlockPlaceContext$$Type): $BlockState
+public "getBlockSupportShape"(state: $BlockState$$Type, reader: $BlockGetter$$Type, pos: $BlockPos$$Type): $VoxelShape
 public "updateShape"(state: $BlockState$$Type, direction: $Direction$$Type, neighborState: $BlockState$$Type, level: $LevelAccessor$$Type, currentPos: $BlockPos$$Type, neighborPos: $BlockPos$$Type): $BlockState
 public "skipRendering"(state: $BlockState$$Type, adjacentBlockState: $BlockState$$Type, side: $Direction$$Type): boolean
-public "getBlockSupportShape"(state: $BlockState$$Type, reader: $BlockGetter$$Type, pos: $BlockPos$$Type): $VoxelShape
 public "supportsBlankColor"(): boolean
 public static "getNormalVector"(state: $BlockState$$Type): $Vector3f
 public "getShape"(state: $BlockState$$Type, level: $BlockGetter$$Type, pos: $BlockPos$$Type, context: $CollisionContext$$Type): $VoxelShape
@@ -6245,8 +6243,8 @@ import {$Half} from "net.minecraft.world.level.block.state.properties.Half"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$TrapDoorBlock} from "net.minecraft.world.level.block.TrapDoorBlock"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
@@ -6301,9 +6299,9 @@ import {$ConfiguredFeature} from "net.minecraft.world.level.levelgen.feature.Con
 import {$Stream} from "java.util.stream.Stream"
 import {$FeatureConfiguration$$Interface} from "net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration"
 import {$WoodType, $WoodType$$Type} from "net.mehvahdjukaar.moonlight.api.set.wood.WoodType"
-import {$RoadSignFeature$RandomState, $RoadSignFeature$RandomState$$Type} from "net.mehvahdjukaar.supplementaries.common.worldgen.RoadSignFeature$RandomState"
 import {$Record} from "java.lang.Record"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$RoadSignFeature$RandomState, $RoadSignFeature$RandomState$$Type} from "net.mehvahdjukaar.supplementaries.common.worldgen.RoadSignFeature$RandomState"
 
 export class $RoadSignFeature$Config extends $Record implements $FeatureConfiguration$$Interface {
 static readonly "CODEC": $Codec<($RoadSignFeature$Config)>
@@ -6323,8 +6321,8 @@ public "stoneStairs"(): $BlockState
 public "lanternDown"(): $BlockState
 public "lanternUp"(): $BlockState
 public "candleHolder"(): $BlockState
-public "postWood"(): $WoodType
 public "invalidMessage"(): StringJS
+public "postWood"(): $WoodType
 public "wall"(): $BlockState
 public "equals"(o: any): boolean
 public "toString"(): StringJS
@@ -6338,7 +6336,7 @@ get "features"(): $Stream<($ConfiguredFeature<(never), (never)>)>
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $RoadSignFeature$Config$$Type = ({"signWood"?: $WoodType$$Type, "trapdoor"?: $BlockState$$Type, "stoneStairs"?: $BlockState$$Type, "postWood"?: $WoodType$$Type, "cobble"?: $BlockState$$Type, "lanternUp"?: $BlockState$$Type, "randomState"?: $RoadSignFeature$RandomState$$Type, "slab"?: $BlockState$$Type, "invalidMessage"?: StringJS, "mossyWall"?: $BlockState$$Type, "lanternDown"?: $BlockState$$Type, "candleHolder"?: $BlockState$$Type, "wall"?: $BlockState$$Type, "stoneSlab"?: $BlockState$$Type, "stone"?: $BlockState$$Type, "log"?: $BlockState$$Type, "mossyCobble"?: $BlockState$$Type, "fence"?: $BlockState$$Type}) | ([signWood?: $WoodType$$Type, trapdoor?: $BlockState$$Type, stoneStairs?: $BlockState$$Type, postWood?: $WoodType$$Type, cobble?: $BlockState$$Type, lanternUp?: $BlockState$$Type, randomState?: $RoadSignFeature$RandomState$$Type, slab?: $BlockState$$Type, invalidMessage?: StringJS, mossyWall?: $BlockState$$Type, lanternDown?: $BlockState$$Type, candleHolder?: $BlockState$$Type, wall?: $BlockState$$Type, stoneSlab?: $BlockState$$Type, stone?: $BlockState$$Type, log?: $BlockState$$Type, mossyCobble?: $BlockState$$Type, fence?: $BlockState$$Type]);
+export type $RoadSignFeature$Config$$Type = ({"postWood"?: $WoodType$$Type, "cobble"?: $BlockState$$Type, "lanternUp"?: $BlockState$$Type, "randomState"?: $RoadSignFeature$RandomState$$Type, "slab"?: $BlockState$$Type, "invalidMessage"?: StringJS, "mossyWall"?: $BlockState$$Type, "lanternDown"?: $BlockState$$Type, "candleHolder"?: $BlockState$$Type, "wall"?: $BlockState$$Type, "stoneSlab"?: $BlockState$$Type, "stone"?: $BlockState$$Type, "log"?: $BlockState$$Type, "mossyCobble"?: $BlockState$$Type, "fence"?: $BlockState$$Type, "signWood"?: $WoodType$$Type, "trapdoor"?: $BlockState$$Type, "stoneStairs"?: $BlockState$$Type}) | ([postWood?: $WoodType$$Type, cobble?: $BlockState$$Type, lanternUp?: $BlockState$$Type, randomState?: $RoadSignFeature$RandomState$$Type, slab?: $BlockState$$Type, invalidMessage?: StringJS, mossyWall?: $BlockState$$Type, lanternDown?: $BlockState$$Type, candleHolder?: $BlockState$$Type, wall?: $BlockState$$Type, stoneSlab?: $BlockState$$Type, stone?: $BlockState$$Type, log?: $BlockState$$Type, mossyCobble?: $BlockState$$Type, fence?: $BlockState$$Type, signWood?: $WoodType$$Type, trapdoor?: $BlockState$$Type, stoneStairs?: $BlockState$$Type]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -6346,8 +6344,8 @@ export type $RoadSignFeature$Config$$Original = $RoadSignFeature$Config;}
 declare module "net.mehvahdjukaar.supplementaries.common.block.blocks.SconceBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$LightUpWaterBlock} from "net.mehvahdjukaar.supplementaries.common.block.blocks.LightUpWaterBlock"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
@@ -6359,9 +6357,9 @@ import {$ParticleType} from "net.minecraft.core.particles.ParticleType"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Item} from "net.minecraft.world.item.Item"
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
-import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -6413,18 +6411,18 @@ export type $SconceBlock$$Type = ($SconceBlock);
 export type $SconceBlock$$Original = $SconceBlock;}
 declare module "net.mehvahdjukaar.supplementaries.common.items.SlingshotItem" {
 import {$HumanoidArm$$Type} from "net.minecraft.world.entity.HumanoidArm"
-import {$Map} from "java.util.Map"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$Map} from "java.util.Map"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$PoseStack$$Type} from "com.mojang.blaze3d.vertex.PoseStack"
 import {$Predicate} from "java.util.function.Predicate"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$ProjectileWeaponItem} from "net.minecraft.world.item.ProjectileWeaponItem"
 import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
 import {$Holder$$Type} from "net.minecraft.core.Holder"
-import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$HumanoidModel$$Type} from "net.minecraft.client.model.HumanoidModel"
+import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$UseAnim} from "net.minecraft.world.item.UseAnim"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$IFirstPersonAnimationProvider, $IFirstPersonAnimationProvider$$Type, $IFirstPersonAnimationProvider$$Interface} from "net.mehvahdjukaar.moonlight.api.item.IFirstPersonAnimationProvider"
@@ -6447,8 +6445,8 @@ static readonly "BY_BLOCK": $Map<($Block), ($Item)>
 constructor(properties: $Item$Properties$$Type)
 
 public "supportsEnchantment"(stack: $ItemStack$$Type, enchantment: $Holder$$Type): boolean
-public static "getPowerForTime"(charge: float, stack: $ItemStack$$Type, entity: $LivingEntity$$Type): float
 public "getDefaultProjectileRange"(): integer
+public static "getPowerForTime"(charge: float, stack: $ItemStack$$Type, entity: $LivingEntity$$Type): float
 public static "getChargeDuration"(stack: $ItemStack$$Type, shooter: $LivingEntity$$Type): integer
 public "poseLeftArm"<T extends $LivingEntity>(stack: $ItemStack$$Type, model: $HumanoidModel$$Type<(T)>, entity: T, mainHand: $HumanoidArm$$Type): boolean
 public "poseRightArm"<T extends $LivingEntity>(stack: $ItemStack$$Type, model: $HumanoidModel$$Type<(T)>, entity: T, mainHand: $HumanoidArm$$Type): boolean
@@ -6515,7 +6513,7 @@ get "features"(): $Stream<($ConfiguredFeature<(never), (never)>)>
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $BarnaclesMultifaceGrowthFeature$Config$$Type = ({"searchRange"?: integer, "requiresWater"?: boolean, "placeBlock"?: $MultifaceBlock$$Type, "environment"?: $BarnaclesMultifaceGrowthFeature$PlacementEnvironment$$Type, "cantBePlacedOn"?: $HolderSet$$Type<($Block)>, "chanceOfSpreading"?: float}) | ([searchRange?: integer, requiresWater?: boolean, placeBlock?: $MultifaceBlock$$Type, environment?: $BarnaclesMultifaceGrowthFeature$PlacementEnvironment$$Type, cantBePlacedOn?: $HolderSet$$Type<($Block)>, chanceOfSpreading?: float]);
+export type $BarnaclesMultifaceGrowthFeature$Config$$Type = ({"requiresWater"?: boolean, "placeBlock"?: $MultifaceBlock$$Type, "environment"?: $BarnaclesMultifaceGrowthFeature$PlacementEnvironment$$Type, "cantBePlacedOn"?: $HolderSet$$Type<($Block)>, "chanceOfSpreading"?: float, "searchRange"?: integer}) | ([requiresWater?: boolean, placeBlock?: $MultifaceBlock$$Type, environment?: $BarnaclesMultifaceGrowthFeature$PlacementEnvironment$$Type, cantBePlacedOn?: $HolderSet$$Type<($Block)>, chanceOfSpreading?: float, searchRange?: integer]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -6525,19 +6523,19 @@ import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Objec
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$DoorBlock} from "net.minecraft.world.level.block.DoorBlock"
-import {$DoubleBlockHalf} from "net.minecraft.world.level.block.state.properties.DoubleBlockHalf"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
+import {$DoubleBlockHalf} from "net.minecraft.world.level.block.state.properties.DoubleBlockHalf"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$DoorHingeSide} from "net.minecraft.world.level.block.state.properties.DoorHingeSide"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
-import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
+import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
@@ -6572,8 +6570,8 @@ static readonly "FACING": $DirectionProperty
 constructor(builder: $BlockBehaviour$Properties$$Type)
 
 public "getStateForPlacement"(context: $BlockPlaceContext$$Type): $BlockState
-public static "tryOpenDoubleDoorKey"(world: $Level$$Type, state: $BlockState$$Type, pos: $BlockPos$$Type, player: $Player$$Type, hand: $InteractionHand$$Type, stack: $ItemStack$$Type): void
 public "canBeOpened"(state: $BlockState$$Type): boolean
+public static "tryOpenDoubleDoorKey"(world: $Level$$Type, state: $BlockState$$Type, pos: $BlockPos$$Type, player: $Player$$Type, hand: $InteractionHand$$Type, stack: $ItemStack$$Type): void
 public static "tryOpenDoubleDoor"(world: $Level$$Type, state: $BlockState$$Type, pos: $BlockPos$$Type): void
 public "neighborChanged"(state: $BlockState$$Type, worldIn: $Level$$Type, pos: $BlockPos$$Type, blockIn: $Block$$Type, fromPos: $BlockPos$$Type, isMoving: boolean): void
 public "moreculling$shouldAttemptToCull"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $BlockGetter$$Type, arg3: $BlockPos$$Type): boolean
@@ -6605,17 +6603,17 @@ import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$IRotatable$$Interface} from "net.mehvahdjukaar.moonlight.api.block.IRotatable"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
-import {$ModBlockProperties$Winding} from "net.mehvahdjukaar.supplementaries.common.block.ModBlockProperties$Winding"
 import {$Direction$Axis} from "net.minecraft.core.Direction$Axis"
+import {$ModBlockProperties$Winding} from "net.mehvahdjukaar.supplementaries.common.block.ModBlockProperties$Winding"
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
-import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
+import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -6673,8 +6671,8 @@ import {$LiquidSettings$$Type} from "net.minecraft.world.level.levelgen.structur
 import {$StructureType} from "net.minecraft.world.level.levelgen.structure.StructureType"
 import {$DimensionPadding$$Type} from "net.minecraft.world.level.levelgen.structure.pools.DimensionPadding"
 import {$Holder$$Type} from "net.minecraft.core.Holder"
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Structure$GenerationStub} from "net.minecraft.world.level.levelgen.structure.Structure$GenerationStub"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Structure} from "net.minecraft.world.level.levelgen.structure.Structure"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$StructureTemplatePool$$Type} from "net.minecraft.world.level.levelgen.structure.pools.StructureTemplatePool"
@@ -6703,8 +6701,8 @@ export type $RoadSignStructure$$Type = ($RoadSignStructure);
  */
 export type $RoadSignStructure$$Original = $RoadSignStructure;}
 declare module "net.mehvahdjukaar.supplementaries.common.block.blocks.SackBlock" {
-import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$LootParams$Builder$$Type} from "net.minecraft.world.level.storage.loot.LootParams$Builder"
+import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$List} from "java.util.List"
@@ -6719,27 +6717,27 @@ import {$MenuProvider} from "net.minecraft.world.MenuProvider"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$FallingBlockEntity$$Type} from "net.minecraft.world.entity.item.FallingBlockEntity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$ColorRGBA, $ColorRGBA$$Type} from "net.minecraft.util.ColorRGBA"
-import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
 import {$Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
-import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$ColoredFallingBlock} from "net.minecraft.world.level.block.ColoredFallingBlock"
+import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
-import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
+import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 
@@ -6771,27 +6769,27 @@ static readonly "UPDATE_CLIENTS": integer
 constructor(color: $ColorRGBA$$Type, properties: $BlockBehaviour$Properties$$Type)
 
 public "getStateForPlacement"(context: $BlockPlaceContext$$Type): $BlockState
+public "getMenuProvider"(state: $BlockState$$Type, worldIn: $Level$$Type, pos: $BlockPos$$Type): $MenuProvider
 public "updateShape"(stateIn: $BlockState$$Type, facing: $Direction$$Type, facingState: $BlockState$$Type, worldIn: $LevelAccessor$$Type, currentPos: $BlockPos$$Type, facingPos: $BlockPos$$Type): $BlockState
+public "getAnalogOutputSignal"(blockState: $BlockState$$Type, worldIn: $Level$$Type, pos: $BlockPos$$Type): integer
 public "getDrops"(state: $BlockState$$Type, builder: $LootParams$Builder$$Type): $List<($ItemStack)>
 public "playerWillDestroy"(worldIn: $Level$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type, player: $Player$$Type): $BlockState
 public "onPlace"(state: $BlockState$$Type, worldIn: $Level$$Type, pos: $BlockPos$$Type, oldState: $BlockState$$Type, isMoving: boolean): void
-public "getMenuProvider"(state: $BlockState$$Type, worldIn: $Level$$Type, pos: $BlockPos$$Type): $MenuProvider
-public "getAnalogOutputSignal"(blockState: $BlockState$$Type, worldIn: $Level$$Type, pos: $BlockPos$$Type): integer
 public "newBlockEntity"(pPos: $BlockPos$$Type, pState: $BlockState$$Type): $BlockEntity
 public "onLand"(level: $Level$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type, state1: $BlockState$$Type, blockEntity: $FallingBlockEntity$$Type): void
 public static "canFall"(pos: $BlockPos$$Type, world: $LevelAccessor$$Type): boolean
 public "tick"(state: $BlockState$$Type, level: $ServerLevel$$Type, pos: $BlockPos$$Type, rand: $RandomSource$$Type): void
 public "getShape"(state: $BlockState$$Type, worldIn: $BlockGetter$$Type, pos: $BlockPos$$Type, context: $CollisionContext$$Type): $VoxelShape
+public "codec"(): $MapCodec<($ColoredFallingBlock)>
 public "getFluidState"(state: $BlockState$$Type): $FluidState
 public "getCloneItemStack"(level: $LevelReader$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type): $ItemStack
-public "codec"(): $MapCodec<($ColoredFallingBlock)>
 public "onRemove"(state: $BlockState$$Type, worldIn: $Level$$Type, pos: $BlockPos$$Type, newState: $BlockState$$Type, isMoving: boolean): void
 public "hasAnalogOutputSignal"(state: $BlockState$$Type): boolean
 public "getTicker"<T extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
 public "getListener"<T extends $BlockEntity>(arg0: $ServerLevel$$Type, arg1: T): $GameEventListener
 public "getPickupSound"(): $Optional<($SoundEvent)>
-public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "canPlaceLiquid"(arg0: $Player$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $Fluid$$Type): boolean
+public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "pickupBlock"(arg0: $Player$$Type, arg1: $LevelAccessor$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): $ItemStack
 public "getPickupSound"(arg0: $BlockState$$Type): $Optional<($SoundEvent)>
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
@@ -6810,8 +6808,8 @@ declare module "net.mehvahdjukaar.supplementaries.common.items.RopeItem" {
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$AdditionalItemPlacement, $AdditionalItemPlacement$$Type} from "net.mehvahdjukaar.moonlight.api.item.additional_placements.AdditionalItemPlacement"
@@ -6855,14 +6853,14 @@ import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$MenuProvider} from "net.minecraft.world.MenuProvider"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$MimicBlock} from "net.mehvahdjukaar.moonlight.api.block.MimicBlock"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$RenderShape} from "net.minecraft.world.level.block.RenderShape"
 import {$Block} from "net.minecraft.world.level.block.Block"
@@ -6872,9 +6870,9 @@ import {$Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
-import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
+import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 
@@ -6899,15 +6897,15 @@ static readonly "INSTANT": float
 static readonly "UPDATE_CLIENTS": integer
 
 public "getStateForPlacement"(context: $BlockPlaceContext$$Type): $BlockState
-public "updateShape"(state: $BlockState$$Type, facing: $Direction$$Type, facingState: $BlockState$$Type, world: $LevelAccessor$$Type, currentPos: $BlockPos$$Type, facingPos: $BlockPos$$Type): $BlockState
 public "getMenuProvider"(state: $BlockState$$Type, worldIn: $Level$$Type, pos: $BlockPos$$Type): $MenuProvider
+public "updateShape"(state: $BlockState$$Type, facing: $Direction$$Type, facingState: $BlockState$$Type, world: $LevelAccessor$$Type, currentPos: $BlockPos$$Type, facingPos: $BlockPos$$Type): $BlockState
 public "getShape"(state: $BlockState$$Type, world: $BlockGetter$$Type, pos: $BlockPos$$Type, context: $CollisionContext$$Type): $VoxelShape
 public "getFluidState"(state: $BlockState$$Type): $FluidState
 public "getRenderShape"(state: $BlockState$$Type): $RenderShape
 public "getCollisionShape"(state: $BlockState$$Type, worldIn: $BlockGetter$$Type, pos: $BlockPos$$Type, context: $CollisionContext$$Type): $VoxelShape
 public "getPickupSound"(): $Optional<($SoundEvent)>
-public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "canPlaceLiquid"(arg0: $Player$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $Fluid$$Type): boolean
+public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "pickupBlock"(arg0: $Player$$Type, arg1: $LevelAccessor$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): $ItemStack
 public "getTicker"<T extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
@@ -6926,8 +6924,8 @@ export type $FenceMimicBlock$$Type = ($FenceMimicBlock);
  */
 export type $FenceMimicBlock$$Original = $FenceMimicBlock;}
 declare module "net.mehvahdjukaar.supplementaries.common.misc.IMovingBlockSource" {
-import {$BlockSource} from "net.minecraft.core.dispenser.BlockSource"
 import {$DispenserBlockEntity$$Type} from "net.minecraft.world.level.block.entity.DispenserBlockEntity"
+import {$BlockSource} from "net.minecraft.core.dispenser.BlockSource"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 
@@ -6949,8 +6947,8 @@ export type $IMovingBlockSource$$Type = ($IMovingBlockSource);
  */
 export type $IMovingBlockSource$$Original = $IMovingBlockSource;}
 declare module "net.mehvahdjukaar.supplementaries.common.block.blocks.SafeBlock" {
-import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$LootParams$Builder$$Type} from "net.minecraft.world.level.storage.loot.LootParams$Builder"
+import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Mirror$$Type} from "net.minecraft.world.level.block.Mirror"
 import {$Optional} from "java.util.Optional"
@@ -6967,8 +6965,8 @@ import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$ILavaAndWaterLoggable$$Interface} from "net.mehvahdjukaar.supplementaries.common.block.ILavaAndWaterLoggable"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$Item} from "net.minecraft.world.item.Item"
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
+import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -6976,8 +6974,8 @@ import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlo
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$Block} from "net.minecraft.world.level.block.Block"
-import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
 import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
+import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
@@ -6987,11 +6985,11 @@ import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
+import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
-import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
-import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
+import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$DirectionProperty} from "net.minecraft.world.level.block.state.properties.DirectionProperty"
 
 export class $SafeBlock extends $Block implements $ILavaAndWaterLoggable$$Interface, $EntityBlock$$Interface {
@@ -7022,15 +7020,15 @@ static readonly "FACING": $DirectionProperty
 constructor(properties: $BlockBehaviour$Properties$$Type)
 
 public "getStateForPlacement"(context: $BlockPlaceContext$$Type): $BlockState
+public "propagatesSkylightDown"(state: $BlockState$$Type, reader: $BlockGetter$$Type, pos: $BlockPos$$Type): boolean
+public "getMenuProvider"(state: $BlockState$$Type, level: $Level$$Type, pos: $BlockPos$$Type): $MenuProvider
 public "updateShape"(stateIn: $BlockState$$Type, facing: $Direction$$Type, facingState: $BlockState$$Type, level: $LevelAccessor$$Type, currentPos: $BlockPos$$Type, facingPos: $BlockPos$$Type): $BlockState
+public "getAnalogOutputSignal"(blockState: $BlockState$$Type, level: $Level$$Type, pos: $BlockPos$$Type): integer
 public "getDrops"(state: $BlockState$$Type, builder: $LootParams$Builder$$Type): $List<($ItemStack)>
 public "setPlacedBy"(level: $Level$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type, placer: $LivingEntity$$Type, stack: $ItemStack$$Type): void
 public "playerWillDestroy"(level: $Level$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type, player: $Player$$Type): $BlockState
 public "appendHoverText"(stack: $ItemStack$$Type, context: $Item$TooltipContext$$Type, tooltipComponents: $List$$Type<($Component$$Type)>, tooltipFlag: $TooltipFlag$$Type): void
 public "onDestroyedByPlayer"(state: $BlockState$$Type, world: $Level$$Type, pos: $BlockPos$$Type, player: $Player$$Type, willHarvest: boolean, fluid: $FluidState$$Type): boolean
-public "propagatesSkylightDown"(state: $BlockState$$Type, reader: $BlockGetter$$Type, pos: $BlockPos$$Type): boolean
-public "getMenuProvider"(state: $BlockState$$Type, level: $Level$$Type, pos: $BlockPos$$Type): $MenuProvider
-public "getAnalogOutputSignal"(blockState: $BlockState$$Type, level: $Level$$Type, pos: $BlockPos$$Type): integer
 public "newBlockEntity"(pos: $BlockPos$$Type, state: $BlockState$$Type): $BlockEntity
 public "tick"(state: $BlockState$$Type, serverLevel: $ServerLevel$$Type, pos: $BlockPos$$Type, rand: $RandomSource$$Type): void
 public "getShape"(state: $BlockState$$Type, level: $BlockGetter$$Type, pos: $BlockPos$$Type, context: $CollisionContext$$Type): $VoxelShape
@@ -7041,8 +7039,8 @@ public "getCloneItemStack"(level: $LevelReader$$Type, pos: $BlockPos$$Type, stat
 public "onRemove"(state: $BlockState$$Type, level: $Level$$Type, pos: $BlockPos$$Type, newState: $BlockState$$Type, isMoving: boolean): void
 public "hasAnalogOutputSignal"(state: $BlockState$$Type): boolean
 public "getPickupSound"(): $Optional<($SoundEvent)>
-public "placeLiquid"(world: $LevelAccessor$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type, fluidState: $FluidState$$Type): boolean
 public "canPlaceLiquid"(player: $Player$$Type, reader: $BlockGetter$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type, fluid: $Fluid$$Type): boolean
+public "placeLiquid"(world: $LevelAccessor$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type, fluidState: $FluidState$$Type): boolean
 public "pickupBlock"(player: $Player$$Type, pLevel: $LevelAccessor$$Type, pPos: $BlockPos$$Type, pState: $BlockState$$Type): $ItemStack
 public "getTicker"<T extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
 public "getListener"<T extends $BlockEntity>(arg0: $ServerLevel$$Type, arg1: T): $GameEventListener
@@ -7072,19 +7070,19 @@ import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
+import {$ModBlockProperties$Bunting} from "net.mehvahdjukaar.supplementaries.common.block.ModBlockProperties$Bunting"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$Map} from "java.util.Map"
-import {$ModBlockProperties$Bunting} from "net.mehvahdjukaar.supplementaries.common.block.ModBlockProperties$Bunting"
 import {$Block} from "net.minecraft.world.level.block.Block"
-import {$AbstractRopeBlock} from "net.mehvahdjukaar.supplementaries.common.block.blocks.AbstractRopeBlock"
 import {$IRotatable$$Interface} from "net.mehvahdjukaar.moonlight.api.block.IRotatable"
+import {$AbstractRopeBlock} from "net.mehvahdjukaar.supplementaries.common.block.blocks.AbstractRopeBlock"
 import {$HitResult$$Type} from "net.minecraft.world.phys.HitResult"
 import {$IWashable$$Interface} from "net.mehvahdjukaar.moonlight.api.block.IWashable"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -7092,8 +7090,8 @@ import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
-import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
+import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -7139,10 +7137,10 @@ public "getRotatedState"(state: $BlockState$$Type, world: $LevelAccessor$$Type, 
 public "rotateOverAxis"(state: $BlockState$$Type, level: $LevelAccessor$$Type, pos: $BlockPos$$Type, rotation: $Rotation$$Type, axis: $Direction$$Type, hit: $Vec3$$Type): $Optional<($Direction)>
 public "tryWash"(level: $Level$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type, hitVec: $Vec3$$Type): boolean
 public "hasConnection"(dir: $Direction$$Type, state: $BlockState$$Type): boolean
+public static "fromRope"(state: $BlockState$$Type, hit: $BlockHitResult$$Type): $BlockState
+public static "fromRope"(state: $BlockState$$Type): $BlockState
 public static "canSupportBunting"(state: $BlockState$$Type, index: integer): boolean
 public static "toRope"(state: $BlockState$$Type): $BlockState
-public static "fromRope"(state: $BlockState$$Type): $BlockState
-public static "fromRope"(state: $BlockState$$Type, hit: $BlockHitResult$$Type): $BlockState
 public "getShape"(state: $BlockState$$Type, worldIn: $BlockGetter$$Type, pos: $BlockPos$$Type, context: $CollisionContext$$Type): $VoxelShape
 public "rotate"(state: $BlockState$$Type, rotation: $Rotation$$Type): $BlockState
 public "rotate"(state: $BlockState$$Type, level: $LevelAccessor$$Type, pos: $BlockPos$$Type, direction: $Rotation$$Type): $BlockState
@@ -7194,8 +7192,8 @@ import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$Mirror$$Type} from "net.minecraft.world.level.block.Mirror"
-import {$List$$Type} from "java.util.List"
 import {$DirectionalBlock} from "net.minecraft.world.level.block.DirectionalBlock"
+import {$List$$Type} from "java.util.List"
 import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
@@ -7244,16 +7242,16 @@ constructor(properties: $BlockBehaviour$Properties$$Type)
 
 public "canBeReplaced"(state: $BlockState$$Type, fluid: $Fluid$$Type): boolean
 public "getStateForPlacement"(context: $BlockPlaceContext$$Type): $BlockState
-public "setPlacedBy"(level: $Level$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type, placer: $LivingEntity$$Type, stack: $ItemStack$$Type): void
-public "appendHoverText"(stack: $ItemStack$$Type, context: $Item$TooltipContext$$Type, tooltipComponents: $List$$Type<($Component$$Type)>, tooltipFlag: $TooltipFlag$$Type): void
 public "getOcclusionShape"(state: $BlockState$$Type, level: $BlockGetter$$Type, pos: $BlockPos$$Type): $VoxelShape
 public "propagatesSkylightDown"(state: $BlockState$$Type, level: $BlockGetter$$Type, pos: $BlockPos$$Type): boolean
 public "getMenuProvider"(state: $BlockState$$Type, level: $Level$$Type, pos: $BlockPos$$Type): $MenuProvider
 public "getShadeBrightness"(state: $BlockState$$Type, level: $BlockGetter$$Type, pos: $BlockPos$$Type): float
 public "getAnalogOutputSignal"(blockState: $BlockState$$Type, level: $Level$$Type, blockPos: $BlockPos$$Type): integer
+public "setPlacedBy"(level: $Level$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type, placer: $LivingEntity$$Type, stack: $ItemStack$$Type): void
+public "appendHoverText"(stack: $ItemStack$$Type, context: $Item$TooltipContext$$Type, tooltipComponents: $List$$Type<($Component$$Type)>, tooltipFlag: $TooltipFlag$$Type): void
 public "getVisualShape"(state: $BlockState$$Type, level: $BlockGetter$$Type, pos: $BlockPos$$Type, context: $CollisionContext$$Type): $VoxelShape
-public "tryLightUp"(player: $Entity$$Type, state: $BlockState$$Type, pos: $BlockPos$$Type, world: $LevelAccessor$$Type, fireSourceType: $ILightable$FireSoundType$$Type): boolean
 public "getTicker"<T extends $BlockEntity>(pLevel: $Level$$Type, pState: $BlockState$$Type, pBlockEntityType: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
+public "tryLightUp"(player: $Entity$$Type, state: $BlockState$$Type, pos: $BlockPos$$Type, world: $LevelAccessor$$Type, fireSourceType: $ILightable$FireSoundType$$Type): boolean
 public "newBlockEntity"(pos: $BlockPos$$Type, state: $BlockState$$Type): $BlockEntity
 public "isLitUp"(state: $BlockState$$Type, level: $BlockGetter$$Type, pos: $BlockPos$$Type): boolean
 public "setLitUp"(blockState: $BlockState$$Type, levelAccessor: $LevelAccessor$$Type, blockPos: $BlockPos$$Type, igniter: $Entity$$Type, on: boolean): void
@@ -7266,16 +7264,16 @@ public "mirror"(state: $BlockState$$Type, mirrorIn: $Mirror$$Type): $BlockState
 public "getRenderShape"(state: $BlockState$$Type): $RenderShape
 public "getCollisionShape"(state: $BlockState$$Type, level: $BlockGetter$$Type, pos: $BlockPos$$Type, context: $CollisionContext$$Type): $VoxelShape
 public "onRemove"(state: $BlockState$$Type, level: $Level$$Type, pos: $BlockPos$$Type, newState: $BlockState$$Type, isMoving: boolean): void
-public "neighborChanged"(state: $BlockState$$Type, level: $Level$$Type, pos: $BlockPos$$Type, block: $Block$$Type, fromPos: $BlockPos$$Type, isMoving: boolean): void
 public "hasAnalogOutputSignal"(blockState: $BlockState$$Type): boolean
+public "neighborChanged"(state: $BlockState$$Type, level: $Level$$Type, pos: $BlockPos$$Type, block: $Block$$Type, fromPos: $BlockPos$$Type, isMoving: boolean): void
 public "isSignalSource"(state: $BlockState$$Type): boolean
 public "getListener"<T extends $BlockEntity>(arg0: $ServerLevel$$Type, arg1: T): $GameEventListener
+public "tryExtinguish"(player: $Entity$$Type, state: $BlockState$$Type, pos: $BlockPos$$Type, world: $LevelAccessor$$Type): boolean
 /**
  * 
  * @deprecated
  */
 public "interactWithEntity"(level: $Level$$Type, state: $BlockState$$Type, projectile: $Entity$$Type, pos: $BlockPos$$Type): boolean
-public "tryExtinguish"(player: $Entity$$Type, state: $BlockState$$Type, pos: $BlockPos$$Type, world: $LevelAccessor$$Type): boolean
 public "canBeExtinguishedBy"(item: $ItemStack$$Type): boolean
 public "playExtinguishSound"(world: $LevelAccessor$$Type, pos: $BlockPos$$Type): void
 public "spawnSmokeParticles"(state: $BlockState$$Type, pos: $BlockPos$$Type, world: $LevelAccessor$$Type): void
@@ -7313,8 +7311,8 @@ export type $CannonBlock$$Original = $CannonBlock;}
 declare module "net.mehvahdjukaar.supplementaries.common.items.crafting.ItemLoreRecipe$Serializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$ItemLoreRecipe} from "net.mehvahdjukaar.supplementaries.common.items.crafting.ItemLoreRecipe"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
 
@@ -7341,11 +7339,11 @@ import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
-import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$PistonMovingBlockEntity$$Type} from "net.minecraft.world.level.block.piston.PistonMovingBlockEntity"
+import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$Item} from "net.minecraft.world.item.Item"
 import {$IPistonMotionReact$$Interface} from "net.mehvahdjukaar.moonlight.api.block.IPistonMotionReact"
+import {$Item} from "net.minecraft.world.item.Item"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
@@ -7402,8 +7400,8 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$SoftFluidStack$$Type} from "net.mehvahdjukaar.moonlight.api.fluids.SoftFluidStack"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Item} from "net.minecraft.world.item.Item"
 
 export class $ModBlockProperties$Topping extends $Enum<($ModBlockProperties$Topping)> implements $StringRepresentable$$Interface {
@@ -7420,11 +7418,11 @@ public static "values"(): ($ModBlockProperties$Topping)[]
 public static "valueOf"(name: StringJS): $ModBlockProperties$Topping
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
 }
@@ -7445,8 +7443,8 @@ import {$List$$Type} from "java.util.List"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Half} from "net.minecraft.world.level.block.state.properties.Half"
-import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
+import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ILavaAndWaterLoggable$$Interface} from "net.mehvahdjukaar.supplementaries.common.block.ILavaAndWaterLoggable"
@@ -7456,23 +7454,23 @@ import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$SoundType} from "net.minecraft.world.level.block.SoundType"
 import {$Block$$Type} from "net.minecraft.world.level.block.Block"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
-import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
+import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$TrapDoorBlock} from "net.minecraft.world.level.block.TrapDoorBlock"
-import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
+import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$DirectionProperty} from "net.minecraft.world.level.block.state.properties.DirectionProperty"
@@ -7510,10 +7508,10 @@ public "playerWillDestroy"(level: $Level$$Type, pos: $BlockPos$$Type, state: $Bl
 public "appendHoverText"(stack: $ItemStack$$Type, context: $Item$TooltipContext$$Type, tooltipComponents: $List$$Type<($Component$$Type)>, tooltipFlag: $TooltipFlag$$Type): void
 public "getPickupSound"(): $Optional<($SoundEvent)>
 public "onDestroyedByPlayer"(state: $BlockState$$Type, world: $Level$$Type, pos: $BlockPos$$Type, player: $Player$$Type, willHarvest: boolean, fluid: $FluidState$$Type): boolean
-public "placeLiquid"(p_204509_1_: $LevelAccessor$$Type, p_204509_2_: $BlockPos$$Type, p_204509_3_: $BlockState$$Type, p_204509_4_: $FluidState$$Type): boolean
-public "canPlaceLiquid"(player: $Player$$Type, level: $BlockGetter$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type, fluid: $Fluid$$Type): boolean
-public "pickupBlock"(player: $Player$$Type, pLevel: $LevelAccessor$$Type, pPos: $BlockPos$$Type, pState: $BlockState$$Type): $ItemStack
 public "newBlockEntity"(pPos: $BlockPos$$Type, pState: $BlockState$$Type): $BlockEntity
+public "canPlaceLiquid"(player: $Player$$Type, level: $BlockGetter$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type, fluid: $Fluid$$Type): boolean
+public "placeLiquid"(p_204509_1_: $LevelAccessor$$Type, p_204509_2_: $BlockPos$$Type, p_204509_3_: $BlockState$$Type, p_204509_4_: $FluidState$$Type): boolean
+public "pickupBlock"(player: $Player$$Type, pLevel: $LevelAccessor$$Type, pPos: $BlockPos$$Type, pState: $BlockState$$Type): $ItemStack
 public "getFluidState"(state: $BlockState$$Type): $FluidState
 public "getSoundType"(state: $BlockState$$Type): $SoundType
 public "neighborChanged"(state: $BlockState$$Type, worldIn: $Level$$Type, pos: $BlockPos$$Type, blockIn: $Block$$Type, fromPos: $BlockPos$$Type, isMoving: boolean): void
@@ -7532,8 +7530,8 @@ export type $NetheriteTrapdoorBlock$$Type = ($NetheriteTrapdoorBlock);
  */
 export type $NetheriteTrapdoorBlock$$Original = $NetheriteTrapdoorBlock;}
 declare module "net.mehvahdjukaar.supplementaries.common.block.blocks.SusGravelBricksBlock" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$Block} from "net.minecraft.world.level.block.Block"
@@ -7546,8 +7544,8 @@ import {$Item} from "net.minecraft.world.item.Item"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
-import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$GravelBricksBlock} from "net.mehvahdjukaar.supplementaries.common.block.blocks.GravelBricksBlock"
+import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
@@ -7594,12 +7592,12 @@ import {$List$$Type} from "java.util.List"
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$IColored$$Interface} from "net.mehvahdjukaar.moonlight.api.block.IColored"
-import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$DyeColor} from "net.minecraft.world.item.DyeColor"
+import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$AdditionalItemPlacement, $AdditionalItemPlacement$$Type} from "net.mehvahdjukaar.moonlight.api.item.additional_placements.AdditionalItemPlacement"
 
@@ -7691,8 +7689,8 @@ import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$ItemEntity$$Type} from "net.minecraft.world.entity.item.ItemEntity"
 import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Slot$$Type} from "net.minecraft.world.inventory.Slot"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$TooltipComponent} from "net.minecraft.world.inventory.tooltip.TooltipComponent"
@@ -7743,14 +7741,14 @@ import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -7785,8 +7783,8 @@ static readonly "UPDATE_CLIENTS": integer
 constructor(properties: $BlockBehaviour$Properties$$Type)
 
 public "canBeReplaced"(state: $BlockState$$Type, placeContext: $BlockPlaceContext$$Type): boolean
-public "isPossibleToRespawnInThis"(blockState: $BlockState$$Type): boolean
 public "propagatesSkylightDown"(state: $BlockState$$Type, blockGetter: $BlockGetter$$Type, pos: $BlockPos$$Type): boolean
+public "isPossibleToRespawnInThis"(blockState: $BlockState$$Type): boolean
 public "getTicker"<T extends $BlockEntity>(level: $Level$$Type, state: $BlockState$$Type, tBlockEntityType: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
 public "newBlockEntity"(pos: $BlockPos$$Type, state: $BlockState$$Type): $BlockEntity
 public "makeParticle"(pos: $BlockPos$$Type, level: $Level$$Type): void
@@ -7820,13 +7818,13 @@ import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$RenderShape} from "net.minecraft.world.level.block.RenderShape"
 import {$Block} from "net.minecraft.world.level.block.Block"
@@ -7886,8 +7884,8 @@ export type $SpringLauncherArmBlock$$Type = ($SpringLauncherArmBlock);
  */
 export type $SpringLauncherArmBlock$$Original = $SpringLauncherArmBlock;}
 declare module "net.mehvahdjukaar.supplementaries.common.block.blocks.SpeakerBlock" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$Mirror$$Type} from "net.minecraft.world.level.block.Mirror"
@@ -7898,8 +7896,8 @@ import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
@@ -8051,8 +8049,8 @@ import {$List$$Type} from "java.util.List"
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
@@ -8171,8 +8169,8 @@ export type $QuiverContent$Mutable$$Type = ($QuiverContent$Mutable);
  */
 export type $QuiverContent$Mutable$$Original = $QuiverContent$Mutable;}
 declare module "net.mehvahdjukaar.supplementaries.common.block.blocks.StructureTempBlock" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$RenderShape} from "net.minecraft.world.level.block.RenderShape"
@@ -8281,13 +8279,13 @@ public "isBonemealSuccess"(level: $Level$$Type, random: $RandomSource$$Type, pos
 public "performBonemeal"(level: $ServerLevel$$Type, random: $RandomSource$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type): void
 public "getSpreader"(): $MultifaceSpreader
 public "isValidStateForPlacement"(level: $BlockGetter$$Type, state: $BlockState$$Type, pos: $BlockPos$$Type, direction: $Direction$$Type): boolean
-public "animateTick"(state: $BlockState$$Type, level: $Level$$Type, pos: $BlockPos$$Type, random: $RandomSource$$Type): void
 public "codec"(): $MapCodec<($BarnaclesBlock)>
+public "animateTick"(state: $BlockState$$Type, level: $Level$$Type, pos: $BlockPos$$Type, random: $RandomSource$$Type): void
 public "getParticlePos"(arg0: $BlockPos$$Type): $BlockPos
 public "getType"(): $BonemealableBlock$Type
 public "getPickupSound"(): $Optional<($SoundEvent)>
-public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "canPlaceLiquid"(arg0: $Player$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $Fluid$$Type): boolean
+public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "pickupBlock"(arg0: $Player$$Type, arg1: $LevelAccessor$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): $ItemStack
 public "getPickupSound"(arg0: $BlockState$$Type): $Optional<($SoundEvent)>
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
@@ -8316,22 +8314,22 @@ import {$LocatedStructure$$Type} from "net.mehvahdjukaar.supplementaries.common.
 import {$BlockStateConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.BlockStateConfiguration"
 import {$BlockPileConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.BlockPileConfiguration"
 import {$NoneFeatureConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration"
-import {$UnderwaterMagmaConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.UnderwaterMagmaConfiguration"
 import {$EndGatewayConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.EndGatewayConfiguration"
+import {$UnderwaterMagmaConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.UnderwaterMagmaConfiguration"
 import {$LakeFeature$Configuration} from "net.minecraft.world.level.levelgen.feature.LakeFeature$Configuration"
 import {$RootSystemConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.RootSystemConfiguration"
 import {$BonusChestFeature} from "net.minecraft.world.level.levelgen.feature.BonusChestFeature"
-import {$OreConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration"
 import {$NetherForestVegetationConfig} from "net.minecraft.world.level.levelgen.feature.configurations.NetherForestVegetationConfig"
+import {$OreConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration"
 import {$RandomBooleanFeatureConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.RandomBooleanFeatureConfiguration"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$CountConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.CountConfiguration"
 import {$RandomPatchConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration"
+import {$CountConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.CountConfiguration"
 import {$RandomFeatureConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.RandomFeatureConfiguration"
 import {$HugeMushroomFeatureConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.HugeMushroomFeatureConfiguration"
 import {$SimpleBlockConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration"
-import {$MultifaceGrowthConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.MultifaceGrowthConfiguration"
 import {$DeltaFeatureConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.DeltaFeatureConfiguration"
+import {$MultifaceGrowthConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.MultifaceGrowthConfiguration"
 import {$LayerConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.LayerConfiguration"
 import {$ProbabilityFeatureConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.ProbabilityFeatureConfiguration"
 import {$ReplaceBlockConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.ReplaceBlockConfiguration"
@@ -8341,14 +8339,14 @@ import {$FossilFeatureConfiguration} from "net.minecraft.world.level.levelgen.fe
 import {$LargeDripstoneConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.LargeDripstoneConfiguration"
 import {$ColumnFeatureConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.ColumnFeatureConfiguration"
 import {$FeaturePlaceContext$$Type} from "net.minecraft.world.level.levelgen.feature.FeaturePlaceContext"
-import {$SpikeConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.SpikeConfiguration"
 import {$RoadSignFeature$Config, $RoadSignFeature$Config$$Type} from "net.mehvahdjukaar.supplementaries.common.worldgen.RoadSignFeature$Config"
+import {$SpikeConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.SpikeConfiguration"
 import {$HugeFungusConfiguration} from "net.minecraft.world.level.levelgen.feature.HugeFungusConfiguration"
 import {$TreeConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration"
 import {$DiskConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.DiskConfiguration"
 import {$PointedDripstoneConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.PointedDripstoneConfiguration"
-import {$SculkPatchConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.SculkPatchConfiguration"
 import {$SimpleRandomFeatureConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.SimpleRandomFeatureConfiguration"
+import {$SculkPatchConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.SculkPatchConfiguration"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$DripstoneClusterConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.DripstoneClusterConfiguration"
@@ -8441,14 +8439,14 @@ import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$WaterBlock} from "net.mehvahdjukaar.moonlight.api.block.WaterBlock"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$RenderShape} from "net.minecraft.world.level.block.RenderShape"
 import {$Block} from "net.minecraft.world.level.block.Block"
@@ -8523,21 +8521,21 @@ import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$WaterBlock} from "net.mehvahdjukaar.moonlight.api.block.WaterBlock"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
-import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$ModBlockProperties$Topping, $ModBlockProperties$Topping$$Type} from "net.mehvahdjukaar.supplementaries.common.block.ModBlockProperties$Topping"
-import {$ItemInteractionResult} from "net.minecraft.world.ItemInteractionResult"
-import {$ISoftFluidConsumer$$Interface} from "net.mehvahdjukaar.moonlight.api.block.ISoftFluidConsumer"
+import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$SoftFluidStack$$Type} from "net.mehvahdjukaar.moonlight.api.fluids.SoftFluidStack"
+import {$ISoftFluidConsumer$$Interface} from "net.mehvahdjukaar.moonlight.api.block.ISoftFluidConsumer"
+import {$ItemInteractionResult} from "net.minecraft.world.ItemInteractionResult"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
@@ -8591,11 +8589,11 @@ export type $PancakeBlock$$Original = $PancakeBlock;}
 declare module "net.mehvahdjukaar.supplementaries.common.items.crafting.WeatheredMapRecipe" {
 import {$CraftingInput$$Type} from "net.minecraft.world.item.crafting.CraftingInput"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
-import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$Ingredient$$Type} from "net.minecraft.world.item.crafting.Ingredient"
+import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$CustomRecipe} from "net.minecraft.world.item.crafting.CustomRecipe"
-import {$CraftingBookCategory$$Type} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$CraftingBookCategory$$Type} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 
@@ -8621,8 +8619,8 @@ export type $WeatheredMapRecipe$$Type = ($WeatheredMapRecipe);
  */
 export type $WeatheredMapRecipe$$Original = $WeatheredMapRecipe;}
 declare module "net.mehvahdjukaar.supplementaries.common.block.blocks.BambooSpikesBlock" {
-import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$LootParams$Builder$$Type} from "net.minecraft.world.level.storage.loot.LootParams$Builder"
+import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Mirror$$Type} from "net.minecraft.world.level.block.Mirror"
 import {$List} from "java.util.List"
@@ -8635,25 +8633,25 @@ import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$PathType, $PathType$$Type} from "net.minecraft.world.level.pathfinder.PathType"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$PotionContents$$Type} from "net.minecraft.world.item.alchemy.PotionContents"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$WaterBlock} from "net.mehvahdjukaar.moonlight.api.block.WaterBlock"
+import {$PotionContents$$Type} from "net.minecraft.world.item.alchemy.PotionContents"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$IWashable$$Interface} from "net.mehvahdjukaar.moonlight.api.block.IWashable"
+import {$PistonMovingBlockEntity$$Type} from "net.minecraft.world.level.block.piston.PistonMovingBlockEntity"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
-import {$PistonMovingBlockEntity$$Type} from "net.minecraft.world.level.block.piston.PistonMovingBlockEntity"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
-import {$ISoftFluidConsumer$$Interface} from "net.mehvahdjukaar.moonlight.api.block.ISoftFluidConsumer"
 import {$SoftFluidStack$$Type} from "net.mehvahdjukaar.moonlight.api.fluids.SoftFluidStack"
+import {$ISoftFluidConsumer$$Interface} from "net.mehvahdjukaar.moonlight.api.block.ISoftFluidConsumer"
 import {$DamageSource} from "net.minecraft.world.damagesource.DamageSource"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
@@ -8662,9 +8660,9 @@ import {$IPistonMotionReact$$Interface} from "net.mehvahdjukaar.moonlight.api.bl
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
-import {$AABB$$Type} from "net.minecraft.world.phys.AABB"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
+import {$AABB$$Type} from "net.minecraft.world.phys.AABB"
 import {$DirectionProperty} from "net.minecraft.world.level.block.state.properties.DirectionProperty"
 
 export class $BambooSpikesBlock extends $WaterBlock implements $ISoftFluidConsumer$$Interface, $EntityBlock$$Interface, $IWashable$$Interface, $IPistonMotionReact$$Interface {
@@ -8700,9 +8698,9 @@ public "ticksWhileMoved"(): boolean
 public "moveTick"(level: $Level$$Type, pos: $BlockPos$$Type, movedState: $BlockState$$Type, aabb: $AABB$$Type, tile: $PistonMovingBlockEntity$$Type): void
 public static "getDamageSource"(level: $Level$$Type): $DamageSource
 public "tryAcceptingFluid"(world: $Level$$Type, state: $BlockState$$Type, pos: $BlockPos$$Type, fluid: $SoftFluidStack$$Type): boolean
+public "tryWash"(level: $Level$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type, hitVec: $Vec3$$Type): boolean
 public "getSpikeItem"(te: $BlockEntity$$Type): $ItemStack
 public static "tryAddingPotion"(state: $BlockState$$Type, world: $LevelAccessor$$Type, pos: $BlockPos$$Type, potion: $PotionContents$$Type, adder: $Entity$$Type): boolean
-public "tryWash"(level: $Level$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type, hitVec: $Vec3$$Type): boolean
 public "getShape"(state: $BlockState$$Type, world: $BlockGetter$$Type, pos: $BlockPos$$Type, context: $CollisionContext$$Type): $VoxelShape
 public "rotate"(state: $BlockState$$Type, rot: $Rotation$$Type): $BlockState
 public "mirror"(state: $BlockState$$Type, mirrorIn: $Mirror$$Type): $BlockState
@@ -8737,8 +8735,8 @@ import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$FallingBlockEntity$$Type} from "net.minecraft.world.entity.item.FallingBlockEntity"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
@@ -8751,10 +8749,10 @@ import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
 import {$Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
-import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$ColoredFallingBlock} from "net.minecraft.world.level.block.ColoredFallingBlock"
-import {$ISimpleBrushable$$Interface} from "net.mehvahdjukaar.supplementaries.common.block.ISimpleBrushable"
+import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$ISimpleBrushable$$Interface} from "net.mehvahdjukaar.supplementaries.common.block.ISimpleBrushable"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
@@ -8789,12 +8787,12 @@ constructor(color: $ColorRGBA$$Type, properties: $BlockBehaviour$Properties$$Typ
 public "canBeReplaced"(pState: $BlockState$$Type, useContext: $BlockPlaceContext$$Type): boolean
 public "canBeReplaced"(state: $BlockState$$Type, fluid: $Fluid$$Type): boolean
 public "getStateForPlacement"(context: $BlockPlaceContext$$Type): $BlockState
+public "useShapeForLightOcclusion"(state: $BlockState$$Type): boolean
+public "getBlockSupportShape"(pState: $BlockState$$Type, pReader: $BlockGetter$$Type, pPos: $BlockPos$$Type): $VoxelShape
 public "updateShape"(state: $BlockState$$Type, direction: $Direction$$Type, facingState: $BlockState$$Type, world: $LevelAccessor$$Type, currentPos: $BlockPos$$Type, otherPos: $BlockPos$$Type): $BlockState
 public "setPlacedBy"(level: $Level$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type, placer: $LivingEntity$$Type, stack: $ItemStack$$Type): void
 public "handlePrecipitation"(pState: $BlockState$$Type, level: $Level$$Type, pPos: $BlockPos$$Type, pPrecipitation: $Biome$Precipitation$$Type): void
 public "onPlace"(state: $BlockState$$Type, worldIn: $Level$$Type, pos: $BlockPos$$Type, oldState: $BlockState$$Type, isMoving: boolean): void
-public "useShapeForLightOcclusion"(state: $BlockState$$Type): boolean
-public "getBlockSupportShape"(pState: $BlockState$$Type, pReader: $BlockGetter$$Type, pPos: $BlockPos$$Type): $VoxelShape
 public "getVisualShape"(pState: $BlockState$$Type, pReader: $BlockGetter$$Type, pPos: $BlockPos$$Type, pContext: $CollisionContext$$Type): $VoxelShape
 public "randomTick"(pState: $BlockState$$Type, level: $ServerLevel$$Type, pPos: $BlockPos$$Type, pRandom: $RandomSource$$Type): void
 public "onProjectileHit"(level: $Level$$Type, state: $BlockState$$Type, pHit: $BlockHitResult$$Type, projectile: $Projectile$$Type): void
@@ -8828,14 +8826,14 @@ import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$WaterBlock} from "net.mehvahdjukaar.moonlight.api.block.WaterBlock"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
+import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
@@ -8894,8 +8892,8 @@ declare module "net.mehvahdjukaar.supplementaries.common.block.blocks.SugarBlock
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ConcretePowderBlock} from "net.minecraft.world.level.block.ConcretePowderBlock"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -8962,8 +8960,8 @@ import {$NoneFeatureConfiguration} from "net.minecraft.world.level.levelgen.feat
 import {$UnderwaterMagmaConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.UnderwaterMagmaConfiguration"
 import {$LakeFeature$Configuration} from "net.minecraft.world.level.levelgen.feature.LakeFeature$Configuration"
 import {$BonusChestFeature} from "net.minecraft.world.level.levelgen.feature.BonusChestFeature"
-import {$OreConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration"
 import {$NetherForestVegetationConfig} from "net.minecraft.world.level.levelgen.feature.configurations.NetherForestVegetationConfig"
+import {$OreConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration"
 import {$RandomBooleanFeatureConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.RandomBooleanFeatureConfiguration"
 import {$RandomPatchConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -9108,8 +9106,8 @@ import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -9158,8 +9156,8 @@ import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Map} from "java.util.Map"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
-import {$Item} from "net.minecraft.world.item.Item"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$Item} from "net.minecraft.world.item.Item"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$AdditionalItemPlacement, $AdditionalItemPlacement$$Type} from "net.mehvahdjukaar.moonlight.api.item.additional_placements.AdditionalItemPlacement"
 
@@ -9195,11 +9193,11 @@ export type $CageItem$$Original = $CageItem;}
 declare module "net.mehvahdjukaar.supplementaries.common.items.crafting.SafeRecipe" {
 import {$CraftingInput$$Type} from "net.minecraft.world.item.crafting.CraftingInput"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
-import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$Ingredient$$Type} from "net.minecraft.world.item.crafting.Ingredient"
+import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$CustomRecipe} from "net.minecraft.world.item.crafting.CustomRecipe"
-import {$CraftingBookCategory$$Type} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$CraftingBookCategory$$Type} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 
@@ -9345,8 +9343,8 @@ declare module "net.mehvahdjukaar.supplementaries.common.items.SignPostItem" {
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$AdditionalItemPlacement, $AdditionalItemPlacement$$Type} from "net.mehvahdjukaar.moonlight.api.item.additional_placements.AdditionalItemPlacement"
@@ -9391,8 +9389,8 @@ import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$ModBlockProperties$Rune} from "net.mehvahdjukaar.supplementaries.common.block.ModBlockProperties$Rune"
-import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
+import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $EndLampBlock extends $Block {
@@ -9433,8 +9431,8 @@ declare module "net.mehvahdjukaar.supplementaries.common.block.blocks.CogBlock" 
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
-import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
+import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -9486,17 +9484,17 @@ export type $CogBlock$$Original = $CogBlock;}
 declare module "net.mehvahdjukaar.supplementaries.common.block.blocks.FodderBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
+import {$Item} from "net.minecraft.world.item.Item"
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
-import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$WaterBlock} from "net.mehvahdjukaar.moonlight.api.block.WaterBlock"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
@@ -9528,8 +9526,8 @@ static readonly "UPDATE_CLIENTS": integer
 constructor(properties: $BlockBehaviour$Properties$$Type)
 
 public "getStateForPlacement"(context: $BlockPlaceContext$$Type): $BlockState
-public "updateShape"(state: $BlockState$$Type, direction: $Direction$$Type, facingState: $BlockState$$Type, world: $LevelAccessor$$Type, currentPos: $BlockPos$$Type, otherPos: $BlockPos$$Type): $BlockState
 public "useShapeForLightOcclusion"(state: $BlockState$$Type): boolean
+public "updateShape"(state: $BlockState$$Type, direction: $Direction$$Type, facingState: $BlockState$$Type, world: $LevelAccessor$$Type, currentPos: $BlockPos$$Type, otherPos: $BlockPos$$Type): $BlockState
 public "getShape"(state: $BlockState$$Type, blockGetter: $BlockGetter$$Type, pos: $BlockPos$$Type, collisionContext: $CollisionContext$$Type): $VoxelShape
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 }
@@ -9544,11 +9542,11 @@ export type $FodderBlock$$Type = ($FodderBlock);
 export type $FodderBlock$$Original = $FodderBlock;}
 declare module "net.mehvahdjukaar.supplementaries.common.items.CandyItem" {
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
+import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
@@ -9580,12 +9578,12 @@ export type $CandyItem$$Original = $CandyItem;}
 declare module "net.mehvahdjukaar.supplementaries.common.items.crafting.AddChargeRecipe" {
 import {$CraftingInput$$Type} from "net.minecraft.world.item.crafting.CraftingInput"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
-import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$Ingredient$$Type} from "net.minecraft.world.item.crafting.Ingredient"
+import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$CustomRecipe} from "net.minecraft.world.item.crafting.CustomRecipe"
+import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Item$$Type} from "net.minecraft.world.item.Item"
 import {$CraftingBookCategory$$Type} from "net.minecraft.world.item.crafting.CraftingBookCategory"
-import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 
@@ -9621,14 +9619,14 @@ import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$MenuProvider} from "net.minecraft.world.MenuProvider"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$WaterBlock} from "net.mehvahdjukaar.moonlight.api.block.WaterBlock"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$HitResult$$Type} from "net.minecraft.world.phys.HitResult"
@@ -9669,12 +9667,12 @@ static readonly "FACING": $DirectionProperty
 constructor(properties: $BlockBehaviour$Properties$$Type)
 
 public "getStateForPlacement"(context: $BlockPlaceContext$$Type): $BlockState
-public "updateShape"(stateIn: $BlockState$$Type, facing: $Direction$$Type, facingState: $BlockState$$Type, worldIn: $LevelAccessor$$Type, currentPos: $BlockPos$$Type, facingPos: $BlockPos$$Type): $BlockState
-public "isPossibleToRespawnInThis"(state: $BlockState$$Type): boolean
-public "isLadder"(state: $BlockState$$Type, world: $LevelReader$$Type, pos: $BlockPos$$Type, entity: $LivingEntity$$Type): boolean
 public "propagatesSkylightDown"(state: $BlockState$$Type, reader: $BlockGetter$$Type, pos: $BlockPos$$Type): boolean
 public "getMenuProvider"(state: $BlockState$$Type, worldIn: $Level$$Type, pos: $BlockPos$$Type): $MenuProvider
+public "updateShape"(stateIn: $BlockState$$Type, facing: $Direction$$Type, facingState: $BlockState$$Type, worldIn: $LevelAccessor$$Type, currentPos: $BlockPos$$Type, facingPos: $BlockPos$$Type): $BlockState
 public "getAnalogOutputSignal"(blockState: $BlockState$$Type, world: $Level$$Type, pos: $BlockPos$$Type): integer
+public "isPossibleToRespawnInThis"(state: $BlockState$$Type): boolean
+public "isLadder"(state: $BlockState$$Type, world: $LevelReader$$Type, pos: $BlockPos$$Type, entity: $LivingEntity$$Type): boolean
 public "newBlockEntity"(pPos: $BlockPos$$Type, pState: $BlockState$$Type): $BlockEntity
 public "getShape"(state: $BlockState$$Type, world: $BlockGetter$$Type, pos: $BlockPos$$Type, context: $CollisionContext$$Type): $VoxelShape
 public "rotate"(state: $BlockState$$Type, rot: $Rotation$$Type): $BlockState
@@ -9698,12 +9696,11 @@ export type $ItemShelfBlock$$Type = ($ItemShelfBlock);
 export type $ItemShelfBlock$$Original = $ItemShelfBlock;}
 declare module "net.mehvahdjukaar.supplementaries.common.fluids.LumiseneFluid" {
 import {$ReplacementMatch} from "dev.latvian.mods.kubejs.recipe.match.ReplacementMatch"
-import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$FiniteFluid} from "net.mehvahdjukaar.supplementaries.common.fluids.FiniteFluid"
+import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
-import {$FluidType} from "net.neoforged.neoforge.fluids.FluidType"
 import {$FluidState} from "net.minecraft.world.level.material.FluidState"
-import {$Holder} from "net.minecraft.core.Holder"
+import {$FluidType} from "net.neoforged.neoforge.fluids.FluidType"
 
 export class $LumiseneFluid extends $FiniteFluid {
 static readonly "FLUID_STATE_REGISTRY": $IdMapper<($FluidState)>
@@ -9712,7 +9709,6 @@ static readonly "LEVEL": $IntegerProperty
 constructor()
 
 public "getFluidType"(): $FluidType
-public "asHolder"(): $Holder
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 public static "wrap"(o: any): $ReplacementMatch
 get "fluidType"(): $FluidType
@@ -9729,14 +9725,14 @@ export type $LumiseneFluid$$Original = $LumiseneFluid;}
 declare module "net.mehvahdjukaar.supplementaries.common.items.ConfettiPopperItem" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$List$$Type} from "java.util.List"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ClientBoundParticlePacket} from "net.mehvahdjukaar.supplementaries.common.network.ClientBoundParticlePacket"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
@@ -9786,8 +9782,8 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
 export class $ModBlockProperties$Winding extends $Enum<($ModBlockProperties$Winding)> implements $StringRepresentable$$Interface {
@@ -9799,11 +9795,11 @@ public static "values"(): ($ModBlockProperties$Winding)[]
 public static "valueOf"(name: StringJS): $ModBlockProperties$Winding
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
 }
@@ -9818,8 +9814,8 @@ export type $ModBlockProperties$Winding$$Type = (("none") | ("chain") | ("rope")
 export type $ModBlockProperties$Winding$$Original = $ModBlockProperties$Winding;}
 declare module "net.mehvahdjukaar.supplementaries.common.items.crafting.WeatheredMapRecipe$Serializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$WeatheredMapRecipe} from "net.mehvahdjukaar.supplementaries.common.items.crafting.WeatheredMapRecipe"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
@@ -9841,8 +9837,8 @@ export type $WeatheredMapRecipe$Serializer$$Type = ($WeatheredMapRecipe$Serializ
  */
 export type $WeatheredMapRecipe$Serializer$$Original = $WeatheredMapRecipe$Serializer;}
 declare module "net.mehvahdjukaar.supplementaries.common.block.blocks.CageBlock" {
-import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$LootParams$Builder$$Type} from "net.minecraft.world.level.storage.loot.LootParams$Builder"
+import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Mirror$$Type} from "net.minecraft.world.level.block.Mirror"
 import {$List} from "java.util.List"
@@ -9852,14 +9848,14 @@ import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$MenuProvider} from "net.minecraft.world.MenuProvider"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$WaterBlock} from "net.mehvahdjukaar.moonlight.api.block.WaterBlock"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$RenderShape} from "net.minecraft.world.level.block.RenderShape"
 import {$Block} from "net.minecraft.world.level.block.Block"
@@ -9900,9 +9896,9 @@ static readonly "FACING": $DirectionProperty
 constructor(properties: $BlockBehaviour$Properties$$Type)
 
 public "getStateForPlacement"(context: $BlockPlaceContext$$Type): $BlockState
-public "getDrops"(state: $BlockState$$Type, builder: $LootParams$Builder$$Type): $List<($ItemStack)>
 public "getMenuProvider"(state: $BlockState$$Type, worldIn: $Level$$Type, pos: $BlockPos$$Type): $MenuProvider
 public "getAnalogOutputSignal"(blockState: $BlockState$$Type, worldIn: $Level$$Type, pos: $BlockPos$$Type): integer
+public "getDrops"(state: $BlockState$$Type, builder: $LootParams$Builder$$Type): $List<($ItemStack)>
 public "getTicker"<T extends $BlockEntity>(pLevel: $Level$$Type, pState: $BlockState$$Type, pBlockEntityType: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
 public "newBlockEntity"(pPos: $BlockPos$$Type, pState: $BlockState$$Type): $BlockEntity
 public "getShape"(state: $BlockState$$Type, world: $BlockGetter$$Type, pos: $BlockPos$$Type, context: $CollisionContext$$Type): $VoxelShape
@@ -9933,14 +9929,14 @@ import {$NoneFeatureConfiguration} from "net.minecraft.world.level.levelgen.feat
 import {$UnderwaterMagmaConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.UnderwaterMagmaConfiguration"
 import {$LakeFeature$Configuration} from "net.minecraft.world.level.levelgen.feature.LakeFeature$Configuration"
 import {$BonusChestFeature} from "net.minecraft.world.level.levelgen.feature.BonusChestFeature"
-import {$OreConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration"
 import {$NetherForestVegetationConfig} from "net.minecraft.world.level.levelgen.feature.configurations.NetherForestVegetationConfig"
+import {$OreConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration"
 import {$RandomBooleanFeatureConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.RandomBooleanFeatureConfiguration"
 import {$RandomPatchConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$SimpleBlockConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration"
-import {$BarnaclesMultifaceGrowthFeature$Config, $BarnaclesMultifaceGrowthFeature$Config$$Type} from "net.mehvahdjukaar.supplementaries.common.worldgen.BarnaclesMultifaceGrowthFeature$Config"
 import {$LayerConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.LayerConfiguration"
+import {$BarnaclesMultifaceGrowthFeature$Config, $BarnaclesMultifaceGrowthFeature$Config$$Type} from "net.mehvahdjukaar.supplementaries.common.worldgen.BarnaclesMultifaceGrowthFeature$Config"
 import {$ReplaceBlockConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.ReplaceBlockConfiguration"
 import {$Feature} from "net.minecraft.world.level.levelgen.feature.Feature"
 import {$BlockColumnConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.BlockColumnConfiguration"
@@ -9964,8 +9960,8 @@ import {$HugeMushroomFeatureConfiguration} from "net.minecraft.world.level.level
 import {$WorldGenLevel$$Type} from "net.minecraft.world.level.WorldGenLevel"
 import {$MultifaceGrowthConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.MultifaceGrowthConfiguration"
 import {$DeltaFeatureConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.DeltaFeatureConfiguration"
-import {$Collection$$Type} from "java.util.Collection"
 import {$ProbabilityFeatureConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.ProbabilityFeatureConfiguration"
+import {$Collection$$Type} from "java.util.Collection"
 import {$FeaturePlaceContext$$Type} from "net.minecraft.world.level.levelgen.feature.FeaturePlaceContext"
 import {$SpikeConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.SpikeConfiguration"
 import {$HugeFungusConfiguration} from "net.minecraft.world.level.levelgen.feature.HugeFungusConfiguration"
@@ -10110,10 +10106,10 @@ import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$ParticleType} from "net.minecraft.core.particles.ParticleType"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$SconceBlock} from "net.mehvahdjukaar.supplementaries.common.block.blocks.SconceBlock"
 import {$Supplier$$Type} from "java.util.function.Supplier"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
+import {$SconceBlock} from "net.mehvahdjukaar.supplementaries.common.block.blocks.SconceBlock"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
@@ -10180,8 +10176,8 @@ import {$Attribute} from "net.minecraft.world.entity.ai.attributes.Attribute"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$AttributeMap$$Type} from "net.minecraft.world.entity.ai.attributes.AttributeMap"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Holder} from "net.minecraft.core.Holder"
+import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$MobEffect$AttributeTemplate} from "net.minecraft.world.effect.MobEffect$AttributeTemplate"
 
 export class $OverencumberedEffect extends $MobEffect {
@@ -10210,8 +10206,8 @@ declare module "net.mehvahdjukaar.supplementaries.common.items.PancakeItem" {
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 
@@ -10253,8 +10249,8 @@ import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BonemealableBlock$$Interface} from "net.minecraft.world.level.block.BonemealableBlock"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
@@ -10304,13 +10300,13 @@ export type $WildFlaxBlock$$Original = $WildFlaxBlock;}
 declare module "net.mehvahdjukaar.supplementaries.common.items.crafting.ItemLoreRecipe" {
 import {$CraftingInput$$Type} from "net.minecraft.world.item.crafting.CraftingInput"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
-import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$Ingredient$$Type} from "net.minecraft.world.item.crafting.Ingredient"
+import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$CustomRecipe} from "net.minecraft.world.item.crafting.CustomRecipe"
-import {$CraftingBookCategory$$Type} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
+import {$CraftingBookCategory$$Type} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
+import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 
 export class $ItemLoreRecipe extends $CustomRecipe {
@@ -10380,8 +10376,8 @@ import {$StructureManager$$Type} from "net.minecraft.world.level.StructureManage
 import {$StructureType} from "net.minecraft.world.level.levelgen.structure.StructureType"
 import {$Holder$$Type} from "net.minecraft.core.Holder"
 import {$HolderGetter$$Type} from "net.minecraft.core.HolderGetter"
-import {$Structure$GenerationStub} from "net.minecraft.world.level.levelgen.structure.Structure$GenerationStub"
 import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
+import {$Structure$GenerationStub} from "net.minecraft.world.level.levelgen.structure.Structure$GenerationStub"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$Structure, $Structure$$Type} from "net.minecraft.world.level.levelgen.structure.Structure"
 import {$Climate$ParameterPoint$$Type} from "net.minecraft.world.level.biome.Climate$ParameterPoint"
@@ -10402,8 +10398,8 @@ static readonly "DIRECT_CODEC": $Codec<($Structure)>
 
 constructor(config: $Structure$StructureSettings$$Type, startPool: $Holder$$Type<($StructureTemplatePool)>, startJigsawName: ($ResourceLocation$$Type)?, yOffset: integer, biomePoint: ($Climate$ParameterPoint$$Type)?, requireSeaLevel: boolean, dimensionPadding: $DimensionPadding$$Type, liquidSettings: $LiquidSettings$$Type, spawnBoxSettings: $SpawnBoxSettings$$Type)
 
-public "findGenerationPoint"(context: $Structure$GenerationContext$$Type): $Optional<($Structure$GenerationStub)>
 public "ml$getSpawnBoxSettings"(): $SpawnBoxSettings
+public "findGenerationPoint"(context: $Structure$GenerationContext$$Type): $Optional<($Structure$GenerationStub)>
 public static "getGalleonFlag"(patternRegistry: $HolderGetter$$Type<($BannerPattern$$Type)>): $ItemStack
 public "type"(): $StructureType<(never)>
 public "ml$getSpecialSpawns"(structureManager: $StructureManager$$Type, structure: $Structure$$Type, pos: $BlockPos$$Type, chunkPosReferences: $LongSet$$Type, category: $MobCategory$$Type): $WeightedRandomList<($MobSpawnSettings$SpawnerData)>
@@ -10420,8 +10416,8 @@ export type $GalleonStructure$$Type = ($GalleonStructure);
 export type $GalleonStructure$$Original = $GalleonStructure;}
 declare module "net.mehvahdjukaar.supplementaries.common.items.crafting.SusRecipe$Serializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$SusRecipe} from "net.mehvahdjukaar.supplementaries.common.items.crafting.SusRecipe"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
@@ -10497,8 +10493,8 @@ export type $SoapBlock$$Type = ($SoapBlock);
 export type $SoapBlock$$Original = $SoapBlock;}
 declare module "net.mehvahdjukaar.supplementaries.common.items.crafting.AddChargeRecipe$Serializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$AddChargeRecipe} from "net.mehvahdjukaar.supplementaries.common.items.crafting.AddChargeRecipe"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
@@ -10575,16 +10571,16 @@ import {$FiniteFluid$$Type} from "net.mehvahdjukaar.supplementaries.common.fluid
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$PathType, $PathType$$Type} from "net.minecraft.world.level.pathfinder.PathType"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$RenderShape} from "net.minecraft.world.level.block.RenderShape"
-import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
+import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$FiniteLiquidBlock} from "net.mehvahdjukaar.supplementaries.common.fluids.FiniteLiquidBlock"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -10628,12 +10624,12 @@ public "initializeClient"(consumer: $Consumer$$Type): void
 public "getStateForPlacement"(context: $BlockPlaceContext$$Type): $BlockState
 public "getBlockPathType"(state: $BlockState$$Type, level: $BlockGetter$$Type, pos: $BlockPos$$Type, mob: $Mob$$Type): $PathType
 public "getAdjacentBlockPathType"(state: $BlockState$$Type, level: $BlockGetter$$Type, pos: $BlockPos$$Type, mob: $Mob$$Type, originalType: $PathType$$Type): $PathType
+public "propagatesSkylightDown"(state: $BlockState$$Type, level: $BlockGetter$$Type, pos: $BlockPos$$Type): boolean
 public "updateShape"(state: $BlockState$$Type, direction: $Direction$$Type, neighborState: $BlockState$$Type, level: $LevelAccessor$$Type, currentPos: $BlockPos$$Type, neighborPos: $BlockPos$$Type): $BlockState
 public "playerWillDestroy"(level: $Level$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type, player: $Player$$Type): $BlockState
 public "onPlace"(state: $BlockState$$Type, world: $Level$$Type, pos: $BlockPos$$Type, oldState: $BlockState$$Type, moving: boolean): void
 public "onCaughtFire"(state: $BlockState$$Type, world: $Level$$Type, pos: $BlockPos$$Type, face: $Direction$$Type, igniter: $LivingEntity$$Type): void
 public "getFireSpreadSpeed"(state: $BlockState$$Type, level: $BlockGetter$$Type, pos: $BlockPos$$Type, direction: $Direction$$Type): integer
-public "propagatesSkylightDown"(state: $BlockState$$Type, level: $BlockGetter$$Type, pos: $BlockPos$$Type): boolean
 public "onProjectileHit"(level: $Level$$Type, state: $BlockState$$Type, pHit: $BlockHitResult$$Type, projectile: $Projectile$$Type): void
 public "tryLightUp"(player: $Entity$$Type, state: $BlockState$$Type, pos: $BlockPos$$Type, level: $LevelAccessor$$Type, fireSourceType: $ILightable$FireSoundType$$Type): boolean
 public "isLitUp"(state: $BlockState$$Type, level: $BlockGetter$$Type, pos: $BlockPos$$Type): boolean
@@ -10648,12 +10644,12 @@ public "entityInside"(state: $BlockState$$Type, level: $Level$$Type, pos: $Block
 public "neighborChanged"(state: $BlockState$$Type, level: $Level$$Type, pos: $BlockPos$$Type, block: $Block$$Type, fromPos: $BlockPos$$Type, isMoving: boolean): void
 public "getLightBlock"(state: $BlockState$$Type, level: $BlockGetter$$Type, pos: $BlockPos$$Type): integer
 public "getInteractionShape"(state: $BlockState$$Type, level: $BlockGetter$$Type, pos: $BlockPos$$Type): $VoxelShape
+public "tryExtinguish"(player: $Entity$$Type, state: $BlockState$$Type, pos: $BlockPos$$Type, world: $LevelAccessor$$Type): boolean
 /**
  * 
  * @deprecated
  */
 public "interactWithEntity"(level: $Level$$Type, state: $BlockState$$Type, projectile: $Entity$$Type, pos: $BlockPos$$Type): boolean
-public "tryExtinguish"(player: $Entity$$Type, state: $BlockState$$Type, pos: $BlockPos$$Type, world: $LevelAccessor$$Type): boolean
 public "canBeExtinguishedBy"(item: $ItemStack$$Type): boolean
 public "playExtinguishSound"(world: $LevelAccessor$$Type, pos: $BlockPos$$Type): void
 public "spawnSmokeParticles"(state: $BlockState$$Type, pos: $BlockPos$$Type, world: $LevelAccessor$$Type): void
@@ -10688,8 +10684,8 @@ export type $FlammableLiquidBlock$$Type = ($FlammableLiquidBlock);
  */
 export type $FlammableLiquidBlock$$Original = $FlammableLiquidBlock;}
 declare module "net.mehvahdjukaar.supplementaries.common.items.CannonBoatItem" {
-import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
+import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
@@ -10724,8 +10720,8 @@ export type $CannonBoatItem$$Type = ($CannonBoatItem);
  */
 export type $CannonBoatItem$$Original = $CannonBoatItem;}
 declare module "net.mehvahdjukaar.supplementaries.common.block.blocks.LunchBoxBlock" {
-import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$LootParams$Builder$$Type} from "net.minecraft.world.level.storage.loot.LootParams$Builder"
+import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$List} from "java.util.List"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
@@ -10736,14 +10732,14 @@ import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$MenuProvider} from "net.minecraft.world.MenuProvider"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$WaterBlock} from "net.mehvahdjukaar.moonlight.api.block.WaterBlock"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$IWashable$$Interface} from "net.mehvahdjukaar.moonlight.api.block.IWashable"
@@ -10784,10 +10780,10 @@ static readonly "FACING": $DirectionProperty
 constructor(properties: $BlockBehaviour$Properties$$Type)
 
 public "getStateForPlacement"(context: $BlockPlaceContext$$Type): $BlockState
-public "getDrops"(state: $BlockState$$Type, builder: $LootParams$Builder$$Type): $List<($ItemStack)>
-public "playerWillDestroy"(level: $Level$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type, player: $Player$$Type): $BlockState
 public "getMenuProvider"(state: $BlockState$$Type, worldIn: $Level$$Type, pos: $BlockPos$$Type): $MenuProvider
 public "getAnalogOutputSignal"(blockState: $BlockState$$Type, worldIn: $Level$$Type, pos: $BlockPos$$Type): integer
+public "getDrops"(state: $BlockState$$Type, builder: $LootParams$Builder$$Type): $List<($ItemStack)>
+public "playerWillDestroy"(level: $Level$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type, player: $Player$$Type): $BlockState
 public "newBlockEntity"(pPos: $BlockPos$$Type, pState: $BlockState$$Type): $BlockEntity
 public "tryWash"(level: $Level$$Type, blockPos: $BlockPos$$Type, blockState: $BlockState$$Type, vec3: $Vec3$$Type): boolean
 public "getShape"(state: $BlockState$$Type, level: $BlockGetter$$Type, pos: $BlockPos$$Type, context: $CollisionContext$$Type): $VoxelShape
@@ -10812,8 +10808,8 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
 export class $ModBlockProperties$Rune extends $Enum<($ModBlockProperties$Rune)> implements $StringRepresentable$$Interface {
@@ -10848,11 +10844,11 @@ public static "values"(): ($ModBlockProperties$Rune)[]
 public static "valueOf"(name: StringJS): $ModBlockProperties$Rune
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
 }
@@ -10930,8 +10926,8 @@ export type $LumiseneBucketItem$$Original = $LumiseneBucketItem;}
 declare module "net.mehvahdjukaar.supplementaries.common.block.blocks.RedstoneIlluminatorBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
+import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -10979,15 +10975,15 @@ export type $RedstoneIlluminatorBlock$$Type = ($RedstoneIlluminatorBlock);
 export type $RedstoneIlluminatorBlock$$Original = $RedstoneIlluminatorBlock;}
 declare module "net.mehvahdjukaar.supplementaries.common.items.JarItem" {
 import {$AbstractMobContainerItem} from "net.mehvahdjukaar.supplementaries.common.items.AbstractMobContainerItem"
-import {$Map} from "java.util.Map"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$Map} from "java.util.Map"
 import {$List$$Type} from "java.util.List"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$UseAnim} from "net.minecraft.world.item.UseAnim"
@@ -10996,10 +10992,10 @@ import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
-import {$AdditionalItemPlacement, $AdditionalItemPlacement$$Type} from "net.mehvahdjukaar.moonlight.api.item.additional_placements.AdditionalItemPlacement"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
+import {$AdditionalItemPlacement, $AdditionalItemPlacement$$Type} from "net.mehvahdjukaar.moonlight.api.item.additional_placements.AdditionalItemPlacement"
 
 export class $JarItem extends $AbstractMobContainerItem {
 static readonly "BASE_ATTACK_DAMAGE_ID": $ResourceLocation
@@ -11013,7 +11009,6 @@ constructor(blockIn: $Block$$Type, properties: $Item$Properties$$Type)
 
 public "appendHoverText"(stack: $ItemStack$$Type, context: $Item$TooltipContext$$Type, tooltipComponents: $List$$Type<($Component$$Type)>, tooltipFlag: $TooltipFlag$$Type): void
 public "useOn"(context: $UseOnContext$$Type): $InteractionResult
-public "isBoat"(e: $Entity$$Type): boolean
 public "doInteract"(stack: $ItemStack$$Type, player: $Player$$Type, entity: $Entity$$Type, hand: $InteractionHand$$Type): $InteractionResult
 public "playCatchSound"(player: $Player$$Type): void
 public "playReleaseSound"(world: $Level$$Type, v: $Vec3$$Type): void
@@ -11021,6 +11016,7 @@ public "canItemCatch"(e: $Entity$$Type): boolean
 public "saveEntityInItem"(entity: $Entity$$Type, currentStack: $ItemStack$$Type, bucket: $ItemStack$$Type): $ItemStack
 public "blocksPlacement"(): boolean
 public "addPlacementTooltip"(tooltip: $List$$Type<($Component$$Type)>): void
+public "isBoat"(e: $Entity$$Type): boolean
 public "use"(level: $Level$$Type, player: $Player$$Type, hand: $InteractionHand$$Type): $InteractionResultHolder<($ItemStack)>
 public "getUseDuration"(itemStack: $ItemStack$$Type, livingEntity: $LivingEntity$$Type): integer
 public "getUseAnimation"(stack: $ItemStack$$Type): $UseAnim
@@ -11041,8 +11037,8 @@ export type $JarItem$$Type = ($JarItem);
  */
 export type $JarItem$$Original = $JarItem;}
 declare module "net.mehvahdjukaar.supplementaries.common.block.blocks.StickBlock" {
-import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$LootParams$Builder$$Type} from "net.minecraft.world.level.storage.loot.LootParams$Builder"
+import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$List} from "java.util.List"
@@ -11051,10 +11047,10 @@ import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$WaterBlock} from "net.mehvahdjukaar.moonlight.api.block.WaterBlock"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Map} from "java.util.Map"
@@ -11120,8 +11116,8 @@ export type $StickBlock$$Type = ($StickBlock);
  */
 export type $StickBlock$$Original = $StickBlock;}
 declare module "net.mehvahdjukaar.supplementaries.common.block.blocks.LightUpBlock" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$ILightable$$Interface} from "net.mehvahdjukaar.moonlight.api.block.ILightable"
@@ -11130,13 +11126,13 @@ import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Projectile$$Type} from "net.minecraft.world.entity.projectile.Projectile"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
-import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$ILightable$FireSoundType$$Type} from "net.mehvahdjukaar.moonlight.api.block.ILightable$FireSoundType"
+import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$ItemInteractionResult} from "net.minecraft.world.ItemInteractionResult"
+import {$ILightable$FireSoundType$$Type} from "net.mehvahdjukaar.moonlight.api.block.ILightable$FireSoundType"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
@@ -11169,13 +11165,13 @@ public "onProjectileHit"(level: $Level$$Type, state: $BlockState$$Type, pHit: $B
 public "isLitUp"(state: $BlockState$$Type, level: $BlockGetter$$Type, pos: $BlockPos$$Type): boolean
 public "setLitUp"(state: $BlockState$$Type, world: $LevelAccessor$$Type, pos: $BlockPos$$Type, entity: $Entity$$Type, lit: boolean): void
 public "entityInside"(state: $BlockState$$Type, worldIn: $Level$$Type, pos: $BlockPos$$Type, entityIn: $Entity$$Type): void
+public "tryLightUp"(player: $Entity$$Type, state: $BlockState$$Type, pos: $BlockPos$$Type, world: $LevelAccessor$$Type, fireSourceType: $ILightable$FireSoundType$$Type): boolean
+public "tryExtinguish"(player: $Entity$$Type, state: $BlockState$$Type, pos: $BlockPos$$Type, world: $LevelAccessor$$Type): boolean
 /**
  * 
  * @deprecated
  */
 public "interactWithEntity"(level: $Level$$Type, state: $BlockState$$Type, projectile: $Entity$$Type, pos: $BlockPos$$Type): boolean
-public "tryLightUp"(player: $Entity$$Type, state: $BlockState$$Type, pos: $BlockPos$$Type, world: $LevelAccessor$$Type, fireSourceType: $ILightable$FireSoundType$$Type): boolean
-public "tryExtinguish"(player: $Entity$$Type, state: $BlockState$$Type, pos: $BlockPos$$Type, world: $LevelAccessor$$Type): boolean
 public "canBeExtinguishedBy"(item: $ItemStack$$Type): boolean
 public "playExtinguishSound"(world: $LevelAccessor$$Type, pos: $BlockPos$$Type): void
 public "spawnSmokeParticles"(state: $BlockState$$Type, pos: $BlockPos$$Type, world: $LevelAccessor$$Type): void
@@ -11212,8 +11208,8 @@ export type $LightUpBlock$$Original = $LightUpBlock;}
 declare module "net.mehvahdjukaar.supplementaries.common.block.blocks.NetheriteDoorBlock" {
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$DoubleBlockHalf} from "net.minecraft.world.level.block.state.properties.DoubleBlockHalf"
 import {$List$$Type} from "java.util.List"
+import {$DoubleBlockHalf} from "net.minecraft.world.level.block.state.properties.DoubleBlockHalf"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$DoorHingeSide} from "net.minecraft.world.level.block.state.properties.DoorHingeSide"
@@ -11226,19 +11222,19 @@ import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$DoorBlock} from "net.minecraft.world.level.block.DoorBlock"
 import {$SoundType} from "net.minecraft.world.level.block.SoundType"
 import {$Block$$Type} from "net.minecraft.world.level.block.Block"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
-import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
+import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
@@ -11305,8 +11301,8 @@ import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$PathType, $PathType$$Type} from "net.minecraft.world.level.pathfinder.PathType"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -11370,8 +11366,8 @@ declare module "net.mehvahdjukaar.supplementaries.common.items.HatStandItem" {
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 
@@ -11408,14 +11404,14 @@ import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$IColored$$Interface} from "net.mehvahdjukaar.moonlight.api.block.IColored"
 import {$DyeColor, $DyeColor$$Type} from "net.minecraft.world.item.DyeColor"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$WaterBlock} from "net.mehvahdjukaar.moonlight.api.block.WaterBlock"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$RenderShape} from "net.minecraft.world.level.block.RenderShape"
 import {$Block} from "net.minecraft.world.level.block.Block"
@@ -11490,11 +11486,11 @@ import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
-import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
+import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
@@ -11565,17 +11561,17 @@ import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$WaterBlock} from "net.mehvahdjukaar.moonlight.api.block.WaterBlock"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
-import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
+import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$IWashable$$Interface} from "net.mehvahdjukaar.moonlight.api.block.IWashable"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
@@ -11618,8 +11614,8 @@ constructor(properties: $BlockBehaviour$Properties$$Type)
 
 public "getStateForPlacement"(context: $BlockPlaceContext$$Type): $BlockState
 public "updateShape"(stateIn: $BlockState$$Type, facing: $Direction$$Type, facingState: $BlockState$$Type, worldIn: $LevelAccessor$$Type, currentPos: $BlockPos$$Type, facingPos: $BlockPos$$Type): $BlockState
-public "setPlacedBy"(worldIn: $Level$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type, placer: $LivingEntity$$Type, stack: $ItemStack$$Type): void
 public "getAnalogOutputSignal"(blockState: $BlockState$$Type, level: $Level$$Type, pos: $BlockPos$$Type): integer
+public "setPlacedBy"(worldIn: $Level$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type, placer: $LivingEntity$$Type, stack: $ItemStack$$Type): void
 public "getTicker"<T extends $BlockEntity>(pLevel: $Level$$Type, pState: $BlockState$$Type, pBlockEntityType: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
 public "newBlockEntity"(pPos: $BlockPos$$Type, pState: $BlockState$$Type): $BlockEntity
 public "updatePower"(state: $BlockState$$Type, leve: $Level$$Type, pos: $BlockPos$$Type): void
@@ -11631,9 +11627,9 @@ public "mirror"(state: $BlockState$$Type, mirrorIn: $Mirror$$Type): $BlockState
 public "animateTick"(stateIn: $BlockState$$Type, level: $Level$$Type, pos: $BlockPos$$Type, rand: $RandomSource$$Type): void
 public "getCloneItemStack"(level: $LevelReader$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type): $ItemStack
 public "canSurvive"(state: $BlockState$$Type, level: $LevelReader$$Type, pos: $BlockPos$$Type): boolean
+public "hasAnalogOutputSignal"(state: $BlockState$$Type): boolean
 public "neighborChanged"(state: $BlockState$$Type, world: $Level$$Type, pos: $BlockPos$$Type, neighborBlock: $Block$$Type, fromPos: $BlockPos$$Type, moving: boolean): void
 public "triggerEvent"(state: $BlockState$$Type, world: $Level$$Type, pos: $BlockPos$$Type, eventID: integer, eventParam: integer): boolean
-public "hasAnalogOutputSignal"(state: $BlockState$$Type): boolean
 public "getListener"<T extends $BlockEntity>(arg0: $ServerLevel$$Type, arg1: T): $GameEventListener
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 }
@@ -11763,14 +11759,14 @@ import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$WaterBlock} from "net.mehvahdjukaar.moonlight.api.block.WaterBlock"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$RenderShape} from "net.minecraft.world.level.block.RenderShape"
 import {$Block} from "net.minecraft.world.level.block.Block"
@@ -11834,8 +11830,8 @@ import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyBy
 import {$Attribute} from "net.minecraft.world.entity.ai.attributes.Attribute"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Holder} from "net.minecraft.core.Holder"
+import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$MobEffect$AttributeTemplate} from "net.minecraft.world.effect.MobEffect$AttributeTemplate"
 
 export class $FlammableEffect extends $MobEffect {
@@ -11861,8 +11857,8 @@ export type $FlammableEffect$$Original = $FlammableEffect;}
 declare module "net.mehvahdjukaar.supplementaries.common.block.blocks.PlanterBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$TreeConfiguration$$Type} from "net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -11872,16 +11868,16 @@ import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$BiConsumer$$Type} from "java.util.function.BiConsumer"
+import {$Item} from "net.minecraft.world.item.Item"
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
-import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$WaterBlock} from "net.mehvahdjukaar.moonlight.api.block.WaterBlock"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
-import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
+import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $PlanterBlock extends $WaterBlock {
 static readonly "UPDATE_IMMEDIATE": integer
@@ -11975,12 +11971,12 @@ import {$List$$Type} from "java.util.List"
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$IColored$$Interface} from "net.mehvahdjukaar.moonlight.api.block.IColored"
-import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$DyeColor} from "net.minecraft.world.item.DyeColor"
+import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$AdditionalItemPlacement, $AdditionalItemPlacement$$Type} from "net.mehvahdjukaar.moonlight.api.item.additional_placements.AdditionalItemPlacement"
 
@@ -12016,8 +12012,8 @@ export type $FlagItem$$Original = $FlagItem;}
 declare module "net.mehvahdjukaar.supplementaries.common.utils.SlotReference" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$IQuiverEntity$$Type} from "net.mehvahdjukaar.supplementaries.common.entities.IQuiverEntity"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$SlotReference$Empty} from "net.mehvahdjukaar.supplementaries.common.utils.SlotReference$Empty"
 import {$Registry} from "net.minecraft.core.Registry"
@@ -12043,8 +12039,8 @@ static "slot"(equipmentSlot: $EquipmentSlot$$Type): $SlotReference
  "get"(arg0: $LivingEntity$$Type): $ItemStack
  "isEmpty"(): boolean
 static "inv"(invSlot: integer): $SlotReference
-static "hand"(pUsedHand: $InteractionHand$$Type): $SlotReference
  "getCodec"(): $StreamCodec<($RegistryFriendlyByteBuf), ($SlotReference)>
+static "hand"(pUsedHand: $InteractionHand$$Type): $SlotReference
 static "quiver"(e: $IQuiverEntity$$Type): $SlotReference
 }
 /**
@@ -12065,11 +12061,11 @@ import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$WaterBlock} from "net.mehvahdjukaar.moonlight.api.block.WaterBlock"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block} from "net.minecraft.world.level.block.Block"
@@ -12152,14 +12148,14 @@ import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$WaterBlock} from "net.mehvahdjukaar.moonlight.api.block.WaterBlock"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
@@ -12202,8 +12198,8 @@ constructor(properties: $BlockBehaviour$Properties$$Type)
 
 public "canBeReplaced"(state: $BlockState$$Type, useContext: $BlockPlaceContext$$Type): boolean
 public "getStateForPlacement"(context: $BlockPlaceContext$$Type): $BlockState
-public "setPlacedBy"(level: $Level$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type, placer: $LivingEntity$$Type, stack: $ItemStack$$Type): void
 public "getAnalogOutputSignal"(blockState: $BlockState$$Type, world: $Level$$Type, pos: $BlockPos$$Type): integer
+public "setPlacedBy"(level: $Level$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type, placer: $LivingEntity$$Type, stack: $ItemStack$$Type): void
 public "getTicker"<T extends $BlockEntity>(pLevel: $Level$$Type, pState: $BlockState$$Type, pBlockEntityType: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
 public "newBlockEntity"(pPos: $BlockPos$$Type, pState: $BlockState$$Type): $BlockEntity
 public static "displayCurrentHour"(world: $Level$$Type, player: $Player$$Type): void
@@ -12246,8 +12242,8 @@ export type $IQuiverEntity$$Type = ($IQuiverEntity);
  */
 export type $IQuiverEntity$$Original = $IQuiverEntity;}
 declare module "net.mehvahdjukaar.supplementaries.common.fluids.FiniteLiquidBlock" {
-import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$LootParams$Builder$$Type} from "net.minecraft.world.level.storage.loot.LootParams$Builder"
+import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$List} from "java.util.List"
@@ -12259,24 +12255,24 @@ import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$FiniteFluid$$Type} from "net.mehvahdjukaar.supplementaries.common.fluids.FiniteFluid"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$Supplier$$Type} from "java.util.function.Supplier"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$LiquidBlockContainer$$Interface} from "net.minecraft.world.level.block.LiquidBlockContainer"
 import {$RenderShape} from "net.minecraft.world.level.block.RenderShape"
-import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
+import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
 import {$Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
-import {$BucketPickup$$Interface} from "net.minecraft.world.level.block.BucketPickup"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
-import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
+import {$BucketPickup$$Interface} from "net.minecraft.world.level.block.BucketPickup"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
+import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 
 export class $FiniteLiquidBlock extends $Block implements $BucketPickup$$Interface, $LiquidBlockContainer$$Interface {
@@ -12303,16 +12299,16 @@ static readonly "UPDATE_CLIENTS": integer
 
 constructor(supplier: $Supplier$$Type<($FiniteFluid$$Type)>, arg: $BlockBehaviour$Properties$$Type)
 
+public "propagatesSkylightDown"(state: $BlockState$$Type, level: $BlockGetter$$Type, pos: $BlockPos$$Type): boolean
 public "updateShape"(state: $BlockState$$Type, direction: $Direction$$Type, neighborState: $BlockState$$Type, level: $LevelAccessor$$Type, currentPos: $BlockPos$$Type, neighborPos: $BlockPos$$Type): $BlockState
 public "skipRendering"(state: $BlockState$$Type, adjacentBlockState: $BlockState$$Type, direction: $Direction$$Type): boolean
 public "getDrops"(arg: $BlockState$$Type, arg2: $LootParams$Builder$$Type): $List<($ItemStack)>
 public "getPickupSound"(): $Optional<($SoundEvent)>
-public "onPlace"(state: $BlockState$$Type, level: $Level$$Type, pos: $BlockPos$$Type, oldState: $BlockState$$Type, isMoving: boolean): void
 public "isRandomlyTicking"(state: $BlockState$$Type): boolean
-public "propagatesSkylightDown"(state: $BlockState$$Type, level: $BlockGetter$$Type, pos: $BlockPos$$Type): boolean
+public "onPlace"(state: $BlockState$$Type, level: $Level$$Type, pos: $BlockPos$$Type, oldState: $BlockState$$Type, isMoving: boolean): void
 public "randomTick"(state: $BlockState$$Type, level: $ServerLevel$$Type, pos: $BlockPos$$Type, random: $RandomSource$$Type): void
-public "placeLiquid"(level: $LevelAccessor$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type, fluidState: $FluidState$$Type): boolean
 public "canPlaceLiquid"(player: $Player$$Type, level: $BlockGetter$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type, fluid: $Fluid$$Type): boolean
+public "placeLiquid"(level: $LevelAccessor$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type, fluidState: $FluidState$$Type): boolean
 public "pickupBlock"(player: $Player$$Type, level: $LevelAccessor$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type): $ItemStack
 public "getShape"(state: $BlockState$$Type, level: $BlockGetter$$Type, pos: $BlockPos$$Type, context: $CollisionContext$$Type): $VoxelShape
 public "getFluidState"(state: $BlockState$$Type): $FluidState

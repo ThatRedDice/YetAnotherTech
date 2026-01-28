@@ -15,12 +15,12 @@ export class $Serializer<T> implements $Serializer$$Interface {
  "writeOptional"<V>(arg0: $SerializationContext$$Type, arg1: $Endec$$Type<(V)>, arg2: (V)?): void
  "writeVarLong"(arg0: $SerializationContext$$Type, arg1: long): void
  "setupContext"(arg0: $SerializationContext$$Type): $SerializationContext
+ "writeString"(arg0: $SerializationContext$$Type, arg1: StringJS): void
  "writeShort"(arg0: $SerializationContext$$Type, arg1: short): void
  "writeBoolean"(arg0: $SerializationContext$$Type, arg1: boolean): void
  "writeByte"(arg0: $SerializationContext$$Type, arg1: byte): void
  "writeLong"(arg0: $SerializationContext$$Type, arg1: long): void
  "writeDouble"(arg0: $SerializationContext$$Type, arg1: double): void
- "writeString"(arg0: $SerializationContext$$Type, arg1: StringJS): void
  "writeFloat"(arg0: $SerializationContext$$Type, arg1: float): void
  "map"<V>(arg0: $SerializationContext$$Type, arg1: $Endec$$Type<(V)>, arg2: integer): $Serializer$Map<(V)>
  "result"(): T
@@ -197,14 +197,14 @@ export class $Deserializer<T> implements $Deserializer$$Interface {
  "readOptional"<V>(arg0: $SerializationContext$$Type, arg1: $Endec$$Type<(V)>): $Optional<(V)>
  "readVarLong"(arg0: $SerializationContext$$Type): long
  "setupContext"(arg0: $SerializationContext$$Type): $SerializationContext
+ "tryRead"<V>(arg0: $Function$$Type<($Deserializer<(T)>), (V)>): V
+ "readString"(arg0: $SerializationContext$$Type): StringJS
  "readBoolean"(arg0: $SerializationContext$$Type): boolean
  "readByte"(arg0: $SerializationContext$$Type): byte
  "readShort"(arg0: $SerializationContext$$Type): short
  "readLong"(arg0: $SerializationContext$$Type): long
  "readDouble"(arg0: $SerializationContext$$Type): double
- "readString"(arg0: $SerializationContext$$Type): StringJS
  "readFloat"(arg0: $SerializationContext$$Type): float
- "tryRead"<V>(arg0: $Function$$Type<($Deserializer<(T)>), (V)>): V
  "map"<V>(arg0: $SerializationContext$$Type, arg1: $Endec$$Type<(V)>): $Deserializer$Map<(V)>
  "readInt"(arg0: $SerializationContext$$Type): integer
  "readBytes"(arg0: $SerializationContext$$Type): (byte)[]
@@ -303,8 +303,8 @@ export type $Serializer$Sequence$$Type<E> = ($Serializer$Sequence<(E)>);
 export type $Serializer$Sequence$$Original<E> = $Serializer$Sequence<(E)>;}
 declare module "io.wispforest.endec.StructEndec" {
 import {$Endec, $Endec$$Type, $Endec$$Interface} from "io.wispforest.endec.Endec"
-import {$Endec$Decoder$$Type} from "io.wispforest.endec.Endec$Decoder"
 import {$SerializationAttribute$$Type} from "io.wispforest.endec.SerializationAttribute"
+import {$Endec$Decoder$$Type} from "io.wispforest.endec.Endec$Decoder"
 import {$Map} from "java.util.Map"
 import {$Optional} from "java.util.Optional"
 import {$Enum} from "java.lang.Enum"
@@ -313,16 +313,16 @@ import {$SerializationContext$$Type} from "io.wispforest.endec.SerializationCont
 import {$StructField} from "io.wispforest.endec.impl.StructField"
 import {$Serializer$Struct$$Type} from "io.wispforest.endec.Serializer$Struct"
 import {$Deserializer$$Type} from "io.wispforest.endec.Deserializer"
-import {$AttributeEndecBuilder} from "io.wispforest.endec.impl.AttributeEndecBuilder"
 import {$Consumer$$Type} from "java.util.function.Consumer"
+import {$AttributeEndecBuilder} from "io.wispforest.endec.impl.AttributeEndecBuilder"
 import {$BiFunction$$Type} from "java.util.function.BiFunction"
 import {$Deserializer$Struct$$Type} from "io.wispforest.endec.Deserializer$Struct"
 import {$Serializer$$Type} from "io.wispforest.endec.Serializer"
-import {$Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function$$Type} from "java.util.function.Function"
 import {$Endec$Encoder$$Type} from "io.wispforest.endec.Endec$Encoder"
-import {$Set} from "java.util.Set"
 import {$Class$$Type} from "java.lang.Class"
+import {$Set} from "java.util.Set"
 import {$Endec$DecoderWithError$$Type} from "io.wispforest.endec.Endec$DecoderWithError"
 import {$KeyedEndec} from "io.wispforest.endec.impl.KeyedEndec"
 
@@ -352,11 +352,11 @@ static "map"<K, V>(arg0: $Function$$Type<(K), (StringJS)>, arg1: $Function$$Type
 static "map"<K, V>(arg0: $Endec$$Type<(K)>, arg1: $Endec$$Type<(V)>): $Endec<($Map<(K), (V)>)>
 static "of"<T>(arg0: $Endec$Encoder$$Type<(T)>, arg1: $Endec$Decoder$$Type<(T)>): $Endec<(T)>
  "validate"(arg0: $Consumer$$Type<(T)>): $Endec<(T)>
- "optionalOf"(): $Endec<($Optional<(T)>)>
  "listOf"(): $Endec<($List<(T)>)>
+ "optionalOf"(): $Endec<($Optional<(T)>)>
  "fieldOf"<S>(arg0: StringJS, arg1: $Function$$Type<(S), (T)>): $StructField<(S), (T)>
- "optionalFieldOf"<S>(arg0: StringJS, arg1: $Function$$Type<(S), (T)>, arg2: $Supplier$$Type<(T)>): $StructField<(S), (T)>
  "optionalFieldOf"<S>(arg0: StringJS, arg1: $Function$$Type<(S), (T)>, arg2: T): $StructField<(S), (T)>
+ "optionalFieldOf"<S>(arg0: StringJS, arg1: $Function$$Type<(S), (T)>, arg2: $Supplier$$Type<(T)>): $StructField<(S), (T)>
  "decodeFully"<E>(arg0: $SerializationContext$$Type, arg1: $Function$$Type<(E), ($Deserializer$$Type<(E)>)>, arg2: E): T
  "decodeFully"<E>(arg0: $Function$$Type<(E), ($Deserializer$$Type<(E)>)>, arg1: E): T
  "encodeFully"<E>(arg0: $SerializationContext$$Type, arg1: $Supplier$$Type<($Serializer$$Type<(E)>)>, arg2: T): E
@@ -383,10 +383,10 @@ public "withoutAttributes"(...arg0: ($SerializationAttribute$$Type)[]): $Seriali
 public "withSuppressed"(...arg0: ($SerializationAttribute$$Type)[]): $SerializationContext
 public "withoutSuppressed"(...arg0: ($SerializationAttribute$$Type)[]): $SerializationContext
 public "requireAttributeValue"<A>(arg0: $SerializationAttribute$WithValue$$Type<(A)>): A
-public "hasAttribute"(arg0: $SerializationAttribute$$Type): boolean
-public "and"(arg0: $SerializationContext$$Type): $SerializationContext
-public static "attributes"(...arg0: ($SerializationAttribute$Instance$$Type)[]): $SerializationContext
 public "getAttributeValue"<A>(arg0: $SerializationAttribute$WithValue$$Type<(A)>): A
+public static "attributes"(...arg0: ($SerializationAttribute$Instance$$Type)[]): $SerializationContext
+public "and"(arg0: $SerializationContext$$Type): $SerializationContext
+public "hasAttribute"(arg0: $SerializationAttribute$$Type): boolean
 public static "empty"(): $SerializationContext
 public static "suppressed"(...arg0: ($SerializationAttribute$$Type)[]): $SerializationContext
 public "withAttributes"(...arg0: ($SerializationAttribute$Instance$$Type)[]): $SerializationContext
@@ -424,24 +424,24 @@ export type $Serializer$Struct$$Type = ($Serializer$Struct);
 export type $Serializer$Struct$$Original = $Serializer$Struct;}
 declare module "io.wispforest.endec.Endec" {
 import {$StructEndec$$Type} from "io.wispforest.endec.StructEndec"
-import {$Endec$Decoder$$Type} from "io.wispforest.endec.Endec$Decoder"
 import {$SerializationAttribute$$Type} from "io.wispforest.endec.SerializationAttribute"
+import {$Endec$Decoder$$Type} from "io.wispforest.endec.Endec$Decoder"
 import {$Map} from "java.util.Map"
-import {$Enum} from "java.lang.Enum"
 import {$Optional} from "java.util.Optional"
+import {$Enum} from "java.lang.Enum"
 import {$List} from "java.util.List"
-import {$StructField} from "io.wispforest.endec.impl.StructField"
 import {$SerializationContext$$Type} from "io.wispforest.endec.SerializationContext"
+import {$StructField} from "io.wispforest.endec.impl.StructField"
 import {$Deserializer$$Type} from "io.wispforest.endec.Deserializer"
-import {$AttributeEndecBuilder} from "io.wispforest.endec.impl.AttributeEndecBuilder"
 import {$Consumer$$Type} from "java.util.function.Consumer"
+import {$AttributeEndecBuilder} from "io.wispforest.endec.impl.AttributeEndecBuilder"
 import {$BiFunction$$Type} from "java.util.function.BiFunction"
 import {$Serializer$$Type} from "io.wispforest.endec.Serializer"
 import {$Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$Endec$Encoder$$Type} from "io.wispforest.endec.Endec$Encoder"
-import {$Set} from "java.util.Set"
 import {$Class$$Type} from "java.lang.Class"
+import {$Set} from "java.util.Set"
 import {$Endec$DecoderWithError$$Type} from "io.wispforest.endec.Endec$DecoderWithError"
 import {$KeyedEndec} from "io.wispforest.endec.impl.KeyedEndec"
 
@@ -478,12 +478,12 @@ static "map"<K, V>(arg0: $Function$$Type<(K), (StringJS)>, arg1: $Function$$Type
 static "map"<K, V>(arg0: $Endec$$Type<(K)>, arg1: $Endec$$Type<(V)>): $Endec<($Map<(K), (V)>)>
 static "of"<T>(arg0: $Endec$Encoder$$Type<(T)>, arg1: $Endec$Decoder$$Type<(T)>): $Endec<(T)>
  "validate"(arg0: $Consumer$$Type<(T)>): $Endec<(T)>
- "optionalOf"(): $Endec<($Optional<(T)>)>
  "listOf"(): $Endec<($List<(T)>)>
- "fieldOf"<S>(arg0: StringJS, arg1: $Function$$Type<(S), (T)>): $StructField<(S), (T)>
- "optionalFieldOf"<S>(arg0: StringJS, arg1: $Function$$Type<(S), (T)>, arg2: $Supplier$$Type<(T)>): $StructField<(S), (T)>
- "optionalFieldOf"<S>(arg0: StringJS, arg1: $Function$$Type<(S), (T)>, arg2: T): $StructField<(S), (T)>
+ "optionalOf"(): $Endec<($Optional<(T)>)>
  "xmap"<R>(arg0: $Function$$Type<(T), (R)>, arg1: $Function$$Type<(R), (T)>): $Endec<(R)>
+ "fieldOf"<S>(arg0: StringJS, arg1: $Function$$Type<(S), (T)>): $StructField<(S), (T)>
+ "optionalFieldOf"<S>(arg0: StringJS, arg1: $Function$$Type<(S), (T)>, arg2: T): $StructField<(S), (T)>
+ "optionalFieldOf"<S>(arg0: StringJS, arg1: $Function$$Type<(S), (T)>, arg2: $Supplier$$Type<(T)>): $StructField<(S), (T)>
  "decodeFully"<E>(arg0: $SerializationContext$$Type, arg1: $Function$$Type<(E), ($Deserializer$$Type<(E)>)>, arg2: E): T
  "decodeFully"<E>(arg0: $Function$$Type<(E), ($Deserializer$$Type<(E)>)>, arg1: E): T
  "encodeFully"<E>(arg0: $SerializationContext$$Type, arg1: $Supplier$$Type<($Serializer$$Type<(E)>)>, arg2: T): E

@@ -25,10 +25,10 @@ readonly "containerListeners": $List<($ContainerListener)>
  "containerId": integer
 static readonly "QUICKCRAFT_TYPE_CHARITABLE": integer
 
+public static "createSingle"(arg0: integer, arg1: $Inventory$$Type): $FramedStorageMenu
+public static "createSingle"(arg0: integer, arg1: $Inventory$$Type, arg2: $IStorageBlockItemHandler$$Type): $FramedStorageMenu
 public "quickMoveStack"(arg0: $Player$$Type, arg1: integer): $ItemStack
 public "getRowCount"(): integer
-public static "createSingle"(arg0: integer, arg1: $Inventory$$Type, arg2: $IStorageBlockItemHandler$$Type): $FramedStorageMenu
-public static "createSingle"(arg0: integer, arg1: $Inventory$$Type): $FramedStorageMenu
 public "removed"(arg0: $Player$$Type): void
 public static "createDouble"(arg0: integer, arg1: $Inventory$$Type, arg2: $IStorageBlockItemHandler$$Type): $FramedStorageMenu
 public static "createDouble"(arg0: integer, arg1: $Inventory$$Type): $FramedStorageMenu

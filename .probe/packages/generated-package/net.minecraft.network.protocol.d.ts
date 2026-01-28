@@ -2,10 +2,10 @@ declare module "net.minecraft.network.protocol.game.ServerboundSeenAdvancementsP
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
-import {$AdvancementHolder$$Type} from "net.minecraft.advancements.AdvancementHolder"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
+import {$AdvancementHolder$$Type} from "net.minecraft.advancements.AdvancementHolder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
@@ -73,8 +73,8 @@ import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
-import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
 import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
+import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
 
 export class $ClientboundPlayerCombatEnterPacket implements $Packet$$Interface<($ClientGamePacketListener)> {
 static readonly "INSTANCE": $ClientboundPlayerCombatEnterPacket
@@ -105,10 +105,10 @@ import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$ClientLoginPacketListener, $ClientLoginPacketListener$$Type} from "net.minecraft.network.protocol.login.ClientLoginPacketListener"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
-import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
+import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 
 export class $ClientboundLoginDisconnectPacket implements $Packet$$Interface<($ClientLoginPacketListener)> {
 static readonly "STREAM_CODEC": $StreamCodec<($FriendlyByteBuf), ($ClientboundLoginDisconnectPacket)>
@@ -141,10 +141,10 @@ import {$ClientCommonPacketListener, $ClientCommonPacketListener$$Type} from "ne
 import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$UUID, $UUID$$Type} from "java.util.UUID"
 import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
-import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
+import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$Record} from "java.lang.Record"
@@ -186,13 +186,13 @@ import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
-import {$ClickType, $ClickType$$Type} from "net.minecraft.world.inventory.ClickType"
 import {$ServerGamePacketListener, $ServerGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ServerGamePacketListener"
+import {$ClickType, $ClickType$$Type} from "net.minecraft.world.inventory.ClickType"
 import {$Int2ObjectMap, $Int2ObjectMap$$Type} from "it.unimi.dsi.fastutil.ints.Int2ObjectMap"
 
 export class $ServerboundContainerClickPacket implements $Packet$$Interface<($ServerGamePacketListener)> {
@@ -240,8 +240,8 @@ import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$ServerGamePacketListener, $ServerGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ServerGamePacketListener"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$Record} from "java.lang.Record"
 
 export class $ServerboundChunkBatchReceivedPacket extends $Record implements $Packet$$Interface<($ServerGamePacketListener)> {
@@ -305,16 +305,16 @@ import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
-import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
 import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
+import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
 
 export class $ClientboundTakeItemEntityPacket implements $Packet$$Interface<($ClientGamePacketListener)> {
 static readonly "STREAM_CODEC": $StreamCodec<($FriendlyByteBuf), ($ClientboundTakeItemEntityPacket)>
 
 constructor(arg0: integer, arg1: integer, arg2: integer)
 
-public "getItemId"(): integer
 public "getPlayerId"(): integer
+public "getItemId"(): integer
 public "type"(): $PacketType<($ClientboundTakeItemEntityPacket)>
 public "handle"(arg0: $ClientGamePacketListener$$Type): void
 public "handle"(arg0: $PacketListener$$Type): void
@@ -322,8 +322,8 @@ public "getAmount"(): integer
 public "isTerminal"(): boolean
 public static "codec"<B extends $ByteBuf, T extends $Packet<(object)>>(arg0: $StreamMemberEncoder$$Type<(B), ($ClientGamePacketListener)>, arg1: $StreamDecoder$$Type<(B), ($ClientGamePacketListener$$Type)>): $StreamCodec<(B), ($ClientGamePacketListener)>
 public "isSkippable"(): boolean
-get "itemId"(): integer
 get "playerId"(): integer
+get "itemId"(): integer
 get "amount"(): integer
 get "terminal"(): boolean
 get "skippable"(): boolean
@@ -346,8 +346,8 @@ import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet
 import {$ServerGamePacketListener, $ServerGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ServerGamePacketListener"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 
 export class $ServerboundSignUpdatePacket implements $Packet$$Interface<($ServerGamePacketListener)> {
 static readonly "STREAM_CODEC": $StreamCodec<($FriendlyByteBuf), ($ServerboundSignUpdatePacket)>
@@ -386,9 +386,9 @@ import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 
 export class $ClientboundTeleportEntityPacket implements $Packet$$Interface<($ClientGamePacketListener)> {
 static readonly "STREAM_CODEC": $StreamCodec<($FriendlyByteBuf), ($ClientboundTeleportEntityPacket)>
@@ -432,12 +432,12 @@ import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$List, $List$$Type} from "java.util.List"
 import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$Explosion$BlockInteraction, $Explosion$BlockInteraction$$Type} from "net.minecraft.world.level.Explosion$BlockInteraction"
-import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
 import {$SoundEvent, $SoundEvent$$Type} from "net.minecraft.sounds.SoundEvent"
-import {$ByteBuf} from "io.netty.buffer.ByteBuf"
+import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
 import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
-import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
+import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
@@ -500,9 +500,9 @@ import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Item, $Item$$Type} from "net.minecraft.world.item.Item"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$Record} from "java.lang.Record"
 
 export class $ClientboundCooldownPacket extends $Record implements $Packet$$Interface<($ClientGamePacketListener)> {
@@ -528,7 +528,7 @@ get "skippable"(): boolean
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $ClientboundCooldownPacket$$Type = ({"item"?: $Item$$Type, "duration"?: integer}) | ([item?: $Item$$Type, duration?: integer]);
+export type $ClientboundCooldownPacket$$Type = ({"duration"?: integer, "item"?: $Item$$Type}) | ([duration?: integer, item?: $Item$$Type]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -568,8 +568,8 @@ import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$ServerGamePacketListener, $ServerGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ServerGamePacketListener"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 
 export class $ServerboundChangeDifficultyPacket implements $Packet$$Interface<($ServerGamePacketListener)> {
 static readonly "STREAM_CODEC": $StreamCodec<($FriendlyByteBuf), ($ServerboundChangeDifficultyPacket)>
@@ -626,9 +626,9 @@ import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$Record} from "java.lang.Record"
 
 export class $ClientboundResetScorePacket extends $Record implements $Packet$$Interface<($ClientGamePacketListener)> {
@@ -654,7 +654,7 @@ get "skippable"(): boolean
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $ClientboundResetScorePacket$$Type = ({"owner"?: StringJS, "objectiveName"?: StringJS}) | ([owner?: StringJS, objectiveName?: StringJS]);
+export type $ClientboundResetScorePacket$$Type = ({"objectiveName"?: StringJS, "owner"?: StringJS}) | ([objectiveName?: StringJS, owner?: StringJS]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -737,11 +737,11 @@ import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
+import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$MobEffect, $MobEffect$$Type} from "net.minecraft.world.effect.MobEffect"
-import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
@@ -783,8 +783,8 @@ import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$UUID$$Type} from "java.util.UUID"
 import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
@@ -819,8 +819,8 @@ declare module "net.minecraft.network.protocol.cookie.ServerCookiePacketListener
 import {$PacketFlow} from "net.minecraft.network.protocol.PacketFlow"
 import {$Exception$$Type} from "java.lang.Exception"
 import {$ServerPacketListener$$Interface} from "net.minecraft.network.protocol.game.ServerPacketListener"
-import {$ConnectionProtocol} from "net.minecraft.network.ConnectionProtocol"
 import {$CrashReport$$Type} from "net.minecraft.CrashReport"
+import {$ConnectionProtocol} from "net.minecraft.network.ConnectionProtocol"
 import {$Packet$$Type} from "net.minecraft.network.protocol.Packet"
 import {$Throwable$$Type} from "java.lang.Throwable"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
@@ -861,8 +861,8 @@ import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ClientCookiePacketListener, $ClientCookiePacketListener$$Type} from "net.minecraft.network.protocol.cookie.ClientCookiePacketListener"
 import {$Record} from "java.lang.Record"
 
@@ -900,9 +900,9 @@ import {$List} from "java.util.List"
 import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$AttributeInstance$$Type} from "net.minecraft.world.entity.ai.attributes.AttributeInstance"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
@@ -938,8 +938,8 @@ export type $ClientboundUpdateAttributesPacket$$Original = $ClientboundUpdateAtt
 declare module "net.minecraft.network.protocol.common.custom.BeeDebugPayload$BeeInfo" {
 import {$Vec3, $Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$FriendlyByteBuf$$Type} from "net.minecraft.network.FriendlyByteBuf"
-import {$UUID, $UUID$$Type} from "java.util.UUID"
 import {$Path, $Path$$Type} from "net.minecraft.world.level.pathfinder.Path"
+import {$UUID, $UUID$$Type} from "java.util.UUID"
 import {$List, $List$$Type} from "java.util.List"
 import {$Set, $Set$$Type} from "java.util.Set"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
@@ -969,7 +969,7 @@ public "blacklistedHives"(): $List<($BlockPos)>
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $BeeDebugPayload$BeeInfo$$Type = ({"travelTicks"?: integer, "flowerPos"?: $BlockPos$$Type, "pos"?: $Vec3$$Type, "hivePos"?: $BlockPos$$Type, "blacklistedHives"?: $List$$Type<($BlockPos$$Type)>, "id"?: integer, "path"?: $Path$$Type, "uuid"?: $UUID$$Type, "goals"?: $Set$$Type<(StringJS)>}) | ([travelTicks?: integer, flowerPos?: $BlockPos$$Type, pos?: $Vec3$$Type, hivePos?: $BlockPos$$Type, blacklistedHives?: $List$$Type<($BlockPos$$Type)>, id?: integer, path?: $Path$$Type, uuid?: $UUID$$Type, goals?: $Set$$Type<(StringJS)>]);
+export type $BeeDebugPayload$BeeInfo$$Type = ({"flowerPos"?: $BlockPos$$Type, "pos"?: $Vec3$$Type, "hivePos"?: $BlockPos$$Type, "blacklistedHives"?: $List$$Type<($BlockPos$$Type)>, "id"?: integer, "path"?: $Path$$Type, "uuid"?: $UUID$$Type, "goals"?: $Set$$Type<(StringJS)>, "travelTicks"?: integer}) | ([flowerPos?: $BlockPos$$Type, pos?: $Vec3$$Type, hivePos?: $BlockPos$$Type, blacklistedHives?: $List$$Type<($BlockPos$$Type)>, id?: integer, path?: $Path$$Type, uuid?: $UUID$$Type, goals?: $Set$$Type<(StringJS)>, travelTicks?: integer]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -979,10 +979,10 @@ import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
-import {$ByteBuf} from "io.netty.buffer.ByteBuf"
-import {$MobEffect, $MobEffect$$Type} from "net.minecraft.world.effect.MobEffect"
 import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
+import {$ByteBuf} from "io.netty.buffer.ByteBuf"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
+import {$MobEffect, $MobEffect$$Type} from "net.minecraft.world.effect.MobEffect"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
@@ -1026,9 +1026,9 @@ import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 
 export class $ClientboundRotateHeadPacket implements $Packet$$Interface<($ClientGamePacketListener)> {
 static readonly "STREAM_CODEC": $StreamCodec<($FriendlyByteBuf), ($ClientboundRotateHeadPacket)>
@@ -1063,11 +1063,11 @@ import {$MenuType, $MenuType$$Type} from "net.minecraft.world.inventory.MenuType
 import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
-import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
+import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 
 export class $ClientboundOpenScreenPacket implements $Packet$$Interface<($ClientGamePacketListener)> {
 static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($ClientboundOpenScreenPacket)>
@@ -1098,8 +1098,8 @@ export type $ClientboundOpenScreenPacket$$Type = ($ClientboundOpenScreenPacket);
  */
 export type $ClientboundOpenScreenPacket$$Original = $ClientboundOpenScreenPacket;}
 declare module "net.minecraft.network.protocol.game.ServerGamePacketListener" {
-import {$ServerboundChunkBatchReceivedPacket$$Type} from "net.minecraft.network.protocol.game.ServerboundChunkBatchReceivedPacket"
 import {$Iterable$$Type} from "java.lang.Iterable"
+import {$ServerboundChunkBatchReceivedPacket$$Type} from "net.minecraft.network.protocol.game.ServerboundChunkBatchReceivedPacket"
 import {$ServerPingPacketListener$$Interface} from "net.minecraft.network.protocol.ping.ServerPingPacketListener"
 import {$ServerboundClientInformationPacket$$Type} from "net.minecraft.network.protocol.common.ServerboundClientInformationPacket"
 import {$ServerboundPlayerActionPacket$$Type} from "net.minecraft.network.protocol.game.ServerboundPlayerActionPacket"
@@ -1120,8 +1120,8 @@ import {$ServerboundUseItemOnPacket$$Type} from "net.minecraft.network.protocol.
 import {$ServerboundEditBookPacket$$Type} from "net.minecraft.network.protocol.game.ServerboundEditBookPacket"
 import {$PacketSendListener$$Type} from "net.minecraft.network.PacketSendListener"
 import {$DisconnectionDetails, $DisconnectionDetails$$Type} from "net.minecraft.network.DisconnectionDetails"
-import {$ServerboundCustomPayloadPacket$$Type} from "net.minecraft.network.protocol.common.ServerboundCustomPayloadPacket"
 import {$ServerboundContainerClosePacket$$Type} from "net.minecraft.network.protocol.game.ServerboundContainerClosePacket"
+import {$ServerboundCustomPayloadPacket$$Type} from "net.minecraft.network.protocol.common.ServerboundCustomPayloadPacket"
 import {$ConnectionType} from "net.neoforged.neoforge.network.connection.ConnectionType"
 import {$ServerboundChatCommandPacket$$Type} from "net.minecraft.network.protocol.game.ServerboundChatCommandPacket"
 import {$ServerboundPingRequestPacket$$Type} from "net.minecraft.network.protocol.ping.ServerboundPingRequestPacket"
@@ -1136,31 +1136,31 @@ import {$ServerboundPaddleBoatPacket$$Type} from "net.minecraft.network.protocol
 import {$ServerboundClientCommandPacket$$Type} from "net.minecraft.network.protocol.game.ServerboundClientCommandPacket"
 import {$ServerCommonPacketListener$$Interface} from "net.minecraft.network.protocol.common.ServerCommonPacketListener"
 import {$ServerboundSetCreativeModeSlotPacket$$Type} from "net.minecraft.network.protocol.game.ServerboundSetCreativeModeSlotPacket"
-import {$ServerboundPongPacket$$Type} from "net.minecraft.network.protocol.common.ServerboundPongPacket"
 import {$ServerboundConfigurationAcknowledgedPacket$$Type} from "net.minecraft.network.protocol.game.ServerboundConfigurationAcknowledgedPacket"
+import {$ServerboundPongPacket$$Type} from "net.minecraft.network.protocol.common.ServerboundPongPacket"
 import {$CustomPacketPayload$Type$$Type} from "net.minecraft.network.protocol.common.custom.CustomPacketPayload$Type"
 import {$ServerboundSetJigsawBlockPacket$$Type} from "net.minecraft.network.protocol.game.ServerboundSetJigsawBlockPacket"
 import {$ServerboundSetCarriedItemPacket$$Type} from "net.minecraft.network.protocol.game.ServerboundSetCarriedItemPacket"
-import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$ServerboundRecipeBookChangeSettingsPacket$$Type} from "net.minecraft.network.protocol.game.ServerboundRecipeBookChangeSettingsPacket"
+import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$ServerboundContainerButtonClickPacket$$Type} from "net.minecraft.network.protocol.game.ServerboundContainerButtonClickPacket"
 import {$ServerboundContainerSlotStateChangedPacket$$Type} from "net.minecraft.network.protocol.game.ServerboundContainerSlotStateChangedPacket"
 import {$ServerboundSetCommandBlockPacket$$Type} from "net.minecraft.network.protocol.game.ServerboundSetCommandBlockPacket"
 import {$ServerboundTeleportToEntityPacket$$Type} from "net.minecraft.network.protocol.game.ServerboundTeleportToEntityPacket"
 import {$ServerboundCookieResponsePacket$$Type} from "net.minecraft.network.protocol.cookie.ServerboundCookieResponsePacket"
 import {$ServerboundPlayerAbilitiesPacket$$Type} from "net.minecraft.network.protocol.game.ServerboundPlayerAbilitiesPacket"
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
-import {$ServerboundSetBeaconPacket$$Type} from "net.minecraft.network.protocol.game.ServerboundSetBeaconPacket"
 import {$Exception$$Type} from "java.lang.Exception"
-import {$Throwable$$Type} from "java.lang.Throwable"
-import {$ServerboundInteractPacket$$Type} from "net.minecraft.network.protocol.game.ServerboundInteractPacket"
+import {$ServerboundSetBeaconPacket$$Type} from "net.minecraft.network.protocol.game.ServerboundSetBeaconPacket"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$ReentrantBlockableEventLoop} from "net.minecraft.util.thread.ReentrantBlockableEventLoop"
+import {$ServerboundInteractPacket$$Type} from "net.minecraft.network.protocol.game.ServerboundInteractPacket"
+import {$Throwable$$Type} from "java.lang.Throwable"
 import {$ServerboundEntityTagQueryPacket$$Type} from "net.minecraft.network.protocol.game.ServerboundEntityTagQueryPacket"
 import {$ServerboundSeenAdvancementsPacket$$Type} from "net.minecraft.network.protocol.game.ServerboundSeenAdvancementsPacket"
-import {$ServerboundCommandSuggestionPacket$$Type} from "net.minecraft.network.protocol.game.ServerboundCommandSuggestionPacket"
 import {$ServerboundPlayerCommandPacket$$Type} from "net.minecraft.network.protocol.game.ServerboundPlayerCommandPacket"
-import {$PacketFlow} from "net.minecraft.network.protocol.PacketFlow"
+import {$ServerboundCommandSuggestionPacket$$Type} from "net.minecraft.network.protocol.game.ServerboundCommandSuggestionPacket"
 import {$ServerboundMoveVehiclePacket$$Type} from "net.minecraft.network.protocol.game.ServerboundMoveVehiclePacket"
+import {$PacketFlow} from "net.minecraft.network.protocol.PacketFlow"
 import {$ServerboundChatAckPacket$$Type} from "net.minecraft.network.protocol.game.ServerboundChatAckPacket"
 import {$ServerboundDebugSampleSubscriptionPacket$$Type} from "net.minecraft.network.protocol.game.ServerboundDebugSampleSubscriptionPacket"
 import {$ServerboundJigsawGeneratePacket$$Type} from "net.minecraft.network.protocol.game.ServerboundJigsawGeneratePacket"
@@ -1278,8 +1278,8 @@ import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$ServerGamePacketListener, $ServerGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ServerGamePacketListener"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$Record} from "java.lang.Record"
 
 export class $ServerboundSetCreativeModeSlotPacket extends $Record implements $Packet$$Interface<($ServerGamePacketListener)> {
@@ -1356,8 +1356,8 @@ import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet
 import {$ServerGamePacketListener, $ServerGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ServerGamePacketListener"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 
 export class $ServerboundMoveVehiclePacket implements $Packet$$Interface<($ServerGamePacketListener)> {
 static readonly "STREAM_CODEC": $StreamCodec<($FriendlyByteBuf), ($ServerboundMoveVehiclePacket)>
@@ -1400,9 +1400,9 @@ import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 
 export class $ClientboundMerchantOffersPacket implements $Packet$$Interface<($ClientGamePacketListener)> {
 static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($ClientboundMerchantOffersPacket)>
@@ -1445,8 +1445,8 @@ import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
-import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
 import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
+import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
 
 export class $ClientboundHorseScreenOpenPacket implements $Packet$$Interface<($ClientGamePacketListener)> {
 static readonly "STREAM_CODEC": $StreamCodec<($FriendlyByteBuf), ($ClientboundHorseScreenOpenPacket)>
@@ -1489,17 +1489,17 @@ static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($Clien
 
 constructor(arg0: StringJS, arg1: ($Component$$Type)?)
 
+public "text"(): StringJS
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
-public "text"(): StringJS
 public "tooltip"(): $Optional<($Component)>
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $ClientboundCommandSuggestionsPacket$Entry$$Type = ({"tooltip"?: ($Component$$Type)?, "text"?: StringJS}) | ([tooltip?: ($Component$$Type)?, text?: StringJS]);
+export type $ClientboundCommandSuggestionsPacket$Entry$$Type = ({"text"?: StringJS, "tooltip"?: ($Component$$Type)?}) | ([text?: StringJS, tooltip?: ($Component$$Type)?]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -1508,9 +1508,9 @@ declare module "net.minecraft.network.protocol.ping.ServerPingPacketListener" {
 import {$PacketFlow} from "net.minecraft.network.protocol.PacketFlow"
 import {$Exception$$Type} from "java.lang.Exception"
 import {$ServerboundPingRequestPacket$$Type} from "net.minecraft.network.protocol.ping.ServerboundPingRequestPacket"
-import {$ConnectionProtocol} from "net.minecraft.network.ConnectionProtocol"
 import {$CrashReport$$Type} from "net.minecraft.CrashReport"
 import {$PacketListener$$Interface} from "net.minecraft.network.PacketListener"
+import {$ConnectionProtocol} from "net.minecraft.network.ConnectionProtocol"
 import {$Packet$$Type} from "net.minecraft.network.protocol.Packet"
 import {$Throwable$$Type} from "java.lang.Throwable"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
@@ -1561,7 +1561,7 @@ public "flow"(): $PacketFlow
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $PacketType$$Type<T> = ({"id"?: $ResourceLocation$$Type, "flow"?: $PacketFlow$$Type}) | ([id?: $ResourceLocation$$Type, flow?: $PacketFlow$$Type]);
+export type $PacketType$$Type<T> = ({"flow"?: $PacketFlow$$Type, "id"?: $ResourceLocation$$Type}) | ([flow?: $PacketFlow$$Type, id?: $ResourceLocation$$Type]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -1574,8 +1574,8 @@ import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$ServerGamePacketListener, $ServerGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ServerGamePacketListener"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$Record} from "java.lang.Record"
 
 export class $ServerboundChatAckPacket extends $Record implements $Packet$$Interface<($ServerGamePacketListener)> {
@@ -1614,8 +1614,8 @@ import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$Record} from "java.lang.Record"
 
 export class $ClientboundStoreCookiePacket extends $Record implements $Packet$$Interface<($ClientCommonPacketListener)> {
@@ -1642,7 +1642,7 @@ get "skippable"(): boolean
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $ClientboundStoreCookiePacket$$Type = ({"key"?: $ResourceLocation$$Type, "payload"?: (byte)[]}) | ([key?: $ResourceLocation$$Type, payload?: (byte)[]]);
+export type $ClientboundStoreCookiePacket$$Type = ({"payload"?: (byte)[], "key"?: $ResourceLocation$$Type}) | ([payload?: (byte)[], key?: $ResourceLocation$$Type]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -1653,9 +1653,9 @@ import {$Collection$$Type} from "java.util.Collection"
 import {$List} from "java.util.List"
 import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$ClientboundPlayerInfoUpdatePacket$Entry} from "net.minecraft.network.protocol.game.ClientboundPlayerInfoUpdatePacket$Entry"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
@@ -1701,8 +1701,8 @@ import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$ServerGamePacketListener, $ServerGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ServerGamePacketListener"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$Record} from "java.lang.Record"
 
 export class $ServerboundContainerSlotStateChangedPacket extends $Record implements $Packet$$Interface<($ServerGamePacketListener)> {
@@ -1761,9 +1761,9 @@ import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 
 export class $ClientboundMoveVehiclePacket implements $Packet$$Interface<($ClientGamePacketListener)> {
 static readonly "STREAM_CODEC": $StreamCodec<($FriendlyByteBuf), ($ClientboundMoveVehiclePacket)>
@@ -1805,9 +1805,9 @@ import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$Record} from "java.lang.Record"
 
 export class $ClientboundChunkBatchFinishedPacket extends $Record implements $Packet$$Interface<($ClientGamePacketListener)> {
@@ -1844,9 +1844,9 @@ import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$Record} from "java.lang.Record"
 
 export class $ClientboundSetSimulationDistancePacket extends $Record implements $Packet$$Interface<($ClientGamePacketListener)> {
@@ -1883,9 +1883,9 @@ import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$WorldBorder$$Type} from "net.minecraft.world.level.border.WorldBorder"
 
 export class $ClientboundSetBorderSizePacket implements $Packet$$Interface<($ClientGamePacketListener)> {
@@ -1924,8 +1924,8 @@ import {$Exception$$Type} from "java.lang.Exception"
 import {$ConnectionProtocol} from "net.minecraft.network.ConnectionProtocol"
 import {$Packet$$Type} from "net.minecraft.network.protocol.Packet"
 import {$Throwable$$Type} from "java.lang.Throwable"
-import {$CrashReportCategory$$Type} from "net.minecraft.CrashReportCategory"
 import {$ClientboundStatusResponsePacket$$Type} from "net.minecraft.network.protocol.status.ClientboundStatusResponsePacket"
+import {$CrashReportCategory$$Type} from "net.minecraft.CrashReportCategory"
 import {$ClientboundPacketListener$$Interface} from "net.minecraft.network.ClientboundPacketListener"
 
 export interface $ClientStatusPacketListener$$Interface extends $ClientPongPacketListener$$Interface, $ClientboundPacketListener$$Interface {
@@ -1981,11 +1981,11 @@ import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resource
 import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
-import {$ServerCookiePacketListener, $ServerCookiePacketListener$$Type} from "net.minecraft.network.protocol.cookie.ServerCookiePacketListener"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
+import {$ServerCookiePacketListener, $ServerCookiePacketListener$$Type} from "net.minecraft.network.protocol.cookie.ServerCookiePacketListener"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$Record} from "java.lang.Record"
 
 export class $ServerboundCookieResponsePacket extends $Record implements $Packet$$Interface<($ServerCookiePacketListener)> {
@@ -2011,7 +2011,7 @@ get "skippable"(): boolean
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $ServerboundCookieResponsePacket$$Type = ({"key"?: $ResourceLocation$$Type, "payload"?: (byte)[]}) | ([key?: $ResourceLocation$$Type, payload?: (byte)[]]);
+export type $ServerboundCookieResponsePacket$$Type = ({"payload"?: (byte)[], "key"?: $ResourceLocation$$Type}) | ([payload?: (byte)[], key?: $ResourceLocation$$Type]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -2024,8 +2024,8 @@ import {$CustomPacketPayload$Type$$Type} from "net.minecraft.network.protocol.co
 import {$IServerConfigurationPacketListenerExtension$$Interface} from "net.neoforged.neoforge.common.extensions.IServerConfigurationPacketListenerExtension"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$ServerboundCookieResponsePacket$$Type} from "net.minecraft.network.protocol.cookie.ServerboundCookieResponsePacket"
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Exception$$Type} from "java.lang.Exception"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$ServerboundFinishConfigurationPacket$$Type} from "net.minecraft.network.protocol.configuration.ServerboundFinishConfigurationPacket"
 import {$Throwable$$Type} from "java.lang.Throwable"
 import {$ReentrantBlockableEventLoop} from "net.minecraft.util.thread.ReentrantBlockableEventLoop"
@@ -2041,8 +2041,8 @@ import {$ConnectionType} from "net.neoforged.neoforge.network.connection.Connect
 import {$ConnectionProtocol} from "net.minecraft.network.ConnectionProtocol"
 import {$Packet$$Type} from "net.minecraft.network.protocol.Packet"
 import {$ServerboundSelectKnownPacks$$Type} from "net.minecraft.network.protocol.configuration.ServerboundSelectKnownPacks"
-import {$Connection} from "net.minecraft.network.Connection"
 import {$ServerboundResourcePackPacket$$Type} from "net.minecraft.network.protocol.common.ServerboundResourcePackPacket"
+import {$Connection} from "net.minecraft.network.Connection"
 import {$CrashReportCategory$$Type} from "net.minecraft.CrashReportCategory"
 
 export interface $ServerConfigurationPacketListener$$Interface extends $ServerCommonPacketListener$$Interface, $IServerConfigurationPacketListenerExtension$$Interface {
@@ -2103,17 +2103,17 @@ import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 
 export class $ServerboundMovePlayerPacket implements $Packet$$Interface<($ServerGamePacketListener)> {
-public "isOnGround"(): boolean
 public "hasRotation"(): boolean
+public "isOnGround"(): boolean
 public "getY"(arg0: double): double
 public "type"(): $PacketType<($ServerboundMovePlayerPacket)>
 public "handle"(arg0: $PacketListener$$Type): void
 public "handle"(arg0: $ServerGamePacketListener$$Type): void
+public "hasPosition"(): boolean
 public "getX"(arg0: double): double
 public "getZ"(arg0: double): double
 public "getXRot"(arg0: float): float
 public "getYRot"(arg0: float): float
-public "hasPosition"(): boolean
 public "isTerminal"(): boolean
 public static "codec"<B extends $ByteBuf, T extends $Packet<(object)>>(arg0: $StreamMemberEncoder$$Type<(B), ($ServerGamePacketListener)>, arg1: $StreamDecoder$$Type<(B), ($ServerGamePacketListener$$Type)>): $StreamCodec<(B), ($ServerGamePacketListener)>
 public "isSkippable"(): boolean
@@ -2185,8 +2185,8 @@ public "toString"(): StringJS
 public "hashCode"(): integer
 public "displayName"(): $Component
 public "latency"(): integer
-public "gameMode"(): $GameType
 public "profileId"(): $UUID
+public "gameMode"(): $GameType
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -2205,9 +2205,9 @@ import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
 import {$ChunkPos, $ChunkPos$$Type} from "net.minecraft.world.level.ChunkPos"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$Record} from "java.lang.Record"
 
 export class $ClientboundForgetLevelChunkPacket extends $Record implements $Packet$$Interface<($ClientGamePacketListener)> {
@@ -2243,11 +2243,11 @@ import {$Collection$$Type} from "java.util.Collection"
 import {$List} from "java.util.List"
 import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$RecipeHolder, $RecipeHolder$$Type} from "net.minecraft.world.item.crafting.RecipeHolder"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 
@@ -2318,9 +2318,9 @@ import {$Suggestions, $Suggestions$$Type} from "com.mojang.brigadier.suggestion.
 import {$List, $List$$Type} from "java.util.List"
 import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
@@ -2354,7 +2354,7 @@ get "skippable"(): boolean
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $ClientboundCommandSuggestionsPacket$$Type = ({"length"?: integer, "suggestions"?: $List$$Type<($ClientboundCommandSuggestionsPacket$Entry$$Type)>, "start"?: integer, "id"?: integer}) | ([length?: integer, suggestions?: $List$$Type<($ClientboundCommandSuggestionsPacket$Entry$$Type)>, start?: integer, id?: integer]);
+export type $ClientboundCommandSuggestionsPacket$$Type = ({"suggestions"?: $List$$Type<($ClientboundCommandSuggestionsPacket$Entry$$Type)>, "start"?: integer, "id"?: integer, "length"?: integer}) | ([suggestions?: $List$$Type<($ClientboundCommandSuggestionsPacket$Entry$$Type)>, start?: integer, id?: integer, length?: integer]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -2367,8 +2367,8 @@ import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
-import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
 import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
+import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
 
 export class $ClientboundSetChunkCacheRadiusPacket implements $Packet$$Interface<($ClientGamePacketListener)> {
 static readonly "STREAM_CODEC": $StreamCodec<($FriendlyByteBuf), ($ClientboundSetChunkCacheRadiusPacket)>
@@ -2398,8 +2398,8 @@ export type $ClientboundSetChunkCacheRadiusPacket$$Original = $ClientboundSetChu
 declare module "net.minecraft.network.protocol.common.custom.BrainDebugPayload$BrainDump" {
 import {$Vec3, $Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$FriendlyByteBuf$$Type} from "net.minecraft.network.FriendlyByteBuf"
-import {$UUID, $UUID$$Type} from "java.util.UUID"
 import {$Path, $Path$$Type} from "net.minecraft.world.level.pathfinder.Path"
+import {$UUID, $UUID$$Type} from "java.util.UUID"
 import {$List, $List$$Type} from "java.util.List"
 import {$Set, $Set$$Type} from "java.util.Set"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
@@ -2409,9 +2409,9 @@ export class $BrainDebugPayload$BrainDump extends $Record {
 constructor(arg0: $FriendlyByteBuf$$Type)
 constructor(arg0: $UUID$$Type, arg1: integer, arg2: StringJS, arg3: StringJS, arg4: integer, arg5: float, arg6: float, arg7: $Vec3$$Type, arg8: StringJS, arg9: $Path$$Type, arg10: boolean, arg11: integer, arg12: $List$$Type<(StringJS)>, arg13: $List$$Type<(StringJS)>, arg14: $List$$Type<(StringJS)>, arg15: $List$$Type<(StringJS)>, arg16: $Set$$Type<($BlockPos$$Type)>, arg17: $Set$$Type<($BlockPos$$Type)>)
 
-public "maxHealth"(): float
 public "hasPoi"(arg0: $BlockPos$$Type): boolean
 public "gossips"(): $List<(StringJS)>
+public "maxHealth"(): float
 public "angerLevel"(): integer
 public "behaviors"(): $List<(StringJS)>
 public "name"(): StringJS
@@ -2438,7 +2438,7 @@ public "hasPotentialPoi"(arg0: $BlockPos$$Type): boolean
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $BrainDebugPayload$BrainDump$$Type = ({"gossips"?: $List$$Type<(StringJS)>, "pois"?: $Set$$Type<($BlockPos$$Type)>, "profession"?: StringJS, "wantsGolem"?: boolean, "activities"?: $List$$Type<(StringJS)>, "name"?: StringJS, "maxHealth"?: float, "uuid"?: $UUID$$Type, "inventory"?: StringJS, "path"?: $Path$$Type, "memories"?: $List$$Type<(StringJS)>, "id"?: integer, "potentialPois"?: $Set$$Type<($BlockPos$$Type)>, "xp"?: integer, "health"?: float, "behaviors"?: $List$$Type<(StringJS)>, "angerLevel"?: integer, "pos"?: $Vec3$$Type}) | ([gossips?: $List$$Type<(StringJS)>, pois?: $Set$$Type<($BlockPos$$Type)>, profession?: StringJS, wantsGolem?: boolean, activities?: $List$$Type<(StringJS)>, name?: StringJS, maxHealth?: float, uuid?: $UUID$$Type, inventory?: StringJS, path?: $Path$$Type, memories?: $List$$Type<(StringJS)>, id?: integer, potentialPois?: $Set$$Type<($BlockPos$$Type)>, xp?: integer, health?: float, behaviors?: $List$$Type<(StringJS)>, angerLevel?: integer, pos?: $Vec3$$Type]);
+export type $BrainDebugPayload$BrainDump$$Type = ({"pois"?: $Set$$Type<($BlockPos$$Type)>, "profession"?: StringJS, "wantsGolem"?: boolean, "activities"?: $List$$Type<(StringJS)>, "name"?: StringJS, "maxHealth"?: float, "uuid"?: $UUID$$Type, "inventory"?: StringJS, "path"?: $Path$$Type, "memories"?: $List$$Type<(StringJS)>, "id"?: integer, "potentialPois"?: $Set$$Type<($BlockPos$$Type)>, "xp"?: integer, "health"?: float, "behaviors"?: $List$$Type<(StringJS)>, "angerLevel"?: integer, "pos"?: $Vec3$$Type, "gossips"?: $List$$Type<(StringJS)>}) | ([pois?: $Set$$Type<($BlockPos$$Type)>, profession?: StringJS, wantsGolem?: boolean, activities?: $List$$Type<(StringJS)>, name?: StringJS, maxHealth?: float, uuid?: $UUID$$Type, inventory?: StringJS, path?: $Path$$Type, memories?: $List$$Type<(StringJS)>, id?: integer, potentialPois?: $Set$$Type<($BlockPos$$Type)>, xp?: integer, health?: float, behaviors?: $List$$Type<(StringJS)>, angerLevel?: integer, pos?: $Vec3$$Type, gossips?: $List$$Type<(StringJS)>]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -2453,8 +2453,8 @@ export interface $ClientboundBossEventPacket$Handler$$Interface {
 }
 
 export class $ClientboundBossEventPacket$Handler implements $ClientboundBossEventPacket$Handler$$Interface {
- "updateProperties"(arg0: $UUID$$Type, arg1: boolean, arg2: boolean, arg3: boolean): void
  "updateName"(arg0: $UUID$$Type, arg1: $Component$$Type): void
+ "updateProperties"(arg0: $UUID$$Type, arg1: boolean, arg2: boolean, arg3: boolean): void
  "remove"(arg0: $UUID$$Type): void
  "add"(arg0: $UUID$$Type, arg1: $Component$$Type, arg2: float, arg3: $BossEvent$BossBarColor$$Type, arg4: $BossEvent$BossBarOverlay$$Type, arg5: boolean, arg6: boolean, arg7: boolean): void
  "updateProgress"(arg0: $UUID$$Type, arg1: float): void
@@ -2514,8 +2514,8 @@ import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet
 import {$ServerGamePacketListener, $ServerGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ServerGamePacketListener"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 
 export class $ServerboundBlockEntityTagQueryPacket implements $Packet$$Interface<($ServerGamePacketListener)> {
 static readonly "STREAM_CODEC": $StreamCodec<($FriendlyByteBuf), ($ServerboundBlockEntityTagQueryPacket)>
@@ -2550,12 +2550,12 @@ import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
-import {$CommandBlockEntity$Mode, $CommandBlockEntity$Mode$$Type} from "net.minecraft.world.level.block.entity.CommandBlockEntity$Mode"
 import {$ServerGamePacketListener, $ServerGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ServerGamePacketListener"
+import {$CommandBlockEntity$Mode, $CommandBlockEntity$Mode$$Type} from "net.minecraft.world.level.block.entity.CommandBlockEntity$Mode"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 
 export class $ServerboundSetCommandBlockPacket implements $Packet$$Interface<($ServerGamePacketListener)> {
 static readonly "STREAM_CODEC": $StreamCodec<($FriendlyByteBuf), ($ServerboundSetCommandBlockPacket)>
@@ -2626,13 +2626,13 @@ import {$CommonPlayerSpawnInfo, $CommonPlayerSpawnInfo$$Type} from "net.minecraf
 import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
-import {$Set, $Set$$Type} from "java.util.Set"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
+import {$Set, $Set$$Type} from "java.util.Set"
 import {$ResourceKey, $ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
 import {$Record} from "java.lang.Record"
 
@@ -2705,9 +2705,9 @@ import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 
 export class $ClientboundPlaceGhostRecipePacket implements $Packet$$Interface<($ClientGamePacketListener)> {
 static readonly "STREAM_CODEC": $StreamCodec<($FriendlyByteBuf), ($ClientboundPlaceGhostRecipePacket)>
@@ -2741,11 +2741,11 @@ import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$MobEffectInstance$$Type} from "net.minecraft.world.effect.MobEffectInstance"
 import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
-import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
-import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
 import {$Holder} from "net.minecraft.core.Holder"
+import {$ByteBuf} from "io.netty.buffer.ByteBuf"
+import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
@@ -2811,8 +2811,8 @@ import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$ServerLinks$UntrustedEntry, $ServerLinks$UntrustedEntry$$Type} from "net.minecraft.server.ServerLinks$UntrustedEntry"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$Record} from "java.lang.Record"
 
 export class $ClientboundServerLinksPacket extends $Record implements $Packet$$Interface<($ClientCommonPacketListener)> {
@@ -2851,8 +2851,8 @@ import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$ServerGamePacketListener, $ServerGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ServerGamePacketListener"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 
 export class $ServerboundPlayerAbilitiesPacket implements $Packet$$Interface<($ServerGamePacketListener)> {
 static readonly "STREAM_CODEC": $StreamCodec<($FriendlyByteBuf), ($ServerboundPlayerAbilitiesPacket)>
@@ -3068,8 +3068,8 @@ import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet
 import {$ServerGamePacketListener, $ServerGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ServerGamePacketListener"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 
 export class $ServerboundPlayerCommandPacket implements $Packet$$Interface<($ServerGamePacketListener)> {
 static readonly "STREAM_CODEC": $StreamCodec<($FriendlyByteBuf), ($ServerboundPlayerCommandPacket)>
@@ -3107,16 +3107,16 @@ import {$Mirror, $Mirror$$Type} from "net.minecraft.world.level.block.Mirror"
 import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$StructureMode, $StructureMode$$Type} from "net.minecraft.world.level.block.state.properties.StructureMode"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$Vec3i, $Vec3i$$Type} from "net.minecraft.core.Vec3i"
 import {$Rotation, $Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$ServerGamePacketListener, $ServerGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ServerGamePacketListener"
-import {$StructureBlockEntity$UpdateType, $StructureBlockEntity$UpdateType$$Type} from "net.minecraft.world.level.block.entity.StructureBlockEntity$UpdateType"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$StructureBlockEntity$UpdateType, $StructureBlockEntity$UpdateType$$Type} from "net.minecraft.world.level.block.entity.StructureBlockEntity$UpdateType"
 
 export class $ServerboundSetStructureBlockPacket implements $Packet$$Interface<($ServerGamePacketListener)> {
 static readonly "STREAM_CODEC": $StreamCodec<($FriendlyByteBuf), ($ServerboundSetStructureBlockPacket)>
@@ -3128,9 +3128,9 @@ public "getIntegrity"(): float
 public "isShowAir"(): boolean
 public "isShowBoundingBox"(): boolean
 public "getUpdateType"(): $StructureBlockEntity$UpdateType
-public "getData"(): StringJS
-public "getMode"(): $StructureMode
 public "getSeed"(): long
+public "getMode"(): $StructureMode
+public "getData"(): StringJS
 public "getName"(): StringJS
 public "type"(): $PacketType<($ServerboundSetStructureBlockPacket)>
 public "getSize"(): $Vec3i
@@ -3148,9 +3148,9 @@ get "integrity"(): float
 get "showAir"(): boolean
 get "showBoundingBox"(): boolean
 get "updateType"(): $StructureBlockEntity$UpdateType
-get "data"(): StringJS
-get "mode"(): $StructureMode
 get "seed"(): long
+get "mode"(): $StructureMode
+get "data"(): StringJS
 get "name"(): StringJS
 get "size"(): $Vec3i
 get "offset"(): $BlockPos
@@ -3179,8 +3179,8 @@ import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$ServerGamePacketListener, $ServerGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ServerGamePacketListener"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 
 export class $ServerboundUseItemOnPacket implements $Packet$$Interface<($ServerGamePacketListener)> {
 static readonly "STREAM_CODEC": $StreamCodec<($FriendlyByteBuf), ($ServerboundUseItemOnPacket)>
@@ -3219,8 +3219,8 @@ import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$Record} from "java.lang.Record"
 
 export class $ClientboundCustomReportDetailsPacket extends $Record implements $Packet$$Interface<($ClientCommonPacketListener)> {
@@ -3256,11 +3256,11 @@ import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyBy
 import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
-import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
+import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$Record} from "java.lang.Record"
 
 export class $ClientboundSetTitleTextPacket extends $Record implements $Packet$$Interface<($ClientGamePacketListener)> {
@@ -3268,13 +3268,13 @@ static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($Clien
 
 constructor(arg0: $Component$$Type)
 
+public "text"(): $Component
 public "type"(): $PacketType<($ClientboundSetTitleTextPacket)>
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
 public "handle"(arg0: $PacketListener$$Type): void
 public "handle"(arg0: $ClientGamePacketListener$$Type): void
-public "text"(): $Component
 public "isTerminal"(): boolean
 public static "codec"<B extends $ByteBuf, T extends $Packet<(object)>>(arg0: $StreamMemberEncoder$$Type<(B), ($ClientGamePacketListener)>, arg1: $StreamDecoder$$Type<(B), ($ClientGamePacketListener$$Type)>): $StreamCodec<(B), ($ClientGamePacketListener)>
 public "isSkippable"(): boolean
@@ -3298,15 +3298,15 @@ import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
 import {$Entity} from "net.minecraft.world.entity.Entity"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 
 export class $ClientboundMoveEntityPacket implements $Packet$$Interface<($ClientGamePacketListener)> {
 public "getyRot"(): byte
 public "getxRot"(): byte
-public "isOnGround"(): boolean
 public "hasRotation"(): boolean
+public "isOnGround"(): boolean
 public "getEntity"(arg0: $Level$$Type): $Entity
 public "type"(): $PacketType<($ClientboundMoveEntityPacket)>
 public "toString"(): StringJS
@@ -3407,8 +3407,8 @@ import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$ServerGamePacketListener, $ServerGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ServerGamePacketListener"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$Record} from "java.lang.Record"
 
 export class $ServerboundContainerButtonClickPacket extends $Record implements $Packet$$Interface<($ServerGamePacketListener)> {
@@ -3443,12 +3443,12 @@ declare module "net.minecraft.network.protocol.game.ClientboundSetObjectivePacke
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$Optional} from "java.util.Optional"
 import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
-import {$Component} from "net.minecraft.network.chat.Component"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
+import {$Component} from "net.minecraft.network.chat.Component"
 import {$ObjectiveCriteria$RenderType} from "net.minecraft.world.scores.criteria.ObjectiveCriteria$RenderType"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$NumberFormat} from "net.minecraft.network.chat.numbers.NumberFormat"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Objective$$Type} from "net.minecraft.world.scores.Objective"
@@ -3465,19 +3465,19 @@ constructor(arg0: $Objective$$Type, arg1: integer)
 
 public "getObjectiveName"(): StringJS
 public "getNumberFormat"(): $Optional<($NumberFormat)>
+public "getDisplayName"(): $Component
 public "type"(): $PacketType<($ClientboundSetObjectivePacket)>
 public "getMethod"(): integer
 public "handle"(arg0: $PacketListener$$Type): void
 public "handle"(arg0: $ClientGamePacketListener$$Type): void
-public "getDisplayName"(): $Component
 public "getRenderType"(): $ObjectiveCriteria$RenderType
 public "isTerminal"(): boolean
 public static "codec"<B extends $ByteBuf, T extends $Packet<(object)>>(arg0: $StreamMemberEncoder$$Type<(B), ($ClientGamePacketListener)>, arg1: $StreamDecoder$$Type<(B), ($ClientGamePacketListener$$Type)>): $StreamCodec<(B), ($ClientGamePacketListener)>
 public "isSkippable"(): boolean
 get "objectiveName"(): StringJS
 get "numberFormat"(): $Optional<($NumberFormat)>
-get "method"(): integer
 get "displayName"(): $Component
+get "method"(): integer
 get "renderType"(): $ObjectiveCriteria$RenderType
 get "terminal"(): boolean
 get "skippable"(): boolean
@@ -3497,8 +3497,8 @@ import {$ServerboundPongPacket$$Type} from "net.minecraft.network.protocol.commo
 import {$CustomPacketPayload$Type$$Type} from "net.minecraft.network.protocol.common.custom.CustomPacketPayload$Type"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$ServerboundCookieResponsePacket$$Type} from "net.minecraft.network.protocol.cookie.ServerboundCookieResponsePacket"
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Exception$$Type} from "java.lang.Exception"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$ServerCookiePacketListener$$Interface} from "net.minecraft.network.protocol.cookie.ServerCookiePacketListener"
 import {$Throwable$$Type} from "java.lang.Throwable"
 import {$ReentrantBlockableEventLoop} from "net.minecraft.util.thread.ReentrantBlockableEventLoop"
@@ -3514,8 +3514,8 @@ import {$IServerCommonPacketListenerExtension$$Interface} from "net.neoforged.ne
 import {$ServerPacketListener$$Interface} from "net.minecraft.network.protocol.game.ServerPacketListener"
 import {$ConnectionProtocol} from "net.minecraft.network.ConnectionProtocol"
 import {$Packet$$Type} from "net.minecraft.network.protocol.Packet"
-import {$Connection} from "net.minecraft.network.Connection"
 import {$ServerboundResourcePackPacket$$Type} from "net.minecraft.network.protocol.common.ServerboundResourcePackPacket"
+import {$Connection} from "net.minecraft.network.Connection"
 import {$CrashReportCategory$$Type} from "net.minecraft.CrashReportCategory"
 
 export interface $ServerCommonPacketListener$$Interface extends $ServerCookiePacketListener$$Interface, $ServerPacketListener$$Interface, $IServerCommonPacketListenerExtension$$Interface {
@@ -3566,9 +3566,9 @@ declare module "net.minecraft.network.protocol.game.ClientboundBlockUpdatePacket
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
@@ -3610,11 +3610,11 @@ import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
+import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
 import {$DamageType, $DamageType$$Type} from "net.minecraft.world.damagesource.DamageType"
 import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
-import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$Vec3, $Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$DamageSource, $DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
@@ -3626,21 +3626,21 @@ import {$Record} from "java.lang.Record"
 export class $ClientboundDamageEventPacket extends $Record implements $Packet$$Interface<($ClientGamePacketListener)> {
 static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($ClientboundDamageEventPacket)>
 
-constructor(arg0: integer, arg1: $Holder$$Type<($DamageType)>, arg2: integer, arg3: integer, arg4: ($Vec3$$Type)?)
 constructor(arg0: $Entity$$Type, arg1: $DamageSource$$Type)
+constructor(arg0: integer, arg1: $Holder$$Type<($DamageType)>, arg2: integer, arg3: integer, arg4: ($Vec3$$Type)?)
 
+public "sourceCauseId"(): integer
+public "sourceDirectId"(): integer
 public "sourcePosition"(): $Optional<($Vec3)>
 public "entityId"(): integer
 public "getSource"(arg0: $Level$$Type): $DamageSource
-public "sourceType"(): $Holder<($DamageType)>
-public "sourceCauseId"(): integer
-public "sourceDirectId"(): integer
 public "type"(): $PacketType<($ClientboundDamageEventPacket)>
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
 public "handle"(arg0: $ClientGamePacketListener$$Type): void
 public "handle"(arg0: $PacketListener$$Type): void
+public "sourceType"(): $Holder<($DamageType)>
 public "isTerminal"(): boolean
 public static "codec"<B extends $ByteBuf, T extends $Packet<(object)>>(arg0: $StreamMemberEncoder$$Type<(B), ($ClientGamePacketListener)>, arg1: $StreamDecoder$$Type<(B), ($ClientGamePacketListener$$Type)>): $StreamCodec<(B), ($ClientGamePacketListener)>
 public "isSkippable"(): boolean
@@ -3681,12 +3681,12 @@ import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$UUID$$Type} from "java.util.UUID"
 import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
-import {$BossEvent$$Type} from "net.minecraft.world.BossEvent"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
+import {$BossEvent$$Type} from "net.minecraft.world.BossEvent"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$ClientboundBossEventPacket$Handler$$Type} from "net.minecraft.network.protocol.game.ClientboundBossEventPacket$Handler"
 
@@ -3732,8 +3732,8 @@ public "getNametagVisibility"(): StringJS
 public "getPlayerPrefix"(): $Component
 public "getPlayerSuffix"(): $Component
 public "getCollisionRule"(): StringJS
-public "write"(arg0: $RegistryFriendlyByteBuf$$Type): void
 public "getDisplayName"(): $Component
+public "write"(arg0: $RegistryFriendlyByteBuf$$Type): void
 public "getOptions"(): integer
 public "getColor"(): $ChatFormatting
 get "nametagVisibility"(): StringJS
@@ -3759,9 +3759,9 @@ import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$List, $List$$Type} from "java.util.List"
 import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ClientboundCustomChatCompletionsPacket$Action, $ClientboundCustomChatCompletionsPacket$Action$$Type} from "net.minecraft.network.protocol.game.ClientboundCustomChatCompletionsPacket$Action"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
@@ -3804,8 +3804,8 @@ import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet
 import {$ServerGamePacketListener, $ServerGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ServerGamePacketListener"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 
 export class $ServerboundJigsawGeneratePacket implements $Packet$$Interface<($ServerGamePacketListener)> {
 static readonly "STREAM_CODEC": $StreamCodec<($FriendlyByteBuf), ($ServerboundJigsawGeneratePacket)>
@@ -3842,25 +3842,25 @@ import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$FilterMask, $FilterMask$$Type} from "net.minecraft.network.chat.FilterMask"
-import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$SignedMessageBody$Packed, $SignedMessageBody$Packed$$Type} from "net.minecraft.network.chat.SignedMessageBody$Packed"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
-import {$ChatType$Bound, $ChatType$Bound$$Type} from "net.minecraft.network.chat.ChatType$Bound"
 import {$Record} from "java.lang.Record"
+import {$ChatType$Bound, $ChatType$Bound$$Type} from "net.minecraft.network.chat.ChatType$Bound"
 
 export class $ClientboundPlayerChatPacket extends $Record implements $Packet$$Interface<($ClientGamePacketListener)> {
 static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($ClientboundPlayerChatPacket)>
 
 constructor(arg0: $UUID$$Type, arg1: integer, arg2: $MessageSignature$$Type, arg3: $SignedMessageBody$Packed$$Type, arg4: $Component$$Type, arg5: $FilterMask$$Type, arg6: $ChatType$Bound$$Type)
 
+public "chatType"(): $ChatType$Bound
 public "sender"(): $UUID
 public "unsignedContent"(): $Component
 public "filterMask"(): $FilterMask
-public "chatType"(): $ChatType$Bound
 public "signature"(): $MessageSignature
 public "index"(): integer
 public "type"(): $PacketType<($ClientboundPlayerChatPacket)>
@@ -3888,11 +3888,11 @@ export type $ClientboundPlayerChatPacket$$Original = $ClientboundPlayerChatPacke
 declare module "net.minecraft.network.protocol.game.ClientboundDisguisedChatPacket" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
-import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
+import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
@@ -3922,7 +3922,7 @@ get "terminal"(): boolean
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $ClientboundDisguisedChatPacket$$Type = ({"message"?: $Component$$Type, "chatType"?: $ChatType$Bound$$Type}) | ([message?: $Component$$Type, chatType?: $ChatType$Bound$$Type]);
+export type $ClientboundDisguisedChatPacket$$Type = ({"chatType"?: $ChatType$Bound$$Type, "message"?: $Component$$Type}) | ([chatType?: $ChatType$Bound$$Type, message?: $Component$$Type]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -3934,9 +3934,9 @@ import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$Record} from "java.lang.Record"
 
 export class $ClientboundBlockChangedAckPacket extends $Record implements $Packet$$Interface<($ClientGamePacketListener)> {
@@ -3974,9 +3974,9 @@ import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$ServerGamePacketListener, $ServerGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ServerGamePacketListener"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
+import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$RemoteChatSession$Data, $RemoteChatSession$Data$$Type} from "net.minecraft.network.chat.RemoteChatSession$Data"
-import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$Record} from "java.lang.Record"
 
 export class $ServerboundChatSessionUpdatePacket extends $Record implements $Packet$$Interface<($ServerGamePacketListener)> {
@@ -4014,9 +4014,9 @@ import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 
 export class $ClientboundTagQueryPacket implements $Packet$$Interface<($ClientGamePacketListener)> {
 static readonly "STREAM_CODEC": $StreamCodec<($FriendlyByteBuf), ($ClientboundTagQueryPacket)>
@@ -4065,7 +4065,7 @@ public "protocol"(): integer
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $ServerStatus$Version$$Type = ({"name"?: StringJS, "protocol"?: integer}) | ([name?: StringJS, protocol?: integer]);
+export type $ServerStatus$Version$$Type = ({"protocol"?: integer, "name"?: StringJS}) | ([protocol?: integer, name?: StringJS]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -4115,9 +4115,9 @@ import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 
 export class $ClientboundSetCameraPacket implements $Packet$$Interface<($ClientGamePacketListener)> {
 static readonly "STREAM_CODEC": $StreamCodec<($FriendlyByteBuf), ($ClientboundSetCameraPacket)>
@@ -4189,8 +4189,8 @@ import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
 import {$CustomPacketPayload, $CustomPacketPayload$$Type} from "net.minecraft.network.protocol.common.custom.CustomPacketPayload"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
@@ -4231,9 +4231,9 @@ import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$WorldBorder$$Type} from "net.minecraft.world.level.border.WorldBorder"
 
 export class $ClientboundInitializeBorderPacket implements $Packet$$Interface<($ClientGamePacketListener)> {
@@ -4279,8 +4279,8 @@ declare module "net.minecraft.network.protocol.cookie.ClientCookiePacketListener
 import {$PacketFlow} from "net.minecraft.network.protocol.PacketFlow"
 import {$ClientboundCookieRequestPacket$$Type} from "net.minecraft.network.protocol.cookie.ClientboundCookieRequestPacket"
 import {$Exception$$Type} from "java.lang.Exception"
-import {$ConnectionProtocol} from "net.minecraft.network.ConnectionProtocol"
 import {$CrashReport$$Type} from "net.minecraft.CrashReport"
+import {$ConnectionProtocol} from "net.minecraft.network.ConnectionProtocol"
 import {$Packet$$Type} from "net.minecraft.network.protocol.Packet"
 import {$Throwable$$Type} from "java.lang.Throwable"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
@@ -4319,8 +4319,8 @@ import {$AttributeModifier, $AttributeModifier$$Type} from "net.minecraft.world.
 import {$Collection, $Collection$$Type} from "java.util.Collection"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Attribute, $Attribute$$Type} from "net.minecraft.world.entity.ai.attributes.Attribute"
-import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
+import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$Record} from "java.lang.Record"
 
 export class $ClientboundUpdateAttributesPacket$AttributeSnapshot extends $Record {
@@ -4355,8 +4355,8 @@ import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$ServerGamePacketListener, $ServerGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ServerGamePacketListener"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 
 export class $ServerboundRecipeBookSeenRecipePacket implements $Packet$$Interface<($ServerGamePacketListener)> {
 static readonly "STREAM_CODEC": $StreamCodec<($FriendlyByteBuf), ($ServerboundRecipeBookSeenRecipePacket)>
@@ -4390,9 +4390,9 @@ import {$Pair, $Pair$$Type} from "com.mojang.datafixers.util.Pair"
 import {$List, $List$$Type} from "java.util.List"
 import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$EquipmentSlot, $EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
@@ -4428,11 +4428,11 @@ export type $ClientboundSetEquipmentPacket$$Original = $ClientboundSetEquipmentP
 declare module "net.minecraft.network.protocol.game.ServerboundPlayerActionPacket" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
-import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
 import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
+import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$ServerGamePacketListener, $ServerGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ServerGamePacketListener"
@@ -4477,11 +4477,11 @@ import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
-import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
+import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$Record} from "java.lang.Record"
 
 export class $ClientboundServerDataPacket extends $Record implements $Packet$$Interface<($ClientGamePacketListener)> {
@@ -4507,7 +4507,7 @@ get "skippable"(): boolean
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $ClientboundServerDataPacket$$Type = ({"iconBytes"?: ((byte)[])?, "motd"?: $Component$$Type}) | ([iconBytes?: ((byte)[])?, motd?: $Component$$Type]);
+export type $ClientboundServerDataPacket$$Type = ({"motd"?: $Component$$Type, "iconBytes"?: ((byte)[])?}) | ([motd?: $Component$$Type, iconBytes?: ((byte)[])?]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -4519,13 +4519,13 @@ import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$LastSeenMessages$Update, $LastSeenMessages$Update$$Type} from "net.minecraft.network.chat.LastSeenMessages$Update"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
 import {$ArgumentSignatures, $ArgumentSignatures$$Type} from "net.minecraft.commands.arguments.ArgumentSignatures"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$ServerGamePacketListener, $ServerGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ServerGamePacketListener"
-import {$Instant, $Instant$$Type} from "java.time.Instant"
 import {$Record} from "java.lang.Record"
+import {$Instant, $Instant$$Type} from "java.time.Instant"
 
 export class $ServerboundChatCommandSignedPacket extends $Record implements $Packet$$Interface<($ServerGamePacketListener)> {
 static readonly "STREAM_CODEC": $StreamCodec<($FriendlyByteBuf), ($ServerboundChatCommandSignedPacket)>
@@ -4567,8 +4567,8 @@ import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$ServerGamePacketListener, $ServerGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ServerGamePacketListener"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 
 export class $ServerboundUseItemPacket implements $Packet$$Interface<($ServerGamePacketListener)> {
 static readonly "STREAM_CODEC": $StreamCodec<($FriendlyByteBuf), ($ServerboundUseItemPacket)>
@@ -4609,8 +4609,8 @@ import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$Record} from "java.lang.Record"
 
 export class $ClientboundTransferPacket extends $Record implements $Packet$$Interface<($ClientCommonPacketListener)> {
@@ -4678,9 +4678,9 @@ import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$Record} from "java.lang.Record"
 
 export class $ClientboundDeleteChatPacket extends $Record implements $Packet$$Interface<($ClientGamePacketListener)> {
@@ -4761,9 +4761,9 @@ import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
 import {$RemoteDebugSampleType, $RemoteDebugSampleType$$Type} from "net.minecraft.util.debugchart.RemoteDebugSampleType"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$Record} from "java.lang.Record"
 
 export class $ClientboundDebugSamplePacket extends $Record implements $Packet$$Interface<($ClientGamePacketListener)> {
@@ -4789,7 +4789,7 @@ get "skippable"(): boolean
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $ClientboundDebugSamplePacket$$Type = ({"debugSampleType"?: $RemoteDebugSampleType$$Type, "sample"?: (long)[]}) | ([debugSampleType?: $RemoteDebugSampleType$$Type, sample?: (long)[]]);
+export type $ClientboundDebugSamplePacket$$Type = ({"sample"?: (long)[], "debugSampleType"?: $RemoteDebugSampleType$$Type}) | ([sample?: (long)[], debugSampleType?: $RemoteDebugSampleType$$Type]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -4869,8 +4869,8 @@ import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$ServerGamePacketListener, $ServerGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ServerGamePacketListener"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 
 export class $ServerboundSwingPacket implements $Packet$$Interface<($ServerGamePacketListener)> {
 static readonly "STREAM_CODEC": $StreamCodec<($FriendlyByteBuf), ($ServerboundSwingPacket)>
@@ -4905,9 +4905,9 @@ import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 
 export class $ClientboundSetEntityLinkPacket implements $Packet$$Interface<($ClientGamePacketListener)> {
 static readonly "STREAM_CODEC": $StreamCodec<($FriendlyByteBuf), ($ClientboundSetEntityLinkPacket)>
@@ -4942,11 +4942,11 @@ import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyBy
 import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
-import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
+import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$Record} from "java.lang.Record"
 
 export class $ClientboundSetSubtitleTextPacket extends $Record implements $Packet$$Interface<($ClientGamePacketListener)> {
@@ -4954,13 +4954,13 @@ static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($Clien
 
 constructor(arg0: $Component$$Type)
 
+public "text"(): $Component
 public "type"(): $PacketType<($ClientboundSetSubtitleTextPacket)>
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
 public "handle"(arg0: $PacketListener$$Type): void
 public "handle"(arg0: $ClientGamePacketListener$$Type): void
-public "text"(): $Component
 public "isTerminal"(): boolean
 public static "codec"<B extends $ByteBuf, T extends $Packet<(object)>>(arg0: $StreamMemberEncoder$$Type<(B), ($ClientGamePacketListener)>, arg1: $StreamDecoder$$Type<(B), ($ClientGamePacketListener$$Type)>): $StreamCodec<(B), ($ClientGamePacketListener)>
 public "isSkippable"(): boolean
@@ -4985,9 +4985,9 @@ import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 
 export class $ClientboundSetEntityMotionPacket implements $Packet$$Interface<($ClientGamePacketListener)> {
 static readonly "STREAM_CODEC": $StreamCodec<($FriendlyByteBuf), ($ClientboundSetEntityMotionPacket)>
@@ -5028,8 +5028,8 @@ import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$List, $List$$Type} from "java.util.List"
 import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$ServerGamePacketListener, $ServerGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ServerGamePacketListener"
@@ -5085,7 +5085,7 @@ public "codec"(): $StreamCodec<(B), (T)>
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $CustomPacketPayload$TypeAndCodec$$Type<B, T> = ({"type"?: $CustomPacketPayload$Type$$Type<(T)>, "codec"?: $StreamCodec$$Type<(B), (T)>}) | ([type?: $CustomPacketPayload$Type$$Type<(T)>, codec?: $StreamCodec$$Type<(B), (T)>]);
+export type $CustomPacketPayload$TypeAndCodec$$Type<B, T> = ({"codec"?: $StreamCodec$$Type<(B), (T)>, "type"?: $CustomPacketPayload$Type$$Type<(T)>}) | ([codec?: $StreamCodec$$Type<(B), (T)>, type?: $CustomPacketPayload$Type$$Type<(T)>]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -5099,8 +5099,8 @@ import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$Record} from "java.lang.Record"
 
 export class $ServerboundClientInformationPacket extends $Record implements $Packet$$Interface<($ServerCommonPacketListener)> {
@@ -5137,8 +5137,8 @@ import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
-import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
 import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
+import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
 
 export class $ClientboundStartConfigurationPacket implements $Packet$$Interface<($ClientGamePacketListener)> {
 static readonly "INSTANCE": $ClientboundStartConfigurationPacket
@@ -5169,9 +5169,9 @@ import {$List} from "java.util.List"
 import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
 import {$NonNullList$$Type} from "net.minecraft.core.NonNullList"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
@@ -5214,8 +5214,8 @@ import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$UUID, $UUID$$Type} from "java.util.UUID"
 import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$ServerboundResourcePackPacket$Action, $ServerboundResourcePackPacket$Action$$Type} from "net.minecraft.network.protocol.common.ServerboundResourcePackPacket$Action"
@@ -5244,7 +5244,7 @@ get "skippable"(): boolean
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $ServerboundResourcePackPacket$$Type = ({"id"?: $UUID$$Type, "action"?: $ServerboundResourcePackPacket$Action$$Type}) | ([id?: $UUID$$Type, action?: $ServerboundResourcePackPacket$Action$$Type]);
+export type $ServerboundResourcePackPacket$$Type = ({"action"?: $ServerboundResourcePackPacket$Action$$Type, "id"?: $UUID$$Type}) | ([action?: $ServerboundResourcePackPacket$Action$$Type, id?: $UUID$$Type]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -5257,9 +5257,9 @@ import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 
 export class $ClientboundSetDefaultSpawnPositionPacket implements $Packet$$Interface<($ClientGamePacketListener)> {
 static readonly "STREAM_CODEC": $StreamCodec<($FriendlyByteBuf), ($ClientboundSetDefaultSpawnPositionPacket)>
@@ -5296,9 +5296,9 @@ import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 
 export class $ClientboundPlayerAbilitiesPacket implements $Packet$$Interface<($ClientGamePacketListener)> {
  "flyingSpeed": float
@@ -5341,9 +5341,9 @@ import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 
 export class $ClientboundAnimatePacket implements $Packet$$Interface<($ClientGamePacketListener)> {
 static readonly "CRITICAL_HIT": integer
@@ -5380,14 +5380,14 @@ export type $ClientboundAnimatePacket$$Original = $ClientboundAnimatePacket;}
 declare module "net.minecraft.network.protocol.game.ClientboundSoundEntityPacket" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
-import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
 import {$SoundEvent, $SoundEvent$$Type} from "net.minecraft.sounds.SoundEvent"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
+import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
+import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
-import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$SoundSource, $SoundSource$$Type} from "net.minecraft.sounds.SoundSource"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
@@ -5397,8 +5397,8 @@ static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($Clien
 
 constructor(arg0: $Holder$$Type<($SoundEvent)>, arg1: $SoundSource$$Type, arg2: $Entity$$Type, arg3: float, arg4: float, arg5: long)
 
-public "getSource"(): $SoundSource
 public "getSeed"(): long
+public "getSource"(): $SoundSource
 public "type"(): $PacketType<($ClientboundSoundEntityPacket)>
 public "getId"(): integer
 public "handle"(arg0: $ClientGamePacketListener$$Type): void
@@ -5409,8 +5409,8 @@ public "getSound"(): $Holder<($SoundEvent)>
 public "isTerminal"(): boolean
 public static "codec"<B extends $ByteBuf, T extends $Packet<(object)>>(arg0: $StreamMemberEncoder$$Type<(B), ($ClientGamePacketListener)>, arg1: $StreamDecoder$$Type<(B), ($ClientGamePacketListener$$Type)>): $StreamCodec<(B), ($ClientGamePacketListener)>
 public "isSkippable"(): boolean
-get "source"(): $SoundSource
 get "seed"(): long
+get "source"(): $SoundSource
 get "id"(): integer
 get "volume"(): float
 get "pitch"(): float
@@ -5435,9 +5435,9 @@ import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 
 export class $ClientboundLevelEventPacket implements $Packet$$Interface<($ClientGamePacketListener)> {
 static readonly "STREAM_CODEC": $StreamCodec<($FriendlyByteBuf), ($ClientboundLevelEventPacket)>
@@ -5512,8 +5512,8 @@ import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
-import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
 import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
+import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
 
 export class $ClientboundChunkBatchStartPacket implements $Packet$$Interface<($ClientGamePacketListener)> {
 static readonly "INSTANCE": $ClientboundChunkBatchStartPacket
@@ -5540,17 +5540,17 @@ export type $ClientboundChunkBatchStartPacket$$Original = $ClientboundChunkBatch
 declare module "net.minecraft.network.protocol.game.ClientboundMapItemDataPacket" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$MapId, $MapId$$Type} from "net.minecraft.world.level.saveddata.maps.MapId"
-import {$Collection$$Type} from "java.util.Collection"
 import {$IMapDataPacketExtension$$Interface} from "net.mehvahdjukaar.moonlight.core.misc.IMapDataPacketExtension"
+import {$Collection$$Type} from "java.util.Collection"
 import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$List, $List$$Type} from "java.util.List"
-import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$MapItemSavedData$MapPatch, $MapItemSavedData$MapPatch$$Type} from "net.minecraft.world.level.saveddata.maps.MapItemSavedData$MapPatch"
+import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$MapDecoration, $MapDecoration$$Type} from "net.minecraft.world.level.saveddata.maps.MapDecoration"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
@@ -5607,9 +5607,9 @@ import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$WorldBorder$$Type} from "net.minecraft.world.level.border.WorldBorder"
 
 export class $ClientboundSetBorderWarningDelayPacket implements $Packet$$Interface<($ClientGamePacketListener)> {
@@ -5682,9 +5682,9 @@ import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 
 export class $ClientboundBlockEventPacket implements $Packet$$Interface<($ClientGamePacketListener)> {
 static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($ClientboundBlockEventPacket)>
@@ -5753,9 +5753,9 @@ import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$WorldBorder$$Type} from "net.minecraft.world.level.border.WorldBorder"
 
 export class $ClientboundSetBorderWarningDistancePacket implements $Packet$$Interface<($ClientGamePacketListener)> {
@@ -5793,27 +5793,27 @@ import {$ClientboundUpdateAdvancementsPacket$$Type} from "net.minecraft.network.
 import {$ClientboundContainerSetSlotPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundContainerSetSlotPacket"
 import {$ClientboundSetObjectivePacket$$Type} from "net.minecraft.network.protocol.game.ClientboundSetObjectivePacket"
 import {$ClientboundDeleteChatPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundDeleteChatPacket"
-import {$ClientboundSetScorePacket$$Type} from "net.minecraft.network.protocol.game.ClientboundSetScorePacket"
 import {$ClientboundOpenScreenPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundOpenScreenPacket"
+import {$ClientboundSetScorePacket$$Type} from "net.minecraft.network.protocol.game.ClientboundSetScorePacket"
 import {$ClientboundLevelChunkWithLightPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundLevelChunkWithLightPacket"
 import {$ClientboundSetBorderWarningDistancePacket$$Type} from "net.minecraft.network.protocol.game.ClientboundSetBorderWarningDistancePacket"
-import {$ClientboundSetBorderSizePacket$$Type} from "net.minecraft.network.protocol.game.ClientboundSetBorderSizePacket"
 import {$ClientboundSetActionBarTextPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundSetActionBarTextPacket"
+import {$ClientboundSetBorderSizePacket$$Type} from "net.minecraft.network.protocol.game.ClientboundSetBorderSizePacket"
 import {$ClientboundPlayerAbilitiesPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundPlayerAbilitiesPacket"
-import {$ClientboundSetBorderWarningDelayPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundSetBorderWarningDelayPacket"
 import {$ClientboundBundlePacket$$Type} from "net.minecraft.network.protocol.game.ClientboundBundlePacket"
+import {$ClientboundSetBorderWarningDelayPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundSetBorderWarningDelayPacket"
 import {$ClientboundPlayerCombatEndPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundPlayerCombatEndPacket"
 import {$CrashReport$$Type} from "net.minecraft.CrashReport"
-import {$ClientboundMoveVehiclePacket$$Type} from "net.minecraft.network.protocol.game.ClientboundMoveVehiclePacket"
 import {$ClientPongPacketListener$$Interface} from "net.minecraft.network.protocol.ping.ClientPongPacketListener"
 import {$ClientboundInitializeBorderPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundInitializeBorderPacket"
+import {$ClientboundMoveVehiclePacket$$Type} from "net.minecraft.network.protocol.game.ClientboundMoveVehiclePacket"
 import {$ClientboundForgetLevelChunkPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundForgetLevelChunkPacket"
 import {$ClientboundTagQueryPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundTagQueryPacket"
 import {$ClientboundContainerSetContentPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundContainerSetContentPacket"
 import {$ClientboundSetExperiencePacket$$Type} from "net.minecraft.network.protocol.game.ClientboundSetExperiencePacket"
 import {$ConnectionType} from "net.neoforged.neoforge.network.connection.ConnectionType"
-import {$ClientboundTickingStatePacket$$Type} from "net.minecraft.network.protocol.game.ClientboundTickingStatePacket"
 import {$ClientboundSetBorderCenterPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundSetBorderCenterPacket"
+import {$ClientboundTickingStatePacket$$Type} from "net.minecraft.network.protocol.game.ClientboundTickingStatePacket"
 import {$ClientboundUpdateRecipesPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundUpdateRecipesPacket"
 import {$ClientboundPlayerInfoUpdatePacket$$Type} from "net.minecraft.network.protocol.game.ClientboundPlayerInfoUpdatePacket"
 import {$ClientboundSetDisplayObjectivePacket$$Type} from "net.minecraft.network.protocol.game.ClientboundSetDisplayObjectivePacket"
@@ -5835,26 +5835,26 @@ import {$ClientboundCustomReportDetailsPacket$$Type} from "net.minecraft.network
 import {$ReentrantBlockableEventLoop} from "net.minecraft.util.thread.ReentrantBlockableEventLoop"
 import {$ClientboundCommandsPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundCommandsPacket"
 import {$ClientboundBossEventPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundBossEventPacket"
-import {$ClientboundTransferPacket$$Type} from "net.minecraft.network.protocol.common.ClientboundTransferPacket"
-import {$PacketFlow} from "net.minecraft.network.protocol.PacketFlow"
 import {$ClientboundSetTitlesAnimationPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundSetTitlesAnimationPacket"
+import {$PacketFlow} from "net.minecraft.network.protocol.PacketFlow"
+import {$ClientboundTransferPacket$$Type} from "net.minecraft.network.protocol.common.ClientboundTransferPacket"
 import {$ClientboundSectionBlocksUpdatePacket$$Type} from "net.minecraft.network.protocol.game.ClientboundSectionBlocksUpdatePacket"
 import {$ClientboundSoundPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundSoundPacket"
 import {$ClientboundResourcePackPopPacket$$Type} from "net.minecraft.network.protocol.common.ClientboundResourcePackPopPacket"
 import {$ClientboundResetScorePacket$$Type} from "net.minecraft.network.protocol.game.ClientboundResetScorePacket"
 import {$CustomPacketPayload$$Type} from "net.minecraft.network.protocol.common.custom.CustomPacketPayload"
 import {$ClientboundSetEquipmentPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundSetEquipmentPacket"
-import {$ClientboundTickingStepPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundTickingStepPacket"
 import {$ClientboundDamageEventPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundDamageEventPacket"
-import {$ClientboundAnimatePacket$$Type} from "net.minecraft.network.protocol.game.ClientboundAnimatePacket"
+import {$ClientboundTickingStepPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundTickingStepPacket"
 import {$ClientboundPlayerChatPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundPlayerChatPacket"
+import {$ClientboundAnimatePacket$$Type} from "net.minecraft.network.protocol.game.ClientboundAnimatePacket"
 import {$ClientboundOpenSignEditorPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundOpenSignEditorPacket"
 import {$ClientboundChunksBiomesPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundChunksBiomesPacket"
 import {$ClientboundCustomPayloadPacket$$Type} from "net.minecraft.network.protocol.common.ClientboundCustomPayloadPacket"
 import {$ConnectionProtocol} from "net.minecraft.network.ConnectionProtocol"
 import {$ClientboundTeleportEntityPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundTeleportEntityPacket"
-import {$ClientboundContainerClosePacket$$Type} from "net.minecraft.network.protocol.game.ClientboundContainerClosePacket"
 import {$ClientboundHurtAnimationPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundHurtAnimationPacket"
+import {$ClientboundContainerClosePacket$$Type} from "net.minecraft.network.protocol.game.ClientboundContainerClosePacket"
 import {$ClientCommonPacketListener$$Interface} from "net.minecraft.network.protocol.common.ClientCommonPacketListener"
 import {$ClientboundCookieRequestPacket$$Type} from "net.minecraft.network.protocol.cookie.ClientboundCookieRequestPacket"
 import {$ClientboundSetBorderLerpSizePacket$$Type} from "net.minecraft.network.protocol.game.ClientboundSetBorderLerpSizePacket"
@@ -5864,8 +5864,8 @@ import {$ClientboundContainerSetDataPacket$$Type} from "net.minecraft.network.pr
 import {$ClientboundRespawnPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundRespawnPacket"
 import {$ClientboundSetChunkCacheCenterPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundSetChunkCacheCenterPacket"
 import {$ClientboundAddExperienceOrbPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundAddExperienceOrbPacket"
-import {$ClientboundPlayerInfoRemovePacket$$Type} from "net.minecraft.network.protocol.game.ClientboundPlayerInfoRemovePacket"
 import {$ClientboundChunkBatchStartPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundChunkBatchStartPacket"
+import {$ClientboundPlayerInfoRemovePacket$$Type} from "net.minecraft.network.protocol.game.ClientboundPlayerInfoRemovePacket"
 import {$ClientboundSetHealthPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundSetHealthPacket"
 import {$ClientboundBlockChangedAckPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundBlockChangedAckPacket"
 import {$ClientboundLevelParticlesPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundLevelParticlesPacket"
@@ -5878,24 +5878,24 @@ import {$ClientboundSoundEntityPacket$$Type} from "net.minecraft.network.protoco
 import {$ClientboundSetCarriedItemPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundSetCarriedItemPacket"
 import {$ClientboundUpdateTagsPacket$$Type} from "net.minecraft.network.protocol.common.ClientboundUpdateTagsPacket"
 import {$ClientboundGameEventPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundGameEventPacket"
-import {$ClientboundLightUpdatePacket$$Type} from "net.minecraft.network.protocol.game.ClientboundLightUpdatePacket"
 import {$DisconnectionDetails, $DisconnectionDetails$$Type} from "net.minecraft.network.DisconnectionDetails"
+import {$ClientboundLightUpdatePacket$$Type} from "net.minecraft.network.protocol.game.ClientboundLightUpdatePacket"
 import {$ClientboundPongResponsePacket$$Type} from "net.minecraft.network.protocol.ping.ClientboundPongResponsePacket"
-import {$ClientboundSystemChatPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundSystemChatPacket"
 import {$ClientboundServerDataPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundServerDataPacket"
+import {$ClientboundSystemChatPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundSystemChatPacket"
 import {$ClientboundRecipePacket$$Type} from "net.minecraft.network.protocol.game.ClientboundRecipePacket"
 import {$ClientboundSetSubtitleTextPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundSetSubtitleTextPacket"
-import {$ClientboundMapItemDataPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundMapItemDataPacket"
 import {$ClientboundUpdateAttributesPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundUpdateAttributesPacket"
+import {$ClientboundMapItemDataPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundMapItemDataPacket"
 import {$ClientboundOpenBookPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundOpenBookPacket"
 import {$ClientboundSetDefaultSpawnPositionPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundSetDefaultSpawnPositionPacket"
 import {$ClientboundSetEntityDataPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundSetEntityDataPacket"
 import {$ClientboundSetTimePacket$$Type} from "net.minecraft.network.protocol.game.ClientboundSetTimePacket"
 import {$CustomPacketPayload$Type$$Type} from "net.minecraft.network.protocol.common.custom.CustomPacketPayload$Type"
-import {$ClientboundCustomChatCompletionsPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundCustomChatCompletionsPacket"
 import {$ClientboundProjectilePowerPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundProjectilePowerPacket"
-import {$ClientboundTakeItemEntityPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundTakeItemEntityPacket"
+import {$ClientboundCustomChatCompletionsPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundCustomChatCompletionsPacket"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
+import {$ClientboundTakeItemEntityPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundTakeItemEntityPacket"
 import {$ClientboundChangeDifficultyPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundChangeDifficultyPacket"
 import {$ClientboundExplodePacket$$Type} from "net.minecraft.network.protocol.game.ClientboundExplodePacket"
 import {$ClientboundCommandSuggestionsPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundCommandSuggestionsPacket"
@@ -5904,8 +5904,8 @@ import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$ClientboundResourcePackPushPacket$$Type} from "net.minecraft.network.protocol.common.ClientboundResourcePackPushPacket"
 import {$ClientboundAddEntityPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundAddEntityPacket"
 import {$ClientboundLoginPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundLoginPacket"
-import {$Throwable$$Type} from "java.lang.Throwable"
 import {$ClientboundAwardStatsPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundAwardStatsPacket"
+import {$Throwable$$Type} from "java.lang.Throwable"
 import {$ClientboundStartConfigurationPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundStartConfigurationPacket"
 import {$ClientboundMoveEntityPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundMoveEntityPacket"
 import {$ClientboundHorseScreenOpenPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundHorseScreenOpenPacket"
@@ -5919,8 +5919,8 @@ import {$ClientboundRemoveMobEffectPacket$$Type} from "net.minecraft.network.pro
 import {$ClientboundSetSimulationDistancePacket$$Type} from "net.minecraft.network.protocol.game.ClientboundSetSimulationDistancePacket"
 import {$ClientboundLevelEventPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundLevelEventPacket"
 import {$ClientboundEntityEventPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundEntityEventPacket"
-import {$ClientboundPlaceGhostRecipePacket$$Type} from "net.minecraft.network.protocol.game.ClientboundPlaceGhostRecipePacket"
 import {$ClientboundBlockEntityDataPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket"
+import {$ClientboundPlaceGhostRecipePacket$$Type} from "net.minecraft.network.protocol.game.ClientboundPlaceGhostRecipePacket"
 import {$Connection} from "net.minecraft.network.Connection"
 import {$ClientboundRotateHeadPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundRotateHeadPacket"
 
@@ -5936,7 +5936,6 @@ get "connection"(): $Connection
 }
 
 export class $ClientGamePacketListener implements $ClientGamePacketListener$$Interface {
- "handleBlockEntityData"(arg0: $ClientboundBlockEntityDataPacket$$Type): void
  "handleLogin"(arg0: $ClientboundLoginPacket$$Type): void
  "handleAddExperienceOrb"(arg0: $ClientboundAddExperienceOrbPacket$$Type): void
  "handleSetEntityMotion"(arg0: $ClientboundSetEntityMotionPacket$$Type): void
@@ -5944,6 +5943,7 @@ export class $ClientGamePacketListener implements $ClientGamePacketListener$$Int
  "handleTeleportEntity"(arg0: $ClientboundTeleportEntityPacket$$Type): void
  "handleTickingState"(arg0: $ClientboundTickingStatePacket$$Type): void
  "handleTickingStep"(arg0: $ClientboundTickingStepPacket$$Type): void
+ "handleMoveEntity"(arg0: $ClientboundMoveEntityPacket$$Type): void
  "handleRotateMob"(arg0: $ClientboundRotateHeadPacket$$Type): void
  "handleRemoveEntities"(arg0: $ClientboundRemoveEntitiesPacket$$Type): void
  "handleChunkBlocksUpdate"(arg0: $ClientboundSectionBlocksUpdatePacket$$Type): void
@@ -6032,7 +6032,7 @@ export class $ClientGamePacketListener implements $ClientGamePacketListener$$Int
  "handleChunkBatchFinished"(arg0: $ClientboundChunkBatchFinishedPacket$$Type): void
  "handleDebugSample"(arg0: $ClientboundDebugSamplePacket$$Type): void
  "handleGameEvent"(arg0: $ClientboundGameEventPacket$$Type): void
- "handleAddEntity"(arg0: $ClientboundAddEntityPacket$$Type): void
+ "handleBlockEntityData"(arg0: $ClientboundBlockEntityDataPacket$$Type): void
  "handleMoveVehicle"(arg0: $ClientboundMoveVehiclePacket$$Type): void
  "handleMovePlayer"(arg0: $ClientboundPlayerPositionPacket$$Type): void
  "handleSetCarriedItem"(arg0: $ClientboundSetCarriedItemPacket$$Type): void
@@ -6041,14 +6041,14 @@ export class $ClientGamePacketListener implements $ClientGamePacketListener$$Int
  "handlePlaceRecipe"(arg0: $ClientboundPlaceGhostRecipePacket$$Type): void
  "handlePlayerAbilities"(arg0: $ClientboundPlayerAbilitiesPacket$$Type): void
  "handleChangeDifficulty"(arg0: $ClientboundChangeDifficultyPacket$$Type): void
- "handleMoveEntity"(arg0: $ClientboundMoveEntityPacket$$Type): void
+ "handleAddEntity"(arg0: $ClientboundAddEntityPacket$$Type): void
  "protocol"(): $ConnectionProtocol
  "handleDamageEvent"(arg0: $ClientboundDamageEventPacket$$Type): void
  "handleEntityEvent"(arg0: $ClientboundEntityEventPacket$$Type): void
  "handleBlockChangedAck"(arg0: $ClientboundBlockChangedAckPacket$$Type): void
  "handlePongResponse"(arg0: $ClientboundPongResponsePacket$$Type): void
- "handlePing"(arg0: $ClientboundPingPacket$$Type): void
  "handleUpdateTags"(arg0: $ClientboundUpdateTagsPacket$$Type): void
+ "handlePing"(arg0: $ClientboundPingPacket$$Type): void
  "handleResourcePackPush"(arg0: $ClientboundResourcePackPushPacket$$Type): void
  "handleResourcePackPop"(arg0: $ClientboundResourcePackPopPacket$$Type): void
  "handleStoreCookie"(arg0: $ClientboundStoreCookiePacket$$Type): void
@@ -6092,9 +6092,9 @@ import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$List, $List$$Type} from "java.util.List"
 import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ClientboundChunksBiomesPacket$ChunkBiomeData, $ClientboundChunksBiomesPacket$ChunkBiomeData$$Type} from "net.minecraft.network.protocol.game.ClientboundChunksBiomesPacket$ChunkBiomeData"
 import {$LevelChunk$$Type} from "net.minecraft.world.level.chunk.LevelChunk"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
@@ -6150,23 +6150,23 @@ get "start"(): boolean
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $StructuresDebugPayload$PieceInfo$$Type = ({"boundingBox"?: $BoundingBox$$Type, "isStart"?: boolean}) | ([boundingBox?: $BoundingBox$$Type, isStart?: boolean]);
+export type $StructuresDebugPayload$PieceInfo$$Type = ({"isStart"?: boolean, "boundingBox"?: $BoundingBox$$Type}) | ([isStart?: boolean, boundingBox?: $BoundingBox$$Type]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
 export type $StructuresDebugPayload$PieceInfo$$Original = $StructuresDebugPayload$PieceInfo;}
 declare module "net.minecraft.network.protocol.game.ClientboundLightUpdatePacket" {
-import {$BitSet$$Type} from "java.util.BitSet"
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
+import {$BitSet$$Type} from "java.util.BitSet"
 import {$LevelLightEngine$$Type} from "net.minecraft.world.level.lighting.LevelLightEngine"
 import {$ClientboundLightUpdatePacketData} from "net.minecraft.network.protocol.game.ClientboundLightUpdatePacketData"
 import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
 import {$ChunkPos$$Type} from "net.minecraft.world.level.ChunkPos"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 
@@ -6207,8 +6207,8 @@ import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
-import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
 import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
+import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
 
 export class $ClientboundSetTitlesAnimationPacket implements $Packet$$Interface<($ClientGamePacketListener)> {
 static readonly "STREAM_CODEC": $StreamCodec<($FriendlyByteBuf), ($ClientboundSetTitlesAnimationPacket)>
@@ -6269,9 +6269,9 @@ import {$Difficulty, $Difficulty$$Type} from "net.minecraft.world.Difficulty"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 
 export class $ClientboundChangeDifficultyPacket implements $Packet$$Interface<($ClientGamePacketListener)> {
 static readonly "STREAM_CODEC": $StreamCodec<($FriendlyByteBuf), ($ClientboundChangeDifficultyPacket)>
@@ -6306,11 +6306,11 @@ import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyBy
 import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
-import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
+import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$Record} from "java.lang.Record"
 
 export class $ClientboundTabListPacket extends $Record implements $Packet$$Interface<($ClientGamePacketListener)> {
@@ -6336,7 +6336,7 @@ get "skippable"(): boolean
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $ClientboundTabListPacket$$Type = ({"footer"?: $Component$$Type, "header"?: $Component$$Type}) | ([footer?: $Component$$Type, header?: $Component$$Type]);
+export type $ClientboundTabListPacket$$Type = ({"header"?: $Component$$Type, "footer"?: $Component$$Type}) | ([header?: $Component$$Type, footer?: $Component$$Type]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -6346,12 +6346,12 @@ import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
-import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$Record} from "java.lang.Record"
 
 export class $ClientboundHurtAnimationPacket extends $Record implements $Packet$$Interface<($ClientGamePacketListener)> {
@@ -6378,7 +6378,7 @@ get "skippable"(): boolean
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $ClientboundHurtAnimationPacket$$Type = ({"id"?: integer, "yaw"?: float}) | ([id?: integer, yaw?: float]);
+export type $ClientboundHurtAnimationPacket$$Type = ({"yaw"?: float, "id"?: integer}) | ([yaw?: float, id?: integer]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -6386,14 +6386,14 @@ export type $ClientboundHurtAnimationPacket$$Original = $ClientboundHurtAnimatio
 declare module "net.minecraft.network.protocol.game.ClientboundSoundPacket" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
-import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
 import {$SoundEvent, $SoundEvent$$Type} from "net.minecraft.sounds.SoundEvent"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
+import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
+import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
-import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$SoundSource, $SoundSource$$Type} from "net.minecraft.sounds.SoundSource"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 
@@ -6403,9 +6403,9 @@ static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($Clien
 
 constructor(arg0: $Holder$$Type<($SoundEvent)>, arg1: $SoundSource$$Type, arg2: double, arg3: double, arg4: double, arg5: float, arg6: float, arg7: long)
 
-public "getSource"(): $SoundSource
 public "getSeed"(): long
 public "getY"(): double
+public "getSource"(): $SoundSource
 public "type"(): $PacketType<($ClientboundSoundPacket)>
 public "handle"(arg0: $ClientGamePacketListener$$Type): void
 public "handle"(arg0: $PacketListener$$Type): void
@@ -6417,9 +6417,9 @@ public "getSound"(): $Holder<($SoundEvent)>
 public "isTerminal"(): boolean
 public static "codec"<B extends $ByteBuf, T extends $Packet<(object)>>(arg0: $StreamMemberEncoder$$Type<(B), ($ClientGamePacketListener)>, arg1: $StreamDecoder$$Type<(B), ($ClientGamePacketListener$$Type)>): $StreamCodec<(B), ($ClientGamePacketListener)>
 public "isSkippable"(): boolean
-get "source"(): $SoundSource
 get "seed"(): long
 get "y"(): double
+get "source"(): $SoundSource
 get "x"(): double
 get "z"(): double
 get "volume"(): float
@@ -6442,9 +6442,9 @@ import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$List, $List$$Type} from "java.util.List"
 import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$SynchedEntityData$DataValue, $SynchedEntityData$DataValue$$Type} from "net.minecraft.network.syncher.SynchedEntityData$DataValue"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
@@ -6475,7 +6475,7 @@ get "skippable"(): boolean
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $ClientboundSetEntityDataPacket$$Type = ({"id"?: integer, "packedItems"?: $List$$Type<($SynchedEntityData$DataValue$$Type<(never)>)>}) | ([id?: integer, packedItems?: $List$$Type<($SynchedEntityData$DataValue$$Type<(never)>)>]);
+export type $ClientboundSetEntityDataPacket$$Type = ({"packedItems"?: $List$$Type<($SynchedEntityData$DataValue$$Type<(never)>)>, "id"?: integer}) | ([packedItems?: $List$$Type<($SynchedEntityData$DataValue$$Type<(never)>)>, id?: integer]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -6486,11 +6486,11 @@ import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyBy
 import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
-import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
+import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$Record} from "java.lang.Record"
 
 export class $ClientboundPlayerCombatKillPacket extends $Record implements $Packet$$Interface<($ClientGamePacketListener)> {
@@ -6516,7 +6516,7 @@ get "terminal"(): boolean
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $ClientboundPlayerCombatKillPacket$$Type = ({"message"?: $Component$$Type, "playerId"?: integer}) | ([message?: $Component$$Type, playerId?: integer]);
+export type $ClientboundPlayerCombatKillPacket$$Type = ({"playerId"?: integer, "message"?: $Component$$Type}) | ([playerId?: integer, message?: $Component$$Type]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -6527,10 +6527,10 @@ import {$ClientCommonPacketListener, $ClientCommonPacketListener$$Type} from "ne
 import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
-import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
+import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$Record} from "java.lang.Record"
 
 export class $ClientboundDisconnectPacket extends $Record implements $Packet$$Interface<($ClientCommonPacketListener)> {
@@ -6564,8 +6564,8 @@ declare module "net.minecraft.network.protocol.configuration.ServerboundFinishCo
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
-import {$ServerConfigurationPacketListener, $ServerConfigurationPacketListener$$Type} from "net.minecraft.network.protocol.configuration.ServerConfigurationPacketListener"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
+import {$ServerConfigurationPacketListener, $ServerConfigurationPacketListener$$Type} from "net.minecraft.network.protocol.configuration.ServerConfigurationPacketListener"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
@@ -6601,9 +6601,9 @@ import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 
 export class $ClientboundStopSoundPacket implements $Packet$$Interface<($ClientGamePacketListener)> {
 static readonly "STREAM_CODEC": $StreamCodec<($FriendlyByteBuf), ($ClientboundStopSoundPacket)>
@@ -6639,9 +6639,9 @@ import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$List} from "java.util.List"
 import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$ClientboundRecipePacket$State, $ClientboundRecipePacket$State$$Type} from "net.minecraft.network.protocol.game.ClientboundRecipePacket$State"
@@ -6687,9 +6687,9 @@ import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Type} from "net.minecraft.network.protocol.Packet"
 import {$BundlePacket} from "net.minecraft.network.protocol.BundlePacket"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 
 export class $ClientboundBundlePacket extends $BundlePacket<($ClientGamePacketListener)> {
 constructor(arg0: $Iterable$$Type<($Packet$$Type<($ClientGamePacketListener$$Type)>)>)
@@ -6716,8 +6716,8 @@ import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$ResourceKey, $ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
 import {$GameType, $GameType$$Type} from "net.minecraft.world.level.GameType"
 import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
-import {$DimensionType, $DimensionType$$Type} from "net.minecraft.world.level.dimension.DimensionType"
 import {$Record} from "java.lang.Record"
+import {$DimensionType, $DimensionType$$Type} from "net.minecraft.world.level.dimension.DimensionType"
 
 export class $CommonPlayerSpawnInfo extends $Record {
 constructor(arg0: $RegistryFriendlyByteBuf$$Type)
@@ -6743,7 +6743,7 @@ get "debug"(): boolean
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $CommonPlayerSpawnInfo$$Type = ({"isDebug"?: boolean, "gameType"?: $GameType$$Type, "isFlat"?: boolean, "dimensionType"?: $Holder$$Type<($DimensionType)>, "seed"?: long, "portalCooldown"?: integer, "previousGameType"?: $GameType$$Type, "dimension"?: $ResourceKey$$Type<($Level)>, "lastDeathLocation"?: ($GlobalPos$$Type)?}) | ([isDebug?: boolean, gameType?: $GameType$$Type, isFlat?: boolean, dimensionType?: $Holder$$Type<($DimensionType)>, seed?: long, portalCooldown?: integer, previousGameType?: $GameType$$Type, dimension?: $ResourceKey$$Type<($Level)>, lastDeathLocation?: ($GlobalPos$$Type)?]);
+export type $CommonPlayerSpawnInfo$$Type = ({"gameType"?: $GameType$$Type, "isFlat"?: boolean, "dimensionType"?: $Holder$$Type<($DimensionType)>, "seed"?: long, "portalCooldown"?: integer, "previousGameType"?: $GameType$$Type, "dimension"?: $ResourceKey$$Type<($Level)>, "lastDeathLocation"?: ($GlobalPos$$Type)?, "isDebug"?: boolean}) | ([gameType?: $GameType$$Type, isFlat?: boolean, dimensionType?: $Holder$$Type<($DimensionType)>, seed?: long, portalCooldown?: integer, previousGameType?: $GameType$$Type, dimension?: $ResourceKey$$Type<($Level)>, lastDeathLocation?: ($GlobalPos$$Type)?, isDebug?: boolean]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -6755,8 +6755,8 @@ import {$CustomPacketPayload$Type$$Type} from "net.minecraft.network.protocol.co
 import {$IClientCommonPacketListenerExtension$$Interface} from "net.neoforged.neoforge.common.extensions.IClientCommonPacketListenerExtension"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$ClientboundDisconnectPacket$$Type} from "net.minecraft.network.protocol.common.ClientboundDisconnectPacket"
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Exception$$Type} from "java.lang.Exception"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$ClientboundResourcePackPushPacket$$Type} from "net.minecraft.network.protocol.common.ClientboundResourcePackPushPacket"
 import {$ClientboundCustomReportDetailsPacket$$Type} from "net.minecraft.network.protocol.common.ClientboundCustomReportDetailsPacket"
 import {$Throwable$$Type} from "java.lang.Throwable"
@@ -6767,8 +6767,8 @@ import {$ClientboundTransferPacket$$Type} from "net.minecraft.network.protocol.c
 import {$CrashReport$$Type} from "net.minecraft.CrashReport"
 import {$ClientboundResourcePackPopPacket$$Type} from "net.minecraft.network.protocol.common.ClientboundResourcePackPopPacket"
 import {$ClientboundUpdateTagsPacket$$Type} from "net.minecraft.network.protocol.common.ClientboundUpdateTagsPacket"
-import {$ClientboundStoreCookiePacket$$Type} from "net.minecraft.network.protocol.common.ClientboundStoreCookiePacket"
 import {$CustomPacketPayload$$Type} from "net.minecraft.network.protocol.common.custom.CustomPacketPayload"
+import {$ClientboundStoreCookiePacket$$Type} from "net.minecraft.network.protocol.common.ClientboundStoreCookiePacket"
 import {$ClientCookiePacketListener$$Interface} from "net.minecraft.network.protocol.cookie.ClientCookiePacketListener"
 import {$DisconnectionDetails, $DisconnectionDetails$$Type} from "net.minecraft.network.DisconnectionDetails"
 import {$ClientboundServerLinksPacket$$Type} from "net.minecraft.network.protocol.common.ClientboundServerLinksPacket"
@@ -6788,8 +6788,8 @@ get "connection"(): $Connection
 }
 
 export class $ClientCommonPacketListener implements $ClientCommonPacketListener$$Interface {
- "handlePing"(arg0: $ClientboundPingPacket$$Type): void
  "handleUpdateTags"(arg0: $ClientboundUpdateTagsPacket$$Type): void
+ "handlePing"(arg0: $ClientboundPingPacket$$Type): void
  "handleResourcePackPush"(arg0: $ClientboundResourcePackPushPacket$$Type): void
  "handleResourcePackPop"(arg0: $ClientboundResourcePackPopPacket$$Type): void
  "handleStoreCookie"(arg0: $ClientboundStoreCookiePacket$$Type): void
@@ -6837,8 +6837,8 @@ import {$ClientLoginPacketListener, $ClientLoginPacketListener$$Type} from "net.
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
 import {$PublicKey} from "java.security.PublicKey"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 
 export class $ClientboundHelloPacket implements $Packet$$Interface<($ClientLoginPacketListener)> {
 static readonly "STREAM_CODEC": $StreamCodec<($FriendlyByteBuf), ($ClientboundHelloPacket)>
@@ -6876,12 +6876,12 @@ import {$RelativeMovement, $RelativeMovement$$Type} from "net.minecraft.world.en
 import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
-import {$Set, $Set$$Type} from "java.util.Set"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
+import {$Set, $Set$$Type} from "java.util.Set"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 
 export class $ClientboundPlayerPositionPacket implements $Packet$$Interface<($ClientGamePacketListener)> {
 static readonly "STREAM_CODEC": $StreamCodec<($FriendlyByteBuf), ($ClientboundPlayerPositionPacket)>
@@ -6927,9 +6927,9 @@ import {$UUID, $UUID$$Type} from "java.util.UUID"
 import {$List, $List$$Type} from "java.util.List"
 import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$Record} from "java.lang.Record"
@@ -7000,8 +7000,8 @@ import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$ServerGamePacketListener, $ServerGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ServerGamePacketListener"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 
 export class $ServerboundPlaceRecipePacket implements $Packet$$Interface<($ServerGamePacketListener)> {
 static readonly "STREAM_CODEC": $StreamCodec<($FriendlyByteBuf), ($ServerboundPlaceRecipePacket)>
@@ -7040,9 +7040,9 @@ import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$Record} from "java.lang.Record"
 
 export class $ClientboundRespawnPacket extends $Record implements $Packet$$Interface<($ClientGamePacketListener)> {
@@ -7085,9 +7085,9 @@ import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 
 export class $ClientboundSetPassengersPacket implements $Packet$$Interface<($ClientGamePacketListener)> {
 static readonly "STREAM_CODEC": $StreamCodec<($FriendlyByteBuf), ($ClientboundSetPassengersPacket)>
@@ -7152,9 +7152,9 @@ import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 
 export class $ClientboundEntityEventPacket implements $Packet$$Interface<($ClientGamePacketListener)> {
 static readonly "STREAM_CODEC": $StreamCodec<($FriendlyByteBuf), ($ClientboundEntityEventPacket)>
@@ -7187,8 +7187,8 @@ import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
-import {$ClientLoginPacketListener, $ClientLoginPacketListener$$Type} from "net.minecraft.network.protocol.login.ClientLoginPacketListener"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
+import {$ClientLoginPacketListener, $ClientLoginPacketListener$$Type} from "net.minecraft.network.protocol.login.ClientLoginPacketListener"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
@@ -7225,10 +7225,10 @@ import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$TickRateManager$$Type} from "net.minecraft.world.TickRateManager"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$Record} from "java.lang.Record"
 
 export class $ClientboundTickingStatePacket extends $Record implements $Packet$$Interface<($ClientGamePacketListener)> {
@@ -7267,11 +7267,11 @@ import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyBy
 import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
-import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
+import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$Record} from "java.lang.Record"
 
 export class $ClientboundSystemChatPacket extends $Record implements $Packet$$Interface<($ClientGamePacketListener)> {
@@ -7306,9 +7306,9 @@ declare module "net.minecraft.network.protocol.game.ClientboundAwardStatsPacket"
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$Object2IntMap, $Object2IntMap$$Type} from "it.unimi.dsi.fastutil.objects.Object2IntMap"
 import {$Stat, $Stat$$Type} from "net.minecraft.stats.Stat"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
@@ -7349,11 +7349,11 @@ import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyBy
 import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
-import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
+import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$Record} from "java.lang.Record"
 
 export class $ClientboundSetActionBarTextPacket extends $Record implements $Packet$$Interface<($ClientGamePacketListener)> {
@@ -7361,13 +7361,13 @@ static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($Clien
 
 constructor(arg0: $Component$$Type)
 
+public "text"(): $Component
 public "type"(): $PacketType<($ClientboundSetActionBarTextPacket)>
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
 public "handle"(arg0: $PacketListener$$Type): void
 public "handle"(arg0: $ClientGamePacketListener$$Type): void
-public "text"(): $Component
 public "isTerminal"(): boolean
 public static "codec"<B extends $ByteBuf, T extends $Packet<(object)>>(arg0: $StreamMemberEncoder$$Type<(B), ($ClientGamePacketListener)>, arg1: $StreamDecoder$$Type<(B), ($ClientGamePacketListener$$Type)>): $StreamCodec<(B), ($ClientGamePacketListener)>
 public "isSkippable"(): boolean
@@ -7392,8 +7392,8 @@ import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
 import {$CustomPacketPayload, $CustomPacketPayload$$Type} from "net.minecraft.network.protocol.common.custom.CustomPacketPayload"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$Record} from "java.lang.Record"
 
 export class $ServerboundCustomPayloadPacket extends $Record implements $Packet$$Interface<($ServerCommonPacketListener)> {
@@ -7432,9 +7432,9 @@ import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 
 export class $ClientboundBlockDestructionPacket implements $Packet$$Interface<($ClientGamePacketListener)> {
 static readonly "STREAM_CODEC": $StreamCodec<($FriendlyByteBuf), ($ClientboundBlockDestructionPacket)>
@@ -7473,8 +7473,8 @@ import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
-import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
 import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
+import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
 
 export class $ClientboundSetCarriedItemPacket implements $Packet$$Interface<($ClientGamePacketListener)> {
 static readonly "STREAM_CODEC": $StreamCodec<($FriendlyByteBuf), ($ClientboundSetCarriedItemPacket)>
@@ -7509,8 +7509,8 @@ import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
-import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
 import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
+import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
 
 export class $ClientboundSetHealthPacket implements $Packet$$Interface<($ClientGamePacketListener)> {
 static readonly "STREAM_CODEC": $StreamCodec<($FriendlyByteBuf), ($ClientboundSetHealthPacket)>
@@ -7547,11 +7547,11 @@ import {$KnownPack, $KnownPack$$Type} from "net.minecraft.server.packs.repositor
 import {$List, $List$$Type} from "java.util.List"
 import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
-import {$ServerConfigurationPacketListener, $ServerConfigurationPacketListener$$Type} from "net.minecraft.network.protocol.configuration.ServerConfigurationPacketListener"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
+import {$ServerConfigurationPacketListener, $ServerConfigurationPacketListener$$Type} from "net.minecraft.network.protocol.configuration.ServerConfigurationPacketListener"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$Record} from "java.lang.Record"
 
 export class $ServerboundSelectKnownPacks extends $Record implements $Packet$$Interface<($ServerConfigurationPacketListener)> {
@@ -7589,8 +7589,8 @@ import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
-import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
 import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
+import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
 
 export class $ClientboundSetTimePacket implements $Packet$$Interface<($ClientGamePacketListener)> {
 static readonly "STREAM_CODEC": $StreamCodec<($FriendlyByteBuf), ($ClientboundSetTimePacket)>
@@ -7663,8 +7663,8 @@ import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$Record} from "java.lang.Record"
 import {$ClientStatusPacketListener, $ClientStatusPacketListener$$Type} from "net.minecraft.network.protocol.status.ClientStatusPacketListener"
 
@@ -7700,8 +7700,8 @@ export type $ClientboundStatusResponsePacket$$Original = $ClientboundStatusRespo
 declare module "net.minecraft.network.protocol.game.ServerPacketListener" {
 import {$PacketFlow} from "net.minecraft.network.protocol.PacketFlow"
 import {$Exception$$Type} from "java.lang.Exception"
-import {$ConnectionProtocol} from "net.minecraft.network.ConnectionProtocol"
 import {$CrashReport$$Type} from "net.minecraft.CrashReport"
+import {$ConnectionProtocol} from "net.minecraft.network.ConnectionProtocol"
 import {$Packet$$Type} from "net.minecraft.network.protocol.Packet"
 import {$ServerboundPacketListener$$Interface} from "net.minecraft.network.ServerboundPacketListener"
 import {$Throwable$$Type} from "java.lang.Throwable"
@@ -7744,9 +7744,9 @@ import {$ClientboundSetPlayerTeamPacket$Action, $ClientboundSetPlayerTeamPacket$
 import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$ClientboundSetPlayerTeamPacket$Parameters} from "net.minecraft.network.protocol.game.ClientboundSetPlayerTeamPacket$Parameters"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
@@ -7787,15 +7787,15 @@ export type $ClientboundSetPlayerTeamPacket$$Type = ($ClientboundSetPlayerTeamPa
  */
 export type $ClientboundSetPlayerTeamPacket$$Original = $ClientboundSetPlayerTeamPacket;}
 declare module "net.minecraft.network.protocol.game.ClientboundLevelChunkWithLightPacket" {
-import {$BitSet$$Type} from "java.util.BitSet"
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
+import {$BitSet$$Type} from "java.util.BitSet"
 import {$LevelLightEngine$$Type} from "net.minecraft.world.level.lighting.LevelLightEngine"
 import {$ClientboundLightUpdatePacketData} from "net.minecraft.network.protocol.game.ClientboundLightUpdatePacketData"
 import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ClientboundLevelChunkPacketData} from "net.minecraft.network.protocol.game.ClientboundLevelChunkPacketData"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$LevelChunk$$Type} from "net.minecraft.world.level.chunk.LevelChunk"
@@ -7841,9 +7841,9 @@ import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 
 export class $ClientboundOpenSignEditorPacket implements $Packet$$Interface<($ClientGamePacketListener)> {
 static readonly "STREAM_CODEC": $StreamCodec<($FriendlyByteBuf), ($ClientboundOpenSignEditorPacket)>
@@ -7876,11 +7876,11 @@ declare module "net.minecraft.network.protocol.game.ClientboundSetScorePacket" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
-import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
+import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$NumberFormat, $NumberFormat$$Type} from "net.minecraft.network.chat.numbers.NumberFormat"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
@@ -7991,10 +7991,10 @@ import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
+import {$ParticleOptions, $ParticleOptions$$Type} from "net.minecraft.core.particles.ParticleOptions"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
-import {$ParticleOptions, $ParticleOptions$$Type} from "net.minecraft.core.particles.ParticleOptions"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 
 export class $ClientboundLevelParticlesPacket implements $Packet$$Interface<($ClientGamePacketListener)> {
 static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($ClientboundLevelParticlesPacket)>
@@ -8005,8 +8005,8 @@ public "getXDist"(): float
 public "getYDist"(): float
 public "getZDist"(): float
 public "isOverrideLimiter"(): boolean
-public "getMaxSpeed"(): float
 public "getParticle"(): $ParticleOptions
+public "getMaxSpeed"(): float
 public "getY"(): double
 public "type"(): $PacketType<($ClientboundLevelParticlesPacket)>
 public "getCount"(): integer
@@ -8021,8 +8021,8 @@ get "XDist"(): float
 get "YDist"(): float
 get "ZDist"(): float
 get "overrideLimiter"(): boolean
-get "maxSpeed"(): float
 get "particle"(): $ParticleOptions
+get "maxSpeed"(): float
 get "y"(): double
 get "count"(): integer
 get "x"(): double
@@ -8085,10 +8085,10 @@ import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
+import {$DisplaySlot, $DisplaySlot$$Type} from "net.minecraft.world.scores.DisplaySlot"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
-import {$DisplaySlot, $DisplaySlot$$Type} from "net.minecraft.world.scores.DisplaySlot"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 
 export class $ClientboundSetDisplayObjectivePacket implements $Packet$$Interface<($ClientGamePacketListener)> {
 static readonly "STREAM_CODEC": $StreamCodec<($FriendlyByteBuf), ($ClientboundSetDisplayObjectivePacket)>
@@ -8153,10 +8153,10 @@ import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$TickRateManager$$Type} from "net.minecraft.world.TickRateManager"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$Record} from "java.lang.Record"
 
 export class $ClientboundTickingStepPacket extends $Record implements $Packet$$Interface<($ClientGamePacketListener)> {
@@ -8191,9 +8191,9 @@ declare module "net.minecraft.network.protocol.ping.ClientPongPacketListener" {
 import {$ClientboundPongResponsePacket$$Type} from "net.minecraft.network.protocol.ping.ClientboundPongResponsePacket"
 import {$PacketFlow} from "net.minecraft.network.protocol.PacketFlow"
 import {$Exception$$Type} from "java.lang.Exception"
-import {$ConnectionProtocol} from "net.minecraft.network.ConnectionProtocol"
 import {$CrashReport$$Type} from "net.minecraft.CrashReport"
 import {$PacketListener$$Interface} from "net.minecraft.network.PacketListener"
+import {$ConnectionProtocol} from "net.minecraft.network.ConnectionProtocol"
 import {$Packet$$Type} from "net.minecraft.network.protocol.Packet"
 import {$Throwable$$Type} from "java.lang.Throwable"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
@@ -8269,9 +8269,9 @@ import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$LevelChunkSection$$Type} from "net.minecraft.world.level.chunk.LevelChunkSection"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ShortSet$$Type} from "it.unimi.dsi.fastutil.shorts.ShortSet"
 import {$SectionPos, $SectionPos$$Type} from "net.minecraft.core.SectionPos"
 import {$BiConsumer$$Type} from "java.util.function.BiConsumer"
@@ -8314,8 +8314,8 @@ import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
-import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
 import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
+import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
 
 export class $ClientboundContainerClosePacket implements $Packet$$Interface<($ClientGamePacketListener)> {
 static readonly "STREAM_CODEC": $StreamCodec<($FriendlyByteBuf), ($ClientboundContainerClosePacket)>
@@ -8350,8 +8350,8 @@ import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
-import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
 import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
+import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
 
 export class $ClientboundProjectilePowerPacket implements $Packet$$Interface<($ClientGamePacketListener)> {
 static readonly "STREAM_CODEC": $StreamCodec<($FriendlyByteBuf), ($ClientboundProjectilePowerPacket)>
@@ -8389,9 +8389,9 @@ import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
 import {$ServerEntity$$Type} from "net.minecraft.server.level.ServerEntity"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 
 export class $ClientboundAddExperienceOrbPacket implements $Packet$$Interface<($ClientGamePacketListener)> {
 static readonly "STREAM_CODEC": $StreamCodec<($FriendlyByteBuf), ($ClientboundAddExperienceOrbPacket)>
@@ -8432,8 +8432,8 @@ import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$JigsawBlockEntity$JointType, $JigsawBlockEntity$JointType$$Type} from "net.minecraft.world.level.block.entity.JigsawBlockEntity$JointType"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
@@ -8486,8 +8486,8 @@ import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$List$$Type} from "java.util.List"
 import {$CustomPacketPayload$Type, $CustomPacketPayload$Type$$Type} from "net.minecraft.network.protocol.common.custom.CustomPacketPayload$Type"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ServerboundCustomPayloadPacket} from "net.minecraft.network.protocol.common.ServerboundCustomPayloadPacket"
 import {$ClientboundCustomPayloadPacket} from "net.minecraft.network.protocol.common.ClientboundCustomPayloadPacket"
 import {$ConnectionProtocol$$Type} from "net.minecraft.network.ConnectionProtocol"
@@ -8524,9 +8524,9 @@ import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
 import {$IntList, $IntList$$Type} from "it.unimi.dsi.fastutil.ints.IntList"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 
 export class $ClientboundRemoveEntitiesPacket implements $Packet$$Interface<($ClientGamePacketListener)> {
 static readonly "STREAM_CODEC": $StreamCodec<($FriendlyByteBuf), ($ClientboundRemoveEntitiesPacket)>
@@ -8562,8 +8562,8 @@ import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
-import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
 import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
+import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
 
 export class $ClientboundSetChunkCacheCenterPacket implements $Packet$$Interface<($ClientGamePacketListener)> {
 static readonly "STREAM_CODEC": $StreamCodec<($FriendlyByteBuf), ($ClientboundSetChunkCacheCenterPacket)>
@@ -8600,9 +8600,9 @@ import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 
 export class $ClientboundContainerSetSlotPacket implements $Packet$$Interface<($ClientGamePacketListener)> {
 static readonly "CARRIED_ITEM": integer
@@ -8643,9 +8643,9 @@ import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$Vec3} from "net.minecraft.world.phys.Vec3"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
@@ -8655,14 +8655,14 @@ import {$EntityAnchorArgument$Anchor, $EntityAnchorArgument$Anchor$$Type} from "
 export class $ClientboundPlayerLookAtPacket implements $Packet$$Interface<($ClientGamePacketListener)> {
 static readonly "STREAM_CODEC": $StreamCodec<($FriendlyByteBuf), ($ClientboundPlayerLookAtPacket)>
 
-constructor(arg0: $EntityAnchorArgument$Anchor$$Type, arg1: double, arg2: double, arg3: double)
 constructor(arg0: $EntityAnchorArgument$Anchor$$Type, arg1: $Entity$$Type, arg2: $EntityAnchorArgument$Anchor$$Type)
+constructor(arg0: $EntityAnchorArgument$Anchor$$Type, arg1: double, arg2: double, arg3: double)
 
 public "getFromAnchor"(): $EntityAnchorArgument$Anchor
-public "getPosition"(arg0: $Level$$Type): $Vec3
 public "type"(): $PacketType<($ClientboundPlayerLookAtPacket)>
-public "handle"(arg0: $ClientGamePacketListener$$Type): void
 public "handle"(arg0: $PacketListener$$Type): void
+public "handle"(arg0: $ClientGamePacketListener$$Type): void
+public "getPosition"(arg0: $Level$$Type): $Vec3
 public "isTerminal"(): boolean
 public static "codec"<B extends $ByteBuf, T extends $Packet<(object)>>(arg0: $StreamMemberEncoder$$Type<(B), ($ClientGamePacketListener)>, arg1: $StreamDecoder$$Type<(B), ($ClientGamePacketListener$$Type)>): $StreamCodec<(B), ($ClientGamePacketListener)>
 public "isSkippable"(): boolean
@@ -8680,14 +8680,14 @@ export type $ClientboundPlayerLookAtPacket$$Type = ($ClientboundPlayerLookAtPack
  */
 export type $ClientboundPlayerLookAtPacket$$Original = $ClientboundPlayerLookAtPacket;}
 declare module "net.minecraft.network.protocol.game.ServerboundInteractPacket" {
-import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$ServerboundInteractPacket$Handler$$Type} from "net.minecraft.network.protocol.game.ServerboundInteractPacket$Handler"
+import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
@@ -8731,8 +8731,8 @@ import {$ClientLoginPacketListener, $ClientLoginPacketListener$$Type} from "net.
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
 import {$GameProfile, $GameProfile$$Type} from "com.mojang.authlib.GameProfile"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$Record} from "java.lang.Record"
 
 export class $ClientboundGameProfilePacket extends $Record implements $Packet$$Interface<($ClientLoginPacketListener)> {
@@ -8762,7 +8762,7 @@ get "skippable"(): boolean
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $ClientboundGameProfilePacket$$Type = ({"gameProfile"?: $GameProfile$$Type, "strictErrorHandling"?: boolean}) | ([gameProfile?: $GameProfile$$Type, strictErrorHandling?: boolean]);
+export type $ClientboundGameProfilePacket$$Type = ({"strictErrorHandling"?: boolean, "gameProfile"?: $GameProfile$$Type}) | ([strictErrorHandling?: boolean, gameProfile?: $GameProfile$$Type]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -8776,8 +8776,8 @@ import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet
 import {$ServerGamePacketListener, $ServerGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ServerGamePacketListener"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
 import {$RemoteDebugSampleType, $RemoteDebugSampleType$$Type} from "net.minecraft.util.debugchart.RemoteDebugSampleType"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$Record} from "java.lang.Record"
 
 export class $ServerboundDebugSampleSubscriptionPacket extends $Record implements $Packet$$Interface<($ServerGamePacketListener)> {
@@ -8815,8 +8815,8 @@ import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$TagNetworkSerialization$NetworkPayload, $TagNetworkSerialization$NetworkPayload$$Type} from "net.minecraft.tags.TagNetworkSerialization$NetworkPayload"
 import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$Registry, $Registry$$Type} from "net.minecraft.core.Registry"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
@@ -8876,8 +8876,8 @@ import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$ServerGamePacketListener, $ServerGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ServerGamePacketListener"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 
 export class $ServerboundSetCommandMinecartPacket implements $Packet$$Interface<($ServerGamePacketListener)> {
 static readonly "STREAM_CODEC": $StreamCodec<($FriendlyByteBuf), ($ServerboundSetCommandMinecartPacket)>
@@ -8913,11 +8913,11 @@ import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$ClientLoginPacketListener, $ClientLoginPacketListener$$Type} from "net.minecraft.network.protocol.login.ClientLoginPacketListener"
-import {$CustomQueryPayload, $CustomQueryPayload$$Type} from "net.minecraft.network.protocol.login.custom.CustomQueryPayload"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
+import {$CustomQueryPayload, $CustomQueryPayload$$Type} from "net.minecraft.network.protocol.login.custom.CustomQueryPayload"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$Record} from "java.lang.Record"
 
 export class $ClientboundCustomQueryPacket extends $Record implements $Packet$$Interface<($ClientLoginPacketListener)> {
@@ -8992,9 +8992,9 @@ import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$ClientboundGameEventPacket$Type, $ClientboundGameEventPacket$Type$$Type} from "net.minecraft.network.protocol.game.ClientboundGameEventPacket$Type"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 
 export class $ClientboundGameEventPacket implements $Packet$$Interface<($ClientGamePacketListener)> {
 static readonly "DEMO_PARAM_HINT_4": integer
@@ -9050,8 +9050,8 @@ import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$UUID, $UUID$$Type} from "java.util.UUID"
 import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$Record} from "java.lang.Record"
@@ -9091,8 +9091,8 @@ import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
-import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
 import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
+import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
 
 export class $ClientboundSetExperiencePacket implements $Packet$$Interface<($ClientGamePacketListener)> {
 static readonly "STREAM_CODEC": $StreamCodec<($FriendlyByteBuf), ($ClientboundSetExperiencePacket)>
@@ -9160,8 +9160,8 @@ import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
-import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
 import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
+import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
 
 export class $ClientboundContainerSetDataPacket implements $Packet$$Interface<($ClientGamePacketListener)> {
 static readonly "STREAM_CODEC": $StreamCodec<($FriendlyByteBuf), ($ClientboundContainerSetDataPacket)>
@@ -9200,9 +9200,9 @@ import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 
 export class $ClientboundOpenBookPacket implements $Packet$$Interface<($ClientGamePacketListener)> {
 static readonly "STREAM_CODEC": $StreamCodec<($FriendlyByteBuf), ($ClientboundOpenBookPacket)>
@@ -9236,9 +9236,9 @@ import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$WorldBorder$$Type} from "net.minecraft.world.level.border.WorldBorder"
 
 export class $ClientboundSetBorderCenterPacket implements $Packet$$Interface<($ClientGamePacketListener)> {
@@ -9276,9 +9276,9 @@ import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$ServerGamePacketListener, $ServerGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ServerGamePacketListener"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
-import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ServerboundClientCommandPacket$Action, $ServerboundClientCommandPacket$Action$$Type} from "net.minecraft.network.protocol.game.ServerboundClientCommandPacket$Action"
+import {$ByteBuf} from "io.netty.buffer.ByteBuf"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 
 export class $ServerboundClientCommandPacket implements $Packet$$Interface<($ServerGamePacketListener)> {
 static readonly "STREAM_CODEC": $StreamCodec<($FriendlyByteBuf), ($ServerboundClientCommandPacket)>
@@ -9313,9 +9313,9 @@ import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 
 export class $ClientboundSelectAdvancementsTabPacket implements $Packet$$Interface<($ClientGamePacketListener)> {
 static readonly "STREAM_CODEC": $StreamCodec<($FriendlyByteBuf), ($ClientboundSelectAdvancementsTabPacket)>
@@ -9350,8 +9350,8 @@ import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
-import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
 import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
+import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
 
 export class $ClientboundClearTitlesPacket implements $Packet$$Interface<($ClientGamePacketListener)> {
 static readonly "STREAM_CODEC": $StreamCodec<($FriendlyByteBuf), ($ClientboundClearTitlesPacket)>
@@ -9382,9 +9382,9 @@ import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$UUID, $UUID$$Type} from "java.util.UUID"
 import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
@@ -9402,8 +9402,8 @@ constructor(arg0: $Entity$$Type, arg1: $ServerEntity$$Type)
 constructor(arg0: $Entity$$Type, arg1: $ServerEntity$$Type, arg2: integer)
 constructor(arg0: $Entity$$Type, arg1: integer, arg2: $BlockPos$$Type)
 
-public "getData"(): integer
 public "getY"(): double
+public "getData"(): integer
 public "type"(): $PacketType<($ClientboundAddEntityPacket)>
 public "getId"(): integer
 public "getType"(): $EntityType<(never)>
@@ -9421,8 +9421,8 @@ public "getZa"(): double
 public "isTerminal"(): boolean
 public static "codec"<B extends $ByteBuf, T extends $Packet<(object)>>(arg0: $StreamMemberEncoder$$Type<(B), ($ClientGamePacketListener)>, arg1: $StreamDecoder$$Type<(B), ($ClientGamePacketListener$$Type)>): $StreamCodec<(B), ($ClientGamePacketListener)>
 public "isSkippable"(): boolean
-get "data"(): integer
 get "y"(): double
+get "data"(): integer
 get "id"(): integer
 get "x"(): double
 get "z"(): double
@@ -9450,9 +9450,9 @@ import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$BiFunction$$Type} from "java.util.function.BiFunction"
 import {$BlockEntityType} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
@@ -9496,9 +9496,9 @@ import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
 import {$SharedSuggestionProvider, $SharedSuggestionProvider$$Type} from "net.minecraft.commands.SharedSuggestionProvider"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$RootCommandNode, $RootCommandNode$$Type} from "com.mojang.brigadier.tree.RootCommandNode"
 import {$CommandBuildContext$$Type} from "net.minecraft.commands.CommandBuildContext"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
@@ -9536,8 +9536,8 @@ import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$ClientPongPacketListener, $ClientPongPacketListener$$Type} from "net.minecraft.network.protocol.ping.ClientPongPacketListener"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$Record} from "java.lang.Record"
 
 export class $ClientboundPongResponsePacket extends $Record implements $Packet$$Interface<($ClientPongPacketListener)> {
@@ -9597,8 +9597,8 @@ import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$ServerGamePacketListener, $ServerGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ServerGamePacketListener"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$Record} from "java.lang.Record"
 
 export class $ServerboundChatCommandPacket extends $Record implements $Packet$$Interface<($ServerGamePacketListener)> {
@@ -9637,8 +9637,8 @@ import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$ServerGamePacketListener, $ServerGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ServerGamePacketListener"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 
 export class $ServerboundRecipeBookChangeSettingsPacket implements $Packet$$Interface<($ServerGamePacketListener)> {
 static readonly "STREAM_CODEC": $StreamCodec<($FriendlyByteBuf), ($ServerboundRecipeBookChangeSettingsPacket)>
@@ -9676,10 +9676,10 @@ import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
+import {$CombatTracker$$Type} from "net.minecraft.world.damagesource.CombatTracker"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
-import {$CombatTracker$$Type} from "net.minecraft.world.damagesource.CombatTracker"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 
 export class $ClientboundPlayerCombatEndPacket implements $Packet$$Interface<($ClientGamePacketListener)> {
 static readonly "STREAM_CODEC": $StreamCodec<($FriendlyByteBuf), ($ClientboundPlayerCombatEndPacket)>
@@ -9735,9 +9735,9 @@ import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$WorldBorder$$Type} from "net.minecraft.world.level.border.WorldBorder"
 
 export class $ClientboundSetBorderLerpSizePacket implements $Packet$$Interface<($ClientGamePacketListener)> {
@@ -9771,18 +9771,18 @@ export type $ClientboundSetBorderLerpSizePacket$$Type = ($ClientboundSetBorderLe
 export type $ClientboundSetBorderLerpSizePacket$$Original = $ClientboundSetBorderLerpSizePacket;}
 declare module "net.minecraft.network.protocol.game.ServerboundChatPacket" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$MessageSignature, $MessageSignature$$Type} from "net.minecraft.network.chat.MessageSignature"
 import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
+import {$MessageSignature, $MessageSignature$$Type} from "net.minecraft.network.chat.MessageSignature"
 import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
 import {$LastSeenMessages$Update, $LastSeenMessages$Update$$Type} from "net.minecraft.network.chat.LastSeenMessages$Update"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
 import {$ServerGamePacketListener, $ServerGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ServerGamePacketListener"
-import {$Instant, $Instant$$Type} from "java.time.Instant"
 import {$Record} from "java.lang.Record"
+import {$Instant, $Instant$$Type} from "java.time.Instant"
 
 export class $ServerboundChatPacket extends $Record implements $Packet$$Interface<($ServerGamePacketListener)> {
 static readonly "STREAM_CODEC": $StreamCodec<($FriendlyByteBuf), ($ServerboundChatPacket)>
@@ -9821,17 +9821,17 @@ import {$Collection$$Type} from "java.util.Collection"
 import {$Map, $Map$$Type} from "java.util.Map"
 import {$List} from "java.util.List"
 import {$PacketListener$$Type} from "net.minecraft.network.PacketListener"
-import {$AdvancementHolder, $AdvancementHolder$$Type} from "net.minecraft.advancements.AdvancementHolder"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
+import {$AdvancementHolder, $AdvancementHolder$$Type} from "net.minecraft.advancements.AdvancementHolder"
 import {$AdvancementProgress, $AdvancementProgress$$Type} from "net.minecraft.advancements.AdvancementProgress"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$ClientGamePacketListener, $ClientGamePacketListener$$Type} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$PacketType} from "net.minecraft.network.protocol.PacketType"
-import {$Set, $Set$$Type} from "java.util.Set"
 import {$Packet, $Packet$$Interface} from "net.minecraft.network.protocol.Packet"
+import {$Set, $Set$$Type} from "java.util.Set"
 
 export class $ClientboundUpdateAdvancementsPacket implements $Packet$$Interface<($ClientGamePacketListener)> {
 static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($ClientboundUpdateAdvancementsPacket)>

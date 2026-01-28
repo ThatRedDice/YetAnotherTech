@@ -178,8 +178,8 @@ declare module "io.wispforest.owo.mixin.ui.DrawContextInvoker" {
 import {$GuiGraphics$ScissorStack, $GuiGraphics$ScissorStack$$Type} from "net.minecraft.client.gui.GuiGraphics$ScissorStack"
 import {$List$$Type} from "java.util.List"
 import {$PoseStack, $PoseStack$$Type} from "com.mojang.blaze3d.vertex.PoseStack"
-import {$Font$$Type} from "net.minecraft.client.gui.Font"
 import {$ClientTooltipPositioner$$Type} from "net.minecraft.client.gui.screens.inventory.tooltip.ClientTooltipPositioner"
+import {$Font$$Type} from "net.minecraft.client.gui.Font"
 import {$ClientTooltipComponent$$Type} from "net.minecraft.client.gui.screens.inventory.tooltip.ClientTooltipComponent"
 
 export interface $DrawContextInvoker$$Interface {

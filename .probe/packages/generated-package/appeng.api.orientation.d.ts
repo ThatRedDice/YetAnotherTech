@@ -51,13 +51,13 @@ export type $IOrientableBlock$$Type = (() => $IOrientationStrategy$$Type);
 export type $IOrientableBlock$$Original = $IOrientableBlock;}
 declare module "appeng.api.orientation.IOrientationStrategy" {
 import {$Collection, $Collection$$Type} from "java.util.Collection"
-import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
 import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
+import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
 import {$RelativeSide$$Type} from "appeng.api.orientation.RelativeSide"
 import {$Stream} from "java.util.stream.Stream"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
-import {$Property, $Property$$Type} from "net.minecraft.world.level.block.state.properties.Property"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$Property, $Property$$Type} from "net.minecraft.world.level.block.state.properties.Property"
 
 export interface $IOrientationStrategy$$Interface {
 
@@ -69,13 +69,13 @@ export class $IOrientationStrategy implements $IOrientationStrategy$$Interface {
 static readonly "SPIN": $IntegerProperty
 
  "setFacing"(arg0: $BlockState$$Type, arg1: $Direction$$Type): $BlockState
- "getAllStates"(arg0: $BlockState$$Type): $Stream<($BlockState)>
  "getStateForPlacement"(arg0: $BlockState$$Type, arg1: $BlockPlaceContext$$Type): $BlockState
  "getSpin"(arg0: $BlockState$$Type): integer
  "setOrientation"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: integer): $BlockState
  "setOrientation"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $Direction$$Type): $BlockState
  "getFacing"(arg0: $BlockState$$Type): $Direction
  "allowsPlayerRotation"(): boolean
+ "getAllStates"(arg0: $BlockState$$Type): $Stream<($BlockState)>
  "setSpin"(arg0: $BlockState$$Type, arg1: integer): $BlockState
  "setUp"(arg0: $BlockState$$Type, arg1: $Direction$$Type): $BlockState
 static "get"(arg0: $BlockState$$Type): $IOrientationStrategy
@@ -100,9 +100,9 @@ import {$RelativeSide, $RelativeSide$$Type} from "appeng.api.orientation.Relativ
 import {$Direction$Axis$$Type} from "net.minecraft.core.Direction$Axis"
 import {$Transformation} from "com.mojang.math.Transformation"
 import {$Set, $Set$$Type} from "java.util.Set"
-import {$IOrientationStrategy$$Type} from "appeng.api.orientation.IOrientationStrategy"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$Quaternionf} from "org.joml.Quaternionf"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$IOrientationStrategy$$Type} from "appeng.api.orientation.IOrientationStrategy"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
@@ -133,13 +133,13 @@ static readonly "NORTH_DOWN": $BlockOrientation
 static readonly "WEST_UP": $BlockOrientation
 
 public "getSpin"(): integer
-public "getTransformation"(): $Transformation
 public "getQuaternion"(): $Quaternionf
 public "rotateClockwiseAround"(arg0: $Direction$Axis$$Type, arg1: $Direction$AxisDirection$$Type): $BlockOrientation
 public "rotateClockwiseAround"(arg0: $Direction$$Type): $BlockOrientation
+public "getAngleX"(): integer
 public "getAngleY"(): integer
 public "getAngleZ"(): integer
-public "getAngleX"(): integer
+public "getTransformation"(): $Transformation
 public "isRedundant"(): boolean
 public "setOn"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public "setOn"(arg0: $BlockEntity$$Type): void
@@ -158,11 +158,11 @@ public "rotate"(arg0: $Direction$$Type): $Direction
 public "getSide"(arg0: $RelativeSide$$Type): $Direction
 public "getSides"(arg0: $Set$$Type<($RelativeSide$$Type)>): $Set<($Direction)>
 get "spin"(): integer
-get "transformation"(): $Transformation
 get "quaternion"(): $Quaternionf
+get "angleX"(): integer
 get "angleY"(): integer
 get "angleZ"(): integer
-get "angleX"(): integer
+get "transformation"(): $Transformation
 get "redundant"(): boolean
 set "on"(value: $BlockEntity$$Type)
 }

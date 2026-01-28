@@ -68,13 +68,13 @@ constructor(arg0: L, arg1: R)
 
 public "setRight"(arg0: R): void
 public "setLeft"(arg0: L): void
-public static "emptyArray"<L, R>(): ($MutablePair<(L), (R)>)[]
-public static "of"<L, R>(arg0: $Map$Entry$$Type<(L), (R)>): $MutablePair<(L), (R)>
 public static "of"<L, R>(arg0: L, arg1: R): $MutablePair<(L), (R)>
+public static "of"<L, R>(arg0: $Map$Entry$$Type<(L), (R)>): $MutablePair<(L), (R)>
 public "setValue"(arg0: R): R
-public static "ofNonNull"<L, R>(arg0: L, arg1: R): $MutablePair<(L), (R)>
+public static "emptyArray"<L, R>(): ($MutablePair<(L), (R)>)[]
 public "getLeft"(): L
 public "getRight"(): R
+public static "ofNonNull"<L, R>(arg0: L, arg1: R): $MutablePair<(L), (R)>
 public static "copyOf"<K, V>(arg0: $Map$Entry$$Type<(K), (V)>): $Map$Entry<(K), (V)>
 public static "comparingByKey"<K, V>(arg0: $Comparator$$Type<(K)>): $Comparator<($Map$Entry<(K), (V)>)>
 public static "comparingByKey"<K extends $Comparable<(object)>, V>(): $Comparator<($Map$Entry<(K), (V)>)>
@@ -140,17 +140,17 @@ export type $TriConsumer$$Type<T, U, V> = ((arg0: T, arg1: U, arg2: V) => void);
 export type $TriConsumer$$Original<T, U, V> = $TriConsumer<(T), (U), (V)>;}
 declare module "org.apache.commons.lang3.mutable.MutableBoolean" {
 import {$Mutable$$Interface} from "org.apache.commons.lang3.mutable.Mutable"
-import {$Serializable$$Interface} from "java.io.Serializable"
 import {$Comparable$$Interface} from "java.lang.Comparable"
+import {$Serializable$$Interface} from "java.io.Serializable"
 
 export class $MutableBoolean implements $Mutable$$Interface<(boolean)>, $Serializable$$Interface, $Comparable$$Interface<($MutableBoolean)> {
-constructor(arg0: boolean)
-constructor(arg0: boolean)
 constructor()
+constructor(arg0: boolean)
+constructor(arg0: boolean)
 
 public "setFalse"(): void
-public "toBoolean"(): boolean
 public "isFalse"(): boolean
+public "toBoolean"(): boolean
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
@@ -298,22 +298,22 @@ static readonly "EMPTY_ARRAY": ($Pair<(never), (never)>)[]
 
 constructor()
 
-public static "emptyArray"<L, R>(): ($Pair<(L), (R)>)[]
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "toString"(arg0: StringJS): StringJS
 public "hashCode"(): integer
-public "compareTo"(arg0: $Pair$$Type<(L), (R)>): integer
 public "compareTo"(arg0: any): integer
+public "compareTo"(arg0: $Pair$$Type<(L), (R)>): integer
 public "getValue"(): R
 public "apply"<V, E extends $Throwable>(arg0: $FailableBiFunction$$Type<(L), (R), (V), (E)>): V
-public static "of"<L, R>(arg0: $Map$Entry$$Type<(L), (R)>): $Pair<(L), (R)>
 public static "of"<L, R>(arg0: L, arg1: R): $Pair<(L), (R)>
+public static "of"<L, R>(arg0: $Map$Entry$$Type<(L), (R)>): $Pair<(L), (R)>
 public "getKey"(): L
 public "accept"<E extends $Throwable>(arg0: $FailableBiConsumer$$Type<(L), (R), (E)>): void
-public static "ofNonNull"<L, R>(arg0: L, arg1: R): $Pair<(L), (R)>
+public static "emptyArray"<L, R>(): ($Pair<(L), (R)>)[]
 public "getLeft"(): L
 public "getRight"(): R
+public static "ofNonNull"<L, R>(arg0: L, arg1: R): $Pair<(L), (R)>
 public static "copyOf"<K, V>(arg0: $Map$Entry$$Type<(L), (R)>): $Map$Entry<(L), (R)>
 public static "comparingByKey"<K, V>(arg0: $Comparator$$Type<(L)>): $Comparator<($Map$Entry<(L), (R)>)>
 public static "comparingByKey"<K extends $Comparable<(object)>, V>(): $Comparator<($Map$Entry<(L), (R)>)>

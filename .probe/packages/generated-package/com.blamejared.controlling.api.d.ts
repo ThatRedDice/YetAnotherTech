@@ -8,27 +8,27 @@ export class $KeyEntryRenderEvent extends $Event implements $IKeyEntryRenderEven
 constructor(arg0: $IKeyEntry$$Type, arg1: $GuiGraphics$$Type, arg2: integer, arg3: integer, arg4: integer, arg5: integer, arg6: integer, arg7: integer, arg8: integer, arg9: boolean, arg10: float)
 
 public "getSlotIndex"(): integer
-public "getEntry"(): $IKeyEntry
 public "getY"(): integer
+public "getEntry"(): $IKeyEntry
+public "getPartialTicks"(): float
 public "getX"(): integer
 public "getMouseX"(): integer
 public "getMouseY"(): integer
-public "getGuiGraphics"(): $GuiGraphics
-public "getPartialTicks"(): float
 public "getRowWidth"(): integer
 public "getRowLeft"(): integer
 public "isHovered"(): boolean
+public "getGuiGraphics"(): $GuiGraphics
 get "slotIndex"(): integer
-get "entry"(): $IKeyEntry
 get "y"(): integer
+get "entry"(): $IKeyEntry
+get "partialTicks"(): float
 get "x"(): integer
 get "mouseX"(): integer
 get "mouseY"(): integer
-get "guiGraphics"(): $GuiGraphics
-get "partialTicks"(): float
 get "rowWidth"(): integer
 get "rowLeft"(): integer
 get "hovered"(): boolean
+get "guiGraphics"(): $GuiGraphics
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -68,30 +68,30 @@ import {$IKeyEntry} from "com.blamejared.controlling.api.entries.IKeyEntry"
 
 export interface $IKeyEntryRenderEvent$$Interface {
 get "slotIndex"(): integer
-get "entry"(): $IKeyEntry
 get "y"(): integer
+get "entry"(): $IKeyEntry
+get "partialTicks"(): float
 get "x"(): integer
 get "mouseX"(): integer
 get "mouseY"(): integer
-get "guiGraphics"(): $GuiGraphics
-get "partialTicks"(): float
 get "rowWidth"(): integer
 get "rowLeft"(): integer
 get "hovered"(): boolean
+get "guiGraphics"(): $GuiGraphics
 }
 
 export class $IKeyEntryRenderEvent implements $IKeyEntryRenderEvent$$Interface {
  "getSlotIndex"(): integer
- "getEntry"(): $IKeyEntry
  "getY"(): integer
+ "getEntry"(): $IKeyEntry
+ "getPartialTicks"(): float
  "getX"(): integer
  "getMouseX"(): integer
  "getMouseY"(): integer
- "getGuiGraphics"(): $GuiGraphics
- "getPartialTicks"(): float
  "getRowWidth"(): integer
  "getRowLeft"(): integer
  "isHovered"(): boolean
+ "getGuiGraphics"(): $GuiGraphics
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -107,8 +107,8 @@ import {$IKeyEntry} from "com.blamejared.controlling.api.entries.IKeyEntry"
 
 export interface $IKeyEntryMouseClickedEvent$$Interface {
 get "handled"(): boolean
-set "handled"(value: boolean)
 get "buttonId"(): integer
+set "handled"(value: boolean)
 get "entry"(): $IKeyEntry
 get "mouseX"(): double
 get "mouseY"(): double
@@ -116,8 +116,8 @@ get "mouseY"(): double
 
 export class $IKeyEntryMouseClickedEvent implements $IKeyEntryMouseClickedEvent$$Interface {
  "isHandled"(): boolean
- "setHandled"(arg0: boolean): void
  "getButtonId"(): integer
+ "setHandled"(arg0: boolean): void
  "getEntry"(): $IKeyEntry
  "getMouseX"(): double
  "getMouseY"(): double
@@ -136,8 +136,8 @@ import {$IKeyEntry} from "com.blamejared.controlling.api.entries.IKeyEntry"
 
 export interface $IKeyEntryMouseReleasedEvent$$Interface {
 get "handled"(): boolean
-set "handled"(value: boolean)
 get "buttonId"(): integer
+set "handled"(value: boolean)
 get "entry"(): $IKeyEntry
 get "mouseX"(): double
 get "mouseY"(): double
@@ -145,8 +145,8 @@ get "mouseY"(): double
 
 export class $IKeyEntryMouseReleasedEvent implements $IKeyEntryMouseReleasedEvent$$Interface {
  "isHandled"(): boolean
- "setHandled"(arg0: boolean): void
  "getButtonId"(): integer
+ "setHandled"(arg0: boolean): void
  "getEntry"(): $IKeyEntry
  "getMouseX"(): double
  "getMouseY"(): double
@@ -180,8 +180,8 @@ export class $IKeyEntry implements $IKeyEntry$$Interface {
  "getBtnResetKeyBinding"(): $Button
  "getBtnChangeKeyBinding"(): $Button
  "children"(): $List<($GuiEventListener)>
- "categoryName"(): $Component
  "getKey"(): $KeyMapping
+ "categoryName"(): $Component
  "render"(arg0: $GuiGraphics$$Type, arg1: integer, arg2: integer, arg3: integer, arg4: integer, arg5: integer, arg6: integer, arg7: integer, arg8: boolean, arg9: float): void
  "mouseClicked"(arg0: double, arg1: double, arg2: integer): boolean
  "mouseReleased"(arg0: double, arg1: double, arg2: integer): boolean
@@ -204,14 +204,14 @@ export class $KeyEntryMouseReleasedEvent extends $Event implements $IKeyEntryMou
 constructor(arg0: $IKeyEntry$$Type, arg1: double, arg2: double, arg3: integer)
 
 public "isHandled"(): boolean
-public "setHandled"(arg0: boolean): void
 public "getButtonId"(): integer
+public "setHandled"(arg0: boolean): void
 public "getEntry"(): $IKeyEntry
 public "getMouseX"(): double
 public "getMouseY"(): double
 get "handled"(): boolean
-set "handled"(value: boolean)
 get "buttonId"(): integer
+set "handled"(value: boolean)
 get "entry"(): $IKeyEntry
 get "mouseX"(): double
 get "mouseY"(): double
@@ -258,14 +258,14 @@ export class $KeyEntryMouseClickedEvent extends $Event implements $IKeyEntryMous
 constructor(arg0: $IKeyEntry$$Type, arg1: double, arg2: double, arg3: integer)
 
 public "isHandled"(): boolean
-public "setHandled"(arg0: boolean): void
 public "getButtonId"(): integer
+public "setHandled"(arg0: boolean): void
 public "getEntry"(): $IKeyEntry
 public "getMouseX"(): double
 public "getMouseY"(): double
 get "handled"(): boolean
-set "handled"(value: boolean)
 get "buttonId"(): integer
+set "handled"(value: boolean)
 get "entry"(): $IKeyEntry
 get "mouseX"(): double
 get "mouseY"(): double

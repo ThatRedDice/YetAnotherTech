@@ -55,15 +55,15 @@ import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$HitResult$$Type} from "net.minecraft.world.phys.HitResult"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$IEBlockInterfaces$IPlacementInteraction$$Interface} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$IPlacementInteraction"
-import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Consumer$$Type} from "java.util.function.Consumer"
+import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export interface $IEBlockInterfaces$IBlockEntityDrop$$Interface extends $IEBlockInterfaces$IPlacementInteraction$$Interface {
 }
 
 export class $IEBlockInterfaces$IBlockEntityDrop implements $IEBlockInterfaces$IBlockEntityDrop$$Interface {
- "getPickBlock"(arg0: $Player$$Type, arg1: $BlockState$$Type, arg2: $HitResult$$Type): $ItemStack
  "getBlockEntityDrop"(arg0: $LootContext$$Type, arg1: $Consumer$$Type<($ItemStack)>): void
+ "getPickBlock"(arg0: $Player$$Type, arg1: $BlockState$$Type, arg2: $HitResult$$Type): $ItemStack
  "onBEPlaced"(arg0: $BlockPlaceContext$$Type): void
 }
 /**
@@ -81,8 +81,8 @@ import {$Vec3i} from "net.minecraft.core.Vec3i"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
@@ -99,11 +99,11 @@ public static "valueOf"(arg0: StringJS): $PostBlock$HorizontalOffset
 public "getOffset"(): $Vec3i
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "offset"(): $Vec3i
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
@@ -126,9 +126,9 @@ import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$HitResult$$Type} from "net.minecraft.world.phys.HitResult"
 import {$BlockBehaviour$Properties, $BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
+import {$BiFunction$$Type} from "java.util.function.BiFunction"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$BiFunction$$Type} from "java.util.function.BiFunction"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$IEEntityBlock} from "blusunrize.immersiveengineering.common.blocks.IEEntityBlock"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
@@ -207,8 +207,8 @@ import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
-import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
+import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$IEBaseBlock} from "blusunrize.immersiveengineering.common.blocks.IEBaseBlock"
 import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 
@@ -248,8 +248,8 @@ export type $VerticalFacingBlock$$Original = $VerticalFacingBlock;}
 declare module "blusunrize.immersiveengineering.common.blocks.wooden.SawdustBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
 import {$PathComputationType$$Type} from "net.minecraft.world.level.pathfinder.PathComputationType"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
@@ -258,8 +258,8 @@ import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
@@ -291,11 +291,11 @@ constructor(arg0: $BlockBehaviour$Properties$$Type)
 
 public "canBeReplaced"(arg0: $BlockState$$Type, arg1: $BlockPlaceContext$$Type): boolean
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
-public "updateShape"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $BlockState$$Type, arg3: $LevelAccessor$$Type, arg4: $BlockPos$$Type, arg5: $BlockPos$$Type): $BlockState
-public "getFlammability"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $Direction$$Type): integer
-public "isPathfindable"(arg0: $BlockState$$Type, arg1: $PathComputationType$$Type): boolean
-public "getFireSpreadSpeed"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $Direction$$Type): integer
 public "useShapeForLightOcclusion"(arg0: $BlockState$$Type): boolean
+public "updateShape"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $BlockState$$Type, arg3: $LevelAccessor$$Type, arg4: $BlockPos$$Type, arg5: $BlockPos$$Type): $BlockState
+public "isPathfindable"(arg0: $BlockState$$Type, arg1: $PathComputationType$$Type): boolean
+public "getFlammability"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $Direction$$Type): integer
+public "getFireSpreadSpeed"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $Direction$$Type): integer
 public "getShape"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $CollisionContext$$Type): $VoxelShape
 public "getCollisionShape"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $CollisionContext$$Type): $VoxelShape
 public "canSurvive"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type): boolean
@@ -345,8 +345,8 @@ import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -394,14 +394,14 @@ import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$IEBlockInterfaces$BlockstateProvider$$Interface} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$BlockstateProvider"
-import {$Property} from "net.minecraft.world.level.block.state.properties.Property"
 import {$PlacementLimitation} from "blusunrize.immersiveengineering.common.blocks.PlacementLimitation"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$Property} from "net.minecraft.world.level.block.state.properties.Property"
 
 export interface $IEBlockInterfaces$IStateBasedDirectional$$Interface extends $IEBlockInterfaces$IDirectionalBE$$Interface, $IEBlockInterfaces$BlockstateProvider$$Interface {
 set "facing"(value: $Direction$$Type)
-get "facing"(): $Direction
 get "facingProperty"(): $Property<($Direction)>
+get "facing"(): $Direction
 get "facingLimitation"(): $PlacementLimitation
 get "state"(): $BlockState
 set "state"(value: $BlockState$$Type)
@@ -409,13 +409,13 @@ set "state"(value: $BlockState$$Type)
 
 export class $IEBlockInterfaces$IStateBasedDirectional implements $IEBlockInterfaces$IStateBasedDirectional$$Interface {
  "setFacing"(arg0: $Direction$$Type): void
- "getFacing"(): $Direction
  "getFacingProperty"(): $Property<($Direction)>
- "getFacingForPlacement"(arg0: $BlockPlaceContext$$Type): $Direction
+ "getFacing"(): $Direction
  "afterRotation"(arg0: $Direction$$Type, arg1: $Direction$$Type): void
  "getFacingLimitation"(): $PlacementLimitation
  "canHammerRotate"(arg0: $Direction$$Type, arg1: $Vec3$$Type, arg2: $LivingEntity$$Type): boolean
  "mirrorFacingOnPlacement"(arg0: $LivingEntity$$Type): boolean
+ "getFacingForPlacement"(arg0: $BlockPlaceContext$$Type): $Direction
  "getState"(): $BlockState
  "setState"(arg0: $BlockState$$Type): void
 }
@@ -446,16 +446,16 @@ import {$IEBlockInterfaces$IBlockEntityDrop$$Interface} from "blusunrize.immersi
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$IEBlockInterfaces$IScrewdriverInteraction$$Interface} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$IScrewdriverInteraction"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
-import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$LootContext$$Type} from "net.minecraft.world.level.storage.loot.LootContext"
+import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$Pair} from "com.mojang.datafixers.util.Pair"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$IEBaseBlockEntity} from "blusunrize.immersiveengineering.common.blocks.IEBaseBlockEntity"
 import {$IEBlockInterfaces$IAdvancedDirectionalBE$$Interface} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$IAdvancedDirectionalBE"
 import {$HitResult$$Type} from "net.minecraft.world.phys.HitResult"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
-import {$PlacementLimitation} from "blusunrize.immersiveengineering.common.blocks.PlacementLimitation"
 import {$Consumer$$Type} from "java.util.function.Consumer"
+import {$PlacementLimitation} from "blusunrize.immersiveengineering.common.blocks.PlacementLimitation"
 import {$IEServerTickableBE$$Interface} from "blusunrize.immersiveengineering.common.blocks.ticking.IEServerTickableBE"
 import {$ItemInteractionResult} from "net.minecraft.world.ItemInteractionResult"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
@@ -471,7 +471,6 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 
 constructor(arg0: $BlockPos$$Type, arg1: $BlockState$$Type)
 
-public "getBlockBounds"(arg0: $CollisionContext$$Type): $VoxelShape
 public "canConnectRedstone"(arg0: $Direction$$Type): boolean
 public "tickServer"(): void
 public "onEntityCollision"(arg0: $Level$$Type, arg1: $Entity$$Type): void
@@ -489,6 +488,7 @@ public "onDirectionalPlacement"(arg0: $Direction$$Type, arg1: float, arg2: float
 public "getRenderColour"(arg0: integer): integer
 public "getWeakRSOutput"(arg0: $Direction$$Type): integer
 public "getStrongRSOutput"(arg0: $Direction$$Type): integer
+public "getBlockBounds"(arg0: $CollisionContext$$Type): $VoxelShape
 public static "makeTicker"<T extends $BlockEntity>(): $BlockEntityTicker<(T)>
 public "overrideVoltmeterRead"(): ($Pair<($DyeColor), (byte)>)[]
 public "setFacing"(arg0: $Direction$$Type): void
@@ -497,9 +497,9 @@ public "getPickBlock"(arg0: $Player$$Type, arg1: $BlockState$$Type, arg2: $HitRe
 public "getSelectionShape"(arg0: $CollisionContext$$Type): $VoxelShape
 public "getCollisionShape"(arg0: $CollisionContext$$Type): $VoxelShape
 public "canTickAny"(): boolean
-public "getFacingForPlacement"(arg0: $BlockPlaceContext$$Type): $Direction
 public "afterRotation"(arg0: $Direction$$Type, arg1: $Direction$$Type): void
 public "mirrorFacingOnPlacement"(arg0: $LivingEntity$$Type): boolean
+public "getFacingForPlacement"(arg0: $BlockPlaceContext$$Type): $Direction
 get "facingProperty"(): $Property<($Direction)>
 get "facingLimitation"(): $PlacementLimitation
 get "ceilingAttached"(): boolean
@@ -568,11 +568,11 @@ import {$PlacementLimitation} from "blusunrize.immersiveengineering.common.block
 import {$IEBlockInterfaces$IHammerInteraction$$Interface} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$IHammerInteraction"
 import {$ItemInteractionResult} from "net.minecraft.world.ItemInteractionResult"
 import {$IImmersiveConnectable$$Type} from "blusunrize.immersiveengineering.api.wires.IImmersiveConnectable"
-import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$ConnectionPoint, $ConnectionPoint$$Type} from "blusunrize.immersiveengineering.api.wires.ConnectionPoint"
+import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$IEBlockInterfaces$IActiveState$$Interface} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$IActiveState"
 import {$IEBlockInterfaces$IPlayerInteraction$$Interface} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$IPlayerInteraction"
+import {$IEBlockInterfaces$IActiveState$$Interface} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$IActiveState"
 import {$IEBlockInterfaces$IBlockBounds$$Interface} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$IBlockBounds"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$Property} from "net.minecraft.world.level.block.state.properties.Property"
@@ -588,9 +588,7 @@ static readonly "RIGHT_INDEX": integer
 constructor(arg0: $BlockEntityType$$Type<($BreakerSwitchBlockEntity$$Type)>, arg1: $BlockPos$$Type, arg2: $BlockState$$Type)
 constructor(arg0: $BlockPos$$Type, arg1: $BlockState$$Type)
 
-public "getBlockBounds"(arg0: $CollisionContext$$Type): $VoxelShape
 public "canConnectRedstone"(arg0: $Direction$$Type): boolean
-public "removeCable"(arg0: $Connection$$Type, arg1: $ConnectionPoint$$Type): void
 public "writeCustomNBT"(arg0: $CompoundTag$$Type, arg1: boolean, arg2: $HolderLookup$Provider$$Type): void
 public "readCustomNBT"(arg0: $CompoundTag$$Type, arg1: boolean, arg2: $HolderLookup$Provider$$Type): void
 public "screwdriverUseSide"(arg0: $Direction$$Type, arg1: $Player$$Type, arg2: $InteractionHand$$Type, arg3: $Vec3$$Type): $ItemInteractionResult
@@ -609,6 +607,8 @@ public "onDirectionalPlacement"(arg0: $Direction$$Type, arg1: float, arg2: float
 public "getWeakRSOutput"(arg0: $Direction$$Type): integer
 public "getStrongRSOutput"(arg0: $Direction$$Type): integer
 public "notifyNeighbours"(): void
+public "removeCable"(arg0: $Connection$$Type, arg1: $ConnectionPoint$$Type): void
+public "getBlockBounds"(arg0: $CollisionContext$$Type): $VoxelShape
 public "interact"(arg0: $Direction$$Type, arg1: $Player$$Type, arg2: $InteractionHand$$Type, arg3: $ItemStack$$Type, arg4: float, arg5: float, arg6: float): $ItemInteractionResult
 public "triggerEvent"(arg0: integer, arg1: integer): boolean
 public "getSelectionShape"(arg0: $CollisionContext$$Type): $VoxelShape
@@ -618,8 +618,8 @@ public "setActive"(arg0: boolean): void
 public "overrideVoltmeterRead"(): ($Pair<($DyeColor), (byte)>)[]
 public "setFacing"(arg0: $Direction$$Type): void
 public "getFacing"(): $Direction
-public "getFacingForPlacement"(arg0: $BlockPlaceContext$$Type): $Direction
 public "afterRotation"(arg0: $Direction$$Type, arg1: $Direction$$Type): void
+public "getFacingForPlacement"(arg0: $BlockPlaceContext$$Type): $Direction
 public "getState"(): $BlockState
 public "setState"(arg0: $BlockState$$Type): void
 get "facingProperty"(): $Property<($Direction)>
@@ -647,18 +647,18 @@ import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Objec
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$List$$Type} from "java.util.List"
-import {$Direction} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction} from "net.minecraft.core.Direction"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$BlockBehaviour$Properties, $BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$IEEntityBlock} from "blusunrize.immersiveengineering.common.blocks.IEEntityBlock"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$Supplier} from "java.util.function.Supplier"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$StripCurtainBlockEntity} from "blusunrize.immersiveengineering.common.blocks.cloth.StripCurtainBlockEntity"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -701,18 +701,18 @@ export type $StripCurtainBlock$$Type = ($StripCurtainBlock);
  */
 export type $StripCurtainBlock$$Original = $StripCurtainBlock;}
 declare module "blusunrize.immersiveengineering.common.blocks.IESignBlocks$Wall" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$WoodType$$Type} from "net.minecraft.world.level.block.state.properties.WoodType"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
-import {$WallSignBlock} from "net.minecraft.world.level.block.WallSignBlock"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$WallSignBlock} from "net.minecraft.world.level.block.WallSignBlock"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -764,8 +764,8 @@ import {$RecipeType$$Type} from "net.minecraft.world.item.crafting.RecipeType"
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipComponent} from "net.minecraft.world.inventory.tooltip.TooltipComponent"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
@@ -811,8 +811,8 @@ import {$EnergyMeterBlockEntity} from "blusunrize.immersiveengineering.common.bl
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$Mirror$$Type} from "net.minecraft.world.level.block.Mirror"
-import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
 import {$BlockBehaviour$Properties, $BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ConnectorBlock} from "blusunrize.immersiveengineering.common.blocks.generic.ConnectorBlock"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -993,11 +993,11 @@ import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$Supplier$$Type} from "java.util.function.Supplier"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$IIEBlock$$Interface} from "blusunrize.immersiveengineering.common.blocks.IIEBlock"
+import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$BlockBehaviour$StatePredicate} from "net.minecraft.world.level.block.state.BlockBehaviour$StatePredicate"
@@ -1026,11 +1026,11 @@ static readonly "TYPE": $EnumProperty<($SlabType)>
 
 constructor(arg0: $BlockBehaviour$Properties$$Type, arg1: $Supplier$$Type<(T)>)
 
-public "isLadder"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $LivingEntity$$Type): boolean
 public "propagatesSkylightDown"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): boolean
+public "isLadder"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $LivingEntity$$Type): boolean
 public static "isNormalCube"(arg0: $Supplier$$Type<($Block$$Type)>): $BlockBehaviour$StatePredicate
-public "hasFlavour"(): boolean
 public static "causesSuffocation"(arg0: $Supplier$$Type<($Block$$Type)>): $BlockBehaviour$StatePredicate
+public "hasFlavour"(): boolean
 public "getNameForFlavour"(): StringJS
 public "getLightBlock"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): integer
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
@@ -1056,8 +1056,8 @@ import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$IEEntityBlock} from "blusunrize.immersiveengineering.common.blocks.IEEntityBlock"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -1142,8 +1142,8 @@ export type $IEBlockInterfaces$BlockstateProvider$$Type = ($IEBlockInterfaces$Bl
 export type $IEBlockInterfaces$BlockstateProvider$$Original = $IEBlockInterfaces$BlockstateProvider;}
 declare module "blusunrize.immersiveengineering.common.blocks.metal.TurretBlockEntity$TurretConfig" {
 import {$List, $List$$Type} from "java.util.List"
-import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$DualCodec} from "malte0811.dualcodecs.DualCodec"
+import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$Record} from "java.lang.Record"
 
 export class $TurretBlockEntity$TurretConfig extends $Record {
@@ -1153,17 +1153,17 @@ static readonly "DEFAULT": $TurretBlockEntity$TurretConfig
 constructor(targetList: $List$$Type<(StringJS)>, whitelist: boolean, attackAnimals: boolean, attackPlayers: boolean, attackNeutrals: boolean, redstoneControlInverted: boolean)
 
 public "addToList"(arg0: StringJS): $TurretBlockEntity$TurretConfig
-public "whitelist"(): boolean
+public "attackAnimals"(): boolean
+public "attackNeutrals"(): boolean
+public "redstoneControlInverted"(): boolean
+public "withTargetList"(arg0: $List$$Type<(StringJS)>): $TurretBlockEntity$TurretConfig
 public "withWhitelist"(arg0: boolean): $TurretBlockEntity$TurretConfig
 public "withAttackAnimals"(arg0: boolean): $TurretBlockEntity$TurretConfig
 public "withAttackPlayers"(arg0: boolean): $TurretBlockEntity$TurretConfig
 public "withAttackNeutrals"(arg0: boolean): $TurretBlockEntity$TurretConfig
-public "targetList"(): $List<(StringJS)>
-public "attackAnimals"(): boolean
 public "attackPlayers"(): boolean
-public "attackNeutrals"(): boolean
-public "redstoneControlInverted"(): boolean
-public "withTargetList"(arg0: $List$$Type<(StringJS)>): $TurretBlockEntity$TurretConfig
+public "targetList"(): $List<(StringJS)>
+public "whitelist"(): boolean
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
@@ -1194,8 +1194,8 @@ constructor(arg0: $BlockPos$$Type, arg1: $BlockState$$Type)
 
 public "writeCustomNBT"(arg0: $CompoundTag$$Type, arg1: boolean, arg2: $HolderLookup$Provider$$Type): void
 public "readCustomNBT"(arg0: $CompoundTag$$Type, arg1: boolean, arg2: $HolderLookup$Provider$$Type): void
-public static "registerCapabilities"(arg0: $BlockCapabilityRegistration$BECapabilityRegistrar$$Type<($ShaderBannerBlockEntity$$Type)>): void
 public "triggerEvent"(arg0: integer, arg1: integer): boolean
+public static "registerCapabilities"(arg0: $BlockCapabilityRegistration$BECapabilityRegistrar$$Type<($ShaderBannerBlockEntity$$Type)>): void
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -1218,8 +1218,8 @@ export interface $IEBlockInterfaces$IBlockBounds$$Interface extends $IEBlockInte
 }
 
 export class $IEBlockInterfaces$IBlockBounds implements $IEBlockInterfaces$IBlockBounds$$Interface {
- "getBlockBounds"(arg0: $CollisionContext$$Type): $VoxelShape
  "getSelectionShape"(arg0: $CollisionContext$$Type): $VoxelShape
+ "getBlockBounds"(arg0: $CollisionContext$$Type): $VoxelShape
  "getCollisionShape"(arg0: $CollisionContext$$Type): $VoxelShape
 }
 /**
@@ -1315,9 +1315,9 @@ import {$Set} from "java.util.Set"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$IEBlockInterfaces$IGeneralMultiblock} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$IGeneralMultiblock"
-import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$Connection} from "blusunrize.immersiveengineering.api.wires.Connection"
 import {$Collection} from "java.util.Collection"
+import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$IEBlockInterfaces$IComparatorOverride$$Interface} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$IComparatorOverride"
 import {$EnergyTransferHandler$EnergyConnector$$Interface} from "blusunrize.immersiveengineering.api.wires.localhandlers.EnergyTransferHandler$EnergyConnector"
@@ -1325,8 +1325,8 @@ import {$PlacementLimitation} from "blusunrize.immersiveengineering.common.block
 import {$IEServerTickableBE$$Interface} from "blusunrize.immersiveengineering.common.blocks.ticking.IEServerTickableBE"
 import {$ItemInteractionResult} from "net.minecraft.world.ItemInteractionResult"
 import {$IImmersiveConnectable$$Type} from "blusunrize.immersiveengineering.api.wires.IImmersiveConnectable"
-import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$ConnectionPoint, $ConnectionPoint$$Type} from "blusunrize.immersiveengineering.api.wires.ConnectionPoint"
+import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$IEBlockInterfaces$IPlayerInteraction$$Interface} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$IPlayerInteraction"
 import {$IEBlockInterfaces$IBlockBounds$$Interface} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$IBlockBounds"
@@ -1341,11 +1341,9 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 
 constructor(arg0: $BlockEntityType$$Type<($EnergyMeterBlockEntity$$Type)>, arg1: $BlockPos$$Type, arg2: $BlockState$$Type)
 
-public "getBlockBounds"(arg0: $CollisionContext$$Type): $VoxelShape
+public "canConnect"(): boolean
 public "isSource"(arg0: $ConnectionPoint$$Type): boolean
 public "tickServer"(): void
-public "getComparatorInputOverride"(): integer
-public "isSink"(arg0: $ConnectionPoint$$Type): boolean
 public "getFacingProperty"(): $Property<($Direction)>
 public "getFacingLimitation"(): $PlacementLimitation
 public "canHammerRotate"(arg0: $Direction$$Type, arg1: $Vec3$$Type, arg2: $LivingEntity$$Type): boolean
@@ -1361,8 +1359,10 @@ public "getConnectionPoints"(): $Collection<($ConnectionPoint)>
 public "getInternalConnections"(): $Iterable<($Connection)>
 public "getTargetedPoint"(arg0: $TargetingInfo$$Type, arg1: $Vec3i$$Type): $ConnectionPoint
 public "connectCable"(arg0: $WireType$$Type, arg1: $ConnectionPoint$$Type, arg2: $IImmersiveConnectable$$Type, arg3: $ConnectionPoint$$Type): void
+public "isSink"(arg0: $ConnectionPoint$$Type): boolean
 public "getAveragePower"(): integer
-public "canConnect"(): boolean
+public "getBlockBounds"(arg0: $CollisionContext$$Type): $VoxelShape
+public "getComparatorInputOverride"(): integer
 public "onLoad"(): void
 public "master"(): $IEBlockInterfaces$IGeneralMultiblock
 public "interact"(arg0: $Direction$$Type, arg1: $Player$$Type, arg2: $InteractionHand$$Type, arg3: $ItemStack$$Type, arg4: float, arg5: float, arg6: float): $ItemInteractionResult
@@ -1377,17 +1377,17 @@ public "onEnergyPassedThrough"(arg0: double): void
 public "getSelectionShape"(arg0: $CollisionContext$$Type): $VoxelShape
 public "getCollisionShape"(arg0: $CollisionContext$$Type): $VoxelShape
 public "canTickAny"(): boolean
-public "getFacingForPlacement"(arg0: $BlockPlaceContext$$Type): $Direction
 public "afterRotation"(arg0: $Direction$$Type, arg1: $Direction$$Type): void
+public "getFacingForPlacement"(arg0: $BlockPlaceContext$$Type): $Direction
 public "getState"(): $BlockState
 public "setState"(arg0: $BlockState$$Type): void
 public "isDummy"(): boolean
-get "comparatorInputOverride"(): integer
 get "facingProperty"(): $Property<($Direction)>
 get "facingLimitation"(): $PlacementLimitation
 get "connectionPoints"(): $Collection<($ConnectionPoint)>
 get "internalConnections"(): $Iterable<($Connection)>
 get "averagePower"(): integer
+get "comparatorInputOverride"(): integer
 set "facing"(value: $Direction$$Type)
 get "facing"(): $Direction
 get "requestedEnergy"(): integer
@@ -1408,8 +1408,8 @@ export type $EnergyMeterBlockEntity$$Original = $EnergyMeterBlockEntity;}
 declare module "blusunrize.immersiveengineering.common.blocks.metal.TransformerBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$Direction} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction} from "net.minecraft.core.Direction"
 import {$BlockBehaviour$Properties, $BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ConnectorBlock} from "blusunrize.immersiveengineering.common.blocks.generic.ConnectorBlock"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -1465,8 +1465,8 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
 export class $WarningSignBlock$WarningSignIcon extends $Enum<($WarningSignBlock$WarningSignIcon)> implements $StringRepresentable$$Interface {
@@ -1499,11 +1499,11 @@ public static "values"(): ($WarningSignBlock$WarningSignIcon)[]
 public static "valueOf"(arg0: StringJS): $WarningSignBlock$WarningSignIcon
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
 }
@@ -1525,8 +1525,8 @@ export interface $IEBlockInterfaces$IConfigurableSides$$Interface {
 }
 
 export class $IEBlockInterfaces$IConfigurableSides implements $IEBlockInterfaces$IConfigurableSides$$Interface {
- "getSideConfig"(arg0: $Direction$$Type): $IEEnums$IOSideConfig
  "toggleSide"(arg0: $Direction$$Type, arg1: $Player$$Type): boolean
+ "getSideConfig"(arg0: $Direction$$Type): $IEEnums$IOSideConfig
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -1565,8 +1565,8 @@ static readonly "BY_BLOCK": $Map<($Block), ($Item)>
 constructor(arg0: $Block$$Type, arg1: $Item$Properties$$Type)
 
 public "inventoryTick"(arg0: $ItemStack$$Type, arg1: $Level$$Type, arg2: $Entity$$Type, arg3: integer, arg4: boolean): void
-public static "preventTargeting"(arg0: $LivingChangeTargetEvent$$Type): void
 public static "adjustVisibility"(arg0: $LivingEvent$LivingVisibilityEvent$$Type): void
+public static "preventTargeting"(arg0: $LivingChangeTargetEvent$$Type): void
 public "getEquipmentSlot"(arg0: $ItemStack$$Type): $EquipmentSlot
 public "moonlight$getAdditionalBehavior"(): $AdditionalItemPlacement
 public "moonlight$setAdditionalBehavior"(arg0: $AdditionalItemPlacement$$Type): void
@@ -1584,8 +1584,8 @@ export type $CrateItem$$Type = ($CrateItem);
  */
 export type $CrateItem$$Original = $CrateItem;}
 declare module "blusunrize.immersiveengineering.common.blocks.IETrapDoorBlock" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
@@ -1598,8 +1598,8 @@ import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ItemInteractionResult} from "net.minecraft.world.ItemInteractionResult"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$TrapDoorBlock} from "net.minecraft.world.level.block.TrapDoorBlock"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
@@ -1664,8 +1664,8 @@ import {$IEBlockInterfaces$IStateBasedDirectional$$Interface} from "blusunrize.i
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$IFluidPipe$$Interface} from "blusunrize.immersiveengineering.api.fluid.IFluidPipe"
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
-import {$IFluidHandler} from "net.neoforged.neoforge.fluids.capability.IFluidHandler"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$IFluidHandler} from "net.neoforged.neoforge.fluids.capability.IFluidHandler"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$IEBlockInterfaces$IBlockBounds$$Interface} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$IBlockBounds"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
@@ -1678,12 +1678,12 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 
 constructor(arg0: $BlockPos$$Type, arg1: $BlockState$$Type)
 
-public "getBlockBounds"(arg0: $CollisionContext$$Type): $VoxelShape
-public "canOutputPressurized"(arg0: boolean): boolean
 public "writeCustomNBT"(arg0: $CompoundTag$$Type, arg1: boolean, arg2: $HolderLookup$Provider$$Type): void
 public "readCustomNBT"(arg0: $CompoundTag$$Type, arg1: boolean, arg2: $HolderLookup$Provider$$Type): void
 public "getFacingProperty"(): $Property<($Direction)>
 public "getFacingLimitation"(): $PlacementLimitation
+public "canOutputPressurized"(arg0: boolean): boolean
+public "getBlockBounds"(arg0: $CollisionContext$$Type): $VoxelShape
 public static "registerCapabilities"(arg0: $BlockCapabilityRegistration$BECapabilityRegistrar$$Type<($PipeValveBlockEntity$$Type)>): void
 public "setFacing"(arg0: $Direction$$Type): void
 public "getFacing"(): $Direction
@@ -1691,10 +1691,10 @@ public "getSelectionShape"(arg0: $CollisionContext$$Type): $VoxelShape
 public "getCollisionShape"(arg0: $CollisionContext$$Type): $VoxelShape
 public static "getTransferableAmount"(arg0: boolean): integer
 public "stripPressureTag"(): boolean
-public "getFacingForPlacement"(arg0: $BlockPlaceContext$$Type): $Direction
 public "afterRotation"(arg0: $Direction$$Type, arg1: $Direction$$Type): void
 public "canHammerRotate"(arg0: $Direction$$Type, arg1: $Vec3$$Type, arg2: $LivingEntity$$Type): boolean
 public "mirrorFacingOnPlacement"(arg0: $LivingEntity$$Type): boolean
+public "getFacingForPlacement"(arg0: $BlockPlaceContext$$Type): $Direction
 get "facingProperty"(): $Property<($Direction)>
 get "facingLimitation"(): $PlacementLimitation
 set "facing"(value: $Direction$$Type)
@@ -1795,8 +1795,8 @@ import {$List} from "java.util.List"
 import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
 import {$MutableEnergyStorage} from "blusunrize.immersiveengineering.api.energy.MutableEnergyStorage"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$IEClientTickableBE$$Interface} from "blusunrize.immersiveengineering.common.blocks.ticking.IEClientTickableBE"
+import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$Vec3i$$Type} from "net.minecraft.core.Vec3i"
 import {$IEBlockInterfaces$IHasDummyBlocks$$Interface} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$IHasDummyBlocks"
 import {$IEBlockInterfaces$IStateBasedDirectional$$Interface} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$IStateBasedDirectional"
@@ -1804,10 +1804,10 @@ import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.Blo
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$IEBlockInterfaces$IScrewdriverInteraction$$Interface} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$IScrewdriverInteraction"
 import {$IEBlockInterfaces$IGeneralMultiblock} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$IGeneralMultiblock"
-import {$TeslaCoilBlockEntity$LightningAnimation} from "blusunrize.immersiveengineering.common.blocks.metal.TeslaCoilBlockEntity$LightningAnimation"
+import {$IEBlockInterfaces$IScrewdriverInteraction$$Interface} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$IScrewdriverInteraction"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
+import {$TeslaCoilBlockEntity$LightningAnimation} from "blusunrize.immersiveengineering.common.blocks.metal.TeslaCoilBlockEntity$LightningAnimation"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$BlockCapabilityRegistration$BECapabilityRegistrar$$Type} from "blusunrize.immersiveengineering.common.blocks.BlockCapabilityRegistration$BECapabilityRegistrar"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
@@ -1835,7 +1835,6 @@ readonly "effectMap": $List<($TeslaCoilBlockEntity$LightningAnimation)>
 
 constructor(arg0: $BlockEntityType$$Type<($TeslaCoilBlockEntity$$Type)>, arg1: $BlockPos$$Type, arg2: $BlockState$$Type)
 
-public "getBlockBounds"(arg0: $CollisionContext$$Type): $VoxelShape
 public "tickClient"(): void
 public "tickServer"(): void
 public "canRun"(arg0: integer): boolean
@@ -1850,6 +1849,7 @@ public "placeDummies"(arg0: $BlockPlaceContext$$Type, arg1: $BlockState$$Type): 
 public "breakDummies"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): void
 public "getModelOffset"(arg0: $BlockState$$Type, arg1: $Vec3i$$Type): $BlockPos
 public "initFreeStreamer"(arg0: double, arg1: double, arg2: double): void
+public "getBlockBounds"(arg0: $CollisionContext$$Type): $VoxelShape
 public "master"(): $IEBlockInterfaces$IGeneralMultiblock
 public static "registerCapabilities"(arg0: $BlockCapabilityRegistration$BECapabilityRegistrar$$Type<($TeslaCoilBlockEntity$$Type)>): void
 public static "makeTicker"<T extends $BlockEntity>(): $BlockEntityTicker<(T)>
@@ -1859,9 +1859,9 @@ public "getSelectionShape"(arg0: $CollisionContext$$Type): $VoxelShape
 public "getCollisionShape"(arg0: $CollisionContext$$Type): $VoxelShape
 public "canTickAny"(): boolean
 public "isDummy"(): boolean
-public "getFacingForPlacement"(arg0: $BlockPlaceContext$$Type): $Direction
 public "afterRotation"(arg0: $Direction$$Type, arg1: $Direction$$Type): void
 public "mirrorFacingOnPlacement"(arg0: $LivingEntity$$Type): boolean
+public "getFacingForPlacement"(arg0: $BlockPlaceContext$$Type): $Direction
 get "facingProperty"(): $Property<($Direction)>
 get "facingLimitation"(): $PlacementLimitation
 set "facing"(value: $Direction$$Type)
@@ -1888,9 +1888,9 @@ import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$BlueprintShelfBlockEntity} from "blusunrize.immersiveengineering.common.blocks.wooden.BlueprintShelfBlockEntity"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
+import {$Item} from "net.minecraft.world.item.Item"
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
-import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -1942,8 +1942,8 @@ import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$FakeLightBlock$FakeLightBlockEntity} from "blusunrize.immersiveengineering.common.blocks.FakeLightBlock$FakeLightBlockEntity"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$Supplier} from "java.util.function.Supplier"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -1985,8 +1985,8 @@ export type $FakeLightBlock$$Type = ($FakeLightBlock);
  */
 export type $FakeLightBlock$$Original = $FakeLightBlock;}
 declare module "blusunrize.immersiveengineering.common.blocks.IESignBlocks$WallHanging" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$WoodType$$Type} from "net.minecraft.world.level.block.state.properties.WoodType"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$WallHangingSignBlock} from "net.minecraft.world.level.block.WallHangingSignBlock"
@@ -1996,8 +1996,8 @@ import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -2153,9 +2153,9 @@ export type $IEBaseBlock$IELadderBlock$$Original = $IEBaseBlock$IELadderBlock;}
 declare module "blusunrize.immersiveengineering.common.blocks.metal.PostTransformerBlockEntity" {
 import {$Vec3i$$Type} from "net.minecraft.core.Vec3i"
 import {$AbstractTransformerBlockEntity} from "blusunrize.immersiveengineering.common.blocks.metal.AbstractTransformerBlockEntity"
+import {$TargetingInfo$$Type} from "blusunrize.immersiveengineering.api.TargetingInfo"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$ConnectionPoint} from "blusunrize.immersiveengineering.api.wires.ConnectionPoint"
-import {$TargetingInfo$$Type} from "blusunrize.immersiveengineering.api.TargetingInfo"
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$IEBlockInterfaces$IBlockBounds$$Interface} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$IBlockBounds"
@@ -2167,9 +2167,9 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 
 constructor(arg0: $BlockPos$$Type, arg1: $BlockState$$Type)
 
-public "getBlockBounds"(arg0: $CollisionContext$$Type): $VoxelShape
 public "getFacingLimitation"(): $PlacementLimitation
 public "getTargetedPoint"(arg0: $TargetingInfo$$Type, arg1: $Vec3i$$Type): $ConnectionPoint
+public "getBlockBounds"(arg0: $CollisionContext$$Type): $VoxelShape
 public "getSelectionShape"(arg0: $CollisionContext$$Type): $VoxelShape
 public "getCollisionShape"(arg0: $CollisionContext$$Type): $VoxelShape
 public "getState"(): $BlockState
@@ -2189,8 +2189,8 @@ export type $PostTransformerBlockEntity$$Type = ($PostTransformerBlockEntity);
 export type $PostTransformerBlockEntity$$Original = $PostTransformerBlockEntity;}
 declare module "blusunrize.immersiveengineering.common.blocks.wooden.CraftingTableBlockEntity" {
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
-import {$IEMenuTypes$ArgContainer} from "blusunrize.immersiveengineering.common.register.IEMenuTypes$ArgContainer"
 import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
+import {$IEMenuTypes$ArgContainer} from "blusunrize.immersiveengineering.common.register.IEMenuTypes$ArgContainer"
 import {$IEBlockInterfaces$IInteractionObjectIE$$Interface} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$IInteractionObjectIE"
 import {$Component} from "net.minecraft.network.chat.Component"
 import {$Inventory$$Type} from "net.minecraft.world.entity.player.Inventory"
@@ -2208,8 +2208,8 @@ import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Prov
 import {$PlacementLimitation} from "blusunrize.immersiveengineering.common.blocks.PlacementLimitation"
 import {$AbstractContainerMenu, $AbstractContainerMenu$$Type} from "net.minecraft.world.inventory.AbstractContainerMenu"
 import {$RegistryFriendlyByteBuf$$Type} from "net.minecraft.network.RegistryFriendlyByteBuf"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$IDropInventory$$Interface} from "blusunrize.immersiveengineering.common.util.inventory.IDropInventory"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$Property} from "net.minecraft.world.level.block.state.properties.Property"
 
@@ -2235,10 +2235,10 @@ public "setFacing"(arg0: $Direction$$Type): void
 public "getFacing"(): $Direction
 public "createMenu"(arg0: integer, arg1: $Inventory$$Type, arg2: $Player$$Type): $AbstractContainerMenu
 public "isValid"(): boolean
-public "getFacingForPlacement"(arg0: $BlockPlaceContext$$Type): $Direction
 public "afterRotation"(arg0: $Direction$$Type, arg1: $Direction$$Type): void
 public "canHammerRotate"(arg0: $Direction$$Type, arg1: $Vec3$$Type, arg2: $LivingEntity$$Type): boolean
 public "mirrorFacingOnPlacement"(arg0: $LivingEntity$$Type): boolean
+public "getFacingForPlacement"(arg0: $BlockPlaceContext$$Type): $Direction
 public "shouldTriggerClientSideContainerClosingOnOpen"(): boolean
 public "writeClientSideData"(arg0: $AbstractContainerMenu$$Type, arg1: $RegistryFriendlyByteBuf$$Type): void
 get "guiMaster"(): $CraftingTableBlockEntity
@@ -2434,16 +2434,16 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 
 constructor(arg0: $BlockEntityType$$Type<(never)>, arg1: $BlockPos$$Type, arg2: $BlockState$$Type)
 
-public "loadAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "getUpdatePacket"(): $ClientboundBlockEntityDataPacket
+public "loadAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "getUpdateTag"(arg0: $HolderLookup$Provider$$Type): $CompoundTag
 public "onDataPacket"(arg0: $Connection$$Type, arg1: $ClientboundBlockEntityDataPacket$$Type, arg2: $HolderLookup$Provider$$Type): void
 public "handleUpdateTag"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "onChunkUnloaded"(): void
 public "onEntityCollision"(arg0: $Level$$Type, arg1: $Entity$$Type): void
+public "markContainingBlockForUpdate"(arg0: $BlockState$$Type): void
 public "receiveMessageFromClient"(arg0: $CompoundTag$$Type): void
 public "getLevelNonnull"(): $Level
-public "markContainingBlockForUpdate"(arg0: $BlockState$$Type): void
 public "writeCustomNBT"(arg0: $CompoundTag$$Type, arg1: boolean, arg2: $HolderLookup$Provider$$Type): void
 public "readCustomNBT"(arg0: $CompoundTag$$Type, arg1: boolean, arg2: $HolderLookup$Provider$$Type): void
 public "markBlockForUpdate"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): void
@@ -2495,8 +2495,8 @@ import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$Vec3i$$Type} from "net.minecraft.core.Vec3i"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$IPostBlock$$Interface} from "blusunrize.immersiveengineering.api.IPostBlock"
 import {$IEBaseBlock} from "blusunrize.immersiveengineering.common.blocks.IEBaseBlock"
@@ -2539,12 +2539,12 @@ static readonly "UPDATE_CLIENTS": integer
 constructor(arg0: $BlockBehaviour$Properties$$Type)
 
 public "isLadder"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $LivingEntity$$Type): boolean
-public static "hasConnection"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $BlockGetter$$Type, arg3: $BlockPos$$Type): boolean
 public "onIEBlockPlacedBy"(arg0: $BlockPlaceContext$$Type, arg1: $BlockState$$Type): void
 public "getModelOffset"(arg0: $BlockState$$Type, arg1: $Vec3i$$Type): $BlockPos
 public "hammerUseSide"(arg0: $Direction$$Type, arg1: $Player$$Type, arg2: $InteractionHand$$Type, arg3: $Level$$Type, arg4: $BlockPos$$Type, arg5: $BlockHitResult$$Type): $ItemInteractionResult
 public "canIEBlockBePlaced"(arg0: $BlockState$$Type, arg1: $BlockPlaceContext$$Type): boolean
 public "canConnectTransformer"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type): boolean
+public static "hasConnection"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $BlockGetter$$Type, arg3: $BlockPos$$Type): boolean
 public "getShape"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $CollisionContext$$Type): $VoxelShape
 public "onRemove"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: boolean): void
 public "getLightBlock"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): integer
@@ -2569,8 +2569,8 @@ import {$BlockBehaviour$Properties, $BlockBehaviour$Properties$$Type} from "net.
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$Supplier} from "java.util.function.Supplier"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$IEBlockInterfaces$IBlockOverlayText$$Interface} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$IBlockOverlayText"
 import {$IEBaseBlock} from "blusunrize.immersiveengineering.common.blocks.IEBaseBlock"
@@ -2637,20 +2637,20 @@ import {$IEBaseBlockEntity} from "blusunrize.immersiveengineering.common.blocks.
 import {$MutableEnergyStorage} from "blusunrize.immersiveengineering.api.energy.MutableEnergyStorage"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$PlacementLimitation} from "blusunrize.immersiveengineering.common.blocks.PlacementLimitation"
-import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$IEClientTickableBE$$Interface} from "blusunrize.immersiveengineering.common.blocks.ticking.IEClientTickableBE"
+import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$Vec3i$$Type} from "net.minecraft.core.Vec3i"
 import {$IEBlockInterfaces$IHasDummyBlocks$$Interface} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$IHasDummyBlocks"
 import {$IEBlockInterfaces$IStateBasedDirectional$$Interface} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$IStateBasedDirectional"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$IEBlockInterfaces$ISoundBE$$Interface} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$ISoundBE"
 import {$IModelOffsetProvider$$Interface} from "blusunrize.immersiveengineering.api.client.IModelOffsetProvider"
+import {$IEBlockInterfaces$ISoundBE$$Interface} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$ISoundBE"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
-import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Property} from "net.minecraft.world.level.block.state.properties.Property"
+import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $BlastFurnacePreheaterBlockEntity extends $IEBaseBlockEntity implements $IEBlockInterfaces$IStateBasedDirectional$$Interface, $IEBlockInterfaces$IHasDummyBlocks$$Interface, $IModelOffsetProvider$$Interface, $IEClientTickableBE$$Interface, $IEBlockInterfaces$ISoundBE$$Interface {
  "dummy": integer
@@ -2663,9 +2663,6 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 constructor(arg0: $BlockEntityType$$Type<($BlastFurnacePreheaterBlockEntity$$Type)>, arg1: $BlockPos$$Type, arg2: $BlockState$$Type)
 
 public "tickClient"(): void
-public "isDummy"(): boolean
-public "shouldPlaySound"(arg0: StringJS): boolean
-public "turnOff"(): void
 public "afterRotation"(arg0: $Direction$$Type, arg1: $Direction$$Type): void
 public "writeCustomNBT"(arg0: $CompoundTag$$Type, arg1: boolean, arg2: $HolderLookup$Provider$$Type): void
 public "readCustomNBT"(arg0: $CompoundTag$$Type, arg1: boolean, arg2: $HolderLookup$Provider$$Type): void
@@ -2674,16 +2671,19 @@ public "getFacingLimitation"(): $PlacementLimitation
 public "placeDummies"(arg0: $BlockPlaceContext$$Type, arg1: $BlockState$$Type): void
 public "breakDummies"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): void
 public "getModelOffset"(arg0: $BlockState$$Type, arg1: $Vec3i$$Type): $BlockPos
+public "shouldPlaySound"(arg0: StringJS): boolean
 public "doSpeedup"(): integer
+public "turnOff"(): void
+public "isDummy"(): boolean
 public "master"(): $IEBlockInterfaces$IGeneralMultiblock
 public static "registerCapabilities"(arg0: $BlockCapabilityRegistration$BECapabilityRegistrar$$Type<($BlastFurnacePreheaterBlockEntity$$Type)>): void
 public "setFacing"(arg0: $Direction$$Type): void
 public "getFacing"(): $Direction
 public static "makeTicker"<T extends $BlockEntity>(): $BlockEntityTicker<(T)>
 public "getSoundRadiusSq"(): float
-public "getFacingForPlacement"(arg0: $BlockPlaceContext$$Type): $Direction
 public "canHammerRotate"(arg0: $Direction$$Type, arg1: $Vec3$$Type, arg2: $LivingEntity$$Type): boolean
 public "mirrorFacingOnPlacement"(arg0: $LivingEntity$$Type): boolean
+public "getFacingForPlacement"(arg0: $BlockPlaceContext$$Type): $Direction
 public "canTickAny"(): boolean
 get "facingProperty"(): $Property<($Direction)>
 get "facingLimitation"(): $PlacementLimitation
@@ -2729,11 +2729,10 @@ import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
 import {$ItemInteractionResult} from "net.minecraft.world.ItemInteractionResult"
-import {$ClientboundBlockEntityDataPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket"
-import {$Packet} from "net.minecraft.network.protocol.Packet"
+import {$ClientboundBlockEntityDataPacket, $ClientboundBlockEntityDataPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket"
 import {$IEBlockInterfaces$IPlayerInteraction$$Interface} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$IPlayerInteraction"
-import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$Connection$$Type} from "net.minecraft.network.Connection"
+import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 
 export class $WoodenCrateBlockEntity extends $RandomizableContainerBlockEntity implements $IIEInventory$$Interface, $IEBlockInterfaces$IBlockEntityDrop$$Interface, $IEBlockInterfaces$IComparatorOverride$$Interface, $IEBlockInterfaces$IPlayerInteraction$$Interface, $IEBlockInterfaces$IBlockOverlayText$$Interface {
@@ -2745,27 +2744,27 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 
 constructor(arg0: $BlockPos$$Type, arg1: $BlockState$$Type)
 
+public "getUpdatePacket"(): $ClientboundBlockEntityDataPacket
 public "loadAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
-public "getUpdatePacket"(): $Packet
 public "canOpen"(arg0: $Player$$Type): boolean
 public "getUpdateTag"(arg0: $HolderLookup$Provider$$Type): $CompoundTag
 public "onDataPacket"(arg0: $Connection$$Type, arg1: $ClientboundBlockEntityDataPacket$$Type, arg2: $HolderLookup$Provider$$Type): void
 public "canPlaceItem"(arg0: integer, arg1: $ItemStack$$Type): boolean
 public "isStackValid"(arg0: integer, arg1: $ItemStack$$Type): boolean
-public "getComparatorInputOverride"(): integer
 public "getInventoryCap"(): $IItemHandler
 public "getOverlayText"(arg0: $BlockState$$Type, arg1: $Player$$Type, arg2: $HitResult$$Type, arg3: boolean): ($Component)[]
 public "getBlockEntityDrop"(arg0: $LootContext$$Type, arg1: $Consumer$$Type<($ItemStack)>): void
-public "onBEPlaced"(arg0: $ItemStack$$Type): void
 public "onBEPlaced"(arg0: $BlockPlaceContext$$Type): void
+public "onBEPlaced"(arg0: $ItemStack$$Type): void
 public "doGraphicalUpdates"(): void
+public "getComparatorInputOverride"(): integer
 public "isSealed"(): boolean
 public "interact"(arg0: $Direction$$Type, arg1: $Player$$Type, arg2: $InteractionHand$$Type, arg3: $ItemStack$$Type, arg4: float, arg5: float, arg6: float): $ItemInteractionResult
 public "getInventory"(): $NonNullList<($ItemStack)>
-public static "registerCapabilities"(arg0: $BlockCapabilityRegistration$BECapabilityRegistrar$$Type<($WoodenCrateBlockEntity$$Type)>): void
 public "getSlotLimit"(arg0: integer): integer
 public "getContainerSize"(): integer
 public "setCustomName"(arg0: $Component$$Type): void
+public static "registerCapabilities"(arg0: $BlockCapabilityRegistration$BECapabilityRegistrar$$Type<($WoodenCrateBlockEntity$$Type)>): void
 public "getDroppedItems"(): $Stream<($ItemStack)>
 public "getComparatedSize"(): integer
 public "getPickBlock"(arg0: $Player$$Type, arg1: $BlockState$$Type, arg2: $HitResult$$Type): $ItemStack
@@ -2776,9 +2775,9 @@ public static "stillValidBlockEntity"(arg0: $BlockEntity$$Type, arg1: $Player$$T
 public static "stillValidBlockEntity"(arg0: $BlockEntity$$Type, arg1: $Player$$Type, arg2: float): boolean
 public "setChanged"(): void
 public static "tryClear"(arg0: any): void
-get "updatePacket"(): $Packet
-get "comparatorInputOverride"(): integer
+get "updatePacket"(): $ClientboundBlockEntityDataPacket
 get "inventoryCap"(): $IItemHandler
+get "comparatorInputOverride"(): integer
 get "sealed"(): boolean
 get "inventory"(): $NonNullList<($ItemStack)>
 get "containerSize"(): integer
@@ -2816,8 +2815,8 @@ import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$IEBlockInterfaces$ISoundBE$$Interface} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$ISoundBE"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
-import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$AABB} from "net.minecraft.world.phys.AABB"
+import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Property} from "net.minecraft.world.level.block.state.properties.Property"
 
@@ -2828,14 +2827,9 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 
 constructor(arg0: $BlockEntityType$$Type<($WatermillBlockEntity$$Type)>, arg1: $BlockPos$$Type, arg2: $BlockState$$Type)
 
+public "handleUpdate"(arg0: $Direction$$Type): void
 public "tickClient"(): void
 public "tickServer"(): void
-public "handleUpdate"(arg0: $Direction$$Type): void
-public "isDummy"(): boolean
-public "setShouldUpdate"(): void
-public "getIFScaledTorque"(): double
-public "getTorque"(arg0: boolean, arg1: boolean): $Vec3
-public "shouldPlaySound"(arg0: StringJS): boolean
 public "writeCustomNBT"(arg0: $CompoundTag$$Type, arg1: boolean, arg2: $HolderLookup$Provider$$Type): void
 public "readCustomNBT"(arg0: $CompoundTag$$Type, arg1: boolean, arg2: $HolderLookup$Provider$$Type): void
 public "onNeighborBlockChange"(arg0: $BlockPos$$Type): void
@@ -2845,6 +2839,11 @@ public "canHammerRotate"(arg0: $Direction$$Type, arg1: $Vec3$$Type, arg2: $Livin
 public "placeDummies"(arg0: $BlockPlaceContext$$Type, arg1: $BlockState$$Type): void
 public "breakDummies"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): void
 public "mirrorFacingOnPlacement"(arg0: $LivingEntity$$Type): boolean
+public "setShouldUpdate"(): void
+public "getIFScaledTorque"(): double
+public "getTorque"(arg0: boolean, arg1: boolean): $Vec3
+public "shouldPlaySound"(arg0: StringJS): boolean
+public "isDummy"(): boolean
 public "onLoad"(): void
 public "master"(): $IEBlockInterfaces$IGeneralMultiblock
 public "isBlocked"(): boolean
@@ -2855,13 +2854,13 @@ public "setFacing"(arg0: $Direction$$Type): void
 public "getFacing"(): $Direction
 public "getSoundRadiusSq"(): float
 public "canTickAny"(): boolean
-public "getFacingForPlacement"(arg0: $BlockPlaceContext$$Type): $Direction
 public "afterRotation"(arg0: $Direction$$Type, arg1: $Direction$$Type): void
-get "dummy"(): boolean
-get "shouldUpdate"(): void
-get "IFScaledTorque"(): double
+public "getFacingForPlacement"(arg0: $BlockPlaceContext$$Type): $Direction
 get "facingProperty"(): $Property<($Direction)>
 get "facingLimitation"(): $PlacementLimitation
+get "shouldUpdate"(): void
+get "IFScaledTorque"(): double
+get "dummy"(): boolean
 get "blocked"(): boolean
 get "rotation"(): double
 get "speed"(): double
@@ -2898,11 +2897,11 @@ import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$IEBlockInterfaces$IAdvancedDirectionalBE$$Interface} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$IAdvancedDirectionalBE"
-import {$IEBlockInterfaces$ISpawnInterdiction$$Interface} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$ISpawnInterdiction"
 import {$EnergyTransferHandler$EnergyConnector$$Interface} from "blusunrize.immersiveengineering.api.wires.localhandlers.EnergyTransferHandler$EnergyConnector"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
-import {$PlacementLimitation} from "blusunrize.immersiveengineering.common.blocks.PlacementLimitation"
+import {$IEBlockInterfaces$ISpawnInterdiction$$Interface} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$ISpawnInterdiction"
 import {$ComputerControlState} from "blusunrize.immersiveengineering.api.utils.ComputerControlState"
+import {$PlacementLimitation} from "blusunrize.immersiveengineering.common.blocks.PlacementLimitation"
 import {$IEBlockInterfaces$IHammerInteraction$$Interface} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$IHammerInteraction"
 import {$IEServerTickableBE$$Interface} from "blusunrize.immersiveengineering.common.blocks.ticking.IEServerTickableBE"
 import {$ItemInteractionResult} from "net.minecraft.world.ItemInteractionResult"
@@ -2931,13 +2930,9 @@ readonly "computerControl": $ComputerControlState
 
 constructor(arg0: $BlockPos$$Type, arg1: $BlockState$$Type)
 
-public "getBlockBounds"(arg0: $CollisionContext$$Type): $VoxelShape
 public "isSource"(arg0: $ConnectionPoint$$Type): boolean
 public "tickServer"(): void
 public "onChunkUnloaded"(): void
-public "isSink"(arg0: $ConnectionPoint$$Type): boolean
-public "getRequestedEnergy"(): integer
-public "insertEnergy"(arg0: integer): void
 public "writeCustomNBT"(arg0: $CompoundTag$$Type, arg1: boolean, arg2: $HolderLookup$Provider$$Type): void
 public "readCustomNBT"(arg0: $CompoundTag$$Type, arg1: boolean, arg2: $HolderLookup$Provider$$Type): void
 public "setRemovedIE"(): void
@@ -2949,13 +2944,17 @@ public "hammerUseSide"(arg0: $Direction$$Type, arg1: $Player$$Type, arg2: $Inter
 public "getConnectionOffset"(arg0: $ConnectionPoint$$Type, arg1: $ConnectionPoint$$Type, arg2: $WireType$$Type): $Vec3
 public "canConnectCable"(arg0: $WireType$$Type, arg1: $ConnectionPoint$$Type, arg2: $Vec3i$$Type): boolean
 public "onDirectionalPlacement"(arg0: $Direction$$Type, arg1: float, arg2: float, arg3: float, arg4: $LivingEntity$$Type): void
+public "isSink"(arg0: $ConnectionPoint$$Type): boolean
+public "getRequestedEnergy"(): integer
+public "insertEnergy"(arg0: integer): void
+public "getAllComputerControlStates"(): $Stream<($ComputerControlState)>
 public "getInterdictionRangeSquared"(): double
+public "updateFakeLights"(arg0: boolean, arg1: boolean): void
 public "placeLightAlongVector"(arg0: $Vec3$$Type, arg1: integer, arg2: $ArrayList$$Type<($BlockPos$$Type)>): void
 public "turnY"(arg0: boolean, arg1: boolean): void
 public "turnX"(arg0: boolean, arg1: boolean): void
 public "canComputerTurn"(): boolean
-public "updateFakeLights"(arg0: boolean, arg1: boolean): void
-public "getAllComputerControlStates"(): $Stream<($ComputerControlState)>
+public "getBlockBounds"(arg0: $CollisionContext$$Type): $VoxelShape
 public "onLoad"(): void
 public "triggerEvent"(arg0: integer, arg1: integer): boolean
 public static "makeTicker"<T extends $BlockEntity>(): $BlockEntityTicker<(T)>
@@ -2969,17 +2968,17 @@ public "onEnergyPassedThrough"(arg0: double): void
 public "setFacing"(arg0: $Direction$$Type): void
 public "getFacing"(): $Direction
 public "canTickAny"(): boolean
-public "getFacingForPlacement"(arg0: $BlockPlaceContext$$Type): $Direction
 public "afterRotation"(arg0: $Direction$$Type, arg1: $Direction$$Type): void
 public "mirrorFacingOnPlacement"(arg0: $LivingEntity$$Type): boolean
+public "getFacingForPlacement"(arg0: $BlockPlaceContext$$Type): $Direction
 public "getState"(): $BlockState
 public "setState"(arg0: $BlockState$$Type): void
-get "requestedEnergy"(): integer
 get "removedIE"(): void
 get "facingProperty"(): $Property<($Direction)>
 get "facingLimitation"(): $PlacementLimitation
-get "interdictionRangeSquared"(): double
+get "requestedEnergy"(): integer
 get "allComputerControlStates"(): $Stream<($ComputerControlState)>
+get "interdictionRangeSquared"(): double
 get "isActive"(): boolean
 set "active"(value: boolean)
 get "availableEnergy"(): integer
@@ -2996,8 +2995,8 @@ export type $FloodlightBlockEntity$$Type = ($FloodlightBlockEntity);
  */
 export type $FloodlightBlockEntity$$Original = $FloodlightBlockEntity;}
 declare module "blusunrize.immersiveengineering.common.blocks.cloth.BalloonBlock" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Projectile$$Type} from "net.minecraft.world.entity.projectile.Projectile"
@@ -3113,8 +3112,8 @@ export type $IEBlockInterfaces$IHammerBlockInteraction$$Type = ((arg0: $BlockSta
 export type $IEBlockInterfaces$IHammerBlockInteraction$$Original = $IEBlockInterfaces$IHammerBlockInteraction;}
 declare module "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$IRedstoneOutput" {
 import {$Pair} from "com.mojang.datafixers.util.Pair"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$DyeColor} from "net.minecraft.world.item.DyeColor"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 
 export interface $IEBlockInterfaces$IRedstoneOutput$$Interface {
 }
@@ -3145,8 +3144,8 @@ import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.
 import {$IEBlockInterfaces$IColouredBlock$$Interface} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$IColouredBlock"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$IEBaseBlock} from "blusunrize.immersiveengineering.common.blocks.IEBaseBlock"
@@ -3214,19 +3213,19 @@ import {$PlacementLimitation} from "blusunrize.immersiveengineering.common.block
 
 export interface $IEBlockInterfaces$IAdvancedDirectionalBE$$Interface extends $IEBlockInterfaces$IDirectionalBE$$Interface {
 set "facing"(value: $Direction$$Type)
-get "facing"(): $Direction
 get "facingLimitation"(): $PlacementLimitation
+get "facing"(): $Direction
 }
 
 export class $IEBlockInterfaces$IAdvancedDirectionalBE implements $IEBlockInterfaces$IAdvancedDirectionalBE$$Interface {
  "onDirectionalPlacement"(arg0: $Direction$$Type, arg1: float, arg2: float, arg3: float, arg4: $LivingEntity$$Type): void
  "setFacing"(arg0: $Direction$$Type): void
- "getFacing"(): $Direction
- "getFacingForPlacement"(arg0: $BlockPlaceContext$$Type): $Direction
  "afterRotation"(arg0: $Direction$$Type, arg1: $Direction$$Type): void
  "getFacingLimitation"(): $PlacementLimitation
  "canHammerRotate"(arg0: $Direction$$Type, arg1: $Vec3$$Type, arg2: $LivingEntity$$Type): boolean
  "mirrorFacingOnPlacement"(arg0: $LivingEntity$$Type): boolean
+ "getFacing"(): $Direction
+ "getFacingForPlacement"(arg0: $BlockPlaceContext$$Type): $Direction
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -3238,8 +3237,8 @@ export type $IEBlockInterfaces$IAdvancedDirectionalBE$$Type = ($IEBlockInterface
  */
 export type $IEBlockInterfaces$IAdvancedDirectionalBE$$Original = $IEBlockInterfaces$IAdvancedDirectionalBE;}
 declare module "blusunrize.immersiveengineering.common.blocks.IESignBlocks$Standing" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$WoodType$$Type} from "net.minecraft.world.level.block.state.properties.WoodType"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$StandingSignBlock} from "net.minecraft.world.level.block.StandingSignBlock"
@@ -3249,8 +3248,8 @@ import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -3321,8 +3320,8 @@ import {$BlockBehaviour$Properties, $BlockBehaviour$Properties$$Type} from "net.
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$Supplier} from "java.util.function.Supplier"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$IEBlockInterfaces$IBlockOverlayText$$Interface} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$IBlockOverlayText"
 import {$IEBaseBlock} from "blusunrize.immersiveengineering.common.blocks.IEBaseBlock"
@@ -3387,8 +3386,8 @@ import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
-import {$WindmillBlockEntity} from "blusunrize.immersiveengineering.common.blocks.wooden.WindmillBlockEntity"
 import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
+import {$WindmillBlockEntity} from "blusunrize.immersiveengineering.common.blocks.wooden.WindmillBlockEntity"
 
 export class $WindmillBlock extends $IEEntityBlock<($WindmillBlockEntity)> {
 static readonly "UPDATE_IMMEDIATE": integer
@@ -3446,8 +3445,8 @@ declare module "blusunrize.immersiveengineering.common.blocks.metal.BasicConnect
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$IEBlocks$BlockEntry} from "blusunrize.immersiveengineering.common.register.IEBlocks$BlockEntry"
-import {$Direction} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction} from "net.minecraft.core.Direction"
 import {$BlockBehaviour$Properties, $BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ConnectorBlock} from "blusunrize.immersiveengineering.common.blocks.generic.ConnectorBlock"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -3498,8 +3497,8 @@ export type $BasicConnectorBlock$$Original<T> = $BasicConnectorBlock<(T)>;}
 declare module "blusunrize.immersiveengineering.common.blocks.metal.FeedthroughBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$Direction} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties, $BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ConnectorBlock} from "blusunrize.immersiveengineering.common.blocks.generic.ConnectorBlock"
@@ -3509,8 +3508,8 @@ import {$CreativeModeTab$Output$$Type} from "net.minecraft.world.item.CreativeMo
 import {$Supplier} from "java.util.function.Supplier"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
-import {$FeedthroughBlockEntity} from "blusunrize.immersiveengineering.common.blocks.metal.FeedthroughBlockEntity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$FeedthroughBlockEntity} from "blusunrize.immersiveengineering.common.blocks.metal.FeedthroughBlockEntity"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
@@ -3608,8 +3607,8 @@ get "soundRadiusSq"(): float
 }
 
 export class $IEBlockInterfaces$ISoundBE implements $IEBlockInterfaces$ISoundBE$$Interface {
- "shouldPlaySound"(arg0: StringJS): boolean
  "getSoundRadiusSq"(): float
+ "shouldPlaySound"(arg0: StringJS): boolean
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -3623,22 +3622,22 @@ export type $IEBlockInterfaces$ISoundBE$$Original = $IEBlockInterfaces$ISoundBE;
 declare module "blusunrize.immersiveengineering.common.blocks.generic.CatwalkStairsBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$Direction} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction} from "net.minecraft.core.Direction"
 import {$EnumMap} from "java.util.EnumMap"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
-import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
+import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
 import {$CatwalkBlock} from "blusunrize.immersiveengineering.common.blocks.generic.CatwalkBlock"
+import {$Item} from "net.minecraft.world.item.Item"
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
-import {$Item} from "net.minecraft.world.item.Item"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
@@ -3693,8 +3692,8 @@ import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
-import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
+import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$IEBaseBlock} from "blusunrize.immersiveengineering.common.blocks.IEBaseBlock"
 import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 
@@ -3755,12 +3754,12 @@ import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$Bl
 import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
-import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$MetalLadderBlock$CoverType$$Type} from "blusunrize.immersiveengineering.common.blocks.metal.MetalLadderBlock$CoverType"
+import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -3832,9 +3831,9 @@ import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.st
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
-import {$IEBlockInterfaces$ISpawnInterdiction$$Interface} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$ISpawnInterdiction"
 import {$EnergyTransferHandler$EnergyConnector$$Interface} from "blusunrize.immersiveengineering.api.wires.localhandlers.EnergyTransferHandler$EnergyConnector"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$IEBlockInterfaces$ISpawnInterdiction$$Interface} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$ISpawnInterdiction"
 import {$PlacementLimitation} from "blusunrize.immersiveengineering.common.blocks.PlacementLimitation"
 import {$IEBlockInterfaces$IHammerInteraction$$Interface} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$IHammerInteraction"
 import {$IEServerTickableBE$$Interface} from "blusunrize.immersiveengineering.common.blocks.ticking.IEServerTickableBE"
@@ -3853,13 +3852,9 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 
 constructor(arg0: $BlockPos$$Type, arg1: $BlockState$$Type)
 
-public "getBlockBounds"(arg0: $CollisionContext$$Type): $VoxelShape
 public "isSource"(arg0: $ConnectionPoint$$Type): boolean
 public "tickServer"(): void
 public "onChunkUnloaded"(): void
-public "isSink"(arg0: $ConnectionPoint$$Type): boolean
-public "getRequestedEnergy"(): integer
-public "insertEnergy"(arg0: integer): void
 public "writeCustomNBT"(arg0: $CompoundTag$$Type, arg1: boolean, arg2: $HolderLookup$Provider$$Type): void
 public "readCustomNBT"(arg0: $CompoundTag$$Type, arg1: boolean, arg2: $HolderLookup$Provider$$Type): void
 public "setRemovedIE"(): void
@@ -3869,7 +3864,11 @@ public "canHammerRotate"(arg0: $Direction$$Type, arg1: $Vec3$$Type, arg2: $Livin
 public "hammerUseSide"(arg0: $Direction$$Type, arg1: $Player$$Type, arg2: $InteractionHand$$Type, arg3: $Vec3$$Type): boolean
 public "getConnectionOffset"(arg0: $ConnectionPoint$$Type, arg1: $ConnectionPoint$$Type, arg2: $WireType$$Type): $Vec3
 public "canConnectCable"(arg0: $WireType$$Type, arg1: $ConnectionPoint$$Type, arg2: $Vec3i$$Type): boolean
+public "isSink"(arg0: $ConnectionPoint$$Type): boolean
+public "getRequestedEnergy"(): integer
+public "insertEnergy"(arg0: integer): void
 public "getInterdictionRangeSquared"(): double
+public "getBlockBounds"(arg0: $CollisionContext$$Type): $VoxelShape
 public "onLoad"(): void
 public "triggerEvent"(arg0: integer, arg1: integer): boolean
 public static "makeTicker"<T extends $BlockEntity>(): $BlockEntityTicker<(T)>
@@ -3883,15 +3882,15 @@ public "extractEnergy"(arg0: integer): void
 public "getAvailableEnergy"(): integer
 public "onEnergyPassedThrough"(arg0: double): void
 public "canTickAny"(): boolean
-public "getFacingForPlacement"(arg0: $BlockPlaceContext$$Type): $Direction
 public "afterRotation"(arg0: $Direction$$Type, arg1: $Direction$$Type): void
 public "mirrorFacingOnPlacement"(arg0: $LivingEntity$$Type): boolean
+public "getFacingForPlacement"(arg0: $BlockPlaceContext$$Type): $Direction
 public "getState"(): $BlockState
 public "setState"(arg0: $BlockState$$Type): void
-get "requestedEnergy"(): integer
 get "removedIE"(): void
 get "facingProperty"(): $Property<($Direction)>
 get "facingLimitation"(): $PlacementLimitation
+get "requestedEnergy"(): integer
 get "interdictionRangeSquared"(): double
 set "facing"(value: $Direction$$Type)
 get "facing"(): $Direction
@@ -3914,8 +3913,8 @@ declare module "blusunrize.immersiveengineering.common.blocks.metal.RazorWireBlo
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$RazorWireBlockEntity} from "blusunrize.immersiveengineering.common.blocks.metal.RazorWireBlockEntity"
-import {$Direction} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction} from "net.minecraft.core.Direction"
 import {$BlockBehaviour$Properties, $BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ConnectorBlock} from "blusunrize.immersiveengineering.common.blocks.generic.ConnectorBlock"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -4005,8 +4004,8 @@ declare module "blusunrize.immersiveengineering.common.blocks.FakeLightBlock$Fak
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$IEBaseBlockEntity} from "blusunrize.immersiveengineering.common.blocks.IEBaseBlockEntity"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$IEBlockInterfaces$ISpawnInterdiction$$Interface} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$ISpawnInterdiction"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$IEBlockInterfaces$ISpawnInterdiction$$Interface} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$ISpawnInterdiction"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $FakeLightBlock$FakeLightBlockEntity extends $IEBaseBlockEntity implements $IEBlockInterfaces$ISpawnInterdiction$$Interface {
@@ -4038,9 +4037,9 @@ export type $FakeLightBlock$FakeLightBlockEntity$$Original = $FakeLightBlock$Fak
 declare module "blusunrize.immersiveengineering.common.blocks.metal.TransformerHVBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$Direction} from "net.minecraft.core.Direction"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$TransformerHVBlockEntity} from "blusunrize.immersiveengineering.common.blocks.metal.TransformerHVBlockEntity"
+import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction} from "net.minecraft.core.Direction"
 import {$BlockBehaviour$Properties, $BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ConnectorBlock} from "blusunrize.immersiveengineering.common.blocks.generic.ConnectorBlock"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -4118,22 +4117,22 @@ constructor(arg0: $BlockPos$$Type, arg1: $BlockState$$Type)
 
 public "onEntityCollision"(arg0: $Level$$Type, arg1: $Entity$$Type): void
 public "getSelectionShape"(arg0: $CollisionContext$$Type): $VoxelShape
-public "isInwardConveyor"(arg0: $Direction$$Type): boolean
 public "writeCustomNBT"(arg0: $CompoundTag$$Type, arg1: boolean, arg2: $HolderLookup$Provider$$Type): void
 public "readCustomNBT"(arg0: $CompoundTag$$Type, arg1: boolean, arg2: $HolderLookup$Provider$$Type): void
+public "isInwardConveyor"(arg0: $Direction$$Type): boolean
 public "getFacingProperty"(): $Property<($Direction)>
 public "getFacingLimitation"(): $PlacementLimitation
 public "canHammerRotate"(arg0: $Direction$$Type, arg1: $Vec3$$Type, arg2: $LivingEntity$$Type): boolean
 public "hammerUseSide"(arg0: $Direction$$Type, arg1: $Player$$Type, arg2: $InteractionHand$$Type, arg3: $Vec3$$Type): boolean
 public "isDiagonal"(): boolean
-public static "registerCapabilities"(arg0: $BlockCapabilityRegistration$BECapabilityRegistrar$$Type<($ChuteBlockEntity$$Type)>): void
 public "getCollisionShape"(arg0: $CollisionContext$$Type): $VoxelShape
 public "triggerEvent"(arg0: integer, arg1: integer): boolean
+public static "registerCapabilities"(arg0: $BlockCapabilityRegistration$BECapabilityRegistrar$$Type<($ChuteBlockEntity$$Type)>): void
 public "setFacing"(arg0: $Direction$$Type): void
 public "getFacing"(): $Direction
-public "getFacingForPlacement"(arg0: $BlockPlaceContext$$Type): $Direction
 public "afterRotation"(arg0: $Direction$$Type, arg1: $Direction$$Type): void
 public "mirrorFacingOnPlacement"(arg0: $LivingEntity$$Type): boolean
+public "getFacingForPlacement"(arg0: $BlockPlaceContext$$Type): $Direction
 get "facingProperty"(): $Property<($Direction)>
 get "facingLimitation"(): $PlacementLimitation
 get "diagonal"(): boolean
@@ -4158,8 +4157,8 @@ import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -4209,10 +4208,10 @@ import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$Supplier$$Type} from "java.util.function.Supplier"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$IIEBlock$$Interface} from "blusunrize.immersiveengineering.common.blocks.IIEBlock"
+import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$WallBlock} from "net.minecraft.world.level.block.WallBlock"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
@@ -4310,25 +4309,25 @@ import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$IEBlockInterfaces$ICollisionBounds$$Interface} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$ICollisionBounds"
 import {$IEBlockInterfaces$ISelectionBounds$$Interface} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$ISelectionBounds"
-import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$IEBlockInterfaces$IAdditionalDrops$$Interface} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$IAdditionalDrops"
+import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$Object2BooleanMap} from "it.unimi.dsi.fastutil.objects.Object2BooleanMap"
-import {$DyeColor} from "net.minecraft.world.item.DyeColor"
 import {$IFluidPipe$$Interface} from "blusunrize.immersiveengineering.api.fluid.IFluidPipe"
+import {$DyeColor} from "net.minecraft.world.item.DyeColor"
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Set} from "java.util.Set"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$FluidPipeBlockEntity$ConnectionStyle} from "blusunrize.immersiveengineering.common.blocks.metal.FluidPipeBlockEntity$ConnectionStyle"
-import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$LevelEvent$Unload$$Type} from "net.neoforged.neoforge.event.level.LevelEvent$Unload"
+import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$ArrayList} from "java.util.ArrayList"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$Collection} from "java.util.Collection"
 import {$BlockCapabilityRegistration$BECapabilityRegistrar$$Type} from "blusunrize.immersiveengineering.common.blocks.BlockCapabilityRegistration$BECapabilityRegistrar"
-import {$Predicate} from "java.util.function.Predicate"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
+import {$Predicate} from "java.util.function.Predicate"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$FluidPipeBlockEntity$DirectionalFluidOutput} from "blusunrize.immersiveengineering.common.blocks.metal.FluidPipeBlockEntity$DirectionalFluidOutput"
 import {$IEBaseBlockEntity} from "blusunrize.immersiveengineering.common.blocks.IEBaseBlockEntity"
@@ -4351,7 +4350,6 @@ constructor(arg0: $BlockPos$$Type, arg1: $BlockState$$Type)
 
 public "onChunkUnloaded"(): void
 public "onEntityCollision"(arg0: $Level$$Type, arg1: $Entity$$Type): void
-public static "initCovers"(): void
 public "getSelectionShape"(arg0: $CollisionContext$$Type): $VoxelShape
 public "dropCover"(arg0: $Player$$Type): void
 public "toggleSide"(arg0: $Direction$$Type): void
@@ -4360,23 +4358,24 @@ public "readCustomNBT"(arg0: $CompoundTag$$Type, arg1: boolean, arg2: $HolderLoo
 public "onBEPlaced"(arg0: $BlockPlaceContext$$Type): void
 public "setRemovedIE"(): void
 public "onNeighborBlockChange"(arg0: $BlockPos$$Type): void
+public static "initCovers"(): void
 public "hammerUseSide"(arg0: $Direction$$Type, arg1: $Player$$Type, arg2: $InteractionHand$$Type, arg3: $Vec3$$Type): boolean
 public "getExtraDrops"(arg0: $Player$$Type, arg1: $BlockState$$Type): $Collection<($ItemStack)>
 public "getRenderColour"(arg0: integer): integer
-public "hasOutputConnection"(arg0: $Direction$$Type): boolean
 public "updateConnectionByte"(arg0: $Direction$$Type): boolean
 public static "getConnectedFluidHandlers"(arg0: $BlockPos$$Type, arg1: $Level$$Type): $Set<($FluidPipeBlockEntity$DirectionalFluidOutput)>
 public "getAvailableConnectionByte"(): byte
 public "getConnectionStyle"(arg0: $Direction$$Type): $FluidPipeBlockEntity$ConnectionStyle
+public "hasOutputConnection"(arg0: $Direction$$Type): boolean
 public static "onWorldUnload"(arg0: $LevelEvent$Unload$$Type): void
 public "onLoad"(): void
 public "setSide"(arg0: $Direction$$Type, arg1: boolean, arg2: boolean): void
 public "setSide"(arg0: $Direction$$Type, arg1: boolean): void
 public "getColor"(): $DyeColor
 public "interact"(arg0: $Direction$$Type, arg1: $Player$$Type, arg2: $InteractionHand$$Type, arg3: $ItemStack$$Type, arg4: float, arg5: float, arg6: float): $ItemInteractionResult
-public static "registerCapabilities"(arg0: $BlockCapabilityRegistration$BECapabilityRegistrar$$Type<($FluidPipeBlockEntity$$Type)>): void
 public "getCollisionShape"(arg0: $CollisionContext$$Type): $VoxelShape
 public "triggerEvent"(arg0: integer, arg1: integer): boolean
+public static "registerCapabilities"(arg0: $BlockCapabilityRegistration$BECapabilityRegistrar$$Type<($FluidPipeBlockEntity$$Type)>): void
 public static "getTransferableAmount"(arg0: boolean): integer
 public "stripPressureTag"(): boolean
 public "canOutputPressurized"(arg0: boolean): boolean
@@ -4449,8 +4448,8 @@ import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$IEBaseBlock} from "blusunrize.immersiveengineering.common.blocks.IEBaseBlock"
@@ -4499,8 +4498,8 @@ import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
-import {$ChuteBlockEntity} from "blusunrize.immersiveengineering.common.blocks.metal.ChuteBlockEntity"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
+import {$ChuteBlockEntity} from "blusunrize.immersiveengineering.common.blocks.metal.ChuteBlockEntity"
 import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $ChuteBlock extends $IEEntityBlock<($ChuteBlockEntity)> {
@@ -4585,13 +4584,13 @@ export type $SampleDrillBlock$$Original = $SampleDrillBlock;}
 declare module "blusunrize.immersiveengineering.common.blocks.metal.FloodlightBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$Direction} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction} from "net.minecraft.core.Direction"
 import {$BlockBehaviour$Properties, $BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ConnectorBlock} from "blusunrize.immersiveengineering.common.blocks.generic.ConnectorBlock"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
-import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$FloodlightBlockEntity} from "blusunrize.immersiveengineering.common.blocks.metal.FloodlightBlockEntity"
+import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$Supplier} from "java.util.function.Supplier"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
@@ -4637,8 +4636,8 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
 export class $WallmountBlock$Orientation extends $Enum<($WallmountBlock$Orientation)> implements $StringRepresentable$$Interface {
@@ -4656,11 +4655,11 @@ public static "values"(): ($WallmountBlock$Orientation)[]
 public static "valueOf"(arg0: StringJS): $WallmountBlock$Orientation
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "dual"(): $WallmountBlock$Orientation
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
@@ -4676,8 +4675,8 @@ export type $WallmountBlock$Orientation$$Type = (("side_up") | ("side_down") | (
 export type $WallmountBlock$Orientation$$Original = $WallmountBlock$Orientation;}
 declare module "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$IPlayerInteraction" {
 import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$ItemInteractionResult, $ItemInteractionResult$$Type} from "net.minecraft.world.ItemInteractionResult"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$ItemInteractionResult, $ItemInteractionResult$$Type} from "net.minecraft.world.ItemInteractionResult"
 import {$InteractionHand, $InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
 
@@ -4701,8 +4700,8 @@ export type $IEBlockInterfaces$IPlayerInteraction$$Original = $IEBlockInterfaces
 declare module "blusunrize.immersiveengineering.common.blocks.metal.BreakerSwitchBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$Direction} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction} from "net.minecraft.core.Direction"
 import {$BlockBehaviour$Properties, $BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ConnectorBlock} from "blusunrize.immersiveengineering.common.blocks.generic.ConnectorBlock"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -4760,8 +4759,8 @@ import {$Supplier, $Supplier$$Type} from "java.util.function.Supplier"
 import {$DeferredRegister$$Type} from "net.neoforged.neoforge.registries.DeferredRegister"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
-import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$MultiblockBEType$BEWithTypeConstructor$$Type} from "blusunrize.immersiveengineering.common.blocks.MultiblockBEType$BEWithTypeConstructor"
+import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $MultiblockBEType<T extends $BlockEntity> implements $BiFunction$$Interface<($BlockPos), ($BlockState), (T)> {
 constructor(arg0: StringJS, arg1: $DeferredRegister$$Type<($BlockEntityType$$Type<(never)>)>, arg2: $MultiblockBEType$BEWithTypeConstructor$$Type<(T)>, arg3: $Supplier$$Type<($Block$$Type)>, arg4: $Predicate$$Type<($BlockState)>)
@@ -4797,22 +4796,22 @@ import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Supplier$$Type} from "java.util.function.Supplier"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$IEBaseBlock} from "blusunrize.immersiveengineering.common.blocks.IEBaseBlock"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$HitResult$$Type} from "net.minecraft.world.phys.HitResult"
+import {$BiFunction$$Type} from "java.util.function.BiFunction"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
-import {$BiFunction$$Type} from "java.util.function.BiFunction"
 import {$ItemInteractionResult} from "net.minecraft.world.ItemInteractionResult"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
@@ -4840,14 +4839,14 @@ static readonly "INSTANT": float
 static readonly "UPDATE_CLIENTS": integer
 
 constructor(arg0: $BiFunction$$Type<($BlockPos), ($BlockState), (T)>, arg1: $BlockBehaviour$Properties$$Type)
-constructor(arg0: $Supplier$$Type<($BlockEntityType$$Type<(T)>)>, arg1: $BlockBehaviour$Properties$$Type)
 constructor(arg0: $Supplier$$Type<($BlockEntityType$$Type<(T)>)>, arg1: $BlockBehaviour$Properties$$Type, arg2: boolean)
 constructor(arg0: $BiFunction$$Type<($BlockPos), ($BlockState), (T)>, arg1: $BlockBehaviour$Properties$$Type, arg2: boolean)
+constructor(arg0: $Supplier$$Type<($BlockEntityType$$Type<(T)>)>, arg1: $BlockBehaviour$Properties$$Type)
 
+public "getAnalogOutputSignal"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type): integer
 public "playerDestroy"(arg0: $Level$$Type, arg1: $Player$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $BlockEntity$$Type, arg5: $ItemStack$$Type): void
 public "canEntityDestroy"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): boolean
 public "canConnectRedstone"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $Direction$$Type): boolean
-public "getAnalogOutputSignal"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type): integer
 public "getTicker"<T2 extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(T2)>): $BlockEntityTicker<(T2)>
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
 public "onIEBlockPlacedBy"(arg0: $BlockPlaceContext$$Type, arg1: $BlockState$$Type): void
@@ -4863,9 +4862,9 @@ public "getCloneItemStack"(arg0: $BlockState$$Type, arg1: $HitResult$$Type, arg2
 public "getCollisionShape"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $CollisionContext$$Type): $VoxelShape
 public "entityInside"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): void
 public "onRemove"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: boolean): void
+public "hasAnalogOutputSignal"(arg0: $BlockState$$Type): boolean
 public "neighborChanged"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Block$$Type, arg4: $BlockPos$$Type, arg5: boolean): void
 public "triggerEvent"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: integer, arg4: integer): boolean
-public "hasAnalogOutputSignal"(arg0: $BlockState$$Type): boolean
 public "getDirectSignal"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $Direction$$Type): integer
 public "isSignalSource"(arg0: $BlockState$$Type): boolean
 public "getSignal"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $Direction$$Type): integer
@@ -4884,8 +4883,8 @@ export type $IEEntityBlock$$Type<T> = ($IEEntityBlock<(T)>);
  */
 export type $IEEntityBlock$$Original<T> = $IEEntityBlock<(T)>;}
 declare module "blusunrize.immersiveengineering.common.blocks.metal.WarningSignBlock" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
@@ -4893,14 +4892,14 @@ import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties, $BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
-import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
+import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$ItemInteractionResult} from "net.minecraft.world.ItemInteractionResult"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$Supplier} from "java.util.function.Supplier"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -4968,10 +4967,8 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 
 constructor(arg0: $BlockPos$$Type, arg1: $BlockState$$Type)
 
+public "isOnCeiling"(): boolean
 public "setFacing"(arg0: $Direction$$Type): void
-public "getBlockBounds"(arg0: $CollisionContext$$Type): $VoxelShape
-public "getFacing"(): $Direction
-public "getFacingForPlacement"(arg0: $BlockPlaceContext$$Type): $Direction
 public "writeCustomNBT"(arg0: $CompoundTag$$Type, arg1: boolean, arg2: $HolderLookup$Provider$$Type): void
 public "readCustomNBT"(arg0: $CompoundTag$$Type, arg1: boolean, arg2: $HolderLookup$Provider$$Type): void
 public "onNeighborBlockChange"(arg0: $BlockPos$$Type): void
@@ -4979,18 +4976,20 @@ public "getFacingProperty"(): $Property<($Direction)>
 public "getFacingLimitation"(): $PlacementLimitation
 public "canHammerRotate"(arg0: $Direction$$Type, arg1: $Vec3$$Type, arg2: $LivingEntity$$Type): boolean
 public "getSlopePosition"(): integer
-public "isOnCeiling"(): boolean
+public "getFacing"(): $Direction
+public "getBlockBounds"(arg0: $CollisionContext$$Type): $VoxelShape
+public "getFacingForPlacement"(arg0: $BlockPlaceContext$$Type): $Direction
 public "getTotalLength"(): integer
 public "getCollisionShape"(arg0: $CollisionContext$$Type): $VoxelShape
 public "getSelectionShape"(arg0: $CollisionContext$$Type): $VoxelShape
 public "afterRotation"(arg0: $Direction$$Type, arg1: $Direction$$Type): void
 public "mirrorFacingOnPlacement"(arg0: $LivingEntity$$Type): boolean
+get "onCeiling"(): boolean
 set "facing"(value: $Direction$$Type)
-get "facing"(): $Direction
 get "facingProperty"(): $Property<($Direction)>
 get "facingLimitation"(): $PlacementLimitation
 get "slopePosition"(): integer
-get "onCeiling"(): boolean
+get "facing"(): $Direction
 get "totalLength"(): integer
 }
 /**
@@ -5018,10 +5017,10 @@ import {$BonemealableBlock$$Interface} from "net.minecraft.world.level.block.Bon
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$CropBlock} from "net.minecraft.world.level.block.CropBlock"
 import {$Supplier} from "java.util.function.Supplier"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
+import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -5055,8 +5054,8 @@ public "isRandomlyTicking"(arg0: $BlockState$$Type): boolean
 public "randomTick"(arg0: $BlockState$$Type, arg1: $ServerLevel$$Type, arg2: $BlockPos$$Type, arg3: $RandomSource$$Type): void
 public "isValidBonemealTarget"(arg0: $LevelReader$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type): boolean
 public "growCrops"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type): void
-public "getShape"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $CollisionContext$$Type): $VoxelShape
 public "getMaxAge"(): integer
+public "getShape"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $CollisionContext$$Type): $VoxelShape
 public "canSurvive"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type): boolean
 public "isBonemealSuccess"(arg0: $Level$$Type, arg1: $RandomSource$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): boolean
 public "performBonemeal"(arg0: $ServerLevel$$Type, arg1: $RandomSource$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): void
@@ -5075,8 +5074,8 @@ export type $HempBlock$$Original = $HempBlock;}
 declare module "blusunrize.immersiveengineering.common.blocks.metal.PostTransformerBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
 import {$BlockBehaviour$Properties, $BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ConnectorBlock} from "blusunrize.immersiveengineering.common.blocks.generic.ConnectorBlock"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -5132,16 +5131,16 @@ export type $PostTransformerBlock$$Type = ($PostTransformerBlock);
 export type $PostTransformerBlock$$Original = $PostTransformerBlock;}
 declare module "blusunrize.immersiveengineering.common.blocks.wooden.ItemBatcherBlockEntity" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$IEMenuTypes$ArgContainer} from "blusunrize.immersiveengineering.common.register.IEMenuTypes$ArgContainer"
 import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
+import {$IEMenuTypes$ArgContainer} from "blusunrize.immersiveengineering.common.register.IEMenuTypes$ArgContainer"
 import {$IEBlockInterfaces$IInteractionObjectIE$$Interface} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$IInteractionObjectIE"
 import {$Component} from "net.minecraft.network.chat.Component"
 import {$Inventory$$Type} from "net.minecraft.world.entity.player.Inventory"
 import {$IIEInventory$$Interface} from "blusunrize.immersiveengineering.common.util.inventory.IIEInventory"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
-import {$ItemBatcherBlockEntity$BatchMode} from "blusunrize.immersiveengineering.common.blocks.wooden.ItemBatcherBlockEntity$BatchMode"
 import {$IEBlockInterfaces$IStateBasedDirectional$$Interface} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$IStateBasedDirectional"
+import {$ItemBatcherBlockEntity$BatchMode} from "blusunrize.immersiveengineering.common.blocks.wooden.ItemBatcherBlockEntity$BatchMode"
 import {$DyeColor} from "net.minecraft.world.item.DyeColor"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$Stream} from "java.util.stream.Stream"
@@ -5174,7 +5173,7 @@ public "isStackValid"(arg0: integer, arg1: $ItemStack$$Type): boolean
 public "receiveMessageFromClient"(arg0: $CompoundTag$$Type): void
 public "writeCustomNBT"(arg0: $CompoundTag$$Type, arg1: boolean, arg2: $HolderLookup$Provider$$Type): void
 public "readCustomNBT"(arg0: $CompoundTag$$Type, arg1: boolean, arg2: $HolderLookup$Provider$$Type): void
-public "getGuiMaster"(): $ItemBatcherBlockEntity
+public "getGuiMaster"(): $BlockEntity
 public "doGraphicalUpdates"(): void
 public "canUseGui"(arg0: $Player$$Type): boolean
 public "getFacingProperty"(): $Property<($Direction)>
@@ -5183,23 +5182,23 @@ public "mirrorFacingOnPlacement"(arg0: $LivingEntity$$Type): boolean
 public "getContainerType"(): $IEMenuTypes$ArgContainer<($ItemBatcherBlockEntity), (never)>
 public "getFilters"(): $NonNullList<($ItemStack)>
 public "getInventory"(): $NonNullList<($ItemStack)>
-public static "registerCapabilities"(arg0: $BlockCapabilityRegistration$BECapabilityRegistrar$$Type<($ItemBatcherBlockEntity$$Type)>): void
 public "getSlotLimit"(arg0: integer): integer
+public static "registerCapabilities"(arg0: $BlockCapabilityRegistration$BECapabilityRegistrar$$Type<($ItemBatcherBlockEntity$$Type)>): void
 public static "makeTicker"<T extends $BlockEntity>(): $BlockEntityTicker<(T)>
 public "getDroppedItems"(): $Stream<($ItemStack)>
 public "getComparatedSize"(): integer
 public "createMenu"(arg0: integer, arg1: $Inventory$$Type, arg2: $Player$$Type): $AbstractContainerMenu
-public "isValid"(): boolean
 public "getDisplayName"(): $Component
+public "isValid"(): boolean
 public "setFacing"(arg0: $Direction$$Type): void
 public "getFacing"(): $Direction
 public "canTickAny"(): boolean
-public "getFacingForPlacement"(arg0: $BlockPlaceContext$$Type): $Direction
 public "afterRotation"(arg0: $Direction$$Type, arg1: $Direction$$Type): void
 public "canHammerRotate"(arg0: $Direction$$Type, arg1: $Vec3$$Type, arg2: $LivingEntity$$Type): boolean
+public "getFacingForPlacement"(arg0: $BlockPlaceContext$$Type): $Direction
 public "shouldTriggerClientSideContainerClosingOnOpen"(): boolean
 public "writeClientSideData"(arg0: $AbstractContainerMenu$$Type, arg1: $RegistryFriendlyByteBuf$$Type): void
-get "guiMaster"(): $ItemBatcherBlockEntity
+get "guiMaster"(): $BlockEntity
 get "facingProperty"(): $Property<($Direction)>
 get "facingLimitation"(): $PlacementLimitation
 get "containerType"(): $IEMenuTypes$ArgContainer<($ItemBatcherBlockEntity), (never)>
@@ -5207,8 +5206,8 @@ get "filters"(): $NonNullList<($ItemStack)>
 get "inventory"(): $NonNullList<($ItemStack)>
 get "droppedItems"(): $Stream<($ItemStack)>
 get "comparatedSize"(): integer
-get "valid"(): boolean
 get "displayName"(): $Component
+get "valid"(): boolean
 set "facing"(value: $Direction$$Type)
 get "facing"(): $Direction
 }
@@ -5225,8 +5224,8 @@ declare module "blusunrize.immersiveengineering.common.blocks.wooden.WindmillBlo
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$IEClientTickableBE$$Interface} from "blusunrize.immersiveengineering.common.blocks.ticking.IEClientTickableBE"
+import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$IEBlockInterfaces$IStateBasedDirectional$$Interface} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$IStateBasedDirectional"
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
@@ -5259,11 +5258,8 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 
 constructor(arg0: $BlockPos$$Type, arg1: $BlockState$$Type)
 
-public "getBlockBounds"(arg0: $CollisionContext$$Type): $VoxelShape
 public "tickClient"(): void
 public "tickServer"(): void
-public "computeTurnSpeed"(): float
-public "shouldPlaySound"(arg0: StringJS): boolean
 public "getActualTurnSpeed"(): double
 public "writeCustomNBT"(arg0: $CompoundTag$$Type, arg1: boolean, arg2: $HolderLookup$Provider$$Type): void
 public "readCustomNBT"(arg0: $CompoundTag$$Type, arg1: boolean, arg2: $HolderLookup$Provider$$Type): void
@@ -5272,6 +5268,9 @@ public "getFacingProperty"(): $Property<($Direction)>
 public "getFacingLimitation"(): $PlacementLimitation
 public "canHammerRotate"(arg0: $Direction$$Type, arg1: $Vec3$$Type, arg2: $LivingEntity$$Type): boolean
 public "mirrorFacingOnPlacement"(arg0: $LivingEntity$$Type): boolean
+public "shouldPlaySound"(arg0: StringJS): boolean
+public "computeTurnSpeed"(): float
+public "getBlockBounds"(arg0: $CollisionContext$$Type): $VoxelShape
 public "onLoad"(): void
 public "interact"(arg0: $Direction$$Type, arg1: $Player$$Type, arg2: $InteractionHand$$Type, arg3: $ItemStack$$Type, arg4: float, arg5: float, arg6: float): $ItemInteractionResult
 public static "makeTicker"<T extends $BlockEntity>(): $BlockEntityTicker<(T)>
@@ -5281,8 +5280,8 @@ public "getSelectionShape"(arg0: $CollisionContext$$Type): $VoxelShape
 public "getCollisionShape"(arg0: $CollisionContext$$Type): $VoxelShape
 public "getSoundRadiusSq"(): float
 public "canTickAny"(): boolean
-public "getFacingForPlacement"(arg0: $BlockPlaceContext$$Type): $Direction
 public "afterRotation"(arg0: $Direction$$Type, arg1: $Direction$$Type): void
+public "getFacingForPlacement"(arg0: $BlockPlaceContext$$Type): $Direction
 get "actualTurnSpeed"(): double
 get "facingProperty"(): $Property<($Direction)>
 get "facingLimitation"(): $PlacementLimitation
@@ -5325,16 +5324,16 @@ export type $IEClientTickableBE$$Type = (() => void);
 export type $IEClientTickableBE$$Original = $IEClientTickableBE;}
 declare module "blusunrize.immersiveengineering.common.blocks.metal.ClocheBlockEntity" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$IEMenuTypes$ArgContainer} from "blusunrize.immersiveengineering.common.register.IEMenuTypes$ArgContainer"
 import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
-import {$IEBlockInterfaces$IInteractionObjectIE$$Interface} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$IInteractionObjectIE"
+import {$IEMenuTypes$ArgContainer} from "blusunrize.immersiveengineering.common.register.IEMenuTypes$ArgContainer"
 import {$MutableEnergyStorage} from "blusunrize.immersiveengineering.api.energy.MutableEnergyStorage"
+import {$IEBlockInterfaces$IInteractionObjectIE$$Interface} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$IInteractionObjectIE"
 import {$Component} from "net.minecraft.network.chat.Component"
 import {$Inventory$$Type} from "net.minecraft.world.entity.player.Inventory"
 import {$IIEInventory$$Interface} from "blusunrize.immersiveengineering.common.util.inventory.IIEInventory"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$IEClientTickableBE$$Interface} from "blusunrize.immersiveengineering.common.blocks.ticking.IEClientTickableBE"
+import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$Vec3i$$Type} from "net.minecraft.core.Vec3i"
 import {$IEBlockInterfaces$IHasDummyBlocks$$Interface} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$IHasDummyBlocks"
 import {$IEBlockInterfaces$IStateBasedDirectional$$Interface} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$IStateBasedDirectional"
@@ -5387,7 +5386,6 @@ public "setFacing"(arg0: $Direction$$Type): void
 public "tickClient"(): void
 public "tickServer"(): void
 public "isStackValid"(arg0: integer, arg1: $ItemStack$$Type): boolean
-public "isDummy"(): boolean
 public "writeCustomNBT"(arg0: $CompoundTag$$Type, arg1: boolean, arg2: $HolderLookup$Provider$$Type): void
 public "readCustomNBT"(arg0: $CompoundTag$$Type, arg1: boolean, arg2: $HolderLookup$Provider$$Type): void
 public "canTickAny"(): boolean
@@ -5402,21 +5400,22 @@ public "breakDummies"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): void
 public "getModelOffset"(arg0: $BlockState$$Type, arg1: $Vec3i$$Type): $BlockPos
 public "getGuiProgress"(): float
 public "getContainerType"(): $IEMenuTypes$ArgContainer<($ClocheBlockEntity), (never)>
+public "isDummy"(): boolean
 public "master"(): $IEBlockInterfaces$IGeneralMultiblock
 public "getInventory"(): $NonNullList<($ItemStack)>
-public static "registerCapabilities"(arg0: $BlockCapabilityRegistration$BECapabilityRegistrar$$Type<($ClocheBlockEntity$$Type)>): void
 public "getSlotLimit"(arg0: integer): integer
+public static "registerCapabilities"(arg0: $BlockCapabilityRegistration$BECapabilityRegistrar$$Type<($ClocheBlockEntity$$Type)>): void
 public static "makeTicker"<T extends $BlockEntity>(): $BlockEntityTicker<(T)>
 public "getFacing"(): $Direction
 public "getDroppedItems"(): $Stream<($ItemStack)>
 public "getComparatedSize"(): integer
 public "createMenu"(arg0: integer, arg1: $Inventory$$Type, arg2: $Player$$Type): $AbstractContainerMenu
-public "isValid"(): boolean
 public "getDisplayName"(): $Component
-public "getFacingForPlacement"(arg0: $BlockPlaceContext$$Type): $Direction
+public "isValid"(): boolean
 public "afterRotation"(arg0: $Direction$$Type, arg1: $Direction$$Type): void
 public "canHammerRotate"(arg0: $Direction$$Type, arg1: $Vec3$$Type, arg2: $LivingEntity$$Type): boolean
 public "mirrorFacingOnPlacement"(arg0: $LivingEntity$$Type): boolean
+public "getFacingForPlacement"(arg0: $BlockPlaceContext$$Type): $Direction
 public "shouldTriggerClientSideContainerClosingOnOpen"(): boolean
 public "writeClientSideData"(arg0: $AbstractContainerMenu$$Type, arg1: $RegistryFriendlyByteBuf$$Type): void
 set "facing"(value: $Direction$$Type)
@@ -5429,8 +5428,8 @@ get "inventory"(): $NonNullList<($ItemStack)>
 get "facing"(): $Direction
 get "droppedItems"(): $Stream<($ItemStack)>
 get "comparatedSize"(): integer
-get "valid"(): boolean
 get "displayName"(): $Component
+get "valid"(): boolean
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -5546,8 +5545,8 @@ import {$MutableEnergyStorage} from "blusunrize.immersiveengineering.api.energy.
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$PlacementLimitation} from "blusunrize.immersiveengineering.common.blocks.PlacementLimitation"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$IEBlockInterfaces$IHammerInteraction$$Interface} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$IHammerInteraction"
 import {$IEServerTickableBE$$Interface} from "blusunrize.immersiveengineering.common.blocks.ticking.IEServerTickableBE"
+import {$IEBlockInterfaces$IHammerInteraction$$Interface} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$IHammerInteraction"
 import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$IEBlockInterfaces$IStateBasedDirectional$$Interface} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$IStateBasedDirectional"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
@@ -5572,16 +5571,16 @@ public "getFacingLimitation"(): $PlacementLimitation
 public "canHammerRotate"(arg0: $Direction$$Type, arg1: $Vec3$$Type, arg2: $LivingEntity$$Type): boolean
 public "mirrorFacingOnPlacement"(arg0: $LivingEntity$$Type): boolean
 public "hammerUseSide"(arg0: $Direction$$Type, arg1: $Player$$Type, arg2: $InteractionHand$$Type, arg3: $Vec3$$Type): boolean
-public static "registerCapabilities"(arg0: $BlockCapabilityRegistration$BECapabilityRegistrar$$Type<($FurnaceHeaterBlockEntity$$Type)>): void
 public "triggerEvent"(arg0: integer, arg1: integer): boolean
+public static "registerCapabilities"(arg0: $BlockCapabilityRegistration$BECapabilityRegistrar$$Type<($FurnaceHeaterBlockEntity$$Type)>): void
 public static "makeTicker"<T extends $BlockEntity>(): $BlockEntityTicker<(T)>
 public "getIsActive"(): boolean
 public "setActive"(arg0: boolean): void
 public "setFacing"(arg0: $Direction$$Type): void
 public "getFacing"(): $Direction
 public "canTickAny"(): boolean
-public "getFacingForPlacement"(arg0: $BlockPlaceContext$$Type): $Direction
 public "afterRotation"(arg0: $Direction$$Type, arg1: $Direction$$Type): void
+public "getFacingForPlacement"(arg0: $BlockPlaceContext$$Type): $Direction
 get "facingProperty"(): $Property<($Direction)>
 get "facingLimitation"(): $PlacementLimitation
 get "isActive"(): boolean
@@ -5600,19 +5599,19 @@ export type $FurnaceHeaterBlockEntity$$Type = ($FurnaceHeaterBlockEntity);
 export type $FurnaceHeaterBlockEntity$$Original = $FurnaceHeaterBlockEntity;}
 declare module "blusunrize.immersiveengineering.common.blocks.metal.TurretBlockEntity" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
 import {$IEMenuTypes$ArgContainer} from "blusunrize.immersiveengineering.common.register.IEMenuTypes$ArgContainer"
+import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
 import {$TurretBlockEntity$TurretConfig} from "blusunrize.immersiveengineering.common.blocks.metal.TurretBlockEntity$TurretConfig"
-import {$IEBlockInterfaces$IInteractionObjectIE$$Interface} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$IInteractionObjectIE"
 import {$MutableEnergyStorage} from "blusunrize.immersiveengineering.api.energy.MutableEnergyStorage"
+import {$IEBlockInterfaces$IInteractionObjectIE$$Interface} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$IInteractionObjectIE"
 import {$Component} from "net.minecraft.network.chat.Component"
 import {$Inventory$$Type} from "net.minecraft.world.entity.player.Inventory"
 import {$IIEInventory$$Interface} from "blusunrize.immersiveengineering.common.util.inventory.IIEInventory"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$IEClientTickableBE$$Interface} from "blusunrize.immersiveengineering.common.blocks.ticking.IEClientTickableBE"
 import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
-import {$IEBlockInterfaces$IHasDummyBlocks$$Interface} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$IHasDummyBlocks"
 import {$Vec3i$$Type} from "net.minecraft.core.Vec3i"
+import {$IEBlockInterfaces$IHasDummyBlocks$$Interface} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$IHasDummyBlocks"
 import {$IEBlockInterfaces$IStateBasedDirectional$$Interface} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$IStateBasedDirectional"
 import {$IEBlockInterfaces$IEntityProof$$Interface} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$IEntityProof"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
@@ -5625,24 +5624,24 @@ import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockStat
 import {$IEBlockInterfaces$IScrewdriverInteraction$$Interface} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$IScrewdriverInteraction"
 import {$IEBlockInterfaces$IGeneralMultiblock} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$IGeneralMultiblock"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
-import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$LootContext$$Type} from "net.minecraft.world.level.storage.loot.LootContext"
+import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$IEBaseBlockEntity} from "blusunrize.immersiveengineering.common.blocks.IEBaseBlockEntity"
 import {$HitResult$$Type} from "net.minecraft.world.phys.HitResult"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
-import {$PlacementLimitation} from "blusunrize.immersiveengineering.common.blocks.PlacementLimitation"
 import {$Consumer$$Type} from "java.util.function.Consumer"
+import {$PlacementLimitation} from "blusunrize.immersiveengineering.common.blocks.PlacementLimitation"
 import {$IEServerTickableBE$$Interface} from "blusunrize.immersiveengineering.common.blocks.ticking.IEServerTickableBE"
 import {$ItemInteractionResult} from "net.minecraft.world.ItemInteractionResult"
 import {$AbstractContainerMenu, $AbstractContainerMenu$$Type} from "net.minecraft.world.inventory.AbstractContainerMenu"
-import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$RegistryFriendlyByteBuf$$Type} from "net.minecraft.network.RegistryFriendlyByteBuf"
+import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$IEBlockInterfaces$IBlockBounds$$Interface} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$IBlockBounds"
-import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$IModelOffsetProvider$$Interface} from "blusunrize.immersiveengineering.api.client.IModelOffsetProvider"
+import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$AABB} from "net.minecraft.world.phys.AABB"
 import {$Property} from "net.minecraft.world.level.block.state.properties.Property"
@@ -5659,20 +5658,18 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 
 constructor(arg0: $BlockEntityType$$Type<(T)>, arg1: $BlockPos$$Type, arg2: $BlockState$$Type)
 
-public "getBlockBounds"(arg0: $CollisionContext$$Type): $VoxelShape
 public "canEntityDestroy"(arg0: $Entity$$Type): boolean
 public "tickClient"(): void
 public "tickServer"(): void
 public "isValidTarget"(arg0: $LivingEntity$$Type, arg1: boolean): boolean
 public "isStackValid"(arg0: integer, arg1: $ItemStack$$Type): boolean
-public "isDummy"(): boolean
 public "writeCustomNBT"(arg0: $CompoundTag$$Type, arg1: boolean, arg2: $HolderLookup$Provider$$Type): void
 public "readCustomNBT"(arg0: $CompoundTag$$Type, arg1: boolean, arg2: $HolderLookup$Provider$$Type): void
 public "getBlockEntityDrop"(arg0: $LootContext$$Type, arg1: $Consumer$$Type<($ItemStack)>): void
 public "onBEPlaced"(arg0: $BlockPlaceContext$$Type): void
 public "tickCommon"(): void
 public "screwdriverUseSide"(arg0: $Direction$$Type, arg1: $Player$$Type, arg2: $InteractionHand$$Type, arg3: $Vec3$$Type): $ItemInteractionResult
-public "getGuiMaster"(): T
+public "getGuiMaster"(): $BlockEntity
 public "resetTarget"(): void
 public "doGraphicalUpdates"(): void
 public "canUseGui"(arg0: $Player$$Type): boolean
@@ -5683,6 +5680,8 @@ public "placeDummies"(arg0: $BlockPlaceContext$$Type, arg1: $BlockState$$Type): 
 public "breakDummies"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): void
 public "setDummy"(arg0: boolean): void
 public "getModelOffset"(arg0: $BlockState$$Type, arg1: $Vec3i$$Type): $BlockPos
+public "getBlockBounds"(arg0: $CollisionContext$$Type): $VoxelShape
+public "isDummy"(): boolean
 public "master"(): $IEBlockInterfaces$IGeneralMultiblock
 public "getInventory"(): $NonNullList<($ItemStack)>
 public "getSlotLimit"(arg0: integer): integer
@@ -5696,27 +5695,27 @@ public "getSelectionShape"(arg0: $CollisionContext$$Type): $VoxelShape
 public "getCollisionShape"(arg0: $CollisionContext$$Type): $VoxelShape
 public "createMenu"(arg0: integer, arg1: $Inventory$$Type, arg2: $Player$$Type): $AbstractContainerMenu
 public "getContainerType"(): $IEMenuTypes$ArgContainer<(T), (never)>
-public "isValid"(): boolean
 public "getDisplayName"(): $Component
+public "isValid"(): boolean
 public "canTickAny"(): boolean
-public "getFacingForPlacement"(arg0: $BlockPlaceContext$$Type): $Direction
 public "afterRotation"(arg0: $Direction$$Type, arg1: $Direction$$Type): void
 public "mirrorFacingOnPlacement"(arg0: $LivingEntity$$Type): boolean
+public "getFacingForPlacement"(arg0: $BlockPlaceContext$$Type): $Direction
 public "shouldTriggerClientSideContainerClosingOnOpen"(): boolean
 public "writeClientSideData"(arg0: $AbstractContainerMenu$$Type, arg1: $RegistryFriendlyByteBuf$$Type): void
-get "dummy"(): boolean
-get "guiMaster"(): T
+get "guiMaster"(): $BlockEntity
 get "facingProperty"(): $Property<($Direction)>
 get "facingLimitation"(): $PlacementLimitation
 set "dummy"(value: boolean)
+get "dummy"(): boolean
 get "inventory"(): $NonNullList<($ItemStack)>
 get "droppedItems"(): $Stream<($ItemStack)>
 get "comparatedSize"(): integer
 set "facing"(value: $Direction$$Type)
 get "facing"(): $Direction
 get "containerType"(): $IEMenuTypes$ArgContainer<(T), (never)>
-get "valid"(): boolean
 get "displayName"(): $Component
+get "valid"(): boolean
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -5729,8 +5728,8 @@ export type $TurretBlockEntity$$Type<T> = ($TurretBlockEntity<(T)>);
 export type $TurretBlockEntity$$Original<T> = $TurretBlockEntity<(T)>;}
 declare module "blusunrize.immersiveengineering.common.blocks.BlockCapabilityRegistration$BECapabilityRegistrar" {
 import {$BlockCapability, $BlockCapability$$Type} from "net.neoforged.neoforge.capabilities.BlockCapability"
-import {$Function$$Type} from "java.util.function.Function"
 import {$ICapabilityProvider, $ICapabilityProvider$$Type} from "net.neoforged.neoforge.capabilities.ICapabilityProvider"
+import {$Function$$Type} from "java.util.function.Function"
 
 export interface $BlockCapabilityRegistration$BECapabilityRegistrar$$Interface<BE> {
 
@@ -5754,8 +5753,8 @@ export type $BlockCapabilityRegistration$BECapabilityRegistrar$$Original<BE> = $
 declare module "blusunrize.immersiveengineering.common.blocks.metal.StructuralArmBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$Direction} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction} from "net.minecraft.core.Direction"
 import {$StructuralArmBlockEntity} from "blusunrize.immersiveengineering.common.blocks.metal.StructuralArmBlockEntity"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -5892,11 +5891,11 @@ import {$Connection} from "blusunrize.immersiveengineering.api.wires.Connection"
 import {$Collection} from "java.util.Collection"
 import {$HitResult$$Type} from "net.minecraft.world.phys.HitResult"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
-import {$PlacementLimitation} from "blusunrize.immersiveengineering.common.blocks.PlacementLimitation"
 import {$Consumer$$Type} from "java.util.function.Consumer"
+import {$PlacementLimitation} from "blusunrize.immersiveengineering.common.blocks.PlacementLimitation"
 import {$IImmersiveConnectable$$Type} from "blusunrize.immersiveengineering.api.wires.IImmersiveConnectable"
-import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$ConnectionPoint, $ConnectionPoint$$Type} from "blusunrize.immersiveengineering.api.wires.ConnectionPoint"
+import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$IEBlockInterfaces$IBlockBounds$$Interface} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$IBlockBounds"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
@@ -5913,12 +5912,11 @@ static readonly "WIRE": StringJS
 
 constructor(arg0: $BlockPos$$Type, arg1: $BlockState$$Type)
 
-public "getBlockBounds"(arg0: $CollisionContext$$Type): $VoxelShape
-public "getPickBlock"(arg0: $Player$$Type, arg1: $BlockState$$Type, arg2: $HitResult$$Type): $ItemStack
 public "writeCustomNBT"(arg0: $CompoundTag$$Type, arg1: boolean, arg2: $HolderLookup$Provider$$Type): void
 public "readCustomNBT"(arg0: $CompoundTag$$Type, arg1: boolean, arg2: $HolderLookup$Provider$$Type): void
 public "getBlockEntityDrop"(arg0: $LootContext$$Type, arg1: $Consumer$$Type<($ItemStack)>): void
 public "onBEPlaced"(arg0: $BlockPlaceContext$$Type): void
+public "getPickBlock"(arg0: $Player$$Type, arg1: $BlockState$$Type, arg2: $HitResult$$Type): $ItemStack
 public "getFacingProperty"(): $Property<($Direction)>
 public "getFacingLimitation"(): $PlacementLimitation
 public "canHammerRotate"(arg0: $Direction$$Type, arg1: $Vec3$$Type, arg2: $LivingEntity$$Type): boolean
@@ -5932,14 +5930,15 @@ public "getConnectionMaster"(arg0: $WireType$$Type, arg1: $TargetingInfo$$Type):
 public "getConnectionPoints"(): $Collection<($ConnectionPoint)>
 public "getInternalConnections"(): $Iterable<($Connection)>
 public "getTargetedPoint"(arg0: $TargetingInfo$$Type, arg1: $Vec3i$$Type): $ConnectionPoint
+public "getBlockBounds"(arg0: $CollisionContext$$Type): $VoxelShape
 public "triggerEvent"(arg0: integer, arg1: integer): boolean
 public "getSelectionShape"(arg0: $CollisionContext$$Type): $VoxelShape
 public "getCollisionShape"(arg0: $CollisionContext$$Type): $VoxelShape
 public "setFacing"(arg0: $Direction$$Type): void
 public "getFacing"(): $Direction
-public "getFacingForPlacement"(arg0: $BlockPlaceContext$$Type): $Direction
 public "afterRotation"(arg0: $Direction$$Type, arg1: $Direction$$Type): void
 public "mirrorFacingOnPlacement"(arg0: $LivingEntity$$Type): boolean
+public "getFacingForPlacement"(arg0: $BlockPlaceContext$$Type): $Direction
 public "getState"(): $BlockState
 public "setState"(arg0: $BlockState$$Type): void
 get "facingProperty"(): $Property<($Direction)>
@@ -5992,16 +5991,16 @@ constructor(arg0: $BlockPos$$Type, arg1: $BlockState$$Type)
 public static "applyDamage"(arg0: $LivingEntity$$Type): void
 public "isSource"(arg0: $ConnectionPoint$$Type): boolean
 public "onEntityCollision"(arg0: $Level$$Type, arg1: $Entity$$Type): void
-public "renderWall"(arg0: boolean): boolean
-public "isStacked"(): boolean
-public "isSink"(arg0: $ConnectionPoint$$Type): boolean
-public "getRequestedEnergy"(): integer
-public "insertEnergy"(arg0: integer): void
 public "getSelectionShape"(arg0: $CollisionContext$$Type): $VoxelShape
 public "getFacingProperty"(): $Property<($Direction)>
 public "getFacingLimitation"(): $PlacementLimitation
 public "getConnectionOffset"(arg0: $ConnectionPoint$$Type, arg1: $ConnectionPoint$$Type, arg2: $WireType$$Type): $Vec3
 public "canConnectCable"(arg0: $WireType$$Type, arg1: $ConnectionPoint$$Type, arg2: $Vec3i$$Type): boolean
+public "renderWall"(arg0: boolean): boolean
+public "isStacked"(): boolean
+public "isSink"(arg0: $ConnectionPoint$$Type): boolean
+public "getRequestedEnergy"(): integer
+public "insertEnergy"(arg0: integer): void
 public "isOnGround"(): boolean
 public "getCollisionShape"(arg0: $CollisionContext$$Type): $VoxelShape
 public "setFacing"(arg0: $Direction$$Type): void
@@ -6009,16 +6008,16 @@ public "getFacing"(): $Direction
 public "extractEnergy"(arg0: integer): void
 public "getAvailableEnergy"(): integer
 public "onEnergyPassedThrough"(arg0: double): void
-public "getFacingForPlacement"(arg0: $BlockPlaceContext$$Type): $Direction
 public "afterRotation"(arg0: $Direction$$Type, arg1: $Direction$$Type): void
 public "canHammerRotate"(arg0: $Direction$$Type, arg1: $Vec3$$Type, arg2: $LivingEntity$$Type): boolean
 public "mirrorFacingOnPlacement"(arg0: $LivingEntity$$Type): boolean
+public "getFacingForPlacement"(arg0: $BlockPlaceContext$$Type): $Direction
 public "getState"(): $BlockState
 public "setState"(arg0: $BlockState$$Type): void
-get "stacked"(): boolean
-get "requestedEnergy"(): integer
 get "facingProperty"(): $Property<($Direction)>
 get "facingLimitation"(): $PlacementLimitation
+get "stacked"(): boolean
+get "requestedEnergy"(): integer
 get "onGround"(): boolean
 set "facing"(value: $Direction$$Type)
 get "facing"(): $Direction
@@ -6036,11 +6035,11 @@ export type $RazorWireBlockEntity$$Type = ($RazorWireBlockEntity);
  */
 export type $RazorWireBlockEntity$$Original = $RazorWireBlockEntity;}
 declare module "blusunrize.immersiveengineering.common.blocks.metal.ElectricLanternBlock" {
-import {$ElectricLanternBlockEntity} from "blusunrize.immersiveengineering.common.blocks.metal.ElectricLanternBlockEntity"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
+import {$ElectricLanternBlockEntity} from "blusunrize.immersiveengineering.common.blocks.metal.ElectricLanternBlockEntity"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$Direction} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction} from "net.minecraft.core.Direction"
 import {$BlockBehaviour$Properties, $BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ConnectorBlock} from "blusunrize.immersiveengineering.common.blocks.generic.ConnectorBlock"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -6127,7 +6126,6 @@ constructor(arg0: $BlockEntityType$$Type<($SampleDrillBlockEntity$$Type)>, arg1:
 
 public "tickClient"(): void
 public "tickServer"(): void
-public "isDummy"(): boolean
 public "writeCustomNBT"(arg0: $CompoundTag$$Type, arg1: boolean, arg2: $HolderLookup$Provider$$Type): void
 public "readCustomNBT"(arg0: $CompoundTag$$Type, arg1: boolean, arg2: $HolderLookup$Provider$$Type): void
 public "canTickAny"(): boolean
@@ -6138,6 +6136,7 @@ public "createCoreSample"(arg0: $MineralWorldInfo$$Type): $ItemStack
 public "getSampleProgress"(): float
 public "isSamplingFinished"(): boolean
 public "getVein"(): $List<($CoresampleItem$VeinSample)>
+public "isDummy"(): boolean
 public "master"(): $IEBlockInterfaces$IGeneralMultiblock
 public "interact"(arg0: $Direction$$Type, arg1: $Player$$Type, arg2: $InteractionHand$$Type, arg3: $ItemStack$$Type, arg4: float, arg5: float, arg6: float): $ItemInteractionResult
 public static "registerCapabilities"(arg0: $BlockCapabilityRegistration$BECapabilityRegistrar$$Type<($SampleDrillBlockEntity$$Type)>): void
@@ -6182,8 +6181,8 @@ import {$Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 import {$ItemInteractionResult} from "net.minecraft.world.ItemInteractionResult"
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
+import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 
@@ -6210,12 +6209,12 @@ constructor(arg0: $BlockBehaviour$Properties$$Type, arg1: boolean)
 constructor(arg0: $BlockBehaviour$Properties$$Type)
 
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
-public "updateShape"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $BlockState$$Type, arg3: $LevelAccessor$$Type, arg4: $BlockPos$$Type, arg5: $BlockPos$$Type): $BlockState
-public "setPlacedBy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $LivingEntity$$Type, arg4: $ItemStack$$Type): void
 public "propagatesSkylightDown"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): boolean
 public "getShadeBrightness"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): float
-public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
+public "updateShape"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $BlockState$$Type, arg3: $LevelAccessor$$Type, arg4: $BlockPos$$Type, arg5: $BlockPos$$Type): $BlockState
+public "setPlacedBy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $LivingEntity$$Type, arg4: $ItemStack$$Type): void
 public "canPlaceLiquid"(arg0: $Player$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $Fluid$$Type): boolean
+public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "pickupBlock"(arg0: $Player$$Type, arg1: $LevelAccessor$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): $ItemStack
 public "onIEBlockPlacedBy"(arg0: $BlockPlaceContext$$Type, arg1: $BlockState$$Type): void
 public "screwdriverUseSide"(arg0: $Direction$$Type, arg1: $Player$$Type, arg2: $InteractionHand$$Type, arg3: $Level$$Type, arg4: $BlockPos$$Type, arg5: $BlockHitResult$$Type): $ItemInteractionResult
@@ -6265,8 +6264,8 @@ import {$BlockBehaviour$Properties, $BlockBehaviour$Properties$$Type} from "net.
 import {$ConveyorBeltBlockEntity} from "blusunrize.immersiveengineering.common.blocks.metal.ConveyorBeltBlockEntity"
 import {$IEEntityBlock} from "blusunrize.immersiveengineering.common.blocks.IEEntityBlock"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$CreativeModeTab$Output$$Type} from "net.minecraft.world.item.CreativeModeTab$Output"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
+import {$CreativeModeTab$Output$$Type} from "net.minecraft.world.item.CreativeModeTab$Output"
 import {$Supplier} from "java.util.function.Supplier"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$ConveyorHandler$IConveyorBlock$$Interface} from "blusunrize.immersiveengineering.api.tool.conveyor.ConveyorHandler$IConveyorBlock"
@@ -6274,8 +6273,8 @@ import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.st
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$IConveyorType, $IConveyorType$$Type} from "blusunrize.immersiveengineering.api.tool.conveyor.IConveyorType"
 import {$ItemLike$$Type} from "net.minecraft.world.level.ItemLike"
@@ -6328,8 +6327,8 @@ export type $ConveyorBlock$$Type = ($ConveyorBlock);
 export type $ConveyorBlock$$Original = $ConveyorBlock;}
 declare module "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$IBlockOverlayText" {
 import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$HitResult, $HitResult$$Type} from "net.minecraft.world.phys.HitResult"
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
+import {$HitResult, $HitResult$$Type} from "net.minecraft.world.phys.HitResult"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export interface $IEBlockInterfaces$IBlockOverlayText$$Interface {
@@ -6405,8 +6404,8 @@ import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
-import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$FurnaceHeaterBlockEntity} from "blusunrize.immersiveengineering.common.blocks.metal.FurnaceHeaterBlockEntity"
+import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $FurnaceHeaterBlock extends $IEEntityBlock<($FurnaceHeaterBlockEntity)> {
@@ -6559,8 +6558,6 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 
 constructor(arg0: $BlockPos$$Type, arg1: $BlockState$$Type)
 
-public "getRotationFromSide"(arg0: $Direction$$Type): $Rotation
-public "rotateRotationMap"(arg0: $Rotation$$Type): void
 public "writeCustomNBT"(arg0: $CompoundTag$$Type, arg1: boolean, arg2: $HolderLookup$Provider$$Type): void
 public "readCustomNBT"(arg0: $CompoundTag$$Type, arg1: boolean, arg2: $HolderLookup$Provider$$Type): void
 public "onNeighborBlockChange"(arg0: $BlockPos$$Type): void
@@ -6570,10 +6567,12 @@ public "canHammerRotate"(arg0: $Direction$$Type, arg1: $Vec3$$Type, arg2: $Livin
 public "mirrorFacingOnPlacement"(arg0: $LivingEntity$$Type): boolean
 public "hammerUseSide"(arg0: $Direction$$Type, arg1: $Player$$Type, arg2: $InteractionHand$$Type, arg3: $Vec3$$Type): boolean
 public "verticalTransitionRotationMap"(arg0: $Direction$$Type, arg1: $Direction$$Type): void
+public "getRotationFromSide"(arg0: $Direction$$Type): $Rotation
+public "rotateRotationMap"(arg0: $Rotation$$Type): void
 public "setFacing"(arg0: $Direction$$Type): void
 public "getFacing"(): $Direction
-public "getFacingForPlacement"(arg0: $BlockPlaceContext$$Type): $Direction
 public "afterRotation"(arg0: $Direction$$Type, arg1: $Direction$$Type): void
+public "getFacingForPlacement"(arg0: $BlockPlaceContext$$Type): $Direction
 get "facingProperty"(): $Property<($Direction)>
 get "facingLimitation"(): $PlacementLimitation
 set "facing"(value: $Direction$$Type)
@@ -6624,8 +6623,8 @@ import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
 export interface $IEBlockInterfaces$IInteractionObjectIE$$Interface<T extends $BlockEntity> extends $MenuProvider$$Interface {
 get "guiMaster"(): T
 get "containerType"(): $IEMenuTypes$ArgContainer<(T), (never)>
-get "valid"(): boolean
 get "displayName"(): $Component
+get "valid"(): boolean
 }
 
 export class $IEBlockInterfaces$IInteractionObjectIE<T extends $BlockEntity> implements $IEBlockInterfaces$IInteractionObjectIE$$Interface {
@@ -6633,8 +6632,8 @@ export class $IEBlockInterfaces$IInteractionObjectIE<T extends $BlockEntity> imp
  "getGuiMaster"(): T
  "canUseGui"(arg0: $Player$$Type): boolean
  "getContainerType"(): $IEMenuTypes$ArgContainer<(T), (never)>
- "isValid"(): boolean
  "getDisplayName"(): $Component
+ "isValid"(): boolean
  "shouldTriggerClientSideContainerClosingOnOpen"(): boolean
  "writeClientSideData"(arg0: $AbstractContainerMenu$$Type, arg1: $RegistryFriendlyByteBuf$$Type): void
 }
@@ -6667,8 +6666,8 @@ import {$IEBaseBlockEntity} from "blusunrize.immersiveengineering.common.blocks.
 import {$HitResult$$Type} from "net.minecraft.world.phys.HitResult"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
-import {$PlacementLimitation} from "blusunrize.immersiveengineering.common.blocks.PlacementLimitation"
 import {$Consumer$$Type} from "java.util.function.Consumer"
+import {$PlacementLimitation} from "blusunrize.immersiveengineering.common.blocks.PlacementLimitation"
 import {$ItemInteractionResult} from "net.minecraft.world.ItemInteractionResult"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$IEBlockInterfaces$IPlayerInteraction$$Interface} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$IPlayerInteraction"
@@ -6699,9 +6698,9 @@ public "getComparatedSize"(): integer
 public "getPickBlock"(arg0: $Player$$Type, arg1: $BlockState$$Type, arg2: $HitResult$$Type): $ItemStack
 public "setFacing"(arg0: $Direction$$Type): void
 public "getFacing"(): $Direction
-public "getFacingForPlacement"(arg0: $BlockPlaceContext$$Type): $Direction
 public "afterRotation"(arg0: $Direction$$Type, arg1: $Direction$$Type): void
 public "canHammerRotate"(arg0: $Direction$$Type, arg1: $Vec3$$Type, arg2: $LivingEntity$$Type): boolean
+public "getFacingForPlacement"(arg0: $BlockPlaceContext$$Type): $Direction
 get "facingProperty"(): $Property<($Direction)>
 get "facingLimitation"(): $PlacementLimitation
 get "inventory"(): $NonNullList<($ItemStack)>
@@ -6720,23 +6719,23 @@ export type $BlueprintShelfBlockEntity$$Type = ($BlueprintShelfBlockEntity);
  */
 export type $BlueprintShelfBlockEntity$$Original = $BlueprintShelfBlockEntity;}
 declare module "blusunrize.immersiveengineering.common.blocks.generic.WallmountBlock" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
-import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
+import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$WallmountBlock$Orientation} from "blusunrize.immersiveengineering.common.blocks.generic.WallmountBlock$Orientation"
 import {$ItemInteractionResult} from "net.minecraft.world.ItemInteractionResult"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
@@ -6834,18 +6833,18 @@ import {$PlacementLimitation} from "blusunrize.immersiveengineering.common.block
 
 export interface $IEBlockInterfaces$IDirectionalBE$$Interface {
 set "facing"(value: $Direction$$Type)
-get "facing"(): $Direction
 get "facingLimitation"(): $PlacementLimitation
+get "facing"(): $Direction
 }
 
 export class $IEBlockInterfaces$IDirectionalBE implements $IEBlockInterfaces$IDirectionalBE$$Interface {
  "setFacing"(arg0: $Direction$$Type): void
- "getFacing"(): $Direction
- "getFacingForPlacement"(arg0: $BlockPlaceContext$$Type): $Direction
  "afterRotation"(arg0: $Direction$$Type, arg1: $Direction$$Type): void
  "getFacingLimitation"(): $PlacementLimitation
  "canHammerRotate"(arg0: $Direction$$Type, arg1: $Vec3$$Type, arg2: $LivingEntity$$Type): boolean
  "mirrorFacingOnPlacement"(arg0: $LivingEntity$$Type): boolean
+ "getFacing"(): $Direction
+ "getFacingForPlacement"(arg0: $BlockPlaceContext$$Type): $Direction
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -6861,8 +6860,8 @@ import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Objec
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ShaderBannerBlock} from "blusunrize.immersiveengineering.common.blocks.cloth.ShaderBannerBlock"
 import {$Mirror$$Type} from "net.minecraft.world.level.block.Mirror"
-import {$Direction} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction} from "net.minecraft.core.Direction"
 import {$BlockBehaviour$Properties, $BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
@@ -6870,8 +6869,8 @@ import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
 import {$Supplier} from "java.util.function.Supplier"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -6916,8 +6915,8 @@ export type $ShaderBannerWallBlock$$Type = ($ShaderBannerWallBlock);
 export type $ShaderBannerWallBlock$$Original = $ShaderBannerWallBlock;}
 declare module "blusunrize.immersiveengineering.common.blocks.multiblocks.logic.NonMirrorableWithActiveBlock" {
 import {$MultiblockRegistration$$Type} from "blusunrize.immersiveengineering.api.multiblocks.blocks.MultiblockRegistration"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$MultiblockPartBlock} from "blusunrize.immersiveengineering.api.multiblocks.blocks.registry.MultiblockPartBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$IMultiblockState} from "blusunrize.immersiveengineering.api.multiblocks.blocks.logic.IMultiblockState"
@@ -7089,8 +7088,8 @@ export type $TeslaCoilBlock$$Type = ($TeslaCoilBlock);
 export type $TeslaCoilBlock$$Original = $TeslaCoilBlock;}
 declare module "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$IAdditionalDrops" {
 import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Collection, $Collection$$Type} from "java.util.Collection"
+import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export interface $IEBlockInterfaces$IAdditionalDrops$$Interface {
@@ -7149,8 +7148,8 @@ import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$Explosion$$Type} from "net.minecraft.world.level.Explosion"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$Supplier} from "java.util.function.Supplier"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -7214,17 +7213,16 @@ import {$ConnectionPoint, $ConnectionPoint$$Type} from "blusunrize.immersiveengi
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
-import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Property} from "net.minecraft.world.level.block.state.properties.Property"
+import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $AbstractTransformerBlockEntity extends $ImmersiveConnectableBlockEntity implements $IEBlockInterfaces$IStateBasedDirectional$$Interface, $EnergyTransferHandler$LimitingEnergyConnector$$Interface {
 static readonly "ATTACHMENTS_NBT_KEY": StringJS
 
 constructor(arg0: $BlockEntityType$$Type<($ImmersiveConnectableBlockEntity$$Type)>, arg1: $BlockPos$$Type, arg2: $BlockState$$Type)
 
+public "canConnect"(): boolean
 public "isSource"(arg0: $ConnectionPoint$$Type): boolean
-public "removeCable"(arg0: $Connection$$Type, arg1: $ConnectionPoint$$Type): void
-public "isSink"(arg0: $ConnectionPoint$$Type): boolean
 public "writeCustomNBT"(arg0: $CompoundTag$$Type, arg1: boolean, arg2: $HolderLookup$Provider$$Type): void
 public "readCustomNBT"(arg0: $CompoundTag$$Type, arg1: boolean, arg2: $HolderLookup$Provider$$Type): void
 public "getFacingProperty"(): $Property<($Direction)>
@@ -7234,15 +7232,16 @@ public "canConnectCable"(arg0: $WireType$$Type, arg1: $ConnectionPoint$$Type, ar
 public "getConnectionPoints"(): $Collection<($ConnectionPoint)>
 public "getInternalConnections"(): $Iterable<($Connection)>
 public "connectCable"(arg0: $WireType$$Type, arg1: $ConnectionPoint$$Type, arg2: $IImmersiveConnectable$$Type, arg3: $ConnectionPoint$$Type): void
+public "isSink"(arg0: $ConnectionPoint$$Type): boolean
 public "getHigherWiretype"(): StringJS
 public "getPowerLimit"(): double
-public "canConnect"(): boolean
+public "removeCable"(arg0: $Connection$$Type, arg1: $ConnectionPoint$$Type): void
 public "setFacing"(arg0: $Direction$$Type): void
 public "getFacing"(): $Direction
-public "getFacingForPlacement"(arg0: $BlockPlaceContext$$Type): $Direction
 public "afterRotation"(arg0: $Direction$$Type, arg1: $Direction$$Type): void
 public "getFacingLimitation"(): $PlacementLimitation
 public "mirrorFacingOnPlacement"(arg0: $LivingEntity$$Type): boolean
+public "getFacingForPlacement"(arg0: $BlockPlaceContext$$Type): $Direction
 public "getState"(): $BlockState
 public "setState"(arg0: $BlockState$$Type): void
 public "extractEnergy"(arg0: integer): void
@@ -7307,8 +7306,8 @@ import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$IEBlockInterfaces$IBlockOverlayText$$Interface} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$IBlockOverlayText"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$IEBlockInterfaces$IScrewdriverInteraction$$Interface} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$IScrewdriverInteraction"
-import {$IFluidHandler$FluidAction$$Type} from "net.neoforged.neoforge.fluids.capability.IFluidHandler$FluidAction"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
+import {$IFluidHandler$FluidAction$$Type} from "net.neoforged.neoforge.fluids.capability.IFluidHandler$FluidAction"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$Map} from "java.util.Map"
 import {$BlockCapabilityRegistration$BECapabilityRegistrar$$Type} from "blusunrize.immersiveengineering.common.blocks.BlockCapabilityRegistration$BECapabilityRegistrar"
@@ -7331,11 +7330,7 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 
 constructor(arg0: $BlockEntityType$$Type<($FluidPumpBlockEntity$$Type)>, arg1: $BlockPos$$Type, arg2: $BlockState$$Type)
 
-public "getBlockBounds"(arg0: $CollisionContext$$Type): $VoxelShape
 public "tickServer"(): void
-public "getSideConfig"(arg0: $Direction$$Type): $IEEnums$IOSideConfig
-public "isDummy"(): boolean
-public "canOutputPressurized"(arg0: boolean): boolean
 public "toggleSide"(arg0: $Direction$$Type, arg1: $Player$$Type): boolean
 public "writeCustomNBT"(arg0: $CompoundTag$$Type, arg1: boolean, arg2: $HolderLookup$Provider$$Type): void
 public "readCustomNBT"(arg0: $CompoundTag$$Type, arg1: boolean, arg2: $HolderLookup$Provider$$Type): void
@@ -7344,9 +7339,13 @@ public "screwdriverUseSide"(arg0: $Direction$$Type, arg1: $Player$$Type, arg2: $
 public "placeDummies"(arg0: $BlockPlaceContext$$Type, arg1: $BlockState$$Type): void
 public "breakDummies"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): void
 public "setDummy"(arg0: boolean): void
-public "checkAreaTick"(): void
+public "canOutputPressurized"(arg0: boolean): boolean
 public "outputFluid"(arg0: $FluidStack$$Type, arg1: $IFluidHandler$FluidAction$$Type): integer
 public "prepareAreaCheck"(): void
+public "checkAreaTick"(): void
+public "getSideConfig"(arg0: $Direction$$Type): $IEEnums$IOSideConfig
+public "getBlockBounds"(arg0: $CollisionContext$$Type): $VoxelShape
+public "isDummy"(): boolean
 public "master"(): $FluidPumpBlockEntity
 public static "registerCapabilities"(arg0: $BlockCapabilityRegistration$BECapabilityRegistrar$$Type<($FluidPumpBlockEntity$$Type)>): void
 public static "makeTicker"<T extends $BlockEntity>(): $BlockEntityTicker<(T)>
@@ -7355,8 +7354,8 @@ public "getCollisionShape"(arg0: $CollisionContext$$Type): $VoxelShape
 public static "getTransferableAmount"(arg0: boolean): integer
 public "stripPressureTag"(): boolean
 public "canTickAny"(): boolean
-get "dummy"(): boolean
 set "dummy"(value: boolean)
+get "dummy"(): boolean
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -7370,16 +7369,16 @@ export type $FluidPumpBlockEntity$$Original = $FluidPumpBlockEntity;}
 declare module "blusunrize.immersiveengineering.common.blocks.generic.ScaffoldingBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$IEBaseBlock$IELadderBlock} from "blusunrize.immersiveengineering.common.blocks.IEBaseBlock$IELadderBlock"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -7421,8 +7420,8 @@ export type $ScaffoldingBlock$$Type = ($ScaffoldingBlock);
  */
 export type $ScaffoldingBlock$$Original = $ScaffoldingBlock;}
 declare module "blusunrize.immersiveengineering.common.blocks.IEStairsBlock" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$StairsShape} from "net.minecraft.world.level.block.state.properties.StairsShape"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$StairBlock} from "net.minecraft.world.level.block.StairBlock"
 import {$Block} from "net.minecraft.world.level.block.Block"
@@ -7431,10 +7430,10 @@ import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$Supplier$$Type} from "java.util.function.Supplier"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$IIEBlock$$Interface} from "blusunrize.immersiveengineering.common.blocks.IIEBlock"
+import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$DirectionProperty} from "net.minecraft.world.level.block.state.properties.DirectionProperty"
 import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
@@ -7611,9 +7610,9 @@ import {$IEBlockInterfaces$IStateBasedDirectional$$Interface} from "blusunrize.i
 import {$BlockEntityType} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Supplier} from "java.util.function.Supplier"
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
-import {$NewRegistryEvent$$Type} from "net.neoforged.neoforge.registries.NewRegistryEvent"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$NewRegistryEvent$$Type} from "net.neoforged.neoforge.registries.NewRegistryEvent"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
@@ -7623,8 +7622,8 @@ import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$IEBaseBlockEntity} from "blusunrize.immersiveengineering.common.blocks.IEBaseBlockEntity"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$PlacementLimitation} from "blusunrize.immersiveengineering.common.blocks.PlacementLimitation"
-import {$IEBlockInterfaces$IHammerInteraction$$Interface} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$IHammerInteraction"
 import {$IConveyorType, $IConveyorType$$Type} from "blusunrize.immersiveengineering.api.tool.conveyor.IConveyorType"
+import {$IEBlockInterfaces$IHammerInteraction$$Interface} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$IHammerInteraction"
 import {$IEServerTickableBE$$Interface} from "blusunrize.immersiveengineering.common.blocks.ticking.IEServerTickableBE"
 import {$ItemInteractionResult} from "net.minecraft.world.ItemInteractionResult"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
@@ -7643,7 +7642,6 @@ constructor(arg0: $IConveyorType$$Type<(T)>, arg1: $BlockPos$$Type, arg2: $Block
 
 public "tickServer"(): void
 public "onEntityCollision"(arg0: $Level$$Type, arg1: $Entity$$Type): void
-public "getFacing"(): $Direction
 public "getConveyorInstance"(): T
 public "getSelectionShape"(arg0: $CollisionContext$$Type): $VoxelShape
 public "isRSPowered"(): boolean
@@ -7655,20 +7653,21 @@ public "getFacingLimitation"(): $PlacementLimitation
 public "canHammerRotate"(arg0: $Direction$$Type, arg1: $Vec3$$Type, arg2: $LivingEntity$$Type): boolean
 public "hammerUseSide"(arg0: $Direction$$Type, arg1: $Player$$Type, arg2: $InteractionHand$$Type, arg3: $Vec3$$Type): boolean
 public static "registerConveyorBEsAndBlocks"(arg0: $NewRegistryEvent$$Type): void
+public "getFacing"(): $Direction
 public "interact"(arg0: $Direction$$Type, arg1: $Player$$Type, arg2: $InteractionHand$$Type, arg3: $ItemStack$$Type, arg4: float, arg5: float, arg6: float): $ItemInteractionResult
-public static "registerCapabilities"(arg0: $BlockCapabilityRegistration$BECapabilityRegistrar$$Type<($ConveyorBeltBlockEntity$$Type<(never)>)>): void
 public "getCollisionShape"(arg0: $CollisionContext$$Type): $VoxelShape
+public static "registerCapabilities"(arg0: $BlockCapabilityRegistration$BECapabilityRegistrar$$Type<($ConveyorBeltBlockEntity$$Type<(never)>)>): void
 public "setFacing"(arg0: $Direction$$Type): void
 public "sigOutputDirections"(): ($Direction)[]
 public static "makeTicker"<T extends $BlockEntity>(): $BlockEntityTicker<(T)>
-public "getFacingForPlacement"(arg0: $BlockPlaceContext$$Type): $Direction
 public "mirrorFacingOnPlacement"(arg0: $LivingEntity$$Type): boolean
+public "getFacingForPlacement"(arg0: $BlockPlaceContext$$Type): $Direction
 public "canTickAny"(): boolean
-get "facing"(): $Direction
 get "conveyorInstance"(): T
 get "RSPowered"(): boolean
 get "facingProperty"(): $Property<($Direction)>
 get "facingLimitation"(): $PlacementLimitation
+get "facing"(): $Direction
 set "facing"(value: $Direction$$Type)
 }
 /**
@@ -7690,8 +7689,8 @@ import {$IEEntityBlock} from "blusunrize.immersiveengineering.common.blocks.IEEn
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Supplier, $Supplier$$Type} from "java.util.function.Supplier"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
@@ -7768,8 +7767,8 @@ import {$Collection} from "java.util.Collection"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$PlacementLimitation} from "blusunrize.immersiveengineering.common.blocks.PlacementLimitation"
 import {$IImmersiveConnectable$$Type} from "blusunrize.immersiveengineering.api.wires.IImmersiveConnectable"
-import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$ConnectionPoint, $ConnectionPoint$$Type} from "blusunrize.immersiveengineering.api.wires.ConnectionPoint"
+import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$IEBlockInterfaces$IBlockBounds$$Interface} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$IBlockBounds"
 import {$IModelOffsetProvider$$Interface} from "blusunrize.immersiveengineering.api.client.IModelOffsetProvider"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
@@ -7781,8 +7780,6 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 constructor(arg0: $BlockPos$$Type, arg1: $BlockState$$Type)
 constructor(arg0: $BlockEntityType$$Type<($TransformerBlockEntity$$Type)>, arg1: $BlockPos$$Type, arg2: $BlockState$$Type)
 
-public "getBlockBounds"(arg0: $CollisionContext$$Type): $VoxelShape
-public "isDummy"(): boolean
 public "writeCustomNBT"(arg0: $CompoundTag$$Type, arg1: boolean, arg2: $HolderLookup$Provider$$Type): void
 public "readCustomNBT"(arg0: $CompoundTag$$Type, arg1: boolean, arg2: $HolderLookup$Provider$$Type): void
 public "getFacingLimitation"(): $PlacementLimitation
@@ -7796,6 +7793,8 @@ public "getConnectionPoints"(): $Collection<($ConnectionPoint)>
 public "getInternalConnections"(): $Iterable<($Connection)>
 public "getTargetedPoint"(arg0: $TargetingInfo$$Type, arg1: $Vec3i$$Type): $ConnectionPoint
 public "connectCable"(arg0: $WireType$$Type, arg1: $ConnectionPoint$$Type, arg2: $IImmersiveConnectable$$Type, arg3: $ConnectionPoint$$Type): void
+public "getBlockBounds"(arg0: $CollisionContext$$Type): $VoxelShape
+public "isDummy"(): boolean
 public "master"(): $IEBlockInterfaces$IGeneralMultiblock
 public "setMirrored"(arg0: boolean): void
 public "getIsMirrored"(): boolean
@@ -7831,8 +7830,8 @@ import {$IEEntityBlock} from "blusunrize.immersiveengineering.common.blocks.IEEn
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$Supplier} from "java.util.function.Supplier"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$ShaderBannerBlockEntity} from "blusunrize.immersiveengineering.common.blocks.cloth.ShaderBannerBlockEntity"
@@ -7885,8 +7884,8 @@ import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$IEBaseBlockEntity} from "blusunrize.immersiveengineering.common.blocks.IEBaseBlockEntity"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Vec3} from "net.minecraft.world.phys.Vec3"
-import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Vec3i$$Type} from "net.minecraft.core.Vec3i"
+import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$IImmersiveConnectable$$Type, $IImmersiveConnectable$$Interface} from "blusunrize.immersiveengineering.api.wires.IImmersiveConnectable"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$ConnectionPoint, $ConnectionPoint$$Type} from "blusunrize.immersiveengineering.api.wires.ConnectionPoint"
@@ -7899,8 +7898,8 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 
 constructor(arg0: $BlockEntityType$$Type<(never)>, arg1: $BlockPos$$Type, arg2: $BlockState$$Type)
 
+public "canConnect"(): boolean
 public "onChunkUnloaded"(): void
-public "removeCable"(arg0: $Connection$$Type, arg1: $ConnectionPoint$$Type): void
 public "writeCustomNBT"(arg0: $CompoundTag$$Type, arg1: boolean, arg2: $HolderLookup$Provider$$Type): void
 public "readCustomNBT"(arg0: $CompoundTag$$Type, arg1: boolean, arg2: $HolderLookup$Provider$$Type): void
 public "setRemovedIE"(): void
@@ -7908,9 +7907,9 @@ public "getConnectionMaster"(arg0: $WireType$$Type, arg1: $TargetingInfo$$Type):
 public "getConnectionPoints"(): $Collection<($ConnectionPoint)>
 public "getTargetedPoint"(arg0: $TargetingInfo$$Type, arg1: $Vec3i$$Type): $ConnectionPoint
 public "connectCable"(arg0: $WireType$$Type, arg1: $ConnectionPoint$$Type, arg2: $IImmersiveConnectable$$Type, arg3: $ConnectionPoint$$Type): void
-public "canConnect"(): boolean
-public "getPosition"(): $BlockPos
+public "removeCable"(arg0: $Connection$$Type, arg1: $ConnectionPoint$$Type): void
 public "setLevel"(arg0: $Level$$Type): void
+public "getPosition"(): $BlockPos
 public "onLoad"(): void
 public "getConnectionOffset"(arg0: $ConnectionPoint$$Type, arg1: $ConnectionPoint$$Type, arg2: $WireType$$Type): $Vec3
 public "canConnectCable"(arg0: $WireType$$Type, arg1: $ConnectionPoint$$Type, arg2: $Vec3i$$Type): boolean
@@ -7920,8 +7919,8 @@ public "isProxy"(): boolean
 public "getRequestedHandlers"(): $Collection<($ResourceLocation)>
 get "removedIE"(): void
 get "connectionPoints"(): $Collection<($ConnectionPoint)>
-get "position"(): $BlockPos
 set "level"(value: $Level$$Type)
+get "position"(): $BlockPos
 get "internalConnections"(): $Iterable<($Connection)>
 get "proxy"(): boolean
 get "requestedHandlers"(): $Collection<($ResourceLocation)>
@@ -7936,8 +7935,8 @@ export type $ImmersiveConnectableBlockEntity$$Type = ($ImmersiveConnectableBlock
  */
 export type $ImmersiveConnectableBlockEntity$$Original = $ImmersiveConnectableBlockEntity;}
 declare module "blusunrize.immersiveengineering.common.blocks.IESignBlocks$Hanging" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$WoodType$$Type} from "net.minecraft.world.level.block.state.properties.WoodType"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
@@ -7946,8 +7945,8 @@ import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -8003,8 +8002,8 @@ import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Prov
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$IEBlockInterfaces$IHammerInteraction$$Interface} from "blusunrize.immersiveengineering.common.blocks.IEBlockInterfaces$IHammerInteraction"
 import {$Vec3, $Vec3$$Type} from "net.minecraft.world.phys.Vec3"
-import {$ItemInteractionResult} from "net.minecraft.world.ItemInteractionResult"
 import {$Vec3i$$Type} from "net.minecraft.core.Vec3i"
+import {$ItemInteractionResult} from "net.minecraft.world.ItemInteractionResult"
 import {$ConnectionPoint$$Type} from "blusunrize.immersiveengineering.api.wires.ConnectionPoint"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$DyeColor} from "net.minecraft.world.item.DyeColor"
@@ -8023,16 +8022,16 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 
 constructor(arg0: $BlockPos$$Type, arg1: $BlockState$$Type)
 
-public "getBlockBounds"(arg0: $CollisionContext$$Type): $VoxelShape
 public "writeCustomNBT"(arg0: $CompoundTag$$Type, arg1: boolean, arg2: $HolderLookup$Provider$$Type): void
 public "readCustomNBT"(arg0: $CompoundTag$$Type, arg1: boolean, arg2: $HolderLookup$Provider$$Type): void
 public "hammerUseSide"(arg0: $Direction$$Type, arg1: $Player$$Type, arg2: $InteractionHand$$Type, arg3: $Vec3$$Type): boolean
 public "getConnectionOffset"(arg0: $ConnectionPoint$$Type, arg1: $ConnectionPoint$$Type, arg2: $WireType$$Type): $Vec3
 public "canConnectCable"(arg0: $WireType$$Type, arg1: $ConnectionPoint$$Type, arg2: $Vec3i$$Type): boolean
-public "interact"(arg0: $Direction$$Type, arg1: $Player$$Type, arg2: $InteractionHand$$Type, arg3: $ItemStack$$Type, arg4: float, arg5: float, arg6: float): $ItemInteractionResult
-public static "registerCapabilities"(arg0: $BlockCapabilityRegistration$BECapabilityRegistrar$$Type<($BalloonBlockEntity$$Type)>): void
+public "getBlockBounds"(arg0: $CollisionContext$$Type): $VoxelShape
 public "getShader"(): $CapabilityShader$ShaderWrapper
+public "interact"(arg0: $Direction$$Type, arg1: $Player$$Type, arg2: $InteractionHand$$Type, arg3: $ItemStack$$Type, arg4: float, arg5: float, arg6: float): $ItemInteractionResult
 public "triggerEvent"(arg0: integer, arg1: integer): boolean
+public static "registerCapabilities"(arg0: $BlockCapabilityRegistration$BECapabilityRegistrar$$Type<($BalloonBlockEntity$$Type)>): void
 public "getSelectionShape"(arg0: $CollisionContext$$Type): $VoxelShape
 public "getCollisionShape"(arg0: $CollisionContext$$Type): $VoxelShape
 get "shader"(): $CapabilityShader$ShaderWrapper

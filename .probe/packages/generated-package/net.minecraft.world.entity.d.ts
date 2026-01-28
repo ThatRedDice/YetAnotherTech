@@ -8,8 +8,8 @@ import {$Consumer$$Type} from "java.util.function.Consumer"
 
 export class $AttributeSupplier {
 public "getModifierValue"(arg0: $Holder$$Type<($Attribute)>, arg1: $ResourceLocation$$Type): double
-public "hasAttribute"(arg0: $Holder$$Type<($Attribute)>): boolean
 public "createInstance"(arg0: $Consumer$$Type<($AttributeInstance)>, arg1: $Holder$$Type<($Attribute)>): $AttributeInstance
+public "hasAttribute"(arg0: $Holder$$Type<($Attribute)>): boolean
 public "getValue"(arg0: $Holder$$Type<($Attribute)>): double
 public static "builder"(): $AttributeSupplier$Builder
 public "hasModifier"(arg0: $Holder$$Type<($Attribute)>, arg1: $ResourceLocation$$Type): boolean
@@ -29,8 +29,8 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
 export class $GossipType extends $Enum<($GossipType)> implements $StringRepresentable$$Interface {
@@ -53,11 +53,11 @@ public static "values"(): ($GossipType)[]
 public static "valueOf"(arg0: StringJS): $GossipType
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
 }
@@ -80,9 +80,9 @@ import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Prov
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$Tag} from "net.minecraft.nbt.Tag"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$Entity} from "net.minecraft.world.entity.Entity"
 
 export class $ThrowableProjectile extends $Projectile {
@@ -176,11 +176,11 @@ import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
-import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$AbstractIllager$IllagerArmPose} from "net.minecraft.world.entity.monster.AbstractIllager$IllagerArmPose"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$InteractionHand} from "net.minecraft.world.InteractionHand"
 import {$SlotAccess} from "net.minecraft.world.entity.SlotAccess"
@@ -193,14 +193,14 @@ import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalRe
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$ServerLevelAccessor$$Type} from "net.minecraft.world.level.ServerLevelAccessor"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
-import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
-import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$CrossbowAttackMob$$Interface} from "net.minecraft.world.entity.monster.CrossbowAttackMob"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 
 export class $Pillager extends $AbstractIllager implements $CrossbowAttackMob$$Interface, $InventoryCarrier$$Interface {
 static readonly "MAX_WEARING_ARMOR_CHANCE": float
@@ -370,15 +370,15 @@ export type $Pillager$$Type = ($Pillager);
  */
 export type $Pillager$$Original = $Pillager;}
 declare module "net.minecraft.world.entity.animal.goat.Goat" {
-import {$Brain} from "net.minecraft.world.entity.ai.Brain"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$Brain} from "net.minecraft.world.entity.ai.Brain"
 import {$Optional} from "java.util.Optional"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
 import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$MobSpawnType$$Type} from "net.minecraft.world.entity.MobSpawnType"
-import {$Pose$$Type} from "net.minecraft.world.entity.Pose"
 import {$Animal, $Animal$$Type} from "net.minecraft.world.entity.animal.Animal"
+import {$Pose$$Type} from "net.minecraft.world.entity.Pose"
 import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
@@ -398,13 +398,13 @@ import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Prov
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$ServerLevelAccessor$$Type} from "net.minecraft.world.level.ServerLevelAccessor"
 import {$AgeableMob$$Type} from "net.minecraft.world.entity.AgeableMob"
-import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
+import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$Tag} from "net.minecraft.nbt.Tag"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
+import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
@@ -591,8 +591,8 @@ import {$Mob$$Type} from "net.minecraft.world.entity.Mob"
 import {$PathType$$Type} from "net.minecraft.world.level.pathfinder.PathType"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Set$$Type} from "java.util.Set"
-import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$Stream$$Type} from "java.util.stream.Stream"
 
 export class $PathNavigation {
@@ -651,8 +651,8 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 
@@ -663,16 +663,16 @@ static readonly "BROWN": $MushroomCow$MushroomType
 
 public static "values"(): ($MushroomCow$MushroomType)[]
 public static "valueOf"(arg0: StringJS): $MushroomCow$MushroomType
-public "getBlockState"(): $BlockState
 public "getSerializedName"(): StringJS
+public "getBlockState"(): $BlockState
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
-get "blockState"(): $BlockState
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
+get "blockState"(): $BlockState
 get "remappedEnumConstantName"(): StringJS
 }
 /**
@@ -692,7 +692,7 @@ static readonly "ANIMAL_ARMOR": $EquipmentSlot$Type
 static readonly "HUMANOID_ARMOR": $EquipmentSlot$Type
 static readonly "HAND": $EquipmentSlot$Type
 
-public static "invokeNew$accessories_$md$a93e73$0"(arg0: StringJS, arg1: integer): $EquipmentSlot$Type
+public static "invokeNew$accessories_$md$b00d76$0"(arg0: StringJS, arg1: integer): $EquipmentSlot$Type
 public static "values"(): ($EquipmentSlot$Type)[]
 public static "valueOf"(arg0: StringJS): $EquipmentSlot$Type
 }
@@ -780,10 +780,10 @@ import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$Variant, $Variant$$Type} from "net.minecraft.world.entity.animal.horse.Variant"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
-import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$MobSpawnType$$Type} from "net.minecraft.world.entity.MobSpawnType"
-import {$Pose$$Type} from "net.minecraft.world.entity.Pose"
+import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Animal$$Type} from "net.minecraft.world.entity.animal.Animal"
+import {$Pose$$Type} from "net.minecraft.world.entity.Pose"
 import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
@@ -792,25 +792,25 @@ import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$Markings} from "net.minecraft.world.entity.animal.horse.Markings"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
-import {$InteractionHand, $InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$EntityDimensions} from "net.minecraft.world.entity.EntityDimensions"
+import {$InteractionHand, $InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$SpawnGroupData, $SpawnGroupData$$Type} from "net.minecraft.world.entity.SpawnGroupData"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
 import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Consumer$$Type} from "java.util.function.Consumer"
-import {$AgeableMob, $AgeableMob$$Type} from "net.minecraft.world.entity.AgeableMob"
 import {$ServerLevelAccessor$$Type} from "net.minecraft.world.level.ServerLevelAccessor"
+import {$AgeableMob, $AgeableMob$$Type} from "net.minecraft.world.entity.AgeableMob"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$Container$$Type} from "net.minecraft.world.Container"
 import {$AbstractHorse} from "net.minecraft.world.entity.animal.horse.AbstractHorse"
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
-import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$VariantHolder$$Interface} from "net.minecraft.world.entity.VariantHolder"
@@ -1015,8 +1015,8 @@ import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
 export class $Axolotl$Variant extends $Enum<($Axolotl$Variant)> implements $StringRepresentable$$Interface {
@@ -1036,11 +1036,11 @@ public "getId"(): integer
 public "getSerializedName"(): StringJS
 public static "byId"(arg0: integer): $Axolotl$Variant
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "name"(): StringJS
 get "id"(): integer
 get "serializedName"(): StringJS
@@ -1085,8 +1085,8 @@ import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$InteractionHand} from "net.minecraft.world.InteractionHand"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
@@ -1095,8 +1095,8 @@ import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalRe
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
-import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 
 export class $Skeleton extends $AbstractSkeleton implements $IQuiverEntity$$Interface {
@@ -1293,9 +1293,9 @@ import {$UUID, $UUID$$Type} from "java.util.UUID"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$Crackiness$Level} from "net.minecraft.world.entity.Crackiness$Level"
 import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
+import {$Vec3} from "net.minecraft.world.phys.Vec3"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$NeutralMob$$Interface} from "net.minecraft.world.entity.NeutralMob"
-import {$Vec3} from "net.minecraft.world.phys.Vec3"
 import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
@@ -1303,8 +1303,8 @@ import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$AbstractGolem} from "net.minecraft.world.entity.animal.AbstractGolem"
 import {$InteractionHand} from "net.minecraft.world.InteractionHand"
@@ -1313,10 +1313,10 @@ import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalRe
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
-import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 
@@ -1428,7 +1428,6 @@ constructor(arg0: $EntityType$$Type<($IronGolem$$Type)>, arg1: $Level$$Type)
 
 public "setPlayerCreated"(arg0: boolean): void
 public "checkSpawnObstruction"(arg0: $LevelReader$$Type): boolean
-public "setRemainingPersistentAngerTime"(arg0: integer): void
 public "isPlayerCreated"(): boolean
 public "startPersistentAngerTimer"(): void
 public "getRemainingPersistentAngerTime"(): integer
@@ -1438,6 +1437,7 @@ public "getCrackiness"(): $Crackiness$Level
 public "getAttackAnimationTick"(): integer
 public "offerFlower"(arg0: boolean): void
 public "getOfferFlowerTick"(): integer
+public "setRemainingPersistentAngerTime"(arg0: integer): void
 public "attack"(arg0: $DamageSource$$Type, arg1: float): boolean
 public "canAttackType"(arg0: $EntityType$$Type<(never)>): boolean
 public "addAdditionalSaveData"(arg0: $CompoundTag$$Type): void
@@ -1451,10 +1451,10 @@ public "canSpawnSprintParticle"(): boolean
 public "getLeashOffset"(): $Vec3
 public "playerDied"(arg0: $Player$$Type): void
 public "isAngryAt"(arg0: $LivingEntity$$Type): boolean
-public "readPersistentAngerSaveData"(arg0: $Level$$Type, arg1: $CompoundTag$$Type): void
 public "updatePersistentAnger"(arg0: $ServerLevel$$Type, arg1: boolean): void
 public "addPersistentAngerSaveData"(arg0: $CompoundTag$$Type): void
 public "stopBeingAngry"(): void
+public "readPersistentAngerSaveData"(arg0: $Level$$Type, arg1: $CompoundTag$$Type): void
 public "isAngryAtAllPlayers"(arg0: $Level$$Type): boolean
 public "isAngry"(): boolean
 public "forgetCurrentTargetAndRefreshUniversalAnger"(): void
@@ -1486,7 +1486,6 @@ public static "containsSubscriber"(arg0: $ChangeSubscriber$$Type<($ItemStack$$Ty
 public static "forNameOnly"(arg0: StringJS): $ScoreHolder
 public static "fromGameProfile"(arg0: $GameProfile$$Type): $ScoreHolder
 set "playerCreated"(value: boolean)
-set "remainingPersistentAngerTime"(value: integer)
 get "playerCreated"(): boolean
 get "remainingPersistentAngerTime"(): integer
 set "persistentAngerTarget"(value: $UUID$$Type)
@@ -1494,6 +1493,7 @@ get "persistentAngerTarget"(): $UUID
 get "crackiness"(): $Crackiness$Level
 get "attackAnimationTick"(): integer
 get "offerFlowerTick"(): integer
+set "remainingPersistentAngerTime"(value: integer)
 get "leashOffset"(): $Vec3
 get "angry"(): boolean
 get "target"(): $LivingEntity
@@ -1534,8 +1534,8 @@ export type $RangedAttackMob$$Type = ((arg0: $LivingEntity, arg1: float) => void
 export type $RangedAttackMob$$Original = $RangedAttackMob;}
 declare module "net.minecraft.world.entity.npc.Villager" {
 import {$ReputationEventType$$Type} from "net.minecraft.world.entity.ai.village.ReputationEventType"
-import {$Brain} from "net.minecraft.world.entity.ai.Brain"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$Brain} from "net.minecraft.world.entity.ai.Brain"
 import {$Optional} from "java.util.Optional"
 import {$Mob$$Type} from "net.minecraft.world.entity.Mob"
 import {$InventoryCarrier$$Type} from "net.minecraft.world.entity.npc.InventoryCarrier"
@@ -1552,22 +1552,22 @@ import {$AbstractVillager} from "net.minecraft.world.entity.npc.AbstractVillager
 import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Consumer$$Type} from "java.util.function.Consumer"
-import {$PoiType} from "net.minecraft.world.entity.ai.village.poi.PoiType"
 import {$ServerLevelAccessor$$Type} from "net.minecraft.world.level.ServerLevelAccessor"
+import {$PoiType} from "net.minecraft.world.entity.ai.village.poi.PoiType"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$BiPredicate} from "java.util.function.BiPredicate"
-import {$MemoryModuleType, $MemoryModuleType$$Type} from "net.minecraft.world.entity.ai.memory.MemoryModuleType"
 import {$MerchantOffers$$Type} from "net.minecraft.world.item.trading.MerchantOffers"
+import {$MemoryModuleType, $MemoryModuleType$$Type} from "net.minecraft.world.entity.ai.memory.MemoryModuleType"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$ImmutableList} from "com.google.common.collect.ImmutableList"
 import {$GossipContainer} from "net.minecraft.world.entity.ai.gossip.GossipContainer"
 import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState"
-import {$VillagerDataHolder$$Interface} from "net.minecraft.world.entity.npc.VillagerDataHolder"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
+import {$VillagerDataHolder$$Interface} from "net.minecraft.world.entity.npc.VillagerDataHolder"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
@@ -1577,12 +1577,12 @@ import {$VillagerData, $VillagerData$$Type} from "net.minecraft.world.entity.npc
 import {$ItemEntity$$Type} from "net.minecraft.world.entity.item.ItemEntity"
 import {$SpawnGroupData, $SpawnGroupData$$Type} from "net.minecraft.world.entity.SpawnGroupData"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
-import {$AgeableMob, $AgeableMob$$Type} from "net.minecraft.world.entity.AgeableMob"
+import {$AgeableMob$$Type} from "net.minecraft.world.entity.AgeableMob"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$ReputationEventHandler$$Interface} from "net.minecraft.world.entity.ReputationEventHandler"
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
-import {$Tag, $Tag$$Type} from "net.minecraft.nbt.Tag"
 import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
+import {$Tag, $Tag$$Type} from "net.minecraft.nbt.Tag"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$LightningBolt$$Type} from "net.minecraft.world.entity.LightningBolt"
@@ -1705,7 +1705,7 @@ public "onReputationEventFrom"(arg0: $ReputationEventType$$Type, arg1: $Entity$$
 public "wantsToPickUp"(arg0: $ItemStack$$Type): boolean
 public "removeWhenFarAway"(arg0: double): boolean
 public "mobInteract"(arg0: $Player$$Type, arg1: $InteractionHand$$Type): $InteractionResult
-public "getBreedOffspring"(arg0: $ServerLevel$$Type, arg1: $AgeableMob$$Type): $AgeableMob
+public "getBreedOffspring"(arg0: $ServerLevel$$Type, arg1: $AgeableMob$$Type): $Villager
 public "canBreed"(): boolean
 public "setOffers"(arg0: $MerchantOffers$$Type): void
 public "refreshBrain"(arg0: $ServerLevel$$Type): void
@@ -1864,10 +1864,10 @@ import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$Monster} from "net.minecraft.world.entity.monster.Monster"
 import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
-import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
+import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$InteractionHand} from "net.minecraft.world.InteractionHand"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
 import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
@@ -1875,10 +1875,10 @@ import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Prov
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 
@@ -2061,8 +2061,8 @@ public "canContinueToUse"(): boolean
 public "isInterruptable"(): boolean
 public "requiresUpdateEveryTick"(): boolean
 public "canBeReplacedBy"(arg0: $WrappedGoal$$Type): boolean
-public "getFlags"(): $EnumSet<($Goal$Flag)>
 public "tick"(): void
+public "getFlags"(): $EnumSet<($Goal$Flag)>
 public "equals"(arg0: any): boolean
 public "hashCode"(): integer
 public "start"(): void
@@ -2098,11 +2098,11 @@ import {$Display$BlockDisplay$BlockRenderState} from "net.minecraft.world.entity
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$Tag} from "net.minecraft.nbt.Tag"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $Display$BlockDisplay extends $Display {
  "hasImpulse": boolean
@@ -2207,9 +2207,9 @@ import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInL
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$Tag} from "net.minecraft.nbt.Tag"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
 
@@ -2302,8 +2302,8 @@ export type $ShulkerBullet$$Type = ($ShulkerBullet);
  */
 export type $ShulkerBullet$$Original = $ShulkerBullet;}
 declare module "net.minecraft.world.entity.monster.hoglin.Hoglin" {
-import {$Brain} from "net.minecraft.world.entity.ai.Brain"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$Brain} from "net.minecraft.world.entity.ai.Brain"
 import {$Optional} from "java.util.Optional"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
@@ -2331,13 +2331,13 @@ import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Prov
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$ServerLevelAccessor$$Type} from "net.minecraft.world.level.ServerLevelAccessor"
 import {$AgeableMob, $AgeableMob$$Type} from "net.minecraft.world.entity.AgeableMob"
-import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
+import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
-import {$Tag} from "net.minecraft.nbt.Tag"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
+import {$Tag} from "net.minecraft.nbt.Tag"
 import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
@@ -2556,8 +2556,8 @@ import {$Level} from "net.minecraft.world.level.Level"
 import {$Player} from "net.minecraft.world.entity.player.Player"
 import {$MobSpawnType$$Type} from "net.minecraft.world.entity.MobSpawnType"
 import {$PathfinderMob} from "net.minecraft.world.entity.PathfinderMob"
-import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$EntityDataAccessor$$Type} from "net.minecraft.network.syncher.EntityDataAccessor"
+import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
@@ -2574,9 +2574,9 @@ import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Prov
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$ServerLevelAccessor$$Type} from "net.minecraft.world.level.ServerLevelAccessor"
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
-import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 
@@ -2806,13 +2806,13 @@ import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
-import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
+import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
-import {$InteractionHand} from "net.minecraft.world.InteractionHand"
 import {$Predicate} from "java.util.function.Predicate"
+import {$InteractionHand} from "net.minecraft.world.InteractionHand"
 import {$ItemEntity} from "net.minecraft.world.entity.item.ItemEntity"
 import {$SpawnGroupData, $SpawnGroupData$$Type} from "net.minecraft.world.entity.SpawnGroupData"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
@@ -2820,11 +2820,11 @@ import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalRe
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$ServerLevelAccessor$$Type} from "net.minecraft.world.level.ServerLevelAccessor"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
-import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 
 export class $Dolphin extends $WaterAnimal {
@@ -3012,16 +3012,16 @@ public "getProfession"(): $VillagerProfession
 public "setProfession"(arg0: $VillagerProfession$$Type): $VillagerData
 public static "canLevelUp"(arg0: integer): boolean
 public static "getMaxXpPerLevel"(arg0: integer): integer
-public "setType"(arg0: $VillagerType$$Type): $VillagerData
 public "getLevel"(): integer
 public "setLevel"(arg0: integer): $VillagerData
+public "setType"(arg0: $VillagerType$$Type): $VillagerData
 public "getType"(): $VillagerType
 public static "getMinXpPerLevel"(arg0: integer): integer
 get "profession"(): $VillagerProfession
 set "profession"(value: $VillagerProfession$$Type)
-set "type"(value: $VillagerType$$Type)
 get "level"(): integer
 set "level"(value: integer)
+set "type"(value: $VillagerType$$Type)
 get "type"(): $VillagerType
 }
 /**
@@ -3048,9 +3048,9 @@ import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInL
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$Tag} from "net.minecraft.nbt.Tag"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$Entity} from "net.minecraft.world.entity.Entity"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
 
@@ -3146,18 +3146,18 @@ import {$UUID} from "java.util.UUID"
 import {$Projectile} from "net.minecraft.world.entity.projectile.Projectile"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$Entity$RemovalReason, $Entity$RemovalReason$$Type} from "net.minecraft.world.entity.Entity$RemovalReason"
-import {$ClientGamePacketListener} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$ClientGamePacketListener} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
 import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$EntityDataAccessor$$Type} from "net.minecraft.network.syncher.EntityDataAccessor"
 import {$ClientboundAddEntityPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundAddEntityPacket"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
-import {$Packet} from "net.minecraft.network.protocol.Packet"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$ServerEntity$$Type} from "net.minecraft.server.level.ServerEntity"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
@@ -3224,9 +3224,9 @@ constructor(arg0: $EntityType$$Type<($FishingHook$$Type)>, arg1: $Level$$Type)
 public "getPlayerOwner"(): $Player
 public "isOpenWaterFishing"(): boolean
 public "getHookedIn"(): $Entity
-public "retrieve"(arg0: $ItemStack$$Type): integer
 public "tick"(): void
 public "setOwner"(arg0: $Entity$$Type): void
+public "retrieve"(arg0: $ItemStack$$Type): integer
 public "remove"(arg0: $Entity$RemovalReason$$Type): void
 public "addAdditionalSaveData"(arg0: $CompoundTag$$Type): void
 public "readAdditionalSaveData"(arg0: $CompoundTag$$Type): void
@@ -3268,9 +3268,9 @@ import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Prov
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$Tag} from "net.minecraft.nbt.Tag"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$Entity} from "net.minecraft.world.entity.Entity"
 import {$PushReaction} from "net.minecraft.world.level.material.PushReaction"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
@@ -3330,8 +3330,8 @@ static readonly "BASE_SAFE_FALL_DISTANCE": integer
 constructor(arg0: $EntityType$$Type<($OminousItemSpawner$$Type)>, arg1: $Level$$Type)
 
 public "addParticles"(): void
-public "getItem"(): $ItemStack
 public "tick"(): void
+public "getItem"(): $ItemStack
 public static "create"(arg0: $Level$$Type, arg1: $ItemStack$$Type): $OminousItemSpawner
 public "isIgnoringBlockTriggers"(): boolean
 public "getPistonPushReaction"(): $PushReaction
@@ -3368,10 +3368,10 @@ import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInL
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$Tag} from "net.minecraft.nbt.Tag"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$LightningBolt$$Type} from "net.minecraft.world.entity.LightningBolt"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 
 export class $BlockAttachedEntity extends $Entity {
@@ -3427,9 +3427,9 @@ static readonly "BASE_SAFE_FALL_DISTANCE": integer
 
 public "dropItem"(arg0: $Entity$$Type): void
 public "survives"(): boolean
-public "addMotion"(arg0: double, arg1: double, arg2: double): void
-public "move"(arg0: $MoverType$$Type, arg1: $Vec3$$Type): void
 public "tick"(): void
+public "move"(arg0: $MoverType$$Type, arg1: $Vec3$$Type): void
+public "addMotion"(arg0: double, arg1: double, arg2: double): void
 public "attack"(arg0: $DamageSource$$Type, arg1: float): boolean
 public "setPos"(arg0: double, arg1: double, arg2: double): void
 public "addAdditionalSaveData"(arg0: $CompoundTag$$Type): void
@@ -3475,8 +3475,8 @@ import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$AbstractIllager$IllagerArmPose} from "net.minecraft.world.entity.monster.AbstractIllager$IllagerArmPose"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$InteractionHand} from "net.minecraft.world.InteractionHand"
 import {$SpawnGroupData, $SpawnGroupData$$Type} from "net.minecraft.world.entity.SpawnGroupData"
@@ -3485,11 +3485,11 @@ import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalRe
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$ServerLevelAccessor$$Type} from "net.minecraft.world.level.ServerLevelAccessor"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
-import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 
@@ -3657,18 +3657,18 @@ import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$InteractionHand} from "net.minecraft.world.InteractionHand"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
 import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 
 export class $Squid extends $WaterAnimal {
@@ -3863,10 +3863,10 @@ import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
-import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
+import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$Rabbit$Variant, $Rabbit$Variant$$Type} from "net.minecraft.world.entity.animal.Rabbit$Variant"
 import {$InteractionHand} from "net.minecraft.world.InteractionHand"
@@ -3875,14 +3875,14 @@ import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.li
 import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Consumer$$Type} from "java.util.function.Consumer"
-import {$AgeableMob, $AgeableMob$$Type} from "net.minecraft.world.entity.AgeableMob"
 import {$ServerLevelAccessor$$Type} from "net.minecraft.world.level.ServerLevelAccessor"
+import {$AgeableMob, $AgeableMob$$Type} from "net.minecraft.world.entity.AgeableMob"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
-import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
@@ -4062,8 +4062,8 @@ export type $Rabbit$$Type = ($Rabbit);
  */
 export type $Rabbit$$Original = $Rabbit;}
 declare module "net.minecraft.world.entity.ai.control.MoveControl" {
-import {$Control$$Interface} from "net.minecraft.world.entity.ai.control.Control"
 import {$Mob$$Type} from "net.minecraft.world.entity.Mob"
+import {$Control$$Interface} from "net.minecraft.world.entity.ai.control.Control"
 
 export class $MoveControl implements $Control$$Interface {
 static readonly "MIN_SPEED_SQR": float
@@ -4107,9 +4107,9 @@ import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInL
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$ItemFrame, $ItemFrame$$Type} from "net.minecraft.world.entity.decoration.ItemFrame"
 import {$Tag} from "net.minecraft.nbt.Tag"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$Entity} from "net.minecraft.world.entity.Entity"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
 
@@ -4217,7 +4217,7 @@ public "width"(): integer
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $Display$TextDisplay$CachedInfo$$Type = ({"lines"?: $List$$Type<($Display$TextDisplay$CachedLine$$Type)>, "width"?: integer}) | ([lines?: $List$$Type<($Display$TextDisplay$CachedLine$$Type)>, width?: integer]);
+export type $Display$TextDisplay$CachedInfo$$Type = ({"width"?: integer, "lines"?: $List$$Type<($Display$TextDisplay$CachedLine$$Type)>}) | ([width?: integer, lines?: $List$$Type<($Display$TextDisplay$CachedLine$$Type)>]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -4252,17 +4252,17 @@ import {$Player} from "net.minecraft.world.entity.player.Player"
 import {$MobSpawnType$$Type} from "net.minecraft.world.entity.MobSpawnType"
 import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
-import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$EntityDataAccessor$$Type} from "net.minecraft.network.syncher.EntityDataAccessor"
+import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$Monster} from "net.minecraft.world.entity.monster.Monster"
 import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
-import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
+import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$InteractionHand} from "net.minecraft.world.InteractionHand"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
 import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
@@ -4270,10 +4270,10 @@ import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Prov
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
-import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 
@@ -4452,15 +4452,15 @@ import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$Player} from "net.minecraft.world.entity.player.Player"
 import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
-import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
-import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
 import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
+import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$TamableAnimal} from "net.minecraft.world.entity.TamableAnimal"
 import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
@@ -4621,20 +4621,20 @@ import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$SpellcasterIllager} from "net.minecraft.world.entity.monster.SpellcasterIllager"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$InteractionHand} from "net.minecraft.world.InteractionHand"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
-import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
 import {$ISuppEvoker$$Interface} from "net.mehvahdjukaar.supplementaries.common.entities.goals.ISuppEvoker"
+import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Consumer$$Type} from "java.util.function.Consumer"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
-import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 
@@ -4805,10 +4805,10 @@ import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$Monster} from "net.minecraft.world.entity.monster.Monster"
 import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
-import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
+import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$InteractionHand} from "net.minecraft.world.InteractionHand"
 import {$SpawnGroupData, $SpawnGroupData$$Type} from "net.minecraft.world.entity.SpawnGroupData"
@@ -4817,11 +4817,11 @@ import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalRe
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$ServerLevelAccessor$$Type} from "net.minecraft.world.level.ServerLevelAccessor"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
-import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 
 export class $Vex extends $Monster implements $TraceableEntity$$Interface {
@@ -4937,9 +4937,9 @@ public "setLimitedLife"(arg0: integer): void
 public "isCharging"(): boolean
 public "getBoundOrigin"(): $BlockPos
 public "setIsCharging"(arg0: boolean): void
-public "move"(arg0: $MoverType$$Type, arg1: $Vec3$$Type): void
 public "tick"(): void
 public "setOwner"(arg0: $Mob$$Type): void
+public "move"(arg0: $MoverType$$Type, arg1: $Vec3$$Type): void
 public "getOwner"(): $Entity
 public "finalizeSpawn"(arg0: $ServerLevelAccessor$$Type, arg1: $DifficultyInstance$$Type, arg2: $MobSpawnType$$Type, arg3: $SpawnGroupData$$Type): $SpawnGroupData
 public "addAdditionalSaveData"(arg0: $CompoundTag$$Type): void
@@ -4994,33 +4994,33 @@ import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$UUID, $UUID$$Type} from "java.util.UUID"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
-import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$MobSpawnType$$Type} from "net.minecraft.world.entity.MobSpawnType"
+import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
-import {$Pose$$Type} from "net.minecraft.world.entity.Pose"
 import {$NeutralMob$$Interface} from "net.minecraft.world.entity.NeutralMob"
+import {$Pose$$Type} from "net.minecraft.world.entity.Pose"
 import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
-import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$Zombie} from "net.minecraft.world.entity.monster.Zombie"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
-import {$InteractionHand} from "net.minecraft.world.InteractionHand"
 import {$EntityDimensions} from "net.minecraft.world.entity.EntityDimensions"
+import {$InteractionHand} from "net.minecraft.world.InteractionHand"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
 import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
-import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
@@ -5138,11 +5138,11 @@ constructor(arg0: $EntityType$$Type<($ZombifiedPiglin$$Type)>, arg1: $Level$$Typ
 public "isPreventingPlayerRest"(arg0: $Player$$Type): boolean
 public "wantsToPickUp"(arg0: $ItemStack$$Type): boolean
 public "checkSpawnObstruction"(arg0: $LevelReader$$Type): boolean
-public "setRemainingPersistentAngerTime"(arg0: integer): void
 public "startPersistentAngerTimer"(): void
 public "getRemainingPersistentAngerTime"(): integer
 public "setPersistentAngerTarget"(arg0: $UUID$$Type): void
 public "getPersistentAngerTarget"(): $UUID
+public "setRemainingPersistentAngerTime"(arg0: integer): void
 public static "checkZombifiedPiglinSpawnRules"(arg0: $EntityType$$Type<($ZombifiedPiglin$$Type)>, arg1: $LevelAccessor$$Type, arg2: $MobSpawnType$$Type, arg3: $BlockPos$$Type, arg4: $RandomSource$$Type): boolean
 public "setTarget"(arg0: $LivingEntity$$Type): void
 public "addAdditionalSaveData"(arg0: $CompoundTag$$Type): void
@@ -5151,10 +5151,10 @@ public "getDefaultDimensions"(arg0: $Pose$$Type): $EntityDimensions
 public static "createAttributes"(): $AttributeSupplier$Builder
 public "playerDied"(arg0: $Player$$Type): void
 public "isAngryAt"(arg0: $LivingEntity$$Type): boolean
-public "readPersistentAngerSaveData"(arg0: $Level$$Type, arg1: $CompoundTag$$Type): void
 public "updatePersistentAnger"(arg0: $ServerLevel$$Type, arg1: boolean): void
 public "addPersistentAngerSaveData"(arg0: $CompoundTag$$Type): void
 public "stopBeingAngry"(): void
+public "readPersistentAngerSaveData"(arg0: $Level$$Type, arg1: $CompoundTag$$Type): void
 public "isAngryAtAllPlayers"(arg0: $Level$$Type): boolean
 public "isAngry"(): boolean
 public "forgetCurrentTargetAndRefreshUniversalAnger"(): void
@@ -5184,10 +5184,10 @@ public static "dataOf"(arg0: $ChangeSubscriber$$Type<(never)>, arg1: $ChangeSubs
 public static "containsSubscriber"(arg0: $ChangeSubscriber$$Type<($ItemStack$$Type)>, arg1: integer, arg2: $ChangeSubscriber$$Type<($ItemStack$$Type)>, arg3: integer): boolean
 public static "forNameOnly"(arg0: StringJS): $ScoreHolder
 public static "fromGameProfile"(arg0: $GameProfile$$Type): $ScoreHolder
-set "remainingPersistentAngerTime"(value: integer)
 get "remainingPersistentAngerTime"(): integer
 set "persistentAngerTarget"(value: $UUID$$Type)
 get "persistentAngerTarget"(): $UUID
+set "remainingPersistentAngerTime"(value: integer)
 set "target"(value: $LivingEntity$$Type)
 get "angry"(): boolean
 get "target"(): $LivingEntity
@@ -5215,12 +5215,12 @@ import {$AbstractMinecart} from "net.minecraft.world.entity.vehicle.AbstractMine
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$Tag} from "net.minecraft.nbt.Tag"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$AbstractMinecart$Type} from "net.minecraft.world.entity.vehicle.AbstractMinecart$Type"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $MinecartSpawner extends $AbstractMinecart {
  "hasImpulse": boolean
@@ -5338,14 +5338,14 @@ import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalRe
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$AbstractArrow$Pickup} from "net.minecraft.world.entity.projectile.AbstractArrow$Pickup"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
-import {$AbstractArrow} from "net.minecraft.world.entity.projectile.AbstractArrow"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$AbstractArrow} from "net.minecraft.world.entity.projectile.AbstractArrow"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$Entity} from "net.minecraft.world.entity.Entity"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
 
@@ -5449,28 +5449,28 @@ import {$Mob$$Type} from "net.minecraft.world.entity.Mob"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Pose$$Type} from "net.minecraft.world.entity.Pose"
-import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$EntityDataAccessor$$Type} from "net.minecraft.network.syncher.EntityDataAccessor"
+import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$AbstractFish} from "net.minecraft.world.entity.animal.AbstractFish"
-import {$InteractionHand, $InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$EntityDimensions} from "net.minecraft.world.entity.EntityDimensions"
+import {$InteractionHand, $InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
 import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
-import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 
 export class $Pufferfish extends $AbstractFish {
@@ -5645,39 +5645,39 @@ import {$Optional} from "java.util.Optional"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$Player} from "net.minecraft.world.entity.player.Player"
 import {$MobSpawnType$$Type} from "net.minecraft.world.entity.MobSpawnType"
+import {$Animal} from "net.minecraft.world.entity.animal.Animal"
 import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$Pose$$Type} from "net.minecraft.world.entity.Pose"
-import {$Animal} from "net.minecraft.world.entity.animal.Animal"
 import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
-import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
+import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
-import {$InteractionHand} from "net.minecraft.world.InteractionHand"
-import {$Predicate} from "java.util.function.Predicate"
 import {$EntityDimensions} from "net.minecraft.world.entity.EntityDimensions"
+import {$Predicate} from "java.util.function.Predicate"
+import {$InteractionHand} from "net.minecraft.world.InteractionHand"
 import {$SpawnGroupData, $SpawnGroupData$$Type} from "net.minecraft.world.entity.SpawnGroupData"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
 import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Consumer$$Type} from "java.util.function.Consumer"
-import {$AgeableMob, $AgeableMob$$Type} from "net.minecraft.world.entity.AgeableMob"
 import {$ServerLevelAccessor$$Type} from "net.minecraft.world.level.ServerLevelAccessor"
+import {$AgeableMob, $AgeableMob$$Type} from "net.minecraft.world.entity.AgeableMob"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
-import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
-import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$LightningBolt$$Type} from "net.minecraft.world.entity.LightningBolt"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 
 export class $Turtle extends $Animal {
@@ -5850,8 +5850,8 @@ declare module "net.minecraft.world.entity.monster.warden.WardenSpawnTracker" {
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$OptionalInt} from "java.util.OptionalInt"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 
 export class $WardenSpawnTracker {
 static readonly "CODEC": $Codec<($WardenSpawnTracker)>
@@ -5859,9 +5859,9 @@ static readonly "MAX_WARNING_LEVEL": integer
 
 constructor(arg0: integer, arg1: integer, arg2: integer)
 
-public static "tryWarn"(arg0: $ServerLevel$$Type, arg1: $BlockPos$$Type, arg2: $ServerPlayer$$Type): $OptionalInt
 public "getWarningLevel"(): integer
 public "setWarningLevel"(arg0: integer): void
+public static "tryWarn"(arg0: $ServerLevel$$Type, arg1: $BlockPos$$Type, arg2: $ServerPlayer$$Type): $OptionalInt
 public "tick"(): void
 public "reset"(): void
 get "warningLevel"(): integer
@@ -5877,8 +5877,8 @@ export type $WardenSpawnTracker$$Type = ($WardenSpawnTracker);
  */
 export type $WardenSpawnTracker$$Original = $WardenSpawnTracker;}
 declare module "net.minecraft.world.entity.monster.breeze.Breeze" {
-import {$Brain} from "net.minecraft.world.entity.ai.Brain"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$Brain} from "net.minecraft.world.entity.ai.Brain"
 import {$Optional} from "java.util.Optional"
 import {$Projectile$$Type} from "net.minecraft.world.entity.projectile.Projectile"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
@@ -5886,28 +5886,28 @@ import {$ProjectileDeflection} from "net.minecraft.world.entity.projectile.Proje
 import {$Player} from "net.minecraft.world.entity.player.Player"
 import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$SoundSource} from "net.minecraft.sounds.SoundSource"
-import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$EntityDataAccessor$$Type} from "net.minecraft.network.syncher.EntityDataAccessor"
+import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
-import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$Monster, $Monster$$Type} from "net.minecraft.world.entity.monster.Monster"
+import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$InteractionHand} from "net.minecraft.world.InteractionHand"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
 import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AnimationState} from "net.minecraft.world.entity.AnimationState"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
-import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 
 export class $Breeze extends $Monster {
@@ -6137,40 +6137,40 @@ import {$ArmorStand} from "net.minecraft.world.entity.decoration.ArmorStand"
 import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Skeleton} from "net.minecraft.world.entity.monster.Skeleton"
 import {$SpectralArrow} from "net.minecraft.world.entity.projectile.SpectralArrow"
-import {$Function$$Type} from "java.util.function.Function"
 import {$FishingHook} from "net.minecraft.world.entity.projectile.FishingHook"
+import {$Function$$Type} from "java.util.function.Function"
 import {$Class, $Class$$Type} from "java.lang.Class"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$EntityTypeExtension$$Interface} from "dev.engine_room.flywheel.impl.extension.EntityTypeExtension"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$Husk} from "net.minecraft.world.entity.monster.Husk"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$WindCharge} from "net.minecraft.world.entity.projectile.windcharge.WindCharge"
 import {$ZombifiedPiglin} from "net.minecraft.world.entity.monster.ZombifiedPiglin"
 import {$MinecartTNT} from "net.minecraft.world.entity.vehicle.MinecartTNT"
-import {$Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Tadpole} from "net.minecraft.world.entity.animal.frog.Tadpole"
+import {$Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Breeze} from "net.minecraft.world.entity.monster.breeze.Breeze"
 import {$LeashFenceKnotEntity} from "net.minecraft.world.entity.decoration.LeashFenceKnotEntity"
-import {$Chicken} from "net.minecraft.world.entity.animal.Chicken"
 import {$ZombieHorse} from "net.minecraft.world.entity.animal.horse.ZombieHorse"
+import {$Chicken} from "net.minecraft.world.entity.animal.Chicken"
 import {$Bogged} from "net.minecraft.world.entity.monster.Bogged"
 import {$Guardian} from "net.minecraft.world.entity.monster.Guardian"
 import {$MinecartSpawner} from "net.minecraft.world.entity.vehicle.MinecartSpawner"
 import {$ZombieVillager} from "net.minecraft.world.entity.monster.ZombieVillager"
-import {$Ocelot} from "net.minecraft.world.entity.animal.Ocelot"
 import {$ToIntFunction$$Type} from "java.util.function.ToIntFunction"
+import {$Ocelot} from "net.minecraft.world.entity.animal.Ocelot"
 import {$Donkey} from "net.minecraft.world.entity.animal.horse.Donkey"
-import {$Registry} from "net.minecraft.core.Registry"
 import {$MobCategory, $MobCategory$$Type} from "net.minecraft.world.entity.MobCategory"
+import {$Registry} from "net.minecraft.core.Registry"
 import {$TagKey, $TagKey$$Type} from "net.minecraft.tags.TagKey"
 import {$SnowGolem} from "net.minecraft.world.entity.animal.SnowGolem"
-import {$LightningBolt} from "net.minecraft.world.entity.LightningBolt"
 import {$MinecartHopper} from "net.minecraft.world.entity.vehicle.MinecartHopper"
+import {$LightningBolt} from "net.minecraft.world.entity.LightningBolt"
 import {$OminousItemSpawner} from "net.minecraft.world.entity.OminousItemSpawner"
 import {$Evoker} from "net.minecraft.world.entity.monster.Evoker"
 import {$Optional} from "java.util.Optional"
-import {$ExperienceOrb} from "net.minecraft.world.entity.ExperienceOrb"
 import {$EntityType$EntityFactory$$Type} from "net.minecraft.world.entity.EntityType$EntityFactory"
+import {$ExperienceOrb} from "net.minecraft.world.entity.ExperienceOrb"
 import {$MinecartFurnace} from "net.minecraft.world.entity.vehicle.MinecartFurnace"
 import {$BreezeWindCharge} from "net.minecraft.world.entity.projectile.windcharge.BreezeWindCharge"
 import {$CustomData$$Type} from "net.minecraft.world.item.component.CustomData"
@@ -6182,27 +6182,27 @@ import {$ThrownEnderpearl} from "net.minecraft.world.entity.projectile.ThrownEnd
 import {$Squid} from "net.minecraft.world.entity.animal.Squid"
 import {$WitherSkull} from "net.minecraft.world.entity.projectile.WitherSkull"
 import {$Wolf} from "net.minecraft.world.entity.animal.Wolf"
-import {$TraderLlama} from "net.minecraft.world.entity.animal.horse.TraderLlama"
 import {$LargeFireball} from "net.minecraft.world.entity.projectile.LargeFireball"
+import {$TraderLlama} from "net.minecraft.world.entity.animal.horse.TraderLlama"
 import {$ItemFrame} from "net.minecraft.world.entity.decoration.ItemFrame"
 import {$EntityTypeTest, $EntityTypeTest$$Interface} from "net.minecraft.world.level.entity.EntityTypeTest"
 import {$Cod} from "net.minecraft.world.entity.animal.Cod"
 import {$Panda} from "net.minecraft.world.entity.animal.Panda"
-import {$Zombie} from "net.minecraft.world.entity.monster.Zombie"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$Zombie} from "net.minecraft.world.entity.monster.Zombie"
 import {$Llama} from "net.minecraft.world.entity.animal.horse.Llama"
 import {$Turtle} from "net.minecraft.world.entity.animal.Turtle"
 import {$Axolotl} from "net.minecraft.world.entity.animal.axolotl.Axolotl"
-import {$Frog} from "net.minecraft.world.entity.animal.frog.Frog"
 import {$ShulkerBullet} from "net.minecraft.world.entity.projectile.ShulkerBullet"
+import {$Frog} from "net.minecraft.world.entity.animal.frog.Frog"
 import {$Piglin} from "net.minecraft.world.entity.monster.piglin.Piglin"
 import {$Villager} from "net.minecraft.world.entity.npc.Villager"
 import {$LootTable} from "net.minecraft.world.level.storage.loot.LootTable"
+import {$EnderMan} from "net.minecraft.world.entity.monster.EnderMan"
 import {$Bee} from "net.minecraft.world.entity.animal.Bee"
 import {$Consumer, $Consumer$$Type} from "java.util.function.Consumer"
-import {$EnderMan} from "net.minecraft.world.entity.monster.EnderMan"
-import {$Hoglin} from "net.minecraft.world.entity.monster.hoglin.Hoglin"
 import {$EvokerFangs} from "net.minecraft.world.entity.projectile.EvokerFangs"
+import {$Hoglin} from "net.minecraft.world.entity.monster.hoglin.Hoglin"
 import {$Pig} from "net.minecraft.world.entity.animal.Pig"
 import {$Cow} from "net.minecraft.world.entity.animal.Cow"
 import {$Bat} from "net.minecraft.world.entity.ambient.Bat"
@@ -6214,12 +6214,12 @@ import {$Vex} from "net.minecraft.world.entity.monster.Vex"
 import {$Display$ItemDisplay} from "net.minecraft.world.entity.Display$ItemDisplay"
 import {$Witch} from "net.minecraft.world.entity.monster.Witch"
 import {$List, $List$$Type} from "java.util.List"
-import {$Mule} from "net.minecraft.world.entity.animal.horse.Mule"
-import {$CaveSpider} from "net.minecraft.world.entity.monster.CaveSpider"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$CaveSpider} from "net.minecraft.world.entity.monster.CaveSpider"
+import {$Mule} from "net.minecraft.world.entity.animal.horse.Mule"
 import {$PrimedTnt} from "net.minecraft.world.entity.item.PrimedTnt"
-import {$Component} from "net.minecraft.network.chat.Component"
 import {$ThrownEgg} from "net.minecraft.world.entity.projectile.ThrownEgg"
+import {$Component} from "net.minecraft.network.chat.Component"
 import {$Drowned} from "net.minecraft.world.entity.monster.Drowned"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$GlowItemFrame} from "net.minecraft.world.entity.decoration.GlowItemFrame"
@@ -6235,8 +6235,8 @@ import {$LlamaSpit} from "net.minecraft.world.entity.projectile.LlamaSpit"
 import {$Creeper} from "net.minecraft.world.entity.monster.Creeper"
 import {$MushroomCow} from "net.minecraft.world.entity.animal.MushroomCow"
 import {$Salmon} from "net.minecraft.world.entity.animal.Salmon"
-import {$Predicate$$Type} from "java.util.function.Predicate"
 import {$EntityDimensions, $EntityDimensions$$Type} from "net.minecraft.world.entity.EntityDimensions"
+import {$Predicate$$Type} from "java.util.function.Predicate"
 import {$Stray} from "net.minecraft.world.entity.monster.Stray"
 import {$Vindicator} from "net.minecraft.world.entity.monster.Vindicator"
 import {$ItemEntity} from "net.minecraft.world.entity.item.ItemEntity"
@@ -6419,8 +6419,8 @@ public "flywheel$setVisualizer"(visualizer: $EntityVisualizer$$Type): void
 public "bo$setRenderer"(renderer: $EntityRenderer$$Type): void
 public "getWidth"(): float
 public "getHeight"(): float
-public "getDimensions"(): $EntityDimensions
 public "getDescription"(): $Component
+public "getDimensions"(): $EntityDimensions
 public "toString"(): StringJS
 public static "getKey"(arg0: $EntityType$$Type<(never)>): $ResourceLocation
 public "toShortString"(): StringJS
@@ -6437,11 +6437,11 @@ public "getKey"(): $ResourceKey
 public "spawn"(arg0: $ServerLevel$$Type, arg1: $Consumer$$Type<(T)>, arg2: $BlockPos$$Type, arg3: $MobSpawnType$$Type, arg4: boolean, arg5: boolean): T
 public "spawn"(arg0: $ServerLevel$$Type, arg1: $ItemStack$$Type, arg2: $Player$$Type, arg3: $BlockPos$$Type, arg4: $MobSpawnType$$Type, arg5: boolean, arg6: boolean): T
 public "spawn"(arg0: $ServerLevel$$Type, arg1: $BlockPos$$Type, arg2: $MobSpawnType$$Type): T
-public "getTags"(): $Stream<($TagKey<($EntityType<(never)>)>)>
 public "fireImmune"(): boolean
 public "getDefaultLootTable"(): $ResourceKey<($LootTable)>
 public static "byString"(arg0: StringJS): $Optional<($EntityType<(never)>)>
 public "getId"(): StringJS
+public "getTags"(): $Stream<($TagKey<($EntityType<(never)>)>)>
 public "canSerialize"(): boolean
 public "bo$getRenderer"(): $EntityRenderer
 public "tryCast"(arg0: $Entity$$Type): T
@@ -6463,14 +6463,14 @@ public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boole
 get "baseClass"(): $Class<($Entity)>
 get "width"(): float
 get "height"(): float
-get "dimensions"(): $EntityDimensions
 get "description"(): $Component
+get "dimensions"(): $EntityDimensions
 get "category"(): $MobCategory
 get "descriptionId"(): StringJS
 get "key"(): $ResourceKey
-get "tags"(): $Stream<($TagKey<($EntityType<(never)>)>)>
 get "defaultLootTable"(): $ResourceKey<($LootTable)>
 get "id"(): StringJS
+get "tags"(): $Stream<($TagKey<($EntityType<(never)>)>)>
 get "registryId"(): $ResourceKey<($Registry<($EntityType<(never)>)>)>
 get "registry"(): $Registry<($EntityType<(never)>)>
 get "idLocation"(): $ResourceLocation
@@ -6506,20 +6506,20 @@ import {$Codec} from "com.mojang.serialization.Codec"
 import {$EntityDataAccessor$$Type} from "net.minecraft.network.syncher.EntityDataAccessor"
 import {$ClientboundAddEntityPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundAddEntityPacket"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
-import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
+import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$ServerEntity$$Type} from "net.minecraft.server.level.ServerEntity"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
-import {$ClientGamePacketListener} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$ClientGamePacketListener} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
 import {$HangingEntity} from "net.minecraft.world.entity.decoration.HangingEntity"
 import {$PaintingVariant, $PaintingVariant$$Type} from "net.minecraft.world.entity.decoration.PaintingVariant"
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
-import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$VariantHolder$$Interface} from "net.minecraft.world.entity.VariantHolder"
@@ -6675,8 +6675,8 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 import {$Biome$$Type} from "net.minecraft.world.level.biome.Biome"
 import {$Holder$$Type} from "net.minecraft.core.Holder"
@@ -6694,11 +6694,11 @@ public static "byName"(arg0: StringJS): $Fox$Type
 public "getSerializedName"(): StringJS
 public static "byId"(arg0: integer): $Fox$Type
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "id"(): integer
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
@@ -6713,8 +6713,8 @@ export type $Fox$Type$$Type = (("red") | ("snow"));
  */
 export type $Fox$Type$$Original = $Fox$Type;}
 declare module "net.minecraft.world.entity.boss.enderdragon.phases.DragonPhaseInstance" {
-import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$EnderDragonPhase} from "net.minecraft.world.entity.boss.enderdragon.phases.EnderDragonPhase"
+import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Vec3} from "net.minecraft.world.phys.Vec3"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
 import {$EndCrystal$$Type} from "net.minecraft.world.entity.boss.enderdragon.EndCrystal"
@@ -6795,10 +6795,10 @@ import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.Liv
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 
 export interface $NeutralMob$$Interface {
-set "remainingPersistentAngerTime"(value: integer)
 get "remainingPersistentAngerTime"(): integer
 set "persistentAngerTarget"(value: $UUID$$Type)
 get "persistentAngerTarget"(): $UUID
+set "remainingPersistentAngerTime"(value: integer)
 get "angry"(): boolean
 get "target"(): $LivingEntity
 set "target"(value: $LivingEntity$$Type)
@@ -6813,8 +6813,6 @@ static readonly "TAG_ANGER_TIME": StringJS
 
  "playerDied"(arg0: $Player$$Type): void
  "isAngryAt"(arg0: $LivingEntity$$Type): boolean
- "readPersistentAngerSaveData"(arg0: $Level$$Type, arg1: $CompoundTag$$Type): void
- "setRemainingPersistentAngerTime"(arg0: integer): void
  "updatePersistentAnger"(arg0: $ServerLevel$$Type, arg1: boolean): void
  "addPersistentAngerSaveData"(arg0: $CompoundTag$$Type): void
  "startPersistentAngerTimer"(): void
@@ -6822,6 +6820,8 @@ static readonly "TAG_ANGER_TIME": StringJS
  "setPersistentAngerTarget"(arg0: $UUID$$Type): void
  "getPersistentAngerTarget"(): $UUID
  "stopBeingAngry"(): void
+ "readPersistentAngerSaveData"(arg0: $Level$$Type, arg1: $CompoundTag$$Type): void
+ "setRemainingPersistentAngerTime"(arg0: integer): void
  "isAngryAtAllPlayers"(arg0: $Level$$Type): boolean
  "isAngry"(): boolean
  "forgetCurrentTargetAndRefreshUniversalAnger"(): void
@@ -6871,8 +6871,8 @@ import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
 import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$MobSpawnType$$Type} from "net.minecraft.world.entity.MobSpawnType"
-import {$NeutralMob$$Interface} from "net.minecraft.world.entity.NeutralMob"
 import {$Vec3} from "net.minecraft.world.phys.Vec3"
+import {$NeutralMob$$Interface} from "net.minecraft.world.entity.NeutralMob"
 import {$Animal$$Type} from "net.minecraft.world.entity.animal.Animal"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
@@ -6895,13 +6895,13 @@ import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Prov
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$ServerLevelAccessor$$Type} from "net.minecraft.world.level.ServerLevelAccessor"
 import {$AgeableMob$$Type} from "net.minecraft.world.entity.AgeableMob"
-import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
+import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
-import {$Tag} from "net.minecraft.nbt.Tag"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
+import {$Tag} from "net.minecraft.nbt.Tag"
 import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$WolfVariant, $WolfVariant$$Type} from "net.minecraft.world.entity.animal.WolfVariant"
@@ -7023,11 +7023,11 @@ public "getMaxSpawnClusterSize"(): integer
 public "getMaxHeadXRot"(): integer
 public "mobInteract"(arg0: $Player$$Type, arg1: $InteractionHand$$Type): $InteractionResult
 public "canBeLeashed"(): boolean
-public "setRemainingPersistentAngerTime"(arg0: integer): void
 public "startPersistentAngerTimer"(): void
 public "getRemainingPersistentAngerTime"(): integer
 public "setPersistentAngerTarget"(arg0: $UUID$$Type): void
 public "getPersistentAngerTarget"(): $UUID
+public "setRemainingPersistentAngerTime"(arg0: integer): void
 public "getBreedOffspring"(arg0: $ServerLevel$$Type, arg1: $AgeableMob$$Type): $Wolf
 public "isFood"(arg0: $ItemStack$$Type): boolean
 public "canMate"(arg0: $Animal$$Type): boolean
@@ -7042,8 +7042,8 @@ public "getBodyRollAngle"(arg0: float, arg1: float): float
 public "hasArmor"(): boolean
 public "getTailAngle"(): float
 public static "checkWolfSpawnRules"(arg0: $EntityType$$Type<($Wolf$$Type)>, arg1: $LevelAccessor$$Type, arg2: $MobSpawnType$$Type, arg3: $BlockPos$$Type, arg4: $RandomSource$$Type): boolean
-public "getVariant"(): any
 public "tick"(): void
+public "getVariant"(): $Holder<($WolfVariant)>
 public "setVariant"(arg0: $Holder$$Type<($WolfVariant)>): void
 public "setVariant"(arg0: any): void
 public "getTexture"(): $ResourceLocation
@@ -7060,10 +7060,10 @@ public "getLeashOffset"(): $Vec3
 public "isWet"(): boolean
 public "playerDied"(arg0: $Player$$Type): void
 public "isAngryAt"(arg0: $LivingEntity$$Type): boolean
-public "readPersistentAngerSaveData"(arg0: $Level$$Type, arg1: $CompoundTag$$Type): void
 public "updatePersistentAnger"(arg0: $ServerLevel$$Type, arg1: boolean): void
 public "addPersistentAngerSaveData"(arg0: $CompoundTag$$Type): void
 public "stopBeingAngry"(): void
+public "readPersistentAngerSaveData"(arg0: $Level$$Type, arg1: $CompoundTag$$Type): void
 public "isAngryAtAllPlayers"(arg0: $Level$$Type): boolean
 public "isAngry"(): boolean
 public "forgetCurrentTargetAndRefreshUniversalAnger"(): void
@@ -7096,15 +7096,15 @@ public static "forNameOnly"(arg0: StringJS): $ScoreHolder
 public static "fromGameProfile"(arg0: $GameProfile$$Type): $ScoreHolder
 get "maxSpawnClusterSize"(): integer
 get "maxHeadXRot"(): integer
-set "remainingPersistentAngerTime"(value: integer)
 get "remainingPersistentAngerTime"(): integer
 set "persistentAngerTarget"(value: $UUID$$Type)
 get "persistentAngerTarget"(): $UUID
+set "remainingPersistentAngerTime"(value: integer)
 get "collarColor"(): $DyeColor
 set "collarColor"(value: $DyeColor$$Type)
 get "interested"(): boolean
 get "tailAngle"(): float
-get "variant"(): any
+get "variant"(): $Holder<($WolfVariant)>
 set "variant"(value: $Holder$$Type<($WolfVariant)>)
 set "variant"(value: any)
 get "texture"(): $ResourceLocation
@@ -7137,16 +7137,16 @@ import {$Animal} from "net.minecraft.world.entity.animal.Animal"
 import {$Vec3} from "net.minecraft.world.phys.Vec3"
 import {$ItemBasedSteering} from "net.minecraft.world.entity.ItemBasedSteering"
 import {$SoundSource$$Type} from "net.minecraft.sounds.SoundSource"
-import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$EntityDataAccessor$$Type} from "net.minecraft.network.syncher.EntityDataAccessor"
+import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$ItemBasedSteerable$$Interface} from "io.wispforest.accessories.pond.ItemBasedSteerable"
 import {$InteractionHand, $InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
@@ -7156,14 +7156,14 @@ import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Prov
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$AgeableMob, $AgeableMob$$Type} from "net.minecraft.world.entity.AgeableMob"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
+import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$ItemSteerable$$Interface} from "net.minecraft.world.entity.ItemSteerable"
-import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
-import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$LightningBolt$$Type} from "net.minecraft.world.entity.LightningBolt"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$Saddleable$$Interface} from "net.minecraft.world.entity.Saddleable"
 
 export class $Pig extends $Animal implements $ItemSteerable$$Interface, $Saddleable$$Interface, $ItemBasedSteerable$$Interface {
@@ -7340,8 +7340,8 @@ import {$Holder} from "net.minecraft.core.Holder"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$AttributeModifier$Operation$$Type} from "net.minecraft.world.entity.ai.attributes.AttributeModifier$Operation"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Attribute$Sentiment$$Type} from "net.minecraft.world.entity.ai.attributes.Attribute$Sentiment"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$MutableComponent} from "net.minecraft.network.chat.MutableComponent"
 import {$ChatFormatting} from "net.minecraft.ChatFormatting"
 
@@ -7413,15 +7413,15 @@ import {$Optional} from "java.util.Optional"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$Player} from "net.minecraft.world.entity.player.Player"
 import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
-import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState"
 import {$AbstractChestedHorse} from "net.minecraft.world.entity.animal.horse.AbstractChestedHorse"
+import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$InteractionHand} from "net.minecraft.world.InteractionHand"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
 import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
@@ -7429,8 +7429,8 @@ import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Prov
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$AgeableMob, $AgeableMob$$Type} from "net.minecraft.world.entity.AgeableMob"
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 
@@ -7594,14 +7594,14 @@ import {$DimensionTransition$$Type} from "net.minecraft.world.level.portal.Dimen
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$Tag} from "net.minecraft.nbt.Tag"
-import {$TNTEntityAccess$$Interface} from "blusunrize.immersiveengineering.mixin.accessors.TNTEntityAccess"
 import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
+import {$TNTEntityAccess$$Interface} from "blusunrize.immersiveengineering.mixin.accessors.TNTEntityAccess"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $PrimedTnt extends $Entity implements $TraceableEntity$$Interface, $TNTEntityAccess$$Interface {
  "hasImpulse": boolean
@@ -7730,7 +7730,7 @@ public "small"(): $SoundEvent
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $LivingEntity$Fallsounds$$Type = ({"small"?: $SoundEvent$$Type, "big"?: $SoundEvent$$Type}) | ([small?: $SoundEvent$$Type, big?: $SoundEvent$$Type]);
+export type $LivingEntity$Fallsounds$$Type = ({"big"?: $SoundEvent$$Type, "small"?: $SoundEvent$$Type}) | ([big?: $SoundEvent$$Type, small?: $SoundEvent$$Type]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -7739,8 +7739,8 @@ declare module "net.minecraft.world.entity.animal.SnowGolem" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$List} from "java.util.List"
-import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$Shearable$$Interface} from "net.minecraft.world.entity.Shearable"
+import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Vec3} from "net.minecraft.world.phys.Vec3"
 import {$SoundSource$$Type} from "net.minecraft.sounds.SoundSource"
@@ -7749,23 +7749,23 @@ import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
-import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
+import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$AbstractGolem} from "net.minecraft.world.entity.animal.AbstractGolem"
 import {$InteractionHand} from "net.minecraft.world.InteractionHand"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
-import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
 import {$CallbackInfoReturnable$$Type} from "org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable"
+import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$RangedAttackMob$$Interface} from "net.minecraft.world.entity.monster.RangedAttackMob"
 import {$Consumer$$Type} from "java.util.function.Consumer"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 
 export class $SnowGolem extends $AbstractGolem implements $Shearable$$Interface, $RangedAttackMob$$Interface {
@@ -7876,17 +7876,17 @@ constructor(arg0: $EntityType$$Type<($SnowGolem$$Type)>, arg1: $Level$$Type)
 
 public "shear"(arg0: $SoundSource$$Type): void
 public "readyForShearing"(): boolean
-public "performRangedAttack"(arg0: $LivingEntity$$Type, arg1: float): void
 public "hasPumpkin"(): boolean
 public "setPumpkin"(arg0: boolean): void
+public "performRangedAttack"(arg0: $LivingEntity$$Type, arg1: float): void
 public "addAdditionalSaveData"(arg0: $CompoundTag$$Type): void
 public "readAdditionalSaveData"(arg0: $CompoundTag$$Type): void
 public "aiStep"(): void
 public "isSensitiveToWater"(): boolean
 public static "createAttributes"(): $AttributeSupplier$Builder
 public "getLeashOffset"(): $Vec3
-public "onSheared"(arg0: $Player$$Type, arg1: $ItemStack$$Type, arg2: $Level$$Type, arg3: $BlockPos$$Type): $List<($ItemStack)>
 public "isShearable"(arg0: $Player$$Type, arg1: $ItemStack$$Type, arg2: $Level$$Type, arg3: $BlockPos$$Type): boolean
+public "onSheared"(arg0: $Player$$Type, arg1: $ItemStack$$Type, arg2: $Level$$Type, arg3: $BlockPos$$Type): $List<($ItemStack)>
 public "handler$cik000$apothic_enchanting$apoth_handleShearFortune"(arg0: $Player$$Type, arg1: $ItemStack$$Type, arg2: $Level$$Type, arg3: $BlockPos$$Type, arg4: $CallbackInfoReturnable$$Type): void
 public "handler$cik000$apothic_enchanting$apoth_handleShearEnchantments"(arg0: $Player$$Type, arg1: $ItemStack$$Type, arg2: $Level$$Type, arg3: $BlockPos$$Type, arg4: $CallbackInfoReturnable$$Type): void
 public "spawnShearedDrop"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $ItemStack$$Type): void
@@ -7928,8 +7928,8 @@ export type $SnowGolem$$Type = ($SnowGolem);
 export type $SnowGolem$$Original = $SnowGolem;}
 declare module "net.minecraft.world.entity.projectile.ThrowableItemProjectile" {
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
-import {$ItemSupplier$$Interface} from "net.minecraft.world.entity.projectile.ItemSupplier"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$ItemSupplier$$Interface} from "net.minecraft.world.entity.projectile.ItemSupplier"
 import {$Optional} from "java.util.Optional"
 import {$UUID} from "java.util.UUID"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
@@ -7940,9 +7940,9 @@ import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInL
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$Tag} from "net.minecraft.nbt.Tag"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$Entity} from "net.minecraft.world.entity.Entity"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
 
@@ -8046,8 +8046,6 @@ import {$Stream} from "java.util.stream.Stream"
 export class $PoiSection implements $PointOfInterestSetExtended$$Interface {
 constructor(arg0: $Runnable$$Type)
 
-public "isValid"(): boolean
-public "refresh"(arg0: $Consumer$$Type<($BiConsumer<($BlockPos), ($Holder<($PoiType)>)>)>): void
 /**
  * 
  * @deprecated
@@ -8055,11 +8053,13 @@ public "refresh"(arg0: $Consumer$$Type<($BiConsumer<($BlockPos), ($Holder<($PoiT
 public "getFreeTickets"(arg0: $BlockPos$$Type): integer
 public "getRecords"(arg0: $Predicate$$Type<($Holder<($PoiType)>)>, arg1: $PoiManager$Occupancy$$Type): $Stream<($PoiRecord)>
 public "lithium$collectMatchingPoints"(arg0: $Predicate$$Type, arg1: $PoiManager$Occupancy$$Type, arg2: $Consumer$$Type): void
+public "refresh"(arg0: $Consumer$$Type<($BiConsumer<($BlockPos), ($Holder<($PoiType)>)>)>): void
 public "remove"(arg0: $BlockPos$$Type): void
 public "add"(arg0: $BlockPos$$Type, arg1: $Holder$$Type<($PoiType)>): void
 public "getType"(arg0: $BlockPos$$Type): $Optional<($Holder<($PoiType)>)>
 public "release"(arg0: $BlockPos$$Type): boolean
 public "exists"(arg0: $BlockPos$$Type, arg1: $Predicate$$Type<($Holder<($PoiType)>)>): boolean
+public "isValid"(): boolean
 public static "codec"(arg0: $Runnable$$Type): $Codec<($PoiSection)>
 get "valid"(): boolean
 }
@@ -8105,8 +8105,8 @@ import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$EquipmentSlot, $EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$PathType$$Type} from "net.minecraft.world.level.pathfinder.PathType"
 import {$Leashable$LeashData, $Leashable$LeashData$$Type} from "net.minecraft.world.entity.Leashable$LeashData"
-import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$Set} from "java.util.Set"
+import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$FluidType$$Type} from "net.neoforged.neoforge.fluids.FluidType"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
 import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
@@ -8114,8 +8114,8 @@ import {$Targeting$$Interface} from "net.minecraft.world.entity.Targeting"
 import {$InteractionHand, $InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$ProjectileWeaponItem$$Type} from "net.minecraft.world.item.ProjectileWeaponItem"
 import {$CosmeticArmorLookupTogglable$$Interface} from "io.wispforest.accessories.pond.CosmeticArmorLookupTogglable"
-import {$LootTable, $LootTable$$Type} from "net.minecraft.world.level.storage.loot.LootTable"
 import {$LootParams$$Type} from "net.minecraft.world.level.storage.loot.LootParams"
+import {$LootTable, $LootTable$$Type} from "net.minecraft.world.level.storage.loot.LootTable"
 import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Consumer$$Type} from "java.util.function.Consumer"
@@ -8150,8 +8150,8 @@ import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.li
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$Leashable$$Interface} from "net.minecraft.world.entity.Leashable"
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
-import {$Tag} from "net.minecraft.nbt.Tag"
 import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
+import {$Tag} from "net.minecraft.nbt.Tag"
 import {$Goal$$Type} from "net.minecraft.world.entity.ai.goal.Goal"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$MobAccess$$Interface} from "me.desht.pneumaticcraft.mixin.accessors.MobAccess"
@@ -8478,8 +8478,8 @@ export type $Mob$$Type = ($Mob);
 export type $Mob$$Original = $Mob;}
 declare module "net.minecraft.world.entity.projectile.Fireball" {
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
-import {$ItemSupplier$$Interface} from "net.minecraft.world.entity.projectile.ItemSupplier"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$ItemSupplier$$Interface} from "net.minecraft.world.entity.projectile.ItemSupplier"
 import {$Optional} from "java.util.Optional"
 import {$UUID} from "java.util.UUID"
 import {$SlotAccess} from "net.minecraft.world.entity.SlotAccess"
@@ -8488,14 +8488,14 @@ import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalRe
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AbstractHurtingProjectile} from "net.minecraft.world.entity.projectile.AbstractHurtingProjectile"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$Tag} from "net.minecraft.nbt.Tag"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$Entity} from "net.minecraft.world.entity.Entity"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
 
@@ -8591,19 +8591,19 @@ import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
-import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$MobSpawnType$$Type} from "net.minecraft.world.entity.MobSpawnType"
+import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Animal, $Animal$$Type} from "net.minecraft.world.entity.animal.Animal"
-import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$EntityDataAccessor$$Type} from "net.minecraft.network.syncher.EntityDataAccessor"
+import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
-import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
+import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$Armadillo$ArmadilloState, $Armadillo$ArmadilloState$$Type} from "net.minecraft.world.entity.animal.armadillo.Armadillo$ArmadilloState"
 import {$InteractionHand, $InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
@@ -8615,11 +8615,11 @@ import {$AgeableMob, $AgeableMob$$Type} from "net.minecraft.world.entity.Ageable
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AnimationState} from "net.minecraft.world.entity.AnimationState"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
@@ -8809,8 +8809,8 @@ import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 
@@ -8829,11 +8829,11 @@ public static "values"(): ($Armadillo$ArmadilloState)[]
 public static "valueOf"(arg0: StringJS): $Armadillo$ArmadilloState
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "threatened"(): boolean
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
@@ -8925,8 +8925,8 @@ export type $VillagerBabiesSensor$$Type = ($VillagerBabiesSensor);
  */
 export type $VillagerBabiesSensor$$Original = $VillagerBabiesSensor;}
 declare module "net.minecraft.world.entity.SpawnPlacements$SpawnPredicate" {
-import {$ServerLevelAccessor, $ServerLevelAccessor$$Type} from "net.minecraft.world.level.ServerLevelAccessor"
 import {$MobSpawnType, $MobSpawnType$$Type} from "net.minecraft.world.entity.MobSpawnType"
+import {$ServerLevelAccessor, $ServerLevelAccessor$$Type} from "net.minecraft.world.level.ServerLevelAccessor"
 import {$RandomSource, $RandomSource$$Type} from "net.minecraft.util.RandomSource"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$Entity} from "net.minecraft.world.entity.Entity"
@@ -8955,24 +8955,24 @@ import {$Optional} from "java.util.Optional"
 import {$CallbackInfo$$Type} from "org.spongepowered.asm.mixin.injection.callback.CallbackInfo"
 import {$Mob} from "net.minecraft.world.entity.Mob"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
-import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$MobSpawnType$$Type} from "net.minecraft.world.entity.MobSpawnType"
+import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Pose$$Type} from "net.minecraft.world.entity.Pose"
 import {$SoundSource} from "net.minecraft.sounds.SoundSource"
-import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$EntityDataAccessor$$Type} from "net.minecraft.network.syncher.EntityDataAccessor"
+import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
-import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$Enemy$$Interface} from "net.minecraft.world.entity.monster.Enemy"
 import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$EntityType, $EntityType$$Type} from "net.minecraft.world.entity.EntityType"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
-import {$InteractionHand} from "net.minecraft.world.InteractionHand"
 import {$EntityDimensions} from "net.minecraft.world.entity.EntityDimensions"
+import {$InteractionHand} from "net.minecraft.world.InteractionHand"
 import {$SpawnGroupData, $SpawnGroupData$$Type} from "net.minecraft.world.entity.SpawnGroupData"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
 import {$Entity$RemovalReason, $Entity$RemovalReason$$Type} from "net.minecraft.world.entity.Entity$RemovalReason"
@@ -8981,9 +8981,9 @@ import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$ServerLevelAccessor$$Type} from "net.minecraft.world.level.ServerLevelAccessor"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
-import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 
@@ -9103,12 +9103,12 @@ public "isTiny"(): boolean
 public "handler$bck000$supplementaries$supp$applySlimedEffect"(livingEntity: $LivingEntity$$Type, ci: $CallbackInfo$$Type): void
 public static "checkSlimeSpawnRules"(arg0: $EntityType$$Type<($Slime$$Type)>, arg1: $LevelAccessor$$Type, arg2: $MobSpawnType$$Type, arg3: $BlockPos$$Type, arg4: $RandomSource$$Type): boolean
 public "getMaxHeadXRot"(): integer
-public "push"(arg0: $Entity$$Type): void
-public "setSize"(arg0: integer, arg1: boolean): void
 public "tick"(): void
+public "setSize"(arg0: integer, arg1: boolean): void
 public "remove"(arg0: $Entity$RemovalReason$$Type): void
 public "getEntityType"(): $EntityType<($Slime)>
 public "getSize"(): integer
+public "push"(arg0: $Entity$$Type): void
 public "finalizeSpawn"(arg0: $ServerLevelAccessor$$Type, arg1: $DifficultyInstance$$Type, arg2: $MobSpawnType$$Type, arg3: $SpawnGroupData$$Type): $SpawnGroupData
 public "getSoundSource"(): $SoundSource
 public "addAdditionalSaveData"(arg0: $CompoundTag$$Type): void
@@ -9215,8 +9215,8 @@ import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$InteractionHand, $InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
@@ -9225,8 +9225,8 @@ import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Prov
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
-import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 
 export class $Salmon extends $AbstractSchoolingFish {
@@ -9435,8 +9435,8 @@ import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$Player} from "net.minecraft.world.entity.player.Player"
 import {$MobSpawnType$$Type} from "net.minecraft.world.entity.MobSpawnType"
 import {$Pose$$Type} from "net.minecraft.world.entity.Pose"
-import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$EntityDataAccessor$$Type} from "net.minecraft.network.syncher.EntityDataAccessor"
+import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$Monster} from "net.minecraft.world.entity.monster.Monster"
@@ -9444,11 +9444,11 @@ import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
-import {$InteractionHand} from "net.minecraft.world.InteractionHand"
 import {$EntityDimensions} from "net.minecraft.world.entity.EntityDimensions"
+import {$InteractionHand} from "net.minecraft.world.InteractionHand"
 import {$SpawnGroupData, $SpawnGroupData$$Type} from "net.minecraft.world.entity.SpawnGroupData"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
 import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
@@ -9457,11 +9457,11 @@ import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$ServerLevelAccessor$$Type} from "net.minecraft.world.level.ServerLevelAccessor"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
-import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 
@@ -9690,9 +9690,9 @@ import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInL
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$Tag} from "net.minecraft.nbt.Tag"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$Entity} from "net.minecraft.world.entity.Entity"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
 
@@ -9820,11 +9820,11 @@ import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
-import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$Zombie} from "net.minecraft.world.entity.monster.Zombie"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$InteractionHand} from "net.minecraft.world.InteractionHand"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
 import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
@@ -9833,8 +9833,8 @@ import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$ServerLevelAccessor$$Type} from "net.minecraft.world.level.ServerLevelAccessor"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 
 export class $Husk extends $Zombie {
@@ -9989,16 +9989,16 @@ import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$AbstractWindCharge, $AbstractWindCharge$$Type} from "net.minecraft.world.entity.projectile.windcharge.AbstractWindCharge"
 import {$ExplosionDamageCalculator} from "net.minecraft.world.level.ExplosionDamageCalculator"
 import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
-import {$ProjectileDeflection$$Type} from "net.minecraft.world.entity.projectile.ProjectileDeflection"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$ProjectileDeflection$$Type} from "net.minecraft.world.entity.projectile.ProjectileDeflection"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$Tag} from "net.minecraft.nbt.Tag"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
 
@@ -10140,8 +10140,8 @@ import {$UUID, $UUID$$Type} from "java.util.UUID"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$NeutralMob$$Interface} from "net.minecraft.world.entity.NeutralMob"
-import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$EntityDataAccessor$$Type} from "net.minecraft.network.syncher.EntityDataAccessor"
+import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$Monster} from "net.minecraft.world.entity.monster.Monster"
@@ -10158,10 +10158,10 @@ import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalRe
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
-import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 
@@ -10272,11 +10272,11 @@ static readonly "BASE_SAFE_FALL_DISTANCE": integer
 constructor(arg0: $EntityType$$Type<($EnderMan$$Type)>, arg1: $Level$$Type)
 
 public "requiresCustomPersistence"(): boolean
-public "setRemainingPersistentAngerTime"(arg0: integer): void
 public "startPersistentAngerTimer"(): void
 public "getRemainingPersistentAngerTime"(): integer
 public "setPersistentAngerTarget"(arg0: $UUID$$Type): void
 public "getPersistentAngerTarget"(): $UUID
+public "setRemainingPersistentAngerTime"(arg0: integer): void
 public "playStareSound"(): void
 public "hasBeenStaredAt"(): boolean
 public "getCarriedBlock"(): $BlockState
@@ -10293,10 +10293,10 @@ public "onSyncedDataUpdated"(arg0: $EntityDataAccessor$$Type<(never)>): void
 public static "createAttributes"(): $AttributeSupplier$Builder
 public "playerDied"(arg0: $Player$$Type): void
 public "isAngryAt"(arg0: $LivingEntity$$Type): boolean
-public "readPersistentAngerSaveData"(arg0: $Level$$Type, arg1: $CompoundTag$$Type): void
 public "updatePersistentAnger"(arg0: $ServerLevel$$Type, arg1: boolean): void
 public "addPersistentAngerSaveData"(arg0: $CompoundTag$$Type): void
 public "stopBeingAngry"(): void
+public "readPersistentAngerSaveData"(arg0: $Level$$Type, arg1: $CompoundTag$$Type): void
 public "isAngryAtAllPlayers"(arg0: $Level$$Type): boolean
 public "isAngry"(): boolean
 public "forgetCurrentTargetAndRefreshUniversalAnger"(): void
@@ -10326,10 +10326,10 @@ public static "dataOf"(arg0: $ChangeSubscriber$$Type<(never)>, arg1: $ChangeSubs
 public static "containsSubscriber"(arg0: $ChangeSubscriber$$Type<($ItemStack$$Type)>, arg1: integer, arg2: $ChangeSubscriber$$Type<($ItemStack$$Type)>, arg3: integer): boolean
 public static "forNameOnly"(arg0: StringJS): $ScoreHolder
 public static "fromGameProfile"(arg0: $GameProfile$$Type): $ScoreHolder
-set "remainingPersistentAngerTime"(value: integer)
 get "remainingPersistentAngerTime"(): integer
 set "persistentAngerTarget"(value: $UUID$$Type)
 get "persistentAngerTarget"(): $UUID
+set "remainingPersistentAngerTime"(value: integer)
 get "carriedBlock"(): $BlockState
 set "carriedBlock"(value: $BlockState$$Type)
 get "creepy"(): boolean
@@ -10354,8 +10354,8 @@ export type $EnderMan$$Type = ($EnderMan);
 export type $EnderMan$$Original = $EnderMan;}
 declare module "net.minecraft.world.entity.ai.memory.WalkTarget" {
 import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
-import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$PositionTracker, $PositionTracker$$Type} from "net.minecraft.world.entity.ai.behavior.PositionTracker"
 
 export class $WalkTarget {
@@ -10412,8 +10412,8 @@ export type $RangedAttribute$$Type = ($RangedAttribute);
 export type $RangedAttribute$$Original = $RangedAttribute;}
 declare module "net.minecraft.world.entity.player.StackedContents" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$Recipe$$Type} from "net.minecraft.world.item.crafting.Recipe"
 import {$RecipeHolder$$Type} from "net.minecraft.world.item.crafting.RecipeHolder"
+import {$Recipe$$Type} from "net.minecraft.world.item.crafting.Recipe"
 import {$IntList$$Type} from "it.unimi.dsi.fastutil.ints.IntList"
 import {$Int2IntMap} from "it.unimi.dsi.fastutil.ints.Int2IntMap"
 
@@ -10428,9 +10428,9 @@ public "accountSimpleStack"(arg0: $ItemStack$$Type): void
 public static "getStackingIndex"(arg0: $ItemStack$$Type): integer
 public "canCraft"(arg0: $Recipe$$Type<(never)>, arg1: $IntList$$Type): boolean
 public "canCraft"(arg0: $Recipe$$Type<(never)>, arg1: $IntList$$Type, arg2: integer): boolean
-public static "fromStackingIndex"(arg0: integer): $ItemStack
 public "getBiggestCraftableStack"(arg0: $RecipeHolder$$Type<(never)>, arg1: $IntList$$Type): integer
 public "getBiggestCraftableStack"(arg0: $RecipeHolder$$Type<(never)>, arg1: integer, arg2: $IntList$$Type): integer
+public static "fromStackingIndex"(arg0: integer): $ItemStack
 public "clear"(): void
 }
 /**
@@ -10443,8 +10443,8 @@ export type $StackedContents$$Type = ($StackedContents);
  */
 export type $StackedContents$$Original = $StackedContents;}
 declare module "net.minecraft.world.entity.player.ProfileKeyPair" {
-import {$ProfilePublicKey, $ProfilePublicKey$$Type} from "net.minecraft.world.entity.player.ProfilePublicKey"
 import {$Codec} from "com.mojang.serialization.Codec"
+import {$ProfilePublicKey, $ProfilePublicKey$$Type} from "net.minecraft.world.entity.player.ProfilePublicKey"
 import {$PrivateKey, $PrivateKey$$Type} from "java.security.PrivateKey"
 import {$Record} from "java.lang.Record"
 import {$Instant, $Instant$$Type} from "java.time.Instant"
@@ -10459,8 +10459,8 @@ public "publicKey"(): $ProfilePublicKey
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
-public "refreshedAfter"(): $Instant
 public "dueRefresh"(): boolean
+public "refreshedAfter"(): $Instant
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -10473,8 +10473,8 @@ export type $ProfileKeyPair$$Type = ({"refreshedAfter"?: $Instant$$Type, "public
 export type $ProfileKeyPair$$Original = $ProfileKeyPair;}
 declare module "net.minecraft.world.entity.vehicle.Boat" {
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
-import {$Optional} from "java.util.Optional"
 import {$IBoatExtension$$Interface} from "net.neoforged.neoforge.common.extensions.IBoatExtension"
+import {$Optional} from "java.util.Optional"
 import {$Direction} from "net.minecraft.core.Direction"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
@@ -10483,25 +10483,25 @@ import {$Leashable$LeashData, $Leashable$LeashData$$Type} from "net.minecraft.wo
 import {$Item} from "net.minecraft.world.item.Item"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
+import {$BlockUtil$FoundRectangle$$Type} from "net.minecraft.BlockUtil$FoundRectangle"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockUtil$FoundRectangle$$Type} from "net.minecraft.BlockUtil$FoundRectangle"
 import {$FluidType$$Type} from "net.neoforged.neoforge.fluids.FluidType"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Entity$RemovalReason, $Entity$RemovalReason$$Type} from "net.minecraft.world.entity.Entity$RemovalReason"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
-import {$Direction$Axis$$Type} from "net.minecraft.core.Direction$Axis"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
+import {$Direction$Axis$$Type} from "net.minecraft.core.Direction$Axis"
 import {$Leashable$$Interface} from "net.minecraft.world.entity.Leashable"
 import {$Boat$Type, $Boat$Type$$Type} from "net.minecraft.world.entity.vehicle.Boat$Type"
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
-import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
-import {$VehicleEntity} from "net.minecraft.world.entity.vehicle.VehicleEntity"
 import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
+import {$VehicleEntity} from "net.minecraft.world.entity.vehicle.VehicleEntity"
 import {$VariantHolder$$Interface} from "net.minecraft.world.entity.VariantHolder"
 
 export class $Boat extends $VehicleEntity implements $Leashable$$Interface, $VariantHolder$$Interface<($Boat$Type)>, $IBoatExtension$$Interface {
@@ -10576,13 +10576,13 @@ public "getRowingTime"(arg0: integer, arg1: float): float
 public "getGroundFriction"(): float
 public "getWaterLevelAbove"(): float
 public "getBubbleAngle"(arg0: float): float
-public "push"(arg0: $Entity$$Type): void
-public "setInput"(arg0: boolean, arg1: boolean, arg2: boolean, arg3: boolean): void
-public "getVariant"(): $Boat$Type
 public "tick"(): void
+public "getVariant"(): any
+public "setInput"(arg0: boolean, arg1: boolean, arg2: boolean, arg3: boolean): void
 public "setVariant"(arg0: $Boat$Type$$Type): void
 public "setVariant"(arg0: any): void
 public "remove"(arg0: $Entity$RemovalReason$$Type): void
+public "push"(arg0: $Entity$$Type): void
 public "interact"(arg0: $Player$$Type, arg1: $InteractionHand$$Type): $InteractionResult
 public "isUnderWater"(): boolean
 public "animateHurt"(arg0: float): void
@@ -10632,7 +10632,7 @@ set "leashData"(value: $Leashable$LeashData$$Type)
 get "dropItem"(): $Item
 get "groundFriction"(): float
 get "waterLevelAbove"(): float
-get "variant"(): $Boat$Type
+get "variant"(): any
 set "variant"(value: $Boat$Type$$Type)
 set "variant"(value: any)
 get "underWater"(): boolean
@@ -10701,11 +10701,11 @@ export type $EnderDragonPhase$$Type<T> = ($EnderDragonPhase<(T)>);
  */
 export type $EnderDragonPhase$$Original<T> = $EnderDragonPhase<(T)>;}
 declare module "net.minecraft.world.entity.SlotAccess" {
-import {$Container$$Type} from "net.minecraft.world.Container"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
+import {$Container$$Type} from "net.minecraft.world.Container"
 import {$Predicate$$Type} from "java.util.function.Predicate"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 
@@ -10740,11 +10740,11 @@ import {$ClientGamePacketListener} from "net.minecraft.network.protocol.game.Cli
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
-import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$Tag} from "net.minecraft.nbt.Tag"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$Entity} from "net.minecraft.world.entity.Entity"
 import {$ServerEntity$$Type} from "net.minecraft.server.level.ServerEntity"
 import {$PushReaction} from "net.minecraft.world.level.material.PushReaction"
@@ -10836,9 +10836,9 @@ import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInL
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$Tag} from "net.minecraft.nbt.Tag"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$Entity} from "net.minecraft.world.entity.Entity"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
 
@@ -10946,12 +10946,12 @@ export type $Attackable$$Type = (() => $LivingEntity$$Type);
 export type $Attackable$$Original = $Attackable;}
 declare module "net.minecraft.world.entity.ai.attributes.AttributeMap" {
 import {$AttributeModifier$$Type} from "net.minecraft.world.entity.ai.attributes.AttributeModifier"
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Collection} from "java.util.Collection"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Multimap$$Type} from "com.google.common.collect.Multimap"
 import {$Attribute$$Type} from "net.minecraft.world.entity.ai.attributes.Attribute"
-import {$Set} from "java.util.Set"
 import {$AttributeInstance} from "net.minecraft.world.entity.ai.attributes.AttributeInstance"
+import {$Set} from "java.util.Set"
 import {$AttributeSupplier$$Type} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier"
 import {$ListTag, $ListTag$$Type} from "net.minecraft.nbt.ListTag"
 import {$Holder$$Type} from "net.minecraft.core.Holder"
@@ -10960,10 +10960,10 @@ export class $AttributeMap {
 constructor(arg0: $AttributeSupplier$$Type)
 
 public "assignBaseValues"(arg0: $AttributeMap$$Type): void
-public "assignAllValues"(arg0: $AttributeMap$$Type): void
 public "getModifierValue"(arg0: $Holder$$Type<($Attribute)>, arg1: $ResourceLocation$$Type): double
 public "getSyncableAttributes"(): $Collection<($AttributeInstance)>
 public "getAttributesToSync"(): $Set<($AttributeInstance)>
+public "assignAllValues"(arg0: $AttributeMap$$Type): void
 public "hasAttribute"(arg0: $Holder$$Type<($Attribute)>): boolean
 public "load"(arg0: $ListTag$$Type): void
 public "getValue"(arg0: $Holder$$Type<($Attribute)>): double
@@ -11010,40 +11010,40 @@ declare module "net.minecraft.world.entity.boss.enderdragon.EnderDragon" {
 import {$MobEffectInstance$$Type} from "net.minecraft.world.effect.MobEffectInstance"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
-import {$EnderDragonPhaseManager} from "net.minecraft.world.entity.boss.enderdragon.phases.EnderDragonPhaseManager"
 import {$Path} from "net.minecraft.world.level.pathfinder.Path"
+import {$EnderDragonPhaseManager} from "net.minecraft.world.entity.boss.enderdragon.phases.EnderDragonPhaseManager"
 import {$Mob} from "net.minecraft.world.entity.Mob"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$Player} from "net.minecraft.world.entity.player.Player"
-import {$Vec3} from "net.minecraft.world.phys.Vec3"
 import {$PartEntity} from "net.neoforged.neoforge.entity.PartEntity"
+import {$Vec3} from "net.minecraft.world.phys.Vec3"
 import {$SoundSource} from "net.minecraft.sounds.SoundSource"
+import {$EntityDataAccessor, $EntityDataAccessor$$Type} from "net.minecraft.network.syncher.EntityDataAccessor"
 import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$ClientboundAddEntityPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundAddEntityPacket"
-import {$EntityDataAccessor, $EntityDataAccessor$$Type} from "net.minecraft.network.syncher.EntityDataAccessor"
 import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
-import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$Enemy$$Interface} from "net.minecraft.world.entity.monster.Enemy"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$InteractionHand} from "net.minecraft.world.InteractionHand"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
 import {$Node$$Type} from "net.minecraft.world.level.pathfinder.Node"
 import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
-import {$EnderDragonPart, $EnderDragonPart$$Type} from "net.minecraft.world.entity.boss.EnderDragonPart"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$EnderDragonPart, $EnderDragonPart$$Type} from "net.minecraft.world.entity.boss.EnderDragonPart"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
 import {$EndCrystal, $EndCrystal$$Type} from "net.minecraft.world.entity.boss.enderdragon.EndCrystal"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$EndDragonFight, $EndDragonFight$$Type} from "net.minecraft.world.level.dimension.end.EndDragonFight"
 
@@ -11272,11 +11272,11 @@ constructor(arg0: $Component$$Type, arg1: integer, arg2: $Display$IntInterpolato
 public "backgroundColor"(): $Display$IntInterpolator
 public "textOpacity"(): $Display$IntInterpolator
 public "lineWidth"(): integer
+public "text"(): $Component
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "flags"(): byte
 public "hashCode"(): integer
-public "text"(): $Component
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -11297,9 +11297,9 @@ import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$Tag} from "net.minecraft.nbt.Tag"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$Entity} from "net.minecraft.world.entity.Entity"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
 
@@ -11395,15 +11395,15 @@ import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
-import {$ShulkerAccess$$Interface} from "me.desht.pneumaticcraft.mixin.accessors.ShulkerAccess"
 import {$MoverType$$Type} from "net.minecraft.world.entity.MoverType"
+import {$ShulkerAccess$$Interface} from "me.desht.pneumaticcraft.mixin.accessors.ShulkerAccess"
 import {$Player} from "net.minecraft.world.entity.player.Player"
 import {$MobSpawnType$$Type} from "net.minecraft.world.entity.MobSpawnType"
 import {$Vec3, $Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$SoundSource} from "net.minecraft.sounds.SoundSource"
-import {$ClientboundAddEntityPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundAddEntityPacket"
-import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$EntityDataAccessor$$Type} from "net.minecraft.network.syncher.EntityDataAccessor"
+import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
+import {$ClientboundAddEntityPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundAddEntityPacket"
 import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState"
 import {$DyeColor, $DyeColor$$Type} from "net.minecraft.world.item.DyeColor"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
@@ -11424,11 +11424,11 @@ import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Prov
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$ServerLevelAccessor$$Type} from "net.minecraft.world.level.ServerLevelAccessor"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$Tag} from "net.minecraft.nbt.Tag"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
+import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$AABB} from "net.minecraft.world.phys.AABB"
 import {$VariantHolder$$Interface} from "net.minecraft.world.entity.VariantHolder"
@@ -11548,12 +11548,12 @@ public "getAttachFace"(): $Direction
 public "getClientPeekAmount"(arg0: float): float
 public "getRenderPosition"(arg0: float): $Optional<($Vec3)>
 public "callSetRawPeekAmount"(arg0: integer): void
-public "push"(arg0: $Entity$$Type): void
-public "move"(arg0: $MoverType$$Type, arg1: $Vec3$$Type): void
-public "getVariant"(): any
 public "tick"(): void
+public "move"(arg0: $MoverType$$Type, arg1: $Vec3$$Type): void
+public "getVariant"(): $Optional<($DyeColor)>
 public "setVariant"(arg0: ($DyeColor$$Type)?): void
 public "setVariant"(arg0: any): void
+public "push"(arg0: $Entity$$Type): void
 public "finalizeSpawn"(arg0: $ServerLevelAccessor$$Type, arg1: $DifficultyInstance$$Type, arg2: $MobSpawnType$$Type, arg3: $SpawnGroupData$$Type): $SpawnGroupData
 public "getColor"(): $DyeColor
 public "attack"(arg0: $DamageSource$$Type, arg1: float): boolean
@@ -11594,7 +11594,7 @@ public static "fromGameProfile"(arg0: $GameProfile$$Type): $ScoreHolder
 get "maxHeadYRot"(): integer
 get "maxHeadXRot"(): integer
 get "attachFace"(): $Direction
-get "variant"(): any
+get "variant"(): $Optional<($DyeColor)>
 set "variant"(value: ($DyeColor$$Type)?)
 set "variant"(value: any)
 get "color"(): $DyeColor
@@ -11643,12 +11643,12 @@ import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalRe
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
-import {$Item$$Type} from "net.minecraft.world.item.Item"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
+import {$Item$$Type} from "net.minecraft.world.item.Item"
 import {$Tag} from "net.minecraft.nbt.Tag"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$Entity} from "net.minecraft.world.entity.Entity"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
 
@@ -11741,8 +11741,8 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
 export class $Display$TextDisplay$Align extends $Enum<($Display$TextDisplay$Align)> implements $StringRepresentable$$Interface {
@@ -11755,11 +11755,11 @@ public static "values"(): ($Display$TextDisplay$Align)[]
 public static "valueOf"(arg0: StringJS): $Display$TextDisplay$Align
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
 }
@@ -11777,8 +11777,8 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
 export class $Rabbit$Variant extends $Enum<($Rabbit$Variant)> implements $StringRepresentable$$Interface {
@@ -11797,11 +11797,11 @@ public "id"(): integer
 public "getSerializedName"(): StringJS
 public static "byId"(arg0: integer): $Rabbit$Variant
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
 }
@@ -11846,8 +11846,8 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
 export class $Variant extends $Enum<($Variant)> implements $StringRepresentable$$Interface {
@@ -11866,11 +11866,11 @@ public "getId"(): integer
 public "getSerializedName"(): StringJS
 public static "byId"(arg0: integer): $Variant
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "id"(): integer
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
@@ -11888,20 +11888,20 @@ declare module "net.minecraft.world.entity.animal.Ocelot" {
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
-import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$MobSpawnType$$Type} from "net.minecraft.world.entity.MobSpawnType"
-import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
+import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Animal} from "net.minecraft.world.entity.animal.Animal"
 import {$Vec3} from "net.minecraft.world.phys.Vec3"
+import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
-import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
+import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$InteractionHand, $InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$SpawnGroupData, $SpawnGroupData$$Type} from "net.minecraft.world.entity.SpawnGroupData"
@@ -11909,15 +11909,15 @@ import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.li
 import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Consumer$$Type} from "java.util.function.Consumer"
-import {$AgeableMob, $AgeableMob$$Type} from "net.minecraft.world.entity.AgeableMob"
 import {$ServerLevelAccessor$$Type} from "net.minecraft.world.level.ServerLevelAccessor"
+import {$AgeableMob, $AgeableMob$$Type} from "net.minecraft.world.entity.AgeableMob"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
-import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
@@ -12115,9 +12115,9 @@ import {$EntityDataAccessor$$Type} from "net.minecraft.network.syncher.EntityDat
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$Tag} from "net.minecraft.nbt.Tag"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$Display$ItemDisplay$ItemRenderState} from "net.minecraft.world.entity.Display$ItemDisplay$ItemRenderState"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
 
@@ -12219,9 +12219,9 @@ import {$AbstractMinecart} from "net.minecraft.world.entity.vehicle.AbstractMine
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$Tag} from "net.minecraft.nbt.Tag"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$AbstractMinecart$Type} from "net.minecraft.world.entity.vehicle.AbstractMinecart$Type"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
 
@@ -12347,10 +12347,10 @@ import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$Monster} from "net.minecraft.world.entity.monster.Monster"
 import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
-import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
+import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$InteractionHand} from "net.minecraft.world.InteractionHand"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
@@ -12358,10 +12358,10 @@ import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalRe
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 
@@ -12538,13 +12538,13 @@ import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Prov
 import {$RangedAttackMob$$Interface} from "net.minecraft.world.entity.monster.RangedAttackMob"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
-import {$PowerableMob$$Interface} from "net.minecraft.world.entity.PowerableMob"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$PowerableMob$$Interface} from "net.minecraft.world.entity.PowerableMob"
 import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 
 export class $WitherBoss extends $Monster implements $PowerableMob$$Interface, $RangedAttackMob$$Interface {
 static readonly "MAX_WEARING_ARMOR_CHANCE": float
@@ -12720,8 +12720,8 @@ declare module "net.minecraft.world.entity.monster.Bogged" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$List} from "java.util.List"
-import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$Shearable$$Interface} from "net.minecraft.world.entity.Shearable"
+import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$SoundSource$$Type} from "net.minecraft.sounds.SoundSource"
 import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
@@ -12729,22 +12729,22 @@ import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
-import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
+import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$InteractionHand} from "net.minecraft.world.InteractionHand"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
+import {$CallbackInfoReturnable$$Type} from "org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable"
 import {$AbstractSkeleton} from "net.minecraft.world.entity.monster.AbstractSkeleton"
 import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
-import {$CallbackInfoReturnable$$Type} from "org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Consumer$$Type} from "java.util.function.Consumer"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
-import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 
 export class $Bogged extends $AbstractSkeleton implements $Shearable$$Interface {
@@ -12861,8 +12861,8 @@ public "setSheared"(arg0: boolean): void
 public "addAdditionalSaveData"(arg0: $CompoundTag$$Type): void
 public "readAdditionalSaveData"(arg0: $CompoundTag$$Type): void
 public static "createAttributes"(): $AttributeSupplier$Builder
-public "onSheared"(arg0: $Player$$Type, arg1: $ItemStack$$Type, arg2: $Level$$Type, arg3: $BlockPos$$Type): $List<($ItemStack)>
 public "isShearable"(arg0: $Player$$Type, arg1: $ItemStack$$Type, arg2: $Level$$Type, arg3: $BlockPos$$Type): boolean
+public "onSheared"(arg0: $Player$$Type, arg1: $ItemStack$$Type, arg2: $Level$$Type, arg3: $BlockPos$$Type): $List<($ItemStack)>
 public "handler$cik000$apothic_enchanting$apoth_handleShearFortune"(arg0: $Player$$Type, arg1: $ItemStack$$Type, arg2: $Level$$Type, arg3: $BlockPos$$Type, arg4: $CallbackInfoReturnable$$Type): void
 public "handler$cik000$apothic_enchanting$apoth_handleShearEnchantments"(arg0: $Player$$Type, arg1: $ItemStack$$Type, arg2: $Level$$Type, arg3: $BlockPos$$Type, arg4: $CallbackInfoReturnable$$Type): void
 public "spawnShearedDrop"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $ItemStack$$Type): void
@@ -12908,8 +12908,8 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 import {$IntFunction} from "java.util.function.IntFunction"
 
@@ -12925,11 +12925,11 @@ public static "values"(): ($Display$BillboardConstraints)[]
 public static "valueOf"(arg0: StringJS): $Display$BillboardConstraints
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
 }
@@ -12943,8 +12943,8 @@ export type $Display$BillboardConstraints$$Type = (("fixed") | ("vertical") | ("
  */
 export type $Display$BillboardConstraints$$Original = $Display$BillboardConstraints;}
 declare module "net.minecraft.world.entity.animal.axolotl.Axolotl" {
-import {$Brain} from "net.minecraft.world.entity.ai.Brain"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$Brain} from "net.minecraft.world.entity.ai.Brain"
 import {$Optional} from "java.util.Optional"
 import {$Mob$$Type} from "net.minecraft.world.entity.Mob"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
@@ -12954,8 +12954,8 @@ import {$LerpingModel$$Interface} from "net.minecraft.world.entity.LerpingModel"
 import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$MobSpawnType$$Type} from "net.minecraft.world.entity.MobSpawnType"
 import {$Animal} from "net.minecraft.world.entity.animal.Animal"
-import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
+import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
@@ -12977,13 +12977,13 @@ import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Prov
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$ServerLevelAccessor$$Type} from "net.minecraft.world.level.ServerLevelAccessor"
 import {$AgeableMob, $AgeableMob$$Type} from "net.minecraft.world.entity.AgeableMob"
-import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
+import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
-import {$Tag} from "net.minecraft.nbt.Tag"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
+import {$Tag} from "net.minecraft.nbt.Tag"
 import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
@@ -13233,8 +13233,8 @@ export class $TargetingConditions {
 static readonly "DEFAULT": $TargetingConditions
 
 public static "forCombat"(): $TargetingConditions
-public "ignoreLineOfSight"(): $TargetingConditions
 public static "forNonCombat"(): $TargetingConditions
+public "ignoreLineOfSight"(): $TargetingConditions
 public "ignoreInvisibilityTesting"(): $TargetingConditions
 public "selector"(arg0: $Predicate$$Type<($LivingEntity)>): $TargetingConditions
 public "test"(arg0: $LivingEntity$$Type, arg1: $LivingEntity$$Type): boolean
@@ -13286,10 +13286,10 @@ declare module "net.minecraft.world.entity.animal.Panda" {
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
-import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$MobSpawnType$$Type} from "net.minecraft.world.entity.MobSpawnType"
-import {$Pose$$Type} from "net.minecraft.world.entity.Pose"
+import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Animal} from "net.minecraft.world.entity.animal.Animal"
+import {$Pose$$Type} from "net.minecraft.world.entity.Pose"
 import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
@@ -13298,25 +13298,25 @@ import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$Panda$Gene, $Panda$Gene$$Type} from "net.minecraft.world.entity.animal.Panda$Gene"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
-import {$InteractionHand, $InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$EntityDimensions} from "net.minecraft.world.entity.EntityDimensions"
+import {$InteractionHand, $InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$SpawnGroupData, $SpawnGroupData$$Type} from "net.minecraft.world.entity.SpawnGroupData"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
 import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Consumer$$Type} from "java.util.function.Consumer"
-import {$AgeableMob, $AgeableMob$$Type} from "net.minecraft.world.entity.AgeableMob"
 import {$ServerLevelAccessor$$Type} from "net.minecraft.world.level.ServerLevelAccessor"
+import {$AgeableMob, $AgeableMob$$Type} from "net.minecraft.world.entity.AgeableMob"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
-import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 
@@ -13441,6 +13441,7 @@ public "getRollAmount"(arg0: float): float
 public "isRolling"(): boolean
 public "isEating"(): boolean
 public "isSitting"(): boolean
+public "getMainGene"(): $Panda$Gene
 public "getUnhappyCounter"(): integer
 public "setUnhappyCounter"(arg0: integer): void
 public "isSneezing"(): boolean
@@ -13449,7 +13450,6 @@ public "isOnBack"(): boolean
 public "setOnBack"(arg0: boolean): void
 public "setSneezeCounter"(arg0: integer): void
 public "getSneezeCounter"(): integer
-public "getMainGene"(): $Panda$Gene
 public "setMainGene"(arg0: $Panda$Gene$$Type): void
 public "getHiddenGene"(): $Panda$Gene
 public "setHiddenGene"(arg0: $Panda$Gene$$Type): void
@@ -13461,10 +13461,10 @@ public "isBrown"(): boolean
 public "isWeak"(): boolean
 public "getSitAmount"(arg0: float): float
 public "getLieOnBackAmount"(arg0: float): float
-public "setAttributes"(): void
-public "getVariant"(): $Panda$Gene
-public "roll"(arg0: boolean): void
 public "tick"(): void
+public "roll"(arg0: boolean): void
+public "getVariant"(): $Panda$Gene
+public "setAttributes"(): void
 public "finalizeSpawn"(arg0: $ServerLevelAccessor$$Type, arg1: $DifficultyInstance$$Type, arg2: $MobSpawnType$$Type, arg3: $SpawnGroupData$$Type): $SpawnGroupData
 public "attack"(arg0: $DamageSource$$Type, arg1: float): boolean
 public "addAdditionalSaveData"(arg0: $CompoundTag$$Type): void
@@ -13501,6 +13501,7 @@ get "scared"(): boolean
 get "rolling"(): boolean
 get "eating"(): boolean
 get "sitting"(): boolean
+get "mainGene"(): $Panda$Gene
 get "unhappyCounter"(): integer
 set "unhappyCounter"(value: integer)
 get "sneezing"(): boolean
@@ -13508,7 +13509,6 @@ get "onBack"(): boolean
 set "onBack"(value: boolean)
 set "sneezeCounter"(value: integer)
 get "sneezeCounter"(): integer
-get "mainGene"(): $Panda$Gene
 set "mainGene"(value: $Panda$Gene$$Type)
 get "hiddenGene"(): $Panda$Gene
 set "hiddenGene"(value: $Panda$Gene$$Type)
@@ -13517,8 +13517,8 @@ get "worried"(): boolean
 get "playful"(): boolean
 get "brown"(): boolean
 get "weak"(): boolean
-get "attributes"(): void
 get "variant"(): $Panda$Gene
+get "attributes"(): void
 set "lookupToggle"(value: boolean)
 get "lookupToggle"(): boolean
 }
@@ -13546,18 +13546,18 @@ import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$WitchAccess$$Interface} from "me.desht.pneumaticcraft.mixin.accessors.WitchAccess"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$InteractionHand} from "net.minecraft.world.InteractionHand"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
 import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$RangedAttackMob$$Interface} from "net.minecraft.world.entity.monster.RangedAttackMob"
 import {$Consumer$$Type} from "java.util.function.Consumer"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 
@@ -13722,35 +13722,35 @@ import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
 import {$Player} from "net.minecraft.world.entity.player.Player"
 import {$MobSpawnType$$Type} from "net.minecraft.world.entity.MobSpawnType"
-import {$Pose$$Type} from "net.minecraft.world.entity.Pose"
 import {$Animal} from "net.minecraft.world.entity.animal.Animal"
 import {$Vec3} from "net.minecraft.world.phys.Vec3"
+import {$Pose$$Type} from "net.minecraft.world.entity.Pose"
 import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
-import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
+import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$Fox$Type, $Fox$Type$$Type} from "net.minecraft.world.entity.animal.Fox$Type"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
-import {$InteractionHand} from "net.minecraft.world.InteractionHand"
 import {$EntityDimensions} from "net.minecraft.world.entity.EntityDimensions"
+import {$InteractionHand} from "net.minecraft.world.InteractionHand"
 import {$SpawnGroupData, $SpawnGroupData$$Type} from "net.minecraft.world.entity.SpawnGroupData"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
 import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Consumer$$Type} from "java.util.function.Consumer"
-import {$AgeableMob$$Type} from "net.minecraft.world.entity.AgeableMob"
 import {$ServerLevelAccessor$$Type} from "net.minecraft.world.level.ServerLevelAccessor"
+import {$AgeableMob$$Type} from "net.minecraft.world.entity.AgeableMob"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
-import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
@@ -13886,8 +13886,8 @@ public "getHeadRollAngle"(arg0: float): float
 public "getCrouchAmount"(arg0: float): float
 public "trusts"(arg0: $UUID$$Type): boolean
 public static "isPathClear"(arg0: $Fox$$Type, arg1: $LivingEntity$$Type): boolean
-public "getVariant"(): $Fox$Type
 public "tick"(): void
+public "getVariant"(): any
 public "setVariant"(arg0: $Fox$Type$$Type): void
 public "setVariant"(arg0: any): void
 public "setTarget"(arg0: $LivingEntity$$Type): void
@@ -13931,7 +13931,7 @@ get "faceplanted"(): boolean
 get "interested"(): boolean
 get "pouncing"(): boolean
 get "fullyCrouched"(): boolean
-get "variant"(): $Fox$Type
+get "variant"(): any
 set "variant"(value: $Fox$Type$$Type)
 set "variant"(value: any)
 set "target"(value: $LivingEntity$$Type)
@@ -13980,8 +13980,8 @@ constructor()
 public "canContinueToUse"(): boolean
 public "isInterruptable"(): boolean
 public "requiresUpdateEveryTick"(): boolean
-public "getFlags"(): $EnumSet<($Goal$Flag)>
 public "tick"(): void
+public "getFlags"(): $EnumSet<($Goal$Flag)>
 public "toString"(): StringJS
 public "start"(): void
 public "stop"(): void
@@ -14047,8 +14047,8 @@ import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.Liv
 import {$Sensor} from "net.minecraft.world.entity.ai.sensing.Sensor"
 
 export class $GolemSensor extends $Sensor<($LivingEntity)> {
-constructor()
 constructor(arg0: integer)
+constructor()
 
 public static "golemDetected"(arg0: $LivingEntity$$Type): void
 public static "checkForNearbyGolem"(arg0: $LivingEntity$$Type): void
@@ -14075,13 +14075,13 @@ import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$Tag} from "net.minecraft.nbt.Tag"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$AbstractMinecart$Type} from "net.minecraft.world.entity.vehicle.AbstractMinecart$Type"
-import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $MinecartTNT extends $AbstractMinecart {
  "hasImpulse": boolean
@@ -14295,8 +14295,8 @@ import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
-import {$ItemEntityAccess$$Interface} from "me.desht.pneumaticcraft.mixin.accessors.ItemEntityAccess"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
+import {$ItemEntityAccess$$Interface} from "me.desht.pneumaticcraft.mixin.accessors.ItemEntityAccess"
 import {$SlotAccess} from "net.minecraft.world.entity.SlotAccess"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
 import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
@@ -14304,8 +14304,8 @@ import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Prov
 import {$ChangeSubscriber$CountChangeSubscriber$$Interface} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber$CountChangeSubscriber"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$ItemEntityKJS$$Interface} from "dev.latvian.mods.kubejs.core.ItemEntityKJS"
 import {$ChangePublisher$$Interface} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangePublisher"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
@@ -14384,8 +14384,8 @@ public "getSpin"(arg0: float): float
 public "lithium$unsubscribe"(arg0: $ChangeSubscriber$$Type): integer
 public "artifacts$wasThrownBy"(entity: $LivingEntity$$Type): boolean
 public "lithium$getOwner"(): $UUID
-public "getItem"(): $ItemStack
 public "tick"(): void
+public "getItem"(): $ItemStack
 public "getName"(): $Component
 public static "merge"(arg0: $ItemStack$$Type, arg1: $ItemStack$$Type, arg2: integer): $ItemStack
 public "copy"(): $ItemEntity
@@ -14394,12 +14394,12 @@ public "getTarget"(): $UUID
 public "setTarget"(arg0: $UUID$$Type): void
 public "getOwner"(): $Entity
 public "getAge"(): integer
-public "artifacts$setThrower"(entity: $LivingEntity$$Type): void
 public "attack"(arg0: $DamageSource$$Type, arg1: float): boolean
 public "fireImmune"(): boolean
 public "getSoundSource"(): $SoundSource
 public "addAdditionalSaveData"(arg0: $CompoundTag$$Type): void
 public "readAdditionalSaveData"(arg0: $CompoundTag$$Type): void
+public "artifacts$setThrower"(entity: $LivingEntity$$Type): void
 public "getBlockPosBelowThatAffectsMyMovement"(): $BlockPos
 public "onSyncedDataUpdated"(arg0: $EntityDataAccessor$$Type<(never)>): void
 public "getVisualRotationYInDegrees"(): float
@@ -14500,8 +14500,8 @@ export type $IsInWaterSensor$$Type = ($IsInWaterSensor);
 export type $IsInWaterSensor$$Original = $IsInWaterSensor;}
 declare module "net.minecraft.world.entity.ai.gossip.GossipContainer" {
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
-import {$Object2IntMap} from "it.unimi.dsi.fastutil.objects.Object2IntMap"
 import {$Map} from "java.util.Map"
+import {$Object2IntMap} from "it.unimi.dsi.fastutil.objects.Object2IntMap"
 import {$DynamicOps$$Type} from "com.mojang.serialization.DynamicOps"
 import {$UUID, $UUID$$Type} from "java.util.UUID"
 import {$Predicate$$Type} from "java.util.function.Predicate"
@@ -14518,13 +14518,13 @@ public "getReputation"(arg0: $UUID$$Type, arg1: $Predicate$$Type<($GossipType)>)
 public "decay"(): void
 public "getGossipEntries"(): $Map<($UUID), ($Object2IntMap<($GossipType)>)>
 public "getCountForType"(arg0: $GossipType$$Type, arg1: $DoublePredicate$$Type): long
-public "transferFrom"(arg0: $GossipContainer$$Type, arg1: $RandomSource$$Type, arg2: integer): void
 public "remove"(arg0: $UUID$$Type, arg1: $GossipType$$Type, arg2: integer): void
 public "remove"(arg0: $UUID$$Type, arg1: $GossipType$$Type): void
 public "remove"(arg0: $GossipType$$Type): void
 public "update"(arg0: $Dynamic$$Type<(never)>): void
 public "store"<T>(arg0: $DynamicOps$$Type<(T)>): T
 public "add"(arg0: $UUID$$Type, arg1: $GossipType$$Type, arg2: integer): void
+public "transferFrom"(arg0: $GossipContainer$$Type, arg1: $RandomSource$$Type, arg2: integer): void
 get "gossipEntries"(): $Map<($UUID), ($Object2IntMap<($GossipType)>)>
 }
 /**
@@ -14545,8 +14545,8 @@ import {$Player} from "net.minecraft.world.entity.player.Player"
 import {$MobSpawnType$$Type} from "net.minecraft.world.entity.MobSpawnType"
 import {$Pose$$Type} from "net.minecraft.world.entity.Pose"
 import {$SoundSource} from "net.minecraft.sounds.SoundSource"
-import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$EntityDataAccessor$$Type} from "net.minecraft.network.syncher.EntityDataAccessor"
+import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
@@ -14554,11 +14554,11 @@ import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$Enemy$$Interface} from "net.minecraft.world.entity.monster.Enemy"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
-import {$InteractionHand} from "net.minecraft.world.InteractionHand"
 import {$EntityDimensions} from "net.minecraft.world.entity.EntityDimensions"
+import {$InteractionHand} from "net.minecraft.world.InteractionHand"
 import {$SpawnGroupData, $SpawnGroupData$$Type} from "net.minecraft.world.entity.SpawnGroupData"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
 import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
@@ -14566,9 +14566,9 @@ import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Prov
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$ServerLevelAccessor$$Type} from "net.minecraft.world.level.ServerLevelAccessor"
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
-import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 
 export class $Phantom extends $FlyingMob implements $Enemy$$Interface {
@@ -14732,13 +14732,13 @@ export type $Phantom$$Type = ($Phantom);
  */
 export type $Phantom$$Original = $Phantom;}
 declare module "net.minecraft.world.entity.monster.Zoglin" {
-import {$Brain} from "net.minecraft.world.entity.ai.Brain"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$Brain} from "net.minecraft.world.entity.ai.Brain"
 import {$Optional} from "java.util.Optional"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$Player} from "net.minecraft.world.entity.player.Player"
-import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$EntityDataAccessor$$Type} from "net.minecraft.network.syncher.EntityDataAccessor"
+import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$Monster} from "net.minecraft.world.entity.monster.Monster"
@@ -14747,8 +14747,8 @@ import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$Enemy$$Interface} from "net.minecraft.world.entity.monster.Enemy"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$HoglinBase$$Interface} from "net.minecraft.world.entity.monster.hoglin.HoglinBase"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$InteractionHand} from "net.minecraft.world.InteractionHand"
@@ -14757,10 +14757,10 @@ import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalRe
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
-import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 
 export class $Zoglin extends $Monster implements $Enemy$$Interface, $HoglinBase$$Interface {
@@ -14929,8 +14929,8 @@ declare module "net.minecraft.world.entity.ai.attributes.AttributeModifier" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
-import {$AttributeModifier$Operation, $AttributeModifier$Operation$$Type} from "net.minecraft.world.entity.ai.attributes.AttributeModifier$Operation"
 import {$Codec} from "com.mojang.serialization.Codec"
+import {$AttributeModifier$Operation, $AttributeModifier$Operation$$Type} from "net.minecraft.world.entity.ai.attributes.AttributeModifier$Operation"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$Record} from "java.lang.Record"
@@ -14968,8 +14968,8 @@ import {$CallbackInfo$$Type} from "org.spongepowered.asm.mixin.injection.callbac
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$Player} from "net.minecraft.world.entity.player.Player"
 import {$Level$ExplosionInteraction$$Type} from "net.minecraft.world.level.Level$ExplosionInteraction"
-import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$EntityDataAccessor} from "net.minecraft.network.syncher.EntityDataAccessor"
+import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$Monster} from "net.minecraft.world.entity.monster.Monster"
@@ -14978,8 +14978,8 @@ import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$IPartyCreeper$$Interface} from "net.mehvahdjukaar.supplementaries.common.entities.IPartyCreeper"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$InteractionHand} from "net.minecraft.world.InteractionHand"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
@@ -14987,14 +14987,14 @@ import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalRe
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
-import {$PowerableMob$$Interface} from "net.minecraft.world.entity.PowerableMob"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$PowerableMob$$Interface} from "net.minecraft.world.entity.PowerableMob"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$LightningBolt$$Type} from "net.minecraft.world.entity.LightningBolt"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 
 export class $Creeper extends $Monster implements $PowerableMob$$Interface, $IPartyCreeper$$Interface {
 static readonly "MAX_WEARING_ARMOR_CHANCE": float
@@ -15189,8 +15189,8 @@ import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Prov
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
-import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$OwnableEntity$$Interface} from "net.minecraft.world.entity.OwnableEntity"
 
@@ -15304,13 +15304,13 @@ public "isInSittingPose"(): boolean
 public "canBeLeashed"(): boolean
 public "handleLeashAtDistance"(arg0: $Entity$$Type, arg1: float): boolean
 public "getOwnerUUID"(): $UUID
-public "setInSittingPose"(arg0: boolean): void
-public "tryToTeleportToOwner"(): void
 public "setTame"(arg0: boolean, arg1: boolean): void
 public "isOrderedToSit"(): boolean
 public "setOrderedToSit"(arg0: boolean): void
 public "tame"(arg0: $Player$$Type): void
+public "setInSittingPose"(arg0: boolean): void
 public "wantsToAttack"(arg0: $LivingEntity$$Type, arg1: $LivingEntity$$Type): boolean
+public "tryToTeleportToOwner"(): void
 public "shouldTryTeleportToOwner"(): boolean
 public "unableToMoveToOwner"(): boolean
 public "isOwnedBy"(arg0: $LivingEntity$$Type): boolean
@@ -15347,9 +15347,9 @@ public static "forNameOnly"(arg0: StringJS): $ScoreHolder
 public static "fromGameProfile"(arg0: $GameProfile$$Type): $ScoreHolder
 get "inSittingPose"(): boolean
 get "ownerUUID"(): $UUID
-set "inSittingPose"(value: boolean)
 get "orderedToSit"(): boolean
 set "orderedToSit"(value: boolean)
+set "inSittingPose"(value: boolean)
 get "team"(): $PlayerTeam
 set "ownerUUID"(value: $UUID$$Type)
 get "owner"(): $LivingEntity
@@ -15366,14 +15366,14 @@ export type $TamableAnimal$$Type = ($TamableAnimal);
  */
 export type $TamableAnimal$$Original = $TamableAnimal;}
 declare module "net.minecraft.world.entity.ai.control.JumpControl" {
-import {$Control$$Interface} from "net.minecraft.world.entity.ai.control.Control"
 import {$Mob$$Type} from "net.minecraft.world.entity.Mob"
+import {$Control$$Interface} from "net.minecraft.world.entity.ai.control.Control"
 
 export class $JumpControl implements $Control$$Interface {
 constructor(arg0: $Mob$$Type)
 
-public "jump"(): void
 public "tick"(): void
+public "jump"(): void
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -15397,11 +15397,11 @@ import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
-import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$Zombie} from "net.minecraft.world.entity.monster.Zombie"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$InteractionHand} from "net.minecraft.world.InteractionHand"
 import {$SpawnGroupData, $SpawnGroupData$$Type} from "net.minecraft.world.entity.SpawnGroupData"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
@@ -15411,11 +15411,11 @@ import {$RangedAttackMob$$Interface} from "net.minecraft.world.entity.monster.Ra
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$ServerLevelAccessor$$Type} from "net.minecraft.world.level.ServerLevelAccessor"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
-import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 
 export class $Drowned extends $Zombie implements $RangedAttackMob$$Interface {
@@ -15583,18 +15583,18 @@ import {$List} from "java.util.List"
 import {$Mob$$Type} from "net.minecraft.world.entity.Mob"
 import {$AbstractSchoolingFish} from "net.minecraft.world.entity.animal.AbstractSchoolingFish"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
-import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$MobSpawnType$$Type} from "net.minecraft.world.entity.MobSpawnType"
+import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
-import {$DyeColor} from "net.minecraft.world.item.DyeColor"
 import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState"
+import {$DyeColor} from "net.minecraft.world.item.DyeColor"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
-import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
+import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$InteractionHand, $InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$SpawnGroupData, $SpawnGroupData$$Type} from "net.minecraft.world.entity.SpawnGroupData"
@@ -15606,14 +15606,14 @@ import {$ServerLevelAccessor$$Type} from "net.minecraft.world.level.ServerLevelA
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
-import {$TropicalFish$Pattern, $TropicalFish$Pattern$$Type} from "net.minecraft.world.entity.animal.TropicalFish$Pattern"
-import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
-import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
+import {$TropicalFish$Pattern, $TropicalFish$Pattern$$Type} from "net.minecraft.world.entity.animal.TropicalFish$Pattern"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
-import {$TropicalFish$Variant} from "net.minecraft.world.entity.animal.TropicalFish$Variant"
 import {$VariantHolder$$Interface} from "net.minecraft.world.entity.VariantHolder"
+import {$TropicalFish$Variant} from "net.minecraft.world.entity.animal.TropicalFish$Variant"
 
 export class $TropicalFish extends $AbstractSchoolingFish implements $VariantHolder$$Interface<($TropicalFish$Pattern)> {
 static readonly "MAX_WEARING_ARMOR_CHANCE": float
@@ -15733,8 +15733,8 @@ public static "getPredefinedName"(arg0: integer): StringJS
 public static "checkTropicalFishSpawnRules"(arg0: $EntityType$$Type<($TropicalFish$$Type)>, arg1: $LevelAccessor$$Type, arg2: $MobSpawnType$$Type, arg3: $BlockPos$$Type, arg4: $RandomSource$$Type): boolean
 public "getPatternColor"(): $DyeColor
 public static "getPatternColor"(arg0: integer): $DyeColor
-public "getVariant"(): any
 public static "getPattern"(arg0: integer): $TropicalFish$Pattern
+public "getVariant"(): $TropicalFish$Pattern
 public "setVariant"(arg0: any): void
 public "setVariant"(arg0: $TropicalFish$Pattern$$Type): void
 public "finalizeSpawn"(arg0: $ServerLevelAccessor$$Type, arg1: $DifficultyInstance$$Type, arg2: $MobSpawnType$$Type, arg3: $SpawnGroupData$$Type): $SpawnGroupData
@@ -15775,7 +15775,7 @@ public static "fromGameProfile"(arg0: $GameProfile$$Type): $ScoreHolder
 get "baseColor"(): $DyeColor
 get "bucketItemStack"(): $ItemStack
 get "patternColor"(): $DyeColor
-get "variant"(): any
+get "variant"(): $TropicalFish$Pattern
 set "variant"(value: any)
 set "variant"(value: $TropicalFish$Pattern$$Type)
 set "lookupToggle"(value: boolean)
@@ -15864,8 +15864,8 @@ export type $FrogVariant$$Type = (Special.FrogVariant) | ({"texture"?: $Resource
  */
 export type $FrogVariant$$Original = $FrogVariant;}
 declare module "net.minecraft.world.entity.boss.enderdragon.phases.DragonHoldingPatternPhase" {
-import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$EnderDragonPhase} from "net.minecraft.world.entity.boss.enderdragon.phases.EnderDragonPhase"
+import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Vec3} from "net.minecraft.world.phys.Vec3"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
 import {$EndCrystal$$Type} from "net.minecraft.world.entity.boss.enderdragon.EndCrystal"
@@ -15904,15 +15904,15 @@ import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$Explosion$$Type} from "net.minecraft.world.level.Explosion"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
-import {$AbstractHurtingProjectile} from "net.minecraft.world.entity.projectile.AbstractHurtingProjectile"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$AbstractHurtingProjectile} from "net.minecraft.world.entity.projectile.AbstractHurtingProjectile"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
-import {$Entity} from "net.minecraft.world.entity.Entity"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
+import {$Entity} from "net.minecraft.world.entity.Entity"
 import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -16019,21 +16019,21 @@ import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
-import {$InteractionHand} from "net.minecraft.world.InteractionHand"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$Spider} from "net.minecraft.world.entity.monster.Spider"
+import {$InteractionHand} from "net.minecraft.world.InteractionHand"
 import {$SpawnGroupData, $SpawnGroupData$$Type} from "net.minecraft.world.entity.SpawnGroupData"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
 import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$ServerLevelAccessor$$Type} from "net.minecraft.world.level.ServerLevelAccessor"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
-import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 
 export class $CaveSpider extends $Spider {
@@ -16207,8 +16207,8 @@ export class $Shearable implements $Shearable$$Interface {
  * @deprecated
  */
  "readyForShearing"(): boolean
- "onSheared"(arg0: $Player$$Type, arg1: $ItemStack$$Type, arg2: $Level$$Type, arg3: $BlockPos$$Type): $List<($ItemStack)>
  "isShearable"(arg0: $Player$$Type, arg1: $ItemStack$$Type, arg2: $Level$$Type, arg3: $BlockPos$$Type): boolean
+ "onSheared"(arg0: $Player$$Type, arg1: $ItemStack$$Type, arg2: $Level$$Type, arg3: $BlockPos$$Type): $List<($ItemStack)>
  "handler$cik000$apothic_enchanting$apoth_handleShearFortune"(arg0: $Player$$Type, arg1: $ItemStack$$Type, arg2: $Level$$Type, arg3: $BlockPos$$Type, arg4: $CallbackInfoReturnable$$Type): void
  "handler$cik000$apothic_enchanting$apoth_handleShearEnchantments"(arg0: $Player$$Type, arg1: $ItemStack$$Type, arg2: $Level$$Type, arg3: $BlockPos$$Type, arg4: $CallbackInfoReturnable$$Type): void
  "spawnShearedDrop"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $ItemStack$$Type): void
@@ -16360,13 +16360,13 @@ export type $Pose$$Type = (("standing") | ("fall_flying") | ("sleeping") | ("swi
  */
 export type $Pose$$Original = $Pose;}
 declare module "net.minecraft.world.entity.boss.enderdragon.phases.AbstractDragonPhaseInstance" {
-import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$EnderDragonPhase} from "net.minecraft.world.entity.boss.enderdragon.phases.EnderDragonPhase"
+import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Vec3} from "net.minecraft.world.phys.Vec3"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
 import {$EndCrystal$$Type} from "net.minecraft.world.entity.boss.enderdragon.EndCrystal"
-import {$EnderDragon$$Type} from "net.minecraft.world.entity.boss.enderdragon.EnderDragon"
 import {$DragonPhaseInstance, $DragonPhaseInstance$$Interface} from "net.minecraft.world.entity.boss.enderdragon.phases.DragonPhaseInstance"
+import {$EnderDragon$$Type} from "net.minecraft.world.entity.boss.enderdragon.EnderDragon"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 
 export class $AbstractDragonPhaseInstance implements $DragonPhaseInstance$$Interface {
@@ -16411,12 +16411,12 @@ import {$MinecartFurnaceAccessor$$Interface} from "com.simibubi.create.foundatio
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$Tag} from "net.minecraft.nbt.Tag"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$AbstractMinecart$Type} from "net.minecraft.world.entity.vehicle.AbstractMinecart$Type"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $MinecartFurnace extends $AbstractMinecart implements $MinecartFurnaceAccessor$$Interface {
  "hasImpulse": boolean
@@ -16513,10 +16513,10 @@ import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
-import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
+import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$InteractionHand} from "net.minecraft.world.InteractionHand"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
@@ -16527,8 +16527,8 @@ import {$ServerLevelAccessor$$Type} from "net.minecraft.world.level.ServerLevelA
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 
 export class $GlowSquid extends $Squid {
@@ -16734,8 +16734,8 @@ export type $ReputationEventType$$Type = ($ReputationEventType);
 export type $ReputationEventType$$Original = $ReputationEventType;}
 declare module "net.minecraft.world.entity.boss.enderdragon.phases.EnderDragonPhaseManager" {
 import {$EnderDragonPhase$$Type} from "net.minecraft.world.entity.boss.enderdragon.phases.EnderDragonPhase"
-import {$EnderDragon$$Type} from "net.minecraft.world.entity.boss.enderdragon.EnderDragon"
 import {$DragonPhaseInstance} from "net.minecraft.world.entity.boss.enderdragon.phases.DragonPhaseInstance"
+import {$EnderDragon$$Type} from "net.minecraft.world.entity.boss.enderdragon.EnderDragon"
 
 export class $EnderDragonPhaseManager {
 constructor(arg0: $EnderDragon$$Type)
@@ -16779,36 +16779,36 @@ import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$UUID, $UUID$$Type} from "java.util.UUID"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
-import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$MobSpawnType$$Type} from "net.minecraft.world.entity.MobSpawnType"
-import {$Pose$$Type} from "net.minecraft.world.entity.Pose"
+import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Animal} from "net.minecraft.world.entity.animal.Animal"
 import {$NeutralMob$$Interface} from "net.minecraft.world.entity.NeutralMob"
+import {$Pose$$Type} from "net.minecraft.world.entity.Pose"
 import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
-import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
+import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
-import {$InteractionHand} from "net.minecraft.world.InteractionHand"
 import {$EntityDimensions} from "net.minecraft.world.entity.EntityDimensions"
+import {$InteractionHand} from "net.minecraft.world.InteractionHand"
 import {$SpawnGroupData, $SpawnGroupData$$Type} from "net.minecraft.world.entity.SpawnGroupData"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
 import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Consumer$$Type} from "java.util.function.Consumer"
-import {$AgeableMob, $AgeableMob$$Type} from "net.minecraft.world.entity.AgeableMob"
 import {$ServerLevelAccessor$$Type} from "net.minecraft.world.level.ServerLevelAccessor"
+import {$AgeableMob, $AgeableMob$$Type} from "net.minecraft.world.entity.AgeableMob"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
-import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
-import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
@@ -16920,11 +16920,11 @@ static readonly "BASE_SAFE_FALL_DISTANCE": integer
 
 constructor(arg0: $EntityType$$Type<($PolarBear$$Type)>, arg1: $Level$$Type)
 
-public "setRemainingPersistentAngerTime"(arg0: integer): void
 public "startPersistentAngerTimer"(): void
 public "getRemainingPersistentAngerTime"(): integer
 public "setPersistentAngerTarget"(arg0: $UUID$$Type): void
 public "getPersistentAngerTarget"(): $UUID
+public "setRemainingPersistentAngerTime"(arg0: integer): void
 public "getBreedOffspring"(arg0: $ServerLevel$$Type, arg1: $AgeableMob$$Type): $AgeableMob
 public "isFood"(arg0: $ItemStack$$Type): boolean
 public "isStanding"(): boolean
@@ -16939,10 +16939,10 @@ public "getDefaultDimensions"(arg0: $Pose$$Type): $EntityDimensions
 public static "createAttributes"(): $AttributeSupplier$Builder
 public "playerDied"(arg0: $Player$$Type): void
 public "isAngryAt"(arg0: $LivingEntity$$Type): boolean
-public "readPersistentAngerSaveData"(arg0: $Level$$Type, arg1: $CompoundTag$$Type): void
 public "updatePersistentAnger"(arg0: $ServerLevel$$Type, arg1: boolean): void
 public "addPersistentAngerSaveData"(arg0: $CompoundTag$$Type): void
 public "stopBeingAngry"(): void
+public "readPersistentAngerSaveData"(arg0: $Level$$Type, arg1: $CompoundTag$$Type): void
 public "isAngryAtAllPlayers"(arg0: $Level$$Type): boolean
 public "isAngry"(): boolean
 public "forgetCurrentTargetAndRefreshUniversalAnger"(): void
@@ -16973,10 +16973,10 @@ public static "dataOf"(arg0: $ChangeSubscriber$$Type<(never)>, arg1: $ChangeSubs
 public static "containsSubscriber"(arg0: $ChangeSubscriber$$Type<($ItemStack$$Type)>, arg1: integer, arg2: $ChangeSubscriber$$Type<($ItemStack$$Type)>, arg3: integer): boolean
 public static "forNameOnly"(arg0: StringJS): $ScoreHolder
 public static "fromGameProfile"(arg0: $GameProfile$$Type): $ScoreHolder
-set "remainingPersistentAngerTime"(value: integer)
 get "remainingPersistentAngerTime"(): integer
 set "persistentAngerTarget"(value: $UUID$$Type)
 get "persistentAngerTarget"(): $UUID
+set "remainingPersistentAngerTime"(value: integer)
 get "standing"(): boolean
 set "standing"(value: boolean)
 get "angry"(): boolean
@@ -17025,11 +17025,11 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$TropicalFish$Base} from "net.minecraft.world.entity.animal.TropicalFish$Base"
-import {$Component} from "net.minecraft.network.chat.Component"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
+import {$Component} from "net.minecraft.network.chat.Component"
 
 export class $TropicalFish$Pattern extends $Enum<($TropicalFish$Pattern)> implements $StringRepresentable$$Interface {
 static readonly "CLAYFISH": $TropicalFish$Pattern
@@ -17054,11 +17054,11 @@ public "displayName"(): $Component
 public "getSerializedName"(): StringJS
 public static "byId"(arg0: integer): $TropicalFish$Pattern
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "packedId"(): integer
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
@@ -17073,8 +17073,8 @@ export type $TropicalFish$Pattern$$Type = (("kob") | ("sunstreak") | ("snooper")
  */
 export type $TropicalFish$Pattern$$Original = $TropicalFish$Pattern;}
 declare module "net.minecraft.world.entity.animal.allay.Allay" {
-import {$Brain} from "net.minecraft.world.entity.ai.Brain"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$Brain} from "net.minecraft.world.entity.ai.Brain"
 import {$Optional} from "java.util.Optional"
 import {$Mob$$Type} from "net.minecraft.world.entity.Mob"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
@@ -17109,10 +17109,10 @@ import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Prov
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
 import {$BiConsumer$$Type} from "java.util.function.BiConsumer"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 
@@ -17305,18 +17305,18 @@ import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$CallbackInfo$$Type} from "org.spongepowered.asm.mixin.injection.callback.CallbackInfo"
 import {$Level} from "net.minecraft.world.level.Level"
-import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$MobSpawnType$$Type} from "net.minecraft.world.entity.MobSpawnType"
+import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
-import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
+import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$InteractionHand, $InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
@@ -17327,11 +17327,11 @@ import {$AgeableMob, $AgeableMob$$Type} from "net.minecraft.world.entity.Ageable
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$ServerPlayer} from "net.minecraft.server.level.ServerPlayer"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 
 export class $Animal extends $AgeableMob {
@@ -17506,20 +17506,20 @@ import {$UUID, $UUID$$Type} from "java.util.UUID"
 import {$List} from "java.util.List"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$Animal} from "net.minecraft.world.entity.animal.Animal"
-import {$NeutralMob$$Interface} from "net.minecraft.world.entity.NeutralMob"
 import {$Vec3} from "net.minecraft.world.phys.Vec3"
+import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
+import {$NeutralMob$$Interface} from "net.minecraft.world.entity.NeutralMob"
 import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
-import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$FluidType$$Type} from "net.neoforged.neoforge.fluids.FluidType"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$InteractionHand} from "net.minecraft.world.InteractionHand"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
@@ -17528,13 +17528,13 @@ import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Prov
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$AgeableMob$$Type} from "net.minecraft.world.entity.AgeableMob"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
-import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$FlyingAnimal$$Interface} from "net.minecraft.world.entity.animal.FlyingAnimal"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 
 export class $Bee extends $Animal implements $NeutralMob$$Interface, $FlyingAnimal$$Interface {
 static readonly "MAX_WEARING_ARMOR_CHANCE": float
@@ -17654,19 +17654,19 @@ constructor(arg0: $EntityType$$Type<($Bee$$Type)>, arg1: $Level$$Type)
 
 public "getWalkTargetValue"(arg0: $BlockPos$$Type, arg1: $LevelReader$$Type): float
 public "getGoalSelector"(): $GoalSelector
-public "setRemainingPersistentAngerTime"(arg0: integer): void
 public "startPersistentAngerTimer"(): void
 public "getRemainingPersistentAngerTime"(): integer
 public "setPersistentAngerTarget"(arg0: $UUID$$Type): void
 public "getPersistentAngerTarget"(): $UUID
+public "setRemainingPersistentAngerTime"(arg0: integer): void
 public "getBreedOffspring"(arg0: $ServerLevel$$Type, arg1: $AgeableMob$$Type): $Bee
 public "isFood"(arg0: $ItemStack$$Type): boolean
+public "hasNectar"(): boolean
 public "setStayOutOfHiveCountdown"(arg0: integer): void
 public "hasSavedFlowerPos"(): boolean
 public "getSavedFlowerPos"(): $BlockPos
 public "setSavedFlowerPos"(arg0: $BlockPos$$Type): void
 public "dropOffNectar"(): void
-public "hasNectar"(): boolean
 public "setHivePos"(arg0: $BlockPos$$Type): void
 public "hasHive"(): boolean
 public "getHivePos"(): $BlockPos
@@ -17689,10 +17689,10 @@ public "isFlapping"(): boolean
 public "getLeashOffset"(): $Vec3
 public "playerDied"(arg0: $Player$$Type): void
 public "isAngryAt"(arg0: $LivingEntity$$Type): boolean
-public "readPersistentAngerSaveData"(arg0: $Level$$Type, arg1: $CompoundTag$$Type): void
 public "updatePersistentAnger"(arg0: $ServerLevel$$Type, arg1: boolean): void
 public "addPersistentAngerSaveData"(arg0: $CompoundTag$$Type): void
 public "stopBeingAngry"(): void
+public "readPersistentAngerSaveData"(arg0: $Level$$Type, arg1: $CompoundTag$$Type): void
 public "isAngryAtAllPlayers"(arg0: $Level$$Type): boolean
 public "isAngry"(): boolean
 public "forgetCurrentTargetAndRefreshUniversalAnger"(): void
@@ -17723,10 +17723,10 @@ public static "dataOf"(arg0: $ChangeSubscriber$$Type<(never)>, arg1: $ChangeSubs
 public static "containsSubscriber"(arg0: $ChangeSubscriber$$Type<($ItemStack$$Type)>, arg1: integer, arg2: $ChangeSubscriber$$Type<($ItemStack$$Type)>, arg3: integer): boolean
 public static "forNameOnly"(arg0: StringJS): $ScoreHolder
 public static "fromGameProfile"(arg0: $GameProfile$$Type): $ScoreHolder
-set "remainingPersistentAngerTime"(value: integer)
 get "remainingPersistentAngerTime"(): integer
 set "persistentAngerTarget"(value: $UUID$$Type)
 get "persistentAngerTarget"(): $UUID
+set "remainingPersistentAngerTime"(value: integer)
 set "stayOutOfHiveCountdown"(value: integer)
 get "savedFlowerPos"(): $BlockPos
 set "savedFlowerPos"(value: $BlockPos$$Type)
@@ -17851,15 +17851,15 @@ import {$DamageSources} from "net.minecraft.world.damagesource.DamageSources"
 import {$ProjectileDeflection} from "net.minecraft.world.entity.projectile.ProjectileDeflection"
 import {$Holder$$Type} from "net.minecraft.core.Holder"
 import {$Stream} from "java.util.stream.Stream"
-import {$EntityAccess$$Interface} from "me.desht.pneumaticcraft.mixin.accessors.EntityAccess"
+import {$EntityAccess$$Interface as $EntityAccess$0$$Interface} from "me.desht.pneumaticcraft.mixin.accessors.EntityAccess"
 import {$SoundAction$$Type} from "net.neoforged.neoforge.common.SoundAction"
 import {$Cullable$$Interface} from "dev.tr7zw.entityculling.versionless.access.Cullable"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$SlotAccess} from "net.minecraft.world.entity.SlotAccess"
 import {$Entity$RemovalReason, $Entity$RemovalReason$$Type} from "net.minecraft.world.entity.Entity$RemovalReason"
 import {$Nameable$$Interface} from "net.minecraft.world.Nameable"
-import {$EntityAccessor$$Interface as $EntityAccessor$3$$Interface} from "io.redspace.ironsspellbooks.mixin.EntityAccessor"
 import {$RandomSource} from "net.minecraft.util.RandomSource"
+import {$EntityAccessor$$Interface as $EntityAccessor$3$$Interface} from "io.redspace.ironsspellbooks.mixin.EntityAccessor"
 import {$Direction$Axis$$Type} from "net.minecraft.core.Direction$Axis"
 import {$ItemLike$$Type} from "net.minecraft.world.level.ItemLike"
 import {$BiConsumer$$Type} from "java.util.function.BiConsumer"
@@ -17868,9 +17868,9 @@ import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
 import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$AABB, $AABB$$Type} from "net.minecraft.world.phys.AABB"
-import {$EntityArrayList} from "dev.latvian.mods.kubejs.player.EntityArrayList"
 import {$CrashReportCategory$$Type} from "net.minecraft.CrashReportCategory"
-import {$EntityAccessor$$Interface as $EntityAccessor$1$$Interface} from "net.createmod.ponder.mixin.accessor.EntityAccessor"
+import {$EntityAccessor$$Interface as $EntityAccessor$2$$Interface} from "net.createmod.ponder.mixin.accessor.EntityAccessor"
+import {$EntityArrayList} from "dev.latvian.mods.kubejs.player.EntityArrayList"
 import {$RegistryAccess} from "net.minecraft.core.RegistryAccess"
 import {$EntityRenderer} from "net.minecraft.client.renderer.entity.EntityRenderer"
 import {$BiPredicate$$Type} from "java.util.function.BiPredicate"
@@ -17882,31 +17882,31 @@ import {$Explosion$$Type} from "net.minecraft.world.level.Explosion"
 import {$DimensionTransition$$Type} from "net.minecraft.world.level.portal.DimensionTransition"
 import {$Class$$Type} from "java.lang.Class"
 import {$PlayerTeam} from "net.minecraft.world.scores.PlayerTeam"
-import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
 import {$BlockUtil$FoundRectangle$$Type} from "net.minecraft.BlockUtil$FoundRectangle"
+import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$CommandSource$$Interface} from "net.minecraft.commands.CommandSource"
-import {$EntityAccessor$$Interface} from "net.caffeinemc.mods.lithium.mixin.block.hopper.EntityAccessor"
+import {$EntityAccessor$$Interface as $EntityAccessor$1$$Interface} from "net.caffeinemc.mods.lithium.mixin.block.hopper.EntityAccessor"
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
-import {$AccessorEntity$$Interface} from "top.theillusivec4.curios.mixin.core.AccessorEntity"
-import {$ChunkPos} from "net.minecraft.world.level.ChunkPos"
+import {$AccessorEntity$$Interface as $AccessorEntity$0$$Interface} from "top.theillusivec4.curios.mixin.core.AccessorEntity"
 import {$CustomPacketPayload$$Type} from "net.minecraft.network.protocol.common.custom.CustomPacketPayload"
+import {$ChunkPos} from "net.minecraft.world.level.ChunkPos"
 import {$AttachmentHolder} from "net.neoforged.neoforge.attachment.AttachmentHolder"
 import {$CallbackInfoReturnable$$Type} from "org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable"
 import {$Team$$Type} from "net.minecraft.world.scores.Team"
-import {$EntityAccess$$Interface as $EntityAccess$1$$Interface} from "net.minecraft.world.level.entity.EntityAccess"
 import {$MobCategory} from "net.minecraft.world.entity.MobCategory"
+import {$EntityAccess$$Interface as $EntityAccess$1$$Interface} from "net.minecraft.world.level.entity.EntityAccess"
 import {$TagKey$$Type} from "net.minecraft.tags.TagKey"
-import {$LightningBolt$$Type} from "net.minecraft.world.entity.LightningBolt"
 import {$GameProfile, $GameProfile$$Type} from "com.mojang.authlib.GameProfile"
+import {$LightningBolt$$Type} from "net.minecraft.world.entity.LightningBolt"
 import {$PushReaction} from "net.minecraft.world.level.material.PushReaction"
 import {$CommandSourceStack} from "net.minecraft.commands.CommandSourceStack"
 import {$Iterable} from "java.lang.Iterable"
 import {$Optional} from "java.util.Optional"
 import {$Projectile$$Type} from "net.minecraft.world.entity.projectile.Projectile"
 import {$SoundEvent, $SoundEvent$$Type} from "net.minecraft.sounds.SoundEvent"
-import {$EntityAccess$$Interface as $EntityAccess$0$$Interface} from "snownee.jade.mixin.EntityAccess"
 import {$MoverType$$Type} from "net.minecraft.world.entity.MoverType"
+import {$EntityAccess$$Interface} from "snownee.jade.mixin.EntityAccess"
 import {$SynchedEntityData$DataValue$$Type} from "net.minecraft.network.syncher.SynchedEntityData$DataValue"
 import {$PartEntity} from "net.neoforged.neoforge.entity.PartEntity"
 import {$RelativeMovement$$Type} from "net.minecraft.world.entity.RelativeMovement"
@@ -17914,10 +17914,10 @@ import {$GameEvent$$Type} from "net.minecraft.world.level.gameevent.GameEvent"
 import {$SoundSource} from "net.minecraft.sounds.SoundSource"
 import {$EntityDataAccessor$$Type} from "net.minecraft.network.syncher.EntityDataAccessor"
 import {$Set, $Set$$Type} from "java.util.Set"
-import {$FluidType, $FluidType$$Type} from "net.neoforged.neoforge.fluids.FluidType"
 import {$ServerEntity$$Type} from "net.minecraft.server.level.ServerEntity"
-import {$EntityType, $EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$FluidType, $FluidType$$Type} from "net.neoforged.neoforge.fluids.FluidType"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$EntityType, $EntityType$$Type} from "net.minecraft.world.entity.EntityType"
 import {$SyncedDataHolder$$Interface} from "net.minecraft.network.syncher.SyncedDataHolder"
 import {$HitResult, $HitResult$$Type} from "net.minecraft.world.phys.HitResult"
 import {$KubeRayTraceResult} from "dev.latvian.mods.kubejs.entity.KubeRayTraceResult"
@@ -17935,11 +17935,11 @@ import {$List$$Type} from "java.util.List"
 import {$Direction} from "net.minecraft.core.Direction"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
-import {$EntityAccessor$$Interface as $EntityAccessor$2$$Interface} from "dev.tr7zw.transition.mixin.EntityAccessor"
+import {$EntityAccessor$$Interface as $EntityAccessor$4$$Interface} from "dev.tr7zw.transition.mixin.EntityAccessor"
 import {$EntityAttachments} from "net.minecraft.world.entity.EntityAttachments"
 import {$Vec2} from "net.minecraft.world.phys.Vec2"
+import {$EntityAccessor$$Interface} from "net.mehvahdjukaar.supplementaries.mixins.EntityAccessor"
 import {$Vec3, $Vec3$$Type} from "net.minecraft.world.phys.Vec3"
-import {$EntityAccessor$$Interface as $EntityAccessor$0$$Interface} from "net.mehvahdjukaar.supplementaries.mixins.EntityAccessor"
 import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$ClientboundAddEntityPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundAddEntityPacket"
 import {$ScriptType} from "dev.latvian.mods.kubejs.script.ScriptType"
@@ -17949,24 +17949,24 @@ import {$DynamicGameEventListener$$Type} from "net.minecraft.world.level.gameeve
 import {$AttachmentType$$Type} from "net.neoforged.neoforge.attachment.AttachmentType"
 import {$Collection, $Collection$$Type} from "java.util.Collection"
 import {$EntityMethods$$Interface} from "forge.me.thosea.badoptimizations.interfaces.EntityMethods"
-import {$Predicate$$Type} from "java.util.function.Predicate"
 import {$EntityDimensions, $EntityDimensions$$Type} from "net.minecraft.world.entity.EntityDimensions"
+import {$Predicate$$Type} from "java.util.function.Predicate"
 import {$IEntityExtension$$Interface} from "net.neoforged.neoforge.common.extensions.IEntityExtension"
 import {$ItemEntity, $ItemEntity$$Type} from "net.minecraft.world.entity.item.ItemEntity"
 import {$BlockCachingEntity$$Interface} from "net.caffeinemc.mods.lithium.common.entity.pushable.BlockCachingEntity"
 import {$EntityCapability$$Type} from "net.neoforged.neoforge.capabilities.EntityCapability"
 import {$ClientGamePacketListener} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
-import {$EntityAccessor$$Interface as $EntityAccessor$4$$Interface} from "artifacts.mixin.accessors.EntityAccessor"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
+import {$EntityAccessor$$Interface as $EntityAccessor$0$$Interface} from "artifacts.mixin.accessors.EntityAccessor"
 import {$EntityInLevelCallback, $EntityInLevelCallback$$Type} from "net.minecraft.world.level.entity.EntityInLevelCallback"
-import {$AccessorEntity$$Interface as $AccessorEntity$0$$Interface} from "com.railwayteam.railways.mixin.client.AccessorEntity"
 import {$Tag, $Tag$$Type} from "net.minecraft.nbt.Tag"
+import {$AccessorEntity$$Interface} from "com.railwayteam.railways.mixin.client.AccessorEntity"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$EntityAnchorArgument$Anchor$$Type} from "net.minecraft.commands.arguments.EntityAnchorArgument$Anchor"
 import {$MinecraftServer} from "net.minecraft.server.MinecraftServer"
 
-export class $Entity extends $AttachmentHolder implements $SyncedDataHolder$$Interface, $Nameable$$Interface, $EntityAccess$1$$Interface, $CommandSource$$Interface, $ScoreHolder$$Interface, $IEntityExtension$$Interface, $AccessorEntity$0$$Interface, $EntityAccessor$0$$Interface, $AccessorEntity$$Interface, $ExtensionHolder$$Interface, $EntityAccessor$2$$Interface, $EntityKJS$$Interface, $EntityAccessor$$Interface, $BlockCachingEntity$$Interface, $EntityAccessor$4$$Interface, $EntityAccess$$Interface, $EntityAccess$0$$Interface, $EntityAccessor$1$$Interface, $EntityAccessor$3$$Interface, $Cullable$$Interface, $EntityMethods$$Interface {
+export class $Entity extends $AttachmentHolder implements $SyncedDataHolder$$Interface, $Nameable$$Interface, $EntityAccess$1$$Interface, $CommandSource$$Interface, $ScoreHolder$$Interface, $IEntityExtension$$Interface, $AccessorEntity$$Interface, $EntityAccessor$$Interface, $AccessorEntity$0$$Interface, $ExtensionHolder$$Interface, $EntityAccessor$4$$Interface, $EntityKJS$$Interface, $EntityAccessor$1$$Interface, $BlockCachingEntity$$Interface, $EntityAccessor$0$$Interface, $EntityAccess$0$$Interface, $EntityAccess$$Interface, $EntityAccessor$2$$Interface, $EntityAccessor$3$$Interface, $Cullable$$Interface, $EntityMethods$$Interface {
  "hasImpulse": boolean
  "tickCount": integer
  "noPhysics": boolean
@@ -18019,22 +18019,19 @@ static readonly "BASE_SAFE_FALL_DISTANCE": integer
 
 constructor(arg0: $EntityType$$Type<(never)>, arg1: $Level$$Type)
 
-public "getExtension"(key: any, type: $Class$$Type): any
-public "push"(arg0: $Entity$$Type): void
-public "addMotion"(arg0: double, arg1: double, arg2: double): void
-public "push"(arg0: $Vec3$$Type): void
-public "move"(arg0: $MoverType$$Type, arg1: $Vec3$$Type): void
-public "getPosition"(arg0: float): $Vec3
-public "setData"<T>(arg0: $AttachmentType$$Type<(T)>, arg1: T): T
-public "setTimeout"(): void
 public "tick"(): void
-public "getDimensions"(arg0: $Pose$$Type): $EntityDimensions
-public "hasPermissions"(arg0: integer): boolean
+public "setTimeout"(): void
 public "kill"(): void
+public "move"(arg0: $MoverType$$Type, arg1: $Vec3$$Type): void
+public "hasPermissions"(arg0: integer): boolean
 public "isSupportedBy"(arg0: $BlockPos$$Type): boolean
-public "setExtension"(key: any, value: any): void
-public "getY"(arg0: double): double
+public "setData"<T>(arg0: $AttachmentType$$Type<(T)>, arg1: T): T
 public "getY"(): double
+public "getY"(arg0: double): double
+public "getExtension"(key: any, type: $Class$$Type): any
+public "getDimensions"(arg0: $Pose$$Type): $EntityDimensions
+public "getDisplayName"(): $Component
+public "setExtension"(key: any, value: any): void
 public "getName"(): $Component
 public "remove"(arg0: $Entity$RemovalReason$$Type): void
 public "equals"(arg0: any): boolean
@@ -18051,16 +18048,19 @@ public "is"(arg0: $Entity$$Type): boolean
 public "pick"(arg0: double, arg1: float, arg2: boolean): $HitResult
 public "collide"(arg0: $Vec3$$Type): $Vec3
 public "rotate"(arg0: $Rotation$$Type): float
-public "getDisplayName"(): $Component
+public "push"(arg0: $Entity$$Type): void
+public "addMotion"(arg0: double, arg1: double, arg2: double): void
+public "push"(arg0: $Vec3$$Type): void
 public "mirror"(arg0: $Mirror$$Type): float
+public "getPosition"(arg0: float): $Vec3
 public "discard"(): void
 public "setId"(arg0: integer): void
 public "isRemoved"(): boolean
 public "revive"(): void
 public "setInvisible"(arg0: boolean): void
 public "getHorizontalFacing"(): $Direction
-public "getX"(): double
 public "getX"(arg0: double): double
+public "getX"(): double
 public "getZ"(): double
 public "getZ"(arg0: double): double
 public "blockPosition"(): $BlockPos
@@ -18087,14 +18087,7 @@ public "chunkPosition"(): $ChunkPos
 public "hasGlowingTag"(): boolean
 public "isColliding"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): boolean
 public "getTeamColor"(): integer
-public "handler$ejj000$irons_spellbooks$changeGlowOutline"(arg0: $CallbackInfoReturnable$$Type): void
-public "handler$ecl000$apotheosis$apoth_getTeamColor"(arg0: $CallbackInfoReturnable$$Type): void
 public "unRide"(): void
-public "isVehicle"(): boolean
-public "ejectPassengers"(): void
-public "getPositionCodec"(): $VecDeltaCodec
-public "getTags"(): $Set<(StringJS)>
-public "addTag"(arg0: StringJS): boolean
 public "damageSources"(): $DamageSources
 public "attack"(arg0: $DamageSource$$Type, arg1: float): boolean
 public "isInWater"(): boolean
@@ -18117,8 +18110,8 @@ public "getPercentFrozen"(): float
 public "getMaxAirSupply"(): integer
 public "isSilent"(): boolean
 public "getSoundSource"(): $SoundSource
-public "gameEvent"(arg0: $Holder$$Type<($GameEvent)>, arg1: $Entity$$Type): void
 public "gameEvent"(arg0: $Holder$$Type<($GameEvent)>): void
+public "gameEvent"(arg0: $Holder$$Type<($GameEvent)>, arg1: $Entity$$Type): void
 public "getStringUuid"(): StringJS
 public "isInvisible"(): boolean
 public "getRandom"(): $RandomSource
@@ -18128,24 +18121,24 @@ public "getRandomZ"(arg0: double): double
 public "isDiscrete"(): boolean
 public "isInvulnerable"(): boolean
 public "isInvulnerableTo"(arg0: $DamageSource$$Type): boolean
-public "playSound"(arg0: $SoundEvent$$Type): void
 public "playSound"(arg0: $SoundEvent$$Type, arg1: float, arg2: float): void
+public "playSound"(arg0: $SoundEvent$$Type): void
 public "getYHeadRot"(): float
 public "calculateViewVector"(arg0: float, arg1: float): $Vec3
 public "awardKillScore"(arg0: $Entity$$Type, arg1: integer, arg2: $DamageSource$$Type): void
 public "hasCustomName"(): boolean
 public "killedEntity"(arg0: $ServerLevel$$Type, arg1: $LivingEntity$$Type): boolean
 public "setPose"(arg0: $Pose$$Type): void
-public "captureDrops"(arg0: $Collection$$Type<($ItemEntity$$Type)>): $Collection<($ItemEntity)>
 public "captureDrops"(): $Collection<($ItemEntity)>
+public "captureDrops"(arg0: $Collection$$Type<($ItemEntity$$Type)>): $Collection<($ItemEntity)>
 public "getWeaponItem"(): $ItemStack
 public "getServer"(): $MinecraftServer
 public "spawnAtLocation"(arg0: $ItemLike$$Type): $ItemEntity
+public "spawnAtLocation"(arg0: $ItemLike$$Type, arg1: integer): $ItemEntity
 public "spawnAtLocation"(arg0: $ItemStack$$Type): $ItemEntity
 public "spawnAtLocation"(arg0: $ItemStack$$Type, arg1: float): $ItemEntity
-public "spawnAtLocation"(arg0: $ItemLike$$Type, arg1: integer): $ItemEntity
-public "setMotion"(arg0: double, arg1: double, arg2: double): void
 public "setDeltaMovement"(arg0: $Vec3$$Type): void
+public "setMotion"(arg0: double, arg1: double, arg2: double): void
 public "getVehicle"(): $Entity
 public "getPassengerRidingPosition"(arg0: $Entity$$Type): $Vec3
 public "getInBlockState"(): $BlockState
@@ -18207,8 +18200,8 @@ public "setYHeadRot"(arg0: float): void
 public "setYBodyRot"(arg0: float): void
 public "getRelativePortalPosition"(arg0: $Direction$Axis$$Type, arg1: $BlockUtil$FoundRectangle$$Type): $Vec3
 public "isVisuallySwimming"(): boolean
-public "onSyncedDataUpdated"(arg0: $EntityDataAccessor$$Type<(never)>): void
 public "onSyncedDataUpdated"(arg0: $List$$Type<($SynchedEntityData$DataValue$$Type<(never)>)>): void
+public "onSyncedDataUpdated"(arg0: $EntityDataAccessor$$Type<(never)>): void
 public "getPreciseBodyRotation"(arg0: float): float
 public "isShiftKeyDown"(): boolean
 public "hasPose"(arg0: $Pose$$Type): boolean
@@ -18242,22 +18235,29 @@ public "lithium$getCachedFeetBlockState"(): $BlockState
 public "getUsername"(): StringJS
 public "sendSystemMessage"(arg0: $Component$$Type): void
 public "createCommandSourceStack"(): $CommandSourceStack
-public "moveTo"(arg0: double, arg1: double, arg2: double): void
 public "setPositionAndRotation"(arg0: double, arg1: double, arg2: double, arg3: float, arg4: float): void
+public "moveTo"(arg0: double, arg1: double, arg2: double): void
 public "moveTo"(arg0: $BlockPos$$Type, arg1: float, arg2: float): void
-public "moveTo"(arg0: $Vec3$$Type): void
 public "moveTo"(arg0: $Vec3$$Type, arg1: float, arg2: float): void
+public "moveTo"(arg0: $Vec3$$Type): void
 public "getTeam"(): $PlayerTeam
 public "getCommandSenderWorld"(): $Level
-public "isAlliedTo"(arg0: $Team$$Type): boolean
 public "isOnSameTeam"(arg0: $Entity$$Type): boolean
+public "isAlliedTo"(arg0: $Team$$Type): boolean
 public "getDistanceSq"(arg0: double, arg1: double, arg2: double): double
-public "distanceToEntitySqr"(arg0: $Entity$$Type): double
 public "distanceToSqr"(arg0: $Vec3$$Type): double
-public "getEyePosition"(arg0: float): $Vec3
+public "distanceToEntitySqr"(arg0: $Entity$$Type): double
 public "getEyePosition"(): $Vec3
+public "getEyePosition"(arg0: float): $Vec3
 public "getViewVector"(arg0: float): $Vec3
 public "getPersistentData"(): $CompoundTag
+public "handler$ejj000$irons_spellbooks$changeGlowOutline"(arg0: $CallbackInfoReturnable$$Type): void
+public "handler$ecl000$apotheosis$apoth_getTeamColor"(arg0: $CallbackInfoReturnable$$Type): void
+public "isVehicle"(): boolean
+public "ejectPassengers"(): void
+public "getPositionCodec"(): $VecDeltaCodec
+public "getTags"(): $Set<(StringJS)>
+public "addTag"(arg0: StringJS): boolean
 public "getEntityData"(): $SynchedEntityData
 public "setRemoved"(arg0: $Entity$RemovalReason$$Type): void
 public "onClientRemoval"(): void
@@ -18339,8 +18339,8 @@ public "setGlowing"(arg0: boolean): void
 public "canCollideWith"(arg0: $Entity$$Type): boolean
 public "canBeCollidedWith"(): boolean
 public "positionRider"(arg0: $Entity$$Type): void
-public "hasPassenger"(arg0: $Entity$$Type): boolean
 public "hasPassenger"(arg0: $Predicate$$Type<($Entity)>): boolean
+public "hasPassenger"(arg0: $Entity$$Type): boolean
 public "getVehicleAttachmentPoint"(arg0: $Entity$$Type): $Vec3
 public "getAttachments"(): $EntityAttachments
 public "startRiding"(arg0: $Entity$$Type, arg1: boolean): boolean
@@ -18420,8 +18420,8 @@ public "shouldBeSaved"(): boolean
 public "isAlwaysTicking"(): boolean
 public "mayInteract"(arg0: $Level$$Type, arg1: $BlockPos$$Type): boolean
 public "syncData"(arg0: $AttachmentType$$Type<(never)>): void
-public "getCapability"<T>(arg0: $EntityCapability$$Type<(T), (void)>): T
 public "getCapability"<T, C>(arg0: $EntityCapability$$Type<(T), (C)>, arg1: C): T
+public "getCapability"<T>(arg0: $EntityCapability$$Type<(T), (void)>): T
 public "getKnownMovement"(): $Vec3
 public "getIndirectPassengers"(): $Iterable
 public "getPassengersAndSelf"(): $Stream
@@ -18545,11 +18545,11 @@ public "setStatusMessage"(message: $Component$$Type): void
 public "setActivePostShader"(id: $ResourceLocation$$Type): void
 get "timeout"(): void
 get "y"(): double
+get "displayName"(): $Component
 get "name"(): $Component
 get "alive"(): boolean
 get "id"(): integer
 get "entityType"(): $EntityType<(never)>
-get "displayName"(): $Component
 set "id"(value: integer)
 get "removed"(): boolean
 set "invisible"(value: boolean)
@@ -18569,9 +18569,6 @@ set "YRot"(value: float)
 set "XRot"(value: float)
 set "UUID"(value: $UUID$$Type)
 get "teamColor"(): integer
-get "vehicle"(): boolean
-get "positionCodec"(): $VecDeltaCodec
-get "tags"(): $Set<(StringJS)>
 get "inWater"(): boolean
 set "pos"(value: $Vec3$$Type)
 get "deltaMovement"(): $Vec3
@@ -18640,6 +18637,9 @@ get "team"(): $PlayerTeam
 get "commandSenderWorld"(): $Level
 get "eyePosition"(): $Vec3
 get "persistentData"(): $CompoundTag
+get "vehicle"(): boolean
+get "positionCodec"(): $VecDeltaCodec
+get "tags"(): $Set<(StringJS)>
 get "entityData"(): $SynchedEntityData
 set "removed"(value: $Entity$RemovalReason$$Type)
 set "boundingBox"(value: $AABB$$Type)
@@ -18796,17 +18796,17 @@ import {$Vec3} from "net.minecraft.world.phys.Vec3"
 import {$Container} from "net.minecraft.world.Container"
 import {$AbstractContainerMenu} from "net.minecraft.world.inventory.AbstractContainerMenu"
 import {$AbstractMinecartContainer} from "net.minecraft.world.entity.vehicle.AbstractMinecartContainer"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$AbstractMinecart$Type} from "net.minecraft.world.entity.vehicle.AbstractMinecart$Type"
 import {$AABB} from "net.minecraft.world.phys.AABB"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $MinecartHopper extends $AbstractMinecartContainer implements $Hopper$$Interface {
  "hasImpulse": boolean
@@ -18926,12 +18926,12 @@ import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
 import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$MobSpawnType$$Type} from "net.minecraft.world.entity.MobSpawnType"
 import {$Animal} from "net.minecraft.world.entity.animal.Animal"
-import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$Vec3} from "net.minecraft.world.phys.Vec3"
+import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$ItemBasedSteering} from "net.minecraft.world.entity.ItemBasedSteering"
 import {$SoundSource$$Type} from "net.minecraft.sounds.SoundSource"
-import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$EntityDataAccessor$$Type} from "net.minecraft.network.syncher.EntityDataAccessor"
+import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
@@ -18950,18 +18950,18 @@ import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Prov
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$ServerLevelAccessor$$Type} from "net.minecraft.world.level.ServerLevelAccessor"
 import {$AgeableMob, $AgeableMob$$Type} from "net.minecraft.world.entity.AgeableMob"
-import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
-import {$ItemSteerable$$Interface} from "net.minecraft.world.entity.ItemSteerable"
+import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
-import {$Tag} from "net.minecraft.nbt.Tag"
+import {$ItemSteerable$$Interface} from "net.minecraft.world.entity.ItemSteerable"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
+import {$Tag} from "net.minecraft.nbt.Tag"
 import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
-import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
+import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$Saddleable$$Interface} from "net.minecraft.world.entity.Saddleable"
 
 export class $Strider extends $Animal implements $ItemSteerable$$Interface, $Saddleable$$Interface, $ItemBasedSteerable$$Interface {
@@ -19142,26 +19142,26 @@ export type $Strider$$Type = ($Strider);
 export type $Strider$$Original = $Strider;}
 declare module "net.minecraft.world.entity.ai.memory.MemoryModuleType" {
 import {$Optional, $Optional$$Type} from "java.util.Optional"
-import {$UUID} from "java.util.UUID"
 import {$Path} from "net.minecraft.world.level.pathfinder.Path"
+import {$UUID} from "java.util.UUID"
 import {$List} from "java.util.List"
 import {$Mob} from "net.minecraft.world.entity.Mob"
 import {$NearestVisibleLivingEntities} from "net.minecraft.world.entity.ai.memory.NearestVisibleLivingEntities"
 import {$ItemEntity} from "net.minecraft.world.entity.item.ItemEntity"
 import {$WalkTarget} from "net.minecraft.world.entity.ai.memory.WalkTarget"
-import {$AgeableMob} from "net.minecraft.world.entity.AgeableMob"
 import {$Player} from "net.minecraft.world.entity.player.Player"
-import {$Vec3} from "net.minecraft.world.phys.Vec3"
+import {$AgeableMob} from "net.minecraft.world.entity.AgeableMob"
 import {$Hoglin} from "net.minecraft.world.entity.monster.hoglin.Hoglin"
+import {$Vec3} from "net.minecraft.world.phys.Vec3"
 import {$ExpirableValue} from "net.minecraft.world.entity.ai.memory.ExpirableValue"
 import {$DamageSource} from "net.minecraft.world.damagesource.DamageSource"
 import {$Codec, $Codec$$Type} from "com.mojang.serialization.Codec"
 import {$GlobalPos} from "net.minecraft.core.GlobalPos"
-import {$Set} from "java.util.Set"
 import {$LivingEntity} from "net.minecraft.world.entity.LivingEntity"
+import {$Set} from "java.util.Set"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
-import {$Entity} from "net.minecraft.world.entity.Entity"
 import {$AbstractPiglin} from "net.minecraft.world.entity.monster.piglin.AbstractPiglin"
+import {$Entity} from "net.minecraft.world.entity.Entity"
 import {$PositionTracker} from "net.minecraft.world.entity.ai.behavior.PositionTracker"
 import {$Unit} from "net.minecraft.util.Unit"
 
@@ -19319,38 +19319,38 @@ import {$Optional} from "java.util.Optional"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$Player} from "net.minecraft.world.entity.player.Player"
 import {$MobSpawnType$$Type} from "net.minecraft.world.entity.MobSpawnType"
-import {$Pose$$Type} from "net.minecraft.world.entity.Pose"
-import {$Vec3} from "net.minecraft.world.phys.Vec3"
 import {$Animal$$Type} from "net.minecraft.world.entity.animal.Animal"
+import {$Vec3} from "net.minecraft.world.phys.Vec3"
+import {$Pose$$Type} from "net.minecraft.world.entity.Pose"
 import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
-import {$DyeColor} from "net.minecraft.world.item.DyeColor"
-import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState"
 import {$Llama$Variant, $Llama$Variant$$Type} from "net.minecraft.world.entity.animal.horse.Llama$Variant"
 import {$AbstractChestedHorse} from "net.minecraft.world.entity.animal.horse.AbstractChestedHorse"
+import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState"
+import {$DyeColor} from "net.minecraft.world.item.DyeColor"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
-import {$InteractionHand} from "net.minecraft.world.InteractionHand"
 import {$EntityDimensions} from "net.minecraft.world.entity.EntityDimensions"
+import {$InteractionHand} from "net.minecraft.world.InteractionHand"
 import {$SpawnGroupData, $SpawnGroupData$$Type} from "net.minecraft.world.entity.SpawnGroupData"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
 import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$RangedAttackMob$$Interface} from "net.minecraft.world.entity.monster.RangedAttackMob"
 import {$Consumer$$Type} from "java.util.function.Consumer"
-import {$AgeableMob, $AgeableMob$$Type} from "net.minecraft.world.entity.AgeableMob"
 import {$ServerLevelAccessor$$Type} from "net.minecraft.world.level.ServerLevelAccessor"
+import {$AgeableMob, $AgeableMob$$Type} from "net.minecraft.world.entity.AgeableMob"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
-import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$VariantHolder$$Interface} from "net.minecraft.world.entity.VariantHolder"
@@ -19487,7 +19487,7 @@ public "joinCaravan"(arg0: $Llama$$Type): void
 public "hasCaravanTail"(): boolean
 public "inCaravan"(): boolean
 public "getCaravanHead"(): $Llama
-public "getVariant"(): $Llama$Variant
+public "getVariant"(): any
 public "setVariant"(arg0: $Llama$Variant$$Type): void
 public "setVariant"(arg0: any): void
 public "finalizeSpawn"(arg0: $ServerLevelAccessor$$Type, arg1: $DifficultyInstance$$Type, arg2: $MobSpawnType$$Type, arg3: $SpawnGroupData$$Type): $SpawnGroupData
@@ -19527,7 +19527,7 @@ get "maxTemper"(): integer
 get "traderLlama"(): boolean
 get "swag"(): $DyeColor
 get "caravanHead"(): $Llama
-get "variant"(): $Llama$Variant
+get "variant"(): any
 set "variant"(value: $Llama$Variant$$Type)
 set "variant"(value: any)
 get "strength"(): integer
@@ -19559,9 +19559,9 @@ import {$EntityDataAccessor$$Type} from "net.minecraft.network.syncher.EntityDat
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$Tag} from "net.minecraft.nbt.Tag"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
 
 export class $Display$TextDisplay extends $Display {
@@ -19666,19 +19666,19 @@ import {$UUID} from "java.util.UUID"
 import {$CallbackInfo$$Type} from "org.spongepowered.asm.mixin.injection.callback.CallbackInfo"
 import {$Predicate} from "java.util.function.Predicate"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
-import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
 import {$ThrowableItemProjectile} from "net.minecraft.world.entity.projectile.ThrowableItemProjectile"
+import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$DoubleDoubleImmutablePair} from "it.unimi.dsi.fastutil.doubles.DoubleDoubleImmutablePair"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
-import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
+import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
-import {$Entity} from "net.minecraft.world.entity.Entity"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
+import {$Entity} from "net.minecraft.world.entity.Entity"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
@@ -19779,9 +19779,9 @@ import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInL
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$Tag} from "net.minecraft.nbt.Tag"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$Entity} from "net.minecraft.world.entity.Entity"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
 
@@ -19942,27 +19942,27 @@ export type $ProjectileDeflection$$Type = ((arg0: $Projectile, arg1: $Entity, ar
  */
 export type $ProjectileDeflection$$Original = $ProjectileDeflection;}
 declare module "net.minecraft.world.entity.animal.sniffer.Sniffer" {
-import {$Brain} from "net.minecraft.world.entity.ai.Brain"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$Brain} from "net.minecraft.world.entity.ai.Brain"
 import {$Optional} from "java.util.Optional"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$Sniffer$State$$Type} from "net.minecraft.world.entity.animal.sniffer.Sniffer$State"
 import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
 import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$Pose$$Type} from "net.minecraft.world.entity.Pose"
 import {$Animal, $Animal$$Type} from "net.minecraft.world.entity.animal.Animal"
-import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
+import {$Pose$$Type} from "net.minecraft.world.entity.Pose"
 import {$EntityDataAccessor$$Type} from "net.minecraft.network.syncher.EntityDataAccessor"
+import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
-import {$InteractionHand, $InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$EntityDimensions} from "net.minecraft.world.entity.EntityDimensions"
+import {$InteractionHand, $InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
 import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
@@ -19970,11 +19970,11 @@ import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$AgeableMob, $AgeableMob$$Type} from "net.minecraft.world.entity.AgeableMob"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AnimationState} from "net.minecraft.world.entity.AnimationState"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$AABB} from "net.minecraft.world.phys.AABB"
@@ -20168,12 +20168,12 @@ import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$EnderDragon, $EnderDragon$$Type} from "net.minecraft.world.entity.boss.enderdragon.EnderDragon"
-import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$Tag} from "net.minecraft.nbt.Tag"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
-import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
+import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$ServerEntity$$Type} from "net.minecraft.server.level.ServerEntity"
 
 export class $EnderDragonPart extends $PartEntity<($EnderDragon)> {
@@ -20262,8 +20262,8 @@ import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
-import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$Holder} from "net.minecraft.core.Holder"
+import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$Record} from "java.lang.Record"
 
 export class $PaintingVariant extends $Record {
@@ -20315,8 +20315,8 @@ import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$AbstractIllager$IllagerArmPose} from "net.minecraft.world.entity.monster.AbstractIllager$IllagerArmPose"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$SpellcasterIllager} from "net.minecraft.world.entity.monster.SpellcasterIllager"
 import {$InteractionHand} from "net.minecraft.world.InteractionHand"
 import {$SpawnGroupData, $SpawnGroupData$$Type} from "net.minecraft.world.entity.SpawnGroupData"
@@ -20326,11 +20326,11 @@ import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Prov
 import {$RangedAttackMob$$Interface} from "net.minecraft.world.entity.monster.RangedAttackMob"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$ServerLevelAccessor$$Type} from "net.minecraft.world.level.ServerLevelAccessor"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
-import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$AABB} from "net.minecraft.world.phys.AABB"
@@ -20497,10 +20497,10 @@ import {$SoundSource} from "net.minecraft.sounds.SoundSource"
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$Tag} from "net.minecraft.nbt.Tag"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
-import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
 import {$ServerPlayer, $ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
+import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$Entity} from "net.minecraft.world.entity.Entity"
 import {$Stream} from "java.util.stream.Stream"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
@@ -20606,9 +20606,9 @@ import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInL
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$Tag} from "net.minecraft.nbt.Tag"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$Entity} from "net.minecraft.world.entity.Entity"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
 
@@ -20695,8 +20695,8 @@ import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
 export class $Panda$Gene extends $Enum<($Panda$Gene)> implements $StringRepresentable$$Interface {
@@ -20718,11 +20718,11 @@ public static "byId"(arg0: integer): $Panda$Gene
 public static "getRandom"(arg0: $RandomSource$$Type): $Panda$Gene
 public "isRecessive"(): boolean
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "id"(): integer
 get "serializedName"(): StringJS
 get "recessive"(): boolean
@@ -20751,12 +20751,12 @@ import {$EntityDataAccessor$$Type} from "net.minecraft.network.syncher.EntityDat
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$Tag} from "net.minecraft.nbt.Tag"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$AbstractMinecart$Type} from "net.minecraft.world.entity.vehicle.AbstractMinecart$Type"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $MinecartCommandBlock extends $AbstractMinecart {
  "hasImpulse": boolean
@@ -20860,19 +20860,19 @@ import {$InteractionHand} from "net.minecraft.world.InteractionHand"
 import {$SpawnGroupData, $SpawnGroupData$$Type} from "net.minecraft.world.entity.SpawnGroupData"
 import {$ProjectileWeaponItem$$Type} from "net.minecraft.world.item.ProjectileWeaponItem"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
-import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
 import {$CallbackInfoReturnable$$Type} from "org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable"
+import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$RangedAttackMob$$Interface} from "net.minecraft.world.entity.monster.RangedAttackMob"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$ServerLevelAccessor$$Type} from "net.minecraft.world.level.ServerLevelAccessor"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
-import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
-import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
+import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
 import {$CrossbowAttackMob$$Interface} from "net.minecraft.world.entity.monster.CrossbowAttackMob"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 
 export class $AbstractSkeleton extends $Monster implements $RangedAttackMob$$Interface, $CrossbowAttackMob$$Interface {
 static readonly "MAX_WEARING_ARMOR_CHANCE": float
@@ -21065,31 +21065,31 @@ import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component} from "net.minecraft.network.chat.Component"
 import {$Inventory$$Type} from "net.minecraft.world.entity.player.Inventory"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$Vec3} from "net.minecraft.world.phys.Vec3"
 import {$LithiumInventory$$Interface} from "net.caffeinemc.mods.lithium.api.inventory.LithiumInventory"
 import {$AbstractMinecart} from "net.minecraft.world.entity.vehicle.AbstractMinecart"
+import {$Vec3} from "net.minecraft.world.phys.Vec3"
 import {$ItemPredicate$$Type} from "dev.latvian.mods.kubejs.item.ItemPredicate"
-import {$Item$$Type} from "net.minecraft.world.item.Item"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
+import {$Item$$Type} from "net.minecraft.world.item.Item"
 import {$Set$$Type} from "java.util.Set"
 import {$ResourceKey, $ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
-import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
+import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
 import {$ContainerEntity$$Interface} from "net.minecraft.world.entity.vehicle.ContainerEntity"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Predicate$$Type} from "java.util.function.Predicate"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$SlotAccess} from "net.minecraft.world.entity.SlotAccess"
 import {$LootTable, $LootTable$$Type} from "net.minecraft.world.level.storage.loot.LootTable"
-import {$Entity$RemovalReason, $Entity$RemovalReason$$Type} from "net.minecraft.world.entity.Entity$RemovalReason"
 import {$NonNullList, $NonNullList$$Type} from "net.minecraft.core.NonNullList"
+import {$Entity$RemovalReason, $Entity$RemovalReason$$Type} from "net.minecraft.world.entity.Entity$RemovalReason"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$LevelBlock} from "dev.latvian.mods.kubejs.level.LevelBlock"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$Container, $Container$$Type} from "net.minecraft.world.Container"
-import {$AbstractContainerMenu, $AbstractContainerMenu$$Type} from "net.minecraft.world.inventory.AbstractContainerMenu"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
+import {$AbstractContainerMenu, $AbstractContainerMenu$$Type} from "net.minecraft.world.inventory.AbstractContainerMenu"
 import {$RegistryFriendlyByteBuf$$Type} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
@@ -21170,6 +21170,8 @@ public "getLootTableSeed"(): long
 public "stillValid"(arg0: $Player$$Type): boolean
 public "removeItemNoUpdate"(arg0: integer): $ItemStack
 public "unpackChestVehicleLootTable"(arg0: $Player$$Type): void
+public "isChestVehicleEmpty"(): boolean
+public "interactWithContainerVehicle"(arg0: $Player$$Type): $InteractionResult
 public "addChestVehicleSaveData"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "readChestVehicleSaveData"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "chestVehicleDestroyed"(arg0: $DamageSource$$Type, arg1: $Level$$Type, arg2: $Entity$$Type): void
@@ -21180,8 +21182,6 @@ public "removeChestVehicleItemNoUpdate"(arg0: integer): $ItemStack
 public "setChestVehicleItem"(arg0: integer, arg1: $ItemStack$$Type): void
 public "getChestVehicleSlot"(arg0: integer): $SlotAccess
 public "isChestVehicleStillValid"(arg0: $Player$$Type): boolean
-public "isChestVehicleEmpty"(): boolean
-public "interactWithContainerVehicle"(arg0: $Player$$Type): $InteractionResult
 public "position"(): $Vec3
 public "isEmpty"(): boolean
 public "isRemoved"(): boolean
@@ -21326,14 +21326,14 @@ export type $DragonTakeoffPhase$$Type = ($DragonTakeoffPhase);
  */
 export type $DragonTakeoffPhase$$Original = $DragonTakeoffPhase;}
 declare module "net.minecraft.world.entity.EquipmentUser" {
-import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map$$Type} from "java.util.Map"
+import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$EquipmentTable$$Type} from "net.minecraft.world.entity.EquipmentTable"
-import {$EquipmentSlot, $EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$List$$Type} from "java.util.List"
+import {$EquipmentSlot, $EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
-import {$LootParams$$Type} from "net.minecraft.world.level.storage.loot.LootParams"
 import {$LootTable$$Type} from "net.minecraft.world.level.storage.loot.LootTable"
+import {$LootParams$$Type} from "net.minecraft.world.level.storage.loot.LootParams"
 
 export interface $EquipmentUser$$Interface {
 }
@@ -21357,8 +21357,8 @@ export type $EquipmentUser$$Type = ($EquipmentUser);
  */
 export type $EquipmentUser$$Original = $EquipmentUser;}
 declare module "net.minecraft.world.entity.animal.frog.Tadpole" {
-import {$Brain} from "net.minecraft.world.entity.ai.Brain"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$Brain} from "net.minecraft.world.entity.ai.Brain"
 import {$Optional} from "java.util.Optional"
 import {$Mob$$Type} from "net.minecraft.world.entity.Mob"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
@@ -21371,8 +21371,8 @@ import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$AbstractFish, $AbstractFish$$Type} from "net.minecraft.world.entity.animal.AbstractFish"
 import {$InteractionHand, $InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
@@ -21381,10 +21381,10 @@ import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalRe
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
-import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 
 export class $Tadpole extends $AbstractFish {
@@ -21572,8 +21572,8 @@ import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$InteractionHand, $InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
@@ -21582,8 +21582,8 @@ import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Prov
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
-import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 
 export class $Cod extends $AbstractSchoolingFish {
@@ -21743,8 +21743,8 @@ import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$Pose$$Type} from "net.minecraft.world.entity.Pose"
 import {$Animal} from "net.minecraft.world.entity.animal.Animal"
+import {$Pose$$Type} from "net.minecraft.world.entity.Pose"
 import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
@@ -21752,20 +21752,20 @@ import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
-import {$InteractionHand, $InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$EntityDimensions} from "net.minecraft.world.entity.EntityDimensions"
+import {$InteractionHand, $InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
 import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$AgeableMob$$Type} from "net.minecraft.world.entity.AgeableMob"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 
@@ -21953,17 +21953,17 @@ import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$InteractionHand} from "net.minecraft.world.InteractionHand"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
 import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Consumer$$Type} from "java.util.function.Consumer"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 
 export class $Blaze extends $Monster {
@@ -22119,8 +22119,8 @@ import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$EquipmentSlot$Type, $EquipmentSlot$Type$$Type} from "net.minecraft.world.entity.EquipmentSlot$Type"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
@@ -22135,7 +22135,7 @@ static readonly "NO_COUNT_LIMIT": integer
 static readonly "BODY": $EquipmentSlot
 static readonly "FEET": $EquipmentSlot
 
-public static "invokeNew$accessories_$md$a93e73$0"(arg0: StringJS, arg1: integer, arg2: $EquipmentSlot$Type$$Type, arg3: integer, arg4: integer, arg5: StringJS): $EquipmentSlot
+public static "invokeNew$accessories_$md$b00d76$0"(arg0: StringJS, arg1: integer, arg2: $EquipmentSlot$Type$$Type, arg3: integer, arg4: integer, arg5: StringJS): $EquipmentSlot
 public "getFilterFlag"(): integer
 public "getName"(): StringJS
 public static "values"(): ($EquipmentSlot)[]
@@ -22148,11 +22148,11 @@ public static "byName"(arg0: StringJS): $EquipmentSlot
 public "getSerializedName"(): StringJS
 public "isArmor"(): boolean
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "filterFlag"(): integer
 get "name"(): StringJS
 get "type"(): $EquipmentSlot$Type
@@ -22176,8 +22176,8 @@ import {$Optional} from "java.util.Optional"
 import {$MerchantOffers, $MerchantOffers$$Type} from "net.minecraft.world.item.trading.MerchantOffers"
 import {$Mob$$Type} from "net.minecraft.world.entity.Mob"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
-import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
+import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$Npc$$Interface} from "net.minecraft.world.entity.npc.Npc"
 import {$InventoryCarrier$$Type, $InventoryCarrier$$Interface} from "net.minecraft.world.entity.npc.InventoryCarrier"
 import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
@@ -22203,15 +22203,15 @@ import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.li
 import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Consumer$$Type} from "java.util.function.Consumer"
-import {$AgeableMob} from "net.minecraft.world.entity.AgeableMob"
 import {$ServerLevelAccessor$$Type} from "net.minecraft.world.level.ServerLevelAccessor"
+import {$AgeableMob} from "net.minecraft.world.entity.AgeableMob"
 import {$Merchant$$Interface} from "net.minecraft.world.item.trading.Merchant"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
 import {$MerchantOffer$$Type} from "net.minecraft.world.item.trading.MerchantOffer"
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$Tag} from "net.minecraft.nbt.Tag"
 import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
+import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 
 export class $AbstractVillager extends $AgeableMob implements $InventoryCarrier$$Interface, $Npc$$Interface, $Merchant$$Interface {
@@ -22461,20 +22461,20 @@ import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
-import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$MobSpawnType$$Type} from "net.minecraft.world.entity.MobSpawnType"
+import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Animal$$Type} from "net.minecraft.world.entity.animal.Animal"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
-import {$DyeColor} from "net.minecraft.world.item.DyeColor"
 import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState"
+import {$DyeColor} from "net.minecraft.world.item.DyeColor"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$InteractionHand, $InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$SpawnGroupData, $SpawnGroupData$$Type} from "net.minecraft.world.entity.SpawnGroupData"
@@ -22482,14 +22482,14 @@ import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.li
 import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Consumer$$Type} from "java.util.function.Consumer"
-import {$AgeableMob$$Type} from "net.minecraft.world.entity.AgeableMob"
 import {$ServerLevelAccessor$$Type} from "net.minecraft.world.level.ServerLevelAccessor"
+import {$AgeableMob$$Type} from "net.minecraft.world.entity.AgeableMob"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
-import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$TamableAnimal} from "net.minecraft.world.entity.TamableAnimal"
@@ -22625,8 +22625,8 @@ public "getRelaxStateOneAmount"(arg0: float): float
 public "setTame"(arg0: boolean, arg1: boolean): void
 public "getNaturalVariant"(): $Holder
 public "setNaturalVariant"(pVariant: $Holder$$Type): void
-public "getVariant"(): any
 public "tick"(): void
+public "getVariant"(): any
 public "setVariant"(arg0: $Holder$$Type<($CatVariant)>): void
 public "setVariant"(arg0: any): void
 public "finalizeSpawn"(arg0: $ServerLevelAccessor$$Type, arg1: $DifficultyInstance$$Type, arg2: $MobSpawnType$$Type, arg3: $SpawnGroupData$$Type): $SpawnGroupData
@@ -22710,20 +22710,20 @@ import {$Optional} from "java.util.Optional"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
-import {$ClientGamePacketListener} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$ClientGamePacketListener} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$Vec3} from "net.minecraft.world.phys.Vec3"
 import {$BlockAttachedEntity} from "net.minecraft.world.entity.decoration.BlockAttachedEntity"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
-import {$Packet} from "net.minecraft.network.protocol.Packet"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
-import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
+import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$ServerEntity$$Type} from "net.minecraft.server.level.ServerEntity"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
 
@@ -22823,9 +22823,9 @@ import {$ClientboundAddEntityPacket$$Type} from "net.minecraft.network.protocol.
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$Tag} from "net.minecraft.nbt.Tag"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$Entity} from "net.minecraft.world.entity.Entity"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
 
@@ -23034,9 +23034,9 @@ import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInL
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$Tag} from "net.minecraft.nbt.Tag"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$Entity} from "net.minecraft.world.entity.Entity"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
 
@@ -23118,8 +23118,8 @@ export type $ThrownExperienceBottle$$Type = ($ThrownExperienceBottle);
 export type $ThrownExperienceBottle$$Original = $ThrownExperienceBottle;}
 declare module "net.minecraft.world.entity.projectile.EyeOfEnder" {
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
-import {$ItemSupplier$$Interface} from "net.minecraft.world.entity.projectile.ItemSupplier"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$ItemSupplier$$Interface} from "net.minecraft.world.entity.projectile.ItemSupplier"
 import {$Optional} from "java.util.Optional"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
@@ -23127,9 +23127,9 @@ import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Prov
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$Tag} from "net.minecraft.nbt.Tag"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$Entity} from "net.minecraft.world.entity.Entity"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
 
@@ -23189,8 +23189,8 @@ constructor(arg0: $Level$$Type, arg1: double, arg2: double, arg3: double)
 
 public "setItem"(arg0: $ItemStack$$Type): void
 public "signalTo"(arg0: $BlockPos$$Type): void
-public "getItem"(): $ItemStack
 public "tick"(): void
+public "getItem"(): $ItemStack
 public "addAdditionalSaveData"(arg0: $CompoundTag$$Type): void
 public "readAdditionalSaveData"(arg0: $CompoundTag$$Type): void
 public "getLightLevelDependentMagicValue"(): float
@@ -23222,21 +23222,21 @@ declare module "net.minecraft.world.entity.monster.Monster" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$Level} from "net.minecraft.world.level.Level"
-import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$MobSpawnType$$Type} from "net.minecraft.world.entity.MobSpawnType"
+import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
-import {$SoundSource} from "net.minecraft.sounds.SoundSource"
 import {$PathfinderMob} from "net.minecraft.world.entity.PathfinderMob"
+import {$SoundSource} from "net.minecraft.sounds.SoundSource"
 import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
-import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$Enemy$$Interface} from "net.minecraft.world.entity.monster.Enemy"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$InteractionHand} from "net.minecraft.world.InteractionHand"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
 import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
@@ -23245,10 +23245,10 @@ import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$ServerLevelAccessor$$Type} from "net.minecraft.world.level.ServerLevelAccessor"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
 import {$LivingEntity$Fallsounds} from "net.minecraft.world.entity.LivingEntity$Fallsounds"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 
@@ -23360,8 +23360,8 @@ public "isPreventingPlayerRest"(arg0: $Player$$Type): boolean
 public static "createMonsterAttributes"(): $AttributeSupplier$Builder
 public "getWalkTargetValue"(arg0: $BlockPos$$Type, arg1: $LevelReader$$Type): float
 public static "isDarkEnoughToSpawn"(arg0: $ServerLevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $RandomSource$$Type): boolean
-public static "checkMonsterSpawnRules"(arg0: $EntityType$$Type<($Monster$$Type)>, arg1: $ServerLevelAccessor$$Type, arg2: $MobSpawnType$$Type, arg3: $BlockPos$$Type, arg4: $RandomSource$$Type): boolean
 public static "checkAnyLightMonsterSpawnRules"(arg0: $EntityType$$Type<($Monster$$Type)>, arg1: $LevelAccessor$$Type, arg2: $MobSpawnType$$Type, arg3: $BlockPos$$Type, arg4: $RandomSource$$Type): boolean
+public static "checkMonsterSpawnRules"(arg0: $EntityType$$Type<($Monster$$Type)>, arg1: $ServerLevelAccessor$$Type, arg2: $MobSpawnType$$Type, arg3: $BlockPos$$Type, arg4: $RandomSource$$Type): boolean
 public "shouldDropExperience"(): boolean
 public "getSoundSource"(): $SoundSource
 public "getFallSounds"(): $LivingEntity$Fallsounds
@@ -23424,8 +23424,8 @@ export type $TropicalFish$Base$$Original = $TropicalFish$Base;}
 declare module "net.minecraft.world.entity.npc.VillagerProfession" {
 import {$PoiType, $PoiType$$Type} from "net.minecraft.world.entity.ai.village.poi.PoiType"
 import {$Predicate, $Predicate$$Type} from "java.util.function.Predicate"
-import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$ImmutableSet, $ImmutableSet$$Type} from "com.google.common.collect.ImmutableSet"
+import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Item, $Item$$Type} from "net.minecraft.world.item.Item"
 import {$SoundEvent, $SoundEvent$$Type} from "net.minecraft.sounds.SoundEvent"
 import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
@@ -23489,8 +23489,8 @@ import {$Either} from "com.mojang.datafixers.util.Either"
 import {$IAnimatedPlayer$$Interface} from "dev.kosmx.playerAnim.impl.IAnimatedPlayer"
 import {$InteractionHand, $InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$SlotAccess} from "net.minecraft.world.entity.SlotAccess"
-import {$PlayerAccessor$$Interface} from "net.mehvahdjukaar.supplementaries.mixins.PlayerAccessor"
 import {$Entity$RemovalReason, $Entity$RemovalReason$$Type} from "net.minecraft.world.entity.Entity$RemovalReason"
+import {$PlayerAccessor$$Interface} from "net.mehvahdjukaar.supplementaries.mixins.PlayerAccessor"
 import {$ItemCooldowns} from "net.minecraft.world.item.ItemCooldowns"
 import {$AbstractHorse$$Type} from "net.minecraft.world.entity.animal.horse.AbstractHorse"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
@@ -23501,11 +23501,11 @@ import {$Pose, $Pose$$Type} from "net.minecraft.world.entity.Pose"
 import {$MenuProvider$$Type} from "net.minecraft.world.MenuProvider"
 import {$FishingHook} from "net.minecraft.world.entity.projectile.FishingHook"
 import {$Class} from "java.lang.Class"
-import {$ObjectOpenCustomHashSet} from "it.unimi.dsi.fastutil.objects.ObjectOpenCustomHashSet"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
+import {$ObjectOpenCustomHashSet} from "it.unimi.dsi.fastutil.objects.ObjectOpenCustomHashSet"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$PlayerData, $PlayerData$$Type} from "com.minecraftserverzone.weaponmaster.setup.playerdata.PlayerData"
 import {$IPlayerData$$Interface} from "com.minecraftserverzone.weaponmaster.setup.playerdata.IPlayerData"
+import {$PlayerData, $PlayerData$$Type} from "com.minecraftserverzone.weaponmaster.setup.playerdata.PlayerData"
 import {$AnimationApplier} from "dev.kosmx.playerAnim.impl.animation.AnimationApplier"
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$Map} from "java.util.Map"
@@ -23534,15 +23534,15 @@ import {$GlobalPos, $GlobalPos$$Type} from "net.minecraft.core.GlobalPos"
 import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$DroppedStacksExtension$$Interface} from "io.wispforest.accessories.pond.DroppedStacksExtension"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$PlayerEnderChestContainer} from "net.minecraft.world.inventory.PlayerEnderChestContainer"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$PlayerEnderChestContainer} from "net.minecraft.world.inventory.PlayerEnderChestContainer"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
-import {$AbstractContainerMenu} from "net.minecraft.world.inventory.AbstractContainerMenu"
 import {$Stat$$Type} from "net.minecraft.stats.Stat"
-import {$BaseCommandBlock$$Type} from "net.minecraft.world.level.BaseCommandBlock"
+import {$AbstractContainerMenu} from "net.minecraft.world.inventory.AbstractContainerMenu"
 import {$OptionalInt} from "java.util.OptionalInt"
 import {$RecipeHolder$$Type} from "net.minecraft.world.item.crafting.RecipeHolder"
+import {$BaseCommandBlock$$Type} from "net.minecraft.world.level.BaseCommandBlock"
 import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$InventoryMenu} from "net.minecraft.world.inventory.InventoryMenu"
 import {$MerchantOffers$$Type} from "net.minecraft.world.item.trading.MerchantOffers"
@@ -23557,11 +23557,11 @@ import {$PlayerKJS$$Interface} from "dev.latvian.mods.kubejs.core.PlayerKJS"
 import {$FoodProperties$$Type} from "net.minecraft.world.food.FoodProperties"
 import {$FoodData} from "net.minecraft.world.food.FoodData"
 import {$Vec3, $Vec3$$Type} from "net.minecraft.world.phys.Vec3"
-import {$Abilities} from "net.minecraft.world.entity.player.Abilities"
 import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
+import {$Abilities} from "net.minecraft.world.entity.player.Abilities"
 import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState"
-import {$Item$$Type} from "net.minecraft.world.item.Item"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
+import {$Item$$Type} from "net.minecraft.world.item.Item"
 import {$InventoryKJS} from "dev.latvian.mods.kubejs.core.InventoryKJS"
 import {$GameType$$Type} from "net.minecraft.world.level.GameType"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
@@ -23569,8 +23569,8 @@ import {$AnimationStack} from "dev.kosmx.playerAnim.api.layered.AnimationStack"
 import {$NotificationToastData$$Type} from "dev.latvian.mods.kubejs.util.NotificationToastData"
 import {$Collection, $Collection$$Type} from "java.util.Collection"
 import {$EntityDimensions} from "net.minecraft.world.entity.EntityDimensions"
-import {$AttachedData} from "dev.latvian.mods.kubejs.util.AttachedData"
 import {$ItemEntity} from "net.minecraft.world.entity.item.ItemEntity"
+import {$AttachedData} from "dev.latvian.mods.kubejs.util.AttachedData"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$Container$$Type} from "net.minecraft.world.Container"
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
@@ -23709,15 +23709,15 @@ static readonly "BASE_SAFE_FALL_DISTANCE": integer
 
 constructor(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: float, arg3: $GameProfile$$Type)
 
-public "addItem"(arg0: $ItemStack$$Type): boolean
-public "getPrefixes"(): $Collection<($MutableComponent)>
 public "tick"(): void
+public "addItem"(arg0: $ItemStack$$Type): boolean
+public "getDisplayName"(): $Component
+public "getPrefixes"(): $Collection<($MutableComponent)>
 public "getName"(): $Component
 public "remove"(arg0: $Entity$RemovalReason$$Type): void
 public "getSlot"(arg0: integer): $SlotAccess
-public "getDisplayName"(): $Component
-public "drop"(arg0: $ItemStack$$Type, arg1: boolean, arg2: boolean): $ItemEntity
 public "drop"(arg0: $ItemStack$$Type, arg1: boolean): $ItemEntity
+public "drop"(arg0: $ItemStack$$Type, arg1: boolean, arg2: boolean): $ItemEntity
 public "getCooldowns"(): $ItemCooldowns
 public "respawn"(): void
 public "attack"(arg0: $Entity$$Type): void
@@ -23731,15 +23731,6 @@ public "isLocalPlayer"(): boolean
 public "getGameProfile"(): $GameProfile
 public "isReducedDebugInfo"(): boolean
 public "isTextFilteringEnabled"(): boolean
-public "simplySwords$invokeDropShoulderEntities"(): void
-public "atl$getBaseClass"(): $Class
-public "getStages"(): $Stages
-public "getInventory"(): $InventoryKJS
-public "getCraftingGrid"(): $InventoryKJS
-public "getData"(): $AttachedData
-public "getInventoryChangeListener"(): $KubeJSInventoryListener
-public "invokeSetShoulderEntityRight"(arg0: $CompoundTag$$Type): void
-public "invokeSetShoulderEntityLeft"(arg0: $CompoundTag$$Type): void
 public "attack"(arg0: $DamageSource$$Type, arg1: float): boolean
 public "isAffectedByFluids"(): boolean
 public "getSoundSource"(): $SoundSource
@@ -23750,12 +23741,21 @@ public "getScoreboard"(): $Scoreboard
 public "getItemBySlot"(arg0: $EquipmentSlot$$Type): $ItemStack
 public "canBeSeenAsEnemy"(): boolean
 public "isInvulnerableTo"(arg0: $DamageSource$$Type): boolean
+public "simplySwords$invokeDropShoulderEntities"(): void
+public "atl$getBaseClass"(): $Class
+public "getStages"(): $Stages
+public "getInventory"(): $InventoryKJS
+public "getCraftingGrid"(): $InventoryKJS
+public "getData"(): $AttachedData
+public "getInventoryChangeListener"(): $KubeJSInventoryListener
+public "invokeSetShoulderEntityRight"(arg0: $CompoundTag$$Type): void
+public "invokeSetShoulderEntityLeft"(arg0: $CompoundTag$$Type): void
 public "stopSleeping"(): void
 public "die"(arg0: $DamageSource$$Type): void
-public "awardStat"(arg0: $ResourceLocation$$Type): void
 public "awardStat"(arg0: $ResourceLocation$$Type, arg1: integer): void
-public "awardStat"(arg0: $Stat$$Type<(never)>, arg1: integer): void
 public "awardStat"(arg0: $Stat$$Type<(never)>): void
+public "awardStat"(arg0: $Stat$$Type<(never)>, arg1: integer): void
+public "awardStat"(arg0: $ResourceLocation$$Type): void
 public "playSound"(arg0: $SoundEvent$$Type, arg1: float, arg2: float): void
 public "killedEntity"(arg0: $ServerLevel$$Type, arg1: $LivingEntity$$Type): boolean
 public "getWeaponItem"(): $ItemStack
@@ -23800,8 +23800,8 @@ public "getScore"(): integer
 public "setScore"(arg0: integer): void
 public "increaseScore"(arg0: integer): void
 public "startAutoSpinAttack"(arg0: integer, arg1: float, arg2: $ItemStack$$Type): void
-public "getUsername"(): StringJS
 public "resetStat"(arg0: $Stat$$Type<(never)>): void
+public "getUsername"(): StringJS
 public "setLastDeathLocation"(arg0: ($GlobalPos$$Type)?): void
 /**
  * 
@@ -23969,9 +23969,9 @@ public static "dataOf"(arg0: $ChangeSubscriber$$Type<(never)>, arg1: $ChangeSubs
 public static "containsSubscriber"(arg0: $ChangeSubscriber$$Type<($ItemStack$$Type)>, arg1: integer, arg2: $ChangeSubscriber$$Type<($ItemStack$$Type)>, arg3: integer): boolean
 public static "forNameOnly"(arg0: StringJS): $ScoreHolder
 public static "fromGameProfile"(arg0: $GameProfile$$Type): $ScoreHolder
+get "displayName"(): $Component
 get "prefixes"(): $Collection<($MutableComponent)>
 get "name"(): $Component
-get "displayName"(): $Component
 get "cooldowns"(): $ItemCooldowns
 get "spectator"(): boolean
 get "creative"(): boolean
@@ -23980,15 +23980,15 @@ get "localPlayer"(): boolean
 get "gameProfile"(): $GameProfile
 get "reducedDebugInfo"(): boolean
 get "textFilteringEnabled"(): boolean
+get "affectedByFluids"(): boolean
+get "soundSource"(): $SoundSource
+get "absorptionAmount"(): float
+get "scoreboard"(): $Scoreboard
 get "stages"(): $Stages
 get "inventory"(): $InventoryKJS
 get "craftingGrid"(): $InventoryKJS
 get "data"(): $AttachedData
 get "inventoryChangeListener"(): $KubeJSInventoryListener
-get "affectedByFluids"(): boolean
-get "soundSource"(): $SoundSource
-get "absorptionAmount"(): float
-get "scoreboard"(): $Scoreboard
 get "weaponItem"(): $ItemStack
 get "luck"(): float
 get "fallSounds"(): $LivingEntity$Fallsounds
@@ -24064,8 +24064,8 @@ export type $Player$$Type = ($Player);
  */
 export type $Player$$Original = $Player;}
 declare module "net.minecraft.world.entity.monster.piglin.Piglin" {
-import {$Brain} from "net.minecraft.world.entity.ai.Brain"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$Brain} from "net.minecraft.world.entity.ai.Brain"
 import {$Optional} from "java.util.Optional"
 import {$Mob$$Type} from "net.minecraft.world.entity.Mob"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
@@ -24073,8 +24073,8 @@ import {$InventoryCarrier$$Type, $InventoryCarrier$$Interface} from "net.minecra
 import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$MobSpawnType$$Type} from "net.minecraft.world.entity.MobSpawnType"
 import {$Pose$$Type} from "net.minecraft.world.entity.Pose"
-import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$EntityDataAccessor$$Type} from "net.minecraft.network.syncher.EntityDataAccessor"
+import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
@@ -24088,21 +24088,21 @@ import {$PiglinArmPose} from "net.minecraft.world.entity.monster.piglin.PiglinAr
 import {$EntityDimensions} from "net.minecraft.world.entity.EntityDimensions"
 import {$InteractionHand, $InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$ItemEntity$$Type} from "net.minecraft.world.entity.item.ItemEntity"
-import {$SpawnGroupData, $SpawnGroupData$$Type} from "net.minecraft.world.entity.SpawnGroupData"
 import {$ProjectileWeaponItem$$Type} from "net.minecraft.world.item.ProjectileWeaponItem"
+import {$SpawnGroupData, $SpawnGroupData$$Type} from "net.minecraft.world.entity.SpawnGroupData"
 import {$SimpleContainer} from "net.minecraft.world.SimpleContainer"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
 import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$ServerLevelAccessor$$Type} from "net.minecraft.world.level.ServerLevelAccessor"
-import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
+import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
-import {$Tag} from "net.minecraft.nbt.Tag"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
+import {$Tag} from "net.minecraft.nbt.Tag"
 import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$CrossbowAttackMob$$Interface} from "net.minecraft.world.entity.monster.CrossbowAttackMob"
@@ -24324,12 +24324,12 @@ import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource
 import {$ClientboundAddEntityPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundAddEntityPacket"
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
-import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$Entity} from "net.minecraft.world.entity.Entity"
 import {$ServerEntity$$Type} from "net.minecraft.server.level.ServerEntity"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
@@ -24467,10 +24467,10 @@ import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
-import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
+import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$InteractionHand, $InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$AbstractVillager} from "net.minecraft.world.entity.npc.AbstractVillager"
@@ -24482,8 +24482,8 @@ import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$AgeableMob, $AgeableMob$$Type} from "net.minecraft.world.entity.AgeableMob"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 
@@ -24600,9 +24600,9 @@ public "mobInteract"(arg0: $Player$$Type, arg1: $InteractionHand$$Type): $Intera
 public "getBreedOffspring"(arg0: $ServerLevel$$Type, arg1: $AgeableMob$$Type): $AgeableMob
 public "setDespawnDelay"(arg0: integer): void
 public "getDespawnDelay"(): integer
-public "setWanderTarget"(arg0: $BlockPos$$Type): void
-public "handler$bcn000$supplementaries$supp$addOpenDoor"(ci: $CallbackInfo$$Type): void
 public "showProgressBar"(): boolean
+public "handler$bcn000$supplementaries$supp$addOpenDoor"(ci: $CallbackInfo$$Type): void
+public "setWanderTarget"(arg0: $BlockPos$$Type): void
 public "getNotifyTradeSound"(): $SoundEvent
 public "addAdditionalSaveData"(arg0: $CompoundTag$$Type): void
 public "readAdditionalSaveData"(arg0: $CompoundTag$$Type): void
@@ -24700,8 +24700,8 @@ import {$Optional} from "java.util.Optional"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$EquipmentEntity$$Interface} from "net.caffeinemc.mods.lithium.common.entity.EquipmentEntity"
 import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$Pose$$Type} from "net.minecraft.world.entity.Pose"
 import {$Vec3, $Vec3$$Type} from "net.minecraft.world.phys.Vec3"
+import {$Pose$$Type} from "net.minecraft.world.entity.Pose"
 import {$Explosion$$Type} from "net.minecraft.world.level.Explosion"
 import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$EntityDataAccessor, $EntityDataAccessor$$Type} from "net.minecraft.network.syncher.EntityDataAccessor"
@@ -24716,16 +24716,16 @@ import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$EntityDimensions} from "net.minecraft.world.entity.EntityDimensions"
 import {$InteractionHand, $InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
-import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
 import {$CallbackInfoReturnable$$Type} from "org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable"
+import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$LivingEntity$Fallsounds} from "net.minecraft.world.entity.LivingEntity$Fallsounds"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
 import {$Rotations, $Rotations$$Type} from "net.minecraft.core.Rotations"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
 import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
@@ -24841,8 +24841,8 @@ readonly "invulnerableDuration": integer
  "removeStingerTime": integer
 static readonly "BASE_SAFE_FALL_DISTANCE": integer
 
-constructor(arg0: $EntityType$$Type<($ArmorStand$$Type)>, arg1: $Level$$Type)
 constructor(arg0: $Level$$Type, arg1: double, arg2: double, arg3: double)
+constructor(arg0: $EntityType$$Type<($ArmorStand$$Type)>, arg1: $Level$$Type)
 
 public "isShowArms"(): boolean
 public "isNoBasePlate"(): boolean
@@ -24965,8 +24965,8 @@ export type $ArmorStand$$Original = $ArmorStand;}
 declare module "net.minecraft.world.entity.projectile.windcharge.BreezeWindCharge" {
 import {$Optional} from "java.util.Optional"
 import {$UUID} from "java.util.UUID"
-import {$Breeze$$Type} from "net.minecraft.world.entity.monster.breeze.Breeze"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
+import {$Breeze$$Type} from "net.minecraft.world.entity.monster.breeze.Breeze"
 import {$AbstractWindCharge, $AbstractWindCharge$$Type} from "net.minecraft.world.entity.projectile.windcharge.AbstractWindCharge"
 import {$ExplosionDamageCalculator} from "net.minecraft.world.level.ExplosionDamageCalculator"
 import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
@@ -24974,9 +24974,9 @@ import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Prov
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$Tag} from "net.minecraft.nbt.Tag"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$Entity} from "net.minecraft.world.entity.Entity"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
 
@@ -25073,8 +25073,8 @@ import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
-import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$InteractionHand} from "net.minecraft.world.InteractionHand"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
@@ -25082,8 +25082,8 @@ import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalRe
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 
@@ -25259,9 +25259,9 @@ import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
+import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$Function, $Function$$Type} from "java.util.function.Function"
-import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$IntFunction} from "java.util.function.IntFunction"
@@ -25287,11 +25287,11 @@ public "test"(arg0: $EquipmentSlot$$Type): boolean
 public static "valueOf"(arg0: StringJS): $EquipmentSlotGroup
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
 }
@@ -25310,8 +25310,8 @@ import {$Optional} from "java.util.Optional"
 import {$UUID} from "java.util.UUID"
 import {$CallbackInfo$$Type} from "org.spongepowered.asm.mixin.injection.callback.CallbackInfo"
 import {$Projectile} from "net.minecraft.world.entity.projectile.Projectile"
-import {$AbstractArrowAccess$$Interface} from "blusunrize.immersiveengineering.mixin.accessors.AbstractArrowAccess"
 import {$Level} from "net.minecraft.world.level.Level"
+import {$AbstractArrowAccess$$Interface} from "blusunrize.immersiveengineering.mixin.accessors.AbstractArrowAccess"
 import {$SoundEvent$$Type} from "net.minecraft.sounds.SoundEvent"
 import {$MoverType$$Type} from "net.minecraft.world.entity.MoverType"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
@@ -25402,9 +25402,9 @@ public "getBaseDamage"(): double
 public "setBaseDamageFromMob"(arg0: float): void
 public "setNoPhysics"(arg0: boolean): void
 public "invokeSetPierceLevel"(arg0: byte): void
-public "move"(arg0: $MoverType$$Type, arg1: $Vec3$$Type): void
 public "tick"(): void
 public "setOwner"(arg0: $Entity$$Type): void
+public "move"(arg0: $MoverType$$Type, arg1: $Vec3$$Type): void
 public "getSlot"(arg0: integer): $SlotAccess
 public "addAdditionalSaveData"(arg0: $CompoundTag$$Type): void
 public "readAdditionalSaveData"(arg0: $CompoundTag$$Type): void
@@ -25462,9 +25462,9 @@ import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
+import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
 import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$Bucketable$$Interface} from "net.minecraft.world.entity.animal.Bucketable"
-import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$InteractionHand, $InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
@@ -25472,10 +25472,10 @@ import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalRe
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
-import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 
 export class $AbstractFish extends $WaterAnimal implements $Bucketable$$Interface {
@@ -25659,8 +25659,8 @@ import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$InteractionHand} from "net.minecraft.world.InteractionHand"
 import {$SpawnGroupData, $SpawnGroupData$$Type} from "net.minecraft.world.entity.SpawnGroupData"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
@@ -25670,9 +25670,9 @@ import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Prov
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$ServerLevelAccessor$$Type} from "net.minecraft.world.level.ServerLevelAccessor"
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
-import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
-import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 
 export class $WitherSkeleton extends $AbstractSkeleton {
@@ -25853,14 +25853,14 @@ import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$Player} from "net.minecraft.world.entity.player.Player"
 import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
-import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$AbstractIllager$IllagerArmPose} from "net.minecraft.world.entity.monster.AbstractIllager$IllagerArmPose"
 import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
@@ -26047,8 +26047,8 @@ import {$BannerPattern$$Type} from "net.minecraft.world.level.block.entity.Banne
 import {$Set} from "java.util.Set"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
+import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
 
 export class $Raid {
 static readonly "RAID_REMOVAL_THRESHOLD_SQR": integer
@@ -26059,18 +26059,9 @@ static readonly "VALID_RAID_RADIUS_SQR": integer
 static readonly "MAX_NO_ACTION_TIME": integer
 static readonly "DEFAULT_MAX_RAID_OMEN_LEVEL": integer
 
-constructor(arg0: integer, arg1: $ServerLevel$$Type, arg2: $BlockPos$$Type)
 constructor(arg0: $ServerLevel$$Type, arg1: $CompoundTag$$Type)
+constructor(arg0: integer, arg1: $ServerLevel$$Type, arg2: $BlockPos$$Type)
 
-public "isVictory"(): boolean
-public "isBetweenWaves"(): boolean
-public "hasFirstWaveSpawned"(): boolean
-public "getTotalRaidersAlive"(): integer
-public "getTotalHealth"(): float
-public "getAllRaiders"(): $Set<($Raider)>
-public "setRaidOmenLevel"(arg0: integer): void
-public "absorbRaidOmen"(arg0: $ServerPlayer$$Type): boolean
-public "getHealthOfLivingRaiders"(): float
 public static "getLeaderBannerInstance"(arg0: $HolderGetter$$Type<($BannerPattern$$Type)>): $ItemStack
 public "getRaidOmenLevel"(): integer
 public "getMaxRaidOmenLevel"(): integer
@@ -26089,6 +26080,15 @@ public "getEnchantOdds"(): float
 public "getNumGroups"(arg0: $Difficulty$$Type): integer
 public "tick"(): void
 public "getLevel"(): $Level
+public "isVictory"(): boolean
+public "isBetweenWaves"(): boolean
+public "hasFirstWaveSpawned"(): boolean
+public "getTotalRaidersAlive"(): integer
+public "getTotalHealth"(): float
+public "getAllRaiders"(): $Set<($Raider)>
+public "setRaidOmenLevel"(arg0: integer): void
+public "absorbRaidOmen"(arg0: $ServerPlayer$$Type): boolean
+public "getHealthOfLivingRaiders"(): float
 public "stop"(): void
 public "getId"(): integer
 public "save"(arg0: $CompoundTag$$Type): $CompoundTag
@@ -26096,13 +26096,6 @@ public "isStarted"(): boolean
 public "isActive"(): boolean
 public "isStopped"(): boolean
 public "getCenter"(): $BlockPos
-get "victory"(): boolean
-get "betweenWaves"(): boolean
-get "totalRaidersAlive"(): integer
-get "totalHealth"(): float
-get "allRaiders"(): $Set<($Raider)>
-set "raidOmenLevel"(value: integer)
-get "healthOfLivingRaiders"(): float
 get "raidOmenLevel"(): integer
 get "maxRaidOmenLevel"(): integer
 get "over"(): boolean
@@ -26110,6 +26103,13 @@ get "groupsSpawned"(): integer
 get "loss"(): boolean
 get "enchantOdds"(): float
 get "level"(): $Level
+get "victory"(): boolean
+get "betweenWaves"(): boolean
+get "totalRaidersAlive"(): integer
+get "totalHealth"(): float
+get "allRaiders"(): $Set<($Raider)>
+set "raidOmenLevel"(value: integer)
+get "healthOfLivingRaiders"(): float
 get "id"(): integer
 get "started"(): boolean
 get "active"(): boolean
@@ -26157,9 +26157,9 @@ import {$EntityDataAccessor$$Type} from "net.minecraft.network.syncher.EntityDat
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$Tag} from "net.minecraft.nbt.Tag"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$Entity} from "net.minecraft.world.entity.Entity"
 import {$AABB} from "net.minecraft.world.phys.AABB"
 import {$PushReaction} from "net.minecraft.world.level.material.PushReaction"
@@ -26312,13 +26312,13 @@ import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalRe
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$DoubleDoubleImmutablePair} from "it.unimi.dsi.fastutil.doubles.DoubleDoubleImmutablePair"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
 
@@ -26385,8 +26385,8 @@ constructor(arg0: $Level$$Type, arg1: $Entity$$Type, arg2: double, arg3: double,
 constructor(arg0: $Level$$Type, arg1: $ItemStack$$Type, arg2: double, arg3: double, arg4: double, arg5: boolean)
 
 public "isShotAtAngle"(): boolean
-public "getItem"(): $ItemStack
 public "tick"(): void
+public "getItem"(): $ItemStack
 public "addAdditionalSaveData"(arg0: $CompoundTag$$Type): void
 public "readAdditionalSaveData"(arg0: $CompoundTag$$Type): void
 public "calculateHorizontalHurtKnockbackDirection"(arg0: $LivingEntity$$Type, arg1: $DamageSource$$Type): $DoubleDoubleImmutablePair
@@ -26422,8 +26422,8 @@ import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Mob$$Type} from "net.minecraft.world.entity.Mob"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
 
@@ -26528,8 +26528,8 @@ import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$Llama} from "net.minecraft.world.entity.animal.horse.Llama"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$InteractionHand} from "net.minecraft.world.InteractionHand"
@@ -26538,12 +26538,12 @@ import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.li
 import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Consumer$$Type} from "java.util.function.Consumer"
-import {$AgeableMob, $AgeableMob$$Type} from "net.minecraft.world.entity.AgeableMob"
 import {$ServerLevelAccessor$$Type} from "net.minecraft.world.level.ServerLevelAccessor"
+import {$AgeableMob, $AgeableMob$$Type} from "net.minecraft.world.entity.AgeableMob"
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
-import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 
@@ -26670,6 +26670,7 @@ public "addAdditionalSaveData"(arg0: $CompoundTag$$Type): void
 public "readAdditionalSaveData"(arg0: $CompoundTag$$Type): void
 public "aiStep"(): void
 public "getBreedOffspring"(arg0: $ServerLevel$$Type, arg1: $AgeableMob$$Type): $AgeableMob
+public "getVariant"(): any
 public static "tickLeash"<E extends $Entity>(arg0: E): void
 public "setLookupToggle"(value: boolean): void
 public "getLookupToggle"(): boolean
@@ -26693,6 +26694,7 @@ public static "forNameOnly"(arg0: StringJS): $ScoreHolder
 public static "fromGameProfile"(arg0: $GameProfile$$Type): $ScoreHolder
 get "traderLlama"(): boolean
 set "despawnDelay"(value: integer)
+get "variant"(): any
 set "lookupToggle"(value: boolean)
 get "lookupToggle"(): boolean
 }
@@ -26717,10 +26719,10 @@ import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
-import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
+import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$InteractionHand} from "net.minecraft.world.InteractionHand"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
@@ -26731,8 +26733,8 @@ import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$ServerLevelAccessor$$Type} from "net.minecraft.world.level.ServerLevelAccessor"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
-import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 
 export class $Stray extends $AbstractSkeleton implements $IQuiverEntity$$Interface {
@@ -26897,8 +26899,8 @@ import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$PiglinArmPose} from "net.minecraft.world.entity.monster.piglin.PiglinArmPose"
 import {$InteractionHand} from "net.minecraft.world.InteractionHand"
@@ -26907,8 +26909,8 @@ import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalRe
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
-import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 
 export class $AbstractPiglin extends $Monster {
@@ -27091,35 +27093,35 @@ import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$CallbackInfo$$Type} from "org.spongepowered.asm.mixin.injection.callback.CallbackInfo"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
-import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$MobSpawnType$$Type} from "net.minecraft.world.entity.MobSpawnType"
-import {$Pose$$Type} from "net.minecraft.world.entity.Pose"
+import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Animal$$Type} from "net.minecraft.world.entity.animal.Animal"
+import {$Pose$$Type} from "net.minecraft.world.entity.Pose"
 import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
-import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
+import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
-import {$InteractionHand, $InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$EntityDimensions} from "net.minecraft.world.entity.EntityDimensions"
+import {$InteractionHand, $InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
-import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
 import {$CallbackInfoReturnable$$Type} from "org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable"
+import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$AgeableMob, $AgeableMob$$Type} from "net.minecraft.world.entity.AgeableMob"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$AbstractHorse} from "net.minecraft.world.entity.animal.horse.AbstractHorse"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
@@ -27244,14 +27246,14 @@ constructor(arg0: $EntityType$$Type<($SkeletonHorse$$Type)>, arg1: $Level$$Type)
 public "setTrap"(arg0: boolean): void
 public "mobInteract"(arg0: $Player$$Type, arg1: $InteractionHand$$Type): $InteractionResult
 public "getBreedOffspring"(arg0: $ServerLevel$$Type, arg1: $AgeableMob$$Type): $AgeableMob
-public "handler$bcj001$supplementaries$addAdditionalSaveData"(compoundNBT: $CompoundTag$$Type, ci: $CallbackInfo$$Type): void
-public "handler$bcj001$supplementaries$readAdditionalSaveData"(compoundNBT: $CompoundTag$$Type, ci: $CallbackInfo$$Type): void
 public "supp$feedRottenFlesh"(player: $Player$$Type, hand: $InteractionHand$$Type, stack: $ItemStack$$Type): void
 public "supp$isConverting"(): boolean
+public "handler$bcj000$supplementaries$mobInteract"(player: $Player$$Type, hand: $InteractionHand$$Type, cir: $CallbackInfoReturnable$$Type): void
 public "isTrap"(): boolean
+public "handler$bcj001$supplementaries$addAdditionalSaveData"(compoundNBT: $CompoundTag$$Type, ci: $CallbackInfo$$Type): void
+public "handler$bcj001$supplementaries$readAdditionalSaveData"(compoundNBT: $CompoundTag$$Type, ci: $CallbackInfo$$Type): void
 public static "checkSkeletonHorseSpawnRules"(arg0: $EntityType$$Type<($Animal$$Type)>, arg1: $LevelAccessor$$Type, arg2: $MobSpawnType$$Type, arg3: $BlockPos$$Type, arg4: $RandomSource$$Type): boolean
 public "tick"(): void
-public "handler$bcj000$supplementaries$mobInteract"(player: $Player$$Type, hand: $InteractionHand$$Type, cir: $CallbackInfoReturnable$$Type): void
 public "addAdditionalSaveData"(arg0: $CompoundTag$$Type): void
 public "readAdditionalSaveData"(arg0: $CompoundTag$$Type): void
 public "handleEntityEvent"(id: byte): void
@@ -27318,11 +27320,11 @@ import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalRe
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$ServerLevelAccessor$$Type} from "net.minecraft.world.level.ServerLevelAccessor"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
-import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 
 export class $Spider extends $Monster {
@@ -27492,7 +27494,7 @@ public "width"(): integer
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $Display$TextDisplay$CachedLine$$Type = ({"width"?: integer, "contents"?: $FormattedCharSequence$$Type}) | ([width?: integer, contents?: $FormattedCharSequence$$Type]);
+export type $Display$TextDisplay$CachedLine$$Type = ({"contents"?: $FormattedCharSequence$$Type, "width"?: integer}) | ([contents?: $FormattedCharSequence$$Type, width?: integer]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -27523,19 +27525,19 @@ import {$InteractionHand, $InteractionHand$$Type} from "net.minecraft.world.Inte
 import {$SpawnGroupData, $SpawnGroupData$$Type} from "net.minecraft.world.entity.SpawnGroupData"
 import {$LootTable} from "net.minecraft.world.level.storage.loot.LootTable"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
-import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
 import {$CallbackInfoReturnable$$Type} from "org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable"
+import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$ServerLevelAccessor$$Type} from "net.minecraft.world.level.ServerLevelAccessor"
 import {$AgeableMob$$Type} from "net.minecraft.world.entity.AgeableMob"
-import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
+import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$Tag} from "net.minecraft.nbt.Tag"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
+import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 
@@ -27668,8 +27670,8 @@ public "getDefaultLootTable"(): $ResourceKey<($LootTable)>
 public "handleEntityEvent"(arg0: byte): void
 public "aiStep"(): void
 public static "createAttributes"(): $AttributeSupplier$Builder
-public "onSheared"(arg0: $Player$$Type, arg1: $ItemStack$$Type, arg2: $Level$$Type, arg3: $BlockPos$$Type): $List<($ItemStack)>
 public "isShearable"(arg0: $Player$$Type, arg1: $ItemStack$$Type, arg2: $Level$$Type, arg3: $BlockPos$$Type): boolean
+public "onSheared"(arg0: $Player$$Type, arg1: $ItemStack$$Type, arg2: $Level$$Type, arg3: $BlockPos$$Type): $List<($ItemStack)>
 public "handler$cik000$apothic_enchanting$apoth_handleShearFortune"(arg0: $Player$$Type, arg1: $ItemStack$$Type, arg2: $Level$$Type, arg3: $BlockPos$$Type, arg4: $CallbackInfoReturnable$$Type): void
 public "handler$cik000$apothic_enchanting$apoth_handleShearEnchantments"(arg0: $Player$$Type, arg1: $ItemStack$$Type, arg2: $Level$$Type, arg3: $BlockPos$$Type, arg4: $CallbackInfoReturnable$$Type): void
 public "spawnShearedDrop"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $ItemStack$$Type): void
@@ -27789,18 +27791,18 @@ import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Prov
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$ServerLevelAccessor$$Type} from "net.minecraft.world.level.ServerLevelAccessor"
 import {$AgeableMob, $AgeableMob$$Type} from "net.minecraft.world.entity.AgeableMob"
-import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
+import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
 import {$Parrot$Variant, $Parrot$Variant$$Type} from "net.minecraft.world.entity.animal.Parrot$Variant"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$Tag} from "net.minecraft.nbt.Tag"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
+import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$FlyingAnimal$$Interface} from "net.minecraft.world.entity.animal.FlyingAnimal"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$VariantHolder$$Interface} from "net.minecraft.world.entity.VariantHolder"
 
@@ -27990,8 +27992,8 @@ export type $Parrot$$Original = $Parrot;}
 declare module "net.minecraft.world.entity.animal.horse.AbstractHorse" {
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
-import {$UUID, $UUID$$Type} from "java.util.UUID"
 import {$CallbackInfo$$Type} from "org.spongepowered.asm.mixin.injection.callback.CallbackInfo"
+import {$UUID, $UUID$$Type} from "java.util.UUID"
 import {$Level} from "net.minecraft.world.level.Level"
 import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
 import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
@@ -28014,25 +28016,25 @@ import {$InteractionHand, $InteractionHand$$Type} from "net.minecraft.world.Inte
 import {$SlotAccess} from "net.minecraft.world.entity.SlotAccess"
 import {$SpawnGroupData, $SpawnGroupData$$Type} from "net.minecraft.world.entity.SpawnGroupData"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
-import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
 import {$CallbackInfoReturnable$$Type} from "org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable"
+import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$ServerLevelAccessor$$Type} from "net.minecraft.world.level.ServerLevelAccessor"
 import {$AgeableMob, $AgeableMob$$Type} from "net.minecraft.world.entity.AgeableMob"
-import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$PlayerRideableJumping$$Interface} from "net.minecraft.world.entity.PlayerRideableJumping"
+import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$Container, $Container$$Type} from "net.minecraft.world.Container"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
-import {$Tag} from "net.minecraft.nbt.Tag"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
+import {$Tag} from "net.minecraft.nbt.Tag"
 import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
-import {$Saddleable$$Interface} from "net.minecraft.world.entity.Saddleable"
 import {$OwnableEntity$$Interface} from "net.minecraft.world.entity.OwnableEntity"
+import {$Saddleable$$Interface} from "net.minecraft.world.entity.Saddleable"
 
 export class $AbstractHorse extends $Animal implements $ContainerListener$$Interface, $HasCustomInventoryScreen$$Interface, $OwnableEntity$$Interface, $PlayerRideableJumping$$Interface, $Saddleable$$Interface {
 static readonly "MAX_WEARING_ARMOR_CHANCE": float
@@ -28162,6 +28164,12 @@ public "isSaddled"(): boolean
 public "isSaddleable"(): boolean
 public "equipSaddle"(arg0: $ItemStack$$Type, arg1: $SoundSource$$Type): void
 public "getOwnerUUID"(): $UUID
+public static "createBaseHorseAttributes"(): $AttributeSupplier$Builder
+public "openCustomInventoryScreen"(arg0: $Player$$Type): void
+public "fedFood"(arg0: $Player$$Type, arg1: $ItemStack$$Type): $InteractionResult
+public "handleStartJump"(arg0: integer): void
+public "handleStopJump"(): void
+public "isJumping"(): boolean
 public "handler$bac000$supplementaries$supp$addSugarCube"(ci: $CallbackInfo$$Type): void
 public "setTamed"(arg0: boolean): void
 public "setIsJumping"(arg0: boolean): void
@@ -28175,8 +28183,8 @@ public "getTemper"(): integer
 public "setTemper"(arg0: integer): void
 public "modifyTemper"(arg0: integer): integer
 public "getMaxTemper"(): integer
-public "getInventorySize"(): integer
 public static "getInventorySize"(arg0: integer): integer
+public "getInventorySize"(): integer
 public "standIfPossible"(): void
 public "handler$bac000$supplementaries$supp$eatSugarCube"(player: $Player$$Type, stack: $ItemStack$$Type, cir: $CallbackInfoReturnable$$Type): void
 public "setStanding"(arg0: boolean): void
@@ -28190,12 +28198,6 @@ public "getMouthAnim"(arg0: float): float
 public "hasInventoryChanged"(arg0: $Container$$Type): boolean
 public "getAmbientStandInterval"(): integer
 public "getBodyArmorAccess"(): $Container
-public static "createBaseHorseAttributes"(): $AttributeSupplier$Builder
-public "openCustomInventoryScreen"(arg0: $Player$$Type): void
-public "fedFood"(arg0: $Player$$Type, arg1: $ItemStack$$Type): $InteractionResult
-public "handleStartJump"(arg0: integer): void
-public "handleStopJump"(): void
-public "isJumping"(): boolean
 public "tick"(): void
 public "getSlot"(arg0: integer): $SlotAccess
 public "finalizeSpawn"(arg0: $ServerLevelAccessor$$Type, arg1: $DifficultyInstance$$Type, arg2: $MobSpawnType$$Type, arg3: $SpawnGroupData$$Type): $SpawnGroupData
@@ -28285,8 +28287,8 @@ import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$CallbackInfo$$Type} from "org.spongepowered.asm.mixin.injection.callback.CallbackInfo"
 import {$Attackable$$Interface} from "net.minecraft.world.entity.Attackable"
 import {$EquipmentEntity$TickableEnchantmentTrackingEntity$$Interface} from "net.caffeinemc.mods.lithium.common.entity.EquipmentEntity$TickableEnchantmentTrackingEntity"
+import {$LivingEntityAccessor$$Interface as $LivingEntityAccessor$3$$Interface} from "io.redspace.ironsspellbooks.mixin.LivingEntityAccessor"
 import {$LivingEntityExtensions$$Interface} from "artifacts.extensions.ability.LivingEntityExtensions"
-import {$LivingEntityAccessor$$Interface} from "io.redspace.ironsspellbooks.mixin.LivingEntityAccessor"
 import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
 import {$EquipmentEntity$EquipmentTrackingEntity$$Interface} from "net.caffeinemc.mods.lithium.common.entity.EquipmentEntity$EquipmentTrackingEntity"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
@@ -28295,8 +28297,8 @@ import {$InteractionHand, $InteractionHand$$Type} from "net.minecraft.world.Inte
 import {$SlotAccess} from "net.minecraft.world.entity.SlotAccess"
 import {$CosmeticArmorLookupTogglable$$Interface} from "io.wispforest.accessories.pond.CosmeticArmorLookupTogglable"
 import {$Entity$RemovalReason, $Entity$RemovalReason$$Type} from "net.minecraft.world.entity.Entity$RemovalReason"
-import {$LivingEntityKJS$$Interface} from "dev.latvian.mods.kubejs.core.LivingEntityKJS"
 import {$Direction$Axis$$Type} from "net.minecraft.core.Direction$Axis"
+import {$LivingEntityKJS$$Interface} from "dev.latvian.mods.kubejs.core.LivingEntityKJS"
 import {$LivingEntityExtensions$$Interface as $LivingEntityExtensions$0$$Interface} from "artifacts.extensions.pocketpiston.LivingEntityExtensions"
 import {$AccessoriesCapability} from "io.wispforest.accessories.api.AccessoriesCapability"
 import {$ILivingEntityExtension$$Interface} from "net.neoforged.neoforge.common.extensions.ILivingEntityExtension"
@@ -28307,15 +28309,15 @@ import {$MobEffectInstance, $MobEffectInstance$$Type} from "net.minecraft.world.
 import {$EquipmentEntity$$Interface} from "net.caffeinemc.mods.lithium.common.entity.EquipmentEntity"
 import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Pose, $Pose$$Type} from "net.minecraft.world.entity.Pose"
-import {$LivingEntityAccessor$$Interface as $LivingEntityAccessor$1$$Interface} from "io.wispforest.accessories.mixin.LivingEntityAccessor"
+import {$LivingEntityAccessor$$Interface} from "io.wispforest.accessories.mixin.LivingEntityAccessor"
 import {$TargetingConditions$$Type} from "net.minecraft.world.entity.ai.targeting.TargetingConditions"
-import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
 import {$BlockUtil$FoundRectangle$$Type} from "net.minecraft.BlockUtil$FoundRectangle"
+import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$CombatTracker} from "net.minecraft.world.damagesource.CombatTracker"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$Map} from "java.util.Map"
-import {$LivingEntityAccessor$$Interface as $LivingEntityAccessor$2$$Interface} from "com.simibubi.create.foundation.mixin.accessor.LivingEntityAccessor"
+import {$LivingEntityAccessor$$Interface as $LivingEntityAccessor$1$$Interface} from "com.simibubi.create.foundation.mixin.accessor.LivingEntityAccessor"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
 import {$CallbackInfoReturnable$$Type} from "org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable"
 import {$Operation$$Type} from "com.llamalad7.mixinextras.injector.wrapoperation.Operation"
@@ -28329,7 +28331,7 @@ import {$Iterable} from "java.lang.Iterable"
 import {$Brain} from "net.minecraft.world.entity.ai.Brain"
 import {$Optional} from "java.util.Optional"
 import {$SoundEvent, $SoundEvent$$Type} from "net.minecraft.sounds.SoundEvent"
-import {$LivingEntityAccessor$$Interface as $LivingEntityAccessor$0$$Interface} from "artifacts.mixin.accessors.LivingEntityAccessor"
+import {$LivingEntityAccessor$$Interface as $LivingEntityAccessor$2$$Interface} from "artifacts.mixin.accessors.LivingEntityAccessor"
 import {$ItemPredicate$$Type} from "dev.latvian.mods.kubejs.item.ItemPredicate"
 import {$EntityDataAccessor$$Type} from "net.minecraft.network.syncher.EntityDataAccessor"
 import {$EquipmentSlot, $EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
@@ -28341,12 +28343,12 @@ import {$AttributeInstance} from "net.minecraft.world.entity.ai.attributes.Attri
 import {$LootTable} from "net.minecraft.world.level.storage.loot.LootTable"
 import {$KubeRayTraceResult} from "dev.latvian.mods.kubejs.entity.KubeRayTraceResult"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
-import {$SlotReference$$Type} from "io.wispforest.accessories.api.slot.SlotReference"
-import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$ChangeSubscriber$CountChangeSubscriber$$Interface} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber$CountChangeSubscriber"
+import {$Consumer$$Type} from "java.util.function.Consumer"
+import {$SlotReference$$Type} from "io.wispforest.accessories.api.slot.SlotReference"
 import {$DamageSource, $DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
 import {$Attribute$$Type} from "net.minecraft.world.entity.ai.attributes.Attribute"
-import {$LivingEntityAccessor$$Interface as $LivingEntityAccessor$3$$Interface} from "net.mehvahdjukaar.supplementaries.mixins.LivingEntityAccessor"
+import {$LivingEntityAccessor$$Interface as $LivingEntityAccessor$0$$Interface} from "net.mehvahdjukaar.supplementaries.mixins.LivingEntityAccessor"
 import {$Direction} from "net.minecraft.core.Direction"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$ImmutableList} from "com.google.common.collect.ImmutableList"
@@ -28358,26 +28360,26 @@ import {$LEInvoker$$Interface} from "dev.shadowsoffire.apothic_attributes.util.L
 import {$DamageContainer$$Type} from "net.neoforged.neoforge.common.damagesource.DamageContainer"
 import {$ClientboundAddEntityPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundAddEntityPacket"
 import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState"
-import {$Item$$Type} from "net.minecraft.world.item.Item"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
+import {$Item$$Type} from "net.minecraft.world.item.Item"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$Collection, $Collection$$Type} from "java.util.Collection"
-import {$Predicate$$Type} from "java.util.function.Predicate"
 import {$EntityDimensions} from "net.minecraft.world.entity.EntityDimensions"
+import {$Predicate$$Type} from "java.util.function.Predicate"
 import {$ItemEntity$$Type} from "net.minecraft.world.entity.item.ItemEntity"
+import {$AccessoriesLivingEntityExtension$$Interface} from "io.wispforest.accessories.pond.AccessoriesLivingEntityExtension"
 import {$AccessoriesHolder} from "io.wispforest.accessories.api.AccessoriesHolder"
 import {$BlockCachingEntity$$Interface} from "net.caffeinemc.mods.lithium.common.entity.pushable.BlockCachingEntity"
-import {$AccessoriesLivingEntityExtension$$Interface} from "io.wispforest.accessories.pond.AccessoriesLivingEntityExtension"
-import {$EnchantmentLocationBasedEffect} from "net.minecraft.world.item.enchantment.effects.EnchantmentLocationBasedEffect"
 import {$MobEffect, $MobEffect$$Type} from "net.minecraft.world.effect.MobEffect"
+import {$EnchantmentLocationBasedEffect} from "net.minecraft.world.item.enchantment.effects.EnchantmentLocationBasedEffect"
 import {$EntityPotionEffectsJS} from "dev.latvian.mods.kubejs.entity.EntityPotionEffectsJS"
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$EntityAnchorArgument$Anchor$$Type} from "net.minecraft.commands.arguments.EntityAnchorArgument$Anchor"
 
-export class $LivingEntity extends $Entity implements $Attackable$$Interface, $ILivingEntityExtension$$Interface, $LivingEntityAccessor$3$$Interface, $LEInvoker$$Interface, $LivingEntityAccessor$1$$Interface, $AccessoriesAPIAccess$$Interface, $AccessoriesLivingEntityExtension$$Interface, $CosmeticArmorLookupTogglable$$Interface, $LivingEntityKJS$$Interface, $BlockCachingEntity$$Interface, $EquipmentEntity$$Interface, $ChangeSubscriber$CountChangeSubscriber$$Interface, $EquipmentEntity$TickableEnchantmentTrackingEntity$$Interface, $EquipmentEntity$EquipmentTrackingEntity$$Interface, $LivingEntityExtensions$$Interface, $LivingEntityAccessor$0$$Interface, $LivingEntityExtensions$0$$Interface, $LivingEntityInvoker$$Interface, $LivingEntityAccessor$$Interface, $LivingEntityAccessor$2$$Interface {
+export class $LivingEntity extends $Entity implements $Attackable$$Interface, $ILivingEntityExtension$$Interface, $LivingEntityAccessor$0$$Interface, $LEInvoker$$Interface, $LivingEntityAccessor$$Interface, $AccessoriesAPIAccess$$Interface, $AccessoriesLivingEntityExtension$$Interface, $CosmeticArmorLookupTogglable$$Interface, $LivingEntityKJS$$Interface, $BlockCachingEntity$$Interface, $EquipmentEntity$$Interface, $ChangeSubscriber$CountChangeSubscriber$$Interface, $EquipmentEntity$TickableEnchantmentTrackingEntity$$Interface, $EquipmentEntity$EquipmentTrackingEntity$$Interface, $LivingEntityExtensions$$Interface, $LivingEntityAccessor$2$$Interface, $LivingEntityExtensions$0$$Interface, $LivingEntityInvoker$$Interface, $LivingEntityAccessor$3$$Interface, $LivingEntityAccessor$1$$Interface {
  "lastHurtByPlayerTime": integer
 static readonly "DEFAULT_BASE_GRAVITY": double
  "hasImpulse": boolean
@@ -28470,28 +28472,28 @@ static readonly "BASE_SAFE_FALL_DISTANCE": integer
 readonly "rotA": float
  "horizontalCollision": boolean
 
-public "push"(arg0: $Entity$$Type): void
-public "getAttribute"(arg0: $Holder$$Type<($Attribute)>): $AttributeInstance
-public "take"(arg0: $Entity$$Type, arg1: integer): void
+public "getAttributeValue"(arg0: $Holder$$Type<($Attribute)>): double
 public "tick"(): void
-public "getDimensions"(arg0: $Pose$$Type): $EntityDimensions
 public "isBlocking"(): boolean
 public "kill"(): void
-public "getAttributeValue"(arg0: $Holder$$Type<($Attribute)>): double
+public "getAttribute"(arg0: $Holder$$Type<($Attribute)>): $AttributeInstance
+public "getDimensions"(arg0: $Pose$$Type): $EntityDimensions
+public "take"(arg0: $Entity$$Type, arg1: integer): void
 public "remove"(arg0: $Entity$RemovalReason$$Type): void
 public "isAlive"(): boolean
 public "getSlot"(arg0: integer): $SlotAccess
 public "getAttributes"(): $AttributeMap
+public "push"(arg0: $Entity$$Type): void
+public "isSuppressingSlidingDownLadder"(): boolean
 public "isDeadOrDying"(): boolean
 public "isUsingItem"(): boolean
-public "swing"(arg0: $InteractionHand$$Type, arg1: boolean): void
 public "swing"(arg0: $InteractionHand$$Type): void
+public "swing"(arg0: $InteractionHand$$Type, arg1: boolean): void
 public "getItemInHand"(arg0: $InteractionHand$$Type): $ItemStack
 public "isSleeping"(): boolean
 public "releaseUsingItem"(): void
 public "isGlowing"(): boolean
 public "hasEffect"(arg0: $Holder$$Type<($MobEffect)>): boolean
-public "isSuppressingSlidingDownLadder"(): boolean
 public "lookAt"(arg0: $EntityAnchorArgument$Anchor$$Type, arg1: $Vec3$$Type): void
 public "getScale"(): float
 public "skipDropExperience"(): void
@@ -28529,8 +28531,8 @@ public "getNoActionTime"(): integer
 public "setNoActionTime"(arg0: integer): void
 public "shouldDiscardFriction"(): boolean
 public "setDiscardFriction"(arg0: boolean): void
-public "onEquipItem"(slotReference: $SlotReference$$Type, oldItem: $ItemStack$$Type, newItem: $ItemStack$$Type): void
 public "onEquipItem"(arg0: $EquipmentSlot$$Type, arg1: $ItemStack$$Type, arg2: $ItemStack$$Type): void
+public "onEquipItem"(slotReference: $SlotReference$$Type, oldItem: $ItemStack$$Type, newItem: $ItemStack$$Type): void
 public "handler$dnj000$pneumaticcraft$onOnEquipItem"(arg0: $EquipmentSlot$$Type, arg1: $ItemStack$$Type, arg2: $ItemStack$$Type, arg3: $CallbackInfo$$Type): void
 public "getActiveEffects"(): $Collection<($MobEffectInstance)>
 public "addAdditionalSaveData"(arg0: $CompoundTag$$Type): void
@@ -28546,8 +28548,8 @@ public static "areAllEffectsAmbient"(arg0: $Collection$$Type<($MobEffectInstance
 public "getVisibilityPercent"(arg0: $Entity$$Type): double
 public "getArmorCoverPercentage"(): float
 public "getItemBySlot"(arg0: $EquipmentSlot$$Type): $ItemStack
-public "canAttack"(arg0: $LivingEntity$$Type): boolean
 public "canAttack"(arg0: $LivingEntity$$Type, arg1: $TargetingConditions$$Type): boolean
+public "canAttack"(arg0: $LivingEntity$$Type): boolean
 public "canBeSeenAsEnemy"(): boolean
 public "canBeSeenByAnyone"(): boolean
 public "removeAllEffects"(): boolean
@@ -28716,13 +28718,13 @@ public "lithium$SetClimbingMobCachingSectionUpdateBehavior"(arg0: boolean): void
 public "lithium$OnBlockCacheDeleted"(): void
 public "lithium$OnBlockCacheSet"(arg0: $BlockState$$Type): void
 public "lithium$onEquipmentReplaced"(arg0: $ItemStack$$Type, arg1: $ItemStack$$Type): void
-public "lithium$notify"(arg0: any, arg1: integer): void
 public "lithium$notify"(arg0: $ItemStack$$Type, arg1: integer): void
+public "lithium$notify"(arg0: any, arg1: integer): void
 public "lithium$onEquipmentChanged"(): void
-public "lithium$notifyCount"(arg0: $ItemStack$$Type, arg1: integer, arg2: integer): void
 public "lithium$notifyCount"(arg0: any, arg1: integer, arg2: integer): void
-public "lithium$forceUnsubscribe"(arg0: $ItemStack$$Type, arg1: integer): void
+public "lithium$notifyCount"(arg0: $ItemStack$$Type, arg1: integer, arg2: integer): void
 public "lithium$forceUnsubscribe"(arg0: any, arg1: integer): void
+public "lithium$forceUnsubscribe"(arg0: $ItemStack$$Type, arg1: integer): void
 public "lithium$updateHasTickableEnchantments"(arg0: $ItemStack$$Type, arg1: $ItemStack$$Type): void
 public "lithium$notifyAfterEnchantmentChange"(arg0: $ItemStack$$Type, arg1: integer): void
 public "lithium$notifyAfterEnchantmentChange"(arg0: any, arg1: integer): void
@@ -28812,11 +28814,11 @@ public static "fromGameProfile"(arg0: $GameProfile$$Type): $ScoreHolder
 get "blocking"(): boolean
 get "alive"(): boolean
 get "attributes"(): $AttributeMap
+get "suppressingSlidingDownLadder"(): boolean
 get "deadOrDying"(): boolean
 get "usingItem"(): boolean
 get "sleeping"(): boolean
 get "glowing"(): boolean
-get "suppressingSlidingDownLadder"(): boolean
 get "scale"(): float
 get "maxHealth"(): float
 set "health"(value: float)
@@ -28932,11 +28934,11 @@ declare module "net.minecraft.world.entity.animal.MushroomCow" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$List} from "java.util.List"
-import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$Shearable$$Interface} from "net.minecraft.world.entity.Shearable"
+import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$MushroomCow$MushroomType, $MushroomCow$MushroomType$$Type} from "net.minecraft.world.entity.animal.MushroomCow$MushroomType"
-import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$MobSpawnType$$Type} from "net.minecraft.world.entity.MobSpawnType"
+import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$SoundSource$$Type} from "net.minecraft.sounds.SoundSource"
 import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
@@ -28944,15 +28946,15 @@ import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
-import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
+import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$InteractionHand, $InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
-import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
 import {$CallbackInfoReturnable$$Type} from "org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable"
+import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$AgeableMob, $AgeableMob$$Type} from "net.minecraft.world.entity.AgeableMob"
@@ -28960,11 +28962,11 @@ import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$Cow} from "net.minecraft.world.entity.animal.Cow"
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$LightningBolt$$Type} from "net.minecraft.world.entity.LightningBolt"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$VariantHolder$$Interface} from "net.minecraft.world.entity.VariantHolder"
 
@@ -29087,8 +29089,8 @@ public "setVariant"(arg0: $MushroomCow$MushroomType$$Type): void
 public "addAdditionalSaveData"(arg0: $CompoundTag$$Type): void
 public "readAdditionalSaveData"(arg0: $CompoundTag$$Type): void
 public "thunderHit"(arg0: $ServerLevel$$Type, arg1: $LightningBolt$$Type): void
-public "onSheared"(arg0: $Player$$Type, arg1: $ItemStack$$Type, arg2: $Level$$Type, arg3: $BlockPos$$Type): $List<($ItemStack)>
 public "isShearable"(arg0: $Player$$Type, arg1: $ItemStack$$Type, arg2: $Level$$Type, arg3: $BlockPos$$Type): boolean
+public "onSheared"(arg0: $Player$$Type, arg1: $ItemStack$$Type, arg2: $Level$$Type, arg3: $BlockPos$$Type): $List<($ItemStack)>
 public "handler$cik000$apothic_enchanting$apoth_handleShearFortune"(arg0: $Player$$Type, arg1: $ItemStack$$Type, arg2: $Level$$Type, arg3: $BlockPos$$Type, arg4: $CallbackInfoReturnable$$Type): void
 public "handler$cik000$apothic_enchanting$apoth_handleShearEnchantments"(arg0: $Player$$Type, arg1: $ItemStack$$Type, arg2: $Level$$Type, arg3: $BlockPos$$Type, arg4: $CallbackInfoReturnable$$Type): void
 public "spawnShearedDrop"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $ItemStack$$Type): void
@@ -29140,21 +29142,21 @@ import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
-import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$FluidType$$Type} from "net.neoforged.neoforge.fluids.FluidType"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$InteractionHand} from "net.minecraft.world.InteractionHand"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
 import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 
@@ -29324,10 +29326,10 @@ import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
-import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
+import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$InteractionHand} from "net.minecraft.world.InteractionHand"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
@@ -29337,11 +29339,11 @@ import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
 import {$AmbientCreature} from "net.minecraft.world.entity.ambient.AmbientCreature"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AnimationState} from "net.minecraft.world.entity.AnimationState"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 
@@ -29534,8 +29536,8 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$ExtensionInfo} from "net.neoforged.fml.common.asm.enumextension.ExtensionInfo"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 import {$IExtensibleEnum$$Interface} from "net.neoforged.fml.common.asm.enumextension.IExtensibleEnum"
@@ -29562,11 +29564,11 @@ public "getSerializedName"(): StringJS
 public "isFriendly"(): boolean
 public "isPersistent"(): boolean
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "despawnDistance"(): integer
 get "noDespawnDistance"(): integer
 get "maxInstancesPerChunk"(): integer
@@ -29603,17 +29605,17 @@ import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$Map, $Map$$Type} from "java.util.Map"
 import {$ExperienceOrbAccess$$Interface} from "com.blamejared.clumps.mixin.ExperienceOrbAccess"
-import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
 import {$CallbackInfoReturnable$$Type} from "org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable"
-import {$ClientGamePacketListener} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
+import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$ClientGamePacketListener} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
-import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 
 export class $ExperienceOrb extends $Entity implements $ExperienceOrbAccess$$Interface, $IClumpedOrb$$Interface {
  "hasImpulse": boolean
@@ -29741,8 +29743,8 @@ import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Prov
 import {$LevelBlock} from "dev.latvian.mods.kubejs.level.LevelBlock"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$Container, $Container$$Type, $Container$$Interface} from "net.minecraft.world.Container"
-import {$AbstractContainerMenu, $AbstractContainerMenu$$Type} from "net.minecraft.world.inventory.AbstractContainerMenu"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
+import {$AbstractContainerMenu, $AbstractContainerMenu$$Type} from "net.minecraft.world.inventory.AbstractContainerMenu"
 import {$RegistryFriendlyByteBuf$$Type} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$AABB} from "net.minecraft.world.phys.AABB"
@@ -29750,8 +29752,8 @@ import {$AABB} from "net.minecraft.world.phys.AABB"
 export interface $ContainerEntity$$Interface extends $Container$$Interface, $MenuProvider$$Interface {
 set "lootTable"(value: $ResourceKey$$Type<($LootTable)>)
 set "lootTableSeed"(value: long)
-get "itemStacks"(): $NonNullList<($ItemStack)>
 get "chestVehicleEmpty"(): boolean
+get "itemStacks"(): $NonNullList<($ItemStack)>
 get "empty"(): boolean
 get "removed"(): boolean
 get "boundingBox"(): $AABB
@@ -29775,6 +29777,8 @@ export class $ContainerEntity implements $ContainerEntity$$Interface {
  "setLootTable"(arg0: $ResourceKey$$Type<($LootTable)>): void
  "unpackChestVehicleLootTable"(arg0: $Player$$Type): void
  "setLootTableSeed"(arg0: long): void
+ "isChestVehicleEmpty"(): boolean
+ "interactWithContainerVehicle"(arg0: $Player$$Type): $InteractionResult
  "addChestVehicleSaveData"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
  "readChestVehicleSaveData"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
  "chestVehicleDestroyed"(arg0: $DamageSource$$Type, arg1: $Level$$Type, arg2: $Entity$$Type): void
@@ -29787,11 +29791,9 @@ export class $ContainerEntity implements $ContainerEntity$$Interface {
  "isChestVehicleStillValid"(arg0: $Player$$Type): boolean
  "getItemStacks"(): $NonNullList<($ItemStack)>
  "clearItemStacks"(): void
- "isChestVehicleEmpty"(): boolean
- "interactWithContainerVehicle"(arg0: $Player$$Type): $InteractionResult
- "level"(): $Level
  "position"(): $Vec3
  "isEmpty"(): boolean
+ "level"(): $Level
  "isRemoved"(): boolean
  "getBoundingBox"(): $AABB
  "getLootTable"(): $ResourceKey<($LootTable)>
@@ -29891,11 +29893,11 @@ import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
-import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$Enemy$$Interface} from "net.minecraft.world.entity.monster.Enemy"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$InteractionHand} from "net.minecraft.world.InteractionHand"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
@@ -29904,10 +29906,10 @@ import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Prov
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 
@@ -30079,9 +30081,9 @@ import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInL
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$Tag} from "net.minecraft.nbt.Tag"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$Entity} from "net.minecraft.world.entity.Entity"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
 
@@ -30174,19 +30176,19 @@ import {$IAbstractMinecartExtension$$Interface} from "net.neoforged.neoforge.com
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Vec3} from "net.minecraft.world.phys.Vec3"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
-import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockUtil$FoundRectangle$$Type} from "net.minecraft.BlockUtil$FoundRectangle"
+import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
+import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$AbstractMinecart$Type, $AbstractMinecart$Type$$Type} from "net.minecraft.world.entity.vehicle.AbstractMinecart$Type"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
-import {$IMinecartCollisionHandler, $IMinecartCollisionHandler$$Type} from "net.neoforged.neoforge.common.IMinecartCollisionHandler"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$IMinecartCollisionHandler, $IMinecartCollisionHandler$$Type} from "net.neoforged.neoforge.common.IMinecartCollisionHandler"
 import {$Direction$Axis$$Type} from "net.minecraft.core.Direction$Axis"
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$VehicleEntity} from "net.minecraft.world.entity.vehicle.VehicleEntity"
@@ -30269,8 +30271,8 @@ public "getMaxSpeedWithRail"(): double
 public "setMaxSpeedAirLateral"(arg0: float): void
 public "setMaxSpeedAirVertical"(arg0: float): void
 public "setDragAir"(arg0: double): void
-public "push"(arg0: $Entity$$Type): void
 public "tick"(): void
+public "push"(arg0: $Entity$$Type): void
 public "animateHurt"(arg0: float): void
 public "getDismountLocationForPassenger"(arg0: $LivingEntity$$Type): $Vec3
 public "lerpTo"(arg0: double, arg1: double, arg2: double, arg3: float, arg4: float, arg5: integer): void
@@ -30374,18 +30376,18 @@ import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$InteractionHand} from "net.minecraft.world.InteractionHand"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
 import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Guardian} from "net.minecraft.world.entity.monster.Guardian"
 import {$Consumer$$Type} from "java.util.function.Consumer"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 
 export class $ElderGuardian extends $Guardian {
@@ -30544,10 +30546,10 @@ import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
-import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
+import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$InteractionHand} from "net.minecraft.world.InteractionHand"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
 import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
@@ -30555,8 +30557,8 @@ import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Prov
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 
@@ -30710,8 +30712,8 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
 export class $Llama$Variant extends $Enum<($Llama$Variant)> implements $StringRepresentable$$Interface {
@@ -30727,11 +30729,11 @@ public "getId"(): integer
 public "getSerializedName"(): StringJS
 public static "byId"(arg0: integer): $Llama$Variant
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "id"(): integer
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
@@ -30746,13 +30748,13 @@ export type $Llama$Variant$$Type = (("creamy") | ("white") | ("brown") | ("gray"
  */
 export type $Llama$Variant$$Original = $Llama$Variant;}
 declare module "net.minecraft.world.entity.ai.village.poi.PoiManager" {
-import {$LevelHeightAccessor$$Type} from "net.minecraft.world.level.LevelHeightAccessor"
 import {$BiPredicate$$Type} from "java.util.function.BiPredicate"
+import {$LevelHeightAccessor$$Type} from "net.minecraft.world.level.LevelHeightAccessor"
 import {$Optional} from "java.util.Optional"
 import {$RegionStorageInfo$$Type} from "net.minecraft.world.level.chunk.storage.RegionStorageInfo"
 import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
-import {$DataFixer$$Type} from "com.mojang.datafixers.DataFixer"
 import {$WorldBorder$$Type} from "net.minecraft.world.level.border.WorldBorder"
+import {$DataFixer$$Type} from "com.mojang.datafixers.DataFixer"
 import {$PoiSection} from "net.minecraft.world.entity.ai.village.poi.PoiSection"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$PoiRecord} from "net.minecraft.world.entity.ai.village.poi.PoiRecord"
@@ -30765,8 +30767,8 @@ import {$PointOfInterestStorageExtended$$Interface} from "net.caffeinemc.mods.li
 import {$Pair} from "com.mojang.datafixers.util.Pair"
 import {$Predicate$$Type} from "java.util.function.Predicate"
 import {$PoiManager$Occupancy$$Type} from "net.minecraft.world.entity.ai.village.poi.PoiManager$Occupancy"
-import {$BooleanSupplier$$Type} from "java.util.function.BooleanSupplier"
 import {$LevelChunkSection$$Type} from "net.minecraft.world.level.chunk.LevelChunkSection"
+import {$BooleanSupplier$$Type} from "java.util.function.BooleanSupplier"
 import {$ChunkPos$$Type} from "net.minecraft.world.level.ChunkPos"
 import {$PoiType, $PoiType$$Type} from "net.minecraft.world.entity.ai.village.poi.PoiType"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
@@ -30780,15 +30782,14 @@ static readonly "VILLAGE_SECTION_SIZE": integer
 
 constructor(arg0: $RegionStorageInfo$$Type, arg1: $Path$$Type, arg2: $DataFixer$$Type, arg3: boolean, arg4: $RegistryAccess$$Type, arg5: $ChunkIOErrorReporter$$Type, arg6: $LevelHeightAccessor$$Type)
 
-public "findClosestWithType"(arg0: $Predicate$$Type<($Holder<($PoiType)>)>, arg1: $BlockPos$$Type, arg2: integer, arg3: $PoiManager$Occupancy$$Type): $Optional<($Pair<($Holder<($PoiType)>), ($BlockPos)>)>
-public "findClosest"(arg0: $Predicate$$Type, arg1: $BlockPos$$Type, arg2: integer, arg3: $PoiManager$Occupancy$$Type): $Optional
 public "findClosest"(arg0: $Predicate$$Type, arg1: $Predicate$$Type, arg2: $BlockPos$$Type, arg3: integer, arg4: $PoiManager$Occupancy$$Type): $Optional
+public "findClosest"(arg0: $Predicate$$Type, arg1: $BlockPos$$Type, arg2: integer, arg3: $PoiManager$Occupancy$$Type): $Optional
 public "sectionsToVillage"(arg0: $SectionPos$$Type): integer
 public "existsAtPosition"(arg0: $ResourceKey$$Type<($PoiType)>, arg1: $BlockPos$$Type): boolean
 public "getInRange"(arg0: $Predicate$$Type, arg1: $BlockPos$$Type, arg2: integer, arg3: $PoiManager$Occupancy$$Type): $Stream
 public "findAllWithType"(arg0: $Predicate$$Type<($Holder<($PoiType)>)>, arg1: $Predicate$$Type<($BlockPos)>, arg2: $BlockPos$$Type, arg3: integer, arg4: $PoiManager$Occupancy$$Type): $Stream<($Pair<($Holder<($PoiType)>), ($BlockPos)>)>
-public "take"(arg0: $Predicate$$Type<($Holder<($PoiType)>)>, arg1: $BiPredicate$$Type<($Holder<($PoiType)>), ($BlockPos)>, arg2: $BlockPos$$Type, arg3: integer): $Optional<($BlockPos)>
 public "tick"(arg0: $BooleanSupplier$$Type): void
+public "findClosestWithType"(arg0: $Predicate$$Type<($Holder<($PoiType)>)>, arg1: $BlockPos$$Type, arg2: integer, arg3: $PoiManager$Occupancy$$Type): $Optional<($Pair<($Holder<($PoiType)>), ($BlockPos)>)>
 public "getCountInRange"(arg0: $Predicate$$Type, arg1: $BlockPos$$Type, arg2: integer, arg3: $PoiManager$Occupancy$$Type): long
 public "findAllClosestFirstWithType"(arg0: $Predicate$$Type<($Holder<($PoiType)>)>, arg1: $Predicate$$Type<($BlockPos)>, arg2: $BlockPos$$Type, arg3: integer, arg4: $PoiManager$Occupancy$$Type): $Stream<($Pair<($Holder<($PoiType)>), ($BlockPos)>)>
 public "getInSquare"(arg0: $Predicate$$Type<($Holder<($PoiType)>)>, arg1: $BlockPos$$Type, arg2: integer, arg3: $PoiManager$Occupancy$$Type): $Stream<($PoiRecord)>
@@ -30801,6 +30802,7 @@ public "checkConsistencyWithBlocks"(arg0: $SectionPos$$Type, arg1: $LevelChunkSe
 public "getInChunk"(arg0: $Predicate$$Type, arg1: $ChunkPos$$Type, arg2: $PoiManager$Occupancy$$Type): $Stream
 public "lithium$findNearestForPortalLogic"(arg0: $BlockPos$$Type, arg1: integer, arg2: $Holder$$Type, arg3: $PoiManager$Occupancy$$Type, arg4: $Predicate$$Type, arg5: $WorldBorder$$Type): $Optional
 public "ensureLoadedAndValid"(arg0: $LevelReader$$Type, arg1: $BlockPos$$Type, arg2: integer): void
+public "take"(arg0: $Predicate$$Type<($Holder<($PoiType)>)>, arg1: $BiPredicate$$Type<($Holder<($PoiType)>), ($BlockPos)>, arg2: $BlockPos$$Type, arg3: integer): $Optional<($BlockPos)>
 public "remove"(arg0: $BlockPos$$Type): void
 public "add"(arg0: $BlockPos$$Type, arg1: $Holder$$Type<($PoiType)>): void
 public "find"(arg0: $Predicate$$Type<($Holder<($PoiType)>)>, arg1: $Predicate$$Type<($BlockPos)>, arg2: $BlockPos$$Type, arg3: integer, arg4: $PoiManager$Occupancy$$Type): $Optional<($BlockPos)>
@@ -30828,8 +30830,8 @@ export interface $PositionTracker$$Interface {
 }
 
 export class $PositionTracker implements $PositionTracker$$Interface {
- "isVisibleBy"(arg0: $LivingEntity$$Type): boolean
  "currentPosition"(): $Vec3
+ "isVisibleBy"(arg0: $LivingEntity$$Type): boolean
  "currentBlockPosition"(): $BlockPos
 }
 /**
@@ -30867,8 +30869,8 @@ import {$DimensionTransition} from "net.minecraft.world.level.portal.DimensionTr
 import {$Portal$Transition} from "net.minecraft.world.level.block.Portal$Transition"
 import {$Portal$$Type} from "net.minecraft.world.level.block.Portal"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
-import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 
 export class $PortalProcessor {
 constructor(arg0: $Portal$$Type, arg1: $BlockPos$$Type)
@@ -30921,28 +30923,28 @@ export type $FlyingAnimal$$Original = $FlyingAnimal;}
 declare module "net.minecraft.world.entity.item.FallingBlockEntity" {
 import {$Optional} from "java.util.Optional"
 import {$CallbackInfo$$Type} from "org.spongepowered.asm.mixin.injection.callback.CallbackInfo"
-import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$AccessorMixinFallingBlockEntity$$Interface} from "noobanidus.mods.lootr.common.mixin.accessor.AccessorMixinFallingBlockEntity"
+import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$DimensionTransition$$Type} from "net.minecraft.world.level.portal.DimensionTransition"
 import {$ClientboundAddEntityPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundAddEntityPacket"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
-import {$Entity} from "net.minecraft.world.entity.Entity"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$Entity} from "net.minecraft.world.entity.Entity"
 import {$ServerEntity$$Type} from "net.minecraft.server.level.ServerEntity"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$CompoundTag} from "net.minecraft.nbt.CompoundTag"
 import {$Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
-import {$ClientGamePacketListener} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$ClientGamePacketListener} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
-import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$Tag} from "net.minecraft.nbt.Tag"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$FallingBlockEntityAccessor$$Interface} from "com.simibubi.create.foundation.mixin.accessor.FallingBlockEntityAccessor"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$CrashReportCategory$$Type} from "net.minecraft.CrashReportCategory"
 
 export class $FallingBlockEntity extends $Entity implements $AccessorMixinFallingBlockEntity$$Interface, $FallingBlockEntityAccessor$$Interface {
@@ -31013,7 +31015,7 @@ public "handler$chk000$architectury$handleLand"(ci: $CallbackInfo$$Type, block: 
 public "callOnBrokenAfterFall"(arg0: $Block$$Type, arg1: $BlockPos$$Type): void
 public "setBlockState"(state: $BlockState$$Type): void
 public "lootr$setBlockState"(arg0: $BlockState$$Type): void
-public static "callInit$create_$md$a93e73$0"(arg0: $Level$$Type, arg1: double, arg2: double, arg3: double, arg4: $BlockState$$Type): $FallingBlockEntity
+public static "callInit$create_$md$b00d76$0"(arg0: $Level$$Type, arg1: double, arg2: double, arg3: double, arg4: $BlockState$$Type): $FallingBlockEntity
 public "getStartPos"(): $BlockPos
 public "setStartPos"(arg0: $BlockPos$$Type): void
 public "tick"(): void
@@ -31050,17 +31052,17 @@ export type $FallingBlockEntity$$Type = ($FallingBlockEntity);
  */
 export type $FallingBlockEntity$$Original = $FallingBlockEntity;}
 declare module "net.minecraft.world.entity.monster.warden.Warden" {
-import {$Brain} from "net.minecraft.world.entity.ai.Brain"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$Brain} from "net.minecraft.world.entity.ai.Brain"
 import {$Optional} from "java.util.Optional"
 import {$Holder$$Type} from "net.minecraft.core.Holder"
 import {$MobSpawnType$$Type} from "net.minecraft.world.entity.MobSpawnType"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$GameEvent, $GameEvent$$Type} from "net.minecraft.world.level.gameevent.GameEvent"
-import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$EntityDataAccessor$$Type} from "net.minecraft.network.syncher.EntityDataAccessor"
-import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
+import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$Monster, $Monster$$Type} from "net.minecraft.world.entity.monster.Monster"
+import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$ServerEntity$$Type} from "net.minecraft.server.level.ServerEntity"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
 import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
@@ -31081,8 +31083,8 @@ import {$AngerManagement} from "net.minecraft.world.entity.monster.warden.AngerM
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$VibrationSystem$User} from "net.minecraft.world.level.gameevent.vibrations.VibrationSystem$User"
 import {$Player} from "net.minecraft.world.entity.player.Player"
-import {$Pose$$Type} from "net.minecraft.world.entity.Pose"
 import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
+import {$Pose$$Type} from "net.minecraft.world.entity.Pose"
 import {$Explosion$$Type} from "net.minecraft.world.level.Explosion"
 import {$ClientboundAddEntityPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundAddEntityPacket"
 import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState"
@@ -31099,8 +31101,8 @@ import {$SpawnGroupData, $SpawnGroupData$$Type} from "net.minecraft.world.entity
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
 import {$ClientGamePacketListener} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
-import {$Tag} from "net.minecraft.nbt.Tag"
 import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
+import {$Tag} from "net.minecraft.nbt.Tag"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 
@@ -31351,9 +31353,9 @@ import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
 import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$MobSpawnType$$Type} from "net.minecraft.world.entity.MobSpawnType"
-import {$Pose$$Type} from "net.minecraft.world.entity.Pose"
 import {$Vec3, $Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$Animal$$Type} from "net.minecraft.world.entity.animal.Animal"
+import {$Pose$$Type} from "net.minecraft.world.entity.Pose"
 import {$SoundSource$$Type} from "net.minecraft.sounds.SoundSource"
 import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$EntityDataAccessor, $EntityDataAccessor$$Type} from "net.minecraft.network.syncher.EntityDataAccessor"
@@ -31375,15 +31377,15 @@ import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Prov
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$ServerLevelAccessor$$Type} from "net.minecraft.world.level.ServerLevelAccessor"
 import {$AgeableMob, $AgeableMob$$Type} from "net.minecraft.world.entity.AgeableMob"
-import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$PlayerRideableJumping$$Interface} from "net.minecraft.world.entity.PlayerRideableJumping"
+import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$AbstractHorse} from "net.minecraft.world.entity.animal.horse.AbstractHorse"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
 import {$AnimationState} from "net.minecraft.world.entity.AnimationState"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$Tag} from "net.minecraft.nbt.Tag"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
+import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$Saddleable$$Interface} from "net.minecraft.world.entity.Saddleable"
@@ -31602,8 +31604,8 @@ export type $Camel$$Type = ($Camel);
 export type $Camel$$Original = $Camel;}
 declare module "net.minecraft.world.entity.player.ChatVisiblity" {
 import {$Enum} from "java.lang.Enum"
-import {$OptionEnum$$Interface} from "net.minecraft.util.OptionEnum"
 import {$Component} from "net.minecraft.network.chat.Component"
+import {$OptionEnum$$Interface} from "net.minecraft.util.OptionEnum"
 
 export class $ChatVisiblity extends $Enum<($ChatVisiblity)> implements $OptionEnum$$Interface {
 static readonly "SYSTEM": $ChatVisiblity
@@ -31651,8 +31653,8 @@ export type $Display$TextDisplay$LineSplitter$$Type = ((arg0: $Component, arg1: 
  */
 export type $Display$TextDisplay$LineSplitter$$Original = $Display$TextDisplay$LineSplitter;}
 declare module "net.minecraft.world.entity.ai.village.poi.PoiManager$Occupancy" {
-import {$Enum} from "java.lang.Enum"
 import {$PoiRecord} from "net.minecraft.world.entity.ai.village.poi.PoiRecord"
+import {$Enum} from "java.lang.Enum"
 import {$Predicate} from "java.util.function.Predicate"
 
 export class $PoiManager$Occupancy extends $Enum<($PoiManager$Occupancy)> {
@@ -31679,11 +31681,11 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
-import {$OptionEnum$$Interface} from "net.minecraft.util.OptionEnum"
-import {$Component} from "net.minecraft.network.chat.Component"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
+import {$Component} from "net.minecraft.network.chat.Component"
+import {$OptionEnum$$Interface} from "net.minecraft.util.OptionEnum"
 import {$IntFunction} from "java.util.function.IntFunction"
 
 export class $HumanoidArm extends $Enum<($HumanoidArm)> implements $OptionEnum$$Interface, $StringRepresentable$$Interface {
@@ -31700,11 +31702,11 @@ public "getSerializedName"(): StringJS
 public "getOpposite"(): $HumanoidArm
 public "getCaption"(): $Component
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "key"(): StringJS
 get "id"(): integer
 get "serializedName"(): StringJS
@@ -31738,13 +31740,13 @@ declare module "net.minecraft.world.entity.raid.Raids" {
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$Raid, $Raid$$Type} from "net.minecraft.world.entity.raid.Raid"
 import {$SavedData} from "net.minecraft.world.level.saveddata.SavedData"
-import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$SavedData$Factory} from "net.minecraft.world.level.saveddata.SavedData$Factory"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$Raider$$Type} from "net.minecraft.world.entity.raid.Raider"
-import {$Holder$$Type} from "net.minecraft.core.Holder"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$Holder$$Type} from "net.minecraft.core.Holder"
 import {$DimensionType$$Type} from "net.minecraft.world.level.dimension.DimensionType"
 
 export class $Raids extends $SavedData {
@@ -31793,7 +31795,7 @@ public "hashCode"(): integer
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $EquipmentTable$$Type = ({"slotDropChances"?: $Map$$Type<($EquipmentSlot$$Type), (float)>, "lootTable"?: $ResourceKey$$Type<($LootTable)>}) | ([slotDropChances?: $Map$$Type<($EquipmentSlot$$Type), (float)>, lootTable?: $ResourceKey$$Type<($LootTable)>]);
+export type $EquipmentTable$$Type = ({"lootTable"?: $ResourceKey$$Type<($LootTable)>, "slotDropChances"?: $Map$$Type<($EquipmentSlot$$Type), (float)>}) | ([lootTable?: $ResourceKey$$Type<($LootTable)>, slotDropChances?: $Map$$Type<($EquipmentSlot$$Type), (float)>]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -31822,8 +31824,8 @@ export type $Display$BlockDisplay$BlockRenderState$$Original = $Display$BlockDis
 declare module "net.minecraft.world.entity.ai.attributes.AttributeInstance" {
 import {$AttributeModifier, $AttributeModifier$$Type} from "net.minecraft.world.entity.ai.attributes.AttributeModifier"
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
-import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Map} from "java.util.Map"
+import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$AttributeModifier$Operation$$Type} from "net.minecraft.world.entity.ai.attributes.AttributeModifier$Operation"
 import {$Attribute, $Attribute$$Type} from "net.minecraft.world.entity.ai.attributes.Attribute"
 import {$Set} from "java.util.Set"
@@ -31873,8 +31875,8 @@ import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$Mob$$Type} from "net.minecraft.world.entity.Mob"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
-import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$MobSpawnType$$Type} from "net.minecraft.world.entity.MobSpawnType"
+import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
@@ -31883,8 +31885,8 @@ import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$Stream$$Type} from "java.util.stream.Stream"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$AbstractFish} from "net.minecraft.world.entity.animal.AbstractFish"
 import {$InteractionHand, $InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
@@ -31896,9 +31898,9 @@ import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$ServerLevelAccessor$$Type} from "net.minecraft.world.level.ServerLevelAccessor"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
-import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
-import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 
 export class $AbstractSchoolingFish extends $AbstractFish {
@@ -32073,15 +32075,15 @@ import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$Player} from "net.minecraft.world.entity.player.Player"
 import {$Animal$$Type} from "net.minecraft.world.entity.animal.Animal"
 import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
-import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState"
 import {$AbstractChestedHorse} from "net.minecraft.world.entity.animal.horse.AbstractChestedHorse"
+import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$InteractionHand} from "net.minecraft.world.InteractionHand"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
 import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
@@ -32089,8 +32091,8 @@ import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Prov
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$AgeableMob, $AgeableMob$$Type} from "net.minecraft.world.entity.AgeableMob"
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 
@@ -32253,14 +32255,14 @@ import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalRe
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AbstractHurtingProjectile} from "net.minecraft.world.entity.projectile.AbstractHurtingProjectile"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$Tag} from "net.minecraft.nbt.Tag"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$Entity} from "net.minecraft.world.entity.Entity"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
 
@@ -32357,9 +32359,9 @@ import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInL
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$Tag} from "net.minecraft.nbt.Tag"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$Entity} from "net.minecraft.world.entity.Entity"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
 
@@ -32448,8 +32450,8 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$ExtensionInfo} from "net.neoforged.fml.common.asm.enumextension.ExtensionInfo"
@@ -32480,11 +32482,11 @@ public static "getExtensionInfo"(): $ExtensionInfo
 public "getSerializedName"(): StringJS
 public static "byId"(arg0: integer): $Boat$Type
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "raft"(): boolean
 get "planks"(): $Block
 get "sticks"(): $Item
@@ -32514,8 +32516,8 @@ import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
 import {$AbstractMinecart$Type} from "net.minecraft.world.entity.vehicle.AbstractMinecart$Type"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
@@ -32624,8 +32626,8 @@ export type $MinecartChest$$Original = $MinecartChest;}
 declare module "net.minecraft.world.entity.EntityType$Builder" {
 import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$FeatureFlag$$Type} from "net.minecraft.world.flag.FeatureFlag"
-import {$MobCategory$$Type} from "net.minecraft.world.entity.MobCategory"
 import {$EntityType$EntityFactory$$Type} from "net.minecraft.world.entity.EntityType$EntityFactory"
+import {$MobCategory$$Type} from "net.minecraft.world.entity.MobCategory"
 import {$Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$EntityAttachment$$Type} from "net.minecraft.world.entity.EntityAttachment"
 import {$Entity} from "net.minecraft.world.entity.Entity"
@@ -32719,22 +32721,22 @@ import {$UUID} from "java.util.UUID"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$TraceableEntity$$Interface} from "net.minecraft.world.entity.TraceableEntity"
 import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
+import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$ProjectileDeflection$$Type} from "net.minecraft.world.entity.projectile.ProjectileDeflection"
 import {$ClientGamePacketListener} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
-import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$DoubleDoubleImmutablePair} from "it.unimi.dsi.fastutil.doubles.DoubleDoubleImmutablePair"
 import {$Vec3} from "net.minecraft.world.phys.Vec3"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
 import {$ClientboundAddEntityPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundAddEntityPacket"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$Packet} from "net.minecraft.network.protocol.Packet"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
-import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
+import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$ServerEntity$$Type} from "net.minecraft.server.level.ServerEntity"
 
 export class $Projectile extends $Entity implements $TraceableEntity$$Interface {
@@ -32857,8 +32859,8 @@ import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Predicate$$Type} from "java.util.function.Predicate"
 import {$SlotAccess} from "net.minecraft.world.entity.SlotAccess"
 import {$LootTable, $LootTable$$Type} from "net.minecraft.world.level.storage.loot.LootTable"
-import {$Entity$RemovalReason, $Entity$RemovalReason$$Type} from "net.minecraft.world.entity.Entity$RemovalReason"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
+import {$Entity$RemovalReason, $Entity$RemovalReason$$Type} from "net.minecraft.world.entity.Entity$RemovalReason"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$LevelBlock} from "dev.latvian.mods.kubejs.level.LevelBlock"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
@@ -32957,6 +32959,8 @@ public "stillValid"(arg0: $Player$$Type): boolean
 public "getContainerSize"(): integer
 public "removeItemNoUpdate"(arg0: integer): $ItemStack
 public "unpackChestVehicleLootTable"(arg0: $Player$$Type): void
+public "isChestVehicleEmpty"(): boolean
+public "interactWithContainerVehicle"(arg0: $Player$$Type): $InteractionResult
 public "addChestVehicleSaveData"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "readChestVehicleSaveData"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "chestVehicleDestroyed"(arg0: $DamageSource$$Type, arg1: $Level$$Type, arg2: $Entity$$Type): void
@@ -32967,12 +32971,11 @@ public "removeChestVehicleItemNoUpdate"(arg0: integer): $ItemStack
 public "setChestVehicleItem"(arg0: integer, arg1: $ItemStack$$Type): void
 public "getChestVehicleSlot"(arg0: integer): $SlotAccess
 public "isChestVehicleStillValid"(arg0: $Player$$Type): boolean
-public "isChestVehicleEmpty"(): boolean
-public "interactWithContainerVehicle"(arg0: $Player$$Type): $InteractionResult
 public "position"(): $Vec3
 public "isEmpty"(): boolean
 public "isRemoved"(): boolean
 public "getBoundingBox"(): $AABB
+public "getVariant"(): any
 public "startOpen"(arg0: $Player$$Type): void
 public "canPlaceItem"(arg0: integer, arg1: $ItemStack$$Type): boolean
 public "countItem"(arg0: $Item$$Type): integer
@@ -33035,6 +33038,7 @@ get "chestVehicleEmpty"(): boolean
 get "empty"(): boolean
 get "removed"(): boolean
 get "boundingBox"(): $AABB
+get "variant"(): any
 get "maxStackSize"(): integer
 get "displayName"(): $Component
 get "mutable"(): boolean
@@ -33069,9 +33073,9 @@ import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$Tag} from "net.minecraft.nbt.Tag"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 
 export class $HangingEntity extends $BlockAttachedEntity {
  "hasImpulse": boolean
@@ -33152,8 +33156,8 @@ export type $HangingEntity$$Type = ($HangingEntity);
 export type $HangingEntity$$Original = $HangingEntity;}
 declare module "net.minecraft.world.entity.OwnableEntity" {
 import {$UUID} from "java.util.UUID"
-import {$LivingEntity} from "net.minecraft.world.entity.LivingEntity"
 import {$EntityGetter} from "net.minecraft.world.level.EntityGetter"
+import {$LivingEntity} from "net.minecraft.world.entity.LivingEntity"
 
 export interface $OwnableEntity$$Interface {
 get "ownerUUID"(): $UUID
@@ -33162,8 +33166,8 @@ get "owner"(): $LivingEntity
 
 export class $OwnableEntity implements $OwnableEntity$$Interface {
  "getOwnerUUID"(): $UUID
- "level"(): $EntityGetter
  "getOwner"(): $LivingEntity
+ "level"(): $EntityGetter
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -33227,8 +33231,8 @@ export type $DragonSittingAttackingPhase$$Type = ($DragonSittingAttackingPhase);
  */
 export type $DragonSittingAttackingPhase$$Original = $DragonSittingAttackingPhase;}
 declare module "net.minecraft.world.entity.projectile.windcharge.AbstractWindCharge" {
-import {$ItemSupplier$$Interface} from "net.minecraft.world.entity.projectile.ItemSupplier"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
+import {$ItemSupplier$$Interface} from "net.minecraft.world.entity.projectile.ItemSupplier"
 import {$Optional} from "java.util.Optional"
 import {$UUID} from "java.util.UUID"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
@@ -33236,13 +33240,13 @@ import {$ExplosionDamageCalculator} from "net.minecraft.world.level.ExplosionDam
 import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AbstractHurtingProjectile} from "net.minecraft.world.entity.projectile.AbstractHurtingProjectile"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$Tag} from "net.minecraft.nbt.Tag"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
 
@@ -33309,9 +33313,9 @@ static readonly "BASE_SAFE_FALL_DISTANCE": integer
 constructor(arg0: $EntityType$$Type<($AbstractWindCharge$$Type)>, arg1: $Level$$Type, arg2: $Entity$$Type, arg3: double, arg4: double, arg5: double)
 constructor(arg0: $EntityType$$Type<($AbstractWindCharge$$Type)>, arg1: $Level$$Type)
 
-public "addMotion"(arg0: double, arg1: double, arg2: double): void
-public "getItem"(): $ItemStack
 public "tick"(): void
+public "getItem"(): $ItemStack
+public "addMotion"(arg0: double, arg1: double, arg2: double): void
 public "attack"(arg0: $DamageSource$$Type, arg1: float): boolean
 public "canCollideWith"(arg0: $Entity$$Type): boolean
 public static "forNameOnly"(arg0: StringJS): $ScoreHolder
@@ -33383,8 +33387,8 @@ export type $NearestVisibleLivingEntitySensor$$Type = ($NearestVisibleLivingEnti
  */
 export type $NearestVisibleLivingEntitySensor$$Original = $NearestVisibleLivingEntitySensor;}
 declare module "net.minecraft.world.entity.animal.frog.Frog" {
-import {$Brain} from "net.minecraft.world.entity.ai.Brain"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$Brain} from "net.minecraft.world.entity.ai.Brain"
 import {$Optional} from "java.util.Optional"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
@@ -33392,8 +33396,8 @@ import {$Player} from "net.minecraft.world.entity.player.Player"
 import {$MobSpawnType$$Type} from "net.minecraft.world.entity.MobSpawnType"
 import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$Animal, $Animal$$Type} from "net.minecraft.world.entity.animal.Animal"
-import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$EntityDataAccessor$$Type} from "net.minecraft.network.syncher.EntityDataAccessor"
+import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
@@ -33412,11 +33416,11 @@ import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$ServerLevelAccessor$$Type} from "net.minecraft.world.level.ServerLevelAccessor"
 import {$AgeableMob, $AgeableMob$$Type} from "net.minecraft.world.entity.AgeableMob"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
 import {$AnimationState} from "net.minecraft.world.entity.AnimationState"
-import {$Tag} from "net.minecraft.nbt.Tag"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
+import {$Tag} from "net.minecraft.nbt.Tag"
 import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$FrogVariant, $FrogVariant$$Type} from "net.minecraft.world.entity.animal.FrogVariant"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
@@ -33546,10 +33550,10 @@ public "eraseTongueTarget"(): void
 public "getTongueTarget"(): $Optional<($Entity)>
 public "setTongueTarget"(arg0: $Entity$$Type): void
 public static "checkFrogSpawnRules"(arg0: $EntityType$$Type<($Animal$$Type)>, arg1: $LevelAccessor$$Type, arg2: $MobSpawnType$$Type, arg3: $BlockPos$$Type, arg4: $RandomSource$$Type): boolean
-public "getVariant"(): any
 public "tick"(): void
-public "setVariant"(arg0: $Holder$$Type<($FrogVariant)>): void
+public "getVariant"(): any
 public "setVariant"(arg0: any): void
+public "setVariant"(arg0: $Holder$$Type<($FrogVariant)>): void
 public "getTarget"(): $LivingEntity
 public "finalizeSpawn"(arg0: $ServerLevelAccessor$$Type, arg1: $DifficultyInstance$$Type, arg2: $MobSpawnType$$Type, arg3: $SpawnGroupData$$Type): $SpawnGroupData
 public "getBrain"(): $Brain<($Frog)>
@@ -33588,8 +33592,8 @@ get "headRotSpeed"(): integer
 get "tongueTarget"(): $Optional<($Entity)>
 set "tongueTarget"(value: $Entity$$Type)
 get "variant"(): any
-set "variant"(value: $Holder$$Type<($FrogVariant)>)
 set "variant"(value: any)
+set "variant"(value: $Holder$$Type<($FrogVariant)>)
 get "target"(): $LivingEntity
 get "brain"(): $Brain<($Frog)>
 get "baby"(): boolean
@@ -33614,8 +33618,8 @@ import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
 import {$Player} from "net.minecraft.world.entity.player.Player"
 import {$MobSpawnType$$Type} from "net.minecraft.world.entity.MobSpawnType"
 import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
-import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState"
 import {$Raid, $Raid$$Type} from "net.minecraft.world.entity.raid.Raid"
+import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
@@ -33633,9 +33637,9 @@ import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$ServerLevelAccessor$$Type} from "net.minecraft.world.level.ServerLevelAccessor"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
-import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 
@@ -33822,10 +33826,10 @@ import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$Monster} from "net.minecraft.world.entity.monster.Monster"
 import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
-import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
+import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$InteractionHand} from "net.minecraft.world.InteractionHand"
 import {$SpawnGroupData, $SpawnGroupData$$Type} from "net.minecraft.world.entity.SpawnGroupData"
@@ -33836,9 +33840,9 @@ import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$ServerLevelAccessor$$Type} from "net.minecraft.world.level.ServerLevelAccessor"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
-import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 
@@ -33997,8 +34001,8 @@ export type $PatrollingMonster$$Type = ($PatrollingMonster);
  */
 export type $PatrollingMonster$$Original = $PatrollingMonster;}
 declare module "net.minecraft.world.entity.monster.piglin.PiglinBrute" {
-import {$Brain} from "net.minecraft.world.entity.ai.Brain"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$Brain} from "net.minecraft.world.entity.ai.Brain"
 import {$Optional} from "java.util.Optional"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$Player} from "net.minecraft.world.entity.player.Player"
@@ -34010,8 +34014,8 @@ import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$PiglinArmPose} from "net.minecraft.world.entity.monster.piglin.PiglinArmPose"
 import {$InteractionHand} from "net.minecraft.world.InteractionHand"
 import {$SpawnGroupData, $SpawnGroupData$$Type} from "net.minecraft.world.entity.SpawnGroupData"
@@ -34021,13 +34025,13 @@ import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Prov
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$ServerLevelAccessor$$Type} from "net.minecraft.world.level.ServerLevelAccessor"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
-import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
 import {$AbstractPiglin} from "net.minecraft.world.entity.monster.piglin.AbstractPiglin"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 
 export class $PiglinBrute extends $AbstractPiglin {
 static readonly "MAX_WEARING_ARMOR_CHANCE": float
@@ -34220,8 +34224,8 @@ import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalRe
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 
 export class $SpellcasterIllager extends $AbstractIllager {
@@ -34372,8 +34376,8 @@ export type $SpellcasterIllager$$Original = $SpellcasterIllager;}
 declare module "net.minecraft.world.entity.FlyingMob" {
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
-import {$Mob} from "net.minecraft.world.entity.Mob"
 import {$InteractionHand} from "net.minecraft.world.InteractionHand"
+import {$Mob} from "net.minecraft.world.entity.Mob"
 import {$Level} from "net.minecraft.world.level.Level"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
 import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
@@ -34383,14 +34387,14 @@ import {$Player} from "net.minecraft.world.entity.player.Player"
 import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
-import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 
@@ -34547,10 +34551,10 @@ import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInL
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$Tag} from "net.minecraft.nbt.Tag"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
-import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
 import {$PotionContents$$Type} from "net.minecraft.world.item.alchemy.PotionContents"
+import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$Entity} from "net.minecraft.world.entity.Entity"
 import {$PushReaction} from "net.minecraft.world.level.material.PushReaction"
 import {$ParticleOptions, $ParticleOptions$$Type} from "net.minecraft.core.particles.ParticleOptions"
@@ -34629,8 +34633,8 @@ public "setWaitTime"(arg0: integer): void
 public "setDuration"(arg0: integer): void
 public "tick"(): void
 public "setOwner"(arg0: $LivingEntity$$Type): void
-public "getDimensions"(arg0: $Pose$$Type): $EntityDimensions
 public "getDuration"(): integer
+public "getDimensions"(arg0: $Pose$$Type): $EntityDimensions
 public "getOwner"(): $Entity
 public "addEffect"(arg0: $MobEffectInstance$$Type): void
 public "refreshDimensions"(): void
@@ -34720,8 +34724,8 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
 export class $Parrot$Variant extends $Enum<($Parrot$Variant)> implements $StringRepresentable$$Interface {
@@ -34738,11 +34742,11 @@ public "getId"(): integer
 public "getSerializedName"(): StringJS
 public static "byId"(arg0: integer): $Parrot$Variant
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "id"(): integer
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
@@ -34770,8 +34774,8 @@ static readonly "CODEC": $Codec<($ProfilePublicKey$Data)>
 constructor(arg0: $FriendlyByteBuf$$Type)
 constructor(arg0: $Instant$$Type, arg1: $PublicKey$$Type, arg2: (byte)[])
 
-public "keySignature"(): (byte)[]
 public "expiresAt"(): $Instant
+public "keySignature"(): (byte)[]
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
@@ -34813,8 +34817,8 @@ declare module "net.minecraft.world.entity.Interaction" {
 import {$Targeting$$Interface} from "net.minecraft.world.entity.Targeting"
 import {$Optional} from "java.util.Optional"
 import {$Attackable$$Interface} from "net.minecraft.world.entity.Attackable"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$EntityDimensions} from "net.minecraft.world.entity.EntityDimensions"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
@@ -34824,11 +34828,11 @@ import {$Pose$$Type} from "net.minecraft.world.entity.Pose"
 import {$EntityDataAccessor$$Type} from "net.minecraft.network.syncher.EntityDataAccessor"
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
-import {$LivingEntity} from "net.minecraft.world.entity.LivingEntity"
 import {$Tag} from "net.minecraft.nbt.Tag"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
+import {$LivingEntity} from "net.minecraft.world.entity.LivingEntity"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$PushReaction} from "net.minecraft.world.level.material.PushReaction"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
@@ -34931,19 +34935,19 @@ import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$Monster} from "net.minecraft.world.entity.monster.Monster"
 import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
-import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
+import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$InteractionHand} from "net.minecraft.world.InteractionHand"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
 import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Consumer$$Type} from "java.util.function.Consumer"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 
 export class $Giant extends $Monster {
@@ -35090,8 +35094,8 @@ export type $Giant$$Original = $Giant;}
 declare module "net.minecraft.world.entity.ambient.AmbientCreature" {
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
-import {$Mob} from "net.minecraft.world.entity.Mob"
 import {$InteractionHand} from "net.minecraft.world.InteractionHand"
+import {$Mob} from "net.minecraft.world.entity.Mob"
 import {$Level} from "net.minecraft.world.level.Level"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
 import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
@@ -35103,11 +35107,11 @@ import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$Tag} from "net.minecraft.nbt.Tag"
-import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
+import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 
@@ -35264,18 +35268,18 @@ import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$InteractionHand} from "net.minecraft.world.InteractionHand"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
 import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Consumer$$Type} from "java.util.function.Consumer"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 
@@ -35454,8 +35458,8 @@ import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
-import {$InteractionHand, $InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$EntityDimensions} from "net.minecraft.world.entity.EntityDimensions"
+import {$InteractionHand, $InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$SlotAccess} from "net.minecraft.world.entity.SlotAccess"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
 import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
@@ -35463,10 +35467,10 @@ import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Prov
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$AbstractHorse} from "net.minecraft.world.entity.animal.horse.AbstractHorse"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 
 export class $AbstractChestedHorse extends $AbstractHorse {
@@ -35663,35 +35667,35 @@ declare module "net.minecraft.world.entity.animal.horse.ZombieHorse" {
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
-import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$MobSpawnType$$Type} from "net.minecraft.world.entity.MobSpawnType"
-import {$Pose$$Type} from "net.minecraft.world.entity.Pose"
+import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Animal$$Type} from "net.minecraft.world.entity.animal.Animal"
+import {$Pose$$Type} from "net.minecraft.world.entity.Pose"
 import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
-import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
+import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
-import {$InteractionHand, $InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$EntityDimensions} from "net.minecraft.world.entity.EntityDimensions"
+import {$InteractionHand, $InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
-import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
 import {$CallbackInfoReturnable$$Type} from "org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable"
+import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$AgeableMob, $AgeableMob$$Type} from "net.minecraft.world.entity.AgeableMob"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$AbstractHorse} from "net.minecraft.world.entity.animal.horse.AbstractHorse"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
@@ -35921,21 +35925,21 @@ public "getArmor"(arg0: integer): $ItemStack
 public "handler$eaf000$moonlight$ml$fireDropEvent"(ci: $CallbackInfo$$Type, var1: $Iterator$$Type, list: $List$$Type, i: integer): void
 public "handler$eaf000$moonlight$ml$restoreNotDropped"(ci: $CallbackInfo$$Type, var1: $Iterator$$Type, list: $List$$Type, i: integer): void
 public "getTimesChanged"(): integer
-public "getItem"(arg0: integer): $ItemStack
 public "tick"(): void
-public "getSelected"(): $ItemStack
+public "getItem"(arg0: integer): $ItemStack
 public "removeItem"(arg0: $ItemStack$$Type): void
 public "removeItem"(arg0: integer, arg1: integer): $ItemStack
 public "getName"(): $Component
 public "load"(arg0: $ListTag$$Type): void
 public "isEmpty"(): boolean
-public "add"(arg0: integer, arg1: $ItemStack$$Type): boolean
 public "add"(arg0: $ItemStack$$Type): boolean
-public "contains"(arg0: $TagKey$$Type<($Item)>): boolean
+public "add"(arg0: integer, arg1: $ItemStack$$Type): boolean
 public "contains"(arg0: $ItemStack$$Type): boolean
+public "contains"(arg0: $TagKey$$Type<($Item)>): boolean
 public "contains"(arg0: $Predicate$$Type<($ItemStack)>): boolean
 public "save"(arg0: $ListTag$$Type): $ListTag
 public "replaceWith"(arg0: $Inventory$$Type): void
+public "getSelected"(): $ItemStack
 public "addResource"(arg0: integer, arg1: $ItemStack$$Type): integer
 public "findSlotMatchingItem"(arg0: $ItemStack$$Type): integer
 public "setPickedItem"(arg0: $ItemStack$$Type): void
@@ -36029,12 +36033,12 @@ import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
 import {$MoverType$$Type} from "net.minecraft.world.entity.MoverType"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
-import {$ClientboundAddEntityPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundAddEntityPacket"
 import {$EntityDataAccessor, $EntityDataAccessor$$Type} from "net.minecraft.network.syncher.EntityDataAccessor"
+import {$ClientboundAddEntityPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundAddEntityPacket"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
-import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$ServerEntity$$Type} from "net.minecraft.server.level.ServerEntity"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
@@ -36043,14 +36047,14 @@ import {$AccessorMixinItemFrame$$Interface} from "noobanidus.mods.lootr.common.m
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$SlotAccess} from "net.minecraft.world.entity.SlotAccess"
 import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
-import {$ClientGamePacketListener} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$ClientGamePacketListener} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
 import {$HangingEntity} from "net.minecraft.world.entity.decoration.HangingEntity"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
-import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$ItemFrameAccessor$$Interface} from "com.simibubi.create.foundation.mixin.accessor.ItemFrameAccessor"
 
@@ -36106,9 +36110,9 @@ static readonly "BASE_SAFE_FALL_DISTANCE": integer
  "wasTouchingWater": boolean
  "horizontalCollision": boolean
 
+constructor(arg0: $EntityType$$Type<($ItemFrame$$Type)>, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Direction$$Type)
 constructor(arg0: $EntityType$$Type<($ItemFrame$$Type)>, arg1: $Level$$Type)
 constructor(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $Direction$$Type)
-constructor(arg0: $EntityType$$Type<($ItemFrame$$Type)>, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Direction$$Type)
 
 public "setItem"(arg0: $ItemStack$$Type, arg1: boolean): void
 public "setItem"(arg0: $ItemStack$$Type): void
@@ -36119,7 +36123,7 @@ public "dropItem"(arg0: $Entity$$Type): void
 public "setRotation"(arg0: integer): void
 public "survives"(): boolean
 public "playPlacementSound"(): void
-public static "getDataItem$lootr_$md$a93e73$1"(): $EntityDataAccessor
+public static "getDataItem$lootr_$md$b00d76$1"(): $EntityDataAccessor
 public "getFramedMapId"(arg0: $ItemStack$$Type): $MapId
 public "hasFramedMap"(): boolean
 public "lootr$onItemChanged"(arg0: $ItemStack$$Type): void
@@ -36128,11 +36132,11 @@ public "create$getFrameItemStack"(): $ItemStack
 public "getRemoveItemSound"(): $SoundEvent
 public "getAddItemSound"(): $SoundEvent
 public "getRotateItemSound"(): $SoundEvent
-public "addMotion"(arg0: double, arg1: double, arg2: double): void
+public "kill"(): void
 public "move"(arg0: $MoverType$$Type, arg1: $Vec3$$Type): void
 public "getItem"(): $ItemStack
-public "kill"(): void
 public "getSlot"(arg0: integer): $SlotAccess
+public "addMotion"(arg0: double, arg1: double, arg2: double): void
 public "interact"(arg0: $Player$$Type, arg1: $InteractionHand$$Type): $InteractionResult
 public "getRotation"(): integer
 public "attack"(arg0: $DamageSource$$Type, arg1: float): boolean
@@ -36161,7 +36165,7 @@ get "analogOutput"(): integer
 get "placeSound"(): $SoundEvent
 get "breakSound"(): $SoundEvent
 set "rotation"(value: integer)
-public static get "dataItem$lootr_$md$a93e73$1"(): $EntityDataAccessor
+public static get "dataItem$lootr_$md$b00d76$1"(): $EntityDataAccessor
 get "removeItemSound"(): $SoundEvent
 get "addItemSound"(): $SoundEvent
 get "rotateItemSound"(): $SoundEvent
@@ -36193,9 +36197,9 @@ import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInL
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$Tag} from "net.minecraft.nbt.Tag"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$Entity} from "net.minecraft.world.entity.Entity"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
 
@@ -36299,8 +36303,8 @@ export type $Targeting$$Type = (() => $LivingEntity$$Type);
 export type $Targeting$$Original = $Targeting;}
 declare module "net.minecraft.world.entity.Display$RenderState" {
 import {$Display$GenericInterpolator, $Display$GenericInterpolator$$Type} from "net.minecraft.world.entity.Display$GenericInterpolator"
-import {$Transformation, $Transformation$$Type} from "com.mojang.math.Transformation"
 import {$Display$BillboardConstraints, $Display$BillboardConstraints$$Type} from "net.minecraft.world.entity.Display$BillboardConstraints"
+import {$Transformation, $Transformation$$Type} from "com.mojang.math.Transformation"
 import {$Display$FloatInterpolator, $Display$FloatInterpolator$$Type} from "net.minecraft.world.entity.Display$FloatInterpolator"
 import {$Record} from "java.lang.Record"
 
@@ -36321,7 +36325,7 @@ public "billboardConstraints"(): $Display$BillboardConstraints
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $Display$RenderState$$Type = ({"brightnessOverride"?: integer, "glowColorOverride"?: integer, "billboardConstraints"?: $Display$BillboardConstraints$$Type, "shadowStrength"?: $Display$FloatInterpolator$$Type, "transformation"?: $Display$GenericInterpolator$$Type<($Transformation$$Type)>, "shadowRadius"?: $Display$FloatInterpolator$$Type}) | ([brightnessOverride?: integer, glowColorOverride?: integer, billboardConstraints?: $Display$BillboardConstraints$$Type, shadowStrength?: $Display$FloatInterpolator$$Type, transformation?: $Display$GenericInterpolator$$Type<($Transformation$$Type)>, shadowRadius?: $Display$FloatInterpolator$$Type]);
+export type $Display$RenderState$$Type = ({"glowColorOverride"?: integer, "billboardConstraints"?: $Display$BillboardConstraints$$Type, "shadowStrength"?: $Display$FloatInterpolator$$Type, "transformation"?: $Display$GenericInterpolator$$Type<($Transformation$$Type)>, "shadowRadius"?: $Display$FloatInterpolator$$Type, "brightnessOverride"?: integer}) | ([glowColorOverride?: integer, billboardConstraints?: $Display$BillboardConstraints$$Type, shadowStrength?: $Display$FloatInterpolator$$Type, transformation?: $Display$GenericInterpolator$$Type<($Transformation$$Type)>, shadowRadius?: $Display$FloatInterpolator$$Type, brightnessOverride?: integer]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -36348,8 +36352,8 @@ export type $SecondaryPoiSensor$$Type = ($SecondaryPoiSensor);
 export type $SecondaryPoiSensor$$Original = $SecondaryPoiSensor;}
 declare module "net.minecraft.world.entity.ai.control.LookControl" {
 import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
-import {$Control$$Interface} from "net.minecraft.world.entity.ai.control.Control"
 import {$Mob$$Type} from "net.minecraft.world.entity.Mob"
+import {$Control$$Interface} from "net.minecraft.world.entity.ai.control.Control"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 
 export class $LookControl implements $Control$$Interface {
@@ -36360,17 +36364,17 @@ public "getWantedY"(): double
 public "getWantedZ"(): double
 public "isLookingAtTarget"(): boolean
 public "tick"(): void
-public "setLookAt"(arg0: $Entity$$Type): void
 public "setLookAt"(arg0: $Entity$$Type, arg1: float, arg2: float): void
 public "setLookAt"(arg0: $Vec3$$Type): void
+public "setLookAt"(arg0: $Entity$$Type): void
 public "setLookAt"(arg0: double, arg1: double, arg2: double, arg3: float, arg4: float): void
 public "setLookAt"(arg0: double, arg1: double, arg2: double): void
 get "wantedX"(): double
 get "wantedY"(): double
 get "wantedZ"(): double
 get "lookingAtTarget"(): boolean
-set "lookAt"(value: $Entity$$Type)
 set "lookAt"(value: $Vec3$$Type)
+set "lookAt"(value: $Entity$$Type)
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -36382,20 +36386,20 @@ export type $LookControl$$Type = ($LookControl);
  */
 export type $LookControl$$Original = $LookControl;}
 declare module "net.minecraft.world.entity.ai.Brain" {
-import {$BrainAccessor$$Interface as $BrainAccessor$0$$Interface} from "net.caffeinemc.mods.lithium.mixin.ai.useless_sensors.BrainAccessor"
+import {$BrainAccessor$$Interface} from "net.caffeinemc.mods.lithium.mixin.ai.useless_sensors.BrainAccessor"
 import {$DynamicOps$$Type} from "com.mojang.serialization.DynamicOps"
+import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$MemoryModuleType, $MemoryModuleType$$Type} from "net.minecraft.world.entity.ai.memory.MemoryModuleType"
 import {$Schedule, $Schedule$$Type} from "net.minecraft.world.entity.schedule.Schedule"
-import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$List, $List$$Type} from "java.util.List"
-import {$BrainAccessor$$Interface} from "net.mehvahdjukaar.moonlight.core.mixins.accessor.BrainAccessor"
+import {$BrainAccessor$$Interface as $BrainAccessor$0$$Interface} from "net.mehvahdjukaar.moonlight.core.mixins.accessor.BrainAccessor"
 import {$ImmutableList$$Type} from "com.google.common.collect.ImmutableList"
 import {$Sensor$$Type} from "net.minecraft.world.entity.ai.sensing.Sensor"
 import {$MemoryModificationCounter$$Interface} from "net.caffeinemc.mods.lithium.common.ai.MemoryModificationCounter"
 import {$Codec, $Codec$$Type} from "com.mojang.serialization.Codec"
 import {$Brain$Provider} from "net.minecraft.world.entity.ai.Brain$Provider"
-import {$Activity, $Activity$$Type} from "net.minecraft.world.entity.schedule.Activity"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Activity, $Activity$$Type} from "net.minecraft.world.entity.schedule.Activity"
 import {$Set, $Set$$Type} from "java.util.Set"
 import {$Collection$$Type} from "java.util.Collection"
 import {$Map} from "java.util.Map"
@@ -36409,7 +36413,7 @@ import {$BehaviorControl$$Type} from "net.minecraft.world.entity.ai.behavior.Beh
 import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 
-export class $Brain<E extends $LivingEntity> implements $MemoryModificationCounter$$Interface, $BrainAccessor$0$$Interface, $BrainAccessor$$Interface {
+export class $Brain<E extends $LivingEntity> implements $MemoryModificationCounter$$Interface, $BrainAccessor$$Interface, $BrainAccessor$0$$Interface {
 constructor(arg0: $Collection$$Type<($MemoryModuleType$$Type<(never)>)>, arg1: $Collection$$Type<($SensorType$$Type<($Sensor$$Type<(E)>)>)>, arg2: $ImmutableList$$Type<($Brain$MemoryValue$$Type<(never)>)>, arg3: $Supplier$$Type<($Codec$$Type<($Brain$$Type<(E)>)>)>)
 
 public "hasMemoryValue"(arg0: $MemoryModuleType$$Type<(never)>): boolean
@@ -36491,8 +36495,8 @@ import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$IntFunction} from "java.util.function.IntFunction"
@@ -36510,11 +36514,11 @@ public static "valueOf"(arg0: StringJS): $AttributeModifier$Operation
 public "id"(): integer
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
 }
@@ -36543,11 +36547,11 @@ import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$Tag} from "net.minecraft.nbt.Tag"
-import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
+import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 
@@ -36693,28 +36697,28 @@ export type $AbstractGolem$$Type = ($AbstractGolem);
 export type $AbstractGolem$$Original = $AbstractGolem;}
 declare module "net.minecraft.world.entity.monster.ZombieVillager" {
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$Optional} from "java.util.Optional"
 import {$MerchantOffers$$Type} from "net.minecraft.world.item.trading.MerchantOffers"
+import {$Optional} from "java.util.Optional"
 import {$UUID$$Type} from "java.util.UUID"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
-import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$MobSpawnType$$Type} from "net.minecraft.world.entity.MobSpawnType"
+import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState"
-import {$VillagerDataHolder$$Interface} from "net.minecraft.world.entity.npc.VillagerDataHolder"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
+import {$VillagerDataHolder$$Interface} from "net.minecraft.world.entity.npc.VillagerDataHolder"
 import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$VillagerType$$Type} from "net.minecraft.world.entity.npc.VillagerType"
 import {$Zombie} from "net.minecraft.world.entity.monster.Zombie"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
-import {$InteractionHand, $InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$VillagerData, $VillagerData$$Type} from "net.minecraft.world.entity.npc.VillagerData"
+import {$InteractionHand, $InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$SpawnGroupData, $SpawnGroupData$$Type} from "net.minecraft.world.entity.SpawnGroupData"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
 import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
@@ -36724,9 +36728,9 @@ import {$ServerLevelAccessor$$Type} from "net.minecraft.world.level.ServerLevelA
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
-import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$Tag, $Tag$$Type} from "net.minecraft.nbt.Tag"
+import {$DifficultyInstance$$Type} from "net.minecraft.world.DifficultyInstance"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 
 export class $ZombieVillager extends $Zombie implements $VillagerDataHolder$$Interface {
@@ -36935,8 +36939,8 @@ import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$Player} from "net.minecraft.world.entity.player.Player"
-import {$Pose$$Type} from "net.minecraft.world.entity.Pose"
 import {$Animal} from "net.minecraft.world.entity.animal.Animal"
+import {$Pose$$Type} from "net.minecraft.world.entity.Pose"
 import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
@@ -36944,20 +36948,20 @@ import {$GoalSelector} from "net.minecraft.world.entity.ai.goal.GoalSelector"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
-import {$InteractionHand} from "net.minecraft.world.InteractionHand"
 import {$EntityDimensions} from "net.minecraft.world.entity.EntityDimensions"
+import {$InteractionHand} from "net.minecraft.world.InteractionHand"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
 import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$AgeableMob$$Type} from "net.minecraft.world.entity.AgeableMob"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$AttributeSupplier$Builder} from "net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 
@@ -37151,8 +37155,8 @@ import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
 export class $PoiRecord {
 constructor(arg0: $BlockPos$$Type, arg1: $Holder$$Type<($PoiType)>, arg2: $Runnable$$Type)
 
-public "isOccupied"(): boolean
 public "hasSpace"(): boolean
+public "isOccupied"(): boolean
 /**
  * 
  * @deprecated

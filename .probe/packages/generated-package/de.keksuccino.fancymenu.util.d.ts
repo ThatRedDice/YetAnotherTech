@@ -158,13 +158,13 @@ declare module "de.keksuccino.fancymenu.util.rendering.ui.widget.UniqueWidget" {
 import {$AbstractWidget} from "net.minecraft.client.gui.components.AbstractWidget"
 
 export interface $UniqueWidget$$Interface {
-set "widgetIdentifierFancyMenu"(value: StringJS)
 get "widgetIdentifierFancyMenu"(): StringJS
+set "widgetIdentifierFancyMenu"(value: StringJS)
 }
 
 export class $UniqueWidget implements $UniqueWidget$$Interface {
- "setWidgetIdentifierFancyMenu"(arg0: StringJS): $AbstractWidget
  "getWidgetIdentifierFancyMenu"(): StringJS
+ "setWidgetIdentifierFancyMenu"(arg0: StringJS): $AbstractWidget
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -231,8 +231,6 @@ import {$IAudio, $IAudio$$Type} from "de.keksuccino.fancymenu.util.resource.reso
 import {$Consumer, $Consumer$$Type} from "java.util.function.Consumer"
 
 export interface $CustomizableWidget$$Interface {
-get "nineSliceCustomBackgroundTexture_FancyMenu"(): boolean
-get "hiddenFancyMenu"(): boolean
 get "resetCustomizationsListenersFancyMenu"(): $List<($Runnable)>
 get "hoverStateListenersFancyMenu"(): $List<($Consumer<(boolean)>)>
 get "focusStateListenersFancyMenu"(): $List<($Consumer<(boolean)>)>
@@ -274,13 +272,14 @@ get "customHeightFancyMenu"(): integer
 get "customXFancyMenu"(): integer
 get "customYFancyMenu"(): integer
 get "originalMessageFancyMenu"(): $Component
+get "nineSliceCustomBackgroundTexture_FancyMenu"(): boolean
+get "hiddenFancyMenu"(): boolean
 }
 
 export class $CustomizableWidget implements $CustomizableWidget$$Interface {
  "tickFocusStateListenersFancyMenu"(arg0: boolean): void
- "isNineSliceCustomBackgroundTexture_FancyMenu"(): boolean
- "isHiddenFancyMenu"(): boolean
- "resetWidgetCustomizationsFancyMenu"(): void
+ "stopHoverSoundFancyMenu"(): void
+ "stopCustomClickSoundFancyMenu"(): void
  "tickHoverStateListenersFancyMenu"(arg0: boolean): void
  "tickHoverOrFocusStateListenersFancyMenu"(arg0: boolean): void
  "addHoverOrFocusStateListenerFancyMenu"(arg0: $Consumer$$Type<(boolean)>): void
@@ -329,9 +328,10 @@ export class $CustomizableWidget implements $CustomizableWidget$$Interface {
  "getCustomXFancyMenu"(): integer
  "getCustomYFancyMenu"(): integer
  "getOriginalMessageFancyMenu"(): $Component
- "stopHoverSoundFancyMenu"(): void
  "renderCustomBackgroundFancyMenu"(arg0: $AbstractWidget$$Type, arg1: $GuiGraphics$$Type, arg2: integer, arg3: integer, arg4: integer, arg5: integer): boolean
- "stopCustomClickSoundFancyMenu"(): void
+ "isNineSliceCustomBackgroundTexture_FancyMenu"(): boolean
+ "isHiddenFancyMenu"(): boolean
+ "resetWidgetCustomizationsFancyMenu"(): void
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_

@@ -13,10 +13,10 @@ get "amount"(): long
 }
 
 export class $ItemHolder implements $ItemHolder$$Interface {
- "fromItemStack"(arg0: $ItemStack$$Type): void
  "setItem"(arg0: $Item$$Type): void
  "setComponents"(arg0: $DataComponentPatch$$Type): void
  "setAmount"(arg0: long): void
+ "fromItemStack"(arg0: $ItemStack$$Type): void
  "toItemStack"(): $ItemStack
  "getItem"(): $Item
  "getComponents"(): $DataComponentPatch

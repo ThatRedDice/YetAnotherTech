@@ -45,19 +45,19 @@ static readonly "COMMENTS": integer
 static readonly "UNIX_LINES": integer
 static readonly "MULTILINE": integer
 
+public static "quote"(arg0: StringJS): StringJS
 public "namedGroups"(): $Map<(StringJS), (integer)>
 public "asPredicate"(): $Predicate<(StringJS)>
 public "asMatchPredicate"(): $Predicate<(StringJS)>
 public "splitAsStream"(arg0: charseq): $Stream<(StringJS)>
-public static "quote"(arg0: StringJS): StringJS
 public "toString"(): StringJS
 public "flags"(): integer
 public static "matches"(arg0: StringJS, arg1: charseq): boolean
 public static "compile"(arg0: StringJS): $Pattern
 public static "compile"(arg0: StringJS, arg1: integer): $Pattern
 public "matcher"(arg0: charseq): $Matcher
-public "split"(arg0: charseq, arg1: integer): (StringJS)[]
 public "split"(arg0: charseq): (StringJS)[]
+public "split"(arg0: charseq, arg1: integer): (StringJS)[]
 public "splitWithDelimiters"(arg0: charseq, arg1: integer): (StringJS)[]
 public "pattern"(): StringJS
 }
@@ -72,43 +72,23 @@ export type $Pattern$$Type = ($Pattern);
 export type $Pattern$$Original = $Pattern;}
 declare module "java.util.regex.Matcher" {
 import {$Pattern, $Pattern$$Type} from "java.util.regex.Pattern"
-import {$StringBuilder, $StringBuilder$$Type} from "java.lang.StringBuilder"
 import {$Map} from "java.util.Map"
+import {$StringBuilder, $StringBuilder$$Type} from "java.lang.StringBuilder"
 import {$Function$$Type} from "java.util.function.Function"
 import {$StringBuffer, $StringBuffer$$Type} from "java.lang.StringBuffer"
 import {$MatchResult, $MatchResult$$Type, $MatchResult$$Interface} from "java.util.regex.MatchResult"
 import {$Stream} from "java.util.stream.Stream"
 
 export class $Matcher implements $MatchResult$$Interface {
-public "region"(arg0: integer, arg1: integer): $Matcher
 public "appendReplacement"(arg0: $StringBuilder$$Type, arg1: StringJS): $Matcher
 public "appendReplacement"(arg0: $StringBuffer$$Type, arg1: StringJS): $Matcher
 public "appendTail"(arg0: $StringBuffer$$Type): $StringBuffer
 public "appendTail"(arg0: $StringBuilder$$Type): $StringBuilder
+public "region"(arg0: integer, arg1: integer): $Matcher
 public "namedGroups"(): $Map<(StringJS), (integer)>
 public "hitEnd"(): boolean
 public "hasMatch"(): boolean
 public "groupCount"(): integer
-public "group"(): StringJS
-public "group"(arg0: integer): StringJS
-public "group"(arg0: StringJS): StringJS
-public "reset"(arg0: charseq): $Matcher
-public "reset"(): $Matcher
-public "toString"(): StringJS
-public "end"(arg0: StringJS): integer
-public "end"(arg0: integer): integer
-public "end"(): integer
-public "matches"(): boolean
-public "replaceFirst"(arg0: StringJS): StringJS
-public "replaceFirst"(arg0: $Function$$Type<($MatchResult), (StringJS)>): StringJS
-public "replaceAll"(arg0: $Function$$Type<($MatchResult), (StringJS)>): StringJS
-public "replaceAll"(arg0: StringJS): StringJS
-public "pattern"(): $Pattern
-public "find"(arg0: integer): boolean
-public "find"(): boolean
-public "start"(): integer
-public "start"(arg0: StringJS): integer
-public "start"(arg0: integer): integer
 public "regionStart"(): integer
 public "regionEnd"(): integer
 public "requireEnd"(): boolean
@@ -121,6 +101,26 @@ public "hasTransparentBounds"(): boolean
 public "useTransparentBounds"(arg0: boolean): $Matcher
 public "hasAnchoringBounds"(): boolean
 public "useAnchoringBounds"(arg0: boolean): $Matcher
+public "group"(arg0: StringJS): StringJS
+public "group"(arg0: integer): StringJS
+public "group"(): StringJS
+public "reset"(arg0: charseq): $Matcher
+public "reset"(): $Matcher
+public "toString"(): StringJS
+public "end"(arg0: StringJS): integer
+public "end"(): integer
+public "end"(arg0: integer): integer
+public "matches"(): boolean
+public "replaceFirst"(arg0: $Function$$Type<($MatchResult), (StringJS)>): StringJS
+public "replaceFirst"(arg0: StringJS): StringJS
+public "replaceAll"(arg0: StringJS): StringJS
+public "replaceAll"(arg0: $Function$$Type<($MatchResult), (StringJS)>): StringJS
+public "pattern"(): $Pattern
+public "find"(): boolean
+public "find"(arg0: integer): boolean
+public "start"(): integer
+public "start"(arg0: integer): integer
+public "start"(arg0: StringJS): integer
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_

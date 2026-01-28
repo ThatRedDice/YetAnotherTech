@@ -81,16 +81,16 @@ export type $ConfigSpec$CorrectionListener$$Original = $ConfigSpec$CorrectionLis
 declare module "com.electronwill.nightconfig.core.UnmodifiableConfig" {
 import {$EnumGetMethod$$Type} from "com.electronwill.nightconfig.core.EnumGetMethod"
 import {$Map} from "java.util.Map"
-import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Optional} from "java.util.Optional"
+import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$List$$Type} from "java.util.List"
 import {$OptionalLong} from "java.util.OptionalLong"
 import {$IntSupplier$$Type} from "java.util.function.IntSupplier"
 import {$LongSupplier$$Type} from "java.util.function.LongSupplier"
 import {$OptionalInt} from "java.util.OptionalInt"
 import {$Supplier$$Type} from "java.util.function.Supplier"
-import {$Set} from "java.util.Set"
 import {$Class$$Type} from "java.lang.Class"
+import {$Set} from "java.util.Set"
 import {$ConfigFormat} from "com.electronwill.nightconfig.core.ConfigFormat"
 import {$UnmodifiableConfig$Entry} from "com.electronwill.nightconfig.core.UnmodifiableConfig$Entry"
 
@@ -181,19 +181,19 @@ export type $UnmodifiableConfig$$Original = $UnmodifiableConfig;}
 declare module "com.electronwill.nightconfig.core.UnmodifiableCommentedConfig" {
 import {$EnumGetMethod$$Type} from "com.electronwill.nightconfig.core.EnumGetMethod"
 import {$Map, $Map$$Type} from "java.util.Map"
-import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Optional} from "java.util.Optional"
-import {$UnmodifiableCommentedConfig$Entry} from "com.electronwill.nightconfig.core.UnmodifiableCommentedConfig$Entry"
+import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$List$$Type} from "java.util.List"
+import {$UnmodifiableCommentedConfig$Entry} from "com.electronwill.nightconfig.core.UnmodifiableCommentedConfig$Entry"
 import {$OptionalLong} from "java.util.OptionalLong"
 import {$IntSupplier$$Type} from "java.util.function.IntSupplier"
 import {$UnmodifiableCommentedConfig$CommentNode, $UnmodifiableCommentedConfig$CommentNode$$Type} from "com.electronwill.nightconfig.core.UnmodifiableCommentedConfig$CommentNode"
 import {$LongSupplier$$Type} from "java.util.function.LongSupplier"
 import {$OptionalInt} from "java.util.OptionalInt"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Class$$Type} from "java.lang.Class"
 import {$Set} from "java.util.Set"
 import {$UnmodifiableConfig$$Type, $UnmodifiableConfig$$Interface} from "com.electronwill.nightconfig.core.UnmodifiableConfig"
-import {$Class$$Type} from "java.lang.Class"
 import {$ConfigFormat} from "com.electronwill.nightconfig.core.ConfigFormat"
 
 export interface $UnmodifiableCommentedConfig$$Interface extends $UnmodifiableConfig$$Interface {
@@ -408,14 +408,14 @@ export type $Config$Entry$$Original = $Config$Entry;}
 declare module "com.electronwill.nightconfig.core.io.ConfigParser" {
 import {$FileNotFoundAction$$Type} from "com.electronwill.nightconfig.core.file.FileNotFoundAction"
 import {$ParsingMode$$Type} from "com.electronwill.nightconfig.core.io.ParsingMode"
-import {$Charset$$Type} from "java.nio.charset.Charset"
 import {$File$$Type} from "java.io.File"
+import {$Charset$$Type} from "java.nio.charset.Charset"
 import {$Reader$$Type} from "java.io.Reader"
 import {$URL$$Type} from "java.net.URL"
 import {$Config, $Config$$Type} from "com.electronwill.nightconfig.core.Config"
+import {$Path$$Type} from "java.nio.file.Path"
 import {$ConfigFormat} from "com.electronwill.nightconfig.core.ConfigFormat"
 import {$InputStream$$Type} from "java.io.InputStream"
-import {$Path$$Type} from "java.nio.file.Path"
 
 export interface $ConfigParser$$Interface<C extends $Config> {
 get "format"(): $ConfigFormat<(C)>
@@ -454,8 +454,8 @@ export type $ConfigParser$$Original<C> = $ConfigParser<(C)>;}
 declare module "com.electronwill.nightconfig.core.Config" {
 import {$EnumGetMethod$$Type} from "com.electronwill.nightconfig.core.EnumGetMethod"
 import {$Map, $Map$$Type} from "java.util.Map"
-import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Optional} from "java.util.Optional"
+import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$List$$Type} from "java.util.List"
 import {$OptionalLong} from "java.util.OptionalLong"
 import {$IntSupplier$$Type} from "java.util.function.IntSupplier"
@@ -463,9 +463,9 @@ import {$LongSupplier$$Type} from "java.util.function.LongSupplier"
 import {$Config$Entry} from "com.electronwill.nightconfig.core.Config$Entry"
 import {$OptionalInt} from "java.util.OptionalInt"
 import {$Supplier, $Supplier$$Type} from "java.util.function.Supplier"
+import {$Class$$Type} from "java.lang.Class"
 import {$Set} from "java.util.Set"
 import {$UnmodifiableConfig, $UnmodifiableConfig$$Type, $UnmodifiableConfig$$Interface} from "com.electronwill.nightconfig.core.UnmodifiableConfig"
-import {$Class$$Type} from "java.lang.Class"
 import {$ConfigFormat, $ConfigFormat$$Type} from "com.electronwill.nightconfig.core.ConfigFormat"
 
 export interface $Config$$Interface extends $UnmodifiableConfig$$Interface {
@@ -758,9 +758,9 @@ import {$UnmodifiableCommentedConfig$CommentNode, $UnmodifiableCommentedConfig$C
 import {$LongSupplier$$Type} from "java.util.function.LongSupplier"
 import {$OptionalInt} from "java.util.OptionalInt"
 import {$Supplier, $Supplier$$Type} from "java.util.function.Supplier"
-import {$Set} from "java.util.Set"
-import {$UnmodifiableConfig, $UnmodifiableConfig$$Type} from "com.electronwill.nightconfig.core.UnmodifiableConfig"
 import {$Class$$Type} from "java.lang.Class"
+import {$UnmodifiableConfig, $UnmodifiableConfig$$Type} from "com.electronwill.nightconfig.core.UnmodifiableConfig"
+import {$Set} from "java.util.Set"
 import {$CommentedConfig$Entry} from "com.electronwill.nightconfig.core.CommentedConfig$Entry"
 import {$ConfigFormat, $ConfigFormat$$Type} from "com.electronwill.nightconfig.core.ConfigFormat"
 
@@ -971,8 +971,8 @@ export type $WriterSupplier$$Original = $WriterSupplier;}
 declare module "com.electronwill.nightconfig.core.io.ConfigWriter" {
 import {$WritingMode$$Type} from "com.electronwill.nightconfig.core.io.WritingMode"
 import {$Writer, $Writer$$Type} from "java.io.Writer"
-import {$Charset$$Type} from "java.nio.charset.Charset"
 import {$File$$Type} from "java.io.File"
+import {$Charset$$Type} from "java.nio.charset.Charset"
 import {$URL$$Type} from "java.net.URL"
 import {$UnmodifiableConfig, $UnmodifiableConfig$$Type} from "com.electronwill.nightconfig.core.UnmodifiableConfig"
 import {$OutputStream$$Type} from "java.io.OutputStream"

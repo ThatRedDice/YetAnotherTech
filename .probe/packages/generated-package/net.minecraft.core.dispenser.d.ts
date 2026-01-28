@@ -31,20 +31,20 @@ import {$DispenserBlockEntity, $DispenserBlockEntity$$Type} from "net.minecraft.
 import {$ServerLevel, $ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Record} from "java.lang.Record"
+import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $BlockSource extends $Record implements $IMovingBlockSource$$Interface {
 constructor(arg0: $ServerLevel$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $DispenserBlockEntity$$Type)
 
 public "supp$setEntity"(entity: $Entity$$Type): void
 public "supp$getEntity"(): $Entity
-public "level"(): $ServerLevel
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
 public "state"(): $BlockState
 public "pos"(): $BlockPos
+public "level"(): $ServerLevel
 public "center"(): $Vec3
 public "blockEntity"(): $DispenserBlockEntity
 public static "create"(level: $ServerLevel$$Type, entity: $Entity$$Type, be: $DispenserBlockEntity$$Type): $BlockSource

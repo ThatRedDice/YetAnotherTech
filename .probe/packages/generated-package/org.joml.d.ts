@@ -5,20 +5,20 @@ import {$ObjectInput$$Type} from "java.io.ObjectInput"
 import {$Quaterniondc$$Type} from "org.joml.Quaterniondc"
 import {$Vector4f, $Vector4f$$Type} from "org.joml.Vector4f"
 import {$Vector3f, $Vector3f$$Type} from "org.joml.Vector3f"
-import {$Matrix4dc$$Type} from "org.joml.Matrix4dc"
 import {$Matrix4d, $Matrix4d$$Type} from "org.joml.Matrix4d"
+import {$Matrix4dc$$Type} from "org.joml.Matrix4dc"
+import {$Matrix3dc$$Type} from "org.joml.Matrix3dc"
 import {$ObjectOutput$$Type} from "java.io.ObjectOutput"
 import {$Matrix3d, $Matrix3d$$Type} from "org.joml.Matrix3d"
-import {$Matrix3dc$$Type} from "org.joml.Matrix3dc"
 import {$Matrix4f, $Matrix4f$$Type} from "org.joml.Matrix4f"
-import {$Matrix3f, $Matrix3f$$Type} from "org.joml.Matrix3f"
 import {$Externalizable$$Interface} from "java.io.Externalizable"
+import {$Matrix3f, $Matrix3f$$Type} from "org.joml.Matrix3f"
 import {$Matrix4fc$$Type} from "org.joml.Matrix4fc"
 import {$Matrix3fc$$Type} from "org.joml.Matrix3fc"
-import {$Vector4fc$$Type} from "org.joml.Vector4fc"
 import {$NumberFormat$$Type} from "java.text.NumberFormat"
-import {$Vector3fc$$Type} from "org.joml.Vector3fc"
+import {$Vector4fc$$Type} from "org.joml.Vector4fc"
 import {$Cloneable$$Interface} from "java.lang.Cloneable"
+import {$Vector3fc$$Type} from "org.joml.Vector3fc"
 import {$Quaterniond, $Quaterniond$$Type} from "org.joml.Quaterniond"
 import {$AxisAngle4d, $AxisAngle4d$$Type} from "org.joml.AxisAngle4d"
 import {$Quaternionf, $Quaternionf$$Type} from "org.joml.Quaternionf"
@@ -35,9 +35,9 @@ constructor(arg0: $AxisAngle4f$$Type)
 constructor(arg0: $Quaternionfc$$Type)
 constructor(arg0: float, arg1: float, arg2: float, arg3: float)
 
-public "normalize"(): $AxisAngle4f
 public "writeExternal"(arg0: $ObjectOutput$$Type): void
 public "readExternal"(arg0: $ObjectInput$$Type): void
+public "normalize"(): $AxisAngle4f
 public "get"(arg0: $Matrix3f$$Type): $Matrix3f
 public "get"(arg0: $Matrix4f$$Type): $Matrix4f
 public "get"(arg0: $Quaterniond$$Type): $Quaterniond
@@ -81,10 +81,10 @@ declare module "org.joml.AxisAngle4d" {
 import {$Matrix4x3fc$$Type} from "org.joml.Matrix4x3fc"
 import {$ObjectInput$$Type} from "java.io.ObjectInput"
 import {$Vector3f, $Vector3f$$Type} from "org.joml.Vector3f"
-import {$Matrix4dc$$Type} from "org.joml.Matrix4dc"
 import {$Matrix4d, $Matrix4d$$Type} from "org.joml.Matrix4d"
-import {$ObjectOutput$$Type} from "java.io.ObjectOutput"
+import {$Matrix4dc$$Type} from "org.joml.Matrix4dc"
 import {$Matrix3dc$$Type} from "org.joml.Matrix3dc"
+import {$ObjectOutput$$Type} from "java.io.ObjectOutput"
 import {$Matrix4f, $Matrix4f$$Type} from "org.joml.Matrix4f"
 import {$Vector3d, $Vector3d$$Type} from "org.joml.Vector3d"
 import {$Matrix4fc$$Type} from "org.joml.Matrix4fc"
@@ -96,8 +96,8 @@ import {$Quaternionfc$$Type} from "org.joml.Quaternionfc"
 import {$Quaterniondc$$Type} from "org.joml.Quaterniondc"
 import {$Matrix3d, $Matrix3d$$Type} from "org.joml.Matrix3d"
 import {$Vector4d, $Vector4d$$Type} from "org.joml.Vector4d"
-import {$Matrix3f, $Matrix3f$$Type} from "org.joml.Matrix3f"
 import {$Externalizable$$Interface} from "java.io.Externalizable"
+import {$Matrix3f, $Matrix3f$$Type} from "org.joml.Matrix3f"
 import {$Vector4dc$$Type} from "org.joml.Vector4dc"
 import {$Vector3dc$$Type} from "org.joml.Vector3dc"
 import {$NumberFormat$$Type} from "java.text.NumberFormat"
@@ -119,9 +119,9 @@ constructor(arg0: $Quaternionfc$$Type)
 constructor(arg0: $Quaterniondc$$Type)
 constructor(arg0: double, arg1: double, arg2: double, arg3: double)
 
-public "normalize"(): $AxisAngle4d
 public "writeExternal"(arg0: $ObjectOutput$$Type): void
 public "readExternal"(arg0: $ObjectInput$$Type): void
+public "normalize"(): $AxisAngle4d
 public "get"(arg0: $Matrix4f$$Type): $Matrix4f
 public "get"(arg0: $Matrix3f$$Type): $Matrix3f
 public "get"(arg0: $Quaterniond$$Type): $Quaterniond
@@ -177,8 +177,8 @@ import {$Vector3d, $Vector3d$$Type} from "org.joml.Vector3d"
 import {$FloatBuffer, $FloatBuffer$$Type} from "java.nio.FloatBuffer"
 import {$Matrix3x2dc$$Type} from "org.joml.Matrix3x2dc"
 import {$Matrix4fc$$Type} from "org.joml.Matrix4fc"
-import {$Matrix3x2fc$$Type} from "org.joml.Matrix3x2fc"
 import {$Matrix3fc$$Type} from "org.joml.Matrix3fc"
+import {$Matrix3x2fc$$Type} from "org.joml.Matrix3x2fc"
 import {$Vector3fc$$Type} from "org.joml.Vector3fc"
 import {$Quaterniond, $Quaterniond$$Type} from "org.joml.Quaterniond"
 import {$ByteBuffer, $ByteBuffer$$Type} from "java.nio.ByteBuffer"
@@ -188,41 +188,32 @@ get "finite"(): boolean
 }
 
 export class $Vector3dc implements $Vector3dc$$Interface {
+ "div"(arg0: $Vector3fc$$Type, arg1: $Vector3d$$Type): $Vector3d
+ "div"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
+ "div"(arg0: double, arg1: $Vector3d$$Type): $Vector3d
+ "div"(arg0: double, arg1: double, arg2: double, arg3: $Vector3d$$Type): $Vector3d
+ "mulAdd"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Vector3d$$Type): $Vector3d
+ "mulAdd"(arg0: double, arg1: $Vector3dc$$Type, arg2: $Vector3d$$Type): $Vector3d
+ "mulAdd"(arg0: $Vector3fc$$Type, arg1: $Vector3dc$$Type, arg2: $Vector3d$$Type): $Vector3d
+ "half"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
+ "half"(arg0: double, arg1: double, arg2: double, arg3: $Vector3d$$Type): $Vector3d
+ "absolute"(arg0: $Vector3d$$Type): $Vector3d
+ "normalize"(arg0: double, arg1: $Vector3d$$Type): $Vector3d
+ "normalize"(arg0: $Vector3d$$Type): $Vector3d
  "sub"(arg0: double, arg1: double, arg2: double, arg3: $Vector3d$$Type): $Vector3d
  "sub"(arg0: $Vector3fc$$Type, arg1: $Vector3d$$Type): $Vector3d
  "sub"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
- "mul"(arg0: $Matrix3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
- "mul"(arg0: $Matrix3dc$$Type, arg1: $Vector3f$$Type): $Vector3f
- "mul"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
- "mul"(arg0: $Matrix3fc$$Type, arg1: $Vector3d$$Type): $Vector3d
- "mul"(arg0: $Matrix3x2dc$$Type, arg1: $Vector3d$$Type): $Vector3d
- "mul"(arg0: $Matrix3x2fc$$Type, arg1: $Vector3d$$Type): $Vector3d
- "mul"(arg0: double, arg1: $Vector3d$$Type): $Vector3d
- "mul"(arg0: $Vector3fc$$Type, arg1: $Vector3d$$Type): $Vector3d
- "mul"(arg0: double, arg1: double, arg2: double, arg3: $Vector3d$$Type): $Vector3d
  "negate"(arg0: $Vector3d$$Type): $Vector3d
- "normalize"(arg0: double, arg1: $Vector3d$$Type): $Vector3d
- "normalize"(arg0: $Vector3d$$Type): $Vector3d
- "absolute"(arg0: $Vector3d$$Type): $Vector3d
- "mulAdd"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Vector3d$$Type): $Vector3d
- "mulAdd"(arg0: $Vector3fc$$Type, arg1: $Vector3dc$$Type, arg2: $Vector3d$$Type): $Vector3d
- "mulAdd"(arg0: double, arg1: $Vector3dc$$Type, arg2: $Vector3d$$Type): $Vector3d
- "div"(arg0: double, arg1: $Vector3d$$Type): $Vector3d
- "div"(arg0: $Vector3fc$$Type, arg1: $Vector3d$$Type): $Vector3d
- "div"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
- "div"(arg0: double, arg1: double, arg2: double, arg3: $Vector3d$$Type): $Vector3d
- "half"(arg0: double, arg1: double, arg2: double, arg3: $Vector3d$$Type): $Vector3d
- "half"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
- "get"(arg0: $Vector3f$$Type): $Vector3f
  "get"(arg0: $Vector3d$$Type): $Vector3d
- "get"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
+ "get"(arg0: $Vector3f$$Type): $Vector3f
+ "get"(arg0: $DoubleBuffer$$Type): $DoubleBuffer
+ "get"(arg0: integer, arg1: $DoubleBuffer$$Type): $DoubleBuffer
+ "get"(arg0: integer): double
  "get"(arg0: integer, arg1: $Vector3i$$Type): $Vector3i
  "get"(arg0: $ByteBuffer$$Type): $ByteBuffer
  "get"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
- "get"(arg0: integer): double
- "get"(arg0: $DoubleBuffer$$Type): $DoubleBuffer
- "get"(arg0: integer, arg1: $DoubleBuffer$$Type): $DoubleBuffer
  "get"(arg0: $FloatBuffer$$Type): $FloatBuffer
+ "get"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
  "equals"(arg0: double, arg1: double, arg2: double): boolean
  "equals"(arg0: $Vector3dc$$Type, arg1: double): boolean
  "length"(): double
@@ -231,42 +222,51 @@ export class $Vector3dc implements $Vector3dc$$Interface {
  "floor"(arg0: $Vector3d$$Type): $Vector3d
  "ceil"(arg0: $Vector3d$$Type): $Vector3d
  "round"(arg0: $Vector3d$$Type): $Vector3d
+ "fma"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Vector3d$$Type): $Vector3d
  "fma"(arg0: double, arg1: $Vector3dc$$Type, arg2: $Vector3d$$Type): $Vector3d
+ "fma"(arg0: $Vector3dc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3d$$Type): $Vector3d
  "fma"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3d$$Type): $Vector3d
  "fma"(arg0: double, arg1: $Vector3fc$$Type, arg2: $Vector3d$$Type): $Vector3d
- "fma"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Vector3d$$Type): $Vector3d
- "fma"(arg0: $Vector3dc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3d$$Type): $Vector3d
  "isFinite"(): boolean
- "add"(arg0: double, arg1: double, arg2: double, arg3: $Vector3d$$Type): $Vector3d
- "add"(arg0: $Vector3fc$$Type, arg1: $Vector3d$$Type): $Vector3d
  "add"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
+ "add"(arg0: $Vector3fc$$Type, arg1: $Vector3d$$Type): $Vector3d
+ "add"(arg0: double, arg1: double, arg2: double, arg3: $Vector3d$$Type): $Vector3d
  "x"(): double
  "dot"(arg0: double, arg1: double, arg2: double): double
  "dot"(arg0: $Vector3dc$$Type): double
  "z"(): double
  "y"(): double
- "distance"(arg0: double, arg1: double, arg2: double): double
  "distance"(arg0: $Vector3dc$$Type): double
+ "distance"(arg0: double, arg1: double, arg2: double): double
  "rotate"(arg0: $Quaterniondc$$Type, arg1: $Vector3d$$Type): $Vector3d
+ "mul"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
+ "mul"(arg0: $Matrix3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
+ "mul"(arg0: $Vector3fc$$Type, arg1: $Vector3d$$Type): $Vector3d
+ "mul"(arg0: $Matrix3fc$$Type, arg1: $Vector3d$$Type): $Vector3d
+ "mul"(arg0: $Matrix3x2dc$$Type, arg1: $Vector3d$$Type): $Vector3d
+ "mul"(arg0: $Matrix3dc$$Type, arg1: $Vector3f$$Type): $Vector3f
+ "mul"(arg0: $Matrix3x2fc$$Type, arg1: $Vector3d$$Type): $Vector3d
+ "mul"(arg0: double, arg1: $Vector3d$$Type): $Vector3d
+ "mul"(arg0: double, arg1: double, arg2: double, arg3: $Vector3d$$Type): $Vector3d
  "angle"(arg0: $Vector3dc$$Type): double
  "getToAddress"(arg0: long): $Vector3dc
  "mulProject"(arg0: $Matrix4dc$$Type, arg1: double, arg2: $Vector3d$$Type): $Vector3d
- "mulProject"(arg0: $Matrix4fc$$Type, arg1: $Vector3d$$Type): $Vector3d
  "mulProject"(arg0: $Matrix4dc$$Type, arg1: $Vector3d$$Type): $Vector3d
- "mulTranspose"(arg0: $Matrix3fc$$Type, arg1: $Vector3d$$Type): $Vector3d
+ "mulProject"(arg0: $Matrix4fc$$Type, arg1: $Vector3d$$Type): $Vector3d
  "mulTranspose"(arg0: $Matrix3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
- "mulPosition"(arg0: $Matrix4fc$$Type, arg1: $Vector3d$$Type): $Vector3d
+ "mulTranspose"(arg0: $Matrix3fc$$Type, arg1: $Vector3d$$Type): $Vector3d
  "mulPosition"(arg0: $Matrix4x3fc$$Type, arg1: $Vector3d$$Type): $Vector3d
- "mulPosition"(arg0: $Matrix4dc$$Type, arg1: $Vector3d$$Type): $Vector3d
+ "mulPosition"(arg0: $Matrix4fc$$Type, arg1: $Vector3d$$Type): $Vector3d
  "mulPosition"(arg0: $Matrix4x3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
+ "mulPosition"(arg0: $Matrix4dc$$Type, arg1: $Vector3d$$Type): $Vector3d
  "mulTransposePosition"(arg0: $Matrix4dc$$Type, arg1: $Vector3d$$Type): $Vector3d
  "mulTransposePosition"(arg0: $Matrix4fc$$Type, arg1: $Vector3d$$Type): $Vector3d
- "mulPositionW"(arg0: $Matrix4fc$$Type, arg1: $Vector3d$$Type): double
  "mulPositionW"(arg0: $Matrix4dc$$Type, arg1: $Vector3d$$Type): double
- "mulDirection"(arg0: $Matrix4x3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
+ "mulPositionW"(arg0: $Matrix4fc$$Type, arg1: $Vector3d$$Type): double
+ "mulDirection"(arg0: $Matrix4dc$$Type, arg1: $Vector3d$$Type): $Vector3d
  "mulDirection"(arg0: $Matrix4x3fc$$Type, arg1: $Vector3d$$Type): $Vector3d
  "mulDirection"(arg0: $Matrix4fc$$Type, arg1: $Vector3d$$Type): $Vector3d
- "mulDirection"(arg0: $Matrix4dc$$Type, arg1: $Vector3d$$Type): $Vector3d
+ "mulDirection"(arg0: $Matrix4x3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
  "mulTransposeDirection"(arg0: $Matrix4fc$$Type, arg1: $Vector3d$$Type): $Vector3d
  "mulTransposeDirection"(arg0: $Matrix4dc$$Type, arg1: $Vector3d$$Type): $Vector3d
  "rotationTo"(arg0: $Vector3dc$$Type, arg1: $Quaterniond$$Type): $Quaterniond
@@ -276,8 +276,8 @@ export class $Vector3dc implements $Vector3dc$$Interface {
  "rotateY"(arg0: double, arg1: $Vector3d$$Type): $Vector3d
  "rotateZ"(arg0: double, arg1: $Vector3d$$Type): $Vector3d
  "lengthSquared"(): double
- "cross"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
  "cross"(arg0: double, arg1: double, arg2: double, arg3: $Vector3d$$Type): $Vector3d
+ "cross"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
  "distanceSquared"(arg0: double, arg1: double, arg2: double): double
  "distanceSquared"(arg0: $Vector3dc$$Type): double
  "angleCos"(arg0: $Vector3dc$$Type): double
@@ -313,33 +313,33 @@ export interface $Vector3ic$$Interface {
 }
 
 export class $Vector3ic implements $Vector3ic$$Interface {
- "gridDistance"(arg0: integer, arg1: integer, arg2: integer): long
  "gridDistance"(arg0: $Vector3ic$$Type): long
- "sub"(arg0: integer, arg1: integer, arg2: integer, arg3: $Vector3i$$Type): $Vector3i
- "sub"(arg0: $Vector3ic$$Type, arg1: $Vector3i$$Type): $Vector3i
- "mul"(arg0: integer, arg1: $Vector3i$$Type): $Vector3i
- "mul"(arg0: $Vector3ic$$Type, arg1: $Vector3i$$Type): $Vector3i
- "mul"(arg0: integer, arg1: integer, arg2: integer, arg3: $Vector3i$$Type): $Vector3i
- "negate"(arg0: $Vector3i$$Type): $Vector3i
- "absolute"(arg0: $Vector3i$$Type): $Vector3i
+ "gridDistance"(arg0: integer, arg1: integer, arg2: integer): long
  "div"(arg0: float, arg1: $Vector3i$$Type): $Vector3i
  "div"(arg0: integer, arg1: $Vector3i$$Type): $Vector3i
- "get"(arg0: integer, arg1: $IntBuffer$$Type): $IntBuffer
+ "absolute"(arg0: $Vector3i$$Type): $Vector3i
+ "sub"(arg0: integer, arg1: integer, arg2: integer, arg3: $Vector3i$$Type): $Vector3i
+ "sub"(arg0: $Vector3ic$$Type, arg1: $Vector3i$$Type): $Vector3i
+ "negate"(arg0: $Vector3i$$Type): $Vector3i
  "get"(arg0: $IntBuffer$$Type): $IntBuffer
- "get"(arg0: integer): integer
+ "get"(arg0: integer, arg1: $IntBuffer$$Type): $IntBuffer
  "get"(arg0: $ByteBuffer$$Type): $ByteBuffer
  "get"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
+ "get"(arg0: integer): integer
  "equals"(arg0: integer, arg1: integer, arg2: integer): boolean
  "length"(): double
  "min"(arg0: $Vector3ic$$Type, arg1: $Vector3i$$Type): $Vector3i
  "max"(arg0: $Vector3ic$$Type, arg1: $Vector3i$$Type): $Vector3i
- "add"(arg0: $Vector3ic$$Type, arg1: $Vector3i$$Type): $Vector3i
  "add"(arg0: integer, arg1: integer, arg2: integer, arg3: $Vector3i$$Type): $Vector3i
+ "add"(arg0: $Vector3ic$$Type, arg1: $Vector3i$$Type): $Vector3i
  "x"(): integer
  "z"(): integer
  "y"(): integer
  "distance"(arg0: $Vector3ic$$Type): double
  "distance"(arg0: integer, arg1: integer, arg2: integer): double
+ "mul"(arg0: $Vector3ic$$Type, arg1: $Vector3i$$Type): $Vector3i
+ "mul"(arg0: integer, arg1: integer, arg2: integer, arg3: $Vector3i$$Type): $Vector3i
+ "mul"(arg0: integer, arg1: $Vector3i$$Type): $Vector3i
  "getToAddress"(arg0: long): $Vector3ic
  "lengthSquared"(): long
  "distanceSquared"(arg0: $Vector3ic$$Type): long
@@ -366,8 +366,8 @@ import {$Matrix3dc$$Type} from "org.joml.Matrix3dc"
 import {$Vector3d, $Vector3d$$Type} from "org.joml.Vector3d"
 import {$FloatBuffer, $FloatBuffer$$Type} from "java.nio.FloatBuffer"
 import {$Matrix4fc$$Type} from "org.joml.Matrix4fc"
-import {$Matrix3x2fc$$Type} from "org.joml.Matrix3x2fc"
 import {$Matrix3fc$$Type} from "org.joml.Matrix3fc"
+import {$Matrix3x2fc$$Type} from "org.joml.Matrix3x2fc"
 import {$Quaternionf, $Quaternionf$$Type} from "org.joml.Quaternionf"
 import {$ByteBuffer, $ByteBuffer$$Type} from "java.nio.ByteBuffer"
 
@@ -376,35 +376,29 @@ get "finite"(): boolean
 }
 
 export class $Vector3fc implements $Vector3fc$$Interface {
- "sub"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
- "sub"(arg0: float, arg1: float, arg2: float, arg3: $Vector3f$$Type): $Vector3f
- "mul"(arg0: float, arg1: $Vector3f$$Type): $Vector3f
- "mul"(arg0: $Matrix3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
- "mul"(arg0: float, arg1: float, arg2: float, arg3: $Vector3f$$Type): $Vector3f
- "mul"(arg0: $Matrix3x2fc$$Type, arg1: $Vector3f$$Type): $Vector3f
- "mul"(arg0: $Matrix3dc$$Type, arg1: $Vector3f$$Type): $Vector3f
- "mul"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
- "negate"(arg0: $Vector3f$$Type): $Vector3f
- "normalize"(arg0: float, arg1: $Vector3f$$Type): $Vector3f
- "normalize"(arg0: $Vector3f$$Type): $Vector3f
- "absolute"(arg0: $Vector3f$$Type): $Vector3f
- "mulAdd"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3f$$Type): $Vector3f
- "mulAdd"(arg0: float, arg1: $Vector3fc$$Type, arg2: $Vector3f$$Type): $Vector3f
- "div"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
  "div"(arg0: float, arg1: float, arg2: float, arg3: $Vector3f$$Type): $Vector3f
  "div"(arg0: float, arg1: $Vector3f$$Type): $Vector3f
+ "div"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
+ "mulAdd"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3f$$Type): $Vector3f
+ "mulAdd"(arg0: float, arg1: $Vector3fc$$Type, arg2: $Vector3f$$Type): $Vector3f
  "half"(arg0: float, arg1: float, arg2: float, arg3: $Vector3f$$Type): $Vector3f
  "half"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
- "get"(arg0: integer): float
+ "absolute"(arg0: $Vector3f$$Type): $Vector3f
+ "normalize"(arg0: float, arg1: $Vector3f$$Type): $Vector3f
+ "normalize"(arg0: $Vector3f$$Type): $Vector3f
+ "sub"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
+ "sub"(arg0: float, arg1: float, arg2: float, arg3: $Vector3f$$Type): $Vector3f
+ "negate"(arg0: $Vector3f$$Type): $Vector3f
  "get"(arg0: $Vector3d$$Type): $Vector3d
- "get"(arg0: integer, arg1: $Vector3i$$Type): $Vector3i
+ "get"(arg0: integer): float
  "get"(arg0: $Vector3f$$Type): $Vector3f
+ "get"(arg0: integer, arg1: $Vector3i$$Type): $Vector3i
  "get"(arg0: $FloatBuffer$$Type): $FloatBuffer
- "get"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
- "get"(arg0: $ByteBuffer$$Type): $ByteBuffer
  "get"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
- "equals"(arg0: $Vector3fc$$Type, arg1: float): boolean
+ "get"(arg0: $ByteBuffer$$Type): $ByteBuffer
+ "get"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
  "equals"(arg0: float, arg1: float, arg2: float): boolean
+ "equals"(arg0: $Vector3fc$$Type, arg1: float): boolean
  "length"(): float
  "min"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
  "max"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
@@ -414,31 +408,37 @@ export class $Vector3fc implements $Vector3fc$$Interface {
  "fma"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3f$$Type): $Vector3f
  "fma"(arg0: float, arg1: $Vector3fc$$Type, arg2: $Vector3f$$Type): $Vector3f
  "isFinite"(): boolean
- "add"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
  "add"(arg0: float, arg1: float, arg2: float, arg3: $Vector3f$$Type): $Vector3f
+ "add"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
  "x"(): float
- "dot"(arg0: $Vector3fc$$Type): float
  "dot"(arg0: float, arg1: float, arg2: float): float
+ "dot"(arg0: $Vector3fc$$Type): float
  "z"(): float
  "y"(): float
  "distance"(arg0: $Vector3fc$$Type): float
  "distance"(arg0: float, arg1: float, arg2: float): float
  "rotate"(arg0: $Quaternionfc$$Type, arg1: $Vector3f$$Type): $Vector3f
+ "mul"(arg0: $Matrix3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
+ "mul"(arg0: $Matrix3dc$$Type, arg1: $Vector3f$$Type): $Vector3f
+ "mul"(arg0: $Matrix3x2fc$$Type, arg1: $Vector3f$$Type): $Vector3f
+ "mul"(arg0: float, arg1: float, arg2: float, arg3: $Vector3f$$Type): $Vector3f
+ "mul"(arg0: float, arg1: $Vector3f$$Type): $Vector3f
+ "mul"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
  "angle"(arg0: $Vector3fc$$Type): float
  "getToAddress"(arg0: long): $Vector3fc
- "mulProject"(arg0: $Matrix4fc$$Type, arg1: $Vector3f$$Type): $Vector3f
  "mulProject"(arg0: $Matrix4fc$$Type, arg1: float, arg2: $Vector3f$$Type): $Vector3f
+ "mulProject"(arg0: $Matrix4fc$$Type, arg1: $Vector3f$$Type): $Vector3f
  "mulTranspose"(arg0: $Matrix3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
- "mulPosition"(arg0: $Matrix4fc$$Type, arg1: $Vector3f$$Type): $Vector3f
  "mulPosition"(arg0: $Matrix4x3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
+ "mulPosition"(arg0: $Matrix4fc$$Type, arg1: $Vector3f$$Type): $Vector3f
  "mulTransposePosition"(arg0: $Matrix4fc$$Type, arg1: $Vector3f$$Type): $Vector3f
  "mulPositionW"(arg0: $Matrix4fc$$Type, arg1: $Vector3f$$Type): float
- "mulDirection"(arg0: $Matrix4x3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
  "mulDirection"(arg0: $Matrix4dc$$Type, arg1: $Vector3f$$Type): $Vector3f
  "mulDirection"(arg0: $Matrix4fc$$Type, arg1: $Vector3f$$Type): $Vector3f
+ "mulDirection"(arg0: $Matrix4x3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
  "mulTransposeDirection"(arg0: $Matrix4fc$$Type, arg1: $Vector3f$$Type): $Vector3f
- "rotationTo"(arg0: float, arg1: float, arg2: float, arg3: $Quaternionf$$Type): $Quaternionf
  "rotationTo"(arg0: $Vector3fc$$Type, arg1: $Quaternionf$$Type): $Quaternionf
+ "rotationTo"(arg0: float, arg1: float, arg2: float, arg3: $Quaternionf$$Type): $Quaternionf
  "rotateAxis"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Vector3f$$Type): $Vector3f
  "rotateX"(arg0: float, arg1: $Vector3f$$Type): $Vector3f
  "rotateY"(arg0: float, arg1: $Vector3f$$Type): $Vector3f
@@ -449,8 +449,8 @@ export class $Vector3fc implements $Vector3fc$$Interface {
  "distanceSquared"(arg0: float, arg1: float, arg2: float): float
  "distanceSquared"(arg0: $Vector3fc$$Type): float
  "angleCos"(arg0: $Vector3fc$$Type): float
- "angleSigned"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type): float
  "angleSigned"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): float
+ "angleSigned"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type): float
  "reflect"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
  "reflect"(arg0: float, arg1: float, arg2: float, arg3: $Vector3f$$Type): $Vector3f
  "smoothStep"(arg0: $Vector3fc$$Type, arg1: float, arg2: $Vector3f$$Type): $Vector3f
@@ -471,8 +471,8 @@ export type $Vector3fc$$Type = ($Vector3fc);
  */
 export type $Vector3fc$$Original = $Vector3fc;}
 declare module "org.joml.Vector4fc" {
-import {$Quaternionfc$$Type} from "org.joml.Quaternionfc"
 import {$FloatBuffer, $FloatBuffer$$Type} from "java.nio.FloatBuffer"
+import {$Quaternionfc$$Type} from "org.joml.Quaternionfc"
 import {$Matrix4fc$$Type} from "org.joml.Matrix4fc"
 import {$Matrix4x3fc$$Type} from "org.joml.Matrix4x3fc"
 import {$Vector4f, $Vector4f$$Type} from "org.joml.Vector4f"
@@ -486,30 +486,25 @@ get "finite"(): boolean
 }
 
 export class $Vector4fc implements $Vector4fc$$Interface {
- "sub"(arg0: $Vector4fc$$Type, arg1: $Vector4f$$Type): $Vector4f
- "sub"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Vector4f$$Type): $Vector4f
- "mul"(arg0: float, arg1: $Vector4f$$Type): $Vector4f
- "mul"(arg0: $Matrix4fc$$Type, arg1: $Vector4f$$Type): $Vector4f
- "mul"(arg0: $Vector4fc$$Type, arg1: $Vector4f$$Type): $Vector4f
- "mul"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Vector4f$$Type): $Vector4f
- "mul"(arg0: $Matrix4x3fc$$Type, arg1: $Vector4f$$Type): $Vector4f
- "negate"(arg0: $Vector4f$$Type): $Vector4f
- "normalize"(arg0: $Vector4f$$Type): $Vector4f
- "normalize"(arg0: float, arg1: $Vector4f$$Type): $Vector4f
- "absolute"(arg0: $Vector4f$$Type): $Vector4f
+ "div"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Vector4f$$Type): $Vector4f
+ "div"(arg0: float, arg1: $Vector4f$$Type): $Vector4f
+ "div"(arg0: $Vector4fc$$Type, arg1: $Vector4f$$Type): $Vector4f
  "mulAdd"(arg0: $Vector4fc$$Type, arg1: $Vector4fc$$Type, arg2: $Vector4f$$Type): $Vector4f
  "mulAdd"(arg0: float, arg1: $Vector4fc$$Type, arg2: $Vector4f$$Type): $Vector4f
- "div"(arg0: $Vector4fc$$Type, arg1: $Vector4f$$Type): $Vector4f
- "div"(arg0: float, arg1: $Vector4f$$Type): $Vector4f
- "div"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Vector4f$$Type): $Vector4f
- "get"(arg0: $Vector4f$$Type): $Vector4f
- "get"(arg0: integer, arg1: $Vector4i$$Type): $Vector4i
- "get"(arg0: $Vector4d$$Type): $Vector4d
- "get"(arg0: $FloatBuffer$$Type): $FloatBuffer
- "get"(arg0: integer): float
- "get"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
+ "absolute"(arg0: $Vector4f$$Type): $Vector4f
+ "normalize"(arg0: float, arg1: $Vector4f$$Type): $Vector4f
+ "normalize"(arg0: $Vector4f$$Type): $Vector4f
+ "sub"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Vector4f$$Type): $Vector4f
+ "sub"(arg0: $Vector4fc$$Type, arg1: $Vector4f$$Type): $Vector4f
+ "negate"(arg0: $Vector4f$$Type): $Vector4f
  "get"(arg0: $ByteBuffer$$Type): $ByteBuffer
+ "get"(arg0: $Vector4f$$Type): $Vector4f
+ "get"(arg0: $Vector4d$$Type): $Vector4d
  "get"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
+ "get"(arg0: $FloatBuffer$$Type): $FloatBuffer
+ "get"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
+ "get"(arg0: integer): float
+ "get"(arg0: integer, arg1: $Vector4i$$Type): $Vector4i
  "equals"(arg0: float, arg1: float, arg2: float, arg3: float): boolean
  "equals"(arg0: $Vector4fc$$Type, arg1: float): boolean
  "length"(): float
@@ -518,27 +513,32 @@ export class $Vector4fc implements $Vector4fc$$Interface {
  "floor"(arg0: $Vector4f$$Type): $Vector4f
  "ceil"(arg0: $Vector4f$$Type): $Vector4f
  "round"(arg0: $Vector4f$$Type): $Vector4f
- "fma"(arg0: float, arg1: $Vector4fc$$Type, arg2: $Vector4f$$Type): $Vector4f
  "fma"(arg0: $Vector4fc$$Type, arg1: $Vector4fc$$Type, arg2: $Vector4f$$Type): $Vector4f
+ "fma"(arg0: float, arg1: $Vector4fc$$Type, arg2: $Vector4f$$Type): $Vector4f
  "isFinite"(): boolean
  "add"(arg0: $Vector4fc$$Type, arg1: $Vector4f$$Type): $Vector4f
  "add"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Vector4f$$Type): $Vector4f
  "x"(): float
- "dot"(arg0: $Vector4fc$$Type): float
  "dot"(arg0: float, arg1: float, arg2: float, arg3: float): float
+ "dot"(arg0: $Vector4fc$$Type): float
  "z"(): float
  "w"(): float
  "y"(): float
- "distance"(arg0: float, arg1: float, arg2: float, arg3: float): float
  "distance"(arg0: $Vector4fc$$Type): float
+ "distance"(arg0: float, arg1: float, arg2: float, arg3: float): float
  "rotate"(arg0: $Quaternionfc$$Type, arg1: $Vector4f$$Type): $Vector4f
+ "mul"(arg0: $Matrix4x3fc$$Type, arg1: $Vector4f$$Type): $Vector4f
+ "mul"(arg0: $Vector4fc$$Type, arg1: $Vector4f$$Type): $Vector4f
+ "mul"(arg0: float, arg1: $Vector4f$$Type): $Vector4f
+ "mul"(arg0: $Matrix4fc$$Type, arg1: $Vector4f$$Type): $Vector4f
+ "mul"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Vector4f$$Type): $Vector4f
  "angle"(arg0: $Vector4fc$$Type): float
  "mulAffine"(arg0: $Matrix4fc$$Type, arg1: $Vector4f$$Type): $Vector4f
  "mulAffineTranspose"(arg0: $Matrix4fc$$Type, arg1: $Vector4f$$Type): $Vector4f
  "normalize3"(arg0: $Vector4f$$Type): $Vector4f
  "getToAddress"(arg0: long): $Vector4fc
- "mulProject"(arg0: $Matrix4fc$$Type, arg1: $Vector4f$$Type): $Vector4f
  "mulProject"(arg0: $Matrix4fc$$Type, arg1: $Vector3f$$Type): $Vector3f
+ "mulProject"(arg0: $Matrix4fc$$Type, arg1: $Vector4f$$Type): $Vector4f
  "mulTranspose"(arg0: $Matrix4fc$$Type, arg1: $Vector4f$$Type): $Vector4f
  "rotateAxis"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Vector4f$$Type): $Vector4f
  "rotateX"(arg0: float, arg1: $Vector4f$$Type): $Vector4f
@@ -583,34 +583,27 @@ get "finite"(): boolean
 }
 
 export class $Vector4dc implements $Vector4dc$$Interface {
- "sub"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Vector4d$$Type): $Vector4d
- "sub"(arg0: $Vector4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
- "sub"(arg0: $Vector4fc$$Type, arg1: $Vector4d$$Type): $Vector4d
- "mul"(arg0: $Vector4fc$$Type, arg1: $Vector4d$$Type): $Vector4d
- "mul"(arg0: $Vector4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
- "mul"(arg0: double, arg1: $Vector4d$$Type): $Vector4d
- "mul"(arg0: $Matrix4fc$$Type, arg1: $Vector4d$$Type): $Vector4d
- "mul"(arg0: $Matrix4x3fc$$Type, arg1: $Vector4d$$Type): $Vector4d
- "mul"(arg0: $Matrix4x3dc$$Type, arg1: $Vector4d$$Type): $Vector4d
- "mul"(arg0: $Matrix4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
- "negate"(arg0: $Vector4d$$Type): $Vector4d
- "normalize"(arg0: double, arg1: $Vector4d$$Type): $Vector4d
- "normalize"(arg0: $Vector4d$$Type): $Vector4d
- "absolute"(arg0: $Vector4d$$Type): $Vector4d
- "mulAdd"(arg0: double, arg1: $Vector4dc$$Type, arg2: $Vector4d$$Type): $Vector4d
- "mulAdd"(arg0: $Vector4dc$$Type, arg1: $Vector4dc$$Type, arg2: $Vector4d$$Type): $Vector4d
- "div"(arg0: $Vector4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
  "div"(arg0: double, arg1: $Vector4d$$Type): $Vector4d
- "get"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
+ "div"(arg0: $Vector4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
+ "mulAdd"(arg0: $Vector4dc$$Type, arg1: $Vector4dc$$Type, arg2: $Vector4d$$Type): $Vector4d
+ "mulAdd"(arg0: double, arg1: $Vector4dc$$Type, arg2: $Vector4d$$Type): $Vector4d
+ "absolute"(arg0: $Vector4d$$Type): $Vector4d
+ "normalize"(arg0: $Vector4d$$Type): $Vector4d
+ "normalize"(arg0: double, arg1: $Vector4d$$Type): $Vector4d
+ "sub"(arg0: $Vector4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
+ "sub"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Vector4d$$Type): $Vector4d
+ "sub"(arg0: $Vector4fc$$Type, arg1: $Vector4d$$Type): $Vector4d
+ "negate"(arg0: $Vector4d$$Type): $Vector4d
+ "get"(arg0: integer, arg1: $Vector4i$$Type): $Vector4i
+ "get"(arg0: integer): double
+ "get"(arg0: $Vector4f$$Type): $Vector4f
  "get"(arg0: $Vector4d$$Type): $Vector4d
  "get"(arg0: $ByteBuffer$$Type): $ByteBuffer
- "get"(arg0: integer, arg1: $Vector4i$$Type): $Vector4i
  "get"(arg0: $FloatBuffer$$Type): $FloatBuffer
- "get"(arg0: integer, arg1: $DoubleBuffer$$Type): $DoubleBuffer
- "get"(arg0: $DoubleBuffer$$Type): $DoubleBuffer
- "get"(arg0: integer): double
  "get"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
- "get"(arg0: $Vector4f$$Type): $Vector4f
+ "get"(arg0: $DoubleBuffer$$Type): $DoubleBuffer
+ "get"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
+ "get"(arg0: integer, arg1: $DoubleBuffer$$Type): $DoubleBuffer
  "equals"(arg0: double, arg1: double, arg2: double, arg3: double): boolean
  "equals"(arg0: $Vector4dc$$Type, arg1: double): boolean
  "length"(): double
@@ -623,24 +616,31 @@ export class $Vector4dc implements $Vector4dc$$Interface {
  "fma"(arg0: $Vector4dc$$Type, arg1: $Vector4dc$$Type, arg2: $Vector4d$$Type): $Vector4d
  "isFinite"(): boolean
  "add"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Vector4d$$Type): $Vector4d
- "add"(arg0: $Vector4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
  "add"(arg0: $Vector4fc$$Type, arg1: $Vector4d$$Type): $Vector4d
+ "add"(arg0: $Vector4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
  "x"(): double
- "dot"(arg0: $Vector4dc$$Type): double
  "dot"(arg0: double, arg1: double, arg2: double, arg3: double): double
+ "dot"(arg0: $Vector4dc$$Type): double
  "z"(): double
  "w"(): double
  "y"(): double
- "distance"(arg0: $Vector4dc$$Type): double
  "distance"(arg0: double, arg1: double, arg2: double, arg3: double): double
+ "distance"(arg0: $Vector4dc$$Type): double
  "rotate"(arg0: $Quaterniondc$$Type, arg1: $Vector4d$$Type): $Vector4d
+ "mul"(arg0: $Matrix4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
+ "mul"(arg0: $Vector4fc$$Type, arg1: $Vector4d$$Type): $Vector4d
+ "mul"(arg0: $Vector4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
+ "mul"(arg0: $Matrix4x3dc$$Type, arg1: $Vector4d$$Type): $Vector4d
+ "mul"(arg0: double, arg1: $Vector4d$$Type): $Vector4d
+ "mul"(arg0: $Matrix4fc$$Type, arg1: $Vector4d$$Type): $Vector4d
+ "mul"(arg0: $Matrix4x3fc$$Type, arg1: $Vector4d$$Type): $Vector4d
  "angle"(arg0: $Vector4dc$$Type): double
  "mulAffine"(arg0: $Matrix4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
  "mulAffineTranspose"(arg0: $Matrix4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
  "normalize3"(arg0: $Vector4d$$Type): $Vector4d
  "getToAddress"(arg0: long): $Vector4dc
- "mulProject"(arg0: $Matrix4dc$$Type, arg1: $Vector3d$$Type): $Vector3d
  "mulProject"(arg0: $Matrix4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
+ "mulProject"(arg0: $Matrix4dc$$Type, arg1: $Vector3d$$Type): $Vector3d
  "mulTranspose"(arg0: $Matrix4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
  "rotateAxis"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Vector4d$$Type): $Vector4d
  "rotateX"(arg0: double, arg1: $Vector4d$$Type): $Vector4d
@@ -655,8 +655,8 @@ export class $Vector4dc implements $Vector4dc$$Interface {
  "lerp"(arg0: $Vector4dc$$Type, arg1: double, arg2: $Vector4d$$Type): $Vector4d
  "maxComponent"(): integer
  "minComponent"(): integer
- "getf"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
  "getf"(arg0: $ByteBuffer$$Type): $ByteBuffer
+ "getf"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -676,22 +676,20 @@ export interface $Vector4ic$$Interface {
 }
 
 export class $Vector4ic implements $Vector4ic$$Interface {
- "gridDistance"(arg0: $Vector4ic$$Type): long
  "gridDistance"(arg0: integer, arg1: integer, arg2: integer, arg3: integer): long
- "sub"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: $Vector4i$$Type): $Vector4i
- "sub"(arg0: $Vector4ic$$Type, arg1: $Vector4i$$Type): $Vector4i
- "mul"(arg0: $Vector4ic$$Type, arg1: $Vector4i$$Type): $Vector4i
- "mul"(arg0: integer, arg1: $Vector4i$$Type): $Vector4i
- "negate"(arg0: $Vector4i$$Type): $Vector4i
- "absolute"(arg0: $Vector4i$$Type): $Vector4i
+ "gridDistance"(arg0: $Vector4ic$$Type): long
  "div"(arg0: $Vector4ic$$Type, arg1: $Vector4i$$Type): $Vector4i
  "div"(arg0: float, arg1: $Vector4i$$Type): $Vector4i
  "div"(arg0: integer, arg1: $Vector4i$$Type): $Vector4i
- "get"(arg0: integer, arg1: $IntBuffer$$Type): $IntBuffer
- "get"(arg0: $IntBuffer$$Type): $IntBuffer
- "get"(arg0: integer): integer
- "get"(arg0: $ByteBuffer$$Type): $ByteBuffer
+ "absolute"(arg0: $Vector4i$$Type): $Vector4i
+ "sub"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: $Vector4i$$Type): $Vector4i
+ "sub"(arg0: $Vector4ic$$Type, arg1: $Vector4i$$Type): $Vector4i
+ "negate"(arg0: $Vector4i$$Type): $Vector4i
  "get"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
+ "get"(arg0: $ByteBuffer$$Type): $ByteBuffer
+ "get"(arg0: integer, arg1: $IntBuffer$$Type): $IntBuffer
+ "get"(arg0: integer): integer
+ "get"(arg0: $IntBuffer$$Type): $IntBuffer
  "equals"(arg0: integer, arg1: integer, arg2: integer, arg3: integer): boolean
  "length"(): double
  "min"(arg0: $Vector4ic$$Type, arg1: $Vector4i$$Type): $Vector4i
@@ -703,12 +701,14 @@ export class $Vector4ic implements $Vector4ic$$Interface {
  "z"(): integer
  "w"(): integer
  "y"(): integer
- "distance"(arg0: $Vector4ic$$Type): double
  "distance"(arg0: integer, arg1: integer, arg2: integer, arg3: integer): double
+ "distance"(arg0: $Vector4ic$$Type): double
+ "mul"(arg0: integer, arg1: $Vector4i$$Type): $Vector4i
+ "mul"(arg0: $Vector4ic$$Type, arg1: $Vector4i$$Type): $Vector4i
  "getToAddress"(arg0: long): $Vector4ic
  "lengthSquared"(): long
- "distanceSquared"(arg0: $Vector4ic$$Type): integer
  "distanceSquared"(arg0: integer, arg1: integer, arg2: integer, arg3: integer): integer
+ "distanceSquared"(arg0: $Vector4ic$$Type): integer
  "maxComponent"(): integer
  "minComponent"(): integer
 }
@@ -722,8 +722,8 @@ export type $Vector4ic$$Type = ($Vector4ic);
  */
 export type $Vector4ic$$Original = $Vector4ic;}
 declare module "org.joml.Vector2fc" {
-import {$Matrix2fc$$Type} from "org.joml.Matrix2fc"
 import {$FloatBuffer, $FloatBuffer$$Type} from "java.nio.FloatBuffer"
+import {$Matrix2fc$$Type} from "org.joml.Matrix2fc"
 import {$Matrix2dc$$Type} from "org.joml.Matrix2dc"
 import {$Matrix3x2fc$$Type} from "org.joml.Matrix3x2fc"
 import {$Vector2i, $Vector2i$$Type} from "org.joml.Vector2i"
@@ -736,54 +736,54 @@ get "finite"(): boolean
 }
 
 export class $Vector2fc implements $Vector2fc$$Interface {
- "sub"(arg0: $Vector2fc$$Type, arg1: $Vector2f$$Type): $Vector2f
- "sub"(arg0: float, arg1: float, arg2: $Vector2f$$Type): $Vector2f
- "mul"(arg0: $Matrix2dc$$Type, arg1: $Vector2f$$Type): $Vector2f
- "mul"(arg0: $Matrix2fc$$Type, arg1: $Vector2f$$Type): $Vector2f
- "mul"(arg0: $Vector2fc$$Type, arg1: $Vector2f$$Type): $Vector2f
- "mul"(arg0: float, arg1: float, arg2: $Vector2f$$Type): $Vector2f
- "mul"(arg0: float, arg1: $Vector2f$$Type): $Vector2f
- "negate"(arg0: $Vector2f$$Type): $Vector2f
- "normalize"(arg0: float, arg1: $Vector2f$$Type): $Vector2f
- "normalize"(arg0: $Vector2f$$Type): $Vector2f
- "absolute"(arg0: $Vector2f$$Type): $Vector2f
  "div"(arg0: float, arg1: float, arg2: $Vector2f$$Type): $Vector2f
  "div"(arg0: $Vector2fc$$Type, arg1: $Vector2f$$Type): $Vector2f
  "div"(arg0: float, arg1: $Vector2f$$Type): $Vector2f
- "get"(arg0: $FloatBuffer$$Type): $FloatBuffer
+ "absolute"(arg0: $Vector2f$$Type): $Vector2f
+ "normalize"(arg0: $Vector2f$$Type): $Vector2f
+ "normalize"(arg0: float, arg1: $Vector2f$$Type): $Vector2f
+ "sub"(arg0: float, arg1: float, arg2: $Vector2f$$Type): $Vector2f
+ "sub"(arg0: $Vector2fc$$Type, arg1: $Vector2f$$Type): $Vector2f
+ "negate"(arg0: $Vector2f$$Type): $Vector2f
+ "get"(arg0: integer): float
  "get"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
  "get"(arg0: $ByteBuffer$$Type): $ByteBuffer
- "get"(arg0: integer): float
- "get"(arg0: integer, arg1: $Vector2i$$Type): $Vector2i
- "get"(arg0: $Vector2f$$Type): $Vector2f
  "get"(arg0: $Vector2d$$Type): $Vector2d
  "get"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
- "equals"(arg0: $Vector2fc$$Type, arg1: float): boolean
+ "get"(arg0: $FloatBuffer$$Type): $FloatBuffer
+ "get"(arg0: integer, arg1: $Vector2i$$Type): $Vector2i
+ "get"(arg0: $Vector2f$$Type): $Vector2f
  "equals"(arg0: float, arg1: float): boolean
+ "equals"(arg0: $Vector2fc$$Type, arg1: float): boolean
  "length"(): float
  "min"(arg0: $Vector2fc$$Type, arg1: $Vector2f$$Type): $Vector2f
  "max"(arg0: $Vector2fc$$Type, arg1: $Vector2f$$Type): $Vector2f
  "floor"(arg0: $Vector2f$$Type): $Vector2f
  "ceil"(arg0: $Vector2f$$Type): $Vector2f
  "round"(arg0: $Vector2f$$Type): $Vector2f
- "fma"(arg0: float, arg1: $Vector2fc$$Type, arg2: $Vector2f$$Type): $Vector2f
  "fma"(arg0: $Vector2fc$$Type, arg1: $Vector2fc$$Type, arg2: $Vector2f$$Type): $Vector2f
+ "fma"(arg0: float, arg1: $Vector2fc$$Type, arg2: $Vector2f$$Type): $Vector2f
  "isFinite"(): boolean
- "add"(arg0: float, arg1: float, arg2: $Vector2f$$Type): $Vector2f
  "add"(arg0: $Vector2fc$$Type, arg1: $Vector2f$$Type): $Vector2f
+ "add"(arg0: float, arg1: float, arg2: $Vector2f$$Type): $Vector2f
  "x"(): float
  "dot"(arg0: $Vector2fc$$Type): float
  "y"(): float
  "distance"(arg0: $Vector2fc$$Type): float
  "distance"(arg0: float, arg1: float): float
+ "mul"(arg0: $Vector2fc$$Type, arg1: $Vector2f$$Type): $Vector2f
+ "mul"(arg0: float, arg1: float, arg2: $Vector2f$$Type): $Vector2f
+ "mul"(arg0: float, arg1: $Vector2f$$Type): $Vector2f
+ "mul"(arg0: $Matrix2dc$$Type, arg1: $Vector2f$$Type): $Vector2f
+ "mul"(arg0: $Matrix2fc$$Type, arg1: $Vector2f$$Type): $Vector2f
  "angle"(arg0: $Vector2fc$$Type): float
  "getToAddress"(arg0: long): $Vector2fc
  "mulTranspose"(arg0: $Matrix2fc$$Type, arg1: $Vector2f$$Type): $Vector2f
  "mulPosition"(arg0: $Matrix3x2fc$$Type, arg1: $Vector2f$$Type): $Vector2f
  "mulDirection"(arg0: $Matrix3x2fc$$Type, arg1: $Vector2f$$Type): $Vector2f
  "lengthSquared"(): float
- "distanceSquared"(arg0: float, arg1: float): float
  "distanceSquared"(arg0: $Vector2fc$$Type): float
+ "distanceSquared"(arg0: float, arg1: float): float
  "lerp"(arg0: $Vector2fc$$Type, arg1: float, arg2: $Vector2f$$Type): $Vector2f
  "maxComponent"(): integer
  "minComponent"(): integer
@@ -798,8 +798,8 @@ export type $Vector2fc$$Type = ($Vector2fc);
  */
 export type $Vector2fc$$Original = $Vector2fc;}
 declare module "org.joml.Vector2dc" {
-import {$Vector2fc$$Type} from "org.joml.Vector2fc"
 import {$Matrix2fc$$Type} from "org.joml.Matrix2fc"
+import {$Vector2fc$$Type} from "org.joml.Vector2fc"
 import {$Matrix3x2dc$$Type} from "org.joml.Matrix3x2dc"
 import {$Matrix2dc$$Type} from "org.joml.Matrix2dc"
 import {$Vector2i, $Vector2i$$Type} from "org.joml.Vector2i"
@@ -813,29 +813,24 @@ get "finite"(): boolean
 }
 
 export class $Vector2dc implements $Vector2dc$$Interface {
- "sub"(arg0: $Vector2dc$$Type, arg1: $Vector2d$$Type): $Vector2d
- "sub"(arg0: $Vector2fc$$Type, arg1: $Vector2d$$Type): $Vector2d
- "sub"(arg0: double, arg1: double, arg2: $Vector2d$$Type): $Vector2d
- "mul"(arg0: $Vector2dc$$Type, arg1: $Vector2d$$Type): $Vector2d
- "mul"(arg0: double, arg1: double, arg2: $Vector2d$$Type): $Vector2d
- "mul"(arg0: double, arg1: $Vector2d$$Type): $Vector2d
- "mul"(arg0: $Matrix2dc$$Type, arg1: $Vector2d$$Type): $Vector2d
- "mul"(arg0: $Matrix2fc$$Type, arg1: $Vector2d$$Type): $Vector2d
- "negate"(arg0: $Vector2d$$Type): $Vector2d
- "normalize"(arg0: $Vector2d$$Type): $Vector2d
- "normalize"(arg0: double, arg1: $Vector2d$$Type): $Vector2d
- "absolute"(arg0: $Vector2d$$Type): $Vector2d
+ "div"(arg0: double, arg1: $Vector2d$$Type): $Vector2d
  "div"(arg0: double, arg1: double, arg2: $Vector2d$$Type): $Vector2d
  "div"(arg0: $Vector2fc$$Type, arg1: $Vector2d$$Type): $Vector2d
  "div"(arg0: $Vector2dc$$Type, arg1: $Vector2d$$Type): $Vector2d
- "div"(arg0: double, arg1: $Vector2d$$Type): $Vector2d
- "get"(arg0: integer): double
- "get"(arg0: integer, arg1: $Vector2i$$Type): $Vector2i
+ "absolute"(arg0: $Vector2d$$Type): $Vector2d
+ "normalize"(arg0: double, arg1: $Vector2d$$Type): $Vector2d
+ "normalize"(arg0: $Vector2d$$Type): $Vector2d
+ "sub"(arg0: $Vector2fc$$Type, arg1: $Vector2d$$Type): $Vector2d
+ "sub"(arg0: $Vector2dc$$Type, arg1: $Vector2d$$Type): $Vector2d
+ "sub"(arg0: double, arg1: double, arg2: $Vector2d$$Type): $Vector2d
+ "negate"(arg0: $Vector2d$$Type): $Vector2d
+ "get"(arg0: $ByteBuffer$$Type): $ByteBuffer
  "get"(arg0: $Vector2d$$Type): $Vector2d
  "get"(arg0: $Vector2f$$Type): $Vector2f
- "get"(arg0: $DoubleBuffer$$Type): $DoubleBuffer
+ "get"(arg0: integer, arg1: $Vector2i$$Type): $Vector2i
+ "get"(arg0: integer): double
  "get"(arg0: integer, arg1: $DoubleBuffer$$Type): $DoubleBuffer
- "get"(arg0: $ByteBuffer$$Type): $ByteBuffer
+ "get"(arg0: $DoubleBuffer$$Type): $DoubleBuffer
  "get"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
  "equals"(arg0: $Vector2dc$$Type, arg1: double): boolean
  "equals"(arg0: double, arg1: double): boolean
@@ -845,28 +840,33 @@ export class $Vector2dc implements $Vector2dc$$Interface {
  "floor"(arg0: $Vector2d$$Type): $Vector2d
  "ceil"(arg0: $Vector2d$$Type): $Vector2d
  "round"(arg0: $Vector2d$$Type): $Vector2d
- "fma"(arg0: $Vector2dc$$Type, arg1: $Vector2dc$$Type, arg2: $Vector2d$$Type): $Vector2d
  "fma"(arg0: double, arg1: $Vector2dc$$Type, arg2: $Vector2d$$Type): $Vector2d
+ "fma"(arg0: $Vector2dc$$Type, arg1: $Vector2dc$$Type, arg2: $Vector2d$$Type): $Vector2d
  "isFinite"(): boolean
  "add"(arg0: $Vector2fc$$Type, arg1: $Vector2d$$Type): $Vector2d
- "add"(arg0: $Vector2dc$$Type, arg1: $Vector2d$$Type): $Vector2d
  "add"(arg0: double, arg1: double, arg2: $Vector2d$$Type): $Vector2d
+ "add"(arg0: $Vector2dc$$Type, arg1: $Vector2d$$Type): $Vector2d
  "x"(): double
  "dot"(arg0: $Vector2dc$$Type): double
  "y"(): double
- "distance"(arg0: $Vector2fc$$Type): double
- "distance"(arg0: $Vector2dc$$Type): double
  "distance"(arg0: double, arg1: double): double
+ "distance"(arg0: $Vector2dc$$Type): double
+ "distance"(arg0: $Vector2fc$$Type): double
+ "mul"(arg0: $Vector2dc$$Type, arg1: $Vector2d$$Type): $Vector2d
+ "mul"(arg0: $Matrix2dc$$Type, arg1: $Vector2d$$Type): $Vector2d
+ "mul"(arg0: double, arg1: double, arg2: $Vector2d$$Type): $Vector2d
+ "mul"(arg0: $Matrix2fc$$Type, arg1: $Vector2d$$Type): $Vector2d
+ "mul"(arg0: double, arg1: $Vector2d$$Type): $Vector2d
  "angle"(arg0: $Vector2dc$$Type): double
  "getToAddress"(arg0: long): $Vector2dc
- "mulTranspose"(arg0: $Matrix2fc$$Type, arg1: $Vector2d$$Type): $Vector2d
  "mulTranspose"(arg0: $Matrix2dc$$Type, arg1: $Vector2d$$Type): $Vector2d
+ "mulTranspose"(arg0: $Matrix2fc$$Type, arg1: $Vector2d$$Type): $Vector2d
  "mulPosition"(arg0: $Matrix3x2dc$$Type, arg1: $Vector2d$$Type): $Vector2d
  "mulDirection"(arg0: $Matrix3x2dc$$Type, arg1: $Vector2d$$Type): $Vector2d
  "lengthSquared"(): double
- "distanceSquared"(arg0: $Vector2dc$$Type): double
  "distanceSquared"(arg0: double, arg1: double): double
  "distanceSquared"(arg0: $Vector2fc$$Type): double
+ "distanceSquared"(arg0: $Vector2dc$$Type): double
  "lerp"(arg0: $Vector2dc$$Type, arg1: double, arg2: $Vector2d$$Type): $Vector2d
  "maxComponent"(): integer
  "minComponent"(): integer
@@ -889,36 +889,36 @@ export interface $Vector2ic$$Interface {
 }
 
 export class $Vector2ic implements $Vector2ic$$Interface {
- "gridDistance"(arg0: integer, arg1: integer): long
  "gridDistance"(arg0: $Vector2ic$$Type): long
+ "gridDistance"(arg0: integer, arg1: integer): long
+ "div"(arg0: integer, arg1: $Vector2i$$Type): $Vector2i
+ "div"(arg0: float, arg1: $Vector2i$$Type): $Vector2i
+ "absolute"(arg0: $Vector2i$$Type): $Vector2i
  "sub"(arg0: $Vector2ic$$Type, arg1: $Vector2i$$Type): $Vector2i
  "sub"(arg0: integer, arg1: integer, arg2: $Vector2i$$Type): $Vector2i
- "mul"(arg0: integer, arg1: integer, arg2: $Vector2i$$Type): $Vector2i
- "mul"(arg0: integer, arg1: $Vector2i$$Type): $Vector2i
- "mul"(arg0: $Vector2ic$$Type, arg1: $Vector2i$$Type): $Vector2i
  "negate"(arg0: $Vector2i$$Type): $Vector2i
- "absolute"(arg0: $Vector2i$$Type): $Vector2i
- "div"(arg0: float, arg1: $Vector2i$$Type): $Vector2i
- "div"(arg0: integer, arg1: $Vector2i$$Type): $Vector2i
- "get"(arg0: integer): integer
- "get"(arg0: integer, arg1: $IntBuffer$$Type): $IntBuffer
  "get"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
+ "get"(arg0: integer): integer
  "get"(arg0: $ByteBuffer$$Type): $ByteBuffer
  "get"(arg0: $IntBuffer$$Type): $IntBuffer
+ "get"(arg0: integer, arg1: $IntBuffer$$Type): $IntBuffer
  "equals"(arg0: integer, arg1: integer): boolean
  "length"(): double
  "min"(arg0: $Vector2ic$$Type, arg1: $Vector2i$$Type): $Vector2i
  "max"(arg0: $Vector2ic$$Type, arg1: $Vector2i$$Type): $Vector2i
- "add"(arg0: $Vector2ic$$Type, arg1: $Vector2i$$Type): $Vector2i
  "add"(arg0: integer, arg1: integer, arg2: $Vector2i$$Type): $Vector2i
+ "add"(arg0: $Vector2ic$$Type, arg1: $Vector2i$$Type): $Vector2i
  "x"(): integer
  "y"(): integer
- "distance"(arg0: $Vector2ic$$Type): double
  "distance"(arg0: integer, arg1: integer): double
+ "distance"(arg0: $Vector2ic$$Type): double
+ "mul"(arg0: $Vector2ic$$Type, arg1: $Vector2i$$Type): $Vector2i
+ "mul"(arg0: integer, arg1: $Vector2i$$Type): $Vector2i
+ "mul"(arg0: integer, arg1: integer, arg2: $Vector2i$$Type): $Vector2i
  "getToAddress"(arg0: long): $Vector2ic
  "lengthSquared"(): long
- "distanceSquared"(arg0: $Vector2ic$$Type): long
  "distanceSquared"(arg0: integer, arg1: integer): long
+ "distanceSquared"(arg0: $Vector2ic$$Type): long
  "maxComponent"(): integer
  "minComponent"(): integer
 }
@@ -932,8 +932,8 @@ export type $Vector2ic$$Type = ($Vector2ic);
  */
 export type $Vector2ic$$Original = $Vector2ic;}
 declare module "org.joml.Matrix2fc" {
-import {$Vector2fc$$Type} from "org.joml.Vector2fc"
 import {$FloatBuffer, $FloatBuffer$$Type} from "java.nio.FloatBuffer"
+import {$Vector2fc$$Type} from "org.joml.Vector2fc"
 import {$Matrix2f, $Matrix2f$$Type} from "org.joml.Matrix2f"
 import {$Matrix3x2f, $Matrix3x2f$$Type} from "org.joml.Matrix3x2f"
 import {$Vector2f, $Vector2f$$Type} from "org.joml.Vector2f"
@@ -948,55 +948,55 @@ get "rotation"(): float
 export class $Matrix2fc implements $Matrix2fc$$Interface {
  "transpose"(arg0: $Matrix2f$$Type): $Matrix2f
  "invert"(arg0: $Matrix2f$$Type): $Matrix2f
- "sub"(arg0: $Matrix2fc$$Type, arg1: $Matrix2f$$Type): $Matrix2f
- "mul"(arg0: $Matrix2fc$$Type, arg1: $Matrix2f$$Type): $Matrix2f
  "normal"(arg0: $Matrix2f$$Type): $Matrix2f
+ "sub"(arg0: $Matrix2fc$$Type, arg1: $Matrix2f$$Type): $Matrix2f
  "get"(arg0: $FloatBuffer$$Type): $FloatBuffer
+ "get"(arg0: $Matrix3x2f$$Type): $Matrix3x2f
  "get"(arg0: $Matrix3f$$Type): $Matrix3f
  "get"(arg0: (float)[]): (float)[]
  "get"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
  "get"(arg0: $ByteBuffer$$Type): $ByteBuffer
  "get"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
- "get"(arg0: $Matrix3x2f$$Type): $Matrix3x2f
- "get"(arg0: integer, arg1: integer): float
  "get"(arg0: $Matrix2f$$Type): $Matrix2f
+ "get"(arg0: integer, arg1: integer): float
  "get"(arg0: (float)[], arg1: integer): (float)[]
  "equals"(arg0: $Matrix2fc$$Type, arg1: float): boolean
  "isFinite"(): boolean
- "scale"(arg0: float, arg1: $Matrix2f$$Type): $Matrix2f
  "scale"(arg0: $Vector2fc$$Type, arg1: $Matrix2f$$Type): $Matrix2f
+ "scale"(arg0: float, arg1: $Matrix2f$$Type): $Matrix2f
  "scale"(arg0: float, arg1: float, arg2: $Matrix2f$$Type): $Matrix2f
  "add"(arg0: $Matrix2fc$$Type, arg1: $Matrix2f$$Type): $Matrix2f
+ "transform"(arg0: $Vector2f$$Type): $Vector2f
  "transform"(arg0: float, arg1: float, arg2: $Vector2f$$Type): $Vector2f
  "transform"(arg0: $Vector2fc$$Type, arg1: $Vector2f$$Type): $Vector2f
- "transform"(arg0: $Vector2f$$Type): $Vector2f
  "rotate"(arg0: float, arg1: $Matrix2f$$Type): $Matrix2f
  "m11"(): float
+ "mul"(arg0: $Matrix2fc$$Type, arg1: $Matrix2f$$Type): $Matrix2f
  "m10"(): float
  "getColumn"(arg0: integer, arg1: $Vector2f$$Type): $Vector2f
  "getToAddress"(arg0: long): $Matrix2fc
  "m00"(): float
  "m01"(): float
  "lerp"(arg0: $Matrix2fc$$Type, arg1: float, arg2: $Matrix2f$$Type): $Matrix2f
- "determinant"(): float
  "positiveX"(arg0: $Vector2f$$Type): $Vector2f
  "normalizedPositiveX"(arg0: $Vector2f$$Type): $Vector2f
  "positiveY"(arg0: $Vector2f$$Type): $Vector2f
  "normalizedPositiveY"(arg0: $Vector2f$$Type): $Vector2f
- "transformTranspose"(arg0: $Vector2f$$Type): $Vector2f
- "transformTranspose"(arg0: $Vector2fc$$Type, arg1: $Vector2f$$Type): $Vector2f
- "transformTranspose"(arg0: float, arg1: float, arg2: $Vector2f$$Type): $Vector2f
- "getRow"(arg0: integer, arg1: $Vector2f$$Type): $Vector2f
- "scaleLocal"(arg0: float, arg1: float, arg2: $Matrix2f$$Type): $Matrix2f
  "getScale"(arg0: $Vector2f$$Type): $Vector2f
- "getRotation"(): float
+ "transformTranspose"(arg0: $Vector2f$$Type): $Vector2f
+ "transformTranspose"(arg0: float, arg1: float, arg2: $Vector2f$$Type): $Vector2f
+ "transformTranspose"(arg0: $Vector2fc$$Type, arg1: $Vector2f$$Type): $Vector2f
  "mulComponentWise"(arg0: $Matrix2fc$$Type, arg1: $Matrix2f$$Type): $Matrix2f
- "rotateLocal"(arg0: float, arg1: $Matrix2f$$Type): $Matrix2f
- "getTransposed"(arg0: $ByteBuffer$$Type): $ByteBuffer
- "getTransposed"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
- "getTransposed"(arg0: $FloatBuffer$$Type): $FloatBuffer
- "getTransposed"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
  "mulLocal"(arg0: $Matrix2fc$$Type, arg1: $Matrix2f$$Type): $Matrix2f
+ "scaleLocal"(arg0: float, arg1: float, arg2: $Matrix2f$$Type): $Matrix2f
+ "getRotation"(): float
+ "getTransposed"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
+ "getTransposed"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
+ "getTransposed"(arg0: $ByteBuffer$$Type): $ByteBuffer
+ "getTransposed"(arg0: $FloatBuffer$$Type): $FloatBuffer
+ "determinant"(): float
+ "rotateLocal"(arg0: float, arg1: $Matrix2f$$Type): $Matrix2f
+ "getRow"(arg0: integer, arg1: $Vector2f$$Type): $Vector2f
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -1008,8 +1008,8 @@ export type $Matrix2fc$$Type = ($Matrix2fc);
  */
 export type $Matrix2fc$$Original = $Matrix2fc;}
 declare module "org.joml.Matrix2dc" {
-import {$Matrix2fc$$Type} from "org.joml.Matrix2fc"
 import {$FloatBuffer, $FloatBuffer$$Type} from "java.nio.FloatBuffer"
+import {$Matrix2fc$$Type} from "org.joml.Matrix2fc"
 import {$Vector2dc$$Type} from "org.joml.Vector2dc"
 import {$Matrix3x2d, $Matrix3x2d$$Type} from "org.joml.Matrix3x2d"
 import {$Vector2d, $Vector2d$$Type} from "org.joml.Vector2d"
@@ -1024,64 +1024,64 @@ get "rotation"(): double
 }
 
 export class $Matrix2dc implements $Matrix2dc$$Interface {
- "getTransposedFloats"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
- "getTransposedFloats"(arg0: $ByteBuffer$$Type): $ByteBuffer
  "getFloats"(arg0: $ByteBuffer$$Type): $ByteBuffer
  "getFloats"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
+ "getTransposedFloats"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
+ "getTransposedFloats"(arg0: $ByteBuffer$$Type): $ByteBuffer
  "transpose"(arg0: $Matrix2d$$Type): $Matrix2d
  "invert"(arg0: $Matrix2d$$Type): $Matrix2d
- "sub"(arg0: $Matrix2dc$$Type, arg1: $Matrix2d$$Type): $Matrix2d
- "mul"(arg0: $Matrix2dc$$Type, arg1: $Matrix2d$$Type): $Matrix2d
- "mul"(arg0: $Matrix2fc$$Type, arg1: $Matrix2d$$Type): $Matrix2d
  "normal"(arg0: $Matrix2d$$Type): $Matrix2d
+ "sub"(arg0: $Matrix2dc$$Type, arg1: $Matrix2d$$Type): $Matrix2d
  "get"(arg0: integer, arg1: $DoubleBuffer$$Type): $DoubleBuffer
- "get"(arg0: $ByteBuffer$$Type): $ByteBuffer
  "get"(arg0: $DoubleBuffer$$Type): $DoubleBuffer
+ "get"(arg0: $ByteBuffer$$Type): $ByteBuffer
  "get"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
  "get"(arg0: (double)[], arg1: integer): (double)[]
  "get"(arg0: (double)[]): (double)[]
  "get"(arg0: integer, arg1: integer): double
+ "get"(arg0: $Matrix2d$$Type): $Matrix2d
  "get"(arg0: $Matrix3x2d$$Type): $Matrix3x2d
  "get"(arg0: $Matrix3d$$Type): $Matrix3d
- "get"(arg0: $Matrix2d$$Type): $Matrix2d
  "equals"(arg0: $Matrix2dc$$Type, arg1: double): boolean
  "isFinite"(): boolean
  "scale"(arg0: double, arg1: $Matrix2d$$Type): $Matrix2d
- "scale"(arg0: $Vector2dc$$Type, arg1: $Matrix2d$$Type): $Matrix2d
  "scale"(arg0: double, arg1: double, arg2: $Matrix2d$$Type): $Matrix2d
+ "scale"(arg0: $Vector2dc$$Type, arg1: $Matrix2d$$Type): $Matrix2d
  "add"(arg0: $Matrix2dc$$Type, arg1: $Matrix2d$$Type): $Matrix2d
+ "transform"(arg0: double, arg1: double, arg2: $Vector2d$$Type): $Vector2d
  "transform"(arg0: $Vector2dc$$Type, arg1: $Vector2d$$Type): $Vector2d
  "transform"(arg0: $Vector2d$$Type): $Vector2d
- "transform"(arg0: double, arg1: double, arg2: $Vector2d$$Type): $Vector2d
  "rotate"(arg0: double, arg1: $Matrix2d$$Type): $Matrix2d
  "m11"(): double
+ "mul"(arg0: $Matrix2fc$$Type, arg1: $Matrix2d$$Type): $Matrix2d
+ "mul"(arg0: $Matrix2dc$$Type, arg1: $Matrix2d$$Type): $Matrix2d
  "m10"(): double
  "getColumn"(arg0: integer, arg1: $Vector2d$$Type): $Vector2d
  "getToAddress"(arg0: long): $Matrix2dc
  "m00"(): double
  "m01"(): double
  "lerp"(arg0: $Matrix2dc$$Type, arg1: double, arg2: $Matrix2d$$Type): $Matrix2d
- "determinant"(): double
  "positiveX"(arg0: $Vector2d$$Type): $Vector2d
  "normalizedPositiveX"(arg0: $Vector2d$$Type): $Vector2d
  "positiveY"(arg0: $Vector2d$$Type): $Vector2d
  "normalizedPositiveY"(arg0: $Vector2d$$Type): $Vector2d
+ "getScale"(arg0: $Vector2d$$Type): $Vector2d
  "transformTranspose"(arg0: $Vector2d$$Type): $Vector2d
  "transformTranspose"(arg0: double, arg1: double, arg2: $Vector2d$$Type): $Vector2d
  "transformTranspose"(arg0: $Vector2dc$$Type, arg1: $Vector2d$$Type): $Vector2d
- "getRow"(arg0: integer, arg1: $Vector2d$$Type): $Vector2d
- "scaleLocal"(arg0: double, arg1: double, arg2: $Matrix2d$$Type): $Matrix2d
- "getScale"(arg0: $Vector2d$$Type): $Vector2d
- "getRotation"(): double
  "mulComponentWise"(arg0: $Matrix2dc$$Type, arg1: $Matrix2d$$Type): $Matrix2d
- "rotateLocal"(arg0: double, arg1: $Matrix2d$$Type): $Matrix2d
- "getTransposed"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
- "getTransposed"(arg0: $FloatBuffer$$Type): $FloatBuffer
- "getTransposed"(arg0: $ByteBuffer$$Type): $ByteBuffer
- "getTransposed"(arg0: $DoubleBuffer$$Type): $DoubleBuffer
- "getTransposed"(arg0: integer, arg1: $DoubleBuffer$$Type): $DoubleBuffer
- "getTransposed"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
  "mulLocal"(arg0: $Matrix2dc$$Type, arg1: $Matrix2d$$Type): $Matrix2d
+ "scaleLocal"(arg0: double, arg1: double, arg2: $Matrix2d$$Type): $Matrix2d
+ "getRotation"(): double
+ "getTransposed"(arg0: $FloatBuffer$$Type): $FloatBuffer
+ "getTransposed"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
+ "getTransposed"(arg0: integer, arg1: $DoubleBuffer$$Type): $DoubleBuffer
+ "getTransposed"(arg0: $ByteBuffer$$Type): $ByteBuffer
+ "getTransposed"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
+ "getTransposed"(arg0: $DoubleBuffer$$Type): $DoubleBuffer
+ "determinant"(): double
+ "rotateLocal"(arg0: double, arg1: $Matrix2d$$Type): $Matrix2d
+ "getRow"(arg0: integer, arg1: $Vector2d$$Type): $Vector2d
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -1118,28 +1118,26 @@ export class $Matrix3dc implements $Matrix3dc$$Interface {
  "quadraticFormProduct"(arg0: double, arg1: double, arg2: double): double
  "quadraticFormProduct"(arg0: $Vector3dc$$Type): double
  "quadraticFormProduct"(arg0: $Vector3fc$$Type): double
- "getTransposedFloats"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
- "getTransposedFloats"(arg0: $ByteBuffer$$Type): $ByteBuffer
- "getFloats"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
  "getFloats"(arg0: $ByteBuffer$$Type): $ByteBuffer
+ "getFloats"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
+ "getTransposedFloats"(arg0: $ByteBuffer$$Type): $ByteBuffer
+ "getTransposedFloats"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
  "transpose"(arg0: $Matrix3d$$Type): $Matrix3d
  "invert"(arg0: $Matrix3d$$Type): $Matrix3d
- "sub"(arg0: $Matrix3dc$$Type, arg1: $Matrix3d$$Type): $Matrix3d
- "mul"(arg0: $Matrix3fc$$Type, arg1: $Matrix3d$$Type): $Matrix3d
- "mul"(arg0: $Matrix3dc$$Type, arg1: $Matrix3d$$Type): $Matrix3d
  "normal"(arg0: $Matrix3d$$Type): $Matrix3d
+ "sub"(arg0: $Matrix3dc$$Type, arg1: $Matrix3d$$Type): $Matrix3d
  "get"(arg0: $ByteBuffer$$Type): $ByteBuffer
- "get"(arg0: (float)[]): (float)[]
- "get"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
+ "get"(arg0: integer, arg1: $DoubleBuffer$$Type): $DoubleBuffer
  "get"(arg0: $FloatBuffer$$Type): $FloatBuffer
- "get"(arg0: integer, arg1: integer): double
- "get"(arg0: (double)[], arg1: integer): (double)[]
- "get"(arg0: (double)[]): (double)[]
+ "get"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
  "get"(arg0: (float)[], arg1: integer): (float)[]
+ "get"(arg0: (double)[], arg1: integer): (double)[]
+ "get"(arg0: integer, arg1: integer): double
+ "get"(arg0: (float)[]): (float)[]
  "get"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
+ "get"(arg0: (double)[]): (double)[]
  "get"(arg0: $Matrix3d$$Type): $Matrix3d
  "get"(arg0: $DoubleBuffer$$Type): $DoubleBuffer
- "get"(arg0: integer, arg1: $DoubleBuffer$$Type): $DoubleBuffer
  "equals"(arg0: $Matrix3dc$$Type, arg1: double): boolean
  "isFinite"(): boolean
  "scale"(arg0: $Vector3dc$$Type, arg1: $Matrix3d$$Type): $Matrix3d
@@ -1152,14 +1150,16 @@ export class $Matrix3dc implements $Matrix3dc$$Interface {
  "transform"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
  "transform"(arg0: double, arg1: double, arg2: double, arg3: $Vector3d$$Type): $Vector3d
  "rotate"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix3d$$Type): $Matrix3d
- "rotate"(arg0: $Quaterniondc$$Type, arg1: $Matrix3d$$Type): $Matrix3d
  "rotate"(arg0: $Quaternionfc$$Type, arg1: $Matrix3d$$Type): $Matrix3d
+ "rotate"(arg0: $Quaterniondc$$Type, arg1: $Matrix3d$$Type): $Matrix3d
  "rotate"(arg0: $AxisAngle4d$$Type, arg1: $Matrix3d$$Type): $Matrix3d
  "rotate"(arg0: double, arg1: $Vector3fc$$Type, arg2: $Matrix3d$$Type): $Matrix3d
- "rotate"(arg0: $AxisAngle4f$$Type, arg1: $Matrix3d$$Type): $Matrix3d
  "rotate"(arg0: double, arg1: $Vector3dc$$Type, arg2: $Matrix3d$$Type): $Matrix3d
- "m12"(): double
+ "rotate"(arg0: $AxisAngle4f$$Type, arg1: $Matrix3d$$Type): $Matrix3d
  "m11"(): double
+ "m12"(): double
+ "mul"(arg0: $Matrix3dc$$Type, arg1: $Matrix3d$$Type): $Matrix3d
+ "mul"(arg0: $Matrix3fc$$Type, arg1: $Matrix3d$$Type): $Matrix3d
  "m10"(): double
  "getColumn"(arg0: integer, arg1: $Vector3d$$Type): $Vector3d
  "getRowColumn"(arg0: integer, arg1: integer): double
@@ -1178,17 +1178,16 @@ export class $Matrix3dc implements $Matrix3dc$$Interface {
  "rotateX"(arg0: double, arg1: $Matrix3d$$Type): $Matrix3d
  "rotateY"(arg0: double, arg1: $Matrix3d$$Type): $Matrix3d
  "rotateZ"(arg0: double, arg1: $Matrix3d$$Type): $Matrix3d
+ "reflect"(arg0: double, arg1: double, arg2: double, arg3: $Matrix3d$$Type): $Matrix3d
  "reflect"(arg0: $Quaterniondc$$Type, arg1: $Matrix3d$$Type): $Matrix3d
  "reflect"(arg0: $Vector3dc$$Type, arg1: $Matrix3d$$Type): $Matrix3d
- "reflect"(arg0: double, arg1: double, arg2: double, arg3: $Matrix3d$$Type): $Matrix3d
  "lerp"(arg0: $Matrix3dc$$Type, arg1: double, arg2: $Matrix3d$$Type): $Matrix3d
- "getUnnormalizedRotation"(arg0: $Quaterniond$$Type): $Quaterniond
  "getUnnormalizedRotation"(arg0: $Quaternionf$$Type): $Quaternionf
- "getNormalizedRotation"(arg0: $Quaterniond$$Type): $Quaterniond
+ "getUnnormalizedRotation"(arg0: $Quaterniond$$Type): $Quaterniond
  "getNormalizedRotation"(arg0: $Quaternionf$$Type): $Quaternionf
- "determinant"(): double
- "lookAlong"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix3d$$Type): $Matrix3d
+ "getNormalizedRotation"(arg0: $Quaterniond$$Type): $Quaterniond
  "lookAlong"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Matrix3d$$Type): $Matrix3d
+ "lookAlong"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix3d$$Type): $Matrix3d
  "rotateLocalX"(arg0: double, arg1: $Matrix3d$$Type): $Matrix3d
  "rotateLocalY"(arg0: double, arg1: $Matrix3d$$Type): $Matrix3d
  "rotateLocalZ"(arg0: double, arg1: $Matrix3d$$Type): $Matrix3d
@@ -1198,11 +1197,10 @@ export class $Matrix3dc implements $Matrix3dc$$Interface {
  "normalizedPositiveY"(arg0: $Vector3d$$Type): $Vector3d
  "positiveZ"(arg0: $Vector3d$$Type): $Vector3d
  "normalizedPositiveZ"(arg0: $Vector3d$$Type): $Vector3d
+ "getScale"(arg0: $Vector3d$$Type): $Vector3d
  "transformTranspose"(arg0: $Vector3d$$Type): $Vector3d
  "transformTranspose"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
  "transformTranspose"(arg0: double, arg1: double, arg2: double, arg3: $Vector3d$$Type): $Vector3d
- "rotateTowards"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Matrix3d$$Type): $Matrix3d
- "rotateTowards"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix3d$$Type): $Matrix3d
  "obliqueZ"(arg0: double, arg1: double, arg2: $Matrix3d$$Type): $Matrix3d
  "mapXZY"(arg0: $Matrix3d$$Type): $Matrix3d
  "mapXZnY"(arg0: $Matrix3d$$Type): $Matrix3d
@@ -1251,21 +1249,23 @@ export class $Matrix3dc implements $Matrix3dc$$Interface {
  "negateX"(arg0: $Matrix3d$$Type): $Matrix3d
  "negateY"(arg0: $Matrix3d$$Type): $Matrix3d
  "negateZ"(arg0: $Matrix3d$$Type): $Matrix3d
- "getRow"(arg0: integer, arg1: $Vector3d$$Type): $Vector3d
- "scaleLocal"(arg0: double, arg1: double, arg2: double, arg3: $Matrix3d$$Type): $Matrix3d
- "getScale"(arg0: $Vector3d$$Type): $Vector3d
- "getRotation"(arg0: $AxisAngle4f$$Type): $AxisAngle4f
  "mulComponentWise"(arg0: $Matrix3dc$$Type, arg1: $Matrix3d$$Type): $Matrix3d
- "rotateLocal"(arg0: $Quaternionfc$$Type, arg1: $Matrix3d$$Type): $Matrix3d
- "rotateLocal"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix3d$$Type): $Matrix3d
- "rotateLocal"(arg0: $Quaterniondc$$Type, arg1: $Matrix3d$$Type): $Matrix3d
+ "mulLocal"(arg0: $Matrix3dc$$Type, arg1: $Matrix3d$$Type): $Matrix3d
+ "scaleLocal"(arg0: double, arg1: double, arg2: double, arg3: $Matrix3d$$Type): $Matrix3d
+ "getRotation"(arg0: $AxisAngle4f$$Type): $AxisAngle4f
+ "getTransposed"(arg0: integer, arg1: $DoubleBuffer$$Type): $DoubleBuffer
  "getTransposed"(arg0: $DoubleBuffer$$Type): $DoubleBuffer
  "getTransposed"(arg0: $ByteBuffer$$Type): $ByteBuffer
+ "getTransposed"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
  "getTransposed"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
  "getTransposed"(arg0: $FloatBuffer$$Type): $FloatBuffer
- "getTransposed"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
- "getTransposed"(arg0: integer, arg1: $DoubleBuffer$$Type): $DoubleBuffer
- "mulLocal"(arg0: $Matrix3dc$$Type, arg1: $Matrix3d$$Type): $Matrix3d
+ "determinant"(): double
+ "rotateLocal"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix3d$$Type): $Matrix3d
+ "rotateLocal"(arg0: $Quaterniondc$$Type, arg1: $Matrix3d$$Type): $Matrix3d
+ "rotateLocal"(arg0: $Quaternionfc$$Type, arg1: $Matrix3d$$Type): $Matrix3d
+ "getRow"(arg0: integer, arg1: $Vector3d$$Type): $Vector3d
+ "rotateTowards"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix3d$$Type): $Matrix3d
+ "rotateTowards"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Matrix3d$$Type): $Matrix3d
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -1277,8 +1277,8 @@ export type $Matrix3dc$$Type = ($Matrix3dc);
  */
 export type $Matrix3dc$$Original = $Matrix3dc;}
 declare module "org.joml.Matrix3fc" {
-import {$Quaternionfc$$Type} from "org.joml.Quaternionfc"
 import {$FloatBuffer, $FloatBuffer$$Type} from "java.nio.FloatBuffer"
+import {$Quaternionfc$$Type} from "org.joml.Quaternionfc"
 import {$Vector3fc$$Type} from "org.joml.Vector3fc"
 import {$AxisAngle4f, $AxisAngle4f$$Type} from "org.joml.AxisAngle4f"
 import {$Quaterniond, $Quaterniond$$Type} from "org.joml.Quaterniond"
@@ -1294,37 +1294,37 @@ get "finite"(): boolean
 
 export class $Matrix3fc implements $Matrix3fc$$Interface {
  "cofactor"(arg0: $Matrix3f$$Type): $Matrix3f
- "quadraticFormProduct"(arg0: $Vector3fc$$Type): float
  "quadraticFormProduct"(arg0: float, arg1: float, arg2: float): float
+ "quadraticFormProduct"(arg0: $Vector3fc$$Type): float
  "transpose"(arg0: $Matrix3f$$Type): $Matrix3f
  "invert"(arg0: $Matrix3f$$Type): $Matrix3f
- "sub"(arg0: $Matrix3fc$$Type, arg1: $Matrix3f$$Type): $Matrix3f
- "mul"(arg0: $Matrix3fc$$Type, arg1: $Matrix3f$$Type): $Matrix3f
  "normal"(arg0: $Matrix3f$$Type): $Matrix3f
- "get"(arg0: integer, arg1: integer): float
- "get"(arg0: $FloatBuffer$$Type): $FloatBuffer
- "get"(arg0: $Matrix3f$$Type): $Matrix3f
+ "sub"(arg0: $Matrix3fc$$Type, arg1: $Matrix3f$$Type): $Matrix3f
  "get"(arg0: $Matrix4f$$Type): $Matrix4f
  "get"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
- "get"(arg0: (float)[]): (float)[]
- "get"(arg0: (float)[], arg1: integer): (float)[]
  "get"(arg0: $ByteBuffer$$Type): $ByteBuffer
  "get"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
+ "get"(arg0: $Matrix3f$$Type): $Matrix3f
+ "get"(arg0: (float)[]): (float)[]
+ "get"(arg0: (float)[], arg1: integer): (float)[]
+ "get"(arg0: integer, arg1: integer): float
+ "get"(arg0: $FloatBuffer$$Type): $FloatBuffer
  "equals"(arg0: $Matrix3fc$$Type, arg1: float): boolean
  "isFinite"(): boolean
  "scale"(arg0: $Vector3fc$$Type, arg1: $Matrix3f$$Type): $Matrix3f
  "scale"(arg0: float, arg1: $Matrix3f$$Type): $Matrix3f
  "scale"(arg0: float, arg1: float, arg2: float, arg3: $Matrix3f$$Type): $Matrix3f
  "add"(arg0: $Matrix3fc$$Type, arg1: $Matrix3f$$Type): $Matrix3f
+ "transform"(arg0: float, arg1: float, arg2: float, arg3: $Vector3f$$Type): $Vector3f
  "transform"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
  "transform"(arg0: $Vector3f$$Type): $Vector3f
- "transform"(arg0: float, arg1: float, arg2: float, arg3: $Vector3f$$Type): $Vector3f
- "rotate"(arg0: $Quaternionfc$$Type, arg1: $Matrix3f$$Type): $Matrix3f
- "rotate"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix3f$$Type): $Matrix3f
- "rotate"(arg0: float, arg1: $Vector3fc$$Type, arg2: $Matrix3f$$Type): $Matrix3f
  "rotate"(arg0: $AxisAngle4f$$Type, arg1: $Matrix3f$$Type): $Matrix3f
- "m12"(): float
+ "rotate"(arg0: $Quaternionfc$$Type, arg1: $Matrix3f$$Type): $Matrix3f
+ "rotate"(arg0: float, arg1: $Vector3fc$$Type, arg2: $Matrix3f$$Type): $Matrix3f
+ "rotate"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix3f$$Type): $Matrix3f
  "m11"(): float
+ "m12"(): float
+ "mul"(arg0: $Matrix3fc$$Type, arg1: $Matrix3f$$Type): $Matrix3f
  "m10"(): float
  "getColumn"(arg0: integer, arg1: $Vector3f$$Type): $Vector3f
  "getRowColumn"(arg0: integer, arg1: integer): float
@@ -1344,20 +1344,19 @@ export class $Matrix3fc implements $Matrix3fc$$Interface {
  "rotateY"(arg0: float, arg1: $Matrix3f$$Type): $Matrix3f
  "rotateZ"(arg0: float, arg1: $Matrix3f$$Type): $Matrix3f
  "reflect"(arg0: float, arg1: float, arg2: float, arg3: $Matrix3f$$Type): $Matrix3f
- "reflect"(arg0: $Vector3fc$$Type, arg1: $Matrix3f$$Type): $Matrix3f
  "reflect"(arg0: $Quaternionfc$$Type, arg1: $Matrix3f$$Type): $Matrix3f
+ "reflect"(arg0: $Vector3fc$$Type, arg1: $Matrix3f$$Type): $Matrix3f
  "lerp"(arg0: $Matrix3fc$$Type, arg1: float, arg2: $Matrix3f$$Type): $Matrix3f
- "getUnnormalizedRotation"(arg0: $Quaternionf$$Type): $Quaternionf
  "getUnnormalizedRotation"(arg0: $Quaterniond$$Type): $Quaterniond
+ "getUnnormalizedRotation"(arg0: $Quaternionf$$Type): $Quaternionf
  "getNormalizedRotation"(arg0: $Quaterniond$$Type): $Quaterniond
  "getNormalizedRotation"(arg0: $Quaternionf$$Type): $Quaternionf
- "get3x4"(arg0: $ByteBuffer$$Type): $ByteBuffer
- "get3x4"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
- "get3x4"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
  "get3x4"(arg0: $FloatBuffer$$Type): $FloatBuffer
- "determinant"(): float
- "lookAlong"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix3f$$Type): $Matrix3f
+ "get3x4"(arg0: $ByteBuffer$$Type): $ByteBuffer
+ "get3x4"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
+ "get3x4"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
  "lookAlong"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Matrix3f$$Type): $Matrix3f
+ "lookAlong"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix3f$$Type): $Matrix3f
  "rotateLocalX"(arg0: float, arg1: $Matrix3f$$Type): $Matrix3f
  "rotateLocalY"(arg0: float, arg1: $Matrix3f$$Type): $Matrix3f
  "rotateLocalZ"(arg0: float, arg1: $Matrix3f$$Type): $Matrix3f
@@ -1367,11 +1366,10 @@ export class $Matrix3fc implements $Matrix3fc$$Interface {
  "normalizedPositiveY"(arg0: $Vector3f$$Type): $Vector3f
  "positiveZ"(arg0: $Vector3f$$Type): $Vector3f
  "normalizedPositiveZ"(arg0: $Vector3f$$Type): $Vector3f
- "transformTranspose"(arg0: float, arg1: float, arg2: float, arg3: $Vector3f$$Type): $Vector3f
+ "getScale"(arg0: $Vector3f$$Type): $Vector3f
  "transformTranspose"(arg0: $Vector3f$$Type): $Vector3f
+ "transformTranspose"(arg0: float, arg1: float, arg2: float, arg3: $Vector3f$$Type): $Vector3f
  "transformTranspose"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
- "rotateTowards"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix3f$$Type): $Matrix3f
- "rotateTowards"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Matrix3f$$Type): $Matrix3f
  "obliqueZ"(arg0: float, arg1: float, arg2: $Matrix3f$$Type): $Matrix3f
  "mapXZY"(arg0: $Matrix3f$$Type): $Matrix3f
  "mapXZnY"(arg0: $Matrix3f$$Type): $Matrix3f
@@ -1420,18 +1418,20 @@ export class $Matrix3fc implements $Matrix3fc$$Interface {
  "negateX"(arg0: $Matrix3f$$Type): $Matrix3f
  "negateY"(arg0: $Matrix3f$$Type): $Matrix3f
  "negateZ"(arg0: $Matrix3f$$Type): $Matrix3f
- "getRow"(arg0: integer, arg1: $Vector3f$$Type): $Vector3f
- "scaleLocal"(arg0: float, arg1: float, arg2: float, arg3: $Matrix3f$$Type): $Matrix3f
- "getScale"(arg0: $Vector3f$$Type): $Vector3f
- "getRotation"(arg0: $AxisAngle4f$$Type): $AxisAngle4f
  "mulComponentWise"(arg0: $Matrix3fc$$Type, arg1: $Matrix3f$$Type): $Matrix3f
- "rotateLocal"(arg0: $Quaternionfc$$Type, arg1: $Matrix3f$$Type): $Matrix3f
- "rotateLocal"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix3f$$Type): $Matrix3f
- "getTransposed"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
- "getTransposed"(arg0: $FloatBuffer$$Type): $FloatBuffer
- "getTransposed"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
- "getTransposed"(arg0: $ByteBuffer$$Type): $ByteBuffer
  "mulLocal"(arg0: $Matrix3fc$$Type, arg1: $Matrix3f$$Type): $Matrix3f
+ "scaleLocal"(arg0: float, arg1: float, arg2: float, arg3: $Matrix3f$$Type): $Matrix3f
+ "getRotation"(arg0: $AxisAngle4f$$Type): $AxisAngle4f
+ "getTransposed"(arg0: $ByteBuffer$$Type): $ByteBuffer
+ "getTransposed"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
+ "getTransposed"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
+ "getTransposed"(arg0: $FloatBuffer$$Type): $FloatBuffer
+ "determinant"(): float
+ "rotateLocal"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix3f$$Type): $Matrix3f
+ "rotateLocal"(arg0: $Quaternionfc$$Type, arg1: $Matrix3f$$Type): $Matrix3f
+ "getRow"(arg0: integer, arg1: $Vector3f$$Type): $Vector3f
+ "rotateTowards"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix3f$$Type): $Matrix3f
+ "rotateTowards"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Matrix3f$$Type): $Matrix3f
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -1447,88 +1447,88 @@ import {$ObjectInput$$Type} from "java.io.ObjectInput"
 import {$Matrix3x2f, $Matrix3x2f$$Type} from "org.joml.Matrix3x2f"
 import {$Vector2f, $Vector2f$$Type} from "org.joml.Vector2f"
 import {$ObjectOutput$$Type} from "java.io.ObjectOutput"
-import {$Externalizable$$Interface} from "java.io.Externalizable"
 import {$Matrix3f, $Matrix3f$$Type} from "org.joml.Matrix3f"
-import {$Vector2fc$$Type} from "org.joml.Vector2fc"
-import {$Matrix2fc, $Matrix2fc$$Type, $Matrix2fc$$Interface} from "org.joml.Matrix2fc"
+import {$Externalizable$$Interface} from "java.io.Externalizable"
 import {$FloatBuffer, $FloatBuffer$$Type} from "java.nio.FloatBuffer"
-import {$Matrix3x2fc$$Type} from "org.joml.Matrix3x2fc"
+import {$Matrix2fc, $Matrix2fc$$Type, $Matrix2fc$$Interface} from "org.joml.Matrix2fc"
+import {$Vector2fc$$Type} from "org.joml.Vector2fc"
 import {$Matrix3fc$$Type} from "org.joml.Matrix3fc"
+import {$Matrix3x2fc$$Type} from "org.joml.Matrix3x2fc"
 import {$NumberFormat$$Type} from "java.text.NumberFormat"
 import {$Cloneable$$Interface} from "java.lang.Cloneable"
 import {$ByteBuffer, $ByteBuffer$$Type} from "java.nio.ByteBuffer"
 
 export class $Matrix2f implements $Externalizable$$Interface, $Cloneable$$Interface, $Matrix2fc$$Interface {
+constructor()
 constructor(arg0: $FloatBuffer$$Type)
-constructor(arg0: float, arg1: float, arg2: float, arg3: float)
+constructor(arg0: $Vector2fc$$Type, arg1: $Vector2fc$$Type)
 constructor(arg0: $Matrix3fc$$Type)
 constructor(arg0: $Matrix2fc$$Type)
-constructor(arg0: $Vector2fc$$Type, arg1: $Vector2fc$$Type)
-constructor()
+constructor(arg0: float, arg1: float, arg2: float, arg3: float)
 
 public "transpose"(): $Matrix2f
 public "transpose"(arg0: $Matrix2f$$Type): $Matrix2f
 public "invert"(arg0: $Matrix2f$$Type): $Matrix2f
 public "invert"(): $Matrix2f
-public "sub"(arg0: $Matrix2fc$$Type, arg1: $Matrix2f$$Type): $Matrix2f
-public "sub"(arg0: $Matrix2fc$$Type): $Matrix2f
-public "mul"(arg0: $Matrix2fc$$Type, arg1: $Matrix2f$$Type): $Matrix2f
-public "mul"(arg0: $Matrix2fc$$Type): $Matrix2f
-public "normal"(arg0: $Matrix2f$$Type): $Matrix2f
-public "normal"(): $Matrix2f
 public "writeExternal"(arg0: $ObjectOutput$$Type): void
 public "readExternal"(arg0: $ObjectInput$$Type): void
-public "get"(arg0: $Matrix3f$$Type): $Matrix3f
-public "get"(arg0: $Matrix2f$$Type): $Matrix2f
+public "normal"(): $Matrix2f
+public "normal"(arg0: $Matrix2f$$Type): $Matrix2f
+public "sub"(arg0: $Matrix2fc$$Type, arg1: $Matrix2f$$Type): $Matrix2f
+public "sub"(arg0: $Matrix2fc$$Type): $Matrix2f
 public "get"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
-public "get"(arg0: $Matrix3x2f$$Type): $Matrix3x2f
 public "get"(arg0: $FloatBuffer$$Type): $FloatBuffer
-public "get"(arg0: integer, arg1: integer): float
 public "get"(arg0: (float)[]): (float)[]
+public "get"(arg0: $Matrix2f$$Type): $Matrix2f
+public "get"(arg0: $Matrix3x2f$$Type): $Matrix3x2f
+public "get"(arg0: $Matrix3f$$Type): $Matrix3f
+public "get"(arg0: integer, arg1: integer): float
 public "get"(arg0: (float)[], arg1: integer): (float)[]
 public "get"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
 public "get"(arg0: $ByteBuffer$$Type): $ByteBuffer
-public "equals"(arg0: $Matrix2fc$$Type, arg1: float): boolean
 public "equals"(arg0: any): boolean
+public "equals"(arg0: $Matrix2fc$$Type, arg1: float): boolean
 public "toString"(): StringJS
 public "toString"(arg0: $NumberFormat$$Type): StringJS
 public "hashCode"(): integer
 public "clone"(): any
 public "isFinite"(): boolean
 public "scale"(arg0: $Vector2fc$$Type): $Matrix2f
-public "scale"(arg0: float): $Matrix2f
-public "scale"(arg0: float, arg1: $Matrix2f$$Type): $Matrix2f
 public "scale"(arg0: float, arg1: float, arg2: $Matrix2f$$Type): $Matrix2f
 public "scale"(arg0: float, arg1: float): $Matrix2f
+public "scale"(arg0: float): $Matrix2f
 public "scale"(arg0: $Vector2fc$$Type, arg1: $Matrix2f$$Type): $Matrix2f
+public "scale"(arg0: float, arg1: $Matrix2f$$Type): $Matrix2f
 public "add"(arg0: $Matrix2fc$$Type, arg1: $Matrix2f$$Type): $Matrix2f
 public "add"(arg0: $Matrix2fc$$Type): $Matrix2f
-public "transform"(arg0: $Vector2f$$Type): $Vector2f
 public "transform"(arg0: float, arg1: float, arg2: $Vector2f$$Type): $Vector2f
+public "transform"(arg0: $Vector2f$$Type): $Vector2f
 public "transform"(arg0: $Vector2fc$$Type, arg1: $Vector2f$$Type): $Vector2f
 public "identity"(): $Matrix2f
+public "set"(arg0: $FloatBuffer$$Type): $Matrix2f
 public "set"(arg0: $ByteBuffer$$Type): $Matrix2f
 public "set"(arg0: integer, arg1: $FloatBuffer$$Type): $Matrix2f
 public "set"(arg0: integer, arg1: $ByteBuffer$$Type): $Matrix2f
 public "set"(arg0: integer, arg1: integer, arg2: float): $Matrix2f
-public "set"(arg0: $Matrix2fc$$Type): $Matrix2f
-public "set"(arg0: (float)[]): $Matrix2f
-public "set"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix2f
 public "set"(arg0: $Matrix3x2fc$$Type): $Matrix2f
 public "set"(arg0: $Matrix3fc$$Type): $Matrix2f
-public "set"(arg0: $FloatBuffer$$Type): $Matrix2f
+public "set"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix2f
+public "set"(arg0: (float)[]): $Matrix2f
 public "set"(arg0: $Vector2fc$$Type, arg1: $Vector2fc$$Type): $Matrix2f
+public "set"(arg0: $Matrix2fc$$Type): $Matrix2f
 public "zero"(): $Matrix2f
-public "swap"(arg0: $Matrix2f$$Type): $Matrix2f
 public "rotate"(arg0: float, arg1: $Matrix2f$$Type): $Matrix2f
 public "rotate"(arg0: float): $Matrix2f
-public "m11"(arg0: float): $Matrix2f
 public "m11"(): float
+public "m11"(arg0: float): $Matrix2f
+public "swap"(arg0: $Matrix2f$$Type): $Matrix2f
+public "mul"(arg0: $Matrix2fc$$Type): $Matrix2f
+public "mul"(arg0: $Matrix2fc$$Type, arg1: $Matrix2f$$Type): $Matrix2f
 public "m10"(arg0: float): $Matrix2f
 public "m10"(): float
 public "getColumn"(arg0: integer, arg1: $Vector2f$$Type): $Vector2f
-public "scaling"(arg0: $Vector2fc$$Type): $Matrix2f
 public "scaling"(arg0: float): $Matrix2f
+public "scaling"(arg0: $Vector2fc$$Type): $Matrix2f
 public "scaling"(arg0: float, arg1: float): $Matrix2f
 public "setFromAddress"(arg0: long): $Matrix2f
 public "getToAddress"(arg0: long): $Matrix2fc
@@ -1536,36 +1536,36 @@ public "m00"(arg0: float): $Matrix2f
 public "m00"(): float
 public "m01"(arg0: float): $Matrix2f
 public "m01"(): float
-public "lerp"(arg0: $Matrix2fc$$Type, arg1: float, arg2: $Matrix2f$$Type): $Matrix2f
 public "lerp"(arg0: $Matrix2fc$$Type, arg1: float): $Matrix2f
-public "determinant"(): float
+public "lerp"(arg0: $Matrix2fc$$Type, arg1: float, arg2: $Matrix2f$$Type): $Matrix2f
 public "positiveX"(arg0: $Vector2f$$Type): $Vector2f
 public "normalizedPositiveX"(arg0: $Vector2f$$Type): $Vector2f
 public "positiveY"(arg0: $Vector2f$$Type): $Vector2f
 public "normalizedPositiveY"(arg0: $Vector2f$$Type): $Vector2f
 public "rotation"(arg0: float): $Matrix2f
-public "transformTranspose"(arg0: float, arg1: float, arg2: $Vector2f$$Type): $Vector2f
+public "getScale"(arg0: $Vector2f$$Type): $Vector2f
 public "transformTranspose"(arg0: $Vector2fc$$Type, arg1: $Vector2f$$Type): $Vector2f
+public "transformTranspose"(arg0: float, arg1: float, arg2: $Vector2f$$Type): $Vector2f
 public "transformTranspose"(arg0: $Vector2f$$Type): $Vector2f
-public "getRow"(arg0: integer, arg1: $Vector2f$$Type): $Vector2f
-public "setRow"(arg0: integer, arg1: $Vector2fc$$Type): $Matrix2f
-public "setRow"(arg0: integer, arg1: float, arg2: float): $Matrix2f
-public "setColumn"(arg0: integer, arg1: $Vector2fc$$Type): $Matrix2f
-public "setColumn"(arg0: integer, arg1: float, arg2: float): $Matrix2f
+public "mulComponentWise"(arg0: $Matrix2fc$$Type): $Matrix2f
+public "mulComponentWise"(arg0: $Matrix2fc$$Type, arg1: $Matrix2f$$Type): $Matrix2f
+public "mulLocal"(arg0: $Matrix2fc$$Type): $Matrix2f
+public "mulLocal"(arg0: $Matrix2fc$$Type, arg1: $Matrix2f$$Type): $Matrix2f
 public "scaleLocal"(arg0: float, arg1: float, arg2: $Matrix2f$$Type): $Matrix2f
 public "scaleLocal"(arg0: float, arg1: float): $Matrix2f
-public "getScale"(arg0: $Vector2f$$Type): $Vector2f
 public "getRotation"(): float
-public "mulComponentWise"(arg0: $Matrix2fc$$Type, arg1: $Matrix2f$$Type): $Matrix2f
-public "mulComponentWise"(arg0: $Matrix2fc$$Type): $Matrix2f
-public "rotateLocal"(arg0: float): $Matrix2f
-public "rotateLocal"(arg0: float, arg1: $Matrix2f$$Type): $Matrix2f
-public "getTransposed"(arg0: $FloatBuffer$$Type): $FloatBuffer
 public "getTransposed"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
 public "getTransposed"(arg0: $ByteBuffer$$Type): $ByteBuffer
 public "getTransposed"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
-public "mulLocal"(arg0: $Matrix2fc$$Type, arg1: $Matrix2f$$Type): $Matrix2f
-public "mulLocal"(arg0: $Matrix2fc$$Type): $Matrix2f
+public "getTransposed"(arg0: $FloatBuffer$$Type): $FloatBuffer
+public "determinant"(): float
+public "rotateLocal"(arg0: float): $Matrix2f
+public "rotateLocal"(arg0: float, arg1: $Matrix2f$$Type): $Matrix2f
+public "getRow"(arg0: integer, arg1: $Vector2f$$Type): $Vector2f
+public "setRow"(arg0: integer, arg1: $Vector2fc$$Type): $Matrix2f
+public "setRow"(arg0: integer, arg1: float, arg2: float): $Matrix2f
+public "setColumn"(arg0: integer, arg1: float, arg2: float): $Matrix2f
+public "setColumn"(arg0: integer, arg1: $Vector2fc$$Type): $Matrix2f
 get "finite"(): boolean
 set "fromAddress"(value: long)
 }
@@ -1584,17 +1584,17 @@ import {$Matrix3x2d, $Matrix3x2d$$Type} from "org.joml.Matrix3x2d"
 import {$Vector2d, $Vector2d$$Type} from "org.joml.Vector2d"
 import {$DoubleBuffer, $DoubleBuffer$$Type} from "java.nio.DoubleBuffer"
 import {$ObjectOutput$$Type} from "java.io.ObjectOutput"
-import {$Matrix3d, $Matrix3d$$Type} from "org.joml.Matrix3d"
 import {$Matrix3dc$$Type} from "org.joml.Matrix3dc"
+import {$Matrix3d, $Matrix3d$$Type} from "org.joml.Matrix3d"
 import {$Externalizable$$Interface} from "java.io.Externalizable"
-import {$Matrix2fc$$Type} from "org.joml.Matrix2fc"
 import {$FloatBuffer, $FloatBuffer$$Type} from "java.nio.FloatBuffer"
+import {$Matrix2fc$$Type} from "org.joml.Matrix2fc"
 import {$Matrix3x2dc$$Type} from "org.joml.Matrix3x2dc"
 import {$Matrix2dc, $Matrix2dc$$Type, $Matrix2dc$$Interface} from "org.joml.Matrix2dc"
-import {$Matrix3x2fc$$Type} from "org.joml.Matrix3x2fc"
 import {$Matrix3fc$$Type} from "org.joml.Matrix3fc"
-import {$Vector2dc$$Type} from "org.joml.Vector2dc"
+import {$Matrix3x2fc$$Type} from "org.joml.Matrix3x2fc"
 import {$NumberFormat$$Type} from "java.text.NumberFormat"
+import {$Vector2dc$$Type} from "org.joml.Vector2dc"
 import {$Cloneable$$Interface} from "java.lang.Cloneable"
 import {$ByteBuffer, $ByteBuffer$$Type} from "java.nio.ByteBuffer"
 
@@ -1602,123 +1602,123 @@ export class $Matrix2d implements $Externalizable$$Interface, $Cloneable$$Interf
 constructor()
 constructor(arg0: $Vector2dc$$Type, arg1: $Vector2dc$$Type)
 constructor(arg0: $DoubleBuffer$$Type)
-constructor(arg0: $Matrix2fc$$Type)
-constructor(arg0: $Matrix2dc$$Type)
+constructor(arg0: double, arg1: double, arg2: double, arg3: double)
 constructor(arg0: $Matrix3fc$$Type)
 constructor(arg0: $Matrix3dc$$Type)
-constructor(arg0: double, arg1: double, arg2: double, arg3: double)
+constructor(arg0: $Matrix2dc$$Type)
+constructor(arg0: $Matrix2fc$$Type)
 
+public "getFloats"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
+public "getFloats"(arg0: $ByteBuffer$$Type): $ByteBuffer
 public "getTransposedFloats"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
 public "getTransposedFloats"(arg0: $ByteBuffer$$Type): $ByteBuffer
-public "getFloats"(arg0: $ByteBuffer$$Type): $ByteBuffer
-public "getFloats"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
 public "transpose"(): $Matrix2d
 public "transpose"(arg0: $Matrix2d$$Type): $Matrix2d
 public "invert"(): $Matrix2d
 public "invert"(arg0: $Matrix2d$$Type): $Matrix2d
-public "sub"(arg0: $Matrix2dc$$Type): $Matrix2d
-public "sub"(arg0: $Matrix2dc$$Type, arg1: $Matrix2d$$Type): $Matrix2d
-public "mul"(arg0: $Matrix2fc$$Type, arg1: $Matrix2d$$Type): $Matrix2d
-public "mul"(arg0: $Matrix2fc$$Type): $Matrix2d
-public "mul"(arg0: $Matrix2dc$$Type): $Matrix2d
-public "mul"(arg0: $Matrix2dc$$Type, arg1: $Matrix2d$$Type): $Matrix2d
-public "normal"(): $Matrix2d
-public "normal"(arg0: $Matrix2d$$Type): $Matrix2d
 public "writeExternal"(arg0: $ObjectOutput$$Type): void
 public "readExternal"(arg0: $ObjectInput$$Type): void
-public "get"(arg0: $Matrix3x2d$$Type): $Matrix3x2d
-public "get"(arg0: $Matrix3d$$Type): $Matrix3d
+public "normal"(): $Matrix2d
+public "normal"(arg0: $Matrix2d$$Type): $Matrix2d
+public "sub"(arg0: $Matrix2dc$$Type): $Matrix2d
+public "sub"(arg0: $Matrix2dc$$Type, arg1: $Matrix2d$$Type): $Matrix2d
+public "get"(arg0: integer, arg1: $DoubleBuffer$$Type): $DoubleBuffer
 public "get"(arg0: $DoubleBuffer$$Type): $DoubleBuffer
+public "get"(arg0: $Matrix3x2d$$Type): $Matrix3x2d
 public "get"(arg0: $Matrix2d$$Type): $Matrix2d
+public "get"(arg0: $Matrix3d$$Type): $Matrix3d
 public "get"(arg0: (double)[], arg1: integer): (double)[]
+public "get"(arg0: (double)[]): (double)[]
+public "get"(arg0: integer, arg1: integer): double
 public "get"(arg0: $ByteBuffer$$Type): $ByteBuffer
 public "get"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
-public "get"(arg0: integer, arg1: integer): double
-public "get"(arg0: (double)[]): (double)[]
-public "get"(arg0: integer, arg1: $DoubleBuffer$$Type): $DoubleBuffer
-public "equals"(arg0: $Matrix2dc$$Type, arg1: double): boolean
 public "equals"(arg0: any): boolean
+public "equals"(arg0: $Matrix2dc$$Type, arg1: double): boolean
 public "toString"(): StringJS
 public "toString"(arg0: $NumberFormat$$Type): StringJS
 public "hashCode"(): integer
 public "clone"(): any
 public "isFinite"(): boolean
-public "scale"(arg0: $Vector2dc$$Type, arg1: $Matrix2d$$Type): $Matrix2d
-public "scale"(arg0: double, arg1: $Matrix2d$$Type): $Matrix2d
-public "scale"(arg0: $Vector2dc$$Type): $Matrix2d
 public "scale"(arg0: double, arg1: double): $Matrix2d
 public "scale"(arg0: double, arg1: double, arg2: $Matrix2d$$Type): $Matrix2d
+public "scale"(arg0: double, arg1: $Matrix2d$$Type): $Matrix2d
+public "scale"(arg0: $Vector2dc$$Type): $Matrix2d
+public "scale"(arg0: $Vector2dc$$Type, arg1: $Matrix2d$$Type): $Matrix2d
 public "scale"(arg0: double): $Matrix2d
 public "add"(arg0: $Matrix2dc$$Type, arg1: $Matrix2d$$Type): $Matrix2d
 public "add"(arg0: $Matrix2dc$$Type): $Matrix2d
-public "transform"(arg0: $Vector2dc$$Type, arg1: $Vector2d$$Type): $Vector2d
-public "transform"(arg0: double, arg1: double, arg2: $Vector2d$$Type): $Vector2d
 public "transform"(arg0: $Vector2d$$Type): $Vector2d
+public "transform"(arg0: double, arg1: double, arg2: $Vector2d$$Type): $Vector2d
+public "transform"(arg0: $Vector2dc$$Type, arg1: $Vector2d$$Type): $Vector2d
 public "identity"(): $Matrix2d
-public "set"(arg0: integer, arg1: $DoubleBuffer$$Type): $Matrix2d
-public "set"(arg0: $ByteBuffer$$Type): $Matrix2d
-public "set"(arg0: $Matrix2dc$$Type): $Matrix2d
-public "set"(arg0: (double)[]): $Matrix2d
-public "set"(arg0: integer, arg1: $ByteBuffer$$Type): $Matrix2d
-public "set"(arg0: $Vector2dc$$Type, arg1: $Vector2dc$$Type): $Matrix2d
-public "set"(arg0: $Matrix3fc$$Type): $Matrix2d
-public "set"(arg0: $Matrix3x2dc$$Type): $Matrix2d
-public "set"(arg0: $Matrix3x2fc$$Type): $Matrix2d
-public "set"(arg0: integer, arg1: integer, arg2: double): $Matrix2d
 public "set"(arg0: $DoubleBuffer$$Type): $Matrix2d
-public "set"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix2d
-public "set"(arg0: $Matrix3dc$$Type): $Matrix2d
+public "set"(arg0: $Matrix2dc$$Type): $Matrix2d
 public "set"(arg0: $Matrix2fc$$Type): $Matrix2d
+public "set"(arg0: $Matrix3x2dc$$Type): $Matrix2d
+public "set"(arg0: $ByteBuffer$$Type): $Matrix2d
+public "set"(arg0: integer, arg1: $DoubleBuffer$$Type): $Matrix2d
+public "set"(arg0: integer, arg1: $ByteBuffer$$Type): $Matrix2d
+public "set"(arg0: (double)[]): $Matrix2d
+public "set"(arg0: $Matrix3dc$$Type): $Matrix2d
+public "set"(arg0: $Matrix3x2fc$$Type): $Matrix2d
+public "set"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix2d
+public "set"(arg0: $Vector2dc$$Type, arg1: $Vector2dc$$Type): $Matrix2d
+public "set"(arg0: integer, arg1: integer, arg2: double): $Matrix2d
+public "set"(arg0: $Matrix3fc$$Type): $Matrix2d
 public "zero"(): $Matrix2d
-public "swap"(arg0: $Matrix2d$$Type): $Matrix2d
 public "rotate"(arg0: double): $Matrix2d
 public "rotate"(arg0: double, arg1: $Matrix2d$$Type): $Matrix2d
 public "m11"(arg0: double): $Matrix2d
 public "m11"(): double
+public "swap"(arg0: $Matrix2d$$Type): $Matrix2d
+public "mul"(arg0: $Matrix2dc$$Type, arg1: $Matrix2d$$Type): $Matrix2d
+public "mul"(arg0: $Matrix2fc$$Type): $Matrix2d
+public "mul"(arg0: $Matrix2dc$$Type): $Matrix2d
+public "mul"(arg0: $Matrix2fc$$Type, arg1: $Matrix2d$$Type): $Matrix2d
 public "m10"(arg0: double): $Matrix2d
 public "m10"(): double
 public "getColumn"(arg0: integer, arg1: $Vector2d$$Type): $Vector2d
-public "scaling"(arg0: $Vector2dc$$Type): $Matrix2d
 public "scaling"(arg0: double, arg1: double): $Matrix2d
 public "scaling"(arg0: double): $Matrix2d
+public "scaling"(arg0: $Vector2dc$$Type): $Matrix2d
 public "setFromAddress"(arg0: long): $Matrix2d
 public "getToAddress"(arg0: long): $Matrix2dc
-public "m00"(): double
 public "m00"(arg0: double): $Matrix2d
+public "m00"(): double
 public "m01"(arg0: double): $Matrix2d
 public "m01"(): double
 public "lerp"(arg0: $Matrix2dc$$Type, arg1: double): $Matrix2d
 public "lerp"(arg0: $Matrix2dc$$Type, arg1: double, arg2: $Matrix2d$$Type): $Matrix2d
-public "determinant"(): double
 public "positiveX"(arg0: $Vector2d$$Type): $Vector2d
 public "normalizedPositiveX"(arg0: $Vector2d$$Type): $Vector2d
 public "positiveY"(arg0: $Vector2d$$Type): $Vector2d
 public "normalizedPositiveY"(arg0: $Vector2d$$Type): $Vector2d
 public "rotation"(arg0: double): $Matrix2d
+public "getScale"(arg0: $Vector2d$$Type): $Vector2d
 public "transformTranspose"(arg0: $Vector2d$$Type): $Vector2d
-public "transformTranspose"(arg0: double, arg1: double, arg2: $Vector2d$$Type): $Vector2d
 public "transformTranspose"(arg0: $Vector2dc$$Type, arg1: $Vector2d$$Type): $Vector2d
+public "transformTranspose"(arg0: double, arg1: double, arg2: $Vector2d$$Type): $Vector2d
+public "mulComponentWise"(arg0: $Matrix2dc$$Type): $Matrix2d
+public "mulComponentWise"(arg0: $Matrix2dc$$Type, arg1: $Matrix2d$$Type): $Matrix2d
+public "mulLocal"(arg0: $Matrix2dc$$Type): $Matrix2d
+public "mulLocal"(arg0: $Matrix2dc$$Type, arg1: $Matrix2d$$Type): $Matrix2d
+public "scaleLocal"(arg0: double, arg1: double, arg2: $Matrix2d$$Type): $Matrix2d
+public "scaleLocal"(arg0: double, arg1: double): $Matrix2d
+public "getRotation"(): double
+public "getTransposed"(arg0: $FloatBuffer$$Type): $FloatBuffer
+public "getTransposed"(arg0: $DoubleBuffer$$Type): $DoubleBuffer
+public "getTransposed"(arg0: integer, arg1: $DoubleBuffer$$Type): $DoubleBuffer
+public "getTransposed"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
+public "getTransposed"(arg0: $ByteBuffer$$Type): $ByteBuffer
+public "getTransposed"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
+public "determinant"(): double
+public "rotateLocal"(arg0: double): $Matrix2d
+public "rotateLocal"(arg0: double, arg1: $Matrix2d$$Type): $Matrix2d
 public "getRow"(arg0: integer, arg1: $Vector2d$$Type): $Vector2d
 public "setRow"(arg0: integer, arg1: double, arg2: double): $Matrix2d
 public "setRow"(arg0: integer, arg1: $Vector2dc$$Type): $Matrix2d
-public "setColumn"(arg0: integer, arg1: double, arg2: double): $Matrix2d
 public "setColumn"(arg0: integer, arg1: $Vector2dc$$Type): $Matrix2d
-public "scaleLocal"(arg0: double, arg1: double, arg2: $Matrix2d$$Type): $Matrix2d
-public "scaleLocal"(arg0: double, arg1: double): $Matrix2d
-public "getScale"(arg0: $Vector2d$$Type): $Vector2d
-public "getRotation"(): double
-public "mulComponentWise"(arg0: $Matrix2dc$$Type, arg1: $Matrix2d$$Type): $Matrix2d
-public "mulComponentWise"(arg0: $Matrix2dc$$Type): $Matrix2d
-public "rotateLocal"(arg0: double, arg1: $Matrix2d$$Type): $Matrix2d
-public "rotateLocal"(arg0: double): $Matrix2d
-public "getTransposed"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
-public "getTransposed"(arg0: $ByteBuffer$$Type): $ByteBuffer
-public "getTransposed"(arg0: $DoubleBuffer$$Type): $DoubleBuffer
-public "getTransposed"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
-public "getTransposed"(arg0: $FloatBuffer$$Type): $FloatBuffer
-public "getTransposed"(arg0: integer, arg1: $DoubleBuffer$$Type): $DoubleBuffer
-public "mulLocal"(arg0: $Matrix2dc$$Type, arg1: $Matrix2d$$Type): $Matrix2d
-public "mulLocal"(arg0: $Matrix2dc$$Type): $Matrix2d
+public "setColumn"(arg0: integer, arg1: double, arg2: double): $Matrix2d
 get "finite"(): boolean
 set "fromAddress"(value: long)
 }
@@ -1757,452 +1757,268 @@ import {$Matrix3x2dc$$Type} from "org.joml.Matrix3x2dc"
 import {$Matrix3x2fc$$Type} from "org.joml.Matrix3x2fc"
 import {$Vector4dc$$Type} from "org.joml.Vector4dc"
 import {$Vector3dc$$Type} from "org.joml.Vector3dc"
-import {$Vector2dc$$Type} from "org.joml.Vector2dc"
 import {$NumberFormat$$Type} from "java.text.NumberFormat"
+import {$Vector2dc$$Type} from "org.joml.Vector2dc"
 import {$Vector3fc$$Type} from "org.joml.Vector3fc"
 import {$AxisAngle4f$$Type} from "org.joml.AxisAngle4f"
 import {$AxisAngle4d$$Type} from "org.joml.AxisAngle4d"
 import {$ByteBuffer, $ByteBuffer$$Type} from "java.nio.ByteBuffer"
 
 export class $Matrix4d implements $Externalizable$$Interface, $Cloneable$$Interface, $Matrix4dc$$Interface {
+constructor()
 constructor(arg0: $Matrix3dc$$Type)
 constructor(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double, arg9: double, arg10: double, arg11: double, arg12: double, arg13: double, arg14: double, arg15: double)
 constructor(arg0: $DoubleBuffer$$Type)
 constructor(arg0: $Vector4d$$Type, arg1: $Vector4d$$Type, arg2: $Vector4d$$Type, arg3: $Vector4d$$Type)
-constructor()
 constructor(arg0: $Matrix4dc$$Type)
 constructor(arg0: $Matrix4fc$$Type)
 constructor(arg0: $Matrix4x3dc$$Type)
 constructor(arg0: $Matrix4x3fc$$Type)
 
-public "getTransposedFloats"(arg0: $ByteBuffer$$Type): $ByteBuffer
-public "getTransposedFloats"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
-public "setFloats"(arg0: integer, arg1: $ByteBuffer$$Type): $Matrix4d
-public "setFloats"(arg0: $ByteBuffer$$Type): $Matrix4d
-public "getFloats"(arg0: $ByteBuffer$$Type): $ByteBuffer
 public "getFloats"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
+public "getFloats"(arg0: $ByteBuffer$$Type): $ByteBuffer
+public "setFloats"(arg0: $ByteBuffer$$Type): $Matrix4d
+public "setFloats"(arg0: integer, arg1: $ByteBuffer$$Type): $Matrix4d
+public "getTransposedFloats"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
+public "getTransposedFloats"(arg0: $ByteBuffer$$Type): $ByteBuffer
 public "transpose"(arg0: $Matrix4d$$Type): $Matrix4d
 public "transpose"(): $Matrix4d
 public "invert"(): $Matrix4d
 public "invert"(arg0: $Matrix4d$$Type): $Matrix4d
-public "sub"(arg0: $Matrix4dc$$Type): $Matrix4d
-public "sub"(arg0: $Matrix4dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
-public "mul"(arg0: $Matrix4f$$Type): $Matrix4d
-public "mul"(arg0: $Matrix4dc$$Type): $Matrix4d
-public "mul"(arg0: $Matrix4fc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
-public "mul"(arg0: $Matrix4x3dc$$Type): $Matrix4d
-public "mul"(arg0: $Matrix3x2fc$$Type): $Matrix4d
-public "mul"(arg0: $Matrix4x3fc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
-public "mul"(arg0: $Matrix3x2dc$$Type): $Matrix4d
-public "mul"(arg0: $Matrix3x2dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
-public "mul"(arg0: $Matrix4x3dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
-public "mul"(arg0: $Matrix3x2fc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
-public "mul"(arg0: $Matrix4dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
-public "mul"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double, arg9: double, arg10: double, arg11: double, arg12: double, arg13: double, arg14: double, arg15: double): $Matrix4d
-public "mul"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double, arg9: double, arg10: double, arg11: double, arg12: double, arg13: double, arg14: double, arg15: double, arg16: $Matrix4d$$Type): $Matrix4d
 public "origin"(arg0: $Vector3d$$Type): $Vector3d
-public "shadow"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: $Matrix4d$$Type): $Matrix4d
-public "shadow"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4dc$$Type): $Matrix4d
-public "shadow"(arg0: $Vector4dc$$Type, arg1: $Matrix4dc$$Type, arg2: $Matrix4d$$Type): $Matrix4d
-public "shadow"(arg0: $Vector4dc$$Type, arg1: double, arg2: double, arg3: double, arg4: double): $Matrix4d
-public "shadow"(arg0: $Vector4d$$Type, arg1: $Matrix4d$$Type): $Matrix4d
-public "shadow"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double): $Matrix4d
-public "shadow"(arg0: $Vector4dc$$Type, arg1: double, arg2: double, arg3: double, arg4: double, arg5: $Matrix4d$$Type): $Matrix4d
-public "shadow"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4dc$$Type, arg5: $Matrix4d$$Type): $Matrix4d
-public "normal"(arg0: $Matrix3d$$Type): $Matrix3d
-public "normal"(arg0: $Matrix4d$$Type): $Matrix4d
-public "normal"(): $Matrix4d
 public "writeExternal"(arg0: $ObjectOutput$$Type): void
 public "readExternal"(arg0: $ObjectInput$$Type): void
+public "normal"(): $Matrix4d
+public "normal"(arg0: $Matrix4d$$Type): $Matrix4d
+public "normal"(arg0: $Matrix3d$$Type): $Matrix3d
+public "sub"(arg0: $Matrix4dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
+public "sub"(arg0: $Matrix4dc$$Type): $Matrix4d
+public "get"(arg0: integer, arg1: $DoubleBuffer$$Type): $DoubleBuffer
+public "get"(arg0: $FloatBuffer$$Type): $FloatBuffer
+public "get"(arg0: (float)[], arg1: integer): (float)[]
+public "get"(arg0: $Matrix4d$$Type): $Matrix4d
 public "get"(arg0: (double)[], arg1: integer): (double)[]
+public "get"(arg0: (double)[]): (double)[]
 public "get"(arg0: (float)[]): (float)[]
 public "get"(arg0: integer, arg1: integer): double
-public "get"(arg0: $ByteBuffer$$Type): $ByteBuffer
-public "get"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
-public "get"(arg0: $FloatBuffer$$Type): $FloatBuffer
-public "get"(arg0: $Matrix4d$$Type): $Matrix4d
 public "get"(arg0: $DoubleBuffer$$Type): $DoubleBuffer
-public "get"(arg0: integer, arg1: $DoubleBuffer$$Type): $DoubleBuffer
-public "get"(arg0: (double)[]): (double)[]
+public "get"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
 public "get"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
-public "get"(arg0: (float)[], arg1: integer): (float)[]
-public "equals"(arg0: any): boolean
+public "get"(arg0: $ByteBuffer$$Type): $ByteBuffer
 public "equals"(arg0: $Matrix4dc$$Type, arg1: double): boolean
-public "toString"(arg0: $NumberFormat$$Type): StringJS
+public "equals"(arg0: any): boolean
 public "toString"(): StringJS
+public "toString"(arg0: $NumberFormat$$Type): StringJS
 public "hashCode"(): integer
 public "clone"(): any
 public "isFinite"(): boolean
-public "scale"(arg0: double, arg1: double, arg2: double): $Matrix4d
-public "scale"(arg0: double, arg1: double, arg2: double, arg3: $Matrix4d$$Type): $Matrix4d
 public "scale"(arg0: $Vector3dc$$Type): $Matrix4d
 public "scale"(arg0: $Vector3dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
-public "scale"(arg0: double, arg1: $Matrix4d$$Type): $Matrix4d
 public "scale"(arg0: double): $Matrix4d
-public "add"(arg0: $Matrix4dc$$Type): $Matrix4d
+public "scale"(arg0: double, arg1: $Matrix4d$$Type): $Matrix4d
+public "scale"(arg0: double, arg1: double, arg2: double): $Matrix4d
+public "scale"(arg0: double, arg1: double, arg2: double, arg3: $Matrix4d$$Type): $Matrix4d
 public "add"(arg0: $Matrix4dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
-public "transform"(arg0: $Vector4d$$Type): $Vector4d
-public "transform"(arg0: $Vector4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
+public "add"(arg0: $Matrix4dc$$Type): $Matrix4d
 public "transform"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Vector4d$$Type): $Vector4d
+public "transform"(arg0: $Vector4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
+public "transform"(arg0: $Vector4d$$Type): $Vector4d
 public "identity"(): $Matrix4d
-public "set"(arg0: $Matrix3dc$$Type): $Matrix4d
-public "set"(arg0: $Vector4d$$Type, arg1: $Vector4d$$Type, arg2: $Vector4d$$Type, arg3: $Vector4d$$Type): $Matrix4d
-public "set"(arg0: integer, arg1: $ByteBuffer$$Type): $Matrix4d
-public "set"(arg0: integer, arg1: $FloatBuffer$$Type): $Matrix4d
-public "set"(arg0: integer, arg1: $DoubleBuffer$$Type): $Matrix4d
-public "set"(arg0: $Quaterniondc$$Type): $Matrix4d
 public "set"(arg0: $Quaternionfc$$Type): $Matrix4d
-public "set"(arg0: $Matrix4x3dc$$Type): $Matrix4d
-public "set"(arg0: $AxisAngle4f$$Type): $Matrix4d
-public "set"(arg0: integer, arg1: integer, arg2: double): $Matrix4d
-public "set"(arg0: (float)[], arg1: integer): $Matrix4d
-public "set"(arg0: (double)[]): $Matrix4d
-public "set"(arg0: (double)[], arg1: integer): $Matrix4d
 public "set"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double, arg9: double, arg10: double, arg11: double, arg12: double, arg13: double, arg14: double, arg15: double): $Matrix4d
-public "set"(arg0: $Matrix4x3fc$$Type): $Matrix4d
-public "set"(arg0: $ByteBuffer$$Type): $Matrix4d
-public "set"(arg0: $FloatBuffer$$Type): $Matrix4d
-public "set"(arg0: $DoubleBuffer$$Type): $Matrix4d
-public "set"(arg0: (float)[]): $Matrix4d
-public "set"(arg0: $Matrix4dc$$Type): $Matrix4d
+public "set"(arg0: (double)[], arg1: integer): $Matrix4d
+public "set"(arg0: integer, arg1: $ByteBuffer$$Type): $Matrix4d
 public "set"(arg0: $AxisAngle4d$$Type): $Matrix4d
+public "set"(arg0: $AxisAngle4f$$Type): $Matrix4d
+public "set"(arg0: $DoubleBuffer$$Type): $Matrix4d
+public "set"(arg0: $FloatBuffer$$Type): $Matrix4d
+public "set"(arg0: (double)[]): $Matrix4d
+public "set"(arg0: (float)[], arg1: integer): $Matrix4d
+public "set"(arg0: (float)[]): $Matrix4d
+public "set"(arg0: $ByteBuffer$$Type): $Matrix4d
+public "set"(arg0: integer, arg1: $DoubleBuffer$$Type): $Matrix4d
+public "set"(arg0: integer, arg1: $FloatBuffer$$Type): $Matrix4d
+public "set"(arg0: $Quaterniondc$$Type): $Matrix4d
+public "set"(arg0: $Matrix4x3fc$$Type): $Matrix4d
+public "set"(arg0: $Matrix4x3dc$$Type): $Matrix4d
+public "set"(arg0: $Matrix4dc$$Type): $Matrix4d
 public "set"(arg0: $Matrix4fc$$Type): $Matrix4d
+public "set"(arg0: integer, arg1: integer, arg2: double): $Matrix4d
+public "set"(arg0: $Vector4d$$Type, arg1: $Vector4d$$Type, arg2: $Vector4d$$Type, arg3: $Vector4d$$Type): $Matrix4d
+public "set"(arg0: $Matrix3dc$$Type): $Matrix4d
 public "properties"(): integer
 public "zero"(): $Matrix4d
 public "pick"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: (integer)[], arg5: $Matrix4d$$Type): $Matrix4d
 public "pick"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: (integer)[]): $Matrix4d
-public "swap"(arg0: $Matrix4d$$Type): $Matrix4d
-public "rotate"(arg0: $Quaternionfc$$Type): $Matrix4d
+public "rotate"(arg0: double, arg1: $Vector3dc$$Type): $Matrix4d
+public "rotate"(arg0: $AxisAngle4d$$Type, arg1: $Matrix4d$$Type): $Matrix4d
+public "rotate"(arg0: $AxisAngle4d$$Type): $Matrix4d
+public "rotate"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4d$$Type): $Matrix4d
+public "rotate"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix4d
+public "rotate"(arg0: double, arg1: $Vector3fc$$Type, arg2: $Matrix4d$$Type): $Matrix4d
+public "rotate"(arg0: double, arg1: $Vector3fc$$Type): $Matrix4d
+public "rotate"(arg0: double, arg1: $Vector3dc$$Type, arg2: $Matrix4d$$Type): $Matrix4d
 public "rotate"(arg0: $Quaterniondc$$Type): $Matrix4d
 public "rotate"(arg0: $AxisAngle4f$$Type): $Matrix4d
-public "rotate"(arg0: $AxisAngle4d$$Type, arg1: $Matrix4d$$Type): $Matrix4d
 public "rotate"(arg0: $AxisAngle4f$$Type, arg1: $Matrix4d$$Type): $Matrix4d
-public "rotate"(arg0: $AxisAngle4d$$Type): $Matrix4d
-public "rotate"(arg0: double, arg1: $Vector3fc$$Type): $Matrix4d
-public "rotate"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix4d
-public "rotate"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4d$$Type): $Matrix4d
-public "rotate"(arg0: double, arg1: $Vector3dc$$Type, arg2: $Matrix4d$$Type): $Matrix4d
-public "rotate"(arg0: $Quaternionfc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
+public "rotate"(arg0: $Quaternionfc$$Type): $Matrix4d
 public "rotate"(arg0: $Quaterniondc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
-public "rotate"(arg0: double, arg1: $Vector3dc$$Type): $Matrix4d
-public "rotate"(arg0: double, arg1: $Vector3fc$$Type, arg2: $Matrix4d$$Type): $Matrix4d
+public "rotate"(arg0: $Quaternionfc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
+public "m11"(arg0: double): $Matrix4d
+public "m11"(): double
+public "swap"(arg0: $Matrix4d$$Type): $Matrix4d
 public "m12"(arg0: double): $Matrix4d
 public "m12"(): double
-public "m13"(): double
-public "m13"(arg0: double): $Matrix4d
-public "translation"(arg0: double, arg1: double, arg2: double): $Matrix4d
-public "translation"(arg0: $Vector3dc$$Type): $Matrix4d
 public "translation"(arg0: $Vector3fc$$Type): $Matrix4d
-public "m11"(): double
-public "m11"(arg0: double): $Matrix4d
+public "translation"(arg0: $Vector3dc$$Type): $Matrix4d
+public "translation"(arg0: double, arg1: double, arg2: double): $Matrix4d
+public "mul"(arg0: $Matrix4fc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
+public "mul"(arg0: $Matrix4f$$Type): $Matrix4d
+public "mul"(arg0: $Matrix4x3fc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
+public "mul"(arg0: $Matrix4dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
+public "mul"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double, arg9: double, arg10: double, arg11: double, arg12: double, arg13: double, arg14: double, arg15: double): $Matrix4d
+public "mul"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double, arg9: double, arg10: double, arg11: double, arg12: double, arg13: double, arg14: double, arg15: double, arg16: $Matrix4d$$Type): $Matrix4d
+public "mul"(arg0: $Matrix3x2dc$$Type): $Matrix4d
+public "mul"(arg0: $Matrix3x2fc$$Type): $Matrix4d
+public "mul"(arg0: $Matrix4dc$$Type): $Matrix4d
+public "mul"(arg0: $Matrix3x2fc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
+public "mul"(arg0: $Matrix4x3dc$$Type): $Matrix4d
+public "mul"(arg0: $Matrix4x3dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
+public "mul"(arg0: $Matrix3x2dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
+public "shadow"(arg0: $Vector4dc$$Type, arg1: double, arg2: double, arg3: double, arg4: double, arg5: $Matrix4d$$Type): $Matrix4d
+public "shadow"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double): $Matrix4d
+public "shadow"(arg0: $Vector4d$$Type, arg1: $Matrix4d$$Type): $Matrix4d
+public "shadow"(arg0: $Vector4dc$$Type, arg1: double, arg2: double, arg3: double, arg4: double): $Matrix4d
+public "shadow"(arg0: $Vector4dc$$Type, arg1: $Matrix4dc$$Type, arg2: $Matrix4d$$Type): $Matrix4d
+public "shadow"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4dc$$Type, arg5: $Matrix4d$$Type): $Matrix4d
+public "shadow"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4dc$$Type): $Matrix4d
+public "shadow"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: $Matrix4d$$Type): $Matrix4d
+public "m13"(arg0: double): $Matrix4d
+public "m13"(): double
 public "m10"(arg0: double): $Matrix4d
 public "m10"(): double
 public "getColumn"(arg0: integer, arg1: $Vector3d$$Type): $Vector3d
 public "getColumn"(arg0: integer, arg1: $Vector4d$$Type): $Vector4d
+public "translate"(arg0: $Vector3dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
+public "translate"(arg0: $Vector3dc$$Type): $Matrix4d
 public "translate"(arg0: $Vector3fc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
 public "translate"(arg0: double, arg1: double, arg2: double): $Matrix4d
 public "translate"(arg0: double, arg1: double, arg2: double, arg3: $Matrix4d$$Type): $Matrix4d
 public "translate"(arg0: $Vector3fc$$Type): $Matrix4d
-public "translate"(arg0: $Vector3dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
-public "translate"(arg0: $Vector3dc$$Type): $Matrix4d
-public "setOrtho"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix4d
-public "setOrtho"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: boolean): $Matrix4d
-public "transformPosition"(arg0: $Vector3d$$Type): $Vector3d
 public "transformPosition"(arg0: double, arg1: double, arg2: double, arg3: $Vector3d$$Type): $Vector3d
 public "transformPosition"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
-public "rotateAround"(arg0: $Quaterniondc$$Type, arg1: double, arg2: double, arg3: double, arg4: $Matrix4d$$Type): $Matrix4d
+public "transformPosition"(arg0: $Vector3d$$Type): $Vector3d
+public "setOrtho"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix4d
+public "setOrtho"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: boolean): $Matrix4d
 public "rotateAround"(arg0: $Quaterniondc$$Type, arg1: double, arg2: double, arg3: double): $Matrix4d
+public "rotateAround"(arg0: $Quaterniondc$$Type, arg1: double, arg2: double, arg3: double, arg4: $Matrix4d$$Type): $Matrix4d
 public "getRowColumn"(arg0: integer, arg1: integer): double
 public "setRowColumn"(arg0: integer, arg1: integer, arg2: double): $Matrix4d
 public "determineProperties"(): $Matrix4d
-public "mulAffine"(arg0: $Matrix4dc$$Type): $Matrix4d
 public "mulAffine"(arg0: $Matrix4dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
+public "mulAffine"(arg0: $Matrix4dc$$Type): $Matrix4d
 public "rotationX"(arg0: double): $Matrix4d
 public "rotationY"(arg0: double): $Matrix4d
 public "rotationZ"(arg0: double): $Matrix4d
-public "rotateXYZ"(arg0: double, arg1: double, arg2: double): $Matrix4d
-public "rotateXYZ"(arg0: double, arg1: double, arg2: double, arg3: $Matrix4d$$Type): $Matrix4d
 public "rotateXYZ"(arg0: $Vector3d$$Type): $Matrix4d
-public "rotateZYX"(arg0: double, arg1: double, arg2: double, arg3: $Matrix4d$$Type): $Matrix4d
+public "rotateXYZ"(arg0: double, arg1: double, arg2: double, arg3: $Matrix4d$$Type): $Matrix4d
+public "rotateXYZ"(arg0: double, arg1: double, arg2: double): $Matrix4d
 public "rotateZYX"(arg0: double, arg1: double, arg2: double): $Matrix4d
 public "rotateZYX"(arg0: $Vector3d$$Type): $Matrix4d
+public "rotateZYX"(arg0: double, arg1: double, arg2: double, arg3: $Matrix4d$$Type): $Matrix4d
 public "rotateYXZ"(arg0: double, arg1: double, arg2: double): $Matrix4d
-public "rotateYXZ"(arg0: double, arg1: double, arg2: double, arg3: $Matrix4d$$Type): $Matrix4d
 public "rotateYXZ"(arg0: $Vector3d$$Type): $Matrix4d
+public "rotateYXZ"(arg0: double, arg1: double, arg2: double, arg3: $Matrix4d$$Type): $Matrix4d
 public "getEulerAnglesXYZ"(arg0: $Vector3d$$Type): $Vector3d
 public "getEulerAnglesZYX"(arg0: $Vector3d$$Type): $Vector3d
 public "rotationXYZ"(arg0: double, arg1: double, arg2: double): $Matrix4d
 public "rotationZYX"(arg0: double, arg1: double, arg2: double): $Matrix4d
 public "rotationYXZ"(arg0: double, arg1: double, arg2: double): $Matrix4d
 public "scaling"(arg0: double): $Matrix4d
-public "scaling"(arg0: double, arg1: double, arg2: double): $Matrix4d
 public "scaling"(arg0: $Vector3dc$$Type): $Matrix4d
+public "scaling"(arg0: double, arg1: double, arg2: double): $Matrix4d
 public "setFromAddress"(arg0: long): $Matrix4d
 public "getToAddress"(arg0: long): $Matrix4dc
-public "m03"(): double
 public "m03"(arg0: double): $Matrix4d
+public "m03"(): double
 public "m23"(arg0: double): $Matrix4d
 public "m23"(): double
-public "m33"(): double
 public "m33"(arg0: double): $Matrix4d
-public "m00"(arg0: double): $Matrix4d
+public "m33"(): double
 public "m00"(): double
+public "m00"(arg0: double): $Matrix4d
 public "m20"(): double
 public "m20"(arg0: double): $Matrix4d
-public "m30"(arg0: double): $Matrix4d
 public "m30"(): double
-public "m01"(arg0: double): $Matrix4d
+public "m30"(arg0: double): $Matrix4d
 public "m01"(): double
+public "m01"(arg0: double): $Matrix4d
 public "m21"(arg0: double): $Matrix4d
 public "m21"(): double
-public "m31"(arg0: double): $Matrix4d
 public "m31"(): double
+public "m31"(arg0: double): $Matrix4d
 public "m02"(): double
 public "m02"(arg0: double): $Matrix4d
-public "m22"(): double
 public "m22"(arg0: double): $Matrix4d
-public "m32"(): double
+public "m22"(): double
 public "m32"(arg0: double): $Matrix4d
+public "m32"(): double
 public "rotateX"(arg0: double): $Matrix4d
 public "rotateX"(arg0: double, arg1: $Matrix4d$$Type): $Matrix4d
-public "rotateY"(arg0: double): $Matrix4d
 public "rotateY"(arg0: double, arg1: $Matrix4d$$Type): $Matrix4d
+public "rotateY"(arg0: double): $Matrix4d
 public "rotateZ"(arg0: double): $Matrix4d
 public "rotateZ"(arg0: double, arg1: $Matrix4d$$Type): $Matrix4d
-public "reflect"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type): $Matrix4d
-public "reflect"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4d$$Type): $Matrix4d
 public "reflect"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix4d
-public "reflect"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix4d$$Type): $Matrix4d
-public "reflect"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix4d
 public "reflect"(arg0: $Quaterniondc$$Type, arg1: $Vector3dc$$Type): $Matrix4d
 public "reflect"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Matrix4d$$Type): $Matrix4d
+public "reflect"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix4d
+public "reflect"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type): $Matrix4d
+public "reflect"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix4d$$Type): $Matrix4d
 public "reflect"(arg0: $Quaterniondc$$Type, arg1: $Vector3dc$$Type, arg2: $Matrix4d$$Type): $Matrix4d
+public "reflect"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4d$$Type): $Matrix4d
 public "lerp"(arg0: $Matrix4dc$$Type, arg1: double): $Matrix4d
 public "lerp"(arg0: $Matrix4dc$$Type, arg1: double, arg2: $Matrix4d$$Type): $Matrix4d
-public "getUnnormalizedRotation"(arg0: $Quaternionf$$Type): $Quaternionf
 public "getUnnormalizedRotation"(arg0: $Quaterniond$$Type): $Quaterniond
+public "getUnnormalizedRotation"(arg0: $Quaternionf$$Type): $Quaternionf
 public "getNormalizedRotation"(arg0: $Quaterniond$$Type): $Quaterniond
 public "getNormalizedRotation"(arg0: $Quaternionf$$Type): $Quaternionf
 public "get4x3Transposed"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
-public "get4x3Transposed"(arg0: integer, arg1: $DoubleBuffer$$Type): $DoubleBuffer
 public "get4x3Transposed"(arg0: $ByteBuffer$$Type): $ByteBuffer
+public "get4x3Transposed"(arg0: integer, arg1: $DoubleBuffer$$Type): $DoubleBuffer
 public "get4x3Transposed"(arg0: $DoubleBuffer$$Type): $DoubleBuffer
 public "rotationTowardsXY"(arg0: double, arg1: double): $Matrix4d
 public "setRotationXYZ"(arg0: double, arg1: double, arg2: double): $Matrix4d
 public "setRotationZYX"(arg0: double, arg1: double, arg2: double): $Matrix4d
 public "setRotationYXZ"(arg0: double, arg1: double, arg2: double): $Matrix4d
-public "determinant"(): double
+public "set4x3"(arg0: $Matrix4dc$$Type): $Matrix4d
+public "set4x3"(arg0: $Matrix4x3fc$$Type): $Matrix4d
+public "set4x3"(arg0: $Matrix4x3dc$$Type): $Matrix4d
+public "mul0"(arg0: $Matrix4dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
+public "mul0"(arg0: $Matrix4dc$$Type): $Matrix4d
 public "lookAlong"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type): $Matrix4d
-public "lookAlong"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix4d
-public "lookAlong"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix4d$$Type): $Matrix4d
 public "lookAlong"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Matrix4d$$Type): $Matrix4d
-public "rotateLocalX"(arg0: double): $Matrix4d
+public "lookAlong"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix4d$$Type): $Matrix4d
+public "lookAlong"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix4d
 public "rotateLocalX"(arg0: double, arg1: $Matrix4d$$Type): $Matrix4d
+public "rotateLocalX"(arg0: double): $Matrix4d
 public "rotateLocalY"(arg0: double, arg1: $Matrix4d$$Type): $Matrix4d
 public "rotateLocalY"(arg0: double): $Matrix4d
-public "rotateLocalZ"(arg0: double, arg1: $Matrix4d$$Type): $Matrix4d
 public "rotateLocalZ"(arg0: double): $Matrix4d
+public "rotateLocalZ"(arg0: double, arg1: $Matrix4d$$Type): $Matrix4d
 public "positiveX"(arg0: $Vector3d$$Type): $Vector3d
 public "normalizedPositiveX"(arg0: $Vector3d$$Type): $Vector3d
 public "positiveY"(arg0: $Vector3d$$Type): $Vector3d
 public "normalizedPositiveY"(arg0: $Vector3d$$Type): $Vector3d
 public "positiveZ"(arg0: $Vector3d$$Type): $Vector3d
 public "normalizedPositiveZ"(arg0: $Vector3d$$Type): $Vector3d
-public "cofactor3x3"(arg0: $Matrix4d$$Type): $Matrix4d
-public "cofactor3x3"(): $Matrix4d
-public "cofactor3x3"(arg0: $Matrix3d$$Type): $Matrix3d
-public "normalize3x3"(arg0: $Matrix3d$$Type): $Matrix3d
-public "normalize3x3"(): $Matrix4d
-public "normalize3x3"(arg0: $Matrix4d$$Type): $Matrix4d
-public "frustumPlane"(arg0: integer, arg1: $Vector4d$$Type): $Vector4d
-public "frustumCorner"(arg0: integer, arg1: $Vector3d$$Type): $Vector3d
-public "perspectiveOrigin"(arg0: $Vector3d$$Type): $Vector3d
-public "perspectiveInvOrigin"(arg0: $Vector3d$$Type): $Vector3d
-public "perspectiveFov"(): double
-public "perspectiveNear"(): double
-public "perspectiveFar"(): double
-public "frustumRayDir"(arg0: double, arg1: double, arg2: $Vector3d$$Type): $Vector3d
-public "originAffine"(arg0: $Vector3d$$Type): $Vector3d
-public "billboardCylindrical"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Vector3dc$$Type): $Matrix4d
-public "billboardSpherical"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Vector3dc$$Type): $Matrix4d
-public "billboardSpherical"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type): $Matrix4d
-public "isAffine"(): boolean
-public "arcball"(arg0: double, arg1: $Vector3dc$$Type, arg2: double, arg3: double, arg4: $Matrix4d$$Type): $Matrix4d
-public "arcball"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix4d
-public "arcball"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix4d$$Type): $Matrix4d
-public "arcball"(arg0: double, arg1: $Vector3dc$$Type, arg2: double, arg3: double): $Matrix4d
-public "frustumAabb"(arg0: $Vector3d$$Type, arg1: $Vector3d$$Type): $Matrix4d
-public "projectedGridRange"(arg0: $Matrix4dc$$Type, arg1: double, arg2: double, arg3: $Matrix4d$$Type): $Matrix4d
-public "perspectiveFrustumSlice"(arg0: double, arg1: double, arg2: $Matrix4d$$Type): $Matrix4d
-public "orthoCrop"(arg0: $Matrix4dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
-public "trapezoidCrop"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double): $Matrix4d
-public "transformAab"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Vector3d$$Type, arg3: $Vector3d$$Type): $Matrix4d
-public "transformAab"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Vector3d$$Type, arg7: $Vector3d$$Type): $Matrix4d
-public "rotation"(arg0: $Quaterniondc$$Type): $Matrix4d
-public "rotation"(arg0: $AxisAngle4d$$Type): $Matrix4d
-public "rotation"(arg0: $AxisAngle4f$$Type): $Matrix4d
-public "rotation"(arg0: double, arg1: $Vector3fc$$Type): $Matrix4d
-public "rotation"(arg0: double, arg1: $Vector3dc$$Type): $Matrix4d
-public "rotation"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix4d
-public "rotation"(arg0: $Quaternionfc$$Type): $Matrix4d
-public "set4x3"(arg0: $Matrix4x3dc$$Type): $Matrix4d
-public "set4x3"(arg0: $Matrix4dc$$Type): $Matrix4d
-public "set4x3"(arg0: $Matrix4x3fc$$Type): $Matrix4d
-public "translationRotateScale"(arg0: $Vector3fc$$Type, arg1: $Quaternionfc$$Type, arg2: double): $Matrix4d
-public "translationRotateScale"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double, arg9: double): $Matrix4d
-public "translationRotateScale"(arg0: $Vector3fc$$Type, arg1: $Quaternionfc$$Type, arg2: $Vector3fc$$Type): $Matrix4d
-public "translationRotateScale"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double): $Matrix4d
-public "translationRotateScale"(arg0: $Vector3dc$$Type, arg1: $Quaterniondc$$Type, arg2: $Vector3dc$$Type): $Matrix4d
-public "translationRotateScale"(arg0: $Vector3dc$$Type, arg1: $Quaterniondc$$Type, arg2: double): $Matrix4d
-public "translationRotateInvert"(arg0: $Vector3fc$$Type, arg1: $Quaternionfc$$Type): $Matrix4d
-public "translationRotateInvert"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double): $Matrix4d
-public "translationRotate"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double): $Matrix4d
-public "translationRotate"(arg0: $Vector3dc$$Type, arg1: $Quaterniondc$$Type): $Matrix4d
-public "translationRotate"(arg0: double, arg1: double, arg2: double, arg3: $Quaterniondc$$Type): $Matrix4d
-public "transformTranspose"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Vector4d$$Type): $Vector4d
-public "transformTranspose"(arg0: $Vector4d$$Type): $Vector4d
-public "transformTranspose"(arg0: $Vector4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
-public "transformProject"(arg0: $Vector3d$$Type): $Vector3d
-public "transformProject"(arg0: $Vector4dc$$Type, arg1: $Vector3d$$Type): $Vector3d
-public "transformProject"(arg0: double, arg1: double, arg2: double, arg3: $Vector3d$$Type): $Vector3d
-public "transformProject"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Vector3d$$Type): $Vector3d
-public "transformProject"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
-public "transformProject"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Vector4d$$Type): $Vector4d
-public "transformProject"(arg0: $Vector4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
-public "transformProject"(arg0: $Vector4d$$Type): $Vector4d
-public "rotateTowards"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix4d$$Type): $Matrix4d
-public "rotateTowards"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Matrix4d$$Type): $Matrix4d
-public "rotateTowards"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type): $Matrix4d
-public "rotateTowards"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix4d
-public "rotationTowards"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type): $Matrix4d
-public "rotationTowards"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix4d
-public "translationRotateTowards"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Vector3dc$$Type): $Matrix4d
-public "translationRotateTowards"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double): $Matrix4d
-public "affineSpan"(arg0: $Vector3d$$Type, arg1: $Vector3d$$Type, arg2: $Vector3d$$Type, arg3: $Vector3d$$Type): $Matrix4d
-public "testPoint"(arg0: double, arg1: double, arg2: double): boolean
-public "testSphere"(arg0: double, arg1: double, arg2: double, arg3: double): boolean
-public "testAab"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): boolean
-public "obliqueZ"(arg0: double, arg1: double, arg2: $Matrix4d$$Type): $Matrix4d
-public "obliqueZ"(arg0: double, arg1: double): $Matrix4d
-public static "perspectiveOffCenterViewFromRectangle"(arg0: $Vector3d$$Type, arg1: $Vector3d$$Type, arg2: $Vector3d$$Type, arg3: $Vector3d$$Type, arg4: double, arg5: boolean, arg6: $Matrix4d$$Type, arg7: $Matrix4d$$Type): void
-public "withLookAtUp"(arg0: $Vector3dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
-public "withLookAtUp"(arg0: double, arg1: double, arg2: double, arg3: $Matrix4d$$Type): $Matrix4d
-public "withLookAtUp"(arg0: $Vector3dc$$Type): $Matrix4d
-public "withLookAtUp"(arg0: double, arg1: double, arg2: double): $Matrix4d
-public "mapXZY"(): $Matrix4d
-public "mapXZY"(arg0: $Matrix4d$$Type): $Matrix4d
-public "mapXZnY"(): $Matrix4d
-public "mapXZnY"(arg0: $Matrix4d$$Type): $Matrix4d
-public "mapXnYnZ"(): $Matrix4d
-public "mapXnYnZ"(arg0: $Matrix4d$$Type): $Matrix4d
-public "mapXnZY"(): $Matrix4d
-public "mapXnZY"(arg0: $Matrix4d$$Type): $Matrix4d
-public "mapXnZnY"(arg0: $Matrix4d$$Type): $Matrix4d
-public "mapXnZnY"(): $Matrix4d
-public "mapYXZ"(): $Matrix4d
-public "mapYXZ"(arg0: $Matrix4d$$Type): $Matrix4d
-public "mapYXnZ"(arg0: $Matrix4d$$Type): $Matrix4d
-public "mapYXnZ"(): $Matrix4d
-public "mapYZX"(): $Matrix4d
-public "mapYZX"(arg0: $Matrix4d$$Type): $Matrix4d
-public "mapYZnX"(arg0: $Matrix4d$$Type): $Matrix4d
-public "mapYZnX"(): $Matrix4d
-public "mapYnXZ"(): $Matrix4d
-public "mapYnXZ"(arg0: $Matrix4d$$Type): $Matrix4d
-public "mapYnXnZ"(arg0: $Matrix4d$$Type): $Matrix4d
-public "mapYnXnZ"(): $Matrix4d
-public "mapYnZX"(): $Matrix4d
-public "mapYnZX"(arg0: $Matrix4d$$Type): $Matrix4d
-public "mapYnZnX"(): $Matrix4d
-public "mapYnZnX"(arg0: $Matrix4d$$Type): $Matrix4d
-public "mapZXY"(): $Matrix4d
-public "mapZXY"(arg0: $Matrix4d$$Type): $Matrix4d
-public "mapZXnY"(arg0: $Matrix4d$$Type): $Matrix4d
-public "mapZXnY"(): $Matrix4d
-public "mapZYX"(): $Matrix4d
-public "mapZYX"(arg0: $Matrix4d$$Type): $Matrix4d
-public "mapZYnX"(): $Matrix4d
-public "mapZYnX"(arg0: $Matrix4d$$Type): $Matrix4d
-public "mapZnXY"(arg0: $Matrix4d$$Type): $Matrix4d
-public "mapZnXY"(): $Matrix4d
-public "mapZnXnY"(): $Matrix4d
-public "mapZnXnY"(arg0: $Matrix4d$$Type): $Matrix4d
-public "mapZnYX"(): $Matrix4d
-public "mapZnYX"(arg0: $Matrix4d$$Type): $Matrix4d
-public "mapZnYnX"(arg0: $Matrix4d$$Type): $Matrix4d
-public "mapZnYnX"(): $Matrix4d
-public "mapnXYnZ"(arg0: $Matrix4d$$Type): $Matrix4d
-public "mapnXYnZ"(): $Matrix4d
-public "mapnXZY"(arg0: $Matrix4d$$Type): $Matrix4d
-public "mapnXZY"(): $Matrix4d
-public "mapnXZnY"(): $Matrix4d
-public "mapnXZnY"(arg0: $Matrix4d$$Type): $Matrix4d
-public "mapnXnYZ"(): $Matrix4d
-public "mapnXnYZ"(arg0: $Matrix4d$$Type): $Matrix4d
-public "mapnXnYnZ"(arg0: $Matrix4d$$Type): $Matrix4d
-public "mapnXnYnZ"(): $Matrix4d
-public "mapnXnZY"(): $Matrix4d
-public "mapnXnZY"(arg0: $Matrix4d$$Type): $Matrix4d
-public "mapnXnZnY"(): $Matrix4d
-public "mapnXnZnY"(arg0: $Matrix4d$$Type): $Matrix4d
-public "mapnYXZ"(arg0: $Matrix4d$$Type): $Matrix4d
-public "mapnYXZ"(): $Matrix4d
-public "mapnYXnZ"(): $Matrix4d
-public "mapnYXnZ"(arg0: $Matrix4d$$Type): $Matrix4d
-public "mapnYZX"(): $Matrix4d
-public "mapnYZX"(arg0: $Matrix4d$$Type): $Matrix4d
-public "mapnYZnX"(arg0: $Matrix4d$$Type): $Matrix4d
-public "mapnYZnX"(): $Matrix4d
-public "mapnYnXZ"(arg0: $Matrix4d$$Type): $Matrix4d
-public "mapnYnXZ"(): $Matrix4d
-public "mapnYnXnZ"(): $Matrix4d
-public "mapnYnXnZ"(arg0: $Matrix4d$$Type): $Matrix4d
-public "mapnYnZX"(arg0: $Matrix4d$$Type): $Matrix4d
-public "mapnYnZX"(): $Matrix4d
-public "mapnYnZnX"(): $Matrix4d
-public "mapnYnZnX"(arg0: $Matrix4d$$Type): $Matrix4d
-public "mapnZXY"(): $Matrix4d
-public "mapnZXY"(arg0: $Matrix4d$$Type): $Matrix4d
-public "mapnZXnY"(arg0: $Matrix4d$$Type): $Matrix4d
-public "mapnZXnY"(): $Matrix4d
-public "mapnZYX"(): $Matrix4d
-public "mapnZYX"(arg0: $Matrix4d$$Type): $Matrix4d
-public "mapnZYnX"(arg0: $Matrix4d$$Type): $Matrix4d
-public "mapnZYnX"(): $Matrix4d
-public "mapnZnXY"(): $Matrix4d
-public "mapnZnXY"(arg0: $Matrix4d$$Type): $Matrix4d
-public "mapnZnXnY"(arg0: $Matrix4d$$Type): $Matrix4d
-public "mapnZnXnY"(): $Matrix4d
-public "mapnZnYX"(): $Matrix4d
-public "mapnZnYX"(arg0: $Matrix4d$$Type): $Matrix4d
-public "mapnZnYnX"(arg0: $Matrix4d$$Type): $Matrix4d
-public "mapnZnYnX"(): $Matrix4d
-public "negateX"(arg0: $Matrix4d$$Type): $Matrix4d
-public "negateX"(): $Matrix4d
-public "negateY"(): $Matrix4d
-public "negateY"(arg0: $Matrix4d$$Type): $Matrix4d
-public "negateZ"(arg0: $Matrix4d$$Type): $Matrix4d
-public "negateZ"(): $Matrix4d
-public "translationRotateScaleMulAffine"(arg0: $Vector3fc$$Type, arg1: $Quaterniondc$$Type, arg2: $Vector3fc$$Type, arg3: $Matrix4d$$Type): $Matrix4d
-public "translationRotateScaleMulAffine"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double, arg9: double, arg10: $Matrix4d$$Type): $Matrix4d
-public "setOrthoSymmetric"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: boolean): $Matrix4d
-public "setOrthoSymmetric"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix4d
-public "orthoSymmetricLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4d$$Type): $Matrix4d
-public "orthoSymmetricLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: boolean, arg5: $Matrix4d$$Type): $Matrix4d
-public "orthoSymmetricLH"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix4d
-public "orthoSymmetricLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: boolean): $Matrix4d
-public "setOrthoSymmetricLH"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix4d
-public "setOrthoSymmetricLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: boolean): $Matrix4d
-public "setOrtho2D"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix4d
-public "ortho2DLH"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix4d
-public "ortho2DLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4d$$Type): $Matrix4d
 public "setOrtho2DLH"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix4d
-public "setLookAlong"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type): $Matrix4d
 public "setLookAlong"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix4d
+public "setLookAlong"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type): $Matrix4d
 public "setLookAt"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Vector3dc$$Type): $Matrix4d
 public "setLookAt"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double): $Matrix4d
-public "lookAt"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double): $Matrix4d
 public "lookAt"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double, arg9: $Matrix4d$$Type): $Matrix4d
+public "lookAt"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double): $Matrix4d
 public "lookAt"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Vector3dc$$Type, arg3: $Matrix4d$$Type): $Matrix4d
 public "lookAt"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Vector3dc$$Type): $Matrix4d
 public "lookAtPerspective"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double, arg9: $Matrix4d$$Type): $Matrix4d
@@ -2215,225 +2031,409 @@ public "lookAtLH"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Vector3
 public "lookAtPerspectiveLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double, arg9: $Matrix4d$$Type): $Matrix4d
 public "tile"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: $Matrix4d$$Type): $Matrix4d
 public "tile"(arg0: integer, arg1: integer, arg2: integer, arg3: integer): $Matrix4d
-public "perspective"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix4d
-public "perspective"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: boolean): $Matrix4d
 public "perspective"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4d$$Type): $Matrix4d
+public "perspective"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: boolean): $Matrix4d
+public "perspective"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix4d
 public "perspective"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: boolean, arg5: $Matrix4d$$Type): $Matrix4d
 public "setPerspective"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: boolean): $Matrix4d
 public "setPerspective"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix4d
-public "perspectiveRect"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: boolean, arg5: $Matrix4d$$Type): $Matrix4d
 public "perspectiveRect"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix4d
-public "perspectiveRect"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: boolean): $Matrix4d
+public "perspectiveRect"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: boolean, arg5: $Matrix4d$$Type): $Matrix4d
 public "perspectiveRect"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4d$$Type): $Matrix4d
+public "perspectiveRect"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: boolean): $Matrix4d
 public "setPerspectiveRect"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: boolean): $Matrix4d
 public "setPerspectiveRect"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix4d
 public "perspectiveOffCenter"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: boolean, arg7: $Matrix4d$$Type): $Matrix4d
 public "perspectiveOffCenter"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix4d
-public "perspectiveOffCenter"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix4d$$Type): $Matrix4d
 public "perspectiveOffCenter"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: boolean): $Matrix4d
+public "perspectiveOffCenter"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix4d$$Type): $Matrix4d
 public "setPerspectiveOffCenter"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: boolean): $Matrix4d
 public "setPerspectiveOffCenter"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix4d
-public "perspectiveOffCenterFov"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: boolean): $Matrix4d
-public "perspectiveOffCenterFov"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: boolean, arg7: $Matrix4d$$Type): $Matrix4d
-public "perspectiveOffCenterFov"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix4d
 public "perspectiveOffCenterFov"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix4d$$Type): $Matrix4d
-public "mulLocalAffine"(arg0: $Matrix4dc$$Type): $Matrix4d
-public "mulLocalAffine"(arg0: $Matrix4dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
-public "assume"(arg0: integer): $Matrix4d
-public "translationRotateScaleInvert"(arg0: $Vector3dc$$Type, arg1: $Quaterniondc$$Type, arg2: $Vector3dc$$Type): $Matrix4d
-public "translationRotateScaleInvert"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double, arg9: double): $Matrix4d
-public "translationRotateScaleInvert"(arg0: $Vector3fc$$Type, arg1: $Quaternionfc$$Type, arg2: double): $Matrix4d
-public "translationRotateScaleInvert"(arg0: $Vector3fc$$Type, arg1: $Quaternionfc$$Type, arg2: $Vector3fc$$Type): $Matrix4d
-public "translationRotateScaleInvert"(arg0: $Vector3dc$$Type, arg1: $Quaterniondc$$Type, arg2: double): $Matrix4d
-public "frustum"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix4d
+public "perspectiveOffCenterFov"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix4d
+public "perspectiveOffCenterFov"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: boolean, arg7: $Matrix4d$$Type): $Matrix4d
+public "perspectiveOffCenterFov"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: boolean): $Matrix4d
 public "frustum"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix4d$$Type): $Matrix4d
 public "frustum"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: boolean): $Matrix4d
+public "frustum"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix4d
 public "frustum"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: boolean, arg7: $Matrix4d$$Type): $Matrix4d
 public "perspectiveOffCenterFovLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix4d$$Type): $Matrix4d
 public "perspectiveOffCenterFovLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix4d
-public "perspectiveOffCenterFovLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: boolean): $Matrix4d
 public "perspectiveOffCenterFovLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: boolean, arg7: $Matrix4d$$Type): $Matrix4d
+public "perspectiveOffCenterFovLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: boolean): $Matrix4d
+public "frustumLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: boolean, arg7: $Matrix4d$$Type): $Matrix4d
+public "frustumLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: boolean): $Matrix4d
 public "frustumLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix4d
 public "frustumLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix4d$$Type): $Matrix4d
-public "frustumLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: boolean): $Matrix4d
-public "frustumLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: boolean, arg7: $Matrix4d$$Type): $Matrix4d
-public "setPerspectiveOffCenterFov"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix4d
 public "setPerspectiveOffCenterFov"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: boolean): $Matrix4d
+public "setPerspectiveOffCenterFov"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix4d
 public "setFrustum"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix4d
 public "setFrustum"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: boolean): $Matrix4d
 public "setPerspectiveOffCenterFovLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix4d
 public "setPerspectiveOffCenterFovLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: boolean): $Matrix4d
-public "setFrustumLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: boolean): $Matrix4d
 public "setFrustumLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix4d
+public "setFrustumLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: boolean): $Matrix4d
+public "perspectiveLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4d$$Type): $Matrix4d
 public "perspectiveLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: boolean, arg5: $Matrix4d$$Type): $Matrix4d
 public "perspectiveLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: boolean): $Matrix4d
-public "perspectiveLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4d$$Type): $Matrix4d
 public "perspectiveLH"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix4d
-public "setPerspectiveLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: boolean): $Matrix4d
 public "setPerspectiveLH"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix4d
+public "setPerspectiveLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: boolean): $Matrix4d
 public "setFromIntrinsic"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: integer, arg6: integer, arg7: double, arg8: double): $Matrix4d
 public "rotateAroundAffine"(arg0: $Quaterniondc$$Type, arg1: double, arg2: double, arg3: double, arg4: $Matrix4d$$Type): $Matrix4d
 public "rotationAround"(arg0: $Quaterniondc$$Type, arg1: double, arg2: double, arg3: double): $Matrix4d
-public "rotateAroundLocal"(arg0: $Quaterniondc$$Type, arg1: double, arg2: double, arg3: double, arg4: $Matrix4d$$Type): $Matrix4d
 public "rotateAroundLocal"(arg0: $Quaterniondc$$Type, arg1: double, arg2: double, arg3: double): $Matrix4d
-public "unproject"(arg0: double, arg1: double, arg2: double, arg3: (integer)[], arg4: $Vector3d$$Type): $Vector3d
-public "unproject"(arg0: $Vector3dc$$Type, arg1: (integer)[], arg2: $Vector4d$$Type): $Vector4d
-public "unproject"(arg0: $Vector3dc$$Type, arg1: (integer)[], arg2: $Vector3d$$Type): $Vector3d
+public "rotateAroundLocal"(arg0: $Quaterniondc$$Type, arg1: double, arg2: double, arg3: double, arg4: $Matrix4d$$Type): $Matrix4d
 public "unproject"(arg0: double, arg1: double, arg2: double, arg3: (integer)[], arg4: $Vector4d$$Type): $Vector4d
-public "unprojectRay"(arg0: $Vector2dc$$Type, arg1: (integer)[], arg2: $Vector3d$$Type, arg3: $Vector3d$$Type): $Matrix4d
+public "unproject"(arg0: double, arg1: double, arg2: double, arg3: (integer)[], arg4: $Vector3d$$Type): $Vector3d
+public "unproject"(arg0: $Vector3dc$$Type, arg1: (integer)[], arg2: $Vector3d$$Type): $Vector3d
+public "unproject"(arg0: $Vector3dc$$Type, arg1: (integer)[], arg2: $Vector4d$$Type): $Vector4d
 public "unprojectRay"(arg0: double, arg1: double, arg2: (integer)[], arg3: $Vector3d$$Type, arg4: $Vector3d$$Type): $Matrix4d
+public "unprojectRay"(arg0: $Vector2dc$$Type, arg1: (integer)[], arg2: $Vector3d$$Type, arg3: $Vector3d$$Type): $Matrix4d
+public "unprojectInv"(arg0: $Vector3dc$$Type, arg1: (integer)[], arg2: $Vector3d$$Type): $Vector3d
 public "unprojectInv"(arg0: double, arg1: double, arg2: double, arg3: (integer)[], arg4: $Vector4d$$Type): $Vector4d
 public "unprojectInv"(arg0: $Vector3dc$$Type, arg1: (integer)[], arg2: $Vector4d$$Type): $Vector4d
 public "unprojectInv"(arg0: double, arg1: double, arg2: double, arg3: (integer)[], arg4: $Vector3d$$Type): $Vector3d
-public "unprojectInv"(arg0: $Vector3dc$$Type, arg1: (integer)[], arg2: $Vector3d$$Type): $Vector3d
-public "unprojectInvRay"(arg0: $Vector2dc$$Type, arg1: (integer)[], arg2: $Vector3d$$Type, arg3: $Vector3d$$Type): $Matrix4d
 public "unprojectInvRay"(arg0: double, arg1: double, arg2: (integer)[], arg3: $Vector3d$$Type, arg4: $Vector3d$$Type): $Matrix4d
-public "project"(arg0: $Vector3dc$$Type, arg1: (integer)[], arg2: $Vector4d$$Type): $Vector4d
+public "unprojectInvRay"(arg0: $Vector2dc$$Type, arg1: (integer)[], arg2: $Vector3d$$Type, arg3: $Vector3d$$Type): $Matrix4d
 public "project"(arg0: $Vector3dc$$Type, arg1: (integer)[], arg2: $Vector3d$$Type): $Vector3d
-public "project"(arg0: double, arg1: double, arg2: double, arg3: (integer)[], arg4: $Vector3d$$Type): $Vector3d
+public "project"(arg0: $Vector3dc$$Type, arg1: (integer)[], arg2: $Vector4d$$Type): $Vector4d
 public "project"(arg0: double, arg1: double, arg2: double, arg3: (integer)[], arg4: $Vector4d$$Type): $Vector4d
-public "reflection"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix4d
-public "reflection"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type): $Matrix4d
-public "reflection"(arg0: $Quaterniondc$$Type, arg1: $Vector3dc$$Type): $Matrix4d
-public "reflection"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix4d
-public "getRow"(arg0: integer, arg1: $Vector3d$$Type): $Vector3d
-public "getRow"(arg0: integer, arg1: $Vector4d$$Type): $Vector4d
-public "setRow"(arg0: integer, arg1: $Vector4dc$$Type): $Matrix4d
-public "setColumn"(arg0: integer, arg1: $Vector4dc$$Type): $Matrix4d
-public "transformDirection"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
-public "transformDirection"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
-public "transformDirection"(arg0: $Vector3d$$Type): $Vector3d
-public "transformDirection"(arg0: $Vector3f$$Type): $Vector3f
-public "transformDirection"(arg0: double, arg1: double, arg2: double, arg3: $Vector3d$$Type): $Vector3d
-public "transformDirection"(arg0: double, arg1: double, arg2: double, arg3: $Vector3f$$Type): $Vector3f
-public "transformAffine"(arg0: $Vector4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
-public "transformAffine"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Vector4d$$Type): $Vector4d
-public "transformAffine"(arg0: $Vector4d$$Type): $Vector4d
-public "scaleXY"(arg0: double, arg1: double): $Matrix4d
-public "scaleXY"(arg0: double, arg1: double, arg2: $Matrix4d$$Type): $Matrix4d
-public "scaleAround"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4d$$Type): $Matrix4d
-public "scaleAround"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix4d$$Type): $Matrix4d
-public "scaleAround"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix4d
-public "scaleAround"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix4d
-public "scaleLocal"(arg0: double): $Matrix4d
-public "scaleLocal"(arg0: double, arg1: double, arg2: double, arg3: $Matrix4d$$Type): $Matrix4d
-public "scaleLocal"(arg0: double, arg1: $Matrix4d$$Type): $Matrix4d
-public "scaleLocal"(arg0: double, arg1: double, arg2: double): $Matrix4d
-public "scaleAroundLocal"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4d$$Type): $Matrix4d
-public "scaleAroundLocal"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix4d$$Type): $Matrix4d
-public "scaleAroundLocal"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix4d
-public "scaleAroundLocal"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix4d
-public "rotateTowardsXY"(arg0: double, arg1: double): $Matrix4d
-public "rotateTowardsXY"(arg0: double, arg1: double, arg2: $Matrix4d$$Type): $Matrix4d
-public "rotateAffineXYZ"(arg0: double, arg1: double, arg2: double, arg3: $Matrix4d$$Type): $Matrix4d
-public "rotateAffineXYZ"(arg0: double, arg1: double, arg2: double): $Matrix4d
-public "determinantAffine"(): double
-public "determinant3x3"(): double
-public "invertAffine"(): $Matrix4d
-public "invertAffine"(arg0: $Matrix4d$$Type): $Matrix4d
-public "invertPerspective"(): $Matrix4d
-public "invertPerspective"(arg0: $Matrix4d$$Type): $Matrix4d
-public "invertFrustum"(arg0: $Matrix4d$$Type): $Matrix4d
-public "invertFrustum"(): $Matrix4d
-public "transpose3x3"(): $Matrix4d
-public "transpose3x3"(arg0: $Matrix4d$$Type): $Matrix4d
-public "transpose3x3"(arg0: $Matrix3d$$Type): $Matrix3d
-public "setTranslation"(arg0: $Vector3dc$$Type): $Matrix4d
-public "setTranslation"(arg0: double, arg1: double, arg2: double): $Matrix4d
-public "getTranslation"(arg0: $Vector3d$$Type): $Vector3d
-public "getScale"(arg0: $Vector3d$$Type): $Vector3d
-public "get4x3"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
-public "get3x3"(arg0: $Matrix3d$$Type): $Matrix3d
-public "mulTranslationAffine"(arg0: $Matrix4dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
-public "mulAffineR"(arg0: $Matrix4dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
-public "mulAffineR"(arg0: $Matrix4dc$$Type): $Matrix4d
-public "invertOrtho"(arg0: $Matrix4d$$Type): $Matrix4d
-public "invertOrtho"(): $Matrix4d
-public "invertPerspectiveView"(arg0: $Matrix4dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
-public "invertPerspectiveView"(arg0: $Matrix4x3dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
-public "mulOrthoAffine"(arg0: $Matrix4dc$$Type): $Matrix4d
-public "mulOrthoAffine"(arg0: $Matrix4dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
-public "fma4x3"(arg0: $Matrix4dc$$Type, arg1: double, arg2: $Matrix4d$$Type): $Matrix4d
-public "fma4x3"(arg0: $Matrix4dc$$Type, arg1: double): $Matrix4d
-public "mulComponentWise"(arg0: $Matrix4dc$$Type): $Matrix4d
-public "mulComponentWise"(arg0: $Matrix4dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
-public "add4x3"(arg0: $Matrix4fc$$Type): $Matrix4d
-public "add4x3"(arg0: $Matrix4dc$$Type): $Matrix4d
-public "add4x3"(arg0: $Matrix4fc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
-public "add4x3"(arg0: $Matrix4dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
-public "sub4x3"(arg0: $Matrix4dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
-public "sub4x3"(arg0: $Matrix4dc$$Type): $Matrix4d
+public "project"(arg0: double, arg1: double, arg2: double, arg3: (integer)[], arg4: $Vector3d$$Type): $Vector3d
+public "rotation"(arg0: $Quaterniondc$$Type): $Matrix4d
+public "rotation"(arg0: $AxisAngle4d$$Type): $Matrix4d
+public "rotation"(arg0: $Quaternionfc$$Type): $Matrix4d
+public "rotation"(arg0: $AxisAngle4f$$Type): $Matrix4d
+public "rotation"(arg0: double, arg1: $Vector3dc$$Type): $Matrix4d
+public "rotation"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix4d
+public "rotation"(arg0: double, arg1: $Vector3fc$$Type): $Matrix4d
 public "set3x3"(arg0: $Matrix3dc$$Type): $Matrix4d
 public "set3x3"(arg0: $Matrix4dc$$Type): $Matrix4d
-public "rotateAffineZYX"(arg0: double, arg1: double, arg2: double, arg3: $Matrix4d$$Type): $Matrix4d
+public "translationRotateScaleMulAffine"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double, arg9: double, arg10: $Matrix4d$$Type): $Matrix4d
+public "translationRotateScaleMulAffine"(arg0: $Vector3fc$$Type, arg1: $Quaterniondc$$Type, arg2: $Vector3fc$$Type, arg3: $Matrix4d$$Type): $Matrix4d
+public "getScale"(arg0: $Vector3d$$Type): $Vector3d
+public "translationRotateScale"(arg0: $Vector3fc$$Type, arg1: $Quaternionfc$$Type, arg2: $Vector3fc$$Type): $Matrix4d
+public "translationRotateScale"(arg0: $Vector3dc$$Type, arg1: $Quaterniondc$$Type, arg2: $Vector3dc$$Type): $Matrix4d
+public "translationRotateScale"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double): $Matrix4d
+public "translationRotateScale"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double, arg9: double): $Matrix4d
+public "translationRotateScale"(arg0: $Vector3dc$$Type, arg1: $Quaterniondc$$Type, arg2: double): $Matrix4d
+public "translationRotateScale"(arg0: $Vector3fc$$Type, arg1: $Quaternionfc$$Type, arg2: double): $Matrix4d
+public "translationRotateInvert"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double): $Matrix4d
+public "translationRotateInvert"(arg0: $Vector3fc$$Type, arg1: $Quaternionfc$$Type): $Matrix4d
+public "translationRotate"(arg0: $Vector3dc$$Type, arg1: $Quaterniondc$$Type): $Matrix4d
+public "translationRotate"(arg0: double, arg1: double, arg2: double, arg3: $Quaterniondc$$Type): $Matrix4d
+public "translationRotate"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double): $Matrix4d
+public "transformTranspose"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Vector4d$$Type): $Vector4d
+public "transformTranspose"(arg0: $Vector4d$$Type): $Vector4d
+public "transformTranspose"(arg0: $Vector4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
+public "transformProject"(arg0: double, arg1: double, arg2: double, arg3: $Vector3d$$Type): $Vector3d
+public "transformProject"(arg0: $Vector4d$$Type): $Vector4d
+public "transformProject"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
+public "transformProject"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Vector4d$$Type): $Vector4d
+public "transformProject"(arg0: $Vector4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
+public "transformProject"(arg0: $Vector4dc$$Type, arg1: $Vector3d$$Type): $Vector3d
+public "transformProject"(arg0: $Vector3d$$Type): $Vector3d
+public "transformProject"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Vector3d$$Type): $Vector3d
+public "transformDirection"(arg0: $Vector3f$$Type): $Vector3f
+public "transformDirection"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
+public "transformDirection"(arg0: double, arg1: double, arg2: double, arg3: $Vector3f$$Type): $Vector3f
+public "transformDirection"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
+public "transformDirection"(arg0: $Vector3d$$Type): $Vector3d
+public "transformDirection"(arg0: double, arg1: double, arg2: double, arg3: $Vector3d$$Type): $Vector3d
+public "transformAffine"(arg0: $Vector4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
+public "transformAffine"(arg0: $Vector4d$$Type): $Vector4d
+public "transformAffine"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Vector4d$$Type): $Vector4d
+public "determinantAffine"(): double
+public "determinant3x3"(): double
+public "rotationTowards"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type): $Matrix4d
+public "rotationTowards"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix4d
+public "translationRotateTowards"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Vector3dc$$Type): $Matrix4d
+public "translationRotateTowards"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double): $Matrix4d
+public "affineSpan"(arg0: $Vector3d$$Type, arg1: $Vector3d$$Type, arg2: $Vector3d$$Type, arg3: $Vector3d$$Type): $Matrix4d
+public "testPoint"(arg0: double, arg1: double, arg2: double): boolean
+public "testSphere"(arg0: double, arg1: double, arg2: double, arg3: double): boolean
+public "testAab"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): boolean
+public "obliqueZ"(arg0: double, arg1: double): $Matrix4d
+public "obliqueZ"(arg0: double, arg1: double, arg2: $Matrix4d$$Type): $Matrix4d
+public static "perspectiveOffCenterViewFromRectangle"(arg0: $Vector3d$$Type, arg1: $Vector3d$$Type, arg2: $Vector3d$$Type, arg3: $Vector3d$$Type, arg4: double, arg5: boolean, arg6: $Matrix4d$$Type, arg7: $Matrix4d$$Type): void
+public "withLookAtUp"(arg0: double, arg1: double, arg2: double): $Matrix4d
+public "withLookAtUp"(arg0: double, arg1: double, arg2: double, arg3: $Matrix4d$$Type): $Matrix4d
+public "withLookAtUp"(arg0: $Vector3dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
+public "withLookAtUp"(arg0: $Vector3dc$$Type): $Matrix4d
+public "mapXZY"(): $Matrix4d
+public "mapXZY"(arg0: $Matrix4d$$Type): $Matrix4d
+public "mapXZnY"(): $Matrix4d
+public "mapXZnY"(arg0: $Matrix4d$$Type): $Matrix4d
+public "mapXnYnZ"(): $Matrix4d
+public "mapXnYnZ"(arg0: $Matrix4d$$Type): $Matrix4d
+public "mapXnZY"(arg0: $Matrix4d$$Type): $Matrix4d
+public "mapXnZY"(): $Matrix4d
+public "mapXnZnY"(): $Matrix4d
+public "mapXnZnY"(arg0: $Matrix4d$$Type): $Matrix4d
+public "mapYXZ"(arg0: $Matrix4d$$Type): $Matrix4d
+public "mapYXZ"(): $Matrix4d
+public "mapYXnZ"(arg0: $Matrix4d$$Type): $Matrix4d
+public "mapYXnZ"(): $Matrix4d
+public "mapYZX"(arg0: $Matrix4d$$Type): $Matrix4d
+public "mapYZX"(): $Matrix4d
+public "mapYZnX"(): $Matrix4d
+public "mapYZnX"(arg0: $Matrix4d$$Type): $Matrix4d
+public "mapYnXZ"(): $Matrix4d
+public "mapYnXZ"(arg0: $Matrix4d$$Type): $Matrix4d
+public "mapYnXnZ"(arg0: $Matrix4d$$Type): $Matrix4d
+public "mapYnXnZ"(): $Matrix4d
+public "mapYnZX"(): $Matrix4d
+public "mapYnZX"(arg0: $Matrix4d$$Type): $Matrix4d
+public "mapYnZnX"(arg0: $Matrix4d$$Type): $Matrix4d
+public "mapYnZnX"(): $Matrix4d
+public "mapZXY"(): $Matrix4d
+public "mapZXY"(arg0: $Matrix4d$$Type): $Matrix4d
+public "mapZXnY"(): $Matrix4d
+public "mapZXnY"(arg0: $Matrix4d$$Type): $Matrix4d
+public "mapZYX"(arg0: $Matrix4d$$Type): $Matrix4d
+public "mapZYX"(): $Matrix4d
+public "mapZYnX"(arg0: $Matrix4d$$Type): $Matrix4d
+public "mapZYnX"(): $Matrix4d
+public "mapZnXY"(arg0: $Matrix4d$$Type): $Matrix4d
+public "mapZnXY"(): $Matrix4d
+public "mapZnXnY"(arg0: $Matrix4d$$Type): $Matrix4d
+public "mapZnXnY"(): $Matrix4d
+public "mapZnYX"(arg0: $Matrix4d$$Type): $Matrix4d
+public "mapZnYX"(): $Matrix4d
+public "mapZnYnX"(arg0: $Matrix4d$$Type): $Matrix4d
+public "mapZnYnX"(): $Matrix4d
+public "mapnXYnZ"(): $Matrix4d
+public "mapnXYnZ"(arg0: $Matrix4d$$Type): $Matrix4d
+public "mapnXZY"(arg0: $Matrix4d$$Type): $Matrix4d
+public "mapnXZY"(): $Matrix4d
+public "mapnXZnY"(arg0: $Matrix4d$$Type): $Matrix4d
+public "mapnXZnY"(): $Matrix4d
+public "mapnXnYZ"(arg0: $Matrix4d$$Type): $Matrix4d
+public "mapnXnYZ"(): $Matrix4d
+public "mapnXnYnZ"(): $Matrix4d
+public "mapnXnYnZ"(arg0: $Matrix4d$$Type): $Matrix4d
+public "mapnXnZY"(): $Matrix4d
+public "mapnXnZY"(arg0: $Matrix4d$$Type): $Matrix4d
+public "mapnXnZnY"(): $Matrix4d
+public "mapnXnZnY"(arg0: $Matrix4d$$Type): $Matrix4d
+public "mapnYXZ"(arg0: $Matrix4d$$Type): $Matrix4d
+public "mapnYXZ"(): $Matrix4d
+public "mapnYXnZ"(arg0: $Matrix4d$$Type): $Matrix4d
+public "mapnYXnZ"(): $Matrix4d
+public "mapnYZX"(): $Matrix4d
+public "mapnYZX"(arg0: $Matrix4d$$Type): $Matrix4d
+public "mapnYZnX"(arg0: $Matrix4d$$Type): $Matrix4d
+public "mapnYZnX"(): $Matrix4d
+public "mapnYnXZ"(arg0: $Matrix4d$$Type): $Matrix4d
+public "mapnYnXZ"(): $Matrix4d
+public "mapnYnXnZ"(arg0: $Matrix4d$$Type): $Matrix4d
+public "mapnYnXnZ"(): $Matrix4d
+public "mapnYnZX"(): $Matrix4d
+public "mapnYnZX"(arg0: $Matrix4d$$Type): $Matrix4d
+public "mapnYnZnX"(arg0: $Matrix4d$$Type): $Matrix4d
+public "mapnYnZnX"(): $Matrix4d
+public "mapnZXY"(arg0: $Matrix4d$$Type): $Matrix4d
+public "mapnZXY"(): $Matrix4d
+public "mapnZXnY"(): $Matrix4d
+public "mapnZXnY"(arg0: $Matrix4d$$Type): $Matrix4d
+public "mapnZYX"(arg0: $Matrix4d$$Type): $Matrix4d
+public "mapnZYX"(): $Matrix4d
+public "mapnZYnX"(): $Matrix4d
+public "mapnZYnX"(arg0: $Matrix4d$$Type): $Matrix4d
+public "mapnZnXY"(): $Matrix4d
+public "mapnZnXY"(arg0: $Matrix4d$$Type): $Matrix4d
+public "mapnZnXnY"(): $Matrix4d
+public "mapnZnXnY"(arg0: $Matrix4d$$Type): $Matrix4d
+public "mapnZnYX"(): $Matrix4d
+public "mapnZnYX"(arg0: $Matrix4d$$Type): $Matrix4d
+public "mapnZnYnX"(): $Matrix4d
+public "mapnZnYnX"(arg0: $Matrix4d$$Type): $Matrix4d
+public "negateX"(): $Matrix4d
+public "negateX"(arg0: $Matrix4d$$Type): $Matrix4d
+public "negateY"(): $Matrix4d
+public "negateY"(arg0: $Matrix4d$$Type): $Matrix4d
+public "negateZ"(arg0: $Matrix4d$$Type): $Matrix4d
+public "negateZ"(): $Matrix4d
+public "mulOrthoAffine"(arg0: $Matrix4dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
+public "mulOrthoAffine"(arg0: $Matrix4dc$$Type): $Matrix4d
+public "mulComponentWise"(arg0: $Matrix4dc$$Type): $Matrix4d
+public "mulComponentWise"(arg0: $Matrix4dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
+public "add4x3"(arg0: $Matrix4dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
+public "add4x3"(arg0: $Matrix4dc$$Type): $Matrix4d
+public "add4x3"(arg0: $Matrix4fc$$Type): $Matrix4d
+public "add4x3"(arg0: $Matrix4fc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
+public "sub4x3"(arg0: $Matrix4dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
+public "sub4x3"(arg0: $Matrix4dc$$Type): $Matrix4d
+public "mul4x3ComponentWise"(arg0: $Matrix4dc$$Type): $Matrix4d
+public "mul4x3ComponentWise"(arg0: $Matrix4dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
+public "mul3x3"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double, arg9: $Matrix4d$$Type): $Matrix4d
+public "mul3x3"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double): $Matrix4d
+public "mulLocal"(arg0: $Matrix4dc$$Type): $Matrix4d
+public "mulLocal"(arg0: $Matrix4dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
+public "mulTranslationAffine"(arg0: $Matrix4dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
+public "setTransposed"(arg0: $Matrix4dc$$Type): $Matrix4d
+public "mulLocalAffine"(arg0: $Matrix4dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
+public "mulLocalAffine"(arg0: $Matrix4dc$$Type): $Matrix4d
+public "mulPerspectiveAffine"(arg0: $Matrix4dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
+public "mulPerspectiveAffine"(arg0: $Matrix4dc$$Type): $Matrix4d
+public "mulPerspectiveAffine"(arg0: $Matrix4x3dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
+public "mulAffineR"(arg0: $Matrix4dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
+public "mulAffineR"(arg0: $Matrix4dc$$Type): $Matrix4d
+public "scaleXY"(arg0: double, arg1: double, arg2: $Matrix4d$$Type): $Matrix4d
+public "scaleXY"(arg0: double, arg1: double): $Matrix4d
+public "scaleAround"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix4d
+public "scaleAround"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix4d
+public "scaleAround"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix4d$$Type): $Matrix4d
+public "scaleAround"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4d$$Type): $Matrix4d
+public "scaleLocal"(arg0: double, arg1: $Matrix4d$$Type): $Matrix4d
+public "scaleLocal"(arg0: double, arg1: double, arg2: double, arg3: $Matrix4d$$Type): $Matrix4d
+public "scaleLocal"(arg0: double, arg1: double, arg2: double): $Matrix4d
+public "scaleLocal"(arg0: double): $Matrix4d
+public "scaleAroundLocal"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4d$$Type): $Matrix4d
+public "scaleAroundLocal"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix4d
+public "scaleAroundLocal"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix4d
+public "scaleAroundLocal"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix4d$$Type): $Matrix4d
+public "rotateTowardsXY"(arg0: double, arg1: double): $Matrix4d
+public "rotateTowardsXY"(arg0: double, arg1: double, arg2: $Matrix4d$$Type): $Matrix4d
+public "rotateAffineXYZ"(arg0: double, arg1: double, arg2: double): $Matrix4d
+public "rotateAffineXYZ"(arg0: double, arg1: double, arg2: double, arg3: $Matrix4d$$Type): $Matrix4d
 public "rotateAffineZYX"(arg0: double, arg1: double, arg2: double): $Matrix4d
+public "rotateAffineZYX"(arg0: double, arg1: double, arg2: double, arg3: $Matrix4d$$Type): $Matrix4d
 public "rotateAffineYXZ"(arg0: double, arg1: double, arg2: double, arg3: $Matrix4d$$Type): $Matrix4d
 public "rotateAffineYXZ"(arg0: double, arg1: double, arg2: double): $Matrix4d
-public "rotateTranslation"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4d$$Type): $Matrix4d
 public "rotateTranslation"(arg0: $Quaternionfc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
+public "rotateTranslation"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4d$$Type): $Matrix4d
 public "rotateTranslation"(arg0: $Quaterniondc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
+public "fma4x3"(arg0: $Matrix4dc$$Type, arg1: double, arg2: $Matrix4d$$Type): $Matrix4d
+public "fma4x3"(arg0: $Matrix4dc$$Type, arg1: double): $Matrix4d
+public "transpose3x3"(): $Matrix4d
+public "transpose3x3"(arg0: $Matrix3d$$Type): $Matrix3d
+public "transpose3x3"(arg0: $Matrix4d$$Type): $Matrix4d
+public "setTranslation"(arg0: double, arg1: double, arg2: double): $Matrix4d
+public "setTranslation"(arg0: $Vector3dc$$Type): $Matrix4d
+public "getTranslation"(arg0: $Vector3d$$Type): $Vector3d
+public "get4x3"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
+public "get3x3"(arg0: $Matrix3d$$Type): $Matrix3d
+public "getTransposed"(arg0: $DoubleBuffer$$Type): $DoubleBuffer
+public "getTransposed"(arg0: integer, arg1: $DoubleBuffer$$Type): $DoubleBuffer
+public "getTransposed"(arg0: $FloatBuffer$$Type): $FloatBuffer
+public "getTransposed"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
+public "getTransposed"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
+public "getTransposed"(arg0: $ByteBuffer$$Type): $ByteBuffer
+public "determinant"(): double
+public "invertAffine"(arg0: $Matrix4d$$Type): $Matrix4d
+public "invertAffine"(): $Matrix4d
+public "invertPerspective"(arg0: $Matrix4d$$Type): $Matrix4d
+public "invertPerspective"(): $Matrix4d
+public "invertFrustum"(): $Matrix4d
+public "invertFrustum"(arg0: $Matrix4d$$Type): $Matrix4d
+public "invertOrtho"(): $Matrix4d
+public "invertOrtho"(arg0: $Matrix4d$$Type): $Matrix4d
+public "invertPerspectiveView"(arg0: $Matrix4x3dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
+public "invertPerspectiveView"(arg0: $Matrix4dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
+public "rotateAffine"(arg0: $Quaterniondc$$Type): $Matrix4d
+public "rotateAffine"(arg0: $Quaterniondc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
+public "rotateAffine"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4d$$Type): $Matrix4d
 public "rotateAffine"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix4d
 public "rotateAffine"(arg0: $Quaternionfc$$Type): $Matrix4d
-public "rotateAffine"(arg0: $Quaterniondc$$Type): $Matrix4d
-public "rotateAffine"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4d$$Type): $Matrix4d
 public "rotateAffine"(arg0: $Quaternionfc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
-public "rotateAffine"(arg0: $Quaterniondc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
-public "rotateLocal"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4d$$Type): $Matrix4d
-public "rotateLocal"(arg0: $Quaterniondc$$Type): $Matrix4d
-public "rotateLocal"(arg0: $Quaternionfc$$Type): $Matrix4d
 public "rotateLocal"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix4d
+public "rotateLocal"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4d$$Type): $Matrix4d
 public "rotateLocal"(arg0: $Quaterniondc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
+public "rotateLocal"(arg0: $Quaternionfc$$Type): $Matrix4d
 public "rotateLocal"(arg0: $Quaternionfc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
-public "translateLocal"(arg0: $Vector3dc$$Type): $Matrix4d
-public "translateLocal"(arg0: $Vector3fc$$Type): $Matrix4d
-public "translateLocal"(arg0: $Vector3fc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
-public "translateLocal"(arg0: double, arg1: double, arg2: double): $Matrix4d
+public "rotateLocal"(arg0: $Quaterniondc$$Type): $Matrix4d
 public "translateLocal"(arg0: double, arg1: double, arg2: double, arg3: $Matrix4d$$Type): $Matrix4d
 public "translateLocal"(arg0: $Vector3dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
-public "ortho"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix4d
-public "ortho"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: boolean): $Matrix4d
-public "ortho"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix4d$$Type): $Matrix4d
+public "translateLocal"(arg0: double, arg1: double, arg2: double): $Matrix4d
+public "translateLocal"(arg0: $Vector3fc$$Type): $Matrix4d
+public "translateLocal"(arg0: $Vector3fc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
+public "translateLocal"(arg0: $Vector3dc$$Type): $Matrix4d
 public "ortho"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: boolean, arg7: $Matrix4d$$Type): $Matrix4d
+public "ortho"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix4d$$Type): $Matrix4d
+public "ortho"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: boolean): $Matrix4d
+public "ortho"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix4d
+public "orthoLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix4d$$Type): $Matrix4d
 public "orthoLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: boolean): $Matrix4d
 public "orthoLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix4d
-public "orthoLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix4d$$Type): $Matrix4d
 public "orthoLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: boolean, arg7: $Matrix4d$$Type): $Matrix4d
 public "setOrthoLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: boolean): $Matrix4d
 public "setOrthoLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix4d
-public "orthoSymmetric"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4d$$Type): $Matrix4d
+public "orthoSymmetric"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: boolean): $Matrix4d
 public "orthoSymmetric"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix4d
 public "orthoSymmetric"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: boolean, arg5: $Matrix4d$$Type): $Matrix4d
-public "orthoSymmetric"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: boolean): $Matrix4d
+public "orthoSymmetric"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4d$$Type): $Matrix4d
+public "setOrthoSymmetric"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: boolean): $Matrix4d
+public "setOrthoSymmetric"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix4d
+public "orthoSymmetricLH"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix4d
+public "orthoSymmetricLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: boolean, arg5: $Matrix4d$$Type): $Matrix4d
+public "orthoSymmetricLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4d$$Type): $Matrix4d
+public "orthoSymmetricLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: boolean): $Matrix4d
+public "setOrthoSymmetricLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: boolean): $Matrix4d
+public "setOrthoSymmetricLH"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix4d
 public "ortho2D"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix4d
 public "ortho2D"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4d$$Type): $Matrix4d
-public "mul4x3ComponentWise"(arg0: $Matrix4dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
-public "mul4x3ComponentWise"(arg0: $Matrix4dc$$Type): $Matrix4d
-public "getTransposed"(arg0: $ByteBuffer$$Type): $ByteBuffer
-public "getTransposed"(arg0: $DoubleBuffer$$Type): $DoubleBuffer
-public "getTransposed"(arg0: integer, arg1: $DoubleBuffer$$Type): $DoubleBuffer
-public "getTransposed"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
-public "getTransposed"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
-public "getTransposed"(arg0: $FloatBuffer$$Type): $FloatBuffer
-public "mulLocal"(arg0: $Matrix4dc$$Type): $Matrix4d
-public "mulLocal"(arg0: $Matrix4dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
-public "mul3x3"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double, arg9: $Matrix4d$$Type): $Matrix4d
-public "mul3x3"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double): $Matrix4d
-public "mulPerspectiveAffine"(arg0: $Matrix4x3dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
-public "mulPerspectiveAffine"(arg0: $Matrix4dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
-public "mulPerspectiveAffine"(arg0: $Matrix4dc$$Type): $Matrix4d
-public "mul0"(arg0: $Matrix4dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
-public "mul0"(arg0: $Matrix4dc$$Type): $Matrix4d
-public "setTransposed"(arg0: $Matrix4dc$$Type): $Matrix4d
+public "setOrtho2D"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix4d
+public "ortho2DLH"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix4d
+public "ortho2DLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4d$$Type): $Matrix4d
+public "assume"(arg0: integer): $Matrix4d
+public "translationRotateScaleInvert"(arg0: $Vector3fc$$Type, arg1: $Quaternionfc$$Type, arg2: $Vector3fc$$Type): $Matrix4d
+public "translationRotateScaleInvert"(arg0: $Vector3fc$$Type, arg1: $Quaternionfc$$Type, arg2: double): $Matrix4d
+public "translationRotateScaleInvert"(arg0: $Vector3dc$$Type, arg1: $Quaterniondc$$Type, arg2: $Vector3dc$$Type): $Matrix4d
+public "translationRotateScaleInvert"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double, arg9: double): $Matrix4d
+public "translationRotateScaleInvert"(arg0: $Vector3dc$$Type, arg1: $Quaterniondc$$Type, arg2: double): $Matrix4d
+public "reflection"(arg0: $Quaterniondc$$Type, arg1: $Vector3dc$$Type): $Matrix4d
+public "reflection"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix4d
+public "reflection"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix4d
+public "reflection"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type): $Matrix4d
+public "getRow"(arg0: integer, arg1: $Vector4d$$Type): $Vector4d
+public "getRow"(arg0: integer, arg1: $Vector3d$$Type): $Vector3d
+public "setRow"(arg0: integer, arg1: $Vector4dc$$Type): $Matrix4d
+public "setColumn"(arg0: integer, arg1: $Vector4dc$$Type): $Matrix4d
+public "cofactor3x3"(arg0: $Matrix4d$$Type): $Matrix4d
+public "cofactor3x3"(arg0: $Matrix3d$$Type): $Matrix3d
+public "cofactor3x3"(): $Matrix4d
+public "normalize3x3"(arg0: $Matrix3d$$Type): $Matrix3d
+public "normalize3x3"(arg0: $Matrix4d$$Type): $Matrix4d
+public "normalize3x3"(): $Matrix4d
+public "frustumPlane"(arg0: integer, arg1: $Vector4d$$Type): $Vector4d
+public "frustumCorner"(arg0: integer, arg1: $Vector3d$$Type): $Vector3d
+public "perspectiveOrigin"(arg0: $Vector3d$$Type): $Vector3d
+public "perspectiveInvOrigin"(arg0: $Vector3d$$Type): $Vector3d
+public "perspectiveFov"(): double
+public "perspectiveNear"(): double
+public "perspectiveFar"(): double
+public "frustumRayDir"(arg0: double, arg1: double, arg2: $Vector3d$$Type): $Vector3d
+public "originAffine"(arg0: $Vector3d$$Type): $Vector3d
+public "billboardCylindrical"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Vector3dc$$Type): $Matrix4d
+public "billboardSpherical"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type): $Matrix4d
+public "billboardSpherical"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Vector3dc$$Type): $Matrix4d
+public "isAffine"(): boolean
+public "arcball"(arg0: double, arg1: $Vector3dc$$Type, arg2: double, arg3: double): $Matrix4d
+public "arcball"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix4d
+public "arcball"(arg0: double, arg1: $Vector3dc$$Type, arg2: double, arg3: double, arg4: $Matrix4d$$Type): $Matrix4d
+public "arcball"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix4d$$Type): $Matrix4d
+public "frustumAabb"(arg0: $Vector3d$$Type, arg1: $Vector3d$$Type): $Matrix4d
+public "projectedGridRange"(arg0: $Matrix4dc$$Type, arg1: double, arg2: double, arg3: $Matrix4d$$Type): $Matrix4d
+public "perspectiveFrustumSlice"(arg0: double, arg1: double, arg2: $Matrix4d$$Type): $Matrix4d
+public "orthoCrop"(arg0: $Matrix4dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
+public "trapezoidCrop"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double): $Matrix4d
+public "transformAab"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Vector3d$$Type, arg3: $Vector3d$$Type): $Matrix4d
+public "transformAab"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Vector3d$$Type, arg7: $Vector3d$$Type): $Matrix4d
+public "rotateTowards"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix4d$$Type): $Matrix4d
+public "rotateTowards"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix4d
+public "rotateTowards"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type): $Matrix4d
+public "rotateTowards"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Matrix4d$$Type): $Matrix4d
 set "floats"(value: $ByteBuffer$$Type)
 get "finite"(): boolean
 set "fromAddress"(value: long)
-get "affine"(): boolean
-set "4x3"(value: $Matrix4x3dc$$Type)
 set "4x3"(value: $Matrix4dc$$Type)
 set "4x3"(value: $Matrix4x3fc$$Type)
+set "4x3"(value: $Matrix4x3dc$$Type)
 set "3x3"(value: $Matrix3dc$$Type)
 set "3x3"(value: $Matrix4dc$$Type)
 set "transposed"(value: $Matrix4dc$$Type)
+get "affine"(): boolean
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -2449,8 +2449,8 @@ import {$Matrix4x3fc$$Type} from "org.joml.Matrix4x3fc"
 import {$ObjectInput$$Type} from "java.io.ObjectInput"
 import {$Matrix4x3f, $Matrix4x3f$$Type} from "org.joml.Matrix4x3f"
 import {$Vector3f, $Vector3f$$Type} from "org.joml.Vector3f"
-import {$Matrix4dc$$Type} from "org.joml.Matrix4dc"
 import {$Matrix4d, $Matrix4d$$Type} from "org.joml.Matrix4d"
+import {$Matrix4dc$$Type} from "org.joml.Matrix4dc"
 import {$ObjectOutput$$Type} from "java.io.ObjectOutput"
 import {$Matrix4fc, $Matrix4fc$$Type, $Matrix4fc$$Interface} from "org.joml.Matrix4fc"
 import {$Matrix3fc$$Type} from "org.joml.Matrix3fc"
@@ -2461,137 +2461,137 @@ import {$Quaternionfc$$Type} from "org.joml.Quaternionfc"
 import {$Quaterniondc$$Type} from "org.joml.Quaterniondc"
 import {$Vector4f, $Vector4f$$Type} from "org.joml.Vector4f"
 import {$Matrix3d, $Matrix3d$$Type} from "org.joml.Matrix3d"
-import {$Matrix3f, $Matrix3f$$Type} from "org.joml.Matrix3f"
 import {$Externalizable$$Interface} from "java.io.Externalizable"
-import {$Vector2fc$$Type} from "org.joml.Vector2fc"
+import {$Matrix3f, $Matrix3f$$Type} from "org.joml.Matrix3f"
 import {$FloatBuffer, $FloatBuffer$$Type} from "java.nio.FloatBuffer"
+import {$Vector2fc$$Type} from "org.joml.Vector2fc"
 import {$Matrix3x2fc$$Type} from "org.joml.Matrix3x2fc"
-import {$Vector4fc$$Type} from "org.joml.Vector4fc"
 import {$NumberFormat$$Type} from "java.text.NumberFormat"
+import {$Vector4fc$$Type} from "org.joml.Vector4fc"
 import {$Vector3fc$$Type} from "org.joml.Vector3fc"
 import {$AxisAngle4f, $AxisAngle4f$$Type} from "org.joml.AxisAngle4f"
 import {$AxisAngle4d, $AxisAngle4d$$Type} from "org.joml.AxisAngle4d"
 import {$ByteBuffer, $ByteBuffer$$Type} from "java.nio.ByteBuffer"
 
 export class $Matrix4f implements $Externalizable$$Interface, $Cloneable$$Interface, $Matrix4fc$$Interface {
-constructor(arg0: $FloatBuffer$$Type)
-constructor(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float, arg9: float, arg10: float, arg11: float, arg12: float, arg13: float, arg14: float, arg15: float)
 constructor(arg0: $Matrix4dc$$Type)
 constructor(arg0: $Vector4fc$$Type, arg1: $Vector4fc$$Type, arg2: $Vector4fc$$Type, arg3: $Vector4fc$$Type)
+constructor(arg0: $FloatBuffer$$Type)
+constructor(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float, arg9: float, arg10: float, arg11: float, arg12: float, arg13: float, arg14: float, arg15: float)
 constructor()
 constructor(arg0: $Matrix3fc$$Type)
 constructor(arg0: $Matrix4fc$$Type)
 constructor(arg0: $Matrix4x3fc$$Type)
 
-public "transpose"(arg0: $Matrix4f$$Type): $Matrix4f
 public "transpose"(): $Matrix4f
-public "invert"(arg0: $Matrix4f$$Type): $Matrix4f
+public "transpose"(arg0: $Matrix4f$$Type): $Matrix4f
 public "invert"(): $Matrix4f
-public "sub"(arg0: $Matrix4fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
-public "sub"(arg0: $Matrix4fc$$Type): $Matrix4f
-public "mul"(arg0: $Matrix4fc$$Type): $Matrix4f
-public "mul"(arg0: $Matrix3x2fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
-public "mul"(arg0: $Matrix4fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
-public "mul"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float, arg9: float, arg10: float, arg11: float, arg12: float, arg13: float, arg14: float, arg15: float): $Matrix4f
-public "mul"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float, arg9: float, arg10: float, arg11: float, arg12: float, arg13: float, arg14: float, arg15: float, arg16: $Matrix4f$$Type): $Matrix4f
-public "mul"(arg0: $Matrix3x2fc$$Type): $Matrix4f
-public "mul"(arg0: $Matrix4x3fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
-public "mul"(arg0: $Matrix4x3fc$$Type): $Matrix4f
+public "invert"(arg0: $Matrix4f$$Type): $Matrix4f
 public "origin"(arg0: $Vector3f$$Type): $Vector3f
-public "shadow"(arg0: $Vector4f$$Type, arg1: float, arg2: float, arg3: float, arg4: float): $Matrix4f
-public "shadow"(arg0: $Vector4f$$Type, arg1: float, arg2: float, arg3: float, arg4: float, arg5: $Matrix4f$$Type): $Matrix4f
-public "shadow"(arg0: $Vector4f$$Type, arg1: $Matrix4f$$Type): $Matrix4f
-public "shadow"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4fc$$Type, arg5: $Matrix4f$$Type): $Matrix4f
-public "shadow"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4f$$Type): $Matrix4f
-public "shadow"(arg0: $Vector4f$$Type, arg1: $Matrix4fc$$Type, arg2: $Matrix4f$$Type): $Matrix4f
-public "shadow"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: $Matrix4f$$Type): $Matrix4f
-public "shadow"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float): $Matrix4f
+public "writeExternal"(arg0: $ObjectOutput$$Type): void
+public "readExternal"(arg0: $ObjectInput$$Type): void
 public "normal"(arg0: $Matrix3f$$Type): $Matrix3f
 public "normal"(arg0: $Matrix4f$$Type): $Matrix4f
 public "normal"(): $Matrix4f
-public "writeExternal"(arg0: $ObjectOutput$$Type): void
-public "readExternal"(arg0: $ObjectInput$$Type): void
+public "sub"(arg0: $Matrix4fc$$Type): $Matrix4f
+public "sub"(arg0: $Matrix4fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
+public "get"(arg0: $FloatBuffer$$Type): $FloatBuffer
+public "get"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
+public "get"(arg0: $Matrix4d$$Type): $Matrix4d
+public "get"(arg0: $Matrix4f$$Type): $Matrix4f
 public "get"(arg0: integer, arg1: integer): float
 public "get"(arg0: (float)[]): (float)[]
 public "get"(arg0: (float)[], arg1: integer): (float)[]
-public "get"(arg0: $Matrix4d$$Type): $Matrix4d
-public "get"(arg0: $FloatBuffer$$Type): $FloatBuffer
-public "get"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
-public "get"(arg0: $ByteBuffer$$Type): $ByteBuffer
 public "get"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
-public "get"(arg0: $Matrix4f$$Type): $Matrix4f
-public "equals"(arg0: any): boolean
+public "get"(arg0: $ByteBuffer$$Type): $ByteBuffer
 public "equals"(arg0: $Matrix4fc$$Type, arg1: float): boolean
-public "toString"(): StringJS
+public "equals"(arg0: any): boolean
 public "toString"(arg0: $NumberFormat$$Type): StringJS
+public "toString"(): StringJS
 public "hashCode"(): integer
 public "clone"(): any
 public "isFinite"(): boolean
-public "scale"(arg0: $Vector3fc$$Type): $Matrix4f
-public "scale"(arg0: float, arg1: $Matrix4f$$Type): $Matrix4f
 public "scale"(arg0: float): $Matrix4f
-public "scale"(arg0: float, arg1: float, arg2: float, arg3: $Matrix4f$$Type): $Matrix4f
+public "scale"(arg0: $Vector3fc$$Type): $Matrix4f
 public "scale"(arg0: $Vector3fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
+public "scale"(arg0: float, arg1: $Matrix4f$$Type): $Matrix4f
 public "scale"(arg0: float, arg1: float, arg2: float): $Matrix4f
+public "scale"(arg0: float, arg1: float, arg2: float, arg3: $Matrix4f$$Type): $Matrix4f
 public "add"(arg0: $Matrix4fc$$Type): $Matrix4f
 public "add"(arg0: $Matrix4fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
 public "transform"(arg0: $Vector4f$$Type): $Vector4f
-public "transform"(arg0: $Vector4fc$$Type, arg1: $Vector4f$$Type): $Vector4f
 public "transform"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Vector4f$$Type): $Vector4f
+public "transform"(arg0: $Vector4fc$$Type, arg1: $Vector4f$$Type): $Vector4f
 public "identity"(): $Matrix4f
-public "set"(arg0: (float)[], arg1: integer): $Matrix4f
-public "set"(arg0: (float)[]): $Matrix4f
-public "set"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float, arg9: float, arg10: float, arg11: float, arg12: float, arg13: float, arg14: float, arg15: float): $Matrix4f
-public "set"(arg0: $ByteBuffer$$Type): $Matrix4f
-public "set"(arg0: $Vector4fc$$Type, arg1: $Vector4fc$$Type, arg2: $Vector4fc$$Type, arg3: $Vector4fc$$Type): $Matrix4f
-public "set"(arg0: integer, arg1: $FloatBuffer$$Type): $Matrix4f
-public "set"(arg0: integer, arg1: $ByteBuffer$$Type): $Matrix4f
-public "set"(arg0: $FloatBuffer$$Type): $Matrix4f
-public "set"(arg0: integer, arg1: integer, arg2: float): $Matrix4f
-public "set"(arg0: $Matrix3fc$$Type): $Matrix4f
 public "set"(arg0: $Matrix4dc$$Type): $Matrix4f
+public "set"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float, arg9: float, arg10: float, arg11: float, arg12: float, arg13: float, arg14: float, arg15: float): $Matrix4f
+public "set"(arg0: $Matrix3fc$$Type): $Matrix4f
+public "set"(arg0: (float)[]): $Matrix4f
 public "set"(arg0: $Matrix4x3fc$$Type): $Matrix4f
-public "set"(arg0: $Matrix4fc$$Type): $Matrix4f
+public "set"(arg0: $Vector4fc$$Type, arg1: $Vector4fc$$Type, arg2: $Vector4fc$$Type, arg3: $Vector4fc$$Type): $Matrix4f
+public "set"(arg0: integer, arg1: integer, arg2: float): $Matrix4f
+public "set"(arg0: $ByteBuffer$$Type): $Matrix4f
+public "set"(arg0: integer, arg1: $FloatBuffer$$Type): $Matrix4f
 public "set"(arg0: $Quaterniondc$$Type): $Matrix4f
-public "set"(arg0: $Quaternionfc$$Type): $Matrix4f
-public "set"(arg0: $AxisAngle4d$$Type): $Matrix4f
+public "set"(arg0: integer, arg1: $ByteBuffer$$Type): $Matrix4f
 public "set"(arg0: $AxisAngle4f$$Type): $Matrix4f
+public "set"(arg0: $AxisAngle4d$$Type): $Matrix4f
+public "set"(arg0: $Quaternionfc$$Type): $Matrix4f
+public "set"(arg0: $FloatBuffer$$Type): $Matrix4f
+public "set"(arg0: $Matrix4fc$$Type): $Matrix4f
+public "set"(arg0: (float)[], arg1: integer): $Matrix4f
 public "properties"(): integer
 public "zero"(): $Matrix4f
-public "pick"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: (integer)[], arg5: $Matrix4f$$Type): $Matrix4f
 public "pick"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: (integer)[]): $Matrix4f
-public "swap"(arg0: $Matrix4f$$Type): $Matrix4f
+public "pick"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: (integer)[], arg5: $Matrix4f$$Type): $Matrix4f
+public "rotate"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4f$$Type): $Matrix4f
 public "rotate"(arg0: float, arg1: $Vector3fc$$Type): $Matrix4f
-public "rotate"(arg0: float, arg1: $Vector3fc$$Type, arg2: $Matrix4f$$Type): $Matrix4f
 public "rotate"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4f
-public "rotate"(arg0: $Quaternionfc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
 public "rotate"(arg0: $AxisAngle4f$$Type, arg1: $Matrix4f$$Type): $Matrix4f
 public "rotate"(arg0: $AxisAngle4f$$Type): $Matrix4f
+public "rotate"(arg0: $Quaternionfc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
 public "rotate"(arg0: $Quaternionfc$$Type): $Matrix4f
-public "rotate"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4f$$Type): $Matrix4f
-public "m12"(): float
-public "m12"(arg0: float): $Matrix4f
-public "m13"(arg0: float): $Matrix4f
-public "m13"(): float
-public "translation"(arg0: float, arg1: float, arg2: float): $Matrix4f
-public "translation"(arg0: $Vector3fc$$Type): $Matrix4f
+public "rotate"(arg0: float, arg1: $Vector3fc$$Type, arg2: $Matrix4f$$Type): $Matrix4f
 public "m11"(arg0: float): $Matrix4f
 public "m11"(): float
+public "swap"(arg0: $Matrix4f$$Type): $Matrix4f
+public "m12"(arg0: float): $Matrix4f
+public "m12"(): float
+public "translation"(arg0: float, arg1: float, arg2: float): $Matrix4f
+public "translation"(arg0: $Vector3fc$$Type): $Matrix4f
+public "mul"(arg0: $Matrix4x3fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
+public "mul"(arg0: $Matrix4x3fc$$Type): $Matrix4f
+public "mul"(arg0: $Matrix3x2fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
+public "mul"(arg0: $Matrix3x2fc$$Type): $Matrix4f
+public "mul"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float, arg9: float, arg10: float, arg11: float, arg12: float, arg13: float, arg14: float, arg15: float, arg16: $Matrix4f$$Type): $Matrix4f
+public "mul"(arg0: $Matrix4fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
+public "mul"(arg0: $Matrix4fc$$Type): $Matrix4f
+public "mul"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float, arg9: float, arg10: float, arg11: float, arg12: float, arg13: float, arg14: float, arg15: float): $Matrix4f
+public "shadow"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4f$$Type): $Matrix4f
+public "shadow"(arg0: $Vector4f$$Type, arg1: $Matrix4fc$$Type, arg2: $Matrix4f$$Type): $Matrix4f
+public "shadow"(arg0: $Vector4f$$Type, arg1: $Matrix4f$$Type): $Matrix4f
+public "shadow"(arg0: $Vector4f$$Type, arg1: float, arg2: float, arg3: float, arg4: float): $Matrix4f
+public "shadow"(arg0: $Vector4f$$Type, arg1: float, arg2: float, arg3: float, arg4: float, arg5: $Matrix4f$$Type): $Matrix4f
+public "shadow"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float): $Matrix4f
+public "shadow"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4fc$$Type, arg5: $Matrix4f$$Type): $Matrix4f
+public "shadow"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: $Matrix4f$$Type): $Matrix4f
+public "m13"(): float
+public "m13"(arg0: float): $Matrix4f
 public "m10"(arg0: float): $Matrix4f
 public "m10"(): float
-public "getColumn"(arg0: integer, arg1: $Vector3f$$Type): $Vector3f
 public "getColumn"(arg0: integer, arg1: $Vector4f$$Type): $Vector4f
-public "translate"(arg0: $Vector3fc$$Type): $Matrix4f
-public "translate"(arg0: float, arg1: float, arg2: float, arg3: $Matrix4f$$Type): $Matrix4f
+public "getColumn"(arg0: integer, arg1: $Vector3f$$Type): $Vector3f
 public "translate"(arg0: float, arg1: float, arg2: float): $Matrix4f
+public "translate"(arg0: float, arg1: float, arg2: float, arg3: $Matrix4f$$Type): $Matrix4f
 public "translate"(arg0: $Vector3fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
+public "translate"(arg0: $Vector3fc$$Type): $Matrix4f
+public "transformPosition"(arg0: float, arg1: float, arg2: float, arg3: $Vector3f$$Type): $Vector3f
+public "transformPosition"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
+public "transformPosition"(arg0: $Vector3f$$Type): $Vector3f
 public "setOrtho"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix4f
 public "setOrtho"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean): $Matrix4f
-public "transformPosition"(arg0: $Vector3f$$Type): $Vector3f
-public "transformPosition"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
-public "transformPosition"(arg0: float, arg1: float, arg2: float, arg3: $Vector3f$$Type): $Vector3f
-public "rotateAround"(arg0: $Quaternionfc$$Type, arg1: float, arg2: float, arg3: float, arg4: $Matrix4f$$Type): $Matrix4f
 public "rotateAround"(arg0: $Quaternionfc$$Type, arg1: float, arg2: float, arg3: float): $Matrix4f
+public "rotateAround"(arg0: $Quaternionfc$$Type, arg1: float, arg2: float, arg3: float, arg4: $Matrix4f$$Type): $Matrix4f
 public "getRowColumn"(arg0: integer, arg1: integer): float
 public "setRowColumn"(arg0: integer, arg1: integer, arg2: float): $Matrix4f
 public "determineProperties"(): $Matrix4f
@@ -2600,15 +2600,15 @@ public "mulAffine"(arg0: $Matrix4fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
 public "rotationX"(arg0: float): $Matrix4f
 public "rotationY"(arg0: float): $Matrix4f
 public "rotationZ"(arg0: float): $Matrix4f
-public "rotateXYZ"(arg0: float, arg1: float, arg2: float, arg3: $Matrix4f$$Type): $Matrix4f
 public "rotateXYZ"(arg0: $Vector3fc$$Type): $Matrix4f
+public "rotateXYZ"(arg0: float, arg1: float, arg2: float, arg3: $Matrix4f$$Type): $Matrix4f
 public "rotateXYZ"(arg0: float, arg1: float, arg2: float): $Matrix4f
-public "rotateZYX"(arg0: float, arg1: float, arg2: float, arg3: $Matrix4f$$Type): $Matrix4f
 public "rotateZYX"(arg0: $Vector3f$$Type): $Matrix4f
 public "rotateZYX"(arg0: float, arg1: float, arg2: float): $Matrix4f
+public "rotateZYX"(arg0: float, arg1: float, arg2: float, arg3: $Matrix4f$$Type): $Matrix4f
+public "rotateYXZ"(arg0: float, arg1: float, arg2: float): $Matrix4f
 public "rotateYXZ"(arg0: float, arg1: float, arg2: float, arg3: $Matrix4f$$Type): $Matrix4f
 public "rotateYXZ"(arg0: $Vector3f$$Type): $Matrix4f
-public "rotateYXZ"(arg0: float, arg1: float, arg2: float): $Matrix4f
 public "getEulerAnglesXYZ"(arg0: $Vector3f$$Type): $Vector3f
 public "getEulerAnglesZYX"(arg0: $Vector3f$$Type): $Vector3f
 public "rotationXYZ"(arg0: float, arg1: float, arg2: float): $Matrix4f
@@ -2619,86 +2619,458 @@ public "scaling"(arg0: $Vector3fc$$Type): $Matrix4f
 public "scaling"(arg0: float): $Matrix4f
 public "setFromAddress"(arg0: long): $Matrix4f
 public "getToAddress"(arg0: long): $Matrix4fc
-public "m03"(): float
 public "m03"(arg0: float): $Matrix4f
+public "m03"(): float
 public "m23"(): float
 public "m23"(arg0: float): $Matrix4f
 public "m33"(): float
 public "m33"(arg0: float): $Matrix4f
-public "m00"(): float
 public "m00"(arg0: float): $Matrix4f
+public "m00"(): float
 public "m20"(): float
 public "m20"(arg0: float): $Matrix4f
-public "m30"(arg0: float): $Matrix4f
 public "m30"(): float
+public "m30"(arg0: float): $Matrix4f
 public "m01"(arg0: float): $Matrix4f
 public "m01"(): float
 public "m21"(): float
 public "m21"(arg0: float): $Matrix4f
 public "m31"(arg0: float): $Matrix4f
 public "m31"(): float
-public "m02"(): float
 public "m02"(arg0: float): $Matrix4f
+public "m02"(): float
 public "m22"(arg0: float): $Matrix4f
 public "m22"(): float
 public "m32"(arg0: float): $Matrix4f
 public "m32"(): float
-public "rotateX"(arg0: float, arg1: $Matrix4f$$Type): $Matrix4f
 public "rotateX"(arg0: float): $Matrix4f
+public "rotateX"(arg0: float, arg1: $Matrix4f$$Type): $Matrix4f
 public "rotateY"(arg0: float): $Matrix4f
 public "rotateY"(arg0: float, arg1: $Matrix4f$$Type): $Matrix4f
 public "rotateZ"(arg0: float): $Matrix4f
 public "rotateZ"(arg0: float, arg1: $Matrix4f$$Type): $Matrix4f
-public "reflect"(arg0: $Quaternionfc$$Type, arg1: $Vector3fc$$Type): $Matrix4f
-public "reflect"(arg0: $Quaternionfc$$Type, arg1: $Vector3fc$$Type, arg2: $Matrix4f$$Type): $Matrix4f
-public "reflect"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4f$$Type): $Matrix4f
-public "reflect"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type): $Matrix4f
-public "reflect"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4f
 public "reflect"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix4f
+public "reflect"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4f
+public "reflect"(arg0: $Quaternionfc$$Type, arg1: $Vector3fc$$Type, arg2: $Matrix4f$$Type): $Matrix4f
 public "reflect"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4f$$Type): $Matrix4f
 public "reflect"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Matrix4f$$Type): $Matrix4f
-public "lerp"(arg0: $Matrix4fc$$Type, arg1: float): $Matrix4f
+public "reflect"(arg0: $Quaternionfc$$Type, arg1: $Vector3fc$$Type): $Matrix4f
+public "reflect"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type): $Matrix4f
+public "reflect"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4f$$Type): $Matrix4f
 public "lerp"(arg0: $Matrix4fc$$Type, arg1: float, arg2: $Matrix4f$$Type): $Matrix4f
-public "getUnnormalizedRotation"(arg0: $Quaternionf$$Type): $Quaternionf
+public "lerp"(arg0: $Matrix4fc$$Type, arg1: float): $Matrix4f
 public "getUnnormalizedRotation"(arg0: $Quaterniond$$Type): $Quaterniond
-public "getNormalizedRotation"(arg0: $Quaterniond$$Type): $Quaterniond
+public "getUnnormalizedRotation"(arg0: $Quaternionf$$Type): $Quaternionf
 public "getNormalizedRotation"(arg0: $Quaternionf$$Type): $Quaternionf
+public "getNormalizedRotation"(arg0: $Quaterniond$$Type): $Quaterniond
 public "get3x4"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
 public "get3x4"(arg0: $ByteBuffer$$Type): $ByteBuffer
 public "get3x4"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
 public "get3x4"(arg0: $FloatBuffer$$Type): $FloatBuffer
-public "get4x3Transposed"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
 public "get4x3Transposed"(arg0: $FloatBuffer$$Type): $FloatBuffer
 public "get4x3Transposed"(arg0: $ByteBuffer$$Type): $ByteBuffer
+public "get4x3Transposed"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
 public "get4x3Transposed"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
 public "rotationTowardsXY"(arg0: float, arg1: float): $Matrix4f
 public "setRotationXYZ"(arg0: float, arg1: float, arg2: float): $Matrix4f
 public "setRotationZYX"(arg0: float, arg1: float, arg2: float): $Matrix4f
 public "setRotationYXZ"(arg0: float, arg1: float, arg2: float): $Matrix4f
-public "setTransposedFromAddress"(arg0: long): $Matrix4f
-public "determinant"(): float
+public "set4x3"(arg0: $Matrix4x3fc$$Type): $Matrix4f
+public "set4x3"(arg0: $Matrix4f$$Type): $Matrix4f
+public "mul0"(arg0: $Matrix4fc$$Type): $Matrix4f
+public "mul0"(arg0: $Matrix4fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
 public "lookAlong"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4f$$Type): $Matrix4f
-public "lookAlong"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Matrix4f$$Type): $Matrix4f
 public "lookAlong"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type): $Matrix4f
 public "lookAlong"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix4f
-public "rotateLocalX"(arg0: float): $Matrix4f
+public "lookAlong"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Matrix4f$$Type): $Matrix4f
 public "rotateLocalX"(arg0: float, arg1: $Matrix4f$$Type): $Matrix4f
-public "rotateLocalY"(arg0: float): $Matrix4f
+public "rotateLocalX"(arg0: float): $Matrix4f
 public "rotateLocalY"(arg0: float, arg1: $Matrix4f$$Type): $Matrix4f
-public "rotateLocalZ"(arg0: float, arg1: $Matrix4f$$Type): $Matrix4f
+public "rotateLocalY"(arg0: float): $Matrix4f
 public "rotateLocalZ"(arg0: float): $Matrix4f
+public "rotateLocalZ"(arg0: float, arg1: $Matrix4f$$Type): $Matrix4f
 public "positiveX"(arg0: $Vector3f$$Type): $Vector3f
 public "normalizedPositiveX"(arg0: $Vector3f$$Type): $Vector3f
 public "positiveY"(arg0: $Vector3f$$Type): $Vector3f
 public "normalizedPositiveY"(arg0: $Vector3f$$Type): $Vector3f
 public "positiveZ"(arg0: $Vector3f$$Type): $Vector3f
 public "normalizedPositiveZ"(arg0: $Vector3f$$Type): $Vector3f
-public "cofactor3x3"(): $Matrix4f
+public "setOrtho2DLH"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4f
+public "setLookAlong"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type): $Matrix4f
+public "setLookAlong"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix4f
+public "setLookAt"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3fc$$Type): $Matrix4f
+public "setLookAt"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float): $Matrix4f
+public "lookAt"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float): $Matrix4f
+public "lookAt"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float, arg9: $Matrix4f$$Type): $Matrix4f
+public "lookAt"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3fc$$Type): $Matrix4f
+public "lookAt"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3fc$$Type, arg3: $Matrix4f$$Type): $Matrix4f
+public "lookAtPerspective"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float, arg9: $Matrix4f$$Type): $Matrix4f
+public "setLookAtLH"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3fc$$Type): $Matrix4f
+public "setLookAtLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float): $Matrix4f
+public "lookAtLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float, arg9: $Matrix4f$$Type): $Matrix4f
+public "lookAtLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float): $Matrix4f
+public "lookAtLH"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3fc$$Type, arg3: $Matrix4f$$Type): $Matrix4f
+public "lookAtLH"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3fc$$Type): $Matrix4f
+public "lookAtPerspectiveLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float, arg9: $Matrix4f$$Type): $Matrix4f
+public "tile"(arg0: integer, arg1: integer, arg2: integer, arg3: integer): $Matrix4f
+public "tile"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: $Matrix4f$$Type): $Matrix4f
+public "perspective"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4f$$Type): $Matrix4f
+public "perspective"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4f
+public "perspective"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: boolean, arg5: $Matrix4f$$Type): $Matrix4f
+public "perspective"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: boolean): $Matrix4f
+public "setPerspective"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: boolean): $Matrix4f
+public "setPerspective"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4f
+public "perspectiveRect"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4f
+public "perspectiveRect"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4f$$Type): $Matrix4f
+public "perspectiveRect"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: boolean, arg5: $Matrix4f$$Type): $Matrix4f
+public "perspectiveRect"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: boolean): $Matrix4f
+public "setPerspectiveRect"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4f
+public "setPerspectiveRect"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: boolean): $Matrix4f
+public "perspectiveOffCenter"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix4f
+public "perspectiveOffCenter"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean): $Matrix4f
+public "perspectiveOffCenter"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4f$$Type): $Matrix4f
+public "perspectiveOffCenter"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean, arg7: $Matrix4f$$Type): $Matrix4f
+public "setPerspectiveOffCenter"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean): $Matrix4f
+public "setPerspectiveOffCenter"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix4f
+public "perspectiveOffCenterFov"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean): $Matrix4f
+public "perspectiveOffCenterFov"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean, arg7: $Matrix4f$$Type): $Matrix4f
+public "perspectiveOffCenterFov"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix4f
+public "perspectiveOffCenterFov"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4f$$Type): $Matrix4f
+public "frustum"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix4f
+public "frustum"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean): $Matrix4f
+public "frustum"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4f$$Type): $Matrix4f
+public "frustum"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean, arg7: $Matrix4f$$Type): $Matrix4f
+public "perspectiveOffCenterFovLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix4f
+public "perspectiveOffCenterFovLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean, arg7: $Matrix4f$$Type): $Matrix4f
+public "perspectiveOffCenterFovLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean): $Matrix4f
+public "perspectiveOffCenterFovLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4f$$Type): $Matrix4f
+public "frustumLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean): $Matrix4f
+public "frustumLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4f$$Type): $Matrix4f
+public "frustumLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean, arg7: $Matrix4f$$Type): $Matrix4f
+public "frustumLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix4f
+public "setPerspectiveOffCenterFov"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix4f
+public "setPerspectiveOffCenterFov"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean): $Matrix4f
+public "setFrustum"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix4f
+public "setFrustum"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean): $Matrix4f
+public "setPerspectiveOffCenterFovLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix4f
+public "setPerspectiveOffCenterFovLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean): $Matrix4f
+public "setFrustumLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix4f
+public "setFrustumLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean): $Matrix4f
+public "perspectiveLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: boolean, arg5: $Matrix4f$$Type): $Matrix4f
+public "perspectiveLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4f$$Type): $Matrix4f
+public "perspectiveLH"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4f
+public "perspectiveLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: boolean): $Matrix4f
+public "setPerspectiveLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: boolean): $Matrix4f
+public "setPerspectiveLH"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4f
+public "setFromIntrinsic"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: integer, arg6: integer, arg7: float, arg8: float): $Matrix4f
+public "rotateAroundAffine"(arg0: $Quaternionfc$$Type, arg1: float, arg2: float, arg3: float, arg4: $Matrix4f$$Type): $Matrix4f
+public "rotationAround"(arg0: $Quaternionfc$$Type, arg1: float, arg2: float, arg3: float): $Matrix4f
+public "rotateAroundLocal"(arg0: $Quaternionfc$$Type, arg1: float, arg2: float, arg3: float, arg4: $Matrix4f$$Type): $Matrix4f
+public "rotateAroundLocal"(arg0: $Quaternionfc$$Type, arg1: float, arg2: float, arg3: float): $Matrix4f
+public "unproject"(arg0: float, arg1: float, arg2: float, arg3: (integer)[], arg4: $Vector4f$$Type): $Vector4f
+public "unproject"(arg0: float, arg1: float, arg2: float, arg3: (integer)[], arg4: $Vector3f$$Type): $Vector3f
+public "unproject"(arg0: $Vector3fc$$Type, arg1: (integer)[], arg2: $Vector4f$$Type): $Vector4f
+public "unproject"(arg0: $Vector3fc$$Type, arg1: (integer)[], arg2: $Vector3f$$Type): $Vector3f
+public "unprojectRay"(arg0: float, arg1: float, arg2: (integer)[], arg3: $Vector3f$$Type, arg4: $Vector3f$$Type): $Matrix4f
+public "unprojectRay"(arg0: $Vector2fc$$Type, arg1: (integer)[], arg2: $Vector3f$$Type, arg3: $Vector3f$$Type): $Matrix4f
+public "unprojectInv"(arg0: float, arg1: float, arg2: float, arg3: (integer)[], arg4: $Vector3f$$Type): $Vector3f
+public "unprojectInv"(arg0: float, arg1: float, arg2: float, arg3: (integer)[], arg4: $Vector4f$$Type): $Vector4f
+public "unprojectInv"(arg0: $Vector3fc$$Type, arg1: (integer)[], arg2: $Vector4f$$Type): $Vector4f
+public "unprojectInv"(arg0: $Vector3fc$$Type, arg1: (integer)[], arg2: $Vector3f$$Type): $Vector3f
+public "unprojectInvRay"(arg0: float, arg1: float, arg2: (integer)[], arg3: $Vector3f$$Type, arg4: $Vector3f$$Type): $Matrix4f
+public "unprojectInvRay"(arg0: $Vector2fc$$Type, arg1: (integer)[], arg2: $Vector3f$$Type, arg3: $Vector3f$$Type): $Matrix4f
+public "project"(arg0: $Vector3fc$$Type, arg1: (integer)[], arg2: $Vector4f$$Type): $Vector4f
+public "project"(arg0: float, arg1: float, arg2: float, arg3: (integer)[], arg4: $Vector3f$$Type): $Vector3f
+public "project"(arg0: float, arg1: float, arg2: float, arg3: (integer)[], arg4: $Vector4f$$Type): $Vector4f
+public "project"(arg0: $Vector3fc$$Type, arg1: (integer)[], arg2: $Vector3f$$Type): $Vector3f
+public "rotation"(arg0: $AxisAngle4f$$Type): $Matrix4f
+public "rotation"(arg0: float, arg1: $Vector3fc$$Type): $Matrix4f
+public "rotation"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4f
+public "rotation"(arg0: $Quaternionfc$$Type): $Matrix4f
+public "set3x3"(arg0: $Matrix3fc$$Type): $Matrix4f
+public "set3x3"(arg0: $Matrix4f$$Type): $Matrix4f
+public "translationRotateScaleMulAffine"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float, arg9: float, arg10: $Matrix4f$$Type): $Matrix4f
+public "translationRotateScaleMulAffine"(arg0: $Vector3fc$$Type, arg1: $Quaternionfc$$Type, arg2: $Vector3fc$$Type, arg3: $Matrix4f$$Type): $Matrix4f
+public "getScale"(arg0: $Vector3f$$Type): $Vector3f
+public "translationRotateScale"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float, arg9: float): $Matrix4f
+public "translationRotateScale"(arg0: $Vector3fc$$Type, arg1: $Quaternionfc$$Type, arg2: $Vector3fc$$Type): $Matrix4f
+public "translationRotateScale"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float): $Matrix4f
+public "translationRotateScale"(arg0: $Vector3fc$$Type, arg1: $Quaternionfc$$Type, arg2: float): $Matrix4f
+public "translationRotateInvert"(arg0: $Vector3fc$$Type, arg1: $Quaternionfc$$Type): $Matrix4f
+public "translationRotateInvert"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float): $Matrix4f
+public "translationRotate"(arg0: $Vector3fc$$Type, arg1: $Quaternionfc$$Type): $Matrix4f
+public "translationRotate"(arg0: float, arg1: float, arg2: float, arg3: $Quaternionfc$$Type): $Matrix4f
+public "translationRotate"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float): $Matrix4f
+public "transformTranspose"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Vector4f$$Type): $Vector4f
+public "transformTranspose"(arg0: $Vector4fc$$Type, arg1: $Vector4f$$Type): $Vector4f
+public "transformTranspose"(arg0: $Vector4f$$Type): $Vector4f
+public "transformProject"(arg0: $Vector4fc$$Type, arg1: $Vector3f$$Type): $Vector3f
+public "transformProject"(arg0: $Vector3f$$Type): $Vector3f
+public "transformProject"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
+public "transformProject"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Vector4f$$Type): $Vector4f
+public "transformProject"(arg0: $Vector4fc$$Type, arg1: $Vector4f$$Type): $Vector4f
+public "transformProject"(arg0: $Vector4f$$Type): $Vector4f
+public "transformProject"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Vector3f$$Type): $Vector3f
+public "transformProject"(arg0: float, arg1: float, arg2: float, arg3: $Vector3f$$Type): $Vector3f
+public "transformDirection"(arg0: $Vector3f$$Type): $Vector3f
+public "transformDirection"(arg0: float, arg1: float, arg2: float, arg3: $Vector3f$$Type): $Vector3f
+public "transformDirection"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
+public "transformAffine"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Vector4f$$Type): $Vector4f
+public "transformAffine"(arg0: $Vector4fc$$Type, arg1: $Vector4f$$Type): $Vector4f
+public "transformAffine"(arg0: $Vector4f$$Type): $Vector4f
+public "setTransposedFromAddress"(arg0: long): $Matrix4f
+public "determinantAffine"(): float
+public "determinant3x3"(): float
+public "rotationTowards"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix4f
+public "rotationTowards"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type): $Matrix4f
+public "translationRotateTowards"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3fc$$Type): $Matrix4f
+public "translationRotateTowards"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float): $Matrix4f
+public "affineSpan"(arg0: $Vector3f$$Type, arg1: $Vector3f$$Type, arg2: $Vector3f$$Type, arg3: $Vector3f$$Type): $Matrix4f
+public "testPoint"(arg0: float, arg1: float, arg2: float): boolean
+public "testSphere"(arg0: float, arg1: float, arg2: float, arg3: float): boolean
+public "testAab"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): boolean
+public "obliqueZ"(arg0: float, arg1: float, arg2: $Matrix4f$$Type): $Matrix4f
+public "obliqueZ"(arg0: float, arg1: float): $Matrix4f
+public static "perspectiveOffCenterViewFromRectangle"(arg0: $Vector3f$$Type, arg1: $Vector3f$$Type, arg2: $Vector3f$$Type, arg3: $Vector3f$$Type, arg4: float, arg5: boolean, arg6: $Matrix4f$$Type, arg7: $Matrix4f$$Type): void
+public "withLookAtUp"(arg0: $Vector3fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
+public "withLookAtUp"(arg0: float, arg1: float, arg2: float, arg3: $Matrix4f$$Type): $Matrix4f
+public "withLookAtUp"(arg0: float, arg1: float, arg2: float): $Matrix4f
+public "withLookAtUp"(arg0: $Vector3fc$$Type): $Matrix4f
+public "mapXZY"(): $Matrix4f
+public "mapXZY"(arg0: $Matrix4f$$Type): $Matrix4f
+public "mapXZnY"(arg0: $Matrix4f$$Type): $Matrix4f
+public "mapXZnY"(): $Matrix4f
+public "mapXnYnZ"(arg0: $Matrix4f$$Type): $Matrix4f
+public "mapXnYnZ"(): $Matrix4f
+public "mapXnZY"(): $Matrix4f
+public "mapXnZY"(arg0: $Matrix4f$$Type): $Matrix4f
+public "mapXnZnY"(arg0: $Matrix4f$$Type): $Matrix4f
+public "mapXnZnY"(): $Matrix4f
+public "mapYXZ"(): $Matrix4f
+public "mapYXZ"(arg0: $Matrix4f$$Type): $Matrix4f
+public "mapYXnZ"(arg0: $Matrix4f$$Type): $Matrix4f
+public "mapYXnZ"(): $Matrix4f
+public "mapYZX"(): $Matrix4f
+public "mapYZX"(arg0: $Matrix4f$$Type): $Matrix4f
+public "mapYZnX"(arg0: $Matrix4f$$Type): $Matrix4f
+public "mapYZnX"(): $Matrix4f
+public "mapYnXZ"(arg0: $Matrix4f$$Type): $Matrix4f
+public "mapYnXZ"(): $Matrix4f
+public "mapYnXnZ"(arg0: $Matrix4f$$Type): $Matrix4f
+public "mapYnXnZ"(): $Matrix4f
+public "mapYnZX"(arg0: $Matrix4f$$Type): $Matrix4f
+public "mapYnZX"(): $Matrix4f
+public "mapYnZnX"(arg0: $Matrix4f$$Type): $Matrix4f
+public "mapYnZnX"(): $Matrix4f
+public "mapZXY"(arg0: $Matrix4f$$Type): $Matrix4f
+public "mapZXY"(): $Matrix4f
+public "mapZXnY"(): $Matrix4f
+public "mapZXnY"(arg0: $Matrix4f$$Type): $Matrix4f
+public "mapZYX"(): $Matrix4f
+public "mapZYX"(arg0: $Matrix4f$$Type): $Matrix4f
+public "mapZYnX"(): $Matrix4f
+public "mapZYnX"(arg0: $Matrix4f$$Type): $Matrix4f
+public "mapZnXY"(arg0: $Matrix4f$$Type): $Matrix4f
+public "mapZnXY"(): $Matrix4f
+public "mapZnXnY"(arg0: $Matrix4f$$Type): $Matrix4f
+public "mapZnXnY"(): $Matrix4f
+public "mapZnYX"(): $Matrix4f
+public "mapZnYX"(arg0: $Matrix4f$$Type): $Matrix4f
+public "mapZnYnX"(arg0: $Matrix4f$$Type): $Matrix4f
+public "mapZnYnX"(): $Matrix4f
+public "mapnXYnZ"(arg0: $Matrix4f$$Type): $Matrix4f
+public "mapnXYnZ"(): $Matrix4f
+public "mapnXZY"(arg0: $Matrix4f$$Type): $Matrix4f
+public "mapnXZY"(): $Matrix4f
+public "mapnXZnY"(arg0: $Matrix4f$$Type): $Matrix4f
+public "mapnXZnY"(): $Matrix4f
+public "mapnXnYZ"(): $Matrix4f
+public "mapnXnYZ"(arg0: $Matrix4f$$Type): $Matrix4f
+public "mapnXnYnZ"(): $Matrix4f
+public "mapnXnYnZ"(arg0: $Matrix4f$$Type): $Matrix4f
+public "mapnXnZY"(arg0: $Matrix4f$$Type): $Matrix4f
+public "mapnXnZY"(): $Matrix4f
+public "mapnXnZnY"(): $Matrix4f
+public "mapnXnZnY"(arg0: $Matrix4f$$Type): $Matrix4f
+public "mapnYXZ"(arg0: $Matrix4f$$Type): $Matrix4f
+public "mapnYXZ"(): $Matrix4f
+public "mapnYXnZ"(): $Matrix4f
+public "mapnYXnZ"(arg0: $Matrix4f$$Type): $Matrix4f
+public "mapnYZX"(arg0: $Matrix4f$$Type): $Matrix4f
+public "mapnYZX"(): $Matrix4f
+public "mapnYZnX"(arg0: $Matrix4f$$Type): $Matrix4f
+public "mapnYZnX"(): $Matrix4f
+public "mapnYnXZ"(arg0: $Matrix4f$$Type): $Matrix4f
+public "mapnYnXZ"(): $Matrix4f
+public "mapnYnXnZ"(arg0: $Matrix4f$$Type): $Matrix4f
+public "mapnYnXnZ"(): $Matrix4f
+public "mapnYnZX"(arg0: $Matrix4f$$Type): $Matrix4f
+public "mapnYnZX"(): $Matrix4f
+public "mapnYnZnX"(): $Matrix4f
+public "mapnYnZnX"(arg0: $Matrix4f$$Type): $Matrix4f
+public "mapnZXY"(): $Matrix4f
+public "mapnZXY"(arg0: $Matrix4f$$Type): $Matrix4f
+public "mapnZXnY"(): $Matrix4f
+public "mapnZXnY"(arg0: $Matrix4f$$Type): $Matrix4f
+public "mapnZYX"(arg0: $Matrix4f$$Type): $Matrix4f
+public "mapnZYX"(): $Matrix4f
+public "mapnZYnX"(): $Matrix4f
+public "mapnZYnX"(arg0: $Matrix4f$$Type): $Matrix4f
+public "mapnZnXY"(): $Matrix4f
+public "mapnZnXY"(arg0: $Matrix4f$$Type): $Matrix4f
+public "mapnZnXnY"(): $Matrix4f
+public "mapnZnXnY"(arg0: $Matrix4f$$Type): $Matrix4f
+public "mapnZnYX"(): $Matrix4f
+public "mapnZnYX"(arg0: $Matrix4f$$Type): $Matrix4f
+public "mapnZnYnX"(arg0: $Matrix4f$$Type): $Matrix4f
+public "mapnZnYnX"(): $Matrix4f
+public "negateX"(arg0: $Matrix4f$$Type): $Matrix4f
+public "negateX"(): $Matrix4f
+public "negateY"(arg0: $Matrix4f$$Type): $Matrix4f
+public "negateY"(): $Matrix4f
+public "negateZ"(): $Matrix4f
+public "negateZ"(arg0: $Matrix4f$$Type): $Matrix4f
+public "mulOrthoAffine"(arg0: $Matrix4fc$$Type): $Matrix4f
+public "mulOrthoAffine"(arg0: $Matrix4fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
+public "mulComponentWise"(arg0: $Matrix4fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
+public "mulComponentWise"(arg0: $Matrix4fc$$Type): $Matrix4f
+public "add4x3"(arg0: $Matrix4fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
+public "add4x3"(arg0: $Matrix4fc$$Type): $Matrix4f
+public "sub4x3"(arg0: $Matrix4fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
+public "sub4x3"(arg0: $Matrix4f$$Type): $Matrix4f
+public "mul4x3ComponentWise"(arg0: $Matrix4fc$$Type): $Matrix4f
+public "mul4x3ComponentWise"(arg0: $Matrix4fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
+public "mul3x3"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float): $Matrix4f
+public "mul3x3"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float, arg9: $Matrix4f$$Type): $Matrix4f
+public "mulLocal"(arg0: $Matrix4fc$$Type): $Matrix4f
+public "mulLocal"(arg0: $Matrix4fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
+public "mulTranslationAffine"(arg0: $Matrix4fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
+public "setTransposed"(arg0: $ByteBuffer$$Type): $Matrix4f
+public "setTransposed"(arg0: $FloatBuffer$$Type): $Matrix4f
+public "setTransposed"(arg0: $Matrix4fc$$Type): $Matrix4f
+public "setTransposed"(arg0: (float)[]): $Matrix4f
+public "setTransposed"(arg0: (float)[], arg1: integer): $Matrix4f
+public "mulLocalAffine"(arg0: $Matrix4fc$$Type): $Matrix4f
+public "mulLocalAffine"(arg0: $Matrix4fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
+public "mulPerspectiveAffine"(arg0: $Matrix4fc$$Type): $Matrix4f
+public "mulPerspectiveAffine"(arg0: $Matrix4x3fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
+public "mulPerspectiveAffine"(arg0: $Matrix4x3fc$$Type): $Matrix4f
+public "mulPerspectiveAffine"(arg0: $Matrix4fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
+public "mulAffineR"(arg0: $Matrix4fc$$Type): $Matrix4f
+public "mulAffineR"(arg0: $Matrix4fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
+public "scaleXY"(arg0: float, arg1: float, arg2: $Matrix4f$$Type): $Matrix4f
+public "scaleXY"(arg0: float, arg1: float): $Matrix4f
+public "scaleAround"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4f$$Type): $Matrix4f
+public "scaleAround"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix4f
+public "scaleAround"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4f$$Type): $Matrix4f
+public "scaleAround"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4f
+public "scaleLocal"(arg0: float): $Matrix4f
+public "scaleLocal"(arg0: float, arg1: float, arg2: float): $Matrix4f
+public "scaleLocal"(arg0: float, arg1: $Matrix4f$$Type): $Matrix4f
+public "scaleLocal"(arg0: float, arg1: float, arg2: float, arg3: $Matrix4f$$Type): $Matrix4f
+public "scaleAroundLocal"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix4f
+public "scaleAroundLocal"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4f$$Type): $Matrix4f
+public "scaleAroundLocal"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4f$$Type): $Matrix4f
+public "scaleAroundLocal"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4f
+public "rotateTowardsXY"(arg0: float, arg1: float): $Matrix4f
+public "rotateTowardsXY"(arg0: float, arg1: float, arg2: $Matrix4f$$Type): $Matrix4f
+public "rotateAffineXYZ"(arg0: float, arg1: float, arg2: float): $Matrix4f
+public "rotateAffineXYZ"(arg0: float, arg1: float, arg2: float, arg3: $Matrix4f$$Type): $Matrix4f
+public "rotateAffineZYX"(arg0: float, arg1: float, arg2: float): $Matrix4f
+public "rotateAffineZYX"(arg0: float, arg1: float, arg2: float, arg3: $Matrix4f$$Type): $Matrix4f
+public "rotateAffineYXZ"(arg0: float, arg1: float, arg2: float, arg3: $Matrix4f$$Type): $Matrix4f
+public "rotateAffineYXZ"(arg0: float, arg1: float, arg2: float): $Matrix4f
+public "rotateTranslation"(arg0: $Quaternionfc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
+public "rotateTranslation"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4f$$Type): $Matrix4f
+public "fma4x3"(arg0: $Matrix4fc$$Type, arg1: float): $Matrix4f
+public "fma4x3"(arg0: $Matrix4fc$$Type, arg1: float, arg2: $Matrix4f$$Type): $Matrix4f
+public "transpose3x3"(arg0: $Matrix3f$$Type): $Matrix3f
+public "transpose3x3"(): $Matrix4f
+public "transpose3x3"(arg0: $Matrix4f$$Type): $Matrix4f
+public "setTranslation"(arg0: $Vector3fc$$Type): $Matrix4f
+public "setTranslation"(arg0: float, arg1: float, arg2: float): $Matrix4f
+public "getTranslation"(arg0: $Vector3f$$Type): $Vector3f
+public "get4x3"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
+public "get4x3"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
+public "get4x3"(arg0: $ByteBuffer$$Type): $ByteBuffer
+public "get4x3"(arg0: $FloatBuffer$$Type): $FloatBuffer
+public "get4x3"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
+public "get3x3"(arg0: $Matrix3f$$Type): $Matrix3f
+public "get3x3"(arg0: $Matrix3d$$Type): $Matrix3d
+public "getRotation"(arg0: $AxisAngle4d$$Type): $AxisAngle4d
+public "getRotation"(arg0: $AxisAngle4f$$Type): $AxisAngle4f
+public "getTransposed"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
+public "getTransposed"(arg0: $FloatBuffer$$Type): $FloatBuffer
+public "getTransposed"(arg0: $ByteBuffer$$Type): $ByteBuffer
+public "getTransposed"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
+public "determinant"(): float
+public "invertAffine"(arg0: $Matrix4f$$Type): $Matrix4f
+public "invertAffine"(): $Matrix4f
+public "invertPerspective"(): $Matrix4f
+public "invertPerspective"(arg0: $Matrix4f$$Type): $Matrix4f
+public "invertFrustum"(): $Matrix4f
+public "invertFrustum"(arg0: $Matrix4f$$Type): $Matrix4f
+public "invertOrtho"(arg0: $Matrix4f$$Type): $Matrix4f
+public "invertOrtho"(): $Matrix4f
+public "invertPerspectiveView"(arg0: $Matrix4fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
+public "invertPerspectiveView"(arg0: $Matrix4x3fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
+public "rotateAffine"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4f
+public "rotateAffine"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4f$$Type): $Matrix4f
+public "rotateAffine"(arg0: $Quaternionfc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
+public "rotateAffine"(arg0: $Quaternionfc$$Type): $Matrix4f
+public "rotateLocal"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4f
+public "rotateLocal"(arg0: $Quaternionfc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
+public "rotateLocal"(arg0: $Quaternionfc$$Type): $Matrix4f
+public "rotateLocal"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4f$$Type): $Matrix4f
+public "translateLocal"(arg0: float, arg1: float, arg2: float, arg3: $Matrix4f$$Type): $Matrix4f
+public "translateLocal"(arg0: float, arg1: float, arg2: float): $Matrix4f
+public "translateLocal"(arg0: $Vector3fc$$Type): $Matrix4f
+public "translateLocal"(arg0: $Vector3fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
+public "ortho"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4f$$Type): $Matrix4f
+public "ortho"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean): $Matrix4f
+public "ortho"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix4f
+public "ortho"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean, arg7: $Matrix4f$$Type): $Matrix4f
+public "orthoLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix4f
+public "orthoLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean): $Matrix4f
+public "orthoLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4f$$Type): $Matrix4f
+public "orthoLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean, arg7: $Matrix4f$$Type): $Matrix4f
+public "setOrthoLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix4f
+public "setOrthoLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean): $Matrix4f
+public "orthoSymmetric"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4f$$Type): $Matrix4f
+public "orthoSymmetric"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: boolean): $Matrix4f
+public "orthoSymmetric"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: boolean, arg5: $Matrix4f$$Type): $Matrix4f
+public "orthoSymmetric"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4f
+public "setOrthoSymmetric"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: boolean): $Matrix4f
+public "setOrthoSymmetric"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4f
+public "orthoSymmetricLH"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4f
+public "orthoSymmetricLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: boolean): $Matrix4f
+public "orthoSymmetricLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4f$$Type): $Matrix4f
+public "orthoSymmetricLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: boolean, arg5: $Matrix4f$$Type): $Matrix4f
+public "setOrthoSymmetricLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: boolean): $Matrix4f
+public "setOrthoSymmetricLH"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4f
+public "ortho2D"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4f$$Type): $Matrix4f
+public "ortho2D"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4f
+public "setOrtho2D"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4f
+public "ortho2DLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4f$$Type): $Matrix4f
+public "ortho2DLH"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4f
+public "assume"(arg0: integer): $Matrix4f
+public "translationRotateScaleInvert"(arg0: $Vector3fc$$Type, arg1: $Quaternionfc$$Type, arg2: float): $Matrix4f
+public "translationRotateScaleInvert"(arg0: $Vector3fc$$Type, arg1: $Quaternionfc$$Type, arg2: $Vector3fc$$Type): $Matrix4f
+public "translationRotateScaleInvert"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float, arg9: float): $Matrix4f
+public "reflection"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix4f
+public "reflection"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4f
+public "reflection"(arg0: $Quaternionfc$$Type, arg1: $Vector3fc$$Type): $Matrix4f
+public "reflection"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type): $Matrix4f
+public "getRow"(arg0: integer, arg1: $Vector4f$$Type): $Vector4f
+public "getRow"(arg0: integer, arg1: $Vector3f$$Type): $Vector3f
+public "setRow"(arg0: integer, arg1: $Vector4fc$$Type): $Matrix4f
+public "setColumn"(arg0: integer, arg1: $Vector4fc$$Type): $Matrix4f
 public "cofactor3x3"(arg0: $Matrix4f$$Type): $Matrix4f
 public "cofactor3x3"(arg0: $Matrix3f$$Type): $Matrix3f
+public "cofactor3x3"(): $Matrix4f
+public "normalize3x3"(arg0: $Matrix3f$$Type): $Matrix3f
 public "normalize3x3"(arg0: $Matrix4f$$Type): $Matrix4f
 public "normalize3x3"(): $Matrix4f
-public "normalize3x3"(arg0: $Matrix3f$$Type): $Matrix3f
 public "frustumPlane"(arg0: integer, arg1: $Vector4f$$Type): $Vector4f
 public "frustumCorner"(arg0: integer, arg1: $Vector3f$$Type): $Vector3f
 public "perspectiveOrigin"(arg0: $Vector3f$$Type): $Vector3f
@@ -2712,405 +3084,33 @@ public "billboardCylindrical"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, ar
 public "billboardSpherical"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3fc$$Type): $Matrix4f
 public "billboardSpherical"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type): $Matrix4f
 public "isAffine"(): boolean
-public "arcball"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4f$$Type): $Matrix4f
-public "arcball"(arg0: float, arg1: $Vector3fc$$Type, arg2: float, arg3: float, arg4: $Matrix4f$$Type): $Matrix4f
 public "arcball"(arg0: float, arg1: $Vector3fc$$Type, arg2: float, arg3: float): $Matrix4f
 public "arcball"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix4f
+public "arcball"(arg0: float, arg1: $Vector3fc$$Type, arg2: float, arg3: float, arg4: $Matrix4f$$Type): $Matrix4f
+public "arcball"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4f$$Type): $Matrix4f
 public "frustumAabb"(arg0: $Vector3f$$Type, arg1: $Vector3f$$Type): $Matrix4f
 public "projectedGridRange"(arg0: $Matrix4fc$$Type, arg1: float, arg2: float, arg3: $Matrix4f$$Type): $Matrix4f
 public "perspectiveFrustumSlice"(arg0: float, arg1: float, arg2: $Matrix4f$$Type): $Matrix4f
 public "orthoCrop"(arg0: $Matrix4fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
 public "trapezoidCrop"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float): $Matrix4f
-public "transformAab"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Vector3f$$Type, arg7: $Vector3f$$Type): $Matrix4f
 public "transformAab"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3f$$Type, arg3: $Vector3f$$Type): $Matrix4f
-public "rotation"(arg0: $AxisAngle4f$$Type): $Matrix4f
-public "rotation"(arg0: float, arg1: $Vector3fc$$Type): $Matrix4f
-public "rotation"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4f
-public "rotation"(arg0: $Quaternionfc$$Type): $Matrix4f
-public "set4x3"(arg0: $Matrix4f$$Type): $Matrix4f
-public "set4x3"(arg0: $Matrix4x3fc$$Type): $Matrix4f
-public "translationRotateScale"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float, arg9: float): $Matrix4f
-public "translationRotateScale"(arg0: $Vector3fc$$Type, arg1: $Quaternionfc$$Type, arg2: float): $Matrix4f
-public "translationRotateScale"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float): $Matrix4f
-public "translationRotateScale"(arg0: $Vector3fc$$Type, arg1: $Quaternionfc$$Type, arg2: $Vector3fc$$Type): $Matrix4f
-public "translationRotateInvert"(arg0: $Vector3fc$$Type, arg1: $Quaternionfc$$Type): $Matrix4f
-public "translationRotateInvert"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float): $Matrix4f
-public "translationRotate"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float): $Matrix4f
-public "translationRotate"(arg0: $Vector3fc$$Type, arg1: $Quaternionfc$$Type): $Matrix4f
-public "translationRotate"(arg0: float, arg1: float, arg2: float, arg3: $Quaternionfc$$Type): $Matrix4f
-public "transformTranspose"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Vector4f$$Type): $Vector4f
-public "transformTranspose"(arg0: $Vector4f$$Type): $Vector4f
-public "transformTranspose"(arg0: $Vector4fc$$Type, arg1: $Vector4f$$Type): $Vector4f
-public "transformProject"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Vector4f$$Type): $Vector4f
-public "transformProject"(arg0: $Vector4fc$$Type, arg1: $Vector3f$$Type): $Vector3f
-public "transformProject"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
-public "transformProject"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Vector3f$$Type): $Vector3f
-public "transformProject"(arg0: $Vector3f$$Type): $Vector3f
-public "transformProject"(arg0: $Vector4f$$Type): $Vector4f
-public "transformProject"(arg0: $Vector4fc$$Type, arg1: $Vector4f$$Type): $Vector4f
-public "transformProject"(arg0: float, arg1: float, arg2: float, arg3: $Vector3f$$Type): $Vector3f
+public "transformAab"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Vector3f$$Type, arg7: $Vector3f$$Type): $Matrix4f
 public "rotateTowards"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4f$$Type): $Matrix4f
 public "rotateTowards"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix4f
 public "rotateTowards"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type): $Matrix4f
 public "rotateTowards"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Matrix4f$$Type): $Matrix4f
-public "rotationTowards"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix4f
-public "rotationTowards"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type): $Matrix4f
-public "translationRotateTowards"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3fc$$Type): $Matrix4f
-public "translationRotateTowards"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float): $Matrix4f
-public "affineSpan"(arg0: $Vector3f$$Type, arg1: $Vector3f$$Type, arg2: $Vector3f$$Type, arg3: $Vector3f$$Type): $Matrix4f
-public "testPoint"(arg0: float, arg1: float, arg2: float): boolean
-public "testSphere"(arg0: float, arg1: float, arg2: float, arg3: float): boolean
-public "testAab"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): boolean
-public "obliqueZ"(arg0: float, arg1: float, arg2: $Matrix4f$$Type): $Matrix4f
-public "obliqueZ"(arg0: float, arg1: float): $Matrix4f
-public static "perspectiveOffCenterViewFromRectangle"(arg0: $Vector3f$$Type, arg1: $Vector3f$$Type, arg2: $Vector3f$$Type, arg3: $Vector3f$$Type, arg4: float, arg5: boolean, arg6: $Matrix4f$$Type, arg7: $Matrix4f$$Type): void
-public "withLookAtUp"(arg0: $Vector3fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
-public "withLookAtUp"(arg0: $Vector3fc$$Type): $Matrix4f
-public "withLookAtUp"(arg0: float, arg1: float, arg2: float): $Matrix4f
-public "withLookAtUp"(arg0: float, arg1: float, arg2: float, arg3: $Matrix4f$$Type): $Matrix4f
-public "mapXZY"(): $Matrix4f
-public "mapXZY"(arg0: $Matrix4f$$Type): $Matrix4f
-public "mapXZnY"(arg0: $Matrix4f$$Type): $Matrix4f
-public "mapXZnY"(): $Matrix4f
-public "mapXnYnZ"(arg0: $Matrix4f$$Type): $Matrix4f
-public "mapXnYnZ"(): $Matrix4f
-public "mapXnZY"(arg0: $Matrix4f$$Type): $Matrix4f
-public "mapXnZY"(): $Matrix4f
-public "mapXnZnY"(): $Matrix4f
-public "mapXnZnY"(arg0: $Matrix4f$$Type): $Matrix4f
-public "mapYXZ"(arg0: $Matrix4f$$Type): $Matrix4f
-public "mapYXZ"(): $Matrix4f
-public "mapYXnZ"(): $Matrix4f
-public "mapYXnZ"(arg0: $Matrix4f$$Type): $Matrix4f
-public "mapYZX"(): $Matrix4f
-public "mapYZX"(arg0: $Matrix4f$$Type): $Matrix4f
-public "mapYZnX"(arg0: $Matrix4f$$Type): $Matrix4f
-public "mapYZnX"(): $Matrix4f
-public "mapYnXZ"(arg0: $Matrix4f$$Type): $Matrix4f
-public "mapYnXZ"(): $Matrix4f
-public "mapYnXnZ"(): $Matrix4f
-public "mapYnXnZ"(arg0: $Matrix4f$$Type): $Matrix4f
-public "mapYnZX"(): $Matrix4f
-public "mapYnZX"(arg0: $Matrix4f$$Type): $Matrix4f
-public "mapYnZnX"(arg0: $Matrix4f$$Type): $Matrix4f
-public "mapYnZnX"(): $Matrix4f
-public "mapZXY"(): $Matrix4f
-public "mapZXY"(arg0: $Matrix4f$$Type): $Matrix4f
-public "mapZXnY"(): $Matrix4f
-public "mapZXnY"(arg0: $Matrix4f$$Type): $Matrix4f
-public "mapZYX"(): $Matrix4f
-public "mapZYX"(arg0: $Matrix4f$$Type): $Matrix4f
-public "mapZYnX"(): $Matrix4f
-public "mapZYnX"(arg0: $Matrix4f$$Type): $Matrix4f
-public "mapZnXY"(): $Matrix4f
-public "mapZnXY"(arg0: $Matrix4f$$Type): $Matrix4f
-public "mapZnXnY"(arg0: $Matrix4f$$Type): $Matrix4f
-public "mapZnXnY"(): $Matrix4f
-public "mapZnYX"(arg0: $Matrix4f$$Type): $Matrix4f
-public "mapZnYX"(): $Matrix4f
-public "mapZnYnX"(): $Matrix4f
-public "mapZnYnX"(arg0: $Matrix4f$$Type): $Matrix4f
-public "mapnXYnZ"(): $Matrix4f
-public "mapnXYnZ"(arg0: $Matrix4f$$Type): $Matrix4f
-public "mapnXZY"(arg0: $Matrix4f$$Type): $Matrix4f
-public "mapnXZY"(): $Matrix4f
-public "mapnXZnY"(): $Matrix4f
-public "mapnXZnY"(arg0: $Matrix4f$$Type): $Matrix4f
-public "mapnXnYZ"(): $Matrix4f
-public "mapnXnYZ"(arg0: $Matrix4f$$Type): $Matrix4f
-public "mapnXnYnZ"(): $Matrix4f
-public "mapnXnYnZ"(arg0: $Matrix4f$$Type): $Matrix4f
-public "mapnXnZY"(arg0: $Matrix4f$$Type): $Matrix4f
-public "mapnXnZY"(): $Matrix4f
-public "mapnXnZnY"(arg0: $Matrix4f$$Type): $Matrix4f
-public "mapnXnZnY"(): $Matrix4f
-public "mapnYXZ"(arg0: $Matrix4f$$Type): $Matrix4f
-public "mapnYXZ"(): $Matrix4f
-public "mapnYXnZ"(arg0: $Matrix4f$$Type): $Matrix4f
-public "mapnYXnZ"(): $Matrix4f
-public "mapnYZX"(): $Matrix4f
-public "mapnYZX"(arg0: $Matrix4f$$Type): $Matrix4f
-public "mapnYZnX"(): $Matrix4f
-public "mapnYZnX"(arg0: $Matrix4f$$Type): $Matrix4f
-public "mapnYnXZ"(arg0: $Matrix4f$$Type): $Matrix4f
-public "mapnYnXZ"(): $Matrix4f
-public "mapnYnXnZ"(arg0: $Matrix4f$$Type): $Matrix4f
-public "mapnYnXnZ"(): $Matrix4f
-public "mapnYnZX"(): $Matrix4f
-public "mapnYnZX"(arg0: $Matrix4f$$Type): $Matrix4f
-public "mapnYnZnX"(): $Matrix4f
-public "mapnYnZnX"(arg0: $Matrix4f$$Type): $Matrix4f
-public "mapnZXY"(arg0: $Matrix4f$$Type): $Matrix4f
-public "mapnZXY"(): $Matrix4f
-public "mapnZXnY"(): $Matrix4f
-public "mapnZXnY"(arg0: $Matrix4f$$Type): $Matrix4f
-public "mapnZYX"(arg0: $Matrix4f$$Type): $Matrix4f
-public "mapnZYX"(): $Matrix4f
-public "mapnZYnX"(): $Matrix4f
-public "mapnZYnX"(arg0: $Matrix4f$$Type): $Matrix4f
-public "mapnZnXY"(): $Matrix4f
-public "mapnZnXY"(arg0: $Matrix4f$$Type): $Matrix4f
-public "mapnZnXnY"(): $Matrix4f
-public "mapnZnXnY"(arg0: $Matrix4f$$Type): $Matrix4f
-public "mapnZnYX"(): $Matrix4f
-public "mapnZnYX"(arg0: $Matrix4f$$Type): $Matrix4f
-public "mapnZnYnX"(): $Matrix4f
-public "mapnZnYnX"(arg0: $Matrix4f$$Type): $Matrix4f
-public "negateX"(arg0: $Matrix4f$$Type): $Matrix4f
-public "negateX"(): $Matrix4f
-public "negateY"(arg0: $Matrix4f$$Type): $Matrix4f
-public "negateY"(): $Matrix4f
-public "negateZ"(): $Matrix4f
-public "negateZ"(arg0: $Matrix4f$$Type): $Matrix4f
-public "translationRotateScaleMulAffine"(arg0: $Vector3fc$$Type, arg1: $Quaternionfc$$Type, arg2: $Vector3fc$$Type, arg3: $Matrix4f$$Type): $Matrix4f
-public "translationRotateScaleMulAffine"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float, arg9: float, arg10: $Matrix4f$$Type): $Matrix4f
-public "setOrthoSymmetric"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4f
-public "setOrthoSymmetric"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: boolean): $Matrix4f
-public "orthoSymmetricLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4f$$Type): $Matrix4f
-public "orthoSymmetricLH"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4f
-public "orthoSymmetricLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: boolean): $Matrix4f
-public "orthoSymmetricLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: boolean, arg5: $Matrix4f$$Type): $Matrix4f
-public "setOrthoSymmetricLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: boolean): $Matrix4f
-public "setOrthoSymmetricLH"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4f
-public "setOrtho2D"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4f
-public "ortho2DLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4f$$Type): $Matrix4f
-public "ortho2DLH"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4f
-public "setOrtho2DLH"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4f
-public "setLookAlong"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix4f
-public "setLookAlong"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type): $Matrix4f
-public "setLookAt"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float): $Matrix4f
-public "setLookAt"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3fc$$Type): $Matrix4f
-public "lookAt"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3fc$$Type): $Matrix4f
-public "lookAt"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float, arg9: $Matrix4f$$Type): $Matrix4f
-public "lookAt"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3fc$$Type, arg3: $Matrix4f$$Type): $Matrix4f
-public "lookAt"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float): $Matrix4f
-public "lookAtPerspective"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float, arg9: $Matrix4f$$Type): $Matrix4f
-public "setLookAtLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float): $Matrix4f
-public "setLookAtLH"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3fc$$Type): $Matrix4f
-public "lookAtLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float): $Matrix4f
-public "lookAtLH"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3fc$$Type, arg3: $Matrix4f$$Type): $Matrix4f
-public "lookAtLH"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3fc$$Type): $Matrix4f
-public "lookAtLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float, arg9: $Matrix4f$$Type): $Matrix4f
-public "lookAtPerspectiveLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float, arg9: $Matrix4f$$Type): $Matrix4f
-public "tile"(arg0: integer, arg1: integer, arg2: integer, arg3: integer): $Matrix4f
-public "tile"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: $Matrix4f$$Type): $Matrix4f
-public "perspective"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4f$$Type): $Matrix4f
-public "perspective"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: boolean): $Matrix4f
-public "perspective"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4f
-public "perspective"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: boolean, arg5: $Matrix4f$$Type): $Matrix4f
-public "setPerspective"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: boolean): $Matrix4f
-public "setPerspective"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4f
-public "perspectiveRect"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4f$$Type): $Matrix4f
-public "perspectiveRect"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: boolean): $Matrix4f
-public "perspectiveRect"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4f
-public "perspectiveRect"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: boolean, arg5: $Matrix4f$$Type): $Matrix4f
-public "setPerspectiveRect"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4f
-public "setPerspectiveRect"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: boolean): $Matrix4f
-public "perspectiveOffCenter"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean, arg7: $Matrix4f$$Type): $Matrix4f
-public "perspectiveOffCenter"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4f$$Type): $Matrix4f
-public "perspectiveOffCenter"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean): $Matrix4f
-public "perspectiveOffCenter"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix4f
-public "setPerspectiveOffCenter"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix4f
-public "setPerspectiveOffCenter"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean): $Matrix4f
-public "perspectiveOffCenterFov"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean): $Matrix4f
-public "perspectiveOffCenterFov"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean, arg7: $Matrix4f$$Type): $Matrix4f
-public "perspectiveOffCenterFov"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix4f
-public "perspectiveOffCenterFov"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4f$$Type): $Matrix4f
-public "mulLocalAffine"(arg0: $Matrix4fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
-public "mulLocalAffine"(arg0: $Matrix4fc$$Type): $Matrix4f
-public "assume"(arg0: integer): $Matrix4f
-public "translationRotateScaleInvert"(arg0: $Vector3fc$$Type, arg1: $Quaternionfc$$Type, arg2: float): $Matrix4f
-public "translationRotateScaleInvert"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float, arg9: float): $Matrix4f
-public "translationRotateScaleInvert"(arg0: $Vector3fc$$Type, arg1: $Quaternionfc$$Type, arg2: $Vector3fc$$Type): $Matrix4f
-public "frustum"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4f$$Type): $Matrix4f
-public "frustum"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean): $Matrix4f
-public "frustum"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix4f
-public "frustum"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean, arg7: $Matrix4f$$Type): $Matrix4f
-public "perspectiveOffCenterFovLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean, arg7: $Matrix4f$$Type): $Matrix4f
-public "perspectiveOffCenterFovLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix4f
-public "perspectiveOffCenterFovLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean): $Matrix4f
-public "perspectiveOffCenterFovLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4f$$Type): $Matrix4f
-public "frustumLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean, arg7: $Matrix4f$$Type): $Matrix4f
-public "frustumLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean): $Matrix4f
-public "frustumLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4f$$Type): $Matrix4f
-public "frustumLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix4f
-public "setPerspectiveOffCenterFov"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix4f
-public "setPerspectiveOffCenterFov"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean): $Matrix4f
-public "setFrustum"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix4f
-public "setFrustum"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean): $Matrix4f
-public "setPerspectiveOffCenterFovLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix4f
-public "setPerspectiveOffCenterFovLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean): $Matrix4f
-public "setFrustumLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean): $Matrix4f
-public "setFrustumLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix4f
-public "perspectiveLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: boolean): $Matrix4f
-public "perspectiveLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: boolean, arg5: $Matrix4f$$Type): $Matrix4f
-public "perspectiveLH"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4f
-public "perspectiveLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4f$$Type): $Matrix4f
-public "setPerspectiveLH"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4f
-public "setPerspectiveLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: boolean): $Matrix4f
-public "setFromIntrinsic"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: integer, arg6: integer, arg7: float, arg8: float): $Matrix4f
-public "rotateAroundAffine"(arg0: $Quaternionfc$$Type, arg1: float, arg2: float, arg3: float, arg4: $Matrix4f$$Type): $Matrix4f
-public "rotationAround"(arg0: $Quaternionfc$$Type, arg1: float, arg2: float, arg3: float): $Matrix4f
-public "rotateAroundLocal"(arg0: $Quaternionfc$$Type, arg1: float, arg2: float, arg3: float, arg4: $Matrix4f$$Type): $Matrix4f
-public "rotateAroundLocal"(arg0: $Quaternionfc$$Type, arg1: float, arg2: float, arg3: float): $Matrix4f
-public "unproject"(arg0: $Vector3fc$$Type, arg1: (integer)[], arg2: $Vector3f$$Type): $Vector3f
-public "unproject"(arg0: float, arg1: float, arg2: float, arg3: (integer)[], arg4: $Vector4f$$Type): $Vector4f
-public "unproject"(arg0: $Vector3fc$$Type, arg1: (integer)[], arg2: $Vector4f$$Type): $Vector4f
-public "unproject"(arg0: float, arg1: float, arg2: float, arg3: (integer)[], arg4: $Vector3f$$Type): $Vector3f
-public "unprojectRay"(arg0: $Vector2fc$$Type, arg1: (integer)[], arg2: $Vector3f$$Type, arg3: $Vector3f$$Type): $Matrix4f
-public "unprojectRay"(arg0: float, arg1: float, arg2: (integer)[], arg3: $Vector3f$$Type, arg4: $Vector3f$$Type): $Matrix4f
-public "unprojectInv"(arg0: $Vector3fc$$Type, arg1: (integer)[], arg2: $Vector3f$$Type): $Vector3f
-public "unprojectInv"(arg0: $Vector3fc$$Type, arg1: (integer)[], arg2: $Vector4f$$Type): $Vector4f
-public "unprojectInv"(arg0: float, arg1: float, arg2: float, arg3: (integer)[], arg4: $Vector3f$$Type): $Vector3f
-public "unprojectInv"(arg0: float, arg1: float, arg2: float, arg3: (integer)[], arg4: $Vector4f$$Type): $Vector4f
-public "unprojectInvRay"(arg0: float, arg1: float, arg2: (integer)[], arg3: $Vector3f$$Type, arg4: $Vector3f$$Type): $Matrix4f
-public "unprojectInvRay"(arg0: $Vector2fc$$Type, arg1: (integer)[], arg2: $Vector3f$$Type, arg3: $Vector3f$$Type): $Matrix4f
-public "project"(arg0: float, arg1: float, arg2: float, arg3: (integer)[], arg4: $Vector3f$$Type): $Vector3f
-public "project"(arg0: $Vector3fc$$Type, arg1: (integer)[], arg2: $Vector4f$$Type): $Vector4f
-public "project"(arg0: float, arg1: float, arg2: float, arg3: (integer)[], arg4: $Vector4f$$Type): $Vector4f
-public "project"(arg0: $Vector3fc$$Type, arg1: (integer)[], arg2: $Vector3f$$Type): $Vector3f
-public "reflection"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix4f
-public "reflection"(arg0: $Quaternionfc$$Type, arg1: $Vector3fc$$Type): $Matrix4f
-public "reflection"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type): $Matrix4f
-public "reflection"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4f
-public "getRow"(arg0: integer, arg1: $Vector4f$$Type): $Vector4f
-public "getRow"(arg0: integer, arg1: $Vector3f$$Type): $Vector3f
-public "setRow"(arg0: integer, arg1: $Vector4fc$$Type): $Matrix4f
-public "setColumn"(arg0: integer, arg1: $Vector4fc$$Type): $Matrix4f
-public "transformDirection"(arg0: float, arg1: float, arg2: float, arg3: $Vector3f$$Type): $Vector3f
-public "transformDirection"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
-public "transformDirection"(arg0: $Vector3f$$Type): $Vector3f
-public "transformAffine"(arg0: $Vector4fc$$Type, arg1: $Vector4f$$Type): $Vector4f
-public "transformAffine"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Vector4f$$Type): $Vector4f
-public "transformAffine"(arg0: $Vector4f$$Type): $Vector4f
-public "scaleXY"(arg0: float, arg1: float): $Matrix4f
-public "scaleXY"(arg0: float, arg1: float, arg2: $Matrix4f$$Type): $Matrix4f
-public "scaleAround"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4f$$Type): $Matrix4f
-public "scaleAround"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4f
-public "scaleAround"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix4f
-public "scaleAround"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4f$$Type): $Matrix4f
-public "scaleLocal"(arg0: float, arg1: $Matrix4f$$Type): $Matrix4f
-public "scaleLocal"(arg0: float): $Matrix4f
-public "scaleLocal"(arg0: float, arg1: float, arg2: float, arg3: $Matrix4f$$Type): $Matrix4f
-public "scaleLocal"(arg0: float, arg1: float, arg2: float): $Matrix4f
-public "scaleAroundLocal"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4f
-public "scaleAroundLocal"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4f$$Type): $Matrix4f
-public "scaleAroundLocal"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix4f
-public "scaleAroundLocal"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4f$$Type): $Matrix4f
-public "rotateTowardsXY"(arg0: float, arg1: float): $Matrix4f
-public "rotateTowardsXY"(arg0: float, arg1: float, arg2: $Matrix4f$$Type): $Matrix4f
-public "rotateAffineXYZ"(arg0: float, arg1: float, arg2: float): $Matrix4f
-public "rotateAffineXYZ"(arg0: float, arg1: float, arg2: float, arg3: $Matrix4f$$Type): $Matrix4f
-public "determinantAffine"(): float
-public "determinant3x3"(): float
-public "invertAffine"(arg0: $Matrix4f$$Type): $Matrix4f
-public "invertAffine"(): $Matrix4f
-public "invertPerspective"(arg0: $Matrix4f$$Type): $Matrix4f
-public "invertPerspective"(): $Matrix4f
-public "invertFrustum"(arg0: $Matrix4f$$Type): $Matrix4f
-public "invertFrustum"(): $Matrix4f
-public "transpose3x3"(arg0: $Matrix4f$$Type): $Matrix4f
-public "transpose3x3"(): $Matrix4f
-public "transpose3x3"(arg0: $Matrix3f$$Type): $Matrix3f
-public "setTranslation"(arg0: $Vector3fc$$Type): $Matrix4f
-public "setTranslation"(arg0: float, arg1: float, arg2: float): $Matrix4f
-public "getTranslation"(arg0: $Vector3f$$Type): $Vector3f
-public "getScale"(arg0: $Vector3f$$Type): $Vector3f
-public "get4x3"(arg0: $FloatBuffer$$Type): $FloatBuffer
-public "get4x3"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
-public "get4x3"(arg0: $ByteBuffer$$Type): $ByteBuffer
-public "get4x3"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
-public "get4x3"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
-public "get3x3"(arg0: $Matrix3d$$Type): $Matrix3d
-public "get3x3"(arg0: $Matrix3f$$Type): $Matrix3f
-public "getRotation"(arg0: $AxisAngle4d$$Type): $AxisAngle4d
-public "getRotation"(arg0: $AxisAngle4f$$Type): $AxisAngle4f
-public "mulTranslationAffine"(arg0: $Matrix4fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
-public "mulAffineR"(arg0: $Matrix4fc$$Type): $Matrix4f
-public "mulAffineR"(arg0: $Matrix4fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
-public "invertOrtho"(): $Matrix4f
-public "invertOrtho"(arg0: $Matrix4f$$Type): $Matrix4f
-public "invertPerspectiveView"(arg0: $Matrix4fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
-public "invertPerspectiveView"(arg0: $Matrix4x3fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
-public "mulOrthoAffine"(arg0: $Matrix4fc$$Type): $Matrix4f
-public "mulOrthoAffine"(arg0: $Matrix4fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
-public "fma4x3"(arg0: $Matrix4fc$$Type, arg1: float): $Matrix4f
-public "fma4x3"(arg0: $Matrix4fc$$Type, arg1: float, arg2: $Matrix4f$$Type): $Matrix4f
-public "mulComponentWise"(arg0: $Matrix4fc$$Type): $Matrix4f
-public "mulComponentWise"(arg0: $Matrix4fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
-public "add4x3"(arg0: $Matrix4fc$$Type): $Matrix4f
-public "add4x3"(arg0: $Matrix4fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
-public "sub4x3"(arg0: $Matrix4f$$Type): $Matrix4f
-public "sub4x3"(arg0: $Matrix4fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
-public "set3x3"(arg0: $Matrix4f$$Type): $Matrix4f
-public "set3x3"(arg0: $Matrix3fc$$Type): $Matrix4f
-public "rotateAffineZYX"(arg0: float, arg1: float, arg2: float): $Matrix4f
-public "rotateAffineZYX"(arg0: float, arg1: float, arg2: float, arg3: $Matrix4f$$Type): $Matrix4f
-public "rotateAffineYXZ"(arg0: float, arg1: float, arg2: float): $Matrix4f
-public "rotateAffineYXZ"(arg0: float, arg1: float, arg2: float, arg3: $Matrix4f$$Type): $Matrix4f
-public "rotateTranslation"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4f$$Type): $Matrix4f
-public "rotateTranslation"(arg0: $Quaternionfc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
-public "rotateAffine"(arg0: $Quaternionfc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
-public "rotateAffine"(arg0: $Quaternionfc$$Type): $Matrix4f
-public "rotateAffine"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4f$$Type): $Matrix4f
-public "rotateAffine"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4f
-public "rotateLocal"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4f
-public "rotateLocal"(arg0: $Quaternionfc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
-public "rotateLocal"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4f$$Type): $Matrix4f
-public "rotateLocal"(arg0: $Quaternionfc$$Type): $Matrix4f
-public "translateLocal"(arg0: float, arg1: float, arg2: float): $Matrix4f
-public "translateLocal"(arg0: $Vector3fc$$Type): $Matrix4f
-public "translateLocal"(arg0: float, arg1: float, arg2: float, arg3: $Matrix4f$$Type): $Matrix4f
-public "translateLocal"(arg0: $Vector3fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
-public "ortho"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean): $Matrix4f
-public "ortho"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4f$$Type): $Matrix4f
-public "ortho"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix4f
-public "ortho"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean, arg7: $Matrix4f$$Type): $Matrix4f
-public "orthoLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4f$$Type): $Matrix4f
-public "orthoLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean): $Matrix4f
-public "orthoLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix4f
-public "orthoLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean, arg7: $Matrix4f$$Type): $Matrix4f
-public "setOrthoLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean): $Matrix4f
-public "setOrthoLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix4f
-public "orthoSymmetric"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: boolean): $Matrix4f
-public "orthoSymmetric"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4f
-public "orthoSymmetric"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4f$$Type): $Matrix4f
-public "orthoSymmetric"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: boolean, arg5: $Matrix4f$$Type): $Matrix4f
-public "ortho2D"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4f
-public "ortho2D"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4f$$Type): $Matrix4f
-public "mul4x3ComponentWise"(arg0: $Matrix4fc$$Type): $Matrix4f
-public "mul4x3ComponentWise"(arg0: $Matrix4fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
-public "getTransposed"(arg0: $FloatBuffer$$Type): $FloatBuffer
-public "getTransposed"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
-public "getTransposed"(arg0: $ByteBuffer$$Type): $ByteBuffer
-public "getTransposed"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
-public "mulLocal"(arg0: $Matrix4fc$$Type): $Matrix4f
-public "mulLocal"(arg0: $Matrix4fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
-public "mul3x3"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float, arg9: $Matrix4f$$Type): $Matrix4f
-public "mul3x3"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float): $Matrix4f
-public "mulPerspectiveAffine"(arg0: $Matrix4fc$$Type): $Matrix4f
-public "mulPerspectiveAffine"(arg0: $Matrix4fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
-public "mulPerspectiveAffine"(arg0: $Matrix4x3fc$$Type): $Matrix4f
-public "mulPerspectiveAffine"(arg0: $Matrix4x3fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
-public "mul0"(arg0: $Matrix4fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
-public "mul0"(arg0: $Matrix4fc$$Type): $Matrix4f
-public "setTransposed"(arg0: (float)[]): $Matrix4f
-public "setTransposed"(arg0: (float)[], arg1: integer): $Matrix4f
-public "setTransposed"(arg0: $ByteBuffer$$Type): $Matrix4f
-public "setTransposed"(arg0: $FloatBuffer$$Type): $Matrix4f
-public "setTransposed"(arg0: $Matrix4fc$$Type): $Matrix4f
 get "finite"(): boolean
 set "fromAddress"(value: long)
-set "transposedFromAddress"(value: long)
-get "affine"(): boolean
-set "4x3"(value: $Matrix4f$$Type)
 set "4x3"(value: $Matrix4x3fc$$Type)
-set "3x3"(value: $Matrix4f$$Type)
+set "4x3"(value: $Matrix4f$$Type)
 set "3x3"(value: $Matrix3fc$$Type)
-set "transposed"(value: (float)[])
+set "3x3"(value: $Matrix4f$$Type)
+set "transposedFromAddress"(value: long)
 set "transposed"(value: $ByteBuffer$$Type)
 set "transposed"(value: $FloatBuffer$$Type)
 set "transposed"(value: $Matrix4fc$$Type)
+set "transposed"(value: (float)[])
+get "affine"(): boolean
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -3130,8 +3130,8 @@ import {$ObjectOutput$$Type} from "java.io.ObjectOutput"
 import {$Matrix3dc, $Matrix3dc$$Type, $Matrix3dc$$Interface} from "org.joml.Matrix3dc"
 import {$Vector3d, $Vector3d$$Type} from "org.joml.Vector3d"
 import {$Matrix2fc$$Type} from "org.joml.Matrix2fc"
-import {$Matrix2dc$$Type} from "org.joml.Matrix2dc"
 import {$Matrix4fc$$Type} from "org.joml.Matrix4fc"
+import {$Matrix2dc$$Type} from "org.joml.Matrix2dc"
 import {$Matrix3fc$$Type} from "org.joml.Matrix3fc"
 import {$Cloneable$$Interface} from "java.lang.Cloneable"
 import {$Quaterniond, $Quaterniond$$Type} from "org.joml.Quaterniond"
@@ -3149,120 +3149,120 @@ import {$AxisAngle4d$$Type} from "org.joml.AxisAngle4d"
 import {$ByteBuffer, $ByteBuffer$$Type} from "java.nio.ByteBuffer"
 
 export class $Matrix3d implements $Externalizable$$Interface, $Cloneable$$Interface, $Matrix3dc$$Interface {
-constructor()
+constructor(arg0: $Matrix4fc$$Type)
 constructor(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double)
-constructor(arg0: $Matrix4dc$$Type)
-constructor(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Vector3dc$$Type)
-constructor(arg0: $DoubleBuffer$$Type)
+constructor()
 constructor(arg0: $Matrix2dc$$Type)
 constructor(arg0: $Matrix2fc$$Type)
 constructor(arg0: $Matrix3dc$$Type)
 constructor(arg0: $Matrix3fc$$Type)
-constructor(arg0: $Matrix4fc$$Type)
+constructor(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Vector3dc$$Type)
+constructor(arg0: $DoubleBuffer$$Type)
+constructor(arg0: $Matrix4dc$$Type)
 
 public "cofactor"(arg0: $Matrix3d$$Type): $Matrix3d
 public "cofactor"(): $Matrix3d
 public "quadraticFormProduct"(arg0: $Vector3fc$$Type): double
-public "quadraticFormProduct"(arg0: double, arg1: double, arg2: double): double
 public "quadraticFormProduct"(arg0: $Vector3dc$$Type): double
+public "quadraticFormProduct"(arg0: double, arg1: double, arg2: double): double
 public "setSkewSymmetric"(arg0: double, arg1: double, arg2: double): $Matrix3d
-public "getTransposedFloats"(arg0: $ByteBuffer$$Type): $ByteBuffer
-public "getTransposedFloats"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
-public "setFloats"(arg0: integer, arg1: $ByteBuffer$$Type): $Matrix3d
-public "setFloats"(arg0: $ByteBuffer$$Type): $Matrix3d
 public "getFloats"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
 public "getFloats"(arg0: $ByteBuffer$$Type): $ByteBuffer
+public "setFloats"(arg0: integer, arg1: $ByteBuffer$$Type): $Matrix3d
+public "setFloats"(arg0: $ByteBuffer$$Type): $Matrix3d
+public "getTransposedFloats"(arg0: $ByteBuffer$$Type): $ByteBuffer
+public "getTransposedFloats"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
 public "transpose"(): $Matrix3d
 public "transpose"(arg0: $Matrix3d$$Type): $Matrix3d
-public "invert"(): $Matrix3d
 public "invert"(arg0: $Matrix3d$$Type): $Matrix3d
-public "sub"(arg0: $Matrix3dc$$Type): $Matrix3d
-public "sub"(arg0: $Matrix3dc$$Type, arg1: $Matrix3d$$Type): $Matrix3d
-public "mul"(arg0: $Matrix3fc$$Type, arg1: $Matrix3d$$Type): $Matrix3d
-public "mul"(arg0: $Matrix3fc$$Type): $Matrix3d
-public "mul"(arg0: $Matrix3dc$$Type, arg1: $Matrix3d$$Type): $Matrix3d
-public "mul"(arg0: $Matrix3dc$$Type): $Matrix3d
-public "normal"(): $Matrix3d
-public "normal"(arg0: $Matrix3d$$Type): $Matrix3d
+public "invert"(): $Matrix3d
 public "writeExternal"(arg0: $ObjectOutput$$Type): void
 public "readExternal"(arg0: $ObjectInput$$Type): void
+public "normal"(): $Matrix3d
+public "normal"(arg0: $Matrix3d$$Type): $Matrix3d
+public "sub"(arg0: $Matrix3dc$$Type, arg1: $Matrix3d$$Type): $Matrix3d
+public "sub"(arg0: $Matrix3dc$$Type): $Matrix3d
+public "get"(arg0: $FloatBuffer$$Type): $FloatBuffer
+public "get"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
+public "get"(arg0: $ByteBuffer$$Type): $ByteBuffer
 public "get"(arg0: $DoubleBuffer$$Type): $DoubleBuffer
 public "get"(arg0: $Matrix3d$$Type): $Matrix3d
-public "get"(arg0: (float)[]): (float)[]
+public "get"(arg0: integer, arg1: $DoubleBuffer$$Type): $DoubleBuffer
 public "get"(arg0: (float)[], arg1: integer): (float)[]
-public "get"(arg0: (double)[], arg1: integer): (double)[]
 public "get"(arg0: (double)[]): (double)[]
-public "get"(arg0: $ByteBuffer$$Type): $ByteBuffer
+public "get"(arg0: (double)[], arg1: integer): (double)[]
 public "get"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
 public "get"(arg0: integer, arg1: integer): double
-public "get"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
-public "get"(arg0: $FloatBuffer$$Type): $FloatBuffer
-public "get"(arg0: integer, arg1: $DoubleBuffer$$Type): $DoubleBuffer
-public "equals"(arg0: $Matrix3dc$$Type, arg1: double): boolean
+public "get"(arg0: (float)[]): (float)[]
 public "equals"(arg0: any): boolean
+public "equals"(arg0: $Matrix3dc$$Type, arg1: double): boolean
 public "toString"(): StringJS
 public "toString"(arg0: $NumberFormat$$Type): StringJS
 public "hashCode"(): integer
 public "clone"(): any
 public "isFinite"(): boolean
+public "scale"(arg0: double, arg1: double, arg2: double, arg3: $Matrix3d$$Type): $Matrix3d
+public "scale"(arg0: double, arg1: double, arg2: double): $Matrix3d
+public "scale"(arg0: double, arg1: $Matrix3d$$Type): $Matrix3d
 public "scale"(arg0: double): $Matrix3d
 public "scale"(arg0: $Vector3dc$$Type, arg1: $Matrix3d$$Type): $Matrix3d
 public "scale"(arg0: $Vector3dc$$Type): $Matrix3d
-public "scale"(arg0: double, arg1: double, arg2: double): $Matrix3d
-public "scale"(arg0: double, arg1: double, arg2: double, arg3: $Matrix3d$$Type): $Matrix3d
-public "scale"(arg0: double, arg1: $Matrix3d$$Type): $Matrix3d
-public "add"(arg0: $Matrix3dc$$Type, arg1: $Matrix3d$$Type): $Matrix3d
 public "add"(arg0: $Matrix3dc$$Type): $Matrix3d
-public "transform"(arg0: $Vector3d$$Type): $Vector3d
-public "transform"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
-public "transform"(arg0: $Vector3f$$Type): $Vector3f
-public "transform"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
+public "add"(arg0: $Matrix3dc$$Type, arg1: $Matrix3d$$Type): $Matrix3d
 public "transform"(arg0: double, arg1: double, arg2: double, arg3: $Vector3d$$Type): $Vector3d
+public "transform"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
+public "transform"(arg0: $Vector3f$$Type): $Vector3f
+public "transform"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
+public "transform"(arg0: $Vector3d$$Type): $Vector3d
 public "identity"(): $Matrix3d
-public "set"(arg0: integer, arg1: $FloatBuffer$$Type): $Matrix3d
-public "set"(arg0: integer, arg1: $ByteBuffer$$Type): $Matrix3d
 public "set"(arg0: integer, arg1: $DoubleBuffer$$Type): $Matrix3d
-public "set"(arg0: (float)[]): $Matrix3d
-public "set"(arg0: integer, arg1: integer, arg2: double): $Matrix3d
-public "set"(arg0: $DoubleBuffer$$Type): $Matrix3d
-public "set"(arg0: $ByteBuffer$$Type): $Matrix3d
-public "set"(arg0: (double)[]): $Matrix3d
-public "set"(arg0: $FloatBuffer$$Type): $Matrix3d
-public "set"(arg0: $Matrix2dc$$Type): $Matrix3d
-public "set"(arg0: $Matrix2fc$$Type): $Matrix3d
-public "set"(arg0: $Matrix4dc$$Type): $Matrix3d
 public "set"(arg0: $Quaterniondc$$Type): $Matrix3d
-public "set"(arg0: $AxisAngle4f$$Type): $Matrix3d
-public "set"(arg0: $AxisAngle4d$$Type): $Matrix3d
-public "set"(arg0: $Quaternionfc$$Type): $Matrix3d
-public "set"(arg0: $Matrix3fc$$Type): $Matrix3d
+public "set"(arg0: $ByteBuffer$$Type): $Matrix3d
+public "set"(arg0: integer, arg1: $ByteBuffer$$Type): $Matrix3d
+public "set"(arg0: integer, arg1: $FloatBuffer$$Type): $Matrix3d
+public "set"(arg0: $Matrix3dc$$Type): $Matrix3d
 public "set"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double): $Matrix3d
+public "set"(arg0: (double)[]): $Matrix3d
+public "set"(arg0: (float)[]): $Matrix3d
+public "set"(arg0: $DoubleBuffer$$Type): $Matrix3d
+public "set"(arg0: $FloatBuffer$$Type): $Matrix3d
+public "set"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Vector3dc$$Type): $Matrix3d
+public "set"(arg0: $AxisAngle4f$$Type): $Matrix3d
+public "set"(arg0: integer, arg1: integer, arg2: double): $Matrix3d
+public "set"(arg0: $Matrix4dc$$Type): $Matrix3d
+public "set"(arg0: $Matrix2fc$$Type): $Matrix3d
+public "set"(arg0: $Matrix2dc$$Type): $Matrix3d
+public "set"(arg0: $Matrix3fc$$Type): $Matrix3d
+public "set"(arg0: $Quaternionfc$$Type): $Matrix3d
 public "set"(arg0: $Matrix4x3dc$$Type): $Matrix3d
 public "set"(arg0: $Matrix4fc$$Type): $Matrix3d
-public "set"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Vector3dc$$Type): $Matrix3d
-public "set"(arg0: $Matrix3dc$$Type): $Matrix3d
+public "set"(arg0: $AxisAngle4d$$Type): $Matrix3d
 public "zero"(): $Matrix3d
-public "swap"(arg0: $Matrix3d$$Type): $Matrix3d
-public "rotate"(arg0: double, arg1: $Vector3fc$$Type, arg2: $Matrix3d$$Type): $Matrix3d
-public "rotate"(arg0: $AxisAngle4f$$Type): $Matrix3d
+public "rotate"(arg0: $Quaternionfc$$Type): $Matrix3d
 public "rotate"(arg0: double, arg1: $Vector3dc$$Type): $Matrix3d
 public "rotate"(arg0: $AxisAngle4d$$Type, arg1: $Matrix3d$$Type): $Matrix3d
 public "rotate"(arg0: $AxisAngle4d$$Type): $Matrix3d
 public "rotate"(arg0: $AxisAngle4f$$Type, arg1: $Matrix3d$$Type): $Matrix3d
-public "rotate"(arg0: $Quaterniondc$$Type): $Matrix3d
-public "rotate"(arg0: $Quaterniondc$$Type, arg1: $Matrix3d$$Type): $Matrix3d
-public "rotate"(arg0: $Quaternionfc$$Type): $Matrix3d
-public "rotate"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix3d
-public "rotate"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix3d$$Type): $Matrix3d
-public "rotate"(arg0: double, arg1: $Vector3fc$$Type): $Matrix3d
 public "rotate"(arg0: double, arg1: $Vector3dc$$Type, arg2: $Matrix3d$$Type): $Matrix3d
+public "rotate"(arg0: double, arg1: $Vector3fc$$Type): $Matrix3d
+public "rotate"(arg0: double, arg1: $Vector3fc$$Type, arg2: $Matrix3d$$Type): $Matrix3d
+public "rotate"(arg0: $Quaterniondc$$Type, arg1: $Matrix3d$$Type): $Matrix3d
+public "rotate"(arg0: $Quaterniondc$$Type): $Matrix3d
+public "rotate"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix3d$$Type): $Matrix3d
+public "rotate"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix3d
 public "rotate"(arg0: $Quaternionfc$$Type, arg1: $Matrix3d$$Type): $Matrix3d
+public "rotate"(arg0: $AxisAngle4f$$Type): $Matrix3d
+public "m11"(arg0: double): $Matrix3d
+public "m11"(): double
+public "swap"(arg0: $Matrix3d$$Type): $Matrix3d
 public "m12"(): double
 public "m12"(arg0: double): $Matrix3d
-public "m11"(): double
-public "m11"(arg0: double): $Matrix3d
-public "m10"(): double
+public "mul"(arg0: $Matrix3dc$$Type): $Matrix3d
+public "mul"(arg0: $Matrix3fc$$Type, arg1: $Matrix3d$$Type): $Matrix3d
+public "mul"(arg0: $Matrix3dc$$Type, arg1: $Matrix3d$$Type): $Matrix3d
+public "mul"(arg0: $Matrix3fc$$Type): $Matrix3d
 public "m10"(arg0: double): $Matrix3d
+public "m10"(): double
 public "getColumn"(arg0: integer, arg1: $Vector3d$$Type): $Vector3d
 public "getRowColumn"(arg0: integer, arg1: integer): double
 public "setRowColumn"(arg0: integer, arg1: integer, arg2: double): $Matrix3d
@@ -3271,56 +3271,55 @@ public "rotationY"(arg0: double): $Matrix3d
 public "rotationZ"(arg0: double): $Matrix3d
 public "rotateXYZ"(arg0: double, arg1: double, arg2: double): $Matrix3d
 public "rotateXYZ"(arg0: double, arg1: double, arg2: double, arg3: $Matrix3d$$Type): $Matrix3d
-public "rotateZYX"(arg0: double, arg1: double, arg2: double): $Matrix3d
 public "rotateZYX"(arg0: double, arg1: double, arg2: double, arg3: $Matrix3d$$Type): $Matrix3d
+public "rotateZYX"(arg0: double, arg1: double, arg2: double): $Matrix3d
 public "rotateYXZ"(arg0: $Vector3d$$Type): $Matrix3d
-public "rotateYXZ"(arg0: double, arg1: double, arg2: double): $Matrix3d
 public "rotateYXZ"(arg0: double, arg1: double, arg2: double, arg3: $Matrix3d$$Type): $Matrix3d
+public "rotateYXZ"(arg0: double, arg1: double, arg2: double): $Matrix3d
 public "getEulerAnglesXYZ"(arg0: $Vector3d$$Type): $Vector3d
 public "getEulerAnglesZYX"(arg0: $Vector3d$$Type): $Vector3d
 public "rotationXYZ"(arg0: double, arg1: double, arg2: double): $Matrix3d
 public "rotationZYX"(arg0: double, arg1: double, arg2: double): $Matrix3d
 public "rotationYXZ"(arg0: double, arg1: double, arg2: double): $Matrix3d
+public "scaling"(arg0: double): $Matrix3d
 public "scaling"(arg0: double, arg1: double, arg2: double): $Matrix3d
 public "scaling"(arg0: $Vector3dc$$Type): $Matrix3d
-public "scaling"(arg0: double): $Matrix3d
 public "setFromAddress"(arg0: long): $Matrix3d
 public "getToAddress"(arg0: long): $Matrix3dc
 public "m00"(): double
 public "m00"(arg0: double): $Matrix3d
 public "m20"(): double
 public "m20"(arg0: double): $Matrix3d
-public "m01"(arg0: double): $Matrix3d
 public "m01"(): double
-public "m21"(arg0: double): $Matrix3d
+public "m01"(arg0: double): $Matrix3d
 public "m21"(): double
+public "m21"(arg0: double): $Matrix3d
 public "m02"(arg0: double): $Matrix3d
 public "m02"(): double
 public "m22"(): double
 public "m22"(arg0: double): $Matrix3d
-public "rotateX"(arg0: double, arg1: $Matrix3d$$Type): $Matrix3d
 public "rotateX"(arg0: double): $Matrix3d
-public "rotateY"(arg0: double, arg1: $Matrix3d$$Type): $Matrix3d
+public "rotateX"(arg0: double, arg1: $Matrix3d$$Type): $Matrix3d
 public "rotateY"(arg0: double): $Matrix3d
-public "rotateZ"(arg0: double, arg1: $Matrix3d$$Type): $Matrix3d
+public "rotateY"(arg0: double, arg1: $Matrix3d$$Type): $Matrix3d
 public "rotateZ"(arg0: double): $Matrix3d
+public "rotateZ"(arg0: double, arg1: $Matrix3d$$Type): $Matrix3d
 public "reflect"(arg0: double, arg1: double, arg2: double): $Matrix3d
 public "reflect"(arg0: double, arg1: double, arg2: double, arg3: $Matrix3d$$Type): $Matrix3d
+public "reflect"(arg0: $Vector3dc$$Type, arg1: $Matrix3d$$Type): $Matrix3d
+public "reflect"(arg0: $Vector3dc$$Type): $Matrix3d
 public "reflect"(arg0: $Quaterniondc$$Type): $Matrix3d
 public "reflect"(arg0: $Quaterniondc$$Type, arg1: $Matrix3d$$Type): $Matrix3d
-public "reflect"(arg0: $Vector3dc$$Type): $Matrix3d
-public "reflect"(arg0: $Vector3dc$$Type, arg1: $Matrix3d$$Type): $Matrix3d
 public "lerp"(arg0: $Matrix3dc$$Type, arg1: double): $Matrix3d
 public "lerp"(arg0: $Matrix3dc$$Type, arg1: double, arg2: $Matrix3d$$Type): $Matrix3d
 public "getUnnormalizedRotation"(arg0: $Quaterniond$$Type): $Quaterniond
 public "getUnnormalizedRotation"(arg0: $Quaternionf$$Type): $Quaternionf
 public "getNormalizedRotation"(arg0: $Quaternionf$$Type): $Quaternionf
 public "getNormalizedRotation"(arg0: $Quaterniond$$Type): $Quaterniond
-public "determinant"(): double
-public "lookAlong"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix3d
 public "lookAlong"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type): $Matrix3d
-public "lookAlong"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix3d$$Type): $Matrix3d
 public "lookAlong"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Matrix3d$$Type): $Matrix3d
+public "lookAlong"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix3d$$Type): $Matrix3d
+public "lookAlong"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix3d
 public "rotateLocalX"(arg0: double): $Matrix3d
 public "rotateLocalX"(arg0: double, arg1: $Matrix3d$$Type): $Matrix3d
 public "rotateLocalY"(arg0: double, arg1: $Matrix3d$$Type): $Matrix3d
@@ -3333,150 +3332,151 @@ public "positiveY"(arg0: $Vector3d$$Type): $Vector3d
 public "normalizedPositiveY"(arg0: $Vector3d$$Type): $Vector3d
 public "positiveZ"(arg0: $Vector3d$$Type): $Vector3d
 public "normalizedPositiveZ"(arg0: $Vector3d$$Type): $Vector3d
-public "rotation"(arg0: $AxisAngle4d$$Type): $Matrix3d
-public "rotation"(arg0: $Quaternionfc$$Type): $Matrix3d
-public "rotation"(arg0: $Quaterniondc$$Type): $Matrix3d
+public "setLookAlong"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type): $Matrix3d
+public "setLookAlong"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix3d
 public "rotation"(arg0: $AxisAngle4f$$Type): $Matrix3d
+public "rotation"(arg0: $AxisAngle4d$$Type): $Matrix3d
 public "rotation"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix3d
-public "rotation"(arg0: double, arg1: $Vector3fc$$Type): $Matrix3d
+public "rotation"(arg0: $Quaterniondc$$Type): $Matrix3d
+public "rotation"(arg0: $Quaternionfc$$Type): $Matrix3d
 public "rotation"(arg0: double, arg1: $Vector3dc$$Type): $Matrix3d
+public "rotation"(arg0: double, arg1: $Vector3fc$$Type): $Matrix3d
+public "getScale"(arg0: $Vector3d$$Type): $Vector3d
 public "transformTranspose"(arg0: $Vector3d$$Type): $Vector3d
-public "transformTranspose"(arg0: double, arg1: double, arg2: double, arg3: $Vector3d$$Type): $Vector3d
 public "transformTranspose"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
-public "rotateTowards"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type): $Matrix3d
-public "rotateTowards"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix3d
-public "rotateTowards"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix3d$$Type): $Matrix3d
-public "rotateTowards"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Matrix3d$$Type): $Matrix3d
-public "rotationTowards"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type): $Matrix3d
+public "transformTranspose"(arg0: double, arg1: double, arg2: double, arg3: $Vector3d$$Type): $Vector3d
 public "rotationTowards"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix3d
+public "rotationTowards"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type): $Matrix3d
 public "obliqueZ"(arg0: double, arg1: double, arg2: $Matrix3d$$Type): $Matrix3d
 public "obliqueZ"(arg0: double, arg1: double): $Matrix3d
 public "mapXZY"(arg0: $Matrix3d$$Type): $Matrix3d
 public "mapXZY"(): $Matrix3d
-public "mapXZnY"(arg0: $Matrix3d$$Type): $Matrix3d
 public "mapXZnY"(): $Matrix3d
-public "mapXnYnZ"(arg0: $Matrix3d$$Type): $Matrix3d
+public "mapXZnY"(arg0: $Matrix3d$$Type): $Matrix3d
 public "mapXnYnZ"(): $Matrix3d
-public "mapXnZY"(): $Matrix3d
+public "mapXnYnZ"(arg0: $Matrix3d$$Type): $Matrix3d
 public "mapXnZY"(arg0: $Matrix3d$$Type): $Matrix3d
+public "mapXnZY"(): $Matrix3d
 public "mapXnZnY"(): $Matrix3d
 public "mapXnZnY"(arg0: $Matrix3d$$Type): $Matrix3d
-public "mapYXZ"(arg0: $Matrix3d$$Type): $Matrix3d
 public "mapYXZ"(): $Matrix3d
+public "mapYXZ"(arg0: $Matrix3d$$Type): $Matrix3d
 public "mapYXnZ"(arg0: $Matrix3d$$Type): $Matrix3d
 public "mapYXnZ"(): $Matrix3d
-public "mapYZX"(arg0: $Matrix3d$$Type): $Matrix3d
 public "mapYZX"(): $Matrix3d
+public "mapYZX"(arg0: $Matrix3d$$Type): $Matrix3d
 public "mapYZnX"(): $Matrix3d
 public "mapYZnX"(arg0: $Matrix3d$$Type): $Matrix3d
 public "mapYnXZ"(arg0: $Matrix3d$$Type): $Matrix3d
 public "mapYnXZ"(): $Matrix3d
-public "mapYnXnZ"(arg0: $Matrix3d$$Type): $Matrix3d
 public "mapYnXnZ"(): $Matrix3d
-public "mapYnZX"(arg0: $Matrix3d$$Type): $Matrix3d
+public "mapYnXnZ"(arg0: $Matrix3d$$Type): $Matrix3d
 public "mapYnZX"(): $Matrix3d
-public "mapYnZnX"(): $Matrix3d
+public "mapYnZX"(arg0: $Matrix3d$$Type): $Matrix3d
 public "mapYnZnX"(arg0: $Matrix3d$$Type): $Matrix3d
+public "mapYnZnX"(): $Matrix3d
 public "mapZXY"(arg0: $Matrix3d$$Type): $Matrix3d
 public "mapZXY"(): $Matrix3d
 public "mapZXnY"(arg0: $Matrix3d$$Type): $Matrix3d
 public "mapZXnY"(): $Matrix3d
-public "mapZYX"(arg0: $Matrix3d$$Type): $Matrix3d
 public "mapZYX"(): $Matrix3d
-public "mapZYnX"(): $Matrix3d
+public "mapZYX"(arg0: $Matrix3d$$Type): $Matrix3d
 public "mapZYnX"(arg0: $Matrix3d$$Type): $Matrix3d
+public "mapZYnX"(): $Matrix3d
 public "mapZnXY"(): $Matrix3d
 public "mapZnXY"(arg0: $Matrix3d$$Type): $Matrix3d
-public "mapZnXnY"(arg0: $Matrix3d$$Type): $Matrix3d
 public "mapZnXnY"(): $Matrix3d
+public "mapZnXnY"(arg0: $Matrix3d$$Type): $Matrix3d
 public "mapZnYX"(arg0: $Matrix3d$$Type): $Matrix3d
 public "mapZnYX"(): $Matrix3d
-public "mapZnYnX"(arg0: $Matrix3d$$Type): $Matrix3d
 public "mapZnYnX"(): $Matrix3d
+public "mapZnYnX"(arg0: $Matrix3d$$Type): $Matrix3d
 public "mapnXYnZ"(): $Matrix3d
 public "mapnXYnZ"(arg0: $Matrix3d$$Type): $Matrix3d
-public "mapnXZY"(): $Matrix3d
 public "mapnXZY"(arg0: $Matrix3d$$Type): $Matrix3d
+public "mapnXZY"(): $Matrix3d
 public "mapnXZnY"(arg0: $Matrix3d$$Type): $Matrix3d
 public "mapnXZnY"(): $Matrix3d
-public "mapnXnYZ"(arg0: $Matrix3d$$Type): $Matrix3d
 public "mapnXnYZ"(): $Matrix3d
-public "mapnXnYnZ"(arg0: $Matrix3d$$Type): $Matrix3d
+public "mapnXnYZ"(arg0: $Matrix3d$$Type): $Matrix3d
 public "mapnXnYnZ"(): $Matrix3d
+public "mapnXnYnZ"(arg0: $Matrix3d$$Type): $Matrix3d
 public "mapnXnZY"(): $Matrix3d
 public "mapnXnZY"(arg0: $Matrix3d$$Type): $Matrix3d
-public "mapnXnZnY"(arg0: $Matrix3d$$Type): $Matrix3d
 public "mapnXnZnY"(): $Matrix3d
+public "mapnXnZnY"(arg0: $Matrix3d$$Type): $Matrix3d
 public "mapnYXZ"(): $Matrix3d
 public "mapnYXZ"(arg0: $Matrix3d$$Type): $Matrix3d
 public "mapnYXnZ"(): $Matrix3d
 public "mapnYXnZ"(arg0: $Matrix3d$$Type): $Matrix3d
-public "mapnYZX"(arg0: $Matrix3d$$Type): $Matrix3d
 public "mapnYZX"(): $Matrix3d
-public "mapnYZnX"(arg0: $Matrix3d$$Type): $Matrix3d
+public "mapnYZX"(arg0: $Matrix3d$$Type): $Matrix3d
 public "mapnYZnX"(): $Matrix3d
-public "mapnYnXZ"(arg0: $Matrix3d$$Type): $Matrix3d
+public "mapnYZnX"(arg0: $Matrix3d$$Type): $Matrix3d
 public "mapnYnXZ"(): $Matrix3d
-public "mapnYnXnZ"(): $Matrix3d
+public "mapnYnXZ"(arg0: $Matrix3d$$Type): $Matrix3d
 public "mapnYnXnZ"(arg0: $Matrix3d$$Type): $Matrix3d
-public "mapnYnZX"(arg0: $Matrix3d$$Type): $Matrix3d
+public "mapnYnXnZ"(): $Matrix3d
 public "mapnYnZX"(): $Matrix3d
-public "mapnYnZnX"(arg0: $Matrix3d$$Type): $Matrix3d
+public "mapnYnZX"(arg0: $Matrix3d$$Type): $Matrix3d
 public "mapnYnZnX"(): $Matrix3d
-public "mapnZXY"(arg0: $Matrix3d$$Type): $Matrix3d
+public "mapnYnZnX"(arg0: $Matrix3d$$Type): $Matrix3d
 public "mapnZXY"(): $Matrix3d
+public "mapnZXY"(arg0: $Matrix3d$$Type): $Matrix3d
 public "mapnZXnY"(arg0: $Matrix3d$$Type): $Matrix3d
 public "mapnZXnY"(): $Matrix3d
-public "mapnZYX"(arg0: $Matrix3d$$Type): $Matrix3d
 public "mapnZYX"(): $Matrix3d
+public "mapnZYX"(arg0: $Matrix3d$$Type): $Matrix3d
 public "mapnZYnX"(): $Matrix3d
 public "mapnZYnX"(arg0: $Matrix3d$$Type): $Matrix3d
-public "mapnZnXY"(arg0: $Matrix3d$$Type): $Matrix3d
 public "mapnZnXY"(): $Matrix3d
-public "mapnZnXnY"(arg0: $Matrix3d$$Type): $Matrix3d
+public "mapnZnXY"(arg0: $Matrix3d$$Type): $Matrix3d
 public "mapnZnXnY"(): $Matrix3d
+public "mapnZnXnY"(arg0: $Matrix3d$$Type): $Matrix3d
 public "mapnZnYX"(arg0: $Matrix3d$$Type): $Matrix3d
 public "mapnZnYX"(): $Matrix3d
-public "mapnZnYnX"(arg0: $Matrix3d$$Type): $Matrix3d
 public "mapnZnYnX"(): $Matrix3d
-public "negateX"(arg0: $Matrix3d$$Type): $Matrix3d
+public "mapnZnYnX"(arg0: $Matrix3d$$Type): $Matrix3d
 public "negateX"(): $Matrix3d
+public "negateX"(arg0: $Matrix3d$$Type): $Matrix3d
 public "negateY"(): $Matrix3d
 public "negateY"(arg0: $Matrix3d$$Type): $Matrix3d
-public "negateZ"(): $Matrix3d
 public "negateZ"(arg0: $Matrix3d$$Type): $Matrix3d
-public "setLookAlong"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix3d
-public "setLookAlong"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type): $Matrix3d
+public "negateZ"(): $Matrix3d
+public "mulComponentWise"(arg0: $Matrix3dc$$Type): $Matrix3d
+public "mulComponentWise"(arg0: $Matrix3dc$$Type, arg1: $Matrix3d$$Type): $Matrix3d
+public "mulLocal"(arg0: $Matrix3dc$$Type): $Matrix3d
+public "mulLocal"(arg0: $Matrix3dc$$Type, arg1: $Matrix3d$$Type): $Matrix3d
+public "setTransposed"(arg0: $Matrix3fc$$Type): $Matrix3d
+public "setTransposed"(arg0: $Matrix3dc$$Type): $Matrix3d
+public "scaleLocal"(arg0: double, arg1: double, arg2: double): $Matrix3d
+public "scaleLocal"(arg0: double, arg1: double, arg2: double, arg3: $Matrix3d$$Type): $Matrix3d
+public "getRotation"(arg0: $AxisAngle4f$$Type): $AxisAngle4f
+public "getTransposed"(arg0: $DoubleBuffer$$Type): $DoubleBuffer
+public "getTransposed"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
+public "getTransposed"(arg0: $FloatBuffer$$Type): $FloatBuffer
+public "getTransposed"(arg0: integer, arg1: $DoubleBuffer$$Type): $DoubleBuffer
+public "getTransposed"(arg0: $ByteBuffer$$Type): $ByteBuffer
+public "getTransposed"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
+public "determinant"(): double
+public "rotateLocal"(arg0: $Quaternionfc$$Type): $Matrix3d
+public "rotateLocal"(arg0: $Quaternionfc$$Type, arg1: $Matrix3d$$Type): $Matrix3d
+public "rotateLocal"(arg0: $Quaterniondc$$Type): $Matrix3d
+public "rotateLocal"(arg0: $Quaterniondc$$Type, arg1: $Matrix3d$$Type): $Matrix3d
+public "rotateLocal"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix3d
+public "rotateLocal"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix3d$$Type): $Matrix3d
+public "reflection"(arg0: double, arg1: double, arg2: double): $Matrix3d
 public "reflection"(arg0: $Quaterniondc$$Type): $Matrix3d
 public "reflection"(arg0: $Vector3dc$$Type): $Matrix3d
-public "reflection"(arg0: double, arg1: double, arg2: double): $Matrix3d
 public "getRow"(arg0: integer, arg1: $Vector3d$$Type): $Vector3d
 public "setRow"(arg0: integer, arg1: double, arg2: double, arg3: double): $Matrix3d
 public "setRow"(arg0: integer, arg1: $Vector3dc$$Type): $Matrix3d
 public "setColumn"(arg0: integer, arg1: $Vector3dc$$Type): $Matrix3d
 public "setColumn"(arg0: integer, arg1: double, arg2: double, arg3: double): $Matrix3d
-public "scaleLocal"(arg0: double, arg1: double, arg2: double): $Matrix3d
-public "scaleLocal"(arg0: double, arg1: double, arg2: double, arg3: $Matrix3d$$Type): $Matrix3d
-public "getScale"(arg0: $Vector3d$$Type): $Vector3d
-public "getRotation"(arg0: $AxisAngle4f$$Type): $AxisAngle4f
-public "mulComponentWise"(arg0: $Matrix3dc$$Type, arg1: $Matrix3d$$Type): $Matrix3d
-public "mulComponentWise"(arg0: $Matrix3dc$$Type): $Matrix3d
-public "rotateLocal"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix3d$$Type): $Matrix3d
-public "rotateLocal"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix3d
-public "rotateLocal"(arg0: $Quaterniondc$$Type, arg1: $Matrix3d$$Type): $Matrix3d
-public "rotateLocal"(arg0: $Quaternionfc$$Type): $Matrix3d
-public "rotateLocal"(arg0: $Quaternionfc$$Type, arg1: $Matrix3d$$Type): $Matrix3d
-public "rotateLocal"(arg0: $Quaterniondc$$Type): $Matrix3d
-public "getTransposed"(arg0: $ByteBuffer$$Type): $ByteBuffer
-public "getTransposed"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
-public "getTransposed"(arg0: integer, arg1: $DoubleBuffer$$Type): $DoubleBuffer
-public "getTransposed"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
-public "getTransposed"(arg0: $FloatBuffer$$Type): $FloatBuffer
-public "getTransposed"(arg0: $DoubleBuffer$$Type): $DoubleBuffer
-public "mulLocal"(arg0: $Matrix3dc$$Type): $Matrix3d
-public "mulLocal"(arg0: $Matrix3dc$$Type, arg1: $Matrix3d$$Type): $Matrix3d
-public "setTransposed"(arg0: $Matrix3fc$$Type): $Matrix3d
-public "setTransposed"(arg0: $Matrix3dc$$Type): $Matrix3d
+public "rotateTowards"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix3d$$Type): $Matrix3d
+public "rotateTowards"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix3d
+public "rotateTowards"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type): $Matrix3d
+public "rotateTowards"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Matrix3d$$Type): $Matrix3d
 set "floats"(value: $ByteBuffer$$Type)
 get "finite"(): boolean
 set "fromAddress"(value: long)
@@ -3501,13 +3501,13 @@ import {$Vector3f, $Vector3f$$Type} from "org.joml.Vector3f"
 import {$ObjectOutput$$Type} from "java.io.ObjectOutput"
 import {$Matrix4f, $Matrix4f$$Type} from "org.joml.Matrix4f"
 import {$Externalizable$$Interface} from "java.io.Externalizable"
-import {$Matrix2fc$$Type} from "org.joml.Matrix2fc"
 import {$FloatBuffer, $FloatBuffer$$Type} from "java.nio.FloatBuffer"
+import {$Matrix2fc$$Type} from "org.joml.Matrix2fc"
 import {$Matrix4fc$$Type} from "org.joml.Matrix4fc"
 import {$Matrix3fc, $Matrix3fc$$Type, $Matrix3fc$$Interface} from "org.joml.Matrix3fc"
 import {$NumberFormat$$Type} from "java.text.NumberFormat"
-import {$Vector3fc$$Type} from "org.joml.Vector3fc"
 import {$Cloneable$$Interface} from "java.lang.Cloneable"
+import {$Vector3fc$$Type} from "org.joml.Vector3fc"
 import {$AxisAngle4f, $AxisAngle4f$$Type} from "org.joml.AxisAngle4f"
 import {$Quaterniond, $Quaterniond$$Type} from "org.joml.Quaterniond"
 import {$AxisAngle4d$$Type} from "org.joml.AxisAngle4d"
@@ -3515,39 +3515,37 @@ import {$Quaternionf, $Quaternionf$$Type} from "org.joml.Quaternionf"
 import {$ByteBuffer, $ByteBuffer$$Type} from "java.nio.ByteBuffer"
 
 export class $Matrix3f implements $Externalizable$$Interface, $Cloneable$$Interface, $Matrix3fc$$Interface {
-constructor()
-constructor(arg0: $FloatBuffer$$Type)
 constructor(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3fc$$Type)
 constructor(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float)
+constructor(arg0: $Matrix4fc$$Type)
+constructor(arg0: $FloatBuffer$$Type)
+constructor()
 constructor(arg0: $Matrix2fc$$Type)
 constructor(arg0: $Matrix3fc$$Type)
-constructor(arg0: $Matrix4fc$$Type)
 
 public "cofactor"(arg0: $Matrix3f$$Type): $Matrix3f
 public "cofactor"(): $Matrix3f
 public "quadraticFormProduct"(arg0: $Vector3fc$$Type): float
 public "quadraticFormProduct"(arg0: float, arg1: float, arg2: float): float
 public "setSkewSymmetric"(arg0: float, arg1: float, arg2: float): $Matrix3f
-public "transpose"(arg0: $Matrix3f$$Type): $Matrix3f
 public "transpose"(): $Matrix3f
-public "invert"(): $Matrix3f
+public "transpose"(arg0: $Matrix3f$$Type): $Matrix3f
 public "invert"(arg0: $Matrix3f$$Type): $Matrix3f
-public "sub"(arg0: $Matrix3fc$$Type): $Matrix3f
-public "sub"(arg0: $Matrix3fc$$Type, arg1: $Matrix3f$$Type): $Matrix3f
-public "mul"(arg0: $Matrix3fc$$Type, arg1: $Matrix3f$$Type): $Matrix3f
-public "mul"(arg0: $Matrix3fc$$Type): $Matrix3f
-public "normal"(arg0: $Matrix3f$$Type): $Matrix3f
-public "normal"(): $Matrix3f
+public "invert"(): $Matrix3f
 public "writeExternal"(arg0: $ObjectOutput$$Type): void
 public "readExternal"(arg0: $ObjectInput$$Type): void
+public "normal"(): $Matrix3f
+public "normal"(arg0: $Matrix3f$$Type): $Matrix3f
+public "sub"(arg0: $Matrix3fc$$Type, arg1: $Matrix3f$$Type): $Matrix3f
+public "sub"(arg0: $Matrix3fc$$Type): $Matrix3f
+public "get"(arg0: $FloatBuffer$$Type): $FloatBuffer
 public "get"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
-public "get"(arg0: integer, arg1: integer): float
+public "get"(arg0: $ByteBuffer$$Type): $ByteBuffer
 public "get"(arg0: $Matrix4f$$Type): $Matrix4f
 public "get"(arg0: $Matrix3f$$Type): $Matrix3f
-public "get"(arg0: $FloatBuffer$$Type): $FloatBuffer
+public "get"(arg0: integer, arg1: integer): float
 public "get"(arg0: (float)[]): (float)[]
 public "get"(arg0: (float)[], arg1: integer): (float)[]
-public "get"(arg0: $ByteBuffer$$Type): $ByteBuffer
 public "get"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
 public "equals"(arg0: any): boolean
 public "equals"(arg0: $Matrix3fc$$Type, arg1: float): boolean
@@ -3558,46 +3556,48 @@ public "clone"(): any
 public "isFinite"(): boolean
 public "scale"(arg0: float, arg1: $Matrix3f$$Type): $Matrix3f
 public "scale"(arg0: float, arg1: float, arg2: float, arg3: $Matrix3f$$Type): $Matrix3f
-public "scale"(arg0: $Vector3fc$$Type): $Matrix3f
 public "scale"(arg0: float): $Matrix3f
 public "scale"(arg0: float, arg1: float, arg2: float): $Matrix3f
 public "scale"(arg0: $Vector3fc$$Type, arg1: $Matrix3f$$Type): $Matrix3f
+public "scale"(arg0: $Vector3fc$$Type): $Matrix3f
 public "add"(arg0: $Matrix3fc$$Type, arg1: $Matrix3f$$Type): $Matrix3f
 public "add"(arg0: $Matrix3fc$$Type): $Matrix3f
-public "transform"(arg0: $Vector3f$$Type): $Vector3f
-public "transform"(arg0: float, arg1: float, arg2: float, arg3: $Vector3f$$Type): $Vector3f
 public "transform"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
+public "transform"(arg0: float, arg1: float, arg2: float, arg3: $Vector3f$$Type): $Vector3f
+public "transform"(arg0: $Vector3f$$Type): $Vector3f
 public "identity"(): $Matrix3f
-public "set"(arg0: $FloatBuffer$$Type): $Matrix3f
-public "set"(arg0: $ByteBuffer$$Type): $Matrix3f
+public "set"(arg0: integer, arg1: integer, arg2: float): $Matrix3f
+public "set"(arg0: $Matrix4fc$$Type): $Matrix3f
+public "set"(arg0: $Matrix3fc$$Type): $Matrix3f
+public "set"(arg0: $Quaternionfc$$Type): $Matrix3f
+public "set"(arg0: $Quaterniondc$$Type): $Matrix3f
 public "set"(arg0: integer, arg1: $ByteBuffer$$Type): $Matrix3f
 public "set"(arg0: integer, arg1: $FloatBuffer$$Type): $Matrix3f
-public "set"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3fc$$Type): $Matrix3f
-public "set"(arg0: $Matrix2fc$$Type): $Matrix3f
-public "set"(arg0: $Matrix4x3fc$$Type): $Matrix3f
-public "set"(arg0: $Matrix3fc$$Type): $Matrix3f
-public "set"(arg0: $Matrix4fc$$Type): $Matrix3f
-public "set"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float): $Matrix3f
-public "set"(arg0: integer, arg1: integer, arg2: float): $Matrix3f
-public "set"(arg0: $Quaternionfc$$Type): $Matrix3f
 public "set"(arg0: $AxisAngle4d$$Type): $Matrix3f
 public "set"(arg0: $AxisAngle4f$$Type): $Matrix3f
+public "set"(arg0: $Matrix2fc$$Type): $Matrix3f
+public "set"(arg0: $FloatBuffer$$Type): $Matrix3f
+public "set"(arg0: $Matrix4x3fc$$Type): $Matrix3f
+public "set"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3fc$$Type): $Matrix3f
 public "set"(arg0: (float)[]): $Matrix3f
-public "set"(arg0: $Quaterniondc$$Type): $Matrix3f
+public "set"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float): $Matrix3f
+public "set"(arg0: $ByteBuffer$$Type): $Matrix3f
 public "zero"(): $Matrix3f
-public "swap"(arg0: $Matrix3f$$Type): $Matrix3f
+public "rotate"(arg0: $AxisAngle4f$$Type): $Matrix3f
+public "rotate"(arg0: $Quaternionfc$$Type): $Matrix3f
 public "rotate"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix3f
 public "rotate"(arg0: $AxisAngle4f$$Type, arg1: $Matrix3f$$Type): $Matrix3f
-public "rotate"(arg0: $AxisAngle4f$$Type): $Matrix3f
-public "rotate"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix3f$$Type): $Matrix3f
-public "rotate"(arg0: $Quaternionfc$$Type): $Matrix3f
-public "rotate"(arg0: $Quaternionfc$$Type, arg1: $Matrix3f$$Type): $Matrix3f
-public "rotate"(arg0: float, arg1: $Vector3fc$$Type, arg2: $Matrix3f$$Type): $Matrix3f
 public "rotate"(arg0: float, arg1: $Vector3fc$$Type): $Matrix3f
-public "m12"(arg0: float): $Matrix3f
-public "m12"(): float
+public "rotate"(arg0: float, arg1: $Vector3fc$$Type, arg2: $Matrix3f$$Type): $Matrix3f
+public "rotate"(arg0: $Quaternionfc$$Type, arg1: $Matrix3f$$Type): $Matrix3f
+public "rotate"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix3f$$Type): $Matrix3f
 public "m11"(arg0: float): $Matrix3f
 public "m11"(): float
+public "swap"(arg0: $Matrix3f$$Type): $Matrix3f
+public "m12"(): float
+public "m12"(arg0: float): $Matrix3f
+public "mul"(arg0: $Matrix3fc$$Type): $Matrix3f
+public "mul"(arg0: $Matrix3fc$$Type, arg1: $Matrix3f$$Type): $Matrix3f
 public "m10"(): float
 public "m10"(arg0: float): $Matrix3f
 public "getColumn"(arg0: integer, arg1: $Vector3f$$Type): $Vector3f
@@ -3606,103 +3606,101 @@ public "setRowColumn"(arg0: integer, arg1: integer, arg2: float): $Matrix3f
 public "rotationX"(arg0: float): $Matrix3f
 public "rotationY"(arg0: float): $Matrix3f
 public "rotationZ"(arg0: float): $Matrix3f
-public "rotateXYZ"(arg0: float, arg1: float, arg2: float): $Matrix3f
-public "rotateXYZ"(arg0: float, arg1: float, arg2: float, arg3: $Matrix3f$$Type): $Matrix3f
 public "rotateXYZ"(arg0: $Vector3f$$Type): $Matrix3f
-public "rotateZYX"(arg0: float, arg1: float, arg2: float, arg3: $Matrix3f$$Type): $Matrix3f
-public "rotateZYX"(arg0: float, arg1: float, arg2: float): $Matrix3f
+public "rotateXYZ"(arg0: float, arg1: float, arg2: float, arg3: $Matrix3f$$Type): $Matrix3f
+public "rotateXYZ"(arg0: float, arg1: float, arg2: float): $Matrix3f
 public "rotateZYX"(arg0: $Vector3f$$Type): $Matrix3f
+public "rotateZYX"(arg0: float, arg1: float, arg2: float): $Matrix3f
+public "rotateZYX"(arg0: float, arg1: float, arg2: float, arg3: $Matrix3f$$Type): $Matrix3f
 public "rotateYXZ"(arg0: float, arg1: float, arg2: float): $Matrix3f
-public "rotateYXZ"(arg0: $Vector3f$$Type): $Matrix3f
 public "rotateYXZ"(arg0: float, arg1: float, arg2: float, arg3: $Matrix3f$$Type): $Matrix3f
+public "rotateYXZ"(arg0: $Vector3f$$Type): $Matrix3f
 public "getEulerAnglesXYZ"(arg0: $Vector3f$$Type): $Vector3f
 public "getEulerAnglesZYX"(arg0: $Vector3f$$Type): $Vector3f
 public "rotationXYZ"(arg0: float, arg1: float, arg2: float): $Matrix3f
 public "rotationZYX"(arg0: float, arg1: float, arg2: float): $Matrix3f
 public "rotationYXZ"(arg0: float, arg1: float, arg2: float): $Matrix3f
+public "scaling"(arg0: $Vector3fc$$Type): $Matrix3f
 public "scaling"(arg0: float): $Matrix3f
 public "scaling"(arg0: float, arg1: float, arg2: float): $Matrix3f
-public "scaling"(arg0: $Vector3fc$$Type): $Matrix3f
 public "setFromAddress"(arg0: long): $Matrix3f
 public "getToAddress"(arg0: long): $Matrix3fc
 public "m00"(arg0: float): $Matrix3f
 public "m00"(): float
 public "m20"(arg0: float): $Matrix3f
 public "m20"(): float
-public "m01"(): float
 public "m01"(arg0: float): $Matrix3f
-public "m21"(arg0: float): $Matrix3f
+public "m01"(): float
 public "m21"(): float
+public "m21"(arg0: float): $Matrix3f
 public "m02"(): float
 public "m02"(arg0: float): $Matrix3f
 public "m22"(arg0: float): $Matrix3f
 public "m22"(): float
-public "rotateX"(arg0: float): $Matrix3f
 public "rotateX"(arg0: float, arg1: $Matrix3f$$Type): $Matrix3f
-public "rotateY"(arg0: float): $Matrix3f
+public "rotateX"(arg0: float): $Matrix3f
 public "rotateY"(arg0: float, arg1: $Matrix3f$$Type): $Matrix3f
-public "rotateZ"(arg0: float, arg1: $Matrix3f$$Type): $Matrix3f
+public "rotateY"(arg0: float): $Matrix3f
 public "rotateZ"(arg0: float): $Matrix3f
-public "reflect"(arg0: float, arg1: float, arg2: float, arg3: $Matrix3f$$Type): $Matrix3f
-public "reflect"(arg0: float, arg1: float, arg2: float): $Matrix3f
+public "rotateZ"(arg0: float, arg1: $Matrix3f$$Type): $Matrix3f
 public "reflect"(arg0: $Quaternionfc$$Type, arg1: $Matrix3f$$Type): $Matrix3f
-public "reflect"(arg0: $Quaternionfc$$Type): $Matrix3f
 public "reflect"(arg0: $Vector3fc$$Type, arg1: $Matrix3f$$Type): $Matrix3f
 public "reflect"(arg0: $Vector3fc$$Type): $Matrix3f
-public "lerp"(arg0: $Matrix3fc$$Type, arg1: float, arg2: $Matrix3f$$Type): $Matrix3f
+public "reflect"(arg0: float, arg1: float, arg2: float): $Matrix3f
+public "reflect"(arg0: $Quaternionfc$$Type): $Matrix3f
+public "reflect"(arg0: float, arg1: float, arg2: float, arg3: $Matrix3f$$Type): $Matrix3f
 public "lerp"(arg0: $Matrix3fc$$Type, arg1: float): $Matrix3f
-public "getUnnormalizedRotation"(arg0: $Quaternionf$$Type): $Quaternionf
+public "lerp"(arg0: $Matrix3fc$$Type, arg1: float, arg2: $Matrix3f$$Type): $Matrix3f
 public "getUnnormalizedRotation"(arg0: $Quaterniond$$Type): $Quaterniond
-public "getNormalizedRotation"(arg0: $Quaternionf$$Type): $Quaternionf
+public "getUnnormalizedRotation"(arg0: $Quaternionf$$Type): $Quaternionf
 public "getNormalizedRotation"(arg0: $Quaterniond$$Type): $Quaterniond
+public "getNormalizedRotation"(arg0: $Quaternionf$$Type): $Quaternionf
+public "get3x4"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
+public "get3x4"(arg0: $ByteBuffer$$Type): $ByteBuffer
 public "get3x4"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
 public "get3x4"(arg0: $FloatBuffer$$Type): $FloatBuffer
-public "get3x4"(arg0: $ByteBuffer$$Type): $ByteBuffer
-public "get3x4"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
-public "determinant"(): float
 public "lookAlong"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix3f$$Type): $Matrix3f
+public "lookAlong"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Matrix3f$$Type): $Matrix3f
 public "lookAlong"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type): $Matrix3f
 public "lookAlong"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix3f
-public "lookAlong"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Matrix3f$$Type): $Matrix3f
 public "rotateLocalX"(arg0: float, arg1: $Matrix3f$$Type): $Matrix3f
 public "rotateLocalX"(arg0: float): $Matrix3f
-public "rotateLocalY"(arg0: float): $Matrix3f
 public "rotateLocalY"(arg0: float, arg1: $Matrix3f$$Type): $Matrix3f
-public "rotateLocalZ"(arg0: float): $Matrix3f
+public "rotateLocalY"(arg0: float): $Matrix3f
 public "rotateLocalZ"(arg0: float, arg1: $Matrix3f$$Type): $Matrix3f
+public "rotateLocalZ"(arg0: float): $Matrix3f
 public "positiveX"(arg0: $Vector3f$$Type): $Vector3f
 public "normalizedPositiveX"(arg0: $Vector3f$$Type): $Vector3f
 public "positiveY"(arg0: $Vector3f$$Type): $Vector3f
 public "normalizedPositiveY"(arg0: $Vector3f$$Type): $Vector3f
 public "positiveZ"(arg0: $Vector3f$$Type): $Vector3f
 public "normalizedPositiveZ"(arg0: $Vector3f$$Type): $Vector3f
+public "setLookAlong"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type): $Matrix3f
+public "setLookAlong"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix3f
 public "rotation"(arg0: float, arg1: $Vector3fc$$Type): $Matrix3f
-public "rotation"(arg0: $Quaternionfc$$Type): $Matrix3f
 public "rotation"(arg0: $AxisAngle4f$$Type): $Matrix3f
+public "rotation"(arg0: $Quaternionfc$$Type): $Matrix3f
 public "rotation"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix3f
+public "getScale"(arg0: $Vector3f$$Type): $Vector3f
+public "transformTranspose"(arg0: float, arg1: float, arg2: float, arg3: $Vector3f$$Type): $Vector3f
 public "transformTranspose"(arg0: $Vector3f$$Type): $Vector3f
 public "transformTranspose"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
-public "transformTranspose"(arg0: float, arg1: float, arg2: float, arg3: $Vector3f$$Type): $Vector3f
-public "rotateTowards"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type): $Matrix3f
-public "rotateTowards"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix3f
-public "rotateTowards"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Matrix3f$$Type): $Matrix3f
-public "rotateTowards"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix3f$$Type): $Matrix3f
-public "rotationTowards"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type): $Matrix3f
 public "rotationTowards"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix3f
-public "obliqueZ"(arg0: float, arg1: float, arg2: $Matrix3f$$Type): $Matrix3f
+public "rotationTowards"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type): $Matrix3f
 public "obliqueZ"(arg0: float, arg1: float): $Matrix3f
-public "mapXZY"(): $Matrix3f
+public "obliqueZ"(arg0: float, arg1: float, arg2: $Matrix3f$$Type): $Matrix3f
 public "mapXZY"(arg0: $Matrix3f$$Type): $Matrix3f
-public "mapXZnY"(): $Matrix3f
+public "mapXZY"(): $Matrix3f
 public "mapXZnY"(arg0: $Matrix3f$$Type): $Matrix3f
-public "mapXnYnZ"(): $Matrix3f
+public "mapXZnY"(): $Matrix3f
 public "mapXnYnZ"(arg0: $Matrix3f$$Type): $Matrix3f
-public "mapXnZY"(): $Matrix3f
+public "mapXnYnZ"(): $Matrix3f
 public "mapXnZY"(arg0: $Matrix3f$$Type): $Matrix3f
-public "mapXnZnY"(arg0: $Matrix3f$$Type): $Matrix3f
+public "mapXnZY"(): $Matrix3f
 public "mapXnZnY"(): $Matrix3f
-public "mapYXZ"(arg0: $Matrix3f$$Type): $Matrix3f
+public "mapXnZnY"(arg0: $Matrix3f$$Type): $Matrix3f
 public "mapYXZ"(): $Matrix3f
+public "mapYXZ"(arg0: $Matrix3f$$Type): $Matrix3f
 public "mapYXnZ"(): $Matrix3f
 public "mapYXnZ"(arg0: $Matrix3f$$Type): $Matrix3f
 public "mapYZX"(): $Matrix3f
@@ -3713,8 +3711,8 @@ public "mapYnXZ"(arg0: $Matrix3f$$Type): $Matrix3f
 public "mapYnXZ"(): $Matrix3f
 public "mapYnXnZ"(): $Matrix3f
 public "mapYnXnZ"(arg0: $Matrix3f$$Type): $Matrix3f
-public "mapYnZX"(arg0: $Matrix3f$$Type): $Matrix3f
 public "mapYnZX"(): $Matrix3f
+public "mapYnZX"(arg0: $Matrix3f$$Type): $Matrix3f
 public "mapYnZnX"(arg0: $Matrix3f$$Type): $Matrix3f
 public "mapYnZnX"(): $Matrix3f
 public "mapZXY"(arg0: $Matrix3f$$Type): $Matrix3f
@@ -3725,58 +3723,58 @@ public "mapZYX"(arg0: $Matrix3f$$Type): $Matrix3f
 public "mapZYX"(): $Matrix3f
 public "mapZYnX"(arg0: $Matrix3f$$Type): $Matrix3f
 public "mapZYnX"(): $Matrix3f
-public "mapZnXY"(arg0: $Matrix3f$$Type): $Matrix3f
 public "mapZnXY"(): $Matrix3f
+public "mapZnXY"(arg0: $Matrix3f$$Type): $Matrix3f
 public "mapZnXnY"(arg0: $Matrix3f$$Type): $Matrix3f
 public "mapZnXnY"(): $Matrix3f
-public "mapZnYX"(arg0: $Matrix3f$$Type): $Matrix3f
 public "mapZnYX"(): $Matrix3f
-public "mapZnYnX"(arg0: $Matrix3f$$Type): $Matrix3f
+public "mapZnYX"(arg0: $Matrix3f$$Type): $Matrix3f
 public "mapZnYnX"(): $Matrix3f
+public "mapZnYnX"(arg0: $Matrix3f$$Type): $Matrix3f
 public "mapnXYnZ"(arg0: $Matrix3f$$Type): $Matrix3f
 public "mapnXYnZ"(): $Matrix3f
-public "mapnXZY"(): $Matrix3f
 public "mapnXZY"(arg0: $Matrix3f$$Type): $Matrix3f
-public "mapnXZnY"(): $Matrix3f
+public "mapnXZY"(): $Matrix3f
 public "mapnXZnY"(arg0: $Matrix3f$$Type): $Matrix3f
+public "mapnXZnY"(): $Matrix3f
 public "mapnXnYZ"(arg0: $Matrix3f$$Type): $Matrix3f
 public "mapnXnYZ"(): $Matrix3f
 public "mapnXnYnZ"(arg0: $Matrix3f$$Type): $Matrix3f
 public "mapnXnYnZ"(): $Matrix3f
 public "mapnXnZY"(arg0: $Matrix3f$$Type): $Matrix3f
 public "mapnXnZY"(): $Matrix3f
-public "mapnXnZnY"(): $Matrix3f
 public "mapnXnZnY"(arg0: $Matrix3f$$Type): $Matrix3f
-public "mapnYXZ"(): $Matrix3f
+public "mapnXnZnY"(): $Matrix3f
 public "mapnYXZ"(arg0: $Matrix3f$$Type): $Matrix3f
+public "mapnYXZ"(): $Matrix3f
 public "mapnYXnZ"(arg0: $Matrix3f$$Type): $Matrix3f
 public "mapnYXnZ"(): $Matrix3f
 public "mapnYZX"(): $Matrix3f
 public "mapnYZX"(arg0: $Matrix3f$$Type): $Matrix3f
-public "mapnYZnX"(arg0: $Matrix3f$$Type): $Matrix3f
 public "mapnYZnX"(): $Matrix3f
+public "mapnYZnX"(arg0: $Matrix3f$$Type): $Matrix3f
 public "mapnYnXZ"(arg0: $Matrix3f$$Type): $Matrix3f
 public "mapnYnXZ"(): $Matrix3f
 public "mapnYnXnZ"(): $Matrix3f
 public "mapnYnXnZ"(arg0: $Matrix3f$$Type): $Matrix3f
-public "mapnYnZX"(arg0: $Matrix3f$$Type): $Matrix3f
 public "mapnYnZX"(): $Matrix3f
+public "mapnYnZX"(arg0: $Matrix3f$$Type): $Matrix3f
 public "mapnYnZnX"(): $Matrix3f
 public "mapnYnZnX"(arg0: $Matrix3f$$Type): $Matrix3f
 public "mapnZXY"(arg0: $Matrix3f$$Type): $Matrix3f
 public "mapnZXY"(): $Matrix3f
-public "mapnZXnY"(arg0: $Matrix3f$$Type): $Matrix3f
 public "mapnZXnY"(): $Matrix3f
+public "mapnZXnY"(arg0: $Matrix3f$$Type): $Matrix3f
 public "mapnZYX"(): $Matrix3f
 public "mapnZYX"(arg0: $Matrix3f$$Type): $Matrix3f
 public "mapnZYnX"(): $Matrix3f
 public "mapnZYnX"(arg0: $Matrix3f$$Type): $Matrix3f
 public "mapnZnXY"(arg0: $Matrix3f$$Type): $Matrix3f
 public "mapnZnXY"(): $Matrix3f
-public "mapnZnXnY"(arg0: $Matrix3f$$Type): $Matrix3f
 public "mapnZnXnY"(): $Matrix3f
-public "mapnZnYX"(arg0: $Matrix3f$$Type): $Matrix3f
+public "mapnZnXnY"(arg0: $Matrix3f$$Type): $Matrix3f
 public "mapnZnYX"(): $Matrix3f
+public "mapnZnYX"(arg0: $Matrix3f$$Type): $Matrix3f
 public "mapnZnYnX"(arg0: $Matrix3f$$Type): $Matrix3f
 public "mapnZnYnX"(): $Matrix3f
 public "negateX"(arg0: $Matrix3f$$Type): $Matrix3f
@@ -3785,33 +3783,35 @@ public "negateY"(): $Matrix3f
 public "negateY"(arg0: $Matrix3f$$Type): $Matrix3f
 public "negateZ"(arg0: $Matrix3f$$Type): $Matrix3f
 public "negateZ"(): $Matrix3f
-public "setLookAlong"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type): $Matrix3f
-public "setLookAlong"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix3f
+public "mulComponentWise"(arg0: $Matrix3fc$$Type, arg1: $Matrix3f$$Type): $Matrix3f
+public "mulComponentWise"(arg0: $Matrix3fc$$Type): $Matrix3f
+public "mulLocal"(arg0: $Matrix3fc$$Type, arg1: $Matrix3f$$Type): $Matrix3f
+public "mulLocal"(arg0: $Matrix3fc$$Type): $Matrix3f
+public "setTransposed"(arg0: $Matrix3fc$$Type): $Matrix3f
+public "scaleLocal"(arg0: float, arg1: float, arg2: float, arg3: $Matrix3f$$Type): $Matrix3f
+public "scaleLocal"(arg0: float, arg1: float, arg2: float): $Matrix3f
+public "getRotation"(arg0: $AxisAngle4f$$Type): $AxisAngle4f
+public "getTransposed"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
+public "getTransposed"(arg0: $ByteBuffer$$Type): $ByteBuffer
+public "getTransposed"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
+public "getTransposed"(arg0: $FloatBuffer$$Type): $FloatBuffer
+public "determinant"(): float
+public "rotateLocal"(arg0: $Quaternionfc$$Type): $Matrix3f
+public "rotateLocal"(arg0: $Quaternionfc$$Type, arg1: $Matrix3f$$Type): $Matrix3f
+public "rotateLocal"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix3f
+public "rotateLocal"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix3f$$Type): $Matrix3f
 public "reflection"(arg0: $Quaternionfc$$Type): $Matrix3f
 public "reflection"(arg0: $Vector3fc$$Type): $Matrix3f
 public "reflection"(arg0: float, arg1: float, arg2: float): $Matrix3f
 public "getRow"(arg0: integer, arg1: $Vector3f$$Type): $Vector3f
 public "setRow"(arg0: integer, arg1: $Vector3fc$$Type): $Matrix3f
 public "setRow"(arg0: integer, arg1: float, arg2: float, arg3: float): $Matrix3f
-public "setColumn"(arg0: integer, arg1: float, arg2: float, arg3: float): $Matrix3f
 public "setColumn"(arg0: integer, arg1: $Vector3fc$$Type): $Matrix3f
-public "scaleLocal"(arg0: float, arg1: float, arg2: float): $Matrix3f
-public "scaleLocal"(arg0: float, arg1: float, arg2: float, arg3: $Matrix3f$$Type): $Matrix3f
-public "getScale"(arg0: $Vector3f$$Type): $Vector3f
-public "getRotation"(arg0: $AxisAngle4f$$Type): $AxisAngle4f
-public "mulComponentWise"(arg0: $Matrix3fc$$Type): $Matrix3f
-public "mulComponentWise"(arg0: $Matrix3fc$$Type, arg1: $Matrix3f$$Type): $Matrix3f
-public "rotateLocal"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix3f$$Type): $Matrix3f
-public "rotateLocal"(arg0: $Quaternionfc$$Type, arg1: $Matrix3f$$Type): $Matrix3f
-public "rotateLocal"(arg0: $Quaternionfc$$Type): $Matrix3f
-public "rotateLocal"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix3f
-public "getTransposed"(arg0: $FloatBuffer$$Type): $FloatBuffer
-public "getTransposed"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
-public "getTransposed"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
-public "getTransposed"(arg0: $ByteBuffer$$Type): $ByteBuffer
-public "mulLocal"(arg0: $Matrix3fc$$Type): $Matrix3f
-public "mulLocal"(arg0: $Matrix3fc$$Type, arg1: $Matrix3f$$Type): $Matrix3f
-public "setTransposed"(arg0: $Matrix3fc$$Type): $Matrix3f
+public "setColumn"(arg0: integer, arg1: float, arg2: float, arg3: float): $Matrix3f
+public "rotateTowards"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type): $Matrix3f
+public "rotateTowards"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix3f$$Type): $Matrix3f
+public "rotateTowards"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Matrix3f$$Type): $Matrix3f
+public "rotateTowards"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix3f
 get "finite"(): boolean
 set "fromAddress"(value: long)
 set "transposed"(value: $Matrix3fc$$Type)
@@ -3877,69 +3877,69 @@ static readonly "CORNER_NXNYNZ": integer
 static readonly "CORNER_NXNYPZ": integer
 static readonly "CORNER_NXPYPZ": integer
 
- "getTransposedFloats"(arg0: $ByteBuffer$$Type): $ByteBuffer
- "getTransposedFloats"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
  "getFloats"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
  "getFloats"(arg0: $ByteBuffer$$Type): $ByteBuffer
+ "getTransposedFloats"(arg0: $ByteBuffer$$Type): $ByteBuffer
+ "getTransposedFloats"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
  "transpose"(arg0: $Matrix4d$$Type): $Matrix4d
  "invert"(arg0: $Matrix4d$$Type): $Matrix4d
- "sub"(arg0: $Matrix4dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
- "mul"(arg0: $Matrix4x3dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
- "mul"(arg0: $Matrix4x3fc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
- "mul"(arg0: $Matrix3x2dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
- "mul"(arg0: $Matrix4dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
- "mul"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double, arg9: double, arg10: double, arg11: double, arg12: double, arg13: double, arg14: double, arg15: double, arg16: $Matrix4d$$Type): $Matrix4d
- "mul"(arg0: $Matrix3x2fc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
- "mul"(arg0: $Matrix4fc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
  "origin"(arg0: $Vector3d$$Type): $Vector3d
- "shadow"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4dc$$Type, arg5: $Matrix4d$$Type): $Matrix4d
- "shadow"(arg0: $Vector4dc$$Type, arg1: $Matrix4dc$$Type, arg2: $Matrix4d$$Type): $Matrix4d
- "shadow"(arg0: $Vector4dc$$Type, arg1: double, arg2: double, arg3: double, arg4: double, arg5: $Matrix4d$$Type): $Matrix4d
- "shadow"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: $Matrix4d$$Type): $Matrix4d
- "normal"(arg0: $Matrix3d$$Type): $Matrix3d
  "normal"(arg0: $Matrix4d$$Type): $Matrix4d
+ "normal"(arg0: $Matrix3d$$Type): $Matrix3d
+ "sub"(arg0: $Matrix4dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
+ "get"(arg0: (float)[]): (float)[]
+ "get"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
+ "get"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
+ "get"(arg0: $ByteBuffer$$Type): $ByteBuffer
  "get"(arg0: (double)[], arg1: integer): (double)[]
+ "get"(arg0: (double)[]): (double)[]
+ "get"(arg0: (float)[], arg1: integer): (float)[]
+ "get"(arg0: integer, arg1: integer): double
+ "get"(arg0: $Matrix4d$$Type): $Matrix4d
  "get"(arg0: $FloatBuffer$$Type): $FloatBuffer
  "get"(arg0: integer, arg1: $DoubleBuffer$$Type): $DoubleBuffer
  "get"(arg0: $DoubleBuffer$$Type): $DoubleBuffer
- "get"(arg0: $Matrix4d$$Type): $Matrix4d
- "get"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
- "get"(arg0: $ByteBuffer$$Type): $ByteBuffer
- "get"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
- "get"(arg0: integer, arg1: integer): double
- "get"(arg0: (float)[]): (float)[]
- "get"(arg0: (float)[], arg1: integer): (float)[]
- "get"(arg0: (double)[]): (double)[]
  "equals"(arg0: $Matrix4dc$$Type, arg1: double): boolean
  "isFinite"(): boolean
- "scale"(arg0: double, arg1: $Matrix4d$$Type): $Matrix4d
- "scale"(arg0: double, arg1: double, arg2: double, arg3: $Matrix4d$$Type): $Matrix4d
  "scale"(arg0: $Vector3dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
+ "scale"(arg0: double, arg1: double, arg2: double, arg3: $Matrix4d$$Type): $Matrix4d
+ "scale"(arg0: double, arg1: $Matrix4d$$Type): $Matrix4d
  "add"(arg0: $Matrix4dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
+ "transform"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Vector4d$$Type): $Vector4d
  "transform"(arg0: $Vector4d$$Type): $Vector4d
  "transform"(arg0: $Vector4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
- "transform"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Vector4d$$Type): $Vector4d
  "properties"(): integer
  "pick"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: (integer)[], arg5: $Matrix4d$$Type): $Matrix4d
- "rotate"(arg0: double, arg1: $Vector3fc$$Type, arg2: $Matrix4d$$Type): $Matrix4d
  "rotate"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4d$$Type): $Matrix4d
- "rotate"(arg0: $Quaterniondc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
+ "rotate"(arg0: double, arg1: $Vector3fc$$Type, arg2: $Matrix4d$$Type): $Matrix4d
  "rotate"(arg0: double, arg1: $Vector3dc$$Type, arg2: $Matrix4d$$Type): $Matrix4d
- "rotate"(arg0: $AxisAngle4d$$Type, arg1: $Matrix4d$$Type): $Matrix4d
+ "rotate"(arg0: $Quaterniondc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
  "rotate"(arg0: $Quaternionfc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
+ "rotate"(arg0: $AxisAngle4d$$Type, arg1: $Matrix4d$$Type): $Matrix4d
  "rotate"(arg0: $AxisAngle4f$$Type, arg1: $Matrix4d$$Type): $Matrix4d
- "m12"(): double
- "m13"(): double
  "m11"(): double
+ "m12"(): double
+ "mul"(arg0: $Matrix4x3dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
+ "mul"(arg0: $Matrix4fc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
+ "mul"(arg0: $Matrix4dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
+ "mul"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double, arg9: double, arg10: double, arg11: double, arg12: double, arg13: double, arg14: double, arg15: double, arg16: $Matrix4d$$Type): $Matrix4d
+ "mul"(arg0: $Matrix3x2dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
+ "mul"(arg0: $Matrix3x2fc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
+ "mul"(arg0: $Matrix4x3fc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
+ "shadow"(arg0: $Vector4dc$$Type, arg1: $Matrix4dc$$Type, arg2: $Matrix4d$$Type): $Matrix4d
+ "shadow"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: $Matrix4d$$Type): $Matrix4d
+ "shadow"(arg0: $Vector4dc$$Type, arg1: double, arg2: double, arg3: double, arg4: double, arg5: $Matrix4d$$Type): $Matrix4d
+ "shadow"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4dc$$Type, arg5: $Matrix4d$$Type): $Matrix4d
+ "m13"(): double
  "m10"(): double
- "getColumn"(arg0: integer, arg1: $Vector4d$$Type): $Vector4d
  "getColumn"(arg0: integer, arg1: $Vector3d$$Type): $Vector3d
+ "getColumn"(arg0: integer, arg1: $Vector4d$$Type): $Vector4d
  "translate"(arg0: $Vector3dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
- "translate"(arg0: double, arg1: double, arg2: double, arg3: $Matrix4d$$Type): $Matrix4d
  "translate"(arg0: $Vector3fc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
+ "translate"(arg0: double, arg1: double, arg2: double, arg3: $Matrix4d$$Type): $Matrix4d
  "transformPosition"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
- "transformPosition"(arg0: $Vector3d$$Type): $Vector3d
  "transformPosition"(arg0: double, arg1: double, arg2: double, arg3: $Vector3d$$Type): $Vector3d
+ "transformPosition"(arg0: $Vector3d$$Type): $Vector3d
  "rotateAround"(arg0: $Quaterniondc$$Type, arg1: double, arg2: double, arg3: double, arg4: $Matrix4d$$Type): $Matrix4d
  "getRowColumn"(arg0: integer, arg1: integer): double
  "mulAffine"(arg0: $Matrix4dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
@@ -3964,22 +3964,22 @@ static readonly "CORNER_NXPYPZ": integer
  "rotateX"(arg0: double, arg1: $Matrix4d$$Type): $Matrix4d
  "rotateY"(arg0: double, arg1: $Matrix4d$$Type): $Matrix4d
  "rotateZ"(arg0: double, arg1: $Matrix4d$$Type): $Matrix4d
- "reflect"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix4d$$Type): $Matrix4d
  "reflect"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4d$$Type): $Matrix4d
+ "reflect"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix4d$$Type): $Matrix4d
  "reflect"(arg0: $Quaterniondc$$Type, arg1: $Vector3dc$$Type, arg2: $Matrix4d$$Type): $Matrix4d
  "reflect"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Matrix4d$$Type): $Matrix4d
  "lerp"(arg0: $Matrix4dc$$Type, arg1: double, arg2: $Matrix4d$$Type): $Matrix4d
- "getUnnormalizedRotation"(arg0: $Quaterniond$$Type): $Quaterniond
  "getUnnormalizedRotation"(arg0: $Quaternionf$$Type): $Quaternionf
+ "getUnnormalizedRotation"(arg0: $Quaterniond$$Type): $Quaterniond
  "getNormalizedRotation"(arg0: $Quaterniond$$Type): $Quaterniond
  "getNormalizedRotation"(arg0: $Quaternionf$$Type): $Quaternionf
  "get4x3Transposed"(arg0: $DoubleBuffer$$Type): $DoubleBuffer
+ "get4x3Transposed"(arg0: integer, arg1: $DoubleBuffer$$Type): $DoubleBuffer
  "get4x3Transposed"(arg0: $ByteBuffer$$Type): $ByteBuffer
  "get4x3Transposed"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
- "get4x3Transposed"(arg0: integer, arg1: $DoubleBuffer$$Type): $DoubleBuffer
- "determinant"(): double
- "lookAlong"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix4d$$Type): $Matrix4d
+ "mul0"(arg0: $Matrix4dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
  "lookAlong"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Matrix4d$$Type): $Matrix4d
+ "lookAlong"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix4d$$Type): $Matrix4d
  "rotateLocalX"(arg0: double, arg1: $Matrix4d$$Type): $Matrix4d
  "rotateLocalY"(arg0: double, arg1: $Matrix4d$$Type): $Matrix4d
  "rotateLocalZ"(arg0: double, arg1: $Matrix4d$$Type): $Matrix4d
@@ -3989,46 +3989,76 @@ static readonly "CORNER_NXPYPZ": integer
  "normalizedPositiveY"(arg0: $Vector3d$$Type): $Vector3d
  "positiveZ"(arg0: $Vector3d$$Type): $Vector3d
  "normalizedPositiveZ"(arg0: $Vector3d$$Type): $Vector3d
- "cofactor3x3"(arg0: $Matrix3d$$Type): $Matrix3d
- "cofactor3x3"(arg0: $Matrix4d$$Type): $Matrix4d
- "normalize3x3"(arg0: $Matrix4d$$Type): $Matrix4d
- "normalize3x3"(arg0: $Matrix3d$$Type): $Matrix3d
- "frustumPlane"(arg0: integer, arg1: $Vector4d$$Type): $Vector4d
- "frustumCorner"(arg0: integer, arg1: $Vector3d$$Type): $Vector3d
- "perspectiveOrigin"(arg0: $Vector3d$$Type): $Vector3d
- "perspectiveInvOrigin"(arg0: $Vector3d$$Type): $Vector3d
- "perspectiveFov"(): double
- "perspectiveNear"(): double
- "perspectiveFar"(): double
- "frustumRayDir"(arg0: double, arg1: double, arg2: $Vector3d$$Type): $Vector3d
- "originAffine"(arg0: $Vector3d$$Type): $Vector3d
- "isAffine"(): boolean
- "arcball"(arg0: double, arg1: $Vector3dc$$Type, arg2: double, arg3: double, arg4: $Matrix4d$$Type): $Matrix4d
- "arcball"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix4d$$Type): $Matrix4d
- "projectedGridRange"(arg0: $Matrix4dc$$Type, arg1: double, arg2: double, arg3: $Matrix4d$$Type): $Matrix4d
- "perspectiveFrustumSlice"(arg0: double, arg1: double, arg2: $Matrix4d$$Type): $Matrix4d
- "orthoCrop"(arg0: $Matrix4dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
- "transformAab"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Vector3d$$Type, arg3: $Vector3d$$Type): $Matrix4d
- "transformAab"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Vector3d$$Type, arg7: $Vector3d$$Type): $Matrix4d
+ "lookAt"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Vector3dc$$Type, arg3: $Matrix4d$$Type): $Matrix4d
+ "lookAt"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double, arg9: $Matrix4d$$Type): $Matrix4d
+ "lookAtPerspective"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double, arg9: $Matrix4d$$Type): $Matrix4d
+ "lookAtLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double, arg9: $Matrix4d$$Type): $Matrix4d
+ "lookAtLH"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Vector3dc$$Type, arg3: $Matrix4d$$Type): $Matrix4d
+ "lookAtPerspectiveLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double, arg9: $Matrix4d$$Type): $Matrix4d
+ "tile"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: $Matrix4d$$Type): $Matrix4d
+ "perspective"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4d$$Type): $Matrix4d
+ "perspective"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: boolean, arg5: $Matrix4d$$Type): $Matrix4d
+ "perspectiveRect"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: boolean, arg5: $Matrix4d$$Type): $Matrix4d
+ "perspectiveRect"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4d$$Type): $Matrix4d
+ "perspectiveOffCenter"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: boolean, arg7: $Matrix4d$$Type): $Matrix4d
+ "perspectiveOffCenter"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix4d$$Type): $Matrix4d
+ "perspectiveOffCenterFov"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: boolean, arg7: $Matrix4d$$Type): $Matrix4d
+ "perspectiveOffCenterFov"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix4d$$Type): $Matrix4d
+ "frustum"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix4d$$Type): $Matrix4d
+ "frustum"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: boolean, arg7: $Matrix4d$$Type): $Matrix4d
+ "perspectiveOffCenterFovLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix4d$$Type): $Matrix4d
+ "perspectiveOffCenterFovLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: boolean, arg7: $Matrix4d$$Type): $Matrix4d
+ "frustumLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix4d$$Type): $Matrix4d
+ "frustumLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: boolean, arg7: $Matrix4d$$Type): $Matrix4d
+ "perspectiveLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4d$$Type): $Matrix4d
+ "perspectiveLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: boolean, arg5: $Matrix4d$$Type): $Matrix4d
+ "rotateAroundAffine"(arg0: $Quaterniondc$$Type, arg1: double, arg2: double, arg3: double, arg4: $Matrix4d$$Type): $Matrix4d
+ "rotateAroundLocal"(arg0: $Quaterniondc$$Type, arg1: double, arg2: double, arg3: double, arg4: $Matrix4d$$Type): $Matrix4d
+ "unproject"(arg0: $Vector3dc$$Type, arg1: (integer)[], arg2: $Vector4d$$Type): $Vector4d
+ "unproject"(arg0: double, arg1: double, arg2: double, arg3: (integer)[], arg4: $Vector4d$$Type): $Vector4d
+ "unproject"(arg0: double, arg1: double, arg2: double, arg3: (integer)[], arg4: $Vector3d$$Type): $Vector3d
+ "unproject"(arg0: $Vector3dc$$Type, arg1: (integer)[], arg2: $Vector3d$$Type): $Vector3d
+ "unprojectRay"(arg0: $Vector2dc$$Type, arg1: (integer)[], arg2: $Vector3d$$Type, arg3: $Vector3d$$Type): $Matrix4d
+ "unprojectRay"(arg0: double, arg1: double, arg2: (integer)[], arg3: $Vector3d$$Type, arg4: $Vector3d$$Type): $Matrix4d
+ "unprojectInv"(arg0: $Vector3dc$$Type, arg1: (integer)[], arg2: $Vector3d$$Type): $Vector3d
+ "unprojectInv"(arg0: double, arg1: double, arg2: double, arg3: (integer)[], arg4: $Vector3d$$Type): $Vector3d
+ "unprojectInv"(arg0: double, arg1: double, arg2: double, arg3: (integer)[], arg4: $Vector4d$$Type): $Vector4d
+ "unprojectInv"(arg0: $Vector3dc$$Type, arg1: (integer)[], arg2: $Vector4d$$Type): $Vector4d
+ "unprojectInvRay"(arg0: $Vector2dc$$Type, arg1: (integer)[], arg2: $Vector3d$$Type, arg3: $Vector3d$$Type): $Matrix4d
+ "unprojectInvRay"(arg0: double, arg1: double, arg2: (integer)[], arg3: $Vector3d$$Type, arg4: $Vector3d$$Type): $Matrix4d
+ "project"(arg0: $Vector3dc$$Type, arg1: (integer)[], arg2: $Vector3d$$Type): $Vector3d
+ "project"(arg0: $Vector3dc$$Type, arg1: (integer)[], arg2: $Vector4d$$Type): $Vector4d
+ "project"(arg0: double, arg1: double, arg2: double, arg3: (integer)[], arg4: $Vector3d$$Type): $Vector3d
+ "project"(arg0: double, arg1: double, arg2: double, arg3: (integer)[], arg4: $Vector4d$$Type): $Vector4d
+ "getScale"(arg0: $Vector3d$$Type): $Vector3d
  "transformTranspose"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Vector4d$$Type): $Vector4d
- "transformTranspose"(arg0: $Vector4d$$Type): $Vector4d
  "transformTranspose"(arg0: $Vector4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
- "transformProject"(arg0: $Vector4dc$$Type, arg1: $Vector3d$$Type): $Vector3d
+ "transformTranspose"(arg0: $Vector4d$$Type): $Vector4d
  "transformProject"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
- "transformProject"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Vector3d$$Type): $Vector3d
- "transformProject"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Vector4d$$Type): $Vector4d
- "transformProject"(arg0: $Vector4d$$Type): $Vector4d
- "transformProject"(arg0: double, arg1: double, arg2: double, arg3: $Vector3d$$Type): $Vector3d
  "transformProject"(arg0: $Vector4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
+ "transformProject"(arg0: $Vector4d$$Type): $Vector4d
+ "transformProject"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Vector3d$$Type): $Vector3d
  "transformProject"(arg0: $Vector3d$$Type): $Vector3d
- "rotateTowards"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Matrix4d$$Type): $Matrix4d
- "rotateTowards"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix4d$$Type): $Matrix4d
+ "transformProject"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Vector4d$$Type): $Vector4d
+ "transformProject"(arg0: $Vector4dc$$Type, arg1: $Vector3d$$Type): $Vector3d
+ "transformProject"(arg0: double, arg1: double, arg2: double, arg3: $Vector3d$$Type): $Vector3d
+ "transformDirection"(arg0: double, arg1: double, arg2: double, arg3: $Vector3f$$Type): $Vector3f
+ "transformDirection"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
+ "transformDirection"(arg0: $Vector3d$$Type): $Vector3d
+ "transformDirection"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
+ "transformDirection"(arg0: $Vector3f$$Type): $Vector3f
+ "transformDirection"(arg0: double, arg1: double, arg2: double, arg3: $Vector3d$$Type): $Vector3d
+ "transformAffine"(arg0: $Vector4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
+ "transformAffine"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Vector4d$$Type): $Vector4d
+ "transformAffine"(arg0: $Vector4d$$Type): $Vector4d
+ "determinantAffine"(): double
+ "determinant3x3"(): double
  "testPoint"(arg0: double, arg1: double, arg2: double): boolean
  "testSphere"(arg0: double, arg1: double, arg2: double, arg3: double): boolean
  "testAab"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): boolean
  "obliqueZ"(arg0: double, arg1: double, arg2: $Matrix4d$$Type): $Matrix4d
- "withLookAtUp"(arg0: double, arg1: double, arg2: double, arg3: $Matrix4d$$Type): $Matrix4d
  "withLookAtUp"(arg0: $Vector3dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
+ "withLookAtUp"(arg0: double, arg1: double, arg2: double, arg3: $Matrix4d$$Type): $Matrix4d
  "mapXZY"(arg0: $Matrix4d$$Type): $Matrix4d
  "mapXZnY"(arg0: $Matrix4d$$Type): $Matrix4d
  "mapXnYnZ"(arg0: $Matrix4d$$Type): $Matrix4d
@@ -4076,126 +4106,96 @@ static readonly "CORNER_NXPYPZ": integer
  "negateX"(arg0: $Matrix4d$$Type): $Matrix4d
  "negateY"(arg0: $Matrix4d$$Type): $Matrix4d
  "negateZ"(arg0: $Matrix4d$$Type): $Matrix4d
- "orthoSymmetricLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: boolean, arg5: $Matrix4d$$Type): $Matrix4d
- "orthoSymmetricLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4d$$Type): $Matrix4d
- "ortho2DLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4d$$Type): $Matrix4d
- "lookAt"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double, arg9: $Matrix4d$$Type): $Matrix4d
- "lookAt"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Vector3dc$$Type, arg3: $Matrix4d$$Type): $Matrix4d
- "lookAtPerspective"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double, arg9: $Matrix4d$$Type): $Matrix4d
- "lookAtLH"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Vector3dc$$Type, arg3: $Matrix4d$$Type): $Matrix4d
- "lookAtLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double, arg9: $Matrix4d$$Type): $Matrix4d
- "lookAtPerspectiveLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double, arg9: $Matrix4d$$Type): $Matrix4d
- "tile"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: $Matrix4d$$Type): $Matrix4d
- "perspective"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: boolean, arg5: $Matrix4d$$Type): $Matrix4d
- "perspective"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4d$$Type): $Matrix4d
- "perspectiveRect"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: boolean, arg5: $Matrix4d$$Type): $Matrix4d
- "perspectiveRect"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4d$$Type): $Matrix4d
- "perspectiveOffCenter"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix4d$$Type): $Matrix4d
- "perspectiveOffCenter"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: boolean, arg7: $Matrix4d$$Type): $Matrix4d
- "perspectiveOffCenterFov"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: boolean, arg7: $Matrix4d$$Type): $Matrix4d
- "perspectiveOffCenterFov"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix4d$$Type): $Matrix4d
+ "mulOrthoAffine"(arg0: $Matrix4dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
+ "mulComponentWise"(arg0: $Matrix4dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
+ "add4x3"(arg0: $Matrix4dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
+ "add4x3"(arg0: $Matrix4fc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
+ "sub4x3"(arg0: $Matrix4dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
+ "mul4x3ComponentWise"(arg0: $Matrix4dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
+ "mul3x3"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double, arg9: $Matrix4d$$Type): $Matrix4d
+ "mulLocal"(arg0: $Matrix4dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
+ "mulTranslationAffine"(arg0: $Matrix4dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
  "mulLocalAffine"(arg0: $Matrix4dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
- "frustum"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: boolean, arg7: $Matrix4d$$Type): $Matrix4d
- "frustum"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix4d$$Type): $Matrix4d
- "perspectiveOffCenterFovLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix4d$$Type): $Matrix4d
- "perspectiveOffCenterFovLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: boolean, arg7: $Matrix4d$$Type): $Matrix4d
- "frustumLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix4d$$Type): $Matrix4d
- "frustumLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: boolean, arg7: $Matrix4d$$Type): $Matrix4d
- "perspectiveLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4d$$Type): $Matrix4d
- "perspectiveLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: boolean, arg5: $Matrix4d$$Type): $Matrix4d
- "rotateAroundAffine"(arg0: $Quaterniondc$$Type, arg1: double, arg2: double, arg3: double, arg4: $Matrix4d$$Type): $Matrix4d
- "rotateAroundLocal"(arg0: $Quaterniondc$$Type, arg1: double, arg2: double, arg3: double, arg4: $Matrix4d$$Type): $Matrix4d
- "unproject"(arg0: $Vector3dc$$Type, arg1: (integer)[], arg2: $Vector3d$$Type): $Vector3d
- "unproject"(arg0: double, arg1: double, arg2: double, arg3: (integer)[], arg4: $Vector3d$$Type): $Vector3d
- "unproject"(arg0: double, arg1: double, arg2: double, arg3: (integer)[], arg4: $Vector4d$$Type): $Vector4d
- "unproject"(arg0: $Vector3dc$$Type, arg1: (integer)[], arg2: $Vector4d$$Type): $Vector4d
- "unprojectRay"(arg0: $Vector2dc$$Type, arg1: (integer)[], arg2: $Vector3d$$Type, arg3: $Vector3d$$Type): $Matrix4d
- "unprojectRay"(arg0: double, arg1: double, arg2: (integer)[], arg3: $Vector3d$$Type, arg4: $Vector3d$$Type): $Matrix4d
- "unprojectInv"(arg0: double, arg1: double, arg2: double, arg3: (integer)[], arg4: $Vector3d$$Type): $Vector3d
- "unprojectInv"(arg0: $Vector3dc$$Type, arg1: (integer)[], arg2: $Vector3d$$Type): $Vector3d
- "unprojectInv"(arg0: double, arg1: double, arg2: double, arg3: (integer)[], arg4: $Vector4d$$Type): $Vector4d
- "unprojectInv"(arg0: $Vector3dc$$Type, arg1: (integer)[], arg2: $Vector4d$$Type): $Vector4d
- "unprojectInvRay"(arg0: double, arg1: double, arg2: (integer)[], arg3: $Vector3d$$Type, arg4: $Vector3d$$Type): $Matrix4d
- "unprojectInvRay"(arg0: $Vector2dc$$Type, arg1: (integer)[], arg2: $Vector3d$$Type, arg3: $Vector3d$$Type): $Matrix4d
- "project"(arg0: $Vector3dc$$Type, arg1: (integer)[], arg2: $Vector4d$$Type): $Vector4d
- "project"(arg0: double, arg1: double, arg2: double, arg3: (integer)[], arg4: $Vector3d$$Type): $Vector3d
- "project"(arg0: double, arg1: double, arg2: double, arg3: (integer)[], arg4: $Vector4d$$Type): $Vector4d
- "project"(arg0: $Vector3dc$$Type, arg1: (integer)[], arg2: $Vector3d$$Type): $Vector3d
- "getRow"(arg0: integer, arg1: $Vector3d$$Type): $Vector3d
- "getRow"(arg0: integer, arg1: $Vector4d$$Type): $Vector4d
- "transformDirection"(arg0: double, arg1: double, arg2: double, arg3: $Vector3f$$Type): $Vector3f
- "transformDirection"(arg0: $Vector3d$$Type): $Vector3d
- "transformDirection"(arg0: double, arg1: double, arg2: double, arg3: $Vector3d$$Type): $Vector3d
- "transformDirection"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
- "transformDirection"(arg0: $Vector3f$$Type): $Vector3f
- "transformDirection"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
- "transformAffine"(arg0: $Vector4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
- "transformAffine"(arg0: $Vector4d$$Type): $Vector4d
- "transformAffine"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Vector4d$$Type): $Vector4d
+ "mulPerspectiveAffine"(arg0: $Matrix4dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
+ "mulPerspectiveAffine"(arg0: $Matrix4x3dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
+ "mulAffineR"(arg0: $Matrix4dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
  "scaleXY"(arg0: double, arg1: double, arg2: $Matrix4d$$Type): $Matrix4d
- "scaleAround"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4d$$Type): $Matrix4d
  "scaleAround"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix4d$$Type): $Matrix4d
- "scaleLocal"(arg0: double, arg1: double, arg2: double, arg3: $Matrix4d$$Type): $Matrix4d
+ "scaleAround"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4d$$Type): $Matrix4d
  "scaleLocal"(arg0: double, arg1: $Matrix4d$$Type): $Matrix4d
+ "scaleLocal"(arg0: double, arg1: double, arg2: double, arg3: $Matrix4d$$Type): $Matrix4d
  "scaleAroundLocal"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix4d$$Type): $Matrix4d
  "scaleAroundLocal"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4d$$Type): $Matrix4d
  "rotateTowardsXY"(arg0: double, arg1: double, arg2: $Matrix4d$$Type): $Matrix4d
  "rotateAffineXYZ"(arg0: double, arg1: double, arg2: double, arg3: $Matrix4d$$Type): $Matrix4d
- "determinantAffine"(): double
- "determinant3x3"(): double
- "invertAffine"(arg0: $Matrix4d$$Type): $Matrix4d
- "invertPerspective"(arg0: $Matrix4d$$Type): $Matrix4d
- "invertFrustum"(arg0: $Matrix4d$$Type): $Matrix4d
- "transpose3x3"(arg0: $Matrix3d$$Type): $Matrix3d
- "transpose3x3"(arg0: $Matrix4d$$Type): $Matrix4d
- "getTranslation"(arg0: $Vector3d$$Type): $Vector3d
- "getScale"(arg0: $Vector3d$$Type): $Vector3d
- "get4x3"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
- "get3x3"(arg0: $Matrix3d$$Type): $Matrix3d
- "mulTranslationAffine"(arg0: $Matrix4dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
- "mulAffineR"(arg0: $Matrix4dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
- "invertOrtho"(arg0: $Matrix4d$$Type): $Matrix4d
- "invertPerspectiveView"(arg0: $Matrix4x3dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
- "invertPerspectiveView"(arg0: $Matrix4dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
- "mulOrthoAffine"(arg0: $Matrix4dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
- "fma4x3"(arg0: $Matrix4dc$$Type, arg1: double, arg2: $Matrix4d$$Type): $Matrix4d
- "mulComponentWise"(arg0: $Matrix4dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
- "add4x3"(arg0: $Matrix4fc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
- "add4x3"(arg0: $Matrix4dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
- "sub4x3"(arg0: $Matrix4dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
  "rotateAffineZYX"(arg0: double, arg1: double, arg2: double, arg3: $Matrix4d$$Type): $Matrix4d
  "rotateAffineYXZ"(arg0: double, arg1: double, arg2: double, arg3: $Matrix4d$$Type): $Matrix4d
  "rotateTranslation"(arg0: $Quaternionfc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
  "rotateTranslation"(arg0: $Quaterniondc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
  "rotateTranslation"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4d$$Type): $Matrix4d
+ "fma4x3"(arg0: $Matrix4dc$$Type, arg1: double, arg2: $Matrix4d$$Type): $Matrix4d
+ "transpose3x3"(arg0: $Matrix4d$$Type): $Matrix4d
+ "transpose3x3"(arg0: $Matrix3d$$Type): $Matrix3d
+ "getTranslation"(arg0: $Vector3d$$Type): $Vector3d
+ "get4x3"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
+ "get3x3"(arg0: $Matrix3d$$Type): $Matrix3d
+ "getTransposed"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
+ "getTransposed"(arg0: $DoubleBuffer$$Type): $DoubleBuffer
+ "getTransposed"(arg0: $ByteBuffer$$Type): $ByteBuffer
+ "getTransposed"(arg0: $FloatBuffer$$Type): $FloatBuffer
+ "getTransposed"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
+ "getTransposed"(arg0: integer, arg1: $DoubleBuffer$$Type): $DoubleBuffer
+ "determinant"(): double
+ "invertAffine"(arg0: $Matrix4d$$Type): $Matrix4d
+ "invertPerspective"(arg0: $Matrix4d$$Type): $Matrix4d
+ "invertFrustum"(arg0: $Matrix4d$$Type): $Matrix4d
+ "invertOrtho"(arg0: $Matrix4d$$Type): $Matrix4d
+ "invertPerspectiveView"(arg0: $Matrix4x3dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
+ "invertPerspectiveView"(arg0: $Matrix4dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
  "rotateAffine"(arg0: $Quaternionfc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
  "rotateAffine"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4d$$Type): $Matrix4d
  "rotateAffine"(arg0: $Quaterniondc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
- "rotateLocal"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4d$$Type): $Matrix4d
- "rotateLocal"(arg0: $Quaterniondc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
  "rotateLocal"(arg0: $Quaternionfc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
+ "rotateLocal"(arg0: $Quaterniondc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
+ "rotateLocal"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4d$$Type): $Matrix4d
+ "translateLocal"(arg0: $Vector3fc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
  "translateLocal"(arg0: $Vector3dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
  "translateLocal"(arg0: double, arg1: double, arg2: double, arg3: $Matrix4d$$Type): $Matrix4d
- "translateLocal"(arg0: $Vector3fc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
- "ortho"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix4d$$Type): $Matrix4d
  "ortho"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: boolean, arg7: $Matrix4d$$Type): $Matrix4d
+ "ortho"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix4d$$Type): $Matrix4d
  "orthoLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix4d$$Type): $Matrix4d
  "orthoLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: boolean, arg7: $Matrix4d$$Type): $Matrix4d
- "orthoSymmetric"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: boolean, arg5: $Matrix4d$$Type): $Matrix4d
  "orthoSymmetric"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4d$$Type): $Matrix4d
+ "orthoSymmetric"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: boolean, arg5: $Matrix4d$$Type): $Matrix4d
+ "orthoSymmetricLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: boolean, arg5: $Matrix4d$$Type): $Matrix4d
+ "orthoSymmetricLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4d$$Type): $Matrix4d
  "ortho2D"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4d$$Type): $Matrix4d
- "mul4x3ComponentWise"(arg0: $Matrix4dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
- "getTransposed"(arg0: $DoubleBuffer$$Type): $DoubleBuffer
- "getTransposed"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
- "getTransposed"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
- "getTransposed"(arg0: $FloatBuffer$$Type): $FloatBuffer
- "getTransposed"(arg0: $ByteBuffer$$Type): $ByteBuffer
- "getTransposed"(arg0: integer, arg1: $DoubleBuffer$$Type): $DoubleBuffer
- "mulLocal"(arg0: $Matrix4dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
- "mul3x3"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double, arg9: $Matrix4d$$Type): $Matrix4d
- "mulPerspectiveAffine"(arg0: $Matrix4dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
- "mulPerspectiveAffine"(arg0: $Matrix4x3dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
- "mul0"(arg0: $Matrix4dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
+ "ortho2DLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4d$$Type): $Matrix4d
+ "getRow"(arg0: integer, arg1: $Vector3d$$Type): $Vector3d
+ "getRow"(arg0: integer, arg1: $Vector4d$$Type): $Vector4d
+ "cofactor3x3"(arg0: $Matrix3d$$Type): $Matrix3d
+ "cofactor3x3"(arg0: $Matrix4d$$Type): $Matrix4d
+ "normalize3x3"(arg0: $Matrix3d$$Type): $Matrix3d
+ "normalize3x3"(arg0: $Matrix4d$$Type): $Matrix4d
+ "frustumPlane"(arg0: integer, arg1: $Vector4d$$Type): $Vector4d
+ "frustumCorner"(arg0: integer, arg1: $Vector3d$$Type): $Vector3d
+ "perspectiveOrigin"(arg0: $Vector3d$$Type): $Vector3d
+ "perspectiveInvOrigin"(arg0: $Vector3d$$Type): $Vector3d
+ "perspectiveFov"(): double
+ "perspectiveNear"(): double
+ "perspectiveFar"(): double
+ "frustumRayDir"(arg0: double, arg1: double, arg2: $Vector3d$$Type): $Vector3d
+ "originAffine"(arg0: $Vector3d$$Type): $Vector3d
+ "isAffine"(): boolean
+ "arcball"(arg0: double, arg1: $Vector3dc$$Type, arg2: double, arg3: double, arg4: $Matrix4d$$Type): $Matrix4d
+ "arcball"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix4d$$Type): $Matrix4d
+ "projectedGridRange"(arg0: $Matrix4dc$$Type, arg1: double, arg2: double, arg3: $Matrix4d$$Type): $Matrix4d
+ "perspectiveFrustumSlice"(arg0: double, arg1: double, arg2: $Matrix4d$$Type): $Matrix4d
+ "orthoCrop"(arg0: $Matrix4dc$$Type, arg1: $Matrix4d$$Type): $Matrix4d
+ "transformAab"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Vector3d$$Type, arg3: $Vector3d$$Type): $Matrix4d
+ "transformAab"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Vector3d$$Type, arg7: $Vector3d$$Type): $Matrix4d
+ "rotateTowards"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Matrix4d$$Type): $Matrix4d
+ "rotateTowards"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix4d$$Type): $Matrix4d
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -4216,8 +4216,8 @@ import {$Matrix4d, $Matrix4d$$Type} from "org.joml.Matrix4d"
 import {$Matrix3d, $Matrix3d$$Type} from "org.joml.Matrix3d"
 import {$Matrix4f, $Matrix4f$$Type} from "org.joml.Matrix4f"
 import {$Matrix3f, $Matrix3f$$Type} from "org.joml.Matrix3f"
-import {$Vector2fc$$Type} from "org.joml.Vector2fc"
 import {$FloatBuffer, $FloatBuffer$$Type} from "java.nio.FloatBuffer"
+import {$Vector2fc$$Type} from "org.joml.Vector2fc"
 import {$Matrix3x2fc$$Type} from "org.joml.Matrix3x2fc"
 import {$Vector4fc$$Type} from "org.joml.Vector4fc"
 import {$Vector3fc$$Type} from "org.joml.Vector3fc"
@@ -4255,27 +4255,19 @@ static readonly "CORNER_NXPYPZ": integer
 
  "transpose"(arg0: $Matrix4f$$Type): $Matrix4f
  "invert"(arg0: $Matrix4f$$Type): $Matrix4f
- "sub"(arg0: $Matrix4fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
- "mul"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float, arg9: float, arg10: float, arg11: float, arg12: float, arg13: float, arg14: float, arg15: float, arg16: $Matrix4f$$Type): $Matrix4f
- "mul"(arg0: $Matrix4x3fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
- "mul"(arg0: $Matrix3x2fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
- "mul"(arg0: $Matrix4fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
  "origin"(arg0: $Vector3f$$Type): $Vector3f
- "shadow"(arg0: $Vector4f$$Type, arg1: float, arg2: float, arg3: float, arg4: float, arg5: $Matrix4f$$Type): $Matrix4f
- "shadow"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: $Matrix4f$$Type): $Matrix4f
- "shadow"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4fc$$Type, arg5: $Matrix4f$$Type): $Matrix4f
- "shadow"(arg0: $Vector4f$$Type, arg1: $Matrix4fc$$Type, arg2: $Matrix4f$$Type): $Matrix4f
- "normal"(arg0: $Matrix3f$$Type): $Matrix3f
  "normal"(arg0: $Matrix4f$$Type): $Matrix4f
+ "normal"(arg0: $Matrix3f$$Type): $Matrix3f
+ "sub"(arg0: $Matrix4fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
  "get"(arg0: (float)[], arg1: integer): (float)[]
- "get"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
+ "get"(arg0: (float)[]): (float)[]
  "get"(arg0: $FloatBuffer$$Type): $FloatBuffer
+ "get"(arg0: $Matrix4f$$Type): $Matrix4f
  "get"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
  "get"(arg0: $ByteBuffer$$Type): $ByteBuffer
+ "get"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
  "get"(arg0: integer, arg1: integer): float
  "get"(arg0: $Matrix4d$$Type): $Matrix4d
- "get"(arg0: $Matrix4f$$Type): $Matrix4f
- "get"(arg0: (float)[]): (float)[]
  "equals"(arg0: $Matrix4fc$$Type, arg1: float): boolean
  "isFinite"(): boolean
  "scale"(arg0: float, arg1: $Matrix4f$$Type): $Matrix4f
@@ -4287,21 +4279,29 @@ static readonly "CORNER_NXPYPZ": integer
  "transform"(arg0: $Vector4fc$$Type, arg1: $Vector4f$$Type): $Vector4f
  "properties"(): integer
  "pick"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: (integer)[], arg5: $Matrix4f$$Type): $Matrix4f
+ "rotate"(arg0: $AxisAngle4f$$Type, arg1: $Matrix4f$$Type): $Matrix4f
  "rotate"(arg0: $Quaternionfc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
  "rotate"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4f$$Type): $Matrix4f
- "rotate"(arg0: $AxisAngle4f$$Type, arg1: $Matrix4f$$Type): $Matrix4f
  "rotate"(arg0: float, arg1: $Vector3fc$$Type, arg2: $Matrix4f$$Type): $Matrix4f
- "m12"(): float
- "m13"(): float
  "m11"(): float
+ "m12"(): float
+ "mul"(arg0: $Matrix4fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
+ "mul"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float, arg9: float, arg10: float, arg11: float, arg12: float, arg13: float, arg14: float, arg15: float, arg16: $Matrix4f$$Type): $Matrix4f
+ "mul"(arg0: $Matrix3x2fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
+ "mul"(arg0: $Matrix4x3fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
+ "shadow"(arg0: $Vector4f$$Type, arg1: float, arg2: float, arg3: float, arg4: float, arg5: $Matrix4f$$Type): $Matrix4f
+ "shadow"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4fc$$Type, arg5: $Matrix4f$$Type): $Matrix4f
+ "shadow"(arg0: $Vector4f$$Type, arg1: $Matrix4fc$$Type, arg2: $Matrix4f$$Type): $Matrix4f
+ "shadow"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: $Matrix4f$$Type): $Matrix4f
+ "m13"(): float
  "m10"(): float
- "getColumn"(arg0: integer, arg1: $Vector4f$$Type): $Vector4f
  "getColumn"(arg0: integer, arg1: $Vector3f$$Type): $Vector3f
- "translate"(arg0: $Vector3fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
+ "getColumn"(arg0: integer, arg1: $Vector4f$$Type): $Vector4f
  "translate"(arg0: float, arg1: float, arg2: float, arg3: $Matrix4f$$Type): $Matrix4f
- "transformPosition"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
+ "translate"(arg0: $Vector3fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
  "transformPosition"(arg0: $Vector3f$$Type): $Vector3f
  "transformPosition"(arg0: float, arg1: float, arg2: float, arg3: $Vector3f$$Type): $Vector3f
+ "transformPosition"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
  "rotateAround"(arg0: $Quaternionfc$$Type, arg1: float, arg2: float, arg3: float, arg4: $Matrix4f$$Type): $Matrix4f
  "getRowColumn"(arg0: integer, arg1: integer): float
  "mulAffine"(arg0: $Matrix4fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
@@ -4326,26 +4326,26 @@ static readonly "CORNER_NXPYPZ": integer
  "rotateX"(arg0: float, arg1: $Matrix4f$$Type): $Matrix4f
  "rotateY"(arg0: float, arg1: $Matrix4f$$Type): $Matrix4f
  "rotateZ"(arg0: float, arg1: $Matrix4f$$Type): $Matrix4f
- "reflect"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4f$$Type): $Matrix4f
- "reflect"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4f$$Type): $Matrix4f
- "reflect"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Matrix4f$$Type): $Matrix4f
  "reflect"(arg0: $Quaternionfc$$Type, arg1: $Vector3fc$$Type, arg2: $Matrix4f$$Type): $Matrix4f
+ "reflect"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4f$$Type): $Matrix4f
+ "reflect"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4f$$Type): $Matrix4f
+ "reflect"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Matrix4f$$Type): $Matrix4f
  "lerp"(arg0: $Matrix4fc$$Type, arg1: float, arg2: $Matrix4f$$Type): $Matrix4f
  "getUnnormalizedRotation"(arg0: $Quaternionf$$Type): $Quaternionf
  "getUnnormalizedRotation"(arg0: $Quaterniond$$Type): $Quaterniond
  "getNormalizedRotation"(arg0: $Quaterniond$$Type): $Quaterniond
  "getNormalizedRotation"(arg0: $Quaternionf$$Type): $Quaternionf
- "get3x4"(arg0: $ByteBuffer$$Type): $ByteBuffer
- "get3x4"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
- "get3x4"(arg0: $FloatBuffer$$Type): $FloatBuffer
  "get3x4"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
- "get4x3Transposed"(arg0: $FloatBuffer$$Type): $FloatBuffer
+ "get3x4"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
+ "get3x4"(arg0: $ByteBuffer$$Type): $ByteBuffer
+ "get3x4"(arg0: $FloatBuffer$$Type): $FloatBuffer
  "get4x3Transposed"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
- "get4x3Transposed"(arg0: $ByteBuffer$$Type): $ByteBuffer
  "get4x3Transposed"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
- "determinant"(): float
- "lookAlong"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4f$$Type): $Matrix4f
+ "get4x3Transposed"(arg0: $FloatBuffer$$Type): $FloatBuffer
+ "get4x3Transposed"(arg0: $ByteBuffer$$Type): $ByteBuffer
+ "mul0"(arg0: $Matrix4fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
  "lookAlong"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Matrix4f$$Type): $Matrix4f
+ "lookAlong"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4f$$Type): $Matrix4f
  "rotateLocalX"(arg0: float, arg1: $Matrix4f$$Type): $Matrix4f
  "rotateLocalY"(arg0: float, arg1: $Matrix4f$$Type): $Matrix4f
  "rotateLocalZ"(arg0: float, arg1: $Matrix4f$$Type): $Matrix4f
@@ -4355,47 +4355,73 @@ static readonly "CORNER_NXPYPZ": integer
  "normalizedPositiveY"(arg0: $Vector3f$$Type): $Vector3f
  "positiveZ"(arg0: $Vector3f$$Type): $Vector3f
  "normalizedPositiveZ"(arg0: $Vector3f$$Type): $Vector3f
- "cofactor3x3"(arg0: $Matrix3f$$Type): $Matrix3f
- "cofactor3x3"(arg0: $Matrix4f$$Type): $Matrix4f
- "normalize3x3"(arg0: $Matrix4f$$Type): $Matrix4f
- "normalize3x3"(arg0: $Matrix3f$$Type): $Matrix3f
- "frustumPlane"(arg0: integer, arg1: $Vector4f$$Type): $Vector4f
- "frustumCorner"(arg0: integer, arg1: $Vector3f$$Type): $Vector3f
- "perspectiveOrigin"(arg0: $Vector3f$$Type): $Vector3f
- "perspectiveInvOrigin"(arg0: $Vector3f$$Type): $Vector3f
- "perspectiveFov"(): float
- "perspectiveNear"(): float
- "perspectiveFar"(): float
- "frustumRayDir"(arg0: float, arg1: float, arg2: $Vector3f$$Type): $Vector3f
- "originAffine"(arg0: $Vector3f$$Type): $Vector3f
- "isAffine"(): boolean
- "arcball"(arg0: float, arg1: $Vector3fc$$Type, arg2: float, arg3: float, arg4: $Matrix4f$$Type): $Matrix4f
- "arcball"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4f$$Type): $Matrix4f
- "frustumAabb"(arg0: $Vector3f$$Type, arg1: $Vector3f$$Type): $Matrix4f
- "projectedGridRange"(arg0: $Matrix4fc$$Type, arg1: float, arg2: float, arg3: $Matrix4f$$Type): $Matrix4f
- "perspectiveFrustumSlice"(arg0: float, arg1: float, arg2: $Matrix4f$$Type): $Matrix4f
- "orthoCrop"(arg0: $Matrix4fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
- "transformAab"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3f$$Type, arg3: $Vector3f$$Type): $Matrix4f
- "transformAab"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Vector3f$$Type, arg7: $Vector3f$$Type): $Matrix4f
- "transformTranspose"(arg0: $Vector4fc$$Type, arg1: $Vector4f$$Type): $Vector4f
- "transformTranspose"(arg0: $Vector4f$$Type): $Vector4f
+ "lookAt"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3fc$$Type, arg3: $Matrix4f$$Type): $Matrix4f
+ "lookAt"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float, arg9: $Matrix4f$$Type): $Matrix4f
+ "lookAtPerspective"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float, arg9: $Matrix4f$$Type): $Matrix4f
+ "lookAtLH"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3fc$$Type, arg3: $Matrix4f$$Type): $Matrix4f
+ "lookAtLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float, arg9: $Matrix4f$$Type): $Matrix4f
+ "lookAtPerspectiveLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float, arg9: $Matrix4f$$Type): $Matrix4f
+ "tile"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: $Matrix4f$$Type): $Matrix4f
+ "perspective"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4f$$Type): $Matrix4f
+ "perspective"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: boolean, arg5: $Matrix4f$$Type): $Matrix4f
+ "perspectiveRect"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: boolean, arg5: $Matrix4f$$Type): $Matrix4f
+ "perspectiveRect"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4f$$Type): $Matrix4f
+ "perspectiveOffCenter"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean, arg7: $Matrix4f$$Type): $Matrix4f
+ "perspectiveOffCenter"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4f$$Type): $Matrix4f
+ "perspectiveOffCenterFov"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4f$$Type): $Matrix4f
+ "perspectiveOffCenterFov"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean, arg7: $Matrix4f$$Type): $Matrix4f
+ "frustum"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4f$$Type): $Matrix4f
+ "frustum"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean, arg7: $Matrix4f$$Type): $Matrix4f
+ "perspectiveOffCenterFovLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean, arg7: $Matrix4f$$Type): $Matrix4f
+ "perspectiveOffCenterFovLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4f$$Type): $Matrix4f
+ "frustumLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4f$$Type): $Matrix4f
+ "frustumLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean, arg7: $Matrix4f$$Type): $Matrix4f
+ "perspectiveLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: boolean, arg5: $Matrix4f$$Type): $Matrix4f
+ "perspectiveLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4f$$Type): $Matrix4f
+ "rotateAroundAffine"(arg0: $Quaternionfc$$Type, arg1: float, arg2: float, arg3: float, arg4: $Matrix4f$$Type): $Matrix4f
+ "rotateAroundLocal"(arg0: $Quaternionfc$$Type, arg1: float, arg2: float, arg3: float, arg4: $Matrix4f$$Type): $Matrix4f
+ "unproject"(arg0: $Vector3fc$$Type, arg1: (integer)[], arg2: $Vector3f$$Type): $Vector3f
+ "unproject"(arg0: float, arg1: float, arg2: float, arg3: (integer)[], arg4: $Vector3f$$Type): $Vector3f
+ "unproject"(arg0: $Vector3fc$$Type, arg1: (integer)[], arg2: $Vector4f$$Type): $Vector4f
+ "unproject"(arg0: float, arg1: float, arg2: float, arg3: (integer)[], arg4: $Vector4f$$Type): $Vector4f
+ "unprojectRay"(arg0: $Vector2fc$$Type, arg1: (integer)[], arg2: $Vector3f$$Type, arg3: $Vector3f$$Type): $Matrix4f
+ "unprojectRay"(arg0: float, arg1: float, arg2: (integer)[], arg3: $Vector3f$$Type, arg4: $Vector3f$$Type): $Matrix4f
+ "unprojectInv"(arg0: $Vector3fc$$Type, arg1: (integer)[], arg2: $Vector3f$$Type): $Vector3f
+ "unprojectInv"(arg0: float, arg1: float, arg2: float, arg3: (integer)[], arg4: $Vector3f$$Type): $Vector3f
+ "unprojectInv"(arg0: $Vector3fc$$Type, arg1: (integer)[], arg2: $Vector4f$$Type): $Vector4f
+ "unprojectInv"(arg0: float, arg1: float, arg2: float, arg3: (integer)[], arg4: $Vector4f$$Type): $Vector4f
+ "unprojectInvRay"(arg0: float, arg1: float, arg2: (integer)[], arg3: $Vector3f$$Type, arg4: $Vector3f$$Type): $Matrix4f
+ "unprojectInvRay"(arg0: $Vector2fc$$Type, arg1: (integer)[], arg2: $Vector3f$$Type, arg3: $Vector3f$$Type): $Matrix4f
+ "project"(arg0: float, arg1: float, arg2: float, arg3: (integer)[], arg4: $Vector4f$$Type): $Vector4f
+ "project"(arg0: $Vector3fc$$Type, arg1: (integer)[], arg2: $Vector3f$$Type): $Vector3f
+ "project"(arg0: float, arg1: float, arg2: float, arg3: (integer)[], arg4: $Vector3f$$Type): $Vector3f
+ "project"(arg0: $Vector3fc$$Type, arg1: (integer)[], arg2: $Vector4f$$Type): $Vector4f
+ "getScale"(arg0: $Vector3f$$Type): $Vector3f
  "transformTranspose"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Vector4f$$Type): $Vector4f
- "transformProject"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Vector3f$$Type): $Vector3f
- "transformProject"(arg0: float, arg1: float, arg2: float, arg3: $Vector3f$$Type): $Vector3f
- "transformProject"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
+ "transformTranspose"(arg0: $Vector4f$$Type): $Vector4f
+ "transformTranspose"(arg0: $Vector4fc$$Type, arg1: $Vector4f$$Type): $Vector4f
  "transformProject"(arg0: $Vector3f$$Type): $Vector3f
+ "transformProject"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
  "transformProject"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Vector4f$$Type): $Vector4f
- "transformProject"(arg0: $Vector4fc$$Type, arg1: $Vector3f$$Type): $Vector3f
- "transformProject"(arg0: $Vector4f$$Type): $Vector4f
  "transformProject"(arg0: $Vector4fc$$Type, arg1: $Vector4f$$Type): $Vector4f
- "rotateTowards"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Matrix4f$$Type): $Matrix4f
- "rotateTowards"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4f$$Type): $Matrix4f
+ "transformProject"(arg0: $Vector4f$$Type): $Vector4f
+ "transformProject"(arg0: float, arg1: float, arg2: float, arg3: $Vector3f$$Type): $Vector3f
+ "transformProject"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Vector3f$$Type): $Vector3f
+ "transformProject"(arg0: $Vector4fc$$Type, arg1: $Vector3f$$Type): $Vector3f
+ "transformDirection"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
+ "transformDirection"(arg0: float, arg1: float, arg2: float, arg3: $Vector3f$$Type): $Vector3f
+ "transformDirection"(arg0: $Vector3f$$Type): $Vector3f
+ "transformAffine"(arg0: $Vector4fc$$Type, arg1: $Vector4f$$Type): $Vector4f
+ "transformAffine"(arg0: $Vector4f$$Type): $Vector4f
+ "transformAffine"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Vector4f$$Type): $Vector4f
+ "determinantAffine"(): float
+ "determinant3x3"(): float
  "testPoint"(arg0: float, arg1: float, arg2: float): boolean
  "testSphere"(arg0: float, arg1: float, arg2: float, arg3: float): boolean
  "testAab"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): boolean
  "obliqueZ"(arg0: float, arg1: float, arg2: $Matrix4f$$Type): $Matrix4f
- "withLookAtUp"(arg0: $Vector3fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
  "withLookAtUp"(arg0: float, arg1: float, arg2: float, arg3: $Matrix4f$$Type): $Matrix4f
+ "withLookAtUp"(arg0: $Vector3fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
  "mapXZY"(arg0: $Matrix4f$$Type): $Matrix4f
  "mapXZnY"(arg0: $Matrix4f$$Type): $Matrix4f
  "mapXnYnZ"(arg0: $Matrix4f$$Type): $Matrix4f
@@ -4443,123 +4469,97 @@ static readonly "CORNER_NXPYPZ": integer
  "negateX"(arg0: $Matrix4f$$Type): $Matrix4f
  "negateY"(arg0: $Matrix4f$$Type): $Matrix4f
  "negateZ"(arg0: $Matrix4f$$Type): $Matrix4f
- "orthoSymmetricLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: boolean, arg5: $Matrix4f$$Type): $Matrix4f
- "orthoSymmetricLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4f$$Type): $Matrix4f
- "ortho2DLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4f$$Type): $Matrix4f
- "lookAt"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3fc$$Type, arg3: $Matrix4f$$Type): $Matrix4f
- "lookAt"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float, arg9: $Matrix4f$$Type): $Matrix4f
- "lookAtPerspective"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float, arg9: $Matrix4f$$Type): $Matrix4f
- "lookAtLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float, arg9: $Matrix4f$$Type): $Matrix4f
- "lookAtLH"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3fc$$Type, arg3: $Matrix4f$$Type): $Matrix4f
- "lookAtPerspectiveLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float, arg9: $Matrix4f$$Type): $Matrix4f
- "tile"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: $Matrix4f$$Type): $Matrix4f
- "perspective"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4f$$Type): $Matrix4f
- "perspective"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: boolean, arg5: $Matrix4f$$Type): $Matrix4f
- "perspectiveRect"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: boolean, arg5: $Matrix4f$$Type): $Matrix4f
- "perspectiveRect"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4f$$Type): $Matrix4f
- "perspectiveOffCenter"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean, arg7: $Matrix4f$$Type): $Matrix4f
- "perspectiveOffCenter"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4f$$Type): $Matrix4f
- "perspectiveOffCenterFov"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4f$$Type): $Matrix4f
- "perspectiveOffCenterFov"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean, arg7: $Matrix4f$$Type): $Matrix4f
+ "mulOrthoAffine"(arg0: $Matrix4fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
+ "mulComponentWise"(arg0: $Matrix4fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
+ "add4x3"(arg0: $Matrix4fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
+ "sub4x3"(arg0: $Matrix4fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
+ "mul4x3ComponentWise"(arg0: $Matrix4fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
+ "mul3x3"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float, arg9: $Matrix4f$$Type): $Matrix4f
+ "mulLocal"(arg0: $Matrix4fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
+ "mulTranslationAffine"(arg0: $Matrix4fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
  "mulLocalAffine"(arg0: $Matrix4fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
- "frustum"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean, arg7: $Matrix4f$$Type): $Matrix4f
- "frustum"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4f$$Type): $Matrix4f
- "perspectiveOffCenterFovLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4f$$Type): $Matrix4f
- "perspectiveOffCenterFovLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean, arg7: $Matrix4f$$Type): $Matrix4f
- "frustumLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4f$$Type): $Matrix4f
- "frustumLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean, arg7: $Matrix4f$$Type): $Matrix4f
- "perspectiveLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4f$$Type): $Matrix4f
- "perspectiveLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: boolean, arg5: $Matrix4f$$Type): $Matrix4f
- "rotateAroundAffine"(arg0: $Quaternionfc$$Type, arg1: float, arg2: float, arg3: float, arg4: $Matrix4f$$Type): $Matrix4f
- "rotateAroundLocal"(arg0: $Quaternionfc$$Type, arg1: float, arg2: float, arg3: float, arg4: $Matrix4f$$Type): $Matrix4f
- "unproject"(arg0: $Vector3fc$$Type, arg1: (integer)[], arg2: $Vector3f$$Type): $Vector3f
- "unproject"(arg0: $Vector3fc$$Type, arg1: (integer)[], arg2: $Vector4f$$Type): $Vector4f
- "unproject"(arg0: float, arg1: float, arg2: float, arg3: (integer)[], arg4: $Vector3f$$Type): $Vector3f
- "unproject"(arg0: float, arg1: float, arg2: float, arg3: (integer)[], arg4: $Vector4f$$Type): $Vector4f
- "unprojectRay"(arg0: $Vector2fc$$Type, arg1: (integer)[], arg2: $Vector3f$$Type, arg3: $Vector3f$$Type): $Matrix4f
- "unprojectRay"(arg0: float, arg1: float, arg2: (integer)[], arg3: $Vector3f$$Type, arg4: $Vector3f$$Type): $Matrix4f
- "unprojectInv"(arg0: $Vector3fc$$Type, arg1: (integer)[], arg2: $Vector4f$$Type): $Vector4f
- "unprojectInv"(arg0: float, arg1: float, arg2: float, arg3: (integer)[], arg4: $Vector4f$$Type): $Vector4f
- "unprojectInv"(arg0: $Vector3fc$$Type, arg1: (integer)[], arg2: $Vector3f$$Type): $Vector3f
- "unprojectInv"(arg0: float, arg1: float, arg2: float, arg3: (integer)[], arg4: $Vector3f$$Type): $Vector3f
- "unprojectInvRay"(arg0: float, arg1: float, arg2: (integer)[], arg3: $Vector3f$$Type, arg4: $Vector3f$$Type): $Matrix4f
- "unprojectInvRay"(arg0: $Vector2fc$$Type, arg1: (integer)[], arg2: $Vector3f$$Type, arg3: $Vector3f$$Type): $Matrix4f
- "project"(arg0: float, arg1: float, arg2: float, arg3: (integer)[], arg4: $Vector3f$$Type): $Vector3f
- "project"(arg0: $Vector3fc$$Type, arg1: (integer)[], arg2: $Vector3f$$Type): $Vector3f
- "project"(arg0: $Vector3fc$$Type, arg1: (integer)[], arg2: $Vector4f$$Type): $Vector4f
- "project"(arg0: float, arg1: float, arg2: float, arg3: (integer)[], arg4: $Vector4f$$Type): $Vector4f
- "getRow"(arg0: integer, arg1: $Vector3f$$Type): $Vector3f
- "getRow"(arg0: integer, arg1: $Vector4f$$Type): $Vector4f
- "transformDirection"(arg0: $Vector3f$$Type): $Vector3f
- "transformDirection"(arg0: float, arg1: float, arg2: float, arg3: $Vector3f$$Type): $Vector3f
- "transformDirection"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
- "transformAffine"(arg0: $Vector4fc$$Type, arg1: $Vector4f$$Type): $Vector4f
- "transformAffine"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Vector4f$$Type): $Vector4f
- "transformAffine"(arg0: $Vector4f$$Type): $Vector4f
+ "mulPerspectiveAffine"(arg0: $Matrix4x3fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
+ "mulPerspectiveAffine"(arg0: $Matrix4fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
+ "mulAffineR"(arg0: $Matrix4fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
  "scaleXY"(arg0: float, arg1: float, arg2: $Matrix4f$$Type): $Matrix4f
  "scaleAround"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4f$$Type): $Matrix4f
  "scaleAround"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4f$$Type): $Matrix4f
  "scaleLocal"(arg0: float, arg1: float, arg2: float, arg3: $Matrix4f$$Type): $Matrix4f
  "scaleLocal"(arg0: float, arg1: $Matrix4f$$Type): $Matrix4f
- "scaleAroundLocal"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4f$$Type): $Matrix4f
  "scaleAroundLocal"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4f$$Type): $Matrix4f
+ "scaleAroundLocal"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4f$$Type): $Matrix4f
  "rotateTowardsXY"(arg0: float, arg1: float, arg2: $Matrix4f$$Type): $Matrix4f
  "rotateAffineXYZ"(arg0: float, arg1: float, arg2: float, arg3: $Matrix4f$$Type): $Matrix4f
- "determinantAffine"(): float
- "determinant3x3"(): float
- "invertAffine"(arg0: $Matrix4f$$Type): $Matrix4f
- "invertPerspective"(arg0: $Matrix4f$$Type): $Matrix4f
- "invertFrustum"(arg0: $Matrix4f$$Type): $Matrix4f
- "transpose3x3"(arg0: $Matrix4f$$Type): $Matrix4f
- "transpose3x3"(arg0: $Matrix3f$$Type): $Matrix3f
- "getTranslation"(arg0: $Vector3f$$Type): $Vector3f
- "getScale"(arg0: $Vector3f$$Type): $Vector3f
- "get4x3"(arg0: $FloatBuffer$$Type): $FloatBuffer
- "get4x3"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
- "get4x3"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
- "get4x3"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
- "get4x3"(arg0: $ByteBuffer$$Type): $ByteBuffer
- "get3x3"(arg0: $Matrix3f$$Type): $Matrix3f
- "get3x3"(arg0: $Matrix3d$$Type): $Matrix3d
- "getRotation"(arg0: $AxisAngle4f$$Type): $AxisAngle4f
- "getRotation"(arg0: $AxisAngle4d$$Type): $AxisAngle4d
- "mulTranslationAffine"(arg0: $Matrix4fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
- "mulAffineR"(arg0: $Matrix4fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
- "invertOrtho"(arg0: $Matrix4f$$Type): $Matrix4f
- "invertPerspectiveView"(arg0: $Matrix4fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
- "invertPerspectiveView"(arg0: $Matrix4x3fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
- "mulOrthoAffine"(arg0: $Matrix4fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
- "fma4x3"(arg0: $Matrix4fc$$Type, arg1: float, arg2: $Matrix4f$$Type): $Matrix4f
- "mulComponentWise"(arg0: $Matrix4fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
- "add4x3"(arg0: $Matrix4fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
- "sub4x3"(arg0: $Matrix4fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
  "rotateAffineZYX"(arg0: float, arg1: float, arg2: float, arg3: $Matrix4f$$Type): $Matrix4f
  "rotateAffineYXZ"(arg0: float, arg1: float, arg2: float, arg3: $Matrix4f$$Type): $Matrix4f
  "rotateTranslation"(arg0: $Quaternionfc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
  "rotateTranslation"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4f$$Type): $Matrix4f
- "rotateAffine"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4f$$Type): $Matrix4f
+ "fma4x3"(arg0: $Matrix4fc$$Type, arg1: float, arg2: $Matrix4f$$Type): $Matrix4f
+ "transpose3x3"(arg0: $Matrix3f$$Type): $Matrix3f
+ "transpose3x3"(arg0: $Matrix4f$$Type): $Matrix4f
+ "getTranslation"(arg0: $Vector3f$$Type): $Vector3f
+ "get4x3"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
+ "get4x3"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
+ "get4x3"(arg0: $ByteBuffer$$Type): $ByteBuffer
+ "get4x3"(arg0: $FloatBuffer$$Type): $FloatBuffer
+ "get4x3"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
+ "get3x3"(arg0: $Matrix3d$$Type): $Matrix3d
+ "get3x3"(arg0: $Matrix3f$$Type): $Matrix3f
+ "getRotation"(arg0: $AxisAngle4f$$Type): $AxisAngle4f
+ "getRotation"(arg0: $AxisAngle4d$$Type): $AxisAngle4d
+ "getTransposed"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
+ "getTransposed"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
+ "getTransposed"(arg0: $ByteBuffer$$Type): $ByteBuffer
+ "getTransposed"(arg0: $FloatBuffer$$Type): $FloatBuffer
+ "determinant"(): float
+ "invertAffine"(arg0: $Matrix4f$$Type): $Matrix4f
+ "invertPerspective"(arg0: $Matrix4f$$Type): $Matrix4f
+ "invertFrustum"(arg0: $Matrix4f$$Type): $Matrix4f
+ "invertOrtho"(arg0: $Matrix4f$$Type): $Matrix4f
+ "invertPerspectiveView"(arg0: $Matrix4fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
+ "invertPerspectiveView"(arg0: $Matrix4x3fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
  "rotateAffine"(arg0: $Quaternionfc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
- "rotateLocal"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4f$$Type): $Matrix4f
+ "rotateAffine"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4f$$Type): $Matrix4f
  "rotateLocal"(arg0: $Quaternionfc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
- "translateLocal"(arg0: $Vector3fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
+ "rotateLocal"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4f$$Type): $Matrix4f
  "translateLocal"(arg0: float, arg1: float, arg2: float, arg3: $Matrix4f$$Type): $Matrix4f
+ "translateLocal"(arg0: $Vector3fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
  "ortho"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4f$$Type): $Matrix4f
  "ortho"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean, arg7: $Matrix4f$$Type): $Matrix4f
- "orthoLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean, arg7: $Matrix4f$$Type): $Matrix4f
  "orthoLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4f$$Type): $Matrix4f
+ "orthoLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean, arg7: $Matrix4f$$Type): $Matrix4f
  "orthoSymmetric"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4f$$Type): $Matrix4f
  "orthoSymmetric"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: boolean, arg5: $Matrix4f$$Type): $Matrix4f
+ "orthoSymmetricLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4f$$Type): $Matrix4f
+ "orthoSymmetricLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: boolean, arg5: $Matrix4f$$Type): $Matrix4f
  "ortho2D"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4f$$Type): $Matrix4f
- "mul4x3ComponentWise"(arg0: $Matrix4fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
- "getTransposed"(arg0: $ByteBuffer$$Type): $ByteBuffer
- "getTransposed"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
- "getTransposed"(arg0: $FloatBuffer$$Type): $FloatBuffer
- "getTransposed"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
- "mulLocal"(arg0: $Matrix4fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
- "mul3x3"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float, arg9: $Matrix4f$$Type): $Matrix4f
- "mulPerspectiveAffine"(arg0: $Matrix4x3fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
- "mulPerspectiveAffine"(arg0: $Matrix4fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
- "mul0"(arg0: $Matrix4fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
+ "ortho2DLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4f$$Type): $Matrix4f
+ "getRow"(arg0: integer, arg1: $Vector3f$$Type): $Vector3f
+ "getRow"(arg0: integer, arg1: $Vector4f$$Type): $Vector4f
+ "cofactor3x3"(arg0: $Matrix4f$$Type): $Matrix4f
+ "cofactor3x3"(arg0: $Matrix3f$$Type): $Matrix3f
+ "normalize3x3"(arg0: $Matrix3f$$Type): $Matrix3f
+ "normalize3x3"(arg0: $Matrix4f$$Type): $Matrix4f
+ "frustumPlane"(arg0: integer, arg1: $Vector4f$$Type): $Vector4f
+ "frustumCorner"(arg0: integer, arg1: $Vector3f$$Type): $Vector3f
+ "perspectiveOrigin"(arg0: $Vector3f$$Type): $Vector3f
+ "perspectiveInvOrigin"(arg0: $Vector3f$$Type): $Vector3f
+ "perspectiveFov"(): float
+ "perspectiveNear"(): float
+ "perspectiveFar"(): float
+ "frustumRayDir"(arg0: float, arg1: float, arg2: $Vector3f$$Type): $Vector3f
+ "originAffine"(arg0: $Vector3f$$Type): $Vector3f
+ "isAffine"(): boolean
+ "arcball"(arg0: float, arg1: $Vector3fc$$Type, arg2: float, arg3: float, arg4: $Matrix4f$$Type): $Matrix4f
+ "arcball"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4f$$Type): $Matrix4f
+ "frustumAabb"(arg0: $Vector3f$$Type, arg1: $Vector3f$$Type): $Matrix4f
+ "projectedGridRange"(arg0: $Matrix4fc$$Type, arg1: float, arg2: float, arg3: $Matrix4f$$Type): $Matrix4f
+ "perspectiveFrustumSlice"(arg0: float, arg1: float, arg2: $Matrix4f$$Type): $Matrix4f
+ "orthoCrop"(arg0: $Matrix4fc$$Type, arg1: $Matrix4f$$Type): $Matrix4f
+ "transformAab"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3f$$Type, arg3: $Vector3f$$Type): $Matrix4f
+ "transformAab"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Vector3f$$Type, arg7: $Vector3f$$Type): $Matrix4f
+ "rotateTowards"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4f$$Type): $Matrix4f
+ "rotateTowards"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Matrix4f$$Type): $Matrix4f
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -4571,8 +4571,8 @@ export type $Matrix4fc$$Type = ($Matrix4fc);
  */
 export type $Matrix4fc$$Original = $Matrix4fc;}
 declare module "org.joml.Matrix3x2dc" {
-import {$Vector2fc$$Type} from "org.joml.Vector2fc"
 import {$FloatBuffer, $FloatBuffer$$Type} from "java.nio.FloatBuffer"
+import {$Vector2fc$$Type} from "org.joml.Vector2fc"
 import {$Vector3dc$$Type} from "org.joml.Vector3dc"
 import {$Vector2dc$$Type} from "org.joml.Vector2dc"
 import {$Matrix3x2d, $Matrix3x2d$$Type} from "org.joml.Matrix3x2d"
@@ -4586,21 +4586,20 @@ get "finite"(): boolean
 }
 
 export class $Matrix3x2dc implements $Matrix3x2dc$$Interface {
- "viewArea"(arg0: (double)[]): (double)[]
- "getTransposedFloats"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
- "getTransposedFloats"(arg0: $ByteBuffer$$Type): $ByteBuffer
- "testCircle"(arg0: double, arg1: double, arg2: double): boolean
  "testAar"(arg0: double, arg1: double, arg2: double, arg3: double): boolean
- "get4x4"(arg0: (double)[], arg1: integer): (double)[]
- "get4x4"(arg0: $ByteBuffer$$Type): $ByteBuffer
+ "getTransposedFloats"(arg0: $ByteBuffer$$Type): $ByteBuffer
+ "getTransposedFloats"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
  "get4x4"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
+ "get4x4"(arg0: $ByteBuffer$$Type): $ByteBuffer
  "get4x4"(arg0: integer, arg1: $DoubleBuffer$$Type): $DoubleBuffer
+ "get4x4"(arg0: (double)[], arg1: integer): (double)[]
  "get4x4"(arg0: $DoubleBuffer$$Type): $DoubleBuffer
  "get4x4"(arg0: (double)[]): (double)[]
+ "viewArea"(arg0: (double)[]): (double)[]
+ "testCircle"(arg0: double, arg1: double, arg2: double): boolean
  "invert"(arg0: $Matrix3x2d$$Type): $Matrix3x2d
- "mul"(arg0: $Matrix3x2dc$$Type, arg1: $Matrix3x2d$$Type): $Matrix3x2d
- "origin"(arg0: $Vector2d$$Type): $Vector2d
  "view"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix3x2d$$Type): $Matrix3x2d
+ "origin"(arg0: $Vector2d$$Type): $Vector2d
  "get"(arg0: $ByteBuffer$$Type): $ByteBuffer
  "get"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
  "get"(arg0: (double)[]): (double)[]
@@ -4610,61 +4609,62 @@ export class $Matrix3x2dc implements $Matrix3x2dc$$Interface {
  "get"(arg0: integer, arg1: $DoubleBuffer$$Type): $DoubleBuffer
  "equals"(arg0: $Matrix3x2dc$$Type, arg1: double): boolean
  "isFinite"(): boolean
- "scale"(arg0: $Vector2dc$$Type, arg1: $Matrix3x2d$$Type): $Matrix3x2d
  "scale"(arg0: $Vector2fc$$Type, arg1: $Matrix3x2d$$Type): $Matrix3x2d
  "scale"(arg0: double, arg1: $Matrix3x2d$$Type): $Matrix3x2d
+ "scale"(arg0: $Vector2dc$$Type, arg1: $Matrix3x2d$$Type): $Matrix3x2d
  "scale"(arg0: double, arg1: double, arg2: $Matrix3x2d$$Type): $Matrix3x2d
  "transform"(arg0: double, arg1: double, arg2: double, arg3: $Vector3d$$Type): $Vector3d
- "transform"(arg0: $Vector3d$$Type): $Vector3d
  "transform"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
+ "transform"(arg0: $Vector3d$$Type): $Vector3d
  "rotate"(arg0: double, arg1: $Matrix3x2d$$Type): $Matrix3x2d
  "m11"(): double
+ "mul"(arg0: $Matrix3x2dc$$Type, arg1: $Matrix3x2d$$Type): $Matrix3x2d
  "m10"(): double
- "translate"(arg0: double, arg1: double, arg2: $Matrix3x2d$$Type): $Matrix3x2d
  "translate"(arg0: $Vector2dc$$Type, arg1: $Matrix3x2d$$Type): $Matrix3x2d
+ "translate"(arg0: double, arg1: double, arg2: $Matrix3x2d$$Type): $Matrix3x2d
  "transformPosition"(arg0: double, arg1: double, arg2: $Vector2d$$Type): $Vector2d
- "transformPosition"(arg0: $Vector2d$$Type): $Vector2d
  "transformPosition"(arg0: $Vector2dc$$Type, arg1: $Vector2d$$Type): $Vector2d
+ "transformPosition"(arg0: $Vector2d$$Type): $Vector2d
  "rotateAbout"(arg0: double, arg1: double, arg2: double, arg3: $Matrix3x2d$$Type): $Matrix3x2d
  "getToAddress"(arg0: long): $Matrix3x2dc
  "m00"(): double
  "m20"(): double
  "m01"(): double
  "m21"(): double
- "determinant"(): double
  "rotateTo"(arg0: $Vector2dc$$Type, arg1: $Vector2dc$$Type, arg2: $Matrix3x2d$$Type): $Matrix3x2d
  "positiveX"(arg0: $Vector2d$$Type): $Vector2d
  "normalizedPositiveX"(arg0: $Vector2d$$Type): $Vector2d
  "positiveY"(arg0: $Vector2d$$Type): $Vector2d
  "normalizedPositiveY"(arg0: $Vector2d$$Type): $Vector2d
- "testPoint"(arg0: double, arg1: double): boolean
  "unproject"(arg0: double, arg1: double, arg2: (integer)[], arg3: $Vector2d$$Type): $Vector2d
  "unprojectInv"(arg0: double, arg1: double, arg2: (integer)[], arg3: $Vector2d$$Type): $Vector2d
- "transformDirection"(arg0: $Vector2dc$$Type, arg1: $Vector2d$$Type): $Vector2d
  "transformDirection"(arg0: $Vector2d$$Type): $Vector2d
+ "transformDirection"(arg0: $Vector2dc$$Type, arg1: $Vector2d$$Type): $Vector2d
  "transformDirection"(arg0: double, arg1: double, arg2: $Vector2d$$Type): $Vector2d
- "scaleAround"(arg0: double, arg1: double, arg2: double, arg3: $Matrix3x2d$$Type): $Matrix3x2d
+ "testPoint"(arg0: double, arg1: double): boolean
+ "mulLocal"(arg0: $Matrix3x2dc$$Type, arg1: $Matrix3x2d$$Type): $Matrix3x2d
  "scaleAround"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix3x2d$$Type): $Matrix3x2d
+ "scaleAround"(arg0: double, arg1: double, arg2: double, arg3: $Matrix3x2d$$Type): $Matrix3x2d
  "scaleLocal"(arg0: double, arg1: $Matrix3x2d$$Type): $Matrix3x2d
  "scaleLocal"(arg0: double, arg1: double, arg2: $Matrix3x2d$$Type): $Matrix3x2d
- "scaleAroundLocal"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix3x2d$$Type): $Matrix3x2d
  "scaleAroundLocal"(arg0: double, arg1: double, arg2: double, arg3: $Matrix3x2d$$Type): $Matrix3x2d
- "get3x3"(arg0: integer, arg1: $DoubleBuffer$$Type): $DoubleBuffer
+ "scaleAroundLocal"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix3x2d$$Type): $Matrix3x2d
  "get3x3"(arg0: (double)[], arg1: integer): (double)[]
+ "get3x3"(arg0: integer, arg1: $DoubleBuffer$$Type): $DoubleBuffer
  "get3x3"(arg0: (double)[]): (double)[]
- "get3x3"(arg0: $ByteBuffer$$Type): $ByteBuffer
  "get3x3"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
+ "get3x3"(arg0: $ByteBuffer$$Type): $ByteBuffer
  "get3x3"(arg0: $DoubleBuffer$$Type): $DoubleBuffer
- "rotateLocal"(arg0: double, arg1: $Matrix3x2d$$Type): $Matrix3x2d
- "translateLocal"(arg0: double, arg1: double, arg2: $Matrix3x2d$$Type): $Matrix3x2d
- "translateLocal"(arg0: $Vector2dc$$Type, arg1: $Matrix3x2d$$Type): $Matrix3x2d
- "getTransposed"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
  "getTransposed"(arg0: $FloatBuffer$$Type): $FloatBuffer
- "getTransposed"(arg0: $ByteBuffer$$Type): $ByteBuffer
  "getTransposed"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
+ "getTransposed"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
  "getTransposed"(arg0: integer, arg1: $DoubleBuffer$$Type): $DoubleBuffer
+ "getTransposed"(arg0: $ByteBuffer$$Type): $ByteBuffer
  "getTransposed"(arg0: $DoubleBuffer$$Type): $DoubleBuffer
- "mulLocal"(arg0: $Matrix3x2dc$$Type, arg1: $Matrix3x2d$$Type): $Matrix3x2d
+ "determinant"(): double
+ "rotateLocal"(arg0: double, arg1: $Matrix3x2d$$Type): $Matrix3x2d
+ "translateLocal"(arg0: $Vector2dc$$Type, arg1: $Matrix3x2d$$Type): $Matrix3x2d
+ "translateLocal"(arg0: double, arg1: double, arg2: $Matrix3x2d$$Type): $Matrix3x2d
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -4676,8 +4676,8 @@ export type $Matrix3x2dc$$Type = ($Matrix3x2dc);
  */
 export type $Matrix3x2dc$$Original = $Matrix3x2dc;}
 declare module "org.joml.Matrix3x2fc" {
-import {$Vector2fc$$Type} from "org.joml.Vector2fc"
 import {$FloatBuffer, $FloatBuffer$$Type} from "java.nio.FloatBuffer"
+import {$Vector2fc$$Type} from "org.joml.Vector2fc"
 import {$Matrix3x2f, $Matrix3x2f$$Type} from "org.joml.Matrix3x2f"
 import {$Vector3f, $Vector3f$$Type} from "org.joml.Vector3f"
 import {$Vector2f, $Vector2f$$Type} from "org.joml.Vector2f"
@@ -4688,41 +4688,41 @@ get "finite"(): boolean
 }
 
 export class $Matrix3x2fc implements $Matrix3x2fc$$Interface {
- "viewArea"(arg0: (float)[]): (float)[]
- "testCircle"(arg0: float, arg1: float, arg2: float): boolean
  "testAar"(arg0: float, arg1: float, arg2: float, arg3: float): boolean
  "get4x4"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
- "get4x4"(arg0: (float)[], arg1: integer): (float)[]
- "get4x4"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
+ "get4x4"(arg0: (float)[]): (float)[]
  "get4x4"(arg0: $FloatBuffer$$Type): $FloatBuffer
  "get4x4"(arg0: $ByteBuffer$$Type): $ByteBuffer
- "get4x4"(arg0: (float)[]): (float)[]
+ "get4x4"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
+ "get4x4"(arg0: (float)[], arg1: integer): (float)[]
+ "viewArea"(arg0: (float)[]): (float)[]
+ "testCircle"(arg0: float, arg1: float, arg2: float): boolean
  "invert"(arg0: $Matrix3x2f$$Type): $Matrix3x2f
- "mul"(arg0: $Matrix3x2fc$$Type, arg1: $Matrix3x2f$$Type): $Matrix3x2f
- "origin"(arg0: $Vector2f$$Type): $Vector2f
  "view"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix3x2f$$Type): $Matrix3x2f
- "get"(arg0: (float)[], arg1: integer): (float)[]
+ "origin"(arg0: $Vector2f$$Type): $Vector2f
+ "get"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
  "get"(arg0: $ByteBuffer$$Type): $ByteBuffer
  "get"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
+ "get"(arg0: (float)[], arg1: integer): (float)[]
  "get"(arg0: (float)[]): (float)[]
- "get"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
  "get"(arg0: $Matrix3x2f$$Type): $Matrix3x2f
  "get"(arg0: $FloatBuffer$$Type): $FloatBuffer
  "equals"(arg0: $Matrix3x2fc$$Type, arg1: float): boolean
  "isFinite"(): boolean
+ "scale"(arg0: float, arg1: float, arg2: $Matrix3x2f$$Type): $Matrix3x2f
  "scale"(arg0: float, arg1: $Matrix3x2f$$Type): $Matrix3x2f
  "scale"(arg0: $Vector2fc$$Type, arg1: $Matrix3x2f$$Type): $Matrix3x2f
- "scale"(arg0: float, arg1: float, arg2: $Matrix3x2f$$Type): $Matrix3x2f
  "transform"(arg0: float, arg1: float, arg2: float, arg3: $Vector3f$$Type): $Vector3f
  "transform"(arg0: $Vector3f$$Type, arg1: $Vector3f$$Type): $Vector3f
  "transform"(arg0: $Vector3f$$Type): $Vector3f
  "rotate"(arg0: float, arg1: $Matrix3x2f$$Type): $Matrix3x2f
  "m11"(): float
+ "mul"(arg0: $Matrix3x2fc$$Type, arg1: $Matrix3x2f$$Type): $Matrix3x2f
  "m10"(): float
  "translate"(arg0: float, arg1: float, arg2: $Matrix3x2f$$Type): $Matrix3x2f
  "translate"(arg0: $Vector2fc$$Type, arg1: $Matrix3x2f$$Type): $Matrix3x2f
- "transformPosition"(arg0: $Vector2f$$Type): $Vector2f
  "transformPosition"(arg0: $Vector2fc$$Type, arg1: $Vector2f$$Type): $Vector2f
+ "transformPosition"(arg0: $Vector2f$$Type): $Vector2f
  "transformPosition"(arg0: float, arg1: float, arg2: $Vector2f$$Type): $Vector2f
  "rotateAbout"(arg0: float, arg1: float, arg2: float, arg3: $Matrix3x2f$$Type): $Matrix3x2f
  "getToAddress"(arg0: long): $Matrix3x2fc
@@ -4730,34 +4730,34 @@ export class $Matrix3x2fc implements $Matrix3x2fc$$Interface {
  "m20"(): float
  "m01"(): float
  "m21"(): float
- "determinant"(): float
  "rotateTo"(arg0: $Vector2fc$$Type, arg1: $Vector2fc$$Type, arg2: $Matrix3x2f$$Type): $Matrix3x2f
  "positiveX"(arg0: $Vector2f$$Type): $Vector2f
  "normalizedPositiveX"(arg0: $Vector2f$$Type): $Vector2f
  "positiveY"(arg0: $Vector2f$$Type): $Vector2f
  "normalizedPositiveY"(arg0: $Vector2f$$Type): $Vector2f
- "testPoint"(arg0: float, arg1: float): boolean
  "unproject"(arg0: float, arg1: float, arg2: (integer)[], arg3: $Vector2f$$Type): $Vector2f
  "unprojectInv"(arg0: float, arg1: float, arg2: (integer)[], arg3: $Vector2f$$Type): $Vector2f
  "transformDirection"(arg0: float, arg1: float, arg2: $Vector2f$$Type): $Vector2f
- "transformDirection"(arg0: $Vector2f$$Type): $Vector2f
  "transformDirection"(arg0: $Vector2fc$$Type, arg1: $Vector2f$$Type): $Vector2f
- "scaleAround"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix3x2f$$Type): $Matrix3x2f
+ "transformDirection"(arg0: $Vector2f$$Type): $Vector2f
+ "testPoint"(arg0: float, arg1: float): boolean
+ "mulLocal"(arg0: $Matrix3x2fc$$Type, arg1: $Matrix3x2f$$Type): $Matrix3x2f
  "scaleAround"(arg0: float, arg1: float, arg2: float, arg3: $Matrix3x2f$$Type): $Matrix3x2f
+ "scaleAround"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix3x2f$$Type): $Matrix3x2f
  "scaleLocal"(arg0: float, arg1: float, arg2: $Matrix3x2f$$Type): $Matrix3x2f
  "scaleLocal"(arg0: float, arg1: $Matrix3x2f$$Type): $Matrix3x2f
  "scaleAroundLocal"(arg0: float, arg1: float, arg2: float, arg3: $Matrix3x2f$$Type): $Matrix3x2f
  "scaleAroundLocal"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix3x2f$$Type): $Matrix3x2f
  "get3x3"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
  "get3x3"(arg0: $ByteBuffer$$Type): $ByteBuffer
- "get3x3"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
  "get3x3"(arg0: (float)[]): (float)[]
- "get3x3"(arg0: $FloatBuffer$$Type): $FloatBuffer
  "get3x3"(arg0: (float)[], arg1: integer): (float)[]
+ "get3x3"(arg0: $FloatBuffer$$Type): $FloatBuffer
+ "get3x3"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
+ "determinant"(): float
  "rotateLocal"(arg0: float, arg1: $Matrix3x2f$$Type): $Matrix3x2f
  "translateLocal"(arg0: float, arg1: float, arg2: $Matrix3x2f$$Type): $Matrix3x2f
  "translateLocal"(arg0: $Vector2fc$$Type, arg1: $Matrix3x2f$$Type): $Matrix3x2f
- "mulLocal"(arg0: $Matrix3x2fc$$Type, arg1: $Matrix3x2f$$Type): $Matrix3x2f
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -4777,67 +4777,61 @@ import {$Vector2fc$$Type} from "org.joml.Vector2fc"
 import {$Vector3ic, $Vector3ic$$Type, $Vector3ic$$Interface} from "org.joml.Vector3ic"
 import {$Vector2ic$$Type} from "org.joml.Vector2ic"
 import {$Vector3dc$$Type} from "org.joml.Vector3dc"
-import {$Vector2dc$$Type} from "org.joml.Vector2dc"
 import {$NumberFormat$$Type} from "java.text.NumberFormat"
-import {$Vector3fc$$Type} from "org.joml.Vector3fc"
+import {$Vector2dc$$Type} from "org.joml.Vector2dc"
 import {$Cloneable$$Interface} from "java.lang.Cloneable"
+import {$Vector3fc$$Type} from "org.joml.Vector3fc"
 import {$ByteBuffer, $ByteBuffer$$Type} from "java.nio.ByteBuffer"
 
 export class $Vector3i implements $Externalizable$$Interface, $Cloneable$$Interface, $Vector3ic$$Interface {
 constructor()
-constructor(arg0: $Vector3fc$$Type, arg1: integer)
-constructor(arg0: $ByteBuffer$$Type)
-constructor(arg0: $Vector2fc$$Type, arg1: float, arg2: integer)
-constructor(arg0: integer, arg1: $ByteBuffer$$Type)
-constructor(arg0: (integer)[])
 constructor(arg0: $Vector3dc$$Type, arg1: integer)
-constructor(arg0: integer, arg1: integer, arg2: integer)
-constructor(arg0: $Vector2dc$$Type, arg1: float, arg2: integer)
-constructor(arg0: integer, arg1: $IntBuffer$$Type)
-constructor(arg0: integer)
 constructor(arg0: $Vector2ic$$Type, arg1: integer)
 constructor(arg0: $Vector3ic$$Type)
+constructor(arg0: (integer)[])
+constructor(arg0: $Vector2fc$$Type, arg1: float, arg2: integer)
 constructor(arg0: double, arg1: double, arg2: double, arg3: integer)
 constructor(arg0: float, arg1: float, arg2: float, arg3: integer)
+constructor(arg0: $Vector2dc$$Type, arg1: float, arg2: integer)
+constructor(arg0: integer, arg1: $IntBuffer$$Type)
+constructor(arg0: integer, arg1: integer, arg2: integer)
+constructor(arg0: integer)
+constructor(arg0: $Vector3fc$$Type, arg1: integer)
+constructor(arg0: $ByteBuffer$$Type)
+constructor(arg0: integer, arg1: $ByteBuffer$$Type)
 constructor(arg0: $IntBuffer$$Type)
 
 public "gridDistance"(arg0: $Vector3ic$$Type): long
 public "gridDistance"(arg0: integer, arg1: integer, arg2: integer): long
-public "sub"(arg0: integer, arg1: integer, arg2: integer): $Vector3i
-public "sub"(arg0: integer, arg1: integer, arg2: integer, arg3: $Vector3i$$Type): $Vector3i
-public "sub"(arg0: $Vector3ic$$Type, arg1: $Vector3i$$Type): $Vector3i
-public "sub"(arg0: $Vector3ic$$Type): $Vector3i
-public "mul"(arg0: $Vector3ic$$Type): $Vector3i
-public "mul"(arg0: integer, arg1: $Vector3i$$Type): $Vector3i
-public "mul"(arg0: integer): $Vector3i
-public "mul"(arg0: $Vector3ic$$Type, arg1: $Vector3i$$Type): $Vector3i
-public "mul"(arg0: integer, arg1: integer, arg2: integer): $Vector3i
-public "mul"(arg0: integer, arg1: integer, arg2: integer, arg3: $Vector3i$$Type): $Vector3i
-public "negate"(arg0: $Vector3i$$Type): $Vector3i
-public "negate"(): $Vector3i
-public "absolute"(arg0: $Vector3i$$Type): $Vector3i
-public "absolute"(): $Vector3i
-public "div"(arg0: float, arg1: $Vector3i$$Type): $Vector3i
-public "div"(arg0: float): $Vector3i
-public "div"(arg0: integer): $Vector3i
 public "div"(arg0: integer, arg1: $Vector3i$$Type): $Vector3i
+public "div"(arg0: float, arg1: $Vector3i$$Type): $Vector3i
+public "div"(arg0: integer): $Vector3i
+public "div"(arg0: float): $Vector3i
 public "writeExternal"(arg0: $ObjectOutput$$Type): void
 public "readExternal"(arg0: $ObjectInput$$Type): void
-public "get"(arg0: $ByteBuffer$$Type): $ByteBuffer
-public "get"(arg0: integer): integer
+public "absolute"(): $Vector3i
+public "absolute"(arg0: $Vector3i$$Type): $Vector3i
+public "sub"(arg0: integer, arg1: integer, arg2: integer, arg3: $Vector3i$$Type): $Vector3i
+public "sub"(arg0: integer, arg1: integer, arg2: integer): $Vector3i
+public "sub"(arg0: $Vector3ic$$Type, arg1: $Vector3i$$Type): $Vector3i
+public "sub"(arg0: $Vector3ic$$Type): $Vector3i
+public "negate"(arg0: $Vector3i$$Type): $Vector3i
+public "negate"(): $Vector3i
 public "get"(arg0: $IntBuffer$$Type): $IntBuffer
 public "get"(arg0: integer, arg1: $IntBuffer$$Type): $IntBuffer
+public "get"(arg0: $ByteBuffer$$Type): $ByteBuffer
+public "get"(arg0: integer): integer
 public "get"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
-public "equals"(arg0: integer, arg1: integer, arg2: integer): boolean
 public "equals"(arg0: any): boolean
+public "equals"(arg0: integer, arg1: integer, arg2: integer): boolean
 public static "length"(arg0: integer, arg1: integer, arg2: integer): double
 public "length"(): double
 public "toString"(arg0: $NumberFormat$$Type): StringJS
 public "toString"(): StringJS
 public "hashCode"(): integer
 public "clone"(): any
-public "min"(arg0: $Vector3ic$$Type, arg1: $Vector3i$$Type): $Vector3i
 public "min"(arg0: $Vector3ic$$Type): $Vector3i
+public "min"(arg0: $Vector3ic$$Type, arg1: $Vector3i$$Type): $Vector3i
 public "max"(arg0: $Vector3ic$$Type, arg1: $Vector3i$$Type): $Vector3i
 public "max"(arg0: $Vector3ic$$Type): $Vector3i
 public "add"(arg0: $Vector3ic$$Type, arg1: $Vector3i$$Type): $Vector3i
@@ -4845,24 +4839,30 @@ public "add"(arg0: $Vector3ic$$Type): $Vector3i
 public "add"(arg0: integer, arg1: integer, arg2: integer): $Vector3i
 public "add"(arg0: integer, arg1: integer, arg2: integer, arg3: $Vector3i$$Type): $Vector3i
 public "x"(): integer
-public "set"(arg0: $Vector3dc$$Type, arg1: integer): $Vector3i
-public "set"(arg0: $Vector2ic$$Type, arg1: integer): $Vector3i
-public "set"(arg0: $Vector3fc$$Type, arg1: integer): $Vector3i
 public "set"(arg0: (integer)[]): $Vector3i
-public "set"(arg0: integer, arg1: integer, arg2: integer): $Vector3i
-public "set"(arg0: $Vector3ic$$Type): $Vector3i
 public "set"(arg0: $IntBuffer$$Type): $Vector3i
-public "set"(arg0: integer, arg1: $IntBuffer$$Type): $Vector3i
-public "set"(arg0: integer): $Vector3i
+public "set"(arg0: integer, arg1: integer, arg2: integer): $Vector3i
+public "set"(arg0: $Vector3dc$$Type, arg1: integer): $Vector3i
+public "set"(arg0: $Vector3fc$$Type, arg1: integer): $Vector3i
 public "set"(arg0: $ByteBuffer$$Type): $Vector3i
 public "set"(arg0: integer, arg1: $ByteBuffer$$Type): $Vector3i
+public "set"(arg0: integer): $Vector3i
+public "set"(arg0: $Vector2ic$$Type, arg1: integer): $Vector3i
+public "set"(arg0: $Vector3ic$$Type): $Vector3i
 public "set"(arg0: $Vector3dc$$Type): $Vector3i
+public "set"(arg0: integer, arg1: $IntBuffer$$Type): $Vector3i
 public "z"(): integer
 public "zero"(): $Vector3i
 public "y"(): integer
 public "distance"(arg0: integer, arg1: integer, arg2: integer): double
-public static "distance"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: integer, arg5: integer): double
 public "distance"(arg0: $Vector3ic$$Type): double
+public static "distance"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: integer, arg5: integer): double
+public "mul"(arg0: integer): $Vector3i
+public "mul"(arg0: integer, arg1: $Vector3i$$Type): $Vector3i
+public "mul"(arg0: $Vector3ic$$Type, arg1: $Vector3i$$Type): $Vector3i
+public "mul"(arg0: $Vector3ic$$Type): $Vector3i
+public "mul"(arg0: integer, arg1: integer, arg2: integer, arg3: $Vector3i$$Type): $Vector3i
+public "mul"(arg0: integer, arg1: integer, arg2: integer): $Vector3i
 public "setFromAddress"(arg0: long): $Vector3i
 public "setComponent"(arg0: integer, arg1: integer): $Vector3i
 public "getToAddress"(arg0: long): $Vector3ic
@@ -4890,20 +4890,20 @@ import {$Matrix4x3fc$$Type} from "org.joml.Matrix4x3fc"
 import {$ObjectInput$$Type} from "java.io.ObjectInput"
 import {$Vector3i, $Vector3i$$Type} from "org.joml.Vector3i"
 import {$Matrix4dc$$Type} from "org.joml.Matrix4dc"
-import {$ObjectOutput$$Type} from "java.io.ObjectOutput"
 import {$Matrix3dc$$Type} from "org.joml.Matrix3dc"
-import {$Externalizable$$Interface} from "java.io.Externalizable"
+import {$ObjectOutput$$Type} from "java.io.ObjectOutput"
 import {$Vector3d, $Vector3d$$Type} from "org.joml.Vector3d"
-import {$Vector2fc$$Type} from "org.joml.Vector2fc"
+import {$Externalizable$$Interface} from "java.io.Externalizable"
 import {$FloatBuffer, $FloatBuffer$$Type} from "java.nio.FloatBuffer"
-import {$Vector3ic$$Type} from "org.joml.Vector3ic"
+import {$Vector2fc$$Type} from "org.joml.Vector2fc"
 import {$Matrix4fc$$Type} from "org.joml.Matrix4fc"
-import {$Matrix3x2fc$$Type} from "org.joml.Matrix3x2fc"
-import {$Vector2ic$$Type} from "org.joml.Vector2ic"
+import {$Vector3ic$$Type} from "org.joml.Vector3ic"
 import {$Matrix3fc$$Type} from "org.joml.Matrix3fc"
+import {$Vector2ic$$Type} from "org.joml.Vector2ic"
+import {$Matrix3x2fc$$Type} from "org.joml.Matrix3x2fc"
 import {$Vector3dc$$Type} from "org.joml.Vector3dc"
-import {$Vector2dc$$Type} from "org.joml.Vector2dc"
 import {$NumberFormat$$Type} from "java.text.NumberFormat"
+import {$Vector2dc$$Type} from "org.joml.Vector2dc"
 import {$Cloneable$$Interface} from "java.lang.Cloneable"
 import {$Vector3fc, $Vector3fc$$Type, $Vector3fc$$Interface} from "org.joml.Vector3fc"
 import {$Quaternionf, $Quaternionf$$Type} from "org.joml.Quaternionf"
@@ -4911,171 +4911,171 @@ import {$ByteBuffer, $ByteBuffer$$Type} from "java.nio.ByteBuffer"
 
 export class $Vector3f implements $Externalizable$$Interface, $Cloneable$$Interface, $Vector3fc$$Interface {
 constructor()
-constructor(arg0: float)
-constructor(arg0: float, arg1: float, arg2: float)
+constructor(arg0: $Vector2ic$$Type, arg1: float)
+constructor(arg0: (float)[])
+constructor(arg0: $ByteBuffer$$Type)
+constructor(arg0: integer, arg1: $ByteBuffer$$Type)
+constructor(arg0: $FloatBuffer$$Type)
 constructor(arg0: $Vector3fc$$Type)
-constructor(arg0: $Vector3ic$$Type)
+constructor(arg0: float, arg1: float, arg2: float)
+constructor(arg0: float)
 constructor(arg0: $Vector2fc$$Type, arg1: float)
 constructor(arg0: integer, arg1: $FloatBuffer$$Type)
-constructor(arg0: $FloatBuffer$$Type)
-constructor(arg0: integer, arg1: $ByteBuffer$$Type)
-constructor(arg0: $ByteBuffer$$Type)
-constructor(arg0: (float)[])
-constructor(arg0: $Vector2ic$$Type, arg1: float)
+constructor(arg0: $Vector3ic$$Type)
 
-public "sub"(arg0: $Vector3fc$$Type): $Vector3f
-public "sub"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
-public "sub"(arg0: float, arg1: float, arg2: float): $Vector3f
-public "sub"(arg0: float, arg1: float, arg2: float, arg3: $Vector3f$$Type): $Vector3f
-public "mul"(arg0: $Matrix3x2fc$$Type, arg1: $Vector3f$$Type): $Vector3f
-public "mul"(arg0: float): $Vector3f
-public "mul"(arg0: $Matrix3x2fc$$Type): $Vector3f
-public "mul"(arg0: float, arg1: $Vector3f$$Type): $Vector3f
-public "mul"(arg0: float, arg1: float, arg2: float): $Vector3f
-public "mul"(arg0: float, arg1: float, arg2: float, arg3: $Vector3f$$Type): $Vector3f
-public "mul"(arg0: $Vector3fc$$Type): $Vector3f
-public "mul"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
-public "mul"(arg0: $Matrix3fc$$Type): $Vector3f
-public "mul"(arg0: $Matrix3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
-public "mul"(arg0: $Matrix3dc$$Type): $Vector3f
-public "mul"(arg0: $Matrix3dc$$Type, arg1: $Vector3f$$Type): $Vector3f
-public "negate"(arg0: $Vector3f$$Type): $Vector3f
-public "negate"(): $Vector3f
-public "normalize"(): $Vector3f
-public "normalize"(arg0: float): $Vector3f
-public "normalize"(arg0: $Vector3f$$Type): $Vector3f
-public "normalize"(arg0: float, arg1: $Vector3f$$Type): $Vector3f
-public "absolute"(arg0: $Vector3f$$Type): $Vector3f
-public "absolute"(): $Vector3f
-public "mulAdd"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type): $Vector3f
-public "mulAdd"(arg0: float, arg1: $Vector3fc$$Type): $Vector3f
-public "mulAdd"(arg0: float, arg1: $Vector3fc$$Type, arg2: $Vector3f$$Type): $Vector3f
-public "mulAdd"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3f$$Type): $Vector3f
-public "div"(arg0: $Vector3fc$$Type): $Vector3f
-public "div"(arg0: float): $Vector3f
 public "div"(arg0: float, arg1: $Vector3f$$Type): $Vector3f
-public "div"(arg0: float, arg1: float, arg2: float, arg3: $Vector3f$$Type): $Vector3f
+public "div"(arg0: $Vector3fc$$Type): $Vector3f
 public "div"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
+public "div"(arg0: float, arg1: float, arg2: float, arg3: $Vector3f$$Type): $Vector3f
 public "div"(arg0: float, arg1: float, arg2: float): $Vector3f
+public "div"(arg0: float): $Vector3f
+public "mulAdd"(arg0: float, arg1: $Vector3fc$$Type, arg2: $Vector3f$$Type): $Vector3f
+public "mulAdd"(arg0: float, arg1: $Vector3fc$$Type): $Vector3f
+public "mulAdd"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3f$$Type): $Vector3f
+public "mulAdd"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type): $Vector3f
 public "half"(arg0: float, arg1: float, arg2: float): $Vector3f
-public "half"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
 public "half"(arg0: float, arg1: float, arg2: float, arg3: $Vector3f$$Type): $Vector3f
+public "half"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
 public "half"(arg0: $Vector3fc$$Type): $Vector3f
 public "writeExternal"(arg0: $ObjectOutput$$Type): void
 public "readExternal"(arg0: $ObjectInput$$Type): void
-public "get"(arg0: $FloatBuffer$$Type): $FloatBuffer
-public "get"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
-public "get"(arg0: integer): float
+public "absolute"(): $Vector3f
+public "absolute"(arg0: $Vector3f$$Type): $Vector3f
+public "normalize"(arg0: float): $Vector3f
+public "normalize"(arg0: $Vector3f$$Type): $Vector3f
+public "normalize"(): $Vector3f
+public "normalize"(arg0: float, arg1: $Vector3f$$Type): $Vector3f
+public "sub"(arg0: float, arg1: float, arg2: float): $Vector3f
+public "sub"(arg0: float, arg1: float, arg2: float, arg3: $Vector3f$$Type): $Vector3f
+public "sub"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
+public "sub"(arg0: $Vector3fc$$Type): $Vector3f
+public "negate"(arg0: $Vector3f$$Type): $Vector3f
+public "negate"(): $Vector3f
 public "get"(arg0: integer, arg1: $Vector3i$$Type): $Vector3i
+public "get"(arg0: $FloatBuffer$$Type): $FloatBuffer
 public "get"(arg0: $Vector3f$$Type): $Vector3f
 public "get"(arg0: $Vector3d$$Type): $Vector3d
-public "get"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
+public "get"(arg0: integer): float
+public "get"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
 public "get"(arg0: $ByteBuffer$$Type): $ByteBuffer
-public "equals"(arg0: $Vector3fc$$Type, arg1: float): boolean
+public "get"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
 public "equals"(arg0: float, arg1: float, arg2: float): boolean
+public "equals"(arg0: $Vector3fc$$Type, arg1: float): boolean
 public "equals"(arg0: any): boolean
 public "length"(): float
 public static "length"(arg0: float, arg1: float, arg2: float): float
-public "toString"(arg0: $NumberFormat$$Type): StringJS
 public "toString"(): StringJS
+public "toString"(arg0: $NumberFormat$$Type): StringJS
 public "hashCode"(): integer
 public "clone"(): any
-public "min"(arg0: $Vector3fc$$Type): $Vector3f
 public "min"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
+public "min"(arg0: $Vector3fc$$Type): $Vector3f
 public "max"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
 public "max"(arg0: $Vector3fc$$Type): $Vector3f
-public "floor"(arg0: $Vector3f$$Type): $Vector3f
 public "floor"(): $Vector3f
-public "ceil"(): $Vector3f
+public "floor"(arg0: $Vector3f$$Type): $Vector3f
 public "ceil"(arg0: $Vector3f$$Type): $Vector3f
+public "ceil"(): $Vector3f
 public "round"(arg0: $Vector3f$$Type): $Vector3f
 public "round"(): $Vector3f
-public "fma"(arg0: float, arg1: $Vector3fc$$Type): $Vector3f
-public "fma"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3f$$Type): $Vector3f
 public "fma"(arg0: float, arg1: $Vector3fc$$Type, arg2: $Vector3f$$Type): $Vector3f
+public "fma"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3f$$Type): $Vector3f
+public "fma"(arg0: float, arg1: $Vector3fc$$Type): $Vector3f
 public "fma"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type): $Vector3f
 public "isFinite"(): boolean
-public "add"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
-public "add"(arg0: float, arg1: float, arg2: float, arg3: $Vector3f$$Type): $Vector3f
 public "add"(arg0: $Vector3fc$$Type): $Vector3f
+public "add"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
 public "add"(arg0: float, arg1: float, arg2: float): $Vector3f
+public "add"(arg0: float, arg1: float, arg2: float, arg3: $Vector3f$$Type): $Vector3f
 public "x"(): float
 public "dot"(arg0: $Vector3fc$$Type): float
 public "dot"(arg0: float, arg1: float, arg2: float): float
-public "set"(arg0: integer, arg1: $ByteBuffer$$Type): $Vector3f
-public "set"(arg0: $FloatBuffer$$Type): $Vector3f
 public "set"(arg0: $Vector3ic$$Type): $Vector3f
+public "set"(arg0: $Vector3dc$$Type): $Vector3f
 public "set"(arg0: $Vector2fc$$Type, arg1: float): $Vector3f
-public "set"(arg0: double): $Vector3f
+public "set"(arg0: $Vector3fc$$Type): $Vector3f
+public "set"(arg0: integer, arg1: $FloatBuffer$$Type): $Vector3f
 public "set"(arg0: double, arg1: double, arg2: double): $Vector3f
 public "set"(arg0: (float)[]): $Vector3f
 public "set"(arg0: $ByteBuffer$$Type): $Vector3f
+public "set"(arg0: integer, arg1: $ByteBuffer$$Type): $Vector3f
+public "set"(arg0: $Vector2dc$$Type, arg1: float): $Vector3f
 public "set"(arg0: $Vector2ic$$Type, arg1: float): $Vector3f
 public "set"(arg0: float): $Vector3f
+public "set"(arg0: double): $Vector3f
+public "set"(arg0: $FloatBuffer$$Type): $Vector3f
 public "set"(arg0: float, arg1: float, arg2: float): $Vector3f
-public "set"(arg0: $Vector3fc$$Type): $Vector3f
-public "set"(arg0: $Vector2dc$$Type, arg1: float): $Vector3f
-public "set"(arg0: $Vector3dc$$Type): $Vector3f
-public "set"(arg0: integer, arg1: $FloatBuffer$$Type): $Vector3f
 public "z"(): float
 public "zero"(): $Vector3f
 public "y"(): float
-public "distance"(arg0: $Vector3fc$$Type): float
 public "distance"(arg0: float, arg1: float, arg2: float): float
+public "distance"(arg0: $Vector3fc$$Type): float
 public static "distance"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): float
 public "rotate"(arg0: $Quaternionfc$$Type, arg1: $Vector3f$$Type): $Vector3f
 public "rotate"(arg0: $Quaternionfc$$Type): $Vector3f
+public "mul"(arg0: $Matrix3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
+public "mul"(arg0: $Matrix3x2fc$$Type): $Vector3f
+public "mul"(arg0: $Matrix3dc$$Type, arg1: $Vector3f$$Type): $Vector3f
+public "mul"(arg0: $Matrix3fc$$Type): $Vector3f
+public "mul"(arg0: $Matrix3dc$$Type): $Vector3f
+public "mul"(arg0: float): $Vector3f
+public "mul"(arg0: float, arg1: float, arg2: float, arg3: $Vector3f$$Type): $Vector3f
+public "mul"(arg0: float, arg1: float, arg2: float): $Vector3f
+public "mul"(arg0: float, arg1: $Vector3f$$Type): $Vector3f
+public "mul"(arg0: $Vector3fc$$Type): $Vector3f
+public "mul"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
+public "mul"(arg0: $Matrix3x2fc$$Type, arg1: $Vector3f$$Type): $Vector3f
 public "angle"(arg0: $Vector3fc$$Type): float
 public "setFromAddress"(arg0: long): $Vector3f
 public "setComponent"(arg0: integer, arg1: float): $Vector3f
 public "getToAddress"(arg0: long): $Vector3fc
+public "mulProject"(arg0: $Matrix4fc$$Type, arg1: $Vector3f$$Type): $Vector3f
 public "mulProject"(arg0: $Matrix4fc$$Type): $Vector3f
 public "mulProject"(arg0: $Matrix4fc$$Type, arg1: float, arg2: $Vector3f$$Type): $Vector3f
-public "mulProject"(arg0: $Matrix4fc$$Type, arg1: $Vector3f$$Type): $Vector3f
-public "mulTranspose"(arg0: $Matrix3fc$$Type): $Vector3f
 public "mulTranspose"(arg0: $Matrix3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
+public "mulTranspose"(arg0: $Matrix3fc$$Type): $Vector3f
 public "mulPosition"(arg0: $Matrix4fc$$Type): $Vector3f
 public "mulPosition"(arg0: $Matrix4x3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
 public "mulPosition"(arg0: $Matrix4fc$$Type, arg1: $Vector3f$$Type): $Vector3f
 public "mulPosition"(arg0: $Matrix4x3fc$$Type): $Vector3f
-public "mulTransposePosition"(arg0: $Matrix4fc$$Type, arg1: $Vector3f$$Type): $Vector3f
 public "mulTransposePosition"(arg0: $Matrix4fc$$Type): $Vector3f
-public "mulPositionW"(arg0: $Matrix4fc$$Type, arg1: $Vector3f$$Type): float
+public "mulTransposePosition"(arg0: $Matrix4fc$$Type, arg1: $Vector3f$$Type): $Vector3f
 public "mulPositionW"(arg0: $Matrix4fc$$Type): float
-public "mulDirection"(arg0: $Matrix4dc$$Type): $Vector3f
-public "mulDirection"(arg0: $Matrix4fc$$Type, arg1: $Vector3f$$Type): $Vector3f
-public "mulDirection"(arg0: $Matrix4dc$$Type, arg1: $Vector3f$$Type): $Vector3f
-public "mulDirection"(arg0: $Matrix4x3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
+public "mulPositionW"(arg0: $Matrix4fc$$Type, arg1: $Vector3f$$Type): float
 public "mulDirection"(arg0: $Matrix4x3fc$$Type): $Vector3f
 public "mulDirection"(arg0: $Matrix4fc$$Type): $Vector3f
-public "mulTransposeDirection"(arg0: $Matrix4fc$$Type): $Vector3f
+public "mulDirection"(arg0: $Matrix4dc$$Type): $Vector3f
+public "mulDirection"(arg0: $Matrix4dc$$Type, arg1: $Vector3f$$Type): $Vector3f
+public "mulDirection"(arg0: $Matrix4x3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
+public "mulDirection"(arg0: $Matrix4fc$$Type, arg1: $Vector3f$$Type): $Vector3f
 public "mulTransposeDirection"(arg0: $Matrix4fc$$Type, arg1: $Vector3f$$Type): $Vector3f
+public "mulTransposeDirection"(arg0: $Matrix4fc$$Type): $Vector3f
 public "rotationTo"(arg0: float, arg1: float, arg2: float, arg3: $Quaternionf$$Type): $Quaternionf
 public "rotationTo"(arg0: $Vector3fc$$Type, arg1: $Quaternionf$$Type): $Quaternionf
-public "rotateAxis"(arg0: float, arg1: float, arg2: float, arg3: float): $Vector3f
 public "rotateAxis"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Vector3f$$Type): $Vector3f
-public "rotateX"(arg0: float): $Vector3f
+public "rotateAxis"(arg0: float, arg1: float, arg2: float, arg3: float): $Vector3f
 public "rotateX"(arg0: float, arg1: $Vector3f$$Type): $Vector3f
-public "rotateY"(arg0: float, arg1: $Vector3f$$Type): $Vector3f
+public "rotateX"(arg0: float): $Vector3f
 public "rotateY"(arg0: float): $Vector3f
-public "rotateZ"(arg0: float, arg1: $Vector3f$$Type): $Vector3f
+public "rotateY"(arg0: float, arg1: $Vector3f$$Type): $Vector3f
 public "rotateZ"(arg0: float): $Vector3f
+public "rotateZ"(arg0: float, arg1: $Vector3f$$Type): $Vector3f
 public "lengthSquared"(): float
 public static "lengthSquared"(arg0: float, arg1: float, arg2: float): float
 public "cross"(arg0: $Vector3fc$$Type): $Vector3f
-public "cross"(arg0: float, arg1: float, arg2: float, arg3: $Vector3f$$Type): $Vector3f
 public "cross"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
+public "cross"(arg0: float, arg1: float, arg2: float, arg3: $Vector3f$$Type): $Vector3f
 public "cross"(arg0: float, arg1: float, arg2: float): $Vector3f
-public "distanceSquared"(arg0: $Vector3fc$$Type): float
 public "distanceSquared"(arg0: float, arg1: float, arg2: float): float
 public static "distanceSquared"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): float
+public "distanceSquared"(arg0: $Vector3fc$$Type): float
 public "angleCos"(arg0: $Vector3fc$$Type): float
 public "angleSigned"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type): float
 public "angleSigned"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): float
-public "reflect"(arg0: $Vector3fc$$Type): $Vector3f
-public "reflect"(arg0: float, arg1: float, arg2: float): $Vector3f
 public "reflect"(arg0: float, arg1: float, arg2: float, arg3: $Vector3f$$Type): $Vector3f
+public "reflect"(arg0: float, arg1: float, arg2: float): $Vector3f
 public "reflect"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
+public "reflect"(arg0: $Vector3fc$$Type): $Vector3f
 public "smoothStep"(arg0: $Vector3fc$$Type, arg1: float, arg2: $Vector3f$$Type): $Vector3f
 public "hermite"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3fc$$Type, arg3: float, arg4: $Vector3f$$Type): $Vector3f
 public "lerp"(arg0: $Vector3fc$$Type, arg1: float, arg2: $Vector3f$$Type): $Vector3f
@@ -5084,8 +5084,8 @@ public "maxComponent"(): integer
 public "minComponent"(): integer
 public "orthogonalize"(arg0: $Vector3fc$$Type): $Vector3f
 public "orthogonalize"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
-public "orthogonalizeUnit"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
 public "orthogonalizeUnit"(arg0: $Vector3fc$$Type): $Vector3f
+public "orthogonalizeUnit"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
 get "finite"(): boolean
 set "fromAddress"(value: long)
 }
@@ -5105,175 +5105,175 @@ import {$Vector3i, $Vector3i$$Type} from "org.joml.Vector3i"
 import {$Matrix4x3dc$$Type} from "org.joml.Matrix4x3dc"
 import {$Vector3f, $Vector3f$$Type} from "org.joml.Vector3f"
 import {$Matrix4dc$$Type} from "org.joml.Matrix4dc"
-import {$ObjectOutput$$Type} from "java.io.ObjectOutput"
 import {$Matrix3dc$$Type} from "org.joml.Matrix3dc"
-import {$Vector3ic$$Type} from "org.joml.Vector3ic"
+import {$ObjectOutput$$Type} from "java.io.ObjectOutput"
 import {$Matrix4fc$$Type} from "org.joml.Matrix4fc"
-import {$Vector2ic$$Type} from "org.joml.Vector2ic"
+import {$Vector3ic$$Type} from "org.joml.Vector3ic"
 import {$Matrix3fc$$Type} from "org.joml.Matrix3fc"
+import {$Vector2ic$$Type} from "org.joml.Vector2ic"
 import {$Cloneable$$Interface} from "java.lang.Cloneable"
 import {$Quaterniond, $Quaterniond$$Type} from "org.joml.Quaterniond"
 import {$Quaterniondc$$Type} from "org.joml.Quaterniondc"
 import {$DoubleBuffer, $DoubleBuffer$$Type} from "java.nio.DoubleBuffer"
 import {$Externalizable$$Interface} from "java.io.Externalizable"
-import {$Vector2fc$$Type} from "org.joml.Vector2fc"
 import {$FloatBuffer, $FloatBuffer$$Type} from "java.nio.FloatBuffer"
+import {$Vector2fc$$Type} from "org.joml.Vector2fc"
 import {$Matrix3x2dc$$Type} from "org.joml.Matrix3x2dc"
 import {$Matrix3x2fc$$Type} from "org.joml.Matrix3x2fc"
 import {$Vector3dc, $Vector3dc$$Type, $Vector3dc$$Interface} from "org.joml.Vector3dc"
-import {$Vector2dc$$Type} from "org.joml.Vector2dc"
 import {$NumberFormat$$Type} from "java.text.NumberFormat"
+import {$Vector2dc$$Type} from "org.joml.Vector2dc"
 import {$Vector3fc$$Type} from "org.joml.Vector3fc"
 import {$ByteBuffer, $ByteBuffer$$Type} from "java.nio.ByteBuffer"
 
 export class $Vector3d implements $Externalizable$$Interface, $Cloneable$$Interface, $Vector3dc$$Interface {
-constructor(arg0: $DoubleBuffer$$Type)
-constructor(arg0: $Vector2ic$$Type, arg1: double)
+constructor()
+constructor(arg0: (float)[])
+constructor(arg0: (double)[])
+constructor(arg0: $Vector2dc$$Type, arg1: double)
+constructor(arg0: $Vector3dc$$Type)
 constructor(arg0: $ByteBuffer$$Type)
 constructor(arg0: integer, arg1: $ByteBuffer$$Type)
-constructor(arg0: $Vector2fc$$Type, arg1: double)
-constructor()
-constructor(arg0: $Vector3dc$$Type)
-constructor(arg0: $Vector2dc$$Type, arg1: double)
-constructor(arg0: (double)[])
-constructor(arg0: (float)[])
-constructor(arg0: double)
-constructor(arg0: $Vector3ic$$Type)
-constructor(arg0: double, arg1: double, arg2: double)
-constructor(arg0: $Vector3fc$$Type)
 constructor(arg0: integer, arg1: $DoubleBuffer$$Type)
+constructor(arg0: $Vector3fc$$Type)
+constructor(arg0: double, arg1: double, arg2: double)
+constructor(arg0: double)
+constructor(arg0: $DoubleBuffer$$Type)
+constructor(arg0: $Vector2ic$$Type, arg1: double)
+constructor(arg0: $Vector2fc$$Type, arg1: double)
+constructor(arg0: $Vector3ic$$Type)
 
-public "sub"(arg0: double, arg1: double, arg2: double, arg3: $Vector3d$$Type): $Vector3d
-public "sub"(arg0: double, arg1: double, arg2: double): $Vector3d
-public "sub"(arg0: $Vector3fc$$Type, arg1: $Vector3d$$Type): $Vector3d
-public "sub"(arg0: $Vector3dc$$Type): $Vector3d
-public "sub"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
-public "sub"(arg0: $Vector3fc$$Type): $Vector3d
-public "mul"(arg0: double): $Vector3d
-public "mul"(arg0: $Matrix3x2fc$$Type, arg1: $Vector3d$$Type): $Vector3d
-public "mul"(arg0: $Matrix3x2fc$$Type): $Vector3d
-public "mul"(arg0: double, arg1: $Vector3d$$Type): $Vector3d
-public "mul"(arg0: double, arg1: double, arg2: double): $Vector3d
-public "mul"(arg0: double, arg1: double, arg2: double, arg3: $Vector3d$$Type): $Vector3d
-public "mul"(arg0: $Matrix3x2dc$$Type): $Vector3d
-public "mul"(arg0: $Matrix3fc$$Type, arg1: $Vector3d$$Type): $Vector3d
-public "mul"(arg0: $Matrix3dc$$Type, arg1: $Vector3f$$Type): $Vector3f
-public "mul"(arg0: $Matrix3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
-public "mul"(arg0: $Matrix3fc$$Type): $Vector3d
-public "mul"(arg0: $Matrix3dc$$Type): $Vector3d
-public "mul"(arg0: $Vector3dc$$Type): $Vector3d
-public "mul"(arg0: $Vector3fc$$Type, arg1: $Vector3d$$Type): $Vector3d
-public "mul"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
-public "mul"(arg0: $Matrix3x2dc$$Type, arg1: $Vector3d$$Type): $Vector3d
-public "mul"(arg0: $Vector3fc$$Type): $Vector3d
-public "negate"(): $Vector3d
-public "negate"(arg0: $Vector3d$$Type): $Vector3d
-public "normalize"(arg0: $Vector3d$$Type): $Vector3d
-public "normalize"(): $Vector3d
-public "normalize"(arg0: double, arg1: $Vector3d$$Type): $Vector3d
-public "normalize"(arg0: double): $Vector3d
-public "absolute"(): $Vector3d
-public "absolute"(arg0: $Vector3d$$Type): $Vector3d
-public "mulAdd"(arg0: double, arg1: $Vector3dc$$Type, arg2: $Vector3d$$Type): $Vector3d
-public "mulAdd"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Vector3d$$Type): $Vector3d
-public "mulAdd"(arg0: $Vector3fc$$Type, arg1: $Vector3dc$$Type, arg2: $Vector3d$$Type): $Vector3d
-public "mulAdd"(arg0: double, arg1: $Vector3dc$$Type): $Vector3d
-public "mulAdd"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type): $Vector3d
 public "div"(arg0: double): $Vector3d
-public "div"(arg0: double, arg1: $Vector3d$$Type): $Vector3d
-public "div"(arg0: double, arg1: double, arg2: double): $Vector3d
-public "div"(arg0: double, arg1: double, arg2: double, arg3: $Vector3d$$Type): $Vector3d
 public "div"(arg0: $Vector3d$$Type): $Vector3d
 public "div"(arg0: $Vector3fc$$Type): $Vector3d
 public "div"(arg0: $Vector3fc$$Type, arg1: $Vector3d$$Type): $Vector3d
 public "div"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
-public "half"(arg0: double, arg1: double, arg2: double, arg3: $Vector3d$$Type): $Vector3d
-public "half"(arg0: double, arg1: double, arg2: double): $Vector3d
-public "half"(arg0: $Vector3dc$$Type): $Vector3d
+public "div"(arg0: double, arg1: double, arg2: double, arg3: $Vector3d$$Type): $Vector3d
+public "div"(arg0: double, arg1: double, arg2: double): $Vector3d
+public "div"(arg0: double, arg1: $Vector3d$$Type): $Vector3d
+public "mulAdd"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Vector3d$$Type): $Vector3d
+public "mulAdd"(arg0: double, arg1: $Vector3dc$$Type): $Vector3d
+public "mulAdd"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type): $Vector3d
+public "mulAdd"(arg0: double, arg1: $Vector3dc$$Type, arg2: $Vector3d$$Type): $Vector3d
+public "mulAdd"(arg0: $Vector3fc$$Type, arg1: $Vector3dc$$Type, arg2: $Vector3d$$Type): $Vector3d
 public "half"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
+public "half"(arg0: double, arg1: double, arg2: double, arg3: $Vector3d$$Type): $Vector3d
+public "half"(arg0: $Vector3dc$$Type): $Vector3d
+public "half"(arg0: double, arg1: double, arg2: double): $Vector3d
 public "writeExternal"(arg0: $ObjectOutput$$Type): void
 public "readExternal"(arg0: $ObjectInput$$Type): void
-public "get"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
-public "get"(arg0: integer): double
+public "absolute"(arg0: $Vector3d$$Type): $Vector3d
+public "absolute"(): $Vector3d
+public "normalize"(arg0: double, arg1: $Vector3d$$Type): $Vector3d
+public "normalize"(arg0: double): $Vector3d
+public "normalize"(): $Vector3d
+public "normalize"(arg0: $Vector3d$$Type): $Vector3d
+public "sub"(arg0: double, arg1: double, arg2: double): $Vector3d
+public "sub"(arg0: double, arg1: double, arg2: double, arg3: $Vector3d$$Type): $Vector3d
+public "sub"(arg0: $Vector3fc$$Type, arg1: $Vector3d$$Type): $Vector3d
+public "sub"(arg0: $Vector3fc$$Type): $Vector3d
+public "sub"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
+public "sub"(arg0: $Vector3dc$$Type): $Vector3d
+public "negate"(): $Vector3d
+public "negate"(arg0: $Vector3d$$Type): $Vector3d
 public "get"(arg0: $ByteBuffer$$Type): $ByteBuffer
 public "get"(arg0: integer, arg1: $Vector3i$$Type): $Vector3i
-public "get"(arg0: $Vector3d$$Type): $Vector3d
-public "get"(arg0: $Vector3f$$Type): $Vector3f
+public "get"(arg0: integer): double
+public "get"(arg0: integer, arg1: $DoubleBuffer$$Type): $DoubleBuffer
 public "get"(arg0: $FloatBuffer$$Type): $FloatBuffer
 public "get"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
-public "get"(arg0: integer, arg1: $DoubleBuffer$$Type): $DoubleBuffer
+public "get"(arg0: $Vector3d$$Type): $Vector3d
+public "get"(arg0: $Vector3f$$Type): $Vector3f
+public "get"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
 public "get"(arg0: $DoubleBuffer$$Type): $DoubleBuffer
-public "equals"(arg0: $Vector3dc$$Type, arg1: double): boolean
-public "equals"(arg0: double, arg1: double, arg2: double): boolean
 public "equals"(arg0: any): boolean
+public "equals"(arg0: double, arg1: double, arg2: double): boolean
+public "equals"(arg0: $Vector3dc$$Type, arg1: double): boolean
 public "length"(): double
 public static "length"(arg0: double, arg1: double, arg2: double): double
-public "toString"(): StringJS
 public "toString"(arg0: $NumberFormat$$Type): StringJS
+public "toString"(): StringJS
 public "hashCode"(): integer
 public "clone"(): any
-public "min"(arg0: $Vector3dc$$Type): $Vector3d
 public "min"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
+public "min"(arg0: $Vector3dc$$Type): $Vector3d
 public "max"(arg0: $Vector3dc$$Type): $Vector3d
 public "max"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
 public "floor"(arg0: $Vector3d$$Type): $Vector3d
 public "floor"(): $Vector3d
-public "ceil"(): $Vector3d
 public "ceil"(arg0: $Vector3d$$Type): $Vector3d
+public "ceil"(): $Vector3d
 public "round"(arg0: $Vector3d$$Type): $Vector3d
 public "round"(): $Vector3d
-public "fma"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Vector3d$$Type): $Vector3d
 public "fma"(arg0: double, arg1: $Vector3dc$$Type): $Vector3d
 public "fma"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type): $Vector3d
-public "fma"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3d$$Type): $Vector3d
-public "fma"(arg0: double, arg1: $Vector3fc$$Type): $Vector3d
-public "fma"(arg0: double, arg1: $Vector3fc$$Type, arg2: $Vector3d$$Type): $Vector3d
-public "fma"(arg0: $Vector3dc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3d$$Type): $Vector3d
 public "fma"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type): $Vector3d
+public "fma"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Vector3d$$Type): $Vector3d
+public "fma"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3d$$Type): $Vector3d
+public "fma"(arg0: double, arg1: $Vector3fc$$Type, arg2: $Vector3d$$Type): $Vector3d
+public "fma"(arg0: double, arg1: $Vector3fc$$Type): $Vector3d
+public "fma"(arg0: $Vector3dc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3d$$Type): $Vector3d
 public "fma"(arg0: double, arg1: $Vector3dc$$Type, arg2: $Vector3d$$Type): $Vector3d
 public "isFinite"(): boolean
-public "add"(arg0: $Vector3dc$$Type): $Vector3d
-public "add"(arg0: double, arg1: double, arg2: double, arg3: $Vector3d$$Type): $Vector3d
+public "add"(arg0: $Vector3fc$$Type): $Vector3d
 public "add"(arg0: double, arg1: double, arg2: double): $Vector3d
 public "add"(arg0: $Vector3fc$$Type, arg1: $Vector3d$$Type): $Vector3d
-public "add"(arg0: $Vector3fc$$Type): $Vector3d
 public "add"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
+public "add"(arg0: double, arg1: double, arg2: double, arg3: $Vector3d$$Type): $Vector3d
+public "add"(arg0: $Vector3dc$$Type): $Vector3d
 public "x"(): double
-public "dot"(arg0: $Vector3dc$$Type): double
 public "dot"(arg0: double, arg1: double, arg2: double): double
-public "set"(arg0: $Vector2fc$$Type, arg1: double): $Vector3d
-public "set"(arg0: double): $Vector3d
-public "set"(arg0: $Vector3dc$$Type): $Vector3d
-public "set"(arg0: $Vector3fc$$Type): $Vector3d
-public "set"(arg0: $Vector3ic$$Type): $Vector3d
-public "set"(arg0: $Vector2ic$$Type, arg1: double): $Vector3d
-public "set"(arg0: $Vector2dc$$Type, arg1: double): $Vector3d
-public "set"(arg0: (double)[]): $Vector3d
+public "dot"(arg0: $Vector3dc$$Type): double
+public "set"(arg0: double, arg1: double, arg2: double): $Vector3d
 public "set"(arg0: (float)[]): $Vector3d
-public "set"(arg0: $ByteBuffer$$Type): $Vector3d
+public "set"(arg0: (double)[]): $Vector3d
+public "set"(arg0: double): $Vector3d
+public "set"(arg0: $Vector2fc$$Type, arg1: double): $Vector3d
+public "set"(arg0: integer, arg1: $DoubleBuffer$$Type): $Vector3d
 public "set"(arg0: $DoubleBuffer$$Type): $Vector3d
 public "set"(arg0: integer, arg1: $ByteBuffer$$Type): $Vector3d
-public "set"(arg0: double, arg1: double, arg2: double): $Vector3d
-public "set"(arg0: integer, arg1: $DoubleBuffer$$Type): $Vector3d
+public "set"(arg0: $ByteBuffer$$Type): $Vector3d
+public "set"(arg0: $Vector3dc$$Type): $Vector3d
+public "set"(arg0: $Vector3ic$$Type): $Vector3d
+public "set"(arg0: $Vector2dc$$Type, arg1: double): $Vector3d
+public "set"(arg0: $Vector2ic$$Type, arg1: double): $Vector3d
+public "set"(arg0: $Vector3fc$$Type): $Vector3d
 public "z"(): double
 public "zero"(): $Vector3d
 public "y"(): double
-public static "distance"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): double
-public "distance"(arg0: $Vector3dc$$Type): double
 public "distance"(arg0: double, arg1: double, arg2: double): double
+public "distance"(arg0: $Vector3dc$$Type): double
+public static "distance"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): double
 public "rotate"(arg0: $Quaterniondc$$Type, arg1: $Vector3d$$Type): $Vector3d
 public "rotate"(arg0: $Quaterniondc$$Type): $Vector3d
+public "mul"(arg0: double, arg1: double, arg2: double, arg3: $Vector3d$$Type): $Vector3d
+public "mul"(arg0: double, arg1: double, arg2: double): $Vector3d
+public "mul"(arg0: $Matrix3x2dc$$Type): $Vector3d
+public "mul"(arg0: $Matrix3fc$$Type): $Vector3d
+public "mul"(arg0: $Matrix3dc$$Type): $Vector3d
+public "mul"(arg0: $Matrix3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
+public "mul"(arg0: $Matrix3dc$$Type, arg1: $Vector3f$$Type): $Vector3f
+public "mul"(arg0: $Matrix3fc$$Type, arg1: $Vector3d$$Type): $Vector3d
+public "mul"(arg0: $Matrix3x2fc$$Type, arg1: $Vector3d$$Type): $Vector3d
+public "mul"(arg0: $Vector3dc$$Type): $Vector3d
+public "mul"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
+public "mul"(arg0: $Vector3fc$$Type): $Vector3d
+public "mul"(arg0: $Vector3fc$$Type, arg1: $Vector3d$$Type): $Vector3d
+public "mul"(arg0: double, arg1: $Vector3d$$Type): $Vector3d
+public "mul"(arg0: double): $Vector3d
+public "mul"(arg0: $Matrix3x2dc$$Type, arg1: $Vector3d$$Type): $Vector3d
+public "mul"(arg0: $Matrix3x2fc$$Type): $Vector3d
 public "angle"(arg0: $Vector3dc$$Type): double
 public "setFromAddress"(arg0: long): $Vector3d
 public "setComponent"(arg0: integer, arg1: double): $Vector3d
 public "getToAddress"(arg0: long): $Vector3dc
-public "mulProject"(arg0: $Matrix4fc$$Type): $Vector3d
-public "mulProject"(arg0: $Matrix4dc$$Type, arg1: double, arg2: $Vector3d$$Type): $Vector3d
-public "mulProject"(arg0: $Matrix4dc$$Type, arg1: $Vector3d$$Type): $Vector3d
-public "mulProject"(arg0: $Matrix4dc$$Type): $Vector3d
 public "mulProject"(arg0: $Matrix4fc$$Type, arg1: $Vector3d$$Type): $Vector3d
-public "mulTranspose"(arg0: $Matrix3fc$$Type): $Vector3d
+public "mulProject"(arg0: $Matrix4dc$$Type, arg1: double, arg2: $Vector3d$$Type): $Vector3d
+public "mulProject"(arg0: $Matrix4dc$$Type): $Vector3d
+public "mulProject"(arg0: $Matrix4fc$$Type): $Vector3d
+public "mulProject"(arg0: $Matrix4dc$$Type, arg1: $Vector3d$$Type): $Vector3d
 public "mulTranspose"(arg0: $Matrix3fc$$Type, arg1: $Vector3d$$Type): $Vector3d
+public "mulTranspose"(arg0: $Matrix3fc$$Type): $Vector3d
 public "mulTranspose"(arg0: $Matrix3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
 public "mulTranspose"(arg0: $Matrix3dc$$Type): $Vector3d
 public "mulPosition"(arg0: $Matrix4fc$$Type, arg1: $Vector3d$$Type): $Vector3d
@@ -5288,38 +5288,38 @@ public "mulTransposePosition"(arg0: $Matrix4fc$$Type): $Vector3d
 public "mulTransposePosition"(arg0: $Matrix4fc$$Type, arg1: $Vector3d$$Type): $Vector3d
 public "mulTransposePosition"(arg0: $Matrix4dc$$Type, arg1: $Vector3d$$Type): $Vector3d
 public "mulTransposePosition"(arg0: $Matrix4dc$$Type): $Vector3d
-public "mulPositionW"(arg0: $Matrix4dc$$Type): double
-public "mulPositionW"(arg0: $Matrix4fc$$Type): double
-public "mulPositionW"(arg0: $Matrix4fc$$Type, arg1: $Vector3d$$Type): double
 public "mulPositionW"(arg0: $Matrix4dc$$Type, arg1: $Vector3d$$Type): double
+public "mulPositionW"(arg0: $Matrix4fc$$Type): double
+public "mulPositionW"(arg0: $Matrix4dc$$Type): double
+public "mulPositionW"(arg0: $Matrix4fc$$Type, arg1: $Vector3d$$Type): double
 public "mulDirection"(arg0: $Matrix4dc$$Type, arg1: $Vector3d$$Type): $Vector3d
 public "mulDirection"(arg0: $Matrix4fc$$Type, arg1: $Vector3d$$Type): $Vector3d
 public "mulDirection"(arg0: $Matrix4x3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
-public "mulDirection"(arg0: $Matrix4x3fc$$Type): $Vector3d
-public "mulDirection"(arg0: $Matrix4dc$$Type): $Vector3d
-public "mulDirection"(arg0: $Matrix4x3dc$$Type): $Vector3d
-public "mulDirection"(arg0: $Matrix4fc$$Type): $Vector3d
 public "mulDirection"(arg0: $Matrix4x3fc$$Type, arg1: $Vector3d$$Type): $Vector3d
-public "mulTransposeDirection"(arg0: $Matrix4dc$$Type, arg1: $Vector3d$$Type): $Vector3d
-public "mulTransposeDirection"(arg0: $Matrix4fc$$Type, arg1: $Vector3d$$Type): $Vector3d
+public "mulDirection"(arg0: $Matrix4x3fc$$Type): $Vector3d
+public "mulDirection"(arg0: $Matrix4x3dc$$Type): $Vector3d
+public "mulDirection"(arg0: $Matrix4dc$$Type): $Vector3d
+public "mulDirection"(arg0: $Matrix4fc$$Type): $Vector3d
 public "mulTransposeDirection"(arg0: $Matrix4fc$$Type): $Vector3d
+public "mulTransposeDirection"(arg0: $Matrix4fc$$Type, arg1: $Vector3d$$Type): $Vector3d
+public "mulTransposeDirection"(arg0: $Matrix4dc$$Type, arg1: $Vector3d$$Type): $Vector3d
 public "mulTransposeDirection"(arg0: $Matrix4dc$$Type): $Vector3d
 public "rotationTo"(arg0: double, arg1: double, arg2: double, arg3: $Quaterniond$$Type): $Quaterniond
 public "rotationTo"(arg0: $Vector3dc$$Type, arg1: $Quaterniond$$Type): $Quaterniond
-public "rotateAxis"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Vector3d$$Type): $Vector3d
 public "rotateAxis"(arg0: double, arg1: double, arg2: double, arg3: double): $Vector3d
-public "rotateX"(arg0: double): $Vector3d
+public "rotateAxis"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Vector3d$$Type): $Vector3d
 public "rotateX"(arg0: double, arg1: $Vector3d$$Type): $Vector3d
+public "rotateX"(arg0: double): $Vector3d
 public "rotateY"(arg0: double, arg1: $Vector3d$$Type): $Vector3d
 public "rotateY"(arg0: double): $Vector3d
 public "rotateZ"(arg0: double): $Vector3d
 public "rotateZ"(arg0: double, arg1: $Vector3d$$Type): $Vector3d
 public static "lengthSquared"(arg0: double, arg1: double, arg2: double): double
 public "lengthSquared"(): double
-public "cross"(arg0: $Vector3dc$$Type): $Vector3d
-public "cross"(arg0: double, arg1: double, arg2: double, arg3: $Vector3d$$Type): $Vector3d
 public "cross"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
 public "cross"(arg0: double, arg1: double, arg2: double): $Vector3d
+public "cross"(arg0: double, arg1: double, arg2: double, arg3: $Vector3d$$Type): $Vector3d
+public "cross"(arg0: $Vector3dc$$Type): $Vector3d
 public static "distanceSquared"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): double
 public "distanceSquared"(arg0: $Vector3dc$$Type): double
 public "distanceSquared"(arg0: double, arg1: double, arg2: double): double
@@ -5327,8 +5327,8 @@ public "angleCos"(arg0: $Vector3dc$$Type): double
 public "angleSigned"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type): double
 public "angleSigned"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): double
 public "reflect"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
-public "reflect"(arg0: double, arg1: double, arg2: double, arg3: $Vector3d$$Type): $Vector3d
 public "reflect"(arg0: $Vector3dc$$Type): $Vector3d
+public "reflect"(arg0: double, arg1: double, arg2: double, arg3: $Vector3d$$Type): $Vector3d
 public "reflect"(arg0: double, arg1: double, arg2: double): $Vector3d
 public "smoothStep"(arg0: $Vector3dc$$Type, arg1: double, arg2: $Vector3d$$Type): $Vector3d
 public "hermite"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Vector3dc$$Type, arg3: double, arg4: $Vector3d$$Type): $Vector3d
@@ -5336,10 +5336,10 @@ public "lerp"(arg0: $Vector3dc$$Type, arg1: double, arg2: $Vector3d$$Type): $Vec
 public "lerp"(arg0: $Vector3dc$$Type, arg1: double): $Vector3d
 public "maxComponent"(): integer
 public "minComponent"(): integer
-public "orthogonalize"(arg0: $Vector3dc$$Type): $Vector3d
 public "orthogonalize"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
-public "orthogonalizeUnit"(arg0: $Vector3dc$$Type): $Vector3d
+public "orthogonalize"(arg0: $Vector3dc$$Type): $Vector3d
 public "orthogonalizeUnit"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
+public "orthogonalizeUnit"(arg0: $Vector3dc$$Type): $Vector3d
 public "getf"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
 public "getf"(arg0: $ByteBuffer$$Type): $ByteBuffer
 get "finite"(): boolean
@@ -5363,134 +5363,134 @@ import {$Vector4i, $Vector4i$$Type} from "org.joml.Vector4i"
 import {$ObjectOutput$$Type} from "java.io.ObjectOutput"
 import {$Vector4d, $Vector4d$$Type} from "org.joml.Vector4d"
 import {$Externalizable$$Interface} from "java.io.Externalizable"
-import {$Vector2fc$$Type} from "org.joml.Vector2fc"
 import {$FloatBuffer, $FloatBuffer$$Type} from "java.nio.FloatBuffer"
+import {$Vector2fc$$Type} from "org.joml.Vector2fc"
 import {$Vector4ic$$Type} from "org.joml.Vector4ic"
-import {$Vector3ic$$Type} from "org.joml.Vector3ic"
 import {$Matrix4fc$$Type} from "org.joml.Matrix4fc"
+import {$Vector3ic$$Type} from "org.joml.Vector3ic"
 import {$Vector2ic$$Type} from "org.joml.Vector2ic"
 import {$Vector4dc$$Type} from "org.joml.Vector4dc"
-import {$Vector4fc, $Vector4fc$$Type, $Vector4fc$$Interface} from "org.joml.Vector4fc"
 import {$NumberFormat$$Type} from "java.text.NumberFormat"
-import {$Vector3fc$$Type} from "org.joml.Vector3fc"
+import {$Vector4fc, $Vector4fc$$Type, $Vector4fc$$Interface} from "org.joml.Vector4fc"
 import {$Cloneable$$Interface} from "java.lang.Cloneable"
+import {$Vector3fc$$Type} from "org.joml.Vector3fc"
 import {$ByteBuffer, $ByteBuffer$$Type} from "java.nio.ByteBuffer"
 
 export class $Vector4f implements $Externalizable$$Interface, $Cloneable$$Interface, $Vector4fc$$Interface {
 constructor()
-constructor(arg0: float, arg1: float, arg2: float, arg3: float)
-constructor(arg0: float)
-constructor(arg0: $Vector3fc$$Type, arg1: float)
-constructor(arg0: $Vector2ic$$Type, arg1: float, arg2: float)
-constructor(arg0: $Vector2fc$$Type, arg1: float, arg2: float)
-constructor(arg0: integer, arg1: $FloatBuffer$$Type)
-constructor(arg0: $FloatBuffer$$Type)
 constructor(arg0: integer, arg1: $ByteBuffer$$Type)
 constructor(arg0: $ByteBuffer$$Type)
 constructor(arg0: (float)[])
+constructor(arg0: float, arg1: float, arg2: float, arg3: float)
+constructor(arg0: integer, arg1: $FloatBuffer$$Type)
+constructor(arg0: $FloatBuffer$$Type)
 constructor(arg0: $Vector4ic$$Type)
 constructor(arg0: $Vector3ic$$Type, arg1: float)
 constructor(arg0: $Vector4fc$$Type)
+constructor(arg0: $Vector2fc$$Type, arg1: float, arg2: float)
+constructor(arg0: float)
+constructor(arg0: $Vector2ic$$Type, arg1: float, arg2: float)
+constructor(arg0: $Vector3fc$$Type, arg1: float)
 
+public "div"(arg0: float, arg1: $Vector4f$$Type): $Vector4f
+public "div"(arg0: $Vector4fc$$Type): $Vector4f
+public "div"(arg0: $Vector4fc$$Type, arg1: $Vector4f$$Type): $Vector4f
+public "div"(arg0: float): $Vector4f
+public "div"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Vector4f$$Type): $Vector4f
+public "div"(arg0: float, arg1: float, arg2: float, arg3: float): $Vector4f
+public "mulAdd"(arg0: $Vector4fc$$Type, arg1: $Vector4fc$$Type): $Vector4f
+public "mulAdd"(arg0: float, arg1: $Vector4fc$$Type): $Vector4f
+public "mulAdd"(arg0: $Vector4fc$$Type, arg1: $Vector4fc$$Type, arg2: $Vector4f$$Type): $Vector4f
+public "mulAdd"(arg0: float, arg1: $Vector4fc$$Type, arg2: $Vector4f$$Type): $Vector4f
+public "writeExternal"(arg0: $ObjectOutput$$Type): void
+public "readExternal"(arg0: $ObjectInput$$Type): void
+public "absolute"(arg0: $Vector4f$$Type): $Vector4f
+public "absolute"(): $Vector4f
+public "normalize"(arg0: $Vector4f$$Type): $Vector4f
+public "normalize"(arg0: float, arg1: $Vector4f$$Type): $Vector4f
+public "normalize"(): $Vector4f
+public "normalize"(arg0: float): $Vector4f
+public "sub"(arg0: $Vector4fc$$Type): $Vector4f
 public "sub"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Vector4f$$Type): $Vector4f
 public "sub"(arg0: $Vector4fc$$Type, arg1: $Vector4f$$Type): $Vector4f
 public "sub"(arg0: float, arg1: float, arg2: float, arg3: float): $Vector4f
-public "sub"(arg0: $Vector4fc$$Type): $Vector4f
-public "mul"(arg0: float, arg1: $Vector4f$$Type): $Vector4f
-public "mul"(arg0: $Matrix4x3fc$$Type, arg1: $Vector4f$$Type): $Vector4f
-public "mul"(arg0: $Matrix4x3fc$$Type): $Vector4f
-public "mul"(arg0: float, arg1: float, arg2: float, arg3: float): $Vector4f
-public "mul"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Vector4f$$Type): $Vector4f
-public "mul"(arg0: float): $Vector4f
-public "mul"(arg0: $Vector4fc$$Type): $Vector4f
-public "mul"(arg0: $Vector4fc$$Type, arg1: $Vector4f$$Type): $Vector4f
-public "mul"(arg0: $Matrix4fc$$Type): $Vector4f
-public "mul"(arg0: $Matrix4fc$$Type, arg1: $Vector4f$$Type): $Vector4f
 public "negate"(arg0: $Vector4f$$Type): $Vector4f
 public "negate"(): $Vector4f
-public "normalize"(arg0: $Vector4f$$Type): $Vector4f
-public "normalize"(): $Vector4f
-public "normalize"(arg0: float): $Vector4f
-public "normalize"(arg0: float, arg1: $Vector4f$$Type): $Vector4f
-public "absolute"(): $Vector4f
-public "absolute"(arg0: $Vector4f$$Type): $Vector4f
-public "mulAdd"(arg0: float, arg1: $Vector4fc$$Type): $Vector4f
-public "mulAdd"(arg0: float, arg1: $Vector4fc$$Type, arg2: $Vector4f$$Type): $Vector4f
-public "mulAdd"(arg0: $Vector4fc$$Type, arg1: $Vector4fc$$Type, arg2: $Vector4f$$Type): $Vector4f
-public "mulAdd"(arg0: $Vector4fc$$Type, arg1: $Vector4fc$$Type): $Vector4f
-public "div"(arg0: float): $Vector4f
-public "div"(arg0: float, arg1: float, arg2: float, arg3: float): $Vector4f
-public "div"(arg0: float, arg1: $Vector4f$$Type): $Vector4f
-public "div"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Vector4f$$Type): $Vector4f
-public "div"(arg0: $Vector4fc$$Type, arg1: $Vector4f$$Type): $Vector4f
-public "div"(arg0: $Vector4fc$$Type): $Vector4f
-public "writeExternal"(arg0: $ObjectOutput$$Type): void
-public "readExternal"(arg0: $ObjectInput$$Type): void
-public "get"(arg0: integer): float
-public "get"(arg0: $FloatBuffer$$Type): $FloatBuffer
-public "get"(arg0: $Vector4d$$Type): $Vector4d
-public "get"(arg0: integer, arg1: $Vector4i$$Type): $Vector4i
-public "get"(arg0: $Vector4f$$Type): $Vector4f
 public "get"(arg0: $ByteBuffer$$Type): $ByteBuffer
 public "get"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
+public "get"(arg0: $Vector4d$$Type): $Vector4d
+public "get"(arg0: $Vector4f$$Type): $Vector4f
+public "get"(arg0: integer, arg1: $Vector4i$$Type): $Vector4i
+public "get"(arg0: integer): float
+public "get"(arg0: $FloatBuffer$$Type): $FloatBuffer
 public "get"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
 public "equals"(arg0: $Vector4fc$$Type, arg1: float): boolean
-public "equals"(arg0: any): boolean
 public "equals"(arg0: float, arg1: float, arg2: float, arg3: float): boolean
-public static "length"(arg0: float, arg1: float, arg2: float, arg3: float): float
+public "equals"(arg0: any): boolean
 public "length"(): float
+public static "length"(arg0: float, arg1: float, arg2: float, arg3: float): float
 public "toString"(arg0: $NumberFormat$$Type): StringJS
 public "toString"(): StringJS
 public "hashCode"(): integer
 public "clone"(): any
 public "min"(arg0: $Vector4fc$$Type): $Vector4f
 public "min"(arg0: $Vector4fc$$Type, arg1: $Vector4f$$Type): $Vector4f
-public "max"(arg0: $Vector4fc$$Type, arg1: $Vector4f$$Type): $Vector4f
 public "max"(arg0: $Vector4fc$$Type): $Vector4f
+public "max"(arg0: $Vector4fc$$Type, arg1: $Vector4f$$Type): $Vector4f
 public "floor"(arg0: $Vector4f$$Type): $Vector4f
 public "floor"(): $Vector4f
-public "ceil"(arg0: $Vector4f$$Type): $Vector4f
 public "ceil"(): $Vector4f
-public "round"(arg0: $Vector4f$$Type): $Vector4f
+public "ceil"(arg0: $Vector4f$$Type): $Vector4f
 public "round"(): $Vector4f
-public "fma"(arg0: $Vector4fc$$Type, arg1: $Vector4fc$$Type, arg2: $Vector4f$$Type): $Vector4f
-public "fma"(arg0: $Vector4fc$$Type, arg1: $Vector4fc$$Type): $Vector4f
+public "round"(arg0: $Vector4f$$Type): $Vector4f
 public "fma"(arg0: float, arg1: $Vector4fc$$Type, arg2: $Vector4f$$Type): $Vector4f
 public "fma"(arg0: float, arg1: $Vector4fc$$Type): $Vector4f
+public "fma"(arg0: $Vector4fc$$Type, arg1: $Vector4fc$$Type): $Vector4f
+public "fma"(arg0: $Vector4fc$$Type, arg1: $Vector4fc$$Type, arg2: $Vector4f$$Type): $Vector4f
 public "isFinite"(): boolean
-public "add"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Vector4f$$Type): $Vector4f
-public "add"(arg0: float, arg1: float, arg2: float, arg3: float): $Vector4f
 public "add"(arg0: $Vector4fc$$Type, arg1: $Vector4f$$Type): $Vector4f
+public "add"(arg0: float, arg1: float, arg2: float, arg3: float): $Vector4f
 public "add"(arg0: $Vector4fc$$Type): $Vector4f
+public "add"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Vector4f$$Type): $Vector4f
 public "x"(): float
-public "dot"(arg0: float, arg1: float, arg2: float, arg3: float): float
 public "dot"(arg0: $Vector4fc$$Type): float
-public "set"(arg0: integer, arg1: $FloatBuffer$$Type): $Vector4f
-public "set"(arg0: (float)[]): $Vector4f
+public "dot"(arg0: float, arg1: float, arg2: float, arg3: float): float
+public "set"(arg0: double): $Vector4f
 public "set"(arg0: double, arg1: double, arg2: double, arg3: double): $Vector4f
+public "set"(arg0: float, arg1: float, arg2: float): $Vector4f
 public "set"(arg0: $FloatBuffer$$Type): $Vector4f
 public "set"(arg0: integer, arg1: $ByteBuffer$$Type): $Vector4f
 public "set"(arg0: $ByteBuffer$$Type): $Vector4f
-public "set"(arg0: $Vector2fc$$Type, arg1: float, arg2: float): $Vector4f
-public "set"(arg0: $Vector3ic$$Type, arg1: float): $Vector4f
-public "set"(arg0: $Vector3fc$$Type, arg1: float): $Vector4f
-public "set"(arg0: $Vector4fc$$Type): $Vector4f
+public "set"(arg0: (float)[]): $Vector4f
+public "set"(arg0: integer, arg1: $FloatBuffer$$Type): $Vector4f
 public "set"(arg0: $Vector4ic$$Type): $Vector4f
 public "set"(arg0: $Vector4dc$$Type): $Vector4f
+public "set"(arg0: $Vector3fc$$Type, arg1: float): $Vector4f
+public "set"(arg0: $Vector3ic$$Type, arg1: float): $Vector4f
+public "set"(arg0: $Vector2fc$$Type, arg1: float, arg2: float): $Vector4f
 public "set"(arg0: float, arg1: float, arg2: float, arg3: float): $Vector4f
 public "set"(arg0: float): $Vector4f
 public "set"(arg0: $Vector2ic$$Type, arg1: float, arg2: float): $Vector4f
-public "set"(arg0: float, arg1: float, arg2: float): $Vector4f
-public "set"(arg0: double): $Vector4f
+public "set"(arg0: $Vector4fc$$Type): $Vector4f
 public "z"(): float
 public "zero"(): $Vector4f
 public "w"(): float
 public "y"(): float
+public "distance"(arg0: float, arg1: float, arg2: float, arg3: float): float
 public "distance"(arg0: $Vector4fc$$Type): float
 public static "distance"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float): float
-public "distance"(arg0: float, arg1: float, arg2: float, arg3: float): float
-public "rotate"(arg0: $Quaternionfc$$Type): $Vector4f
 public "rotate"(arg0: $Quaternionfc$$Type, arg1: $Vector4f$$Type): $Vector4f
+public "rotate"(arg0: $Quaternionfc$$Type): $Vector4f
+public "mul"(arg0: $Vector4fc$$Type): $Vector4f
+public "mul"(arg0: float): $Vector4f
+public "mul"(arg0: $Matrix4x3fc$$Type): $Vector4f
+public "mul"(arg0: $Matrix4fc$$Type, arg1: $Vector4f$$Type): $Vector4f
+public "mul"(arg0: $Matrix4fc$$Type): $Vector4f
+public "mul"(arg0: $Vector4fc$$Type, arg1: $Vector4f$$Type): $Vector4f
+public "mul"(arg0: $Matrix4x3fc$$Type, arg1: $Vector4f$$Type): $Vector4f
+public "mul"(arg0: float, arg1: $Vector4f$$Type): $Vector4f
+public "mul"(arg0: float, arg1: float, arg2: float, arg3: float): $Vector4f
+public "mul"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Vector4f$$Type): $Vector4f
 public "angle"(arg0: $Vector4fc$$Type): float
 public "mulAffine"(arg0: $Matrix4fc$$Type, arg1: $Vector4f$$Type): $Vector4f
 public "mulAffineTranspose"(arg0: $Matrix4fc$$Type, arg1: $Vector4f$$Type): $Vector4f
@@ -5510,19 +5510,19 @@ public "rotateX"(arg0: float): $Vector4f
 public "rotateX"(arg0: float, arg1: $Vector4f$$Type): $Vector4f
 public "rotateY"(arg0: float, arg1: $Vector4f$$Type): $Vector4f
 public "rotateY"(arg0: float): $Vector4f
-public "rotateZ"(arg0: float): $Vector4f
 public "rotateZ"(arg0: float, arg1: $Vector4f$$Type): $Vector4f
+public "rotateZ"(arg0: float): $Vector4f
 public static "lengthSquared"(arg0: integer, arg1: integer, arg2: integer, arg3: integer): float
 public static "lengthSquared"(arg0: float, arg1: float, arg2: float, arg3: float): float
 public "lengthSquared"(): float
 public "distanceSquared"(arg0: $Vector4fc$$Type): float
-public "distanceSquared"(arg0: float, arg1: float, arg2: float, arg3: float): float
 public static "distanceSquared"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float): float
+public "distanceSquared"(arg0: float, arg1: float, arg2: float, arg3: float): float
 public "angleCos"(arg0: $Vector4fc$$Type): float
 public "smoothStep"(arg0: $Vector4fc$$Type, arg1: float, arg2: $Vector4f$$Type): $Vector4f
 public "hermite"(arg0: $Vector4fc$$Type, arg1: $Vector4fc$$Type, arg2: $Vector4fc$$Type, arg3: float, arg4: $Vector4f$$Type): $Vector4f
-public "lerp"(arg0: $Vector4fc$$Type, arg1: float): $Vector4f
 public "lerp"(arg0: $Vector4fc$$Type, arg1: float, arg2: $Vector4f$$Type): $Vector4f
+public "lerp"(arg0: $Vector4fc$$Type, arg1: float): $Vector4f
 public "maxComponent"(): integer
 public "minComponent"(): integer
 get "finite"(): boolean
@@ -5546,101 +5546,101 @@ import {$Vector4ic, $Vector4ic$$Type, $Vector4ic$$Interface} from "org.joml.Vect
 import {$Vector3ic$$Type} from "org.joml.Vector3ic"
 import {$Vector2ic$$Type} from "org.joml.Vector2ic"
 import {$Vector4dc$$Type} from "org.joml.Vector4dc"
-import {$Vector4fc$$Type} from "org.joml.Vector4fc"
 import {$NumberFormat$$Type} from "java.text.NumberFormat"
-import {$Vector3fc$$Type} from "org.joml.Vector3fc"
+import {$Vector4fc$$Type} from "org.joml.Vector4fc"
 import {$Cloneable$$Interface} from "java.lang.Cloneable"
+import {$Vector3fc$$Type} from "org.joml.Vector3fc"
 import {$ByteBuffer, $ByteBuffer$$Type} from "java.nio.ByteBuffer"
 
 export class $Vector4i implements $Externalizable$$Interface, $Cloneable$$Interface, $Vector4ic$$Interface {
 constructor()
-constructor(arg0: integer)
-constructor(arg0: integer, arg1: $IntBuffer$$Type)
-constructor(arg0: $Vector4dc$$Type, arg1: integer)
-constructor(arg0: $Vector4fc$$Type, arg1: integer)
-constructor(arg0: $IntBuffer$$Type)
-constructor(arg0: $ByteBuffer$$Type)
-constructor(arg0: (integer)[])
-constructor(arg0: integer, arg1: integer, arg2: integer, arg3: integer)
-constructor(arg0: $Vector3ic$$Type, arg1: integer)
 constructor(arg0: $Vector2ic$$Type, arg1: integer, arg2: integer)
+constructor(arg0: integer)
+constructor(arg0: integer, arg1: integer, arg2: integer, arg3: integer)
+constructor(arg0: (integer)[])
 constructor(arg0: $Vector3fc$$Type, arg1: float, arg2: integer)
-constructor(arg0: $Vector4ic$$Type)
+constructor(arg0: $Vector4fc$$Type, arg1: integer)
+constructor(arg0: $Vector4dc$$Type, arg1: integer)
+constructor(arg0: $ByteBuffer$$Type)
+constructor(arg0: integer, arg1: $IntBuffer$$Type)
+constructor(arg0: $IntBuffer$$Type)
 constructor(arg0: integer, arg1: $ByteBuffer$$Type)
+constructor(arg0: $Vector3ic$$Type, arg1: integer)
+constructor(arg0: $Vector4ic$$Type)
 
-public "gridDistance"(arg0: integer, arg1: integer, arg2: integer, arg3: integer): long
 public "gridDistance"(arg0: $Vector4ic$$Type): long
-public "sub"(arg0: integer, arg1: integer, arg2: integer, arg3: integer): $Vector4i
-public "sub"(arg0: $Vector4ic$$Type): $Vector4i
-public "sub"(arg0: $Vector4ic$$Type, arg1: $Vector4i$$Type): $Vector4i
-public "sub"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: $Vector4i$$Type): $Vector4i
-public "mul"(arg0: integer, arg1: $Vector4i$$Type): $Vector4i
-public "mul"(arg0: $Vector4ic$$Type, arg1: $Vector4i$$Type): $Vector4i
-public "mul"(arg0: $Vector4ic$$Type): $Vector4i
-public "mul"(arg0: integer): $Vector4i
-public "negate"(arg0: $Vector4i$$Type): $Vector4i
-public "negate"(): $Vector4i
-public "absolute"(arg0: $Vector4i$$Type): $Vector4i
-public "absolute"(): $Vector4i
+public "gridDistance"(arg0: integer, arg1: integer, arg2: integer, arg3: integer): long
 public "div"(arg0: float, arg1: $Vector4i$$Type): $Vector4i
-public "div"(arg0: $Vector4ic$$Type): $Vector4i
-public "div"(arg0: float): $Vector4i
 public "div"(arg0: integer): $Vector4i
 public "div"(arg0: integer, arg1: $Vector4i$$Type): $Vector4i
+public "div"(arg0: float): $Vector4i
 public "div"(arg0: $Vector4ic$$Type, arg1: $Vector4i$$Type): $Vector4i
+public "div"(arg0: $Vector4ic$$Type): $Vector4i
 public "writeExternal"(arg0: $ObjectOutput$$Type): void
 public "readExternal"(arg0: $ObjectInput$$Type): void
-public "get"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
-public "get"(arg0: $ByteBuffer$$Type): $ByteBuffer
+public "absolute"(): $Vector4i
+public "absolute"(arg0: $Vector4i$$Type): $Vector4i
+public "sub"(arg0: $Vector4ic$$Type): $Vector4i
+public "sub"(arg0: $Vector4ic$$Type, arg1: $Vector4i$$Type): $Vector4i
+public "sub"(arg0: integer, arg1: integer, arg2: integer, arg3: integer): $Vector4i
+public "sub"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: $Vector4i$$Type): $Vector4i
+public "negate"(arg0: $Vector4i$$Type): $Vector4i
+public "negate"(): $Vector4i
 public "get"(arg0: $IntBuffer$$Type): $IntBuffer
+public "get"(arg0: $ByteBuffer$$Type): $ByteBuffer
 public "get"(arg0: integer, arg1: $IntBuffer$$Type): $IntBuffer
+public "get"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
 public "get"(arg0: integer): integer
-public "equals"(arg0: any): boolean
 public "equals"(arg0: integer, arg1: integer, arg2: integer, arg3: integer): boolean
+public "equals"(arg0: any): boolean
 public "length"(): double
 public static "length"(arg0: integer, arg1: integer, arg2: integer, arg3: integer): double
-public "toString"(arg0: $NumberFormat$$Type): StringJS
 public "toString"(): StringJS
+public "toString"(arg0: $NumberFormat$$Type): StringJS
 public "hashCode"(): integer
 public "clone"(): any
-public "min"(arg0: $Vector4ic$$Type): $Vector4i
 public "min"(arg0: $Vector4ic$$Type, arg1: $Vector4i$$Type): $Vector4i
-public "max"(arg0: $Vector4ic$$Type): $Vector4i
+public "min"(arg0: $Vector4ic$$Type): $Vector4i
 public "max"(arg0: $Vector4ic$$Type, arg1: $Vector4i$$Type): $Vector4i
-public "add"(arg0: integer, arg1: integer, arg2: integer, arg3: integer): $Vector4i
+public "max"(arg0: $Vector4ic$$Type): $Vector4i
 public "add"(arg0: $Vector4ic$$Type, arg1: $Vector4i$$Type): $Vector4i
 public "add"(arg0: $Vector4ic$$Type): $Vector4i
 public "add"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: $Vector4i$$Type): $Vector4i
+public "add"(arg0: integer, arg1: integer, arg2: integer, arg3: integer): $Vector4i
 public "x"(): integer
 public "dot"(arg0: $Vector4ic$$Type): integer
-public "set"(arg0: $Vector2ic$$Type, arg1: integer, arg2: integer): $Vector4i
-public "set"(arg0: integer, arg1: $IntBuffer$$Type): $Vector4i
-public "set"(arg0: $IntBuffer$$Type): $Vector4i
-public "set"(arg0: integer): $Vector4i
-public "set"(arg0: integer, arg1: integer, arg2: integer, arg3: integer): $Vector4i
-public "set"(arg0: (integer)[]): $Vector4i
 public "set"(arg0: $ByteBuffer$$Type): $Vector4i
+public "set"(arg0: (integer)[]): $Vector4i
+public "set"(arg0: integer, arg1: $IntBuffer$$Type): $Vector4i
+public "set"(arg0: integer, arg1: integer, arg2: integer, arg3: integer): $Vector4i
 public "set"(arg0: integer, arg1: $ByteBuffer$$Type): $Vector4i
+public "set"(arg0: $Vector4ic$$Type): $Vector4i
+public "set"(arg0: $IntBuffer$$Type): $Vector4i
 public "set"(arg0: $Vector4dc$$Type): $Vector4i
-public "set"(arg0: $Vector3ic$$Type, arg1: integer): $Vector4i
 public "set"(arg0: $Vector4dc$$Type, arg1: integer): $Vector4i
 public "set"(arg0: $Vector4fc$$Type, arg1: integer): $Vector4i
-public "set"(arg0: $Vector4ic$$Type): $Vector4i
+public "set"(arg0: $Vector3ic$$Type, arg1: integer): $Vector4i
+public "set"(arg0: $Vector2ic$$Type, arg1: integer, arg2: integer): $Vector4i
+public "set"(arg0: integer): $Vector4i
 public "z"(): integer
 public "zero"(): $Vector4i
 public "w"(): integer
 public "y"(): integer
-public static "distance"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: integer, arg5: integer, arg6: integer, arg7: integer): double
 public "distance"(arg0: integer, arg1: integer, arg2: integer, arg3: integer): double
 public "distance"(arg0: $Vector4ic$$Type): double
+public static "distance"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: integer, arg5: integer, arg6: integer, arg7: integer): double
+public "mul"(arg0: integer, arg1: $Vector4i$$Type): $Vector4i
+public "mul"(arg0: $Vector4ic$$Type): $Vector4i
+public "mul"(arg0: $Vector4ic$$Type, arg1: $Vector4i$$Type): $Vector4i
+public "mul"(arg0: integer): $Vector4i
 public "setFromAddress"(arg0: long): $Vector4i
 public "setComponent"(arg0: integer, arg1: integer): $Vector4i
 public "getToAddress"(arg0: long): $Vector4ic
 public static "lengthSquared"(arg0: integer, arg1: integer, arg2: integer, arg3: integer): long
 public "lengthSquared"(): long
-public "distanceSquared"(arg0: $Vector4ic$$Type): integer
 public static "distanceSquared"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: integer, arg5: integer, arg6: integer, arg7: integer): long
 public "distanceSquared"(arg0: integer, arg1: integer, arg2: integer, arg3: integer): integer
+public "distanceSquared"(arg0: $Vector4ic$$Type): integer
 public "maxComponent"(): integer
 public "minComponent"(): integer
 set "fromAddress"(value: long)
@@ -5662,153 +5662,153 @@ import {$Matrix4dc$$Type} from "org.joml.Matrix4dc"
 import {$ObjectOutput$$Type} from "java.io.ObjectOutput"
 import {$Vector3d, $Vector3d$$Type} from "org.joml.Vector3d"
 import {$Vector4ic$$Type} from "org.joml.Vector4ic"
-import {$Vector3ic$$Type} from "org.joml.Vector3ic"
 import {$Matrix4fc$$Type} from "org.joml.Matrix4fc"
+import {$Vector3ic$$Type} from "org.joml.Vector3ic"
 import {$Vector2ic$$Type} from "org.joml.Vector2ic"
 import {$Cloneable$$Interface} from "java.lang.Cloneable"
 import {$Quaterniondc$$Type} from "org.joml.Quaterniondc"
 import {$Vector4f, $Vector4f$$Type} from "org.joml.Vector4f"
-import {$Vector4i, $Vector4i$$Type} from "org.joml.Vector4i"
 import {$DoubleBuffer, $DoubleBuffer$$Type} from "java.nio.DoubleBuffer"
+import {$Vector4i, $Vector4i$$Type} from "org.joml.Vector4i"
 import {$Externalizable$$Interface} from "java.io.Externalizable"
-import {$Vector2fc$$Type} from "org.joml.Vector2fc"
 import {$FloatBuffer, $FloatBuffer$$Type} from "java.nio.FloatBuffer"
+import {$Vector2fc$$Type} from "org.joml.Vector2fc"
 import {$Vector4dc, $Vector4dc$$Type, $Vector4dc$$Interface} from "org.joml.Vector4dc"
 import {$Vector3dc$$Type} from "org.joml.Vector3dc"
-import {$Vector4fc$$Type} from "org.joml.Vector4fc"
-import {$Vector2dc$$Type} from "org.joml.Vector2dc"
 import {$NumberFormat$$Type} from "java.text.NumberFormat"
+import {$Vector2dc$$Type} from "org.joml.Vector2dc"
+import {$Vector4fc$$Type} from "org.joml.Vector4fc"
 import {$Vector3fc$$Type} from "org.joml.Vector3fc"
 import {$ByteBuffer, $ByteBuffer$$Type} from "java.nio.ByteBuffer"
 
 export class $Vector4d implements $Externalizable$$Interface, $Cloneable$$Interface, $Vector4dc$$Interface {
-constructor(arg0: (double)[])
-constructor(arg0: (float)[])
-constructor(arg0: double, arg1: double, arg2: double, arg3: double)
-constructor(arg0: $Vector2fc$$Type, arg1: double, arg2: double)
-constructor(arg0: $Vector3fc$$Type, arg1: double)
-constructor(arg0: $DoubleBuffer$$Type)
-constructor(arg0: integer, arg1: $ByteBuffer$$Type)
-constructor(arg0: $ByteBuffer$$Type)
-constructor(arg0: integer, arg1: $DoubleBuffer$$Type)
-constructor(arg0: $Vector3ic$$Type, arg1: double)
-constructor(arg0: $Vector3dc$$Type, arg1: double)
-constructor(arg0: $Vector4ic$$Type)
-constructor(arg0: $Vector4dc$$Type)
 constructor()
+constructor(arg0: (double)[])
+constructor(arg0: $Vector2ic$$Type, arg1: double, arg2: double)
+constructor(arg0: $Vector3fc$$Type, arg1: double)
+constructor(arg0: $ByteBuffer$$Type)
+constructor(arg0: integer, arg1: $ByteBuffer$$Type)
+constructor(arg0: $DoubleBuffer$$Type)
+constructor(arg0: $Vector2fc$$Type, arg1: double, arg2: double)
+constructor(arg0: double, arg1: double, arg2: double, arg3: double)
 constructor(arg0: $Vector4fc$$Type)
 constructor(arg0: double)
-constructor(arg0: $Vector2ic$$Type, arg1: double, arg2: double)
+constructor(arg0: (float)[])
+constructor(arg0: $Vector3ic$$Type, arg1: double)
+constructor(arg0: $Vector4ic$$Type)
+constructor(arg0: $Vector3dc$$Type, arg1: double)
+constructor(arg0: $Vector4dc$$Type)
 constructor(arg0: $Vector2dc$$Type, arg1: double, arg2: double)
+constructor(arg0: integer, arg1: $DoubleBuffer$$Type)
 
-public "sub"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Vector4d$$Type): $Vector4d
-public "sub"(arg0: $Vector4dc$$Type): $Vector4d
-public "sub"(arg0: double, arg1: double, arg2: double, arg3: double): $Vector4d
-public "sub"(arg0: $Vector4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
-public "sub"(arg0: $Vector4fc$$Type): $Vector4d
-public "sub"(arg0: $Vector4fc$$Type, arg1: $Vector4d$$Type): $Vector4d
-public "mul"(arg0: $Matrix4x3fc$$Type): $Vector4d
-public "mul"(arg0: $Matrix4x3dc$$Type, arg1: $Vector4d$$Type): $Vector4d
-public "mul"(arg0: $Matrix4x3dc$$Type): $Vector4d
-public "mul"(arg0: $Matrix4x3fc$$Type, arg1: $Vector4d$$Type): $Vector4d
-public "mul"(arg0: $Matrix4fc$$Type): $Vector4d
-public "mul"(arg0: $Matrix4fc$$Type, arg1: $Vector4d$$Type): $Vector4d
-public "mul"(arg0: double): $Vector4d
-public "mul"(arg0: double, arg1: $Vector4d$$Type): $Vector4d
-public "mul"(arg0: $Vector4dc$$Type): $Vector4d
-public "mul"(arg0: $Vector4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
-public "mul"(arg0: $Matrix4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
-public "mul"(arg0: $Matrix4dc$$Type): $Vector4d
-public "mul"(arg0: $Vector4fc$$Type, arg1: $Vector4d$$Type): $Vector4d
-public "mul"(arg0: $Vector4fc$$Type): $Vector4d
-public "negate"(): $Vector4d
-public "negate"(arg0: $Vector4d$$Type): $Vector4d
-public "normalize"(arg0: double, arg1: $Vector4d$$Type): $Vector4d
-public "normalize"(arg0: $Vector4d$$Type): $Vector4d
-public "normalize"(): $Vector4d
-public "normalize"(arg0: double): $Vector4d
-public "absolute"(arg0: $Vector4d$$Type): $Vector4d
-public "absolute"(): $Vector4d
-public "mulAdd"(arg0: $Vector4dc$$Type, arg1: $Vector4dc$$Type): $Vector4d
-public "mulAdd"(arg0: $Vector4dc$$Type, arg1: $Vector4dc$$Type, arg2: $Vector4d$$Type): $Vector4d
-public "mulAdd"(arg0: double, arg1: $Vector4dc$$Type, arg2: $Vector4d$$Type): $Vector4d
-public "mulAdd"(arg0: double, arg1: $Vector4dc$$Type): $Vector4d
 public "div"(arg0: $Vector4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
 public "div"(arg0: $Vector4dc$$Type): $Vector4d
-public "div"(arg0: double): $Vector4d
 public "div"(arg0: double, arg1: $Vector4d$$Type): $Vector4d
+public "div"(arg0: double): $Vector4d
+public "mulAdd"(arg0: $Vector4dc$$Type, arg1: $Vector4dc$$Type): $Vector4d
+public "mulAdd"(arg0: double, arg1: $Vector4dc$$Type): $Vector4d
+public "mulAdd"(arg0: double, arg1: $Vector4dc$$Type, arg2: $Vector4d$$Type): $Vector4d
+public "mulAdd"(arg0: $Vector4dc$$Type, arg1: $Vector4dc$$Type, arg2: $Vector4d$$Type): $Vector4d
 public "writeExternal"(arg0: $ObjectOutput$$Type): void
 public "readExternal"(arg0: $ObjectInput$$Type): void
-public "get"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
-public "get"(arg0: $DoubleBuffer$$Type): $DoubleBuffer
-public "get"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
-public "get"(arg0: $FloatBuffer$$Type): $FloatBuffer
+public "absolute"(arg0: $Vector4d$$Type): $Vector4d
+public "absolute"(): $Vector4d
+public "normalize"(arg0: $Vector4d$$Type): $Vector4d
+public "normalize"(arg0: double): $Vector4d
+public "normalize"(arg0: double, arg1: $Vector4d$$Type): $Vector4d
+public "normalize"(): $Vector4d
+public "sub"(arg0: $Vector4fc$$Type): $Vector4d
+public "sub"(arg0: double, arg1: double, arg2: double, arg3: double): $Vector4d
+public "sub"(arg0: $Vector4fc$$Type, arg1: $Vector4d$$Type): $Vector4d
+public "sub"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Vector4d$$Type): $Vector4d
+public "sub"(arg0: $Vector4dc$$Type): $Vector4d
+public "sub"(arg0: $Vector4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
+public "negate"(): $Vector4d
+public "negate"(arg0: $Vector4d$$Type): $Vector4d
 public "get"(arg0: integer, arg1: $DoubleBuffer$$Type): $DoubleBuffer
+public "get"(arg0: $FloatBuffer$$Type): $FloatBuffer
+public "get"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
+public "get"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
 public "get"(arg0: $Vector4d$$Type): $Vector4d
 public "get"(arg0: $Vector4f$$Type): $Vector4f
 public "get"(arg0: integer, arg1: $Vector4i$$Type): $Vector4i
 public "get"(arg0: integer): double
 public "get"(arg0: $ByteBuffer$$Type): $ByteBuffer
+public "get"(arg0: $DoubleBuffer$$Type): $DoubleBuffer
+public "equals"(arg0: double, arg1: double, arg2: double, arg3: double): boolean
 public "equals"(arg0: $Vector4dc$$Type, arg1: double): boolean
 public "equals"(arg0: any): boolean
-public "equals"(arg0: double, arg1: double, arg2: double, arg3: double): boolean
-public "length"(): double
 public static "length"(arg0: double, arg1: double, arg2: double, arg3: double): double
-public "toString"(arg0: $NumberFormat$$Type): StringJS
+public "length"(): double
 public "toString"(): StringJS
+public "toString"(arg0: $NumberFormat$$Type): StringJS
 public "hashCode"(): integer
 public "clone"(): any
 public "min"(arg0: $Vector4dc$$Type): $Vector4d
 public "min"(arg0: $Vector4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
-public "max"(arg0: $Vector4dc$$Type): $Vector4d
 public "max"(arg0: $Vector4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
-public "floor"(arg0: $Vector4d$$Type): $Vector4d
+public "max"(arg0: $Vector4dc$$Type): $Vector4d
 public "floor"(): $Vector4d
+public "floor"(arg0: $Vector4d$$Type): $Vector4d
 public "ceil"(arg0: $Vector4d$$Type): $Vector4d
 public "ceil"(): $Vector4d
-public "round"(arg0: $Vector4d$$Type): $Vector4d
 public "round"(): $Vector4d
+public "round"(arg0: $Vector4d$$Type): $Vector4d
 public "fma"(arg0: double, arg1: $Vector4dc$$Type, arg2: $Vector4d$$Type): $Vector4d
-public "fma"(arg0: double, arg1: $Vector4dc$$Type): $Vector4d
 public "fma"(arg0: $Vector4dc$$Type, arg1: $Vector4dc$$Type, arg2: $Vector4d$$Type): $Vector4d
+public "fma"(arg0: double, arg1: $Vector4dc$$Type): $Vector4d
 public "fma"(arg0: $Vector4dc$$Type, arg1: $Vector4dc$$Type): $Vector4d
 public "isFinite"(): boolean
-public "add"(arg0: $Vector4fc$$Type): $Vector4d
-public "add"(arg0: double, arg1: double, arg2: double, arg3: double): $Vector4d
-public "add"(arg0: $Vector4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
-public "add"(arg0: $Vector4fc$$Type, arg1: $Vector4d$$Type): $Vector4d
 public "add"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Vector4d$$Type): $Vector4d
+public "add"(arg0: $Vector4fc$$Type): $Vector4d
+public "add"(arg0: $Vector4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
 public "add"(arg0: $Vector4dc$$Type): $Vector4d
+public "add"(arg0: double, arg1: double, arg2: double, arg3: double): $Vector4d
+public "add"(arg0: $Vector4fc$$Type, arg1: $Vector4d$$Type): $Vector4d
 public "x"(): double
 public "dot"(arg0: double, arg1: double, arg2: double, arg3: double): double
 public "dot"(arg0: $Vector4dc$$Type): double
-public "set"(arg0: integer, arg1: $DoubleBuffer$$Type): $Vector4d
-public "set"(arg0: $DoubleBuffer$$Type): $Vector4d
-public "set"(arg0: $Vector2fc$$Type, arg1: double, arg2: double): $Vector4d
-public "set"(arg0: $Vector2ic$$Type, arg1: double, arg2: double): $Vector4d
-public "set"(arg0: double): $Vector4d
-public "set"(arg0: double, arg1: double, arg2: double, arg3: double): $Vector4d
-public "set"(arg0: double, arg1: double, arg2: double): $Vector4d
-public "set"(arg0: (double)[]): $Vector4d
-public "set"(arg0: (float)[]): $Vector4d
 public "set"(arg0: $ByteBuffer$$Type): $Vector4d
 public "set"(arg0: integer, arg1: $ByteBuffer$$Type): $Vector4d
+public "set"(arg0: integer, arg1: $DoubleBuffer$$Type): $Vector4d
+public "set"(arg0: $DoubleBuffer$$Type): $Vector4d
+public "set"(arg0: (double)[]): $Vector4d
+public "set"(arg0: (float)[]): $Vector4d
+public "set"(arg0: double, arg1: double, arg2: double): $Vector4d
+public "set"(arg0: double, arg1: double, arg2: double, arg3: double): $Vector4d
+public "set"(arg0: $Vector3ic$$Type, arg1: double): $Vector4d
 public "set"(arg0: $Vector3dc$$Type, arg1: double): $Vector4d
 public "set"(arg0: $Vector4ic$$Type): $Vector4d
 public "set"(arg0: $Vector4fc$$Type): $Vector4d
 public "set"(arg0: $Vector4dc$$Type): $Vector4d
+public "set"(arg0: $Vector2fc$$Type, arg1: double, arg2: double): $Vector4d
+public "set"(arg0: double): $Vector4d
+public "set"(arg0: $Vector2ic$$Type, arg1: double, arg2: double): $Vector4d
 public "set"(arg0: $Vector2dc$$Type, arg1: double, arg2: double): $Vector4d
 public "set"(arg0: $Vector3fc$$Type, arg1: double): $Vector4d
-public "set"(arg0: $Vector3ic$$Type, arg1: double): $Vector4d
 public "z"(): double
 public "zero"(): $Vector4d
 public "w"(): double
 public "y"(): double
-public static "distance"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double): double
-public "distance"(arg0: double, arg1: double, arg2: double, arg3: double): double
 public "distance"(arg0: $Vector4dc$$Type): double
-public "rotate"(arg0: $Quaterniondc$$Type, arg1: $Vector4d$$Type): $Vector4d
+public "distance"(arg0: double, arg1: double, arg2: double, arg3: double): double
+public static "distance"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double): double
 public "rotate"(arg0: $Quaterniondc$$Type): $Vector4d
+public "rotate"(arg0: $Quaterniondc$$Type, arg1: $Vector4d$$Type): $Vector4d
+public "mul"(arg0: $Matrix4x3fc$$Type): $Vector4d
+public "mul"(arg0: $Matrix4x3dc$$Type, arg1: $Vector4d$$Type): $Vector4d
+public "mul"(arg0: double, arg1: $Vector4d$$Type): $Vector4d
+public "mul"(arg0: $Matrix4fc$$Type): $Vector4d
+public "mul"(arg0: double): $Vector4d
+public "mul"(arg0: $Matrix4fc$$Type, arg1: $Vector4d$$Type): $Vector4d
+public "mul"(arg0: $Matrix4x3fc$$Type, arg1: $Vector4d$$Type): $Vector4d
+public "mul"(arg0: $Matrix4dc$$Type): $Vector4d
+public "mul"(arg0: $Vector4fc$$Type, arg1: $Vector4d$$Type): $Vector4d
+public "mul"(arg0: $Vector4fc$$Type): $Vector4d
+public "mul"(arg0: $Vector4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
+public "mul"(arg0: $Vector4dc$$Type): $Vector4d
+public "mul"(arg0: $Matrix4x3dc$$Type): $Vector4d
+public "mul"(arg0: $Matrix4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
 public "angle"(arg0: $Vector4dc$$Type): double
 public "mulAffine"(arg0: $Matrix4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
 public "mulAffineTranspose"(arg0: $Matrix4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
@@ -5817,29 +5817,29 @@ public "normalize3"(arg0: $Vector4d$$Type): $Vector4d
 public "setFromAddress"(arg0: long): $Vector4d
 public "setComponent"(arg0: integer, arg1: double): $Vector4d
 public "getToAddress"(arg0: long): $Vector4dc
-public "mulProject"(arg0: $Matrix4dc$$Type, arg1: $Vector3d$$Type): $Vector3d
-public "mulProject"(arg0: $Matrix4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
 public "mulProject"(arg0: $Matrix4dc$$Type): $Vector4d
+public "mulProject"(arg0: $Matrix4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
+public "mulProject"(arg0: $Matrix4dc$$Type, arg1: $Vector3d$$Type): $Vector3d
 public "mulTranspose"(arg0: $Matrix4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
 public "mulTranspose"(arg0: $Matrix4dc$$Type): $Vector4d
-public "rotateAxis"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Vector4d$$Type): $Vector4d
 public "rotateAxis"(arg0: double, arg1: double, arg2: double, arg3: double): $Vector4d
+public "rotateAxis"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Vector4d$$Type): $Vector4d
 public "rotateX"(arg0: double): $Vector4d
 public "rotateX"(arg0: double, arg1: $Vector4d$$Type): $Vector4d
 public "rotateY"(arg0: double, arg1: $Vector4d$$Type): $Vector4d
 public "rotateY"(arg0: double): $Vector4d
-public "rotateZ"(arg0: double): $Vector4d
 public "rotateZ"(arg0: double, arg1: $Vector4d$$Type): $Vector4d
+public "rotateZ"(arg0: double): $Vector4d
 public "lengthSquared"(): double
 public static "lengthSquared"(arg0: double, arg1: double, arg2: double, arg3: double): double
 public "distanceSquared"(arg0: $Vector4dc$$Type): double
-public static "distanceSquared"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double): double
 public "distanceSquared"(arg0: double, arg1: double, arg2: double, arg3: double): double
+public static "distanceSquared"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double): double
 public "angleCos"(arg0: $Vector4dc$$Type): double
 public "smoothStep"(arg0: $Vector4dc$$Type, arg1: double, arg2: $Vector4d$$Type): $Vector4d
 public "hermite"(arg0: $Vector4dc$$Type, arg1: $Vector4dc$$Type, arg2: $Vector4dc$$Type, arg3: double, arg4: $Vector4d$$Type): $Vector4d
-public "lerp"(arg0: $Vector4dc$$Type, arg1: double): $Vector4d
 public "lerp"(arg0: $Vector4dc$$Type, arg1: double, arg2: $Vector4d$$Type): $Vector4d
+public "lerp"(arg0: $Vector4dc$$Type, arg1: double): $Vector4d
 public "maxComponent"(): integer
 public "minComponent"(): integer
 public "getf"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
@@ -5860,97 +5860,97 @@ declare module "org.joml.Vector2i" {
 import {$Vector2fc$$Type} from "org.joml.Vector2fc"
 import {$Vector2ic, $Vector2ic$$Type, $Vector2ic$$Interface} from "org.joml.Vector2ic"
 import {$ObjectInput$$Type} from "java.io.ObjectInput"
-import {$Vector2dc$$Type} from "org.joml.Vector2dc"
 import {$NumberFormat$$Type} from "java.text.NumberFormat"
-import {$IntBuffer, $IntBuffer$$Type} from "java.nio.IntBuffer"
+import {$Vector2dc$$Type} from "org.joml.Vector2dc"
 import {$Cloneable$$Interface} from "java.lang.Cloneable"
+import {$IntBuffer, $IntBuffer$$Type} from "java.nio.IntBuffer"
 import {$ByteBuffer, $ByteBuffer$$Type} from "java.nio.ByteBuffer"
 import {$ObjectOutput$$Type} from "java.io.ObjectOutput"
 import {$Externalizable$$Interface} from "java.io.Externalizable"
 
 export class $Vector2i implements $Externalizable$$Interface, $Cloneable$$Interface, $Vector2ic$$Interface {
-constructor(arg0: $Vector2fc$$Type, arg1: integer)
-constructor(arg0: $Vector2dc$$Type, arg1: integer)
-constructor(arg0: $Vector2ic$$Type)
-constructor(arg0: (integer)[])
 constructor()
+constructor(arg0: $Vector2ic$$Type)
+constructor(arg0: $Vector2dc$$Type, arg1: integer)
+constructor(arg0: $Vector2fc$$Type, arg1: integer)
 constructor(arg0: integer)
-constructor(arg0: integer, arg1: integer)
 constructor(arg0: float, arg1: float, arg2: integer)
+constructor(arg0: integer, arg1: integer)
+constructor(arg0: integer, arg1: $IntBuffer$$Type)
 constructor(arg0: double, arg1: double, arg2: integer)
 constructor(arg0: $IntBuffer$$Type)
+constructor(arg0: (integer)[])
 constructor(arg0: $ByteBuffer$$Type)
-constructor(arg0: integer, arg1: $IntBuffer$$Type)
 constructor(arg0: integer, arg1: $ByteBuffer$$Type)
 
-public "gridDistance"(arg0: $Vector2ic$$Type): long
 public "gridDistance"(arg0: integer, arg1: integer): long
-public "sub"(arg0: $Vector2ic$$Type, arg1: $Vector2i$$Type): $Vector2i
-public "sub"(arg0: integer, arg1: integer): $Vector2i
+public "gridDistance"(arg0: $Vector2ic$$Type): long
+public "div"(arg0: float): $Vector2i
+public "div"(arg0: float, arg1: $Vector2i$$Type): $Vector2i
+public "div"(arg0: integer): $Vector2i
+public "div"(arg0: integer, arg1: $Vector2i$$Type): $Vector2i
+public "writeExternal"(arg0: $ObjectOutput$$Type): void
+public "readExternal"(arg0: $ObjectInput$$Type): void
+public "absolute"(): $Vector2i
+public "absolute"(arg0: $Vector2i$$Type): $Vector2i
 public "sub"(arg0: $Vector2ic$$Type): $Vector2i
 public "sub"(arg0: integer, arg1: integer, arg2: $Vector2i$$Type): $Vector2i
+public "sub"(arg0: integer, arg1: integer): $Vector2i
+public "sub"(arg0: $Vector2ic$$Type, arg1: $Vector2i$$Type): $Vector2i
+public "negate"(arg0: $Vector2i$$Type): $Vector2i
+public "negate"(): $Vector2i
+public "get"(arg0: integer, arg1: $IntBuffer$$Type): $IntBuffer
+public "get"(arg0: $IntBuffer$$Type): $IntBuffer
+public "get"(arg0: integer): integer
+public "get"(arg0: $ByteBuffer$$Type): $ByteBuffer
+public "get"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
+public "equals"(arg0: integer, arg1: integer): boolean
+public "equals"(arg0: any): boolean
+public "length"(): double
+public static "length"(arg0: integer, arg1: integer): double
+public "toString"(): StringJS
+public "toString"(arg0: $NumberFormat$$Type): StringJS
+public "hashCode"(): integer
+public "clone"(): any
+public "min"(arg0: $Vector2ic$$Type, arg1: $Vector2i$$Type): $Vector2i
+public "min"(arg0: $Vector2ic$$Type): $Vector2i
+public "max"(arg0: $Vector2ic$$Type): $Vector2i
+public "max"(arg0: $Vector2ic$$Type, arg1: $Vector2i$$Type): $Vector2i
+public "add"(arg0: integer, arg1: integer, arg2: $Vector2i$$Type): $Vector2i
+public "add"(arg0: integer, arg1: integer): $Vector2i
+public "add"(arg0: $Vector2ic$$Type, arg1: $Vector2i$$Type): $Vector2i
+public "add"(arg0: $Vector2ic$$Type): $Vector2i
+public "x"(): integer
+public "set"(arg0: $Vector2fc$$Type, arg1: integer): $Vector2i
+public "set"(arg0: (integer)[]): $Vector2i
+public "set"(arg0: integer, arg1: $ByteBuffer$$Type): $Vector2i
+public "set"(arg0: $ByteBuffer$$Type): $Vector2i
+public "set"(arg0: $IntBuffer$$Type): $Vector2i
+public "set"(arg0: integer): $Vector2i
+public "set"(arg0: integer, arg1: integer): $Vector2i
+public "set"(arg0: $Vector2ic$$Type): $Vector2i
+public "set"(arg0: $Vector2dc$$Type): $Vector2i
+public "set"(arg0: $Vector2dc$$Type, arg1: integer): $Vector2i
+public "set"(arg0: integer, arg1: $IntBuffer$$Type): $Vector2i
+public "zero"(): $Vector2i
+public "y"(): integer
+public "distance"(arg0: integer, arg1: integer): double
+public "distance"(arg0: $Vector2ic$$Type): double
+public static "distance"(arg0: integer, arg1: integer, arg2: integer, arg3: integer): double
 public "mul"(arg0: $Vector2ic$$Type, arg1: $Vector2i$$Type): $Vector2i
 public "mul"(arg0: integer, arg1: integer, arg2: $Vector2i$$Type): $Vector2i
 public "mul"(arg0: integer, arg1: integer): $Vector2i
 public "mul"(arg0: integer): $Vector2i
 public "mul"(arg0: integer, arg1: $Vector2i$$Type): $Vector2i
 public "mul"(arg0: $Vector2ic$$Type): $Vector2i
-public "negate"(arg0: $Vector2i$$Type): $Vector2i
-public "negate"(): $Vector2i
-public "absolute"(arg0: $Vector2i$$Type): $Vector2i
-public "absolute"(): $Vector2i
-public "div"(arg0: integer, arg1: $Vector2i$$Type): $Vector2i
-public "div"(arg0: integer): $Vector2i
-public "div"(arg0: float, arg1: $Vector2i$$Type): $Vector2i
-public "div"(arg0: float): $Vector2i
-public "writeExternal"(arg0: $ObjectOutput$$Type): void
-public "readExternal"(arg0: $ObjectInput$$Type): void
-public "get"(arg0: $IntBuffer$$Type): $IntBuffer
-public "get"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
-public "get"(arg0: integer, arg1: $IntBuffer$$Type): $IntBuffer
-public "get"(arg0: $ByteBuffer$$Type): $ByteBuffer
-public "get"(arg0: integer): integer
-public "equals"(arg0: any): boolean
-public "equals"(arg0: integer, arg1: integer): boolean
-public static "length"(arg0: integer, arg1: integer): double
-public "length"(): double
-public "toString"(arg0: $NumberFormat$$Type): StringJS
-public "toString"(): StringJS
-public "hashCode"(): integer
-public "clone"(): any
-public "min"(arg0: $Vector2ic$$Type): $Vector2i
-public "min"(arg0: $Vector2ic$$Type, arg1: $Vector2i$$Type): $Vector2i
-public "max"(arg0: $Vector2ic$$Type, arg1: $Vector2i$$Type): $Vector2i
-public "max"(arg0: $Vector2ic$$Type): $Vector2i
-public "add"(arg0: integer, arg1: integer, arg2: $Vector2i$$Type): $Vector2i
-public "add"(arg0: $Vector2ic$$Type): $Vector2i
-public "add"(arg0: $Vector2ic$$Type, arg1: $Vector2i$$Type): $Vector2i
-public "add"(arg0: integer, arg1: integer): $Vector2i
-public "x"(): integer
-public "set"(arg0: $Vector2dc$$Type): $Vector2i
-public "set"(arg0: $Vector2dc$$Type, arg1: integer): $Vector2i
-public "set"(arg0: $Vector2fc$$Type, arg1: integer): $Vector2i
-public "set"(arg0: (integer)[]): $Vector2i
-public "set"(arg0: $Vector2ic$$Type): $Vector2i
-public "set"(arg0: integer, arg1: integer): $Vector2i
-public "set"(arg0: integer): $Vector2i
-public "set"(arg0: $IntBuffer$$Type): $Vector2i
-public "set"(arg0: integer, arg1: $ByteBuffer$$Type): $Vector2i
-public "set"(arg0: $ByteBuffer$$Type): $Vector2i
-public "set"(arg0: integer, arg1: $IntBuffer$$Type): $Vector2i
-public "zero"(): $Vector2i
-public "y"(): integer
-public "distance"(arg0: $Vector2ic$$Type): double
-public static "distance"(arg0: integer, arg1: integer, arg2: integer, arg3: integer): double
-public "distance"(arg0: integer, arg1: integer): double
 public "setFromAddress"(arg0: long): $Vector2i
 public "setComponent"(arg0: integer, arg1: integer): $Vector2i
 public "getToAddress"(arg0: long): $Vector2ic
-public "lengthSquared"(): long
 public static "lengthSquared"(arg0: integer, arg1: integer): long
+public "lengthSquared"(): long
 public "distanceSquared"(arg0: $Vector2ic$$Type): long
-public "distanceSquared"(arg0: integer, arg1: integer): long
 public static "distanceSquared"(arg0: integer, arg1: integer, arg2: integer, arg3: integer): long
+public "distanceSquared"(arg0: integer, arg1: integer): long
 public "maxComponent"(): integer
 public "minComponent"(): integer
 set "fromAddress"(value: long)
@@ -5971,8 +5971,8 @@ import {$Vector2f, $Vector2f$$Type} from "org.joml.Vector2f"
 import {$DoubleBuffer, $DoubleBuffer$$Type} from "java.nio.DoubleBuffer"
 import {$ObjectOutput$$Type} from "java.io.ObjectOutput"
 import {$Externalizable$$Interface} from "java.io.Externalizable"
-import {$Vector2fc$$Type} from "org.joml.Vector2fc"
 import {$Matrix2fc$$Type} from "org.joml.Matrix2fc"
+import {$Vector2fc$$Type} from "org.joml.Vector2fc"
 import {$Matrix3x2dc$$Type} from "org.joml.Matrix3x2dc"
 import {$Matrix2dc$$Type} from "org.joml.Matrix2dc"
 import {$Vector2ic$$Type} from "org.joml.Vector2ic"
@@ -5982,128 +5982,128 @@ import {$Cloneable$$Interface} from "java.lang.Cloneable"
 import {$ByteBuffer, $ByteBuffer$$Type} from "java.nio.ByteBuffer"
 
 export class $Vector2d implements $Externalizable$$Interface, $Cloneable$$Interface, $Vector2dc$$Interface {
-constructor(arg0: $Vector2fc$$Type)
-constructor(arg0: $Vector2dc$$Type)
-constructor(arg0: $Vector2ic$$Type)
-constructor(arg0: double, arg1: double)
-constructor(arg0: double)
 constructor()
+constructor(arg0: $Vector2ic$$Type)
+constructor(arg0: (double)[])
+constructor(arg0: (float)[])
+constructor(arg0: $ByteBuffer$$Type)
+constructor(arg0: integer, arg1: $ByteBuffer$$Type)
 constructor(arg0: integer, arg1: $DoubleBuffer$$Type)
 constructor(arg0: $DoubleBuffer$$Type)
-constructor(arg0: integer, arg1: $ByteBuffer$$Type)
-constructor(arg0: $ByteBuffer$$Type)
-constructor(arg0: (float)[])
-constructor(arg0: (double)[])
+constructor(arg0: double)
+constructor(arg0: double, arg1: double)
+constructor(arg0: $Vector2fc$$Type)
+constructor(arg0: $Vector2dc$$Type)
 
 public "perpendicular"(): $Vector2d
-public "sub"(arg0: $Vector2dc$$Type, arg1: $Vector2d$$Type): $Vector2d
-public "sub"(arg0: $Vector2dc$$Type): $Vector2d
-public "sub"(arg0: double, arg1: double, arg2: $Vector2d$$Type): $Vector2d
-public "sub"(arg0: double, arg1: double): $Vector2d
-public "sub"(arg0: $Vector2fc$$Type): $Vector2d
-public "sub"(arg0: $Vector2fc$$Type, arg1: $Vector2d$$Type): $Vector2d
-public "mul"(arg0: $Matrix2dc$$Type, arg1: $Vector2d$$Type): $Vector2d
-public "mul"(arg0: $Matrix2fc$$Type, arg1: $Vector2d$$Type): $Vector2d
-public "mul"(arg0: $Vector2dc$$Type): $Vector2d
-public "mul"(arg0: $Matrix2fc$$Type): $Vector2d
-public "mul"(arg0: $Matrix2dc$$Type): $Vector2d
-public "mul"(arg0: $Vector2dc$$Type, arg1: $Vector2d$$Type): $Vector2d
-public "mul"(arg0: double, arg1: $Vector2d$$Type): $Vector2d
-public "mul"(arg0: double): $Vector2d
-public "mul"(arg0: double, arg1: double, arg2: $Vector2d$$Type): $Vector2d
-public "mul"(arg0: double, arg1: double): $Vector2d
-public "negate"(arg0: $Vector2d$$Type): $Vector2d
-public "negate"(): $Vector2d
-public "normalize"(arg0: double, arg1: $Vector2d$$Type): $Vector2d
-public "normalize"(arg0: $Vector2d$$Type): $Vector2d
-public "normalize"(): $Vector2d
-public "normalize"(arg0: double): $Vector2d
-public "absolute"(): $Vector2d
-public "absolute"(arg0: $Vector2d$$Type): $Vector2d
-public "div"(arg0: double, arg1: double, arg2: $Vector2d$$Type): $Vector2d
-public "div"(arg0: double, arg1: double): $Vector2d
 public "div"(arg0: double): $Vector2d
-public "div"(arg0: double, arg1: $Vector2d$$Type): $Vector2d
+public "div"(arg0: $Vector2fc$$Type): $Vector2d
 public "div"(arg0: $Vector2fc$$Type, arg1: $Vector2d$$Type): $Vector2d
 public "div"(arg0: $Vector2dc$$Type, arg1: $Vector2d$$Type): $Vector2d
-public "div"(arg0: $Vector2fc$$Type): $Vector2d
 public "div"(arg0: $Vector2d$$Type): $Vector2d
+public "div"(arg0: double, arg1: double, arg2: $Vector2d$$Type): $Vector2d
+public "div"(arg0: double, arg1: double): $Vector2d
+public "div"(arg0: double, arg1: $Vector2d$$Type): $Vector2d
 public "writeExternal"(arg0: $ObjectOutput$$Type): void
 public "readExternal"(arg0: $ObjectInput$$Type): void
-public "get"(arg0: $Vector2d$$Type): $Vector2d
-public "get"(arg0: $Vector2f$$Type): $Vector2f
+public "absolute"(): $Vector2d
+public "absolute"(arg0: $Vector2d$$Type): $Vector2d
+public "normalize"(arg0: $Vector2d$$Type): $Vector2d
+public "normalize"(): $Vector2d
+public "normalize"(arg0: double, arg1: $Vector2d$$Type): $Vector2d
+public "normalize"(arg0: double): $Vector2d
+public "sub"(arg0: double, arg1: double, arg2: $Vector2d$$Type): $Vector2d
+public "sub"(arg0: $Vector2dc$$Type, arg1: $Vector2d$$Type): $Vector2d
+public "sub"(arg0: $Vector2fc$$Type, arg1: $Vector2d$$Type): $Vector2d
+public "sub"(arg0: $Vector2fc$$Type): $Vector2d
+public "sub"(arg0: double, arg1: double): $Vector2d
+public "sub"(arg0: $Vector2dc$$Type): $Vector2d
+public "negate"(arg0: $Vector2d$$Type): $Vector2d
+public "negate"(): $Vector2d
 public "get"(arg0: integer, arg1: $Vector2i$$Type): $Vector2i
 public "get"(arg0: integer): double
-public "get"(arg0: integer, arg1: $DoubleBuffer$$Type): $DoubleBuffer
+public "get"(arg0: $ByteBuffer$$Type): $ByteBuffer
+public "get"(arg0: $Vector2d$$Type): $Vector2d
 public "get"(arg0: $DoubleBuffer$$Type): $DoubleBuffer
 public "get"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
-public "get"(arg0: $ByteBuffer$$Type): $ByteBuffer
-public "equals"(arg0: $Vector2dc$$Type, arg1: double): boolean
-public "equals"(arg0: double, arg1: double): boolean
+public "get"(arg0: integer, arg1: $DoubleBuffer$$Type): $DoubleBuffer
+public "get"(arg0: $Vector2f$$Type): $Vector2f
 public "equals"(arg0: any): boolean
-public static "length"(arg0: double, arg1: double): double
+public "equals"(arg0: double, arg1: double): boolean
+public "equals"(arg0: $Vector2dc$$Type, arg1: double): boolean
 public "length"(): double
-public "toString"(arg0: $NumberFormat$$Type): StringJS
+public static "length"(arg0: double, arg1: double): double
 public "toString"(): StringJS
+public "toString"(arg0: $NumberFormat$$Type): StringJS
 public "hashCode"(): integer
 public "clone"(): any
-public "min"(arg0: $Vector2dc$$Type, arg1: $Vector2d$$Type): $Vector2d
 public "min"(arg0: $Vector2dc$$Type): $Vector2d
-public "max"(arg0: $Vector2dc$$Type, arg1: $Vector2d$$Type): $Vector2d
+public "min"(arg0: $Vector2dc$$Type, arg1: $Vector2d$$Type): $Vector2d
 public "max"(arg0: $Vector2dc$$Type): $Vector2d
-public "floor"(): $Vector2d
+public "max"(arg0: $Vector2dc$$Type, arg1: $Vector2d$$Type): $Vector2d
 public "floor"(arg0: $Vector2d$$Type): $Vector2d
+public "floor"(): $Vector2d
 public "ceil"(arg0: $Vector2d$$Type): $Vector2d
 public "ceil"(): $Vector2d
 public "round"(): $Vector2d
 public "round"(arg0: $Vector2d$$Type): $Vector2d
-public "fma"(arg0: double, arg1: $Vector2dc$$Type, arg2: $Vector2d$$Type): $Vector2d
-public "fma"(arg0: double, arg1: $Vector2dc$$Type): $Vector2d
 public "fma"(arg0: $Vector2dc$$Type, arg1: $Vector2dc$$Type, arg2: $Vector2d$$Type): $Vector2d
 public "fma"(arg0: $Vector2dc$$Type, arg1: $Vector2dc$$Type): $Vector2d
+public "fma"(arg0: double, arg1: $Vector2dc$$Type): $Vector2d
+public "fma"(arg0: double, arg1: $Vector2dc$$Type, arg2: $Vector2d$$Type): $Vector2d
 public "isFinite"(): boolean
+public "add"(arg0: $Vector2dc$$Type): $Vector2d
 public "add"(arg0: double, arg1: double): $Vector2d
 public "add"(arg0: double, arg1: double, arg2: $Vector2d$$Type): $Vector2d
-public "add"(arg0: $Vector2fc$$Type): $Vector2d
-public "add"(arg0: $Vector2dc$$Type): $Vector2d
-public "add"(arg0: $Vector2fc$$Type, arg1: $Vector2d$$Type): $Vector2d
 public "add"(arg0: $Vector2dc$$Type, arg1: $Vector2d$$Type): $Vector2d
+public "add"(arg0: $Vector2fc$$Type): $Vector2d
+public "add"(arg0: $Vector2fc$$Type, arg1: $Vector2d$$Type): $Vector2d
 public "x"(): double
 public "dot"(arg0: $Vector2dc$$Type): double
-public "set"(arg0: (float)[]): $Vector2d
-public "set"(arg0: double, arg1: double): $Vector2d
-public "set"(arg0: $Vector2fc$$Type): $Vector2d
-public "set"(arg0: $ByteBuffer$$Type): $Vector2d
-public "set"(arg0: $Vector2dc$$Type): $Vector2d
-public "set"(arg0: integer, arg1: $ByteBuffer$$Type): $Vector2d
 public "set"(arg0: (double)[]): $Vector2d
-public "set"(arg0: $Vector2ic$$Type): $Vector2d
-public "set"(arg0: double): $Vector2d
+public "set"(arg0: (float)[]): $Vector2d
+public "set"(arg0: $ByteBuffer$$Type): $Vector2d
+public "set"(arg0: integer, arg1: $ByteBuffer$$Type): $Vector2d
 public "set"(arg0: integer, arg1: $DoubleBuffer$$Type): $Vector2d
 public "set"(arg0: $DoubleBuffer$$Type): $Vector2d
+public "set"(arg0: double, arg1: double): $Vector2d
+public "set"(arg0: $Vector2fc$$Type): $Vector2d
+public "set"(arg0: double): $Vector2d
+public "set"(arg0: $Vector2ic$$Type): $Vector2d
+public "set"(arg0: $Vector2dc$$Type): $Vector2d
 public "zero"(): $Vector2d
 public "y"(): double
-public "distance"(arg0: $Vector2dc$$Type): double
-public "distance"(arg0: $Vector2fc$$Type): double
-public "distance"(arg0: double, arg1: double): double
 public static "distance"(arg0: double, arg1: double, arg2: double, arg3: double): double
+public "distance"(arg0: double, arg1: double): double
+public "distance"(arg0: $Vector2fc$$Type): double
+public "distance"(arg0: $Vector2dc$$Type): double
+public "mul"(arg0: $Matrix2fc$$Type, arg1: $Vector2d$$Type): $Vector2d
+public "mul"(arg0: $Matrix2dc$$Type, arg1: $Vector2d$$Type): $Vector2d
+public "mul"(arg0: $Matrix2dc$$Type): $Vector2d
+public "mul"(arg0: $Matrix2fc$$Type): $Vector2d
+public "mul"(arg0: double): $Vector2d
+public "mul"(arg0: double, arg1: $Vector2d$$Type): $Vector2d
+public "mul"(arg0: double, arg1: double): $Vector2d
+public "mul"(arg0: $Vector2dc$$Type, arg1: $Vector2d$$Type): $Vector2d
+public "mul"(arg0: $Vector2dc$$Type): $Vector2d
+public "mul"(arg0: double, arg1: double, arg2: $Vector2d$$Type): $Vector2d
 public "angle"(arg0: $Vector2dc$$Type): double
 public "setFromAddress"(arg0: long): $Vector2d
 public "setComponent"(arg0: integer, arg1: double): $Vector2d
 public "getToAddress"(arg0: long): $Vector2dc
-public "mulTranspose"(arg0: $Matrix2fc$$Type): $Vector2d
 public "mulTranspose"(arg0: $Matrix2fc$$Type, arg1: $Vector2d$$Type): $Vector2d
 public "mulTranspose"(arg0: $Matrix2dc$$Type, arg1: $Vector2d$$Type): $Vector2d
 public "mulTranspose"(arg0: $Matrix2dc$$Type): $Vector2d
-public "mulPosition"(arg0: $Matrix3x2dc$$Type): $Vector2d
+public "mulTranspose"(arg0: $Matrix2fc$$Type): $Vector2d
 public "mulPosition"(arg0: $Matrix3x2dc$$Type, arg1: $Vector2d$$Type): $Vector2d
-public "mulDirection"(arg0: $Matrix3x2dc$$Type, arg1: $Vector2d$$Type): $Vector2d
+public "mulPosition"(arg0: $Matrix3x2dc$$Type): $Vector2d
 public "mulDirection"(arg0: $Matrix3x2dc$$Type): $Vector2d
-public "lengthSquared"(): double
+public "mulDirection"(arg0: $Matrix3x2dc$$Type, arg1: $Vector2d$$Type): $Vector2d
 public static "lengthSquared"(arg0: double, arg1: double): double
-public static "distanceSquared"(arg0: double, arg1: double, arg2: double, arg3: double): double
+public "lengthSquared"(): double
 public "distanceSquared"(arg0: double, arg1: double): double
 public "distanceSquared"(arg0: $Vector2fc$$Type): double
+public static "distanceSquared"(arg0: double, arg1: double, arg2: double, arg3: double): double
 public "distanceSquared"(arg0: $Vector2dc$$Type): double
 public "lerp"(arg0: $Vector2dc$$Type, arg1: double): $Vector2d
 public "lerp"(arg0: $Vector2dc$$Type, arg1: double, arg2: $Vector2d$$Type): $Vector2d
@@ -6127,129 +6127,129 @@ import {$Vector2i, $Vector2i$$Type} from "org.joml.Vector2i"
 import {$Vector2d, $Vector2d$$Type} from "org.joml.Vector2d"
 import {$ObjectOutput$$Type} from "java.io.ObjectOutput"
 import {$Externalizable$$Interface} from "java.io.Externalizable"
+import {$FloatBuffer, $FloatBuffer$$Type} from "java.nio.FloatBuffer"
 import {$Matrix2fc$$Type} from "org.joml.Matrix2fc"
 import {$Vector2fc, $Vector2fc$$Type, $Vector2fc$$Interface} from "org.joml.Vector2fc"
-import {$FloatBuffer, $FloatBuffer$$Type} from "java.nio.FloatBuffer"
 import {$Matrix2dc$$Type} from "org.joml.Matrix2dc"
 import {$Matrix3x2fc$$Type} from "org.joml.Matrix3x2fc"
 import {$Vector2ic$$Type} from "org.joml.Vector2ic"
-import {$Vector2dc$$Type} from "org.joml.Vector2dc"
 import {$NumberFormat$$Type} from "java.text.NumberFormat"
+import {$Vector2dc$$Type} from "org.joml.Vector2dc"
 import {$Cloneable$$Interface} from "java.lang.Cloneable"
 import {$ByteBuffer, $ByteBuffer$$Type} from "java.nio.ByteBuffer"
 
 export class $Vector2f implements $Externalizable$$Interface, $Cloneable$$Interface, $Vector2fc$$Interface {
-constructor(arg0: (float)[])
-constructor(arg0: $Vector2ic$$Type)
-constructor(arg0: $Vector2fc$$Type)
-constructor(arg0: float, arg1: float)
-constructor(arg0: float)
-constructor(arg0: $ByteBuffer$$Type)
 constructor(arg0: integer, arg1: $ByteBuffer$$Type)
 constructor(arg0: $FloatBuffer$$Type)
 constructor(arg0: integer, arg1: $FloatBuffer$$Type)
+constructor(arg0: float, arg1: float)
+constructor(arg0: float)
+constructor(arg0: $Vector2fc$$Type)
+constructor(arg0: $Vector2ic$$Type)
+constructor(arg0: (float)[])
+constructor(arg0: $ByteBuffer$$Type)
 constructor()
 
 public "perpendicular"(): $Vector2f
-public "sub"(arg0: float, arg1: float, arg2: $Vector2f$$Type): $Vector2f
-public "sub"(arg0: $Vector2fc$$Type, arg1: $Vector2f$$Type): $Vector2f
-public "sub"(arg0: $Vector2fc$$Type): $Vector2f
-public "sub"(arg0: float, arg1: float): $Vector2f
-public "mul"(arg0: $Vector2fc$$Type, arg1: $Vector2f$$Type): $Vector2f
-public "mul"(arg0: float, arg1: float, arg2: $Vector2f$$Type): $Vector2f
-public "mul"(arg0: float, arg1: float): $Vector2f
-public "mul"(arg0: float, arg1: $Vector2f$$Type): $Vector2f
-public "mul"(arg0: $Matrix2dc$$Type): $Vector2f
-public "mul"(arg0: $Matrix2dc$$Type, arg1: $Vector2f$$Type): $Vector2f
-public "mul"(arg0: $Matrix2fc$$Type, arg1: $Vector2f$$Type): $Vector2f
-public "mul"(arg0: $Matrix2fc$$Type): $Vector2f
-public "mul"(arg0: $Vector2fc$$Type): $Vector2f
-public "mul"(arg0: float): $Vector2f
-public "negate"(arg0: $Vector2f$$Type): $Vector2f
-public "negate"(): $Vector2f
-public "normalize"(arg0: float): $Vector2f
-public "normalize"(arg0: float, arg1: $Vector2f$$Type): $Vector2f
-public "normalize"(): $Vector2f
-public "normalize"(arg0: $Vector2f$$Type): $Vector2f
-public "absolute"(arg0: $Vector2f$$Type): $Vector2f
-public "absolute"(): $Vector2f
-public "div"(arg0: $Vector2fc$$Type, arg1: $Vector2f$$Type): $Vector2f
-public "div"(arg0: float, arg1: $Vector2f$$Type): $Vector2f
 public "div"(arg0: float): $Vector2f
+public "div"(arg0: $Vector2fc$$Type, arg1: $Vector2f$$Type): $Vector2f
 public "div"(arg0: $Vector2fc$$Type): $Vector2f
+public "div"(arg0: float, arg1: $Vector2f$$Type): $Vector2f
 public "div"(arg0: float, arg1: float, arg2: $Vector2f$$Type): $Vector2f
 public "div"(arg0: float, arg1: float): $Vector2f
 public "writeExternal"(arg0: $ObjectOutput$$Type): void
 public "readExternal"(arg0: $ObjectInput$$Type): void
-public "get"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
+public "absolute"(): $Vector2f
+public "absolute"(arg0: $Vector2f$$Type): $Vector2f
+public "normalize"(arg0: float, arg1: $Vector2f$$Type): $Vector2f
+public "normalize"(arg0: float): $Vector2f
+public "normalize"(arg0: $Vector2f$$Type): $Vector2f
+public "normalize"(): $Vector2f
+public "sub"(arg0: $Vector2fc$$Type): $Vector2f
+public "sub"(arg0: float, arg1: float, arg2: $Vector2f$$Type): $Vector2f
+public "sub"(arg0: $Vector2fc$$Type, arg1: $Vector2f$$Type): $Vector2f
+public "sub"(arg0: float, arg1: float): $Vector2f
+public "negate"(arg0: $Vector2f$$Type): $Vector2f
+public "negate"(): $Vector2f
 public "get"(arg0: $Vector2f$$Type): $Vector2f
-public "get"(arg0: $FloatBuffer$$Type): $FloatBuffer
-public "get"(arg0: $ByteBuffer$$Type): $ByteBuffer
-public "get"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
-public "get"(arg0: $Vector2d$$Type): $Vector2d
-public "get"(arg0: integer): float
 public "get"(arg0: integer, arg1: $Vector2i$$Type): $Vector2i
+public "get"(arg0: integer): float
+public "get"(arg0: $FloatBuffer$$Type): $FloatBuffer
+public "get"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
+public "get"(arg0: $Vector2d$$Type): $Vector2d
+public "get"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
+public "get"(arg0: $ByteBuffer$$Type): $ByteBuffer
 public "equals"(arg0: any): boolean
-public "equals"(arg0: $Vector2fc$$Type, arg1: float): boolean
 public "equals"(arg0: float, arg1: float): boolean
+public "equals"(arg0: $Vector2fc$$Type, arg1: float): boolean
 public "length"(): float
 public static "length"(arg0: float, arg1: float): float
-public "toString"(arg0: $NumberFormat$$Type): StringJS
 public "toString"(): StringJS
+public "toString"(arg0: $NumberFormat$$Type): StringJS
 public "hashCode"(): integer
 public "clone"(): any
 public "min"(arg0: $Vector2fc$$Type): $Vector2f
 public "min"(arg0: $Vector2fc$$Type, arg1: $Vector2f$$Type): $Vector2f
-public "max"(arg0: $Vector2fc$$Type, arg1: $Vector2f$$Type): $Vector2f
 public "max"(arg0: $Vector2fc$$Type): $Vector2f
-public "floor"(arg0: $Vector2f$$Type): $Vector2f
+public "max"(arg0: $Vector2fc$$Type, arg1: $Vector2f$$Type): $Vector2f
 public "floor"(): $Vector2f
-public "ceil"(arg0: $Vector2f$$Type): $Vector2f
+public "floor"(arg0: $Vector2f$$Type): $Vector2f
 public "ceil"(): $Vector2f
+public "ceil"(arg0: $Vector2f$$Type): $Vector2f
 public "round"(arg0: $Vector2f$$Type): $Vector2f
 public "round"(): $Vector2f
-public "fma"(arg0: float, arg1: $Vector2fc$$Type): $Vector2f
+public "fma"(arg0: $Vector2fc$$Type, arg1: $Vector2fc$$Type): $Vector2f
 public "fma"(arg0: $Vector2fc$$Type, arg1: $Vector2fc$$Type, arg2: $Vector2f$$Type): $Vector2f
 public "fma"(arg0: float, arg1: $Vector2fc$$Type, arg2: $Vector2f$$Type): $Vector2f
-public "fma"(arg0: $Vector2fc$$Type, arg1: $Vector2fc$$Type): $Vector2f
+public "fma"(arg0: float, arg1: $Vector2fc$$Type): $Vector2f
 public "isFinite"(): boolean
 public "add"(arg0: $Vector2fc$$Type, arg1: $Vector2f$$Type): $Vector2f
-public "add"(arg0: float, arg1: float, arg2: $Vector2f$$Type): $Vector2f
 public "add"(arg0: float, arg1: float): $Vector2f
 public "add"(arg0: $Vector2fc$$Type): $Vector2f
+public "add"(arg0: float, arg1: float, arg2: $Vector2f$$Type): $Vector2f
 public "x"(): float
 public "dot"(arg0: $Vector2fc$$Type): float
-public "set"(arg0: $Vector2ic$$Type): $Vector2f
+public "set"(arg0: double): $Vector2f
 public "set"(arg0: float, arg1: float): $Vector2f
 public "set"(arg0: float): $Vector2f
-public "set"(arg0: double): $Vector2f
+public "set"(arg0: $Vector2dc$$Type): $Vector2f
 public "set"(arg0: double, arg1: double): $Vector2f
+public "set"(arg0: $Vector2ic$$Type): $Vector2f
 public "set"(arg0: $Vector2fc$$Type): $Vector2f
-public "set"(arg0: $ByteBuffer$$Type): $Vector2f
-public "set"(arg0: (float)[]): $Vector2f
+public "set"(arg0: integer, arg1: $FloatBuffer$$Type): $Vector2f
 public "set"(arg0: $FloatBuffer$$Type): $Vector2f
 public "set"(arg0: integer, arg1: $ByteBuffer$$Type): $Vector2f
-public "set"(arg0: $Vector2dc$$Type): $Vector2f
-public "set"(arg0: integer, arg1: $FloatBuffer$$Type): $Vector2f
+public "set"(arg0: $ByteBuffer$$Type): $Vector2f
+public "set"(arg0: (float)[]): $Vector2f
 public "zero"(): $Vector2f
 public "y"(): float
 public "distance"(arg0: float, arg1: float): float
-public "distance"(arg0: $Vector2fc$$Type): float
 public static "distance"(arg0: float, arg1: float, arg2: float, arg3: float): float
+public "distance"(arg0: $Vector2fc$$Type): float
+public "mul"(arg0: $Vector2fc$$Type, arg1: $Vector2f$$Type): $Vector2f
+public "mul"(arg0: $Matrix2fc$$Type): $Vector2f
+public "mul"(arg0: $Matrix2fc$$Type, arg1: $Vector2f$$Type): $Vector2f
+public "mul"(arg0: float): $Vector2f
+public "mul"(arg0: float, arg1: float): $Vector2f
+public "mul"(arg0: float, arg1: float, arg2: $Vector2f$$Type): $Vector2f
+public "mul"(arg0: $Vector2fc$$Type): $Vector2f
+public "mul"(arg0: float, arg1: $Vector2f$$Type): $Vector2f
+public "mul"(arg0: $Matrix2dc$$Type, arg1: $Vector2f$$Type): $Vector2f
+public "mul"(arg0: $Matrix2dc$$Type): $Vector2f
 public "angle"(arg0: $Vector2fc$$Type): float
 public "setFromAddress"(arg0: long): $Vector2f
 public "setComponent"(arg0: integer, arg1: float): $Vector2f
 public "getToAddress"(arg0: long): $Vector2fc
-public "mulTranspose"(arg0: $Matrix2fc$$Type, arg1: $Vector2f$$Type): $Vector2f
 public "mulTranspose"(arg0: $Matrix2fc$$Type): $Vector2f
-public "mulPosition"(arg0: $Matrix3x2fc$$Type, arg1: $Vector2f$$Type): $Vector2f
+public "mulTranspose"(arg0: $Matrix2fc$$Type, arg1: $Vector2f$$Type): $Vector2f
 public "mulPosition"(arg0: $Matrix3x2fc$$Type): $Vector2f
-public "mulDirection"(arg0: $Matrix3x2fc$$Type): $Vector2f
+public "mulPosition"(arg0: $Matrix3x2fc$$Type, arg1: $Vector2f$$Type): $Vector2f
 public "mulDirection"(arg0: $Matrix3x2fc$$Type, arg1: $Vector2f$$Type): $Vector2f
-public static "lengthSquared"(arg0: float, arg1: float): float
+public "mulDirection"(arg0: $Matrix3x2fc$$Type): $Vector2f
 public "lengthSquared"(): float
-public "distanceSquared"(arg0: $Vector2fc$$Type): float
+public static "lengthSquared"(arg0: float, arg1: float): float
 public "distanceSquared"(arg0: float, arg1: float): float
+public "distanceSquared"(arg0: $Vector2fc$$Type): float
 public static "distanceSquared"(arg0: float, arg1: float, arg2: float, arg3: float): float
 public "lerp"(arg0: $Vector2fc$$Type, arg1: float): $Vector2f
 public "lerp"(arg0: $Vector2fc$$Type, arg1: float, arg2: $Vector2f$$Type): $Vector2f
@@ -6271,8 +6271,8 @@ declare module "org.joml.Matrix4x3d" {
 import {$Matrix4x3fc$$Type} from "org.joml.Matrix4x3fc"
 import {$ObjectInput$$Type} from "java.io.ObjectInput"
 import {$Matrix4x3dc, $Matrix4x3dc$$Type, $Matrix4x3dc$$Interface} from "org.joml.Matrix4x3dc"
-import {$Matrix4dc$$Type} from "org.joml.Matrix4dc"
 import {$Matrix4d, $Matrix4d$$Type} from "org.joml.Matrix4d"
+import {$Matrix4dc$$Type} from "org.joml.Matrix4dc"
 import {$ObjectOutput$$Type} from "java.io.ObjectOutput"
 import {$Matrix3dc$$Type} from "org.joml.Matrix3dc"
 import {$Vector3d, $Vector3d$$Type} from "org.joml.Vector3d"
@@ -6296,22 +6296,22 @@ import {$AxisAngle4d$$Type} from "org.joml.AxisAngle4d"
 import {$ByteBuffer, $ByteBuffer$$Type} from "java.nio.ByteBuffer"
 
 export class $Matrix4x3d implements $Externalizable$$Interface, $Cloneable$$Interface, $Matrix4x3dc$$Interface {
+constructor()
 constructor(arg0: $Matrix4x3dc$$Type)
+constructor(arg0: $Matrix3fc$$Type)
 constructor(arg0: $Matrix3dc$$Type)
 constructor(arg0: $Matrix4x3fc$$Type)
-constructor()
-constructor(arg0: $Matrix3fc$$Type)
-constructor(arg0: $DoubleBuffer$$Type)
 constructor(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double, arg9: double, arg10: double, arg11: double)
+constructor(arg0: $DoubleBuffer$$Type)
 
-public "getTransposedFloats"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
-public "getTransposedFloats"(arg0: $ByteBuffer$$Type): $ByteBuffer
+public "getFloats"(arg0: $ByteBuffer$$Type): $ByteBuffer
+public "getFloats"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
 public "setFloats"(arg0: integer, arg1: $ByteBuffer$$Type): $Matrix4x3d
 public "setFloats"(arg0: $ByteBuffer$$Type): $Matrix4x3d
-public "getFloats"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
-public "getFloats"(arg0: $ByteBuffer$$Type): $ByteBuffer
-public "mulOrtho"(arg0: $Matrix4x3dc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
+public "getTransposedFloats"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
+public "getTransposedFloats"(arg0: $ByteBuffer$$Type): $ByteBuffer
 public "mulOrtho"(arg0: $Matrix4x3dc$$Type): $Matrix4x3d
+public "mulOrtho"(arg0: $Matrix4x3dc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
 public "get4x4"(arg0: integer, arg1: $DoubleBuffer$$Type): $DoubleBuffer
 public "get4x4"(arg0: $ByteBuffer$$Type): $ByteBuffer
 public "get4x4"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
@@ -6322,44 +6322,32 @@ public "get4x4"(arg0: (double)[]): (double)[]
 public "get4x4"(arg0: $DoubleBuffer$$Type): $DoubleBuffer
 public "translationRotateScaleMul"(arg0: $Vector3dc$$Type, arg1: $Quaterniondc$$Type, arg2: $Vector3dc$$Type, arg3: $Matrix4x3dc$$Type): $Matrix4x3d
 public "translationRotateScaleMul"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double, arg9: double, arg10: $Matrix4x3dc$$Type): $Matrix4x3d
-public "translationRotateMul"(arg0: double, arg1: double, arg2: double, arg3: $Quaternionfc$$Type, arg4: $Matrix4x3dc$$Type): $Matrix4x3d
 public "translationRotateMul"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: $Matrix4x3dc$$Type): $Matrix4x3d
+public "translationRotateMul"(arg0: double, arg1: double, arg2: double, arg3: $Quaternionfc$$Type, arg4: $Matrix4x3dc$$Type): $Matrix4x3d
 public "invert"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
 public "invert"(): $Matrix4x3d
+public "origin"(arg0: $Vector3d$$Type): $Vector3d
+public "writeExternal"(arg0: $ObjectOutput$$Type): void
+public "readExternal"(arg0: $ObjectInput$$Type): void
+public "normal"(): $Matrix4x3d
+public "normal"(arg0: $Matrix3d$$Type): $Matrix3d
+public "normal"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
 public "sub"(arg0: $Matrix4x3fc$$Type): $Matrix4x3d
 public "sub"(arg0: $Matrix4x3fc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
 public "sub"(arg0: $Matrix4x3dc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
 public "sub"(arg0: $Matrix4x3dc$$Type): $Matrix4x3d
-public "mul"(arg0: $Matrix4x3fc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
-public "mul"(arg0: $Matrix4x3dc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
-public "mul"(arg0: $Matrix4x3dc$$Type): $Matrix4x3d
-public "mul"(arg0: $Matrix4x3fc$$Type): $Matrix4x3d
-public "origin"(arg0: $Vector3d$$Type): $Vector3d
-public "shadow"(arg0: $Vector4dc$$Type, arg1: double, arg2: double, arg3: double, arg4: double, arg5: $Matrix4x3d$$Type): $Matrix4x3d
-public "shadow"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4x3dc$$Type): $Matrix4x3d
-public "shadow"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4x3dc$$Type, arg5: $Matrix4x3d$$Type): $Matrix4x3d
-public "shadow"(arg0: $Vector4dc$$Type, arg1: double, arg2: double, arg3: double, arg4: double): $Matrix4x3d
-public "shadow"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double): $Matrix4x3d
-public "shadow"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: $Matrix4x3d$$Type): $Matrix4x3d
-public "shadow"(arg0: $Vector4dc$$Type, arg1: $Matrix4x3dc$$Type, arg2: $Matrix4x3d$$Type): $Matrix4x3d
-public "shadow"(arg0: $Vector4dc$$Type, arg1: $Matrix4x3dc$$Type): $Matrix4x3d
-public "normal"(): $Matrix4x3d
-public "normal"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
-public "normal"(arg0: $Matrix3d$$Type): $Matrix3d
-public "writeExternal"(arg0: $ObjectOutput$$Type): void
-public "readExternal"(arg0: $ObjectInput$$Type): void
-public "get"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
-public "get"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
-public "get"(arg0: (double)[], arg1: integer): (double)[]
-public "get"(arg0: (float)[]): (float)[]
-public "get"(arg0: (float)[], arg1: integer): (float)[]
 public "get"(arg0: (double)[]): (double)[]
-public "get"(arg0: $DoubleBuffer$$Type): $DoubleBuffer
+public "get"(arg0: (float)[], arg1: integer): (float)[]
+public "get"(arg0: (double)[], arg1: integer): (double)[]
 public "get"(arg0: $Matrix4d$$Type): $Matrix4d
+public "get"(arg0: (float)[]): (float)[]
 public "get"(arg0: integer, arg1: $DoubleBuffer$$Type): $DoubleBuffer
 public "get"(arg0: $FloatBuffer$$Type): $FloatBuffer
 public "get"(arg0: $ByteBuffer$$Type): $ByteBuffer
+public "get"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
+public "get"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
 public "get"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
+public "get"(arg0: $DoubleBuffer$$Type): $DoubleBuffer
 public "equals"(arg0: any): boolean
 public "equals"(arg0: $Matrix4x3dc$$Type, arg1: double): boolean
 public "toString"(arg0: $NumberFormat$$Type): StringJS
@@ -6367,83 +6355,95 @@ public "toString"(): StringJS
 public "hashCode"(): integer
 public "clone"(): any
 public "fma"(arg0: $Matrix4x3fc$$Type, arg1: double, arg2: $Matrix4x3d$$Type): $Matrix4x3d
+public "fma"(arg0: $Matrix4x3fc$$Type, arg1: double): $Matrix4x3d
 public "fma"(arg0: $Matrix4x3dc$$Type, arg1: double, arg2: $Matrix4x3d$$Type): $Matrix4x3d
 public "fma"(arg0: $Matrix4x3dc$$Type, arg1: double): $Matrix4x3d
-public "fma"(arg0: $Matrix4x3fc$$Type, arg1: double): $Matrix4x3d
 public "isFinite"(): boolean
-public "scale"(arg0: $Vector3dc$$Type): $Matrix4x3d
 public "scale"(arg0: double): $Matrix4x3d
 public "scale"(arg0: double, arg1: $Matrix4x3d$$Type): $Matrix4x3d
-public "scale"(arg0: double, arg1: double, arg2: double): $Matrix4x3d
 public "scale"(arg0: $Vector3dc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
+public "scale"(arg0: $Vector3dc$$Type): $Matrix4x3d
 public "scale"(arg0: double, arg1: double, arg2: double, arg3: $Matrix4x3d$$Type): $Matrix4x3d
-public "add"(arg0: $Matrix4x3dc$$Type): $Matrix4x3d
-public "add"(arg0: $Matrix4x3dc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
-public "add"(arg0: $Matrix4x3fc$$Type): $Matrix4x3d
+public "scale"(arg0: double, arg1: double, arg2: double): $Matrix4x3d
 public "add"(arg0: $Matrix4x3fc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
-public "transform"(arg0: $Vector4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
+public "add"(arg0: $Matrix4x3fc$$Type): $Matrix4x3d
+public "add"(arg0: $Matrix4x3dc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
+public "add"(arg0: $Matrix4x3dc$$Type): $Matrix4x3d
 public "transform"(arg0: $Vector4d$$Type): $Vector4d
+public "transform"(arg0: $Vector4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
 public "identity"(): $Matrix4x3d
-public "set"(arg0: $Matrix3dc$$Type): $Matrix4x3d
-public "set"(arg0: $Matrix4dc$$Type): $Matrix4x3d
-public "set"(arg0: $Quaternionfc$$Type): $Matrix4x3d
-public "set"(arg0: integer, arg1: $ByteBuffer$$Type): $Matrix4x3d
-public "set"(arg0: $Quaterniondc$$Type): $Matrix4x3d
-public "set"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Vector3dc$$Type, arg3: $Vector3dc$$Type): $Matrix4x3d
-public "set"(arg0: $Matrix3fc$$Type): $Matrix4x3d
-public "set"(arg0: $AxisAngle4f$$Type): $Matrix4x3d
-public "set"(arg0: $AxisAngle4d$$Type): $Matrix4x3d
-public "set"(arg0: (float)[], arg1: integer): $Matrix4x3d
 public "set"(arg0: (double)[]): $Matrix4x3d
-public "set"(arg0: (double)[], arg1: integer): $Matrix4x3d
-public "set"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double, arg9: double, arg10: double, arg11: double): $Matrix4x3d
+public "set"(arg0: $FloatBuffer$$Type): $Matrix4x3d
+public "set"(arg0: $ByteBuffer$$Type): $Matrix4x3d
+public "set"(arg0: $DoubleBuffer$$Type): $Matrix4x3d
+public "set"(arg0: (float)[]): $Matrix4x3d
+public "set"(arg0: (float)[], arg1: integer): $Matrix4x3d
+public "set"(arg0: integer, arg1: $ByteBuffer$$Type): $Matrix4x3d
+public "set"(arg0: $Matrix4dc$$Type): $Matrix4x3d
 public "set"(arg0: $Matrix4x3fc$$Type): $Matrix4x3d
 public "set"(arg0: $Matrix4x3dc$$Type): $Matrix4x3d
 public "set"(arg0: integer, arg1: $FloatBuffer$$Type): $Matrix4x3d
-public "set"(arg0: $ByteBuffer$$Type): $Matrix4x3d
-public "set"(arg0: $FloatBuffer$$Type): $Matrix4x3d
 public "set"(arg0: integer, arg1: $DoubleBuffer$$Type): $Matrix4x3d
-public "set"(arg0: (float)[]): $Matrix4x3d
-public "set"(arg0: $DoubleBuffer$$Type): $Matrix4x3d
+public "set"(arg0: $Matrix3fc$$Type): $Matrix4x3d
+public "set"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Vector3dc$$Type, arg3: $Vector3dc$$Type): $Matrix4x3d
+public "set"(arg0: $AxisAngle4f$$Type): $Matrix4x3d
+public "set"(arg0: $AxisAngle4d$$Type): $Matrix4x3d
+public "set"(arg0: $Quaterniondc$$Type): $Matrix4x3d
+public "set"(arg0: $Quaternionfc$$Type): $Matrix4x3d
+public "set"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double, arg9: double, arg10: double, arg11: double): $Matrix4x3d
+public "set"(arg0: (double)[], arg1: integer): $Matrix4x3d
+public "set"(arg0: $Matrix3dc$$Type): $Matrix4x3d
 public "properties"(): integer
 public "zero"(): $Matrix4x3d
 public "pick"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: (integer)[], arg5: $Matrix4x3d$$Type): $Matrix4x3d
 public "pick"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: (integer)[]): $Matrix4x3d
-public "swap"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
-public "rotate"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix4x3d
-public "rotate"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4x3d$$Type): $Matrix4x3d
-public "rotate"(arg0: $Quaterniondc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
-public "rotate"(arg0: $AxisAngle4f$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
-public "rotate"(arg0: $AxisAngle4f$$Type): $Matrix4x3d
-public "rotate"(arg0: $Quaternionfc$$Type): $Matrix4x3d
-public "rotate"(arg0: $Quaterniondc$$Type): $Matrix4x3d
-public "rotate"(arg0: $Quaternionfc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
-public "rotate"(arg0: $AxisAngle4d$$Type): $Matrix4x3d
-public "rotate"(arg0: double, arg1: $Vector3fc$$Type, arg2: $Matrix4x3d$$Type): $Matrix4x3d
-public "rotate"(arg0: double, arg1: $Vector3dc$$Type, arg2: $Matrix4x3d$$Type): $Matrix4x3d
-public "rotate"(arg0: double, arg1: $Vector3fc$$Type): $Matrix4x3d
 public "rotate"(arg0: $AxisAngle4d$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
+public "rotate"(arg0: double, arg1: $Vector3fc$$Type, arg2: $Matrix4x3d$$Type): $Matrix4x3d
+public "rotate"(arg0: double, arg1: $Vector3fc$$Type): $Matrix4x3d
+public "rotate"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix4x3d
+public "rotate"(arg0: $AxisAngle4d$$Type): $Matrix4x3d
+public "rotate"(arg0: $AxisAngle4f$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
 public "rotate"(arg0: double, arg1: $Vector3dc$$Type): $Matrix4x3d
-public "m12"(): double
-public "m12"(arg0: double): $Matrix4x3d
-public "translation"(arg0: $Vector3dc$$Type): $Matrix4x3d
-public "translation"(arg0: double, arg1: double, arg2: double): $Matrix4x3d
-public "translation"(arg0: $Vector3fc$$Type): $Matrix4x3d
+public "rotate"(arg0: $Quaternionfc$$Type): $Matrix4x3d
+public "rotate"(arg0: $Quaternionfc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
+public "rotate"(arg0: $Quaterniondc$$Type): $Matrix4x3d
+public "rotate"(arg0: double, arg1: $Vector3dc$$Type, arg2: $Matrix4x3d$$Type): $Matrix4x3d
+public "rotate"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4x3d$$Type): $Matrix4x3d
+public "rotate"(arg0: $AxisAngle4f$$Type): $Matrix4x3d
+public "rotate"(arg0: $Quaterniondc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
 public "m11"(arg0: double): $Matrix4x3d
 public "m11"(): double
+public "swap"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
+public "m12"(arg0: double): $Matrix4x3d
+public "m12"(): double
+public "translation"(arg0: $Vector3fc$$Type): $Matrix4x3d
+public "translation"(arg0: $Vector3dc$$Type): $Matrix4x3d
+public "translation"(arg0: double, arg1: double, arg2: double): $Matrix4x3d
+public "mul"(arg0: $Matrix4x3fc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
+public "mul"(arg0: $Matrix4x3dc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
+public "mul"(arg0: $Matrix4x3fc$$Type): $Matrix4x3d
+public "mul"(arg0: $Matrix4x3dc$$Type): $Matrix4x3d
+public "shadow"(arg0: $Vector4dc$$Type, arg1: $Matrix4x3dc$$Type, arg2: $Matrix4x3d$$Type): $Matrix4x3d
+public "shadow"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double): $Matrix4x3d
+public "shadow"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: $Matrix4x3d$$Type): $Matrix4x3d
+public "shadow"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4x3dc$$Type): $Matrix4x3d
+public "shadow"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4x3dc$$Type, arg5: $Matrix4x3d$$Type): $Matrix4x3d
+public "shadow"(arg0: $Vector4dc$$Type, arg1: double, arg2: double, arg3: double, arg4: double): $Matrix4x3d
+public "shadow"(arg0: $Vector4dc$$Type, arg1: $Matrix4x3dc$$Type): $Matrix4x3d
+public "shadow"(arg0: $Vector4dc$$Type, arg1: double, arg2: double, arg3: double, arg4: double, arg5: $Matrix4x3d$$Type): $Matrix4x3d
 public "m10"(): double
 public "m10"(arg0: double): $Matrix4x3d
 public "getColumn"(arg0: integer, arg1: $Vector3d$$Type): $Vector3d
-public "translate"(arg0: double, arg1: double, arg2: double): $Matrix4x3d
-public "translate"(arg0: $Vector3dc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
 public "translate"(arg0: $Vector3dc$$Type): $Matrix4x3d
+public "translate"(arg0: double, arg1: double, arg2: double, arg3: $Matrix4x3d$$Type): $Matrix4x3d
+public "translate"(arg0: double, arg1: double, arg2: double): $Matrix4x3d
 public "translate"(arg0: $Vector3fc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
 public "translate"(arg0: $Vector3fc$$Type): $Matrix4x3d
-public "translate"(arg0: double, arg1: double, arg2: double, arg3: $Matrix4x3d$$Type): $Matrix4x3d
-public "setOrtho"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: boolean): $Matrix4x3d
-public "setOrtho"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix4x3d
+public "translate"(arg0: $Vector3dc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
 public "transformPosition"(arg0: $Vector3d$$Type): $Vector3d
 public "transformPosition"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
+public "setOrtho"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: boolean): $Matrix4x3d
+public "setOrtho"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix4x3d
 public "rotateAround"(arg0: $Quaterniondc$$Type, arg1: double, arg2: double, arg3: double, arg4: $Matrix4x3d$$Type): $Matrix4x3d
 public "rotateAround"(arg0: $Quaterniondc$$Type, arg1: double, arg2: double, arg3: double): $Matrix4x3d
 public "determineProperties"(): $Matrix4x3d
@@ -6451,22 +6451,22 @@ public "rotationX"(arg0: double): $Matrix4x3d
 public "rotationY"(arg0: double): $Matrix4x3d
 public "rotationZ"(arg0: double): $Matrix4x3d
 public "rotateXYZ"(arg0: double, arg1: double, arg2: double, arg3: $Matrix4x3d$$Type): $Matrix4x3d
-public "rotateXYZ"(arg0: $Vector3d$$Type): $Matrix4x3d
 public "rotateXYZ"(arg0: double, arg1: double, arg2: double): $Matrix4x3d
+public "rotateXYZ"(arg0: $Vector3d$$Type): $Matrix4x3d
 public "rotateZYX"(arg0: double, arg1: double, arg2: double, arg3: $Matrix4x3d$$Type): $Matrix4x3d
 public "rotateZYX"(arg0: double, arg1: double, arg2: double): $Matrix4x3d
 public "rotateZYX"(arg0: $Vector3d$$Type): $Matrix4x3d
 public "rotateYXZ"(arg0: double, arg1: double, arg2: double): $Matrix4x3d
-public "rotateYXZ"(arg0: $Vector3d$$Type): $Matrix4x3d
 public "rotateYXZ"(arg0: double, arg1: double, arg2: double, arg3: $Matrix4x3d$$Type): $Matrix4x3d
+public "rotateYXZ"(arg0: $Vector3d$$Type): $Matrix4x3d
 public "getEulerAnglesXYZ"(arg0: $Vector3d$$Type): $Vector3d
 public "getEulerAnglesZYX"(arg0: $Vector3d$$Type): $Vector3d
 public "rotationXYZ"(arg0: double, arg1: double, arg2: double): $Matrix4x3d
 public "rotationZYX"(arg0: double, arg1: double, arg2: double): $Matrix4x3d
 public "rotationYXZ"(arg0: double, arg1: double, arg2: double): $Matrix4x3d
 public "scaling"(arg0: double, arg1: double, arg2: double): $Matrix4x3d
-public "scaling"(arg0: double): $Matrix4x3d
 public "scaling"(arg0: $Vector3dc$$Type): $Matrix4x3d
+public "scaling"(arg0: double): $Matrix4x3d
 public "setFromAddress"(arg0: long): $Matrix4x3d
 public "getToAddress"(arg0: long): $Matrix4x3dc
 public "m00"(): double
@@ -6475,50 +6475,49 @@ public "m20"(): double
 public "m20"(arg0: double): $Matrix4x3d
 public "m30"(arg0: double): $Matrix4x3d
 public "m30"(): double
-public "m01"(): double
 public "m01"(arg0: double): $Matrix4x3d
+public "m01"(): double
 public "m21"(): double
 public "m21"(arg0: double): $Matrix4x3d
-public "m31"(arg0: double): $Matrix4x3d
 public "m31"(): double
+public "m31"(arg0: double): $Matrix4x3d
 public "m02"(arg0: double): $Matrix4x3d
 public "m02"(): double
-public "m22"(arg0: double): $Matrix4x3d
 public "m22"(): double
+public "m22"(arg0: double): $Matrix4x3d
 public "m32"(arg0: double): $Matrix4x3d
 public "m32"(): double
 public "rotateX"(arg0: double): $Matrix4x3d
 public "rotateX"(arg0: double, arg1: $Matrix4x3d$$Type): $Matrix4x3d
-public "rotateY"(arg0: double, arg1: $Matrix4x3d$$Type): $Matrix4x3d
 public "rotateY"(arg0: double): $Matrix4x3d
-public "rotateZ"(arg0: double): $Matrix4x3d
+public "rotateY"(arg0: double, arg1: $Matrix4x3d$$Type): $Matrix4x3d
 public "rotateZ"(arg0: double, arg1: $Matrix4x3d$$Type): $Matrix4x3d
+public "rotateZ"(arg0: double): $Matrix4x3d
+public "reflect"(arg0: $Quaterniondc$$Type, arg1: $Vector3dc$$Type, arg2: $Matrix4x3d$$Type): $Matrix4x3d
 public "reflect"(arg0: $Quaterniondc$$Type, arg1: $Vector3dc$$Type): $Matrix4x3d
-public "reflect"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Matrix4x3d$$Type): $Matrix4x3d
-public "reflect"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4x3d$$Type): $Matrix4x3d
-public "reflect"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix4x3d
 public "reflect"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix4x3d
 public "reflect"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix4x3d$$Type): $Matrix4x3d
+public "reflect"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4x3d$$Type): $Matrix4x3d
 public "reflect"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type): $Matrix4x3d
-public "reflect"(arg0: $Quaterniondc$$Type, arg1: $Vector3dc$$Type, arg2: $Matrix4x3d$$Type): $Matrix4x3d
-public "lerp"(arg0: $Matrix4x3dc$$Type, arg1: double): $Matrix4x3d
+public "reflect"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix4x3d
+public "reflect"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Matrix4x3d$$Type): $Matrix4x3d
 public "lerp"(arg0: $Matrix4x3dc$$Type, arg1: double, arg2: $Matrix4x3d$$Type): $Matrix4x3d
-public "getUnnormalizedRotation"(arg0: $Quaternionf$$Type): $Quaternionf
+public "lerp"(arg0: $Matrix4x3dc$$Type, arg1: double): $Matrix4x3d
 public "getUnnormalizedRotation"(arg0: $Quaterniond$$Type): $Quaterniond
-public "getNormalizedRotation"(arg0: $Quaterniond$$Type): $Quaterniond
+public "getUnnormalizedRotation"(arg0: $Quaternionf$$Type): $Quaternionf
 public "getNormalizedRotation"(arg0: $Quaternionf$$Type): $Quaternionf
+public "getNormalizedRotation"(arg0: $Quaterniond$$Type): $Quaterniond
 public "setRotationXYZ"(arg0: double, arg1: double, arg2: double): $Matrix4x3d
 public "setRotationZYX"(arg0: double, arg1: double, arg2: double): $Matrix4x3d
 public "setRotationYXZ"(arg0: double, arg1: double, arg2: double): $Matrix4x3d
-public "determinant"(): double
+public "lookAlong"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix4x3d
+public "lookAlong"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Matrix4x3d$$Type): $Matrix4x3d
 public "lookAlong"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type): $Matrix4x3d
 public "lookAlong"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix4x3d$$Type): $Matrix4x3d
-public "lookAlong"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Matrix4x3d$$Type): $Matrix4x3d
-public "lookAlong"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix4x3d
-public "rotateLocalX"(arg0: double, arg1: $Matrix4x3d$$Type): $Matrix4x3d
 public "rotateLocalX"(arg0: double): $Matrix4x3d
-public "rotateLocalY"(arg0: double): $Matrix4x3d
+public "rotateLocalX"(arg0: double, arg1: $Matrix4x3d$$Type): $Matrix4x3d
 public "rotateLocalY"(arg0: double, arg1: $Matrix4x3d$$Type): $Matrix4x3d
+public "rotateLocalY"(arg0: double): $Matrix4x3d
 public "rotateLocalZ"(arg0: double, arg1: $Matrix4x3d$$Type): $Matrix4x3d
 public "rotateLocalZ"(arg0: double): $Matrix4x3d
 public "positiveX"(arg0: $Vector3d$$Type): $Vector3d
@@ -6527,51 +6526,53 @@ public "positiveY"(arg0: $Vector3d$$Type): $Vector3d
 public "normalizedPositiveY"(arg0: $Vector3d$$Type): $Vector3d
 public "positiveZ"(arg0: $Vector3d$$Type): $Vector3d
 public "normalizedPositiveZ"(arg0: $Vector3d$$Type): $Vector3d
-public "cofactor3x3"(): $Matrix4x3d
-public "cofactor3x3"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
-public "cofactor3x3"(arg0: $Matrix3d$$Type): $Matrix3d
-public "normalize3x3"(): $Matrix4x3d
-public "normalize3x3"(arg0: $Matrix3d$$Type): $Matrix3d
-public "normalize3x3"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
-public "frustumPlane"(arg0: integer, arg1: $Vector4d$$Type): $Vector4d
-public "billboardCylindrical"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Vector3dc$$Type): $Matrix4x3d
-public "billboardSpherical"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type): $Matrix4x3d
-public "billboardSpherical"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Vector3dc$$Type): $Matrix4x3d
-public "arcball"(arg0: double, arg1: $Vector3dc$$Type, arg2: double, arg3: double): $Matrix4x3d
-public "arcball"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix4x3d$$Type): $Matrix4x3d
-public "arcball"(arg0: double, arg1: $Vector3dc$$Type, arg2: double, arg3: double, arg4: $Matrix4x3d$$Type): $Matrix4x3d
-public "arcball"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix4x3d
-public "transformAab"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Vector3d$$Type, arg7: $Vector3d$$Type): $Matrix4x3d
-public "transformAab"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Vector3d$$Type, arg3: $Vector3d$$Type): $Matrix4x3d
-public "rotation"(arg0: $Quaterniondc$$Type): $Matrix4x3d
+public "setOrtho2DLH"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix4x3d
+public "setLookAlong"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type): $Matrix4x3d
+public "setLookAlong"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix4x3d
+public "setLookAt"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double): $Matrix4x3d
+public "setLookAt"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Vector3dc$$Type): $Matrix4x3d
+public "lookAt"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double): $Matrix4x3d
+public "lookAt"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Vector3dc$$Type, arg3: $Matrix4x3d$$Type): $Matrix4x3d
+public "lookAt"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double, arg9: $Matrix4x3d$$Type): $Matrix4x3d
+public "lookAt"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Vector3dc$$Type): $Matrix4x3d
+public "setLookAtLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double): $Matrix4x3d
+public "setLookAtLH"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Vector3dc$$Type): $Matrix4x3d
+public "lookAtLH"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Vector3dc$$Type, arg3: $Matrix4x3d$$Type): $Matrix4x3d
+public "lookAtLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double): $Matrix4x3d
+public "lookAtLH"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Vector3dc$$Type): $Matrix4x3d
+public "lookAtLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double, arg9: $Matrix4x3d$$Type): $Matrix4x3d
+public "rotationAround"(arg0: $Quaterniondc$$Type, arg1: double, arg2: double, arg3: double): $Matrix4x3d
 public "rotation"(arg0: $Quaternionfc$$Type): $Matrix4x3d
-public "rotation"(arg0: double, arg1: $Vector3dc$$Type): $Matrix4x3d
-public "rotation"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix4x3d
 public "rotation"(arg0: $AxisAngle4f$$Type): $Matrix4x3d
 public "rotation"(arg0: $AxisAngle4d$$Type): $Matrix4x3d
+public "rotation"(arg0: $Quaterniondc$$Type): $Matrix4x3d
+public "rotation"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix4x3d
 public "rotation"(arg0: double, arg1: $Vector3fc$$Type): $Matrix4x3d
-public "translationRotateScale"(arg0: $Vector3dc$$Type, arg1: $Quaterniondc$$Type, arg2: $Vector3dc$$Type): $Matrix4x3d
+public "rotation"(arg0: double, arg1: $Vector3dc$$Type): $Matrix4x3d
+public "set3x3"(arg0: $Matrix3fc$$Type): $Matrix4x3d
+public "set3x3"(arg0: $Matrix3dc$$Type): $Matrix4x3d
+public "set3x3"(arg0: $Matrix4x3dc$$Type): $Matrix4x3d
+public "getScale"(arg0: $Vector3d$$Type): $Vector3d
 public "translationRotateScale"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double, arg9: double): $Matrix4x3d
+public "translationRotateScale"(arg0: $Vector3dc$$Type, arg1: $Quaterniondc$$Type, arg2: $Vector3dc$$Type): $Matrix4x3d
 public "translationRotateScale"(arg0: $Vector3fc$$Type, arg1: $Quaternionfc$$Type, arg2: $Vector3fc$$Type): $Matrix4x3d
-public "translationRotateInvert"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double): $Matrix4x3d
 public "translationRotateInvert"(arg0: $Vector3dc$$Type, arg1: $Quaterniondc$$Type): $Matrix4x3d
-public "translationRotate"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double): $Matrix4x3d
+public "translationRotateInvert"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double): $Matrix4x3d
 public "translationRotate"(arg0: $Vector3dc$$Type, arg1: $Quaterniondc$$Type): $Matrix4x3d
+public "translationRotate"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double): $Matrix4x3d
 public "translationRotate"(arg0: double, arg1: double, arg2: double, arg3: $Quaterniondc$$Type): $Matrix4x3d
-public "rotateTowards"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix4x3d$$Type): $Matrix4x3d
-public "rotateTowards"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix4x3d
-public "rotateTowards"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type): $Matrix4x3d
-public "rotateTowards"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Matrix4x3d$$Type): $Matrix4x3d
-public "rotationTowards"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix4x3d
+public "transformDirection"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
+public "transformDirection"(arg0: $Vector3d$$Type): $Vector3d
 public "rotationTowards"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type): $Matrix4x3d
-public "translationRotateTowards"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double): $Matrix4x3d
+public "rotationTowards"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix4x3d
 public "translationRotateTowards"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Vector3dc$$Type): $Matrix4x3d
-public "obliqueZ"(arg0: double, arg1: double, arg2: $Matrix4x3d$$Type): $Matrix4x3d
+public "translationRotateTowards"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double): $Matrix4x3d
 public "obliqueZ"(arg0: double, arg1: double): $Matrix4x3d
-public "mapXZY"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
+public "obliqueZ"(arg0: double, arg1: double, arg2: $Matrix4x3d$$Type): $Matrix4x3d
 public "mapXZY"(): $Matrix4x3d
-public "mapXZnY"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
+public "mapXZY"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
 public "mapXZnY"(): $Matrix4x3d
+public "mapXZnY"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
 public "mapXnYnZ"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
 public "mapXnYnZ"(): $Matrix4x3d
 public "mapXnZY"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
@@ -6598,10 +6599,10 @@ public "mapZXY"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
 public "mapZXY"(): $Matrix4x3d
 public "mapZXnY"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
 public "mapZXnY"(): $Matrix4x3d
-public "mapZYX"(): $Matrix4x3d
 public "mapZYX"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
-public "mapZYnX"(): $Matrix4x3d
+public "mapZYX"(): $Matrix4x3d
 public "mapZYnX"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
+public "mapZYnX"(): $Matrix4x3d
 public "mapZnXY"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
 public "mapZnXY"(): $Matrix4x3d
 public "mapZnXnY"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
@@ -6610,14 +6611,14 @@ public "mapZnYX"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
 public "mapZnYX"(): $Matrix4x3d
 public "mapZnYnX"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
 public "mapZnYnX"(): $Matrix4x3d
-public "mapnXYnZ"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
 public "mapnXYnZ"(): $Matrix4x3d
+public "mapnXYnZ"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
 public "mapnXZY"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
 public "mapnXZY"(): $Matrix4x3d
-public "mapnXZnY"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
 public "mapnXZnY"(): $Matrix4x3d
-public "mapnXnYZ"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
+public "mapnXZnY"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
 public "mapnXnYZ"(): $Matrix4x3d
+public "mapnXnYZ"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
 public "mapnXnYnZ"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
 public "mapnXnYnZ"(): $Matrix4x3d
 public "mapnXnZY"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
@@ -6642,134 +6643,133 @@ public "mapnYnZnX"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
 public "mapnYnZnX"(): $Matrix4x3d
 public "mapnZXY"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
 public "mapnZXY"(): $Matrix4x3d
-public "mapnZXnY"(): $Matrix4x3d
 public "mapnZXnY"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
-public "mapnZYX"(): $Matrix4x3d
+public "mapnZXnY"(): $Matrix4x3d
 public "mapnZYX"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
-public "mapnZYnX"(): $Matrix4x3d
+public "mapnZYX"(): $Matrix4x3d
 public "mapnZYnX"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
+public "mapnZYnX"(): $Matrix4x3d
 public "mapnZnXY"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
 public "mapnZnXY"(): $Matrix4x3d
-public "mapnZnXnY"(): $Matrix4x3d
 public "mapnZnXnY"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
+public "mapnZnXnY"(): $Matrix4x3d
 public "mapnZnYX"(): $Matrix4x3d
 public "mapnZnYX"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
-public "mapnZnYnX"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
 public "mapnZnYnX"(): $Matrix4x3d
+public "mapnZnYnX"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
 public "negateX"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
 public "negateX"(): $Matrix4x3d
-public "negateY"(): $Matrix4x3d
 public "negateY"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
-public "negateZ"(): $Matrix4x3d
+public "negateY"(): $Matrix4x3d
 public "negateZ"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
-public "setOrthoSymmetric"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix4x3d
-public "setOrthoSymmetric"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: boolean): $Matrix4x3d
-public "orthoSymmetricLH"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix4x3d
-public "orthoSymmetricLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4x3d$$Type): $Matrix4x3d
-public "orthoSymmetricLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: boolean): $Matrix4x3d
-public "orthoSymmetricLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: boolean, arg5: $Matrix4x3d$$Type): $Matrix4x3d
-public "setOrthoSymmetricLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: boolean): $Matrix4x3d
-public "setOrthoSymmetricLH"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix4x3d
-public "setOrtho2D"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix4x3d
-public "ortho2DLH"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix4x3d
-public "ortho2DLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4x3d$$Type): $Matrix4x3d
-public "setOrtho2DLH"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix4x3d
-public "setLookAlong"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type): $Matrix4x3d
-public "setLookAlong"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix4x3d
-public "setLookAt"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double): $Matrix4x3d
-public "setLookAt"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Vector3dc$$Type): $Matrix4x3d
-public "lookAt"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double): $Matrix4x3d
-public "lookAt"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double, arg9: $Matrix4x3d$$Type): $Matrix4x3d
-public "lookAt"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Vector3dc$$Type, arg3: $Matrix4x3d$$Type): $Matrix4x3d
-public "lookAt"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Vector3dc$$Type): $Matrix4x3d
-public "setLookAtLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double): $Matrix4x3d
-public "setLookAtLH"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Vector3dc$$Type): $Matrix4x3d
-public "lookAtLH"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Vector3dc$$Type): $Matrix4x3d
-public "lookAtLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double): $Matrix4x3d
-public "lookAtLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double, arg9: $Matrix4x3d$$Type): $Matrix4x3d
-public "lookAtLH"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Vector3dc$$Type, arg3: $Matrix4x3d$$Type): $Matrix4x3d
-public "assume"(arg0: integer): $Matrix4x3d
-public "mulTranslation"(arg0: $Matrix4x3fc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
-public "mulTranslation"(arg0: $Matrix4x3dc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
-public "rotationAround"(arg0: $Quaterniondc$$Type, arg1: double, arg2: double, arg3: double): $Matrix4x3d
-public "reflection"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type): $Matrix4x3d
-public "reflection"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix4x3d
-public "reflection"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix4x3d
-public "reflection"(arg0: $Quaterniondc$$Type, arg1: $Vector3dc$$Type): $Matrix4x3d
-public "getRow"(arg0: integer, arg1: $Vector4d$$Type): $Vector4d
-public "setRow"(arg0: integer, arg1: $Vector4dc$$Type): $Matrix4x3d
-public "setColumn"(arg0: integer, arg1: $Vector3dc$$Type): $Matrix4x3d
-public "transformDirection"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
-public "transformDirection"(arg0: $Vector3d$$Type): $Vector3d
-public "scaleXY"(arg0: double, arg1: double): $Matrix4x3d
+public "negateZ"(): $Matrix4x3d
+public "mulComponentWise"(arg0: $Matrix4x3dc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
+public "mulComponentWise"(arg0: $Matrix4x3dc$$Type): $Matrix4x3d
+public "mul3x3"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double): $Matrix4x3d
+public "mul3x3"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double, arg9: $Matrix4x3d$$Type): $Matrix4x3d
 public "scaleXY"(arg0: double, arg1: double, arg2: $Matrix4x3d$$Type): $Matrix4x3d
-public "scaleAround"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix4x3d
-public "scaleAround"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix4x3d
-public "scaleAround"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix4x3d$$Type): $Matrix4x3d
+public "scaleXY"(arg0: double, arg1: double): $Matrix4x3d
 public "scaleAround"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4x3d$$Type): $Matrix4x3d
-public "scaleLocal"(arg0: double, arg1: double, arg2: double): $Matrix4x3d
+public "scaleAround"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix4x3d
+public "scaleAround"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix4x3d$$Type): $Matrix4x3d
+public "scaleAround"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix4x3d
 public "scaleLocal"(arg0: double, arg1: double, arg2: double, arg3: $Matrix4x3d$$Type): $Matrix4x3d
-public "transpose3x3"(arg0: $Matrix3d$$Type): $Matrix3d
-public "transpose3x3"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
+public "scaleLocal"(arg0: double, arg1: double, arg2: double): $Matrix4x3d
+public "rotateTranslation"(arg0: $Quaterniondc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
+public "rotateTranslation"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4x3d$$Type): $Matrix4x3d
+public "rotateTranslation"(arg0: $Quaternionfc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
 public "transpose3x3"(): $Matrix4x3d
+public "transpose3x3"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
+public "transpose3x3"(arg0: $Matrix3d$$Type): $Matrix3d
 public "setTranslation"(arg0: $Vector3dc$$Type): $Matrix4x3d
 public "setTranslation"(arg0: double, arg1: double, arg2: double): $Matrix4x3d
 public "getTranslation"(arg0: $Vector3d$$Type): $Vector3d
-public "getScale"(arg0: $Vector3d$$Type): $Vector3d
-public "invertOrtho"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
+public "getTransposed"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
+public "getTransposed"(arg0: $ByteBuffer$$Type): $ByteBuffer
+public "getTransposed"(arg0: $DoubleBuffer$$Type): $DoubleBuffer
+public "getTransposed"(arg0: integer, arg1: $DoubleBuffer$$Type): $DoubleBuffer
+public "getTransposed"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
+public "getTransposed"(arg0: (double)[], arg1: integer): (double)[]
+public "getTransposed"(arg0: $FloatBuffer$$Type): $FloatBuffer
+public "getTransposed"(arg0: (double)[]): (double)[]
+public "determinant"(): double
 public "invertOrtho"(): $Matrix4x3d
-public "mulComponentWise"(arg0: $Matrix4x3dc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
-public "mulComponentWise"(arg0: $Matrix4x3dc$$Type): $Matrix4x3d
-public "set3x3"(arg0: $Matrix4x3dc$$Type): $Matrix4x3d
-public "set3x3"(arg0: $Matrix3fc$$Type): $Matrix4x3d
-public "set3x3"(arg0: $Matrix3dc$$Type): $Matrix4x3d
-public "rotateTranslation"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4x3d$$Type): $Matrix4x3d
-public "rotateTranslation"(arg0: $Quaterniondc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
-public "rotateTranslation"(arg0: $Quaternionfc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
+public "invertOrtho"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
 public "rotateLocal"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4x3d$$Type): $Matrix4x3d
-public "rotateLocal"(arg0: $Quaterniondc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
-public "rotateLocal"(arg0: $Quaterniondc$$Type): $Matrix4x3d
-public "rotateLocal"(arg0: $Quaternionfc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
-public "rotateLocal"(arg0: $Quaternionfc$$Type): $Matrix4x3d
 public "rotateLocal"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix4x3d
-public "translateLocal"(arg0: double, arg1: double, arg2: double): $Matrix4x3d
-public "translateLocal"(arg0: $Vector3fc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
-public "translateLocal"(arg0: $Vector3fc$$Type): $Matrix4x3d
-public "translateLocal"(arg0: $Vector3dc$$Type): $Matrix4x3d
+public "rotateLocal"(arg0: $Quaternionfc$$Type): $Matrix4x3d
+public "rotateLocal"(arg0: $Quaterniondc$$Type): $Matrix4x3d
+public "rotateLocal"(arg0: $Quaterniondc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
+public "rotateLocal"(arg0: $Quaternionfc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
 public "translateLocal"(arg0: $Vector3dc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
+public "translateLocal"(arg0: $Vector3fc$$Type): $Matrix4x3d
+public "translateLocal"(arg0: $Vector3fc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
+public "translateLocal"(arg0: double, arg1: double, arg2: double): $Matrix4x3d
 public "translateLocal"(arg0: double, arg1: double, arg2: double, arg3: $Matrix4x3d$$Type): $Matrix4x3d
-public "ortho"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix4x3d
+public "translateLocal"(arg0: $Vector3dc$$Type): $Matrix4x3d
 public "ortho"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: boolean): $Matrix4x3d
+public "ortho"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix4x3d
 public "ortho"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: boolean, arg7: $Matrix4x3d$$Type): $Matrix4x3d
 public "ortho"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix4x3d$$Type): $Matrix4x3d
 public "orthoLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix4x3d
-public "orthoLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: boolean): $Matrix4x3d
 public "orthoLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix4x3d$$Type): $Matrix4x3d
+public "orthoLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: boolean): $Matrix4x3d
 public "orthoLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: boolean, arg7: $Matrix4x3d$$Type): $Matrix4x3d
 public "setOrthoLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix4x3d
 public "setOrthoLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: boolean): $Matrix4x3d
-public "orthoSymmetric"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: boolean, arg5: $Matrix4x3d$$Type): $Matrix4x3d
-public "orthoSymmetric"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4x3d$$Type): $Matrix4x3d
-public "orthoSymmetric"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: boolean): $Matrix4x3d
 public "orthoSymmetric"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix4x3d
-public "ortho2D"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4x3d$$Type): $Matrix4x3d
+public "orthoSymmetric"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4x3d$$Type): $Matrix4x3d
+public "orthoSymmetric"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: boolean, arg5: $Matrix4x3d$$Type): $Matrix4x3d
+public "orthoSymmetric"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: boolean): $Matrix4x3d
+public "setOrthoSymmetric"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: boolean): $Matrix4x3d
+public "setOrthoSymmetric"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix4x3d
+public "orthoSymmetricLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4x3d$$Type): $Matrix4x3d
+public "orthoSymmetricLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: boolean): $Matrix4x3d
+public "orthoSymmetricLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: boolean, arg5: $Matrix4x3d$$Type): $Matrix4x3d
+public "orthoSymmetricLH"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix4x3d
+public "setOrthoSymmetricLH"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix4x3d
+public "setOrthoSymmetricLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: boolean): $Matrix4x3d
 public "ortho2D"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix4x3d
-public "getTransposed"(arg0: $DoubleBuffer$$Type): $DoubleBuffer
-public "getTransposed"(arg0: $FloatBuffer$$Type): $FloatBuffer
-public "getTransposed"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
-public "getTransposed"(arg0: (double)[], arg1: integer): (double)[]
-public "getTransposed"(arg0: (double)[]): (double)[]
-public "getTransposed"(arg0: integer, arg1: $DoubleBuffer$$Type): $DoubleBuffer
-public "getTransposed"(arg0: $ByteBuffer$$Type): $ByteBuffer
-public "getTransposed"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
-public "mul3x3"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double, arg9: $Matrix4x3d$$Type): $Matrix4x3d
-public "mul3x3"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double): $Matrix4x3d
+public "ortho2D"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4x3d$$Type): $Matrix4x3d
+public "setOrtho2D"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix4x3d
+public "ortho2DLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4x3d$$Type): $Matrix4x3d
+public "ortho2DLH"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix4x3d
+public "mulTranslation"(arg0: $Matrix4x3dc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
+public "mulTranslation"(arg0: $Matrix4x3fc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
+public "assume"(arg0: integer): $Matrix4x3d
+public "reflection"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type): $Matrix4x3d
+public "reflection"(arg0: $Quaterniondc$$Type, arg1: $Vector3dc$$Type): $Matrix4x3d
+public "reflection"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix4x3d
+public "reflection"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix4x3d
+public "getRow"(arg0: integer, arg1: $Vector4d$$Type): $Vector4d
+public "setRow"(arg0: integer, arg1: $Vector4dc$$Type): $Matrix4x3d
+public "setColumn"(arg0: integer, arg1: $Vector3dc$$Type): $Matrix4x3d
+public "cofactor3x3"(): $Matrix4x3d
+public "cofactor3x3"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
+public "cofactor3x3"(arg0: $Matrix3d$$Type): $Matrix3d
+public "normalize3x3"(arg0: $Matrix3d$$Type): $Matrix3d
+public "normalize3x3"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
+public "normalize3x3"(): $Matrix4x3d
+public "frustumPlane"(arg0: integer, arg1: $Vector4d$$Type): $Vector4d
+public "billboardCylindrical"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Vector3dc$$Type): $Matrix4x3d
+public "billboardSpherical"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type): $Matrix4x3d
+public "billboardSpherical"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Vector3dc$$Type): $Matrix4x3d
+public "arcball"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix4x3d
+public "arcball"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix4x3d$$Type): $Matrix4x3d
+public "arcball"(arg0: double, arg1: $Vector3dc$$Type, arg2: double, arg3: double): $Matrix4x3d
+public "arcball"(arg0: double, arg1: $Vector3dc$$Type, arg2: double, arg3: double, arg4: $Matrix4x3d$$Type): $Matrix4x3d
+public "transformAab"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Vector3d$$Type, arg3: $Vector3d$$Type): $Matrix4x3d
+public "transformAab"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Vector3d$$Type, arg7: $Vector3d$$Type): $Matrix4x3d
+public "rotateTowards"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Matrix4x3d$$Type): $Matrix4x3d
+public "rotateTowards"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix4x3d
+public "rotateTowards"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type): $Matrix4x3d
+public "rotateTowards"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix4x3d$$Type): $Matrix4x3d
 set "floats"(value: $ByteBuffer$$Type)
 get "finite"(): boolean
 set "fromAddress"(value: long)
-set "3x3"(value: $Matrix4x3dc$$Type)
 set "3x3"(value: $Matrix3fc$$Type)
 set "3x3"(value: $Matrix3dc$$Type)
+set "3x3"(value: $Matrix4x3dc$$Type)
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -6796,11 +6796,11 @@ import {$Quaternionf, $Quaternionf$$Type} from "org.joml.Quaternionf"
 import {$Quaternionfc$$Type} from "org.joml.Quaternionfc"
 import {$Quaterniondc$$Type} from "org.joml.Quaterniondc"
 import {$Vector4f, $Vector4f$$Type} from "org.joml.Vector4f"
-import {$Matrix3f, $Matrix3f$$Type} from "org.joml.Matrix3f"
 import {$Externalizable$$Interface} from "java.io.Externalizable"
+import {$Matrix3f, $Matrix3f$$Type} from "org.joml.Matrix3f"
 import {$FloatBuffer, $FloatBuffer$$Type} from "java.nio.FloatBuffer"
-import {$Vector4fc$$Type} from "org.joml.Vector4fc"
 import {$NumberFormat$$Type} from "java.text.NumberFormat"
+import {$Vector4fc$$Type} from "org.joml.Vector4fc"
 import {$Vector3fc$$Type} from "org.joml.Vector3fc"
 import {$AxisAngle4f, $AxisAngle4f$$Type} from "org.joml.AxisAngle4f"
 import {$AxisAngle4d, $AxisAngle4d$$Type} from "org.joml.AxisAngle4d"
@@ -6808,161 +6808,161 @@ import {$ByteBuffer, $ByteBuffer$$Type} from "java.nio.ByteBuffer"
 
 export class $Matrix4x3f implements $Externalizable$$Interface, $Cloneable$$Interface, $Matrix4x3fc$$Interface {
 constructor()
-constructor(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3fc$$Type, arg3: $Vector3fc$$Type)
-constructor(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float, arg9: float, arg10: float, arg11: float)
 constructor(arg0: $Matrix4x3fc$$Type)
+constructor(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float, arg9: float, arg10: float, arg11: float)
 constructor(arg0: $Matrix3fc$$Type)
 constructor(arg0: $FloatBuffer$$Type)
+constructor(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3fc$$Type, arg3: $Vector3fc$$Type)
 
 public "mulOrtho"(arg0: $Matrix4x3fc$$Type): $Matrix4x3f
 public "mulOrtho"(arg0: $Matrix4x3fc$$Type, arg1: $Matrix4x3f$$Type): $Matrix4x3f
 public "get4x4"(arg0: $ByteBuffer$$Type): $ByteBuffer
 public "get4x4"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
-public "get4x4"(arg0: (float)[]): (float)[]
-public "get4x4"(arg0: $FloatBuffer$$Type): $FloatBuffer
-public "get4x4"(arg0: (float)[], arg1: integer): (float)[]
 public "get4x4"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
-public "translationRotateScaleMul"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float, arg9: float, arg10: $Matrix4x3f$$Type): $Matrix4x3f
+public "get4x4"(arg0: $FloatBuffer$$Type): $FloatBuffer
+public "get4x4"(arg0: (float)[]): (float)[]
+public "get4x4"(arg0: (float)[], arg1: integer): (float)[]
 public "translationRotateScaleMul"(arg0: $Vector3fc$$Type, arg1: $Quaternionfc$$Type, arg2: $Vector3fc$$Type, arg3: $Matrix4x3f$$Type): $Matrix4x3f
-public "translationRotateMul"(arg0: float, arg1: float, arg2: float, arg3: $Quaternionfc$$Type, arg4: $Matrix4x3fc$$Type): $Matrix4x3f
+public "translationRotateScaleMul"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float, arg9: float, arg10: $Matrix4x3f$$Type): $Matrix4x3f
 public "translationRotateMul"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: $Matrix4x3fc$$Type): $Matrix4x3f
+public "translationRotateMul"(arg0: float, arg1: float, arg2: float, arg3: $Quaternionfc$$Type, arg4: $Matrix4x3fc$$Type): $Matrix4x3f
 public "invert"(): $Matrix4x3f
-public "invert"(arg0: $Matrix4f$$Type): $Matrix4f
 public "invert"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
-public "sub"(arg0: $Matrix4x3fc$$Type): $Matrix4x3f
-public "sub"(arg0: $Matrix4x3fc$$Type, arg1: $Matrix4x3f$$Type): $Matrix4x3f
-public "mul"(arg0: $Matrix4x3fc$$Type, arg1: $Matrix4x3f$$Type): $Matrix4x3f
-public "mul"(arg0: $Matrix4x3fc$$Type): $Matrix4x3f
+public "invert"(arg0: $Matrix4f$$Type): $Matrix4f
 public "origin"(arg0: $Vector3f$$Type): $Vector3f
-public "shadow"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: $Matrix4x3f$$Type): $Matrix4x3f
-public "shadow"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float): $Matrix4x3f
-public "shadow"(arg0: $Vector4fc$$Type, arg1: float, arg2: float, arg3: float, arg4: float, arg5: $Matrix4x3f$$Type): $Matrix4x3f
-public "shadow"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4x3f$$Type): $Matrix4x3f
-public "shadow"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4x3fc$$Type, arg5: $Matrix4x3f$$Type): $Matrix4x3f
-public "shadow"(arg0: $Vector4fc$$Type, arg1: $Matrix4x3fc$$Type): $Matrix4x3f
-public "shadow"(arg0: $Vector4fc$$Type, arg1: $Matrix4x3fc$$Type, arg2: $Matrix4x3f$$Type): $Matrix4x3f
-public "shadow"(arg0: $Vector4fc$$Type, arg1: float, arg2: float, arg3: float, arg4: float): $Matrix4x3f
-public "normal"(): $Matrix4x3f
-public "normal"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
-public "normal"(arg0: $Matrix3f$$Type): $Matrix3f
 public "writeExternal"(arg0: $ObjectOutput$$Type): void
 public "readExternal"(arg0: $ObjectInput$$Type): void
-public "get"(arg0: $Matrix4d$$Type): $Matrix4d
-public "get"(arg0: $Matrix4f$$Type): $Matrix4f
+public "normal"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
+public "normal"(): $Matrix4x3f
+public "normal"(arg0: $Matrix3f$$Type): $Matrix3f
+public "sub"(arg0: $Matrix4x3fc$$Type, arg1: $Matrix4x3f$$Type): $Matrix4x3f
+public "sub"(arg0: $Matrix4x3fc$$Type): $Matrix4x3f
 public "get"(arg0: $FloatBuffer$$Type): $FloatBuffer
 public "get"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
-public "get"(arg0: (float)[], arg1: integer): (float)[]
-public "get"(arg0: $ByteBuffer$$Type): $ByteBuffer
-public "get"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
+public "get"(arg0: $Matrix4d$$Type): $Matrix4d
 public "get"(arg0: (float)[]): (float)[]
+public "get"(arg0: (float)[], arg1: integer): (float)[]
 public "get"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
+public "get"(arg0: $ByteBuffer$$Type): $ByteBuffer
 public "get"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
-public "equals"(arg0: $Matrix4x3fc$$Type, arg1: float): boolean
+public "get"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
+public "get"(arg0: $Matrix4f$$Type): $Matrix4f
 public "equals"(arg0: any): boolean
+public "equals"(arg0: $Matrix4x3fc$$Type, arg1: float): boolean
 public "toString"(arg0: $NumberFormat$$Type): StringJS
 public "toString"(): StringJS
 public "hashCode"(): integer
 public "clone"(): any
-public "fma"(arg0: $Matrix4x3fc$$Type, arg1: float, arg2: $Matrix4x3f$$Type): $Matrix4x3f
 public "fma"(arg0: $Matrix4x3fc$$Type, arg1: float): $Matrix4x3f
+public "fma"(arg0: $Matrix4x3fc$$Type, arg1: float, arg2: $Matrix4x3f$$Type): $Matrix4x3f
 public "isFinite"(): boolean
-public "scale"(arg0: $Vector3fc$$Type): $Matrix4x3f
-public "scale"(arg0: $Vector3fc$$Type, arg1: $Matrix4x3f$$Type): $Matrix4x3f
-public "scale"(arg0: float, arg1: float, arg2: float): $Matrix4x3f
 public "scale"(arg0: float, arg1: float, arg2: float, arg3: $Matrix4x3f$$Type): $Matrix4x3f
 public "scale"(arg0: float): $Matrix4x3f
 public "scale"(arg0: float, arg1: $Matrix4x3f$$Type): $Matrix4x3f
-public "add"(arg0: $Matrix4x3fc$$Type, arg1: $Matrix4x3f$$Type): $Matrix4x3f
+public "scale"(arg0: $Vector3fc$$Type): $Matrix4x3f
+public "scale"(arg0: $Vector3fc$$Type, arg1: $Matrix4x3f$$Type): $Matrix4x3f
+public "scale"(arg0: float, arg1: float, arg2: float): $Matrix4x3f
 public "add"(arg0: $Matrix4x3fc$$Type): $Matrix4x3f
-public "transform"(arg0: $Vector4f$$Type): $Vector4f
+public "add"(arg0: $Matrix4x3fc$$Type, arg1: $Matrix4x3f$$Type): $Matrix4x3f
 public "transform"(arg0: $Vector4fc$$Type, arg1: $Vector4f$$Type): $Vector4f
+public "transform"(arg0: $Vector4f$$Type): $Vector4f
 public "identity"(): $Matrix4x3f
-public "set"(arg0: $Matrix4fc$$Type): $Matrix4x3f
 public "set"(arg0: integer, arg1: $ByteBuffer$$Type): $Matrix4x3f
+public "set"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float, arg9: float, arg10: float, arg11: float): $Matrix4x3f
+public "set"(arg0: $Quaterniondc$$Type): $Matrix4x3f
+public "set"(arg0: $Matrix4x3fc$$Type): $Matrix4x3f
+public "set"(arg0: (float)[], arg1: integer): $Matrix4x3f
+public "set"(arg0: $FloatBuffer$$Type): $Matrix4x3f
+public "set"(arg0: (float)[]): $Matrix4x3f
 public "set"(arg0: $ByteBuffer$$Type): $Matrix4x3f
 public "set"(arg0: integer, arg1: $FloatBuffer$$Type): $Matrix4x3f
-public "set"(arg0: $AxisAngle4f$$Type): $Matrix4x3f
-public "set"(arg0: $Quaternionfc$$Type): $Matrix4x3f
 public "set"(arg0: $Matrix3fc$$Type): $Matrix4x3f
-public "set"(arg0: $Quaterniondc$$Type): $Matrix4x3f
-public "set"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float, arg9: float, arg10: float, arg11: float): $Matrix4x3f
-public "set"(arg0: $Matrix4x3fc$$Type): $Matrix4x3f
-public "set"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3fc$$Type, arg3: $Vector3fc$$Type): $Matrix4x3f
+public "set"(arg0: $AxisAngle4f$$Type): $Matrix4x3f
 public "set"(arg0: $AxisAngle4d$$Type): $Matrix4x3f
-public "set"(arg0: (float)[], arg1: integer): $Matrix4x3f
-public "set"(arg0: (float)[]): $Matrix4x3f
-public "set"(arg0: $FloatBuffer$$Type): $Matrix4x3f
+public "set"(arg0: $Quaternionfc$$Type): $Matrix4x3f
+public "set"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3fc$$Type, arg3: $Vector3fc$$Type): $Matrix4x3f
+public "set"(arg0: $Matrix4fc$$Type): $Matrix4x3f
 public "properties"(): integer
 public "zero"(): $Matrix4x3f
 public "pick"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: (integer)[], arg5: $Matrix4x3f$$Type): $Matrix4x3f
 public "pick"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: (integer)[]): $Matrix4x3f
-public "swap"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
-public "rotate"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4x3f
+public "rotate"(arg0: $AxisAngle4f$$Type, arg1: $Matrix4x3f$$Type): $Matrix4x3f
 public "rotate"(arg0: float, arg1: $Vector3fc$$Type): $Matrix4x3f
 public "rotate"(arg0: float, arg1: $Vector3fc$$Type, arg2: $Matrix4x3f$$Type): $Matrix4x3f
-public "rotate"(arg0: $AxisAngle4f$$Type, arg1: $Matrix4x3f$$Type): $Matrix4x3f
-public "rotate"(arg0: $AxisAngle4f$$Type): $Matrix4x3f
-public "rotate"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4x3f$$Type): $Matrix4x3f
-public "rotate"(arg0: $Quaternionfc$$Type): $Matrix4x3f
 public "rotate"(arg0: $Quaternionfc$$Type, arg1: $Matrix4x3f$$Type): $Matrix4x3f
+public "rotate"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4x3f
+public "rotate"(arg0: $Quaternionfc$$Type): $Matrix4x3f
+public "rotate"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4x3f$$Type): $Matrix4x3f
+public "rotate"(arg0: $AxisAngle4f$$Type): $Matrix4x3f
+public "m11"(arg0: float): $Matrix4x3f
+public "m11"(): float
+public "swap"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
 public "m12"(): float
 public "m12"(arg0: float): $Matrix4x3f
-public "translation"(arg0: float, arg1: float, arg2: float): $Matrix4x3f
 public "translation"(arg0: $Vector3fc$$Type): $Matrix4x3f
-public "m11"(): float
-public "m11"(arg0: float): $Matrix4x3f
+public "translation"(arg0: float, arg1: float, arg2: float): $Matrix4x3f
+public "mul"(arg0: $Matrix4x3fc$$Type): $Matrix4x3f
+public "mul"(arg0: $Matrix4x3fc$$Type, arg1: $Matrix4x3f$$Type): $Matrix4x3f
+public "shadow"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: $Matrix4x3f$$Type): $Matrix4x3f
+public "shadow"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float): $Matrix4x3f
+public "shadow"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4x3f$$Type): $Matrix4x3f
+public "shadow"(arg0: $Vector4fc$$Type, arg1: $Matrix4x3fc$$Type, arg2: $Matrix4x3f$$Type): $Matrix4x3f
+public "shadow"(arg0: $Vector4fc$$Type, arg1: $Matrix4x3fc$$Type): $Matrix4x3f
+public "shadow"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4x3fc$$Type, arg5: $Matrix4x3f$$Type): $Matrix4x3f
+public "shadow"(arg0: $Vector4fc$$Type, arg1: float, arg2: float, arg3: float, arg4: float): $Matrix4x3f
+public "shadow"(arg0: $Vector4fc$$Type, arg1: float, arg2: float, arg3: float, arg4: float, arg5: $Matrix4x3f$$Type): $Matrix4x3f
 public "m10"(arg0: float): $Matrix4x3f
 public "m10"(): float
 public "getColumn"(arg0: integer, arg1: $Vector3f$$Type): $Vector3f
 public "translate"(arg0: float, arg1: float, arg2: float, arg3: $Matrix4x3f$$Type): $Matrix4x3f
-public "translate"(arg0: float, arg1: float, arg2: float): $Matrix4x3f
 public "translate"(arg0: $Vector3fc$$Type): $Matrix4x3f
+public "translate"(arg0: float, arg1: float, arg2: float): $Matrix4x3f
 public "translate"(arg0: $Vector3fc$$Type, arg1: $Matrix4x3f$$Type): $Matrix4x3f
-public "setOrtho"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean): $Matrix4x3f
-public "setOrtho"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix4x3f
-public "transformPosition"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
 public "transformPosition"(arg0: $Vector3f$$Type): $Vector3f
+public "transformPosition"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
+public "setOrtho"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix4x3f
+public "setOrtho"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean): $Matrix4x3f
 public "rotateAround"(arg0: $Quaternionfc$$Type, arg1: float, arg2: float, arg3: float, arg4: $Matrix4x3f$$Type): $Matrix4x3f
 public "rotateAround"(arg0: $Quaternionfc$$Type, arg1: float, arg2: float, arg3: float): $Matrix4x3f
 public "determineProperties"(): $Matrix4x3f
 public "rotationX"(arg0: float): $Matrix4x3f
 public "rotationY"(arg0: float): $Matrix4x3f
 public "rotationZ"(arg0: float): $Matrix4x3f
-public "rotateXYZ"(arg0: float, arg1: float, arg2: float, arg3: $Matrix4x3f$$Type): $Matrix4x3f
-public "rotateXYZ"(arg0: $Vector3f$$Type): $Matrix4x3f
 public "rotateXYZ"(arg0: float, arg1: float, arg2: float): $Matrix4x3f
-public "rotateZYX"(arg0: float, arg1: float, arg2: float, arg3: $Matrix4x3f$$Type): $Matrix4x3f
+public "rotateXYZ"(arg0: $Vector3f$$Type): $Matrix4x3f
+public "rotateXYZ"(arg0: float, arg1: float, arg2: float, arg3: $Matrix4x3f$$Type): $Matrix4x3f
 public "rotateZYX"(arg0: float, arg1: float, arg2: float): $Matrix4x3f
 public "rotateZYX"(arg0: $Vector3f$$Type): $Matrix4x3f
+public "rotateZYX"(arg0: float, arg1: float, arg2: float, arg3: $Matrix4x3f$$Type): $Matrix4x3f
+public "rotateYXZ"(arg0: $Vector3f$$Type): $Matrix4x3f
 public "rotateYXZ"(arg0: float, arg1: float, arg2: float, arg3: $Matrix4x3f$$Type): $Matrix4x3f
 public "rotateYXZ"(arg0: float, arg1: float, arg2: float): $Matrix4x3f
-public "rotateYXZ"(arg0: $Vector3f$$Type): $Matrix4x3f
 public "getEulerAnglesXYZ"(arg0: $Vector3f$$Type): $Vector3f
 public "getEulerAnglesZYX"(arg0: $Vector3f$$Type): $Vector3f
 public "rotationXYZ"(arg0: float, arg1: float, arg2: float): $Matrix4x3f
 public "rotationZYX"(arg0: float, arg1: float, arg2: float): $Matrix4x3f
 public "rotationYXZ"(arg0: float, arg1: float, arg2: float): $Matrix4x3f
-public "scaling"(arg0: float): $Matrix4x3f
-public "scaling"(arg0: $Vector3fc$$Type): $Matrix4x3f
 public "scaling"(arg0: float, arg1: float, arg2: float): $Matrix4x3f
+public "scaling"(arg0: $Vector3fc$$Type): $Matrix4x3f
+public "scaling"(arg0: float): $Matrix4x3f
 public "setFromAddress"(arg0: long): $Matrix4x3f
 public "getToAddress"(arg0: long): $Matrix4x3fc
 public "m00"(): float
 public "m00"(arg0: float): $Matrix4x3f
 public "m20"(arg0: float): $Matrix4x3f
 public "m20"(): float
-public "m30"(arg0: float): $Matrix4x3f
 public "m30"(): float
-public "m01"(): float
+public "m30"(arg0: float): $Matrix4x3f
 public "m01"(arg0: float): $Matrix4x3f
+public "m01"(): float
 public "m21"(): float
 public "m21"(arg0: float): $Matrix4x3f
-public "m31"(): float
 public "m31"(arg0: float): $Matrix4x3f
+public "m31"(): float
 public "m02"(arg0: float): $Matrix4x3f
 public "m02"(): float
-public "m22"(): float
 public "m22"(arg0: float): $Matrix4x3f
+public "m22"(): float
 public "m32"(arg0: float): $Matrix4x3f
 public "m32"(): float
 public "rotateX"(arg0: float, arg1: $Matrix4x3f$$Type): $Matrix4x3f
@@ -6971,32 +6971,31 @@ public "rotateY"(arg0: float): $Matrix4x3f
 public "rotateY"(arg0: float, arg1: $Matrix4x3f$$Type): $Matrix4x3f
 public "rotateZ"(arg0: float): $Matrix4x3f
 public "rotateZ"(arg0: float, arg1: $Matrix4x3f$$Type): $Matrix4x3f
-public "reflect"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4x3f$$Type): $Matrix4x3f
 public "reflect"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4x3f
-public "reflect"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type): $Matrix4x3f
-public "reflect"(arg0: $Quaternionfc$$Type, arg1: $Vector3fc$$Type, arg2: $Matrix4x3f$$Type): $Matrix4x3f
-public "reflect"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Matrix4x3f$$Type): $Matrix4x3f
-public "reflect"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4x3f$$Type): $Matrix4x3f
 public "reflect"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix4x3f
+public "reflect"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4x3f$$Type): $Matrix4x3f
+public "reflect"(arg0: $Quaternionfc$$Type, arg1: $Vector3fc$$Type, arg2: $Matrix4x3f$$Type): $Matrix4x3f
 public "reflect"(arg0: $Quaternionfc$$Type, arg1: $Vector3fc$$Type): $Matrix4x3f
-public "lerp"(arg0: $Matrix4x3fc$$Type, arg1: float, arg2: $Matrix4x3f$$Type): $Matrix4x3f
+public "reflect"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Matrix4x3f$$Type): $Matrix4x3f
+public "reflect"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type): $Matrix4x3f
+public "reflect"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4x3f$$Type): $Matrix4x3f
 public "lerp"(arg0: $Matrix4x3fc$$Type, arg1: float): $Matrix4x3f
+public "lerp"(arg0: $Matrix4x3fc$$Type, arg1: float, arg2: $Matrix4x3f$$Type): $Matrix4x3f
 public "getUnnormalizedRotation"(arg0: $Quaterniond$$Type): $Quaterniond
 public "getUnnormalizedRotation"(arg0: $Quaternionf$$Type): $Quaternionf
-public "getNormalizedRotation"(arg0: $Quaterniond$$Type): $Quaterniond
 public "getNormalizedRotation"(arg0: $Quaternionf$$Type): $Quaternionf
-public "get3x4"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
-public "get3x4"(arg0: $ByteBuffer$$Type): $ByteBuffer
-public "get3x4"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
+public "getNormalizedRotation"(arg0: $Quaterniond$$Type): $Quaterniond
 public "get3x4"(arg0: $FloatBuffer$$Type): $FloatBuffer
+public "get3x4"(arg0: $ByteBuffer$$Type): $ByteBuffer
+public "get3x4"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
+public "get3x4"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
 public "setRotationXYZ"(arg0: float, arg1: float, arg2: float): $Matrix4x3f
 public "setRotationZYX"(arg0: float, arg1: float, arg2: float): $Matrix4x3f
 public "setRotationYXZ"(arg0: float, arg1: float, arg2: float): $Matrix4x3f
-public "determinant"(): float
-public "lookAlong"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4x3f$$Type): $Matrix4x3f
 public "lookAlong"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix4x3f
 public "lookAlong"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type): $Matrix4x3f
 public "lookAlong"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Matrix4x3f$$Type): $Matrix4x3f
+public "lookAlong"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4x3f$$Type): $Matrix4x3f
 public "rotateLocalX"(arg0: float): $Matrix4x3f
 public "rotateLocalX"(arg0: float, arg1: $Matrix4x3f$$Type): $Matrix4x3f
 public "rotateLocalY"(arg0: float, arg1: $Matrix4x3f$$Type): $Matrix4x3f
@@ -7009,6 +7008,217 @@ public "positiveY"(arg0: $Vector3f$$Type): $Vector3f
 public "normalizedPositiveY"(arg0: $Vector3f$$Type): $Vector3f
 public "positiveZ"(arg0: $Vector3f$$Type): $Vector3f
 public "normalizedPositiveZ"(arg0: $Vector3f$$Type): $Vector3f
+public "setOrtho2DLH"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4x3f
+public "setLookAlong"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type): $Matrix4x3f
+public "setLookAlong"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix4x3f
+public "setLookAt"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3fc$$Type): $Matrix4x3f
+public "setLookAt"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float): $Matrix4x3f
+public "lookAt"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3fc$$Type, arg3: $Matrix4x3f$$Type): $Matrix4x3f
+public "lookAt"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3fc$$Type): $Matrix4x3f
+public "lookAt"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float): $Matrix4x3f
+public "lookAt"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float, arg9: $Matrix4x3f$$Type): $Matrix4x3f
+public "setLookAtLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float): $Matrix4x3f
+public "setLookAtLH"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3fc$$Type): $Matrix4x3f
+public "lookAtLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float): $Matrix4x3f
+public "lookAtLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float, arg9: $Matrix4x3f$$Type): $Matrix4x3f
+public "lookAtLH"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3fc$$Type): $Matrix4x3f
+public "lookAtLH"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3fc$$Type, arg3: $Matrix4x3f$$Type): $Matrix4x3f
+public "rotationAround"(arg0: $Quaternionfc$$Type, arg1: float, arg2: float, arg3: float): $Matrix4x3f
+public "rotation"(arg0: float, arg1: $Vector3fc$$Type): $Matrix4x3f
+public "rotation"(arg0: $Quaternionfc$$Type): $Matrix4x3f
+public "rotation"(arg0: $AxisAngle4f$$Type): $Matrix4x3f
+public "rotation"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4x3f
+public "set3x3"(arg0: $Matrix3fc$$Type): $Matrix4x3f
+public "set3x3"(arg0: $Matrix4x3fc$$Type): $Matrix4x3f
+public "getScale"(arg0: $Vector3f$$Type): $Vector3f
+public "translationRotateScale"(arg0: $Vector3fc$$Type, arg1: $Quaternionfc$$Type, arg2: $Vector3fc$$Type): $Matrix4x3f
+public "translationRotateScale"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float, arg9: float): $Matrix4x3f
+public "translationRotateInvert"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float): $Matrix4x3f
+public "translationRotateInvert"(arg0: $Vector3fc$$Type, arg1: $Quaternionfc$$Type): $Matrix4x3f
+public "translationRotate"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float): $Matrix4x3f
+public "translationRotate"(arg0: $Vector3fc$$Type, arg1: $Quaternionfc$$Type): $Matrix4x3f
+public "translationRotate"(arg0: float, arg1: float, arg2: float, arg3: $Quaternionfc$$Type): $Matrix4x3f
+public "transformDirection"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
+public "transformDirection"(arg0: $Vector3f$$Type): $Vector3f
+public "rotationTowards"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix4x3f
+public "rotationTowards"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type): $Matrix4x3f
+public "translationRotateTowards"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3fc$$Type): $Matrix4x3f
+public "translationRotateTowards"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float): $Matrix4x3f
+public "obliqueZ"(arg0: float, arg1: float): $Matrix4x3f
+public "obliqueZ"(arg0: float, arg1: float, arg2: $Matrix4x3f$$Type): $Matrix4x3f
+public "withLookAtUp"(arg0: $Vector3fc$$Type, arg1: $Matrix4x3f$$Type): $Matrix4x3f
+public "withLookAtUp"(arg0: float, arg1: float, arg2: float): $Matrix4x3f
+public "withLookAtUp"(arg0: float, arg1: float, arg2: float, arg3: $Matrix4x3f$$Type): $Matrix4x3f
+public "withLookAtUp"(arg0: $Vector3fc$$Type): $Matrix4x3f
+public "mapXZY"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
+public "mapXZY"(): $Matrix4x3f
+public "mapXZnY"(): $Matrix4x3f
+public "mapXZnY"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
+public "mapXnYnZ"(): $Matrix4x3f
+public "mapXnYnZ"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
+public "mapXnZY"(): $Matrix4x3f
+public "mapXnZY"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
+public "mapXnZnY"(): $Matrix4x3f
+public "mapXnZnY"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
+public "mapYXZ"(): $Matrix4x3f
+public "mapYXZ"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
+public "mapYXnZ"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
+public "mapYXnZ"(): $Matrix4x3f
+public "mapYZX"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
+public "mapYZX"(): $Matrix4x3f
+public "mapYZnX"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
+public "mapYZnX"(): $Matrix4x3f
+public "mapYnXZ"(): $Matrix4x3f
+public "mapYnXZ"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
+public "mapYnXnZ"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
+public "mapYnXnZ"(): $Matrix4x3f
+public "mapYnZX"(): $Matrix4x3f
+public "mapYnZX"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
+public "mapYnZnX"(): $Matrix4x3f
+public "mapYnZnX"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
+public "mapZXY"(): $Matrix4x3f
+public "mapZXY"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
+public "mapZXnY"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
+public "mapZXnY"(): $Matrix4x3f
+public "mapZYX"(): $Matrix4x3f
+public "mapZYX"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
+public "mapZYnX"(): $Matrix4x3f
+public "mapZYnX"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
+public "mapZnXY"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
+public "mapZnXY"(): $Matrix4x3f
+public "mapZnXnY"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
+public "mapZnXnY"(): $Matrix4x3f
+public "mapZnYX"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
+public "mapZnYX"(): $Matrix4x3f
+public "mapZnYnX"(): $Matrix4x3f
+public "mapZnYnX"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
+public "mapnXYnZ"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
+public "mapnXYnZ"(): $Matrix4x3f
+public "mapnXZY"(): $Matrix4x3f
+public "mapnXZY"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
+public "mapnXZnY"(): $Matrix4x3f
+public "mapnXZnY"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
+public "mapnXnYZ"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
+public "mapnXnYZ"(): $Matrix4x3f
+public "mapnXnYnZ"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
+public "mapnXnYnZ"(): $Matrix4x3f
+public "mapnXnZY"(): $Matrix4x3f
+public "mapnXnZY"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
+public "mapnXnZnY"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
+public "mapnXnZnY"(): $Matrix4x3f
+public "mapnYXZ"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
+public "mapnYXZ"(): $Matrix4x3f
+public "mapnYXnZ"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
+public "mapnYXnZ"(): $Matrix4x3f
+public "mapnYZX"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
+public "mapnYZX"(): $Matrix4x3f
+public "mapnYZnX"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
+public "mapnYZnX"(): $Matrix4x3f
+public "mapnYnXZ"(): $Matrix4x3f
+public "mapnYnXZ"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
+public "mapnYnXnZ"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
+public "mapnYnXnZ"(): $Matrix4x3f
+public "mapnYnZX"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
+public "mapnYnZX"(): $Matrix4x3f
+public "mapnYnZnX"(): $Matrix4x3f
+public "mapnYnZnX"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
+public "mapnZXY"(): $Matrix4x3f
+public "mapnZXY"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
+public "mapnZXnY"(): $Matrix4x3f
+public "mapnZXnY"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
+public "mapnZYX"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
+public "mapnZYX"(): $Matrix4x3f
+public "mapnZYnX"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
+public "mapnZYnX"(): $Matrix4x3f
+public "mapnZnXY"(): $Matrix4x3f
+public "mapnZnXY"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
+public "mapnZnXnY"(): $Matrix4x3f
+public "mapnZnXnY"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
+public "mapnZnYX"(): $Matrix4x3f
+public "mapnZnYX"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
+public "mapnZnYnX"(): $Matrix4x3f
+public "mapnZnYnX"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
+public "negateX"(): $Matrix4x3f
+public "negateX"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
+public "negateY"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
+public "negateY"(): $Matrix4x3f
+public "negateZ"(): $Matrix4x3f
+public "negateZ"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
+public "mulComponentWise"(arg0: $Matrix4x3fc$$Type, arg1: $Matrix4x3f$$Type): $Matrix4x3f
+public "mulComponentWise"(arg0: $Matrix4x3fc$$Type): $Matrix4x3f
+public "mul3x3"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float): $Matrix4x3f
+public "mul3x3"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float, arg9: $Matrix4x3f$$Type): $Matrix4x3f
+public "scaleXY"(arg0: float, arg1: float): $Matrix4x3f
+public "scaleXY"(arg0: float, arg1: float, arg2: $Matrix4x3f$$Type): $Matrix4x3f
+public "scaleAround"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4x3f$$Type): $Matrix4x3f
+public "scaleAround"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix4x3f
+public "scaleAround"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4x3f
+public "scaleAround"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4x3f$$Type): $Matrix4x3f
+public "scaleLocal"(arg0: float, arg1: float, arg2: float, arg3: $Matrix4x3f$$Type): $Matrix4x3f
+public "scaleLocal"(arg0: float, arg1: float, arg2: float): $Matrix4x3f
+public "rotateTranslation"(arg0: $Quaternionfc$$Type, arg1: $Matrix4x3f$$Type): $Matrix4x3f
+public "rotateTranslation"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4x3f$$Type): $Matrix4x3f
+public "transpose3x3"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
+public "transpose3x3"(arg0: $Matrix3f$$Type): $Matrix3f
+public "transpose3x3"(): $Matrix4x3f
+public "setTranslation"(arg0: float, arg1: float, arg2: float): $Matrix4x3f
+public "setTranslation"(arg0: $Vector3fc$$Type): $Matrix4x3f
+public "getTranslation"(arg0: $Vector3f$$Type): $Vector3f
+public "getRotation"(arg0: $AxisAngle4f$$Type): $AxisAngle4f
+public "getRotation"(arg0: $AxisAngle4d$$Type): $AxisAngle4d
+public "getTransposed"(arg0: (float)[]): (float)[]
+public "getTransposed"(arg0: $FloatBuffer$$Type): $FloatBuffer
+public "getTransposed"(arg0: (float)[], arg1: integer): (float)[]
+public "getTransposed"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
+public "getTransposed"(arg0: $ByteBuffer$$Type): $ByteBuffer
+public "getTransposed"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
+public "determinant"(): float
+public "invertOrtho"(): $Matrix4x3f
+public "invertOrtho"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
+public "rotateLocal"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4x3f$$Type): $Matrix4x3f
+public "rotateLocal"(arg0: $Quaternionfc$$Type, arg1: $Matrix4x3f$$Type): $Matrix4x3f
+public "rotateLocal"(arg0: $Quaternionfc$$Type): $Matrix4x3f
+public "rotateLocal"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4x3f
+public "translateLocal"(arg0: $Vector3fc$$Type, arg1: $Matrix4x3f$$Type): $Matrix4x3f
+public "translateLocal"(arg0: float, arg1: float, arg2: float): $Matrix4x3f
+public "translateLocal"(arg0: float, arg1: float, arg2: float, arg3: $Matrix4x3f$$Type): $Matrix4x3f
+public "translateLocal"(arg0: $Vector3fc$$Type): $Matrix4x3f
+public "ortho"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean): $Matrix4x3f
+public "ortho"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4x3f$$Type): $Matrix4x3f
+public "ortho"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean, arg7: $Matrix4x3f$$Type): $Matrix4x3f
+public "ortho"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix4x3f
+public "orthoLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean): $Matrix4x3f
+public "orthoLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix4x3f
+public "orthoLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean, arg7: $Matrix4x3f$$Type): $Matrix4x3f
+public "orthoLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4x3f$$Type): $Matrix4x3f
+public "setOrthoLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean): $Matrix4x3f
+public "setOrthoLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix4x3f
+public "orthoSymmetric"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: boolean, arg5: $Matrix4x3f$$Type): $Matrix4x3f
+public "orthoSymmetric"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: boolean): $Matrix4x3f
+public "orthoSymmetric"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4x3f$$Type): $Matrix4x3f
+public "orthoSymmetric"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4x3f
+public "setOrthoSymmetric"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: boolean): $Matrix4x3f
+public "setOrthoSymmetric"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4x3f
+public "orthoSymmetricLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: boolean): $Matrix4x3f
+public "orthoSymmetricLH"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4x3f
+public "orthoSymmetricLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4x3f$$Type): $Matrix4x3f
+public "orthoSymmetricLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: boolean, arg5: $Matrix4x3f$$Type): $Matrix4x3f
+public "setOrthoSymmetricLH"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4x3f
+public "setOrthoSymmetricLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: boolean): $Matrix4x3f
+public "ortho2D"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4x3f
+public "ortho2D"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4x3f$$Type): $Matrix4x3f
+public "setOrtho2D"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4x3f
+public "ortho2DLH"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4x3f
+public "ortho2DLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4x3f$$Type): $Matrix4x3f
+public "mulTranslation"(arg0: $Matrix4x3fc$$Type, arg1: $Matrix4x3f$$Type): $Matrix4x3f
+public "assume"(arg0: integer): $Matrix4x3f
+public "reflection"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type): $Matrix4x3f
+public "reflection"(arg0: $Quaternionfc$$Type, arg1: $Vector3fc$$Type): $Matrix4x3f
+public "reflection"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4x3f
+public "reflection"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix4x3f
+public "getRow"(arg0: integer, arg1: $Vector4f$$Type): $Vector4f
+public "setRow"(arg0: integer, arg1: $Vector4fc$$Type): $Matrix4x3f
+public "setColumn"(arg0: integer, arg1: $Vector3fc$$Type): $Matrix4x3f
 public "cofactor3x3"(arg0: $Matrix3f$$Type): $Matrix3f
 public "cofactor3x3"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
 public "cofactor3x3"(): $Matrix4x3f
@@ -7019,230 +7229,20 @@ public "frustumPlane"(arg0: integer, arg1: $Vector4f$$Type): $Vector4f
 public "billboardCylindrical"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3fc$$Type): $Matrix4x3f
 public "billboardSpherical"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3fc$$Type): $Matrix4x3f
 public "billboardSpherical"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type): $Matrix4x3f
-public "arcball"(arg0: float, arg1: $Vector3fc$$Type, arg2: float, arg3: float, arg4: $Matrix4x3f$$Type): $Matrix4x3f
-public "arcball"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4x3f$$Type): $Matrix4x3f
 public "arcball"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix4x3f
 public "arcball"(arg0: float, arg1: $Vector3fc$$Type, arg2: float, arg3: float): $Matrix4x3f
-public "transformAab"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Vector3f$$Type, arg7: $Vector3f$$Type): $Matrix4x3f
+public "arcball"(arg0: float, arg1: $Vector3fc$$Type, arg2: float, arg3: float, arg4: $Matrix4x3f$$Type): $Matrix4x3f
+public "arcball"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4x3f$$Type): $Matrix4x3f
 public "transformAab"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3f$$Type, arg3: $Vector3f$$Type): $Matrix4x3f
-public "rotation"(arg0: $Quaternionfc$$Type): $Matrix4x3f
-public "rotation"(arg0: $AxisAngle4f$$Type): $Matrix4x3f
-public "rotation"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4x3f
-public "rotation"(arg0: float, arg1: $Vector3fc$$Type): $Matrix4x3f
-public "translationRotateScale"(arg0: $Vector3fc$$Type, arg1: $Quaternionfc$$Type, arg2: $Vector3fc$$Type): $Matrix4x3f
-public "translationRotateScale"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float, arg9: float): $Matrix4x3f
-public "translationRotateInvert"(arg0: $Vector3fc$$Type, arg1: $Quaternionfc$$Type): $Matrix4x3f
-public "translationRotateInvert"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float): $Matrix4x3f
-public "translationRotate"(arg0: $Vector3fc$$Type, arg1: $Quaternionfc$$Type): $Matrix4x3f
-public "translationRotate"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float): $Matrix4x3f
-public "translationRotate"(arg0: float, arg1: float, arg2: float, arg3: $Quaternionfc$$Type): $Matrix4x3f
-public "rotateTowards"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Matrix4x3f$$Type): $Matrix4x3f
-public "rotateTowards"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type): $Matrix4x3f
+public "transformAab"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Vector3f$$Type, arg7: $Vector3f$$Type): $Matrix4x3f
 public "rotateTowards"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4x3f$$Type): $Matrix4x3f
 public "rotateTowards"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix4x3f
-public "rotationTowards"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix4x3f
-public "rotationTowards"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type): $Matrix4x3f
-public "translationRotateTowards"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float): $Matrix4x3f
-public "translationRotateTowards"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3fc$$Type): $Matrix4x3f
-public "obliqueZ"(arg0: float, arg1: float): $Matrix4x3f
-public "obliqueZ"(arg0: float, arg1: float, arg2: $Matrix4x3f$$Type): $Matrix4x3f
-public "withLookAtUp"(arg0: $Vector3fc$$Type): $Matrix4x3f
-public "withLookAtUp"(arg0: float, arg1: float, arg2: float): $Matrix4x3f
-public "withLookAtUp"(arg0: float, arg1: float, arg2: float, arg3: $Matrix4x3f$$Type): $Matrix4x3f
-public "withLookAtUp"(arg0: $Vector3fc$$Type, arg1: $Matrix4x3f$$Type): $Matrix4x3f
-public "mapXZY"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
-public "mapXZY"(): $Matrix4x3f
-public "mapXZnY"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
-public "mapXZnY"(): $Matrix4x3f
-public "mapXnYnZ"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
-public "mapXnYnZ"(): $Matrix4x3f
-public "mapXnZY"(): $Matrix4x3f
-public "mapXnZY"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
-public "mapXnZnY"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
-public "mapXnZnY"(): $Matrix4x3f
-public "mapYXZ"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
-public "mapYXZ"(): $Matrix4x3f
-public "mapYXnZ"(): $Matrix4x3f
-public "mapYXnZ"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
-public "mapYZX"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
-public "mapYZX"(): $Matrix4x3f
-public "mapYZnX"(): $Matrix4x3f
-public "mapYZnX"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
-public "mapYnXZ"(): $Matrix4x3f
-public "mapYnXZ"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
-public "mapYnXnZ"(): $Matrix4x3f
-public "mapYnXnZ"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
-public "mapYnZX"(): $Matrix4x3f
-public "mapYnZX"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
-public "mapYnZnX"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
-public "mapYnZnX"(): $Matrix4x3f
-public "mapZXY"(): $Matrix4x3f
-public "mapZXY"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
-public "mapZXnY"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
-public "mapZXnY"(): $Matrix4x3f
-public "mapZYX"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
-public "mapZYX"(): $Matrix4x3f
-public "mapZYnX"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
-public "mapZYnX"(): $Matrix4x3f
-public "mapZnXY"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
-public "mapZnXY"(): $Matrix4x3f
-public "mapZnXnY"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
-public "mapZnXnY"(): $Matrix4x3f
-public "mapZnYX"(): $Matrix4x3f
-public "mapZnYX"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
-public "mapZnYnX"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
-public "mapZnYnX"(): $Matrix4x3f
-public "mapnXYnZ"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
-public "mapnXYnZ"(): $Matrix4x3f
-public "mapnXZY"(): $Matrix4x3f
-public "mapnXZY"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
-public "mapnXZnY"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
-public "mapnXZnY"(): $Matrix4x3f
-public "mapnXnYZ"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
-public "mapnXnYZ"(): $Matrix4x3f
-public "mapnXnYnZ"(): $Matrix4x3f
-public "mapnXnYnZ"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
-public "mapnXnZY"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
-public "mapnXnZY"(): $Matrix4x3f
-public "mapnXnZnY"(): $Matrix4x3f
-public "mapnXnZnY"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
-public "mapnYXZ"(): $Matrix4x3f
-public "mapnYXZ"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
-public "mapnYXnZ"(): $Matrix4x3f
-public "mapnYXnZ"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
-public "mapnYZX"(): $Matrix4x3f
-public "mapnYZX"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
-public "mapnYZnX"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
-public "mapnYZnX"(): $Matrix4x3f
-public "mapnYnXZ"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
-public "mapnYnXZ"(): $Matrix4x3f
-public "mapnYnXnZ"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
-public "mapnYnXnZ"(): $Matrix4x3f
-public "mapnYnZX"(): $Matrix4x3f
-public "mapnYnZX"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
-public "mapnYnZnX"(): $Matrix4x3f
-public "mapnYnZnX"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
-public "mapnZXY"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
-public "mapnZXY"(): $Matrix4x3f
-public "mapnZXnY"(): $Matrix4x3f
-public "mapnZXnY"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
-public "mapnZYX"(): $Matrix4x3f
-public "mapnZYX"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
-public "mapnZYnX"(): $Matrix4x3f
-public "mapnZYnX"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
-public "mapnZnXY"(): $Matrix4x3f
-public "mapnZnXY"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
-public "mapnZnXnY"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
-public "mapnZnXnY"(): $Matrix4x3f
-public "mapnZnYX"(): $Matrix4x3f
-public "mapnZnYX"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
-public "mapnZnYnX"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
-public "mapnZnYnX"(): $Matrix4x3f
-public "negateX"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
-public "negateX"(): $Matrix4x3f
-public "negateY"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
-public "negateY"(): $Matrix4x3f
-public "negateZ"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
-public "negateZ"(): $Matrix4x3f
-public "setOrthoSymmetric"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: boolean): $Matrix4x3f
-public "setOrthoSymmetric"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4x3f
-public "orthoSymmetricLH"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4x3f
-public "orthoSymmetricLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: boolean): $Matrix4x3f
-public "orthoSymmetricLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4x3f$$Type): $Matrix4x3f
-public "orthoSymmetricLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: boolean, arg5: $Matrix4x3f$$Type): $Matrix4x3f
-public "setOrthoSymmetricLH"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4x3f
-public "setOrthoSymmetricLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: boolean): $Matrix4x3f
-public "setOrtho2D"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4x3f
-public "ortho2DLH"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4x3f
-public "ortho2DLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4x3f$$Type): $Matrix4x3f
-public "setOrtho2DLH"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4x3f
-public "setLookAlong"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix4x3f
-public "setLookAlong"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type): $Matrix4x3f
-public "setLookAt"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float): $Matrix4x3f
-public "setLookAt"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3fc$$Type): $Matrix4x3f
-public "lookAt"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float): $Matrix4x3f
-public "lookAt"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float, arg9: $Matrix4x3f$$Type): $Matrix4x3f
-public "lookAt"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3fc$$Type, arg3: $Matrix4x3f$$Type): $Matrix4x3f
-public "lookAt"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3fc$$Type): $Matrix4x3f
-public "setLookAtLH"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3fc$$Type): $Matrix4x3f
-public "setLookAtLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float): $Matrix4x3f
-public "lookAtLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float): $Matrix4x3f
-public "lookAtLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float, arg9: $Matrix4x3f$$Type): $Matrix4x3f
-public "lookAtLH"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3fc$$Type): $Matrix4x3f
-public "lookAtLH"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3fc$$Type, arg3: $Matrix4x3f$$Type): $Matrix4x3f
-public "assume"(arg0: integer): $Matrix4x3f
-public "mulTranslation"(arg0: $Matrix4x3fc$$Type, arg1: $Matrix4x3f$$Type): $Matrix4x3f
-public "rotationAround"(arg0: $Quaternionfc$$Type, arg1: float, arg2: float, arg3: float): $Matrix4x3f
-public "reflection"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix4x3f
-public "reflection"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type): $Matrix4x3f
-public "reflection"(arg0: $Quaternionfc$$Type, arg1: $Vector3fc$$Type): $Matrix4x3f
-public "reflection"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4x3f
-public "getRow"(arg0: integer, arg1: $Vector4f$$Type): $Vector4f
-public "setRow"(arg0: integer, arg1: $Vector4fc$$Type): $Matrix4x3f
-public "setColumn"(arg0: integer, arg1: $Vector3fc$$Type): $Matrix4x3f
-public "transformDirection"(arg0: $Vector3f$$Type): $Vector3f
-public "transformDirection"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
-public "scaleXY"(arg0: float, arg1: float, arg2: $Matrix4x3f$$Type): $Matrix4x3f
-public "scaleXY"(arg0: float, arg1: float): $Matrix4x3f
-public "scaleAround"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4x3f
-public "scaleAround"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4x3f$$Type): $Matrix4x3f
-public "scaleAround"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4x3f$$Type): $Matrix4x3f
-public "scaleAround"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix4x3f
-public "scaleLocal"(arg0: float, arg1: float, arg2: float, arg3: $Matrix4x3f$$Type): $Matrix4x3f
-public "scaleLocal"(arg0: float, arg1: float, arg2: float): $Matrix4x3f
-public "transpose3x3"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
-public "transpose3x3"(arg0: $Matrix3f$$Type): $Matrix3f
-public "transpose3x3"(): $Matrix4x3f
-public "setTranslation"(arg0: float, arg1: float, arg2: float): $Matrix4x3f
-public "setTranslation"(arg0: $Vector3fc$$Type): $Matrix4x3f
-public "getTranslation"(arg0: $Vector3f$$Type): $Vector3f
-public "getScale"(arg0: $Vector3f$$Type): $Vector3f
-public "getRotation"(arg0: $AxisAngle4d$$Type): $AxisAngle4d
-public "getRotation"(arg0: $AxisAngle4f$$Type): $AxisAngle4f
-public "invertOrtho"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
-public "invertOrtho"(): $Matrix4x3f
-public "mulComponentWise"(arg0: $Matrix4x3fc$$Type): $Matrix4x3f
-public "mulComponentWise"(arg0: $Matrix4x3fc$$Type, arg1: $Matrix4x3f$$Type): $Matrix4x3f
-public "set3x3"(arg0: $Matrix4x3fc$$Type): $Matrix4x3f
-public "set3x3"(arg0: $Matrix3fc$$Type): $Matrix4x3f
-public "rotateTranslation"(arg0: $Quaternionfc$$Type, arg1: $Matrix4x3f$$Type): $Matrix4x3f
-public "rotateTranslation"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4x3f$$Type): $Matrix4x3f
-public "rotateLocal"(arg0: $Quaternionfc$$Type, arg1: $Matrix4x3f$$Type): $Matrix4x3f
-public "rotateLocal"(arg0: $Quaternionfc$$Type): $Matrix4x3f
-public "rotateLocal"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4x3f$$Type): $Matrix4x3f
-public "rotateLocal"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4x3f
-public "translateLocal"(arg0: float, arg1: float, arg2: float, arg3: $Matrix4x3f$$Type): $Matrix4x3f
-public "translateLocal"(arg0: float, arg1: float, arg2: float): $Matrix4x3f
-public "translateLocal"(arg0: $Vector3fc$$Type, arg1: $Matrix4x3f$$Type): $Matrix4x3f
-public "translateLocal"(arg0: $Vector3fc$$Type): $Matrix4x3f
-public "ortho"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean): $Matrix4x3f
-public "ortho"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean, arg7: $Matrix4x3f$$Type): $Matrix4x3f
-public "ortho"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4x3f$$Type): $Matrix4x3f
-public "ortho"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix4x3f
-public "orthoLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean, arg7: $Matrix4x3f$$Type): $Matrix4x3f
-public "orthoLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4x3f$$Type): $Matrix4x3f
-public "orthoLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean): $Matrix4x3f
-public "orthoLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix4x3f
-public "setOrthoLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix4x3f
-public "setOrthoLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean): $Matrix4x3f
-public "orthoSymmetric"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4x3f
-public "orthoSymmetric"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4x3f$$Type): $Matrix4x3f
-public "orthoSymmetric"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: boolean, arg5: $Matrix4x3f$$Type): $Matrix4x3f
-public "orthoSymmetric"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: boolean): $Matrix4x3f
-public "ortho2D"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4x3f$$Type): $Matrix4x3f
-public "ortho2D"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix4x3f
-public "getTransposed"(arg0: (float)[], arg1: integer): (float)[]
-public "getTransposed"(arg0: (float)[]): (float)[]
-public "getTransposed"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
-public "getTransposed"(arg0: $ByteBuffer$$Type): $ByteBuffer
-public "getTransposed"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
-public "getTransposed"(arg0: $FloatBuffer$$Type): $FloatBuffer
-public "mul3x3"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float, arg9: $Matrix4x3f$$Type): $Matrix4x3f
-public "mul3x3"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float): $Matrix4x3f
+public "rotateTowards"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type): $Matrix4x3f
+public "rotateTowards"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Matrix4x3f$$Type): $Matrix4x3f
 get "finite"(): boolean
 set "fromAddress"(value: long)
-set "3x3"(value: $Matrix4x3fc$$Type)
 set "3x3"(value: $Matrix3fc$$Type)
+set "3x3"(value: $Matrix4x3fc$$Type)
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -7258,10 +7258,10 @@ import {$Matrix4x3fc$$Type} from "org.joml.Matrix4x3fc"
 import {$ObjectInput$$Type} from "java.io.ObjectInput"
 import {$Matrix4x3dc$$Type} from "org.joml.Matrix4x3dc"
 import {$Vector3f, $Vector3f$$Type} from "org.joml.Vector3f"
-import {$Matrix4dc$$Type} from "org.joml.Matrix4dc"
 import {$Matrix4d, $Matrix4d$$Type} from "org.joml.Matrix4d"
-import {$ObjectOutput$$Type} from "java.io.ObjectOutput"
+import {$Matrix4dc$$Type} from "org.joml.Matrix4dc"
 import {$Matrix3dc$$Type} from "org.joml.Matrix3dc"
+import {$ObjectOutput$$Type} from "java.io.ObjectOutput"
 import {$Matrix4f, $Matrix4f$$Type} from "org.joml.Matrix4f"
 import {$Vector3d, $Vector3d$$Type} from "org.joml.Vector3d"
 import {$Matrix4fc$$Type} from "org.joml.Matrix4fc"
@@ -7273,141 +7273,141 @@ import {$Quaterniondc, $Quaterniondc$$Type, $Quaterniondc$$Interface} from "org.
 import {$Vector4f, $Vector4f$$Type} from "org.joml.Vector4f"
 import {$Matrix3d, $Matrix3d$$Type} from "org.joml.Matrix3d"
 import {$Vector4d, $Vector4d$$Type} from "org.joml.Vector4d"
-import {$Matrix3f, $Matrix3f$$Type} from "org.joml.Matrix3f"
 import {$Externalizable$$Interface} from "java.io.Externalizable"
+import {$Matrix3f, $Matrix3f$$Type} from "org.joml.Matrix3f"
 import {$Vector4dc$$Type} from "org.joml.Vector4dc"
 import {$Vector3dc$$Type} from "org.joml.Vector3dc"
-import {$Vector4fc$$Type} from "org.joml.Vector4fc"
 import {$NumberFormat$$Type} from "java.text.NumberFormat"
+import {$Vector4fc$$Type} from "org.joml.Vector4fc"
 import {$Vector3fc$$Type} from "org.joml.Vector3fc"
 import {$AxisAngle4f, $AxisAngle4f$$Type} from "org.joml.AxisAngle4f"
 import {$AxisAngle4d, $AxisAngle4d$$Type} from "org.joml.AxisAngle4d"
 
 export class $Quaterniond implements $Externalizable$$Interface, $Cloneable$$Interface, $Quaterniondc$$Interface {
 constructor()
-constructor(arg0: $Quaterniondc$$Type)
-constructor(arg0: $Quaternionfc$$Type)
 constructor(arg0: $AxisAngle4f$$Type)
+constructor(arg0: $Quaternionfc$$Type)
+constructor(arg0: $Quaterniondc$$Type)
 constructor(arg0: $AxisAngle4d$$Type)
 constructor(arg0: double, arg1: double, arg2: double, arg3: double)
 
-public "invert"(arg0: $Quaterniond$$Type): $Quaterniond
 public "invert"(): $Quaterniond
-public "mul"(arg0: double, arg1: $Quaterniond$$Type): $Quaterniond
-public "mul"(arg0: double): $Quaterniond
-public "mul"(arg0: $Quaterniondc$$Type): $Quaterniond
-public "mul"(arg0: $Quaterniondc$$Type, arg1: $Quaterniond$$Type): $Quaterniond
-public "mul"(arg0: double, arg1: double, arg2: double, arg3: double): $Quaterniond
-public "mul"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Quaterniond$$Type): $Quaterniond
-public "normalize"(): $Quaterniond
-public "normalize"(arg0: $Quaterniond$$Type): $Quaterniond
+public "invert"(arg0: $Quaterniond$$Type): $Quaterniond
 public "div"(arg0: $Quaterniondc$$Type, arg1: $Quaterniond$$Type): $Quaterniond
 public "div"(arg0: $Quaterniondc$$Type): $Quaterniond
 public "difference"(arg0: $Quaterniondc$$Type): $Quaterniond
 public "difference"(arg0: $Quaterniondc$$Type, arg1: $Quaterniond$$Type): $Quaterniond
 public "writeExternal"(arg0: $ObjectOutput$$Type): void
 public "readExternal"(arg0: $ObjectInput$$Type): void
-public "get"(arg0: $Quaternionf$$Type): $Quaternionf
-public "get"(arg0: $Quaterniond$$Type): $Quaterniond
-public "get"(arg0: $Matrix3d$$Type): $Matrix3d
-public "get"(arg0: $Matrix3f$$Type): $Matrix3f
+public "normalize"(arg0: $Quaterniond$$Type): $Quaterniond
+public "normalize"(): $Quaterniond
 public "get"(arg0: $Matrix4d$$Type): $Matrix4d
-public "get"(arg0: $Matrix4f$$Type): $Matrix4f
+public "get"(arg0: $Quaterniond$$Type): $Quaterniond
 public "get"(arg0: $AxisAngle4f$$Type): $AxisAngle4f
 public "get"(arg0: $AxisAngle4d$$Type): $AxisAngle4d
-public "equals"(arg0: $Quaterniondc$$Type, arg1: double): boolean
-public "equals"(arg0: double, arg1: double, arg2: double, arg3: double): boolean
+public "get"(arg0: $Matrix4f$$Type): $Matrix4f
+public "get"(arg0: $Quaternionf$$Type): $Quaternionf
+public "get"(arg0: $Matrix3d$$Type): $Matrix3d
+public "get"(arg0: $Matrix3f$$Type): $Matrix3f
 public "equals"(arg0: any): boolean
-public "toString"(arg0: $NumberFormat$$Type): StringJS
+public "equals"(arg0: double, arg1: double, arg2: double, arg3: double): boolean
+public "equals"(arg0: $Quaterniondc$$Type, arg1: double): boolean
 public "toString"(): StringJS
+public "toString"(arg0: $NumberFormat$$Type): StringJS
 public "hashCode"(): integer
 public "clone"(): any
 public "isFinite"(): boolean
-public "scale"(arg0: double): $Quaterniond
 public "scale"(arg0: double, arg1: $Quaterniond$$Type): $Quaterniond
-public "add"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Quaterniond$$Type): $Quaterniond
+public "scale"(arg0: double): $Quaterniond
 public "add"(arg0: $Quaterniondc$$Type, arg1: $Quaterniond$$Type): $Quaterniond
 public "add"(arg0: $Quaterniondc$$Type): $Quaterniond
+public "add"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Quaterniond$$Type): $Quaterniond
 public "add"(arg0: double, arg1: double, arg2: double, arg3: double): $Quaterniond
 public "x"(): double
-public "transform"(arg0: double, arg1: double, arg2: double, arg3: $Vector4d$$Type): $Vector4d
-public "transform"(arg0: $Vector3f$$Type): $Vector3f
-public "transform"(arg0: $Vector4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
-public "transform"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
-public "transform"(arg0: $Vector3d$$Type): $Vector3d
-public "transform"(arg0: $Vector4d$$Type): $Vector4d
 public "transform"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
-public "transform"(arg0: $Vector4f$$Type): $Vector4f
-public "transform"(arg0: double, arg1: double, arg2: double, arg3: $Vector3d$$Type): $Vector3d
-public "transform"(arg0: double, arg1: double, arg2: double, arg3: $Vector3f$$Type): $Vector3f
+public "transform"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
 public "transform"(arg0: double, arg1: double, arg2: double, arg3: $Vector4f$$Type): $Vector4f
+public "transform"(arg0: $Vector4f$$Type): $Vector4f
+public "transform"(arg0: $Vector4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
+public "transform"(arg0: $Vector3d$$Type): $Vector3d
 public "transform"(arg0: $Vector4fc$$Type, arg1: $Vector4f$$Type): $Vector4f
+public "transform"(arg0: double, arg1: double, arg2: double, arg3: $Vector3f$$Type): $Vector3f
+public "transform"(arg0: $Vector4d$$Type): $Vector4d
+public "transform"(arg0: $Vector3f$$Type): $Vector3f
+public "transform"(arg0: double, arg1: double, arg2: double, arg3: $Vector4d$$Type): $Vector4d
+public "transform"(arg0: double, arg1: double, arg2: double, arg3: $Vector3d$$Type): $Vector3d
 public "dot"(arg0: $Quaterniondc$$Type): double
 public "identity"(): $Quaterniond
-public "set"(arg0: $AxisAngle4d$$Type): $Quaterniond
 public "set"(arg0: $Quaternionfc$$Type): $Quaterniond
-public "set"(arg0: $AxisAngle4f$$Type): $Quaterniond
 public "set"(arg0: $Quaterniondc$$Type): $Quaterniond
+public "set"(arg0: $AxisAngle4d$$Type): $Quaterniond
+public "set"(arg0: $AxisAngle4f$$Type): $Quaterniond
 public "set"(arg0: double, arg1: double, arg2: double, arg3: double): $Quaterniond
 public "z"(): double
 public "w"(): double
 public "y"(): double
+public "mul"(arg0: double, arg1: $Quaterniond$$Type): $Quaterniond
+public "mul"(arg0: $Quaterniondc$$Type, arg1: $Quaterniond$$Type): $Quaterniond
+public "mul"(arg0: $Quaterniondc$$Type): $Quaterniond
+public "mul"(arg0: double): $Quaterniond
+public "mul"(arg0: double, arg1: double, arg2: double, arg3: double): $Quaterniond
+public "mul"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Quaterniond$$Type): $Quaterniond
 public "angle"(): double
 public "setAngleAxis"(arg0: double, arg1: double, arg2: double, arg3: double): $Quaterniond
 public "setAngleAxis"(arg0: double, arg1: $Vector3dc$$Type): $Quaterniond
-public "rotationAxis"(arg0: $AxisAngle4f$$Type): $Quaterniond
 public "rotationAxis"(arg0: double, arg1: double, arg2: double, arg3: double): $Quaterniond
+public "rotationAxis"(arg0: $AxisAngle4f$$Type): $Quaterniond
 public "rotationX"(arg0: double): $Quaterniond
 public "rotationY"(arg0: double): $Quaterniond
 public "rotationZ"(arg0: double): $Quaterniond
-public "setFromUnnormalized"(arg0: $Matrix4x3dc$$Type): $Quaterniond
 public "setFromUnnormalized"(arg0: $Matrix4fc$$Type): $Quaterniond
 public "setFromUnnormalized"(arg0: $Matrix3fc$$Type): $Quaterniond
-public "setFromUnnormalized"(arg0: $Matrix3dc$$Type): $Quaterniond
-public "setFromUnnormalized"(arg0: $Matrix4dc$$Type): $Quaterniond
 public "setFromUnnormalized"(arg0: $Matrix4x3fc$$Type): $Quaterniond
-public "setFromNormalized"(arg0: $Matrix3dc$$Type): $Quaterniond
-public "setFromNormalized"(arg0: $Matrix4fc$$Type): $Quaterniond
+public "setFromUnnormalized"(arg0: $Matrix4dc$$Type): $Quaterniond
+public "setFromUnnormalized"(arg0: $Matrix4x3dc$$Type): $Quaterniond
+public "setFromUnnormalized"(arg0: $Matrix3dc$$Type): $Quaterniond
 public "setFromNormalized"(arg0: $Matrix4x3dc$$Type): $Quaterniond
-public "setFromNormalized"(arg0: $Matrix4dc$$Type): $Quaterniond
+public "setFromNormalized"(arg0: $Matrix4fc$$Type): $Quaterniond
 public "setFromNormalized"(arg0: $Matrix4x3fc$$Type): $Quaterniond
+public "setFromNormalized"(arg0: $Matrix4dc$$Type): $Quaterniond
 public "setFromNormalized"(arg0: $Matrix3fc$$Type): $Quaterniond
+public "setFromNormalized"(arg0: $Matrix3dc$$Type): $Quaterniond
 public "fromAxisAngleRad"(arg0: $Vector3dc$$Type, arg1: double): $Quaterniond
 public "fromAxisAngleRad"(arg0: double, arg1: double, arg2: double, arg3: double): $Quaterniond
-public "fromAxisAngleDeg"(arg0: double, arg1: double, arg2: double, arg3: double): $Quaterniond
 public "fromAxisAngleDeg"(arg0: $Vector3dc$$Type, arg1: double): $Quaterniond
-public "premul"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Quaterniond$$Type): $Quaterniond
-public "premul"(arg0: double, arg1: double, arg2: double, arg3: double): $Quaterniond
+public "fromAxisAngleDeg"(arg0: double, arg1: double, arg2: double, arg3: double): $Quaterniond
 public "premul"(arg0: $Quaterniondc$$Type): $Quaterniond
 public "premul"(arg0: $Quaterniondc$$Type, arg1: $Quaterniond$$Type): $Quaterniond
-public "transformInverse"(arg0: double, arg1: double, arg2: double, arg3: $Vector3f$$Type): $Vector3f
+public "premul"(arg0: double, arg1: double, arg2: double, arg3: double): $Quaterniond
+public "premul"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Quaterniond$$Type): $Quaterniond
 public "transformInverse"(arg0: double, arg1: double, arg2: double, arg3: $Vector4f$$Type): $Vector4f
+public "transformInverse"(arg0: double, arg1: double, arg2: double, arg3: $Vector3f$$Type): $Vector3f
 public "transformInverse"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
 public "transformInverse"(arg0: $Vector4f$$Type): $Vector4f
-public "transformInverse"(arg0: $Vector4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
+public "transformInverse"(arg0: $Vector4fc$$Type, arg1: $Vector4f$$Type): $Vector4f
+public "transformInverse"(arg0: $Vector4d$$Type): $Vector4d
 public "transformInverse"(arg0: double, arg1: double, arg2: double, arg3: $Vector4d$$Type): $Vector4d
+public "transformInverse"(arg0: double, arg1: double, arg2: double, arg3: $Vector3d$$Type): $Vector3d
+public "transformInverse"(arg0: $Vector4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
 public "transformInverse"(arg0: $Vector3f$$Type): $Vector3f
 public "transformInverse"(arg0: $Vector3d$$Type): $Vector3d
-public "transformInverse"(arg0: double, arg1: double, arg2: double, arg3: $Vector3d$$Type): $Vector3d
 public "transformInverse"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
-public "transformInverse"(arg0: $Vector4d$$Type): $Vector4d
-public "transformInverse"(arg0: $Vector4fc$$Type, arg1: $Vector4f$$Type): $Vector4f
 public "transformPositiveX"(arg0: $Vector4f$$Type): $Vector4f
-public "transformPositiveX"(arg0: $Vector3f$$Type): $Vector3f
-public "transformPositiveX"(arg0: $Vector3d$$Type): $Vector3d
 public "transformPositiveX"(arg0: $Vector4d$$Type): $Vector4d
-public "transformUnitPositiveX"(arg0: $Vector3f$$Type): $Vector3f
-public "transformUnitPositiveX"(arg0: $Vector4d$$Type): $Vector4d
+public "transformPositiveX"(arg0: $Vector3d$$Type): $Vector3d
+public "transformPositiveX"(arg0: $Vector3f$$Type): $Vector3f
 public "transformUnitPositiveX"(arg0: $Vector3d$$Type): $Vector3d
+public "transformUnitPositiveX"(arg0: $Vector4d$$Type): $Vector4d
 public "transformUnitPositiveX"(arg0: $Vector4f$$Type): $Vector4f
-public "transformPositiveY"(arg0: $Vector4d$$Type): $Vector4d
+public "transformUnitPositiveX"(arg0: $Vector3f$$Type): $Vector3f
+public "transformPositiveY"(arg0: $Vector3d$$Type): $Vector3d
 public "transformPositiveY"(arg0: $Vector3f$$Type): $Vector3f
 public "transformPositiveY"(arg0: $Vector4f$$Type): $Vector4f
-public "transformPositiveY"(arg0: $Vector3d$$Type): $Vector3d
-public "transformUnitPositiveY"(arg0: $Vector4d$$Type): $Vector4d
-public "transformUnitPositiveY"(arg0: $Vector3d$$Type): $Vector3d
+public "transformPositiveY"(arg0: $Vector4d$$Type): $Vector4d
 public "transformUnitPositiveY"(arg0: $Vector4f$$Type): $Vector4f
 public "transformUnitPositiveY"(arg0: $Vector3f$$Type): $Vector3f
+public "transformUnitPositiveY"(arg0: $Vector3d$$Type): $Vector3d
+public "transformUnitPositiveY"(arg0: $Vector4d$$Type): $Vector4d
 public "transformPositiveZ"(arg0: $Vector3f$$Type): $Vector3f
 public "transformPositiveZ"(arg0: $Vector4d$$Type): $Vector4d
 public "transformPositiveZ"(arg0: $Vector3d$$Type): $Vector3d
@@ -7417,21 +7417,21 @@ public "transformUnitPositiveZ"(arg0: $Vector4f$$Type): $Vector4f
 public "transformUnitPositiveZ"(arg0: $Vector4d$$Type): $Vector4d
 public "transformUnitPositiveZ"(arg0: $Vector3d$$Type): $Vector3d
 public "transformUnit"(arg0: $Vector4d$$Type): $Vector4d
-public "transformUnit"(arg0: $Vector3d$$Type): $Vector3d
+public "transformUnit"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
 public "transformUnit"(arg0: $Vector3f$$Type): $Vector3f
 public "transformUnit"(arg0: $Vector4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
 public "transformUnit"(arg0: double, arg1: double, arg2: double, arg3: $Vector3d$$Type): $Vector3d
 public "transformUnit"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
 public "transformUnit"(arg0: double, arg1: double, arg2: double, arg3: $Vector4d$$Type): $Vector4d
 public "transformUnit"(arg0: $Vector4fc$$Type, arg1: $Vector4f$$Type): $Vector4f
-public "transformUnit"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
+public "transformUnit"(arg0: $Vector3d$$Type): $Vector3d
 public "transformUnit"(arg0: double, arg1: double, arg2: double, arg3: $Vector4f$$Type): $Vector4f
 public "transformUnit"(arg0: $Vector4f$$Type): $Vector4f
 public "transformUnit"(arg0: double, arg1: double, arg2: double, arg3: $Vector3f$$Type): $Vector3f
 public "transformInverseUnit"(arg0: $Vector4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
 public "transformInverseUnit"(arg0: double, arg1: double, arg2: double, arg3: $Vector4d$$Type): $Vector4d
 public "transformInverseUnit"(arg0: $Vector4d$$Type): $Vector4d
-public "transformInverseUnit"(arg0: double, arg1: double, arg2: double, arg3: $Vector3f$$Type): $Vector3f
+public "transformInverseUnit"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
 public "transformInverseUnit"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
 public "transformInverseUnit"(arg0: $Vector3d$$Type): $Vector3d
 public "transformInverseUnit"(arg0: double, arg1: double, arg2: double, arg3: $Vector3d$$Type): $Vector3d
@@ -7439,7 +7439,7 @@ public "transformInverseUnit"(arg0: $Vector3f$$Type): $Vector3f
 public "transformInverseUnit"(arg0: $Vector4fc$$Type, arg1: $Vector4f$$Type): $Vector4f
 public "transformInverseUnit"(arg0: double, arg1: double, arg2: double, arg3: $Vector4f$$Type): $Vector4f
 public "transformInverseUnit"(arg0: $Vector4f$$Type): $Vector4f
-public "transformInverseUnit"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
+public "transformInverseUnit"(arg0: double, arg1: double, arg2: double, arg3: $Vector3f$$Type): $Vector3f
 public "conjugate"(arg0: $Quaterniond$$Type): $Quaterniond
 public "conjugate"(): $Quaterniond
 public "rotateXYZ"(arg0: double, arg1: double, arg2: double): $Quaterniond
@@ -7503,18 +7503,18 @@ public "normalizedPositiveZ"(arg0: $Vector3d$$Type): $Vector3d
 public "conjugateBy"(arg0: $Quaterniondc$$Type): $Quaterniond
 public "conjugateBy"(arg0: $Quaterniondc$$Type, arg1: $Quaterniond$$Type): $Quaterniond
 get "finite"(): boolean
-set "fromUnnormalized"(value: $Matrix4x3dc$$Type)
 set "fromUnnormalized"(value: $Matrix4fc$$Type)
 set "fromUnnormalized"(value: $Matrix3fc$$Type)
-set "fromUnnormalized"(value: $Matrix3dc$$Type)
-set "fromUnnormalized"(value: $Matrix4dc$$Type)
 set "fromUnnormalized"(value: $Matrix4x3fc$$Type)
-set "fromNormalized"(value: $Matrix3dc$$Type)
-set "fromNormalized"(value: $Matrix4fc$$Type)
+set "fromUnnormalized"(value: $Matrix4dc$$Type)
+set "fromUnnormalized"(value: $Matrix4x3dc$$Type)
+set "fromUnnormalized"(value: $Matrix3dc$$Type)
 set "fromNormalized"(value: $Matrix4x3dc$$Type)
-set "fromNormalized"(value: $Matrix4dc$$Type)
+set "fromNormalized"(value: $Matrix4fc$$Type)
 set "fromNormalized"(value: $Matrix4x3fc$$Type)
+set "fromNormalized"(value: $Matrix4dc$$Type)
 set "fromNormalized"(value: $Matrix3fc$$Type)
+set "fromNormalized"(value: $Matrix3dc$$Type)
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -7528,14 +7528,14 @@ export type $Quaterniond$$Original = $Quaterniond;}
 declare module "org.joml.Quaternionf" {
 import {$Matrix4x3fc$$Type} from "org.joml.Matrix4x3fc"
 import {$ObjectInput$$Type} from "java.io.ObjectInput"
-import {$Matrix4x3d, $Matrix4x3d$$Type} from "org.joml.Matrix4x3d"
 import {$Matrix4x3dc$$Type} from "org.joml.Matrix4x3dc"
+import {$Matrix4x3d, $Matrix4x3d$$Type} from "org.joml.Matrix4x3d"
 import {$Matrix4x3f, $Matrix4x3f$$Type} from "org.joml.Matrix4x3f"
 import {$Vector3f, $Vector3f$$Type} from "org.joml.Vector3f"
 import {$Matrix4dc$$Type} from "org.joml.Matrix4dc"
 import {$Matrix4d, $Matrix4d$$Type} from "org.joml.Matrix4d"
-import {$ObjectOutput$$Type} from "java.io.ObjectOutput"
 import {$Matrix3dc$$Type} from "org.joml.Matrix3dc"
+import {$ObjectOutput$$Type} from "java.io.ObjectOutput"
 import {$Matrix4f, $Matrix4f$$Type} from "org.joml.Matrix4f"
 import {$Vector3d, $Vector3d$$Type} from "org.joml.Vector3d"
 import {$Matrix4fc$$Type} from "org.joml.Matrix4fc"
@@ -7547,53 +7547,47 @@ import {$Quaterniondc$$Type} from "org.joml.Quaterniondc"
 import {$Vector4f, $Vector4f$$Type} from "org.joml.Vector4f"
 import {$Matrix3d, $Matrix3d$$Type} from "org.joml.Matrix3d"
 import {$Vector4d, $Vector4d$$Type} from "org.joml.Vector4d"
-import {$Matrix3f, $Matrix3f$$Type} from "org.joml.Matrix3f"
 import {$Externalizable$$Interface} from "java.io.Externalizable"
+import {$Matrix3f, $Matrix3f$$Type} from "org.joml.Matrix3f"
 import {$FloatBuffer, $FloatBuffer$$Type} from "java.nio.FloatBuffer"
 import {$Vector4dc$$Type} from "org.joml.Vector4dc"
 import {$Vector3dc$$Type} from "org.joml.Vector3dc"
-import {$Vector4fc$$Type} from "org.joml.Vector4fc"
 import {$NumberFormat$$Type} from "java.text.NumberFormat"
+import {$Vector4fc$$Type} from "org.joml.Vector4fc"
 import {$Vector3fc$$Type} from "org.joml.Vector3fc"
 import {$AxisAngle4f, $AxisAngle4f$$Type} from "org.joml.AxisAngle4f"
 import {$AxisAngle4d, $AxisAngle4d$$Type} from "org.joml.AxisAngle4d"
 import {$ByteBuffer, $ByteBuffer$$Type} from "java.nio.ByteBuffer"
 
 export class $Quaternionf implements $Externalizable$$Interface, $Cloneable$$Interface, $Quaternionfc$$Interface {
-constructor()
-constructor(arg0: $AxisAngle4d$$Type)
 constructor(arg0: $AxisAngle4f$$Type)
 constructor(arg0: $Quaterniondc$$Type)
 constructor(arg0: double, arg1: double, arg2: double, arg3: double)
-constructor(arg0: float, arg1: float, arg2: float, arg3: float)
 constructor(arg0: $Quaternionfc$$Type)
+constructor(arg0: float, arg1: float, arg2: float, arg3: float)
+constructor(arg0: $AxisAngle4d$$Type)
+constructor()
 
-public "invert"(): $Quaternionf
 public "invert"(arg0: $Quaternionf$$Type): $Quaternionf
-public "mul"(arg0: float): $Quaternionf
-public "mul"(arg0: float, arg1: $Quaternionf$$Type): $Quaternionf
-public "mul"(arg0: $Quaternionfc$$Type): $Quaternionf
-public "mul"(arg0: $Quaternionfc$$Type, arg1: $Quaternionf$$Type): $Quaternionf
-public "mul"(arg0: float, arg1: float, arg2: float, arg3: float): $Quaternionf
-public "mul"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Quaternionf$$Type): $Quaternionf
-public "normalize"(arg0: $Quaternionf$$Type): $Quaternionf
-public "normalize"(): $Quaternionf
+public "invert"(): $Quaternionf
 public "div"(arg0: $Quaternionfc$$Type): $Quaternionf
 public "div"(arg0: $Quaternionfc$$Type, arg1: $Quaternionf$$Type): $Quaternionf
 public "difference"(arg0: $Quaternionf$$Type): $Quaternionf
 public "difference"(arg0: $Quaternionfc$$Type, arg1: $Quaternionf$$Type): $Quaternionf
 public "writeExternal"(arg0: $ObjectOutput$$Type): void
 public "readExternal"(arg0: $ObjectInput$$Type): void
-public "get"(arg0: $AxisAngle4d$$Type): $AxisAngle4d
-public "get"(arg0: $Quaterniond$$Type): $Quaterniond
-public "get"(arg0: $Matrix3d$$Type): $Matrix3d
-public "get"(arg0: $Matrix3f$$Type): $Matrix3f
-public "get"(arg0: $Matrix4d$$Type): $Matrix4d
-public "get"(arg0: $Quaternionf$$Type): $Quaternionf
-public "get"(arg0: $Matrix4f$$Type): $Matrix4f
+public "normalize"(arg0: $Quaternionf$$Type): $Quaternionf
+public "normalize"(): $Quaternionf
 public "get"(arg0: $AxisAngle4f$$Type): $AxisAngle4f
-public "get"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
 public "get"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
+public "get"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
+public "get"(arg0: $AxisAngle4d$$Type): $AxisAngle4d
+public "get"(arg0: $Quaternionf$$Type): $Quaternionf
+public "get"(arg0: $Quaterniond$$Type): $Quaterniond
+public "get"(arg0: $Matrix3f$$Type): $Matrix3f
+public "get"(arg0: $Matrix3d$$Type): $Matrix3d
+public "get"(arg0: $Matrix4f$$Type): $Matrix4f
+public "get"(arg0: $Matrix4d$$Type): $Matrix4d
 public "equals"(arg0: float, arg1: float, arg2: float, arg3: float): boolean
 public "equals"(arg0: $Quaternionfc$$Type, arg1: float): boolean
 public "equals"(arg0: any): boolean
@@ -7604,34 +7598,40 @@ public "clone"(): any
 public "isFinite"(): boolean
 public "scale"(arg0: float): $Quaternionf
 public "scale"(arg0: float, arg1: $Quaternionf$$Type): $Quaternionf
-public "add"(arg0: float, arg1: float, arg2: float, arg3: float): $Quaternionf
-public "add"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Quaternionf$$Type): $Quaternionf
 public "add"(arg0: $Quaternionfc$$Type): $Quaternionf
+public "add"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Quaternionf$$Type): $Quaternionf
 public "add"(arg0: $Quaternionfc$$Type, arg1: $Quaternionf$$Type): $Quaternionf
+public "add"(arg0: float, arg1: float, arg2: float, arg3: float): $Quaternionf
 public "x"(): float
-public "transform"(arg0: $Vector4d$$Type): $Vector4d
-public "transform"(arg0: $Vector3d$$Type): $Vector3d
+public "transform"(arg0: float, arg1: float, arg2: float, arg3: $Vector3f$$Type): $Vector3f
+public "transform"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
 public "transform"(arg0: double, arg1: double, arg2: double, arg3: $Vector4d$$Type): $Vector4d
+public "transform"(arg0: $Vector4f$$Type): $Vector4f
+public "transform"(arg0: $Vector3f$$Type): $Vector3f
+public "transform"(arg0: float, arg1: float, arg2: float, arg3: $Vector4f$$Type): $Vector4f
 public "transform"(arg0: double, arg1: double, arg2: double, arg3: $Vector3d$$Type): $Vector3d
+public "transform"(arg0: $Vector3d$$Type): $Vector3d
 public "transform"(arg0: float, arg1: float, arg2: float, arg3: $Vector3d$$Type): $Vector3d
 public "transform"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
-public "transform"(arg0: $Vector3f$$Type): $Vector3f
-public "transform"(arg0: $Vector4f$$Type): $Vector4f
-public "transform"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
-public "transform"(arg0: float, arg1: float, arg2: float, arg3: $Vector3f$$Type): $Vector3f
+public "transform"(arg0: $Vector4d$$Type): $Vector4d
 public "transform"(arg0: $Vector4fc$$Type, arg1: $Vector4f$$Type): $Vector4f
-public "transform"(arg0: float, arg1: float, arg2: float, arg3: $Vector4f$$Type): $Vector4f
 public "transform"(arg0: $Vector4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
 public "dot"(arg0: $Quaternionf$$Type): float
 public "identity"(): $Quaternionf
+public "set"(arg0: $Quaterniondc$$Type): $Quaternionf
 public "set"(arg0: $AxisAngle4f$$Type): $Quaternionf
 public "set"(arg0: $AxisAngle4d$$Type): $Quaternionf
-public "set"(arg0: $Quaterniondc$$Type): $Quaternionf
-public "set"(arg0: $Quaternionfc$$Type): $Quaternionf
 public "set"(arg0: float, arg1: float, arg2: float, arg3: float): $Quaternionf
+public "set"(arg0: $Quaternionfc$$Type): $Quaternionf
 public "z"(): float
 public "w"(): float
 public "y"(): float
+public "mul"(arg0: $Quaternionfc$$Type, arg1: $Quaternionf$$Type): $Quaternionf
+public "mul"(arg0: float, arg1: $Quaternionf$$Type): $Quaternionf
+public "mul"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Quaternionf$$Type): $Quaternionf
+public "mul"(arg0: float): $Quaternionf
+public "mul"(arg0: float, arg1: float, arg2: float, arg3: float): $Quaternionf
+public "mul"(arg0: $Quaternionfc$$Type): $Quaternionf
 public "angle"(): float
 public "getAsMatrix3f"(arg0: $FloatBuffer$$Type): $FloatBuffer
 public "getAsMatrix3f"(arg0: $ByteBuffer$$Type): $ByteBuffer
@@ -7639,97 +7639,97 @@ public "getAsMatrix4f"(arg0: $ByteBuffer$$Type): $ByteBuffer
 public "getAsMatrix4f"(arg0: $FloatBuffer$$Type): $FloatBuffer
 public "getAsMatrix4x3f"(arg0: $FloatBuffer$$Type): $FloatBuffer
 public "getAsMatrix4x3f"(arg0: $ByteBuffer$$Type): $ByteBuffer
-public "setAngleAxis"(arg0: float, arg1: float, arg2: float, arg3: float): $Quaternionf
 public "setAngleAxis"(arg0: double, arg1: double, arg2: double, arg3: double): $Quaternionf
-public "rotationAxis"(arg0: float, arg1: float, arg2: float, arg3: float): $Quaternionf
-public "rotationAxis"(arg0: $AxisAngle4f$$Type): $Quaternionf
+public "setAngleAxis"(arg0: float, arg1: float, arg2: float, arg3: float): $Quaternionf
 public "rotationAxis"(arg0: float, arg1: $Vector3fc$$Type): $Quaternionf
+public "rotationAxis"(arg0: $AxisAngle4f$$Type): $Quaternionf
+public "rotationAxis"(arg0: float, arg1: float, arg2: float, arg3: float): $Quaternionf
 public "rotationX"(arg0: float): $Quaternionf
 public "rotationY"(arg0: float): $Quaternionf
 public "rotationZ"(arg0: float): $Quaternionf
 public "setFromUnnormalized"(arg0: $Matrix4x3dc$$Type): $Quaternionf
-public "setFromUnnormalized"(arg0: $Matrix4dc$$Type): $Quaternionf
-public "setFromUnnormalized"(arg0: $Matrix3dc$$Type): $Quaternionf
 public "setFromUnnormalized"(arg0: $Matrix4x3fc$$Type): $Quaternionf
 public "setFromUnnormalized"(arg0: $Matrix4fc$$Type): $Quaternionf
 public "setFromUnnormalized"(arg0: $Matrix3fc$$Type): $Quaternionf
-public "setFromNormalized"(arg0: $Matrix4dc$$Type): $Quaternionf
-public "setFromNormalized"(arg0: $Matrix4x3fc$$Type): $Quaternionf
-public "setFromNormalized"(arg0: $Matrix4x3dc$$Type): $Quaternionf
+public "setFromUnnormalized"(arg0: $Matrix3dc$$Type): $Quaternionf
+public "setFromUnnormalized"(arg0: $Matrix4dc$$Type): $Quaternionf
 public "setFromNormalized"(arg0: $Matrix3dc$$Type): $Quaternionf
 public "setFromNormalized"(arg0: $Matrix3fc$$Type): $Quaternionf
+public "setFromNormalized"(arg0: $Matrix4dc$$Type): $Quaternionf
 public "setFromNormalized"(arg0: $Matrix4fc$$Type): $Quaternionf
+public "setFromNormalized"(arg0: $Matrix4x3fc$$Type): $Quaternionf
+public "setFromNormalized"(arg0: $Matrix4x3dc$$Type): $Quaternionf
 public "fromAxisAngleRad"(arg0: float, arg1: float, arg2: float, arg3: float): $Quaternionf
 public "fromAxisAngleRad"(arg0: $Vector3fc$$Type, arg1: float): $Quaternionf
-public "fromAxisAngleDeg"(arg0: $Vector3fc$$Type, arg1: float): $Quaternionf
 public "fromAxisAngleDeg"(arg0: float, arg1: float, arg2: float, arg3: float): $Quaternionf
-public "premul"(arg0: float, arg1: float, arg2: float, arg3: float): $Quaternionf
-public "premul"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Quaternionf$$Type): $Quaternionf
+public "fromAxisAngleDeg"(arg0: $Vector3fc$$Type, arg1: float): $Quaternionf
 public "premul"(arg0: $Quaternionfc$$Type, arg1: $Quaternionf$$Type): $Quaternionf
+public "premul"(arg0: float, arg1: float, arg2: float, arg3: float): $Quaternionf
 public "premul"(arg0: $Quaternionfc$$Type): $Quaternionf
-public "transformInverse"(arg0: float, arg1: float, arg2: float, arg3: $Vector3d$$Type): $Vector3d
-public "transformInverse"(arg0: $Vector3f$$Type): $Vector3f
-public "transformInverse"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
-public "transformInverse"(arg0: $Vector4f$$Type): $Vector4f
-public "transformInverse"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
+public "premul"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Quaternionf$$Type): $Quaternionf
 public "transformInverse"(arg0: $Vector4d$$Type): $Vector4d
-public "transformInverse"(arg0: double, arg1: double, arg2: double, arg3: $Vector4d$$Type): $Vector4d
-public "transformInverse"(arg0: $Vector4fc$$Type, arg1: $Vector4f$$Type): $Vector4f
-public "transformInverse"(arg0: $Vector3d$$Type): $Vector3d
-public "transformInverse"(arg0: float, arg1: float, arg2: float, arg3: $Vector4f$$Type): $Vector4f
 public "transformInverse"(arg0: double, arg1: double, arg2: double, arg3: $Vector3d$$Type): $Vector3d
 public "transformInverse"(arg0: $Vector4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
+public "transformInverse"(arg0: float, arg1: float, arg2: float, arg3: $Vector3d$$Type): $Vector3d
+public "transformInverse"(arg0: double, arg1: double, arg2: double, arg3: $Vector4d$$Type): $Vector4d
+public "transformInverse"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
 public "transformInverse"(arg0: float, arg1: float, arg2: float, arg3: $Vector3f$$Type): $Vector3f
+public "transformInverse"(arg0: $Vector3d$$Type): $Vector3d
+public "transformInverse"(arg0: float, arg1: float, arg2: float, arg3: $Vector4f$$Type): $Vector4f
+public "transformInverse"(arg0: $Vector4fc$$Type, arg1: $Vector4f$$Type): $Vector4f
+public "transformInverse"(arg0: $Vector3f$$Type): $Vector3f
+public "transformInverse"(arg0: $Vector4f$$Type): $Vector4f
+public "transformInverse"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
+public "transformPositiveX"(arg0: $Vector3f$$Type): $Vector3f
+public "transformPositiveX"(arg0: $Vector4d$$Type): $Vector4d
 public "transformPositiveX"(arg0: $Vector3d$$Type): $Vector3d
 public "transformPositiveX"(arg0: $Vector4f$$Type): $Vector4f
-public "transformPositiveX"(arg0: $Vector4d$$Type): $Vector4d
-public "transformPositiveX"(arg0: $Vector3f$$Type): $Vector3f
 public "transformUnitPositiveX"(arg0: $Vector3f$$Type): $Vector3f
+public "transformUnitPositiveX"(arg0: $Vector4f$$Type): $Vector4f
 public "transformUnitPositiveX"(arg0: $Vector4d$$Type): $Vector4d
 public "transformUnitPositiveX"(arg0: $Vector3d$$Type): $Vector3d
-public "transformUnitPositiveX"(arg0: $Vector4f$$Type): $Vector4f
-public "transformPositiveY"(arg0: $Vector3f$$Type): $Vector3f
-public "transformPositiveY"(arg0: $Vector4f$$Type): $Vector4f
-public "transformPositiveY"(arg0: $Vector3d$$Type): $Vector3d
 public "transformPositiveY"(arg0: $Vector4d$$Type): $Vector4d
+public "transformPositiveY"(arg0: $Vector3d$$Type): $Vector3d
+public "transformPositiveY"(arg0: $Vector4f$$Type): $Vector4f
+public "transformPositiveY"(arg0: $Vector3f$$Type): $Vector3f
 public "transformUnitPositiveY"(arg0: $Vector4f$$Type): $Vector4f
+public "transformUnitPositiveY"(arg0: $Vector4d$$Type): $Vector4d
 public "transformUnitPositiveY"(arg0: $Vector3f$$Type): $Vector3f
 public "transformUnitPositiveY"(arg0: $Vector3d$$Type): $Vector3d
-public "transformUnitPositiveY"(arg0: $Vector4d$$Type): $Vector4d
-public "transformPositiveZ"(arg0: $Vector3d$$Type): $Vector3d
 public "transformPositiveZ"(arg0: $Vector3f$$Type): $Vector3f
 public "transformPositiveZ"(arg0: $Vector4f$$Type): $Vector4f
+public "transformPositiveZ"(arg0: $Vector3d$$Type): $Vector3d
 public "transformPositiveZ"(arg0: $Vector4d$$Type): $Vector4d
-public "transformUnitPositiveZ"(arg0: $Vector4d$$Type): $Vector4d
-public "transformUnitPositiveZ"(arg0: $Vector3d$$Type): $Vector3d
-public "transformUnitPositiveZ"(arg0: $Vector4f$$Type): $Vector4f
 public "transformUnitPositiveZ"(arg0: $Vector3f$$Type): $Vector3f
+public "transformUnitPositiveZ"(arg0: $Vector4d$$Type): $Vector4d
+public "transformUnitPositiveZ"(arg0: $Vector4f$$Type): $Vector4f
+public "transformUnitPositiveZ"(arg0: $Vector3d$$Type): $Vector3d
+public "transformUnit"(arg0: $Vector3f$$Type): $Vector3f
+public "transformUnit"(arg0: double, arg1: double, arg2: double, arg3: $Vector4d$$Type): $Vector4d
+public "transformUnit"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
 public "transformUnit"(arg0: float, arg1: float, arg2: float, arg3: $Vector3f$$Type): $Vector3f
 public "transformUnit"(arg0: $Vector4f$$Type): $Vector4f
-public "transformUnit"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
-public "transformUnit"(arg0: $Vector3f$$Type): $Vector3f
-public "transformUnit"(arg0: $Vector4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
 public "transformUnit"(arg0: $Vector4fc$$Type, arg1: $Vector4f$$Type): $Vector4f
-public "transformUnit"(arg0: double, arg1: double, arg2: double, arg3: $Vector3d$$Type): $Vector3d
-public "transformUnit"(arg0: $Vector4d$$Type): $Vector4d
-public "transformUnit"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
-public "transformUnit"(arg0: double, arg1: double, arg2: double, arg3: $Vector4d$$Type): $Vector4d
 public "transformUnit"(arg0: float, arg1: float, arg2: float, arg3: $Vector4f$$Type): $Vector4f
+public "transformUnit"(arg0: $Vector4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
+public "transformUnit"(arg0: double, arg1: double, arg2: double, arg3: $Vector3d$$Type): $Vector3d
 public "transformUnit"(arg0: float, arg1: float, arg2: float, arg3: $Vector3d$$Type): $Vector3d
-public "transformInverseUnit"(arg0: $Vector4d$$Type): $Vector4d
-public "transformInverseUnit"(arg0: $Vector4fc$$Type, arg1: $Vector4f$$Type): $Vector4f
+public "transformUnit"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
+public "transformUnit"(arg0: $Vector4d$$Type): $Vector4d
 public "transformInverseUnit"(arg0: float, arg1: float, arg2: float, arg3: $Vector4f$$Type): $Vector4f
-public "transformInverseUnit"(arg0: $Vector4f$$Type): $Vector4f
-public "transformInverseUnit"(arg0: double, arg1: double, arg2: double, arg3: $Vector3d$$Type): $Vector3d
-public "transformInverseUnit"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
-public "transformInverseUnit"(arg0: $Vector4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
-public "transformInverseUnit"(arg0: float, arg1: float, arg2: float, arg3: $Vector3f$$Type): $Vector3f
-public "transformInverseUnit"(arg0: double, arg1: double, arg2: double, arg3: $Vector4d$$Type): $Vector4d
-public "transformInverseUnit"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
 public "transformInverseUnit"(arg0: float, arg1: float, arg2: float, arg3: $Vector3d$$Type): $Vector3d
+public "transformInverseUnit"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
+public "transformInverseUnit"(arg0: $Vector4d$$Type): $Vector4d
+public "transformInverseUnit"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
+public "transformInverseUnit"(arg0: $Vector4fc$$Type, arg1: $Vector4f$$Type): $Vector4f
+public "transformInverseUnit"(arg0: float, arg1: float, arg2: float, arg3: $Vector3f$$Type): $Vector3f
+public "transformInverseUnit"(arg0: $Vector4f$$Type): $Vector4f
 public "transformInverseUnit"(arg0: $Vector3f$$Type): $Vector3f
-public "conjugate"(): $Quaternionf
+public "transformInverseUnit"(arg0: double, arg1: double, arg2: double, arg3: $Vector4d$$Type): $Vector4d
+public "transformInverseUnit"(arg0: $Vector4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
+public "transformInverseUnit"(arg0: double, arg1: double, arg2: double, arg3: $Vector3d$$Type): $Vector3d
 public "conjugate"(arg0: $Quaternionf$$Type): $Quaternionf
+public "conjugate"(): $Quaternionf
 public "rotateXYZ"(arg0: float, arg1: float, arg2: float): $Quaternionf
 public "rotateXYZ"(arg0: float, arg1: float, arg2: float, arg3: $Quaternionf$$Type): $Quaternionf
 public "rotateZYX"(arg0: float, arg1: float, arg2: float, arg3: $Quaternionf$$Type): $Quaternionf
@@ -7743,24 +7743,24 @@ public "getEulerAnglesYXZ"(arg0: $Vector3f$$Type): $Vector3f
 public "rotationXYZ"(arg0: float, arg1: float, arg2: float): $Quaternionf
 public "rotationZYX"(arg0: float, arg1: float, arg2: float): $Quaternionf
 public "rotationYXZ"(arg0: float, arg1: float, arg2: float): $Quaternionf
-public "slerp"(arg0: $Quaternionfc$$Type, arg1: float): $Quaternionf
 public "slerp"(arg0: $Quaternionfc$$Type, arg1: float, arg2: $Quaternionf$$Type): $Quaternionf
+public "slerp"(arg0: $Quaternionfc$$Type, arg1: float): $Quaternionf
 public static "slerp"(arg0: ($Quaternionf$$Type)[], arg1: (float)[], arg2: $Quaternionf$$Type): $Quaternionfc
 public "scaling"(arg0: float): $Quaternionf
-public "integrate"(arg0: float, arg1: float, arg2: float, arg3: float): $Quaternionf
 public "integrate"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Quaternionf$$Type): $Quaternionf
+public "integrate"(arg0: float, arg1: float, arg2: float, arg3: float): $Quaternionf
 public "nlerp"(arg0: $Quaternionfc$$Type, arg1: float): $Quaternionf
 public static "nlerp"(arg0: ($Quaternionfc$$Type)[], arg1: (float)[], arg2: $Quaternionf$$Type): $Quaternionfc
 public "nlerp"(arg0: $Quaternionfc$$Type, arg1: float, arg2: $Quaternionf$$Type): $Quaternionf
 public "nlerpIterative"(arg0: $Quaternionfc$$Type, arg1: float, arg2: float): $Quaternionf
 public static "nlerpIterative"(arg0: ($Quaternionf$$Type)[], arg1: (float)[], arg2: float, arg3: $Quaternionf$$Type): $Quaternionfc
 public "nlerpIterative"(arg0: $Quaternionfc$$Type, arg1: float, arg2: float, arg3: $Quaternionf$$Type): $Quaternionf
-public "rotationTo"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type): $Quaternionf
 public "rotationTo"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Quaternionf
+public "rotationTo"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type): $Quaternionf
 public "rotateAxis"(arg0: float, arg1: float, arg2: float, arg3: float): $Quaternionf
-public "rotateAxis"(arg0: float, arg1: $Vector3fc$$Type, arg2: $Quaternionf$$Type): $Quaternionf
-public "rotateAxis"(arg0: float, arg1: $Vector3fc$$Type): $Quaternionf
 public "rotateAxis"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Quaternionf$$Type): $Quaternionf
+public "rotateAxis"(arg0: float, arg1: $Vector3fc$$Type): $Quaternionf
+public "rotateAxis"(arg0: float, arg1: $Vector3fc$$Type, arg2: $Quaternionf$$Type): $Quaternionf
 public "rotateX"(arg0: float): $Quaternionf
 public "rotateX"(arg0: float, arg1: $Quaternionf$$Type): $Quaternionf
 public "rotateY"(arg0: float): $Quaternionf
@@ -7768,20 +7768,20 @@ public "rotateY"(arg0: float, arg1: $Quaternionf$$Type): $Quaternionf
 public "rotateZ"(arg0: float, arg1: $Quaternionf$$Type): $Quaternionf
 public "rotateZ"(arg0: float): $Quaternionf
 public "lengthSquared"(): float
-public "lookAlong"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type): $Quaternionf
-public "lookAlong"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Quaternionf$$Type): $Quaternionf
-public "lookAlong"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Quaternionf
 public "lookAlong"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Quaternionf$$Type): $Quaternionf
+public "lookAlong"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Quaternionf
+public "lookAlong"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Quaternionf$$Type): $Quaternionf
+public "lookAlong"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type): $Quaternionf
+public "rotateTo"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Quaternionf
 public "rotateTo"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Quaternionf$$Type): $Quaternionf
 public "rotateTo"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Quaternionf$$Type): $Quaternionf
 public "rotateTo"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type): $Quaternionf
-public "rotateTo"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Quaternionf
 public "rotateLocalX"(arg0: float): $Quaternionf
 public "rotateLocalX"(arg0: float, arg1: $Quaternionf$$Type): $Quaternionf
-public "rotateLocalY"(arg0: float, arg1: $Quaternionf$$Type): $Quaternionf
 public "rotateLocalY"(arg0: float): $Quaternionf
-public "rotateLocalZ"(arg0: float, arg1: $Quaternionf$$Type): $Quaternionf
+public "rotateLocalY"(arg0: float, arg1: $Quaternionf$$Type): $Quaternionf
 public "rotateLocalZ"(arg0: float): $Quaternionf
+public "rotateLocalZ"(arg0: float, arg1: $Quaternionf$$Type): $Quaternionf
 public "positiveX"(arg0: $Vector3f$$Type): $Vector3f
 public "normalizedPositiveX"(arg0: $Vector3f$$Type): $Vector3f
 public "positiveY"(arg0: $Vector3f$$Type): $Vector3f
@@ -7792,17 +7792,17 @@ public "conjugateBy"(arg0: $Quaternionfc$$Type, arg1: $Quaternionf$$Type): $Quat
 public "conjugateBy"(arg0: $Quaternionfc$$Type): $Quaternionf
 get "finite"(): boolean
 set "fromUnnormalized"(value: $Matrix4x3dc$$Type)
-set "fromUnnormalized"(value: $Matrix4dc$$Type)
-set "fromUnnormalized"(value: $Matrix3dc$$Type)
 set "fromUnnormalized"(value: $Matrix4x3fc$$Type)
 set "fromUnnormalized"(value: $Matrix4fc$$Type)
 set "fromUnnormalized"(value: $Matrix3fc$$Type)
-set "fromNormalized"(value: $Matrix4dc$$Type)
-set "fromNormalized"(value: $Matrix4x3fc$$Type)
-set "fromNormalized"(value: $Matrix4x3dc$$Type)
+set "fromUnnormalized"(value: $Matrix3dc$$Type)
+set "fromUnnormalized"(value: $Matrix4dc$$Type)
 set "fromNormalized"(value: $Matrix3dc$$Type)
 set "fromNormalized"(value: $Matrix3fc$$Type)
+set "fromNormalized"(value: $Matrix4dc$$Type)
 set "fromNormalized"(value: $Matrix4fc$$Type)
+set "fromNormalized"(value: $Matrix4x3fc$$Type)
+set "fromNormalized"(value: $Matrix4x3dc$$Type)
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -7848,70 +7848,70 @@ static readonly "PROPERTY_ORTHONORMAL": byte
 static readonly "PLANE_PX": integer
 static readonly "PROPERTY_IDENTITY": byte
 
- "getTransposedFloats"(arg0: $ByteBuffer$$Type): $ByteBuffer
- "getTransposedFloats"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
  "getFloats"(arg0: $ByteBuffer$$Type): $ByteBuffer
  "getFloats"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
+ "getTransposedFloats"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
+ "getTransposedFloats"(arg0: $ByteBuffer$$Type): $ByteBuffer
  "mulOrtho"(arg0: $Matrix4x3dc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
- "get4x4"(arg0: integer, arg1: $DoubleBuffer$$Type): $DoubleBuffer
- "get4x4"(arg0: (float)[], arg1: integer): (float)[]
  "get4x4"(arg0: (float)[]): (float)[]
+ "get4x4"(arg0: integer, arg1: $DoubleBuffer$$Type): $DoubleBuffer
  "get4x4"(arg0: $ByteBuffer$$Type): $ByteBuffer
- "get4x4"(arg0: (double)[]): (double)[]
- "get4x4"(arg0: (double)[], arg1: integer): (double)[]
  "get4x4"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
  "get4x4"(arg0: $DoubleBuffer$$Type): $DoubleBuffer
+ "get4x4"(arg0: (double)[], arg1: integer): (double)[]
+ "get4x4"(arg0: (double)[]): (double)[]
+ "get4x4"(arg0: (float)[], arg1: integer): (float)[]
  "invert"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
- "sub"(arg0: $Matrix4x3fc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
- "sub"(arg0: $Matrix4x3dc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
- "mul"(arg0: $Matrix4x3fc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
- "mul"(arg0: $Matrix4x3dc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
  "origin"(arg0: $Vector3d$$Type): $Vector3d
- "shadow"(arg0: $Vector4dc$$Type, arg1: $Matrix4x3dc$$Type, arg2: $Matrix4x3d$$Type): $Matrix4x3d
- "shadow"(arg0: $Vector4dc$$Type, arg1: double, arg2: double, arg3: double, arg4: double, arg5: $Matrix4x3d$$Type): $Matrix4x3d
- "shadow"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4x3dc$$Type, arg5: $Matrix4x3d$$Type): $Matrix4x3d
- "shadow"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: $Matrix4x3d$$Type): $Matrix4x3d
  "normal"(arg0: $Matrix3d$$Type): $Matrix3d
  "normal"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
- "get"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
- "get"(arg0: $FloatBuffer$$Type): $FloatBuffer
- "get"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
- "get"(arg0: $ByteBuffer$$Type): $ByteBuffer
- "get"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
+ "sub"(arg0: $Matrix4x3fc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
+ "sub"(arg0: $Matrix4x3dc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
+ "get"(arg0: (double)[], arg1: integer): (double)[]
  "get"(arg0: (double)[]): (double)[]
- "get"(arg0: (float)[]): (float)[]
  "get"(arg0: (float)[], arg1: integer): (float)[]
+ "get"(arg0: (float)[]): (float)[]
+ "get"(arg0: $ByteBuffer$$Type): $ByteBuffer
  "get"(arg0: $DoubleBuffer$$Type): $DoubleBuffer
  "get"(arg0: integer, arg1: $DoubleBuffer$$Type): $DoubleBuffer
+ "get"(arg0: $FloatBuffer$$Type): $FloatBuffer
+ "get"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
+ "get"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
  "get"(arg0: $Matrix4d$$Type): $Matrix4d
- "get"(arg0: (double)[], arg1: integer): (double)[]
+ "get"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
  "equals"(arg0: $Matrix4x3dc$$Type, arg1: double): boolean
  "fma"(arg0: $Matrix4x3dc$$Type, arg1: double, arg2: $Matrix4x3d$$Type): $Matrix4x3d
  "fma"(arg0: $Matrix4x3fc$$Type, arg1: double, arg2: $Matrix4x3d$$Type): $Matrix4x3d
  "isFinite"(): boolean
+ "scale"(arg0: double, arg1: $Matrix4x3d$$Type): $Matrix4x3d
  "scale"(arg0: double, arg1: double, arg2: double, arg3: $Matrix4x3d$$Type): $Matrix4x3d
  "scale"(arg0: $Vector3dc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
- "scale"(arg0: double, arg1: $Matrix4x3d$$Type): $Matrix4x3d
  "add"(arg0: $Matrix4x3dc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
  "add"(arg0: $Matrix4x3fc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
- "transform"(arg0: $Vector4d$$Type): $Vector4d
  "transform"(arg0: $Vector4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
+ "transform"(arg0: $Vector4d$$Type): $Vector4d
  "properties"(): integer
  "pick"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: (integer)[], arg5: $Matrix4x3d$$Type): $Matrix4x3d
- "rotate"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4x3d$$Type): $Matrix4x3d
- "rotate"(arg0: $Quaterniondc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
  "rotate"(arg0: $AxisAngle4d$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
- "rotate"(arg0: $Quaternionfc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
  "rotate"(arg0: $AxisAngle4f$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
- "rotate"(arg0: double, arg1: $Vector3fc$$Type, arg2: $Matrix4x3d$$Type): $Matrix4x3d
  "rotate"(arg0: double, arg1: $Vector3dc$$Type, arg2: $Matrix4x3d$$Type): $Matrix4x3d
- "m12"(): double
+ "rotate"(arg0: double, arg1: $Vector3fc$$Type, arg2: $Matrix4x3d$$Type): $Matrix4x3d
+ "rotate"(arg0: $Quaterniondc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
+ "rotate"(arg0: $Quaternionfc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
+ "rotate"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4x3d$$Type): $Matrix4x3d
  "m11"(): double
+ "m12"(): double
+ "mul"(arg0: $Matrix4x3fc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
+ "mul"(arg0: $Matrix4x3dc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
+ "shadow"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4x3dc$$Type, arg5: $Matrix4x3d$$Type): $Matrix4x3d
+ "shadow"(arg0: $Vector4dc$$Type, arg1: $Matrix4x3dc$$Type, arg2: $Matrix4x3d$$Type): $Matrix4x3d
+ "shadow"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: $Matrix4x3d$$Type): $Matrix4x3d
+ "shadow"(arg0: $Vector4dc$$Type, arg1: double, arg2: double, arg3: double, arg4: double, arg5: $Matrix4x3d$$Type): $Matrix4x3d
  "m10"(): double
  "getColumn"(arg0: integer, arg1: $Vector3d$$Type): $Vector3d
  "translate"(arg0: $Vector3fc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
- "translate"(arg0: $Vector3dc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
  "translate"(arg0: double, arg1: double, arg2: double, arg3: $Matrix4x3d$$Type): $Matrix4x3d
+ "translate"(arg0: $Vector3dc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
  "transformPosition"(arg0: $Vector3d$$Type): $Vector3d
  "transformPosition"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
  "rotateAround"(arg0: $Quaterniondc$$Type, arg1: double, arg2: double, arg3: double, arg4: $Matrix4x3d$$Type): $Matrix4x3d
@@ -7933,16 +7933,15 @@ static readonly "PROPERTY_IDENTITY": byte
  "rotateX"(arg0: double, arg1: $Matrix4x3d$$Type): $Matrix4x3d
  "rotateY"(arg0: double, arg1: $Matrix4x3d$$Type): $Matrix4x3d
  "rotateZ"(arg0: double, arg1: $Matrix4x3d$$Type): $Matrix4x3d
- "reflect"(arg0: $Quaterniondc$$Type, arg1: $Vector3dc$$Type, arg2: $Matrix4x3d$$Type): $Matrix4x3d
  "reflect"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4x3d$$Type): $Matrix4x3d
  "reflect"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix4x3d$$Type): $Matrix4x3d
  "reflect"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Matrix4x3d$$Type): $Matrix4x3d
+ "reflect"(arg0: $Quaterniondc$$Type, arg1: $Vector3dc$$Type, arg2: $Matrix4x3d$$Type): $Matrix4x3d
  "lerp"(arg0: $Matrix4x3dc$$Type, arg1: double, arg2: $Matrix4x3d$$Type): $Matrix4x3d
  "getUnnormalizedRotation"(arg0: $Quaternionf$$Type): $Quaternionf
  "getUnnormalizedRotation"(arg0: $Quaterniond$$Type): $Quaterniond
- "getNormalizedRotation"(arg0: $Quaternionf$$Type): $Quaternionf
  "getNormalizedRotation"(arg0: $Quaterniond$$Type): $Quaterniond
- "determinant"(): double
+ "getNormalizedRotation"(arg0: $Quaternionf$$Type): $Quaternionf
  "lookAlong"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Matrix4x3d$$Type): $Matrix4x3d
  "lookAlong"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix4x3d$$Type): $Matrix4x3d
  "positiveX"(arg0: $Vector3d$$Type): $Vector3d
@@ -7951,17 +7950,13 @@ static readonly "PROPERTY_IDENTITY": byte
  "normalizedPositiveY"(arg0: $Vector3d$$Type): $Vector3d
  "positiveZ"(arg0: $Vector3d$$Type): $Vector3d
  "normalizedPositiveZ"(arg0: $Vector3d$$Type): $Vector3d
- "cofactor3x3"(arg0: $Matrix3d$$Type): $Matrix3d
- "cofactor3x3"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
- "normalize3x3"(arg0: $Matrix3d$$Type): $Matrix3d
- "normalize3x3"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
- "frustumPlane"(arg0: integer, arg1: $Vector4d$$Type): $Vector4d
- "arcball"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix4x3d$$Type): $Matrix4x3d
- "arcball"(arg0: double, arg1: $Vector3dc$$Type, arg2: double, arg3: double, arg4: $Matrix4x3d$$Type): $Matrix4x3d
- "transformAab"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Vector3d$$Type, arg3: $Vector3d$$Type): $Matrix4x3d
- "transformAab"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Vector3d$$Type, arg7: $Vector3d$$Type): $Matrix4x3d
- "rotateTowards"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix4x3d$$Type): $Matrix4x3d
- "rotateTowards"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Matrix4x3d$$Type): $Matrix4x3d
+ "lookAt"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Vector3dc$$Type, arg3: $Matrix4x3d$$Type): $Matrix4x3d
+ "lookAt"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double, arg9: $Matrix4x3d$$Type): $Matrix4x3d
+ "lookAtLH"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Vector3dc$$Type, arg3: $Matrix4x3d$$Type): $Matrix4x3d
+ "lookAtLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double, arg9: $Matrix4x3d$$Type): $Matrix4x3d
+ "getScale"(arg0: $Vector3d$$Type): $Vector3d
+ "transformDirection"(arg0: $Vector3d$$Type): $Vector3d
+ "transformDirection"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
  "obliqueZ"(arg0: double, arg1: double, arg2: $Matrix4x3d$$Type): $Matrix4x3d
  "mapXZY"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
  "mapXZnY"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
@@ -8010,53 +8005,58 @@ static readonly "PROPERTY_IDENTITY": byte
  "negateX"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
  "negateY"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
  "negateZ"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
- "orthoSymmetricLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4x3d$$Type): $Matrix4x3d
- "orthoSymmetricLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: boolean, arg5: $Matrix4x3d$$Type): $Matrix4x3d
- "ortho2DLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4x3d$$Type): $Matrix4x3d
- "lookAt"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Vector3dc$$Type, arg3: $Matrix4x3d$$Type): $Matrix4x3d
- "lookAt"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double, arg9: $Matrix4x3d$$Type): $Matrix4x3d
- "lookAtLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double, arg9: $Matrix4x3d$$Type): $Matrix4x3d
- "lookAtLH"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Vector3dc$$Type, arg3: $Matrix4x3d$$Type): $Matrix4x3d
- "mulTranslation"(arg0: $Matrix4x3dc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
- "mulTranslation"(arg0: $Matrix4x3fc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
- "getRow"(arg0: integer, arg1: $Vector4d$$Type): $Vector4d
- "transformDirection"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
- "transformDirection"(arg0: $Vector3d$$Type): $Vector3d
+ "mulComponentWise"(arg0: $Matrix4x3dc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
+ "mul3x3"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double, arg9: $Matrix4x3d$$Type): $Matrix4x3d
  "scaleXY"(arg0: double, arg1: double, arg2: $Matrix4x3d$$Type): $Matrix4x3d
  "scaleAround"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix4x3d$$Type): $Matrix4x3d
  "scaleAround"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4x3d$$Type): $Matrix4x3d
  "scaleLocal"(arg0: double, arg1: double, arg2: double, arg3: $Matrix4x3d$$Type): $Matrix4x3d
+ "rotateTranslation"(arg0: $Quaterniondc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
+ "rotateTranslation"(arg0: $Quaternionfc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
+ "rotateTranslation"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4x3d$$Type): $Matrix4x3d
  "transpose3x3"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
  "transpose3x3"(arg0: $Matrix3d$$Type): $Matrix3d
  "getTranslation"(arg0: $Vector3d$$Type): $Vector3d
- "getScale"(arg0: $Vector3d$$Type): $Vector3d
- "invertOrtho"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
- "mulComponentWise"(arg0: $Matrix4x3dc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
- "rotateTranslation"(arg0: $Quaternionfc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
- "rotateTranslation"(arg0: $Quaterniondc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
- "rotateTranslation"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4x3d$$Type): $Matrix4x3d
- "rotateLocal"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4x3d$$Type): $Matrix4x3d
- "rotateLocal"(arg0: $Quaterniondc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
- "rotateLocal"(arg0: $Quaternionfc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
- "translateLocal"(arg0: $Vector3dc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
- "translateLocal"(arg0: $Vector3fc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
- "translateLocal"(arg0: double, arg1: double, arg2: double, arg3: $Matrix4x3d$$Type): $Matrix4x3d
- "ortho"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: boolean, arg7: $Matrix4x3d$$Type): $Matrix4x3d
- "ortho"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix4x3d$$Type): $Matrix4x3d
- "orthoLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: boolean, arg7: $Matrix4x3d$$Type): $Matrix4x3d
- "orthoLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix4x3d$$Type): $Matrix4x3d
- "orthoSymmetric"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4x3d$$Type): $Matrix4x3d
- "orthoSymmetric"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: boolean, arg5: $Matrix4x3d$$Type): $Matrix4x3d
- "ortho2D"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4x3d$$Type): $Matrix4x3d
  "getTransposed"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
- "getTransposed"(arg0: $ByteBuffer$$Type): $ByteBuffer
  "getTransposed"(arg0: integer, arg1: $DoubleBuffer$$Type): $DoubleBuffer
- "getTransposed"(arg0: $DoubleBuffer$$Type): $DoubleBuffer
+ "getTransposed"(arg0: $ByteBuffer$$Type): $ByteBuffer
  "getTransposed"(arg0: (double)[]): (double)[]
  "getTransposed"(arg0: (double)[], arg1: integer): (double)[]
+ "getTransposed"(arg0: $DoubleBuffer$$Type): $DoubleBuffer
  "getTransposed"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
  "getTransposed"(arg0: $FloatBuffer$$Type): $FloatBuffer
- "mul3x3"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double, arg9: $Matrix4x3d$$Type): $Matrix4x3d
+ "determinant"(): double
+ "invertOrtho"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
+ "rotateLocal"(arg0: $Quaterniondc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
+ "rotateLocal"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4x3d$$Type): $Matrix4x3d
+ "rotateLocal"(arg0: $Quaternionfc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
+ "translateLocal"(arg0: double, arg1: double, arg2: double, arg3: $Matrix4x3d$$Type): $Matrix4x3d
+ "translateLocal"(arg0: $Vector3dc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
+ "translateLocal"(arg0: $Vector3fc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
+ "ortho"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix4x3d$$Type): $Matrix4x3d
+ "ortho"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: boolean, arg7: $Matrix4x3d$$Type): $Matrix4x3d
+ "orthoLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix4x3d$$Type): $Matrix4x3d
+ "orthoLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: boolean, arg7: $Matrix4x3d$$Type): $Matrix4x3d
+ "orthoSymmetric"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: boolean, arg5: $Matrix4x3d$$Type): $Matrix4x3d
+ "orthoSymmetric"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4x3d$$Type): $Matrix4x3d
+ "orthoSymmetricLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: boolean, arg5: $Matrix4x3d$$Type): $Matrix4x3d
+ "orthoSymmetricLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4x3d$$Type): $Matrix4x3d
+ "ortho2D"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4x3d$$Type): $Matrix4x3d
+ "ortho2DLH"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix4x3d$$Type): $Matrix4x3d
+ "mulTranslation"(arg0: $Matrix4x3fc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
+ "mulTranslation"(arg0: $Matrix4x3dc$$Type, arg1: $Matrix4x3d$$Type): $Matrix4x3d
+ "getRow"(arg0: integer, arg1: $Vector4d$$Type): $Vector4d
+ "cofactor3x3"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
+ "cofactor3x3"(arg0: $Matrix3d$$Type): $Matrix3d
+ "normalize3x3"(arg0: $Matrix3d$$Type): $Matrix3d
+ "normalize3x3"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
+ "frustumPlane"(arg0: integer, arg1: $Vector4d$$Type): $Vector4d
+ "arcball"(arg0: double, arg1: $Vector3dc$$Type, arg2: double, arg3: double, arg4: $Matrix4x3d$$Type): $Matrix4x3d
+ "arcball"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix4x3d$$Type): $Matrix4x3d
+ "transformAab"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Vector3d$$Type, arg7: $Vector3d$$Type): $Matrix4x3d
+ "transformAab"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Vector3d$$Type, arg3: $Vector3d$$Type): $Matrix4x3d
+ "rotateTowards"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Matrix4x3d$$Type): $Matrix4x3d
+ "rotateTowards"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Matrix4x3d$$Type): $Matrix4x3d
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -8101,32 +8101,27 @@ static readonly "PLANE_PX": integer
 static readonly "PROPERTY_IDENTITY": byte
 
  "mulOrtho"(arg0: $Matrix4x3fc$$Type, arg1: $Matrix4x3f$$Type): $Matrix4x3f
- "get4x4"(arg0: $ByteBuffer$$Type): $ByteBuffer
  "get4x4"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
- "get4x4"(arg0: $FloatBuffer$$Type): $FloatBuffer
  "get4x4"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
- "get4x4"(arg0: (float)[], arg1: integer): (float)[]
+ "get4x4"(arg0: $ByteBuffer$$Type): $ByteBuffer
+ "get4x4"(arg0: $FloatBuffer$$Type): $FloatBuffer
  "get4x4"(arg0: (float)[]): (float)[]
- "invert"(arg0: $Matrix4f$$Type): $Matrix4f
+ "get4x4"(arg0: (float)[], arg1: integer): (float)[]
  "invert"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
- "sub"(arg0: $Matrix4x3fc$$Type, arg1: $Matrix4x3f$$Type): $Matrix4x3f
- "mul"(arg0: $Matrix4x3fc$$Type, arg1: $Matrix4x3f$$Type): $Matrix4x3f
+ "invert"(arg0: $Matrix4f$$Type): $Matrix4f
  "origin"(arg0: $Vector3f$$Type): $Vector3f
- "shadow"(arg0: $Vector4fc$$Type, arg1: $Matrix4x3fc$$Type, arg2: $Matrix4x3f$$Type): $Matrix4x3f
- "shadow"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4x3fc$$Type, arg5: $Matrix4x3f$$Type): $Matrix4x3f
- "shadow"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: $Matrix4x3f$$Type): $Matrix4x3f
- "shadow"(arg0: $Vector4fc$$Type, arg1: float, arg2: float, arg3: float, arg4: float, arg5: $Matrix4x3f$$Type): $Matrix4x3f
  "normal"(arg0: $Matrix3f$$Type): $Matrix3f
  "normal"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
- "get"(arg0: (float)[]): (float)[]
- "get"(arg0: $FloatBuffer$$Type): $FloatBuffer
+ "sub"(arg0: $Matrix4x3fc$$Type, arg1: $Matrix4x3f$$Type): $Matrix4x3f
  "get"(arg0: (float)[], arg1: integer): (float)[]
+ "get"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
  "get"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
  "get"(arg0: $ByteBuffer$$Type): $ByteBuffer
  "get"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
- "get"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
- "get"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
+ "get"(arg0: $FloatBuffer$$Type): $FloatBuffer
+ "get"(arg0: (float)[]): (float)[]
  "get"(arg0: $Matrix4d$$Type): $Matrix4d
+ "get"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
  "get"(arg0: $Matrix4f$$Type): $Matrix4f
  "equals"(arg0: $Matrix4x3fc$$Type, arg1: float): boolean
  "fma"(arg0: $Matrix4x3fc$$Type, arg1: float, arg2: $Matrix4x3f$$Type): $Matrix4x3f
@@ -8139,18 +8134,23 @@ static readonly "PROPERTY_IDENTITY": byte
  "transform"(arg0: $Vector4f$$Type): $Vector4f
  "properties"(): integer
  "pick"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: (integer)[], arg5: $Matrix4x3f$$Type): $Matrix4x3f
- "rotate"(arg0: $Quaternionfc$$Type, arg1: $Matrix4x3f$$Type): $Matrix4x3f
  "rotate"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4x3f$$Type): $Matrix4x3f
+ "rotate"(arg0: $Quaternionfc$$Type, arg1: $Matrix4x3f$$Type): $Matrix4x3f
  "rotate"(arg0: $AxisAngle4f$$Type, arg1: $Matrix4x3f$$Type): $Matrix4x3f
  "rotate"(arg0: float, arg1: $Vector3fc$$Type, arg2: $Matrix4x3f$$Type): $Matrix4x3f
- "m12"(): float
  "m11"(): float
+ "m12"(): float
+ "mul"(arg0: $Matrix4x3fc$$Type, arg1: $Matrix4x3f$$Type): $Matrix4x3f
+ "shadow"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: $Matrix4x3f$$Type): $Matrix4x3f
+ "shadow"(arg0: $Vector4fc$$Type, arg1: float, arg2: float, arg3: float, arg4: float, arg5: $Matrix4x3f$$Type): $Matrix4x3f
+ "shadow"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4x3fc$$Type, arg5: $Matrix4x3f$$Type): $Matrix4x3f
+ "shadow"(arg0: $Vector4fc$$Type, arg1: $Matrix4x3fc$$Type, arg2: $Matrix4x3f$$Type): $Matrix4x3f
  "m10"(): float
  "getColumn"(arg0: integer, arg1: $Vector3f$$Type): $Vector3f
  "translate"(arg0: $Vector3fc$$Type, arg1: $Matrix4x3f$$Type): $Matrix4x3f
  "translate"(arg0: float, arg1: float, arg2: float, arg3: $Matrix4x3f$$Type): $Matrix4x3f
- "transformPosition"(arg0: $Vector3f$$Type): $Vector3f
  "transformPosition"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
+ "transformPosition"(arg0: $Vector3f$$Type): $Vector3f
  "rotateAround"(arg0: $Quaternionfc$$Type, arg1: float, arg2: float, arg3: float, arg4: $Matrix4x3f$$Type): $Matrix4x3f
  "rotateXYZ"(arg0: float, arg1: float, arg2: float, arg3: $Matrix4x3f$$Type): $Matrix4x3f
  "rotateZYX"(arg0: float, arg1: float, arg2: float, arg3: $Matrix4x3f$$Type): $Matrix4x3f
@@ -8170,20 +8170,19 @@ static readonly "PROPERTY_IDENTITY": byte
  "rotateX"(arg0: float, arg1: $Matrix4x3f$$Type): $Matrix4x3f
  "rotateY"(arg0: float, arg1: $Matrix4x3f$$Type): $Matrix4x3f
  "rotateZ"(arg0: float, arg1: $Matrix4x3f$$Type): $Matrix4x3f
- "reflect"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4x3f$$Type): $Matrix4x3f
- "reflect"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Matrix4x3f$$Type): $Matrix4x3f
  "reflect"(arg0: $Quaternionfc$$Type, arg1: $Vector3fc$$Type, arg2: $Matrix4x3f$$Type): $Matrix4x3f
  "reflect"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4x3f$$Type): $Matrix4x3f
+ "reflect"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4x3f$$Type): $Matrix4x3f
+ "reflect"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Matrix4x3f$$Type): $Matrix4x3f
  "lerp"(arg0: $Matrix4x3fc$$Type, arg1: float, arg2: $Matrix4x3f$$Type): $Matrix4x3f
- "getUnnormalizedRotation"(arg0: $Quaterniond$$Type): $Quaterniond
  "getUnnormalizedRotation"(arg0: $Quaternionf$$Type): $Quaternionf
+ "getUnnormalizedRotation"(arg0: $Quaterniond$$Type): $Quaterniond
  "getNormalizedRotation"(arg0: $Quaterniond$$Type): $Quaterniond
  "getNormalizedRotation"(arg0: $Quaternionf$$Type): $Quaternionf
- "get3x4"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
  "get3x4"(arg0: $ByteBuffer$$Type): $ByteBuffer
  "get3x4"(arg0: $FloatBuffer$$Type): $FloatBuffer
+ "get3x4"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
  "get3x4"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
- "determinant"(): float
  "lookAlong"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4x3f$$Type): $Matrix4x3f
  "lookAlong"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Matrix4x3f$$Type): $Matrix4x3f
  "positiveX"(arg0: $Vector3f$$Type): $Vector3f
@@ -8192,17 +8191,13 @@ static readonly "PROPERTY_IDENTITY": byte
  "normalizedPositiveY"(arg0: $Vector3f$$Type): $Vector3f
  "positiveZ"(arg0: $Vector3f$$Type): $Vector3f
  "normalizedPositiveZ"(arg0: $Vector3f$$Type): $Vector3f
- "cofactor3x3"(arg0: $Matrix3f$$Type): $Matrix3f
- "cofactor3x3"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
- "normalize3x3"(arg0: $Matrix3f$$Type): $Matrix3f
- "normalize3x3"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
- "frustumPlane"(arg0: integer, arg1: $Vector4f$$Type): $Vector4f
- "arcball"(arg0: float, arg1: $Vector3fc$$Type, arg2: float, arg3: float, arg4: $Matrix4x3f$$Type): $Matrix4x3f
- "arcball"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4x3f$$Type): $Matrix4x3f
- "transformAab"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3f$$Type, arg3: $Vector3f$$Type): $Matrix4x3f
- "transformAab"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Vector3f$$Type, arg7: $Vector3f$$Type): $Matrix4x3f
- "rotateTowards"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4x3f$$Type): $Matrix4x3f
- "rotateTowards"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Matrix4x3f$$Type): $Matrix4x3f
+ "lookAt"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float, arg9: $Matrix4x3f$$Type): $Matrix4x3f
+ "lookAt"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3fc$$Type, arg3: $Matrix4x3f$$Type): $Matrix4x3f
+ "lookAtLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float, arg9: $Matrix4x3f$$Type): $Matrix4x3f
+ "lookAtLH"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3fc$$Type, arg3: $Matrix4x3f$$Type): $Matrix4x3f
+ "getScale"(arg0: $Vector3f$$Type): $Vector3f
+ "transformDirection"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
+ "transformDirection"(arg0: $Vector3f$$Type): $Vector3f
  "obliqueZ"(arg0: float, arg1: float, arg2: $Matrix4x3f$$Type): $Matrix4x3f
  "withLookAtUp"(arg0: float, arg1: float, arg2: float, arg3: $Matrix4x3f$$Type): $Matrix4x3f
  "withLookAtUp"(arg0: $Vector3fc$$Type, arg1: $Matrix4x3f$$Type): $Matrix4x3f
@@ -8253,49 +8248,54 @@ static readonly "PROPERTY_IDENTITY": byte
  "negateX"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
  "negateY"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
  "negateZ"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
- "orthoSymmetricLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4x3f$$Type): $Matrix4x3f
- "orthoSymmetricLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: boolean, arg5: $Matrix4x3f$$Type): $Matrix4x3f
- "ortho2DLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4x3f$$Type): $Matrix4x3f
- "lookAt"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3fc$$Type, arg3: $Matrix4x3f$$Type): $Matrix4x3f
- "lookAt"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float, arg9: $Matrix4x3f$$Type): $Matrix4x3f
- "lookAtLH"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3fc$$Type, arg3: $Matrix4x3f$$Type): $Matrix4x3f
- "lookAtLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float, arg9: $Matrix4x3f$$Type): $Matrix4x3f
- "mulTranslation"(arg0: $Matrix4x3fc$$Type, arg1: $Matrix4x3f$$Type): $Matrix4x3f
- "getRow"(arg0: integer, arg1: $Vector4f$$Type): $Vector4f
- "transformDirection"(arg0: $Vector3f$$Type): $Vector3f
- "transformDirection"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
+ "mulComponentWise"(arg0: $Matrix4x3fc$$Type, arg1: $Matrix4x3f$$Type): $Matrix4x3f
+ "mul3x3"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float, arg9: $Matrix4x3f$$Type): $Matrix4x3f
  "scaleXY"(arg0: float, arg1: float, arg2: $Matrix4x3f$$Type): $Matrix4x3f
- "scaleAround"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4x3f$$Type): $Matrix4x3f
  "scaleAround"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4x3f$$Type): $Matrix4x3f
+ "scaleAround"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4x3f$$Type): $Matrix4x3f
  "scaleLocal"(arg0: float, arg1: float, arg2: float, arg3: $Matrix4x3f$$Type): $Matrix4x3f
+ "rotateTranslation"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4x3f$$Type): $Matrix4x3f
+ "rotateTranslation"(arg0: $Quaternionfc$$Type, arg1: $Matrix4x3f$$Type): $Matrix4x3f
  "transpose3x3"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
  "transpose3x3"(arg0: $Matrix3f$$Type): $Matrix3f
  "getTranslation"(arg0: $Vector3f$$Type): $Vector3f
- "getScale"(arg0: $Vector3f$$Type): $Vector3f
- "getRotation"(arg0: $AxisAngle4d$$Type): $AxisAngle4d
  "getRotation"(arg0: $AxisAngle4f$$Type): $AxisAngle4f
- "invertOrtho"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
- "mulComponentWise"(arg0: $Matrix4x3fc$$Type, arg1: $Matrix4x3f$$Type): $Matrix4x3f
- "rotateTranslation"(arg0: $Quaternionfc$$Type, arg1: $Matrix4x3f$$Type): $Matrix4x3f
- "rotateTranslation"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4x3f$$Type): $Matrix4x3f
- "rotateLocal"(arg0: $Quaternionfc$$Type, arg1: $Matrix4x3f$$Type): $Matrix4x3f
- "rotateLocal"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4x3f$$Type): $Matrix4x3f
- "translateLocal"(arg0: float, arg1: float, arg2: float, arg3: $Matrix4x3f$$Type): $Matrix4x3f
- "translateLocal"(arg0: $Vector3fc$$Type, arg1: $Matrix4x3f$$Type): $Matrix4x3f
- "ortho"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean, arg7: $Matrix4x3f$$Type): $Matrix4x3f
- "ortho"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4x3f$$Type): $Matrix4x3f
- "orthoLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean, arg7: $Matrix4x3f$$Type): $Matrix4x3f
- "orthoLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4x3f$$Type): $Matrix4x3f
- "orthoSymmetric"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4x3f$$Type): $Matrix4x3f
- "orthoSymmetric"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: boolean, arg5: $Matrix4x3f$$Type): $Matrix4x3f
- "ortho2D"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4x3f$$Type): $Matrix4x3f
- "getTransposed"(arg0: $ByteBuffer$$Type): $ByteBuffer
- "getTransposed"(arg0: (float)[]): (float)[]
- "getTransposed"(arg0: (float)[], arg1: integer): (float)[]
+ "getRotation"(arg0: $AxisAngle4d$$Type): $AxisAngle4d
  "getTransposed"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
+ "getTransposed"(arg0: $ByteBuffer$$Type): $ByteBuffer
+ "getTransposed"(arg0: (float)[], arg1: integer): (float)[]
+ "getTransposed"(arg0: (float)[]): (float)[]
  "getTransposed"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
  "getTransposed"(arg0: $FloatBuffer$$Type): $FloatBuffer
- "mul3x3"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: float, arg7: float, arg8: float, arg9: $Matrix4x3f$$Type): $Matrix4x3f
+ "determinant"(): float
+ "invertOrtho"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
+ "rotateLocal"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4x3f$$Type): $Matrix4x3f
+ "rotateLocal"(arg0: $Quaternionfc$$Type, arg1: $Matrix4x3f$$Type): $Matrix4x3f
+ "translateLocal"(arg0: $Vector3fc$$Type, arg1: $Matrix4x3f$$Type): $Matrix4x3f
+ "translateLocal"(arg0: float, arg1: float, arg2: float, arg3: $Matrix4x3f$$Type): $Matrix4x3f
+ "ortho"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean, arg7: $Matrix4x3f$$Type): $Matrix4x3f
+ "ortho"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4x3f$$Type): $Matrix4x3f
+ "orthoLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4x3f$$Type): $Matrix4x3f
+ "orthoLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: boolean, arg7: $Matrix4x3f$$Type): $Matrix4x3f
+ "orthoSymmetric"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: boolean, arg5: $Matrix4x3f$$Type): $Matrix4x3f
+ "orthoSymmetric"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4x3f$$Type): $Matrix4x3f
+ "orthoSymmetricLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: boolean, arg5: $Matrix4x3f$$Type): $Matrix4x3f
+ "orthoSymmetricLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4x3f$$Type): $Matrix4x3f
+ "ortho2D"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4x3f$$Type): $Matrix4x3f
+ "ortho2DLH"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix4x3f$$Type): $Matrix4x3f
+ "mulTranslation"(arg0: $Matrix4x3fc$$Type, arg1: $Matrix4x3f$$Type): $Matrix4x3f
+ "getRow"(arg0: integer, arg1: $Vector4f$$Type): $Vector4f
+ "cofactor3x3"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
+ "cofactor3x3"(arg0: $Matrix3f$$Type): $Matrix3f
+ "normalize3x3"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
+ "normalize3x3"(arg0: $Matrix3f$$Type): $Matrix3f
+ "frustumPlane"(arg0: integer, arg1: $Vector4f$$Type): $Vector4f
+ "arcball"(arg0: float, arg1: $Vector3fc$$Type, arg2: float, arg3: float, arg4: $Matrix4x3f$$Type): $Matrix4x3f
+ "arcball"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4x3f$$Type): $Matrix4x3f
+ "transformAab"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Vector3f$$Type, arg3: $Vector3f$$Type): $Matrix4x3f
+ "transformAab"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Vector3f$$Type, arg7: $Vector3f$$Type): $Matrix4x3f
+ "rotateTowards"(arg0: $Vector3fc$$Type, arg1: $Vector3fc$$Type, arg2: $Matrix4x3f$$Type): $Matrix4x3f
+ "rotateTowards"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float, arg6: $Matrix4x3f$$Type): $Matrix4x3f
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -8311,95 +8311,95 @@ import {$ObjectInput$$Type} from "java.io.ObjectInput"
 import {$Vector2d, $Vector2d$$Type} from "org.joml.Vector2d"
 import {$DoubleBuffer, $DoubleBuffer$$Type} from "java.nio.DoubleBuffer"
 import {$ObjectOutput$$Type} from "java.io.ObjectOutput"
-import {$Externalizable$$Interface} from "java.io.Externalizable"
 import {$Vector3d, $Vector3d$$Type} from "org.joml.Vector3d"
-import {$Matrix2fc$$Type} from "org.joml.Matrix2fc"
-import {$Vector2fc$$Type} from "org.joml.Vector2fc"
+import {$Externalizable$$Interface} from "java.io.Externalizable"
 import {$FloatBuffer, $FloatBuffer$$Type} from "java.nio.FloatBuffer"
+import {$Vector2fc$$Type} from "org.joml.Vector2fc"
+import {$Matrix2fc$$Type} from "org.joml.Matrix2fc"
 import {$Matrix3x2dc, $Matrix3x2dc$$Type, $Matrix3x2dc$$Interface} from "org.joml.Matrix3x2dc"
 import {$Matrix2dc$$Type} from "org.joml.Matrix2dc"
 import {$Vector3dc$$Type} from "org.joml.Vector3dc"
-import {$Vector2dc$$Type} from "org.joml.Vector2dc"
 import {$NumberFormat$$Type} from "java.text.NumberFormat"
+import {$Vector2dc$$Type} from "org.joml.Vector2dc"
 import {$Cloneable$$Interface} from "java.lang.Cloneable"
 import {$ByteBuffer, $ByteBuffer$$Type} from "java.nio.ByteBuffer"
 
 export class $Matrix3x2d implements $Matrix3x2dc$$Interface, $Cloneable$$Interface, $Externalizable$$Interface {
 constructor(arg0: $DoubleBuffer$$Type)
 constructor(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double)
+constructor(arg0: $Matrix3x2dc$$Type)
 constructor(arg0: $Matrix2fc$$Type)
 constructor(arg0: $Matrix2dc$$Type)
-constructor(arg0: $Matrix3x2dc$$Type)
 constructor()
 
-public "setView"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix3x2d
-public "viewArea"(arg0: (double)[]): (double)[]
+public "testAar"(arg0: double, arg1: double, arg2: double, arg3: double): boolean
 public "getTransposedFloats"(arg0: $ByteBuffer$$Type): $ByteBuffer
 public "getTransposedFloats"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
-public "testCircle"(arg0: double, arg1: double, arg2: double): boolean
-public "testAar"(arg0: double, arg1: double, arg2: double, arg3: double): boolean
 public "get4x4"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
-public "get4x4"(arg0: integer, arg1: $DoubleBuffer$$Type): $DoubleBuffer
 public "get4x4"(arg0: $ByteBuffer$$Type): $ByteBuffer
 public "get4x4"(arg0: (double)[], arg1: integer): (double)[]
-public "get4x4"(arg0: (double)[]): (double)[]
 public "get4x4"(arg0: $DoubleBuffer$$Type): $DoubleBuffer
+public "get4x4"(arg0: (double)[]): (double)[]
+public "get4x4"(arg0: integer, arg1: $DoubleBuffer$$Type): $DoubleBuffer
+public "setView"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix3x2d
+public "viewArea"(arg0: (double)[]): (double)[]
+public "testCircle"(arg0: double, arg1: double, arg2: double): boolean
 public "invert"(): $Matrix3x2d
 public "invert"(arg0: $Matrix3x2d$$Type): $Matrix3x2d
-public "mul"(arg0: $Matrix3x2dc$$Type, arg1: $Matrix3x2d$$Type): $Matrix3x2d
-public "mul"(arg0: $Matrix3x2dc$$Type): $Matrix3x2d
+public "view"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix3x2d$$Type): $Matrix3x2d
+public "view"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix3x2d
 public "origin"(arg0: $Vector2d$$Type): $Vector2d
 public "writeExternal"(arg0: $ObjectOutput$$Type): void
 public "readExternal"(arg0: $ObjectInput$$Type): void
-public "view"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix3x2d
-public "view"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix3x2d$$Type): $Matrix3x2d
-public "get"(arg0: $DoubleBuffer$$Type): $DoubleBuffer
-public "get"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
-public "get"(arg0: $ByteBuffer$$Type): $ByteBuffer
-public "get"(arg0: integer, arg1: $DoubleBuffer$$Type): $DoubleBuffer
-public "get"(arg0: (double)[], arg1: integer): (double)[]
 public "get"(arg0: (double)[]): (double)[]
+public "get"(arg0: integer, arg1: $DoubleBuffer$$Type): $DoubleBuffer
+public "get"(arg0: $ByteBuffer$$Type): $ByteBuffer
+public "get"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
 public "get"(arg0: $Matrix3x2d$$Type): $Matrix3x2d
-public "equals"(arg0: any): boolean
+public "get"(arg0: $DoubleBuffer$$Type): $DoubleBuffer
+public "get"(arg0: (double)[], arg1: integer): (double)[]
 public "equals"(arg0: $Matrix3x2dc$$Type, arg1: double): boolean
+public "equals"(arg0: any): boolean
 public "toString"(arg0: $NumberFormat$$Type): StringJS
 public "toString"(): StringJS
 public "hashCode"(): integer
 public "clone"(): any
 public "isFinite"(): boolean
-public "scale"(arg0: $Vector2dc$$Type, arg1: $Matrix3x2d$$Type): $Matrix3x2d
-public "scale"(arg0: $Vector2fc$$Type, arg1: $Matrix3x2d$$Type): $Matrix3x2d
-public "scale"(arg0: double, arg1: $Matrix3x2d$$Type): $Matrix3x2d
-public "scale"(arg0: double): $Matrix3x2d
 public "scale"(arg0: $Vector2fc$$Type): $Matrix3x2d
-public "scale"(arg0: double, arg1: double, arg2: $Matrix3x2d$$Type): $Matrix3x2d
-public "scale"(arg0: double, arg1: double): $Matrix3x2d
+public "scale"(arg0: $Vector2dc$$Type, arg1: $Matrix3x2d$$Type): $Matrix3x2d
 public "scale"(arg0: $Vector2dc$$Type): $Matrix3x2d
-public "transform"(arg0: double, arg1: double, arg2: double, arg3: $Vector3d$$Type): $Vector3d
+public "scale"(arg0: double, arg1: double): $Matrix3x2d
+public "scale"(arg0: double, arg1: double, arg2: $Matrix3x2d$$Type): $Matrix3x2d
+public "scale"(arg0: double): $Matrix3x2d
+public "scale"(arg0: double, arg1: $Matrix3x2d$$Type): $Matrix3x2d
+public "scale"(arg0: $Vector2fc$$Type, arg1: $Matrix3x2d$$Type): $Matrix3x2d
 public "transform"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
+public "transform"(arg0: double, arg1: double, arg2: double, arg3: $Vector3d$$Type): $Vector3d
 public "transform"(arg0: $Vector3d$$Type): $Vector3d
 public "identity"(): $Matrix3x2d
-public "set"(arg0: integer, arg1: $DoubleBuffer$$Type): $Matrix3x2d
-public "set"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix3x2d
-public "set"(arg0: $ByteBuffer$$Type): $Matrix3x2d
-public "set"(arg0: integer, arg1: $ByteBuffer$$Type): $Matrix3x2d
-public "set"(arg0: $DoubleBuffer$$Type): $Matrix3x2d
 public "set"(arg0: $Matrix3x2dc$$Type): $Matrix3x2d
 public "set"(arg0: $Matrix2dc$$Type): $Matrix3x2d
+public "set"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix3x2d
+public "set"(arg0: $ByteBuffer$$Type): $Matrix3x2d
+public "set"(arg0: $DoubleBuffer$$Type): $Matrix3x2d
 public "set"(arg0: $Matrix2fc$$Type): $Matrix3x2d
+public "set"(arg0: integer, arg1: $ByteBuffer$$Type): $Matrix3x2d
+public "set"(arg0: integer, arg1: $DoubleBuffer$$Type): $Matrix3x2d
 public "set"(arg0: (double)[]): $Matrix3x2d
 public "zero"(): $Matrix3x2d
 public "rotate"(arg0: double): $Matrix3x2d
 public "rotate"(arg0: double, arg1: $Matrix3x2d$$Type): $Matrix3x2d
+public "m11"(): double
 public "translation"(arg0: $Vector2dc$$Type): $Matrix3x2d
 public "translation"(arg0: double, arg1: double): $Matrix3x2d
-public "m11"(): double
+public "mul"(arg0: $Matrix3x2dc$$Type): $Matrix3x2d
+public "mul"(arg0: $Matrix3x2dc$$Type, arg1: $Matrix3x2d$$Type): $Matrix3x2d
 public "m10"(): double
 public "span"(arg0: $Vector2d$$Type, arg1: $Vector2d$$Type, arg2: $Vector2d$$Type): $Matrix3x2d
-public "translate"(arg0: $Vector2dc$$Type, arg1: $Matrix3x2d$$Type): $Matrix3x2d
-public "translate"(arg0: $Vector2dc$$Type): $Matrix3x2d
 public "translate"(arg0: double, arg1: double): $Matrix3x2d
 public "translate"(arg0: double, arg1: double, arg2: $Matrix3x2d$$Type): $Matrix3x2d
+public "translate"(arg0: $Vector2dc$$Type, arg1: $Matrix3x2d$$Type): $Matrix3x2d
+public "translate"(arg0: $Vector2dc$$Type): $Matrix3x2d
 public "transformPosition"(arg0: $Vector2dc$$Type, arg1: $Vector2d$$Type): $Vector2d
 public "transformPosition"(arg0: double, arg1: double, arg2: $Vector2d$$Type): $Vector2d
 public "transformPosition"(arg0: $Vector2d$$Type): $Vector2d
@@ -8413,54 +8413,54 @@ public "m00"(): double
 public "m20"(): double
 public "m01"(): double
 public "m21"(): double
-public "determinant"(): double
-public "rotateTo"(arg0: $Vector2dc$$Type, arg1: $Vector2dc$$Type, arg2: $Matrix3x2d$$Type): $Matrix3x2d
 public "rotateTo"(arg0: $Vector2dc$$Type, arg1: $Vector2dc$$Type): $Matrix3x2d
+public "rotateTo"(arg0: $Vector2dc$$Type, arg1: $Vector2dc$$Type, arg2: $Matrix3x2d$$Type): $Matrix3x2d
 public "positiveX"(arg0: $Vector2d$$Type): $Vector2d
 public "normalizedPositiveX"(arg0: $Vector2d$$Type): $Vector2d
 public "positiveY"(arg0: $Vector2d$$Type): $Vector2d
 public "normalizedPositiveY"(arg0: $Vector2d$$Type): $Vector2d
-public "rotation"(arg0: double): $Matrix3x2d
-public "testPoint"(arg0: double, arg1: double): boolean
 public "unproject"(arg0: double, arg1: double, arg2: (integer)[], arg3: $Vector2d$$Type): $Vector2d
 public "unprojectInv"(arg0: double, arg1: double, arg2: (integer)[], arg3: $Vector2d$$Type): $Vector2d
-public "transformDirection"(arg0: $Vector2dc$$Type, arg1: $Vector2d$$Type): $Vector2d
+public "rotation"(arg0: double): $Matrix3x2d
 public "transformDirection"(arg0: double, arg1: double, arg2: $Vector2d$$Type): $Vector2d
+public "transformDirection"(arg0: $Vector2dc$$Type, arg1: $Vector2d$$Type): $Vector2d
 public "transformDirection"(arg0: $Vector2d$$Type): $Vector2d
+public "testPoint"(arg0: double, arg1: double): boolean
+public "mulLocal"(arg0: $Matrix3x2dc$$Type, arg1: $Matrix3x2d$$Type): $Matrix3x2d
+public "mulLocal"(arg0: $Matrix3x2dc$$Type): $Matrix3x2d
 public "scaleAround"(arg0: double, arg1: double, arg2: double, arg3: double): $Matrix3x2d
-public "scaleAround"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix3x2d$$Type): $Matrix3x2d
 public "scaleAround"(arg0: double, arg1: double, arg2: double, arg3: $Matrix3x2d$$Type): $Matrix3x2d
 public "scaleAround"(arg0: double, arg1: double, arg2: double): $Matrix3x2d
-public "scaleLocal"(arg0: double, arg1: double): $Matrix3x2d
+public "scaleAround"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix3x2d$$Type): $Matrix3x2d
+public "scaleLocal"(arg0: double, arg1: $Matrix3x2d$$Type): $Matrix3x2d
 public "scaleLocal"(arg0: double): $Matrix3x2d
 public "scaleLocal"(arg0: double, arg1: double, arg2: $Matrix3x2d$$Type): $Matrix3x2d
-public "scaleLocal"(arg0: double, arg1: $Matrix3x2d$$Type): $Matrix3x2d
-public "scaleAroundLocal"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix3x2d
-public "scaleAroundLocal"(arg0: double, arg1: double, arg2: double): $Matrix3x2d
-public "scaleAroundLocal"(arg0: double, arg1: double, arg2: double, arg3: $Matrix3x2d$$Type): $Matrix3x2d
+public "scaleLocal"(arg0: double, arg1: double): $Matrix3x2d
 public "scaleAroundLocal"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Matrix3x2d$$Type): $Matrix3x2d
-public "setTranslation"(arg0: $Vector2dc$$Type): $Matrix3x2d
+public "scaleAroundLocal"(arg0: double, arg1: double, arg2: double, arg3: $Matrix3x2d$$Type): $Matrix3x2d
+public "scaleAroundLocal"(arg0: double, arg1: double, arg2: double): $Matrix3x2d
+public "scaleAroundLocal"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $Matrix3x2d
 public "setTranslation"(arg0: double, arg1: double): $Matrix3x2d
-public "get3x3"(arg0: $ByteBuffer$$Type): $ByteBuffer
-public "get3x3"(arg0: (double)[]): (double)[]
+public "setTranslation"(arg0: $Vector2dc$$Type): $Matrix3x2d
 public "get3x3"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
-public "get3x3"(arg0: $DoubleBuffer$$Type): $DoubleBuffer
+public "get3x3"(arg0: (double)[]): (double)[]
 public "get3x3"(arg0: (double)[], arg1: integer): (double)[]
 public "get3x3"(arg0: integer, arg1: $DoubleBuffer$$Type): $DoubleBuffer
+public "get3x3"(arg0: $DoubleBuffer$$Type): $DoubleBuffer
+public "get3x3"(arg0: $ByteBuffer$$Type): $ByteBuffer
+public "getTransposed"(arg0: $ByteBuffer$$Type): $ByteBuffer
+public "getTransposed"(arg0: $DoubleBuffer$$Type): $DoubleBuffer
+public "getTransposed"(arg0: integer, arg1: $DoubleBuffer$$Type): $DoubleBuffer
+public "getTransposed"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
+public "getTransposed"(arg0: $FloatBuffer$$Type): $FloatBuffer
+public "getTransposed"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
+public "determinant"(): double
 public "rotateLocal"(arg0: double): $Matrix3x2d
 public "rotateLocal"(arg0: double, arg1: $Matrix3x2d$$Type): $Matrix3x2d
-public "translateLocal"(arg0: double, arg1: double, arg2: $Matrix3x2d$$Type): $Matrix3x2d
-public "translateLocal"(arg0: $Vector2dc$$Type): $Matrix3x2d
 public "translateLocal"(arg0: $Vector2dc$$Type, arg1: $Matrix3x2d$$Type): $Matrix3x2d
+public "translateLocal"(arg0: $Vector2dc$$Type): $Matrix3x2d
+public "translateLocal"(arg0: double, arg1: double, arg2: $Matrix3x2d$$Type): $Matrix3x2d
 public "translateLocal"(arg0: double, arg1: double): $Matrix3x2d
-public "getTransposed"(arg0: $FloatBuffer$$Type): $FloatBuffer
-public "getTransposed"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
-public "getTransposed"(arg0: $DoubleBuffer$$Type): $DoubleBuffer
-public "getTransposed"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
-public "getTransposed"(arg0: $ByteBuffer$$Type): $ByteBuffer
-public "getTransposed"(arg0: integer, arg1: $DoubleBuffer$$Type): $DoubleBuffer
-public "mulLocal"(arg0: $Matrix3x2dc$$Type): $Matrix3x2d
-public "mulLocal"(arg0: $Matrix3x2dc$$Type, arg1: $Matrix3x2d$$Type): $Matrix3x2d
 get "finite"(): boolean
 set "fromAddress"(value: long)
 }
@@ -8479,9 +8479,9 @@ import {$Vector3f, $Vector3f$$Type} from "org.joml.Vector3f"
 import {$Vector2f, $Vector2f$$Type} from "org.joml.Vector2f"
 import {$ObjectOutput$$Type} from "java.io.ObjectOutput"
 import {$Externalizable$$Interface} from "java.io.Externalizable"
-import {$Vector2fc$$Type} from "org.joml.Vector2fc"
-import {$Matrix2fc$$Type} from "org.joml.Matrix2fc"
 import {$FloatBuffer, $FloatBuffer$$Type} from "java.nio.FloatBuffer"
+import {$Matrix2fc$$Type} from "org.joml.Matrix2fc"
+import {$Vector2fc$$Type} from "org.joml.Vector2fc"
 import {$Matrix3x2fc, $Matrix3x2fc$$Type, $Matrix3x2fc$$Interface} from "org.joml.Matrix3x2fc"
 import {$NumberFormat$$Type} from "java.text.NumberFormat"
 import {$Cloneable$$Interface} from "java.lang.Cloneable"
@@ -8491,39 +8491,37 @@ export class $Matrix3x2f implements $Matrix3x2fc$$Interface, $Externalizable$$In
 constructor(arg0: $Matrix3x2fc$$Type)
 constructor(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float)
 constructor(arg0: $FloatBuffer$$Type)
-constructor()
 constructor(arg0: $Matrix2fc$$Type)
+constructor()
 
+public "shearX"(arg0: float): $Matrix3x2f
+public "shearX"(arg0: float, arg1: $Matrix3x2f$$Type): $Matrix3x2f
+public "testAar"(arg0: float, arg1: float, arg2: float, arg3: float): boolean
+public "shearY"(arg0: float): $Matrix3x2f
+public "shearY"(arg0: float, arg1: $Matrix3x2f$$Type): $Matrix3x2f
+public "get4x4"(arg0: $FloatBuffer$$Type): $FloatBuffer
+public "get4x4"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
+public "get4x4"(arg0: $ByteBuffer$$Type): $ByteBuffer
+public "get4x4"(arg0: (float)[]): (float)[]
+public "get4x4"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
+public "get4x4"(arg0: (float)[], arg1: integer): (float)[]
 public "setView"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix3x2f
 public "viewArea"(arg0: (float)[]): (float)[]
 public "testCircle"(arg0: float, arg1: float, arg2: float): boolean
-public "testAar"(arg0: float, arg1: float, arg2: float, arg3: float): boolean
-public "get4x4"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
-public "get4x4"(arg0: $ByteBuffer$$Type): $ByteBuffer
-public "get4x4"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
-public "get4x4"(arg0: (float)[]): (float)[]
-public "get4x4"(arg0: (float)[], arg1: integer): (float)[]
-public "get4x4"(arg0: $FloatBuffer$$Type): $FloatBuffer
-public "shearX"(arg0: float): $Matrix3x2f
-public "shearX"(arg0: float, arg1: $Matrix3x2f$$Type): $Matrix3x2f
-public "shearY"(arg0: float, arg1: $Matrix3x2f$$Type): $Matrix3x2f
-public "shearY"(arg0: float): $Matrix3x2f
 public "invert"(): $Matrix3x2f
 public "invert"(arg0: $Matrix3x2f$$Type): $Matrix3x2f
-public "mul"(arg0: $Matrix3x2fc$$Type, arg1: $Matrix3x2f$$Type): $Matrix3x2f
-public "mul"(arg0: $Matrix3x2fc$$Type): $Matrix3x2f
+public "view"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix3x2f$$Type): $Matrix3x2f
+public "view"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix3x2f
 public "origin"(arg0: $Vector2f$$Type): $Vector2f
 public "writeExternal"(arg0: $ObjectOutput$$Type): void
 public "readExternal"(arg0: $ObjectInput$$Type): void
-public "view"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix3x2f
-public "view"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix3x2f$$Type): $Matrix3x2f
+public "get"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
+public "get"(arg0: $Matrix3x2f$$Type): $Matrix3x2f
+public "get"(arg0: $ByteBuffer$$Type): $ByteBuffer
 public "get"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
 public "get"(arg0: $FloatBuffer$$Type): $FloatBuffer
-public "get"(arg0: $ByteBuffer$$Type): $ByteBuffer
-public "get"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
 public "get"(arg0: (float)[]): (float)[]
 public "get"(arg0: (float)[], arg1: integer): (float)[]
-public "get"(arg0: $Matrix3x2f$$Type): $Matrix3x2f
 public "equals"(arg0: any): boolean
 public "equals"(arg0: $Matrix3x2fc$$Type, arg1: float): boolean
 public "toString"(arg0: $NumberFormat$$Type): StringJS
@@ -8531,91 +8529,93 @@ public "toString"(): StringJS
 public "hashCode"(): integer
 public "clone"(): any
 public "isFinite"(): boolean
-public "scale"(arg0: float): $Matrix3x2f
 public "scale"(arg0: $Vector2fc$$Type, arg1: $Matrix3x2f$$Type): $Matrix3x2f
 public "scale"(arg0: float, arg1: $Matrix3x2f$$Type): $Matrix3x2f
-public "scale"(arg0: $Vector2fc$$Type): $Matrix3x2f
+public "scale"(arg0: float): $Matrix3x2f
 public "scale"(arg0: float, arg1: float): $Matrix3x2f
 public "scale"(arg0: float, arg1: float, arg2: $Matrix3x2f$$Type): $Matrix3x2f
+public "scale"(arg0: $Vector2fc$$Type): $Matrix3x2f
+public "transform"(arg0: float, arg1: float, arg2: float, arg3: $Vector3f$$Type): $Vector3f
 public "transform"(arg0: $Vector3f$$Type, arg1: $Vector3f$$Type): $Vector3f
 public "transform"(arg0: $Vector3f$$Type): $Vector3f
-public "transform"(arg0: float, arg1: float, arg2: float, arg3: $Vector3f$$Type): $Vector3f
 public "identity"(): $Matrix3x2f
+public "set"(arg0: $FloatBuffer$$Type): $Matrix3x2f
 public "set"(arg0: $ByteBuffer$$Type): $Matrix3x2f
 public "set"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix3x2f
-public "set"(arg0: integer, arg1: $FloatBuffer$$Type): $Matrix3x2f
-public "set"(arg0: $FloatBuffer$$Type): $Matrix3x2f
 public "set"(arg0: (float)[]): $Matrix3x2f
 public "set"(arg0: $Matrix2fc$$Type): $Matrix3x2f
 public "set"(arg0: integer, arg1: $ByteBuffer$$Type): $Matrix3x2f
 public "set"(arg0: $Matrix3x2fc$$Type): $Matrix3x2f
+public "set"(arg0: integer, arg1: $FloatBuffer$$Type): $Matrix3x2f
 public "zero"(): $Matrix3x2f
 public "rotate"(arg0: float, arg1: $Matrix3x2f$$Type): $Matrix3x2f
 public "rotate"(arg0: float): $Matrix3x2f
+public "m11"(): float
 public "translation"(arg0: float, arg1: float): $Matrix3x2f
 public "translation"(arg0: $Vector2fc$$Type): $Matrix3x2f
-public "m11"(): float
+public "mul"(arg0: $Matrix3x2fc$$Type): $Matrix3x2f
+public "mul"(arg0: $Matrix3x2fc$$Type, arg1: $Matrix3x2f$$Type): $Matrix3x2f
 public "m10"(): float
 public "span"(arg0: $Vector2f$$Type, arg1: $Vector2f$$Type, arg2: $Vector2f$$Type): $Matrix3x2f
-public "translate"(arg0: float, arg1: float, arg2: $Matrix3x2f$$Type): $Matrix3x2f
-public "translate"(arg0: $Vector2fc$$Type): $Matrix3x2f
 public "translate"(arg0: float, arg1: float): $Matrix3x2f
 public "translate"(arg0: $Vector2fc$$Type, arg1: $Matrix3x2f$$Type): $Matrix3x2f
+public "translate"(arg0: float, arg1: float, arg2: $Matrix3x2f$$Type): $Matrix3x2f
+public "translate"(arg0: $Vector2fc$$Type): $Matrix3x2f
 public "transformPosition"(arg0: float, arg1: float, arg2: $Vector2f$$Type): $Vector2f
 public "transformPosition"(arg0: $Vector2fc$$Type, arg1: $Vector2f$$Type): $Vector2f
 public "transformPosition"(arg0: $Vector2f$$Type): $Vector2f
-public "rotateAbout"(arg0: float, arg1: float, arg2: float, arg3: $Matrix3x2f$$Type): $Matrix3x2f
 public "rotateAbout"(arg0: float, arg1: float, arg2: float): $Matrix3x2f
-public "scaling"(arg0: float, arg1: float): $Matrix3x2f
+public "rotateAbout"(arg0: float, arg1: float, arg2: float, arg3: $Matrix3x2f$$Type): $Matrix3x2f
 public "scaling"(arg0: float): $Matrix3x2f
+public "scaling"(arg0: float, arg1: float): $Matrix3x2f
 public "setFromAddress"(arg0: long): $Matrix3x2f
 public "getToAddress"(arg0: long): $Matrix3x2fc
 public "m00"(): float
 public "m20"(): float
 public "m01"(): float
 public "m21"(): float
-public "determinant"(): float
 public "rotateTo"(arg0: $Vector2fc$$Type, arg1: $Vector2fc$$Type): $Matrix3x2f
 public "rotateTo"(arg0: $Vector2fc$$Type, arg1: $Vector2fc$$Type, arg2: $Matrix3x2f$$Type): $Matrix3x2f
 public "positiveX"(arg0: $Vector2f$$Type): $Vector2f
 public "normalizedPositiveX"(arg0: $Vector2f$$Type): $Vector2f
 public "positiveY"(arg0: $Vector2f$$Type): $Vector2f
 public "normalizedPositiveY"(arg0: $Vector2f$$Type): $Vector2f
-public "rotation"(arg0: float): $Matrix3x2f
-public "testPoint"(arg0: float, arg1: float): boolean
 public "unproject"(arg0: float, arg1: float, arg2: (integer)[], arg3: $Vector2f$$Type): $Vector2f
 public "unprojectInv"(arg0: float, arg1: float, arg2: (integer)[], arg3: $Vector2f$$Type): $Vector2f
-public "transformDirection"(arg0: float, arg1: float, arg2: $Vector2f$$Type): $Vector2f
+public "rotation"(arg0: float): $Matrix3x2f
 public "transformDirection"(arg0: $Vector2fc$$Type, arg1: $Vector2f$$Type): $Vector2f
 public "transformDirection"(arg0: $Vector2f$$Type): $Vector2f
-public "scaleAround"(arg0: float, arg1: float, arg2: float): $Matrix3x2f
+public "transformDirection"(arg0: float, arg1: float, arg2: $Vector2f$$Type): $Vector2f
+public "testPoint"(arg0: float, arg1: float): boolean
+public "mulLocal"(arg0: $Matrix3x2fc$$Type): $Matrix3x2f
+public "mulLocal"(arg0: $Matrix3x2fc$$Type, arg1: $Matrix3x2f$$Type): $Matrix3x2f
 public "scaleAround"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix3x2f$$Type): $Matrix3x2f
-public "scaleAround"(arg0: float, arg1: float, arg2: float, arg3: $Matrix3x2f$$Type): $Matrix3x2f
 public "scaleAround"(arg0: float, arg1: float, arg2: float, arg3: float): $Matrix3x2f
+public "scaleAround"(arg0: float, arg1: float, arg2: float): $Matrix3x2f
+public "scaleAround"(arg0: float, arg1: float, arg2: float, arg3: $Matrix3x2f$$Type): $Matrix3x2f
 public "scaleLocal"(arg0: float, arg1: float, arg2: $Matrix3x2f$$Type): $Matrix3x2f
 public "scaleLocal"(arg0: float, arg1: float): $Matrix3x2f
-public "scaleLocal"(arg0: float): $Matrix3x2f
 public "scaleLocal"(arg0: float, arg1: $Matrix3x2f$$Type): $Matrix3x2f
-public "scaleAroundLocal"(arg0: float, arg1: float, arg2: float, arg3: $Matrix3x2f$$Type): $Matrix3x2f
+public "scaleLocal"(arg0: float): $Matrix3x2f
 public "scaleAroundLocal"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Matrix3x2f$$Type): $Matrix3x2f
+public "scaleAroundLocal"(arg0: float, arg1: float, arg2: float, arg3: $Matrix3x2f$$Type): $Matrix3x2f
 public "scaleAroundLocal"(arg0: float, arg1: float, arg2: float): $Matrix3x2f
 public "scaleAroundLocal"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: float, arg5: float): $Matrix3x2f
 public "setTranslation"(arg0: float, arg1: float): $Matrix3x2f
 public "setTranslation"(arg0: $Vector2f$$Type): $Matrix3x2f
-public "get3x3"(arg0: $FloatBuffer$$Type): $FloatBuffer
-public "get3x3"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
 public "get3x3"(arg0: integer, arg1: $FloatBuffer$$Type): $FloatBuffer
 public "get3x3"(arg0: (float)[], arg1: integer): (float)[]
+public "get3x3"(arg0: integer, arg1: $ByteBuffer$$Type): $ByteBuffer
 public "get3x3"(arg0: (float)[]): (float)[]
 public "get3x3"(arg0: $ByteBuffer$$Type): $ByteBuffer
+public "get3x3"(arg0: $FloatBuffer$$Type): $FloatBuffer
+public "determinant"(): float
 public "rotateLocal"(arg0: float): $Matrix3x2f
 public "rotateLocal"(arg0: float, arg1: $Matrix3x2f$$Type): $Matrix3x2f
 public "translateLocal"(arg0: float, arg1: float, arg2: $Matrix3x2f$$Type): $Matrix3x2f
 public "translateLocal"(arg0: float, arg1: float): $Matrix3x2f
-public "translateLocal"(arg0: $Vector2fc$$Type): $Matrix3x2f
 public "translateLocal"(arg0: $Vector2fc$$Type, arg1: $Matrix3x2f$$Type): $Matrix3x2f
-public "mulLocal"(arg0: $Matrix3x2fc$$Type, arg1: $Matrix3x2f$$Type): $Matrix3x2f
-public "mulLocal"(arg0: $Matrix3x2fc$$Type): $Matrix3x2f
+public "translateLocal"(arg0: $Vector2fc$$Type): $Matrix3x2f
 get "finite"(): boolean
 set "fromAddress"(value: long)
 }
@@ -8635,10 +8635,10 @@ import {$Vector4f, $Vector4f$$Type} from "org.joml.Vector4f"
 import {$Vector3f, $Vector3f$$Type} from "org.joml.Vector3f"
 import {$Matrix4d, $Matrix4d$$Type} from "org.joml.Matrix4d"
 import {$Matrix3d, $Matrix3d$$Type} from "org.joml.Matrix3d"
-import {$Matrix4f, $Matrix4f$$Type} from "org.joml.Matrix4f"
 import {$Vector4d, $Vector4d$$Type} from "org.joml.Vector4d"
-import {$Matrix3f, $Matrix3f$$Type} from "org.joml.Matrix3f"
+import {$Matrix4f, $Matrix4f$$Type} from "org.joml.Matrix4f"
 import {$Vector3d, $Vector3d$$Type} from "org.joml.Vector3d"
+import {$Matrix3f, $Matrix3f$$Type} from "org.joml.Matrix3f"
 import {$FloatBuffer, $FloatBuffer$$Type} from "java.nio.FloatBuffer"
 import {$Vector4dc$$Type} from "org.joml.Vector4dc"
 import {$Vector3dc$$Type} from "org.joml.Vector3dc"
@@ -8656,78 +8656,78 @@ get "finite"(): boolean
 
 export class $Quaternionfc implements $Quaternionfc$$Interface {
  "invert"(arg0: $Quaternionf$$Type): $Quaternionf
- "mul"(arg0: $Quaternionfc$$Type, arg1: $Quaternionf$$Type): $Quaternionf
- "mul"(arg0: float, arg1: $Quaternionf$$Type): $Quaternionf
- "mul"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Quaternionf$$Type): $Quaternionf
- "normalize"(arg0: $Quaternionf$$Type): $Quaternionf
  "div"(arg0: $Quaternionfc$$Type, arg1: $Quaternionf$$Type): $Quaternionf
  "difference"(arg0: $Quaternionfc$$Type, arg1: $Quaternionf$$Type): $Quaternionf
- "get"(arg0: $AxisAngle4f$$Type): $AxisAngle4f
- "get"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
- "get"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
- "get"(arg0: $AxisAngle4d$$Type): $AxisAngle4d
- "get"(arg0: $Quaterniond$$Type): $Quaterniond
- "get"(arg0: $Quaternionf$$Type): $Quaternionf
- "get"(arg0: $Matrix3f$$Type): $Matrix3f
+ "normalize"(arg0: $Quaternionf$$Type): $Quaternionf
  "get"(arg0: $Matrix3d$$Type): $Matrix3d
- "get"(arg0: $Matrix4f$$Type): $Matrix4f
+ "get"(arg0: $AxisAngle4f$$Type): $AxisAngle4f
  "get"(arg0: $Matrix4d$$Type): $Matrix4d
- "equals"(arg0: float, arg1: float, arg2: float, arg3: float): boolean
+ "get"(arg0: $Matrix4x3f$$Type): $Matrix4x3f
+ "get"(arg0: $Matrix4x3d$$Type): $Matrix4x3d
+ "get"(arg0: $Matrix4f$$Type): $Matrix4f
+ "get"(arg0: $Quaternionf$$Type): $Quaternionf
+ "get"(arg0: $Quaterniond$$Type): $Quaterniond
+ "get"(arg0: $AxisAngle4d$$Type): $AxisAngle4d
+ "get"(arg0: $Matrix3f$$Type): $Matrix3f
  "equals"(arg0: $Quaternionfc$$Type, arg1: float): boolean
+ "equals"(arg0: float, arg1: float, arg2: float, arg3: float): boolean
  "isFinite"(): boolean
  "scale"(arg0: float, arg1: $Quaternionf$$Type): $Quaternionf
- "add"(arg0: $Quaternionfc$$Type, arg1: $Quaternionf$$Type): $Quaternionf
  "add"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Quaternionf$$Type): $Quaternionf
+ "add"(arg0: $Quaternionfc$$Type, arg1: $Quaternionf$$Type): $Quaternionf
  "x"(): float
- "transform"(arg0: float, arg1: float, arg2: float, arg3: $Vector4f$$Type): $Vector4f
- "transform"(arg0: $Vector3d$$Type): $Vector3d
- "transform"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
- "transform"(arg0: double, arg1: double, arg2: double, arg3: $Vector3d$$Type): $Vector3d
- "transform"(arg0: $Vector4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
+ "transform"(arg0: float, arg1: float, arg2: float, arg3: $Vector3f$$Type): $Vector3f
  "transform"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
  "transform"(arg0: $Vector4f$$Type): $Vector4f
- "transform"(arg0: float, arg1: float, arg2: float, arg3: $Vector3f$$Type): $Vector3f
- "transform"(arg0: float, arg1: float, arg2: float, arg3: $Vector3d$$Type): $Vector3d
+ "transform"(arg0: $Vector3d$$Type): $Vector3d
+ "transform"(arg0: $Vector4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
+ "transform"(arg0: double, arg1: double, arg2: double, arg3: $Vector4d$$Type): $Vector4d
+ "transform"(arg0: float, arg1: float, arg2: float, arg3: $Vector4f$$Type): $Vector4f
  "transform"(arg0: $Vector4fc$$Type, arg1: $Vector4f$$Type): $Vector4f
  "transform"(arg0: $Vector4d$$Type): $Vector4d
+ "transform"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
+ "transform"(arg0: float, arg1: float, arg2: float, arg3: $Vector3d$$Type): $Vector3d
  "transform"(arg0: $Vector3f$$Type): $Vector3f
- "transform"(arg0: double, arg1: double, arg2: double, arg3: $Vector4d$$Type): $Vector4d
+ "transform"(arg0: double, arg1: double, arg2: double, arg3: $Vector3d$$Type): $Vector3d
  "z"(): float
  "w"(): float
  "y"(): float
+ "mul"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Quaternionf$$Type): $Quaternionf
+ "mul"(arg0: float, arg1: $Quaternionf$$Type): $Quaternionf
+ "mul"(arg0: $Quaternionfc$$Type, arg1: $Quaternionf$$Type): $Quaternionf
  "angle"(): float
- "getAsMatrix3f"(arg0: $ByteBuffer$$Type): $ByteBuffer
  "getAsMatrix3f"(arg0: $FloatBuffer$$Type): $FloatBuffer
- "getAsMatrix4f"(arg0: $ByteBuffer$$Type): $ByteBuffer
+ "getAsMatrix3f"(arg0: $ByteBuffer$$Type): $ByteBuffer
  "getAsMatrix4f"(arg0: $FloatBuffer$$Type): $FloatBuffer
+ "getAsMatrix4f"(arg0: $ByteBuffer$$Type): $ByteBuffer
  "getAsMatrix4x3f"(arg0: $FloatBuffer$$Type): $FloatBuffer
  "getAsMatrix4x3f"(arg0: $ByteBuffer$$Type): $ByteBuffer
  "premul"(arg0: float, arg1: float, arg2: float, arg3: float, arg4: $Quaternionf$$Type): $Quaternionf
  "premul"(arg0: $Quaternionfc$$Type, arg1: $Quaternionf$$Type): $Quaternionf
- "transformInverse"(arg0: double, arg1: double, arg2: double, arg3: $Vector4d$$Type): $Vector4d
  "transformInverse"(arg0: $Vector4fc$$Type, arg1: $Vector4f$$Type): $Vector4f
- "transformInverse"(arg0: double, arg1: double, arg2: double, arg3: $Vector3d$$Type): $Vector3d
- "transformInverse"(arg0: $Vector4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
  "transformInverse"(arg0: $Vector3d$$Type): $Vector3d
- "transformInverse"(arg0: $Vector4d$$Type): $Vector4d
+ "transformInverse"(arg0: $Vector4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
+ "transformInverse"(arg0: double, arg1: double, arg2: double, arg3: $Vector3d$$Type): $Vector3d
  "transformInverse"(arg0: float, arg1: float, arg2: float, arg3: $Vector4f$$Type): $Vector4f
- "transformInverse"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
  "transformInverse"(arg0: $Vector3f$$Type): $Vector3f
- "transformInverse"(arg0: $Vector4f$$Type): $Vector4f
- "transformInverse"(arg0: float, arg1: float, arg2: float, arg3: $Vector3f$$Type): $Vector3f
  "transformInverse"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
  "transformInverse"(arg0: float, arg1: float, arg2: float, arg3: $Vector3d$$Type): $Vector3d
- "transformPositiveX"(arg0: $Vector4f$$Type): $Vector4f
- "transformPositiveX"(arg0: $Vector4d$$Type): $Vector4d
- "transformPositiveX"(arg0: $Vector3f$$Type): $Vector3f
+ "transformInverse"(arg0: float, arg1: float, arg2: float, arg3: $Vector3f$$Type): $Vector3f
+ "transformInverse"(arg0: double, arg1: double, arg2: double, arg3: $Vector4d$$Type): $Vector4d
+ "transformInverse"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
+ "transformInverse"(arg0: $Vector4f$$Type): $Vector4f
+ "transformInverse"(arg0: $Vector4d$$Type): $Vector4d
  "transformPositiveX"(arg0: $Vector3d$$Type): $Vector3d
- "transformUnitPositiveX"(arg0: $Vector3f$$Type): $Vector3f
+ "transformPositiveX"(arg0: $Vector4d$$Type): $Vector4d
+ "transformPositiveX"(arg0: $Vector4f$$Type): $Vector4f
+ "transformPositiveX"(arg0: $Vector3f$$Type): $Vector3f
+ "transformUnitPositiveX"(arg0: $Vector4f$$Type): $Vector4f
  "transformUnitPositiveX"(arg0: $Vector3d$$Type): $Vector3d
  "transformUnitPositiveX"(arg0: $Vector4d$$Type): $Vector4d
- "transformUnitPositiveX"(arg0: $Vector4f$$Type): $Vector4f
+ "transformUnitPositiveX"(arg0: $Vector3f$$Type): $Vector3f
  "transformPositiveY"(arg0: $Vector3d$$Type): $Vector3d
- "transformPositiveY"(arg0: $Vector4d$$Type): $Vector4d
  "transformPositiveY"(arg0: $Vector3f$$Type): $Vector3f
+ "transformPositiveY"(arg0: $Vector4d$$Type): $Vector4d
  "transformPositiveY"(arg0: $Vector4f$$Type): $Vector4f
  "transformUnitPositiveY"(arg0: $Vector3d$$Type): $Vector3d
  "transformUnitPositiveY"(arg0: $Vector4d$$Type): $Vector4d
@@ -8737,32 +8737,32 @@ export class $Quaternionfc implements $Quaternionfc$$Interface {
  "transformPositiveZ"(arg0: $Vector4d$$Type): $Vector4d
  "transformPositiveZ"(arg0: $Vector4f$$Type): $Vector4f
  "transformPositiveZ"(arg0: $Vector3d$$Type): $Vector3d
+ "transformUnitPositiveZ"(arg0: $Vector4f$$Type): $Vector4f
  "transformUnitPositiveZ"(arg0: $Vector3f$$Type): $Vector3f
  "transformUnitPositiveZ"(arg0: $Vector3d$$Type): $Vector3d
  "transformUnitPositiveZ"(arg0: $Vector4d$$Type): $Vector4d
- "transformUnitPositiveZ"(arg0: $Vector4f$$Type): $Vector4f
- "transformUnit"(arg0: float, arg1: float, arg2: float, arg3: $Vector3f$$Type): $Vector3f
- "transformUnit"(arg0: $Vector4d$$Type): $Vector4d
- "transformUnit"(arg0: $Vector4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
  "transformUnit"(arg0: double, arg1: double, arg2: double, arg3: $Vector3d$$Type): $Vector3d
- "transformUnit"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
- "transformUnit"(arg0: double, arg1: double, arg2: double, arg3: $Vector4d$$Type): $Vector4d
  "transformUnit"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
  "transformUnit"(arg0: float, arg1: float, arg2: float, arg3: $Vector4f$$Type): $Vector4f
- "transformUnit"(arg0: $Vector3f$$Type): $Vector3f
- "transformUnit"(arg0: $Vector4f$$Type): $Vector4f
- "transformUnit"(arg0: float, arg1: float, arg2: float, arg3: $Vector3d$$Type): $Vector3d
+ "transformUnit"(arg0: $Vector4d$$Type): $Vector4d
+ "transformUnit"(arg0: $Vector4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
  "transformUnit"(arg0: $Vector4fc$$Type, arg1: $Vector4f$$Type): $Vector4f
+ "transformUnit"(arg0: double, arg1: double, arg2: double, arg3: $Vector4d$$Type): $Vector4d
+ "transformUnit"(arg0: float, arg1: float, arg2: float, arg3: $Vector3f$$Type): $Vector3f
+ "transformUnit"(arg0: $Vector3f$$Type): $Vector3f
+ "transformUnit"(arg0: float, arg1: float, arg2: float, arg3: $Vector3d$$Type): $Vector3d
+ "transformUnit"(arg0: $Vector4f$$Type): $Vector4f
+ "transformUnit"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
  "transformInverseUnit"(arg0: double, arg1: double, arg2: double, arg3: $Vector4d$$Type): $Vector4d
- "transformInverseUnit"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
  "transformInverseUnit"(arg0: $Vector4fc$$Type, arg1: $Vector4f$$Type): $Vector4f
- "transformInverseUnit"(arg0: $Vector4d$$Type): $Vector4d
+ "transformInverseUnit"(arg0: $Vector4f$$Type): $Vector4f
  "transformInverseUnit"(arg0: $Vector3f$$Type): $Vector3f
- "transformInverseUnit"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
  "transformInverseUnit"(arg0: float, arg1: float, arg2: float, arg3: $Vector4f$$Type): $Vector4f
+ "transformInverseUnit"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
+ "transformInverseUnit"(arg0: $Vector4d$$Type): $Vector4d
+ "transformInverseUnit"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
  "transformInverseUnit"(arg0: float, arg1: float, arg2: float, arg3: $Vector3f$$Type): $Vector3f
  "transformInverseUnit"(arg0: float, arg1: float, arg2: float, arg3: $Vector3d$$Type): $Vector3d
- "transformInverseUnit"(arg0: $Vector4f$$Type): $Vector4f
  "transformInverseUnit"(arg0: $Vector4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
  "transformInverseUnit"(arg0: double, arg1: double, arg2: double, arg3: $Vector3d$$Type): $Vector3d
  "conjugate"(arg0: $Quaternionf$$Type): $Quaternionf
@@ -8812,10 +8812,10 @@ import {$Vector4f, $Vector4f$$Type} from "org.joml.Vector4f"
 import {$Vector3f, $Vector3f$$Type} from "org.joml.Vector3f"
 import {$Matrix4d, $Matrix4d$$Type} from "org.joml.Matrix4d"
 import {$Matrix3d, $Matrix3d$$Type} from "org.joml.Matrix3d"
-import {$Matrix4f, $Matrix4f$$Type} from "org.joml.Matrix4f"
 import {$Vector4d, $Vector4d$$Type} from "org.joml.Vector4d"
-import {$Matrix3f, $Matrix3f$$Type} from "org.joml.Matrix3f"
+import {$Matrix4f, $Matrix4f$$Type} from "org.joml.Matrix4f"
 import {$Vector3d, $Vector3d$$Type} from "org.joml.Vector3d"
+import {$Matrix3f, $Matrix3f$$Type} from "org.joml.Matrix3f"
 import {$Vector4dc$$Type} from "org.joml.Vector4dc"
 import {$Vector3dc$$Type} from "org.joml.Vector3dc"
 import {$Vector4fc$$Type} from "org.joml.Vector4fc"
@@ -8831,20 +8831,17 @@ get "finite"(): boolean
 
 export class $Quaterniondc implements $Quaterniondc$$Interface {
  "invert"(arg0: $Quaterniond$$Type): $Quaterniond
- "mul"(arg0: $Quaterniondc$$Type, arg1: $Quaterniond$$Type): $Quaterniond
- "mul"(arg0: double, arg1: $Quaterniond$$Type): $Quaterniond
- "mul"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Quaterniond$$Type): $Quaterniond
- "normalize"(arg0: $Quaterniond$$Type): $Quaterniond
  "div"(arg0: $Quaterniondc$$Type, arg1: $Quaterniond$$Type): $Quaterniond
  "difference"(arg0: $Quaterniondc$$Type, arg1: $Quaterniond$$Type): $Quaterniond
- "get"(arg0: $Quaterniond$$Type): $Quaterniond
- "get"(arg0: $Matrix4f$$Type): $Matrix4f
+ "normalize"(arg0: $Quaterniond$$Type): $Quaterniond
  "get"(arg0: $AxisAngle4f$$Type): $AxisAngle4f
- "get"(arg0: $AxisAngle4d$$Type): $AxisAngle4d
+ "get"(arg0: $Matrix4f$$Type): $Matrix4f
  "get"(arg0: $Matrix4d$$Type): $Matrix4d
- "get"(arg0: $Quaternionf$$Type): $Quaternionf
- "get"(arg0: $Matrix3d$$Type): $Matrix3d
  "get"(arg0: $Matrix3f$$Type): $Matrix3f
+ "get"(arg0: $Matrix3d$$Type): $Matrix3d
+ "get"(arg0: $Quaternionf$$Type): $Quaternionf
+ "get"(arg0: $Quaterniond$$Type): $Quaterniond
+ "get"(arg0: $AxisAngle4d$$Type): $AxisAngle4d
  "equals"(arg0: $Quaterniondc$$Type, arg1: double): boolean
  "equals"(arg0: double, arg1: double, arg2: double, arg3: double): boolean
  "isFinite"(): boolean
@@ -8852,85 +8849,88 @@ export class $Quaterniondc implements $Quaterniondc$$Interface {
  "add"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Quaterniond$$Type): $Quaterniond
  "add"(arg0: $Quaterniondc$$Type, arg1: $Quaterniond$$Type): $Quaterniond
  "x"(): double
- "transform"(arg0: $Vector4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
- "transform"(arg0: double, arg1: double, arg2: double, arg3: $Vector3f$$Type): $Vector3f
- "transform"(arg0: $Vector3f$$Type): $Vector3f
- "transform"(arg0: $Vector4fc$$Type, arg1: $Vector4f$$Type): $Vector4f
  "transform"(arg0: double, arg1: double, arg2: double, arg3: $Vector4d$$Type): $Vector4d
- "transform"(arg0: double, arg1: double, arg2: double, arg3: $Vector3d$$Type): $Vector3d
- "transform"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
+ "transform"(arg0: $Vector3f$$Type): $Vector3f
  "transform"(arg0: $Vector4f$$Type): $Vector4f
+ "transform"(arg0: double, arg1: double, arg2: double, arg3: $Vector3f$$Type): $Vector3f
+ "transform"(arg0: $Vector4fc$$Type, arg1: $Vector4f$$Type): $Vector4f
  "transform"(arg0: $Vector4d$$Type): $Vector4d
- "transform"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
+ "transform"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
+ "transform"(arg0: double, arg1: double, arg2: double, arg3: $Vector3d$$Type): $Vector3d
+ "transform"(arg0: $Vector4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
  "transform"(arg0: $Vector3d$$Type): $Vector3d
+ "transform"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
  "transform"(arg0: double, arg1: double, arg2: double, arg3: $Vector4f$$Type): $Vector4f
  "dot"(arg0: $Quaterniondc$$Type): double
  "z"(): double
  "w"(): double
  "y"(): double
+ "mul"(arg0: $Quaterniondc$$Type, arg1: $Quaterniond$$Type): $Quaterniond
+ "mul"(arg0: double, arg1: $Quaterniond$$Type): $Quaterniond
+ "mul"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Quaterniond$$Type): $Quaterniond
  "angle"(): double
  "premul"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: $Quaterniond$$Type): $Quaterniond
  "premul"(arg0: $Quaterniondc$$Type, arg1: $Quaterniond$$Type): $Quaterniond
+ "transformInverse"(arg0: $Vector3d$$Type): $Vector3d
  "transformInverse"(arg0: $Vector3f$$Type): $Vector3f
  "transformInverse"(arg0: double, arg1: double, arg2: double, arg3: $Vector4d$$Type): $Vector4d
- "transformInverse"(arg0: double, arg1: double, arg2: double, arg3: $Vector4f$$Type): $Vector4f
- "transformInverse"(arg0: $Vector4fc$$Type, arg1: $Vector4f$$Type): $Vector4f
- "transformInverse"(arg0: double, arg1: double, arg2: double, arg3: $Vector3f$$Type): $Vector3f
  "transformInverse"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
- "transformInverse"(arg0: $Vector4f$$Type): $Vector4f
+ "transformInverse"(arg0: double, arg1: double, arg2: double, arg3: $Vector4f$$Type): $Vector4f
+ "transformInverse"(arg0: double, arg1: double, arg2: double, arg3: $Vector3f$$Type): $Vector3f
  "transformInverse"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
  "transformInverse"(arg0: $Vector4d$$Type): $Vector4d
- "transformInverse"(arg0: $Vector3d$$Type): $Vector3d
+ "transformInverse"(arg0: $Vector4f$$Type): $Vector4f
  "transformInverse"(arg0: double, arg1: double, arg2: double, arg3: $Vector3d$$Type): $Vector3d
+ "transformInverse"(arg0: $Vector4fc$$Type, arg1: $Vector4f$$Type): $Vector4f
  "transformInverse"(arg0: $Vector4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
- "transformPositiveX"(arg0: $Vector3f$$Type): $Vector3f
  "transformPositiveX"(arg0: $Vector4f$$Type): $Vector4f
  "transformPositiveX"(arg0: $Vector4d$$Type): $Vector4d
+ "transformPositiveX"(arg0: $Vector3f$$Type): $Vector3f
  "transformPositiveX"(arg0: $Vector3d$$Type): $Vector3d
- "transformUnitPositiveX"(arg0: $Vector4f$$Type): $Vector4f
- "transformUnitPositiveX"(arg0: $Vector3d$$Type): $Vector3d
- "transformUnitPositiveX"(arg0: $Vector3f$$Type): $Vector3f
  "transformUnitPositiveX"(arg0: $Vector4d$$Type): $Vector4d
+ "transformUnitPositiveX"(arg0: $Vector3d$$Type): $Vector3d
+ "transformUnitPositiveX"(arg0: $Vector4f$$Type): $Vector4f
+ "transformUnitPositiveX"(arg0: $Vector3f$$Type): $Vector3f
+ "transformPositiveY"(arg0: $Vector4f$$Type): $Vector4f
+ "transformPositiveY"(arg0: $Vector4d$$Type): $Vector4d
  "transformPositiveY"(arg0: $Vector3d$$Type): $Vector3d
  "transformPositiveY"(arg0: $Vector3f$$Type): $Vector3f
- "transformPositiveY"(arg0: $Vector4d$$Type): $Vector4d
- "transformPositiveY"(arg0: $Vector4f$$Type): $Vector4f
- "transformUnitPositiveY"(arg0: $Vector3d$$Type): $Vector3d
- "transformUnitPositiveY"(arg0: $Vector4f$$Type): $Vector4f
- "transformUnitPositiveY"(arg0: $Vector3f$$Type): $Vector3f
  "transformUnitPositiveY"(arg0: $Vector4d$$Type): $Vector4d
+ "transformUnitPositiveY"(arg0: $Vector3f$$Type): $Vector3f
+ "transformUnitPositiveY"(arg0: $Vector4f$$Type): $Vector4f
+ "transformUnitPositiveY"(arg0: $Vector3d$$Type): $Vector3d
  "transformPositiveZ"(arg0: $Vector4f$$Type): $Vector4f
- "transformPositiveZ"(arg0: $Vector4d$$Type): $Vector4d
  "transformPositiveZ"(arg0: $Vector3d$$Type): $Vector3d
+ "transformPositiveZ"(arg0: $Vector4d$$Type): $Vector4d
  "transformPositiveZ"(arg0: $Vector3f$$Type): $Vector3f
  "transformUnitPositiveZ"(arg0: $Vector4d$$Type): $Vector4d
- "transformUnitPositiveZ"(arg0: $Vector3f$$Type): $Vector3f
  "transformUnitPositiveZ"(arg0: $Vector3d$$Type): $Vector3d
+ "transformUnitPositiveZ"(arg0: $Vector3f$$Type): $Vector3f
  "transformUnitPositiveZ"(arg0: $Vector4f$$Type): $Vector4f
- "transformUnit"(arg0: $Vector4f$$Type): $Vector4f
+ "transformUnit"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
  "transformUnit"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
  "transformUnit"(arg0: $Vector3d$$Type): $Vector3d
- "transformUnit"(arg0: double, arg1: double, arg2: double, arg3: $Vector4f$$Type): $Vector4f
- "transformUnit"(arg0: double, arg1: double, arg2: double, arg3: $Vector3d$$Type): $Vector3d
- "transformUnit"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
+ "transformUnit"(arg0: $Vector4f$$Type): $Vector4f
  "transformUnit"(arg0: double, arg1: double, arg2: double, arg3: $Vector3f$$Type): $Vector3f
- "transformUnit"(arg0: $Vector3f$$Type): $Vector3f
- "transformUnit"(arg0: double, arg1: double, arg2: double, arg3: $Vector4d$$Type): $Vector4d
  "transformUnit"(arg0: $Vector4fc$$Type, arg1: $Vector4f$$Type): $Vector4f
- "transformUnit"(arg0: $Vector4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
+ "transformUnit"(arg0: double, arg1: double, arg2: double, arg3: $Vector4f$$Type): $Vector4f
+ "transformUnit"(arg0: $Vector3f$$Type): $Vector3f
  "transformUnit"(arg0: $Vector4d$$Type): $Vector4d
- "transformInverseUnit"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
+ "transformUnit"(arg0: double, arg1: double, arg2: double, arg3: $Vector4d$$Type): $Vector4d
+ "transformUnit"(arg0: double, arg1: double, arg2: double, arg3: $Vector3d$$Type): $Vector3d
+ "transformUnit"(arg0: $Vector4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
  "transformInverseUnit"(arg0: double, arg1: double, arg2: double, arg3: $Vector4f$$Type): $Vector4f
- "transformInverseUnit"(arg0: $Vector3f$$Type): $Vector3f
- "transformInverseUnit"(arg0: $Vector3d$$Type): $Vector3d
  "transformInverseUnit"(arg0: $Vector4d$$Type): $Vector4d
- "transformInverseUnit"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
  "transformInverseUnit"(arg0: $Vector4f$$Type): $Vector4f
- "transformInverseUnit"(arg0: double, arg1: double, arg2: double, arg3: $Vector4d$$Type): $Vector4d
+ "transformInverseUnit"(arg0: $Vector3d$$Type): $Vector3d
+ "transformInverseUnit"(arg0: $Vector3dc$$Type, arg1: $Vector3d$$Type): $Vector3d
  "transformInverseUnit"(arg0: double, arg1: double, arg2: double, arg3: $Vector3d$$Type): $Vector3d
+ "transformInverseUnit"(arg0: $Vector3f$$Type): $Vector3f
  "transformInverseUnit"(arg0: $Vector4dc$$Type, arg1: $Vector4d$$Type): $Vector4d
- "transformInverseUnit"(arg0: double, arg1: double, arg2: double, arg3: $Vector3f$$Type): $Vector3f
+ "transformInverseUnit"(arg0: double, arg1: double, arg2: double, arg3: $Vector4d$$Type): $Vector4d
  "transformInverseUnit"(arg0: $Vector4fc$$Type, arg1: $Vector4f$$Type): $Vector4f
+ "transformInverseUnit"(arg0: $Vector3fc$$Type, arg1: $Vector3f$$Type): $Vector3f
+ "transformInverseUnit"(arg0: double, arg1: double, arg2: double, arg3: $Vector3f$$Type): $Vector3f
  "conjugate"(arg0: $Quaterniond$$Type): $Quaterniond
  "rotateXYZ"(arg0: double, arg1: double, arg2: double, arg3: $Quaterniond$$Type): $Quaterniond
  "rotateZYX"(arg0: double, arg1: double, arg2: double, arg3: $Quaterniond$$Type): $Quaterniond
@@ -8951,8 +8951,8 @@ export class $Quaterniondc implements $Quaterniondc$$Interface {
  "lengthSquared"(): double
  "lookAlong"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Quaterniond$$Type): $Quaterniond
  "lookAlong"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Quaterniond$$Type): $Quaterniond
- "rotateTo"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Quaterniond$$Type): $Quaterniond
  "rotateTo"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double, arg6: $Quaterniond$$Type): $Quaterniond
+ "rotateTo"(arg0: $Vector3dc$$Type, arg1: $Vector3dc$$Type, arg2: $Quaterniond$$Type): $Quaterniond
  "rotateLocalX"(arg0: double, arg1: $Quaterniond$$Type): $Quaterniond
  "rotateLocalY"(arg0: double, arg1: $Quaterniond$$Type): $Quaterniond
  "rotateLocalZ"(arg0: double, arg1: $Quaterniond$$Type): $Quaterniond

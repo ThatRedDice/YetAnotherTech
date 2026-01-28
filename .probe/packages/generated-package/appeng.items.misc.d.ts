@@ -3,12 +3,12 @@ import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$List$$Type} from "java.util.List"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$MissingContentItem$BrokenStackInfo} from "appeng.items.misc.MissingContentItem$BrokenStackInfo"
 
 export class $MissingContentItem extends $Item {
@@ -38,8 +38,8 @@ declare module "appeng.items.misc.PaintBallItem" {
 import {$AEColor, $AEColor$$Type} from "appeng.api.util.AEColor"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$AEBaseItem} from "appeng.items.AEBaseItem"
 
@@ -71,8 +71,8 @@ export type $PaintBallItem$$Original = $PaintBallItem;}
 declare module "appeng.items.misc.MeteoriteCompassItem" {
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$AEBaseItem} from "appeng.items.AEBaseItem"
 
@@ -109,8 +109,8 @@ public "amount"(): long
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
-public "displayName"(): $Component
 public "keyType"(): $AEKeyType
+public "displayName"(): $Component
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_

@@ -9,12 +9,12 @@ import {$EmbeddiumEvent} from "org.embeddedt.embeddium.api.eventbus.EmbeddiumEve
 export class $ChunkMeshEvent extends $EmbeddiumEvent {
 static readonly "BUS": $EventHandlerRegistrar<($ChunkMeshEvent)>
 
-public "getWorld"(): $Level
 public "getSectionOrigin"(): $SectionPos
+public "getWorld"(): $Level
 public "addMeshAppender"(arg0: $MeshAppender$$Type): void
 public static "post"(arg0: $Level$$Type, arg1: $SectionPos$$Type): $List<($MeshAppender)>
-get "world"(): $Level
 get "sectionOrigin"(): $SectionPos
+get "world"(): $Level
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -171,14 +171,14 @@ export class $Dim2i extends $Record implements $Point2i$$Interface {
 constructor(x: integer, y: integer, width: integer, height: integer)
 
 public "getCenterY"(): integer
-public "containsCursor"(arg0: double, arg1: double): boolean
-public "canFitDimension"(arg0: $Dim2i$$Type): boolean
-public "withParentOffset"(arg0: $Point2i$$Type): $Dim2i
-public "overlapsWith"(arg0: $Dim2i$$Type): boolean
 public "withX"(arg0: integer): $Dim2i
 public "withY"(arg0: integer): $Dim2i
 public "withWidth"(arg0: integer): $Dim2i
 public "withHeight"(arg0: integer): $Dim2i
+public "containsCursor"(arg0: double, arg1: double): boolean
+public "canFitDimension"(arg0: $Dim2i$$Type): boolean
+public "overlapsWith"(arg0: $Dim2i$$Type): boolean
+public "withParentOffset"(arg0: $Point2i$$Type): $Dim2i
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
@@ -198,7 +198,7 @@ get "limitY"(): integer
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $Dim2i$$Type = ({"width"?: integer, "height"?: integer, "x"?: integer, "y"?: integer}) | ([width?: integer, height?: integer, x?: integer, y?: integer]);
+export type $Dim2i$$Type = ({"height"?: integer, "x"?: integer, "y"?: integer, "width"?: integer}) | ([height?: integer, x?: integer, y?: integer, width?: integer]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -225,8 +225,8 @@ export type $Point2i$$Type = ($Point2i);
 export type $Point2i$$Original = $Point2i;}
 declare module "org.embeddedt.embeddium.api.MeshAppender$Context" {
 import {$BlockAndTintGetter, $BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$SectionPos, $SectionPos$$Type} from "net.minecraft.core.SectionPos"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$VertexConsumer, $VertexConsumer$$Type} from "com.mojang.blaze3d.vertex.VertexConsumer"
 import {$RenderType, $RenderType$$Type} from "net.minecraft.client.renderer.RenderType"
 import {$Record} from "java.lang.Record"
@@ -319,8 +319,8 @@ declare module "org.embeddedt.embeddium.api.OptionPageConstructionEvent" {
 import {$List} from "java.util.List"
 import {$OptionIdentifier, $OptionIdentifier$$Type} from "org.embeddedt.embeddium.api.options.OptionIdentifier"
 import {$EventHandlerRegistrar} from "org.embeddedt.embeddium.api.eventbus.EventHandlerRegistrar"
-import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$OptionGroup, $OptionGroup$$Type} from "org.embeddedt.embeddium.api.options.structure.OptionGroup"
+import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$EmbeddiumEvent} from "org.embeddedt.embeddium.api.eventbus.EmbeddiumEvent"
 
 export class $OptionPageConstructionEvent extends $EmbeddiumEvent {
@@ -328,8 +328,8 @@ static readonly "BUS": $EventHandlerRegistrar<($OptionPageConstructionEvent)>
 
 constructor(arg0: $OptionIdentifier$$Type<(void)>, arg1: $Component$$Type)
 
-public "getAdditionalGroups"(): $List<($OptionGroup)>
 public "addGroup"(arg0: $OptionGroup$$Type): void
+public "getAdditionalGroups"(): $List<($OptionGroup)>
 public "getName"(): $Component
 public "getId"(): $OptionIdentifier<(void)>
 get "additionalGroups"(): $List<($OptionGroup)>
@@ -355,8 +355,8 @@ export class $OptionGroup {
 readonly "id": $OptionIdentifier<(void)>
 
 public "getId"(): $OptionIdentifier<(void)>
-public static "createBuilder"(): $OptionGroup$Builder
 public "getOptions"(): $ImmutableList<($Option<(never)>)>
+public static "createBuilder"(): $OptionGroup$Builder
 get "options"(): $ImmutableList<($Option<(never)>)>
 }
 /**
@@ -446,9 +446,9 @@ export interface $VertexBufferWriter$$Interface {
 
 export class $VertexBufferWriter implements $VertexBufferWriter$$Interface {
 static "tryOf"(arg0: $VertexConsumer$$Type): $VertexBufferWriter
- "push"(arg0: $MemoryStack$$Type, arg1: long, arg2: integer, arg3: $VertexFormatDescription$$Type): void
 static "copyInto"(arg0: $VertexBufferWriter$$Type, arg1: $MemoryStack$$Type, arg2: long, arg3: integer, arg4: $VertexFormatDescription$$Type): void
 static "of"(arg0: $VertexConsumer$$Type): $VertexBufferWriter
+ "push"(arg0: $MemoryStack$$Type, arg1: long, arg2: integer, arg3: $VertexFormatDescription$$Type): void
  "canUseIntrinsics"(): boolean
 }
 /**
@@ -490,10 +490,10 @@ import {$OptionImpact} from "org.embeddedt.embeddium.api.options.structure.Optio
 
 export interface $Option$$Interface<T> {
 get "storage"(): $OptionStorage<(never)>
-get "impact"(): $OptionImpact
 get "flags"(): $Collection<($OptionFlag)>
-get "control"(): $Control<(T)>
 get "available"(): boolean
+get "control"(): $Control<(T)>
+get "impact"(): $OptionImpact
 get "name"(): $Component
 get "value"(): T
 get "id"(): $OptionIdentifier<(T)>
@@ -503,10 +503,10 @@ get "tooltip"(): $Component
 
 export class $Option<T> implements $Option$$Interface {
  "getStorage"(): $OptionStorage<(never)>
- "getImpact"(): $OptionImpact
  "getFlags"(): $Collection<($OptionFlag)>
- "getControl"(): $Control<(T)>
  "isAvailable"(): boolean
+ "getControl"(): $Control<(T)>
+ "getImpact"(): $OptionImpact
  "getName"(): $Component
  "reset"(): void
  "getValue"(): T
@@ -542,7 +542,7 @@ static readonly "OVERLAY": $CommonVertexAttribute
 public "getByteLength"(): integer
 public static "values"(): ($CommonVertexAttribute)[]
 public static "valueOf"(arg0: StringJS): $CommonVertexAttribute
-public static "createAttribute$oculus_$md$a93e73$0"(arg0: StringJS, arg1: integer, arg2: $VertexFormatElement$$Type): $CommonVertexAttribute
+public static "createAttribute$oculus_$md$b00d76$0"(arg0: StringJS, arg1: integer, arg2: $VertexFormatElement$$Type): $CommonVertexAttribute
 public static "getCommonType"(arg0: $VertexFormatElement$$Type): $CommonVertexAttribute
 public static "createAttribute"(arg0: StringJS, arg1: integer, arg2: $VertexFormatElement$$Type): $CommonVertexAttribute
 get "byteLength"(): integer
@@ -593,8 +593,8 @@ static readonly "BUS": $EventHandlerRegistrar<($OptionGUIConstructionEvent)>
 
 constructor(arg0: $List$$Type<($OptionPage$$Type)>)
 
-public "getPages"(): $List<($OptionPage)>
 public "addPage"(arg0: $OptionPage$$Type): void
+public "getPages"(): $List<($OptionPage)>
 get "pages"(): $List<($OptionPage)>
 }
 /**
@@ -607,12 +607,12 @@ export type $OptionGUIConstructionEvent$$Type = ($OptionGUIConstructionEvent);
  */
 export type $OptionGUIConstructionEvent$$Original = $OptionGUIConstructionEvent;}
 declare module "org.embeddedt.embeddium.api.options.structure.OptionControlElement" {
-import {$Option} from "org.embeddedt.embeddium.api.options.structure.Option"
 import {$GuiEventListener$$Interface} from "net.minecraft.client.gui.components.events.GuiEventListener"
 import {$NarrationElementOutput$$Type} from "net.minecraft.client.gui.narration.NarrationElementOutput"
+import {$Option} from "org.embeddedt.embeddium.api.options.structure.Option"
 import {$FocusNavigationEvent$$Type} from "net.minecraft.client.gui.navigation.FocusNavigationEvent"
-import {$GuiGraphics$$Type} from "net.minecraft.client.gui.GuiGraphics"
 import {$ScreenRectangle} from "net.minecraft.client.gui.navigation.ScreenRectangle"
+import {$GuiGraphics$$Type} from "net.minecraft.client.gui.GuiGraphics"
 import {$NarratableEntry$$Interface} from "net.minecraft.client.gui.narration.NarratableEntry"
 import {$ComponentPath} from "net.minecraft.client.gui.ComponentPath"
 import {$Renderable$$Interface} from "net.minecraft.client.gui.components.Renderable"
@@ -620,10 +620,10 @@ import {$NarratableEntry$NarrationPriority} from "net.minecraft.client.gui.narra
 
 export interface $OptionControlElement$$Interface<T> extends $Renderable$$Interface, $GuiEventListener$$Interface, $NarratableEntry$$Interface {
 get "option"(): $Option<(T)>
-get "currentFocusPath"(): $ComponentPath
-get "rectangle"(): $ScreenRectangle
 set "focused"(value: boolean)
 get "focused"(): boolean
+get "currentFocusPath"(): $ComponentPath
+get "rectangle"(): $ScreenRectangle
 get "active"(): boolean
 get "tabOrderGroup"(): integer
 }
@@ -633,10 +633,6 @@ export class $OptionControlElement<T> implements $OptionControlElement$$Interfac
  "render"(arg0: $GuiGraphics$$Type, arg1: integer, arg2: integer, arg3: float): void
  "keyPressed"(arg0: integer, arg1: integer, arg2: integer): boolean
  "mouseClicked"(arg0: double, arg1: double, arg2: integer): boolean
- "nextFocusPath"(arg0: $FocusNavigationEvent$$Type): $ComponentPath
- "getCurrentFocusPath"(): $ComponentPath
- "isMouseOver"(arg0: double, arg1: double): boolean
- "getRectangle"(): $ScreenRectangle
  "setFocused"(arg0: boolean): void
  "mouseReleased"(arg0: double, arg1: double, arg2: integer): boolean
  "mouseDragged"(arg0: double, arg1: double, arg2: integer, arg3: double, arg4: double): boolean
@@ -644,6 +640,10 @@ export class $OptionControlElement<T> implements $OptionControlElement$$Interfac
  "keyReleased"(arg0: integer, arg1: integer, arg2: integer): boolean
  "charTyped"(arg0: character, arg1: integer): boolean
  "isFocused"(): boolean
+ "nextFocusPath"(arg0: $FocusNavigationEvent$$Type): $ComponentPath
+ "getCurrentFocusPath"(): $ComponentPath
+ "isMouseOver"(arg0: double, arg1: double): boolean
+ "getRectangle"(): $ScreenRectangle
  "mouseMoved"(arg0: double, arg1: double): void
  "isActive"(): boolean
  "narrationPriority"(): $NarratableEntry$NarrationPriority
@@ -671,8 +671,8 @@ get "option"(): $Option<(T)>
 
 export class $Control<T> implements $Control$$Interface {
  "getMaxWidth"(): integer
- "createElement"(arg0: $Dim2i$$Type): $OptionControlElement<(T)>
  "getOption"(): $Option<(T)>
+ "createElement"(arg0: $Dim2i$$Type): $OptionControlElement<(T)>
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -741,8 +741,8 @@ declare module "org.embeddedt.embeddium.api.options.structure.OptionPage" {
 import {$Option} from "org.embeddedt.embeddium.api.options.structure.Option"
 import {$OptionIdentifier, $OptionIdentifier$$Type} from "org.embeddedt.embeddium.api.options.OptionIdentifier"
 import {$ImmutableList, $ImmutableList$$Type} from "com.google.common.collect.ImmutableList"
-import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$OptionGroup, $OptionGroup$$Type} from "org.embeddedt.embeddium.api.options.structure.OptionGroup"
+import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 
 export class $OptionPage {
 constructor(arg0: $OptionIdentifier$$Type<(void)>, arg1: $Component$$Type, arg2: $ImmutableList$$Type<($OptionGroup$$Type)>)

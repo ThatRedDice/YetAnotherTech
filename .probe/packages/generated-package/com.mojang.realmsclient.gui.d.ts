@@ -1,12 +1,12 @@
 declare module "com.mojang.realmsclient.gui.RealmsDataFetcher" {
-import {$DataFetcher$Task} from "com.mojang.realmsclient.gui.task.DataFetcher$Task"
 import {$RealmsClient$$Type} from "com.mojang.realmsclient.client.RealmsClient"
+import {$DataFetcher$Task} from "com.mojang.realmsclient.gui.task.DataFetcher$Task"
 import {$List} from "java.util.List"
 import {$RealmsServerPlayerLists} from "com.mojang.realmsclient.dto.RealmsServerPlayerLists"
 import {$RealmsNewsManager} from "com.mojang.realmsclient.gui.RealmsNewsManager"
 import {$DataFetcher} from "com.mojang.realmsclient.gui.task.DataFetcher"
-import {$RealmsDataFetcher$ServerListData} from "com.mojang.realmsclient.gui.RealmsDataFetcher$ServerListData"
 import {$RealmsNews} from "com.mojang.realmsclient.dto.RealmsNews"
+import {$RealmsDataFetcher$ServerListData} from "com.mojang.realmsclient.gui.RealmsDataFetcher$ServerListData"
 import {$RealmsNotification} from "com.mojang.realmsclient.dto.RealmsNotification"
 
 export class $RealmsDataFetcher {
@@ -72,7 +72,7 @@ public "hashCode"(): integer
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $RealmsDataFetcher$ServerListData$$Type = ({"availableSnapshotServers"?: $List$$Type<($RealmsServer$$Type)>, "serverList"?: $List$$Type<($RealmsServer$$Type)>}) | ([availableSnapshotServers?: $List$$Type<($RealmsServer$$Type)>, serverList?: $List$$Type<($RealmsServer$$Type)>]);
+export type $RealmsDataFetcher$ServerListData$$Type = ({"serverList"?: $List$$Type<($RealmsServer$$Type)>, "availableSnapshotServers"?: $List$$Type<($RealmsServer$$Type)>}) | ([serverList?: $List$$Type<($RealmsServer$$Type)>, availableSnapshotServers?: $List$$Type<($RealmsServer$$Type)>]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -146,8 +146,8 @@ import {$TimeUnit$$Type} from "java.util.concurrent.TimeUnit"
 export class $DataFetcher {
 constructor(arg0: $Executor$$Type, arg1: $TimeUnit$$Type, arg2: $TimeSource$$Type)
 
-public "createSubscription"(): $DataFetcher$Subscription
 public "createTask"<T>(arg0: StringJS, arg1: $Callable$$Type<(T)>, arg2: $Duration$$Type, arg3: $RepeatedDelayStrategy$$Type): $DataFetcher$Task<(T)>
+public "createSubscription"(): $DataFetcher$Subscription
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_

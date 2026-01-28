@@ -7,17 +7,17 @@ import {$Optional} from "java.util.Optional"
 import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
+import {$Inventory$$Type} from "net.minecraft.world.entity.player.Inventory"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$SimpleWaterloggedBlock$$Interface} from "net.minecraft.world.level.block.SimpleWaterloggedBlock"
-import {$Inventory$$Type} from "net.minecraft.world.entity.player.Inventory"
-import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$AbstractEnergyBlock} from "owmii.powah.lib.block.AbstractEnergyBlock"
+import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$AbstractContainer} from "owmii.powah.lib.logistics.inventory.AbstractContainer"
 import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$CableConfig} from "owmii.powah.config.v2.types.CableConfig"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$IEnergyConnector$$Interface} from "owmii.powah.api.energy.IEnergyConnector"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -65,8 +65,8 @@ static readonly "UPDATE_CLIENTS": integer
 constructor(arg0: $BlockBehaviour$Properties$$Type, arg1: $Tier$$Type)
 
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
-public "onPlace"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: boolean): void
 public "useWithoutItem"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $BlockHitResult$$Type): $InteractionResult
+public "onPlace"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: boolean): void
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
 public "canAttach"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Direction$$Type): (boolean)[]
 public "isChargeable"(arg0: $ItemStack$$Type): boolean
@@ -77,8 +77,8 @@ public "getShape"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $Bloc
 public "getConfig"(): any
 public "neighborChanged"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Block$$Type, arg4: $BlockPos$$Type, arg5: boolean): void
 public "getPickupSound"(): $Optional<($SoundEvent)>
-public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "canPlaceLiquid"(arg0: $Player$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $Fluid$$Type): boolean
+public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "pickupBlock"(arg0: $Player$$Type, arg1: $LevelAccessor$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): $ItemStack
 public "getPickupSound"(arg0: $BlockState$$Type): $Optional<($SoundEvent)>
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean

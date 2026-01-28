@@ -53,12 +53,12 @@ import {$Map} from "java.util.Map"
 import {$BaseItem$InteractionFeedback} from "com.supermartijn642.core.item.BaseItem$InteractionFeedback"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
 import {$ItemProperties$$Type} from "com.supermartijn642.core.item.ItemProperties"
 import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
-import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
 import {$Consumer$$Type} from "java.util.function.Consumer"
-import {$IClientItemExtensions$$Type} from "net.neoforged.neoforge.client.extensions.common.IClientItemExtensions"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
+import {$IClientItemExtensions$$Type} from "net.neoforged.neoforge.client.extensions.common.IClientItemExtensions"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$BaseItem$ItemUseResult} from "com.supermartijn642.core.item.BaseItem$ItemUseResult"
 
@@ -73,15 +73,15 @@ static readonly "BY_BLOCK": $Map<($Block), ($Item)>
 constructor(properties: $ItemProperties$$Type)
 constructor(properties: $Item$Properties$$Type)
 
-public "interactWithEntity"(stack: $ItemStack$$Type, target: $LivingEntity$$Type, player: $Player$$Type, hand: $InteractionHand$$Type): $BaseItem$InteractionFeedback
 public "initializeClient"(consumer: $Consumer$$Type<($IClientItemExtensions)>): void
 public "appendHoverText"(stack: $ItemStack$$Type, context: $Item$TooltipContext$$Type, information: $List$$Type<($Component$$Type)>, flag: $TooltipFlag$$Type): void
 public "useOn"(context: $UseOnContext$$Type): $InteractionResult
 public "inventoryTick"(stack: $ItemStack$$Type, level: $Level$$Type, entity: $Entity$$Type, slot: integer, isSelected: boolean): void
 public "onItemUseFirst"(stack: $ItemStack$$Type, context: $UseOnContext$$Type): $InteractionResult
+public "interactWithEntity"(stack: $ItemStack$$Type, target: $LivingEntity$$Type, player: $Player$$Type, hand: $InteractionHand$$Type): $BaseItem$InteractionFeedback
+public "interactWithBlock"(stack: $ItemStack$$Type, player: $Player$$Type, hand: $InteractionHand$$Type, level: $Level$$Type, hitPos: $BlockPos$$Type, hitSide: $Direction$$Type, hitLocation: $Vec3$$Type): $BaseItem$InteractionFeedback
 public "interactWithBlockFirst"(stack: $ItemStack$$Type, player: $Player$$Type, hand: $InteractionHand$$Type, level: $Level$$Type, hitPos: $BlockPos$$Type, hitSide: $Direction$$Type, hitLocation: $Vec3$$Type): $BaseItem$InteractionFeedback
 public "inventoryUpdate"(stack: $ItemStack$$Type, level: $Level$$Type, entity: $Entity$$Type, itemSlot: integer, isSelected: boolean): void
-public "interactWithBlock"(stack: $ItemStack$$Type, player: $Player$$Type, hand: $InteractionHand$$Type, level: $Level$$Type, hitPos: $BlockPos$$Type, hitSide: $Direction$$Type, hitLocation: $Vec3$$Type): $BaseItem$InteractionFeedback
 public "use"(level: $Level$$Type, player: $Player$$Type, hand: $InteractionHand$$Type): $InteractionResultHolder<($ItemStack)>
 public "interact"(stack: $ItemStack$$Type, player: $Player$$Type, hand: $InteractionHand$$Type, level: $Level$$Type): $BaseItem$ItemUseResult
 public "interactLivingEntity"(stack: $ItemStack$$Type, player: $Player$$Type, target: $LivingEntity$$Type, hand: $InteractionHand$$Type): $InteractionResult
@@ -126,8 +126,8 @@ public "toUnderlying"(isClientSide: boolean): $InteractionResultHolder<($ItemSta
  */
 public static "fromUnderlying"(underlying: $InteractionResultHolder$$Type<($ItemStack$$Type)>): $BaseBlockItem$ItemUseResult
 public static "pass"(stack: $ItemStack$$Type): $BaseBlockItem$ItemUseResult
-public static "consume"(stack: $ItemStack$$Type): $BaseBlockItem$ItemUseResult
 public static "success"(stack: $ItemStack$$Type): $BaseBlockItem$ItemUseResult
+public static "consume"(stack: $ItemStack$$Type): $BaseBlockItem$ItemUseResult
 public static "fail"(stack: $ItemStack$$Type): $BaseBlockItem$ItemUseResult
 }
 /**
@@ -208,18 +208,18 @@ import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHol
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
-import {$AdditionalItemPlacement, $AdditionalItemPlacement$$Type} from "net.mehvahdjukaar.moonlight.api.item.additional_placements.AdditionalItemPlacement"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$AdditionalItemPlacement, $AdditionalItemPlacement$$Type} from "net.mehvahdjukaar.moonlight.api.item.additional_placements.AdditionalItemPlacement"
 import {$Map} from "java.util.Map"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
+import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
 import {$ItemProperties$$Type} from "com.supermartijn642.core.item.ItemProperties"
 import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
-import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
 import {$Consumer$$Type} from "java.util.function.Consumer"
-import {$IClientItemExtensions$$Type} from "net.neoforged.neoforge.client.extensions.common.IClientItemExtensions"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
+import {$IClientItemExtensions$$Type} from "net.neoforged.neoforge.client.extensions.common.IClientItemExtensions"
 import {$BaseBlockItem$ItemUseResult} from "com.supermartijn642.core.item.BaseBlockItem$ItemUseResult"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 
@@ -234,15 +234,15 @@ static readonly "BY_BLOCK": $Map<($Block), ($Item)>
 constructor(block: $Block$$Type, properties: $ItemProperties$$Type)
 constructor(block: $Block$$Type, properties: $Item$Properties$$Type)
 
-public "interactWithEntity"(stack: $ItemStack$$Type, target: $LivingEntity$$Type, player: $Player$$Type, hand: $InteractionHand$$Type): $BaseBlockItem$InteractionFeedback
 public "initializeClient"(consumer: $Consumer$$Type<($IClientItemExtensions)>): void
 public "appendHoverText"(stack: $ItemStack$$Type, context: $Item$TooltipContext$$Type, information: $List$$Type<($Component$$Type)>, flag: $TooltipFlag$$Type): void
 public "useOn"(context: $UseOnContext$$Type): $InteractionResult
 public "inventoryTick"(stack: $ItemStack$$Type, level: $Level$$Type, entity: $Entity$$Type, slot: integer, isSelected: boolean): void
 public "onItemUseFirst"(stack: $ItemStack$$Type, context: $UseOnContext$$Type): $InteractionResult
+public "interactWithEntity"(stack: $ItemStack$$Type, target: $LivingEntity$$Type, player: $Player$$Type, hand: $InteractionHand$$Type): $BaseBlockItem$InteractionFeedback
+public "interactWithBlock"(stack: $ItemStack$$Type, player: $Player$$Type, hand: $InteractionHand$$Type, level: $Level$$Type, hitPos: $BlockPos$$Type, hitSide: $Direction$$Type, hitLocation: $Vec3$$Type): $BaseBlockItem$InteractionFeedback
 public "interactWithBlockFirst"(stack: $ItemStack$$Type, player: $Player$$Type, hand: $InteractionHand$$Type, level: $Level$$Type, hitPos: $BlockPos$$Type, hitSide: $Direction$$Type, hitLocation: $Vec3$$Type): $BaseBlockItem$InteractionFeedback
 public "inventoryUpdate"(stack: $ItemStack$$Type, level: $Level$$Type, entity: $Entity$$Type, itemSlot: integer, isSelected: boolean): void
-public "interactWithBlock"(stack: $ItemStack$$Type, player: $Player$$Type, hand: $InteractionHand$$Type, level: $Level$$Type, hitPos: $BlockPos$$Type, hitSide: $Direction$$Type, hitLocation: $Vec3$$Type): $BaseBlockItem$InteractionFeedback
 public "use"(level: $Level$$Type, player: $Player$$Type, hand: $InteractionHand$$Type): $InteractionResultHolder<($ItemStack)>
 public "interact"(stack: $ItemStack$$Type, player: $Player$$Type, hand: $InteractionHand$$Type, level: $Level$$Type): $BaseBlockItem$ItemUseResult
 public "interactLivingEntity"(stack: $ItemStack$$Type, player: $Player$$Type, target: $LivingEntity$$Type, hand: $InteractionHand$$Type): $InteractionResult

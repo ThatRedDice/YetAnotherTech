@@ -1,6 +1,6 @@
 declare module "appeng.helpers.InterfaceLogic" {
-import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$IConfigurableObject$$Interface} from "appeng.api.util.IConfigurableObject"
+import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$MEStorage} from "appeng.api.storage.MEStorage"
 import {$IUpgradeableObject$$Interface} from "appeng.api.upgrades.IUpgradeableObject"
@@ -27,20 +27,20 @@ export class $InterfaceLogic implements $ICraftingRequester$$Interface, $IUpgrad
 constructor(arg0: $IManagedGridNode$$Type, arg1: $InterfaceLogicHost$$Type, arg2: $Item$$Type)
 constructor(arg0: $IManagedGridNode$$Type, arg1: $InterfaceLogicHost$$Type, arg2: $Item$$Type, arg3: integer)
 
-public "getUpgrades"(): $IUpgradeInventory
+public "addDrops"(arg0: $List$$Type<($ItemStack$$Type)>): void
 public "getConfigManager"(): $IConfigManager
 public "getStorage"(): $ConfigInventory
 public "clearContent"(): void
 public "notifyNeighbors"(): void
 public "readFromNBT"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "writeToNBT"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
-public "addDrops"(arg0: $List$$Type<($ItemStack$$Type)>): void
-public "getRequestedJobs"(): $ImmutableSet<($ICraftingLink)>
-public "jobStateChange"(arg0: $ICraftingLink$$Type): void
-public "insertCraftedItems"(arg0: $ICraftingLink$$Type, arg1: $AEKey$$Type, arg2: long, arg3: $Actionable$$Type): long
 public "getActionableNode"(): $IGridNode
+public "insertCraftedItems"(arg0: $ICraftingLink$$Type, arg1: $AEKey$$Type, arg2: long, arg3: $Actionable$$Type): long
+public "jobStateChange"(arg0: $ICraftingLink$$Type): void
+public "getRequestedJobs"(): $ImmutableSet<($ICraftingLink)>
 public "getCableConnectionType"(arg0: $Direction$$Type): $AECableType
 public "gridChanged"(): void
+public "getUpgrades"(): $IUpgradeInventory
 public "getLocation"(): $DimensionalBlockPos
 public "setPriority"(arg0: integer): void
 public "getPriority"(): integer
@@ -48,11 +48,11 @@ public "getConfig"(): $ConfigInventory
 public "getInventory"(): $MEStorage
 public "getInstalledUpgrades"(arg0: $ItemLike$$Type): integer
 public "isUpgradedWith"(arg0: $ItemLike$$Type): boolean
-get "upgrades"(): $IUpgradeInventory
 get "configManager"(): $IConfigManager
 get "storage"(): $ConfigInventory
-get "requestedJobs"(): $ImmutableSet<($ICraftingLink)>
 get "actionableNode"(): $IGridNode
+get "requestedJobs"(): $ImmutableSet<($ICraftingLink)>
+get "upgrades"(): $IUpgradeInventory
 get "location"(): $DimensionalBlockPos
 set "priority"(value: integer)
 get "priority"(): integer
@@ -85,10 +85,10 @@ import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$GenericStackInv} from "appeng.helpers.externalstorage.GenericStackInv"
 
 export interface $InterfaceLogicHost$$Interface extends $IConfigurableObject$$Interface, $IUpgradeableObject$$Interface, $IPriorityHost$$Interface, $IConfigInvHost$$Interface {
-get "upgrades"(): $IUpgradeInventory
 get "configManager"(): $IConfigManager
 get "storage"(): $GenericStackInv
 get "interfaceLogic"(): $InterfaceLogic
+get "upgrades"(): $IUpgradeInventory
 set "priority"(value: integer)
 get "priority"(): integer
 get "config"(): $GenericStackInv
@@ -97,12 +97,12 @@ get "mainMenuIcon"(): $ItemStack
 }
 
 export class $InterfaceLogicHost implements $InterfaceLogicHost$$Interface {
- "getUpgrades"(): $IUpgradeInventory
  "getConfigManager"(): $IConfigManager
  "getStorage"(): $GenericStackInv
  "returnToMainMenu"(arg0: $Player$$Type, arg1: $ISubMenu$$Type): void
  "saveChanges"(): void
  "getInterfaceLogic"(): $InterfaceLogic
+ "getUpgrades"(): $IUpgradeInventory
  "setPriority"(arg0: integer): void
  "getPriority"(): integer
  "getConfig"(): $GenericStackInv
@@ -122,8 +122,8 @@ export type $InterfaceLogicHost$$Type = ($InterfaceLogicHost);
  */
 export type $InterfaceLogicHost$$Original = $InterfaceLogicHost;}
 declare module "appeng.helpers.AEMultiBlockEntity" {
-import {$AEColor, $AEColor$$Type} from "appeng.api.util.AEColor"
 import {$IColorableBlockEntity$$Interface} from "appeng.api.implementations.blockentities.IColorableBlockEntity"
+import {$AEColor, $AEColor$$Type} from "appeng.api.util.AEColor"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
@@ -131,10 +131,10 @@ import {$DimensionalBlockPos} from "appeng.api.util.DimensionalBlockPos"
 import {$IPart, $IPart$$Type} from "appeng.api.parts.IPart"
 import {$IInWorldGridNodeHost$$Interface} from "appeng.api.networking.IInWorldGridNodeHost"
 import {$IPartHost$$Interface} from "appeng.api.parts.IPartHost"
-import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$AECableType, $AECableType$$Type} from "appeng.api.util.AECableType"
-import {$SelectedPart} from "appeng.api.parts.SelectedPart"
+import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$IGridNode} from "appeng.api.networking.IGridNode"
+import {$SelectedPart} from "appeng.api.parts.SelectedPart"
 import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
@@ -157,11 +157,10 @@ export class $AEMultiBlockEntity implements $AEMultiBlockEntity$$Interface {
  "hasRedstone"(): boolean
  "notifyNeighbors"(): void
  "clearContainer"(): void
- "addPart"<T extends $IPart>(arg0: $IPartItem$$Type<(T)>, arg1: $Direction$$Type, arg2: $Player$$Type): T
- "isInWorld"(): boolean
- "replacePart"<T extends $IPart>(arg0: $IPartItem$$Type<(T)>, arg1: $Direction$$Type, arg2: $Player$$Type, arg3: $InteractionHand$$Type): T
  "markForSave"(): void
  "markForUpdate"(): void
+ "replacePart"<T extends $IPart>(arg0: $IPartItem$$Type<(T)>, arg1: $Direction$$Type, arg2: $Player$$Type, arg3: $InteractionHand$$Type): T
+ "isInWorld"(): boolean
  "getPart"(arg0: $Direction$$Type): $IPart
  "partChanged"(): void
  "selectPartLocal"(arg0: $Vec3$$Type): $SelectedPart
@@ -171,6 +170,7 @@ export class $AEMultiBlockEntity implements $AEMultiBlockEntity$$Interface {
  "removePart"(arg0: $IPart$$Type): boolean
  "selectPartWorld"(arg0: $Vec3$$Type): $SelectedPart
  "notifyNeighborNow"(arg0: $Direction$$Type): void
+ "addPart"<T extends $IPart>(arg0: $IPartItem$$Type<(T)>, arg1: $Direction$$Type, arg2: $Player$$Type): T
  "isEmpty"(): boolean
  "getLocation"(): $DimensionalBlockPos
  "cleanup"(): void
@@ -277,9 +277,9 @@ export type $WirelessCraftingTerminalMenuHost$$Type<T> = ($WirelessCraftingTermi
 export type $WirelessCraftingTerminalMenuHost$$Original<T> = $WirelessCraftingTerminalMenuHost<(T)>;}
 declare module "appeng.helpers.WirelessTerminalMenuHost" {
 import {$ILinkStatus} from "appeng.api.storage.ILinkStatus"
+import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$KeyTypeSelectionHost$$Interface} from "appeng.api.util.KeyTypeSelectionHost"
 import {$IEnergySource} from "appeng.api.networking.energy.IEnergySource"
-import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$MEStorage} from "appeng.api.storage.MEStorage"
 import {$KeyTypeSelection} from "appeng.api.util.KeyTypeSelection"
 import {$IActionHost$$Interface} from "appeng.api.networking.security.IActionHost"
@@ -289,8 +289,8 @@ import {$ItemMenuHostLocator$$Type} from "appeng.menu.locator.ItemMenuHostLocato
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$IGridNode} from "appeng.api.networking.IGridNode"
 import {$PowerMultiplier$$Type} from "appeng.api.config.PowerMultiplier"
-import {$BiConsumer$$Type} from "java.util.function.BiConsumer"
 import {$IPortableTerminal$$Interface} from "appeng.api.implementations.menuobjects.IPortableTerminal"
+import {$BiConsumer$$Type} from "java.util.function.BiConsumer"
 import {$IConfigManager} from "appeng.api.util.IConfigManager"
 import {$AEKey$$Type} from "appeng.api.stacks.AEKey"
 import {$ISubMenu$$Type} from "appeng.menu.ISubMenu"
@@ -300,8 +300,8 @@ export class $WirelessTerminalMenuHost<T extends $WirelessTerminalItem> extends 
 constructor(arg0: T, arg1: $Player$$Type, arg2: $ItemMenuHostLocator$$Type, arg3: $BiConsumer$$Type<($Player), ($ISubMenu)>)
 
 public "getConfigManager"(): $IConfigManager
-public "extractAEPower"(arg0: double, arg1: $Actionable$$Type, arg2: $PowerMultiplier$$Type): double
 public "getActionableNode"(): $IGridNode
+public "extractAEPower"(arg0: double, arg1: $Actionable$$Type, arg2: $PowerMultiplier$$Type): double
 public "returnToMainMenu"(arg0: $Player$$Type, arg1: $ISubMenu$$Type): void
 public "getMainMenuIcon"(): $ItemStack
 public "getKeyTypeSelection"(): $KeyTypeSelection

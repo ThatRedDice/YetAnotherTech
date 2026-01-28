@@ -3,8 +3,8 @@ import {$ArgumentTypeInfo$Template, $ArgumentTypeInfo$Template$$Type} from "net.
 import {$ArgumentType$$Type} from "com.mojang.brigadier.arguments.ArgumentType"
 import {$FriendlyByteBuf$$Type} from "net.minecraft.network.FriendlyByteBuf"
 import {$JsonObject$$Type} from "com.google.gson.JsonObject"
-import {$DoubleArgumentType, $DoubleArgumentType$$Type} from "com.mojang.brigadier.arguments.DoubleArgumentType"
 import {$DoubleArgumentInfo$Template, $DoubleArgumentInfo$Template$$Type} from "net.minecraft.commands.synchronization.brigadier.DoubleArgumentInfo$Template"
+import {$DoubleArgumentType, $DoubleArgumentType$$Type} from "com.mojang.brigadier.arguments.DoubleArgumentType"
 import {$ArgumentTypeInfo$$Interface} from "net.minecraft.commands.synchronization.ArgumentTypeInfo"
 
 export class $DoubleArgumentInfo implements $ArgumentTypeInfo$$Interface<($DoubleArgumentType), ($DoubleArgumentInfo$Template)> {
@@ -29,8 +29,8 @@ export type $DoubleArgumentInfo$$Type = ($DoubleArgumentInfo);
 export type $DoubleArgumentInfo$$Original = $DoubleArgumentInfo;}
 declare module "net.minecraft.commands.synchronization.brigadier.FloatArgumentInfo" {
 import {$ArgumentTypeInfo$Template, $ArgumentTypeInfo$Template$$Type} from "net.minecraft.commands.synchronization.ArgumentTypeInfo$Template"
-import {$FloatArgumentInfo$Template, $FloatArgumentInfo$Template$$Type} from "net.minecraft.commands.synchronization.brigadier.FloatArgumentInfo$Template"
 import {$ArgumentType$$Type} from "com.mojang.brigadier.arguments.ArgumentType"
+import {$FloatArgumentInfo$Template, $FloatArgumentInfo$Template$$Type} from "net.minecraft.commands.synchronization.brigadier.FloatArgumentInfo$Template"
 import {$FriendlyByteBuf$$Type} from "net.minecraft.network.FriendlyByteBuf"
 import {$JsonObject$$Type} from "com.google.gson.JsonObject"
 import {$FloatArgumentType, $FloatArgumentType$$Type} from "com.mojang.brigadier.arguments.FloatArgumentType"
@@ -76,8 +76,8 @@ export type $IntegerArgumentInfo$Template$$Type = ($IntegerArgumentInfo$Template
  */
 export type $IntegerArgumentInfo$Template$$Original = $IntegerArgumentInfo$Template;}
 declare module "net.minecraft.commands.synchronization.brigadier.StringArgumentSerializer" {
-import {$ArgumentTypeInfo$Template, $ArgumentTypeInfo$Template$$Type} from "net.minecraft.commands.synchronization.ArgumentTypeInfo$Template"
 import {$StringArgumentSerializer$Template, $StringArgumentSerializer$Template$$Type} from "net.minecraft.commands.synchronization.brigadier.StringArgumentSerializer$Template"
+import {$ArgumentTypeInfo$Template, $ArgumentTypeInfo$Template$$Type} from "net.minecraft.commands.synchronization.ArgumentTypeInfo$Template"
 import {$ArgumentType$$Type} from "com.mojang.brigadier.arguments.ArgumentType"
 import {$FriendlyByteBuf$$Type} from "net.minecraft.network.FriendlyByteBuf"
 import {$StringArgumentType, $StringArgumentType$$Type} from "com.mojang.brigadier.arguments.StringArgumentType"

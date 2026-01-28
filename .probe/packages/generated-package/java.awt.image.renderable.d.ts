@@ -10,10 +10,6 @@ constructor(arg0: $AffineTransform$$Type, arg1: $RenderingHints$$Type)
 constructor(arg0: $AffineTransform$$Type, arg1: $Shape$$Type)
 constructor(arg0: $AffineTransform$$Type, arg1: $Shape$$Type, arg2: $RenderingHints$$Type)
 
-public "getTransform"(): $AffineTransform
-public "setTransform"(arg0: $AffineTransform$$Type): void
-public "getRenderingHints"(): $RenderingHints
-public "setRenderingHints"(arg0: $RenderingHints$$Type): void
 /**
  * 
  * @deprecated
@@ -28,13 +24,17 @@ public "preConcatenateTransform"(arg0: $AffineTransform$$Type): void
 public "concatenateTransform"(arg0: $AffineTransform$$Type): void
 public "setAreaOfInterest"(arg0: $Shape$$Type): void
 public "getAreaOfInterest"(): $Shape
+public "getTransform"(): $AffineTransform
+public "setTransform"(arg0: $AffineTransform$$Type): void
+public "getRenderingHints"(): $RenderingHints
+public "setRenderingHints"(arg0: $RenderingHints$$Type): void
 public "clone"(): any
+set "areaOfInterest"(value: $Shape$$Type)
+get "areaOfInterest"(): $Shape
 get "transform"(): $AffineTransform
 set "transform"(value: $AffineTransform$$Type)
 get "renderingHints"(): $RenderingHints
 set "renderingHints"(value: $RenderingHints$$Type)
-set "areaOfInterest"(value: $Shape$$Type)
-get "areaOfInterest"(): $Shape
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -47,33 +47,33 @@ export type $RenderContext$$Type = ($RenderContext);
 export type $RenderContext$$Original = $RenderContext;}
 declare module "java.awt.image.renderable.RenderableImage" {
 import {$Vector} from "java.util.Vector"
-import {$RenderedImage} from "java.awt.image.RenderedImage"
 import {$RenderingHints$$Type} from "java.awt.RenderingHints"
 import {$RenderContext$$Type} from "java.awt.image.renderable.RenderContext"
+import {$RenderedImage} from "java.awt.image.RenderedImage"
 
 export interface $RenderableImage$$Interface {
-get "dynamic"(): boolean
 get "width"(): float
 get "height"(): float
 get "minX"(): float
 get "minY"(): float
 get "sources"(): $Vector<($RenderableImage)>
 get "propertyNames"(): (StringJS)[]
+get "dynamic"(): boolean
 }
 
 export class $RenderableImage implements $RenderableImage$$Interface {
 static readonly "HINTS_OBSERVED": StringJS
 
- "isDynamic"(): boolean
+ "createScaledRendering"(arg0: integer, arg1: integer, arg2: $RenderingHints$$Type): $RenderedImage
+ "createDefaultRendering"(): $RenderedImage
+ "createRendering"(arg0: $RenderContext$$Type): $RenderedImage
  "getWidth"(): float
  "getHeight"(): float
  "getMinX"(): float
  "getMinY"(): float
  "getSources"(): $Vector<($RenderableImage)>
  "getPropertyNames"(): (StringJS)[]
- "createRendering"(arg0: $RenderContext$$Type): $RenderedImage
- "createScaledRendering"(arg0: integer, arg1: integer, arg2: $RenderingHints$$Type): $RenderedImage
- "createDefaultRendering"(): $RenderedImage
+ "isDynamic"(): boolean
  "getProperty"(arg0: StringJS): any
 }
 /**

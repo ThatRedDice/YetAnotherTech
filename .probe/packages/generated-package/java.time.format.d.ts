@@ -5,8 +5,6 @@ import {$Locale, $Locale$$Type} from "java.util.Locale"
 export class $DecimalStyle {
 static readonly "STANDARD": $DecimalStyle
 
-public "getDecimalSeparator"(): character
-public "getZeroDigit"(): character
 public "getPositiveSign"(): character
 public "getNegativeSign"(): character
 public static "ofDefaultLocale"(): $DecimalStyle
@@ -14,16 +12,18 @@ public "withZeroDigit"(arg0: character): $DecimalStyle
 public "withPositiveSign"(arg0: character): $DecimalStyle
 public "withNegativeSign"(arg0: character): $DecimalStyle
 public "withDecimalSeparator"(arg0: character): $DecimalStyle
+public "getZeroDigit"(): character
+public static "getAvailableLocales"(): $Set<($Locale)>
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
 public static "of"(arg0: $Locale$$Type): $DecimalStyle
-public static "getAvailableLocales"(): $Set<($Locale)>
-get "decimalSeparator"(): character
-get "zeroDigit"(): character
+public "getDecimalSeparator"(): character
 get "positiveSign"(): character
 get "negativeSign"(): character
+get "zeroDigit"(): character
 public static get "availableLocales"(): $Set<($Locale)>
+get "decimalSeparator"(): character
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -87,10 +87,6 @@ static readonly "ISO_LOCAL_DATE": $DateTimeFormatter
 static readonly "BASIC_ISO_DATE": $DateTimeFormatter
 static readonly "ISO_WEEK_DATE": $DateTimeFormatter
 
-public "getZone"(): $ZoneId
-public "formatTo"(arg0: $TemporalAccessor$$Type, arg1: $Appendable$$Type): void
-public "getLocale"(): $Locale
-public "getChronology"(): $Chronology
 public static "ofLocalizedDate"(arg0: $FormatStyle$$Type): $DateTimeFormatter
 public static "ofLocalizedTime"(arg0: $FormatStyle$$Type): $DateTimeFormatter
 public static "ofLocalizedDateTime"(arg0: $FormatStyle$$Type, arg1: $FormatStyle$$Type): $DateTimeFormatter
@@ -112,20 +108,24 @@ public "parseBest"(arg0: charseq, ...arg1: ($TemporalQuery$$Type<(never)>)[]): $
 public "parseUnresolved"(arg0: charseq, arg1: $ParsePosition$$Type): $TemporalAccessor
 public "toFormat"(): $Format
 public "toFormat"(arg0: $TemporalQuery$$Type<(never)>): $Format
+public "getZone"(): $ZoneId
+public "getChronology"(): $Chronology
 public "toString"(): StringJS
 public "format"(arg0: $TemporalAccessor$$Type): StringJS
 public "parse"<T>(arg0: charseq, arg1: $TemporalQuery$$Type<(T)>): T
 public "parse"(arg0: charseq, arg1: $ParsePosition$$Type): $TemporalAccessor
 public "parse"(arg0: charseq): $TemporalAccessor
+public "getLocale"(): $Locale
+public "formatTo"(arg0: $TemporalAccessor$$Type, arg1: $Appendable$$Type): void
 public static "ofPattern"(arg0: StringJS, arg1: $Locale$$Type): $DateTimeFormatter
 public static "ofPattern"(arg0: StringJS): $DateTimeFormatter
 public "withZone"(arg0: $ZoneId$$Type): $DateTimeFormatter
-get "zone"(): $ZoneId
-get "locale"(): $Locale
-get "chronology"(): $Chronology
 get "decimalStyle"(): $DecimalStyle
 get "resolverStyle"(): $ResolverStyle
 get "resolverFields"(): $Set<($TemporalField)>
+get "zone"(): $ZoneId
+get "chronology"(): $Chronology
+get "locale"(): $Locale
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_

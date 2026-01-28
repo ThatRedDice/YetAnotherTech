@@ -5,8 +5,8 @@ import {$List$$Type} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$PartItem} from "appeng.items.parts.PartItem"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$AnnihilationPlanePart} from "appeng.parts.automation.AnnihilationPlanePart"
 import {$CreativeModeTab$ItemDisplayParameters$$Type} from "net.minecraft.world.item.CreativeModeTab$ItemDisplayParameters"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
@@ -78,28 +78,28 @@ export type $PlaneConnections$$Type = ($PlaneConnections);
 export type $PlaneConnections$$Original = $PlaneConnections;}
 declare module "appeng.parts.automation.AnnihilationPlanePart" {
 import {$TickRateModulation} from "appeng.api.networking.ticking.TickRateModulation"
+import {$DataComponentMap$$Type} from "net.minecraft.core.component.DataComponentMap"
 import {$IGridTickable$$Interface} from "appeng.api.networking.ticking.IGridTickable"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
-import {$DataComponentMap$$Type} from "net.minecraft.core.component.DataComponentMap"
 import {$List} from "java.util.List"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$IPartCollisionHelper$$Type} from "appeng.api.parts.IPartCollisionHelper"
 import {$AEBasePart} from "appeng.parts.AEBasePart"
 import {$DataComponentMap$Builder$$Type} from "net.minecraft.core.component.DataComponentMap$Builder"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
-import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$AECableType$$Type} from "appeng.api.util.AECableType"
+import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$IGridNode$$Type} from "appeng.api.networking.IGridNode"
 import {$SettingsFrom$$Type} from "appeng.util.SettingsFrom"
-import {$ItemEnchantments} from "net.minecraft.world.item.enchantment.ItemEnchantments"
 import {$PlaneConnections} from "appeng.parts.automation.PlaneConnections"
-import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
+import {$ItemEnchantments} from "net.minecraft.world.item.enchantment.ItemEnchantments"
 import {$ModelData} from "net.neoforged.neoforge.client.model.data.ModelData"
+import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$IPartModel} from "appeng.api.parts.IPartModel"
-import {$TickingRequest} from "appeng.api.networking.ticking.TickingRequest"
 import {$IPartItem$$Type} from "appeng.api.parts.IPartItem"
+import {$TickingRequest} from "appeng.api.networking.ticking.TickingRequest"
 
 export class $AnnihilationPlanePart extends $AEBasePart implements $IGridTickable$$Interface {
 constructor(arg0: $IPartItem$$Type<(never)>)
@@ -108,16 +108,16 @@ public "getEnchantments"(): $ItemEnchantments
 public "onEntityCollision"(arg0: $Entity$$Type): void
 public "readFromNBT"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "writeToNBT"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
-public "onNeighborChanged"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $BlockPos$$Type): void
-public "getBoxes"(arg0: $IPartCollisionHelper$$Type): void
 public "getTickingRequest"(arg0: $IGridNode$$Type): $TickingRequest
 public "tickingRequest"(arg0: $IGridNode$$Type, arg1: integer): $TickRateModulation
-public "exportSettings"(arg0: $SettingsFrom$$Type, arg1: $DataComponentMap$Builder$$Type): void
-public "importSettings"(arg0: $SettingsFrom$$Type, arg1: $DataComponentMap$$Type, arg2: $Player$$Type): void
-public "getCableConnectionLength"(arg0: $AECableType$$Type): float
 public "addToWorld"(): void
 public "onUpdateShape"(arg0: $Direction$$Type): void
 public "getStaticModels"(): $IPartModel
+public "getBoxes"(arg0: $IPartCollisionHelper$$Type): void
+public "getCableConnectionLength"(arg0: $AECableType$$Type): float
+public "exportSettings"(arg0: $SettingsFrom$$Type, arg1: $DataComponentMap$Builder$$Type): void
+public "importSettings"(arg0: $SettingsFrom$$Type, arg1: $DataComponentMap$$Type, arg2: $Player$$Type): void
+public "onNeighborChanged"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $BlockPos$$Type): void
 public static "getModels"(): $List<($IPartModel)>
 public "getConnections"(): $PlaneConnections
 public "getModelData"(): $ModelData

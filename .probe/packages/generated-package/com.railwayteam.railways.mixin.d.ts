@@ -87,6 +87,26 @@ export type $AccessorScheduleRuntime$$Type = ($AccessorScheduleRuntime);
  * Original type to represent the class type itself. Use in JSDoc only.
  */
 export type $AccessorScheduleRuntime$$Original = $AccessorScheduleRuntime;}
+declare module "com.railwayteam.railways.mixin.conductor_possession.AccessorClientChunkCacheStorage" {
+export {} // Mark the file as a module, do not remove unless there are other import/exports!
+export interface $AccessorClientChunkCacheStorage$$Interface {
+}
+
+export class $AccessorClientChunkCacheStorage implements $AccessorClientChunkCacheStorage$$Interface {
+ "railways$getViewCenterX"(): integer
+ "railways$setViewCenterX"(arg0: integer): void
+ "railways$getViewCenterZ"(): integer
+ "railways$setViewCenterZ"(arg0: integer): void
+}
+/**
+ * Class-specific type exported by ProbeJS, use global Type_
+ * types for convenience unless there's a naming conflict.
+ */
+export type $AccessorClientChunkCacheStorage$$Type = ($AccessorClientChunkCacheStorage);
+/**
+ * Original type to represent the class type itself. Use in JSDoc only.
+ */
+export type $AccessorClientChunkCacheStorage$$Original = $AccessorClientChunkCacheStorage;}
 declare module "com.railwayteam.railways.mixin.AccessorCarriageBogey" {
 import {$AbstractBogeyBlock, $AbstractBogeyBlock$$Type} from "com.simibubi.create.content.trains.bogey.AbstractBogeyBlock"
 
@@ -435,8 +455,8 @@ export interface $AccessorLevelRenderer$$Interface {
 }
 
 export class $AccessorLevelRenderer implements $AccessorLevelRenderer$$Interface {
- "callAddParticleInternal"(arg0: $ParticleOptions$$Type, arg1: boolean, arg2: boolean, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double): $Particle
  "railways$getRenderBuffers"(): $RenderBuffers
+ "callAddParticleInternal"(arg0: $ParticleOptions$$Type, arg1: boolean, arg2: boolean, arg3: double, arg4: double, arg5: double, arg6: double, arg7: double, arg8: double): $Particle
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -492,8 +512,8 @@ export interface $AccessorTrain$$Interface {
 }
 
 export class $AccessorTrain implements $AccessorTrain$$Interface {
- "railways$setStress"(arg0: (double)[]): void
  "railways$getStress"(): (double)[]
+ "railways$setStress"(arg0: (double)[]): void
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_

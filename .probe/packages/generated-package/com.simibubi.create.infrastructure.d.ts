@@ -84,8 +84,8 @@ import {$NoneFeatureConfiguration} from "net.minecraft.world.level.levelgen.feat
 import {$UnderwaterMagmaConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.UnderwaterMagmaConfiguration"
 import {$LakeFeature$Configuration} from "net.minecraft.world.level.levelgen.feature.LakeFeature$Configuration"
 import {$BonusChestFeature} from "net.minecraft.world.level.levelgen.feature.BonusChestFeature"
-import {$OreConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration"
 import {$NetherForestVegetationConfig} from "net.minecraft.world.level.levelgen.feature.configurations.NetherForestVegetationConfig"
+import {$OreConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration"
 import {$RandomBooleanFeatureConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.RandomBooleanFeatureConfiguration"
 import {$RandomPatchConfiguration} from "net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -254,8 +254,8 @@ export type $LayerPattern$$Type = ($LayerPattern);
  */
 export type $LayerPattern$$Original = $LayerPattern;}
 declare module "com.simibubi.create.infrastructure.config.CSchematics" {
-import {$ConfigBase$ConfigInt} from "net.createmod.catnip.config.ConfigBase$ConfigInt"
 import {$ConfigBase$ConfigBool} from "net.createmod.catnip.config.ConfigBase$ConfigBool"
+import {$ConfigBase$ConfigInt} from "net.createmod.catnip.config.ConfigBase$ConfigInt"
 import {$ConfigBase} from "net.createmod.catnip.config.ConfigBase"
 import {$ModConfigSpec} from "net.neoforged.neoforge.common.ModConfigSpec"
 import {$ConfigBase$ConfigGroup} from "net.createmod.catnip.config.ConfigBase$ConfigGroup"

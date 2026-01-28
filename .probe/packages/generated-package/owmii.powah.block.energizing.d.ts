@@ -11,13 +11,13 @@ import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$SimpleWaterloggedBlock$$Interface} from "net.minecraft.world.level.block.SimpleWaterloggedBlock"
-import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$AbstractEnergyBlock} from "owmii.powah.lib.block.AbstractEnergyBlock"
+import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$WrenchMode$$Type} from "owmii.powah.api.wrench.WrenchMode"
-import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$EnergyBlockItem} from "owmii.powah.lib.item.EnergyBlockItem"
-import {$CreativeModeTab$$Type} from "net.minecraft.world.item.CreativeModeTab"
+import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
+import {$CreativeModeTab$$Type} from "net.minecraft.world.item.CreativeModeTab"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
@@ -35,8 +35,8 @@ import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
-import {$EnergyConfig} from "owmii.powah.config.v2.types.EnergyConfig"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
+import {$EnergyConfig} from "owmii.powah.config.v2.types.EnergyConfig"
 
 export class $EnergizingRodBlock extends $AbstractEnergyBlock<($EnergyConfig), ($EnergizingRodBlock)> implements $SimpleWaterloggedBlock$$Interface, $IWrenchable$$Interface, $IHud$$Interface {
 static readonly "UPDATE_IMMEDIATE": integer
@@ -62,14 +62,14 @@ constructor(arg0: $BlockBehaviour$Properties$$Type, arg1: $Tier$$Type)
 
 public "onPlace"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: boolean): void
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
-public "setOrbPos"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $EnergizingRodTile$$Type): void
 public "onWrench"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $InteractionHand$$Type, arg5: $Direction$$Type, arg6: $WrenchMode$$Type, arg7: $Vec3$$Type): boolean
 public "renderHud"(arg0: $GuiGraphics$$Type, arg1: $BlockState$$Type, arg2: $Level$$Type, arg3: $BlockPos$$Type, arg4: $Player$$Type, arg5: $BlockHitResult$$Type, arg6: $BlockEntity$$Type): boolean
+public "setOrbPos"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $EnergizingRodTile$$Type): void
 public "getConfig"(): any
 public "getBlockItem"(arg0: $Item$Properties$$Type, arg1: $ResourceKey$$Type<($CreativeModeTab)>): $EnergyBlockItem
 public "getPickupSound"(): $Optional<($SoundEvent)>
-public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "canPlaceLiquid"(arg0: $Player$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $Fluid$$Type): boolean
+public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "pickupBlock"(arg0: $Player$$Type, arg1: $LevelAccessor$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): $ItemStack
 public "getPickupSound"(arg0: $BlockState$$Type): $Optional<($SoundEvent)>
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
@@ -95,9 +95,9 @@ import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$RecipeInput, $RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe$$Interface} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
+import {$RecipeInput, $RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 
@@ -111,10 +111,10 @@ constructor(arg0: $ItemStack$$Type, arg1: long, arg2: $List$$Type<($Ingredient$$
 public "getEnergy"(): long
 public "assemble"(arg0: $RecipeInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
 public "getSerializer"(): $RecipeSerializer<(never)>
-public "getIngredients"(): $NonNullList<($Ingredient)>
 public "canCraftInDimensions"(arg0: integer, arg1: integer): boolean
 public "getResultItem"(arg0: $HolderLookup$Provider$$Type): $ItemStack
 public "getResultItem"(): $ItemStack
+public "getIngredients"(): $NonNullList<($Ingredient)>
 public "getScaledEnergy"(): long
 public "matches"(arg0: $RecipeInput$$Type, arg1: $Level$$Type): boolean
 public "getType"(): $RecipeType<(never)>
@@ -126,8 +126,8 @@ public "isIncomplete"(): boolean
 public "getGroup"(): StringJS
 get "energy"(): long
 get "serializer"(): $RecipeSerializer<(never)>
-get "ingredients"(): $NonNullList<($Ingredient)>
 get "resultItem"(): $ItemStack
+get "ingredients"(): $NonNullList<($Ingredient)>
 get "scaledEnergy"(): long
 get "type"(): $RecipeType<(never)>
 get "special"(): boolean
@@ -200,8 +200,8 @@ static readonly "UPDATE_CLIENTS": integer
 
 constructor(arg0: $BlockBehaviour$Properties$$Type)
 
-public "onPlace"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: boolean): void
 public "getAnalogOutputSignal"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type): integer
+public "onPlace"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: boolean): void
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
 public "onWrench"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $InteractionHand$$Type, arg5: $Direction$$Type, arg6: $WrenchMode$$Type, arg7: $Vec3$$Type): boolean
 public "renderHud"(arg0: $GuiGraphics$$Type, arg1: $BlockState$$Type, arg2: $Level$$Type, arg3: $BlockPos$$Type, arg4: $Player$$Type, arg5: $BlockHitResult$$Type, arg6: $BlockEntity$$Type): boolean
@@ -209,8 +209,8 @@ public "search"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public "onRemove"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: boolean): void
 public "hasAnalogOutputSignal"(arg0: $BlockState$$Type): boolean
 public "getPickupSound"(): $Optional<($SoundEvent)>
-public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "canPlaceLiquid"(arg0: $Player$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $Fluid$$Type): boolean
+public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "pickupBlock"(arg0: $Player$$Type, arg1: $LevelAccessor$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): $ItemStack
 public "getPickupSound"(arg0: $BlockState$$Type): $Optional<($SoundEvent)>
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
@@ -231,8 +231,8 @@ import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Direction} from "net.minecraft.core.Direction"
 import {$Inventory} from "owmii.powah.lib.logistics.inventory.Inventory"
-import {$EnergizingRecipe} from "owmii.powah.block.energizing.EnergizingRecipe"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$EnergizingRecipe} from "owmii.powah.block.energizing.EnergizingRecipe"
 import {$Energy} from "owmii.powah.lib.logistics.energy.Energy"
 import {$Vec3} from "net.minecraft.world.phys.Vec3"
 import {$RecipeHolder} from "net.minecraft.world.item.crafting.RecipeHolder"
@@ -248,10 +248,10 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 
 constructor(arg0: $BlockPos$$Type, arg1: $BlockState$$Type)
 
-public "onSlotChanged"(arg0: integer): void
 public "canExtract"(arg0: integer, arg1: $ItemStack$$Type): boolean
 public "canInsert"(arg0: integer, arg1: $ItemStack$$Type): boolean
 public "readSync"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
+public "onSlotChanged"(arg0: integer): void
 public "writeSync"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): $CompoundTag
 public "setContainRecipe"(arg0: boolean): void
 public "getOrbCenter"(): $Vec3
@@ -283,8 +283,8 @@ export type $EnergizingOrbTile$$Type = ($EnergizingOrbTile);
 export type $EnergizingOrbTile$$Original = $EnergizingOrbTile;}
 declare module "owmii.powah.block.energizing.EnergizingRecipe$Serializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$EnergizingRecipe} from "owmii.powah.block.energizing.EnergizingRecipe"
@@ -307,8 +307,8 @@ export type $EnergizingRecipe$Serializer$$Type = ($EnergizingRecipe$Serializer);
 export type $EnergizingRecipe$Serializer$$Original = $EnergizingRecipe$Serializer;}
 declare module "owmii.powah.block.energizing.EnergizingRodTile" {
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
-import {$EnergizingRodBlock} from "owmii.powah.block.energizing.EnergizingRodBlock"
 import {$Ticker} from "owmii.powah.util.Ticker"
+import {$EnergizingRodBlock} from "owmii.powah.block.energizing.EnergizingRodBlock"
 import {$Tier$$Type} from "owmii.powah.block.Tier"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$EnergizingOrbTile} from "owmii.powah.block.energizing.EnergizingOrbTile"

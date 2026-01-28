@@ -123,12 +123,12 @@ static readonly "FULLY_INITIALIZED": $AtomicBoolean
 constructor(arg0: integer)
 
 public "getIndex"(): integer
-public "or"(arg0: $Predicate$$Type<($BlockState)>): $Predicate<($BlockState)>
+public static "not"<T>(arg0: $Predicate$$Type<($BlockState)>): $Predicate<($BlockState)>
 public static "isEqual"<T>(arg0: any): $Predicate<($BlockState)>
 public "negate"(): $Predicate<($BlockState)>
 public "and"(arg0: $Predicate$$Type<($BlockState)>): $Predicate<($BlockState)>
-public static "not"<T>(arg0: $Predicate$$Type<($BlockState)>): $Predicate<($BlockState)>
 public "test"(arg0: $BlockState$$Type): boolean
+public "or"(arg0: $Predicate$$Type<($BlockState)>): $Predicate<($BlockState)>
 get "index"(): integer
 }
 /**
@@ -373,8 +373,8 @@ export type $InventoryChangeListener$$Type = ($InventoryChangeListener);
  */
 export type $InventoryChangeListener$$Original = $InventoryChangeListener;}
 declare module "net.caffeinemc.mods.lithium.common.hopper.LithiumStackList" {
-import {$Container$$Type} from "net.minecraft.world.Container"
 import {$Collection$$Type} from "java.util.Collection"
+import {$Container$$Type} from "net.minecraft.world.Container"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$SequencedCollection} from "java.util.SequencedCollection"
 import {$List} from "java.util.List"
@@ -396,24 +396,24 @@ public "getOccupiedSlots"(): integer
 public "getFullSlots"(): integer
 public "runComparatorUpdatePatternOnFailedExtract"(arg0: $LithiumStackList$$Type, arg1: $Container$$Type): void
 public "maybeSendsComparatorUpdatesOnFailedExtract"(): boolean
-public "changed"(): void
-public "changedALot"(): void
 public "hasSignalStrengthOverride"(): boolean
 public "setReducedSignalStrengthOverride"(): void
 public "clearSignalStrengthOverride"(): void
 public "changedInteractionConditions"(): void
+public "changedALot"(): void
 public "remove"(arg0: integer): $ItemStack
 public "clear"(): void
 public "add"(arg0: integer, arg1: $ItemStack$$Type): void
 public "add"(arg0: integer, arg1: any): void
-public "set"(arg0: integer, arg1: any): any
 public "set"(arg0: integer, arg1: $ItemStack$$Type): $ItemStack
+public "set"(arg0: integer, arg1: any): any
+public "changed"(): void
 public "lithium$notify"(arg0: any, arg1: integer): void
 public "lithium$notify"(arg0: $ItemStack$$Type, arg1: integer): void
 public "lithium$notifyCount"(arg0: $ItemStack$$Type, arg1: integer, arg2: integer): void
 public "lithium$notifyCount"(arg0: any, arg1: integer, arg2: integer): void
-public "lithium$forceUnsubscribe"(arg0: any, arg1: integer): void
 public "lithium$forceUnsubscribe"(arg0: $ItemStack$$Type, arg1: integer): void
+public "lithium$forceUnsubscribe"(arg0: any, arg1: integer): void
 public static "without"<T>(arg0: $ChangeSubscriber$$Type<($ItemStack$$Type)>, arg1: $ChangeSubscriber$$Type<($ItemStack$$Type)>, arg2: integer, arg3: boolean): $ChangeSubscriber<($ItemStack)>
 public static "without"<T>(arg0: $ChangeSubscriber$$Type<($ItemStack$$Type)>, arg1: $ChangeSubscriber$$Type<($ItemStack$$Type)>): $ChangeSubscriber<($ItemStack)>
 public static "combine"<T>(arg0: $ChangeSubscriber$$Type<($ItemStack$$Type)>, arg1: integer, arg2: $ChangeSubscriber$$Type<($ItemStack$$Type)>, arg3: integer): $ChangeSubscriber<($ItemStack)>
@@ -479,8 +479,8 @@ export type $LithiumCooldownReceivingInventory$$Type = ($LithiumCooldownReceivin
  */
 export type $LithiumCooldownReceivingInventory$$Original = $LithiumCooldownReceivingInventory;}
 declare module "net.caffeinemc.mods.lithium.common.tracking.block.ChunkSectionChangeCallback" {
-import {$SectionPos$$Type} from "net.minecraft.core.SectionPos"
 import {$SectionedBlockChangeTracker$$Type} from "net.caffeinemc.mods.lithium.common.tracking.block.SectionedBlockChangeTracker"
+import {$SectionPos$$Type} from "net.minecraft.core.SectionPos"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockListeningSection$$Type} from "net.caffeinemc.mods.lithium.common.block.BlockListeningSection"
 import {$ListeningBlockStatePredicate$$Type} from "net.caffeinemc.mods.lithium.common.block.ListeningBlockStatePredicate"
@@ -629,8 +629,8 @@ export type $ChangeSubscriber$EnchantmentSubscriber$$Type<T> = ($ChangeSubscribe
 export type $ChangeSubscriber$EnchantmentSubscriber$$Original<T> = $ChangeSubscriber$EnchantmentSubscriber<(T)>;}
 declare module "net.caffeinemc.mods.lithium.common.world.interests.PointOfInterestStorageExtended" {
 import {$PoiType, $PoiType$$Type} from "net.minecraft.world.entity.ai.village.poi.PoiType"
-import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$PoiRecord, $PoiRecord$$Type} from "net.minecraft.world.entity.ai.village.poi.PoiRecord"
+import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$Predicate, $Predicate$$Type} from "java.util.function.Predicate"
 import {$PoiManager$Occupancy, $PoiManager$Occupancy$$Type} from "net.minecraft.world.entity.ai.village.poi.PoiManager$Occupancy"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
@@ -700,7 +700,7 @@ public "storage"(): $Long2ReferenceOpenHashMap<($Int2ObjectMap<($GameEventListen
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $GameEventDispatcherStorage$$Type = ({"storage"?: $Long2ReferenceOpenHashMap$$Type<($Int2ObjectMap$$Type<($GameEventListenerRegistry$$Type)>)>, "loadedChunks"?: $LongOpenHashSet$$Type}) | ([storage?: $Long2ReferenceOpenHashMap$$Type<($Int2ObjectMap$$Type<($GameEventListenerRegistry$$Type)>)>, loadedChunks?: $LongOpenHashSet$$Type]);
+export type $GameEventDispatcherStorage$$Type = ({"loadedChunks"?: $LongOpenHashSet$$Type, "storage"?: $Long2ReferenceOpenHashMap$$Type<($Int2ObjectMap$$Type<($GameEventListenerRegistry$$Type)>)>}) | ([loadedChunks?: $LongOpenHashSet$$Type, storage?: $Long2ReferenceOpenHashMap$$Type<($Int2ObjectMap$$Type<($GameEventListenerRegistry$$Type)>)>]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -932,17 +932,17 @@ constructor(arg0: $WorldSectionBox$$Type, arg1: $ListeningBlockStatePredicate$$T
 
 public "isUnchangedSince"(arg0: long): boolean
 public static "registerAt"(arg0: $Level$$Type, arg1: $AABB$$Type, arg2: $ListeningBlockStatePredicate$$Type): $SectionedBlockChangeTracker
-public "matchesMovedBox"(arg0: $AABB$$Type): boolean
 public "listenToAllSections"(): void
-public "unregister"(): void
+public "matchesMovedBox"(arg0: $AABB$$Type): boolean
 public "onChunkSectionInvalidated"(arg0: $SectionPos$$Type): void
+public "unregister"(): void
 public "equals"(arg0: any): boolean
 public "hashCode"(): integer
 public "register"(): void
-public "setChanged"(arg0: long): void
 public "setChanged"(arg0: $BlockListeningSection$$Type): void
-set "changed"(value: long)
+public "setChanged"(arg0: long): void
 set "changed"(value: $BlockListeningSection$$Type)
+set "changed"(value: long)
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -1004,12 +1004,12 @@ export class $EntityPushablePredicate<S> implements $Predicate$$Interface<(S)> {
 constructor()
 
 public static "and"<T>(arg0: $Predicate$$Type<(T)>, arg1: $Predicate$$Type<(T)>): $Predicate<(T)>
-public "or"(arg0: $Predicate$$Type<(S)>): $Predicate<(S)>
+public static "not"<T>(arg0: $Predicate$$Type<(S)>): $Predicate<(S)>
 public static "isEqual"<T>(arg0: any): $Predicate<(S)>
 public "negate"(): $Predicate<(S)>
 public "and"(arg0: $Predicate$$Type<(S)>): $Predicate<(S)>
-public static "not"<T>(arg0: $Predicate$$Type<(S)>): $Predicate<(S)>
 public "test"(arg0: S): boolean
+public "or"(arg0: $Predicate$$Type<(S)>): $Predicate<(S)>
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -1024,8 +1024,8 @@ declare module "net.caffeinemc.mods.lithium.common.world.LithiumData$Data" {
 import {$PathNavigation, $PathNavigation$$Type} from "net.minecraft.world.entity.ai.navigation.PathNavigation"
 import {$ChunkSectionChangeCallback, $ChunkSectionChangeCallback$$Type} from "net.caffeinemc.mods.lithium.common.tracking.block.ChunkSectionChangeCallback"
 import {$SectionedEntityMovementTracker, $SectionedEntityMovementTracker$$Type} from "net.caffeinemc.mods.lithium.common.tracking.entity.SectionedEntityMovementTracker"
-import {$ReferenceOpenHashSet, $ReferenceOpenHashSet$$Type} from "it.unimi.dsi.fastutil.objects.ReferenceOpenHashSet"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$ReferenceOpenHashSet, $ReferenceOpenHashSet$$Type} from "it.unimi.dsi.fastutil.objects.ReferenceOpenHashSet"
 import {$Long2ReferenceOpenHashMap, $Long2ReferenceOpenHashMap$$Type} from "it.unimi.dsi.fastutil.longs.Long2ReferenceOpenHashMap"
 import {$SectionedBlockChangeTracker, $SectionedBlockChangeTracker$$Type} from "net.caffeinemc.mods.lithium.common.tracking.block.SectionedBlockChangeTracker"
 import {$GameEventDispatcherStorage, $GameEventDispatcherStorage$$Type} from "net.caffeinemc.mods.lithium.common.world.GameEventDispatcherStorage"
@@ -1233,8 +1233,8 @@ export type $ChangePublisher$$Type<T> = ($ChangePublisher<(T)>);
  */
 export type $ChangePublisher$$Original<T> = $ChangePublisher<(T)>;}
 declare module "net.caffeinemc.mods.lithium.common.entity.EquipmentEntity$TickableEnchantmentTrackingEntity" {
-import {$ChangeSubscriber$EnchantmentSubscriber$$Interface} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber$EnchantmentSubscriber"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$ChangeSubscriber$EnchantmentSubscriber$$Interface} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber$EnchantmentSubscriber"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
 
 export interface $EquipmentEntity$TickableEnchantmentTrackingEntity$$Interface extends $ChangeSubscriber$EnchantmentSubscriber$$Interface<($ItemStack)> {
@@ -1443,8 +1443,8 @@ import {$EntityPushablePredicate$$Type} from "net.caffeinemc.mods.lithium.common
 import {$AbortableIterationConsumer$Continuation} from "net.minecraft.util.AbortableIterationConsumer$Continuation"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$AABB$$Type} from "net.minecraft.world.phys.AABB"
 import {$BlockCachingEntity$$Type} from "net.caffeinemc.mods.lithium.common.entity.pushable.BlockCachingEntity"
+import {$AABB$$Type} from "net.minecraft.world.phys.AABB"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export interface $ClimbingMobCachingSection$$Interface {
@@ -1673,15 +1673,15 @@ export class $WorldSectionBox extends $Record {
 constructor(world: $Level$$Type, chunkX1: integer, chunkY1: integer, chunkZ1: integer, chunkX2: integer, chunkY2: integer, chunkZ2: integer)
 
 public "numSections"(): integer
-public "matchesRelevantBlocksBox"(arg0: $AABB$$Type): boolean
-public static "relevantExpandedBlocksBox"(arg0: $Level$$Type, arg1: $AABB$$Type): $WorldSectionBox
+public static "entityAccessBox"(arg0: $Level$$Type, arg1: $AABB$$Type): $WorldSectionBox
 public "chunkX1"(): integer
 public "chunkX2"(): integer
 public "chunkZ1"(): integer
 public "chunkZ2"(): integer
 public "chunkY1"(): integer
 public "chunkY2"(): integer
-public static "entityAccessBox"(arg0: $Level$$Type, arg1: $AABB$$Type): $WorldSectionBox
+public "matchesRelevantBlocksBox"(arg0: $AABB$$Type): boolean
+public static "relevantExpandedBlocksBox"(arg0: $Level$$Type, arg1: $AABB$$Type): $WorldSectionBox
 public static "relevantFluidBox"(arg0: $Level$$Type, arg1: $AABB$$Type): $WorldSectionBox
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
@@ -1777,8 +1777,8 @@ export class $ListeningBlockStatePredicate extends $TrackedBlockStatePredicate {
 static readonly "FULLY_INITIALIZED": $AtomicBoolean
 static "LISTENING_MASK": integer
 
-public static "isEqual"<T>(arg0: any): $Predicate<(T)>
 public static "not"<T>(arg0: $Predicate$$Type<(T)>): $Predicate<(T)>
+public static "isEqual"<T>(arg0: any): $Predicate<(T)>
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_

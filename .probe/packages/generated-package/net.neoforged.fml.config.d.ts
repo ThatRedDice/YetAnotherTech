@@ -1,7 +1,7 @@
 declare module "net.neoforged.fml.config.IConfigSpec" {
 import {$ModConfig$$Type} from "net.neoforged.fml.config.ModConfig"
-import {$UnmodifiableCommentedConfig$$Type} from "com.electronwill.nightconfig.core.UnmodifiableCommentedConfig"
 import {$IConfigSpec$ILoadedConfig$$Type} from "net.neoforged.fml.config.IConfigSpec$ILoadedConfig"
+import {$UnmodifiableCommentedConfig$$Type} from "com.electronwill.nightconfig.core.UnmodifiableCommentedConfig"
 import {$CommentedConfig$$Type} from "com.electronwill.nightconfig.core.CommentedConfig"
 
 /**

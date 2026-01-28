@@ -2,37 +2,37 @@ declare module "io.redspace.ironsspellbooks.capabilities.magic.RecastInstance" {
 import {$ISerializable$$Interface} from "io.redspace.ironsspellbooks.api.network.ISerializable"
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$FriendlyByteBuf$$Type} from "net.minecraft.network.FriendlyByteBuf"
-import {$CastSource, $CastSource$$Type} from "io.redspace.ironsspellbooks.api.spells.CastSource"
 import {$Tag$$Type} from "net.minecraft.nbt.Tag"
+import {$CastSource, $CastSource$$Type} from "io.redspace.ironsspellbooks.api.spells.CastSource"
 import {$INBTSerializable$$Interface} from "net.neoforged.neoforge.common.util.INBTSerializable"
-import {$ICastDataSerializable, $ICastDataSerializable$$Type} from "io.redspace.ironsspellbooks.api.spells.ICastDataSerializable"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$ICastDataSerializable, $ICastDataSerializable$$Type} from "io.redspace.ironsspellbooks.api.spells.ICastDataSerializable"
 
 export class $RecastInstance implements $ISerializable$$Interface, $INBTSerializable$$Interface<($CompoundTag)> {
 constructor()
 constructor(arg0: StringJS, arg1: integer, arg2: integer, arg3: integer, arg4: $CastSource$$Type, arg5: $ICastDataSerializable$$Type)
 
-public "writeToBuffer"(arg0: $FriendlyByteBuf$$Type): void
-public "readFromBuffer"(arg0: $FriendlyByteBuf$$Type): void
+public "getTotalRecasts"(): integer
+public "getTicksRemaining"(): integer
+public "getTicksToLive"(): integer
 public "getSpellId"(): StringJS
 public "getCastSource"(): $CastSource
 public "getSpellLevel"(): integer
 public "getCastData"(): $ICastDataSerializable
 public "getRemainingRecasts"(): integer
-public "getTicksRemaining"(): integer
-public "getTicksToLive"(): integer
-public "getTotalRecasts"(): integer
+public "writeToBuffer"(arg0: $FriendlyByteBuf$$Type): void
+public "readFromBuffer"(arg0: $FriendlyByteBuf$$Type): void
 public "deserializeNBT"(arg0: $HolderLookup$Provider$$Type, arg1: $CompoundTag$$Type): void
 public "deserializeNBT"(arg0: $HolderLookup$Provider$$Type, arg1: $Tag$$Type): void
 public "serializeNBT"(arg0: $HolderLookup$Provider$$Type): $CompoundTag
+get "totalRecasts"(): integer
+get "ticksRemaining"(): integer
+get "ticksToLive"(): integer
 get "spellId"(): StringJS
 get "castSource"(): $CastSource
 get "spellLevel"(): integer
 get "castData"(): $ICastDataSerializable
 get "remainingRecasts"(): integer
-get "ticksRemaining"(): integer
-get "ticksToLive"(): integer
-get "totalRecasts"(): integer
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -85,19 +85,19 @@ constructor(arg0: $LivingEntity$$Type)
 constructor(arg0: integer)
 
 public "isCasting"(): boolean
-public "syncToPlayer"(arg0: $ServerPlayer$$Type): void
 public "setSpinAttackType"(arg0: $SpinAttackType$$Type): void
-public "getHeartstopAccumulatedDamage"(): float
+public "syncToPlayer"(arg0: $ServerPlayer$$Type): void
+public "getCastingSpellId"(): StringJS
+public "getCastingSpellLevel"(): integer
+public "isSpellLearned"(arg0: $AbstractSpell$$Type): boolean
+public "getCastingEquipmentSlot"(): StringJS
 public "saveNBTData"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "loadNBTData"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "setEvasionHitsRemaining"(arg0: integer): void
 public "subtractEvasionHit"(): void
 public "getEvasionHitsRemaining"(): integer
 public "setHeartstopAccumulatedDamage"(arg0: float): void
-public "getCastingSpellId"(): StringJS
-public "getCastingSpellLevel"(): integer
-public "isSpellLearned"(arg0: $AbstractSpell$$Type): boolean
-public "getCastingEquipmentSlot"(): StringJS
+public "getHeartstopAccumulatedDamage"(): float
 public "doSync"(): void
 public "addHeartstopDamage"(arg0: float): void
 public "setIsCasting"(arg0: boolean, arg1: StringJS, arg2: integer, arg3: StringJS): void
@@ -114,13 +114,13 @@ public "setSpellSelection"(arg0: $SpellSelection$$Type): void
 public "forgetAllSpells"(): void
 get "casting"(): boolean
 set "spinAttackType"(value: $SpinAttackType$$Type)
-get "heartstopAccumulatedDamage"(): float
-set "evasionHitsRemaining"(value: integer)
-get "evasionHitsRemaining"(): integer
-set "heartstopAccumulatedDamage"(value: float)
 get "castingSpellId"(): StringJS
 get "castingSpellLevel"(): integer
 get "castingEquipmentSlot"(): StringJS
+set "evasionHitsRemaining"(value: integer)
+get "evasionHitsRemaining"(): integer
+set "heartstopAccumulatedDamage"(value: float)
+get "heartstopAccumulatedDamage"(): float
 get "spinAttackType"(): $SpinAttackType
 get "serverPlayerId"(): integer
 get "spellSelection"(): $SpellSelection
@@ -149,14 +149,14 @@ static readonly "SPELL_COOLDOWN": StringJS
 
 constructor()
 
-public "syncToPlayer"(arg0: $ServerPlayer$$Type): void
 public "decrementCooldown"(arg0: $CooldownInstance$$Type, arg1: integer): boolean
+public "syncToPlayer"(arg0: $ServerPlayer$$Type): void
+public "removeCooldown"(arg0: StringJS): boolean
+public "clearCooldowns"(): void
 public "saveNBTData"(): $ListTag
 public "loadNBTData"(arg0: $ListTag$$Type): void
-public "clearCooldowns"(): void
 public "getSpellCooldowns"(): $Map<(StringJS), ($CooldownInstance)>
 public "hasCooldownsActive"(): boolean
-public "removeCooldown"(arg0: StringJS): boolean
 public "tick"(arg0: integer): void
 public "getCooldownPercent"(arg0: $AbstractSpell$$Type): float
 public "addCooldown"(arg0: $AbstractSpell$$Type, arg1: integer, arg2: integer): void
@@ -183,13 +183,13 @@ export class $CooldownInstance {
 constructor(arg0: integer)
 constructor(arg0: integer, arg1: integer)
 
+public "getCooldownRemaining"(): integer
 public "getSpellCooldown"(): integer
 public "decrementBy"(arg0: integer): void
-public "getCooldownRemaining"(): integer
 public "decrement"(): void
 public "getCooldownPercent"(): float
-get "spellCooldown"(): integer
 get "cooldownRemaining"(): integer
+get "spellCooldown"(): integer
 get "cooldownPercent"(): float
 }
 /**
@@ -218,20 +218,20 @@ constructor(arg0: $Map$$Type<(StringJS), ($RecastInstance$$Type)>)
 constructor(arg0: $ServerPlayer$$Type)
 
 public "syncToPlayer"(arg0: $RecastInstance$$Type): void
-public "saveNBTData"(arg0: $HolderLookup$Provider$$Type): $ListTag
-public "loadNBTData"(arg0: $ListTag$$Type, arg1: $HolderLookup$Provider$$Type): void
+public "getActiveRecasts"(): $List<($RecastInstance)>
 public "hasRecastForSpell"(arg0: $AbstractSpell$$Type): boolean
 public "hasRecastForSpell"(arg0: StringJS): boolean
-public "decrementRecastCount"(arg0: $AbstractSpell$$Type): void
 public "decrementRecastCount"(arg0: StringJS): void
+public "decrementRecastCount"(arg0: $AbstractSpell$$Type): void
 public "addRecast"(arg0: $RecastInstance$$Type, arg1: $MagicData$$Type): boolean
 public "getRecastInstance"(arg0: StringJS): $RecastInstance
 public "removeRecast"(arg0: $RecastInstance$$Type, arg1: $RecastResult$$Type): void
 public "removeRecast"(arg0: StringJS): void
+public "saveNBTData"(arg0: $HolderLookup$Provider$$Type): $ListTag
+public "loadNBTData"(arg0: $ListTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "syncAllToPlayer"(): void
 public "hasRecastsActive"(): boolean
 public "tickRecasts"(): void
-public "getActiveRecasts"(): $List<($RecastInstance)>
 public "forceAddRecast"(arg0: $RecastInstance$$Type): void
 public "tick"(arg0: integer): void
 public "toString"(): StringJS

@@ -4,8 +4,8 @@ import {$Criterion$$Type} from "net.minecraft.advancements.Criterion"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$RecipeCategory$$Type} from "net.minecraft.data.recipes.RecipeCategory"
 import {$ItemLike$$Type} from "net.minecraft.world.level.ItemLike"
-import {$CraftingBookCategory} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CraftingBookCategory} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 
 export interface $RecipeBuilder$$Interface {
 get "result"(): $Item
@@ -36,8 +36,8 @@ declare module "net.minecraft.data.recipes.RecipeOutput" {
 import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Recipe$$Type} from "net.minecraft.world.item.crafting.Recipe"
 import {$IRecipeOutputExtension$$Interface} from "net.neoforged.neoforge.common.extensions.IRecipeOutputExtension"
-import {$AdvancementHolder$$Type} from "net.minecraft.advancements.AdvancementHolder"
 import {$Advancement$Builder} from "net.minecraft.advancements.Advancement$Builder"
+import {$AdvancementHolder$$Type} from "net.minecraft.advancements.AdvancementHolder"
 import {$ICondition$$Type} from "net.neoforged.neoforge.common.conditions.ICondition"
 
 export interface $RecipeOutput$$Interface extends $IRecipeOutputExtension$$Interface {
@@ -71,8 +71,8 @@ import {$PackOutput$$Type} from "net.minecraft.data.PackOutput"
 import {$Codec$$Type} from "com.mojang.serialization.Codec"
 import {$CompletableFuture, $CompletableFuture$$Type} from "java.util.concurrent.CompletableFuture"
 import {$DataProvider$$Interface} from "net.minecraft.data.DataProvider"
-import {$TagKey$$Type} from "net.minecraft.tags.TagKey"
 import {$ItemLike$$Type} from "net.minecraft.world.level.ItemLike"
+import {$TagKey$$Type} from "net.minecraft.tags.TagKey"
 import {$Item$$Type} from "net.minecraft.world.item.Item"
 import {$Path$$Type} from "java.nio.file.Path"
 
@@ -81,13 +81,13 @@ constructor(arg0: $PackOutput$$Type, arg1: $CompletableFuture$$Type<($HolderLook
 
 public static "threeByThreePacker"(arg0: $RecipeOutput$$Type, arg1: $RecipeCategory$$Type, arg2: $ItemLike$$Type, arg3: $ItemLike$$Type): void
 public static "getHasName"(arg0: $ItemLike$$Type): StringJS
-public static "has"(arg0: $TagKey$$Type<($Item)>): $Criterion<($InventoryChangeTrigger$TriggerInstance)>
 public static "has"(arg0: $ItemLike$$Type): $Criterion<($InventoryChangeTrigger$TriggerInstance)>
 public static "has"(arg0: $MinMaxBounds$Ints$$Type, arg1: $ItemLike$$Type): $Criterion<($InventoryChangeTrigger$TriggerInstance)>
+public static "has"(arg0: $TagKey$$Type<($Item)>): $Criterion<($InventoryChangeTrigger$TriggerInstance)>
 public "getName"(): StringJS
 public "run"(arg0: $CachedOutput$$Type): $CompletableFuture<(never)>
-public static "saveStable"<T>(arg0: $CachedOutput$$Type, arg1: $HolderLookup$Provider$$Type, arg2: $Codec$$Type<(T)>, arg3: T, arg4: $Path$$Type): $CompletableFuture<(never)>
 public static "saveStable"(arg0: $CachedOutput$$Type, arg1: $JsonElement$$Type, arg2: $Path$$Type): $CompletableFuture
+public static "saveStable"<T>(arg0: $CachedOutput$$Type, arg1: $HolderLookup$Provider$$Type, arg2: $Codec$$Type<(T)>, arg3: T, arg4: $Path$$Type): $CompletableFuture<(never)>
 get "name"(): StringJS
 }
 /**
@@ -130,14 +130,14 @@ export type $RecipeCategory$$Original = $RecipeCategory;}
 declare module "net.minecraft.data.recipes.ShapedRecipeBuilder" {
 import {$RecipeOutput$$Type} from "net.minecraft.data.recipes.RecipeOutput"
 import {$Criterion$$Type} from "net.minecraft.advancements.Criterion"
-import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$RecipeCategory$$Type} from "net.minecraft.data.recipes.RecipeCategory"
 import {$Ingredient$$Type} from "net.minecraft.world.item.crafting.Ingredient"
-import {$TagKey$$Type} from "net.minecraft.tags.TagKey"
 import {$ItemLike$$Type} from "net.minecraft.world.level.ItemLike"
-import {$CraftingBookCategory} from "net.minecraft.world.item.crafting.CraftingBookCategory"
+import {$TagKey$$Type} from "net.minecraft.tags.TagKey"
 import {$Item, $Item$$Type} from "net.minecraft.world.item.Item"
+import {$CraftingBookCategory} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$RecipeBuilder, $RecipeBuilder$$Interface} from "net.minecraft.data.recipes.RecipeBuilder"
 
 export class $ShapedRecipeBuilder implements $RecipeBuilder$$Interface {
@@ -174,14 +174,14 @@ export type $ShapedRecipeBuilder$$Original = $ShapedRecipeBuilder;}
 declare module "net.minecraft.data.recipes.ShapelessRecipeBuilder" {
 import {$RecipeOutput$$Type} from "net.minecraft.data.recipes.RecipeOutput"
 import {$Criterion$$Type} from "net.minecraft.advancements.Criterion"
-import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$RecipeCategory$$Type} from "net.minecraft.data.recipes.RecipeCategory"
 import {$Ingredient$$Type} from "net.minecraft.world.item.crafting.Ingredient"
-import {$TagKey$$Type} from "net.minecraft.tags.TagKey"
 import {$ItemLike$$Type} from "net.minecraft.world.level.ItemLike"
-import {$CraftingBookCategory} from "net.minecraft.world.item.crafting.CraftingBookCategory"
+import {$TagKey$$Type} from "net.minecraft.tags.TagKey"
 import {$Item, $Item$$Type} from "net.minecraft.world.item.Item"
+import {$CraftingBookCategory} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$RecipeBuilder, $RecipeBuilder$$Interface} from "net.minecraft.data.recipes.RecipeBuilder"
 
 export class $ShapelessRecipeBuilder implements $RecipeBuilder$$Interface {
@@ -193,13 +193,13 @@ public static "shapeless"(arg0: $RecipeCategory$$Type, arg1: $ItemLike$$Type, ar
 public static "shapeless"(arg0: $RecipeCategory$$Type, arg1: $ItemStack$$Type): $ShapelessRecipeBuilder
 public static "shapeless"(arg0: $RecipeCategory$$Type, arg1: $ItemLike$$Type): $ShapelessRecipeBuilder
 public "getResult"(): $Item
-public "group"(arg0: StringJS): $RecipeBuilder
-public "save"(arg0: $RecipeOutput$$Type, arg1: $ResourceLocation$$Type): void
 public "requires"(arg0: $Ingredient$$Type): $ShapelessRecipeBuilder
-public "requires"(arg0: $ItemLike$$Type, arg1: integer): $ShapelessRecipeBuilder
 public "requires"(arg0: $Ingredient$$Type, arg1: integer): $ShapelessRecipeBuilder
-public "requires"(arg0: $ItemLike$$Type): $ShapelessRecipeBuilder
 public "requires"(arg0: $TagKey$$Type<($Item)>): $ShapelessRecipeBuilder
+public "requires"(arg0: $ItemLike$$Type): $ShapelessRecipeBuilder
+public "requires"(arg0: $ItemLike$$Type, arg1: integer): $ShapelessRecipeBuilder
+public "group"(arg0: StringJS): $ShapelessRecipeBuilder
+public "save"(arg0: $RecipeOutput$$Type, arg1: $ResourceLocation$$Type): void
 public static "getDefaultRecipeId"(arg0: $ItemLike$$Type): $ResourceLocation
 public static "determineBookCategory"(arg0: $RecipeCategory$$Type): $CraftingBookCategory
 public "save"(arg0: $RecipeOutput$$Type): void

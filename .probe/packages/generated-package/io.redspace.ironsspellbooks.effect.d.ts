@@ -23,8 +23,8 @@ static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($Holde
 
 constructor(arg0: $MobEffectCategory$$Type, arg1: integer)
 
-public "getDescriptionLine"(arg0: $MobEffectInstance$$Type): $Component
 public static "getReductionAmount"(arg0: integer): float
+public "getDescriptionLine"(arg0: $MobEffectInstance$$Type): $Component
 public static "reduceDamage"(arg0: $LivingIncomingDamageEvent$$Type): void
 }
 /**
@@ -63,8 +63,8 @@ constructor(arg0: $MobEffectCategory$$Type, arg1: integer)
 
 public "shouldApplyEffectTickThisTick"(arg0: integer, arg1: integer): boolean
 public "applyEffectTick"(arg0: $LivingEntity$$Type, arg1: integer): boolean
-public static "addImmolateStack"(arg0: $LivingEntity$$Type, arg1: $Entity$$Type): $MobEffectInstance
 public static "damageFor"(arg0: $Entity$$Type): double
+public static "addImmolateStack"(arg0: $LivingEntity$$Type, arg1: $Entity$$Type): $MobEffectInstance
 public "clientTick"(arg0: $LivingEntity$$Type, arg1: $MobEffectInstance$$Type): void
 }
 /**
@@ -84,8 +84,8 @@ import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyBy
 import {$Attribute} from "net.minecraft.world.entity.ai.attributes.Attribute"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$MobEffectCategory$$Type} from "net.minecraft.world.effect.MobEffectCategory"
-import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Holder} from "net.minecraft.core.Holder"
+import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$MobEffect$AttributeTemplate} from "net.minecraft.world.effect.MobEffect$AttributeTemplate"
 
 export class $FallDamageImmunityEffect extends $MobEffect {
@@ -116,8 +116,8 @@ import {$Attribute} from "net.minecraft.world.entity.ai.attributes.Attribute"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$MobEffectCategory$$Type} from "net.minecraft.world.effect.MobEffectCategory"
 import {$MagicMobEffect} from "io.redspace.ironsspellbooks.effect.MagicMobEffect"
-import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Holder} from "net.minecraft.core.Holder"
+import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$MobEffect$AttributeTemplate} from "net.minecraft.world.effect.MobEffect$AttributeTemplate"
 
 export class $ChilledEffect extends $MagicMobEffect {
@@ -143,8 +143,8 @@ declare module "io.redspace.ironsspellbooks.effect.FrostbiteEffect" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$LivingDeathEvent$$Type} from "net.neoforged.neoforge.event.entity.living.LivingDeathEvent"
 import {$Map} from "java.util.Map"
-import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Holder} from "net.minecraft.core.Holder"
+import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Attribute} from "net.minecraft.world.entity.ai.attributes.Attribute"
@@ -160,8 +160,8 @@ static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($Holde
 
 constructor(arg0: $MobEffectCategory$$Type, arg1: integer)
 
-public static "handleFrostbiteDeathEffects"(arg0: $LivingDeathEvent$$Type): void
 public static "getDamageForAmplifier"(arg0: integer, arg1: $LivingEntity$$Type): float
+public static "handleFrostbiteDeathEffects"(arg0: $LivingDeathEvent$$Type): void
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -181,8 +181,8 @@ import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyBy
 import {$Attribute} from "net.minecraft.world.entity.ai.attributes.Attribute"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$MobEffectCategory$$Type} from "net.minecraft.world.effect.MobEffectCategory"
-import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Holder} from "net.minecraft.core.Holder"
+import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$MobEffect$AttributeTemplate} from "net.minecraft.world.effect.MobEffect$AttributeTemplate"
 
 /**
@@ -268,8 +268,8 @@ import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyBy
 import {$Attribute} from "net.minecraft.world.entity.ai.attributes.Attribute"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$MobEffectCategory$$Type} from "net.minecraft.world.effect.MobEffectCategory"
-import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Holder} from "net.minecraft.core.Holder"
+import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$MobEffect$AttributeTemplate} from "net.minecraft.world.effect.MobEffect$AttributeTemplate"
 
 export class $AirborneEffect extends $MobEffect {
@@ -337,8 +337,8 @@ import {$Attribute} from "net.minecraft.world.entity.ai.attributes.Attribute"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$MobEffectCategory$$Type} from "net.minecraft.world.effect.MobEffectCategory"
 import {$MagicMobEffect} from "io.redspace.ironsspellbooks.effect.MagicMobEffect"
-import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Holder} from "net.minecraft.core.Holder"
+import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$MobEffect$AttributeTemplate} from "net.minecraft.world.effect.MobEffect$AttributeTemplate"
 
 export class $FortifyEffect extends $MagicMobEffect {
@@ -362,8 +362,8 @@ export type $FortifyEffect$$Original = $FortifyEffect;}
 declare module "io.redspace.ironsspellbooks.effect.guiding_bolt.GuidingBoltEffect" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$Map} from "java.util.Map"
-import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Holder} from "net.minecraft.core.Holder"
+import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Attribute} from "net.minecraft.world.entity.ai.attributes.Attribute"
@@ -397,8 +397,8 @@ declare module "io.redspace.ironsspellbooks.effect.MagicMobEffect" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$IMobEffectEndCallback$$Interface} from "io.redspace.ironsspellbooks.effect.IMobEffectEndCallback"
 import {$Map} from "java.util.Map"
-import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Holder} from "net.minecraft.core.Holder"
+import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Attribute} from "net.minecraft.world.entity.ai.attributes.Attribute"
@@ -433,8 +433,8 @@ declare module "io.redspace.ironsspellbooks.effect.EchoingStrikesEffect" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$Map} from "java.util.Map"
 import {$LivingDamageEvent$Post$$Type} from "net.neoforged.neoforge.event.entity.living.LivingDamageEvent$Post"
-import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Holder} from "net.minecraft.core.Holder"
+import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Attribute} from "net.minecraft.world.entity.ai.attributes.Attribute"
@@ -450,8 +450,8 @@ static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($Holde
 
 constructor(arg0: $MobEffectCategory$$Type, arg1: integer)
 
-public static "createEcho"(arg0: $LivingDamageEvent$Post$$Type): void
 public static "getDamageModifier"(arg0: integer, arg1: $LivingEntity$$Type): float
+public static "createEcho"(arg0: $LivingDamageEvent$Post$$Type): void
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -469,8 +469,8 @@ import {$Codec} from "com.mojang.serialization.Codec"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Attribute} from "net.minecraft.world.entity.ai.attributes.Attribute"
 import {$MobEffectCategory$$Type} from "net.minecraft.world.effect.MobEffectCategory"
-import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Holder} from "net.minecraft.core.Holder"
+import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$MobEffect$AttributeTemplate} from "net.minecraft.world.effect.MobEffect$AttributeTemplate"
 
 export class $RendEffect extends $MobEffect {
@@ -500,8 +500,8 @@ import {$Component} from "net.minecraft.network.chat.Component"
 import {$CustomDescriptionMobEffect} from "io.redspace.ironsspellbooks.effect.CustomDescriptionMobEffect"
 import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Holder} from "net.minecraft.core.Holder"
-import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
 import {$Codec} from "com.mojang.serialization.Codec"
+import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Attribute} from "net.minecraft.world.entity.ai.attributes.Attribute"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
@@ -538,8 +538,8 @@ import {$Attribute} from "net.minecraft.world.entity.ai.attributes.Attribute"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$MobEffectCategory$$Type} from "net.minecraft.world.effect.MobEffectCategory"
 import {$MagicMobEffect} from "io.redspace.ironsspellbooks.effect.MagicMobEffect"
-import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Holder} from "net.minecraft.core.Holder"
+import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$MobEffect$AttributeTemplate} from "net.minecraft.world.effect.MobEffect$AttributeTemplate"
 
 export class $ThunderstormEffect extends $MagicMobEffect {
@@ -567,8 +567,8 @@ import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$Map} from "java.util.Map"
 import {$LivingIncomingDamageEvent$$Type} from "net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent"
 import {$LivingHealEvent$$Type} from "net.neoforged.neoforge.event.entity.living.LivingHealEvent"
-import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Holder} from "net.minecraft.core.Holder"
+import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Attribute} from "net.minecraft.world.entity.ai.attributes.Attribute"
@@ -602,12 +602,12 @@ import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$Map} from "java.util.Map"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
-import {$LivingIncomingDamageEvent$$Type} from "net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent"
 import {$Attribute} from "net.minecraft.world.entity.ai.attributes.Attribute"
+import {$LivingIncomingDamageEvent$$Type} from "net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent"
 import {$MobEffectCategory$$Type} from "net.minecraft.world.effect.MobEffectCategory"
 import {$MagicMobEffect} from "io.redspace.ironsspellbooks.effect.MagicMobEffect"
-import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Holder} from "net.minecraft.core.Holder"
+import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$MobEffect$AttributeTemplate} from "net.minecraft.world.effect.MobEffect$AttributeTemplate"
 
 export class $SpiderAspectEffect extends $MagicMobEffect {
@@ -713,11 +713,11 @@ import {$Map} from "java.util.Map"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Attribute} from "net.minecraft.world.entity.ai.attributes.Attribute"
-import {$LivingEntityUseItemEvent$Finish$$Type} from "net.neoforged.neoforge.event.entity.living.LivingEntityUseItemEvent$Finish"
 import {$MobEffectCategory$$Type} from "net.minecraft.world.effect.MobEffectCategory"
+import {$LivingEntityUseItemEvent$Finish$$Type} from "net.neoforged.neoforge.event.entity.living.LivingEntityUseItemEvent$Finish"
 import {$MagicMobEffect} from "io.redspace.ironsspellbooks.effect.MagicMobEffect"
-import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Holder} from "net.minecraft.core.Holder"
+import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$MobEffect$AttributeTemplate} from "net.minecraft.world.effect.MobEffect$AttributeTemplate"
 
 export class $GluttonyEffect extends $MagicMobEffect {
@@ -727,8 +727,8 @@ static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($Holde
 
 constructor(arg0: $MobEffectCategory$$Type, arg1: integer)
 
-public static "finishEating"(arg0: $LivingEntityUseItemEvent$Finish$$Type): void
 public static "ratioForAmplifier"(arg0: integer): float
+public static "finishEating"(arg0: $LivingEntityUseItemEvent$Finish$$Type): void
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -783,8 +783,8 @@ import {$Map} from "java.util.Map"
 import {$ISyncedMobEffect$$Interface} from "io.redspace.ironsspellbooks.effect.ISyncedMobEffect"
 import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Holder} from "net.minecraft.core.Holder"
-import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
 import {$Codec} from "com.mojang.serialization.Codec"
+import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Attribute} from "net.minecraft.world.entity.ai.attributes.Attribute"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
@@ -911,8 +911,8 @@ import {$Attribute} from "net.minecraft.world.entity.ai.attributes.Attribute"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$MobEffectCategory$$Type} from "net.minecraft.world.effect.MobEffectCategory"
 import {$MagicMobEffect} from "io.redspace.ironsspellbooks.effect.MagicMobEffect"
-import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Holder} from "net.minecraft.core.Holder"
+import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$MobEffect$AttributeTemplate} from "net.minecraft.world.effect.MobEffect$AttributeTemplate"
 
 export class $BurningDashEffect extends $MagicMobEffect {
@@ -956,8 +956,8 @@ static readonly "CODEC": $Codec<($Holder<($MobEffect)>)>
 readonly "attributeModifiers": $Map<($Holder<($Attribute)>), ($MobEffect$AttributeTemplate)>
 static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($Holder<($MobEffect)>)>
 
-public "getDescriptionLine"(arg0: $MobEffectInstance$$Type): $Component
 public static "handleCustomPotionTooltip"(arg0: $ItemStack$$Type, arg1: $List$$Type<($Component$$Type)>, arg2: boolean, arg3: $MobEffectInstance$$Type, arg4: $CustomDescriptionMobEffect$$Type): void
+public "getDescriptionLine"(arg0: $MobEffectInstance$$Type): $Component
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_

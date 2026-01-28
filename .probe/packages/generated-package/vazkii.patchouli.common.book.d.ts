@@ -1,8 +1,8 @@
 declare module "vazkii.patchouli.common.book.Book" {
-import {$XplatModContainer, $XplatModContainer$$Type} from "vazkii.patchouli.xplat.XplatModContainer"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
-import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
+import {$XplatModContainer, $XplatModContainer$$Type} from "vazkii.patchouli.xplat.XplatModContainer"
 import {$Map} from "java.util.Map"
+import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$BookContents} from "vazkii.patchouli.client.book.BookContents"
 import {$BookIcon} from "vazkii.patchouli.client.book.BookIcon"
 import {$Style} from "net.minecraft.network.chat.Style"
@@ -48,7 +48,6 @@ readonly "craftingTexture": $ResourceLocation
 constructor(arg0: $JsonObject$$Type, arg1: $XplatModContainer$$Type, arg2: $ResourceLocation$$Type, arg3: boolean)
 
 public "markUpdated"(): void
-public "getSubtitle"(): $MutableComponent
 public "popUpdated"(): boolean
 public "advancementsEnabled"(): boolean
 public "getBookItem"(): $ItemStack
@@ -56,6 +55,7 @@ public "reloadContents"(arg0: $Level$$Type, arg1: boolean): void
 public "reloadLocks"(arg0: boolean): void
 public "getOwnerName"(): StringJS
 public "getFontStyle"(): $Style
+public "getSubtitle"(): $MutableComponent
 public "getContents"(): $BookContents
 public "getIcon"(): $BookIcon
 get "bookItem"(): $ItemStack

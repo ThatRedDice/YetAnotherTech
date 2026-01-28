@@ -36,10 +36,10 @@ declare module "appeng.crafting.execution.CraftingCpuLogic" {
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$IActionSource$$Type} from "appeng.api.networking.security.IActionSource"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$CraftingService$$Type} from "appeng.me.service.CraftingService"
 import {$Actionable$$Type} from "appeng.api.config.Actionable"
-import {$ICraftingSubmitResult} from "appeng.api.networking.crafting.ICraftingSubmitResult"
+import {$CraftingService$$Type} from "appeng.me.service.CraftingService"
 import {$ICraftingLink} from "appeng.api.networking.crafting.ICraftingLink"
+import {$ICraftingSubmitResult} from "appeng.api.networking.crafting.ICraftingSubmitResult"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$KeyCounter$$Type} from "appeng.api.stacks.KeyCounter"
@@ -57,20 +57,20 @@ import {$ICraftingPlan$$Type} from "appeng.api.networking.crafting.ICraftingPlan
 export class $CraftingCpuLogic {
 constructor(arg0: $CraftingCPUCluster$$Type)
 
-public "storeItems"(): void
-public "executeCrafting"(arg0: integer, arg1: $CraftingService$$Type, arg2: $IEnergyService$$Type, arg3: $Level$$Type): integer
-public "trySubmitJob"(arg0: $IGrid$$Type, arg1: $ICraftingPlan$$Type, arg2: $IActionSource$$Type, arg3: $ICraftingRequester$$Type): $ICraftingSubmitResult
-public "hasJob"(): boolean
-public "getFinalJobOutput"(): $GenericStack
-public "getElapsedTimeTracker"(): $ElapsedTimeTracker
 public "getStored"(arg0: $AEKey$$Type): long
 public "readFromNBT"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "writeToNBT"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
+public "getWaitingFor"(arg0: $AEKey$$Type): long
 public "tickCraftingLogic"(arg0: $IEnergyService$$Type, arg1: $CraftingService$$Type): void
 public "getLastModifiedOnTick"(): long
 public "getAllWaitingFor"(arg0: $Set$$Type<($AEKey$$Type)>): void
 public "getLastLink"(): $ICraftingLink
-public "getWaitingFor"(arg0: $AEKey$$Type): long
+public "trySubmitJob"(arg0: $IGrid$$Type, arg1: $ICraftingPlan$$Type, arg2: $IActionSource$$Type, arg3: $ICraftingRequester$$Type): $ICraftingSubmitResult
+public "hasJob"(): boolean
+public "getFinalJobOutput"(): $GenericStack
+public "getElapsedTimeTracker"(): $ElapsedTimeTracker
+public "storeItems"(): void
+public "executeCrafting"(arg0: integer, arg1: $CraftingService$$Type, arg2: $IEnergyService$$Type, arg3: $Level$$Type): integer
 public "isJobSuspended"(): boolean
 public "setJobSuspended"(arg0: boolean): void
 public "isCantStoreItems"(): boolean
@@ -81,10 +81,10 @@ public "addListener"(arg0: $Consumer$$Type<($AEKey)>): void
 public "getInventory"(): $ListCraftingInventory
 public "getAllItems"(arg0: $KeyCounter$$Type): void
 public "getPendingOutputs"(arg0: $AEKey$$Type): long
-get "finalJobOutput"(): $GenericStack
-get "elapsedTimeTracker"(): $ElapsedTimeTracker
 get "lastModifiedOnTick"(): long
 get "lastLink"(): $ICraftingLink
+get "finalJobOutput"(): $GenericStack
+get "elapsedTimeTracker"(): $ElapsedTimeTracker
 get "jobSuspended"(): boolean
 set "jobSuspended"(value: boolean)
 get "cantStoreItems"(): boolean

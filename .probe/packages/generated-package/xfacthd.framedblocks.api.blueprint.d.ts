@@ -21,14 +21,14 @@ static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($Bluep
 constructor(arg0: $Block$$Type, arg1: $CamoList$$Type, arg2: boolean, arg3: boolean, arg4: boolean, arg5: ($AuxBlueprintData$$Type<(never)>)?)
 constructor(block: $Block$$Type, camos: $CamoList$$Type, glowing: boolean, intangible: boolean, reinforced: boolean, blockState: $BlockItemStateProperties$$Type, auxData: ($AuxBlueprintData$$Type<(never)>)?)
 
-public "intangible"(): boolean
-public "reinforced"(): boolean
-public "glowing"(): boolean
-public "camos"(): $CamoList
 public "auxData"(): $Optional<($AuxBlueprintData<(never)>)>
 public "withBlockState"(arg0: $BlockItemStateProperties$$Type): $BlueprintData
 public "getAuxDataOrDefault"<T extends $AuxBlueprintData<(object)>>(arg0: T): T
 public "withAuxData"(arg0: $AuxBlueprintData$$Type<(never)>): $BlueprintData
+public "intangible"(): boolean
+public "reinforced"(): boolean
+public "glowing"(): boolean
+public "camos"(): $CamoList
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
@@ -41,7 +41,7 @@ get "empty"(): boolean
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $BlueprintData$$Type = ({"glowing"?: boolean, "camos"?: $CamoList$$Type, "intangible"?: boolean, "auxData"?: ($AuxBlueprintData$$Type<(never)>)?, "blockState"?: $BlockItemStateProperties$$Type, "block"?: $Block$$Type, "reinforced"?: boolean}) | ([glowing?: boolean, camos?: $CamoList$$Type, intangible?: boolean, auxData?: ($AuxBlueprintData$$Type<(never)>)?, blockState?: $BlockItemStateProperties$$Type, block?: $Block$$Type, reinforced?: boolean]);
+export type $BlueprintData$$Type = ({"camos"?: $CamoList$$Type, "intangible"?: boolean, "auxData"?: ($AuxBlueprintData$$Type<(never)>)?, "blockState"?: $BlockItemStateProperties$$Type, "block"?: $Block$$Type, "reinforced"?: boolean, "glowing"?: boolean}) | ([camos?: $CamoList$$Type, intangible?: boolean, auxData?: ($AuxBlueprintData$$Type<(never)>)?, blockState?: $BlockItemStateProperties$$Type, block?: $Block$$Type, reinforced?: boolean, glowing?: boolean]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -74,7 +74,7 @@ public "codec"(): $MapCodec<(T)>
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $AuxBlueprintData$Type$$Type<T> = (Special.FramedblocksAuxBlueprintData) | ({"streamCodec"?: $StreamCodec$$Type<($RegistryFriendlyByteBuf$$Type), (T)>, "codec"?: $MapCodec$$Type<(T)>}) | ([streamCodec?: $StreamCodec$$Type<($RegistryFriendlyByteBuf$$Type), (T)>, codec?: $MapCodec$$Type<(T)>]);
+export type $AuxBlueprintData$Type$$Type<T> = (Special.FramedblocksAuxBlueprintData) | ({"codec"?: $MapCodec$$Type<(T)>, "streamCodec"?: $StreamCodec$$Type<($RegistryFriendlyByteBuf$$Type), (T)>}) | ([codec?: $MapCodec$$Type<(T)>, streamCodec?: $StreamCodec$$Type<($RegistryFriendlyByteBuf$$Type), (T)>]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -82,8 +82,8 @@ export type $AuxBlueprintData$Type$$Original<T> = $AuxBlueprintData$Type<(T)>;}
 declare module "xfacthd.framedblocks.api.blueprint.AuxBlueprintData" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$Registry} from "net.minecraft.core.Registry"
-import {$AuxBlueprintData$Type} from "xfacthd.framedblocks.api.blueprint.AuxBlueprintData$Type"
 import {$Codec} from "com.mojang.serialization.Codec"
+import {$AuxBlueprintData$Type} from "xfacthd.framedblocks.api.blueprint.AuxBlueprintData$Type"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 
 export interface $AuxBlueprintData$$Interface<T extends $AuxBlueprintData<(object)>> {
@@ -114,10 +114,10 @@ import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$List} from "java.util.List"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$FramedBlockEntity$$Type} from "xfacthd.framedblocks.api.block.blockentity.FramedBlockEntity"
-import {$BlueprintData, $BlueprintData$$Type} from "xfacthd.framedblocks.api.blueprint.BlueprintData"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$Property} from "net.minecraft.world.level.block.state.properties.Property"
+import {$BlueprintData, $BlueprintData$$Type} from "xfacthd.framedblocks.api.blueprint.BlueprintData"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$Property} from "net.minecraft.world.level.block.state.properties.Property"
 
 export interface $BlueprintCopyBehaviour$$Interface {
 }
@@ -146,9 +146,9 @@ export type $BlueprintCopyBehaviour$$Original = $BlueprintCopyBehaviour;}
 declare module "xfacthd.framedblocks.api.blueprint.RegisterBlueprintCopyBehavioursEvent" {
 import {$BlueprintCopyBehaviour$$Type} from "xfacthd.framedblocks.api.blueprint.BlueprintCopyBehaviour"
 import {$List$$Type} from "java.util.List"
+import {$Event} from "net.neoforged.bus.api.Event"
 import {$BiConsumer$$Type} from "java.util.function.BiConsumer"
 import {$Block$$Type} from "net.minecraft.world.level.block.Block"
-import {$Event} from "net.neoforged.bus.api.Event"
 import {$IModBusEvent$$Interface} from "net.neoforged.fml.event.IModBusEvent"
 import {$Holder$$Type} from "net.minecraft.core.Holder"
 

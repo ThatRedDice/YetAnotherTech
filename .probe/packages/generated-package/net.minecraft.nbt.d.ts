@@ -100,24 +100,24 @@ public "accept"(arg0: $TagVisitor$$Type): void
 public "getId"(): byte
 public "getType"(): $TagType<($IntTag)>
 public "copy"(): $Tag
-public "getAsNumber"(): number
-public "getAsDouble"(): double
 public "getAsInt"(): integer
+public "getAsDouble"(): double
 public "getAsLong"(): long
+public "getAsNumber"(): number
+public "getAsFloat"(): float
 public "getAsByte"(): byte
 public "getAsShort"(): short
-public "getAsFloat"(): float
 public "sizeInBytes"(): integer
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "id"(): byte
 get "type"(): $TagType<($IntTag)>
-get "asNumber"(): number
-get "asDouble"(): double
 get "asInt"(): integer
+get "asDouble"(): double
 get "asLong"(): long
+get "asNumber"(): number
+get "asFloat"(): float
 get "asByte"(): byte
 get "asShort"(): short
-get "asFloat"(): float
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -156,8 +156,8 @@ import {$SequencedCollection} from "java.util.SequencedCollection"
 import {$List} from "java.util.List"
 import {$StreamTagVisitor$ValueResult} from "net.minecraft.nbt.StreamTagVisitor$ValueResult"
 import {$AbstractList} from "java.util.AbstractList"
-import {$TagType} from "net.minecraft.nbt.TagType"
 import {$TypeInfo$$Type} from "dev.latvian.mods.rhino.type.TypeInfo"
+import {$TagType} from "net.minecraft.nbt.TagType"
 import {$Tag, $Tag$$Type, $Tag$$Interface} from "net.minecraft.nbt.Tag"
 import {$DataOutput$$Type} from "java.io.DataOutput"
 import {$Scriptable, $Scriptable$$Type} from "dev.latvian.mods.rhino.Scriptable"
@@ -246,24 +246,24 @@ public "accept"(arg0: $TagVisitor$$Type): void
 public "getId"(): byte
 public "getType"(): $TagType<($LongTag)>
 public "copy"(): $Tag
-public "getAsNumber"(): number
-public "getAsDouble"(): double
 public "getAsInt"(): integer
+public "getAsDouble"(): double
 public "getAsLong"(): long
+public "getAsNumber"(): number
+public "getAsFloat"(): float
 public "getAsByte"(): byte
 public "getAsShort"(): short
-public "getAsFloat"(): float
 public "sizeInBytes"(): integer
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "id"(): byte
 get "type"(): $TagType<($LongTag)>
-get "asNumber"(): number
-get "asDouble"(): double
 get "asInt"(): integer
+get "asDouble"(): double
 get "asLong"(): long
+get "asNumber"(): number
+get "asFloat"(): float
 get "asByte"(): byte
 get "asShort"(): short
-get "asFloat"(): float
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -277,8 +277,8 @@ export type $LongTag$$Original = $LongTag;}
 declare module "net.minecraft.nbt.StringTag" {
 import {$TagType} from "net.minecraft.nbt.TagType"
 import {$StreamTagVisitor$ValueResult} from "net.minecraft.nbt.StreamTagVisitor$ValueResult"
-import {$Tag$$Interface} from "net.minecraft.nbt.Tag"
 import {$DataInput$$Type} from "java.io.DataInput"
+import {$Tag, $Tag$$Interface} from "net.minecraft.nbt.Tag"
 import {$SpecialEquality$$Interface} from "dev.latvian.mods.rhino.util.SpecialEquality"
 import {$DataOutput$$Type} from "java.io.DataOutput"
 import {$StreamTagVisitor$$Type} from "net.minecraft.nbt.StreamTagVisitor"
@@ -297,11 +297,11 @@ public "accept"(arg0: $TagVisitor$$Type): void
 public "accept"(arg0: $StreamTagVisitor$$Type): $StreamTagVisitor$ValueResult
 public "getId"(): byte
 public "getType"(): $TagType<($StringTag)>
-public "copy"(): $StringTag
+public "copy"(): $Tag
 public "getAsString"(): StringJS
-public static "quoteAndEscape"(arg0: StringJS): StringJS
 public "sizeInBytes"(): integer
 public "specialEquals"(o: any, shallow: boolean): boolean
+public static "quoteAndEscape"(arg0: StringJS): StringJS
 public "acceptAsRoot"(arg0: $StreamTagVisitor$$Type): void
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "id"(): byte
@@ -319,18 +319,18 @@ export type $StringTag$$Type = ($StringTag);
 export type $StringTag$$Original = $StringTag;}
 declare module "net.minecraft.nbt.TagVisitor" {
 import {$StringTag$$Type} from "net.minecraft.nbt.StringTag"
-import {$IntArrayTag$$Type} from "net.minecraft.nbt.IntArrayTag"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
+import {$IntArrayTag$$Type} from "net.minecraft.nbt.IntArrayTag"
 import {$ListTag$$Type} from "net.minecraft.nbt.ListTag"
-import {$DoubleTag$$Type} from "net.minecraft.nbt.DoubleTag"
 import {$ShortTag$$Type} from "net.minecraft.nbt.ShortTag"
+import {$DoubleTag$$Type} from "net.minecraft.nbt.DoubleTag"
 import {$FloatTag$$Type} from "net.minecraft.nbt.FloatTag"
 import {$LongArrayTag$$Type} from "net.minecraft.nbt.LongArrayTag"
 import {$IntTag$$Type} from "net.minecraft.nbt.IntTag"
 import {$ByteTag$$Type} from "net.minecraft.nbt.ByteTag"
 import {$EndTag$$Type} from "net.minecraft.nbt.EndTag"
-import {$ByteArrayTag$$Type} from "net.minecraft.nbt.ByteArrayTag"
 import {$LongTag$$Type} from "net.minecraft.nbt.LongTag"
+import {$ByteArrayTag$$Type} from "net.minecraft.nbt.ByteArrayTag"
 
 export interface $TagVisitor$$Interface {
 }
@@ -347,8 +347,8 @@ export class $TagVisitor implements $TagVisitor$$Interface {
  "visitFloat"(arg0: $FloatTag$$Type): void
  "visitLong"(arg0: $LongTag$$Type): void
  "visitDouble"(arg0: $DoubleTag$$Type): void
- "visitCompound"(arg0: $CompoundTag$$Type): void
  "visitList"(arg0: $ListTag$$Type): void
+ "visitCompound"(arg0: $CompoundTag$$Type): void
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -370,13 +370,13 @@ import {$TagVisitor$$Type} from "net.minecraft.nbt.TagVisitor"
 
 export class $NumericTag implements $Tag$$Interface, $SpecialEquality$$Interface {
 public "toString"(): StringJS
-public "getAsNumber"(): number
-public "getAsDouble"(): double
 public "getAsInt"(): integer
+public "getAsDouble"(): double
 public "getAsLong"(): long
+public "getAsNumber"(): number
+public "getAsFloat"(): float
 public "getAsByte"(): byte
 public "getAsShort"(): short
-public "getAsFloat"(): float
 public "specialEquals"(o: any, shallow: boolean): boolean
 public "write"(arg0: $DataOutput$$Type): void
 public "accept"(arg0: $TagVisitor$$Type): void
@@ -388,13 +388,13 @@ public "getAsString"(): StringJS
 public "sizeInBytes"(): integer
 public "acceptAsRoot"(arg0: $StreamTagVisitor$$Type): void
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
-get "asNumber"(): number
-get "asDouble"(): double
 get "asInt"(): integer
+get "asDouble"(): double
 get "asLong"(): long
+get "asNumber"(): number
+get "asFloat"(): float
 get "asByte"(): byte
 get "asShort"(): short
-get "asFloat"(): float
 get "id"(): byte
 get "type"(): $TagType<(never)>
 get "asString"(): StringJS
@@ -410,8 +410,8 @@ export type $NumericTag$$Type = ($NumericTag);
 export type $NumericTag$$Original = $NumericTag;}
 declare module "net.minecraft.nbt.TagType" {
 import {$StreamTagVisitor$ValueResult} from "net.minecraft.nbt.StreamTagVisitor$ValueResult"
-import {$Tag} from "net.minecraft.nbt.Tag"
 import {$DataInput$$Type} from "java.io.DataInput"
+import {$Tag} from "net.minecraft.nbt.Tag"
 import {$NbtAccounter$$Type} from "net.minecraft.nbt.NbtAccounter"
 import {$EndTag} from "net.minecraft.nbt.EndTag"
 import {$StreamTagVisitor$$Type} from "net.minecraft.nbt.StreamTagVisitor"
@@ -533,12 +533,12 @@ public "getUsage"(): long
 public static "create"(arg0: long): $NbtAccounter
 public "readUTF"(arg0: StringJS): StringJS
 public "getDepth"(): integer
+public static "unlimitedHeap"(): $NbtAccounter
 public "accountBytes"(arg0: long): void
 public "accountBytes"(arg0: long, arg1: long): void
 public "pushDepth"(): void
-public "create$getUsage"(): long
 public "popDepth"(): void
-public static "unlimitedHeap"(): $NbtAccounter
+public "create$getUsage"(): long
 get "usage"(): long
 get "depth"(): integer
 }
@@ -572,24 +572,24 @@ public "accept"(arg0: $TagVisitor$$Type): void
 public "getId"(): byte
 public "getType"(): $TagType<($ShortTag)>
 public "copy"(): $Tag
-public "getAsNumber"(): number
-public "getAsDouble"(): double
 public "getAsInt"(): integer
+public "getAsDouble"(): double
 public "getAsLong"(): long
+public "getAsNumber"(): number
+public "getAsFloat"(): float
 public "getAsByte"(): byte
 public "getAsShort"(): short
-public "getAsFloat"(): float
 public "sizeInBytes"(): integer
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "id"(): byte
 get "type"(): $TagType<($ShortTag)>
-get "asNumber"(): number
-get "asDouble"(): double
 get "asInt"(): integer
+get "asDouble"(): double
 get "asLong"(): long
+get "asNumber"(): number
+get "asFloat"(): float
 get "asByte"(): byte
 get "asShort"(): short
-get "asFloat"(): float
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -622,24 +622,24 @@ public "accept"(arg0: $TagVisitor$$Type): void
 public "getId"(): byte
 public "getType"(): $TagType<($FloatTag)>
 public "copy"(): $Tag
-public "getAsNumber"(): number
-public "getAsDouble"(): double
 public "getAsInt"(): integer
+public "getAsDouble"(): double
 public "getAsLong"(): long
+public "getAsNumber"(): number
+public "getAsFloat"(): float
 public "getAsByte"(): byte
 public "getAsShort"(): short
-public "getAsFloat"(): float
 public "sizeInBytes"(): integer
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "id"(): byte
 get "type"(): $TagType<($FloatTag)>
-get "asNumber"(): number
-get "asDouble"(): double
 get "asInt"(): integer
+get "asDouble"(): double
 get "asLong"(): long
+get "asNumber"(): number
+get "asFloat"(): float
 get "asByte"(): byte
 get "asShort"(): short
-get "asFloat"(): float
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -660,8 +660,8 @@ import {$TagType} from "net.minecraft.nbt.TagType"
 import {$CollectionTag} from "net.minecraft.nbt.CollectionTag"
 import {$Tag, $Tag$$Type} from "net.minecraft.nbt.Tag"
 import {$DataOutput$$Type} from "java.io.DataOutput"
-import {$LongTag, $LongTag$$Type} from "net.minecraft.nbt.LongTag"
 import {$StreamTagVisitor$$Type} from "net.minecraft.nbt.StreamTagVisitor"
+import {$LongTag, $LongTag$$Type} from "net.minecraft.nbt.LongTag"
 import {$TagVisitor$$Type} from "net.minecraft.nbt.TagVisitor"
 
 export class $LongArrayTag extends $CollectionTag<($LongTag)> {
@@ -757,24 +757,24 @@ public "accept"(arg0: $TagVisitor$$Type): void
 public "getId"(): byte
 public "getType"(): $TagType<($ByteTag)>
 public "copy"(): $Tag
-public "getAsNumber"(): number
-public "getAsDouble"(): double
 public "getAsInt"(): integer
+public "getAsDouble"(): double
 public "getAsLong"(): long
+public "getAsNumber"(): number
+public "getAsFloat"(): float
 public "getAsByte"(): byte
 public "getAsShort"(): short
-public "getAsFloat"(): float
 public "sizeInBytes"(): integer
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "id"(): byte
 get "type"(): $TagType<($ByteTag)>
-get "asNumber"(): number
-get "asDouble"(): double
 get "asInt"(): integer
+get "asDouble"(): double
 get "asLong"(): long
+get "asNumber"(): number
+get "asFloat"(): float
 get "asByte"(): byte
 get "asShort"(): short
-get "asFloat"(): float
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -798,12 +798,12 @@ import {$TagType, $TagType$$Type} from "net.minecraft.nbt.TagType"
 import {$MapCarrier$$Type, $MapCarrier$$Interface} from "io.wispforest.endec.util.MapCarrier"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$Function$$Type} from "java.util.function.Function"
-import {$Set} from "java.util.Set"
-import {$Tag, $Tag$$Type, $Tag$$Interface} from "net.minecraft.nbt.Tag"
 import {$DataInput$$Type} from "java.io.DataInput"
+import {$Tag, $Tag$$Type, $Tag$$Interface} from "net.minecraft.nbt.Tag"
+import {$Set} from "java.util.Set"
 import {$DataOutput$$Type} from "java.io.DataOutput"
-import {$Scriptable, $Scriptable$$Type} from "dev.latvian.mods.rhino.Scriptable"
 import {$NbtAccounter$$Type} from "net.minecraft.nbt.NbtAccounter"
+import {$Scriptable, $Scriptable$$Type} from "dev.latvian.mods.rhino.Scriptable"
 import {$StreamTagVisitor$$Type} from "net.minecraft.nbt.StreamTagVisitor"
 import {$TagVisitor$$Type} from "net.minecraft.nbt.TagVisitor"
 import {$KeyedEndec$$Type} from "io.wispforest.endec.impl.KeyedEndec"
@@ -814,12 +814,13 @@ static readonly "TYPE": $TagType<($CompoundTag)>
 readonly "tags": $Map<(StringJS), ($Tag)>
 
 constructor(arg0: $Map$$Type<(StringJS), ($Tag$$Type)>)
-constructor(arg0: integer)
 constructor()
+constructor(arg0: integer)
 
-public "has"(key: $KeyedEndec$$Type): boolean
-public "putByteArray"(arg0: StringJS, arg1: $List$$Type<(byte)>): void
 public "putByteArray"(arg0: StringJS, arg1: (byte)[]): void
+public "putByteArray"(arg0: StringJS, arg1: $List$$Type<(byte)>): void
+public "getString"(arg0: StringJS): StringJS
+public "has"(key: $KeyedEndec$$Type): boolean
 public "remove"(arg0: StringJS): void
 public "size"(): integer
 public "get"(arg0: StringJS): $Tag
@@ -853,7 +854,6 @@ public "accept"(arg0: $StreamTagVisitor$$Type): $StreamTagVisitor$ValueResult
 public "getId"(): byte
 public "getType"(): $TagType<($CompoundTag)>
 public "copy"(): $Tag
-public "getString"(arg0: StringJS): StringJS
 public "getList"(arg0: StringJS, arg1: integer): $ListTag
 public "getAllKeys"(): $Set<(StringJS)>
 public "getUUID"(arg0: StringJS): $UUID
@@ -861,8 +861,8 @@ public "sizeInBytes"(): integer
 public "putUUID"(arg0: StringJS, arg1: $UUID$$Type): void
 public "hasUUID"(arg0: StringJS): boolean
 public "putString"(arg0: StringJS, arg1: StringJS): void
-public "putIntArray"(arg0: StringJS, arg1: (integer)[]): void
 public "putIntArray"(arg0: StringJS, arg1: $List$$Type<(integer)>): void
+public "putIntArray"(arg0: StringJS, arg1: (integer)[]): void
 public "putLongArray"(arg0: StringJS, arg1: $List$$Type<(long)>): void
 public "putLongArray"(arg0: StringJS, arg1: (long)[]): void
 public "getTagType"(arg0: StringJS): byte
@@ -933,6 +933,7 @@ constructor()
 constructor(arg0: integer)
 
 public "getElementType"(): byte
+public "getString"(arg0: integer): StringJS
 public "remove"(arg0: integer): any
 public "size"(): integer
 public "get"(arg0: integer): $Tag
@@ -947,15 +948,14 @@ public "clear"(): void
 public "isEmpty"(): boolean
 public "add"(arg0: integer, arg1: any): void
 public "add"(arg0: integer, arg1: $Tag$$Type): void
-public "set"(arg0: integer, arg1: $Tag$$Type): $Tag
 public "set"(arg0: integer, arg1: any): any
+public "set"(arg0: integer, arg1: $Tag$$Type): $Tag
 public "write"(arg0: $DataOutput$$Type): void
 public "accept"(arg0: $TagVisitor$$Type): void
 public "accept"(arg0: $StreamTagVisitor$$Type): $StreamTagVisitor$ValueResult
 public "getId"(): byte
 public "getType"(): $TagType<($ListTag)>
 public "copy"(): $ListTag
-public "getString"(arg0: integer): StringJS
 public "getList"(arg0: integer): $ListTag
 public "setTag"(arg0: integer, arg1: $Tag$$Type): boolean
 public "sizeInBytes"(): integer
@@ -1055,8 +1055,8 @@ export type $EndTag$$Type = ($EndTag);
  */
 export type $EndTag$$Original = $EndTag;}
 declare module "net.minecraft.nbt.StreamTagVisitor" {
-import {$StreamTagVisitor$EntryResult} from "net.minecraft.nbt.StreamTagVisitor$EntryResult"
 import {$TagType$$Type} from "net.minecraft.nbt.TagType"
+import {$StreamTagVisitor$EntryResult} from "net.minecraft.nbt.StreamTagVisitor$EntryResult"
 import {$StreamTagVisitor$ValueResult} from "net.minecraft.nbt.StreamTagVisitor$ValueResult"
 
 export interface $StreamTagVisitor$$Interface {
@@ -1076,10 +1076,10 @@ export class $StreamTagVisitor implements $StreamTagVisitor$$Interface {
  "visitEnd"(): $StreamTagVisitor$ValueResult
  "visitEntry"(arg0: $TagType$$Type<(never)>, arg1: StringJS): $StreamTagVisitor$EntryResult
  "visitEntry"(arg0: $TagType$$Type<(never)>): $StreamTagVisitor$EntryResult
+ "visitElement"(arg0: $TagType$$Type<(never)>, arg1: integer): $StreamTagVisitor$EntryResult
+ "visitList"(arg0: $TagType$$Type<(never)>, arg1: integer): $StreamTagVisitor$ValueResult
  "visitRootEntry"(arg0: $TagType$$Type<(never)>): $StreamTagVisitor$ValueResult
  "visitContainerEnd"(): $StreamTagVisitor$ValueResult
- "visitList"(arg0: $TagType$$Type<(never)>, arg1: integer): $StreamTagVisitor$ValueResult
- "visitElement"(arg0: $TagType$$Type<(never)>, arg1: integer): $StreamTagVisitor$EntryResult
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -1166,24 +1166,24 @@ public "accept"(arg0: $TagVisitor$$Type): void
 public "getId"(): byte
 public "getType"(): $TagType<($DoubleTag)>
 public "copy"(): $Tag
-public "getAsNumber"(): number
-public "getAsDouble"(): double
 public "getAsInt"(): integer
+public "getAsDouble"(): double
 public "getAsLong"(): long
+public "getAsNumber"(): number
+public "getAsFloat"(): float
 public "getAsByte"(): byte
 public "getAsShort"(): short
-public "getAsFloat"(): float
 public "sizeInBytes"(): integer
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "id"(): byte
 get "type"(): $TagType<($DoubleTag)>
-get "asNumber"(): number
-get "asDouble"(): double
 get "asInt"(): integer
+get "asDouble"(): double
 get "asLong"(): long
+get "asNumber"(): number
+get "asFloat"(): float
 get "asByte"(): byte
 get "asShort"(): short
-get "asFloat"(): float
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_

@@ -25,18 +25,18 @@ public "getBone"(arg0: StringJS): $Optional<($GeoBone)>
  */
 public "getTextureResource"(arg0: T): $ResourceLocation
 public "getTextureResource"(arg0: T, arg1: $GeoRenderer$$Type<(T)>): $ResourceLocation
+public "getModelResource"(arg0: T, arg1: $GeoRenderer$$Type<(T)>): $ResourceLocation
 /**
  * 
  * @deprecated
  */
 public "getModelResource"(arg0: T): $ResourceLocation
-public "getModelResource"(arg0: T, arg1: $GeoRenderer$$Type<(T)>): $ResourceLocation
-public "getAnimationProcessor"(): $AnimationProcessor<(T)>
+public "applyMolangQueries"(arg0: $AnimationState$$Type<(T)>, arg1: double): void
 public "getAnimationResourceFallbacks"(arg0: T): ($ResourceLocation)[]
 public "getAnimationResource"(arg0: T): $ResourceLocation
 public "crashIfBoneMissing"(): boolean
 public "setCustomAnimations"(arg0: T, arg1: long, arg2: $AnimationState$$Type<(T)>): void
-public "applyMolangQueries"(arg0: $AnimationState$$Type<(T)>, arg1: double): void
+public "getAnimationProcessor"(): $AnimationProcessor<(T)>
 public "getRenderType"(arg0: T, arg1: $ResourceLocation$$Type): $RenderType
 public "getAnimation"(arg0: T, arg1: StringJS): $Animation
 get "animationProcessor"(): $AnimationProcessor<(T)>

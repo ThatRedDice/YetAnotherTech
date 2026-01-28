@@ -14,19 +14,19 @@ import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$ClientLevel} from "net.minecraft.client.multiplayer.ClientLevel"
 import {$TaskChainer, $TaskChainer$$Type} from "net.minecraft.util.TaskChainer"
 import {$ServerPlayer, $ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
-import {$SharedSuggestionProvider$TextCoordinates, $SharedSuggestionProvider$TextCoordinates$$Type} from "net.minecraft.commands.SharedSuggestionProvider$TextCoordinates"
 import {$RegistryAccess} from "net.minecraft.core.RegistryAccess"
+import {$SharedSuggestionProvider$TextCoordinates, $SharedSuggestionProvider$TextCoordinates$$Type} from "net.minecraft.commands.SharedSuggestionProvider$TextCoordinates"
 import {$TraceCallbacks$$Type} from "net.minecraft.commands.execution.TraceCallbacks"
 import {$FeatureFlagSet} from "net.minecraft.world.flag.FeatureFlagSet"
 import {$Level} from "net.minecraft.world.level.Level"
 import {$ResultConsumer} from "com.mojang.brigadier.ResultConsumer"
 import {$BinaryOperator$$Type} from "java.util.function.BinaryOperator"
 import {$ICommandSourceStackExtension$$Interface} from "net.neoforged.neoforge.common.extensions.ICommandSourceStackExtension"
-import {$AdvancementHolder} from "net.minecraft.advancements.AdvancementHolder"
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
+import {$AdvancementHolder} from "net.minecraft.advancements.AdvancementHolder"
 import {$Message$$Type} from "com.mojang.brigadier.Message"
-import {$SimpleCommandExceptionType} from "com.mojang.brigadier.exceptions.SimpleCommandExceptionType"
 import {$CommandContext$$Type} from "com.mojang.brigadier.context.CommandContext"
+import {$SimpleCommandExceptionType} from "com.mojang.brigadier.exceptions.SimpleCommandExceptionType"
 import {$Vec2, $Vec2$$Type} from "net.minecraft.world.phys.Vec2"
 import {$Vec3, $Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
@@ -41,12 +41,12 @@ import {$CommandExceptionType$$Type} from "com.mojang.brigadier.exceptions.Comma
 import {$Predicate$$Type} from "java.util.function.Predicate"
 import {$SuggestionsBuilder$$Type} from "com.mojang.brigadier.suggestion.SuggestionsBuilder"
 import {$CompletableFuture} from "java.util.concurrent.CompletableFuture"
-import {$CommandSyntaxException$$Type} from "com.mojang.brigadier.exceptions.CommandSyntaxException"
 import {$LazyComponentKJS$$Type} from "dev.latvian.mods.kubejs.core.LazyComponentKJS"
 import {$Registry$$Type} from "net.minecraft.core.Registry"
+import {$CommandSyntaxException$$Type} from "com.mojang.brigadier.exceptions.CommandSyntaxException"
 import {$ServerLevel, $ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
-import {$CommandDispatcher} from "com.mojang.brigadier.CommandDispatcher"
 import {$Scoreboard} from "net.minecraft.world.scores.Scoreboard"
+import {$CommandDispatcher} from "com.mojang.brigadier.CommandDispatcher"
 import {$EntityAnchorArgument$Anchor, $EntityAnchorArgument$Anchor$$Type} from "net.minecraft.commands.arguments.EntityAnchorArgument$Anchor"
 import {$MinecraftServer, $MinecraftServer$$Type} from "net.minecraft.server.MinecraftServer"
 import {$ChatType$Bound$$Type} from "net.minecraft.network.chat.ChatType$Bound"
@@ -62,8 +62,8 @@ constructor(arg0: $CommandSource$$Type, arg1: $Vec3$$Type, arg2: $Vec2$$Type, ar
 public "sendChatMessage"(arg0: $OutgoingChatMessage$$Type, arg1: boolean, arg2: $ChatType$Bound$$Type): void
 public "shouldFilterMessageTo"(arg0: $ServerPlayer$$Type): boolean
 public "withPosition"(arg0: $Vec3$$Type): $CommandSourceStack
-public "withCallback"(arg0: $CommandResultCallback$$Type): $CommandSourceStack
 public "withCallback"(arg0: $CommandResultCallback$$Type, arg1: $BinaryOperator$$Type<($CommandResultCallback)>): $CommandSourceStack
+public "withCallback"(arg0: $CommandResultCallback$$Type): $CommandSourceStack
 public "withPermission"(arg0: integer): $CommandSourceStack
 public "getAnchor"(): $EntityAnchorArgument$Anchor
 public "hasPermission"(arg0: integer): boolean
@@ -76,6 +76,7 @@ public "suggestRegistryElements"(arg0: $ResourceKey$$Type<($Registry<(never)>)>,
 public "withEntity"(arg0: $Entity$$Type): $CommandSourceStack
 public "withRotation"(arg0: $Vec2$$Type): $CommandSourceStack
 public "sendFailure"(arg0: $Component$$Type): void
+public "withSigningContext"(arg0: $CommandSigningContext$$Type, arg1: $TaskChainer$$Type): $CommandSourceStack
 public "withMaximumPermission"(arg0: integer): $CommandSourceStack
 public "withAnchor"(arg0: $EntityAnchorArgument$Anchor$$Type): $CommandSourceStack
 public "getTextName"(): StringJS
@@ -92,21 +93,20 @@ public "arch$getRotation"(): $Vec2
 public "arch$getLevel"(): $ClientLevel
 public "sendSuccess"(component: $Component$$Type, broadcastToAdmins: boolean): void
 public "sendSuccessLazy"(component: $LazyComponentKJS$$Type, broadcastToAdmins: boolean): void
-public "withSigningContext"(arg0: $CommandSigningContext$$Type, arg1: $TaskChainer$$Type): $CommandSourceStack
-public "levels"(): $Set<($ResourceKey<($Level)>)>
-public "getPosition"(): $Vec3
+public "withLevel"(arg0: $ServerLevel$$Type): $CommandSourceStack
+public "getEntity"(): $Entity
 public "callback"(): $CommandResultCallback
 public "getLevel"(): $ServerLevel
-public "getEntity"(): $Entity
 public "getDisplayName"(): $Component
+public "levels"(): $Set<($ResourceKey<($Level)>)>
+public "getPosition"(): $Vec3
 public "handleError"(arg0: $CommandExceptionType$$Type, arg1: $Message$$Type, arg2: boolean, arg3: $TraceCallbacks$$Type): void
 public "dispatcher"(): $CommandDispatcher<($CommandSourceStack)>
-public "withLevel"(arg0: $ServerLevel$$Type): $CommandSourceStack
 public "enabledFeatures"(): $FeatureFlagSet
 public "registryAccess"(): $RegistryAccess
 public "getRotation"(): $Vec2
-public "facing"(arg0: $Vec3$$Type): $CommandSourceStack
 public "facing"(arg0: $Entity$$Type, arg1: $EntityAnchorArgument$Anchor$$Type): $CommandSourceStack
+public "facing"(arg0: $Vec3$$Type): $CommandSourceStack
 public "isSilent"(): boolean
 public "getServer"(): $MinecraftServer
 public "isPlayer"(): boolean
@@ -150,10 +150,10 @@ get "entityOrException"(): $Entity
 get "availableSounds"(): $Stream<($ResourceLocation)>
 get "recipeNames"(): $Stream<($ResourceLocation)>
 get "playerOrException"(): $ServerPlayer
-get "position"(): $Vec3
-get "level"(): $ServerLevel
 get "entity"(): $Entity
+get "level"(): $ServerLevel
 get "displayName"(): $Component
+get "position"(): $Vec3
 get "rotation"(): $Vec2
 get "silent"(): boolean
 get "server"(): $MinecraftServer
@@ -179,8 +179,8 @@ export type $CommandSourceStack$$Original = $CommandSourceStack;}
 declare module "net.minecraft.commands.CacheableFunction" {
 import {$CommandFunction} from "net.minecraft.commands.functions.CommandFunction"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
-import {$Optional} from "java.util.Optional"
 import {$ServerFunctionManager$$Type} from "net.minecraft.server.ServerFunctionManager"
+import {$Optional} from "java.util.Optional"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$CommandSourceStack} from "net.minecraft.commands.CommandSourceStack"
 
@@ -268,8 +268,8 @@ import {$Function$$Type} from "java.util.function.Function"
 import {$Set} from "java.util.Set"
 import {$ResourceKey, $ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
 import {$Stream, $Stream$$Type} from "java.util.stream.Stream"
-import {$RegistryAccess} from "net.minecraft.core.RegistryAccess"
 import {$SharedSuggestionProvider$TextCoordinates, $SharedSuggestionProvider$TextCoordinates$$Type} from "net.minecraft.commands.SharedSuggestionProvider$TextCoordinates"
+import {$RegistryAccess} from "net.minecraft.core.RegistryAccess"
 
 export interface $SharedSuggestionProvider$$Interface {
 get "relevantCoordinates"(): $Collection<($SharedSuggestionProvider$TextCoordinates)>
@@ -325,12 +325,12 @@ export type $SharedSuggestionProvider$$Type = ($SharedSuggestionProvider);
 export type $SharedSuggestionProvider$$Original = $SharedSuggestionProvider;}
 declare module "net.minecraft.commands.ExecutionCommandSource" {
 import {$TraceCallbacks$$Type} from "net.minecraft.commands.execution.TraceCallbacks"
-import {$CommandSyntaxException$$Type} from "com.mojang.brigadier.exceptions.CommandSyntaxException"
 import {$CommandExceptionType$$Type} from "com.mojang.brigadier.exceptions.CommandExceptionType"
+import {$CommandSyntaxException$$Type} from "com.mojang.brigadier.exceptions.CommandSyntaxException"
 import {$ResultConsumer} from "com.mojang.brigadier.ResultConsumer"
 import {$CommandDispatcher} from "com.mojang.brigadier.CommandDispatcher"
-import {$CommandResultCallback, $CommandResultCallback$$Type} from "net.minecraft.commands.CommandResultCallback"
 import {$Message$$Type} from "com.mojang.brigadier.Message"
+import {$CommandResultCallback, $CommandResultCallback$$Type} from "net.minecraft.commands.CommandResultCallback"
 
 export interface $ExecutionCommandSource$$Interface<T extends $ExecutionCommandSource<(object)>> {
 get "silent"(): boolean
@@ -489,12 +489,12 @@ constructor(arg0: $Commands$CommandSelection$$Type, arg1: $CommandBuildContext$$
 
 public "performCommand"(arg0: $ParseResults$$Type<($CommandSourceStack$$Type)>, arg1: StringJS): void
 public static "createValidator"(arg0: $Commands$ParseFunction$$Type): $Predicate<(StringJS)>
+public static "mapSource"<S>(arg0: $ParseResults$$Type<(S)>, arg1: $UnaryOperator$$Type<(S)>): $ParseResults<(S)>
 public static "executeCommandInContext"(arg0: $CommandSourceStack$$Type, arg1: $Consumer$$Type<($ExecutionContext<($CommandSourceStack)>)>): void
 public static "validateParseResults"<S>(arg0: $ParseResults$$Type<(S)>): void
 public static "getParseException"<S>(arg0: $ParseResults$$Type<(S)>): $CommandSyntaxException
 public static "createValidationContext"(arg0: $HolderLookup$Provider$$Type): $CommandBuildContext
 public "sendCommands"(arg0: $ServerPlayer$$Type): void
-public static "mapSource"<S>(arg0: $ParseResults$$Type<(S)>, arg1: $UnaryOperator$$Type<(S)>): $ParseResults<(S)>
 public static "validate"(): void
 public static "argument"<T>(arg0: StringJS, arg1: $ArgumentType$$Type<(T)>): $RequiredArgumentBuilder<($CommandSourceStack), (T)>
 public static "literal"(arg0: StringJS): $LiteralArgumentBuilder<($CommandSourceStack)>

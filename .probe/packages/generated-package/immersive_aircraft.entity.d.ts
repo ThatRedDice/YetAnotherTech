@@ -32,13 +32,13 @@ import {$Container} from "net.minecraft.world.Container"
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$Tag} from "net.minecraft.nbt.Tag"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$InterpolatedFloat} from "immersive_aircraft.util.InterpolatedFloat"
-import {$InventoryVehicleEntity} from "immersive_aircraft.entity.InventoryVehicleEntity"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$InventoryVehicleEntity} from "immersive_aircraft.entity.InventoryVehicleEntity"
 
 export class $EngineVehicle extends $InventoryVehicleEntity {
  "hasImpulse": boolean
@@ -172,9 +172,9 @@ import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$Tag} from "net.minecraft.nbt.Tag"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$VehicleEntity, $VehicleEntity$$Type} from "immersive_aircraft.entity.VehicleEntity"
 import {$InterpolatedFloat} from "immersive_aircraft.util.InterpolatedFloat"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
@@ -294,8 +294,8 @@ import {$Item$$Type} from "net.minecraft.world.item.Item"
 import {$ContainerListener$$Interface} from "net.minecraft.world.ContainerListener"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$Set$$Type} from "java.util.Set"
-import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
+import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$HasCustomInventoryScreen$$Interface} from "net.minecraft.world.entity.HasCustomInventoryScreen"
 import {$WeaponMount} from "immersive_aircraft.entity.misc.WeaponMount"
@@ -316,11 +316,11 @@ import {$AbstractContainerMenu, $AbstractContainerMenu$$Type} from "net.minecraf
 import {$RegistryFriendlyByteBuf$$Type} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
-import {$Weapon} from "immersive_aircraft.entity.weapon.Weapon"
 import {$InterpolatedFloat} from "immersive_aircraft.util.InterpolatedFloat"
+import {$Weapon} from "immersive_aircraft.entity.weapon.Weapon"
 
 export class $InventoryVehicleEntity extends $DyeableVehicleEntity implements $ContainerListener$$Interface, $MenuProvider$$Interface, $Container$$Interface, $HasCustomInventoryScreen$$Interface {
  "hasImpulse": boolean
@@ -406,8 +406,8 @@ public "canPlaceItem"(index: integer, stack: $ItemStack$$Type): boolean
 public "containerChanged"(sender: $Container$$Type): void
 public "boost"(): void
 public "openCustomInventoryScreen"(player: $Player$$Type): void
-public "getItem"(slot: integer): $ItemStack
 public "tick"(): void
+public "getItem"(slot: integer): $ItemStack
 public "removeItem"(slot: integer, amount: integer): $ItemStack
 public "isEmpty"(): boolean
 public "getProperties"(): $VehicleProperties
@@ -504,21 +504,21 @@ import {$List} from "java.util.List"
 import {$EnumMap} from "java.util.EnumMap"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$Vector3f} from "org.joml.Vector3f"
-import {$Component} from "net.minecraft.network.chat.Component"
 import {$EngineVehicle} from "immersive_aircraft.entity.EngineVehicle"
+import {$Component} from "net.minecraft.network.chat.Component"
 import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
 import {$EngineVehicle$Cautions} from "immersive_aircraft.entity.EngineVehicle$Cautions"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Container} from "net.minecraft.world.Container"
-import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
+import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$Tag} from "net.minecraft.nbt.Tag"
 import {$Trail} from "immersive_aircraft.entity.misc.Trail"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$InterpolatedFloat} from "immersive_aircraft.util.InterpolatedFloat"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
@@ -646,21 +646,21 @@ import {$VehicleData} from "immersive_aircraft.entity.misc.VehicleData"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
+import {$BlockUtil$FoundRectangle$$Type} from "net.minecraft.BlockUtil$FoundRectangle"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$BlockUtil$FoundRectangle$$Type} from "net.minecraft.BlockUtil$FoundRectangle"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
 import {$Entity$MoveFunction$$Type} from "net.minecraft.world.entity.Entity$MoveFunction"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Matrix3f} from "org.joml.Matrix3f"
-import {$Direction$Axis$$Type} from "net.minecraft.core.Direction$Axis"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
+import {$Direction$Axis$$Type} from "net.minecraft.core.Direction$Axis"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
-import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$AABB} from "net.minecraft.world.phys.AABB"
 import {$InterpolatedFloat} from "immersive_aircraft.util.InterpolatedFloat"
@@ -733,6 +733,7 @@ constructor(entityType: $EntityType$$Type<($VehicleEntity$$Type)>, world: $Level
 
 public "getSpeedVector"(): $Vec3
 public "isPilotCreative"(): boolean
+public "isWithinParticleRange"(): boolean
 public "getVehicleData"(): $VehicleData
 public "readItemTag"(stack: $ItemStack$$Type): void
 public "setZRot"(rot: float): void
@@ -744,7 +745,6 @@ public "getPassengerSpace"(): integer
 public "addItemTag"(stack: $ItemStack$$Type): void
 public "getBoost"(): integer
 public "canBoost"(): boolean
-public "isWithinParticleRange"(): boolean
 public "getVehicleNormalTransform"(): $Matrix3f
 public "setAnimationVariables"(tickDelta: float): void
 public static "canCollide"(entity: $Entity$$Type, other: $Entity$$Type): boolean
@@ -765,17 +765,17 @@ public "getVehicleNormalTransformQuantized"(): $Matrix3f
 public "getRightDirection"(): $Vector3f
 public "getTopDirection"(): $Vector3f
 public "getZoom"(): double
-public "asItem"(): $Item
 public "getDurability"(): float
+public "asItem"(): $Item
 public "boost"(ticks: integer): void
 public "boost"(): void
-public "move"(movementType: $MoverType$$Type, movement: $Vec3$$Type): void
 public "tick"(): void
+public "move"(movementType: $MoverType$$Type, movement: $Vec3$$Type): void
 public "getDisplayName"(): $Component
-public "interact"(player: $Player$$Type, hand: $InteractionHand$$Type): $InteractionResult
-public "setXRot"(pitch: float): void
 public "getRoll"(): float
 public "getRoll"(tickDelta: float): float
+public "interact"(player: $Player$$Type, hand: $InteractionHand$$Type): $InteractionResult
+public "setXRot"(pitch: float): void
 public "setHealth"(damage: float): void
 public "attack"(source: $DamageSource$$Type, amount: float): boolean
 public "getHealth"(): float
@@ -804,12 +804,12 @@ public static "fromGameProfile"(arg0: $GameProfile$$Type): $ScoreHolder
 public "serializeNBT"(arg0: $HolderLookup$Provider$$Type): $Tag
 get "speedVector"(): $Vec3
 get "pilotCreative"(): boolean
+get "withinParticleRange"(): boolean
 get "vehicleData"(): $VehicleData
 set "ZRot"(value: float)
 get "vehicleTransform"(): $Matrix4f
 get "forwardDirection"(): $Vector3f
 get "passengerSpace"(): integer
-get "withinParticleRange"(): boolean
 get "vehicleNormalTransform"(): $Matrix3f
 set "animationVariables"(value: float)
 get "damageWobbleSide"(): integer

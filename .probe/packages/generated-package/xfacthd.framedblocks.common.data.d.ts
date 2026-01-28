@@ -1,6 +1,6 @@
 declare module "xfacthd.framedblocks.common.data.doubleblock.CamoGetter" {
-import {$FramedDoubleBlockEntity$$Type} from "xfacthd.framedblocks.common.blockentity.doubled.FramedDoubleBlockEntity"
 import {$CamoContainer} from "xfacthd.framedblocks.api.camo.CamoContainer"
+import {$FramedDoubleBlockEntity$$Type} from "xfacthd.framedblocks.common.blockentity.doubled.FramedDoubleBlockEntity"
 import {$Enum} from "java.lang.Enum"
 import {$Tuple$$Type} from "net.minecraft.util.Tuple"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -29,8 +29,8 @@ declare module "xfacthd.framedblocks.common.data.doubleblock.DoubleBlockStateCac
 import {$CamoGetter} from "xfacthd.framedblocks.common.data.doubleblock.CamoGetter"
 import {$IBlockType$$Type} from "xfacthd.framedblocks.api.type.IBlockType"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
-import {$DoubleBlockTopInteractionMode} from "xfacthd.framedblocks.common.data.doubleblock.DoubleBlockTopInteractionMode"
 import {$Tuple} from "net.minecraft.util.Tuple"
+import {$DoubleBlockTopInteractionMode} from "xfacthd.framedblocks.common.data.doubleblock.DoubleBlockTopInteractionMode"
 import {$StateCache} from "xfacthd.framedblocks.api.block.cache.StateCache"
 import {$SolidityCheck} from "xfacthd.framedblocks.common.data.doubleblock.SolidityCheck"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -63,8 +63,8 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
 export class $SlopeType extends $Enum<($SlopeType)> implements $StringRepresentable$$Interface {
@@ -77,11 +77,11 @@ public static "valueOf"(arg0: StringJS): $SlopeType
 public "getSerializedName"(): StringJS
 public "getOpposite"(): $SlopeType
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
 get "opposite"(): $SlopeType
 get "remappedEnumConstantName"(): StringJS
@@ -556,14 +556,6 @@ static readonly "FRAMED_IRON_DOOR": $BlockType
 static readonly "FRAMED_PYRAMID": $BlockType
 static readonly "FRAMED_ELEVATED_SLOPE_SLAB": $BlockType
 
-public "getSideSkipPredicate"(): $SideSkipPredicate
-public "canOccludeWithSolidCamo"(): boolean
-public "canLockState"(): boolean
-public "allowMakingIntangible"(): boolean
-public "supportsWaterLogging"(): boolean
-public "getConnectionPredicate"(): $ConnectionPredicate
-public "supportsConnectedTextures"(): boolean
-public "getFullFacePredicate"(): $FullFacePredicate
 public "generateOcclusionShapes"(arg0: $ImmutableList$$Type<($BlockState$$Type)>, arg1: $ShapeProvider$$Type): $ShapeProvider
 public "hasSpecialHitbox"(): boolean
 public "generateShapes"(arg0: $ImmutableList$$Type<($BlockState$$Type)>): $ShapeProvider
@@ -572,15 +564,23 @@ public "consumesTwoCamosInCamoApplicationRecipe"(): boolean
 public "hasBlockItem"(): boolean
 public "hasSpecialTile"(): boolean
 public "isDoubleBlock"(): boolean
+public "getSideSkipPredicate"(): $SideSkipPredicate
+public "canOccludeWithSolidCamo"(): boolean
+public "canLockState"(): boolean
+public "allowMakingIntangible"(): boolean
+public "supportsWaterLogging"(): boolean
+public "getFullFacePredicate"(): $FullFacePredicate
+public "getConnectionPredicate"(): $ConnectionPredicate
+public "supportsConnectedTextures"(): boolean
 public "getName"(): StringJS
 public static "values"(): ($BlockType)[]
 public "compareTo"(arg0: $IBlockType$$Type): integer
 public static "valueOf"(arg0: StringJS): $BlockType
-get "sideSkipPredicate"(): $SideSkipPredicate
-get "connectionPredicate"(): $ConnectionPredicate
-get "fullFacePredicate"(): $FullFacePredicate
 get "minimumConTexMode"(): $ConTexMode
 get "doubleBlock"(): boolean
+get "sideSkipPredicate"(): $SideSkipPredicate
+get "fullFacePredicate"(): $FullFacePredicate
+get "connectionPredicate"(): $ConnectionPredicate
 get "name"(): StringJS
 }
 /**
@@ -598,8 +598,8 @@ import {$CamoContainer} from "xfacthd.framedblocks.api.camo.CamoContainer"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$SimpleBlockCamoContainerFactory} from "xfacthd.framedblocks.api.camo.block.SimpleBlockCamoContainerFactory"
-import {$Component} from "net.minecraft.network.chat.Component"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$Component} from "net.minecraft.network.chat.Component"
 import {$TriggerRegistrar$$Type} from "xfacthd.framedblocks.api.camo.TriggerRegistrar"
 
 export class $BlockCamoContainerFactory extends $SimpleBlockCamoContainerFactory {
@@ -610,6 +610,7 @@ static readonly "MSG_NON_SOLID": $Component
 constructor()
 
 public "registerTriggerItems"(arg0: $TriggerRegistrar$$Type): void
+public "applyCamoInCraftingRecipe"(arg0: $ItemStack$$Type): $CamoContainer
 public "applyCamo"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $Player$$Type, arg3: $ItemStack$$Type): $CamoContainer
 }
 /**
@@ -626,8 +627,8 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
 export class $ChestState extends $Enum<($ChestState)> implements $StringRepresentable$$Interface {
@@ -639,11 +640,11 @@ public static "values"(): ($ChestState)[]
 public static "valueOf"(arg0: StringJS): $ChestState
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
 }
@@ -658,13 +659,13 @@ export type $ChestState$$Type = (("closed") | ("opening") | ("closing"));
 export type $ChestState$$Original = $ChestState;}
 declare module "xfacthd.framedblocks.common.data.camo.fluid.FluidCamoContainerFactory" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$CamoContainer, $CamoContainer$$Type} from "xfacthd.framedblocks.api.camo.CamoContainer"
+import {$CamoContainer$$Type} from "xfacthd.framedblocks.api.camo.CamoContainer"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component} from "net.minecraft.network.chat.Component"
 import {$TriggerRegistrar$$Type} from "xfacthd.framedblocks.api.camo.TriggerRegistrar"
-import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$FluidCamoContainer, $FluidCamoContainer$$Type} from "xfacthd.framedblocks.common.data.camo.fluid.FluidCamoContainer"
+import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$CamoContainerFactory} from "xfacthd.framedblocks.api.camo.CamoContainerFactory"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
@@ -675,16 +676,16 @@ static readonly "MSG_BLACKLISTED": $Component
 
 constructor()
 
-public "canTriviallyConvertToItemStack"(): boolean
-public "streamCodec"(): $StreamCodec<($RegistryFriendlyByteBuf), ($FluidCamoContainer)>
-public "applyCamo"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $Player$$Type, arg3: $ItemStack$$Type): $CamoContainer
+public "applyCamo"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $Player$$Type, arg3: $ItemStack$$Type): $FluidCamoContainer
+public "removeCamo"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $Player$$Type, arg3: $ItemStack$$Type, arg4: $FluidCamoContainer$$Type): boolean
+public "removeCamo"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $Player$$Type, arg3: $ItemStack$$Type, arg4: $CamoContainer$$Type): boolean
 public "dropCamo"(arg0: $FluidCamoContainer$$Type): $ItemStack
 public "dropCamo"(arg0: $CamoContainer$$Type): $ItemStack
-public "removeCamo"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $Player$$Type, arg3: $ItemStack$$Type, arg4: $CamoContainer$$Type): boolean
-public "removeCamo"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $Player$$Type, arg3: $ItemStack$$Type, arg4: $FluidCamoContainer$$Type): boolean
 public "validateCamo"(arg0: $CamoContainer$$Type): boolean
 public "validateCamo"(arg0: $FluidCamoContainer$$Type): boolean
 public "registerTriggerItems"(arg0: $TriggerRegistrar$$Type): void
+public "canTriviallyConvertToItemStack"(): boolean
+public "streamCodec"(): $StreamCodec<($RegistryFriendlyByteBuf), ($FluidCamoContainer)>
 public "codec"(): $MapCodec<($FluidCamoContainer)>
 }
 /**
@@ -699,8 +700,8 @@ export type $FluidCamoContainerFactory$$Original = $FluidCamoContainerFactory;}
 declare module "xfacthd.framedblocks.common.data.camo.fluid.FluidCamoContainer" {
 import {$FluidCamoContent} from "xfacthd.framedblocks.common.data.camo.fluid.FluidCamoContent"
 import {$CamoContainer} from "xfacthd.framedblocks.api.camo.CamoContainer"
-import {$Fluid, $Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 import {$CamoContainerFactory} from "xfacthd.framedblocks.api.camo.CamoContainerFactory"
+import {$Fluid, $Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 
 export class $FluidCamoContainer extends $CamoContainer<($FluidCamoContent), ($FluidCamoContainer)> {
 constructor(arg0: $Fluid$$Type)
@@ -737,9 +738,9 @@ static readonly "ALWAYS": $NullCullPredicate
 
 constructor(leftStateTest: $Predicate$$Type<($BlockState)>, rightStateTest: $Predicate$$Type<($BlockState)>)
 
-public "leftStateTest"(): $Predicate<($BlockState)>
-public "rightStateTest"(): $Predicate<($BlockState)>
 public "testLeft"(arg0: $BlockState$$Type): boolean
+public "rightStateTest"(): $Predicate<($BlockState)>
+public "leftStateTest"(): $Predicate<($BlockState)>
 public "testRight"(arg0: $BlockState$$Type): boolean
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
@@ -749,7 +750,7 @@ public "hashCode"(): integer
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $NullCullPredicate$$Type = ({"rightStateTest"?: $Predicate$$Type<($BlockState$$Type)>, "leftStateTest"?: $Predicate$$Type<($BlockState$$Type)>}) | ([rightStateTest?: $Predicate$$Type<($BlockState$$Type)>, leftStateTest?: $Predicate$$Type<($BlockState$$Type)>]);
+export type $NullCullPredicate$$Type = ({"leftStateTest"?: $Predicate$$Type<($BlockState$$Type)>, "rightStateTest"?: $Predicate$$Type<($BlockState$$Type)>}) | ([leftStateTest?: $Predicate$$Type<($BlockState$$Type)>, rightStateTest?: $Predicate$$Type<($BlockState$$Type)>]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -771,14 +772,21 @@ import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$ParticleOptions} from "net.minecraft.core.particles.ParticleOptions"
-import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
+import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $FluidCamoContent extends $CamoContent<($FluidCamoContent)> {
 constructor(arg0: $Fluid$$Type)
 
-public "getClientHandler"(): $CamoClientHandler<($FluidCamoContent)>
+public "getCamoId"(): StringJS
+public "makeRunningLandingParticles"(arg0: $BlockPos$$Type): $ParticleOptions
+public "getAppearanceState"(): $BlockState
+public "isOccludedBy"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockPos$$Type): boolean
+public "isOccludedBy"(arg0: $CamoContent$$Type<(never)>, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockPos$$Type): boolean
+public "occludes"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockPos$$Type): boolean
 public "getFluid"(): $Fluid
+public "propagatesSkylightDown"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type): boolean
+public "getShadeBrightness"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: float): float
 public "getExplosionResistance"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $Explosion$$Type): float
 public "isSolid"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type): boolean
 public "canOcclude"(): boolean
@@ -790,32 +798,25 @@ public "getFireSpreadSpeed"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg
 public "canEntityDestroy"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $Entity$$Type): boolean
 public "shouldDisplayFluidOverlay"(arg0: $BlockAndTintGetter$$Type, arg1: $BlockPos$$Type, arg2: $FluidState$$Type): boolean
 public "getMapColor"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type): $MapColor
-public "propagatesSkylightDown"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type): boolean
-public "getShadeBrightness"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: float): float
 public "getCamoName"(): $MutableComponent
 public "getAsBlockState"(): $BlockState
 public "isEmissive"(): boolean
-public "getCamoId"(): StringJS
-public "makeRunningLandingParticles"(arg0: $BlockPos$$Type): $ParticleOptions
-public "getAppearanceState"(): $BlockState
-public "isOccludedBy"(arg0: $CamoContent$$Type<(never)>, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockPos$$Type): boolean
-public "isOccludedBy"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockPos$$Type): boolean
-public "occludes"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockPos$$Type): boolean
-public "getTintColor"(arg0: $ItemStack$$Type, arg1: integer): integer
 public "getTintColor"(arg0: $BlockAndTintGetter$$Type, arg1: $BlockPos$$Type, arg2: integer): integer
+public "getTintColor"(arg0: $ItemStack$$Type, arg1: integer): integer
+public "getClientHandler"(): $CamoClientHandler<($FluidCamoContent)>
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
 public "getSoundType"(): $SoundType
 public "getFriction"(arg0: $LevelReader$$Type, arg1: $BlockPos$$Type, arg2: $Entity$$Type, arg3: float): float
 public "getLightEmission"(): integer
-get "clientHandler"(): $CamoClientHandler<($FluidCamoContent)>
+get "camoId"(): StringJS
+get "appearanceState"(): $BlockState
 get "fluid"(): $Fluid
 get "camoName"(): $MutableComponent
 get "asBlockState"(): $BlockState
 get "emissive"(): boolean
-get "camoId"(): StringJS
-get "appearanceState"(): $BlockState
+get "clientHandler"(): $CamoClientHandler<($FluidCamoContent)>
 get "soundType"(): $SoundType
 get "lightEmission"(): integer
 }
@@ -833,8 +834,8 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
 export class $PillarConnection extends $Enum<($PillarConnection)> implements $StringRepresentable$$Interface {
@@ -846,11 +847,11 @@ public static "values"(): ($PillarConnection)[]
 public static "valueOf"(arg0: StringJS): $PillarConnection
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
 }
@@ -868,8 +869,8 @@ import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$FramedDoubleBlockEntity$$Type} from "xfacthd.framedblocks.common.blockentity.doubled.FramedDoubleBlockEntity"
 import {$Enum} from "java.lang.Enum"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
-import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
+import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $SolidityCheck extends $Enum<($SolidityCheck)> {
 static readonly "SECOND": $SolidityCheck

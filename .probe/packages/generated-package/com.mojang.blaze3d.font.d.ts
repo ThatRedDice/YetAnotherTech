@@ -32,12 +32,12 @@ get "top"(): float
 get "colored"(): boolean
 get "left"(): float
 get "right"(): float
-get "pixelWidth"(): integer
-get "pixelHeight"(): integer
+get "bottom"(): float
 get "oversample"(): float
 get "bearingLeft"(): float
 get "bearingTop"(): float
-get "bottom"(): float
+get "pixelWidth"(): integer
+get "pixelHeight"(): integer
 }
 
 export class $SheetGlyphInfo implements $SheetGlyphInfo$$Interface {
@@ -45,13 +45,13 @@ export class $SheetGlyphInfo implements $SheetGlyphInfo$$Interface {
  "isColored"(): boolean
  "getLeft"(): float
  "getRight"(): float
- "getPixelWidth"(): integer
- "getPixelHeight"(): integer
+ "getBottom"(): float
+ "upload"(arg0: integer, arg1: integer): void
  "getOversample"(): float
  "getBearingLeft"(): float
  "getBearingTop"(): float
- "upload"(arg0: integer, arg1: integer): void
- "getBottom"(): float
+ "getPixelWidth"(): integer
+ "getPixelHeight"(): integer
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -100,10 +100,10 @@ get "boldOffset"(): float
 
 export class $GlyphInfo implements $GlyphInfo$$Interface {
  "getShadowOffset"(): float
- "getAdvance"(arg0: boolean): float
- "getAdvance"(): float
- "getBoldOffset"(): float
  "bake"(arg0: $Function$$Type<($SheetGlyphInfo), ($BakedGlyph$$Type)>): $BakedGlyph
+ "getAdvance"(): float
+ "getAdvance"(arg0: boolean): float
+ "getBoldOffset"(): float
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_

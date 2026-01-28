@@ -51,8 +51,8 @@ get "pos"(): $BlockPos
 export class $ISnapshot implements $ISnapshot$$Interface {
  "restore"(arg0: $Level$$Type, arg1: $Player$$Type): boolean
  "getRequiredItems"(): $ItemStack
- "canRestore"(arg0: $Level$$Type, arg1: $Player$$Type): boolean
  "forceRestore"(arg0: $Level$$Type): void
+ "canRestore"(arg0: $Level$$Type, arg1: $Player$$Type): boolean
  "execute"(arg0: $Level$$Type, arg1: $Player$$Type, arg2: $BlockHitResult$$Type): boolean
  "getBlockState"(): $BlockState
  "getPos"(): $BlockPos
@@ -82,8 +82,8 @@ constructor(arg0: $BlockState$$Type, arg1: $BlockPos$$Type, arg2: $BlockItem$$Ty
 
 public "restore"(arg0: $Level$$Type, arg1: $Player$$Type): boolean
 public "getRequiredItems"(): $ItemStack
-public "canRestore"(arg0: $Level$$Type, arg1: $Player$$Type): boolean
 public "forceRestore"(arg0: $Level$$Type): void
+public "canRestore"(arg0: $Level$$Type, arg1: $Player$$Type): boolean
 public static "get"(arg0: $Level$$Type, arg1: $Player$$Type, arg2: $BlockHitResult$$Type, arg3: $BlockPos$$Type, arg4: $BlockItem$$Type, arg5: $BlockState$$Type, arg6: $WandOptions$$Type): $PlaceSnapshot
 public "execute"(arg0: $Level$$Type, arg1: $Player$$Type, arg2: $BlockHitResult$$Type): boolean
 public "getBlockState"(): $BlockState

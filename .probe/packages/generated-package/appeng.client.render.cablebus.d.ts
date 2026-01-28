@@ -49,11 +49,11 @@ public "getConnectionTypes"(): $EnumMap<($Direction), ($AECableType)>
 public "getCoreType"(): $CableCoreType
 public "getAttachmentConnections"(): $EnumMap<($Direction), (integer)>
 public "getCableBusAdjacent"(): $EnumSet<($Direction)>
+public "setCableBusAdjacent"(arg0: $EnumSet$$Type<($Direction$$Type)>): void
 public "setCoreType"(arg0: $CableCoreType$$Type): void
 public "setCableType"(arg0: $AECableType$$Type): void
 public "setCableColor"(arg0: $AEColor$$Type): void
 public "setConnectionTypes"(arg0: $EnumMap$$Type<($Direction$$Type), ($AECableType$$Type)>): void
-public "setCableBusAdjacent"(arg0: $EnumSet$$Type<($Direction$$Type)>): void
 public "equals"(arg0: any): boolean
 public "hashCode"(): integer
 public "setPos"(arg0: $BlockPos$$Type): void
@@ -70,11 +70,11 @@ get "connectionTypes"(): $EnumMap<($Direction), ($AECableType)>
 get "coreType"(): $CableCoreType
 get "attachmentConnections"(): $EnumMap<($Direction), (integer)>
 get "cableBusAdjacent"(): $EnumSet<($Direction)>
+set "cableBusAdjacent"(value: $EnumSet$$Type<($Direction$$Type)>)
 set "coreType"(value: $CableCoreType$$Type)
 set "cableType"(value: $AECableType$$Type)
 set "cableColor"(value: $AEColor$$Type)
 set "connectionTypes"(value: $EnumMap$$Type<($Direction$$Type), ($AECableType$$Type)>)
-set "cableBusAdjacent"(value: $EnumSet$$Type<($Direction$$Type)>)
 set "pos"(value: $BlockPos$$Type)
 get "attachments"(): $EnumMap<($Direction), ($IPartModel)>
 get "pos"(): $BlockPos
@@ -91,8 +91,8 @@ export type $CableBusRenderState$$Original = $CableBusRenderState;}
 declare module "appeng.client.render.cablebus.CableCoreType" {
 import {$AECableType$$Type} from "appeng.api.util.AECableType"
 import {$AEColor$$Type} from "appeng.api.util.AEColor"
-import {$Material} from "net.minecraft.client.resources.model.Material"
 import {$Enum} from "java.lang.Enum"
+import {$Material} from "net.minecraft.client.resources.model.Material"
 
 export class $CableCoreType extends $Enum<($CableCoreType)> {
 static readonly "GLASS": $CableCoreType

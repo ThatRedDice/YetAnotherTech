@@ -1,10 +1,10 @@
 declare module "net.neoforged.neoforge.server.command.EnumArgument$Info" {
 import {$ArgumentTypeInfo$Template, $ArgumentTypeInfo$Template$$Type} from "net.minecraft.commands.synchronization.ArgumentTypeInfo$Template"
-import {$EnumArgument, $EnumArgument$$Type} from "net.neoforged.neoforge.server.command.EnumArgument"
 import {$ArgumentType$$Type} from "com.mojang.brigadier.arguments.ArgumentType"
+import {$EnumArgument, $EnumArgument$$Type} from "net.neoforged.neoforge.server.command.EnumArgument"
 import {$EnumArgument$Info$Template, $EnumArgument$Info$Template$$Type} from "net.neoforged.neoforge.server.command.EnumArgument$Info$Template"
-import {$Enum} from "java.lang.Enum"
 import {$FriendlyByteBuf$$Type} from "net.minecraft.network.FriendlyByteBuf"
+import {$Enum} from "java.lang.Enum"
 import {$JsonObject$$Type} from "com.google.gson.JsonObject"
 import {$ArgumentTypeInfo$$Interface} from "net.minecraft.commands.synchronization.ArgumentTypeInfo"
 
@@ -63,9 +63,9 @@ import {$SuggestionsBuilder$$Type} from "com.mojang.brigadier.suggestion.Suggest
 
 export class $EnumArgument<T extends $Enum<(object)>> implements $ArgumentType$$Interface<(T)> {
 public "listSuggestions"<S>(arg0: $CommandContext$$Type<(S)>, arg1: $SuggestionsBuilder$$Type): $CompletableFuture<($Suggestions)>
-public static "enumArgument"<R extends $Enum<(object)>>(arg0: $Class$$Type<(R)>): $EnumArgument<(R)>
 public "getExamples"(): $Collection<(StringJS)>
-public "parse"(arg0: $StringReader$$Type): any
+public static "enumArgument"<R extends $Enum<(object)>>(arg0: $Class$$Type<(R)>): $EnumArgument<(R)>
+public "parse"(arg0: $StringReader$$Type): T
 public "parse"<S>(arg0: $StringReader$$Type, arg1: S): T
 get "examples"(): $Collection<(StringJS)>
 }
@@ -82,8 +82,8 @@ declare module "net.neoforged.neoforge.server.permission.handler.IPermissionHand
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$UUID$$Type} from "java.util.UUID"
 import {$PermissionNode, $PermissionNode$$Type} from "net.neoforged.neoforge.server.permission.nodes.PermissionNode"
-import {$PermissionDynamicContext$$Type} from "net.neoforged.neoforge.server.permission.nodes.PermissionDynamicContext"
 import {$Set} from "java.util.Set"
+import {$PermissionDynamicContext$$Type} from "net.neoforged.neoforge.server.permission.nodes.PermissionDynamicContext"
 import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
 
 export interface $IPermissionHandler$$Interface {
@@ -93,8 +93,8 @@ get "identifier"(): $ResourceLocation
 
 export class $IPermissionHandler implements $IPermissionHandler$$Interface {
  "getRegisteredNodes"(): $Set<($PermissionNode<(never)>)>
- "getIdentifier"(): $ResourceLocation
  "getOfflinePermission"<T>(arg0: $UUID$$Type, arg1: $PermissionNode$$Type<(T)>, ...arg2: ($PermissionDynamicContext$$Type<(never)>)[]): T
+ "getIdentifier"(): $ResourceLocation
  "getPermission"<T>(arg0: $ServerPlayer$$Type, arg1: $PermissionNode$$Type<(T)>, ...arg2: ($PermissionDynamicContext$$Type<(never)>)[]): T
 }
 /**
@@ -267,16 +267,16 @@ public "getReadableName"(): $Component
 public "setInformation"(arg0: $Component$$Type, arg1: $Component$$Type): $PermissionNode
 public "getDynamics"(): ($PermissionDynamicContextKey<(never)>)[]
 public "getDefaultResolver"(): $PermissionNode$PermissionResolver<(T)>
-public "getNodeName"(): StringJS
 public "getDescription"(): $Component
+public "getNodeName"(): StringJS
 public "equals"(arg0: any): boolean
 public "hashCode"(): integer
 public "getType"(): $PermissionType<(T)>
 get "readableName"(): $Component
 get "dynamics"(): ($PermissionDynamicContextKey<(never)>)[]
 get "defaultResolver"(): $PermissionNode$PermissionResolver<(T)>
-get "nodeName"(): StringJS
 get "description"(): $Component
+get "nodeName"(): StringJS
 get "type"(): $PermissionType<(T)>
 }
 /**

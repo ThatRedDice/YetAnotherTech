@@ -52,8 +52,8 @@ import {$Serializer$$Type} from "io.wispforest.endec.Serializer"
 import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$Function$$Type} from "java.util.function.Function"
 import {$SerializationContext$$Type} from "io.wispforest.endec.SerializationContext"
-import {$Deserializer$$Type} from "io.wispforest.endec.Deserializer"
 import {$Serializer$Struct$$Type} from "io.wispforest.endec.Serializer$Struct"
+import {$Deserializer$$Type} from "io.wispforest.endec.Deserializer"
 
 export class $StructField<S, F> {
 constructor(arg0: StringJS, arg1: $Endec$$Type<(F)>, arg2: $Function$$Type<(S), (F)>)

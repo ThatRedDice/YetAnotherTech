@@ -10,13 +10,13 @@ constructor(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, 
 
 public "getNewState"(): $BlockState
 public "getOldState"(): $BlockState
-public "getLevel"(): $Level
 public "getEntity"(): $FallingBlockEntity
+public "getLevel"(): $Level
 public "getPos"(): $BlockPos
 get "newState"(): $BlockState
 get "oldState"(): $BlockState
-get "level"(): $Level
 get "entity"(): $FallingBlockEntity
+get "level"(): $Level
 get "pos"(): $BlockPos
 }
 /**
@@ -36,10 +36,10 @@ import {$ResourceManager, $ResourceManager$$Type} from "net.minecraft.server.pac
 export class $ResourceReloadEvent extends $Event {
 constructor(arg0: $ResourceManager$$Type, arg1: $LogicalSide$$Type)
 
-public "getSide"(): $LogicalSide
 public "getResourceManager"(): $ResourceManager
-get "side"(): $LogicalSide
+public "getSide"(): $LogicalSide
 get "resourceManager"(): $ResourceManager
+get "side"(): $LogicalSide
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_

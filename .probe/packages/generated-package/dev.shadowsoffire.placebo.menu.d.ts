@@ -1,7 +1,7 @@
 declare module "dev.shadowsoffire.placebo.menu.BlockEntityMenu" {
 import {$Slot} from "net.minecraft.world.inventory.Slot"
-import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$PlaceboContainerMenu} from "dev.shadowsoffire.placebo.menu.PlaceboContainerMenu"
+import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ContainerListener} from "net.minecraft.world.inventory.ContainerListener"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$List} from "java.util.List"
@@ -44,8 +44,8 @@ export interface $QuickMoveHandler$QuickMoveMenu$$Interface {
 }
 
 export class $QuickMoveHandler$QuickMoveMenu implements $QuickMoveHandler$QuickMoveMenu$$Interface {
- "onQuickMove"(arg0: $ItemStack$$Type, arg1: $ItemStack$$Type, arg2: $Slot$$Type): void
  "moveItemStackTo"(arg0: $ItemStack$$Type, arg1: integer, arg2: integer, arg3: boolean): boolean
+ "onQuickMove"(arg0: $ItemStack$$Type, arg1: $ItemStack$$Type, arg2: $Slot$$Type): void
  "getSlot"(arg0: integer): $Slot
 }
 /**
@@ -97,15 +97,15 @@ export type $SlotUpdateListener$$Type = ((arg0: integer, arg1: $ItemStack) => vo
  */
 export type $SlotUpdateListener$$Original = $SlotUpdateListener;}
 declare module "dev.shadowsoffire.placebo.menu.PlaceboContainerMenu" {
-import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Slot, $Slot$$Type} from "net.minecraft.world.inventory.Slot"
-import {$ContainerListener} from "net.minecraft.world.inventory.ContainerListener"
+import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$IDataUpdateListener$$Type} from "dev.shadowsoffire.placebo.menu.IDataUpdateListener"
+import {$ContainerListener} from "net.minecraft.world.inventory.ContainerListener"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$AbstractContainerMenu} from "net.minecraft.world.inventory.AbstractContainerMenu"
 import {$List} from "java.util.List"
-import {$SlotUpdateListener$$Type} from "dev.shadowsoffire.placebo.menu.SlotUpdateListener"
 import {$QuickMoveHandler$QuickMoveMenu$$Interface} from "dev.shadowsoffire.placebo.menu.QuickMoveHandler$QuickMoveMenu"
+import {$SlotUpdateListener$$Type} from "dev.shadowsoffire.placebo.menu.SlotUpdateListener"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
 
 export class $PlaceboContainerMenu extends $AbstractContainerMenu implements $QuickMoveHandler$QuickMoveMenu$$Interface {
@@ -124,7 +124,6 @@ readonly "containerListeners": $List<($ContainerListener)>
  "containerId": integer
 static readonly "QUICKCRAFT_TYPE_CHARITABLE": integer
 
-public "addDataListener"(arg0: $IDataUpdateListener$$Type): void
 /**
  * 
  * @deprecated
@@ -132,6 +131,7 @@ public "addDataListener"(arg0: $IDataUpdateListener$$Type): void
 public "addSlotListener"(arg0: $SlotUpdateListener$$Type): void
 public "quickMoveStack"(arg0: $Player$$Type, arg1: integer): $ItemStack
 public "moveItemStackTo"(arg0: $ItemStack$$Type, arg1: integer, arg2: integer, arg3: boolean): boolean
+public "addDataListener"(arg0: $IDataUpdateListener$$Type): void
 public "setData"(arg0: integer, arg1: integer): void
 public "onQuickMove"(arg0: $ItemStack$$Type, arg1: $ItemStack$$Type, arg2: $Slot$$Type): void
 public "getSlot"(arg0: integer): $Slot

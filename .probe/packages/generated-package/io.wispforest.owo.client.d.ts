@@ -1,9 +1,9 @@
 declare module "io.wispforest.owo.client.screens.OwoScreenHandler" {
-import {$Endec$$Type} from "io.wispforest.endec.Endec"
 import {$Player} from "net.minecraft.world.entity.player.Player"
+import {$Endec$$Type} from "io.wispforest.endec.Endec"
 import {$ReflectiveEndecBuilder} from "io.wispforest.endec.impl.ReflectiveEndecBuilder"
-import {$SyncedProperty} from "io.wispforest.owo.client.screens.SyncedProperty"
 import {$Class$$Type} from "java.lang.Class"
+import {$SyncedProperty} from "io.wispforest.owo.client.screens.SyncedProperty"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$Record, $Record$$Type} from "java.lang.Record"
 
@@ -39,8 +39,8 @@ import {$List$$Type} from "java.util.List"
 import {$CustomPacketPayload$Type} from "net.minecraft.network.protocol.common.custom.CustomPacketPayload$Type"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
 import {$CustomPacketPayload, $CustomPacketPayload$$Interface} from "net.minecraft.network.protocol.common.custom.CustomPacketPayload"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ServerboundCustomPayloadPacket} from "net.minecraft.network.protocol.common.ServerboundCustomPayloadPacket"
 import {$ClientboundCustomPayloadPacket} from "net.minecraft.network.protocol.common.ClientboundCustomPayloadPacket"
 import {$ConnectionProtocol$$Type} from "net.minecraft.network.ConnectionProtocol"
@@ -70,7 +70,7 @@ public static "createType"<T extends $CustomPacketPayload>(arg0: StringJS): $Cus
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $ScreenInternals$LocalPacket$$Type = ({"packetId"?: integer, "payload"?: $FriendlyByteBuf$$Type}) | ([packetId?: integer, payload?: $FriendlyByteBuf$$Type]);
+export type $ScreenInternals$LocalPacket$$Type = ({"payload"?: $FriendlyByteBuf$$Type, "packetId"?: integer}) | ([payload?: $FriendlyByteBuf$$Type, packetId?: integer]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -84,8 +84,8 @@ import {$List$$Type} from "java.util.List"
 import {$CustomPacketPayload$Type} from "net.minecraft.network.protocol.common.custom.CustomPacketPayload$Type"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
 import {$CustomPacketPayload, $CustomPacketPayload$$Interface} from "net.minecraft.network.protocol.common.custom.CustomPacketPayload"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ServerboundCustomPayloadPacket} from "net.minecraft.network.protocol.common.ServerboundCustomPayloadPacket"
 import {$ClientboundCustomPayloadPacket} from "net.minecraft.network.protocol.common.ClientboundCustomPayloadPacket"
 import {$ConnectionProtocol$$Type} from "net.minecraft.network.ConnectionProtocol"
@@ -121,8 +121,8 @@ export type $ScreenInternals$SyncPropertiesPacket$$Type = ({"payload"?: $Friendl
 export type $ScreenInternals$SyncPropertiesPacket$$Original = $ScreenInternals$SyncPropertiesPacket;}
 declare module "io.wispforest.owo.client.screens.SyncedProperty" {
 import {$Endec$$Type} from "io.wispforest.endec.Endec"
-import {$AbstractContainerMenu$$Type} from "net.minecraft.world.inventory.AbstractContainerMenu"
 import {$FriendlyByteBuf$$Type} from "net.minecraft.network.FriendlyByteBuf"
+import {$AbstractContainerMenu$$Type} from "net.minecraft.world.inventory.AbstractContainerMenu"
 import {$Observable} from "io.wispforest.owo.util.Observable"
 
 export class $SyncedProperty<T> extends $Observable<(T)> {

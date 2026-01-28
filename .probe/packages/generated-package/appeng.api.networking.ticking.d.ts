@@ -47,8 +47,8 @@ export type $ITickManager$$Type = ($ITickManager);
  */
 export type $ITickManager$$Original = $ITickManager;}
 declare module "appeng.api.networking.ticking.IGridTickable" {
-import {$TickRateModulation} from "appeng.api.networking.ticking.TickRateModulation"
 import {$IGridNode$$Type} from "appeng.api.networking.IGridNode"
+import {$TickRateModulation} from "appeng.api.networking.ticking.TickRateModulation"
 import {$IGridNodeService$$Interface} from "appeng.api.networking.IGridNodeService"
 import {$TickingRequest} from "appeng.api.networking.ticking.TickingRequest"
 

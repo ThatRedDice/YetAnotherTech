@@ -1,6 +1,6 @@
 declare module "dev.shadowsoffire.apothic_spawners.modifiers.StatModifier" {
-import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$FriendlyByteBuf$$Type} from "net.minecraft.network.FriendlyByteBuf"
+import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$ApothSpawnerTile$$Type} from "dev.shadowsoffire.apothic_spawners.block.ApothSpawnerTile"
 import {$StatModifier$Mode, $StatModifier$Mode$$Type} from "dev.shadowsoffire.apothic_spawners.modifiers.StatModifier$Mode"
@@ -41,15 +41,15 @@ export type $StatModifier$$Original<T> = $StatModifier<(T)>;}
 declare module "dev.shadowsoffire.apothic_spawners.modifiers.SpawnerModifier" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Ingredient, $Ingredient$$Type} from "net.minecraft.world.item.crafting.Ingredient"
-import {$SpawnerModifier$Serializer} from "dev.shadowsoffire.apothic_spawners.modifiers.SpawnerModifier$Serializer"
 import {$List, $List$$Type} from "java.util.List"
+import {$SpawnerModifier$Serializer} from "dev.shadowsoffire.apothic_spawners.modifiers.SpawnerModifier$Serializer"
 import {$RecipeType} from "net.minecraft.world.item.crafting.RecipeType"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$StatModifier, $StatModifier$$Type} from "dev.shadowsoffire.apothic_spawners.modifiers.StatModifier"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
-import {$RecipeInput, $RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$Recipe$$Interface} from "net.minecraft.world.item.crafting.Recipe"
+import {$RecipeInput, $RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$ApothSpawnerTile$$Type} from "dev.shadowsoffire.apothic_spawners.block.ApothSpawnerTile"
 import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -80,15 +80,15 @@ public "getResultItem"(arg0: $HolderLookup$Provider$$Type): $ItemStack
 public "getMainhandInput"(): $Ingredient
 public "getOffhandInput"(): $Ingredient
 public "getStatModifiers"(): $List<($StatModifier<(never)>)>
+public static "findMatch"(arg0: $ApothSpawnerTile$$Type, arg1: $ItemStack$$Type, arg2: $ItemStack$$Type): $SpawnerModifier
+public "matches"(arg0: $ApothSpawnerTile$$Type, arg1: $ItemStack$$Type, arg2: $ItemStack$$Type): boolean
 /**
  * 
  * @deprecated
  */
 public "matches"(arg0: $RecipeInput$$Type, arg1: $Level$$Type): boolean
-public "matches"(arg0: $ApothSpawnerTile$$Type, arg1: $ItemStack$$Type, arg2: $ItemStack$$Type): boolean
 public "apply"(arg0: $ApothSpawnerTile$$Type): boolean
 public "getType"(): $RecipeType<(never)>
-public static "findMatch"(arg0: $ApothSpawnerTile$$Type, arg1: $ItemStack$$Type, arg2: $ItemStack$$Type): $SpawnerModifier
 public "getRemainingItems"(arg0: $RecipeInput$$Type): $NonNullList<($ItemStack)>
 public "getIngredients"(): $NonNullList<($Ingredient)>
 public "showNotification"(): boolean
@@ -122,8 +122,8 @@ import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$IntFunction} from "java.util.function.IntFunction"
@@ -139,11 +139,11 @@ public static "values"(): ($StatModifier$Mode)[]
 public static "valueOf"(arg0: StringJS): $StatModifier$Mode
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
 }
@@ -159,8 +159,8 @@ export type $StatModifier$Mode$$Original = $StatModifier$Mode;}
 declare module "dev.shadowsoffire.apothic_spawners.modifiers.SpawnerModifier$Serializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$SpawnerModifier, $SpawnerModifier$$Type} from "dev.shadowsoffire.apothic_spawners.modifiers.SpawnerModifier"
-import {$RegistryFriendlyByteBuf, $RegistryFriendlyByteBuf$$Type} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf, $RegistryFriendlyByteBuf$$Type} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
 

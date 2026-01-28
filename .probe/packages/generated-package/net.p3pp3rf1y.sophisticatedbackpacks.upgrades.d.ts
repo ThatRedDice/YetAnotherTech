@@ -1,12 +1,12 @@
 declare module "net.p3pp3rf1y.sophisticatedbackpacks.upgrades.inception.InventoryOrder" {
 import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
+import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
-import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
 export class $InventoryOrder extends $Enum<($InventoryOrder)> implements $StringRepresentable$$Interface {
@@ -21,11 +21,11 @@ public static "valueOf"(arg0: StringJS): $InventoryOrder
 public "next"(): $InventoryOrder
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
 }
@@ -41,14 +41,14 @@ export type $InventoryOrder$$Original = $InventoryOrder;}
 declare module "net.p3pp3rf1y.sophisticatedbackpacks.upgrades.refill.RefillUpgradeWrapper$TargetSlot" {
 import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
+import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
-import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
-import {$Component} from "net.minecraft.network.chat.Component"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
+import {$Component} from "net.minecraft.network.chat.Component"
 
 export class $RefillUpgradeWrapper$TargetSlot extends $Enum<($RefillUpgradeWrapper$TargetSlot)> implements $StringRepresentable$$Interface {
 static readonly "TOOLBAR_2": $RefillUpgradeWrapper$TargetSlot
@@ -66,8 +66,8 @@ static readonly "TOOLBAR_4": $RefillUpgradeWrapper$TargetSlot
 static readonly "OFF_HAND": $RefillUpgradeWrapper$TargetSlot
 static readonly "TOOLBAR_5": $RefillUpgradeWrapper$TargetSlot
 
-public "getAcronym"(): $Component
 public static "fromName"(arg0: StringJS): $RefillUpgradeWrapper$TargetSlot
+public "getAcronym"(): $Component
 public "getDescription"(): $Component
 public static "values"(): ($RefillUpgradeWrapper$TargetSlot)[]
 public static "valueOf"(arg0: StringJS): $RefillUpgradeWrapper$TargetSlot
@@ -75,11 +75,11 @@ public "next"(): $RefillUpgradeWrapper$TargetSlot
 public "previous"(): $RefillUpgradeWrapper$TargetSlot
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "acronym"(): $Component
 get "description"(): $Component
 get "serializedName"(): StringJS
@@ -122,15 +122,15 @@ import {$StatefulComponentItemHandler} from "net.p3pp3rf1y.sophisticatedcore.inv
 import {$AnvilUpgradeItem} from "net.p3pp3rf1y.sophisticatedbackpacks.upgrades.anvil.AnvilUpgradeItem"
 
 export class $AnvilUpgradeWrapper extends $UpgradeWrapperBase<($AnvilUpgradeWrapper), ($AnvilUpgradeItem)> {
-public "setShiftClickIntoStorage"(arg0: boolean): void
-public "shouldShiftClickIntoStorage"(): boolean
 public "getItemName"(): StringJS
 public "setItemName"(arg0: StringJS): void
 public "canBeDisabled"(): boolean
+public "setShiftClickIntoStorage"(arg0: boolean): void
+public "shouldShiftClickIntoStorage"(): boolean
 public "getInventory"(): $StatefulComponentItemHandler
-set "shiftClickIntoStorage"(value: boolean)
 get "itemName"(): StringJS
 set "itemName"(value: StringJS)
+set "shiftClickIntoStorage"(value: boolean)
 get "inventory"(): $StatefulComponentItemHandler
 }
 /**
@@ -148,9 +148,9 @@ import {$UpgradeWrapperBase} from "net.p3pp3rf1y.sophisticatedcore.upgrades.Upgr
 import {$StatefulComponentItemHandler} from "net.p3pp3rf1y.sophisticatedcore.inventory.StatefulComponentItemHandler"
 
 export class $SmithingUpgradeWrapper extends $UpgradeWrapperBase<($SmithingUpgradeWrapper), ($SmithingUpgradeItem)> {
+public "canBeDisabled"(): boolean
 public "setShiftClickIntoStorage"(arg0: boolean): void
 public "shouldShiftClickIntoStorage"(): boolean
-public "canBeDisabled"(): boolean
 public "getInventory"(): $StatefulComponentItemHandler
 set "shiftClickIntoStorage"(value: boolean)
 get "inventory"(): $StatefulComponentItemHandler
@@ -169,8 +169,8 @@ import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$List} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
-import {$EverlastingUpgradeItem$Wrapper} from "net.p3pp3rf1y.sophisticatedbackpacks.upgrades.everlasting.EverlastingUpgradeItem$Wrapper"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$EverlastingUpgradeItem$Wrapper} from "net.p3pp3rf1y.sophisticatedbackpacks.upgrades.everlasting.EverlastingUpgradeItem$Wrapper"
 import {$IUpgradeItem$UpgradeConflictDefinition} from "net.p3pp3rf1y.sophisticatedcore.upgrades.IUpgradeItem$UpgradeConflictDefinition"
 import {$UpgradeType} from "net.p3pp3rf1y.sophisticatedcore.upgrades.UpgradeType"
 import {$UpgradeItemBase} from "net.p3pp3rf1y.sophisticatedcore.upgrades.UpgradeItemBase"
@@ -263,12 +263,12 @@ static readonly "BY_BLOCK": $Map<($Block), ($Item)>
 
 constructor(arg0: $IntSupplier$$Type)
 
-public "getUpgradeConflicts"(): $List<($IUpgradeItem$UpgradeConflictDefinition)>
 public "getFilterSlotCount"(): integer
+public "getUpgradeConflicts"(): $List<($IUpgradeItem$UpgradeConflictDefinition)>
 public "getType"(): $UpgradeType<($RestockUpgradeWrapper)>
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
-get "upgradeConflicts"(): $List<($IUpgradeItem$UpgradeConflictDefinition)>
 get "filterSlotCount"(): integer
+get "upgradeConflicts"(): $List<($IUpgradeItem$UpgradeConflictDefinition)>
 get "type"(): $UpgradeType<($RestockUpgradeWrapper)>
 }
 /**
@@ -283,12 +283,12 @@ export type $RestockUpgradeItem$$Original = $RestockUpgradeItem;}
 declare module "net.p3pp3rf1y.sophisticatedbackpacks.upgrades.toolswapper.ToolSwapMode" {
 import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
+import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
-import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
 export class $ToolSwapMode extends $Enum<($ToolSwapMode)> implements $StringRepresentable$$Interface {
@@ -304,11 +304,11 @@ public static "valueOf"(arg0: StringJS): $ToolSwapMode
 public "next"(): $ToolSwapMode
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
 }
@@ -387,12 +387,12 @@ static readonly "BY_BLOCK": $Map<($Block), ($Item)>
 
 constructor(arg0: $IntSupplier$$Type)
 
-public "getUpgradeConflicts"(): $List<($IUpgradeItem$UpgradeConflictDefinition)>
 public "getFilterSlotCount"(): integer
+public "getUpgradeConflicts"(): $List<($IUpgradeItem$UpgradeConflictDefinition)>
 public "getType"(): $UpgradeType<($DepositUpgradeWrapper)>
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
-get "upgradeConflicts"(): $List<($IUpgradeItem$UpgradeConflictDefinition)>
 get "filterSlotCount"(): integer
+get "upgradeConflicts"(): $List<($IUpgradeItem$UpgradeConflictDefinition)>
 get "type"(): $UpgradeType<($DepositUpgradeWrapper)>
 }
 /**
@@ -408,8 +408,8 @@ declare module "net.p3pp3rf1y.sophisticatedbackpacks.upgrades.smithing.SmithingU
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$List} from "java.util.List"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$SmithingUpgradeWrapper} from "net.p3pp3rf1y.sophisticatedbackpacks.upgrades.smithing.SmithingUpgradeWrapper"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$IUpgradeItem$UpgradeConflictDefinition} from "net.p3pp3rf1y.sophisticatedcore.upgrades.IUpgradeItem$UpgradeConflictDefinition"
 import {$UpgradeType} from "net.p3pp3rf1y.sophisticatedcore.upgrades.UpgradeType"
@@ -444,28 +444,28 @@ declare module "net.p3pp3rf1y.sophisticatedbackpacks.upgrades.inception.Inceptio
 import {$UpgradeWrapperBase} from "net.p3pp3rf1y.sophisticatedcore.upgrades.UpgradeWrapperBase"
 import {$IEnergyStorageUpgradeWrapper$$Interface} from "net.p3pp3rf1y.sophisticatedbackpacks.api.IEnergyStorageUpgradeWrapper"
 import {$InventoryOrder, $InventoryOrder$$Type} from "net.p3pp3rf1y.sophisticatedbackpacks.upgrades.inception.InventoryOrder"
-import {$ITrackedContentsItemHandler, $ITrackedContentsItemHandler$$Type} from "net.p3pp3rf1y.sophisticatedcore.inventory.ITrackedContentsItemHandler"
-import {$IUpgradeAccessModifier$$Interface} from "net.p3pp3rf1y.sophisticatedcore.upgrades.IUpgradeAccessModifier"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$IUpgradeAccessModifier$$Interface} from "net.p3pp3rf1y.sophisticatedcore.upgrades.IUpgradeAccessModifier"
+import {$ITrackedContentsItemHandler, $ITrackedContentsItemHandler$$Type} from "net.p3pp3rf1y.sophisticatedcore.inventory.ITrackedContentsItemHandler"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$IUpgradeWrapperAccessor, $IUpgradeWrapperAccessor$$Type} from "net.p3pp3rf1y.sophisticatedcore.upgrades.IUpgradeWrapperAccessor"
 import {$IStorageFluidHandler, $IStorageFluidHandler$$Type} from "net.p3pp3rf1y.sophisticatedcore.api.IStorageFluidHandler"
 import {$IFluidHandlerWrapperUpgrade$$Interface} from "net.p3pp3rf1y.sophisticatedbackpacks.api.IFluidHandlerWrapperUpgrade"
 import {$IEnergyStorage, $IEnergyStorage$$Type} from "net.neoforged.neoforge.energy.IEnergyStorage"
 import {$IInventoryWrapperUpgrade$$Interface} from "net.p3pp3rf1y.sophisticatedbackpacks.api.IInventoryWrapperUpgrade"
-import {$IStorageWrapper$$Type} from "net.p3pp3rf1y.sophisticatedcore.api.IStorageWrapper"
 import {$InceptionUpgradeItem} from "net.p3pp3rf1y.sophisticatedbackpacks.upgrades.inception.InceptionUpgradeItem"
+import {$IStorageWrapper$$Type} from "net.p3pp3rf1y.sophisticatedcore.api.IStorageWrapper"
 
 export class $InceptionUpgradeWrapper extends $UpgradeWrapperBase<($InceptionUpgradeWrapper), ($InceptionUpgradeItem)> implements $IInventoryWrapperUpgrade$$Interface, $IUpgradeAccessModifier$$Interface, $IFluidHandlerWrapperUpgrade$$Interface, $IEnergyStorageUpgradeWrapper$$Interface {
 constructor(arg0: $IStorageWrapper$$Type, arg1: $ItemStack$$Type, arg2: $Consumer$$Type<($ItemStack)>)
 
+public "hideSettingsTab"(): boolean
 public "wrapInventory"(arg0: $ITrackedContentsItemHandler$$Type): $ITrackedContentsItemHandler
 public "wrapAccessor"(arg0: $IUpgradeWrapperAccessor$$Type): $IUpgradeWrapperAccessor
 public "wrapHandler"(arg0: $IStorageFluidHandler$$Type, arg1: $ItemStack$$Type): $IStorageFluidHandler
 public "wrapStorage"(arg0: $IEnergyStorage$$Type): $IEnergyStorage
 public "setInventoryOrder"(arg0: $InventoryOrder$$Type): void
 public "getInventoryOrder"(): $InventoryOrder
-public "hideSettingsTab"(): boolean
 set "inventoryOrder"(value: $InventoryOrder$$Type)
 get "inventoryOrder"(): $InventoryOrder
 }
@@ -500,14 +500,14 @@ static readonly "BY_BLOCK": $Map<($Block), ($Item)>
 
 constructor(arg0: $IntSupplier$$Type, arg1: boolean, arg2: boolean)
 
+public "getFilterSlotCount"(): integer
 public "getUpgradeConflicts"(): $List<($IUpgradeItem$UpgradeConflictDefinition)>
 public "supportsBlockPick"(): boolean
 public "allowsTargetSlotSelection"(): boolean
-public "getFilterSlotCount"(): integer
 public "getType"(): $UpgradeType<($RefillUpgradeWrapper)>
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
-get "upgradeConflicts"(): $List<($IUpgradeItem$UpgradeConflictDefinition)>
 get "filterSlotCount"(): integer
+get "upgradeConflicts"(): $List<($IUpgradeItem$UpgradeConflictDefinition)>
 get "type"(): $UpgradeType<($RefillUpgradeWrapper)>
 }
 /**
@@ -523,22 +523,22 @@ declare module "net.p3pp3rf1y.sophisticatedbackpacks.upgrades.deposit.DepositFil
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$FilterLogic} from "net.p3pp3rf1y.sophisticatedcore.upgrades.FilterLogic"
 import {$DataComponentType$$Type} from "net.minecraft.core.component.DataComponentType"
-import {$FilterAttributes$$Type} from "net.p3pp3rf1y.sophisticatedcore.upgrades.FilterAttributes"
 import {$DepositFilterType, $DepositFilterType$$Type} from "net.p3pp3rf1y.sophisticatedbackpacks.upgrades.deposit.DepositFilterType"
 import {$IItemHandler$$Type} from "net.neoforged.neoforge.items.IItemHandler"
+import {$FilterAttributes$$Type} from "net.p3pp3rf1y.sophisticatedcore.upgrades.FilterAttributes"
 import {$DeferredHolder$$Type} from "net.neoforged.neoforge.registries.DeferredHolder"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 
 export class $DepositFilterLogic extends $FilterLogic {
 constructor(arg0: $ItemStack$$Type, arg1: $Consumer$$Type<($ItemStack)>, arg2: integer, arg3: $DeferredHolder$$Type<($DataComponentType$$Type<(never)>), ($DataComponentType$$Type<($FilterAttributes$$Type)>)>)
 
-public "getDepositFilterType"(): $DepositFilterType
 public "setInventory"(arg0: $IItemHandler$$Type): void
 public "matchesFilter"(arg0: $ItemStack$$Type): boolean
 public "setDepositFilterType"(arg0: $DepositFilterType$$Type): void
-get "depositFilterType"(): $DepositFilterType
+public "getDepositFilterType"(): $DepositFilterType
 set "inventory"(value: $IItemHandler$$Type)
 set "depositFilterType"(value: $DepositFilterType$$Type)
+get "depositFilterType"(): $DepositFilterType
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -590,8 +590,8 @@ import {$UpgradeWrapperBase} from "net.p3pp3rf1y.sophisticatedcore.upgrades.Upgr
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$IItemHandlerInteractionUpgrade$$Interface} from "net.p3pp3rf1y.sophisticatedbackpacks.api.IItemHandlerInteractionUpgrade"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$IFilteredUpgrade$$Interface} from "net.p3pp3rf1y.sophisticatedcore.upgrades.IFilteredUpgrade"
 import {$DepositUpgradeItem} from "net.p3pp3rf1y.sophisticatedbackpacks.upgrades.deposit.DepositUpgradeItem"
+import {$IFilteredUpgrade$$Interface} from "net.p3pp3rf1y.sophisticatedcore.upgrades.IFilteredUpgrade"
 import {$IStorageWrapper$$Type} from "net.p3pp3rf1y.sophisticatedcore.api.IStorageWrapper"
 import {$IItemHandler$$Type} from "net.neoforged.neoforge.items.IItemHandler"
 import {$DepositFilterLogic} from "net.p3pp3rf1y.sophisticatedbackpacks.upgrades.deposit.DepositFilterLogic"
@@ -600,8 +600,8 @@ import {$Consumer$$Type} from "java.util.function.Consumer"
 export class $DepositUpgradeWrapper extends $UpgradeWrapperBase<($DepositUpgradeWrapper), ($DepositUpgradeItem)> implements $IFilteredUpgrade$$Interface, $IItemHandlerInteractionUpgrade$$Interface {
 constructor(arg0: $IStorageWrapper$$Type, arg1: $ItemStack$$Type, arg2: $Consumer$$Type<($ItemStack)>)
 
-public "onHandlerInteract"(arg0: $IItemHandler$$Type, arg1: $Player$$Type): void
 public "getFilterLogic"(): $DepositFilterLogic
+public "onHandlerInteract"(arg0: $IItemHandler$$Type, arg1: $Player$$Type): void
 get "filterLogic"(): $DepositFilterLogic
 }
 /**
@@ -614,8 +614,8 @@ export type $DepositUpgradeWrapper$$Type = ($DepositUpgradeWrapper);
  */
 export type $DepositUpgradeWrapper$$Original = $DepositUpgradeWrapper;}
 declare module "net.p3pp3rf1y.sophisticatedbackpacks.upgrades.refill.RefillUpgradeWrapper" {
-import {$UpgradeWrapperBase} from "net.p3pp3rf1y.sophisticatedcore.upgrades.UpgradeWrapperBase"
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
+import {$UpgradeWrapperBase} from "net.p3pp3rf1y.sophisticatedcore.upgrades.UpgradeWrapperBase"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
@@ -639,14 +639,14 @@ static readonly "TARGET_SLOTS_CODEC": $Codec<($Map<(integer), ($RefillUpgradeWra
 
 constructor(arg0: $IStorageWrapper$$Type, arg1: $ItemStack$$Type, arg2: $Consumer$$Type<($ItemStack)>)
 
+public "getFilterLogic"(): $FilterLogic
 public "allowsTargetSlotSelection"(): boolean
 public "setTargetSlot"(arg0: integer, arg1: $RefillUpgradeWrapper$TargetSlot$$Type): void
 public "getTargetSlots"(): $Map<(integer), ($RefillUpgradeWrapper$TargetSlot)>
-public "getFilterLogic"(): $FilterLogic
 public "tick"(arg0: $Entity$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type): void
 public "pickBlock"(arg0: $Player$$Type, arg1: $ItemStack$$Type): boolean
-get "targetSlots"(): $Map<(integer), ($RefillUpgradeWrapper$TargetSlot)>
 get "filterLogic"(): $FilterLogic
+get "targetSlots"(): $Map<(integer), ($RefillUpgradeWrapper$TargetSlot)>
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -658,8 +658,8 @@ export type $RefillUpgradeWrapper$$Type = ($RefillUpgradeWrapper);
  */
 export type $RefillUpgradeWrapper$$Original = $RefillUpgradeWrapper;}
 declare module "net.p3pp3rf1y.sophisticatedbackpacks.upgrades.toolswapper.ToolSwapperUpgradeWrapper" {
-import {$ToolSwapMode, $ToolSwapMode$$Type} from "net.p3pp3rf1y.sophisticatedbackpacks.upgrades.toolswapper.ToolSwapMode"
 import {$UpgradeWrapperBase} from "net.p3pp3rf1y.sophisticatedcore.upgrades.UpgradeWrapperBase"
+import {$ToolSwapMode, $ToolSwapMode$$Type} from "net.p3pp3rf1y.sophisticatedbackpacks.upgrades.toolswapper.ToolSwapMode"
 import {$FilterLogic} from "net.p3pp3rf1y.sophisticatedcore.upgrades.FilterLogic"
 import {$IBlockClickResponseUpgrade$$Interface} from "net.p3pp3rf1y.sophisticatedbackpacks.api.IBlockClickResponseUpgrade"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
@@ -673,6 +673,8 @@ import {$IAttackEntityResponseUpgrade$$Interface} from "net.p3pp3rf1y.sophistica
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $ToolSwapperUpgradeWrapper extends $UpgradeWrapperBase<($ToolSwapperUpgradeWrapper), ($ToolSwapperUpgradeItem)> implements $IBlockClickResponseUpgrade$$Interface, $IAttackEntityResponseUpgrade$$Interface, $IBlockToolSwapUpgrade$$Interface, $IEntityToolSwapUpgrade$$Interface {
+public "getFilterLogic"(): $FilterLogic
+public "hideSettingsTab"(): boolean
 public "onAttackEntity"(arg0: $Player$$Type): boolean
 public "onBlockClick"(arg0: $Player$$Type, arg1: $BlockPos$$Type): boolean
 public "shouldSwapWeapon"(): boolean
@@ -683,12 +685,10 @@ public "onEntityInteract"(arg0: $Level$$Type, arg1: $Entity$$Type, arg2: $Player
 public "onBlockInteract"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $Player$$Type): boolean
 public "canProcessBlockInteract"(): boolean
 public "canProcessEntityInteract"(): boolean
-public "getFilterLogic"(): $FilterLogic
-public "hideSettingsTab"(): boolean
+get "filterLogic"(): $FilterLogic
 set "swapWeapon"(value: boolean)
 set "toolSwapMode"(value: $ToolSwapMode$$Type)
 get "toolSwapMode"(): $ToolSwapMode
-get "filterLogic"(): $FilterLogic
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -714,8 +714,8 @@ import {$Consumer$$Type} from "java.util.function.Consumer"
 export class $RestockUpgradeWrapper extends $UpgradeWrapperBase<($RestockUpgradeWrapper), ($RestockUpgradeItem)> implements $IContentsFilteredUpgrade$$Interface, $IItemHandlerInteractionUpgrade$$Interface {
 constructor(arg0: $IStorageWrapper$$Type, arg1: $ItemStack$$Type, arg2: $Consumer$$Type<($ItemStack)>)
 
-public "onHandlerInteract"(arg0: $IItemHandler$$Type, arg1: $Player$$Type): void
 public "getFilterLogic"(): $ContentsFilterLogic
+public "onHandlerInteract"(arg0: $IItemHandler$$Type, arg1: $Player$$Type): void
 get "filterLogic"(): $ContentsFilterLogic
 }
 /**
@@ -732,8 +732,8 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
 export class $DepositFilterType extends $Enum<($DepositFilterType)> implements $StringRepresentable$$Interface {
@@ -747,11 +747,11 @@ public static "valueOf"(arg0: StringJS): $DepositFilterType
 public "next"(): $DepositFilterType
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
 }

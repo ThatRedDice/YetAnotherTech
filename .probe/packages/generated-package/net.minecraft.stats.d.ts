@@ -134,13 +134,13 @@ export type $RecipeBookSettings$$Type = ($RecipeBookSettings);
  */
 export type $RecipeBookSettings$$Original = $RecipeBookSettings;}
 declare module "net.minecraft.stats.StatType" {
-import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$Iterable$$Interface} from "java.lang.Iterable"
+import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$Iterator} from "java.util.Iterator"
 import {$Registry, $Registry$$Type} from "net.minecraft.core.Registry"
 import {$Stat, $Stat$$Type} from "net.minecraft.stats.Stat"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Spliterator} from "java.util.Spliterator"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$StatFormatter$$Type} from "net.minecraft.stats.StatFormatter"
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$Consumer$$Type} from "java.util.function.Consumer"
@@ -149,11 +149,11 @@ export class $StatType<T> implements $Iterable$$Interface<($Stat<(T)>)> {
 constructor(arg0: $Registry$$Type<(T)>, arg1: $Component$$Type)
 
 public "streamCodec"(): $StreamCodec<($RegistryFriendlyByteBuf), ($Stat<(T)>)>
-public "get"(arg0: T, arg1: $StatFormatter$$Type): $Stat<(T)>
+public "getDisplayName"(): $Component
 public "get"(arg0: T): $Stat<(T)>
+public "get"(arg0: T, arg1: $StatFormatter$$Type): $Stat<(T)>
 public "iterator"(): $Iterator<($Stat<(T)>)>
 public "contains"(arg0: T): boolean
-public "getDisplayName"(): $Component
 public "getRegistry"(): $Registry<(T)>
 public "spliterator"(): $Spliterator<($Stat<(T)>)>
 public "forEach"(arg0: $Consumer$$Type<($Stat<(T)>)>): void
@@ -179,8 +179,8 @@ export type $StatType$$Type<T> = (Special.StatType);
  */
 export type $StatType$$Original<T> = $StatType<(T)>;}
 declare module "net.minecraft.stats.StatsCounter" {
-import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$StatType$$Type} from "net.minecraft.stats.StatType"
+import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Stat$$Type} from "net.minecraft.stats.Stat"
 
 export class $StatsCounter {
@@ -272,8 +272,8 @@ export type $ServerRecipeBook$$Original = $ServerRecipeBook;}
 declare module "net.minecraft.stats.RecipeBook" {
 import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$RecipeHolder$$Type} from "net.minecraft.world.item.crafting.RecipeHolder"
-import {$RecipeBookMenu$$Type} from "net.minecraft.world.inventory.RecipeBookMenu"
 import {$RecipeBookType$$Type} from "net.minecraft.world.inventory.RecipeBookType"
+import {$RecipeBookMenu$$Type} from "net.minecraft.world.inventory.RecipeBookMenu"
 import {$RecipeBookSettings, $RecipeBookSettings$$Type} from "net.minecraft.stats.RecipeBookSettings"
 
 export class $RecipeBook {
@@ -309,8 +309,8 @@ export type $RecipeBook$$Type = ($RecipeBook);
 export type $RecipeBook$$Original = $RecipeBook;}
 declare module "net.minecraft.stats.ServerStatsCounter" {
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$File$$Type} from "java.io.File"
 import {$Stat$$Type} from "net.minecraft.stats.Stat"
+import {$File$$Type} from "java.io.File"
 import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
 import {$StatsCounter} from "net.minecraft.stats.StatsCounter"
 import {$MinecraftServer$$Type} from "net.minecraft.server.MinecraftServer"

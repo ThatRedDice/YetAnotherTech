@@ -1,11 +1,11 @@
 declare module "dev.architectury.core.item.ArchitecturyBucketItem" {
 import {$BucketItem} from "net.minecraft.world.item.BucketItem"
-import {$Fluid, $Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 import {$Map} from "java.util.Map"
+import {$Fluid, $Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Supplier$$Type} from "java.util.function.Supplier"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 
 export class $ArchitecturyBucketItem extends $BucketItem {

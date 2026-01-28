@@ -1,10 +1,10 @@
 declare module "appeng.items.parts.ColoredPartItem" {
 import {$AEColor, $AEColor$$Type} from "appeng.api.util.AEColor"
-import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Map} from "java.util.Map"
+import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Function$$Type} from "java.util.function.Function"
-import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Class$$Type} from "java.lang.Class"
 import {$IPart} from "appeng.api.parts.IPart"
@@ -48,8 +48,8 @@ import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resource
 import {$Function$$Type} from "java.util.function.Function"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$Class, $Class$$Type} from "java.lang.Class"
+import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$AEBaseItem} from "appeng.items.AEBaseItem"
 import {$IPartItem, $IPartItem$$Type, $IPartItem$$Interface} from "appeng.api.parts.IPartItem"
 
@@ -64,8 +64,8 @@ static readonly "BY_BLOCK": $Map<($Block), ($Item)>
 constructor(arg0: $Item$Properties$$Type, arg1: $Class$$Type<(T)>, arg2: $Function$$Type<($IPartItem<(T)>), (T)>)
 
 public "useOn"(arg0: $UseOnContext$$Type): $InteractionResult
-public "getPartClass"(): $Class<(T)>
 public "createPart"(): T
+public "getPartClass"(): $Class<(T)>
 public static "getNetworkId"(arg0: $IPartItem$$Type<(never)>): integer
 public static "byNetworkId"(arg0: integer): $IPartItem<(never)>
 public static "getId"(arg0: $IPartItem$$Type<(never)>): $ResourceLocation
@@ -86,15 +86,15 @@ export type $PartItem$$Original<T> = $PartItem<(T)>;}
 declare module "appeng.items.parts.FacadeItem" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Component} from "net.minecraft.network.chat.Component"
 import {$CreativeModeTab$ItemDisplayParameters$$Type} from "net.minecraft.world.item.CreativeModeTab$ItemDisplayParameters"
 import {$IPartHost$$Type} from "appeng.api.parts.IPartHost"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$CreativeModeTab$Output$$Type} from "net.minecraft.world.item.CreativeModeTab$Output"
 import {$IFacadeItem$$Interface} from "appeng.api.implementations.items.IFacadeItem"
+import {$CreativeModeTab$Output$$Type} from "net.minecraft.world.item.CreativeModeTab$Output"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"

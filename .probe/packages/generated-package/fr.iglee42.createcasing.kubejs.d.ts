@@ -64,6 +64,7 @@ constructor(arg0: StringJS)
 
 public "fluidPipe"(): $CasingSetBuilder
 public "chainDrive"(): $CasingSetBuilder
+public "largeCogwheel"(): $CasingSetBuilder
 public "chainGearshift"(): $CasingSetBuilder
 public "encasedFan"(): $CasingSetBuilder
 public "plough"(): $CasingSetBuilder
@@ -80,15 +81,14 @@ public "processingBlocks"(arg0: $ResourceLocation$$Type): $CasingSetBuilder
 public "contraptionBlocks"(arg0: $ResourceLocation$$Type, arg1: $ResourceLocation$$Type): $CasingSetBuilder
 public "everythingExceptCasing"(arg0: $Supplier$$Type<($CTSpriteShiftEntry$$Type)>, arg1: $Supplier$$Type<($SpriteShiftEntry$$Type)>, arg2: $ResourceLocation$$Type, arg3: $ResourceLocation$$Type, arg4: $Supplier$$Type<($CTSpriteShiftEntry$$Type)>, arg5: $Supplier$$Type<($CTSpriteShiftEntry$$Type)>, arg6: $Supplier$$Type<($PartialModel$$Type)>, arg7: $Supplier$$Type<($PartialModel$$Type)>, arg8: $Supplier$$Type<($PartialModel$$Type)>, arg9: $ResourceLocation$$Type, arg10: $ResourceLocation$$Type, arg11: $ResourceLocation$$Type): $CasingSetBuilder
 public "everything"(arg0: $Supplier$$Type<($CTSpriteShiftEntry$$Type)>, arg1: $Supplier$$Type<($SpriteShiftEntry$$Type)>, arg2: $ResourceLocation$$Type, arg3: $ResourceLocation$$Type, arg4: $Supplier$$Type<($CTSpriteShiftEntry$$Type)>, arg5: $Supplier$$Type<($CTSpriteShiftEntry$$Type)>, arg6: $Supplier$$Type<($PartialModel$$Type)>, arg7: $Supplier$$Type<($PartialModel$$Type)>, arg8: $Supplier$$Type<($PartialModel$$Type)>, arg9: $ResourceLocation$$Type, arg10: $ResourceLocation$$Type, arg11: $ResourceLocation$$Type): $CasingSetBuilder
-public "largeCogwheel"(): $CasingSetBuilder
 public "configurableGearbox"(): $CasingSetBuilder
 public "chainConveyor"(arg0: $Supplier$$Type<($PartialModel$$Type)>, arg1: $Supplier$$Type<($PartialModel$$Type)>, arg2: $Supplier$$Type<($PartialModel$$Type)>): $CasingSetBuilder
 public "casing"(): $CasingSetBuilder
 public "shaft"(): $CasingSetBuilder
 public "cogwheel"(arg0: $Supplier$$Type<($CTSpriteShiftEntry$$Type)>, arg1: $Supplier$$Type<($CTSpriteShiftEntry$$Type)>): $CasingSetBuilder
 public "depot"(): $CasingSetBuilder
-public "roller"(arg0: $ResourceLocation$$Type): $CasingSetBuilder
 public "harvester"(): $CasingSetBuilder
+public "roller"(arg0: $ResourceLocation$$Type): $CasingSetBuilder
 public "mixer"(arg0: $ResourceLocation$$Type): $CasingSetBuilder
 public "belt"(arg0: $Supplier$$Type<($SpriteShiftEntry$$Type)>, arg1: $ResourceLocation$$Type, arg2: $ResourceLocation$$Type): $CasingSetBuilder
 public "clutch"(): $CasingSetBuilder
@@ -111,8 +111,8 @@ export type $CasingSetBuilder$$Type = ($CasingSetBuilder);
 export type $CasingSetBuilder$$Original = $CasingSetBuilder;}
 declare module "fr.iglee42.createcasing.kubejs.RegisterSetsEvent" {
 import {$KubeStartupEvent$$Interface} from "dev.latvian.mods.kubejs.event.KubeStartupEvent"
-import {$List} from "java.util.List"
 import {$CasingSetBuilder} from "fr.iglee42.createcasing.kubejs.builders.CasingSetBuilder"
+import {$List} from "java.util.List"
 import {$TransmissionSetBuilder} from "fr.iglee42.createcasing.kubejs.builders.TransmissionSetBuilder"
 
 export class $RegisterSetsEvent implements $KubeStartupEvent$$Interface {
@@ -179,8 +179,8 @@ export class $TransmissionSetBuilder {
 
 constructor(arg0: StringJS)
 
-public "everything"(arg0: $Supplier$$Type<($Item$$Type)>): $TransmissionSetBuilder
 public "largeCogwheel"(): $TransmissionSetBuilder
+public "everything"(arg0: $Supplier$$Type<($Item$$Type)>): $TransmissionSetBuilder
 public "notEncasable"(): $TransmissionSetBuilder
 public "shaft"(): $TransmissionSetBuilder
 public "cogwheel"(): $TransmissionSetBuilder

@@ -85,8 +85,8 @@ constructor(arg0: $JsonElement$$Type, arg1: $JsonObject$$Type, arg2: StringJS, a
 constructor(validationElement: $JsonElement$$Type, rootObject: $JsonObject$$Type, currentPath: StringJS, jsonFilePath: StringJS, arrayPolicy: $ArrayHandlingPolicy$$Type)
 
 public "currentPath"(): StringJS
-public "jsonFilePath"(): StringJS
 public "getParentField"(arg0: StringJS): $JsonElement
+public "jsonFilePath"(): StringJS
 public "validationElement"(): $JsonElement
 public "arrayPolicy"(): $ArrayHandlingPolicy
 public "getWithField"(arg0: StringJS, arg1: $ArrayHandlingPolicy$$Type): $ValidationData

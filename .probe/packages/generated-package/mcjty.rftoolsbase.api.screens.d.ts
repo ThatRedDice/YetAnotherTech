@@ -2,8 +2,8 @@ declare module "mcjty.rftoolsbase.api.screens.IModuleGuiBuilder" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$GlobalPos$$Type} from "net.minecraft.core.GlobalPos"
 import {$Function$$Type} from "java.util.function.Function"
-import {$BiConsumer$$Type} from "java.util.function.BiConsumer"
 import {$FormatStyle$$Type} from "mcjty.rftoolsbase.api.screens.FormatStyle"
+import {$BiConsumer$$Type} from "java.util.function.BiConsumer"
 import {$Level} from "net.minecraft.world.level.Level"
 import {$BarMode$$Type} from "mcjty.rftoolsbase.api.screens.BarMode"
 import {$IModuleGuiBuilder$Choice$$Type} from "mcjty.rftoolsbase.api.screens.IModuleGuiBuilder$Choice"
@@ -14,18 +14,18 @@ get "currentModule"(): $ItemStack
 }
 
 export class $IModuleGuiBuilder implements $IModuleGuiBuilder$$Interface {
- "getWorld"(): $Level
  "toggle"(arg0: $BiConsumer$$Type<($ItemStack), (boolean)>, arg1: $Function$$Type<($ItemStack), (boolean)>, arg2: StringJS, ...arg3: (StringJS)[]): $IModuleGuiBuilder
- "toggleNegative"(arg0: $BiConsumer$$Type<($ItemStack), (boolean)>, arg1: $Function$$Type<($ItemStack), (boolean)>, arg2: StringJS, ...arg3: (StringJS)[]): $IModuleGuiBuilder
+ "getWorld"(): $Level
  "choices"(arg0: $BiConsumer$$Type<($ItemStack), (integer)>, arg1: $Function$$Type<($ItemStack), (integer)>, ...arg2: ($IModuleGuiBuilder$Choice$$Type)[]): $IModuleGuiBuilder
  "choices"(arg0: $BiConsumer$$Type<($ItemStack), (StringJS)>, arg1: $Function$$Type<($ItemStack), (StringJS)>, arg2: StringJS, ...arg3: (StringJS)[]): $IModuleGuiBuilder
+ "toggleNegative"(arg0: $BiConsumer$$Type<($ItemStack), (boolean)>, arg1: $Function$$Type<($ItemStack), (boolean)>, arg2: StringJS, ...arg3: (StringJS)[]): $IModuleGuiBuilder
+ "text"(arg0: $BiConsumer$$Type<($ItemStack), (StringJS)>, arg1: $Function$$Type<($ItemStack), (StringJS)>, ...arg2: (StringJS)[]): $IModuleGuiBuilder
  "label"(arg0: StringJS): $IModuleGuiBuilder
  "mode"(arg0: $BiConsumer$$Type<($ItemStack), ($BarMode)>, arg1: $Function$$Type<($ItemStack), ($BarMode$$Type)>, arg2: StringJS): $IModuleGuiBuilder
  "format"(arg0: $BiConsumer$$Type<($ItemStack), ($FormatStyle)>, arg1: $Function$$Type<($ItemStack), ($FormatStyle$$Type)>): $IModuleGuiBuilder
  "nl"(): $IModuleGuiBuilder
  "color"(arg0: $BiConsumer$$Type<($ItemStack), (integer)>, arg1: $Function$$Type<($ItemStack), (integer)>, ...arg2: (StringJS)[]): $IModuleGuiBuilder
  "block"(arg0: $Function$$Type<($ItemStack), ($GlobalPos$$Type)>, arg1: $Function$$Type<($ItemStack), (StringJS)>): $IModuleGuiBuilder
- "text"(arg0: $BiConsumer$$Type<($ItemStack), (StringJS)>, arg1: $Function$$Type<($ItemStack), (StringJS)>, ...arg2: (StringJS)[]): $IModuleGuiBuilder
  "integer"(arg0: $BiConsumer$$Type<($ItemStack), (integer)>, arg1: $Function$$Type<($ItemStack), (integer)>, ...arg2: (StringJS)[]): $IModuleGuiBuilder
  "getCurrentModule"(): $ItemStack
  "leftLabel"(arg0: StringJS): $IModuleGuiBuilder
@@ -42,8 +42,8 @@ export type $IModuleGuiBuilder$$Type = ($IModuleGuiBuilder);
 export type $IModuleGuiBuilder$$Original = $IModuleGuiBuilder;}
 declare module "mcjty.rftoolsbase.api.screens.IClientScreenModule" {
 import {$IClientScreenModule$TransformMode} from "mcjty.rftoolsbase.api.screens.IClientScreenModule$TransformMode"
-import {$MultiBufferSource$$Type} from "net.minecraft.client.renderer.MultiBufferSource"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$MultiBufferSource$$Type} from "net.minecraft.client.renderer.MultiBufferSource"
 import {$GuiGraphics$$Type} from "net.minecraft.client.gui.GuiGraphics"
 import {$ModuleRenderInfo$$Type} from "mcjty.rftoolsbase.api.screens.ModuleRenderInfo"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
@@ -55,9 +55,9 @@ export interface $IClientScreenModule$$Interface<T extends $IModuleData> {
 }
 
 export class $IClientScreenModule<T extends $IModuleData> implements $IClientScreenModule$$Interface {
+ "getTransformMode"(arg0: $ItemStack$$Type): $IClientScreenModule$TransformMode
  "needsServerData"(): boolean
  "mouseClick"(arg0: $ItemStack$$Type, arg1: $Level$$Type, arg2: integer, arg3: integer, arg4: boolean): void
- "getTransformMode"(arg0: $ItemStack$$Type): $IClientScreenModule$TransformMode
  "getHeight"(arg0: $ItemStack$$Type): integer
  "render"(arg0: $GuiGraphics$$Type, arg1: $MultiBufferSource$$Type, arg2: $IModuleRenderHelper$$Type, arg3: $Font$$Type, arg4: integer, arg5: T, arg6: $ModuleRenderInfo$$Type): void
 }
@@ -73,12 +73,12 @@ export type $IClientScreenModule$$Original<T> = $IClientScreenModule<(T)>;}
 declare module "mcjty.rftoolsbase.api.screens.TextAlign" {
 import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
+import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
-import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
 export class $TextAlign extends $Enum<($TextAlign)> implements $StringRepresentable$$Interface {
@@ -93,11 +93,11 @@ public static "values"(): ($TextAlign)[]
 public static "valueOf"(arg0: StringJS): $TextAlign
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
 }
@@ -142,8 +142,8 @@ export type $IModuleProvider$$Type = ($IModuleProvider);
  */
 export type $IModuleProvider$$Original = $IModuleProvider;}
 declare module "mcjty.rftoolsbase.api.screens.ITextRenderHelper" {
-import {$MultiBufferSource$$Type} from "net.minecraft.client.renderer.MultiBufferSource"
 import {$TextAlign, $TextAlign$$Type} from "mcjty.rftoolsbase.api.screens.TextAlign"
+import {$MultiBufferSource$$Type} from "net.minecraft.client.renderer.MultiBufferSource"
 import {$GuiGraphics$$Type} from "net.minecraft.client.gui.GuiGraphics"
 import {$ModuleRenderInfo$$Type} from "mcjty.rftoolsbase.api.screens.ModuleRenderInfo"
 
@@ -216,12 +216,12 @@ export type $IModuleDataString$$Original = $IModuleDataString;}
 declare module "mcjty.rftoolsbase.api.screens.FormatStyle" {
 import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
+import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
-import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
 export class $FormatStyle extends $Enum<($FormatStyle)> implements $StringRepresentable$$Interface {
@@ -237,11 +237,11 @@ public static "valueOf"(arg0: StringJS): $FormatStyle
 public "getSerializedName"(): StringJS
 public static "getStyle"(arg0: StringJS): $FormatStyle
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "name"(): StringJS
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
@@ -261,8 +261,8 @@ import {$GuiGraphics$$Type} from "net.minecraft.client.gui.GuiGraphics"
 import {$ModuleRenderInfo$$Type} from "mcjty.rftoolsbase.api.screens.ModuleRenderInfo"
 import {$PoseStack$$Type} from "com.mojang.blaze3d.vertex.PoseStack"
 import {$FormatStyle$$Type} from "mcjty.rftoolsbase.api.screens.FormatStyle"
-import {$ITextRenderHelper} from "mcjty.rftoolsbase.api.screens.ITextRenderHelper"
 import {$Font$$Type} from "net.minecraft.client.gui.Font"
+import {$ITextRenderHelper} from "mcjty.rftoolsbase.api.screens.ITextRenderHelper"
 import {$ILevelRenderHelper} from "mcjty.rftoolsbase.api.screens.ILevelRenderHelper"
 import {$IModuleDataContents$$Type} from "mcjty.rftoolsbase.api.screens.data.IModuleDataContents"
 
@@ -270,10 +270,10 @@ export interface $IModuleRenderHelper$$Interface {
 }
 
 export class $IModuleRenderHelper implements $IModuleRenderHelper$$Interface {
+ "renderText"(arg0: $GuiGraphics$$Type, arg1: $MultiBufferSource$$Type, arg2: integer, arg3: integer, arg4: integer, arg5: $ModuleRenderInfo$$Type, arg6: StringJS): void
  "createTextRenderHelper"(): $ITextRenderHelper
  "createLevelRenderHelper"(): $ILevelRenderHelper
  "renderTextTrimmed"(arg0: $PoseStack$$Type, arg1: $MultiBufferSource$$Type, arg2: integer, arg3: integer, arg4: integer, arg5: $ModuleRenderInfo$$Type, arg6: StringJS, arg7: integer): void
- "renderText"(arg0: $GuiGraphics$$Type, arg1: $MultiBufferSource$$Type, arg2: integer, arg3: integer, arg4: integer, arg5: $ModuleRenderInfo$$Type, arg6: StringJS): void
  "format"(arg0: StringJS, arg1: $FormatStyle$$Type): StringJS
 /**
  * 
@@ -321,6 +321,9 @@ export class $ILevelRenderHelper implements $ILevelRenderHelper$$Interface {
  "isHideBar"(): boolean
  "getNegColor"(): integer
  "getPosColor"(): integer
+ "settings"(arg0: boolean, arg1: $BarMode$$Type): $ILevelRenderHelper
+ "getLabel"(): StringJS
+ "setLabel"(arg0: StringJS): void
  "getFormatStyle"(): $FormatStyle
  "setPosColor"(arg0: integer): void
  "setNegColor"(arg0: integer): void
@@ -331,10 +334,7 @@ export class $ILevelRenderHelper implements $ILevelRenderHelper$$Interface {
  "getGradient2"(): integer
  "setGradient1"(arg0: integer): void
  "setGradient2"(arg0: integer): void
- "settings"(arg0: boolean, arg1: $BarMode$$Type): $ILevelRenderHelper
- "setLabel"(arg0: StringJS): void
  "label"(arg0: StringJS): $ILevelRenderHelper
- "getLabel"(): StringJS
  "format"(arg0: $FormatStyle$$Type): $ILevelRenderHelper
  "color"(arg0: integer, arg1: integer): $ILevelRenderHelper
  "render"(arg0: $GuiGraphics$$Type, arg1: $MultiBufferSource$$Type, arg2: integer, arg3: integer, arg4: $IModuleDataContents$$Type, arg5: $ModuleRenderInfo$$Type): void
@@ -523,12 +523,12 @@ export type $IModuleDataBoolean$$Original = $IModuleDataBoolean;}
 declare module "mcjty.rftoolsbase.api.screens.BarMode" {
 import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
+import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
-import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
 export class $BarMode extends $Enum<($BarMode)> implements $StringRepresentable$$Interface {
@@ -548,11 +548,11 @@ public static "values"(): ($BarMode)[]
 public static "valueOf"(arg0: StringJS): $BarMode
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "name"(): StringJS
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS

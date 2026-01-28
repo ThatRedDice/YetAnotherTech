@@ -23,8 +23,8 @@ import {$Endec} from "io.wispforest.endec.Endec"
 import {$InstanceEndec, $InstanceEndec$$Interface} from "io.wispforest.accessories.impl.InstanceEndec"
 import {$AttributeModifier, $AttributeModifier$$Type} from "net.minecraft.world.entity.ai.attributes.AttributeModifier"
 import {$CompoundTag} from "net.minecraft.nbt.CompoundTag"
-import {$Map} from "java.util.Map"
 import {$Collection} from "java.util.Collection"
+import {$Map} from "java.util.Map"
 import {$List} from "java.util.List"
 import {$AccessoriesContainer$$Interface} from "io.wispforest.accessories.api.AccessoriesContainer"
 import {$SerializationContext$$Type} from "io.wispforest.endec.SerializationContext"
@@ -32,13 +32,13 @@ import {$SimpleContainer, $SimpleContainer$$Type} from "net.minecraft.world.Simp
 import {$ListTag, $ListTag$$Type} from "net.minecraft.nbt.ListTag"
 import {$SlotReference} from "io.wispforest.accessories.api.slot.SlotReference"
 import {$MapCarrier$$Type} from "io.wispforest.endec.util.MapCarrier"
-import {$Container$$Type} from "net.minecraft.world.Container"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
+import {$Container$$Type} from "net.minecraft.world.Container"
 import {$AttributeModifier$Operation$$Type} from "net.minecraft.world.entity.ai.attributes.AttributeModifier$Operation"
 import {$ExpandedSimpleContainer} from "io.wispforest.accessories.impl.ExpandedSimpleContainer"
 import {$Supplier$$Type} from "java.util.function.Supplier"
-import {$AccessoriesCapability, $AccessoriesCapability$$Type} from "io.wispforest.accessories.api.AccessoriesCapability"
 import {$SlotType, $SlotType$$Type} from "io.wispforest.accessories.api.slot.SlotType"
+import {$AccessoriesCapability, $AccessoriesCapability$$Type} from "io.wispforest.accessories.api.AccessoriesCapability"
 import {$ContainerListener$$Interface} from "net.minecraft.world.ContainerListener"
 import {$Set} from "java.util.Set"
 import {$KeyedEndec, $KeyedEndec$$Type} from "io.wispforest.endec.impl.KeyedEndec"
@@ -68,11 +68,11 @@ public static "copyContainerList"(container: $SimpleContainer$$Type): $SimpleCon
 public static "readContainers"(carrier: $MapCarrier$$Type, ctx: $SerializationContext$$Type, ...keys: ($KeyedEndec$$Type<($ListTag$$Type)>)[]): $List<($SimpleContainer)>
 public "getCachedModifiers"(): $Set<($AttributeModifier)>
 public "clearCachedModifiers"(): void
-public "copyFrom"(other: $AccessoriesContainerImpl$$Type): void
 public "renderOptions"(): $List<(boolean)>
 public "getModifiersForOperation"(operation: $AttributeModifier$Operation$$Type): $Collection<($AttributeModifier)>
 public "removeCachedModifiers"(modifier: $AttributeModifier$$Type): void
 public static "readContainer"(carrier: $MapCarrier$$Type, ctx: $SerializationContext$$Type, key: $KeyedEndec$$Type<($ListTag$$Type)>): $SimpleContainer
+public "copyFrom"(other: $AccessoriesContainerImpl$$Type): void
 public "getModifiers"(): $Map<($ResourceLocation), ($AttributeModifier)>
 public "update"(): void
 public "write"(carrier: $MapCarrier$$Type, ctx: $SerializationContext$$Type): void
@@ -108,9 +108,9 @@ export type $AccessoriesContainerImpl$$Type = ($AccessoriesContainerImpl);
  */
 export type $AccessoriesContainerImpl$$Original = $AccessoriesContainerImpl;}
 declare module "io.wispforest.accessories.impl.caching.AccessoriesHolderLookupCache" {
-import {$AccessoriesHolderImpl$$Type} from "io.wispforest.accessories.impl.AccessoriesHolderImpl"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$EquipmentLookupCache} from "io.wispforest.accessories.impl.caching.EquipmentLookupCache"
+import {$AccessoriesHolderImpl$$Type} from "io.wispforest.accessories.impl.AccessoriesHolderImpl"
 import {$ItemStackBasedPredicate$$Type} from "io.wispforest.accessories.api.caching.ItemStackBasedPredicate"
 import {$List, $List$$Type} from "java.util.List"
 import {$EquipmentChecking$$Type} from "io.wispforest.accessories.api.EquipmentChecking"
@@ -125,8 +125,8 @@ public "isEquipped"(predicate: $ItemStackBasedPredicate$$Type): boolean
 public "getEquipped"(predicate: $ItemStackBasedPredicate$$Type): $List<($SlotEntryReference)>
 public "getAllEquipped"(): $List<($SlotEntryReference)>
 public "invalidateLookupData"(key: StringJS, stack: $ItemStack$$Type, types: $List$$Type<($DataComponentType$$Type<(never)>)>): void
-public "clearCache"(): void
 public "clearContainerCache"(key: StringJS): void
+public "clearCache"(): void
 get "allEquipped"(): $List<($SlotEntryReference)>
 }
 /**
@@ -171,12 +171,12 @@ import {$List} from "java.util.List"
 import {$AccessoriesContainer} from "io.wispforest.accessories.api.AccessoriesContainer"
 import {$SerializationContext$$Type} from "io.wispforest.endec.SerializationContext"
 import {$AccessoriesHolder, $AccessoriesHolder$$Interface} from "io.wispforest.accessories.api.AccessoriesHolder"
-import {$MapCarrier$$Type} from "io.wispforest.endec.util.MapCarrier"
 import {$PlayerEquipControl, $PlayerEquipControl$$Type} from "io.wispforest.accessories.impl.PlayerEquipControl"
+import {$MapCarrier$$Type} from "io.wispforest.endec.util.MapCarrier"
 import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$AccessoriesCapability$$Type} from "io.wispforest.accessories.api.AccessoriesCapability"
-import {$Set, $Set$$Type} from "java.util.Set"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$Set, $Set$$Type} from "java.util.Set"
 import {$AccessoriesHolderLookupCache} from "io.wispforest.accessories.impl.caching.AccessoriesHolderLookupCache"
 
 export class $AccessoriesHolderImpl implements $AccessoriesHolder$$Interface, $InstanceEndec$$Interface {
@@ -184,33 +184,33 @@ readonly "invalidStacks": $List<($ItemStack)>
 
 constructor()
 
+public "widgetType"(value: integer): $AccessoriesHolder
+public "widgetType"(): integer
 public "getLookupCache"(): $AccessoriesHolderLookupCache
 public "equipControl"(): $PlayerEquipControl
 public "equipControl"(value: $PlayerEquipControl$$Type): $AccessoriesHolder
-public "showAdvancedOptions"(value: boolean): $AccessoriesHolder
 public "showAdvancedOptions"(): boolean
-public "showUnusedSlots"(value: boolean): $AccessoriesHolder
+public "showAdvancedOptions"(value: boolean): $AccessoriesHolder
 public "showUnusedSlots"(): boolean
+public "showUnusedSlots"(value: boolean): $AccessoriesHolder
 public "columnAmount"(): integer
 public "columnAmount"(value: integer): $AccessoriesHolder
 public "showGroupFilter"(value: boolean): $AccessoriesHolder
 public "showGroupFilter"(): boolean
-public "mainWidgetPosition"(): boolean
 public "mainWidgetPosition"(value: boolean): $AccessoriesHolder
+public "mainWidgetPosition"(): boolean
 public "sideWidgetPosition"(value: boolean): $AccessoriesHolder
 public "sideWidgetPosition"(): boolean
-public "showCraftingGrid"(value: boolean): $AccessoriesHolder
 public "showCraftingGrid"(): boolean
-public "isGroupFiltersOpen"(value: boolean): $AccessoriesHolder
+public "showCraftingGrid"(value: boolean): $AccessoriesHolder
 public "isGroupFiltersOpen"(): boolean
+public "isGroupFiltersOpen"(value: boolean): $AccessoriesHolder
 public "filteredGroups"(): $Set<(StringJS)>
 public "filteredGroups"(value: $Set$$Type<(StringJS)>): $AccessoriesHolder
 public "setValidTypes"(validTypes: $Set$$Type<(StringJS)>): void
 public "getSlotContainers"(): $Map<(StringJS), ($AccessoriesContainer)>
 public "cosmeticsShown"(value: boolean): $AccessoriesHolder
 public "cosmeticsShown"(): boolean
-public "widgetType"(): integer
-public "widgetType"(value: integer): $AccessoriesHolder
 public static "of"(): $AccessoriesHolderImpl
 public "init"(capability: $AccessoriesCapability$$Type): void
 public "write"(carrier: $MapCarrier$$Type, ctx: $SerializationContext$$Type): void
@@ -222,12 +222,12 @@ public static "getOptionally"(livingEntity: $LivingEntity$$Type): $Optional<($Ac
  * 
  * @deprecated
  */
-public "showUniqueSlots"(value: boolean): $AccessoriesHolder
+public "showUniqueSlots"(): boolean
 /**
  * 
  * @deprecated
  */
-public "showUniqueSlots"(): boolean
+public "showUniqueSlots"(value: boolean): $AccessoriesHolder
 /**
  * 
  * @deprecated
@@ -281,8 +281,8 @@ declare module "io.wispforest.accessories.impl.ExpandedSimpleContainer" {
 import {$Iterable$$Interface} from "java.lang.Iterable"
 import {$Iterator} from "java.util.Iterator"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$Pair, $Pair$$Type} from "com.mojang.datafixers.util.Pair"
 import {$Spliterator} from "java.util.Spliterator"
+import {$Pair, $Pair$$Type} from "com.mojang.datafixers.util.Pair"
 import {$SimpleContainer} from "net.minecraft.world.SimpleContainer"
 import {$ListTag, $ListTag$$Type} from "net.minecraft.nbt.ListTag"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
@@ -304,8 +304,8 @@ public "wasNewlyConstructed"(): boolean
 public "isSlotFlagged"(slot: integer): boolean
 public "setPreviousItem"(slot: integer, stack: $ItemStack$$Type): void
 public "getPreviousItem"(slot: integer): $ItemStack
-public "getItem"(slot: integer): $ItemStack
 public "createTag"(provider: $HolderLookup$Provider$$Type): $ListTag
+public "getItem"(slot: integer): $ItemStack
 public "removeItem"(slot: integer, amount: integer): $ItemStack
 public "name"(): StringJS
 public "iterator"(): $Iterator<($Pair<(integer), ($ItemStack)>)>

@@ -1,7 +1,7 @@
 declare module "rearth.oritech.item.tools.ElectricMaceItem" {
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$ItemAttributeModifiers} from "net.minecraft.world.item.component.ItemAttributeModifiers"
 import {$List$$Type} from "java.util.List"
+import {$ItemAttributeModifiers} from "net.minecraft.world.item.component.ItemAttributeModifiers"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$OritechEnergyItem$$Interface} from "rearth.oritech.item.tools.util.OritechEnergyItem"
 import {$Runnable} from "java.lang.Runnable"
@@ -16,8 +16,8 @@ import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$Map} from "java.util.Map"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
 import {$EnergyApi$EnergyStorage} from "rearth.oritech.api.energy.EnergyApi$EnergyStorage"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
@@ -43,11 +43,11 @@ public "isValidRepairItem"(arg0: $ItemStack$$Type, arg1: $ItemStack$$Type): bool
 public "shouldCauseReequipAnimation"(arg0: $ItemStack$$Type, arg1: $ItemStack$$Type, arg2: boolean): boolean
 public "shouldCauseBlockBreakReset"(arg0: $ItemStack$$Type, arg1: $ItemStack$$Type): boolean
 public "getEnergyCapacity"(arg0: $ItemStack$$Type): long
+public "allowContinuingBlockBreaking"(arg0: $Player$$Type, arg1: $ItemStack$$Type, arg2: $ItemStack$$Type): boolean
+public "allowComponentsUpdateAnimation"(arg0: $Player$$Type, arg1: $InteractionHand$$Type, arg2: $ItemStack$$Type, arg3: $ItemStack$$Type): boolean
 public static "processLightningEvents"(arg0: $Level$$Type): void
 public "getEnergyMaxInput"(arg0: $ItemStack$$Type): long
 public static "createLightningBolt"(arg0: $ServerLevel$$Type, arg1: $Vec3$$Type, arg2: $Vec3$$Type, arg3: integer, arg4: double, arg5: double, arg6: $ParticleOptions$$Type, arg7: float, arg8: integer, arg9: integer): void
-public "allowComponentsUpdateAnimation"(arg0: $Player$$Type, arg1: $InteractionHand$$Type, arg2: $ItemStack$$Type, arg3: $ItemStack$$Type): boolean
-public "allowContinuingBlockBreaking"(arg0: $Player$$Type, arg1: $ItemStack$$Type, arg2: $ItemStack$$Type): boolean
 public "isBarVisible"(arg0: $ItemStack$$Type): boolean
 public "getBarWidth"(arg0: $ItemStack$$Type): integer
 public "getBarColor"(arg0: $ItemStack$$Type): integer
@@ -55,9 +55,9 @@ public static "createAttributes"(): $ItemAttributeModifiers
 public "getAttackDamageBonus"(arg0: $Entity$$Type, arg1: float, arg2: $DamageSource$$Type): float
 public "postHurtEnemy"(arg0: $ItemStack$$Type, arg1: $LivingEntity$$Type, arg2: $LivingEntity$$Type): void
 public "getEnergyStorage"(arg0: $ItemStack$$Type): $EnergyApi$EnergyStorage
-public "getEnergyMaxOutput"(arg0: $ItemStack$$Type): long
-public "tryUseEnergy"(arg0: $ItemStack$$Type, arg1: long, arg2: $Player$$Type): boolean
 public "getStoredEnergy"(arg0: $ItemStack$$Type): long
+public "tryUseEnergy"(arg0: $ItemStack$$Type, arg1: long, arg2: $Player$$Type): boolean
+public "getEnergyMaxOutput"(arg0: $ItemStack$$Type): long
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 }
 /**
@@ -87,12 +87,12 @@ import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockStat
 import {$Map} from "java.util.Map"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$GeoRenderProvider$$Type} from "software.bernie.geckolib.animatable.client.GeoRenderProvider"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$AnimatableInstanceCache} from "software.bernie.geckolib.animatable.instance.AnimatableInstanceCache"
-import {$GeoItem$$Interface} from "software.bernie.geckolib.animatable.GeoItem"
 import {$AnimatableManager$ControllerRegistrar$$Type} from "software.bernie.geckolib.animation.AnimatableManager$ControllerRegistrar"
 import {$Consumer$$Type} from "java.util.function.Consumer"
+import {$GeoItem$$Interface} from "software.bernie.geckolib.animatable.GeoItem"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$Deque} from "java.util.Deque"
@@ -120,11 +120,11 @@ public "createGeoRenderer"(arg0: $Consumer$$Type<($GeoRenderProvider)>): void
 public "registerControllers"(arg0: $AnimatableManager$ControllerRegistrar$$Type): void
 public "getAnimatableInstanceCache"(): $AnimatableInstanceCache
 public static "processPendingBlocks"(arg0: $Level$$Type): void
+public "getTick"(arg0: any): double
 public static "registerSyncedAnimatable"(arg0: $GeoAnimatable$$Type): void
 public "isPerspectiveAware"(): boolean
 public "animatableCacheOverride"(): $AnimatableInstanceCache
 public static "getOrAssignId"(arg0: $ItemStack$$Type, arg1: $ServerLevel$$Type): long
-public "getTick"(arg0: any): double
 public static "getId"(arg0: $ItemStack$$Type): long
 public "getAnimData"<D>(arg0: long, arg1: $SerializableDataTicket$$Type<(D)>): D
 public "setAnimData"<D>(arg0: $Entity$$Type, arg1: long, arg2: $SerializableDataTicket$$Type<(D)>, arg3: D): void
@@ -154,14 +154,14 @@ export type $PromethiumAxeItem$$Original = $PromethiumAxeItem;}
 declare module "rearth.oritech.item.tools.harvesting.DrillItem" {
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$List$$Type} from "java.util.List"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$OritechEnergyItem$$Interface} from "rearth.oritech.item.tools.util.OritechEnergyItem"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Tier, $Tier$$Type} from "net.minecraft.world.item.Tier"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
@@ -170,8 +170,8 @@ import {$EnergyApi$EnergyStorage} from "rearth.oritech.api.energy.EnergyApi$Ener
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$DiggerItem} from "net.minecraft.world.item.DiggerItem"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $DrillItem extends $DiggerItem implements $OritechEnergyItem$$Interface {
@@ -193,17 +193,17 @@ public "isValidRepairItem"(arg0: $ItemStack$$Type, arg1: $ItemStack$$Type): bool
 public "shouldCauseReequipAnimation"(arg0: $ItemStack$$Type, arg1: $ItemStack$$Type, arg2: boolean): boolean
 public "shouldCauseBlockBreakReset"(arg0: $ItemStack$$Type, arg1: $ItemStack$$Type): boolean
 public "getEnergyCapacity"(arg0: $ItemStack$$Type): long
-public "getEnergyMaxInput"(arg0: $ItemStack$$Type): long
-public "allowComponentsUpdateAnimation"(arg0: $Player$$Type, arg1: $InteractionHand$$Type, arg2: $ItemStack$$Type, arg3: $ItemStack$$Type): boolean
 public "allowContinuingBlockBreaking"(arg0: $Player$$Type, arg1: $ItemStack$$Type, arg2: $ItemStack$$Type): boolean
+public "allowComponentsUpdateAnimation"(arg0: $Player$$Type, arg1: $InteractionHand$$Type, arg2: $ItemStack$$Type, arg3: $ItemStack$$Type): boolean
+public "getEnergyMaxInput"(arg0: $ItemStack$$Type): long
 public "isBarVisible"(arg0: $ItemStack$$Type): boolean
 public "getBarWidth"(arg0: $ItemStack$$Type): integer
 public "getBarColor"(arg0: $ItemStack$$Type): integer
 public "getDestroySpeed"(arg0: $ItemStack$$Type, arg1: $BlockState$$Type): float
 public "getEnergyStorage"(arg0: $ItemStack$$Type): $EnergyApi$EnergyStorage
-public "getEnergyMaxOutput"(arg0: $ItemStack$$Type): long
-public "tryUseEnergy"(arg0: $ItemStack$$Type, arg1: long, arg2: $Player$$Type): boolean
 public "getStoredEnergy"(arg0: $ItemStack$$Type): long
+public "tryUseEnergy"(arg0: $ItemStack$$Type, arg1: long, arg2: $Player$$Type): boolean
+public "getEnergyMaxOutput"(arg0: $ItemStack$$Type): long
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 }
 /**
@@ -251,12 +251,12 @@ export class $BaseJetpackItem implements $BaseJetpackItem$$Interface {
  "getStoredFluid"(arg0: $ItemStack$$Type): $FluidStack
  "getFluidStorage"(arg0: $ItemStack$$Type): $FluidApi$SingleSlotStorage
  "getSpeed"(): float
- "getEnergyStorage"(arg0: $ItemStack$$Type): $EnergyApi$EnergyStorage
  "getEnergyCapacity"(arg0: $ItemStack$$Type): long
+ "getEnergyStorage"(arg0: $ItemStack$$Type): $EnergyApi$EnergyStorage
+ "getStoredEnergy"(arg0: $ItemStack$$Type): long
+ "tryUseEnergy"(arg0: $ItemStack$$Type, arg1: long, arg2: $Player$$Type): boolean
  "getEnergyMaxInput"(arg0: $ItemStack$$Type): long
  "getEnergyMaxOutput"(arg0: $ItemStack$$Type): long
- "tryUseEnergy"(arg0: $ItemStack$$Type, arg1: long, arg2: $Player$$Type): boolean
- "getStoredEnergy"(arg0: $ItemStack$$Type): long
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -270,17 +270,17 @@ export type $BaseJetpackItem$$Original = $BaseJetpackItem;}
 declare module "rearth.oritech.item.tools.armor.ExoArmorItem" {
 import {$ArmorMaterial$$Type} from "net.minecraft.world.item.ArmorMaterial"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$ItemAttributeModifiers} from "net.minecraft.world.item.component.ItemAttributeModifiers"
 import {$List$$Type} from "java.util.List"
+import {$ItemAttributeModifiers} from "net.minecraft.world.item.component.ItemAttributeModifiers"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$Holder$$Type} from "net.minecraft.core.Holder"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$GeoAnimatable$$Type} from "software.bernie.geckolib.animatable.GeoAnimatable"
-import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$Supplier} from "java.util.function.Supplier"
-import {$ArmorItem} from "net.minecraft.world.item.ArmorItem"
+import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$ArmorItem} from "net.minecraft.world.item.ArmorItem"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$ArmorEventHandler$$Interface} from "rearth.oritech.item.tools.util.ArmorEventHandler"
 import {$DispenseItemBehavior} from "net.minecraft.core.dispenser.DispenseItemBehavior"
@@ -289,12 +289,12 @@ import {$ArmorItem$Type$$Type} from "net.minecraft.world.item.ArmorItem$Type"
 import {$Map} from "java.util.Map"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$GeoRenderProvider$$Type} from "software.bernie.geckolib.animatable.client.GeoRenderProvider"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$AnimatableInstanceCache} from "software.bernie.geckolib.animatable.instance.AnimatableInstanceCache"
-import {$GeoItem$$Interface} from "software.bernie.geckolib.animatable.GeoItem"
 import {$AnimatableManager$ControllerRegistrar$$Type} from "software.bernie.geckolib.animation.AnimatableManager$ControllerRegistrar"
 import {$Consumer$$Type} from "java.util.function.Consumer"
+import {$GeoItem$$Interface} from "software.bernie.geckolib.animatable.GeoItem"
 import {$Equipable} from "net.minecraft.world.item.Equipable"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
@@ -323,11 +323,11 @@ public "registerControllers"(arg0: $AnimatableManager$ControllerRegistrar$$Type)
 public "getAnimatableInstanceCache"(): $AnimatableInstanceCache
 public "getModel"(): $ResourceLocation
 public "isBarVisible"(arg0: $ItemStack$$Type): boolean
+public "getTick"(arg0: any): double
 public static "registerSyncedAnimatable"(arg0: $GeoAnimatable$$Type): void
 public "isPerspectiveAware"(): boolean
 public "animatableCacheOverride"(): $AnimatableInstanceCache
 public static "getOrAssignId"(arg0: $ItemStack$$Type, arg1: $ServerLevel$$Type): long
-public "getTick"(arg0: any): double
 public static "getId"(arg0: $ItemStack$$Type): long
 public static "processEvent"(arg0: $LivingEntity$$Type, arg1: $EquipmentSlot$$Type, arg2: $ItemStack$$Type, arg3: $ItemStack$$Type): void
 public "getAnimData"<D>(arg0: long, arg1: $SerializableDataTicket$$Type<(D)>): D
@@ -362,14 +362,14 @@ export type $ExoArmorItem$$Original = $ExoArmorItem;}
 declare module "rearth.oritech.item.tools.Wrench" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$List$$Type} from "java.util.List"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$Tool} from "net.minecraft.world.item.component.Tool"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
@@ -405,16 +405,16 @@ declare module "rearth.oritech.item.tools.armor.JetpackExoArmorItem" {
 import {$BackstorageExoArmorItem} from "rearth.oritech.item.tools.armor.BackstorageExoArmorItem"
 import {$ArmorMaterial$$Type} from "net.minecraft.world.item.ArmorMaterial"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$ItemAttributeModifiers} from "net.minecraft.world.item.component.ItemAttributeModifiers"
 import {$List$$Type} from "java.util.List"
+import {$ItemAttributeModifiers} from "net.minecraft.world.item.component.ItemAttributeModifiers"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$Holder$$Type} from "net.minecraft.core.Holder"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$GeoAnimatable$$Type} from "software.bernie.geckolib.animatable.GeoAnimatable"
+import {$Supplier} from "java.util.function.Supplier"
 import {$BaseJetpackItem$$Interface} from "rearth.oritech.item.tools.armor.BaseJetpackItem"
 import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
-import {$Supplier} from "java.util.function.Supplier"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$FluidApi$SingleSlotStorage} from "rearth.oritech.api.fluid.FluidApi$SingleSlotStorage"
@@ -424,10 +424,10 @@ import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$ArmorItem$Type$$Type} from "net.minecraft.world.item.ArmorItem$Type"
 import {$Map} from "java.util.Map"
 import {$Block} from "net.minecraft.world.level.block.Block"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
-import {$Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Equipable} from "net.minecraft.world.item.Equipable"
+import {$Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 
@@ -446,11 +446,11 @@ constructor(arg0: $Holder$$Type<($ArmorMaterial)>, arg1: $ArmorItem$Type$$Type, 
 public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
 public "inventoryTick"(arg0: $ItemStack$$Type, arg1: $Level$$Type, arg2: $Entity$$Type, arg3: integer, arg4: boolean): void
 public "getEnergyCapacity"(arg0: $ItemStack$$Type): long
-public "getEnergyMaxInput"(arg0: $ItemStack$$Type): long
 public "requireUpward"(): boolean
 public "getRfUsage"(): integer
 public "getFuelUsage"(): integer
 public "getFuelCapacity"(): long
+public "getEnergyMaxInput"(arg0: $ItemStack$$Type): long
 public "getModel"(): $ResourceLocation
 public "getBarWidth"(arg0: $ItemStack$$Type): integer
 public "getBarColor"(arg0: $ItemStack$$Type): integer
@@ -495,12 +495,12 @@ export interface $OritechEnergyItem$$Interface extends $EnergyApi$ItemProvider$$
 }
 
 export class $OritechEnergyItem implements $OritechEnergyItem$$Interface {
- "getEnergyStorage"(arg0: $ItemStack$$Type): $EnergyApi$EnergyStorage
  "getEnergyCapacity"(arg0: $ItemStack$$Type): long
+ "getEnergyStorage"(arg0: $ItemStack$$Type): $EnergyApi$EnergyStorage
+ "getStoredEnergy"(arg0: $ItemStack$$Type): long
+ "tryUseEnergy"(arg0: $ItemStack$$Type, arg1: long, arg2: $Player$$Type): boolean
  "getEnergyMaxInput"(arg0: $ItemStack$$Type): long
  "getEnergyMaxOutput"(arg0: $ItemStack$$Type): long
- "tryUseEnergy"(arg0: $ItemStack$$Type, arg1: long, arg2: $Player$$Type): boolean
- "getStoredEnergy"(arg0: $ItemStack$$Type): long
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -514,18 +514,18 @@ export type $OritechEnergyItem$$Original = $OritechEnergyItem;}
 declare module "rearth.oritech.item.tools.armor.JetpackElytraItem" {
 import {$ArmorMaterial$$Type} from "net.minecraft.world.item.ArmorMaterial"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$ItemAttributeModifiers} from "net.minecraft.world.item.component.ItemAttributeModifiers"
 import {$List$$Type} from "java.util.List"
+import {$ItemAttributeModifiers} from "net.minecraft.world.item.component.ItemAttributeModifiers"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$Holder$$Type} from "net.minecraft.core.Holder"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$GeoAnimatable$$Type} from "software.bernie.geckolib.animatable.GeoAnimatable"
-import {$BaseJetpackItem$$Interface} from "rearth.oritech.item.tools.armor.BaseJetpackItem"
 import {$Supplier} from "java.util.function.Supplier"
-import {$ArmorItem} from "net.minecraft.world.item.ArmorItem"
+import {$BaseJetpackItem$$Interface} from "rearth.oritech.item.tools.armor.BaseJetpackItem"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$ArmorItem} from "net.minecraft.world.item.ArmorItem"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$FluidApi$SingleSlotStorage} from "rearth.oritech.api.fluid.FluidApi$SingleSlotStorage"
 import {$FluidStack} from "dev.architectury.fluid.FluidStack"
@@ -535,14 +535,14 @@ import {$ArmorItem$Type$$Type} from "net.minecraft.world.item.ArmorItem$Type"
 import {$Map} from "java.util.Map"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$GeoRenderProvider$$Type} from "software.bernie.geckolib.animatable.client.GeoRenderProvider"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$AnimatableInstanceCache} from "software.bernie.geckolib.animatable.instance.AnimatableInstanceCache"
-import {$GeoItem$$Interface} from "software.bernie.geckolib.animatable.GeoItem"
 import {$AnimatableManager$ControllerRegistrar$$Type} from "software.bernie.geckolib.animation.AnimatableManager$ControllerRegistrar"
 import {$Consumer$$Type} from "java.util.function.Consumer"
-import {$Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
+import {$GeoItem$$Interface} from "software.bernie.geckolib.animatable.GeoItem"
 import {$Equipable} from "net.minecraft.world.item.Equipable"
+import {$Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 import {$EnergyApi$EnergyStorage} from "rearth.oritech.api.energy.EnergyApi$EnergyStorage"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
@@ -568,11 +568,11 @@ public "getEnergyCapacity"(arg0: $ItemStack$$Type): long
 public "createGeoRenderer"(arg0: $Consumer$$Type<($GeoRenderProvider)>): void
 public "registerControllers"(arg0: $AnimatableManager$ControllerRegistrar$$Type): void
 public "getAnimatableInstanceCache"(): $AnimatableInstanceCache
-public "getEnergyMaxInput"(arg0: $ItemStack$$Type): long
 public "requireUpward"(): boolean
 public "getRfUsage"(): integer
 public "getFuelUsage"(): integer
 public "getFuelCapacity"(): long
+public "getEnergyMaxInput"(arg0: $ItemStack$$Type): long
 public "requireTakeoff"(): boolean
 public "useCustomElytra"(arg0: $LivingEntity$$Type, arg1: $ItemStack$$Type, arg2: boolean): boolean
 public "isBarVisible"(arg0: $ItemStack$$Type): boolean
@@ -581,11 +581,11 @@ public "getBarColor"(arg0: $ItemStack$$Type): integer
 public "getSpeed"(): float
 public "canElytraFly"(arg0: $ItemStack$$Type, arg1: $LivingEntity$$Type): boolean
 public "elytraFlightTick"(arg0: $ItemStack$$Type, arg1: $LivingEntity$$Type, arg2: integer): boolean
+public "getTick"(arg0: any): double
 public static "registerSyncedAnimatable"(arg0: $GeoAnimatable$$Type): void
 public "isPerspectiveAware"(): boolean
 public "animatableCacheOverride"(): $AnimatableInstanceCache
 public static "getOrAssignId"(arg0: $ItemStack$$Type, arg1: $ServerLevel$$Type): long
-public "getTick"(arg0: any): double
 public static "getId"(arg0: $ItemStack$$Type): long
 public "isValidFuel"(arg0: $Fluid$$Type): boolean
 public "tickJetpack"(arg0: $ItemStack$$Type, arg1: $Entity$$Type, arg2: $Level$$Type): void
@@ -604,9 +604,9 @@ public "triggerArmorAnim"(arg0: $Entity$$Type, arg1: long, arg2: StringJS, arg3:
 public "stopTriggeredArmorAnim"(arg0: $Entity$$Type, arg1: long, arg2: StringJS, arg3: StringJS): void
 public "getRenderProvider"(): any
 public "getEnergyStorage"(arg0: $ItemStack$$Type): $EnergyApi$EnergyStorage
-public "getEnergyMaxOutput"(arg0: $ItemStack$$Type): long
-public "tryUseEnergy"(arg0: $ItemStack$$Type, arg1: long, arg2: $Player$$Type): boolean
 public "getStoredEnergy"(arg0: $ItemStack$$Type): long
+public "tryUseEnergy"(arg0: $ItemStack$$Type, arg1: long, arg2: $Player$$Type): boolean
+public "getEnergyMaxOutput"(arg0: $ItemStack$$Type): long
 public static "get"(arg0: $ItemStack$$Type): $Equipable
 public "getBoneResetTime"(): double
 public "shouldPlayAnimsWhileGamePaused"(): boolean
@@ -638,8 +638,8 @@ import {$List$$Type} from "java.util.List"
 import {$CustomPacketPayload$Type} from "net.minecraft.network.protocol.common.custom.CustomPacketPayload$Type"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
 import {$CustomPacketPayload, $CustomPacketPayload$$Interface} from "net.minecraft.network.protocol.common.custom.CustomPacketPayload"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ServerboundCustomPayloadPacket} from "net.minecraft.network.protocol.common.ServerboundCustomPayloadPacket"
 import {$ClientboundCustomPayloadPacket} from "net.minecraft.network.protocol.common.ClientboundCustomPayloadPacket"
 import {$ConnectionProtocol$$Type} from "net.minecraft.network.ConnectionProtocol"
@@ -652,8 +652,8 @@ static readonly "PACKET_ID": $CustomPacketPayload$Type<($JetpackItem$JetpackUsag
 
 constructor(energyStored: long, fluidType: StringJS, fluidAmount: long)
 
-public "energyStored"(): long
 public "fluidAmount"(): long
+public "energyStored"(): long
 public "type"(): $CustomPacketPayload$Type<($CustomPacketPayload)>
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
@@ -678,8 +678,8 @@ declare module "rearth.oritech.item.tools.armor.BackstorageExoArmorItem" {
 import {$ArmorMaterial$$Type} from "net.minecraft.world.item.ArmorMaterial"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$ExoArmorItem} from "rearth.oritech.item.tools.armor.ExoArmorItem"
-import {$ItemAttributeModifiers} from "net.minecraft.world.item.component.ItemAttributeModifiers"
 import {$List$$Type} from "java.util.List"
+import {$ItemAttributeModifiers} from "net.minecraft.world.item.component.ItemAttributeModifiers"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$OritechEnergyItem$$Interface} from "rearth.oritech.item.tools.util.OritechEnergyItem"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
@@ -687,8 +687,8 @@ import {$Holder$$Type} from "net.minecraft.core.Holder"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$GeoAnimatable$$Type} from "software.bernie.geckolib.animatable.GeoAnimatable"
-import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$Supplier} from "java.util.function.Supplier"
+import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$DispenseItemBehavior} from "net.minecraft.core.dispenser.DispenseItemBehavior"
@@ -696,8 +696,8 @@ import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$ArmorItem$Type$$Type} from "net.minecraft.world.item.ArmorItem$Type"
 import {$Map} from "java.util.Map"
 import {$Block} from "net.minecraft.world.level.block.Block"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Equipable} from "net.minecraft.world.item.Equipable"
 import {$EnergyApi$EnergyStorage} from "rearth.oritech.api.energy.EnergyApi$EnergyStorage"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
@@ -724,8 +724,8 @@ public "isBarVisible"(arg0: $ItemStack$$Type): boolean
 public "getBarWidth"(arg0: $ItemStack$$Type): integer
 public "getBarColor"(arg0: $ItemStack$$Type): integer
 public "getEnergyStorage"(arg0: $ItemStack$$Type): $EnergyApi$EnergyStorage
-public "tryUseEnergy"(arg0: $ItemStack$$Type, arg1: long, arg2: $Player$$Type): boolean
 public "getStoredEnergy"(arg0: $ItemStack$$Type): long
+public "tryUseEnergy"(arg0: $ItemStack$$Type, arg1: long, arg2: $Player$$Type): boolean
 public static "registerSyncedAnimatable"(arg0: $GeoAnimatable$$Type): void
 public static "getOrAssignId"(arg0: $ItemStack$$Type, arg1: $ServerLevel$$Type): long
 public static "getId"(arg0: $ItemStack$$Type): long
@@ -745,8 +745,8 @@ export type $BackstorageExoArmorItem$$Original = $BackstorageExoArmorItem;}
 declare module "rearth.oritech.item.tools.armor.JetpackItem" {
 import {$ArmorMaterial$$Type} from "net.minecraft.world.item.ArmorMaterial"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$ItemAttributeModifiers} from "net.minecraft.world.item.component.ItemAttributeModifiers"
 import {$List$$Type} from "java.util.List"
+import {$ItemAttributeModifiers} from "net.minecraft.world.item.component.ItemAttributeModifiers"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$Holder$$Type} from "net.minecraft.core.Holder"
@@ -754,10 +754,10 @@ import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$GeoAnimatable$$Type} from "software.bernie.geckolib.animatable.GeoAnimatable"
 import {$JetpackItem$JetpackUsageUpdatePacket$$Type} from "rearth.oritech.item.tools.armor.JetpackItem$JetpackUsageUpdatePacket"
-import {$BaseJetpackItem$$Interface} from "rearth.oritech.item.tools.armor.BaseJetpackItem"
 import {$Supplier} from "java.util.function.Supplier"
-import {$ArmorItem} from "net.minecraft.world.item.ArmorItem"
+import {$BaseJetpackItem$$Interface} from "rearth.oritech.item.tools.armor.BaseJetpackItem"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$ArmorItem} from "net.minecraft.world.item.ArmorItem"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$FluidApi$SingleSlotStorage} from "rearth.oritech.api.fluid.FluidApi$SingleSlotStorage"
 import {$FluidStack} from "dev.architectury.fluid.FluidStack"
@@ -767,14 +767,14 @@ import {$ArmorItem$Type$$Type} from "net.minecraft.world.item.ArmorItem$Type"
 import {$Map} from "java.util.Map"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$GeoRenderProvider$$Type} from "software.bernie.geckolib.animatable.client.GeoRenderProvider"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$AnimatableInstanceCache} from "software.bernie.geckolib.animatable.instance.AnimatableInstanceCache"
-import {$GeoItem$$Interface} from "software.bernie.geckolib.animatable.GeoItem"
 import {$AnimatableManager$ControllerRegistrar$$Type} from "software.bernie.geckolib.animation.AnimatableManager$ControllerRegistrar"
 import {$Consumer$$Type} from "java.util.function.Consumer"
-import {$Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
+import {$GeoItem$$Interface} from "software.bernie.geckolib.animatable.GeoItem"
 import {$Equipable} from "net.minecraft.world.item.Equipable"
+import {$Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 import {$EnergyApi$EnergyStorage} from "rearth.oritech.api.energy.EnergyApi$EnergyStorage"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$SerializableDataTicket$$Type} from "software.bernie.geckolib.constant.dataticket.SerializableDataTicket"
@@ -803,20 +803,20 @@ public static "receiveUsagePacket"(arg0: $JetpackItem$JetpackUsageUpdatePacket$$
 public "createGeoRenderer"(arg0: $Consumer$$Type<($GeoRenderProvider)>): void
 public "registerControllers"(arg0: $AnimatableManager$ControllerRegistrar$$Type): void
 public "getAnimatableInstanceCache"(): $AnimatableInstanceCache
-public "getEnergyMaxInput"(arg0: $ItemStack$$Type): long
 public "requireUpward"(): boolean
 public "getRfUsage"(): integer
 public "getFuelUsage"(): integer
 public "getFuelCapacity"(): long
+public "getEnergyMaxInput"(arg0: $ItemStack$$Type): long
 public "isBarVisible"(arg0: $ItemStack$$Type): boolean
 public "getBarWidth"(arg0: $ItemStack$$Type): integer
 public "getBarColor"(arg0: $ItemStack$$Type): integer
 public "getSpeed"(): float
+public "getTick"(arg0: any): double
 public static "registerSyncedAnimatable"(arg0: $GeoAnimatable$$Type): void
 public "isPerspectiveAware"(): boolean
 public "animatableCacheOverride"(): $AnimatableInstanceCache
 public static "getOrAssignId"(arg0: $ItemStack$$Type, arg1: $ServerLevel$$Type): long
-public "getTick"(arg0: any): double
 public static "getId"(arg0: $ItemStack$$Type): long
 public "isValidFuel"(arg0: $Fluid$$Type): boolean
 public "tickJetpack"(arg0: $ItemStack$$Type, arg1: $Entity$$Type, arg2: $Level$$Type): void
@@ -836,9 +836,9 @@ public "triggerArmorAnim"(arg0: $Entity$$Type, arg1: long, arg2: StringJS, arg3:
 public "stopTriggeredArmorAnim"(arg0: $Entity$$Type, arg1: long, arg2: StringJS, arg3: StringJS): void
 public "getRenderProvider"(): any
 public "getEnergyStorage"(arg0: $ItemStack$$Type): $EnergyApi$EnergyStorage
-public "getEnergyMaxOutput"(arg0: $ItemStack$$Type): long
-public "tryUseEnergy"(arg0: $ItemStack$$Type, arg1: long, arg2: $Player$$Type): boolean
 public "getStoredEnergy"(arg0: $ItemStack$$Type): long
+public "tryUseEnergy"(arg0: $ItemStack$$Type, arg1: long, arg2: $Player$$Type): boolean
+public "getEnergyMaxOutput"(arg0: $ItemStack$$Type): long
 public static "get"(arg0: $ItemStack$$Type): $Equipable
 public "getBoneResetTime"(): double
 public "shouldPlayAnimsWhileGamePaused"(): boolean
@@ -865,15 +865,15 @@ export type $JetpackItem$$Original = $JetpackItem;}
 declare module "rearth.oritech.item.tools.harvesting.ChainsawItem" {
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$List$$Type} from "java.util.List"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$OritechEnergyItem$$Interface} from "rearth.oritech.item.tools.util.OritechEnergyItem"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$AxeItem} from "net.minecraft.world.item.AxeItem"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Tier, $Tier$$Type} from "net.minecraft.world.item.Tier"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
@@ -904,17 +904,17 @@ public "isValidRepairItem"(arg0: $ItemStack$$Type, arg1: $ItemStack$$Type): bool
 public "shouldCauseReequipAnimation"(arg0: $ItemStack$$Type, arg1: $ItemStack$$Type, arg2: boolean): boolean
 public "shouldCauseBlockBreakReset"(arg0: $ItemStack$$Type, arg1: $ItemStack$$Type): boolean
 public "getEnergyCapacity"(arg0: $ItemStack$$Type): long
-public "getEnergyMaxInput"(arg0: $ItemStack$$Type): long
-public "allowComponentsUpdateAnimation"(arg0: $Player$$Type, arg1: $InteractionHand$$Type, arg2: $ItemStack$$Type, arg3: $ItemStack$$Type): boolean
 public "allowContinuingBlockBreaking"(arg0: $Player$$Type, arg1: $ItemStack$$Type, arg2: $ItemStack$$Type): boolean
+public "allowComponentsUpdateAnimation"(arg0: $Player$$Type, arg1: $InteractionHand$$Type, arg2: $ItemStack$$Type, arg3: $ItemStack$$Type): boolean
+public "getEnergyMaxInput"(arg0: $ItemStack$$Type): long
 public "isBarVisible"(arg0: $ItemStack$$Type): boolean
 public "getBarWidth"(arg0: $ItemStack$$Type): integer
 public "getBarColor"(arg0: $ItemStack$$Type): integer
 public "getDestroySpeed"(arg0: $ItemStack$$Type, arg1: $BlockState$$Type): float
 public "getEnergyStorage"(arg0: $ItemStack$$Type): $EnergyApi$EnergyStorage
-public "getEnergyMaxOutput"(arg0: $ItemStack$$Type): long
-public "tryUseEnergy"(arg0: $ItemStack$$Type, arg1: long, arg2: $Player$$Type): boolean
 public "getStoredEnergy"(arg0: $ItemStack$$Type): long
+public "tryUseEnergy"(arg0: $ItemStack$$Type, arg1: long, arg2: $Player$$Type): boolean
+public "getEnergyMaxOutput"(arg0: $ItemStack$$Type): long
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 }
 /**
@@ -946,12 +946,12 @@ import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$GeoRenderProvider$$Type} from "software.bernie.geckolib.animatable.client.GeoRenderProvider"
 import {$HitResult} from "net.minecraft.world.phys.HitResult"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$AnimatableInstanceCache} from "software.bernie.geckolib.animatable.instance.AnimatableInstanceCache"
-import {$GeoItem$$Interface} from "software.bernie.geckolib.animatable.GeoItem"
 import {$AnimatableManager$ControllerRegistrar$$Type} from "software.bernie.geckolib.animation.AnimatableManager$ControllerRegistrar"
 import {$Consumer$$Type} from "java.util.function.Consumer"
+import {$GeoItem$$Interface} from "software.bernie.geckolib.animatable.GeoItem"
 import {$Enchantment$$Type} from "net.minecraft.world.item.enchantment.Enchantment"
 import {$EnergyApi$EnergyStorage} from "rearth.oritech.api.energy.EnergyApi$EnergyStorage"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
@@ -977,30 +977,30 @@ public static "getEnchantmentLevel"(arg0: $ItemStack$$Type, arg1: $ResourceKey$$
 public "shouldCauseReequipAnimation"(arg0: $ItemStack$$Type, arg1: $ItemStack$$Type, arg2: boolean): boolean
 public "shouldCauseBlockBreakReset"(arg0: $ItemStack$$Type, arg1: $ItemStack$$Type): boolean
 public "getEnergyCapacity"(arg0: $ItemStack$$Type): long
+public "allowContinuingBlockBreaking"(arg0: $Player$$Type, arg1: $ItemStack$$Type, arg2: $ItemStack$$Type): boolean
+public "allowComponentsUpdateAnimation"(arg0: $Player$$Type, arg1: $InteractionHand$$Type, arg2: $ItemStack$$Type, arg3: $ItemStack$$Type): boolean
 public static "receiveUsePacket"(arg0: $PortableLaserItem$LaserPlayerUsePacket$$Type, arg1: $Player$$Type, arg2: $RegistryAccess$$Type): void
 public "createGeoRenderer"(arg0: $Consumer$$Type<($GeoRenderProvider)>): void
 public "registerControllers"(arg0: $AnimatableManager$ControllerRegistrar$$Type): void
 public "getAnimatableInstanceCache"(): $AnimatableInstanceCache
+public "isMiningEnabled"(arg0: $ItemStack$$Type): boolean
+public "setMiningEnabled"(arg0: $ItemStack$$Type, arg1: boolean): void
 public static "getPlayerTargetRay"(arg0: $Player$$Type): $HitResult
 public "getEnergyMaxInput"(arg0: $ItemStack$$Type): long
 public "getEnergyMaxOutput"(arg0: $ItemStack$$Type): long
-public "isMiningEnabled"(arg0: $ItemStack$$Type): boolean
-public "setMiningEnabled"(arg0: $ItemStack$$Type, arg1: boolean): void
-public "allowComponentsUpdateAnimation"(arg0: $Player$$Type, arg1: $InteractionHand$$Type, arg2: $ItemStack$$Type, arg3: $ItemStack$$Type): boolean
-public "allowContinuingBlockBreaking"(arg0: $Player$$Type, arg1: $ItemStack$$Type, arg2: $ItemStack$$Type): boolean
 public "use"(arg0: $Level$$Type, arg1: $Player$$Type, arg2: $InteractionHand$$Type): $InteractionResultHolder<($ItemStack)>
 public "isBarVisible"(arg0: $ItemStack$$Type): boolean
 public "getBarWidth"(arg0: $ItemStack$$Type): integer
 public "getBarColor"(arg0: $ItemStack$$Type): integer
 public static "onUseTick"(arg0: $Player$$Type): void
 public "getEnergyStorage"(arg0: $ItemStack$$Type): $EnergyApi$EnergyStorage
-public "tryUseEnergy"(arg0: $ItemStack$$Type, arg1: long, arg2: $Player$$Type): boolean
 public "getStoredEnergy"(arg0: $ItemStack$$Type): long
+public "tryUseEnergy"(arg0: $ItemStack$$Type, arg1: long, arg2: $Player$$Type): boolean
+public "getTick"(arg0: any): double
 public static "registerSyncedAnimatable"(arg0: $GeoAnimatable$$Type): void
 public "isPerspectiveAware"(): boolean
 public "animatableCacheOverride"(): $AnimatableInstanceCache
 public static "getOrAssignId"(arg0: $ItemStack$$Type, arg1: $ServerLevel$$Type): long
-public "getTick"(arg0: any): double
 public static "getId"(arg0: $ItemStack$$Type): long
 public "getAnimData"<D>(arg0: long, arg1: $SerializableDataTicket$$Type<(D)>): D
 public "setAnimData"<D>(arg0: $Entity$$Type, arg1: long, arg2: $SerializableDataTicket$$Type<(D)>, arg3: D): void
@@ -1030,8 +1030,8 @@ export type $PortableLaserItem$$Type = ($PortableLaserItem);
 export type $PortableLaserItem$$Original = $PortableLaserItem;}
 declare module "rearth.oritech.item.tools.harvesting.PromethiumPickaxeItem" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$ItemAttributeModifiers} from "net.minecraft.world.item.component.ItemAttributeModifiers"
 import {$List, $List$$Type} from "java.util.List"
+import {$ItemAttributeModifiers} from "net.minecraft.world.item.component.ItemAttributeModifiers"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$IntValue$$Type} from "dev.architectury.utils.value.IntValue"
@@ -1050,12 +1050,12 @@ import {$Map} from "java.util.Map"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$GeoRenderProvider$$Type} from "software.bernie.geckolib.animatable.client.GeoRenderProvider"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$AnimatableInstanceCache} from "software.bernie.geckolib.animatable.instance.AnimatableInstanceCache"
-import {$GeoItem$$Interface} from "software.bernie.geckolib.animatable.GeoItem"
 import {$AnimatableManager$ControllerRegistrar$$Type} from "software.bernie.geckolib.animation.AnimatableManager$ControllerRegistrar"
 import {$Consumer$$Type} from "java.util.function.Consumer"
+import {$GeoItem$$Interface} from "software.bernie.geckolib.animatable.GeoItem"
 import {$ClientLevel$$Type} from "net.minecraft.client.multiplayer.ClientLevel"
 import {$TagKey$$Type} from "net.minecraft.tags.TagKey"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
@@ -1087,11 +1087,11 @@ public "getAnimatableInstanceCache"(): $AnimatableInstanceCache
 public "onHeldTick"(arg0: $ItemStack$$Type, arg1: $Player$$Type, arg2: $ClientLevel$$Type): void
 public static "getOffsetBlocks"(arg0: $Level$$Type, arg1: $Player$$Type, arg2: $BlockPos$$Type): $List<($BlockPos)>
 public "use"(arg0: $Level$$Type, arg1: $Player$$Type, arg2: $InteractionHand$$Type): $InteractionResultHolder<($ItemStack)>
+public "getTick"(arg0: any): double
 public static "registerSyncedAnimatable"(arg0: $GeoAnimatable$$Type): void
 public "isPerspectiveAware"(): boolean
 public "animatableCacheOverride"(): $AnimatableInstanceCache
 public static "getOrAssignId"(arg0: $ItemStack$$Type, arg1: $ServerLevel$$Type): long
-public "getTick"(arg0: any): double
 public static "getId"(arg0: $ItemStack$$Type): long
 public "getAnimData"<D>(arg0: long, arg1: $SerializableDataTicket$$Type<(D)>): D
 public "setAnimData"<D>(arg0: $Entity$$Type, arg1: long, arg2: $SerializableDataTicket$$Type<(D)>, arg3: D): void
@@ -1124,8 +1124,8 @@ import {$Map} from "java.util.Map"
 import {$List$$Type} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
@@ -1186,8 +1186,8 @@ import {$List$$Type} from "java.util.List"
 import {$CustomPacketPayload$Type} from "net.minecraft.network.protocol.common.custom.CustomPacketPayload$Type"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
 import {$CustomPacketPayload, $CustomPacketPayload$$Interface} from "net.minecraft.network.protocol.common.custom.CustomPacketPayload"
-import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
+import {$StreamMemberEncoder$$Type} from "net.minecraft.network.codec.StreamMemberEncoder"
 import {$ServerboundCustomPayloadPacket} from "net.minecraft.network.protocol.common.ServerboundCustomPayloadPacket"
 import {$ClientboundCustomPayloadPacket} from "net.minecraft.network.protocol.common.ClientboundCustomPayloadPacket"
 import {$ConnectionProtocol$$Type} from "net.minecraft.network.ConnectionProtocol"
@@ -1232,8 +1232,8 @@ export interface $Wrench$Wrenchable$$Interface {
 }
 
 export class $Wrench$Wrenchable implements $Wrench$Wrenchable$$Interface {
- "onWrenchUseNeighbor"(arg0: $BlockState$$Type, arg1: $BlockState$$Type, arg2: $Level$$Type, arg3: $BlockPos$$Type, arg4: $BlockPos$$Type, arg5: $Direction$$Type, arg6: $Player$$Type, arg7: $InteractionHand$$Type): $InteractionResult
  "onWrenchUse"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type, arg4: $InteractionHand$$Type): $InteractionResult
+ "onWrenchUseNeighbor"(arg0: $BlockState$$Type, arg1: $BlockState$$Type, arg2: $Level$$Type, arg3: $BlockPos$$Type, arg4: $BlockPos$$Type, arg5: $Direction$$Type, arg6: $Player$$Type, arg7: $InteractionHand$$Type): $InteractionResult
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -1248,16 +1248,16 @@ declare module "rearth.oritech.item.tools.armor.JetpackExoElytraItem" {
 import {$BackstorageExoArmorItem} from "rearth.oritech.item.tools.armor.BackstorageExoArmorItem"
 import {$ArmorMaterial$$Type} from "net.minecraft.world.item.ArmorMaterial"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$ItemAttributeModifiers} from "net.minecraft.world.item.component.ItemAttributeModifiers"
 import {$List$$Type} from "java.util.List"
+import {$ItemAttributeModifiers} from "net.minecraft.world.item.component.ItemAttributeModifiers"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$Holder$$Type} from "net.minecraft.core.Holder"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$GeoAnimatable$$Type} from "software.bernie.geckolib.animatable.GeoAnimatable"
+import {$Supplier} from "java.util.function.Supplier"
 import {$BaseJetpackItem$$Interface} from "rearth.oritech.item.tools.armor.BaseJetpackItem"
 import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
-import {$Supplier} from "java.util.function.Supplier"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$FluidApi$SingleSlotStorage} from "rearth.oritech.api.fluid.FluidApi$SingleSlotStorage"
@@ -1267,10 +1267,10 @@ import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$ArmorItem$Type$$Type} from "net.minecraft.world.item.ArmorItem$Type"
 import {$Map} from "java.util.Map"
 import {$Block} from "net.minecraft.world.level.block.Block"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
-import {$Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Equipable} from "net.minecraft.world.item.Equipable"
+import {$Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 
@@ -1289,11 +1289,11 @@ constructor(arg0: $Holder$$Type<($ArmorMaterial)>, arg1: $ArmorItem$Type$$Type, 
 public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
 public "inventoryTick"(arg0: $ItemStack$$Type, arg1: $Level$$Type, arg2: $Entity$$Type, arg3: integer, arg4: boolean): void
 public "getEnergyCapacity"(arg0: $ItemStack$$Type): long
-public "getEnergyMaxInput"(arg0: $ItemStack$$Type): long
 public "requireUpward"(): boolean
 public "getRfUsage"(): integer
 public "getFuelUsage"(): integer
 public "getFuelCapacity"(): long
+public "getEnergyMaxInput"(arg0: $ItemStack$$Type): long
 public "requireTakeoff"(): boolean
 public "useCustomElytra"(arg0: $LivingEntity$$Type, arg1: $ItemStack$$Type, arg2: boolean): boolean
 public "getModel"(): $ResourceLocation
@@ -1337,8 +1337,8 @@ import {$Map} from "java.util.Map"
 import {$List$$Type} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"

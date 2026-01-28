@@ -2,8 +2,8 @@ declare module "blusunrize.immersiveengineering.common.fluids.PotionFluid$Potion
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$FluidStack$$Type} from "net.neoforged.neoforge.fluids.FluidStack"
-import {$Lazy} from "net.neoforged.neoforge.common.util.Lazy"
 import {$Component} from "net.minecraft.network.chat.Component"
+import {$Lazy} from "net.neoforged.neoforge.common.util.Lazy"
 import {$FluidType} from "net.neoforged.neoforge.fluids.FluidType"
 
 export class $PotionFluid$PotionFluidType extends $FluidType {
@@ -42,8 +42,8 @@ import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$PotionFluid$PotionBottleType$$Type} from "blusunrize.immersiveengineering.common.fluids.PotionFluid$PotionBottleType"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$FluidType} from "net.neoforged.neoforge.fluids.FluidType"
 import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
+import {$FluidType} from "net.neoforged.neoforge.fluids.FluidType"
 
 export class $PotionFluid extends $Fluid {
 static readonly "FLUID_STATE_REGISTRY": $IdMapper<($FluidState)>
@@ -55,13 +55,12 @@ public "isSource"(arg0: $FluidState$$Type): boolean
 public "getTickDelay"(arg0: $LevelReader$$Type): integer
 public "getOwnHeight"(arg0: $FluidState$$Type): float
 public static "getFluidStackForType"(arg0: ($Holder$$Type<($Potion$$Type)>)?, arg1: integer, arg2: $PotionFluid$PotionBottleType$$Type): $FluidStack
-public "getHeight"(arg0: $FluidState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): float
 public "getShape"(arg0: $FluidState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): $VoxelShape
+public "getHeight"(arg0: $FluidState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): float
 public static "getType"(arg0: $FluidStack$$Type): $Holder<($Potion)>
 public "getBucket"(): $Item
 public "getFluidType"(): $FluidType
 public "getAmount"(arg0: $FluidState$$Type): integer
-public "asHolder"(): $Holder
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 public static "wrap"(o: any): $ReplacementMatch
 get "bucket"(): $Item
@@ -77,8 +76,8 @@ export type $PotionFluid$$Type = ($PotionFluid);
  */
 export type $PotionFluid$$Original = $PotionFluid;}
 declare module "blusunrize.immersiveengineering.common.fluids.IEFluid$EntityFluidSerializer" {
-import {$EntityDataSerializer, $EntityDataSerializer$$Interface} from "net.minecraft.network.syncher.EntityDataSerializer"
 import {$StreamCodec, $StreamCodec$$Type} from "net.minecraft.network.codec.StreamCodec"
+import {$EntityDataSerializer, $EntityDataSerializer$$Interface} from "net.minecraft.network.syncher.EntityDataSerializer"
 import {$RegistryFriendlyByteBuf, $RegistryFriendlyByteBuf$$Type} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$EntityDataAccessor} from "net.minecraft.network.syncher.EntityDataAccessor"
 import {$FluidStack, $FluidStack$$Type} from "net.neoforged.neoforge.fluids.FluidStack"
@@ -89,8 +88,8 @@ constructor()
 public "copy"(arg0: any): any
 public "copy"(arg0: $FluidStack$$Type): $FluidStack
 public "codec"(): $StreamCodec<($RegistryFriendlyByteBuf), ($FluidStack)>
-public static "forValueType"<T>(arg0: $StreamCodec$$Type<($RegistryFriendlyByteBuf$$Type), ($FluidStack$$Type)>): $EntityDataSerializer<($FluidStack)>
 public "createAccessor"(arg0: integer): $EntityDataAccessor<($FluidStack)>
+public static "forValueType"<T>(arg0: $StreamCodec$$Type<($RegistryFriendlyByteBuf$$Type), ($FluidStack$$Type)>): $EntityDataSerializer<($FluidStack)>
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -109,7 +108,6 @@ import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$DispenseItemBehavior} from "net.minecraft.core.dispenser.DispenseItemBehavior"
 import {$FluidState} from "net.minecraft.world.level.material.FluidState"
-import {$Holder} from "net.minecraft.core.Holder"
 import {$IEFluids$FluidEntry$$Type} from "blusunrize.immersiveengineering.common.register.IEFluids$FluidEntry"
 
 export class $ConcreteFluid$Flowing extends $ConcreteFluid {
@@ -120,7 +118,6 @@ static readonly "LEVEL": $IntegerProperty
 
 constructor(arg0: $IEFluids$FluidEntry$$Type)
 
-public "asHolder"(): $Holder
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 public static "wrap"(o: any): $ReplacementMatch
 }
@@ -135,12 +132,11 @@ export type $ConcreteFluid$Flowing$$Type = ($ConcreteFluid$Flowing);
 export type $ConcreteFluid$Flowing$$Original = $ConcreteFluid$Flowing;}
 declare module "blusunrize.immersiveengineering.common.fluids.ConcreteFluid" {
 import {$ReplacementMatch} from "dev.latvian.mods.kubejs.recipe.match.ReplacementMatch"
+import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
+import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$IEFluid} from "blusunrize.immersiveengineering.common.fluids.IEFluid"
 import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$Holder} from "net.minecraft.core.Holder"
-import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
-import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$DispenseItemBehavior} from "net.minecraft.core.dispenser.DispenseItemBehavior"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
@@ -158,7 +154,6 @@ constructor(arg0: $IEFluids$FluidEntry$$Type)
 public "getTickDelay"(arg0: $LevelReader$$Type): integer
 public "getFlowingFluidState"(arg0: integer, arg1: boolean, arg2: $FluidState$$Type, arg3: integer): $FluidState
 public "tick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $FluidState$$Type): void
-public "asHolder"(): $Holder
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 public static "wrap"(o: any): $ReplacementMatch
 }
@@ -176,13 +171,13 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Item, $Item$$Type} from "net.minecraft.world.item.Item"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
+import {$DualCodec} from "malte0811.dualcodecs.DualCodec"
 import {$Holder$$Type} from "net.minecraft.core.Holder"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
-import {$DualCodec} from "malte0811.dualcodecs.DualCodec"
 
 export class $PotionFluid$PotionBottleType extends $Enum<($PotionFluid$PotionBottleType)> implements $StringRepresentable$$Interface {
 static readonly "REGULAR": $PotionFluid$PotionBottleType
@@ -196,11 +191,11 @@ public static "values"(): ($PotionFluid$PotionBottleType)[]
 public static "valueOf"(arg0: StringJS): $PotionFluid$PotionBottleType
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "bottleItem"(): $Item
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
@@ -215,22 +210,21 @@ export type $PotionFluid$PotionBottleType$$Type = (("regular") | ("splash") | ("
  */
 export type $PotionFluid$PotionBottleType$$Original = $PotionFluid$PotionBottleType;}
 declare module "blusunrize.immersiveengineering.common.fluids.IEFluid" {
-import {$ReplacementMatch} from "dev.latvian.mods.kubejs.recipe.match.ReplacementMatch"
 import {$FluidType$Properties} from "net.neoforged.neoforge.fluids.FluidType$Properties"
+import {$ReplacementMatch} from "dev.latvian.mods.kubejs.recipe.match.ReplacementMatch"
 import {$FlowingFluid} from "net.minecraft.world.level.material.FlowingFluid"
 import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$Holder} from "net.minecraft.core.Holder"
 import {$Consumer} from "java.util.function.Consumer"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$Fluid, $Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$Function$$Type} from "java.util.function.Function"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$DispenseItemBehavior} from "net.minecraft.core.dispenser.DispenseItemBehavior"
-import {$FluidType} from "net.neoforged.neoforge.fluids.FluidType"
 import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
+import {$FluidType} from "net.neoforged.neoforge.fluids.FluidType"
 import {$IEFluids$FluidEntry$$Type} from "blusunrize.immersiveengineering.common.register.IEFluids$FluidEntry"
 
 export class $IEFluid extends $FlowingFluid {
@@ -252,7 +246,6 @@ public static "createBuilder"(arg0: integer, arg1: integer): $Consumer<($FluidTy
 public "getBucket"(): $Item
 public "getFluidType"(): $FluidType
 public "getAmount"(arg0: $FluidState$$Type): integer
-public "asHolder"(): $Holder
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 public static "wrap"(o: any): $ReplacementMatch
 get "flowing"(): $Fluid
@@ -277,7 +270,6 @@ import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$DispenseItemBehavior} from "net.minecraft.core.dispenser.DispenseItemBehavior"
 import {$FluidState} from "net.minecraft.world.level.material.FluidState"
-import {$Holder} from "net.minecraft.core.Holder"
 import {$IEFluids$FluidEntry$$Type} from "blusunrize.immersiveengineering.common.register.IEFluids$FluidEntry"
 
 export class $IEFluid$Flowing extends $IEFluid {
@@ -288,7 +280,6 @@ static readonly "LEVEL": $IntegerProperty
 
 constructor(arg0: $IEFluids$FluidEntry$$Type)
 
-public "asHolder"(): $Holder
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 public static "wrap"(o: any): $ReplacementMatch
 }

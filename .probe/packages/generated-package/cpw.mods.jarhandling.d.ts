@@ -24,8 +24,8 @@ import {$Attributes} from "java.util.jar.Attributes"
 import {$JarContents$$Type} from "cpw.mods.jarhandling.JarContents"
 import {$SecureJar$ModuleDataProvider} from "cpw.mods.jarhandling.SecureJar$ModuleDataProvider"
 import {$SecureJar$Status} from "cpw.mods.jarhandling.SecureJar$Status"
-import {$JarMetadata$$Type} from "cpw.mods.jarhandling.JarMetadata"
 import {$Path, $Path$$Type} from "java.nio.file.Path"
+import {$JarMetadata$$Type} from "cpw.mods.jarhandling.JarMetadata"
 import {$CodeSigner} from "java.security.CodeSigner"
 
 export interface $SecureJar$$Interface {

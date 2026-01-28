@@ -52,13 +52,13 @@ import {$IRecipeTypeInfo$$Interface} from "com.simibubi.create.foundation.recipe
 import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$IEventBus$$Type} from "net.neoforged.bus.api.IEventBus"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Codec} from "com.mojang.serialization.Codec"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
+import {$Codec} from "com.mojang.serialization.Codec"
+import {$RecipeHolder, $RecipeHolder$$Type} from "net.minecraft.world.item.crafting.RecipeHolder"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
 import {$RecipeInput, $RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
-import {$RecipeHolder, $RecipeHolder$$Type} from "net.minecraft.world.item.crafting.RecipeHolder"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier, $Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 
 export class $AllRecipeTypes extends $Enum<($AllRecipeTypes)> implements $IRecipeTypeInfo$$Interface, $StringRepresentable$$Interface {
@@ -96,11 +96,11 @@ public "getId"(): $ResourceLocation
 public "getType"<I extends $RecipeInput, R extends $Recipe<(object)>>(): $RecipeType<(R)>
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializer"(): T
 get "type"(): $RecipeType<(R)>
 get "serializedName"(): StringJS

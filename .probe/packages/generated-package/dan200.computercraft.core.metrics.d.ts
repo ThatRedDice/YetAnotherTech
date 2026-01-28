@@ -21,12 +21,12 @@ export class $Metric {
 public static "formatDefault"(arg0: long): StringJS
 public static "formatTime"(arg0: long): StringJS
 public static "formatBytes"(arg0: long): StringJS
+public static "metrics"(): $Map<(StringJS), ($Metric)>
 public "name"(): StringJS
 public "toString"(): StringJS
 public "format"(arg0: long): StringJS
 public "id"(): integer
 public "unit"(): StringJS
-public static "metrics"(): $Map<(StringJS), ($Metric)>
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_

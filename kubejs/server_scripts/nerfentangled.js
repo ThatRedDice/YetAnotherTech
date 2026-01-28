@@ -23,6 +23,6 @@ ServerEvents.recipes(event => {
     ], {
         E: 'minecraft:ender_pearl',
         R: 'createaddition:iron_rod',    // Utilise une tige de fer de Create Addition
-        S: 'emendatusenigmatica:steel_ingot' // Demande de l'acier (Âge 2+)
+        S: '#c:ingots/steel' // Demande de l'acier (Âge 2+)
     })
 })

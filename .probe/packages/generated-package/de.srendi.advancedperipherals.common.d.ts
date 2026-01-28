@@ -1,12 +1,12 @@
 declare module "de.srendi.advancedperipherals.common.addons.computercraft.pocket.PocketEnvironmentUpgrade" {
 import {$IPocketAccess$$Type} from "dan200.computercraft.api.pocket.IPocketAccess"
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Registry} from "net.minecraft.core.Registry"
 import {$BasePocketUpgrade} from "de.srendi.advancedperipherals.lib.pocket.BasePocketUpgrade"
 import {$EnvironmentDetectorPeripheral} from "de.srendi.advancedperipherals.common.addons.computercraft.peripheral.EnvironmentDetectorPeripheral"
-import {$IPocketUpgrade} from "dan200.computercraft.api.pocket.IPocketUpgrade"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
+import {$IPocketUpgrade} from "dan200.computercraft.api.pocket.IPocketUpgrade"
 import {$IBasePeripheral} from "de.srendi.advancedperipherals.lib.peripherals.IBasePeripheral"
 import {$UpgradeType} from "dan200.computercraft.api.upgrades.UpgradeType"
 
@@ -29,9 +29,9 @@ export type $PocketEnvironmentUpgrade$$Type = ($PocketEnvironmentUpgrade);
  */
 export type $PocketEnvironmentUpgrade$$Original = $PocketEnvironmentUpgrade;}
 declare module "de.srendi.advancedperipherals.common.addons.computercraft.peripheral.metaphysics.OverpoweredHusbandryAutomataCorePeripheral" {
+import {$TurtleSide$$Type} from "dan200.computercraft.api.turtle.TurtleSide"
 import {$HusbandryAutomataCorePeripheral} from "de.srendi.advancedperipherals.common.addons.computercraft.peripheral.metaphysics.HusbandryAutomataCorePeripheral"
 import {$ITurtleAccess$$Type} from "dan200.computercraft.api.turtle.ITurtleAccess"
-import {$TurtleSide$$Type} from "dan200.computercraft.api.turtle.TurtleSide"
 
 export class $OverpoweredHusbandryAutomataCorePeripheral extends $HusbandryAutomataCorePeripheral {
 static readonly "ATTR_STORING_TOOL_DURABILITY": StringJS
@@ -52,8 +52,8 @@ export type $OverpoweredHusbandryAutomataCorePeripheral$$Type = ($OverpoweredHus
 export type $OverpoweredHusbandryAutomataCorePeripheral$$Original = $OverpoweredHusbandryAutomataCorePeripheral;}
 declare module "de.srendi.advancedperipherals.common.blocks.PlayerDetectorBlock" {
 import {$PlayerDetectorEntity} from "de.srendi.advancedperipherals.common.blocks.blockentities.PlayerDetectorEntity"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
@@ -107,14 +107,14 @@ export type $PlayerDetectorBlock$$Type = ($PlayerDetectorBlock);
 export type $PlayerDetectorBlock$$Original = $PlayerDetectorBlock;}
 declare module "de.srendi.advancedperipherals.common.addons.computercraft.turtles.TurtleChunkyUpgrade" {
 import {$ITurtleUpgrade} from "dan200.computercraft.api.turtle.ITurtleUpgrade"
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Registry} from "net.minecraft.core.Registry"
 import {$PeripheralTurtleUpgrade} from "de.srendi.advancedperipherals.lib.turtle.PeripheralTurtleUpgrade"
-import {$ITurtleAccess$$Type} from "dan200.computercraft.api.turtle.ITurtleAccess"
-import {$ChunkyPeripheral} from "de.srendi.advancedperipherals.common.addons.computercraft.peripheral.ChunkyPeripheral"
 import {$ModelResourceLocation} from "net.minecraft.client.resources.model.ModelResourceLocation"
+import {$ChunkyPeripheral} from "de.srendi.advancedperipherals.common.addons.computercraft.peripheral.ChunkyPeripheral"
 import {$TurtleSide$$Type} from "dan200.computercraft.api.turtle.TurtleSide"
+import {$ITurtleAccess$$Type} from "dan200.computercraft.api.turtle.ITurtleAccess"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
 import {$UpgradeType} from "dan200.computercraft.api.upgrades.UpgradeType"
 
@@ -143,8 +143,8 @@ export type $TurtleChunkyUpgrade$$Type = ($TurtleChunkyUpgrade);
 export type $TurtleChunkyUpgrade$$Original = $TurtleChunkyUpgrade;}
 declare module "de.srendi.advancedperipherals.common.addons.computercraft.owner.IPeripheralOwner" {
 import {$CompoundTag} from "net.minecraft.nbt.CompoundTag"
-import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Collection, $Collection$$Type} from "java.util.Collection"
+import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Direction} from "net.minecraft.core.Direction"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$PeripheralOwnerAbility$$Type} from "de.srendi.advancedperipherals.common.addons.computercraft.owner.PeripheralOwnerAbility"
@@ -154,15 +154,15 @@ import {$DataComponentPatch, $DataComponentPatch$$Type} from "net.minecraft.core
 import {$FrontAndTop} from "net.minecraft.core.FrontAndTop"
 import {$IPeripheralOperation$$Type} from "de.srendi.advancedperipherals.lib.peripherals.IPeripheralOperation"
 import {$Function$$Type} from "java.util.function.Function"
-import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$IOwnerAbility, $IOwnerAbility$$Type} from "de.srendi.advancedperipherals.common.addons.computercraft.owner.IOwnerAbility"
+import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
 
 export interface $IPeripheralOwner$$Interface {
 get "dataStorage"(): $DataComponentPatch
-get "nbtStorage"(): $CompoundTag
-get "toolInMainHand"(): $ItemStack
 get "orientation"(): $FrontAndTop
 get "facing"(): $Direction
+get "nbtStorage"(): $CompoundTag
+get "toolInMainHand"(): $ItemStack
 get "level"(): $Level
 get "owner"(): $Player
 get "abilities"(): $Collection<($IOwnerAbility)>
@@ -172,17 +172,17 @@ get "pos"(): $BlockPos
 
 export class $IPeripheralOwner implements $IPeripheralOwner$$Interface {
  "getDataStorage"(): $DataComponentPatch
- "putDataStorage"(arg0: $DataComponentPatch$$Type): void
- "getNbtStorage"(): $CompoundTag
+ "getOrientation"(): $FrontAndTop
+ "getFacing"(): $Direction
  "attachAbility"<T extends $IOwnerAbility>(arg0: $PeripheralOwnerAbility$$Type<(T)>, arg1: T): void
+ "getNbtStorage"(): $CompoundTag
+ "putDataStorage"(arg0: $DataComponentPatch$$Type): void
  "markDataStorageDirty"(): void
+ "getToolInMainHand"(): $ItemStack
+ "storeItem"(arg0: $ItemStack$$Type): $ItemStack
  "isMovementPossible"(arg0: $Level$$Type, arg1: $BlockPos$$Type): boolean
  "destroyUpgrade"(): void
  "withPlayer"<T>(arg0: $Function$$Type<($APFakePlayer), (T)>): T
- "storeItem"(arg0: $ItemStack$$Type): $ItemStack
- "getToolInMainHand"(): $ItemStack
- "getOrientation"(): $FrontAndTop
- "getFacing"(): $Direction
  "attachOperation"(...arg0: ($IPeripheralOperation$$Type<(never)>)[]): void
  "attachOperation"(arg0: $Collection$$Type<($IPeripheralOperation$$Type<(never)>)>): void
  "move"(arg0: $Level$$Type, arg1: $BlockPos$$Type): boolean
@@ -231,8 +231,8 @@ import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$BaseBlockItem} from "de.srendi.advancedperipherals.common.items.base.BaseBlockItem"
 import {$Supplier$$Type} from "java.util.function.Supplier"
-import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$AdditionalItemPlacement, $AdditionalItemPlacement$$Type} from "net.mehvahdjukaar.moonlight.api.item.additional_placements.AdditionalItemPlacement"
 
@@ -289,15 +289,15 @@ import {$Iterable} from "java.lang.Iterable"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
-import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$ICapabilityProvider$$Interface} from "de.srendi.advancedperipherals.common.blocks.base.ICapabilityProvider"
+import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component} from "net.minecraft.network.chat.Component"
 import {$Inventory$$Type} from "net.minecraft.world.entity.player.Inventory"
 import {$BaseContainerBlockEntity} from "net.minecraft.world.level.block.entity.BaseContainerBlockEntity"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$MenuProvider$$Interface} from "net.minecraft.world.MenuProvider"
-import {$BasePeripheral} from "de.srendi.advancedperipherals.lib.peripherals.BasePeripheral"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
+import {$BasePeripheral} from "de.srendi.advancedperipherals.lib.peripherals.BasePeripheral"
 import {$IComputerAccess} from "dan200.computercraft.api.peripheral.IComputerAccess"
 import {$LockCode} from "net.minecraft.world.LockCode"
 import {$IFluidHandler} from "net.neoforged.neoforge.fluids.capability.IFluidHandler"
@@ -309,8 +309,8 @@ import {$IItemHandler} from "net.neoforged.neoforge.items.IItemHandler"
 import {$NonNullList, $NonNullList$$Type} from "net.minecraft.core.NonNullList"
 import {$AbstractContainerMenu} from "net.minecraft.world.inventory.AbstractContainerMenu"
 import {$IEnergyStorage} from "net.neoforged.neoforge.energy.IEnergyStorage"
-import {$IPeripheral} from "dan200.computercraft.api.peripheral.IPeripheral"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
+import {$IPeripheral} from "dan200.computercraft.api.peripheral.IPeripheral"
 
 export class $PeripheralBlockEntity<T extends $BasePeripheral<(object)>> extends $BaseContainerBlockEntity implements $WorldlyContainer$$Interface, $MenuProvider$$Interface, $IPeripheralTileEntity$$Interface, $ICapabilityProvider$$Interface {
  "name": $Component
@@ -333,12 +333,12 @@ public "markSettingsChanged"(): void
 public "getItem"(arg0: integer): $ItemStack
 public "removeItem"(arg0: integer, arg1: integer): $ItemStack
 public "isEmpty"(): boolean
-public "createFluidHandlerCap"(arg0: $Direction$$Type): $IFluidHandler
-public "createItemHandlerCap"(arg0: $Direction$$Type): $IItemHandler
-public "createPeripheralCap"(arg0: $Direction$$Type): $IPeripheral
 public "stillValid"(arg0: $Player$$Type): boolean
 public "getContainerSize"(): integer
 public "removeItemNoUpdate"(arg0: integer): $ItemStack
+public "createFluidHandlerCap"(arg0: $Direction$$Type): $IFluidHandler
+public "createItemHandlerCap"(arg0: $Direction$$Type): $IItemHandler
+public "createPeripheralCap"(arg0: $Direction$$Type): $IPeripheral
 public "getDisplayName"(): $Component
 public "handleTick"<T extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(T)>): void
 public "createEnergyStorageCap"(arg0: $Direction$$Type): $IEnergyStorage
@@ -369,12 +369,12 @@ export type $PeripheralBlockEntity$$Original<T> = $PeripheralBlockEntity<(T)>;}
 declare module "de.srendi.advancedperipherals.common.addons.computercraft.turtles.metaphysics.OverpoweredWeakAutomata" {
 import {$ITurtleUpgrade} from "dan200.computercraft.api.turtle.ITurtleUpgrade"
 import {$OverpoweredWeakAutomataCorePeripheral} from "de.srendi.advancedperipherals.common.addons.computercraft.peripheral.metaphysics.OverpoweredWeakAutomataCorePeripheral"
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Registry} from "net.minecraft.core.Registry"
 import {$ModelResourceLocation} from "net.minecraft.client.resources.model.ModelResourceLocation"
-import {$ClockwiseAnimatedTurtleUpgrade} from "de.srendi.advancedperipherals.lib.turtle.ClockwiseAnimatedTurtleUpgrade"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
+import {$ClockwiseAnimatedTurtleUpgrade} from "de.srendi.advancedperipherals.lib.turtle.ClockwiseAnimatedTurtleUpgrade"
 import {$UpgradeType} from "dan200.computercraft.api.upgrades.UpgradeType"
 
 export class $OverpoweredWeakAutomata extends $ClockwiseAnimatedTurtleUpgrade<($OverpoweredWeakAutomataCorePeripheral)> {
@@ -406,8 +406,8 @@ import {$List$$Type} from "java.util.List"
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"
@@ -446,13 +446,13 @@ export type $BaseBlockItem$$Type = ($BaseBlockItem);
 export type $BaseBlockItem$$Original = $BaseBlockItem;}
 declare module "de.srendi.advancedperipherals.common.addons.computercraft.turtles.metaphysics.HusbandryAutomata" {
 import {$ITurtleUpgrade} from "dan200.computercraft.api.turtle.ITurtleUpgrade"
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Registry} from "net.minecraft.core.Registry"
-import {$HusbandryAutomataCorePeripheral} from "de.srendi.advancedperipherals.common.addons.computercraft.peripheral.metaphysics.HusbandryAutomataCorePeripheral"
 import {$ModelResourceLocation} from "net.minecraft.client.resources.model.ModelResourceLocation"
-import {$ClockwiseAnimatedTurtleUpgrade} from "de.srendi.advancedperipherals.lib.turtle.ClockwiseAnimatedTurtleUpgrade"
+import {$HusbandryAutomataCorePeripheral} from "de.srendi.advancedperipherals.common.addons.computercraft.peripheral.metaphysics.HusbandryAutomataCorePeripheral"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
+import {$ClockwiseAnimatedTurtleUpgrade} from "de.srendi.advancedperipherals.lib.turtle.ClockwiseAnimatedTurtleUpgrade"
 import {$UpgradeType} from "dan200.computercraft.api.upgrades.UpgradeType"
 
 export class $HusbandryAutomata extends $ClockwiseAnimatedTurtleUpgrade<($HusbandryAutomataCorePeripheral)> {
@@ -481,9 +481,9 @@ declare module "de.srendi.advancedperipherals.common.addons.computercraft.periph
 import {$IPocketAccess$$Type} from "dan200.computercraft.api.pocket.IPocketAccess"
 import {$BasePeripheral} from "de.srendi.advancedperipherals.lib.peripherals.BasePeripheral"
 import {$MethodResult} from "dan200.computercraft.api.lua.MethodResult"
-import {$IArguments$$Type} from "dan200.computercraft.api.lua.IArguments"
-import {$ITurtleAccess$$Type} from "dan200.computercraft.api.turtle.ITurtleAccess"
 import {$TurtleSide$$Type} from "dan200.computercraft.api.turtle.TurtleSide"
+import {$ITurtleAccess$$Type} from "dan200.computercraft.api.turtle.ITurtleAccess"
+import {$IArguments$$Type} from "dan200.computercraft.api.lua.IArguments"
 import {$PeripheralBlockEntity$$Type} from "de.srendi.advancedperipherals.common.blocks.base.PeripheralBlockEntity"
 import {$IPeripheralOwner} from "de.srendi.advancedperipherals.common.addons.computercraft.owner.IPeripheralOwner"
 
@@ -495,11 +495,11 @@ constructor(arg0: $PeripheralBlockEntity$$Type<(never)>)
 constructor(arg0: $IPocketAccess$$Type)
 
 public "sendMessage"(arg0: $IArguments$$Type): $MethodResult
-public "sendFormattedMessageToPlayer"(arg0: $IArguments$$Type): $MethodResult
 public "sendFormattedMessage"(arg0: $IArguments$$Type): $MethodResult
 public "sendFormattedToastToPlayer"(arg0: $IArguments$$Type): $MethodResult
 public "sendMessageToPlayer"(arg0: $IArguments$$Type): $MethodResult
 public "sendToastToPlayer"(arg0: $IArguments$$Type): $MethodResult
+public "sendFormattedMessageToPlayer"(arg0: $IArguments$$Type): $MethodResult
 public "update"(): void
 public "isEnabled"(): boolean
 get "enabled"(): boolean
@@ -536,8 +536,8 @@ export type $SingleOperationContext$$Type = ($SingleOperationContext);
 export type $SingleOperationContext$$Original = $SingleOperationContext;}
 declare module "de.srendi.advancedperipherals.common.addons.computercraft.peripheral.metaphysics.OverpoweredEndAutomataCorePeripheral" {
 import {$EndAutomataCorePeripheral} from "de.srendi.advancedperipherals.common.addons.computercraft.peripheral.metaphysics.EndAutomataCorePeripheral"
-import {$ITurtleAccess$$Type} from "dan200.computercraft.api.turtle.ITurtleAccess"
 import {$TurtleSide$$Type} from "dan200.computercraft.api.turtle.TurtleSide"
+import {$ITurtleAccess$$Type} from "dan200.computercraft.api.turtle.ITurtleAccess"
 
 export class $OverpoweredEndAutomataCorePeripheral extends $EndAutomataCorePeripheral {
 static readonly "ATTR_STORING_TOOL_DURABILITY": StringJS
@@ -561,33 +561,33 @@ import {$HumanoidArm} from "net.minecraft.world.entity.HumanoidArm"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$ServerPlayerGameMode} from "net.minecraft.server.level.ServerPlayerGameMode"
-import {$Trackable} from "dev.uncandango.alltheleaks.mixin.Trackable"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
+import {$Trackable} from "dev.uncandango.alltheleaks.mixin.Trackable"
 import {$ServerGamePacketListenerImpl} from "net.minecraft.server.network.ServerGamePacketListenerImpl"
-import {$SoundEvent$$Type} from "net.minecraft.sounds.SoundEvent"
 import {$FakePlayer} from "net.neoforged.neoforge.common.util.FakePlayer"
+import {$SoundEvent$$Type} from "net.minecraft.sounds.SoundEvent"
 import {$WeakReference} from "java.lang.ref.WeakReference"
 import {$Player} from "net.minecraft.world.entity.player.Player"
-import {$Pose$$Type} from "net.minecraft.world.entity.Pose"
 import {$Vec3} from "net.minecraft.world.phys.Vec3"
+import {$Pose$$Type} from "net.minecraft.world.entity.Pose"
 import {$Abilities} from "net.minecraft.world.entity.player.Abilities"
 import {$Pair} from "de.srendi.advancedperipherals.common.util.Pair"
-import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$FishingHook} from "net.minecraft.world.entity.projectile.FishingHook"
+import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$Class} from "java.lang.Class"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
-import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$ObjectOpenCustomHashSet} from "it.unimi.dsi.fastutil.objects.ObjectOpenCustomHashSet"
+import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$PlayerData} from "com.minecraftserverzone.weaponmaster.setup.playerdata.PlayerData"
 import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
+import {$PlayerData} from "com.minecraftserverzone.weaponmaster.setup.playerdata.PlayerData"
 import {$Map} from "java.util.Map"
 import {$EntityDimensions} from "net.minecraft.world.entity.EntityDimensions"
-import {$InteractionHand} from "net.minecraft.world.InteractionHand"
 import {$Predicate$$Type} from "java.util.function.Predicate"
+import {$InteractionHand} from "net.minecraft.world.InteractionHand"
 import {$HitResult, $HitResult$$Type} from "net.minecraft.world.phys.HitResult"
 import {$ChangeSubscriber, $ChangeSubscriber$$Type} from "net.caffeinemc.mods.lithium.common.util.change_tracking.ChangeSubscriber"
 import {$Entity$RemovalReason} from "net.minecraft.world.entity.Entity$RemovalReason"
@@ -597,11 +597,11 @@ import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$AbstractContainerMenu} from "net.minecraft.world.inventory.AbstractContainerMenu"
 import {$Stat$$Type} from "net.minecraft.stats.Stat"
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
-import {$GameProfile, $GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$InventoryMenu} from "net.minecraft.world.inventory.InventoryMenu"
+import {$GameProfile, $GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$MinecraftServer} from "net.minecraft.server.MinecraftServer"
 
 export class $APFakePlayer extends $FakePlayer {
@@ -744,6 +744,7 @@ static readonly "BASE_SAFE_FALL_DISTANCE": integer
 
 constructor(arg0: $ServerLevel$$Type, arg1: $Entity$$Type, arg2: $GameProfile$$Type)
 
+public "digBlock"(): $Pair<(boolean), (StringJS)>
 public "findHit"(arg0: boolean, arg1: boolean): $HitResult
 public "findHit"(arg0: boolean, arg1: boolean, arg2: $Predicate$$Type<($Entity)>): $HitResult
 public "useOnSpecificEntity"(arg0: $Entity$$Type, arg1: $HitResult$$Type): $InteractionResult
@@ -754,7 +755,6 @@ public static "wrapActionWithShiftKey"<T>(arg0: boolean, arg1: $Function$$Type<(
 public "useOnBlock"(): $InteractionResult
 public "useOnEntity"(): $InteractionResult
 public "useOnFilteredEntity"(arg0: $Predicate$$Type<($Entity)>): $InteractionResult
-public "digBlock"(): $Pair<(boolean), (StringJS)>
 public "setLevel"(arg0: $Level$$Type): void
 public "use"(arg0: boolean, arg1: boolean): $InteractionResult
 public "use"(arg0: boolean, arg1: boolean, arg2: $Predicate$$Type<($Entity)>): $InteractionResult
@@ -799,12 +799,12 @@ export type $APFakePlayer$$Original = $APFakePlayer;}
 declare module "de.srendi.advancedperipherals.common.addons.computercraft.turtles.metaphysics.WeakAutomata" {
 import {$ITurtleUpgrade} from "dan200.computercraft.api.turtle.ITurtleUpgrade"
 import {$WeakAutomataCorePeripheral} from "de.srendi.advancedperipherals.common.addons.computercraft.peripheral.metaphysics.WeakAutomataCorePeripheral"
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Registry} from "net.minecraft.core.Registry"
 import {$ModelResourceLocation} from "net.minecraft.client.resources.model.ModelResourceLocation"
-import {$ClockwiseAnimatedTurtleUpgrade} from "de.srendi.advancedperipherals.lib.turtle.ClockwiseAnimatedTurtleUpgrade"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
+import {$ClockwiseAnimatedTurtleUpgrade} from "de.srendi.advancedperipherals.lib.turtle.ClockwiseAnimatedTurtleUpgrade"
 import {$UpgradeType} from "dan200.computercraft.api.upgrades.UpgradeType"
 
 export class $WeakAutomata extends $ClockwiseAnimatedTurtleUpgrade<($WeakAutomataCorePeripheral)> {
@@ -833,9 +833,9 @@ declare module "de.srendi.advancedperipherals.common.addons.computercraft.periph
 import {$IPocketAccess$$Type} from "dan200.computercraft.api.pocket.IPocketAccess"
 import {$BasePeripheral} from "de.srendi.advancedperipherals.lib.peripherals.BasePeripheral"
 import {$MethodResult} from "dan200.computercraft.api.lua.MethodResult"
-import {$IArguments$$Type} from "dan200.computercraft.api.lua.IArguments"
-import {$ITurtleAccess$$Type} from "dan200.computercraft.api.turtle.ITurtleAccess"
 import {$TurtleSide$$Type} from "dan200.computercraft.api.turtle.TurtleSide"
+import {$ITurtleAccess$$Type} from "dan200.computercraft.api.turtle.ITurtleAccess"
+import {$IArguments$$Type} from "dan200.computercraft.api.lua.IArguments"
 import {$PeripheralBlockEntity$$Type} from "de.srendi.advancedperipherals.common.blocks.base.PeripheralBlockEntity"
 import {$IPeripheralOwner} from "de.srendi.advancedperipherals.common.addons.computercraft.owner.IPeripheralOwner"
 
@@ -876,28 +876,28 @@ export class $FuelAbility<T extends $IPeripheralOwner> implements $IOwnerAbility
 constructor(arg0: T)
 
 public "consumeFuel"(arg0: integer, arg1: boolean): boolean
+public "getFuelLevel"(): integer
 public "reduceCooldownAccordingToConsumptionRate"(arg0: integer): integer
+public "isFuelConsumptionDisable"(): boolean
+public "getFuelConsumptionMultiply"(): integer
+public "getFuelCount"(): integer
+public "getFuelMaxCount"(): integer
 public "getMaxFuelLevel"(): integer
 public "getFuelConsumptionRate"(): integer
 public "setFuelConsumptionRate"(arg0: integer): $MethodResult
-public "getFuelConsumptionMultiply"(): integer
-public "isFuelConsumptionDisable"(): boolean
-public "getFuelMaxCount"(): integer
-public "getFuelCount"(): integer
-public "getFuelLevel"(): integer
 public "addFuel"(arg0: integer): void
 public "collectConfiguration"(arg0: $Map$$Type<(StringJS), (any)>): void
 public "isSuitable"(arg0: $IPeripheral$$Type): boolean
 public "getOperations"(): ($IPeripheralOperation<(never)>)[]
 public "getMethods"(): $List<($BoundMethod)>
+get "fuelLevel"(): integer
+get "fuelConsumptionDisable"(): boolean
+get "fuelConsumptionMultiply"(): integer
+get "fuelCount"(): integer
+get "fuelMaxCount"(): integer
 get "maxFuelLevel"(): integer
 get "fuelConsumptionRate"(): integer
 set "fuelConsumptionRate"(value: integer)
-get "fuelConsumptionMultiply"(): integer
-get "fuelConsumptionDisable"(): boolean
-get "fuelMaxCount"(): integer
-get "fuelCount"(): integer
-get "fuelLevel"(): integer
 get "operations"(): ($IPeripheralOperation<(never)>)[]
 get "methods"(): $List<($BoundMethod)>
 }
@@ -912,8 +912,8 @@ export type $FuelAbility$$Type<T> = ($FuelAbility<(T)>);
 export type $FuelAbility$$Original<T> = $FuelAbility<(T)>;}
 declare module "de.srendi.advancedperipherals.common.addons.computercraft.turtles.TurtleCompassUpgrade" {
 import {$ITurtleUpgrade} from "dan200.computercraft.api.turtle.ITurtleUpgrade"
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Registry} from "net.minecraft.core.Registry"
 import {$PeripheralTurtleUpgrade} from "de.srendi.advancedperipherals.lib.turtle.PeripheralTurtleUpgrade"
 import {$ModelResourceLocation} from "net.minecraft.client.resources.model.ModelResourceLocation"
@@ -989,12 +989,12 @@ declare module "de.srendi.advancedperipherals.common.items.WeakAutomataCore" {
 import {$IFeedableAutomataCore$$Interface} from "de.srendi.advancedperipherals.lib.metaphysics.IFeedableAutomataCore"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$List$$Type} from "java.util.List"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$APItem} from "de.srendi.advancedperipherals.common.items.APItem"
@@ -1029,8 +1029,8 @@ export type $WeakAutomataCore$$Type = ($WeakAutomataCore);
 export type $WeakAutomataCore$$Original = $WeakAutomataCore;}
 declare module "de.srendi.advancedperipherals.common.addons.computercraft.peripheral.metaphysics.HusbandryAutomataCorePeripheral" {
 import {$WeakAutomataCorePeripheral} from "de.srendi.advancedperipherals.common.addons.computercraft.peripheral.metaphysics.WeakAutomataCorePeripheral"
-import {$ITurtleAccess$$Type} from "dan200.computercraft.api.turtle.ITurtleAccess"
 import {$TurtleSide$$Type} from "dan200.computercraft.api.turtle.TurtleSide"
+import {$ITurtleAccess$$Type} from "dan200.computercraft.api.turtle.ITurtleAccess"
 
 export class $HusbandryAutomataCorePeripheral extends $WeakAutomataCorePeripheral {
 static readonly "ATTR_STORING_TOOL_DURABILITY": StringJS
@@ -1052,13 +1052,13 @@ export type $HusbandryAutomataCorePeripheral$$Type = ($HusbandryAutomataCorePeri
 export type $HusbandryAutomataCorePeripheral$$Original = $HusbandryAutomataCorePeripheral;}
 declare module "de.srendi.advancedperipherals.common.addons.computercraft.pocket.PocketChatBoxUpgrade" {
 import {$IPocketAccess$$Type} from "dan200.computercraft.api.pocket.IPocketAccess"
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Registry} from "net.minecraft.core.Registry"
 import {$BasePocketUpgrade} from "de.srendi.advancedperipherals.lib.pocket.BasePocketUpgrade"
 import {$ChatBoxPeripheral} from "de.srendi.advancedperipherals.common.addons.computercraft.peripheral.ChatBoxPeripheral"
-import {$IPocketUpgrade} from "dan200.computercraft.api.pocket.IPocketUpgrade"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
+import {$IPocketUpgrade} from "dan200.computercraft.api.pocket.IPocketUpgrade"
 import {$IBasePeripheral} from "de.srendi.advancedperipherals.lib.peripherals.IBasePeripheral"
 import {$UpgradeType} from "dan200.computercraft.api.upgrades.UpgradeType"
 
@@ -1112,8 +1112,8 @@ import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.Blo
 import {$LockCode} from "net.minecraft.world.LockCode"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$PeripheralBlockEntity} from "de.srendi.advancedperipherals.common.blocks.base.PeripheralBlockEntity"
-import {$Component} from "net.minecraft.network.chat.Component"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$Component} from "net.minecraft.network.chat.Component"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
@@ -1144,13 +1144,13 @@ export type $PlayerDetectorEntity$$Type = ($PlayerDetectorEntity);
 export type $PlayerDetectorEntity$$Original = $PlayerDetectorEntity;}
 declare module "de.srendi.advancedperipherals.common.addons.computercraft.turtles.TurtleChatBoxUpgrade" {
 import {$ITurtleUpgrade} from "dan200.computercraft.api.turtle.ITurtleUpgrade"
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Registry} from "net.minecraft.core.Registry"
 import {$PeripheralTurtleUpgrade} from "de.srendi.advancedperipherals.lib.turtle.PeripheralTurtleUpgrade"
-import {$ITurtleAccess$$Type} from "dan200.computercraft.api.turtle.ITurtleAccess"
 import {$ModelResourceLocation} from "net.minecraft.client.resources.model.ModelResourceLocation"
 import {$TurtleSide$$Type} from "dan200.computercraft.api.turtle.TurtleSide"
+import {$ITurtleAccess$$Type} from "dan200.computercraft.api.turtle.ITurtleAccess"
 import {$ChatBoxPeripheral} from "de.srendi.advancedperipherals.common.addons.computercraft.peripheral.ChatBoxPeripheral"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
 import {$UpgradeType} from "dan200.computercraft.api.upgrades.UpgradeType"
@@ -1189,8 +1189,8 @@ import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$FrontAndTop} from "net.minecraft.core.FrontAndTop"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$TagKey, $TagKey$$Type} from "net.minecraft.tags.TagKey"
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
+import {$TagKey, $TagKey$$Type} from "net.minecraft.tags.TagKey"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
@@ -1244,8 +1244,8 @@ declare module "de.srendi.advancedperipherals.common.items.APItem" {
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Supplier$$Type} from "java.util.function.Supplier"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$BaseItem} from "de.srendi.advancedperipherals.common.items.base.BaseItem"
 
@@ -1276,13 +1276,13 @@ export type $APItem$$Original = $APItem;}
 declare module "de.srendi.advancedperipherals.common.items.MemoryCardItem" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$List$$Type} from "java.util.List"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
@@ -1316,8 +1316,8 @@ export type $MemoryCardItem$$Type = ($MemoryCardItem);
 export type $MemoryCardItem$$Original = $MemoryCardItem;}
 declare module "de.srendi.advancedperipherals.common.addons.computercraft.turtles.TurtleEnvironmentDetectorUpgrade" {
 import {$ITurtleUpgrade} from "dan200.computercraft.api.turtle.ITurtleUpgrade"
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Registry} from "net.minecraft.core.Registry"
 import {$PeripheralTurtleUpgrade} from "de.srendi.advancedperipherals.lib.turtle.PeripheralTurtleUpgrade"
 import {$ModelResourceLocation} from "net.minecraft.client.resources.model.ModelResourceLocation"
@@ -1350,8 +1350,8 @@ export type $TurtleEnvironmentDetectorUpgrade$$Original = $TurtleEnvironmentDete
 declare module "de.srendi.advancedperipherals.common.addons.computercraft.peripheral.CompassPeripheral" {
 import {$TurtlePeripheralOwner} from "de.srendi.advancedperipherals.common.addons.computercraft.owner.TurtlePeripheralOwner"
 import {$BasePeripheral} from "de.srendi.advancedperipherals.lib.peripherals.BasePeripheral"
-import {$ITurtleAccess$$Type} from "dan200.computercraft.api.turtle.ITurtleAccess"
 import {$TurtleSide$$Type} from "dan200.computercraft.api.turtle.TurtleSide"
+import {$ITurtleAccess$$Type} from "dan200.computercraft.api.turtle.ITurtleAccess"
 
 export class $CompassPeripheral extends $BasePeripheral<($TurtlePeripheralOwner)> {
 static readonly "PERIPHERAL_TYPE": StringJS
@@ -1375,13 +1375,13 @@ export type $CompassPeripheral$$Original = $CompassPeripheral;}
 declare module "de.srendi.advancedperipherals.common.items.base.BaseItem" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$List$$Type} from "java.util.List"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
@@ -1431,18 +1431,18 @@ import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$RenderShape} from "net.minecraft.world.level.block.RenderShape"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
-import {$ItemInteractionResult} from "net.minecraft.world.ItemInteractionResult"
 import {$FrontAndTop} from "net.minecraft.core.FrontAndTop"
+import {$ItemInteractionResult} from "net.minecraft.world.ItemInteractionResult"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
+import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 
@@ -1469,12 +1469,12 @@ static readonly "UPDATE_CLIENTS": integer
 constructor(arg0: boolean)
 constructor(arg0: boolean, arg1: $BlockBehaviour$Properties$$Type)
 
-public "setPlacedBy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $LivingEntity$$Type, arg4: $ItemStack$$Type): void
 /**
  * 
  * @deprecated
  */
 public "getMenuProvider"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type): $MenuProvider
+public "setPlacedBy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $LivingEntity$$Type, arg4: $ItemStack$$Type): void
 public "getTicker"<T extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
 public "getRenderShape"(arg0: $BlockState$$Type): $RenderShape
 public "useItemOn"(arg0: $ItemStack$$Type, arg1: $BlockState$$Type, arg2: $Level$$Type, arg3: $BlockPos$$Type, arg4: $Player$$Type, arg5: $InteractionHand$$Type, arg6: $BlockHitResult$$Type): $ItemInteractionResult
@@ -1494,13 +1494,13 @@ export type $BaseBlockEntityBlock$$Type = ($BaseBlockEntityBlock);
 export type $BaseBlockEntityBlock$$Original = $BaseBlockEntityBlock;}
 declare module "de.srendi.advancedperipherals.common.addons.computercraft.turtles.metaphysics.OverpoweredEndAutomata" {
 import {$ITurtleUpgrade} from "dan200.computercraft.api.turtle.ITurtleUpgrade"
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Registry} from "net.minecraft.core.Registry"
 import {$ModelResourceLocation} from "net.minecraft.client.resources.model.ModelResourceLocation"
 import {$OverpoweredEndAutomataCorePeripheral} from "de.srendi.advancedperipherals.common.addons.computercraft.peripheral.metaphysics.OverpoweredEndAutomataCorePeripheral"
-import {$ClockwiseAnimatedTurtleUpgrade} from "de.srendi.advancedperipherals.lib.turtle.ClockwiseAnimatedTurtleUpgrade"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
+import {$ClockwiseAnimatedTurtleUpgrade} from "de.srendi.advancedperipherals.lib.turtle.ClockwiseAnimatedTurtleUpgrade"
 import {$UpgradeType} from "dan200.computercraft.api.upgrades.UpgradeType"
 
 export class $OverpoweredEndAutomata extends $ClockwiseAnimatedTurtleUpgrade<($OverpoweredEndAutomataCorePeripheral)> {
@@ -1527,8 +1527,8 @@ export type $OverpoweredEndAutomata$$Type = ($OverpoweredEndAutomata);
 export type $OverpoweredEndAutomata$$Original = $OverpoweredEndAutomata;}
 declare module "de.srendi.advancedperipherals.common.addons.computercraft.peripheral.metaphysics.WeakAutomataCorePeripheral" {
 import {$AutomataCorePeripheral} from "de.srendi.advancedperipherals.lib.peripherals.AutomataCorePeripheral"
-import {$ITurtleAccess$$Type} from "dan200.computercraft.api.turtle.ITurtleAccess"
 import {$TurtleSide$$Type} from "dan200.computercraft.api.turtle.TurtleSide"
+import {$ITurtleAccess$$Type} from "dan200.computercraft.api.turtle.ITurtleAccess"
 
 export class $WeakAutomataCorePeripheral extends $AutomataCorePeripheral {
 static readonly "ATTR_STORING_TOOL_DURABILITY": StringJS
@@ -1550,16 +1550,16 @@ export type $WeakAutomataCorePeripheral$$Type = ($WeakAutomataCorePeripheral);
 export type $WeakAutomataCorePeripheral$$Original = $WeakAutomataCorePeripheral;}
 declare module "de.srendi.advancedperipherals.common.addons.computercraft.peripheral.EnvironmentDetectorPeripheral" {
 import {$MethodResult} from "dan200.computercraft.api.lua.MethodResult"
-import {$IArguments$$Type} from "dan200.computercraft.api.lua.IArguments"
 import {$ITurtleAccess$$Type} from "dan200.computercraft.api.turtle.ITurtleAccess"
+import {$IArguments$$Type} from "dan200.computercraft.api.lua.IArguments"
 import {$IPeripheralOwner, $IPeripheralOwner$$Type} from "de.srendi.advancedperipherals.common.addons.computercraft.owner.IPeripheralOwner"
 import {$IPocketAccess$$Type} from "dan200.computercraft.api.pocket.IPocketAccess"
 import {$BasePeripheral} from "de.srendi.advancedperipherals.lib.peripherals.BasePeripheral"
 import {$Function$$Type} from "java.util.function.Function"
-import {$IComputerAccess$$Type} from "dan200.computercraft.api.peripheral.IComputerAccess"
 import {$TurtleSide$$Type} from "dan200.computercraft.api.turtle.TurtleSide"
-import {$Set} from "java.util.Set"
+import {$IComputerAccess$$Type} from "dan200.computercraft.api.peripheral.IComputerAccess"
 import {$IPeripheralPlugin$$Type} from "de.srendi.advancedperipherals.lib.peripherals.IPeripheralPlugin"
+import {$Set} from "java.util.Set"
 import {$PeripheralBlockEntity$$Type} from "de.srendi.advancedperipherals.common.blocks.base.PeripheralBlockEntity"
 
 export class $EnvironmentDetectorPeripheral extends $BasePeripheral<($IPeripheralOwner)> {
@@ -1571,8 +1571,6 @@ constructor(arg0: $PeripheralBlockEntity$$Type<(never)>)
 
 public "getBlockLightLevel"(): integer
 public "getSkyLightLevel"(): integer
-public "canSleepHere"(): $MethodResult
-public "canSleepPlayer"(arg0: StringJS): $MethodResult
 public static "addIntegrationPlugin"(arg0: $Function$$Type<($IPeripheralOwner), ($IPeripheralPlugin$$Type)>): void
 public "getDayLightLevel"(): integer
 public "isSlimeChunk"(): boolean
@@ -1585,6 +1583,8 @@ public "isThunder"(): boolean
 public "isSunny"(): boolean
 public "scanEntities"(arg0: $IComputerAccess$$Type, arg1: $IArguments$$Type): $MethodResult
 public "scanCost"(arg0: integer): $MethodResult
+public "canSleepHere"(): $MethodResult
+public "canSleepPlayer"(arg0: StringJS): $MethodResult
 public "getDimension"(): StringJS
 public "isEnabled"(): boolean
 public "getTime"(): long
@@ -1690,13 +1690,13 @@ export type $APBlockEntityBlock$$Type<T> = ($APBlockEntityBlock<(T)>);
 export type $APBlockEntityBlock$$Original<T> = $APBlockEntityBlock<(T)>;}
 declare module "de.srendi.advancedperipherals.common.addons.computercraft.pocket.PocketGeoScannerUpgrade" {
 import {$IPocketAccess$$Type} from "dan200.computercraft.api.pocket.IPocketAccess"
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Registry} from "net.minecraft.core.Registry"
-import {$BasePocketUpgrade} from "de.srendi.advancedperipherals.lib.pocket.BasePocketUpgrade"
 import {$GeoScannerPeripheral} from "de.srendi.advancedperipherals.common.addons.computercraft.peripheral.GeoScannerPeripheral"
-import {$IPocketUpgrade} from "dan200.computercraft.api.pocket.IPocketUpgrade"
+import {$BasePocketUpgrade} from "de.srendi.advancedperipherals.lib.pocket.BasePocketUpgrade"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
+import {$IPocketUpgrade} from "dan200.computercraft.api.pocket.IPocketUpgrade"
 import {$IBasePeripheral} from "de.srendi.advancedperipherals.lib.peripherals.IBasePeripheral"
 import {$UpgradeType} from "dan200.computercraft.api.upgrades.UpgradeType"
 
@@ -1721,16 +1721,16 @@ export type $PocketGeoScannerUpgrade$$Original = $PocketGeoScannerUpgrade;}
 declare module "de.srendi.advancedperipherals.common.util.Pair" {
 import {$BiFunction$$Type} from "java.util.function.BiFunction"
 import {$Function$$Type} from "java.util.function.Function"
-import {$Record} from "java.lang.Record"
 import {$Consumer$$Type} from "java.util.function.Consumer"
+import {$Record} from "java.lang.Record"
 
 export class $Pair<T, V> extends $Record {
 constructor(left: T, right: V)
 
-public "rightPresent"(): boolean
-public "leftPresent"(): boolean
 public static "onlyRight"<T, V>(arg0: V): $Pair<(T), (V)>
 public static "onlyLeft"<T, V>(arg0: T): $Pair<(T), (V)>
+public "rightPresent"(): boolean
+public "leftPresent"(): boolean
 public "ifRightPresent"(arg0: $Consumer$$Type<(V)>): void
 public "ifLeftPresent"(arg0: $Consumer$$Type<(T)>): void
 public "ignoreLeft"<T1>(): $Pair<(T1), (V)>
@@ -1752,15 +1752,15 @@ public "mapRight"<V1>(arg0: $Function$$Type<(V), (V1)>): $Pair<(T), (V1)>
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $Pair$$Type<T, V> = ({"left"?: T, "right"?: V}) | ([left?: T, right?: V]);
+export type $Pair$$Type<T, V> = ({"right"?: V, "left"?: T}) | ([right?: V, left?: T]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
 export type $Pair$$Original<T, V> = $Pair<(T), (V)>;}
 declare module "de.srendi.advancedperipherals.common.addons.computercraft.peripheral.metaphysics.OverpoweredWeakAutomataCorePeripheral" {
 import {$WeakAutomataCorePeripheral} from "de.srendi.advancedperipherals.common.addons.computercraft.peripheral.metaphysics.WeakAutomataCorePeripheral"
-import {$ITurtleAccess$$Type} from "dan200.computercraft.api.turtle.ITurtleAccess"
 import {$TurtleSide$$Type} from "dan200.computercraft.api.turtle.TurtleSide"
+import {$ITurtleAccess$$Type} from "dan200.computercraft.api.turtle.ITurtleAccess"
 
 export class $OverpoweredWeakAutomataCorePeripheral extends $WeakAutomataCorePeripheral {
 static readonly "ATTR_STORING_TOOL_DURABILITY": StringJS
@@ -1780,12 +1780,12 @@ export type $OverpoweredWeakAutomataCorePeripheral$$Type = ($OverpoweredWeakAuto
  */
 export type $OverpoweredWeakAutomataCorePeripheral$$Original = $OverpoweredWeakAutomataCorePeripheral;}
 declare module "de.srendi.advancedperipherals.common.addons.computercraft.pocket.PocketColonyIntegratorUpgrade" {
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Registry} from "net.minecraft.core.Registry"
 import {$BasePocketUpgrade} from "de.srendi.advancedperipherals.lib.pocket.BasePocketUpgrade"
-import {$IPocketUpgrade} from "dan200.computercraft.api.pocket.IPocketUpgrade"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
+import {$IPocketUpgrade} from "dan200.computercraft.api.pocket.IPocketUpgrade"
 import {$ColonyPeripheral} from "de.srendi.advancedperipherals.common.addons.computercraft.peripheral.ColonyPeripheral"
 import {$UpgradeType} from "dan200.computercraft.api.upgrades.UpgradeType"
 
@@ -1828,17 +1828,17 @@ readonly "turtle": $ITurtleAccess
 constructor(arg0: $ITurtleAccess$$Type, arg1: $TurtleSide$$Type)
 
 public "getDataStorage"(): $DataComponentPatch
-public "putDataStorage"(arg0: $DataComponentPatch$$Type): void
+public "getOrientation"(): $FrontAndTop
+public "getFacing"(): $Direction
 public "getNbtStorage"(): $CompoundTag
+public "putDataStorage"(arg0: $DataComponentPatch$$Type): void
 public "markDataStorageDirty"(): void
+public "getToolInMainHand"(): $ItemStack
+public "storeItem"(arg0: $ItemStack$$Type): $ItemStack
 public "isMovementPossible"(arg0: $Level$$Type, arg1: $BlockPos$$Type): boolean
 public "destroyUpgrade"(): void
 public "withPlayer"<T>(arg0: $Function$$Type<($APFakePlayer), (T)>): T
-public "storeItem"(arg0: $ItemStack$$Type): $ItemStack
 public "getTurtle"(): $ITurtleAccess
-public "getToolInMainHand"(): $ItemStack
-public "getOrientation"(): $FrontAndTop
-public "getFacing"(): $Direction
 public "attachFuel"(arg0: integer): $TurtlePeripheralOwner
 public "move"(arg0: $Level$$Type, arg1: $BlockPos$$Type): boolean
 public "getLevel"(): $Level
@@ -1847,10 +1847,10 @@ public "getSide"(): $TurtleSide
 public "getCustomName"(): StringJS
 public "getPos"(): $BlockPos
 get "dataStorage"(): $DataComponentPatch
-get "nbtStorage"(): $CompoundTag
-get "toolInMainHand"(): $ItemStack
 get "orientation"(): $FrontAndTop
 get "facing"(): $Direction
+get "nbtStorage"(): $CompoundTag
+get "toolInMainHand"(): $ItemStack
 get "level"(): $Level
 get "owner"(): $Player
 get "customName"(): StringJS
@@ -1867,8 +1867,8 @@ export type $TurtlePeripheralOwner$$Type = ($TurtlePeripheralOwner);
 export type $TurtlePeripheralOwner$$Original = $TurtlePeripheralOwner;}
 declare module "de.srendi.advancedperipherals.common.addons.computercraft.turtles.TurtlePlayerDetectorUpgrade" {
 import {$ITurtleUpgrade} from "dan200.computercraft.api.turtle.ITurtleUpgrade"
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$PlayerDetectorPeripheral} from "de.srendi.advancedperipherals.common.addons.computercraft.peripheral.PlayerDetectorPeripheral"
 import {$Registry} from "net.minecraft.core.Registry"
 import {$PeripheralTurtleUpgrade} from "de.srendi.advancedperipherals.lib.turtle.PeripheralTurtleUpgrade"
@@ -1940,8 +1940,8 @@ export type $OperationAbility$$Type = ($OperationAbility);
 export type $OperationAbility$$Original = $OperationAbility;}
 declare module "de.srendi.advancedperipherals.common.addons.computercraft.peripheral.metaphysics.EndAutomataCorePeripheral" {
 import {$WeakAutomataCorePeripheral} from "de.srendi.advancedperipherals.common.addons.computercraft.peripheral.metaphysics.WeakAutomataCorePeripheral"
-import {$ITurtleAccess$$Type} from "dan200.computercraft.api.turtle.ITurtleAccess"
 import {$TurtleSide$$Type} from "dan200.computercraft.api.turtle.TurtleSide"
+import {$ITurtleAccess$$Type} from "dan200.computercraft.api.turtle.ITurtleAccess"
 
 export class $EndAutomataCorePeripheral extends $WeakAutomataCorePeripheral {
 static readonly "ATTR_STORING_TOOL_DURABILITY": StringJS
@@ -1963,13 +1963,13 @@ export type $EndAutomataCorePeripheral$$Type = ($EndAutomataCorePeripheral);
 export type $EndAutomataCorePeripheral$$Original = $EndAutomataCorePeripheral;}
 declare module "de.srendi.advancedperipherals.common.addons.computercraft.turtles.metaphysics.EndAutomata" {
 import {$ITurtleUpgrade} from "dan200.computercraft.api.turtle.ITurtleUpgrade"
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Registry} from "net.minecraft.core.Registry"
 import {$EndAutomataCorePeripheral} from "de.srendi.advancedperipherals.common.addons.computercraft.peripheral.metaphysics.EndAutomataCorePeripheral"
 import {$ModelResourceLocation} from "net.minecraft.client.resources.model.ModelResourceLocation"
-import {$ClockwiseAnimatedTurtleUpgrade} from "de.srendi.advancedperipherals.lib.turtle.ClockwiseAnimatedTurtleUpgrade"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
+import {$ClockwiseAnimatedTurtleUpgrade} from "de.srendi.advancedperipherals.lib.turtle.ClockwiseAnimatedTurtleUpgrade"
 import {$UpgradeType} from "dan200.computercraft.api.upgrades.UpgradeType"
 
 export class $EndAutomata extends $ClockwiseAnimatedTurtleUpgrade<($EndAutomataCorePeripheral)> {
@@ -1996,13 +1996,13 @@ export type $EndAutomata$$Type = ($EndAutomata);
 export type $EndAutomata$$Original = $EndAutomata;}
 declare module "de.srendi.advancedperipherals.common.addons.computercraft.pocket.PocketPlayerDetectorUpgrade" {
 import {$IPocketAccess$$Type} from "dan200.computercraft.api.pocket.IPocketAccess"
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$PlayerDetectorPeripheral} from "de.srendi.advancedperipherals.common.addons.computercraft.peripheral.PlayerDetectorPeripheral"
 import {$Registry} from "net.minecraft.core.Registry"
 import {$BasePocketUpgrade} from "de.srendi.advancedperipherals.lib.pocket.BasePocketUpgrade"
-import {$IPocketUpgrade} from "dan200.computercraft.api.pocket.IPocketUpgrade"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
+import {$IPocketUpgrade} from "dan200.computercraft.api.pocket.IPocketUpgrade"
 import {$IBasePeripheral} from "de.srendi.advancedperipherals.lib.peripherals.IBasePeripheral"
 import {$UpgradeType} from "dan200.computercraft.api.upgrades.UpgradeType"
 
@@ -2029,10 +2029,10 @@ import {$IPocketAccess$$Type} from "dan200.computercraft.api.pocket.IPocketAcces
 import {$Map, $Map$$Type} from "java.util.Map"
 import {$BasePeripheral} from "de.srendi.advancedperipherals.lib.peripherals.BasePeripheral"
 import {$MethodResult} from "dan200.computercraft.api.lua.MethodResult"
-import {$IArguments$$Type} from "dan200.computercraft.api.lua.IArguments"
+import {$TurtleSide$$Type} from "dan200.computercraft.api.turtle.TurtleSide"
 import {$List} from "java.util.List"
 import {$ITurtleAccess$$Type} from "dan200.computercraft.api.turtle.ITurtleAccess"
-import {$TurtleSide$$Type} from "dan200.computercraft.api.turtle.TurtleSide"
+import {$IArguments$$Type} from "dan200.computercraft.api.lua.IArguments"
 import {$PeripheralBlockEntity$$Type} from "de.srendi.advancedperipherals.common.blocks.base.PeripheralBlockEntity"
 import {$IPeripheralOwner} from "de.srendi.advancedperipherals.common.addons.computercraft.owner.IPeripheralOwner"
 
@@ -2069,14 +2069,14 @@ export type $PlayerDetectorPeripheral$$Type = ($PlayerDetectorPeripheral);
 export type $PlayerDetectorPeripheral$$Original = $PlayerDetectorPeripheral;}
 declare module "de.srendi.advancedperipherals.common.addons.computercraft.turtles.metaphysics.OverpoweredHusbandryAutomata" {
 import {$ITurtleUpgrade} from "dan200.computercraft.api.turtle.ITurtleUpgrade"
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Registry} from "net.minecraft.core.Registry"
 import {$ModelResourceLocation} from "net.minecraft.client.resources.model.ModelResourceLocation"
-import {$ClockwiseAnimatedTurtleUpgrade} from "de.srendi.advancedperipherals.lib.turtle.ClockwiseAnimatedTurtleUpgrade"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
-import {$OverpoweredHusbandryAutomataCorePeripheral} from "de.srendi.advancedperipherals.common.addons.computercraft.peripheral.metaphysics.OverpoweredHusbandryAutomataCorePeripheral"
+import {$ClockwiseAnimatedTurtleUpgrade} from "de.srendi.advancedperipherals.lib.turtle.ClockwiseAnimatedTurtleUpgrade"
 import {$UpgradeType} from "dan200.computercraft.api.upgrades.UpgradeType"
+import {$OverpoweredHusbandryAutomataCorePeripheral} from "de.srendi.advancedperipherals.common.addons.computercraft.peripheral.metaphysics.OverpoweredHusbandryAutomataCorePeripheral"
 
 export class $OverpoweredHusbandryAutomata extends $ClockwiseAnimatedTurtleUpgrade<($OverpoweredHusbandryAutomataCorePeripheral)> {
 constructor(arg0: $ItemStack$$Type)
@@ -2103,9 +2103,9 @@ export type $OverpoweredHusbandryAutomata$$Original = $OverpoweredHusbandryAutom
 declare module "de.srendi.advancedperipherals.common.addons.computercraft.peripheral.ChunkyPeripheral" {
 import {$TurtlePeripheralOwner} from "de.srendi.advancedperipherals.common.addons.computercraft.owner.TurtlePeripheralOwner"
 import {$BasePeripheral} from "de.srendi.advancedperipherals.lib.peripherals.BasePeripheral"
+import {$TurtleSide$$Type} from "dan200.computercraft.api.turtle.TurtleSide"
 import {$ITurtleAccess$$Type} from "dan200.computercraft.api.turtle.ITurtleAccess"
 import {$IComputerAccess$$Type} from "dan200.computercraft.api.peripheral.IComputerAccess"
-import {$TurtleSide$$Type} from "dan200.computercraft.api.turtle.TurtleSide"
 import {$ChunkPos} from "net.minecraft.world.level.ChunkPos"
 
 export class $ChunkyPeripheral extends $BasePeripheral<($TurtlePeripheralOwner)> {
@@ -2132,8 +2132,8 @@ export type $ChunkyPeripheral$$Type = ($ChunkyPeripheral);
 export type $ChunkyPeripheral$$Original = $ChunkyPeripheral;}
 declare module "de.srendi.advancedperipherals.common.addons.computercraft.turtles.TurtleGeoScannerUpgrade" {
 import {$ITurtleUpgrade} from "dan200.computercraft.api.turtle.ITurtleUpgrade"
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Registry} from "net.minecraft.core.Registry"
 import {$PeripheralTurtleUpgrade} from "de.srendi.advancedperipherals.lib.turtle.PeripheralTurtleUpgrade"
 import {$GeoScannerPeripheral} from "de.srendi.advancedperipherals.common.addons.computercraft.peripheral.GeoScannerPeripheral"
@@ -2195,8 +2195,8 @@ import {$DataComponentPatch, $DataComponentPatch$$Type} from "net.minecraft.core
 import {$FrontAndTop} from "net.minecraft.core.FrontAndTop"
 import {$IPeripheralOperation$$Type} from "de.srendi.advancedperipherals.lib.peripherals.IPeripheralOperation"
 import {$Function$$Type} from "java.util.function.Function"
-import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$IOwnerAbility, $IOwnerAbility$$Type} from "de.srendi.advancedperipherals.common.addons.computercraft.owner.IOwnerAbility"
+import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
 
 export class $BasePeripheralOwner implements $IPeripheralOwner$$Interface {
 constructor()
@@ -2205,16 +2205,16 @@ public "attachAbility"<T extends $IOwnerAbility>(arg0: $PeripheralOwnerAbility$$
 public "getAbilities"(): $Collection<($IOwnerAbility)>
 public "getAbility"<T extends $IOwnerAbility>(arg0: $PeripheralOwnerAbility$$Type<(T)>): T
 public "getDataStorage"(): $DataComponentPatch
-public "putDataStorage"(arg0: $DataComponentPatch$$Type): void
+public "getOrientation"(): $FrontAndTop
+public "getFacing"(): $Direction
 public "getNbtStorage"(): $CompoundTag
+public "putDataStorage"(arg0: $DataComponentPatch$$Type): void
 public "markDataStorageDirty"(): void
+public "getToolInMainHand"(): $ItemStack
+public "storeItem"(arg0: $ItemStack$$Type): $ItemStack
 public "isMovementPossible"(arg0: $Level$$Type, arg1: $BlockPos$$Type): boolean
 public "destroyUpgrade"(): void
 public "withPlayer"<T>(arg0: $Function$$Type<($APFakePlayer), (T)>): T
-public "storeItem"(arg0: $ItemStack$$Type): $ItemStack
-public "getToolInMainHand"(): $ItemStack
-public "getOrientation"(): $FrontAndTop
-public "getFacing"(): $Direction
 public "attachOperation"(...arg0: ($IPeripheralOperation$$Type<(never)>)[]): void
 public "attachOperation"(arg0: $Collection$$Type<($IPeripheralOperation$$Type<(never)>)>): void
 public "move"(arg0: $Level$$Type, arg1: $BlockPos$$Type): boolean
@@ -2224,10 +2224,10 @@ public "getCustomName"(): StringJS
 public "getPos"(): $BlockPos
 get "abilities"(): $Collection<($IOwnerAbility)>
 get "dataStorage"(): $DataComponentPatch
-get "nbtStorage"(): $CompoundTag
-get "toolInMainHand"(): $ItemStack
 get "orientation"(): $FrontAndTop
 get "facing"(): $Direction
+get "nbtStorage"(): $CompoundTag
+get "toolInMainHand"(): $ItemStack
 get "level"(): $Level
 get "owner"(): $Player
 get "customName"(): StringJS

@@ -1,6 +1,6 @@
 declare module "mcjty.rftoolsdim.modules.dimlets.recipes.DimletRecipe" {
-import {$DimletKey, $DimletKey$$Type} from "mcjty.rftoolsdim.modules.dimlets.data.DimletKey"
 import {$CraftingInput$$Type} from "net.minecraft.world.item.crafting.CraftingInput"
+import {$DimletKey, $DimletKey$$Type} from "mcjty.rftoolsdim.modules.dimlets.data.DimletKey"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$ShapedRecipe$$Type} from "net.minecraft.world.item.crafting.ShapedRecipe"
@@ -32,8 +32,8 @@ export type $DimletRecipe$$Type = ($DimletRecipe);
 export type $DimletRecipe$$Original = $DimletRecipe;}
 declare module "mcjty.rftoolsdim.modules.dimlets.recipes.DimletRecipeSerializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$DimletRecipe} from "mcjty.rftoolsdim.modules.dimlets.recipes.DimletRecipe"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
@@ -126,8 +126,8 @@ import {$List$$Type} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 
 export class $PartItem extends $Item implements $ITooltipSettings$$Interface {
 static readonly "BASE_ATTACK_DAMAGE_ID": $ResourceLocation
@@ -179,15 +179,15 @@ public static "create"(arg0: StringJS): $DimletKey
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $DimletKey$$Type = ({"key"?: StringJS, "type"?: $DimletType$$Type}) | ([key?: StringJS, type?: $DimletType$$Type]);
+export type $DimletKey$$Type = ({"type"?: $DimletType$$Type, "key"?: StringJS}) | ([type?: $DimletType$$Type, key?: StringJS]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
 export type $DimletKey$$Original = $DimletKey;}
 declare module "mcjty.rftoolsdim.modules.dimlets.recipes.DimletCycleRecipeSerializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$DigitCycleRecipe} from "mcjty.rftoolsdim.modules.dimlets.recipes.DigitCycleRecipe"
@@ -216,8 +216,8 @@ import {$CraftingInput$$Type} from "net.minecraft.world.item.crafting.CraftingIn
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$ShapedRecipe$$Type} from "net.minecraft.world.item.crafting.ShapedRecipe"
-import {$CraftingBookCategory} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$CraftingBookCategory} from "net.minecraft.world.item.crafting.CraftingBookCategory"
 import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$AbstractRecipeAdaptor} from "mcjty.lib.crafting.AbstractRecipeAdaptor"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
@@ -229,14 +229,14 @@ public "assemble"(arg0: $RecipeInput$$Type, arg1: $HolderLookup$Provider$$Type):
 public "assemble"(arg0: $CraftingInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
 public "getSerializer"(): $RecipeSerializer<(never)>
 public "getResultItem"(arg0: $HolderLookup$Provider$$Type): $ItemStack
+public "getOutput"(): StringJS
 public "category"(): $CraftingBookCategory
 public "getInput"(): StringJS
-public "getOutput"(): StringJS
 public "matches"(arg0: $CraftingInput$$Type, arg1: $Level$$Type): boolean
 public "matches"(arg0: $RecipeInput$$Type, arg1: $Level$$Type): boolean
 get "serializer"(): $RecipeSerializer<(never)>
-get "input"(): StringJS
 get "output"(): StringJS
+get "input"(): StringJS
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -257,8 +257,8 @@ import {$Block} from "net.minecraft.world.level.block.Block"
 import {$ITooltipExtras$$Interface} from "mcjty.lib.tooltips.ITooltipExtras"
 import {$DimletType, $DimletType$$Type} from "mcjty.rftoolsdim.modules.dimlets.data.DimletType"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Pair, $Pair$$Type} from "org.apache.commons.lang3.tuple.Pair"

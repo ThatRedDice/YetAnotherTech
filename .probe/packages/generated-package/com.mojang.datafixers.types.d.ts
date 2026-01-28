@@ -4,8 +4,8 @@ import {$FamilyOptic, $FamilyOptic$$Type} from "com.mojang.datafixers.FamilyOpti
 import {$Type, $Type$$Type} from "com.mojang.datafixers.types.Type"
 import {$TypeFamily, $TypeFamily$$Type} from "com.mojang.datafixers.types.families.TypeFamily"
 import {$Either} from "com.mojang.datafixers.util.Either"
-import {$Type$FieldNotFoundException} from "com.mojang.datafixers.types.Type$FieldNotFoundException"
 import {$IntFunction, $IntFunction$$Type} from "java.util.function.IntFunction"
+import {$Type$FieldNotFoundException} from "com.mojang.datafixers.types.Type$FieldNotFoundException"
 
 export interface $TypeTemplate$$Interface {
 }
@@ -28,8 +28,8 @@ export type $TypeTemplate$$Type = ($TypeTemplate);
  */
 export type $TypeTemplate$$Original = $TypeTemplate;}
 declare module "com.mojang.datafixers.types.templates.RecursivePoint$RecursivePointType" {
-import {$TypedOptic} from "com.mojang.datafixers.TypedOptic"
 import {$DynamicOps$$Type} from "com.mojang.serialization.DynamicOps"
+import {$TypedOptic} from "com.mojang.datafixers.TypedOptic"
 import {$Optional} from "java.util.Optional"
 import {$Type, $Type$$Type} from "com.mojang.datafixers.types.Type"
 import {$TypeRewriteRule$$Type} from "com.mojang.datafixers.TypeRewriteRule"
@@ -77,14 +77,14 @@ export type $RecursivePoint$RecursivePointType$$Type<A> = ($RecursivePoint$Recur
 export type $RecursivePoint$RecursivePointType$$Original<A> = $RecursivePoint$RecursivePointType<(A)>;}
 declare module "com.mojang.datafixers.types.Type" {
 import {$App$$Type, $App$$Interface} from "com.mojang.datafixers.kinds.App"
-import {$TypedOptic, $TypedOptic$$Type} from "com.mojang.datafixers.TypedOptic"
 import {$DynamicOps$$Type} from "com.mojang.serialization.DynamicOps"
+import {$TypedOptic, $TypedOptic$$Type} from "com.mojang.datafixers.TypedOptic"
 import {$Optional} from "java.util.Optional"
-import {$TypeRewriteRule$$Type} from "com.mojang.datafixers.TypeRewriteRule"
 import {$Pair} from "com.mojang.datafixers.util.Pair"
+import {$TypeRewriteRule$$Type} from "com.mojang.datafixers.TypeRewriteRule"
 import {$DataResult} from "com.mojang.serialization.DataResult"
-import {$Dynamic, $Dynamic$$Type} from "com.mojang.serialization.Dynamic"
 import {$Type$Mu, $Type$Mu$$Type} from "com.mojang.datafixers.types.Type$Mu"
+import {$Dynamic, $Dynamic$$Type} from "com.mojang.serialization.Dynamic"
 import {$RecursiveTypeFamily$$Type} from "com.mojang.datafixers.types.families.RecursiveTypeFamily"
 import {$OpticFinder, $OpticFinder$$Type} from "com.mojang.datafixers.OpticFinder"
 import {$TypeTemplate} from "com.mojang.datafixers.types.templates.TypeTemplate"
@@ -105,23 +105,23 @@ public "point"(arg0: $DynamicOps$$Type<(never)>): $Optional<(A)>
 public "equals"(arg0: any, arg1: boolean, arg2: boolean): boolean
 public "equals"(arg0: any): boolean
 public "write"<T>(arg0: $DynamicOps$$Type<(T)>, arg1: A): $DataResult<(T)>
-public "read"<T>(arg0: $DynamicOps$$Type<(T)>, arg1: $TypeRewriteRule$$Type, arg2: $PointFreeRule$$Type, arg3: T): $DataResult<($Pair<($Optional<(never)>), (T)>)>
 public "read"<T>(arg0: $Dynamic$$Type<(T)>): $DataResult<($Pair<(A), ($Dynamic<(T)>)>)>
+public "read"<T>(arg0: $DynamicOps$$Type<(T)>, arg1: $TypeRewriteRule$$Type, arg2: $PointFreeRule$$Type, arg3: T): $DataResult<($Pair<($Optional<(never)>), (T)>)>
 public "finder"(): $OpticFinder<(A)>
 public "all"(arg0: $TypeRewriteRule$$Type, arg1: boolean, arg2: boolean): $RewriteResult<(A), (never)>
 public "one"(arg0: $TypeRewriteRule$$Type): $Optional<($RewriteResult<(A), (never)>)>
 public "rewrite"(arg0: $TypeRewriteRule$$Type, arg1: $PointFreeRule$$Type): $Optional<($RewriteResult<(A), (never)>)>
+public "codec"(): $Codec<(A)>
 public "findField"(arg0: StringJS): $OpticFinder<(never)>
 public "template"(): $TypeTemplate
-public "codec"(): $Codec<(A)>
+public "pointTyped"(arg0: $DynamicOps$$Type<(never)>): $Optional<($Typed<(A)>)>
+public "ifSame"<B>(arg0: $Type$$Type<(B)>, arg1: B): $Optional<(A)>
 public "ifSame"<B>(arg0: $Typed$$Type<(B)>): $Optional<(A)>
 public "ifSame"<B>(arg0: $Type$$Type<(B)>, arg1: $RewriteResult$$Type<(B), (never)>): $Optional<($RewriteResult<(A), (never)>)>
-public "ifSame"<B>(arg0: $Type$$Type<(B)>, arg1: B): $Optional<(A)>
 public "everywhere"(arg0: $TypeRewriteRule$$Type, arg1: $PointFreeRule$$Type, arg2: boolean, arg3: boolean): $Optional<($RewriteResult<(A), (never)>)>
 public "writeDynamic"<T>(arg0: $DynamicOps$$Type<(T)>, arg1: A): $DataResult<($Dynamic<(T)>)>
-public "readTyped"<T>(arg0: $DynamicOps$$Type<(T)>, arg1: T): $DataResult<($Pair<($Typed<(A)>), (T)>)>
 public "readTyped"<T>(arg0: $Dynamic$$Type<(T)>): $DataResult<($Pair<($Typed<(A)>), (T)>)>
-public "pointTyped"(arg0: $DynamicOps$$Type<(never)>): $Optional<($Typed<(A)>)>
+public "readTyped"<T>(arg0: $DynamicOps$$Type<(T)>, arg1: T): $DataResult<($Pair<($Typed<(A)>), (T)>)>
 public "findChoiceType"(arg0: StringJS, arg1: integer): $Optional<($TaggedChoice$TaggedChoiceType<(never)>)>
 public "findFieldType"(arg0: StringJS): $Type<(never)>
 public "buildTemplate"(): $TypeTemplate
@@ -146,9 +146,9 @@ export type $Type$$Type<A> = ($Type<(A)>);
  */
 export type $Type$$Original<A> = $Type<(A)>;}
 declare module "com.mojang.datafixers.types.templates.TaggedChoice$TaggedChoiceType" {
-import {$TypedOptic} from "com.mojang.datafixers.TypedOptic"
 import {$Map} from "java.util.Map"
 import {$DynamicOps$$Type} from "com.mojang.serialization.DynamicOps"
+import {$TypedOptic} from "com.mojang.datafixers.TypedOptic"
 import {$Optional} from "java.util.Optional"
 import {$Type, $Type$$Type} from "com.mojang.datafixers.types.Type"
 import {$Pair} from "com.mojang.datafixers.util.Pair"
@@ -231,12 +231,12 @@ declare module "com.mojang.datafixers.types.families.RecursiveTypeFamily" {
 import {$FamilyOptic} from "com.mojang.datafixers.FamilyOptic"
 import {$TypedOptic, $TypedOptic$$Type} from "com.mojang.datafixers.TypedOptic"
 import {$TypeFamily$$Interface} from "com.mojang.datafixers.types.families.TypeFamily"
-import {$Type, $Type$$Type} from "com.mojang.datafixers.types.Type"
 import {$Optional} from "java.util.Optional"
+import {$Type, $Type$$Type} from "com.mojang.datafixers.types.Type"
 import {$TypeRewriteRule$$Type} from "com.mojang.datafixers.TypeRewriteRule"
 import {$RecursivePoint$RecursivePointType} from "com.mojang.datafixers.types.templates.RecursivePoint$RecursivePointType"
-import {$TypeTemplate, $TypeTemplate$$Type} from "com.mojang.datafixers.types.templates.TypeTemplate"
 import {$Algebra$$Type} from "com.mojang.datafixers.types.families.Algebra"
+import {$TypeTemplate, $TypeTemplate$$Type} from "com.mojang.datafixers.types.templates.TypeTemplate"
 import {$IntFunction, $IntFunction$$Type} from "java.util.function.IntFunction"
 import {$RewriteResult} from "com.mojang.datafixers.RewriteResult"
 import {$Type$TypeMatcher$$Type} from "com.mojang.datafixers.types.Type$TypeMatcher"

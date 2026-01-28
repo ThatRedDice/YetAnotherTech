@@ -1,20 +1,20 @@
 declare module "com.google.common.cache.LoadingCache" {
 import {$Iterable$$Type} from "java.lang.Iterable"
 import {$CacheStats} from "com.google.common.cache.CacheStats"
-import {$Callable$$Type} from "java.util.concurrent.Callable"
 import {$Map$$Type} from "java.util.Map"
-import {$Function as $Function$0, $Function$$Type as $Function$0$$Type} from "java.util.function.Function"
+import {$Callable$$Type} from "java.util.concurrent.Callable"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$ConcurrentMap} from "java.util.concurrent.ConcurrentMap"
 import {$Cache$$Interface} from "com.google.common.cache.Cache"
-import {$Function$$Interface} from "com.google.common.base.Function"
+import {$Function$$Interface as $Function$0$$Interface} from "com.google.common.base.Function"
 import {$ImmutableMap} from "com.google.common.collect.ImmutableMap"
 
-export interface $LoadingCache$$Interface<K, V> extends $Cache$$Interface<(K), (V)>, $Function$$Interface<(K), (V)> {
+export interface $LoadingCache$$Interface<K, V> extends $Cache$$Interface<(K), (V)>, $Function$0$$Interface<(K), (V)> {
 }
 
 export class $LoadingCache<K, V> implements $LoadingCache$$Interface {
- "getAll"(keys: $Iterable$$Type<(K)>): $ImmutableMap<(K), (V)>
  "getUnchecked"(key: K): V
+ "getAll"(keys: $Iterable$$Type<(K)>): $ImmutableMap<(K), (V)>
  "refresh"(key: K): void
  "get"(key: K): V
 /**
@@ -26,18 +26,18 @@ export class $LoadingCache<K, V> implements $LoadingCache$$Interface {
  "cleanUp"(): void
  "getIfPresent"(key: any): V
  "getAllPresent"(keys: $Iterable$$Type<(never)>): $ImmutableMap<(K), (V)>
- "invalidate"(key: any): void
  "size"(): long
  "get"(key: K, loader: $Callable$$Type<(V)>): V
  "put"(key: K, value: V): void
  "putAll"(m: $Map$$Type<(K), (V)>): void
+ "invalidate"(key: any): void
  "invalidateAll"(keys: $Iterable$$Type<(never)>): void
  "invalidateAll"(): void
  "stats"(): $CacheStats
  "equals"(object: any): boolean
-static "identity"<T>(): $Function$0<(K), (K)>
- "compose"<V>(arg0: $Function$0$$Type<(V), (K)>): $Function$0<(V), (V)>
- "andThen"<V>(arg0: $Function$0$$Type<(V), (V)>): $Function$0<(K), (V)>
+static "identity"<T>(): $Function<(K), (K)>
+ "compose"<V>(arg0: $Function$$Type<(V), (K)>): $Function<(V), (V)>
+ "andThen"<V>(arg0: $Function$$Type<(V), (V)>): $Function<(K), (V)>
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -83,8 +83,8 @@ export type $CacheStats$$Original = $CacheStats;}
 declare module "com.google.common.cache.Cache" {
 import {$Iterable$$Type} from "java.lang.Iterable"
 import {$CacheStats} from "com.google.common.cache.CacheStats"
-import {$Callable$$Type} from "java.util.concurrent.Callable"
 import {$Map$$Type} from "java.util.Map"
+import {$Callable$$Type} from "java.util.concurrent.Callable"
 import {$ConcurrentMap} from "java.util.concurrent.ConcurrentMap"
 import {$ImmutableMap} from "com.google.common.collect.ImmutableMap"
 
@@ -95,11 +95,11 @@ export class $Cache<K, V> implements $Cache$$Interface {
  "cleanUp"(): void
  "getIfPresent"(key: any): V
  "getAllPresent"(keys: $Iterable$$Type<(never)>): $ImmutableMap<(K), (V)>
- "invalidate"(key: any): void
  "size"(): long
  "get"(key: K, loader: $Callable$$Type<(V)>): V
  "put"(key: K, value: V): void
  "putAll"(m: $Map$$Type<(K), (V)>): void
+ "invalidate"(key: any): void
  "asMap"(): $ConcurrentMap<(K), (V)>
  "invalidateAll"(keys: $Iterable$$Type<(never)>): void
  "invalidateAll"(): void

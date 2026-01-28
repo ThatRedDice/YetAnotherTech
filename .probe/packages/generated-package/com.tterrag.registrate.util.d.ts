@@ -1,7 +1,7 @@
 declare module "com.tterrag.registrate.util.entry.BlockEntry" {
 import {$NonNullSupplier, $NonNullSupplier$$Type} from "com.tterrag.registrate.util.nullness.NonNullSupplier"
-import {$RegistryEntry$$Type} from "com.tterrag.registrate.util.entry.RegistryEntry"
 import {$ItemProviderEntry} from "com.tterrag.registrate.util.entry.ItemProviderEntry"
+import {$RegistryEntry$$Type} from "com.tterrag.registrate.util.entry.RegistryEntry"
 import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$AbstractRegistrate$$Type} from "com.tterrag.registrate.AbstractRegistrate"
@@ -36,8 +36,8 @@ import {$RegistryEntry, $RegistryEntry$$Type} from "com.tterrag.registrate.util.
 import {$Optional} from "java.util.Optional"
 import {$DeferredHolder$$Type} from "net.neoforged.neoforge.registries.DeferredHolder"
 import {$Holder} from "net.minecraft.core.Holder"
-import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$NonNullSupplier, $NonNullSupplier$$Type} from "com.tterrag.registrate.util.nullness.NonNullSupplier"
+import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$BlockEntityType, $BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$AbstractRegistrate$$Type} from "com.tterrag.registrate.AbstractRegistrate"
@@ -146,13 +146,13 @@ import {$Ingredient, $Ingredient$$Type} from "net.minecraft.world.item.crafting.
 import {$Predicate, $Predicate$$Type} from "java.util.function.Predicate"
 import {$RegistrateRecipeProvider$$Type} from "com.tterrag.registrate.providers.RegistrateRecipeProvider"
 import {$ItemPredicate$$Type} from "net.minecraft.advancements.critereon.ItemPredicate"
-import {$NonNullSupplier$$Type} from "com.tterrag.registrate.util.nullness.NonNullSupplier"
 import {$InventoryChangeTrigger$TriggerInstance} from "net.minecraft.advancements.critereon.InventoryChangeTrigger$TriggerInstance"
+import {$NonNullSupplier$$Type} from "com.tterrag.registrate.util.nullness.NonNullSupplier"
 import {$Criterion} from "net.minecraft.advancements.Criterion"
 import {$ICustomIngredient} from "net.neoforged.neoforge.common.crafting.ICustomIngredient"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
-import {$TagKey$$Type} from "net.minecraft.tags.TagKey"
 import {$ItemLike, $ItemLike$$Type} from "net.minecraft.world.level.ItemLike"
+import {$TagKey$$Type} from "net.minecraft.tags.TagKey"
 import {$Item$$Type} from "net.minecraft.world.item.Item"
 import {$IntList} from "it.unimi.dsi.fastutil.ints.IntList"
 
@@ -166,15 +166,15 @@ public "getStackingIds"(): $IntList
 public "isCustom"(): boolean
 public "hasNoItems"(): boolean
 public "getCustomIngredient"(): $ICustomIngredient
-public "or"(arg0: $Predicate$$Type<($ItemStack)>): $Predicate<($ItemStack)>
+public static "items"<T extends $ItemLike>(arg0: $NonNullSupplier$$Type<(T)>, ...arg1: ($NonNullSupplier$$Type<(T)>)[]): $DataIngredient
+public static "items"<T extends $ItemLike>(arg0: T, ...arg1: (T)[]): $DataIngredient
+public static "tag"(arg0: $TagKey$$Type<($Item)>): $DataIngredient
 public "negate"(): $Predicate<($ItemStack)>
 public "and"(arg0: $Predicate$$Type<($ItemStack)>): $Predicate<($ItemStack)>
-public static "items"<T extends $ItemLike>(arg0: T, ...arg1: (T)[]): $DataIngredient
-public static "items"<T extends $ItemLike>(arg0: $NonNullSupplier$$Type<(T)>, ...arg1: ($NonNullSupplier$$Type<(T)>)[]): $DataIngredient
-public static "tag"(arg0: $TagKey$$Type<($Item)>): $DataIngredient
 public "test"(arg0: $ItemStack$$Type): boolean
 public "isEmpty"(): boolean
 public "getId"(): $ResourceLocation
+public "or"(arg0: $Predicate$$Type<($ItemStack)>): $Predicate<($ItemStack)>
 public "isSimple"(): boolean
 public static "stacks"(arg0: $ItemStack$$Type, ...arg1: ($ItemStack$$Type)[]): $DataIngredient
 get "stackingIds"(): $IntList
@@ -287,8 +287,8 @@ export type $MenuEntry$$Type<T> = ($MenuEntry<(T)>);
 export type $MenuEntry$$Original<T> = $MenuEntry<(T)>;}
 declare module "com.tterrag.registrate.util.CreativeModeTabModifier" {
 import {$FeatureFlagSet, $FeatureFlagSet$$Type} from "net.minecraft.world.flag.FeatureFlagSet"
-import {$Collection$$Type} from "java.util.Collection"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$Collection$$Type} from "java.util.Collection"
 import {$CreativeModeTab$Output$$Interface} from "net.minecraft.world.item.CreativeModeTab$Output"
 import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$ItemLike$$Type} from "net.minecraft.world.level.ItemLike"
@@ -300,8 +300,8 @@ import {$CreativeModeTab$ItemDisplayParameters, $CreativeModeTab$ItemDisplayPara
 export class $CreativeModeTabModifier implements $CreativeModeTab$Output$$Interface {
 constructor(arg0: $Supplier$$Type<($FeatureFlagSet$$Type)>, arg1: $BooleanSupplier$$Type, arg2: $BiConsumer$$Type<($ItemStack), ($CreativeModeTab$TabVisibility)>, arg3: $Supplier$$Type<($CreativeModeTab$ItemDisplayParameters$$Type)>)
 
-public "getFlags"(): $FeatureFlagSet
 public "hasPermissions"(): boolean
+public "getFlags"(): $FeatureFlagSet
 public "accept"(arg0: $Supplier$$Type<($ItemLike$$Type)>): void
 public "accept"(arg0: $ItemStack$$Type, arg1: $CreativeModeTab$TabVisibility$$Type): void
 public "accept"(arg0: $Supplier$$Type<($ItemLike$$Type)>, arg1: $CreativeModeTab$TabVisibility$$Type): void
@@ -325,8 +325,8 @@ export type $CreativeModeTabModifier$$Type = ($CreativeModeTabModifier);
 export type $CreativeModeTabModifier$$Original = $CreativeModeTabModifier;}
 declare module "com.tterrag.registrate.util.entry.RegistryEntry" {
 import {$NonNullSupplier, $NonNullSupplier$$Type, $NonNullSupplier$$Interface} from "com.tterrag.registrate.util.nullness.NonNullSupplier"
-import {$Registry$$Type} from "net.minecraft.core.Registry"
 import {$Optional} from "java.util.Optional"
+import {$Registry$$Type} from "net.minecraft.core.Registry"
 import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$Predicate$$Type} from "java.util.function.Predicate"
 import {$AbstractRegistrate$$Type} from "com.tterrag.registrate.AbstractRegistrate"

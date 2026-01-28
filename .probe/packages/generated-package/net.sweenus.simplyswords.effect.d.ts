@@ -6,8 +6,8 @@ import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyBy
 import {$Attribute} from "net.minecraft.world.entity.ai.attributes.Attribute"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$MobEffectCategory$$Type} from "net.minecraft.world.effect.MobEffectCategory"
-import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Holder} from "net.minecraft.core.Holder"
+import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$MobEffect$AttributeTemplate} from "net.minecraft.world.effect.MobEffect$AttributeTemplate"
 
 export class $OnslaughtEffect extends $MobEffect {
@@ -52,10 +52,10 @@ static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($Holde
 
 constructor(statusEffectCategory: $MobEffectCategory$$Type, color: integer)
 
-public "shouldApplyEffectTickThisTick"(pDuration: integer, pAmplifier: integer): boolean
-public "applyEffectTick"(livingEntity: $LivingEntity$$Type, amplifier: integer): boolean
 public "setAdditionalData"(data: integer): void
 public "setSourcePlayer"(livingEntity: $LivingEntity$$Type): void
+public "shouldApplyEffectTickThisTick"(pDuration: integer, pAmplifier: integer): boolean
+public "applyEffectTick"(livingEntity: $LivingEntity$$Type, amplifier: integer): boolean
 public "removeAttributeModifiers"(attributes: $AttributeMap$$Type): void
 set "sourcePlayer"(value: $LivingEntity$$Type)
 }
@@ -71,8 +71,8 @@ export type $FireVortexEffect$$Original = $FireVortexEffect;}
 declare module "net.sweenus.simplyswords.effect.MagislamEffect" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$Map} from "java.util.Map"
-import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Holder} from "net.minecraft.core.Holder"
+import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Attribute} from "net.minecraft.world.entity.ai.attributes.Attribute"
@@ -125,10 +125,10 @@ static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($Holde
 
 constructor(statusEffectCategory: $MobEffectCategory$$Type, color: integer)
 
-public "shouldApplyEffectTickThisTick"(pDuration: integer, pAmplifier: integer): boolean
-public "applyEffectTick"(livingEntity: $LivingEntity$$Type, amplifier: integer): boolean
 public "setAdditionalData"(data: integer): void
 public "setSourcePlayer"(livingEntity: $LivingEntity$$Type): void
+public "shouldApplyEffectTickThisTick"(pDuration: integer, pAmplifier: integer): boolean
+public "applyEffectTick"(livingEntity: $LivingEntity$$Type, amplifier: integer): boolean
 public "removeAttributeModifiers"(attributes: $AttributeMap$$Type): void
 set "sourcePlayer"(value: $LivingEntity$$Type)
 }
@@ -164,10 +164,10 @@ static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($Holde
 
 constructor(statusEffectCategory: $MobEffectCategory$$Type, color: integer)
 
-public "shouldApplyEffectTickThisTick"(pDuration: integer, pAmplifier: integer): boolean
-public "applyEffectTick"(livingEntity: $LivingEntity$$Type, amplifier: integer): boolean
 public "setAdditionalData"(data: integer): void
 public "setSourcePlayer"(livingEntity: $LivingEntity$$Type): void
+public "shouldApplyEffectTickThisTick"(pDuration: integer, pAmplifier: integer): boolean
+public "applyEffectTick"(livingEntity: $LivingEntity$$Type, amplifier: integer): boolean
 public "removeAttributeModifiers"(attributes: $AttributeMap$$Type): void
 set "sourcePlayer"(value: $LivingEntity$$Type)
 }
@@ -188,8 +188,8 @@ import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyBy
 import {$Attribute} from "net.minecraft.world.entity.ai.attributes.Attribute"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$MobEffectCategory$$Type} from "net.minecraft.world.effect.MobEffectCategory"
-import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Holder} from "net.minecraft.core.Holder"
+import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$MobEffect$AttributeTemplate} from "net.minecraft.world.effect.MobEffect$AttributeTemplate"
 
 export class $BattleFatigueEffect extends $MobEffect {
@@ -220,8 +220,8 @@ import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyBy
 import {$Attribute} from "net.minecraft.world.entity.ai.attributes.Attribute"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$MobEffectCategory$$Type} from "net.minecraft.world.effect.MobEffectCategory"
-import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Holder} from "net.minecraft.core.Holder"
+import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$MobEffect$AttributeTemplate} from "net.minecraft.world.effect.MobEffect$AttributeTemplate"
 
 export class $MagistormEffect extends $HighOrbitingEffect {
@@ -251,8 +251,8 @@ import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyBy
 import {$Attribute} from "net.minecraft.world.entity.ai.attributes.Attribute"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$MobEffectCategory$$Type} from "net.minecraft.world.effect.MobEffectCategory"
-import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Holder} from "net.minecraft.core.Holder"
+import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$MobEffect$AttributeTemplate} from "net.minecraft.world.effect.MobEffect$AttributeTemplate"
 
 export class $SmoulderingEffect extends $MobEffect {
@@ -282,8 +282,8 @@ import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyBy
 import {$Attribute} from "net.minecraft.world.entity.ai.attributes.Attribute"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$MobEffectCategory$$Type} from "net.minecraft.world.effect.MobEffectCategory"
-import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Holder} from "net.minecraft.core.Holder"
+import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$MobEffect$AttributeTemplate} from "net.minecraft.world.effect.MobEffect$AttributeTemplate"
 
 export class $FreezeEffect extends $MobEffect {
@@ -308,8 +308,8 @@ export type $FreezeEffect$$Original = $FreezeEffect;}
 declare module "net.sweenus.simplyswords.effect.RibboncleaveEffect" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$Map} from "java.util.Map"
-import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Holder} from "net.minecraft.core.Holder"
+import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Attribute} from "net.minecraft.world.entity.ai.attributes.Attribute"
@@ -347,8 +347,8 @@ import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyBy
 import {$Attribute} from "net.minecraft.world.entity.ai.attributes.Attribute"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$MobEffectCategory$$Type} from "net.minecraft.world.effect.MobEffectCategory"
-import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Holder} from "net.minecraft.core.Holder"
+import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$MobEffect$AttributeTemplate} from "net.minecraft.world.effect.MobEffect$AttributeTemplate"
 
 export class $EchoEffect extends $MobEffect {
@@ -378,8 +378,8 @@ import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyBy
 import {$Attribute} from "net.minecraft.world.entity.ai.attributes.Attribute"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$MobEffectCategory$$Type} from "net.minecraft.world.effect.MobEffectCategory"
-import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Holder} from "net.minecraft.core.Holder"
+import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$MobEffect$AttributeTemplate} from "net.minecraft.world.effect.MobEffect$AttributeTemplate"
 
 export class $WardEffect extends $MobEffect {
@@ -410,8 +410,8 @@ import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyBy
 import {$Attribute} from "net.minecraft.world.entity.ai.attributes.Attribute"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$MobEffectCategory$$Type} from "net.minecraft.world.effect.MobEffectCategory"
-import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Holder} from "net.minecraft.core.Holder"
+import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$MobEffect$AttributeTemplate} from "net.minecraft.world.effect.MobEffect$AttributeTemplate"
 
 export class $SporeSwarmEffect extends $WideOrbitingEffect {
@@ -441,8 +441,8 @@ import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyBy
 import {$Attribute} from "net.minecraft.world.entity.ai.attributes.Attribute"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$MobEffectCategory$$Type} from "net.minecraft.world.effect.MobEffectCategory"
-import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Holder} from "net.minecraft.core.Holder"
+import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$MobEffect$AttributeTemplate} from "net.minecraft.world.effect.MobEffect$AttributeTemplate"
 
 export class $HighOrbitingEffect extends $MobEffect {
@@ -487,10 +487,10 @@ static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($Holde
 
 constructor(statusEffectCategory: $MobEffectCategory$$Type, color: integer)
 
-public "shouldApplyEffectTickThisTick"(pDuration: integer, pAmplifier: integer): boolean
-public "applyEffectTick"(livingEntity: $LivingEntity$$Type, amplifier: integer): boolean
 public "setAdditionalData"(data: integer): void
 public "setSourcePlayer"(livingEntity: $LivingEntity$$Type): void
+public "shouldApplyEffectTickThisTick"(pDuration: integer, pAmplifier: integer): boolean
+public "applyEffectTick"(livingEntity: $LivingEntity$$Type, amplifier: integer): boolean
 public "removeAttributeModifiers"(attributes: $AttributeMap$$Type): void
 set "sourcePlayer"(value: $LivingEntity$$Type)
 }
@@ -511,8 +511,8 @@ import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyBy
 import {$Attribute} from "net.minecraft.world.entity.ai.attributes.Attribute"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$MobEffectCategory$$Type} from "net.minecraft.world.effect.MobEffectCategory"
-import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Holder} from "net.minecraft.core.Holder"
+import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$MobEffect$AttributeTemplate} from "net.minecraft.world.effect.MobEffect$AttributeTemplate"
 
 export class $WildfireEffect extends $MobEffect {
@@ -540,11 +540,11 @@ import {$Map} from "java.util.Map"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Attribute} from "net.minecraft.world.entity.ai.attributes.Attribute"
-import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$AttributeMap$$Type} from "net.minecraft.world.entity.ai.attributes.AttributeMap"
+import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$MobEffectCategory$$Type} from "net.minecraft.world.effect.MobEffectCategory"
-import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Holder} from "net.minecraft.core.Holder"
+import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$MobEffect$AttributeTemplate} from "net.minecraft.world.effect.MobEffect$AttributeTemplate"
 
 export class $SoulTetherEffect extends $MobEffect {
@@ -559,10 +559,10 @@ static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($Holde
 
 constructor(statusEffectCategory: $MobEffectCategory$$Type, color: integer)
 
-public "shouldApplyEffectTickThisTick"(pDuration: integer, pAmplifier: integer): boolean
-public "applyEffectTick"(livingEntity: $LivingEntity$$Type, amplifier: integer): boolean
 public "setAdditionalData"(data: integer): void
 public "setSourcePlayer"(livingEntity: $LivingEntity$$Type): void
+public "shouldApplyEffectTickThisTick"(pDuration: integer, pAmplifier: integer): boolean
+public "applyEffectTick"(livingEntity: $LivingEntity$$Type, amplifier: integer): boolean
 public "removeAttributeModifiers"(attributeContainer: $AttributeMap$$Type): void
 set "sourcePlayer"(value: $LivingEntity$$Type)
 }
@@ -583,8 +583,8 @@ import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyBy
 import {$Attribute} from "net.minecraft.world.entity.ai.attributes.Attribute"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$MobEffectCategory$$Type} from "net.minecraft.world.effect.MobEffectCategory"
-import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Holder} from "net.minecraft.core.Holder"
+import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$MobEffect$AttributeTemplate} from "net.minecraft.world.effect.MobEffect$AttributeTemplate"
 
 export class $AstralShiftEffect extends $MobEffect {
@@ -614,8 +614,8 @@ import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyBy
 import {$Attribute} from "net.minecraft.world.entity.ai.attributes.Attribute"
 import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$MobEffectCategory$$Type} from "net.minecraft.world.effect.MobEffectCategory"
-import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Holder} from "net.minecraft.core.Holder"
+import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$MobEffect$AttributeTemplate} from "net.minecraft.world.effect.MobEffect$AttributeTemplate"
 
 export class $PainEffect extends $MobEffect {
@@ -627,10 +627,10 @@ static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($Holde
 
 constructor(statusEffectCategory: $MobEffectCategory$$Type, color: integer)
 
-public "shouldApplyEffectTickThisTick"(pDuration: integer, pAmplifier: integer): boolean
-public "applyEffectTick"(livingEntity: $LivingEntity$$Type, amplifier: integer): boolean
 public "setAdditionalData"(data: integer): void
 public "setSourcePlayer"(livingEntity: $LivingEntity$$Type): void
+public "shouldApplyEffectTickThisTick"(pDuration: integer, pAmplifier: integer): boolean
+public "applyEffectTick"(livingEntity: $LivingEntity$$Type, amplifier: integer): boolean
 set "sourcePlayer"(value: $LivingEntity$$Type)
 }
 /**
@@ -651,8 +651,8 @@ import {$Attribute} from "net.minecraft.world.entity.ai.attributes.Attribute"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$MobEffectCategory$$Type} from "net.minecraft.world.effect.MobEffectCategory"
-import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Holder} from "net.minecraft.core.Holder"
+import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$MobEffect$AttributeTemplate} from "net.minecraft.world.effect.MobEffect$AttributeTemplate"
 
 export class $FatalFlickerEffect extends $MobEffect {
@@ -662,9 +662,9 @@ static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($Holde
 
 constructor(statusEffectCategory: $MobEffectCategory$$Type, color: integer)
 
+public static "performDash"(user: $LivingEntity$$Type, world: $Level$$Type, radius: integer): void
 public "shouldApplyEffectTickThisTick"(pDuration: integer, pAmplifier: integer): boolean
 public "applyEffectTick"(user: $LivingEntity$$Type, amplifier: integer): boolean
-public static "performDash"(user: $LivingEntity$$Type, world: $Level$$Type, radius: integer): void
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -683,8 +683,8 @@ import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyBy
 import {$Attribute} from "net.minecraft.world.entity.ai.attributes.Attribute"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$MobEffectCategory$$Type} from "net.minecraft.world.effect.MobEffectCategory"
-import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Holder} from "net.minecraft.core.Holder"
+import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$MobEffect$AttributeTemplate} from "net.minecraft.world.effect.MobEffect$AttributeTemplate"
 
 export class $StormEffect extends $MobEffect {
@@ -709,8 +709,8 @@ export type $StormEffect$$Original = $StormEffect;}
 declare module "net.sweenus.simplyswords.effect.FrenzyEffect" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$Map} from "java.util.Map"
-import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Holder} from "net.minecraft.core.Holder"
+import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Attribute} from "net.minecraft.world.entity.ai.attributes.Attribute"
@@ -748,8 +748,8 @@ import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyBy
 import {$Attribute} from "net.minecraft.world.entity.ai.attributes.Attribute"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$MobEffectCategory$$Type} from "net.minecraft.world.effect.MobEffectCategory"
-import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Holder} from "net.minecraft.core.Holder"
+import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$MobEffect$AttributeTemplate} from "net.minecraft.world.effect.MobEffect$AttributeTemplate"
 
 export class $ResilienceEffect extends $MobEffect {
@@ -779,8 +779,8 @@ import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyBy
 import {$Attribute} from "net.minecraft.world.entity.ai.attributes.Attribute"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$MobEffectCategory$$Type} from "net.minecraft.world.effect.MobEffectCategory"
-import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Holder} from "net.minecraft.core.Holder"
+import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$MobEffect$AttributeTemplate} from "net.minecraft.world.effect.MobEffect$AttributeTemplate"
 
 export class $WideOrbitingEffect extends $MobEffect {
@@ -825,10 +825,10 @@ static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($Holde
 
 constructor(statusEffectCategory: $MobEffectCategory$$Type, color: integer)
 
-public "shouldApplyEffectTickThisTick"(pDuration: integer, pAmplifier: integer): boolean
-public "applyEffectTick"(livingEntity: $LivingEntity$$Type, amplifier: integer): boolean
 public "setAdditionalData"(data: integer): void
 public "setSourcePlayer"(livingEntity: $LivingEntity$$Type): void
+public "shouldApplyEffectTickThisTick"(pDuration: integer, pAmplifier: integer): boolean
+public "applyEffectTick"(livingEntity: $LivingEntity$$Type, amplifier: integer): boolean
 public "removeAttributeModifiers"(attributes: $AttributeMap$$Type): void
 set "sourcePlayer"(value: $LivingEntity$$Type)
 }
@@ -844,8 +844,8 @@ export type $ElementalVortexEffect$$Original = $ElementalVortexEffect;}
 declare module "net.sweenus.simplyswords.effect.VoidcloakEffect" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$Map} from "java.util.Map"
-import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Holder} from "net.minecraft.core.Holder"
+import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Attribute} from "net.minecraft.world.entity.ai.attributes.Attribute"
@@ -884,8 +884,8 @@ import {$Attribute} from "net.minecraft.world.entity.ai.attributes.Attribute"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$AttributeMap$$Type} from "net.minecraft.world.entity.ai.attributes.AttributeMap"
 import {$MobEffectCategory$$Type} from "net.minecraft.world.effect.MobEffectCategory"
-import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Holder} from "net.minecraft.core.Holder"
+import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$MobEffect$AttributeTemplate} from "net.minecraft.world.effect.MobEffect$AttributeTemplate"
 
 export class $OrbitingEffect extends $MobEffect {
@@ -913,8 +913,8 @@ declare module "net.sweenus.simplyswords.effect.ImmolationEffect" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$Map} from "java.util.Map"
 import {$WideOrbitingEffect} from "net.sweenus.simplyswords.effect.WideOrbitingEffect"
-import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Holder} from "net.minecraft.core.Holder"
+import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Attribute} from "net.minecraft.world.entity.ai.attributes.Attribute"
@@ -951,8 +951,8 @@ import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyBy
 import {$Attribute} from "net.minecraft.world.entity.ai.attributes.Attribute"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$MobEffectCategory$$Type} from "net.minecraft.world.effect.MobEffectCategory"
-import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$Holder} from "net.minecraft.core.Holder"
+import {$MobEffect} from "net.minecraft.world.effect.MobEffect"
 import {$MobEffect$AttributeTemplate} from "net.minecraft.world.effect.MobEffect$AttributeTemplate"
 
 export class $RibbonwrathEffect extends $MobEffect {

@@ -181,8 +181,8 @@ import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$IntProvider, $IntProvider$$Type} from "net.minecraft.util.valueproviders.IntProvider"
 import {$IntProviderType} from "net.minecraft.util.valueproviders.IntProviderType"
-import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$SimpleWeightedRandomList$$Type} from "net.minecraft.util.random.SimpleWeightedRandomList"
+import {$MapCodec} from "com.mojang.serialization.MapCodec"
 
 export class $WeightedListInt extends $IntProvider {
 static readonly "CODEC": $MapCodec<($WeightedListInt)>

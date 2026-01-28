@@ -40,8 +40,8 @@ export type $Buffer$$Type = ($Buffer);
 export type $Buffer$$Original = $Buffer;}
 declare module "java.nio.CharBuffer" {
 import {$ByteOrder} from "java.nio.ByteOrder"
-import {$Appendable, $Appendable$$Interface} from "java.lang.Appendable"
 import {$Comparable$$Interface} from "java.lang.Comparable"
+import {$Appendable, $Appendable$$Interface} from "java.lang.Appendable"
 import {$IntStream} from "java.util.stream.IntStream"
 import {$Readable$$Interface} from "java.lang.Readable"
 import {$Buffer} from "java.nio.Buffer"

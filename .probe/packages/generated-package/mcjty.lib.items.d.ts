@@ -1,11 +1,11 @@
 declare module "mcjty.lib.items.BaseItem" {
-import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
+import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$ITabExpander$$Interface} from "mcjty.lib.api.ITabExpander"
 import {$List} from "java.util.List"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 
 export class $BaseItem extends $Item implements $ITabExpander$$Interface {

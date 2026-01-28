@@ -25,28 +25,28 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 
 constructor(arg0: $BlockEntityType$$Type<(never)>, arg1: $BlockPos$$Type, arg2: $BlockState$$Type)
 
-public "isFormed"(): boolean
-public "updateStatus"(arg0: $QuantumCluster$$Type, arg1: byte, arg2: boolean): void
 public "serverTick"(): void
 public "isPowered"(): boolean
 public "onChunkUnloaded"(): void
-public static "assignFrequency"(arg0: $ItemStack$$Type): void
-public "getExposedInventoryForSide"(arg0: $Direction$$Type): $InternalInventory
+public "getCluster"(): $QuantumCluster
+public "onMainNodeStateChanged"(arg0: $IGridNodeListener$State$$Type): void
+public "getCableConnectionType"(arg0: $Direction$$Type): $AECableType
+public "onChangeInventory"(arg0: $AppEngInternalInventory$$Type, arg1: integer): void
+public "getGridConnectableSides"(arg0: $BlockOrientation$$Type): $Set<($Direction)>
+public "onReady"(): void
+public "getInternalInventory"(): $InternalInventory
 public "getAdjacentQuantumBridges"(): $EnumSet<($Direction)>
 public "getCorner"(): byte
 public "getQEFrequency"(): long
 public static "isValidEntangledSingularity"(arg0: $ItemStack$$Type): boolean
+public "hasQES"(): boolean
 public "isCorner"(): boolean
-public "onMainNodeStateChanged"(arg0: $IGridNodeListener$State$$Type): void
-public "getCluster"(): $QuantumCluster
-public "getCableConnectionType"(arg0: $Direction$$Type): $AECableType
-public "onChangeInventory"(arg0: $AppEngInternalInventory$$Type, arg1: integer): void
 public "neighborUpdate"(arg0: $BlockPos$$Type): void
 public "breakClusterOnRemove"(): void
-public "hasQES"(): boolean
-public "onReady"(): void
-public "getGridConnectableSides"(arg0: $BlockOrientation$$Type): $Set<($Direction)>
-public "getInternalInventory"(): $InternalInventory
+public "getExposedInventoryForSide"(arg0: $Direction$$Type): $InternalInventory
+public "isFormed"(): boolean
+public "updateStatus"(arg0: $QuantumCluster$$Type, arg1: byte, arg2: boolean): void
+public static "assignFrequency"(arg0: $ItemStack$$Type): void
 public "isValid"(): boolean
 public "disconnect"(arg0: boolean): void
 public "setRemoved"(): void
@@ -54,14 +54,14 @@ public "getModelData"(): $ModelData
 public "saveChanges"(): void
 public "isClientSide"(): boolean
 public static "tryClear"(arg0: any): void
-get "formed"(): boolean
 get "powered"(): boolean
+get "cluster"(): $QuantumCluster
+get "internalInventory"(): $InternalInventory
 get "adjacentQuantumBridges"(): $EnumSet<($Direction)>
 get "corner"(): byte
 get "QEFrequency"(): long
 get "corner"(): boolean
-get "cluster"(): $QuantumCluster
-get "internalInventory"(): $InternalInventory
+get "formed"(): boolean
 get "valid"(): boolean
 get "removed"(): void
 get "modelData"(): $ModelData

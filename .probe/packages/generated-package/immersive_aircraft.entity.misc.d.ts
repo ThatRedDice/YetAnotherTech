@@ -51,7 +51,7 @@ public "rotate"(): float
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $TrailDescriptor$$Type = ({"rotate"?: float, "z"?: float, "length"?: integer, "gray"?: float, "x"?: float, "size"?: float, "y"?: float}) | ([rotate?: float, z?: float, length?: integer, gray?: float, x?: float, size?: float, y?: float]);
+export type $TrailDescriptor$$Type = ({"z"?: float, "length"?: integer, "gray"?: float, "x"?: float, "size"?: float, "y"?: float, "rotate"?: float}) | ([z?: float, length?: integer, gray?: float, x?: float, size?: float, y?: float, rotate?: float]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -128,7 +128,7 @@ public "yaw"(): float
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $PositionDescriptor$$Type = ({"roll"?: float, "x"?: float, "y"?: float, "z"?: float, "yaw"?: float, "pitch"?: float}) | ([roll?: float, x?: float, y?: float, z?: float, yaw?: float, pitch?: float]);
+export type $PositionDescriptor$$Type = ({"x"?: float, "y"?: float, "z"?: float, "yaw"?: float, "pitch"?: float, "roll"?: float}) | ([x?: float, y?: float, z?: float, yaw?: float, pitch?: float, roll?: float]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -181,8 +181,8 @@ export type $Trail$$Original = $Trail;}
 declare module "immersive_aircraft.entity.misc.VehicleData" {
 import {$VehicleStat} from "immersive_aircraft.item.upgrade.VehicleStat"
 import {$VehicleInventoryDescription} from "immersive_aircraft.entity.inventory.VehicleInventoryDescription"
-import {$TrailDescriptor} from "immersive_aircraft.entity.misc.TrailDescriptor"
 import {$Map} from "java.util.Map"
+import {$TrailDescriptor} from "immersive_aircraft.entity.misc.TrailDescriptor"
 import {$RegistryFriendlyByteBuf$$Type} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$List} from "java.util.List"
 import {$BoundingBoxDescriptor} from "immersive_aircraft.entity.misc.BoundingBoxDescriptor"

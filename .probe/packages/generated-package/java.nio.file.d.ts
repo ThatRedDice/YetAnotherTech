@@ -102,8 +102,8 @@ export type $WatchService$$Type = ($WatchService);
  */
 export type $WatchService$$Original = $WatchService;}
 declare module "java.nio.file.Path" {
-import {$Iterable$$Interface} from "java.lang.Iterable"
 import {$WatchService$$Type} from "java.nio.file.WatchService"
+import {$Iterable$$Interface} from "java.lang.Iterable"
 import {$Iterator} from "java.util.Iterator"
 import {$File} from "java.io.File"
 import {$Comparable$$Interface} from "java.lang.Comparable"
@@ -124,8 +124,8 @@ import {$Watchable$$Interface} from "java.nio.file.Watchable"
  */
 export interface $Path$$Interface extends $Comparable$$Interface<($Path)>, $Iterable$$Interface<($Path)>, $Watchable$$Interface {
 [Symbol.iterator](): IterableIterator<$Path>;
-get "fileSystem"(): $FileSystem
 get "nameCount"(): integer
+get "fileSystem"(): $FileSystem
 get "absolute"(): boolean
 get "parent"(): $Path
 get "root"(): $Path
@@ -133,15 +133,15 @@ get "fileName"(): $Path
 }
 
 export class $Path implements $Path$$Interface {
- "normalize"(): $Path
- "getFileSystem"(): $FileSystem
- "relativize"(arg0: $Path$$Type): $Path
  "getNameCount"(): integer
  "subpath"(arg0: integer, arg1: integer): $Path
  "toAbsolutePath"(): $Path
  "toUri"(): $URI
- "resolveSibling"(arg0: $Path$$Type): $Path
  "resolveSibling"(arg0: StringJS): $Path
+ "resolveSibling"(arg0: $Path$$Type): $Path
+ "normalize"(): $Path
+ "getFileSystem"(): $FileSystem
+ "relativize"(arg0: $Path$$Type): $Path
  "getName"(arg0: integer): $Path
  "equals"(arg0: any): boolean
  "toString"(): StringJS
@@ -315,12 +315,12 @@ import {$FileAttributeView$$Type} from "java.nio.file.attribute.FileAttributeVie
  * Loading the class using require() will not throw an error, but the class will be undefined.
  */
 export class $FileStore {
-public "getAttribute"(arg0: StringJS): any
 public "getUnallocatedSpace"(): long
 public "getBlockSize"(): long
-public "supportsFileAttributeView"(arg0: StringJS): boolean
 public "supportsFileAttributeView"(arg0: $Class$$Type<($FileAttributeView$$Type)>): boolean
+public "supportsFileAttributeView"(arg0: StringJS): boolean
 public "getFileStoreAttributeView"<V extends $FileStoreAttributeView>(arg0: $Class$$Type<(V)>): V
+public "getAttribute"(arg0: StringJS): any
 public "getTotalSpace"(): long
 public "getUsableSpace"(): long
 public "name"(): StringJS
@@ -381,10 +381,10 @@ get "valid"(): boolean
 }
 
 export class $WatchKey implements $WatchKey$$Interface {
- "isValid"(): boolean
  "watchable"(): $Watchable
  "reset"(): boolean
  "cancel"(): void
+ "isValid"(): boolean
  "pollEvents"(): $List<($WatchEvent<(never)>)>
 }
 /**
@@ -402,8 +402,8 @@ import {$WatchService} from "java.nio.file.WatchService"
 import {$FileSystemProvider} from "java.nio.file.spi.FileSystemProvider"
 import {$PathMatcher} from "java.nio.file.PathMatcher"
 import {$Set} from "java.util.Set"
-import {$FileStore} from "java.nio.file.FileStore"
 import {$Closeable$$Interface} from "java.io.Closeable"
+import {$FileStore} from "java.nio.file.FileStore"
 import {$Path} from "java.nio.file.Path"
 import {$UserPrincipalLookupService} from "java.nio.file.attribute.UserPrincipalLookupService"
 

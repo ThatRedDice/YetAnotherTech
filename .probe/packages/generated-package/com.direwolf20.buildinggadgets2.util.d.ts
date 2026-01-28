@@ -10,12 +10,12 @@ import {$Record} from "java.lang.Record"
 export class $ItemActionContext extends $Record {
 constructor(pos: $BlockPos$$Type, hitResult: $BlockHitResult$$Type, player: $Player$$Type, level: $Level$$Type, hand: $InteractionHand$$Type, stack: $ItemStack$$Type)
 
-public "level"(): $Level
 public "stack"(): $ItemStack
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
 public "pos"(): $BlockPos
+public "level"(): $Level
 public "player"(): $Player
 public "hitResult"(): $BlockHitResult
 public "hand"(): $InteractionHand
@@ -24,7 +24,7 @@ public "hand"(): $InteractionHand
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $ItemActionContext$$Type = ({"level"?: $Level$$Type, "stack"?: $ItemStack$$Type, "hitResult"?: $BlockHitResult$$Type, "player"?: $Player$$Type, "hand"?: $InteractionHand$$Type, "pos"?: $BlockPos$$Type}) | ([level?: $Level$$Type, stack?: $ItemStack$$Type, hitResult?: $BlockHitResult$$Type, player?: $Player$$Type, hand?: $InteractionHand$$Type, pos?: $BlockPos$$Type]);
+export type $ItemActionContext$$Type = ({"stack"?: $ItemStack$$Type, "hitResult"?: $BlockHitResult$$Type, "player"?: $Player$$Type, "hand"?: $InteractionHand$$Type, "pos"?: $BlockPos$$Type, "level"?: $Level$$Type}) | ([stack?: $ItemStack$$Type, hitResult?: $BlockHitResult$$Type, player?: $Player$$Type, hand?: $InteractionHand$$Type, pos?: $BlockPos$$Type, level?: $Level$$Type]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */

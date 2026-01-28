@@ -2,8 +2,8 @@ declare module "java.lang.module.Configuration" {
 import {$Collection$$Type} from "java.util.Collection"
 import {$Optional} from "java.util.Optional"
 import {$List, $List$$Type} from "java.util.List"
-import {$ResolvedModule} from "java.lang.module.ResolvedModule"
 import {$ModuleFinder$$Type} from "java.lang.module.ModuleFinder"
+import {$ResolvedModule} from "java.lang.module.ResolvedModule"
 import {$Set} from "java.util.Set"
 
 /**
@@ -62,8 +62,8 @@ declare module "java.lang.module.ModuleDescriptor$Requires" {
 import {$ModuleDescriptor$Requires$Modifier} from "java.lang.module.ModuleDescriptor$Requires$Modifier"
 import {$Optional} from "java.util.Optional"
 import {$Comparable$$Interface} from "java.lang.Comparable"
-import {$ModuleDescriptor$Version} from "java.lang.module.ModuleDescriptor$Version"
 import {$Set} from "java.util.Set"
+import {$ModuleDescriptor$Version} from "java.lang.module.ModuleDescriptor$Version"
 import {$AccessFlag} from "java.lang.reflect.AccessFlag"
 
 /**
@@ -73,15 +73,15 @@ import {$AccessFlag} from "java.lang.reflect.AccessFlag"
  */
 export class $ModuleDescriptor$Requires implements $Comparable$$Interface<($ModuleDescriptor$Requires)> {
 public "rawCompiledVersion"(): $Optional<(StringJS)>
+public "compiledVersion"(): $Optional<($ModuleDescriptor$Version)>
 public "modifiers"(): $Set<($ModuleDescriptor$Requires$Modifier)>
 public "name"(): StringJS
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
-public "compareTo"(arg0: any): integer
 public "compareTo"(arg0: $ModuleDescriptor$Requires$$Type): integer
+public "compareTo"(arg0: any): integer
 public "accessFlags"(): $Set<($AccessFlag)>
-public "compiledVersion"(): $Optional<($ModuleDescriptor$Version)>
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -211,10 +211,10 @@ import {$ModuleDescriptor$Opens$$Type} from "java.lang.module.ModuleDescriptor$O
 import {$ModuleDescriptor$Requires$Modifier$$Type} from "java.lang.module.ModuleDescriptor$Requires$Modifier"
 import {$ModuleDescriptor$Provides$$Type} from "java.lang.module.ModuleDescriptor$Provides"
 import {$List$$Type} from "java.util.List"
+import {$Set$$Type} from "java.util.Set"
 import {$ModuleDescriptor$Exports$$Type} from "java.lang.module.ModuleDescriptor$Exports"
 import {$ModuleDescriptor$Opens$Modifier$$Type} from "java.lang.module.ModuleDescriptor$Opens$Modifier"
 import {$ModuleDescriptor$Version$$Type} from "java.lang.module.ModuleDescriptor$Version"
-import {$Set$$Type} from "java.util.Set"
 import {$ModuleDescriptor$Exports$Modifier$$Type} from "java.lang.module.ModuleDescriptor$Exports$Modifier"
 import {$ModuleDescriptor$Requires$$Type} from "java.lang.module.ModuleDescriptor$Requires"
 
@@ -224,28 +224,28 @@ import {$ModuleDescriptor$Requires$$Type} from "java.lang.module.ModuleDescripto
  * Loading the class using require() will not throw an error, but the class will be undefined.
  */
 export class $ModuleDescriptor$Builder {
+public "requires"(arg0: $Set$$Type<($ModuleDescriptor$Requires$Modifier$$Type)>, arg1: StringJS, arg2: $ModuleDescriptor$Version$$Type): $ModuleDescriptor$Builder
+public "requires"(arg0: $Set$$Type<($ModuleDescriptor$Requires$Modifier$$Type)>, arg1: StringJS): $ModuleDescriptor$Builder
+public "requires"(arg0: StringJS): $ModuleDescriptor$Builder
+public "requires"(arg0: $ModuleDescriptor$Requires$$Type): $ModuleDescriptor$Builder
+public "mainClass"(arg0: StringJS): $ModuleDescriptor$Builder
 public "version"(arg0: StringJS): $ModuleDescriptor$Builder
 public "version"(arg0: $ModuleDescriptor$Version$$Type): $ModuleDescriptor$Builder
 public "packages"(arg0: $Set$$Type<(StringJS)>): $ModuleDescriptor$Builder
+public "exports"(arg0: $ModuleDescriptor$Exports$$Type): $ModuleDescriptor$Builder
 public "exports"(arg0: $Set$$Type<($ModuleDescriptor$Exports$Modifier$$Type)>, arg1: StringJS): $ModuleDescriptor$Builder
 public "exports"(arg0: StringJS, arg1: $Set$$Type<(StringJS)>): $ModuleDescriptor$Builder
 public "exports"(arg0: StringJS): $ModuleDescriptor$Builder
 public "exports"(arg0: $Set$$Type<($ModuleDescriptor$Exports$Modifier$$Type)>, arg1: StringJS, arg2: $Set$$Type<(StringJS)>): $ModuleDescriptor$Builder
-public "exports"(arg0: $ModuleDescriptor$Exports$$Type): $ModuleDescriptor$Builder
 public "opens"(arg0: $Set$$Type<($ModuleDescriptor$Opens$Modifier$$Type)>, arg1: StringJS, arg2: $Set$$Type<(StringJS)>): $ModuleDescriptor$Builder
-public "opens"(arg0: $Set$$Type<($ModuleDescriptor$Opens$Modifier$$Type)>, arg1: StringJS): $ModuleDescriptor$Builder
-public "opens"(arg0: StringJS): $ModuleDescriptor$Builder
-public "opens"(arg0: StringJS, arg1: $Set$$Type<(StringJS)>): $ModuleDescriptor$Builder
 public "opens"(arg0: $ModuleDescriptor$Opens$$Type): $ModuleDescriptor$Builder
+public "opens"(arg0: StringJS, arg1: $Set$$Type<(StringJS)>): $ModuleDescriptor$Builder
+public "opens"(arg0: StringJS): $ModuleDescriptor$Builder
+public "opens"(arg0: $Set$$Type<($ModuleDescriptor$Opens$Modifier$$Type)>, arg1: StringJS): $ModuleDescriptor$Builder
 public "uses"(arg0: StringJS): $ModuleDescriptor$Builder
 public "provides"(arg0: $ModuleDescriptor$Provides$$Type): $ModuleDescriptor$Builder
 public "provides"(arg0: StringJS, arg1: $List$$Type<(StringJS)>): $ModuleDescriptor$Builder
 public "build"(): $ModuleDescriptor
-public "requires"(arg0: $Set$$Type<($ModuleDescriptor$Requires$Modifier$$Type)>, arg1: StringJS, arg2: $ModuleDescriptor$Version$$Type): $ModuleDescriptor$Builder
-public "requires"(arg0: $ModuleDescriptor$Requires$$Type): $ModuleDescriptor$Builder
-public "requires"(arg0: $Set$$Type<($ModuleDescriptor$Requires$Modifier$$Type)>, arg1: StringJS): $ModuleDescriptor$Builder
-public "requires"(arg0: StringJS): $ModuleDescriptor$Builder
-public "mainClass"(arg0: StringJS): $ModuleDescriptor$Builder
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -334,8 +334,8 @@ export type $ModuleDescriptor$Modifier$$Original = $ModuleDescriptor$Modifier;}
 declare module "java.lang.module.ModuleDescriptor" {
 import {$Optional} from "java.util.Optional"
 import {$Comparable$$Interface} from "java.lang.Comparable"
-import {$ModuleDescriptor$Version} from "java.lang.module.ModuleDescriptor$Version"
 import {$ModuleDescriptor$Exports} from "java.lang.module.ModuleDescriptor$Exports"
+import {$ModuleDescriptor$Version} from "java.lang.module.ModuleDescriptor$Version"
 import {$ModuleDescriptor$Requires} from "java.lang.module.ModuleDescriptor$Requires"
 import {$AccessFlag} from "java.lang.reflect.AccessFlag"
 import {$ModuleDescriptor$Opens} from "java.lang.module.ModuleDescriptor$Opens"
@@ -353,34 +353,34 @@ import {$ByteBuffer$$Type} from "java.nio.ByteBuffer"
  * Loading the class using require() will not throw an error, but the class will be undefined.
  */
 export class $ModuleDescriptor implements $Comparable$$Interface<($ModuleDescriptor)> {
+public "requires"(): $Set<($ModuleDescriptor$Requires)>
+public "mainClass"(): $Optional<(StringJS)>
+public "toNameAndVersion"(): StringJS
+public "rawVersion"(): $Optional<(StringJS)>
+public static "newModule"(arg0: StringJS): $ModuleDescriptor$Builder
+public static "newModule"(arg0: StringJS, arg1: $Set$$Type<($ModuleDescriptor$Modifier$$Type)>): $ModuleDescriptor$Builder
+public static "newOpenModule"(arg0: StringJS): $ModuleDescriptor$Builder
+public static "newAutomaticModule"(arg0: StringJS): $ModuleDescriptor$Builder
 public "modifiers"(): $Set<($ModuleDescriptor$Modifier)>
 public "name"(): StringJS
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "version"(): $Optional<($ModuleDescriptor$Version)>
 public "hashCode"(): integer
-public "compareTo"(arg0: $ModuleDescriptor$$Type): integer
 public "compareTo"(arg0: any): integer
+public "compareTo"(arg0: $ModuleDescriptor$$Type): integer
 public "packages"(): $Set<(StringJS)>
 public "isOpen"(): boolean
 public "accessFlags"(): $Set<($AccessFlag)>
-public static "read"(arg0: $InputStream$$Type, arg1: $Supplier$$Type<($Set$$Type<(StringJS)>)>): $ModuleDescriptor
 public static "read"(arg0: $InputStream$$Type): $ModuleDescriptor
-public static "read"(arg0: $ByteBuffer$$Type, arg1: $Supplier$$Type<($Set$$Type<(StringJS)>)>): $ModuleDescriptor
 public static "read"(arg0: $ByteBuffer$$Type): $ModuleDescriptor
+public static "read"(arg0: $ByteBuffer$$Type, arg1: $Supplier$$Type<($Set$$Type<(StringJS)>)>): $ModuleDescriptor
+public static "read"(arg0: $InputStream$$Type, arg1: $Supplier$$Type<($Set$$Type<(StringJS)>)>): $ModuleDescriptor
 public "exports"(): $Set<($ModuleDescriptor$Exports)>
 public "opens"(): $Set<($ModuleDescriptor$Opens)>
 public "isAutomatic"(): boolean
 public "uses"(): $Set<(StringJS)>
 public "provides"(): $Set<($ModuleDescriptor$Provides)>
-public "requires"(): $Set<($ModuleDescriptor$Requires)>
-public "mainClass"(): $Optional<(StringJS)>
-public "toNameAndVersion"(): StringJS
-public "rawVersion"(): $Optional<(StringJS)>
-public static "newModule"(arg0: StringJS, arg1: $Set$$Type<($ModuleDescriptor$Modifier$$Type)>): $ModuleDescriptor$Builder
-public static "newModule"(arg0: StringJS): $ModuleDescriptor$Builder
-public static "newOpenModule"(arg0: StringJS): $ModuleDescriptor$Builder
-public static "newAutomaticModule"(arg0: StringJS): $ModuleDescriptor$Builder
 get "open"(): boolean
 get "automatic"(): boolean
 }

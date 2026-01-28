@@ -8,10 +8,10 @@ import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
 import {$ThreeState, $ThreeState$$Type} from "com.tom.createores.util.ThreeState"
-import {$Holder$$Type} from "net.minecraft.core.Holder"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
-import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
+import {$Holder$$Type} from "net.minecraft.core.Holder"
 import {$Recipe$$Interface} from "net.minecraft.world.item.crafting.Recipe"
+import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$TagKey, $TagKey$$Type} from "net.minecraft.tags.TagKey"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$Biome, $Biome$$Type} from "net.minecraft.world.level.biome.Biome"
@@ -34,8 +34,8 @@ public "biomeWhitelist"(): $Optional<($TagKey<($Biome)>)>
 public "getMinAmount"(): float
 public "getMaxAmount"(): float
 public "getPlacement"(): $RandomSpreadStructurePlacement
-public "assemble"(arg0: $CraftingInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
 public "assemble"(arg0: $RecipeInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
+public "assemble"(arg0: $CraftingInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
 public "getSerializer"(): $RecipeSerializer<(never)>
 public "canCraftInDimensions"(arg0: integer, arg1: integer): boolean
 public "getResultItem"(arg0: $HolderLookup$Provider$$Type): $ItemStack
@@ -86,8 +86,8 @@ export type $VeinRecipe$$Original = $VeinRecipe;}
 declare module "com.tom.createores.recipe.VeinRecipe$Serializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$VeinRecipe} from "com.tom.createores.recipe.VeinRecipe"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
 
@@ -150,8 +150,8 @@ export type $ExtractorRecipe$$Type = ($ExtractorRecipe);
 export type $ExtractorRecipe$$Original = $ExtractorRecipe;}
 declare module "com.tom.createores.recipe.ExcavatingRecipe$Serializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$ExcavatingRecipe} from "com.tom.createores.recipe.ExcavatingRecipe"
 import {$ExcavatingRecipe$ExcavatingRecipeCommon} from "com.tom.createores.recipe.ExcavatingRecipe$ExcavatingRecipeCommon"
@@ -179,12 +179,12 @@ export type $ExcavatingRecipe$Serializer$$Type<T> = ($ExcavatingRecipe$Serialize
 export type $ExcavatingRecipe$Serializer$$Original<T> = $ExcavatingRecipe$Serializer<(T)>;}
 declare module "com.tom.createores.recipe.ExtractorRecipe$Serializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$ExtractorRecipe} from "com.tom.createores.recipe.ExtractorRecipe"
 import {$ExcavatingRecipe$Serializer} from "com.tom.createores.recipe.ExcavatingRecipe$Serializer"
-import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type} from "net.minecraft.world.item.crafting.RecipeSerializer"
+import {$MapCodec} from "com.mojang.serialization.MapCodec"
 
 export class $ExtractorRecipe$Serializer extends $ExcavatingRecipe$Serializer<($ExtractorRecipe)> {
 static readonly "CODEC": $MapCodec<($ExtractorRecipe)>
@@ -213,10 +213,10 @@ import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$RecipeWrapper, $RecipeWrapper$$Type} from "net.neoforged.neoforge.items.wrapper.RecipeWrapper"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
-import {$FluidIngredient} from "com.tom.createores.util.FluidIngredient"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
+import {$FluidIngredient} from "com.tom.createores.util.FluidIngredient"
 import {$Recipe$$Interface} from "net.minecraft.world.item.crafting.Recipe"
+import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 
 export class $ExcavatingRecipe implements $Recipe$$Interface<($RecipeWrapper)> {
@@ -229,13 +229,13 @@ export class $ExcavatingRecipe implements $Recipe$$Interface<($RecipeWrapper)> {
 
 constructor()
 
+public "getDrillingFluid"(): $Optional<($FluidIngredient)>
+public "getDrill"(): $Ingredient
+public "getStress"(): integer
 public "assemble"(arg0: $RecipeWrapper$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
 public "assemble"(arg0: $RecipeInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
 public "canCraftInDimensions"(arg0: integer, arg1: integer): boolean
 public "getResultItem"(arg0: $HolderLookup$Provider$$Type): $ItemStack
-public "getStress"(): integer
-public "getDrillingFluid"(): $Optional<($FluidIngredient)>
-public "getDrill"(): $Ingredient
 public "matches"(arg0: $RecipeWrapper$$Type, arg1: $Level$$Type): boolean
 public "matches"(arg0: $RecipeInput$$Type, arg1: $Level$$Type): boolean
 public "getGroup"(): StringJS
@@ -274,8 +274,8 @@ import {$Ingredient} from "net.minecraft.world.item.crafting.Ingredient"
 import {$RecipeType} from "net.minecraft.world.item.crafting.RecipeType"
 import {$ExcavatingRecipe} from "com.tom.createores.recipe.ExcavatingRecipe"
 import {$ProcessingOutput} from "com.simibubi.create.content.processing.recipe.ProcessingOutput"
-import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
+import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 
 export class $DrillingRecipe extends $ExcavatingRecipe {
  "output": $NonNullList<($ProcessingOutput)>
@@ -337,11 +337,11 @@ export type $ExcavatingRecipe$ExcavatingRecipeCommon$$Original = $ExcavatingReci
 declare module "com.tom.createores.recipe.DrillingRecipe$Serializer" {
 import {$DrillingRecipe} from "com.tom.createores.recipe.DrillingRecipe"
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$ExcavatingRecipe$Serializer} from "com.tom.createores.recipe.ExcavatingRecipe$Serializer"
-import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type} from "net.minecraft.world.item.crafting.RecipeSerializer"
+import {$MapCodec} from "com.mojang.serialization.MapCodec"
 
 export class $DrillingRecipe$Serializer extends $ExcavatingRecipe$Serializer<($DrillingRecipe)> {
 static readonly "CODEC": $MapCodec<($DrillingRecipe)>

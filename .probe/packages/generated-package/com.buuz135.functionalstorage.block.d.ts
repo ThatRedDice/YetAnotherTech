@@ -1,11 +1,11 @@
 declare module "com.buuz135.functionalstorage.block.FluidDrawerBlock$FluidDrawerItem" {
 import {$IClientItemExtensions$$Type} from "net.neoforged.neoforge.client.extensions.common.IClientItemExtensions"
-import {$FluidDrawerBlock$$Type} from "com.buuz135.functionalstorage.block.FluidDrawerBlock"
 import {$Map} from "java.util.Map"
+import {$FluidDrawerBlock$$Type} from "com.buuz135.functionalstorage.block.FluidDrawerBlock"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block} from "net.minecraft.world.level.block.Block"
-import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$TitaniumTab$$Type} from "com.hrznstudio.titanium.tab.TitaniumTab"
+import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$AdditionalItemPlacement, $AdditionalItemPlacement$$Type} from "net.mehvahdjukaar.moonlight.api.item.additional_placements.AdditionalItemPlacement"
@@ -64,8 +64,8 @@ export type $DrawerProperties$$Original = $DrawerProperties;}
 declare module "com.buuz135.functionalstorage.block.DrawerBlock$DrawerItem" {
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$TitaniumTab$$Type} from "com.hrznstudio.titanium.tab.TitaniumTab"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$IItemHandler} from "net.neoforged.neoforge.items.IItemHandler"
 import {$Consumer$$Type} from "java.util.function.Consumer"
@@ -105,14 +105,14 @@ export type $DrawerBlock$DrawerItem$$Type = ($DrawerBlock$DrawerItem);
 export type $DrawerBlock$DrawerItem$$Original = $DrawerBlock$DrawerItem;}
 declare module "com.buuz135.functionalstorage.block.FramedFluidDrawerBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$FluidDrawerTile} from "com.buuz135.functionalstorage.block.tile.FluidDrawerTile"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
-import {$FramedBlock$$Interface} from "com.buuz135.functionalstorage.block.FramedBlock"
 import {$RecipeOutput$$Type} from "net.minecraft.data.recipes.RecipeOutput"
+import {$FramedBlock$$Interface} from "com.buuz135.functionalstorage.block.FramedBlock"
 import {$FluidDrawerBlock} from "com.buuz135.functionalstorage.block.FluidDrawerBlock"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$Item} from "net.minecraft.world.item.Item"
@@ -145,8 +145,8 @@ static readonly "FACING_HORIZONTAL": $DirectionProperty
 
 constructor(arg0: $FunctionalStorage$DrawerType$$Type, arg1: $BlockBehaviour$Properties$$Type)
 
-public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($FluidDrawerTile)>
 public "registerRecipe"(arg0: $RecipeOutput$$Type): void
+public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($FluidDrawerTile)>
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "tileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($FluidDrawerTile)>
 }
@@ -161,8 +161,8 @@ export type $FramedFluidDrawerBlock$$Type = ($FramedFluidDrawerBlock);
 export type $FramedFluidDrawerBlock$$Original = $FramedFluidDrawerBlock;}
 declare module "com.buuz135.functionalstorage.block.ControllerExtensionBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$BasicBlockLootTables$$Type} from "com.hrznstudio.titanium.datagenerator.loot.block.BasicBlockLootTables"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -199,8 +199,8 @@ static readonly "FACING_HORIZONTAL": $DirectionProperty
 
 constructor()
 
-public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<(never)>
 public "registerRecipe"(arg0: $RecipeOutput$$Type): void
+public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<(never)>
 public "getLootTable"(arg0: any): $LootTable$Builder
 public "getLootTable"(arg0: $BasicBlockLootTables$$Type): $LootTable$Builder
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
@@ -221,8 +221,8 @@ import {$ControllableDrawerTile$$Type} from "com.buuz135.functionalstorage.block
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$ActiveTile$$Type} from "com.hrznstudio.titanium.block.tile.ActiveTile"
-import {$BasicTileBlock$$Type} from "com.hrznstudio.titanium.block.BasicTileBlock"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$BasicTileBlock$$Type} from "com.hrznstudio.titanium.block.BasicTileBlock"
 import {$DataComponentType} from "net.minecraft.core.component.DataComponentType"
 import {$IItemHandler} from "net.neoforged.neoforge.items.IItemHandler"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
@@ -230,6 +230,7 @@ import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$SizeProvider} from "com.buuz135.functionalstorage.item.component.SizeProvider"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Supplier} from "java.util.function.Supplier"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$IFluidHandler} from "net.neoforged.neoforge.fluids.capability.IFluidHandler"
 import {$ItemControllableDrawerTile, $ItemControllableDrawerTile$$Type} from "com.buuz135.functionalstorage.block.tile.ItemControllableDrawerTile"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
@@ -242,19 +243,21 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 
 constructor(arg0: $BasicTileBlock$$Type<(T)>, arg1: $BlockEntityType$$Type<(T)>, arg2: $BlockPos$$Type, arg3: $BlockState$$Type)
 
-public "onSlotActivated"(arg0: $Player$$Type, arg1: $InteractionHand$$Type, arg2: $Direction$$Type, arg3: double, arg4: double, arg5: double): $InteractionResult
-public "toggleLocking"(): void
-public "toggleOption"(arg0: $ConfigurationToolItem$ConfigurationAction$$Type): void
-public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $ItemControllableDrawerTile$$Type): void
-public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $ControllableDrawerTile$$Type): void
 public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $ActiveTile$$Type): void
 public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $BlockEntity$$Type): void
+public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $ItemControllableDrawerTile$$Type): void
+public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $ControllableDrawerTile$$Type): void
 public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: T): void
 public "getStorage"(): $IItemHandler
 public "getStorageSlotAmount"(): integer
+public "onSlotActivated"(arg0: $Player$$Type, arg1: $InteractionHand$$Type, arg2: $Direction$$Type, arg3: double, arg4: double, arg5: double): $InteractionResult
+public "toggleLocking"(): void
+public "toggleOption"(arg0: $ConfigurationToolItem$ConfigurationAction$$Type): void
 public "getFluidHandler"(arg0: $Direction$$Type): $IFluidHandler
+public "getUpdatePacket"(): $Packet
 get "storage"(): $IItemHandler
 get "storageSlotAmount"(): integer
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -269,9 +272,9 @@ declare module "com.buuz135.functionalstorage.block.tile.SimpleCompactingDrawerT
 import {$ControllableDrawerTile$$Type} from "com.buuz135.functionalstorage.block.tile.ControllableDrawerTile"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
-import {$ActiveTile$$Type} from "com.hrznstudio.titanium.block.tile.ActiveTile"
-import {$BasicTileBlock$$Type} from "com.hrznstudio.titanium.block.BasicTileBlock"
+import {$ActiveTile, $ActiveTile$$Type} from "com.hrznstudio.titanium.block.tile.ActiveTile"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$BasicTileBlock$$Type} from "com.hrznstudio.titanium.block.BasicTileBlock"
 import {$DataComponentType} from "net.minecraft.core.component.DataComponentType"
 import {$IItemHandler} from "net.neoforged.neoforge.items.IItemHandler"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
@@ -280,6 +283,7 @@ import {$SizeProvider} from "com.buuz135.functionalstorage.item.component.SizePr
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Supplier} from "java.util.function.Supplier"
 import {$CompactingInventoryHandler} from "com.buuz135.functionalstorage.inventory.CompactingInventoryHandler"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$ItemControllableDrawerTile, $ItemControllableDrawerTile$$Type} from "com.buuz135.functionalstorage.block.tile.ItemControllableDrawerTile"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
@@ -292,20 +296,22 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 
 constructor(arg0: $BasicTileBlock$$Type<($SimpleCompactingDrawerTile$$Type)>, arg1: $BlockEntityType$$Type<($SimpleCompactingDrawerTile$$Type)>, arg2: $BlockPos$$Type, arg3: $BlockState$$Type)
 
-public "onSlotActivated"(arg0: $Player$$Type, arg1: $InteractionHand$$Type, arg2: $Direction$$Type, arg3: double, arg4: double, arg5: double, arg6: integer): $InteractionResult
-public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $ControllableDrawerTile$$Type): void
 public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $ActiveTile$$Type): void
 public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $BlockEntity$$Type): void
-public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $ItemControllableDrawerTile$$Type): void
+public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $ControllableDrawerTile$$Type): void
 public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $SimpleCompactingDrawerTile$$Type): void
+public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $ItemControllableDrawerTile$$Type): void
 public "getStorage"(): $IItemHandler
 public "initClient"(): void
 public "getStorageSlotAmount"(): integer
+public "onSlotActivated"(arg0: $Player$$Type, arg1: $InteractionHand$$Type, arg2: $Direction$$Type, arg3: double, arg4: double, arg5: double, arg6: integer): $InteractionResult
 public "getHandler"(): $CompactingInventoryHandler
-public "getSelf"(): $SimpleCompactingDrawerTile
+public "getSelf"(): $ActiveTile
+public "getUpdatePacket"(): $Packet
 get "storage"(): $IItemHandler
 get "storageSlotAmount"(): integer
-get "self"(): $SimpleCompactingDrawerTile
+get "self"(): $ActiveTile
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -318,8 +324,8 @@ export type $SimpleCompactingDrawerTile$$Type = ($SimpleCompactingDrawerTile);
 export type $SimpleCompactingDrawerTile$$Original = $SimpleCompactingDrawerTile;}
 declare module "com.buuz135.functionalstorage.block.SimpleCompactingDrawerBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Collection} from "java.util.Collection"
 import {$List} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
@@ -334,8 +340,8 @@ import {$Drawer} from "com.buuz135.functionalstorage.block.Drawer"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$DirectionProperty} from "net.minecraft.world.level.block.state.properties.DirectionProperty"
-import {$SimpleCompactingDrawerTile} from "com.buuz135.functionalstorage.block.tile.SimpleCompactingDrawerTile"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$SimpleCompactingDrawerTile} from "com.buuz135.functionalstorage.block.tile.SimpleCompactingDrawerTile"
 
 export class $SimpleCompactingDrawerBlock extends $Drawer<($SimpleCompactingDrawerTile)> {
 static readonly "UPDATE_IMMEDIATE": integer
@@ -362,9 +368,9 @@ static readonly "FACING_HORIZONTAL": $DirectionProperty
 constructor(arg0: StringJS, arg1: $BlockBehaviour$Properties$$Type)
 
 public "getBoundingBoxes"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): $List<($VoxelShape)>
+public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($SimpleCompactingDrawerTile)>
 public "getHitShapes"(arg0: $BlockState$$Type): $Collection<($VoxelShape)>
-public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "tileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($SimpleCompactingDrawerTile)>
 }
@@ -386,8 +392,7 @@ import {$ArmoryCabinetInventoryHandler} from "com.buuz135.functionalstorage.inve
 import {$IItemHandler} from "net.neoforged.neoforge.items.IItemHandler"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$Packet} from "net.minecraft.network.protocol.Packet"
-import {$ClientboundBlockEntityDataPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket"
+import {$ClientboundBlockEntityDataPacket, $ClientboundBlockEntityDataPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$Connection$$Type} from "net.minecraft.network.Connection"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -398,16 +403,16 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 
 constructor(arg0: $BasicTileBlock$$Type<($ArmoryCabinetTile$$Type)>, arg1: $BlockEntityType$$Type<(never)>, arg2: $BlockPos$$Type, arg3: $BlockState$$Type)
 
-public "isEverythingEmpty"(): boolean
-public "getUpdatePacket"(): $Packet
+public "getUpdatePacket"(): $ClientboundBlockEntityDataPacket
 public "getStorage"(): $IItemHandler
 public "getItemHandler"(arg0: $Direction$$Type): $IItemHandler
 public "getUpdateTag"(arg0: $HolderLookup$Provider$$Type): $CompoundTag
 public "onDataPacket"(arg0: $Connection$$Type, arg1: $ClientboundBlockEntityDataPacket$$Type, arg2: $HolderLookup$Provider$$Type): void
+public "isEverythingEmpty"(): boolean
 public "getSelf"(): $ActiveTile
-get "everythingEmpty"(): boolean
-get "updatePacket"(): $Packet
+get "updatePacket"(): $ClientboundBlockEntityDataPacket
 get "storage"(): $IItemHandler
+get "everythingEmpty"(): boolean
 get "self"(): $ActiveTile
 }
 /**
@@ -421,9 +426,9 @@ export type $ArmoryCabinetTile$$Type = ($ArmoryCabinetTile);
 export type $ArmoryCabinetTile$$Original = $ArmoryCabinetTile;}
 declare module "com.buuz135.functionalstorage.block.FramedDrawerControllerBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
-import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$LootParams$Builder$$Type} from "net.minecraft.world.level.storage.loot.LootParams$Builder"
+import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$StorageControllerBlock} from "com.buuz135.functionalstorage.block.StorageControllerBlock"
 import {$List} from "java.util.List"
@@ -432,8 +437,8 @@ import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$HitResult$$Type} from "net.minecraft.world.phys.HitResult"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$FramedBlock$$Interface} from "com.buuz135.functionalstorage.block.FramedBlock"
 import {$RecipeOutput$$Type} from "net.minecraft.data.recipes.RecipeOutput"
+import {$FramedBlock$$Interface} from "com.buuz135.functionalstorage.block.FramedBlock"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$Item} from "net.minecraft.world.item.Item"
@@ -467,10 +472,10 @@ static readonly "FACING_HORIZONTAL": $DirectionProperty
 
 constructor()
 
+public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<(never)>
 public "getDrops"(arg0: $BlockState$$Type, arg1: $LootParams$Builder$$Type): $List<($ItemStack)>
 public "setPlacedBy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $LivingEntity$$Type, arg4: $ItemStack$$Type): void
-public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public "getCloneItemStack"(arg0: $BlockState$$Type, arg1: $HitResult$$Type, arg2: $LevelReader$$Type, arg3: $BlockPos$$Type, arg4: $Player$$Type): $ItemStack
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "tileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<(never)>
@@ -588,9 +593,9 @@ export type $ControllableDrawerTile$DrawerOptions$$Type = ($ControllableDrawerTi
 export type $ControllableDrawerTile$DrawerOptions$$Original = $ControllableDrawerTile$DrawerOptions;}
 declare module "com.buuz135.functionalstorage.block.FramedControllerExtensionBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
-import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$LootParams$Builder$$Type} from "net.minecraft.world.level.storage.loot.LootParams$Builder"
+import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$List} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
@@ -598,16 +603,16 @@ import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$HitResult$$Type} from "net.minecraft.world.phys.HitResult"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$FramedBlock$$Interface} from "com.buuz135.functionalstorage.block.FramedBlock"
 import {$RecipeOutput$$Type} from "net.minecraft.data.recipes.RecipeOutput"
+import {$FramedBlock$$Interface} from "com.buuz135.functionalstorage.block.FramedBlock"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$StorageControllerExtensionBlock} from "com.buuz135.functionalstorage.block.StorageControllerExtensionBlock"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$StorageControllerExtensionBlock} from "com.buuz135.functionalstorage.block.StorageControllerExtensionBlock"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$FramedControllerExtensionTile} from "com.buuz135.functionalstorage.block.tile.FramedControllerExtensionTile"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
+import {$FramedControllerExtensionTile} from "com.buuz135.functionalstorage.block.tile.FramedControllerExtensionTile"
 import {$DirectionProperty} from "net.minecraft.world.level.block.state.properties.DirectionProperty"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
@@ -634,10 +639,10 @@ static readonly "FACING_HORIZONTAL": $DirectionProperty
 
 constructor()
 
+public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<(never)>
 public "getDrops"(arg0: $BlockState$$Type, arg1: $LootParams$Builder$$Type): $List<($ItemStack)>
 public "setPlacedBy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $LivingEntity$$Type, arg4: $ItemStack$$Type): void
-public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public "getCloneItemStack"(arg0: $BlockState$$Type, arg1: $HitResult$$Type, arg2: $LevelReader$$Type, arg3: $BlockPos$$Type, arg4: $Player$$Type): $ItemStack
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "tileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<(never)>
@@ -652,16 +657,17 @@ export type $FramedControllerExtensionBlock$$Type = ($FramedControllerExtensionB
  */
 export type $FramedControllerExtensionBlock$$Original = $FramedControllerExtensionBlock;}
 declare module "com.buuz135.functionalstorage.block.tile.FramedControllerExtensionTile" {
-import {$FramedTile$$Interface} from "com.buuz135.functionalstorage.block.tile.FramedTile"
 import {$StorageControllerExtensionTile} from "com.buuz135.functionalstorage.block.tile.StorageControllerExtensionTile"
+import {$BasicTileBlock$$Type} from "com.hrznstudio.titanium.block.BasicTileBlock"
+import {$DataComponentType} from "net.minecraft.core.component.DataComponentType"
+import {$FramedTile$$Interface} from "com.buuz135.functionalstorage.block.tile.FramedTile"
 import {$SizeProvider} from "com.buuz135.functionalstorage.item.component.SizeProvider"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Supplier} from "java.util.function.Supplier"
-import {$BasicTileBlock$$Type} from "com.hrznstudio.titanium.block.BasicTileBlock"
 import {$FramedDrawerModelData, $FramedDrawerModelData$$Type} from "com.buuz135.functionalstorage.client.model.FramedDrawerModelData"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$ModelData} from "net.neoforged.neoforge.client.model.data.ModelData"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$DataComponentType} from "net.minecraft.core.component.DataComponentType"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $FramedControllerExtensionTile extends $StorageControllerExtensionTile<($FramedControllerExtensionTile)> implements $FramedTile$$Interface {
@@ -674,10 +680,12 @@ public "getFramedDrawerModelData"(): $FramedDrawerModelData
 public "setFramedDrawerModelData"(arg0: $FramedDrawerModelData$$Type): void
 public "getSelf"(): $FramedControllerExtensionTile
 public "getModelData"(): $ModelData
+public "getUpdatePacket"(): $Packet
 get "framedDrawerModelData"(): $FramedDrawerModelData
 set "framedDrawerModelData"(value: $FramedDrawerModelData$$Type)
 get "self"(): $FramedControllerExtensionTile
 get "modelData"(): $ModelData
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -694,8 +702,8 @@ import {$DrawerProperties$$Type} from "com.buuz135.functionalstorage.block.tile.
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$ActiveTile$$Type} from "com.hrznstudio.titanium.block.tile.ActiveTile"
-import {$BasicTileBlock$$Type} from "com.hrznstudio.titanium.block.BasicTileBlock"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$BasicTileBlock$$Type} from "com.hrznstudio.titanium.block.BasicTileBlock"
 import {$DataComponentType} from "net.minecraft.core.component.DataComponentType"
 import {$IItemHandler} from "net.neoforged.neoforge.items.IItemHandler"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
@@ -704,6 +712,7 @@ import {$SizeProvider} from "com.buuz135.functionalstorage.item.component.SizePr
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Supplier} from "java.util.function.Supplier"
 import {$InventoryComponent} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -715,25 +724,27 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 constructor(arg0: $BasicTileBlock$$Type<(T)>, arg1: $BlockEntityType$$Type<(T)>, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $DrawerProperties$$Type)
 
 public "getTitleColor"(): integer
-public "onSlotActivated"(arg0: $Player$$Type, arg1: $InteractionHand$$Type, arg2: $Direction$$Type, arg3: double, arg4: double, arg5: double, arg6: integer): $InteractionResult
-public "isEverythingEmpty"(): boolean
-public "getStorageUpgradesConstructor"(): $InventoryComponent<($ControllableDrawerTile<(T)>)>
-public "isInventoryEmpty"(): boolean
-public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $ControllableDrawerTile$$Type): void
 public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $ActiveTile$$Type): void
-public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: T): void
 public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $BlockEntity$$Type): void
+public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $ControllableDrawerTile$$Type): void
+public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: T): void
 public "getStorage"(): $IItemHandler
 public "getItemHandler"(arg0: $Direction$$Type): $IItemHandler
 public "initClient"(): void
 public "getStorageSlotAmount"(): integer
+public "isEverythingEmpty"(): boolean
+public "onSlotActivated"(arg0: $Player$$Type, arg1: $InteractionHand$$Type, arg2: $Direction$$Type, arg3: double, arg4: double, arg5: double, arg6: integer): $InteractionResult
+public "getStorageUpgradesConstructor"(): $InventoryComponent<($ControllableDrawerTile<(T)>)>
+public "isInventoryEmpty"(): boolean
 public "onClicked"(arg0: $Player$$Type, arg1: integer): void
+public "getUpdatePacket"(): $Packet
 get "titleColor"(): integer
+get "storage"(): $IItemHandler
+get "storageSlotAmount"(): integer
 get "everythingEmpty"(): boolean
 get "storageUpgradesConstructor"(): $InventoryComponent<($ControllableDrawerTile<(T)>)>
 get "inventoryEmpty"(): boolean
-get "storage"(): $IItemHandler
-get "storageSlotAmount"(): integer
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -789,12 +800,13 @@ import {$SizeProvider} from "com.buuz135.functionalstorage.item.component.SizePr
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Supplier} from "java.util.function.Supplier"
 import {$BasicTileBlock$$Type} from "com.hrznstudio.titanium.block.BasicTileBlock"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$DataComponentType} from "net.minecraft.core.component.DataComponentType"
 import {$ControllerInventoryHandler} from "com.buuz135.functionalstorage.inventory.ControllerInventoryHandler"
 import {$StorageControllerTile} from "com.buuz135.functionalstorage.block.tile.StorageControllerTile"
-import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$ControllerFluidHandler} from "com.buuz135.functionalstorage.fluid.ControllerFluidHandler"
+import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $DrawerControllerTile extends $StorageControllerTile<($DrawerControllerTile)> {
 readonly "sizeUpgradeComponent": $Supplier<($DataComponentType<($SizeProvider)>)>
@@ -805,7 +817,9 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 constructor(arg0: $BasicTileBlock$$Type<($DrawerControllerTile$$Type)>, arg1: $BlockEntityType$$Type<($DrawerControllerTile$$Type)>, arg2: $BlockPos$$Type, arg3: $BlockState$$Type)
 
 public "getSelf"(): $DrawerControllerTile
+public "getUpdatePacket"(): $Packet
 get "self"(): $DrawerControllerTile
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -827,6 +841,7 @@ import {$SizeProvider} from "com.buuz135.functionalstorage.item.component.SizePr
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Supplier} from "java.util.function.Supplier"
 import {$FramedDrawerModelData, $FramedDrawerModelData$$Type} from "com.buuz135.functionalstorage.client.model.FramedDrawerModelData"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$ModelData} from "net.neoforged.neoforge.client.model.data.ModelData"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -843,10 +858,12 @@ public "getFramedDrawerModelData"(): $FramedDrawerModelData
 public "setFramedDrawerModelData"(arg0: $FramedDrawerModelData$$Type): void
 public "getSelf"(): $FramedDrawerControllerTile
 public "getModelData"(): $ModelData
+public "getUpdatePacket"(): $Packet
 get "framedDrawerModelData"(): $FramedDrawerModelData
 set "framedDrawerModelData"(value: $FramedDrawerModelData$$Type)
 get "self"(): $FramedDrawerControllerTile
 get "modelData"(): $ModelData
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -860,7 +877,6 @@ export type $FramedDrawerControllerTile$$Original = $FramedDrawerControllerTile;
 declare module "com.buuz135.functionalstorage.block.tile.DrawerTile" {
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
-import {$ActiveTile} from "com.hrznstudio.titanium.block.tile.ActiveTile"
 import {$BasicTileBlock$$Type} from "com.hrznstudio.titanium.block.BasicTileBlock"
 import {$DataComponentType} from "net.minecraft.core.component.DataComponentType"
 import {$IItemHandler} from "net.neoforged.neoforge.items.IItemHandler"
@@ -869,12 +885,13 @@ import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$SizeProvider} from "com.buuz135.functionalstorage.item.component.SizeProvider"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Supplier} from "java.util.function.Supplier"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$ItemControllableDrawerTile} from "com.buuz135.functionalstorage.block.tile.ItemControllableDrawerTile"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$FunctionalStorage$DrawerType, $FunctionalStorage$DrawerType$$Type} from "com.buuz135.functionalstorage.FunctionalStorage$DrawerType"
 import {$BigInventoryHandler} from "com.buuz135.functionalstorage.inventory.BigInventoryHandler"
-import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$IWoodType$$Type} from "com.buuz135.functionalstorage.util.IWoodType"
+import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $DrawerTile extends $ItemControllableDrawerTile<($DrawerTile)> {
 readonly "sizeUpgradeComponent": $Supplier<($DataComponentType<($SizeProvider)>)>
@@ -883,17 +900,19 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 
 constructor(arg0: $BasicTileBlock$$Type<($DrawerTile$$Type)>, arg1: $BlockEntityType$$Type<($DrawerTile$$Type)>, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $FunctionalStorage$DrawerType$$Type, arg5: $IWoodType$$Type)
 
-public "onSlotActivated"(arg0: $Player$$Type, arg1: $InteractionHand$$Type, arg2: $Direction$$Type, arg3: double, arg4: double, arg5: double, arg6: integer): $InteractionResult
-public "getDrawerType"(): $FunctionalStorage$DrawerType
 public "getStorage"(): $IItemHandler
 public "initClient"(): void
 public "getStorageSlotAmount"(): integer
+public "onSlotActivated"(arg0: $Player$$Type, arg1: $InteractionHand$$Type, arg2: $Direction$$Type, arg3: double, arg4: double, arg5: double, arg6: integer): $InteractionResult
+public "getDrawerType"(): $FunctionalStorage$DrawerType
 public "getHandler"(): $BigInventoryHandler
-public "getSelf"(): $ActiveTile
-get "drawerType"(): $FunctionalStorage$DrawerType
+public "getSelf"(): $DrawerTile
+public "getUpdatePacket"(): $Packet
 get "storage"(): $IItemHandler
 get "storageSlotAmount"(): integer
-get "self"(): $ActiveTile
+get "drawerType"(): $FunctionalStorage$DrawerType
+get "self"(): $DrawerTile
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -907,18 +926,18 @@ export type $DrawerTile$$Original = $DrawerTile;}
 declare module "com.buuz135.functionalstorage.block.FramedSimpleCompactingDrawerBlock" {
 import {$SimpleCompactingDrawerBlock} from "com.buuz135.functionalstorage.block.SimpleCompactingDrawerBlock"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
-import {$FramedBlock$$Interface} from "com.buuz135.functionalstorage.block.FramedBlock"
 import {$RecipeOutput$$Type} from "net.minecraft.data.recipes.RecipeOutput"
+import {$FramedBlock$$Interface} from "com.buuz135.functionalstorage.block.FramedBlock"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$DirectionProperty} from "net.minecraft.world.level.block.state.properties.DirectionProperty"
-import {$SimpleCompactingDrawerTile} from "com.buuz135.functionalstorage.block.tile.SimpleCompactingDrawerTile"
 import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
+import {$SimpleCompactingDrawerTile} from "com.buuz135.functionalstorage.block.tile.SimpleCompactingDrawerTile"
 
 export class $FramedSimpleCompactingDrawerBlock extends $SimpleCompactingDrawerBlock implements $FramedBlock$$Interface {
 static readonly "UPDATE_IMMEDIATE": integer
@@ -944,8 +963,8 @@ static readonly "FACING_HORIZONTAL": $DirectionProperty
 
 constructor(arg0: StringJS)
 
-public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($SimpleCompactingDrawerTile)>
 public "registerRecipe"(arg0: $RecipeOutput$$Type): void
+public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($SimpleCompactingDrawerTile)>
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "tileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($SimpleCompactingDrawerTile)>
 }
@@ -960,14 +979,14 @@ export type $FramedSimpleCompactingDrawerBlock$$Type = ($FramedSimpleCompactingD
 export type $FramedSimpleCompactingDrawerBlock$$Original = $FramedSimpleCompactingDrawerBlock;}
 declare module "com.buuz135.functionalstorage.block.CompactingDrawerBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Collection} from "java.util.Collection"
 import {$List} from "java.util.List"
 import {$Multimap} from "com.google.common.collect.Multimap"
-import {$Direction} from "net.minecraft.core.Direction"
 import {$CompactingDrawerTile} from "com.buuz135.functionalstorage.block.tile.CompactingDrawerTile"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction} from "net.minecraft.core.Direction"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$HashMap} from "java.util.HashMap"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -1009,9 +1028,9 @@ static "CACHED_SHAPES": $Multimap<($Direction), ($VoxelShape)>
 constructor(arg0: StringJS, arg1: $BlockBehaviour$Properties$$Type)
 
 public "getBoundingBoxes"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): $List<($VoxelShape)>
+public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($CompactingDrawerTile)>
 public "getHitShapes"(arg0: $BlockState$$Type): $Collection<($VoxelShape)>
-public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "tileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($CompactingDrawerTile)>
 }
@@ -1047,6 +1066,7 @@ import {$ControllerInventoryHandler} from "com.buuz135.functionalstorage.invento
 import {$IItemHandler} from "net.neoforged.neoforge.items.IItemHandler"
 import {$ControllerFluidHandler} from "com.buuz135.functionalstorage.fluid.ControllerFluidHandler"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$ItemControllableDrawerTile, $ItemControllableDrawerTile$$Type} from "com.buuz135.functionalstorage.block.tile.ItemControllableDrawerTile"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 
@@ -1058,6 +1078,14 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 
 constructor(arg0: $BasicTileBlock$$Type<(T)>, arg1: $BlockEntityType$$Type<(T)>, arg2: $BlockPos$$Type, arg3: $BlockState$$Type)
 
+public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $BlockEntity$$Type): void
+public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $ControllableDrawerTile$$Type): void
+public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $ActiveTile$$Type): void
+public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $ItemControllableDrawerTile$$Type): void
+public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: T): void
+public "getStorage"(): $IItemHandler
+public "initClient"(): void
+public "getStorageSlotAmount"(): integer
 public "onSlotActivated"(arg0: $Player$$Type, arg1: $InteractionHand$$Type, arg2: $Direction$$Type, arg3: double, arg4: double, arg5: double): $InteractionResult
 public "addConnectedDrawers"(arg0: $LinkingToolItem$ActionMode$$Type, ...arg1: ($BlockPos$$Type)[]): boolean
 public "toggleLocking"(): void
@@ -1065,20 +1093,14 @@ public "toggleOption"(arg0: $ConfigurationToolItem$ConfigurationAction$$Type): v
 public "getUtilitySlotAmount"(): integer
 public "getStorageUpgradesConstructor"(): $InventoryComponent<($ControllableDrawerTile<(T)>)>
 public "getConnectedDrawers"(): $ConnectedDrawers
-public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $ControllableDrawerTile$$Type): void
-public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $ActiveTile$$Type): void
-public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $BlockEntity$$Type): void
-public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: T): void
-public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $ItemControllableDrawerTile$$Type): void
-public "getStorage"(): $IItemHandler
-public "initClient"(): void
-public "getStorageSlotAmount"(): integer
 public "getFluidHandler"(arg0: $Direction$$Type): $IFluidHandler
+public "getUpdatePacket"(): $Packet
+get "storage"(): $IItemHandler
+get "storageSlotAmount"(): integer
 get "utilitySlotAmount"(): integer
 get "storageUpgradesConstructor"(): $InventoryComponent<($ControllableDrawerTile<(T)>)>
 get "connectedDrawers"(): $ConnectedDrawers
-get "storage"(): $IItemHandler
-get "storageSlotAmount"(): integer
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -1167,18 +1189,18 @@ export type $FramedTile$$Type = ($FramedTile);
 export type $FramedTile$$Original = $FramedTile;}
 declare module "com.buuz135.functionalstorage.block.CompactingFramedDrawerBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$List} from "java.util.List"
 import {$Multimap} from "com.google.common.collect.Multimap"
-import {$Direction} from "net.minecraft.core.Direction"
 import {$CompactingDrawerTile} from "com.buuz135.functionalstorage.block.tile.CompactingDrawerTile"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction} from "net.minecraft.core.Direction"
 import {$CompactingDrawerBlock} from "com.buuz135.functionalstorage.block.CompactingDrawerBlock"
 import {$HashMap} from "java.util.HashMap"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
-import {$FramedBlock$$Interface} from "com.buuz135.functionalstorage.block.FramedBlock"
 import {$RecipeOutput$$Type} from "net.minecraft.data.recipes.RecipeOutput"
+import {$FramedBlock$$Interface} from "com.buuz135.functionalstorage.block.FramedBlock"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$Item} from "net.minecraft.world.item.Item"
@@ -1212,8 +1234,8 @@ static "CACHED_SHAPES": $Multimap<($Direction), ($VoxelShape)>
 
 constructor(arg0: StringJS)
 
-public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($CompactingDrawerTile)>
 public "registerRecipe"(arg0: $RecipeOutput$$Type): void
+public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($CompactingDrawerTile)>
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "tileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($CompactingDrawerTile)>
 }
@@ -1230,16 +1252,18 @@ declare module "com.buuz135.functionalstorage.block.tile.FluidDrawerTile" {
 import {$ControllableDrawerTile} from "com.buuz135.functionalstorage.block.tile.ControllableDrawerTile"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
+import {$ActiveTile} from "com.hrznstudio.titanium.block.tile.ActiveTile"
 import {$BasicTileBlock$$Type} from "com.hrznstudio.titanium.block.BasicTileBlock"
 import {$DataComponentType} from "net.minecraft.core.component.DataComponentType"
-import {$IItemHandler} from "net.neoforged.neoforge.items.IItemHandler"
 import {$BigFluidHandler} from "com.buuz135.functionalstorage.fluid.BigFluidHandler"
+import {$IItemHandler} from "net.neoforged.neoforge.items.IItemHandler"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$SizeProvider} from "com.buuz135.functionalstorage.item.component.SizeProvider"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Supplier} from "java.util.function.Supplier"
 import {$InventoryComponent} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$IFluidHandler} from "net.neoforged.neoforge.fluids.capability.IFluidHandler"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$FunctionalStorage$DrawerType, $FunctionalStorage$DrawerType$$Type} from "com.buuz135.functionalstorage.FunctionalStorage$DrawerType"
@@ -1252,26 +1276,28 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 
 constructor(arg0: $BasicTileBlock$$Type<($FluidDrawerTile$$Type)>, arg1: $BlockEntityType$$Type<($FluidDrawerTile$$Type)>, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $FunctionalStorage$DrawerType$$Type)
 
+public "getItemHandler"(arg0: $Direction$$Type): $IItemHandler
+public "initClient"(): void
 public "setLocked"(arg0: boolean): void
-public "onSlotActivated"(arg0: $Player$$Type, arg1: $InteractionHand$$Type, arg2: $Direction$$Type, arg3: double, arg4: double, arg5: double, arg6: integer): $InteractionResult
+public "getStorageSlotAmount"(): integer
 public "isEverythingEmpty"(): boolean
+public "onSlotActivated"(arg0: $Player$$Type, arg1: $InteractionHand$$Type, arg2: $Direction$$Type, arg3: double, arg4: double, arg5: double, arg6: integer): $InteractionResult
 public "getStorageUpgradesConstructor"(): $InventoryComponent<($ControllableDrawerTile<($FluidDrawerTile)>)>
 public "isInventoryEmpty"(): boolean
 public "getDrawerType"(): $FunctionalStorage$DrawerType
-public "getItemHandler"(arg0: $Direction$$Type): $IItemHandler
-public "initClient"(): void
-public "getStorageSlotAmount"(): integer
-public "getSelf"(): $FluidDrawerTile
-public "getFluidHandler"(): $BigFluidHandler
+public "getSelf"(): $ActiveTile
 public "getFluidHandler"(arg0: $Direction$$Type): $IFluidHandler
+public "getFluidHandler"(): $BigFluidHandler
 public "onClicked"(arg0: $Player$$Type, arg1: integer): void
+public "getUpdatePacket"(): $Packet
 set "locked"(value: boolean)
+get "storageSlotAmount"(): integer
 get "everythingEmpty"(): boolean
 get "storageUpgradesConstructor"(): $InventoryComponent<($ControllableDrawerTile<($FluidDrawerTile)>)>
 get "inventoryEmpty"(): boolean
 get "drawerType"(): $FunctionalStorage$DrawerType
-get "storageSlotAmount"(): integer
-get "self"(): $FluidDrawerTile
+get "self"(): $ActiveTile
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -1288,8 +1314,8 @@ import {$ControllableDrawerTile$$Type} from "com.buuz135.functionalstorage.block
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$ActiveTile$$Type} from "com.hrznstudio.titanium.block.tile.ActiveTile"
-import {$BasicTileBlock$$Type} from "com.hrznstudio.titanium.block.BasicTileBlock"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$BasicTileBlock$$Type} from "com.hrznstudio.titanium.block.BasicTileBlock"
 import {$DataComponentType} from "net.minecraft.core.component.DataComponentType"
 import {$IItemHandler} from "net.neoforged.neoforge.items.IItemHandler"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
@@ -1298,6 +1324,7 @@ import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$SizeProvider} from "com.buuz135.functionalstorage.item.component.SizeProvider"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Supplier} from "java.util.function.Supplier"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$ItemControllableDrawerTile, $ItemControllableDrawerTile$$Type} from "com.buuz135.functionalstorage.block.tile.ItemControllableDrawerTile"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
@@ -1309,33 +1336,35 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 
 constructor(arg0: $BasicTileBlock$$Type<($EnderDrawerTile$$Type)>, arg1: $BlockEntityType$$Type<($EnderDrawerTile$$Type)>, arg2: $BlockPos$$Type, arg3: $BlockState$$Type)
 
-public "setLocked"(arg0: boolean): void
-public "onSlotActivated"(arg0: $Player$$Type, arg1: $InteractionHand$$Type, arg2: $Direction$$Type, arg3: double, arg4: double, arg5: double, arg6: integer): $InteractionResult
-public "isEverythingEmpty"(): boolean
 public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $ActiveTile$$Type): void
-public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $ControllableDrawerTile$$Type): void
+public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $EnderDrawerTile$$Type): void
 public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $ItemControllableDrawerTile$$Type): void
 public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $BlockEntity$$Type): void
-public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $EnderDrawerTile$$Type): void
+public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $ControllableDrawerTile$$Type): void
 public "loadAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "getStorage"(): $IItemHandler
 public "initClient"(): void
-public "getStorageSlotAmount"(): integer
+public "setLocked"(arg0: boolean): void
 public "setFrequency"(arg0: StringJS): void
+public "getStorageSlotAmount"(): integer
+public "isEverythingEmpty"(): boolean
+public "onSlotActivated"(arg0: $Player$$Type, arg1: $InteractionHand$$Type, arg2: $Direction$$Type, arg3: double, arg4: double, arg5: double, arg6: integer): $InteractionResult
 public "setLevel"(arg0: $Level$$Type): void
 public "isVoid"(): boolean
 public "getFrequency"(): StringJS
 public "getSelf"(): $EnderDrawerTile
 public "onClicked"(arg0: $Player$$Type, arg1: integer): void
-set "locked"(value: boolean)
-get "everythingEmpty"(): boolean
+public "getUpdatePacket"(): $Packet
 get "storage"(): $IItemHandler
-get "storageSlotAmount"(): integer
+set "locked"(value: boolean)
 set "frequency"(value: StringJS)
+get "storageSlotAmount"(): integer
+get "everythingEmpty"(): boolean
 set "level"(value: $Level$$Type)
 get "void"(): boolean
 get "frequency"(): StringJS
 get "self"(): $EnderDrawerTile
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -1352,6 +1381,7 @@ import {$SizeProvider} from "com.buuz135.functionalstorage.item.component.SizePr
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Supplier} from "java.util.function.Supplier"
 import {$BasicTileBlock$$Type} from "com.hrznstudio.titanium.block.BasicTileBlock"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$DataComponentType} from "net.minecraft.core.component.DataComponentType"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -1363,7 +1393,9 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 constructor(arg0: $BasicTileBlock$$Type<($ControllerExtensionTile$$Type)>, arg1: $BlockEntityType$$Type<($ControllerExtensionTile$$Type)>, arg2: $BlockPos$$Type, arg3: $BlockState$$Type)
 
 public "getSelf"(): $ControllerExtensionTile
+public "getUpdatePacket"(): $Packet
 get "self"(): $ControllerExtensionTile
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -1375,8 +1407,8 @@ export type $ControllerExtensionTile$$Type = ($ControllerExtensionTile);
  */
 export type $ControllerExtensionTile$$Original = $ControllerExtensionTile;}
 declare module "com.buuz135.functionalstorage.block.DrawerBlock" {
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$List} from "java.util.List"
 import {$Direction} from "net.minecraft.core.Direction"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
@@ -1429,11 +1461,11 @@ static readonly "CACHED_SHAPES": $HashMap<($FunctionalStorage$DrawerType), ($Mul
 constructor(arg0: $IWoodType$$Type, arg1: $FunctionalStorage$DrawerType$$Type, arg2: $BlockBehaviour$Properties$$Type)
 
 public "getBoundingBoxes"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): $List<($VoxelShape)>
+public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($DrawerTile)>
+public "getWoodType"(): $IWoodType
 public static "getDefaultHitShapes"(arg0: $FunctionalStorage$DrawerType$$Type, arg1: $BlockState$$Type): $Collection<($VoxelShape)>
 public "getHitShapes"(arg0: $BlockState$$Type): $Collection<($VoxelShape)>
-public "getWoodType"(): $IWoodType
-public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public "getType"(): $FunctionalStorage$DrawerType
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "tileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($DrawerTile)>
@@ -1451,16 +1483,16 @@ export type $DrawerBlock$$Type = ($DrawerBlock);
 export type $DrawerBlock$$Original = $DrawerBlock;}
 declare module "com.buuz135.functionalstorage.block.EnderDrawerBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$Collection} from "java.util.Collection"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$Collection} from "java.util.Collection"
 import {$List, $List$$Type} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$HashMap} from "java.util.HashMap"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
@@ -1501,8 +1533,8 @@ constructor()
 
 public "getBoundingBoxes"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): $List<($VoxelShape)>
 public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($EnderDrawerTile)>
-public "getHitShapes"(arg0: $BlockState$$Type): $Collection<($VoxelShape)>
 public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
+public "getHitShapes"(arg0: $BlockState$$Type): $Collection<($VoxelShape)>
 public "onRemove"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: boolean): void
 public static "getFrequencyDisplay"(arg0: StringJS): $List<($ItemStack)>
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
@@ -1521,9 +1553,9 @@ declare module "com.buuz135.functionalstorage.block.tile.CompactingDrawerTile" {
 import {$ControllableDrawerTile$$Type} from "com.buuz135.functionalstorage.block.tile.ControllableDrawerTile"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
-import {$ActiveTile$$Type} from "com.hrznstudio.titanium.block.tile.ActiveTile"
-import {$BasicTileBlock$$Type} from "com.hrznstudio.titanium.block.BasicTileBlock"
+import {$ActiveTile, $ActiveTile$$Type} from "com.hrznstudio.titanium.block.tile.ActiveTile"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$BasicTileBlock$$Type} from "com.hrznstudio.titanium.block.BasicTileBlock"
 import {$DataComponentType} from "net.minecraft.core.component.DataComponentType"
 import {$IItemHandler} from "net.neoforged.neoforge.items.IItemHandler"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
@@ -1532,6 +1564,7 @@ import {$SizeProvider} from "com.buuz135.functionalstorage.item.component.SizePr
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Supplier} from "java.util.function.Supplier"
 import {$CompactingInventoryHandler} from "com.buuz135.functionalstorage.inventory.CompactingInventoryHandler"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$ItemControllableDrawerTile, $ItemControllableDrawerTile$$Type} from "com.buuz135.functionalstorage.block.tile.ItemControllableDrawerTile"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
@@ -1544,20 +1577,22 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 
 constructor(arg0: $BasicTileBlock$$Type<($CompactingDrawerTile$$Type)>, arg1: $BlockEntityType$$Type<($CompactingDrawerTile$$Type)>, arg2: $BlockPos$$Type, arg3: $BlockState$$Type)
 
-public "onSlotActivated"(arg0: $Player$$Type, arg1: $InteractionHand$$Type, arg2: $Direction$$Type, arg3: double, arg4: double, arg5: double, arg6: integer): $InteractionResult
-public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $ControllableDrawerTile$$Type): void
 public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $ActiveTile$$Type): void
 public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $BlockEntity$$Type): void
-public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $ItemControllableDrawerTile$$Type): void
+public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $ControllableDrawerTile$$Type): void
 public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $CompactingDrawerTile$$Type): void
+public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $ItemControllableDrawerTile$$Type): void
 public "getStorage"(): $IItemHandler
 public "initClient"(): void
 public "getStorageSlotAmount"(): integer
+public "onSlotActivated"(arg0: $Player$$Type, arg1: $InteractionHand$$Type, arg2: $Direction$$Type, arg3: double, arg4: double, arg5: double, arg6: integer): $InteractionResult
 public "getHandler"(): $CompactingInventoryHandler
-public "getSelf"(): $CompactingDrawerTile
+public "getSelf"(): $ActiveTile
+public "getUpdatePacket"(): $Packet
 get "storage"(): $IItemHandler
 get "storageSlotAmount"(): integer
-get "self"(): $CompactingDrawerTile
+get "self"(): $ActiveTile
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -1573,11 +1608,11 @@ import {$ConfigurationToolItem$ConfigurationAction$$Type} from "com.buuz135.func
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$DrawerProperties$$Type} from "com.buuz135.functionalstorage.block.tile.DrawerProperties"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
-import {$ActiveTile, $ActiveTile$$Type} from "com.hrznstudio.titanium.block.tile.ActiveTile"
 import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
-import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$BasicTileBlock$$Type} from "com.hrznstudio.titanium.block.BasicTileBlock"
+import {$ActiveTile, $ActiveTile$$Type} from "com.hrznstudio.titanium.block.tile.ActiveTile"
 import {$ControllableDrawerTile$DrawerOptions} from "com.buuz135.functionalstorage.block.tile.ControllableDrawerTile$DrawerOptions"
+import {$BasicTileBlock$$Type} from "com.hrznstudio.titanium.block.BasicTileBlock"
+import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$DataComponentType} from "net.minecraft.core.component.DataComponentType"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
@@ -1586,6 +1621,7 @@ import {$SizeProvider} from "com.buuz135.functionalstorage.item.component.SizePr
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Supplier} from "java.util.function.Supplier"
 import {$InventoryComponent} from "com.hrznstudio.titanium.component.inventory.InventoryComponent"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -1596,14 +1632,21 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 
 constructor(arg0: $BasicTileBlock$$Type<(T)>, arg1: $BlockEntityType$$Type<(T)>, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $DrawerProperties$$Type)
 
-public "setControllerPos"(arg0: $BlockPos$$Type): void
-public "getControllerPos"(): $BlockPos
 public "getTitleColor"(): integer
 public "getFacingDirection"(): $Direction
+public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $ActiveTile$$Type): void
+public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: T): void
+public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $BlockEntity$$Type): void
+public "loadAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
+public "initClient"(): void
+public "recalculateUpgrades"(): void
 public "setLocked"(arg0: boolean): void
-public "onSlotActivated"(arg0: $Player$$Type, arg1: $InteractionHand$$Type, arg2: $Direction$$Type, arg3: double, arg4: double, arg5: double, arg6: integer): $InteractionResult
+public "setControllerPos"(arg0: $BlockPos$$Type): void
+public "getControllerPos"(): $BlockPos
+public "getStorageSlotAmount"(): integer
 public "isEverythingEmpty"(): boolean
 public "getStorageUpgrades"(): $InventoryComponent<($ControllableDrawerTile<(T)>)>
+public "onSlotActivated"(arg0: $Player$$Type, arg1: $InteractionHand$$Type, arg2: $Direction$$Type, arg3: double, arg4: double, arg5: double, arg6: integer): $InteractionResult
 public "getDrawerOptions"(): $ControllableDrawerTile$DrawerOptions
 public "getUtilityUpgrades"(): $InventoryComponent<($ControllableDrawerTile<(T)>)>
 public "toggleLocking"(): void
@@ -1614,22 +1657,17 @@ public "getUtilitySlotAmount"(): integer
 public "getStorageUpgradesConstructor"(): $InventoryComponent<($ControllableDrawerTile<(T)>)>
 public "isStorageUpgradeLocked"(): boolean
 public "clearControllerPos"(): void
-public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: T): void
-public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $BlockEntity$$Type): void
-public "serverTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $ActiveTile$$Type): void
-public "loadAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
-public "initClient"(): void
-public "getStorageSlotAmount"(): integer
-public "recalculateUpgrades"(): void
 public "isVoid"(): boolean
 public "isLocked"(): boolean
 public "isCreative"(): boolean
 public "onClicked"(arg0: $Player$$Type, arg1: integer): void
-set "controllerPos"(value: $BlockPos$$Type)
-get "controllerPos"(): $BlockPos
+public "getUpdatePacket"(): $Packet
 get "titleColor"(): integer
 get "facingDirection"(): $Direction
 set "locked"(value: boolean)
+set "controllerPos"(value: $BlockPos$$Type)
+get "controllerPos"(): $BlockPos
+get "storageSlotAmount"(): integer
 get "everythingEmpty"(): boolean
 get "storageUpgrades"(): $InventoryComponent<($ControllableDrawerTile<(T)>)>
 get "drawerOptions"(): $ControllableDrawerTile$DrawerOptions
@@ -1639,10 +1677,10 @@ set "needsUpgradeCache"(value: boolean)
 get "utilitySlotAmount"(): integer
 get "storageUpgradesConstructor"(): $InventoryComponent<($ControllableDrawerTile<(T)>)>
 get "storageUpgradeLocked"(): boolean
-get "storageSlotAmount"(): integer
 get "void"(): boolean
 get "locked"(): boolean
 get "creative"(): boolean
+get "updatePacket"(): $Packet
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -1655,24 +1693,24 @@ export type $ControllableDrawerTile$$Type<T> = ($ControllableDrawerTile<(T)>);
 export type $ControllableDrawerTile$$Original<T> = $ControllableDrawerTile<(T)>;}
 declare module "com.buuz135.functionalstorage.block.FramedDrawerBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$List} from "java.util.List"
 import {$Multimap} from "com.google.common.collect.Multimap"
-import {$Direction} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction} from "net.minecraft.core.Direction"
 import {$DrawerTile} from "com.buuz135.functionalstorage.block.tile.DrawerTile"
 import {$HashMap} from "java.util.HashMap"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
-import {$FramedBlock$$Interface} from "com.buuz135.functionalstorage.block.FramedBlock"
 import {$RecipeOutput$$Type} from "net.minecraft.data.recipes.RecipeOutput"
+import {$FramedBlock$$Interface} from "com.buuz135.functionalstorage.block.FramedBlock"
 import {$DrawerBlock} from "com.buuz135.functionalstorage.block.DrawerBlock"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$FramedDrawerModelData} from "com.buuz135.functionalstorage.client.model.FramedDrawerModelData"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$FunctionalStorage$DrawerType, $FunctionalStorage$DrawerType$$Type} from "com.buuz135.functionalstorage.FunctionalStorage$DrawerType"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$DirectionProperty} from "net.minecraft.world.level.block.state.properties.DirectionProperty"
@@ -1705,9 +1743,9 @@ static readonly "CACHED_SHAPES": $HashMap<($FunctionalStorage$DrawerType), ($Mul
 
 constructor(arg0: $FunctionalStorage$DrawerType$$Type)
 
+public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($DrawerTile)>
 public static "getDrawerModelData"(arg0: $ItemStack$$Type): $FramedDrawerModelData
-public "registerRecipe"(arg0: $RecipeOutput$$Type): void
 public static "fill"(arg0: $ItemStack$$Type, arg1: $ItemStack$$Type, arg2: $ItemStack$$Type, arg3: $ItemStack$$Type): $ItemStack
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "tileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($DrawerTile)>
@@ -1722,8 +1760,8 @@ export type $FramedDrawerBlock$$Type = ($FramedDrawerBlock);
  */
 export type $FramedDrawerBlock$$Original = $FramedDrawerBlock;}
 declare module "com.buuz135.functionalstorage.block.Drawer" {
-import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$LootParams$Builder$$Type} from "net.minecraft.world.level.storage.loot.LootParams$Builder"
+import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$List, $List$$Type} from "java.util.List"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
@@ -1732,11 +1770,11 @@ import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$BasicBlockLootTables$$Type} from "com.hrznstudio.titanium.datagenerator.loot.block.BasicBlockLootTables"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$LootTable$Builder} from "net.minecraft.world.level.storage.loot.LootTable$Builder"
+import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Class$$Type} from "java.lang.Class"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -1745,9 +1783,9 @@ import {$Collection} from "java.util.Collection"
 import {$ControllableDrawerTile} from "com.buuz135.functionalstorage.block.tile.ControllableDrawerTile"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$HitResult$$Type} from "net.minecraft.world.phys.HitResult"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$RotatableBlock} from "com.hrznstudio.titanium.block.RotatableBlock"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
@@ -1785,12 +1823,12 @@ constructor(arg0: StringJS, arg1: $BlockBehaviour$Properties$$Type, arg2: $Class
 public "hasCustomBoxes"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): boolean
 public "getDynamicDrops"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: boolean): $NonNullList<($ItemStack)>
 public "getRotationType"(): $RotatableBlock$RotationType
-public "getHitShapes"(arg0: $BlockState$$Type): $Collection<($VoxelShape)>
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
 public "getDrops"(arg0: $BlockState$$Type, arg1: $LootParams$Builder$$Type): $List<($ItemStack)>
 public "setPlacedBy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $LivingEntity$$Type, arg4: $ItemStack$$Type): void
 public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
 public "canConnectRedstone"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $Direction$$Type): boolean
+public "getHitShapes"(arg0: $BlockState$$Type): $Collection<($VoxelShape)>
 public "getCloneItemStack"(arg0: $BlockState$$Type, arg1: $HitResult$$Type, arg2: $LevelReader$$Type, arg3: $BlockPos$$Type, arg4: $Player$$Type): $ItemStack
 public "getCollisionShape"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $CollisionContext$$Type): $VoxelShape
 public "getLootTable"(arg0: any): $LootTable$Builder
@@ -1816,8 +1854,8 @@ export type $Drawer$$Original<T> = $Drawer<(T)>;}
 declare module "com.buuz135.functionalstorage.block.ArmoryCabinetBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$LootParams$Builder$$Type} from "net.minecraft.world.level.storage.loot.LootParams$Builder"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$List} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
@@ -1882,8 +1920,8 @@ export type $ArmoryCabinetBlock$$Type = ($ArmoryCabinetBlock);
 export type $ArmoryCabinetBlock$$Original = $ArmoryCabinetBlock;}
 declare module "com.buuz135.functionalstorage.block.DrawerControllerBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$StorageControllerBlock} from "com.buuz135.functionalstorage.block.StorageControllerBlock"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$BasicBlockLootTables$$Type} from "com.hrznstudio.titanium.datagenerator.loot.block.BasicBlockLootTables"
@@ -1920,8 +1958,8 @@ static readonly "FACING_HORIZONTAL": $DirectionProperty
 
 constructor()
 
-public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<(never)>
 public "registerRecipe"(arg0: $RecipeOutput$$Type): void
+public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<(never)>
 public "getLootTable"(arg0: any): $LootTable$Builder
 public "getLootTable"(arg0: $BasicBlockLootTables$$Type): $LootTable$Builder
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
@@ -1937,8 +1975,8 @@ export type $DrawerControllerBlock$$Type = ($DrawerControllerBlock);
  */
 export type $DrawerControllerBlock$$Original = $DrawerControllerBlock;}
 declare module "com.buuz135.functionalstorage.block.FluidDrawerBlock" {
-import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$BlockEntityType$BlockEntitySupplier} from "net.minecraft.world.level.block.entity.BlockEntityType$BlockEntitySupplier"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$List, $List$$Type} from "java.util.List"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
@@ -1953,8 +1991,8 @@ import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Objec
 import {$Collection} from "java.util.Collection"
 import {$FluidDrawerTile} from "com.buuz135.functionalstorage.block.tile.FluidDrawerTile"
 import {$Block} from "net.minecraft.world.level.block.Block"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
@@ -1987,10 +2025,10 @@ static readonly "FACING_HORIZONTAL": $DirectionProperty
 constructor(arg0: $FunctionalStorage$DrawerType$$Type, arg1: $BlockBehaviour$Properties$$Type)
 
 public "getBoundingBoxes"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): $List<($VoxelShape)>
-public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($FluidDrawerTile)>
-public "getHitShapes"(arg0: $BlockState$$Type): $Collection<($VoxelShape)>
-public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
 public "registerRecipe"(arg0: $RecipeOutput$$Type): void
+public "getTileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($FluidDrawerTile)>
+public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
+public "getHitShapes"(arg0: $BlockState$$Type): $Collection<($VoxelShape)>
 public "getType"(): $FunctionalStorage$DrawerType
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "tileEntityFactory"(): $BlockEntityType$BlockEntitySupplier<($FluidDrawerTile)>

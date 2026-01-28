@@ -1,6 +1,6 @@
 declare module "dev.technici4n.moderndynamics.MdBlock" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$PipeBlockEntity, $PipeBlockEntity$$Type} from "dev.technici4n.moderndynamics.pipe.PipeBlockEntity"
@@ -40,16 +40,16 @@ static readonly "UPDATE_CLIENTS": integer
 
 constructor(arg0: StringJS, arg1: $BlockBehaviour$Properties$$Type)
 
-public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
-public "getBlockEntityType"(): $BlockEntityType<($PipeBlockEntity)>
 public "setBlockEntityProvider"(arg0: $BlockEntityType$$Type<($PipeBlockEntity$$Type)>): void
 public "getBlockEntityTypeNullable"(): $BlockEntityType<($PipeBlockEntity)>
+public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
+public "getBlockEntityType"(): $BlockEntityType<($PipeBlockEntity)>
 public "getTicker"<T extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
 public "getListener"<T extends $BlockEntity>(arg0: $ServerLevel$$Type, arg1: T): $GameEventListener
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
-get "blockEntityType"(): $BlockEntityType<($PipeBlockEntity)>
 set "blockEntityProvider"(value: $BlockEntityType$$Type<($PipeBlockEntity$$Type)>)
 get "blockEntityTypeNullable"(): $BlockEntityType<($PipeBlockEntity)>
+get "blockEntityType"(): $BlockEntityType<($PipeBlockEntity)>
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -67,23 +67,23 @@ import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
-import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
 
 export class $MdBlockEntity extends $BlockEntity {
 static readonly "ATTACHMENTS_NBT_KEY": StringJS
 
 constructor(arg0: $BlockEntityType$$Type<(never)>, arg1: $BlockPos$$Type, arg2: $BlockState$$Type)
 
-public "loadAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
-public "getUpdatePacket"(): $Packet
-public "getUpdateTag"(arg0: $HolderLookup$Provider$$Type): $CompoundTag
 public "toClientTag"(arg0: $CompoundTag$$Type, arg1: $RegistryAccess$$Type): void
 public "fromClientTag"(arg0: $CompoundTag$$Type, arg1: $RegistryAccess$$Type): void
 public "toTag"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "remesh"(): void
-public "sync"(): void
+public "getUpdatePacket"(): $Packet
+public "loadAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
+public "getUpdateTag"(arg0: $HolderLookup$Provider$$Type): $CompoundTag
 public "sync"(arg0: boolean): void
+public "sync"(): void
 public "fromTag"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 get "updatePacket"(): $Packet
 }

@@ -35,17 +35,17 @@ public "rtype"(): $FFIType
 public "nargs"(): integer
 public static "nrtype"(arg0: long): $FFIType
 public "abi"(): integer
-public static "malloc"(arg0: $MemoryStack$$Type): $FFICIF
-public static "malloc"(arg0: integer, arg1: $MemoryStack$$Type): $FFICIF$Buffer
-public static "malloc"(arg0: integer): $FFICIF$Buffer
-public static "malloc"(): $FFICIF
-public static "calloc"(arg0: integer, arg1: $MemoryStack$$Type): $FFICIF$Buffer
-public static "calloc"(arg0: integer): $FFICIF$Buffer
 public static "calloc"(): $FFICIF
 public static "calloc"(arg0: $MemoryStack$$Type): $FFICIF
+public static "calloc"(arg0: integer, arg1: $MemoryStack$$Type): $FFICIF$Buffer
+public static "calloc"(arg0: integer): $FFICIF$Buffer
 public static "createSafe"(arg0: long): $FFICIF
 public static "createSafe"(arg0: long, arg1: integer): $FFICIF$Buffer
 public "sizeof"(): integer
+public static "malloc"(arg0: integer): $FFICIF$Buffer
+public static "malloc"(): $FFICIF
+public static "malloc"(arg0: integer, arg1: $MemoryStack$$Type): $FFICIF$Buffer
+public static "malloc"(arg0: $MemoryStack$$Type): $FFICIF
 public "arg_types"(arg0: integer): $PointerBuffer
 public static "nabi"(arg0: long): integer
 public static "nnargs"(arg0: long): integer

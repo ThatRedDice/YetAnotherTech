@@ -9,8 +9,8 @@ import {$IItemHandler} from "net.neoforged.neoforge.items.IItemHandler"
 import {$KineticBlockEntity} from "com.simibubi.create.content.kinetics.base.KineticBlockEntity"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$SequencedGearshiftBlockEntity$SequenceContext} from "com.simibubi.create.content.kinetics.transmission.sequencer.SequencedGearshiftBlockEntity$SequenceContext"
-import {$RecipeHolder} from "net.minecraft.world.item.crafting.RecipeHolder"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
+import {$RecipeHolder} from "net.minecraft.world.item.crafting.RecipeHolder"
 import {$BlockEntityBehaviour$$Type} from "com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour"
 import {$RollingRecipe} from "com.mrh0.createaddition.recipe.rolling.RollingRecipe"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
@@ -32,15 +32,15 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 
 constructor(arg0: $BlockEntityType$$Type<(never)>, arg1: $BlockPos$$Type, arg2: $BlockState$$Type)
 
-public "spawnParticles"(): void
-public "addBehaviours"(arg0: $List$$Type<($BlockEntityBehaviour$$Type)>): void
 public "getProcessingSpeed"(): integer
 public "tickAudio"(): void
-public "invalidate"(): void
+public "spawnParticles"(): void
+public "addBehaviours"(arg0: $List$$Type<($BlockEntityBehaviour$$Type)>): void
 public "tick"(): void
 public "find"(arg0: $RecipeWrapper$$Type, arg1: $Level$$Type): $Optional<($RecipeHolder<($RollingRecipe)>)>
 public "write"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type, arg2: boolean): void
 public "destroy"(): void
+public "invalidate"(): void
 public static "registerCapabilities"(arg0: $RegisterCapabilitiesEvent$$Type): void
 get "processingSpeed"(): integer
 }
@@ -55,8 +55,8 @@ export type $RollingMillBlockEntity$$Type = ($RollingMillBlockEntity);
 export type $RollingMillBlockEntity$$Original = $RollingMillBlockEntity;}
 declare module "com.mrh0.createaddition.blocks.connector.LargeConnectorBlockEntity" {
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
-import {$RegisterCapabilitiesEvent$$Type} from "net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$RegisterCapabilitiesEvent$$Type} from "net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent"
 import {$List$$Type} from "java.util.List"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$WireType, $WireType$$Type} from "com.mrh0.createaddition.energy.WireType"
@@ -84,13 +84,13 @@ static readonly "OFFSET_SOUTH": $Vec3
 
 constructor(arg0: $BlockEntityType$$Type<(never)>, arg1: $BlockPos$$Type, arg2: $BlockState$$Type)
 
-public "getNodeCount"(): integer
-public "addBehaviours"(arg0: $List$$Type<($BlockEntityBehaviour$$Type)>): void
 public "getMaxIn"(): integer
 public "getMaxOut"(): integer
 public "getNodeOffset"(arg0: integer): $Vec3
 public "getConnectorType"(): $ConnectorType
 public "getMaxWireLength"(): integer
+public "getNodeCount"(): integer
+public "addBehaviours"(arg0: $List$$Type<($BlockEntityBehaviour$$Type)>): void
 public static "registerCapabilities"(arg0: $RegisterCapabilitiesEvent$$Type): void
 public static "getTypeOfConnection"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockPos$$Type): $WireType
 public static "getWireNodeFrom"(arg0: integer, arg1: $IWireNode$$Type, arg2: ($LocalNode$$Type)[], arg3: ($IWireNode$$Type)[], arg4: $Level$$Type): $IWireNode
@@ -102,11 +102,11 @@ public static "readNodeWireType"(arg0: $CompoundTag$$Type, arg1: integer): $Wire
 public static "readNodeOtherIndex"(arg0: $CompoundTag$$Type, arg1: integer): integer
 public static "connect"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: integer, arg3: $BlockPos$$Type, arg4: integer, arg5: $WireType$$Type): $WireConnectResult
 public static "disconnect"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockPos$$Type): $WireConnectResult
-get "nodeCount"(): integer
 get "maxIn"(): integer
 get "maxOut"(): integer
 get "connectorType"(): $ConnectorType
 get "maxWireLength"(): integer
+get "nodeCount"(): integer
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -131,14 +131,14 @@ import {$DataGenContext$$Type} from "com.tterrag.registrate.providers.DataGenCon
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$RegistrateBlockstateProvider$$Type} from "com.tterrag.registrate.providers.RegistrateBlockstateProvider"
 import {$BlockEntityType, $BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
+import {$RegistrateBlockstateProvider$$Type} from "com.tterrag.registrate.providers.RegistrateBlockstateProvider"
 import {$Function$$Type} from "java.util.function.Function"
 import {$RedstoneRelayBlockEntity, $RedstoneRelayBlockEntity$$Type} from "com.mrh0.createaddition.blocks.redstone_relay.RedstoneRelayBlockEntity"
-import {$Item} from "net.minecraft.world.item.Item"
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
-import {$Class} from "java.lang.Class"
+import {$Item} from "net.minecraft.world.item.Item"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
+import {$Class} from "java.lang.Class"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$IWrenchable$$Interface} from "com.simibubi.create.content.equipment.wrench.IWrenchable"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
@@ -150,8 +150,8 @@ import {$StructureTransform$$Type} from "com.simibubi.create.content.contraption
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
-import {$InteractionResult, $InteractionResult$$Type} from "net.minecraft.world.InteractionResult"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
+import {$InteractionResult, $InteractionResult$$Type} from "net.minecraft.world.InteractionResult"
 import {$ItemInteractionResult, $ItemInteractionResult$$Type} from "net.minecraft.world.ItemInteractionResult"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
@@ -161,8 +161,8 @@ import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
-import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
+import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$DirectionProperty} from "net.minecraft.world.level.block.state.properties.DirectionProperty"
 
 export class $RedstoneRelayBlock extends $Block implements $IBE$$Interface<($RedstoneRelayBlockEntity)>, $IWrenchable$$Interface, $TransformableBlock$$Interface {
@@ -193,6 +193,7 @@ static readonly "UPDATE_CLIENTS": integer
 
 constructor(arg0: $BlockBehaviour$Properties$$Type)
 
+public static "makeBlockState"(arg0: $DataGenContext$$Type<($Block$$Type), ($RedstoneRelayBlock$$Type)>, arg1: $RegistrateBlockstateProvider$$Type): void
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
 public "setPlacedBy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $LivingEntity$$Type, arg4: $ItemStack$$Type): void
 public "playerWillDestroy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $Player$$Type): $BlockState
@@ -200,7 +201,6 @@ public "canConnectRedstone"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, a
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
 public "getBlockEntityType"(): $BlockEntityType<($RedstoneRelayBlockEntity)>
 public "getBlockEntityClass"(): $Class<($RedstoneRelayBlockEntity)>
-public static "makeBlockState"(arg0: $DataGenContext$$Type<($Block$$Type), ($RedstoneRelayBlock$$Type)>, arg1: $RegistrateBlockstateProvider$$Type): void
 public "onSneakWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $InteractionResult
 public "tick"(arg0: $BlockState$$Type, arg1: $ServerLevel$$Type, arg2: $BlockPos$$Type, arg3: $RandomSource$$Type): void
 public "getShape"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $CollisionContext$$Type): $VoxelShape
@@ -217,8 +217,8 @@ public "onBlockEntityUse"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2:
 public "onBlockEntityUseItemOn"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $Function$$Type<($RedstoneRelayBlockEntity), ($ItemInteractionResult$$Type)>): $ItemInteractionResult
 public "getBlockEntity"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type): $RedstoneRelayBlockEntity
 public static "onRemove"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): void
-public static "playRotateSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public "onWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $InteractionResult
+public static "playRotateSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public "getRotatedBlockState"(arg0: $BlockState$$Type, arg1: $Direction$$Type): $BlockState
 public "updateAfterWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $BlockState
 public static "playRemoveSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
@@ -269,42 +269,42 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 
 constructor(arg0: $BlockEntityType$$Type<(never)>, arg1: $BlockPos$$Type, arg2: $BlockState$$Type)
 
-public "getEnergy"(): $InternalEnergyStorage
-public static "getCapacityMultiplier"(): integer
-public "sendDataImmediately"(): void
-public "getFillState"(): float
-public "getCurrentValue"(): integer
-public "onChunkUnloaded"(): void
-public "addBehaviours"(arg0: $List$$Type<($BlockEntityBehaviour$$Type)>): void
-public "sendData"(): void
-public "getMaxWidth"(): integer
-public static "getMaxHeight"(): integer
 public "onObserved"(arg0: $ServerPlayer$$Type, arg1: $ObservePacketPayload$$Type): void
-public "getControllerBE"(): $ModularAccumulatorBlockEntity
-public "isController"(): boolean
-public "getController"(): $BlockPos
-public "setController"(arg0: $BlockPos$$Type): void
-public "updateCache"(): void
+public "getEnergy"(): $InternalEnergyStorage
 public "addToGoggleTooltip"(arg0: $List$$Type<($Component$$Type)>, arg1: boolean): boolean
 public "tickAudio"(): void
-public "observe"(): void
 public "tickOutput"(): void
 public "tickOutputSide"(arg0: $Direction$$Type): void
 public "getTotalAccumulatorSize"(): integer
 public "applySize"(arg0: integer): void
 public "hasAccumulator"(): boolean
 public "drawDebug"(): void
+public "onChunkUnloaded"(): void
+public "addBehaviours"(arg0: $List$$Type<($BlockEntityBehaviour$$Type)>): void
+public "sendData"(): void
+public "getMaxWidth"(): integer
+public static "getMaxHeight"(): integer
+public "observe"(): void
+public "updateCache"(): void
+public static "getCapacityMultiplier"(): integer
+public "sendDataImmediately"(): void
+public "getFillState"(): float
+public "getCurrentValue"(): integer
+public "getController"(): $BlockPos
+public "setController"(arg0: $BlockPos$$Type): void
+public "getControllerBE"(): $ModularAccumulatorBlockEntity
+public "isController"(): boolean
 public "removeController"(arg0: boolean): void
 public "notifyMultiUpdated"(): void
 public "getMainConnectionAxis"(): $Direction$Axis
 public "getLastKnownPos"(): $BlockPos
 public "preventConnectivityUpdate"(): void
+public "getMinValue"(): integer
+public "getMaxValue"(): integer
+public "tick"(): void
 public "getWidth"(): integer
 public "getHeight"(): integer
 public "setSize"(arg0: integer, arg1: integer): void
-public "tick"(): void
-public "getMinValue"(): integer
-public "getMaxValue"(): integer
 public "format"(arg0: integer): $MutableComponent
 public "initialize"(): void
 public "write"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type, arg2: boolean): void
@@ -320,22 +320,22 @@ public "setExtraData"(arg0: any): void
 public "modifyExtraData"(arg0: any): any
 public "getExtraData"(): any
 get "energy"(): $InternalEnergyStorage
+get "totalAccumulatorSize"(): integer
+get "maxWidth"(): integer
+public static get "maxHeight"(): integer
 public static get "capacityMultiplier"(): integer
 get "fillState"(): float
 get "currentValue"(): integer
-get "maxWidth"(): integer
-public static get "maxHeight"(): integer
-get "controllerBE"(): $ModularAccumulatorBlockEntity
-get "controller"(): boolean
 get "controller"(): $BlockPos
 set "controller"(value: $BlockPos$$Type)
-get "totalAccumulatorSize"(): integer
+get "controllerBE"(): $ModularAccumulatorBlockEntity
+get "controller"(): boolean
 get "mainConnectionAxis"(): $Direction$Axis
 get "lastKnownPos"(): $BlockPos
-get "width"(): integer
-get "height"(): integer
 get "minValue"(): integer
 get "maxValue"(): integer
+get "width"(): integer
+get "height"(): integer
 set "width"(value: integer)
 set "height"(value: integer)
 set "extraData"(value: any)
@@ -376,9 +376,6 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 
 constructor(arg0: $BlockEntityType$$Type<($ElectricMotorBlockEntity$$Type)>, arg1: $BlockPos$$Type, arg2: $BlockState$$Type)
 
-public "addBehaviours"(arg0: $List$$Type<($BlockEntityBehaviour$$Type)>): void
-public "lazyTick"(): void
-public "writeSafe"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "updateGeneratedRotation"(arg0: integer): void
 public "addToGoggleTooltip"(arg0: $List$$Type<($Component$$Type)>, arg1: boolean): boolean
 public "getGeneratedSpeed"(): float
@@ -392,6 +389,9 @@ public "getRPM"(): float
 public "getGeneratedStress"(): integer
 public "getEnergyConsumption"(): integer
 public "isPoweredState"(): boolean
+public "addBehaviours"(arg0: $List$$Type<($BlockEntityBehaviour$$Type)>): void
+public "lazyTick"(): void
+public "writeSafe"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "tick"(): void
 public "initialize"(): void
 public static "step"(arg0: $ScrollValueBehaviour$StepContext$$Type): integer
@@ -426,8 +426,8 @@ import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$AlternatorBlockEntity, $AlternatorBlockEntity$$Type} from "com.mrh0.createaddition.blocks.alternator.AlternatorBlockEntity"
 import {$BlockEntityType, $BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Function$$Type} from "java.util.function.Function"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Class} from "java.lang.Class"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
@@ -472,11 +472,11 @@ static readonly "FACING": $DirectionProperty
 
 constructor(arg0: $BlockBehaviour$Properties$$Type)
 
+public "hasShaftTowards"(arg0: $LevelReader$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $Direction$$Type): boolean
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
 public "getRotationAxis"(arg0: $BlockState$$Type): $Direction$Axis
 public "getBlockEntityType"(): $BlockEntityType<($AlternatorBlockEntity)>
-public "hasShaftTowards"(arg0: $LevelReader$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $Direction$$Type): boolean
 public "getBlockEntityClass"(): $Class<($AlternatorBlockEntity)>
 public "getShape"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $CollisionContext$$Type): $VoxelShape
 public "neighborChanged"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Block$$Type, arg4: $BlockPos$$Type, arg5: boolean): void
@@ -513,13 +513,13 @@ import {$DataGenContext$$Type} from "com.tterrag.registrate.providers.DataGenCon
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$RegistrateBlockstateProvider$$Type} from "com.tterrag.registrate.providers.RegistrateBlockstateProvider"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Class} from "java.lang.Class"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$ConnectorMode} from "com.mrh0.createaddition.blocks.connector.base.ConnectorMode"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
@@ -527,8 +527,8 @@ import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$ConnectorVariant} from "com.mrh0.createaddition.blocks.connector.base.ConnectorVariant"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
-import {$SmallLightConnectorBlockEntity} from "com.mrh0.createaddition.blocks.connector.SmallLightConnectorBlockEntity"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
+import {$SmallLightConnectorBlockEntity} from "com.mrh0.createaddition.blocks.connector.SmallLightConnectorBlockEntity"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$DirectionProperty} from "net.minecraft.world.level.block.state.properties.DirectionProperty"
@@ -559,11 +559,11 @@ static readonly "FACING": $DirectionProperty
 
 constructor(arg0: $BlockBehaviour$Properties$$Type)
 
+public static "makeBlockState"(arg0: $DataGenContext$$Type<($Block$$Type), ($SmallLightConnectorBlock$$Type)>, arg1: $RegistrateBlockstateProvider$$Type): void
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
 public "getBlockEntityType"(): $BlockEntityType<($SmallLightConnectorBlockEntity)>
 public "getBlockEntityClass"(): $Class<($SmallLightConnectorBlockEntity)>
-public static "makeBlockState"(arg0: $DataGenContext$$Type<($Block$$Type), ($SmallLightConnectorBlock$$Type)>, arg1: $RegistrateBlockstateProvider$$Type): void
 public "getShape"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $CollisionContext$$Type): $VoxelShape
 public "getLightEmission"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): integer
 public static "onRemove"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): void
@@ -584,8 +584,8 @@ export type $SmallLightConnectorBlock$$Type = ($SmallLightConnectorBlock);
 export type $SmallLightConnectorBlock$$Original = $SmallLightConnectorBlock;}
 declare module "com.mrh0.createaddition.blocks.connector.SmallLightConnectorBlockEntity" {
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
-import {$RegisterCapabilitiesEvent$$Type} from "net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$RegisterCapabilitiesEvent$$Type} from "net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent"
 import {$List$$Type} from "java.util.List"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$WireType, $WireType$$Type} from "com.mrh0.createaddition.energy.WireType"
@@ -614,14 +614,14 @@ static readonly "OFFSET_SOUTH": $Vec3
 
 constructor(arg0: $BlockEntityType$$Type<(never)>, arg1: $BlockPos$$Type, arg2: $BlockState$$Type)
 
-public "getNodeCount"(): integer
-public "addBehaviours"(arg0: $List$$Type<($BlockEntityBehaviour$$Type)>): void
-public "writeSafe"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "getMaxIn"(): integer
 public "getMaxOut"(): integer
 public "getNodeOffset"(arg0: integer): $Vec3
 public "getConnectorType"(): $ConnectorType
 public "getMaxWireLength"(): integer
+public "getNodeCount"(): integer
+public "addBehaviours"(arg0: $List$$Type<($BlockEntityBehaviour$$Type)>): void
+public "writeSafe"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "read"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type, arg2: boolean): void
 public static "registerCapabilities"(arg0: $RegisterCapabilitiesEvent$$Type): void
 public static "getTypeOfConnection"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockPos$$Type): $WireType
@@ -634,11 +634,11 @@ public static "readNodeWireType"(arg0: $CompoundTag$$Type, arg1: integer): $Wire
 public static "readNodeOtherIndex"(arg0: $CompoundTag$$Type, arg1: integer): integer
 public static "connect"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: integer, arg3: $BlockPos$$Type, arg4: integer, arg5: $WireType$$Type): $WireConnectResult
 public static "disconnect"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockPos$$Type): $WireConnectResult
-get "nodeCount"(): integer
 get "maxIn"(): integer
 get "maxOut"(): integer
 get "connectorType"(): $ConnectorType
 get "maxWireLength"(): integer
+get "nodeCount"(): integer
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -652,8 +652,8 @@ export type $SmallLightConnectorBlockEntity$$Original = $SmallLightConnectorBloc
 declare module "com.mrh0.createaddition.blocks.creative_energy.CreativeEnergyBlockEntity" {
 import {$RegisterCapabilitiesEvent$$Type} from "net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$CrateBlockEntity} from "com.simibubi.create.content.logistics.crate.CrateBlockEntity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$CrateBlockEntity} from "com.simibubi.create.content.logistics.crate.CrateBlockEntity"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $CreativeEnergyBlockEntity extends $CrateBlockEntity {
@@ -663,8 +663,8 @@ constructor(arg0: $BlockEntityType$$Type<(never)>, arg1: $BlockPos$$Type, arg2: 
 
 public "updateCache"(): void
 public "tick"(): void
-public static "registerCapabilities"(arg0: $RegisterCapabilitiesEvent$$Type): void
 public "firstTick"(): void
+public static "registerCapabilities"(arg0: $RegisterCapabilitiesEvent$$Type): void
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -678,8 +678,8 @@ export type $CreativeEnergyBlockEntity$$Original = $CreativeEnergyBlockEntity;}
 declare module "com.mrh0.createaddition.blocks.liquid_blaze_burner.LiquidBlazeBurnerBlockEntity" {
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$LiquidBlazeBurnerBlockEntity$FuelType} from "com.mrh0.createaddition.blocks.liquid_blaze_burner.LiquidBlazeBurnerBlockEntity$FuelType"
-import {$RegisterCapabilitiesEvent$$Type} from "net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$RegisterCapabilitiesEvent$$Type} from "net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent"
 import {$Optional} from "java.util.Optional"
 import {$List$$Type} from "java.util.List"
 import {$ObservePacketPayload$$Type} from "com.mrh0.createaddition.network.ObservePacketPayload"
@@ -690,14 +690,14 @@ import {$IObserveBlockEntity$$Interface} from "com.mrh0.createaddition.network.I
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$BlazeBurnerBlock$HeatLevel} from "com.simibubi.create.content.processing.burner.BlazeBurnerBlock$HeatLevel"
 import {$SmartBlockEntity} from "com.simibubi.create.foundation.blockEntity.SmartBlockEntity"
-import {$RecipeHolder} from "net.minecraft.world.item.crafting.RecipeHolder"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
+import {$RecipeHolder} from "net.minecraft.world.item.crafting.RecipeHolder"
 import {$IHaveGoggleInformation$$Interface} from "com.simibubi.create.api.equipment.goggles.IHaveGoggleInformation"
-import {$BlockEntityBehaviour$$Type} from "com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour"
 import {$LiquidBurningRecipe} from "com.mrh0.createaddition.recipe.liquid_burning.LiquidBurningRecipe"
+import {$BlockEntityBehaviour$$Type} from "com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour"
 import {$IFluidHandler$$Type} from "net.neoforged.neoforge.fluids.capability.IFluidHandler"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $LiquidBlazeBurnerBlockEntity extends $SmartBlockEntity implements $IHaveGoggleInformation$$Interface, $IObserveBlockEntity$$Interface {
@@ -708,10 +708,6 @@ static readonly "MAX_HEAT_CAPACITY": integer
 
 constructor(arg0: $BlockEntityType$$Type<(never)>, arg1: $BlockPos$$Type, arg2: $BlockState$$Type)
 
-public static "registerCapability"(arg0: $RegisterCapabilitiesEvent$$Type): void
-public "updateBlockState"(): void
-public "addBehaviours"(arg0: $List$$Type<($BlockEntityBehaviour$$Type)>): void
-public "lazyTick"(): void
 public "getActiveFuel"(): $LiquidBlazeBurnerBlockEntity$FuelType
 public "getRemainingBurnTime"(): integer
 public "getHeatLevelFromBlock"(): $BlazeBurnerBlock$HeatLevel
@@ -719,9 +715,13 @@ public "isValidBlockAbove"(): boolean
 public "getHeatLevelForRender"(): $BlazeBurnerBlock$HeatLevel
 public "spawnParticleBurst"(arg0: boolean): void
 public "onObserved"(arg0: $ServerPlayer$$Type, arg1: $ObservePacketPayload$$Type): void
-public "isCreativeFuel"(arg0: $ItemStack$$Type): boolean
 public "addToGoggleTooltip"(arg0: $List$$Type<($Component$$Type)>, arg1: boolean): boolean
 public "burningTick"(): void
+public static "registerCapability"(arg0: $RegisterCapabilitiesEvent$$Type): void
+public "updateBlockState"(): void
+public "addBehaviours"(arg0: $List$$Type<($BlockEntityBehaviour$$Type)>): void
+public "lazyTick"(): void
+public "isCreativeFuel"(arg0: $ItemStack$$Type): boolean
 public "tick"(): void
 public "find"(arg0: $FluidStack$$Type, arg1: $Level$$Type): $Optional<($RecipeHolder<($LiquidBurningRecipe)>)>
 public "write"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type, arg2: boolean): void
@@ -747,8 +747,8 @@ export type $LiquidBlazeBurnerBlockEntity$$Original = $LiquidBlazeBurnerBlockEnt
 declare module "com.mrh0.createaddition.blocks.cake.CACakeBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
+import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$DataGenContext$$Type} from "com.tterrag.registrate.providers.DataGenContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
@@ -808,8 +808,8 @@ import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType, $BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Function$$Type} from "java.util.function.Function"
 import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Class} from "java.lang.Class"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
@@ -820,8 +820,8 @@ import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Objec
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$HorizontalDirectionalBlock} from "net.minecraft.world.level.block.HorizontalDirectionalBlock"
 import {$Random$$Type} from "java.util.Random"
-import {$BlazeBurnerBlock$HeatLevel} from "com.simibubi.create.content.processing.burner.BlazeBurnerBlock$HeatLevel"
 import {$Consumer$$Type} from "java.util.function.Consumer"
+import {$BlazeBurnerBlock$HeatLevel} from "com.simibubi.create.content.processing.burner.BlazeBurnerBlock$HeatLevel"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$InteractionResult, $InteractionResult$$Type} from "net.minecraft.world.InteractionResult"
@@ -856,14 +856,14 @@ static readonly "FACING": $DirectionProperty
 constructor(arg0: $BlockBehaviour$Properties$$Type)
 
 public "asItem"(): $Item
-public "onPlace"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: boolean): void
 public "getAnalogOutputSignal"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type): integer
+public "onPlace"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: boolean): void
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
 public static "tryInsert"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $ItemStack$$Type, arg4: boolean, arg5: boolean, arg6: boolean): $InteractionResultHolder<($ItemStack)>
 public static "getLight"(arg0: $BlockState$$Type): integer
 public "getBlockEntityType"(): $BlockEntityType<($LiquidBlazeBurnerBlockEntity)>
-public static "getHeatLevelOf"(arg0: $BlockState$$Type): $BlazeBurnerBlock$HeatLevel
 public "getBlockEntityClass"(): $Class<($LiquidBlazeBurnerBlockEntity)>
+public static "getHeatLevelOf"(arg0: $BlockState$$Type): $BlazeBurnerBlock$HeatLevel
 public "getShape"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $CollisionContext$$Type): $VoxelShape
 public "animateTick"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Random$$Type): void
 public "getCollisionShape"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $CollisionContext$$Type): $VoxelShape
@@ -875,8 +875,8 @@ public "onBlockEntityUse"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2:
 public "onBlockEntityUseItemOn"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $Function$$Type<($LiquidBlazeBurnerBlockEntity), ($ItemInteractionResult$$Type)>): $ItemInteractionResult
 public "getBlockEntity"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type): $LiquidBlazeBurnerBlockEntity
 public static "onRemove"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): void
-public static "playRotateSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public "onWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $InteractionResult
+public static "playRotateSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public "getRotatedBlockState"(arg0: $BlockState$$Type, arg1: $Direction$$Type): $BlockState
 public "updateAfterWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $BlockState
 public static "playRemoveSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
@@ -899,9 +899,9 @@ declare module "com.mrh0.createaddition.blocks.connector.base.AbstractConnectorB
 import {$IEnergyStorage$$Interface} from "net.neoforged.neoforge.energy.IEnergyStorage"
 
 export class $AbstractConnectorBlockEntity$InterfaceEnergyHandler implements $IEnergyStorage$$Interface {
+public "canExtract"(): boolean
 public "extractEnergy"(arg0: integer, arg1: boolean): integer
 public "receiveEnergy"(arg0: integer, arg1: boolean): integer
-public "canExtract"(): boolean
 public "canReceive"(): boolean
 public "getEnergyStored"(): integer
 public "getMaxEnergyStored"(): integer
@@ -927,11 +927,11 @@ import {$WrenchableDirectionalBlock} from "com.simibubi.create.foundation.block.
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType, $BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Function$$Type} from "java.util.function.Function"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Class} from "java.lang.Class"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$PortableEnergyInterfaceBlockEntity, $PortableEnergyInterfaceBlockEntity$$Type} from "com.mrh0.createaddition.blocks.portable_energy_interface.PortableEnergyInterfaceBlockEntity"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
@@ -977,8 +977,8 @@ public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockE
 public "getBlockEntityType"(): $BlockEntityType<($PortableEnergyInterfaceBlockEntity)>
 public "getBlockEntityClass"(): $Class<($PortableEnergyInterfaceBlockEntity)>
 public "getShape"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $CollisionContext$$Type): $VoxelShape
-public "neighborChanged"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Block$$Type, arg4: $BlockPos$$Type, arg5: boolean): void
 public "hasAnalogOutputSignal"(arg0: $BlockState$$Type): boolean
+public "neighborChanged"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Block$$Type, arg4: $BlockPos$$Type, arg5: boolean): void
 public "getTicker"<S extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(S)>): $BlockEntityTicker<(S)>
 public "getBlockEntityOptional"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type): $Optional<($PortableEnergyInterfaceBlockEntity)>
 public "withBlockEntityDo"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $Consumer$$Type<($PortableEnergyInterfaceBlockEntity)>): void
@@ -1028,18 +1028,18 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 
 constructor(arg0: $BlockEntityType$$Type<(never)>, arg1: $BlockPos$$Type, arg2: $BlockState$$Type)
 
-public "getEnergyStorage"(arg0: $Direction$$Type): $IEnergyStorage
-public "writeSafe"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
-public "updateCache"(): void
 public "addToGoggleTooltip"(arg0: $List$$Type<($Component$$Type)>, arg1: boolean): boolean
 public "calculateStressApplied"(): float
 public "tickAudio"(): void
 public static "getEnergyProductionRate"(arg0: integer): integer
 public "isEnergyOutput"(arg0: $Direction$$Type): boolean
 public "isEnergyInput"(arg0: $Direction$$Type): boolean
+public "writeSafe"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
+public "updateCache"(): void
+public "getEnergyStorage"(arg0: $Direction$$Type): $IEnergyStorage
 public "tick"(): void
-public static "registerCapabilities"(arg0: $RegisterCapabilitiesEvent$$Type): void
 public "firstTick"(): void
+public static "registerCapabilities"(arg0: $RegisterCapabilitiesEvent$$Type): void
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -1067,12 +1067,12 @@ constructor(arg0: $BlockEntityType$$Type<(never)>, arg1: $BlockPos$$Type, arg2: 
 
 public "getEnergy"(): integer
 public "startTransferringTo"(arg0: $Contraption$$Type, arg1: float): void
-public "getCapacity"(): integer
 public "isConnected"(): boolean
+public "getCapacity"(): integer
 public static "registerCapabilities"(arg0: $RegisterCapabilitiesEvent$$Type): void
 get "energy"(): integer
-get "capacity"(): integer
 get "connected"(): boolean
+get "capacity"(): integer
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -1096,8 +1096,8 @@ import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType, $BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Function$$Type} from "java.util.function.Function"
 import {$HorizontalKineticBlock} from "com.simibubi.create.content.kinetics.base.HorizontalKineticBlock"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Class} from "java.lang.Class"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
@@ -1142,11 +1142,11 @@ static readonly "HORIZONTAL_FACING": $Property<($Direction)>
 
 constructor(arg0: $BlockBehaviour$Properties$$Type)
 
+public "hasShaftTowards"(arg0: $LevelReader$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $Direction$$Type): boolean
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
 public "getRotationAxis"(arg0: $BlockState$$Type): $Direction$Axis
 public "getBlockEntityType"(): $BlockEntityType<($RollingMillBlockEntity)>
-public "hasShaftTowards"(arg0: $LevelReader$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $Direction$$Type): boolean
 public "getBlockEntityClass"(): $Class<($RollingMillBlockEntity)>
 public "getShape"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $CollisionContext$$Type): $VoxelShape
 public "updateEntityAfterFallOn"(arg0: $BlockGetter$$Type, arg1: $Entity$$Type): void
@@ -1184,13 +1184,13 @@ import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$DataGenContext$$Type} from "com.tterrag.registrate.providers.DataGenContext"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
-import {$ModularAccumulatorBlockEntity, $ModularAccumulatorBlockEntity$$Type} from "com.mrh0.createaddition.blocks.modular_accumulator.ModularAccumulatorBlockEntity"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$RegistrateBlockstateProvider$$Type} from "com.tterrag.registrate.providers.RegistrateBlockstateProvider"
+import {$ModularAccumulatorBlockEntity, $ModularAccumulatorBlockEntity$$Type} from "com.mrh0.createaddition.blocks.modular_accumulator.ModularAccumulatorBlockEntity"
 import {$BlockEntityType, $BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
+import {$RegistrateBlockstateProvider$$Type} from "com.tterrag.registrate.providers.RegistrateBlockstateProvider"
 import {$Function$$Type} from "java.util.function.Function"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Class} from "java.lang.Class"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
@@ -1237,23 +1237,23 @@ static readonly "UPDATE_SUPPRESS_DROPS": integer
 static readonly "INSTANT": float
 static readonly "UPDATE_CLIENTS": integer
 
+public static "makeBlockState"(arg0: $DataGenContext$$Type<($Block$$Type), ($ModularAccumulatorBlock$$Type)>, arg1: $RegistrateBlockstateProvider$$Type): void
+public static "isAccumulator"(arg0: $BlockState$$Type): boolean
+public "getBlockSupportShape"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): $VoxelShape
 public "updateShape"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $BlockState$$Type, arg3: $LevelAccessor$$Type, arg4: $BlockPos$$Type, arg5: $BlockPos$$Type): $BlockState
+public "getAnalogOutputSignal"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type): integer
 public "setPlacedBy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $LivingEntity$$Type, arg4: $ItemStack$$Type): void
 public "onPlace"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: boolean): void
-public "getBlockSupportShape"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): $VoxelShape
-public "getAnalogOutputSignal"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type): integer
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
 public "getBlockEntityType"(): $BlockEntityType<($ModularAccumulatorBlockEntity)>
 public "getBlockEntityClass"(): $Class<($ModularAccumulatorBlockEntity)>
-public static "makeBlockState"(arg0: $DataGenContext$$Type<($Block$$Type), ($ModularAccumulatorBlock$$Type)>, arg1: $RegistrateBlockstateProvider$$Type): void
-public static "isAccumulator"(arg0: $BlockState$$Type): boolean
 public "onWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $InteractionResult
 public static "regular"(arg0: $BlockBehaviour$Properties$$Type): $ModularAccumulatorBlock
 public "getCollisionShape"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $CollisionContext$$Type): $VoxelShape
 public "getSoundType"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): $SoundType
 public "onRemove"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: boolean): void
-public "neighborChanged"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Block$$Type, arg4: $BlockPos$$Type, arg5: boolean): void
 public "hasAnalogOutputSignal"(arg0: $BlockState$$Type): boolean
+public "neighborChanged"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Block$$Type, arg4: $BlockPos$$Type, arg5: boolean): void
 public static "playRotateSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public "getRotatedBlockState"(arg0: $BlockState$$Type, arg1: $Direction$$Type): $BlockState
 public "updateAfterWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $BlockState
@@ -1293,8 +1293,8 @@ import {$Vec3, $Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$IHaveGoggleInformation$$Interface} from "com.simibubi.create.api.equipment.goggles.IHaveGoggleInformation"
 import {$BlockEntityBehaviour$$Type} from "com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour"
-import {$IFluidHandler$$Type} from "net.neoforged.neoforge.fluids.capability.IFluidHandler"
 import {$Set$$Type} from "java.util.Set"
+import {$IFluidHandler$$Type} from "net.neoforged.neoforge.fluids.capability.IFluidHandler"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
@@ -1302,8 +1302,8 @@ import {$ObservePacketPayload$$Type} from "com.mrh0.createaddition.network.Obser
 import {$WireType, $WireType$$Type} from "com.mrh0.createaddition.energy.WireType"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$WireConnectResult} from "com.mrh0.createaddition.energy.WireConnectResult"
-import {$IWireNode, $IWireNode$$Type, $IWireNode$$Interface} from "com.mrh0.createaddition.energy.IWireNode"
 import {$ConnectorType} from "com.mrh0.createaddition.blocks.connector.ConnectorType"
+import {$IWireNode, $IWireNode$$Type, $IWireNode$$Interface} from "com.mrh0.createaddition.energy.IWireNode"
 import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
 import {$LocalNode, $LocalNode$$Type} from "com.mrh0.createaddition.energy.LocalNode"
 
@@ -1325,10 +1325,7 @@ static "IN_VERTICAL_OFFSET_NORTH": $Vec3
 
 constructor(arg0: $BlockEntityType$$Type<(never)>, arg1: $BlockPos$$Type, arg2: $BlockState$$Type)
 
-public "getNodeCount"(): integer
-public "addBehaviours"(arg0: $List$$Type<($BlockEntityBehaviour$$Type)>): void
 public "onObserved"(arg0: $ServerPlayer$$Type, arg1: $ObservePacketPayload$$Type): void
-public "getDemand"(): integer
 public "getNetwork"(arg0: integer): $EnergyNetwork
 public "addToGoggleTooltip"(arg0: $List$$Type<($Component$$Type)>, arg1: boolean): boolean
 public "setNetwork"(arg0: integer, arg1: $EnergyNetwork$$Type): void
@@ -1344,14 +1341,15 @@ public "getLocalNode"(arg0: integer): $LocalNode
 public "getWireNode"(arg0: integer): $IWireNode
 public "getThroughput"(): integer
 public "isNodeIndeciesConnected"(arg0: integer, arg1: integer): boolean
+public "getNodeCount"(): integer
+public "addBehaviours"(arg0: $List$$Type<($BlockEntityBehaviour$$Type)>): void
+public "getDemand"(): integer
 public "tick"(): void
 public "setNode"(arg0: integer, arg1: integer, arg2: $BlockPos$$Type, arg3: $WireType$$Type): void
 public "remove"(): void
 public "write"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type, arg2: boolean): void
 public "removeNode"(arg0: integer, arg1: boolean): void
 public "getPos"(): $BlockPos
-public "getNodePos"(arg0: integer): $BlockPos
-public "hasConnection"(arg0: integer): boolean
 public static "getTypeOfConnection"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockPos$$Type): $WireType
 public "getAvailableNode"(): integer
 public "hasAnyConnection"(): boolean
@@ -1374,6 +1372,8 @@ public "getOtherNodeIndex"(arg0: integer): integer
 public static "readNodeBlockPos"(arg0: $CompoundTag$$Type, arg1: integer, arg2: $BlockPos$$Type): $BlockPos
 public static "readNodeWireType"(arg0: $CompoundTag$$Type, arg1: integer): $WireType
 public static "readNodeOtherIndex"(arg0: $CompoundTag$$Type, arg1: integer): integer
+public "getNodePos"(arg0: integer): $BlockPos
+public "hasConnection"(arg0: integer): boolean
 public "getNodeType"(arg0: integer): $WireType
 public static "connect"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: integer, arg3: $BlockPos$$Type, arg4: integer, arg5: $WireType$$Type): $WireConnectResult
 public "removeNode"(arg0: $LocalNode$$Type, arg1: boolean): void
@@ -1382,11 +1382,11 @@ public "removeNode"(arg0: $LocalNode$$Type): void
 public static "disconnect"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockPos$$Type): $WireConnectResult
 public "containedFluidTooltip"(arg0: $List$$Type<($Component$$Type)>, arg1: boolean, arg2: $IFluidHandler$$Type): boolean
 public "getIcon"(arg0: boolean): $ItemStack
-get "nodeCount"(): integer
-get "demand"(): integer
 get "connectorType"(): $ConnectorType
 get "maxWireLength"(): integer
 get "throughput"(): integer
+get "nodeCount"(): integer
+get "demand"(): integer
 get "pos"(): $BlockPos
 get "availableNode"(): integer
 }
@@ -1401,17 +1401,17 @@ export type $RedstoneRelayBlockEntity$$Type = ($RedstoneRelayBlockEntity);
 export type $RedstoneRelayBlockEntity$$Original = $RedstoneRelayBlockEntity;}
 declare module "com.mrh0.createaddition.blocks.digital_adapter.DigitalAdapterBlockEntity" {
 import {$SpeedControllerBlockEntity} from "com.simibubi.create.content.kinetics.speedController.SpeedControllerBlockEntity"
-import {$List} from "java.util.List"
 import {$HosePulleyBlockEntity} from "com.simibubi.create.content.fluids.hosePulley.HosePulleyBlockEntity"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
+import {$List} from "java.util.List"
 import {$MechanicalBearingBlockEntity} from "com.simibubi.create.content.contraptions.bearing.MechanicalBearingBlockEntity"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$MechanicalPistonBlockEntity} from "com.simibubi.create.content.contraptions.piston.MechanicalPistonBlockEntity"
 import {$StressGaugeBlockEntity} from "com.simibubi.create.content.kinetics.gauge.StressGaugeBlockEntity"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$MutableComponent, $MutableComponent$$Type} from "net.minecraft.network.chat.MutableComponent"
 import {$PulleyBlockEntity} from "com.simibubi.create.content.contraptions.pulley.PulleyBlockEntity"
-import {$ElevatorPulleyBlockEntity} from "com.simibubi.create.content.contraptions.elevator.ElevatorPulleyBlockEntity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$ElevatorPulleyBlockEntity} from "com.simibubi.create.content.contraptions.elevator.ElevatorPulleyBlockEntity"
 import {$SpeedGaugeBlockEntity} from "com.simibubi.create.content.kinetics.gauge.SpeedGaugeBlockEntity"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -1424,7 +1424,6 @@ static readonly "EMPTY_LINE": $MutableComponent
 
 constructor(arg0: $BlockEntityType$$Type<(never)>, arg1: $BlockPos$$Type, arg2: $BlockState$$Type)
 
-public "getTargetSpeed"(arg0: $Direction$$Type): integer
 public "setTextLine"(arg0: integer, arg1: $MutableComponent$$Type): void
 public "clearLine"(arg0: integer): void
 public "getTextLine"(arg0: integer): $MutableComponent
@@ -1438,6 +1437,7 @@ public "getMechanicalBearing"(arg0: $Direction$$Type): $MechanicalBearingBlockEn
 public "getStressGauge"(arg0: $Direction$$Type): $StressGaugeBlockEntity
 public "getSpeedGauge"(arg0: $Direction$$Type): $SpeedGaugeBlockEntity
 public "setTargetSpeed"(arg0: $Direction$$Type, arg1: integer): void
+public "getTargetSpeed"(arg0: $Direction$$Type): integer
 public "append"(arg0: integer, arg1: $MutableComponent$$Type): void
 public "clearAll"(): void
 public "getLine"(): integer
@@ -1459,12 +1459,12 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 
 export class $ConnectorVariant extends $Enum<($ConnectorVariant)> implements $StringRepresentable$$Interface {
 static readonly "Girder": $ConnectorVariant
@@ -1475,11 +1475,11 @@ public static "test"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $Direction
 public static "valueOf"(arg0: StringJS): $ConnectorVariant
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
 }
@@ -1502,14 +1502,14 @@ import {$DataGenContext$$Type} from "com.tterrag.registrate.providers.DataGenCon
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$RegistrateBlockstateProvider$$Type} from "com.tterrag.registrate.providers.RegistrateBlockstateProvider"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Class} from "java.lang.Class"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$SmallConnectorBlockEntity} from "com.mrh0.createaddition.blocks.connector.SmallConnectorBlockEntity"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$ConnectorMode} from "com.mrh0.createaddition.blocks.connector.base.ConnectorMode"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
@@ -1545,10 +1545,10 @@ static readonly "FACING": $DirectionProperty
 
 constructor(arg0: $BlockBehaviour$Properties$$Type)
 
+public static "makeBlockState"(arg0: $DataGenContext$$Type<($Block$$Type), ($SmallConnectorBlock$$Type)>, arg1: $RegistrateBlockstateProvider$$Type): void
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
 public "getBlockEntityType"(): $BlockEntityType<($SmallConnectorBlockEntity)>
 public "getBlockEntityClass"(): $Class<($SmallConnectorBlockEntity)>
-public static "makeBlockState"(arg0: $DataGenContext$$Type<($Block$$Type), ($SmallConnectorBlock$$Type)>, arg1: $RegistrateBlockstateProvider$$Type): void
 public "getShape"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $CollisionContext$$Type): $VoxelShape
 public static "onRemove"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): void
 public static "playRotateSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
@@ -1570,10 +1570,10 @@ declare module "com.mrh0.createaddition.blocks.modular_accumulator.ModularAccumu
 import {$ModularGuiLineBuilder$$Type} from "com.simibubi.create.foundation.gui.ModularGuiLineBuilder"
 import {$DisplaySource} from "com.simibubi.create.api.behaviour.display.DisplaySource"
 import {$BlockEntityType} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$List} from "java.util.List"
 import {$DisplayLinkContext$$Type} from "com.simibubi.create.content.redstone.displayLink.DisplayLinkContext"
-import {$Block} from "net.minecraft.world.level.block.Block"
+import {$List} from "java.util.List"
 import {$MutableComponent} from "net.minecraft.network.chat.MutableComponent"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$PercentOrProgressBarDisplaySource} from "com.simibubi.create.content.redstone.displayLink.source.PercentOrProgressBarDisplaySource"
 import {$SimpleRegistry$Multi} from "com.simibubi.create.api.registry.SimpleRegistry$Multi"
 
@@ -1601,8 +1601,8 @@ declare module "com.mrh0.createaddition.blocks.modular_accumulator.ModularAccumu
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$AdditionalItemPlacement, $AdditionalItemPlacement$$Type} from "net.mehvahdjukaar.moonlight.api.item.additional_placements.AdditionalItemPlacement"
@@ -1645,13 +1645,13 @@ import {$LargeConnectorBlockEntity} from "com.mrh0.createaddition.blocks.connect
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$RegistrateBlockstateProvider$$Type} from "com.tterrag.registrate.providers.RegistrateBlockstateProvider"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Class} from "java.lang.Class"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$ConnectorMode} from "com.mrh0.createaddition.blocks.connector.base.ConnectorMode"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
@@ -1687,10 +1687,10 @@ static readonly "FACING": $DirectionProperty
 
 constructor(arg0: $BlockBehaviour$Properties$$Type)
 
+public static "makeBlockState"(arg0: $DataGenContext$$Type<($Block$$Type), ($LargeConnectorBlock$$Type)>, arg1: $RegistrateBlockstateProvider$$Type): void
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
 public "getBlockEntityType"(): $BlockEntityType<($LargeConnectorBlockEntity)>
 public "getBlockEntityClass"(): $Class<($LargeConnectorBlockEntity)>
-public static "makeBlockState"(arg0: $DataGenContext$$Type<($Block$$Type), ($LargeConnectorBlock$$Type)>, arg1: $RegistrateBlockstateProvider$$Type): void
 public "getShape"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $CollisionContext$$Type): $VoxelShape
 public static "onRemove"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): void
 public static "playRotateSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
@@ -1710,8 +1710,8 @@ export type $LargeConnectorBlock$$Type = ($LargeConnectorBlock);
 export type $LargeConnectorBlock$$Original = $LargeConnectorBlock;}
 declare module "com.mrh0.createaddition.blocks.creative_energy.CreativeEnergyBlock" {
 import {$IBE$$Interface} from "com.simibubi.create.foundation.block.IBE"
-import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$CrateBlock} from "com.simibubi.create.content.logistics.crate.CrateBlock"
+import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$Optional} from "java.util.Optional"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
@@ -1719,8 +1719,8 @@ import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType, $BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Function$$Type} from "java.util.function.Function"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Class} from "java.lang.Class"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
@@ -1728,8 +1728,8 @@ import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.st
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$Block$$Type} from "net.minecraft.world.level.block.Block"
-import {$CreativeEnergyBlockEntity, $CreativeEnergyBlockEntity$$Type} from "com.mrh0.createaddition.blocks.creative_energy.CreativeEnergyBlockEntity"
 import {$Consumer$$Type} from "java.util.function.Consumer"
+import {$CreativeEnergyBlockEntity, $CreativeEnergyBlockEntity$$Type} from "com.mrh0.createaddition.blocks.creative_energy.CreativeEnergyBlockEntity"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$InteractionResult, $InteractionResult$$Type} from "net.minecraft.world.InteractionResult"
@@ -1806,8 +1806,8 @@ import {$Vec3, $Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$IHaveGoggleInformation$$Interface} from "com.simibubi.create.api.equipment.goggles.IHaveGoggleInformation"
 import {$IDebugDrawer$$Interface} from "com.mrh0.createaddition.debug.IDebugDrawer"
-import {$IFluidHandler$$Type} from "net.neoforged.neoforge.fluids.capability.IFluidHandler"
 import {$Set$$Type} from "java.util.Set"
+import {$IFluidHandler$$Type} from "net.neoforged.neoforge.fluids.capability.IFluidHandler"
 import {$AbstractConnectorBlockEntity$InterfaceEnergyHandler} from "com.mrh0.createaddition.blocks.connector.base.AbstractConnectorBlockEntity$InterfaceEnergyHandler"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -1819,8 +1819,8 @@ import {$IEnergyProvider$$Interface} from "com.mrh0.createaddition.energy.IEnerg
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$WireConnectResult} from "com.mrh0.createaddition.energy.WireConnectResult"
 import {$IEnergyStorage} from "net.neoforged.neoforge.energy.IEnergyStorage"
-import {$IWireNode, $IWireNode$$Type, $IWireNode$$Interface} from "com.mrh0.createaddition.energy.IWireNode"
 import {$ConnectorType} from "com.mrh0.createaddition.blocks.connector.ConnectorType"
+import {$IWireNode, $IWireNode$$Type, $IWireNode$$Interface} from "com.mrh0.createaddition.energy.IWireNode"
 import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
 import {$LocalNode, $LocalNode$$Type} from "com.mrh0.createaddition.energy.LocalNode"
 
@@ -1830,7 +1830,6 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 
 constructor(arg0: $BlockEntityType$$Type<(never)>, arg1: $BlockPos$$Type, arg2: $BlockState$$Type)
 
-public "getEnergyStorage"(arg0: $Direction$$Type): $IEnergyStorage
 public "onObserved"(arg0: $ServerPlayer$$Type, arg1: $ObservePacketPayload$$Type): void
 public "getNetwork"(arg0: integer): $EnergyNetwork
 public "addToGoggleTooltip"(arg0: $List$$Type<($Component$$Type)>, arg1: boolean): boolean
@@ -1846,22 +1845,20 @@ public "invalidateLocalNodes"(): void
 public "getLocalNode"(arg0: integer): $LocalNode
 public "getWireNode"(arg0: integer): $IWireNode
 public "ignoreCapSide"(): boolean
-public "getCapacity"(): integer
+public "getEnergyStorage"(arg0: $Direction$$Type): $IEnergyStorage
 public "tick"(): void
-public "getMode"(): $ConnectorMode
 public "setNode"(arg0: integer, arg1: integer, arg2: $BlockPos$$Type, arg3: $WireType$$Type): void
+public "getMode"(): $ConnectorMode
 public "remove"(): void
 public "write"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type, arg2: boolean): void
 public "read"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type, arg2: boolean): void
 public "removeNode"(arg0: integer, arg1: boolean): void
+public "getCapacity"(): integer
 public "firstTick"(): void
 public "getPos"(): $BlockPos
-public "getNodeCount"(): integer
-public "getNodePos"(arg0: integer): $BlockPos
-public "hasConnection"(arg0: integer): boolean
 public static "getTypeOfConnection"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockPos$$Type): $WireType
-public "getAvailableNode"(): integer
 public "getAvailableNode"(arg0: $Vec3$$Type): integer
+public "getAvailableNode"(): integer
 public "hasAnyConnection"(): boolean
 public "isNodeInput"(arg0: integer): boolean
 public "isNodeOutput"(arg0: integer): boolean
@@ -1888,6 +1885,9 @@ public "isNodeIndeciesConnected"(arg0: integer, arg1: integer): boolean
 public static "readNodeBlockPos"(arg0: $CompoundTag$$Type, arg1: integer, arg2: $BlockPos$$Type): $BlockPos
 public static "readNodeWireType"(arg0: $CompoundTag$$Type, arg1: integer): $WireType
 public static "readNodeOtherIndex"(arg0: $CompoundTag$$Type, arg1: integer): integer
+public "getNodeCount"(): integer
+public "getNodePos"(arg0: integer): $BlockPos
+public "hasConnection"(arg0: integer): boolean
 public "getNodeType"(arg0: integer): $WireType
 public static "connect"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: integer, arg3: $BlockPos$$Type, arg4: integer, arg5: $WireType$$Type): $WireConnectResult
 public "removeNode"(arg0: $LocalNode$$Type, arg1: boolean): void
@@ -1898,13 +1898,13 @@ public "containedFluidTooltip"(arg0: $List$$Type<($Component$$Type)>, arg1: bool
 public "getIcon"(arg0: boolean): $ItemStack
 get "maxIn"(): integer
 get "maxOut"(): integer
-get "capacity"(): integer
 get "mode"(): $ConnectorMode
+get "capacity"(): integer
 get "pos"(): $BlockPos
-get "nodeCount"(): integer
 get "availableNode"(): integer
 get "connectorType"(): $ConnectorType
 get "maxWireLength"(): integer
+get "nodeCount"(): integer
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -1995,8 +1995,8 @@ public "onBlockEntityUse"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2:
 public "onBlockEntityUseItemOn"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $Function$$Type<($DigitalAdapterBlockEntity), ($ItemInteractionResult$$Type)>): $ItemInteractionResult
 public "getBlockEntity"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type): $DigitalAdapterBlockEntity
 public static "onRemove"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): void
-public static "playRotateSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public "onWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $InteractionResult
+public static "playRotateSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public "getRotatedBlockState"(arg0: $BlockState$$Type, arg1: $Direction$$Type): $BlockState
 public "updateAfterWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $BlockState
 public static "playRemoveSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
@@ -2017,25 +2017,25 @@ export type $DigitalAdapterBlock$$Type = ($DigitalAdapterBlock);
 export type $DigitalAdapterBlock$$Original = $DigitalAdapterBlock;}
 declare module "com.mrh0.createaddition.blocks.tesla_coil.TeslaCoilBlockEntity" {
 import {$AbstractElectricBlockEntity} from "com.mrh0.createaddition.energy.AbstractElectricBlockEntity"
+import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$BeltProcessingBehaviour} from "com.simibubi.create.content.kinetics.belt.behaviour.BeltProcessingBehaviour"
 import {$RegisterCapabilitiesEvent$$Type} from "net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent"
-import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
-import {$ChargingRecipe} from "com.mrh0.createaddition.recipe.charging.ChargingRecipe"
 import {$List$$Type} from "java.util.List"
+import {$ChargingRecipe} from "com.mrh0.createaddition.recipe.charging.ChargingRecipe"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$ObservePacketPayload$$Type} from "com.mrh0.createaddition.network.ObservePacketPayload"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$RecipeWrapper$$Type} from "net.neoforged.neoforge.items.wrapper.RecipeWrapper"
 import {$IObserveBlockEntity$$Interface} from "com.mrh0.createaddition.network.IObserveBlockEntity"
-import {$RecipeHolder} from "net.minecraft.world.item.crafting.RecipeHolder"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
+import {$RecipeHolder} from "net.minecraft.world.item.crafting.RecipeHolder"
 import {$IHaveGoggleInformation$$Interface} from "com.simibubi.create.api.equipment.goggles.IHaveGoggleInformation"
 import {$BlockEntityBehaviour$$Type} from "com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour"
 import {$IFluidHandler$$Type} from "net.neoforged.neoforge.fluids.capability.IFluidHandler"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $TeslaCoilBlockEntity extends $AbstractElectricBlockEntity implements $IHaveGoggleInformation$$Interface, $IObserveBlockEntity$$Interface {
@@ -2044,7 +2044,6 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 
 constructor(arg0: $BlockEntityType$$Type<(never)>, arg1: $BlockPos$$Type, arg2: $BlockState$$Type)
 
-public "addBehaviours"(arg0: $List$$Type<($BlockEntityBehaviour$$Type)>): void
 public "onObserved"(arg0: $ServerPlayer$$Type, arg1: $ObservePacketPayload$$Type): void
 public "addToGoggleTooltip"(arg0: $List$$Type<($Component$$Type)>, arg1: boolean): boolean
 public "tickAudio"(): void
@@ -2054,9 +2053,10 @@ public "getMaxIn"(): integer
 public "getMaxOut"(): integer
 public "isPoweredState"(): boolean
 public "getConsumption"(): integer
-public "getCapacity"(): integer
+public "addBehaviours"(arg0: $List$$Type<($BlockEntityBehaviour$$Type)>): void
 public "tick"(): void
 public "find"(arg0: $RecipeWrapper$$Type, arg1: $Level$$Type): $Optional<($RecipeHolder<($ChargingRecipe)>)>
+public "getCapacity"(): integer
 public static "registerCapabilities"(arg0: $RegisterCapabilitiesEvent$$Type): void
 public "containedFluidTooltip"(arg0: $List$$Type<($Component$$Type)>, arg1: boolean, arg2: $IFluidHandler$$Type): boolean
 public "getIcon"(arg0: boolean): $ItemStack
@@ -2079,10 +2079,10 @@ declare module "com.mrh0.createaddition.blocks.digital_adapter.DigitalAdapterDis
 import {$DisplaySource} from "com.simibubi.create.api.behaviour.display.DisplaySource"
 import {$DisplayTargetStats$$Type} from "com.simibubi.create.content.redstone.displayLink.target.DisplayTargetStats"
 import {$BlockEntityType} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$List} from "java.util.List"
 import {$DisplayLinkContext$$Type} from "com.simibubi.create.content.redstone.displayLink.DisplayLinkContext"
-import {$Block} from "net.minecraft.world.level.block.Block"
+import {$List} from "java.util.List"
 import {$MutableComponent} from "net.minecraft.network.chat.MutableComponent"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$SimpleRegistry$Multi} from "com.simibubi.create.api.registry.SimpleRegistry$Multi"
 
 export class $DigitalAdapterDisplaySource extends $DisplaySource {
@@ -2115,11 +2115,11 @@ import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.
 import {$VoxelShaper} from "net.createmod.catnip.math.VoxelShaper"
 import {$DataGenContext$$Type} from "com.tterrag.registrate.providers.DataGenContext"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$RegistrateBlockstateProvider$$Type} from "com.tterrag.registrate.providers.RegistrateBlockstateProvider"
 import {$BlockEntityType, $BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
+import {$RegistrateBlockstateProvider$$Type} from "com.tterrag.registrate.providers.RegistrateBlockstateProvider"
 import {$Function$$Type} from "java.util.function.Function"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Class} from "java.lang.Class"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
@@ -2131,8 +2131,8 @@ import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEn
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
-import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$TeslaCoilBlockEntity, $TeslaCoilBlockEntity$$Type} from "com.mrh0.createaddition.blocks.tesla_coil.TeslaCoilBlockEntity"
+import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$InteractionResult, $InteractionResult$$Type} from "net.minecraft.world.InteractionResult"
 import {$ItemInteractionResult, $ItemInteractionResult$$Type} from "net.minecraft.world.ItemInteractionResult"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
@@ -2167,13 +2167,13 @@ static readonly "FACING": $DirectionProperty
 
 constructor(arg0: $BlockBehaviour$Properties$$Type)
 
+public static "makeBlockState"(arg0: $DataGenContext$$Type<($Block$$Type), ($TeslaCoilBlock$$Type)>, arg1: $RegistrateBlockstateProvider$$Type): void
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
 public "canConnectRedstone"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $Direction$$Type): boolean
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
 public "setPowered"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: boolean): void
 public "getBlockEntityType"(): $BlockEntityType<($TeslaCoilBlockEntity)>
 public "getBlockEntityClass"(): $Class<($TeslaCoilBlockEntity)>
-public static "makeBlockState"(arg0: $DataGenContext$$Type<($Block$$Type), ($TeslaCoilBlock$$Type)>, arg1: $RegistrateBlockstateProvider$$Type): void
 public "getShape"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $CollisionContext$$Type): $VoxelShape
 public "getTicker"<S extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(S)>): $BlockEntityTicker<(S)>
 public "getBlockEntityOptional"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type): $Optional<($TeslaCoilBlockEntity)>
@@ -2182,8 +2182,8 @@ public "onBlockEntityUse"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2:
 public "onBlockEntityUseItemOn"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $Function$$Type<($TeslaCoilBlockEntity), ($ItemInteractionResult$$Type)>): $ItemInteractionResult
 public "getBlockEntity"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type): $TeslaCoilBlockEntity
 public static "onRemove"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): void
-public static "playRotateSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public "onWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $InteractionResult
+public static "playRotateSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public "getRotatedBlockState"(arg0: $BlockState$$Type, arg1: $Direction$$Type): $BlockState
 public "updateAfterWrenched"(arg0: $BlockState$$Type, arg1: $UseOnContext$$Type): $BlockState
 public static "playRemoveSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
@@ -2215,8 +2215,8 @@ import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType, $BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Function$$Type} from "java.util.function.Function"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Class} from "java.lang.Class"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
@@ -2264,14 +2264,14 @@ static readonly "ELECTRIC_MOTOR_SHAPE": $VoxelShaper
 
 constructor(arg0: $BlockBehaviour$Properties$$Type)
 
+public "hasShaftTowards"(arg0: $LevelReader$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $Direction$$Type): boolean
+public "hideStressImpact"(): boolean
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
 public "canConnectRedstone"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $Direction$$Type): boolean
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
-public "getRotationAxis"(arg0: $BlockState$$Type): $Direction$Axis
 public "setPowered"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: boolean): void
+public "getRotationAxis"(arg0: $BlockState$$Type): $Direction$Axis
 public "getBlockEntityType"(): $BlockEntityType<($ElectricMotorBlockEntity)>
-public "hasShaftTowards"(arg0: $LevelReader$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $Direction$$Type): boolean
-public "hideStressImpact"(): boolean
 public "getBlockEntityClass"(): $Class<($ElectricMotorBlockEntity)>
 public "tick"(arg0: $BlockState$$Type, arg1: $ServerLevel$$Type, arg2: $BlockPos$$Type, arg3: $RandomSource$$Type): void
 public "getShape"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $CollisionContext$$Type): $VoxelShape
@@ -2304,13 +2304,13 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$MutableComponent} from "net.minecraft.network.chat.MutableComponent"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 
 export class $ConnectorMode extends $Enum<($ConnectorMode)> implements $StringRepresentable$$Interface {
 static readonly "Pull": $ConnectorMode
@@ -2326,11 +2326,11 @@ public "isActive"(): boolean
 public "getSerializedName"(): StringJS
 public "getTooltip"(): $MutableComponent
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "next"(): $ConnectorMode
 get "active"(): boolean
 get "serializedName"(): StringJS
@@ -2353,9 +2353,9 @@ import {$Optional} from "java.util.Optional"
 import {$List} from "java.util.List"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
+import {$IShearable$$Interface} from "net.neoforged.neoforge.common.IShearable"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$SimpleWaterloggedBlock$$Interface} from "net.minecraft.world.level.block.SimpleWaterloggedBlock"
-import {$IShearable$$Interface} from "net.neoforged.neoforge.common.IShearable"
 import {$DataGenContext$$Type} from "com.tterrag.registrate.providers.DataGenContext"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
@@ -2401,17 +2401,17 @@ static readonly "HORIZONTAL_FACING": $DirectionProperty
 
 constructor(arg0: $BlockBehaviour$Properties$$Type)
 
-public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
 public static "makeBlockState"(arg0: $DataGenContext$$Type<($Block$$Type), ($BarbedWireBlock$$Type)>, arg1: $RegistrateBlockstateProvider$$Type): void
+public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
 public "entityInside"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): void
-public "onSheared"(arg0: $Player$$Type, arg1: $ItemStack$$Type, arg2: $Level$$Type, arg3: $BlockPos$$Type): $List<($ItemStack)>
 public "isShearable"(arg0: $Player$$Type, arg1: $ItemStack$$Type, arg2: $Level$$Type, arg3: $BlockPos$$Type): boolean
+public "onSheared"(arg0: $Player$$Type, arg1: $ItemStack$$Type, arg2: $Level$$Type, arg3: $BlockPos$$Type): $List<($ItemStack)>
 public "handler$cik000$apothic_enchanting$apoth_handleShearFortune"(arg0: $Player$$Type, arg1: $ItemStack$$Type, arg2: $Level$$Type, arg3: $BlockPos$$Type, arg4: $CallbackInfoReturnable$$Type): void
 public "handler$cik000$apothic_enchanting$apoth_handleShearEnchantments"(arg0: $Player$$Type, arg1: $ItemStack$$Type, arg2: $Level$$Type, arg3: $BlockPos$$Type, arg4: $CallbackInfoReturnable$$Type): void
 public "spawnShearedDrop"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $ItemStack$$Type): void
 public "getPickupSound"(): $Optional<($SoundEvent)>
-public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "canPlaceLiquid"(arg0: $Player$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $Fluid$$Type): boolean
+public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "pickupBlock"(arg0: $Player$$Type, arg1: $LevelAccessor$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): $ItemStack
 public "getPickupSound"(arg0: $BlockState$$Type): $Optional<($SoundEvent)>
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
@@ -2444,12 +2444,12 @@ import {$Item} from "net.minecraft.world.item.Item"
 import {$Class} from "java.lang.Class"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$AbstractConnectorBlockEntity} from "com.mrh0.createaddition.blocks.connector.base.AbstractConnectorBlockEntity"
 import {$IWrenchable$$Interface} from "com.simibubi.create.content.equipment.wrench.IWrenchable"
+import {$AbstractConnectorBlockEntity} from "com.mrh0.createaddition.blocks.connector.base.AbstractConnectorBlockEntity"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$ConnectorMode} from "com.mrh0.createaddition.blocks.connector.base.ConnectorMode"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$StructureTransform$$Type} from "com.simibubi.create.content.contraptions.StructureTransform"
@@ -2458,11 +2458,11 @@ import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$InteractionResult, $InteractionResult$$Type} from "net.minecraft.world.InteractionResult"
 import {$ItemInteractionResult, $ItemInteractionResult$$Type} from "net.minecraft.world.ItemInteractionResult"
-import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
 import {$ConnectorVariant} from "com.mrh0.createaddition.blocks.connector.base.ConnectorVariant"
+import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
 import {$TransformableBlock$$Interface} from "com.simibubi.create.api.contraption.transformable.TransformableBlock"
-import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
+import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
@@ -2508,9 +2508,9 @@ public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockE
 public "getBlockEntityOptional"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type): $Optional<(BE)>
 public "getBlockEntityType"(): $BlockEntityType<(BE)>
 public "withBlockEntityDo"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $Consumer$$Type<(BE)>): void
+public "getBlockEntityClass"(): $Class<(BE)>
 public "onBlockEntityUse"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $Function$$Type<(BE), ($InteractionResult$$Type)>): $InteractionResult
 public "onBlockEntityUseItemOn"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $Function$$Type<(BE), ($ItemInteractionResult$$Type)>): $ItemInteractionResult
-public "getBlockEntityClass"(): $Class<(BE)>
 public "getBlockEntity"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type): BE
 public static "onRemove"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): void
 public static "playRotateSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
@@ -2553,8 +2553,8 @@ export type $LiquidBlazeBurnerBlockEntity$FuelType$$Type = (("none") | ("normal"
 export type $LiquidBlazeBurnerBlockEntity$FuelType$$Original = $LiquidBlazeBurnerBlockEntity$FuelType;}
 declare module "com.mrh0.createaddition.blocks.connector.SmallConnectorBlockEntity" {
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
-import {$RegisterCapabilitiesEvent$$Type} from "net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$RegisterCapabilitiesEvent$$Type} from "net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent"
 import {$List$$Type} from "java.util.List"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$WireType, $WireType$$Type} from "com.mrh0.createaddition.energy.WireType"
@@ -2582,13 +2582,13 @@ static readonly "OFFSET_SOUTH": $Vec3
 
 constructor(arg0: $BlockEntityType$$Type<(never)>, arg1: $BlockPos$$Type, arg2: $BlockState$$Type)
 
-public "getNodeCount"(): integer
-public "addBehaviours"(arg0: $List$$Type<($BlockEntityBehaviour$$Type)>): void
 public "getMaxIn"(): integer
 public "getMaxOut"(): integer
 public "getNodeOffset"(arg0: integer): $Vec3
 public "getConnectorType"(): $ConnectorType
 public "getMaxWireLength"(): integer
+public "getNodeCount"(): integer
+public "addBehaviours"(arg0: $List$$Type<($BlockEntityBehaviour$$Type)>): void
 public static "registerCapabilities"(arg0: $RegisterCapabilitiesEvent$$Type): void
 public static "getTypeOfConnection"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockPos$$Type): $WireType
 public static "getWireNodeFrom"(arg0: integer, arg1: $IWireNode$$Type, arg2: ($LocalNode$$Type)[], arg3: ($IWireNode$$Type)[], arg4: $Level$$Type): $IWireNode
@@ -2600,11 +2600,11 @@ public static "readNodeWireType"(arg0: $CompoundTag$$Type, arg1: integer): $Wire
 public static "readNodeOtherIndex"(arg0: $CompoundTag$$Type, arg1: integer): integer
 public static "connect"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: integer, arg3: $BlockPos$$Type, arg4: integer, arg5: $WireType$$Type): $WireConnectResult
 public static "disconnect"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockPos$$Type): $WireConnectResult
-get "nodeCount"(): integer
 get "maxIn"(): integer
 get "maxOut"(): integer
 get "connectorType"(): $ConnectorType
 get "maxWireLength"(): integer
+get "nodeCount"(): integer
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_

@@ -21,15 +21,15 @@ export {} // Mark the file as a module, do not remove unless there are other imp
 export interface $InstanceHandle$$Interface {
 get "deleted"(): void
 set "visible"(value: boolean)
-get "changed"(): void
 get "visible"(): boolean
+get "changed"(): void
 }
 
 export class $InstanceHandle implements $InstanceHandle$$Interface {
  "setDeleted"(): void
  "setVisible"(arg0: boolean): void
- "setChanged"(): void
  "isVisible"(): boolean
+ "setChanged"(): void
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -110,8 +110,8 @@ export type $VisualEmbedding$$Type = ($VisualEmbedding);
  */
 export type $VisualEmbedding$$Original = $VisualEmbedding;}
 declare module "dev.engine_room.flywheel.api.model.Model" {
-import {$List} from "java.util.List"
 import {$Vector4fc} from "org.joml.Vector4fc"
+import {$List} from "java.util.List"
 import {$Model$ConfiguredMesh} from "dev.engine_room.flywheel.api.model.Model$ConfiguredMesh"
 
 export interface $Model$$Interface {
@@ -243,8 +243,8 @@ export type $InstanceType$$Type<I> = ($InstanceType<(I)>);
  */
 export type $InstanceType$$Original<I> = $InstanceType<(I)>;}
 declare module "dev.engine_room.flywheel.api.visualization.VisualizationContext" {
-import {$Vec3i, $Vec3i$$Type} from "net.minecraft.core.Vec3i"
 import {$VisualEmbedding} from "dev.engine_room.flywheel.api.visualization.VisualEmbedding"
+import {$Vec3i, $Vec3i$$Type} from "net.minecraft.core.Vec3i"
 import {$InstancerProvider} from "dev.engine_room.flywheel.api.instance.InstancerProvider"
 
 export interface $VisualizationContext$$Interface {
@@ -282,16 +282,16 @@ public "hashCode"(): integer
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $Model$ConfiguredMesh$$Type = ({"material"?: $Material$$Type, "mesh"?: $Mesh$$Type}) | ([material?: $Material$$Type, mesh?: $Mesh$$Type]);
+export type $Model$ConfiguredMesh$$Type = ({"mesh"?: $Mesh$$Type, "material"?: $Material$$Type}) | ([mesh?: $Mesh$$Type, material?: $Material$$Type]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
 export type $Model$ConfiguredMesh$$Original = $Model$ConfiguredMesh;}
 declare module "dev.engine_room.flywheel.api.instance.InstancerProvider" {
-import {$Instancer, $Instancer$$Type} from "dev.engine_room.flywheel.api.instance.Instancer"
 import {$InstanceType, $InstanceType$$Type} from "dev.engine_room.flywheel.api.instance.InstanceType"
-import {$Instance} from "dev.engine_room.flywheel.api.instance.Instance"
+import {$Instancer, $Instancer$$Type} from "dev.engine_room.flywheel.api.instance.Instancer"
 import {$Model, $Model$$Type} from "dev.engine_room.flywheel.api.model.Model"
+import {$Instance} from "dev.engine_room.flywheel.api.instance.Instance"
 
 export interface $InstancerProvider$$Interface {
 
@@ -359,8 +359,8 @@ export type $BlockEntityVisualizer$$Type<T> = ($BlockEntityVisualizer<(T)>);
 export type $BlockEntityVisualizer$$Original<T> = $BlockEntityVisualizer<(T)>;}
 declare module "dev.engine_room.flywheel.api.visualization.VisualizationLevel" {
 import {$Iterable} from "java.lang.Iterable"
-import {$BlockHitResult} from "net.minecraft.world.phys.BlockHitResult"
 import {$LevelLightEngine} from "net.minecraft.world.level.lighting.LevelLightEngine"
+import {$BlockHitResult} from "net.minecraft.world.phys.BlockHitResult"
 import {$LevelHeightAccessor} from "net.minecraft.world.level.LevelHeightAccessor"
 import {$Optional} from "java.util.Optional"
 import {$ChunkAccess} from "net.minecraft.world.level.chunk.ChunkAccess"
@@ -370,8 +370,8 @@ import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
 import {$GameEvent$$Type} from "net.minecraft.world.level.gameevent.GameEvent"
 import {$SoundSource$$Type} from "net.minecraft.sounds.SoundSource"
 import {$Supplier$$Type} from "java.util.function.Supplier"
-import {$EntityTypeTest$$Type} from "net.minecraft.world.level.entity.EntityTypeTest"
 import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
+import {$EntityTypeTest$$Type} from "net.minecraft.world.level.entity.EntityTypeTest"
 import {$Biome} from "net.minecraft.world.level.biome.Biome"
 import {$Stream} from "java.util.stream.Stream"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -384,12 +384,12 @@ import {$BiFunction$$Type} from "java.util.function.BiFunction"
 import {$RandomSource} from "net.minecraft.util.RandomSource"
 import {$Fluid, $Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 import {$VoxelShape, $VoxelShape$$Type} from "net.minecraft.world.phys.shapes.VoxelShape"
-import {$Holder$Reference} from "net.minecraft.core.Holder$Reference"
 import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$Holder$Reference} from "net.minecraft.core.Holder$Reference"
 import {$ClipContext$$Type} from "net.minecraft.world.level.ClipContext"
-import {$LevelAccessor$$Interface} from "net.minecraft.world.level.LevelAccessor"
-import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
+import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
+import {$LevelAccessor$$Interface} from "net.minecraft.world.level.LevelAccessor"
 import {$AABB$$Type} from "net.minecraft.world.phys.AABB"
 import {$EntityArrayList} from "dev.latvian.mods.kubejs.player.EntityArrayList"
 import {$RegistryAccess} from "net.minecraft.core.RegistryAccess"
@@ -399,16 +399,16 @@ import {$List, $List$$Type} from "java.util.List"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$ChunkSource} from "net.minecraft.world.level.chunk.ChunkSource"
 import {$WorldBorder} from "net.minecraft.world.level.border.WorldBorder"
-import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$TickPriority$$Type} from "net.minecraft.world.ticks.TickPriority"
+import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Vec3, $Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Function$$Type} from "java.util.function.Function"
-import {$TargetingConditions$$Type} from "net.minecraft.world.entity.ai.targeting.TargetingConditions"
 import {$Class$$Type} from "java.lang.Class"
+import {$TargetingConditions$$Type} from "net.minecraft.world.entity.ai.targeting.TargetingConditions"
 import {$ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
-import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$ModelData} from "net.neoforged.neoforge.client.model.data.ModelData"
+import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$ClipBlockStateContext$$Type} from "net.minecraft.world.level.ClipBlockStateContext"
 import {$HolderLookup} from "net.minecraft.core.HolderLookup"
@@ -423,8 +423,8 @@ import {$Heightmap$Types$$Type} from "net.minecraft.world.level.levelgen.Heightm
 import {$Registry$$Type} from "net.minecraft.core.Registry"
 import {$DifficultyInstance} from "net.minecraft.world.DifficultyInstance"
 import {$EntityGetter} from "net.minecraft.world.level.EntityGetter"
-import {$MinecraftServer} from "net.minecraft.server.MinecraftServer"
 import {$ParticleOptions$$Type} from "net.minecraft.core.particles.ParticleOptions"
+import {$MinecraftServer} from "net.minecraft.server.MinecraftServer"
 import {$DimensionType} from "net.minecraft.world.level.dimension.DimensionType"
 
 export interface $VisualizationLevel$$Interface extends $LevelAccessor$$Interface {
@@ -473,10 +473,10 @@ export class $VisualizationLevel implements $VisualizationLevel$$Interface {
  "getServer"(): $MinecraftServer
  "levelEvent"(arg0: $Player$$Type, arg1: integer, arg2: $BlockPos$$Type, arg3: integer): void
  "levelEvent"(arg0: integer, arg1: $BlockPos$$Type, arg2: integer): void
+ "blockUpdated"(arg0: $BlockPos$$Type, arg1: $Block$$Type): void
  "neighborShapeChanged"(arg0: $Direction$$Type, arg1: $BlockState$$Type, arg2: $BlockPos$$Type, arg3: $BlockPos$$Type, arg4: integer, arg5: integer): void
  "hasChunk"(arg0: integer, arg1: integer): boolean
  "getCurrentDifficultyAt"(arg0: $BlockPos$$Type): $DifficultyInstance
- "blockUpdated"(arg0: $BlockPos$$Type, arg1: $Block$$Type): void
  "nextSubTickCount"(): long
  "dayTime"(): long
  "getBlockTicks"(): $LevelTickAccess<($Block)>

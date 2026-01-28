@@ -8,17 +8,17 @@ import {$MainSettingsCategory} from "net.p3pp3rf1y.sophisticatedcore.settings.ma
 import {$Consumer$$Type} from "java.util.function.Consumer"
 
 export class $SettingsHandler {
+public "getGlobalSettingsCategoryName"(): StringJS
+public "instantiateGlobalSettingsCategory"(arg0: $CompoundTag$$Type, arg1: $Consumer$$Type<($CompoundTag)>): $ISettingsCategory<(never)>
+public "getTypeCategory"<T extends $ISettingsCategory<(object)>>(arg0: $Class$$Type<(T)>): T
 public "getNbt"(): $CompoundTag
 public "reloadFrom"(arg0: $CompoundTag$$Type): void
 public "getCategoriesThatImplement"<T>(arg0: $Class$$Type<(T)>): $List<(T)>
 public "getGlobalSettingsCategory"(): $MainSettingsCategory<(never)>
-public "getGlobalSettingsCategoryName"(): StringJS
-public "instantiateGlobalSettingsCategory"(arg0: $CompoundTag$$Type, arg1: $Consumer$$Type<($CompoundTag)>): $ISettingsCategory<(never)>
-public "getTypeCategory"<T extends $ISettingsCategory<(object)>>(arg0: $Class$$Type<(T)>): T
 public "getSettingsCategories"(): $Map<(StringJS), ($ISettingsCategory<(never)>)>
+get "globalSettingsCategoryName"(): StringJS
 get "nbt"(): $CompoundTag
 get "globalSettingsCategory"(): $MainSettingsCategory<(never)>
-get "globalSettingsCategoryName"(): StringJS
 get "settingsCategories"(): $Map<(StringJS), ($ISettingsCategory<(never)>)>
 }
 /**
@@ -74,35 +74,35 @@ static readonly "NAME": StringJS
 
 constructor(arg0: $Supplier$$Type<($InventoryHandler$$Type)>, arg1: $CompoundTag$$Type, arg2: $Consumer$$Type<($CompoundTag)>)
 
-public "isLargerThanNumberOfSlots"(arg0: integer): boolean
-public "deleteSlotSettingsFrom"(arg0: integer): void
-public "unregisterListeners"(): void
-public "reloadFrom"(arg0: $CompoundTag$$Type): void
-public "getSlotFilterStack"(arg0: integer, arg1: boolean): $Optional<($ItemStack)>
-public "getSlotIndexes"(): $Set<(integer)>
-public "isSlotSelected"(arg0: integer): boolean
 public "selectSlots"(arg0: integer, arg1: integer): void
-public "unselectSlot"(arg0: integer): void
 public "unselectAllSlots"(): void
+public "unselectSlot"(arg0: integer): void
 public "ignoresNbt"(): boolean
 public "setIgnoreNbt"(arg0: boolean): void
 public "getFilterItemSlots"(): $Map<($Item), ($Set<(integer)>)>
 public "getFilterStackSlots"(): $Map<(integer), ($Set<(integer)>)>
 public "matchesStackKey"(arg0: $ItemStackKey$$Type): boolean
-public "overwriteWith"(arg0: $ISettingsCategory$$Type): void
 public "overwriteWith"(arg0: $MemorySettingsCategory$$Type): void
-public "matchesFilter"(arg0: $ItemStack$$Type): boolean
+public "overwriteWith"(arg0: $ISettingsCategory$$Type): void
 public "matchesFilter"(arg0: integer, arg1: $ItemStack$$Type): boolean
+public "matchesFilter"(arg0: $ItemStack$$Type): boolean
+public "unregisterListeners"(): void
+public "reloadFrom"(arg0: $CompoundTag$$Type): void
+public "getSlotFilterStack"(arg0: integer, arg1: boolean): $Optional<($ItemStack)>
+public "getSlotIndexes"(): $Set<(integer)>
+public "isSlotSelected"(arg0: integer): boolean
 public "matchesItem"(arg0: $Item$$Type): boolean
 public "setFilter"(arg0: integer, arg1: $ItemStack$$Type): void
-public "copyTo"(arg0: $ISettingsCategory$$Type, arg1: integer, arg2: integer): void
 public "copyTo"(arg0: $MemorySettingsCategory$$Type, arg1: integer, arg2: integer): void
+public "copyTo"(arg0: $ISettingsCategory$$Type, arg1: integer, arg2: integer): void
 public "registerListeners"(arg0: $Consumer$$Type<($Item)>, arg1: $Consumer$$Type<($Item)>, arg2: $Consumer$$Type<(integer)>, arg3: $Consumer$$Type<(integer)>): void
 public "selectSlot"(arg0: integer): void
-get "slotIndexes"(): $Set<(integer)>
+public "isLargerThanNumberOfSlots"(arg0: integer): boolean
+public "deleteSlotSettingsFrom"(arg0: integer): void
 set "ignoreNbt"(value: boolean)
 get "filterItemSlots"(): $Map<($Item), ($Set<(integer)>)>
 get "filterStackSlots"(): $Map<(integer), ($Set<(integer)>)>
+get "slotIndexes"(): $Set<(integer)>
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -114,8 +114,8 @@ export type $MemorySettingsCategory$$Type = ($MemorySettingsCategory);
  */
 export type $MemorySettingsCategory$$Original = $MemorySettingsCategory;}
 declare module "net.p3pp3rf1y.sophisticatedcore.settings.main.MainSettingsCategory" {
-import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$MainSetting$$Type} from "net.p3pp3rf1y.sophisticatedcore.settings.MainSetting"
+import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$Optional} from "java.util.Optional"
 import {$ISettingsCategory$$Type, $ISettingsCategory$$Interface} from "net.p3pp3rf1y.sophisticatedcore.settings.ISettingsCategory"
 import {$Consumer$$Type} from "java.util.function.Consumer"
@@ -125,17 +125,17 @@ static readonly "NAME": StringJS
 
 constructor(arg0: $CompoundTag$$Type, arg1: $Consumer$$Type<($CompoundTag)>, arg2: StringJS)
 
-public "setSettingValue"<S>(arg0: $MainSetting$$Type<(S)>, arg1: S): void
-public "isLargerThanNumberOfSlots"(arg0: integer): boolean
-public "deleteSlotSettingsFrom"(arg0: integer): void
-public "reloadFrom"(arg0: $CompoundTag$$Type): void
-public "getPlayerSettingsTagName"(): StringJS
-public "getSettingValue"<S>(arg0: $MainSetting$$Type<(S)>): $Optional<(S)>
 public "overwriteWith"(arg0: $ISettingsCategory$$Type): void
 public "overwriteWith"(arg0: T): void
 public "removeSetting"<S>(arg0: $MainSetting$$Type<(S)>): void
-public "copyTo"(arg0: T, arg1: integer, arg2: integer): void
+public "reloadFrom"(arg0: $CompoundTag$$Type): void
+public "getPlayerSettingsTagName"(): StringJS
+public "getSettingValue"<S>(arg0: $MainSetting$$Type<(S)>): $Optional<(S)>
 public "copyTo"(arg0: $ISettingsCategory$$Type, arg1: integer, arg2: integer): void
+public "copyTo"(arg0: T, arg1: integer, arg2: integer): void
+public "setSettingValue"<S>(arg0: $MainSetting$$Type<(S)>, arg1: S): void
+public "isLargerThanNumberOfSlots"(arg0: integer): boolean
+public "deleteSlotSettingsFrom"(arg0: integer): void
 get "playerSettingsTagName"(): StringJS
 }
 /**
@@ -154,11 +154,11 @@ export interface $ISettingsCategory$$Interface<T extends $ISettingsCategory<(obj
 }
 
 export class $ISettingsCategory<T extends $ISettingsCategory<(object)>> implements $ISettingsCategory$$Interface {
+ "overwriteWith"(arg0: T): void
+ "reloadFrom"(arg0: $CompoundTag$$Type): void
+ "copyTo"(arg0: T, arg1: integer, arg2: integer): void
  "isLargerThanNumberOfSlots"(arg0: integer): boolean
  "deleteSlotSettingsFrom"(arg0: integer): void
- "reloadFrom"(arg0: $CompoundTag$$Type): void
- "overwriteWith"(arg0: T): void
- "copyTo"(arg0: T, arg1: integer, arg2: integer): void
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_

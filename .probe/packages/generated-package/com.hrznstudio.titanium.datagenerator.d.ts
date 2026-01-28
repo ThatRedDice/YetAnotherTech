@@ -43,8 +43,8 @@ export type $ILootTableProvider$$Original<T> = $ILootTableProvider<(T)>;}
 declare module "com.hrznstudio.titanium.datagenerator.loot.block.BasicBlockLootTables" {
 import {$LootTable$Builder, $LootTable$Builder$$Type} from "net.minecraft.world.level.storage.loot.LootTable$Builder"
 import {$Supplier$$Type} from "java.util.function.Supplier"
-import {$ItemLike$$Type} from "net.minecraft.world.level.ItemLike"
 import {$List$$Type} from "java.util.List"
+import {$ItemLike$$Type} from "net.minecraft.world.level.ItemLike"
 import {$BiConsumer$$Type} from "java.util.function.BiConsumer"
 import {$Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"

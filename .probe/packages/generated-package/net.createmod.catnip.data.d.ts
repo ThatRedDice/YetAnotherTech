@@ -1,6 +1,6 @@
 declare module "net.createmod.catnip.data.Couple" {
-import {$StreamCodec, $StreamCodec$$Type} from "net.minecraft.network.codec.StreamCodec"
 import {$Iterable$$Interface} from "java.lang.Iterable"
+import {$StreamCodec, $StreamCodec$$Type} from "net.minecraft.network.codec.StreamCodec"
 import {$Iterator} from "java.util.Iterator"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$Spliterator} from "java.util.Spliterator"
@@ -37,8 +37,8 @@ public "copy"(): $Pair
 public static "create"<T>(arg0: $Supplier$$Type<(T)>): $Couple<(T)>
 public static "create"<T>(arg0: T, arg1: T): $Couple<(T)>
 public "swap"(): $Pair
-public "both"(arg0: $Predicate$$Type<(T)>): boolean
 public static "codec"<T>(arg0: $Codec$$Type<(T)>): $Codec<($Couple<(T)>)>
+public "both"(arg0: $Predicate$$Type<(T)>): boolean
 public "either"(arg0: $Predicate$$Type<(T)>): boolean
 public static "createWithContext"<T>(arg0: $Function$$Type<(boolean), (T)>): $Couple<(T)>
 public "mapNotNull"<S>(arg0: $Function$$Type<(T), (S)>): $Couple<(S)>

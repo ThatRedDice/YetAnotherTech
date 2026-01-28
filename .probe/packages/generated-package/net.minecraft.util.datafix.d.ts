@@ -18,7 +18,7 @@ public "biomeMapping"(): $Map<(StringJS), (StringJS)>
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $StructuresBecomeConfiguredFix$Conversion$$Type = ({"fallback"?: StringJS, "biomeMapping"?: $Map$$Type<(StringJS), (StringJS)>}) | ([fallback?: StringJS, biomeMapping?: $Map$$Type<(StringJS), (StringJS)>]);
+export type $StructuresBecomeConfiguredFix$Conversion$$Type = ({"biomeMapping"?: $Map$$Type<(StringJS), (StringJS)>, "fallback"?: StringJS}) | ([biomeMapping?: $Map$$Type<(StringJS), (StringJS)>, fallback?: StringJS]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */

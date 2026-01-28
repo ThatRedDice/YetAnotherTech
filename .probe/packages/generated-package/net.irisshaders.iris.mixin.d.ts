@@ -21,19 +21,19 @@ declare module "net.irisshaders.iris.mixin.texture.SpriteContentsTickerAccessor"
 import {$SpriteContents$AnimatedTexture} from "net.minecraft.client.renderer.texture.SpriteContents$AnimatedTexture"
 
 export interface $SpriteContentsTickerAccessor$$Interface {
-get "animationInfo"(): $SpriteContents$AnimatedTexture
-get "subFrame"(): integer
 get "frame"(): integer
-set "subFrame"(value: integer)
 set "frame"(value: integer)
+get "subFrame"(): integer
+set "subFrame"(value: integer)
+get "animationInfo"(): $SpriteContents$AnimatedTexture
 }
 
 export class $SpriteContentsTickerAccessor implements $SpriteContentsTickerAccessor$$Interface {
- "getAnimationInfo"(): $SpriteContents$AnimatedTexture
- "getSubFrame"(): integer
  "getFrame"(): integer
- "setSubFrame"(arg0: integer): void
  "setFrame"(arg0: integer): void
+ "getSubFrame"(): integer
+ "setSubFrame"(arg0: integer): void
+ "getAnimationInfo"(): $SpriteContents$AnimatedTexture
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -133,15 +133,15 @@ import {$RenderType$$Type} from "net.minecraft.client.renderer.RenderType"
 
 export interface $LevelRendererAccessor$$Interface {
 get "level"(): $ClientLevel
-get "entityRenderDispatcher"(): $EntityRenderDispatcher
 get "renderBuffers"(): $RenderBuffers
 set "renderBuffers"(value: $RenderBuffers$$Type)
 get "destructionProgress"(): $Long2ObjectMap<($SortedSet<($BlockDestructionProgress)>)>
+get "entityRenderDispatcher"(): $EntityRenderDispatcher
 }
 
 export class $LevelRendererAccessor implements $LevelRendererAccessor$$Interface {
  "getLevel"(): $ClientLevel
- "getEntityRenderDispatcher"(): $EntityRenderDispatcher
+ "invokeDoesMobEffectBlockSky"(arg0: $Camera$$Type): boolean
  "invokeRenderSectionLayer"(arg0: $RenderType$$Type, arg1: double, arg2: double, arg3: double, arg4: $Matrix4f$$Type, arg5: $Matrix4f$$Type): void
  "invokeSetupRender"(arg0: $Camera$$Type, arg1: $Frustum$$Type, arg2: boolean, arg3: boolean): void
  "invokeRenderEntity"(arg0: $Entity$$Type, arg1: double, arg2: double, arg3: double, arg4: float, arg5: $PoseStack$$Type, arg6: $MultiBufferSource$$Type): void
@@ -150,7 +150,7 @@ export class $LevelRendererAccessor implements $LevelRendererAccessor$$Interface
  "shouldRegenerateClouds"(): boolean
  "setShouldRegenerateClouds"(arg0: boolean): void
  "getDestructionProgress"(): $Long2ObjectMap<($SortedSet<($BlockDestructionProgress)>)>
- "invokeDoesMobEffectBlockSky"(arg0: $Camera$$Type): boolean
+ "getEntityRenderDispatcher"(): $EntityRenderDispatcher
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_

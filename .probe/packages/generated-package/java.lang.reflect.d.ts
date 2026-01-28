@@ -2,8 +2,8 @@ declare module "java.lang.reflect.Method" {
 import {$Executable} from "java.lang.reflect.Executable"
 import {$TypeVariable} from "java.lang.reflect.TypeVariable"
 import {$Annotation} from "java.lang.annotation.Annotation"
-import {$AnnotatedType} from "java.lang.reflect.AnnotatedType"
 import {$Type} from "java.lang.reflect.Type"
+import {$AnnotatedType} from "java.lang.reflect.AnnotatedType"
 import {$Class, $Class$$Type} from "java.lang.Class"
 
 /**
@@ -71,9 +71,9 @@ export type $Method$$Original = $Method;}
 declare module "java.lang.reflect.Field" {
 import {$Member$$Interface} from "java.lang.reflect.Member"
 import {$Annotation} from "java.lang.annotation.Annotation"
-import {$AnnotatedType} from "java.lang.reflect.AnnotatedType"
 import {$AccessibleObject} from "java.lang.reflect.AccessibleObject"
 import {$Type} from "java.lang.reflect.Type"
+import {$AnnotatedType} from "java.lang.reflect.AnnotatedType"
 import {$Set} from "java.util.Set"
 import {$Class, $Class$$Type} from "java.lang.Class"
 import {$AccessFlag} from "java.lang.reflect.AccessFlag"
@@ -305,8 +305,8 @@ export type $AccessFlag$Location$$Original = $AccessFlag$Location;}
 declare module "java.lang.reflect.RecordComponent" {
 import {$AnnotatedElement$$Interface} from "java.lang.reflect.AnnotatedElement"
 import {$Annotation, $Annotation$$Type} from "java.lang.annotation.Annotation"
-import {$AnnotatedType} from "java.lang.reflect.AnnotatedType"
 import {$Type} from "java.lang.reflect.Type"
+import {$AnnotatedType} from "java.lang.reflect.AnnotatedType"
 import {$Class, $Class$$Type} from "java.lang.Class"
 import {$Method} from "java.lang.reflect.Method"
 
@@ -351,8 +351,8 @@ export type $RecordComponent$$Type = ($RecordComponent);
  */
 export type $RecordComponent$$Original = $RecordComponent;}
 declare module "java.lang.reflect.Member" {
-import {$Class} from "java.lang.Class"
 import {$Set} from "java.util.Set"
+import {$Class} from "java.lang.Class"
 import {$AccessFlag} from "java.lang.reflect.AccessFlag"
 
 /**
@@ -413,8 +413,8 @@ declare module "java.lang.reflect.Parameter" {
 import {$Executable} from "java.lang.reflect.Executable"
 import {$AnnotatedElement$$Interface} from "java.lang.reflect.AnnotatedElement"
 import {$Annotation, $Annotation$$Type} from "java.lang.annotation.Annotation"
-import {$AnnotatedType} from "java.lang.reflect.AnnotatedType"
 import {$Type} from "java.lang.reflect.Type"
+import {$AnnotatedType} from "java.lang.reflect.AnnotatedType"
 import {$Set} from "java.util.Set"
 import {$Class, $Class$$Type} from "java.lang.Class"
 import {$AccessFlag} from "java.lang.reflect.AccessFlag"
@@ -472,8 +472,8 @@ declare module "java.lang.reflect.Constructor" {
 import {$Executable} from "java.lang.reflect.Executable"
 import {$TypeVariable} from "java.lang.reflect.TypeVariable"
 import {$Annotation} from "java.lang.annotation.Annotation"
-import {$AnnotatedType} from "java.lang.reflect.AnnotatedType"
 import {$Type} from "java.lang.reflect.Type"
+import {$AnnotatedType} from "java.lang.reflect.AnnotatedType"
 import {$Class, $Class$$Type} from "java.lang.Class"
 
 /**
@@ -573,12 +573,12 @@ export type $AccessibleObject$$Type = ($AccessibleObject);
 export type $AccessibleObject$$Original = $AccessibleObject;}
 declare module "java.lang.reflect.Executable" {
 import {$GenericDeclaration$$Interface} from "java.lang.reflect.GenericDeclaration"
-import {$TypeVariable} from "java.lang.reflect.TypeVariable"
 import {$Member$$Interface} from "java.lang.reflect.Member"
+import {$TypeVariable} from "java.lang.reflect.TypeVariable"
 import {$Annotation} from "java.lang.annotation.Annotation"
-import {$AnnotatedType} from "java.lang.reflect.AnnotatedType"
 import {$AccessibleObject} from "java.lang.reflect.AccessibleObject"
 import {$Type} from "java.lang.reflect.Type"
+import {$AnnotatedType} from "java.lang.reflect.AnnotatedType"
 import {$Set} from "java.util.Set"
 import {$Class, $Class$$Type} from "java.lang.Class"
 import {$Parameter} from "java.lang.reflect.Parameter"

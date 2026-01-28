@@ -6,8 +6,8 @@ import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$AEBaseInvBlockEntity} from "appeng.blockentity.AEBaseInvBlockEntity"
 import {$Actionable$$Type} from "appeng.api.config.Actionable"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
-import {$PowerMultiplier$$Type} from "appeng.api.config.PowerMultiplier"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
+import {$PowerMultiplier$$Type} from "appeng.api.config.PowerMultiplier"
 import {$IExternalPowerSink$$Interface} from "appeng.blockentity.powersink.IExternalPowerSink"
 import {$IEnergyStorage} from "net.neoforged.neoforge.energy.IEnergyStorage"
 import {$PowerUnit$$Type} from "appeng.api.config.PowerUnit"
@@ -20,37 +20,37 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 
 constructor(arg0: $BlockEntityType$$Type<(never)>, arg1: $BlockPos$$Type, arg2: $BlockState$$Type)
 
-public "getEnergyStorage"(arg0: $Direction$$Type): $IEnergyStorage
 public "saveAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
+public "extractAEPower"(arg0: double, arg1: $Actionable$$Type, arg2: $PowerMultiplier$$Type): double
+public "isAEPublicPowerStorage"(): boolean
+public "getAECurrentPower"(): double
+public "injectAEPower"(arg0: double, arg1: $Actionable$$Type): double
+public "getAEMaxPower"(): double
+public "getPowerFlow"(): $AccessRestriction
+public "getExternalPowerDemand"(arg0: $PowerUnit$$Type, arg1: double): double
+public "injectExternalPower"(arg0: $PowerUnit$$Type, arg1: double, arg2: $Actionable$$Type): double
+public "loadTag"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "setInternalPublicPowerStorage"(arg0: boolean): void
 public "setInternalPowerFlow"(arg0: $AccessRestriction$$Type): void
 public "setInternalMaxPower"(arg0: double): void
 public "getInternalCurrentPower"(): double
 public "setInternalCurrentPower"(arg0: double): void
 public "getInternalMaxPower"(): double
-public "getAEMaxPower"(): double
-public "getPowerFlow"(): $AccessRestriction
-public "extractAEPower"(arg0: double, arg1: $Actionable$$Type, arg2: $PowerMultiplier$$Type): double
-public "isAEPublicPowerStorage"(): boolean
-public "getAECurrentPower"(): double
-public "injectAEPower"(arg0: double, arg1: $Actionable$$Type): double
-public "getExternalPowerDemand"(arg0: $PowerUnit$$Type, arg1: double): double
-public "injectExternalPower"(arg0: $PowerUnit$$Type, arg1: double, arg2: $Actionable$$Type): double
-public "loadTag"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
+public "getEnergyStorage"(arg0: $Direction$$Type): $IEnergyStorage
 public "getPriority"(): integer
 public static "empty"(): $IEnergySource
 public "isClientSide"(): boolean
 public static "tryClear"(arg0: any): void
+get "AEPublicPowerStorage"(): boolean
+get "AECurrentPower"(): double
+get "AEMaxPower"(): double
+get "powerFlow"(): $AccessRestriction
 set "internalPublicPowerStorage"(value: boolean)
 set "internalPowerFlow"(value: $AccessRestriction$$Type)
 set "internalMaxPower"(value: double)
 get "internalCurrentPower"(): double
 set "internalCurrentPower"(value: double)
 get "internalMaxPower"(): double
-get "AEMaxPower"(): double
-get "powerFlow"(): $AccessRestriction
-get "AEPublicPowerStorage"(): boolean
-get "AECurrentPower"(): double
 get "priority"(): integer
 get "clientSide"(): boolean
 }
@@ -72,21 +72,21 @@ import {$PowerUnit$$Type} from "appeng.api.config.PowerUnit"
 import {$AccessRestriction} from "appeng.api.config.AccessRestriction"
 
 export interface $IExternalPowerSink$$Interface extends $IAEPowerStorage$$Interface {
-get "AEMaxPower"(): double
-get "powerFlow"(): $AccessRestriction
 get "AEPublicPowerStorage"(): boolean
 get "AECurrentPower"(): double
+get "AEMaxPower"(): double
+get "powerFlow"(): $AccessRestriction
 get "priority"(): integer
 }
 
 export class $IExternalPowerSink implements $IExternalPowerSink$$Interface {
  "getExternalPowerDemand"(arg0: $PowerUnit$$Type, arg1: double): double
  "injectExternalPower"(arg0: $PowerUnit$$Type, arg1: double, arg2: $Actionable$$Type): double
- "getAEMaxPower"(): double
- "getPowerFlow"(): $AccessRestriction
  "isAEPublicPowerStorage"(): boolean
  "getAECurrentPower"(): double
  "injectAEPower"(arg0: double, arg1: $Actionable$$Type): double
+ "getAEMaxPower"(): double
+ "getPowerFlow"(): $AccessRestriction
  "getPriority"(): integer
  "extractAEPower"(arg0: double, arg1: $Actionable$$Type, arg2: $PowerMultiplier$$Type): double
 static "empty"(): $IEnergySource

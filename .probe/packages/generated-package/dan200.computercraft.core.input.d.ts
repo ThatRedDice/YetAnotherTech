@@ -7,21 +7,21 @@ export class $UserComputerInput implements $ComputerInput$$Interface {
 constructor(arg0: $ComputerInput$$Type, arg1: $Terminal$$Type)
 constructor(arg0: $ComputerInput$$Type, arg1: boolean, arg2: integer, arg3: integer)
 
+public "paste"(arg0: $ByteBuffer$$Type): void
+public "paste"(arg0: StringJS): void
+public "mouseClick"(arg0: integer, arg1: integer, arg2: integer): void
+public "mouseClick"(arg0: integer): void
 public "codepointTyped"(arg0: integer): void
 public "releaseInputs"(): void
-public "paste"(arg0: StringJS): void
-public "paste"(arg0: $ByteBuffer$$Type): void
-public "mouseClick"(arg0: integer): void
-public "mouseClick"(arg0: integer, arg1: integer, arg2: integer): void
-public "charTyped"(arg0: byte): void
 public "keyUp"(arg0: integer): void
 public "keyDown"(arg0: integer, arg1: boolean): void
 public "keyDown"(arg0: integer): void
-public "mouseUp"(arg0: integer, arg1: integer, arg2: integer): void
 public "mouseUp"(arg0: integer): void
+public "mouseUp"(arg0: integer, arg1: integer, arg2: integer): void
 public "mouseScroll"(arg0: integer): void
 public "mouseScroll"(arg0: integer, arg1: integer, arg2: integer): void
 public "mouseDrag"(arg0: integer, arg1: integer, arg2: integer): void
+public "charTyped"(arg0: byte): void
 public "mouseMove"(arg0: integer, arg1: integer): void
 }
 /**
@@ -42,12 +42,12 @@ export interface $ComputerInput$$Interface {
 export class $ComputerInput implements $ComputerInput$$Interface {
  "paste"(arg0: $ByteBuffer$$Type): void
  "mouseClick"(arg0: integer, arg1: integer, arg2: integer): void
- "charTyped"(arg0: byte): void
  "keyUp"(arg0: integer): void
  "keyDown"(arg0: integer, arg1: boolean): void
  "mouseUp"(arg0: integer, arg1: integer, arg2: integer): void
  "mouseScroll"(arg0: integer, arg1: integer, arg2: integer): void
  "mouseDrag"(arg0: integer, arg1: integer, arg2: integer): void
+ "charTyped"(arg0: byte): void
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_

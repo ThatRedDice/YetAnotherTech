@@ -18,6 +18,8 @@ export class $ObjectInput implements $ObjectInput$$Interface {
  "close"(): void
  "skip"(arg0: long): long
  "available"(): integer
+ "readFully"(arg0: (byte)[]): void
+ "readFully"(arg0: (byte)[], arg1: integer, arg2: integer): void
  "readUnsignedByte"(): integer
  "readUnsignedShort"(): integer
  "skipBytes"(arg0: integer): integer
@@ -28,8 +30,6 @@ export class $ObjectInput implements $ObjectInput$$Interface {
  "readDouble"(): double
  "readChar"(): character
  "readFloat"(): float
- "readFully"(arg0: (byte)[], arg1: integer, arg2: integer): void
- "readFully"(arg0: (byte)[]): void
  "readLine"(): StringJS
  "readInt"(): integer
  "readUTF"(): StringJS
@@ -179,6 +179,8 @@ export interface $DataInput$$Interface {
 }
 
 export class $DataInput implements $DataInput$$Interface {
+ "readFully"(arg0: (byte)[]): void
+ "readFully"(arg0: (byte)[], arg1: integer, arg2: integer): void
  "readUnsignedByte"(): integer
  "readUnsignedShort"(): integer
  "skipBytes"(arg0: integer): integer
@@ -189,8 +191,6 @@ export class $DataInput implements $DataInput$$Interface {
  "readDouble"(): double
  "readChar"(): character
  "readFloat"(): float
- "readFully"(arg0: (byte)[], arg1: integer, arg2: integer): void
- "readFully"(arg0: (byte)[]): void
  "readLine"(): StringJS
  "readInt"(): integer
  "readUTF"(): StringJS
@@ -231,9 +231,9 @@ export type $FilenameFilter$$Type = ((arg0: $File, arg1: StringJS) => boolean);
 export type $FilenameFilter$$Original = $FilenameFilter;}
 declare module "java.io.File" {
 import {$URI, $URI$$Type} from "java.net.URI"
+import {$Comparable$$Interface} from "java.lang.Comparable"
 import {$Serializable$$Interface} from "java.io.Serializable"
 import {$FileFilter$$Type} from "java.io.FileFilter"
-import {$Comparable$$Interface} from "java.lang.Comparable"
 import {$URL} from "java.net.URL"
 import {$FilenameFilter$$Type} from "java.io.FilenameFilter"
 import {$Path, $Path$$Type} from "java.nio.file.Path"
@@ -429,8 +429,8 @@ export type $DataOutputStream$$Type = ($DataOutputStream);
  */
 export type $DataOutputStream$$Original = $DataOutputStream;}
 declare module "java.io.Reader" {
-import {$Writer$$Type} from "java.io.Writer"
 import {$CharBuffer$$Type} from "java.nio.CharBuffer"
+import {$Writer$$Type} from "java.io.Writer"
 import {$Readable$$Interface} from "java.lang.Readable"
 import {$Closeable$$Interface} from "java.io.Closeable"
 
@@ -464,8 +464,8 @@ export type $Reader$$Type = ($Reader);
 export type $Reader$$Original = $Reader;}
 declare module "java.io.PrintWriter" {
 import {$Writer, $Writer$$Type} from "java.io.Writer"
-import {$Charset$$Type} from "java.nio.charset.Charset"
 import {$File$$Type} from "java.io.File"
+import {$Charset$$Type} from "java.nio.charset.Charset"
 import {$Appendable} from "java.lang.Appendable"
 import {$OutputStream$$Type} from "java.io.OutputStream"
 import {$Locale$$Type} from "java.util.Locale"
@@ -545,9 +545,9 @@ constructor(arg0: $Writer$$Type)
 constructor(arg0: $Writer$$Type, arg1: integer)
 
 public "flush"(): void
-public "write"(arg0: integer): void
-public "write"(arg0: StringJS, arg1: integer, arg2: integer): void
 public "write"(arg0: (character)[], arg1: integer, arg2: integer): void
+public "write"(arg0: StringJS, arg1: integer, arg2: integer): void
+public "write"(arg0: integer): void
 public "newLine"(): void
 public "close"(): void
 }
@@ -588,8 +588,8 @@ export type $Externalizable$$Type = ($Externalizable);
 export type $Externalizable$$Original = $Externalizable;}
 declare module "java.io.PrintStream" {
 import {$FilterOutputStream} from "java.io.FilterOutputStream"
-import {$Charset, $Charset$$Type} from "java.nio.charset.Charset"
 import {$File$$Type} from "java.io.File"
+import {$Charset, $Charset$$Type} from "java.nio.charset.Charset"
 import {$Appendable, $Appendable$$Interface} from "java.lang.Appendable"
 import {$Closeable$$Interface} from "java.io.Closeable"
 import {$OutputStream$$Type} from "java.io.OutputStream"
@@ -629,20 +629,20 @@ public "flush"(): void
 public "format"(arg0: $Locale$$Type, arg1: StringJS, ...arg2: (any)[]): $PrintStream
 public "format"(arg0: StringJS, ...arg1: (any)[]): $PrintStream
 public "charset"(): $Charset
-public "printf"(arg0: $Locale$$Type, arg1: StringJS, ...arg2: (any)[]): $PrintStream
 public "printf"(arg0: StringJS, ...arg1: (any)[]): $PrintStream
+public "printf"(arg0: $Locale$$Type, arg1: StringJS, ...arg2: (any)[]): $PrintStream
 public "write"(arg0: (byte)[]): void
 public "write"(arg0: (byte)[], arg1: integer, arg2: integer): void
 public "write"(arg0: integer): void
 public "print"(arg0: StringJS): void
-public "print"(arg0: (character)[]): void
 public "print"(arg0: any): void
 public "print"(arg0: boolean): void
-public "print"(arg0: character): void
-public "print"(arg0: integer): void
-public "print"(arg0: double): void
-public "print"(arg0: float): void
+public "print"(arg0: (character)[]): void
 public "print"(arg0: long): void
+public "print"(arg0: integer): void
+public "print"(arg0: float): void
+public "print"(arg0: double): void
+public "print"(arg0: character): void
 public "close"(): void
 public "writeBytes"(arg0: (byte)[]): void
 public "checkError"(): boolean

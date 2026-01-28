@@ -4,8 +4,8 @@ import {$Map} from "java.util.Map"
 import {$FormattedText$$Type} from "net.minecraft.network.chat.FormattedText"
 import {$List, $List$$Type} from "java.util.List"
 import {$BiConsumer$$Type} from "java.util.function.BiConsumer"
-import {$InputStream$$Type} from "java.io.InputStream"
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
+import {$InputStream$$Type} from "java.io.InputStream"
 
 export class $Language {
 static readonly "DEFAULT": StringJS

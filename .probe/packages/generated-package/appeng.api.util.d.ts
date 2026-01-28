@@ -36,12 +36,12 @@ static readonly "DENSE_SMART": $AECableType
 public "isDense"(): boolean
 public "isSmart"(): boolean
 public "variant"(): $AECableVariant
-public "isValid"(): boolean
 public "size"(): $AECableSize
 public static "values"(): ($AECableType)[]
 public static "min"(arg0: $AECableType$$Type, arg1: $AECableType$$Type): $AECableType
 public static "max"(arg0: $AECableType$$Type, arg1: $AECableType$$Type): $AECableType
 public static "valueOf"(arg0: StringJS): $AECableType
+public "isValid"(): boolean
 get "dense"(): boolean
 get "smart"(): boolean
 get "valid"(): boolean
@@ -58,8 +58,8 @@ export type $AECableType$$Original = $AECableType;}
 declare module "appeng.api.util.DimensionalBlockPos" {
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
+import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 
 export class $DimensionalBlockPos {
 constructor(arg0: $Level$$Type, arg1: integer, arg2: integer, arg3: integer)
@@ -89,9 +89,9 @@ declare module "appeng.api.util.KeyTypeSelection" {
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
+import {$List, $List$$Type} from "java.util.List"
 import {$Predicate, $Predicate$$Type} from "java.util.function.Predicate"
 import {$AEKeyType, $AEKeyType$$Type} from "appeng.api.stacks.AEKeyType"
-import {$List, $List$$Type} from "java.util.List"
 import {$KeyTypeSelection$Listener$$Type} from "appeng.api.util.KeyTypeSelection$Listener"
 import {$Runnable$$Type} from "java.lang.Runnable"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
@@ -246,13 +246,13 @@ export type $AECableSize$$Original = $AECableSize;}
 declare module "appeng.api.util.AEColor" {
 import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
+import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
-import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$List} from "java.util.List"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$DyeColor, $DyeColor$$Type} from "net.minecraft.world.item.DyeColor"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
@@ -298,11 +298,11 @@ public static "values"(): ($AEColor)[]
 public static "valueOf"(arg0: StringJS): $AEColor
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
 }

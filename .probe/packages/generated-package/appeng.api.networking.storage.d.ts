@@ -1,6 +1,6 @@
 declare module "appeng.api.networking.storage.IStorageService" {
-import {$IGridNode$$Type} from "appeng.api.networking.IGridNode"
 import {$KeyCounter} from "appeng.api.stacks.KeyCounter"
+import {$IGridNode$$Type} from "appeng.api.networking.IGridNode"
 import {$MEStorage} from "appeng.api.storage.MEStorage"
 import {$IGridService$$Interface} from "appeng.api.networking.IGridService"
 import {$IStorageProvider$$Type} from "appeng.api.storage.IStorageProvider"

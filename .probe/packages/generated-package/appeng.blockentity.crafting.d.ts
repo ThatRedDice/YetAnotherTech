@@ -20,14 +20,13 @@ export type $IMolecularAssemblerSupportedPattern$CraftingGridAccessor$$Type = ((
 export type $IMolecularAssemblerSupportedPattern$CraftingGridAccessor$$Original = $IMolecularAssemblerSupportedPattern$CraftingGridAccessor;}
 declare module "appeng.blockentity.crafting.CraftingBlockEntity" {
 import {$IPowerChannelState$$Interface} from "appeng.api.implementations.IPowerChannelState"
-import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$IConfigurableObject$$Interface} from "appeng.api.util.IConfigurableObject"
-import {$AbstractCraftingUnitBlock} from "appeng.block.crafting.AbstractCraftingUnitBlock"
+import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$IGridNodeListener$State$$Type} from "appeng.api.networking.IGridNodeListener$State"
+import {$AbstractCraftingUnitBlock} from "appeng.block.crafting.AbstractCraftingUnitBlock"
 import {$Direction} from "net.minecraft.core.Direction"
 import {$AENetworkedBlockEntity} from "appeng.blockentity.grid.AENetworkedBlockEntity"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
-import {$IAECluster} from "appeng.me.cluster.IAECluster"
 import {$IAEMultiBlock$$Interface} from "appeng.me.cluster.IAEMultiBlock"
 import {$BlockOrientation$$Type} from "appeng.api.orientation.BlockOrientation"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
@@ -43,38 +42,37 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 
 constructor(arg0: $BlockEntityType$$Type<(never)>, arg1: $BlockPos$$Type, arg2: $BlockState$$Type)
 
-public "isFormed"(): boolean
-public "updateStatus"(arg0: $CraftingCPUCluster$$Type): void
 public "getConfigManager"(): $IConfigManager
 public "isPowered"(): boolean
 public "saveAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
-public "updateMultiBlock"(arg0: $BlockPos$$Type): void
-public "breakCluster"(): void
+public "getCluster"(): $CraftingCPUCluster
 public "onMainNodeStateChanged"(arg0: $IGridNodeListener$State$$Type): void
-public "getCluster"(): $IAECluster
 public "getStorageBytes"(): long
 public "getAcceleratorThreads"(): integer
-public "onReady"(): void
 public "getGridConnectableSides"(arg0: $BlockOrientation$$Type): $Set<($Direction)>
 public "loadTag"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
+public "onReady"(): void
+public "updateMultiBlock"(arg0: $BlockPos$$Type): void
+public "breakCluster"(): void
 public "isCoreBlock"(): boolean
 public "getUnitBlock"(): $AbstractCraftingUnitBlock<(never)>
 public "updateSubType"(arg0: boolean): void
 public "setCoreBlock"(arg0: boolean): void
 public "setPreviousState"(arg0: $CompoundTag$$Type): void
 public "getPreviousState"(): $CompoundTag
-public "isValid"(): boolean
+public "isFormed"(): boolean
+public "updateStatus"(arg0: $CraftingCPUCluster$$Type): void
 public "setName"(arg0: StringJS): void
 public "isActive"(): boolean
+public "isValid"(): boolean
 public "disconnect"(arg0: boolean): void
 public "setBlockState"(arg0: $BlockState$$Type): void
 public "getModelData"(): $ModelData
 public "saveChanges"(): void
 public static "tryClear"(arg0: any): void
-get "formed"(): boolean
 get "configManager"(): $IConfigManager
 get "powered"(): boolean
-get "cluster"(): $IAECluster
+get "cluster"(): $CraftingCPUCluster
 get "storageBytes"(): long
 get "acceleratorThreads"(): integer
 get "coreBlock"(): boolean
@@ -82,9 +80,10 @@ get "unitBlock"(): $AbstractCraftingUnitBlock<(never)>
 set "coreBlock"(value: boolean)
 set "previousState"(value: $CompoundTag$$Type)
 get "previousState"(): $CompoundTag
-get "valid"(): boolean
+get "formed"(): boolean
 set "name"(value: StringJS)
 get "active"(): boolean
+get "valid"(): boolean
 set "blockState"(value: $BlockState$$Type)
 get "modelData"(): $ModelData
 }
@@ -102,16 +101,16 @@ import {$CraftingInput$$Type} from "net.minecraft.world.item.crafting.CraftingIn
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$List} from "java.util.List"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$NonNullList} from "net.minecraft.core.NonNullList"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$NonNullList} from "net.minecraft.core.NonNullList"
 import {$KeyCounter$$Type} from "appeng.api.stacks.KeyCounter"
 import {$IPatternDetails$$Interface} from "appeng.api.crafting.IPatternDetails"
 import {$IMolecularAssemblerSupportedPattern$CraftingGridAccessor$$Type} from "appeng.blockentity.crafting.IMolecularAssemblerSupportedPattern$CraftingGridAccessor"
 import {$AEItemKey, $AEItemKey$$Type} from "appeng.api.stacks.AEItemKey"
 import {$PatternDetailsTooltip} from "appeng.api.crafting.PatternDetailsTooltip"
 import {$GenericStack} from "appeng.api.stacks.GenericStack"
-import {$IPatternDetails$IInput} from "appeng.api.crafting.IPatternDetails$IInput"
 import {$IPatternDetails$PatternInputSink$$Type} from "appeng.api.crafting.IPatternDetails$PatternInputSink"
+import {$IPatternDetails$IInput} from "appeng.api.crafting.IPatternDetails$IInput"
 
 export interface $IMolecularAssemblerSupportedPattern$$Interface extends $IPatternDetails$$Interface {
 get "primaryOutput"(): $GenericStack
@@ -123,9 +122,9 @@ get "outputs"(): $List<($GenericStack)>
 export class $IMolecularAssemblerSupportedPattern implements $IMolecularAssemblerSupportedPattern$$Interface {
  "assemble"(arg0: $CraftingInput$$Type, arg1: $Level$$Type): $ItemStack
  "getRemainingItems"(arg0: $CraftingInput$$Type): $NonNullList<($ItemStack)>
- "isSlotEnabled"(arg0: integer): boolean
  "supportsPushInputsToExternalInventory"(): boolean
  "fillCraftingGrid"(arg0: ($KeyCounter$$Type)[], arg1: $IMolecularAssemblerSupportedPattern$CraftingGridAccessor$$Type): void
+ "isSlotEnabled"(arg0: integer): boolean
  "isItemValid"(arg0: integer, arg1: $AEItemKey$$Type, arg2: $Level$$Type): boolean
  "getPrimaryOutput"(): $GenericStack
  "pushInputsToExternalInventory"(arg0: ($KeyCounter$$Type)[], arg1: $IPatternDetails$PatternInputSink$$Type): void
@@ -154,14 +153,14 @@ import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$InternalInventory} from "appeng.api.inventories.InternalInventory"
 import {$DataComponentMap$Builder$$Type} from "net.minecraft.core.component.DataComponentMap$Builder"
-import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$AECableType} from "appeng.api.util.AECableType"
+import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$BlockOrientation$$Type} from "appeng.api.orientation.BlockOrientation"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$PatternContainerGroup} from "appeng.api.implementations.blockentities.PatternContainerGroup"
 import {$IConfigManager} from "appeng.api.util.IConfigManager"
-import {$Set} from "java.util.Set"
 import {$IUpgradeInventory} from "appeng.api.upgrades.IUpgradeInventory"
+import {$Set} from "java.util.Set"
 import {$ISubMenu$$Type} from "appeng.menu.ISubMenu"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -181,22 +180,21 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 
 constructor(arg0: $BlockEntityType$$Type<(never)>, arg1: $BlockPos$$Type, arg2: $BlockState$$Type)
 
-public "getLogic"(): $PatternProviderLogic
 public "clearContent"(): void
 public "saveAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "addAdditionalDrops"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $List$$Type<($ItemStack$$Type)>): void
+public "onMainNodeStateChanged"(arg0: $IGridNodeListener$State$$Type): void
 public "exportSettings"(arg0: $SettingsFrom$$Type, arg1: $DataComponentMap$Builder$$Type, arg2: $Player$$Type): void
 public "importSettings"(arg0: $SettingsFrom$$Type, arg1: $DataComponentMap$$Type, arg2: $Player$$Type): void
-public "onMainNodeStateChanged"(arg0: $IGridNodeListener$State$$Type): void
 public "getCableConnectionType"(arg0: $Direction$$Type): $AECableType
 public "getMainMenuIcon"(): $ItemStack
 public "getTerminalIcon"(): $AEItemKey
-public "onReady"(): void
 public "getGridConnectableSides"(arg0: $BlockOrientation$$Type): $Set<($Direction)>
 public "loadTag"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
+public "onReady"(): void
+public "getLogic"(): $PatternProviderLogic
 public "getTargets"(): $EnumSet<($Direction)>
 public "setBlockState"(arg0: $BlockState$$Type): void
-public "getUpgrades"(): $IUpgradeInventory
 public "getConfigManager"(): $IConfigManager
 public "getGrid"(): $IGrid
 public "returnToMainMenu"(arg0: $Player$$Type, arg1: $ISubMenu$$Type): void
@@ -205,6 +203,7 @@ public "isVisibleInTerminal"(): boolean
 public "getTerminalPatternInventory"(): $InternalInventory
 public "getTerminalSortOrder"(): long
 public "getTerminalGroup"(): $PatternContainerGroup
+public "getUpgrades"(): $IUpgradeInventory
 public "setPriority"(arg0: integer): void
 public "getPriority"(): integer
 public "getBlockEntity"(): $BlockEntity
@@ -212,18 +211,18 @@ public "openMenu"(arg0: $Player$$Type, arg1: $MenuHostLocator$$Type): void
 public "getInstalledUpgrades"(arg0: $ItemLike$$Type): integer
 public "isUpgradedWith"(arg0: $ItemLike$$Type): boolean
 public static "tryClear"(arg0: any): void
-get "logic"(): $PatternProviderLogic
 get "mainMenuIcon"(): $ItemStack
 get "terminalIcon"(): $AEItemKey
+get "logic"(): $PatternProviderLogic
 get "targets"(): $EnumSet<($Direction)>
 set "blockState"(value: $BlockState$$Type)
-get "upgrades"(): $IUpgradeInventory
 get "configManager"(): $IConfigManager
 get "grid"(): $IGrid
 get "visibleInTerminal"(): boolean
 get "terminalPatternInventory"(): $InternalInventory
 get "terminalSortOrder"(): long
 get "terminalGroup"(): $PatternContainerGroup
+get "upgrades"(): $IUpgradeInventory
 set "priority"(value: integer)
 get "priority"(): integer
 get "blockEntity"(): $BlockEntity
@@ -238,13 +237,12 @@ export type $PatternProviderBlockEntity$$Type = ($PatternProviderBlockEntity);
  */
 export type $PatternProviderBlockEntity$$Original = $PatternProviderBlockEntity;}
 declare module "appeng.blockentity.crafting.CraftingMonitorBlockEntity" {
-import {$AEColor, $AEColor$$Type} from "appeng.api.util.AEColor"
 import {$IColorableBlockEntity$$Interface} from "appeng.api.implementations.blockentities.IColorableBlockEntity"
+import {$AEColor, $AEColor$$Type} from "appeng.api.util.AEColor"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$CraftingBlockEntity} from "appeng.blockentity.crafting.CraftingBlockEntity"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
-import {$IAECluster} from "appeng.me.cluster.IAECluster"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$ModelData} from "net.neoforged.neoforge.client.model.data.ModelData"
@@ -258,20 +256,18 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 constructor(arg0: $BlockEntityType$$Type<(never)>, arg1: $BlockPos$$Type, arg2: $BlockState$$Type)
 
 public "saveAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
-public "setJob"(arg0: $GenericStack$$Type): void
 public "recolourBlock"(arg0: $Direction$$Type, arg1: $AEColor$$Type, arg2: $Player$$Type): boolean
 public "loadTag"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "getJobProgress"(): $GenericStack
+public "setJob"(arg0: $GenericStack$$Type): void
 public "getColor"(): $AEColor
 public "getModelData"(): $ModelData
-public "getCluster"(): $IAECluster
 public "saveChanges"(): void
 public static "tryClear"(arg0: any): void
-set "job"(value: $GenericStack$$Type)
 get "jobProgress"(): $GenericStack
+set "job"(value: $GenericStack$$Type)
 get "color"(): $AEColor
 get "modelData"(): $ModelData
-get "cluster"(): $IAECluster
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -284,8 +280,8 @@ export type $CraftingMonitorBlockEntity$$Type = ($CraftingMonitorBlockEntity);
 export type $CraftingMonitorBlockEntity$$Original = $CraftingMonitorBlockEntity;}
 declare module "appeng.blockentity.crafting.MolecularAssemblerBlockEntity" {
 import {$IGridTickable$$Interface} from "appeng.api.networking.ticking.IGridTickable"
-import {$IGridNodeListener$State$$Type} from "appeng.api.networking.IGridNodeListener$State"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$IGridNodeListener$State$$Type} from "appeng.api.networking.IGridNodeListener$State"
 import {$IUpgradeableObject$$Interface} from "appeng.api.upgrades.IUpgradeableObject"
 import {$List$$Type} from "java.util.List"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
@@ -294,8 +290,8 @@ import {$ICraftingMachine, $ICraftingMachine$$Interface} from "appeng.api.implem
 import {$InternalInventory} from "appeng.api.inventories.InternalInventory"
 import {$AENetworkedInvBlockEntity} from "appeng.blockentity.grid.AENetworkedInvBlockEntity"
 import {$AECableType} from "appeng.api.util.AECableType"
-import {$KeyCounter$$Type} from "appeng.api.stacks.KeyCounter"
 import {$AppEngInternalInventory$$Type} from "appeng.util.inv.AppEngInternalInventory"
+import {$KeyCounter$$Type} from "appeng.api.stacks.KeyCounter"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$PatternContainerGroup} from "appeng.api.implementations.blockentities.PatternContainerGroup"
@@ -320,18 +316,16 @@ static readonly "INV_MAIN": $ResourceLocation
 
 constructor(arg0: $BlockEntityType$$Type<(never)>, arg1: $BlockPos$$Type, arg2: $BlockState$$Type)
 
-public "getUpgrades"(): $IUpgradeInventory
 public "getAnimationStatus"(): $AssemblerAnimationStatus
 public "clearContent"(): void
 public "isPowered"(): boolean
 public "saveAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "addAdditionalDrops"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $List$$Type<($ItemStack$$Type)>): void
-public "getCraftingProgress"(): integer
 public "getTickingRequest"(arg0: $IGridNode$$Type): $TickingRequest
 public "tickingRequest"(arg0: $IGridNode$$Type, arg1: integer): $TickRateModulation
-public "pushPattern"(arg0: $IPatternDetails$$Type, arg1: ($KeyCounter$$Type)[], arg2: $Direction$$Type): boolean
 public "onMainNodeStateChanged"(arg0: $IGridNodeListener$State$$Type): void
 public "getSubInventory"(arg0: $ResourceLocation$$Type): $InternalInventory
+public "pushPattern"(arg0: $IPatternDetails$$Type, arg1: ($KeyCounter$$Type)[], arg2: $Direction$$Type): boolean
 public "getCableConnectionType"(arg0: $Direction$$Type): $AECableType
 public "onChangeInventory"(arg0: $AppEngInternalInventory$$Type, arg1: integer): void
 public "acceptsPlans"(): boolean
@@ -340,6 +334,8 @@ public "getInternalInventory"(): $InternalInventory
 public "getCraftingMachineInfo"(): $PatternContainerGroup
 public "setAnimationStatus"(arg0: $AssemblerAnimationStatus$$Type): void
 public "getCurrentPattern"(): $IMolecularAssemblerSupportedPattern
+public "getUpgrades"(): $IUpgradeInventory
+public "getCraftingProgress"(): integer
 public "isActive"(): boolean
 public "getInstalledUpgrades"(arg0: $ItemLike$$Type): integer
 public "isUpgradedWith"(arg0: $ItemLike$$Type): boolean
@@ -348,14 +344,14 @@ public static "of"(arg0: $BlockEntity$$Type, arg1: $Direction$$Type): $ICrafting
 public "saveChanges"(): void
 public "isClientSide"(): boolean
 public static "tryClear"(arg0: any): void
-get "upgrades"(): $IUpgradeInventory
 get "animationStatus"(): $AssemblerAnimationStatus
 get "powered"(): boolean
-get "craftingProgress"(): integer
 get "internalInventory"(): $InternalInventory
 get "craftingMachineInfo"(): $PatternContainerGroup
 set "animationStatus"(value: $AssemblerAnimationStatus$$Type)
 get "currentPattern"(): $IMolecularAssemblerSupportedPattern
+get "upgrades"(): $IUpgradeInventory
+get "craftingProgress"(): integer
 get "active"(): boolean
 get "clientSide"(): boolean
 }

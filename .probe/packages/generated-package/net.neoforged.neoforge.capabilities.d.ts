@@ -30,9 +30,9 @@ import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockStat
 
 export class $BlockCapability<T, C> extends $BaseCapability<(T), (C)> implements $BlockCapabilityExtension$$Interface {
 public static "getAllProxyable"(): $List<($BlockCapability<(never), (never)>)>
-public "entangled_getIdentifier"(): $ResourceLocation
 public "isProxyable"(): boolean
 public "entangled_storeIdentifier"(identifier: $ResourceLocation$$Type): void
+public "entangled_getIdentifier"(): $ResourceLocation
 public static "createSided"<T>(arg0: $ResourceLocation$$Type, arg1: $Class$$Type<(T)>): $BlockCapability<(T), ($Direction)>
 public static "getAll"(): $List<($BlockCapability<(never), (never)>)>
 public static "create"<T, C>(arg0: $ResourceLocation$$Type, arg1: $Class$$Type<(T)>, arg2: $Class$$Type<(C)>): $BlockCapability<(T), (C)>
@@ -52,8 +52,8 @@ export type $BlockCapability$$Type<T, C> = ($BlockCapability<(T), (C)>);
  */
 export type $BlockCapability$$Original<T, C> = $BlockCapability<(T), (C)>;}
 declare module "net.neoforged.neoforge.capabilities.ItemCapability" {
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$List} from "java.util.List"
 import {$Class$$Type} from "java.lang.Class"
 import {$BaseCapability} from "net.neoforged.neoforge.capabilities.BaseCapability"
@@ -77,8 +77,8 @@ export type $ItemCapability$$Original<T, C> = $ItemCapability<(T), (C)>;}
 declare module "net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent" {
 import {$BlockCapability$$Type} from "net.neoforged.neoforge.capabilities.BlockCapability"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Event} from "net.neoforged.bus.api.Event"
+import {$Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$ITrackingCapEvent$$Interface} from "org.embeddedt.modernfix.neoforge.caps.ITrackingCapEvent"
 import {$EntityCapability$$Type} from "net.neoforged.neoforge.capabilities.EntityCapability"
 import {$RegisterCapabilitiesEventExtension$$Interface} from "com.supermartijn642.entangled.extensions.RegisterCapabilitiesEventExtension"
@@ -95,8 +95,8 @@ import {$IBlockCapabilityProvider$$Type} from "net.neoforged.neoforge.capabiliti
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
 
 export class $RegisterCapabilitiesEvent extends $Event implements $IModBusEvent$$Interface, $ITrackingCapEvent$$Interface, $RegisterCapabilitiesEventExtension$$Interface {
-public "registerItem"<T, C>(arg0: $ItemCapability$$Type<(T), (C)>, arg1: $ICapabilityProvider$$Type<($ItemStack), (C), (T)>, ...arg2: ($ItemLike$$Type)[]): void
 public "registerBlock"<T, C>(arg0: $BlockCapability$$Type<(T), (C)>, arg1: $IBlockCapabilityProvider$$Type<(T), (C)>, ...arg2: ($Block$$Type)[]): void
+public "registerItem"<T, C>(arg0: $ItemCapability$$Type<(T), (C)>, arg1: $ICapabilityProvider$$Type<($ItemStack), (C), (T)>, ...arg2: ($ItemLike$$Type)[]): void
 public "setProxyable"(arg0: $BlockCapability$$Type<(never), (never)>): void
 public "setNonProxyable"(arg0: $BlockCapability$$Type<(never), (never)>): void
 public "isItemRegistered"(arg0: $ItemCapability$$Type<(never), (never)>, arg1: $Item$$Type): boolean

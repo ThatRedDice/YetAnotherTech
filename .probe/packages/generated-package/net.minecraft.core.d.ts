@@ -24,8 +24,8 @@ export type $LayeredRegistryAccess$$Original<T> = $LayeredRegistryAccess<(T)>;}
 declare module "net.minecraft.core.BlockPos" {
 import {$Iterable} from "java.lang.Iterable"
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$BlockPos$MutableBlockPos} from "net.minecraft.core.BlockPos$MutableBlockPos"
 import {$BoundingBox$$Type} from "net.minecraft.world.level.levelgen.structure.BoundingBox"
+import {$BlockPos$MutableBlockPos} from "net.minecraft.core.BlockPos$MutableBlockPos"
 import {$Optional} from "java.util.Optional"
 import {$Predicate$$Type} from "java.util.function.Predicate"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
@@ -52,10 +52,8 @@ constructor(arg0: integer, arg1: integer, arg2: integer)
 constructor(arg0: $Vec3i$$Type)
 
 public static "randomInCube"(arg0: $RandomSource$$Type, arg1: integer, arg2: $BlockPos$$Type, arg3: integer): $Iterable<($BlockPos)>
-public static "spiralAround"(arg0: $BlockPos$$Type, arg1: integer, arg2: $Direction$$Type, arg3: $Direction$$Type): $Iterable<($BlockPos$MutableBlockPos)>
-public static "breadthFirstTraversal"(arg0: $BlockPos$$Type, arg1: integer, arg2: integer, arg3: $BiConsumer$$Type<($BlockPos), ($Consumer<($BlockPos)>)>, arg4: $Predicate$$Type<($BlockPos)>): integer
-public static "getFlatIndex"(arg0: long): long
 public "clampLocationWithin"(arg0: $Vec3$$Type): $Vec3
+public static "getFlatIndex"(arg0: long): long
 public static "randomBetweenClosed"(arg0: $RandomSource$$Type, arg1: integer, arg2: integer, arg3: integer, arg4: integer, arg5: integer, arg6: integer, arg7: integer): $Iterable<($BlockPos)>
 /**
  * 
@@ -67,10 +65,12 @@ public static "findClosestMatch"(arg0: $BlockPos$$Type, arg1: integer, arg2: int
 public static "withinManhattanStream"(arg0: $BlockPos$$Type, arg1: integer, arg2: integer, arg3: integer): $Stream<($BlockPos)>
 public static "betweenClosed"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: integer, arg5: integer): $Iterable<($BlockPos)>
 public static "betweenClosed"(arg0: $BlockPos$$Type, arg1: $BlockPos$$Type): $Iterable<($BlockPos)>
-public "relative"(arg0: $Direction$$Type): $BlockPos
-public "relative"(arg0: $Direction$$Type, arg1: integer): $BlockPos
-public "relative"(arg0: $Direction$Axis$$Type, arg1: integer): $BlockPos
+public static "spiralAround"(arg0: $BlockPos$$Type, arg1: integer, arg2: $Direction$$Type, arg3: $Direction$$Type): $Iterable<($BlockPos$MutableBlockPos)>
+public static "breadthFirstTraversal"(arg0: $BlockPos$$Type, arg1: integer, arg2: integer, arg3: $BiConsumer$$Type<($BlockPos), ($Consumer<($BlockPos)>)>, arg4: $Predicate$$Type<($BlockPos)>): integer
 public static "getY"(arg0: long): integer
+public "relative"(arg0: $Direction$$Type): $Vec3i
+public "relative"(arg0: $Direction$Axis$$Type, arg1: integer): $BlockPos
+public "relative"(arg0: $Direction$$Type, arg1: integer): $BlockPos
 public static "min"(arg0: $BlockPos$$Type, arg1: $BlockPos$$Type): $BlockPos
 public static "max"(arg0: $BlockPos$$Type, arg1: $BlockPos$$Type): $BlockPos
 public "compareTo"(arg0: any): integer
@@ -168,7 +168,7 @@ public "knownPackInfo"(): $Optional<($KnownPack)>
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $RegistrationInfo$$Type = ({"knownPackInfo"?: ($KnownPack$$Type)?, "lifecycle"?: $Lifecycle$$Type}) | ([knownPackInfo?: ($KnownPack$$Type)?, lifecycle?: $Lifecycle$$Type]);
+export type $RegistrationInfo$$Type = ({"lifecycle"?: $Lifecycle$$Type, "knownPackInfo"?: ($KnownPack$$Type)?}) | ([lifecycle?: $Lifecycle$$Type, knownPackInfo?: ($KnownPack$$Type)?]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -306,9 +306,9 @@ import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
 import {$HolderSet$Direct} from "net.minecraft.core.HolderSet$Direct"
-import {$TagKey, $TagKey$$Type} from "net.minecraft.tags.TagKey"
 import {$Either} from "com.mojang.datafixers.util.Either"
 import {$Function$$Type} from "java.util.function.Function"
+import {$TagKey, $TagKey$$Type} from "net.minecraft.tags.TagKey"
 import {$HolderSet, $HolderSet$$Interface} from "net.minecraft.core.HolderSet"
 import {$Stream} from "java.util.stream.Stream"
 import {$HolderSet$Named} from "net.minecraft.core.HolderSet$Named"
@@ -459,8 +459,8 @@ import {$Predicate$$Type} from "java.util.function.Predicate"
 import {$HolderLookup$RegistryLookup} from "net.minecraft.core.HolderLookup$RegistryLookup"
 import {$HolderOwner$$Type} from "net.minecraft.core.HolderOwner"
 import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
-import {$TagKey} from "net.minecraft.tags.TagKey"
 import {$Either} from "com.mojang.datafixers.util.Either"
+import {$TagKey} from "net.minecraft.tags.TagKey"
 import {$DataMapType$$Type} from "net.neoforged.neoforge.registries.datamaps.DataMapType"
 import {$ResourceKey, $ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
 import {$Stream} from "java.util.stream.Stream"
@@ -514,8 +514,8 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
@@ -540,11 +540,11 @@ public static "valueOf"(arg0: StringJS): $FrontAndTop
 public "top"(): $Direction
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
 }
@@ -618,15 +618,15 @@ static readonly "CODEC": $Codec<($Vec3i)>
 
 constructor(arg0: integer, arg1: integer, arg2: integer)
 
+public static "offsetCodec"(arg0: integer): $Codec<($Vec3i)>
 public "distSqr"(arg0: $Vec3i$$Type): double
 public "closerToCenterThan"(arg0: $Position$$Type, arg1: double): boolean
 public "distToLowCornerSqr"(arg0: double, arg1: double, arg2: double): double
 public "distManhattan"(arg0: $Vec3i$$Type): integer
-public static "offsetCodec"(arg0: integer): $Codec<($Vec3i)>
+public "getY"(): integer
 public "relative"(arg0: $Direction$$Type): $Vec3i
 public "relative"(arg0: $Direction$$Type, arg1: integer): $Vec3i
 public "relative"(arg0: $Direction$Axis$$Type, arg1: integer): $Vec3i
-public "getY"(): integer
 public "get"(arg0: $Direction$Axis$$Type): integer
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
@@ -686,7 +686,7 @@ public "patches"(): $HolderLookup$Provider
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $RegistrySetBuilder$PatchedRegistries$$Type = ({"full"?: $HolderLookup$Provider$$Type, "patches"?: $HolderLookup$Provider$$Type}) | ([full?: $HolderLookup$Provider$$Type, patches?: $HolderLookup$Provider$$Type]);
+export type $RegistrySetBuilder$PatchedRegistries$$Type = ({"patches"?: $HolderLookup$Provider$$Type, "full"?: $HolderLookup$Provider$$Type}) | ([patches?: $HolderLookup$Provider$$Type, full?: $HolderLookup$Provider$$Type]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -759,8 +759,8 @@ import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resource
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$DataMapType$$Type} from "net.neoforged.neoforge.registries.datamaps.DataMapType"
-import {$Set} from "java.util.Set"
 import {$Class$$Type} from "java.lang.Class"
+import {$Set} from "java.util.Set"
 import {$ResourceKey, $ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
 import {$Stream, $Stream$$Type} from "java.util.stream.Stream"
 import {$HolderSet$Named} from "net.minecraft.core.HolderSet$Named"
@@ -775,8 +775,8 @@ import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
 import {$RegistrationInfo, $RegistrationInfo$$Type} from "net.minecraft.core.RegistrationInfo"
 import {$Registry, $Registry$$Type, $Registry$$Interface} from "net.minecraft.core.Registry"
 import {$TagKey, $TagKey$$Type} from "net.minecraft.tags.TagKey"
-import {$Holder$Reference} from "net.minecraft.core.Holder$Reference"
 import {$Lifecycle} from "com.mojang.serialization.Lifecycle"
+import {$Holder$Reference} from "net.minecraft.core.Holder$Reference"
 
 export interface $WritableRegistry$$Interface<T> extends $Registry$$Interface<(T)> {
 [Symbol.iterator](): IterableIterator<T>;
@@ -827,13 +827,13 @@ static "register"<V, T>(arg0: $Registry$$Type<(V)>, arg1: $ResourceKey$$Type<(V)
  "freeze"(): $Registry<(T)>
  "getOptional"(arg0: $ResourceKey$$Type<(T)>): $Optional<(T)>
  "getOptional"(arg0: $ResourceLocation$$Type): $Optional<(T)>
- "getHolder"(arg0: $ResourceKey$$Type<(T)>): $Optional<($Holder$Reference<(T)>)>
  "getHolder"(arg0: $ResourceLocation$$Type): $Optional<($Holder$Reference<(T)>)>
+ "getHolder"(arg0: $ResourceKey$$Type<(T)>): $Optional<($Holder$Reference<(T)>)>
  "getHolder"(arg0: integer): $Optional<($Holder$Reference<(T)>)>
  "getOrThrow"(arg0: $ResourceKey$$Type<(T)>): T
  "asHolderIdMap"(): $IdMap<($Holder<(T)>)>
- "getTags"(): $Stream<($Pair<($TagKey<(T)>), ($HolderSet$Named<(T)>)>)>
  "getRandom"(arg0: $RandomSource$$Type): $Optional<($Holder$Reference<(T)>)>
+ "getTags"(): $Stream<($Pair<($TagKey<(T)>), ($HolderSet$Named<(T)>)>)>
  "wrapAsHolder"(arg0: T): $Holder<(T)>
  "getHolderOrThrow"(arg0: $ResourceKey$$Type<(T)>): $Holder$Reference<(T)>
  "asLookup"(): $HolderLookup$RegistryLookup<(T)>
@@ -931,9 +931,9 @@ import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$Predicate, $Predicate$$Type, $Predicate$$Interface} from "java.util.function.Predicate"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 import {$Direction$Plane} from "net.minecraft.core.Direction$Plane"
@@ -960,16 +960,16 @@ public static "getRandom"(arg0: $RandomSource$$Type): $Direction$Axis
 public "choose"(arg0: double, arg1: double, arg2: double): double
 public "choose"(arg0: integer, arg1: integer, arg2: integer): integer
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
-public "or"(arg0: $Predicate$$Type<($Direction)>): $Predicate<($Direction)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "not"<T>(arg0: $Predicate$$Type<($Direction)>): $Predicate<($Direction)>
 public static "isEqual"<T>(arg0: any): $Predicate<($Direction)>
 public "negate"(): $Predicate<($Direction)>
 public "and"(arg0: $Predicate$$Type<($Direction)>): $Predicate<($Direction)>
-public static "not"<T>(arg0: $Predicate$$Type<($Direction)>): $Predicate<($Direction)>
+public "or"(arg0: $Predicate$$Type<($Direction)>): $Predicate<($Direction)>
 get "horizontal"(): boolean
 get "vertical"(): boolean
 get "plane"(): $Direction$Plane
@@ -993,8 +993,8 @@ import {$Registry, $Registry$$Type} from "net.minecraft.core.Registry"
 import {$List} from "java.util.List"
 import {$Lifecycle$$Type} from "com.mojang.serialization.Lifecycle"
 import {$ResourceKey, $ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
-import {$Cloner$Factory$$Type} from "net.minecraft.core.Cloner$Factory"
 import {$HolderLookup$Provider, $HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$Cloner$Factory$$Type} from "net.minecraft.core.Cloner$Factory"
 import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
 
 export class $RegistrySetBuilder {
@@ -1085,12 +1085,12 @@ import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
 import {$Direction$Axis, $Direction$Axis$$Type} from "net.minecraft.core.Direction$Axis"
 import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$Vec3i} from "net.minecraft.core.Vec3i"
-import {$Codec} from "com.mojang.serialization.Codec"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
+import {$Codec} from "com.mojang.serialization.Codec"
 import {$Supplier$$Type} from "java.util.function.Supplier"
-import {$Quaternionf} from "org.joml.Quaternionf"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
+import {$Quaternionf} from "org.joml.Quaternionf"
 import {$Stream} from "java.util.stream.Stream"
 
 export class $Direction extends $Enum<($Direction)> implements $StringRepresentable$$Interface {
@@ -1107,8 +1107,8 @@ static readonly "STREAM_CODEC": $StreamCodec<($ByteBuf), ($Direction)>
 
 public "getY"(): integer
 public "getYaw"(): float
-public "getClockWise"(): $Direction
 public "getClockWise"(arg0: $Direction$Axis$$Type): $Direction
+public "getClockWise"(): $Direction
 public "getCounterClockWise"(arg0: $Direction$Axis$$Type): $Direction
 public "getCounterClockWise"(): $Direction
 public static "orderedByNearest"(arg0: $Entity$$Type): ($Direction)[]
@@ -1128,16 +1128,16 @@ public "toString"(): StringJS
 public static "values"(): ($Direction)[]
 public static "valueOf"(arg0: StringJS): $Direction
 public static "stream"(): $Stream<($Direction)>
-public "step"(): $Vector3f
 public static "rotate"(arg0: $Matrix4f$$Type, arg1: $Direction$$Type): $Direction
+public "step"(): $Vector3f
 public static "byName"(arg0: StringJS): $Direction
-public "getNormal"(): $Vec3i
 public "getSerializedName"(): StringJS
+public "getNormal"(): $Vec3i
 public "getRotation"(): $Quaternionf
 public static "getRandom"(arg0: $RandomSource$$Type): $Direction
+public static "getNearest"(arg0: $Vec3$$Type): $Direction
 public static "getNearest"(arg0: float, arg1: float, arg2: float): $Direction
 public static "getNearest"(arg0: double, arg1: double, arg2: double): $Direction
-public static "getNearest"(arg0: $Vec3$$Type): $Direction
 public "getOpposite"(): $Direction
 public "getAxis"(): $Direction$Axis
 public "getAxisDirection"(): $Direction$AxisDirection
@@ -1145,11 +1145,11 @@ public static "fromYRot"(arg0: double): $Direction
 public "getX"(): integer
 public "getZ"(): integer
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "y"(): integer
 get "yaw"(): float
 get "clockWise"(): $Direction
@@ -1158,8 +1158,8 @@ get "index"(): integer
 get "horizontalIndex"(): integer
 get "pitch"(): float
 get "name"(): StringJS
-get "normal"(): $Vec3i
 get "serializedName"(): StringJS
+get "normal"(): $Vec3i
 get "rotation"(): $Quaternionf
 get "opposite"(): $Direction
 get "axis"(): $Direction$Axis
@@ -1238,11 +1238,11 @@ public "stream"(): $Stream<($Direction)>
 public "shuffledCopy"(arg0: $RandomSource$$Type): $List<($Direction)>
 public "spliterator"(): $Spliterator<($Direction)>
 public "forEach"(arg0: $Consumer$$Type<($Direction)>): void
-public "or"(arg0: $Predicate$$Type<($Direction)>): $Predicate<($Direction)>
+public static "not"<T>(arg0: $Predicate$$Type<($Direction)>): $Predicate<($Direction)>
 public static "isEqual"<T>(arg0: any): $Predicate<($Direction)>
 public "negate"(): $Predicate<($Direction)>
 public "and"(arg0: $Predicate$$Type<($Direction)>): $Predicate<($Direction)>
-public static "not"<T>(arg0: $Predicate$$Type<($Direction)>): $Predicate<($Direction)>
+public "or"(arg0: $Predicate$$Type<($Direction)>): $Predicate<($Direction)>
 [Symbol.iterator](): IterableIterator<$Direction>;
 }
 /**
@@ -1268,9 +1268,9 @@ import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
 import {$HolderSet$Direct} from "net.minecraft.core.HolderSet$Direct"
-import {$TagKey, $TagKey$$Type} from "net.minecraft.tags.TagKey"
 import {$Either} from "com.mojang.datafixers.util.Either"
 import {$Function$$Type} from "java.util.function.Function"
+import {$TagKey, $TagKey$$Type} from "net.minecraft.tags.TagKey"
 import {$IHolderSetExtension$$Interface} from "net.neoforged.neoforge.common.extensions.IHolderSetExtension"
 import {$Stream} from "java.util.stream.Stream"
 import {$HolderSet$Named} from "net.minecraft.core.HolderSet$Named"
@@ -1322,9 +1322,9 @@ import {$HolderOwner$$Type} from "net.minecraft.core.HolderOwner"
 import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
 import {$HolderSet$Direct} from "net.minecraft.core.HolderSet$Direct"
 import {$HolderSet$ListBacked} from "net.minecraft.core.HolderSet$ListBacked"
-import {$TagKey, $TagKey$$Type} from "net.minecraft.tags.TagKey"
-import {$Function$$Type} from "java.util.function.Function"
 import {$Either} from "com.mojang.datafixers.util.Either"
+import {$Function$$Type} from "java.util.function.Function"
+import {$TagKey, $TagKey$$Type} from "net.minecraft.tags.TagKey"
 import {$HolderSet} from "net.minecraft.core.HolderSet"
 
 export class $HolderSet$Named<T> extends $HolderSet$ListBacked<(T)> {
@@ -1404,7 +1404,7 @@ public "key"(): $ResourceKey<($Registry<(T)>)>
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $RegistryAccess$RegistryEntry$$Type<T> = ({"key"?: $ResourceKey$$Type<($Registry<(T)>)>, "value"?: $Registry$$Type<(T)>}) | ([key?: $ResourceKey$$Type<($Registry<(T)>)>, value?: $Registry$$Type<(T)>]);
+export type $RegistryAccess$RegistryEntry$$Type<T> = ({"value"?: $Registry$$Type<(T)>, "key"?: $ResourceKey$$Type<($Registry<(T)>)>}) | ([value?: $Registry$$Type<(T)>, key?: $ResourceKey$$Type<($Registry<(T)>)>]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -1424,8 +1424,8 @@ import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resource
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$DataMapType$$Type} from "net.neoforged.neoforge.registries.datamaps.DataMapType"
-import {$Set} from "java.util.Set"
 import {$Class$$Type} from "java.lang.Class"
+import {$Set} from "java.util.Set"
 import {$ResourceKey, $ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
 import {$Stream, $Stream$$Type} from "java.util.stream.Stream"
 import {$HolderSet$Named} from "net.minecraft.core.HolderSet$Named"
@@ -1439,8 +1439,8 @@ import {$Keyable, $Keyable$$Interface} from "com.mojang.serialization.Keyable"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
 import {$RegistrationInfo} from "net.minecraft.core.RegistrationInfo"
 import {$TagKey, $TagKey$$Type} from "net.minecraft.tags.TagKey"
-import {$Holder$Reference} from "net.minecraft.core.Holder$Reference"
 import {$Lifecycle} from "com.mojang.serialization.Lifecycle"
+import {$Holder$Reference} from "net.minecraft.core.Holder$Reference"
 
 export interface $Registry$$Interface<T> extends $Keyable$$Interface, $IdMap$$Interface<(T)>, $IRegistryExtension$$Interface<(T)> {
 [Symbol.iterator](): IterableIterator<T>;
@@ -1495,13 +1495,13 @@ static "register"<V, T>(arg0: $Registry$$Type<(V)>, arg1: $ResourceKey$$Type<(V)
  "freeze"(): $Registry<(T)>
  "getOptional"(arg0: $ResourceKey$$Type<(T)>): $Optional<(T)>
  "getOptional"(arg0: $ResourceLocation$$Type): $Optional<(T)>
- "getHolder"(arg0: $ResourceKey$$Type<(T)>): $Optional<($Holder$Reference<(T)>)>
  "getHolder"(arg0: $ResourceLocation$$Type): $Optional<($Holder$Reference<(T)>)>
+ "getHolder"(arg0: $ResourceKey$$Type<(T)>): $Optional<($Holder$Reference<(T)>)>
  "getHolder"(arg0: integer): $Optional<($Holder$Reference<(T)>)>
  "getOrThrow"(arg0: $ResourceKey$$Type<(T)>): T
  "asHolderIdMap"(): $IdMap<($Holder<(T)>)>
- "getTags"(): $Stream<($Pair<($TagKey<(T)>), ($HolderSet$Named<(T)>)>)>
  "getRandom"(arg0: $RandomSource$$Type): $Optional<($Holder$Reference<(T)>)>
+ "getTags"(): $Stream<($Pair<($TagKey<(T)>), ($HolderSet$Named<(T)>)>)>
  "wrapAsHolder"(arg0: T): $Holder<(T)>
  "getHolderOrThrow"(arg0: $ResourceKey$$Type<(T)>): $Holder$Reference<(T)>
  "asLookup"(): $HolderLookup$RegistryLookup<(T)>
@@ -1532,7 +1532,7 @@ static "forStrings"(arg0: $Supplier$$Type<($Stream$$Type<(StringJS)>)>): $Keyabl
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $Registry$$Type<T> = (("minecraft:potion") | ("enderio:conduit_connection_config_type") | ("minecraft:worldgen/biome") | ("functionalstorage:functional_upgrade_behavior") | ("neoforge:fluid_type") | ("supplementaries:placeable_books") | ("computercraft:turtle_upgrade") | ("minecraft:particle_type") | ("minecraft:dimension_type") | ("create:potato_projectile/type") | ("minecraft:worldgen/processor_list") | ("computercraft:recipe_function") | ("minecraft:game_event") | ("apothic_attributes:entity_slot_group") | ("minecraft:worldgen/feature") | ("computercraft:turtle_upgrade_type") | ("neoforge:structure_modifier") | ("supplementaries:slot_reference_type") | ("simplyswords:gem_power") | ("create:display_target") | ("minecraft:worldgen/template_pool") | ("minecraft:trigger_type") | ("minecraft:item") | ("neoforge:holder_set_type") | ("create:potato_projectile/block_hit_action") | ("irons_spellbooks:schools") | ("minecraft:height_provider_type") | ("enderio:conduit") | ("minecraft:loot_pool_entry_type") | ("minecraft:decorated_pot_pattern") | ("irons_spellbooks:upgrade_orb_type") | ("create:mounted_fluid_storage_type") | ("minecraft:worldgen/structure") | ("create:display_source") | ("minecraft:chunk_status") | ("minecraft:creative_mode_tab") | ("minecraft:enchantment_location_based_effect_type") | ("minecraft:worldgen/flat_level_generator_preset") | ("create:item_attribute_type") | ("minecraft:enchantment_provider") | ("minecraft:worldgen/structure_processor") | ("minecraft:map_decoration_type") | ("minecraft:data_component_type") | ("minecraft:worldgen/tree_decorator_type") | ("irons_spellbooks:spells") | ("minecraft:number_format_type") | ("minecraft:worldgen/structure_placement") | ("pneumaticcraft:remote_widgets") | ("minecraft:int_provider_type") | ("create:package_port_target_type") | ("neoforge:biome_modifier_serializers") | ("apotheosis:loot_category") | ("minecraft:stat_type") | ("minecraft:worldgen/noise_settings") | ("neoforge:biome_modifier") | ("apothic_attributes:entity_equipment_slot") | ("enderio:conduit_network_context_type") | ("minecraft:worldgen/multi_noise_biome_source_parameter_list") | ("minecraft:worldgen/carver") | ("minecraft:worldgen/chunk_generator") | ("minecraft:damage_type") | ("minecraft:worldgen/material_rule") | ("minecraft:loot_condition_type") | ("minecraft:jukebox_song") | ("minecraft:attribute") | ("minecraft:sound_event") | ("framedblocks:aux_blueprint_data") | ("minecraft:banner_pattern") | ("minecraft:block_type") | ("minecraft:block_entity_type") | ("framedblocks:camo_containers") | ("pneumaticcraft:hoe_handlers") | ("minecraft:enchantment_effect_component_type") | ("industrialforegoing:straw") | ("pneumaticcraft:prog_widget_area_types") | ("minecraft:loot_number_provider_type") | ("minecraft:memory_module_type") | ("moonlight:map_marker") | ("apothic_spawners:spawner_stat") | ("minecraft:worldgen/density_function") | ("minecraft:worldgen/structure_piece") | ("minecraft:villager_type") | ("minecraft:menu") | ("minecraft:enchantment_level_based_value_type") | ("minecraft:painting_variant") | ("minecraft:enchantment_provider_type") | ("minecraft:worldgen/density_function_type") | ("minecraft:frog_variant") | ("minecraft:entity_type") | ("minecraft:enchantment") | ("computercraft:pocket_upgrade") | ("minecraft:worldgen/configured_feature") | ("minecraft:worldgen/noise") | ("minecraft:fluid") | ("minecraft:enchantment_entity_effect_type") | ("neoforge:attachment_types") | ("minecraft:sensor_type") | ("neoforge:global_loot_modifier_serializers") | ("minecraft:mob_effect") | ("minecraft:entity_sub_predicate_type") | ("neoforge:ingredient_serializer") | ("create:mounted_item_storage_type") | ("enderio:conduit_type") | ("minecraft:point_of_interest_type") | ("minecraft:schedule") | ("minecraft:pos_rule_test") | ("minecraft:loot_nbt_provider_type") | ("neoforge:entity_data_serializers") | ("minecraft:wolf_variant") | ("minecraft:trim_material") | ("minecraft:worldgen/trunk_placer_type") | ("minecraft:worldgen/world_preset") | ("neoforge:structure_modifier_serializers") | ("pneumaticcraft:harvest_handlers") | ("moonlight:villager_trades") | ("minecraft:block") | ("pneumaticcraft:prog_widgets") | ("create:fan_processing_type") | ("minecraft:armor_material") | ("create:potato_projectile/render_mode") | ("minecraft:loot_score_provider_type") | ("minecraft:worldgen/configured_carver") | ("industrialforegoing:plant_recollectable") | ("minecraft:rule_test") | ("minecraft:worldgen/feature_size_type") | ("neoforge:fluid_ingredient_type") | ("minecraft:item_sub_predicate_type") | ("moonlight:world_saved_data_type") | ("enderio:conduit_node_data_type") | ("computercraft:pocket_upgrade_type") | ("minecraft:trim_pattern") | ("minecraft:enchantment_value_effect_type") | ("neoforge:condition_codecs") | ("minecraft:activity") | ("moonlight:soft_fluid") | ("minecraft:recipe_serializer") | ("minecraft:cat_variant") | ("create:arm_interaction_point_type") | ("minecraft:chat_type") | ("enderio:travel_target_types") | ("create:potato_projectile/entity_hit_action") | ("minecraft:rule_block_entity_modifier") | ("create:contraption_type") | ("minecraft:worldgen/root_placer_type") | ("minecraft:worldgen/placed_feature") | ("computercraft:turtle_overlay") | ("minecraft:worldgen/material_condition") | ("enderio:conduit_data_type") | ("minecraft:float_provider_type") | ("minecraft:worldgen/structure_pool_element") | ("minecraft:worldgen/placement_modifier_type") | ("pneumaticcraft:player_matchers") | ("minecraft:worldgen/foliage_placer_type") | ("minecraft:worldgen/structure_type") | ("enderio:travel_target_serializers") | ("minecraft:villager_profession") | ("minecraft:position_source_type") | ("minecraft:worldgen/biome_source") | ("minecraft:loot_function_type") | ("minecraft:worldgen/pool_alias_binding") | ("minecraft:dimension") | ("minecraft:block_predicate_type") | ("minecraft:worldgen/structure_set") | ("moonlight:custom_map_data_types") | ("minecraft:worldgen/block_state_provider_type") | ("minecraft:recipe_type") | ("minecraft:instrument") | ("ae2:keytypes") | ("minecraft:command_argument_type"));
+export type $Registry$$Type<T> = (("enderio:conduit") | ("neoforge:structure_modifier") | ("minecraft:worldgen/chunk_generator") | ("neoforge:biome_modifier_serializers") | ("minecraft:recipe_type") | ("minecraft:potion") | ("minecraft:worldgen/flat_level_generator_preset") | ("minecraft:stat_type") | ("minecraft:attribute") | ("neoforge:entity_data_serializers") | ("moonlight:map_marker") | ("minecraft:enchantment_provider_type") | ("minecraft:block_predicate_type") | ("minecraft:creative_mode_tab") | ("minecraft:enchantment_entity_effect_type") | ("minecraft:banner_pattern") | ("neoforge:holder_set_type") | ("supplementaries:placeable_books") | ("create:package_port_target_type") | ("minecraft:wolf_variant") | ("minecraft:enchantment") | ("minecraft:loot_pool_entry_type") | ("minecraft:item") | ("moonlight:soft_fluid") | ("minecraft:dimension_type") | ("irons_spellbooks:upgrade_orb_type") | ("functionalstorage:functional_upgrade_behavior") | ("minecraft:worldgen/material_rule") | ("minecraft:block") | ("enderio:travel_target_types") | ("minecraft:worldgen/configured_feature") | ("computercraft:pocket_upgrade") | ("minecraft:loot_nbt_provider_type") | ("minecraft:damage_type") | ("minecraft:entity_sub_predicate_type") | ("enderio:conduit_network_context_type") | ("minecraft:painting_variant") | ("minecraft:block_type") | ("create:mounted_item_storage_type") | ("minecraft:worldgen/structure_type") | ("minecraft:instrument") | ("minecraft:decorated_pot_pattern") | ("enderio:conduit_node_data_type") | ("minecraft:height_provider_type") | ("minecraft:trim_pattern") | ("minecraft:trim_material") | ("minecraft:loot_score_provider_type") | ("minecraft:pos_rule_test") | ("minecraft:float_provider_type") | ("minecraft:enchantment_level_based_value_type") | ("enderio:conduit_type") | ("neoforge:global_loot_modifier_serializers") | ("minecraft:game_event") | ("minecraft:chat_type") | ("minecraft:frog_variant") | ("apothic_spawners:spawner_stat") | ("minecraft:worldgen/structure_set") | ("industrialforegoing:plant_recollectable") | ("pneumaticcraft:remote_widgets") | ("minecraft:trigger_type") | ("neoforge:biome_modifier") | ("minecraft:schedule") | ("minecraft:worldgen/structure") | ("minecraft:worldgen/tree_decorator_type") | ("pneumaticcraft:harvest_handlers") | ("computercraft:pocket_upgrade_type") | ("apothic_attributes:entity_equipment_slot") | ("minecraft:worldgen/foliage_placer_type") | ("framedblocks:aux_blueprint_data") | ("pneumaticcraft:player_matchers") | ("irons_spellbooks:schools") | ("minecraft:loot_function_type") | ("minecraft:enchantment_value_effect_type") | ("pneumaticcraft:hoe_handlers") | ("minecraft:worldgen/pool_alias_binding") | ("minecraft:worldgen/density_function") | ("minecraft:worldgen/carver") | ("minecraft:enchantment_location_based_effect_type") | ("minecraft:memory_module_type") | ("minecraft:loot_condition_type") | ("minecraft:worldgen/density_function_type") | ("minecraft:sound_event") | ("minecraft:item_sub_predicate_type") | ("industrialforegoing:straw") | ("moonlight:custom_map_data_types") | ("neoforge:ingredient_serializer") | ("supplementaries:slot_reference_type") | ("framedblocks:camo_containers") | ("irons_spellbooks:spells") | ("create:fan_processing_type") | ("minecraft:worldgen/root_placer_type") | ("minecraft:worldgen/biome_source") | ("neoforge:fluid_type") | ("minecraft:worldgen/processor_list") | ("minecraft:loot_number_provider_type") | ("neoforge:fluid_ingredient_type") | ("minecraft:command_argument_type") | ("minecraft:block_entity_type") | ("minecraft:worldgen/placement_modifier_type") | ("enderio:conduit_data_type") | ("moonlight:world_saved_data_type") | ("minecraft:enchantment_effect_component_type") | ("apothic_attributes:entity_slot_group") | ("minecraft:worldgen/structure_pool_element") | ("neoforge:structure_modifier_serializers") | ("minecraft:number_format_type") | ("create:arm_interaction_point_type") | ("simplyswords:gem_power") | ("minecraft:position_source_type") | ("minecraft:worldgen/structure_piece") | ("minecraft:worldgen/block_state_provider_type") | ("create:display_target") | ("minecraft:worldgen/world_preset") | ("minecraft:data_component_type") | ("minecraft:worldgen/noise") | ("create:potato_projectile/render_mode") | ("minecraft:worldgen/feature_size_type") | ("neoforge:attachment_types") | ("enderio:travel_target_serializers") | ("minecraft:worldgen/noise_settings") | ("minecraft:rule_test") | ("minecraft:worldgen/trunk_placer_type") | ("minecraft:jukebox_song") | ("minecraft:particle_type") | ("create:potato_projectile/block_hit_action") | ("computercraft:turtle_upgrade_type") | ("ae2:keytypes") | ("minecraft:chunk_status") | ("computercraft:recipe_function") | ("minecraft:map_decoration_type") | ("minecraft:armor_material") | ("create:display_source") | ("minecraft:activity") | ("minecraft:mob_effect") | ("neoforge:condition_codecs") | ("minecraft:sensor_type") | ("minecraft:recipe_serializer") | ("minecraft:int_provider_type") | ("minecraft:worldgen/structure_placement") | ("create:item_attribute_type") | ("minecraft:worldgen/placed_feature") | ("minecraft:menu") | ("minecraft:enchantment_provider") | ("minecraft:worldgen/configured_carver") | ("moonlight:villager_trades") | ("minecraft:worldgen/multi_noise_biome_source_parameter_list") | ("minecraft:point_of_interest_type") | ("pneumaticcraft:prog_widget_area_types") | ("minecraft:worldgen/template_pool") | ("minecraft:worldgen/material_condition") | ("minecraft:fluid") | ("enderio:conduit_connection_config_type") | ("create:mounted_fluid_storage_type") | ("minecraft:villager_type") | ("apotheosis:loot_category") | ("minecraft:rule_block_entity_modifier") | ("minecraft:worldgen/feature") | ("computercraft:turtle_upgrade") | ("minecraft:worldgen/structure_processor") | ("minecraft:dimension") | ("create:potato_projectile/type") | ("computercraft:turtle_overlay") | ("pneumaticcraft:prog_widgets") | ("minecraft:worldgen/biome") | ("create:contraption_type") | ("create:potato_projectile/entity_hit_action") | ("minecraft:villager_profession") | ("minecraft:cat_variant") | ("minecraft:entity_type"));
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -1606,10 +1606,10 @@ declare module "net.minecraft.core.HolderSet$Direct" {
 import {$Collection$$Type} from "java.util.Collection"
 import {$Optional} from "java.util.Optional"
 import {$HolderSet$ListBacked} from "net.minecraft.core.HolderSet$ListBacked"
-import {$TagKey, $TagKey$$Type} from "net.minecraft.tags.TagKey"
-import {$Function$$Type} from "java.util.function.Function"
 import {$Either} from "com.mojang.datafixers.util.Either"
+import {$Function$$Type} from "java.util.function.Function"
 import {$List, $List$$Type} from "java.util.List"
+import {$TagKey, $TagKey$$Type} from "net.minecraft.tags.TagKey"
 import {$HolderSet} from "net.minecraft.core.HolderSet"
 import {$HolderOwner$$Type} from "net.minecraft.core.HolderOwner"
 import {$HolderSet$Named} from "net.minecraft.core.HolderSet$Named"
@@ -1813,8 +1813,8 @@ public static "aroundChunk"(arg0: $ChunkPos$$Type, arg1: integer, arg2: integer,
 public static "aroundAndAtBlockPos"(arg0: long, arg1: $LongConsumer$$Type): void
 public static "aroundAndAtBlockPos"(arg0: integer, arg1: integer, arg2: integer, arg3: $LongConsumer$$Type): void
 public static "aroundAndAtBlockPos"(arg0: $BlockPos$$Type, arg1: $LongConsumer$$Type): void
-public "origin"(): $BlockPos
 public "chunk"(): $ChunkPos
+public "origin"(): $BlockPos
 public static "of"(arg0: $ChunkPos$$Type, arg1: integer): $SectionPos
 public static "of"(arg0: $BlockPos$$Type): $SectionPos
 public static "of"(arg0: integer, arg1: integer, arg2: integer): $SectionPos
@@ -1856,8 +1856,8 @@ import {$CoreLibHolderReference$$Interface} from "com.supermartijn642.core.exten
 import {$HolderOwner, $HolderOwner$$Type} from "net.minecraft.core.HolderOwner"
 import {$Holder, $Holder$$Interface} from "net.minecraft.core.Holder"
 import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
-import {$TagKey} from "net.minecraft.tags.TagKey"
 import {$Either} from "com.mojang.datafixers.util.Either"
+import {$TagKey} from "net.minecraft.tags.TagKey"
 import {$DataMapType$$Type} from "net.neoforged.neoforge.registries.datamaps.DataMapType"
 import {$ResourceKey, $ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
 import {$Stream} from "java.util.stream.Stream"

@@ -28,9 +28,9 @@ export type $RarityRenderData$ShadowData$$Type = ({"alpha"?: integer, "frames"?:
  */
 export type $RarityRenderData$ShadowData$$Original = $RarityRenderData$ShadowData;}
 declare module "dev.shadowsoffire.apotheosis.loot.LootRule" {
-import {$CodecMap} from "dev.shadowsoffire.placebo.codec.CodecMap"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$GenContext$$Type} from "dev.shadowsoffire.apotheosis.tiers.GenContext"
+import {$CodecMap} from "dev.shadowsoffire.placebo.codec.CodecMap"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$CodecProvider$$Interface} from "dev.shadowsoffire.placebo.codec.CodecProvider"
 import {$LootRarity$$Type} from "dev.shadowsoffire.apotheosis.loot.LootRarity"
@@ -58,14 +58,14 @@ export type $LootRule$$Original = $LootRule;}
 declare module "dev.shadowsoffire.apotheosis.loot.LootRarity" {
 import {$GenContext$$Type} from "dev.shadowsoffire.apotheosis.tiers.GenContext"
 import {$Map} from "java.util.Map"
+import {$LootRarity$Builder} from "dev.shadowsoffire.apotheosis.loot.LootRarity$Builder"
 import {$WorldTier$$Type} from "dev.shadowsoffire.apotheosis.tiers.WorldTier"
 import {$WeightedEntry$Wrapper} from "net.minecraft.util.random.WeightedEntry$Wrapper"
-import {$LootRarity$Builder} from "dev.shadowsoffire.apotheosis.loot.LootRarity$Builder"
 import {$CodecProvider$$Interface} from "dev.shadowsoffire.placebo.codec.CodecProvider"
 import {$List, $List$$Type} from "java.util.List"
 import {$RarityRenderData, $RarityRenderData$$Type} from "dev.shadowsoffire.apotheosis.loot.RarityRenderData"
-import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
 import {$TextColor, $TextColor$$Type} from "net.minecraft.network.chat.TextColor"
+import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
 import {$Codec, $Codec$$Type} from "com.mojang.serialization.Codec"
 import {$MutableComponent} from "net.minecraft.network.chat.MutableComponent"
 import {$TieredWeights$Weighted, $TieredWeights$Weighted$$Type, $TieredWeights$Weighted$$Interface} from "dev.shadowsoffire.apotheosis.tiers.TieredWeights$Weighted"
@@ -83,11 +83,11 @@ static readonly "LOAD_CODEC": $Codec<($LootRarity)>
 
 constructor(color: $TextColor$$Type, material: $Holder$$Type<($Item)>, weights: $TieredWeights$$Type, rules: $List$$Type<($LootRule$$Type)>, sortIndex: integer, renderData: $RarityRenderData$$Type)
 
-public "renderData"(): $RarityRenderData
 public "toComponent"(): $MutableComponent
 public "material"(): $Holder<($Item)>
-public static "randomFromHolders"(arg0: $GenContext$$Type, arg1: $Set$$Type<($DynamicHolder$$Type<($LootRarity$$Type)>)>): $LootRarity
 public "sortIndex"(): integer
+public "renderData"(): $RarityRenderData
+public static "randomFromHolders"(arg0: $GenContext$$Type, arg1: $Set$$Type<($DynamicHolder$$Type<($LootRarity$$Type)>)>): $LootRarity
 public "getRules"(arg0: $LootCategory$$Type): $List<($LootRule)>
 public "rules"(): $List<($LootRule)>
 public "equals"(arg0: any): boolean
@@ -109,7 +109,7 @@ get "codec"(): $Codec<($LootRarity)>
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $LootRarity$$Type = ({"sortIndex"?: integer, "material"?: $Holder$$Type<($Item)>, "color"?: $TextColor$$Type, "rules"?: $List$$Type<($LootRule$$Type)>, "weights"?: $TieredWeights$$Type, "renderData"?: $RarityRenderData$$Type}) | ([sortIndex?: integer, material?: $Holder$$Type<($Item)>, color?: $TextColor$$Type, rules?: $List$$Type<($LootRule$$Type)>, weights?: $TieredWeights$$Type, renderData?: $RarityRenderData$$Type]);
+export type $LootRarity$$Type = ({"material"?: $Holder$$Type<($Item)>, "color"?: $TextColor$$Type, "rules"?: $List$$Type<($LootRule$$Type)>, "weights"?: $TieredWeights$$Type, "renderData"?: $RarityRenderData$$Type, "sortIndex"?: integer}) | ([material?: $Holder$$Type<($Item)>, color?: $TextColor$$Type, rules?: $List$$Type<($LootRule$$Type)>, weights?: $TieredWeights$$Type, renderData?: $RarityRenderData$$Type, sortIndex?: integer]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -152,8 +152,8 @@ public "beamRadius"(arg0: float): $RarityRenderData$Builder
 public "beamTexture"(arg0: $ResourceLocation$$Type): $RarityRenderData$Builder
 public "glowRadius"(arg0: float): $RarityRenderData$Builder
 public "glowTexture"(arg0: $ResourceLocation$$Type): $RarityRenderData$Builder
-public "shadow"(arg0: $UnaryOperator$$Type<($RarityRenderData$ShadowData$Builder)>): $RarityRenderData$Builder
 public "build"(): $RarityRenderData
+public "shadow"(arg0: $UnaryOperator$$Type<($RarityRenderData$ShadowData$Builder)>): $RarityRenderData$Builder
 public "particle"(arg0: boolean): $RarityRenderData$Builder
 }
 /**
@@ -171,15 +171,15 @@ import {$TieredWeights$Builder$$Type} from "dev.shadowsoffire.apotheosis.tiers.T
 import {$LootRarity} from "dev.shadowsoffire.apotheosis.loot.LootRarity"
 import {$Item$$Type} from "net.minecraft.world.item.Item"
 import {$RarityRenderData$Builder$$Type} from "dev.shadowsoffire.apotheosis.loot.RarityRenderData$Builder"
-import {$Holder$$Type} from "net.minecraft.core.Holder"
 import {$TextColor$$Type} from "net.minecraft.network.chat.TextColor"
+import {$Holder$$Type} from "net.minecraft.core.Holder"
 import {$LootRule$$Type} from "dev.shadowsoffire.apotheosis.loot.LootRule"
 
 export class $LootRarity$Builder {
 constructor(arg0: $TextColor$$Type, arg1: $Holder$$Type<($Item)>)
 
-public "renderData"(arg0: $UnaryOperator$$Type<($RarityRenderData$Builder)>): $LootRarity$Builder
 public "sortIndex"(arg0: integer): $LootRarity$Builder
+public "renderData"(arg0: $UnaryOperator$$Type<($RarityRenderData$Builder)>): $LootRarity$Builder
 public "rule"(arg0: $LootRule$$Type): $LootRarity$Builder
 public "build"(): $LootRarity
 public "weights"(arg0: $TieredWeights$Builder$$Type): $LootRarity$Builder
@@ -211,17 +211,17 @@ public "beamRadius"(): float
 public "beamTexture"(): $ResourceLocation
 public "glowRadius"(): float
 public "glowTexture"(): $ResourceLocation
-public "shadow"(): $RarityRenderData$ShadowData
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
+public "shadow"(): $RarityRenderData$ShadowData
 public "particle"(): $RarityRenderData$ParticleData
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $RarityRenderData$$Type = ({"beamTexture"?: $ResourceLocation$$Type, "glowTexture"?: $ResourceLocation$$Type, "shadow"?: $RarityRenderData$ShadowData$$Type, "particle"?: $RarityRenderData$ParticleData$$Type, "beamRadius"?: float, "glowRadius"?: float, "beamHeight"?: float}) | ([beamTexture?: $ResourceLocation$$Type, glowTexture?: $ResourceLocation$$Type, shadow?: $RarityRenderData$ShadowData$$Type, particle?: $RarityRenderData$ParticleData$$Type, beamRadius?: float, glowRadius?: float, beamHeight?: float]);
+export type $RarityRenderData$$Type = ({"glowTexture"?: $ResourceLocation$$Type, "shadow"?: $RarityRenderData$ShadowData$$Type, "particle"?: $RarityRenderData$ParticleData$$Type, "beamRadius"?: float, "glowRadius"?: float, "beamHeight"?: float, "beamTexture"?: $ResourceLocation$$Type}) | ([glowTexture?: $ResourceLocation$$Type, shadow?: $RarityRenderData$ShadowData$$Type, particle?: $RarityRenderData$ParticleData$$Type, beamRadius?: float, glowRadius?: float, beamHeight?: float, beamTexture?: $ResourceLocation$$Type]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -267,10 +267,11 @@ static readonly "SET_CODEC": $Codec<($Set<($LootCategory)>)>
 static readonly "OPTIONAL_CODEC": $Codec<($LootCategory)>
 static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($LootCategory)>
 
-constructor(arg0: $Predicate$$Type<($ItemStack)>, arg1: $EntitySlotGroup$$Type, arg2: integer)
 constructor(arg0: $Predicate$$Type<($ItemStack)>, arg1: $EntitySlotGroup$$Type)
+constructor(arg0: $Predicate$$Type<($ItemStack)>, arg1: $EntitySlotGroup$$Type, arg2: integer)
 
 public static "forItem"(arg0: $ItemStack$$Type): $LootCategory
+public "isNone"(): boolean
 public "getDescId"(): StringJS
 /**
  * 
@@ -298,11 +299,10 @@ public "isDefensive"(): boolean
  * @deprecated
  */
 public "isMeleeOrShield"(): boolean
-public "isNone"(): boolean
-public "isValid"(arg0: $ItemStack$$Type): boolean
 public "priority"(): integer
 public "toString"(): StringJS
 public "getKey"(): $ResourceLocation
+public "isValid"(arg0: $ItemStack$$Type): boolean
 public "getSlots"(): $EntitySlotGroup
 public static "mapCodec"<T>(arg0: $Codec$$Type<(T)>): $MapCodec<($Map<($LootCategory), (T)>)>
 /**
@@ -310,6 +310,7 @@ public static "mapCodec"<T>(arg0: $Codec$$Type<(T)>): $MapCodec<($Map<($LootCate
  * @deprecated
  */
 public "isArmor"(): boolean
+get "none"(): boolean
 get "descId"(): StringJS
 get "melee"(): boolean
 get "descIdPlural"(): StringJS
@@ -317,7 +318,6 @@ get "breaker"(): boolean
 get "ranged"(): boolean
 get "defensive"(): boolean
 get "meleeOrShield"(): boolean
-get "none"(): boolean
 get "key"(): $ResourceLocation
 get "slots"(): $EntitySlotGroup
 get "armor"(): boolean

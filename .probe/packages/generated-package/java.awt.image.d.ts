@@ -19,23 +19,23 @@ static readonly "SCALE_SMOOTH": integer
 static readonly "SCALE_REPLICATE": integer
 static readonly "IMAGE_INCOMPATIBLE": integer
 
-public "contentsLost"(): boolean
 public "getSnapshot"(): $BufferedImage
 public "getCapabilities"(): $ImageCapabilities
 public "getWidth"(): integer
 public "getHeight"(): integer
 public "getGraphics"(): $Graphics
-public "getSource"(): $ImageProducer
 public "createGraphics"(): $Graphics2D
 public "getTransparency"(): integer
+public "getSource"(): $ImageProducer
+public "contentsLost"(): boolean
 public "validate"(arg0: $GraphicsConfiguration$$Type): integer
 get "snapshot"(): $BufferedImage
 get "capabilities"(): $ImageCapabilities
 get "width"(): integer
 get "height"(): integer
 get "graphics"(): $Graphics
-get "source"(): $ImageProducer
 get "transparency"(): integer
+get "source"(): $ImageProducer
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -50,26 +50,26 @@ declare module "java.awt.image.WritableRaster" {
 import {$Raster, $Raster$$Type} from "java.awt.image.Raster"
 
 export class $WritableRaster extends $Raster {
-public "setPixel"(arg0: integer, arg1: integer, arg2: (float)[]): void
-public "setPixel"(arg0: integer, arg1: integer, arg2: (double)[]): void
-public "setPixel"(arg0: integer, arg1: integer, arg2: (integer)[]): void
-public "setSamples"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: integer, arg5: (double)[]): void
 public "setSamples"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: integer, arg5: (integer)[]): void
 public "setSamples"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: integer, arg5: (float)[]): void
-public "setDataElements"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: any): void
-public "setDataElements"(arg0: integer, arg1: integer, arg2: $Raster$$Type): void
+public "setSamples"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: integer, arg5: (double)[]): void
+public "setPixel"(arg0: integer, arg1: integer, arg2: (integer)[]): void
+public "setPixel"(arg0: integer, arg1: integer, arg2: (float)[]): void
+public "setPixel"(arg0: integer, arg1: integer, arg2: (double)[]): void
+public "setSample"(arg0: integer, arg1: integer, arg2: integer, arg3: double): void
+public "setSample"(arg0: integer, arg1: integer, arg2: integer, arg3: integer): void
+public "setSample"(arg0: integer, arg1: integer, arg2: integer, arg3: float): void
 public "setDataElements"(arg0: integer, arg1: integer, arg2: any): void
+public "setDataElements"(arg0: integer, arg1: integer, arg2: $Raster$$Type): void
+public "setDataElements"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: any): void
 public "createWritableChild"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: integer, arg5: integer, arg6: (integer)[]): $WritableRaster
-public "setPixels"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: (integer)[]): void
 public "setPixels"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: (float)[]): void
 public "setPixels"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: (double)[]): void
+public "setPixels"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: (integer)[]): void
 public "setRect"(arg0: $Raster$$Type): void
 public "setRect"(arg0: integer, arg1: integer, arg2: $Raster$$Type): void
 public "getWritableParent"(): $WritableRaster
 public "createWritableTranslatedChild"(arg0: integer, arg1: integer): $WritableRaster
-public "setSample"(arg0: integer, arg1: integer, arg2: integer, arg3: double): void
-public "setSample"(arg0: integer, arg1: integer, arg2: integer, arg3: float): void
-public "setSample"(arg0: integer, arg1: integer, arg2: integer, arg3: integer): void
 set "rect"(value: $Raster$$Type)
 get "writableParent"(): $WritableRaster
 }
@@ -85,8 +85,8 @@ export type $WritableRaster$$Original = $WritableRaster;}
 declare module "java.awt.image.ColorModel" {
 import {$Transparency$$Interface} from "java.awt.Transparency"
 import {$WritableRaster, $WritableRaster$$Type} from "java.awt.image.WritableRaster"
-import {$Raster$$Type} from "java.awt.image.Raster"
 import {$SampleModel, $SampleModel$$Type} from "java.awt.image.SampleModel"
+import {$Raster$$Type} from "java.awt.image.Raster"
 import {$ColorSpace} from "java.awt.color.ColorSpace"
 
 export class $ColorModel implements $Transparency$$Interface {
@@ -162,11 +162,11 @@ import {$Point} from "java.awt.Point"
 import {$Image} from "java.awt.Image"
 import {$WritableRenderedImage$$Interface} from "java.awt.image.WritableRenderedImage"
 import {$Graphics2D} from "java.awt.Graphics2D"
-import {$Rectangle$$Type} from "java.awt.Rectangle"
 import {$Vector} from "java.util.Vector"
-import {$WritableRaster, $WritableRaster$$Type} from "java.awt.image.WritableRaster"
 import {$Graphics} from "java.awt.Graphics"
+import {$WritableRaster, $WritableRaster$$Type} from "java.awt.image.WritableRaster"
 import {$TileObserver$$Type} from "java.awt.image.TileObserver"
+import {$Rectangle$$Type} from "java.awt.Rectangle"
 import {$ImageProducer} from "java.awt.image.ImageProducer"
 import {$IndexColorModel$$Type} from "java.awt.image.IndexColorModel"
 import {$RenderedImage} from "java.awt.image.RenderedImage"
@@ -193,18 +193,15 @@ static readonly "TYPE_BYTE_GRAY": integer
 static readonly "TYPE_4BYTE_ABGR_PRE": integer
 static readonly "TYPE_BYTE_BINARY": integer
 
-constructor(arg0: $ColorModel$$Type, arg1: $WritableRaster$$Type, arg2: boolean, arg3: $Hashtable$$Type<(never), (never)>)
-constructor(arg0: integer, arg1: integer, arg2: integer, arg3: $IndexColorModel$$Type)
 constructor(arg0: integer, arg1: integer, arg2: integer)
+constructor(arg0: integer, arg1: integer, arg2: integer, arg3: $IndexColorModel$$Type)
+constructor(arg0: $ColorModel$$Type, arg1: $WritableRaster$$Type, arg2: boolean, arg3: $Hashtable$$Type<(never), (never)>)
 
-public "getWidth"(arg0: $ImageObserver$$Type): integer
 public "getWidth"(): integer
-public "getHeight"(): integer
+public "getWidth"(arg0: $ImageObserver$$Type): integer
 public "getHeight"(arg0: $ImageObserver$$Type): integer
+public "getHeight"(): integer
 public "getGraphics"(): $Graphics
-public "getData"(arg0: $Rectangle$$Type): $Raster
-public "getData"(): $Raster
-public "getSource"(): $ImageProducer
 public "isAlphaPremultiplied"(): boolean
 public "coerceData"(arg0: boolean): void
 public "getSampleModel"(): $SampleModel
@@ -217,8 +214,8 @@ public "getMinY"(): integer
 public "getTransparency"(): integer
 public "getColorModel"(): $ColorModel
 public "getRaster"(): $WritableRaster
-public "setRGB"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: (integer)[], arg5: integer, arg6: integer): void
 public "setRGB"(arg0: integer, arg1: integer, arg2: integer): void
+public "setRGB"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: (integer)[], arg5: integer, arg6: integer): void
 public "getSubimage"(arg0: integer, arg1: integer, arg2: integer, arg3: integer): $BufferedImage
 public "getSources"(): $Vector<($RenderedImage)>
 public "getPropertyNames"(): (StringJS)[]
@@ -240,6 +237,9 @@ public "getWritableTileIndices"(): ($Point)[]
 public "hasTileWriters"(): boolean
 public "getWritableTile"(arg0: integer, arg1: integer): $WritableRaster
 public "releaseWritableTile"(arg0: integer, arg1: integer): void
+public "getSource"(): $ImageProducer
+public "getData"(arg0: $Rectangle$$Type): $Raster
+public "getData"(): $Raster
 public "getProperty"(arg0: StringJS, arg1: $ImageObserver$$Type): any
 public "getProperty"(arg0: StringJS): any
 public "toString"(): StringJS
@@ -247,8 +247,6 @@ public "getType"(): integer
 get "width"(): integer
 get "height"(): integer
 get "graphics"(): $Graphics
-get "data"(): $Raster
-get "source"(): $ImageProducer
 get "alphaPremultiplied"(): boolean
 get "sampleModel"(): $SampleModel
 get "alphaRaster"(): $WritableRaster
@@ -269,6 +267,8 @@ get "tileGridXOffset"(): integer
 get "tileGridYOffset"(): integer
 set "data"(value: $Raster$$Type)
 get "writableTileIndices"(): ($Point)[]
+get "source"(): $ImageProducer
+get "data"(): $Raster
 get "type"(): integer
 }
 /**
@@ -287,20 +287,25 @@ export class $SampleModel {
 constructor(arg0: integer, arg1: integer, arg2: integer, arg3: integer)
 
 public "getTransferType"(): integer
-public "getSampleSize"(arg0: integer): integer
-public "getSampleSize"(): (integer)[]
+public "setSamples"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: integer, arg5: (integer)[], arg6: $DataBuffer$$Type): void
+public "setSamples"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: integer, arg5: (float)[], arg6: $DataBuffer$$Type): void
+public "setSamples"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: integer, arg5: (double)[], arg6: $DataBuffer$$Type): void
+public "getSamples"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: integer, arg5: (integer)[], arg6: $DataBuffer$$Type): (integer)[]
+public "getSamples"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: integer, arg5: (double)[], arg6: $DataBuffer$$Type): (double)[]
+public "getSamples"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: integer, arg5: (float)[], arg6: $DataBuffer$$Type): (float)[]
 public "getPixel"(arg0: integer, arg1: integer, arg2: (float)[], arg3: $DataBuffer$$Type): (float)[]
 public "getPixel"(arg0: integer, arg1: integer, arg2: (integer)[], arg3: $DataBuffer$$Type): (integer)[]
 public "getPixel"(arg0: integer, arg1: integer, arg2: (double)[], arg3: $DataBuffer$$Type): (double)[]
 public "setPixel"(arg0: integer, arg1: integer, arg2: (integer)[], arg3: $DataBuffer$$Type): void
 public "setPixel"(arg0: integer, arg1: integer, arg2: (float)[], arg3: $DataBuffer$$Type): void
 public "setPixel"(arg0: integer, arg1: integer, arg2: (double)[], arg3: $DataBuffer$$Type): void
-public "setSamples"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: integer, arg5: (double)[], arg6: $DataBuffer$$Type): void
-public "setSamples"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: integer, arg5: (integer)[], arg6: $DataBuffer$$Type): void
-public "setSamples"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: integer, arg5: (float)[], arg6: $DataBuffer$$Type): void
-public "getSamples"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: integer, arg5: (double)[], arg6: $DataBuffer$$Type): (double)[]
-public "getSamples"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: integer, arg5: (integer)[], arg6: $DataBuffer$$Type): (integer)[]
-public "getSamples"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: integer, arg5: (float)[], arg6: $DataBuffer$$Type): (float)[]
+public "getSampleSize"(): (integer)[]
+public "getSampleSize"(arg0: integer): integer
+public "getSample"(arg0: integer, arg1: integer, arg2: integer, arg3: $DataBuffer$$Type): integer
+public "setSample"(arg0: integer, arg1: integer, arg2: integer, arg3: float, arg4: $DataBuffer$$Type): void
+public "setSample"(arg0: integer, arg1: integer, arg2: integer, arg3: double, arg4: $DataBuffer$$Type): void
+public "setSample"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: $DataBuffer$$Type): void
+public "getNumDataElements"(): integer
 public "getWidth"(): integer
 public "getHeight"(): integer
 public "getNumBands"(): integer
@@ -310,28 +315,23 @@ public "getDataType"(): integer
 public "setDataElements"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: any, arg5: $DataBuffer$$Type): void
 public "setDataElements"(arg0: integer, arg1: integer, arg2: any, arg3: $DataBuffer$$Type): void
 public "createCompatibleSampleModel"(arg0: integer, arg1: integer): $SampleModel
-public "getPixels"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: (float)[], arg5: $DataBuffer$$Type): (float)[]
 public "getPixels"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: (double)[], arg5: $DataBuffer$$Type): (double)[]
+public "getPixels"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: (float)[], arg5: $DataBuffer$$Type): (float)[]
 public "getPixels"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: (integer)[], arg5: $DataBuffer$$Type): (integer)[]
-public "setPixels"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: (double)[], arg5: $DataBuffer$$Type): void
-public "setPixels"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: (float)[], arg5: $DataBuffer$$Type): void
 public "setPixels"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: (integer)[], arg5: $DataBuffer$$Type): void
+public "setPixels"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: (float)[], arg5: $DataBuffer$$Type): void
+public "setPixels"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: (double)[], arg5: $DataBuffer$$Type): void
+public "getSampleFloat"(arg0: integer, arg1: integer, arg2: integer, arg3: $DataBuffer$$Type): float
 public "createDataBuffer"(): $DataBuffer
 public "createSubsetSampleModel"(arg0: (integer)[]): $SampleModel
-public "getSampleFloat"(arg0: integer, arg1: integer, arg2: integer, arg3: $DataBuffer$$Type): float
 public "getSampleDouble"(arg0: integer, arg1: integer, arg2: integer, arg3: $DataBuffer$$Type): double
-public "getSample"(arg0: integer, arg1: integer, arg2: integer, arg3: $DataBuffer$$Type): integer
-public "setSample"(arg0: integer, arg1: integer, arg2: integer, arg3: float, arg4: $DataBuffer$$Type): void
-public "setSample"(arg0: integer, arg1: integer, arg2: integer, arg3: double, arg4: $DataBuffer$$Type): void
-public "setSample"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: $DataBuffer$$Type): void
-public "getNumDataElements"(): integer
 get "transferType"(): integer
 get "sampleSize"(): (integer)[]
+get "numDataElements"(): integer
 get "width"(): integer
 get "height"(): integer
 get "numBands"(): integer
 get "dataType"(): integer
-get "numDataElements"(): integer
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -396,8 +396,8 @@ import {$Hashtable$$Type} from "java.util.Hashtable"
 import {$ColorModel$$Type} from "java.awt.image.ColorModel"
 
 export interface $ImageConsumer$$Interface {
-set "hints"(value: integer)
 set "colorModel"(value: $ColorModel$$Type)
+set "hints"(value: integer)
 set "properties"(value: $Hashtable$$Type<(never), (never)>)
 }
 
@@ -413,8 +413,8 @@ static readonly "COMPLETESCANLINES": integer
 static readonly "IMAGEABORTED": integer
 
  "setDimensions"(arg0: integer, arg1: integer): void
- "setHints"(arg0: integer): void
  "setColorModel"(arg0: $ColorModel$$Type): void
+ "setHints"(arg0: integer): void
  "setPixels"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: $ColorModel$$Type, arg5: (integer)[], arg6: integer, arg7: integer): void
  "setPixels"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: $ColorModel$$Type, arg5: (byte)[], arg6: integer, arg7: integer): void
  "imageComplete"(arg0: integer): void
@@ -441,26 +441,26 @@ static readonly "TYPE_USHORT": integer
 static readonly "TYPE_FLOAT": integer
 
 public static "getDataTypeSize"(arg0: integer): integer
-public "getOffsets"(): (integer)[]
-public "getDataType"(): integer
 public "getNumBanks"(): integer
-public "getElemFloat"(arg0: integer): float
 public "getElemFloat"(arg0: integer, arg1: integer): float
+public "getElemFloat"(arg0: integer): float
 public "setElemFloat"(arg0: integer, arg1: float): void
 public "setElemFloat"(arg0: integer, arg1: integer, arg2: float): void
 public "getElemDouble"(arg0: integer): double
 public "getElemDouble"(arg0: integer, arg1: integer): double
-public "setElemDouble"(arg0: integer, arg1: double): void
 public "setElemDouble"(arg0: integer, arg1: integer, arg2: double): void
+public "setElemDouble"(arg0: integer, arg1: double): void
+public "getOffsets"(): (integer)[]
+public "getDataType"(): integer
 public "getSize"(): integer
 public "getOffset"(): integer
 public "getElem"(arg0: integer): integer
 public "getElem"(arg0: integer, arg1: integer): integer
 public "setElem"(arg0: integer, arg1: integer): void
 public "setElem"(arg0: integer, arg1: integer, arg2: integer): void
+get "numBanks"(): integer
 get "offsets"(): (integer)[]
 get "dataType"(): integer
-get "numBanks"(): integer
 get "size"(): integer
 get "offset"(): integer
 }
@@ -475,12 +475,12 @@ export type $DataBuffer$$Type = ($DataBuffer);
 export type $DataBuffer$$Original = $DataBuffer;}
 declare module "java.awt.image.WritableRenderedImage" {
 import {$ColorModel} from "java.awt.image.ColorModel"
-import {$Rectangle$$Type} from "java.awt.Rectangle"
 import {$Vector} from "java.util.Vector"
-import {$WritableRaster, $WritableRaster$$Type} from "java.awt.image.WritableRaster"
 import {$TileObserver$$Type} from "java.awt.image.TileObserver"
-import {$Raster, $Raster$$Type} from "java.awt.image.Raster"
+import {$WritableRaster, $WritableRaster$$Type} from "java.awt.image.WritableRaster"
+import {$Rectangle$$Type} from "java.awt.Rectangle"
 import {$SampleModel} from "java.awt.image.SampleModel"
+import {$Raster, $Raster$$Type} from "java.awt.image.Raster"
 import {$Point} from "java.awt.Point"
 import {$RenderedImage, $RenderedImage$$Interface} from "java.awt.image.RenderedImage"
 
@@ -489,7 +489,6 @@ set "data"(value: $Raster$$Type)
 get "writableTileIndices"(): ($Point)[]
 get "width"(): integer
 get "height"(): integer
-get "data"(): $Raster
 get "sampleModel"(): $SampleModel
 get "minX"(): integer
 get "minY"(): integer
@@ -504,6 +503,7 @@ get "tileWidth"(): integer
 get "tileHeight"(): integer
 get "tileGridXOffset"(): integer
 get "tileGridYOffset"(): integer
+get "data"(): $Raster
 }
 
 export class $WritableRenderedImage implements $WritableRenderedImage$$Interface {
@@ -517,8 +517,6 @@ export class $WritableRenderedImage implements $WritableRenderedImage$$Interface
  "releaseWritableTile"(arg0: integer, arg1: integer): void
  "getWidth"(): integer
  "getHeight"(): integer
- "getData"(): $Raster
- "getData"(arg0: $Rectangle$$Type): $Raster
  "getSampleModel"(): $SampleModel
  "getMinX"(): integer
  "getMinY"(): integer
@@ -535,6 +533,8 @@ export class $WritableRenderedImage implements $WritableRenderedImage$$Interface
  "getTileGridYOffset"(): integer
  "getTile"(arg0: integer, arg1: integer): $Raster
  "copyData"(arg0: $WritableRaster$$Type): $WritableRaster
+ "getData"(arg0: $Rectangle$$Type): $Raster
+ "getData"(): $Raster
  "getProperty"(arg0: StringJS): any
 }
 /**
@@ -548,8 +548,8 @@ export type $WritableRenderedImage$$Type = ($WritableRenderedImage);
 export type $WritableRenderedImage$$Original = $WritableRenderedImage;}
 declare module "java.awt.image.BufferedImageOp" {
 import {$BufferedImage, $BufferedImage$$Type} from "java.awt.image.BufferedImage"
-import {$ColorModel$$Type} from "java.awt.image.ColorModel"
 import {$Rectangle2D} from "java.awt.geom.Rectangle2D"
+import {$ColorModel$$Type} from "java.awt.image.ColorModel"
 import {$Point2D, $Point2D$$Type} from "java.awt.geom.Point2D"
 import {$RenderingHints} from "java.awt.RenderingHints"
 
@@ -560,8 +560,8 @@ get "renderingHints"(): $RenderingHints
 export class $BufferedImageOp implements $BufferedImageOp$$Interface {
  "getBounds2D"(arg0: $BufferedImage$$Type): $Rectangle2D
  "getRenderingHints"(): $RenderingHints
- "createCompatibleDestImage"(arg0: $BufferedImage$$Type, arg1: $ColorModel$$Type): $BufferedImage
  "getPoint2D"(arg0: $Point2D$$Type, arg1: $Point2D$$Type): $Point2D
+ "createCompatibleDestImage"(arg0: $BufferedImage$$Type, arg1: $ColorModel$$Type): $BufferedImage
  "filter"(arg0: $BufferedImage$$Type, arg1: $BufferedImage$$Type): $BufferedImage
 }
 /**
@@ -574,60 +574,61 @@ export type $BufferedImageOp$$Type = ($BufferedImageOp);
  */
 export type $BufferedImageOp$$Original = $BufferedImageOp;}
 declare module "java.awt.image.Raster" {
-import {$Rectangle, $Rectangle$$Type} from "java.awt.Rectangle"
 import {$WritableRaster} from "java.awt.image.WritableRaster"
+import {$Rectangle, $Rectangle$$Type} from "java.awt.Rectangle"
 import {$SampleModel, $SampleModel$$Type} from "java.awt.image.SampleModel"
 import {$Point$$Type} from "java.awt.Point"
 import {$DataBuffer, $DataBuffer$$Type} from "java.awt.image.DataBuffer"
 
 export class $Raster {
 public "getTransferType"(): integer
-public "getPixel"(arg0: integer, arg1: integer, arg2: (double)[]): (double)[]
-public "getPixel"(arg0: integer, arg1: integer, arg2: (integer)[]): (integer)[]
-public "getPixel"(arg0: integer, arg1: integer, arg2: (float)[]): (float)[]
 public "getSamples"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: integer, arg5: (double)[]): (double)[]
 public "getSamples"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: integer, arg5: (float)[]): (float)[]
 public "getSamples"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: integer, arg5: (integer)[]): (integer)[]
+public "getPixel"(arg0: integer, arg1: integer, arg2: (float)[]): (float)[]
+public "getPixel"(arg0: integer, arg1: integer, arg2: (double)[]): (double)[]
+public "getPixel"(arg0: integer, arg1: integer, arg2: (integer)[]): (integer)[]
 public "createTranslatedChild"(arg0: integer, arg1: integer): $Raster
+public "createChild"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: integer, arg5: integer, arg6: (integer)[]): $Raster
+public static "createRaster"(arg0: $SampleModel$$Type, arg1: $DataBuffer$$Type, arg2: $Point$$Type): $Raster
+public "getSample"(arg0: integer, arg1: integer, arg2: integer): integer
+public "getNumDataElements"(): integer
 public "getWidth"(): integer
 public "getHeight"(): integer
-public "createCompatibleWritableRaster"(arg0: $Rectangle$$Type): $WritableRaster
-public "createCompatibleWritableRaster"(arg0: integer, arg1: integer, arg2: integer, arg3: integer): $WritableRaster
 public "createCompatibleWritableRaster"(): $WritableRaster
+public "createCompatibleWritableRaster"(arg0: integer, arg1: integer, arg2: integer, arg3: integer): $WritableRaster
 public "createCompatibleWritableRaster"(arg0: integer, arg1: integer): $WritableRaster
+public "createCompatibleWritableRaster"(arg0: $Rectangle$$Type): $WritableRaster
 public static "createInterleavedRaster"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: integer, arg5: (integer)[], arg6: $Point$$Type): $WritableRaster
 public static "createInterleavedRaster"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: $Point$$Type): $WritableRaster
 public static "createInterleavedRaster"(arg0: $DataBuffer$$Type, arg1: integer, arg2: integer, arg3: integer, arg4: integer, arg5: (integer)[], arg6: $Point$$Type): $WritableRaster
+public static "createPackedRaster"(arg0: $DataBuffer$$Type, arg1: integer, arg2: integer, arg3: integer, arg4: $Point$$Type): $WritableRaster
 public static "createPackedRaster"(arg0: $DataBuffer$$Type, arg1: integer, arg2: integer, arg3: integer, arg4: (integer)[], arg5: $Point$$Type): $WritableRaster
 public static "createPackedRaster"(arg0: integer, arg1: integer, arg2: integer, arg3: (integer)[], arg4: $Point$$Type): $WritableRaster
 public static "createPackedRaster"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: integer, arg5: $Point$$Type): $WritableRaster
-public static "createPackedRaster"(arg0: $DataBuffer$$Type, arg1: integer, arg2: integer, arg3: integer, arg4: $Point$$Type): $WritableRaster
 public "getNumBands"(): integer
 public "getSampleModel"(): $SampleModel
-public "getDataElements"(arg0: integer, arg1: integer, arg2: any): any
 public "getDataElements"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: any): any
+public "getDataElements"(arg0: integer, arg1: integer, arg2: any): any
 public "getDataBuffer"(): $DataBuffer
 public "getMinX"(): integer
 public "getMinY"(): integer
 public "getSampleModelTranslateX"(): integer
 public "getSampleModelTranslateY"(): integer
-public static "createWritableRaster"(arg0: $SampleModel$$Type, arg1: $Point$$Type): $WritableRaster
 public static "createWritableRaster"(arg0: $SampleModel$$Type, arg1: $DataBuffer$$Type, arg2: $Point$$Type): $WritableRaster
+public static "createWritableRaster"(arg0: $SampleModel$$Type, arg1: $Point$$Type): $WritableRaster
+public "getPixels"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: (double)[]): (double)[]
 public "getPixels"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: (integer)[]): (integer)[]
 public "getPixels"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: (float)[]): (float)[]
-public "getPixels"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: (double)[]): (double)[]
-public "createChild"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: integer, arg5: integer, arg6: (integer)[]): $Raster
-public static "createBandedRaster"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: (integer)[], arg5: (integer)[], arg6: $Point$$Type): $WritableRaster
-public static "createBandedRaster"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: $Point$$Type): $WritableRaster
-public static "createBandedRaster"(arg0: $DataBuffer$$Type, arg1: integer, arg2: integer, arg3: integer, arg4: (integer)[], arg5: (integer)[], arg6: $Point$$Type): $WritableRaster
-public static "createRaster"(arg0: $SampleModel$$Type, arg1: $DataBuffer$$Type, arg2: $Point$$Type): $Raster
 public "getSampleFloat"(arg0: integer, arg1: integer, arg2: integer): float
+public static "createBandedRaster"(arg0: $DataBuffer$$Type, arg1: integer, arg2: integer, arg3: integer, arg4: (integer)[], arg5: (integer)[], arg6: $Point$$Type): $WritableRaster
+public static "createBandedRaster"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: $Point$$Type): $WritableRaster
+public static "createBandedRaster"(arg0: integer, arg1: integer, arg2: integer, arg3: integer, arg4: (integer)[], arg5: (integer)[], arg6: $Point$$Type): $WritableRaster
 public "getSampleDouble"(arg0: integer, arg1: integer, arg2: integer): double
-public "getSample"(arg0: integer, arg1: integer, arg2: integer): integer
-public "getNumDataElements"(): integer
 public "getBounds"(): $Rectangle
 public "getParent"(): $Raster
 get "transferType"(): integer
+get "numDataElements"(): integer
 get "width"(): integer
 get "height"(): integer
 get "numBands"(): integer
@@ -637,7 +638,6 @@ get "minX"(): integer
 get "minY"(): integer
 get "sampleModelTranslateX"(): integer
 get "sampleModelTranslateY"(): integer
-get "numDataElements"(): integer
 get "bounds"(): $Rectangle
 get "parent"(): $Raster
 }
@@ -674,16 +674,15 @@ export type $ImageProducer$$Type = ($ImageProducer);
 export type $ImageProducer$$Original = $ImageProducer;}
 declare module "java.awt.image.RenderedImage" {
 import {$ColorModel} from "java.awt.image.ColorModel"
-import {$Rectangle$$Type} from "java.awt.Rectangle"
 import {$Vector} from "java.util.Vector"
 import {$WritableRaster, $WritableRaster$$Type} from "java.awt.image.WritableRaster"
-import {$Raster} from "java.awt.image.Raster"
+import {$Rectangle$$Type} from "java.awt.Rectangle"
 import {$SampleModel} from "java.awt.image.SampleModel"
+import {$Raster} from "java.awt.image.Raster"
 
 export interface $RenderedImage$$Interface {
 get "width"(): integer
 get "height"(): integer
-get "data"(): $Raster
 get "sampleModel"(): $SampleModel
 get "minX"(): integer
 get "minY"(): integer
@@ -698,13 +697,12 @@ get "tileWidth"(): integer
 get "tileHeight"(): integer
 get "tileGridXOffset"(): integer
 get "tileGridYOffset"(): integer
+get "data"(): $Raster
 }
 
 export class $RenderedImage implements $RenderedImage$$Interface {
  "getWidth"(): integer
  "getHeight"(): integer
- "getData"(): $Raster
- "getData"(arg0: $Rectangle$$Type): $Raster
  "getSampleModel"(): $SampleModel
  "getMinX"(): integer
  "getMinY"(): integer
@@ -721,6 +719,8 @@ export class $RenderedImage implements $RenderedImage$$Interface {
  "getTileGridYOffset"(): integer
  "getTile"(arg0: integer, arg1: integer): $Raster
  "copyData"(arg0: $WritableRaster$$Type): $WritableRaster
+ "getData"(arg0: $Rectangle$$Type): $Raster
+ "getData"(): $Raster
  "getProperty"(arg0: StringJS): any
 }
 /**
@@ -737,21 +737,23 @@ import {$BufferedImage} from "java.awt.image.BufferedImage"
 import {$BigInteger, $BigInteger$$Type} from "java.math.BigInteger"
 import {$ColorModel} from "java.awt.image.ColorModel"
 import {$WritableRaster} from "java.awt.image.WritableRaster"
-import {$Raster$$Type} from "java.awt.image.Raster"
 import {$SampleModel, $SampleModel$$Type} from "java.awt.image.SampleModel"
+import {$Raster$$Type} from "java.awt.image.Raster"
 
 export class $IndexColorModel extends $ColorModel {
-constructor(arg0: integer, arg1: integer, arg2: (byte)[], arg3: (byte)[], arg4: (byte)[], arg5: (byte)[])
-constructor(arg0: integer, arg1: integer, arg2: (byte)[], arg3: integer, arg4: boolean)
-constructor(arg0: integer, arg1: integer, arg2: (byte)[], arg3: integer, arg4: boolean, arg5: integer)
-constructor(arg0: integer, arg1: integer, arg2: (byte)[], arg3: (byte)[], arg4: (byte)[])
 constructor(arg0: integer, arg1: integer, arg2: (integer)[], arg3: integer, arg4: integer, arg5: $BigInteger$$Type)
+constructor(arg0: integer, arg1: integer, arg2: (byte)[], arg3: (byte)[], arg4: (byte)[])
 constructor(arg0: integer, arg1: integer, arg2: (integer)[], arg3: integer, arg4: boolean, arg5: integer, arg6: integer)
+constructor(arg0: integer, arg1: integer, arg2: (byte)[], arg3: integer, arg4: boolean, arg5: integer)
+constructor(arg0: integer, arg1: integer, arg2: (byte)[], arg3: integer, arg4: boolean)
+constructor(arg0: integer, arg1: integer, arg2: (byte)[], arg3: (byte)[], arg4: (byte)[], arg5: (byte)[])
 constructor(arg0: integer, arg1: integer, arg2: (byte)[], arg3: (byte)[], arg4: (byte)[], arg5: integer)
 
 public "getRed"(arg0: integer): integer
 public "getGreen"(arg0: integer): integer
 public "getBlue"(arg0: integer): integer
+public "getDataElement"(arg0: (integer)[], arg1: integer): integer
+public "isCompatibleSampleModel"(arg0: $SampleModel$$Type): boolean
 public "getTransparentPixel"(): integer
 public "getReds"(arg0: (byte)[]): void
 public "getGreens"(arg0: (byte)[]): void
@@ -760,8 +762,6 @@ public "getAlphas"(arg0: (byte)[]): void
 public "getRGBs"(arg0: (integer)[]): void
 public "convertToIntDiscrete"(arg0: $Raster$$Type, arg1: boolean): $BufferedImage
 public "getValidPixels"(): $BigInteger
-public "getDataElement"(arg0: (integer)[], arg1: integer): integer
-public "isCompatibleSampleModel"(arg0: $SampleModel$$Type): boolean
 public "createCompatibleWritableRaster"(arg0: integer, arg1: integer): $WritableRaster
 public "getMapSize"(): integer
 public "isCompatibleRaster"(arg0: $Raster$$Type): boolean
@@ -771,11 +771,11 @@ public "getDataElements"(arg0: (integer)[], arg1: integer, arg2: any): any
 public "getRGB"(arg0: integer): integer
 public "createCompatibleSampleModel"(arg0: integer, arg1: integer): $SampleModel
 public "getTransparency"(): integer
-public "isValid"(): boolean
-public "isValid"(arg0: integer): boolean
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
+public "isValid"(): boolean
+public "isValid"(arg0: integer): boolean
 public "getComponents"(arg0: integer, arg1: (integer)[], arg2: integer): (integer)[]
 public "getComponents"(arg0: any, arg1: (integer)[], arg2: integer): (integer)[]
 public "getAlpha"(arg0: integer): integer

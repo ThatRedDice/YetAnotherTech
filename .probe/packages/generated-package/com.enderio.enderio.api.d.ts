@@ -2,8 +2,8 @@ declare module "com.enderio.enderio.api.travel.TravelTarget" {
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$TravelTargetSerializer} from "com.enderio.enderio.api.travel.TravelTargetSerializer"
-import {$TravelTargetType} from "com.enderio.enderio.api.travel.TravelTargetType"
 import {$Codec} from "com.mojang.serialization.Codec"
+import {$TravelTargetType} from "com.enderio.enderio.api.travel.TravelTargetType"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
@@ -120,8 +120,8 @@ import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 
 export class $CapacitorModifier extends $Enum<($CapacitorModifier)> implements $StringRepresentable$$Interface {
 static readonly "ENERGY_USE": $CapacitorModifier
@@ -140,11 +140,11 @@ public static "values"(): ($CapacitorModifier)[]
 public static "valueOf"(arg0: StringJS): $CapacitorModifier
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
 }
@@ -183,40 +183,40 @@ declare module "com.enderio.enderio.api.conduits.network.node.ConduitNode" {
 import {$BlockCapability$$Type} from "net.neoforged.neoforge.capabilities.BlockCapability"
 import {$NodeData, $NodeData$$Type} from "com.enderio.enderio.api.conduits.network.node.NodeData"
 import {$ConnectionConfigType$$Type} from "com.enderio.enderio.api.conduits.connection.config.ConnectionConfigType"
-import {$NodeDataType$$Type} from "com.enderio.enderio.api.conduits.network.node.NodeDataType"
 import {$ConnectionConfig} from "com.enderio.enderio.api.conduits.connection.config.ConnectionConfig"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
-import {$IItemHandlerModifiable} from "net.neoforged.neoforge.items.IItemHandlerModifiable"
+import {$NodeDataType$$Type} from "com.enderio.enderio.api.conduits.network.node.NodeDataType"
 import {$DyeColor$$Type} from "net.minecraft.world.item.DyeColor"
+import {$IItemHandlerModifiable} from "net.neoforged.neoforge.items.IItemHandlerModifiable"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$ConnectionStatus} from "com.enderio.enderio.api.conduits.connection.ConnectionStatus"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$ConduitNetwork} from "com.enderio.enderio.api.conduits.network.ConduitNetwork"
 
 export interface $ConduitNode$$Interface {
+get "network"(): $ConduitNetwork
 get "ticking"(): boolean
 get "nodeData"(): $NodeData
 set "nodeData"(value: T)
-get "network"(): $ConduitNetwork
 get "loaded"(): boolean
 }
 
 export class $ConduitNode implements $ConduitNode$$Interface {
+ "getNetwork"(): $ConduitNetwork
  "markDirty"(): void
  "isTicking"(): boolean
- "getConnectionStatus"(arg0: $Direction$$Type): $ConnectionStatus
+ "getConnectionConfig"(arg0: $Direction$$Type): $ConnectionConfig
+ "getConnectionConfig"<T extends $ConnectionConfig>(arg0: $Direction$$Type, arg1: $ConnectionConfigType$$Type<(T)>): T
+ "getNodeData"<T extends $NodeData>(arg0: $NodeDataType$$Type<(T)>): T
+ "getNodeData"(): $NodeData
+ "hasRedstoneSignal"(arg0: $DyeColor$$Type): boolean
  "getNeighborSidedCapability"<TCapability>(arg0: $BlockCapability$$Type<(TCapability), ($Direction$$Type)>, arg1: $Direction$$Type): TCapability
  "getNeighborVoidCapability"<TCapability>(arg0: $BlockCapability$$Type<(TCapability), (void)>, arg1: $Direction$$Type): TCapability
+ "getConnectionStatus"(arg0: $Direction$$Type): $ConnectionStatus
  "hasNodeData"(arg0: $NodeDataType$$Type<(never)>): boolean
- "getConnectionConfig"<T extends $ConnectionConfig>(arg0: $Direction$$Type, arg1: $ConnectionConfigType$$Type<(T)>): T
- "getConnectionConfig"(arg0: $Direction$$Type): $ConnectionConfig
- "getNodeData"(): $NodeData
- "getNodeData"<T extends $NodeData>(arg0: $NodeDataType$$Type<(T)>): T
- "hasRedstoneSignal"(arg0: $DyeColor$$Type): boolean
  "getOrCreateNodeData"<T extends $NodeData>(arg0: $NodeDataType$$Type<(T)>): T
  "setNodeData"<T extends $NodeData>(arg0: T): void
  "isConnectedToBlock"(arg0: $Direction$$Type): boolean
  "isConnectedTo"(arg0: $Direction$$Type): boolean
- "getNetwork"(): $ConduitNetwork
  "pos"(): $BlockPos
  "isLoaded"(): boolean
  "getInventory"(arg0: $Direction$$Type): $IItemHandlerModifiable
@@ -276,8 +276,8 @@ export type $ConduitRedstoneSignalAware$$Type = ((arg0: $DyeColor) => boolean);
  */
 export type $ConduitRedstoneSignalAware$$Original = $ConduitRedstoneSignalAware;}
 declare module "com.enderio.enderio.api.conduits.Conduit" {
-import {$BlockCapability$$Type} from "net.neoforged.neoforge.capabilities.BlockCapability"
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
+import {$BlockCapability$$Type} from "net.neoforged.neoforge.capabilities.BlockCapability"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Comparable$$Interface} from "java.lang.Comparable"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
@@ -290,8 +290,8 @@ import {$Holder} from "net.minecraft.core.Holder"
 import {$ConduitBlockConnection, $ConduitBlockConnection$$Type} from "com.enderio.enderio.api.conduits.network.ConduitBlockConnection"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Codec} from "com.mojang.serialization.Codec"
 import {$ConnectionConfigType} from "com.enderio.enderio.api.conduits.connection.config.ConnectionConfigType"
+import {$Codec} from "com.mojang.serialization.Codec"
 import {$ConnectionConfig, $ConnectionConfig$$Type} from "com.enderio.enderio.api.conduits.connection.config.ConnectionConfig"
 import {$DyeColor$$Type} from "net.minecraft.world.item.DyeColor"
 import {$Set$$Type} from "java.util.Set"
@@ -303,8 +303,8 @@ import {$ConduitBundle$$Type} from "com.enderio.enderio.api.conduits.bundle.Cond
 import {$CompoundTag} from "net.minecraft.nbt.CompoundTag"
 import {$Vector2i} from "org.joml.Vector2i"
 import {$Comparator} from "java.util.Comparator"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$ConduitTicker} from "com.enderio.enderio.api.conduits.ticker.ConduitTicker"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
@@ -328,11 +328,12 @@ static readonly "CODEC": $Codec<($Holder<($Conduit<(never), (never)>)>)>
 static readonly "DIRECT_CODEC": $Codec<($Conduit<(never), (never)>)>
 static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($Holder<($Conduit<(never), (never)>)>)>
 
+ "hasMenu"(): boolean
  "addToTooltip"(arg0: $Item$TooltipContext$$Type, arg1: $Consumer$$Type<($Component)>, arg2: $TooltipFlag$$Type): void
  "getInventorySize"(): integer
  "onRemoved"(arg0: $ConduitNode$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type): void
- "connectionConfigType"(): $ConnectionConfigType<(TConnectionConfig)>
  "canConnectToBlock"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $Direction$$Type): boolean
+ "connectionConfigType"(): $ConnectionConfigType<(TConnectionConfig)>
  "networkTickRate"(): integer
  "proxyCapability"<TCapability, TContext>(arg0: $Level$$Type, arg1: $ConduitNode$$Type, arg2: $BlockCapability$$Type<(TCapability), (TContext)>, arg3: TContext): TCapability
  "canReplaceConduit"(arg0: TConduit): boolean
@@ -365,7 +366,6 @@ static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($Holde
  */
  "copyLegacyData"(arg0: $ConduitNode$$Type, arg1: $ConduitDataAccessor$$Type, arg2: $BiConsumer$$Type<($Direction), ($ConnectionConfig)>): void
  "getGeneralConnectionComparator"(): $Comparator<($ConduitBlockConnection)>
- "hasMenu"(): boolean
  "onCreated"(arg0: $ConduitNode$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type): void
  "texture"(): $ResourceLocation
  "type"(): $ConduitType<(TConduit)>
@@ -411,8 +411,8 @@ import {$CompoundTag} from "net.minecraft.nbt.CompoundTag"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$FacadeType} from "com.enderio.enderio.api.conduits.facade.FacadeType"
 import {$List} from "java.util.List"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$AddConduitResult} from "com.enderio.enderio.api.conduits.bundle.AddConduitResult"
 import {$ConduitNode} from "com.enderio.enderio.api.conduits.network.node.ConduitNode"
 import {$Conduit, $Conduit$$Type} from "com.enderio.enderio.api.conduits.Conduit"
@@ -426,17 +426,32 @@ import {$ConnectionStatus} from "com.enderio.enderio.api.conduits.connection.Con
 import {$ConduitType$$Type} from "com.enderio.enderio.api.conduits.ConduitType"
 
 export interface $ConduitBundle$$Interface {
-get "facadeBlock"(): $Block
-set "facadeProvider"(value: $ItemStack$$Type)
+get "conduits"(): $List<($Holder<($Conduit<(never), (never)>)>)>
 get "facadeType"(): $FacadeType
 get "facadeProvider"(): $ItemStack
-get "conduits"(): $List<($Holder<($Conduit<(never), (never)>)>)>
+get "facadeBlock"(): $Block
+set "facadeProvider"(value: $ItemStack$$Type)
 get "full"(): boolean
 get "empty"(): boolean
 }
 
 export class $ConduitBundle implements $ConduitBundle$$Interface {
+ "getConduits"(): $List<($Holder<($Conduit<(never), (never)>)>)>
+ "setConnectionConfig"(arg0: $Holder$$Type<($Conduit<(never), (never)>)>, arg1: $Direction$$Type, arg2: $ConnectionConfig$$Type): void
+ "getConnectionConfig"<T extends $ConnectionConfig>(arg0: $Holder$$Type<($Conduit<(never), (never)>)>, arg1: $Direction$$Type, arg2: $ConnectionConfigType$$Type<(T)>): T
+ "getConnectionConfig"(arg0: $Holder$$Type<($Conduit<(never), (never)>)>, arg1: $Direction$$Type): $ConnectionConfig
  "hasFacade"(): boolean
+ "tryConnectTo"(arg0: $Holder$$Type<($Conduit<(never), (never)>)>, arg1: $Direction$$Type, arg2: boolean): boolean
+ "hasConduitStrict"(arg0: $Holder$$Type<($Conduit<(never), (never)>)>): boolean
+ "hasCompatibleConduit"(arg0: $Holder$$Type<($Conduit<(never), (never)>)>): boolean
+ "getConnectionInventory"(arg0: $Holder$$Type<($Conduit<(never), (never)>)>, arg1: $Direction$$Type): $IItemHandlerModifiable
+ "getCompatibleConduit"(arg0: $Holder$$Type<($Conduit<(never), (never)>)>): $Holder<($Conduit<(never), (never)>)>
+ "hasConduitOfType"(arg0: $ConduitType$$Type<(never)>): boolean
+ "getConduitExtraWorldData"(arg0: $Holder$$Type<($Conduit<(never), (never)>)>): $CompoundTag
+ "getConduitExtraGuiData"(arg0: $Holder$$Type<($Conduit<(never), (never)>)>, arg1: $Direction$$Type): $CompoundTag
+ "getConnectedConduits"(arg0: $Direction$$Type): $List<($Holder<($Conduit<(never), (never)>)>)>
+ "getFacadeType"(): $FacadeType
+ "getFacadeProvider"(): $ItemStack
  "getFacadeBlock"(): $Block
  "addConduit"(arg0: $Holder$$Type<($Conduit<(never), (never)>)>, arg1: $Direction$$Type, arg2: $Player$$Type): $AddConduitResult
  "setFacadeProvider"(arg0: $ItemStack$$Type): void
@@ -445,21 +460,6 @@ export class $ConduitBundle implements $ConduitBundle$$Interface {
  "getConduitByType"(arg0: $ConduitType$$Type<(never)>): $Holder<($Conduit<(never), (never)>)>
  "getConnectionStatus"(arg0: $Holder$$Type<($Conduit<(never), (never)>)>, arg1: $Direction$$Type): $ConnectionStatus
  "getConduitNode"(arg0: $Holder$$Type<($Conduit<(never), (never)>)>): $ConduitNode
- "hasConduitOfType"(arg0: $ConduitType$$Type<(never)>): boolean
- "getConduitExtraWorldData"(arg0: $Holder$$Type<($Conduit<(never), (never)>)>): $CompoundTag
- "getConduitExtraGuiData"(arg0: $Holder$$Type<($Conduit<(never), (never)>)>, arg1: $Direction$$Type): $CompoundTag
- "getConnectedConduits"(arg0: $Direction$$Type): $List<($Holder<($Conduit<(never), (never)>)>)>
- "getFacadeType"(): $FacadeType
- "getFacadeProvider"(): $ItemStack
- "getConduits"(): $List<($Holder<($Conduit<(never), (never)>)>)>
- "setConnectionConfig"(arg0: $Holder$$Type<($Conduit<(never), (never)>)>, arg1: $Direction$$Type, arg2: $ConnectionConfig$$Type): void
- "getConnectionConfig"<T extends $ConnectionConfig>(arg0: $Holder$$Type<($Conduit<(never), (never)>)>, arg1: $Direction$$Type, arg2: $ConnectionConfigType$$Type<(T)>): T
- "getConnectionConfig"(arg0: $Holder$$Type<($Conduit<(never), (never)>)>, arg1: $Direction$$Type): $ConnectionConfig
- "tryConnectTo"(arg0: $Holder$$Type<($Conduit<(never), (never)>)>, arg1: $Direction$$Type, arg2: boolean): boolean
- "hasConduitStrict"(arg0: $Holder$$Type<($Conduit<(never), (never)>)>): boolean
- "hasCompatibleConduit"(arg0: $Holder$$Type<($Conduit<(never), (never)>)>): boolean
- "getConnectionInventory"(arg0: $Holder$$Type<($Conduit<(never), (never)>)>, arg1: $Direction$$Type): $IItemHandlerModifiable
- "getCompatibleConduit"(arg0: $Holder$$Type<($Conduit<(never), (never)>)>): $Holder<($Conduit<(never), (never)>)>
  "isFull"(): boolean
  "isEmpty"(): boolean
 }
@@ -496,7 +496,7 @@ public "codec"(): $MapCodec<(T)>
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $ConduitType$Builder$SimpleType$$Type<T> = ({"exposedCapabilities"?: $Set$$Type<($BlockCapability$$Type<(never), (never)>)>, "codec"?: $MapCodec$$Type<(T)>}) | ([exposedCapabilities?: $Set$$Type<($BlockCapability$$Type<(never), (never)>)>, codec?: $MapCodec$$Type<(T)>]);
+export type $ConduitType$Builder$SimpleType$$Type<T> = ({"codec"?: $MapCodec$$Type<(T)>, "exposedCapabilities"?: $Set$$Type<($BlockCapability$$Type<(never), (never)>)>}) | ([codec?: $MapCodec$$Type<(T)>, exposedCapabilities?: $Set$$Type<($BlockCapability$$Type<(never), (never)>)>]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -504,8 +504,8 @@ export type $ConduitType$Builder$SimpleType$$Original<T> = $ConduitType$Builder$
 declare module "com.enderio.enderio.api.conduits.model.RegisterConduitModelModifiersEvent" {
 import {$Map} from "java.util.Map"
 import {$Event} from "net.neoforged.bus.api.Event"
-import {$Conduit$$Type} from "com.enderio.enderio.api.conduits.Conduit"
 import {$RegisterConduitModelModifiersEvent$ConduitCoreModelModifierFactory, $RegisterConduitModelModifiersEvent$ConduitCoreModelModifierFactory$$Type} from "com.enderio.enderio.api.conduits.model.RegisterConduitModelModifiersEvent$ConduitCoreModelModifierFactory"
+import {$Conduit$$Type} from "com.enderio.enderio.api.conduits.Conduit"
 import {$ConduitType, $ConduitType$$Type} from "com.enderio.enderio.api.conduits.ConduitType"
 import {$IModBusEvent$$Interface} from "net.neoforged.fml.event.IModBusEvent"
 
@@ -578,8 +578,8 @@ import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$IntFunction} from "java.util.function.IntFunction"
@@ -593,19 +593,19 @@ static readonly "BY_ID": $IntFunction<($ConnectionStatus)>
 static readonly "CONNECTED_CONDUIT": $ConnectionStatus
 static readonly "STREAM_CODEC": $StreamCodec<($ByteBuf), ($ConnectionStatus)>
 
-public "isEndpoint"(): boolean
 public "canConnect"(): boolean
+public "isEndpoint"(): boolean
 public "isConnected"(): boolean
 public static "values"(): ($ConnectionStatus)[]
 public static "valueOf"(arg0: StringJS): $ConnectionStatus
 public static "byName"(arg0: StringJS): $ConnectionStatus
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "endpoint"(): boolean
 get "connected"(): boolean
 get "serializedName"(): StringJS
@@ -622,8 +622,8 @@ export type $ConnectionStatus$$Type = (("none") | ("connected_block") | ("connec
 export type $ConnectionStatus$$Original = $ConnectionStatus;}
 declare module "com.enderio.enderio.api.conduits.connection.config.ConnectionConfigType" {
 import {$StreamCodec, $StreamCodec$$Type} from "net.minecraft.network.codec.StreamCodec"
-import {$RegistryFriendlyByteBuf, $RegistryFriendlyByteBuf$$Type} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$ConnectionConfig} from "com.enderio.enderio.api.conduits.connection.config.ConnectionConfig"
+import {$RegistryFriendlyByteBuf, $RegistryFriendlyByteBuf$$Type} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Supplier, $Supplier$$Type} from "java.util.function.Supplier"
 import {$MapCodec, $MapCodec$$Type} from "com.mojang.serialization.MapCodec"
 import {$Record} from "java.lang.Record"
@@ -664,8 +664,8 @@ import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$DyeColor$$Type} from "net.minecraft.world.item.DyeColor"
 import {$AbstractWidget} from "net.minecraft.client.gui.components.AbstractWidget"
 import {$Runnable$$Type} from "java.lang.Runnable"
-import {$Renderable, $Renderable$$Type} from "net.minecraft.client.gui.components.Renderable"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
+import {$Renderable, $Renderable$$Type} from "net.minecraft.client.gui.components.Renderable"
 import {$RedstoneControl$$Type} from "com.enderio.enderio.api.io.RedstoneControl"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 
@@ -719,8 +719,8 @@ export type $RegisterFarmTasksEvent$$Type = ($RegisterFarmTasksEvent);
  */
 export type $RegisterFarmTasksEvent$$Original = $RegisterFarmTasksEvent;}
 declare module "com.enderio.enderio.api.conduits.connection.config.IOConnectionConfig" {
-import {$ConduitRedstoneSignalAware$$Type} from "com.enderio.enderio.api.conduits.ConduitRedstoneSignalAware"
 import {$ConnectionConfigType} from "com.enderio.enderio.api.conduits.connection.config.ConnectionConfigType"
+import {$ConduitRedstoneSignalAware$$Type} from "com.enderio.enderio.api.conduits.ConduitRedstoneSignalAware"
 import {$ConnectionConfig, $ConnectionConfig$$Interface} from "com.enderio.enderio.api.conduits.connection.config.ConnectionConfig"
 import {$DyeColor} from "net.minecraft.world.item.DyeColor"
 
@@ -733,9 +733,9 @@ get "connected"(): boolean
 export class $IOConnectionConfig implements $IOConnectionConfig$$Interface {
  "canExtract"(arg0: $ConduitRedstoneSignalAware$$Type): boolean
  "canInsert"(arg0: $ConduitRedstoneSignalAware$$Type): boolean
- "extractChannel"(): $DyeColor
  "isInsert"(): boolean
  "isExtract"(): boolean
+ "extractChannel"(): $DyeColor
  "insertChannel"(): $DyeColor
  "isConnected"(): boolean
  "disconnected"(): $ConnectionConfig
@@ -755,8 +755,8 @@ declare module "com.enderio.enderio.api.conduits.model.ConduitModelModifier" {
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$List} from "java.util.List"
 import {$ModelResourceLocation} from "net.minecraft.client.resources.model.ModelResourceLocation"
+import {$List} from "java.util.List"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Conduit$$Type} from "com.enderio.enderio.api.conduits.Conduit"
 import {$RenderType$$Type} from "net.minecraft.client.renderer.RenderType"
@@ -782,8 +782,8 @@ export type $ConduitModelModifier$$Type = ($ConduitModelModifier);
  */
 export type $ConduitModelModifier$$Original = $ConduitModelModifier;}
 declare module "com.enderio.enderio.api.filter.SoulFilter" {
-import {$Soul$$Type} from "com.enderio.enderio.api.soul.Soul"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$Soul$$Type} from "com.enderio.enderio.api.soul.Soul"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
 
 export interface $SoulFilter$$Interface {
@@ -808,8 +808,8 @@ import {$StreamCodec, $StreamCodec$$Type} from "net.minecraft.network.codec.Stre
 import {$RegistryFriendlyByteBuf, $RegistryFriendlyByteBuf$$Type} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Supplier, $Supplier$$Type} from "java.util.function.Supplier"
 import {$MapCodec, $MapCodec$$Type} from "com.mojang.serialization.MapCodec"
-import {$ConduitData} from "com.enderio.enderio.api.conduits.network.node.legacy.ConduitData"
 import {$Record} from "java.lang.Record"
+import {$ConduitData} from "com.enderio.enderio.api.conduits.network.node.legacy.ConduitData"
 
 /**
  * 
@@ -887,8 +887,8 @@ export type $RegisterConduitModelModifiersEvent$ConduitCoreModelModifierFactory$
 declare module "com.enderio.enderio.api.capacitor.CapacitorData" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$Map, $Map$$Type} from "java.util.Map"
-import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$Codec} from "com.mojang.serialization.Codec"
+import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$CapacitorModifier, $CapacitorModifier$$Type} from "com.enderio.enderio.api.capacitor.CapacitorModifier"
 import {$Record} from "java.lang.Record"
 
@@ -984,8 +984,8 @@ import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resource
 import {$Optional} from "java.util.Optional"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
-import {$Tag, $Tag$$Type} from "net.minecraft.nbt.Tag"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$Tag, $Tag$$Type} from "net.minecraft.nbt.Tag"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Record} from "java.lang.Record"
 import {$EntityType, $EntityType$$Type} from "net.minecraft.world.entity.EntityType"
@@ -1002,14 +1002,14 @@ public "hasEntity"(): boolean
 public "entityType"(): $EntityType<(never)>
 public static "parseOptional"(arg0: $HolderLookup$Provider$$Type, arg1: $CompoundTag$$Type): $Soul
 public "saveOptional"(arg0: $HolderLookup$Provider$$Type): $Tag
+public "entityTypeId"(): $ResourceLocation
+public static "isSameEntity"(arg0: $Soul$$Type, arg1: $EntityType$$Type<(never)>): boolean
+public static "isSameEntity"(arg0: $Soul$$Type, arg1: $LivingEntity$$Type): boolean
+public static "isSameEntity"(arg0: $Soul$$Type, arg1: $Soul$$Type): boolean
 public static "isSameEntitySameTag"(arg0: $Soul$$Type, arg1: $LivingEntity$$Type): boolean
 public static "isSameEntitySameTag"(arg0: $Soul$$Type, arg1: $Soul$$Type): boolean
 public "getEntityTagWithId"(): $CompoundTag
 public "copyOnlyType"(): $Soul
-public static "isSameEntity"(arg0: $Soul$$Type, arg1: $EntityType$$Type<(never)>): boolean
-public static "isSameEntity"(arg0: $Soul$$Type, arg1: $LivingEntity$$Type): boolean
-public static "isSameEntity"(arg0: $Soul$$Type, arg1: $Soul$$Type): boolean
-public "entityTypeId"(): $ResourceLocation
 public "entityTag"(): $CompoundTag
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
@@ -1028,7 +1028,7 @@ get "empty"(): boolean
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $Soul$$Type = ({"entityTag"?: $CompoundTag$$Type, "entityType"?: $EntityType$$Type<(never)>}) | ([entityTag?: $CompoundTag$$Type, entityType?: $EntityType$$Type<(never)>]);
+export type $Soul$$Type = ({"entityType"?: $EntityType$$Type<(never)>, "entityTag"?: $CompoundTag$$Type}) | ([entityType?: $EntityType$$Type<(never)>, entityTag?: $CompoundTag$$Type]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -1064,9 +1064,9 @@ export type $NodeDataType$$Type<T> = (Special.EnderioConduitNodeDataType);
  */
 export type $NodeDataType$$Original<T> = $NodeDataType<(T)>;}
 declare module "com.enderio.enderio.api.conduits.ConduitType" {
-import {$BiFunction$$Type} from "java.util.function.BiFunction"
 import {$BlockCapability} from "net.neoforged.neoforge.capabilities.BlockCapability"
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
+import {$BiFunction$$Type} from "java.util.function.BiFunction"
 import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
@@ -1138,16 +1138,16 @@ export class $CoordinateSelection extends $Record {
 static readonly "CODEC": $Codec<($CoordinateSelection)>
 static readonly "STREAM_CODEC": $StreamCodec<($ByteBuf), ($CoordinateSelection)>
 
-constructor(level: $ResourceKey$$Type<($Level)>, pos: $BlockPos$$Type)
 constructor(arg0: $Level$$Type, arg1: $BlockPos$$Type)
+constructor(level: $ResourceKey$$Type<($Level)>, pos: $BlockPos$$Type)
 
-public "level"(): $ResourceKey<($Level)>
-public "getLevelName"(): StringJS
 public static "getLevelName"(arg0: $ResourceLocation$$Type): StringJS
+public "getLevelName"(): StringJS
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
 public "pos"(): $BlockPos
+public "level"(): $ResourceKey<($Level)>
 get "levelName"(): StringJS
 }
 /**
@@ -1242,14 +1242,14 @@ declare module "com.enderio.enderio.api.io.RedstoneControl" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
-import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$IntFunction} from "java.util.function.IntFunction"
 import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$MutableComponent} from "net.minecraft.network.chat.MutableComponent"
 import {$Tag, $Tag$$Type} from "net.minecraft.nbt.Tag"
 
@@ -1271,11 +1271,11 @@ public "isActive"(arg0: boolean): boolean
 public "getComponent"(): $MutableComponent
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "redstoneSensitive"(): boolean
 get "component"(): $MutableComponent
 get "serializedName"(): StringJS
@@ -1296,8 +1296,8 @@ import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$IntFunction} from "java.util.function.IntFunction"
@@ -1317,11 +1317,11 @@ public static "values"(): ($FacadeType)[]
 public static "valueOf"(arg0: StringJS): $FacadeType
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "blastResistant"(): boolean
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
@@ -1338,8 +1338,8 @@ export type $FacadeType$$Original = $FacadeType;}
 declare module "com.enderio.enderio.api.conduits.network.ConduitNetworkContextType" {
 import {$Supplier, $Supplier$$Type} from "java.util.function.Supplier"
 import {$MapCodec, $MapCodec$$Type} from "com.mojang.serialization.MapCodec"
-import {$Record} from "java.lang.Record"
 import {$ConduitNetworkContext} from "com.enderio.enderio.api.conduits.network.ConduitNetworkContext"
+import {$Record} from "java.lang.Record"
 
 export class $ConduitNetworkContextType<T extends $ConduitNetworkContext<(object)>> extends $Record {
 constructor(codec: $MapCodec$$Type<(T)>, factory: $Supplier$$Type<(T)>)
@@ -1365,7 +1365,7 @@ get "persistent"(): boolean
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $ConduitNetworkContextType$$Type<T> = (Special.EnderioConduitNetworkContextType) | ({"factory"?: $Supplier$$Type<(T)>, "codec"?: $MapCodec$$Type<(T)>}) | ([factory?: $Supplier$$Type<(T)>, codec?: $MapCodec$$Type<(T)>]);
+export type $ConduitNetworkContextType$$Type<T> = (Special.EnderioConduitNetworkContextType) | ({"codec"?: $MapCodec$$Type<(T)>, "factory"?: $Supplier$$Type<(T)>}) | ([codec?: $MapCodec$$Type<(T)>, factory?: $Supplier$$Type<(T)>]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -1456,8 +1456,8 @@ import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$IntFunction} from "java.util.function.IntFunction"
@@ -1472,21 +1472,21 @@ static readonly "BOTH": $IOMode
 static readonly "STREAM_CODEC": $StreamCodec<($ByteBuf), ($IOMode)>
 static readonly "PUSH": $IOMode
 
+public "canConnect"(): boolean
 public "canOutput"(): boolean
 public "canForce"(): boolean
 public "canInput"(): boolean
 public "canPush"(): boolean
 public "canPull"(): boolean
-public "canConnect"(): boolean
 public static "values"(): ($IOMode)[]
 public static "valueOf"(arg0: StringJS): $IOMode
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
 }
@@ -1548,18 +1548,18 @@ import {$Level} from "net.minecraft.world.level.Level"
 import {$FakePlayer} from "net.neoforged.neoforge.common.util.FakePlayer"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
-import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$EntityType} from "net.minecraft.world.entity.EntityType"
+import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export interface $FarmingMachine$$Interface {
 get "shears"(): $ItemStack
 get "farmingRange"(): integer
 get "hoe"(): $ItemStack
 get "axe"(): $ItemStack
-get "position"(): $BlockPos
 get "level"(): $Level
-get "entityType"(): $EntityType<(never)>
+get "position"(): $BlockPos
 get "player"(): $FakePlayer
+get "entityType"(): $EntityType<(never)>
 }
 
 export class $FarmingMachine implements $FarmingMachine$$Interface {
@@ -1570,11 +1570,11 @@ export class $FarmingMachine implements $FarmingMachine$$Interface {
  "getFarmingRange"(): integer
  "getHoe"(): $ItemStack
  "getAxe"(): $ItemStack
- "getPosition"(): $BlockPos
  "getLevel"(): $Level
+ "getPosition"(): $BlockPos
  "useStack"(arg0: $BlockPos$$Type, arg1: $ItemStack$$Type): $InteractionResult
- "getEntityType"(): $EntityType<(never)>
  "getPlayer"(): $FakePlayer
+ "getEntityType"(): $EntityType<(never)>
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -1728,8 +1728,8 @@ import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$Optional} from "java.util.Optional"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$Tag, $Tag$$Type} from "net.minecraft.nbt.Tag"
-import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$Record} from "java.lang.Record"
 
 export class $GrindingBallData extends $Record {
@@ -1788,8 +1788,8 @@ declare module "com.enderio.enderio.api.conduits.network.ConduitBlockConnection"
 import {$BlockCapability$$Type} from "net.neoforged.neoforge.capabilities.BlockCapability"
 import {$ConnectionConfigType$$Type} from "com.enderio.enderio.api.conduits.connection.config.ConnectionConfigType"
 import {$ConnectionConfig} from "com.enderio.enderio.api.conduits.connection.config.ConnectionConfig"
-import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
 import {$IItemHandlerModifiable} from "net.neoforged.neoforge.items.IItemHandlerModifiable"
+import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
 import {$ConduitNode, $ConduitNode$$Type} from "com.enderio.enderio.api.conduits.network.node.ConduitNode"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$Record} from "java.lang.Record"
@@ -1797,12 +1797,12 @@ import {$Record} from "java.lang.Record"
 export class $ConduitBlockConnection extends $Record {
 constructor(node: $ConduitNode$$Type, connectionSide: $Direction$$Type)
 
-public "connectionSide"(): $Direction
-public "connectionConfig"<T extends $ConnectionConfig>(arg0: $ConnectionConfigType$$Type<(T)>): T
 public "connectionConfig"(): $ConnectionConfig
+public "connectionConfig"<T extends $ConnectionConfig>(arg0: $ConnectionConfigType$$Type<(T)>): T
 public "connectedBlockPos"(): $BlockPos
 public "getSidedCapability"<TCapability>(arg0: $BlockCapability$$Type<(TCapability), ($Direction$$Type)>): TCapability
 public "getVoidCapability"<TCapability>(arg0: $BlockCapability$$Type<(TCapability), (void)>): TCapability
+public "connectionSide"(): $Direction
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
@@ -1917,8 +1917,8 @@ export type $TravelTargetType$$Type<T> = (Special.EnderioTravelTargetTypes);
  */
 export type $TravelTargetType$$Original<T> = $TravelTargetType<(T)>;}
 declare module "com.enderio.enderio.api.travel.RegisterTravelRenderersEvent" {
-import {$TravelTarget} from "com.enderio.enderio.api.travel.TravelTarget"
 import {$Map} from "java.util.Map"
+import {$TravelTarget} from "com.enderio.enderio.api.travel.TravelTarget"
 import {$TravelTargetType, $TravelTargetType$$Type} from "com.enderio.enderio.api.travel.TravelTargetType"
 import {$Event} from "net.neoforged.bus.api.Event"
 import {$IModBusEvent$$Interface} from "net.neoforged.fml.event.IModBusEvent"

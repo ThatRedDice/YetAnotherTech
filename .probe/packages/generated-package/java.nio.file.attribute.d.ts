@@ -217,8 +217,8 @@ import {$FileTime} from "java.nio.file.attribute.FileTime"
  */
 export interface $BasicFileAttributes$$Interface {
 get "symbolicLink"(): boolean
-get "regularFile"(): boolean
 get "other"(): boolean
+get "regularFile"(): boolean
 get "directory"(): boolean
 }
 
@@ -226,10 +226,10 @@ export class $BasicFileAttributes implements $BasicFileAttributes$$Interface {
  "lastAccessTime"(): $FileTime
  "lastModifiedTime"(): $FileTime
  "isSymbolicLink"(): boolean
- "isRegularFile"(): boolean
  "fileKey"(): any
  "creationTime"(): $FileTime
  "isOther"(): boolean
+ "isRegularFile"(): boolean
  "size"(): long
  "isDirectory"(): boolean
 }

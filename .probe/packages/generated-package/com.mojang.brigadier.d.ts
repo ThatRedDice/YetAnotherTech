@@ -11,11 +11,11 @@ get "read"(): StringJS
 
 export class $ImmutableStringReader implements $ImmutableStringReader$$Interface {
  "getRemaining"(): StringJS
- "canRead"(arg0: integer): boolean
+ "getString"(): StringJS
  "canRead"(): boolean
+ "canRead"(arg0: integer): boolean
  "peek"(): character
  "peek"(arg0: integer): character
- "getString"(): StringJS
  "getCursor"(): integer
  "getRemainingLength"(): integer
  "getTotalLength"(): integer
@@ -217,25 +217,22 @@ constructor(arg0: $StringReader$$Type)
 constructor(arg0: StringJS)
 
 public "skipWhitespace"(): void
+public "readString"(): StringJS
 public "readBoolean"(): boolean
 public "readLong"(): long
 public "readDouble"(): double
-public "getRemaining"(): StringJS
-public "readString"(): StringJS
 public "readFloat"(): float
+public "getRemaining"(): StringJS
+public "getString"(): StringJS
 public "read"(): character
 public "readInt"(): integer
 public "canRead"(arg0: integer): boolean
 public "canRead"(): boolean
-public "peek"(arg0: integer): character
 public "peek"(): character
+public "peek"(arg0: integer): character
 public "skip"(): void
 public "expect"(arg0: character): void
-public "getString"(): StringJS
 public "getCursor"(): integer
-public static "isAllowedNumber"(arg0: character): boolean
-public static "isAllowedInUnquotedString"(arg0: character): boolean
-public "readStringUntil"(arg0: character): StringJS
 public "setCursor"(arg0: integer): void
 public "getRemainingLength"(): integer
 public "getTotalLength"(): integer
@@ -243,6 +240,9 @@ public "getRead"(): StringJS
 public static "isQuotedStringStart"(arg0: character): boolean
 public "readQuotedString"(): StringJS
 public "readUnquotedString"(): StringJS
+public static "isAllowedNumber"(arg0: character): boolean
+public static "isAllowedInUnquotedString"(arg0: character): boolean
+public "readStringUntil"(arg0: character): StringJS
 get "remaining"(): StringJS
 get "string"(): StringJS
 get "cursor"(): integer

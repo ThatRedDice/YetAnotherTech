@@ -18,8 +18,8 @@ export class $SelectableResource<T> implements $SelectableResource$$Interface {
 static "fluid"(stack: $FluidStack$$Type): $SelectableResource<($FluidStack)>
  "getComponentsTag"(): $CompoundTag
  "applyComponentsTag"(tag: $CompoundTag$$Type): void
- "resource"(): T
 static "item"(stack: $ItemStack$$Type): $SelectableResource<($ItemStack)>
+ "resource"(): T
  "getName"(): $Component
  "isEmpty"(): boolean
  "getCount"(): long
@@ -103,8 +103,8 @@ export type $Drawable$$Original = $Drawable;}
 declare module "dev.ftb.mods.ftblibrary.config.DoubleConfig" {
 import {$NumberConfig} from "dev.ftb.mods.ftblibrary.config.NumberConfig"
 import {$Color4I} from "dev.ftb.mods.ftblibrary.icon.Color4I"
-import {$Optional} from "java.util.Optional"
 import {$TooltipList$$Type} from "dev.ftb.mods.ftblibrary.util.TooltipList"
+import {$Optional} from "java.util.Optional"
 import {$Component} from "net.minecraft.network.chat.Component"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 
@@ -139,9 +139,9 @@ import {$Icon} from "dev.ftb.mods.ftblibrary.icon.Icon"
 import {$IResourceIcon$$Interface} from "dev.ftb.mods.ftblibrary.icon.IResourceIcon"
 import {$Color4I, $Color4I$$Type} from "dev.ftb.mods.ftblibrary.icon.Color4I"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
-import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$GuiGraphics$$Type} from "net.minecraft.client.gui.GuiGraphics"
 import {$Codec} from "com.mojang.serialization.Codec"
+import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$PixelBuffer} from "dev.ftb.mods.ftblibrary.math.PixelBuffer"
 
 export class $ImageIcon extends $Icon implements $IResourceIcon$$Interface {
@@ -187,16 +187,16 @@ declare module "dev.ftb.mods.ftblibrary.ui.Widget" {
 import {$WidgetType} from "dev.ftb.mods.ftblibrary.ui.WidgetType"
 import {$Key$$Type} from "dev.ftb.mods.ftblibrary.ui.input.Key"
 import {$Optional} from "java.util.Optional"
-import {$KeyModifiers$$Type} from "dev.ftb.mods.ftblibrary.ui.input.KeyModifiers"
 import {$Comparable$$Interface} from "java.lang.Comparable"
+import {$KeyModifiers$$Type} from "dev.ftb.mods.ftblibrary.ui.input.KeyModifiers"
 import {$PositionedIngredient} from "dev.ftb.mods.ftblibrary.util.client.PositionedIngredient"
 import {$MouseButton$$Type} from "dev.ftb.mods.ftblibrary.ui.input.MouseButton"
 import {$Runnable, $Runnable$$Type} from "java.lang.Runnable"
 import {$Component} from "net.minecraft.network.chat.Component"
 import {$IScreenWrapper$$Interface} from "dev.ftb.mods.ftblibrary.ui.IScreenWrapper"
 import {$Panel, $Panel$$Type} from "dev.ftb.mods.ftblibrary.ui.Panel"
-import {$GuiGraphics$$Type} from "net.minecraft.client.gui.GuiGraphics"
 import {$TooltipList$$Type} from "dev.ftb.mods.ftblibrary.util.TooltipList"
+import {$GuiGraphics$$Type} from "net.minecraft.client.gui.GuiGraphics"
 import {$Window} from "com.mojang.blaze3d.platform.Window"
 import {$CursorType} from "dev.ftb.mods.ftblibrary.ui.CursorType"
 import {$BaseScreen} from "dev.ftb.mods.ftblibrary.ui.BaseScreen"
@@ -211,6 +211,7 @@ export class $Widget implements $IScreenWrapper$$Interface, $Comparable$$Interfa
 
 constructor(p: $Panel$$Type)
 
+public "getWidgetType"(): $WidgetType
 public "getIngredientUnderMouse"(): $Optional<($PositionedIngredient)>
 public "shouldDraw"(): boolean
 public "setPosAndSize"(x: integer, y: integer, w: integer, h: integer): $Widget
@@ -226,23 +227,22 @@ public static "getClipboardString"(): StringJS
 public static "setClipboardString"(string: StringJS): void
 public static "isCtrlKeyDown"(): boolean
 public "collidesWith"(x: integer, y: integer, w: integer, h: integer): boolean
-public "getWidgetType"(): $WidgetType
 public "getDrawLayer"(): $Widget$DrawLayer
 public "setDrawLayer"(drawLayer: $Widget$DrawLayer$$Type): void
 public "isGhostIngredientTarget"(ingredient: any): boolean
 public "acceptGhostIngredient"(ingredient: any): void
 public "playClickSound"(): void
 public "setX"(v: integer): void
+public "getGui"(): $BaseScreen
+public static "isMouseButtonDown"(button: $MouseButton$$Type): boolean
 public "handleClick"(scheme: StringJS, path: StringJS): boolean
 public "handleClick"(click: StringJS): boolean
 public "mousePressed"(button: $MouseButton$$Type): boolean
-public static "isMouseButtonDown"(button: $MouseButton$$Type): boolean
-public "getGui"(): $BaseScreen
+public "tick"(): void
 public "getWidth"(): integer
 public "getHeight"(): integer
-public "setSize"(w: integer, h: integer): void
-public "tick"(): void
 public "getY"(): integer
+public "setSize"(w: integer, h: integer): void
 public "toString"(): StringJS
 public "compareTo"(widget: $Widget$$Type): integer
 public "compareTo"(arg0: any): integer
@@ -251,29 +251,29 @@ public "getParent"(): $Panel
 public "getTitle"(): $Component
 public "draw"(graphics: $GuiGraphics$$Type, theme: $Theme$$Type, x: integer, y: integer, w: integer, h: integer): void
 public "getCursor"(): $CursorType
+public "getPartialTicks"(): float
 public "getX"(): integer
+public "getMouseX"(): integer
+public "getMouseY"(): integer
 public "getWindow"(): $Window
 /**
  * 
  * @deprecated
  */
 public "getScreen"(): $Window
-public "getMouseX"(): integer
-public "getMouseY"(): integer
 public "keyPressed"(key: $Key$$Type): boolean
 public "setWidth"(v: integer): void
 public "setHeight"(v: integer): void
 public static "isKeyDown"(key: integer): boolean
-public "getPartialTicks"(): float
 public "setPos"(x: integer, y: integer): void
 public static "isShiftKeyDown"(): boolean
-public "isMouseOver"(): boolean
-public "setY"(v: integer): void
 public "mouseReleased"(button: $MouseButton$$Type): void
 public "mouseDragged"(button: integer, dragX: double, dragY: double): boolean
 public "mouseScrolled"(scroll: double): boolean
 public "keyReleased"(key: $Key$$Type): void
 public "charTyped"(c: character, modifiers: $KeyModifiers$$Type): boolean
+public "isMouseOver"(): boolean
+public "setY"(v: integer): void
 public "openGui"(): void
 public "closeGui"(openPrevScreen: boolean): void
 public "closeGui"(): void
@@ -281,11 +281,11 @@ public "closeContextMenu"(): void
 public "openGuiLater"(): void
 public "openAfter"(runnable: $Runnable$$Type): $Runnable
 public "run"(): void
+get "widgetType"(): $WidgetType
 get "ingredientUnderMouse"(): $Optional<($PositionedIngredient)>
 public static get "clipboardString"(): StringJS
 public static set "clipboardString"(value: StringJS)
 public static get "ctrlKeyDown"(): boolean
-get "widgetType"(): $WidgetType
 get "drawLayer"(): $Widget$DrawLayer
 set "drawLayer"(value: $Widget$DrawLayer$$Type)
 set "x"(value: integer)
@@ -295,12 +295,12 @@ get "enabled"(): boolean
 get "parent"(): $Panel
 get "title"(): $Component
 get "cursor"(): $CursorType
+get "partialTicks"(): float
 get "x"(): integer
-get "window"(): $Window
-get "screen"(): $Window
 get "mouseX"(): integer
 get "mouseY"(): integer
-get "partialTicks"(): float
+get "window"(): $Window
+get "screen"(): $Window
 public static get "shiftKeyDown"(): boolean
 get "mouseOver"(): boolean
 set "y"(value: integer)
@@ -317,14 +317,14 @@ export type $Widget$$Original = $Widget;}
 declare module "dev.ftb.mods.ftblibrary.ui.Button" {
 import {$Icon$$Type} from "dev.ftb.mods.ftblibrary.icon.Icon"
 import {$Panel$$Type} from "dev.ftb.mods.ftblibrary.ui.Panel"
-import {$GuiGraphics$$Type} from "net.minecraft.client.gui.GuiGraphics"
 import {$Optional} from "java.util.Optional"
+import {$GuiGraphics$$Type} from "net.minecraft.client.gui.GuiGraphics"
 import {$PositionedIngredient} from "dev.ftb.mods.ftblibrary.util.client.PositionedIngredient"
 import {$CursorType} from "dev.ftb.mods.ftblibrary.ui.CursorType"
 import {$MouseButton$$Type} from "dev.ftb.mods.ftblibrary.ui.input.MouseButton"
 import {$Widget} from "dev.ftb.mods.ftblibrary.ui.Widget"
-import {$Theme$$Type} from "dev.ftb.mods.ftblibrary.ui.Theme"
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
+import {$Theme$$Type} from "dev.ftb.mods.ftblibrary.ui.Theme"
 
 export class $Button extends $Widget {
  "posX": integer
@@ -336,8 +336,8 @@ constructor(panel: $Panel$$Type, t: $Component$$Type, i: $Icon$$Type)
 constructor(panel: $Panel$$Type)
 
 public "getIngredientUnderMouse"(): $Optional<($PositionedIngredient)>
-public "setForceButtonSize"(forceButtonSize: boolean): $Button
 public "drawBackground"(graphics: $GuiGraphics$$Type, theme: $Theme$$Type, x: integer, y: integer, w: integer, h: integer): void
+public "setForceButtonSize"(forceButtonSize: boolean): $Button
 public "mousePressed"(button: $MouseButton$$Type): boolean
 public "getTitle"(): $Component
 public "draw"(graphics: $GuiGraphics$$Type, theme: $Theme$$Type, x: integer, y: integer, w: integer, h: integer): void
@@ -392,14 +392,14 @@ declare module "dev.ftb.mods.ftblibrary.snbt.config.SNBTConfig" {
 import {$ConfigGroup$$Type} from "dev.ftb.mods.ftblibrary.config.ConfigGroup"
 import {$StringValue} from "dev.ftb.mods.ftblibrary.snbt.config.StringValue"
 import {$FriendlyByteBuf$$Type} from "net.minecraft.network.FriendlyByteBuf"
-import {$BooleanValue} from "dev.ftb.mods.ftblibrary.snbt.config.BooleanValue"
 import {$List, $List$$Type} from "java.util.List"
+import {$BooleanValue} from "dev.ftb.mods.ftblibrary.snbt.config.BooleanValue"
 import {$SNBTCompoundTag$$Type} from "dev.ftb.mods.ftblibrary.snbt.SNBTCompoundTag"
 import {$LongValue} from "dev.ftb.mods.ftblibrary.snbt.config.LongValue"
 import {$IntValue} from "dev.ftb.mods.ftblibrary.snbt.config.IntValue"
 import {$IntArrayValue} from "dev.ftb.mods.ftblibrary.snbt.config.IntArrayValue"
-import {$StringListValue} from "dev.ftb.mods.ftblibrary.snbt.config.StringListValue"
 import {$NameMap$$Type} from "dev.ftb.mods.ftblibrary.config.NameMap"
+import {$StringListValue} from "dev.ftb.mods.ftblibrary.snbt.config.StringListValue"
 import {$EnumValue} from "dev.ftb.mods.ftblibrary.snbt.config.EnumValue"
 import {$BaseValue, $BaseValue$$Type} from "dev.ftb.mods.ftblibrary.snbt.config.BaseValue"
 import {$Supplier$$Type} from "java.util.function.Supplier"
@@ -463,8 +463,8 @@ constructor()
 
 public "styledString"(text: StringJS, color: $ChatFormatting$$Type): void
 public "styledString"(text: StringJS, style: $Style$$Type): void
-public "styledTranslate"(key: StringJS, style: $Style$$Type, ...objects: (any)[]): void
 public "blankLine"(): void
+public "styledTranslate"(key: StringJS, style: $Style$$Type, ...objects: (any)[]): void
 public "reset"(): void
 public "add"(component: $Component$$Type): void
 public "string"(text: StringJS): void
@@ -566,8 +566,8 @@ import {$List} from "java.util.List"
 import {$PositionedIngredient} from "dev.ftb.mods.ftblibrary.util.client.PositionedIngredient"
 import {$MouseButton$$Type} from "dev.ftb.mods.ftblibrary.ui.input.MouseButton"
 import {$Widget, $Widget$$Type} from "dev.ftb.mods.ftblibrary.ui.Widget"
-import {$GuiGraphics$$Type} from "net.minecraft.client.gui.GuiGraphics"
 import {$TooltipList$$Type} from "dev.ftb.mods.ftblibrary.util.TooltipList"
+import {$GuiGraphics$$Type} from "net.minecraft.client.gui.GuiGraphics"
 import {$CursorType} from "dev.ftb.mods.ftblibrary.ui.CursorType"
 import {$Theme$$Type} from "dev.ftb.mods.ftblibrary.ui.Theme"
 import {$WidgetLayout$$Type} from "dev.ftb.mods.ftblibrary.ui.WidgetLayout"
@@ -580,6 +580,7 @@ export class $Panel extends $Widget {
 
 constructor(panel: $Panel$$Type)
 
+public "getScrollStep"(): double
 public "getIngredientUnderMouse"(): $Optional<($PositionedIngredient)>
 public "setScrollStep"(s: double): void
 public "refreshWidgets"(): void
@@ -608,7 +609,6 @@ public "isMouseOverAnyWidget"(): boolean
 public "getContentHeight"(): integer
 public "addWidgets"(): void
 public "mousePressed"(button: $MouseButton$$Type): boolean
-public "getScrollStep"(): double
 public "tick"(): void
 public "getY"(): integer
 public "add"(widget: $Widget$$Type): void
@@ -620,13 +620,14 @@ public "getCursor"(): $CursorType
 public "getX"(): integer
 public "getWidgets"(): $List<($Widget)>
 public "keyPressed"(key: $Key$$Type): boolean
-public "clearWidgets"(): void
 public "mouseReleased"(button: $MouseButton$$Type): void
 public "mouseDragged"(button: integer, dragX: double, dragY: double): boolean
 public "mouseScrolled"(scroll: double): boolean
 public "keyReleased"(key: $Key$$Type): void
 public "charTyped"(c: character, modifiers: $KeyModifiers$$Type): boolean
+public "clearWidgets"(): void
 public "getWidget"(index: integer): $Widget
+get "scrollStep"(): double
 get "ingredientUnderMouse"(): $Optional<($PositionedIngredient)>
 set "scrollStep"(value: double)
 set "onlyRenderWidgetsInside"(value: boolean)
@@ -642,7 +643,6 @@ get "contentWidth"(): integer
 get "defaultScrollVertical"(): boolean
 get "mouseOverAnyWidget"(): boolean
 get "contentHeight"(): integer
-get "scrollStep"(): double
 get "y"(): integer
 set "offset"(value: boolean)
 get "cursor"(): $CursorType
@@ -700,8 +700,8 @@ export type $EntityFaceConfig$$Original = $EntityFaceConfig;}
 declare module "dev.ftb.mods.ftblibrary.ui.DropDownMenu" {
 import {$Panel$$Type} from "dev.ftb.mods.ftblibrary.ui.Panel"
 import {$GuiGraphics$$Type} from "net.minecraft.client.gui.GuiGraphics"
-import {$ContextMenuItem$$Type} from "dev.ftb.mods.ftblibrary.ui.ContextMenuItem"
 import {$List$$Type} from "java.util.List"
+import {$ContextMenuItem$$Type} from "dev.ftb.mods.ftblibrary.ui.ContextMenuItem"
 import {$PopupMenu$$Interface} from "dev.ftb.mods.ftblibrary.ui.PopupMenu"
 import {$MouseButton$$Type} from "dev.ftb.mods.ftblibrary.ui.input.MouseButton"
 import {$Theme$$Type} from "dev.ftb.mods.ftblibrary.ui.Theme"
@@ -719,9 +719,9 @@ public "drawBackground"(graphics: $GuiGraphics$$Type, theme: $Theme$$Type, x: in
 public "alignWidgets"(): void
 public "getModalPanel"(): $ModalPanel
 public "scrollPanel"(scroll: double): boolean
-public "setMaxHeightPercent"(maxHeightPercent: float): void
 public "addWidgets"(): void
 public "mousePressed"(button: $MouseButton$$Type): boolean
+public "setMaxHeightPercent"(maxHeightPercent: float): void
 public "draw"(graphics: $GuiGraphics$$Type, theme: $Theme$$Type, x: integer, y: integer, w: integer, h: integer): void
 get "modalPanel"(): $ModalPanel
 set "maxHeightPercent"(value: float)
@@ -743,8 +743,8 @@ import {$Map} from "java.util.Map"
 import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$List} from "java.util.List"
-import {$Tag, $Tag$$Type} from "net.minecraft.nbt.Tag"
 import {$Class$$Type} from "java.lang.Class"
+import {$Tag, $Tag$$Type} from "net.minecraft.nbt.Tag"
 import {$ListTag} from "net.minecraft.nbt.ListTag"
 
 export class $SNBTCompoundTag extends $CompoundTag {
@@ -783,8 +783,8 @@ export type $SNBTCompoundTag$$Original = $SNBTCompoundTag;}
 declare module "dev.ftb.mods.ftblibrary.ui.ContextMenu" {
 import {$Panel$$Type} from "dev.ftb.mods.ftblibrary.ui.Panel"
 import {$GuiGraphics$$Type} from "net.minecraft.client.gui.GuiGraphics"
-import {$ContextMenuItem$$Type} from "dev.ftb.mods.ftblibrary.ui.ContextMenuItem"
 import {$List$$Type} from "java.util.List"
+import {$ContextMenuItem$$Type} from "dev.ftb.mods.ftblibrary.ui.ContextMenuItem"
 import {$PopupMenu$$Interface} from "dev.ftb.mods.ftblibrary.ui.PopupMenu"
 import {$MouseButton$$Type} from "dev.ftb.mods.ftblibrary.ui.input.MouseButton"
 import {$Theme$$Type} from "dev.ftb.mods.ftblibrary.ui.Theme"
@@ -801,10 +801,10 @@ constructor(panel: $Panel$$Type, i: $List$$Type<($ContextMenuItem$$Type)>)
 public "drawBackground"(graphics: $GuiGraphics$$Type, theme: $Theme$$Type, x: integer, y: integer, w: integer, h: integer): void
 public "alignWidgets"(): void
 public "getModalPanel"(): $ModalPanel
-public "hasIcons"(): boolean
-public "setDrawVerticalSeparators"(drawVerticalSeparators: boolean): void
 public "addWidgets"(): void
 public "mousePressed"(button: $MouseButton$$Type): boolean
+public "hasIcons"(): boolean
+public "setDrawVerticalSeparators"(drawVerticalSeparators: boolean): void
 public "draw"(graphics: $GuiGraphics$$Type, theme: $Theme$$Type, x: integer, y: integer, w: integer, h: integer): void
 public "setMaxRows"(maxRows: integer): void
 get "modalPanel"(): $ModalPanel
@@ -823,8 +823,8 @@ export type $ContextMenu$$Original = $ContextMenu;}
 declare module "dev.ftb.mods.ftblibrary.config.ListConfig" {
 import {$Color4I} from "dev.ftb.mods.ftblibrary.icon.Color4I"
 import {$TooltipList$$Type} from "dev.ftb.mods.ftblibrary.util.TooltipList"
-import {$ConfigCallback$$Type} from "dev.ftb.mods.ftblibrary.config.ConfigCallback"
 import {$List, $List$$Type} from "java.util.List"
+import {$ConfigCallback$$Type} from "dev.ftb.mods.ftblibrary.config.ConfigCallback"
 import {$MouseButton$$Type} from "dev.ftb.mods.ftblibrary.ui.input.MouseButton"
 import {$Widget$$Type} from "dev.ftb.mods.ftblibrary.ui.Widget"
 import {$Component} from "net.minecraft.network.chat.Component"
@@ -867,8 +867,8 @@ import {$ByteBuffer} from "java.nio.ByteBuffer"
 export class $PixelBuffer {
 constructor(w: integer, h: integer)
 
-public "toImage"(type: integer): $BufferedImage
 public "toByteBuffer"(alpha: boolean): $ByteBuffer
+public "toImage"(type: integer): $BufferedImage
 public "getWidth"(): integer
 public "getHeight"(): integer
 public "getRGB"(startX: integer, startY: integer, w: integer, h: integer, p: (integer)[]): (integer)[]
@@ -1030,11 +1030,11 @@ public "getIcon"(): $Icon
 public "getIcon"(v: T): $Icon
 public "getNameKey"(): StringJS
 public "getGroup"(): $ConfigGroup
-public "setIcon"(i: $Icon$$Type): $ConfigValue<(T)>
-public "getColor"(): $Color4I
-public "getColor"(v: T): $Color4I
-public "getTooltip"(): StringJS
 public "applyValue"(): void
+public "setIcon"(i: $Icon$$Type): $ConfigValue<(T)>
+public "getColor"(v: T): $Color4I
+public "getColor"(): $Color4I
+public "getTooltip"(): StringJS
 public "onClicked"(arg0: $Widget$$Type, arg1: $MouseButton$$Type, arg2: $ConfigCallback$$Type): void
 set "order"(value: integer)
 set "defaultValue"(value: T)
@@ -1120,8 +1120,8 @@ export type $NumberConfig$$Original<T> = $NumberConfig<(T)>;}
 declare module "dev.ftb.mods.ftblibrary.config.EnumConfig" {
 import {$Icon} from "dev.ftb.mods.ftblibrary.icon.Icon"
 import {$Color4I} from "dev.ftb.mods.ftblibrary.icon.Color4I"
-import {$ConfigWithVariants} from "dev.ftb.mods.ftblibrary.config.ConfigWithVariants"
 import {$TooltipList$$Type} from "dev.ftb.mods.ftblibrary.util.TooltipList"
+import {$ConfigWithVariants} from "dev.ftb.mods.ftblibrary.config.ConfigWithVariants"
 import {$ConfigCallback$$Type} from "dev.ftb.mods.ftblibrary.config.ConfigCallback"
 import {$MouseButton$$Type} from "dev.ftb.mods.ftblibrary.ui.input.MouseButton"
 import {$Widget$$Type} from "dev.ftb.mods.ftblibrary.ui.Widget"
@@ -1215,14 +1215,14 @@ readonly "scanCode": integer
 
 constructor(k: integer, s: integer, m: integer)
 
-public "escOrInventory"(): boolean
-public "esc"(): boolean
-public "selectAll"(): boolean
-public "cut"(): boolean
-public "getInputMapping"(): $InputConstants$Key
-public "deselectAll"(): boolean
 public "paste"(): boolean
 public "backspace"(): boolean
+public "escOrInventory"(): boolean
+public "esc"(): boolean
+public "cut"(): boolean
+public "selectAll"(): boolean
+public "getInputMapping"(): $InputConstants$Key
+public "deselectAll"(): boolean
 public "enter"(): boolean
 public "copy"(): boolean
 public "is"(k: integer): boolean
@@ -1272,8 +1272,8 @@ export type $BooleanConfig$$Original = $BooleanConfig;}
 declare module "dev.ftb.mods.ftblibrary.icon.Icon" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$Drawable$$Interface} from "dev.ftb.mods.ftblibrary.icon.Drawable"
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Color4I, $Color4I$$Type} from "dev.ftb.mods.ftblibrary.icon.Color4I"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$GuiGraphics$$Type} from "net.minecraft.client.gui.GuiGraphics"
 import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$Codec} from "com.mojang.serialization.Codec"
@@ -1287,8 +1287,8 @@ static readonly "STREAM_CODEC": $StreamCodec<($FriendlyByteBuf), ($Icon)>
 
 constructor()
 
-public "getIngredient"(): any
 public "withPadding"(padding: integer): $Icon
+public "getIngredient"(): any
 public "withTint"(color: $Color4I$$Type): $Icon
 public "withBorder"(color: $Color4I$$Type, roundEdges: boolean): $Icon
 public "withUV"(u0: float, v0: float, u1: float, v1: float): $Icon
@@ -1359,8 +1359,8 @@ import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$Button$$Type} from "dev.ftb.mods.ftblibrary.ui.Button"
 import {$Panel$$Type} from "dev.ftb.mods.ftblibrary.ui.Panel"
-import {$GuiGraphics$$Type} from "net.minecraft.client.gui.GuiGraphics"
 import {$TooltipList$$Type} from "dev.ftb.mods.ftblibrary.util.TooltipList"
+import {$GuiGraphics$$Type} from "net.minecraft.client.gui.GuiGraphics"
 import {$ContextMenu$$Type} from "dev.ftb.mods.ftblibrary.ui.ContextMenu"
 import {$Theme$$Type} from "dev.ftb.mods.ftblibrary.ui.Theme"
 
@@ -1371,11 +1371,11 @@ constructor(title: $Component$$Type, icon: $Icon$$Type, callback: $Consumer$$Typ
 
 public "addMouseOverText"(list: $TooltipList$$Type): void
 public static "subMenu"(title: $Component$$Type, icon: $Icon$$Type, subItems: $List$$Type<($ContextMenuItem$$Type)>): $ContextMenuItem
-public "getYesNoText"(): $Component
-public "isClickable"(): boolean
-public "setCloseMenu"(v: boolean): $ContextMenuItem
-public "setYesNoText"(s: $Component$$Type): $ContextMenuItem
 public "createWidget"(panel: $ContextMenu$$Type): $Widget
+public "setCloseMenu"(v: boolean): $ContextMenuItem
+public "getYesNoText"(): $Component
+public "setYesNoText"(s: $Component$$Type): $ContextMenuItem
+public "isClickable"(): boolean
 public "compareTo"(arg0: any): integer
 public "compareTo"(o: $ContextMenuItem$$Type): integer
 public "isEnabled"(): boolean
@@ -1386,10 +1386,10 @@ public "getTitle"(): $Component
 public "setEnabled"(enabled: boolean): $ContextMenuItem
 public "drawIcon"(graphics: $GuiGraphics$$Type, theme: $Theme$$Type, x: integer, y: integer, w: integer, h: integer): void
 public "onClicked"(button: $Button$$Type, panel: $Panel$$Type, mouseButton: $MouseButton$$Type): void
-get "yesNoText"(): $Component
-get "clickable"(): boolean
 set "closeMenu"(value: boolean)
+get "yesNoText"(): $Component
 set "yesNoText"(value: $Component$$Type)
+get "clickable"(): boolean
 get "enabled"(): boolean
 get "icon"(): $Icon
 set "enabled"(value: boolean)
@@ -1474,21 +1474,21 @@ declare module "dev.ftb.mods.ftblibrary.ui.BaseScreen" {
 import {$Key$$Type} from "dev.ftb.mods.ftblibrary.ui.input.Key"
 import {$Optional} from "java.util.Optional"
 import {$KeyModifiers$$Type} from "dev.ftb.mods.ftblibrary.ui.input.KeyModifiers"
-import {$DropDownMenu, $DropDownMenu$$Type} from "dev.ftb.mods.ftblibrary.ui.DropDownMenu"
 import {$Screen, $Screen$$Type} from "net.minecraft.client.gui.screens.Screen"
+import {$DropDownMenu, $DropDownMenu$$Type} from "dev.ftb.mods.ftblibrary.ui.DropDownMenu"
 import {$List$$Type} from "java.util.List"
 import {$ContextMenuItem$$Type} from "dev.ftb.mods.ftblibrary.ui.ContextMenuItem"
-import {$BooleanConsumer$$Type} from "dev.ftb.mods.ftblibrary.util.BooleanConsumer"
 import {$MouseButton$$Type} from "dev.ftb.mods.ftblibrary.ui.input.MouseButton"
+import {$BooleanConsumer$$Type} from "dev.ftb.mods.ftblibrary.util.BooleanConsumer"
 import {$Runnable$$Type} from "java.lang.Runnable"
 import {$Widget$$Type} from "dev.ftb.mods.ftblibrary.ui.Widget"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$ModalPanel, $ModalPanel$$Type} from "dev.ftb.mods.ftblibrary.ui.ModalPanel"
 import {$BaseScreenAccessor$$Interface} from "dev.uncandango.alltheleaks.mixin.core.main.accessor.BaseScreenAccessor"
 import {$Panel} from "dev.ftb.mods.ftblibrary.ui.Panel"
-import {$TooltipList$$Type} from "dev.ftb.mods.ftblibrary.util.TooltipList"
-import {$Window} from "com.mojang.blaze3d.platform.Window"
 import {$GuiGraphics$$Type} from "net.minecraft.client.gui.GuiGraphics"
+import {$Window} from "com.mojang.blaze3d.platform.Window"
+import {$TooltipList$$Type} from "dev.ftb.mods.ftblibrary.util.TooltipList"
 import {$ContextMenu, $ContextMenu$$Type} from "dev.ftb.mods.ftblibrary.ui.ContextMenu"
 import {$PopupMenu$$Type} from "dev.ftb.mods.ftblibrary.ui.PopupMenu"
 import {$Minecraft} from "net.minecraft.client.Minecraft"
@@ -1533,8 +1533,8 @@ public "getContextMenu"(): $Optional<($ModalPanel)>
 public "openPopupMenu"(popupMenu: $PopupMenu$$Type): void
 public "openContextMenu"(menuItems: $List$$Type<($ContextMenuItem$$Type)>): $ContextMenu
 public "openContextMenu"(newContextMenu: $ContextMenu$$Type): void
-public "openDropdownMenu"(dropDownMenu: $DropDownMenu$$Type): void
 public "openDropdownMenu"(menuItems: $List$$Type<($ContextMenuItem$$Type)>): $DropDownMenu
+public "openDropdownMenu"(dropDownMenu: $DropDownMenu$$Type): void
 public "closeContextMenu"(): void
 public "drawDefaultBackground"(graphics: $GuiGraphics$$Type): boolean
 public "getMaxZLevel"(): integer
@@ -1545,34 +1545,34 @@ public "openYesNoFull"(title: $Component$$Type, desc: $Component$$Type, callback
 public "openYesNo"(title: $Component$$Type, desc: $Component$$Type, callback: $Runnable$$Type): void
 public "setFocusedWidget"(widget: $Widget$$Type): void
 public "atl$setPrevScreen"(arg0: $Screen$$Type): void
-public "handleClick"(scheme: StringJS, path: StringJS): boolean
-public "mousePressed"(button: $MouseButton$$Type): boolean
 public "getGui"(): $BaseScreen
 public "pushModalPanel"(modalPanel: $ModalPanel$$Type): void
+public "handleClick"(scheme: StringJS, path: StringJS): boolean
+public "mousePressed"(button: $MouseButton$$Type): boolean
 public "tick"(): void
 public "getY"(): integer
 public "getMinecraft"(): $Minecraft
 public "onInit"(): boolean
 public "draw"(graphics: $GuiGraphics$$Type, theme: $Theme$$Type, x: integer, y: integer, w: integer, h: integer): void
+public "getPartialTicks"(): float
 public "getX"(): integer
+public "getMouseX"(): integer
+public "getMouseY"(): integer
 public "getWindow"(): $Window
 /**
  * 
  * @deprecated
  */
 public "getScreen"(): $Window
-public "getMouseX"(): integer
-public "getMouseY"(): integer
 public "keyPressed"(key: $Key$$Type): boolean
-public "getPartialTicks"(): float
-public "shouldCloseOnEsc"(): boolean
-public "isMouseOver"(x: integer, y: integer, w: integer, h: integer): boolean
-public "isMouseOver"(widget: $Widget$$Type): boolean
 public "mouseReleased"(button: $MouseButton$$Type): void
 public "mouseDragged"(button: integer, dragX: double, dragY: double): boolean
 public "mouseScrolled"(scroll: double): boolean
 public "keyReleased"(key: $Key$$Type): void
 public "charTyped"(c: character, modifiers: $KeyModifiers$$Type): boolean
+public "shouldCloseOnEsc"(): boolean
+public "isMouseOver"(widget: $Widget$$Type): boolean
+public "isMouseOver"(x: integer, y: integer, w: integer, h: integer): boolean
 public "onPostInit"(): void
 get "theme"(): $Theme
 set "previousScreen"(value: $Screen$$Type)
@@ -1588,12 +1588,12 @@ set "focusedWidget"(value: $Widget$$Type)
 get "gui"(): $BaseScreen
 get "y"(): integer
 get "minecraft"(): $Minecraft
+get "partialTicks"(): float
 get "x"(): integer
-get "window"(): $Window
-get "screen"(): $Window
 get "mouseX"(): integer
 get "mouseY"(): integer
-get "partialTicks"(): float
+get "window"(): $Window
+get "screen"(): $Window
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -1634,13 +1634,12 @@ static readonly "STRING_CODEC": $Codec<($Icon)>
 
 public static "RGBtoHSB"(r: integer, g: integer, b: integer, hsbvals: (float)[]): (float)[]
 public static "hsb"(h: float, s: float, b: float): $Color4I
-public static "rgba"(r: integer, g: integer, b: integer, a: integer): $Color4I
 public static "rgba"(col: integer): $Color4I
+public static "rgba"(r: integer, g: integer, b: integer, a: integer): $Color4I
 public "rgba"(): integer
-public "toStyle"(): $Style
 public "withTint"(col: $Color4I$$Type): $Color4I
-public static "getChatFormattingColor"(id: integer): $Color4I
 public static "getChatFormattingColor"(formatting: $ChatFormatting$$Type): $Color4I
+public static "getChatFormattingColor"(id: integer): $Color4I
 public static "get256"(id: integer): $Color4I
 public "withAlpha"(a: integer): $Color4I
 public static "HSBtoRGB"(hue: float, saturation: float, brightness: float): integer
@@ -1654,10 +1653,11 @@ public "withAlphaf"(alpha: float): $Color4I
 public "addBrightness"(percent: float): $Color4I
 public "hasPixelBuffer"(): boolean
 public "createPixelBuffer"(): $PixelBuffer
+public "toStyle"(): $Style
 public "rgb"(): integer
-public static "rgb"(col: integer): $Color4I
-public static "rgb"(color: $Vec3$$Type): $Color4I
 public static "rgb"(r: integer, g: integer, b: integer): $Color4I
+public static "rgb"(color: $Vec3$$Type): $Color4I
+public static "rgb"(col: integer): $Color4I
 public "equals"(o: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
@@ -1688,8 +1688,8 @@ declare module "dev.ftb.mods.ftblibrary.icon.MutableColor4I" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$Icon} from "dev.ftb.mods.ftblibrary.icon.Icon"
 import {$Color4I, $Color4I$$Type} from "dev.ftb.mods.ftblibrary.icon.Color4I"
-import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$Codec} from "com.mojang.serialization.Codec"
+import {$FriendlyByteBuf} from "net.minecraft.network.FriendlyByteBuf"
 import {$JsonElement} from "com.google.gson.JsonElement"
 
 export class $MutableColor4I extends $Color4I {
@@ -1804,11 +1804,11 @@ declare module "dev.ftb.mods.ftblibrary.config.ConfigGroup" {
 import {$EnumConfig} from "dev.ftb.mods.ftblibrary.config.EnumConfig"
 import {$Pattern$$Type} from "java.util.regex.Pattern"
 import {$LongConfig} from "dev.ftb.mods.ftblibrary.config.LongConfig"
-import {$DoubleConfig} from "dev.ftb.mods.ftblibrary.config.DoubleConfig"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$DoubleConfig} from "dev.ftb.mods.ftblibrary.config.DoubleConfig"
 import {$Comparable$$Interface} from "java.lang.Comparable"
-import {$ConfigCallback$$Type} from "dev.ftb.mods.ftblibrary.config.ConfigCallback"
 import {$List$$Type} from "java.util.List"
+import {$ConfigCallback$$Type} from "dev.ftb.mods.ftblibrary.config.ConfigCallback"
 import {$ItemStackConfig} from "dev.ftb.mods.ftblibrary.config.ItemStackConfig"
 import {$Tristate, $Tristate$$Type} from "dev.ftb.mods.ftblibrary.config.Tristate"
 import {$Component} from "net.minecraft.network.chat.Component"
@@ -1821,8 +1821,8 @@ import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
 import {$Collection} from "java.util.Collection"
 import {$SNBTConfig$$Type} from "dev.ftb.mods.ftblibrary.snbt.config.SNBTConfig"
 import {$FluidConfig} from "dev.ftb.mods.ftblibrary.config.FluidConfig"
-import {$NameMap$$Type} from "dev.ftb.mods.ftblibrary.config.NameMap"
 import {$Consumer$$Type} from "java.util.function.Consumer"
+import {$NameMap$$Type} from "dev.ftb.mods.ftblibrary.config.NameMap"
 import {$StringConfig} from "dev.ftb.mods.ftblibrary.config.StringConfig"
 import {$Color4I$$Type} from "dev.ftb.mods.ftblibrary.icon.Color4I"
 import {$ImageResourceConfig} from "dev.ftb.mods.ftblibrary.config.ImageResourceConfig"
@@ -1834,8 +1834,9 @@ export class $ConfigGroup implements $Comparable$$Interface<($ConfigGroup)> {
 constructor(id: StringJS, savedCallback: $ConfigCallback$$Type)
 constructor(id: StringJS)
 
-public "addItemStack"(id: StringJS, value: $ItemStack$$Type, setter: $Consumer$$Type<($ItemStack)>, def: $ItemStack$$Type, fixedSize: integer): $ItemStackConfig
 public "addItemStack"(id: StringJS, value: $ItemStack$$Type, setter: $Consumer$$Type<($ItemStack)>, def: $ItemStack$$Type, singleItem: boolean, allowEmpty: boolean): $ItemStackConfig
+public "addItemStack"(id: StringJS, value: $ItemStack$$Type, setter: $Consumer$$Type<($ItemStack)>, def: $ItemStack$$Type, fixedSize: integer): $ItemStackConfig
+public "getValues"(): $Collection<($ConfigValue<(never)>)>
 public "addColor"(id: StringJS, value: $Color4I$$Type, setter: $Consumer$$Type<($Color4I)>, def: $Color4I$$Type): $ColorConfig
 public static "createEditable"(config: $SNBTConfig$$Type, groupName: StringJS, serverConfig: boolean): $ConfigGroup
 public "addFluidStack"(id: StringJS, value: $FluidStack$$Type, setter: $Consumer$$Type<($FluidStack)>, def: $FluidStack$$Type, allowEmpty: boolean): $FluidConfig
@@ -1843,12 +1844,11 @@ public "addFluidStack"(id: StringJS, value: $FluidStack$$Type, setter: $Consumer
 public "addImage"(id: StringJS, value: $ResourceLocation$$Type, setter: $Consumer$$Type<($ResourceLocation)>, def: $ResourceLocation$$Type): $ImageResourceConfig
 public "addEntityFace"(id: StringJS, value: $EntityType$$Type<(never)>, setter: $Consumer$$Type<($EntityType<(never)>)>, def: $EntityType$$Type<(never)>): $EntityFaceConfig
 public "getSubgroups"(): $Collection<($ConfigGroup)>
-public "addTristate"(id: StringJS, value: $Tristate$$Type, setter: $Consumer$$Type<($Tristate)>): $EnumConfig<($Tristate)>
 public "addTristate"(id: StringJS, value: $Tristate$$Type, setter: $Consumer$$Type<($Tristate)>, def: $Tristate$$Type): $EnumConfig<($Tristate)>
-public "getValues"(): $Collection<($ConfigValue<(never)>)>
+public "addTristate"(id: StringJS, value: $Tristate$$Type, setter: $Consumer$$Type<($Tristate)>): $EnumConfig<($Tristate)>
 public "addDouble"(id: StringJS, value: double, setter: $Consumer$$Type<(double)>, def: double, min: double, max: double): $DoubleConfig
-public "addString"(id: StringJS, value: StringJS, setter: $Consumer$$Type<(StringJS)>, def: StringJS, pattern: $Pattern$$Type): $StringConfig
 public "addString"(id: StringJS, value: StringJS, setter: $Consumer$$Type<(StringJS)>, def: StringJS): $StringConfig
+public "addString"(id: StringJS, value: StringJS, setter: $Consumer$$Type<(StringJS)>, def: StringJS, pattern: $Pattern$$Type): $StringConfig
 public "addInt"(id: StringJS, value: integer, setter: $Consumer$$Type<(integer)>, def: integer, min: integer, max: integer): $IntConfig
 public "addEnum"<E>(id: StringJS, value: E, setter: $Consumer$$Type<(E)>, nameMap: $NameMap$$Type<(E)>): $EnumConfig<(E)>
 public "addEnum"<E>(id: StringJS, value: E, setter: $Consumer$$Type<(E)>, nameMap: $NameMap$$Type<(E)>, def: E): $EnumConfig<(E)>
@@ -1869,8 +1869,8 @@ public "addList"<E, CV extends $ConfigValue<(object)>>(id: StringJS, value: $Lis
 public "addList"<E, CV extends $ConfigValue<(object)>>(id: StringJS, value: $List$$Type<(E)>, type: CV, def: E): $ListConfig<(E), (CV)>
 public "getNameKey"(): StringJS
 public "getTooltip"(): $Component
-get "subgroups"(): $Collection<($ConfigGroup)>
 get "values"(): $Collection<($ConfigValue<(never)>)>
+get "subgroups"(): $Collection<($ConfigGroup)>
 set "nameKey"(value: StringJS)
 get "name"(): $Component
 get "parent"(): $ConfigGroup
@@ -2066,22 +2066,22 @@ readonly "keys": $List<(StringJS)>
 readonly "values": $List<(E)>
 readonly "map": $Map<(StringJS), (E)>
 
-public "getNullable"(s: StringJS): E
 public "withDefault"(def: E): $NameMap<(E)>
+public "getNullable"(s: StringJS): E
 public "getStringIndex"(s: StringJS): integer
+public "getDisplayName"(value: E): $Component
 public "getNext"(value: E): E
 public "getName"(value: E): StringJS
 public "size"(): integer
-public "get"(s: StringJS): E
 public "get"(index: integer): E
+public "get"(s: StringJS): E
 public "iterator"(): $Iterator<(E)>
-public static "of"<T>(defaultValue: T, values: $List$$Type<(T)>): $NameMap$Builder<(T)>
 public static "of"<T>(defaultValue: T, values: (T)[]): $NameMap$Builder<(T)>
+public static "of"<T>(defaultValue: T, values: $List$$Type<(T)>): $NameMap$Builder<(T)>
 public "offset"(value: E, index: integer): E
 public "write"(data: $FriendlyByteBuf$$Type, object: E): void
 public "read"(data: $FriendlyByteBuf$$Type): E
 public "getIndex"(e: E): integer
-public "getDisplayName"(value: E): $Component
 public "getIcon"(v: E): $Icon
 public "getPrevious"(value: E): E
 public "getColor"(value: E): $Color4I
@@ -2126,8 +2126,8 @@ export type $CursorType$$Original = $CursorType;}
 declare module "dev.ftb.mods.ftblibrary.config.LongConfig" {
 import {$NumberConfig} from "dev.ftb.mods.ftblibrary.config.NumberConfig"
 import {$Color4I} from "dev.ftb.mods.ftblibrary.icon.Color4I"
-import {$Optional} from "java.util.Optional"
 import {$TooltipList$$Type} from "dev.ftb.mods.ftblibrary.util.TooltipList"
+import {$Optional} from "java.util.Optional"
 import {$Component} from "net.minecraft.network.chat.Component"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 
@@ -2155,11 +2155,11 @@ export type $LongConfig$$Type = ($LongConfig);
  */
 export type $LongConfig$$Original = $LongConfig;}
 declare module "dev.ftb.mods.ftblibrary.ui.Theme" {
-import {$WidgetType$$Type} from "dev.ftb.mods.ftblibrary.ui.WidgetType"
 import {$FormattedCharSequence$$Type} from "net.minecraft.util.FormattedCharSequence"
+import {$WidgetType$$Type} from "dev.ftb.mods.ftblibrary.ui.WidgetType"
 import {$Color4I, $Color4I$$Type} from "dev.ftb.mods.ftblibrary.icon.Color4I"
-import {$GuiGraphics$$Type} from "net.minecraft.client.gui.GuiGraphics"
 import {$FormattedText, $FormattedText$$Type} from "net.minecraft.network.chat.FormattedText"
+import {$GuiGraphics$$Type} from "net.minecraft.client.gui.GuiGraphics"
 import {$List} from "java.util.List"
 import {$Font} from "net.minecraft.client.gui.Font"
 import {$ImageIcon} from "dev.ftb.mods.ftblibrary.icon.ImageIcon"
@@ -2177,29 +2177,29 @@ static readonly "DEFAULT": $Theme
 
 constructor()
 
-public "drawGui"(graphics: $GuiGraphics$$Type, x: integer, y: integer, w: integer, h: integer, type: $WidgetType$$Type): void
-public "drawWidget"(graphics: $GuiGraphics$$Type, x: integer, y: integer, w: integer, h: integer, type: $WidgetType$$Type): void
-public "drawButton"(graphics: $GuiGraphics$$Type, x: integer, y: integer, w: integer, h: integer, type: $WidgetType$$Type): void
-public "getFontHeight"(): integer
 public "drawSlot"(graphics: $GuiGraphics$$Type, x: integer, y: integer, w: integer, h: integer, type: $WidgetType$$Type): void
-public "trimStringToWidth"(text: $FormattedText$$Type, width: integer): $FormattedText
-public "trimStringToWidth"(text: StringJS, width: integer): StringJS
-public "drawTextBox"(graphics: $GuiGraphics$$Type, x: integer, y: integer, w: integer, h: integer): void
-public "getContentColor"(type: $WidgetType$$Type): $Color4I
-public "getStringWidth"(text: $FormattedText$$Type): integer
-public "getStringWidth"(text: $FormattedCharSequence$$Type): integer
-public "getStringWidth"(text: StringJS): integer
+public "getFontHeight"(): integer
 public "drawScrollBar"(graphics: $GuiGraphics$$Type, x: integer, y: integer, w: integer, h: integer, type: $WidgetType$$Type, vertical: boolean): void
 public "drawScrollBarBackground"(graphics: $GuiGraphics$$Type, x: integer, y: integer, w: integer, h: integer, type: $WidgetType$$Type): void
+public "drawButton"(graphics: $GuiGraphics$$Type, x: integer, y: integer, w: integer, h: integer, type: $WidgetType$$Type): void
+public "drawGui"(graphics: $GuiGraphics$$Type, x: integer, y: integer, w: integer, h: integer, type: $WidgetType$$Type): void
+public "trimStringToWidth"(text: StringJS, width: integer): StringJS
+public "trimStringToWidth"(text: $FormattedText$$Type, width: integer): $FormattedText
+public "drawTextBox"(graphics: $GuiGraphics$$Type, x: integer, y: integer, w: integer, h: integer): void
+public "getContentColor"(type: $WidgetType$$Type): $Color4I
+public "getStringWidth"(text: $FormattedCharSequence$$Type): integer
+public "getStringWidth"(text: StringJS): integer
+public "getStringWidth"(text: $FormattedText$$Type): integer
+public "drawWidget"(graphics: $GuiGraphics$$Type, x: integer, y: integer, w: integer, h: integer, type: $WidgetType$$Type): void
 public "drawPanelBackground"(graphics: $GuiGraphics$$Type, x: integer, y: integer, w: integer, h: integer): void
+public "drawContextMenuBackground"(graphics: $GuiGraphics$$Type, x: integer, y: integer, w: integer, h: integer): void
+public "getInvertedContentColor"(): $Color4I
+public "drawContainerSlot"(graphics: $GuiGraphics$$Type, x: integer, y: integer, w: integer, h: integer): void
 public "drawCheckboxBackground"(graphics: $GuiGraphics$$Type, x: integer, y: integer, w: integer, h: integer, radioButton: boolean): void
 public "drawCheckbox"(graphics: $GuiGraphics$$Type, x: integer, y: integer, w: integer, h: integer, type: $WidgetType$$Type, selected: boolean, radioButton: boolean): void
-public "getInvertedContentColor"(): $Color4I
 public "drawHorizontalTab"(graphics: $GuiGraphics$$Type, x: integer, y: integer, w: integer, h: integer, selected: boolean): void
 public "trimStringToWidthReverse"(text: StringJS, width: integer): StringJS
 public "listFormattedStringToWidth"(text: $FormattedText$$Type, width: integer): $List<($FormattedText)>
-public "drawContainerSlot"(graphics: $GuiGraphics$$Type, x: integer, y: integer, w: integer, h: integer): void
-public "drawContextMenuBackground"(graphics: $GuiGraphics$$Type, x: integer, y: integer, w: integer, h: integer): void
 public "drawString"(graphics: $GuiGraphics$$Type, text: any, x: integer, y: integer, flags: integer): integer
 public "drawString"(graphics: $GuiGraphics$$Type, text: any, x: integer, y: integer): integer
 public "drawString"(graphics: $GuiGraphics$$Type, text: any, x: integer, y: integer, color: $Color4I$$Type, flags: integer): integer
@@ -2223,8 +2223,8 @@ import {$ConfigCallback$$Type} from "dev.ftb.mods.ftblibrary.config.ConfigCallba
 import {$MouseButton$$Type} from "dev.ftb.mods.ftblibrary.ui.input.MouseButton"
 import {$Widget$$Type} from "dev.ftb.mods.ftblibrary.ui.Widget"
 import {$Component} from "net.minecraft.network.chat.Component"
-import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$ConfigValue} from "dev.ftb.mods.ftblibrary.config.ConfigValue"
+import {$Consumer$$Type} from "java.util.function.Consumer"
 
 export class $ConfigFromString<T> extends $ConfigValue<(T)> {
  "id": StringJS
@@ -2253,8 +2253,8 @@ import {$Icon} from "dev.ftb.mods.ftblibrary.icon.Icon"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$Color4I} from "dev.ftb.mods.ftblibrary.icon.Color4I"
-import {$Enum} from "java.lang.Enum"
 import {$FriendlyByteBuf$$Type} from "net.minecraft.network.FriendlyByteBuf"
+import {$Enum} from "java.lang.Enum"
 import {$NameMap} from "dev.ftb.mods.ftblibrary.config.NameMap"
 
 export class $Tristate extends $Enum<($Tristate)> {
@@ -2329,9 +2329,9 @@ readonly "modifiers": integer
 constructor(m: integer)
 
 public "onlyControl"(): boolean
+public "control"(): boolean
 public "numLock"(): boolean
 public "capsLock"(): boolean
-public "control"(): boolean
 public "start"(): boolean
 public "shift"(): boolean
 public "alt"(): boolean
@@ -2367,8 +2367,8 @@ export type $BooleanConsumer$$Original = $BooleanConsumer;}
 declare module "dev.ftb.mods.ftblibrary.config.IntConfig" {
 import {$NumberConfig} from "dev.ftb.mods.ftblibrary.config.NumberConfig"
 import {$Color4I} from "dev.ftb.mods.ftblibrary.icon.Color4I"
-import {$Optional} from "java.util.Optional"
 import {$TooltipList$$Type} from "dev.ftb.mods.ftblibrary.util.TooltipList"
+import {$Optional} from "java.util.Optional"
 import {$Component} from "net.minecraft.network.chat.Component"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 
@@ -2471,12 +2471,12 @@ static readonly "NULL_TEXT": $Component
 constructor(fixedSize: long)
 constructor(allowEmpty: boolean)
 
-public "showAmount"(show: boolean): $FluidConfig
 public "fixedResourceSize"(): $OptionalLong
 public "setResource"(selectable: $SelectableResource$$Type<($FluidStack$$Type)>): boolean
 public "allowEmptyResource"(): boolean
 public "getStringForGUI"(arg0: any): $Component
 public "getStringForGUI"(v: $FluidStack$$Type): $Component
+public "showAmount"(show: boolean): $FluidConfig
 public "isEmpty"(): boolean
 public "getResource"(): $SelectableResource<($FluidStack)>
 public "onClicked"(clickedWidget: $Widget$$Type, button: $MouseButton$$Type, callback: $ConfigCallback$$Type): void

@@ -3,8 +3,8 @@ import {$IERecipeSerializer} from "blusunrize.immersiveengineering.api.crafting.
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$List, $List$$Type} from "java.util.List"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$Component} from "net.minecraft.network.chat.Component"
 import {$CachedRecipeList} from "blusunrize.immersiveengineering.api.crafting.cache.CachedRecipeList"
+import {$Component} from "net.minecraft.network.chat.Component"
 import {$DeferredHolder} from "net.neoforged.neoforge.registries.DeferredHolder"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$FastEither} from "blusunrize.immersiveengineering.api.utils.FastEither"
@@ -50,8 +50,8 @@ import {$List, $List$$Type} from "java.util.List"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$CachedRecipeList} from "blusunrize.immersiveengineering.api.crafting.cache.CachedRecipeList"
 import {$DeferredHolder} from "net.neoforged.neoforge.registries.DeferredHolder"
-import {$Holder$$Type} from "net.minecraft.core.Holder"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$Holder$$Type} from "net.minecraft.core.Holder"
 import {$FastEither, $FastEither$$Type} from "blusunrize.immersiveengineering.api.utils.FastEither"
 import {$TagKey, $TagKey$$Type} from "net.minecraft.tags.TagKey"
 import {$ResourceKey, $ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
@@ -115,11 +115,11 @@ get "maxEnergyStored"(): integer
 }
 
 export class $IMutableEnergyStorage implements $IMutableEnergyStorage$$Interface {
- "modifyEnergyStored"(arg0: integer): void
  "setStoredEnergy"(arg0: integer): void
+ "modifyEnergyStored"(arg0: integer): void
+ "canExtract"(): boolean
  "extractEnergy"(arg0: integer, arg1: boolean): integer
  "receiveEnergy"(arg0: integer, arg1: boolean): integer
- "canExtract"(): boolean
  "canReceive"(): boolean
  "getEnergyStored"(): integer
  "getMaxEnergyStored"(): integer
@@ -139,8 +139,8 @@ import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$List, $List$$Type} from "java.util.List"
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$Component} from "net.minecraft.network.chat.Component"
 import {$CachedRecipeList} from "blusunrize.immersiveengineering.api.crafting.cache.CachedRecipeList"
+import {$Component} from "net.minecraft.network.chat.Component"
 import {$DeferredHolder} from "net.neoforged.neoforge.registries.DeferredHolder"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$FastEither} from "blusunrize.immersiveengineering.api.utils.FastEither"

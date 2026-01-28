@@ -1,13 +1,13 @@
 declare module "dev.shadowsoffire.apotheosis.advancements.GemCutTrigger$Instance" {
-import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$ContextAwarePredicate, $ContextAwarePredicate$$Type} from "net.minecraft.advancements.critereon.ContextAwarePredicate"
+import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$UnsocketedGem$$Type} from "dev.shadowsoffire.apotheosis.socket.gem.UnsocketedGem"
 import {$Purity, $Purity$$Type} from "dev.shadowsoffire.apotheosis.socket.gem.Purity"
 import {$CriterionValidator$$Type} from "net.minecraft.advancements.critereon.CriterionValidator"
-import {$ItemPredicate, $ItemPredicate$$Type} from "net.minecraft.advancements.critereon.ItemPredicate"
 import {$Record} from "java.lang.Record"
 import {$SimpleCriterionTrigger$SimpleInstance$$Interface} from "net.minecraft.advancements.critereon.SimpleCriterionTrigger$SimpleInstance"
+import {$ItemPredicate, $ItemPredicate$$Type} from "net.minecraft.advancements.critereon.ItemPredicate"
 
 export class $GemCutTrigger$Instance extends $Record implements $SimpleCriterionTrigger$SimpleInstance$$Interface {
 static readonly "CODEC": $Codec<($GemCutTrigger$Instance)>
@@ -86,8 +86,8 @@ import {$ItemPredicate, $ItemPredicate$$Type} from "net.minecraft.advancements.c
 import {$Criterion} from "net.minecraft.advancements.Criterion"
 import {$ContextAwarePredicate, $ContextAwarePredicate$$Type} from "net.minecraft.advancements.critereon.ContextAwarePredicate"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$ItemLike$$Type} from "net.minecraft.world.level.ItemLike"
+import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$ItemPredicate$Builder$$Type} from "net.minecraft.advancements.critereon.ItemPredicate$Builder"
 import {$Record} from "java.lang.Record"
 import {$SimpleCriterionTrigger$SimpleInstance$$Interface} from "net.minecraft.advancements.critereon.SimpleCriterionTrigger$SimpleInstance"

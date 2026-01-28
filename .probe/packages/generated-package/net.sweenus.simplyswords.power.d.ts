@@ -1,12 +1,12 @@
 declare module "net.sweenus.simplyswords.power.powers.StoneskinPower" {
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$RunefusedGemPower} from "net.sweenus.simplyswords.power.RunefusedGemPower"
 import {$List$$Type} from "java.util.List"
+import {$RunefusedGemPower} from "net.sweenus.simplyswords.power.RunefusedGemPower"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$GemPower} from "net.sweenus.simplyswords.power.GemPower"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
+import {$GemPower} from "net.sweenus.simplyswords.power.GemPower"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 
 export class $StoneskinPower extends $RunefusedGemPower {
 static "EMPTY": $GemPower
@@ -53,15 +53,15 @@ export type $PowerType$$Original = $PowerType;}
 declare module "net.sweenus.simplyswords.power.powers.ThrowingPower" {
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
 import {$List$$Type} from "java.util.List"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$RunicGemPower} from "net.sweenus.simplyswords.power.RunicGemPower"
-import {$GemPower} from "net.sweenus.simplyswords.power.GemPower"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
+import {$GemPower} from "net.sweenus.simplyswords.power.GemPower"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 
 export class $ThrowingPower extends $RunicGemPower {
 static "EMPTY": $GemPower
@@ -82,13 +82,13 @@ export type $ThrowingPower$$Type = ($ThrowingPower);
 export type $ThrowingPower$$Original = $ThrowingPower;}
 declare module "net.sweenus.simplyswords.power.powers.SwiftnessPower" {
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$RunefusedGemPower} from "net.sweenus.simplyswords.power.RunefusedGemPower"
 import {$List$$Type} from "java.util.List"
+import {$RunefusedGemPower} from "net.sweenus.simplyswords.power.RunefusedGemPower"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$GemPower} from "net.sweenus.simplyswords.power.GemPower"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
+import {$GemPower} from "net.sweenus.simplyswords.power.GemPower"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 
 export class $SwiftnessPower extends $RunefusedGemPower {
 static "EMPTY": $GemPower
@@ -109,13 +109,13 @@ export type $SwiftnessPower$$Type = ($SwiftnessPower);
 export type $SwiftnessPower$$Original = $SwiftnessPower;}
 declare module "net.sweenus.simplyswords.power.powers.PincushionPower" {
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$RunefusedGemPower} from "net.sweenus.simplyswords.power.RunefusedGemPower"
 import {$List$$Type} from "java.util.List"
+import {$RunefusedGemPower} from "net.sweenus.simplyswords.power.RunefusedGemPower"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$GemPower} from "net.sweenus.simplyswords.power.GemPower"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
+import {$GemPower} from "net.sweenus.simplyswords.power.GemPower"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 
 export class $PincushionPower extends $RunefusedGemPower {
 static "EMPTY": $GemPower
@@ -154,13 +154,13 @@ export type $RunefusedGemPower$$Type = ($RunefusedGemPower);
 export type $RunefusedGemPower$$Original = $RunefusedGemPower;}
 declare module "net.sweenus.simplyswords.power.powers.ShieldingPower" {
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$RunefusedGemPower} from "net.sweenus.simplyswords.power.RunefusedGemPower"
 import {$List$$Type} from "java.util.List"
+import {$RunefusedGemPower} from "net.sweenus.simplyswords.power.RunefusedGemPower"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$GemPower} from "net.sweenus.simplyswords.power.GemPower"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
+import {$GemPower} from "net.sweenus.simplyswords.power.GemPower"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 
 export class $ShieldingPower extends $RunefusedGemPower {
 static "EMPTY": $GemPower
@@ -181,13 +181,13 @@ export type $ShieldingPower$$Type = ($ShieldingPower);
 export type $ShieldingPower$$Original = $ShieldingPower;}
 declare module "net.sweenus.simplyswords.power.powers.TrailblazePower" {
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$RunefusedGemPower} from "net.sweenus.simplyswords.power.RunefusedGemPower"
 import {$List$$Type} from "java.util.List"
+import {$RunefusedGemPower} from "net.sweenus.simplyswords.power.RunefusedGemPower"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$GemPower} from "net.sweenus.simplyswords.power.GemPower"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
+import {$GemPower} from "net.sweenus.simplyswords.power.GemPower"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 
 export class $TrailblazePower extends $RunefusedGemPower {
 static "EMPTY": $GemPower
@@ -208,22 +208,22 @@ export type $TrailblazePower$$Type = ($TrailblazePower);
 export type $TrailblazePower$$Original = $TrailblazePower;}
 declare module "net.sweenus.simplyswords.power.powers.UnstablePower" {
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$RunefusedGemPower} from "net.sweenus.simplyswords.power.RunefusedGemPower"
 import {$List$$Type} from "java.util.List"
+import {$RunefusedGemPower} from "net.sweenus.simplyswords.power.RunefusedGemPower"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$GemPower} from "net.sweenus.simplyswords.power.GemPower"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
+import {$GemPower} from "net.sweenus.simplyswords.power.GemPower"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 
 export class $UnstablePower extends $RunefusedGemPower {
 static "EMPTY": $GemPower
 
 constructor()
 
-public "inventoryTick"(stack: $ItemStack$$Type, world: $Level$$Type, user: $LivingEntity$$Type, slot: integer, selected: boolean): void
 public "appendTooltip"(itemStack: $ItemStack$$Type, tooltipContext: $Item$TooltipContext$$Type, tooltip: $List$$Type<($Component$$Type)>, type: $TooltipFlag$$Type, isRunic: boolean): void
+public "inventoryTick"(stack: $ItemStack$$Type, world: $Level$$Type, user: $LivingEntity$$Type, slot: integer, selected: boolean): void
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -237,12 +237,12 @@ export type $UnstablePower$$Original = $UnstablePower;}
 declare module "net.sweenus.simplyswords.power.GemPowerComponent" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$List$$Type} from "java.util.List"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
 import {$BiFunction$$Type} from "java.util.function.BiFunction"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
@@ -260,9 +260,6 @@ static readonly "DEFAULT": $GemPowerComponent
 
 constructor(hasRunicPower: boolean, hasNetherPower: boolean, runicPower: $Holder$$Type<($GemPower)>, netherPower: $Holder$$Type<($GemPower)>)
 
-public "inventoryTick"(stack: $ItemStack$$Type, world: $Level$$Type, user: $LivingEntity$$Type, slot: integer, selected: boolean): void
-public static "nether"(power: $Holder$$Type<($GemPower)>): $GemPowerComponent
-public "hasPower"(power: $Holder$$Type<($GemPower)>): boolean
 public "appendTooltip"(itemStack: $ItemStack$$Type, tooltipContext: $Item$TooltipContext$$Type, tooltip: $List$$Type<($Component$$Type)>, type: $TooltipFlag$$Type): void
 public "appendTooltip"(itemStack: $ItemStack$$Type, tooltipContext: $Item$TooltipContext$$Type, tooltip: $List$$Type<($Component$$Type)>, type: $TooltipFlag$$Type, isRunic: boolean): void
 public "postHit"(stack: $ItemStack$$Type, target: $LivingEntity$$Type, attacker: $LivingEntity$$Type): void
@@ -277,6 +274,9 @@ public static "runic"(power: $Holder$$Type<($GemPower)>): $GemPowerComponent
 public "hasNether"(power: $Holder$$Type<($GemPower)>): boolean
 public "hasRunic"(power: $Holder$$Type<($GemPower)>): boolean
 public "canBeFilled"(): boolean
+public "inventoryTick"(stack: $ItemStack$$Type, world: $Level$$Type, user: $LivingEntity$$Type, slot: integer, selected: boolean): void
+public static "nether"(power: $Holder$$Type<($GemPower)>): $GemPowerComponent
+public "hasPower"(power: $Holder$$Type<($GemPower)>): boolean
 public static "createEmpty"(hasRunic: boolean, hasNether: boolean): $GemPowerComponent
 public "equals"(componentObject: any): boolean
 public "toString"(): StringJS
@@ -297,14 +297,14 @@ export type $GemPowerComponent$$Type = ({"runicPower"?: $Holder$$Type<($GemPower
  */
 export type $GemPowerComponent$$Original = $GemPowerComponent;}
 declare module "net.sweenus.simplyswords.power.powers.NullificationPower" {
-import {$NetherGemPower} from "net.sweenus.simplyswords.power.NetherGemPower"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$NetherGemPower} from "net.sweenus.simplyswords.power.NetherGemPower"
 import {$List$$Type} from "java.util.List"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$GemPower} from "net.sweenus.simplyswords.power.GemPower"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
+import {$GemPower} from "net.sweenus.simplyswords.power.GemPower"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 
 export class $NullificationPower extends $NetherGemPower {
 static "EMPTY": $GemPower
@@ -325,13 +325,13 @@ export type $NullificationPower$$Type = ($NullificationPower);
 export type $NullificationPower$$Original = $NullificationPower;}
 declare module "net.sweenus.simplyswords.power.powers.FloatPower" {
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$RunefusedGemPower} from "net.sweenus.simplyswords.power.RunefusedGemPower"
 import {$List$$Type} from "java.util.List"
+import {$RunefusedGemPower} from "net.sweenus.simplyswords.power.RunefusedGemPower"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$GemPower} from "net.sweenus.simplyswords.power.GemPower"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
+import {$GemPower} from "net.sweenus.simplyswords.power.GemPower"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 
 export class $FloatPower extends $RunefusedGemPower {
 static "EMPTY": $GemPower
@@ -352,22 +352,22 @@ export type $FloatPower$$Type = ($FloatPower);
 export type $FloatPower$$Original = $FloatPower;}
 declare module "net.sweenus.simplyswords.power.powers.ActiveDefencePower" {
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$RunefusedGemPower} from "net.sweenus.simplyswords.power.RunefusedGemPower"
 import {$List$$Type} from "java.util.List"
+import {$RunefusedGemPower} from "net.sweenus.simplyswords.power.RunefusedGemPower"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$GemPower} from "net.sweenus.simplyswords.power.GemPower"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
+import {$GemPower} from "net.sweenus.simplyswords.power.GemPower"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 
 export class $ActiveDefencePower extends $RunefusedGemPower {
 static "EMPTY": $GemPower
 
 constructor()
 
-public "inventoryTick"(stack: $ItemStack$$Type, world: $Level$$Type, user: $LivingEntity$$Type, slot: integer, selected: boolean): void
 public "appendTooltip"(itemStack: $ItemStack$$Type, tooltipContext: $Item$TooltipContext$$Type, tooltip: $List$$Type<($Component$$Type)>, type: $TooltipFlag$$Type, isRunic: boolean): void
+public "inventoryTick"(stack: $ItemStack$$Type, world: $Level$$Type, user: $LivingEntity$$Type, slot: integer, selected: boolean): void
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -379,14 +379,14 @@ export type $ActiveDefencePower$$Type = ($ActiveDefencePower);
  */
 export type $ActiveDefencePower$$Original = $ActiveDefencePower;}
 declare module "net.sweenus.simplyswords.power.powers.EchoPower" {
-import {$NetherGemPower} from "net.sweenus.simplyswords.power.NetherGemPower"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$NetherGemPower} from "net.sweenus.simplyswords.power.NetherGemPower"
 import {$List$$Type} from "java.util.List"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$GemPower} from "net.sweenus.simplyswords.power.GemPower"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
+import {$GemPower} from "net.sweenus.simplyswords.power.GemPower"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 
 export class $EchoPower extends $NetherGemPower {
 static "EMPTY": $GemPower
@@ -446,14 +446,14 @@ export type $GemPowerFiller$$Type = ((arg0: $ItemStack, arg1: $GemPowerComponent
  */
 export type $GemPowerFiller$$Original = $GemPowerFiller;}
 declare module "net.sweenus.simplyswords.power.powers.OnslaughtPower" {
-import {$NetherGemPower} from "net.sweenus.simplyswords.power.NetherGemPower"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$NetherGemPower} from "net.sweenus.simplyswords.power.NetherGemPower"
 import {$List$$Type} from "java.util.List"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$GemPower} from "net.sweenus.simplyswords.power.GemPower"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
+import {$GemPower} from "net.sweenus.simplyswords.power.GemPower"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 
 export class $OnslaughtPower extends $NetherGemPower {
 static "EMPTY": $GemPower
@@ -474,13 +474,13 @@ export type $OnslaughtPower$$Type = ($OnslaughtPower);
 export type $OnslaughtPower$$Original = $OnslaughtPower;}
 declare module "net.sweenus.simplyswords.power.powers.WildfirePower" {
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$RunefusedGemPower} from "net.sweenus.simplyswords.power.RunefusedGemPower"
 import {$List$$Type} from "java.util.List"
+import {$RunefusedGemPower} from "net.sweenus.simplyswords.power.RunefusedGemPower"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$GemPower} from "net.sweenus.simplyswords.power.GemPower"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
+import {$GemPower} from "net.sweenus.simplyswords.power.GemPower"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 
 export class $WildfirePower extends $RunefusedGemPower {
 static "EMPTY": $GemPower
@@ -507,8 +507,8 @@ import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$TooltipProvider$$Interface} from "net.minecraft.world.item.component.TooltipProvider"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 
 export class $GemPower implements $TooltipProvider$$Interface {
@@ -516,12 +516,12 @@ static "EMPTY": $GemPower
 
 constructor(isGreater: boolean, ...applicableTypes: ($PowerType$$Type)[])
 
-public "inventoryTick"(stack: $ItemStack$$Type, world: $Level$$Type, user: $LivingEntity$$Type, slot: integer, selected: boolean): void
-public "addToTooltip"(context: $Item$TooltipContext$$Type, tooltip: $Consumer$$Type<($Component)>, type: $TooltipFlag$$Type): void
 public "isGreater"(): boolean
 public "applicableTypes"(): $List<($PowerType)>
 public "appendTooltip"(itemStack: $ItemStack$$Type, tooltipContext: $Item$TooltipContext$$Type, tooltip: $List$$Type<($Component$$Type)>, type: $TooltipFlag$$Type, isRunic: boolean): void
 public "postHit"(stack: $ItemStack$$Type, target: $LivingEntity$$Type, attacker: $LivingEntity$$Type): void
+public "inventoryTick"(stack: $ItemStack$$Type, world: $Level$$Type, user: $LivingEntity$$Type, slot: integer, selected: boolean): void
+public "addToTooltip"(context: $Item$TooltipContext$$Type, tooltip: $Consumer$$Type<($Component)>, type: $TooltipFlag$$Type): void
 public "isEmpty"(): boolean
 get "greater"(): boolean
 get "empty"(): boolean
@@ -545,13 +545,13 @@ export type $GemPower$$Type = (Special.SimplyswordsGemPower);
 export type $GemPower$$Original = $GemPower;}
 declare module "net.sweenus.simplyswords.power.powers.SlowPower" {
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$RunefusedGemPower} from "net.sweenus.simplyswords.power.RunefusedGemPower"
 import {$List$$Type} from "java.util.List"
+import {$RunefusedGemPower} from "net.sweenus.simplyswords.power.RunefusedGemPower"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$GemPower} from "net.sweenus.simplyswords.power.GemPower"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
+import {$GemPower} from "net.sweenus.simplyswords.power.GemPower"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 
 export class $SlowPower extends $RunefusedGemPower {
 static "EMPTY": $GemPower
@@ -573,15 +573,15 @@ export type $SlowPower$$Original = $SlowPower;}
 declare module "net.sweenus.simplyswords.power.powers.WardPower" {
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
 import {$List$$Type} from "java.util.List"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$RunicGemPower} from "net.sweenus.simplyswords.power.RunicGemPower"
-import {$GemPower} from "net.sweenus.simplyswords.power.GemPower"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
+import {$GemPower} from "net.sweenus.simplyswords.power.GemPower"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 
 export class $WardPower extends $RunicGemPower {
 static "EMPTY": $GemPower
@@ -603,13 +603,13 @@ export type $WardPower$$Type = ($WardPower);
 export type $WardPower$$Original = $WardPower;}
 declare module "net.sweenus.simplyswords.power.powers.ImbuedPower" {
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$RunefusedGemPower} from "net.sweenus.simplyswords.power.RunefusedGemPower"
 import {$List$$Type} from "java.util.List"
+import {$RunefusedGemPower} from "net.sweenus.simplyswords.power.RunefusedGemPower"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$GemPower} from "net.sweenus.simplyswords.power.GemPower"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
+import {$GemPower} from "net.sweenus.simplyswords.power.GemPower"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 
 export class $ImbuedPower extends $RunefusedGemPower {
 static "EMPTY": $GemPower
@@ -631,8 +631,8 @@ export type $ImbuedPower$$Original = $ImbuedPower;}
 declare module "net.sweenus.simplyswords.power.RunicGemPower" {
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$GemPower} from "net.sweenus.simplyswords.power.GemPower"
@@ -658,22 +658,22 @@ export type $RunicGemPower$$Type = ($RunicGemPower);
 export type $RunicGemPower$$Original = $RunicGemPower;}
 declare module "net.sweenus.simplyswords.power.powers.FrostWardPower" {
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$RunefusedGemPower} from "net.sweenus.simplyswords.power.RunefusedGemPower"
 import {$List$$Type} from "java.util.List"
+import {$RunefusedGemPower} from "net.sweenus.simplyswords.power.RunefusedGemPower"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$GemPower} from "net.sweenus.simplyswords.power.GemPower"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
+import {$GemPower} from "net.sweenus.simplyswords.power.GemPower"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 
 export class $FrostWardPower extends $RunefusedGemPower {
 static "EMPTY": $GemPower
 
 constructor()
 
-public "inventoryTick"(stack: $ItemStack$$Type, world: $Level$$Type, user: $LivingEntity$$Type, slot: integer, selected: boolean): void
 public "appendTooltip"(itemStack: $ItemStack$$Type, tooltipContext: $Item$TooltipContext$$Type, tooltip: $List$$Type<($Component$$Type)>, type: $TooltipFlag$$Type, isRunic: boolean): void
+public "inventoryTick"(stack: $ItemStack$$Type, world: $Level$$Type, user: $LivingEntity$$Type, slot: integer, selected: boolean): void
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -685,14 +685,14 @@ export type $FrostWardPower$$Type = ($FrostWardPower);
  */
 export type $FrostWardPower$$Original = $FrostWardPower;}
 declare module "net.sweenus.simplyswords.power.powers.BerserkPower" {
-import {$NetherGemPower} from "net.sweenus.simplyswords.power.NetherGemPower"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$NetherGemPower} from "net.sweenus.simplyswords.power.NetherGemPower"
 import {$List$$Type} from "java.util.List"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$GemPower} from "net.sweenus.simplyswords.power.GemPower"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
+import {$GemPower} from "net.sweenus.simplyswords.power.GemPower"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 
 export class $BerserkPower extends $NetherGemPower {
 static "EMPTY": $GemPower
@@ -714,15 +714,15 @@ export type $BerserkPower$$Original = $BerserkPower;}
 declare module "net.sweenus.simplyswords.power.powers.ImmolationPower" {
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
 import {$List$$Type} from "java.util.List"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$RunicGemPower} from "net.sweenus.simplyswords.power.RunicGemPower"
-import {$GemPower} from "net.sweenus.simplyswords.power.GemPower"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
+import {$GemPower} from "net.sweenus.simplyswords.power.GemPower"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 
 export class $ImmolationPower extends $RunicGemPower {
 static "EMPTY": $GemPower
@@ -760,12 +760,12 @@ export type $GemPower$EmptyGemPower$$Type = ($GemPower$EmptyGemPower);
 export type $GemPower$EmptyGemPower$$Original = $GemPower$EmptyGemPower;}
 declare module "net.sweenus.simplyswords.power.powers.MomentumPower" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$List$$Type} from "java.util.List"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
 import {$RunicGemPower} from "net.sweenus.simplyswords.power.RunicGemPower"
@@ -794,13 +794,13 @@ export type $MomentumPower$$Type = ($MomentumPower);
 export type $MomentumPower$$Original = $MomentumPower;}
 declare module "net.sweenus.simplyswords.power.powers.FreezePower" {
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$RunefusedGemPower} from "net.sweenus.simplyswords.power.RunefusedGemPower"
 import {$List$$Type} from "java.util.List"
+import {$RunefusedGemPower} from "net.sweenus.simplyswords.power.RunefusedGemPower"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$GemPower} from "net.sweenus.simplyswords.power.GemPower"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
+import {$GemPower} from "net.sweenus.simplyswords.power.GemPower"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 
 export class $FreezePower extends $RunefusedGemPower {
 static "EMPTY": $GemPower
@@ -820,14 +820,14 @@ export type $FreezePower$$Type = ($FreezePower);
  */
 export type $FreezePower$$Original = $FreezePower;}
 declare module "net.sweenus.simplyswords.power.powers.RadiancePower" {
-import {$NetherGemPower} from "net.sweenus.simplyswords.power.NetherGemPower"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$NetherGemPower} from "net.sweenus.simplyswords.power.NetherGemPower"
 import {$List$$Type} from "java.util.List"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$GemPower} from "net.sweenus.simplyswords.power.GemPower"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
+import {$GemPower} from "net.sweenus.simplyswords.power.GemPower"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 
 export class $RadiancePower extends $NetherGemPower {
 static "EMPTY": $GemPower
@@ -848,13 +848,13 @@ export type $RadiancePower$$Type = ($RadiancePower);
 export type $RadiancePower$$Original = $RadiancePower;}
 declare module "net.sweenus.simplyswords.power.powers.ZephyrPower" {
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$RunefusedGemPower} from "net.sweenus.simplyswords.power.RunefusedGemPower"
 import {$List$$Type} from "java.util.List"
+import {$RunefusedGemPower} from "net.sweenus.simplyswords.power.RunefusedGemPower"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$GemPower} from "net.sweenus.simplyswords.power.GemPower"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
+import {$GemPower} from "net.sweenus.simplyswords.power.GemPower"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 
 export class $ZephyrPower extends $RunefusedGemPower {
 static "EMPTY": $GemPower
@@ -875,13 +875,13 @@ export type $ZephyrPower$$Type = ($ZephyrPower);
 export type $ZephyrPower$$Original = $ZephyrPower;}
 declare module "net.sweenus.simplyswords.power.powers.WeakenPower" {
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$RunefusedGemPower} from "net.sweenus.simplyswords.power.RunefusedGemPower"
 import {$List$$Type} from "java.util.List"
+import {$RunefusedGemPower} from "net.sweenus.simplyswords.power.RunefusedGemPower"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
-import {$GemPower} from "net.sweenus.simplyswords.power.GemPower"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
+import {$GemPower} from "net.sweenus.simplyswords.power.GemPower"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 
 export class $WeakenPower extends $RunefusedGemPower {
 static "EMPTY": $GemPower

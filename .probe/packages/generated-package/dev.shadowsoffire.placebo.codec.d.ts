@@ -6,13 +6,13 @@ import {$List} from "java.util.List"
 import {$Dynamic$$Type} from "com.mojang.serialization.Dynamic"
 import {$Encoder, $Encoder$$Type} from "com.mojang.serialization.Encoder"
 import {$Decoder$Terminal, $Decoder$Terminal$$Type} from "com.mojang.serialization.Decoder$Terminal"
-import {$MapDecoder$$Type} from "com.mojang.serialization.MapDecoder"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
+import {$MapDecoder$$Type} from "com.mojang.serialization.MapDecoder"
 import {$Codec, $Codec$$Type, $Codec$$Interface} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
-import {$Either} from "com.mojang.datafixers.util.Either"
-import {$Decoder, $Decoder$$Type} from "com.mojang.serialization.Decoder"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Either} from "com.mojang.datafixers.util.Either"
+import {$Function, $Function$$Type} from "java.util.function.Function"
+import {$Decoder, $Decoder$$Type} from "com.mojang.serialization.Decoder"
 import {$Codec$ResultFunction$$Type} from "com.mojang.serialization.Codec$ResultFunction"
 import {$Decoder$Boxed, $Decoder$Boxed$$Type} from "com.mojang.serialization.Decoder$Boxed"
 import {$UnaryOperator$$Type} from "java.util.function.UnaryOperator"
@@ -41,51 +41,51 @@ public "isEmpty"(): boolean
 public "getKey"(arg0: $Codec$$Type<(never)>): $ResourceLocation
 public "register"(arg0: $ResourceLocation$$Type, arg1: $Codec$$Type<(V)>): void
 public "containsKey"(arg0: $ResourceLocation$$Type): boolean
-public "orElseGet"(arg0: $UnaryOperator$$Type<(StringJS)>, arg1: $Supplier$$Type<(V)>): $Codec<(V)>
-public "orElseGet"(arg0: $Consumer$$Type<(StringJS)>, arg1: $Supplier$$Type<(V)>): $Codec<(V)>
-public "orElseGet"(arg0: $Supplier$$Type<(V)>): $Codec<(V)>
-public static "recursive"<A>(arg0: StringJS, arg1: $Function$$Type<($Codec<(V)>), ($Codec$$Type<(V)>)>): $Codec<(V)>
 public static "pair"<F, S>(arg0: $Codec$$Type<(F)>, arg1: $Codec$$Type<(S)>): $Codec<($Pair<(F), (S)>)>
 public static "checkRange"<N extends number>(arg0: N, arg1: N): $Function<(N), ($DataResult<(N)>)>
 public static "xor"<F, S>(arg0: $Codec$$Type<(F)>, arg1: $Codec$$Type<(S)>): $Codec<($Either<(F), (S)>)>
+public static "recursive"<A>(arg0: StringJS, arg1: $Function$$Type<($Codec<(V)>), ($Codec$$Type<(V)>)>): $Codec<(V)>
 public "dispatch"<E>(arg0: $Function$$Type<(E), (V)>, arg1: $Function$$Type<(V), ($MapCodec$$Type<(E)>)>): $Codec<(E)>
 public "dispatch"<E>(arg0: StringJS, arg1: $Function$$Type<(E), (V)>, arg2: $Function$$Type<(V), ($MapCodec$$Type<(E)>)>): $Codec<(E)>
-public static "of"<A>(arg0: $MapEncoder$$Type<(V)>, arg1: $MapDecoder$$Type<(V)>, arg2: $Supplier$$Type<(StringJS)>): $MapCodec<(V)>
-public static "of"<A>(arg0: $Encoder$$Type<(V)>, arg1: $Decoder$$Type<(V)>): $Codec<(V)>
 public static "of"<A>(arg0: $MapEncoder$$Type<(V)>, arg1: $MapDecoder$$Type<(V)>): $MapCodec<(V)>
+public static "of"<A>(arg0: $Encoder$$Type<(V)>, arg1: $Decoder$$Type<(V)>): $Codec<(V)>
+public static "of"<A>(arg0: $MapEncoder$$Type<(V)>, arg1: $MapDecoder$$Type<(V)>, arg2: $Supplier$$Type<(StringJS)>): $MapCodec<(V)>
 public static "of"<A>(arg0: $Encoder$$Type<(V)>, arg1: $Decoder$$Type<(V)>, arg2: StringJS): $Codec<(V)>
 public static "list"<E>(arg0: $Codec$$Type<(E)>, arg1: integer, arg2: integer): $Codec<($List<(E)>)>
 public static "list"<E>(arg0: $Codec$$Type<(E)>): $Codec<($List<(E)>)>
 public "validate"(arg0: $Function$$Type<(V), ($DataResult$$Type<(V)>)>): $Codec<(V)>
-public "orElse"(arg0: $UnaryOperator$$Type<(StringJS)>, arg1: V): $Codec<(V)>
-public "orElse"(arg0: $Consumer$$Type<(StringJS)>, arg1: V): $Codec<(V)>
 public "orElse"(arg0: V): $Codec<(V)>
-public static "unit"<A>(arg0: $Supplier$$Type<(V)>): $Codec<(V)>
-public static "unit"<A>(arg0: V): $Codec<(V)>
-public static "string"(arg0: integer, arg1: integer): $Codec<(StringJS)>
-public "stable"(): $Codec<(V)>
+public "orElse"(arg0: $Consumer$$Type<(StringJS)>, arg1: V): $Codec<(V)>
+public "orElse"(arg0: $UnaryOperator$$Type<(StringJS)>, arg1: V): $Codec<(V)>
 public "listOf"(arg0: integer, arg1: integer): $Codec<($List<(V)>)>
 public "listOf"(): $Codec<($List<(V)>)>
-public "withLifecycle"(arg0: $Lifecycle$$Type): $Encoder
+public static "unit"<A>(arg0: V): $Codec<(V)>
+public static "unit"<A>(arg0: $Supplier$$Type<(V)>): $Codec<(V)>
+public static "string"(arg0: integer, arg1: integer): $Codec<(StringJS)>
+public "orElseGet"(arg0: $UnaryOperator$$Type<(StringJS)>, arg1: $Supplier$$Type<(V)>): $Codec<(V)>
+public "orElseGet"(arg0: $Consumer$$Type<(StringJS)>, arg1: $Supplier$$Type<(V)>): $Codec<(V)>
+public "orElseGet"(arg0: $Supplier$$Type<(V)>): $Codec<(V)>
+public "xmap"<S>(arg0: $Function$$Type<(V), (S)>, arg1: $Function$$Type<(S), (V)>): $Codec<(S)>
+public "stable"(): $Codec<(V)>
+public "withLifecycle"(arg0: $Lifecycle$$Type): $Decoder
 public "deprecated"(arg0: integer): $Codec<(V)>
 public static "either"<F, S>(arg0: $Codec$$Type<(F)>, arg1: $Codec$$Type<(S)>): $Codec<($Either<(F), (S)>)>
 public "flatXmap"<S>(arg0: $Function$$Type<(V), ($DataResult$$Type<(S)>)>, arg1: $Function$$Type<(S), ($DataResult$$Type<(V)>)>): $Codec<(S)>
-public "fieldOf"(arg0: StringJS): $MapCodec<(V)>
+public "fieldOf"(arg0: StringJS): $MapEncoder
 public static "optionalField"<F>(arg0: StringJS, arg1: $Codec$$Type<(F)>, arg2: boolean): $MapCodec<($Optional<(F)>)>
-public "optionalFieldOf"(arg0: StringJS): $MapCodec<($Optional<(V)>)>
-public "optionalFieldOf"(arg0: StringJS, arg1: V): $MapCodec<(V)>
-public "optionalFieldOf"(arg0: StringJS, arg1: V, arg2: $Lifecycle$$Type): $MapCodec<(V)>
 public "optionalFieldOf"(arg0: StringJS, arg1: $Lifecycle$$Type, arg2: V, arg3: $Lifecycle$$Type): $MapCodec<(V)>
-public "lenientOptionalFieldOf"(arg0: StringJS, arg1: V, arg2: $Lifecycle$$Type): $MapCodec<(V)>
+public "optionalFieldOf"(arg0: StringJS, arg1: V): $MapCodec<(V)>
+public "optionalFieldOf"(arg0: StringJS): $MapCodec<($Optional<(V)>)>
+public "optionalFieldOf"(arg0: StringJS, arg1: V, arg2: $Lifecycle$$Type): $MapCodec<(V)>
+public "lenientOptionalFieldOf"(arg0: StringJS): $MapCodec<($Optional<(V)>)>
 public "lenientOptionalFieldOf"(arg0: StringJS, arg1: V): $MapCodec<(V)>
 public "lenientOptionalFieldOf"(arg0: StringJS, arg1: $Lifecycle$$Type, arg2: V, arg3: $Lifecycle$$Type): $MapCodec<(V)>
-public "lenientOptionalFieldOf"(arg0: StringJS): $MapCodec<($Optional<(V)>)>
+public "lenientOptionalFieldOf"(arg0: StringJS, arg1: V, arg2: $Lifecycle$$Type): $MapCodec<(V)>
 public "mapResult"(arg0: $Codec$ResultFunction$$Type<(V)>): $Codec<(V)>
 public "promotePartial"(arg0: $Consumer$$Type): $Decoder
 public "partialDispatch"<E>(arg0: StringJS, arg1: $Function$$Type<(E), ($DataResult$$Type<(V)>)>, arg2: $Function$$Type<(V), ($DataResult$$Type<($MapCodec$$Type<(E)>)>)>): $Codec<(E)>
-public "dispatchMap"<E>(arg0: $Function$$Type<(E), (V)>, arg1: $Function$$Type<(V), ($MapCodec$$Type<(E)>)>): $MapCodec<(E)>
 public "dispatchMap"<E>(arg0: StringJS, arg1: $Function$$Type<(E), (V)>, arg2: $Function$$Type<(V), ($MapCodec$$Type<(E)>)>): $MapCodec<(E)>
-public "xmap"<S>(arg0: $Function$$Type<(V), (S)>, arg1: $Function$$Type<(S), (V)>): $Codec<(S)>
+public "dispatchMap"<E>(arg0: $Function$$Type<(E), (V)>, arg1: $Function$$Type<(V), ($MapCodec$$Type<(E)>)>): $MapCodec<(E)>
 public static "withAlternative"<T, U>(arg0: $Codec$$Type<(T)>, arg1: $Codec$$Type<(U)>, arg2: $Function$$Type<(U), (T)>): $Codec<(T)>
 public static "withAlternative"<T>(arg0: $Codec$$Type<(T)>, arg1: $Codec$$Type<(T)>): $Codec<(T)>
 public static "mapPair"<F, S>(arg0: $MapCodec$$Type<(F)>, arg1: $MapCodec$$Type<(S)>): $MapCodec<($Pair<(F), (S)>)>

@@ -5,8 +5,8 @@ export interface $QuadCacheKey$$Interface {
 }
 
 export class $QuadCacheKey implements $QuadCacheKey$$Interface {
- "camo"(): $CamoContent<(never)>
  "ctCtx"(): any
+ "camo"(): $CamoContent<(never)>
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_

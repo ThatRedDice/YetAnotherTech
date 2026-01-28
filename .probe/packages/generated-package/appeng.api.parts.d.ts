@@ -6,8 +6,8 @@ import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$DimensionalBlockPos} from "appeng.api.util.DimensionalBlockPos"
 import {$IPart, $IPart$$Type} from "appeng.api.parts.IPart"
 import {$ICustomCableConnection$$Interface} from "appeng.api.parts.ICustomCableConnection"
-import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$AECableType$$Type} from "appeng.api.util.AECableType"
+import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$SelectedPart} from "appeng.api.parts.SelectedPart"
 import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
@@ -29,11 +29,10 @@ export class $IPartHost implements $IPartHost$$Interface {
  "hasRedstone"(): boolean
  "notifyNeighbors"(): void
  "clearContainer"(): void
- "addPart"<T extends $IPart>(arg0: $IPartItem$$Type<(T)>, arg1: $Direction$$Type, arg2: $Player$$Type): T
- "isInWorld"(): boolean
- "replacePart"<T extends $IPart>(arg0: $IPartItem$$Type<(T)>, arg1: $Direction$$Type, arg2: $Player$$Type, arg3: $InteractionHand$$Type): T
  "markForSave"(): void
  "markForUpdate"(): void
+ "replacePart"<T extends $IPart>(arg0: $IPartItem$$Type<(T)>, arg1: $Direction$$Type, arg2: $Player$$Type, arg3: $InteractionHand$$Type): T
+ "isInWorld"(): boolean
  "getPart"(arg0: $Direction$$Type): $IPart
  "partChanged"(): void
  "selectPartLocal"(arg0: $Vec3$$Type): $SelectedPart
@@ -43,6 +42,7 @@ export class $IPartHost implements $IPartHost$$Interface {
  "removePart"(arg0: $IPart$$Type): boolean
  "selectPartWorld"(arg0: $Vec3$$Type): $SelectedPart
  "notifyNeighborNow"(arg0: $Direction$$Type): void
+ "addPart"<T extends $IPart>(arg0: $IPartItem$$Type<(T)>, arg1: $Direction$$Type, arg2: $Player$$Type): T
  "isEmpty"(): boolean
  "getLocation"(): $DimensionalBlockPos
  "cleanup"(): void
@@ -75,8 +75,8 @@ export class $IPartCollisionHelper implements $IPartCollisionHelper$$Interface {
  "getWorldX"(): $Direction
  "getWorldY"(): $Direction
  "getWorldZ"(): $Direction
- "addBox"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): void
  "isBBCollision"(): boolean
+ "addBox"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): void
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -93,8 +93,8 @@ import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Direction} from "net.minecraft.core.Direction"
-import {$IPartCollisionHelper$$Type} from "appeng.api.parts.IPartCollisionHelper"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$IPartCollisionHelper$$Type} from "appeng.api.parts.IPartCollisionHelper"
 import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 
 export interface $IFacadePart$$Interface {
@@ -137,9 +137,9 @@ get "empty"(): boolean
 }
 
 export class $IFacadeContainer implements $IFacadeContainer$$Interface {
+ "writeToStream"(arg0: $RegistryFriendlyByteBuf$$Type): void
  "readFromNBT"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
  "writeToNBT"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
- "writeToStream"(arg0: $RegistryFriendlyByteBuf$$Type): void
  "readFromStream"(arg0: $RegistryFriendlyByteBuf$$Type): boolean
  "canAddFacade"(arg0: $IFacadePart$$Type): boolean
  "addFacade"(arg0: $IFacadePart$$Type): boolean
@@ -168,10 +168,10 @@ get "partClass"(): $Class<(P)>
 }
 
 export class $IPartItem<P extends $IPart> implements $IPartItem$$Interface {
+ "createPart"(): P
  "getPartClass"(): $Class<(P)>
 static "getNetworkId"(arg0: $IPartItem$$Type<(never)>): integer
 static "byNetworkId"(arg0: integer): $IPartItem<(never)>
- "createPart"(): P
 static "getId"(arg0: $IPartItem$$Type<(never)>): $ResourceLocation
 static "byId"(arg0: $ResourceLocation$$Type): $IPartItem<(never)>
  "asItem"(): $Item
@@ -228,10 +228,10 @@ export type $IPartModel$$Original = $IPartModel;}
 declare module "appeng.api.parts.RegisterPartCapabilitiesEvent" {
 import {$BlockCapability$$Type} from "net.neoforged.neoforge.capabilities.BlockCapability"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$ICapabilityProvider$$Type} from "net.neoforged.neoforge.capabilities.ICapabilityProvider"
 import {$Function$$Type} from "java.util.function.Function"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
+import {$ICapabilityProvider$$Type} from "net.neoforged.neoforge.capabilities.ICapabilityProvider"
 import {$Event} from "net.neoforged.bus.api.Event"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Class$$Type} from "java.lang.Class"
 import {$IPart} from "appeng.api.parts.IPart"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
@@ -301,16 +301,16 @@ declare module "appeng.api.parts.IPart" {
 import {$DataComponentMap$$Type} from "net.minecraft.core.component.DataComponentMap"
 import {$BusSupport$$Type} from "appeng.api.parts.BusSupport"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$PoseStack$$Type} from "com.mojang.blaze3d.vertex.PoseStack"
 import {$List$$Type} from "java.util.List"
+import {$PoseStack$$Type} from "com.mojang.blaze3d.vertex.PoseStack"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
-import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$IPartCollisionHelper$$Type} from "appeng.api.parts.IPartCollisionHelper"
+import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$DataComponentMap$Builder$$Type} from "net.minecraft.core.component.DataComponentMap$Builder"
 import {$ICustomCableConnection$$Interface} from "appeng.api.parts.ICustomCableConnection"
 import {$IPartHost$$Type} from "appeng.api.parts.IPartHost"
-import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$AECableType, $AECableType$$Type} from "appeng.api.util.AECableType"
+import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Clearable$$Interface} from "net.minecraft.world.Clearable"
 import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$MultiBufferSource$$Type} from "net.minecraft.client.renderer.MultiBufferSource"
@@ -321,8 +321,8 @@ import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
-import {$IGridNode} from "appeng.api.networking.IGridNode"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
+import {$IGridNode} from "appeng.api.networking.IGridNode"
 import {$SettingsFrom$$Type} from "appeng.util.SettingsFrom"
 import {$RegistryFriendlyByteBuf$$Type} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
@@ -334,14 +334,14 @@ import {$IPartItem} from "appeng.api.parts.IPartItem"
 export interface $IPart$$Interface extends $ICustomCableConnection$$Interface, $Clearable$$Interface {
 get "lightLevel"(): integer
 get "solid"(): boolean
-get "partItem"(): $IPartItem<(never)>
-get "gridNode"(): $IGridNode
 get "providingStrongPower"(): integer
 get "providingWeakPower"(): integer
 get "externalFacingNode"(): $IGridNode
 get "externalCableConnectionType"(): $AECableType
 get "staticModels"(): $IPartModel
 get "desiredConnectionType"(): $AECableType
+get "gridNode"(): $IGridNode
+get "partItem"(): $IPartItem<(never)>
 get "modelData"(): $ModelData
 }
 
@@ -354,20 +354,10 @@ export class $IPart implements $IPart$$Interface {
  "addAdditionalDrops"(arg0: $List$$Type<($ItemStack$$Type)>, arg1: boolean): void
  "onEntityCollision"(arg0: $Entity$$Type): void
  "canBePlacedOn"(arg0: $BusSupport$$Type): boolean
+ "writeToStream"(arg0: $RegistryFriendlyByteBuf$$Type): void
  "readFromNBT"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
  "writeToNBT"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
- "onNeighborChanged"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $BlockPos$$Type): void
- "writeToStream"(arg0: $RegistryFriendlyByteBuf$$Type): void
- "getBoxes"(arg0: $IPartCollisionHelper$$Type): void
  "addEntityCrashInfo"(arg0: $CrashReportCategory$$Type): void
- "readFromStream"(arg0: $RegistryFriendlyByteBuf$$Type): boolean
- "getPartItem"(): $IPartItem<(never)>
- "exportSettings"(arg0: $SettingsFrom$$Type, arg1: $DataComponentMap$Builder$$Type): void
- "importSettings"(arg0: $SettingsFrom$$Type, arg1: $DataComponentMap$$Type, arg2: $Player$$Type): void
- "getCableConnectionLength"(arg0: $AECableType$$Type): float
- "onUseItemOn"(arg0: $ItemStack$$Type, arg1: $Player$$Type, arg2: $InteractionHand$$Type, arg3: $Vec3$$Type): boolean
- "getGridNode"(): $IGridNode
- "readVisualStateFromNBT"(arg0: $CompoundTag$$Type): void
  "writeVisualStateToNBT"(arg0: $CompoundTag$$Type): void
  "removeFromWorld"(): void
  "addToWorld"(): void
@@ -385,6 +375,16 @@ export class $IPart implements $IPart$$Interface {
  "addPartDrop"(arg0: $List$$Type<($ItemStack$$Type)>, arg1: boolean): void
  "getStaticModels"(): $IPartModel
  "getDesiredConnectionType"(): $AECableType
+ "getBoxes"(arg0: $IPartCollisionHelper$$Type): void
+ "getCableConnectionLength"(arg0: $AECableType$$Type): float
+ "onUseItemOn"(arg0: $ItemStack$$Type, arg1: $Player$$Type, arg2: $InteractionHand$$Type, arg3: $Vec3$$Type): boolean
+ "readVisualStateFromNBT"(arg0: $CompoundTag$$Type): void
+ "getGridNode"(): $IGridNode
+ "readFromStream"(arg0: $RegistryFriendlyByteBuf$$Type): boolean
+ "getPartItem"(): $IPartItem<(never)>
+ "exportSettings"(arg0: $SettingsFrom$$Type, arg1: $DataComponentMap$Builder$$Type): void
+ "importSettings"(arg0: $SettingsFrom$$Type, arg1: $DataComponentMap$$Type, arg2: $Player$$Type): void
+ "onNeighborChanged"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $BlockPos$$Type): void
  "animateTick"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $RandomSource$$Type): void
  "getModelData"(): $ModelData
  "onClicked"(arg0: $Player$$Type, arg1: $Vec3$$Type): boolean

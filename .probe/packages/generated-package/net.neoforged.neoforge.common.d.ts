@@ -21,8 +21,8 @@ export type $ModConfigSpec$RestartType$$Type = (("none") | ("world") | ("game"))
 export type $ModConfigSpec$RestartType$$Original = $ModConfigSpec$RestartType;}
 declare module "net.neoforged.neoforge.common.ModConfigSpec$ConfigValue" {
 import {$ModConfigSpec$ValueSpec} from "net.neoforged.neoforge.common.ModConfigSpec$ValueSpec"
-import {$Supplier$$Type, $Supplier$$Interface} from "java.util.function.Supplier"
 import {$List, $List$$Type} from "java.util.List"
+import {$Supplier$$Type, $Supplier$$Interface} from "java.util.function.Supplier"
 import {$Config$$Type} from "com.electronwill.nightconfig.core.Config"
 import {$ModConfigSpec$Builder} from "net.neoforged.neoforge.common.ModConfigSpec$Builder"
 
@@ -62,9 +62,9 @@ import {$JsonElement} from "com.google.gson.JsonElement"
 import {$RecipeMatchContext$$Type} from "dev.latvian.mods.kubejs.recipe.filter.RecipeMatchContext"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
-import {$TagKey$$Type} from "net.minecraft.tags.TagKey"
-import {$SizedIngredientKJS$$Interface} from "dev.latvian.mods.kubejs.core.SizedIngredientKJS"
 import {$ItemLike$$Type} from "net.minecraft.world.level.ItemLike"
+import {$SizedIngredientKJS$$Interface} from "dev.latvian.mods.kubejs.core.SizedIngredientKJS"
+import {$TagKey$$Type} from "net.minecraft.tags.TagKey"
 import {$Item$$Type} from "net.minecraft.world.item.Item"
 
 export class $SizedIngredient implements $SizedIngredientKJS$$Interface {
@@ -125,11 +125,11 @@ export type $IPackResourcesExtension$$Original = $IPackResourcesExtension;}
 declare module "net.neoforged.neoforge.common.extensions.IFriendlyByteBufExtension" {
 import {$BiFunction$$Type} from "java.util.function.BiFunction"
 import {$StreamEncoder$$Type} from "net.minecraft.network.codec.StreamEncoder"
-import {$Collection$$Type} from "java.util.Collection"
 import {$Map, $Map$$Type} from "java.util.Map"
+import {$Collection$$Type} from "java.util.Collection"
 import {$FriendlyByteBuf, $FriendlyByteBuf$$Type} from "net.minecraft.network.FriendlyByteBuf"
-import {$BiConsumer$$Type} from "java.util.function.BiConsumer"
 import {$TriConsumer$$Type} from "org.apache.commons.lang3.function.TriConsumer"
+import {$BiConsumer$$Type} from "java.util.function.BiConsumer"
 import {$StreamDecoder$$Type} from "net.minecraft.network.codec.StreamDecoder"
 import {$IntFunction$$Type} from "java.util.function.IntFunction"
 
@@ -205,7 +205,7 @@ public "codec"(): $MapCodec<(T)>
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $IngredientType$$Type<T> = (Special.NeoforgeIngredientSerializer) | ({"streamCodec"?: $StreamCodec$$Type<($RegistryFriendlyByteBuf$$Type), (T)>, "codec"?: $MapCodec$$Type<(T)>}) | ([streamCodec?: $StreamCodec$$Type<($RegistryFriendlyByteBuf$$Type), (T)>, codec?: $MapCodec$$Type<(T)>]);
+export type $IngredientType$$Type<T> = (Special.NeoforgeIngredientSerializer) | ({"codec"?: $MapCodec$$Type<(T)>, "streamCodec"?: $StreamCodec$$Type<($RegistryFriendlyByteBuf$$Type), (T)>}) | ([codec?: $MapCodec$$Type<(T)>, streamCodec?: $StreamCodec$$Type<($RegistryFriendlyByteBuf$$Type), (T)>]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -238,8 +238,8 @@ import {$DataMapValueRemover} from "net.neoforged.neoforge.registries.datamaps.D
 import {$AdvancedDataMapType$$Type} from "net.neoforged.neoforge.registries.datamaps.AdvancedDataMapType"
 import {$Codec$$Type} from "com.mojang.serialization.Codec"
 import {$CompletableFuture} from "java.util.concurrent.CompletableFuture"
-import {$DataProvider$$Interface} from "net.minecraft.data.DataProvider"
 import {$DataMapProvider$AdvancedBuilder} from "net.neoforged.neoforge.common.data.DataMapProvider$AdvancedBuilder"
+import {$DataProvider$$Interface} from "net.minecraft.data.DataProvider"
 import {$DataMapType$$Type} from "net.neoforged.neoforge.registries.datamaps.DataMapType"
 import {$Path$$Type} from "java.nio.file.Path"
 
@@ -248,8 +248,8 @@ public "getName"(): StringJS
 public "run"(arg0: $CachedOutput$$Type): $CompletableFuture<(never)>
 public "builder"<T, R, VR extends $DataMapValueRemover<(object), (object)>>(arg0: $AdvancedDataMapType$$Type<(R), (T), (VR)>): $DataMapProvider$AdvancedBuilder<(T), (R), (VR)>
 public "builder"<T, R>(arg0: $DataMapType$$Type<(R), (T)>): $DataMapProvider$Builder<(T), (R)>
-public static "saveStable"<T>(arg0: $CachedOutput$$Type, arg1: $HolderLookup$Provider$$Type, arg2: $Codec$$Type<(T)>, arg3: T, arg4: $Path$$Type): $CompletableFuture<(never)>
 public static "saveStable"(arg0: $CachedOutput$$Type, arg1: $JsonElement$$Type, arg2: $Path$$Type): $CompletableFuture
+public static "saveStable"<T>(arg0: $CachedOutput$$Type, arg1: $HolderLookup$Provider$$Type, arg2: $Codec$$Type<(T)>, arg3: T, arg4: $Path$$Type): $CompletableFuture<(never)>
 get "name"(): StringJS
 }
 /**
@@ -269,10 +269,10 @@ export interface $TriPredicate$$Interface<T, U, V> {
 }
 
 export class $TriPredicate<T, U, V> implements $TriPredicate$$Interface {
- "or"(arg0: $TriPredicate$$Type<(T), (U), (V)>): $TriPredicate<(T), (U), (V)>
  "negate"(): $TriPredicate<(T), (U), (V)>
  "and"(arg0: $TriPredicate$$Type<(T), (U), (V)>): $TriPredicate<(T), (U), (V)>
  "test"(arg0: T, arg1: U, arg2: V): boolean
+ "or"(arg0: $TriPredicate$$Type<(T), (U), (V)>): $TriPredicate<(T), (U), (V)>
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -310,14 +310,14 @@ import {$JsonElement$$Type} from "com.google.gson.JsonElement"
 import {$Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$CachedOutput$$Type} from "net.minecraft.data.CachedOutput"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$MobEffect$$Type} from "net.minecraft.world.effect.MobEffect"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$MobEffect$$Type} from "net.minecraft.world.effect.MobEffect"
 import {$PackOutput$$Type} from "net.minecraft.data.PackOutput"
 import {$Codec$$Type} from "com.mojang.serialization.Codec"
 import {$CompletableFuture} from "java.util.concurrent.CompletableFuture"
 import {$DataProvider$$Interface} from "net.minecraft.data.DataProvider"
-import {$TagKey$$Type} from "net.minecraft.tags.TagKey"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$TagKey$$Type} from "net.minecraft.tags.TagKey"
 import {$Item$$Type} from "net.minecraft.world.item.Item"
 import {$ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
 import {$Path$$Type} from "java.nio.file.Path"
@@ -328,8 +328,8 @@ constructor(arg0: $PackOutput$$Type, arg1: StringJS, arg2: StringJS)
 
 public "addBlock"(arg0: $Supplier$$Type<($Block$$Type)>, arg1: StringJS): void
 public "addEntityType"(arg0: $Supplier$$Type<($EntityType$$Type<(never)>)>, arg1: StringJS): void
-public "addDimension"(arg0: $ResourceKey$$Type<($Level)>, arg1: StringJS): void
 public "addItemStack"(arg0: $Supplier$$Type<($ItemStack$$Type)>, arg1: StringJS): void
+public "addDimension"(arg0: $ResourceKey$$Type<($Level)>, arg1: StringJS): void
 public "addItem"(arg0: $Supplier$$Type<($Item$$Type)>, arg1: StringJS): void
 public "getName"(): StringJS
 public "run"(arg0: $CachedOutput$$Type): $CompletableFuture<(never)>
@@ -340,10 +340,10 @@ public "add"(arg0: $TagKey$$Type<(never)>, arg1: StringJS): void
 public "add"(arg0: $Block$$Type, arg1: StringJS): void
 public "add"(arg0: $ItemStack$$Type, arg1: StringJS): void
 public "add"(arg0: $Item$$Type, arg1: StringJS): void
-public "addTag"(arg0: $Supplier$$Type<($TagKey$$Type<(never)>)>, arg1: StringJS): void
 public "addEffect"(arg0: $Supplier$$Type<($MobEffect$$Type)>, arg1: StringJS): void
-public static "saveStable"<T>(arg0: $CachedOutput$$Type, arg1: $HolderLookup$Provider$$Type, arg2: $Codec$$Type<(T)>, arg3: T, arg4: $Path$$Type): $CompletableFuture<(never)>
+public "addTag"(arg0: $Supplier$$Type<($TagKey$$Type<(never)>)>, arg1: StringJS): void
 public static "saveStable"(arg0: $CachedOutput$$Type, arg1: $JsonElement$$Type, arg2: $Path$$Type): $CompletableFuture
+public static "saveStable"<T>(arg0: $CachedOutput$$Type, arg1: $HolderLookup$Provider$$Type, arg2: $Codec$$Type<(T)>, arg3: T, arg4: $Path$$Type): $CompletableFuture<(never)>
 get "name"(): StringJS
 }
 /**
@@ -358,8 +358,8 @@ export type $LanguageProvider$$Original = $LanguageProvider;}
 declare module "net.neoforged.neoforge.common.damagesource.DamageContainer" {
 import {$DamageSource, $DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
 import {$LivingShieldBlockEvent$$Type} from "net.neoforged.neoforge.event.entity.living.LivingShieldBlockEvent"
-import {$IReductionFunction$$Type} from "net.neoforged.neoforge.common.damagesource.IReductionFunction"
 import {$DamageContainer$Reduction$$Type} from "net.neoforged.neoforge.common.damagesource.DamageContainer$Reduction"
+import {$IReductionFunction$$Type} from "net.neoforged.neoforge.common.damagesource.IReductionFunction"
 
 export class $DamageContainer {
 constructor(arg0: $DamageSource$$Type, arg1: float)
@@ -413,8 +413,8 @@ import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BubbleColumnDirection} from "net.neoforged.neoforge.common.enums.BubbleColumnDirection"
-import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$SoundType} from "net.minecraft.world.level.block.SoundType"
 import {$HitResult$$Type} from "net.minecraft.world.phys.HitResult"
@@ -426,8 +426,8 @@ import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
 import {$BiConsumer$$Type} from "java.util.function.BiConsumer"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
-import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
+import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 
 export interface $IBlockStateExtension$$Interface {
@@ -489,11 +489,11 @@ export class $IBlockStateExtension implements $IBlockStateExtension$$Interface {
  "getFriction"(arg0: $LevelReader$$Type, arg1: $BlockPos$$Type, arg2: $Entity$$Type): float
  "collisionExtendsVertically"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $Entity$$Type): boolean
  "addRunningEffects"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $Entity$$Type): boolean
+ "onBlockStateChange"(arg0: $LevelReader$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type): void
  "onNeighborChange"(arg0: $LevelReader$$Type, arg1: $BlockPos$$Type, arg2: $BlockPos$$Type): void
  "getWeakChanges"(arg0: $LevelReader$$Type, arg1: $BlockPos$$Type): boolean
  "isBurning"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type): boolean
  "getLightEmission"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type): integer
- "onBlockStateChange"(arg0: $LevelReader$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type): void
  "shouldCheckWeakPower"(arg0: $SignalGetter$$Type, arg1: $BlockPos$$Type, arg2: $Direction$$Type): boolean
 }
 /**
@@ -542,9 +542,9 @@ export type $IBlockEntityExtension$$Type = (() => $CompoundTag$$Type);
 export type $IBlockEntityExtension$$Original = $IBlockEntityExtension;}
 declare module "net.neoforged.neoforge.common.extensions.IItemExtension" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$ItemAttributeModifiers} from "net.minecraft.world.item.component.ItemAttributeModifiers"
 import {$List$$Type} from "java.util.List"
 import {$Mob$$Type} from "net.minecraft.world.entity.Mob"
+import {$ItemAttributeModifiers} from "net.minecraft.world.item.component.ItemAttributeModifiers"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$ItemAbility$$Type} from "net.neoforged.neoforge.common.ItemAbility"
@@ -558,8 +558,8 @@ import {$ItemEnchantments} from "net.minecraft.world.item.enchantment.ItemEnchan
 import {$EquipmentSlot, $EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$Item$$Type} from "net.minecraft.world.item.Item"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
-import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$HolderLookup$RegistryLookup$$Type} from "net.minecraft.core.HolderLookup$RegistryLookup"
 import {$RecipeType$$Type} from "net.minecraft.world.item.crafting.RecipeType"
@@ -618,8 +618,8 @@ export class $IItemExtension implements $IItemExtension$$Interface {
  "applyEnchantments"(arg0: $ItemStack$$Type, arg1: $List$$Type<($EnchantmentInstance$$Type)>): $ItemStack
  "doesSneakBypassUse"(arg0: $ItemStack$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type): boolean
  "createEntity"(arg0: $Level$$Type, arg1: $Entity$$Type, arg2: $ItemStack$$Type): $Entity
- "getMaxStackSize"(arg0: $ItemStack$$Type): integer
  "getCraftingRemainingItem"(arg0: $ItemStack$$Type): $ItemStack
+ "getMaxStackSize"(arg0: $ItemStack$$Type): integer
  "canWalkOnPowderedSnow"(arg0: $ItemStack$$Type, arg1: $LivingEntity$$Type): boolean
  "makesPiglinsNeutral"(arg0: $ItemStack$$Type, arg1: $LivingEntity$$Type): boolean
  "getEquipmentSlot"(arg0: $ItemStack$$Type): $EquipmentSlot
@@ -728,10 +728,10 @@ public "restore"(): boolean
 public "restore"(arg0: integer): boolean
 public "restoreToLocation"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: integer): boolean
 public "recreateBlockEntity"(arg0: $HolderLookup$Provider$$Type): $BlockEntity
-public "getFlags"(): integer
-public "getTag"(): $CompoundTag
 public "getDimension"(): $ResourceKey<($Level)>
+public "getFlags"(): integer
 public "getLevel"(): $LevelAccessor
+public "getTag"(): $CompoundTag
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
@@ -740,10 +740,10 @@ public static "create"(arg0: $ResourceKey$$Type<($Level)>, arg1: $LevelAccessor$
 public static "create"(arg0: $ResourceKey$$Type<($Level)>, arg1: $LevelAccessor$$Type, arg2: $BlockPos$$Type): $BlockSnapshot
 public "getCurrentState"(): $BlockState
 public "getPos"(): $BlockPos
-get "flags"(): integer
-get "tag"(): $CompoundTag
 get "dimension"(): $ResourceKey<($Level)>
+get "flags"(): integer
 get "level"(): $LevelAccessor
+get "tag"(): $CompoundTag
 get "state"(): $BlockState
 get "currentState"(): $BlockState
 get "pos"(): $BlockPos
@@ -759,21 +759,21 @@ export type $BlockSnapshot$$Type = ($BlockSnapshot);
 export type $BlockSnapshot$$Original = $BlockSnapshot;}
 declare module "net.neoforged.neoforge.common.extensions.ITagBuilderExtension" {
 import {$TagEntry$$Type} from "net.minecraft.tags.TagEntry"
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$TagBuilder} from "net.minecraft.tags.TagBuilder"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 
 export interface $ITagBuilderExtension$$Interface {
 get "rawBuilder"(): $TagBuilder
 }
 
 export class $ITagBuilderExtension implements $ITagBuilderExtension$$Interface {
+ "getRawBuilder"(): $TagBuilder
  "removeElement"(arg0: $ResourceLocation$$Type): $TagBuilder
 /**
  * 
  * @deprecated
  */
  "removeElement"(arg0: $ResourceLocation$$Type, arg1: StringJS): $TagBuilder
- "getRawBuilder"(): $TagBuilder
 /**
  * 
  * @deprecated
@@ -798,10 +798,10 @@ export type $ITagBuilderExtension$$Original = $ITagBuilderExtension;}
 declare module "net.neoforged.neoforge.common.DeferredSpawnEggItem" {
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Mob, $Mob$$Type} from "net.minecraft.world.entity.Mob"
 import {$Supplier$$Type} from "java.util.function.Supplier"
-import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Mob, $Mob$$Type} from "net.minecraft.world.entity.Mob"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$SpawnEggItem} from "net.minecraft.world.item.SpawnEggItem"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -938,8 +938,8 @@ import {$BiomeSpecialEffects, $BiomeSpecialEffects$$Type} from "net.minecraft.wo
 export class $ModifiableBiomeInfo$BiomeInfo extends $Record {
 constructor(climateSettings: $Biome$ClimateSettings$$Type, effects: $BiomeSpecialEffects$$Type, generationSettings: $BiomeGenerationSettings$$Type, mobSpawnSettings: $MobSpawnSettings$$Type)
 
-public "generationSettings"(): $BiomeGenerationSettings
 public "mobSpawnSettings"(): $MobSpawnSettings
+public "generationSettings"(): $BiomeGenerationSettings
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
@@ -950,7 +950,7 @@ public "effects"(): $BiomeSpecialEffects
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $ModifiableBiomeInfo$BiomeInfo$$Type = ({"mobSpawnSettings"?: $MobSpawnSettings$$Type, "climateSettings"?: $Biome$ClimateSettings$$Type, "effects"?: $BiomeSpecialEffects$$Type, "generationSettings"?: $BiomeGenerationSettings$$Type}) | ([mobSpawnSettings?: $MobSpawnSettings$$Type, climateSettings?: $Biome$ClimateSettings$$Type, effects?: $BiomeSpecialEffects$$Type, generationSettings?: $BiomeGenerationSettings$$Type]);
+export type $ModifiableBiomeInfo$BiomeInfo$$Type = ({"climateSettings"?: $Biome$ClimateSettings$$Type, "effects"?: $BiomeSpecialEffects$$Type, "generationSettings"?: $BiomeGenerationSettings$$Type, "mobSpawnSettings"?: $MobSpawnSettings$$Type}) | ([climateSettings?: $Biome$ClimateSettings$$Type, effects?: $BiomeSpecialEffects$$Type, generationSettings?: $BiomeGenerationSettings$$Type, mobSpawnSettings?: $MobSpawnSettings$$Type]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -981,8 +981,8 @@ import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$TooltipProvider} from "net.minecraft.world.item.component.TooltipProvider"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$DataComponentType$$Type} from "net.minecraft.core.component.DataComponentType"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 
 export interface $IDataComponentHolderExtension$$Interface {
@@ -1151,8 +1151,8 @@ import {$CustomPacketPayload$$Type} from "net.minecraft.network.protocol.common.
 import {$DisconnectionDetails, $DisconnectionDetails$$Type} from "net.minecraft.network.DisconnectionDetails"
 import {$ConnectionType} from "net.neoforged.neoforge.network.connection.ConnectionType"
 import {$IServerCommonPacketListenerExtension$$Interface} from "net.neoforged.neoforge.common.extensions.IServerCommonPacketListenerExtension"
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Exception$$Type} from "java.lang.Exception"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$ConnectionProtocol} from "net.minecraft.network.ConnectionProtocol"
 import {$Packet$$Type} from "net.minecraft.network.protocol.Packet"
 import {$Throwable$$Type} from "java.lang.Throwable"
@@ -1208,15 +1208,15 @@ import {$Class} from "java.lang.Class"
 export class $ModConfigSpec$ValueSpec {
 public "getTranslationKey"(): StringJS
 public "restartType"(): $ModConfigSpec$RestartType
-public "getRange"<V extends $Comparable<(object)>>(): $ModConfigSpec$Range<(V)>
 public "getClazz"(): $Class<(never)>
+public "getRange"<V extends $Comparable<(object)>>(): $ModConfigSpec$Range<(V)>
 public "test"(arg0: any): boolean
 public "getDefault"(): any
 public "getComment"(): StringJS
 public "correct"(arg0: any): any
 get "translationKey"(): StringJS
-get "range"(): $ModConfigSpec$Range<(V)>
 get "clazz"(): $Class<(never)>
+get "range"(): $ModConfigSpec$Range<(V)>
 get "default"(): any
 get "comment"(): StringJS
 }
@@ -1283,9 +1283,9 @@ static "of"(arg0: $Player$$Type, arg1: $Item$TooltipContext$$Type, arg2: $Toolti
  "flag"(): $TooltipFlag
  "player"(): $Player
  "tickRate"(): float
- "level"(): $Level
-static "of"(arg0: $HolderLookup$Provider$$Type): $Item$TooltipContext
 static "of"(arg0: $Level$$Type): $Item$TooltipContext
+static "of"(arg0: $HolderLookup$Provider$$Type): $Item$TooltipContext
+ "level"(): $Level
  "registries"(): $HolderLookup$Provider
  "mapData"(arg0: $MapId$$Type): $MapItemSavedData
 }
@@ -1330,19 +1330,19 @@ import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$WeakReference} from "java.lang.ref.WeakReference"
 import {$Player, $Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Vec3} from "net.minecraft.world.phys.Vec3"
-import {$Abilities} from "net.minecraft.world.entity.player.Abilities"
 import {$MenuProvider$$Type} from "net.minecraft.world.MenuProvider"
-import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
+import {$Abilities} from "net.minecraft.world.entity.player.Abilities"
 import {$FishingHook} from "net.minecraft.world.entity.projectile.FishingHook"
+import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$WalkAnimationState} from "net.minecraft.world.entity.WalkAnimationState"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
 import {$Class} from "java.lang.Class"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
-import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$ObjectOpenCustomHashSet} from "it.unimi.dsi.fastutil.objects.ObjectOpenCustomHashSet"
+import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
-import {$PlayerData} from "com.minecraftserverzone.weaponmaster.setup.playerdata.PlayerData"
 import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
+import {$PlayerData} from "com.minecraftserverzone.weaponmaster.setup.playerdata.PlayerData"
 import {$Map} from "java.util.Map"
 import {$EntityDimensions} from "net.minecraft.world.entity.EntityDimensions"
 import {$InteractionHand} from "net.minecraft.world.InteractionHand"
@@ -1353,18 +1353,18 @@ import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$ClientInformation$$Type} from "net.minecraft.server.level.ClientInformation"
 import {$Container$$Type} from "net.minecraft.world.Container"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
-import {$AbstractContainerMenu} from "net.minecraft.world.inventory.AbstractContainerMenu"
 import {$AbstractHorse$$Type} from "net.minecraft.world.entity.animal.horse.AbstractHorse"
+import {$AbstractContainerMenu} from "net.minecraft.world.inventory.AbstractContainerMenu"
 import {$Stat$$Type} from "net.minecraft.stats.Stat"
-import {$RegistryFriendlyByteBuf$$Type} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$OptionalInt} from "java.util.OptionalInt"
+import {$RegistryFriendlyByteBuf$$Type} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
-import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$Tag} from "net.minecraft.nbt.Tag"
+import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
+import {$InventoryMenu} from "net.minecraft.world.inventory.InventoryMenu"
 import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$ServerPlayer} from "net.minecraft.server.level.ServerPlayer"
-import {$InventoryMenu} from "net.minecraft.world.inventory.InventoryMenu"
 import {$MinecraftServer} from "net.minecraft.server.MinecraftServer"
 
 export class $FakePlayer extends $ServerPlayer {
@@ -1509,8 +1509,8 @@ constructor(arg0: $ServerLevel$$Type, arg1: $GameProfile$$Type)
 public "tick"(): void
 public "updateOptions"(arg0: $ClientInformation$$Type): void
 public "displayClientMessage"(arg0: $Component$$Type, arg1: boolean): void
-public "isFakePlayer"(): boolean
 public "isInvulnerableTo"(arg0: $DamageSource$$Type): boolean
+public "isFakePlayer"(): boolean
 public "die"(arg0: $DamageSource$$Type): void
 public "awardStat"(arg0: $Stat$$Type<(never)>, arg1: integer): void
 public "getServer"(): $MinecraftServer
@@ -1624,8 +1624,8 @@ export type $IOwnedSpawner$$Type = (() => $Either$$Type<($BlockEntity$$Type), ($
 export type $IOwnedSpawner$$Original = $IOwnedSpawner;}
 declare module "net.neoforged.neoforge.common.world.BiomeSpecialEffectsBuilder" {
 import {$AmbientMoodSettings} from "net.minecraft.world.level.biome.AmbientMoodSettings"
-import {$BiomeSpecialEffects$GrassColorModifier} from "net.minecraft.world.level.biome.BiomeSpecialEffects$GrassColorModifier"
 import {$Optional} from "java.util.Optional"
+import {$BiomeSpecialEffects$GrassColorModifier} from "net.minecraft.world.level.biome.BiomeSpecialEffects$GrassColorModifier"
 import {$BiomeSpecialEffects$Builder} from "net.minecraft.world.level.biome.BiomeSpecialEffects$Builder"
 import {$AmbientParticleSettings} from "net.minecraft.world.level.biome.AmbientParticleSettings"
 import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
@@ -1676,8 +1676,8 @@ export type $BiomeSpecialEffectsBuilder$$Type = ($BiomeSpecialEffectsBuilder);
 export type $BiomeSpecialEffectsBuilder$$Original = $BiomeSpecialEffectsBuilder;}
 declare module "net.neoforged.neoforge.common.extensions.IItemStackExtension" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$ItemAttributeModifiers} from "net.minecraft.world.item.component.ItemAttributeModifiers"
 import {$Mob$$Type} from "net.minecraft.world.entity.Mob"
+import {$ItemAttributeModifiers} from "net.minecraft.world.item.component.ItemAttributeModifiers"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$ItemAbility$$Type} from "net.neoforged.neoforge.common.ItemAbility"
@@ -1779,8 +1779,8 @@ import {$LevelChunk$$Type} from "net.minecraft.world.level.chunk.LevelChunk"
 import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$Tag, $Tag$$Type} from "net.minecraft.nbt.Tag"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$ListTag, $ListTag$$Type} from "net.minecraft.nbt.ListTag"
 import {$INBTSerializable$$Interface} from "net.neoforged.neoforge.common.util.INBTSerializable"
+import {$ListTag, $ListTag$$Type} from "net.minecraft.nbt.ListTag"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 
 export class $LevelChunkAuxiliaryLightManager implements $AuxiliaryLightManager$$Interface, $INBTSerializable$$Interface<($ListTag)> {
@@ -1788,13 +1788,13 @@ static readonly "LIGHT_NBT_KEY": StringJS
 
 constructor(arg0: $LevelChunk$$Type)
 
-public "handleLightDataSync"(arg0: $Map$$Type<($BlockPos$$Type), (byte)>): void
 public "getLightAt"(arg0: $BlockPos$$Type): integer
 public "setLightAt"(arg0: $BlockPos$$Type, arg1: integer): void
 public "sendLightDataTo"(arg0: $ClientboundLevelChunkWithLightPacket$$Type): $Packet<(never)>
 public "deserializeNBT"(arg0: $HolderLookup$Provider$$Type, arg1: $ListTag$$Type): void
 public "deserializeNBT"(arg0: $HolderLookup$Provider$$Type, arg1: $Tag$$Type): void
 public "serializeNBT"(arg0: $HolderLookup$Provider$$Type): $Tag
+public "handleLightDataSync"(arg0: $Map$$Type<($BlockPos$$Type), (byte)>): void
 public "removeLightAt"(arg0: $BlockPos$$Type): void
 }
 /**
@@ -1857,9 +1857,9 @@ export type $ModifiableStructureInfo$$Type = ($ModifiableStructureInfo);
  */
 export type $ModifiableStructureInfo$$Original = $ModifiableStructureInfo;}
 declare module "net.neoforged.neoforge.common.MutableDataComponentHolder" {
+import {$Potion$$Type} from "net.minecraft.world.item.alchemy.Potion"
 import {$DataComponentMap, $DataComponentMap$$Type} from "net.minecraft.core.component.DataComponentMap"
 import {$ComponentFunctions} from "dev.latvian.mods.kubejs.component.ComponentFunctions"
-import {$Potion$$Type} from "net.minecraft.world.item.alchemy.Potion"
 import {$UUID$$Type} from "java.util.UUID"
 import {$List$$Type} from "java.util.List"
 import {$DataComponentType$$Type} from "net.minecraft.core.component.DataComponentType"
@@ -1876,8 +1876,8 @@ import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$Map$$Type} from "java.util.Map"
 import {$Rarity$$Type} from "net.minecraft.world.item.Rarity"
 import {$LootTable$$Type} from "net.minecraft.world.level.storage.loot.LootTable"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$DataComponentHolder$$Type, $DataComponentHolder$$Interface} from "net.minecraft.core.component.DataComponentHolder"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$BiFunction$$Type} from "java.util.function.BiFunction"
@@ -2033,12 +2033,12 @@ export type $ICommandSourceStackExtension$$Type = ($ICommandSourceStackExtension
 export type $ICommandSourceStackExtension$$Original = $ICommandSourceStackExtension;}
 declare module "net.neoforged.neoforge.common.conditions.ICondition" {
 import {$DynamicOps$$Type} from "com.mojang.serialization.DynamicOps"
-import {$WithConditions$$Type} from "net.neoforged.neoforge.common.conditions.WithConditions"
 import {$Optional, $Optional$$Type} from "java.util.Optional"
+import {$WithConditions$$Type} from "net.neoforged.neoforge.common.conditions.WithConditions"
 import {$Codec, $Codec$$Type} from "com.mojang.serialization.Codec"
+import {$List, $List$$Type} from "java.util.List"
 import {$ICondition$IContext$$Type} from "net.neoforged.neoforge.common.conditions.ICondition$IContext"
 import {$JsonElement$$Type} from "com.google.gson.JsonElement"
-import {$List, $List$$Type} from "java.util.List"
 import {$JsonObject$$Type} from "com.google.gson.JsonObject"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
@@ -2132,8 +2132,8 @@ declare module "net.neoforged.neoforge.common.world.BiomeModifier" {
 import {$ModifiableBiomeInfo$BiomeInfo$Builder$$Type} from "net.neoforged.neoforge.common.world.ModifiableBiomeInfo$BiomeInfo$Builder"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$HolderSet} from "net.minecraft.core.HolderSet"
-import {$Biome$$Type} from "net.minecraft.world.level.biome.Biome"
 import {$BiomeModifier$Phase$$Type} from "net.neoforged.neoforge.common.world.BiomeModifier$Phase"
+import {$Biome$$Type} from "net.minecraft.world.level.biome.Biome"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
 
@@ -2153,8 +2153,8 @@ static readonly "DIRECT_CODEC": $Codec<($BiomeModifier)>
 static readonly "LIST_CODEC": $Codec<($HolderSet<($BiomeModifier)>)>
 static readonly "REFERENCE_CODEC": $Codec<($Holder<($BiomeModifier)>)>
 
- "modify"(arg0: $Holder$$Type<($Biome)>, arg1: $BiomeModifier$Phase$$Type, arg2: $ModifiableBiomeInfo$BiomeInfo$Builder$$Type): void
  "codec"(): $MapCodec<($BiomeModifier)>
+ "modify"(arg0: $Holder$$Type<($Biome)>, arg1: $BiomeModifier$Phase$$Type, arg2: $ModifiableBiomeInfo$BiomeInfo$Builder$$Type): void
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -2209,8 +2209,8 @@ export type $IBrewingRecipe$$Type = ($IBrewingRecipe);
 export type $IBrewingRecipe$$Original = $IBrewingRecipe;}
 declare module "net.neoforged.neoforge.common.extensions.IDataComponentMapBuilderExtensions" {
 import {$Supplier$$Type} from "java.util.function.Supplier"
-import {$DataComponentType$$Type} from "net.minecraft.core.component.DataComponentType"
 import {$DataComponentMap$Builder} from "net.minecraft.core.component.DataComponentMap$Builder"
+import {$DataComponentType$$Type} from "net.minecraft.core.component.DataComponentType"
 
 export interface $IDataComponentMapBuilderExtensions$$Interface {
 }
@@ -2231,9 +2231,9 @@ declare module "net.neoforged.neoforge.common.util.Lazy" {
 import {$Supplier$$Type, $Supplier$$Interface} from "java.util.function.Supplier"
 
 export class $Lazy<T> implements $Supplier$$Interface<(T)> {
-public "invalidate"(): void
 public "get"(): T
 public static "of"<T>(arg0: $Supplier$$Type<(T)>): $Lazy<(T)>
+public "invalidate"(): void
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -2249,8 +2249,8 @@ import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$AttributeModifier$Operation$$Type} from "net.minecraft.world.entity.ai.attributes.AttributeModifier$Operation"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
-import {$Attribute} from "net.minecraft.world.entity.ai.attributes.Attribute"
 import {$MutableComponent} from "net.minecraft.network.chat.MutableComponent"
+import {$Attribute} from "net.minecraft.world.entity.ai.attributes.Attribute"
 import {$RangedAttribute} from "net.minecraft.world.entity.ai.attributes.RangedAttribute"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
 import {$Holder} from "net.minecraft.core.Holder"
@@ -2277,11 +2277,11 @@ export type $PercentageAttribute$$Original = $PercentageAttribute;}
 declare module "net.neoforged.neoforge.common.extensions.IEntityExtension" {
 import {$BiPredicate$$Type} from "java.util.function.BiPredicate"
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
-import {$Collection, $Collection$$Type} from "java.util.Collection"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
+import {$Collection, $Collection$$Type} from "java.util.Collection"
 import {$ItemEntity, $ItemEntity$$Type} from "net.minecraft.world.entity.item.ItemEntity"
-import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
 import {$HitResult$$Type} from "net.minecraft.world.phys.HitResult"
+import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
 import {$CustomPacketPayload$$Type} from "net.minecraft.network.protocol.common.custom.CustomPacketPayload"
 import {$INBTSerializable$$Interface} from "net.neoforged.neoforge.common.util.INBTSerializable"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
@@ -2290,13 +2290,13 @@ import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$PartEntity} from "net.neoforged.neoforge.entity.PartEntity"
 import {$MobCategory} from "net.minecraft.world.entity.MobCategory"
 import {$Tag, $Tag$$Type} from "net.minecraft.nbt.Tag"
-import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
+import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$FluidType, $FluidType$$Type} from "net.neoforged.neoforge.fluids.FluidType"
 import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
-import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$FluidType, $FluidType$$Type} from "net.neoforged.neoforge.fluids.FluidType"
 import {$SoundAction$$Type} from "net.neoforged.neoforge.common.SoundAction"
+import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export interface $IEntityExtension$$Interface extends $INBTSerializable$$Interface<($CompoundTag)> {
 get "inFluidType"(): boolean
@@ -2396,8 +2396,8 @@ import {$LoadingValidationCallback, $LoadingValidationCallback$$Type} from "net.
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$UUID$$Type} from "java.util.UUID"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
-import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$Record} from "java.lang.Record"
 
 export class $TicketController extends $Record {
@@ -2417,15 +2417,15 @@ public "id"(): $ResourceLocation
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $TicketController$$Type = ({"id"?: $ResourceLocation$$Type, "callback"?: $LoadingValidationCallback$$Type}) | ([id?: $ResourceLocation$$Type, callback?: $LoadingValidationCallback$$Type]);
+export type $TicketController$$Type = ({"callback"?: $LoadingValidationCallback$$Type, "id"?: $ResourceLocation$$Type}) | ([callback?: $LoadingValidationCallback$$Type, id?: $ResourceLocation$$Type]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
 export type $TicketController$$Original = $TicketController;}
 declare module "net.neoforged.neoforge.common.world.chunk.RegisterTicketControllersEvent" {
 import {$Event} from "net.neoforged.bus.api.Event"
-import {$TicketController$$Type} from "net.neoforged.neoforge.common.world.chunk.TicketController"
 import {$IModBusEvent$$Interface} from "net.neoforged.fml.event.IModBusEvent"
+import {$TicketController$$Type} from "net.neoforged.neoforge.common.world.chunk.TicketController"
 
 export class $RegisterTicketControllersEvent extends $Event implements $IModBusEvent$$Interface {
 public "register"(arg0: $TicketController$$Type): void
@@ -2441,13 +2441,13 @@ export type $RegisterTicketControllersEvent$$Type = ($RegisterTicketControllersE
 export type $RegisterTicketControllersEvent$$Original = $RegisterTicketControllersEvent;}
 declare module "net.neoforged.neoforge.common.data.DatapackBuiltinEntriesProvider" {
 import {$Map$$Type} from "java.util.Map"
-import {$JsonElement$$Type} from "com.google.gson.JsonElement"
 import {$List$$Type} from "java.util.List"
+import {$JsonElement$$Type} from "com.google.gson.JsonElement"
 import {$CachedOutput$$Type} from "net.minecraft.data.CachedOutput"
 import {$HolderLookup$Provider, $HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$Consumer$$Type} from "java.util.function.Consumer"
-import {$PackOutput$$Type} from "net.minecraft.data.PackOutput"
 import {$RegistrySetBuilder$PatchedRegistries$$Type} from "net.minecraft.core.RegistrySetBuilder$PatchedRegistries"
+import {$PackOutput$$Type} from "net.minecraft.data.PackOutput"
 import {$RegistriesDatapackGenerator} from "net.minecraft.data.registries.RegistriesDatapackGenerator"
 import {$RegistrySetBuilder$$Type} from "net.minecraft.core.RegistrySetBuilder"
 import {$Codec$$Type} from "com.mojang.serialization.Codec"
@@ -2467,8 +2467,8 @@ constructor(arg0: $PackOutput$$Type, arg1: $CompletableFuture$$Type<($HolderLook
 constructor(arg0: $PackOutput$$Type, arg1: $CompletableFuture$$Type<($HolderLookup$Provider$$Type)>, arg2: $RegistrySetBuilder$$Type, arg3: $Consumer$$Type<($BiConsumer<($ResourceKey<(never)>), ($ICondition)>)>, arg4: $Set$$Type<(StringJS)>)
 
 public "getRegistryProvider"(): $CompletableFuture<($HolderLookup$Provider)>
-public static "saveStable"<T>(arg0: $CachedOutput$$Type, arg1: $HolderLookup$Provider$$Type, arg2: $Codec$$Type<(T)>, arg3: T, arg4: $Path$$Type): $CompletableFuture<(never)>
 public static "saveStable"(arg0: $CachedOutput$$Type, arg1: $JsonElement$$Type, arg2: $Path$$Type): $CompletableFuture
+public static "saveStable"<T>(arg0: $CachedOutput$$Type, arg1: $HolderLookup$Provider$$Type, arg2: $Codec$$Type<(T)>, arg3: T, arg4: $Path$$Type): $CompletableFuture<(never)>
 get "registryProvider"(): $CompletableFuture<($HolderLookup$Provider)>
 }
 /**
@@ -2507,8 +2507,8 @@ import {$DamageContainer$$Type} from "net.neoforged.neoforge.common.damagesource
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$FluidType, $FluidType$$Type} from "net.neoforged.neoforge.fluids.FluidType"
-import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$SoundAction$$Type} from "net.neoforged.neoforge.common.SoundAction"
+import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$Collection, $Collection$$Type} from "java.util.Collection"
 import {$IEntityExtension$$Interface} from "net.neoforged.neoforge.common.extensions.IEntityExtension"
@@ -2668,8 +2668,8 @@ import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BubbleColumnDirection} from "net.neoforged.neoforge.common.enums.BubbleColumnDirection"
-import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$SoundType} from "net.minecraft.world.level.block.SoundType"
 import {$HitResult$$Type} from "net.minecraft.world.phys.HitResult"
@@ -2681,8 +2681,8 @@ import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
 import {$BiConsumer$$Type} from "java.util.function.BiConsumer"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
-import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
+import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$PushReaction} from "net.minecraft.world.level.material.PushReaction"
 
@@ -2744,11 +2744,11 @@ export class $IBlockExtension implements $IBlockExtension$$Interface {
  "collisionExtendsVertically"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): boolean
  "addRunningEffects"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): boolean
  "getPistonPushReaction"(arg0: $BlockState$$Type): $PushReaction
+ "onBlockStateChange"(arg0: $LevelReader$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $BlockState$$Type): void
  "onNeighborChange"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $BlockPos$$Type): void
  "getWeakChanges"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type): boolean
  "isBurning"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): boolean
  "getLightEmission"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): integer
- "onBlockStateChange"(arg0: $LevelReader$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $BlockState$$Type): void
  "shouldCheckWeakPower"(arg0: $BlockState$$Type, arg1: $SignalGetter$$Type, arg2: $BlockPos$$Type, arg3: $Direction$$Type): boolean
 }
 /**
@@ -2762,8 +2762,8 @@ export type $IBlockExtension$$Type = ($IBlockExtension);
 export type $IBlockExtension$$Original = $IBlockExtension;}
 declare module "net.neoforged.neoforge.common.world.StructureSettingsBuilder$StructureSpawnOverrideBuilder" {
 import {$StructureSpawnOverride$BoundingBoxType, $StructureSpawnOverride$BoundingBoxType$$Type} from "net.minecraft.world.level.levelgen.structure.StructureSpawnOverride$BoundingBoxType"
-import {$List} from "java.util.List"
 import {$Predicate$$Type} from "java.util.function.Predicate"
+import {$List} from "java.util.List"
 import {$MobSpawnSettings$SpawnerData, $MobSpawnSettings$SpawnerData$$Type} from "net.minecraft.world.level.biome.MobSpawnSettings$SpawnerData"
 import {$StructureSpawnOverride, $StructureSpawnOverride$$Type} from "net.minecraft.world.level.levelgen.structure.StructureSpawnOverride"
 
@@ -2835,8 +2835,8 @@ export type $IBlockAndTintGetterExtension$$Type = ($IBlockAndTintGetterExtension
  */
 export type $IBlockAndTintGetterExtension$$Original = $IBlockAndTintGetterExtension;}
 declare module "net.neoforged.neoforge.common.world.BiomeGenerationSettingsBuilder" {
-import {$GenerationStep$Decoration$$Type} from "net.minecraft.world.level.levelgen.GenerationStep$Decoration"
 import {$GenerationStep$Carving$$Type} from "net.minecraft.world.level.levelgen.GenerationStep$Carving"
+import {$GenerationStep$Decoration$$Type} from "net.minecraft.world.level.levelgen.GenerationStep$Decoration"
 import {$PlacedFeature} from "net.minecraft.world.level.levelgen.placement.PlacedFeature"
 import {$BiomeGenerationSettings$PlainBuilder} from "net.minecraft.world.level.biome.BiomeGenerationSettings$PlainBuilder"
 import {$List} from "java.util.List"
@@ -2866,23 +2866,23 @@ import {$Biome$ClimateSettings, $Biome$ClimateSettings$$Type} from "net.minecraf
 import {$Biome$TemperatureModifier, $Biome$TemperatureModifier$$Type} from "net.minecraft.world.level.biome.Biome$TemperatureModifier"
 
 export class $ClimateSettingsBuilder {
-public "setTemperature"(arg0: float): void
 public "getTemperature"(): float
 public "getDownfall"(): float
 public "hasPrecipitation"(): boolean
+public "setTemperature"(arg0: float): void
 public "setHasPrecipitation"(arg0: boolean): void
 public "getTemperatureModifier"(): $Biome$TemperatureModifier
-public "setDownfall"(arg0: float): void
 public "setTemperatureModifier"(arg0: $Biome$TemperatureModifier$$Type): void
+public "setDownfall"(arg0: float): void
 public static "copyOf"(arg0: $Biome$ClimateSettings$$Type): $ClimateSettingsBuilder
 public static "create"(arg0: boolean, arg1: float, arg2: $Biome$TemperatureModifier$$Type, arg3: float): $ClimateSettingsBuilder
 public "build"(): $Biome$ClimateSettings
-set "temperature"(value: float)
 get "temperature"(): float
 get "downfall"(): float
+set "temperature"(value: float)
 get "temperatureModifier"(): $Biome$TemperatureModifier
-set "downfall"(value: float)
 set "temperatureModifier"(value: $Biome$TemperatureModifier$$Type)
+set "downfall"(value: float)
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -2897,10 +2897,10 @@ declare module "net.neoforged.neoforge.common.world.BiomeModifiers$AddSpawnsBiom
 import {$ModifiableBiomeInfo$BiomeInfo$Builder$$Type} from "net.neoforged.neoforge.common.world.ModifiableBiomeInfo$BiomeInfo$Builder"
 import {$List, $List$$Type} from "java.util.List"
 import {$HolderSet, $HolderSet$$Type} from "net.minecraft.core.HolderSet"
-import {$Biome, $Biome$$Type} from "net.minecraft.world.level.biome.Biome"
-import {$MobSpawnSettings$SpawnerData, $MobSpawnSettings$SpawnerData$$Type} from "net.minecraft.world.level.biome.MobSpawnSettings$SpawnerData"
 import {$BiomeModifier, $BiomeModifier$$Interface} from "net.neoforged.neoforge.common.world.BiomeModifier"
 import {$BiomeModifier$Phase$$Type} from "net.neoforged.neoforge.common.world.BiomeModifier$Phase"
+import {$MobSpawnSettings$SpawnerData, $MobSpawnSettings$SpawnerData$$Type} from "net.minecraft.world.level.biome.MobSpawnSettings$SpawnerData"
+import {$Biome, $Biome$$Type} from "net.minecraft.world.level.biome.Biome"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$Holder$$Type} from "net.minecraft.core.Holder"
 import {$Record} from "java.lang.Record"
@@ -2913,22 +2913,22 @@ public static "singleSpawn"(arg0: $HolderSet$$Type<($Biome)>, arg1: $MobSpawnSet
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
-public "modify"(arg0: $Holder$$Type<($Biome)>, arg1: $BiomeModifier$Phase$$Type, arg2: $ModifiableBiomeInfo$BiomeInfo$Builder$$Type): void
 public "codec"(): $MapCodec<($BiomeModifier)>
+public "modify"(arg0: $Holder$$Type<($Biome)>, arg1: $BiomeModifier$Phase$$Type, arg2: $ModifiableBiomeInfo$BiomeInfo$Builder$$Type): void
 public "biomes"(): $HolderSet<($Biome)>
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $BiomeModifiers$AddSpawnsBiomeModifier$$Type = ({"biomes"?: $HolderSet$$Type<($Biome)>, "spawners"?: $List$$Type<($MobSpawnSettings$SpawnerData$$Type)>}) | ([biomes?: $HolderSet$$Type<($Biome)>, spawners?: $List$$Type<($MobSpawnSettings$SpawnerData$$Type)>]);
+export type $BiomeModifiers$AddSpawnsBiomeModifier$$Type = ({"spawners"?: $List$$Type<($MobSpawnSettings$SpawnerData$$Type)>, "biomes"?: $HolderSet$$Type<($Biome)>}) | ([spawners?: $List$$Type<($MobSpawnSettings$SpawnerData$$Type)>, biomes?: $HolderSet$$Type<($Biome)>]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
 export type $BiomeModifiers$AddSpawnsBiomeModifier$$Original = $BiomeModifiers$AddSpawnsBiomeModifier;}
 declare module "net.neoforged.neoforge.common.conditions.ICondition$IContext" {
-import {$Map, $Map$$Type} from "java.util.Map"
 import {$Collection, $Collection$$Type} from "java.util.Collection"
+import {$Map, $Map$$Type} from "java.util.Map"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Registry, $Registry$$Type} from "net.minecraft.core.Registry"
 import {$TagKey$$Type} from "net.minecraft.tags.TagKey"
@@ -2957,12 +2957,12 @@ export type $ICondition$IContext$$Type = ((arg0: $ResourceKey<($Registry<(T)>)>)
  */
 export type $ICondition$IContext$$Original = $ICondition$IContext;}
 declare module "net.neoforged.neoforge.common.ModConfigSpec$Builder" {
-import {$EnumGetMethod$$Type} from "com.electronwill.nightconfig.core.EnumGetMethod"
 import {$Collection$$Type} from "java.util.Collection"
+import {$EnumGetMethod$$Type} from "com.electronwill.nightconfig.core.EnumGetMethod"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Comparable, $Comparable$$Type} from "java.lang.Comparable"
-import {$Predicate$$Type} from "java.util.function.Predicate"
 import {$List, $List$$Type} from "java.util.List"
+import {$Predicate$$Type} from "java.util.function.Predicate"
 import {$ModConfigSpec} from "net.neoforged.neoforge.common.ModConfigSpec"
 import {$ModConfigSpec$DoubleValue} from "net.neoforged.neoforge.common.ModConfigSpec$DoubleValue"
 import {$ModConfigSpec$BooleanValue} from "net.neoforged.neoforge.common.ModConfigSpec$BooleanValue"
@@ -2980,98 +2980,98 @@ import {$ModConfigSpec$IntValue} from "net.neoforged.neoforge.common.ModConfigSp
 export class $ModConfigSpec$Builder {
 constructor()
 
+public "defineListAllowEmpty"<T>(arg0: $List$$Type<(StringJS)>, arg1: $Supplier$$Type<($List$$Type<(T)>)>, arg2: $Supplier$$Type<(T)>, arg3: $Predicate$$Type<(any)>): $ModConfigSpec$ConfigValue<($List<(T)>)>
 public "defineListAllowEmpty"<T>(arg0: StringJS, arg1: $List$$Type<(T)>, arg2: $Supplier$$Type<(T)>, arg3: $Predicate$$Type<(any)>): $ModConfigSpec$ConfigValue<($List<(T)>)>
 /**
  * 
  * @deprecated
  */
 public "defineListAllowEmpty"<T>(arg0: StringJS, arg1: $List$$Type<(T)>, arg2: $Predicate$$Type<(any)>): $ModConfigSpec$ConfigValue<($List<(T)>)>
-public "defineListAllowEmpty"<T>(arg0: $List$$Type<(StringJS)>, arg1: $Supplier$$Type<($List$$Type<(T)>)>, arg2: $Supplier$$Type<(T)>, arg3: $Predicate$$Type<(any)>): $ModConfigSpec$ConfigValue<($List<(T)>)>
-/**
- * 
- * @deprecated
- */
-public "defineListAllowEmpty"<T>(arg0: $List$$Type<(StringJS)>, arg1: $Supplier$$Type<($List$$Type<(T)>)>, arg2: $Predicate$$Type<(any)>): $ModConfigSpec$ConfigValue<($List<(T)>)>
-public "defineListAllowEmpty"<T>(arg0: $List$$Type<(StringJS)>, arg1: $List$$Type<(T)>, arg2: $Supplier$$Type<(T)>, arg3: $Predicate$$Type<(any)>): $ModConfigSpec$ConfigValue<($List<(T)>)>
 /**
  * 
  * @deprecated
  */
 public "defineListAllowEmpty"<T>(arg0: $List$$Type<(StringJS)>, arg1: $List$$Type<(T)>, arg2: $Predicate$$Type<(any)>): $ModConfigSpec$ConfigValue<($List<(T)>)>
-public "defineListAllowEmpty"<T>(arg0: StringJS, arg1: $Supplier$$Type<($List$$Type<(T)>)>, arg2: $Supplier$$Type<(T)>, arg3: $Predicate$$Type<(any)>): $ModConfigSpec$ConfigValue<($List<(T)>)>
+public "defineListAllowEmpty"<T>(arg0: $List$$Type<(StringJS)>, arg1: $List$$Type<(T)>, arg2: $Supplier$$Type<(T)>, arg3: $Predicate$$Type<(any)>): $ModConfigSpec$ConfigValue<($List<(T)>)>
+/**
+ * 
+ * @deprecated
+ */
+public "defineListAllowEmpty"<T>(arg0: $List$$Type<(StringJS)>, arg1: $Supplier$$Type<($List$$Type<(T)>)>, arg2: $Predicate$$Type<(any)>): $ModConfigSpec$ConfigValue<($List<(T)>)>
 /**
  * 
  * @deprecated
  */
 public "defineListAllowEmpty"<T>(arg0: StringJS, arg1: $Supplier$$Type<($List$$Type<(T)>)>, arg2: $Predicate$$Type<(any)>): $ModConfigSpec$ConfigValue<($List<(T)>)>
+public "defineListAllowEmpty"<T>(arg0: StringJS, arg1: $Supplier$$Type<($List$$Type<(T)>)>, arg2: $Supplier$$Type<(T)>, arg3: $Predicate$$Type<(any)>): $ModConfigSpec$ConfigValue<($List<(T)>)>
 public "worldRestart"(): $ModConfigSpec$Builder
 public "gameRestart"(): $ModConfigSpec$Builder
 public "configure"<T>(arg0: $Function$$Type<($ModConfigSpec$Builder), (T)>): $Pair<(T), ($ModConfigSpec)>
-public "push"(arg0: $List$$Type<(StringJS)>): $ModConfigSpec$Builder
-public "push"(arg0: StringJS): $ModConfigSpec$Builder
-public "pop"(arg0: integer): $ModConfigSpec$Builder
-public "pop"(): $ModConfigSpec$Builder
-public "comment"(...arg0: (StringJS)[]): $ModConfigSpec$Builder
 public "comment"(arg0: StringJS): $ModConfigSpec$Builder
+public "comment"(...arg0: (StringJS)[]): $ModConfigSpec$Builder
 public "build"(): $ModConfigSpec
+public "push"(arg0: StringJS): $ModConfigSpec$Builder
+public "push"(arg0: $List$$Type<(StringJS)>): $ModConfigSpec$Builder
+public "pop"(): $ModConfigSpec$Builder
+public "pop"(arg0: integer): $ModConfigSpec$Builder
 public "translation"(arg0: StringJS): $ModConfigSpec$Builder
-public "define"(arg0: $List$$Type<(StringJS)>, arg1: boolean): $ModConfigSpec$BooleanValue
-public "define"(arg0: StringJS, arg1: boolean): $ModConfigSpec$BooleanValue
-public "define"<T>(arg0: StringJS, arg1: $Supplier$$Type<(T)>, arg2: $Predicate$$Type<(any)>): $ModConfigSpec$ConfigValue<(T)>
-public "define"<T>(arg0: $List$$Type<(StringJS)>, arg1: $ModConfigSpec$ValueSpec$$Type, arg2: $Supplier$$Type<(T)>): $ModConfigSpec$ConfigValue<(T)>
-public "define"<T>(arg0: $List$$Type<(StringJS)>, arg1: $Supplier$$Type<(T)>, arg2: $Predicate$$Type<(any)>, arg3: $Class$$Type<(never)>): $ModConfigSpec$ConfigValue<(T)>
-public "define"<T>(arg0: $List$$Type<(StringJS)>, arg1: $Supplier$$Type<(T)>, arg2: $Predicate$$Type<(any)>): $ModConfigSpec$ConfigValue<(T)>
-public "define"<T>(arg0: StringJS, arg1: T): $ModConfigSpec$ConfigValue<(T)>
-public "define"<T>(arg0: $List$$Type<(StringJS)>, arg1: T): $ModConfigSpec$ConfigValue<(T)>
 public "define"<T>(arg0: StringJS, arg1: T, arg2: $Predicate$$Type<(any)>): $ModConfigSpec$ConfigValue<(T)>
 public "define"<T>(arg0: $List$$Type<(StringJS)>, arg1: T, arg2: $Predicate$$Type<(any)>): $ModConfigSpec$ConfigValue<(T)>
+public "define"<T>(arg0: StringJS, arg1: $Supplier$$Type<(T)>, arg2: $Predicate$$Type<(any)>): $ModConfigSpec$ConfigValue<(T)>
+public "define"<T>(arg0: $List$$Type<(StringJS)>, arg1: $Supplier$$Type<(T)>, arg2: $Predicate$$Type<(any)>): $ModConfigSpec$ConfigValue<(T)>
+public "define"<T>(arg0: $List$$Type<(StringJS)>, arg1: $Supplier$$Type<(T)>, arg2: $Predicate$$Type<(any)>, arg3: $Class$$Type<(never)>): $ModConfigSpec$ConfigValue<(T)>
 public "define"(arg0: $List$$Type<(StringJS)>, arg1: $Supplier$$Type<(boolean)>): $ModConfigSpec$BooleanValue
+public "define"<T>(arg0: $List$$Type<(StringJS)>, arg1: T): $ModConfigSpec$ConfigValue<(T)>
+public "define"(arg0: $List$$Type<(StringJS)>, arg1: boolean): $ModConfigSpec$BooleanValue
+public "define"(arg0: StringJS, arg1: boolean): $ModConfigSpec$BooleanValue
+public "define"<T>(arg0: StringJS, arg1: T): $ModConfigSpec$ConfigValue<(T)>
+public "define"<T>(arg0: $List$$Type<(StringJS)>, arg1: $ModConfigSpec$ValueSpec$$Type, arg2: $Supplier$$Type<(T)>): $ModConfigSpec$ConfigValue<(T)>
 public "define"(arg0: StringJS, arg1: $Supplier$$Type<(boolean)>): $ModConfigSpec$BooleanValue
-public "defineInList"<T>(arg0: $List$$Type<(StringJS)>, arg1: $Supplier$$Type<(T)>, arg2: $Collection$$Type<(T)>): $ModConfigSpec$ConfigValue<(T)>
 public "defineInList"<T>(arg0: StringJS, arg1: $Supplier$$Type<(T)>, arg2: $Collection$$Type<(T)>): $ModConfigSpec$ConfigValue<(T)>
 public "defineInList"<T>(arg0: StringJS, arg1: T, arg2: $Collection$$Type<(T)>): $ModConfigSpec$ConfigValue<(T)>
 public "defineInList"<T>(arg0: $List$$Type<(StringJS)>, arg1: T, arg2: $Collection$$Type<(T)>): $ModConfigSpec$ConfigValue<(T)>
+public "defineInList"<T>(arg0: $List$$Type<(StringJS)>, arg1: $Supplier$$Type<(T)>, arg2: $Collection$$Type<(T)>): $ModConfigSpec$ConfigValue<(T)>
 public "defineInRange"(arg0: $List$$Type<(StringJS)>, arg1: $Supplier$$Type<(integer)>, arg2: integer, arg3: integer): $ModConfigSpec$IntValue
 public "defineInRange"(arg0: StringJS, arg1: $Supplier$$Type<(integer)>, arg2: integer, arg3: integer): $ModConfigSpec$IntValue
-public "defineInRange"(arg0: $List$$Type<(StringJS)>, arg1: $Supplier$$Type<(double)>, arg2: double, arg3: double): $ModConfigSpec$DoubleValue
-public "defineInRange"(arg0: StringJS, arg1: integer, arg2: integer, arg3: integer): $ModConfigSpec$IntValue
 public "defineInRange"(arg0: $List$$Type<(StringJS)>, arg1: integer, arg2: integer, arg3: integer): $ModConfigSpec$IntValue
-public "defineInRange"(arg0: StringJS, arg1: $Supplier$$Type<(long)>, arg2: long, arg3: long): $ModConfigSpec$LongValue
-public "defineInRange"(arg0: $List$$Type<(StringJS)>, arg1: long, arg2: long, arg3: long): $ModConfigSpec$LongValue
+public "defineInRange"(arg0: StringJS, arg1: integer, arg2: integer, arg3: integer): $ModConfigSpec$IntValue
+public "defineInRange"(arg0: $List$$Type<(StringJS)>, arg1: $Supplier$$Type<(double)>, arg2: double, arg3: double): $ModConfigSpec$DoubleValue
 public "defineInRange"(arg0: StringJS, arg1: long, arg2: long, arg3: long): $ModConfigSpec$LongValue
+public "defineInRange"(arg0: $List$$Type<(StringJS)>, arg1: long, arg2: long, arg3: long): $ModConfigSpec$LongValue
+public "defineInRange"(arg0: StringJS, arg1: $Supplier$$Type<(long)>, arg2: long, arg3: long): $ModConfigSpec$LongValue
 public "defineInRange"(arg0: $List$$Type<(StringJS)>, arg1: $Supplier$$Type<(long)>, arg2: long, arg3: long): $ModConfigSpec$LongValue
 public "defineInRange"<V extends $Comparable<(object)>>(arg0: $List$$Type<(StringJS)>, arg1: $Supplier$$Type<(V)>, arg2: V, arg3: V, arg4: $Class$$Type<(V)>): $ModConfigSpec$ConfigValue<(V)>
+public "defineInRange"<V extends $Comparable<(object)>>(arg0: StringJS, arg1: V, arg2: V, arg3: V, arg4: $Class$$Type<(V)>): $ModConfigSpec$ConfigValue<(V)>
 public "defineInRange"<V extends $Comparable<(object)>>(arg0: StringJS, arg1: $Supplier$$Type<(V)>, arg2: V, arg3: V, arg4: $Class$$Type<(V)>): $ModConfigSpec$ConfigValue<(V)>
 public "defineInRange"<V extends $Comparable<(object)>>(arg0: $List$$Type<(StringJS)>, arg1: V, arg2: V, arg3: V, arg4: $Class$$Type<(V)>): $ModConfigSpec$ConfigValue<(V)>
-public "defineInRange"<V extends $Comparable<(object)>>(arg0: StringJS, arg1: V, arg2: V, arg3: V, arg4: $Class$$Type<(V)>): $ModConfigSpec$ConfigValue<(V)>
-public "defineInRange"(arg0: $List$$Type<(StringJS)>, arg1: double, arg2: double, arg3: double): $ModConfigSpec$DoubleValue
-public "defineInRange"(arg0: StringJS, arg1: double, arg2: double, arg3: double): $ModConfigSpec$DoubleValue
 public "defineInRange"(arg0: StringJS, arg1: $Supplier$$Type<(double)>, arg2: double, arg3: double): $ModConfigSpec$DoubleValue
-/**
- * 
- * @deprecated
- */
-public "defineList"<T>(arg0: $List$$Type<(StringJS)>, arg1: $Supplier$$Type<($List$$Type<(T)>)>, arg2: $Predicate$$Type<(any)>): $ModConfigSpec$ConfigValue<($List<(T)>)>
+public "defineInRange"(arg0: StringJS, arg1: double, arg2: double, arg3: double): $ModConfigSpec$DoubleValue
+public "defineInRange"(arg0: $List$$Type<(StringJS)>, arg1: double, arg2: double, arg3: double): $ModConfigSpec$DoubleValue
 public "defineList"<T>(arg0: $List$$Type<(StringJS)>, arg1: $List$$Type<(T)>, arg2: $Supplier$$Type<(T)>, arg3: $Predicate$$Type<(any)>): $ModConfigSpec$ConfigValue<($List<(T)>)>
 /**
  * 
  * @deprecated
  */
-public "defineList"<T>(arg0: $List$$Type<(StringJS)>, arg1: $List$$Type<(T)>, arg2: $Predicate$$Type<(any)>): $ModConfigSpec$ConfigValue<($List<(T)>)>
-public "defineList"<T>(arg0: $List$$Type<(StringJS)>, arg1: $Supplier$$Type<($List$$Type<(T)>)>, arg2: $Supplier$$Type<(T)>, arg3: $Predicate$$Type<(any)>, arg4: $ModConfigSpec$Range$$Type<(integer)>): $ModConfigSpec$ConfigValue<($List<(T)>)>
+public "defineList"<T>(arg0: $List$$Type<(StringJS)>, arg1: $Supplier$$Type<($List$$Type<(T)>)>, arg2: $Predicate$$Type<(any)>): $ModConfigSpec$ConfigValue<($List<(T)>)>
 public "defineList"<T>(arg0: $List$$Type<(StringJS)>, arg1: $Supplier$$Type<($List$$Type<(T)>)>, arg2: $Supplier$$Type<(T)>, arg3: $Predicate$$Type<(any)>): $ModConfigSpec$ConfigValue<($List<(T)>)>
-/**
- * 
- * @deprecated
- */
-public "defineList"<T>(arg0: StringJS, arg1: $List$$Type<(T)>, arg2: $Predicate$$Type<(any)>): $ModConfigSpec$ConfigValue<($List<(T)>)>
 public "defineList"<T>(arg0: StringJS, arg1: $List$$Type<(T)>, arg2: $Supplier$$Type<(T)>, arg3: $Predicate$$Type<(any)>): $ModConfigSpec$ConfigValue<($List<(T)>)>
 /**
  * 
  * @deprecated
  */
-public "defineList"<T>(arg0: StringJS, arg1: $Supplier$$Type<($List$$Type<(T)>)>, arg2: $Predicate$$Type<(any)>): $ModConfigSpec$ConfigValue<($List<(T)>)>
+public "defineList"<T>(arg0: StringJS, arg1: $List$$Type<(T)>, arg2: $Predicate$$Type<(any)>): $ModConfigSpec$ConfigValue<($List<(T)>)>
 public "defineList"<T>(arg0: StringJS, arg1: $Supplier$$Type<($List$$Type<(T)>)>, arg2: $Supplier$$Type<(T)>, arg3: $Predicate$$Type<(any)>): $ModConfigSpec$ConfigValue<($List<(T)>)>
+public "defineList"<T>(arg0: $List$$Type<(StringJS)>, arg1: $Supplier$$Type<($List$$Type<(T)>)>, arg2: $Supplier$$Type<(T)>, arg3: $Predicate$$Type<(any)>, arg4: $ModConfigSpec$Range$$Type<(integer)>): $ModConfigSpec$ConfigValue<($List<(T)>)>
+/**
+ * 
+ * @deprecated
+ */
+public "defineList"<T>(arg0: StringJS, arg1: $Supplier$$Type<($List$$Type<(T)>)>, arg2: $Predicate$$Type<(any)>): $ModConfigSpec$ConfigValue<($List<(T)>)>
+/**
+ * 
+ * @deprecated
+ */
+public "defineList"<T>(arg0: $List$$Type<(StringJS)>, arg1: $List$$Type<(T)>, arg2: $Predicate$$Type<(any)>): $ModConfigSpec$ConfigValue<($List<(T)>)>
 public "defineEnum"<V extends $Enum<(object)>>(arg0: StringJS, arg1: V, arg2: $EnumGetMethod$$Type, ...arg3: (V)[]): $ModConfigSpec$EnumValue<(V)>
 public "defineEnum"<V extends $Enum<(object)>>(arg0: $List$$Type<(StringJS)>, arg1: V, ...arg2: (V)[]): $ModConfigSpec$EnumValue<(V)>
 public "defineEnum"<V extends $Enum<(object)>>(arg0: $List$$Type<(StringJS)>, arg1: V, arg2: $EnumGetMethod$$Type, ...arg3: (V)[]): $ModConfigSpec$EnumValue<(V)>
@@ -3129,8 +3129,8 @@ import {$Record} from "java.lang.Record"
 export class $TicketSet extends $Record {
 constructor(nonTicking: $LongSet$$Type, ticking: $LongSet$$Type)
 
-public "ticking"(): $LongSet
 public "nonTicking"(): $LongSet
+public "ticking"(): $LongSet
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
@@ -3201,21 +3201,21 @@ export type $IAbstractMinecartExtension$$Original = $IAbstractMinecartExtension;
 declare module "net.neoforged.neoforge.common.ModConfigSpec" {
 import {$ConfigSpec$CorrectionListener$$Type} from "com.electronwill.nightconfig.core.ConfigSpec$CorrectionListener"
 import {$ModConfig$$Type} from "net.neoforged.fml.config.ModConfig"
-import {$ModConfigSpec$RestartType$$Type} from "net.neoforged.neoforge.common.ModConfigSpec$RestartType"
 import {$List$$Type} from "java.util.List"
-import {$UnmodifiableCommentedConfig$$Type} from "com.electronwill.nightconfig.core.UnmodifiableCommentedConfig"
+import {$ModConfigSpec$RestartType$$Type} from "net.neoforged.neoforge.common.ModConfigSpec$RestartType"
 import {$IConfigSpec$ILoadedConfig$$Type} from "net.neoforged.fml.config.IConfigSpec$ILoadedConfig"
+import {$UnmodifiableCommentedConfig$$Type} from "com.electronwill.nightconfig.core.UnmodifiableCommentedConfig"
 import {$UnmodifiableConfig} from "com.electronwill.nightconfig.core.UnmodifiableConfig"
 import {$IConfigSpec$$Interface} from "net.neoforged.fml.config.IConfigSpec"
 import {$CommentedConfig$$Type} from "com.electronwill.nightconfig.core.CommentedConfig"
 
 export class $ModConfigSpec implements $IConfigSpec$$Interface {
+public "getValues"(): $UnmodifiableConfig
 public "validateSpec"(arg0: $ModConfig$$Type): void
 public "acceptConfig"(arg0: $IConfigSpec$ILoadedConfig$$Type): void
 public "getLevelComment"(arg0: $List$$Type<(StringJS)>): StringJS
 public "getLevelTranslationKey"(arg0: $List$$Type<(StringJS)>): StringJS
 public "afterReload"(): void
-public "getValues"(): $UnmodifiableConfig
 public "isEmpty"(): boolean
 public "save"(): void
 public "isLoaded"(): boolean
@@ -3250,8 +3250,8 @@ import {$CustomPacketPayload$$Type} from "net.minecraft.network.protocol.common.
 import {$DisconnectionDetails, $DisconnectionDetails$$Type} from "net.minecraft.network.DisconnectionDetails"
 import {$ConnectionType} from "net.neoforged.neoforge.network.connection.ConnectionType"
 import {$IServerCommonPacketListenerExtension$$Interface} from "net.neoforged.neoforge.common.extensions.IServerCommonPacketListenerExtension"
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Exception$$Type} from "java.lang.Exception"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$ConnectionProtocol} from "net.minecraft.network.ConnectionProtocol"
 import {$Packet$$Type} from "net.minecraft.network.protocol.Packet"
 import {$Throwable$$Type} from "java.lang.Throwable"
@@ -3301,8 +3301,8 @@ export type $IServerGamePacketListenerExtension$$Type = ($IServerGamePacketListe
 export type $IServerGamePacketListenerExtension$$Original = $IServerGamePacketListenerExtension;}
 declare module "net.neoforged.neoforge.common.util.InsertableLinkedOpenCustomHashSet" {
 import {$Iterator} from "java.util.Iterator"
-import {$Collection$$Type} from "java.util.Collection"
 import {$Hash$Strategy$$Type} from "it.unimi.dsi.fastutil.Hash$Strategy"
+import {$Collection$$Type} from "java.util.Collection"
 import {$ObjectSet} from "it.unimi.dsi.fastutil.objects.ObjectSet"
 import {$SortedSet} from "java.util.SortedSet"
 import {$Spliterator} from "java.util.Spliterator"
@@ -3353,9 +3353,9 @@ import {$GenerationStep$Decoration, $GenerationStep$Decoration$$Type} from "net.
 import {$PlacedFeature, $PlacedFeature$$Type} from "net.minecraft.world.level.levelgen.placement.PlacedFeature"
 import {$ModifiableBiomeInfo$BiomeInfo$Builder$$Type} from "net.neoforged.neoforge.common.world.ModifiableBiomeInfo$BiomeInfo$Builder"
 import {$HolderSet, $HolderSet$$Type} from "net.minecraft.core.HolderSet"
-import {$Biome, $Biome$$Type} from "net.minecraft.world.level.biome.Biome"
 import {$BiomeModifier, $BiomeModifier$$Interface} from "net.neoforged.neoforge.common.world.BiomeModifier"
 import {$BiomeModifier$Phase$$Type} from "net.neoforged.neoforge.common.world.BiomeModifier$Phase"
+import {$Biome, $Biome$$Type} from "net.minecraft.world.level.biome.Biome"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$Holder$$Type} from "net.minecraft.core.Holder"
 import {$Record} from "java.lang.Record"
@@ -3368,8 +3368,8 @@ public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
 public "step"(): $GenerationStep$Decoration
-public "modify"(arg0: $Holder$$Type<($Biome)>, arg1: $BiomeModifier$Phase$$Type, arg2: $ModifiableBiomeInfo$BiomeInfo$Builder$$Type): void
 public "codec"(): $MapCodec<($BiomeModifier)>
+public "modify"(arg0: $Holder$$Type<($Biome)>, arg1: $BiomeModifier$Phase$$Type, arg2: $ModifiableBiomeInfo$BiomeInfo$Builder$$Type): void
 public "biomes"(): $HolderSet<($Biome)>
 }
 /**
@@ -3484,8 +3484,8 @@ export type $StructureSettingsBuilder$$Type = ($StructureSettingsBuilder);
  */
 export type $StructureSettingsBuilder$$Original = $StructureSettingsBuilder;}
 declare module "net.neoforged.neoforge.common.extensions.IBoatExtension" {
-import {$FluidType$$Type} from "net.neoforged.neoforge.fluids.FluidType"
 import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
+import {$FluidType$$Type} from "net.neoforged.neoforge.fluids.FluidType"
 
 export interface $IBoatExtension$$Interface {
 }
@@ -3509,8 +3509,8 @@ import {$AttributeModifier$$Type} from "net.minecraft.world.entity.ai.attributes
 import {$AttributeModifier$Operation$$Type} from "net.minecraft.world.entity.ai.attributes.AttributeModifier$Operation"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
-import {$Attribute} from "net.minecraft.world.entity.ai.attributes.Attribute"
 import {$MutableComponent} from "net.minecraft.network.chat.MutableComponent"
+import {$Attribute} from "net.minecraft.world.entity.ai.attributes.Attribute"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
 import {$Holder} from "net.minecraft.core.Holder"
 
@@ -3666,8 +3666,8 @@ import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$CustomPacketPayload$$Type} from "net.minecraft.network.protocol.common.custom.CustomPacketPayload"
 import {$DisconnectionDetails, $DisconnectionDetails$$Type} from "net.minecraft.network.DisconnectionDetails"
 import {$ConnectionType} from "net.neoforged.neoforge.network.connection.ConnectionType"
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Exception$$Type} from "java.lang.Exception"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$ConnectionProtocol} from "net.minecraft.network.ConnectionProtocol"
 import {$Packet$$Type} from "net.minecraft.network.protocol.Packet"
 import {$Throwable$$Type} from "java.lang.Throwable"
@@ -3757,15 +3757,15 @@ export type $ModConfigSpec$IntValue$$Type = ($ModConfigSpec$IntValue);
 export type $ModConfigSpec$IntValue$$Original = $ModConfigSpec$IntValue;}
 declare module "net.neoforged.neoforge.common.extensions.ICommonPacketListener" {
 import {$PacketFlow} from "net.minecraft.network.protocol.PacketFlow"
-import {$CrashReport$$Type} from "net.minecraft.CrashReport"
 import {$PacketListener$$Interface} from "net.minecraft.network.PacketListener"
+import {$CrashReport$$Type} from "net.minecraft.CrashReport"
 import {$CustomPacketPayload$Type$$Type} from "net.minecraft.network.protocol.common.custom.CustomPacketPayload$Type"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$CustomPacketPayload$$Type} from "net.minecraft.network.protocol.common.custom.CustomPacketPayload"
 import {$DisconnectionDetails, $DisconnectionDetails$$Type} from "net.minecraft.network.DisconnectionDetails"
 import {$ConnectionType} from "net.neoforged.neoforge.network.connection.ConnectionType"
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Exception$$Type} from "java.lang.Exception"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$ConnectionProtocol} from "net.minecraft.network.ConnectionProtocol"
 import {$Packet$$Type} from "net.minecraft.network.protocol.Packet"
 import {$Throwable$$Type} from "java.lang.Throwable"
@@ -3821,8 +3821,8 @@ export interface $IShearable$$Interface {
 }
 
 export class $IShearable implements $IShearable$$Interface {
- "onSheared"(arg0: $Player$$Type, arg1: $ItemStack$$Type, arg2: $Level$$Type, arg3: $BlockPos$$Type): $List<($ItemStack)>
  "isShearable"(arg0: $Player$$Type, arg1: $ItemStack$$Type, arg2: $Level$$Type, arg3: $BlockPos$$Type): boolean
+ "onSheared"(arg0: $Player$$Type, arg1: $ItemStack$$Type, arg2: $Level$$Type, arg3: $BlockPos$$Type): $List<($ItemStack)>
  "handler$cik000$apothic_enchanting$apoth_handleShearFortune"(arg0: $Player$$Type, arg1: $ItemStack$$Type, arg2: $Level$$Type, arg3: $BlockPos$$Type, arg4: $CallbackInfoReturnable$$Type): void
  "handler$cik000$apothic_enchanting$apoth_handleShearEnchantments"(arg0: $Player$$Type, arg1: $ItemStack$$Type, arg2: $Level$$Type, arg3: $BlockPos$$Type, arg4: $CallbackInfoReturnable$$Type): void
  "spawnShearedDrop"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $ItemStack$$Type): void
@@ -3838,8 +3838,8 @@ export type $IShearable$$Type = ($IShearable);
 export type $IShearable$$Original = $IShearable;}
 declare module "net.neoforged.neoforge.common.extensions.IBlockGetterExtension" {
 import {$AuxiliaryLightManager} from "net.neoforged.neoforge.common.world.AuxiliaryLightManager"
-import {$ModelData} from "net.neoforged.neoforge.client.model.data.ModelData"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$ModelData} from "net.neoforged.neoforge.client.model.data.ModelData"
 import {$ChunkPos$$Type} from "net.minecraft.world.level.ChunkPos"
 
 export interface $IBlockGetterExtension$$Interface {
@@ -3884,8 +3884,8 @@ declare module "net.neoforged.neoforge.common.extensions.IPlayerExtension" {
 import {$MenuProvider$$Type} from "net.minecraft.world.MenuProvider"
 import {$RegistryFriendlyByteBuf$$Type} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$OptionalInt} from "java.util.OptionalInt"
-import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 
 export interface $IPlayerExtension$$Interface {
@@ -3910,8 +3910,8 @@ export type $IPlayerExtension$$Type = ($IPlayerExtension);
 export type $IPlayerExtension$$Original = $IPlayerExtension;}
 declare module "net.neoforged.neoforge.common.world.ModifiableBiomeInfo" {
 import {$List$$Type} from "java.util.List"
-import {$Biome$$Type} from "net.minecraft.world.level.biome.Biome"
 import {$BiomeModifier$$Type} from "net.neoforged.neoforge.common.world.BiomeModifier"
+import {$Biome$$Type} from "net.minecraft.world.level.biome.Biome"
 import {$Holder$$Type} from "net.minecraft.core.Holder"
 import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
 import {$ModifiableBiomeInfo$BiomeInfo, $ModifiableBiomeInfo$BiomeInfo$$Type} from "net.neoforged.neoforge.common.world.ModifiableBiomeInfo$BiomeInfo"
@@ -3936,8 +3936,8 @@ export type $ModifiableBiomeInfo$$Type = ($ModifiableBiomeInfo);
  */
 export type $ModifiableBiomeInfo$$Original = $ModifiableBiomeInfo;}
 declare module "net.neoforged.neoforge.common.data.ExistingFileHelper" {
-import {$Collection$$Type} from "java.util.Collection"
 import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
+import {$Collection$$Type} from "java.util.Collection"
 import {$File$$Type} from "java.io.File"
 import {$PackType$$Type} from "net.minecraft.server.packs.PackType"
 import {$List} from "java.util.List"
@@ -3971,8 +3971,8 @@ export type $ExistingFileHelper$$Type = ($ExistingFileHelper);
 export type $ExistingFileHelper$$Original = $ExistingFileHelper;}
 declare module "net.neoforged.neoforge.common.world.poi.ExtendPoiTypesEvent" {
 import {$PoiType$$Type} from "net.minecraft.world.entity.ai.village.poi.PoiType"
-import {$Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Event} from "net.neoforged.bus.api.Event"
+import {$Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Set$$Type} from "java.util.Set"
 import {$ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
 import {$IModBusEvent$$Interface} from "net.neoforged.fml.event.IModBusEvent"
@@ -3996,8 +3996,8 @@ import {$IngredientType} from "net.neoforged.neoforge.common.crafting.Ingredient
 import {$ItemStackSet} from "dev.latvian.mods.kubejs.item.ItemStackSet"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Ingredient} from "net.minecraft.world.item.crafting.Ingredient"
-import {$ItemPredicate} from "dev.latvian.mods.kubejs.item.ItemPredicate"
 import {$Predicate, $Predicate$$Type} from "java.util.function.Predicate"
+import {$ItemPredicate} from "dev.latvian.mods.kubejs.item.ItemPredicate"
 import {$CustomIngredientKJS$$Interface} from "dev.latvian.mods.kubejs.core.CustomIngredientKJS"
 import {$Item, $Item$$Type} from "net.minecraft.world.item.Item"
 import {$Set} from "java.util.Set"
@@ -4036,11 +4036,11 @@ export class $ICustomIngredient implements $ICustomIngredient$$Interface {
  "test"(itemStack: any): boolean
 static "wrap"(from: any): $ItemPredicate
  "isWildcard"(): boolean
- "or"(arg0: $Predicate$$Type<($ItemStack)>): $Predicate<($ItemStack)>
+static "not"<T>(arg0: $Predicate$$Type<($ItemStack)>): $Predicate<($ItemStack)>
 static "isEqual"<T>(arg0: any): $Predicate<($ItemStack)>
  "negate"(): $Predicate<($ItemStack)>
  "and"(arg0: $Predicate$$Type<($ItemStack)>): $Predicate<($ItemStack)>
-static "not"<T>(arg0: $Predicate$$Type<($ItemStack)>): $Predicate<($ItemStack)>
+ "or"(arg0: $Predicate$$Type<($ItemStack)>): $Predicate<($ItemStack)>
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -4072,18 +4072,15 @@ export type $AuxiliaryLightManager$$Type = ($AuxiliaryLightManager);
  */
 export type $AuxiliaryLightManager$$Original = $AuxiliaryLightManager;}
 declare module "net.neoforged.neoforge.common.util.NeoForgeExtraCodecs$AlternativeMapCodec" {
-import {$KeyCompressor, $KeyCompressor$$Type} from "com.mojang.serialization.KeyCompressor"
 import {$Keyable} from "com.mojang.serialization.Keyable"
+import {$KeyCompressor, $KeyCompressor$$Type} from "com.mojang.serialization.KeyCompressor"
 import {$DynamicOps$$Type} from "com.mojang.serialization.DynamicOps"
-import {$MapDecoder} from "com.mojang.serialization.MapDecoder"
 import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$RecordBuilder} from "com.mojang.serialization.RecordBuilder"
-import {$Lifecycle$$Type} from "com.mojang.serialization.Lifecycle"
 import {$Stream$$Type} from "java.util.stream.Stream"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 
 export class $NeoForgeExtraCodecs$AlternativeMapCodec<T> extends $MapCodec<(T)> {
-public "withLifecycle"(arg0: $Lifecycle$$Type): $MapDecoder
 public "compressor"<T>(arg0: $DynamicOps$$Type<(T)>): $KeyCompressor<(T)>
 public static "makeCompressedBuilder"<T>(arg0: $DynamicOps$$Type<(T)>, arg1: $KeyCompressor$$Type<(T)>): $RecordBuilder<(T)>
 public static "forStrings"(arg0: $Supplier$$Type<($Stream$$Type<(StringJS)>)>): $Keyable
@@ -4124,10 +4121,10 @@ import {$BlockCapability$$Type} from "net.neoforged.neoforge.capabilities.BlockC
 import {$ModelDataManager} from "net.neoforged.neoforge.client.model.data.ModelDataManager"
 import {$PartEntity} from "net.neoforged.neoforge.entity.PartEntity"
 import {$Collection} from "java.util.Collection"
-import {$Component} from "net.minecraft.network.chat.Component"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
+import {$Component} from "net.minecraft.network.chat.Component"
 import {$ChunkPos$$Type} from "net.minecraft.world.level.ChunkPos"
+import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export interface $ILevelExtension$$Interface {
@@ -4194,8 +4191,8 @@ import {$Explosion$$Type} from "net.minecraft.world.level.Explosion"
 import {$PathType, $PathType$$Type} from "net.minecraft.world.level.pathfinder.PathType"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$FluidType, $FluidType$$Type} from "net.neoforged.neoforge.fluids.FluidType"
 import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
+import {$FluidType, $FluidType$$Type} from "net.neoforged.neoforge.fluids.FluidType"
 import {$Boat$$Type} from "net.minecraft.world.entity.vehicle.Boat"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
@@ -4232,8 +4229,8 @@ import {$AttributeModifier$Operation$$Type} from "net.minecraft.world.entity.ai.
 import {$MutableComponent} from "net.minecraft.network.chat.MutableComponent"
 import {$Component} from "net.minecraft.network.chat.Component"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
-import {$TextColor, $TextColor$$Type} from "net.minecraft.network.chat.TextColor"
 import {$DecimalFormat} from "java.text.DecimalFormat"
+import {$TextColor, $TextColor$$Type} from "net.minecraft.network.chat.TextColor"
 
 export interface $IAttributeExtension$$Interface {
 
@@ -4262,8 +4259,8 @@ export type $IAttributeExtension$$Type = ((arg0: boolean) => $TextColor$$Type);
  */
 export type $IAttributeExtension$$Original = $IAttributeExtension;}
 declare module "net.neoforged.neoforge.common.world.StructureModifier" {
-import {$Structure$$Type} from "net.minecraft.world.level.levelgen.structure.Structure"
 import {$Codec} from "com.mojang.serialization.Codec"
+import {$Structure$$Type} from "net.minecraft.world.level.levelgen.structure.Structure"
 import {$ModifiableStructureInfo$StructureInfo$Builder$$Type} from "net.neoforged.neoforge.common.world.ModifiableStructureInfo$StructureInfo$Builder"
 import {$HolderSet} from "net.minecraft.core.HolderSet"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -4286,8 +4283,8 @@ static readonly "DIRECT_CODEC": $Codec<($StructureModifier)>
 static readonly "LIST_CODEC": $Codec<($HolderSet<($StructureModifier)>)>
 static readonly "REFERENCE_CODEC": $Codec<($Holder<($StructureModifier)>)>
 
- "modify"(arg0: $Holder$$Type<($Structure)>, arg1: $StructureModifier$Phase$$Type, arg2: $ModifiableStructureInfo$StructureInfo$Builder$$Type): void
  "codec"(): $MapCodec<($StructureModifier)>
+ "modify"(arg0: $Holder$$Type<($Structure)>, arg1: $StructureModifier$Phase$$Type, arg2: $ModifiableStructureInfo$StructureInfo$Builder$$Type): void
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -4331,8 +4328,8 @@ import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$CustomPacketPayload$$Type} from "net.minecraft.network.protocol.common.custom.CustomPacketPayload"
 import {$DisconnectionDetails, $DisconnectionDetails$$Type} from "net.minecraft.network.DisconnectionDetails"
 import {$ConnectionType} from "net.neoforged.neoforge.network.connection.ConnectionType"
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Exception$$Type} from "java.lang.Exception"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$ConnectionProtocol} from "net.minecraft.network.ConnectionProtocol"
 import {$Packet$$Type} from "net.minecraft.network.protocol.Packet"
 import {$Throwable$$Type} from "java.lang.Throwable"
@@ -4412,11 +4409,11 @@ public static "of"(arg0: integer, arg1: integer): $ModConfigSpec$Range<(integer)
 public "getMax"(): V
 public "getMin"(): V
 public "correct"(arg0: any, arg1: any): any
-public "or"(arg0: $Predicate$$Type<(any)>): $Predicate<(any)>
+public static "not"<T>(arg0: $Predicate$$Type<(any)>): $Predicate<(any)>
 public static "isEqual"<T>(arg0: any): $Predicate<(any)>
 public "negate"(): $Predicate<(any)>
 public "and"(arg0: $Predicate$$Type<(any)>): $Predicate<(any)>
-public static "not"<T>(arg0: $Predicate$$Type<(any)>): $Predicate<(any)>
+public "or"(arg0: $Predicate$$Type<(any)>): $Predicate<(any)>
 get "clazz"(): $Class<(V)>
 get "max"(): V
 get "min"(): V

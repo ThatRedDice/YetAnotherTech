@@ -1,11 +1,11 @@
 declare module "me.chrr.camerapture.item.AlbumItem" {
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
+import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
-import {$List} from "java.util.List"
 import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
+import {$List} from "java.util.List"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Item} from "net.minecraft.world.item.Item"
@@ -130,7 +130,7 @@ public "hand"(): $InteractionHand
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $CameraItem$HeldCamera$$Type = ({"hand"?: $InteractionHand$$Type, "stack"?: $ItemStack$$Type}) | ([hand?: $InteractionHand$$Type, stack?: $ItemStack$$Type]);
+export type $CameraItem$HeldCamera$$Type = ({"stack"?: $ItemStack$$Type, "hand"?: $InteractionHand$$Type}) | ([stack?: $ItemStack$$Type, hand?: $InteractionHand$$Type]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -140,13 +140,13 @@ import {$PictureItem$PictureData} from "me.chrr.camerapture.item.PictureItem$Pic
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$UUID$$Type} from "java.util.UUID"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$List$$Type} from "java.util.List"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"

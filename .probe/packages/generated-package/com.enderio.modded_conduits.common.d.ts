@@ -12,7 +12,7 @@ import {$ConduitBlockConnection, $ConduitBlockConnection$$Type} from "com.enderi
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$ConnectionConfigType} from "com.enderio.enderio.api.conduits.connection.config.ConnectionConfigType"
-import {$ConnectionConfig$$Type} from "com.enderio.enderio.api.conduits.connection.config.ConnectionConfig"
+import {$ConnectionConfig, $ConnectionConfig$$Type} from "com.enderio.enderio.api.conduits.connection.config.ConnectionConfig"
 import {$DyeColor$$Type} from "net.minecraft.world.item.DyeColor"
 import {$Set$$Type} from "java.util.Set"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
@@ -24,8 +24,8 @@ import {$CompoundTag} from "net.minecraft.nbt.CompoundTag"
 import {$Vector2i} from "org.joml.Vector2i"
 import {$Comparator} from "java.util.Comparator"
 import {$Conduit$$Type, $Conduit$$Interface} from "com.enderio.enderio.api.conduits.Conduit"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$ConduitTicker} from "com.enderio.enderio.api.conduits.ticker.ConduitTicker"
 import {$BiConsumer$$Type} from "java.util.function.BiConsumer"
@@ -37,20 +37,20 @@ static readonly "CODEC": $MapCodec<($MEConduit)>
 
 constructor(texture: $ResourceLocation$$Type, description: $Component$$Type, color: $AEColor$$Type, isDense: boolean)
 
+public "hasMenu"(): boolean
+public "isDense"(): boolean
 public "onRemoved"(arg0: $ConduitNode$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type): void
-public "connectionConfigType"(): $ConnectionConfigType<($MEConduitConnectionConfig)>
 public "canConnectToBlock"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $Direction$$Type): boolean
+public "connectionConfigType"(): $ConnectionConfigType<($MEConduitConnectionConfig)>
 public "proxyCapability"<TCapability, TContext>(arg0: $Level$$Type, arg1: $ConduitNode$$Type, arg2: $BlockCapability$$Type<(TCapability), (TContext)>, arg3: TContext): TCapability
 public "canReplaceConduit"(arg0: $MEConduit$$Type): boolean
 public "canReplaceConduit"(arg0: $Conduit$$Type): boolean
-public "canConnectToConduit"(arg0: $MEConduit$$Type): boolean
 public "canConnectToConduit"(arg0: $Conduit$$Type): boolean
+public "canConnectToConduit"(arg0: $MEConduit$$Type): boolean
 public "hasConnectionDelay"(): boolean
 public "onConnectionsUpdated"(arg0: $ConduitNode$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Set$$Type<($Direction$$Type)>): void
-public "convertConnection"(arg0: boolean, arg1: boolean, arg2: $DyeColor$$Type, arg3: $DyeColor$$Type, arg4: $RedstoneControl$$Type, arg5: $DyeColor$$Type): $MEConduitConnectionConfig
-public "hasMenu"(): boolean
+public "convertConnection"(arg0: boolean, arg1: boolean, arg2: $DyeColor$$Type, arg3: $DyeColor$$Type, arg4: $RedstoneControl$$Type, arg5: $DyeColor$$Type): $ConnectionConfig
 public "onCreated"(arg0: $ConduitNode$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Player$$Type): void
-public "isDense"(): boolean
 public "texture"(): $ResourceLocation
 public "type"(): $ConduitType<($MEConduit)>
 public "equals"(arg0: any): boolean
@@ -94,7 +94,7 @@ get "generalConnectionComparator"(): $Comparator<($ConduitBlockConnection)>
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $MEConduit$$Type = ({"isDense"?: boolean, "color"?: $AEColor$$Type, "texture"?: $ResourceLocation$$Type, "description"?: $Component$$Type}) | ([isDense?: boolean, color?: $AEColor$$Type, texture?: $ResourceLocation$$Type, description?: $Component$$Type]);
+export type $MEConduit$$Type = ({"color"?: $AEColor$$Type, "texture"?: $ResourceLocation$$Type, "description"?: $Component$$Type, "isDense"?: boolean}) | ([color?: $AEColor$$Type, texture?: $ResourceLocation$$Type, description?: $Component$$Type, isDense?: boolean]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */

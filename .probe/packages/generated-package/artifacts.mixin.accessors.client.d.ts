@@ -1,8 +1,8 @@
 declare module "artifacts.mixin.accessors.client.LivingEntityRendererAccessor" {
 import {$RenderLayer} from "net.minecraft.client.renderer.entity.layers.RenderLayer"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$List} from "java.util.List"
 import {$RenderLayerParent$$Interface} from "net.minecraft.client.renderer.entity.RenderLayerParent"
+import {$List} from "java.util.List"
 import {$EntityModel} from "net.minecraft.client.model.EntityModel"
 import {$LivingEntity, $LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 

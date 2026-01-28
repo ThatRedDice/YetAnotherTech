@@ -1,8 +1,8 @@
 declare module "net.p3pp3rf1y.sophisticatedcore.compat.chipped.BlockTransformationUpgradeItem" {
 import {$Map} from "java.util.Map"
 import {$List} from "java.util.List"
-import {$RecipeType, $RecipeType$$Type} from "net.minecraft.world.item.crafting.RecipeType"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$RecipeType, $RecipeType$$Type} from "net.minecraft.world.item.crafting.RecipeType"
 import {$IUpgradeItem$UpgradeConflictDefinition} from "net.p3pp3rf1y.sophisticatedcore.upgrades.IUpgradeItem$UpgradeConflictDefinition"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Supplier$$Type} from "java.util.function.Supplier"
@@ -42,8 +42,8 @@ export type $BlockTransformationUpgradeItem$$Type = ($BlockTransformationUpgrade
 export type $BlockTransformationUpgradeItem$$Original = $BlockTransformationUpgradeItem;}
 declare module "net.p3pp3rf1y.sophisticatedcore.compat.chipped.BlockTransformationUpgradeWrapper" {
 import {$UpgradeWrapperBase} from "net.p3pp3rf1y.sophisticatedcore.upgrades.UpgradeWrapperBase"
-import {$BlockTransformationUpgradeItem} from "net.p3pp3rf1y.sophisticatedcore.compat.chipped.BlockTransformationUpgradeItem"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$BlockTransformationUpgradeItem} from "net.p3pp3rf1y.sophisticatedcore.compat.chipped.BlockTransformationUpgradeItem"
 import {$Optional} from "java.util.Optional"
 import {$RecipeType} from "net.minecraft.world.item.crafting.RecipeType"
 import {$IItemHandlerModifiable} from "net.neoforged.neoforge.items.IItemHandlerModifiable"
@@ -51,11 +51,11 @@ import {$SimpleItemContent} from "net.p3pp3rf1y.sophisticatedcore.util.SimpleIte
 import {$ChippedRecipe} from "earth.terrarium.chipped.common.recipes.ChippedRecipe"
 
 export class $BlockTransformationUpgradeWrapper extends $UpgradeWrapperBase<($BlockTransformationUpgradeWrapper), ($BlockTransformationUpgradeItem)> {
+public "canBeDisabled"(): boolean
 public "setShiftClickIntoStorage"(arg0: boolean): void
 public "shouldShiftClickIntoStorage"(): boolean
 public "getRecipeType"(): $RecipeType<($ChippedRecipe)>
 public "getInputInventory"(): $IItemHandlerModifiable
-public "canBeDisabled"(): boolean
 public "setResult"(arg0: $ItemStack$$Type): void
 public "getResult"(): $Optional<($SimpleItemContent)>
 set "shiftClickIntoStorage"(value: boolean)

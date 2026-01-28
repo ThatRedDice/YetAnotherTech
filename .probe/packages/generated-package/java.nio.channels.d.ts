@@ -66,15 +66,15 @@ import {$ServerSocket} from "java.net.ServerSocket"
  * Loading the class using require() will not throw an error, but the class will be undefined.
  */
 export class $ServerSocketChannel extends $AbstractSelectableChannel implements $NetworkChannel$$Interface {
-public "socket"(): $ServerSocket
 public "setOption"<T>(arg0: $SocketOption$$Type<(T)>, arg1: T): $ServerSocketChannel
 public "getLocalAddress"(): $SocketAddress
 public "validOps"(): integer
-public "accept"(): $SocketChannel
-public static "open"(): $ServerSocketChannel
-public static "open"(arg0: $ProtocolFamily$$Type): $ServerSocketChannel
 public "bind"(arg0: $SocketAddress$$Type): $NetworkChannel
 public "bind"(arg0: $SocketAddress$$Type, arg1: integer): $ServerSocketChannel
+public "accept"(): $SocketChannel
+public static "open"(arg0: $ProtocolFamily$$Type): $ServerSocketChannel
+public static "open"(): $ServerSocketChannel
+public "socket"(): $ServerSocket
 public "supportedOptions"(): $Set<($SocketOption<(never)>)>
 public "getOption"<T>(arg0: $SocketOption$$Type<(T)>): T
 public "isOpen"(): boolean
@@ -211,11 +211,11 @@ import {$AsynchronousChannel$$Interface} from "java.nio.channels.AsynchronousCha
 import {$FileAttribute$$Type} from "java.nio.file.attribute.FileAttribute"
 import {$Future} from "java.util.concurrent.Future"
 import {$FileLock, $FileLock$$Type} from "java.nio.channels.FileLock"
+import {$Set$$Type} from "java.util.Set"
 import {$ExecutorService$$Type} from "java.util.concurrent.ExecutorService"
 import {$OpenOption$$Type} from "java.nio.file.OpenOption"
-import {$Set$$Type} from "java.util.Set"
-import {$CompletionHandler$$Type} from "java.nio.channels.CompletionHandler"
 import {$Path$$Type} from "java.nio.file.Path"
+import {$CompletionHandler$$Type} from "java.nio.channels.CompletionHandler"
 import {$ByteBuffer$$Type} from "java.nio.ByteBuffer"
 
 /**
@@ -236,9 +236,9 @@ public "read"(arg0: $ByteBuffer$$Type, arg1: long): $Future<(integer)>
 public "read"<A>(arg0: $ByteBuffer$$Type, arg1: long, arg2: A, arg3: $CompletionHandler$$Type<(integer), (A)>): void
 public static "open"(arg0: $Path$$Type, arg1: $Set$$Type<($OpenOption$$Type)>, arg2: $ExecutorService$$Type, ...arg3: ($FileAttribute$$Type<(never)>)[]): $AsynchronousFileChannel
 public static "open"(arg0: $Path$$Type, ...arg1: ($OpenOption$$Type)[]): $AsynchronousFileChannel
+public "force"(arg0: boolean): void
 public "tryLock"(arg0: long, arg1: long, arg2: boolean): $FileLock
 public "tryLock"(): $FileLock
-public "force"(arg0: boolean): void
 public "close"(): void
 public "isOpen"(): boolean
 }
@@ -264,8 +264,8 @@ import {$FileLock} from "java.nio.channels.FileLock"
 import {$Set$$Type} from "java.util.Set"
 import {$WritableByteChannel$$Type} from "java.nio.channels.WritableByteChannel"
 import {$OpenOption$$Type} from "java.nio.file.OpenOption"
-import {$MappedByteBuffer} from "java.nio.MappedByteBuffer"
 import {$Path$$Type} from "java.nio.file.Path"
+import {$MappedByteBuffer} from "java.nio.MappedByteBuffer"
 import {$GatheringByteChannel$$Interface} from "java.nio.channels.GatheringByteChannel"
 import {$ByteBuffer$$Type} from "java.nio.ByteBuffer"
 
@@ -275,10 +275,9 @@ import {$ByteBuffer$$Type} from "java.nio.ByteBuffer"
  * Loading the class using require() will not throw an error, but the class will be undefined.
  */
 export class $FileChannel extends $AbstractInterruptibleChannel implements $SeekableByteChannel$$Interface, $GatheringByteChannel$$Interface, $ScatteringByteChannel$$Interface {
-public "transferFrom"(arg0: $ReadableByteChannel$$Type, arg1: long, arg2: long): long
 public "truncate"(arg0: long): $FileChannel
-public "lock"(): $FileLock
 public "lock"(arg0: long, arg1: long, arg2: boolean): $FileLock
+public "lock"(): $FileLock
 public "size"(): long
 public "position"(arg0: long): $SeekableByteChannel
 public "position"(): long
@@ -286,18 +285,19 @@ public "map"(arg0: $FileChannel$MapMode$$Type, arg1: long, arg2: long, arg3: $Ar
 public "map"(arg0: $FileChannel$MapMode$$Type, arg1: long, arg2: long): $MappedByteBuffer
 public "write"(arg0: $ByteBuffer$$Type, arg1: long): integer
 public "write"(arg0: $ByteBuffer$$Type): integer
-public "write"(arg0: ($ByteBuffer$$Type)[], arg1: integer, arg2: integer): long
 public "write"(arg0: ($ByteBuffer$$Type)[]): long
-public "read"(arg0: ($ByteBuffer$$Type)[]): long
+public "write"(arg0: ($ByteBuffer$$Type)[], arg1: integer, arg2: integer): long
 public "read"(arg0: ($ByteBuffer$$Type)[], arg1: integer, arg2: integer): long
+public "read"(arg0: ($ByteBuffer$$Type)[]): long
 public "read"(arg0: $ByteBuffer$$Type): integer
 public "read"(arg0: $ByteBuffer$$Type, arg1: long): integer
 public static "open"(arg0: $Path$$Type, arg1: $Set$$Type<($OpenOption$$Type)>, ...arg2: ($FileAttribute$$Type<(never)>)[]): $FileChannel
 public static "open"(arg0: $Path$$Type, ...arg1: ($OpenOption$$Type)[]): $FileChannel
 public "transferTo"(arg0: long, arg1: long, arg2: $WritableByteChannel$$Type): long
+public "force"(arg0: boolean): void
 public "tryLock"(): $FileLock
 public "tryLock"(arg0: long, arg1: long, arg2: boolean): $FileLock
-public "force"(arg0: boolean): void
+public "transferFrom"(arg0: $ReadableByteChannel$$Type, arg1: long, arg2: long): long
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -371,7 +371,6 @@ import {$FileChannel} from "java.nio.channels.FileChannel"
  * Loading the class using require() will not throw an error, but the class will be undefined.
  */
 export class $FileLock implements $AutoCloseable$$Interface {
-public "isValid"(): boolean
 public "acquiredBy"(): $Channel
 public "isShared"(): boolean
 public "overlaps"(arg0: long, arg1: long): boolean
@@ -381,8 +380,9 @@ public "position"(): long
 public "close"(): void
 public "release"(): void
 public "channel"(): $FileChannel
-get "valid"(): boolean
+public "isValid"(): boolean
 get "shared"(): boolean
+get "valid"(): boolean
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -394,7 +394,7 @@ export type $FileLock$$Type = ($FileLock);
  */
 export type $FileLock$$Original = $FileLock;}
 declare module "java.nio.channels.SocketChannel" {
-import {$NetworkChannel, $NetworkChannel$$Interface} from "java.nio.channels.NetworkChannel"
+import {$NetworkChannel$$Interface} from "java.nio.channels.NetworkChannel"
 import {$ProtocolFamily$$Type} from "java.net.ProtocolFamily"
 import {$ByteChannel$$Interface} from "java.nio.channels.ByteChannel"
 import {$SocketOption, $SocketOption$$Type} from "java.net.SocketOption"
@@ -412,7 +412,6 @@ import {$ByteBuffer$$Type} from "java.nio.ByteBuffer"
  * Loading the class using require() will not throw an error, but the class will be undefined.
  */
 export class $SocketChannel extends $AbstractSelectableChannel implements $ByteChannel$$Interface, $ScatteringByteChannel$$Interface, $GatheringByteChannel$$Interface, $NetworkChannel$$Interface {
-public "socket"(): $Socket
 public "isConnected"(): boolean
 public "isConnectionPending"(): boolean
 public "setOption"<T>(arg0: $SocketOption$$Type<(T)>, arg1: T): $SocketChannel
@@ -422,17 +421,18 @@ public "finishConnect"(): boolean
 public "shutdownInput"(): $SocketChannel
 public "shutdownOutput"(): $SocketChannel
 public "validOps"(): integer
+public "bind"(arg0: $SocketAddress$$Type): $SocketChannel
 public "write"(arg0: $ByteBuffer$$Type): integer
-public "write"(arg0: ($ByteBuffer$$Type)[]): long
 public "write"(arg0: ($ByteBuffer$$Type)[], arg1: integer, arg2: integer): long
-public "read"(arg0: ($ByteBuffer$$Type)[]): long
-public "read"(arg0: ($ByteBuffer$$Type)[], arg1: integer, arg2: integer): long
+public "write"(arg0: ($ByteBuffer$$Type)[]): long
 public "read"(arg0: $ByteBuffer$$Type): integer
+public "read"(arg0: ($ByteBuffer$$Type)[], arg1: integer, arg2: integer): long
+public "read"(arg0: ($ByteBuffer$$Type)[]): long
 public "connect"(arg0: $SocketAddress$$Type): boolean
-public static "open"(): $SocketChannel
-public static "open"(arg0: $ProtocolFamily$$Type): $SocketChannel
 public static "open"(arg0: $SocketAddress$$Type): $SocketChannel
-public "bind"(arg0: $SocketAddress$$Type): $NetworkChannel
+public static "open"(arg0: $ProtocolFamily$$Type): $SocketChannel
+public static "open"(): $SocketChannel
+public "socket"(): $Socket
 public "supportedOptions"(): $Set<($SocketOption<(never)>)>
 public "getOption"<T>(arg0: $SocketOption$$Type<(T)>): T
 public "isOpen"(): boolean
@@ -504,14 +504,14 @@ import {$DatagramSocket} from "java.net.DatagramSocket"
  */
 export class $DatagramChannel extends $AbstractSelectableChannel implements $ByteChannel$$Interface, $ScatteringByteChannel$$Interface, $GatheringByteChannel$$Interface, $MulticastChannel$$Interface {
 public "receive"(arg0: $ByteBuffer$$Type): $SocketAddress
-public "socket"(): $DatagramSocket
 public "isConnected"(): boolean
-public "setOption"(arg0: $SocketOption$$Type, arg1: any): $NetworkChannel
+public "setOption"<T>(arg0: $SocketOption$$Type<(T)>, arg1: T): $DatagramChannel
 public "getLocalAddress"(): $SocketAddress
 public "getRemoteAddress"(): $SocketAddress
 public "validOps"(): integer
-public "write"(arg0: ($ByteBuffer$$Type)[]): long
+public "bind"(arg0: $SocketAddress$$Type): $NetworkChannel
 public "write"(arg0: $ByteBuffer$$Type): integer
+public "write"(arg0: ($ByteBuffer$$Type)[]): long
 public "write"(arg0: ($ByteBuffer$$Type)[], arg1: integer, arg2: integer): long
 public "read"(arg0: ($ByteBuffer$$Type)[]): long
 public "read"(arg0: ($ByteBuffer$$Type)[], arg1: integer, arg2: integer): long
@@ -519,8 +519,8 @@ public "read"(arg0: $ByteBuffer$$Type): integer
 public "connect"(arg0: $SocketAddress$$Type): $DatagramChannel
 public static "open"(arg0: $ProtocolFamily$$Type): $DatagramChannel
 public static "open"(): $DatagramChannel
-public "bind"(arg0: $SocketAddress$$Type): $DatagramChannel
 public "disconnect"(): $DatagramChannel
+public "socket"(): $DatagramSocket
 public "send"(arg0: $ByteBuffer$$Type, arg1: $SocketAddress$$Type): integer
 public "join"(arg0: $InetAddress$$Type, arg1: $NetworkInterface$$Type): $MembershipKey
 public "join"(arg0: $InetAddress$$Type, arg1: $NetworkInterface$$Type, arg2: $InetAddress$$Type): $MembershipKey
@@ -742,8 +742,8 @@ export type $ScatteringByteChannel$$Type = ($ScatteringByteChannel);
  */
 export type $ScatteringByteChannel$$Original = $ScatteringByteChannel;}
 declare module "java.nio.channels.Selector" {
-import {$SelectionKey, $SelectionKey$$Type} from "java.nio.channels.SelectionKey"
 import {$SelectorProvider} from "java.nio.channels.spi.SelectorProvider"
+import {$SelectionKey, $SelectionKey$$Type} from "java.nio.channels.SelectionKey"
 import {$Set} from "java.util.Set"
 import {$Closeable$$Interface} from "java.io.Closeable"
 import {$Consumer$$Type} from "java.util.function.Consumer"
@@ -754,10 +754,10 @@ import {$Consumer$$Type} from "java.util.function.Consumer"
  * Loading the class using require() will not throw an error, but the class will be undefined.
  */
 export class $Selector implements $Closeable$$Interface {
-public "wakeup"(): $Selector
-public "selectNow"(): integer
 public "selectNow"(arg0: $Consumer$$Type<($SelectionKey)>): integer
+public "selectNow"(): integer
 public "selectedKeys"(): $Set<($SelectionKey)>
+public "wakeup"(): $Selector
 public "isOpen"(): boolean
 public "provider"(): $SelectorProvider
 public "close"(): void
@@ -788,14 +788,14 @@ import {$NetworkInterface} from "java.net.NetworkInterface"
  * Loading the class using require() will not throw an error, but the class will be undefined.
  */
 export class $MembershipKey {
+public "unblock"(arg0: $InetAddress$$Type): $MembershipKey
 public "networkInterface"(): $NetworkInterface
 public "sourceAddress"(): $InetAddress
-public "unblock"(arg0: $InetAddress$$Type): $MembershipKey
-public "isValid"(): boolean
 public "group"(): $InetAddress
 public "block"(arg0: $InetAddress$$Type): $MembershipKey
 public "channel"(): $MulticastChannel
 public "drop"(): void
+public "isValid"(): boolean
 get "valid"(): boolean
 }
 /**

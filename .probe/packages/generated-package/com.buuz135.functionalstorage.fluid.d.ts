@@ -11,29 +11,29 @@ import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Prov
 export class $BigFluidHandler implements $IFluidHandler$$Interface, $INBTSerializable$$Interface<($CompoundTag)> {
 constructor(arg0: integer, arg1: integer)
 
+public "getTanks"(): integer
+public "getFluidInTank"(arg0: integer): $FluidStack
+public "getTankCapacity"(arg0: integer): integer
+public "isFluidValid"(arg0: integer, arg1: $FluidStack$$Type): boolean
 public "isDrawerVoid"(): boolean
 public "isDrawerCreative"(): boolean
 public "isDrawerLocked"(): boolean
 public "lockHandler"(): void
 public "getTankList"(): ($BigFluidHandler$CustomFluidTank)[]
-public "getTanks"(): integer
-public "getFluidInTank"(arg0: integer): $FluidStack
-public "getTankCapacity"(arg0: integer): integer
-public "isFluidValid"(arg0: integer, arg1: $FluidStack$$Type): boolean
 public "getFilterStack"(): ($FluidStack)[]
-public "drain"(arg0: $FluidStack$$Type, arg1: $IFluidHandler$FluidAction$$Type): $FluidStack
-public "drain"(arg0: integer, arg1: $IFluidHandler$FluidAction$$Type): $FluidStack
 public "setCapacity"(arg0: integer): void
 public "fill"(arg0: $FluidStack$$Type, arg1: $IFluidHandler$FluidAction$$Type): integer
+public "drain"(arg0: integer, arg1: $IFluidHandler$FluidAction$$Type): $FluidStack
+public "drain"(arg0: $FluidStack$$Type, arg1: $IFluidHandler$FluidAction$$Type): $FluidStack
 public "onChange"(): void
 public "deserializeNBT"(arg0: $HolderLookup$Provider$$Type, arg1: $CompoundTag$$Type): void
 public "deserializeNBT"(arg0: $HolderLookup$Provider$$Type, arg1: $Tag$$Type): void
 public "serializeNBT"(arg0: $HolderLookup$Provider$$Type): $CompoundTag
+get "tanks"(): integer
 get "drawerVoid"(): boolean
 get "drawerCreative"(): boolean
 get "drawerLocked"(): boolean
 get "tankList"(): ($BigFluidHandler$CustomFluidTank)[]
-get "tanks"(): integer
 get "filterStack"(): ($FluidStack)[]
 set "capacity"(value: integer)
 }
@@ -59,11 +59,11 @@ public "getTanks"(): integer
 public "getFluidInTank"(arg0: integer): $FluidStack
 public "getTankCapacity"(arg0: integer): integer
 public "isFluidValid"(arg0: integer, arg1: $FluidStack$$Type): boolean
-public "getDrawers"(): $ConnectedDrawers
 public "invalidateSlots"(): void
-public "drain"(arg0: $FluidStack$$Type, arg1: $IFluidHandler$FluidAction$$Type): $FluidStack
-public "drain"(arg0: integer, arg1: $IFluidHandler$FluidAction$$Type): $FluidStack
+public "getDrawers"(): $ConnectedDrawers
 public "fill"(arg0: $FluidStack$$Type, arg1: $IFluidHandler$FluidAction$$Type): integer
+public "drain"(arg0: integer, arg1: $IFluidHandler$FluidAction$$Type): $FluidStack
+public "drain"(arg0: $FluidStack$$Type, arg1: $IFluidHandler$FluidAction$$Type): $FluidStack
 get "tanks"(): integer
 get "drawers"(): $ConnectedDrawers
 }

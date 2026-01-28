@@ -2,8 +2,8 @@ declare module "dan200.computercraft.api.filesystem.WritableMount" {
 import {$SeekableByteChannel} from "java.nio.channels.SeekableByteChannel"
 import {$Mount$$Interface} from "dan200.computercraft.api.filesystem.Mount"
 import {$List$$Type} from "java.util.List"
-import {$OpenOption$$Type} from "java.nio.file.OpenOption"
 import {$Set$$Type} from "java.util.Set"
+import {$OpenOption$$Type} from "java.nio.file.OpenOption"
 import {$BasicFileAttributes} from "java.nio.file.attribute.BasicFileAttributes"
 
 export interface $WritableMount$$Interface extends $Mount$$Interface {
@@ -13,11 +13,11 @@ get "capacity"(): long
 
 export class $WritableMount implements $WritableMount$$Interface {
  "getRemainingSpace"(): long
- "getCapacity"(): long
- "rename"(arg0: StringJS, arg1: StringJS): void
  "makeDirectory"(arg0: StringJS): void
+ "rename"(arg0: StringJS, arg1: StringJS): void
  "delete"(arg0: StringJS): void
  "isReadOnly"(arg0: StringJS): boolean
+ "getCapacity"(): long
  "openFile"(arg0: StringJS, arg1: $Set$$Type<($OpenOption$$Type)>): $SeekableByteChannel
  "openForRead"(arg0: StringJS): $SeekableByteChannel
  "list"(arg0: StringJS, arg1: $List$$Type<(StringJS)>): void

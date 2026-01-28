@@ -4,13 +4,13 @@ import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Collection$$Type} from "java.util.Collection"
 import {$MineralMix$BiomeTagPredicate, $MineralMix$BiomeTagPredicate$$Type} from "blusunrize.immersiveengineering.api.excavator.MineralMix$BiomeTagPredicate"
 import {$List, $List$$Type} from "java.util.List"
-import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$ImmutableSet} from "com.google.common.collect.ImmutableSet"
+import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$CachedRecipeList} from "blusunrize.immersiveengineering.api.crafting.cache.CachedRecipeList"
 import {$Random$$Type} from "java.util.Random"
 import {$DeferredHolder} from "net.neoforged.neoforge.registries.DeferredHolder"
-import {$Holder$$Type} from "net.minecraft.core.Holder"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$Holder$$Type} from "net.minecraft.core.Holder"
 import {$StackWithChance, $StackWithChance$$Type} from "blusunrize.immersiveengineering.api.crafting.StackWithChance"
 import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Biome$$Type} from "net.minecraft.world.level.biome.Biome"
@@ -63,11 +63,11 @@ public "toString"(): StringJS
 public "hashCode"(): integer
 public "test"(arg0: $Holder$$Type<($Biome)>): boolean
 public "test"(arg0: any): boolean
-public "or"(arg0: $Predicate$$Type<($Holder<($Biome)>)>): $Predicate<($Holder<($Biome)>)>
+public static "not"<T>(arg0: $Predicate$$Type<($Holder<($Biome)>)>): $Predicate<($Holder<($Biome)>)>
 public static "isEqual"<T>(arg0: any): $Predicate<($Holder<($Biome)>)>
 public "negate"(): $Predicate<($Holder<($Biome)>)>
 public "and"(arg0: $Predicate$$Type<($Holder<($Biome)>)>): $Predicate<($Holder<($Biome)>)>
-public static "not"<T>(arg0: $Predicate$$Type<($Holder<($Biome)>)>): $Predicate<($Holder<($Biome)>)>
+public "or"(arg0: $Predicate$$Type<($Holder<($Biome)>)>): $Predicate<($Holder<($Biome)>)>
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -103,8 +103,8 @@ export type $MineralWorldInfo$$Type = ($MineralWorldInfo);
  */
 export type $MineralWorldInfo$$Original = $MineralWorldInfo;}
 declare module "blusunrize.immersiveengineering.api.excavator.MineralVein" {
-import {$MineralMix} from "blusunrize.immersiveengineering.api.excavator.MineralMix"
 import {$ColumnPos, $ColumnPos$$Type} from "net.minecraft.server.level.ColumnPos"
+import {$MineralMix} from "blusunrize.immersiveengineering.api.excavator.MineralMix"
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$RecipeHolder} from "net.minecraft.world.item.crafting.RecipeHolder"
@@ -115,14 +115,14 @@ export class $MineralVein {
 constructor(arg0: $ColumnPos$$Type, arg1: $ResourceLocation$$Type, arg2: integer)
 
 public "getRadius"(): integer
-public static "readFromNBT"(arg0: $CompoundTag$$Type): $MineralVein
-public "writeToNBT"(): $CompoundTag
 public "getMineral"(arg0: $Level$$Type): $MineralMix
 public "getMineralName"(): $ResourceLocation
 public "getDepletion"(): integer
 public "getFailChance"(arg0: $BlockPos$$Type): double
 public "isDepleted"(): boolean
 public "setDepletion"(arg0: integer): void
+public static "readFromNBT"(arg0: $CompoundTag$$Type): $MineralVein
+public "writeToNBT"(): $CompoundTag
 public "deplete"(): void
 public "getMineralHolder"(arg0: $Level$$Type): $RecipeHolder<($MineralMix)>
 public "getPos"(): $ColumnPos

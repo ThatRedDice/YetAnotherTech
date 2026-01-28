@@ -8,8 +8,8 @@ import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$EnchantmentStatBlock$$Interface} from "dev.shadowsoffire.apothic_enchanting.api.EnchantmentStatBlock"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$DirectionProperty} from "net.minecraft.world.level.block.state.properties.DirectionProperty"
@@ -106,8 +106,8 @@ import {$Map} from "java.util.Map"
 import {$List$$Type} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$AnvilUpdateEvent$$Type} from "net.neoforged.neoforge.event.AnvilUpdateEvent"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
@@ -123,9 +123,9 @@ static readonly "BY_BLOCK": $Map<($Block), ($Item)>
 
 constructor(arg0: $Item$Properties$$Type)
 
-public static "updateAnvil"(arg0: $AnvilUpdateEvent$$Type): boolean
 public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
 public "isEnchantable"(arg0: $ItemStack$$Type): boolean
+public static "updateAnvil"(arg0: $AnvilUpdateEvent$$Type): boolean
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 }
 /**
@@ -140,20 +140,20 @@ export type $ScrappingTomeItem$$Original = $ScrappingTomeItem;}
 declare module "dev.shadowsoffire.apothic_enchanting.objects.EnderLeadItem" {
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$List$$Type} from "java.util.List"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$EnderLeadItem$Type$$Type} from "dev.shadowsoffire.apothic_enchanting.objects.EnderLeadItem$Type"
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 
 export class $EnderLeadItem extends $Item {
@@ -166,11 +166,11 @@ static readonly "BY_BLOCK": $Map<($Block), ($Item)>
 
 constructor(arg0: $Item$Properties$$Type, arg1: $EnderLeadItem$Type$$Type)
 
-public "canLeash"(arg0: $Entity$$Type): boolean
 public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
 public "useOn"(arg0: $UseOnContext$$Type): $InteractionResult
 public "isFoil"(arg0: $ItemStack$$Type): boolean
 public "isEnchantable"(arg0: $ItemStack$$Type): boolean
+public "canLeash"(arg0: $Entity$$Type): boolean
 public "getName"(arg0: $ItemStack$$Type): $Component
 public "interactLivingEntity"(arg0: $ItemStack$$Type, arg1: $Player$$Type, arg2: $LivingEntity$$Type, arg3: $InteractionHand$$Type): $InteractionResult
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
@@ -198,11 +198,11 @@ public static "values"(): ($EnderLeadItem$Type)[]
 public "test"(arg0: any): boolean
 public "test"(arg0: $Entity$$Type): boolean
 public static "valueOf"(arg0: StringJS): $EnderLeadItem$Type
-public "or"(arg0: $Predicate$$Type<($Entity)>): $Predicate<($Entity)>
+public static "not"<T>(arg0: $Predicate$$Type<($Entity)>): $Predicate<($Entity)>
 public static "isEqual"<T>(arg0: any): $Predicate<($Entity)>
 public "negate"(): $Predicate<($Entity)>
 public "and"(arg0: $Predicate$$Type<($Entity)>): $Predicate<($Entity)>
-public static "not"<T>(arg0: $Predicate$$Type<($Entity)>): $Predicate<($Entity)>
+public "or"(arg0: $Predicate$$Type<($Entity)>): $Predicate<($Entity)>
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -222,8 +222,8 @@ import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$EnchantmentStatBlock$$Interface} from "dev.shadowsoffire.apothic_enchanting.api.EnchantmentStatBlock"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$ParticleOptions} from "net.minecraft.core.particles.ParticleOptions"
 import {$TypedShelfBlock} from "dev.shadowsoffire.apothic_enchanting.objects.TypedShelfBlock"
@@ -287,8 +287,8 @@ import {$ChiseledBookShelfBlock} from "net.minecraft.world.level.block.ChiseledB
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$Enchantment} from "net.minecraft.world.item.enchantment.Enchantment"
 import {$ItemInteractionResult} from "net.minecraft.world.ItemInteractionResult"
@@ -320,7 +320,6 @@ static readonly "UPDATE_CLIENTS": integer
 
 constructor(arg0: $BlockBehaviour$Properties$$Type)
 
-public static "isEnchantedBook"(arg0: $ItemStack$$Type): boolean
 public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
 public "getTableParticle"(arg0: $BlockState$$Type): $ParticleOptions
 public "getMaxEnchantingPower"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type): float
@@ -329,6 +328,7 @@ public "getBlacklistedEnchantments"(arg0: $BlockState$$Type, arg1: $LevelReader$
 public "getEnchantPowerBonus"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type): float
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
 public static "canInsert"(arg0: $ItemStack$$Type): boolean
+public static "isEnchantedBook"(arg0: $ItemStack$$Type): boolean
 public "useItemOn"(arg0: $ItemStack$$Type, arg1: $BlockState$$Type, arg2: $Level$$Type, arg3: $BlockPos$$Type, arg4: $Player$$Type, arg5: $InteractionHand$$Type, arg6: $BlockHitResult$$Type): $ItemInteractionResult
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 }
@@ -394,8 +394,8 @@ declare module "dev.shadowsoffire.apothic_enchanting.objects.GlowyBlockItem" {
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$AdditionalItemPlacement, $AdditionalItemPlacement$$Type} from "net.mehvahdjukaar.moonlight.api.item.additional_placements.AdditionalItemPlacement"
@@ -430,13 +430,13 @@ declare module "dev.shadowsoffire.apothic_enchanting.objects.TomeItem" {
 import {$BookItem} from "net.minecraft.world.item.BookItem"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$List$$Type} from "java.util.List"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Holder$$Type} from "net.minecraft.core.Holder"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Enchantment$$Type} from "net.minecraft.world.item.enchantment.Enchantment"
@@ -479,8 +479,8 @@ import {$Map} from "java.util.Map"
 import {$List$$Type} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$AnvilUpdateEvent$$Type} from "net.neoforged.neoforge.event.AnvilUpdateEvent"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
@@ -496,9 +496,9 @@ static readonly "BY_BLOCK": $Map<($Block), ($Item)>
 
 constructor(arg0: $Item$Properties$$Type)
 
-public static "updateAnvil"(arg0: $AnvilUpdateEvent$$Type): boolean
 public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
 public "isEnchantable"(arg0: $ItemStack$$Type): boolean
+public static "updateAnvil"(arg0: $AnvilUpdateEvent$$Type): boolean
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 }
 /**
@@ -517,8 +517,8 @@ import {$Map} from "java.util.Map"
 import {$List$$Type} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$AnvilRepairEvent$$Type} from "net.neoforged.neoforge.event.entity.player.AnvilRepairEvent"
 import {$AnvilUpdateEvent$$Type} from "net.neoforged.neoforge.event.AnvilUpdateEvent"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
@@ -535,11 +535,11 @@ static readonly "BY_BLOCK": $Map<($Block), ($Item)>
 
 constructor(arg0: $Item$Properties$$Type)
 
-public static "updateAnvil"(arg0: $AnvilUpdateEvent$$Type): boolean
-public static "updateRepair"(arg0: $AnvilRepairEvent$$Type): boolean
 public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
 public "isFoil"(arg0: $ItemStack$$Type): boolean
 public "isEnchantable"(arg0: $ItemStack$$Type): boolean
+public static "updateAnvil"(arg0: $AnvilUpdateEvent$$Type): boolean
+public static "updateRepair"(arg0: $AnvilRepairEvent$$Type): boolean
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 }
 /**

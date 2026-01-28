@@ -23,8 +23,8 @@ declare module "com.hlysine.create_power_loader.content.emptychunkloader.EmptyCh
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$KineticBlockEntity} from "com.simibubi.create.content.kinetics.base.KineticBlockEntity"
-import {$SequencedGearshiftBlockEntity$SequenceContext} from "com.simibubi.create.content.kinetics.transmission.sequencer.SequencedGearshiftBlockEntity$SequenceContext"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$SequencedGearshiftBlockEntity$SequenceContext} from "com.simibubi.create.content.kinetics.transmission.sequencer.SequencedGearshiftBlockEntity$SequenceContext"
 
 export class $EmptyChunkLoaderBlockEntity extends $KineticBlockEntity {
  "sequenceContext": $SequencedGearshiftBlockEntity$SequenceContext
@@ -52,8 +52,8 @@ import {$AbstractChunkLoaderBlockEntity} from "com.hlysine.create_power_loader.c
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$LoaderType} from "com.hlysine.create_power_loader.content.LoaderType"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$SequencedGearshiftBlockEntity$SequenceContext} from "com.simibubi.create.content.kinetics.transmission.sequencer.SequencedGearshiftBlockEntity$SequenceContext"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$SequencedGearshiftBlockEntity$SequenceContext} from "com.simibubi.create.content.kinetics.transmission.sequencer.SequencedGearshiftBlockEntity$SequenceContext"
 
 export class $AndesiteChunkLoaderBlockEntity extends $AbstractChunkLoaderBlockEntity {
  "sequenceContext": $SequencedGearshiftBlockEntity$SequenceContext
@@ -87,9 +87,9 @@ import {$Carriage, $Carriage$$Type} from "com.simibubi.create.content.trains.ent
 import {$LoaderType} from "com.hlysine.create_power_loader.content.LoaderType"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Set} from "java.util.Set"
-import {$Pair} from "net.createmod.catnip.data.Pair"
 import {$LoaderMode} from "com.hlysine.create_power_loader.content.LoaderMode"
 import {$ChunkLoader$$Interface} from "com.hlysine.create_power_loader.content.ChunkLoader"
+import {$Pair} from "net.createmod.catnip.data.Pair"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$ChunkLoadManager$LoadedChunkPos} from "com.hlysine.create_power_loader.content.ChunkLoadManager$LoadedChunkPos"
 
@@ -102,9 +102,9 @@ readonly "forcedChunks": $Set<($ChunkLoadManager$LoadedChunkPos)>
 
 constructor(arg0: $Carriage$$Type, arg1: boolean, arg2: boolean, arg3: boolean)
 
-public "getForcedChunks"(): $Set<($ChunkLoadManager$LoadedChunkPos)>
 public "getLoaderMode"(): $LoaderMode
 public "getLoaderType"(): $LoaderType
+public "getForcedChunks"(): $Set<($ChunkLoadManager$LoadedChunkPos)>
 public "tick"(arg0: $Level$$Type): void
 public "getLocation"(): $Pair<($ResourceLocation), ($BlockPos)>
 public "write"(): $CompoundTag
@@ -139,8 +139,8 @@ import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$Direction$Axis} from "net.minecraft.core.Direction$Axis"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
@@ -172,14 +172,14 @@ readonly "loaderType": $LoaderType
 
 constructor(arg0: $BlockBehaviour$Properties$$Type, arg1: $LoaderType$$Type)
 
+public "hasShaftTowards"(arg0: $LevelReader$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $Direction$$Type): boolean
+public "getMinimumRequiredSpeedLevel"(): $IRotate$SpeedLevel
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
 public "updateShape"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $BlockState$$Type, arg3: $LevelAccessor$$Type, arg4: $BlockPos$$Type, arg5: $BlockPos$$Type): $BlockState
 public "getAnalogOutputSignal"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type): integer
 public "getRotationAxis"(arg0: $BlockState$$Type): $Direction$Axis
-public "hasShaftTowards"(arg0: $LevelReader$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $Direction$$Type): boolean
-public "getMinimumRequiredSpeedLevel"(): $IRotate$SpeedLevel
-public "neighborChanged"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Block$$Type, arg4: $BlockPos$$Type, arg5: boolean): void
 public "hasAnalogOutputSignal"(arg0: $BlockState$$Type): boolean
+public "neighborChanged"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Block$$Type, arg4: $BlockPos$$Type, arg5: boolean): void
 public static "playRotateSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public static "playRemoveSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
@@ -197,11 +197,11 @@ export type $AbstractChunkLoaderBlock$$Original = $AbstractChunkLoaderBlock;}
 declare module "com.hlysine.create_power_loader.content.trains.TrainChunkLoader" {
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$List} from "java.util.List"
-import {$LoaderType} from "com.hlysine.create_power_loader.content.LoaderType"
 import {$Train$$Type} from "com.simibubi.create.content.trains.entity.Train"
+import {$LoaderType} from "com.hlysine.create_power_loader.content.LoaderType"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$Pair} from "net.createmod.catnip.data.Pair"
 import {$LoaderMode} from "com.hlysine.create_power_loader.content.LoaderMode"
+import {$Pair} from "net.createmod.catnip.data.Pair"
 import {$CarriageChunkLoader} from "com.hlysine.create_power_loader.content.trains.CarriageChunkLoader"
 import {$ChunkLoadManager$LoadedChunkPos} from "com.hlysine.create_power_loader.content.ChunkLoadManager$LoadedChunkPos"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
@@ -214,19 +214,19 @@ readonly "carriageLoaders": $List<($CarriageChunkLoader)>
 
 constructor(arg0: $Train$$Type)
 
-public "getForcedChunks"(): $Set<($ChunkLoadManager$LoadedChunkPos)>
 public "addToManager"(): void
 public "getLoaderMode"(): $LoaderMode
 public "getLoaderType"(): $LoaderType
+public "getForcedChunks"(): $Set<($ChunkLoadManager$LoadedChunkPos)>
 public "tick"(arg0: $Level$$Type): void
 public "getLocation"(): $Pair<($ResourceLocation), ($BlockPos)>
 public "write"(): $CompoundTag
 public static "read"(arg0: $Train$$Type, arg1: $CompoundTag$$Type): $TrainChunkLoader
 public "onRemove"(): void
 public "removeFromManager"(): void
-get "forcedChunks"(): $Set<($ChunkLoadManager$LoadedChunkPos)>
 get "loaderMode"(): $LoaderMode
 get "loaderType"(): $LoaderType
+get "forcedChunks"(): $Set<($ChunkLoadManager$LoadedChunkPos)>
 get "location"(): $Pair<($ResourceLocation), ($BlockPos)>
 }
 /**
@@ -253,16 +253,16 @@ import {$Class} from "java.lang.Class"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$AndesiteChunkLoaderBlockEntity, $AndesiteChunkLoaderBlockEntity$$Type} from "com.hlysine.create_power_loader.content.andesitechunkloader.AndesiteChunkLoaderBlockEntity"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$InteractionResult, $InteractionResult$$Type} from "net.minecraft.world.InteractionResult"
-import {$ItemInteractionResult, $ItemInteractionResult$$Type} from "net.minecraft.world.ItemInteractionResult"
 import {$AbstractChunkLoaderBlock} from "com.hlysine.create_power_loader.content.AbstractChunkLoaderBlock"
+import {$ItemInteractionResult, $ItemInteractionResult$$Type} from "net.minecraft.world.ItemInteractionResult"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
@@ -324,8 +324,8 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
 export class $LoaderType extends $Enum<($LoaderType)> implements $StringRepresentable$$Interface {
@@ -336,11 +336,11 @@ public static "values"(): ($LoaderType)[]
 public static "valueOf"(arg0: StringJS): $LoaderType
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
 }
@@ -385,8 +385,8 @@ import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$BlockEntry} from "com.tterrag.registrate.util.entry.BlockEntry"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$BlockEntry} from "com.tterrag.registrate.util.entry.BlockEntry"
 import {$AdditionalItemPlacement, $AdditionalItemPlacement$$Type} from "net.mehvahdjukaar.moonlight.api.item.additional_placements.AdditionalItemPlacement"
 
 export class $EmptyChunkLoaderBlockItem extends $BlockItem {
@@ -420,8 +420,8 @@ declare module "com.hlysine.create_power_loader.content.trains.StationChunkLoade
 import {$StationChunkLoader$AttachedLoader} from "com.hlysine.create_power_loader.content.trains.StationChunkLoader$AttachedLoader"
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$LoaderType, $LoaderType$$Type} from "com.hlysine.create_power_loader.content.LoaderType"
-import {$Pair} from "net.createmod.catnip.data.Pair"
 import {$LoaderMode} from "com.hlysine.create_power_loader.content.LoaderMode"
+import {$Pair} from "net.createmod.catnip.data.Pair"
 import {$ChunkLoadManager$LoadedChunkPos} from "com.hlysine.create_power_loader.content.ChunkLoadManager$LoadedChunkPos"
 import {$TrackGraph$$Type} from "com.simibubi.create.content.trains.graph.TrackGraph"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
@@ -436,13 +436,13 @@ readonly "forcedChunks": $Set<($ChunkLoadManager$LoadedChunkPos)>
 
 constructor(arg0: $GlobalStation$$Type)
 
-public "getForcedChunks"(): $Set<($ChunkLoadManager$LoadedChunkPos)>
 public "removeAttachment"(arg0: $BlockPos$$Type): void
 public "addAttachment"(arg0: $LoaderType$$Type, arg1: $BlockPos$$Type): void
 public "addToManager"(): void
 public static "isEnabledForStation"(arg0: $LoaderType$$Type): boolean
 public "getLoaderMode"(): $LoaderMode
 public "getLoaderType"(): $LoaderType
+public "getForcedChunks"(): $Set<($ChunkLoadManager$LoadedChunkPos)>
 public "tick"(arg0: $TrackGraph$$Type, arg1: boolean): void
 public "getLocation"(): $Pair<($ResourceLocation), ($BlockPos)>
 public "write"(): $CompoundTag
@@ -487,7 +487,7 @@ public "chunkPos"(): $ChunkPos
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $ChunkLoadManager$LoadedChunkPos$$Type = ({"chunkPos"?: $ChunkPos$$Type, "dimension"?: $ResourceLocation$$Type}) | ([chunkPos?: $ChunkPos$$Type, dimension?: $ResourceLocation$$Type]);
+export type $ChunkLoadManager$LoadedChunkPos$$Type = ({"dimension"?: $ResourceLocation$$Type, "chunkPos"?: $ChunkPos$$Type}) | ([dimension?: $ResourceLocation$$Type, chunkPos?: $ChunkPos$$Type]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -521,12 +521,12 @@ export type $StationChunkLoader$AttachedLoader$$Original = $StationChunkLoader$A
 declare module "com.hlysine.create_power_loader.content.brasschunkloader.BrassChunkLoaderBlockEntity" {
 import {$AbstractChunkLoaderBlockEntity} from "com.hlysine.create_power_loader.content.AbstractChunkLoaderBlockEntity"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$LoaderType} from "com.hlysine.create_power_loader.content.LoaderType"
 import {$List$$Type} from "java.util.List"
+import {$LoaderType} from "com.hlysine.create_power_loader.content.LoaderType"
 import {$BlockEntityBehaviour$$Type} from "com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$SequencedGearshiftBlockEntity$SequenceContext} from "com.simibubi.create.content.kinetics.transmission.sequencer.SequencedGearshiftBlockEntity$SequenceContext"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$SequencedGearshiftBlockEntity$SequenceContext} from "com.simibubi.create.content.kinetics.transmission.sequencer.SequencedGearshiftBlockEntity$SequenceContext"
 
 export class $BrassChunkLoaderBlockEntity extends $AbstractChunkLoaderBlockEntity {
  "sequenceContext": $SequencedGearshiftBlockEntity$SequenceContext
@@ -541,11 +541,11 @@ readonly "type": $LoaderType
 
 constructor(arg0: $BlockEntityType$$Type<(never)>, arg1: $BlockPos$$Type, arg2: $BlockState$$Type)
 
-public "addBehaviours"(arg0: $List$$Type<($BlockEntityBehaviour$$Type)>): void
-public "getLoadingRange"(): integer
 public "setLoadingRange"(arg0: integer): void
-get "loadingRange"(): integer
+public "getLoadingRange"(): integer
+public "addBehaviours"(arg0: $List$$Type<($BlockEntityBehaviour$$Type)>): void
 set "loadingRange"(value: integer)
+get "loadingRange"(): integer
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -566,18 +566,18 @@ import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$ChunkLoadManager$LoadedChunkPos} from "com.hlysine.create_power_loader.content.ChunkLoadManager$LoadedChunkPos"
 
 export interface $ChunkLoader$$Interface {
-get "forcedChunks"(): $Set<($ChunkLoadManager$LoadedChunkPos)>
 get "loaderMode"(): $LoaderMode
 get "loaderType"(): $LoaderType
+get "forcedChunks"(): $Set<($ChunkLoadManager$LoadedChunkPos)>
 get "location"(): $Pair<($ResourceLocation), ($BlockPos)>
 }
 
 export class $ChunkLoader implements $ChunkLoader$$Interface {
- "getForcedChunks"(): $Set<($ChunkLoadManager$LoadedChunkPos)>
  "removeFromManager"(): void
  "addToManager"(): void
  "getLoaderMode"(): $LoaderMode
  "getLoaderType"(): $LoaderType
+ "getForcedChunks"(): $Set<($ChunkLoadManager$LoadedChunkPos)>
  "getLocation"(): $Pair<($ResourceLocation), ($BlockPos)>
 }
 /**
@@ -644,9 +644,9 @@ static readonly "FACING": $DirectionProperty
 
 constructor(arg0: $BlockBehaviour$Properties$$Type, arg1: $BlockEntityEntry$$Type<($EmptyChunkLoaderBlockEntity$$Type)>)
 
+public "hasShaftTowards"(arg0: $LevelReader$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $Direction$$Type): boolean
 public "getRotationAxis"(arg0: $BlockState$$Type): $Direction$Axis
 public "getBlockEntityType"(): $BlockEntityType<($EmptyChunkLoaderBlockEntity)>
-public "hasShaftTowards"(arg0: $LevelReader$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $Direction$$Type): boolean
 public "getBlockEntityClass"(): $Class<($EmptyChunkLoaderBlockEntity)>
 public "getTicker"<S extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(S)>): $BlockEntityTicker<(S)>
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
@@ -677,8 +677,8 @@ import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 
 export class $LoaderMode extends $Enum<($LoaderMode)> implements $StringRepresentable$$Interface {
@@ -691,11 +691,11 @@ public static "values"(): ($LoaderMode)[]
 public static "valueOf"(arg0: StringJS): $LoaderMode
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
 }
@@ -710,11 +710,11 @@ export type $LoaderMode$$Type = (("static") | ("contraption") | ("train") | ("st
 export type $LoaderMode$$Original = $LoaderMode;}
 declare module "com.hlysine.create_power_loader.content.AbstractChunkLoaderBlockEntity" {
 import {$LoaderType, $LoaderType$$Type} from "com.hlysine.create_power_loader.content.LoaderType"
-import {$Pair} from "net.createmod.catnip.data.Pair"
 import {$LoaderMode} from "com.hlysine.create_power_loader.content.LoaderMode"
+import {$Pair} from "net.createmod.catnip.data.Pair"
 import {$KineticBlockEntity} from "com.simibubi.create.content.kinetics.base.KineticBlockEntity"
-import {$StationBlockEntity, $StationBlockEntity$$Type} from "com.simibubi.create.content.trains.station.StationBlockEntity"
 import {$ChunkLoadManager$LoadedChunkPos, $ChunkLoadManager$LoadedChunkPos$$Type} from "com.hlysine.create_power_loader.content.ChunkLoadManager$LoadedChunkPos"
+import {$StationBlockEntity, $StationBlockEntity$$Type} from "com.simibubi.create.content.trains.station.StationBlockEntity"
 import {$SequencedGearshiftBlockEntity$SequenceContext} from "com.simibubi.create.content.kinetics.transmission.sequencer.SequencedGearshiftBlockEntity$SequenceContext"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
@@ -736,7 +736,6 @@ readonly "type": $LoaderType
 
 constructor(arg0: $BlockEntityType$$Type<(never)>, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $LoaderType$$Type)
 
-public "getForcedChunks"(): $Set<($ChunkLoadManager$LoadedChunkPos)>
 public "isSpeedRequirementFulfilled"(): boolean
 public "updateAttachedStation"(arg0: $StationBlockEntity$$Type): void
 public "canLoadChunks"(): boolean
@@ -745,6 +744,7 @@ public "getLoaderMode"(): $LoaderMode
 public "getLoaderType"(): $LoaderType
 public "getAttachedStation"(): $StationBlockEntity
 public "reclaimChunks"(arg0: $Set$$Type<($ChunkLoadManager$LoadedChunkPos$$Type)>): void
+public "getForcedChunks"(): $Set<($ChunkLoadManager$LoadedChunkPos)>
 public "tick"(): void
 public "remove"(): void
 public "initialize"(): void
@@ -752,12 +752,12 @@ public "getLocation"(): $Pair<($ResourceLocation), ($BlockPos)>
 public "destroy"(): void
 public "removeFromManager"(): void
 public "addToManager"(): void
-get "forcedChunks"(): $Set<($ChunkLoadManager$LoadedChunkPos)>
 get "speedRequirementFulfilled"(): boolean
 get "loadingRange"(): integer
 get "loaderMode"(): $LoaderMode
 get "loaderType"(): $LoaderType
 get "attachedStation"(): $StationBlockEntity
+get "forcedChunks"(): $Set<($ChunkLoadManager$LoadedChunkPos)>
 get "location"(): $Pair<($ResourceLocation), ($BlockPos)>
 }
 /**
@@ -792,8 +792,8 @@ import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$InteractionResult, $InteractionResult$$Type} from "net.minecraft.world.InteractionResult"
-import {$ItemInteractionResult, $ItemInteractionResult$$Type} from "net.minecraft.world.ItemInteractionResult"
 import {$AbstractChunkLoaderBlock} from "com.hlysine.create_power_loader.content.AbstractChunkLoaderBlock"
+import {$ItemInteractionResult, $ItemInteractionResult$$Type} from "net.minecraft.world.ItemInteractionResult"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"

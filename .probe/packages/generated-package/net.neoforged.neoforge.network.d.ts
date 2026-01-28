@@ -123,8 +123,8 @@ public "commonToServer"<T extends $CustomPacketPayload>(arg0: $CustomPacketPaylo
 public "commonBidirectional"<T extends $CustomPacketPayload>(arg0: $CustomPacketPayload$Type$$Type<(T)>, arg1: $StreamCodec$$Type<($FriendlyByteBuf$$Type), (T)>, arg2: $IPayloadHandler$$Type<(T)>): $PayloadRegistrar
 public "optional"(): $PayloadRegistrar
 public "versioned"(arg0: StringJS): $PayloadRegistrar
-public "playToClient"<T extends $CustomPacketPayload>(arg0: $CustomPacketPayload$Type$$Type<(T)>, arg1: $StreamCodec$$Type<($RegistryFriendlyByteBuf$$Type), (T)>, arg2: $IPayloadHandler$$Type<(T)>): $PayloadRegistrar
 public "configurationToClient"<T extends $CustomPacketPayload>(arg0: $CustomPacketPayload$Type$$Type<(T)>, arg1: $StreamCodec$$Type<($FriendlyByteBuf$$Type), (T)>, arg2: $IPayloadHandler$$Type<(T)>): $PayloadRegistrar
+public "playToClient"<T extends $CustomPacketPayload>(arg0: $CustomPacketPayload$Type$$Type<(T)>, arg1: $StreamCodec$$Type<($RegistryFriendlyByteBuf$$Type), (T)>, arg2: $IPayloadHandler$$Type<(T)>): $PayloadRegistrar
 public "playToServer"<T extends $CustomPacketPayload>(arg0: $CustomPacketPayload$Type$$Type<(T)>, arg1: $StreamCodec$$Type<($RegistryFriendlyByteBuf$$Type), (T)>, arg2: $IPayloadHandler$$Type<(T)>): $PayloadRegistrar
 public "playBidirectional"<T extends $CustomPacketPayload>(arg0: $CustomPacketPayload$Type$$Type<(T)>, arg1: $StreamCodec$$Type<($RegistryFriendlyByteBuf$$Type), (T)>, arg2: $IPayloadHandler$$Type<(T)>): $PayloadRegistrar
 public "executesOn"(arg0: $HandlerThread$$Type): $PayloadRegistrar

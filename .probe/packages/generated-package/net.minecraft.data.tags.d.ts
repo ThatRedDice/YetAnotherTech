@@ -33,8 +33,8 @@ import {$TagsProvider} from "net.minecraft.data.tags.TagsProvider"
 import {$CachedOutput$$Type} from "net.minecraft.data.CachedOutput"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$PackOutput$$Type} from "net.minecraft.data.PackOutput"
-import {$Registry$$Type} from "net.minecraft.core.Registry"
 import {$Codec$$Type} from "com.mojang.serialization.Codec"
+import {$Registry$$Type} from "net.minecraft.core.Registry"
 import {$CompletableFuture, $CompletableFuture$$Type} from "java.util.concurrent.CompletableFuture"
 import {$Function$$Type} from "java.util.function.Function"
 import {$ExistingFileHelper$$Type} from "net.neoforged.neoforge.common.data.ExistingFileHelper"
@@ -55,8 +55,8 @@ constructor(arg0: $PackOutput$$Type, arg1: $ResourceKey$$Type<($Registry<(T)>)>,
  */
 constructor(arg0: $PackOutput$$Type, arg1: $ResourceKey$$Type<($Registry<(T)>)>, arg2: $CompletableFuture$$Type<($HolderLookup$Provider$$Type)>, arg3: $CompletableFuture$$Type<($TagsProvider$TagLookup$$Type<(T)>)>, arg4: $Function$$Type<(T), ($ResourceKey$$Type<(T)>)>)
 
-public static "saveStable"<T>(arg0: $CachedOutput$$Type, arg1: $HolderLookup$Provider$$Type, arg2: $Codec$$Type<(T)>, arg3: T, arg4: $Path$$Type): $CompletableFuture<(never)>
 public static "saveStable"(arg0: $CachedOutput$$Type, arg1: $JsonElement$$Type, arg2: $Path$$Type): $CompletableFuture
+public static "saveStable"<T>(arg0: $CachedOutput$$Type, arg1: $HolderLookup$Provider$$Type, arg2: $Codec$$Type<(T)>, arg3: T, arg4: $Path$$Type): $CompletableFuture<(never)>
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -81,8 +81,8 @@ export class $TagsProvider<T> implements $DataProvider$$Interface {
 public "contentsGetter"(): $CompletableFuture<($TagsProvider$TagLookup<(T)>)>
 public "getName"(): StringJS
 public "run"(arg0: $CachedOutput$$Type): $CompletableFuture<(never)>
-public static "saveStable"<T>(arg0: $CachedOutput$$Type, arg1: $HolderLookup$Provider$$Type, arg2: $Codec$$Type<(T)>, arg3: T, arg4: $Path$$Type): $CompletableFuture<(never)>
 public static "saveStable"(arg0: $CachedOutput$$Type, arg1: $JsonElement$$Type, arg2: $Path$$Type): $CompletableFuture
+public static "saveStable"<T>(arg0: $CachedOutput$$Type, arg1: $HolderLookup$Provider$$Type, arg2: $Codec$$Type<(T)>, arg3: T, arg4: $Path$$Type): $CompletableFuture<(never)>
 get "name"(): StringJS
 }
 /**
@@ -96,17 +96,17 @@ export type $TagsProvider$$Type<T> = ($TagsProvider<(T)>);
 export type $TagsProvider$$Original<T> = $TagsProvider<(T)>;}
 declare module "net.minecraft.data.tags.TagsProvider$TagAppender" {
 import {$TagEntry$$Type} from "net.minecraft.tags.TagEntry"
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$TagBuilder} from "net.minecraft.tags.TagBuilder"
-import {$TagKey$$Type} from "net.minecraft.tags.TagKey"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$List$$Type} from "java.util.List"
+import {$TagKey$$Type} from "net.minecraft.tags.TagKey"
 import {$ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
 import {$ITagAppenderExtension$$Interface} from "net.neoforged.neoforge.common.extensions.ITagAppenderExtension"
 
 export class $TagsProvider$TagAppender<T> implements $ITagAppenderExtension$$Interface<(T)> {
-public "getInternalBuilder"(): $TagBuilder
 public "addOptional"(arg0: $ResourceLocation$$Type): $TagsProvider$TagAppender<(T)>
 public "addOptionalTag"(arg0: $ResourceLocation$$Type): $TagsProvider$TagAppender<(T)>
+public "getInternalBuilder"(): $TagBuilder
 /**
  * 
  * @deprecated
@@ -118,8 +118,8 @@ public "add"(...arg0: ($ResourceKey$$Type<(T)>)[]): $TagsProvider$TagAppender<(T
 public "addAll"(arg0: $List$$Type<($ResourceKey$$Type<(T)>)>): $TagsProvider$TagAppender<(T)>
 public "addTag"(arg0: $TagKey$$Type<(T)>): $TagsProvider$TagAppender<(T)>
 public "addTags"(...arg0: ($TagKey$$Type<(T)>)[]): $TagsProvider$TagAppender<(T)>
-public "addOptionalTags"(...arg0: ($TagKey$$Type<(T)>)[]): $TagsProvider$TagAppender<(T)>
 public "addOptionalTag"(arg0: $TagKey$$Type<(T)>): $TagsProvider$TagAppender<(T)>
+public "addOptionalTags"(...arg0: ($TagKey$$Type<(T)>)[]): $TagsProvider$TagAppender<(T)>
 public "remove"(arg0: $ResourceLocation$$Type, ...arg1: ($ResourceLocation$$Type)[]): $TagsProvider$TagAppender<(T)>
 public "remove"(arg0: $ResourceKey$$Type<(T)>): $TagsProvider$TagAppender<(T)>
 public "remove"(arg0: $ResourceKey$$Type<(T)>, ...arg1: ($ResourceKey$$Type<(T)>)[]): $TagsProvider$TagAppender<(T)>

@@ -7,19 +7,19 @@ import {$Optional} from "java.util.Optional"
 import {$List} from "java.util.List"
 import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
 import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
+import {$Inventory$$Type} from "net.minecraft.world.entity.player.Inventory"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$SimpleWaterloggedBlock$$Interface} from "net.minecraft.world.level.block.SimpleWaterloggedBlock"
-import {$Inventory$$Type} from "net.minecraft.world.entity.player.Inventory"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$AbstractContainer} from "owmii.powah.lib.logistics.inventory.AbstractContainer"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$ItemBlock} from "owmii.powah.lib.item.ItemBlock"
+import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$AbstractTileEntity$$Type} from "owmii.powah.lib.block.AbstractTileEntity"
@@ -62,8 +62,8 @@ static readonly "EAST": $BooleanProperty
 constructor(arg0: $BlockBehaviour$Properties$$Type, arg1: $Tier$$Type)
 
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
-public "updateShape"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $BlockState$$Type, arg3: $LevelAccessor$$Type, arg4: $BlockPos$$Type, arg5: $BlockPos$$Type): $BlockState
 public "propagatesSkylightDown"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): boolean
+public "updateShape"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $BlockState$$Type, arg3: $LevelAccessor$$Type, arg4: $BlockPos$$Type, arg5: $BlockPos$$Type): $BlockState
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
 public "canAttach"(arg0: $BlockState$$Type, arg1: $LevelAccessor$$Type, arg2: $BlockPos$$Type, arg3: $Direction$$Type): boolean
 public "getConnectedSides"(arg0: $BlockState$$Type): $List<($Direction)>
@@ -72,8 +72,8 @@ public "getShape"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $Bloc
 public "getConfig"(): any
 public "getBlockItem"(arg0: $Item$Properties$$Type, arg1: $ResourceKey$$Type): $ItemBlock
 public "getPickupSound"(): $Optional<($SoundEvent)>
-public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "canPlaceLiquid"(arg0: $Player$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $Fluid$$Type): boolean
+public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "pickupBlock"(arg0: $Player$$Type, arg1: $LevelAccessor$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): $ItemStack
 public "getPickupSound"(arg0: $BlockState$$Type): $Optional<($SoundEvent)>
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean

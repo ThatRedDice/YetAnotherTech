@@ -1,7 +1,7 @@
 declare module "net.neoforged.neoforge.data.event.GatherDataEvent$DataGeneratorConfig" {
 import {$Collection, $Collection$$Type} from "java.util.Collection"
-import {$CompletableFuture$$Type} from "java.util.concurrent.CompletableFuture"
 import {$File$$Type} from "java.io.File"
+import {$CompletableFuture$$Type} from "java.util.concurrent.CompletableFuture"
 import {$Function$$Type} from "java.util.function.Function"
 import {$Set, $Set$$Type} from "java.util.Set"
 import {$DataGenerator} from "net.minecraft.data.DataGenerator"
@@ -82,23 +82,23 @@ declare module "net.neoforged.neoforge.data.event.GatherDataEvent" {
 import {$List$$Type} from "java.util.List"
 import {$Event} from "net.neoforged.bus.api.Event"
 import {$Set, $Set$$Type} from "java.util.Set"
-import {$GatherDataEvent$DataProviderFromOutput$$Type} from "net.neoforged.neoforge.data.event.GatherDataEvent$DataProviderFromOutput"
 import {$ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
+import {$GatherDataEvent$DataProviderFromOutput$$Type} from "net.neoforged.neoforge.data.event.GatherDataEvent$DataProviderFromOutput"
 import {$DataGenerator, $DataGenerator$$Type} from "net.minecraft.data.DataGenerator"
 import {$ModContainer, $ModContainer$$Type} from "net.neoforged.fml.ModContainer"
-import {$Collection} from "java.util.Collection"
 import {$Map$$Type} from "java.util.Map"
+import {$Collection} from "java.util.Collection"
 import {$GatherDataEvent$ItemTagsProvider$$Type} from "net.neoforged.neoforge.data.event.GatherDataEvent$ItemTagsProvider"
-import {$TagsProvider$$Type} from "net.minecraft.data.tags.TagsProvider"
-import {$GatherDataEvent$DataProviderFromOutputLookup$$Type} from "net.neoforged.neoforge.data.event.GatherDataEvent$DataProviderFromOutputLookup"
 import {$GatherDataEvent$DataGeneratorConfig$$Type} from "net.neoforged.neoforge.data.event.GatherDataEvent$DataGeneratorConfig"
+import {$GatherDataEvent$DataProviderFromOutputLookup$$Type} from "net.neoforged.neoforge.data.event.GatherDataEvent$DataProviderFromOutputLookup"
 import {$Block$$Type} from "net.minecraft.world.level.block.Block"
+import {$TagsProvider$$Type} from "net.minecraft.data.tags.TagsProvider"
 import {$HolderLookup$Provider} from "net.minecraft.core.HolderLookup$Provider"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$RegistrySetBuilder$$Type} from "net.minecraft.core.RegistrySetBuilder"
 import {$CompletableFuture} from "java.util.concurrent.CompletableFuture"
-import {$DataProvider, $DataProvider$$Type} from "net.minecraft.data.DataProvider"
 import {$PackType$$Type} from "net.minecraft.server.packs.PackType"
+import {$DataProvider, $DataProvider$$Type} from "net.minecraft.data.DataProvider"
 import {$BiConsumer$$Type} from "java.util.function.BiConsumer"
 import {$ExistingFileHelper, $ExistingFileHelper$$Type} from "net.neoforged.neoforge.common.data.ExistingFileHelper"
 import {$Path} from "java.nio.file.Path"
@@ -123,8 +123,8 @@ public "getGenerator"(): $DataGenerator
 public "getInputs"(): $Collection<($Path)>
 public "validate"(): boolean
 public "addProvider"<T extends $DataProvider>(arg0: T): T
-public "getMods"(): $Set<(StringJS)>
 public "getResourceManager"(arg0: $PackType$$Type): $ResourceManager
+public "getMods"(): $Set<(StringJS)>
 public "createDatapackRegistryObjects"(arg0: $RegistrySetBuilder$$Type, arg1: $Consumer$$Type<($BiConsumer<($ResourceKey<(never)>), ($ICondition)>)>, arg2: $Set$$Type<(StringJS)>): void
 public "createDatapackRegistryObjects"(arg0: $RegistrySetBuilder$$Type, arg1: $Consumer$$Type<($BiConsumer<($ResourceKey<(never)>), ($ICondition)>)>): void
 public "createDatapackRegistryObjects"(arg0: $RegistrySetBuilder$$Type, arg1: $Map$$Type<($ResourceKey$$Type<(never)>), ($List$$Type<($ICondition$$Type)>)>): void
@@ -151,8 +151,8 @@ declare module "net.neoforged.neoforge.data.event.GatherDataEvent$ItemTagsProvid
 import {$PackOutput, $PackOutput$$Type} from "net.minecraft.data.PackOutput"
 import {$TagsProvider$TagLookup, $TagsProvider$TagLookup$$Type} from "net.minecraft.data.tags.TagsProvider$TagLookup"
 import {$CompletableFuture, $CompletableFuture$$Type} from "java.util.concurrent.CompletableFuture"
-import {$TagsProvider, $TagsProvider$$Type} from "net.minecraft.data.tags.TagsProvider"
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
+import {$TagsProvider, $TagsProvider$$Type} from "net.minecraft.data.tags.TagsProvider"
 import {$Item, $Item$$Type} from "net.minecraft.world.item.Item"
 import {$HolderLookup$Provider, $HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 

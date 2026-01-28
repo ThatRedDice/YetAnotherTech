@@ -1,9 +1,9 @@
 declare module "mcjty.lib.builder.TooltipBuilder" {
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$InfoLine, $InfoLine$$Type} from "mcjty.lib.builder.InfoLine"
-import {$Function$$Type} from "java.util.function.Function"
 import {$Predicate$$Type} from "java.util.function.Predicate"
+import {$Function$$Type} from "java.util.function.Function"
 import {$List$$Type} from "java.util.List"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$Stream$$Type} from "java.util.stream.Stream"
@@ -13,21 +13,21 @@ import {$ChatFormatting$$Type} from "net.minecraft.ChatFormatting"
 export class $TooltipBuilder {
 constructor()
 
-public static "gold"(): $InfoLine
 public static "gold"(arg0: $Predicate$$Type<($ItemStack)>): $InfoLine
+public static "gold"(): $InfoLine
 public "makeTooltip"(arg0: $ResourceLocation$$Type, arg1: $ItemStack$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
 public "infoShift"(...arg0: ($InfoLine$$Type)[]): $TooltipBuilder
 public "infoAdvanced"(...arg0: ($InfoLine$$Type)[]): $TooltipBuilder
 public static "repeatingParameter"(arg0: StringJS, arg1: $Function$$Type<($ItemStack), ($Stream$$Type<(StringJS)>)>): $InfoLine
-public static "warning"(): $InfoLine
 public static "warning"(arg0: $Predicate$$Type<($ItemStack)>): $InfoLine
+public static "warning"(): $InfoLine
 public static "header"(): $InfoLine
 public static "general"(arg0: StringJS, arg1: $Predicate$$Type<($ItemStack)>, ...arg2: ($ChatFormatting$$Type)[]): $InfoLine
 public static "general"(arg0: StringJS, ...arg1: ($ChatFormatting$$Type)[]): $InfoLine
 public "info"(...arg0: ($InfoLine$$Type)[]): $TooltipBuilder
 public static "key"(arg0: StringJS): $InfoLine
-public static "parameter"(arg0: StringJS, arg1: $Function$$Type<($ItemStack), (StringJS)>): $InfoLine
 public static "parameter"(arg0: StringJS, arg1: $Predicate$$Type<($ItemStack)>, arg2: $Function$$Type<($ItemStack), (StringJS)>): $InfoLine
+public static "parameter"(arg0: StringJS, arg1: $Function$$Type<($ItemStack), (StringJS)>): $InfoLine
 public "isActive"(): boolean
 get "active"(): boolean
 }
@@ -104,7 +104,7 @@ public "translationKey"(): StringJS
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $InfoLine$$Type = ({"suffix"?: StringJS, "repeatingParameter"?: $Function$$Type<($ItemStack$$Type), ($Stream$$Type<(StringJS)>)>, "informationGetter"?: $Function$$Type<($ItemStack$$Type), (StringJS)>, "translationKey"?: StringJS, "condition"?: $Predicate$$Type<($ItemStack$$Type)>, "styles"?: ($ChatFormatting$$Type)[]}) | ([suffix?: StringJS, repeatingParameter?: $Function$$Type<($ItemStack$$Type), ($Stream$$Type<(StringJS)>)>, informationGetter?: $Function$$Type<($ItemStack$$Type), (StringJS)>, translationKey?: StringJS, condition?: $Predicate$$Type<($ItemStack$$Type)>, styles?: ($ChatFormatting$$Type)[]]);
+export type $InfoLine$$Type = ({"repeatingParameter"?: $Function$$Type<($ItemStack$$Type), ($Stream$$Type<(StringJS)>)>, "informationGetter"?: $Function$$Type<($ItemStack$$Type), (StringJS)>, "translationKey"?: StringJS, "condition"?: $Predicate$$Type<($ItemStack$$Type)>, "styles"?: ($ChatFormatting$$Type)[], "suffix"?: StringJS}) | ([repeatingParameter?: $Function$$Type<($ItemStack$$Type), ($Stream$$Type<(StringJS)>)>, informationGetter?: $Function$$Type<($ItemStack$$Type), (StringJS)>, translationKey?: StringJS, condition?: $Predicate$$Type<($ItemStack$$Type)>, styles?: ($ChatFormatting$$Type)[], suffix?: StringJS]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */

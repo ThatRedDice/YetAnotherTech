@@ -138,17 +138,17 @@ import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$MachineFluidHandler} from "com.enderio.enderio.foundation.io.fluid.MachineFluidHandler"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$MachineFluidTank} from "com.enderio.enderio.foundation.io.fluid.MachineFluidTank"
-import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$MachineInventoryLayout} from "com.enderio.enderio.foundation.inventory.MachineInventoryLayout"
-import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
+import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$ActionRange, $ActionRange$$Type} from "com.enderio.enderio.foundation.attachment.ActionRange"
+import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$SideConfig} from "com.enderio.enderio.api.io.SideConfig"
 import {$RangedActor$$Interface} from "com.enderio.enderio.foundation.attachment.RangedActor"
 import {$MachineBlockEntity} from "com.enderio.enderio.foundation.block.entity.MachineBlockEntity"
 import {$IItemHandler} from "net.neoforged.neoforge.items.IItemHandler"
-import {$MachineTankLayout} from "com.enderio.enderio.foundation.io.fluid.MachineTankLayout"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$MachineTankLayout} from "com.enderio.enderio.foundation.io.fluid.MachineTankLayout"
 import {$AbstractContainerMenu} from "net.minecraft.world.inventory.AbstractContainerMenu"
 import {$ICapabilityProvider} from "net.neoforged.neoforge.capabilities.ICapabilityProvider"
 import {$FluidItemInteractive$$Interface} from "com.enderio.enderio.foundation.io.fluid.FluidItemInteractive"
@@ -169,11 +169,11 @@ static readonly "TANK": $TankAccess
 
 constructor(arg0: $BlockPos$$Type, arg1: $BlockState$$Type)
 
-public "getFluidTank"(): $MachineFluidTank
 public "serverTick"(): void
 public "loadAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "createMenu"(arg0: integer, arg1: $Inventory$$Type, arg2: $Player$$Type): $AbstractContainerMenu
 public "saveAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
+public "getFluidTank"(): $MachineFluidTank
 public "getMaxRange"(): integer
 public "createInventoryLayout"(): $MachineInventoryLayout
 public "getTankLayout"(): $MachineTankLayout
@@ -241,8 +241,8 @@ export type $AnchorTravelTarget$Serializer$$Original = $AnchorTravelTarget$Seria
 declare module "com.enderio.enderio.content.paint.item.PaintedBlockItem" {
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$AdditionalItemPlacement, $AdditionalItemPlacement$$Type} from "net.mehvahdjukaar.moonlight.api.item.additional_placements.AdditionalItemPlacement"
@@ -282,8 +282,8 @@ import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$SizedFluidIngredient, $SizedFluidIngredient$$Type} from "net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
-import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$Recipe$$Interface} from "net.minecraft.world.item.crafting.Recipe"
+import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$Record} from "java.lang.Record"
 
@@ -330,8 +330,8 @@ export type $TankRecipe$$Type = ({"output"?: $ItemStack$$Type, "input"?: $Ingred
  */
 export type $TankRecipe$$Original = $TankRecipe;}
 declare module "com.enderio.enderio.content.tools.coordinate_selector.CoordinateSelectorItem" {
-import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
+import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
@@ -367,17 +367,17 @@ export type $CoordinateSelectorItem$$Type = ($CoordinateSelectorItem);
  */
 export type $CoordinateSelectorItem$$Original = $CoordinateSelectorItem;}
 declare module "com.enderio.enderio.content.machines.capacitor_bank.CapacitorBankItem" {
-import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
+import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$ICapabilityProvider} from "net.neoforged.neoforge.capabilities.ICapabilityProvider"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$IEnergyStorage} from "net.neoforged.neoforge.energy.IEnergyStorage"
-import {$AdditionalItemPlacement, $AdditionalItemPlacement$$Type} from "net.mehvahdjukaar.moonlight.api.item.additional_placements.AdditionalItemPlacement"
 import {$CapacitorBankBlock$$Type} from "com.enderio.enderio.content.machines.capacitor_bank.CapacitorBankBlock"
+import {$AdditionalItemPlacement, $AdditionalItemPlacement$$Type} from "net.mehvahdjukaar.moonlight.api.item.additional_placements.AdditionalItemPlacement"
 
 export class $CapacitorBankItem extends $BlockItem {
 static readonly "BASE_ATTACK_DAMAGE_ID": $ResourceLocation
@@ -415,8 +415,8 @@ import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$MenuProvider} from "net.minecraft.world.MenuProvider"
-import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
+import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$PaintedBlock$$Interface} from "com.enderio.enderio.content.paint.block.PaintedBlock"
 import {$Item} from "net.minecraft.world.item.Item"
@@ -424,8 +424,8 @@ import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$SoundType} from "net.minecraft.world.level.block.SoundType"
 import {$Block} from "net.minecraft.world.level.block.Block"
@@ -459,8 +459,8 @@ static readonly "UPDATE_CLIENTS": integer
 
 constructor(arg0: $BlockBehaviour$Properties$$Type)
 
-public "getAppearance"(arg0: $BlockState$$Type, arg1: $BlockAndTintGetter$$Type, arg2: $BlockPos$$Type, arg3: $Direction$$Type, arg4: $BlockState$$Type, arg5: $BlockPos$$Type): $BlockState
 public "getMenuProvider"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type): $MenuProvider
+public "getAppearance"(arg0: $BlockState$$Type, arg1: $BlockAndTintGetter$$Type, arg2: $BlockPos$$Type, arg3: $Direction$$Type, arg4: $BlockState$$Type, arg5: $BlockPos$$Type): $BlockState
 public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockEntity
 public "getCloneItemStack"(arg0: $BlockState$$Type, arg1: $HitResult$$Type, arg2: $LevelReader$$Type, arg3: $BlockPos$$Type, arg4: $Player$$Type): $ItemStack
 public "getTicker"<T extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
@@ -492,8 +492,8 @@ import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$FireBlock} from "net.minecraft.world.level.block.FireBlock"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
@@ -573,19 +573,19 @@ export type $EnderfaceTravelTarget$Serializer$$Type = ($EnderfaceTravelTarget$Se
  */
 export type $EnderfaceTravelTarget$Serializer$$Original = $EnderfaceTravelTarget$Serializer;}
 declare module "com.enderio.enderio.content.glass.GlassIdentifier" {
-import {$GlassLighting, $GlassLighting$$Type} from "com.enderio.enderio.content.glass.GlassLighting"
 import {$GlassCollisionPredicate, $GlassCollisionPredicate$$Type} from "com.enderio.enderio.content.glass.GlassCollisionPredicate"
+import {$GlassLighting, $GlassLighting$$Type} from "com.enderio.enderio.content.glass.GlassLighting"
 import {$Record} from "java.lang.Record"
 
 export class $GlassIdentifier extends $Record {
 constructor(lighting: $GlassLighting$$Type, collisionPredicate: $GlassCollisionPredicate$$Type, explosionResistance: boolean)
 
 public "explosionResistance"(): boolean
+public "lighting"(): $GlassLighting
+public "glassName"(): StringJS
 public "collisionPredicate"(): $GlassCollisionPredicate
 public "withoutLight"(): $GlassIdentifier
 public "withCollision"(arg0: $GlassCollisionPredicate$$Type): $GlassIdentifier
-public "glassName"(): StringJS
-public "lighting"(): $GlassLighting
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
@@ -600,13 +600,13 @@ export type $GlassIdentifier$$Type = ({"explosionResistance"?: boolean, "lightin
  */
 export type $GlassIdentifier$$Original = $GlassIdentifier;}
 declare module "com.enderio.enderio.content.tools.LevitationStaffItem" {
-import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
+import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$ICapabilityProvider} from "net.neoforged.neoforge.capabilities.ICapabilityProvider"
+import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$IFluidHandlerItem} from "net.neoforged.neoforge.fluids.capability.IFluidHandlerItem"
 import {$Block} from "net.minecraft.world.level.block.Block"
-import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$IEnergyStorage} from "net.neoforged.neoforge.energy.IEnergyStorage"
 import {$PoweredToggledItem} from "com.enderio.enderio.content.tools.PoweredToggledItem"
@@ -689,10 +689,10 @@ constructor(isInsert: boolean, isExtract: boolean, extractRedstoneControl: $Reds
 public "canExtract"(arg0: $ConduitRedstoneSignalAware$$Type): boolean
 public "disconnected"(): $ConnectionConfig
 public "canInsert"(arg0: $ConduitRedstoneSignalAware$$Type): boolean
-public "extractChannel"(): $DyeColor
 public "reconnected"(): $ConnectionConfig
 public "isInsert"(): boolean
 public "isExtract"(): boolean
+public "extractChannel"(): $DyeColor
 public "insertChannel"(): $DyeColor
 public "withIsInsert"(arg0: boolean): $EnergyConduitConnectionConfig
 public "withIsExtract"(arg0: boolean): $EnergyConduitConnectionConfig
@@ -731,8 +731,8 @@ import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -783,15 +783,15 @@ import {$RecipeType} from "net.minecraft.world.item.crafting.RecipeType"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$FluidStack, $FluidStack$$Type} from "net.neoforged.neoforge.fluids.FluidStack"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
-import {$WeatherChangeRecipe$WeatherMode, $WeatherChangeRecipe$WeatherMode$$Type} from "com.enderio.enderio.content.machines.obelisks.weather.WeatherChangeRecipe$WeatherMode"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$WeatherChangeRecipe$WeatherMode, $WeatherChangeRecipe$WeatherMode$$Type} from "com.enderio.enderio.content.machines.obelisks.weather.WeatherChangeRecipe$WeatherMode"
 import {$MachineRecipe$$Interface} from "com.enderio.enderio.foundation.MachineRecipe"
 import {$WeatherChangeRecipe$Input, $WeatherChangeRecipe$Input$$Type} from "com.enderio.enderio.content.machines.obelisks.weather.WeatherChangeRecipe$Input"
 import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$OutputStack} from "com.enderio.core.common.recipes.OutputStack"
 import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
-import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
 import {$Record} from "java.lang.Record"
+import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
 
 export class $WeatherChangeRecipe extends $Record implements $MachineRecipe$$Interface<($WeatherChangeRecipe$Input)> {
 constructor(fluid: $FluidStack$$Type, mode: $WeatherChangeRecipe$WeatherMode$$Type)
@@ -841,7 +841,7 @@ get "group"(): StringJS
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $WeatherChangeRecipe$$Type = ({"mode"?: $WeatherChangeRecipe$WeatherMode$$Type, "fluid"?: $FluidStack$$Type}) | ([mode?: $WeatherChangeRecipe$WeatherMode$$Type, fluid?: $FluidStack$$Type]);
+export type $WeatherChangeRecipe$$Type = ({"fluid"?: $FluidStack$$Type, "mode"?: $WeatherChangeRecipe$WeatherMode$$Type}) | ([fluid?: $FluidStack$$Type, mode?: $WeatherChangeRecipe$WeatherMode$$Type]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -849,8 +849,8 @@ export type $WeatherChangeRecipe$$Original = $WeatherChangeRecipe;}
 declare module "com.enderio.enderio.content.tools.vials.SoulVialItem" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$List, $List$$Type} from "java.util.List"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$PlayerInteractEvent$EntityInteractSpecific$$Type} from "net.neoforged.neoforge.event.entity.player.PlayerInteractEvent$EntityInteractSpecific"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
@@ -859,9 +859,9 @@ import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$Soul$$Type} from "com.enderio.enderio.api.soul.Soul"
-import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
+import {$Soul$$Type} from "com.enderio.enderio.api.soul.Soul"
 import {$AdvancedTooltipProvider$$Interface} from "com.enderio.core.client.item.AdvancedTooltipProvider"
 import {$FMLCommonSetupEvent$$Type} from "net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent"
 
@@ -884,8 +884,8 @@ public static "forSoul"(arg0: $Soul$$Type): $ItemStack
 public "addCommonTooltips"(arg0: $ItemStack$$Type, arg1: $Player$$Type, arg2: $List$$Type<($Component$$Type)>): void
 public "addDetailedTooltips"(arg0: $ItemStack$$Type, arg1: $Player$$Type, arg2: $List$$Type<($Component$$Type)>): void
 public static "onLivingInteract"(arg0: $PlayerInteractEvent$EntityInteractSpecific$$Type): void
-public static "onCommonSetup"(arg0: $FMLCommonSetupEvent$$Type): void
 public "interactLivingEntity"(arg0: $ItemStack$$Type, arg1: $Player$$Type, arg2: $LivingEntity$$Type, arg3: $InteractionHand$$Type): $InteractionResult
+public static "onCommonSetup"(arg0: $FMLCommonSetupEvent$$Type): void
 public "addBasicTooltips"(arg0: $ItemStack$$Type, arg1: $Player$$Type, arg2: $List$$Type<($Component$$Type)>): void
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 public static get "allFilled"(): $List<($ItemStack)>
@@ -907,8 +907,8 @@ import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$NiardBlockEntity} from "com.enderio.enderio.content.machines.niard.NiardBlockEntity"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$ProgressMachineBlock} from "com.enderio.enderio.foundation.block.ProgressMachineBlock"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$DirectionProperty} from "net.minecraft.world.level.block.state.properties.DirectionProperty"
@@ -955,20 +955,20 @@ import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Set} from "java.util.Set"
 
 export interface $PaintedBlockEntity$$Interface {
+set "primaryPaint"(value: $Block$$Type)
 get "secondaryPaint"(): $Optional<($Block)>
 set "secondaryPaint"(value: $Block$$Type)
 get "primaryPaint"(): $Optional<($Block)>
-set "primaryPaint"(value: $Block$$Type)
 }
 
 export class $PaintedBlockEntity implements $PaintedBlockEntity$$Interface {
 static readonly "PAINT_DATA_PROPERTIES": $Set<($ModelProperty<($Block)>)>
 
+ "setPrimaryPaint"(arg0: $Block$$Type): void
  "hasSecondaryPaint"(): boolean
  "getSecondaryPaint"(): $Optional<($Block)>
  "setSecondaryPaint"(arg0: $Block$$Type): void
  "getPrimaryPaint"(): $Optional<($Block)>
- "setPrimaryPaint"(arg0: $Block$$Type): void
 static "createAndRegisterModelProperty"(): $ModelProperty<($Block)>
 }
 /**
@@ -985,8 +985,8 @@ import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 
@@ -1058,8 +1058,8 @@ import {$Half} from "net.minecraft.world.level.block.state.properties.Half"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
-import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
+import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$PaintedBlock$$Interface} from "com.enderio.enderio.content.paint.block.PaintedBlock"
 import {$Item} from "net.minecraft.world.item.Item"
@@ -1067,8 +1067,8 @@ import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$SoundType} from "net.minecraft.world.level.block.SoundType"
 import {$Block} from "net.minecraft.world.level.block.Block"
@@ -1077,8 +1077,8 @@ import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$ItemLike$$Type} from "net.minecraft.world.level.ItemLike"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
-import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
+import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$TrapDoorBlock} from "net.minecraft.world.level.block.TrapDoorBlock"
 import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
@@ -1162,8 +1162,8 @@ public "craft"(arg0: $RecipeInput$$Type, arg1: $RegistryAccess$$Type): $List
 public "isSmelting"(): boolean
 public "getBaseEnergyCost"(): integer
 public "getResultStacks"(arg0: $RegistryAccess$$Type): $List<($OutputStack)>
-public "output"(): $ItemStack
 public "inputs"(): $List<($SizedIngredient)>
+public "output"(): $ItemStack
 public "matches"(arg0: $RecipeInput$$Type, arg1: $Level$$Type): boolean
 public "matches"(arg0: $AlloySmeltingRecipe$Input$$Type, arg1: $Level$$Type): boolean
 public "getType"(): $RecipeType<(never)>
@@ -1207,21 +1207,21 @@ export type $AlloySmeltingRecipe$$Original = $AlloySmeltingRecipe;}
 declare module "com.enderio.enderio.content.filters.AbstractFilterItem" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$List$$Type} from "java.util.List"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Runnable$$Type} from "java.lang.Runnable"
 import {$FilterMenuProvider, $FilterMenuProvider$$Interface} from "com.enderio.enderio.api.filter.FilterMenuProvider"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$ICapabilityProvider} from "net.neoforged.neoforge.capabilities.ICapabilityProvider"
 import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
-import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$ICapabilityProvider} from "net.neoforged.neoforge.capabilities.ICapabilityProvider"
 import {$IItemHandlerModifiable$$Type} from "net.neoforged.neoforge.items.IItemHandlerModifiable"
+import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
 
@@ -1254,8 +1254,8 @@ declare module "com.enderio.enderio.content.tools.hang_glider.HangGliderItem" {
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 
@@ -1284,8 +1284,8 @@ export type $HangGliderItem$$Original = $HangGliderItem;}
 declare module "com.enderio.enderio.content.machines.soul_binder.SoulBindingRecipe$Input" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$RecipeInput} from "net.minecraft.world.item.crafting.RecipeInput"
-import {$List} from "java.util.List"
 import {$FluidRecipeInput$$Interface} from "com.enderio.enderio.foundation.recipe.FluidRecipeInput"
+import {$List} from "java.util.List"
 import {$SlotFilter$$Type} from "dev.latvian.mods.kubejs.util.SlotFilter"
 import {$FluidStack, $FluidStack$$Type} from "net.neoforged.neoforge.fluids.FluidStack"
 import {$Record} from "java.lang.Record"
@@ -1326,8 +1326,8 @@ import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$Bl
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
-import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$SpongeBlock} from "net.minecraft.world.level.block.SpongeBlock"
+import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $IndustrialInsulationBlock extends $SpongeBlock {
@@ -1410,8 +1410,8 @@ import {$Record} from "java.lang.Record"
 export class $SlicingRecipe$Input extends $Record implements $RecipeInput$$Interface {
 constructor(inputs: $List$$Type<($ItemStack$$Type)>)
 
-public "getItem"(arg0: integer): $ItemStack
 public "inputs"(): $List<($ItemStack)>
+public "getItem"(arg0: integer): $ItemStack
 public "size"(): integer
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
@@ -1463,9 +1463,9 @@ import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$List$$Type} from "java.util.List"
+import {$IItemHandler$$Type} from "net.neoforged.neoforge.items.IItemHandler"
 import {$NonNullList, $NonNullList$$Type} from "net.minecraft.core.NonNullList"
 import {$DamageFilterMode, $DamageFilterMode$$Type} from "com.enderio.enderio.content.filters.item.general.DamageFilterMode"
-import {$IItemHandler$$Type} from "net.neoforged.neoforge.items.IItemHandler"
 import {$ItemFilter$$Interface} from "com.enderio.enderio.api.filter.ItemFilter"
 import {$Record} from "java.lang.Record"
 
@@ -1501,8 +1501,8 @@ export type $EnderItemFilter$$Original = $EnderItemFilter;}
 declare module "com.enderio.enderio.content.filters.redstone.RedstoneFilterItem$Type" {
 import {$UnaryOperator} from "java.util.function.UnaryOperator"
 import {$Enum} from "java.lang.Enum"
-import {$MenuType} from "net.minecraft.world.inventory.MenuType"
 import {$Item$Properties} from "net.minecraft.world.item.Item$Properties"
+import {$MenuType} from "net.minecraft.world.inventory.MenuType"
 
 export class $RedstoneFilterItem$Type extends $Enum<($RedstoneFilterItem$Type)> {
 static readonly "NOR": $RedstoneFilterItem$Type
@@ -1536,8 +1536,8 @@ import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 
@@ -1574,16 +1574,16 @@ import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.
 import {$SimpleWaterloggedBlock$$Interface} from "net.minecraft.world.level.block.SimpleWaterloggedBlock"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
-import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
+import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$SoundType} from "net.minecraft.world.level.block.SoundType"
 import {$Block} from "net.minecraft.world.level.block.Block"
@@ -1593,9 +1593,9 @@ import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
-import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
+import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$PushReaction} from "net.minecraft.world.level.material.PushReaction"
@@ -1638,8 +1638,8 @@ public "getPistonPushReaction"(arg0: $BlockState$$Type): $PushReaction
 public "getLightEmission"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): integer
 public "getListener"<T extends $BlockEntity>(arg0: $ServerLevel$$Type, arg1: T): $GameEventListener
 public "getPickupSound"(): $Optional<($SoundEvent)>
-public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "canPlaceLiquid"(arg0: $Player$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $Fluid$$Type): boolean
+public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "pickupBlock"(arg0: $Player$$Type, arg1: $LevelAccessor$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): $ItemStack
 public "getPickupSound"(arg0: $BlockState$$Type): $Optional<($SoundEvent)>
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
@@ -1660,8 +1660,8 @@ import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$IntFunction} from "java.util.function.IntFunction"
@@ -1681,11 +1681,11 @@ public static "values"(): ($SagMillingRecipe$BonusType)[]
 public static "valueOf"(arg0: StringJS): $SagMillingRecipe$BonusType
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
 }
@@ -1723,10 +1723,10 @@ constructor(isInsert: boolean, insertChannel: $DyeColor$$Type, isExtract: boolea
 public "canExtract"(arg0: $ConduitRedstoneSignalAware$$Type): boolean
 public "disconnected"(): $ConnectionConfig
 public "canInsert"(arg0: $ConduitRedstoneSignalAware$$Type): boolean
-public "extractChannel"(): $DyeColor
 public "reconnected"(): $ConnectionConfig
 public "isInsert"(): boolean
 public "isExtract"(): boolean
+public "extractChannel"(): $DyeColor
 public "insertChannel"(): $DyeColor
 public "withIsInsert"(arg0: boolean): $ItemConduitConnectionConfig
 public "withIsExtract"(arg0: boolean): $ItemConduitConnectionConfig
@@ -1759,7 +1759,7 @@ get "connected"(): boolean
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $ItemConduitConnectionConfig$$Type = ({"isSelfFeed"?: boolean, "extractRedstoneChannel"?: $DyeColor$$Type, "priority"?: integer, "extractRedstoneControl"?: $RedstoneControl$$Type, "extractChannel"?: $DyeColor$$Type, "insertChannel"?: $DyeColor$$Type, "isExtract"?: boolean, "isInsert"?: boolean, "isRoundRobin"?: boolean}) | ([isSelfFeed?: boolean, extractRedstoneChannel?: $DyeColor$$Type, priority?: integer, extractRedstoneControl?: $RedstoneControl$$Type, extractChannel?: $DyeColor$$Type, insertChannel?: $DyeColor$$Type, isExtract?: boolean, isInsert?: boolean, isRoundRobin?: boolean]);
+export type $ItemConduitConnectionConfig$$Type = ({"extractRedstoneChannel"?: $DyeColor$$Type, "priority"?: integer, "extractRedstoneControl"?: $RedstoneControl$$Type, "extractChannel"?: $DyeColor$$Type, "insertChannel"?: $DyeColor$$Type, "isExtract"?: boolean, "isInsert"?: boolean, "isRoundRobin"?: boolean, "isSelfFeed"?: boolean}) | ([extractRedstoneChannel?: $DyeColor$$Type, priority?: integer, extractRedstoneControl?: $RedstoneControl$$Type, extractChannel?: $DyeColor$$Type, insertChannel?: $DyeColor$$Type, isExtract?: boolean, isInsert?: boolean, isRoundRobin?: boolean, isSelfFeed?: boolean]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -1767,8 +1767,8 @@ export type $ItemConduitConnectionConfig$$Original = $ItemConduitConnectionConfi
 declare module "com.enderio.enderio.content.machines.obelisks.weather.WeatherChangeRecipe$Serializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$WeatherChangeRecipe} from "com.enderio.enderio.content.machines.obelisks.weather.WeatherChangeRecipe"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
 
@@ -1808,8 +1808,8 @@ import {$Item, $Item$$Type} from "net.minecraft.world.item.Item"
 import {$OutputStack} from "com.enderio.core.common.recipes.OutputStack"
 import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$FermentingRecipe$Input, $FermentingRecipe$Input$$Type} from "com.enderio.enderio.content.machines.vat.FermentingRecipe$Input"
-import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
 import {$Record} from "java.lang.Record"
+import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
 
 export class $FermentingRecipe extends $Record implements $MachineRecipe$$Interface<($FermentingRecipe$Input)> {
 constructor(input: $SizedFluidIngredient$$Type, firstReagent: $TagKey$$Type<($Item)>, secondReagent: $TagKey$$Type<($Item)>, output: $FluidStack$$Type, ticks: integer)
@@ -1878,12 +1878,12 @@ import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$Codec} from "com.mojang.serialization.Codec"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
+import {$Codec} from "com.mojang.serialization.Codec"
 import {$BlockEntityType, $BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Supplier, $Supplier$$Type} from "java.util.function.Supplier"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
@@ -1893,8 +1893,8 @@ import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
-import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$AdvancedTooltipProvider$$Interface} from "com.enderio.core.client.item.AdvancedTooltipProvider"
+import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$DirectionProperty} from "net.minecraft.world.level.block.state.properties.DirectionProperty"
 
@@ -1946,8 +1946,8 @@ export type $SolarPanelBlock$$Type = ($SolarPanelBlock);
  */
 export type $SolarPanelBlock$$Original = $SolarPanelBlock;}
 declare module "com.enderio.enderio.content.filters.soul.EnderSoulFilterItem" {
-import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
+import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$FilterMenuProvider} from "com.enderio.enderio.api.filter.FilterMenuProvider"
 import {$AbstractFilterItem} from "com.enderio.enderio.content.filters.AbstractFilterItem"
@@ -2031,8 +2031,8 @@ import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Objec
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$PressurePlateBlock, $PressurePlateBlock$$Type} from "net.minecraft.world.level.block.PressurePlateBlock"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 
@@ -2081,8 +2081,8 @@ export class $TankRecipe$Input extends $Record implements $RecipeInput$$Interfac
 constructor(fillItem: $ItemStack$$Type, emptyItem: $ItemStack$$Type, fluidTank: $MachineFluidTank$$Type)
 
 public "emptyItem"(): $ItemStack
-public "fluidTank"(): $MachineFluidTank
 public "fillItem"(): $ItemStack
+public "fluidTank"(): $MachineFluidTank
 public "getItem"(arg0: integer): $ItemStack
 public "size"(): integer
 public "equals"(arg0: any): boolean
@@ -2118,11 +2118,11 @@ export interface $ConduitMenu$ConnectionAccessor$$Interface {
 }
 
 export class $ConduitMenu$ConnectionAccessor implements $ConduitMenu$ConnectionAccessor$$Interface {
- "canOpenScreen"(arg0: $Holder$$Type<($Conduit<(never), (never)>)>, arg1: $Direction$$Type): boolean
- "getAllOpenableConduits"(arg0: $Direction$$Type): $List<($Holder<($Conduit<(never), (never)>)>)>
- "getConduitExtraGuiData"(arg0: $Holder$$Type<($Conduit<(never), (never)>)>, arg1: $Direction$$Type): $CompoundTag
  "setConnectionConfig"(arg0: $Holder$$Type<($Conduit<(never), (never)>)>, arg1: $Direction$$Type, arg2: $ConnectionConfig$$Type): void
  "getConnectionConfig"(arg0: $Holder$$Type<($Conduit<(never), (never)>)>, arg1: $Direction$$Type): $ConnectionConfig
+ "getAllOpenableConduits"(arg0: $Direction$$Type): $List<($Holder<($Conduit<(never), (never)>)>)>
+ "getConduitExtraGuiData"(arg0: $Holder$$Type<($Conduit<(never), (never)>)>, arg1: $Direction$$Type): $CompoundTag
+ "canOpenScreen"(arg0: $Holder$$Type<($Conduit<(never), (never)>)>, arg1: $Direction$$Type): boolean
  "stillValid"(arg0: $Player$$Type): boolean
 }
 /**
@@ -2170,8 +2170,8 @@ export type $WeatherChangeRecipe$Input$$Type = ({"fluid"?: $FluidStack$$Type}) |
 export type $WeatherChangeRecipe$Input$$Original = $WeatherChangeRecipe$Input;}
 declare module "com.enderio.enderio.content.conduits.type.redstone.RedstoneConduitConnectionConfig" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$ConduitRedstoneSignalAware$$Type} from "com.enderio.enderio.api.conduits.ConduitRedstoneSignalAware"
 import {$ConnectionConfigType} from "com.enderio.enderio.api.conduits.connection.config.ConnectionConfigType"
+import {$ConduitRedstoneSignalAware$$Type} from "com.enderio.enderio.api.conduits.ConduitRedstoneSignalAware"
 import {$ConnectionConfig} from "com.enderio.enderio.api.conduits.connection.config.ConnectionConfig"
 import {$DyeColor, $DyeColor$$Type} from "net.minecraft.world.item.DyeColor"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -2188,11 +2188,11 @@ static readonly "STREAM_CODEC": $StreamCodec<($ByteBuf), ($RedstoneConduitConnec
 constructor(isInsert: boolean, insertChannel: $DyeColor$$Type, isExtract: boolean, extractChannel: $DyeColor$$Type, isStrongOutputSignal: boolean)
 
 public "disconnected"(): $ConnectionConfig
-public "isStrongOutputSignal"(): boolean
-public "extractChannel"(): $DyeColor
 public "reconnected"(): $ConnectionConfig
 public "isInsert"(): boolean
 public "isExtract"(): boolean
+public "extractChannel"(): $DyeColor
+public "isStrongOutputSignal"(): boolean
 public "insertChannel"(): $DyeColor
 public "withIsInsert"(arg0: boolean): $RedstoneConduitConnectionConfig
 public "withIsExtract"(arg0: boolean): $RedstoneConduitConnectionConfig
@@ -2206,9 +2206,9 @@ public "hashCode"(): integer
 public "canExtract"(arg0: $ConduitRedstoneSignalAware$$Type): boolean
 public "canInsert"(arg0: $ConduitRedstoneSignalAware$$Type): boolean
 public "isConnected"(): boolean
-get "strongOutputSignal"(): boolean
 get "insert"(): boolean
 get "extract"(): boolean
+get "strongOutputSignal"(): boolean
 get "connected"(): boolean
 }
 /**
@@ -2282,8 +2282,8 @@ import {$MobCategory, $MobCategory$$Type} from "net.minecraft.world.entity.MobCa
 import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$OutputStack} from "com.enderio.core.common.recipes.OutputStack"
 import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
-import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
 import {$Record} from "java.lang.Record"
+import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
 
 export class $SoulBindingRecipe extends $Record implements $MachineRecipe$$Interface<($SoulBindingRecipe$Input)> {
 constructor(output: $ItemStack$$Type, input: $Ingredient$$Type, energy: integer, experience: integer, entityType: ($ResourceLocation$$Type)?, mobCategory: ($MobCategory$$Type)?, soulData: (StringJS)?, copyInputComponents: boolean)
@@ -2340,7 +2340,7 @@ get "group"(): StringJS
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $SoulBindingRecipe$$Type = ({"experience"?: integer, "entityType"?: ($ResourceLocation$$Type)?, "mobCategory"?: ($MobCategory$$Type)?, "soulData"?: (StringJS)?, "output"?: $ItemStack$$Type, "energy"?: integer, "input"?: $Ingredient$$Type, "copyInputComponents"?: boolean}) | ([experience?: integer, entityType?: ($ResourceLocation$$Type)?, mobCategory?: ($MobCategory$$Type)?, soulData?: (StringJS)?, output?: $ItemStack$$Type, energy?: integer, input?: $Ingredient$$Type, copyInputComponents?: boolean]);
+export type $SoulBindingRecipe$$Type = ({"entityType"?: ($ResourceLocation$$Type)?, "mobCategory"?: ($MobCategory$$Type)?, "soulData"?: (StringJS)?, "output"?: $ItemStack$$Type, "energy"?: integer, "input"?: $Ingredient$$Type, "copyInputComponents"?: boolean, "experience"?: integer}) | ([entityType?: ($ResourceLocation$$Type)?, mobCategory?: ($MobCategory$$Type)?, soulData?: (StringJS)?, output?: $ItemStack$$Type, energy?: integer, input?: $Ingredient$$Type, copyInputComponents?: boolean, experience?: integer]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -2387,7 +2387,7 @@ get "itemStack"(): $ItemStack
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $SagMillingRecipe$OutputItem$SizedTagOutput$$Type = ({"itemTag"?: $TagKey$$Type<($Item)>, "count"?: integer}) | ([itemTag?: $TagKey$$Type<($Item)>, count?: integer]);
+export type $SagMillingRecipe$OutputItem$SizedTagOutput$$Type = ({"count"?: integer, "itemTag"?: $TagKey$$Type<($Item)>}) | ([count?: integer, itemTag?: $TagKey$$Type<($Item)>]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -2395,8 +2395,8 @@ export type $SagMillingRecipe$OutputItem$SizedTagOutput$$Original = $SagMillingR
 declare module "com.enderio.enderio.content.machines.vat.FermentingRecipe$Serializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$FermentingRecipe} from "com.enderio.enderio.content.machines.vat.FermentingRecipe"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
 
@@ -2420,12 +2420,12 @@ export type $FermentingRecipe$Serializer$$Type = ($FermentingRecipe$Serializer);
  */
 export type $FermentingRecipe$Serializer$$Original = $FermentingRecipe$Serializer;}
 declare module "com.enderio.enderio.content.tools.ElectromagnetItem" {
-import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
+import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$ICapabilityProvider} from "net.neoforged.neoforge.capabilities.ICapabilityProvider"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$IEnergyStorage} from "net.neoforged.neoforge.energy.IEnergyStorage"
 import {$PoweredToggledItem} from "com.enderio.enderio.content.tools.PoweredToggledItem"
@@ -2529,8 +2529,8 @@ declare module "com.enderio.enderio.content.misc_blocks.skull.EnderSkullBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$SkullBlock} from "net.minecraft.world.level.block.SkullBlock"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
@@ -2538,8 +2538,8 @@ import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$Equipable} from "net.minecraft.world.item.Equipable"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -2592,8 +2592,8 @@ import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.
 import {$FenceBlock} from "net.minecraft.world.level.block.FenceBlock"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
-import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
+import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$PaintedBlock$$Interface} from "com.enderio.enderio.content.paint.block.PaintedBlock"
 import {$Item} from "net.minecraft.world.item.Item"
@@ -2601,8 +2601,8 @@ import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$Map} from "java.util.Map"
 import {$SoundType} from "net.minecraft.world.level.block.SoundType"
@@ -2676,8 +2676,8 @@ import {$Half} from "net.minecraft.world.level.block.state.properties.Half"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
-import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
+import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$PaintedBlock$$Interface} from "com.enderio.enderio.content.paint.block.PaintedBlock"
 import {$Item} from "net.minecraft.world.item.Item"
@@ -2685,9 +2685,9 @@ import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
-import {$StairsShape} from "net.minecraft.world.level.block.state.properties.StairsShape"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$StairsShape} from "net.minecraft.world.level.block.state.properties.StairsShape"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$SoundType} from "net.minecraft.world.level.block.SoundType"
 import {$Block} from "net.minecraft.world.level.block.Block"
@@ -2696,8 +2696,8 @@ import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$ItemLike$$Type} from "net.minecraft.world.level.ItemLike"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
-import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
+import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -2760,8 +2760,8 @@ import {$PoweredBlock} from "net.minecraft.world.level.block.PoweredBlock"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
-import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
+import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$PaintedBlock$$Interface} from "com.enderio.enderio.content.paint.block.PaintedBlock"
 import {$Item} from "net.minecraft.world.item.Item"
@@ -2769,8 +2769,8 @@ import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$SoundType} from "net.minecraft.world.level.block.SoundType"
 import {$Block} from "net.minecraft.world.level.block.Block"
@@ -2835,8 +2835,8 @@ import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
-import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
+import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$PaintedBlock$$Interface} from "com.enderio.enderio.content.paint.block.PaintedBlock"
 import {$Item} from "net.minecraft.world.item.Item"
@@ -2844,9 +2844,9 @@ import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
+import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$ColorRGBA} from "net.minecraft.util.ColorRGBA"
-import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$SoundType} from "net.minecraft.world.level.block.SoundType"
 import {$Block} from "net.minecraft.world.level.block.Block"
@@ -2936,8 +2936,8 @@ declare module "com.enderio.enderio.content.tools.hang_glider.UseGliderTrigger$T
 import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$ContextAwarePredicate, $ContextAwarePredicate$$Type} from "net.minecraft.advancements.critereon.ContextAwarePredicate"
 import {$CriterionValidator$$Type} from "net.minecraft.advancements.critereon.CriterionValidator"
-import {$Record} from "java.lang.Record"
 import {$SimpleCriterionTrigger$SimpleInstance$$Interface} from "net.minecraft.advancements.critereon.SimpleCriterionTrigger$SimpleInstance"
+import {$Record} from "java.lang.Record"
 
 export class $UseGliderTrigger$TriggerInstance extends $Record implements $SimpleCriterionTrigger$SimpleInstance$$Interface {
 constructor(player: ($ContextAwarePredicate$$Type)?)
@@ -3005,8 +3005,8 @@ import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
-import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
+import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$PaintedBlock$$Interface} from "com.enderio.enderio.content.paint.block.PaintedBlock"
 import {$Item} from "net.minecraft.world.item.Item"
@@ -3014,8 +3014,8 @@ import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$SoundType} from "net.minecraft.world.level.block.SoundType"
 import {$Block} from "net.minecraft.world.level.block.Block"
@@ -3081,8 +3081,8 @@ export type $PaintedFenceGateBlock$$Type = ($PaintedFenceGateBlock);
  */
 export type $PaintedFenceGateBlock$$Original = $PaintedFenceGateBlock;}
 declare module "com.enderio.enderio.content.machines.powered_spawner.MindKillerBlock" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$Block} from "net.minecraft.world.level.block.Block"
@@ -3135,8 +3135,8 @@ export type $MindKillerBlock$$Type = ($MindKillerBlock);
  */
 export type $MindKillerBlock$$Original = $MindKillerBlock;}
 declare module "com.enderio.enderio.content.filters.item.general.EnderItemFilterItem$Type" {
-import {$EnderItemFilterMenu} from "com.enderio.enderio.content.filters.item.general.EnderItemFilterMenu"
 import {$Enum} from "java.lang.Enum"
+import {$EnderItemFilterMenu} from "com.enderio.enderio.content.filters.item.general.EnderItemFilterMenu"
 import {$RegistryFriendlyByteBuf$$Type} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$AbstractFilterMenu$FilterAccess$$Type} from "com.enderio.enderio.content.filters.AbstractFilterMenu$FilterAccess"
 import {$Inventory$$Type} from "net.minecraft.world.entity.player.Inventory"
@@ -3216,7 +3216,7 @@ get "empty"(): boolean
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $PaintingRecipe$Input$$Type = ({"paint"?: $ItemStack$$Type, "template"?: $ItemStack$$Type}) | ([paint?: $ItemStack$$Type, template?: $ItemStack$$Type]);
+export type $PaintingRecipe$Input$$Type = ({"template"?: $ItemStack$$Type, "paint"?: $ItemStack$$Type}) | ([template?: $ItemStack$$Type, paint?: $ItemStack$$Type]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -3227,8 +3227,8 @@ import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 import {$Fireworks} from "net.minecraft.world.item.component.Fireworks"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
@@ -3249,11 +3249,11 @@ public static "values"(): ($WeatherChangeRecipe$WeatherMode)[]
 public static "valueOf"(arg0: StringJS): $WeatherChangeRecipe$WeatherMode
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "fireworks"(): $Fireworks
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
@@ -3275,8 +3275,8 @@ import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
-import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
+import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$PaintedBlock$$Interface} from "com.enderio.enderio.content.paint.block.PaintedBlock"
 import {$Item} from "net.minecraft.world.item.Item"
@@ -3284,8 +3284,8 @@ import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$SoundType} from "net.minecraft.world.level.block.SoundType"
 import {$Block} from "net.minecraft.world.level.block.Block"
@@ -3294,12 +3294,12 @@ import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$ItemLike$$Type} from "net.minecraft.world.level.ItemLike"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
-import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
+import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
-import {$WallBlock} from "net.minecraft.world.level.block.WallBlock"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
+import {$WallBlock} from "net.minecraft.world.level.block.WallBlock"
 
 export class $PaintedWallBlock extends $WallBlock implements $EntityBlock$$Interface, $PaintedBlock$$Interface {
 static readonly "SOUTH_WALL": $EnumProperty<($WallSide)>
@@ -3351,8 +3351,8 @@ export type $PaintedWallBlock$$Type = ($PaintedWallBlock);
  */
 export type $PaintedWallBlock$$Original = $PaintedWallBlock;}
 declare module "com.enderio.enderio.content.enchanter.EnchanterBlock" {
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$Block} from "net.minecraft.world.level.block.Block"
@@ -3412,8 +3412,8 @@ import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
 import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$IntFunction} from "java.util.function.IntFunction"
@@ -3429,11 +3429,11 @@ public static "values"(): ($TankRecipe$Mode)[]
 public static "valueOf"(arg0: StringJS): $TankRecipe$Mode
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
 }
@@ -3455,8 +3455,8 @@ import {$SlabType} from "net.minecraft.world.level.block.state.properties.SlabTy
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
-import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
+import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$PaintedBlock$$Interface} from "com.enderio.enderio.content.paint.block.PaintedBlock"
 import {$Item} from "net.minecraft.world.item.Item"
@@ -3464,10 +3464,10 @@ import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
-import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$SlabBlock} from "net.minecraft.world.level.block.SlabBlock"
+import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$SoundType} from "net.minecraft.world.level.block.SoundType"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$HitResult$$Type} from "net.minecraft.world.phys.HitResult"
@@ -3475,8 +3475,8 @@ import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$ItemLike$$Type} from "net.minecraft.world.level.ItemLike"
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
-import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
+import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -3532,12 +3532,12 @@ import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$List$$Type} from "java.util.List"
-import {$Soul, $Soul$$Type} from "com.enderio.enderio.api.soul.Soul"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$Soul, $Soul$$Type} from "com.enderio.enderio.api.soul.Soul"
 import {$SoulFilter$$Interface} from "com.enderio.enderio.api.filter.SoulFilter"
 import {$NonNullList, $NonNullList$$Type} from "net.minecraft.core.NonNullList"
-import {$Record} from "java.lang.Record"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$Record} from "java.lang.Record"
 
 export class $EnderSoulFilter extends $Record implements $SoulFilter$$Interface {
 static readonly "CODEC": $Codec<($EnderSoulFilter)>
@@ -3570,8 +3570,8 @@ export type $EnderSoulFilter$$Type = ({"shouldCompareTags"?: boolean, "isDenyLis
 export type $EnderSoulFilter$$Original = $EnderSoulFilter;}
 declare module "com.enderio.enderio.content.machines.painting.PaintingRecipe$Serializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$PaintingRecipe} from "com.enderio.enderio.content.machines.painting.PaintingRecipe"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
@@ -3598,8 +3598,8 @@ export type $PaintingRecipe$Serializer$$Original = $PaintingRecipe$Serializer;}
 declare module "com.enderio.enderio.content.machines.soul_binder.SoulBindingRecipe$Serializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$SoulBindingRecipe} from "com.enderio.enderio.content.machines.soul_binder.SoulBindingRecipe"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
 
@@ -3652,7 +3652,7 @@ public static "of"(arg0: $ItemStack$$Type): $FireCraftingRecipe$Result
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $FireCraftingRecipe$Result$$Type = ({"minCount"?: integer, "maxCount"?: integer, "chance"?: float, "result"?: $ItemStack$$Type}) | ([minCount?: integer, maxCount?: integer, chance?: float, result?: $ItemStack$$Type]);
+export type $FireCraftingRecipe$Result$$Type = ({"maxCount"?: integer, "chance"?: float, "result"?: $ItemStack$$Type, "minCount"?: integer}) | ([maxCount?: integer, chance?: float, result?: $ItemStack$$Type, minCount?: integer]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -3663,9 +3663,9 @@ import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$ConduitNode$$Type} from "com.enderio.enderio.api.conduits.network.node.ConduitNode"
+import {$RedstoneConduitConnectionConfig} from "com.enderio.enderio.content.conduits.type.redstone.RedstoneConduitConnectionConfig"
 import {$ConduitDataAccessor$$Type} from "com.enderio.enderio.api.conduits.network.node.legacy.ConduitDataAccessor"
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
-import {$RedstoneConduitConnectionConfig} from "com.enderio.enderio.content.conduits.type.redstone.RedstoneConduitConnectionConfig"
 import {$SlotType$$Type} from "com.enderio.enderio.api.conduits.bundle.SlotType"
 import {$ConduitBlockConnection, $ConduitBlockConnection$$Type} from "com.enderio.enderio.api.conduits.network.ConduitBlockConnection"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
@@ -3682,12 +3682,12 @@ import {$CompoundTag} from "net.minecraft.nbt.CompoundTag"
 import {$Vector2i} from "org.joml.Vector2i"
 import {$Comparator} from "java.util.Comparator"
 import {$Conduit$$Interface} from "com.enderio.enderio.api.conduits.Conduit"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$BiConsumer$$Type} from "java.util.function.BiConsumer"
-import {$RedstoneConduitTicker} from "com.enderio.enderio.content.conduits.type.redstone.RedstoneConduitTicker"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
+import {$RedstoneConduitTicker} from "com.enderio.enderio.content.conduits.type.redstone.RedstoneConduitTicker"
 import {$Record} from "java.lang.Record"
 
 export class $RedstoneConduit extends $Record implements $Conduit$$Interface<($RedstoneConduit), ($RedstoneConduitConnectionConfig)> {
@@ -3697,9 +3697,10 @@ static readonly "EXTRACT_FILTER_SLOT": integer
 
 constructor(texture: $ResourceLocation$$Type, activeTexture: $ResourceLocation$$Type, description: $Component$$Type)
 
+public "hasMenu"(): boolean
 public "getInventorySize"(): integer
-public "connectionConfigType"(): $ConnectionConfigType<($RedstoneConduitConnectionConfig)>
 public "canConnectToBlock"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $Direction$$Type): boolean
+public "connectionConfigType"(): $ConnectionConfigType<($RedstoneConduitConnectionConfig)>
 public "networkTickRate"(): integer
 public "canForceConnectToBlock"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $Direction$$Type): boolean
 public "onConnectionsUpdated"(arg0: $ConduitNode$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Set$$Type<($Direction$$Type)>): void
@@ -3707,7 +3708,6 @@ public "getInventorySlotPosition"(arg0: integer): $Vector2i
 public "getIndexForLegacySlot"(arg0: $SlotType$$Type): integer
 public "getExtraWorldData"(arg0: $ConduitBundle$$Type, arg1: $ConduitNode$$Type): $CompoundTag
 public "convertConnection"(arg0: boolean, arg1: boolean, arg2: $DyeColor$$Type, arg3: $DyeColor$$Type, arg4: $RedstoneControl$$Type, arg5: $DyeColor$$Type): $ConnectionConfig
-public "hasMenu"(): boolean
 public "texture"(): $ResourceLocation
 public "type"(): $ConduitType<($RedstoneConduit)>
 public "equals"(arg0: any): boolean
@@ -3753,11 +3753,11 @@ export type $RedstoneConduit$$Type = ({"activeTexture"?: $ResourceLocation$$Type
 export type $RedstoneConduit$$Original = $RedstoneConduit;}
 declare module "com.enderio.enderio.content.fun.EnderiosItem" {
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
+import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
@@ -3811,10 +3811,10 @@ constructor(isInsert: boolean, insertChannel: $DyeColor$$Type, isExtract: boolea
 public "canExtract"(arg0: $ConduitRedstoneSignalAware$$Type): boolean
 public "disconnected"(): $ConnectionConfig
 public "canInsert"(arg0: $ConduitRedstoneSignalAware$$Type): boolean
-public "extractChannel"(): $DyeColor
 public "reconnected"(): $ConnectionConfig
 public "isInsert"(): boolean
 public "isExtract"(): boolean
+public "extractChannel"(): $DyeColor
 public "insertChannel"(): $DyeColor
 public "withIsInsert"(arg0: boolean): $FluidConduitConnectionConfig
 public "withIsExtract"(arg0: boolean): $FluidConduitConnectionConfig
@@ -3858,8 +3858,8 @@ import {$SlotType$$Type} from "com.enderio.enderio.api.conduits.bundle.SlotType"
 import {$ConduitBlockConnection, $ConduitBlockConnection$$Type} from "com.enderio.enderio.api.conduits.network.ConduitBlockConnection"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
-import {$ConnectionConfigType} from "com.enderio.enderio.api.conduits.connection.config.ConnectionConfigType"
 import {$FluidConduitConnectionConfig} from "com.enderio.enderio.content.conduits.type.fluid.FluidConduitConnectionConfig"
+import {$ConnectionConfigType} from "com.enderio.enderio.api.conduits.connection.config.ConnectionConfigType"
 import {$ConnectionConfig$$Type} from "com.enderio.enderio.api.conduits.connection.config.ConnectionConfig"
 import {$DyeColor$$Type} from "net.minecraft.world.item.DyeColor"
 import {$Set$$Type} from "java.util.Set"
@@ -3871,8 +3871,8 @@ import {$CompoundTag} from "net.minecraft.nbt.CompoundTag"
 import {$Vector2i} from "org.joml.Vector2i"
 import {$Comparator} from "java.util.Comparator"
 import {$Conduit$$Type, $Conduit$$Interface} from "com.enderio.enderio.api.conduits.Conduit"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$ConduitTicker} from "com.enderio.enderio.api.conduits.ticker.ConduitTicker"
 import {$BiConsumer$$Type} from "java.util.function.BiConsumer"
@@ -3886,12 +3886,13 @@ static readonly "EXTRACT_FILTER_SLOT": integer
 
 constructor(texture: $ResourceLocation$$Type, description: $Component$$Type, transferRatePerTick: integer, isMultiFluid: boolean, doesSupportPriority: boolean)
 
+public "hasMenu"(): boolean
 public "addToTooltip"(arg0: $Item$TooltipContext$$Type, arg1: $Consumer$$Type<($Component)>, arg2: $TooltipFlag$$Type): void
 public "getInventorySize"(): integer
-public "connectionConfigType"(): $ConnectionConfigType<($FluidConduitConnectionConfig)>
 public "canConnectToBlock"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $Direction$$Type): boolean
-public "canReplaceConduit"(arg0: $FluidConduit$$Type): boolean
+public "connectionConfigType"(): $ConnectionConfigType<($FluidConduitConnectionConfig)>
 public "canReplaceConduit"(arg0: $Conduit$$Type): boolean
+public "canReplaceConduit"(arg0: $FluidConduit$$Type): boolean
 public "hasServerConnectionChecks"(): boolean
 public "canConnectConduits"(arg0: $ConduitNode$$Type, arg1: $ConduitNode$$Type): boolean
 public "compareNodes"(arg0: $ConduitBlockConnection$$Type, arg1: $ConduitBlockConnection$$Type, arg2: $ConduitBlockConnection$$Type): integer
@@ -3905,9 +3906,8 @@ public "convertConnection"(arg0: boolean, arg1: boolean, arg2: $DyeColor$$Type, 
 public "copyLegacyData"(arg0: $ConduitNode$$Type, arg1: $ConduitDataAccessor$$Type, arg2: $BiConsumer$$Type<($Direction), ($ConnectionConfig)>): void
 public "doesSupportPriority"(): boolean
 public "isMultiFluid"(): boolean
-public "hasMenu"(): boolean
-public "transferRatePerTick"(): integer
 public "texture"(): $ResourceLocation
+public "transferRatePerTick"(): integer
 public "type"(): $ConduitType<($FluidConduit)>
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
@@ -3969,19 +3969,19 @@ import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Ingredient, $Ingredient$$Type} from "net.minecraft.world.item.crafting.Ingredient"
 import {$List, $List$$Type} from "java.util.List"
 import {$RecipeType} from "net.minecraft.world.item.crafting.RecipeType"
-import {$SagMillingRecipe$OutputItem, $SagMillingRecipe$OutputItem$$Type} from "com.enderio.enderio.content.machines.sag_mill.SagMillingRecipe$OutputItem"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
+import {$SagMillingRecipe$OutputItem, $SagMillingRecipe$OutputItem$$Type} from "com.enderio.enderio.content.machines.sag_mill.SagMillingRecipe$OutputItem"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$MachineRecipe$$Interface} from "com.enderio.enderio.foundation.MachineRecipe"
-import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$GrindingBallData$$Type} from "com.enderio.enderio.api.components.GrindingBallData"
+import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$SagMillingRecipe$Input, $SagMillingRecipe$Input$$Type} from "com.enderio.enderio.content.machines.sag_mill.SagMillingRecipe$Input"
-import {$SagMillingRecipe$BonusType, $SagMillingRecipe$BonusType$$Type} from "com.enderio.enderio.content.machines.sag_mill.SagMillingRecipe$BonusType"
 import {$OutputStack} from "com.enderio.core.common.recipes.OutputStack"
+import {$SagMillingRecipe$BonusType, $SagMillingRecipe$BonusType$$Type} from "com.enderio.enderio.content.machines.sag_mill.SagMillingRecipe$BonusType"
 import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
-import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
 import {$Record} from "java.lang.Record"
+import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
 
 export class $SagMillingRecipe extends $Record implements $MachineRecipe$$Interface<($SagMillingRecipe$Input)> {
 constructor(input: $Ingredient$$Type, outputs: $List$$Type<($SagMillingRecipe$OutputItem$$Type)>, energy: integer, bonusType: $SagMillingRecipe$BonusType$$Type)
@@ -3991,10 +3991,10 @@ public "getSerializer"(): $RecipeSerializer<(never)>
 public "getIngredients"(): $NonNullList<($Ingredient)>
 public "craft"(arg0: $RecipeInput$$Type, arg1: $RegistryAccess$$Type): $List
 public "craft"(arg0: $SagMillingRecipe$Input$$Type, arg1: $RegistryAccess$$Type): $List<($OutputStack)>
-public "bonusType"(): $SagMillingRecipe$BonusType
-public "getEnergyCost"(arg0: $RecipeInput$$Type): integer
 public "getEnergyCost"(arg0: $SagMillingRecipe$Input$$Type): integer
+public "getEnergyCost"(arg0: $RecipeInput$$Type): integer
 public "getEnergyCost"(arg0: $GrindingBallData$$Type): integer
+public "bonusType"(): $SagMillingRecipe$BonusType
 public "getBaseEnergyCost"(): integer
 public "getResultStacks"(arg0: $RegistryAccess$$Type): $List<($OutputStack)>
 public "equals"(arg0: any): boolean
@@ -4052,15 +4052,15 @@ import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.Blo
 import {$MachineFluidHandler} from "com.enderio.enderio.foundation.io.fluid.MachineFluidHandler"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$MachineFluidTank} from "com.enderio.enderio.foundation.io.fluid.MachineFluidTank"
-import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$MachineInventoryLayout} from "com.enderio.enderio.foundation.inventory.MachineInventoryLayout"
+import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$SideConfig} from "com.enderio.enderio.api.io.SideConfig"
 import {$MachineBlockEntity} from "com.enderio.enderio.foundation.block.entity.MachineBlockEntity"
 import {$IItemHandler} from "net.neoforged.neoforge.items.IItemHandler"
-import {$MachineTankLayout} from "com.enderio.enderio.foundation.io.fluid.MachineTankLayout"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$MachineTankLayout} from "com.enderio.enderio.foundation.io.fluid.MachineTankLayout"
 import {$AbstractContainerMenu} from "net.minecraft.world.inventory.AbstractContainerMenu"
 import {$ICapabilityProvider} from "net.neoforged.neoforge.capabilities.ICapabilityProvider"
 import {$FluidItemInteractive$$Interface} from "com.enderio.enderio.foundation.io.fluid.FluidItemInteractive"
@@ -4081,10 +4081,10 @@ static readonly "TANK": $TankAccess
 
 constructor(arg0: $BlockEntityType$$Type<(never)>, arg1: $BlockPos$$Type, arg2: $BlockState$$Type)
 
-public "getFluidTank"(): $MachineFluidTank
 public "serverTick"(): void
 public "loadAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "createMenu"(arg0: integer, arg1: $Inventory$$Type, arg2: $Player$$Type): $AbstractContainerMenu
+public "getFluidTank"(): $MachineFluidTank
 public "createInventoryLayout"(): $MachineInventoryLayout
 public "acceptItemDrain"(arg0: $ItemStack$$Type): boolean
 public "acceptItemFill"(arg0: $ItemStack$$Type): boolean
@@ -4192,9 +4192,9 @@ set "filterItem"(value: $ItemStack$$Type)
 }
 
 export class $AbstractFilterMenu$FilterAccess implements $AbstractFilterMenu$FilterAccess$$Interface {
+ "goBack"(): boolean
  "getFilterItem"(): $ItemStack
  "setFilterItem"(arg0: $ItemStack$$Type): void
- "goBack"(): boolean
  "stillValid"(arg0: $Player$$Type): boolean
 }
 /**
@@ -4210,9 +4210,9 @@ declare module "com.enderio.enderio.content.conduits.network.IConduitNodeAttachm
 import {$BlockCapability$$Type} from "net.neoforged.neoforge.capabilities.BlockCapability"
 import {$ConnectionConfigType$$Type} from "com.enderio.enderio.api.conduits.connection.config.ConnectionConfigType"
 import {$ConnectionConfig, $ConnectionConfig$$Type} from "com.enderio.enderio.api.conduits.connection.config.ConnectionConfig"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
-import {$IItemHandlerModifiable} from "net.neoforged.neoforge.items.IItemHandlerModifiable"
 import {$DyeColor$$Type} from "net.minecraft.world.item.DyeColor"
+import {$IItemHandlerModifiable} from "net.neoforged.neoforge.items.IItemHandlerModifiable"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level} from "net.minecraft.world.level.Level"
 import {$ConnectionStatus} from "com.enderio.enderio.api.conduits.connection.ConnectionStatus"
 import {$Conduit$$Type} from "com.enderio.enderio.api.conduits.Conduit"
@@ -4223,15 +4223,15 @@ get "level"(): $Level
 }
 
 export class $IConduitNodeAttachment implements $IConduitNodeAttachment$$Interface {
- "getConnectionStatus"(arg0: $Holder$$Type<($Conduit<(never), (never)>)>, arg1: $Direction$$Type): $ConnectionStatus
- "markNodesDirty"(): void
- "getNeighborSidedCapability"<TCapability>(arg0: $Holder$$Type<($Conduit<(never), (never)>)>, arg1: $BlockCapability$$Type<(TCapability), ($Direction$$Type)>, arg2: $Direction$$Type): TCapability
- "getNeighborVoidCapability"<TCapability>(arg0: $Holder$$Type<($Conduit<(never), (never)>)>, arg1: $BlockCapability$$Type<(TCapability), (void)>, arg2: $Direction$$Type): TCapability
  "setConnectionConfig"(arg0: $Holder$$Type<($Conduit<(never), (never)>)>, arg1: $Direction$$Type, arg2: $ConnectionConfig$$Type): void
  "getConnectionConfig"<T extends $ConnectionConfig>(arg0: $Holder$$Type<($Conduit<(never), (never)>)>, arg1: $Direction$$Type, arg2: $ConnectionConfigType$$Type<(T)>): T
  "getConnectionConfig"(arg0: $Holder$$Type<($Conduit<(never), (never)>)>, arg1: $Direction$$Type): $ConnectionConfig
  "getConnectionInventory"(arg0: $Holder$$Type<($Conduit<(never), (never)>)>, arg1: $Direction$$Type): $IItemHandlerModifiable
  "hasRedstoneSignal"(arg0: $DyeColor$$Type): boolean
+ "markNodesDirty"(): void
+ "getNeighborSidedCapability"<TCapability>(arg0: $Holder$$Type<($Conduit<(never), (never)>)>, arg1: $BlockCapability$$Type<(TCapability), ($Direction$$Type)>, arg2: $Direction$$Type): TCapability
+ "getNeighborVoidCapability"<TCapability>(arg0: $Holder$$Type<($Conduit<(never), (never)>)>, arg1: $BlockCapability$$Type<(TCapability), (void)>, arg2: $Direction$$Type): TCapability
+ "getConnectionStatus"(arg0: $Holder$$Type<($Conduit<(never), (never)>)>, arg1: $Direction$$Type): $ConnectionStatus
  "getLevel"(): $Level
  "hasLevel"(): boolean
 }
@@ -4249,13 +4249,13 @@ import {$CoordinateSelection, $CoordinateSelection$$Type} from "com.enderio.ende
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$Optional} from "java.util.Optional"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$List$$Type} from "java.util.List"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
@@ -4303,8 +4303,8 @@ import {$MachineRecipe$$Interface} from "com.enderio.enderio.foundation.MachineR
 import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$OutputStack} from "com.enderio.core.common.recipes.OutputStack"
 import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
-import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
 import {$Record} from "java.lang.Record"
+import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
 
 export class $SlicingRecipe extends $Record implements $MachineRecipe$$Interface<($SlicingRecipe$Input)> {
 constructor(output: $ItemStack$$Type, inputs: $List$$Type<($Ingredient$$Type)>, energy: integer)
@@ -4316,8 +4316,8 @@ public "craft"(arg0: $RecipeInput$$Type, arg1: $RegistryAccess$$Type): $List
 public "craft"(arg0: $SlicingRecipe$Input$$Type, arg1: $RegistryAccess$$Type): $List<($OutputStack)>
 public "getBaseEnergyCost"(): integer
 public "getResultStacks"(arg0: $RegistryAccess$$Type): $List<($OutputStack)>
-public "output"(): $ItemStack
 public "inputs"(): $List<($Ingredient)>
+public "output"(): $ItemStack
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
@@ -4373,9 +4373,9 @@ import {$ConduitBlockConnection, $ConduitBlockConnection$$Type} from "com.enderi
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$ConnectionConfigType} from "com.enderio.enderio.api.conduits.connection.config.ConnectionConfigType"
-import {$ConnectionConfig$$Type} from "com.enderio.enderio.api.conduits.connection.config.ConnectionConfig"
-import {$EnergyConduitTicker} from "com.enderio.enderio.content.conduits.type.energy.EnergyConduitTicker"
+import {$ConnectionConfig, $ConnectionConfig$$Type} from "com.enderio.enderio.api.conduits.connection.config.ConnectionConfig"
 import {$DyeColor$$Type} from "net.minecraft.world.item.DyeColor"
+import {$EnergyConduitTicker} from "com.enderio.enderio.content.conduits.type.energy.EnergyConduitTicker"
 import {$Set$$Type} from "java.util.Set"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$ConduitType} from "com.enderio.enderio.api.conduits.ConduitType"
@@ -4385,8 +4385,8 @@ import {$CompoundTag} from "net.minecraft.nbt.CompoundTag"
 import {$Vector2i} from "org.joml.Vector2i"
 import {$Comparator} from "java.util.Comparator"
 import {$Conduit$$Type, $Conduit$$Interface} from "com.enderio.enderio.api.conduits.Conduit"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$EnergyConduitConnectionConfig} from "com.enderio.enderio.content.conduits.type.energy.EnergyConduitConnectionConfig"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$BiConsumer$$Type} from "java.util.function.BiConsumer"
@@ -4398,19 +4398,19 @@ static readonly "CODEC": $MapCodec<($EnergyConduit)>
 
 constructor(texture: $ResourceLocation$$Type, description: $Component$$Type, transferRatePerTick: integer)
 
+public "hasMenu"(): boolean
 public "addToTooltip"(arg0: $Item$TooltipContext$$Type, arg1: $Consumer$$Type<($Component)>, arg2: $TooltipFlag$$Type): void
 public "onRemoved"(arg0: $ConduitNode$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type): void
-public "connectionConfigType"(): $ConnectionConfigType<($EnergyConduitConnectionConfig)>
 public "canConnectToBlock"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $Direction$$Type): boolean
+public "connectionConfigType"(): $ConnectionConfigType<($EnergyConduitConnectionConfig)>
 public "networkTickRate"(): integer
 public "proxyCapability"<TCap, TContext>(arg0: $Level$$Type, arg1: $ConduitNode$$Type, arg2: $BlockCapability$$Type<(TCap), (TContext)>, arg3: TContext): TCap
 public "canReplaceConduit"(arg0: $Conduit$$Type): boolean
 public "canReplaceConduit"(arg0: $EnergyConduit$$Type): boolean
-public "convertConnection"(arg0: boolean, arg1: boolean, arg2: $DyeColor$$Type, arg3: $DyeColor$$Type, arg4: $RedstoneControl$$Type, arg5: $DyeColor$$Type): $EnergyConduitConnectionConfig
+public "convertConnection"(arg0: boolean, arg1: boolean, arg2: $DyeColor$$Type, arg3: $DyeColor$$Type, arg4: $RedstoneControl$$Type, arg5: $DyeColor$$Type): $ConnectionConfig
 public "getGeneralConnectionComparator"(): $Comparator<($ConduitBlockConnection)>
-public "hasMenu"(): boolean
-public "transferRatePerTick"(): integer
 public "texture"(): $ResourceLocation
+public "transferRatePerTick"(): integer
 public "type"(): $ConduitType<($EnergyConduit)>
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
@@ -4464,18 +4464,18 @@ import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
-import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
+import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
 import {$PressurePlateBlock} from "net.minecraft.world.level.block.PressurePlateBlock"
+import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$PaintedBlock$$Interface} from "com.enderio.enderio.content.paint.block.PaintedBlock"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$SoundType} from "net.minecraft.world.level.block.SoundType"
 import {$Block} from "net.minecraft.world.level.block.Block"
@@ -4566,11 +4566,11 @@ import {$ConduitBundleBlockEntity$$Type} from "com.enderio.enderio.content.condu
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$List$$Type} from "java.util.List"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
@@ -4612,14 +4612,14 @@ import {$Optional$$Type} from "java.util.Optional"
 import {$List, $List$$Type} from "java.util.List"
 import {$ConduitNode, $ConduitNode$$Type} from "com.enderio.enderio.api.conduits.network.node.ConduitNode"
 import {$Conduit, $Conduit$$Type} from "com.enderio.enderio.api.conduits.Conduit"
-import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
 import {$ConduitNetwork$$Interface as $ConduitNetwork$0$$Interface} from "com.enderio.enderio.api.conduits.network.ConduitNetwork"
-import {$ConduitBlockConnection, $ConduitBlockConnection$$Type} from "com.enderio.enderio.api.conduits.network.ConduitBlockConnection"
-import {$Consumer$$Type} from "java.util.function.Consumer"
-import {$ConduitNetworkContext, $ConduitNetworkContext$$Type} from "com.enderio.enderio.api.conduits.network.ConduitNetworkContext"
+import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
 import {$ConduitNodeImpl, $ConduitNodeImpl$$Type} from "com.enderio.enderio.content.conduits.network.ConduitNodeImpl"
-import {$Codec} from "com.mojang.serialization.Codec"
+import {$ConduitNetworkContext, $ConduitNetworkContext$$Type} from "com.enderio.enderio.api.conduits.network.ConduitNetworkContext"
+import {$Consumer$$Type} from "java.util.function.Consumer"
+import {$ConduitBlockConnection, $ConduitBlockConnection$$Type} from "com.enderio.enderio.api.conduits.network.ConduitBlockConnection"
 import {$Network} from "com.enderio.core.common.graph.Network"
+import {$Codec} from "com.mojang.serialization.Codec"
 import {$DyeColor, $DyeColor$$Type} from "net.minecraft.world.item.DyeColor"
 import {$Set} from "java.util.Set"
 import {$ConduitNetworkContextType$$Type} from "com.enderio.enderio.api.conduits.network.ConduitNetworkContextType"
@@ -4679,15 +4679,15 @@ import {$GlassLighting} from "com.enderio.enderio.content.glass.GlassLighting"
 import {$GlassCollisionPredicate} from "com.enderio.enderio.content.glass.GlassCollisionPredicate"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$DyeColor$$Type} from "net.minecraft.world.item.DyeColor"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$GlassIdentifier, $GlassIdentifier$$Type} from "com.enderio.enderio.content.glass.GlassIdentifier"
 import {$TransparentBlock} from "net.minecraft.world.level.block.TransparentBlock"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
@@ -4779,8 +4779,8 @@ export type $EnderFluidFilter$$Type = ({"isDenyList"?: boolean, "matches"?: $Non
 export type $EnderFluidFilter$$Original = $EnderFluidFilter;}
 declare module "com.enderio.enderio.content.fire_crafting.FireCraftingRecipe$Serializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$FireCraftingRecipe} from "com.enderio.enderio.content.fire_crafting.FireCraftingRecipe"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
@@ -4807,8 +4807,8 @@ export type $FireCraftingRecipe$Serializer$$Original = $FireCraftingRecipe$Seria
 declare module "com.enderio.enderio.content.tools.PoweredToggledItem" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$List$$Type} from "java.util.List"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
@@ -4817,8 +4817,8 @@ import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$ICustomCreativeTabEntries$$Interface} from "com.enderio.core.common.item.ICustomCreativeTabEntries"
 import {$CreativeModeTab$Output$$Type} from "net.minecraft.world.item.CreativeModeTab$Output"
-import {$ICapabilityProvider} from "net.neoforged.neoforge.capabilities.ICapabilityProvider"
 import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
+import {$ICapabilityProvider} from "net.neoforged.neoforge.capabilities.ICapabilityProvider"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$IEnergyStorage} from "net.neoforged.neoforge.energy.IEnergyStorage"
@@ -4890,8 +4890,8 @@ import {$List$$Type} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$FilterMenuProvider} from "com.enderio.enderio.api.filter.FilterMenuProvider"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$AbstractFilterItem} from "com.enderio.enderio.content.filters.AbstractFilterItem"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$EnderFluidFilterItem$Type$$Type} from "com.enderio.enderio.content.filters.fluid.EnderFluidFilterItem$Type"
@@ -5028,8 +5028,8 @@ import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
-import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
+import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$PaintedBlock$$Interface} from "com.enderio.enderio.content.paint.block.PaintedBlock"
 import {$Item} from "net.minecraft.world.item.Item"
@@ -5037,8 +5037,8 @@ import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$EntityBlock$$Interface} from "net.minecraft.world.level.block.EntityBlock"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$SoundType} from "net.minecraft.world.level.block.SoundType"
 import {$Block} from "net.minecraft.world.level.block.Block"
@@ -5108,17 +5108,17 @@ import {$MachineRecipe$$Interface} from "com.enderio.enderio.foundation.MachineR
 import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$OutputStack} from "com.enderio.core.common.recipes.OutputStack"
 import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
-import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
 import {$Record} from "java.lang.Record"
+import {$RegistryAccess$$Type} from "net.minecraft.core.RegistryAccess"
 
 export class $PaintingRecipe extends $Record implements $MachineRecipe$$Interface<($PaintingRecipe$Input)> {
 constructor(input: $Ingredient$$Type, output: $ItemStack$$Type)
 
-public "assemble"(arg0: $RecipeInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
 public "assemble"(arg0: $PaintingRecipe$Input$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
+public "assemble"(arg0: $RecipeInput$$Type, arg1: $HolderLookup$Provider$$Type): $ItemStack
 public "getSerializer"(): $RecipeSerializer<(never)>
-public "getIngredients"(): $NonNullList<($Ingredient)>
 public "getResultItem"(arg0: $HolderLookup$Provider$$Type): $ItemStack
+public "getIngredients"(): $NonNullList<($Ingredient)>
 public "craft"(arg0: $PaintingRecipe$Input$$Type, arg1: $RegistryAccess$$Type): $List<($OutputStack)>
 public "craft"(arg0: $RecipeInput$$Type, arg1: $RegistryAccess$$Type): $List
 public "getBaseEnergyCost"(): integer
@@ -5159,8 +5159,8 @@ export type $PaintingRecipe$$Type = ({"output"?: $ItemStack$$Type, "input"?: $In
 export type $PaintingRecipe$$Original = $PaintingRecipe;}
 declare module "com.enderio.enderio.content.machines.sag_mill.SagMillingRecipe$Input" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$GrindingBallData, $GrindingBallData$$Type} from "com.enderio.enderio.api.components.GrindingBallData"
 import {$RecipeInput, $RecipeInput$$Interface} from "net.minecraft.world.item.crafting.RecipeInput"
+import {$GrindingBallData, $GrindingBallData$$Type} from "com.enderio.enderio.api.components.GrindingBallData"
 import {$List} from "java.util.List"
 import {$SlotFilter$$Type} from "dev.latvian.mods.kubejs.util.SlotFilter"
 import {$Record} from "java.lang.Record"
@@ -5168,8 +5168,8 @@ import {$Record} from "java.lang.Record"
 export class $SagMillingRecipe$Input extends $Record implements $RecipeInput$$Interface {
 constructor(inputItemStack: $ItemStack$$Type, grindingBallData: $GrindingBallData$$Type)
 
-public "inputItemStack"(): $ItemStack
 public "grindingBallData"(): $GrindingBallData
+public "inputItemStack"(): $ItemStack
 public "getItem"(arg0: integer): $ItemStack
 public "size"(): integer
 public "equals"(arg0: any): boolean
@@ -5187,7 +5187,7 @@ get "empty"(): boolean
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $SagMillingRecipe$Input$$Type = ({"inputItemStack"?: $ItemStack$$Type, "grindingBallData"?: $GrindingBallData$$Type}) | ([inputItemStack?: $ItemStack$$Type, grindingBallData?: $GrindingBallData$$Type]);
+export type $SagMillingRecipe$Input$$Type = ({"grindingBallData"?: $GrindingBallData$$Type, "inputItemStack"?: $ItemStack$$Type}) | ([grindingBallData?: $GrindingBallData$$Type, inputItemStack?: $ItemStack$$Type]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -5199,8 +5199,8 @@ import {$List$$Type} from "java.util.List"
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
@@ -5262,10 +5262,10 @@ import {$CompoundTag} from "net.minecraft.nbt.CompoundTag"
 import {$Vector2i} from "org.joml.Vector2i"
 import {$Comparator} from "java.util.Comparator"
 import {$Conduit$$Interface} from "com.enderio.enderio.api.conduits.Conduit"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
-import {$ItemConduitConnectionConfig} from "com.enderio.enderio.content.conduits.type.item.ItemConduitConnectionConfig"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Consumer$$Type} from "java.util.function.Consumer"
+import {$ItemConduitConnectionConfig} from "com.enderio.enderio.content.conduits.type.item.ItemConduitConnectionConfig"
 import {$ConduitTicker} from "com.enderio.enderio.api.conduits.ticker.ConduitTicker"
 import {$BiConsumer$$Type} from "java.util.function.BiConsumer"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -5278,10 +5278,11 @@ static readonly "EXTRACT_FILTER_SLOT": integer
 
 constructor(texture: $ResourceLocation$$Type, description: $Component$$Type, transferRatePerCycle: integer, networkTickRate: integer)
 
+public "hasMenu"(): boolean
 public "addToTooltip"(arg0: $Item$TooltipContext$$Type, arg1: $Consumer$$Type<($Component)>, arg2: $TooltipFlag$$Type): void
 public "getInventorySize"(): integer
-public "connectionConfigType"(): $ConnectionConfigType<($ItemConduitConnectionConfig)>
 public "canConnectToBlock"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $Direction$$Type): boolean
+public "connectionConfigType"(): $ConnectionConfigType<($ItemConduitConnectionConfig)>
 public "networkTickRate"(): integer
 public "compareNodes"(arg0: $ConduitBlockConnection$$Type, arg1: $ConduitBlockConnection$$Type, arg2: $ConduitBlockConnection$$Type): integer
 public "getInventorySlotPosition"(arg0: integer): $Vector2i
@@ -5291,9 +5292,8 @@ public "hasAdvancedTooltip"(): boolean
 public "showDebugTooltip"(): boolean
 public "convertConnection"(arg0: boolean, arg1: boolean, arg2: $DyeColor$$Type, arg3: $DyeColor$$Type, arg4: $RedstoneControl$$Type, arg5: $DyeColor$$Type): $ConnectionConfig
 public "copyLegacyData"(arg0: $ConduitNode$$Type, arg1: $ConduitDataAccessor$$Type, arg2: $BiConsumer$$Type<($Direction), ($ConnectionConfig)>): void
-public "hasMenu"(): boolean
-public "transferRatePerCycle"(): integer
 public "texture"(): $ResourceLocation
+public "transferRatePerCycle"(): integer
 public "type"(): $ConduitType<($ItemConduit)>
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
@@ -5323,7 +5323,7 @@ get "generalConnectionComparator"(): $Comparator<($ConduitBlockConnection)>
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $ItemConduit$$Type = ({"transferRatePerCycle"?: integer, "networkTickRate"?: integer, "texture"?: $ResourceLocation$$Type, "description"?: $Component$$Type}) | ([transferRatePerCycle?: integer, networkTickRate?: integer, texture?: $ResourceLocation$$Type, description?: $Component$$Type]);
+export type $ItemConduit$$Type = ({"networkTickRate"?: integer, "texture"?: $ResourceLocation$$Type, "description"?: $Component$$Type, "transferRatePerCycle"?: integer}) | ([networkTickRate?: integer, texture?: $ResourceLocation$$Type, description?: $Component$$Type, transferRatePerCycle?: integer]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -5331,8 +5331,8 @@ export type $ItemConduit$$Original = $ItemConduit;}
 declare module "com.enderio.enderio.content.travel.TravelStaffItem" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$List$$Type} from "java.util.List"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
@@ -5342,8 +5342,8 @@ import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$ICustomCreativeTabEntries$$Interface} from "com.enderio.core.common.item.ICustomCreativeTabEntries"
 import {$CreativeModeTab$Output$$Type} from "net.minecraft.world.item.CreativeModeTab$Output"
-import {$ICapabilityProvider} from "net.neoforged.neoforge.capabilities.ICapabilityProvider"
 import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
+import {$ICapabilityProvider} from "net.neoforged.neoforge.capabilities.ICapabilityProvider"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item, $Item$$Type} from "net.minecraft.world.item.Item"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
@@ -5390,16 +5390,15 @@ export type $TravelStaffItem$$Original = $TravelStaffItem;}
 declare module "com.enderio.enderio.content.conduits.bundle.ConduitBundleBlockEntity" {
 import {$BlockCapability$$Type} from "net.neoforged.neoforge.capabilities.BlockCapability"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$LongSet} from "it.unimi.dsi.fastutil.longs.LongSet"
 import {$FacadeType} from "com.enderio.enderio.api.conduits.facade.FacadeType"
+import {$LongSet} from "it.unimi.dsi.fastutil.longs.LongSet"
 import {$List} from "java.util.List"
 import {$Long2ObjectMap} from "it.unimi.dsi.fastutil.longs.Long2ObjectMap"
-import {$AddConduitResult} from "com.enderio.enderio.api.conduits.bundle.AddConduitResult"
 import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
+import {$AddConduitResult} from "com.enderio.enderio.api.conduits.bundle.AddConduitResult"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
-import {$ConduitNode} from "com.enderio.enderio.api.conduits.network.node.ConduitNode"
 import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
-import {$ConduitNodeImpl$$Type} from "com.enderio.enderio.content.conduits.network.ConduitNodeImpl"
+import {$ConduitNodeImpl, $ConduitNodeImpl$$Type} from "com.enderio.enderio.content.conduits.network.ConduitNodeImpl"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ConduitMenu$ConnectionAccessor$$Interface} from "com.enderio.enderio.content.conduits.menu.ConduitMenu$ConnectionAccessor"
 import {$ConnectionConfigType$$Type} from "com.enderio.enderio.api.conduits.connection.config.ConnectionConfigType"
@@ -5408,10 +5407,10 @@ import {$DyeColor$$Type} from "net.minecraft.world.item.DyeColor"
 import {$ConnectionStatus, $ConnectionStatus$$Type} from "com.enderio.enderio.api.conduits.connection.ConnectionStatus"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$Wrenchable$$Interface} from "com.enderio.enderio.foundation.block.entity.Wrenchable"
 import {$ModelData} from "net.neoforged.neoforge.client.model.data.ModelData"
 import {$ConduitShape} from "com.enderio.enderio.content.conduits.bundle.ConduitShape"
-import {$Wrenchable$$Interface} from "com.enderio.enderio.foundation.block.entity.Wrenchable"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$ConduitType$$Type} from "com.enderio.enderio.api.conduits.ConduitType"
 import {$ConduitBundle$$Interface} from "com.enderio.enderio.api.conduits.bundle.ConduitBundle"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -5422,8 +5421,8 @@ import {$IConduitNodeAttachment$$Interface} from "com.enderio.enderio.content.co
 import {$Conduit, $Conduit$$Type} from "com.enderio.enderio.api.conduits.Conduit"
 import {$ClientGamePacketListener} from "net.minecraft.network.protocol.game.ClientGamePacketListener"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
-import {$EnderBlockEntity} from "com.enderio.core.common.blockentity.EnderBlockEntity"
 import {$Consumer$$Type} from "java.util.function.Consumer"
+import {$EnderBlockEntity} from "com.enderio.core.common.blockentity.EnderBlockEntity"
 import {$ItemInteractionResult} from "net.minecraft.world.ItemInteractionResult"
 import {$ICapabilityProvider} from "net.neoforged.neoforge.capabilities.ICapabilityProvider"
 import {$IItemHandlerModifiable} from "net.neoforged.neoforge.items.IItemHandlerModifiable"
@@ -5442,25 +5441,30 @@ static readonly "MAX_CONDUITS": integer
 
 constructor(arg0: $BlockPos$$Type, arg1: $BlockState$$Type)
 
+public "updateConnections"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockPos$$Type, arg3: boolean): void
 public "updateShape"(): void
-public "serverTick"(): void
 public "getUpdatePacket"(): $Packet<($ClientGamePacketListener)>
+public "serverTick"(): void
 public "getUpdateTag"(arg0: $HolderLookup$Provider$$Type): $CompoundTag
 public "onDataPacket"(arg0: $Connection$$Type, arg1: $ClientboundBlockEntityDataPacket$$Type, arg2: $HolderLookup$Provider$$Type): void
 public "handleUpdateTag"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "onChunkUnloaded"(): void
 public "canConnectTo"(arg0: $Holder$$Type<($Conduit<(never), (never)>)>, arg1: $Direction$$Type, arg2: $ConduitNodeImpl$$Type, arg3: boolean): boolean
+public "getConduits"(): $List<($Holder<($Conduit<(never), (never)>)>)>
+public "setConnectionConfig"(arg0: $Holder$$Type<($Conduit<(never), (never)>)>, arg1: $Direction$$Type, arg2: $ConnectionConfig$$Type): void
+public "getConnectionConfig"<T extends $ConnectionConfig>(arg0: $Holder$$Type<($Conduit<(never), (never)>)>, arg1: $Direction$$Type, arg2: $ConnectionConfigType$$Type<(T)>): T
+public "getConnectionConfig"(arg0: $Holder$$Type<($Conduit<(never), (never)>)>, arg1: $Direction$$Type): $ConnectionConfig
+public "onConnectionsUpdated"(arg0: $Holder$$Type<($Conduit<(never), (never)>)>): void
 public "hasFacade"(): boolean
-public "getFacadeBlock"(): $Block
-public "updateNeighborRedstone"(): void
-public "addConduit"(arg0: $Holder$$Type<($Conduit<(never), (never)>)>, arg1: $Direction$$Type, arg2: $Player$$Type): $AddConduitResult
-public "setFacadeProvider"(arg0: $ItemStack$$Type): void
-public "removeConduit"(arg0: $Holder$$Type<($Conduit<(never), (never)>)>, arg1: $Consumer$$Type<($ItemStack)>): void
-public "canAddConduit"(arg0: $Holder$$Type<($Conduit<(never), (never)>)>): boolean
-public "canOpenScreen"(arg0: $Holder$$Type<($Conduit<(never), (never)>)>, arg1: $Direction$$Type): boolean
-public "getConduitByType"(arg0: $ConduitType$$Type<(never)>): $Holder<($Conduit<(never), (never)>)>
-public "getConnectionStatus"(arg0: $Holder$$Type<($Conduit<(never), (never)>)>, arg1: $Direction$$Type): $ConnectionStatus
-public "getConduitNode"(arg0: $Holder$$Type): $ConduitNode
+public "tryConnectTo"(arg0: $Holder$$Type<($Conduit<(never), (never)>)>, arg1: $Direction$$Type, arg2: boolean): boolean
+public "updateModel"(): void
+public "hasConduitStrict"(arg0: $Holder$$Type<($Conduit<(never), (never)>)>): boolean
+public "setConnectionStatus"(arg0: $Holder$$Type<($Conduit<(never), (never)>)>, arg1: $Direction$$Type, arg2: $ConnectionStatus$$Type): void
+public "hasCompatibleConduit"(arg0: $Holder$$Type<($Conduit<(never), (never)>)>): boolean
+public "removeNeighborConnections"(arg0: $Holder$$Type<($Conduit<(never), (never)>)>): void
+public "getConnectionInventory"(arg0: $Holder$$Type<($Conduit<(never), (never)>)>, arg1: $Direction$$Type): $IItemHandlerModifiable
+public "getCompatibleConduit"(arg0: $Holder$$Type<($Conduit<(never), (never)>)>): $Holder<($Conduit<(never), (never)>)>
+public "hasRedstoneSignal"(arg0: $DyeColor$$Type): boolean
 public "getAllOpenableConduits"(arg0: $Direction$$Type): $List<($Holder<($Conduit<(never), (never)>)>)>
 public static "createCapabilityProvider"<TCap, TContext>(arg0: $BlockCapability$$Type<(TCap), (TContext)>): $ICapabilityProvider<($ConduitBundleBlockEntity), (TContext), (TCap)>
 public "hasConduitOfType"(arg0: $ConduitType$$Type<(never)>): boolean
@@ -5473,21 +5477,16 @@ public "getNeighborVoidCapability"<TCapability>(arg0: $Holder$$Type<($Conduit<(n
 public "getFacadeType"(): $FacadeType
 public "getFacadeProvider"(): $ItemStack
 public "dropFacadeItem"(): void
-public "getConduits"(): $List<($Holder<($Conduit<(never), (never)>)>)>
-public "setConnectionConfig"(arg0: $Holder$$Type<($Conduit<(never), (never)>)>, arg1: $Direction$$Type, arg2: $ConnectionConfig$$Type): void
-public "getConnectionConfig"(arg0: $Holder$$Type<($Conduit<(never), (never)>)>, arg1: $Direction$$Type): $ConnectionConfig
-public "getConnectionConfig"<T extends $ConnectionConfig>(arg0: $Holder$$Type<($Conduit<(never), (never)>)>, arg1: $Direction$$Type, arg2: $ConnectionConfigType$$Type<(T)>): T
-public "onConnectionsUpdated"(arg0: $Holder$$Type<($Conduit<(never), (never)>)>): void
-public "tryConnectTo"(arg0: $Holder$$Type<($Conduit<(never), (never)>)>, arg1: $Direction$$Type, arg2: boolean): boolean
-public "updateModel"(): void
-public "hasConduitStrict"(arg0: $Holder$$Type<($Conduit<(never), (never)>)>): boolean
-public "setConnectionStatus"(arg0: $Holder$$Type<($Conduit<(never), (never)>)>, arg1: $Direction$$Type, arg2: $ConnectionStatus$$Type): void
-public "hasCompatibleConduit"(arg0: $Holder$$Type<($Conduit<(never), (never)>)>): boolean
-public "removeNeighborConnections"(arg0: $Holder$$Type<($Conduit<(never), (never)>)>): void
-public "getConnectionInventory"(arg0: $Holder$$Type<($Conduit<(never), (never)>)>, arg1: $Direction$$Type): $IItemHandlerModifiable
-public "getCompatibleConduit"(arg0: $Holder$$Type<($Conduit<(never), (never)>)>): $Holder<($Conduit<(never), (never)>)>
-public "hasRedstoneSignal"(arg0: $DyeColor$$Type): boolean
-public "updateConnections"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockPos$$Type, arg3: boolean): void
+public "getFacadeBlock"(): $Block
+public "updateNeighborRedstone"(): void
+public "addConduit"(arg0: $Holder$$Type<($Conduit<(never), (never)>)>, arg1: $Direction$$Type, arg2: $Player$$Type): $AddConduitResult
+public "setFacadeProvider"(arg0: $ItemStack$$Type): void
+public "removeConduit"(arg0: $Holder$$Type<($Conduit<(never), (never)>)>, arg1: $Consumer$$Type<($ItemStack)>): void
+public "canAddConduit"(arg0: $Holder$$Type<($Conduit<(never), (never)>)>): boolean
+public "canOpenScreen"(arg0: $Holder$$Type<($Conduit<(never), (never)>)>, arg1: $Direction$$Type): boolean
+public "getConduitByType"(arg0: $ConduitType$$Type<(never)>): $Holder<($Conduit<(never), (never)>)>
+public "getConnectionStatus"(arg0: $Holder$$Type<($Conduit<(never), (never)>)>, arg1: $Direction$$Type): $ConnectionStatus
+public "getConduitNode"(arg0: $Holder$$Type<($Conduit<(never), (never)>)>): $ConduitNodeImpl
 public "onWrenched"(arg0: $UseOnContext$$Type): $ItemInteractionResult
 public "getShape"(): $ConduitShape
 public "setLevel"(arg0: $Level$$Type): void
@@ -5500,11 +5499,11 @@ public "getModelData"(): $ModelData
 public "getLevel"(): $Level
 public "hasLevel"(): boolean
 get "updatePacket"(): $Packet<($ClientGamePacketListener)>
-get "facadeBlock"(): $Block
-set "facadeProvider"(value: $ItemStack$$Type)
+get "conduits"(): $List<($Holder<($Conduit<(never), (never)>)>)>
 get "facadeType"(): $FacadeType
 get "facadeProvider"(): $ItemStack
-get "conduits"(): $List<($Holder<($Conduit<(never), (never)>)>)>
+get "facadeBlock"(): $Block
+set "facadeProvider"(value: $ItemStack$$Type)
 get "shape"(): $ConduitShape
 set "level"(value: $Level$$Type)
 get "full"(): boolean
@@ -5532,11 +5531,11 @@ import {$Record} from "java.lang.Record"
 export class $AlloySmeltingRecipe$Input extends $Record implements $RecipeInput$$Interface {
 constructor(inputs: $List$$Type<($ItemStack$$Type)>, inputsConsumed: integer)
 
+public "inputsConsumed"(): integer
 public "getFirstPopulated"(): $ItemStack
 public "withInputsConsumed"(arg0: integer): $AlloySmeltingRecipe$Input
-public "inputsConsumed"(): integer
-public "getItem"(arg0: integer): $ItemStack
 public "inputs"(): $List<($ItemStack)>
+public "getItem"(arg0: integer): $ItemStack
 public "size"(): integer
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
@@ -5612,8 +5611,8 @@ constructor(arg0: $BlockBehaviour$Properties$$Type)
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
 public "updateShape"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $BlockState$$Type, arg3: $LevelAccessor$$Type, arg4: $BlockPos$$Type, arg5: $BlockPos$$Type): $BlockState
 public "getPickupSound"(): $Optional<($SoundEvent)>
-public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "canPlaceLiquid"(arg0: $Player$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $Fluid$$Type): boolean
+public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "pickupBlock"(arg0: $Player$$Type, arg1: $LevelAccessor$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): $ItemStack
 public "getPickupSound"(arg0: $BlockState$$Type): $Optional<($SoundEvent)>
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
@@ -5643,8 +5642,8 @@ import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$DirectionProperty} from "net.minecraft.world.level.block.state.properties.DirectionProperty"
-import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$MachineBlock} from "com.enderio.enderio.foundation.block.MachineBlock"
+import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $TravelAnchorBlock<T extends $TravelAnchorBlockEntity> extends $MachineBlock<(T)> {
 static readonly "UPDATE_IMMEDIATE": integer
@@ -5732,16 +5731,16 @@ public "hashCode"(): integer
 public static "of"(arg0: $ItemStack$$Type, arg1: float, arg2: boolean): $SagMillingRecipe$OutputItem
 public static "ofTag"(arg0: $TagKey$$Type<($Item)>, arg1: integer, arg2: float, arg3: boolean): $SagMillingRecipe$OutputItem
 public "isPresent"(): boolean
-public "getItemStack"(): $ItemStack
 public "isOptional"(): boolean
+public "getItemStack"(): $ItemStack
 public "chance"(): float
 public static "of"(arg0: $ItemStack$$Type): $SagMillingRecipe$OutputItem
 public static "of"(arg0: $ItemStack$$Type, arg1: float): $SagMillingRecipe$OutputItem
 public static "ofTag"(arg0: $TagKey$$Type<($Item)>, arg1: integer, arg2: float): $SagMillingRecipe$OutputItem
 public static "ofTag"(arg0: $TagKey$$Type<($Item)>, arg1: integer): $SagMillingRecipe$OutputItem
 get "present"(): boolean
-get "itemStack"(): $ItemStack
 get "optional"(): boolean
+get "itemStack"(): $ItemStack
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -5767,8 +5766,8 @@ import {$RecipeInput, $RecipeInput$$Type} from "net.minecraft.world.item.craftin
 import {$TagKey, $TagKey$$Type} from "net.minecraft.tags.TagKey"
 import {$ResourceKey, $ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
 import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
-import {$FireCraftingRecipe$Result, $FireCraftingRecipe$Result$$Type} from "com.enderio.enderio.content.fire_crafting.FireCraftingRecipe$Result"
 import {$Record} from "java.lang.Record"
+import {$FireCraftingRecipe$Result, $FireCraftingRecipe$Result$$Type} from "com.enderio.enderio.content.fire_crafting.FireCraftingRecipe$Result"
 
 export class $FireCraftingRecipe extends $Record implements $Recipe$$Interface<($RecipeInput)> {
 constructor(results: $List$$Type<($FireCraftingRecipe$Result$$Type)>, bases: $List$$Type<($Block$$Type)>, baseTags: $List$$Type<($TagKey$$Type<($Block$$Type)>)>, dimensions: $List$$Type<($ResourceKey$$Type<($Level$$Type)>)>, blockAfterBurning: ($Block$$Type)?)
@@ -5782,13 +5781,13 @@ public "blockAfterBurning"(): $Optional<($Block)>
 public "isBaseValid"(arg0: $Block$$Type): boolean
 public "isDimensionValid"(arg0: $ResourceKey$$Type<($Level)>): boolean
 public "getAllBaseBlocks"(): $List<($Block)>
+public "results"(): $List<($FireCraftingRecipe$Result)>
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
 public "matches"(arg0: $RecipeInput$$Type, arg1: $Level$$Type): boolean
 public "dimensions"(): $List<($ResourceKey<($Level)>)>
 public "getType"(): $RecipeType<(never)>
-public "results"(): $List<($FireCraftingRecipe$Result)>
 public "isSpecial"(): boolean
 public "bases"(): $List<($Block)>
 public "getRemainingItems"(arg0: $RecipeInput$$Type): $NonNullList<($ItemStack)>
@@ -5817,9 +5816,9 @@ export type $FireCraftingRecipe$$Type = ({"results"?: $List$$Type<($FireCrafting
 export type $FireCraftingRecipe$$Original = $FireCraftingRecipe;}
 declare module "com.enderio.enderio.content.machines.alloy.AlloySmeltingRecipe$Serializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$AlloySmeltingRecipe} from "com.enderio.enderio.content.machines.alloy.AlloySmeltingRecipe"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
+import {$AlloySmeltingRecipe} from "com.enderio.enderio.content.machines.alloy.AlloySmeltingRecipe"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
 
@@ -5846,8 +5845,8 @@ declare module "com.enderio.enderio.content.paint.PaintingTrigger" {
 import {$SimpleCriterionTrigger} from "net.minecraft.advancements.critereon.SimpleCriterionTrigger"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$PaintingTrigger$TriggerInstance} from "com.enderio.enderio.content.paint.PaintingTrigger$TriggerInstance"
+import {$Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
 
 export class $PaintingTrigger extends $SimpleCriterionTrigger<($PaintingTrigger$TriggerInstance)> {
@@ -5875,11 +5874,11 @@ import {$Block} from "net.minecraft.world.level.block.Block"
 import {$FilterMenuProvider} from "com.enderio.enderio.api.filter.FilterMenuProvider"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$EnderItemFilterItem$Type$$Type} from "com.enderio.enderio.content.filters.item.general.EnderItemFilterItem$Type"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ItemFilter} from "com.enderio.enderio.api.filter.ItemFilter"
-import {$EnderItemFilter} from "com.enderio.enderio.content.filters.item.general.EnderItemFilter"
 import {$AbstractFilterItem} from "com.enderio.enderio.content.filters.AbstractFilterItem"
+import {$EnderItemFilter} from "com.enderio.enderio.content.filters.item.general.EnderItemFilter"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$ICapabilityProvider} from "net.neoforged.neoforge.capabilities.ICapabilityProvider"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
@@ -5919,8 +5918,8 @@ import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Codec} from "com.mojang.serialization.Codec"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
+import {$Codec} from "com.mojang.serialization.Codec"
 import {$BlockEntityType, $BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Supplier, $Supplier$$Type} from "java.util.function.Supplier"
 import {$Item} from "net.minecraft.world.item.Item"
@@ -5964,10 +5963,10 @@ static readonly "PLACE_ADVANCEMENT_ID": $ResourceLocation
 
 constructor(arg0: $BlockBehaviour$Properties$$Type, arg1: $Supplier$$Type<($BlockEntityType$$Type<($LegacyMachineBlockEntity$$Type)>)>, arg2: $CapacityTier$$Type)
 
-public static "rightClickBlock"(arg0: $PlayerInteractEvent$RightClickBlock$$Type): void
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
 public "setPlacedBy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $LivingEntity$$Type, arg4: $ItemStack$$Type): void
 public "getTier"(): $CapacityTier
+public static "rightClickBlock"(arg0: $PlayerInteractEvent$RightClickBlock$$Type): void
 public "addCommonTooltips"(arg0: $ItemStack$$Type, arg1: $Player$$Type, arg2: $List$$Type<($Component$$Type)>): void
 public static "onAdvancement"(arg0: $AdvancementEvent$AdvancementEarnEvent$$Type): void
 public "addDetailedTooltips"(arg0: $ItemStack$$Type, arg1: $Player$$Type, arg2: $List$$Type<($Component$$Type)>): void
@@ -5986,18 +5985,19 @@ export type $CapacitorBankBlock$$Original = $CapacitorBankBlock;}
 declare module "com.enderio.enderio.content.conduits.network.ConduitNodeImpl" {
 import {$BlockCapability$$Type} from "net.neoforged.neoforge.capabilities.BlockCapability"
 import {$NodeData, $NodeData$$Type} from "com.enderio.enderio.api.conduits.network.node.NodeData"
-import {$INetworkNode$$Interface} from "com.enderio.core.common.graph.INetworkNode"
 import {$ConduitDataContainer$$Type} from "com.enderio.enderio.content.conduits.legacy.ConduitDataContainer"
+import {$INetworkNode$$Interface} from "com.enderio.core.common.graph.INetworkNode"
 import {$NodeDataType$$Type} from "com.enderio.enderio.api.conduits.network.node.NodeDataType"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$ConduitNetwork, $ConduitNetwork$$Type} from "com.enderio.enderio.content.conduits.network.ConduitNetwork"
 import {$ConduitNode$$Interface} from "com.enderio.enderio.api.conduits.network.node.ConduitNode"
-import {$Conduit$$Type} from "com.enderio.enderio.api.conduits.Conduit"
 import {$IConduitNodeAttachment$$Type} from "com.enderio.enderio.content.conduits.network.IConduitNodeAttachment"
+import {$Conduit$$Type} from "com.enderio.enderio.api.conduits.Conduit"
+import {$ConduitNetwork as $ConduitNetwork$0} from "com.enderio.enderio.api.conduits.network.ConduitNetwork"
 import {$Holder$$Type} from "net.minecraft.core.Holder"
-import {$ConnectionConfigType$$Type} from "com.enderio.enderio.api.conduits.connection.config.ConnectionConfigType"
 import {$Network$$Type} from "com.enderio.core.common.graph.Network"
 import {$Codec} from "com.mojang.serialization.Codec"
+import {$ConnectionConfigType$$Type} from "com.enderio.enderio.api.conduits.connection.config.ConnectionConfigType"
 import {$ConnectionConfig} from "com.enderio.enderio.api.conduits.connection.config.ConnectionConfig"
 import {$DyeColor$$Type} from "net.minecraft.world.item.DyeColor"
 import {$IItemHandlerModifiable} from "net.neoforged.neoforge.items.IItemHandlerModifiable"
@@ -6008,43 +6008,43 @@ export class $ConduitNodeImpl implements $INetworkNode$$Interface<($ConduitNetwo
 static readonly "CODEC": $Codec<($ConduitNodeImpl)>
 
 constructor(arg0: $Holder$$Type<($Conduit<(never), (never)>)>, arg1: $BlockPos$$Type, arg2: $ConduitDataContainer$$Type)
-constructor(arg0: $Holder$$Type<($Conduit<(never), (never)>)>, arg1: $BlockPos$$Type, arg2: $NodeData$$Type)
 constructor(arg0: $Holder$$Type<($Conduit<(never), (never)>)>, arg1: $BlockPos$$Type)
+constructor(arg0: $Holder$$Type<($Conduit<(never), (never)>)>, arg1: $BlockPos$$Type, arg2: $NodeData$$Type)
 
+public "getNetwork"(): $ConduitNetwork$0
+public "setNetwork"(arg0: $ConduitNetwork$$Type): void
+public "setNetwork"(arg0: $Network$$Type): void
 public "markDirty"(): void
 public "isTicking"(): boolean
-public "getConnectionStatus"(arg0: $Direction$$Type): $ConnectionStatus
-public "getNeighborSidedCapability"<TCapability>(arg0: $BlockCapability$$Type<(TCapability), ($Direction$$Type)>, arg1: $Direction$$Type): TCapability
-public "getNeighborVoidCapability"<TCapability>(arg0: $BlockCapability$$Type<(TCapability), (void)>, arg1: $Direction$$Type): TCapability
-public "hasNodeData"(arg0: $NodeDataType$$Type<(never)>): boolean
+public "onConfigChanged"(): void
 public "getConnectionConfig"(arg0: $Direction$$Type): $ConnectionConfig
 public "getConnectionConfig"<T extends $ConnectionConfig>(arg0: $Direction$$Type, arg1: $ConnectionConfigType$$Type<(T)>): T
 public "getNodeData"(): $NodeData
 public "getNodeData"<D extends $NodeData>(arg0: $NodeDataType$$Type<(D)>): D
 public "hasRedstoneSignal"(arg0: $DyeColor$$Type): boolean
 public "onRedstoneChanged"(): void
+public "getNeighborSidedCapability"<TCapability>(arg0: $BlockCapability$$Type<(TCapability), ($Direction$$Type)>, arg1: $Direction$$Type): TCapability
+public "getNeighborVoidCapability"<TCapability>(arg0: $BlockCapability$$Type<(TCapability), (void)>, arg1: $Direction$$Type): TCapability
+public "getConnectionStatus"(arg0: $Direction$$Type): $ConnectionStatus
+public "hasNodeData"(arg0: $NodeDataType$$Type<(never)>): boolean
 public "getOrCreateNodeData"<D extends $NodeData>(arg0: $NodeDataType$$Type<(D)>): D
 public "setNodeData"<D extends $NodeData>(arg0: D): void
 public "isConnectedToBlock"(arg0: $Direction$$Type): boolean
 public "isConnectedTo"(arg0: $Direction$$Type): boolean
-public "getNetwork"(): $ConduitNetwork
-public "setNetwork"(arg0: $ConduitNetwork$$Type): void
-public "setNetwork"(arg0: $Network$$Type): void
-public "onConfigChanged"(): void
 public "detach"(): void
-public "isValid"(): boolean
 public "pos"(): $BlockPos
-public "attach"(arg0: $IConduitNodeAttachment$$Type, arg1: $Holder$$Type<($Conduit<(never), (never)>)>): void
 public "isLoaded"(): boolean
+public "attach"(arg0: $IConduitNodeAttachment$$Type, arg1: $Holder$$Type<($Conduit<(never), (never)>)>): void
+public "isValid"(): boolean
 public "getInventory"(arg0: $Direction$$Type): $IItemHandlerModifiable
+get "network"(): $ConduitNetwork$0
+set "network"(value: $ConduitNetwork$$Type)
+set "network"(value: $Network$$Type)
 get "ticking"(): boolean
 get "nodeData"(): $NodeData
 set "nodeData"(value: D)
-get "network"(): $ConduitNetwork
-set "network"(value: $ConduitNetwork$$Type)
-set "network"(value: $Network$$Type)
-get "valid"(): boolean
 get "loaded"(): boolean
+get "valid"(): boolean
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -6062,11 +6062,11 @@ import {$RecipeType} from "net.minecraft.world.item.crafting.RecipeType"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$EnchanterRecipe$Input, $EnchanterRecipe$Input$$Type} from "com.enderio.enderio.content.enchanter.EnchanterRecipe$Input"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
-import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
 import {$Enchantment, $Enchantment$$Type} from "net.minecraft.world.item.enchantment.Enchantment"
-import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$Recipe$$Interface} from "net.minecraft.world.item.crafting.Recipe"
+import {$RecipeInput$$Type} from "net.minecraft.world.item.crafting.RecipeInput"
 import {$RecipeSerializer} from "net.minecraft.world.item.crafting.RecipeSerializer"
 import {$SizedIngredient, $SizedIngredient$$Type} from "net.neoforged.neoforge.common.crafting.SizedIngredient"
 import {$Record} from "java.lang.Record"
@@ -6128,8 +6128,8 @@ import {$IntFunction} from "java.util.function.IntFunction"
 import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$MutableComponent} from "net.minecraft.network.chat.MutableComponent"
 
 export class $DamageFilterMode extends $Enum<($DamageFilterMode)> implements $StringRepresentable$$Interface {
@@ -6154,11 +6154,11 @@ public static "valueOf"(arg0: StringJS): $DamageFilterMode
 public "getComponent"(): $MutableComponent
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "component"(): $MutableComponent
 get "serializedName"(): StringJS
 get "remappedEnumConstantName"(): StringJS
@@ -6175,8 +6175,8 @@ export type $DamageFilterMode$$Original = $DamageFilterMode;}
 declare module "com.enderio.enderio.content.machines.slicer.SlicingRecipe$Serializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$SlicingRecipe} from "com.enderio.enderio.content.machines.slicer.SlicingRecipe"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
 
@@ -6209,16 +6209,16 @@ import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$MachineFluidHandler} from "com.enderio.enderio.foundation.io.fluid.MachineFluidHandler"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$MachineFluidTank} from "com.enderio.enderio.foundation.io.fluid.MachineFluidTank"
-import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$MachineInventoryLayout} from "com.enderio.enderio.foundation.inventory.MachineInventoryLayout"
+import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$FermentingRecipe} from "com.enderio.enderio.content.machines.vat.FermentingRecipe"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$SideConfig} from "com.enderio.enderio.api.io.SideConfig"
 import {$MachineBlockEntity} from "com.enderio.enderio.foundation.block.entity.MachineBlockEntity"
 import {$IItemHandler} from "net.neoforged.neoforge.items.IItemHandler"
-import {$MachineTankLayout} from "com.enderio.enderio.foundation.io.fluid.MachineTankLayout"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$MachineTankLayout} from "com.enderio.enderio.foundation.io.fluid.MachineTankLayout"
 import {$AbstractContainerMenu} from "net.minecraft.world.inventory.AbstractContainerMenu"
 import {$RecipeHolder} from "net.minecraft.world.item.crafting.RecipeHolder"
 import {$ICapabilityProvider} from "net.neoforged.neoforge.capabilities.ICapabilityProvider"
@@ -6240,13 +6240,13 @@ static readonly "SIDE_CONFIG_PROVIDER": $ICapabilityProvider<($MachineBlockEntit
 
 constructor(arg0: $BlockPos$$Type, arg1: $BlockState$$Type)
 
-public "getOutputTank"(): $MachineFluidTank
-public "getInputTank"(): $MachineFluidTank
 public "serverTick"(): void
 public "loadAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "createMenu"(arg0: integer, arg1: $Inventory$$Type, arg2: $Player$$Type): $AbstractContainerMenu
 public "saveAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "getRecipe"(): $RecipeHolder<($FermentingRecipe)>
+public "getOutputTank"(): $MachineFluidTank
+public "getInputTank"(): $MachineFluidTank
 public "createInventoryLayout"(): $MachineInventoryLayout
 public "getTankLayout"(): $MachineTankLayout
 public "getCraftingProgress"(): float
@@ -6259,9 +6259,9 @@ public "getFluidHandler"(): $MachineFluidHandler
 public "saveTank"(arg0: $HolderLookup$Provider$$Type, arg1: $CompoundTag$$Type): void
 public "loadTank"(arg0: $HolderLookup$Provider$$Type, arg1: $CompoundTag$$Type): void
 public "handleFluidItemInteraction"(arg0: $Player$$Type, arg1: $InteractionHand$$Type, arg2: $ItemStack$$Type, arg3: $FluidTankUser$$Type, arg4: $TankAccess$$Type): boolean
+get "recipe"(): $RecipeHolder<($FermentingRecipe)>
 get "outputTank"(): $MachineFluidTank
 get "inputTank"(): $MachineFluidTank
-get "recipe"(): $RecipeHolder<($FermentingRecipe)>
 get "tankLayout"(): $MachineTankLayout
 get "craftingProgress"(): float
 get "active"(): boolean
@@ -6282,8 +6282,8 @@ import {$Map} from "java.util.Map"
 import {$List$$Type} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$CreativeModeTab$ItemDisplayParameters$$Type} from "net.minecraft.world.item.CreativeModeTab$ItemDisplayParameters"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
@@ -6327,8 +6327,8 @@ export type $ColdFireIgniter$$Original = $ColdFireIgniter;}
 declare module "com.enderio.enderio.content.enchanter.EnchanterRecipe$Serializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$EnchanterRecipe} from "com.enderio.enderio.content.enchanter.EnchanterRecipe"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
 
@@ -6353,8 +6353,8 @@ export type $EnchanterRecipe$Serializer$$Type = ($EnchanterRecipe$Serializer);
 export type $EnchanterRecipe$Serializer$$Original = $EnchanterRecipe$Serializer;}
 declare module "com.enderio.enderio.content.machines.sag_mill.SagMillingRecipe$Serializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$SagMillingRecipe} from "com.enderio.enderio.content.machines.sag_mill.SagMillingRecipe"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
@@ -6469,8 +6469,8 @@ export type $EnderfaceTravelTarget$$Type = ({"pos"?: $BlockPos$$Type}) | ([pos?:
  */
 export type $EnderfaceTravelTarget$$Original = $EnderfaceTravelTarget;}
 declare module "com.enderio.enderio.content.conduits.bundle.ConduitShape" {
-import {$Pair} from "com.mojang.datafixers.util.Pair"
 import {$VoxelShape, $VoxelShape$$Type} from "net.minecraft.world.phys.shapes.VoxelShape"
+import {$Pair} from "com.mojang.datafixers.util.Pair"
 import {$Direction, $Direction$$Type} from "net.minecraft.core.Direction"
 import {$Conduit} from "com.enderio.enderio.api.conduits.Conduit"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
@@ -6483,11 +6483,11 @@ static readonly "CONNECTION": $VoxelShape
 
 constructor()
 
-public "getTotalShape"(): $VoxelShape
-public "getConduit"(arg0: $BlockPos$$Type, arg1: $HitResult$$Type): $Holder<($Conduit<(never), (never)>)>
-public "getConnectionFromHit"(arg0: $BlockPos$$Type, arg1: $HitResult$$Type): $Pair<($Direction), ($Holder<($Conduit<(never), (never)>)>)>
-public "getShapeFromHit"(arg0: $BlockPos$$Type, arg1: $HitResult$$Type): $VoxelShape
 public static "rotateVoxelShape"(arg0: $VoxelShape$$Type, arg1: $Direction$$Type): $VoxelShape
+public "getConnectionFromHit"(arg0: $BlockPos$$Type, arg1: $HitResult$$Type): $Pair<($Direction), ($Holder<($Conduit<(never), (never)>)>)>
+public "getConduit"(arg0: $BlockPos$$Type, arg1: $HitResult$$Type): $Holder<($Conduit<(never), (never)>)>
+public "getTotalShape"(): $VoxelShape
+public "getShapeFromHit"(arg0: $BlockPos$$Type, arg1: $HitResult$$Type): $VoxelShape
 public "updateConduit"(arg0: $ConduitBundle$$Type): void
 get "totalShape"(): $VoxelShape
 }
@@ -6501,8 +6501,8 @@ export type $ConduitShape$$Type = ($ConduitShape);
  */
 export type $ConduitShape$$Original = $ConduitShape;}
 declare module "com.enderio.enderio.content.machines.farming_station.FarmingStationBlockEntity" {
-import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$PoweredMachineBlockEntity} from "com.enderio.enderio.foundation.block.entity.PoweredMachineBlockEntity"
+import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$List$$Type} from "java.util.List"
 import {$Direction} from "net.minecraft.core.Direction"
 import {$Level} from "net.minecraft.world.level.Level"
@@ -6515,8 +6515,8 @@ import {$Soul, $Soul$$Type} from "com.enderio.enderio.api.soul.Soul"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$EntityType} from "net.minecraft.world.entity.EntityType"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$ActionRange, $ActionRange$$Type} from "com.enderio.enderio.foundation.attachment.ActionRange"
+import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$SideConfig} from "com.enderio.enderio.api.io.SideConfig"
 import {$RangedActor$$Interface} from "com.enderio.enderio.foundation.attachment.RangedActor"
 import {$MachineBlockEntity} from "com.enderio.enderio.foundation.block.entity.MachineBlockEntity"
@@ -6550,12 +6550,12 @@ public "loadAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$
 public "createMenu"(arg0: integer, arg1: $Inventory$$Type, arg2: $Player$$Type): $AbstractContainerMenu
 public "getMaxRange"(): integer
 public "isSoulValid"(arg0: $Soul$$Type): boolean
-public "bindSoul"(arg0: $Soul$$Type): void
-public "canBind"(): boolean
-public "getBoundSoul"(): $Soul
 public "getParticleLocation"(): $BlockPos
 public "getActionRange"(): $ActionRange
 public "setActionRange"(arg0: $ActionRange$$Type): void
+public "bindSoul"(arg0: $Soul$$Type): void
+public "canBind"(): boolean
+public "getBoundSoul"(): $Soul
 public "collectDrops"(arg0: $List$$Type<($ItemStack$$Type)>, arg1: $BlockPos$$Type): boolean
 public "getSeedForPos"(arg0: $BlockPos$$Type): $SingleSlotAccess
 public "handleDrops"(arg0: $BlockState$$Type, arg1: $BlockPos$$Type, arg2: $BlockPos$$Type, arg3: $BlockEntity$$Type, arg4: $ItemStack$$Type): boolean
@@ -6565,12 +6565,12 @@ public "getShears"(): $ItemStack
 public "getFarmingRange"(): integer
 public "getHoe"(): $ItemStack
 public "getAxe"(): $ItemStack
-public "getPosition"(): $BlockPos
 public "isActive"(): boolean
+public "getPosition"(): $BlockPos
 public "onLoad"(): void
 public "clientTick"(): void
-public "getEntityType"(): $EntityType<(never)>
 public "getPlayer"(): $FakePlayer
+public "getEntityType"(): $EntityType<(never)>
 public "isRangeVisible"(): boolean
 public "setRangeVisible"(arg0: boolean): void
 public "increaseRange"(): void
@@ -6580,18 +6580,18 @@ public "getLevel"(): $Level
 public "useStack"(arg0: $BlockPos$$Type, arg1: $ItemStack$$Type): $InteractionResult
 public "hasSoul"(): boolean
 get "maxRange"(): integer
-get "boundSoul"(): $Soul
 get "particleLocation"(): $BlockPos
 get "actionRange"(): $ActionRange
 set "actionRange"(value: $ActionRange$$Type)
+get "boundSoul"(): $Soul
 get "shears"(): $ItemStack
 get "farmingRange"(): integer
 get "hoe"(): $ItemStack
 get "axe"(): $ItemStack
-get "position"(): $BlockPos
 get "active"(): boolean
-get "entityType"(): $EntityType<(never)>
+get "position"(): $BlockPos
 get "player"(): $FakePlayer
+get "entityType"(): $EntityType<(never)>
 get "rangeVisible"(): boolean
 set "rangeVisible"(value: boolean)
 get "range"(): integer
@@ -6612,8 +6612,8 @@ import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$ContextAwarePredicate, $ContextAwarePredicate$$Type} from "net.minecraft.advancements.critereon.ContextAwarePredicate"
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$CriterionValidator$$Type} from "net.minecraft.advancements.critereon.CriterionValidator"
-import {$Record} from "java.lang.Record"
 import {$SimpleCriterionTrigger$SimpleInstance$$Interface} from "net.minecraft.advancements.critereon.SimpleCriterionTrigger$SimpleInstance"
+import {$Record} from "java.lang.Record"
 
 export class $PaintingTrigger$TriggerInstance extends $Record implements $SimpleCriterionTrigger$SimpleInstance$$Interface {
 constructor(player: ($ContextAwarePredicate$$Type)?, paint: $Block$$Type)
@@ -6644,8 +6644,8 @@ import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Conduit$$Type} from "com.enderio.enderio.api.conduits.Conduit"
 import {$BlockItem} from "net.minecraft.world.item.BlockItem"
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Holder$$Type} from "net.minecraft.core.Holder"
 import {$CreativeModeTab$ItemDisplayParameters$$Type} from "net.minecraft.world.item.CreativeModeTab$ItemDisplayParameters"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
@@ -6698,8 +6698,8 @@ import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$VatBlockEntity} from "com.enderio.enderio.content.machines.vat.VatBlockEntity"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$ProgressMachineBlock} from "com.enderio.enderio.foundation.block.ProgressMachineBlock"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$DirectionProperty} from "net.minecraft.world.level.block.state.properties.DirectionProperty"
@@ -6746,8 +6746,8 @@ import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$ICustomCreativeTabEntries$$Interface} from "com.enderio.core.common.item.ICustomCreativeTabEntries"
 import {$CreativeModeTab$Output$$Type} from "net.minecraft.world.item.CreativeModeTab$Output"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Component} from "net.minecraft.network.chat.Component"
 import {$CreativeModeTab$ItemDisplayParameters$$Type} from "net.minecraft.world.item.CreativeModeTab$ItemDisplayParameters"
@@ -6779,19 +6779,19 @@ export type $LootCapacitorItem$$Original = $LootCapacitorItem;}
 declare module "com.enderio.enderio.content.travel.travel_anchor.PaintedTravelAnchorBlockEntity" {
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$Optional} from "java.util.Optional"
-import {$Direction} from "net.minecraft.core.Direction"
 import {$TravelAnchorBlockEntity} from "com.enderio.enderio.content.travel.travel_anchor.TravelAnchorBlockEntity"
+import {$Direction} from "net.minecraft.core.Direction"
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$SideConfig} from "com.enderio.enderio.api.io.SideConfig"
 import {$MachineBlockEntity} from "com.enderio.enderio.foundation.block.entity.MachineBlockEntity"
 import {$IItemHandler} from "net.neoforged.neoforge.items.IItemHandler"
-import {$SingleSlotAccess} from "com.enderio.enderio.foundation.inventory.SingleSlotAccess"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
+import {$SingleSlotAccess} from "com.enderio.enderio.foundation.inventory.SingleSlotAccess"
 import {$ModelProperty} from "net.neoforged.neoforge.client.model.data.ModelProperty"
 import {$ICapabilityProvider} from "net.neoforged.neoforge.capabilities.ICapabilityProvider"
 import {$Packet} from "net.minecraft.network.protocol.Packet"
-import {$ClientboundBlockEntityDataPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket"
 import {$PaintedBlockEntity$$Interface} from "com.enderio.enderio.content.paint.block.entity.PaintedBlockEntity"
+import {$ClientboundBlockEntityDataPacket$$Type} from "net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket"
 import {$ModelData} from "net.neoforged.neoforge.client.model.data.ModelData"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$Connection$$Type} from "net.minecraft.network.Connection"
@@ -6809,22 +6809,22 @@ static readonly "SIDE_CONFIG_PROVIDER": $ICapabilityProvider<($MachineBlockEntit
 
 constructor(arg0: $BlockPos$$Type, arg1: $BlockState$$Type)
 
-public "loadAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "getUpdatePacket"(): $Packet
+public "loadAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "saveAdditional"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
 public "getUpdateTag"(arg0: $HolderLookup$Provider$$Type): $CompoundTag
 public "onDataPacket"(arg0: $Connection$$Type, arg1: $ClientboundBlockEntityDataPacket$$Type, arg2: $HolderLookup$Provider$$Type): void
 public "handleUpdateTag"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): void
-public "getPrimaryPaint"(): $Optional<($Block)>
 public "setPrimaryPaint"(arg0: $Block$$Type): void
+public "getPrimaryPaint"(): $Optional<($Block)>
 public "getModelData"(): $ModelData
 public "hasSecondaryPaint"(): boolean
 public "getSecondaryPaint"(): $Optional<($Block)>
 public "setSecondaryPaint"(arg0: $Block$$Type): void
 public static "createAndRegisterModelProperty"(): $ModelProperty<($Block)>
 get "updatePacket"(): $Packet
-get "primaryPaint"(): $Optional<($Block)>
 set "primaryPaint"(value: $Block$$Type)
+get "primaryPaint"(): $Optional<($Block)>
 get "modelData"(): $ModelData
 get "secondaryPaint"(): $Optional<($Block)>
 set "secondaryPaint"(value: $Block$$Type)
@@ -6896,8 +6896,8 @@ import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
-import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
+import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
 import {$PaintedBlock$$Interface} from "com.enderio.enderio.content.paint.block.PaintedBlock"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
@@ -6964,8 +6964,8 @@ export type $PaintedTravelAnchorBlock$$Original = $PaintedTravelAnchorBlock;}
 declare module "com.enderio.enderio.content.misc_blocks.skull.WallEnderSkullBlock" {
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
-import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
 import {$WallSkullBlock} from "net.minecraft.world.level.block.WallSkullBlock"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
@@ -6973,8 +6973,8 @@ import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$Equipable} from "net.minecraft.world.item.Equipable"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -7033,8 +7033,8 @@ import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$DirectionProperty} from "net.minecraft.world.level.block.state.properties.DirectionProperty"
-import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$MachineBlock} from "com.enderio.enderio.foundation.block.MachineBlock"
+import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $FluidTankBlock extends $MachineBlock<($FluidTankBlockEntity)> {
 static readonly "UPDATE_IMMEDIATE": integer
@@ -7075,8 +7075,8 @@ import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 
@@ -7105,8 +7105,8 @@ export type $VoidVialItem$$Original = $VoidVialItem;}
 declare module "com.enderio.enderio.content.storage.fluid_tank.TankRecipe$Serializer" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$TankRecipe} from "com.enderio.enderio.content.storage.fluid_tank.TankRecipe"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
 
@@ -7141,15 +7141,15 @@ import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$Explosion$$Type} from "net.minecraft.world.level.Explosion"
-import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
 import {$IBlockExtension$$Interface} from "net.neoforged.neoforge.common.extensions.IBlockExtension"
+import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
 import {$PathType, $PathType$$Type} from "net.minecraft.world.level.pathfinder.PathType"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BubbleColumnDirection} from "net.neoforged.neoforge.common.enums.BubbleColumnDirection"
-import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$EntityType$$Type} from "net.minecraft.world.entity.EntityType"
+import {$TriState} from "net.neoforged.neoforge.common.util.TriState"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$SoundType} from "net.minecraft.world.level.block.SoundType"
 import {$Block} from "net.minecraft.world.level.block.Block"
@@ -7158,13 +7158,13 @@ import {$TreeConfiguration$$Type} from "net.minecraft.world.level.levelgen.featu
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
 import {$SignalGetter$$Type} from "net.minecraft.world.level.SignalGetter"
-import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
 import {$ItemLike$$Type} from "net.minecraft.world.level.ItemLike"
+import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
 import {$BiConsumer$$Type} from "java.util.function.BiConsumer"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
-import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
+import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$PushReaction} from "net.minecraft.world.level.material.PushReaction"
 
@@ -7231,11 +7231,11 @@ static readonly "DEFAULT_PAINT": $Block
  "collisionExtendsVertically"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): boolean
  "addRunningEffects"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $Entity$$Type): boolean
  "getPistonPushReaction"(arg0: $BlockState$$Type): $PushReaction
+ "onBlockStateChange"(arg0: $LevelReader$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $BlockState$$Type): void
  "onNeighborChange"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type, arg3: $BlockPos$$Type): void
  "getWeakChanges"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type): boolean
  "isBurning"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): boolean
  "getLightEmission"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): integer
- "onBlockStateChange"(arg0: $LevelReader$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $BlockState$$Type): void
  "shouldCheckWeakPower"(arg0: $BlockState$$Type, arg1: $SignalGetter$$Type, arg2: $BlockPos$$Type, arg3: $Direction$$Type): boolean
 }
 /**
@@ -7248,14 +7248,14 @@ export type $PaintedBlock$$Type = ($PaintedBlock);
  */
 export type $PaintedBlock$$Original = $PaintedBlock;}
 declare module "com.enderio.enderio.content.broken_spawner.BrokenSpawnerItem" {
-import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
+import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$ICustomCreativeTabEntries$$Interface} from "com.enderio.core.common.item.ICustomCreativeTabEntries"
 import {$CreativeModeTab$Output$$Type} from "net.minecraft.world.item.CreativeModeTab$Output"
 import {$List} from "java.util.List"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Soul$$Type} from "com.enderio.enderio.api.soul.Soul"
 import {$CreativeModeTab$ItemDisplayParameters$$Type} from "net.minecraft.world.item.CreativeModeTab$ItemDisplayParameters"
@@ -7296,10 +7296,10 @@ import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
 import {$AttachFace} from "net.minecraft.world.level.block.state.properties.AttachFace"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
+import {$EnumProperty} from "net.minecraft.world.level.block.state.properties.EnumProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$DirectionProperty} from "net.minecraft.world.level.block.state.properties.DirectionProperty"
@@ -7382,18 +7382,18 @@ declare module "com.enderio.enderio.content.filters.redstone.RedstoneFilterItem"
 import {$RedstoneFilterItem$Type$$Type} from "com.enderio.enderio.content.filters.redstone.RedstoneFilterItem$Type"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$List$$Type} from "java.util.List"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$RedstoneInputFilter} from "com.enderio.enderio.api.filter.RedstoneInputFilter"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$ICapabilityProvider} from "net.neoforged.neoforge.capabilities.ICapabilityProvider"
 import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
+import {$ICapabilityProvider} from "net.neoforged.neoforge.capabilities.ICapabilityProvider"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$RedstoneOutputFilter} from "com.enderio.enderio.api.filter.RedstoneOutputFilter"
@@ -7436,8 +7436,8 @@ export type $RedstoneFilterItem$$Original = $RedstoneFilterItem;}
 declare module "com.enderio.enderio.content.travel.travel_anchor.TravelAnchorBlockEntity" {
 import {$Direction} from "net.minecraft.core.Direction"
 import {$SideConfig} from "com.enderio.enderio.api.io.SideConfig"
-import {$MachineBlockEntity} from "com.enderio.enderio.foundation.block.entity.MachineBlockEntity"
 import {$Inventory$$Type} from "net.minecraft.world.entity.player.Inventory"
+import {$MachineBlockEntity} from "com.enderio.enderio.foundation.block.entity.MachineBlockEntity"
 import {$IItemHandler} from "net.neoforged.neoforge.items.IItemHandler"
 import {$SingleSlotAccess} from "com.enderio.enderio.foundation.inventory.SingleSlotAccess"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
@@ -7447,8 +7447,8 @@ import {$ICapabilityProvider} from "net.neoforged.neoforge.capabilities.ICapabil
 import {$Item, $Item$$Type} from "net.minecraft.world.item.Item"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$SoulBindable} from "com.enderio.enderio.api.soul.binding.SoulBindable"
-import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$MachineInventoryLayout} from "com.enderio.enderio.foundation.inventory.MachineInventoryLayout"
+import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $TravelAnchorBlockEntity extends $MachineBlockEntity {
 static readonly "ITEM_HANDLER_PROVIDER": $ICapabilityProvider<($MachineBlockEntity), ($Direction), ($IItemHandler)>
@@ -7546,8 +7546,8 @@ import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$Bl
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$PressurePlateBlock} from "net.minecraft.world.level.block.PressurePlateBlock"
 import {$EIOPressurePlateBlock$Detector, $EIOPressurePlateBlock$Detector$$Type} from "com.enderio.enderio.content.misc_blocks.EIOPressurePlateBlock$Detector"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"

@@ -6,11 +6,11 @@ import {$ClientGamePacketListener} from "net.minecraft.network.protocol.game.Cli
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$EntityInLevelCallback} from "net.minecraft.world.level.entity.EntityInLevelCallback"
 import {$ScoreHolder} from "net.minecraft.world.scores.ScoreHolder"
-import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$Tag} from "net.minecraft.nbt.Tag"
-import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
+import {$Packet} from "net.minecraft.network.protocol.Packet"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$PortalProcessor} from "net.minecraft.world.entity.PortalProcessor"
+import {$GameProfile$$Type} from "com.mojang.authlib.GameProfile"
 import {$Entity, $Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$ServerEntity$$Type} from "net.minecraft.server.level.ServerEntity"
 

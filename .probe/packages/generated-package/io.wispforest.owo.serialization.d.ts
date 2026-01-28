@@ -1,6 +1,6 @@
 declare module "io.wispforest.owo.serialization.OwoComponentTypeBuilder" {
-import {$Endec$$Type} from "io.wispforest.endec.Endec"
 import {$DataComponentType$Builder} from "net.minecraft.core.component.DataComponentType$Builder"
+import {$Endec$$Type} from "io.wispforest.endec.Endec"
 import {$SerializationContext$$Type} from "io.wispforest.endec.SerializationContext"
 
 export interface $OwoComponentTypeBuilder$$Interface<T> {
@@ -20,11 +20,11 @@ export type $OwoComponentTypeBuilder$$Type<T> = ($OwoComponentTypeBuilder<(T)>);
  */
 export type $OwoComponentTypeBuilder$$Original<T> = $OwoComponentTypeBuilder<(T)>;}
 declare module "io.wispforest.owo.serialization.EndecRecipeSerializer" {
-import {$StructEndec$$Type} from "io.wispforest.endec.StructEndec"
 import {$Endec$$Type} from "io.wispforest.endec.Endec"
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
+import {$StructEndec$$Type} from "io.wispforest.endec.StructEndec"
 import {$Recipe} from "net.minecraft.world.item.crafting.Recipe"
+import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$RecipeSerializer, $RecipeSerializer$$Type, $RecipeSerializer$$Interface} from "net.minecraft.world.item.crafting.RecipeSerializer"
 

@@ -26,15 +26,15 @@ static readonly "BY_BLOCK": $Map<($Block), ($Item)>
 
 constructor(arg0: $Item$Properties$$Type, arg1: StringJS, arg2: integer)
 
-public "getUpgrades"(arg0: $ItemStack$$Type): $UpgradeData
 public "shouldCauseReequipAnimation"(arg0: $ItemStack$$Type, arg1: $ItemStack$$Type, arg2: boolean): boolean
 public static "getUpgradesStatic"(arg0: $ItemStack$$Type): $UpgradeData
-public "removeFromWorkbench"(arg0: $Player$$Type, arg1: $ItemStack$$Type): void
 public "finishUpgradeRecalculation"(arg0: $ItemStack$$Type, arg1: $RegistryAccess$$Type): void
+public "removeFromWorkbench"(arg0: $Player$$Type, arg1: $ItemStack$$Type): void
 public "clearUpgrades"(arg0: $ItemStack$$Type): void
 public "getUpgradeBase"(arg0: $ItemStack$$Type): $UpgradeData
 public "recalculateUpgrades"(arg0: $ItemStack$$Type, arg1: $Level$$Type, arg2: $Player$$Type): void
 public "canTakeFromWorkbench"(arg0: $ItemStack$$Type): boolean
+public "getUpgrades"(arg0: $ItemStack$$Type): $UpgradeData
 public "removeUpgrade"(arg0: $ItemStack$$Type, arg1: $Player$$Type, arg2: $ItemStack$$Type): void
 public "canModify"(arg0: $ItemStack$$Type): boolean
 public "getWorkbenchSlots"(arg0: $AbstractContainerMenu$$Type, arg1: $ItemStack$$Type, arg2: $Level$$Type, arg3: $Supplier$$Type<($Player$$Type)>, arg4: $IItemHandler$$Type): ($Slot)[]
@@ -84,8 +84,8 @@ export type $FertilizerItem$$Original = $FertilizerItem;}
 declare module "blusunrize.immersiveengineering.common.items.RevolverItem$SpecialRevolver" {
 import {$List, $List$$Type} from "java.util.List"
 import {$UpgradeData, $UpgradeData$$Type} from "blusunrize.immersiveengineering.api.tool.upgrade.UpgradeData"
-import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$DualCodec} from "malte0811.dualcodecs.DualCodec"
+import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$Record} from "java.lang.Record"
 
 export class $RevolverItem$SpecialRevolver extends $Record {
@@ -152,8 +152,8 @@ import {$Map, $Map$$Type} from "java.util.Map"
 import {$ItemAttributeModifiers} from "net.minecraft.world.item.component.ItemAttributeModifiers"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$ArmorMaterial$Layer$$Type} from "net.minecraft.world.item.ArmorMaterial$Layer"
-import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Equipable} from "net.minecraft.world.item.Equipable"
+import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
 import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$Supplier} from "java.util.function.Supplier"
@@ -250,8 +250,8 @@ import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$IEMinecartEntity$MinecartConstructor$$Type} from "blusunrize.immersiveengineering.common.entities.IEMinecartEntity$MinecartConstructor"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$IEMinecartEntity} from "blusunrize.immersiveengineering.common.entities.IEMinecartEntity"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
@@ -361,8 +361,8 @@ import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$IEBaseItem} from "blusunrize.immersiveengineering.common.items.IEBaseItem"
 import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
@@ -402,8 +402,8 @@ export type $WirecutterItem$$Type = ($WirecutterItem);
  */
 export type $WirecutterItem$$Original = $WirecutterItem;}
 declare module "blusunrize.immersiveengineering.common.items.LogicCircuitBoardItem" {
-import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
+import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$IEBaseItem} from "blusunrize.immersiveengineering.common.items.IEBaseItem"
 import {$List$$Type} from "java.util.List"
@@ -411,8 +411,8 @@ import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$LogicCircuitHandler$LogicCircuitInstruction$$Type} from "blusunrize.immersiveengineering.api.tool.LogicCircuitHandler$LogicCircuitInstruction"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 
 export class $LogicCircuitBoardItem extends $IEBaseItem {
 static readonly "BASE_ATTACK_DAMAGE_ID": $ResourceLocation
@@ -439,12 +439,12 @@ export type $LogicCircuitBoardItem$$Type = ($LogicCircuitBoardItem);
 export type $LogicCircuitBoardItem$$Original = $LogicCircuitBoardItem;}
 declare module "blusunrize.immersiveengineering.common.items.MaintenanceKitItem" {
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
+import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$IEBaseItem} from "blusunrize.immersiveengineering.common.items.IEBaseItem"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Item} from "net.minecraft.world.item.Item"
@@ -513,8 +513,8 @@ import {$List$$Type} from "java.util.List"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$Color4, $Color4$$Type} from "blusunrize.immersiveengineering.api.utils.Color4"
+import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$IConfigurableTool$ToolConfig$ToolConfigBoolean} from "blusunrize.immersiveengineering.api.tool.IConfigurableTool$ToolConfig$ToolConfigBoolean"
@@ -523,12 +523,12 @@ import {$Map, $Map$$Type} from "java.util.Map"
 import {$IConfigurableTool$ToolConfig$$Type} from "blusunrize.immersiveengineering.api.tool.IConfigurableTool$ToolConfig"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$IConfigurableTool$$Interface} from "blusunrize.immersiveengineering.api.tool.IConfigurableTool"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
-import {$IEBaseItem} from "blusunrize.immersiveengineering.common.items.IEBaseItem"
 import {$IEItemInterfaces$IColouredItem$$Interface} from "blusunrize.immersiveengineering.common.items.IEItemInterfaces$IColouredItem"
+import {$IEBaseItem} from "blusunrize.immersiveengineering.common.items.IEBaseItem"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$IElectricEquipment$ElectricSource$$Type} from "blusunrize.immersiveengineering.api.tool.IElectricEquipment$ElectricSource"
 
@@ -555,8 +555,8 @@ public "getFloatOptions"(arg0: $ItemStack$$Type): ($IConfigurableTool$ToolConfig
 public "fomatConfigName"(arg0: $ItemStack$$Type, arg1: $IConfigurableTool$ToolConfig$$Type): StringJS
 public "fomatConfigDescription"(arg0: $ItemStack$$Type, arg1: $IConfigurableTool$ToolConfig$$Type): StringJS
 public "applyConfigOption"(arg0: $ItemStack$$Type, arg1: StringJS, arg2: any): void
-public static "getRGBInt"(arg0: $ItemStack$$Type, arg1: float): integer
 public static "getRGBFloat"(arg0: $ItemStack$$Type, arg1: float): (float)[]
+public static "getRGBInt"(arg0: $ItemStack$$Type, arg1: float): integer
 public static "getRGB"(arg0: $ItemStack$$Type): $Color4
 public static "setRGB"(arg0: $ItemStack$$Type, arg1: $Color4$$Type): void
 public "getBooleanOptions"(arg0: $ItemStack$$Type): ($IConfigurableTool$ToolConfig$ToolConfigBoolean)[]
@@ -575,27 +575,27 @@ export type $FluorescentTubeItem$$Original = $FluorescentTubeItem;}
 declare module "blusunrize.immersiveengineering.common.items.SkyhookItem" {
 import {$IElectricEquipment$$Interface} from "blusunrize.immersiveengineering.api.tool.IElectricEquipment"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$ItemAttributeModifiers} from "net.minecraft.world.item.component.ItemAttributeModifiers"
 import {$List$$Type} from "java.util.List"
+import {$ItemAttributeModifiers} from "net.minecraft.world.item.component.ItemAttributeModifiers"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Slot} from "net.minecraft.world.inventory.Slot"
+import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
-import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
+import {$EquipmentSlot$$Type} from "net.minecraft.world.entity.EquipmentSlot"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$Map, $Map$$Type} from "java.util.Map"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$UpgradeableToolItem} from "blusunrize.immersiveengineering.common.items.UpgradeableToolItem"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$IItemHandler$$Type} from "net.neoforged.neoforge.items.IItemHandler"
-import {$AbstractContainerMenu$$Type} from "net.minecraft.world.inventory.AbstractContainerMenu"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
+import {$AbstractContainerMenu$$Type} from "net.minecraft.world.inventory.AbstractContainerMenu"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$IElectricEquipment$ElectricSource$$Type} from "blusunrize.immersiveengineering.api.tool.IElectricEquipment$ElectricSource"
 
@@ -645,11 +645,11 @@ import {$List$$Type} from "java.util.List"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$FluidStack, $FluidStack$$Type} from "net.neoforged.neoforge.fluids.FluidStack"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Slot} from "net.minecraft.world.inventory.Slot"
+import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$IEItemInterfaces$IScrollwheel$$Interface} from "blusunrize.immersiveengineering.common.items.IEItemInterfaces$IScrollwheel"
 import {$IEItemInterfaces$IAdvancedFluidItem$$Interface} from "blusunrize.immersiveengineering.common.items.IEItemInterfaces$IAdvancedFluidItem"
@@ -658,8 +658,8 @@ import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$ItemCapabilityRegistration$ItemCapabilityRegistrar$$Type} from "blusunrize.immersiveengineering.common.items.ItemCapabilityRegistration$ItemCapabilityRegistrar"
 import {$UpgradeableToolItem} from "blusunrize.immersiveengineering.common.items.UpgradeableToolItem"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$IItemHandler$$Type} from "net.neoforged.neoforge.items.IItemHandler"
 import {$UseAnim} from "net.minecraft.world.item.UseAnim"
 import {$AbstractContainerMenu$$Type} from "net.minecraft.world.inventory.AbstractContainerMenu"
@@ -680,20 +680,20 @@ constructor()
 public "getFluid"(arg0: $ItemStack$$Type): $FluidStack
 public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
 public "shouldCauseReequipAnimation"(arg0: $ItemStack$$Type, arg1: $ItemStack$$Type, arg2: boolean): boolean
+public "onScrollwheel"(arg0: $ItemStack$$Type, arg1: $Player$$Type, arg2: boolean): void
+public "finishUpgradeRecalculation"(arg0: $ItemStack$$Type, arg1: $RegistryAccess$$Type): void
 public static "isIgniteEnable"(arg0: $ItemStack$$Type): boolean
 public static "setIgniteEnable"(arg0: $ItemStack$$Type, arg1: boolean): void
 public "removeFromWorkbench"(arg0: $Player$$Type, arg1: $ItemStack$$Type): void
-public "onScrollwheel"(arg0: $ItemStack$$Type, arg1: $Player$$Type, arg2: boolean): void
-public "finishUpgradeRecalculation"(arg0: $ItemStack$$Type, arg1: $RegistryAccess$$Type): void
 public "canModify"(arg0: $ItemStack$$Type): boolean
 public "getWorkbenchSlots"(arg0: $AbstractContainerMenu$$Type, arg1: $ItemStack$$Type, arg2: $Level$$Type, arg3: $Supplier$$Type<($Player$$Type)>, arg4: $IItemHandler$$Type): ($Slot)[]
-public "getCapacity"(arg0: $ItemStack$$Type, arg1: integer): integer
 public "use"(arg0: $Level$$Type, arg1: $Player$$Type, arg2: $InteractionHand$$Type): $InteractionResultHolder<($ItemStack)>
-public static "registerCapabilities"(arg0: $ItemCapabilityRegistration$ItemCapabilityRegistrar$$Type): void
+public "getCapacity"(arg0: $ItemStack$$Type, arg1: integer): integer
 public "onUseTick"(arg0: $Level$$Type, arg1: $LivingEntity$$Type, arg2: $ItemStack$$Type, arg3: integer): void
 public "getUseDuration"(arg0: $ItemStack$$Type, arg1: $LivingEntity$$Type): integer
 public "getUseAnimation"(arg0: $ItemStack$$Type): $UseAnim
 public "releaseUsing"(arg0: $ItemStack$$Type, arg1: $Level$$Type, arg2: $LivingEntity$$Type, arg3: integer): void
+public static "registerCapabilities"(arg0: $ItemCapabilityRegistration$ItemCapabilityRegistrar$$Type): void
 public "allowFluid"(arg0: $ItemStack$$Type, arg1: $FluidStack$$Type): boolean
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 }
@@ -738,8 +738,8 @@ export type $FakeIconItem$$Type = ($FakeIconItem);
 export type $FakeIconItem$$Original = $FakeIconItem;}
 declare module "blusunrize.immersiveengineering.common.items.ItemCapabilityRegistration$ItemCapabilityRegistrar" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$Function$$Type} from "java.util.function.Function"
 import {$ICapabilityProvider, $ICapabilityProvider$$Type} from "net.neoforged.neoforge.capabilities.ICapabilityProvider"
+import {$Function$$Type} from "java.util.function.Function"
 import {$ItemCapability, $ItemCapability$$Type} from "net.neoforged.neoforge.capabilities.ItemCapability"
 
 export interface $ItemCapabilityRegistration$ItemCapabilityRegistrar$$Interface {
@@ -765,23 +765,23 @@ import {$PlayerEvent$HarvestCheck$$Type} from "net.neoforged.neoforge.event.enti
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$List$$Type} from "java.util.List"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Holder} from "net.minecraft.core.Holder"
+import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
 import {$Tier} from "net.minecraft.world.item.Tier"
-import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
+import {$Holder} from "net.minecraft.core.Holder"
 import {$Slot} from "net.minecraft.world.inventory.Slot"
+import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Map} from "java.util.Map"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$IItemHandler$$Type} from "net.neoforged.neoforge.items.IItemHandler"
 import {$DieselToolItem} from "blusunrize.immersiveengineering.common.items.DieselToolItem"
 import {$AbstractContainerMenu$$Type} from "net.minecraft.world.inventory.AbstractContainerMenu"
@@ -801,10 +801,8 @@ constructor()
 
 public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
 public "mineBlock"(arg0: $ItemStack$$Type, arg1: $Level$$Type, arg2: $BlockState$$Type, arg3: $BlockPos$$Type, arg4: $LivingEntity$$Type): boolean
-public "isEffective"(arg0: $ItemStack$$Type, arg1: $BlockState$$Type): boolean
-public "getHarvestLevel"(arg0: $ItemStack$$Type, arg1: $Player$$Type): $Tier
-public "removeFromWorkbench"(arg0: $Player$$Type, arg1: $ItemStack$$Type): void
 public "finishUpgradeRecalculation"(arg0: $ItemStack$$Type, arg1: $RegistryAccess$$Type): void
+public "removeFromWorkbench"(arg0: $Player$$Type, arg1: $ItemStack$$Type): void
 public "getWorkbenchSlots"(arg0: $AbstractContainerMenu$$Type, arg1: $ItemStack$$Type, arg2: $Level$$Type, arg3: $Supplier$$Type<($Player$$Type)>, arg4: $IItemHandler$$Type): ($Slot)[]
 public static "getHeadStatic"(arg0: $ItemStack$$Type): $ItemStack
 public static "setHeadStatic"(arg0: $ItemStack$$Type, arg1: $ItemStack$$Type): void
@@ -821,6 +819,8 @@ public "getAttackSound"(arg0: $ItemStack$$Type): $Holder<($SoundEvent)>
 public "getHarvestSound"(arg0: $ItemStack$$Type): $Holder<($SoundEvent)>
 public "ableToMakeNoise"(arg0: $ItemStack$$Type): boolean
 public "noisySameStack"(arg0: $ItemStack$$Type, arg1: $ItemStack$$Type): boolean
+public "isEffective"(arg0: $ItemStack$$Type, arg1: $BlockState$$Type): boolean
+public "getHarvestLevel"(arg0: $ItemStack$$Type, arg1: $Player$$Type): $Tier
 public "getHead"(arg0: $ItemStack$$Type): $ItemStack
 public "setHead"(arg0: $ItemStack$$Type, arg1: $ItemStack$$Type): void
 public "use"(arg0: $Level$$Type, arg1: $Player$$Type, arg2: $InteractionHand$$Type): $InteractionResultHolder<($ItemStack)>
@@ -847,8 +847,8 @@ import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Slot$$Type} from "net.minecraft.world.inventory.Slot"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$TooltipComponent} from "net.minecraft.world.inventory.tooltip.TooltipComponent"
 import {$InternalStorageItem} from "blusunrize.immersiveengineering.common.items.InternalStorageItem"
+import {$TooltipComponent} from "net.minecraft.world.inventory.tooltip.TooltipComponent"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$ClickAction$$Type} from "net.minecraft.world.inventory.ClickAction"
@@ -887,28 +887,28 @@ declare module "blusunrize.immersiveengineering.common.items.BuzzsawItem" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$List$$Type} from "java.util.List"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
+import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
 import {$ItemAbility$$Type} from "net.neoforged.neoforge.common.ItemAbility"
 import {$Tier} from "net.minecraft.world.item.Tier"
 import {$Holder, $Holder$$Type} from "net.minecraft.core.Holder"
-import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Slot} from "net.minecraft.world.inventory.Slot"
+import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$ItemEnchantments} from "net.minecraft.world.item.enchantment.ItemEnchantments"
 import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$SawbladeItem} from "blusunrize.immersiveengineering.common.items.SawbladeItem"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$IEItemInterfaces$IScrollwheel$$Interface} from "blusunrize.immersiveengineering.common.items.IEItemInterfaces$IScrollwheel"
-import {$Map} from "java.util.Map"
 import {$Collection} from "java.util.Collection"
-import {$HolderLookup$RegistryLookup$$Type} from "net.minecraft.core.HolderLookup$RegistryLookup"
+import {$Map} from "java.util.Map"
 import {$Block} from "net.minecraft.world.level.block.Block"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
+import {$HolderLookup$RegistryLookup$$Type} from "net.minecraft.core.HolderLookup$RegistryLookup"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$IItemHandler$$Type} from "net.neoforged.neoforge.items.IItemHandler"
 import {$DieselToolItem} from "blusunrize.immersiveengineering.common.items.DieselToolItem"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
@@ -934,16 +934,15 @@ public "useOn"(arg0: $UseOnContext$$Type): $InteractionResult
 public "mineBlock"(arg0: $ItemStack$$Type, arg1: $Level$$Type, arg2: $BlockState$$Type, arg3: $BlockPos$$Type, arg4: $LivingEntity$$Type): boolean
 public "getEnchantmentLevel"(arg0: $ItemStack$$Type, arg1: $Holder$$Type<($Enchantment)>): integer
 public "getAllEnchantments"(arg0: $ItemStack$$Type, arg1: $HolderLookup$RegistryLookup$$Type<($Enchantment$$Type)>): $ItemEnchantments
-public "isEffective"(arg0: $ItemStack$$Type, arg1: $BlockState$$Type): boolean
-public "getHarvestLevel"(arg0: $ItemStack$$Type, arg1: $Player$$Type): $Tier
-public "removeFromWorkbench"(arg0: $Player$$Type, arg1: $ItemStack$$Type): void
 public "onScrollwheel"(arg0: $ItemStack$$Type, arg1: $Player$$Type, arg2: boolean): void
+public "removeFromWorkbench"(arg0: $Player$$Type, arg1: $ItemStack$$Type): void
 public "getWorkbenchSlots"(arg0: $AbstractContainerMenu$$Type, arg1: $ItemStack$$Type, arg2: $Level$$Type, arg3: $Supplier$$Type<($Player$$Type)>, arg4: $IItemHandler$$Type): ($Slot)[]
 public "recalculateUpgrades"(arg0: $ItemStack$$Type, arg1: $Level$$Type, arg2: $Player$$Type): void
 public "getUpgradeAfterRemoval"(arg0: $ItemStack$$Type, arg1: $ItemStack$$Type): $ItemStack
 public "getMaxHeadDamage"(arg0: $ItemStack$$Type): integer
 public "getHeadDamage"(arg0: $ItemStack$$Type): integer
 public "canToolBeUsed"(arg0: $ItemStack$$Type): boolean
+public static "hasQuiverUpgrade"(arg0: $ItemStack$$Type): boolean
 public "getIdleSound"(arg0: $ItemStack$$Type): $Holder<($SoundEvent)>
 public "getBusySound"(arg0: $ItemStack$$Type): $Holder<($SoundEvent)>
 public "getFadingSound"(arg0: $ItemStack$$Type): $Holder<($SoundEvent)>
@@ -951,10 +950,11 @@ public "getAttackSound"(arg0: $ItemStack$$Type): $Holder<($SoundEvent)>
 public "getHarvestSound"(arg0: $ItemStack$$Type): $Holder<($SoundEvent)>
 public "ableToMakeNoise"(arg0: $ItemStack$$Type): boolean
 public "noisySameStack"(arg0: $ItemStack$$Type, arg1: $ItemStack$$Type): boolean
-public static "hasQuiverUpgrade"(arg0: $ItemStack$$Type): boolean
 public static "getSawblade"(arg0: $ItemStack$$Type, arg1: integer): $ItemStack
 public static "setSawblade"(arg0: $ItemStack$$Type, arg1: $ItemStack$$Type, arg2: integer): void
 public static "isSawblade"(arg0: $ItemStack$$Type): boolean
+public "isEffective"(arg0: $ItemStack$$Type, arg1: $BlockState$$Type): boolean
+public "getHarvestLevel"(arg0: $ItemStack$$Type, arg1: $Player$$Type): $Tier
 public "getHead"(arg0: $ItemStack$$Type): $ItemStack
 public "setHead"(arg0: $ItemStack$$Type, arg1: $ItemStack$$Type): void
 public "canPerformAction"(arg0: $ItemStack$$Type, arg1: $ItemAbility$$Type): boolean
@@ -997,14 +997,14 @@ import {$WireType, $WireType$$Type} from "blusunrize.immersiveengineering.api.wi
 import {$IWireCoil$$Type, $IWireCoil$$Interface} from "blusunrize.immersiveengineering.api.wires.IWireCoil"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$List$$Type} from "java.util.List"
-import {$Direction$$Type} from "net.minecraft.core.Direction"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
@@ -1024,10 +1024,10 @@ static readonly "BY_BLOCK": $Map<($Block), ($Item)>
 
 constructor(arg0: $WireType$$Type)
 
+public "getWireType"(arg0: $ItemStack$$Type): $WireType
 public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
 public "useOn"(arg0: $UseOnContext$$Type): $InteractionResult
 public static "doCoilUse"(arg0: $IWireCoil$$Type, arg1: $Player$$Type, arg2: $Level$$Type, arg3: $BlockPos$$Type, arg4: $InteractionHand$$Type, arg5: $Direction$$Type, arg6: float, arg7: float, arg8: float): $InteractionResult
-public "getWireType"(arg0: $ItemStack$$Type): $WireType
 public "canConnectCable"(arg0: $ItemStack$$Type, arg1: $BlockEntity$$Type): boolean
 public "consumeWire"(arg0: $ItemStack$$Type, arg1: integer): void
 public "getMaxLength"(arg0: $ItemStack$$Type): integer
@@ -1046,8 +1046,8 @@ declare module "blusunrize.immersiveengineering.common.items.CoresampleItem$Item
 import {$CoresampleItem$VeinSample, $CoresampleItem$VeinSample$$Type} from "blusunrize.immersiveengineering.common.items.CoresampleItem$VeinSample"
 import {$CoresampleItem$SamplePosition, $CoresampleItem$SamplePosition$$Type} from "blusunrize.immersiveengineering.common.items.CoresampleItem$SamplePosition"
 import {$List, $List$$Type} from "java.util.List"
-import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$DualCodec} from "malte0811.dualcodecs.DualCodec"
+import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$Record} from "java.lang.Record"
 
 export class $CoresampleItem$ItemData extends $Record {
@@ -1099,14 +1099,14 @@ declare module "blusunrize.immersiveengineering.common.items.PotionBucketItem" {
 import {$Potion$$Type} from "net.minecraft.world.item.alchemy.Potion"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$List$$Type} from "java.util.List"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
 import {$ItemCapabilityRegistration$ItemCapabilityRegistrar$$Type} from "blusunrize.immersiveengineering.common.items.ItemCapabilityRegistration$ItemCapabilityRegistrar"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Holder$$Type} from "net.minecraft.core.Holder"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
@@ -1165,15 +1165,15 @@ export type $IEItemInterfaces$IBulletContainer$$Original = $IEItemInterfaces$IBu
 declare module "blusunrize.immersiveengineering.common.items.PowerpackItem" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$List$$Type} from "java.util.List"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$ItemCapabilityRegistration$ItemCapabilityRegistrar$$Type} from "blusunrize.immersiveengineering.common.items.ItemCapabilityRegistration$ItemCapabilityRegistrar"
 import {$UpgradeableToolItem} from "blusunrize.immersiveengineering.common.items.UpgradeableToolItem"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$IItemHandler$$Type} from "net.neoforged.neoforge.items.IItemHandler"
 import {$Slot} from "net.minecraft.world.inventory.Slot"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
@@ -1213,8 +1213,8 @@ public "getWorkbenchSlots"(arg0: $AbstractContainerMenu$$Type, arg1: $ItemStack$
 public static "tickWornPack"(arg0: $ItemStack$$Type, arg1: $Level$$Type, arg2: $Player$$Type): void
 public static "getCapacitorStatic"(arg0: $ItemStack$$Type): $ItemStack
 public "use"(arg0: $Level$$Type, arg1: $Player$$Type, arg2: $InteractionHand$$Type): $InteractionResultHolder<($ItemStack)>
-public static "registerCapabilities"(arg0: $ItemCapabilityRegistration$ItemCapabilityRegistrar$$Type): void
 public "getEquipmentSlot"(arg0: $ItemStack$$Type): $EquipmentSlot
+public static "registerCapabilities"(arg0: $ItemCapabilityRegistration$ItemCapabilityRegistrar$$Type): void
 public static "getMaxEnergyStored"(arg0: $ItemStack$$Type): integer
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 }
@@ -1280,8 +1280,8 @@ import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$IEItemInterfaces$IBulletContainer$$Interface} from "blusunrize.immersiveengineering.common.items.IEItemInterfaces$IBulletContainer"
 import {$NonNullList} from "net.minecraft.core.NonNullList"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$TooltipComponent} from "net.minecraft.world.inventory.tooltip.TooltipComponent"
 import {$InternalStorageItem} from "blusunrize.immersiveengineering.common.items.InternalStorageItem"
+import {$TooltipComponent} from "net.minecraft.world.inventory.tooltip.TooltipComponent"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
 import {$Item} from "net.minecraft.world.item.Item"
@@ -1373,8 +1373,8 @@ import {$List$$Type} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 
 export class $RevolverpartItem extends $IEBaseItem {
 static readonly "BASE_ATTACK_DAMAGE_ID": $ResourceLocation
@@ -1406,8 +1406,8 @@ import {$List$$Type} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$PlayerInteractEvent$EntityInteractSpecific$$Type} from "net.neoforged.neoforge.event.entity.player.PlayerInteractEvent$EntityInteractSpecific"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$IEBaseItem} from "blusunrize.immersiveengineering.common.items.IEBaseItem"
@@ -1448,8 +1448,8 @@ import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
 import {$Holder} from "net.minecraft.core.Holder"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Equipable, $Equipable$$Interface} from "net.minecraft.world.item.Equipable"
+import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$IEBaseItem} from "blusunrize.immersiveengineering.common.items.IEBaseItem"
 import {$EquipmentSlot} from "net.minecraft.world.entity.EquipmentSlot"
 import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
@@ -1499,8 +1499,8 @@ import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$ImmutableList} from "com.google.common.collect.ImmutableList"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$HitResult$$Type} from "net.minecraft.world.phys.HitResult"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Tier} from "net.minecraft.world.item.Tier"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
@@ -1565,34 +1565,34 @@ export type $SurveyToolsItem$HintedPosition$$Original = $SurveyToolsItem$HintedP
 declare module "blusunrize.immersiveengineering.common.items.RevolverItem" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
-import {$ItemAttributeModifiers} from "net.minecraft.world.item.component.ItemAttributeModifiers"
 import {$List$$Type} from "java.util.List"
+import {$ItemAttributeModifiers} from "net.minecraft.world.item.component.ItemAttributeModifiers"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$IEItemInterfaces$IBulletContainer$$Interface} from "blusunrize.immersiveengineering.common.items.IEItemInterfaces$IBulletContainer"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Slot} from "net.minecraft.world.inventory.Slot"
 import {$RevolverItem$Perks} from "blusunrize.immersiveengineering.common.items.RevolverItem$Perks"
+import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$TooltipComponent} from "net.minecraft.world.inventory.tooltip.TooltipComponent"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
 import {$Supplier$$Type} from "java.util.function.Supplier"
 import {$BulletHandler$IBullet$$Type} from "blusunrize.immersiveengineering.api.tool.BulletHandler$IBullet"
-import {$Item} from "net.minecraft.world.item.Item"
+import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
 import {$ZoomHandler$IZoomTool$$Interface} from "blusunrize.immersiveengineering.api.tool.ZoomHandler$IZoomTool"
+import {$Item} from "net.minecraft.world.item.Item"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$RevolverItem$RevolverCooldowns} from "blusunrize.immersiveengineering.common.items.RevolverItem$RevolverCooldowns"
 import {$Map} from "java.util.Map"
 import {$RevolverItem$SpecialRevolver, $RevolverItem$SpecialRevolver$$Type} from "blusunrize.immersiveengineering.common.items.RevolverItem$SpecialRevolver"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Multimap} from "com.google.common.collect.Multimap"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$ItemCapabilityRegistration$ItemCapabilityRegistrar$$Type} from "blusunrize.immersiveengineering.common.items.ItemCapabilityRegistration$ItemCapabilityRegistrar"
 import {$UpgradeableToolItem} from "blusunrize.immersiveengineering.common.items.UpgradeableToolItem"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
-import {$IItemHandler$$Type} from "net.neoforged.neoforge.items.IItemHandler"
 import {$NonNullList, $NonNullList$$Type} from "net.minecraft.core.NonNullList"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
+import {$IItemHandler$$Type} from "net.neoforged.neoforge.items.IItemHandler"
 import {$UseAnim} from "net.minecraft.world.item.UseAnim"
 import {$AbstractContainerMenu$$Type} from "net.minecraft.world.inventory.AbstractContainerMenu"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
@@ -1628,8 +1628,8 @@ public "getRevolverDisplayTag"(arg0: $ItemStack$$Type): StringJS
 public static "getPerks"(arg0: $ItemStack$$Type): $RevolverItem$Perks
 public "useSpeedloader"(arg0: $Level$$Type, arg1: $Player$$Type, arg2: $ItemStack$$Type, arg3: $InteractionHand$$Type, arg4: $NonNullList$$Type<($ItemStack$$Type)>): boolean
 public static "fireProjectile"(arg0: $Level$$Type, arg1: $LivingEntity$$Type, arg2: $ItemStack$$Type, arg3: $BulletHandler$IBullet$$Type, arg4: $ItemStack$$Type): float
-public "rotateCylinder"(arg0: $ItemStack$$Type, arg1: $Player$$Type, arg2: boolean, arg3: $NonNullList$$Type<($ItemStack$$Type)>): void
 public "rotateCylinder"(arg0: $ItemStack$$Type, arg1: $Player$$Type, arg2: boolean): void
+public "rotateCylinder"(arg0: $ItemStack$$Type, arg1: $Player$$Type, arg2: boolean, arg3: $NonNullList$$Type<($ItemStack$$Type)>): void
 public "getMaxShootCooldown"(arg0: $ItemStack$$Type): integer
 public "setBullets"(arg0: $ItemStack$$Type, arg1: $NonNullList$$Type<($ItemStack$$Type)>, arg2: boolean): void
 public "applySpecialCrafting"(arg0: $ItemStack$$Type, arg1: $RevolverItem$SpecialRevolver$$Type): void
@@ -1639,8 +1639,8 @@ public "use"(arg0: $Level$$Type, arg1: $Player$$Type, arg2: $InteractionHand$$Ty
 public static "getCooldowns"(arg0: $ItemStack$$Type): $RevolverItem$RevolverCooldowns
 public "getTooltipImage"(arg0: $ItemStack$$Type): $Optional<($TooltipComponent)>
 public "getDescriptionId"(arg0: $ItemStack$$Type): StringJS
-public static "registerCapabilities"(arg0: $ItemCapabilityRegistration$ItemCapabilityRegistrar$$Type): void
 public "getUseAnimation"(arg0: $ItemStack$$Type): $UseAnim
+public static "registerCapabilities"(arg0: $ItemCapabilityRegistration$ItemCapabilityRegistrar$$Type): void
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 }
 /**
@@ -1659,8 +1659,8 @@ import {$List$$Type} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$ItemCapabilityRegistration$ItemCapabilityRegistrar$$Type} from "blusunrize.immersiveengineering.common.items.ItemCapabilityRegistration$ItemCapabilityRegistrar"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$IEBaseItem} from "blusunrize.immersiveengineering.common.items.IEBaseItem"
@@ -1698,9 +1698,9 @@ import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$IEBaseItem} from "blusunrize.immersiveengineering.common.items.IEBaseItem"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$IItemHandlerModifiable} from "net.neoforged.neoforge.items.IItemHandlerModifiable"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$ItemCapabilityRegistration$ItemCapabilityRegistrar$$Type} from "blusunrize.immersiveengineering.common.items.ItemCapabilityRegistration$ItemCapabilityRegistrar"
 import {$ItemContainerContents} from "net.minecraft.world.item.component.ItemContainerContents"
@@ -1716,11 +1716,11 @@ static readonly "BY_BLOCK": $Map<($Block), ($Item)>
 
 constructor(arg0: $Item$Properties$$Type, arg1: integer)
 
-public "getSlotCount"(): integer
 public "setContainedItems"(arg0: $ItemStack$$Type, arg1: $NonNullList$$Type<($ItemStack$$Type)>): void
 public static "registerCapabilitiesISI"(arg0: $ItemCapabilityRegistration$ItemCapabilityRegistrar$$Type): void
 public static "makeInternalItemHandler"(arg0: $ItemStack$$Type): $IItemHandlerModifiable
 public static "getContainedItems"(arg0: $ItemStack$$Type): $ItemContainerContents
+public "getSlotCount"(): integer
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "slotCount"(): integer
 }
@@ -1736,8 +1736,8 @@ export type $InternalStorageItem$$Original = $InternalStorageItem;}
 declare module "blusunrize.immersiveengineering.common.items.RevolverItem$Perks" {
 import {$Map, $Map$$Type} from "java.util.Map"
 import {$RevolverItem$RevolverPerk, $RevolverItem$RevolverPerk$$Type} from "blusunrize.immersiveengineering.common.items.RevolverItem$RevolverPerk"
-import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$DualCodec} from "malte0811.dualcodecs.DualCodec"
+import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$Record} from "java.lang.Record"
 
 export class $RevolverItem$Perks extends $Record {
@@ -1805,8 +1805,8 @@ import {$List, $List$$Type} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$IEBaseItem} from "blusunrize.immersiveengineering.common.items.IEBaseItem"
 import {$RecipeHolder} from "net.minecraft.world.item.crafting.RecipeHolder"
@@ -1839,8 +1839,8 @@ export type $EngineersBlueprintItem$$Type = ($EngineersBlueprintItem);
 export type $EngineersBlueprintItem$$Original = $EngineersBlueprintItem;}
 declare module "blusunrize.immersiveengineering.common.items.CoresampleItem$VeinSample" {
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
-import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$DualCodec} from "malte0811.dualcodecs.DualCodec"
+import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$Record} from "java.lang.Record"
 
 export class $CoresampleItem$VeinSample extends $Record {
@@ -1904,8 +1904,8 @@ declare module "blusunrize.immersiveengineering.common.items.CoresampleItem$Samp
 import {$ColumnPos} from "net.minecraft.server.level.ColumnPos"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$ResourceKey, $ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
-import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$DualCodec} from "malte0811.dualcodecs.DualCodec"
+import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$Record} from "java.lang.Record"
 
 export class $CoresampleItem$SamplePosition extends $Record {
@@ -1935,8 +1935,8 @@ declare module "blusunrize.immersiveengineering.common.items.DieselToolItem" {
 import {$IEItemInterfaces$IAdvancedFluidItem$$Interface} from "blusunrize.immersiveengineering.common.items.IEItemInterfaces$IAdvancedFluidItem"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$ItemAttributeModifiers} from "net.minecraft.world.item.component.ItemAttributeModifiers"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$FluidStack, $FluidStack$$Type} from "net.neoforged.neoforge.fluids.FluidStack"
 import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
@@ -1967,8 +1967,6 @@ constructor(arg0: $Item$Properties$$Type, arg1: StringJS, arg2: integer)
 public "getDefaultAttributeModifiers"(arg0: $ItemStack$$Type): $ItemAttributeModifiers
 public "getEnchantmentValue"(): integer
 public "shouldCauseReequipAnimation"(arg0: $ItemStack$$Type, arg1: $ItemStack$$Type, arg2: boolean): boolean
-public "isEffective"(arg0: $ItemStack$$Type, arg1: $BlockState$$Type): boolean
-public "getHarvestLevel"(arg0: $ItemStack$$Type, arg1: $Player$$Type): $Tier
 public "finishUpgradeRecalculation"(arg0: $ItemStack$$Type, arg1: $RegistryAccess$$Type): void
 public "canModify"(arg0: $ItemStack$$Type): boolean
 public "allowFluid"(arg0: $ItemStack$$Type, arg1: $FluidStack$$Type): boolean
@@ -1981,14 +1979,16 @@ public "getFadingSound"(arg0: $ItemStack$$Type): $Holder<($SoundEvent)>
 public "getAttackSound"(arg0: $ItemStack$$Type): $Holder<($SoundEvent)>
 public "getHarvestSound"(arg0: $ItemStack$$Type): $Holder<($SoundEvent)>
 public "ableToMakeNoise"(arg0: $ItemStack$$Type): boolean
+public "isEffective"(arg0: $ItemStack$$Type, arg1: $BlockState$$Type): boolean
+public "getHarvestLevel"(arg0: $ItemStack$$Type, arg1: $Player$$Type): $Tier
 public "getCapacity"(arg0: $ItemStack$$Type, arg1: integer): integer
 public "isBarVisible"(arg0: $ItemStack$$Type): boolean
 public "getBarWidth"(arg0: $ItemStack$$Type): integer
-public static "registerCapabilities"(arg0: $ItemCapabilityRegistration$ItemCapabilityRegistrar$$Type): void
 public "onEntitySwing"(arg0: $ItemStack$$Type, arg1: $LivingEntity$$Type, arg2: $InteractionHand$$Type): boolean
 public "getUseAnimation"(arg0: $ItemStack$$Type): $UseAnim
 public "isCorrectToolForDrops"(arg0: $ItemStack$$Type, arg1: $BlockState$$Type): boolean
 public "hurtEnemy"(arg0: $ItemStack$$Type, arg1: $LivingEntity$$Type, arg2: $LivingEntity$$Type): boolean
+public static "registerCapabilities"(arg0: $ItemCapabilityRegistration$ItemCapabilityRegistrar$$Type): void
 public "getFluid"(arg0: $ItemStack$$Type): $FluidStack
 public "noisySameStack"(arg0: $ItemStack$$Type, arg1: $ItemStack$$Type): boolean
 public static "isAbleNoisyTool"(arg0: $ItemStack$$Type): boolean
@@ -2011,16 +2011,16 @@ import {$List} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$ColumnPos$$Type} from "net.minecraft.server.level.ColumnPos"
-import {$SurveyToolsItem$HintedPosition, $SurveyToolsItem$HintedPosition$$Type} from "blusunrize.immersiveengineering.common.items.SurveyToolsItem$HintedPosition"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
+import {$SurveyToolsItem$HintedPosition, $SurveyToolsItem$HintedPosition$$Type} from "blusunrize.immersiveengineering.common.items.SurveyToolsItem$HintedPosition"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$UseAnim} from "net.minecraft.world.item.UseAnim"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$IEBaseItem} from "blusunrize.immersiveengineering.common.items.IEBaseItem"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 
@@ -2066,12 +2066,12 @@ static readonly "CODEC": $StreamCodec<($ByteBuf), ($VoltmeterItem$RemoteEnergyDa
 constructor(pos: $Either$$Type<($BlockPos$$Type), (integer)>, measuredInTick: long, isValid: boolean, stored: integer, capacity: integer)
 
 public "measuredInTick"(): long
-public "isValid"(): boolean
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
 public "pos"(): $Either<($BlockPos), (integer)>
 public "capacity"(): integer
+public "isValid"(): boolean
 public "stored"(): integer
 get "valid"(): boolean
 }
@@ -2088,14 +2088,14 @@ declare module "blusunrize.immersiveengineering.common.items.EarmuffsItem" {
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$IConfigurableTool$ToolConfig$ToolConfigFloat} from "blusunrize.immersiveengineering.api.tool.IConfigurableTool$ToolConfig$ToolConfigFloat"
-import {$IConfigurableTool$ToolConfig$$Type} from "blusunrize.immersiveengineering.api.tool.IConfigurableTool$ToolConfig"
 import {$List$$Type} from "java.util.List"
+import {$IConfigurableTool$ToolConfig$$Type} from "blusunrize.immersiveengineering.api.tool.IConfigurableTool$ToolConfig"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$LinkedHashSet} from "java.util.LinkedHashSet"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$IConfigurableTool$$Interface} from "blusunrize.immersiveengineering.api.tool.IConfigurableTool"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ItemGetterList} from "blusunrize.immersiveengineering.common.util.ItemGetterList"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$IEBaseItem} from "blusunrize.immersiveengineering.common.items.IEBaseItem"
@@ -2143,8 +2143,8 @@ export type $EarmuffsItem$$Type = ($EarmuffsItem);
  */
 export type $EarmuffsItem$$Original = $EarmuffsItem;}
 declare module "blusunrize.immersiveengineering.common.items.ManualItem" {
-import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
+import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
@@ -2185,14 +2185,14 @@ import {$Map} from "java.util.Map"
 import {$List$$Type} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$IEBaseItem} from "blusunrize.immersiveengineering.common.items.IEBaseItem"
 import {$IUpgrade$$Interface} from "blusunrize.immersiveengineering.api.tool.upgrade.IUpgrade"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$Set} from "java.util.Set"
 import {$UpgradeData, $UpgradeData$$Type} from "blusunrize.immersiveengineering.api.tool.upgrade.UpgradeData"
+import {$Set} from "java.util.Set"
 import {$ToolUpgrade$$Type} from "blusunrize.immersiveengineering.common.items.upgrades.ToolUpgrade"
 
 export class $ToolUpgradeItem extends $IEBaseItem implements $IUpgrade$$Interface {
@@ -2230,8 +2230,8 @@ import {$List$$Type} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 
 export class $GraphiteElectrodeItem extends $IEBaseItem {
 static readonly "BASE_ATTACK_DAMAGE_ID": $ResourceLocation
@@ -2264,8 +2264,8 @@ import {$Map} from "java.util.Map"
 import {$List$$Type} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$IEBaseItem} from "blusunrize.immersiveengineering.common.items.IEBaseItem"
@@ -2305,12 +2305,12 @@ import {$List$$Type} from "java.util.List"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$ItemAbility$$Type} from "net.neoforged.neoforge.common.ItemAbility"
-import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Slot} from "net.minecraft.world.inventory.Slot"
+import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$LivingDamageEvent$Pre$$Type} from "net.neoforged.neoforge.event.entity.living.LivingDamageEvent$Pre"
-import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
+import {$LivingDamageEvent$Pre$$Type} from "net.neoforged.neoforge.event.entity.living.LivingDamageEvent$Pre"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$Map} from "java.util.Map"
@@ -2318,12 +2318,12 @@ import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$ItemCapabilityRegistration$ItemCapabilityRegistrar$$Type} from "blusunrize.immersiveengineering.common.items.ItemCapabilityRegistration$ItemCapabilityRegistrar"
 import {$UpgradeableToolItem} from "blusunrize.immersiveengineering.common.items.UpgradeableToolItem"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$IItemHandler$$Type} from "net.neoforged.neoforge.items.IItemHandler"
 import {$UseAnim} from "net.minecraft.world.item.UseAnim"
-import {$AbstractContainerMenu$$Type} from "net.minecraft.world.inventory.AbstractContainerMenu"
 import {$DamageSource$$Type} from "net.minecraft.world.damagesource.DamageSource"
+import {$AbstractContainerMenu$$Type} from "net.minecraft.world.inventory.AbstractContainerMenu"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 
 export class $IEShieldItem extends $UpgradeableToolItem {
@@ -2346,10 +2346,10 @@ public "canModify"(arg0: $ItemStack$$Type): boolean
 public "getWorkbenchSlots"(arg0: $AbstractContainerMenu$$Type, arg1: $ItemStack$$Type, arg2: $Level$$Type, arg3: $Supplier$$Type<($Player$$Type)>, arg4: $IItemHandler$$Type): ($Slot)[]
 public "hitShield"(arg0: $ItemStack$$Type, arg1: $Player$$Type, arg2: $DamageSource$$Type, arg3: float, arg4: $LivingDamageEvent$Pre$$Type): void
 public "use"(arg0: $Level$$Type, arg1: $Player$$Type, arg2: $InteractionHand$$Type): $InteractionResultHolder<($ItemStack)>
-public static "registerCapabilities"(arg0: $ItemCapabilityRegistration$ItemCapabilityRegistrar$$Type): void
 public "getUseDuration"(arg0: $ItemStack$$Type, arg1: $LivingEntity$$Type): integer
 public "getUseAnimation"(arg0: $ItemStack$$Type): $UseAnim
 public "canPerformAction"(arg0: $ItemStack$$Type, arg1: $ItemAbility$$Type): boolean
+public static "registerCapabilities"(arg0: $ItemCapabilityRegistration$ItemCapabilityRegistrar$$Type): void
 public static "getMaxEnergyStored"(arg0: $ItemStack$$Type): integer
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 }
@@ -2369,8 +2369,8 @@ import {$List, $List$$Type} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$CoresampleItem$ItemData$$Type} from "blusunrize.immersiveengineering.common.items.CoresampleItem$ItemData"
 import {$MineralMix} from "blusunrize.immersiveengineering.api.excavator.MineralMix"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
@@ -2407,8 +2407,8 @@ export type $CoresampleItem$$Type = ($CoresampleItem);
  */
 export type $CoresampleItem$$Original = $CoresampleItem;}
 declare module "blusunrize.immersiveengineering.common.items.RevolverItem$RevolverCooldowns" {
-import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$DualCodec} from "malte0811.dualcodecs.DualCodec"
+import {$ByteBuf} from "io.netty.buffer.ByteBuf"
 import {$Record} from "java.lang.Record"
 
 export class $RevolverItem$RevolverCooldowns extends $Record {
@@ -2435,12 +2435,12 @@ export type $RevolverItem$RevolverCooldowns$$Original = $RevolverItem$RevolverCo
 declare module "blusunrize.immersiveengineering.common.items.HammerItem" {
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
-import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$List$$Type} from "java.util.List"
+import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Holder$$Type} from "net.minecraft.core.Holder"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
@@ -2449,8 +2449,8 @@ import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$IEBaseItem} from "blusunrize.immersiveengineering.common.items.IEBaseItem"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
@@ -2497,8 +2497,8 @@ import {$List$$Type} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
@@ -2539,9 +2539,9 @@ import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$CreativeModeTab$Output$$Type} from "net.minecraft.world.item.CreativeModeTab$Output"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$RecipeType$$Type} from "net.minecraft.world.item.crafting.RecipeType"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 
 export class $IEBaseItem extends $Item {
@@ -2603,12 +2603,12 @@ import {$Map} from "java.util.Map"
 import {$List$$Type} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
-import {$IEBaseItem} from "blusunrize.immersiveengineering.common.items.IEBaseItem"
 import {$IShaderItem$$Interface} from "blusunrize.immersiveengineering.api.shader.IShaderItem"
+import {$IEBaseItem} from "blusunrize.immersiveengineering.common.items.IEBaseItem"
 import {$IEItemInterfaces$IColouredItem$$Interface} from "blusunrize.immersiveengineering.common.items.IEItemInterfaces$IColouredItem"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
@@ -2682,13 +2682,13 @@ import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$List$$Type} from "java.util.List"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Slot} from "net.minecraft.world.inventory.Slot"
+import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
-import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
 import {$Supplier$$Type} from "java.util.function.Supplier"
-import {$Item} from "net.minecraft.world.item.Item"
+import {$InteractionResultHolder} from "net.minecraft.world.InteractionResultHolder"
 import {$ZoomHandler$IZoomTool$$Interface} from "blusunrize.immersiveengineering.api.tool.ZoomHandler$IZoomTool"
+import {$Item} from "net.minecraft.world.item.Item"
 import {$Entity} from "net.minecraft.world.entity.Entity"
 import {$IEItemInterfaces$IScrollwheel$$Interface} from "blusunrize.immersiveengineering.common.items.IEItemInterfaces$IScrollwheel"
 import {$Map} from "java.util.Map"
@@ -2696,8 +2696,8 @@ import {$InteractionHand$$Type} from "net.minecraft.world.InteractionHand"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$ItemCapabilityRegistration$ItemCapabilityRegistrar$$Type} from "blusunrize.immersiveengineering.common.items.ItemCapabilityRegistration$ItemCapabilityRegistrar"
 import {$UpgradeableToolItem} from "blusunrize.immersiveengineering.common.items.UpgradeableToolItem"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$IItemHandler$$Type} from "net.neoforged.neoforge.items.IItemHandler"
 import {$UseAnim} from "net.minecraft.world.item.UseAnim"
 import {$AbstractContainerMenu$$Type} from "net.minecraft.world.inventory.AbstractContainerMenu"
@@ -2717,8 +2717,8 @@ constructor()
 public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
 public "shouldCauseReequipAnimation"(arg0: $ItemStack$$Type, arg1: $ItemStack$$Type, arg2: boolean): boolean
 public static "isAmmo"(arg0: $ItemStack$$Type): boolean
-public "removeFromWorkbench"(arg0: $Player$$Type, arg1: $ItemStack$$Type): void
 public "onScrollwheel"(arg0: $ItemStack$$Type, arg1: $Player$$Type, arg2: boolean): void
+public "removeFromWorkbench"(arg0: $Player$$Type, arg1: $ItemStack$$Type): void
 public "canModify"(arg0: $ItemStack$$Type): boolean
 public "getWorkbenchSlots"(arg0: $AbstractContainerMenu$$Type, arg1: $ItemStack$$Type, arg2: $Level$$Type, arg3: $Supplier$$Type<($Player$$Type)>, arg4: $IItemHandler$$Type): ($Slot)[]
 public "clearUpgrades"(arg0: $ItemStack$$Type): void
@@ -2731,11 +2731,11 @@ public static "playChargeSound"(arg0: $LivingEntity$$Type, arg1: $ItemStack$$Typ
 public static "getChargeTime"(arg0: $ItemStack$$Type): integer
 public static "findAmmoInSlot"(arg0: $Player$$Type, arg1: integer): $ItemStack
 public "use"(arg0: $Level$$Type, arg1: $Player$$Type, arg2: $InteractionHand$$Type): $InteractionResultHolder<($ItemStack)>
-public static "registerCapabilities"(arg0: $ItemCapabilityRegistration$ItemCapabilityRegistrar$$Type): void
 public "onUseTick"(arg0: $Level$$Type, arg1: $LivingEntity$$Type, arg2: $ItemStack$$Type, arg3: integer): void
 public "getUseDuration"(arg0: $ItemStack$$Type, arg1: $LivingEntity$$Type): integer
 public "getUseAnimation"(arg0: $ItemStack$$Type): $UseAnim
 public "releaseUsing"(arg0: $ItemStack$$Type, arg1: $Level$$Type, arg2: $LivingEntity$$Type, arg3: integer): void
+public static "registerCapabilities"(arg0: $ItemCapabilityRegistration$ItemCapabilityRegistrar$$Type): void
 public static "getMaxEnergyStored"(arg0: $ItemStack$$Type): integer
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 }

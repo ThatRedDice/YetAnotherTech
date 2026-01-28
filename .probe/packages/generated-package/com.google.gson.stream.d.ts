@@ -8,13 +8,13 @@ constructor(arg0: $Writer$$Type)
 
 public "setLenient"(arg0: boolean): void
 public "name"(arg0: StringJS): $JsonWriter
-public "value"(arg0: boolean): $JsonWriter
-public "value"(arg0: double): $JsonWriter
-public "value"(arg0: number): $JsonWriter
-public "value"(arg0: long): $JsonWriter
 public "value"(arg0: float): $JsonWriter
-public "value"(arg0: StringJS): $JsonWriter
+public "value"(arg0: double): $JsonWriter
+public "value"(arg0: long): $JsonWriter
 public "value"(arg0: boolean): $JsonWriter
+public "value"(arg0: boolean): $JsonWriter
+public "value"(arg0: StringJS): $JsonWriter
+public "value"(arg0: number): $JsonWriter
 public "flush"(): void
 public "close"(): void
 public "nullValue"(): $JsonWriter
@@ -27,8 +27,8 @@ public "beginArray"(): $JsonWriter
 public "beginObject"(): $JsonWriter
 public "endArray"(): $JsonWriter
 public "endObject"(): $JsonWriter
-public "setIndent"(arg0: StringJS): void
 public "jsonValue"(arg0: StringJS): $JsonWriter
+public "setIndent"(arg0: StringJS): void
 set "lenient"(value: boolean)
 get "lenient"(): boolean
 get "serializeNulls"(): boolean

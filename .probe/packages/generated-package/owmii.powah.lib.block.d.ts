@@ -8,13 +8,13 @@ import {$IVariantEntry$$Interface} from "owmii.powah.lib.registry.IVariantEntry"
 import {$CreativeModeTab$$Type} from "net.minecraft.world.item.CreativeModeTab"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
-import {$ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
+import {$ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
-import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$ItemBlock} from "owmii.powah.lib.item.ItemBlock"
+import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export interface $IBlock$$Interface<V extends $IVariant<(object)>, B extends $Block> extends $IVariantEntry$$Interface<(V), (B)>, $EntityBlock$$Interface {
 
@@ -47,22 +47,22 @@ import {$IVariant, $IVariant$$Type} from "owmii.powah.lib.registry.IVariant"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component} from "net.minecraft.network.chat.Component"
-import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$Inventory$$Type} from "net.minecraft.world.entity.player.Inventory"
+import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$IVariantEntry$$Interface} from "owmii.powah.lib.registry.IVariantEntry"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$AbstractContainer} from "owmii.powah.lib.logistics.inventory.AbstractContainer"
-import {$CreativeModeTab$$Type} from "net.minecraft.world.item.CreativeModeTab"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
+import {$CreativeModeTab$$Type} from "net.minecraft.world.item.CreativeModeTab"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
-import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$CollisionContext$$Type} from "net.minecraft.world.phys.shapes.CollisionContext"
 import {$ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
-import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$ItemBlock} from "owmii.powah.lib.item.ItemBlock"
+import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$IBlock$$Interface} from "owmii.powah.lib.block.IBlock"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$BlockEntityTicker} from "net.minecraft.world.level.block.entity.BlockEntityTicker"
@@ -75,9 +75,9 @@ import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$ServerLevel$$Type} from "net.minecraft.server.level.ServerLevel"
-import {$FluidState} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
+import {$FluidState} from "net.minecraft.world.level.material.FluidState"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 
@@ -105,22 +105,22 @@ constructor(arg0: $BlockBehaviour$Properties$$Type)
 constructor(arg0: $BlockBehaviour$Properties$$Type, arg1: V)
 
 public "getStateForPlacement"(arg0: $BlockPlaceContext$$Type): $BlockState
+public "useShapeForLightOcclusion"(arg0: $BlockState$$Type): boolean
+public "propagatesSkylightDown"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): boolean
 public "updateShape"(arg0: $BlockState$$Type, arg1: $Direction$$Type, arg2: $BlockState$$Type, arg3: $LevelAccessor$$Type, arg4: $BlockPos$$Type, arg5: $BlockPos$$Type): $BlockState
 public "playerDestroy"(arg0: $Level$$Type, arg1: $Player$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $BlockEntity$$Type, arg5: $ItemStack$$Type): void
 public "setPlacedBy"(arg0: $Level$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $LivingEntity$$Type, arg4: $ItemStack$$Type): void
 public "onPlace"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: boolean): void
-public "useShapeForLightOcclusion"(arg0: $BlockState$$Type): boolean
-public "propagatesSkylightDown"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type): boolean
 public "getContainer"<T extends $AbstractTileEntity<(object), (object)>>(arg0: integer, arg1: $Inventory$$Type, arg2: $AbstractTileEntity$$Type, arg3: $BlockHitResult$$Type): $AbstractContainer
-public "getVariant"(): V
 public "getShape"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $CollisionContext$$Type): $VoxelShape
+public "getVariant"(): V
+public "getDisplayName"(arg0: $ItemStack$$Type): $Component
 public static "box"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): $VoxelShape
 public "rotate"(arg0: $BlockState$$Type, arg1: $Rotation$$Type): $BlockState
-public "getDisplayName"(arg0: $ItemStack$$Type): $Component
 public "mirror"(arg0: $BlockState$$Type, arg1: $Mirror$$Type): $BlockState
 public "getFluidState"(arg0: $BlockState$$Type): $FluidState
-public "getCloneItemStack"(arg0: $BlockState$$Type, arg1: $HitResult$$Type, arg2: $BlockGetter$$Type, arg3: $BlockPos$$Type, arg4: $Player$$Type): $ItemStack
 public "getCloneItemStack"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type): $ItemStack
+public "getCloneItemStack"(arg0: $BlockState$$Type, arg1: $HitResult$$Type, arg2: $BlockGetter$$Type, arg3: $BlockPos$$Type, arg4: $Player$$Type): $ItemStack
 public "onRemove"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: boolean): void
 public "triggerEvent"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: integer, arg4: integer): boolean
 public "getTicker"<T extends $BlockEntity>(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockEntityType$$Type<(T)>): $BlockEntityTicker<(T)>
@@ -148,9 +148,9 @@ get "inventory"(): $Inventory
 }
 
 export class $IInventoryHolder implements $IInventoryHolder$$Interface {
- "onSlotChanged"(arg0: integer): void
  "canExtract"(arg0: integer, arg1: $ItemStack$$Type): boolean
  "canInsert"(arg0: integer, arg1: $ItemStack$$Type): boolean
+ "onSlotChanged"(arg0: integer): void
  "getStack"(arg0: integer): $ItemStack
  "grow"(arg0: integer, arg1: integer): $ItemStack
  "shrink"(arg0: integer, arg1: integer): $ItemStack
@@ -205,13 +205,13 @@ import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$Transfer} from "owmii.powah.lib.logistics.Transfer"
-import {$AbstractEnergyBlock} from "owmii.powah.lib.block.AbstractEnergyBlock"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
+import {$AbstractEnergyBlock} from "owmii.powah.lib.block.AbstractEnergyBlock"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$Item} from "net.minecraft.world.item.Item"
-import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$GeneratorConfig} from "owmii.powah.config.v2.types.GeneratorConfig"
+import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$Energy$Item$$Type} from "owmii.powah.lib.logistics.energy.Energy$Item"
 import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 
@@ -263,8 +263,8 @@ export interface $IBlockEntity$$Interface {
 
 export class $IBlockEntity implements $IBlockEntity$$Interface {
  "onPlaced"(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $LivingEntity$$Type, arg3: $ItemStack$$Type): void
- "onRemoved"(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockState$$Type, arg3: boolean): void
  "onAdded"(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockState$$Type, arg3: boolean): void
+ "onRemoved"(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockState$$Type, arg3: boolean): void
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -288,8 +288,8 @@ import {$Redstone, $Redstone$$Type} from "owmii.powah.lib.logistics.Redstone"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$IBlockEntity$$Interface} from "owmii.powah.lib.block.IBlockEntity"
 import {$AbstractBlock} from "owmii.powah.lib.block.AbstractBlock"
-import {$ClientboundBlockEntityDataPacket} from "net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
+import {$ClientboundBlockEntityDataPacket} from "net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
@@ -313,8 +313,8 @@ public "setRedstoneMode"(arg0: $Redstone$$Type): void
 public "keepStorable"(): boolean
 public "setContainerOpen"(arg0: boolean): void
 public "onRemoved"(arg0: $Level$$Type, arg1: $BlockState$$Type, arg2: $BlockState$$Type, arg3: boolean): void
-public "getVariant"(): V
 public "getBlock"(): B
+public "getVariant"(): V
 public "sync"(): void
 public "getInventory"(): $Inventory
 public "getTank"(): $Tank
@@ -325,8 +325,8 @@ get "remote"(): boolean
 get "redstoneMode"(): $Redstone
 set "redstoneMode"(value: $Redstone$$Type)
 set "containerOpen"(value: boolean)
-get "variant"(): V
 get "block"(): B
+get "variant"(): V
 get "inventory"(): $Inventory
 get "tank"(): $Tank
 }
@@ -408,20 +408,20 @@ import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.
 import {$IConfigHolder$$Interface} from "owmii.powah.config.IConfigHolder"
 import {$IEnergyConfig} from "owmii.powah.config.IEnergyConfig"
 import {$Transfer} from "owmii.powah.lib.logistics.Transfer"
-import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$EnergyBlockItem} from "owmii.powah.lib.item.EnergyBlockItem"
-import {$CreativeModeTab$$Type} from "net.minecraft.world.item.CreativeModeTab"
+import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
+import {$CreativeModeTab$$Type} from "net.minecraft.world.item.CreativeModeTab"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
-import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$IEnergyItemProvider$$Interface} from "owmii.powah.lib.item.IEnergyItemProvider"
+import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block} from "net.minecraft.world.level.block.Block"
-import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$TooltipFlag$$Type} from "net.minecraft.world.item.TooltipFlag"
+import {$Item$TooltipContext$$Type} from "net.minecraft.world.item.Item$TooltipContext"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$AbstractBlock} from "owmii.powah.lib.block.AbstractBlock"
@@ -451,16 +451,16 @@ static readonly "UPDATE_CLIENTS": integer
 constructor(arg0: $BlockBehaviour$Properties$$Type, arg1: $Tier$$Type)
 constructor(arg0: $BlockBehaviour$Properties$$Type)
 
-public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
 public "getAnalogOutputSignal"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type): integer
+public "appendHoverText"(arg0: $ItemStack$$Type, arg1: $Item$TooltipContext$$Type, arg2: $List$$Type<($Component$$Type)>, arg3: $TooltipFlag$$Type): void
 public "getTransferType"(): $Transfer
 public "addEnergyInfo"(arg0: $ItemStack$$Type, arg1: $Energy$Item$$Type, arg2: $List$$Type<($Component$$Type)>): void
 public "addEnergyTransferInfo"(arg0: $ItemStack$$Type, arg1: $Energy$Item$$Type, arg2: $List$$Type<($Component$$Type)>): void
 public "additionalEnergyInfo"(arg0: $ItemStack$$Type, arg1: $Energy$Item$$Type, arg2: $List$$Type<($Component$$Type)>): void
 public "isChargeable"(arg0: $ItemStack$$Type): boolean
-public "getBlockItem"(arg0: $Item$Properties$$Type, arg1: $ResourceKey$$Type<($CreativeModeTab)>): $EnergyBlockItem
 public "canSurvive"(arg0: $BlockState$$Type, arg1: $LevelReader$$Type, arg2: $BlockPos$$Type): boolean
 public "hasAnalogOutputSignal"(arg0: $BlockState$$Type): boolean
+public "getBlockItem"(arg0: $Item$Properties$$Type, arg1: $ResourceKey$$Type<($CreativeModeTab)>): $EnergyBlockItem
 public "getConfig"(): C
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "transferType"(): $Transfer

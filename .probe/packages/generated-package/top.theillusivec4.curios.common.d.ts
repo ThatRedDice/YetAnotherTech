@@ -31,7 +31,7 @@ public "validate"(arg0: $CriterionValidator$$Type): void
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $EquipCurioTrigger$TriggerInstance$$Type = ({"slot"?: ($SlotPredicate$$Type)?, "player"?: ($ContextAwarePredicate$$Type)?, "item"?: ($ItemPredicate$$Type)?, "location"?: ($LocationPredicate$$Type)?}) | ([slot?: ($SlotPredicate$$Type)?, player?: ($ContextAwarePredicate$$Type)?, item?: ($ItemPredicate$$Type)?, location?: ($LocationPredicate$$Type)?]);
+export type $EquipCurioTrigger$TriggerInstance$$Type = ({"player"?: ($ContextAwarePredicate$$Type)?, "item"?: ($ItemPredicate$$Type)?, "location"?: ($LocationPredicate$$Type)?, "slot"?: ($SlotPredicate$$Type)?}) | ([player?: ($ContextAwarePredicate$$Type)?, item?: ($ItemPredicate$$Type)?, location?: ($LocationPredicate$$Type)?, slot?: ($SlotPredicate$$Type)?]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */

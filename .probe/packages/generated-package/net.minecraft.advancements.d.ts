@@ -5,8 +5,8 @@ import {$ResourceLocation} from "net.minecraft.resources.ResourceLocation"
 import {$Advancement} from "net.minecraft.advancements.Advancement"
 import {$Set} from "java.util.Set"
 import {$AdvancementNodeKJS$$Interface} from "dev.latvian.mods.kubejs.core.AdvancementNodeKJS"
-import {$AdvancementHolder, $AdvancementHolder$$Type} from "net.minecraft.advancements.AdvancementHolder"
 import {$Component} from "net.minecraft.network.chat.Component"
+import {$AdvancementHolder, $AdvancementHolder$$Type} from "net.minecraft.advancements.AdvancementHolder"
 
 export class $AdvancementNode implements $AdvancementNodeKJS$$Interface {
 constructor(arg0: $AdvancementHolder$$Type, arg1: $AdvancementNode$$Type)
@@ -58,12 +58,12 @@ constructor()
 public "addRecipe"(arg0: $ResourceLocation$$Type): $AdvancementRewards$Builder
 public static "loot"(arg0: $ResourceKey$$Type<($LootTable)>): $AdvancementRewards$Builder
 public static "experience"(arg0: integer): $AdvancementRewards$Builder
-public "addLootTable"(arg0: $ResourceKey$$Type<($LootTable)>): $AdvancementRewards$Builder
 public "addExperience"(arg0: integer): $AdvancementRewards$Builder
+public "addLootTable"(arg0: $ResourceKey$$Type<($LootTable)>): $AdvancementRewards$Builder
 public "runs"(arg0: $ResourceLocation$$Type): $AdvancementRewards$Builder
+public static "recipe"(arg0: $ResourceLocation$$Type): $AdvancementRewards$Builder
 public static "function"(arg0: $ResourceLocation$$Type): $AdvancementRewards$Builder
 public "build"(): $AdvancementRewards
-public static "recipe"(arg0: $ResourceLocation$$Type): $AdvancementRewards$Builder
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -75,18 +75,18 @@ export type $AdvancementRewards$Builder$$Type = ($AdvancementRewards$Builder);
  */
 export type $AdvancementRewards$Builder$$Original = $AdvancementRewards$Builder;}
 declare module "net.minecraft.advancements.Advancement$Builder" {
-import {$DisplayInfo$$Type} from "net.minecraft.advancements.DisplayInfo"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$DisplayInfo$$Type} from "net.minecraft.advancements.DisplayInfo"
 import {$AdvancementRewards$Builder$$Type} from "net.minecraft.advancements.AdvancementRewards$Builder"
 import {$AdvancementRequirements$Strategy$$Type} from "net.minecraft.advancements.AdvancementRequirements$Strategy"
 import {$AdvancementRewards$$Type} from "net.minecraft.advancements.AdvancementRewards"
-import {$AdvancementHolder, $AdvancementHolder$$Type} from "net.minecraft.advancements.AdvancementHolder"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
+import {$AdvancementHolder, $AdvancementHolder$$Type} from "net.minecraft.advancements.AdvancementHolder"
 import {$Consumer$$Type} from "java.util.function.Consumer"
 import {$AdvancementType$$Type} from "net.minecraft.advancements.AdvancementType"
 import {$Criterion$$Type} from "net.minecraft.advancements.Criterion"
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$AdvancementRequirements$$Type} from "net.minecraft.advancements.AdvancementRequirements"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$ItemLike$$Type} from "net.minecraft.world.level.ItemLike"
 import {$ExistingFileHelper$$Type} from "net.neoforged.neoforge.common.data.ExistingFileHelper"
 import {$IAdvancementBuilderExtension$$Interface} from "net.neoforged.neoforge.common.extensions.IAdvancementBuilderExtension"
@@ -96,23 +96,23 @@ constructor()
 
 public "rewards"(arg0: $AdvancementRewards$$Type): $Advancement$Builder
 public "rewards"(arg0: $AdvancementRewards$Builder$$Type): $Advancement$Builder
-public "addCriterion"(arg0: StringJS, arg1: $Criterion$$Type<(never)>): $Advancement$Builder
 public "sendsTelemetryEvent"(): $Advancement$Builder
 public static "advancement"(): $Advancement$Builder
 public "requirements"(arg0: $AdvancementRequirements$Strategy$$Type): $Advancement$Builder
 public "requirements"(arg0: $AdvancementRequirements$$Type): $Advancement$Builder
+public "addCriterion"(arg0: StringJS, arg1: $Criterion$$Type<(never)>): $Advancement$Builder
 public static "recipeAdvancement"(): $Advancement$Builder
-public "parent"(arg0: $AdvancementHolder$$Type): $Advancement$Builder
 /**
  * 
  * @deprecated
  */
 public "parent"(arg0: $ResourceLocation$$Type): $Advancement$Builder
+public "parent"(arg0: $AdvancementHolder$$Type): $Advancement$Builder
 public "save"(arg0: $Consumer$$Type<($AdvancementHolder)>, arg1: StringJS): $AdvancementHolder
-public "build"(arg0: $ResourceLocation$$Type): $AdvancementHolder
 public "display"(arg0: $DisplayInfo$$Type): $Advancement$Builder
-public "display"(arg0: $ItemStack$$Type, arg1: $Component$$Type, arg2: $Component$$Type, arg3: $ResourceLocation$$Type, arg4: $AdvancementType$$Type, arg5: boolean, arg6: boolean, arg7: boolean): $Advancement$Builder
 public "display"(arg0: $ItemLike$$Type, arg1: $Component$$Type, arg2: $Component$$Type, arg3: $ResourceLocation$$Type, arg4: $AdvancementType$$Type, arg5: boolean, arg6: boolean, arg7: boolean): $Advancement$Builder
+public "display"(arg0: $ItemStack$$Type, arg1: $Component$$Type, arg2: $Component$$Type, arg3: $ResourceLocation$$Type, arg4: $AdvancementType$$Type, arg5: boolean, arg6: boolean, arg7: boolean): $Advancement$Builder
+public "build"(arg0: $ResourceLocation$$Type): $AdvancementHolder
 public "save"(arg0: $Consumer$$Type<($AdvancementHolder)>, arg1: $ResourceLocation$$Type, arg2: $ExistingFileHelper$$Type): $AdvancementHolder
 }
 /**
@@ -127,8 +127,8 @@ export type $Advancement$Builder$$Original = $Advancement$Builder;}
 declare module "net.minecraft.advancements.AdvancementRewards" {
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Optional, $Optional$$Type} from "java.util.Optional"
-import {$CacheableFunction, $CacheableFunction$$Type} from "net.minecraft.commands.CacheableFunction"
 import {$Codec} from "com.mojang.serialization.Codec"
+import {$CacheableFunction, $CacheableFunction$$Type} from "net.minecraft.commands.CacheableFunction"
 import {$List, $List$$Type} from "java.util.List"
 import {$ResourceKey, $ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
 import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
@@ -188,8 +188,8 @@ export type $CriterionProgress$$Type = ($CriterionProgress);
 export type $CriterionProgress$$Original = $CriterionProgress;}
 declare module "net.minecraft.advancements.AdvancementProgress" {
 import {$Iterable} from "java.lang.Iterable"
-import {$AdvancementRequirements, $AdvancementRequirements$$Type} from "net.minecraft.advancements.AdvancementRequirements"
 import {$Map} from "java.util.Map"
+import {$AdvancementRequirements, $AdvancementRequirements$$Type} from "net.minecraft.advancements.AdvancementRequirements"
 import {$FriendlyByteBuf$$Type} from "net.minecraft.network.FriendlyByteBuf"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$Comparable$$Interface} from "java.lang.Comparable"
@@ -204,31 +204,31 @@ readonly "criteria": $Map<(StringJS), ($CriterionProgress)>
 
 constructor()
 
-public "getRequirements"(): $AdvancementRequirements
+public "grantProgress"(arg0: StringJS): boolean
+public "revokeProgress"(arg0: StringJS): boolean
 public "serializeToNetwork"(arg0: $FriendlyByteBuf$$Type): void
 public "getCriterion"(arg0: StringJS): $CriterionProgress
 public "getRemainingCriteria"(): $Iterable<(StringJS)>
 public "hasProgress"(): boolean
 public "getCompletedCriteria"(): $Iterable<(StringJS)>
 public static "fromNetwork"(arg0: $FriendlyByteBuf$$Type): $AdvancementProgress
-public "grantProgress"(arg0: StringJS): boolean
-public "revokeProgress"(arg0: StringJS): boolean
-public "getPercent"(): float
+public "getRequirements"(): $AdvancementRequirements
 public "getProgressText"(): $Component
 public "getFirstProgressDate"(): $Instant
 public "setRequirements"(arg0: $AdvancementRequirements$$Type): void
+public "getPercent"(): float
 public "toString"(): StringJS
-public "compareTo"(arg0: $AdvancementProgress$$Type): integer
 public "compareTo"(arg0: any): integer
+public "compareTo"(arg0: $AdvancementProgress$$Type): integer
 public "update"(arg0: $AdvancementRequirements$$Type): void
 public "isDone"(): boolean
-get "requirements"(): $AdvancementRequirements
 get "remainingCriteria"(): $Iterable<(StringJS)>
 get "completedCriteria"(): $Iterable<(StringJS)>
-get "percent"(): float
+get "requirements"(): $AdvancementRequirements
 get "progressText"(): $Component
 get "firstProgressDate"(): $Instant
 set "requirements"(value: $AdvancementRequirements$$Type)
+get "percent"(): float
 get "done"(): boolean
 }
 /**
@@ -244,8 +244,8 @@ declare module "net.minecraft.advancements.AdvancementHolder" {
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
-import {$List} from "java.util.List"
 import {$Advancement, $Advancement$$Type} from "net.minecraft.advancements.Advancement"
+import {$List} from "java.util.List"
 import {$Record} from "java.lang.Record"
 
 export class $AdvancementHolder extends $Record {
@@ -264,7 +264,7 @@ public "id"(): $ResourceLocation
  * Class-specific type exported by ProbeJS, use global Type_
  * types for convenience unless there's a naming conflict.
  */
-export type $AdvancementHolder$$Type = ({"id"?: $ResourceLocation$$Type, "value"?: $Advancement$$Type}) | ([id?: $ResourceLocation$$Type, value?: $Advancement$$Type]);
+export type $AdvancementHolder$$Type = ({"value"?: $Advancement$$Type, "id"?: $ResourceLocation$$Type}) | ([value?: $Advancement$$Type, id?: $ResourceLocation$$Type]);
 /**
  * Original type to represent the class type itself. Use in JSDoc only.
  */
@@ -325,8 +325,8 @@ export type $CriterionTrigger$$Type<T> = (Special.TriggerType);
 export type $CriterionTrigger$$Original<T> = $CriterionTrigger<(T)>;}
 declare module "net.minecraft.advancements.AdvancementTree" {
 import {$Iterable} from "java.lang.Iterable"
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Collection, $Collection$$Type} from "java.util.Collection"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$AdvancementNode} from "net.minecraft.advancements.AdvancementNode"
 import {$AdvancementTree$Listener$$Type} from "net.minecraft.advancements.AdvancementTree$Listener"
 import {$Set$$Type} from "java.util.Set"
@@ -382,14 +382,14 @@ export type $Criterion$$Type<T> = ({"trigger"?: $CriterionTrigger$$Type<(T)>, "t
 export type $Criterion$$Original<T> = $Criterion<(T)>;}
 declare module "net.minecraft.advancements.AdvancementType" {
 import {$Enum, $Enum$$Type} from "java.lang.Enum"
-import {$AdvancementHolder$$Type} from "net.minecraft.advancements.AdvancementHolder"
-import {$Component} from "net.minecraft.network.chat.Component"
 import {$StringRepresentable, $StringRepresentable$$Type, $StringRepresentable$$Interface} from "net.minecraft.util.StringRepresentable"
+import {$Component} from "net.minecraft.network.chat.Component"
+import {$AdvancementHolder$$Type} from "net.minecraft.advancements.AdvancementHolder"
 import {$Keyable} from "com.mojang.serialization.Keyable"
 import {$StringRepresentable$EnumCodec} from "net.minecraft.util.StringRepresentable$EnumCodec"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$Supplier$$Type} from "java.util.function.Supplier"
+import {$Function, $Function$$Type} from "java.util.function.Function"
 import {$MutableComponent} from "net.minecraft.network.chat.MutableComponent"
 import {$ServerPlayer$$Type} from "net.minecraft.server.level.ServerPlayer"
 import {$ChatFormatting} from "net.minecraft.ChatFormatting"
@@ -400,18 +400,18 @@ static readonly "TASK": $AdvancementType
 static readonly "GOAL": $AdvancementType
 static readonly "CODEC": $Codec<($AdvancementType)>
 
-public "getChatColor"(): $ChatFormatting
 public "createAnnouncement"(arg0: $AdvancementHolder$$Type, arg1: $ServerPlayer$$Type): $MutableComponent
+public "getChatColor"(): $ChatFormatting
+public "getDisplayName"(): $Component
 public static "values"(): ($AdvancementType)[]
 public static "valueOf"(arg0: StringJS): $AdvancementType
-public "getDisplayName"(): $Component
 public "getSerializedName"(): StringJS
 public static "keys"(arg0: ($StringRepresentable$$Type)[]): $Keyable
-public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
+public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
 public "getRemappedEnumConstantName"(): StringJS
 public static "fromEnumWithMapping"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>, arg1: $Function$$Type<(StringJS), (StringJS)>): $StringRepresentable$EnumCodec<(E)>
 public static "createNameLookup"<T extends $StringRepresentable>(arg0: (T)[], arg1: $Function$$Type<(StringJS), (StringJS)>): $Function<(StringJS), (T)>
-public static "fromEnum"<E extends $Enum<(object)>>(arg0: $Supplier$$Type<((E)[])>): $StringRepresentable$EnumCodec<(E)>
+public static "fromValues"<T extends $StringRepresentable>(arg0: $Supplier$$Type<((T)[])>): $Codec<(T)>
 get "chatColor"(): $ChatFormatting
 get "displayName"(): $Component
 get "serializedName"(): StringJS
@@ -430,8 +430,8 @@ declare module "net.minecraft.advancements.AdvancementRequirements" {
 import {$Collection$$Type} from "java.util.Collection"
 import {$FriendlyByteBuf$$Type} from "net.minecraft.network.FriendlyByteBuf"
 import {$Codec} from "com.mojang.serialization.Codec"
-import {$Predicate$$Type} from "java.util.function.Predicate"
 import {$DataResult} from "com.mojang.serialization.DataResult"
+import {$Predicate$$Type} from "java.util.function.Predicate"
 import {$List, $List$$Type} from "java.util.List"
 import {$Set, $Set$$Type} from "java.util.Set"
 import {$Record} from "java.lang.Record"
@@ -445,7 +445,6 @@ constructor(arg0: $List$$Type<($List$$Type<(StringJS)>)>)
 
 public "requirements"(): $List<($List<(StringJS)>)>
 public static "anyOf"(arg0: $Collection$$Type<(StringJS)>): $AdvancementRequirements
-public static "allOf"(arg0: $Collection$$Type<(StringJS)>): $AdvancementRequirements
 public "size"(): integer
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
@@ -456,6 +455,7 @@ public "count"(arg0: $Predicate$$Type<(StringJS)>): integer
 public "validate"(arg0: $Set$$Type<(StringJS)>): $DataResult<($AdvancementRequirements)>
 public "write"(arg0: $FriendlyByteBuf$$Type): void
 public "names"(): $Set<(StringJS)>
+public static "allOf"(arg0: $Collection$$Type<(StringJS)>): $AdvancementRequirements
 get "empty"(): boolean
 }
 /**
@@ -468,8 +468,8 @@ export type $AdvancementRequirements$$Type = ({"requirements"?: $List$$Type<($Li
  */
 export type $AdvancementRequirements$$Original = $AdvancementRequirements;}
 declare module "net.minecraft.advancements.AdvancementRequirements$Strategy" {
-import {$AdvancementRequirements, $AdvancementRequirements$$Type} from "net.minecraft.advancements.AdvancementRequirements"
 import {$Collection, $Collection$$Type} from "java.util.Collection"
+import {$AdvancementRequirements, $AdvancementRequirements$$Type} from "net.minecraft.advancements.AdvancementRequirements"
 
 export interface $AdvancementRequirements$Strategy$$Interface {
 
@@ -496,15 +496,15 @@ import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
 import {$HolderGetter$Provider$$Type} from "net.minecraft.core.HolderGetter$Provider"
 import {$Map, $Map$$Type} from "java.util.Map"
 import {$DisplayInfo, $DisplayInfo$$Type} from "net.minecraft.advancements.DisplayInfo"
-import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$WithConditions} from "net.neoforged.neoforge.common.conditions.WithConditions"
+import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$ProblemReporter$$Type} from "net.minecraft.util.ProblemReporter"
 import {$AdvancementRewards, $AdvancementRewards$$Type} from "net.minecraft.advancements.AdvancementRewards"
-import {$AdvancementHolder$$Type} from "net.minecraft.advancements.AdvancementHolder"
 import {$Component, $Component$$Type} from "net.minecraft.network.chat.Component"
+import {$AdvancementHolder$$Type} from "net.minecraft.advancements.AdvancementHolder"
 import {$Criterion, $Criterion$$Type} from "net.minecraft.advancements.Criterion"
-import {$AdvancementRequirements, $AdvancementRequirements$$Type} from "net.minecraft.advancements.AdvancementRequirements"
 import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
+import {$AdvancementRequirements, $AdvancementRequirements$$Type} from "net.minecraft.advancements.AdvancementRequirements"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
 import {$Record} from "java.lang.Record"
@@ -564,10 +564,10 @@ export type $AdvancementTree$Listener$$Type = ($AdvancementTree$Listener);
  */
 export type $AdvancementTree$Listener$$Original = $AdvancementTree$Listener;}
 declare module "net.minecraft.advancements.DisplayInfo" {
-import {$AdvancementType, $AdvancementType$$Type} from "net.minecraft.advancements.AdvancementType"
 import {$StreamCodec} from "net.minecraft.network.codec.StreamCodec"
-import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
+import {$AdvancementType, $AdvancementType$$Type} from "net.minecraft.advancements.AdvancementType"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$ResourceLocation, $ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Optional, $Optional$$Type} from "java.util.Optional"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$RegistryFriendlyByteBuf} from "net.minecraft.network.RegistryFriendlyByteBuf"
@@ -579,9 +579,9 @@ static readonly "STREAM_CODEC": $StreamCodec<($RegistryFriendlyByteBuf), ($Displ
 
 constructor(arg0: $ItemStack$$Type, arg1: $Component$$Type, arg2: $Component$$Type, arg3: ($ResourceLocation$$Type)?, arg4: $AdvancementType$$Type, arg5: boolean, arg6: boolean, arg7: boolean)
 
-public "getBackground"(): $Optional<($ResourceLocation)>
 public "shouldShowToast"(): boolean
 public "shouldAnnounceChat"(): boolean
+public "getBackground"(): $Optional<($ResourceLocation)>
 public "getDescription"(): $Component
 public "getY"(): float
 public "isHidden"(): boolean

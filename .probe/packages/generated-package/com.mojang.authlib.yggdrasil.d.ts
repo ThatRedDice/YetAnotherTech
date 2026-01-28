@@ -70,8 +70,8 @@ export type $AbuseReportRequest$$Original = $AbuseReportRequest;}
 declare module "com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService" {
 import {$HttpAuthenticationService} from "com.mojang.authlib.HttpAuthenticationService"
 import {$Proxy$$Type} from "java.net.Proxy"
-import {$ServicesKeySet} from "com.mojang.authlib.yggdrasil.ServicesKeySet"
 import {$UserApiService} from "com.mojang.authlib.minecraft.UserApiService"
+import {$ServicesKeySet} from "com.mojang.authlib.yggdrasil.ServicesKeySet"
 import {$Environment$$Type} from "com.mojang.authlib.Environment"
 import {$MinecraftSessionService} from "com.mojang.authlib.minecraft.MinecraftSessionService"
 import {$GameProfileRepository} from "com.mojang.authlib.GameProfileRepository"

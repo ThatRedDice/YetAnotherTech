@@ -5,7 +5,6 @@ import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$OreFluidInstance$$Type} from "com.buuz135.industrial.fluid.OreFluidInstance"
 import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
-import {$Holder} from "net.minecraft.core.Holder"
 import {$OreFluid} from "com.buuz135.industrial.fluid.OreFluid"
 
 export class $OreFluid$Flowing extends $OreFluid {
@@ -17,7 +16,6 @@ constructor(arg0: $OreFluidInstance$$Type)
 
 public "isSource"(arg0: $FluidState$$Type): boolean
 public "getAmount"(arg0: $FluidState$$Type): integer
-public "asHolder"(): $Holder
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 public static "wrap"(o: any): $ReplacementMatch
 }
@@ -32,12 +30,12 @@ export type $OreFluid$Flowing$$Type = ($OreFluid$Flowing);
 export type $OreFluid$Flowing$$Original = $OreFluid$Flowing;}
 declare module "com.buuz135.industrial.fluid.OreFluidInstance" {
 import {$FluidType$Properties$$Type} from "net.neoforged.neoforge.fluids.FluidType$Properties"
-import {$Fluid} from "net.minecraft.world.level.material.Fluid"
 import {$DeferredRegistryHelper$$Type} from "com.hrznstudio.titanium.module.DeferredRegistryHelper"
-import {$Block} from "net.minecraft.world.level.block.Block"
+import {$Fluid} from "net.minecraft.world.level.material.Fluid"
 import {$TitaniumTab$$Type} from "com.hrznstudio.titanium.tab.TitaniumTab"
-import {$IClientFluidTypeExtensions$$Type} from "net.neoforged.neoforge.client.extensions.common.IClientFluidTypeExtensions"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$IClientFluidTypeExtensions$$Type} from "net.neoforged.neoforge.client.extensions.common.IClientFluidTypeExtensions"
 import {$FluidType} from "net.neoforged.neoforge.fluids.FluidType"
 import {$DeferredHolder} from "net.neoforged.neoforge.registries.DeferredHolder"
 
@@ -71,16 +69,15 @@ import {$ReplacementMatch} from "dev.latvian.mods.kubejs.recipe.match.Replacemen
 import {$FlowingFluid} from "net.minecraft.world.level.material.FlowingFluid"
 import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$Holder} from "net.minecraft.core.Holder"
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$Fluid, $Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$OreFluidInstance$$Type} from "com.buuz135.industrial.fluid.OreFluidInstance"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$FluidType} from "net.neoforged.neoforge.fluids.FluidType"
 import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
+import {$FluidType} from "net.neoforged.neoforge.fluids.FluidType"
 
 export class $OreFluid extends $FlowingFluid {
 static readonly "FLUID_STATE_REGISTRY": $IdMapper<($FluidState)>
@@ -98,7 +95,6 @@ public "getSource"(): $Fluid
 public "getBucket"(): $Item
 public "getFluidType"(): $FluidType
 public "getAmount"(arg0: $FluidState$$Type): integer
-public "asHolder"(): $Holder
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 public static "wrap"(o: any): $ReplacementMatch
 get "flowing"(): $Fluid
@@ -122,7 +118,6 @@ import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties
 import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$OreFluidInstance$$Type} from "com.buuz135.industrial.fluid.OreFluidInstance"
 import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
-import {$Holder} from "net.minecraft.core.Holder"
 import {$OreFluid} from "com.buuz135.industrial.fluid.OreFluid"
 
 export class $OreFluid$Source extends $OreFluid {
@@ -134,7 +129,6 @@ constructor(arg0: $OreFluidInstance$$Type)
 
 public "isSource"(arg0: $FluidState$$Type): boolean
 public "getAmount"(arg0: $FluidState$$Type): integer
-public "asHolder"(): $Holder
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 public static "wrap"(o: any): $ReplacementMatch
 }

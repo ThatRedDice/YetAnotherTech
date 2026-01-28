@@ -89,10 +89,10 @@ get "serializer"(): $ResourceConditionSerializer<(never)>
 export class $ResourceCondition implements $ResourceCondition$$Interface {
  "getSerializer"(): $ResourceConditionSerializer<(never)>
 static "createForgeCondition"(condition: $ResourceCondition$$Type): $ICondition
- "or"(alternative: $ResourceCondition$$Type): $ResourceCondition
  "negate"(): $ResourceCondition
  "and"(condition: $ResourceCondition$$Type): $ResourceCondition
  "test"(context: $ResourceConditionContext$$Type): boolean
+ "or"(alternative: $ResourceCondition$$Type): $ResourceCondition
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_

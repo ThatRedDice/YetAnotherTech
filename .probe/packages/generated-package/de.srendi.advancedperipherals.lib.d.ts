@@ -26,8 +26,8 @@ export type $IPeripheralTileEntity$$Original = $IPeripheralTileEntity;}
 declare module "de.srendi.advancedperipherals.lib.peripherals.BasePeripheral" {
 import {$Iterable} from "java.lang.Iterable"
 import {$Map} from "java.util.Map"
-import {$IDynamicPeripheral$$Interface} from "dan200.computercraft.api.peripheral.IDynamicPeripheral"
 import {$ILuaContext$$Type} from "dan200.computercraft.api.lua.ILuaContext"
+import {$IDynamicPeripheral$$Interface} from "dan200.computercraft.api.peripheral.IDynamicPeripheral"
 import {$MethodResult} from "dan200.computercraft.api.lua.MethodResult"
 import {$IArguments$$Type} from "dan200.computercraft.api.lua.IArguments"
 import {$IComputerAccess, $IComputerAccess$$Type} from "dan200.computercraft.api.peripheral.IComputerAccess"
@@ -37,8 +37,8 @@ import {$IPeripheral$$Type} from "dan200.computercraft.api.peripheral.IPeriphera
 import {$IPeripheralOwner} from "de.srendi.advancedperipherals.common.addons.computercraft.owner.IPeripheralOwner"
 
 export class $BasePeripheral<O extends $IPeripheralOwner> implements $IBasePeripheral$$Interface<(O)>, $IDynamicPeripheral$$Interface {
-public "getConnectedComputers"(): $Iterable<($IComputerAccess)>
 public "callMethod"(arg0: $IComputerAccess$$Type, arg1: $ILuaContext$$Type, arg2: integer, arg3: $IArguments$$Type): $MethodResult
+public "getConnectedComputers"(): $Iterable<($IComputerAccess)>
 public "getPeripheralConfiguration"(): $Map<(StringJS), (any)>
 public "getPeripheralOwner"(): O
 public "detach"(arg0: $IComputerAccess$$Type): void
@@ -97,8 +97,8 @@ import {$IPocketAccess$$Type} from "dan200.computercraft.api.pocket.IPocketAcces
 import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Registry} from "net.minecraft.core.Registry"
 import {$AbstractPocketUpgrade} from "dan200.computercraft.api.pocket.AbstractPocketUpgrade"
-import {$IPocketUpgrade} from "dan200.computercraft.api.pocket.IPocketUpgrade"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
+import {$IPocketUpgrade} from "dan200.computercraft.api.pocket.IPocketUpgrade"
 import {$IBasePeripheral} from "de.srendi.advancedperipherals.lib.peripherals.IBasePeripheral"
 import {$IPeripheral} from "dan200.computercraft.api.peripheral.IPeripheral"
 import {$UpgradeType} from "dan200.computercraft.api.upgrades.UpgradeType"
@@ -122,31 +122,31 @@ import {$Map} from "java.util.Map"
 import {$TurtlePeripheralOwner} from "de.srendi.advancedperipherals.common.addons.computercraft.owner.TurtlePeripheralOwner"
 import {$MethodResult, $MethodResult$$Type} from "dan200.computercraft.api.lua.MethodResult"
 import {$List} from "java.util.List"
-import {$Direction} from "net.minecraft.core.Direction"
 import {$IPeripheralCheck$$Type} from "de.srendi.advancedperipherals.lib.peripherals.IPeripheralCheck"
+import {$Direction} from "net.minecraft.core.Direction"
 import {$SingleOperationContext, $SingleOperationContext$$Type} from "de.srendi.advancedperipherals.common.addons.computercraft.operations.SingleOperationContext"
 import {$IPeripheralFunction$$Type} from "de.srendi.advancedperipherals.lib.peripherals.IPeripheralFunction"
-import {$IPeripheralOperation, $IPeripheralOperation$$Type} from "de.srendi.advancedperipherals.lib.peripherals.IPeripheralOperation"
 import {$BasePeripheral} from "de.srendi.advancedperipherals.lib.peripherals.BasePeripheral"
+import {$IPeripheralOperation, $IPeripheralOperation$$Type} from "de.srendi.advancedperipherals.lib.peripherals.IPeripheralOperation"
 import {$SingleOperation$$Type} from "de.srendi.advancedperipherals.common.addons.computercraft.operations.SingleOperation"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 
 export class $AutomataCorePeripheral extends $BasePeripheral<($TurtlePeripheralOwner)> {
 static readonly "ATTR_STORING_TOOL_DURABILITY": StringJS
 
-public "toDistance"(arg0: $BlockPos$$Type): $SingleOperationContext
+public "getInteractionRadius"(): integer
 public "addRotationCycle"(arg0: integer): void
 public "addRotationCycle"(): void
 public "possibleOperations"(): $List<($IPeripheralOperation<(never)>)>
 public "forUnknownDistance"(): $SingleOperationContext
-public "getInteractionRadius"(): integer
+public "toDistance"(arg0: $BlockPos$$Type): $SingleOperationContext
 public "getPeripheralConfiguration"(): $Map<(StringJS), (any)>
-public "withOperation"(arg0: $SingleOperation$$Type, arg1: $IPeripheralFunction$$Type<($SingleOperationContext), ($MethodResult$$Type)>): $MethodResult
 public "withOperation"(arg0: $SingleOperation$$Type, arg1: $IPeripheralFunction$$Type<($SingleOperationContext), ($MethodResult$$Type)>, arg2: $IPeripheralCheck$$Type<($SingleOperationContext)>): $MethodResult
+public "withOperation"(arg0: $SingleOperation$$Type, arg1: $IPeripheralFunction$$Type<($SingleOperationContext), ($MethodResult$$Type)>): $MethodResult
 public "withOperation"<T>(arg0: $IPeripheralOperation$$Type<(T)>, arg1: T, arg2: $IPeripheralFunction$$Type<(T), ($MethodResult$$Type)>, arg3: $IPeripheralCheck$$Type<(T)>): $MethodResult
 public "validateSide"(arg0: StringJS): $Direction
-public "hasAttribute"(arg0: StringJS): boolean
 public "setAttribute"(arg0: StringJS): void
+public "hasAttribute"(arg0: StringJS): boolean
 get "interactionRadius"(): integer
 get "peripheralConfiguration"(): $Map<(StringJS), (any)>
 set "attribute"(value: StringJS)
@@ -163,12 +163,12 @@ export type $AutomataCorePeripheral$$Original = $AutomataCorePeripheral;}
 declare module "de.srendi.advancedperipherals.lib.turtle.ClockwiseAnimatedTurtleUpgrade" {
 import {$DataComponentPatch, $DataComponentPatch$$Type} from "net.minecraft.core.component.DataComponentPatch"
 import {$ITurtleUpgrade} from "dan200.computercraft.api.turtle.ITurtleUpgrade"
-import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
+import {$ResourceLocation$$Type} from "net.minecraft.resources.ResourceLocation"
 import {$Registry} from "net.minecraft.core.Registry"
 import {$PeripheralTurtleUpgrade} from "de.srendi.advancedperipherals.lib.turtle.PeripheralTurtleUpgrade"
-import {$ITurtleAccess$$Type} from "dan200.computercraft.api.turtle.ITurtleAccess"
 import {$TurtleSide$$Type} from "dan200.computercraft.api.turtle.TurtleSide"
+import {$ITurtleAccess$$Type} from "dan200.computercraft.api.turtle.ITurtleAccess"
 import {$ResourceKey} from "net.minecraft.resources.ResourceKey"
 import {$IBasePeripheral} from "de.srendi.advancedperipherals.lib.peripherals.IBasePeripheral"
 import {$UpgradeType} from "dan200.computercraft.api.upgrades.UpgradeType"
@@ -289,8 +289,8 @@ export type $IPeripheralOperation$$Original<T> = $IPeripheralOperation<(T)>;}
 declare module "de.srendi.advancedperipherals.lib.turtle.PeripheralTurtleUpgrade" {
 import {$ITurtleUpgrade} from "dan200.computercraft.api.turtle.ITurtleUpgrade"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$ITurtleAccess$$Type} from "dan200.computercraft.api.turtle.ITurtleAccess"
 import {$ModelResourceLocation} from "net.minecraft.client.resources.model.ModelResourceLocation"
+import {$ITurtleAccess$$Type} from "dan200.computercraft.api.turtle.ITurtleAccess"
 import {$IBasePeripheral} from "de.srendi.advancedperipherals.lib.peripherals.IBasePeripheral"
 import {$UpgradeType} from "dan200.computercraft.api.upgrades.UpgradeType"
 import {$AbstractTurtleUpgrade} from "dan200.computercraft.api.turtle.AbstractTurtleUpgrade"

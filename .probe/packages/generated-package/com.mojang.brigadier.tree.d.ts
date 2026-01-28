@@ -16,17 +16,17 @@ import {$ArgumentBuilder} from "com.mojang.brigadier.builder.ArgumentBuilder"
 export class $CommandNode<S> implements $Comparable$$Interface<($CommandNode<(S)>)> {
 public "getCommand"(): $Command<(S)>
 public "listSuggestions"(arg0: $CommandContext$$Type<(S)>, arg1: $SuggestionsBuilder$$Type): $CompletableFuture<($Suggestions)>
+public "getRedirectModifier"(): $RedirectModifier<(S)>
 public "findAmbiguities"(arg0: $AmbiguityConsumer$$Type<(S)>): void
 public "getRelevantNodes"(arg0: $StringReader$$Type): $Collection<($CommandNode<(S)>)>
 public "getRedirect"(): $CommandNode<(S)>
 public "getUsageText"(): StringJS
-public "getRedirectModifier"(): $RedirectModifier<(S)>
 public "getRequirement"(): $Predicate<(S)>
 public "isFork"(): boolean
 public "getExamples"(): $Collection<(StringJS)>
 public "addChild"(arg0: $CommandNode$$Type<(S)>): void
-public "getChildren"(): $Collection<($CommandNode<(S)>)>
 public "getChild"(arg0: StringJS): $CommandNode<(S)>
+public "getChildren"(): $Collection<($CommandNode<(S)>)>
 public "getName"(): StringJS
 public "equals"(arg0: any): boolean
 public "hashCode"(): integer
@@ -36,9 +36,9 @@ public "canUse"(arg0: S): boolean
 public "parse"(arg0: $StringReader$$Type, arg1: $CommandContextBuilder$$Type<(S)>): void
 public "createBuilder"(): $ArgumentBuilder<(S), (never)>
 get "command"(): $Command<(S)>
+get "redirectModifier"(): $RedirectModifier<(S)>
 get "redirect"(): $CommandNode<(S)>
 get "usageText"(): StringJS
-get "redirectModifier"(): $RedirectModifier<(S)>
 get "requirement"(): $Predicate<(S)>
 get "fork"(): boolean
 get "examples"(): $Collection<(StringJS)>
@@ -62,15 +62,15 @@ import {$Suggestions} from "com.mojang.brigadier.suggestion.Suggestions"
 import {$CompletableFuture} from "java.util.concurrent.CompletableFuture"
 import {$StringReader$$Type} from "com.mojang.brigadier.StringReader"
 import {$SuggestionsBuilder$$Type} from "com.mojang.brigadier.suggestion.SuggestionsBuilder"
-import {$CommandNode} from "com.mojang.brigadier.tree.CommandNode"
 import {$ArgumentBuilder} from "com.mojang.brigadier.builder.ArgumentBuilder"
+import {$CommandNode} from "com.mojang.brigadier.tree.CommandNode"
 
 export class $RootCommandNode<S> extends $CommandNode<(S)> {
 constructor()
 
 public "listSuggestions"(arg0: $CommandContext$$Type<(S)>, arg1: $SuggestionsBuilder$$Type): $CompletableFuture<($Suggestions)>
-public "getUsageText"(): StringJS
 public "isValidInput"(arg0: StringJS): boolean
+public "getUsageText"(): StringJS
 public "getExamples"(): $Collection<(StringJS)>
 public "getName"(): StringJS
 public "equals"(arg0: any): boolean
@@ -108,16 +108,16 @@ export class $LiteralCommandNode<S> extends $CommandNode<(S)> {
 constructor(arg0: StringJS, arg1: $Command$$Type<(S)>, arg2: $Predicate$$Type<(S)>, arg3: $CommandNode$$Type<(S)>, arg4: $RedirectModifier$$Type<(S)>, arg5: boolean)
 
 public "listSuggestions"(arg0: $CommandContext$$Type<(S)>, arg1: $SuggestionsBuilder$$Type): $CompletableFuture<($Suggestions)>
-public "getUsageText"(): StringJS
 public "isValidInput"(arg0: StringJS): boolean
+public "getUsageText"(): StringJS
 public "getExamples"(): $Collection<(StringJS)>
 public "getName"(): StringJS
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
 public "parse"(arg0: $StringReader$$Type, arg1: $CommandContextBuilder$$Type<(S)>): void
-public "createBuilder"(): $ArgumentBuilder
 public "getLiteral"(): StringJS
+public "createBuilder"(): $ArgumentBuilder
 get "usageText"(): StringJS
 get "examples"(): $Collection<(StringJS)>
 get "name"(): StringJS

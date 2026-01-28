@@ -59,10 +59,10 @@ static readonly "EMPTY": $Energy
 constructor(arg0: $Energy$$Type)
 constructor(arg0: long, arg1: long, arg2: long)
 
+public "canExtract"(): boolean
 public static "getEnergy"(arg0: $ItemStack$$Type): $Optional<($Energy)>
 public "extractEnergy"(arg0: long, arg1: boolean): long
 public "receiveEnergy"(arg0: long, arg1: boolean): long
-public "canExtract"(): boolean
 public "canReceive"(): boolean
 public static "receive"(arg0: $ItemStack$$Type, arg1: long, arg2: boolean): long
 public "getTransfer"(): long
@@ -77,11 +77,10 @@ public static "chargeable"(arg0: $ItemStack$$Type): boolean
 public "setTransfer"(arg0: long): $Energy
 public "setMaxExtract"(arg0: long): $Energy
 public "produce"(arg0: long): long
-public "getCapacity"(): long
-public "consume"(arg0: long): long
 public "setCapacity"(arg0: long): $Energy
-public static "ifPresent"(arg0: $ItemStack$$Type, arg1: $Consumer$$Type<($Energy$Item)>): void
 public "getPercent"(): long
+public static "ifPresent"(arg0: $ItemStack$$Type, arg1: $Consumer$$Type<($Energy$Item)>): void
+public "consume"(arg0: long): long
 public "isFull"(): boolean
 public static "get"(arg0: $ItemStack$$Type): $Optional<($Energy$Item)>
 public "clone"(arg0: $Energy$$Type): boolean
@@ -89,20 +88,21 @@ public static "extract"(arg0: $ItemStack$$Type, arg1: long, arg2: boolean): long
 public "isEmpty"(): boolean
 public static "from"(arg0: $Energy$$Type): $Energy
 public "write"(arg0: StringJS, arg1: boolean, arg2: boolean): $CompoundTag
+public "write"(arg0: $CompoundTag$$Type, arg1: boolean, arg2: boolean): $CompoundTag
 public "write"(arg0: boolean, arg1: boolean): $CompoundTag
 public "write"(arg0: $CompoundTag$$Type, arg1: StringJS, arg2: boolean, arg3: boolean): $CompoundTag
-public "write"(arg0: $CompoundTag$$Type, arg1: boolean, arg2: boolean): $CompoundTag
-public "read"(arg0: $CompoundTag$$Type, arg1: StringJS, arg2: boolean, arg3: boolean): $Energy
 public "read"(arg0: $CompoundTag$$Type, arg1: boolean, arg2: boolean): $Energy
+public "read"(arg0: $CompoundTag$$Type, arg1: StringJS, arg2: boolean, arg3: boolean): $Energy
 public static "isPresent"(arg0: $ItemStack$$Type): boolean
 public static "create"(arg0: long, arg1: long, arg2: long): $Energy
-public static "create"(arg0: long, arg1: long): $Energy
 public static "create"(arg0: long): $Energy
+public static "create"(arg0: long, arg1: long): $Energy
 public "setAll"(arg0: long): $Energy
+public "getCapacity"(): long
 public "getEmpty"(): long
+public "subSized"(): float
 public "getEnergyStored"(): long
 public "getMaxEnergyStored"(): long
-public "subSized"(): float
 public "addCapacity"(arg0: long): void
 public "removeCapacity"(arg0: long): void
 public "setMaxReceive"(arg0: long): $Energy
@@ -114,12 +114,12 @@ get "maxReceive"(): long
 set "stored"(value: long)
 set "transfer"(value: long)
 set "maxExtract"(value: long)
-get "capacity"(): long
 set "capacity"(value: long)
 get "percent"(): long
 get "full"(): boolean
 get "empty"(): boolean
 set "all"(value: long)
+get "capacity"(): long
 get "empty"(): long
 get "energyStored"(): long
 get "maxEnergyStored"(): long
@@ -138,8 +138,8 @@ export type $Energy$$Original = $Energy;}
 declare module "owmii.powah.lib.logistics.energy.SideConfig" {
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
-import {$AbstractEnergyStorage$$Type} from "owmii.powah.lib.block.AbstractEnergyStorage"
 import {$Transfer, $Transfer$$Type} from "owmii.powah.lib.logistics.Transfer"
+import {$AbstractEnergyStorage$$Type} from "owmii.powah.lib.block.AbstractEnergyStorage"
 
 export class $SideConfig {
 constructor(arg0: $AbstractEnergyStorage$$Type)
@@ -172,10 +172,9 @@ import {$FluidStack, $FluidStack$$Type} from "net.neoforged.neoforge.fluids.Flui
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 
 export class $FluidTank implements $IFluidHandler$$Interface {
-constructor(arg0: integer)
 constructor(arg0: integer, arg1: $Predicate$$Type<($FluidStack)>)
+constructor(arg0: integer)
 
-public "setFluid"(arg0: $FluidStack$$Type): void
 public "getFluid"(): $FluidStack
 public "getTanks"(): integer
 public "getFluidInTank"(arg0: integer): $FluidStack
@@ -186,22 +185,23 @@ public "getFluidAmount"(): integer
 public "setValidator"(arg0: $Predicate$$Type<($FluidStack)>): $FluidTank
 public "readFromNBT"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): $FluidTank
 public "writeToNBT"(arg0: $CompoundTag$$Type, arg1: $HolderLookup$Provider$$Type): $CompoundTag
-public "getCapacity"(): integer
-public "drain"(arg0: $FluidStack$$Type, arg1: $IFluidHandler$FluidAction$$Type): $FluidStack
-public "drain"(arg0: integer, arg1: $IFluidHandler$FluidAction$$Type): $FluidStack
+public "setFluid"(arg0: $FluidStack$$Type): void
 public "setCapacity"(arg0: integer): $FluidTank
 public "getSpace"(): integer
 public "isEmpty"(): boolean
 public "fill"(arg0: $FluidStack$$Type, arg1: $IFluidHandler$FluidAction$$Type): integer
-set "fluid"(value: $FluidStack$$Type)
+public "getCapacity"(): integer
+public "drain"(arg0: $FluidStack$$Type, arg1: $IFluidHandler$FluidAction$$Type): $FluidStack
+public "drain"(arg0: integer, arg1: $IFluidHandler$FluidAction$$Type): $FluidStack
 get "fluid"(): $FluidStack
 get "tanks"(): integer
 get "fluidAmount"(): integer
 set "validator"(value: $Predicate$$Type<($FluidStack)>)
-get "capacity"(): integer
+set "fluid"(value: $FluidStack$$Type)
 set "capacity"(value: integer)
 get "space"(): integer
 get "empty"(): boolean
+get "capacity"(): integer
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
@@ -221,10 +221,10 @@ static readonly "IGNORE": $Redstone
 static readonly "OFF": $Redstone
 static readonly "ON": $Redstone
 
+public "getDisplayName"(): $Component
 public static "values"(): ($Redstone)[]
 public static "valueOf"(arg0: StringJS): $Redstone
 public "next"(): $Redstone
-public "getDisplayName"(): $Component
 get "displayName"(): $Component
 }
 /**
@@ -279,10 +279,10 @@ static readonly "NONE": $Transfer
 static readonly "RECEIVE": $Transfer
 static readonly "EXTRACT": $Transfer
 
+public "getDisplayName"(): $Component
 public static "values"(): ($Transfer)[]
 public static "valueOf"(arg0: StringJS): $Transfer
 public "next"(arg0: $Transfer$$Type): $Transfer
-public "getDisplayName"(): $Component
 public "getDisplayName2"(): $Component
 get "displayName"(): $Component
 get "displayName2"(): $Component
@@ -301,10 +301,10 @@ import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$List} from "java.util.List"
 import {$ItemStackHandler, $ItemStackHandler$$Type} from "owmii.powah.lib.logistics.inventory.ItemStackHandler"
-import {$Stacks, $Stacks$$Type} from "owmii.powah.lib.item.Stacks"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$Stacks, $Stacks$$Type} from "owmii.powah.lib.item.Stacks"
 import {$IInventoryHolder$$Type} from "owmii.powah.lib.block.IInventoryHolder"
+import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$AbstractTileEntity, $AbstractTileEntity$$Type} from "owmii.powah.lib.block.AbstractTileEntity"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 
@@ -397,8 +397,8 @@ export type $IRedstoneInteract$$Type = ($IRedstoneInteract);
 export type $IRedstoneInteract$$Original = $IRedstoneInteract;}
 declare module "owmii.powah.lib.logistics.fluid.Tank" {
 import {$Predicate$$Type} from "java.util.function.Predicate"
-import {$FluidStack$$Type} from "net.neoforged.neoforge.fluids.FluidStack"
 import {$Runnable$$Type} from "java.lang.Runnable"
+import {$FluidStack$$Type} from "net.neoforged.neoforge.fluids.FluidStack"
 import {$FluidTank} from "owmii.powah.lib.logistics.fluid.FluidTank"
 
 export class $Tank extends $FluidTank {
@@ -429,8 +429,8 @@ import {$LevelBlock} from "dev.latvian.mods.kubejs.level.LevelBlock"
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Container} from "net.minecraft.world.Container"
-import {$List} from "java.util.List"
 import {$ItemPredicate$$Type} from "dev.latvian.mods.kubejs.item.ItemPredicate"
+import {$List} from "java.util.List"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$NonNullList$$Type} from "net.minecraft.core.NonNullList"
 import {$IItemHandler, $IItemHandler$$Interface} from "net.neoforged.neoforge.items.IItemHandler"

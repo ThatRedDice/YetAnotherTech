@@ -20,17 +20,24 @@ import {$IntegerProperty$$Type} from "net.minecraft.world.level.block.state.prop
 import {$StructureTransform$$Type} from "com.simibubi.create.content.contraptions.StructureTransform"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
-import {$ItemInteractionResult} from "net.minecraft.world.ItemInteractionResult"
 import {$StateType} from "com.copycatsplus.copycats.foundation.copycat.StateType"
+import {$ItemInteractionResult} from "net.minecraft.world.ItemInteractionResult"
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
-import {$IStateType$$Interface} from "com.copycatsplus.copycats.foundation.copycat.IStateType"
 import {$TransformableBlock$$Interface} from "com.simibubi.create.api.contraption.transformable.TransformableBlock"
+import {$IStateType$$Interface} from "com.copycatsplus.copycats.foundation.copycat.IStateType"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 
 export interface $ICopycatBlock$$Interface extends $IWrenchable$$Interface, $IStateType$$Interface, $TransformableBlock$$Interface {
 }
 
 export class $ICopycatBlock implements $ICopycatBlock$$Interface {
+ "useWithoutItem"(state: $BlockState$$Type, level: $Level$$Type, pos: $BlockPos$$Type, player: $Player$$Type, hitResult: $BlockHitResult$$Type): $InteractionResult
+static "hidesNeighborFace"(level: $BlockGetter$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type, neighborState: $BlockState$$Type, dir: $Direction$$Type): boolean
+ "setPlacedBy"(worldIn: $Level$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type, placer: $LivingEntity$$Type, stack: $ItemStack$$Type): void
+ "playerWillDestroy"(level: $Level$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type, player: $Player$$Type): $BlockState
+ "canOcclude"(level: $BlockGetter$$Type, state: $BlockState$$Type, pos: $BlockPos$$Type): boolean
+ "shapeCanOccludeNeighbor"(level: $BlockGetter$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type, neighborPos: $BlockPos$$Type, dir: $Direction$$Type): $Optional<(boolean)>
+static "getAppearance"(block: $ICopycatBlock$$Type, state: $BlockState$$Type, level: $BlockAndTintGetter$$Type, pos: $BlockPos$$Type, side: $Direction$$Type, queryState: $BlockState$$Type, queryPos: $BlockPos$$Type): $BlockState
  "isIgnoredConnectivitySide"(reader: $BlockAndTintGetter$$Type, fromState: $BlockState$$Type, face: $Direction$$Type, fromPos: $BlockPos$$Type, toPos: $BlockPos$$Type, toState: $BlockState$$Type): boolean
  "canConnectTexturesToward"(reader: $BlockAndTintGetter$$Type, fromPos: $BlockPos$$Type, toPos: $BlockPos$$Type, fromState: $BlockState$$Type): boolean
  "getAcceptedBlockState"(pLevel: $Level$$Type, pPos: $BlockPos$$Type, item: $ItemStack$$Type, face: $Direction$$Type): $BlockState
@@ -42,13 +49,6 @@ export class $ICopycatBlock implements $ICopycatBlock$$Interface {
  "toggleCT"(state: $BlockState$$Type, level: $Level$$Type, pos: $BlockPos$$Type, player: $Player$$Type, hitResult: $BlockHitResult$$Type): $InteractionResult
 static "getRequiredItemsForLayer"(state: $BlockState$$Type, property: $IntegerProperty$$Type): $ItemRequirement
  "checkConnection"(reader: $BlockAndTintGetter$$Type, fromPos: $BlockPos$$Type, toPos: $BlockPos$$Type, fromState: $BlockState$$Type): boolean
-static "hidesNeighborFace"(level: $BlockGetter$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type, neighborState: $BlockState$$Type, dir: $Direction$$Type): boolean
- "setPlacedBy"(worldIn: $Level$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type, placer: $LivingEntity$$Type, stack: $ItemStack$$Type): void
- "playerWillDestroy"(level: $Level$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type, player: $Player$$Type): $BlockState
- "canOcclude"(level: $BlockGetter$$Type, state: $BlockState$$Type, pos: $BlockPos$$Type): boolean
- "shapeCanOccludeNeighbor"(level: $BlockGetter$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type, neighborPos: $BlockPos$$Type, dir: $Direction$$Type): $Optional<(boolean)>
-static "getAppearance"(block: $ICopycatBlock$$Type, state: $BlockState$$Type, level: $BlockAndTintGetter$$Type, pos: $BlockPos$$Type, side: $Direction$$Type, queryState: $BlockState$$Type, queryPos: $BlockPos$$Type): $BlockState
- "useWithoutItem"(state: $BlockState$$Type, level: $Level$$Type, pos: $BlockPos$$Type, player: $Player$$Type, hitResult: $BlockHitResult$$Type): $InteractionResult
 static "wrappedColor"(): $BlockColor
  "onWrenched"(state: $BlockState$$Type, context: $UseOnContext$$Type): $InteractionResult
  "onSneakWrenched"(state: $BlockState$$Type, context: $UseOnContext$$Type): $InteractionResult
@@ -107,8 +107,8 @@ import {$StructureTransform$$Type} from "com.simibubi.create.content.contraption
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$HolderGetter} from "net.minecraft.core.HolderGetter"
 import {$SmartBlockEntity} from "com.simibubi.create.foundation.blockEntity.SmartBlockEntity"
-import {$ICopycatBlockEntity$$Type, $ICopycatBlockEntity$$Interface} from "com.copycatsplus.copycats.foundation.copycat.ICopycatBlockEntity"
 import {$BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
+import {$ICopycatBlockEntity$$Type, $ICopycatBlockEntity$$Interface} from "com.copycatsplus.copycats.foundation.copycat.ICopycatBlockEntity"
 import {$BlockEntityBehaviour$$Type} from "com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour"
 import {$ModelData} from "net.neoforged.neoforge.client.model.data.ModelData"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
@@ -121,15 +121,15 @@ static readonly "ATTACHMENTS_NBT_KEY": StringJS
 
 constructor(type: $BlockEntityType$$Type<(never)>, pos: $BlockPos$$Type, state: $BlockState$$Type)
 
+public "blockHolderGetter"(): $HolderGetter<($Block)>
+public "getRequiredItems"(state: $BlockState$$Type): $ItemRequirement
+public "addBehaviours"(behaviours: $List$$Type<($BlockEntityBehaviour$$Type)>): void
+public "writeSafe"(tag: $CompoundTag$$Type, registries: $HolderLookup$Provider$$Type): void
 public "getConsumedItem"(): $ItemStack
 public "isCTEnabled"(): boolean
 public "setMaterialInternal"(material: $BlockState$$Type): void
 public "setConsumedItemInternal"(consumedItem: $ItemStack$$Type): void
 public "setCTEnabledInternal"(value: boolean): void
-public "blockHolderGetter"(): $HolderGetter<($Block)>
-public "getRequiredItems"(state: $BlockState$$Type): $ItemRequirement
-public "addBehaviours"(behaviours: $List$$Type<($BlockEntityBehaviour$$Type)>): void
-public "writeSafe"(tag: $CompoundTag$$Type, registries: $HolderLookup$Provider$$Type): void
 public "getLevel"(): $Level
 public "setLevel"(level: $Level$$Type): void
 public "write"(tag: $CompoundTag$$Type, registries: $HolderLookup$Provider$$Type, clientPacket: boolean): void
@@ -138,15 +138,15 @@ public "onLoad"(): void
 public "getBlockPos"(): $BlockPos
 public "getBlockState"(): $BlockState
 public "setBlockState"(blockState: $BlockState$$Type): void
-public "getModelData"(): $ModelData
 public "getMaterial"(): $BlockState
+public "getModelData"(): $ModelData
+public "notifyUpdate"(): void
+public static "writeSafe"(self: $ICopycatBlockEntity$$Type, tag: $CompoundTag$$Type, registries: $HolderLookup$Provider$$Type): void
 public "setConsumedItem"(stack: $ItemStack$$Type): void
 public "hasCustomMaterial"(): boolean
 public "setMaterial"(blockState: $BlockState$$Type): void
 public "cycleMaterial"(): boolean
 public "setCTEnabled"(value: boolean): void
-public "notifyUpdate"(): void
-public static "writeSafe"(self: $ICopycatBlockEntity$$Type, tag: $CompoundTag$$Type, registries: $HolderLookup$Provider$$Type): void
 public "getBlock"(): $ICopycatBlock
 public "transform"(blockEntity: $BlockEntity$$Type, transform: $StructureTransform$$Type): void
 public "init"(): void
@@ -164,8 +164,8 @@ set "level"(value: $Level$$Type)
 get "blockPos"(): $BlockPos
 get "blockState"(): $BlockState
 set "blockState"(value: $BlockState$$Type)
-get "modelData"(): $ModelData
 get "material"(): $BlockState
+get "modelData"(): $ModelData
 set "consumedItem"(value: $ItemStack$$Type)
 set "material"(value: $BlockState$$Type)
 set "CTEnabled"(value: boolean)
@@ -217,14 +217,14 @@ export class $CopycatTransformableState$Part<T> {
 constructor(x: integer, y: integer, z: integer)
 
 public "getFacing"(): $Direction
-public "untransform"(transform: $StructureTransform$$Type): $CopycatTransformableState$Part<(T)>
 public "isRight"(facing: $Direction$$Type): boolean
-public "getData"(): T
+public "untransform"(transform: $StructureTransform$$Type): $CopycatTransformableState$Part<(T)>
 public "setData"(data: T): $CopycatTransformableState$Part<(T)>
+public "getData"(): T
 public "transform"(transform: $StructureTransform$$Type): $CopycatTransformableState$Part<(T)>
 public "isTop"(): boolean
-public "rotateY"(facing: $Direction$$Type): $CopycatTransformableState$Part<(T)>
 public "rotateY"(facing: $Direction$$Type, origin: $Direction$$Type): $CopycatTransformableState$Part<(T)>
+public "rotateY"(facing: $Direction$$Type): $CopycatTransformableState$Part<(T)>
 public "getHorizontalFacing"(): $Direction
 get "facing"(): $Direction
 get "top"(): boolean
@@ -263,8 +263,8 @@ export type $IStateType$$Type = ($IStateType);
 export type $IStateType$$Original = $IStateType;}
 declare module "com.copycatsplus.copycats.foundation.copycat.multistate.MultiStateCopycatBlock" {
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
-import {$IMultiStateCopycatBlockEntity$$Type} from "com.copycatsplus.copycats.foundation.copycat.multistate.IMultiStateCopycatBlockEntity"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
+import {$IMultiStateCopycatBlockEntity, $IMultiStateCopycatBlockEntity$$Type} from "com.copycatsplus.copycats.foundation.copycat.multistate.IMultiStateCopycatBlockEntity"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$MultiStateCopycatBlockEntity, $MultiStateCopycatBlockEntity$$Type} from "com.copycatsplus.copycats.foundation.copycat.multistate.MultiStateCopycatBlockEntity"
@@ -272,8 +272,8 @@ import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.
 import {$LevelReader$$Type} from "net.minecraft.world.level.LevelReader"
 import {$Vec3i, $Vec3i$$Type} from "net.minecraft.core.Vec3i"
 import {$IBlockExtension$$Interface} from "net.neoforged.neoforge.common.extensions.IBlockExtension"
-import {$Set} from "java.util.Set"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
+import {$Set} from "java.util.Set"
 import {$GameEventListener} from "net.minecraft.world.level.gameevent.GameEventListener"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
@@ -292,17 +292,16 @@ import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 import {$BlockEntity, $BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
 import {$IBE$$Interface} from "com.simibubi.create.foundation.block.IBE"
 import {$Mirror$$Type} from "net.minecraft.world.level.block.Mirror"
-import {$IMultiStateCopycatBlock$$Type, $IMultiStateCopycatBlock$$Interface} from "com.copycatsplus.copycats.foundation.copycat.multistate.IMultiStateCopycatBlock"
 import {$ICopycatBlock$OnRemoveHandler$$Type} from "com.copycatsplus.copycats.foundation.copycat.ICopycatBlock$OnRemoveHandler"
+import {$IMultiStateCopycatBlock$$Type, $IMultiStateCopycatBlock$$Interface} from "com.copycatsplus.copycats.foundation.copycat.multistate.IMultiStateCopycatBlock"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$ItemRequirement} from "com.simibubi.create.content.schematics.requirement.ItemRequirement"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$Explosion$$Type} from "net.minecraft.world.level.Explosion"
-import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
-import {$ICopycatBlockEntity} from "com.copycatsplus.copycats.foundation.copycat.ICopycatBlockEntity"
+import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType, $BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
 import {$Function$$Type} from "java.util.function.Function"
 import {$Item} from "net.minecraft.world.item.Item"
@@ -340,12 +339,12 @@ static readonly "UPDATE_CLIENTS": integer
 
 constructor(properties: $BlockBehaviour$Properties$$Type)
 
+public "useWithoutItem"(state: $BlockState$$Type, level: $Level$$Type, pos: $BlockPos$$Type, player: $Player$$Type, hitResult: $BlockHitResult$$Type): $InteractionResult
 public "getExplosionResistance"(state: $BlockState$$Type, level: $BlockGetter$$Type, pos: $BlockPos$$Type, explosion: $Explosion$$Type): float
 public "setPlacedBy"(worldIn: $Level$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type, placer: $LivingEntity$$Type, stack: $ItemStack$$Type): void
 public "playerWillDestroy"(level: $Level$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type, player: $Player$$Type): $BlockState
 public "getEnchantPowerBonus"(state: $BlockState$$Type, level: $LevelReader$$Type, pos: $BlockPos$$Type): float
 public "getAppearance"(state: $BlockState$$Type, renderView: $BlockAndTintGetter$$Type, pos: $BlockPos$$Type, side: $Direction$$Type, sourceState: $BlockState$$Type, sourcePos: $BlockPos$$Type): $BlockState
-public "useWithoutItem"(state: $BlockState$$Type, level: $Level$$Type, pos: $BlockPos$$Type, player: $Player$$Type, hitResult: $BlockHitResult$$Type): $InteractionResult
 public "getDestroyProgress"(pState: $BlockState$$Type, pPlayer: $Player$$Type, pLevel: $BlockGetter$$Type, pPos: $BlockPos$$Type): float
 public "getTicker"<S extends $BlockEntity>(p_153212_: $Level$$Type, p_153213_: $BlockState$$Type, p_153214_: $BlockEntityType$$Type<(S)>): $BlockEntityTicker<(S)>
 public "getBlockEntityType"(): $BlockEntityType<($MultiStateCopycatBlockEntity)>
@@ -362,22 +361,15 @@ public "fallOn"(pLevel: $Level$$Type, state: $BlockState$$Type, pPos: $BlockPos$
 public "addRunningEffects"(state: $BlockState$$Type, level: $Level$$Type, pos: $BlockPos$$Type, entity: $Entity$$Type): boolean
 public "onRemove"(state: $BlockState$$Type, world: $Level$$Type, pos: $BlockPos$$Type, newState: $BlockState$$Type, isMoving: boolean): void
 public "getLightEmission"(state: $BlockState$$Type, level: $BlockGetter$$Type, pos: $BlockPos$$Type): integer
-public "canConnectTexturesToward"(property: StringJS, reader: $BlockAndTintGetter$$Type, fromPos: $BlockPos$$Type, toPos: $BlockPos$$Type, state: $BlockState$$Type): boolean
-public "getAcceptedBlockState"(property: StringJS, pLevel: $Level$$Type, pPos: $BlockPos$$Type, item: $ItemStack$$Type, face: $Direction$$Type): $BlockState
-public "getCopycatBlockEntity"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type): $ICopycatBlockEntity
-public "toggleCT"(state: $BlockState$$Type, level: $Level$$Type, pos: $BlockPos$$Type, player: $Player$$Type, hitResult: $BlockHitResult$$Type): $InteractionResult
-public "stateType"(): $StateType
 public "canOcclude"(level: $BlockGetter$$Type, state: $BlockState$$Type, pos: $BlockPos$$Type): boolean
 public "canOcclude"(property: StringJS, level: $BlockGetter$$Type, state: $BlockState$$Type, pos: $BlockPos$$Type): boolean
 public "shapeCanOccludeNeighbor"(level: $BlockGetter$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type, neighborPos: $BlockPos$$Type, dir: $Direction$$Type): $Optional<(boolean)>
 public static "getAppearance"(block: $IMultiStateCopycatBlock$$Type, state: $BlockState$$Type, level: $BlockAndTintGetter$$Type, pos: $BlockPos$$Type, side: $Direction$$Type, queryState: $BlockState$$Type, queryPos: $BlockPos$$Type): $BlockState
-public "getPropertyFromInteraction"(state: $BlockState$$Type, level: $BlockGetter$$Type, pos: $BlockPos$$Type, hit: $BlockHitResult$$Type, targetingSolid: boolean): StringJS
-public "getPropertyFromInteraction"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $Vec3i$$Type, arg3: $BlockPos$$Type, arg4: $Direction$$Type, arg5: $Vec3$$Type): StringJS
-public "getPropertyFromInteraction"(state: $BlockState$$Type, level: $BlockGetter$$Type, pos: $BlockPos$$Type, hitVec: $Vec3$$Type, face: $Direction$$Type, targetingSolid: boolean): StringJS
-public static "wrappedColor"(): $BlockColor
-public "getPropertyFromRender"(renderingProperty: StringJS, state: $BlockState$$Type, level: $BlockGetter$$Type, vector: $Vec3i$$Type, blockPos: $BlockPos$$Type): StringJS
-public "fillEmptyParts"(level: $Level$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type, material: $BlockState$$Type): void
-public static "getRequiredItemsForParts"(state: $BlockState$$Type, ...property: ($BooleanProperty$$Type)[]): $ItemRequirement
+public "canConnectTexturesToward"(property: StringJS, reader: $BlockAndTintGetter$$Type, fromPos: $BlockPos$$Type, toPos: $BlockPos$$Type, state: $BlockState$$Type): boolean
+public "getAcceptedBlockState"(property: StringJS, pLevel: $Level$$Type, pPos: $BlockPos$$Type, item: $ItemStack$$Type, face: $Direction$$Type): $BlockState
+public "getCopycatBlockEntity"(worldIn: $BlockGetter$$Type, pos: $BlockPos$$Type): $IMultiStateCopycatBlockEntity
+public "toggleCT"(state: $BlockState$$Type, level: $Level$$Type, pos: $BlockPos$$Type, player: $Player$$Type, hitResult: $BlockHitResult$$Type): $InteractionResult
+public "stateType"(): $StateType
 public "getPartialFaceShape"(arg0: $BlockGetter$$Type, arg1: $BlockState$$Type, arg2: StringJS, arg3: $Direction$$Type): $VoxelShape
 public "defaultProperty"(): StringJS
 public "vectorScale"(arg0: $BlockState$$Type): $Vec3i
@@ -385,6 +377,13 @@ public "getVectorFromProperty"(arg0: $BlockState$$Type, arg1: StringJS): $Vec3i
 public "partExists"(arg0: $BlockState$$Type, arg1: StringJS): boolean
 public "storageProperties"(): $Set<(StringJS)>
 public "transformStorage"(arg0: $BlockState$$Type, arg1: $IMultiStateCopycatBlockEntity$$Type, arg2: $StructureTransform$$Type): void
+public "getPropertyFromRender"(renderingProperty: StringJS, state: $BlockState$$Type, level: $BlockGetter$$Type, vector: $Vec3i$$Type, blockPos: $BlockPos$$Type): StringJS
+public "fillEmptyParts"(level: $Level$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type, material: $BlockState$$Type): void
+public static "getRequiredItemsForParts"(state: $BlockState$$Type, ...property: ($BooleanProperty$$Type)[]): $ItemRequirement
+public "getPropertyFromInteraction"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $Vec3i$$Type, arg3: $BlockPos$$Type, arg4: $Direction$$Type, arg5: $Vec3$$Type): StringJS
+public "getPropertyFromInteraction"(state: $BlockState$$Type, level: $BlockGetter$$Type, pos: $BlockPos$$Type, hit: $BlockHitResult$$Type, targetingSolid: boolean): StringJS
+public "getPropertyFromInteraction"(state: $BlockState$$Type, level: $BlockGetter$$Type, pos: $BlockPos$$Type, hitVec: $Vec3$$Type, face: $Direction$$Type, targetingSolid: boolean): StringJS
+public static "wrappedColor"(): $BlockColor
 public "onWrenched"(state: $BlockState$$Type, context: $UseOnContext$$Type): $InteractionResult
 public "getColorIndex"(arg0: StringJS): integer
 public "onRemove"(state: $BlockState$$Type, level: $Level$$Type, pos: $BlockPos$$Type, newState: $BlockState$$Type, isMoving: boolean, handler: $ICopycatBlock$OnRemoveHandler$$Type): void
@@ -396,6 +395,7 @@ public "onBlockEntityUse"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2:
 public "onBlockEntityUseItemOn"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $Function$$Type<($MultiStateCopycatBlockEntity), ($ItemInteractionResult$$Type)>): $ItemInteractionResult
 public "getBlockEntity"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type): $MultiStateCopycatBlockEntity
 public static "onRemove"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): void
+public static "getAppearance"(block: $ICopycatBlock$$Type, state: $BlockState$$Type, level: $BlockAndTintGetter$$Type, pos: $BlockPos$$Type, side: $Direction$$Type, queryState: $BlockState$$Type, queryPos: $BlockPos$$Type): $BlockState
 public "isIgnoredConnectivitySide"(reader: $BlockAndTintGetter$$Type, fromState: $BlockState$$Type, face: $Direction$$Type, fromPos: $BlockPos$$Type, toPos: $BlockPos$$Type, toState: $BlockState$$Type): boolean
 public "canConnectTexturesToward"(reader: $BlockAndTintGetter$$Type, fromPos: $BlockPos$$Type, toPos: $BlockPos$$Type, fromState: $BlockState$$Type): boolean
 public "getAcceptedBlockState"(pLevel: $Level$$Type, pPos: $BlockPos$$Type, item: $ItemStack$$Type, face: $Direction$$Type): $BlockState
@@ -405,7 +405,6 @@ public "canToggleCT"(state: $BlockState$$Type, level: $BlockAndTintGetter$$Type,
 public "isCTEnabled"(state: $BlockState$$Type, level: $BlockAndTintGetter$$Type, pos: $BlockPos$$Type): boolean
 public static "getRequiredItemsForLayer"(state: $BlockState$$Type, property: $IntegerProperty$$Type): $ItemRequirement
 public "checkConnection"(reader: $BlockAndTintGetter$$Type, fromPos: $BlockPos$$Type, toPos: $BlockPos$$Type, fromState: $BlockState$$Type): boolean
-public static "getAppearance"(block: $ICopycatBlock$$Type, state: $BlockState$$Type, level: $BlockAndTintGetter$$Type, pos: $BlockPos$$Type, side: $Direction$$Type, queryState: $BlockState$$Type, queryPos: $BlockPos$$Type): $BlockState
 public "onSneakWrenched"(state: $BlockState$$Type, context: $UseOnContext$$Type): $InteractionResult
 public static "getMaterial"(reader: $BlockGetter$$Type, targetPos: $BlockPos$$Type): $BlockState
 public "getListener"<T extends $BlockEntity>(arg0: $ServerLevel$$Type, arg1: T): $GameEventListener
@@ -429,7 +428,6 @@ export type $MultiStateCopycatBlock$$Original = $MultiStateCopycatBlock;}
 declare module "com.copycatsplus.copycats.foundation.copycat.multistate.IMultiStateCopycatBlockEntity" {
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$IMultiStateCopycatBlock} from "com.copycatsplus.copycats.foundation.copycat.multistate.IMultiStateCopycatBlock"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
 import {$ItemRequirement} from "com.simibubi.create.content.schematics.requirement.ItemRequirement"
@@ -440,6 +438,7 @@ import {$HolderGetter} from "net.minecraft.core.HolderGetter"
 import {$ICopycatBlockEntity$$Type, $ICopycatBlockEntity$$Interface} from "com.copycatsplus.copycats.foundation.copycat.ICopycatBlockEntity"
 import {$BlockPos} from "net.minecraft.core.BlockPos"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
+import {$ICopycatBlock} from "com.copycatsplus.copycats.foundation.copycat.ICopycatBlock"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export interface $IMultiStateCopycatBlockEntity$$Interface extends $ICopycatBlockEntity$$Interface {
@@ -450,7 +449,7 @@ set "consumedItemInternal"(value: $ItemStack$$Type)
 set "CTEnabledInternal"(value: boolean)
 get "materialItemStorage"(): $MaterialItemStorage
 set "materialItemStorageInternal"(value: $MaterialItemStorage$$Type)
-get "block"(): $IMultiStateCopycatBlock
+get "block"(): $ICopycatBlock
 get "material"(): $BlockState
 set "consumedItem"(value: $ItemStack$$Type)
 set "material"(value: $BlockState$$Type)
@@ -463,6 +462,8 @@ set "blockState"(value: $BlockState$$Type)
 }
 
 export class $IMultiStateCopycatBlockEntity implements $IMultiStateCopycatBlockEntity$$Interface {
+ "getRequiredItems"(state: $BlockState$$Type): $ItemRequirement
+static "writeSafe"(self: $IMultiStateCopycatBlockEntity$$Type, tag: $CompoundTag$$Type, registries: $HolderLookup$Provider$$Type): void
  "setConsumedItem"(property: StringJS, itemStack: $ItemStack$$Type): void
  "getConsumedItem"(): $ItemStack
  "hasCustomMaterial"(): boolean
@@ -472,24 +473,22 @@ export class $IMultiStateCopycatBlockEntity implements $IMultiStateCopycatBlockE
  "setMaterialInternal"(material: $BlockState$$Type): void
  "setConsumedItemInternal"(consumedItem: $ItemStack$$Type): void
  "setCTEnabledInternal"(value: boolean): void
- "getRequiredItems"(state: $BlockState$$Type): $ItemRequirement
-static "writeSafe"(self: $IMultiStateCopycatBlockEntity$$Type, tag: $CompoundTag$$Type, registries: $HolderLookup$Provider$$Type): void
- "setEnableCT"(property: StringJS, value: boolean): void
  "getMaterialItemStorage"(): $MaterialItemStorage
+ "setEnableCT"(property: StringJS, value: boolean): void
  "setMaterialItemStorageInternal"(arg0: $MaterialItemStorage$$Type): void
- "getBlock"(): $IMultiStateCopycatBlock
+ "getBlock"(): $ICopycatBlock
  "transform"(blockEntity: $BlockEntity$$Type, transform: $StructureTransform$$Type): void
  "init"(): void
 static "write"(self: $IMultiStateCopycatBlockEntity$$Type, tag: $CompoundTag$$Type, registries: $HolderLookup$Provider$$Type, clientPacket: boolean): void
 static "read"(self: $IMultiStateCopycatBlockEntity$$Type, tag: $CompoundTag$$Type, registries: $HolderLookup$Provider$$Type, clientPacket: boolean): void
  "getMaterial"(): $BlockState
+ "notifyUpdate"(): void
+ "blockHolderGetter"(): $HolderGetter<($Block)>
+static "writeSafe"(self: $ICopycatBlockEntity$$Type, tag: $CompoundTag$$Type, registries: $HolderLookup$Provider$$Type): void
  "setConsumedItem"(stack: $ItemStack$$Type): void
  "setMaterial"(blockState: $BlockState$$Type): void
  "cycleMaterial"(): boolean
  "setCTEnabled"(value: boolean): void
- "notifyUpdate"(): void
- "blockHolderGetter"(): $HolderGetter<($Block)>
-static "writeSafe"(self: $ICopycatBlockEntity$$Type, tag: $CompoundTag$$Type, registries: $HolderLookup$Provider$$Type): void
  "getLevel"(): $Level
  "setLevel"(arg0: $Level$$Type): void
 static "write"(self: $ICopycatBlockEntity$$Type, tag: $CompoundTag$$Type, registries: $HolderLookup$Provider$$Type, clientPacket: boolean): void
@@ -573,6 +572,10 @@ get "material"(): $BlockState
 }
 
 export class $ICopycatBlockEntity implements $ICopycatBlockEntity$$Interface {
+ "notifyUpdate"(): void
+ "blockHolderGetter"(): $HolderGetter<($Block)>
+ "getRequiredItems"(state: $BlockState$$Type): $ItemRequirement
+static "writeSafe"(self: $ICopycatBlockEntity$$Type, tag: $CompoundTag$$Type, registries: $HolderLookup$Provider$$Type): void
  "setConsumedItem"(stack: $ItemStack$$Type): void
  "getConsumedItem"(): $ItemStack
  "hasCustomMaterial"(): boolean
@@ -583,10 +586,6 @@ export class $ICopycatBlockEntity implements $ICopycatBlockEntity$$Interface {
  "setMaterialInternal"(arg0: $BlockState$$Type): void
  "setConsumedItemInternal"(arg0: $ItemStack$$Type): void
  "setCTEnabledInternal"(arg0: boolean): void
- "notifyUpdate"(): void
- "blockHolderGetter"(): $HolderGetter<($Block)>
- "getRequiredItems"(state: $BlockState$$Type): $ItemRequirement
-static "writeSafe"(self: $ICopycatBlockEntity$$Type, tag: $CompoundTag$$Type, registries: $HolderLookup$Provider$$Type): void
  "getBlock"(): $ICopycatBlock
  "getLevel"(): $Level
  "setLevel"(arg0: $Level$$Type): void
@@ -636,7 +635,7 @@ export type $ICopycatBlock$OnRemoveHandler$$Type = ((arg0: $BlockState, arg1: $L
 export type $ICopycatBlock$OnRemoveHandler$$Original = $ICopycatBlock$OnRemoveHandler;}
 declare module "com.copycatsplus.copycats.foundation.copycat.multistate.IMultiStateCopycatBlock" {
 import {$BlockHitResult$$Type} from "net.minecraft.world.phys.BlockHitResult"
-import {$IMultiStateCopycatBlockEntity$$Type} from "com.copycatsplus.copycats.foundation.copycat.multistate.IMultiStateCopycatBlockEntity"
+import {$IMultiStateCopycatBlockEntity, $IMultiStateCopycatBlockEntity$$Type} from "com.copycatsplus.copycats.foundation.copycat.multistate.IMultiStateCopycatBlockEntity"
 import {$ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
 import {$Mirror$$Type} from "net.minecraft.world.level.block.Mirror"
 import {$Optional} from "java.util.Optional"
@@ -648,9 +647,8 @@ import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$Vec3i, $Vec3i$$Type} from "net.minecraft.core.Vec3i"
 import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
-import {$ICopycatBlockEntity} from "com.copycatsplus.copycats.foundation.copycat.ICopycatBlockEntity"
-import {$Set} from "java.util.Set"
 import {$UseOnContext$$Type} from "net.minecraft.world.item.context.UseOnContext"
+import {$Set} from "java.util.Set"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$ICopycatBlock$$Type, $ICopycatBlock$$Interface} from "com.copycatsplus.copycats.foundation.copycat.ICopycatBlock"
 import {$BlockColor} from "net.minecraft.client.color.block.BlockColor"
@@ -660,36 +658,29 @@ import {$IntegerProperty$$Type} from "net.minecraft.world.level.block.state.prop
 import {$StructureTransform$$Type} from "com.simibubi.create.content.contraptions.StructureTransform"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$InteractionResult} from "net.minecraft.world.InteractionResult"
-import {$ItemInteractionResult} from "net.minecraft.world.ItemInteractionResult"
 import {$StateType} from "com.copycatsplus.copycats.foundation.copycat.StateType"
+import {$ItemInteractionResult} from "net.minecraft.world.ItemInteractionResult"
 import {$VoxelShape} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$Rotation$$Type} from "net.minecraft.world.level.block.Rotation"
-import {$IStateType$$Interface} from "com.copycatsplus.copycats.foundation.copycat.IStateType"
 import {$BooleanProperty$$Type} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
+import {$IStateType$$Interface} from "com.copycatsplus.copycats.foundation.copycat.IStateType"
 import {$LivingEntity$$Type} from "net.minecraft.world.entity.LivingEntity"
 
 export interface $IMultiStateCopycatBlock$$Interface extends $ICopycatBlock$$Interface, $IStateType$$Interface {
 }
 
 export class $IMultiStateCopycatBlock implements $IMultiStateCopycatBlock$$Interface {
- "canConnectTexturesToward"(property: StringJS, reader: $BlockAndTintGetter$$Type, fromPos: $BlockPos$$Type, toPos: $BlockPos$$Type, state: $BlockState$$Type): boolean
- "getAcceptedBlockState"(property: StringJS, pLevel: $Level$$Type, pPos: $BlockPos$$Type, item: $ItemStack$$Type, face: $Direction$$Type): $BlockState
- "getCopycatBlockEntity"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type): $ICopycatBlockEntity
- "toggleCT"(state: $BlockState$$Type, level: $Level$$Type, pos: $BlockPos$$Type, player: $Player$$Type, hitResult: $BlockHitResult$$Type): $InteractionResult
- "stateType"(): $StateType
  "setPlacedBy"(level: $Level$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type, placer: $LivingEntity$$Type, stack: $ItemStack$$Type): void
  "playerWillDestroy"(level: $Level$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type, player: $Player$$Type): $BlockState
  "canOcclude"(level: $BlockGetter$$Type, state: $BlockState$$Type, pos: $BlockPos$$Type): boolean
  "canOcclude"(property: StringJS, level: $BlockGetter$$Type, state: $BlockState$$Type, pos: $BlockPos$$Type): boolean
  "shapeCanOccludeNeighbor"(level: $BlockGetter$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type, neighborPos: $BlockPos$$Type, dir: $Direction$$Type): $Optional<(boolean)>
 static "getAppearance"(block: $IMultiStateCopycatBlock$$Type, state: $BlockState$$Type, level: $BlockAndTintGetter$$Type, pos: $BlockPos$$Type, side: $Direction$$Type, queryState: $BlockState$$Type, queryPos: $BlockPos$$Type): $BlockState
- "getPropertyFromInteraction"(state: $BlockState$$Type, level: $BlockGetter$$Type, pos: $BlockPos$$Type, hit: $BlockHitResult$$Type, targetingSolid: boolean): StringJS
- "getPropertyFromInteraction"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $Vec3i$$Type, arg3: $BlockPos$$Type, arg4: $Direction$$Type, arg5: $Vec3$$Type): StringJS
- "getPropertyFromInteraction"(state: $BlockState$$Type, level: $BlockGetter$$Type, pos: $BlockPos$$Type, hitVec: $Vec3$$Type, face: $Direction$$Type, targetingSolid: boolean): StringJS
-static "wrappedColor"(): $BlockColor
- "getPropertyFromRender"(renderingProperty: StringJS, state: $BlockState$$Type, level: $BlockGetter$$Type, vector: $Vec3i$$Type, blockPos: $BlockPos$$Type): StringJS
- "fillEmptyParts"(level: $Level$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type, material: $BlockState$$Type): void
-static "getRequiredItemsForParts"(state: $BlockState$$Type, ...property: ($BooleanProperty$$Type)[]): $ItemRequirement
+ "canConnectTexturesToward"(property: StringJS, reader: $BlockAndTintGetter$$Type, fromPos: $BlockPos$$Type, toPos: $BlockPos$$Type, state: $BlockState$$Type): boolean
+ "getAcceptedBlockState"(property: StringJS, pLevel: $Level$$Type, pPos: $BlockPos$$Type, item: $ItemStack$$Type, face: $Direction$$Type): $BlockState
+ "getCopycatBlockEntity"(worldIn: $BlockGetter$$Type, pos: $BlockPos$$Type): $IMultiStateCopycatBlockEntity
+ "toggleCT"(state: $BlockState$$Type, level: $Level$$Type, pos: $BlockPos$$Type, player: $Player$$Type, hitResult: $BlockHitResult$$Type): $InteractionResult
+ "stateType"(): $StateType
  "getPartialFaceShape"(arg0: $BlockGetter$$Type, arg1: $BlockState$$Type, arg2: StringJS, arg3: $Direction$$Type): $VoxelShape
  "defaultProperty"(): StringJS
  "vectorScale"(arg0: $BlockState$$Type): $Vec3i
@@ -697,11 +688,21 @@ static "getRequiredItemsForParts"(state: $BlockState$$Type, ...property: ($Boole
  "partExists"(arg0: $BlockState$$Type, arg1: StringJS): boolean
  "storageProperties"(): $Set<(StringJS)>
  "transformStorage"(arg0: $BlockState$$Type, arg1: $IMultiStateCopycatBlockEntity$$Type, arg2: $StructureTransform$$Type): void
+ "getPropertyFromRender"(renderingProperty: StringJS, state: $BlockState$$Type, level: $BlockGetter$$Type, vector: $Vec3i$$Type, blockPos: $BlockPos$$Type): StringJS
+ "fillEmptyParts"(level: $Level$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type, material: $BlockState$$Type): void
+static "getRequiredItemsForParts"(state: $BlockState$$Type, ...property: ($BooleanProperty$$Type)[]): $ItemRequirement
+ "getPropertyFromInteraction"(arg0: $BlockState$$Type, arg1: $BlockGetter$$Type, arg2: $Vec3i$$Type, arg3: $BlockPos$$Type, arg4: $Direction$$Type, arg5: $Vec3$$Type): StringJS
+ "getPropertyFromInteraction"(state: $BlockState$$Type, level: $BlockGetter$$Type, pos: $BlockPos$$Type, hit: $BlockHitResult$$Type, targetingSolid: boolean): StringJS
+ "getPropertyFromInteraction"(state: $BlockState$$Type, level: $BlockGetter$$Type, pos: $BlockPos$$Type, hitVec: $Vec3$$Type, face: $Direction$$Type, targetingSolid: boolean): StringJS
+static "wrappedColor"(): $BlockColor
  "onWrenched"(state: $BlockState$$Type, context: $UseOnContext$$Type): $InteractionResult
- "useItemOn"(stack: $ItemStack$$Type, state: $BlockState$$Type, level: $Level$$Type, pos: $BlockPos$$Type, player: $Player$$Type, hand: $InteractionHand$$Type, hitResult: $BlockHitResult$$Type): $ItemInteractionResult
  "getColorIndex"(arg0: StringJS): integer
+ "useItemOn"(stack: $ItemStack$$Type, state: $BlockState$$Type, level: $Level$$Type, pos: $BlockPos$$Type, player: $Player$$Type, hand: $InteractionHand$$Type, hitResult: $BlockHitResult$$Type): $ItemInteractionResult
  "onRemove"(state: $BlockState$$Type, level: $Level$$Type, pos: $BlockPos$$Type, newState: $BlockState$$Type, isMoving: boolean, handler: $ICopycatBlock$OnRemoveHandler$$Type): void
 static "getMaterial"(reader: $BlockGetter$$Type, targetPos: $BlockPos$$Type, property: StringJS): $BlockState
+ "useWithoutItem"(state: $BlockState$$Type, level: $Level$$Type, pos: $BlockPos$$Type, player: $Player$$Type, hitResult: $BlockHitResult$$Type): $InteractionResult
+static "hidesNeighborFace"(level: $BlockGetter$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type, neighborState: $BlockState$$Type, dir: $Direction$$Type): boolean
+static "getAppearance"(block: $ICopycatBlock$$Type, state: $BlockState$$Type, level: $BlockAndTintGetter$$Type, pos: $BlockPos$$Type, side: $Direction$$Type, queryState: $BlockState$$Type, queryPos: $BlockPos$$Type): $BlockState
  "isIgnoredConnectivitySide"(reader: $BlockAndTintGetter$$Type, fromState: $BlockState$$Type, face: $Direction$$Type, fromPos: $BlockPos$$Type, toPos: $BlockPos$$Type, toState: $BlockState$$Type): boolean
  "canConnectTexturesToward"(reader: $BlockAndTintGetter$$Type, fromPos: $BlockPos$$Type, toPos: $BlockPos$$Type, fromState: $BlockState$$Type): boolean
  "getAcceptedBlockState"(pLevel: $Level$$Type, pPos: $BlockPos$$Type, item: $ItemStack$$Type, face: $Direction$$Type): $BlockState
@@ -711,9 +712,6 @@ static "getMaterial"(reader: $BlockGetter$$Type, targetPos: $BlockPos$$Type, pro
  "isCTEnabled"(state: $BlockState$$Type, level: $BlockAndTintGetter$$Type, pos: $BlockPos$$Type): boolean
 static "getRequiredItemsForLayer"(state: $BlockState$$Type, property: $IntegerProperty$$Type): $ItemRequirement
  "checkConnection"(reader: $BlockAndTintGetter$$Type, fromPos: $BlockPos$$Type, toPos: $BlockPos$$Type, fromState: $BlockState$$Type): boolean
-static "hidesNeighborFace"(level: $BlockGetter$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type, neighborState: $BlockState$$Type, dir: $Direction$$Type): boolean
-static "getAppearance"(block: $ICopycatBlock$$Type, state: $BlockState$$Type, level: $BlockAndTintGetter$$Type, pos: $BlockPos$$Type, side: $Direction$$Type, queryState: $BlockState$$Type, queryPos: $BlockPos$$Type): $BlockState
- "useWithoutItem"(state: $BlockState$$Type, level: $Level$$Type, pos: $BlockPos$$Type, player: $Player$$Type, hitResult: $BlockHitResult$$Type): $InteractionResult
  "onSneakWrenched"(state: $BlockState$$Type, context: $UseOnContext$$Type): $InteractionResult
  "transform"(state: $BlockState$$Type, transform: $StructureTransform$$Type): $BlockState
  "rotate"(pState: $BlockState$$Type, pRot: $Rotation$$Type): $BlockState
@@ -743,12 +741,12 @@ export class $MaterialItemStorage$MaterialItem {
 constructor(material: $BlockState$$Type, consumedItem: $ItemStack$$Type, enableCT: boolean)
 constructor(material: $BlockState$$Type, consumedItem: $ItemStack$$Type)
 
+public "material"(): $BlockState
 public "setConsumedItem"(stack: $ItemStack$$Type): void
 public "hasCustomMaterial"(): boolean
 public "setMaterial"(material: $BlockState$$Type): void
 public "consumedItem"(): $ItemStack
 public "enableCT"(): boolean
-public "material"(): $BlockState
 public "setEnableCT"(enableCT: boolean): void
 public "serializeSafe"(registries: $HolderLookup$Provider$$Type): $CompoundTag
 public static "deserialize"(tag: $CompoundTag$$Type, registries: $HolderLookup$Provider$$Type): $MaterialItemStorage$MaterialItem
@@ -767,12 +765,11 @@ declare module "com.copycatsplus.copycats.foundation.copycat.multistate.MultiSta
 import {$CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$IMultiStateCopycatBlockEntity$$Type, $IMultiStateCopycatBlockEntity$$Interface} from "com.copycatsplus.copycats.foundation.copycat.multistate.IMultiStateCopycatBlockEntity"
 import {$ItemStack, $ItemStack$$Type} from "net.minecraft.world.item.ItemStack"
-import {$IMultiStateCopycatBlock} from "com.copycatsplus.copycats.foundation.copycat.multistate.IMultiStateCopycatBlock"
 import {$List$$Type} from "java.util.List"
 import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level, $Level$$Type} from "net.minecraft.world.level.Level"
-import {$MaterialItemStorage, $MaterialItemStorage$$Type} from "com.copycatsplus.copycats.foundation.copycat.multistate.MaterialItemStorage"
 import {$ItemRequirement} from "com.simibubi.create.content.schematics.requirement.ItemRequirement"
+import {$MaterialItemStorage, $MaterialItemStorage$$Type} from "com.copycatsplus.copycats.foundation.copycat.multistate.MaterialItemStorage"
 import {$StructureTransform$$Type} from "com.simibubi.create.content.contraptions.StructureTransform"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$HolderGetter} from "net.minecraft.core.HolderGetter"
@@ -783,6 +780,7 @@ import {$BlockEntityBehaviour$$Type} from "com.simibubi.create.foundation.blockE
 import {$ModelData} from "net.neoforged.neoforge.client.model.data.ModelData"
 import {$BlockPos, $BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$BlockEntity$$Type} from "net.minecraft.world.level.block.entity.BlockEntity"
+import {$ICopycatBlock} from "com.copycatsplus.copycats.foundation.copycat.ICopycatBlock"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $MultiStateCopycatBlockEntity extends $SmartBlockEntity implements $IMultiStateCopycatBlockEntity$$Interface {
@@ -800,6 +798,7 @@ public "write"(tag: $CompoundTag$$Type, registries: $HolderLookup$Provider$$Type
 public "read"(tag: $CompoundTag$$Type, registries: $HolderLookup$Provider$$Type, clientPacket: boolean): void
 public "onLoad"(): void
 public "getModelData"(): $ModelData
+public static "writeSafe"(self: $IMultiStateCopycatBlockEntity$$Type, tag: $CompoundTag$$Type, registries: $HolderLookup$Provider$$Type): void
 public "setConsumedItem"(property: StringJS, itemStack: $ItemStack$$Type): void
 public "getConsumedItem"(): $ItemStack
 public "hasCustomMaterial"(): boolean
@@ -809,21 +808,20 @@ public "isCTEnabled"(): boolean
 public "setMaterialInternal"(material: $BlockState$$Type): void
 public "setConsumedItemInternal"(consumedItem: $ItemStack$$Type): void
 public "setCTEnabledInternal"(value: boolean): void
-public static "writeSafe"(self: $IMultiStateCopycatBlockEntity$$Type, tag: $CompoundTag$$Type, registries: $HolderLookup$Provider$$Type): void
 public "setEnableCT"(property: StringJS, value: boolean): void
-public "getBlock"(): $IMultiStateCopycatBlock
+public "getBlock"(): $ICopycatBlock
 public "transform"(blockEntity: $BlockEntity$$Type, transform: $StructureTransform$$Type): void
 public "init"(): void
 public static "write"(self: $IMultiStateCopycatBlockEntity$$Type, tag: $CompoundTag$$Type, registries: $HolderLookup$Provider$$Type, clientPacket: boolean): void
 public static "read"(self: $IMultiStateCopycatBlockEntity$$Type, tag: $CompoundTag$$Type, registries: $HolderLookup$Provider$$Type, clientPacket: boolean): void
 public "getMaterial"(): $BlockState
+public "notifyUpdate"(): void
+public "blockHolderGetter"(): $HolderGetter<($Block)>
+public static "writeSafe"(self: $ICopycatBlockEntity$$Type, tag: $CompoundTag$$Type, registries: $HolderLookup$Provider$$Type): void
 public "setConsumedItem"(stack: $ItemStack$$Type): void
 public "setMaterial"(blockState: $BlockState$$Type): void
 public "cycleMaterial"(): boolean
 public "setCTEnabled"(value: boolean): void
-public "notifyUpdate"(): void
-public "blockHolderGetter"(): $HolderGetter<($Block)>
-public static "writeSafe"(self: $ICopycatBlockEntity$$Type, tag: $CompoundTag$$Type, registries: $HolderLookup$Provider$$Type): void
 public "getLevel"(): $Level
 public "setLevel"(arg0: $Level$$Type): void
 public static "write"(self: $ICopycatBlockEntity$$Type, tag: $CompoundTag$$Type, registries: $HolderLookup$Provider$$Type, clientPacket: boolean): void
@@ -841,7 +839,7 @@ get "CTEnabled"(): boolean
 set "materialInternal"(value: $BlockState$$Type)
 set "consumedItemInternal"(value: $ItemStack$$Type)
 set "CTEnabledInternal"(value: boolean)
-get "block"(): $IMultiStateCopycatBlock
+get "block"(): $ICopycatBlock
 get "material"(): $BlockState
 set "consumedItem"(value: $ItemStack$$Type)
 set "material"(value: $BlockState$$Type)
@@ -865,31 +863,31 @@ declare module "com.copycatsplus.copycats.foundation.copycat.multistate.Material
 import {$CompoundTag, $CompoundTag$$Type} from "net.minecraft.nbt.CompoundTag"
 import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Map} from "java.util.Map"
-import {$List} from "java.util.List"
 import {$Function$$Type} from "java.util.function.Function"
-import {$Set, $Set$$Type} from "java.util.Set"
+import {$List} from "java.util.List"
 import {$MaterialItemStorage$MaterialItem, $MaterialItemStorage$MaterialItem$$Type} from "com.copycatsplus.copycats.foundation.copycat.multistate.MaterialItemStorage$MaterialItem"
+import {$Set, $Set$$Type} from "java.util.Set"
 import {$HolderLookup$Provider$$Type} from "net.minecraft.core.HolderLookup$Provider"
 import {$BlockState} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $MaterialItemStorage {
 public "hasCustomMaterial"(property: StringJS): boolean
-public "getAllMaterialItems"(): $Set<($MaterialItemStorage$MaterialItem)>
-public "getAllMaterials"(): $Set<($BlockState)>
-public "getAllConsumedItems"(): $List<($ItemStack)>
+public "remapStorage"(keyMapper: $Function$$Type<(StringJS), (StringJS)>): void
 public "getAllProperties"(): $Set<(StringJS)>
 public "storeMaterialItem"(property: StringJS, materialItem: $MaterialItemStorage$MaterialItem$$Type): void
 public "getMaterialItem"(property: StringJS): $MaterialItemStorage$MaterialItem
-public "remapStorage"(keyMapper: $Function$$Type<(StringJS), (StringJS)>): void
+public "getAllMaterialItems"(): $Set<($MaterialItemStorage$MaterialItem)>
+public "getAllMaterials"(): $Set<($BlockState)>
+public "getAllConsumedItems"(): $List<($ItemStack)>
 public "getMaterialMap"(): $Map<(StringJS), ($BlockState)>
 public "serializeSafe"(registries: $HolderLookup$Provider$$Type): $CompoundTag
 public static "create"(properties: $Set$$Type<(StringJS)>): $MaterialItemStorage
 public "deserialize"(tag: $CompoundTag$$Type, registries: $HolderLookup$Provider$$Type): boolean
 public "serialize"(registries: $HolderLookup$Provider$$Type): $CompoundTag
+get "allProperties"(): $Set<(StringJS)>
 get "allMaterialItems"(): $Set<($MaterialItemStorage$MaterialItem)>
 get "allMaterials"(): $Set<($BlockState)>
 get "allConsumedItems"(): $List<($ItemStack)>
-get "allProperties"(): $Set<(StringJS)>
 get "materialMap"(): $Map<(StringJS), ($BlockState)>
 }
 /**
@@ -931,10 +929,10 @@ import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$ItemRequirement} from "com.simibubi.create.content.schematics.requirement.ItemRequirement"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
 import {$Explosion$$Type} from "net.minecraft.world.level.Explosion"
-import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
-import {$ICopycatBlockEntity} from "com.copycatsplus.copycats.foundation.copycat.ICopycatBlockEntity"
+import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$BlockEntityType, $BlockEntityType$$Type} from "net.minecraft.world.level.block.entity.BlockEntityType"
+import {$ICopycatBlockEntity} from "com.copycatsplus.copycats.foundation.copycat.ICopycatBlockEntity"
 import {$Function$$Type} from "java.util.function.Function"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$Class} from "java.lang.Class"
@@ -972,6 +970,7 @@ static readonly "UPDATE_CLIENTS": integer
 
 constructor(pProperties: $BlockBehaviour$Properties$$Type)
 
+public "useWithoutItem"(state: $BlockState$$Type, level: $Level$$Type, pos: $BlockPos$$Type, player: $Player$$Type, hitResult: $BlockHitResult$$Type): $InteractionResult
 public "getExplosionResistance"(state: $BlockState$$Type, level: $BlockGetter$$Type, pos: $BlockPos$$Type, explosion: $Explosion$$Type): float
 public "setPlacedBy"(worldIn: $Level$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type, placer: $LivingEntity$$Type, stack: $ItemStack$$Type): void
 public "playerWillDestroy"(level: $Level$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type, player: $Player$$Type): $BlockState
@@ -979,7 +978,6 @@ public "canHarvestBlock"(state: $BlockState$$Type, level: $BlockGetter$$Type, po
 public "getEnchantPowerBonus"(state: $BlockState$$Type, level: $LevelReader$$Type, pos: $BlockPos$$Type): float
 public "canEntityDestroy"(state: $BlockState$$Type, level: $BlockGetter$$Type, pos: $BlockPos$$Type, entity: $Entity$$Type): boolean
 public "getAppearance"(state: $BlockState$$Type, level: $BlockAndTintGetter$$Type, pos: $BlockPos$$Type, side: $Direction$$Type, queryState: $BlockState$$Type, queryPos: $BlockPos$$Type): $BlockState
-public "useWithoutItem"(state: $BlockState$$Type, level: $Level$$Type, pos: $BlockPos$$Type, player: $Player$$Type, hitResult: $BlockHitResult$$Type): $InteractionResult
 public "getDestroyProgress"(pState: $BlockState$$Type, pPlayer: $Player$$Type, pLevel: $BlockGetter$$Type, pPos: $BlockPos$$Type): float
 public "getTicker"<S extends $BlockEntity>(level: $Level$$Type, state: $BlockState$$Type, type: $BlockEntityType$$Type<(S)>): $BlockEntityTicker<(S)>
 public "getBlockEntityType"(): $BlockEntityType<($CCCopycatBlockEntity)>
@@ -1004,6 +1002,10 @@ public "onBlockEntityUse"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2:
 public "onBlockEntityUseItemOn"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type, arg2: $Function$$Type<($CCCopycatBlockEntity), ($ItemInteractionResult$$Type)>): $ItemInteractionResult
 public "getBlockEntity"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type): $CCCopycatBlockEntity
 public static "onRemove"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): void
+public static "hidesNeighborFace"(level: $BlockGetter$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type, neighborState: $BlockState$$Type, dir: $Direction$$Type): boolean
+public "canOcclude"(level: $BlockGetter$$Type, state: $BlockState$$Type, pos: $BlockPos$$Type): boolean
+public "shapeCanOccludeNeighbor"(level: $BlockGetter$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type, neighborPos: $BlockPos$$Type, dir: $Direction$$Type): $Optional<(boolean)>
+public static "getAppearance"(block: $ICopycatBlock$$Type, state: $BlockState$$Type, level: $BlockAndTintGetter$$Type, pos: $BlockPos$$Type, side: $Direction$$Type, queryState: $BlockState$$Type, queryPos: $BlockPos$$Type): $BlockState
 public "isIgnoredConnectivitySide"(reader: $BlockAndTintGetter$$Type, fromState: $BlockState$$Type, face: $Direction$$Type, fromPos: $BlockPos$$Type, toPos: $BlockPos$$Type, toState: $BlockState$$Type): boolean
 public "canConnectTexturesToward"(reader: $BlockAndTintGetter$$Type, fromPos: $BlockPos$$Type, toPos: $BlockPos$$Type, fromState: $BlockState$$Type): boolean
 public "getAcceptedBlockState"(pLevel: $Level$$Type, pPos: $BlockPos$$Type, item: $ItemStack$$Type, face: $Direction$$Type): $BlockState
@@ -1015,10 +1017,6 @@ public "isCTEnabled"(state: $BlockState$$Type, level: $BlockAndTintGetter$$Type,
 public "toggleCT"(state: $BlockState$$Type, level: $Level$$Type, pos: $BlockPos$$Type, player: $Player$$Type, hitResult: $BlockHitResult$$Type): $InteractionResult
 public static "getRequiredItemsForLayer"(state: $BlockState$$Type, property: $IntegerProperty$$Type): $ItemRequirement
 public "checkConnection"(reader: $BlockAndTintGetter$$Type, fromPos: $BlockPos$$Type, toPos: $BlockPos$$Type, fromState: $BlockState$$Type): boolean
-public static "hidesNeighborFace"(level: $BlockGetter$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type, neighborState: $BlockState$$Type, dir: $Direction$$Type): boolean
-public "canOcclude"(level: $BlockGetter$$Type, state: $BlockState$$Type, pos: $BlockPos$$Type): boolean
-public "shapeCanOccludeNeighbor"(level: $BlockGetter$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type, neighborPos: $BlockPos$$Type, dir: $Direction$$Type): $Optional<(boolean)>
-public static "getAppearance"(block: $ICopycatBlock$$Type, state: $BlockState$$Type, level: $BlockAndTintGetter$$Type, pos: $BlockPos$$Type, side: $Direction$$Type, queryState: $BlockState$$Type, queryPos: $BlockPos$$Type): $BlockState
 public static "wrappedColor"(): $BlockColor
 public "onWrenched"(state: $BlockState$$Type, context: $UseOnContext$$Type): $InteractionResult
 public "onSneakWrenched"(state: $BlockState$$Type, context: $UseOnContext$$Type): $InteractionResult
@@ -1047,8 +1045,8 @@ import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
@@ -1092,20 +1090,20 @@ declare module "com.copycatsplus.copycats.foundation.copycat.WrappedCopycatBlock
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$Block$BlockStatePairKey} from "net.minecraft.world.level.block.Block$BlockStatePairKey"
 import {$CopycatBlock} from "com.simibubi.create.content.decoration.copycat.CopycatBlock"
+import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$IntegerProperty$$Type} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
-import {$Block} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$ItemRequirement} from "com.simibubi.create.content.schematics.requirement.ItemRequirement"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
-import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
+import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
-import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$ICopycatBlock, $ICopycatBlock$$Type} from "com.copycatsplus.copycats.foundation.copycat.ICopycatBlock"
+import {$MapCodec} from "com.mojang.serialization.MapCodec"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 
 export class $WrappedCopycatBlock extends $CopycatBlock {
@@ -1136,9 +1134,9 @@ public "getWrapped"(): $ICopycatBlock
 public static "onRemove"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): void
 public static "playRotateSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public static "playRemoveSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
-public static "getRequiredItemsForLayer"(state: $BlockState$$Type, property: $IntegerProperty$$Type): $ItemRequirement
 public static "hidesNeighborFace"(level: $BlockGetter$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type, neighborState: $BlockState$$Type, dir: $Direction$$Type): boolean
 public static "getAppearance"(block: $ICopycatBlock$$Type, state: $BlockState$$Type, level: $BlockAndTintGetter$$Type, pos: $BlockPos$$Type, side: $Direction$$Type, queryState: $BlockState$$Type, queryPos: $BlockPos$$Type): $BlockState
+public static "getRequiredItemsForLayer"(state: $BlockState$$Type, property: $IntegerProperty$$Type): $ItemRequirement
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 set "wrapped"(value: $ICopycatBlock$$Type)
 get "wrapped"(): $ICopycatBlock
@@ -1159,13 +1157,12 @@ import {$Optional} from "java.util.Optional"
 import {$IMultiStateCopycatBlock$$Type} from "com.copycatsplus.copycats.foundation.copycat.multistate.IMultiStateCopycatBlock"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$ItemRequirement} from "com.simibubi.create.content.schematics.requirement.ItemRequirement"
 import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
+import {$ItemRequirement} from "com.simibubi.create.content.schematics.requirement.ItemRequirement"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
-import {$ICopycatBlockEntity} from "com.copycatsplus.copycats.foundation.copycat.ICopycatBlockEntity"
+import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$ICopycatBlock$$Type} from "com.copycatsplus.copycats.foundation.copycat.ICopycatBlock"
@@ -1173,15 +1170,15 @@ import {$BlockColor} from "net.minecraft.client.color.block.BlockColor"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$ProperWaterloggedBlock$$Interface} from "com.simibubi.create.foundation.block.ProperWaterloggedBlock"
-import {$IntegerProperty$$Type} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$IntegerProperty$$Type} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
 import {$MultiStateCopycatBlock} from "com.copycatsplus.copycats.foundation.copycat.multistate.MultiStateCopycatBlock"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
 import {$BooleanProperty$$Type} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
-import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
+import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 
@@ -1214,17 +1211,16 @@ public static "withWater"(arg0: $LevelAccessor$$Type, arg1: $BlockState$$Type, a
 public "updateWater"(arg0: $LevelAccessor$$Type, arg1: $BlockState$$Type, arg2: $BlockPos$$Type): void
 public "fluidState"(arg0: $BlockState$$Type): $FluidState
 public "getPickupSound"(): $Optional<($SoundEvent)>
-public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "canPlaceLiquid"(arg0: $Player$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $Fluid$$Type): boolean
+public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "pickupBlock"(arg0: $Player$$Type, arg1: $LevelAccessor$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): $ItemStack
-public "getCopycatBlockEntity"(arg0: $BlockGetter$$Type, arg1: $BlockPos$$Type): $ICopycatBlockEntity
 public static "getAppearance"(block: $IMultiStateCopycatBlock$$Type, state: $BlockState$$Type, level: $BlockAndTintGetter$$Type, pos: $BlockPos$$Type, side: $Direction$$Type, queryState: $BlockState$$Type, queryPos: $BlockPos$$Type): $BlockState
-public static "wrappedColor"(): $BlockColor
 public static "getRequiredItemsForParts"(state: $BlockState$$Type, ...property: ($BooleanProperty$$Type)[]): $ItemRequirement
+public static "wrappedColor"(): $BlockColor
 public static "getMaterial"(reader: $BlockGetter$$Type, targetPos: $BlockPos$$Type, property: StringJS): $BlockState
 public static "onRemove"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): void
-public static "getRequiredItemsForLayer"(state: $BlockState$$Type, property: $IntegerProperty$$Type): $ItemRequirement
 public static "getAppearance"(block: $ICopycatBlock$$Type, state: $BlockState$$Type, level: $BlockAndTintGetter$$Type, pos: $BlockPos$$Type, side: $Direction$$Type, queryState: $BlockState$$Type, queryPos: $BlockPos$$Type): $BlockState
+public static "getRequiredItemsForLayer"(state: $BlockState$$Type, property: $IntegerProperty$$Type): $ItemRequirement
 public static "getMaterial"(reader: $BlockGetter$$Type, targetPos: $BlockPos$$Type): $BlockState
 public "getPickupSound"(arg0: $BlockState$$Type): $Optional<($SoundEvent)>
 public static "playRotateSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
@@ -1247,13 +1243,13 @@ import {$ItemStack} from "net.minecraft.world.item.ItemStack"
 import {$Optional} from "java.util.Optional"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
-import {$ItemRequirement} from "com.simibubi.create.content.schematics.requirement.ItemRequirement"
 import {$SoundEvent} from "net.minecraft.sounds.SoundEvent"
+import {$ItemRequirement} from "com.simibubi.create.content.schematics.requirement.ItemRequirement"
 import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$CCCopycatBlock} from "com.copycatsplus.copycats.foundation.copycat.CCCopycatBlock"
 import {$Player$$Type} from "net.minecraft.world.entity.player.Player"
-import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
+import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
 import {$ICopycatBlock$$Type} from "com.copycatsplus.copycats.foundation.copycat.ICopycatBlock"
@@ -1261,13 +1257,13 @@ import {$BlockColor} from "net.minecraft.client.color.block.BlockColor"
 import {$BlockState, $BlockState$$Type} from "net.minecraft.world.level.block.state.BlockState"
 import {$Object2ByteLinkedOpenHashMap} from "it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap"
 import {$ProperWaterloggedBlock$$Interface} from "com.simibubi.create.foundation.block.ProperWaterloggedBlock"
-import {$IntegerProperty$$Type} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
 import {$Block} from "net.minecraft.world.level.block.Block"
+import {$IntegerProperty$$Type} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
 import {$ThreadLocal} from "java.lang.ThreadLocal"
 import {$BlockGetter$$Type} from "net.minecraft.world.level.BlockGetter"
 import {$Fluid$$Type} from "net.minecraft.world.level.material.Fluid"
-import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$LevelAccessor$$Type} from "net.minecraft.world.level.LevelAccessor"
+import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 import {$BlockPlaceContext$$Type} from "net.minecraft.world.item.context.BlockPlaceContext"
 import {$MapCodec} from "com.mojang.serialization.MapCodec"
 
@@ -1300,13 +1296,13 @@ public static "withWater"(arg0: $LevelAccessor$$Type, arg1: $BlockState$$Type, a
 public "updateWater"(arg0: $LevelAccessor$$Type, arg1: $BlockState$$Type, arg2: $BlockPos$$Type): void
 public "fluidState"(arg0: $BlockState$$Type): $FluidState
 public "getPickupSound"(): $Optional<($SoundEvent)>
-public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "canPlaceLiquid"(arg0: $Player$$Type, arg1: $BlockGetter$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: $Fluid$$Type): boolean
+public "placeLiquid"(arg0: $LevelAccessor$$Type, arg1: $BlockPos$$Type, arg2: $BlockState$$Type, arg3: $FluidState$$Type): boolean
 public "pickupBlock"(arg0: $Player$$Type, arg1: $LevelAccessor$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): $ItemStack
 public static "onRemove"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type): void
-public static "getRequiredItemsForLayer"(state: $BlockState$$Type, property: $IntegerProperty$$Type): $ItemRequirement
 public static "hidesNeighborFace"(level: $BlockGetter$$Type, pos: $BlockPos$$Type, state: $BlockState$$Type, neighborState: $BlockState$$Type, dir: $Direction$$Type): boolean
 public static "getAppearance"(block: $ICopycatBlock$$Type, state: $BlockState$$Type, level: $BlockAndTintGetter$$Type, pos: $BlockPos$$Type, side: $Direction$$Type, queryState: $BlockState$$Type, queryPos: $BlockPos$$Type): $BlockState
+public static "getRequiredItemsForLayer"(state: $BlockState$$Type, property: $IntegerProperty$$Type): $ItemRequirement
 public static "wrappedColor"(): $BlockColor
 public static "playRotateSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void
 public static "playRemoveSound"(arg0: $Level$$Type, arg1: $BlockPos$$Type): void

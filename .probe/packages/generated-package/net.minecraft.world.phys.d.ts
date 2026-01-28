@@ -1,8 +1,8 @@
 declare module "net.minecraft.world.phys.shapes.CollisionContext" {
 import {$VoxelShape$$Type} from "net.minecraft.world.phys.shapes.VoxelShape"
 import {$Item$$Type} from "net.minecraft.world.item.Item"
-import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
+import {$Entity$$Type} from "net.minecraft.world.entity.Entity"
 import {$FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
 
 export interface $CollisionContext$$Interface {
@@ -120,10 +120,10 @@ import {$DiscreteVoxelShape$IntLineConsumer$$Type} from "net.minecraft.world.phy
 export class $DiscreteVoxelShape implements $DiscreteVSAccess$$Interface {
 public "firstFull"(arg0: $Direction$Axis$$Type, arg1: integer, arg2: integer): integer
 public "firstFull"(arg0: $Direction$Axis$$Type): integer
-public "lastFull"(arg0: $Direction$Axis$$Type): integer
-public "lastFull"(arg0: $Direction$Axis$$Type, arg1: integer, arg2: integer): integer
 public "forAllFaces"(arg0: $DiscreteVoxelShape$IntFaceConsumer$$Type): void
 public "getZSize"(): integer
+public "lastFull"(arg0: $Direction$Axis$$Type): integer
+public "lastFull"(arg0: $Direction$Axis$$Type, arg1: integer, arg2: integer): integer
 public "forAllBoxes"(arg0: $DiscreteVoxelShape$IntLineConsumer$$Type, arg1: boolean): void
 public "forAllEdges"(arg0: $DiscreteVoxelShape$IntLineConsumer$$Type, arg1: boolean): void
 public "isFullWide"(arg0: integer, arg1: integer, arg2: integer): boolean
@@ -154,12 +154,12 @@ import {$BlockHitResult} from "net.minecraft.world.phys.BlockHitResult"
 import {$Shapes$DoubleLineConsumer$$Type} from "net.minecraft.world.phys.shapes.Shapes$DoubleLineConsumer"
 import {$Optional} from "java.util.Optional"
 import {$List} from "java.util.List"
-import {$DoubleList} from "it.unimi.dsi.fastutil.doubles.DoubleList"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
+import {$DoubleList} from "it.unimi.dsi.fastutil.doubles.DoubleList"
 import {$OffsetVoxelShapeCache$$Interface} from "net.caffeinemc.mods.lithium.common.shapes.OffsetVoxelShapeCache"
 import {$VoxelShapeAccess$$Interface} from "malte0811.ferritecore.mixin.accessors.VoxelShapeAccess"
-import {$AxisCycle$$Type} from "net.minecraft.core.AxisCycle"
 import {$Direction$Axis$$Type} from "net.minecraft.core.Direction$Axis"
+import {$AxisCycle$$Type} from "net.minecraft.core.AxisCycle"
 import {$Vec3, $Vec3$$Type} from "net.minecraft.world.phys.Vec3"
 import {$DiscreteVoxelShape, $DiscreteVoxelShape$$Type} from "net.minecraft.world.phys.shapes.DiscreteVoxelShape"
 import {$BlockPos$$Type} from "net.minecraft.core.BlockPos"
@@ -319,26 +319,26 @@ constructor(arg0: $Vec3$$Type, arg1: $Vec3$$Type)
 constructor(arg0: $BlockPos$$Type)
 
 public static "encapsulatingFullBlocks"(arg0: $BlockPos$$Type, arg1: $BlockPos$$Type): $AABB
-public static "unitCubeFromLowerCorner"(arg0: $Vec3$$Type): $AABB
 public "setMinX"(arg0: double): $AABB
 public "setMinZ"(arg0: double): $AABB
 public "setMaxX"(arg0: double): $AABB
+public static "unitCubeFromLowerCorner"(arg0: $Vec3$$Type): $AABB
 public "setMaxY"(arg0: double): $AABB
 public "setMaxZ"(arg0: double): $AABB
 public "contract"(arg0: double, arg1: double, arg2: double): $AABB
 public "hasNaN"(): boolean
 public "getMinPosition"(): $Vec3
 public "getMaxPosition"(): $Vec3
-public "move"(arg0: $Vector3f$$Type): $AABB
-public "move"(arg0: double, arg1: double, arg2: double): $AABB
-public "move"(arg0: $Vec3$$Type): $AABB
-public "move"(arg0: $BlockPos$$Type): $AABB
 public "deflate"(arg0: double, arg1: double, arg2: double): $AABB
 public "deflate"(arg0: double): $AABB
-public "intersect"(arg0: $AABB$$Type): $AABB
+public "move"(arg0: $Vector3f$$Type): $AABB
+public "move"(arg0: $Vec3$$Type): $AABB
+public "move"(arg0: double, arg1: double, arg2: double): $AABB
+public "move"(arg0: $BlockPos$$Type): $AABB
 public "intersects"(arg0: double, arg1: double, arg2: double, arg3: double, arg4: double, arg5: double): boolean
 public "intersects"(arg0: $Vec3$$Type, arg1: $Vec3$$Type): boolean
 public "intersects"(arg0: $AABB$$Type): boolean
+public "intersect"(arg0: $AABB$$Type): $AABB
 public "equals"(arg0: any): boolean
 public "toString"(): StringJS
 public "hashCode"(): integer
@@ -420,9 +420,9 @@ export type $Vec2$$Type = ($Vec2);
  */
 export type $Vec2$$Original = $Vec2;}
 declare module "net.minecraft.world.phys.Vec3" {
+import {$Vec2$$Type} from "net.minecraft.world.phys.Vec2"
 import {$Direction$Axis$$Type} from "net.minecraft.core.Direction$Axis"
 import {$RandomSource$$Type} from "net.minecraft.util.RandomSource"
-import {$Vec2$$Type} from "net.minecraft.world.phys.Vec2"
 import {$Vec3i$$Type} from "net.minecraft.core.Vec3i"
 import {$Codec} from "com.mojang.serialization.Codec"
 import {$Direction$$Type} from "net.minecraft.core.Direction"
@@ -442,8 +442,8 @@ public "offsetRandom"(arg0: $RandomSource$$Type, arg1: float): $Vec3
 public static "atLowerCornerOf"(arg0: $Vec3i$$Type): $Vec3
 public static "atLowerCornerWithOffset"(arg0: $Vec3i$$Type, arg1: double, arg2: double, arg3: double): $Vec3
 public static "upFromBottomCenterOf"(arg0: $Vec3i$$Type, arg1: double): $Vec3
-public "relative"(arg0: $Direction$$Type, arg1: double): $Vec3
 public "normalize"(): $Vec3
+public "relative"(arg0: $Direction$$Type, arg1: double): $Vec3
 public "get"(arg0: $Direction$Axis$$Type): double
 public "equals"(arg0: any): boolean
 public "length"(): double
@@ -480,8 +480,8 @@ public "lengthSqr"(): double
 public "horizontalDistanceSqr"(): double
 public static "directionFromRotation"(arg0: $Vec2$$Type): $Vec3
 public static "directionFromRotation"(arg0: float, arg1: float): $Vec3
-public static "atCenterOf"(arg0: $Vec3i$$Type): $Vec3
 public static "fromRGB24"(arg0: integer): $Vec3
+public static "atCenterOf"(arg0: $Vec3i$$Type): $Vec3
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_

@@ -1,8 +1,8 @@
 declare module "io.redspace.ironsspellbooks.fluids.PotionFluidType" {
 import {$FluidType$Properties$$Type} from "net.neoforged.neoforge.fluids.FluidType$Properties"
 import {$FluidStack$$Type} from "net.neoforged.neoforge.fluids.FluidStack"
-import {$Lazy} from "net.neoforged.neoforge.common.util.Lazy"
 import {$Component} from "net.minecraft.network.chat.Component"
+import {$Lazy} from "net.neoforged.neoforge.common.util.Lazy"
 import {$FluidType} from "net.neoforged.neoforge.fluids.FluidType"
 
 export class $PotionFluidType extends $FluidType {
@@ -27,11 +27,10 @@ declare module "io.redspace.ironsspellbooks.fluids.NoopFluid" {
 import {$ReplacementMatch} from "dev.latvian.mods.kubejs.recipe.match.ReplacementMatch"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
 import {$IntegerProperty} from "net.minecraft.world.level.block.state.properties.IntegerProperty"
-import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$Item} from "net.minecraft.world.item.Item"
+import {$BooleanProperty} from "net.minecraft.world.level.block.state.properties.BooleanProperty"
 import {$BaseFlowingFluid$Properties$$Type} from "net.neoforged.neoforge.fluids.BaseFlowingFluid$Properties"
 import {$FluidState, $FluidState$$Type} from "net.minecraft.world.level.material.FluidState"
-import {$Holder} from "net.minecraft.core.Holder"
 import {$BaseFlowingFluid} from "net.neoforged.neoforge.fluids.BaseFlowingFluid"
 
 export class $NoopFluid extends $BaseFlowingFluid {
@@ -44,7 +43,6 @@ constructor(arg0: $BaseFlowingFluid$Properties$$Type)
 public "isSource"(arg0: $FluidState$$Type): boolean
 public "getBucket"(): $Item
 public "getAmount"(arg0: $FluidState$$Type): integer
-public "asHolder"(): $Holder
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 public static "wrap"(o: any): $ReplacementMatch
 get "bucket"(): $Item

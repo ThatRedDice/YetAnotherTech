@@ -6,12 +6,12 @@ import {$Tier$$Type} from "owmii.powah.block.Tier"
 import {$List$$Type} from "java.util.List"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$Component$$Type} from "net.minecraft.network.chat.Component"
-import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$Inventory$$Type} from "net.minecraft.world.entity.player.Inventory"
+import {$BlockBehaviour$Properties$$Type} from "net.minecraft.world.level.block.state.BlockBehaviour$Properties"
 import {$AbstractContainer} from "owmii.powah.lib.logistics.inventory.AbstractContainer"
 import {$EnergyBlockItem} from "owmii.powah.lib.item.EnergyBlockItem"
-import {$CreativeModeTab$$Type} from "net.minecraft.world.item.CreativeModeTab"
 import {$IdMapper} from "net.minecraft.core.IdMapper"
+import {$CreativeModeTab$$Type} from "net.minecraft.world.item.CreativeModeTab"
 import {$Item$Properties$$Type} from "net.minecraft.world.item.Item$Properties"
 import {$Item} from "net.minecraft.world.item.Item"
 import {$ResourceKey$$Type} from "net.minecraft.resources.ResourceKey"
@@ -57,8 +57,8 @@ public "newBlockEntity"(arg0: $BlockPos$$Type, arg1: $BlockState$$Type): $BlockE
 public "additionalEnergyInfo"(arg0: $ItemStack$$Type, arg1: $Energy$Item$$Type, arg2: $List$$Type<($Component$$Type)>): void
 public "getContainer"<T extends $AbstractTileEntity<(object), (object)>>(arg0: integer, arg1: $Inventory$$Type, arg2: $AbstractTileEntity$$Type, arg3: $BlockHitResult$$Type): $AbstractContainer
 public "getConfig"(): any
-public "getBlockItem"(arg0: $Item$Properties$$Type, arg1: $ResourceKey$$Type<($CreativeModeTab)>): $EnergyBlockItem
 public "onRemove"(arg0: $BlockState$$Type, arg1: $Level$$Type, arg2: $BlockPos$$Type, arg3: $BlockState$$Type, arg4: boolean): void
+public "getBlockItem"(arg0: $Item$Properties$$Type, arg1: $ResourceKey$$Type<($CreativeModeTab)>): $EnergyBlockItem
 public static "checkSpecialEquality"(arg1: any, arg2: any, arg3: boolean): boolean
 get "config"(): any
 }

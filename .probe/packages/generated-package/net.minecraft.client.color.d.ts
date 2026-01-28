@@ -1,7 +1,7 @@
 declare module "net.minecraft.client.color.block.BlockColors" {
 import {$Map} from "java.util.Map"
-import {$ReferenceSet} from "it.unimi.dsi.fastutil.objects.ReferenceSet"
 import {$Reference2ReferenceMap} from "it.unimi.dsi.fastutil.objects.Reference2ReferenceMap"
+import {$ReferenceSet} from "it.unimi.dsi.fastutil.objects.ReferenceSet"
 import {$Block, $Block$$Type} from "net.minecraft.world.level.block.Block"
 import {$Level$$Type} from "net.minecraft.world.level.Level"
 import {$BlockAndTintGetter$$Type} from "net.minecraft.world.level.BlockAndTintGetter"
@@ -77,9 +77,9 @@ constructor()
  * @deprecated
  */
 public "register"(arg0: $ItemColor$$Type, ...arg1: ($ItemLike$$Type)[]): void
+public "sodium$getColorProvider"(arg0: $ItemStack$$Type): $ItemColor
 public static "createDefault"(arg0: $BlockColors$$Type): $ItemColors
 public "getColor"(arg0: $ItemStack$$Type, arg1: integer): integer
-public "sodium$getColorProvider"(arg0: $ItemStack$$Type): $ItemColor
 }
 /**
  * Class-specific type exported by ProbeJS, use global Type_
