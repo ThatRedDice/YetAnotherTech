@@ -10,6 +10,8 @@
 !ftbquests/**
 !fancymenu/
 !fancymenu/**
+!mods/
+!mods/**
 !defaultconfigs/
 !defaultconfigs/**
 !patchouli_books/
