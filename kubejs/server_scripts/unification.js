@@ -7,14 +7,24 @@ ServerEvents.recipes(event => {
 
     // On traite les métaux MODDÉS (tout sauf fer/or/cuivre)
     materials.forEach(material => {
-        // Remplacer les entrées par des TAGS
-        event.replaceInput({}, `create:${material}_ingot`, `#c:ingots/${material}`)
-        event.replaceInput({}, `immersiveengineering:ingot_${material}`, `#c:ingots/${material}`)
-        event.replaceInput({}, `oritech:${material}_ingot`, `#c:ingots/${material}`)
-        event.replaceInput({}, `enderio:ingot_${material}`, `#c:ingots/${material}`)
+        // --- Remplacement des ENTRÉES (INPUTS) ---
+        // On vérifie que l'item existe AVANT de le remplacer pour éviter le crash
         
-        // Remplacer les sorties par EMENDATUS ENIGMATICA
-        // On vérifie d'abord que l'item cible existe (au cas où l'acier n'est pas là)
+        if (Item.of(`create:${material}_ingot`).id != 'minecraft:air') {
+            event.replaceInput({}, `create:${material}_ingot`, `#c:ingots/${material}`)
+        }
+        if (Item.of(`immersiveengineering:ingot_${material}`).id != 'minecraft:air') {
+            event.replaceInput({}, `immersiveengineering:ingot_${material}`, `#c:ingots/${material}`)
+        }
+        if (Item.of(`oritech:${material}_ingot`).id != 'minecraft:air') {
+            event.replaceInput({}, `oritech:${material}_ingot`, `#c:ingots/${material}`)
+        }
+        if (Item.of(`enderio:ingot_${material}`).id != 'minecraft:air') {
+            event.replaceInput({}, `enderio:ingot_${material}`, `#c:ingots/${material}`)
+        }
+        
+        // --- Remplacement des SORTIES (OUTPUTS) ---
+        // On force vers Emendatus Enigmatica SI l'item cible existe
         if (Item.of(`emendatusenigmatica:${material}_ingot`).id != 'minecraft:air') {
             event.replaceOutput({}, `#c:ingots/${material}`, `emendatusenigmatica:${material}_ingot`)
             event.replaceOutput({}, `#c:nuggets/${material}`, `emendatusenigmatica:${material}_nugget`)
@@ -26,21 +36,30 @@ ServerEvents.recipes(event => {
     })
 
     // --- CAS SPÉCIAUX : FER, OR, CUIVRE ---
-    // Pour eux, on ne touche qu'aux PLAQUES et POUSSIÈRES, pas aux lingots !
     const vanillaMaterials = ['iron', 'gold', 'copper']
     
     vanillaMaterials.forEach(material => {
-        // Unification des PLAQUES (Vital pour Create/IE)
-        event.replaceInput({}, `create:${material}_sheet`, `#c:plates/${material}`)
-        event.replaceInput({}, `immersiveengineering:plate_${material}`, `#c:plates/${material}`)
+        // Unification des PLAQUES
+        // Check Create
+        if (Item.of(`create:${material}_sheet`).id != 'minecraft:air') {
+            event.replaceInput({}, `create:${material}_sheet`, `#c:plates/${material}`)
+        }
+        // Check IE
+        if (Item.of(`immersiveengineering:plate_${material}`).id != 'minecraft:air') {
+            event.replaceInput({}, `immersiveengineering:plate_${material}`, `#c:plates/${material}`)
+        }
         
         if (Item.of(`emendatusenigmatica:${material}_plate`).id != 'minecraft:air') {
              event.replaceOutput({}, `#c:plates/${material}`, `emendatusenigmatica:${material}_plate`)
         }
 
-        // Unification des POUSSIÈRES (Vital pour EnderIO/Mekanism)
-        event.replaceInput({}, `immersiveengineering:dust_${material}`, `#c:dusts/${material}`)
-        event.replaceInput({}, `enderio:powder_${material}`, `#c:dusts/${material}`) // EnderIO appelle ça powder
+        // Unification des POUSSIÈRES
+        if (Item.of(`immersiveengineering:dust_${material}`).id != 'minecraft:air') {
+            event.replaceInput({}, `immersiveengineering:dust_${material}`, `#c:dusts/${material}`)
+        }
+        if (Item.of(`enderio:powder_${material}`).id != 'minecraft:air') {
+            event.replaceInput({}, `enderio:powder_${material}`, `#c:dusts/${material}`)
+        }
 
         if (Item.of(`emendatusenigmatica:${material}_dust`).id != 'minecraft:air') {
              event.replaceOutput({}, `#c:dusts/${material}`, `emendatusenigmatica:${material}_dust`)
