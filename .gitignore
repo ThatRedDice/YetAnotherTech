@@ -1,23 +1,21 @@
-# On ne garde que l'intelligence du pack
+# On ignore tout par défaut
 *
-!kubejs/
-!config/
-!ftbquests/
-!fancymenu/
-!defaultconfigs/
-!patchouli_books/
-!scripts/
-!.gitignore
 
-# On ignore tout le reste (le lourd)
-/mods/
-/saves/
-/world/
-/logs/
-/debug/
-/crash-reports/
-/screenshots/
-/resourcepacks/
-/shaderpacks/
-/bin/
-/natives/
+# On force la prise en compte des dossiers ET de leur contenu
+!kubejs/
+!kubejs/**
+!config/
+!config/**
+!ftbquests/
+!ftbquests/**
+!fancymenu/
+!fancymenu/**
+!defaultconfigs/
+!defaultconfigs/**
+!patchouli_books/
+!patchouli_books/**
+!scripts/
+!scripts/**
+
+# On ne s'ignore pas soi-même
+!.gitignore
