@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ThatRedDice/YetAnotherTech/main/config/fancymenu/assets/title.png" alt="YetAnotherTech" height="200">
+  <img src="https://raw.githubusercontent.com/ThatRedDice/YetAnotherTech/main/config/fancymenu/assets/title.png" alt="YetAnotherTech">
 </p>
 
 YetAnotherTech
