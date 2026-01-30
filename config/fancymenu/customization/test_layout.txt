@@ -1,0 +1,110 @@
+type = fancymenu_layout
+
+layout-meta {
+  identifier = test
+  render_custom_elements_behind_vanilla = false
+  last_edited_time = 1769804362449
+  is_enabled = true
+  randommode = false
+  randomgroup = 1
+  randomonlyfirsttime = false
+  layout_index = 0
+  [loading_requirement_container_meta:b28ca882-cb64-41b6-906c-78af4a8663cb-1769804325040] = [groups:][instances:]
+}
+
+customization {
+  action = backgroundoptions
+  keepaspectratio = false
+}
+
+scroll_list_customization {
+  preserve_scroll_list_header_footer_aspect_ratio = true
+  render_scroll_list_header_shadow = true
+  render_scroll_list_footer_shadow = true
+  show_scroll_list_header_footer_preview_in_editor = false
+  repeat_scroll_list_header_texture = false
+  repeat_scroll_list_footer_texture = false
+  show_screen_background_overlay_on_custom_background = false
+  apply_vanilla_background_blur = false
+}
+
+layout_action_executable_blocks {
+}
+
+element {
+  copy_client_player = false
+  playername = Steve
+  auto_skin = false
+  auto_cape = false
+  slim = true
+  parrot = false
+  parrot_left_shoulder = false
+  is_baby = false
+  body_movement = false
+  player_pose = standing
+  showname = true
+  head_follows_mouse = true
+  body_follows_mouse = true
+  body_x_rot_advanced_mode = false
+  body_y_rot_advanced_mode = false
+  body_z_rot_advanced_mode = false
+  head_x_rot_advanced_mode = false
+  head_y_rot_advanced_mode = false
+  head_z_rot_advanced_mode = false
+  left_arm_x_rot_advanced_mode = false
+  left_arm_y_rot_advanced_mode = false
+  left_arm_z_rot_advanced_mode = false
+  right_arm_x_rot_advanced_mode = false
+  right_arm_y_rot_advanced_mode = false
+  right_arm_z_rot_advanced_mode = false
+  left_leg_x_rot_advanced_mode = false
+  left_leg_y_rot_advanced_mode = false
+  left_leg_z_rot_advanced_mode = false
+  right_leg_x_rot_advanced_mode = false
+  right_leg_y_rot_advanced_mode = false
+  right_leg_z_rot_advanced_mode = false
+  left_hand_wearable = fancymenu_wearable_none_dummy:::false
+  right_hand_wearable = fancymenu_wearable_none_dummy:::false
+  head_wearable = fancymenu_wearable_none_dummy:::false
+  chest_wearable = fancymenu_wearable_none_dummy:::false
+  legs_wearable = fancymenu_wearable_none_dummy:::false
+  feet_wearable = fancymenu_wearable_none_dummy:::false
+  element_type = player_entity_v2
+  instance_identifier = 1fd906f9-0793-4ac5-bc5d-f803d5ade49a-1769803291287
+  appearance_delay = no_delay
+  appearance_delay_seconds = 1.0
+  fade_in_v2 = no_fading
+  fade_in_speed = 1.0
+  fade_out = no_fading
+  fade_out_speed = 1.0
+  base_opacity = 1.0
+  auto_sizing = false
+  auto_sizing_base_screen_width = 1920
+  auto_sizing_base_screen_height = 1011
+  sticky_anchor = false
+  anchor_point = mid-centered
+  x = -194
+  y = -143
+  width = 100
+  height = 300
+  stretch_x = false
+  stretch_y = false
+  stay_on_screen = true
+  element_loading_requirement_container_identifier = 572d54e5-068f-428b-ac89-24107a53e16f-1769803291287
+  [loading_requirement_container_meta:572d54e5-068f-428b-ac89-24107a53e16f-1769803291287] = [groups:][instances:]
+  enable_parallax = false
+  parallax_intensity_v2 = 0.5
+  invert_parallax = false
+  animated_offset_x = 0
+  animated_offset_y = 0
+  load_once_per_session = false
+  in_editor_color = #FFC800FF
+  layer_hidden_in_editor = false
+  rotation_degrees = 0.0
+  advanced_rotation_mode = false
+  vertical_tilt_degrees = 0.0
+  advanced_vertical_tilt_mode = false
+  horizontal_tilt_degrees = 0.0
+  advanced_horizontal_tilt_mode = false
+}
+
