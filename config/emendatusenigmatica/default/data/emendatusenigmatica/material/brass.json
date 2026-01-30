@@ -1,0 +1,12 @@
+{
+  "id": "emendatusenigmatica:brass",
+  "source": "vanilla",
+  "localizedName": "Brass",
+  "processedType": "ingot",
+  "color": "eeb650",
+  "properties": {
+    "materialType": "alloy",
+    "harvestLevel": "iron"
+  },
+  "strata": []
+}

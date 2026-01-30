@@ -1,0 +1,15 @@
+{
+  "id": "emendatusenigmatica:zinc",
+  "source": "vanilla",
+  "localizedName": "Zinc",
+  "processedType": "ingot",
+  "color": "a59c76",
+  "properties": {
+    "materialType": "metal",
+    "harvestLevel": "iron"
+  },
+  "strata": [
+    "minecraft:stone",
+    "minecraft:deepslate"
+  ]
+}
