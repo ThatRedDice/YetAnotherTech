@@ -1,0 +1,13 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "creative_items"
+	group: "725BFA36BD129655"
+	icon: {
+		id: "create:creative_motor"
+	}
+	id: "079557F1AE878202"
+	order_index: 0
+	quest_links: [ ]
+	quests: [ ]
+}

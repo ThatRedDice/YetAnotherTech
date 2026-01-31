@@ -1,0 +1,42 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "just_hammers"
+	group: "46A126354F719389"
+	icon: {
+		id: "justhammers:iron_hammer"
+	}
+	id: "6696BCCBE67D9227"
+	order_index: 1
+	quest_links: [ ]
+	quests: [
+		{
+			id: "63E6956407C8DEB4"
+			rewards: [{
+				id: "5F4C5080E65D159E"
+				item: {
+					count: 1
+					id: "minecraft:iron_ingot"
+				}
+				type: "item"
+			}]
+			tasks: [{
+				id: "59D282FE3F01DBD4"
+				item: { count: 1, id: "justhammers:iron_hammer" }
+				type: "item"
+			}]
+			x: 0.5d
+			y: -0.5d
+		}
+		{
+			id: "4AAE77021D55DB38"
+			tasks: [{
+				id: "10618FE9F3F589A0"
+				item: { count: 1, id: "justhammers:diamond_hammer" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: -0.5d
+		}
+	]
+}

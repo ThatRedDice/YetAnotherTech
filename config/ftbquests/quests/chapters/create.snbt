@@ -1,0 +1,46 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "create"
+	group: "46A126354F719389"
+	icon: {
+		id: "create:andesite_alloy"
+	}
+	id: "0B3FC5D18C9669AD"
+	order_index: 0
+	quest_links: [ ]
+	quests: [
+		{
+			icon: {
+				id: "create:andesite_alloy"
+			}
+			id: "0C2FA3CA7DAF0150"
+			rewards: [{
+				id: "772060710FD1274D"
+				item: {
+					count: 1
+					id: "create:andesite_alloy"
+				}
+				type: "item"
+			}]
+			tasks: [{
+				count: 6L
+				id: "690A59815CE76EEF"
+				item: { count: 1, id: "create:andesite_alloy" }
+				type: "item"
+			}]
+			x: -2.0d
+			y: -0.5d
+		}
+		{
+			id: "1BEBFB29E9D14C7F"
+			size: 1.5d
+			tasks: [{
+				id: "20AF67D446CF9B33"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+	]
+}

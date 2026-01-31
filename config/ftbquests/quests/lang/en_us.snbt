@@ -1,0 +1,68 @@
+{
+	chapter.079557F1AE878202.title: "Creative Items"
+	chapter.0B3FC5D18C9669AD.title: "Create"
+	chapter.11296A3FB8B0D18A.title: "Simply Swords"
+	chapter.1C57CAADDCD48F86.title: "Tom's Simple Storage"
+	chapter.1FF9276B5DCEAD38.title: "Sophisticated Backpacks"
+	chapter.2D32E810CE8736D1.title: "Introduction"
+	chapter.3CD3CB112DD2465B.title: "Utility Items"
+	chapter.6696BCCBE67D9227.title: "Just Hammers"
+	chapter_group.04E777226C2D593C.title: "Age 2"
+	chapter_group.46A126354F719389.title: "Age 1: The Kinetic Age"
+	chapter_group.543AD3C7DF7C378E.title: "Age 5"
+	chapter_group.725BFA36BD129655.title: "Age 6"
+	chapter_group.78F0E1037A070632.title: "Age 3"
+	chapter_group.7AB375FFE2F3B06F.title: "Age 4"
+	quest.0719F3C1C7E7F953.quest_desc: ["This backpack can hold 5 rows of 9 inventory slots and 1 upgrade slot."]
+	quest.0719F3C1C7E7F953.quest_subtitle: "Copper Tier"
+	quest.0719F3C1C7E7F953.title: "A bit better"
+	quest.0AB0397DB9A66212.quest_desc: ["Hey, welcome to my modpack"]
+	quest.1947D723A75DD7C8.title: "Simply Swords"
+	quest.1DD0AAAD74ACC2B9.quest_subtitle: "Multiplies number of stack in a slot by 16"
+	quest.32BA623BB18FD7DB.quest_desc: ["This backpack can hold 9 rows of 9 inventory slots and 3 upgrade slots."]
+	quest.32BA623BB18FD7DB.quest_subtitle: "Gold Tier"
+	quest.39EB91C0ED2ED40A.quest_desc: ["This backpack can hold 9 rows of 12 inventory slots and 5 upgrade slots."]
+	quest.39EB91C0ED2ED40A.quest_subtitle: "Diamond Tier"
+	quest.41BC323A3F3A7ECF.quest_subtitle: "Multiplies number of stack in a slot by 4"
+	quest.50D9C4D587FD768B.quest_desc: [
+		"This is the final backpack tier in &lSophisticated Backpack&r."
+		""
+		"This backpack can hold 10 rows of 12 inventory slots and 7 upgrade slots."
+	]
+	quest.50D9C4D587FD768B.quest_subtitle: "Netherite Tier"
+	quest.50D9C4D587FD768B.title: "The most sophisticated backpack"
+	quest.55658A72F8180D7C.quest_subtitle: "Multiplies number of stack in a slot by 8"
+	quest.568B2F75299C49C0.quest_subtitle: "Multiplies number of stack in a slot by 2"
+	quest.5A37D8A1F8D4C509.quest_desc: [
+		"This is the first backpack you'll make"
+		"This backpack can hold 3 rows of 9 inventory slots and 1 upgrade slot."
+	]
+	quest.5A37D8A1F8D4C509.quest_subtitle: "Basic Tier"
+	quest.5A37D8A1F8D4C509.title: "Your first backpack"
+	quest.5AEEC5CD984D4618.quest_subtitle: "Multiplies number of stack in a slot by 1.5"
+	quest.5B42BB010A9215DB.quest_desc: [
+		"Looking for a way to find rare biome easier?"
+		"Use the &lNature Compass&r!"
+	]
+	quest.5B42BB010A9215DB.quest_subtitle: "Find biomes easily"
+	quest.62A307BEB74438BA.quest_desc: ["In this chapter, you'll find items that are not required for progression, but can be useful."]
+	quest.7100F616DDC0FE4F.quest_desc: [
+		"The Nature Compass younger brother."
+		"Find structures like &lvillages&r easily."
+	]
+	quest.7100F616DDC0FE4F.quest_subtitle: "Find structures easily"
+	quest.7458DA6B27B4DA2A.quest_subtitle: "Multiplies number of stack in a slot by 33k"
+	quest.79E747358B5207A9.quest_desc: [
+		"Backpacks will be the first form of portable storage you'll use on your adventures."
+		"There are multiples tier of backpacks, ranging from the &lleather&r backpack to the &lnetherite&r backpack."
+		""
+		"There are also a lot of upgrades like the &lFeeding Upgrade&r (to automatically eat when hungry) or the &lMagnet Upgrade&r (to attract nearby dropped items in your inventory)"
+	]
+	quest.79E747358B5207A9.quest_subtitle: "More inventory slots"
+	quest.79E747358B5207A9.title: "Backpacks"
+	quest.7CA58858D39E55D6.quest_desc: ["This backpack can hold 6 rows of 9 inventory slots and 2 upgrade slots."]
+	quest.7CA58858D39E55D6.quest_subtitle: "Iron Tier"
+	task.27977524E151B56A.title: "e"
+	task.68DA8817D4DA8EE9.title: "Utility Items"
+	task.7BCAFE912926BD04.title: "Tom's"
+}

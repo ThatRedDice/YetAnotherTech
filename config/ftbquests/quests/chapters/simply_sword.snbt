@@ -1,0 +1,22 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "simply_sword"
+	group: "46A126354F719389"
+	icon: {
+		id: "simplyswords:iron_longsword"
+	}
+	id: "11296A3FB8B0D18A"
+	order_index: 3
+	quest_links: [ ]
+	quests: [{
+		id: "1947D723A75DD7C8"
+		size: 1.5d
+		tasks: [{
+			id: "668AEB796E31657C"
+			type: "checkmark"
+		}]
+		x: 0.0d
+		y: 0.0d
+	}]
+}

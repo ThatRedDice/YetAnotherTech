@@ -1,0 +1,17 @@
+filename = 'croptopia_1.21.1_NEO-FORGE-4.2.1.jar'
+name = 'Croptopia'
+side = 'server'
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.21.1' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = 'croptopia_1.21.1_NEO-FORGE-4.2.1.jar'
+
+[download]
+hash = '0a4c4194bd5ec559c073531be87dded3e57a4f55'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 6788725
+project-id = 415438

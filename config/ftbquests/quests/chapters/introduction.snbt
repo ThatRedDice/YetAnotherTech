@@ -1,0 +1,23 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "introduction"
+	group: ""
+	id: "2D32E810CE8736D1"
+	order_index: 0
+	quest_links: [ ]
+	quests: [{
+		id: "0AB0397DB9A66212"
+		rewards: [{
+			id: "1B4E37299CB9ADE8"
+			type: "xp"
+			xp: 50
+		}]
+		tasks: [{
+			id: "27977524E151B56A"
+			type: "checkmark"
+		}]
+		x: -0.5d
+		y: -0.5d
+	}]
+}

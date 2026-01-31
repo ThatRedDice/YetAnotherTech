@@ -1,0 +1,61 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "utility_items"
+	group: "46A126354F719389"
+	icon: {
+		id: "immersive_aircraft:industrial_gears"
+	}
+	id: "3CD3CB112DD2465B"
+	order_index: 5
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["62A307BEB74438BA"]
+			id: "5B42BB010A9215DB"
+			rewards: [{
+				id: "2238FBCFFFA61137"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "22E831B172F9C0B0"
+				item: { count: 1, id: "naturescompass:naturescompass" }
+				type: "item"
+			}]
+			x: -1.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["62A307BEB74438BA"]
+			id: "7100F616DDC0FE4F"
+			rewards: [{
+				id: "3F27ED6BB1FA3F8A"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "1ED661594054239A"
+				item: { count: 1, id: "explorerscompass:explorerscompass" }
+				type: "item"
+			}]
+			x: 1.0d
+			y: 1.5d
+		}
+		{
+			id: "62A307BEB74438BA"
+			rewards: [{
+				id: "4C68DEA88E11CF38"
+				type: "xp"
+				xp: 20
+			}]
+			size: 1.5d
+			tasks: [{
+				id: "68DA8817D4DA8EE9"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+	]
+}

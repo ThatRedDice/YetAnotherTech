@@ -1,0 +1,22 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "toms_simple_storage"
+	group: "46A126354F719389"
+	icon: {
+		id: "toms_storage:wireless_terminal"
+	}
+	id: "1C57CAADDCD48F86"
+	order_index: 2
+	quest_links: [ ]
+	quests: [{
+		id: "361892AE38B82900"
+		size: 1.5d
+		tasks: [{
+			id: "7BCAFE912926BD04"
+			type: "checkmark"
+		}]
+		x: 0.0d
+		y: 0.0d
+	}]
+}
