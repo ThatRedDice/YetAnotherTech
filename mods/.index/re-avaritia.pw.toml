@@ -1,0 +1,17 @@
+filename = 'Re-Avaritia-neoforge-1.21.1-1.3.9.4-release.jar'
+name = 'Re:Avaritia'
+side = 'both'
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.21.1', '1.21.1' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = '1.3.9.4'
+
+[download]
+hash = '9bf15da455f9fa3470ffbedfa7557cb8959781607daf46da037e17cb658a227a470c8f7c552aa0a1aff6588abb16f8f210e8c8bd1bb803d92aea928bdf8e270e'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/QeB3NRC5/versions/3HxJp7ti/Re-Avaritia-neoforge-1.21.1-1.3.9.4-release.jar'
+
+[update.modrinth]
+mod-id = 'QeB3NRC5'
+version = '3HxJp7ti'
