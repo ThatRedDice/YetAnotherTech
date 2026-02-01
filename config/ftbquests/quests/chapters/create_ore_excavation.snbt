@@ -1,0 +1,13 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "create_ore_excavation"
+	group: "46A126354F719389"
+	icon: {
+		id: "createoreexcavation:drill"
+	}
+	id: "7A567CE32162E1BF"
+	order_index: 1
+	quest_links: [ ]
+	quests: [ ]
+}

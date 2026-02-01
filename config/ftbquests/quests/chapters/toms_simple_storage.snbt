@@ -7,16 +7,71 @@
 		id: "toms_storage:wireless_terminal"
 	}
 	id: "1C57CAADDCD48F86"
-	order_index: 2
+	order_index: 3
 	quest_links: [ ]
-	quests: [{
-		id: "361892AE38B82900"
-		size: 1.5d
-		tasks: [{
-			id: "7BCAFE912926BD04"
-			type: "checkmark"
-		}]
-		x: 0.0d
-		y: 0.0d
-	}]
+	quests: [
+		{
+			id: "361892AE38B82900"
+			size: 1.5d
+			tasks: [{
+				id: "7BCAFE912926BD04"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["361892AE38B82900"]
+			id: "692D3BDD8013E8A4"
+			rewards: [{
+				id: "52477D876A47705F"
+				item: {
+					count: 1
+					id: "minecraft:iron_ingot"
+				}
+				type: "item"
+			}]
+			tasks: [{
+				id: "12FCC5C9BBC1601C"
+				item: { count: 1, id: "toms_storage:storage_terminal" }
+				type: "item"
+			}]
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["692D3BDD8013E8A4"]
+			id: "2D41432171BA706F"
+			optional: true
+			tasks: [{
+				id: "6310C19C54FA3411"
+				item: { count: 1, id: "create:item_vault" }
+				type: "item"
+			}]
+			x: 3.5d
+			y: -3.0d
+		}
+		{
+			dependencies: ["692D3BDD8013E8A4"]
+			id: "4B3F950E0D1A8ECF"
+			tasks: [{
+				id: "2C600EB43271BF17"
+				item: { count: 1, id: "toms_storage:inventory_connector" }
+				type: "item"
+			}]
+			x: 3.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["4B3F950E0D1A8ECF"]
+			id: "09E81A165D322AE3"
+			tasks: [{
+				id: "62ACB6DA1D148FEB"
+				item: { count: 1, id: "toms_storage:trim" }
+				type: "item"
+			}]
+			x: 5.0d
+			y: 0.0d
+		}
+	]
 }

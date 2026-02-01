@@ -29,8 +29,8 @@
 				item: { count: 1, id: "create:andesite_alloy" }
 				type: "item"
 			}]
-			x: -2.0d
-			y: -0.5d
+			x: 0.0d
+			y: 1.5d
 		}
 		{
 			id: "1BEBFB29E9D14C7F"

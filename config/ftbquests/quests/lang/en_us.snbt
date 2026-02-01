@@ -5,25 +5,46 @@
 	chapter.1C57CAADDCD48F86.title: "Tom's Simple Storage"
 	chapter.1FF9276B5DCEAD38.title: "Sophisticated Backpacks"
 	chapter.2D32E810CE8736D1.title: "Introduction"
+	chapter.383EFD2C97A0D14B.title: "Croptopia"
 	chapter.3CD3CB112DD2465B.title: "Utility Items"
+	chapter.4E2CAAA554F175B9.title: "Hats"
 	chapter.6696BCCBE67D9227.title: "Just Hammers"
+	chapter.7A567CE32162E1BF.title: "Create: Ore Excavation"
 	chapter_group.04E777226C2D593C.title: "Age 2"
 	chapter_group.46A126354F719389.title: "Age 1: The Kinetic Age"
 	chapter_group.543AD3C7DF7C378E.title: "Age 5"
+	chapter_group.6BDE41B1901704A3.title: "Others"
 	chapter_group.725BFA36BD129655.title: "Age 6"
 	chapter_group.78F0E1037A070632.title: "Age 3"
 	chapter_group.7AB375FFE2F3B06F.title: "Age 4"
 	quest.0719F3C1C7E7F953.quest_desc: ["This backpack can hold 5 rows of 9 inventory slots and 1 upgrade slot."]
 	quest.0719F3C1C7E7F953.quest_subtitle: "Copper Tier"
 	quest.0719F3C1C7E7F953.title: "A bit better"
+	quest.09E81A165D322AE3.quest_desc: ["The inventory trim can be placed next to the inventory connector."]
 	quest.0AB0397DB9A66212.quest_desc: ["Hey, welcome to my modpack"]
+	quest.15D7DA88EBF395F5.quest_subtitle: "Get access to a crafting table in your backpack"
 	quest.1947D723A75DD7C8.title: "Simply Swords"
+	quest.1BEBFB29E9D14C7F.title: "Create"
 	quest.1DD0AAAD74ACC2B9.quest_subtitle: "Multiplies number of stack in a slot by 16"
+	quest.2433F02940F84A87.quest_subtitle: "Your backpack cannot be destroyed anymore"
+	quest.2D41432171BA706F.quest_desc: [
+		"Bored of those plain chest?"
+		"Just make a item vault."
+		""
+		"Just place a terminal on it and you can use it as an insane storage unit, up to 131k items in storage."
+	]
 	quest.32BA623BB18FD7DB.quest_desc: ["This backpack can hold 9 rows of 9 inventory slots and 3 upgrade slots."]
 	quest.32BA623BB18FD7DB.quest_subtitle: "Gold Tier"
+	quest.361892AE38B82900.quest_desc: ["Tom's Simple Storage, while not being as powerful as AE2, is a very good choice of storage early game."]
+	quest.361892AE38B82900.title: "Tom's Simple Storage"
 	quest.39EB91C0ED2ED40A.quest_desc: ["This backpack can hold 9 rows of 12 inventory slots and 5 upgrade slots."]
 	quest.39EB91C0ED2ED40A.quest_subtitle: "Diamond Tier"
 	quest.41BC323A3F3A7ECF.quest_subtitle: "Multiplies number of stack in a slot by 4"
+	quest.4B3F950E0D1A8ECF.quest_desc: [
+		"The &linventory connector&r can be placed behind the &lstorage terminal&r to connect all the storage block that touch it."
+		""
+		"You need to use inventory trim to increase it size."
+	]
 	quest.50D9C4D587FD768B.quest_desc: [
 		"This is the final backpack tier in &lSophisticated Backpack&r."
 		""
@@ -46,12 +67,20 @@
 	]
 	quest.5B42BB010A9215DB.quest_subtitle: "Find biomes easily"
 	quest.62A307BEB74438BA.quest_desc: ["In this chapter, you'll find items that are not required for progression, but can be useful."]
+	quest.6438C2E806884532.quest_subtitle: "Put backpacks in backpacks, like in da matrix"
+	quest.692D3BDD8013E8A4.quest_desc: [
+		"The storage terminal is the core of this storage system."
+		""
+		"However, with only the storage teminal, you will only be able to connect &lone&r storage block, the one behind the terminal. "
+		"To connect more storage, you'll need to use an &lInventory Connector&r and &lInventory Trims&r. "
+	]
 	quest.7100F616DDC0FE4F.quest_desc: [
 		"The Nature Compass younger brother."
 		"Find structures like &lvillages&r easily."
 	]
 	quest.7100F616DDC0FE4F.quest_subtitle: "Find structures easily"
 	quest.7458DA6B27B4DA2A.quest_subtitle: "Multiplies number of stack in a slot by 33k"
+	quest.7783DE7DD0C36E97.quest_subtitle: "Store electricity in your backpack"
 	quest.79E747358B5207A9.quest_desc: [
 		"Backpacks will be the first form of portable storage you'll use on your adventures."
 		"There are multiples tier of backpacks, ranging from the &lleather&r backpack to the &lnetherite&r backpack."
@@ -62,6 +91,7 @@
 	quest.79E747358B5207A9.title: "Backpacks"
 	quest.7CA58858D39E55D6.quest_desc: ["This backpack can hold 6 rows of 9 inventory slots and 2 upgrade slots."]
 	quest.7CA58858D39E55D6.quest_subtitle: "Iron Tier"
+	quest.7E98D2C496A76D5C.quest_subtitle: "Store liquid in your backpack"
 	task.27977524E151B56A.title: "e"
 	task.68DA8817D4DA8EE9.title: "Utility Items"
 	task.7BCAFE912926BD04.title: "Tom's"
