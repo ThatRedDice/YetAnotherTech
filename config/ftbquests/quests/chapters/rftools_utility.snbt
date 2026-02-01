@@ -1,0 +1,13 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "rftools_utility"
+	group: "78F0E1037A070632"
+	icon: {
+		id: "rftoolsutility:crafter1"
+	}
+	id: "2CC0BA21141E98C5"
+	order_index: 5
+	quest_links: [ ]
+	quests: [ ]
+}

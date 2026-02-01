@@ -1,0 +1,13 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "industrial_foregoing_064CDD13B20D7FA5"
+	group: "543AD3C7DF7C378E"
+	icon: {
+		id: "industrialforegoing:mob_duplicator"
+	}
+	id: "064CDD13B20D7FA5"
+	order_index: 2
+	quest_links: [ ]
+	quests: [ ]
+}

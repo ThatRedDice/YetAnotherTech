@@ -1,0 +1,13 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "reavaritia"
+	group: "725BFA36BD129655"
+	icon: {
+		id: "avaritia:infinity_catalyst"
+	}
+	id: "506D2250ACEB3461"
+	order_index: 0
+	quest_links: [ ]
+	quests: [ ]
+}

@@ -3,8 +3,11 @@
 	default_quest_shape: ""
 	filename: "croptopia"
 	group: "6BDE41B1901704A3"
+	icon: {
+		id: "croptopia:knife"
+	}
 	id: "383EFD2C97A0D14B"
-	order_index: 0
+	order_index: 1
 	quest_links: [ ]
 	quests: [ ]
 }

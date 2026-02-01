@@ -34,6 +34,7 @@
 		}
 		{
 			id: "1BEBFB29E9D14C7F"
+			shape: "gear"
 			size: 1.5d
 			tasks: [{
 				id: "20AF67D446CF9B33"

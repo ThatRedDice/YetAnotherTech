@@ -1,0 +1,17 @@
+filename = 'kubejs_enderio-neoforge-1.21.1-0.11.0.jar'
+name = 'KubeJS EnderIO'
+side = ''
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.21.1', '1.21.1' ]
+x-prismlauncher-release-type = 'beta'
+x-prismlauncher-version-number = '1.21.1-0.11.0+neoforge'
+
+[download]
+hash = '75f2fe36cb79cdd2a3c0db8cc61f644d7ef8f25b0827db641d77c7e043c21930b2f0782e839f59a819339f89a4648270a3f3d30df018ce8db5f8e650d5fe3fae'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/BotkzaBk/versions/AMmx05A5/kubejs_enderio-neoforge-1.21.1-0.11.0.jar'
+
+[update.modrinth]
+mod-id = 'BotkzaBk'
+version = 'AMmx05A5'

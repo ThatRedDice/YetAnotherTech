@@ -12,6 +12,7 @@
 	quests: [
 		{
 			id: "361892AE38B82900"
+			shape: "gear"
 			size: 1.5d
 			tasks: [{
 				id: "7BCAFE912926BD04"

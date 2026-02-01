@@ -1,0 +1,13 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "draconic_evolution"
+	group: "543AD3C7DF7C378E"
+	icon: {
+		id: "draconicevolution:awakened_core"
+	}
+	id: "45941B8D5E95DD7E"
+	order_index: 0
+	quest_links: [ ]
+	quests: [ ]
+}

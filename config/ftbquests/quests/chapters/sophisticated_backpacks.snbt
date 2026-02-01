@@ -17,6 +17,7 @@
 				type: "xp"
 				xp: 30
 			}]
+			shape: "gear"
 			size: 1.75d
 			tasks: [{
 				id: "0C9FD10A502BA4DA"

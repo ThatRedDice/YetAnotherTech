@@ -1,0 +1,13 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "stellaris"
+	group: "7AB375FFE2F3B06F"
+	icon: {
+		id: "stellaris:moon_globe"
+	}
+	id: "32E725082AEC7D64"
+	order_index: 2
+	quest_links: [ ]
+	quests: [ ]
+}

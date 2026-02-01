@@ -1,0 +1,42 @@
+filename = 'Structory_1.21.x_v1.3.14.jar'
+name = 'Structory'
+side = ''
+x-prismlauncher-loaders = [ 'neoforge', 'forge', 'quilt', 'fabric' ]
+x-prismlauncher-mc-versions = [
+    '1.21',
+    '1.21',
+    '1.21.1',
+    '1.21.1',
+    '1.21.10',
+    '1.21.10',
+    '1.21.11',
+    '1.21.11',
+    '1.21.2',
+    '1.21.2',
+    '1.21.3',
+    '1.21.3',
+    '1.21.4',
+    '1.21.4',
+    '1.21.5',
+    '1.21.5',
+    '1.21.6',
+    '1.21.6',
+    '1.21.7',
+    '1.21.7',
+    '1.21.8',
+    '1.21.8',
+    '1.21.9',
+    '1.21.9'
+]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = '1.3.14'
+
+[download]
+hash = '0aa3b4e31f851a0136eb672dc87c629db0fdaf2dd4a943c5dde7518b45fd733c7077c128b5d7fba674657d29ff09268040ab7d2c82a57414a22a2ea163ad8149'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/aKCwCJlY/versions/MXU49bpN/Structory_1.21.x_v1.3.14.jar'
+
+[update.modrinth]
+mod-id = 'aKCwCJlY'
+version = 'MXU49bpN'

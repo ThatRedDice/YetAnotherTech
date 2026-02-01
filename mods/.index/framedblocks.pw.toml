@@ -1,0 +1,17 @@
+filename = 'FramedBlocks-10.5.1.jar'
+name = 'FramedBlocks'
+side = ''
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.21.1', '1.21.1' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = '10.5.1'
+
+[download]
+hash = '51cca270b93fd3180f25c0f8ceb00e8d7cba4829556e71d5535179d64d3db79268bd7630c040d599cb4e4cdfb24ca3c1b3fa039933e382a97279a6824d642b4c'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/wbgfS34j/versions/q6hnNGtC/FramedBlocks-10.5.1.jar'
+
+[update.modrinth]
+mod-id = 'wbgfS34j'
+version = 'q6hnNGtC'

@@ -1,0 +1,17 @@
+filename = 'createdeco-2.1.2-1.21.1-neo.jar'
+name = 'Create Deco'
+side = ''
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.21.1', '1.21.1' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = '2.1.2'
+
+[download]
+hash = 'c600f15ce173b01f86aed12d40d97c11298d63c0f707f83e5a1f14129cefd45c15ea28642b23b7847033fdd3d36c61b0a13db6e96b060d55ea778178103b4b09'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/sMvUb4Rb/versions/k95JcfbJ/createdeco-2.1.2-1.21.1-neo.jar'
+
+[update.modrinth]
+mod-id = 'sMvUb4Rb'
+version = 'k95JcfbJ'

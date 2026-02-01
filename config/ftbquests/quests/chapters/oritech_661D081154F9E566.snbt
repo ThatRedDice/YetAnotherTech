@@ -1,0 +1,13 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "oritech_661D081154F9E566"
+	group: "543AD3C7DF7C378E"
+	icon: {
+		id: "oritech:accelerator_controller"
+	}
+	id: "661D081154F9E566"
+	order_index: 1
+	quest_links: [ ]
+	quests: [ ]
+}

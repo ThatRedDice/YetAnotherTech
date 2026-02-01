@@ -1,0 +1,17 @@
+filename = 'ExplorersCompass-1.21.1-3.0.3-neoforge.jar'
+name = "Explorer's Compass"
+side = ''
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.21.1', '1.21.1' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = '1.21.1-3.0.3-neoforge'
+
+[download]
+hash = 'd5253aeeede02ad97f0abdadfd0ce67d98845a37c1fc02c5933f81a218c81f8d4d82b22403140842933baa0beeee05ea8223bf3f28f0d0bafb5058e5472bcbe4'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/RV1qfVQ8/versions/EpWAw9bz/ExplorersCompass-1.21.1-3.0.3-neoforge.jar'
+
+[update.modrinth]
+mod-id = 'RV1qfVQ8'
+version = 'EpWAw9bz'

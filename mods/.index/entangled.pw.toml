@@ -1,0 +1,17 @@
+filename = 'entangled-1.3.20a-neoforge-mc1.21.jar'
+name = 'Entangled'
+side = ''
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.21', '1.21', '1.21.1', '1.21.1' ]
+x-prismlauncher-release-type = 'beta'
+x-prismlauncher-version-number = '1.3.20a-neoforge-mc1.21'
+
+[download]
+hash = 'bfe1e7db31faa88f559f90b99bbe7a98f6e5da7fa41a61f78d558d05b9263f8c27c700b40e6e85fff66ac1de1c9e6b72b50e8e14c65e30f8df6a00bb761033bd'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/rylMOguI/versions/plNrtYPs/entangled-1.3.20a-neoforge-mc1.21.jar'
+
+[update.modrinth]
+mod-id = 'rylMOguI'
+version = 'plNrtYPs'

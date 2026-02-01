@@ -1,0 +1,13 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "flux_network"
+	group: "7AB375FFE2F3B06F"
+	icon: {
+		id: "fluxnetworks:flux_plug"
+	}
+	id: "3D837F927C5FA2A5"
+	order_index: 5
+	quest_links: [ ]
+	quests: [ ]
+}

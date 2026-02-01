@@ -1,0 +1,17 @@
+filename = 'oritech-neoforge-1.21.1-1.0.0.jar'
+name = 'Oritech'
+side = ''
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.21', '1.21', '1.21.1', '1.21.1' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = '1.0.0'
+
+[download]
+hash = '8e5a58aa719e7ad4c1af6ee63834e0a35a4cf05adcc77a33ce30c1c6972ffe8915d1b94c31af76f076eafa31696ac46cb6c563a3684ce830af237384ede5701f'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/4sYI62kA/versions/UhDGk2GS/oritech-neoforge-1.21.1-1.0.0.jar'
+
+[update.modrinth]
+mod-id = '4sYI62kA'
+version = 'UhDGk2GS'

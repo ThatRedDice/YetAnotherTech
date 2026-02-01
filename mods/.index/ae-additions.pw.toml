@@ -1,0 +1,17 @@
+filename = 'AEAdditions-1.21.1-6.0.2.jar'
+name = 'AE Additions'
+side = ''
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.21.1', '1.21.1' ]
+x-prismlauncher-release-type = 'beta'
+x-prismlauncher-version-number = '6.0.2'
+
+[download]
+hash = '7277df53e3b37b5893680e7ed34ef14be5c181069a6d54a9debf6e16a44617214da8fc09323c1fa4f2067af96d08fe1f4d31affc7623c052f3a3cb45357b454b'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/BaiPFaoT/versions/GyhrnxXK/AEAdditions-1.21.1-6.0.2.jar'
+
+[update.modrinth]
+mod-id = 'BaiPFaoT'
+version = 'GyhrnxXK'

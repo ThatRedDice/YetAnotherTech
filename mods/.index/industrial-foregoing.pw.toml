@@ -1,0 +1,17 @@
+filename = 'industrialforegoing-1.21-3.6.37.jar'
+name = 'Industrial Foregoing'
+side = ''
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.21', '1.21', '1.21.1', '1.21.1' ]
+x-prismlauncher-release-type = 'beta'
+x-prismlauncher-version-number = '1.21-3.6.37'
+
+[download]
+hash = '9c5668da233272fa385ba91d5c957f988a572d8b2eb0100f2ccd02ac8bc656825cac17db7d0398b203f32a773cf5391f28ec3946d82ab8ff545645f1c81247b7'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/lWxpUd04/versions/c5iewpoX/industrialforegoing-1.21-3.6.37.jar'
+
+[update.modrinth]
+mod-id = 'lWxpUd04'
+version = 'c5iewpoX'

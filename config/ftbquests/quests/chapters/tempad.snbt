@@ -1,0 +1,13 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "tempad"
+	group: "78F0E1037A070632"
+	icon: {
+		id: "tempad:tempad"
+	}
+	id: "7FA0A294A276263A"
+	order_index: 6
+	quest_links: [ ]
+	quests: [ ]
+}

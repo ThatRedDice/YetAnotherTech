@@ -1,0 +1,13 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "oritech"
+	group: "78F0E1037A070632"
+	icon: {
+		id: "oritech:super_ai_chip"
+	}
+	id: "3AB3F2130E4E16F2"
+	order_index: 2
+	quest_links: [ ]
+	quests: [ ]
+}

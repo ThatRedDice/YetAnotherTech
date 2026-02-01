@@ -1,0 +1,13 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "pneumaticcraft_repressurized"
+	group: "04E777226C2D593C"
+	icon: {
+		id: "pneumaticcraft:plastic"
+	}
+	id: "7ACEA39BB779F73F"
+	order_index: 1
+	quest_links: [ ]
+	quests: [ ]
+}

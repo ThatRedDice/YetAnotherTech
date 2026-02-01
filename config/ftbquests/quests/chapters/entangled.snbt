@@ -1,0 +1,13 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "entangled"
+	group: "7AB375FFE2F3B06F"
+	icon: {
+		id: "entangled:block"
+	}
+	id: "0056F394DD54CB0E"
+	order_index: 1
+	quest_links: [ ]
+	quests: [ ]
+}
